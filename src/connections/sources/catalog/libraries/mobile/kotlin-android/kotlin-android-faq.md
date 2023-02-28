@@ -13,7 +13,7 @@ You can see a changelog in the [GitHub repository](https://github.com/segmentio/
 
 ## Can I use the library with Maven?
 
-Yes! You can use the Segment library with Maven, or any other custom build system because the `core` SDK is simply a JAR.
+Yes. You can use the Segment library with Maven, or any other custom build system because the `core` SDK is simply a JAR.
 
 ```
     <dependency>
@@ -21,7 +21,7 @@ Yes! You can use the Segment library with Maven, or any other custom build syste
         <artifactId>android</artifactId>
         <version>1.10.1</version>
     </dependency>
-![](https://segment.com/docs/images/duplicate.svg)
+![Duplicate](https://segment.com/docs/images/duplicate.svg)
 ```
 
 ## How big is the Segment SDK?
@@ -40,11 +40,11 @@ You should also check the vendor documentation for any Device-mode destinations 
 
 ## Do you support Phonegap or Cordova?
 
-Yes! You can use Segment’s browserify’d [analytics-node](https://github.com/segmentio/analytics-node) package just like any other client-side JavaScript library.
+Yes. You can use Segment’s browserify’d [analytics-node](https://github.com/segmentio/analytics-node) package just like any other client-side JavaScript library.
 
 ## Can I use the library in Java?
 
-Yes. Please refer to our [Java Compatibility](https://github.com/segmentio/analytics-kotlin/blob/main/JAVA_COMPAT.md) doc for sample usages.
+Yes. Please refer to the [Java Compatibility](https://github.com/segmentio/analytics-kotlin/blob/main/JAVA_COMPAT.md) doc for sample usages.
 
 ## My app crashes with NoClassDefFoundError Failed resolution of: Ljava/time/Instant
 

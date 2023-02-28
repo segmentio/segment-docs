@@ -17,7 +17,7 @@ If you're using a different library such as Analytics-Android, follow these step
         - **NOTE:** You can choose between Kotlin (Android) Mobile or Kotlin Server. Kotlin Server doesn't support device-mode destinations.
 2. Replace your dependencies.
 
-    Segment recommends you to install the library with a build system like Gradle, as it simplifies the process of upgrading versions and adding integrations. The library is distributed via [Jitpack](https://jitpack.io/){:target="_blank"}. Add the analytics module to your build.gradle.
+    Segment recommends you to install the library with a build system like Gradle, as it simplifies the process of upgrading versions and adding integrations. The library is distributed through [Jitpack](https://jitpack.io/){:target="_blank"}. Add the analytics module to your build.gradle.
 
     <br> Before example:
     ```groovy  
@@ -449,7 +449,7 @@ If you're using a different library such as Analytics-Android, follow these step
     <td>Java</td>
     <td markdown=1 class="table-code-snippet">
     ```java  
-    // Previously we used to use Factories to initialize destinations
+    // Previously Segment used to use Factories to initialize destinations
     analytics.use(FooIntegration.FACTORY);
     ```
     </td>
@@ -458,7 +458,7 @@ If you're using a different library such as Analytics-Android, follow these step
     <td>Kotlin</td>
     <td markdown=1 class="table-code-snippet">
     ```kotlin
-    // Previously we used to use Factories to initialize destinations
+    // Previously Segment used to use Factories to initialize destinations
     analytics.use(FooIntegration.FACTORY)
     ```
     </td>

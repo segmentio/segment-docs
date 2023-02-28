@@ -33,10 +33,10 @@ Analytics Kotlin allows you to choose how you send data to Segment and your conn
 
 **Device-mode**: You include additional code on your  app which allows Segment to use the data you collect on the device to make calls directly to the destination tool’s API, without sending it to the Segment servers first. (You still send your data to the Segment servers, but this occurs asynchronously.) This is also called wrapping or bundling, and it might be required when the source has to be loaded on the page to work, or loaded directly on the device to function correctly. 
 
-Connection Mode| Pros | Cons |
--------------- | ---- | ---- |  
-Cloud-mode | * Increased app performance | * May limit destination features |
-Device-mode | * Access to all features of the destination SDK | * Decreased app performance |
+| Connection Mode | Pros                                          | Cons                           |
+| --------------- | --------------------------------------------- | ------------------------------ |
+| Cloud-mode      | Increased app performance                     | May limit destination features |
+| Device-mode     | Access to all features of the destination SDK | Decreased app performance      |
 
 ### Supported Destinations
 

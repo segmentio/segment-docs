@@ -80,7 +80,7 @@ When you Identify a user, Segment passes that user's information to Braze with `
 
 If you're using a device-mode connection, Braze's SDK assigns a `device_id` and a backend identifier, `braze_id`, to every user. This allows Braze to capture anonymous activity from the device by matching on those identifiers instead of `userId`. This applies to _device-mode connections_.
 
-### Capture the braze_id of anonymous users
+### Capture the `braze_id` of anonymous users
 
 Pass one of the many identifiers that may exist on an anonymous user profile to the [Braze's User by Identifier REST endpoint](https://www.braze.com/docs/api/endpoints/export/user_data/post_users_identifier/){:target='_blank'} to capture and export the `braze_id`. These identifiers include:
 - email address

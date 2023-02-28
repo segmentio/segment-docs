@@ -80,7 +80,7 @@ analytics.track("View Product", buildJsonObject {
 
 When you call `track`, Segment translates it automatically and sends the event to AppsFlyer.
 
-Segment includes all the event properties as callback parameters on the AppsFlyer event, and automatically translate `properties.revenue` to the appropriate AppsFlyer purchase event properties based on the spec'd properties.
+Segment includes all the event properties as callback parameters on the AppsFlyer event, and automatically translate `properties.revenue` to the appropriate AppsFlyer purchase event properties based on the spec-matching properties.
 
 Finally, Segment uses AppsFlyer's `transactionId` deduplication when you send an `orderId` (see the [e-commerce spec](/docs/connections/spec/ecommerce/v2/)).
 
@@ -90,11 +90,11 @@ Segment will automatically trigger an `Install Attributed` event if you have **t
 
 ### Revenue Tracking
 
-The destination automatically recognizes spec'd `revenue` property and translates them to AppsFlyer's revenue tracking method.
+The destination automatically recognizes spec-matching `revenue` property and translates them to AppsFlyer's revenue tracking method.
 
 ### Transaction De-duplication
 
-The destination automatically recognizes the spec'd `orderId` property, and sends it as the Transaction ID to AppsFlyer for revenue de-duplication.
+The destination automatically recognizes the spec-matching `orderId` property, and sends it as the Transaction ID to AppsFlyer for revenue de-duplication.
 
 ### In-App Purchase Receipts
 
