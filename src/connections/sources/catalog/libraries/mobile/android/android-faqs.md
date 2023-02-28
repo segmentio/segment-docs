@@ -130,7 +130,7 @@ Yes! You can use Segment's browserify'd [analytics-node](https://github.com/segm
 
 ## Are there any limitations for using Segment with Huawei?
 
-No. Currently we haven't had any instances that shows there are limitations when Segment is tracking Huawei devices.
+No, there hasn't been any instances that show there are limitations when Segment tracks Huawei devices.
 
 ## Does LifecycleObserver (above version 2.6.0) work with Segment?
 
