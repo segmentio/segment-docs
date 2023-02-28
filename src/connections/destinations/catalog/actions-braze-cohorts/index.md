@@ -1,6 +1,7 @@
 ---
 title: 'Braze Cohorts Destination'
 id: 63872c01c0c112b9b4d75412
+hide-personas-partial: true
 published: true
 beta: true
 ---
@@ -16,10 +17,7 @@ This feature will allow the customer to sync Engage audiences quicker and will p
 
 ## Benefits of Braze Cohorts Destination
 
-Actually there is a lag in syncing large Engage audiences to Braze, when using existing Braze Classic and Actions destinations. This impacts their ability to move quickly with a modern data stack, as well as make quick adjustments to their Braze campaigns to better target users. By building this new destination, It can enable end users to upload audience data to Braze— as a “list” — all in one go, instead of in an event method.
-
-This Destination will help Segment and Braze customers sync Audiences built in Segment Engage to Braze. This will enable customers to sync audiences quicker and help customers manage their rate limits better (100 RPS in Braze Action Destination)
-
+This Destination will help Segment and Braze customers sync Audiences built in Segment Engage to Braze. This will enable customers to sync audiences quicker and help customers manage their rate limits better (100 RPS in Braze Action Destination).By building this new destination, It can enable end users to upload audience data to Braze— as a “list” — all in one go, instead of in an event method.
 
 ## Getting Started
 
