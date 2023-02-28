@@ -232,11 +232,9 @@ After you fire the `identify` call with the `userId`, you'll notice that the pay
 
 ## Merging Identified and Anonymous user profiles
 
-<!--- The illustration below shows a timeline with a user's interactions on a website, including sample API calls above that show Segment calls, and the user's `anonymousId` and `userId`.
+![The illustration shows a timeline with a user's interactions on a website, including sample API calls above that show Segment calls, and the user's `anonymousId` and `userId`](images/identify-bp-1.png)
 
-![](images/identify-bp-1.png)
-
-https://www.figma.com/file/Gc53MamYsKZBg3IUduunc5/identity-best-practices?node-id=1%3A3 -->
+<!--https://www.figma.com/file/Gc53MamYsKZBg3IUduunc5/identity-best-practices?node-id=1%3A3 -->
 
 When the user first visits a page, Analytics.js automatically assigns the user an `anonymousId` and saves it to the user's `localStorage`. As the user interacts with the site, for example clicking around to different pages, Analytics.js includes this `anonymousId` and some [contextual information](/docs/connections/spec/common#context) with each `page` and `track` call. The contextual information might be the user's [IP address, browser, and more](/docs/connections/spec/common#context-fields-automatically-collected).
 
@@ -275,7 +273,7 @@ Let's go through some more scenarios to explain how an `anonymousId` is assigned
 
 If a user clicks on an ad and is directed to a webpage, they are assigned an `anonymousId`. While this user is anonymous, they navigate to different pages and click around on the website. Say they come back two days later from the same device, sign up, and are assigned a `userId` from your database.
 
-<!---![](images/identify-bp-2.png)--->
+![](images/identify-bp-2.png)
 
 For simplicity, we're assuming that the user has _not_ cleared their cookies or `localStorage`, where the original `anonymousId` is stored. If they had, they'd be assigned a new `anonymousId` when they visited the website, and the `userId` they got when they register on the website would _not_ be attached to the activities tracked with the old `anonymousId`.
 
@@ -283,14 +281,14 @@ For simplicity, we're assuming that the user has _not_ cleared their cookies or 
 
 In this scenario, the person uses both a web browser, and a mobile application to interact with your site. In each case, they are assigned a different `anonymousId`. In this scenario, the user signs up on the web browser, so their _web_ session is assigned a `userId`. However, because they do not log in on the mobile application, Segment cannot tie the mobile activity to this specific user. Their mobile application activity remains anonymous unless they log in on the mobile application.
 
-<!---![](images/identify-bp-3.png)--->
+![](images/identify-bp-3.png)
 
 
 #### Scenario #3 - Multi-day, multi-device, multiple logins
 
 Similar to the previous scenario, the user accessed both your website and mobile application, and also logged in on both. In this case, both sessions on the web and mobile app receive the user's `userId`, so Segment can tie the anonymous activity on both web and mobile to this user.
 
-<!---![](images/identify-bp-4.png)--->
+![](images/identify-bp-4.png)
 
 
 ## User profiles in warehouses
