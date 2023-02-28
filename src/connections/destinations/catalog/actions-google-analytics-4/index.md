@@ -1,5 +1,5 @@
 ---
-title: Google Analytics 4 Destination
+title: Google Analytics 4 Cloud Destination
 strat: google
 hide-boilerplate: true
 hide-dossier: false
@@ -26,13 +26,13 @@ The Google Analytics 4 destination provides the following benefits:
 
 ## Getting started
 
-Before you connect Segment to Google Analytics 4, configure a Google Analytics 4 property in your Analytics account. For more information, see Google's article: [Set up Analytics for a website and/or app](https://support.google.com/analytics/answer/9304153){:target='_blank'}.
+Before you connect Segment to Google Analytics 4 Cloud, configure a Google Analytics 4 property in your Analytics account. For more information, see Google's article: [Set up Analytics for a website and/or app](https://support.google.com/analytics/answer/9304153){:target='_blank'}.
 
-To add the Google Analytics 4 destination:
+To add the Google Analytics 4 Cloud destination:
 
 1. From the Segment web app, click **Catalog**, then click **Destinations**.
-2. Search for “Google Analytics 4” in the Destinations Catalog, and select the destination.
-3. Click **Configure Google Analytics 4** in the top-right corner of the screen.
+2. Search for “Google Analytics 4 Cloud” in the Destinations Catalog, and select the destination.
+3. Click **Configure Google Analytics 4 Cloud** in the top-right corner of the screen.
 4. Select the source that will send data to Google Analytics 4 and follow the steps to name your destination.
 5. On the **Settings** tab, enter in the [Measurement ID](https://support.google.com/analytics/answer/9539598){:target='_blank'} for web streams or the [Firebase App ID](https://developers.google.com/analytics/devguides/collection/protocol/ga4/reference?client_type=firebase#payload_query_parameters){:target='_blank'} for mobile streams. Next, enter in the API Secret associated with your GA4 stream and click **Save**. 
 	
