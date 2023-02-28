@@ -46,15 +46,15 @@ Your events will now begin to flow to comScore in device mode.
 
 ## Identify
 
-Calling `identify` with comScore enabled will automatically set the user attributes provided as `labels`, passing that information on to comScore. With the mobile destination, we map a Segment `identify` event to comScore’s `setPersistentLabelWithName`. 
+Calling `identify` with comScore enabled sets the user attributes provided as `labels`, and passes that information to comScore. With the mobile destination, Segment maps the `identify` event to comScore’s `setPersistentLabelWithName`. 
 
 ## Track
 
-Calling `track` on events will automatically set the properties of that track call as hidden values in comScore to enhance your reports. With the mobile destination, we map a Segment `track` event to comScore’s `notifyHiddenEventWithLabels`.
+Calling `track` on events sets the properties of that track call as hidden values in comScore to enhance your reports. With the mobile destination, Segment maps the `track` event to comScore’s `notifyHiddenEventWithLabels`.
 
 ## Screen
 
-Calling `screen` on mobile will automatically attribute the `name`, `category` and `properties` on that call to be used in the comScore tool. With the mobile destination, we map a Segment `screen` event to comScore’s `notifyViewEventWithLabels`. 
+Calling `screen` on mobile attributes the `name`, `category` and `properties` on that call to be used in the comScore tool. With the mobile destination, Segment maps the `screen` event to comScore’s `notifyViewEventWithLabels`. 
 
 ## Flush
 
@@ -62,75 +62,76 @@ Calling `flush` will clear the offline cache with comScore’s `flushOfflineCach
 
 ## Video Streaming
 
-**Note**: The video tracking functionality is in beta for **mobile only**, and requires version 3.0.0 of the `Segment-comScore` SDK. If you have feedback on or questions about this beta feature, [contact us](https://segment.com/help/contact)!
+> info ""
+> The video tracking functionality is in beta for **mobile only**, and requires version 3.0.0 of the `Segment-comScore` SDK. If you have feedback on or questions about this beta feature, [contact Support](https://segment.com/help/contact).
 
-To get started tracking video content through Segment, make sure you are using a media player that has an API which allows you to detect the player state. Refer to our [Video Spec](/docs/connections/spec/video/) and implement video tracking as outlined there. We will map the semantic events to comScore's relevant methods.
+To get started tracking video content through Segment, make sure you are using a media player that has an API which allows you to detect the player state. Refer to the [Video Spec](/docs/connections/spec/video/) and implement video tracking as outlined there. Segment map the semantic events to comScore's relevant methods.
 
 ### Playback Events
 
 When you call `Video Playback Started`, Segment initializes an instance of the comScore streamingAnalytics class with `[streamingAnalytics createPlaybackSession];`. **It is essential that this event is called in order to continue tracking through comScore's Streaming Tag**.
 
-From there we will map to the relevant events on the instance as outlined below:
+From there Segment maps to the relevant events on the instance as outlined below:
 
-| comScore Spec | Segment Video Spec |
-| ------------ | ------------ |
-| `notifyPause` | `Video Playback Paused` |
-| `notifyBufferStart` | `Video Playback Buffer Started` |
-| `notifyBufferStop` | `Video Playback Buffer Completed` |
-| `notifySeekStart` | `Video Playback Seek Started` |
-| `notifyPlay` | `Video Playback Seek Completed` |
-| `notifyPlay` | `Video Playback Resumed` |
+| comScore Spec       | Segment Video Spec                |
+| ------------------- | --------------------------------- |
+| `notifyPause`       | `Video Playback Paused`           |
+| `notifyBufferStart` | `Video Playback Buffer Started`   |
+| `notifyBufferStop`  | `Video Playback Buffer Completed` |
+| `notifySeekStart`   | `Video Playback Seek Started`     |
+| `notifyPlay`        | `Video Playback Seek Completed`   |
+| `notifyPlay`        | `Video Playback Resumed`          |
 
-If the `properties.position` is passed in, we will call the above methods with the play position.
+If the `properties.position` is passed in, Segment calls the above methods with the play position.
 
 **Playback Properties (Labels)**
 
-For each playback event, we will set the following asset labels translated from our video spec to comScore:
+For each playback event, Segment sets the following asset labels translated from the video spec to comScore:
 
-| comScore Label                          | Segment Property    |
-| --------------------------------------- | ------------------- |
-| `ns_st_ci`                              | `asset_ids(s)`      |
-| `ns_st_mp`                              | `video_player`      |
-| `ns_st_vo`                              | `sound`             |
-| `ns_st_ws`                              | `full_screen`       |
-| `ns_st_br`                              | `bitrate`           |
+| comScore Label | Segment Property |
+| -------------- | ---------------- |
+| `ns_st_ci`     | `asset_ids(s)`   |
+| `ns_st_mp`     | `video_player`   |
+| `ns_st_vo`     | `sound`          |
+| `ns_st_ws`     | `full_screen`    |
+| `ns_st_br`     | `bitrate`        |
 
-Note that iOS and Android expect different casing. We expect `snake_case` for iOS and `camelCase` for Android.
+Note that iOS and Android expect different casing. Segment expects `snake_case` for iOS and `camelCase` for Android.
 
 ### Content Events
 
-| comScore Spec | Segment Video Spec |
-| ------------ | ------------ |
-| `notifyPlay` | `Video Content Started ` |
-| `notifyPlayWithPosition` | `Video Content Playing ` |
-| `notifyEnd` | `Video Content Completed` |
+| comScore Spec            | Segment Video Spec        |
+| ------------------------ | ------------------------- |
+| `notifyPlay`             | `Video Content Started `  |
+| `notifyPlayWithPosition` | `Video Content Playing `  |
+| `notifyEnd`              | `Video Content Completed` |
 
-If the `properties.position` is passed in, we will call the above methods with the play position.
+If the `properties.position` is passed in, Segment calls the above methods with the play position.
 
 **Content Properties (Labels)**
 
-| comScore Label             | Segment Property |
-| -------------------------- | ---------------- |
-| `ns_st_ci`                 | `asset_id`       |
-| `ns_st_pn`                 | `pod_id`         |
-| `ns_st_ep`                 | `title`          |
-| `ns_st_sn`                 | `season`         |
-| `ns_st_en`                 | `episode`        |
-| `ns_st_ge`                 | `genre`          |
-| `ns_st_pr`                 | `program`        |
-| `ns_st_pu`                 | `publisher`      |
-| `ns_st_st`                 | `channel`        |
-| `ns_st_ce`                 | `full_episode`   |
+| comScore Label | Segment Property |
+| -------------- | ---------------- |
+| `ns_st_ci`     | `asset_id`       |
+| `ns_st_pn`     | `pod_id`         |
+| `ns_st_ep`     | `title`          |
+| `ns_st_sn`     | `season`         |
+| `ns_st_en`     | `episode`        |
+| `ns_st_ge`     | `genre`          |
+| `ns_st_pr`     | `program`        |
+| `ns_st_pu`     | `publisher`      |
+| `ns_st_st`     | `channel`        |
+| `ns_st_ce`     | `full_episode`   |
 
-Note that iOS and Android expect different casing. We expect `snake_case` for iOS and `camelCase` for Android.
+Note that iOS and Android expect different casing. Segment expects `snake_case` for iOS and `camelCase` for Android.
 
 ### Ad Events
 
-| comScore Spec | Segment Video Spec |
-| ------------ | ------------ |
-| `notifyPlay` | `Video Ad Started ` |
-| `notifyPlayWithPosition` | `Video Ad Playing ` |
-| `notifyEnd` | `Video Ad Completed` |
+| comScore Spec            | Segment Video Spec   |
+| ------------------------ | -------------------- |
+| `notifyPlay`             | `Video Ad Started `  |
+| `notifyPlayWithPosition` | `Video Ad Playing `  |
+| `notifyEnd`              | `Video Ad Completed` |
 
 
 | comScore Label | Segment Property |
@@ -141,7 +142,7 @@ Note that iOS and Android expect different casing. We expect `snake_case` for iO
 | `ns_st_pu`     | `publisher`      |
 | `ns_st_cl`     | `total_length`   |
 
-Note that iOS and Android expect different casing. We expect `snake_case` for iOS and `camelCase` for Android.
+Note that iOS and Android expect different casing. Segment expects `snake_case` for iOS and `camelCase` for Android.
 
 
 ## Additional Video Destinations Specific Options
@@ -166,7 +167,7 @@ These are required fields, so all three of these labels must always be passed. U
 
 Only mapped on content events. ComScore has two definitions for Airdates: TV Airdate and Digital Airdate.This airdate helps comScore establish monetization windows (live, day +1, day +3, ...) for any given episode or show. The monetization windows are used to calculate commercial and program ratings. Each expects a value in **yyyy-mm-dd** format.
 
-We allow you to pass in one or the other and map to comScore's labels for each.
+Segment allows you to pass in one or the other and map to comScore's labels for each.
 
 `tvAirdate` : TV Airdate. The date on which the content aired on TV.
 
@@ -193,9 +194,9 @@ Linear advertisements delivered into a media player and presented before, in the
 **LINEAR - LIVE**
 Linear advertisements delivered before, in the middle of, or after a live stream of content. The advertisement completely takes over the full view of the media player.
 
-|                  | video + audio |
-| ---------------- | ------------- |
-| Linear Live      | va21          |
+|             | video + audio |
+| ----------- | ------------- |
+| Linear Live | va21          |
 
 
 **BRANDED ENTERTAINMENT**
@@ -237,15 +238,15 @@ Content with little-to-no brand equity or brand recognition. User-generated cont
 **BUMPERS**
 Bumpers - also known as billboards or slates - are static promotional items which usually run before content and usually last less than 5 seconds.
 
-|                  | video + audio |
-| ---------------- | ------------- |
-| Bumpers          | vc99          |
+|         | video + audio |
+| ------- | ------------- |
+| Bumpers | vc99          |
 
 
 ## FAQ
 
 ### How does comScore determine platform type?
-The SDK auto-collects the internal device names, which comScore maps to their reportable Platforms seen broken out in your comScore Direct dashbaord.
+The SDK auto-collects the internal device names, which comScore maps to their reportable Platforms seen broken out in your comScore Direct dashboard.
 
 ### How does comScore determine unique devices?
 The comScore SDK will collect unique device id's under the hood, so based on this there is some filtering that can happen here. IN order to see a number for this metric, you need to select a Geography, Client ID, and Platform in the comScore dashboard. The *All* option will not produce a unique device.

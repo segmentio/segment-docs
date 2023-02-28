@@ -59,9 +59,9 @@ analytics.screen("ScreenName", buildJsonObject {
 });
 ```
 
-Our integration also supports using Segment `screen` events as `track` events. For example, if you had a `screen` event named `Confirmation` you could map the invocation of this to a Facebook app event as you would with Segment `track` events.
+This integration also supports using Segment `screen` events as `track` events. For example, if you had a `screen` event named `Confirmation` you could map the invocation of this to a Facebook app event as you would with Segment `track` events.
 
-To use this functionality you must opt into it using the integration setting named **Use Screen Events as Track Events**. Once enabled, you should start seeing `screen` events populate in Facebook App Events. The screen name you provide will be bookended with the words **Viewed** and **Screen**. So, if you have a `screen` event with the name property set to `Welcome`, it will show up in Facebook as an event called **Viewed Welcome Screen**.
+To use this functionality you must opt into it using the integration setting named **Use Screen Events as Track Events**. Once enabled, you should start seeing `screen` events populate in Facebook App Events. The screen name you provide will be wrapped with the words **Viewed** and **Screen**. So, if you have a `screen` event with the name property set to `Welcome`, it will show up in Facebook as an event called **Viewed Welcome Screen**.
 
 ## Track
 
@@ -74,15 +74,15 @@ analytics.track("View Product", buildJsonObject {
 });
 ```
 
-When you call `track` Segment automatically sends that event and it's properties to Facebook. In the Facebook analytics interface you'll be able to use the event properties to segment your data.
+When you call `track` Segment sends that event and it's properties to Facebook. In the Facebook analytics interface you'll be able to use the event properties to segment your data.
 
-Segment will truncate events that are longer than 40 characters long due to Facebook's API constraints.
+Segment truncates events that are longer than 40 characters long due to Facebook's API constraints.
 
 ### Facebook Parameters
 
-We automatically translate our [spec'd properties](/docs/connections/spec/track/#properties) `revenue` and `currency` to the appropriate Facebook parameters (`valueToSum` and `FBSDKAppEventParameterNameCurrency`), and also send events with revenue to Facebook's purchase logging method (`logPurchase`).
+Segment translates the [spec-matching properties](/docs/connections/spec/track/#properties) `revenue` and `currency` to the appropriate Facebook parameters (`valueToSum` and `FBSDKAppEventParameterNameCurrency`), and also send events with revenue to Facebook's purchase logging method (`logPurchase`).
 
-If you don't provide a `currency` explicitly, we send `USD`. If any properties don't match the below, we'll pass them on as they were sent to us.
+If you don't provide a `currency` explicitly, Segment sends `USD`. If any properties don't match the below, Segment passes them as they were sent.
 
 <table>
   <tr>
@@ -91,7 +91,7 @@ If you don't provide a `currency` explicitly, we send `USD`. If any properties d
   </tr>
   <tr>
     <td>**Currency**</td>
-    <td>fb_currency</td>
+    <td>`fb_currency`</td>
   </tr>
 </table>
 

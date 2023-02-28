@@ -16,7 +16,16 @@ If you're migrating to Analytics-Swift from a different mobile library, you can 
 
 ## Sources
 
-The Analytics-Swift [implementation guide](/docs/connections/sources/catalog/libraries/mobile/swift/implementation) covers all platforms for which you can build Swift applications, including iOS, macOS, tvOS, and watchOS.
+
+{% include components/reference-button.html
+  href="/docs/connections/sources/catalog/libraries/mobile/swift/implementation"
+  icon="languages/swift.svg"
+  title="Swift Implementation Guide"
+  description="Follow the Analytics-Swift implementation guide to add Segment analytics to any Swift application, including iOS, macOS, tvOS, and watchOS apps."
+  newtab="false"
+  logo="true"
+%}
+
 
 ## Destinations
 
@@ -26,10 +35,10 @@ Analytics Swift allows you to choose how you send data to Segment and your conne
 
 **Device-mode**: You include additional code on your  app which allows Segment to use the data you collect on the device to make calls directly to the destination tool’s API, without sending it to the Segment servers first. (You still send your data to the Segment servers, but this occurs asynchronously.) This is also called wrapping or bundling, and it might be required when the source has to be loaded on the page to work, or loaded directly on the device to function correctly. 
 
-Connection Mode| Pros | Cons |
--------------- | ---- | ---- |  
-Cloud-mode | * Increased app performance | * May limit destination features |
-Device-mode | * Access to all features of the destination SDK | * Decreased app performance |
+| Connection Mode | Pros                                          | Cons                           |
+| --------------- | --------------------------------------------- | ------------------------------ |
+| Cloud-mode      | Increased app performance                     | May limit destination features |
+| Device-mode     | Access to all features of the destination SDK | Decreased app performance      |
 
 ### Supported Destinations
 
@@ -60,6 +69,7 @@ Analytics for Swift is built with extensibility in mind. Use the tools list belo
 - [Destination filters](/docs/connections/sources/catalog/libraries/mobile/swift/swift-destination-filters)
 
 ## Sample applications
+The code samples below demonstrate the implementation of common use cases of the Analytics Swift library across different platforms. 
 
 {% assign resources = site.data.catalog.swift_resources.items | where: "categories", "sample" %}
 {: .columns}
@@ -68,7 +78,5 @@ Analytics for Swift is built with extensibility in mind. Use the tools list belo
 {%endfor%}
 
 ## Additional Resources
-
-some copy here
 
 - [Analytics iOS (Classic)](/docs/connections/sources/catalog/libraries/mobile/ios)

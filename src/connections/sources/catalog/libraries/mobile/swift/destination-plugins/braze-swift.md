@@ -17,14 +17,14 @@ Braze’s destination plugin code is open source and available on GitHub. You ca
 
 ## Adding the dependency
 
-### via Xcode
-In the Xcode `File` menu, click `Add Packages`.  You'll see a dialog where you can search for Swift packages.  In the search field, enter the URL to this repo.
+### through Xcode
+In the Xcode `File` menu, click `Add Packages`.  You'll see a dialog where you can search for Swift packages.  In the search field, enter the URL to this repository.
 
-https://github.com/segment-integrations/analytics-swift-braze
+https://github.com/segment-integrations/analytics-swift-braze{:target="_blank"}
 
 You'll then have the option to pin to a version, or specific branch, as well as which project in your workspace to add it to.  Once you've made your selections, click the `Add Package` button.  
 
-### via Package.swift
+### through Package.swift
 
 Open your Package.swift file and add the following do your the `dependencies` section:
 
@@ -82,7 +82,7 @@ When you Identify a user, Segment passes that user's information to Braze with `
 
 If you're using a device-mode connection, Braze's SDK assigns a `device_id` and a backend identifier, `braze_id`, to every user. This allows Braze to capture anonymous activity from the device by matching on those identifiers instead of `userId`. This applies to _device-mode connections_.
 
-### Capture the braze_id of anonymous users
+### Capture the `braze_id` of anonymous users
 
 Pass one of the many identifiers that may exist on an anonymous user profile to the [Braze's User by Identifier REST endpoint](https://www.braze.com/docs/api/endpoints/export/user_data/post_users_identifier/){:target='_blank'} to capture and export the `braze_id`. These identifiers include:
 - email address
