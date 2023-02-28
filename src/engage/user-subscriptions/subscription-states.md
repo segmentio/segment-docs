@@ -1,6 +1,6 @@
 ---
 title: User Subscription States
-plan: engage-foundations
+plan: engage-premier
 ---
 
 Customer profiles in your Segment audiences contain **contact vectors**. A contact vector is a piece of unique, specific contact information associated with a customer, like the customer's email address or phone number.

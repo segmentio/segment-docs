@@ -62,3 +62,5 @@
   override: "actions-linkedin-audiences"
 - original: "salesforce-marketing-cloud-actions"
   override: "actions-salesforce-marketing-cloud"
+- original: "cordial-actions"
+  override: "actions-cordial"
