@@ -3,7 +3,6 @@ title: VWO Web Mode (Actions) Destination
 hide-boilerplate: true
 hide-dossier: false
 id: 637c192eba61b944e08ee158
-private: true
 ---
 
 {% include content/plan-grid.md name="actions" %}
