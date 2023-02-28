@@ -72,7 +72,7 @@ Previously, it was possible to attach `trackLink` to any element, and a `trackLi
 
 ### Using a custom proxy
 
-This will only apply if you've already [set up a custom domain proxy for Analytics.js](https://segment.com/docs/connections/sources/catalog/libraries/website/javascript/custom-proxy/). 
+This will only apply if you've already [set up a custom domain proxy for Analytics.js](/docs/connections/sources/catalog/libraries/website/javascript/custom-proxy/). 
 
 Analytics.js 2.0 loads new files not usually loaded with Analytics.js Classic, so you'll also need to make sure these new files are considered in your proxy configuration. If the new files are not considered, Analytics.js 2.0 falls back to `cdn.segment.com`. You'll have to proxy the rest of the files used by Analytics.js 2.0 using a scheme similar to Segment's CDN. You have two options:
 
