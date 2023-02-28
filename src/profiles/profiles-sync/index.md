@@ -74,7 +74,7 @@ By default, Segment includes identity graph updates, external ID mapping tables,
 
 To start seeing unified profiles in your warehouse and build attribution models, you'll need to materialize the tables that Profiles Sync lands into three key views:
 
-  * `id_graph`:  shows the current state of relationships between segment ids
+  * `id_graph`: the current state of relationships between segment ids
   * `external_id_mapping`: current-state mapping between each external identifier you’ve observed and its corresponding, fully-merged `canonical_segment_id`
   * `profile_traits`: the last seen value for all custom traits, computed traits, SQL traits, audiences, and journeys associated with a profile in a single row
 
