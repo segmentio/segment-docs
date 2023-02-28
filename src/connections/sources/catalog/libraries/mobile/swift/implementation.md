@@ -474,7 +474,7 @@ analytics.flush()
 
 ### OpenURL
 
-Since there a various deep linking scenarios you may want to account for, we have included the `analytics.openURL(...)` method so you can track deep links in any situation. Where and how you implement the method will depend on your app lifecycle setup (ie: UIApplicationDelegate vs. UISceneDelegate or UIKit vs. SwiftUI). The snippets below outline what your implementation might look like in a few different scenarios. 
+Since there a various deep linking scenarios you may want to account for, the `analytics.openURL(...)` method was added so you can track deep links in any situation. Where and how you implement the method will depend on your app lifecycle setup (for example UIApplicationDelegate vs. UISceneDelegate or UIKit vs. SwiftUI). The snippets below outline what your implementation might look like in a few different scenarios. 
 
 > warning ""
 > `Analytics iOS` only captures the `UIApplicationDidFinishLaunchingNotification` notification.

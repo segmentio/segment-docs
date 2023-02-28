@@ -11,14 +11,14 @@ Firebase’s destination plugin code is open source and available on GitHub. You
 > warning ""
 > the Firebase library itself will be installed as an additional dependency.
 
-### via Xcode
-In the Xcode `File` menu, click `Add Packages`.  You'll see a dialog where you can search for Swift packages.  In the search field, enter the URL to this repo.
+### through Xcode
+In the Xcode `File` menu, click `Add Packages`.  You'll see a dialog where you can search for Swift packages.  In the search field, enter the URL to this repository.
 
-https://github.com/segment-integrations/analytics-swift-firebase
+https://github.com/segment-integrations/analytics-swift-firebase{:target="_blank"}
 
 You'll then have the option to pin to a version, or specific branch, as well as which project in your workspace to add it to.  Once you've made your selections, click the `Add Package` button.  
 
-### via Package.swift
+### through Package.swift
 
 Open your Package.swift file and add the following do your the `dependencies` section:
 
@@ -92,41 +92,41 @@ Event parameter values must be fewer than 100 characters.
 
 ### Event Mappings
 
-Segment adheres to Firebase's semantic event specification and maps the following Segment specced events (left) to the corresponding Firebase events (right):
+Segment adheres to Firebase's semantic event specification and maps the following Segment spec-matching events (left) to the corresponding Firebase events (right):
 
-| Segment Event     | Firebase Event    |
-|-------------------|-------------------|
-| [Products Searched](/docs/connections/spec/ecommerce/v2/#products-searched) | search |
-| [Product List Viewed](/docs/connections/spec/ecommerce/v2/#product-list-viewed)| view_item_list |
-| [Product Viewed](/docs/connections/spec/ecommerce/v2/#product-viewed) | view_item |
-| [Product Clicked](/docs/connections/spec/ecommerce/v2/#product-clicked) | select_content |
-| [Product Shared](/docs/connections/spec/ecommerce/v2/#product-shared) | share |
-| [Product Added](/docs/connections/spec/ecommerce/v2/#product-added) | add_to_cart |
-| [Product Added To Wishlist](/docs/connections/spec/ecommerce/v2/#product-added-to-wishlist) | add_to_wishlist |
-| [Checkout Started](/docs/connections/spec/ecommerce/v2/#checkout-started) | begin_checkout |
-| [Promotion Viewed](/docs/connections/spec/ecommerce/v2/#promotion-viewed) | present_offer |
-| [Payment Info Entered](/docs/connections/spec/ecommerce/v2/#payment-info-entered) | add_payment_info |
-| [Order Completed](/docs/connections/spec/ecommerce/v2/#order-completed) | purchase |
-| [Order Refunded](/docs/connections/spec/ecommerce/v2/#order-refunded) | purchase_refund |
+| Segment Event                                                                                | Firebase Event     |
+| -------------------------------------------------------------------------------------------- | ------------------ |
+| [Products Searched](/docs/connections/spec/ecommerce/v2/#products-searched)                  | `search`           |
+| [Product List Viewed](/docs/connections/spec/ecommerce/v2/#product-list-viewed)              | `view_item_list`   |
+| [Product Viewed](/docs/connections/spec/ecommerce/v2/#product-viewed)                        | `view_item`        |
+| [Product Clicked](/docs/connections/spec/ecommerce/v2/#product-clicked)                      | `select_content`   |
+| [Product Shared](/docs/connections/spec/ecommerce/v2/#product-shared)                        | `share`            |
+| [Product Added](/docs/connections/spec/ecommerce/v2/#product-added)                          | `add_to_cart`      |
+| [Product Added To Wish list](/docs/connections/spec/ecommerce/v2/#product-added-to-wishlist) | `add_to_wishlist`  |
+| [Checkout Started](/docs/connections/spec/ecommerce/v2/#checkout-started)                    | `begin_checkout`   |
+| [Promotion Viewed](/docs/connections/spec/ecommerce/v2/#promotion-viewed)                    | `present_offer`    |
+| [Payment Info Entered](/docs/connections/spec/ecommerce/v2/#payment-info-entered)            | `add_payment_info` |
+| [Order Completed](/docs/connections/spec/ecommerce/v2/#order-completed)                      | `purchase`         |
+| [Order Refunded](/docs/connections/spec/ecommerce/v2/#order-refunded)                        | `purchase_refund`  |
 
 ### Property Mappings
 
-Segment maps the followed Segment specced properties (left) to the corresponding Firebase event parameters (right):
+Segment maps the followed Segment spec-matching properties (left) to the corresponding Firebase event parameters (right):
 
-| Segment Property     | Firebase Property    | Accepted Value(s)  |
-|-------------------|-------------------|---------------------|
-| category | item_category | (String) "kitchen supplies"
-| product_id | item_id | (String) "p1234"
-| name | item_name | (String) "Le Creuset pot"
-| price | price | (double) 1.0
-| quantity | quantity | (long) 1
-| query | search_term | (String) "Le Creuset"
-| shipping | shipping | (double) 2.0
-| tax | tax | (double) 0.5
-| total | value | (double) 3.99 or (long) 3.99
-| revenue | value | (double) 3.99 or (long) 3.99
-| order_id | transaction_id | (String) "o555636"
-| currency | currency | (String) "USD"
+| Segment Property | Firebase Property | Accepted Value(s)            |
+| ---------------- | ----------------- | ---------------------------- |
+| `category`       | `item_category`   | (String) "kitchen supplies"  |
+| `product_id`     | `item_id`         | (String) "p1234"             |
+| `name`           | `item_name`       | (String) "Le Creuset pot"    |
+| `price`          | `price`           | (double) 1.0                 |
+| `quantity`       | `quantity`        | (long) 1                     |
+| `query`          | `search_term`     | (String) "Le Creuset"        |
+| `shipping`       | `shipping`        | (double) 2.0                 |
+| `tax`            | `tax`             | (double) 0.5                 |
+| `total`          | `value`           | (double) 3.99 or (long) 3.99 |
+| `revenue`        | `value`           | (double) 3.99 or (long) 3.99 |
+| `order_id`       | `transaction_id`  | (String) "o555636"           |
+| `currency`       | `currency`        | (String) "USD"               |
 
 ### Passing Revenue and Currency
 
@@ -165,7 +165,7 @@ Google Analytics for Firebase iOS does NOT support the case of manual-only scree
 
 Firebase Dynamic Links are smart URLs that can change behavior dynamically depending on the platform where the user clicks them. Use them in web, email, social media, referral and physical promotions to increase user acquisition, retention and lifetime value. Key features include ability to survive app installs, controlling user experience depending on what platform they access the link on and knowing which content and campaigns are working using tracking in the Firebase console. [Check out Firebase's Docs here](https://firebase.google.com/docs/dynamic-links/).
 
-To use Firebase Dynamic Links, search for the Firebase package via Swift Package Manager and add the Dynamic Links library:
+To use Firebase Dynamic Links, search for the Firebase package in Swift Package Manager and add the Dynamic Links library:
 
 `https://github.com/firebase/firebase-ios-sdk`
 

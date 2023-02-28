@@ -20,14 +20,14 @@ The Amplitude Swift plugin doesn't send events to Amplitude from the client side
 
 ## Adding the dependency
 
-### via Xcode
-In the Xcode `File` menu, click `Add Packages`.  You'll see a dialog where you can search for Swift packages.  In the search field, enter the URL to this repo.
+### through Xcode
+In the Xcode `File` menu, click `Add Packages`.  You'll see a dialog where you can search for Swift packages.  In the search field, enter the URL to this repository.
 
-https://github.com/segment-integrations/analytics-swift-amplitude
+https://github.com/segment-integrations/analytics-swift-amplitude{:target="_blank"}
 
 You'll then have the option to pin to a version, or specific branch, as well as which project in your workspace to add it to.  Once you've made your selections, click the `Add Package` button.  
 
-### via Package.swift
+### through Package.swift
 
 Open your Package.swift file and add the following do your the `dependencies` section:
 
@@ -57,7 +57,7 @@ let analytics = Analytics(configuration: Configuration(writeKey: "<YOUR WRITE KE
 analytics.add(plugin: AmplitudeSession())
 ```
 
-Your events will now be given Amplitude session data and start flowing to Amplitude via Cloud Mode.
+Your events receive session data and start flowing to Amplitude in Cloud Mode.
 
 ### Log Purchases in existing destination instances
 

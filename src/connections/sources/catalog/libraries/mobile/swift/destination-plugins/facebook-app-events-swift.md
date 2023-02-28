@@ -17,14 +17,14 @@ strat: swift
 > warning ""
 > the Facebook App Events library itself will be installed as an additional dependency.
 
-### via Xcode
-In the Xcode `File` menu, click `Add Packages`.  You'll see a dialog where you can search for Swift packages.  In the search field, enter the URL to this repo.
+### through Xcode
+In the Xcode `File` menu, click `Add Packages`.  You'll see a dialog where you can search for Swift packages.  In the search field, enter the URL to this repository.
 
-https://github.com/segment-integrations/analytics-swift-facebook-app-events
+https://github.com/segment-integrations/analytics-swift-facebook-app-events{:target="_blank"}
 
 You'll then have the option to pin to a version, or specific branch, as well as which project in your workspace to add it to.  Once you've made your selections, click the `Add Package` button.  
 
-### via Package.swift
+### through Package.swift
 
 Open your Package.swift file and add the following do your the `dependencies` section:
 
@@ -68,9 +68,9 @@ If you're not familiar with the Segment Specs, take a look to understand what th
 analytics.screen(title: "SomeScreen")
 ```
 
-Our integration also supports using Segment `screen` events as `track` events. For example, if you had a `screen` event named `Confirmation` you could map the invocation of this to a Facebook app event as you would with Segment `track` events.
+This integration also supports using Segment `screen` events as `track` events. For example, if you had a `screen` event named `Confirmation` you could map the invocation of this to a Facebook app event as you would with Segment `track` events.
 
-To use this functionality you must opt into it using the integration setting named **Use Screen Events as Track Events**. Once enabled, you should start seeing `screen` events populate in Facebook App Events. The screen name you provide will be bookended with the words **Viewed** and **Screen**. So, if you have a `screen` event with the name property set to `Welcome`, it will show up in Facebook as an event called **Viewed Welcome Screen**.
+To use this functionality you must opt into it using the integration setting named **Use Screen Events as Track Events**. Once enabled, you should start seeing `screen` events populate in Facebook App Events. The screen name you provide will be surrounded with the words **Viewed** and **Screen**. So, if you have a `screen` event with the name property set to `Welcome`, it will show up in Facebook as an event called **Viewed Welcome Screen**.
 
 ## Track
 
@@ -84,15 +84,15 @@ struct TrackProperties: Codable {
 analytics.track(name: "My Event", properties: TrackProperties(someValue: "Hello"))
 ```
 
-When you call `track` Segment automatically sends that event and it's properties to Facebook. In the Facebook analytics interface you'll be able to use the event properties to segment your data.
+When you call `track` Segment sends that event and it's properties to Facebook. In the Facebook analytics interface you'll be able to use the event properties to segment your data.
 
-Facebook App Events doesn't like events with periods in the name so if you send us an event with periods in the name, we'll convert all periods to underscores. So if your event is `friend.added`, we'll send that to Facebook as `friend_added`. We also truncate events that are longer than 40 characters long due to Facebook's API constraints.
+Facebook App Events doesn't like events with periods in the name so if you send an event with periods in the name, Segment converts all periods to underscores. So if your event is `friend.added`, Segment sends that to Facebook as `friend_added`. Segment also truncates events that are longer than 40 characters long due to Facebook's API constraints.
 
 ### Facebook Parameters
 
-We automatically translate our [spec'd properties](/docs/connections/spec/track/#properties) `revenue` and `currency` to the appropriate Facebook parameters (`valueToSum` and `FBSDKAppEventParameterNameCurrency`), and also send events with revenue to Facebook's purchase logging method (`logPurchase`).
+Segment translates [spec-matching properties](/docs/connections/spec/track/#properties) `revenue` and `currency` to the appropriate Facebook parameters (`valueToSum` and `FBSDKAppEventParameterNameCurrency`), and also send events with revenue to Facebook's purchase logging method (`logPurchase`).
 
-If you don't provide a `currency` explicitly, we send `USD`. If any properties don't match the below, we'll pass them on as they were sent to us.
+If you don't provide a `currency` explicitly, Segment sends `USD`. If any properties don't match the below, Segment passes them on as they were sent.
 
 <table>
   <tr>
@@ -101,7 +101,7 @@ If you don't provide a `currency` explicitly, we send `USD`. If any properties d
   </tr>
   <tr>
     <td>**Currency**</td>
-    <td>fb_currency</td>
+    <td>`fb_currency`</td>
   </tr>
 </table>
 

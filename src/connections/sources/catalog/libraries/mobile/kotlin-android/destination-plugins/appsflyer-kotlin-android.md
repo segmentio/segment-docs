@@ -78,7 +78,7 @@ analytics.track("View Product", buildJsonObject {
 
 When you call `track`, Segment translates it automatically and sends the event to AppsFlyer.
 
-Segment includes all the event properties as callback parameters on the AppsFlyer event, and automatically translate `properties.revenue` to the appropriate AppsFlyer purchase event properties based on the spec'd properties.
+Segment includes all the event properties as callback parameters on the AppsFlyer event, and automatically translate `properties.revenue` to the appropriate AppsFlyer purchase event properties based on the spec-matching properties.
 
 ## Install Attributed
 
@@ -88,7 +88,7 @@ This logic depends on the Appsflyer `AppsFlyerConversionListener` [interface](ht
 
 ### Revenue Tracking
 
-The destination automatically recognizes spec'd `revenue` property and translates them to AppsFlyer's revenue tracking method.
+The destination automatically recognizes spec-matching `revenue` property and translates them to AppsFlyer's revenue tracking method.
 
 ### In-App Purchase Receipts
 
