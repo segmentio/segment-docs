@@ -3,12 +3,12 @@ title: Best Practices for Identifying Users
 redirect_from: '/guides/how-to-guides/best-practices-identify/'
 ---
 
-The most important calls you make with Segment are the [identify](https://segment.com/docs/getting-started/02-simple-install/#step-2-identify-users) and [track](https://segment.com/docs/getting-started/02-simple-install/#step-3-track-actions) calls. When you use these calls together, you can start to attribute actions on your site or app to individuals, and gain a better understanding of their activities, identity, and use patterns over time -- and help reduce the number of [Monthly Tracked Users](/docs/guides/usage-and-billing/mtus-and-throughput/) you are billed for.
+The most important calls you make with Segment are the [identify](/docs/getting-started/02-simple-install/#step-2-identify-users) and [track](/docs/getting-started/02-simple-install/#step-3-track-actions) calls. When you use these calls together, you can attribute actions on your site or app to individuals, and gain a better understanding of their activities, identity, and use patterns over time. Tracking users with the identify and track calls reduces the number of [Monthly Tracked Users](/docs/guides/usage-and-billing/mtus-and-throughput/) you are billed for.
 
 
 ## Identifying users
 
-The `identify` call specifies a customer identity that you can reference across the customer's whole lifetime. There are instances where you want to record information about a user that isn't already known to you. An example of this might be, a user that visits your site and doesn't register, but they do give you their email address through a newsletter email sign-up form. In this instance, you would record that email address as a trait, and for the identifier (ID), you would use anonymous ID. 
+The `identify` call specifies a customer identity that you can reference across the customer's lifetime. There are instances where you want to record information about a user that isn't already known to you. An example of this might be, a user that visits your site and doesn't register, but they do give you their email address through a newsletter email sign-up form. In this instance, you would record that email address as a trait, and for the identifier (ID), you would use anonymous ID. 
 
 When you make an [identify](/docs/connections/spec/identify) call using Segment's Analytics.js library, Segment saves the `userId` to the browser cookie, and writes all the user traits in `localStorage`. If you're using one of the Segment mobile libraries, the `userId` and traits are stored in the device's memory. This makes it possible to append the user's data to all subsequent [page calls](/docs/connections/sources/catalog/libraries/website/javascript#page) or [track calls](/docs/connections/sources/catalog/libraries/website/javascript#track) for the user, so you can properly attribute those actions.
 
@@ -18,7 +18,7 @@ Whenever possible, follow the `identify` call with a `track` event that records 
 
 ## AnonymousId generation
 
-If you're using Segment's browser or mobile libraries, the Segment SDK generates and sets a UUID as `anonymousID` at the user's first presence. That `anonymousId` is saved in the user's cookie, as well as localStorage, and will stick with that user until the cache is cleared or a `reset` call is triggered. 
+If you're using Segment's browser or mobile libraries, the Segment SDK generates and sets a UUID as `anonymousID` at the user's first visit to your site. That `anonymousId` is saved in the user's cookie, as well as localStorage, and will stick with that user until the cache is cleared or a `reset` call is triggered. 
 
 You can use the `anonymousId` to link events performed by the user as they navigate around your website. When you track the `anonymousId`, you can attribute activities over multiple days to the same user by collecting all of the activities with that ID. If a user chooses to register for your site, or log in to your app, you can `identify` them, and still include their `anonymousId` in the event payload along with the new `userId`.
 
@@ -34,7 +34,7 @@ Ideally, the `userId` could be a database ID. For example, if you're using Mongo
 Segment does **not** recommend using simple email addresses or usernames as a User ID, as these can change over time. Segment recommends that you use static IDs instead, so the IDs *never* change. When you use a static ID, you can still recognize the user in your analytics tools, even if the user changes their email address. And even better, you can link your analytics data with your own internal database.
 
 > success ""
-> **Tip!** Even though we don't recommend using an email address or a username as a User ID, you can still send that identifying information in your `identify` call as [traits](/docs/connections/spec/identify#traits).
+> **Tip!** Even though Segment doesn't recommend using an email address or a username as a User ID, you can still send that identifying information in your `identify` call as [traits](/docs/connections/spec/identify#traits).
 
 ## When to call Identify
 
@@ -113,7 +113,7 @@ analytics.identify({
 
 <!---[Fire Identify Call](https://user-images.githubusercontent.com/78389005/214353033-e90b6e7f-f593-416e-9f13-44848fab595a.png)--->
 
-You'll notice the identify call contains no `userId`. These traits will be associated to the `anonymousId` that is available in the user's cookie and `localStroage`. 
+You'll notice the `identify` call contains no `userId`. These traits will be associated to the `anonymousId` that is available in the user's cookie and `localStorage`. 
 
 ```js
 {
@@ -263,7 +263,7 @@ analytics.track("Signed Up", {
 
 Additionally, Analytics.js adds a `message_id` and [four timestamps](/docs/connections/spec/common#timestamp-overview) to the call.
 
-Now, as the user interacts with your site and different buttons or links that you track using Segment, their `userId` *and* `anonymousId` are sent with each subsequent tracking API call.
+Now, as the user interacts with your site and different buttons or links that you track using Segment, their `userId` and `anonymousId` are sent with each subsequent tracking API call.
 
 ### UserId merge examples
 
@@ -279,7 +279,7 @@ For simplicity, we're assuming that the user has _not_ cleared their cookies or 
 
 #### Scenario #2 - Multi-day, multi-device, single login
 
-In this scenario, the person uses both a web browser, and a mobile application to interact with your site. In each case, they are assigned a different `anonymousId`. In this scenario, the user signs up on the web browser, so their _web_ session is assigned a `userId`. However, because they do not log in on the mobile application, Segment cannot tie the mobile activity to this specific user. Their mobile application activity remains anonymous unless they log in on the mobile application.
+In this scenario, the person uses both a web browser, and a mobile application to interact with your site. In each case, they are assigned a different `anonymousId`. In this scenario, the user signs up on the web browser, so Segment assigns their _web_ session a `userId`. However, because they do not log in on the mobile application, Segment cannot tie the mobile activity to this specific user. Their mobile application activity remains anonymous unless they log in on the mobile application.
 
 ![](images/identify-bp-3.png)
 
