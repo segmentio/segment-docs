@@ -21,7 +21,6 @@ Yes. You can use the Segment library with Maven, or any other custom build syste
         <artifactId>android</artifactId>
         <version>1.10.1</version>
     </dependency>
-![Duplicate](https://segment.com/docs/images/duplicate.svg)
 ```
 
 ## How big is the Segment SDK?
