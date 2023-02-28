@@ -15,6 +15,9 @@ To set up a custom domain, you need:
 - Access to the CDN settings
 - A security certificate for the proxy domain
 
+> info "Custom Proxy Troubleshooting"
+> If you experience issues configuring a custom proxy, contact your organization's IT department for help. Segment does not have access to the resources you need to configure a custom proxy.
+
 This guide explains how to set up a custom domain in CloudFront. You can apply these principles to almost any modern CDN that supports proxies.
 
 You need to set up two important parts, regardless of the CDN provider you use:
@@ -34,11 +37,14 @@ Hi,
 
 This is {person} from {company}. I would like to configure a proxy for the following source(s):
 
-* Source {link to source in Segment} with source ID {source id}
-* Source {link to source in Segment} with source ID {source id}
+* Source URL with Source ID
+* Source URL with Source ID
 ```
 
-Double-check the source link and the Source ID.
+- **Source URL**: link to the source in your Segment workspace (for example, `https://app.segment.com/<your_slug>/sources/<source>/overview`)
+- **Source ID**: navigate to **API Keys** on the left-hand side of the source **Settings** and provide the Source ID
+
+Double-check the Source URL and the Source ID.
 
 A Segment Customer Success team member will respond that they have enabled this option for your account. When you receive this confirmation, open the source in your workspace, and navigate to Settings > Analytics.js. Update the **Host Address** setting from `api.segment.io/v1` to `[your proxy host]/v1`.
 
@@ -50,7 +56,7 @@ A Segment Customer Success team member will respond that they have enabled this 
 These instructions refer to Amazon CloudFront, but apply more generally to other providers as well.
 
 ### CDN Proxy
-To set up your CDN Proxy: 
+To set up your CDN Proxy:
 1. Log in to the AWS console and navigate to CloudFront.
 2. Click **Create Distribution**.
 3. Configure the distribution settings. In the Origin section, update the following values:
@@ -71,11 +77,11 @@ Take note of the Domain Name for use in the next step.
 To add a CNAME record for the Segment proxy to your organizations DNS settings:
 1. Use a name that makes it clear what you are using the subdomain for, for example `analytics.mysite.com`.
 2. Go to your domain registrar and add a new record to your DNS of type "CNAME".
-3. Configure these values: 
+3. Configure these values:
     - **Name**: `<subdomain_name>.yourdomain.com`
     - **Value**:  The Domain Name value from CloudFront
-4. Save your record. This might take some time to take effect, depending on your TTL settings. 
-5. Make a `curl` request to your domain to verify that the proxy works. 
+4. Save your record. This might take some time to take effect, depending on your TTL settings.
+5. Make a `curl` request to your domain to verify that the proxy works.
 
 
 
@@ -97,5 +103,3 @@ To add a CNAME record to your DNS settings:
    - **Value**: Tracking API CloudFront Distribution Domain Name
 3. Save your record. This might take some time to take effect, depending on your TTL settings.
 4. Run `curl` on your domain to check if the proxy is working correctly.
-
-

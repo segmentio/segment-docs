@@ -1,5 +1,5 @@
 ---
-title: Ripe Destination (Actions)
+title: Ripe Web (Actions) Destination
 hide-boilerplate: true
 hide-dossier: true
 id: 63913b2bf906ea939f153851
@@ -29,8 +29,8 @@ Ripe provides the following benefits:
 
 
 1. From the Segment web app, navigate to **Connections > Catalog**, then click the **Destinations** tab at the top of the catalog.
-2. Search for *Ripe* in the left navigation, and click it.
-3. Click **Configure Ripe**.
+2. Search for *Ripe Device Mode (Actions)* in the left navigation, and click it.
+3. Click **Configure Ripe Device Mode (Actions)**.
 4. Select an existing Source to connect to Ripe (Actions).
 5. Enter your Ripe API key in the API key field.
 
@@ -106,20 +106,6 @@ analytics.page('Home')
 ```
 
 Segment sends Page calls to Ripe as a `pageview` event.
-
-### Alias
-
-Connects a new unique id to an existing identified user.
-
-If you aren't familiar with the Segment Spec, take a look at
-the [Alias method documentation](/docs/connections/spec/alias/) to learn about
-what it does. An example call would look like:
-
-```js
-analytics.alias('507f191e81')
-```
-
-Segment sends Page calls to Ripe as a `alias` event.
 
 ### Segment session
 

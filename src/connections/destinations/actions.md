@@ -64,6 +64,9 @@ To set up a new Actions-framework destination for the first time:
     You can choose **Quick Setup** to use the default mappings, or choose **Customized Setup** (if available) to create new mappings and conditions from a blank state. You can always edit these mappings later.
 7. Once you're satisfied with your mappings, click **Create Destination**.
 
+> info ""
+> At least one mapping to handle a connected source's event(s) must be configured and enabled in an Actions-framework destination in order for data to be sent downstream.
+
 ## Migrate a classic destination to an actions-based destination
 
 {% include content/ajs-upgrade.md %}
@@ -93,6 +96,14 @@ To delete a destination action: click the action to select it, and click **Delet
 
 This takes effect within minutes, and removes the action completely. Any data that would have gone to the destination is not delivered. Once deleted, the saved action cannot be restored.
 
+## Test a destination action
+To test a destination action, follow the instructions in [Testing Connections](/docs/connections/test-connections/). You must enable a mapping in order to test the destination. Otherwise, this error occurs: *You may not have any subscriptions that match this event.*
+
+You can also test within the mapping itself. To test the mapping:
+1. Navigate to the **Mappings** tab of your destination. 
+2. Select a mapping and click the **...** and select **Edit Mapping**. 
+3. In step 2 of the mappings edit page, click **Load Test Event from Source** to add a test event from the source, or you can add your own sample event. 
+4. Scroll to step 4 on the page, and click **Test Mapping** to test the mapping and view the response from the destination. 
 
 ## Customize mappings
 
@@ -116,6 +127,12 @@ If necessary, click **New Mapping** to create a new, blank action.
 
 > info ""
 > The required fields for a destination mapping appear automatically. Click the + sign to see optional fields.
+
+### Coalesce function
+
+The coalesce function takes a primary value and uses it if it is available. If the value isn't available, the function uses the fallback value instead. 
+
+
 
 ### Conditions
 

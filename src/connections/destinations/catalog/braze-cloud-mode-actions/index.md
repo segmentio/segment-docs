@@ -7,7 +7,7 @@ redirect_from:
 id: 60f9d0d048950c356be2e4da
 versions:
   - name: 'Braze Web Mode (Actions)'
-    link: '/docs/connections/destinations/catalog/braze-web-mode-actions'
+    link: '/docs/connections/destinations/catalog/braze-web-device-mode-actions/'
   - name: 'Braze (Classic)'
     link: '/docs/connections/destinations/catalog/braze'
 ---

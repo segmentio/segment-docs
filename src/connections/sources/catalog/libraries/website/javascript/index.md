@@ -331,7 +331,7 @@ The Analytics.js utility methods help you change how Segment loads on your page.
 - [Debug](#debug)
 - [On (Emitter)](#emitter)
 - [Timeout](#extending-timeout)
-- [Reset (Logout)](#reset-or-logout)
+- [Reset (Logout)](#reset-or-log-out)
 
 ### Load
 
@@ -392,7 +392,7 @@ The `ready` method has the following fields:
 
 ### Debug
 
-Calling the `debug` method turns on debug mode, which logs helpful messages to the console. Refresh the page after you invoke `debug` to see the messages.
+Calling the `debug` method turns on debug mode, which logs helpful messages to the console. Subsequent Segment events generate messages in the developer console after you invoke `debug`.
 
 Enable:
 ```js
@@ -770,7 +770,10 @@ Segment loads the libraries required for your **enabled** Destinations. When you
 
 Using Analytics.js doesn't offer a large performance benefit, but is more performant than installing each of the destinations individually. And as more destinations move to accept data directly from Segment, you'll receive more performance benefits automatically.
 
-One option, if you don't want to use any bundled third-party tools, is to use the browserify'd [analytics-node](https://github.com/segmentio/analytics-node) package. <!-- TODO LR note: WTF does "browserified" mean-->
+One option, if you don't want to use any bundled third-party tools, is to use the [Analytics-Node](https://github.com/segmentio/analytics-node) package. 
+
+> info ""
+> Analytics.js doesn't set third-party cookies and only sets first-party cookies. 
 
 ### Bundle size
 

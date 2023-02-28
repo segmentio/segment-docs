@@ -146,3 +146,7 @@ You can also unload data to a s3 bucket and then load the data into another Reds
 ### Can I use an SSH tunnel to connect to my Redshift instance?
 
 Segment does not currently support SSH tunneling to Redshift. You can usually allow Segment's ETL to write to Redshift without leaving the cluster available to other connections by using IP level restrictions.
+
+### Do you support Redshift Serverless?
+
+Segment does not currently support Serverless Redshift. While you can set up the connection in the Segment app, Segment does not have the functionality to query Redshift's SYS tables.

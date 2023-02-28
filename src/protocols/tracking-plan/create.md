@@ -71,6 +71,8 @@ You can apply `key:value` labels to each event to help organize your tracking pl
 For consistency purposes, it's best that you create a standard way of labeling events and share it with all parts of your organization that will use Segment.
 
 ![](./images/labels.png)
+> info ""
+> **Note:** Tracking Plan Labels are only available for Track and Page events. 
 
 ### Filter track calls in the Tracking Plan
 You can filter the Tracking Plan events by keyword or by label. The applied filter generates a permanent link so you can share specific events with teammates. Label filters also persist after you leave the Tracking Plan.
