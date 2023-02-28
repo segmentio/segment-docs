@@ -1,6 +1,6 @@
 ---
 title: Engage Events Source
-plan: engage-foundations
+plan: engage-premier
 ---
 
 Use the Engage Events Source to sync Engage subscription states to downstream Destinations.
