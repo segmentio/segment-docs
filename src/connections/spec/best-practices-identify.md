@@ -162,7 +162,7 @@ You'll notice the `identify` call contains no `userId`. These traits will be ass
 
 ## Full User Registration 
 
-An anonymous visitor registers for an account and becomes a known user. The account creation process allows you to assign a `userId` from your production database, as well as capture additional traits. For this example, the `userId` that is assigned is "123abc". This is when you'll want to fire an `identify` call with this user's newly assigned `userId` and additional traits.
+An anonymous visitor registers for an account and becomes a known user. The account creation process allows you to assign a `userId` from your production database and capture additional traits. For this example, the `userId` that is assigned is "123abc". This is when you'll want to fire an `identify` call with this user's newly assigned `userId` and additional traits.
 
 ```js
 analytics.identify(`123abc`,{
