@@ -12,7 +12,7 @@ When you have Segment installed, you can use your existing tracking implementati
 
 ## Getting started
 
-Before you connect Segment to Google Analytics 4, configure a Google Analytics 4 property in your Analytics account. For more information, see Google's article: [Set up Analytics for a website and/or app](https://support.google.com/analytics/answer/9304153){:target='_blank'}.
+Before you connect Segment to Google Analytics 4 Web, configure a Google Analytics 4 property in your Analytics account. For more information, see Google's article: [Set up Analytics for a website and/or app](https://support.google.com/analytics/answer/9304153){:target='_blank'}.
 
 To add the Google Analytics 4 Web destination: 
 
@@ -29,9 +29,9 @@ To add the Google Analytics 4 Web destination:
 
 ### Custom Event Naming
 
-Google Analytics 4 does not accept custom event names that include spaces. Segment replaces spaces in the Event Name in the Custom Event action with an underscore. As a result, you will see custom events snakecased in Google Analytics 4.
+Google Analytics 4 does not accept custom event names that include spaces. Segment replaces spaces in the Event Name in the Custom Event action with an underscore. As a result, you will see custom events snake cased in Google Analytics 4.
 
-Google Analytics 4 is also case sensitive. If you would like all event names lowercased, use the `Lowercase Event Name` setting in the Custom Event action. If this setting is disabled, Google will treat event names with different casing as distinct events. For more information, see [Google Analytics 4 Event name rules](https://support.google.com/analytics/answer/10085872?hl=en&ref_topic=9756175#event-name-rules&zippy=%2Cin-this-article.%2Cin-this-article){:target="_blank"}.
+Google Analytics 4 is also case sensitive. If you would like all event names to be lowercase, use the `Lowercase Event Name` setting in the Custom Event action. If this setting is disabled, Google will treat event names with different casing as distinct events. For more information, see [Google Analytics 4 Event name rules](https://support.google.com/analytics/answer/10085872?hl=en&ref_topic=9756175#event-name-rules&zippy=%2Cin-this-article.%2Cin-this-article){:target="_blank"}.
 
 ### Custom Dimensions & Metrics
 
@@ -39,7 +39,7 @@ With Google Analytics 4, you must create custom dimensions and metrics within th
 
 ### Debug Mode
 
-The Google Analytics 4 [debug mode](https://support.google.com/analytics/answer/7201382?hl=en){:target="_blank"} is supported. DebugView dispalys the events and user properties that Analytics collects from a user in real time. 
+The Google Analytics 4 [debug mode](https://support.google.com/analytics/answer/7201382?hl=en){:target="_blank"} is supported. DebugView displays the events and user properties that Analytics collects from a user in real time. 
 
 To validate your implementation, check users and events on the Events report and User Explorer.
 
