@@ -72,7 +72,7 @@ By default, Segment includes identity graph updates, external ID mapping tables,
 
 ### Step 3: Materialize key views using a SQL automation tool
 
-To start seeing unified profiles in your warehouse and build attribution models, you'll need to materialize the tables landed by Profile Sync into three key views:
+To start seeing unified profiles in your warehouse and build attribution models, you'll need to materialize the tables that Profiles Sync lands into three key views:
 
   * `id_graph`:  shows the current state of relationships between segment ids
   * `external_id_mapping`: current-state mapping between each external identifier you’ve observed and its corresponding, fully-merged `canonical_segment_id`
