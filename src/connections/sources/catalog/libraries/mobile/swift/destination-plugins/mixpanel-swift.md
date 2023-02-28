@@ -2,7 +2,7 @@
 title: Analytics Swift Mixpanel Plugin
 strat: swift
 ---
-[Mixpanel](https://mixpanel.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) is an event tracking and segmentation platform for your web and mobile apps. By analyzing the actions your users perform, you can gain a better understanding to drive retention, engagement, and conversion. The client-side Mixpanel Destination code is open-source.
+[Mixpanel](https://mixpanel.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) is an event-tracking and segmentation platform for your web and mobile apps. By analyzing the actions your users perform, you can gain a better understanding to drive retention, engagement, and conversion. The client-side Mixpanel Destination code is open-source.
 
 Segment's Mixpanel destination plugin code is open source and available on GitHub. You can view it [here.](https://github.com/segment-integrations/analytics-swift-mixpanel)
 
@@ -19,14 +19,14 @@ Segment's Mixpanel destination plugin code is open source and available on GitHu
 
 ***Note:** the Mixpanel library itself will be installed as an additional dependency.*
 
-### via Xcode
-In the Xcode `File` menu, click `Add Packages`.  You'll see a dialog where you can search for Swift packages.  In the search field, enter the URL to this repo.
+### through Xcode
+In the Xcode `File` menu, click `Add Packages`.  You'll see a dialog where you can search for Swift packages.  In the search field, enter the URL to this repository.
 
-https://github.com/segment-integrations/analytics-swift-mixpanel
+https://github.com/segment-integrations/analytics-swift-mixpanel{:target="_blank"}
 
 You'll then have the option to pin to a version, or specific branch, as well as which project in your workspace to add it to.  Once you've made your selections, click the `Add Package` button.  
 
-### via Package.swift
+### through Package.swift
 
 Open your Package.swift file and add the following do your the `dependencies` section:
 
@@ -126,7 +126,7 @@ To add people properties in Mixpanel before you know the user's unique database 
 Group calls are sent to Mixpanel if, **and only if**,
 
 1. The Group Identifier Traits setting has one or more traits saved in the destination settings for Mixpanel.
-   ![](images/mixpanel-group-id-traits.png)
+   ![Group ID Traits](images/mixpanel-group-id-traits.png)
 2. You have created a group key of the same name in your Mixpanel [project settings](https://help.mixpanel.com/hc/en-us/articles/360025333632-Group-Analytics#implementation){:target="_blank"}.
 3. A Group trait with the same name as one of the configured Group Identifier Traits is sent with the group call.
 

@@ -8,8 +8,8 @@ strat: swift
 
 If you're using a different mobile library such as Analytics-iOS, follow these steps to migrate to the Analytics-Swift library:
 
-> success ""
-> Segment no longer supports installing Analytics-Swift via Cocoapods.
+> warning ""
+> Segment no longer supports installing Analytics-Swift through Cocoapods.
 
 1. Create a Swift Source in Segment.
     1. Go to **Connections > Sources > Add Source**.

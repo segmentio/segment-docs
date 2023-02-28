@@ -25,7 +25,7 @@ SEGTypewriterAnalytics.orderCompleted(
   total: 39.99
 )
 ```
-These generated clients are embedded with metadata from your Tracking Plan, which contextualizes your analytics instrumentation, and reduces (or entirely eliminates!) incorrect instrumentations in your production environments. In your editor, you can access event names, descriptions, property names, types and more:
+These generated clients are embedded with metadata from your Tracking Plan, which contextualizes your analytics instrumentation, and reduces or eliminates incorrect instrumentations in your production environments. In your editor, you can access event names, descriptions, property names, types and more:
 
 ![Event name intellisense](images/typewriter-event-names.png)
 

@@ -21,6 +21,7 @@ Aampe
 adset
 Adwords
 Aircall
+Airdat(?:e|es)
 allowlist
 Amberflo
 API(:?s)
@@ -36,17 +37,21 @@ blocklist
 Bluedot
 bool
 boolean
+Braze's
 Breyta
 Chargebee
 chatbot
 cli
 CloudFront
 Cocoapods
+comScore
 Contentful
+Cordova
 Criteo
 csv
 Databricks
 datetime
+debouncing
 deeplink
 Dev
 Doubleclick
@@ -95,6 +100,7 @@ Marketo
 Matcha
 matchers
 measurability
+Metrix
 middleware
 Middleware
 Mixpanel
@@ -117,6 +123,7 @@ performant
 Pinterest
 Pipedrive
 Preact
+Proguard
 Qualtrics
 reformat(:?s)
 Responsys

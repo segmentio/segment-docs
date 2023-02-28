@@ -59,9 +59,9 @@ analytics.screen("ScreenName", buildJsonObject {
 });
 ```
 
-Our integration also supports using Segment `screen` events as `track` events. For example, if you had a `screen` event named `Confirmation` you could map the invocation of this to a Facebook app event as you would with Segment `track` events.
+This integration also supports using Segment `screen` events as `track` events. For example, if you had a `screen` event named `Confirmation` you could map the invocation of this to a Facebook app event as you would with Segment `track` events.
 
-To use this functionality you must opt into it using the integration setting named **Use Screen Events as Track Events**. Once enabled, you should start seeing `screen` events populate in Facebook App Events. The screen name you provide will be bookended with the words **Viewed** and **Screen**. So, if you have a `screen` event with the name property set to `Welcome`, it will show up in Facebook as an event called **Viewed Welcome Screen**.
+To use this functionality you must opt into it using the integration setting named **Use Screen Events as Track Events**. Once enabled, you should start seeing `screen` events populate in Facebook App Events. The screen name you provide will be wrapped with the words **Viewed** and **Screen**. So, if you have a `screen` event with the name property set to `Welcome`, it will show up in Facebook as an event called **Viewed Welcome Screen**.
 
 ## Track
 
@@ -74,15 +74,15 @@ analytics.track("View Product", buildJsonObject {
 });
 ```
 
-When you call `track` Segment automatically sends that event and it's properties to Facebook. In the Facebook analytics interface you'll be able to use the event properties to segment your data.
+When you call `track` Segment sends that event and it's properties to Facebook. In the Facebook analytics interface you'll be able to use the event properties to segment your data.
 
-Facebook App Events doesn't like events with periods in the name so if you send us an event with periods in the name, we'll convert all periods to underscores. So if your event is `friend.added`, we'll send that to Facebook as `friend_added`. We also truncate events that are longer than 40 characters long due to Facebook's API constraints.
+Segment truncates events that are longer than 40 characters long due to Facebook's API constraints.
 
 ### Facebook Parameters
 
-We automatically translate our [spec'd properties](/docs/connections/spec/track/#properties) `revenue` and `currency` to the appropriate Facebook parameters (`valueToSum` and `FBSDKAppEventParameterNameCurrency`), and also send events with revenue to Facebook's purchase logging method (`logPurchase`).
+Segment translates the [spec-matching properties](/docs/connections/spec/track/#properties) `revenue` and `currency` to the appropriate Facebook parameters (`valueToSum` and `FBSDKAppEventParameterNameCurrency`), and also send events with revenue to Facebook's purchase logging method (`logPurchase`).
 
-If you don't provide a `currency` explicitly, we send `USD`. If any properties don't match the below, we'll pass them on as they were sent to us.
+If you don't provide a `currency` explicitly, Segment sends `USD`. If any properties don't match the below, Segment passes them as they were sent.
 
 <table>
   <tr>
@@ -91,7 +91,7 @@ If you don't provide a `currency` explicitly, we send `USD`. If any properties d
   </tr>
   <tr>
     <td>**Currency**</td>
-    <td>fb_currency</td>
+    <td>`fb_currency`</td>
   </tr>
 </table>
 
@@ -111,13 +111,6 @@ You can manually change the Data Processing parameters by adding settings to the
 ## Troubleshooting
 
 ### Not seeing events?
-
-You will have to be sure that the [IDFA](/docs/connections/sources/catalog/libraries/mobile/ios/#idfa) is working within your app, which involves adding the [iAD framework](/docs/connections/sources/catalog/libraries/mobile/ios/#idfa).
-
-Once you've added these, you will start to see the `context.device.advertisingId` populate and the `context.device.adTrackingEnabled` flag set to `true` unless the user has ad tracking limited or is using a mobile ad blocker.
-
-> note ""
-> While the network is deprecated, the relevant iOS [framework](https://developer.apple.com/reference/iad) is not.
 
 Facebook requires that payloads include the following:
 - `context.device.id`
