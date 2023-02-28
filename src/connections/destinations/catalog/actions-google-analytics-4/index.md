@@ -26,7 +26,7 @@ The Google Analytics 4 destination provides the following benefits:
 
 ## Getting started
 
-Before you connect Segment to Google Analytics 4 Cloud, configure a Google Analytics 4 property in your Analytics account. For more information, see Google's article: [Set up Analytics for a website and/or app](https://support.google.com/analytics/answer/9304153){:target='_blank'}.
+Before you connect Segment to Google Analytics 4, configure a Google Analytics 4 property in your Analytics account. For more information, see Google's article: [Set up Analytics for a website and/or app](https://support.google.com/analytics/answer/9304153){:target='_blank'}.
 
 To add the Google Analytics 4 Cloud destination:
 
