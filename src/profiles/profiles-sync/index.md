@@ -78,7 +78,7 @@ To start seeing unified profiles in your warehouse and build attribution models,
   * `external_id_mapping`: current-state mapping between each external identifier you’ve observed and its corresponding, fully-merged `canonical_segment_id`
   * `profile_traits`: the last seen value for all custom traits, computed traits, SQL traits, audiences, and journeys associated with a profile in a single row
 
-Please visit the [Tables you materialize](https://segment.com/docs/profiles/profiles-sync/tables/#tables-you-materialize) section of our Profile Sync docs for more inforamation on how to materialize these views either on your own, or with [Segment's open source dbt models](https://github.com/segmentio/profiles-sync-dbt)
+Please visit [Tables you materialize](/docs/profiles/profiles-sync/tables/#tables-you-materialize) for more on how to materialize these views either on your own, or with [Segment's open source dbt models](https://github.com/segmentio/profiles-sync-dbt){:target="blank"}
 
 
 
