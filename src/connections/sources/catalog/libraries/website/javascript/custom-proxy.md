@@ -57,7 +57,25 @@ A Segment Customer Success team member will respond that they have enabled this 
 
 
 ## Custom CDN / API Proxy
-### [`npm`](https://www.npmjs.com/package/@segment/analytics-next) library-users instructions
+
+### Snippet instructions
+If you're a snippet user, you need to modify the [analytics snippet](/docs/getting-started/02-simple-install/#step-1-copy-the-snippet) that's inside your `<head>`. 
+
+To proxy settings and destination requests that typically go to `http://cdn.segment.com`, replace: 
+```diff
+- t.src="https://cdn.segment.com/analytics.js/v1/" + key + "/analytics.min.js"
++ t.src="https://MY-CUSTOM-CDN-PROXY.com" + key + "/analytics.min.js"
+```
+
+To proxy tracking calls that typically go to `api.segment.io/v1`, replace:
+```diff
+- analytics.load("<MY_WRITE_KEY>")
++ analytics.load("<MY_WRITE_KEY>", { integrations: { "Segment.io": { apiHost:  "MY-CUSTOM-API-PROXY.com" }}})
+```
+
+### npm instructions
+See the [`npm` library-users instructions](https://www.npmjs.com/package/@segment/analytics-next){:target="_blank"} for more information.
+
 Proxy settings and destination requests that typically go to `http://cdn.segment.com` through a custom proxy.
 
 ```ts
@@ -88,22 +106,6 @@ const analytics = AnalyticsBrowser.load(
     }
   )
 ```
-
-### Snippet instructions
-If you're a snippet user, you need to modify the [analytics snippet](/docs/getting-started/02-simple-install/#step-1-copy-the-snippet) that's inside your `<head>`. 
-
-To proxy settings and destination requests that typically go to `http://cdn.segment.com`, replace: 
-```diff
-- t.src="https://cdn.segment.com/analytics.js/v1/" + key + "/analytics.min.js"
-+ t.src="https://MY-CUSTOM-CDN-PROXY.com" + key + "/analytics.min.js"
-```
-
-To proxy tracking calls that typically go to `api.segment.io/v1`, replace:
-```diff
-- analytics.load("<MY_WRITE_KEY>")
-+ analytics.load("<MY_WRITE_KEY>", { integrations: { "Segment.io": { apiHost:  "MY-CUSTOM-API-PROXY.com" }}})
-```
-
 
 ## CloudFront
 
