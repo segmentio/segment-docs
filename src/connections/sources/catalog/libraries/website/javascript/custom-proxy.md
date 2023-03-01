@@ -57,7 +57,7 @@ A Segment Customer Success team member will respond that they have enabled this 
 
 
 ## Custom CDN / API Proxy
-
+### [`npm`](https://www.npmjs.com/package/@segment/analytics-next) library-users instructions
 Proxy settings and destination requests that typically go to `http://cdn.segment.com` through a custom proxy.
 
 ```ts
