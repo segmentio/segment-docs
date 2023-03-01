@@ -5,7 +5,7 @@ hide-boilerplate: true
 hide-dossier: false
 id: 63ed446fe60a1b56c5e6f130
 versions:
-  - name: "Google Analytics 4 Cloud Mode"
+  - name: "Google Analytics 4 Cloud"
     link: '/docs/connections/destinations/catalog/actions-google-analytics-4/'
 ---
 
