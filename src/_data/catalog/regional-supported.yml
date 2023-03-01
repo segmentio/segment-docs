@@ -1475,14 +1475,6 @@ destinations:
     endpoints:
       - us
       - eu
-  - id: 63872c01c0c112b9b4d75412
-    display_name: Braze Cohorts
-    slug: actions-braze-cohorts
-    url: connections/destinations/catalog/actions-braze-cohorts
-    regions:
-      - us
-    endpoints:
-      - us
   - id: 60fb01aec459242d3b6f20c1
     display_name: Braze Web Device Mode (Actions)
     slug: braze-web-device-mode-actions
