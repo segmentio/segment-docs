@@ -4,26 +4,31 @@ strat: google
 hide-boilerplate: true
 hide-dossier: false
 id: 63ed446fe60a1b56c5e6f130
+versions:
+  - name: "Google Analytics 4 Cloud Mode"
+    link: '/docs/connections/destinations/catalog/actions-google-analytics-4/'
 ---
+
+{% include content/plan-grid.md name="actions" %}
+
 [Google Analytics 4](https://support.google.com/analytics/answer/10089681){:target="_blank"} is Google's new Analytics property, which you can use for both websites and applications. Google Analytics 4 has machine learning at its core to help surface insights and give you a more complete understanding of your customers across devices and platforms. 
 
-When you have Segment installed, you can use your existing tracking implementation to fulfill your data collection needs with Google Analytics 4. When you use the Google Analytics 4 Web destination, Segment loads the [gtag javascript library](https://support.google.com/analytics/answer/9310895?hl=en#zippy=%2Cin-this-article) for you. 
-
+When you have Segment installed, you can use your existing tracking implementation to fulfill your data collection needs with Google Analytics 4. When you use the Google Analytics 4 Web destination, Segment loads the [gtag.js library](https://support.google.com/analytics/answer/9310895?hl=en#zippy=%2Cin-this-article){:target="_blank"}  for you. 
 
 ## Getting started
 
-Before you connect Segment to Google Analytics 4, configure a Google Analytics 4 property in your Analytics account. For more information, see Google's article: [Set up Analytics for a website and/or app](https://support.google.com/analytics/answer/9304153){:target='_blank'}.
+Before you connect Segment to Google Analytics 4, configure a Google Analytics 4 property in your Analytics account. For more information, see Google's article [Set up Analytics for a website and/or app](https://support.google.com/analytics/answer/9304153){:target='_blank'}.
 
-To add the Google Analytics 4 Web destination: 
+To connect the Google Analytics 4 Web destination: 
 
 1. From the Segment web app, click **Catalog**, then click **Destinations**.
 2. Search for “Google Analytics 4 Web” in the Destinations Catalog, and select the destination.
-3. Click **Configure Google Analytics 4 Web** in the top-right corner of the screen.
-4. Select the source that will send data to Google Analytics 4 and follow the steps to name your destination.
-5. On the **Settings** tab, under **Basic Settings**, enter in the [Measurement ID](https://support.google.com/analytics/answer/9539598){:target='_blank'} associated with your GA4 Data stream.
+3. Click **Configure Google Analytics 4 Web**.
+4. Select the web source that will send data to Google Analytics 4 and follow the steps to name your destination. The web source chosen must use [Analytics.js 2.0](/docs/connections/sources/catalog/libraries/website/javascript/){:target='_blank'}.
+5. On the **Settings** tab, under **Basic Settings**, enter in the [Measurement ID](https://support.google.com/analytics/answer/9539598){:target='_blank'} associated with your GA4 web stream.
 6. Follow the steps in the Destinations Actions documentation on [Customizing mappings](/docs/connections/destinations/actions/#customizing-mappings).
 
-{% include components/actions-fields.html %}
+{% include components/actions-fields.html settings="true"%}
 
 ## FAQ & Troubleshooting
 
@@ -39,8 +44,4 @@ With Google Analytics 4, you must create custom dimensions and metrics within th
 
 ### Debug Mode
 
-The Google Analytics 4 [debug mode](https://support.google.com/analytics/answer/7201382?hl=en){:target="_blank"} is supported. DebugView displays the events and user properties that Analytics collects from a user in real time. 
-
-To validate your implementation, check users and events on the Events report and User Explorer.
-
-
+The Google Analytics 4 [debug mode](https://support.google.com/analytics/answer/7201382?hl=en){:target="_blank"} is supported with the Google Analytics 4 Web destination. DebugView displays the events and user properties that Analytics collects from a user in real-time. This can be helpful in troubleshooting your implementation.
