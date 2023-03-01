@@ -103,3 +103,8 @@ To add a CNAME record to your DNS settings:
    - **Value**: Tracking API CloudFront Distribution Domain Name
 3. Save your record. This might take some time to take effect, depending on your TTL settings.
 4. Run `curl` on your domain to check if the proxy is working correctly.
+
+
+#### Custom Proxy and Analtyics 2.0
+
+See our documenation on [using a custom proxy](https://segment.com/docs/connections/sources/catalog/libraries/website/javascript/upgrade-to-ajs2/#using-a-custom-proxy) for files you'll need to consider in your custom proxy configuration after upgrading to Analytics 2.0. 
