@@ -131,6 +131,7 @@ Here's a list of Segment Transformations with some use case examples.
     fqlDefinedProperties": [{"fql": "lowercase(properties.prop1)", "propertyName": "properties.prop2"}]
     ```
   - Note that you can only assign one property to `fqlDefinedProperties` array.
+  - Note that you cannot use `fqlDefinedProperties` along with event or property rename/property value transformations.
 
 > info ""
 > Segment displays an error if the following property conflicts occur:
