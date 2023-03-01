@@ -13,7 +13,7 @@ Segment's Braze Cohorts destination syncs Engage audiences to Braze as cohorts. 
 > info ""
 > The Braze Cohorts destination is in beta and is in active development. Some functionality may change before it becomes generally available.
 
-## Getting Started
+## Getting started
 
 Before connecting to the Braze Cohorts destination, you must have a [Braze](https://dashboard-01.braze.com/sign_in){:target="_blank"} account and an Ad Account ID.
 
