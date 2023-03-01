@@ -34,7 +34,7 @@ Use the OneTrust integration to define the events to be sent to Segment These ev
 
 ## Event Properties
 
-The QuaOneTrustltrics integration allows you to define event properties within the following constraints:
+The OneTrust integration allows you to define event properties within the following constraints:
 
 - Use `Track` events to define the `properties` object
 - Use `Identify` events to define the `traits` object
