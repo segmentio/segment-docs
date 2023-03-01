@@ -1,5 +1,5 @@
 ---
-title: 'Braze Cohorts Destination'
+title: Braze Cohorts Destination
 id: 63872c01c0c112b9b4d75412
 hide-personas-partial: true
 hide-boilerplate: true
