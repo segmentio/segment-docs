@@ -160,7 +160,7 @@ To edit the common JSON schema using the Public API, you'll need to add your new
 > info ""
 > [Negative lookahead regexes (`?!`)](https://www.regular-expressions.info/lookaround.html) aren't supported. This means you can't use regex to prevent matches with a specific following character or expression. But, you can use `not` in the regex of your JSON schema to generate violations when a property key or value doesn't match the provided regex pattern.
 
-> info ""
+> info "Specifying data type"
 > **Specifyig data type:** Property or trait data type should adhere to the data types defined by JSON schema [data types defined by JSON schema](https://json-schema.org/understanding-json-schema/reference/type.html). Data type names must be lower-cased as specified in JSON schema. Datetime properties should be represented as a `string` type with [`format` keyword](https://json-schema.org/understanding-json-schema/reference/string.html#format) (for example: "format": "date-time").
 
 ### Extend the Tracking Plan
