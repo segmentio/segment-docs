@@ -94,6 +94,6 @@ The Identify and Group CSV file contains the following columns:
   - Values are "planned" or "unplanned"
 
 > info ""
-> The schema export doesn't include actual values (for example, personal data) for the events, properties, and traits you are tracking for a specific source.
+> The exported schema doesn't include actual values (for example, personal data) for the events, properties, and traits you are tracking for a specific source.
 
 See the [Segment Schema Limits](/docs/connections/schema-unique-limits/) for more information on how to manage the Source Schema. 
