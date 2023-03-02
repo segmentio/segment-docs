@@ -17,7 +17,7 @@ The MoEngage Destination source code is open-sourced and freely available on Git
 
 Connection Mode | Maintained by | GitHub Link
 ---------|----------|---------
- iOS | MoEngage | [MoEngage-Segment-iOS](https://github.com/moengage/MoEngage-Segment-iOS){:target="_blank"}
+ iOS | MoEngage | [MoEngage-Segment-Swift](https://github.com/moengage/MoEngage-Segment-Swift){:target="_blank"}
  Android | MoEngage | [moengage-segment-integration](https://github.com/moengage/moengage-segment-integration){:target="_blank"}
  Web | Segment | [analytics.js-integrations](https://github.com/segmentio/analytics.js-integrations/tree/master/integrations/moengage){:target="_blank"}
 
@@ -79,56 +79,49 @@ analytics.reset();
 ## iOS
 
 
-To get started with MoEngage on iOS, first integrate your app with the [MoEngage-Segment-iOS](https://github.com/moengage/MoEngage-Segment-iOS){:target="_blank"} library. You can integrate MoEngage and Segment with [CocoaPods](http://cocoapods.org){:target="_blank"} or with Swift Package Manager.
+To get started with MoEngage on iOS, first integrate your app with the [MoEngage-Segment-Swift](https://github.com/moengage/MoEngage-Segment-Swift){:target="_blank"} library. You can integrate MoEngage and Segment with Swift Package Manager.
 
-  * Initialize pod with pod init command, this will create a podfile for your project.
-  * Update your podfile by adding pod '**Segment-MoEngage**' as shown below:
+> info ""
+> **Note:** This document covers the integration with [analytics-swift](https://github.com/segmentio/analytics-swift){:target="_blank"}, if you have integrated with [analytics-ios](https://github.com/segmentio/analytics-ios){:target="_blank"} refer [this documentation](https://partners.moengage.com/hc/en-us/articles/4409143473172-iOS-device-mode-){:target="_blank"} for details on how to integrate. 
 
-  ```ruby
-  use_frameworks!
-  pod 'Segment-MoEngage'
-  ```
-
-   * Update the pod.
-
-    pod update
-
-
- To install with SPM use the [MoEngage-Segment-iOS](https://github.com/moengage/MoEngage-Segment-iOS.git){:target="_blank"} library and set the branch as master or version as 7.0.0 and above.
+ To install with SPM use the [MoEngage-Segment-Swift](https://github.com/moengage/MoEngage-Segment-Swift.git){:target="_blank"} library and set the branch as master or version as 1.0.0 and above.
 
 ### Configure the Segment SDK:
 
-Navigate to the App Delegate file, and setup the Segment SDK:
-1. Import `SEGMoEngageIntegrationFactory.h` and `SEGMoEngageInitializer.h`.
-2. Initialize `MOSDKConfig` object and call `initializeDefaultInstance:` method of `SEGMoEngageInitializer`.
-3. Initialize `SEGMoEngageIntegrationFactory` instance to the `SEGAnalyticsConfiguration` as shown below:
+Now head to the App Delegate file, and setup the Segment SDK by
+1. Importing `Segment`, `Segment_MoEngage` and `MoEngageSDK`.
+2. Initialize `MoEngageSDKConfig` object and call `initializeDefaultInstance` method of `MoEngageInitializer`.
+3. Initialize `MoEngageDestination` as shown below:
 
- ```objc
- #import <SEGMoEngageIntegrationFactory.h>
- #import <SEGMoEngageInitializer.h>
- #import <SEGAnalytics.h>
+Under your Analytics-Swift library setup, add the MoEngage plugin using the `analytics.add(plugin: ...)` method. The MoEngage dashboard now tracks all of your events.
 
- - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+```
+let analytics = Analytics(configuration: Configuration(writeKey: "<YOUR WRITE KEY>")
+                    .flushAt(3)
+                    .trackApplicationLifecycleEvents(true))
+analytics.add(plugin: MoEngageDestination())
+```
+### Configure the MoEngage SDK:
 
-    //Initialize SDKConfig object and call initializeDefaultInstance: method of SEGMoEngageInitializer
-    MOSDKConfig* sdkConfig = [[MOSDKConfig alloc] initWithAppID:@"YOUR APP ID"];
-    [SEGMoEngageInitializer initializeDefaultInstance:sdkConfig];
-
-    // Add your configuration key from Segment
-    SEGAnalyticsConfiguration *config = [SEGAnalyticsConfiguration configurationWithWriteKey:@"configuration key"];
-
-    // Add MoEngageIntegrationFactory. Without this data will not come to MoEngage.
-    [config use:[SEGMoEngageIntegrationFactory instance]];
-    [SEGAnalytics setupWithConfiguration:config];
-  }
-  ```
+```swift
+ import Segment_MoEngage
+ import MoEngageSDK
+ ...
+ func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey:  Any]?) -> Bool {
+ ...
+ 
+     let sdkConfig = MoEngageSDKConfig(withAppID: "YOUR APP ID")
+     MoEngageInitializer.shared.initializeDefaultInstance(sdkConfig: sdkConfig)
+ ...
+ }
+ ```
 
 ### Tracking User Attribute
 
 [User attributes](https://developers.moengage.com/hc/en-us/articles/4403905883796-Tracking-user-attributes){:target="_blank"} are specific traits of a user, like email, username, mobile, gender etc. **identify** lets you tie a user to their actions and record traits about them. It includes a unique User ID and any optional traits you know about them.
 
- ```objc
- [[SEGAnalytics sharedAnalytics] identify:@"a user's id" traits:@{ @"email": @"a user's email address" }];
+ ```swift
+ Analytics.main.identify("a user's id", traits: @["email":"a user's email address"])
  ```
 
 Read more about [identify calls](/docs/connections/sources/catalog/libraries/mobile/ios/#identify).
@@ -138,8 +131,8 @@ Read more about [identify calls](/docs/connections/sources/catalog/libraries/mob
 
 Segment uses event tracking to track user behavior in an app. `track` calls let you record the actions your users perform. Every action triggers an "event", which can also have associated attributes.
 
- ```objc
- [[SEGAnalytics sharedAnalytics] track:@"Item Purchased" properties:@{ @"item": @"Sword of Heracles"}];
+ ```swift
+ Analytics.main.track("Item Purchased", properties: @["item":"Sword of Heracles"])
  ```
 
 Read more about [track calls](/docs/connections/sources/catalog/libraries/mobile/ios/#track).
@@ -149,8 +142,8 @@ Read more about [track calls](/docs/connections/sources/catalog/libraries/mobile
 
 The `reset` method clears the SDK's internal stores for the current user. This is useful for apps where users can log in and out with different identities over time.
 
- ```objc
- [[SEGAnalytics sharedAnalytics] reset];
+ ```swift
+ Analytics.main.reset()
  ```
 
 Read more about the [reset method](/docs/connections/sources/catalog/libraries/mobile/ios/#reset).
@@ -161,12 +154,12 @@ Read more about the [reset method](/docs/connections/sources/catalog/libraries/m
 Since your app might already be on the App Store, you must specify whether your app update would be an `UPDATE` or an `INSTALL`.
 To differentiate between those, use one of the method below:
 
- ```objc
+ ```swift
  //For new Install call following
- [[MoEngage sharedInstance] appStatus:AppStatusInstall];
+ MoEngageSDKAnalytics.sharedInstance.appStatus(.install)
 
  //For an app update call following
- [[MoEngage sharedInstance] appStatus:AppStatusUpdate];
+ MoEngageSDKAnalytics.sharedInstance.appStatus(.update)
  ```
 
 Read more on [install/update differentiation](https://developers.moengage.com/hc/en-us/articles/4403910297620){:target="_blank"}.
@@ -184,21 +177,24 @@ Push Notifications are a great way to keep your users engaged and informed about
 
 **Segment Push Implementation:**
 
-1. Follow the directions to register for push notifications [with the Segment SDK](/docs/connections/sources/catalog/libraries/mobile/ios/#how-do-i-use-push-notifications).
+1. In your application's application:didRegisterForRemoteNotificationsWithDeviceToken: method, add the following:
+  ```swift
+   Analytics.main.registeredForRemoteNotifications(deviceToken: deviceToken)
+  ```
 
 2. In your application's application:didReceiveRemoteNotification: method, add the following:
-  ```objc
-  [[SEGAnalytics sharedAnalytics] receivedRemoteNotification:userInfo];
+  ```swift
+  Analytics.main.receivedRemoteNotification(userInfo: userInfo)
   ```
 
 3. If you integrated the application:didReceiveRemoteNotification:fetchCompletionHandler: in your app, add the following to that method:
-  ```objc
-  [[SEGAnalytics sharedAnalytics] receivedRemoteNotification:userInfo];
+  ```swift
+  Analytics.main.receivedRemoteNotification(userInfo: userInfo)
   ```
 
 4. If you implemented handleActionWithIdentifier:forRemoteNotification:, add the following to that method:
-  ```objc
-  [[SEGAnalytics sharedAnalytics] handleActionWithIdentifier:identifier forRemoteNotification:userInfo];
+  ```swift
+  Analytics.main.handleAction(identifier: identifier, userInfo: userInfo)
   ```
 
 **MoEngage Push Implementation:**
@@ -224,16 +220,19 @@ For more info on using **Segment for iOS** refer to [**Developer Docs**](/docs/c
 
 To use MoEngage in an Android app, you must perform the following steps to set up your environment.
 
-![MavenBadge](https://maven-badges.herokuapp.com/maven-central/com.moengage/moengage-segment-integration/badge.svg)
+![MavenBadge](https://maven-badges.herokuapp.com/maven-central/com.moengage/moengage-segment-kotlin-destination/badge.svg)
 
 To enable the full functionality of MoEngage (like Push Notifications, InApp Messaging), complete the following steps in your Android app.
+
+> info ""
+> **Note:** This document covers the integration with [analytics-kotlin](https://github.com/segmentio/analytics-kotlin){:target="_blank"}, if you have integrated with [analytics-android](https://github.com/segmentio/analytics-android){:target="_blank"} refer [this documentation](https://partners.moengage.com/hc/en-us/articles/4409143473172-iOS-device-mode-){:target="_blank"} for details on how to integrate. 
 
 ### Adding the MoEngage Dependency
 
 Along with the Segment dependency, add the below dependency in your `build.gradle` file.
 
 ```groovy
- implementation("com.moengage:moengage-segment-integration:$sdkVersion") {
+implementation("com.moengage:moengage-segment-kotlin-destination:$sdkVersion") {
         transitive = true
     }
 ```
@@ -254,16 +253,15 @@ Refer to the [SDK Configuration](https://developers.moengage.com/hc/en-us/articl
 After adding the dependency, you must register the integration with Segment SDK. To do this, import the MoEngage
  integration:
 
-```java
-import com.segment.analytics.android.integrations.moengage.MoEngageIntegration;
+```kotlin
+import com.segment.analytics.kotlin.destinations.moengage.MoEngageDestination
 ```
 
 Add the following line:
 
-```java
-Analytics analytics = new Analytics.Builder(this, "write_key")
-                .use(MoEngageIntegration.FACTORY)
-                .build();
+```kotlin
+Analytics("<YOUR WRITE KEY>", context)
+  .add(MoEngageDestination(application))
 ```
 
 
@@ -274,12 +272,12 @@ Copy the APP ID from the Settings Page `Dashboard --> Settings --> App --> Gener
 > info ""
 > **Note:** MoEngage recommend that you initialize the SDK on the main thread inside `onCreate()` and not create a worker thread and initialize the SDK on that thread.
 
-```java
-// this is the instance of the application class and "XXXXXXXXXXX" is the APP ID from the dashboard.
-MoEngage moEngage = new MoEngage.Builder(this, "XXXXXXXXXXX")
-            .enableSegmentIntegration()
-            .build();
-MoEngage.initialiseDefaultInstance(moEngage);
+```kotlin
+// this is the instance of the application class and "YOUR_APP_ID" is the APP ID from the dashboard.
+      val moEngage = MoEngage.Builder(this, "YOUR_APP_ID")
+          .enablePartnerIntegration(IntegrationPartner.SEGMENT)
+          .build()
+      MoEngage.initialiseDefaultInstance(moEngage)
 ```
 ### Exclude MoEngage Storage File from Auto-Backup
 Auto backup service of Android periodically backs up the Shared Preference file, Database files, and so on.
@@ -298,14 +296,14 @@ This is required for migrations to the MoEngage Platform so the SDK can determin
 
 If the user was already using your application and has just updated to a new version which has the MoEngage SDK, below is an example call:
 
-```java
- MoEAnalyticsHelper.INSTANCE.setAppStatus(context, AppStatus.UPDATE);
+```kotlin
+ MoEAnalyticsHelper.setAppStatus(context, AppStatus.UPDATE)
 ```
 
 If this is a fresh install:
 
-```java
-MoEAnalyticsHelper.INSTANCE.setAppStatus(context, AppStatus.INSTALL);
+```kotlin
+MoEAnalyticsHelper.setAppStatus(context, AppStatus.INSTALL)
 ```
 
 ## MoEngage Android SDK Features
@@ -325,13 +323,15 @@ Refer to the [MoEngage - NotificationConfig](https://moengage.github.io/android-
 Use the `configureNotificationMetaData()` to pass on the configuration to the SDK.
 
 
-```java
-MoEngage moEngage =
-        new MoEngage.Builder(this, "XXXXXXXXXX")
-            .configureNotificationMetaData(new NotificationConfig(R.drawable.small_icon, R.drawable.large_icon))
-            .enablePartnerIntegration(IntegrationPartner.SEGMENT)
-            .build();
-MoEngage.initialiseDefaultInstance(moEngage);
+```kotlin
+      val moEngage = MoEngage.Builder(this, "YOUR_APP_ID")
+          .enablePartnerIntegration(IntegrationPartner.SEGMENT)
+          .configureNotificationMetaData(NotificationConfig(
+              smallIcon = R.drawable.small_icon,
+              largeIcon = R.drawable.large_icon
+          ))
+          .build()
+      MoEngage.initialiseDefaultInstance(moEngage)
 ```
 
 #### Configuring Firebase Cloud Messaging
@@ -347,13 +347,16 @@ For showing Push notifications there are 2 important steps:
 
 To opt-out of MoEngage token registration mechanism disable token registration while configuring FCM in the `MoEngage.Builder` as shown below
 
-```java
-MoEngage moEngage = new MoEngage.Builder(this, "XXXXXXXXXX")
-            .configureNotificationMetaData(new NotificationConfig(R.drawable.small_icon, R.drawable.large_icon))
-            .configureFcm(FcmConfig(false))
-            .enablePartnerIntegration(IntegrationPartner.SEGMENT)
-            .build();
-MoEngage.initialiseDefaultInstance(moEngage);
+```kotlin
+      val moEngage = MoEngage.Builder(this, "YOUR_APP_ID")
+          .enablePartnerIntegration(IntegrationPartner.SEGMENT)
+          .configureNotificationMetaData(NotificationConfig(
+              smallIcon = R.drawable.small_icon,
+              largeIcon = R.drawable.large_icon
+          ))
+          .configureFcm(FcmConfig(false))
+          .build()
+      MoEngage.initialiseDefaultInstance(moEngage)
 ```
 
 ###### Pass the push token to the MoEngage SDK
@@ -361,8 +364,8 @@ MoEngage.initialiseDefaultInstance(moEngage);
 The Application must pass the Push Token received from FCM to the MoEngage SDK for the MoEngage platform to send out push notifications to the device.
 Use the below API to pass the push token to the MoEngage SDK.
 
-```java
-MoEFireBaseHelper.getInstance().passPushToken(getApplicationContext(), token);
+```kotlin
+MoEFireBaseHelper.getInstance().passPushToken(applicationContext,token)
 ```
 
 Please make sure token is passed to MoEngage SDK whenever push token is refreshed and on application update. Passing token on application update is important for migration to the MoEngage Platform.
@@ -372,12 +375,12 @@ Please make sure token is passed to MoEngage SDK whenever push token is refreshe
 To pass the push payload to the MoEngage SDK call the MoEngage API from the `onMessageReceived()` from the Firebase receiver.
 Before passing the payload to the MoEngage SDK you should check if the payload is from the MoEngage platform using the helper API provided by the SDK.
 
-```java
-if (MoEPushHelper.getInstance().isFromMoEngagePlatform(remoteMessage.getData())) {
-  MoEFireBaseHelper.getInstance().passPushPayload(getApplicationContext(), remoteMessage.getData());
-} else {
-  // your app's business logic to show notification
-}
+```kotlin
+if (MoEPushHelper.getInstance().isFromMoEngagePlatform(remoteMessage.data)) {
+    MoEFireBaseHelper.getInstance().passPushPayload(applicationContext, remoteMessage.data)
+ } else {
+    // your app's business logic to show notification
+ }
 ```
 
 ##### Push Registration and Receiving handled by SDK
