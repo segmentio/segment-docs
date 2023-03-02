@@ -93,7 +93,7 @@ Now head to the App Delegate file, and setup the Segment SDK by
 2. Initialize `MoEngageSDKConfig` object and call `initializeDefaultInstance` method of `MoEngageInitializer`.
 3. Initialize `MoEngageDestination` as shown below:
 
-Under your Analytics-Swift library setup, add the MoEngage plugin using `analytics.add(plugin: ...)` method. Now all your events will be tracked in MoEngage dashboard.
+Under your Analytics-Swift library setup, add the MoEngage plugin using the `analytics.add(plugin: ...)` method. The MoEngage dashboard now tracks all of your events.
 
 ```
 let analytics = Analytics(configuration: Configuration(writeKey: "<YOUR WRITE KEY>")
