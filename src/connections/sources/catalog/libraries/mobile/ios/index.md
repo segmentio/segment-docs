@@ -221,6 +221,8 @@ configuration.trackDeepLinks = YES;
 {% endcodeexampletab %}
 {% endcodeexample %}
 
+Please note that you'll still need to call the `continueUserActivity` and `openURL` methods on the analytics client.
+
 ### Flushing
 
 You can set the number of events that should queue before flushing. Setting this to `1` will send events as they come in (i.e. not send batched events) and will use more battery. `20` by default.
