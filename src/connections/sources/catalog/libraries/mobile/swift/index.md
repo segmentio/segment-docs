@@ -59,7 +59,7 @@ Analytics for Swift is built with extensibility in mind. Use the tools list belo
 - [Typewriter](/docs/connections/sources/catalog/libraries/mobile/swift/swift-typewriter)
 - [Destination filters](/docs/connections/sources/catalog/libraries/mobile/swift/swift-destination-filters)
 
-## Sample applications
+## Samples
 The code samples below demonstrate the implementation of common use cases of the Analytics Swift library across different platforms. 
 
 ### Sample applications
