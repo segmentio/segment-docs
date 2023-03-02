@@ -43,7 +43,7 @@ Once you block an event in Segment, Segment stops forwarding it to all of your D
 
 ## Export your Source Schema
 
-Segment allows users with Source View permissions to download Source Schemas as a CSV file, maximizing portability and access to event data. You can download a copy of your schema by visiting the Source Schema page. 
+Segment allows users with Source Read-only permissions to download Source Schemas as a CSV file, maximizing portability and access to event data. You can download a copy of your schema by visiting the Source Schema page. 
 
 > success ""
 > You can export Track, Identify, and Group Source Schemas.
