@@ -41,7 +41,6 @@ If you are using [multiple instances of a destination](/docs/connections/destina
 
 Note that destination flags are **case sensitive** and match the destination's name in the docs (for example, "AdLearn Open Platform", "awe.sm", or "MailChimp").
 
-Your data is sent to your warehouse (if you have one) regardless of what is in the integrations object.
 
 ## Destination filters
 
