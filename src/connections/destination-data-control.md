@@ -43,54 +43,53 @@ Once you block an event in Segment, Segment stops forwarding it to all of your D
 
 ## Export your Source Schema
 
-Segment allows users with Source View permission to download Source Schemas as a CSV file, maximizing portability and access to event data. You can download a copy of your schema by visiting the Source Schema page. Track, Identify, and Group events support Source Schema export.
+Segment allows users with Source View permissions to download Source Schemas as a CSV file, maximizing portability and access to event data. You can download a copy of your schema by visiting the Source Schema page. 
 
-<!-- Double check the perms-->
+> success ""
+> Track, Identify, and Group events support Source Schema export.
 
-> note "All events and properties are now included in the CSV file"
-> When you exporting the Source Schema, all events and properties are included in the CSV file regardless of the filters or search parameters currently applied to the Source Schema view. 
+### Download a CSV
 
 To download a Source Schema CSV file: 
 1. Sign into Segment and select a source.
 2. Click the **Schema** tab in the source header.
 3. On the Source Schema page, select an event type (Track, Identify, or Group)
-4. Click the **Download CSV** button. On the **Download CSV?** popup that appears, click **Download**. <br/> The filename for your Source Schema CSV is in the following format:<br/>`workspace-slug-source-slug-schema-type-yyyy-mm-dd-hh-mm`
-5. To view the CSV file, navigate to your Downloads folder and open your CSV file.
+4. Click the **Download CSV** button. 
+5. On the **Download CSV?** popup that appears, click **Download**. <br/> The filename for your Source Schema CSV is in the following format:<br/>`workspace-slug-source-slug-schema-type-yyyy-mm-dd-hh-mm`
+6. To view the CSV file, navigate to your Downloads folder and open your CSV file.
 
-<!---workshop last two steps. maybe roll them into the "viewing your exported..." section?-->
+> note "All events and properties are now included in the CSV file"
+> When you exporting the Source Schema, all events and properties are included in the CSV file regardless of the filters or search parameters currently applied to the Source Schema view. 
 
 ### View download history
 
-<!---Go into more detail on this when I have a demo environment to try this page in-->
+You can view the last 14 days' worth of Source Schema exports on the Download History page. 
 
-### Viewing your exported Source Schema
+To access the Download History page:
+1. Sign into Segment and select a source.
+2. Click the **Schema** tab in the source header.
+3. Click the **View Download History** link, next to the **Download CSV** button.
 
-The filename for your Source Schema CSV is in the following format:<br/>`workspace-slug-source-slug-schema-type-yyyy-mm-dd-hh-mm`
-
-To view your CSV file, navigate to your Downloads folder and open your CSV file.
-
-<!--See note about consolidating steps, above.-->
-
-#### Track event CSV format
+### Track event CSV format
 The Track event CSV file contains the following columns:
 - Event Name
-- Property Name
-- Last Seen (UTC)
+- Last Seen At (UTC)
   - If greater than 30 days, the value is "more than 30 days ago"
-- Allowed Count
-- Blocked Count
-- Total Count
+- Property Name
+- Allowed
+- Blocked
+- Total
 - Planned (available for Protocols customers with a connected Tracking Plan)
   - Values are "planned" or "unplanned"
 
-#### Identity and Group event CSV format
+### Identity and Group event CSV format
 The Identify and Group CSV file contains the following columns:
 - Trait Name
-- Last Seen (UTC)
+- Last Seen At (UTC)
   - If greater than 30 days, the value is "more than 30 days ago"
-- Allowed Count
-- Blocked Count
-- Total Count
+- Allowed
+- Blocked
+- Total
 - Planned (available for Protocols customers with a connected Tracking Plan)
   - Values are "planned" or "unplanned"
 
