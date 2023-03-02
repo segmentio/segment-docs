@@ -3,9 +3,6 @@ title: Reverse ETL
 beta: true
 ---
 
-> info ""
-> Reverse ETL is in beta and Segment is actively working on this feature. Segment's [First-Access and Beta terms](https://segment.com/legal/first-access-beta-preview/) govern this feature. If you’d like to learn more, reach out to your CSM, AE, or SE.
-
 Reverse ETL (Extract, Transform, Load) extracts data from a data warehouse and loads it into a 3rd party destination. Reverse ETL allows you to connect your data warehouse to the tools that Marketing, Sales, Support, Product, Analytics, and other business teams use. For example, with Reverse ETL, you can sync rows from Snowflake to Salesforce. Reverse ETL supports event and object data. This includes customer profile data, subscriptions, product tables, shopping cart tables, and more.
 
 As Segment is actively developing this feature, Segment welcomes your feedback on your experience with Reverse ETL. Click the button below to submit your feedback.
@@ -36,16 +33,20 @@ Follow these 4 steps to set up Reverse ETL and learn what each component is abou
 A Source is where your data originates from. Traditionally in Segment, a [Source](/docs/connections/sources/#what-is-a-source) is a website, server library, mobile SDK, or cloud application which can send data into Segment. In Reverse ETL, your data warehouse is the Source.
 
 > info ""
-> Reverse ETL supports BigQuery and Snowflake as sources and Segment is actively working on adding more. If you'd like to request Segment to add a particular source, please note it on the [feedback form](https://airtable.com/shriQgvkRpBCDN955){:target="_blank"}.
+> Reverse ETL supports [these sources] and Segment is actively working on adding more. If you'd like to request Segment to add a particular source, please note it on the [feedback form](https://airtable.com/shriQgvkRpBCDN955){:target="_blank"}.
 
 To add your warehouse as a source:
 
 > warning ""
 > You need to be a user that has both read and write access to the warehouse.
 
-1. Navigate to **Reverse ETL** in the Segment app.
+1. Navigate to **Connections > Sources** and select the **Reverse ETL** tab in the Segment app.
 2. Click **Add Source**.
+<<<<<<< HEAD:src/reverse-etl/index.md
 3. Select the source you want to add. You can choose between **BigQuery**, **Snowflake**, and **Redshift**.
+=======
+3. Select the source you want to add. 
+>>>>>>> 892582b7c (reverse etl ga edits):src/connections/sources/reverse-etl/index.md
     * If you choose to use Snowflake, run the queries listed in the [Snowflake Reverse ETL setup guide](/docs/reverse-etl/snowflake-setup/) to set up the Segment Snowflake connector. Segment recommends using the `ACCOUNTADMIN` role to execute all the commands.
     * If you choose to use BigQuery, use the permissions outlined in the [BigQuery Reverse ETL setup guide](/docs/reverse-etl/bigquery-setup/), to create a Service Account and generate JSON credentials that will then be copied into the Segment UI when creating a Reverse ETL Source.
 4. Add the account information for your source.  
@@ -59,7 +60,7 @@ After you add your data warehouse as a source, you can [add a model](#step-2-add
 Models are SQL queries that define sets of data you want to synchronize to your Reverse ETL destinations. After you add your source, you can add a model.
 
 To add your first model:
-1. Navigate to **Reverse ETL > Sources**. Select your source and click **Add Model**.
+1. Navigate to **Connections > Sources** and select the **Reverse ETL** tab. Select your source and click **Add Model**.
 2. Click **SQL Editor** as your modeling method. (Segment will add more modeling methods in the future.)
 3. Enter the SQL query that’ll define your model. Your model is used to map data to your Reverse ETL destinations.
 4. Choose a column to use as the unique identifier for each row in the **Unique Identifier column** field.
@@ -147,3 +148,19 @@ To edit your mapping:
 1. Navigate to **Reverse ETL > Destinations**.
 2. Select the destination with the mapping you want to edit.
 3. Select the **...** three dots and click **Edit mapping**. If you want to delete your mapping, select **Delete**.
+
+## Usage limits
+Processed Reverse ETL records are the total number of records Segment attempts to load to your downstream destinations, including those that fail to load. Your plan determines how many Reverse ETL records you can process in one monthly billing cycle. 
+
+Plan | Number of Reverse ETL records you can process to each destination per month | 
+---- | ---------------------------------------------------------------------------
+Free | 500K 
+Teams | 1 million
+Business | 50 x the number of [MTUs](/docs/guides/usage-and-billing/mtus-and-throughput/#what-is-an-mtu) <br>or .25 x the number of monthly API calls
+
+When your limit is reached before the end of your billing period, your syncs will pause and then resume on your next billing cycle. To increase the number of processed Reverse ETL records, connect with your sales representative to upgrade your plan. If you're on a Free plan, upgrade to the Teams plan in the Segmet app. 
+
+To see how many records you’ve processed using Reverse ETL, navigate to **Settings > Usage & billing** and select the **Reverse ETL** tab. 
+
+
+

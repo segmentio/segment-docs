@@ -142,10 +142,19 @@ sections:
     - path: /connections/sources/catalog
       title: Sources Catalog
       menu_icon: read-more
-    - path: /connections/sources/debugger
-      title: Using the Source Debugger
     - path: /connections/sources/about-cloud-sources
       title: Cloud Sources
+    - section_title: Reverse ETL
+      slug: /connections/sources/reverse-etl
+      section:
+      - path: /connections/sources/reverse-etl
+        title: Reverse ETL Overview
+      - path: /connections/sources/reverse-etl/bigquery-setup/
+        title: BigQuery Reverse ETL Setup
+      - path: /connections/sources/reverse-etl/snowflake-setup/
+        title: Snowflake Reverse ETL Setup
+    - path: /connections/sources/debugger
+      title: Source Debugger
     - path: /connections/sources/custom-domains
       title: Set Up a Custom Domain Proxy in Segment
     - path: /connections/sources/visual-tagger
@@ -243,6 +252,7 @@ sections:
     title: Rate Limits
   - path: /connections/regional-segment
     title: Regional Segment
+<<<<<<< HEAD
 - section_title: Reverse ETL
   section:
   - path: /reverse-etl
@@ -253,6 +263,8 @@ sections:
     title: Redshift Reverse ETL Setup
   - path: /reverse-etl/snowflake-setup
     title: Snowflake Reverse ETL Setup
+=======
+>>>>>>> 892582b7c (reverse etl ga edits)
 - section_title: Profiles
   section:
   - path: /profiles
