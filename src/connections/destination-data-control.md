@@ -31,31 +31,50 @@ Destination flags are **case sensitive** and match [the Destination's name in th
 
 If you're on Segment's Business plan, you can filter track calls right from the Segment UI on your Source Schema page by clicking on the field in the "Integrations" column and then adjusting the toggle for each tool. Segment recommends using the UI if possible since it's a much simpler way of managing your filters and can be updated with no code changes on your side.
 
-![](images/destination-control.png)
+![A screenshot of the source schema page. The user is hovered over the integrations column, and a popup showing the three integrations connected to the event appears.](images/destination-control.png)
 
 ## How do I block or disable specific events and properties from being sent to all Destinations?
 
 If you no longer want to track an event, you can either remove it from your code or, if you're on the Business plan, you can block track calls right from the Segment UI on your Source Schema page by adjusting the toggle for each event.
 
-![](/docs/protocols/images/event-filters.png)
+![A screenshot of the source schema page. The toggles in the integrations column are all enabled.](/docs/protocols/images/event-filters.png)
 
 Once you block an event in Segment, Segment stops forwarding it to all of your Destinations, including your warehouses. You can remove it from your code at your leisure. In addition to blocking track calls, Business plan customers can block all Page and Screen calls, as well as Identify traits and Group properties. 
 
 ## Export your Source Schema
 
-Segment allows you to download your Source Schema as a CSV file, maximizing portability and access to event data. You can download a copy of your schema by visiting the Source Schema page. Track, Identify, and Group events support Source Schema export.
+Segment allows users with Source View permission to download Source Schemas as a CSV file, maximizing portability and access to event data. You can download a copy of your schema by visiting the Source Schema page. Track, Identify, and Group events support Source Schema export.
 
-![](images/export-source-schema.png)
+<!-- Double check the perms-->
 
-You can choose to include properties with the Track events in the modal.
+> note "All events and properties are now included in the CSV file"
+> When you exporting the Source Schema, all events and properties are included in the CSV file regardless of the filters or search parameters currently applied to the Source Schema view. 
 
-![](images/export-source-schema-including-props.png)
+To download a Source Schema CSV file: 
+1. Sign into Segment and select a source.
+2. Click the **Schema** tab in the source header.
+3. On the Source Schema page, select an event type (Track, Identify, or Group)
+4. Click the **Download CSV** button. On the **Download CSV?** popup that appears, click **Download**. <br/> The filename for your Source Schema CSV is in the following format:<br/>`workspace-slug-source-slug-schema-type-yyyy-mm-dd-hh-mm`
+5. To view the CSV file, navigate to your Downloads folder and open your CSV file.
 
-CSV files generate based on the current view of your Source Schema. Any search parameters or filters you apply to the current Source Schema view also apply to the CSV.
+<!---workshop last two steps. maybe roll them into the "viewing your exported..." section?-->
 
+### View download history
+
+<!---Go into more detail on this when I have a demo environment to try this page in-->
+
+### Viewing your exported Source Schema
+
+The filename for your Source Schema CSV is in the following format:<br/>`workspace-slug-source-slug-schema-type-yyyy-mm-dd-hh-mm`
+
+To view your CSV file, navigate to your Downloads folder and open your CSV file.
+
+<!--See note about consolidating steps, above.-->
+
+#### Track event CSV format
 The Track event CSV file contains the following columns:
 - Event Name
-- Property Name (if properties are included in the export dialog)
+- Property Name
 - Last Seen (UTC)
   - If greater than 30 days, the value is "more than 30 days ago"
 - Allowed Count
@@ -64,9 +83,11 @@ The Track event CSV file contains the following columns:
 - Planned (available for Protocols customers with a connected Tracking Plan)
   - Values are "planned" or "unplanned"
 
-The Identify & Group CSV file contains the following columns:
+#### Identity and Group event CSV format
+The Identify and Group CSV file contains the following columns:
 - Trait Name
 - Last Seen (UTC)
+  - If greater than 30 days, the value is "more than 30 days ago"
 - Allowed Count
 - Blocked Count
 - Total Count
@@ -74,8 +95,6 @@ The Identify & Group CSV file contains the following columns:
   - Values are "planned" or "unplanned"
 
 > info ""
-> The export schema doesn't include actual values (for example, personal data) for the events, properties, and traits you are tracking for a specific source.
-
-
+> The schema export doesn't include actual values (for example, personal data) for the events, properties, and traits you are tracking for a specific source.
 
 See the [Segment Schema Limits](/docs/connections/schema-unique-limits/) for more information on how to manage the Source Schema. 
