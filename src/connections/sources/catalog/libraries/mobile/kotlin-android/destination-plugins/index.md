@@ -47,9 +47,9 @@ plugins:
       url: https://cdn.filepicker.io/api/file/0mdiroESxtRQBoR8ieBg
 ---
 
-Analytics-Kotlin uses its timeline/plugin architecture to support sending data to bundled SDKs when a Cloud Mode connection is not possible. Destination Plugins are similar to traditional Device Mode integrations available in Analytics-Android in that Segment makes calls directly to the destination tool’s API from the device. However, Destination Plugins are more customizable, giving you the ability to control and enrich your data at a much more granular level on the device itself. 
+Analytics Kotlin uses its timeline/plugin architecture to support sending data to bundled SDKs when a Cloud Mode connection is not possible. Destination Plugins are similar to traditional Device Mode integrations available in Analytics Android in that Segment makes calls directly to the destination tool’s API from the device. However, Destination Plugins are more customizable, giving you the ability to control and enrich your data at a much more granular level on the device itself. 
 
-Analytics-Kotlin supports the following Destination Plugins: 
+Analytics Kotlin supports the following Destination Plugins: 
 
 <div class="destinations-catalog">
 <div class="destinations-catalog__section markdown" id="{{ category | slugify }}">
@@ -77,7 +77,7 @@ Analytics-Kotlin supports the following Destination Plugins:
 ## Plugin architecture
 Segment's plugin architecture enables you to modify and augment how the analytics client works. From modifying event payloads to changing analytics functionality, plugins help to speed up the process of getting things done.
 
-Plugins are run through a timeline, which executes in order of insertion based on their entry types. Segment has these five entry types:
+Plugins are run through a timeline, which executes in order of insertion based on their types. Segment has these five types:
 
 | Type          | Details                                                                                        |
 | ------------- | ---------------------------------------------------------------------------------------------- |
@@ -207,8 +207,7 @@ class SomePlugin: Plugin {
 val yourPlugin = SomePlugin()
 analytics.add(yourPlugin)
 ```
-
-## Build Your own destination
+## Build your own destination
 
 If Segment doesn't support your Kotlin destination, you can build your own with the template Segment provides.
 

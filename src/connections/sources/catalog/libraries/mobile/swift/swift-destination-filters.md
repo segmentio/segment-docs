@@ -5,12 +5,9 @@ strat: swift
 > info ""
 > Destination filters are available to Business Tier customers.
 >
-> Destination filters on mobile device-mode destinations are in beta and only supports Analytics-Swift, [Analytics-Kotlin](/docs/connections/sources/catalog/libraries/mobile/kotlin-android/), and [Analytics-React-Native 2.0](/docs/connections/sources/catalog/libraries/mobile/react-native/).
+> Destination filters on mobile device-mode destinations are in beta and only supports Analytics Swift, [Analytics-Kotlin](/docs/connections/sources/catalog/libraries/mobile/kotlin-android/), and [Analytics-React-Native 2.0](/docs/connections/sources/catalog/libraries/mobile/react-native/).
 
-Use Analytics-Swift to set up [destination filters](docs/connections/destinations/destination-filters/) on your mobile device-mode destinations.
-
-> warning ""
-> Keep [these limitations](/docs/connections/destinations/destination-filters/#limitations) in mind when using destination filters.
+Use Analytics Swift to set up [destination filters](/docs/connections/destinations/destination-filters/) on your mobile device-mode destinations.
 
 To get started with destination filters using Swift:
 1. Add the Swift package `git@github.com:segmentio/DestinationFilters-Swift.git` as a dependency through either of these 2 options:

@@ -12,7 +12,7 @@ To get started with the Analytics-Kotlin mobile library:
     2. Search for **Kotlin (Android)** and click **Add source**.
 2. Add the Analytics dependency to your build.gradle.
 
-    Segment recommends you to install the library with a build system like Gradle, as it simplifies the process of upgrading versions and adding integrations. The library is distributed through [Maven Central](https://repo1.maven.org/maven2/com/segment/analytics/kotlin/android/){:target="_blank"}. Add the analytics module to your build.gradle as a dependency as shown in the code sample below, and replace `<latest_version>` with the latest version listed on Segment's [releases page.](https://github.com/segmentio/analytics-kotlin/releases){:target="_blank"}
+    Segment recommends you to install the library with a build system like Gradle, as it simplifies the process of upgrading versions and adding integrations. The library is distributed through [Maven Central](https://central.sonatype.com/artifact/com.segment.analytics.kotlin/android/1.10.2){:target="_blank"}. Add the analytics module to your build.gradle as a dependency as shown in the code sample below, and replace `<latest_version>` with the latest version listed on Segment's [releases page.](https://github.com/segmentio/analytics-kotlin/releases){:target="_blank"}
 
 {% codeexample %}
 {% codeexampletab Kotlin%}
@@ -38,29 +38,28 @@ To get started with the Analytics-Kotlin mobile library:
 {% endcodeexampletab %}
 {% endcodeexample %}   
 
-3. Initialize and configure the client.
+3. Initialize and configure the client. Segment recommends you to install the client in your application subclass.
 
-    Segment recommends you to install the client in your application subclass.
 {% codeexample %}
 {% codeexampletab Kotlin%}
 ```java
-      // Add required imports
-      import com.segment.analytics.kotlin.android.Analytics
-      import com.segment.analytics.kotlin.core.*
+    // Add required imports
+    import com.segment.analytics.kotlin.android.Analytics
+    import com.segment.analytics.kotlin.core.*
 
-      // Create an analytics client with the given application context and Segment write key.
-      // NOTE: in android, application context is required to pass as the second parameter.
-      Analytics("YOUR_WRITE_KEY", applicationContext) {
-          // Automatically track Lifecycle events
-          trackApplicationLifecycleEvents = true
-          flushAt = 3
-          flushInterval = 10
+    // Create an analytics client with the given application context and Segment write key.
+    // NOTE: in android, application context is required to pass as the second parameter.
+    Analytics("YOUR_WRITE_KEY", applicationContext) {
+        // Automatically track Lifecycle events
+        trackApplicationLifecycleEvents = true
+        flushAt = 3
+        flushInterval = 10
       }
 ```
 {% endcodeexampletab %}
 {% codeexampletab Java%}
 ```java
-        AndroidAnalyticsKt.Analytics(BuildConfig.SEGMENT_WRITE_KEY,     getApplicationContext(), configuration -> {
+        AndroidAnalyticsKt.Analytics(BuildConfig.SEGMENT_WRITE_KEY,  getApplicationContext(), configuration -> {
     
         configuration.setFlushAt(1);
         configuration.setCollectDeviceId(true);
@@ -69,16 +68,17 @@ To get started with the Analytics-Kotlin mobile library:
         //...other config options
 
         return Unit.INSTANCE;
+
+        JavaAnalytics analyticsCompat = new JavaAnalytics(analytics);​
         });
 ```
 {% endcodeexampletab %}
 {% endcodeexample %}
 
-**Note: If you're on an Android platform, you must add the application context as the second parameter.**
+> warning ""
+> If you're on an Android platform, you must add the application context as the second parameter.
     
-<br>Automatically tracking lifecycle events (`Application Opened`, `Application Installed`, `Application Updated`) is optional, but Segment highly recommends you to configure these options in order to track core events.
-
-<br>**Note:** Unlike the Analytics-Android SDK, the Analytics-Kotlin SDK doesn't provide a singleton instance and relies on you to keep track of the instance.
+Automatically tracking lifecycle events (`Application Opened`, `Application Installed`, `Application Updated`) is optional, but Segment highly recommends you to configure these options in order to track core events. Unlike the Analytics Android SDK, the Analytics Kotlin SDK doesn't provide a singleton instance and relies on you to keep track of the instance.
 
 <br>These are the options you can apply to configure the client:
 
@@ -92,6 +92,7 @@ Option Name | Description
 `defaultSettings` | Default set to `{}`. <br> The settings object used as fallback in case of network failure. |
 `flushAt` | Default set to `20`. <br> The count of events at which Segment flushes events. |
 `flushInterval` | Default set to `30` (seconds). <br> The interval in seconds at which Segment flushes events. |
+`flushPolicies` | undefined | Add more granular control for when to flush |
 `recordScreenViews` | Default set to `false`. <br> Set to `true` to automatically trigger screen events on Activity Start. |
 `storageProvider` | Default set to `ConcreteStorageProvider`. <br> In Android, this must be set to `AndroidStorageProvider`. The `Analytics` constructors configure this automatically. |
 `trackApplicationLifecycleEvents` | Default set to `false`. <br> Set to `true` to automatically track Lifecycle events. |
@@ -112,11 +113,12 @@ Option Name | Description
 
     The SDK internally uses a number of Java 8 language APIs through desugaring. Make sure your project either [enables desugaring](https://developer.android.com/studio/write/java8-support#library-desugaring)) or requires a minimum API level of 26.
 
-    You'll find configuration options such as IDFA collection and automatic screen tracking in Segment’s [Plugin Examples repository](https://github.com/segmentio/analytics-kotlin/tree/main/samples/kotlin-android-app/src/main/java/com/segment/analytics/next/plugins){:target="_blank"}.
+> info ""
+> You'll find configuration options such as IDFA collection and automatic screen tracking in Segment’s [Plugin Examples repository](https://github.com/segmentio/analytics-kotlin/tree/main/samples/kotlin-android-app/src/main/java/com/segment/analytics/next/plugins){:target="_blank"}.
 
 ## Tracking methods
 
-Once you've installed the mobile or server Analytics-Kotlin library, you can start collecting data through Segment's tracking methods:
+Once you've installed the mobile or server Analytics Kotlin library, you can start collecting data through Segment's tracking methods:
 - [Identify](#identify)
 - [Track](#track)
 - [Screen](#screen)
@@ -126,7 +128,7 @@ Once you've installed the mobile or server Analytics-Kotlin library, you can sta
 > For any of the different methods described, you can replace the properties and traits in the code samples with variables that represent the data collected.
 
 ### Identify
-The [Identify](/docs/connections/spec/identify/) method lets you tie a user to their actions and record traits about them. This includes a unique user ID and any optional traits you know about them like their email, name, address. The traits option can include any information you want to tie to the user. When using any of the reserved traits, be sure the information reflects the name of the trait. For example, `email`  should always be a string of the user's email address.
+The [Identify](/docs/connections/spec/identify/) method lets you tie a user to their actions and record traits about them. This includes a unique user ID and any optional traits you know about them like their email, name, or address. The traits option can include any information you want to tie to the user. When using any of the reserved traits, be sure the information reflects the name of the trait. For example, `email`  should always be a string of the user's email address.
 
 {% codeexample %}
 {% codeexampletab Method signature %}
@@ -157,7 +159,6 @@ analytics.identify("user-123", Builders.buildJsonObject(o -> {
 // or
 
 analytics.identify("user-123", new YourJsonSerializable());
-});
 ```
 {% endcodeexampletab %}
 {% endcodeexample %}
@@ -185,16 +186,10 @@ analytics.track("View Product", buildJsonObject {
 {% endcodeexampletab %}
 {% codeexampletab Java %}
 ```java
-class YourJsonSerializable implements JsonSerializable {
-    public JsonObject serialize() {
-        return Builders.buildJsonObject(o -> {
-            o.put("productId", 123)
-                .put("productName", "Striped trousers");
-        }));
-    }
-}
-
-analytics.track("View Product", new YourJsonSerializable());
+analytics.track("View Product", Builders.buildJsonObject(o -> {
+   o.put("productId", 123)
+    .put("productName", "Striped Trousers")
+});
 ```
 {% endcodeexampletab %}
 {% endcodeexample %}
@@ -236,10 +231,10 @@ analytics.screen("ScreenName", new YourJsonSerializable());
 {% endcodeexample %}
 
 > info ""
-> Add the `AndroidRecordScreenPlugin` to enable automatic screen tracking.
+> Add the [AndroidRecordScreenPlugin](https://github.com/segmentio/analytics-kotlin/blob/main/samples/kotlin-android-app/src/main/java/com/segment/analytics/next/plugins/AndroidRecordScreenPlugin.kt) to enable automatic screen tracking.
 
 ### Group
-The [Group](/docs/connections/spec/group/) method lets you associate an individual user with a group— whether it's a company, organization, account, project, or team. This includes a unique group identifier and any additional group traits you may have, like company name, industry, number of employees. You can include any information you want to associate with the group in the traits option. When using any of the reserved group traits, be sure the information reflects the name of the trait. For example, email should always be a string of the user's email address.
+The [Group](/docs/connections/spec/group/) method lets you associate an individual user with a group— whether it's a company, organization, account, project, or team. This includes a unique group identifier and any additional group traits you may have, like company name, industry, number of employees. You can include any information you want to associate with the group in the traits option. When using any of the [reserved group traits](/docs/connections/spec/group/#traits), be sure the information reflects the name of the trait. For example, email should always be a string of the user's email address.
 
 {% codeexample %}
 {% codeexampletab Method signature %}
@@ -275,7 +270,7 @@ analytics.group("user-123", new YourJsonSerializable());
 {% endcodeexample %}
 
 ## Utility methods
-The Analytics-Kotlin utility methods help you work with plugins from the analytics timeline. They include:
+The Analytics Kotlin utility methods help you work with plugins from the analytics timeline. They include:
 - [Add](#add)
 - [Find](#find)
 - [Remove](#remove)
@@ -317,7 +312,7 @@ fun find(pluginName: String): Plugin
 
 {% codeexampletab Example use %}
 ```java
-val plugin = analytics.find("SomePlugin")
+val plugin = analytics.find(SomePlugin::class)
 ```
 {% endcodeexampletab %}
 {% endcodeexample %}
@@ -351,7 +346,7 @@ public fun flush()
 
 {% codeexampletab Example use %}
 ```java
-analytics.flush("SomePlugin")
+analytics.flush()
 ```
 {% endcodeexampletab %}
 {% endcodeexample %}
@@ -376,12 +371,8 @@ analytics.reset()
 ## Compatibility
 If you use a Java codebase, please refer to the [Java Compatibility docs](https://github.com/segmentio/analytics-kotlin/blob/main/JAVA_COMPAT.md){:target="_blank"} for sample uses.
 
-## FAQs
-### Can I use the catalog of device-mode destinations from Analytics-Android?
-No, only the plugins listed above are supported in device-mode for Analytics-Kotlin.
-
 ### Will I still see device-mode integrations listed as `false` in the integrations object?
 When you successfully package a plugin in device-mode, you will no longer see the integration listed as `false` in the integrations object for a Segment event. This logic is now packaged in the event metadata, and is not surfaced in the Segment debugger.
 
 ## Changelog
-[View the Analytics-Kotlin changelog on GitHub](https://github.com/segmentio/analytics-kotlin/releases).
+[View the Analytics Kotlin changelog on GitHub](https://github.com/segmentio/analytics-kotlin/releases).

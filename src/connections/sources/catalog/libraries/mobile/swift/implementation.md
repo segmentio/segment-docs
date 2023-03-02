@@ -4,7 +4,7 @@ strat: swift
 ---
 
 ## Getting started
-To get started with the Analytics-Swift mobile library:
+To get started with the Analytics Swift mobile library:
 
 1. Create a Source in Segment.
     1. Go to **Connections > Sources > Add Source**.
@@ -19,7 +19,7 @@ To get started with the Analytics-Swift mobile library:
 
     After installing the package, you can reference Analytics Swift by importing Segment's Analytics package with `import Segment`.
 
-3. Initialize and configure the Analytics-Swift client.
+3. Initialize and configure the Analytics Swift client.
     For example, in a lifecycle method such as `didFinishLaunchingWithOptions` in iOS:
 
 {% codeexample %}
@@ -74,7 +74,7 @@ These are the options you can apply to configure the client:
 
 
 ## Tracking Methods
-Once you've installed the Analytics-Swift library, you can start collecting data through Segment's tracking methods:
+Once you've installed the Analytics Swift library, you can start collecting data through Segment's tracking methods:
 - [Identify](#identify)
 - [Track](#track)
 - [Screen](#screen)
@@ -82,7 +82,7 @@ Once you've installed the Analytics-Swift library, you can start collecting data
 - [Alias](#alias)
 
 ### Identify
-The [Identify](/docs/connections/spec/identify/) method lets you tie a user to their actions and record traits about them. This includes a unique user ID and any optional traits you know about them like their email, name, address. The traits option can include any information you want to tie to the user. When using any of the reserved traits, be sure the information reflects the name of the trait. For example, `email`  should always be a string of the user's email address.
+The [Identify](/docs/connections/spec/identify/) method lets you tie a user to their actions and record traits about them. This includes a unique user ID and any optional traits you know about them like their email, name, or address. The traits option can include any information you want to tie to the user. When using any of the reserved traits, be sure the information reflects the name of the trait. For example, `email`  should always be a string of the user's email address.
 
 {% codeexample %}
 {% codeexampletab Method signature %}
@@ -197,7 +197,7 @@ Once you add the plugin to your project, add it to your Analytics instance:
  analytics.add(plugin: UIKitScreenTracking())
 ```
 ### Group
-The [Group](/docs/connections/spec/group/) method lets you associate an individual user with a group— whether it's a company, organization, account, project, or team. This includes a unique group identifier and any additional group traits you may have, like company name, industry, number of employees. You can include any information you want to associate with the group in the traits option. When using any of the reserved group traits, be sure the information reflects the name of the trait. For example, email should always be a string of the user's email address.
+The [Group](/docs/connections/spec/group/) method lets you associate an individual user with a group— whether it's a company, organization, account, project, or team. This includes a unique group identifier and any additional group traits you may have, like company name, industry, number of employees. You can include any information you want to associate with the group in the traits option. When using any of the [reserved group traits](/docs/connections/spec/group/#traits), be sure the information reflects the name of the trait. For example, email should always be a string of the user's email address.
 
 {% codeexample %}
 {% codeexampletab Method signature %}
@@ -551,9 +551,9 @@ Segment supports these destinations for Analytics Swift, with more to come:
 
 ## FAQs
 ### Can I use the catalog of device-mode destinations from Analytics-iOS?
-No, only the plugins listed above are supported in device-mode for Analytics-Swift.
+No, only the plugins listed above are supported in device-mode for Analytics Swift.
 ### Will I still see device-mode integrations listed as `false` in the integrations object?
 When you successfully package a plugin in device-mode, you will no longer see the integration listed as `false` in the integrations object for a Segment event. This logic is now packaged in the event metadata, and is not surfaced in the Segment debugger.
 
 ## Changelog
-[View the Analytics-Swift changelog on GitHub](https://github.com/segmentio/analytics-swift/releases){:target="_blank"}.   -->
+[View the Analytics Swift changelog on GitHub](https://github.com/segmentio/analytics-swift/releases){:target="_blank"}.   -->

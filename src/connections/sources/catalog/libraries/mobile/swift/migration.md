@@ -4,7 +4,7 @@ strat: swift
 ---
 
 > info ""
-> Analytics-Swift supports [these destinations](/docs/connections/sources/catalog/libraries/mobile/swift#supported-destinations) with more to come.
+> Analytics Swift supports [these destinations](/docs/connections/sources/catalog/libraries/mobile/swift/destination-plugins) with more to come.
 
 If you're using a different mobile library such as Analytics-iOS, follow these steps to migrate to the Analytics-Swift library:
 
@@ -99,8 +99,9 @@ If you're using a different mobile library such as Analytics-iOS, follow these s
 
     <br>Before example:
     ```swift
-    // define middleware we'll use for amplitude
-    let customizeAmplitudeTrackCalls = BlockMiddleware { (context, next) in
+     // define middleware we'll use for amplitude
+
+       let customizeAmplitudeTrackCalls = BlockMiddleware { (context, next) in
         if context.eventType == .track {
             next(context.modify { ctx in
                 guard let track = ctx.payload as? TrackPayload else {
@@ -122,6 +123,7 @@ If you're using a different mobile library such as Analytics-iOS, follow these s
     }
 
     // configure destination middleware for amplitude
+
     let amplitude = SEGAmplitudeIntegrationFactory.instance()
     config.use(amplitude)
     config.destinationMiddleware = [DestinationMiddleware(key: amplitude.key(), middleware:[customizeAmplitudeTrackCalls])]
@@ -142,11 +144,17 @@ If you're using a different mobile library such as Analytics-iOS, follow these s
     }
 
     // create an instance of the Amplitude plugin
+
     let amplitudeDestination = AmplitudeDestination()
+
     // add our enrichment plugin to amplitude
+
     amplitudeDestination.add(plugin: customizeAmplitudeTrackCalls())
+
     // add amplitude to analytics instance.
+
     analytics.add(plugin: amplitudeDestination)
+
     ```
 6. Set your config options.
     <br> Segment changed these config options:
@@ -201,10 +209,12 @@ If you're using a different mobile library such as Analytics-iOS, follow these s
       <br> After example
       ```swift    
       // The newer APIs promote the use of strongly typed structures to keep codebases legible
+
       struct UserTraits(
         let firstName: String,
         let lastName: String
       )
+
 
       analytics.identify("a user's id", UserTraits(firstName = "John", lastName = "Doe"))
       ```
@@ -212,12 +222,14 @@ If you're using a different mobile library such as Analytics-iOS, follow these s
 
       <br> Before example
       ```swift
-      analytics.track("Item Purchased", properties: ["item": "Sword of Heracles", "revenue": 2.95])      ```
+      analytics.track("Item Purchased", properties: ["item": "Sword of Heracles", "revenue": 2.95])      
+      ```
 
       <br> After example
       ```swift    
 
       // The newer APIs promote the use of strongly typed structures to keep codebases legible
+
       struct ItemPurchasedProperties(
         let item: String
         let revenue: Double
@@ -241,29 +253,33 @@ If you're using a different mobile library such as Analytics-iOS, follow these s
 
       <br> After example
       ```swift    
-      // The newer APIs promote the use of strongly typed structures to keep codebases legible
-      struct GroupTraits(
-        let name: String
-        let description: String
-      )
-      analytics.group(groupId: "group123", traits: GroupTraits(name = "Initech", description = "Accounting Software"))
+         // The newer APIs promote the use of strongly typed structures to keep codebases legible
+
+        struct GroupTraits(
+            let name: String
+            let description: String
+        )
+        
+        analytics.group(groupId: "group123", traits: GroupTraits(name = "Initech", description = "Accounting Software"))
       ```
 
     - Screen
 
       <br> Before example
       ```swift
-      analytics.screen("Photo Feed", properties: ["Feed Type": "private"])
+            analytics.screen("Photo Feed", properties: ["Feed Type": "private"])
       ```
 
       <br> After example
       ```swift    
-      // The newer APIs promote the use of strongly typed structures to keep codebases legible
-      struct FeedScreenProperties(
-        let feedType: Int
-      )
+        // The newer APIs promote the use of strongly typed structures to keep codebases legible
 
-      analytics.screen(title: "Photo Feed", properties: FeedScreenProperties(feedType = "private"))
+
+        struct FeedScreenProperties(
+            let feedType: Int
+        )
+
+        analytics.screen(title: "Photo Feed", properties: FeedScreenProperties(feedType = "private"))
       ```
 
     - Alias
