@@ -6,8 +6,7 @@ The Event Delivery tool helps you understand if data is reaching your destinatio
 
 Segment sends billions of events to destinations every week. If Segment encounters any errors when attempting to deliver your data, Segment reports them in the Event Delivery tool.
 
-> info ""
-> **Available for server side event streaming destinations only**
+> info "Available for server side event streaming destinations only"
 > This feature is only available for server side integrations (also known as cloud-mode destinations). You will not be able to use this for client side integrations (also known as device-mode destinations) because device-mode data is sent directly to the destination tool's API. In order to report on deliverability, the data must be sent to destinations using a server side connection. 
 
 > warning ""
