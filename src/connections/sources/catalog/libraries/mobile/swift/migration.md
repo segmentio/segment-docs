@@ -26,7 +26,9 @@ If you're using a different mobile library such as Analytics-iOS, follow these s
 
 3. Modify your initialized instance.
 
-    <br>Before example:
+{% codeexample %}
+{% codeexampletab Swift%}
+
     ```swift
     let configuration = AnalyticsConfiguration(writeKey: "YOUR_WRITE_KEY")
     configuration.trackApplicationLifecycleEvents = true
@@ -34,16 +36,18 @@ If you're using a different mobile library such as Analytics-iOS, follow these s
     configuration.flushInterval = 10
     Analytics.setup(with: configuration)
     ```
+{% endcodeexampletab %}
+{% codeexampletab Objective-C %}
 
-    <br> After example:
-    ```swift
-    let config = Configuration(writeKey: "YOUR_WRITE_KEY")
-            .trackApplicationLifecycleEvents(true)
-            .flushAt(3)
-            .flushInterval(10)
-
-    let analytics = Analytics(configuration: config)
+    ```objc
+    SEGConfiguration *config = [[SEGConfiguration alloc] initWithWriteKey:@"<writekey>"];
+    config.trackApplicationLifecycleEvents = YES;
+    
+    _analytics = [[SEGAnalytics alloc] initWithConfiguration: config];
     ```
+
+{% endcodeexampletab %}
+{% endcodeexample %}
 
 4. Add a middleware.
 
@@ -51,7 +55,7 @@ If you're using a different mobile library such as Analytics-iOS, follow these s
 
     <br> As middlewares have the same function as [enrichment plugins](/docs/connections/sources/catalog/libraries/mobile/swift#plugin-architecture), you need to write an enrichment plugin to add a middleware.
 
-    <br>Before example:
+    
     ```swift
     let customizeAllTrackCalls = BlockMiddleware { (context, next) in
         if context.eventType == .track {
@@ -77,7 +81,7 @@ If you're using a different mobile library such as Analytics-iOS, follow these s
     analytics.sourceMiddleware = [customizeAllTrackCalls]
     ```
 
-    <br> After example:
+   
     ```swift
     class customizeAllTrackCalls: EventPlugin {
         let type: PluginType = .enrichment

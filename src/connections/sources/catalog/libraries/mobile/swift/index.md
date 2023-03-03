@@ -5,48 +5,110 @@ redirect_from:
   - '/connections/sources/catalog/cloud-apps/swift/'
 id: dZeHygTSD4
 ---
-With Analytics Swift, you can send data from iOS, tvOS, iPadOS, WatchOS, macOS and Linux applications to any analytics or marketing tool without having to learn, test, or implement a new API every time. 
+With Analytics Swift, you can send data from iOS, tvOS, iPadOS, WatchOS, macOS and Linux applications to any analytics or marketing tool without having to learn, test, or implement a new API every time. Analytics Swift is compatible with both Swift and Objective-C applications. 
 
 Analytics Swift enables you to process and track the history of a payload, while Segment controls the API and prevents unintended operations. Analytics Swift also offers default implementations to help you maintain destinations and integrations.
 
 > warning ""
 > If you're migrating to Analytics Swift from a different mobile library, you can skip to the [migration guide](/docs/connections/sources/catalog/libraries/mobile/swift/migration/).
 
-## Getting Started
+## Getting started
+To get started with the Analytics Swift mobile library:
 
-{% include components/reference-button.html
-  href="/docs/connections/sources/catalog/libraries/mobile/swift/implementation"
-  icon="languages/swift.svg"
-  title="Swift Implementation Guide"
-  description="Follow the Analytics Swift implementation guide to add Segment analytics to any Swift application, including iOS, macOS, tvOS, and watchOS apps."
-  newtab="false"
-  logo="true"
-%}
+1. Create a Source in Segment.
+    1. Go to **Connections > Sources > Add Source**.
+    2. Search for **Apple** and click **Add source**.
 
+2. Add the Analytics dependency to your application.
+    Add the Swift package, `git@github.com:segmentio/analytics-swift.git` as a dependency through either of these 2 options:
+    1. Your package.swift file
+    2. Xcode
+        1. Xcode 12: **File > Swift Packages > Add Package Dependency**
+        2. Xcode 13: **File > Add Packages…**
+
+    After installing the package, you can reference Analytics Swift by importing Segment's Analytics package with `import Segment`.
+
+3. Initialize and configure the Analytics Swift client.
+    For example, in a lifecycle method such as `didFinishLaunchingWithOptions` in iOS:
+
+{% codeexample %}
+{% codeexampletab Swift%}
+  ```swift
+    var analytics: Analytics? = nil
+
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+            // Override point for customization after application launch.
+            let configuration = Configuration(writeKey: "WRITE_KEY")
+                .trackApplicationLifecycleEvents(true)
+                .flushInterval(10)
+
+            analytics = Analytics(configuration: configuration)
+    }
+  ```
+{% endcodeexampletab %}
+{% codeexampletab Objective-C %}
+```objc
+  @import Segment;
+  ...
+
+  - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+      // Override point for customization after application launch.
+      SEGConfiguration *config = [[SEGConfiguration alloc] initWithWriteKey:@"WRITE_KEY"];
+      config.trackApplicationLifecycleEvents = YES;
+    
+      _analytics = [[SEGAnalytics alloc] initWithConfiguration: config];    
+
+      [self.analytics track:@"Example Event"];
+      [self.analytics track:@"Example Properties" properties:@{@"email": @"sloth@segment.com"}];
+    
+      return YES;
+  }
+ ```
+{% endcodeexampletab %}
+{% endcodeexample %}
+
+These are the options you can apply to configure the client:
+
+ Option Name | Description
+----------- | ------------
+`writeKey` *required* | This is your Segment write key.
+`apiHost` | The default is set to `api.segment.io/v1`. <br> This sets a default API Host to which Segment sends event.
+`autoAddSegmentDestination` | The default is set to `true`. <br> This automatically adds the Segment Destination plugin. Set to `false` if you want to add plugins to the Segment Destination.
+`cdnHost` | The default is set to `cdn-settings.segment.com/v1`. <br> This sets a default CDN Host from which Segment retrieves settings.
+`defaultSettings`| The default is set to `{}`. <br> This is the settings object used as fallback in case of network failure.
+`flushAt`| The default is set to `20`. <br> The count of events at which Segment flushes events.
+`flushInterval`| The default is set to `30` (seconds). <br> The interval in seconds at which Segment flushes events.
+`trackApplicationLifecycleEvents`| The default is set to `true`. <br> This automatically tracks lifecycle events. Set to `false` to stop tracking lifecycle events.
+`trackDeepLinks` | The default is set to `true`. <br> This automatically track deep links. Set to `false` to stop tracking Deep Links.
+
+### Core tracking methods
+Once you've installed the Analytics-Swift library, you can start collecting data through Segment's tracking methods:
+
+- [Track](/docs/connections/sources/catalog/libraries/mobile/swift/implementation/#track)
+- [Identify](/docs/connections/sources/catalog/libraries/mobile/swift/implementation/#identify)
+- [Screen](/docs/connections/sources/catalog/libraries/mobile/swift/implementation/#screen)
+- [Group](/docs/connections/sources/catalog/libraries/mobile/swift/implementation/#group)
+- [Alias](/docs/connections/sources/catalog/libraries/mobile/swift/implementation/#alias)
 
 ## Destinations
+Destinations are the business tools or apps that Segment forwards your data to. Adding Destinations allow you to act on your data and learn more about your customers in real time.
 
-Analytics Swift allows you to choose how you send data to Segment and your connected destinations from your app. There are two ways to send data:
-
-**Cloud-mode**: The sources send data directly to the Segment servers, which then translate it for each connected downstream destination, and send it on. Translation is done on the Segment servers, keeping your page size, method count, and load time small.
-
-**Device-mode**: You include additional code on your  app which allows Segment to use the data you collect on the device to make calls directly to the destination tool’s API, without sending it to the Segment servers first. (You still send your data to the Segment servers, but this occurs asynchronously.) This is also called wrapping or bundling, and it might be required when the source has to be loaded on the page to work, or loaded directly on the device to function correctly. 
-### Supported destinations
+<br>Segment offers support for two different types of Destinations, learn more about the differences between the two [here]().
 
 <div class="double">
-  {% include components/reference-button.html
-    href="/docs/connections/sources/catalog/libraries/mobile/swift/destination-plugins"
-    icon="destinations-catalog/mobile.svg"
-    title="Device-mode Plugins"
-    description="These destinations are built on Segment's plugin architecture, and allow for direct Device-mode integration."
-    newtab="false"
-  %}
-
   {% include components/reference-button.html
     href="/docs/connections/sources/catalog/libraries/mobile/swift/cloud-mode-destinations"
     icon="destinations-catalog/cloud-apps.svg"
     title="Cloud-mode Destinations"
-    description="Destinations that support Cloud-mode connections to Segment."
+    description="Destinations that can be enabled from your Segment workspace and require no additional app setup."
+    newtab="false"
+  %}
+
+  {% include components/reference-button.html
+    href="/docs/connections/sources/catalog/libraries/mobile/swift/destination-plugins"
+    icon="destinations-catalog/mobile.svg"
+    title="Device-mode Destinations"
+    description="Destinations that require additional app setup, and limit certain Segment functionality."
     newtab="false"
   %}
 </div>
@@ -55,28 +117,10 @@ Analytics Swift allows you to choose how you send data to Segment and your conne
 
 Analytics for Swift is built with extensibility in mind. Use the tools list below to improve data collection.
 
-- [Plugin architecture](/docs/connections/sources/catalog/libraries/mobile/swift/destination-plugins/#plugin-architecture)
+- [Plugin architecture](/docs/connections/sources/catalog/libraries/mobile/swift/swift-plugin-architecture)
 - [Typewriter](/docs/connections/sources/catalog/libraries/mobile/swift/swift-typewriter)
-- [Destination filters](/docs/connections/sources/catalog/libraries/mobile/swift/swift-destination-filters)
+- [Destination Filters](/docs/connections/sources/catalog/libraries/mobile/swift/swift-destination-filters)
+- [Code samples](/docs/connections/sources/catalog/libraries/mobile/swift/swift-samples)
 
-## Samples
-The code samples below demonstrate the implementation of common use cases of the Analytics Swift library across different platforms. 
-
-### Sample applications
-{% assign resources = site.data.catalog.swift_resources.items | where: "categories", "app" %}
-{: .columns}
-{% for resource in resources %}
-- [{{resource.name}}]({{resource.url}}){:target="_blank"}
-{%endfor%}
-
-### Sample plugins 
-{% assign resources = site.data.catalog.swift_resources.items | where: "categories", "plugin" %}
-{: .columns}
-{% for resource in resources %}
-- [{{resource.name}}]({{resource.url}}){:target="_blank"}
-{%endfor%}
-
-
-## Additional Resources
-
-- [Analytics iOS (Classic)](/docs/connections/sources/catalog/libraries/mobile/ios)
+> warning ""
+> If you are using the Analytics iOS (Classic) SDK, you can find [the documentation here](/docs/connections/sources/catalog/libraries/mobile/ios). Many of the features available in the Analytics Swift SDK are not available in the Analytics iOS (Classic) SDK. 

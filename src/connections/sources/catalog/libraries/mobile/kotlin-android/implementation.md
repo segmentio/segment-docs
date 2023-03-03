@@ -368,6 +368,34 @@ analytics.reset()
 {% endcodeexampletab %}
 {% endcodeexample %}
 
+
+### OpenURL
+While Analytics Kotlin will automatically track deep links that open your app when the `trackDeepLinks` Configuration property is set to `true`. There are some situations when the app is already open that could cause a deep link open event to be missed.
+
+The `openUrl` function allows you to manually track that a deep link has opened your app while your app was already open:
+
+```kotlin
+    override fun onNewIntent(intent: Intent?) {
+        super.onNewIntent(intent)
+    
+        // Add a deep-link opened event manually.
+        // This is necessary when your Activity has a android:launchMode of
+        // 'singleInstance', 'singleInstancePerTask', 'singleTop', or any other mode
+        // that will re-use an existing Activity instead of creating a new instance.
+        // The Analytics SDK automatically identifies when you app is started from 
+        // a deep link if the Activity is created, but not if it is re-used. Therefore 
+        // we have to add this code to manually capture the Deep Link info.
+        
+        val referrer = "unknown" 
+        analytics.trackDeepLinkOpen(referrer, intent)
+    }
+```
+
+> info ""
+>Due to the way deep links are handled in Android, we can not know the referrer when a deep link causes `onNewIntent()` to be fired instead of `onCreate()`. 
+
+For a sample implementation see our Kotlin Sample App.
+
 ## Compatibility
 If you use a Java codebase, please refer to the [Java Compatibility docs](https://github.com/segmentio/analytics-kotlin/blob/main/JAVA_COMPAT.md){:target="_blank"} for sample uses.
 
