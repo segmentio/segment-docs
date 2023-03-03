@@ -19,6 +19,9 @@ This unlocks some interesting possibilities to help you meet your business goals
 
 Check out Segment's [SQL Traits blog post](https://segment.com/blog/sql-traits){:target="_blank"} for more customer case studies.
 
+> info ""
+> To view SQL Traits in a user profile, you must have [PII access](/docs/segment-app/iam/roles/#pii-access). Without this access, Segment redacts all SQL traits in a profile.
+
 
 ### Example: cloud sources sync
 
@@ -240,3 +243,7 @@ In this case, for sources connected to Engage, Segment hasn't received any event
 You might be returning a value for `user_id` that's inconsistent with how you track `user_id` elsewhere. Some customers want to return `email` as the `user_id`, or a partner's tool ID as the `user_id`. These conflict with Segment best practices and corrupt the identity graph if you then track `user_id` differently elsewhere in your apps.
 
 If you see only question marks in the preview, and have already tracked data historically with Segment, then you likely have the wrong column. If your cloud source doesn't have the database `user_id`, Segment recommends using a `JOIN` clause with an internal users table before sending the results back to Segment.
+
+### Why do some SQL Trait settings not have the “Compute schedule” option?
+
+Segment added the compute schedule feature on Feb 8, 2021, so traits created prior to this date will not have this option. If your trait lacks this feature, recreating it will make it available.

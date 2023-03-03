@@ -1,8 +1,6 @@
 ---
 title: PlayerZero Web (Actions)
 id: 634ef204885be3def430af66
-private: true
-hidden: true
 ---
 {% include content/plan-grid.md name="actions" %}
 
