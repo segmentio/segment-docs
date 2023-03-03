@@ -24,60 +24,6 @@ Destinations where the Public API lists `eu-west-1` and the manually captured in
 
 {% assign destinations = site.data.catalog.destinations.items %}
 
-### Destinations with missing PAPI data
-
-<table>
-<thead>
-<th>Destination</th>
-<th>Manual Regions</th>
-<th>Manual Endpoints</th>
-<th>PAPI Regions</th>
-<th>PAPI Endpoints</th>
-</thead>
-<tbody>
-{% for destination in destinations %}
-{% if destination.endpoints contains "eu-west-1"%} {%unless destination.endpoints_papi contains "eu-west-1" %}
-<tr style="background: rgba(255,0,0,.1);">
-<td>{{destination.name}}</td>
-<td style="white-space:nowrap;">{{destination.endpoints | join:'<br/>'}}</td>
-<td>{{destination.regions | join:'<br/>'}}</td>
-<td style="white-space:nowrap;">{{destination.endpoints_papi | join:'<br/>'}}</td>
-<td>{{destination.regions_papi | join:'<br/>'}}</td>
-</tr>
-{% endunless %}
-{% endif %}
-{% endfor %}
-</tbody>
-</table>
-
-
-### Destinations where manually captured data may be out of date
-
-
-<table>
-<thead>
-<th>Destination</th>
-<th>Manual Regions</th>
-<th>Manual Endpoints</th>
-<th>PAPI Regions</th>
-<th>PAPI Endpoints</th>
-</thead>
-<tbody>
-{% for destination in destinations %}
-{% if destination.endpoints_papi contains "eu-west-1"%}
-{%unless destination.endpoints contains "eu-west-1" %}
-<tr style="background: rgba(0,0,255,.1);">
-<td>{{destination.name}}</td>
-<td style="white-space:nowrap;">{{destination.endpoints | join:'<br/>'}}</td>
-<td>{{destination.regions | join:'<br/>'}}</td>
-<td style="white-space:nowrap;">{{destination.endpoints_papi | join:'<br/>'}}</td>
-<td>{{destination.regions_papi | join:'<br/>'}}</td>
-</tr>
-{% endunless %}
-{% endif %}
-{% endfor %}
-</tbody>
-</table>
 
 
 ### All destinations
