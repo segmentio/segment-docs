@@ -84,8 +84,8 @@ Destinations where the Public API lists `eu-west-1` and the manually captured in
 <table>
 <thead>
 <th>Destination</th>
-<th>Regions</th>
 <th>Endpoints</th>
+<th>Regions</th>
 </thead>
 <tbody>
 {% for destination in destinations %}
