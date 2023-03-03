@@ -326,6 +326,8 @@ sections:
       title: Subscription States
     - path: /engage/user-subscriptions/engage-source
       title: Engage Events Source
+    - path: /engage/user-subscriptions/subscription-sql
+      title: Subscriptions with SQL Traits
   - section_title: Profiles
     description: "See how to create audiences based on data."
     section:
