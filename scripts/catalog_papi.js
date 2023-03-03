@@ -336,7 +336,6 @@ const updateSources = async () => {
 const updateDestinations = async () => {
   let destinations = []
   let destinationsUpdated = []
-  let regionalDestinationsUpdated = []
   let destinationCategories = []
   let categories = new Set()
   let nextPageToken = "MA=="
@@ -363,11 +362,15 @@ const updateDestinations = async () => {
     let regions = []
 
     let slug = slugify(destination.name)
-    if (typeof destination.supportedRegions == "undefined") {
+    
+    if (typeof destination.supportedRegions != "undefined") {
+      regions = destination.supportedRegions
+    } else {
       regions.push('us-west-2','eu-west-1')
     }
-
-    if (typeof destination.regionEndpooints == "undefined"){
+    if (typeof destination.regionEndpoints != "undefined"){
+      endpoints = destination.regionEndpoints
+    } else {
       endpoints.push('US')
     }
     let url = `connections/destinations/catalog/${slug}`
@@ -457,16 +460,6 @@ const updateDestinations = async () => {
     doesCatalogItemExist(updatedDestination)
     tempCategories.reduce((s, e) => s.add(e), categories)
 
-    // let updatedRegionalDestination = {
-    //   id: destination.id,
-    //   display_name: destination.name,
-    //   slug,
-    //   url,
-    //   regions,
-    //   endpoints
-    // }
-
-    // regionalDestinationsUpdated.push(updatedRegionalDestination)
   })
 
 

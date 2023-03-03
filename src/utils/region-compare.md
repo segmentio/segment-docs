@@ -84,10 +84,8 @@ Destinations where the Public API lists `eu-west-1` and the manually captured in
 <table>
 <thead>
 <th>Destination</th>
-<th>Manual Regions</th>
-<th>Manual Endpoints</th>
-<th>PAPI Regions</th>
-<th>PAPI Endpoints</th>
+<th>Regions</th>
+<th>Endpoints</th>
 </thead>
 <tbody>
 {% for destination in destinations %}
@@ -95,8 +93,6 @@ Destinations where the Public API lists `eu-west-1` and the manually captured in
 <td>{{destination.name}}</td>
 <td style="white-space:nowrap;">{{destination.endpoints | join:'<br/>'}}</td>
 <td>{{destination.regions | join:'<br/>'}}</td>
-<td style="white-space:nowrap;">{{destination.endpoints_papi | join:'<br/>'}}</td>
-<td>{{destination.regions_papi | join:'<br/>'}}</td>
 </tr>
 {% endfor %}
 </tbody>

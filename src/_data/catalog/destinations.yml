@@ -208,8 +208,11 @@ items:
   slug: ab-smartly
   hidden: false
   endpoints:
+  - EU
   - US
-  regions: []
+  regions:
+  - eu-west-1
+  - us-west-2
   url: connections/destinations/catalog/ab-smartly
   previous_names:
   - AB Smartly
@@ -380,7 +383,9 @@ items:
   hidden: false
   endpoints:
   - US
-  regions: []
+  regions:
+  - us-west-2
+  - eu-west-1
   url: connections/destinations/catalog/actable-predictive
   previous_names:
   - Actable Predictive
@@ -1567,7 +1572,9 @@ items:
   hidden: true
   endpoints:
   - US
-  regions: []
+  regions:
+  - us-west-2
+  - eu-west-1
   url: connections/destinations/catalog/adobe-target-cloud-mode
   previous_names:
   - Adobe Target Cloud Mode
@@ -1681,7 +1688,9 @@ items:
   hidden: true
   endpoints:
   - US
-  regions: []
+  regions:
+  - us-west-2
+  - eu-west-1
   url: connections/destinations/catalog/adobe-target-web
   previous_names:
   - Adobe Target Web
@@ -2368,7 +2377,8 @@ items:
   hidden: false
   endpoints:
   - US
-  regions: []
+  regions:
+  - us-west-2
   url: connections/destinations/catalog/algolia-insights
   previous_names:
   - Algolia
@@ -2686,7 +2696,8 @@ items:
   hidden: false
   endpoints:
   - US
-  regions: []
+  regions:
+  - us-west-2
   url: connections/destinations/catalog/amazon-lambda
   previous_names:
   - Amazon Lambda
@@ -3063,7 +3074,10 @@ items:
   hidden: false
   endpoints:
   - US
-  regions: []
+  - EU
+  regions:
+  - eu-west-1
+  - us-west-2
   url: connections/destinations/catalog/amplitude
   previous_names:
   - Amplitude
@@ -3493,7 +3507,10 @@ items:
   hidden: false
   endpoints:
   - US
-  regions: []
+  - EU
+  regions:
+  - us-west-2
+  - eu-west-1
   url: connections/destinations/catalog/actions-amplitude
   previous_names:
   - Actions Amplitude
@@ -8451,6 +8468,7 @@ items:
   hidden: false
   endpoints:
   - US
+  - EU
   regions:
   - us-west-2
   - eu-west-1
@@ -8750,7 +8768,10 @@ items:
   hidden: false
   endpoints:
   - US
-  regions: []
+  - EU
+  regions:
+  - us-west-2
+  - eu-west-1
   url: connections/destinations/catalog/braze-cloud-mode-actions
   previous_names:
   - Braze Cloud Mode (Actions)
@@ -9598,7 +9619,10 @@ items:
   hidden: false
   endpoints:
   - US
-  regions: []
+  - EU
+  regions:
+  - us-west-2
+  - eu-west-1
   url: connections/destinations/catalog/braze-web-device-mode-actions
   previous_names:
   - Braze Web Mode (Actions)
@@ -10969,7 +10993,8 @@ items:
   hidden: false
   endpoints:
   - US
-  regions: []
+  regions:
+  - us-west-2
   url: connections/destinations/catalog/canny
   previous_names:
   - Canny-Functions
@@ -11599,7 +11624,9 @@ items:
   hidden: true
   endpoints:
   - US
-  regions: []
+  regions:
+  - us-west-2
+  - eu-west-1
   url: connections/destinations/catalog/clevertap-actions
   previous_names:
   - Clevertap (Actions)
@@ -11949,7 +11976,9 @@ items:
   hidden: false
   endpoints:
   - US
-  regions: []
+  regions:
+  - us-west-2
+  - eu-west-1
   url: connections/destinations/catalog/close
   previous_names:
   - Close
@@ -12286,7 +12315,9 @@ items:
   hidden: true
   endpoints:
   - US
-  regions: []
+  regions:
+  - us-west-2
+  - eu-west-1
   url: connections/destinations/catalog/commandbar
   previous_names:
   - CommandBar
@@ -12781,7 +12812,9 @@ items:
   hidden: false
   endpoints:
   - US
-  regions: []
+  regions:
+  - us-west-2
+  - eu-west-1
   url: connections/destinations/catalog/actions-cordial
   previous_names:
   - Cordial (Actions)
@@ -14118,7 +14151,9 @@ items:
   hidden: false
   endpoints:
   - US
-  regions: []
+  regions:
+  - us-west-2
+  - eu-west-1
   url: connections/destinations/catalog/criteo-audiences
   previous_names:
   - Criteo Audiences
@@ -14307,7 +14342,8 @@ items:
   hidden: false
   endpoints:
   - US
-  regions: []
+  regions:
+  - us-west-2
   url: connections/destinations/catalog/criteo-offline-conversions
   previous_names:
   - Criteo Offline Conversions
@@ -14731,6 +14767,7 @@ items:
   hidden: false
   endpoints:
   - US
+  - EU
   regions:
   - us-west-2
   - eu-west-1
@@ -14819,8 +14856,11 @@ items:
   slug: customer-io-actions
   hidden: false
   endpoints:
+  - EU
   - US
-  regions: []
+  regions:
+  - us-west-2
+  - eu-west-1
   url: connections/destinations/catalog/customer-io-actions
   previous_names:
   - Actions Customerio
@@ -16753,7 +16793,8 @@ items:
   hidden: false
   endpoints:
   - US
-  regions: []
+  regions:
+  - us-west-2
   url: connections/destinations/catalog/enjoyhq
   previous_names:
   - EnjoyHQ
@@ -17066,7 +17107,8 @@ items:
   hidden: false
   endpoints:
   - US
-  regions: []
+  regions:
+  - us-west-2
   url: connections/destinations/catalog/exponea
   previous_names:
   - Exponea
@@ -17170,7 +17212,8 @@ items:
   hidden: false
   endpoints:
   - US
-  regions: []
+  regions:
+  - us-west-2
   url: connections/destinations/catalog/extole-platform
   previous_names:
   - Extole Platform
@@ -17404,7 +17447,9 @@ items:
   hidden: false
   endpoints:
   - US
-  regions: []
+  regions:
+  - us-west-2
+  - eu-west-1
   url: connections/destinations/catalog/actions-facebook-conversions-api
   previous_names:
   - Facebook Conversions API (Actions)
@@ -20208,7 +20253,9 @@ items:
   hidden: false
   endpoints:
   - US
-  regions: []
+  regions:
+  - us-west-2
+  - eu-west-1
   url: connections/destinations/catalog/actions-friendbuy-cloud
   previous_names:
   - Friendbuy (Cloud Destination)
@@ -21444,7 +21491,9 @@ items:
   hidden: false
   endpoints:
   - US
-  regions: []
+  regions:
+  - us-west-2
+  - eu-west-1
   url: connections/destinations/catalog/actions-friendbuy
   previous_names:
   - Friendbuy (Actions)
@@ -22558,6 +22607,7 @@ items:
   slug: fullstory
   hidden: false
   endpoints:
+  - EU
   - US
   regions:
   - us-west-2
@@ -22650,7 +22700,9 @@ items:
   hidden: false
   endpoints:
   - US
-  regions: []
+  regions:
+  - us-west-2
+  - eu-west-1
   url: connections/destinations/catalog/actions-fullstory
   previous_names:
   - Fullstory
@@ -22897,7 +22949,9 @@ items:
   hidden: true
   endpoints:
   - US
-  regions: []
+  regions:
+  - us-west-2
+  - eu-west-1
   url: connections/destinations/catalog/fullstory-cloud-mode-actions
   previous_names:
   - Fullstory Cloud Mode (Actions)
@@ -23155,7 +23209,8 @@ items:
   hidden: false
   endpoints:
   - US
-  regions: []
+  regions:
+  - us-west-2
   url: connections/destinations/catalog/funnelenvy
   previous_names:
   - FunnelEnvy
@@ -23421,7 +23476,8 @@ items:
   hidden: false
   endpoints:
   - US
-  regions: []
+  regions:
+  - us-west-2
   url: connections/destinations/catalog/gameball
   previous_names:
   - Gameball
@@ -23549,7 +23605,8 @@ items:
   hidden: false
   endpoints:
   - US
-  regions: []
+  regions:
+  - us-west-2
   url: connections/destinations/catalog/gist
   previous_names:
   - Gist
@@ -23876,7 +23933,9 @@ items:
   hidden: true
   endpoints:
   - US
-  regions: []
+  regions:
+  - us-west-2
+  - eu-west-1
   url: connections/destinations/catalog/google-ads-conversions
   previous_names:
   - Actions Google Enhanced Conversions
@@ -25110,7 +25169,9 @@ items:
   hidden: false
   endpoints:
   - US
-  regions: []
+  regions:
+  - us-west-2
+  - eu-west-1
   url: connections/destinations/catalog/actions-google-analytics-4
   previous_names:
   - Actions Google Analytic 4
@@ -29344,7 +29405,9 @@ items:
   hidden: true
   endpoints:
   - US
-  regions: []
+  regions:
+  - us-west-2
+  - eu-west-1
   url: connections/destinations/catalog/google-sheets
   previous_names:
   - Google Sheets
@@ -30425,7 +30488,8 @@ items:
   hidden: false
   endpoints:
   - US
-  regions: []
+  regions:
+  - us-west-2
   url: connections/destinations/catalog/headsup-ai
   previous_names:
   - HeadsUp AI
@@ -30843,7 +30907,9 @@ items:
   hidden: false
   endpoints:
   - US
-  regions: []
+  regions:
+  - us-west-2
+  - eu-west-1
   url: connections/destinations/catalog/actions-hubspot-cloud
   previous_names:
   - Hubspot Cloud Mode (actions)
@@ -31532,8 +31598,11 @@ items:
   slug: actions-hubspot-web
   hidden: false
   endpoints:
+  - EU
   - US
-  regions: []
+  regions:
+  - us-west-2
+  - eu-west-1
   url: connections/destinations/catalog/actions-hubspot-web
   previous_names:
   - Hubspot Web (Actions)
@@ -32005,7 +32074,8 @@ items:
   hidden: false
   endpoints:
   - US
-  regions: []
+  regions:
+  - us-west-2
   url: connections/destinations/catalog/impact-partnership-cloud
   previous_names:
   - Impact Partnership Cloud
@@ -32349,7 +32419,8 @@ items:
   hidden: false
   endpoints:
   - US
-  regions: []
+  regions:
+  - us-west-2
   url: connections/destinations/catalog/inkit
   previous_names:
   - Inkit
@@ -32608,7 +32679,9 @@ items:
   hidden: false
   endpoints:
   - US
-  regions: []
+  regions:
+  - us-west-2
+  - eu-west-1
   url: connections/destinations/catalog/actions-intercom-cloud
   previous_names:
   - Intercom Cloud Mode (Actions)
@@ -33150,8 +33223,11 @@ items:
   slug: actions-intercom-web
   hidden: false
   endpoints:
+  - EU
   - US
-  regions: []
+  regions:
+  - us-west-2
+  - eu-west-1
   url: connections/destinations/catalog/actions-intercom-web
   previous_names:
   - Intercom Web (Actions)
@@ -34102,7 +34178,8 @@ items:
   hidden: false
   endpoints:
   - US
-  regions: []
+  regions:
+  - us-west-2
   url: connections/destinations/catalog/june
   previous_names:
   - June
@@ -34602,7 +34679,8 @@ items:
   hidden: false
   endpoints:
   - US
-  regions: []
+  regions:
+  - us-west-2
   url: connections/destinations/catalog/kevel
   previous_names:
   - Kevel
@@ -34928,7 +35006,9 @@ items:
   hidden: true
   endpoints:
   - US
-  regions: []
+  regions:
+  - us-west-2
+  - eu-west-1
   url: connections/destinations/catalog/koala
   previous_names:
   - Koala
@@ -35289,7 +35369,9 @@ items:
   hidden: false
   endpoints:
   - US
-  regions: []
+  regions:
+  - us-west-2
+  - eu-west-1
   url: connections/destinations/catalog/actions-launchdarkly
   previous_names:
   - LaunchDarkly
@@ -35736,7 +35818,9 @@ items:
   hidden: false
   endpoints:
   - US
-  regions: []
+  regions:
+  - us-west-2
+  - eu-west-1
   url: connections/destinations/catalog/actions-linkedin-audiences
   previous_names:
   - Linkedin Audiences
@@ -36229,7 +36313,9 @@ items:
   hidden: true
   endpoints:
   - US
-  regions: []
+  regions:
+  - us-west-2
+  - eu-west-1
   url: connections/destinations/catalog/logrocket
   previous_names:
   - Logrocket
@@ -36390,7 +36476,8 @@ items:
   hidden: false
   endpoints:
   - US
-  regions: []
+  regions:
+  - us-west-2
   url: connections/destinations/catalog/lou
   previous_names:
   - Lou
@@ -37524,7 +37611,9 @@ items:
   hidden: false
   endpoints:
   - US
-  regions: []
+  regions:
+  - eu-west-1
+  - us-west-2
   url: connections/destinations/catalog/metronome-actions
   previous_names:
   - Metronome (Actions)
@@ -37734,8 +37823,11 @@ items:
   slug: actions-mixpanel
   hidden: false
   endpoints:
+  - EU
   - US
-  regions: []
+  regions:
+  - us-west-2
+  - eu-west-1
   url: connections/destinations/catalog/actions-mixpanel
   previous_names:
   - Mixpanel (Actions)
@@ -39689,6 +39781,7 @@ items:
   hidden: false
   endpoints:
   - US
+  - EU
   regions:
   - us-west-2
   - eu-west-1
@@ -40014,8 +40107,11 @@ items:
   slug: actions-moengage
   hidden: false
   endpoints:
+  - EU
   - US
-  regions: []
+  regions:
+  - us-west-2
+  - eu-west-1
   url: connections/destinations/catalog/actions-moengage
   previous_names:
   - Moengage (Actions)
@@ -41060,6 +41156,7 @@ items:
   slug: new-relic
   hidden: false
   endpoints:
+  - EU
   - US
   regions:
   - us-west-2
@@ -41387,7 +41484,8 @@ items:
   hidden: false
   endpoints:
   - US
-  regions: []
+  regions:
+  - us-west-2
   url: connections/destinations/catalog/noora
   previous_names:
   - Noora
@@ -42143,7 +42241,9 @@ items:
   hidden: false
   endpoints:
   - US
-  regions: []
+  regions:
+  - us-west-2
+  - eu-west-1
   url: connections/destinations/catalog/pardot-actions
   previous_names:
   - Pardot Actions
@@ -42732,7 +42832,8 @@ items:
   hidden: false
   endpoints:
   - US
-  regions: []
+  regions:
+  - us-west-2
   url: connections/destinations/catalog/perkville
   previous_names:
   - Perkville
@@ -43341,7 +43442,9 @@ items:
   hidden: true
   endpoints:
   - US
-  regions: []
+  regions:
+  - us-west-2
+  - eu-west-1
   url: connections/destinations/catalog/playerzero-web
   previous_names:
   - PlayerZero Web
@@ -43645,7 +43748,8 @@ items:
   hidden: false
   endpoints:
   - US
-  regions: []
+  regions:
+  - us-west-2
   url: connections/destinations/catalog/posthog
   previous_names:
   - PostHog
@@ -44033,7 +44137,9 @@ items:
   hidden: true
   endpoints:
   - US
-  regions: []
+  regions:
+  - us-west-2
+  - eu-west-1
   url: connections/destinations/catalog/qualtrics
   previous_names:
   - Qualtrics
@@ -44901,7 +45007,8 @@ items:
   hidden: false
   endpoints:
   - US
-  regions: []
+  regions:
+  - us-west-2
   url: connections/destinations/catalog/recombee-ai
   previous_names:
   - Recombee AI
@@ -45178,6 +45285,7 @@ items:
   hidden: false
   endpoints:
   - US
+  - EU
   regions:
   - us-west-2
   - eu-west-1
@@ -45626,7 +45734,9 @@ items:
   hidden: true
   endpoints:
   - US
-  regions: []
+  regions:
+  - us-west-2
+  - eu-west-1
   url: connections/destinations/catalog/ripe
   previous_names:
   - Ripe
@@ -46120,7 +46230,9 @@ items:
   hidden: false
   endpoints:
   - US
-  regions: []
+  regions:
+  - us-west-2
+  - eu-west-1
   url: connections/destinations/catalog/ripe-cloud-mode-actions
   previous_names:
   - Ripe Cloud Mode (Actions)
@@ -47264,7 +47376,9 @@ items:
   hidden: false
   endpoints:
   - US
-  regions: []
+  regions:
+  - us-west-2
+  - eu-west-1
   url: connections/destinations/catalog/actions-salesforce
   previous_names:
   - Salesforce (Actions)
@@ -48980,7 +49094,9 @@ items:
   hidden: false
   endpoints:
   - US
-  regions: []
+  regions:
+  - us-west-2
+  - eu-west-1
   url: connections/destinations/catalog/actions-salesforce-marketing-cloud
   previous_names:
   - Salesforce Marketing Cloud (Actions)
@@ -49640,7 +49756,8 @@ items:
   hidden: false
   endpoints:
   - US
-  regions: []
+  regions:
+  - us-west-2
   url: connections/destinations/catalog/scuba-analytics
   previous_names:
   - interana
@@ -49713,8 +49830,11 @@ items:
   slug: segment-connections
   hidden: true
   endpoints:
+  - EU
   - US
-  regions: []
+  regions:
+  - us-west-2
+  - eu-west-1
   url: connections/destinations/catalog/segment-connections
   previous_names:
   - Segment
@@ -51150,7 +51270,8 @@ items:
   hidden: false
   endpoints:
   - US
-  regions: []
+  regions:
+  - us-west-2
   url: connections/destinations/catalog/selligent-marketing-cloud
   previous_names:
   - Selligent Marketing Cloud
@@ -51263,7 +51384,9 @@ items:
   hidden: false
   endpoints:
   - US
-  regions: []
+  regions:
+  - us-west-2
+  - eu-west-1
   url: connections/destinations/catalog/actions-sendgrid
   previous_names:
   - Sendgrid Marketing Campaigns
@@ -52005,7 +52128,8 @@ items:
   hidden: false
   endpoints:
   - US
-  regions: []
+  regions:
+  - us-west-2
   url: connections/destinations/catalog/signl4-alerting
   previous_names:
   - SIGNL4 Alerting
@@ -52418,7 +52542,9 @@ items:
   hidden: false
   endpoints:
   - US
-  regions: []
+  regions:
+  - eu-west-1
+  - us-west-2
   url: connections/destinations/catalog/actions-slack
   previous_names:
   - Actions Slack
@@ -52775,7 +52901,9 @@ items:
   hidden: false
   endpoints:
   - US
-  regions: []
+  regions:
+  - us-west-2
+  - eu-west-1
   url: connections/destinations/catalog/actions-snap-conversions
   previous_names:
   - Snap Conversions Api
@@ -54297,7 +54425,9 @@ items:
   hidden: false
   endpoints:
   - US
-  regions: []
+  regions:
+  - us-west-2
+  - eu-west-1
   url: connections/destinations/catalog/sprig-web
   previous_names:
   - Sprig (Actions)
@@ -54868,7 +54998,8 @@ items:
   hidden: false
   endpoints:
   - US
-  regions: []
+  regions:
+  - us-west-2
   url: connections/destinations/catalog/stories
   previous_names:
   - Stories
@@ -55315,7 +55446,8 @@ items:
   hidden: false
   endpoints:
   - US
-  regions: []
+  regions:
+  - us-west-2
   url: connections/destinations/catalog/talonone
   previous_names:
   - Talon_One
@@ -55388,7 +55520,9 @@ items:
   hidden: false
   endpoints:
   - US
-  regions: []
+  regions:
+  - us-west-2
+  - eu-west-1
   url: connections/destinations/catalog/talon-one-actions
   previous_names:
   - Talon.One (Actions)
@@ -56322,7 +56456,9 @@ items:
   hidden: false
   endpoints:
   - US
-  regions: []
+  regions:
+  - us-west-2
+  - eu-west-1
   url: connections/destinations/catalog/tiktok-conversions
   previous_names:
   - Tiktok Conversions
@@ -58731,7 +58867,8 @@ items:
   hidden: false
   endpoints:
   - US
-  regions: []
+  regions:
+  - us-west-2
   url: connections/destinations/catalog/variance
   previous_names:
   - Variance
@@ -58928,7 +59065,8 @@ items:
   hidden: false
   endpoints:
   - US
-  regions: []
+  regions:
+  - us-west-2
   url: connections/destinations/catalog/vidora
   previous_names:
   - Vidora
@@ -59188,7 +59326,8 @@ items:
   hidden: false
   endpoints:
   - US
-  regions: []
+  regions:
+  - us-west-2
   url: connections/destinations/catalog/voucherify
   previous_names:
   - Voucherify
@@ -59348,7 +59487,9 @@ items:
   hidden: true
   endpoints:
   - US
-  regions: []
+  regions:
+  - us-west-2
+  - eu-west-1
   url: connections/destinations/catalog/vwo-cloud-mode-actions
   previous_names:
   - VWO Cloud Mode (Actions)
@@ -59744,7 +59885,9 @@ items:
   hidden: true
   endpoints:
   - US
-  regions: []
+  regions:
+  - us-west-2
+  - eu-west-1
   url: connections/destinations/catalog/vwo-web-mode-actions
   previous_names:
   - VWO Web Mode (Actions)
@@ -60074,7 +60217,9 @@ items:
   hidden: true
   endpoints:
   - US
-  regions: []
+  regions:
+  - us-west-2
+  - eu-west-1
   url: connections/destinations/catalog/webhooks-actions
   previous_names:
   - Webhook
@@ -60436,7 +60581,8 @@ items:
   hidden: false
   endpoints:
   - US
-  regions: []
+  regions:
+  - us-west-2
   url: connections/destinations/catalog/windsor
   previous_names:
   - Windsor
@@ -60493,7 +60639,9 @@ items:
   hidden: true
   endpoints:
   - US
-  regions: []
+  regions:
+  - us-west-2
+  - eu-west-1
   url: connections/destinations/catalog/wisepops
   previous_names:
   - Wisepops
