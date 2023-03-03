@@ -7,10 +7,8 @@ id: dZeHygTSD4
 ---
 With Analytics Swift, you can send data from iOS, tvOS, iPadOS, WatchOS, macOS and Linux applications to any analytics or marketing tool without having to learn, test, or implement a new API every time. Analytics Swift is compatible with both Swift and Objective-C applications. 
 
-Analytics Swift enables you to process and track the history of a payload, while Segment controls the API and prevents unintended operations. Analytics Swift also offers default implementations to help you maintain destinations and integrations.
-
 > warning ""
-> If you're migrating to Analytics Swift from a different mobile library, you can skip to the [migration guide](/docs/connections/sources/catalog/libraries/mobile/swift/migration/).
+> If you're migrating to **Analytics Swift** from Analyitcs iOS (Classic), you can skip to the [migration guide](/docs/connections/sources/catalog/libraries/mobile/swift/migration/).
 
 ## Getting started
 To get started with the Analytics Swift mobile library:
