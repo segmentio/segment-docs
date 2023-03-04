@@ -83,7 +83,7 @@ The Track event CSV file contains the following columns:
   - Values are "planned" or "unplanned"
 
 > note "Labels in your exported CSV"
-> If you use [labels](docs/protocols/tracking-plan/create/#add-a-label), they appear as columns in your CSV. The column headers are keys, and the column data contains values.
+> If you use [labels](/docs/protocols/tracking-plan/create/#add-a-label), they appear as columns in your CSV. The column headers are keys, and the column data contains values.
 
 ### Identity and Group event CSV format
 The Identify and Group CSV files contain the following columns:
