@@ -82,8 +82,11 @@ The Track event CSV file contains the following columns:
 - Planned (available for Protocols customers with a connected Tracking Plan)
   - Values are "planned" or "unplanned"
 
+> note "Labels in your exported CSV"
+> If you use [labels](docs/protocols/tracking-plan/create/#add-a-label), they appear as columns in your CSV. The column headers are keys, and the column data contains values.
+
 ### Identity and Group event CSV format
-The Identify and Group CSV file contains the following columns:
+The Identify and Group CSV files contain the following columns:
 - Trait Name
 - Last Seen At (UTC)
   - If greater than 30 days, the value is "more than 30 days ago"
