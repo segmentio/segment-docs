@@ -94,7 +94,10 @@ properties: {
 
 <tr>
 <td><b>Array (Any):</b> Stringify</td>
-<td markdown="1">
+<td markdown="1" colspan="2">
+<table>
+<tr>
+<td width="10%">
 
 ```json
 products: {
@@ -103,14 +106,51 @@ products: {
   ]
 }
 ```
-
 </td>
 <td>
-    <b>Column Name:</b> <br/>
+<b>Column Name:</b> <br/>
     product_id <br/><br/>
     <b>Value:</b>
     "[507f1, 505bd]"
-</td> 
+</td>
+</tr>
+<tr>
+<td>
+
+```json
+products: [
+    {
+      product_id: '507f1f77bcf86cd799439011',
+      sku: '45790-32',
+      name: 'Monopoly: 3rd Edition',
+      price: 19,
+      position: 1,
+      category: 'Games',
+      url: 'https://www.example.com/product/path',
+      image_url: 'https://www.example.com/product/path.jpg'
+    },
+    {
+      product_id: '505bd76785ebb509fc183733',
+      sku: '46493-32',
+      name: 'Uno Card Game',
+      price: 3,
+      position: 2,
+      category: 'Games'
+    }
+  ]
+```
+</td>
+<td>
+
+<b>Column Name:</b> <br/>
+    products <br/><br/>
+    <b>Value:</b>
+    '[{"product_id":"507f1f77bcf86cd799439011","sku":"45790-32","name":"Monopoly: 3rd Edition","price":19,"position":1,"category":"Games","url":"https://www.example.com/product/path","image_url":"https://www.example.com/product/path.jpg"},{"product_id":"505bd76785ebb509fc183733","sku":"46493-32","name":"Uno Card Game","price":3,"position":2,"category":"Games"}]'
+
+</td>
+</tr>
+</table>
+</td>
 </tr>
 </table>
 
