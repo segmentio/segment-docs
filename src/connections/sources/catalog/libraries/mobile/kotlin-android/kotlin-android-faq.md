@@ -57,3 +57,6 @@ The SDK internally uses a number of Java 8 language API through desugaring (see 
 When running on Android 12+, web deeplinks (http:// or https://) require an additional step for deep links to work. Starting in Android 12 you must now verify that you own the domain of your deeplink. This means adding a JSON file with credentials to both your app and your deeplink host. Learn more here.
 
 Additionally while Analytics SDK tracks most deeplinks automatically, there are some cases that may need some manual tracking. See an example here.
+
+### Will I still see device-mode integrations listed as `false` in the integrations object?
+When you successfully package a plugin in device-mode, you will no longer see the integration listed as `false` in the integrations object for a Segment event. This logic is now packaged in the event metadata, and is not surfaced in the Segment debugger.

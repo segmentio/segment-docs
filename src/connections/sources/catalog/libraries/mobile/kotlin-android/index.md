@@ -13,41 +13,150 @@ With Analytics Kotlin, you can send data using Kotlin and Java applications to a
 > warning ""
 > If you're migrating to Analytics Kotlin from a different mobile library, you can skip to the [migration guide](/docs/connections/sources/catalog/libraries/mobile/kotlin-android/migration/).
 
-## Getting Started
+## Getting started
 
-{% include components/reference-button.html
-  href="/docs/connections/sources/catalog/libraries/mobile/kotlin-android/implementation"
-  icon="languages/kotlin.svg"
-  title="Kotlin Implementation Guide"
-  description="Follow the Analytics Kotlin implementation guide to add Segment analytics to any Kotlin or Java application."
-  newtab="false"
-  logo="true"
-%}
+To get started with the Analytics-Kotlin mobile library:
 
-## Destinations
+1. Create a Source in Segment.
+    1. Go to **Connections > Sources > Add Source**.
+    2. Search for **Kotlin (Android)** and click **Add source**.
+2. Add the Analytics dependency to your build.gradle.
 
-Analytics Kotlin allows you to choose how you send data to Segment and your connected destinations from your app. There are two ways to send data:
+    Segment recommends you to install the library with a build system like Gradle, as it simplifies the process of upgrading versions and adding integrations. The library is distributed through [Maven Central](https://central.sonatype.com/artifact/com.segment.analytics.kotlin/android/1.10.2){:target="_blank"}. Add the analytics module to your build.gradle as a dependency as shown in the code sample below, and replace `<latest_version>` with the latest version listed on Segment's [releases page.](https://github.com/segmentio/analytics-kotlin/releases){:target="_blank"}
 
-**Cloud-mode**: The sources send data directly to the Segment servers, which then translate it for each connected downstream destination, and send it on. Translation is done on the Segment servers, keeping your page size, method count, and load time small.
+{% codeexample %}
+{% codeexampletab Kotlin%}
+ ```java
+    repositories {
+      mavenCentral()
+    }
+    dependencies {
+        implementation 'com.segment.analytics.kotlin:android:<latest_version>'
+    }
+ ```
+{% endcodeexampletab %}
+{% codeexampletab Java%}
+```java
+    repositories {
+        maven { url 'https://jitpack.io' }
+    }
 
-**Device-mode**: You include additional code on your  app which allows Segment to use the data you collect on the device to make calls directly to the destination tool’s API, without sending it to the Segment servers first. (You still send your data to the Segment servers, but this occurs asynchronously.) This is also called wrapping or bundling, and it might be required when the source has to be loaded on the page to work, or loaded directly on the device to function correctly. 
+    dependencies {
+        implementation 'com.github.segmentio.analytics-kotlin:android:+'
+    }
+```
+{% endcodeexampletab %}
+{% endcodeexample %}   
 
-### Supported destinations
+3. Initialize and configure the client. Segment recommends you to install the client in your application subclass.
+
+{% codeexample %}
+{% codeexampletab Kotlin%}
+```java
+    // Add required imports
+    import com.segment.analytics.kotlin.android.Analytics
+    import com.segment.analytics.kotlin.core.*
+
+    // Create an analytics client with the given application context and Segment write key.
+    // NOTE: in android, application context is required to pass as the second parameter.
+    Analytics("YOUR_WRITE_KEY", applicationContext) {
+        // Automatically track Lifecycle events
+        trackApplicationLifecycleEvents = true
+        flushAt = 3
+        flushInterval = 10
+      }
+```
+{% endcodeexampletab %}
+{% codeexampletab Java%}
+```java
+        AndroidAnalyticsKt.Analytics(BuildConfig.SEGMENT_WRITE_KEY,  getApplicationContext(), configuration -> {
+    
+        configuration.setFlushAt(1);
+        configuration.setCollectDeviceId(true);
+        configuration.setTrackApplicationLifecycleEvents(true);
+        configuration.setTrackDeepLinks(true);
+        //...other config options
+
+        return Unit.INSTANCE;
+
+        JavaAnalytics analyticsCompat = new JavaAnalytics(analytics);​
+        });
+```
+{% endcodeexampletab %}
+{% endcodeexample %}
+
+> warning ""
+> If you're on an Android platform, you must add the application context as the second parameter.
+    
+Automatically tracking lifecycle events (`Application Opened`, `Application Installed`, `Application Updated`) is optional, but Segment highly recommends you to configure these options in order to track core events. Unlike the Analytics Android SDK, the Analytics Kotlin SDK doesn't provide a singleton instance and relies on you to keep track of the instance.
+
+<br>These are the options you can apply to configure the client:
+
+Option Name | Description
+----------- | -----------
+`writeKey` *required* | This is your Segment write key. |
+`application` | Default set to `null`. <br> The application specific object (in the case of `Android: ApplicationContext`).
+`apiHost` | Default set to `api.segment.io/v1`. <br> This sets a default API Host to which Segment sends events. |
+`autoAddSegmentDestination` | Default set to `true`. <br> This automatically adds the Segment Destination plugin. You can set this to `false` if you want to manually add the Segment Destination plugin. |
+`collectDeviceId` | Default set to `false`. <br> Set to `true` to automatically collect the device Id. <br> The [DRM API](https://source.android.com/devices/drm) generates the device ID. If the ID didn't generate previously (for example, because the app was newly installed), an empty string shows before the ID generation completes. You can overwrite the device ID with a custom ID by writing your own [`plugin`](#plugin) |
+`defaultSettings` | Default set to `{}`. <br> The settings object used as fallback in case of network failure. |
+`flushAt` | Default set to `20`. <br> The count of events at which Segment flushes events. |
+`flushInterval` | Default set to `30` (seconds). <br> The interval in seconds at which Segment flushes events. |
+`flushPolicies` | undefined | Add more granular control for when to flush |
+`recordScreenViews` | Default set to `false`. <br> Set to `true` to automatically trigger screen events on Activity Start. |
+`storageProvider` | Default set to `ConcreteStorageProvider`. <br> In Android, this must be set to `AndroidStorageProvider`. The `Analytics` constructors configure this automatically. |
+`trackApplicationLifecycleEvents` | Default set to `false`. <br> Set to `true` to automatically track Lifecycle events. |
+`trackDeepLinks` | Default set to `false`. <br> Set to `true` to automatically track opened Deep Links based on intents. |
+`useLifecycleObserver` | Default set to `false`. <br> Set to `true` to use `LifecycleObserver` to track Application lifecycle events. |
+
+4. Add Permissions to `AndroidManifest.xml`.
+
+    Add these permissions to your `AndroidManifest.xml`:
+
+    ```java
+    <!-- Required for internet. -->
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    ```
+
+5. Enable Java 8+ API desugaring.
+
+    The SDK internally uses a number of Java 8 language APIs through desugaring. Make sure your project either [enables desugaring](https://developer.android.com/studio/write/java8-support#library-desugaring)) or requires a minimum API level of 26.
+
+> info ""
+> You'll find configuration options such as IDFA collection and automatic screen tracking in Segment’s [Plugin Examples repository](https://github.com/segmentio/analytics-kotlin/tree/main/samples/kotlin-android-app/src/main/java/com/segment/analytics/next/plugins){:target="_blank"}.
+
+## Tracking methods
+
+Once you've installed the mobile or server Analytics Kotlin library, you can start collecting data through Segment's tracking methods:
+- [Identify](#identify)
+- [Track](#track)
+- [Screen](#screen)
+- [Group](#group)
+
+> info ""
+> For any of the different methods described, you can replace the properties and traits in the code samples with variables that represent the data collected.
+
+### Destinations
+Destinations are the business tools or apps that Segment forwards your data to. Adding Destinations allow you to act on your data and learn more about your customers in real time.
+
+<br>Segment offers support for two different types of Destinations, learn more about the differences between the two [here]().
+
 
 <div class="double">
-  {% include components/reference-button.html
-    href="/docs/connections/sources/catalog/libraries/mobile/kotlin-android/destination-plugins"
-    icon="destinations-catalog/mobile.svg"
-    title="Device-mode Plugins"
-    description="These destinations are built on Segment's plugin architecture, and allow for direct Device-mode integration."
-    newtab="false"
-  %}
-
   {% include components/reference-button.html
     href="/docs/connections/sources/catalog/libraries/mobile/kotlin-android/cloud-mode-destinations"
     icon="destinations-catalog/cloud-apps.svg"
     title="Cloud-mode Destinations"
-    description="Destinations that support Cloud-mode connections to Segment."
+    description="Destinations that can be enabled from your Segment workspace and require no additional app setup."
+    newtab="false"
+  %}
+
+  {% include components/reference-button.html
+    href="/docs/connections/sources/catalog/libraries/mobile/kotlin-android/destination-plugins"
+    icon="destinations-catalog/mobile.svg"
+    title="Device-mode Destinations"
+    description="Destinations that require additional app setup, and limit certain Segment functionality."
     newtab="false"
   %}
 </div>
@@ -56,29 +165,11 @@ Analytics Kotlin allows you to choose how you send data to Segment and your conn
 
 Analytics for Kotlin is built with extensibility in mind. Use the tools list below to improve data collection.
 
-- [Plugin architecture](/docs/connections/sources/catalog/libraries/mobile/kotlin-android/destination-plugins/#plugin-architecture)
+- [Plugin architecture](/docs/connections/sources/catalog/libraries/mobile/kotlin-android/kotlin-android-plugin-architecture)
 - [Typewriter](/docs/connections/sources/catalog/libraries/mobile/kotlin-android/kotlin-android-typewriter)
 - [Destination filters](/docs/connections/sources/catalog/libraries/mobile/kotlin-android/kotlin-android-destination-filters)
-
-## Samples
-
-The code samples below demonstrate the implementation of common use cases of the Analytics Kotlin library across different platforms. 
-
-### Sample applications
-{% assign resources = site.data.catalog.kotlin_resources.items | where: "categories", "app" %}
-{: .columns}
-{% for resource in resources %}
-- [{{resource.name}}]({{resource.url}}){:target="_blank"}
-{%endfor%}
-
-### Sample plugins 
-{% assign resources = site.data.catalog.kotlin_resources.items | where: "categories", "plugin" %}
-{: .columns}
-{% for resource in resources %}
-- [{{resource.name}}]({{resource.url}}){:target="_blank"}
-{%endfor%}
-
-## Additional resources
-
+- [Code samples]()
 - [Frequently Asked Questions](/docs/connections/sources/catalog/libraries/mobile/kotlin-android/kotlin-android-faq)
-- [Analytics Android (Classic)](/docs/connections/sources/catalog/libraries/mobile/android)
+
+> warning ""
+> If you are using the Analytics Android (Classic) SDK, you can find [the documentation here](/docs/connections/sources/catalog/libraries/mobile/android). Many of the features available in the Analytics Kotlin SDK are not available in the Analytics Android (Classic) SDK. 
