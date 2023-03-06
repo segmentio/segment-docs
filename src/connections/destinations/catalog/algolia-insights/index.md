@@ -42,24 +42,12 @@ Algolia supports the following six events from Segment's [Ecommerce Spec](/docs/
    <td>Description</td>
   </tr>
   <tr>
-   <td><code>Product List Viewed</code></td>
-   <td>Fire this event when a visitor views a product list or category.</td>
-  </tr>
-  <tr>
-   <td><code>Product List Filtered</code></td>
-   <td>Fire this event when a visitor filters a product list or category.</td>
-  </tr>
-  <tr>
    <td><code>Product Viewed</code></td>
    <td>Fire this event when a visitor views a product.</td>
   </tr>
   <tr>
    <td><code>Product Clicked</code></td>
    <td>Fire this event when a visitor clicks a product.</td>
-  </tr>
-  <tr>
-   <td><code>Product Added</code></td>
-   <td>Fire this event when a visitor adds a product to their shopping cart.</td>
   </tr>
   <tr>
    <td><code>Order Completed</code></td>
@@ -70,23 +58,6 @@ Algolia supports the following six events from Segment's [Ecommerce Spec](/docs/
 For a full list of required properties for each event type, see the [Spec: V2 Ecommerce Events](/docs/connections/spec/ecommerce/v2/)
 
 ```js
-analytics.track('Product List Viewed', {
-    index: "my-index-name",
-    queryID: "Algolia queryID", // required only for Click Analytics,
-    products: [{
-        objectID: "hit objectID",
-        // ... other required properties from the spec
-    }]
-})
-
-analytics.track('Product List Filtered', {
-    index: "my-index-name",
-    filters: [
-        { type : "free_delivery", value: "true" }
-    ],
-    // ... other required properties from the spec
-})
-
 analytics.track('Product Viewed', {
     objectID: "hit objectID",
     index: "my-index-name",
@@ -94,17 +65,9 @@ analytics.track('Product Viewed', {
     // ... other required properties from the spec
 })
 
-
 analytics.track('Product Clicked', {
     objectID: "hit objectID",
     position: hitPositionOnIndex, // number
-    index: "my-index-name",
-    queryID: "Algolia queryID", // required only for Click Analytics,
-    // ... other required properties from the spec
-})
-
-analytics.track('Product Added', {
-    objectID: "hit objectID",
     index: "my-index-name",
     queryID: "Algolia queryID", // required only for Click Analytics,
     // ... other required properties from the spec
@@ -128,15 +91,10 @@ Track calls will be sent to Algolia as a `track` event, and appear in your Click
 
 _**NOTE:** If you send anonymous activity to Algolia, it will not be connected to activity attributed to that same user once they are identified._
 
+## Mapping Events
 
-## Renaming Events
+By default, Algolia has set up mappings for Product Clicked, Product Viewed and Order Completed events. If your event structure doesn't match the spec you can update this by using the Mapping Tab.
 
-If you are already sending events of which the names are out of the spec, you need to rename them for Algolia to understand correctly. It doesn't necessarily mean you need to modify your code.
+![Mappings Tab](images/mapping_tab.png)
 
-Go to the destination settings and click "Rename Events".
-
-![Destination Settings](images/destination_settings.png)
-
-You can put your current event names on the left and the event names following the spec on the right.
-
-![Rename Events](images/rename_events.png)
+![Edit Mappings](images/mapping_tab_edit.png)
