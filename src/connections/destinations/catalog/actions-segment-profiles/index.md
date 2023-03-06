@@ -16,7 +16,7 @@ The Segment Profiles destination allows you to send your warehouse data back to 
 
 ### Create a Profile space
 
-To use this destination, you must have an active Segment Profile space. If you have not yet created a Segment Profile space, please follow the steps on the [Profiles Onboarding Guide](/docs/profiles/quickstart/).
+To use this destination, you must have an active Segment Profile space. If you have not yet created a Segment Profile space, please follow the steps in the [Profiles Onboarding Guide](/docs/profiles/quickstart/).
 
 ### Create a Public API token
 
