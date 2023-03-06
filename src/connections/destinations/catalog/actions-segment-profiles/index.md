@@ -20,7 +20,7 @@ To use this destination, you must have an active Segment Profile space. If you h
 
 ### Create a Public API token
 
-In order for the Segment Profiles destination to send data to an existing Profile space, you must provide an authentication token for the Segment Public API. See [Segment's Public API documentation](https://docs.segmentapis.com/tag/Getting-Started#section/Get-an-API-token){:target="_blank"} for information on how to create a token. The token must include Source Admin permissions. You will need this token in the below steps.
+To enable the Segment Profiles destination to send data to an existing Profile space, provide an authentication token for the Segment Public API. See [Segment's Public API documentation](https://docs.segmentapis.com/tag/Getting-Started#section/Get-an-API-token){:target="_blank"} for information on how to create a token. The token must include Source Admin permissions. You will need this token in the below steps.
 
 ### Connect and configure the Segment Profiles destination
 
