@@ -52,8 +52,8 @@ Your access token enables you to call the Profile API and access customer data.
 ### Find a user's external id
 
 1. Navigate to **Profiles > Profiles Explorer** and select the user you want to query through the API.
-2. Take note of the user's available identifiers. For example, this user has a `user_id` with the value `9800664881`. The Profile API requires both the type of ID and the value separated by a colon. For example, `user_id:9800664881`.
-![Retrieving a user's identifiers with the Profiles Explorer](images/profile_api_user_id.png)
+2. Take note of the user's available identifiers. For example, this user has an `anonymous_id` with the value `eml_3bca54b7fe7491add4c8d5d4d9bf6b3e085c6092`. The Profile API requires both the type of ID and the value separated by a colon. For example, `anonymous_id:eml_3bca54b7fe7491add4c8d5d4d9bf6b3e085c6092`. Click the duplicate icon to copy the identifier to your clipboard.   
+![Retrieving a user's identifiers with the Profiles Explorer](images/profile_api_anonymous_id.png)
 
 > warning ""
 > To query phone numbers that contain a plus sign (`+`), insert the escape characters `%2B` in place of the plus sign.
