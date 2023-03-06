@@ -2,6 +2,7 @@
 title: Emarsys (Actions) Destination
 hide-boilerplate: true
 hide-dossier: false
+private: true
 id: 63f65c1c42e3bded41f0499c
 versions:
   - name: Emarsys (Classic)
@@ -35,4 +36,3 @@ Please note that standard API rate limits apply.
 
 {% include components/actions-fields.html %}
 
-{% include components/actions-map-table.html name="actions-emarsys" %}
