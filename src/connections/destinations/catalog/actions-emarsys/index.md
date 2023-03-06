@@ -2,6 +2,7 @@
 title: Emarsys (Actions) Destination
 hide-boilerplate: true
 hide-dossier: false
+id: 63f65c1c42e3bded41f0499c
 versions:
   - name: Emarsys (Classic)
     link: /docs/connections/destinations/emarsys
