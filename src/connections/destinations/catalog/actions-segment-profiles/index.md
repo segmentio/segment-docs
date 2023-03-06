@@ -6,7 +6,8 @@ id: 639c2dbb1309fdcad13951b6
 ---
 The Segment Profiles destination allows you to send your warehouse data back to Segment to create and update [Profiles](/docs/profiles/) that can then be accessed through [Profile API](/docs/profiles/profile-api/) and activated within [Twilio Engage](/docs/engage). 
 
-**You can only connect the Segment Profiles destination to Reverse ETL warehouse sources.**
+> success "Source compatibility"
+> This destination supports connections from Reverse ETL warehouse sources, and is not compatible with other source types.
 
 > info ""
 > The Segment Profiles destination is in beta and is in active development. Some functionality may change before it becomes generally available.
