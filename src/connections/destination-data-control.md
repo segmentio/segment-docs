@@ -43,12 +43,13 @@ Once you block an event in Segment, Segment stops forwarding it to all of your D
 
 ## Export your Source Schema
 
-Segment allows users with Source Read-only permissions to download Source Schemas as a CSV file, maximizing portability and access to event data. You can download a copy of your schema by visiting the Source Schema page. 
+Segment allows users with Source Read-only permissions to download Source Schemas as a CSV file, maximizing portability and access to event data. You can download a copy of your schema by visiting the Source Schema page.
 
 > success ""
 > You can export Track, Identify, and Group Source Schemas.
 
 ### Download a CSV
+You can only download one Source Schema CSV per source and per schema type (Track, Identify, or Group) at the same time.
 
 To download a Source Schema CSV file: 
 1. Sign into Segment and select a source.
@@ -59,7 +60,7 @@ To download a Source Schema CSV file:
 6. Once the file status column indicates that the download was successful, click the **Download CSV** link to download your CSV to your computer.<br/> The Source Schema CSV name has the following format:<br/>`workspace-slug-source-slug-schema-type-yyyy-mm-dd-hh-mm`
 
 > note "All events and properties are now included in the CSV file"
-> When you export the Source Schema, all events and properties are included in the CSV file regardless of the filters or search parameters currently applied to the Source Schema view. 
+> When you export a Source Schema, all events and properties are included in the CSV file regardless of the filters or search parameters currently applied to the Source Schema view. 
 
 ### View download history
 
