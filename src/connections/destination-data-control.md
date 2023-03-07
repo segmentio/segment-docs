@@ -59,7 +59,7 @@ To download a Source Schema CSV file:
 6. Once the file status column indicates that the download was successful, click the **Download CSV** link to download your CSV to your computer.<br/> The Source Schema CSV name has the following format:<br/>`workspace-slug-source-slug-schema-type-yyyy-mm-dd-hh-mm`
 
 > note "All events and properties are now included in the CSV file"
-> When you exporting the Source Schema, all events and properties are included in the CSV file regardless of the filters or search parameters currently applied to the Source Schema view. 
+> When you export the Source Schema, all events and properties are included in the CSV file regardless of the filters or search parameters currently applied to the Source Schema view. 
 
 ### View download history
 
