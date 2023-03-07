@@ -144,10 +144,6 @@ Yes. You can use [Warehouses Selective Sync](/docs/connections/storage/warehouse
 
 The users table is an aggregate view based on the `user_id` field. This means that anonymous profiles with just an `anonymous_id` identifier aren't included in this view. You can still view identify calls for anonymous audiences and computed traits in the `identifies` table.
 
-### Can I sync the identities table to my warehouse?
-
-Not yet. We're working on this feature, and if you're interested, let your CSM know or [contact Segment](https://segment.com/help/contact/){:target="_blank"}.
-
 ### Why are there multiple schemas prefixed with `engage_` in my warehouse when I only have one space?
 
 Segment currently can only connect a source to one instance of each destination, for example, one source cannot send to two different Amplitude instances. To get around this restriction, Engage creates multiple sources to send events to the destinations connected to your space.
