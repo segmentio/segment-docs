@@ -100,9 +100,9 @@ Refer to the [List Regulations from Source](https://docs.segmentapis.com/tag/Del
 
 ## Data retention
 
-Segment stores a copy of all event data received in Segment’s secure event Archives, on S3. By default, all workspaces are set to store data for an unlimited period of time, but you can modify the lifecycle policies for the data stored internally. We use this data for [data replays](/docs/guides/what-is-replay/) and for troubleshooting purposes.
+Segment stores a copy of all event data received in Segment’s secure event Archives, on S3. By default, all workspaces are set to store data for an unlimited period of time, but you can modify the lifecycle policies for the data stored internally. Segment uses this data for [data replays](/docs/guides/what-is-replay/) and for troubleshooting purposes.
 
-Segment recommends keeping at least 30 days of data to enable [Replays](/docs/guides/what-is-replay/) of your data.
+Segment recommends keeping at least 30 days of data to enable [replays](/docs/guides/what-is-replay/) of your data.
 
 To view Data Retention settings, visit **Privacy > Settings > Data Retention** in Segment App.
 
