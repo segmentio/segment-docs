@@ -12,7 +12,7 @@ Destination Filter Reference documentation can be found in the [main Config API 
 
 Filter Query Language ("FQL") is a simple language for filtering JSON objects used by the Transformations API to conditionally apply transformations. In the Transformations API, FQL statements can either be used:
 1. as filters that evaluate to `true` or `false` based on the contents of each Segment event. If the statement evaluates to `true`, the transformation is applied, and if it is `false` the transformation is not applied.
-2. to [define new properties based on the result of an FQL statement](https://segment.com/docs/protocols/transform/#use-cases).
+2. to [define new properties based on the result of an FQL statement](/docs/protocols/transform/#use-cases).
 
 In addition to boolean and equality operators like `and` and `>=`, FQL has built-in functions that make it more powerful such as `contains( str, substr )` and `match( str, pattern )`.
 
