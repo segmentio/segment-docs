@@ -25,7 +25,10 @@ You need to set up two important parts, regardless of the CDN provider you use:
 - Proxy to Segment CDN (`cdn.segment.com`)
 - Proxy to Segment tracking API (`api.segment.io`)
 
-> info " "
+> warning ""
+> If you are using a [Regional Workspace](/docs/guides/regional-segment/#client-side-sources), please note that instead of using `api.segment.io` to proxy the Tracking API, you'll be using `events.eu1.segmentapis.com`
+
+> info ""
 > Segment only has the ability to enable the proxy setting for the Web (Analytics.js) source. Details for mobile source proxies are in the [Analytics for iOS](/docs/connections/sources/catalog/libraries/mobile/ios/#proxy-https-calls) and [Analytics for Android](/docs/connections/sources/catalog/libraries/mobile/android/#proxying-http-calls) documentation.  It is not currently possible to set up a proxy for server sources using the Segment UI.
 
 ## Set up
@@ -59,9 +62,9 @@ A Segment Customer Success team member will respond that they have enabled this 
 ## Custom CDN / API Proxy
 
 ### Snippet instructions
-If you're a snippet user, you need to modify the [analytics snippet](/docs/getting-started/02-simple-install/#step-1-copy-the-snippet) that's inside your `<head>`. 
+If you're a snippet user, you need to modify the [analytics snippet](/docs/getting-started/02-simple-install/#step-1-copy-the-snippet) that's inside your `<head>`.
 
-To proxy settings and destination requests that typically go to `http://cdn.segment.com`, replace: 
+To proxy settings and destination requests that typically go to `http://cdn.segment.com`, replace:
 ```diff
 - t.src="https://cdn.segment.com/analytics.js/v1/" + key + "/analytics.min.js"
 + t.src="https://MY-CUSTOM-CDN-PROXY.com" + key + "/analytics.min.js"
@@ -85,7 +88,7 @@ const analytics = AnalyticsBrowser.load({
   // https://MY-CUSTOM-CDN-PROXY.com/v1/project/<writekey>/settings
   // GET https://cdn.segment.com/next-integrations/actions/...js ->
   // https://MY-CUSTOM-CDN-PROXY.com/next-integrations/actions/...js
-  cdnURL: 'https://MY-CUSTOM-CDN-PROXY.com' 
+  cdnURL: 'https://MY-CUSTOM-CDN-PROXY.com'
  })
 ```
 
@@ -100,7 +103,7 @@ const analytics = AnalyticsBrowser.load(
       integrations: {
         'Segment.io': {
           // POST https://api.segment.io/v1/t -> https://MY-CUSTOM-API-PROXY.com/t
-          apiHost: 'MY-CUSTOM-API-PROXY.com' // omit the protocol (http/https) e.g. "api.segment.io/v1" rather than "https://api.segment.io/v1" 
+          apiHost: 'MY-CUSTOM-API-PROXY.com' // omit the protocol (http/https) e.g. "api.segment.io/v1" rather than "https://api.segment.io/v1"
         }
       }
     }
