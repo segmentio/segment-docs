@@ -257,4 +257,4 @@ There are a few necessary steps that have to be taken to migrate from Segment's 
 
    ![](images/cg6YhDEPWXv+.png)
 
-6. When enabling Marketo V2, because of the way Marketo's API works, there is potential to create duplicate leads, especially when the first enabling the destination. For ways to prevent this, check out the Preventing Duplicate Leads.
+6. When enabling Marketo V2, because of the way Marketo's API works, there is potential to create duplicate leads, especially when the first enabling the destination. For ways to prevent this, check out the Preventing Duplicate Leads. test
