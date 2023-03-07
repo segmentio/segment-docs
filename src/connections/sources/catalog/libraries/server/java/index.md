@@ -60,10 +60,11 @@ The following examples use [Guava's](https://github.com/google/guava) immutable 
 
 ### Regional configuration
 {% include content/regional-config.md %}
-## Identify
 
 > note ""
-> **Good to know**: For any of the different methods described on this page, you can replace the properties and traits in the code samples with variables that represent the data collected. Note that sending of null property or trait will not be possible as Guava’s immutable maps will reject the null value and GSON library use to serilaize the Java object will ignore the null value.  As a workaround, send an empty string instead of a null value in the property or trait.
+> **Good to know**: For any of the different methods described on this page, you can replace the properties and traits in the code samples with variables that represent the data collected. Note that sending a property or trait with a null value will not be possible as Guava's immutable maps will reject the null value and the GSON library used to serialize the Java object will ignore it. As a workaround, you can send an empty string instead of a null value in on your properties or traits.
+
+## Identify
 
 `identify` lets you tie a user to their actions and record traits about them. It includes a unique User ID and any optional traits you know about them.
 
