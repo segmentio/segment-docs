@@ -38,7 +38,7 @@ You can send test emails before you include a template in marketing campaigns
 1. Select the email template you want to test on the Templates screen.
 2. From the Template Settings page, click **Test Email**.
 3. Enter email addresses that will receive the test email.
-  - The profile you send test messages to must have a userId assigned to it.
+  - The profile that you send test messages to must have a userId in Segment.
 4. Select **Send Test Email**.
 
 > success ""

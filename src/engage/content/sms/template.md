@@ -31,7 +31,7 @@ Send a test SMS message before you include it as a step in your Journey.
 
 1. After you build your SMS template, click **Test SMS**.
 2. Enter recipient phone numbers for the test message.
-- The profile you send test messages to must have a userId assigned to it.
+- The profile that you send test messages to must have a userId in Segment.
 3. Click **Send Test SMS**.
 
 If a recipient replies "Stop" to the test SMS, Twilio unsubscribes their phone number and sends an opt-out confirmation.
