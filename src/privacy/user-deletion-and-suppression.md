@@ -44,6 +44,8 @@ Segment deletes messages with this `userId` from connected raw data Destinations
 
 Segment forwards these deletion requests to a growing list of supported partners.
 
+Note that Segment has a 30-day SLA for submitted deletion requests. Additionally, Segment's deletion manager can only accommodate 100,000 users within a 30-day period and cannot guarantee 30-day SLA if there are more than 100,000 deletion requests submitted within that 30-day period.
+
 **Segment cannot guarantee that data is deleted from your Destinations.**
 
 Segment forwards deletion requests to supported streaming Destinations (such as Braze, Intercom, and Amplitude) but you should confirm that each partner fulfills the request.
@@ -73,8 +75,6 @@ This creates an `UNSUPPRESS` regulation, and removes the `userId` from your supp
 The deletion requests tab shows a log of all regulations with a deletion element along with status.
 
 Click a deletion to view its status across Segment and your connected destinations.
-
-Note that Segment has a 30-day SLA for submitted deletion requests. Additionally, Segment's deletion manager can only accommodate 100,000 users within a 30-day period and cannot guarantee 30-day SLA if there are more than 100,000 deletion requests submitted within that 30-day period.
 
 
 ## Programmatic User Deletion and Suppression using the API
