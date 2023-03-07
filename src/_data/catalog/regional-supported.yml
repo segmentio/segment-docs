@@ -1499,6 +1499,14 @@ destinations:
     endpoints:
       - us
       - eu
+  - id: 63872c01c0c112b9b4d75412
+    display_name: Braze Cohorts
+    slug: braze-cohorts
+    url: connections/destinations/catalog/braze-cohorts
+    regions:
+      - us
+    endpoints:
+      - us
   - id: 60fb01aec459242d3b6f20c1
     display_name: Braze Web Device Mode (Actions)
     slug: braze-web-device-mode-actions
@@ -2360,6 +2368,14 @@ destinations:
     regions:
       - us
       - eu
+    endpoints:
+      - us
+  - id: 63ed446fe60a1b56c5e6f130
+    display_name: Google Analytics 4 Web
+    slug: google-analytics-4-web
+    url: connections/destinations/catalog/google-analytics-4-web
+    regions:
+      - us
     endpoints:
       - us
   - id: 5cbe24b1d07261000146ab55
@@ -3786,6 +3802,14 @@ destinations:
     regions:
       - us
       - eu
+    endpoints:
+      - us
+  - id: 639c2dbb1309fdcad13951b6
+    display_name: Segment Profiles
+    slug: segment-profiles
+    url: connections/destinations/catalog/segment-profiles
+    regions:
+      - us
     endpoints:
       - us
   - id: 5ec2b3adf7d3322ea12f3c04
