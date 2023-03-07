@@ -31,7 +31,7 @@ Now that you've created an API role, you have to assign that role to an API only
 1. Click the Users tab.
 2. Click Invite New User and fill out the necessary information in Step 1.
 3. Assign the new role you created to this user in Step 2 and check the API Only box. Click next then Send.
-![](images/cJkQ9XD6FsE+.png)
+![](images/cJkQ9XD6FsE+.png) 
 
 
 Next, create a Service and get Client Secret and Client ID from that Service.
