@@ -49,7 +49,7 @@ Segment allows users with Source Read-only permissions to download Source Schema
 > You can export Track, Identify, and Group Source Schemas.
 
 ### Download a CSV
-You can only download one Source Schema CSV per source and per schema type (Track, Identify, or Group) at the same time.
+You can only download one Source Schema CSV schema type (Track, Identify, or Group) per source at the same time.
 
 To download a Source Schema CSV file: 
 1. Sign into Segment and select a source.
