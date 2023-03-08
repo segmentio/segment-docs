@@ -121,11 +121,10 @@ To enable session tracking in Amplitude when using the [Segment Android library]
 
 ## Important differences from the classic Amplitude destination
 
-The classic Amplitude destination captures the following user fields in device-mode (when it runs on the user's device):
+The classic Amplitude destination captures the Device Type (for example, Mac, PC, mobile devices) user field in device-mode (when it runs on the user's device).
 
-- Device Type (for example, Mac, PC, mobile device)
 
-Amplitude (Actions) runs in cloud-mode, and does not capture this field.
+Amplitude (Actions) runs in cloud-mode, and doesn't capture this field.
 {% capture log-event-details %}
 #### Track Revenue Per Product
 
