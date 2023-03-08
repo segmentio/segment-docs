@@ -35,80 +35,52 @@ If you're using a different library such as Analytics-Android, follow these step
         implementation 'com.segment.analytics.kotlin:android:<latest_version>'
     }
     ```
+    
 3. Modify your initialized instance.
 
-    <table>
-    <thead>
-    <tr>
-    <th>Before</th>
-    <th></th>
-    </tr>
-    </thead>
-    <tbody>
-    <tr>
-    <td>Java</td>
-    <td markdown=1 class="table-code-snippet">
-    ```java  
-    Analytics analytics = new Analytics.Builder(context, "YOUR_WRITE_KEY")
-      .trackApplicationLifecycleEvents()
-      .build();
-    ```
-    </td>
-    </tr>
-    <tr>
-    <td>Kotlin</td>
-    <td markdown=1 class="table-code-snippet">
-    ```kotlin
-    val analytics = Analytics.Builder(context, "YOUR_WRITE_KEY")
-    .trackApplicationLifecycleEvents()
-    .build()
-    ```
-    </td>
-    </tr>
-    </tbody>
-    </table>
+ <br> Before example:
 
-    <table>
-    <thead>
-    <tr>
-    <!-- <th><th> -->
-    <th>After</th>
-    <th></th>
-    </tr>
-    </thead>
-    <tbody>
-    <tr>
-    <td>Java</td>
-    <td markdown=1 class="table-code-snippet">
+ {% codeexample %}
+ {% codeexampletab Java%}
+ ```java
+ Analytics analytics = new Analytics.Builder(context, "YOUR_WRITE_KEY")
+   .trackApplicationLifecycleEvents()
+   .build();
+ ```
+ {% endcodeexampletab %}
+ {% codeexampletab Kotlin%}
+ ```java
+  val analytics = Analytics.Builder(context, "YOUR_WRITE_KEY")
+ .trackApplicationLifecycleEvents()
+ .build()
+ ```
+ {% endcodeexampletab %}
+ {% endcodeexample %}   
+  <br> After example:
 
-    ```java
+ {% codeexample %}
+ {% codeexampletab Java%}
+ ```java
     // Initialize an Analytics object with the Kotlin Analytics method
     Analytics androidAnalytics = AndroidAnalyticsKt.Analytics("YOUR_WRITE_KEY", context, configuration -> {
-        configuration.setTrackApplicationLifecycleEvents(true);
-        return Unit.INSTANCE;
-      }
-    );
-
-    // Wrap the object with JavaAnalytics to bring Java Compatibility.
-    // You can also choose not to wrap the object, but some of the Analytics methods may not be accessible.
-    JavaAnalytics analytics = new JavaAnalytics(androidAnalytics);    
-    ```
-    </td>
-    </tr>
-    <tr>
-    <td>Kotlin</td>
-    <td markdown=1 class="table-code-snippet">
-
-    ```kotlin
-    Analytics("YOUR_WRITE_KEY", context) {
-    trackApplicationLifecycleEvents = true
+     configuration.setTrackApplicationLifecycleEvents(true);
+     return Unit.INSTANCE;
     }
-    ```
-    </td>
-    </tr>
-    </tbody>
-    </table>
+  );
 
+  // Wrap the object with JavaAnalytics to bring Java Compatibility.
+  // You can also choose not to wrap the object, but some of the Analytics methods may not be accessible.
+  JavaAnalytics analytics = new JavaAnalytics(androidAnalytics);    
+ ```
+ {% endcodeexampletab %}
+ {% codeexampletab Kotlin%}
+ ```java
+    Analytics("YOUR_WRITE_KEY", context) {
+        trackApplicationLifecycleEvents = true
+    }
+ ```
+ {% endcodeexampletab %}
+ {% endcodeexample %}   
 
 4. Add a middleware.
 
@@ -116,22 +88,15 @@ If you're using a different library such as Analytics-Android, follow these step
 
     <br> As middlewares have the same function as [enrichment plugins](/docs/connections/sources/catalog/libraries/mobile/kotlin-android#plugin-architecture), you need to write an enrichment plugin to add a middleware.
 
-    <table>
-    <thead>
-    <tr>
-    <th>Before</th>
-    <th></th>
-    </tr>
-    </thead>
-    <tbody>
-    <tr>
-    <td>Java</td>
-    <td markdown=1 class="table-code-snippet">
-    ```java  
+    <br> Before example:
+
+ {% codeexample %}
+ {% codeexampletab Java%}
+ ```java
     builder
-      .useSourceMiddleware(new Middleware() {
-          @Override
-          public void intercept(Chain chain) {
+        .useSourceMiddleware(new Middleware() {
+            @Override
+            public void intercept(Chain chain) {
             // Get the payload.
             BasePayload payload = chain.payload();
 
@@ -147,200 +112,161 @@ If you're using a different library such as Analytics-Android, follow these step
 
             // Continue with the new payload.
             chain.proceed(newPayload);
-          }
+           }
         })
-    ```
-    </td>
-    </tr>
-    <tr>
-    <td>Kotlin</td>
-    <td markdown=1 class="table-code-snippet">
-    ```kotlin
-    builder
-      .useSourceMiddleware(
-        Middleware { chain ->
-            // Get the payload.
-            val payload = chain.payload()
+ ```
+ {% endcodeexampletab %}
+ {% codeexampletab Kotlin%}
+ ```java
+     builder
+   .useSourceMiddleware(
+     Middleware { chain ->
+         // Get the payload.
+         val payload = chain.payload()
 
-            // Set the device year class on the context object.
-            val year = YearClass.get(getApplicationContext())
-            val context = LinkedHashMap<String, Object>(payload.context())
-            context.put("device_year_class", year)
+         // Set the device year class on the context object.
+         val year = YearClass.get(getApplicationContext())
+         val context = LinkedHashMap<String, Object>(payload.context())
+         context.put("device_year_class", year)
 
-            // Build our new payload.
-            val newPayload = payload.toBuilder()
-                  .context(context)
-                  .build();
+         // Build our new payload.
+         val newPayload = payload.toBuilder()
+               .context(context)
+               .build();
 
-            // Continue with the new payload.
-            chain.proceed(newPayload)
-        })
-    ```
-    </td>
-    </tr>
-    </tbody>
-    </table>
+         // Continue with the new payload.
+         chain.proceed(newPayload)
+     })
+ ```
+ {% endcodeexampletab %}
+ {% endcodeexample %}   
 
-    <table>
-    <thead>
-    <tr>
-    <!-- <th><th> -->
-    <th>After</th>
-    <th></th>
-    </tr>
-    </thead>
-    <tbody>
-    <tr>
-    <td>Java</td>
-    <td markdown=1 class="table-code-snippet">
+  <br> After example:
 
-    ```java
-    analytics.add(new Plugin() {
-        private Analytics analytics;
+ {% codeexample %}
+ {% codeexampletab Java%}
+ ```java
+     analytics.add(new Plugin() {
+     private Analytics analytics;
 
-        @Override
-        public BaseEvent execute(@NonNull BaseEvent event) {
-            // Set the device year class on the context object.
-            int year = YearClass.get(getApplicationContext());
-            EventTransformer.putInContext(event, "device_year_class", year);
-            return event;
-        }
+     @Override
+     public BaseEvent execute(@NonNull BaseEvent event) {
+         // Set the device year class on the context object.
+         int year = YearClass.get(getApplicationContext());
+         EventTransformer.putInContext(event, "device_year_class", year);
+         return event;
+     }
 
-        @Override
-        public void setup(@NonNull Analytics analytics) {
-            setAnalytics(analytics);
-        }
+     @Override
+     public void setup(@NonNull Analytics analytics) {
+         setAnalytics(analytics);
+     }
 
-        @NonNull
-        @Override
-        public Type getType() {
-            return Plugin.Type.Enrichment;
-        }
+     @NonNull
+     @Override
+     public Type getType() {
+         return Plugin.Type.Enrichment;
+     }
 
-        @NonNull
-        @Override
-        public Analytics getAnalytics() {
-            return analytics;
-        }
+     @NonNull
+     @Override
+     public Analytics getAnalytics() {
+         return analytics;
+     }
 
-        @Override
-        public void setAnalytics(@NonNull Analytics analytics) {
-            this.analytics = analytics;
-        }
-    });
-    ```
-    </td>
-    </tr>
-    <tr>
-    <td>Kotlin</td>
-    <td markdown=1 class="table-code-snippet">
+     @Override
+     public void setAnalytics(@NonNull Analytics analytics) {
+         this.analytics = analytics;
+     }
+ });
+ ```
+ {% endcodeexampletab %}
+ {% codeexampletab Kotlin%}
+ ```java
+     analytics.add(object: Plugin {
+     override lateinit var analytics: Analytics
+     override val type = Plugin.Type.Enrichment
 
-    ```kotlin
-    analytics.add(object: Plugin {
-        override lateinit var analytics: Analytics
-        override val type = Plugin.Type.Enrichment
+     override fun execute(event: BaseEvent): BaseEvent? {
+         // Set the device year class on the context object.
+         val year = YearClass.get(getApplicationContext())
+         event.context = updateJsonObject(event.context) {
+             it["device_year_class"] = year
+         }
+         return event
+     }
+ })
+ ```
+ {% endcodeexampletab %}
+ {% endcodeexample %}  
 
-        override fun execute(event: BaseEvent): BaseEvent? {
-            // Set the device year class on the context object.
-            val year = YearClass.get(getApplicationContext())
-            event.context = updateJsonObject(event.context) {
-                it["device_year_class"] = year
-            }
-            return event
-        }
-    })
-    ```
-    </td>
-    </tr>
-    </tbody>
-    </table>
 
 
 5. Add a destination middleware.
 
     If you don't need to transform all of your Segment calls, and only want to transform the calls going to specific destinations, use Destination middleware instead of Source middleware. Destination middleware is available for device-mode destinations only.
 
-    <table>
-    <thead>
-    <tr>
-    <th>Before</th>
-    <th></th>
-    </tr>
-    </thead>
-    <tbody>
-    <tr>
-    <td>Java</td>
-    <td markdown=1 class="table-code-snippet">
-    ```java  
-    builder
-      .useDestinationMiddleware("Segment.io", new Middleware() {
-          @Override
-          public void intercept(Chain chain) {
-            // Get the payload.
-            BasePayload payload = chain.payload();
 
-            // Set the device year class on the context object.
-            int year = YearClass.get(getApplicationContext());
-            Map<String, Object> context = new LinkedHashMap<>(payload.context());
-            context.put("device_year_class", year);
+ <br> Before example:
 
-            // Build our new payload.
-            BasePayload newPayload = payload.toBuilder()
-                .context(context)
-                .build();
+ {% codeexample %}
+ {% codeexampletab Java%}
+ ```java
+     builder
+   .useDestinationMiddleware("Segment.io", new Middleware() {
+       @Override
+       public void intercept(Chain chain) {
+         // Get the payload.
+         BasePayload payload = chain.payload();
 
-            // Continue with the new payload.
-            chain.proceed(newPayload);
-          }
-        })
-    ```
-    </td>
-    </tr>
-    <tr>
-    <td>Kotlin</td>
-    <td markdown=1 class="table-code-snippet">
-    ```kotlin
-    builder
-      .useDestinationMiddleware(
-       "Segment.io",
-       Middleware { chain ->
-            // Get the payload.
-            val payload = chain.payload()
+         // Set the device year class on the context object.
+         int year = YearClass.get(getApplicationContext());
+         Map<String, Object> context = new LinkedHashMap<>(payload.context());
+         context.put("device_year_class", year);
 
-            // Set the device year class on the context object.
-            val year = YearClass.get(getApplicationContext())
-            val context = LinkedHashMap<String, Object>(payload.context())
-            context.put("device_year_class", year)
+         // Build our new payload.
+         BasePayload newPayload = payload.toBuilder()
+             .context(context)
+             .build();
 
-            // Build our new payload.
-            val newPayload = payload.toBuilder()
-                  .context(context)
-                  .build();
+         // Continue with the new payload.
+         chain.proceed(newPayload);
+       }
+     })
+ ```
+ {% endcodeexampletab %}
+ {% codeexampletab Kotlin%}
+ ```java
+     builder
+   .useDestinationMiddleware(
+    "Segment.io",
+    Middleware { chain ->
+         // Get the payload.
+         val payload = chain.payload()
 
-            // Continue with the new payload.
-            chain.proceed(newPayload)
-       })
-    ```
-    </td>
-    </tr>
-    </tbody>
-    </table>
+         // Set the device year class on the context object.
+         val year = YearClass.get(getApplicationContext())
+         val context = LinkedHashMap<String, Object>(payload.context())
+         context.put("device_year_class", year)
 
-    <table>
-    <thead>
-    <tr>
-    <!-- <th><th> -->
-    <th>After</th>
-    <th></th>
-    </tr>
-    </thead>
-    <tbody>
-    <tr>
-    <td>Java</td>
-    <td markdown=1 class="table-code-snippet">
+         // Build our new payload.
+         val newPayload = payload.toBuilder()
+               .context(context)
+               .build();
 
-    ```java
-    SegmentDestination segmentDestination = analytics.find(SegmentDestination.class);
+         // Continue with the new payload.
+         chain.proceed(newPayload)
+    })
+ ```
+ {% endcodeexampletab %}
+ {% endcodeexample %}   
+ 
+  <br> After example:
+
+ {% codeexample %}
+ {% codeexampletab Java%}
+ ```java
+     SegmentDestination segmentDestination = analytics.find(SegmentDestination.class);
 
     segmentDestination.add(new Plugin() {
         private Analytics analytics;
@@ -349,7 +275,7 @@ If you're using a different library such as Analytics-Android, follow these step
         public BaseEvent execute(@NonNull BaseEvent event) {
             // Set the device year class on the context object.
             int year = YearClass.get(getApplicationContext());
-            EventTransformer.putInContext(event, "device_year_class", year);
+             EventTransformer.putInContext(event, "device_year_class", year);
             return event;
         }
 
@@ -375,14 +301,10 @@ If you're using a different library such as Analytics-Android, follow these step
             this.analytics = analytics;
         }
     });
-    ```
-    </td>
-    </tr>
-    <tr>
-    <td>Kotlin</td>
-    <td markdown=1 class="table-code-snippet">
-
-    ```kotlin
+ ```
+ {% endcodeexampletab %}
+ {% codeexampletab Kotlin%}
+ ```java
     val segmentDestination: DestinationPlugin = analytics.find(SegmentDestination::class)
 
     segmentDestination.add(object: Plugin {
@@ -398,11 +320,9 @@ If you're using a different library such as Analytics-Android, follow these step
             return event
         }
     })
-    ```
-    </td>
-    </tr>
-    </tbody>
-    </table>
+ ```
+ {% endcodeexampletab %}
+ {% endcodeexample %}   
 
 
 6. Set your config options.
@@ -437,512 +357,356 @@ If you're using a different library such as Analytics-Android, follow these step
 
     Segment previously used Factories to initialize destinations. With Analytics Kotlin, Segment treats destinations similar to plugins and simplifies the process in adding them.  
 
-    <table>
-    <thead>
-    <tr>
-    <th>Before</th>
-    <th></th>
-    </tr>
-    </thead>
-    <tbody>
-    <tr>
-    <td>Java</td>
-    <td markdown=1 class="table-code-snippet">
-    ```java  
+
+<br> Before example:
+
+ {% codeexample %}
+ {% codeexampletab Java%}
+ ```java
     // Previously Segment used to use Factories to initialize destinations
     analytics.use(FooIntegration.FACTORY);
-    ```
-    </td>
-    </tr>
-    <tr>
-    <td>Kotlin</td>
-    <td markdown=1 class="table-code-snippet">
-    ```kotlin
+ ```
+ {% endcodeexampletab %}
+ {% codeexampletab Kotlin%}
+ ```java
     // Previously Segment used to use Factories to initialize destinations
     analytics.use(FooIntegration.FACTORY)
-    ```
-    </td>
-    </tr>
-    </tbody>
-    </table>
+ ```
+ {% endcodeexampletab %}
+ {% endcodeexample %}   
 
-    <table>
-    <thead>
-    <tr>
-    <!-- <th><th> -->
-    <th>After</th>
-    <th></th>
-    </tr>
-    </thead>
-    <tbody>
-    <tr>
-    <td>Java</td>
-    <td markdown=1 class="table-code-snippet">
+  <br> After example:
 
-    ```java
+ {% codeexample %}
+ {% codeexampletab Java%}
+ ```java	
     // Now destinations are treated similar to plugins and thus are simpler to add
     YourDestination destination = new YourDestination();
-    analytics.add(destination);
-    ```
-    </td>
-    </tr>
-    <tr>
-    <td>Kotlin</td>
-    <td markdown=1 class="table-code-snippet">
-
-    ```kotlin
+    analytics.add(destination); 
+ ```
+ {% endcodeexampletab %}
+ {% codeexampletab Kotlin%}
+ ```java
     // Now destinations are treated similar to plugins and thus are simpler to add
     val destination = YourDestination()
     analytics.add(destination)
-    ```
-    </td>
-    </tr>
-    </tbody>
-    </table>
+ ```
+ {% endcodeexampletab %}
+ {% endcodeexample %}   
 
 
 8. Modify your tracking methods for Identify, Track, Group, Screen, and Alias.
+
     - Identify
 
-      <table>
-      <thead>
-      <tr>
-      <th>Before</th>
-      <th></th>
-      </tr>
-      </thead>
-      <tbody>
-      <tr>
-      <td>Java</td>
-      <td markdown=1 class="table-code-snippet">
-      ```java
+<br> Before example:
+
+ {% codeexample %}
+ {% codeexampletab Java%}
+ ```java
       analytics.identify("a user's id", new Traits().putName("John Doe"), null);
-      ```
-      </td>
-      </tr>
-      <tr>
-      <td>Kotlin</td>
-      <td markdown=1 class="table-code-snippet">
-      ```kotlin
-      analytics.identify("a user's id", Traits().putName("John Doe"), null)
-      ```
-      </td>
-      </tr>
-      </tbody>
-      </table>
 
-      <table>
-      <thead>
-      <tr>
-      <!-- <th><th> -->
-      <th>After</th>
-      <th></th>
-      </tr>
-      </thead>
-      <tbody>
-      <tr>
-      <td>Java</td>
-      <td markdown=1 class="table-code-snippet">
+ ```
+ {% endcodeexampletab %}
+ {% codeexampletab Kotlin%}
+ ```java
+    analytics.identify("a user's id", Traits().putName("John Doe"), null)
 
-      ```java
-      // The newer APIs promote the use of strongly typed structures to keep codebases legible
-      class UserTraits implements JsonSerializable {
-          private String firstName;
-          private String lastName;
+ ```
+ {% endcodeexampletab %}
+ {% endcodeexample %}   
 
-          public JsonObject serialize() {
-              return Builders.buildJsonObject(o -> {
-                  o.put("firstName", firstName)
-                      .put("lastName", lastName);
-              }));
-          }
-      }
+  <br> After example:
 
-      analytics.identify("a user's id", new UserTraits());
+ {% codeexample %}
+ {% codeexampletab Java%}
+ ```java	
+    // The newer APIs promote the use of strongly typed structures to keep codebases legible
+    class UserTraits implements JsonSerializable {
+        private String firstName;
+        private String lastName;
 
-      // Or you could use the JSON builder if you have some unstructured data
-      analytics.identify("a user's id", Builders.buildJsonObject(o -> {
-          o.put("firstName", "John")
-              .put("lastName", "Doe");
-      }));
-      ```
-      </td>
-      </tr>
-      <tr>
-      <td>Kotlin</td>
-      <td markdown=1 class="table-code-snippet">
+        public JsonObject serialize() {
+            return Builders.buildJsonObject(o -> {
+                o.put("firstName", firstName)
+                    .put("lastName", lastName);
+            }));
+        }
+    }
 
-      ```kotlin    
-      // The newer APIs promote the use of strongly typed structures to keep codebases legible
-      @Serializable
-      data class UserTraits(
+    analytics.identify("a user's id", new UserTraits());
+
+    // Or you could use the JSON builder if you have some unstructured data
+    analytics.identify("a user's id", Builders.buildJsonObject(o -> {
+        o.put("firstName", "John")
+            .put("lastName", "Doe");
+    }));
+ ```
+ {% endcodeexampletab %}
+ {% codeexampletab Kotlin%}
+ ```java
+    // The newer APIs promote the use of strongly typed structures to keep codebases legible
+    @Serializable
+    data class UserTraits(
         var firstName: String,
         var lastName: String
-      )
+    )
 
-      analytics.identify("a user's id", UserTraits(firstName = "John", lastName = "Doe"))
+    analytics.identify("a user's id", UserTraits(firstName = "John", lastName = "Doe"))
 
 
-      // Or you could use the JSON builder if you have some unstructured data
-      analytics.identify("a user's id", buildJsonObject {
-          put("firstName", "John")
-          put("lastName", "Doe")
-      }));
-      ```
-      </td>
-      </tr>
-      </tbody>
-      </table>
+    // Or you could use the JSON builder if you have some unstructured data
+    analytics.identify("a user's id", buildJsonObject {
+        put("firstName", "John")
+        put("lastName", "Doe")
+    }));
+ ```
+ {% endcodeexampletab %}
+ {% endcodeexample %}   
 
-    - Track
+<br>
+- Track
 
-      <table>
-      <thead>
-      <tr>
-      <th>Before</th>
-      <th></th>
-      </tr>
-      </thead>
-      <tbody>
-      <tr>
-      <td>Java</td>
-      <td markdown=1 class="table-code-snippet">
-      ```java
-      analytics.track("Product Viewed", new Properties().putValue("name", "Moto 360"));
-      ```
-      </td>
-      </tr>
-      <tr>
-      <td>Kotlin</td>
-      <td markdown=1 class="table-code-snippet">
-      ```kotlin
-      analytics.track("Product Viewed", Properties().putValue("name", "Moto 360"))
-      ```
-      </td>
-      </tr>
-      </tbody>
-      </table>
+<br> Before example:
 
-      <table>
-      <thead>
-      <tr>
-      <!-- <th><th> -->
-      <th>After</th>
-      <th></th>
-      </tr>
-      </thead>
-      <tbody>
-      <tr>
-      <td>Java</td>
-      <td markdown=1 class="table-code-snippet">
+ {% codeexample %}
+ {% codeexampletab Java%}
+ ```java
+    analytics.track("Product Viewed", new Properties().putValue("name", "Moto 360"));
+ ```
+ {% endcodeexampletab %}
+ {% codeexampletab Kotlin%}
+ ```java
+    analytics.track("Product Viewed", Properties().putValue("name", "Moto 360"))
+ ```
+ {% endcodeexampletab %}
+ {% endcodeexample %}   
 
-      ```java
-        // The newer APIs promote the use of strongly typed structures to keep codebases legible
-       class ProductViewedProperties implements JsonSerializable {
-          private String productName;
-          private String brand;
-          private String category;
-          private String price;
-          private String currency;
+  <br> After example:
 
-          public JsonObject serialize() {
-              return Builders.buildJsonObject(o -> {
-                  o.put("productName", productName)
-                      .put("brand", brand)
-                      .put("category", category)
-                      .put("price", price)
-                      .put("currency", currency);
-              }));
-          }
+ {% codeexample %}
+ {% codeexampletab Java%}
+ ```java	
+    // The newer APIs promote the use of strongly typed structures to keep codebases legible
+   class ProductViewedProperties implements JsonSerializable {
+      private String productName;
+      private String brand;
+      private String category;
+      private String price;
+      private String currency;
+
+      public JsonObject serialize() {
+          return Builders.buildJsonObject(o -> {
+              o.put("productName", productName)
+                  .put("brand", brand)
+                  .put("category", category)
+                  .put("price", price)
+                  .put("currency", currency);
+          }));
       }
+  }
 
-      analytics.track("Product Viewed", new ProductViewedProperties());
+  analytics.track("Product Viewed", new ProductViewedProperties());
 
-      // Or you could use the JSON builder if you have some unstructured data
-      analytics.track("Product Viewed", Builders.buildJsonObject(o -> {
-          o.put("productName", productName)
-              .put("brand", brand)
-              .put("category", category)
-              .put("price", price)
-              .put("currency", currency);
-      }));
+  // Or you could use the JSON builder if you have some unstructured data
+  analytics.track("Product Viewed", Builders.buildJsonObject(o -> {
+      o.put("productName", productName)
+          .put("brand", brand)
+          .put("category", category)
+          .put("price", price)
+          .put("currency", currency);
+  }));
+ ```
+ {% endcodeexampletab %}
+ {% codeexampletab Kotlin%}
+ ```java
+   // The newer APIs promote the use of strongly typed structures to keep codebases legible
+  @Serializable
+  data class ProductViewedProperties(
+    var productName: String,
+    var brand: String,
+    var category: String,
+    var price: Double,
+    var currency: String
+  )
 
-      ```
-      </td>
-      </tr>
-      <tr>
-      <td>Kotlin</td>
-      <td markdown=1 class="table-code-snippet">
-
-      ```kotlin    
-      // The newer APIs promote the use of strongly typed structures to keep codebases legible
-      @Serializable
-      data class ProductViewedProperties(
-        var productName: String,
-        var brand: String,
-        var category: String,
-        var price: Double,
-        var currency: String
+  analytics.track(
+      "Product Viewed",
+      ProductViewedProperties(
+        productName = "Moto 360",
+        brand = "Motorola",
+        category = "smart watch",
+        price = 300.00,
+        currency = "USD"
       )
+  )
 
-      analytics.track(
-          "Product Viewed",
-          ProductViewedProperties(
-            productName = "Moto 360",
-            brand = "Motorola",
-            category = "smart watch",
-            price = 300.00,
-            currency = "USD"
-          )
-      )
-
-      // Or you could use the JSON builder if you have some unstructured data
-      analytics.track(
-          "Product Viewed",
-          buildJsonObject {
-            put("productName", "Moto 360"),
-            put("brand", "Motorola"),
-            put("category", "smart watch"),
-            put("price", 300.00),
-            put("currency", "USD")
-          }
-      )
-      ```
-      </td>
-      </tr>
-      </tbody>
-      </table>
-
-    - Group
-
-      <table>
-      <thead>
-      <tr>
-      <th>Before</th>
-      <th></th>
-      </tr>
-      </thead>
-      <tbody>
-      <tr>
-      <td>Java</td>
-      <td markdown=1 class="table-code-snippet">
-      ```java
-      analytics.group("a user's id", "a group id", new Traits().putEmployees(20));
-      ```
-      </td>
-      </tr>
-      <tr>
-      <td>Kotlin</td>
-      <td markdown=1 class="table-code-snippet">
-      ```kotlin
-      analytics.group("a user's id", "a group id", Traits().putEmployees(20))
-      ```
-      </td>
-      </tr>
-      </tbody>
-      </table>
-
-      <table>
-      <thead>
-      <tr>
-      <!-- <th><th> -->
-      <th>After</th>
-      <th></th>
-      </tr>
-      </thead>
-      <tbody>
-      <tr>
-      <td>Java</td>
-      <td markdown=1 class="table-code-snippet">
-
-      ```java
-      // The newer APIs promote the use of strongly typed structures to keep codebases legible
-      class GroupTraits implements JsonSerializable {
-          private int employeeCount;
-
-          public JsonObject serialize() {
-              return Builders.buildJsonObject(o -> {
-                  o.put("employeeCount", employeeCount);
-              }));
-          }
+  // Or you could use the JSON builder if you have some unstructured data
+  analytics.track(
+      "Product Viewed",
+      buildJsonObject {
+        put("productName", "Moto 360"),
+        put("brand", "Motorola"),
+        put("category", "smart watch"),
+        put("price", 300.00),
+        put("currency", "USD")
       }
+  )
+ ```
+ {% endcodeexampletab %}
+ {% endcodeexample %}   
 
-      analytics.group("a group id", new GroupTraits());
+<br>
+- Group
 
-      // Or you could use the JSON builder if you have some unstructured data
-      analytics.group("a group id", Builders.buildJsonObject(o -> {
-          o.put("employeeCount", 20);
-      }));
+<br> Before example:
 
-      ```
-      </td>
-      </tr>
-      <tr>
-      <td>Kotlin</td>
-      <td markdown=1 class="table-code-snippet">
+ {% codeexample %}
+ {% codeexampletab Java%}
+ ```java
+    analytics.group("a user's id", "a group id", new Traits().putEmployees(20));
+ ```
+ {% endcodeexampletab %}
+ {% codeexampletab Kotlin%}
+ ```java
+    analytics.group("a user's id", "a group id", Traits().putEmployees(20))
+ ```
+ {% endcodeexampletab %}
+ {% endcodeexample %}   
 
-      ```kotlin   
-      // The newer APIs promote the use of strongly typed structures to keep codebases legible
-      @Serializable
-      data class GroupTraits(
-        var employeeCount: Int
-      )
-      analytics.group("a group id", GroupTraits(employeeCount = 20))
+  <br> After example:
+
+ {% codeexample %}
+ {% codeexampletab Java%}
+ ```java	
+    // The newer APIs promote the use of strongly typed structures to keep codebases legible
+    class GroupTraits implements JsonSerializable {
+        private int employeeCount;
+
+        public JsonObject serialize() {
+            return Builders.buildJsonObject(o -> {
+                o.put("employeeCount", employeeCount);
+            }));
+        }
+    }
+
+    analytics.group("a group id", new GroupTraits());
+
+    // Or you could use the JSON builder if you have some unstructured data
+    analytics.group("a group id", Builders.buildJsonObject(o -> {
+        o.put("employeeCount", 20);
+    }));  
+ ```
+ {% endcodeexampletab %}
+ {% codeexampletab Kotlin%}
+ ```java
+  // The newer APIs promote the use of strongly typed structures to keep codebases legible
+  @Serializable
+  data class GroupTraits(
+    var employeeCount: Int
+  )
+  analytics.group("a group id", GroupTraits(employeeCount = 20))
 
 
-      // Or you could use the JSON builder if you have some unstructured data
-      analytics.group("a group id", buildJsonObject{
-          put("employeeCount", 20)
-      })
-      ```
-      </td>
-      </tr>
-      </tbody>
-      </table>
+  // Or you could use the JSON builder if you have some unstructured data
+  analytics.group("a group id", buildJsonObject{
+      put("employeeCount", 20)
+  })
+ ```
+ {% endcodeexampletab %}
+ {% endcodeexample %}   
 
-    - Screen
+<br>
+- Screen
 
-      <table>
-      <thead>
-      <tr>
-      <th>Before</th>
-      <th></th>
-      </tr>
-      </thead>
-      <tbody>
-      <tr>
-      <td>Java</td>
-      <td markdown=1 class="table-code-snippet">
-      ```java
-      analytics.screen("Feed", new Properties().putValue("Feed Length", "26"));
-      ```
-      </td>
-      </tr>
-      <tr>
-      <td>Kotlin</td>
-      <td markdown=1 class="table-code-snippet">
-      ```kotlin
-      analytics.screen("Feed", Properties().putValue("Feed Length", "26"))
-      ```
-      </td>
-      </tr>
-      </tbody>
-      </table>
+<br> Before example:
 
-      <table>
-      <thead>
-      <tr>
-      <!-- <th><th> -->
-      <th>After</th>
-      <th></th>
-      </tr>
-      </thead>
-      <tbody>
-      <tr>
-      <td>Java</td>
-      <td markdown=1 class="table-code-snippet">
+ {% codeexample %}
+ {% codeexampletab Java%}
+ ```java
+    analytics.screen("Feed", new Properties().putValue("Feed Length", "26"));
+ ```
+ {% endcodeexampletab %}
+ {% codeexampletab Kotlin%}
+ ```java
+    analytics.screen("Feed", Properties().putValue("Feed Length", "26"))
+ ```
+ {% endcodeexampletab %}
+ {% endcodeexample %}   
 
-      ```java
-      // The newer APIs promote the use of strongly typed structures to keep codebases legible
-      class FeedScreenProperties implements JsonSerializable {
-          private int feedLength;
+  <br> After example:
 
-          public JsonObject serialize() {
-              return Builders.buildJsonObject(o -> {
-                  o.put("Feed Length", feedLength);
-              }));
-          }
-      }
+ {% codeexample %}
+ {% codeexampletab Java%}
+ ```java	
+    // The newer APIs promote the use of strongly typed structures to keep codebases legible
+    class FeedScreenProperties implements JsonSerializable {
+        private int feedLength;
 
-      analytics.screen("Feed", new FeedScreenProperties());
+        public JsonObject serialize() {
+            return Builders.buildJsonObject(o -> {
+                o.put("Feed Length", feedLength);
+            }));
+        }
+    }
 
-      // Or you could use the JSON builder if you have some unstructured data
-      analytics.screen("Feed", Builders.buildJsonObject(o -> {
-          o.put("Feed Length", 26);
-      }));
-      ```
-      </td>
-      </tr>
-      <tr>
-      <td>Kotlin</td>
-      <td markdown=1 class="table-code-snippet">
+    analytics.screen("Feed", new FeedScreenProperties());
 
-      ```kotlin    
-      // The newer APIs promote the use of strongly typed structures to keep codebases legible
-      @Serializable
-      data class FeedScreenProperties(
+    // Or you could use the JSON builder if you have some unstructured data
+    analytics.screen("Feed", Builders.buildJsonObject(o -> {
+        o.put("Feed Length", 26);
+    }));
+ ```
+ {% endcodeexampletab %}
+ {% codeexampletab Kotlin%}
+ ```java
+    // The newer APIs promote the use of strongly typed structures to keep codebases legible
+    @Serializable
+    data class FeedScreenProperties(
         @SerialName("Feed Length")
         var feedLength: Int
-      )
+    )
 
-      analytics.screen("Feed", FeedScreenProperties(feedLength = 26))
+    analytics.screen("Feed", FeedScreenProperties(feedLength = 26))
 
 
-      // Or you could use the JSON builder if you have some unstructured data
-      analytics.screen("Feed", buildJsonObject{
+    // Or you could use the JSON builder if you have some unstructured data
+    analytics.screen("Feed", buildJsonObject{
         put("feedLength", 26)
-      })
-      ```
-      </td>
-      </tr>
-      </tbody>
-      </table>
+    })
+```
+ {% endcodeexampletab %}
+ {% endcodeexample %}   
 
-    - Alias
+<br>
+- Alias
 
-      <table>
-      <thead>
-      <tr>
-      <th>Before</th>
-      <th></th>
-      </tr>
-      </thead>
-      <tbody>
-      <tr>
-      <td>Java</td>
-      <td markdown=1 class="table-code-snippet">
-      ```java
-      analytics.alias("new id");
-      ```
-      </td>
-      </tr>
-      <tr>
-      <td>Kotlin</td>
-      <td markdown=1 class="table-code-snippet">
-      ```kotlin    
-      analytics.alias("new id")
-      ```
-      </td>
-      </tr>
-      </tbody>
-      </table>
+<br> Before example:
 
-      <table>
-      <thead>
-      <tr>
-      <!-- <th><th> -->
-      <th>After</th>
-      <th></th>
-      </tr>
-      </thead>
-      <tbody>
-      <tr>
-      <td>Java</td>
-      <td markdown=1 class="table-code-snippet">
+ {% codeexample %}
+ {% codeexampletab Java%}
+ ```java
+    analytics.alias("new id");
+ ```
+ {% endcodeexampletab %}
+ {% codeexampletab Kotlin%}
+ ```java
+    analytics.alias("new id")
+```
+ {% endcodeexampletab %}
+ {% endcodeexample %}   
 
-      ```java
-      analytics.alias("new id");
-      ```
-      </td>
-      </tr>
-      <tr>
-      <td>Kotlin</td>
-      <td markdown=1 class="table-code-snippet">
+  <br> After example:
 
-      ```kotlin    
-      analytics.alias("new id")
-      ```
-      </td>
-      </tr>
-      </tbody>
-      </table>
+ {% codeexample %}
+ {% codeexampletab Java%}
+ ```java	
+    analytics.alias("new id");
+ ```
+ {% endcodeexampletab %}
+ {% codeexampletab Kotlin%}
+ ```java
+    analytics.alias("new id");
+```
+ {% endcodeexampletab %}
+ {% endcodeexample %}   
