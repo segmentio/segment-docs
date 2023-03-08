@@ -51,7 +51,7 @@ You will also need your Criteo Advertiser ID. Please reach out to your Criteo Ac
 
 7. Click **Save Changes**.  
 
-8. In the **Mappings** tab, click **New Mapping** and select **Add Users to Audience**. Don't change any defaults.
+8. In the **Mappings** tab, click **New Mapping** and select **Add Users to Audience**. If you wish your emails to be hashed before sending to Criteo, please select "yes" from the dropdown under "Hash Emails". Otherwise, do not change any default settings. By Default, emails are not hashed before sending to Criteo - Criteo hashes emails before storing them.
 
 9. Under the **Configure actions fields**, set **Enable Batching** to *Yes* and click **Save**.  
 
