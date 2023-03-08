@@ -57,7 +57,7 @@ To download a Source Schema CSV file:
 3. On the Source Schema page, select a schema type (Track, Identify, or Group)
 4. Click the **Download CSV** button. <br/> A toast pops up on the top of the page, with the message *"Your file is processing. When your file is ready it will be available to download from the Download History page."* 
 5. Open the Download History page by clicking the link in the toast or following the instructions in the [view download history](#view-download-history) section.
-6. Once the file status column indicates that the download was successful, click the **Download CSV** link to download your CSV to your computer.<br/> The Source Schema CSV name has the following format:<br/>`workspace-slug-source-slug-schema-type-yyyy-mm-dd-hh-mm`
+6. Once the file status column indicates that the download was successful, click the **Download CSV** link to download your CSV to your computer.<br/> The Source Schema CSV name has the following format:<br/>`workspaceSlug-sourceSlug-schemaType--yyyy-mm-dd--hh-mm-utc`
 
 > note "All events and properties are now included in the CSV file"
 > When you export a Source Schema, all events and properties are included in the CSV file regardless of the filters or search parameters currently applied to the Source Schema view. 
