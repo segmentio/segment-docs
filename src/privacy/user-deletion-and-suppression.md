@@ -44,7 +44,7 @@ Segment deletes messages with this `userId` from connected raw data Destinations
 
 Segment forwards these deletion requests to a growing list of supported partners.
 
-Note that Segment has a 30-day SLA for submitted deletion requests. Additionally, Segment's deletion manager can only accommodate 100,000 users within a 30-day period and cannot guarantee 30-day SLA if there are more than 100,000 deletion requests submitted within that 30-day period.
+Note that Segment has a 30-day SLA for submitted deletion requests. Additionally, Segment's deletion manager can only accommodate 100,000 users within a 30-day period and cannot guarantee a 30-day SLA if there are more than 100,000 deletion requests submitted within those 30 days.
 
 **Segment cannot guarantee that data is deleted from your Destinations.**
 
