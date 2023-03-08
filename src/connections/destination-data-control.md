@@ -75,7 +75,7 @@ To access the Download History page:
 The Track event CSV file contains the following columns:
 - Event Name
 - Last Seen At (UTC)
-  - If greater than 30 days, the value is "more than 30 days ago"
+  - If greater than your selected timeframe (7 days or 30 days,) the value is "more than 7 days ago" or "more than 30 days ago"
 - Property Name
 - Allowed
 - Blocked
@@ -90,7 +90,7 @@ The Track event CSV file contains the following columns:
 The Identify and Group CSV files contain the following columns:
 - Trait Name
 - Last Seen At (UTC)
-  - If greater than 30 days, the value is "more than 30 days ago"
+  - If greater than your selected timeframe (7 days or 30 days,) the value is "more than 7 days ago" or "more than 30 days ago"
 - Allowed
 - Blocked
 - Total
