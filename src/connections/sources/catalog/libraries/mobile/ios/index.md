@@ -221,7 +221,8 @@ configuration.trackDeepLinks = YES;
 {% endcodeexampletab %}
 {% endcodeexample %}
 
-Please note that you'll still need to call the `continueUserActivity` and `openURL` methods on the analytics client.
+> note ""
+> **Note:** You still need to call the `continueUserActivity` and `openURL` methods on the analytics client.
 
 ### Flushing
 
