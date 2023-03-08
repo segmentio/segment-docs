@@ -3,7 +3,7 @@ title: Reverse ETL
 beta: true
 ---
 
-Reverse ETL (Extract, Transform, Load) extracts data from a data warehouse and loads it into a 3rd party destination. Reverse ETL allows you to connect your data warehouse to the tools that Marketing, Sales, Support, Product, Analytics, and other business teams use. For example, with Reverse ETL, you can sync rows from Snowflake to Salesforce. Reverse ETL supports event and object data. This includes customer profile data, subscriptions, product tables, shopping cart tables, and more.
+Reverse ETL (Extract, Transform, Load) extracts data from a data warehouse using a query you provide, and delivers the data to your 3rd party destinations. Reverse ETL allows you to connect your data warehouse to the tools that Marketing, Sales, Support, Product, Analytics, and other business teams use. For example, with Reverse ETL, you can sync rows from Snowflake to Salesforce. Reverse ETL supports event and object data. This includes customer profile data, subscriptions, product tables, shopping cart tables, and more.
 
 As Segment is actively developing this feature, Segment welcomes your feedback on your experience with Reverse ETL. Click the button below to submit your feedback.
 
@@ -29,7 +29,7 @@ Follow these 4 steps to set up Reverse ETL and learn what each component is abou
 3. [Add a Destination](#step-3-add-a-destination)
 4. [Create Mappings](#step-4-create-mappings)
 
-### Step 1: Add a Source
+### Step 1: Add a source
 A Source is where your data originates from. Traditionally in Segment, a [Source](/docs/connections/sources/#what-is-a-source) is a website, server library, mobile SDK, or cloud application which can send data into Segment. In Reverse ETL, your data warehouse is the Source.
 
 > info ""
@@ -42,6 +42,7 @@ To add your warehouse as a source:
 
 1. Navigate to **Connections > Sources** and select the **Reverse ETL** tab in the Segment app.
 2. Click **Add Source**.
+<<<<<<< HEAD
 <<<<<<< HEAD:src/reverse-etl/index.md
 3. Select the source you want to add. You can choose between **BigQuery**, **Snowflake**, and **Redshift**.
 =======
@@ -50,13 +51,21 @@ To add your warehouse as a source:
     * If you choose to use Snowflake, run the queries listed in the [Snowflake Reverse ETL setup guide](/docs/reverse-etl/snowflake-setup/) to set up the Segment Snowflake connector. Segment recommends using the `ACCOUNTADMIN` role to execute all the commands.
     * If you choose to use BigQuery, use the permissions outlined in the [BigQuery Reverse ETL setup guide](/docs/reverse-etl/bigquery-setup/), to create a Service Account and generate JSON credentials that will then be copied into the Segment UI when creating a Reverse ETL Source.
 4. Add the account information for your source.  
+=======
+3. Select the source you want to add. You can choose between BigQuery, Redshift, and Snowflake.
+4. Follow the corresponding setup guide for your Reverse ETL source. 
+    * [BigQuery Reverse ETL setup guide](/docs/connections/sources/reverse-etl/bigquery-setup/)
+    * [Redshift Reverse ETL setup guide]()
+    * [Snowflake Reverse ETL setup guide](/docs/connections/sources/reverse-etl/snowflake-setup/)
+5. Add the account information for your source.  
+>>>>>>> 401fa6bc5 (edits)
     * For Snowflake users: Learn more about the Snowflake Account ID [here](https://docs.snowflake.com/en/user-guide/admin-account-identifier.html){:target="_blank"}.
 5. Click **Test Connection** to test to see if the connection works.
 6. Click **Create Source** if the test connection is successful.
 
 After you add your data warehouse as a source, you can [add a model](#step-2-add-a-model) to your source.
 
-### Step 2: Add a Model
+### Step 2: Add a model
 Models are SQL queries that define sets of data you want to synchronize to your Reverse ETL destinations. After you add your source, you can add a model.
 
 To add your first model:
@@ -79,7 +88,7 @@ To add your first model:
 
 To add multiple models to your source, repeat steps 1-10 above.
 
-### Step 3: Add a Destination
+### Step 3: Add a destination
 Once you’ve added a model, you need to add a destination. In Reverse ETL, destinations are the business tools or apps you use that Segment syncs the data from your warehouse to.
 
 > info ""
@@ -95,7 +104,7 @@ To add your first destination:
 5. Enter the **Destination name** and click **Create Destination**.
 6. Enter the required information on the **Settings** tab of the destination.
 
-### Step 4: Create Mappings
+### Step 4: Create mappings
 After you’ve added a destination, you can create mappings from your warehouse to the destination. Mappings enable you to map the data you extract from your warehouse to the fields in your destination.
 
 To create a mapping:
@@ -149,7 +158,11 @@ To edit your mapping:
 2. Select the destination with the mapping you want to edit.
 3. Select the **...** three dots and click **Edit mapping**. If you want to delete your mapping, select **Delete**.
 
-## Usage limits
+
+## Limits
+To provide consistent performance and reliability at scale, Segment enforces default use and rate limits. 
+
+### Usage limits
 Processed Reverse ETL records are the total number of records Segment attempts to load to your downstream destinations, including those that fail to load. Your plan determines how many Reverse ETL records you can process in one monthly billing cycle. 
 
 Plan | Number of Reverse ETL records you can process to each destination per month | 
@@ -162,5 +175,41 @@ When your limit is reached before the end of your billing period, your syncs wil
 
 To see how many records you’ve processed using Reverse ETL, navigate to **Settings > Usage & billing** and select the **Reverse ETL** tab. 
 
+### Configuration limits
+
+Name | Details | Limit
+--------- | ------- | ------
+Model query length | The maximum length for the model SQL query | 131,072 characters
+Model identifier column name length | The maximum length for the ID column name. | 191 characters
+Model timestamp column name length | The maximum length for the timestamp column name. | 191 characters
+Sync frequency | The shortest possible duration Segment allows between syncs | 15 minutes
+
+### Extract limits
+The extract phase is the time spent connecting to your database, executing the model query, updating internal state tables and staging the extracted records for loading. There is a 14-day data retention period to support internal disaster recovery and debugging as needed.
+
+Name | Details | Limit
+----- | ------- | ------
+Duration | The maximum amount of time Segment spends attempting to extract before timing out. | 3 hours
+Record count | The maximum number of records a single sync will process. Note: This is the number of records extracted from the warehouse not the limit for the number of records loaded to the destination (e.g. new/update/deleted). | 20 million records
+Column count | The maximum number of columns a single sync will process
+Column name length | The maximum length of a record column | 128 characters
+Record JSON Length | The maximum size for a record when converted to JSON (some of this limit is used by Segment) | 512 KiB
+Column JSON Length | The maximum size of any single column value | 128 KiB
+
+### Load limits
+The load phase covers the time spent preparing the extracted records for delivery to all connected destinations and mappings, in addition to waiting for those records to be fully handled by Centrifuge. There is a 30-day data retention period with records that fail to deliver through Centrifuge.
+
+Name | Details | Limit
+----- | ------- | ------
+Load prepare duration | The maximum amount of time Segment spends attempting to prepare the load before timing out. | 3 hours
+Load wait duration | The maximum amount of time Segment spends waiting for records to be delivered by Centrifuge. | 6 hours
+
+## Data retention
+Segment uses Kafka queues to buffer data between systems, in which 
+
+## Security
+Segment 
+
+\\ask Kathlynn what's the information we need for security
 
 
