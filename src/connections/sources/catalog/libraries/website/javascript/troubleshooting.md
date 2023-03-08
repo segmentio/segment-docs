@@ -159,10 +159,8 @@ Some destinations accept properties only. As a result, custom context fields you
 
 ### Why am I seeing additional cookies on my website?
 
-The AJS cookies being set under segment.com are first-party cookies, and they part of our own implementation of Segment as well as the destination we are using. These cookies are not related to your implementation of Segment. You are only seeing them because you have visited our domain using the same browser. So just to clarify further, the anonymousID and userID  highlighted below are not being tracked to your workspace, they are part of our own implementation of Segment, and they are being sent to the writekey connected to our own workspace. They are associated with the events we track when you visit our domain, segment.com
-  <img width="850" alt="firstpartycookies" src="https://user-images.githubusercontent.com/82051355/223537826-b6a67126-ec0e-4cbc-a936-2636a0ae3bf6.png">
-
-
+The AJS cookies being set under segment.com are first-party cookies, and they are part of our own implementation of Segment as well as the destination we are using. These cookies are not related to your implementation of Segment. You are only seeing them because you have visited Segment's domain using the same browser. They are being sent to the writekey connected to Segment's own workspace. They are associated with the events Segment tracks when you visit our domain, segment.com
+ 
 
 ## Known issues:
 
