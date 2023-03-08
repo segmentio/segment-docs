@@ -78,7 +78,7 @@ To figure out if an event is flagged for conversion, follow these steps:
 8. See if the value for the `ct_cookie_present` changed to `true`. If `true`, it means that Google Ads counts the event as a conversion.  
 
 > info ""
-> Google Ads will only consider an event as a conversion when the user arrived at your website coming from an Ad _click_. The Google SDK is responsible for checking if the user came from an Ad click and sets the parameter `ct_cookie_present` to true. Without clicking through an ad, Google Ads won't reflect the conversion because this information is missing in the network requests.
+> Google Ads considers an event as a conversion when the user arrives to your website as a result of an Ad _click_. The Google SDK is responsible for checking if the user came from an Ad click and sets the parameter `ct_cookie_present` to true. Without clicking through an ad, Google Ads doesn't reflect the conversion because this information is missing in the network requests.
 
 ## Multiple Google Ads Accounts
 
