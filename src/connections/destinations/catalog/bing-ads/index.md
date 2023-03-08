@@ -45,8 +45,47 @@ In order for us to map your track events to a Conversion Goal, you'll first need
 5. Choose the `Event` type of conversion and click **Next**.
 6. Fill in the appropriate values. Make sure to add the Segment event name as the **label** field and to associate the goal to the correct Tag (**UET Tag**) that is set up in your Segment source.
 
+<!-- Pete's Suggested change to outdated Doc text -->
 
-![creating a goal in Bing Ads](images/creating-a-goal-new.png)
+How to Set Up Custom Events:
+
+**Step 1: Add the UET Tag Tracking Code to Your Website**
+
+1. Copy the UET tag from Microsoft Advertising.
+2. Paste the tag into the head or body section of your website's code.
+3. For detailed instructions on how to add the tag using a tag manager or website platform, check out the article.
+
+**Step 2: Create a Conversion Goal or Remarketing List**
+
+Creating a conversion goal for a custom event:
+
+1. From the top menu, select **Tools > Conversion goals.**
+2. Select the type of conversion you want to track.
+3. Enter a descriptive name for your goal.
+4. Fill in the appropriate values for your selected goal type.
+5. Fine-tune your conversion goal with advanced settings.
+6. Associate the UET tag with the conversion goal.
+
+Creating a remarketing list for a custom event:
+
+In Microsoft Advertising, click **Shared Library > Audiences.**
+Click **Create audience > Remarketing list.**
+For Whom to add to your audience, select **Custom events.**
+Choose the parameters to report when logging custom events.
+Set the membership duration.
+Associate the UET tag with the remarketing list.
+
+**Step 3: Modify the UET Tag Tracking Code in Your Website**
+
+1. Add the code for the custom event to the UET tag tracking code.
+2. Follow the instructions provided to set up the event tag on your website.
+
+<!-- End of Pete's suggested update text -->
+
+<!-- Remove the below outdated image to one I have screenshot -->
+![creating a goal in Bing Ads](images/creating-a-goal-new.png) - Remove
+![Updated Screenshot creating goal in Bing Ads](https://user-images.githubusercontent.com/113425933/223753744-c7687a79-9737-4560-a7aa-9a2fc83bf6b4.png)- Add ^^
+
 
 
 Only the event name is required - other properties are optional. An example track call is shown below:
