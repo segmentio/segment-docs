@@ -102,10 +102,10 @@ To review an access request, workspace owners click the link in the access reque
 
 ## Remove invalid or expired Invite
 
-When you send an invitation to an incorrect email address or the security link included in the original invitation email expired. The initial invitation may still show as 'Invite Pending'. In these cases, you can simply revoke the invite to remove it and resend the invite if needed. The invitation will expire within a few days. Therefore, if the user accepts the invite containing an expired link, that user will not be granted any accesses. 
+When you send an invitation to an incorrect email address or the security link included in the original invitation email expired. The initial invitation may still show as 'Invite Pending'. In these cases, you can revoke the invite to remove it and resend the invite if needed. The invitation will expire within a few days. Therefore, if the user accepts the invite containing an expired link, that user will not be granted any accesses. 
 
 To revoke invite:
 1. Navigate to the **Workspace settings** > **Access management**
-2. Click on the Team Member's entry which also shows **Invite Pending**
+2. Click on the invite that you would like to remove, which also shows **Invite Pending**
 3. Click **Edit Invite** in the panel on the right.
-4. Click the **Revoke Invite** on the top right connor to remove the invite
+4. Click the **Revoke Invite** on the top right side to remove the invite
