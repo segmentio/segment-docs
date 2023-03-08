@@ -61,7 +61,7 @@ To figure out if an event is flagged for conversion, follow these steps:
       ```
 
 2. Verify that the [Google Conversion ID](/docs/connections/destinations/catalog/google-ads-gtag/#google-conversion-id) in your Segment workspace is correct.
-3. Find your ad online and **click on it**. This will redirect you to your website.
+3. Find your ad online and click it. This will redirect you to your website.
 4. Open the Network tab in your browser and make sure the **Preserve log** checkbox is checked and **All** is selected. Keep this Network tab and webpage open.
 
       ![Network tab](../../images/network-tab.png)
