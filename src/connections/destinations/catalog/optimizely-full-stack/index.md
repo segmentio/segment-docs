@@ -18,7 +18,7 @@ Segment's **Optimizely Full Stack (previously Optimizely X)** destination suppor
 If you're interested in implementing Optimizely X Web or Optimizely Full Stack with the JavaScript SDK, see Segment's [**Optimizely Web Destination**](/docs/connections/destinations/catalog/optimizely-web/), or follow the links below:
 
 * [Optimizely X Web](/docs/connections/destinations/catalog/optimizely/#optimizely-x-web)
-* [Optimizely Full Stack (JavaScript SDK)](https://segment.com/docs/connections/destinations/catalog/optimizely-web/#optimizely-full-stack-javascript-sdk)
+* [Optimizely Full Stack (JavaScript SDK)](/docs/connections/destinations/catalog/optimizely-web/#optimizely-full-stack-javascript-sdk)
 
 ## Implementation Prerequisite
 
