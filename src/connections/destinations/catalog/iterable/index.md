@@ -24,6 +24,8 @@ When you call `identify` with one of Segment's sources, Segment calls Iterable's
 
 Iterable keys users by `email` or a user ID. This user ID will be the Segment `userId` if sent. To use a Segment `userId` for identify calls, first call identify with both a `userId` and `email`. Iterable won't accept the request and throws an error if you fail to send one of either the `userId` or `email`.
 
+**NOTE**: Email parameter has to be passed only as the `email`, email value can't be passed as some other parameter in payload as it can't be detected by Iterable. The same applies for user ID parameter, it has to be passed as `userId` in payload. For example, you can't pass the `email` and `userId` as "mail" and "id" in event payload. This will be silently rejected by Iterable.
+
 <!-- commented out because this functionality isn't currently working ZD#355518
 ### Merge Nested Objects
 
@@ -57,6 +59,8 @@ This `identify` event would merge the `mobile` property for this user with any o
 When you call `track` with one of Segment's sources, Segment calls Iterable's [track API endpoint](https://api.iterable.com/api/docs#events_track), and send over the event properties as the data fields in the request. The name of the `track` event appears as a Custom Event in Iterable, and will be available to trigger workflows, segment users, and view analytics.
 
 If a user does not already exist in Iterable, calling `track` for a user event will add that user into the system. You can track with either an `email` or userId (if a `userId` exists for that email).
+
+**NOTE**: Email parameter has to be passed only as the `email`, email value can't be passed as some other parameter in payload as it can't be detected by Iterable. The same applies for user ID parameter, it has to be passed as `userId` in payload. For example, you can't pass the `email` and `userId` as "mail" and "id" in event payload. This will be silently rejected by Iterable.
 
 ### Example steps:
 
