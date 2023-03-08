@@ -42,7 +42,7 @@ When you create a `SUPPRESS_AND_DELETE` regulation, the user is actively suppres
 
 Segment deletes messages with this `userId` from connected raw data Destinations, including Redshift, BigQuery, Postgres, Snowflake, and Amazon S3. Warehouse deletions occur using a DML run against your cluster or instance, and Segment delete from S3 by "recopying" clean versions of any files in your bucket that included data about that `userId`.
 
-Segment forwards these deletion requests to a [growing list of supported partners](https://segment.com/docs/privacy/faq/#which-destinations-can-i-send-deletion-requests-to).
+Segment forwards these deletion requests to a [growing list of supported partners](/docs/privacy/faq/#which-destinations-can-i-send-deletion-requests-to).
 
 **Segment cannot guarantee that data is deleted from your Destinations.**
 
