@@ -13,7 +13,7 @@ The Segment Connections destination enables you to mold data extracted from your
 
 ### Create a source
 1. From the Segment web app, navigate to **Sources** and select **Add Source**.
-2. Search for **HTTP API** in the Sources Catalog, select the HTTP API source, and click **Add Source**.
+2. Search for **HTTP API** in the Sources Catalog, select the [HTTP API source](/docs/connections/sources/catalog/libraries/server/http-api/), and click **Add Source**.
 3. Follow the steps to name your source. This is the source that will receive API calls from the Segment Connections destination.
 4. Copy the Write Key on the **Overview** tab. You will need this when you set up the Segment Connections destination.
 
