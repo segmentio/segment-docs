@@ -24,7 +24,7 @@ When you call `identify` with one of Segment's sources, Segment calls Iterable's
 
 Iterable keys users by `email` or a user ID. This user ID will be the Segment `userId` if sent. To use a Segment `userId` for identify calls, first call identify with both a `userId` and `email`. Iterable won't accept the request and throws an error if you fail to send one of either the `userId` or `email`.
 
-**NOTE**: Email parameter has to be passed only as the `email`, email value can't be passed as some other parameter in payload as it can't be detected by Iterable. The same applies for user ID parameter, it has to be passed as `userId` in payload. For example, you can't pass the `email` and `userId` as "mail" and "id" in event payload. This will be silently rejected by Iterable.
+**NOTE**: The email parameter has to be sent to Segment as email. The email value can't be passed in with any other key name in the payload. Sending email in with a different key name (ex. customer_email, mail, etc.) will not allow Iterable's processes to understand that key holds the email value you want to use. The same stipulation applies to the userId field. Using keys other than email and userId will cause payloads to be silently rejected by Iterable.
 
 <!-- commented out because this functionality isn't currently working ZD#355518
 ### Merge Nested Objects
@@ -60,7 +60,7 @@ When you call `track` with one of Segment's sources, Segment calls Iterable's [t
 
 If a user does not already exist in Iterable, calling `track` for a user event will add that user into the system. You can track with either an `email` or userId (if a `userId` exists for that email).
 
-**NOTE**: Email parameter has to be passed only as the `email`, email value can't be passed as some other parameter in payload as it can't be detected by Iterable. The same applies for user ID parameter, it has to be passed as `userId` in payload. For example, you can't pass the `email` and `userId` as "mail" and "id" in event payload. This will be silently rejected by Iterable.
+**NOTE**: The email parameter has to be sent to Segment as email. The email value can't be passed in with any other key name in the payload. Sending email in with a different key name (ex. customer_email, mail, etc.) will not allow Iterable's processes to understand that key holds the email value you want to use. The same stipulation applies to the userId field. Using keys other than email and userId will cause payloads to be silently rejected by Iterable.
 
 ### Example steps:
 
