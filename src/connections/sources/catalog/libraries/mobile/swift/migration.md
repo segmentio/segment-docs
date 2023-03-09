@@ -20,14 +20,14 @@ ADDITIONAL COPY ABOUT HOW EASY IT IS TO MIGRATE/ HOW MUCH OF A TIME INVESTMENT P
 
 ## Add the SDK as a Dependency
 
-    1. Open your project in Xcode.
-    2. If using Xcode 12, go to **File > Swift Packages > Add Package Dependency…**. If using Xcode 13, go to **File > Add Packages…**
-    3. Enter the git path `git@github.com:segmentio/analytics-swift.git` for the Package Repository and click **Next**.
-    4. Select the version rules for your application and click **Next**.
-    5. Make sure the Segment Library checkbox is selected.
-    6. Click **Finish**.
+1. Open your project in Xcode.
+2. If using Xcode 12, go to **File > Swift Packages > Add Package Dependency…**. If using Xcode 13, go to **File > Add Packages…**
+3. Enter the git path `git@github.com:segmentio/analytics-swift.git` for the Package Repository and click **Next**.
+4. Select the version rules for your application and click **Next**.
+5. Make sure the Segment Library checkbox is selected.
+6. Click **Finish**.
 
-    <br> You have now added Analytics-Swift to your project. Segment and Sovran show as Swift package dependencies.
+<br> You have now added Analytics-Swift to your project. Segment and Sovran show as Swift package dependencies.
 
 ## Modify your initialized instance.
 
