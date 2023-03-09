@@ -50,3 +50,6 @@ Any of the external IDs can be used to query a profile. When a profile is reques
 
 ### Can ExternalID's be changed or removed from the profiles?
 No. As the Identity Graph uses ExternalIDs, they remain for the lifetime of the user profile.
+
+### In which scenario, the ga_clientid may cause the user profile merge?
+The Google clientID(ga_clientid) is a unique value created for each browser-device pair and will exist for 2 years if the cookie is not cleared. The analytics.reset() call will be triggered from Segment end when the user logs off. This call will clear the cookies and local Storage created by Segment. It doesn’t clear data from other integrated tools. So on the next login, the user will be assigned with unique anonymous_id but with the same ga_clientid(as the cookie is not cleared). Hence, the profiles with different anonymous_id but with same ga_clientid will get merged.
