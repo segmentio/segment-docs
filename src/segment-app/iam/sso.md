@@ -100,7 +100,7 @@ Enter your domain and click "Add Domain." When you click verify, you're given tw
 ## Configuring SSO to access multiple workspaces
 To configure SSO for multiple workspaces, your admin must configure access to each workspace as a separate app in your identity provider. 
 
-This is because, you are unable to use one domain across multiple workspaces, and you will encounter this error if you try adding a domain that is already verified in another workspace: 
+This is because, you are unable to use verified domain(s) across multiple workspaces, and you will encounter this error if you try adding a domain that is already verified in another workspace: 
 
 > warn ""
 > **Warning**: This domain has already been claimed.
@@ -109,7 +109,7 @@ Once your admin has configured separate apps for each workspace in your IdP, the
 
 Limitations:
 > note ""
-> **Note**: As you are only able to verify a domain in one of the workspaces, your users will only be able to log in to the workspace in which the domain has been verified when logging in via Segment’s Login page.
+> **Note**: As you are only able to verify the domain(s) in one of the workspaces, your users will only be able to log in to the workspace in which the domain has been verified when logging in via Segment’s Login page.
 
 > note ""
 > **Note**: Switching a workspace directly within Segment UI will not work, and the users will have to switch workspaces using IdP-initiated SSO.
