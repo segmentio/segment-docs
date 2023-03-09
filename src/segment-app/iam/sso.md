@@ -97,6 +97,23 @@ Enter your domain and click "Add Domain." When you click verify, you're given tw
 > note ""
 > **Note**: domain tokens expire 14 days after they are verified.
 
+## Configuring SSO to access multiple workspaces
+To configure SSO for multiple workspaces, your admin must configure access to each workspace as a separate app in your identity provider. 
+
+This is because, you are unable to use one domain across multiple workspaces, and you will encounter this error if you try adding a domain that is already verified in another workspace: 
+
+> warn ""
+> **Warning**: This domain has already been claimed.
+
+Once your admin has configured separate apps for each workspace in your IdP, the end-users can log in to the IdP and click on the relevant app (or tile) for the workspace you are trying to access (also referred as IdP-initiated SSO).
+
+Limitations:
+> note ""
+> **Note**: As you are only able to verify a domain in one of the workspaces, your users will only be able to log in to the workspace in which the domain has been verified when logging in via Segment’s Login page.
+
+> note ""
+> **Note**: Switching a workspace directly within Segment UI will not work, and the users will have to switch workspaces using IdP-initiated SSO.
+
 ## SSO Frequently Asked Questions
 
 ##### Do you support automatic user provisioning?
