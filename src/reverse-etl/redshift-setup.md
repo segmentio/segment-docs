@@ -6,7 +6,7 @@ beta: true
 Set up Redshift as your Reverse ETL source. 
 
 > info ""
-> Redshift for Reverse ETL is in beta and Segment is actively working on this feature. Segment’s [First-Access and Beta terms](https://segment.com/legal/first-access-beta-preview/) govern this feature. If you’d like to learn more, reach out to your CSM, AE, or SE.
+> Redshift for Reverse ETL is in beta and Segment’s [First-Access and Beta terms](https://segment.com/legal/first-access-beta-preview/) govern this feature. If you’d like to learn more, reach out to your CSM, AE, or SE.
 
 To set up Redshift with Reverse ETL: 
 1. Log in to Redshift and select the Redshift cluster you want to connect with Reverse ETL.
