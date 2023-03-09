@@ -8,7 +8,7 @@ If you're concerned about permanently discarding blocked events, you can enable 
 
 Select the source you'll forward events to from the Blocked Events and Traits dropdown. Segment recommends that you create a new Source for forwarded events to avoid contaminating production data and enable blocking only when you are confident about the quality of your data.
 
-Since forwading will happen server to server, we recommend creating a [HTTP Tracking API source](https://segment.com/docs/connections/sources/catalog/libraries/server/http-api/), though any server-side source will work. 
+Since forwarding happens server to server, Segment recommends creating a [HTTP Tracking API source](/docs/connections/sources/catalog/libraries/server/http-api/), though any server-side source will work. 
 
 ![](../images/blocked_event_forwarding.png)
 
