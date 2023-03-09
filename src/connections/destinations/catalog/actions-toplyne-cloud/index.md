@@ -13,8 +13,7 @@ id: 6408ac6c144a7d5ac55cf414
 
 {% include content/plan-grid.md name="actions" %}
 
-[Toplyne](https://www.toplyne.io/){:target="_blank"} is a headless Sales AI for revenue teams. Toplyne's AI captures and understands every user click passed through Segment and enriches it with demographic data (through 3rd party enrichment tools). Toplyne then delivers opportunities for expansion and conversion into your existing CRM. We do this without involving your data and engineering teams.
-Cloudflare, Vercel, and Canva depend on Toplyne to build predictable pipelines and improve conversions and expansions for their sales and account management teams.
+[Toplyne](https://www.toplyne.io/){:target="_blank"} is a headless Sales AI for revenue teams. Toplyne's AI captures and understands every user click passed through Segment and enriches it with demographic data (through 3rd party enrichment tools). Toplyne then delivers opportunities for expansion and conversion into your existing CRM. Toplyne does this without involving your data and engineering teams. Cloudflare, Vercel, and Canva depend on Toplyne to build predictable pipelines and improve conversions and expansions for their sales and account management teams.
 
 <!-- This include describes the requirement of A.js 2.0 or higher for Actions compatibility, and is required if your destination has a web component. -->
 
