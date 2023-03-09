@@ -66,7 +66,7 @@ To set up a new Actions-framework destination for the first time:
 
 > info ""
 > At least one mapping to handle a connected source's event(s) must be configured and enabled in an Actions-framework destination in order for data to be sent downstream.
-> The mappings will be triggered as per the created order in UI and can't be done with certain sequence as per our requirement even it is configured with the same event.
+> Events will be sent downstream in the order in which they appear in the mappings UI. There is no mechanism through which you can control the order of events sent to the downstream destinations outside of that. 
 
 ## Migrate a classic destination to an actions-based destination
 
