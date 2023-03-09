@@ -1,9 +1,12 @@
 ---
 # The end name should be similar to `Slack  Destination`
-title: Toplyne (Actions) Destination
+title: Toplyne Cloud Mode (Actions) Destination
 beta: true
 hide-boilerplate: true
 hide-dossier: true
+hidden: true
+private: true
+id: 6408ac6c144a7d5ac55cf414
 ---
 
 <!-- This template is meant for Actions-based destinations that do not have an existing Classic or non-Actions-based version. For Actions Destinations that are a new version of a classic destination, see the doc-template-update.md template. -->
