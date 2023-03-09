@@ -6,15 +6,20 @@ strat: swift
 > info ""
 > Analytics Swift supports [these destinations](/docs/connections/sources/catalog/libraries/mobile/swift/destination-plugins) with more to come.
 
-If you're using a different mobile library such as Analytics-iOS, follow these steps to migrate to the Analytics-Swift library:
+## Getting Started 
+
+If you're using a different mobile library such as Analytics-iOS, follow these steps to migrate to the Analytics-Swift library.
+ADDITIONAL COPY ABOUT HOW EASY IT IS TO MIGRATE/ HOW MUCH OF A TIME INVESTMENT PEOPLE  CAN EXPECT
+
+> success ""
+> This guide assumes you already have a Source in your Segment workspace. If you are creating a new one you can reference the [Source Overview Guide](/docs/connections/sources/)
 
 > warning ""
 > Segment no longer supports installing Analytics-Swift through Cocoapods.
 
-1. Create a Swift Source in Segment.
-    1. Go to **Connections > Sources > Add Source**.
-    2. Search for **Swift** and click **Add source**.
-2. Add the SDK as a dependency.
+
+## Add the SDK as a Dependency
+
     1. Open your project in Xcode.
     2. If using Xcode 12, go to **File > Swift Packages > Add Package Dependency…**. If using Xcode 13, go to **File > Add Packages…**
     3. Enter the git path `git@github.com:segmentio/analytics-swift.git` for the Package Repository and click **Next**.
@@ -22,41 +27,40 @@ If you're using a different mobile library such as Analytics-iOS, follow these s
     5. Make sure the Segment Library checkbox is selected.
     6. Click **Finish**.
 
-    <br> You have now added Analytics-Swift to your project, and Segment and Sovran show as Swift package dependencies.
+    <br> You have now added Analytics-Swift to your project. Segment and Sovran show as Swift package dependencies.
 
-3. Modify your initialized instance.
+## Modify your initialized instance.
 
 {% codeexample %}
 {% codeexampletab Swift%}
-
-    ```swift
-    let configuration = AnalyticsConfiguration(writeKey: "YOUR_WRITE_KEY")
+```swift
+    let configuration = Configuration(writeKey: "YOUR_WRITE_KEY")
     configuration.trackApplicationLifecycleEvents = true
     configuration.flushAt = 3
     configuration.flushInterval = 10
     Analytics.setup(with: configuration)
-    ```
+```
 {% endcodeexampletab %}
 {% codeexampletab Objective-C %}
-
-    ```objc
+```objc
     SEGConfiguration *config = [[SEGConfiguration alloc] initWithWriteKey:@"<writekey>"];
     config.trackApplicationLifecycleEvents = YES;
     
     _analytics = [[SEGAnalytics alloc] initWithConfiguration: config];
-    ```
-
+```
 {% endcodeexampletab %}
 {% endcodeexample %}
 
-4. Add a middleware.
+## Convert Middlewares to Plugins
 
-    Middlewares are a powerful mechanism that can augment the events collected by the SDK. A middleware is a simple function that is invoked by the Segment SDK and can be used to monitor, modify, augment or reject events.
+Middlewares are a powerful mechanism that can augment events collected by the Analytics iOS (Classic) SDK. A middleware is a simple function that is invoked by the Segment SDK and can be used to monitor, modify, augment or reject events. Analytics Swift replaces the concept of middlewares with Enrichment Plugins to give you even more control over your event data. Refer to the [Plugin Architecture Overview](/docs/connections/sources/catalog/libraries/mobile/swift/plugin-architecture) for more information. 
 
-    <br> As middlewares have the same function as [enrichment plugins](/docs/connections/sources/catalog/libraries/mobile/swift#plugin-architecture), you need to write an enrichment plugin to add a middleware.
+### Source middleware
 
-    
-    ```swift
+**Before example**
+<br>
+
+```swift
     let customizeAllTrackCalls = BlockMiddleware { (context, next) in
         if context.eventType == .track {
             next(context.modify { ctx in
@@ -79,10 +83,12 @@ If you're using a different mobile library such as Analytics-iOS, follow these s
     }
 
     analytics.sourceMiddleware = [customizeAllTrackCalls]
-    ```
+```
 
-   
-    ```swift
+**After example**
+<br>
+
+```swift
     class customizeAllTrackCalls: EventPlugin {
         let type: PluginType = .enrichment
         let analytics: Analytics
@@ -96,13 +102,14 @@ If you're using a different mobile library such as Analytics-iOS, follow these s
     }
 
     analytics.add(plugin: customizeAllTrackCalls())
-    ```
-5. Add a destination middleware.
+```
+### Destination middleware
+If you don't need to transform all of your Segment calls, and only want to transform the calls going to specific, device-mode destinations, use Destination plugins.
 
-    If you don't need to transform all of your Segment calls, and only want to transform the calls going to specific destinations, use Destination middleware instead of Source middleware. Destination middleware is available for device-mode destinations only.
+**Before example**
+<br>
 
-    <br>Before example:
-    ```swift
+```swift
      // define middleware we'll use for amplitude
 
        let customizeAmplitudeTrackCalls = BlockMiddleware { (context, next) in
@@ -131,10 +138,13 @@ If you're using a different mobile library such as Analytics-iOS, follow these s
     let amplitude = SEGAmplitudeIntegrationFactory.instance()
     config.use(amplitude)
     config.destinationMiddleware = [DestinationMiddleware(key: amplitude.key(), middleware:[customizeAmplitudeTrackCalls])]
-    ```
+```
 
-    <br> After example:
-    ```swift
+
+**After example**
+<br>
+
+```swift
     class customizeAllTrackCalls: EventPlugin {
         let type: PluginType = .enrichment
         let analytics: Analytics
@@ -159,15 +169,18 @@ If you're using a different mobile library such as Analytics-iOS, follow these s
 
     analytics.add(plugin: amplitudeDestination)
 
-    ```
-6. Set your config options.
-    <br> Segment changed these config options:
+```
+
+### Update your config options 
+
+Segment changed these config options:
 
     Before | After
     ------ | ------
     `defaultProjectSettings` | Name changed to `defaultSettings`
 
-    <br> Segment added these options:
+<br> 
+Segment added these options:
 
     Name | Details
     ---- | -------
@@ -188,112 +201,139 @@ If you're using a different mobile library such as Analytics-iOS, follow these s
     `trackInAppPurchases` | Deprecated |
     `trackPushNotifications` | Deprecated |
 
-7. Add a destination.
-    <br> Segment previously used Factories to initialize destinations. With Analytics Swift, Segment treats destinations similar to plugins and simplifies the process in adding them.
+### Add destination plugins
 
-    <br> Before example:
-    ```swift
+> warning ""
+> You should remove all of your Analytics iOS (Classic) device-mode destinations as they are not compatible with Analytics Swift
+
+Segment previously used Factories to initialize destinations. With Analytics Swift, Segment treats destinations similar to plugins and simplifies the process in adding them. Refer to the [Plugin Architecture Overview](/docs/connections/sources/catalog/libraries/mobile/swift/plugin-architecture) for more information. 
+
+**Before example**
+<br> 
+
+```swift
     analyticsConfig.use(FooIntegrationFactory.instance()
     let analytics = Analytics.setup(with: analyticsConfig)
-    ```
+```
+**After example**
+<br> 
 
-    <br> After example:
-    ```swift  
+```swift  
     let destination = /* initialize your desired destination */
     analytics.add(plugin: destination)
-    ```
-8. Modify your tracking methods for Identify, Track, Group, Screen, and Alias.
-    - Identify
+```
 
-      <br> Before example
-      ```swift
-      analytics.identify(userId: "a user's id", traits: ["firstName": "John", "lastName": "Doe"])
-      ```
+## Modify your tracking methods 
 
-      <br> After example
-      ```swift    
-      // The newer APIs promote the use of strongly typed structures to keep codebases legible
+### Identify
 
-      struct UserTraits(
+**Before example**
+<br> 
+
+```swift
+    analytics.identify(userId: "a user's id", traits: ["firstName": "John", "lastName": "Doe"])
+```
+**After example**
+<br> 
+
+```swift    
+    // The newer APIs promote the use of strongly typed structures to keep codebases legible
+
+    struct UserTraits(
         let firstName: String,
         let lastName: String
-      )
+    )
 
 
-      analytics.identify("a user's id", UserTraits(firstName = "John", lastName = "Doe"))
-      ```
-    - Track
+    analytics.identify("a user's id", UserTraits(firstName = "John", lastName = "Doe"))
+```
+### Track
 
-      <br> Before example
-      ```swift
+**Before example**
+<br> 
+
+```swift
       analytics.track("Item Purchased", properties: ["item": "Sword of Heracles", "revenue": 2.95])      
-      ```
+```
 
-      <br> After example
-      ```swift    
+**After example**
+<br> 
+      
+```swift    
 
-      // The newer APIs promote the use of strongly typed structures to keep codebases legible
+    // The newer APIs promote the use of strongly typed structures to keep codebases legible
 
-      struct ItemPurchasedProperties(
+    struct ItemPurchasedProperties(
         let item: String
         let revenue: Double
-      )
+    )
 
-      analytics.track(
-         name: "Item Purchased",
-         properties: ItemPurchasedProperties(
+    analytics.track(
+        name: "Item Purchased",
+        properties: ItemPurchasedProperties(
             item = "Sword of Heracles",
             price = 2.95
-          )
-      )
-      ```
-
-    - Group
-
-      <br> Before example
-      ```swift
-      analytics.identify(userId: "a user's id", traits: ["firstName": "John", "lastName": "Doe"])
-      ```
-
-      <br> After example
-      ```swift    
-         // The newer APIs promote the use of strongly typed structures to keep codebases legible
-
-        struct GroupTraits(
-            let name: String
-            let description: String
         )
+    )
+```
+### Group
+
+**Before example**
+<br> 
+
+```swift
+    analytics.identify(userId: "a user's id", traits: ["firstName": "John", "lastName": "Doe"])
+```
+
+**After example**
+<br> 
+
+```swift    
+    // The newer APIs promote the use of strongly typed structures to keep codebases legible
+
+    struct GroupTraits(
+        let name: String
+        let description: String
+    )
         
-        analytics.group(groupId: "group123", traits: GroupTraits(name = "Initech", description = "Accounting Software"))
-      ```
+    analytics.group(groupId: "group123", traits: GroupTraits(name = "Initech", description = "Accounting Software"))
+```
 
-    - Screen
+### Screen 
 
-      <br> Before example
-      ```swift
-            analytics.screen("Photo Feed", properties: ["Feed Type": "private"])
-      ```
+**Before example**
+<br> 
 
-      <br> After example
-      ```swift    
-        // The newer APIs promote the use of strongly typed structures to keep codebases legible
+```swift
+    analytics.screen("Photo Feed", properties: ["Feed Type": "private"])
+```
+
+**After example**
+<br> 
+
+```swift    
+    // The newer APIs promote the use of strongly typed structures to keep codebases legible
 
 
-        struct FeedScreenProperties(
-            let feedType: Int
-        )
+    struct FeedScreenProperties(
+        let feedType: Int
+    )
 
-        analytics.screen(title: "Photo Feed", properties: FeedScreenProperties(feedType = "private"))
-      ```
+    analytics.screen(title: "Photo Feed", properties: FeedScreenProperties(feedType = "private"))
+```
 
-    - Alias
+### Alias
 
-      <br> Before example
-      ```swift
-      analytics.alias("new id");
-      ```
+**Before example**
+<br> 
 
-      <br> After example
-      ```swift    
-      analytics.alias(newId: "new id")
-      ```
+```swift
+    analytics.alias("new id");
+```
+
+**After example**
+<br> 
+
+```swift    
+    analytics.alias(newId: "new id")
+```

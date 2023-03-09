@@ -54,9 +54,30 @@ The SDK internally uses a number of Java 8 language API through desugaring (see 
 
 ## My deeplinks are not tracked?
 
-When running on Android 12+, web deeplinks (http:// or https://) require an additional step for deep links to work. Starting in Android 12 you must now verify that you own the domain of your deeplink. This means adding a JSON file with credentials to both your app and your deeplink host. Learn more here.
 
-Additionally while Analytics SDK tracks most deeplinks automatically, there are some cases that may need some manual tracking. See an example here.
+While Analytics Kotlin will automatically track deep links that open your app when the `trackDeepLinks` Configuration property is set to `true`. There are some situations when the app is already open that could cause a deep link open event to be missed.
+
+The `openUrl` function allows you to manually track that a deep link has opened your app while your app was already open:
+
+
+    override fun onNewIntent(intent: Intent?) {
+        super.onNewIntent(intent)
+    
+        // Add a deep-link opened event manually.
+        // This is necessary when your Activity has a android:launchMode of
+        // 'singleInstance', 'singleInstancePerTask', 'singleTop', or any other mode
+        // that will re-use an existing Activity instead of creating a new instance.
+        // The Analytics SDK automatically identifies when you app is started from 
+        // a deep link if the Activity is created, but not if it is re-used. Therefore 
+        // we have to add this code to manually capture the Deep Link info.
+        
+        val referrer = "unknown" 
+        analytics.trackDeepLinkOpen(referrer, intent)
+    }
+
+Note: Due to the way deep links are handled in Android, we can not know the referrer when a deep link causes `onNewIntent()` to be fired instead of `onCreate()`. 
+
+For a sample implementation see our [Kotlin Sample App](https://github.com/segmentio/analytics-kotlin/tree/main/samples/kotlin-android-app).
 
 ### Will I still see device-mode integrations listed as `false` in the integrations object?
 When you successfully package a plugin in device-mode, you will no longer see the integration listed as `false` in the integrations object for a Segment event. This logic is now packaged in the event metadata, and is not surfaced in the Segment debugger.
