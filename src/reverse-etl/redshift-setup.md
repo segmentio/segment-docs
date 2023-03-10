@@ -13,7 +13,7 @@ To set up Redshift with Reverse ETL:
 2. Follow the [networking instructions](/docs/connections/storage/catalog/redshift/#networking) to configure the correct network and security settings. 
 3. Run the SQL commands below to create a user named `segment`. 
 
-    ```ts
+    ```sql
     -- create a user named "segment" that Segment will use when connecting to your Redshift cluster.
     CREATE USER segment PASSWORD '<enter password here>';
 

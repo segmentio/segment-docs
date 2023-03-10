@@ -2,7 +2,7 @@
 title: BigQuery Reverse ETL Setup
 ---
 
-Set up BigQuery as your Reverse ETL source. You can also choose to [set up Snowflake](/docs/reverse-etl/snowflake-setup/) as your source.
+Set up BigQuery as your Reverse ETL source. 
 
 > warning ""
 > You need to be an account admin to set up the Segment BigQuery connector as well as write permissions for the `__segment_reverse_etl` dataset.
