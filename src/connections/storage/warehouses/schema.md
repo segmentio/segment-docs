@@ -10,7 +10,7 @@ A **schema** describes the way that the data in a warehouse is organized. Segmen
 
 ### How warehouse tables handle nested objects and arrays
 
-Segment's libraries pass nested objects and arrays into tracking calls as **properties**, **traits**, and **tracking calls**. To preserve the quality of your events data, Segment uses the following methods to store properties and traits in database tables: 
+Segment's libraries pass nested objects and arrays into tracking calls as **properties**, **traits**, and **tracking calls**. To preserve the quality of your events data, Segment uses the following methods to store properties and traits in database tables:
 
 - The warehouse connector stringifies all **properties** that contain a nested **array**
 - The warehouse connector stringifies all **context fields** that contain a nested **array**
@@ -33,13 +33,14 @@ Segment's libraries pass nested objects and arrays into tracking calls as **prop
   <td><b>Object (Context):</b> Flatten </td>
   <td markdown="1">
 
-``` json
+```json
 context: {
   app: {
     version: "1.0.0"
   }
 }
 ```
+
   </td>
   <td>
     <b>Column Name:</b><br/>
@@ -83,6 +84,7 @@ properties: {
   }
 }
 ```
+
 </td>
 <td>
     <b>Column Name:</b><br/>
@@ -93,18 +95,17 @@ properties: {
 </tr>
 
 <tr>
-<td><b>Array (Simple):</b> Stringify</td>
+<td><b>Array (Properties):</b> Stringify</td>
 <td markdown="1">
 
 ```json
-  
-products: {
+properties: {
   product_id: [
     "507f1", "505bd"
   ]
 }
-  
 ```
+
 </td>
 <td>
 <b>Column Name:</b> <br/>
@@ -113,41 +114,38 @@ products: {
     "[507f1, 505bd]"
 </td>
 <tr>
-<td><b>Array (Complex):</b> Stringify</td>
-<td>
+<td><b>Array (Properties):</b> Stringify</td>
+<td markdown="1">
 
 ```json
-  
-products: [
-    {
-      product_id: '507f1f77bcf86cd799439011',
-      sku: '45790-32',
-      name: 'Monopoly: 3rd Edition',
-      price: 19,
-      position: 1,
-      category: 'Games',
-      url: 'https://www.example.com/product/path',
-      image_url: 'https://www.example.com/product/path.jpg'
-    },
-    {
-      product_id: '505bd76785ebb509fc183733',
-      sku: '46493-32',
-      name: 'Uno Card Game',
-      price: 3,
-      position: 2,
-      category: 'Games'
-    }
-  ]
-  
+properties {
+  products: [
+      {
+        product_id: '507f1',
+        sku: '45790-32',
+        name: 'Monopoly: 3rd Edition',
+        price: 19,
+        position: 1,
+        category: 'Games',
+      },
+      {
+        product_id: '505bd',
+        sku: '46493-32',
+        name: 'Uno Card Game',
+        price: 3,
+        position: 2,
+        category: 'Games'
+      }
+    ]
+}
 ```
+
 </td>
 <td>
-
 <b>Column Name:</b> <br/>
-    products <br/><br/>
+    products <br/> <br/>
     <b>Value:</b> <br />
-    '[{"product_id":"507f1f77bcf86cd799439011","sku":"45790-32", <br /> "name":"Monopoly: 3rd Edition","price":19,"position":1,"category":"Games",<br /> "url":"https://www.example.com/product/path", <br /> "image_url":"https://www.example.com/product/path.jpg"},{"product_id":"505bd76785ebb509fc183733","sku":"46493-32",<br /> "name":"Uno Card Game","price":3,"position":2,"category":"Games"}]'
-
+    "[{'product_id':'507f1',<br /> 'sku':'45790-32', <br /> 'name':'Monopoly: 3rd Edition',<br /> 'price':19,<br /> 'position':1,<br /> 'category':'Games',<br />}, <br /> {'product_id':'505bd', <br /> 'sku':'46493-32',<br /> 'name':'Uno Card Game', <br /> 'price':3,'position':2, <br /> 'category':'Games'}]"
 </td>
 </tr>
 </td>
@@ -158,21 +156,17 @@ products: [
 
 The table below describes the schema in Segment Warehouses:
 
-
-
-
-| source                | property                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
-| --------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `<source>.aliases`    | A table with your `alias` method calls. This table includes the `traits` you identify users by as top-level columns, for example `<source>.aliases.email`.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
-| `<source>.groups`     | A table with your `group` method calls. This table includes the `traits` you record for groups as top-level columns, for example `<source>.groups.employee_count`.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    |
-| `<source>.accounts`   | *IN BETA* A table with unique `group` method calls. Group calls are upserted into this table (updated if an existing entry exists, appended otherwise). This table holds the latest state of a group.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
-| `<source>.identifies` | A table with your `identify` method calls. This table includes the `traits` you identify users by as top-level columns, for example `<source>.identifies.email`.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      |
-| `<source>.users`      | A table with unique `identify` calls. `identify` calls are upserted on `user_id` into this table (updated if an existing entry exists, appended otherwise). This table holds the latest state of a user. The `id` column in the users table is the same as the `user_id` column in the identifies table. Also note that this table won't have an `anonymous_id` column since a user can have multiple anonymousIds. To retrieve a user's `anonymousId`, query the identifies table. *If you observe any duplicates in the users table [contact Segment support](https://segment.com/help/contact/) (unless you are using BigQuery, where [this is expected](/docs/connections/storage/catalog/bigquery/#schema))*. |
-| `<source>.pages`      | A table with your `page` method calls. This table includes the `properties` you record for pages as top-level columns, for example `<source>.pages.title`.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
-| `<source>.screens`    | A table with your `screen` method calls. This table includes `properties` you record for screens as top-level columns, for example `<source>.screens.title`.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
-| `<source>.tracks`     | A table with your `track` method calls. This table includes standardized properties that are all common to all events: `anonymous_id`, `context_*`, `event`, `event_text`, `received_at`, `sent_at`, and `user_id`.  This is because every event that you send to Segment has different properties.  For querying by the custom properties, use the `<source>.<event>` tables instead.                                                                                                                                                                                                                                                                                                                |
-| `<source>.<event>`    | For `track` calls, each event like `Signed Up` or `Order Completed` also has it's own table (for example. `initech.clocked_in`) with columns for each of the event's distinct `properties` (for example. `initech.clocked_in.time`).                                                                                                                                                                                                                                                                                                                                                                                                                                                                  |
-
+| source                | property                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           |
+| --------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `<source>.aliases`    | A table with your `alias` method calls. This table includes the `traits` you identify users by as top-level columns, for example `<source>.aliases.email`.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         |
+| `<source>.groups`     | A table with your `group` method calls. This table includes the `traits` you record for groups as top-level columns, for example `<source>.groups.employee_count`.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
+| `<source>.accounts`   | _IN BETA_ A table with unique `group` method calls. Group calls are upserted into this table (updated if an existing entry exists, appended otherwise). This table holds the latest state of a group.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              |
+| `<source>.identifies` | A table with your `identify` method calls. This table includes the `traits` you identify users by as top-level columns, for example `<source>.identifies.email`.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   |
+| `<source>.users`      | A table with unique `identify` calls. `identify` calls are upserted on `user_id` into this table (updated if an existing entry exists, appended otherwise). This table holds the latest state of a user. The `id` column in the users table is the same as the `user_id` column in the identifies table. Also note that this table won't have an `anonymous_id` column since a user can have multiple anonymousIds. To retrieve a user's `anonymousId`, query the identifies table. _If you observe any duplicates in the users table [contact Segment support](https://segment.com/help/contact/) (unless you are using BigQuery, where [this is expected](/docs/connections/storage/catalog/bigquery/#schema))_. |
+| `<source>.pages`      | A table with your `page` method calls. This table includes the `properties` you record for pages as top-level columns, for example `<source>.pages.title`.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         |
+| `<source>.screens`    | A table with your `screen` method calls. This table includes `properties` you record for screens as top-level columns, for example `<source>.screens.title`.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       |
+| `<source>.tracks`     | A table with your `track` method calls. This table includes standardized properties that are all common to all events: `anonymous_id`, `context_*`, `event`, `event_text`, `received_at`, `sent_at`, and `user_id`. This is because every event that you send to Segment has different properties. For querying by the custom properties, use the `<source>.<event>` tables instead.                                                                                                                                                                                                                                                                                                                               |
+| `<source>.<event>`    | For `track` calls, each event like `Signed Up` or `Order Completed` also has it's own table (for example. `initech.clocked_in`) with columns for each of the event's distinct `properties` (for example. `initech.clocked_in.time`).                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
 
 ## Identifies table
 
@@ -187,7 +181,6 @@ The `identifies` table stores the `.identify()` method calls. Query it to find o
 | `sent_at`       | When a user triggered the identify call.                                                                                                                                                   |
 | `user_id`       | The unique ID of the user.                                                                                                                                                                 |
 | `<trait>`       | Each trait of the user you record creates its own column, and the column type is automatically inferred from your data. For example, you might have columns like `email` and `first_name`. |
-
 
 ### Querying the Identifies table
 
@@ -210,11 +203,9 @@ GROUP BY day
 ORDER BY day
 ```
 
-
 ## Groups table
 
-The  `groups` table stores the `group` method calls. Query it to find out group-level information. It has the following columns:
-
+The `groups` table stores the `group` method calls. Query it to find out group-level information. It has the following columns:
 
 | method          | property                                                                                                                                                                              |
 | --------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -228,7 +219,6 @@ The  `groups` table stores the `group` method calls. Query it to find out group-
 | `<trait>`       | Each trait of the group you record creates its own column, and the column type is automatically inferred from your data. For example, you might have columns like `email` and `name`. |
 
 ### Querying the Groups table
-
 
 To see a list of the columns in the `groups` table for your `<source>`, run the following:
 
@@ -263,9 +253,7 @@ The `pages` and `screens` tables store the `page` and `screen` method calls. Que
 | `user_id`       | The unique ID of the user.                                                                                                                                                                    |
 | `property`      | Each property of your pages or screens creates its own column, and the column type is automatically inferred from your data. For example, you might have columns like `referrer` and `title`. |
 
-
 ### Querying the Pages and Screens tables
-
 
 To see a list of the columns in the `pages` table for your `<source>`, run the following:
 
@@ -293,7 +281,6 @@ ORDER BY day
 | 2015-07-21 | 1,920,290 |
 | ...        | ...       |
 
-
 ## Tracks table
 
 The `tracks` table stores the `track` method calls. Query it to find out information about the events your users have triggered. It has the following columns:
@@ -309,9 +296,7 @@ The `tracks` table stores the `track` method calls. Query it to find out informa
 | `sent_at`       | When a user triggered the track call.                                                         |
 | `user_id`       | The unique ID of the user.                                                                    |
 
-
 ### Querying the Tracks table
-
 
 Your `tracks` table is a rollup of the different event-specific tables, for quick querying of just a single type. For example, you could see the number of unique users signed up each day:
 
@@ -348,7 +333,6 @@ Your event tables are a series of table for each custom event you record to Segm
 
 ### Querying the Events tables
 
-
 To see a list of the event tables for a given `<source>`, run the following:
 
 ```sql
@@ -369,7 +353,6 @@ ORDER BY "table"
 | production | `signed_up`       |
 | production | `completed_order` |
 | ...        | ...               |
-
 
 To see a list of the columns in one of your event tables, run the following:
 
@@ -396,9 +379,9 @@ The `source.event` tables have the same columns as the `source.track` tables, bu
 If you're recording an event like:
 
 ```js
-analytics.track('Register', {
-  plan: 'Pro Annual',
-  accountType: 'Facebook'
+analytics.track("Register", {
+  plan: "Pro Annual",
+  accountType: "Facebook"
 });
 ```
 
@@ -437,11 +420,11 @@ ORDER BY day
 
 | day        | revenue |
 | ---------- | ------- |
-| 2014-07-19 | $2,630  |
-| 2014-07-20 | $1,595  |
-| 2014-07-21 | $2,350  |
+| 2014-07-19 | \$2,630 |
+| 2014-07-20 | \$1,595 |
+| 2014-07-21 | \$2,350 |
 
-## Schema Evolution and Compatibility 
+## Schema Evolution and Compatibility
 
 ### New Columns
 
@@ -463,9 +446,9 @@ The data types that Segment currently supports include:
 
 #### `varchar`
 
-Data types are set up in your warehouse based on the first value that comes in from a source. For example, if the first value that came in from a source was a string, Segment would set the data type in the warehouse to `string`. 
+Data types are set up in your warehouse based on the first value that comes in from a source. For example, if the first value that came in from a source was a string, Segment would set the data type in the warehouse to `string`.
 
-In cases where a data type is determined incorrectly, the support team can help you update the data type. As an example, if a field can include float values as well as integers, but the first value we received was an integer, we will set the data type of the field to integer, resulting in a loss of precision. 
+In cases where a data type is determined incorrectly, the support team can help you update the data type. As an example, if a field can include float values as well as integers, but the first value we received was an integer, we will set the data type of the field to integer, resulting in a loss of precision.
 
 To update the data type, reach out to the Segment support team. They will update the internal schema that Segment uses to infer your warehouse schema. Once the change is made, Segment will start syncing the data with the correct data type. However, if you want to backfill the historical data , you must drop the impacted tables on your end so that Segment can recreate them and backfill those tables.
 
@@ -486,19 +469,19 @@ All four timestamps pass through to your Warehouse for every ETL'd event. In mos
 
 `timestamp` is the UTC-converted timestamp which is set by the Segment library. If you are importing historical events using a server-side library, this is the timestamp you'll want to reference in your queries.
 
-`original_timestamp` is the original timestamp set by the Segment library at the time the event is created.  Keep in mind, this timestamp can be affected by device clock skew. You can override this value by manually passing in a value for `timestamp` which will then be relabeled as `original_timestamp`. Generally, this timestamp should be ignored in favor of the `timestamp` column.
+`original_timestamp` is the original timestamp set by the Segment library at the time the event is created. Keep in mind, this timestamp can be affected by device clock skew. You can override this value by manually passing in a value for `timestamp` which will then be relabeled as `original_timestamp`. Generally, this timestamp should be ignored in favor of the `timestamp` column.
 
-`sent_at` is the UTC timestamp set by library when the Segment API call was sent.  This timestamp can also be affected by device clock skew.
+`sent_at` is the UTC timestamp set by library when the Segment API call was sent. This timestamp can also be affected by device clock skew.
 
 `received_at` is UTC timestamp set by the Segment API when the API receives the payload from client or server. All tables use `received_at` for the sort key.
 
 > info ""
 > We recommend using the `received_at` timestamp for all queries based on time. The reason for this is two-fold. First, the `sent_at` timestamp relies on a client's device clock being accurate, which is generally unreliable. Secondly, we set `received_at` as the sort key in Redshift schemas, which means queries will execute much faster when using `received_at`. You can continue to use `timestamp` or `sent_at` timestamps in queries if `received_at` doesn't work for your analysis, but the queries will take longer to complete.
 
-`received_at` does not ensure chronology of events.  For queries based on event chronology, `timestamp` should be used.
+`received_at` does not ensure chronology of events. For queries based on event chronology, `timestamp` should be used.
 
 > info ""
-> ISO-8601 date strings with timezones included are required when using timestamps with [Engage](/docs/engage/). Sending custom traits without a timezone included in the timestamp will result in the value not being saved. 
+> ISO-8601 date strings with timezones included are required when using timestamps with [Engage](/docs/engage/). Sending custom traits without a timezone included in the timestamp will result in the value not being saved.
 
 To learn more about timestamps in Segment, [read our timestamps overview](/docs/connections/spec/common/#timestamps) in the Segment Spec.
 
