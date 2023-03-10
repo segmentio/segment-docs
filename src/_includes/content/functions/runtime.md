@@ -16,6 +16,7 @@ The following dependencies are installed in the function environment by default.
 - [`@google-cloud/pubsub v2.6.0`](https://www.npmjs.com/package/@google-cloud/pubsub){:target="_blank"} exposed as `google.cloud.pubsub`
 - [`@google-cloud/storage v5.3.0`](https://www.npmjs.com/package/@google-cloud/storage){:target="_blank"} exposed as `google.cloud.storage`
 - [`@google-cloud/tasks v2.6.0`](https://www.npmjs.com/package/@google-cloud/tasks){:target="_blank"} exposed as `google.cloud.tasks`
+- [`hubspot-api-nodejs`](https://www.npmjs.com/package/@hubspot/api-client){:target="_blank"} exposed as `hubspotlib.hubspot`
 - [`jsforce v1.11.0`](https://www.npmjs.com/package/jsforce){:target="_blank"} exposed as `jsforce`
 - [`jsonwebtoken v8.5.1`](https://www.npmjs.com/package/jsonwebtoken){:target="_blank"} exposed as `jsonwebtoken`
 - [`lodash v4.17.19`](https://www.npmjs.com/package/lodash){:target="_blank"} exposed as `_`

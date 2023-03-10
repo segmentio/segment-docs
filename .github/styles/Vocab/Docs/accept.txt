@@ -52,6 +52,7 @@ deeplink
 Dev
 Doubleclick
 Eloqua
+Emarsys
 enablement
 endcapture
 endfor
@@ -120,6 +121,7 @@ Pipedrive
 Preact
 Qualtrics
 reformat(:?s)
+remarket
 Responsys
 Rokt
 Sabil
