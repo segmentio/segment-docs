@@ -98,21 +98,17 @@ Enter your domain and click "Add Domain." When you click verify, you're given tw
 > **Note**: domain tokens expire 14 days after they are verified.
 
 ## Configuring SSO to access multiple workspaces
-To configure SSO for multiple workspaces, your admin must configure access to each workspace as a separate app in your identity provider. 
+To configure SSO for multiple workspaces, your admin must configure access to each workspace as a separate app in your identity provider. You are unable to use verified domain(s) across multiple workspaces and will encounter the following error if you add a domain that is already verified in another workspace:
 
-This is because, you are unable to use verified domain(s) across multiple workspaces, and you will encounter this error if you try adding a domain that is already verified in another workspace: 
 
 > warn ""
 > **Warning**: This domain has already been claimed.
 
-Once your admin has configured separate apps for each workspace in your IdP, the end-users can log in to the IdP and click on the relevant app (or tile) for the workspace you are trying to access (also referred as IdP-initiated SSO).
+Once your admin has configured separate apps for each workspace in your IdP, the end-users can log in to the IdP and click on the relevant app for the workspace you are trying to access. This is also referred to as IdP-initiated SSO.
 
-Limitations:
-> note ""
-> **Note**: As you are only able to verify the domain(s) in one of the workspaces, your users will only be able to log in to the workspace in which the domain has been verified when logging in via Segment’s Login page.
-
-> note ""
-> **Note**: Switching a workspace directly within Segment UI will not work, and the users will have to switch workspaces using IdP-initiated SSO.
+Two limitations do exist when multiple workspaces are configured to SSO access:
+- Users will only be able to log in to the domain-verified workspace on Segment’s login page.
+- Users must switch workspaces using IdP-initiated SSO, as they are unable to switch directly using the Segment UI.
 
 ## SSO Frequently Asked Questions
 
