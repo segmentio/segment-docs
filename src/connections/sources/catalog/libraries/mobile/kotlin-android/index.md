@@ -442,7 +442,7 @@ analytics.reset()
 {% endcodeexampletab %}
 {% endcodeexample %}
 
-## Destination filters
+<!-- ## Destination filters
 > info ""
 > Destination filters are only available to Business Tier customers.
 >
@@ -464,7 +464,7 @@ To get started with destination filters on mobile device-mode destinations using
 2. Add the plugin.
   ```java
     analytics.add(DestinationFilters())
-  ```
+  ``` -->
 
 ## Build Your own destination
 
