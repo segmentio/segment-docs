@@ -97,11 +97,13 @@ properties: {
 <td markdown="1">
 
 ```json
+  
 products: {
   product_id: [
     "507f1", "505bd"
   ]
 }
+  
 ```
 </td>
 <td>
@@ -115,6 +117,7 @@ products: {
 <td>
 
 ```json
+  
 products: [
     {
       product_id: '507f1f77bcf86cd799439011',
@@ -135,6 +138,7 @@ products: [
       category: 'Games'
     }
   ]
+  
 ```
 </td>
 <td>
