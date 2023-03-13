@@ -8,7 +8,7 @@ With Segment, all the customer data you’re collecting from your websites, mobi
 
 ## Getting Started
 1. From the Segment web app, navigate to **Connections > Catalog** and select the **Destinations** tab within the catalog.
-2. Search for **Eloqua** in the Destinations Catalog, and select the destination.
+2. Search for **Eloqua** and select the destination.
 3. Click **Configure Eloqua**.
 4. Select the web source that will send data to Eloqua and follow the steps to name your destination. 
 5. On the **Settings** tab, input your **Company Name**, **Password**, **Site ID**, **Username**, and configure **Other Settings**.
