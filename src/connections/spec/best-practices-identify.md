@@ -333,7 +333,7 @@ analytics.user().anonymousId()
 
 If you're identifying on the server, then you will want to pass the user ID from the server to the client using an `identify` call with the `anonymousId`. That will allow the `userId` to be aliased with the existing `anonymousId` and stored in the cookie in localStorage. With that, all previous anonymous activity and all subsequent activity is associated to the newly generated `userId`, as well as existing `anonymousId`s. 
 
-There are some advantages to sending details about your users directly from your server once the user registers. Server library [Identify calls](/docs/connections/spec/identify) are invisible to the end user, making them more secure, and much more reliable. Or, if you want to send user data that is sensitive or which you don't want to expose to the client, then you can make an `identify` call from the server with all the traits you know about the user. More about [collecting data on the client or server](docs/guides/how-to-guides/collect-on-client-or-server/#not-stored-in-your-database) in Segment's documentation. 
+There are some advantages to sending details about your users directly from your server once the user registers. Server library [Identify calls](/docs/connections/spec/identify) are invisible to the end user, making them more secure, and much more reliable. Or, if you want to send user data that is sensitive or which you don't want to expose to the client, then you can make an `identify` call from the server with all the traits you know about the user. More about [collecting data on the client or server](/docs/guides/how-to-guides/collect-on-client-or-server/#not-stored-in-your-database) in Segment's documentation. 
 
 
 ### Aliasing from a server library
