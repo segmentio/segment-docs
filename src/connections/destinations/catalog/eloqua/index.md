@@ -14,7 +14,7 @@ With Segment, all the customer data you’re collecting from your websites, mobi
 5. On the **Settings** tab, input your **Company Name**, **Password**, **Site ID**, **Username**, and configure **Other Settings**.
 6. Enable the destination.
 
-When you enable Eloqua in your Segment integrations page, Segment will automatically load Eloqua’s JavaScript libraries onto your web pages. For mobile and server-side events, Segment will route your event data directly through our servers, eliminating the need for any Eloqua code to be loaded in your applications.
+When you enable Eloqua in your Segment integrations page, Segment automatically loads Eloqua’s JavaScript libraries onto your web pages. For mobile and server-side events, Segment routes your event data directly through Eloqua's servers, eliminating the need for any Eloqua code to be loaded in your applications.
 
 ## Page
 
