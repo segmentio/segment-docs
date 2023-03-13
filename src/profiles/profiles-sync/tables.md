@@ -167,7 +167,7 @@ All these events were performed by the same person. If you use these tables to a
 
 Profiles Sync uses the following schema: `<profiles_space_name>.<tableName>`.
 
-> note ""
+> info ""
 > Note that the Profiles Sync schema is different from the Connections Warehouse schema: `<source_name>.<tableName>`.
 
 If your Profiles space has the same name as a source connected to your Segment Warehouse destination, Segment overwrites data to the Event tables.
