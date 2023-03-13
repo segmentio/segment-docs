@@ -7,7 +7,7 @@ Eloqua is Oracle’s B2B Cross-Channel Marketing solution, and it operates by tr
 With Segment, all the customer data you’re collecting from your websites, mobile apps, or servers sends directly into Eloqua, using your existing Segment implementation. This means you don’t need to write any custom code or create duplicate event tracking, but you can start using Eloqua with a simplified setup effort. 
 
 ## Getting Started
-1. From the Segment web app, navigate to **Connections > Catalog**.
+1. From the Segment web app, navigate to **Connections > Catalog** and select the **Destinations** tab within the catalog.
 2. Search for **Eloqua** in the Destinations Catalog, and select the destination.
 3. Click **Configure Eloqua**.
 4. Select the web source that will send data to Eloqua and follow the steps to name your destination. 
