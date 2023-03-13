@@ -4,7 +4,7 @@ id: 54521fd525e721e32a72eeac
 ---
 Eloqua is Oracle’s B2B Cross-Channel Marketing solution, and it operates by tracking the identities and event actions of users that interact with your properties.
 
-With Segment, all the customer data you’re collecting from your websites, mobile apps, or servers gets sent directly into Eloqua, utilizing your existing Segment implementation. That means you don’t need to write any custom code or create duplicative event tracking! The result is that you can start using Eloqua with vastly simplified setup effort. 
+With Segment, all the customer data you’re collecting from your websites, mobile apps, or servers sends directly into Eloqua, using your existing Segment implementation. This means you don’t need to write any custom code or create duplicate event tracking, but you can start using Eloqua with a simplified setup effort. 
 
 ## Getting Started
 1. From the Segment web app, navigate to **Connections > Catalog**.
