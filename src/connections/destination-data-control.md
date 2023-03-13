@@ -54,7 +54,7 @@ You can only download one Source Schema CSV schema type (Track, Identify, or Gro
 To download a Source Schema CSV file: 
 1. Sign into Segment and select a source.
 2. Click the **Schema** tab in the source header.
-3. On the Source Schema page, select a schema type (Track, Identify, or Group) and a timeframe (7 days or 30 days.)
+3. On the Source Schema page, select a schema type (Track, Identify, or Group) and a timeframe (7 days or 30 days).
 4. Click the **Download CSV** button. <br/> A toast pops up on the top of the page, with the message *"Your file is processing. When your file is ready it will be available to download from the Download History page."* 
 5. Open the Download History page by clicking the link in the toast or following the instructions in the [view download history](#view-download-history) section.
 6. Once the file status column indicates that the download was successful, click the **Download CSV** link to download your CSV to your computer. If the file status column shows that the download has failed, return to the Source Schema page and try the download again.<br/> The Source Schema CSV name has the following format:<br/>`workspaceSlug-sourceSlug-schemaType--yyyy-mm-dd--hh-mm-utc`
@@ -75,7 +75,7 @@ To access the Download History page:
 The Track event CSV file contains the following columns:
 - Event Name
 - Last Seen At (UTC)
-  - If greater than your selected timeframe (7 days or 30 days,) the value is "more than 7 days ago" or "more than 30 days ago"
+  - If greater than your selected timeframe (7 days or 30 days) the value is "more than 7 days ago" or "more than 30 days ago"
 - Property Name
 - Allowed
 - Blocked
@@ -90,7 +90,7 @@ The Track event CSV file contains the following columns:
 The Identify and Group CSV files contain the following columns:
 - Trait Name
 - Last Seen At (UTC)
-  - If greater than your selected timeframe (7 days or 30 days,) the value is "more than 7 days ago" or "more than 30 days ago"
+  - If greater than your selected timeframe (7 days or 30 days) the value is "more than 7 days ago" or "more than 30 days ago"
 - Allowed
 - Blocked
 - Total
