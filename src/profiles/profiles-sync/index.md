@@ -92,7 +92,7 @@ Reach out to [Segment support](https://app.segment.com/workspaces?contact=1){:ta
 > For event tables, Segment can only backfill up to 2,000 tables for each workspace.
 
 > success ""
-> While historical backfill is running, you can start building [materialized views](/docs/profiles/profiles-sync/tables/#tables-you-materialize) and running [sample queries](/docs/profiles/profiles-sync/sample-queries).  
+> While historical backfill is running, you can start building [materialized views](/docs/profiles/profiles-sync/tables/#tables-you-materialize) and running [sample queries](/docs/profiles/profiles-sync/sample-queries).   
 
 ### Step 3: Materialize key views using a SQL automation tool
 
