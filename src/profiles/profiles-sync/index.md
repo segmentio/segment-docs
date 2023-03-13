@@ -4,13 +4,6 @@ beta: true
 plan: profiles
 ---
 
-> info "Profiles Sync Beta"
-> Profiles Sync is in beta and Segment is actively working on this feature. Segment's [First-Access and Beta terms](https://segment.com/legal/first-access-beta-preview/) govern this feature. To learn more, reach out to your CSM, AE, or SE.
-
-Profiles Sync connects identity-resolved customer profiles to a data warehouse of your choice.
-
-With a continual flow of synced Profiles, teams can enrich and use these data sets as the basis for new audiences and models. Profiles Sync addresses a number of use cases, with applications for machine learning, identity graph monitoring, and attribution analysis. View [Profiles Sync Sample Queries](/docs/profiles/profiles-sync/sample-queries) for an in-depth guide to Profiles Sync applications.
-
 On this page, you’ll learn how to set up Profiles Sync, enable historical backfill, and adjust settings for warehouses that you’ve connected to Profiles Sync.
 
 ## Initial Profiles Sync setup
@@ -42,6 +35,27 @@ The following table shows the supported Profiles Sync warehouse Destinations and
 
 Once you’ve finished the required steps for your chosen warehouse, you’re ready to connect your warehouse to Segment. Because you’ll next enter credentials from the warehouse you just created, **leave the warehouse tab open to streamline setup.**
 
+#### Profiles Sync permissions
+
+To allow Segment to write to the warehouse you're using for Profiles Sync, you'll need to set up specific permissions.
+
+For example, if you're using BigQuery, you must [create a service account](/docs/connections/storage/catalog/bigquery/#create-a-service-account-for-segment) for Segment and assign the following roles:
+- `BigQuery Data Owner`
+- `BigQuery Job User`
+
+Review the required steps for each warehouse in the table above to see which permissions you'll need.
+
+#### Profiles Sync roles
+
+The following Segment access [roles](/docs/segment-app/iam/roles/) apply to Profiles Sync:
+
+**Profiles and Engage read-only**: Read-only access to Profiles Sync, including the sync history and configuration settings. With these roles assigned, you can't download PII or edit Profiles Sync settings.
+
+**Profiles read-only and Engage user**: Read-only access to Profiles Sync, including the sync history and configuration settings. With these roles assigned, you can't download PII or edit Profiles Sync settings.
+
+**Profiles and Engage Admin access**: Full edit access to Profiles Sync, including the sync history and configuration settings.
+
+
 ### Step 2: Connect the warehouse and enable Profiles Sync
 
 With your warehouse configured, you can now connect it to Segment.
@@ -67,7 +81,28 @@ Segment staff then receives and enables live sync for your account.
 
 Profiles Sync sends Profiles to your warehouse on an hourly basis, beginning after you complete setup. You can use backfill, however, to sync historical Profiles to your warehouse, as well.
 
-By default, Segment includes identity graph updates, external ID mapping tables, and two months of the events table in the initial warehouse sync made during setup. Reach out to Segment support if your use case exceeds the scope of the initial setup backfill.
+When Segment runs historical backfills:
+
+- The `id_graph_updates` and `external_id_mapping_updates` tables sync your entire historical data to your warehouse.
+- The `identities`, `page`, `screens`, and `tracks` tables sync the last two months of events to your warehouse.
+
+Reach out to [Segment support](https://app.segment.com/workspaces?contact=1){:target="blank"} if your use case exceeds the scope of the initial setup backfill.
+
+> warning ""
+> For event tables, Segment can only backfill up to 2,000 tables for each workspace.
+
+> success ""
+> While historical backfill is running, you can start building [materialized views](/docs/profiles/profiles-sync/tables/#tables-you-materialize) and running [sample queries](/docs/profiles/profiles-sync/sample-queries).  
+
+### Step 3: Materialize key views using a SQL automation tool
+
+To start seeing unified profiles in your warehouse and build attribution models, you'll need to materialize the tables that Profiles Sync lands into three key views:
+
+  * `id_graph`: the current state of relationships between segment ids
+  * `external_id_mapping`: the current-state mapping between each external identifier you’ve observed and its corresponding, fully-merged `canonical_segment_id`
+  * `profile_traits`: the last seen value for all custom traits, computed traits, SQL traits, audiences, and journeys associated with a profile in a single row
+
+Please visit [Tables you materialize](/docs/profiles/profiles-sync/tables/#tables-you-materialize) for more on how to materialize these views either on your own, or with [Segment's open source dbt models](https://github.com/segmentio/profiles-sync-dbt){:target="blank"}.
 
 ## Working with synced warehouses
 

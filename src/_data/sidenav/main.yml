@@ -286,6 +286,8 @@ sections:
   - section_title: Profiles Sync
     slug: profiles/profiles-sync
     section:
+    - path: /profiles/profiles-sync/overview
+      title: Profiles Sync Overview 
     - path: /profiles/profiles-sync
       title: Setup
     - path: /profiles/profiles-sync/sample-queries
