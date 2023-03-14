@@ -537,7 +537,7 @@ These are the example plugins you can use and alter to meet your tracking needs:
 | Firebase            | `@segment/analytics-react-native-plugin-consent-firebase`    |
 | IDFA                | `@segment/analytics-react-native-plugin-idfa`                |
 
-## Destination Filters
+<!-- ## Destination Filters
 > info ""
 > Destination filters are only available to Business Tier customers.
 >
@@ -574,7 +574,7 @@ To get started with destination filters on mobile device-mode destinations using
 
     segmentClient.add({ plugin: new DestinationFiltersPlugin() });
     segment.add({ plugin: new FirebasePlugin() })
-    ```
+    ``` -->
 
 ## Supported Destinations
 Segment supports a large number of [Cloud-mode](/docs/connections/destinations/#connection-modes) destinations. Segment also supports the below destinations for Analytics React Native 2.0 in device-mode, with more to follow:
