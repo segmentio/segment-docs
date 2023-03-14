@@ -71,3 +71,6 @@ Once you validate that your data is flowing through Profiles, you're ready to cr
 
 > success ""
 > If you're using Engage, view additional steps to complete your space set up in the [Engage Foundations Onboarding Guide](/docs/engage/quickstart).
+
+> info ""
+> The created Segment space name can be renamed later but in the URL(which retrieves the Space page) the old space name remains the same.
