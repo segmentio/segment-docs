@@ -60,11 +60,12 @@ A Segment Customer Success team member will respond that they have enabled this 
 
 
 ## Custom CDN / API Proxy
+Note: Follow these instructions after setting up a proxy, such as [CloudFront](#cloudfront).
 
 ### Snippet instructions
 If you're a snippet user, you need to modify the [analytics snippet](/docs/getting-started/02-simple-install/#step-1-copy-the-snippet) that's inside your `<head>`.
 
-To proxy settings and destination requests that typically go to `http://cdn.segment.com`, replace:
+To proxy settings and destination requests that typically go to `https://cdn.segment.com`, replace:
 ```diff
 - t.src="https://cdn.segment.com/analytics.js/v1/" + key + "/analytics.min.js"
 + t.src="https://MY-CUSTOM-CDN-PROXY.com" + key + "/analytics.min.js"
@@ -73,21 +74,22 @@ To proxy settings and destination requests that typically go to `http://cdn.segm
 To proxy tracking calls that typically go to `api.segment.io/v1`, replace:
 ```diff
 - analytics.load("<MY_WRITE_KEY>")
-+ analytics.load("<MY_WRITE_KEY>", { integrations: { "Segment.io": { apiHost:  "MY-CUSTOM-API-PROXY.com" }}})
++ analytics.load("<MY_WRITE_KEY>", { integrations: { "Segment.io": { apiHost: "MY-CUSTOM-API-PROXY.com/v1" }}})
 ```
 
 ### npm instructions
-See the [`npm` library-users instructions](https://www.npmjs.com/package/@segment/analytics-next){:target="_blank"} for more information.
+See the [`npm` library-users instructions](https://www.npmjs.com/package/@segment/analytics-next) for more information.
 
-Proxy settings and destination requests that typically go to `http://cdn.segment.com` through a custom proxy.
+Proxy settings and destination requests that typically go to `https://cdn.segment.com` through a custom proxy.
 
 ```ts
 const analytics = AnalyticsBrowser.load({
   writeKey,
-  // GET http://cdn.segment.com/v1/projects/<writekey>/settings ->
-  // https://MY-CUSTOM-CDN-PROXY.com/v1/project/<writekey>/settings
-  // GET https://cdn.segment.com/next-integrations/actions/...js ->
-  // https://MY-CUSTOM-CDN-PROXY.com/next-integrations/actions/...js
+  // GET https://MY-CUSTOM-CDN-PROXY.com/v1/project/<writekey>/settings --> proxies to
+  // https://cdn.segment.com/v1/projects/<writekey>/settings
+
+  // GET https://MY-CUSTOM-CDN-PROXY.com/next-integrations/actions/...js  --> proxies to
+  // https://cdn.segment.com/next-integrations/actions/...js
   cdnURL: 'https://MY-CUSTOM-CDN-PROXY.com'
  })
 ```
@@ -102,8 +104,10 @@ const analytics = AnalyticsBrowser.load(
     {
       integrations: {
         'Segment.io': {
-          // POST https://api.segment.io/v1/t -> https://MY-CUSTOM-API-PROXY.com/t
-          apiHost: 'MY-CUSTOM-API-PROXY.com' // omit the protocol (http/https) e.g. "api.segment.io/v1" rather than "https://api.segment.io/v1"
+          // POST https://MY-CUSTOM-API-PROXY.com/t --> proxies to
+          // https://api.segment.io/v1/t
+          apiHost: 'MY-CUSTOM-API-PROXY.com/v1',
+          protocol: 'https' // optional
         }
       }
     }
