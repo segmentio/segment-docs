@@ -104,7 +104,7 @@ const analytics = AnalyticsBrowser.load(
     {
       integrations: {
         'Segment.io': {
-          // POST https://MY-CUSTOM-API-PROXY.com/t --> proxies to
+          // POST https://MY-CUSTOM-API-PROXY.com/v1/t --> proxies to
           // https://api.segment.io/v1/t
           apiHost: 'MY-CUSTOM-API-PROXY.com/v1',
           protocol: 'https' // optional
