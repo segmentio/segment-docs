@@ -45,7 +45,7 @@ To add your warehouse as a source:
 
 1. Navigate to **Reverse ETL** in the Segment app.
 2. Click **Add Source**.
-3. Select the source you want to add. You can choose between **BigQuery** and **Snowflake**.
+3. Select the source you want to add. You can choose between **BigQuery**, **Snowflake**, and **Redshift**.
     * If you choose to use Snowflake, run the queries listed in the [Snowflake Reverse ETL setup guide](/docs/reverse-etl/snowflake-setup/) to set up the Segment Snowflake connector. Segment recommends using the `ACCOUNTADMIN` role to execute all the commands.
     * If you choose to use BigQuery, use the permissions outlined in the [BigQuery Reverse ETL setup guide](/docs/reverse-etl/bigquery-setup/), to create a Service Account and generate JSON credentials that will then be copied into the Segment UI when creating a Reverse ETL Source.
 4. Add the account information for your source.  
