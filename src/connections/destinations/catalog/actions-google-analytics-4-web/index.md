@@ -48,3 +48,7 @@ With Google Analytics 4, you must create custom dimensions and metrics within th
 ### Debug Mode
 
 The Google Analytics 4 [debug mode](https://support.google.com/analytics/answer/7201382?hl=en){:target="_blank"} is supported with the Google Analytics 4 Web destination. DebugView displays the events and user properties that Analytics collects from a user in real-time. This can be helpful in troubleshooting your implementation.
+
+### Send events from both the browser and the server 
+
+With Google Analytics 4 Web events are sent from the browser to GA4. If you choose to also use Segment’s [Google Analytics 4 Cloud](https://segment.com/docs/connections/destinations/catalog/actions-google-analytics-4/#benefits-of-google-analytics-4-cloud) to send events through the API and tie data between client-side and server-side, you'll need to pass the same Client ID from the browser and the server. To do this, fetch the Gtag-generated **clientId** on the web client and pass it to Segment as a property. See more details [here](https://segment.com/docs/connections/destinations/catalog/actions-google-analytics-4/#user-identification) on the next steps.
