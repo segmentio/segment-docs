@@ -24,3 +24,13 @@ analytics.identify('userId123');
 ```
 
 When you call `identify` we call `Sentry.setUser` by passing in the `traits` you provided. We will map the `userId` you provide as `traits.id`.
+
+## Troubleshoot Sentry
+
+Since Sentry is an error tracking application, we need to make sure to send something broken from the website to see the event appear in Sentry dashboard. For example, firing the following error event from the web console, Sentry.captureException(new Error("Some error"));we can see the relevant event payload with the event_id information as below -
+ 
+ ![image](https://user-images.githubusercontent.com/96406241/225162459-a87929b0-3212-4551-802d-a122200c5ae0.png)
+ 
+ This error will appear in Sentry with the same event_id we saw on the web console. This helps verify that we have the correct implementation of the destination.
+
+
