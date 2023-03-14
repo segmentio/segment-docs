@@ -1,12 +1,9 @@
 ---
 title: Upollo Web (Actions) Destination
-hidden: true
-private: true
 id: 640267d74c13708d74062dcd
 ---
 
 {% include content/plan-grid.md name="actions" %}
-
 
 [Upollo](https://upollo.ai?utm_source=segmentio&utm_medium=docs&utm_campaign=partners){:target="_blank"} finds and converts repeat trialers, account sharers and more.
 
