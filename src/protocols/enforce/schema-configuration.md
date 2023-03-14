@@ -7,9 +7,10 @@ redirect_from: '/protocols/enforce/'
 
 The Schema Configuration settings for each source can be used to selectively block events, or omit properties and traits from `.track()`, `.identify()` and `.group()` calls. Segment can permanently drop events that are not included in your Tracking Plan, depending on the settings you select. Segment can also block events with invalid properties or invalid property values.
 
-To enable blocking, go to the **Settings** tab for your source, and click on **Schema Controls**. See below for detailed descriptions for each of the configuration settings.
+> warning "Blocked events not forwarded to a source are discarded"
+> Blocking is a serious step that you should only do after you have resolved any violations that appear when you first connect a Tracking Plan to a Source. Any blocked events that are not forwarded to a separate source are permanently discarded and cannot be recovered.
 
-**IMPORTANT: It's critical that you feel confident about the quality of your data before you enable blocking. This is a serious step that you should only do after you have resolved any violations that appear when you first connect a Tracking Plan to a Source.**
+To enable blocking, go to the **Settings** tab for your source, and click on **Schema Controls**. See below for detailed descriptions for each of the configuration settings.
 
 ![A screenshot showing the Unplanned Events, Properties and Values table on the Schema Configuration settings page.](../images/event_blocking.png)
 
