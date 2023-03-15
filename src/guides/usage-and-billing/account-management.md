@@ -22,7 +22,7 @@ No. Deleting your account only stops you from accessing workspaces through your 
 
 ## How do I delete my workspace entirely?
 
-To delete your workspace, go your [Workspace Settings](https://app.segment.com/goto-my-workspace/settings/basic), click the **General** tab, then click **Delete Workspace**.
+To delete your workspace, go to your [Workspace Settings](https://app.segment.com/goto-my-workspace/settings/basic), click the **General** tab, then click **Delete Workspace**.
 
 You should also change your write keys for each source and remove all Segment snippets from your codebase.
 
