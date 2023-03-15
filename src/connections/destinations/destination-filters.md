@@ -6,7 +6,7 @@ rewrite: true
 > info ""
 > Destination filters are only available to Business Tier customers.
 >
-> Destination filters for mobile device-mode destinations are in beta and only supports [Swift](/docs/connections/sources/catalog/libraries/mobile/swift-ios#destination-filters), [Kotlin](/docs/connections/sources/catalog/libraries/mobile/kotlin-android/#destination-filters) and [React Native 2.0](/docs/connections/sources/catalog/libraries/mobile/react-native/#destination-filters) libraries.
+<!-- > Destination filters for mobile device-mode destinations are in beta and only supports [Swift](/docs/connections/sources/catalog/libraries/mobile/swift-ios#destination-filters), [Kotlin](/docs/connections/sources/catalog/libraries/mobile/kotlin-android/#destination-filters) and [React Native 2.0](/docs/connections/sources/catalog/libraries/mobile/react-native/#destination-filters) libraries. -->
 
 Use destination filters to prevent certain data from flowing into a destination. You can conditionally filter out event properties, traits, and fields, or even filter out the event itself.
 
