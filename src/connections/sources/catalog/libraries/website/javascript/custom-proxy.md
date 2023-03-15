@@ -60,7 +60,7 @@ A Segment Customer Success team member will respond that they have enabled this 
 
 
 ## Custom CDN / API Proxy
-Note: Follow these instructions after setting up a proxy, such as [CloudFront](#cloudfront).
+Follow these instructions after setting up a proxy such as [CloudFront](#cloudfront). Choose between the [snippet instructions](#snippet-instructions) or the [npm instructions](#npm-instructions).  
 
 ### Snippet instructions
 If you're a snippet user, you need to modify the [analytics snippet](/docs/getting-started/02-simple-install/#step-1-copy-the-snippet) that's inside your `<head>`.
