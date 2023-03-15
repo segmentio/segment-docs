@@ -216,7 +216,7 @@ async function onBatch(events, settings){
 
 The handler function receives an array of events. The events can be of any supported type and a single batch may contain more than one event type. Handler functions can also receive function settings. Here is an example of what a batch can look like:
 
-```
+```json
 [
     {
       "type": "identify",
