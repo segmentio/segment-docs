@@ -70,7 +70,7 @@ No. Unfortunately it's not yet possible to automatically transfer events from a
 
 Yes. Using the [Public API](/docs/protocols/apis-and-extensions/), you can copy a Tracking Plan's JSON schema from one Workspace to another. 
 
-If you set up event blocking for your original tracking plan, you must connect to the same Source and configure identical Schema Controls in your other Workspace so that blocked events behave as expected.
+If you set up event blocking alongside your original tracking plan, you must connect to the same Source and configure identical Schema Controls in your other Workspace so that blocked events behave as expected.
 
 ## Protocols Validation
 
