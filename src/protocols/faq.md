@@ -40,7 +40,7 @@ The Tracking Plan to Source relationship is a one-to-many relationship. This mea
 
 ### Can I duplicate a Tracking Plan in the Segment UI?
 
-You can duplicate Tracking Plans in the Segment web app by following the [instructions to copy a tracking plan](/docs/protocols/tracking-plan/create/#copy-a-tracking-plan). You can also use the [Tracking Plan API](/docs/protocols/apis-and-extensions/) to copy the underlying JSON schema from one Tracking Plan to another.
+You can duplicate Tracking Plans in the Segment web app by following the [instructions to copy a tracking plan](/docs/protocols/tracking-plan/create/#copy-a-tracking-plan). You can also use the [Public API](/docs/protocols/apis-and-extensions/) to copy the underlying JSON schema from one Tracking Plan to another.
 
 ### How do I handle versioning with mobile apps?
 
@@ -65,6 +65,12 @@ Yes. [Tracking Plan Libraries](/docs/protocols/tracking-plan/libraries/) makes i
 ### Can I copy a Tracking Plan into a library?
 
 No. Unfortunately it's not yet possible to automatically transfer events from a Tracking Plan to Libraries. To import events into a new event library, import them directly from a source.
+
+### Can I transfer Tracking Plans between a production and staging environments?
+
+Yes. Using the [Public API](/docs/protocols/apis-and-extensions/), you can copy the underlying JSON schema from a Tracking Plan in one workspace to another. Any blocked events in the original Tracking Plan
+
+ <!--Ask Anand clarifying q: what happens to blocked events in this senario?-->
 
 ## Protocols Validation
 
