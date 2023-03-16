@@ -38,8 +38,19 @@ plugins:
       url: https://cdn.filepicker.io/api/file/pUF0kwpTTu0Z5POuzZXV
     mark:
       url: https://cdn.filepicker.io/api/file/0mdiroESxtRQBoR8ieBg
+  - name: Bugsnag
+    url: connections/sources/catalog/libraries/mobile/swift/destination-plugins/bugsnag-swift
+    logo:
+      url: https://cdn.filepicker.io/api/file/GoTtwMELTeWGtu44SBUh
+    mark:
+      url: https://cdn.filepicker.io/api/file/1ttsQcwwRDGHBG3XjVFT
+  - name: Optimizely Full Stack
+    url: connections/sources/catalog/libraries/mobile/swift/destination-plugins/optimizely-full-stack-swift
+    logo:
+      url: https://cdn.filepicker.io/api/file/fb5lNYEhQoWnABOjynZ6
+    mark:
+      url: https://cdn.filepicker.io/api/file/kWmScDJ3SvK1QBZTChGQ
 ---
-
 Analytics Swift uses its timeline/plugin architecture to support sending data to bundled SDKs when a Cloud Mode connection is not possible. Destination Plugins are similar to traditional Device Mode integrations available in Analytics-iOS in that Segment makes calls directly to the destination tool’s API from the device. However, Destination Plugins are more customizable, giving you the ability to control and enrich your data at a much more granular level on the device itself. 
 
 ## Device-mode Vs. Cloud-Mode 

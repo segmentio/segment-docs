@@ -3,6 +3,12 @@ title: Analytics Kotlin Destination Plugins
 strat: kotlin-android
 
 plugins:
+  - name: Adjust
+    url: connections/sources/catalog/libraries/mobile/kotlin-android/destination-plugins/optimizely-full-stack-kotlin-android/
+    logo:
+      url: https://cdn.filepicker.io/api/file/IefXQy6fRR27ZG1NvZgW
+    mark:
+      url: https://cdn.filepicker.io/api/file/lqTYxhVyT5WFDFdLS598
   - name: Amplitude
     url: connections/sources/catalog/libraries/mobile/kotlin-android/destination-plugins/amplitude-kotlin-android/
     logo:
@@ -45,6 +51,12 @@ plugins:
       url: https://cdn.filepicker.io/api/file/pUF0kwpTTu0Z5POuzZXV
     mark:
       url: https://cdn.filepicker.io/api/file/0mdiroESxtRQBoR8ieBg
+  - name: Optimizely Full Stack
+    url: connections/sources/catalog/libraries/mobile/kotlin-android/destination-plugins/optimizely-full-stack-kotlin-android/
+    logo:
+      url: https://cdn.filepicker.io/api/file/fb5lNYEhQoWnABOjynZ6
+    mark:
+      url: https://cdn.filepicker.io/api/file/kWmScDJ3SvK1QBZTChGQ
 ---
 
 Analytics Kotlin uses its timeline/plugin architecture to support sending data to bundled SDKs when a Cloud Mode connection is not possible. Destination Plugins are similar to traditional Device Mode integrations available in Analytics Android in that Segment makes calls directly to the destination tool’s API from the device. However, Destination Plugins are more customizable, giving you the ability to control and enrich your data at a much more granular level on the device itself. 
