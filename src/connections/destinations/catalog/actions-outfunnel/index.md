@@ -1,40 +1,33 @@
----
-title: Outfunnel Destination
-hide-boilerplate: true
-hide-dossier: true
-id: 5f7dd8191ad74f868ab1fc49
----
+## title: Outfunnel Destination
 
 {% include content/plan-grid.md name="actions" %}
 
-The Actions Pipedrive destination is an integration that allows customers to share events from Segment directly to Pipedrive. When you use Pipedrive with Segment, you don’t need to manually export and upload data to Pipedrive. Your customer data will remain up to date in real time and across all enabled integrations. Every tool you use to interact with leads and customers will land in Pipedrive, so you can always have a clear picture in front of you.
+[Outfunnel](https://outfunnel.com/product-led-sales-platform/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) is a product-led sales platform that syncs product usage insights to CRMs like Pipedrive so your salespeople can easily find product-qualified leads and close more revenue.
+
+This destination is maintained by Outfunnel. For any issues with the destination, [contact their Support team](mailto:support@outfunnel.com).
+
+Outfunnel’s Segment integration is an [Actions-based Destination in cloud mode](https://segment.com/docs/connections/destinations/#connection-modes)
+ that lets you send your frontend and backend events directly to Outfunnel.
 
 {% include content/ajs-upgrade.md %}
 
-## Benefits of Actions Pipedrive
+## Benefits of Outfunnel
+Outfunnel provides the following benefits
 
-Actions Pipedrive provides the following benefits:
-
-- **Clear mapping of data**.  Actions-based destinations enable you to define the mapping between the data Segment receives from your source and the data Segment sends to Pipedrive.
-- **Maximum event measurement**. Capture more events with improved accuracy across different browsers, apps, and devices to get a unified view of your customer’s journey from page view to purchase.
+- **Easy mapping of data**.  Outfunnel allows you to map Segment and CRM properties and chosoe which events you'd like to sync to your CRM.
+- **Fast no-code setup**. Set up the sync in minutes without writing a line of code.
 
 ## Getting started
+> info ""
+> Before you begin, get the API key and User ID in Outfunnel Integrations section which you’ll need to use to configure the integration.
 
-1. From the Segment web app, click **Catalog**, then click **Destinations**.
+1. From the Segment web app, click **Catalog**, then click **Destinations**.
 2. Find the Destinations Actions item in the left navigation, and click it.
-3. Click **Configure "Actions Pipedrive"**.
-4. Select an existing Source to connect to "Actions Pipedrive".
-5. When adding Pipedrive as a destination, you will be redirected to the basic settings page, where you need to enter the destination name as well as Pipedrive's domain and API token.
-6. To complete the installation process, switch to advanced settings and enter your Pipedrive IDs.
+3. Click **Configure Outfunnel**
+4. Select an existing Source to connect to Outfunnel (Actions).
+5. Enter your Outfunnel API key and User ID in the respective fields
 
-To set up the Segment integration with your Pipedrive account:
-1. Go to either your Marketplace menu within your settings or directly to Pipedrive's Marketplace.
-2. Search for *Segment* and click on **Install now**.
-3. A new window will pop up and prompt you to allow Segment to connect with Pipedrive.
-4. Choose the Pipedrive account you wish to connect to, then, click **Allow and Install**.
 
-Once the installation is successful, you'll be redirected to Segment to authenticate your account.
+Once the installation is complete, log in to your application and do an activity that triggers an event to Segment. You should then see this event in Outfunnel.
 
 {% include components/actions-fields.html %}
-
-
