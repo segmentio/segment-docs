@@ -49,16 +49,16 @@ With Google Analytics 4, you must create custom dimensions and metrics within th
 
 The Google Analytics 4 [debug mode](https://support.google.com/analytics/answer/7201382?hl=en){:target="_blank"} is supported with the Google Analytics 4 Web destination. DebugView displays the events and user properties that Analytics collects from a user in real-time. This can be helpful in troubleshooting your implementation.
 
-### Additional (unmapped) events being sent to GA4
+### Additional (unmapped) events are sent to GA4
 
-Google Analytics 4 automatically collects events triggered by basic interactions with your site. For more information, see [Google Analytics 4 Automatically collected events](https://support.google.com/analytics/answer/9234069?hl=en)
+Google Analytics 4 collects events triggered by basic interactions with your site. For more information, see [Google Analytics 4 Automatically collected events](https://support.google.com/analytics/answer/9234069?hl=en){:target="_blank"}
 
-### Data taking a long time to appear in Google's reports
+### Data takes a long time to appear in Google's reports
 
-Google may take [24-48 hours](https://support.google.com/analytics/answer/9333790)  to process data sent to Google Analytics. As a result, the Google Analytics user interface may not reflect the most current data. The Google Analytics [Realtime report](https://support.google.com/analytics/answer/9271392){:target="_blank"} displays activity on your site as it happens.
+Google may take [24-48 hours](https://support.google.com/analytics/answer/9333790){:target="_blank"} to process data sent to Google Analytics. As a result, the Google Analytics user interface may not reflect the most current data. The Google Analytics [Realtime report](https://support.google.com/analytics/answer/9271392){:target="_blank"} displays activity on your site as it happens.
 
 
-### Data not sending to Google
+### Data is not sent to Google
 
-Ensure that at least one mapping has been configured and enabled in the destination mappings for an event that you would like to reach Google. Without any mappings enabled to trigger on an event that has been ingested by the connected source, the destination will not send events downstream.
+Ensure that at least one mapping has been configured and enabled in the destination mappings for an event you want to send to Google Analytics. If no mappings are enabled, the destination does not send events.
 
