@@ -52,3 +52,16 @@ The Google Analytics 4 [debug mode](https://support.google.com/analytics/answer/
 ### Send events from both the browser and the server 
 
 With Google Analytics 4 Web, events are sent from the browser to GA4. If you use Segment’s [Google Analytics 4 Cloud destination](/docs/connections/destinations/catalog/actions-google-analytics-4/#benefits-of-google-analytics-4-cloud) to send events through the API and tie data between client-side and server-side, you need to pass the same Client ID from the browser and the server. To do this, fetch the Gtag-generated **clientId** on the web client and pass it to Segment as a property. For more information, see [Google Analytics 4 destination: User Identification](/docs/connections/destinations/catalog/actions-google-analytics-4/#user-identification) on the next steps.
+
+### Additional (unmapped) events are sent to GA4
+
+Google Analytics 4 collects events triggered by basic interactions with your site. For more information, see [Google Analytics 4 Automatically collected events](https://support.google.com/analytics/answer/9234069?hl=en){:target="_blank"}
+
+### Data takes a long time to appear in Google's reports
+
+Google may take [24-48 hours](https://support.google.com/analytics/answer/9333790){:target="_blank"} to process data sent to Google Analytics. As a result, the Google Analytics user interface may not reflect the most current data. The Google Analytics [Realtime report](https://support.google.com/analytics/answer/9271392){:target="_blank"} displays activity on your site as it happens.
+
+
+### Data is not sent to Google
+
+Ensure that at least one mapping has been configured and enabled in the destination mappings for an event you want to send to Google Analytics. If no mappings are enabled, the destination does not send events.
