@@ -66,11 +66,11 @@ Yes. [Tracking Plan Libraries](/docs/protocols/tracking-plan/libraries/) makes i
 
 No. Unfortunately it's not yet possible to automatically transfer events from a Tracking Plan to Libraries. To import events into a new event library, import them directly from a source.
 
-### Can I transfer Tracking Plans between production and staging environments?
+### Can I transfer a Tracking Plan between production and staging environments?
 
-Yes. Using the [Public API](/docs/protocols/apis-and-extensions/), you can copy the underlying JSON schema from a Tracking Plan in one workspace to another. Any blocked events in the original Tracking Plan
+Yes. Using the [Public API](/docs/protocols/apis-and-extensions/), you can copy a Tracking Plan's JSON schema from one Workspace to another. 
 
- <!--Ask Anand clarifying q: what happens to blocked events in this senario?-->
+If you set up event blocking for your original tracking plan, you must connect to the same Source and configure identical Schema Controls in your other Workspace so that blocked events behave as expected.
 
 ## Protocols Validation
 
