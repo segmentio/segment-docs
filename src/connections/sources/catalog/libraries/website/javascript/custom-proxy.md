@@ -78,7 +78,7 @@ To proxy tracking calls that typically go to `api.segment.io/v1`, replace:
 ```
 
 ### npm instructions
-See the [`npm` library-users instructions](https://www.npmjs.com/package/@segment/analytics-next) for more information.
+See the [`npm` library-users instructions](https://www.npmjs.com/package/@segment/analytics-next){:target="_blank"} for more information.
 
 Proxy settings and destination requests that typically go to `https://cdn.segment.com` through a custom proxy.
 
