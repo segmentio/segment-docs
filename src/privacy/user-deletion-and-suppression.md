@@ -104,7 +104,7 @@ Segment stores a copy of all event data received in Segment’s secure event arc
 
 Segment recommends keeping your data for at least 30 days to enable [replays](/docs/guides/what-is-replay/) of your data.
 
-To view the data retention settings, navigate to **Privacy > Settings > Data Retention** in Segment.
+To change your data retention settings, navigate to **Privacy > Settings > Data Retention** in Segment.
 
 ### Workspace Default Archive Retention Period
 
