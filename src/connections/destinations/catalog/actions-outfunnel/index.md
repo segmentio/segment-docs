@@ -25,6 +25,7 @@ Outfunnel provides the following benefits
 - **Fast no-code setup**. Set up the sync in minutes without writing a line of code.
 
 ## Getting started
+
 > info ""
 > Before you begin, get the API key and User ID in Outfunnel Integrations section which you’ll need to use to configure the integration.
 
