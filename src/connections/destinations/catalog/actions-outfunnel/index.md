@@ -2,7 +2,9 @@
 title: Outfunnel Destination
 hide-boilerplate: true
 hide-dossier: true
-id: 5f7dd8191ad74f868ab1fc49
+private: true
+hidden: true
+id: 63ff8bae963d5cb4fc79f097
 ---
 
 {% include content/plan-grid.md name="actions" %}
@@ -11,7 +13,7 @@ id: 5f7dd8191ad74f868ab1fc49
 
 This destination is maintained by Outfunnel. For any issues with the destination, [contact their Support team](mailto:support@outfunnel.com).
 
-Outfunnel’s Segment integration is an [Actions-based Destination in cloud mode](https://segment.com/docs/connections/destinations/#connection-modes)
+Outfunnel’s Segment integration is an [Actions-based Destination in cloud mode](/docs/connections/destinations/#connection-modes)
  that lets you send your frontend and backend events directly to Outfunnel.
 
 {% include content/ajs-upgrade.md %}
@@ -21,7 +23,7 @@ Outfunnel’s Segment integration is an [Actions-based Destination in cloud mod
 ## Benefits of Outfunnel
 Outfunnel provides the following benefits
 
-- **Easy mapping of data**.  Outfunnel allows you to map Segment and CRM properties and chosoe which events you'd like to sync to your CRM.
+- **Easy mapping of data**.  Outfunnel allows you to map Segment and CRM properties and choose which events you'd like to sync to your CRM.
 - **Fast no-code setup**. Set up the sync in minutes without writing a line of code.
 
 ## Getting started
