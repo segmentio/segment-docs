@@ -758,9 +758,9 @@ Segment offers video player 'plugins' so you can quickly collect video events us
 
 Analytics.js tracks across subdomains out of the box; all Segment destinations fully support this feature.
 
-To track activity on your subdomains, include the Segment Analytics.js snippet on each subdomain. Segment sets users' `anonymousId` on the top-level domain, so users are tracked across any subdomains.
+To track activity on your subdomains, include the Segment Analytics.js snippet on each subdomain. Segment sets users' `anonymousId` on the top-level domain, so users are tracked across any subdomain.
 
-Since Segment tracks across subdomains out of the box, you can use the same Segment source, or separate sources for each one. This decision will depend entirely upon your teams goals for tracking each subdomain. 
+Since Segment tracks across subdomains, you can either use the same Segment source, or use separate sources for each subdomain. What you decide depends on your teams goals for tracking each subdomain. 
 
 ## UTM Tracking
 
