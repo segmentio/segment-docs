@@ -1,4 +1,9 @@
-## title: Outfunnel Destination
+---
+title: Outfunnel Destination
+hide-boilerplate: true
+hide-dossier: true
+id: 5f7dd8191ad74f868ab1fc49
+---
 
 {% include content/plan-grid.md name="actions" %}
 
