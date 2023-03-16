@@ -5,7 +5,7 @@ title: Data Storage overview
 Off-the-shelf analytics tools (like Google Analytics and Mixpanel) offer quick and easy insights about common business questions, and often meet the needs of marketing teams and product managers. However, data analysts and data scientists need access to an organization's raw data to derive deeper and more customized insights to support their organization.
 
 > success ""
-> All Segment customers can add one Warehouse, and more options are available for other Segment plan tiers.
+> Warehouse Destination are only available and functional for Business and Team Tier customers.
 
 Segment offers several [Data Storage Destinations](/docs/connections/storage/catalog/) to help you store your raw Segment data, including:
 

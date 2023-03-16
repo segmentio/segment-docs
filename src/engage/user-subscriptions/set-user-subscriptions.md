@@ -75,12 +75,12 @@ The following example payload shows an Identify call with a `context` object, wh
       {
         "key": "(123) 555-5555",
         "type": "SMS",
-        "status": “SUBSCRIBED” | “UNSUBSCRIBED”| “DID_NOT_SUBSCRIBE”
+        "status": "SUBSCRIBED" | "UNSUBSCRIBED" | "DID_NOT_SUBSCRIBE"
       },
       {
         "key": "test@example.com",
         "type": "EMAIL",
-        "status": “SUBSCRIBED” | “UNSUBSCRIBED”| “DID_NOT_SUBSCRIBE”
+        "status": "SUBSCRIBED" | "UNSUBSCRIBED" | "DID_NOT_SUBSCRIBE"
       }
     ],
     "externalIds": [

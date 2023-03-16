@@ -32,7 +32,7 @@ To add the Pendo destination using Cloud-mode, use the [Webhooks](/docs/connecti
   * For US customers, add the following as your Webhook URL: `https://segment.us.pendo.io/data/segmentio/YOUR_PENDO_API_KEY` and replace `YOUR_PENDO_API_KEY` with your actual Pendo API Key, which you can find in the Pendo UI under [Site Settings](https://app.pendo.io/admin) > Basic Information > API Key.
   * For EU customers, add the following as your Webhook URL: `https://segment.eu.pendo.io/data/segmentio/YOUR_PENDO_API_KEY` and teplace `YOUR_PENDO_API_KEY` with your actual Pendo API Key, which you can find in the Pendo UI under [Site Settings](https://app.eu.pendo.io/admin) > Basic Information > API Key.
 4. Headers are not required in Webhook configuration. Once you're done adding in your URL, save changes.
-5. Using Track method also requires a setting enabled on your Pendo subscription. contact Pendo to enable this feature flag for your account.
+5. Using the `track` method requires a setting enabled on your Pendo subscription (cloud-mode only). Contact Pendo to enable this feature flag for your account.
 
 To learn more about server-side data to Pendo, see Pendo's [support documentation](https://help.pendo.io/resources/support-library/integrations/segment-integration.html#send-server-side-data-to-pendo){:target = "_blank"}.
 
