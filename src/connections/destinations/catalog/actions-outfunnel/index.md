@@ -11,6 +11,8 @@ Outfunnel’s Segment integration is an [Actions-based Destination in cloud mod
 
 {% include content/ajs-upgrade.md %}
 
+{% include content/beta-note.md %}
+
 ## Benefits of Outfunnel
 Outfunnel provides the following benefits
 
