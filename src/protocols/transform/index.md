@@ -102,6 +102,7 @@ analytics.track('Example', {
       product_id: "123"
   }],
 })
+```
 
 In this scenario, we do not support the transformation of product_id. 
 
