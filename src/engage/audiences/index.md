@@ -218,4 +218,4 @@ Before you can download the CSV, you will need to generate it. There are three d
 The audience summary gives a breakdown of the percentages of external_ids of users in the audience. These are the default ID's that has been included in Identity resolution configuration. It helps us by showing the portion of the audience has which identities on it and is used to verify the audience size/profiles are correct and as expected.
 
 > info ""
-> The Identifier breakdown won't show custom ID's which has been included in identity resolution configuration. Only the default external IDs can be added in Identifier breakdown. Same applies for engage generated events sent to the destination.
+> The Identifier breakdown won't show custom ID's which has been included in identity resolution configuration. Only default external IDs will be shown in Identifier breakdown.
