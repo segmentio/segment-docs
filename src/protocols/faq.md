@@ -68,7 +68,7 @@ No. Unfortunately it's not yet possible to automatically transfer events from a
 
 ### Can I transfer a Tracking Plan between production and staging environments?
 
-Yes. Using the [Public API](/docs/protocols/apis-and-extensions/), you can copy a Tracking Plan's JSON schema from one Workspace to another. 
+Yes. Using the [Public API](/docs/protocols/apis-and-extensions/), you can copy the underlying JSON schema from a Tracking Plan in one Workspace to a Tracking Plan in another Workspace. 
 
 If you [discarded events](/docs/protocols/enforce/schema-configuration) as a part of your original Tracking Plan, you must connect to the same Source and configure identical Schema Controls in your other Workspace so that blocked events behave as expected.
 
@@ -137,7 +137,7 @@ Only workspace admins are allowed to create transformations.
 
 All users with Protocols admin or read-only permissions can view transformations.
 
-### Why can't we support transformations for device-mode destinations?
+### Why can't Segment support transformations for device-mode destinations?
 
 Transformations introduce advanced logic that at scale may impact performance of client-side libraries. If you are interested in testing new functionality which supports device-mode destination transformations in analytics.js, contact your account rep.
 

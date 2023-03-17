@@ -5,7 +5,7 @@ redirect_from: '/protocols/enforce/'
 
 {% include content/plan-grid.md name="protocols" %}
 
-The Schema Configuration settings for each source can be used to selectively block events, or omit properties and traits from `.track()`, `.identify()` and `.group()` calls. Segment can permanently drop events that are not included in your Tracking Plan, depending on the settings you select. Segment can also block events with invalid properties or invalid property values. 
+The Schema Configuration settings for each source can be used to selectively block events, or omit properties and traits from `.track()`, `.identify()` and `.group()` calls. Segment can permanently drop events that are not included in your Tracking Plan, depending on the settings you select. Segment can also block events with invalid properties or invalid property values.
 
 > warning "Blocked events not forwarded to a Source are discarded"
 > Blocking is a serious step that you should only do after you have resolved any violations that appear when you first connect a Tracking Plan to a Source. Any blocked events that are not [forwarded to a separate Source](/docs/protocols/enforce/forward-blocked-events) are permanently discarded and cannot be recovered.
