@@ -103,7 +103,7 @@ Select from the following link actions:
 - **Send SMS**: Sends an SMS message to the phone number you enter.
 
 ## Add unsubscribe links
-It's always best practice to include an unsubscribe link in the emails you build.
+It's always best practice to include an unsubscribe link in the emails you build. Engage adds an unsubscribe link to templates, which you can edit at any time. For more on email unsubscribe links, view SendGrid's [best practices](https://sendgrid.com/blog/managing-your-marketing-email-unsubscribes/){:target="blank"}.
 
 Add an unsubscribe link as a button:
 1. Select the button in the email canvas and navigate to Action settings in the left sidebar.
