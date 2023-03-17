@@ -55,7 +55,7 @@ To add your warehouse as a source:
 3. Select the source you want to add. You can choose between BigQuery, Redshift, and Snowflake.
 4. Follow the corresponding setup guide for your Reverse ETL source. 
     * [BigQuery Reverse ETL setup guide](/docs/connections/sources/reverse-etl/bigquery-setup/)
-    * [Redshift Reverse ETL setup guide]()
+    * [Redshift Reverse ETL setup guide](/docs/connections/sources/reverse-etl/redshift-setup/)
     * [Snowflake Reverse ETL setup guide](/docs/connections/sources/reverse-etl/snowflake-setup/)
 5. Add the account information for your source.  
 >>>>>>> 401fa6bc5 (edits)
@@ -97,7 +97,7 @@ Once you’ve added a model, you need to add a destination. In Reverse ETL, dest
 > If you'd like to request Segment to add a particular destination, please note it on the [feedback form](https://airtable.com/shriQgvkRpBCDN955){:target="_blank"}.  
 
 To add your first destination:
-1. Navigate to **Reverse ETL > Destinations**.
+1. Navigate to **Connections > Sources** and select the **Reverse ETL** tab.
 2. Click **Add Destination**.
 3. Select the destination you want to connect to.
 4. Select the source you want to connect the destination to.
@@ -158,12 +158,36 @@ To edit your mapping:
 2. Select the destination with the mapping you want to edit.
 3. Select the **...** three dots and click **Edit mapping**. If you want to delete your mapping, select **Delete**.
 
+## Data handling
+The Segment-owned infrastructure stores your data for no more than 14 days. After 14 days, the data is deleted. This means that some data in your sync history such as query results, detailed error messages, logs and other information will be unavailable after 14 days. 
+
+You can handle deletion of your data by deleting the data from your warehouse, and Segment will pick up that deletion on your next sync.
+
+> info "" 
+> All customer data is encrypted at all times.
+
+## Record diffing
+The first time you run a query, Segment stores the unique identifier column or primary key (for example, segment_id) and a small checksum for every row in the customer data model within the customer’s warehouse. Segment doesn’t duplicate all column values for every row.
+
+On subsequent runs of the query, Segment f irst performs that same checksumming operation for each row in the new result and uses a `JOIN` with the stored checksum table to create the list of new, updated, and deleted rows and to update the checksum table. This diffing operation is performed entirely using your data warehouse. This ensures that Segment doesn’t ingest data unnecessarily.
+
+If you want to resync individual rows (or all rows) whether they’ve changed or not, you need to delete those corresponding rows in the stored checksum table and Segment handles the rest.
+
+## Segment Connections destination
+If you don’t see your destination listed in the [Reverse ETL catalog], use the [Segment Connections destination](/docs/connections/destinations/catalog/actions-segment/) to send data from your Reverse ETL warehouse to other destinations listed in the destinations catalog.  
+
+The Segment Connections destination enables you to mold data extracted from your warehouse in Segment Spec API calls that are then processed by [Segment’s HTTP Tracking API](/docs/connections/sources/catalog/libraries/server/http-api/). The Segment HTTP Tracking API lets you record analytics data from any website or application. The requests hit Segment’s servers, and then Segment routes your data to any destination you want. 	
+
+> info ""
+> If you use the Segment Connections destination, the destination sends data to Segment’s tracking API. This means that new users count as new MTUs and each call counts as an API call. This affects your Reverse ETL usage limits and also your Segment costs as it can drive overages. 
 
 ## Limits
 To provide consistent performance and reliability at scale, Segment enforces default use and rate limits. 
 
 ### Usage limits
-Processed Reverse ETL records are the total number of records Segment attempts to load to your downstream destinations, including those that fail to load. Your plan determines how many Reverse ETL records you can process in one monthly billing cycle. 
+Reverse ETL usage limits are measured based on the number of records processed to each destination – this includes both successful and failed records. For example, if you processed 50k records to Braze and 50k records to Mixpanel, then your total usage is 100k records. 
+
+Your plan determines how many Reverse ETL records you can process in one monthly billing cycle. When your limit is reached before the end of your billing period, your syncs will pause and then resume on your next billing cycle.
 
 Plan | Number of Reverse ETL records you can process to each destination per month | 
 ---- | ---------------------------------------------------------------------------
@@ -171,7 +195,7 @@ Free | 500K
 Teams | 1 million
 Business | 50 x the number of [MTUs](/docs/guides/usage-and-billing/mtus-and-throughput/#what-is-an-mtu) <br>or .25 x the number of monthly API calls
 
-When your limit is reached before the end of your billing period, your syncs will pause and then resume on your next billing cycle. To increase the number of processed Reverse ETL records, connect with your sales representative to upgrade your plan. If you're on a Free plan, upgrade to the Teams plan in the Segmet app. 
+If you’re on a Teams or Business plan, to increase the number of processed Reverse ETL records, contact your sales representative to upgrade your plan. If you're on a Free plan, upgrade to the Teams plan in the Segment app.
 
 To see how many records you’ve processed using Reverse ETL, navigate to **Settings > Usage & billing** and select the **Reverse ETL** tab. 
 
@@ -179,37 +203,20 @@ To see how many records you’ve processed using Reverse ETL, navigate to **Sett
 
 Name | Details | Limit
 --------- | ------- | ------
-Model query length | The maximum length for the model SQL query | 131,072 characters
+Model query length | The maximum length for the model SQL query. | 131,072 characters
 Model identifier column name length | The maximum length for the ID column name. | 191 characters
 Model timestamp column name length | The maximum length for the timestamp column name. | 191 characters
-Sync frequency | The shortest possible duration Segment allows between syncs | 15 minutes
+Sync frequency | The shortest possible duration Segment allows between syncs. | 15 minutes
 
 ### Extract limits
 The extract phase is the time spent connecting to your database, executing the model query, updating internal state tables and staging the extracted records for loading. There is a 14-day data retention period to support internal disaster recovery and debugging as needed.
 
 Name | Details | Limit
 ----- | ------- | ------
-Duration | The maximum amount of time Segment spends attempting to extract before timing out. | 3 hours
-Record count | The maximum number of records a single sync will process. Note: This is the number of records extracted from the warehouse not the limit for the number of records loaded to the destination (e.g. new/update/deleted). | 20 million records
-Column count | The maximum number of columns a single sync will process
-Column name length | The maximum length of a record column | 128 characters
-Record JSON Length | The maximum size for a record when converted to JSON (some of this limit is used by Segment) | 512 KiB
-Column JSON Length | The maximum size of any single column value | 128 KiB
-
-### Load limits
-The load phase covers the time spent preparing the extracted records for delivery to all connected destinations and mappings, in addition to waiting for those records to be fully handled by Centrifuge. There is a 30-day data retention period with records that fail to deliver through Centrifuge.
-
-Name | Details | Limit
------ | ------- | ------
-Load prepare duration | The maximum amount of time Segment spends attempting to prepare the load before timing out. | 3 hours
-Load wait duration | The maximum amount of time Segment spends waiting for records to be delivered by Centrifuge. | 6 hours
-
-## Data retention
-Segment uses Kafka queues to buffer data between systems, in which 
-
-## Security
-Segment 
-
-\\ask Kathlynn what's the information we need for security
+Record count | The maximum number of records a single sync will process. Note: This is the number of records extracted from the warehouse not the limit for the number of records loaded to the destination (for example, new/update/deleted). | 30 million records
+Column count | The maximum number of columns a single sync will process. | 512 columns
+Column name length | The maximum length of a record column. | 128 characters
+Record JSON Length | The maximum size for a record when converted to JSON (some of this limit is used by Segment). | 512 KiB
+Column JSON Length | The maximum size of any single column value. | 128 KiB
 
 
