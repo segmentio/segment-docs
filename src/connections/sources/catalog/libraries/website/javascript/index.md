@@ -792,7 +792,7 @@ Segment sets three cookies in general:
 | `ajs_group_id`     | A group ID that can be specified by making a `group()` call with Analytics.js.    |
 | `ajs_user_id`      | A user ID that can be specified by making an `identify()` call with Analytics.js. |
  
-These cookies expire by default **one** year after the date created. 
+For Google Chrome, these cookies expire by default **one** year after the date created. Other [supported browsers](/docs/connections/sources/catalog/libraries/website/javascript/supported-browsers/) might have different expiration time.
  
 Some user/group traits are also stored in `localStorage`:
 | Cookie                 | Description                                         |
