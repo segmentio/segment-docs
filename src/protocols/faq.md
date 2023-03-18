@@ -72,6 +72,10 @@ Yes. Using the [Public API](/docs/protocols/apis-and-extensions/), you can copy 
 
 If you [discarded events](/docs/protocols/enforce/schema-configuration) as a part of your original Tracking Plan, you must connect to the same Source and configure identical Schema Controls in your other Workspace so that blocked events behave as expected.
 
+### Can two tracking plans use the same source? 
+
+Unfortunately, sources cannot be connected to more than one tracking plan. And in order to validate a tracking plan, you have to connect it to a source. The reason for this feature being unavailable is, if you were able to connect more than one tracking plan to a source, it could create conflict if events overlapped.
+
 ## Protocols Validation
 
 ### What is the difference between Violations Emails and the Violations page in the Segment UI?
