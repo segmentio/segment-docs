@@ -5,30 +5,32 @@ redirect_from:
   - '/engage/overview/onboarding'
 ---
 
-Twilio Engage (formerly known as Personas) brings Segment, Twilio, and SendGrid together to help you create and send email and SMS campaigns to your customers.
+Twilio Engage (formerly known as Personas) brings Segment, Twilio, SendGrid, and WhatsApp together to help you create and send email, SMS, and WhatsApp campaigns to your customers.
 
-Before sending your first Engage campaign, though, you’ll need to configure and connect accounts with all three platforms.
+Before sending your first Engage campaign, though, you’ll need to configure and connect accounts with all four platforms.
 
 This guide lists all required onboarding steps and walks you through Engage setup. By the end of the onboarding process, you’ll be ready to send your first campaign.
 
 > info ""
-> The steps in this guide are only required if you plan to send email and SMS messages with Engage. Visit the [Engage Foundations Onboarding Guide](/docs/engage/quickstart) for general onboarding steps to set up your Engage space, connect sources, create audiences, and more.
+> The steps in this guide are only required if you plan to send email, SMS, and WhatsApp messages with Engage. Visit the [Engage Foundations Onboarding Guide](/docs/engage/quickstart) for general onboarding steps to set up your Engage space, connect sources, create audiences, and more.
 
 ## Before you begin: overview and task checklist
 
-You’ll set up Twilio Engage in three stages:
+You’ll set up Twilio Engage in four stages:
 
 1. [Configure Engage identifiers in Profiles.](/docs/engage/onboarding/#stage-1-configure-engage-identifiers-in-profiles)
 2. [Create and configure a SendGrid account.](/docs/engage/onboarding/#stage-2-create-and-configure-a-sendgrid-account)
 3. [Create and configure Twilio SMS services.](/docs/engage/onboarding/#stage-3-create-and-configure-twilio-sms-services)
+4. [Create and configure Twilio WhatsApp services.](/docs/engage/onboarding/#stage-3-create-and-configure-twilio-whatsapp-services)
 
 The following table shows a high-level checklist of tasks you’ll need to complete in each platform:
 
-| Platform | Tasks                                                                                                                                                                                                                                                                                                                                                                                              |
-| -------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Segment  | 1. Verify Engage identifiers in your Segment workspace. <br> 2. Add any missing identifiers.                                                                                                                                                                                                                                                                                                      |
+| Platform | Tasks                                                                                                                                                                                                                                                                                                                                                                             |
+| -------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Segment  | 1. Verify Engage identifiers in your Segment workspace. <br> 2. Add any missing identifiers.                                                                                                                                                                                                                                                                                      |
 | SendGrid | 1. Create a SendGrid account. <br> 2. Upgrade your account to a Pro plan. <br> 3. Configure an IP. <br> 4. Create a SendGrid subuser. <br> 5. Authenticate your domain. <br> 6. Enable subscription tracking. <br> 7. Enable an event webhook. <br> 8. Generate API credentials, then copy them into Engage settings. <br> 9. Warm up your IP. <br> 10. Contact SendGrid support. |
-| Twilio   | 1. Create a Twilio account. <br> 2. Purchase phone number(s). <br> 3. If necessary, register phone number(s). <br> 4. Create a messaging service. <br> 5. Generate an API key, then copy it into the Engage settings. <br> 6. Configure an event webhook.                                                                                                                                                                                      |
+| Twilio   | 1. Create a Twilio account. <br> 2. Purchase phone number(s). <br> 3. If necessary, register phone number(s). <br> 4. Create a messaging service. <br> 5. Generate an API key, then copy it into the Engage settings. <br> 6. Configure an event webhook.                                                                                                                         |
+| WhatsApp | 1. Provision a phone number through Twilio. <br> 2. Connect your Facebook account. <br> 2. Create the WhatsApp messaging service.                                                                                                                                                                                                                                                 |
 
 
 Several onboarding steps require copying and pasting information between Segment and SendGrid or Twilio. To streamline setup, open your Segment workspace in one browser tab and open two others for tasks you’ll carry out in SendGrid and Twilio.
@@ -240,11 +242,44 @@ To finish setting up your Messaging Service, you’ll now [configure an event we
 6. Verify that the dropdown next to the **Request URL** field is set to **HTTP Post**.
 7. (If applicable:) Click **Step 4: Add compliance info**. Finish compliance setup, then click **Complete Messaging Service Setup**.
 
-You’ve now configured both your SendGrid and Twilio accounts, and you’re ready to begin sending Engage campaigns.
+## Stage 4: Create and configure Twilio WhatsApp services
+
+> info "WhatsApp Public Beta"
+> WhatsApp as an Engage channel is in public beta. 
+
+To send WhatsApp messages in Twilio Engage, you'll first need to provision a phone number through Twilio and connect your Facebook account.
+
+### Provision a phone number through Twilio and connect your Facebook account
+
+1. [Purchase a phone number](https://support.twilio.com/hc/en-us/articles/223135247-How-to-Search-for-and-Buy-a-Twilio-Phone-Number-from-Console){:target="_blank"} within your Twilio Console.
+2. From the Twilio side menu, navigate to **Messaging > Senders > WhatsApp Senders**.
+3. Select **Create new sender**.
+4. From the **New Sender** builder, find **Twilio phone number**, then choose the phone number you purchased in Step 1. Select **Continue**.
+5. Select **Continue with Facebook**. A Facebook popup window appear. Leave the Twilio console open.
+6. Follow the Facebook instructions to log in to your Facebook account.
+7. When you reach the *Fill in your business information** page, choose your WhatsApp Business Account or create a new account. Select **Next**.
+8. Select your WhatsApp Business Profile or create a new profile. Select **Next**.
+9. In your Twilio console, copy the number shown in the **Number to register with WhatsApp** field. Paste it into the  **Phone number field** on the Facebook **Add a phone number for WhatsApp page**, then select **Next**.
+10. Facebook prompts you to verify your phone number. Select the **Text message** radio button, then select **Next**. 
+11. In your Twilio console, copy the number in the **Verify via text messages** section, then enter it into the Facebook **Verification code** field. Select **Next**.
+12. Facebook displays `You're now ready to chat with people on WhatsApp`. Click `Finish` to close the window.
+
+### Create the WhatsApp messaging service
+
+Next, you'll create a messaging service to connect the number to Engage:
+
+1. In the Twilio Console side menu, navigate to **Messaging > Services**.
+2. On the Messaging Services page, click Create Messaging Service.
+3. Enter a name for your Messaging Service. **You must include the word `WhatsApp` in the messaging service name.** For example, `My New Service WhatsApp`.
+4. Under the Messaging use dropdown, select **Market my services**, then select **Create messaging service**.
+5. From the **Sender Pool** tab, click **Add Senders**, then select the phone number you purchased in Step 1. Click **Add phone numbers,** then **Confirm**.
+6. Twilio confirms that the number has been assigned to the service.
+
+Your WhatsApp messaging service is now created. Once you have an [approved WhatsApp template](/docs/engage/content/whatsapp/), you can begin sending [WhatsApp campaigns](/docs/engage/campaigns/whatsapp-campaigns/).
 
 ## Next steps
 
-With accounts on all three platforms configured, you’ve completed Engage onboarding and are ready to create and send campaigns to your users.
+With configured accounts and services for all platforms, you’ve completed Engage onboarding and are ready to create and send campaigns to your users.
 
 Not sure where to start? Read the Engage documentation on [sending email campaigns](/docs/engage/campaigns/email-campaigns/) and [sending SMS campaigns](/docs/engage/campaigns/sms-campaigns/). To save time when generating Engage campaigns, check out the Engage guides on creating [SMS templates](/docs/engage/content/sms/template/) and [email templates](/docs/engage/content/email/template/).
 
