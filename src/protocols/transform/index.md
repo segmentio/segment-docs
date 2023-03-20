@@ -97,6 +97,7 @@ After you select the scope, use the search box to choose the event to transform.
 * **Rename properties or traits:**
 If you rename properties or traits within a selected event, click **+ Add Property**. The dropdown that appears contains the properties or traits sent with the selected event. Segment supports JSON Path notation to select nested objects up to four levels deep. For example, `order.id` selects the `id` property in the `order` object. Segment does not support `.$.` notation to select a property from an array of objects. For example, the following event will generate products.$.product_id 
 
+```js
 analytics.track('Example', {
   products: [{
       product_id: "123"
