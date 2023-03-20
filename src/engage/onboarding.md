@@ -5,7 +5,7 @@ redirect_from:
   - '/engage/overview/onboarding'
 ---
 
-Twilio Engage (formerly known as Personas) brings Segment, Twilio, SendGrid, and WhatsApp together to help you create and send email, SMS, and WhatsApp campaigns to your customers.
+Twilio Engage brings Segment, Twilio, SendGrid, and WhatsApp together to help you create and send email, SMS, and WhatsApp campaigns to your customers.
 
 Before sending your first Engage campaign, though, you’ll need to configure and connect accounts with all four platforms.
 
@@ -21,7 +21,7 @@ You’ll set up Twilio Engage in four stages:
 1. [Configure Engage identifiers in Profiles.](/docs/engage/onboarding/#stage-1-configure-engage-identifiers-in-profiles)
 2. [Create and configure a SendGrid account.](/docs/engage/onboarding/#stage-2-create-and-configure-a-sendgrid-account)
 3. [Create and configure Twilio SMS services.](/docs/engage/onboarding/#stage-3-create-and-configure-twilio-sms-services)
-4. [Create and configure Twilio WhatsApp services.](/docs/engage/onboarding/#stage-3-create-and-configure-twilio-whatsapp-services)
+4. [Create and configure Twilio WhatsApp services.](/docs/engage/onboarding/#stage-4-create-and-configure-twilio-whatsapp-services)
 
 The following table shows a high-level checklist of tasks you’ll need to complete in each platform:
 
@@ -135,7 +135,7 @@ You’ll now need to enable event webhooks, which trigger webhook notifications 
 > warning "Copying SendGrid Credentials"
 > This step creates an API key and API Key ID that you’ll immediately add to Segment. Make sure you’re ready to copy and save the API key before proceeding; SendGrid only displays the API key once. You must follow these steps from within the SendGrid subuser account [you created for use with Twilio Engage](/docs/engage/onboarding/#create-a-subuser-and-check-the-dedicated-ip-address).
 
-Now, you'll generate an API key and API Key ID within SendGrid. **With your SendGrid account open in one tab, open your [Segment workspace](https://app.segment.com/workspaces){:target="_blank"} open in another. You’ll need both open to copy and paste the API credentials it into your Engage settings.**
+Now, you'll generate an API key and API Key ID within SendGrid. **With your SendGrid account open in one tab, open your [Segment workspace](https://app.segment.com/workspaces){:target="_blank"} open in another. You’ll need both open to copy and paste the API credentials into your Engage settings.**
 
 1. Within your SendGrid subuser space, navigate to **Settings > API Keys**.
 2. Click the **Create API Key** button.
@@ -172,7 +172,7 @@ If you've already warmed up an IP with your SendGrid account in the past, you ca
 
 1. Within your SendGrid space, navigate to **Settings > IP Addresses**.
 2. On the **Dedicated IP Addresses** page, click the pencil edit button next to your Engage IP address.
-3. Under **Additional options** (pictured below), check **Use Automated IP warmup** and **Allow my subusers to send mail using this IP address**. Click **Save**.
+3. Under **Additional options**, check **Use Automated IP warmup** and **Allow my subusers to send mail using this IP address**. Click **Save**.
 
 Your SendGrid account is now fully configured and ready to use with Engage.  You’re ready to move to Stage 3 and configure Twilio SMS.
 
@@ -247,40 +247,45 @@ To finish setting up your Messaging Service, you’ll now [configure an event we
 > info "WhatsApp Public Beta"
 > WhatsApp as an Engage channel is in public beta. 
 
-To send WhatsApp messages in Twilio Engage, you'll first need to provision a phone number through Twilio and connect your Facebook account.
+To send WhatsApp messages in Twilio Engage, you'll provision a phone number through Twilio, connect your Facebook account, and create a WhatsApp messaging service.
 
-### Provision a phone number through Twilio and connect your Facebook account
+### Provision a phone number through Twilio
 
 1. [Purchase a phone number](https://support.twilio.com/hc/en-us/articles/223135247-How-to-Search-for-and-Buy-a-Twilio-Phone-Number-from-Console){:target="_blank"} within your Twilio Console.
 2. From the Twilio side menu, navigate to **Messaging > Senders > WhatsApp Senders**.
 3. Select **Create new sender**.
 4. From the **New Sender** builder, find **Twilio phone number**, then choose the phone number you purchased in Step 1. Select **Continue**.
-5. Select **Continue with Facebook**. A Facebook popup window appear. Leave the Twilio console open.
-6. Follow the Facebook instructions to log in to your Facebook account.
-7. When you reach the *Fill in your business information** page, choose your WhatsApp Business Account or create a new account. Select **Next**.
-8. Select your WhatsApp Business Profile or create a new profile. Select **Next**.
-9. In your Twilio console, copy the number shown in the **Number to register with WhatsApp** field. Paste it into the  **Phone number field** on the Facebook **Add a phone number for WhatsApp page**, then select **Next**.
-10. Facebook prompts you to verify your phone number. Select the **Text message** radio button, then select **Next**. 
-11. In your Twilio console, copy the number in the **Verify via text messages** section, then enter it into the Facebook **Verification code** field. Select **Next**.
-12. Facebook displays `You're now ready to chat with people on WhatsApp`. Click `Finish` to close the window.
+5. Select **Continue with Facebook**. A Facebook popup window appears; leave it and the Twilio console open.
+
+### Connect your Facebook account
+
+In the Facebook popup from the previous section, carry out these steps:
+
+1. Follow Facebook's instructions to log in to your Facebook account.
+2. When you reach the **Fill in your business information** page, choose your WhatsApp Business Account or create a new account. Select **Next**.
+3. Select your WhatsApp Business Profile or create a new profile. Select **Next**.
+4. In your Twilio console, copy the number shown in the **Number to register with WhatsApp** field. Paste it into the  **Phone number field** on the Facebook **Add a phone number for WhatsApp** page, then select **Next**.
+5. Facebook prompts you to verify your phone number. Select the **Text message** radio button, then select **Next**. 
+6. In your Twilio console, copy the number in the **Verify via text messages** section, then enter it into the Facebook **Verification code** field. Select **Next**.
+7. Facebook displays `You're now ready to chat with people on WhatsApp`. Click **Finish** to close the window.
 
 ### Create the WhatsApp messaging service
 
-Next, you'll create a messaging service to connect the number to Engage:
+You'll now create a messaging service to connect your number to Engage:
 
 1. In the Twilio Console side menu, navigate to **Messaging > Services**.
-2. On the Messaging Services page, click Create Messaging Service.
-3. Enter a name for your Messaging Service. **You must include the word `WhatsApp` in the messaging service name.** For example, `My New Service WhatsApp`.
+2. On the Messaging Services page, click **Create Messaging Service**.
+3. Enter a name for your Messaging Service. **You must include the word `WhatsApp` in the messaging service name.**, for example, `My New Service WhatsApp`.
 4. Under the Messaging use dropdown, select **Market my services**, then select **Create messaging service**.
 5. From the **Sender Pool** tab, click **Add Senders**, then select the phone number you purchased in Step 1. Click **Add phone numbers,** then **Confirm**.
 6. Twilio confirms that the number has been assigned to the service.
 
-Your WhatsApp messaging service is now created. Once you have an [approved WhatsApp template](/docs/engage/content/whatsapp/), you can begin sending [WhatsApp campaigns](/docs/engage/campaigns/whatsapp-campaigns/).
+Your WhatsApp messaging service is now created. 
 
 ## Next steps
 
 With configured accounts and services for all platforms, you’ve completed Engage onboarding and are ready to create and send campaigns to your users.
 
-Not sure where to start? Read the Engage documentation on [sending email campaigns](/docs/engage/campaigns/email-campaigns/) and [sending SMS campaigns](/docs/engage/campaigns/sms-campaigns/). To save time when generating Engage campaigns, check out the Engage guides on creating [SMS templates](/docs/engage/content/sms/template/) and [email templates](/docs/engage/content/email/template/).
+Not sure where to start? Read the Engage documentation on [sending email campaigns](/docs/engage/campaigns/email-campaigns/), [SMS campaigns](/docs/engage/campaigns/sms-campaigns/), and [WhatsApp campaigns](/docs/engage/campaigns/whatsapp-campaigns/). To save time when generating Engage campaigns, check out the Engage guides on creating [SMS templates](/docs/engage/content/sms/template/), [email templates](/docs/engage/content/email/template/), and [WhatsApp templates](/docs/engage/content/whatsapp/).
 
 If you’re planning to import contacts to Engage, learn how to [update your audiences with a CSV file](/docs/engage/profiles/csv-upload/).
