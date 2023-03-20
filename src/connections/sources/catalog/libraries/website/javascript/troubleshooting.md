@@ -134,7 +134,7 @@ This works for any [context field](/docs/connections/spec/common/#context) that 
 ### What is the impact of exposing the source's write keys?
 
 For the Segment script to work in the browser, you need to expose the write key in order for client-side tracking to work. Segment's library architecture requires the write key to be exposed, similar to that of other major tools like Google Analytics, Mixpanel, Kissmetrics, Hubspot, and Marketo.
- 
+
 If you see any unusual behavior associated with your write key, you can generate a new key. Navigate to **Connections > Sources** and select your source. On the **Settings** tab, go to the **API Keys** section, and click **Generate New Key**.
 
 If you want to hide the write key, you can use Segment's [HTTP Tracking API source](/docs/connections/sources/catalog/libraries/server/http-api/) or one of the other [server-side libraries](/docs/connections/sources/catalog/#server).
@@ -156,6 +156,11 @@ analytics.track("Order Completed", {}, {
 > You must pass the context object with the call, event if it's empty, as shown by the empty object in the example above.
 
 Some destinations accept properties only. As a result, custom context fields you add may not forward to these destinations.
+
+### Why am I seeing additional cookies on my website?
+
+The AJS cookies being set under segment.com are first-party cookies. They are part of Segment's own implementation as well as the destination Segment uses. These cookies are not related to your implementation of Segment, and you only see them because you've visited Segment's domain using the same browser. They are sent to the writekey connected to Segment's own workspace, and are associated with the events Segment tracks when you visit segment.com.
+
 
 ## Known issues:
 
