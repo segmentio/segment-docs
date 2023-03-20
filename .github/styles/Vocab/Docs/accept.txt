@@ -52,6 +52,7 @@ deeplink
 Dev
 Doubleclick
 Eloqua
+Emarsys
 enablement
 endcapture
 endfor
@@ -111,6 +112,7 @@ Okta
 Omnichannel
 onboarding
 Optimizely
+Outfunnel
 param(:?s)
 Pardot
 Passcode
@@ -120,6 +122,7 @@ Pipedrive
 Preact
 Qualtrics
 reformat(:?s)
+remarket
 Responsys
 Rokt
 Sabil
@@ -152,4 +155,3 @@ Woopra
 Wootric
 Xcode
 Zendesk
-remarket

@@ -251,6 +251,8 @@ sections:
     title: Reverse ETL Overview
   - path: /reverse-etl/bigquery-setup
     title: BigQuery Reverse ETL Setup
+  - path: /reverse-etl/redshift-setup
+    title: Redshift Reverse ETL Setup
   - path: /reverse-etl/snowflake-setup
     title: Snowflake Reverse ETL Setup
 - section_title: Profiles
