@@ -1,5 +1,6 @@
 ---
 title: Regional Segment
+plan: papi
 redirect_from:
   - '/connections/regional-segment/'
   - '/docs/connections/regional-segment-eu/'
