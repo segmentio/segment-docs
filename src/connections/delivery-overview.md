@@ -21,9 +21,9 @@ The pipeline view provides insights into each step your data is processed by enr
 
 The pipeline view shows the following steps:
 - **Successfully received**: Events that Segment ingested from your source
-- **Failed on ingest**: Events that were not ingested into Segment when emitted from the source
+- **Failed on ingest**: Events that Segment received, but were dropped due to internal data validation rules
 - **Filtered at source**: Events that were discarded due to schema settings or [Protocols](/docs/protocols/) tracking plans
-- **Filtered at destination**: Events that were discarded due to destination filters (only available for customers with access to [Destination Filters](/docs/connections/destinations/destination-filters))
+- **Filtered at destination**: Events that were discarded due to [Destination Filters](/docs/guides/filtering-data/#destination-filters), [Filtering in the Integrations object](/docs/guides/filtering-data/#filtering-with-the-integrations-object), and [per source schema integration filters](/docs/guides/filtering-data/#per-source-schema-integrations-filters).  Additionally, “Actions” destinations have a filtering capability, for example if your action is set to only send “Identify” events, all other event types will be filtered out. 
 - **Failed delivery**: Events that have been discarded due to errors or unmet destination requirements
 - **Successful delivery**: Events that were successfully delivered to the destination
 
