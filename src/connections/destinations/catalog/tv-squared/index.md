@@ -3,7 +3,7 @@ rewrite: true
 title: Innovid Destination
 id: 54521fdb25e721e32a72eefc
 ---
-[Innovid](https://www.innovid.com/) enables you to pull same-day TV performance analytics so you can manage TV spend, and create data-driven TV media plans based on network, days, programs, and genres. Our Innovid Destination is open-source. You can browse the code [in GitHub](https://github.com/segmentio/analytics.js-integrations/tree/master/integrations/tvsquared).
+[Innovid](https://www.innovid.com/) enables you to pull same-day TV performance analytics so you can manage TV spend, and create data-driven TV media plans based on network, days, programs, and genres.
 
 ## Getting Started
 
@@ -17,7 +17,7 @@ id: 54521fdb25e721e32a72eefc
 
 4. Segment automatically loads Innovid's JavaScript tracking snippet onto the page once analytics.js loads. Make sure you remove Innovid's snippet from your code.
 
-5. Innovid starts automatically recording events after approximately 45 minutes, once our CDN is updated.
+5. Innovid starts automatically recording events after approximately 45 minutes, once the CDN is updated.
 
 ## Page
 
@@ -27,7 +27,7 @@ If you're not familiar with the Segment Specs, take a look to understand what th
 analytics.page();
 ```
 
-When you call `page` in Analytics.js, we call Innovid's `Basic Hit Tracker`. Keep in mind, our Analytics.js library will **automatically fire a `page` call on every page on which it is loaded**, and so unless you want to call `Basic Hit Tracker` more than once, you shouldn't need to do anything additional here.
+When you call `page` in Analytics.js, Segment calls Innovid's `Basic Hit Tracker`. Analytics.js library sends a `page` call on every page on which it is loaded, so unless you want to call `Basic Hit Tracker` more than once, you shouldn't need to do anything additional here.
 
 ## Track
 
@@ -42,13 +42,13 @@ analytics.track('Completed Purchase', {
 });
 ```
 
-When you call [`track`](/docs/connections/spec/track/) in Analytics.js, we call Innovid's `Action Tracker` - where in addition to the `event name`, you can specify a dictionary of properties that will get sent to Innovid.
+When you call [`track`](/docs/connections/spec/track/) in Analytics.js, Segment calls Innovid's `Action Tracker` - where in addition to the `event name`, you can specify a dictionary of properties that will get sent to Innovid.
 
 As per the example above, Innovid **requires** that you pass in a `revenue`, `productType`, `orderId`, and `promo` property into each of your calls. If you cannot provide a value for one or more of the aforementioned properties, don't worry, you can simply pass in an empty string to send the event.
 
 ### Event Allow-listing
 
-For each event that you want to track (e.g. using `analytics.track(your_event_name, …)`), you must allow-list the event in your destination settings (under "Event Allow-list"). For example, if you want `analytics.track('Order Completed')` and `analytics.track('Sale')` events to be sent, then you must add Order Completed and Sale to this list.
+For each event that you want to track (for example, using `analytics.track(your_event_name, …)`), you must allow-list the event in your destination settings (under "Event Allow-list"). For example, if you want `analytics.track('Order Completed')` and `analytics.track('Sale')` events to be sent, then you must add Order Completed and Sale to this list.
 
 ### Custom Track Properties
 

@@ -74,6 +74,7 @@ https
 HTTPS
 Hubspot
 incrementality
+Innovid
 ios
 iOS
 Iterable
