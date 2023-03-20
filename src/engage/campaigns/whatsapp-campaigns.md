@@ -6,7 +6,7 @@ plan: engage-premier
 > info "WhatsApp Public Beta"
 > WhatsApp as an Engage channel is in public beta.
 
-## How Engage campaign works
+## How Engage campaigns works
 
 Twilio Engage uses Journeys to send WhatsApp, email, and SMS campaigns.  With Journeys, you add conditions and steps that trigger actions like sending a WhatsApp message.
 

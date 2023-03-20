@@ -13,7 +13,7 @@ This page explains how to create, build, and submit WhatsApp templates for appro
 > warning "WhatsApp Template Approval"
 > WhatsApp templates must be approved before you can use them in campaigns. Template approvals can take up to 48 hours. Keep this timeframe in mind if you plan to send time-sensitive templates.
 
-## Types of WhatsApp templates
+## WhatsApp templates types
 
 You can choose between three WhatsApp template types:
 
@@ -35,7 +35,7 @@ Follow these steps to build a WhatsApp template:
     - If you choose to submit your template for approval, confirm by clicking **Submit**.
 6. Segment confirms that your template was saved **or** saved and submitted for approval.
 
-## Submitting a template for approval
+## Submit a saved template for approval
 
 If you saved your template without submitting it for approval, it won't be available for use in campaigns until you submit it for approval. 
 
