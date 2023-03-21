@@ -17,7 +17,7 @@ To set up Redshift with Reverse ETL:
     -- allows the "segment" user to create new schemas on the specified database. (this is the name you chose when provisioning your cluster)
     GRANT CREATE ON DATABASE "<enter database name here>" TO "segment";
     ```
-4. Follow the steps listed in the [Add a source](/docs/reverse-etl/#step-1-add-a-source) section to finish adding Redshift as your source.
+4. Follow the steps listed in the [Add a source](/docs/connections/sources/reverse-etl#step-1-add-a-source) section to finish adding Redshift as your source.
 
 ### Extra Permissions
 Give the `segment` user read permissions for any resources (databases, schemas, tables) the query needs to access. 

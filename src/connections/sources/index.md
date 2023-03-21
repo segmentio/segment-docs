@@ -10,7 +10,7 @@ excerpt: Detailed information about each Source. Learn how our API methods are i
 
 ## What is a source?
 
-A Source is a website, server library, mobile SDK, or cloud application which can send data into Segment. It’s where your data originates. Add a Source to collect data to understand who your customers are and how they’re using your product. Create a source for each website or app you want to track. While it's not required that you have a single source for each server, site, or app, you should create a source for each unique source of data.
+A source is a website, server library, mobile SDK, or cloud application which can send data into Segment. It’s where your data originates. Add a source to collect data to understand who your customers are and how they’re using your product. Create a source for each website or app you want to track. While it's not required that you have a single source for each server, site, or app, you should create a source for each unique source of data.
 
 Each source you create has a write key, which is used to send data to that source. For example, to load [`analytics.js`, the Segment JavaScript library](https://segment.com/docs/connections/sources/catalog/libraries/website/javascript/) on your page, the snippet on the [Quickstart Guide](https://segment.com/docs/connections/sources/catalog/libraries/website/javascript/quickstart/) includes:
 
@@ -51,6 +51,13 @@ analytics.identify('user_123', {
 
 ## Types of sources
 
+Segment has three types of sources: 
+* [Event stream]
+* [Cloud app objects](#cloud-apps)
+* [Reverse ETL]() 
+
+<!-- ## Types of sources
+
 Segment has five types of sources:
 * [Web](#website-libraries)
 * [Mobile](#mobile)
@@ -61,7 +68,7 @@ Segment has five types of sources:
 * User-created [Source Functions](/docs/connections/sources/source-functions/)
 
 
-Web, Mobile, and Server sources send first-party data from your digital properties. Cloud-app sources send data about your users from your connected web apps such as [Zendesk](/docs/connections/sources/catalog/cloud-apps/zendesk/),  [Stripe](/docs/connections/sources/catalog/cloud-apps/stripe/), and [Braze](/docs/connections/sources/catalog/cloud-apps/braze/).
+Web, Mobile, and Server sources send first-party data from your digital properties. Cloud-app sources send data about your users from your connected web apps such as [Zendesk](/docs/connections/sources/catalog/cloud-apps/zendesk/),  [Stripe](/docs/connections/sources/catalog/cloud-apps/stripe/), and [Braze](/docs/connections/sources/catalog/cloud-apps/braze/). -->
 
 ## Create a source
 To create a source:
@@ -77,6 +84,9 @@ To create a source:
 > - Flexibility sending data to different projects - if you want to have different warehouse schemas, analytics projects, etc, having multiple sources would create this separation
 > - More control - as your account grows with the number of destinations you enable, having separate sources allows you to have more control
 > - A source type cannot be changed once it is created. You must create a new source if you would like to use a different source type.
+
+## Event stream sources 
+Event stream sources collect data from your website or app to monitor user actions. These sources include website libraries, 
 
 ## Website libraries
 
