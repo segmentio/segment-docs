@@ -7,11 +7,12 @@ redirect_from: '/protocols/enforce/'
 
 The Schema Configuration settings for each source can be used to selectively block events, or omit properties and traits from `.track()`, `.identify()` and `.group()` calls. Segment can permanently drop events that are not included in your Tracking Plan, depending on the settings you select. Segment can also block events with invalid properties or invalid property values.
 
-To enable blocking, go to the **Settings** tab for your source, and click on **Schema Controls**. See below for detailed descriptions for each of the configuration settings.
+> warning "Blocked events not forwarded to a Source are discarded"
+> Blocking is a serious step that you should only do after you have resolved any violations that appear when you first connect a Tracking Plan to a Source. Any blocked events that are not [forwarded to a separate Source](/docs/protocols/enforce/forward-blocked-events) are permanently discarded and cannot be recovered.
 
-**IMPORTANT: It's critical that you feel confident about the quality of your data before you enable blocking. This is a serious step that you should only do after you have resolved any violations that appear when you first connect a Tracking Plan to a Source.**
+To enable blocking, go to the **Settings** tab for your source and click on **Schema Configuration**. See below for detailed descriptions for each of the configuration settings.
 
-![](../images/event_blocking.png)
+![A screenshot showing the Unplanned Events, Properties and Values table on the Schema Configuration settings page.](../images/event_blocking.png)
 
 > success ""
 > You can [export your Source Schema](/docs/connections/destination-data-control/#export-your-source-schema) as a CSV file to quickly audit events from your Tracking Plan.
@@ -40,7 +41,7 @@ For example, if you include a single `subscription_id` property in the `Subscrip
 **IMPORTANT: Unplanned property omission is ONLY supported in cloud-mode Destinations. Unplanned properties will not be omitted when sending to device-mode Destinations.**
 
 ## Track Calls - JSON Schema Violations
-Setting this dropdown to Block Event will ensure that all events with JSON schema violations (i.e. missing required properties, incorrect property value data types, or invalid regex patterns) will be blocked. A less aggressive option is to select Omit from the dropdown which will simply remove the offending property from the event.
+Setting this dropdown to Block Event will ensure that all events with JSON schema violations (for example, missing required properties, incorrect property value data types, or invalid regex patterns) will be blocked. A less aggressive option is to select Omit from the dropdown which will simply remove the offending property from the event.
 
 This is an advanced feature that requires extensive testing and a squeaky clean data set + tracking plan to enable. To get a sense of which events will be blocked, or properties omitted, go to the Violations view for a source and note all events with a violation. For example, if you added a `subscription_id` required property to your `Subscription Cancelled` event in your Tracking Plan, the below track call would be blocked by Protocols, or property omitted, depending on your setting.
 

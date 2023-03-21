@@ -139,7 +139,7 @@ Consider this Identify event:
 
 ```js
 analytics.identify('12091906-01011992', {
-    plan_id: 'Paid, Tier 2'
+    plan_id: 'Paid, Tier 2',
     email: 'grace@usnavy.gov'
 });
 ```
@@ -176,7 +176,7 @@ analytics.user().traits({});
 analytics.group().traits({});
 ```
 
-## User and Group Information
+## Using analytics.user() and analytics.group() 
 
 You can use the `user` or `group` method as soon as the Analytics.js library loads, to return information about the currently identified user or group. This information is retrieved from the user's cookie.
 
