@@ -141,6 +141,10 @@ All users with Protocols admin or read-only permissions can view transformations
 
 Transformations introduce advanced logic that at scale may impact performance of client-side libraries. If you are interested in testing new functionality which supports device-mode destination transformations in analytics.js, contact your account rep.
 
+### Is Destination Filters applied before or after my Protocol Transformation?
+
+That depends. If you are working with Source transformation level based, Protocols conversion will come first. If you are dealing with destination scoped transformation (specific destination setting), filtering comes prior to Protocols changes. 
+
 ### Why do I need Protocols to use transformations?
 
 Transformations are but one tool among many to help you improve data quality. Segment highly recommends that all customers interested in improving data quality start with a well defined Tracking Plan. The Tracking Plan serves as a roadmap for how you want to collect data. Without a clear roadmap, it's nearly impossible to build alignment around how transformations should be used to improve data quality, leading to more data quality issues than it solves.
