@@ -23,6 +23,76 @@ Here's the payload of a typical `page` call with most [common fields](/docs/conn
 }
 ```
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/9000.0.1/prism.min.js" integrity="sha512-UOoJElONeUNzQbbKQbjldDf9MwOHqxNz49NNJJ1d90yp+X9edsHyJoAs6O4K19CZGaIdjI5ohK+O2y5lBTW6uQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/9000.0.1/themes/prism.css" integrity="sha512-EaMmVtm5YHQNg4u9UXGOueWP6nyUtCpKZojcE4Rqt/6ifpzzzuQVMTffvo8FVj4xDG04gIyWm1z1b7GqELl1eQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<script type="text/javascript">
+  function showMessage(){
+      var name = document.getElementById("name").value;
+      var title = document.getElementById("title").value;
+      var url = document.getElementById("url").value;
+      var output = `{
+  "anonymousId": "507f191e810c19729de860ea",
+  "channel": "browser",
+  "context": {
+    "ip": "8.8.8.8",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_9_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/40.0.2214.115 Safari/537.36"
+  },
+  "integrations": {
+    "All": true,
+    "Mixpanel": false,
+    "Salesforce": false
+  },
+  "messageId": "022bb90c-bbac-11e4-8dfc-aa07a5b093db",
+  "name": "${name}",
+  "properties": {
+    "title": "${title}",
+    "url": "${url}"
+  },
+  "receivedAt": "2015-02-23T22:28:55.387Z",
+  "sentAt": "2015-02-23T22:28:55.111Z",
+  "timestamp": "2015-02-23T22:28:55.111Z",
+  "type": "page",
+  "userId": "97980cfea0067",
+  "version": "1.1"
+}`
+    output_container.innerHTML = output
+    Prism.highlightElement(output_container)
+  }
+</script>
+<script>
+  function showOutput() {
+    var show = document.getElementById("output-code");
+    if (show.style.display === "block") {
+      show.style.display = "none";
+    } else {
+      show.style.display = "block";
+    }
+  }
+</script>
+
+<div class="sample-code-container">
+<div class="form">
+  <h3> Sample Page </h3>
+  <p><b>See what your page call looks like</b></p>
+  <label for="name">Name:</label>
+  <input type="text" id="name"><br>
+  <label for="title">Title:</label>
+  <input type="text" id="title"><br>
+  <label for="url">URL:</label>
+  <input type="text" id="url"><br>
+  <input type="submit" id="submit" onclick="showMessage(); showOutput()" value="See a sample page call">
+</div>
+
+<div class="output">
+<h3>Sample Page Call</h3>
+<!-- <div class="output-code" id="output-code" style="display:none"> -->
+<pre class="language-javascript"><code class="language-javascript" id="output_container">
+
+</code></pre>
+<!-- </div> -->
+</div>
+</div>
+
 And here's the corresponding JavaScript event that would generate the above payload. If you're using Segment's JavaScript library, the page name and URL are automatically gathered and passed as properties into the event payload:
 
 ```js
