@@ -27,10 +27,11 @@ Follow these steps to build a WhatsApp template:
 
 1. Navigate to **Engage > Content** and click **Create template**.
 2. Select **WhatsApp**, then click **Configure**.
-3. Add a template name and select your template's language.
+3. Enter a template name and select your template's language.
 4. Select your template's content type, then click **Next**.
     - For text templates, enter your message's text in the **Body** field and add any desired [merge tags](#personalize-with-merge-tags).
     - For media templates, enter your message's text in the **Body** field, add the media URL, then add any desired merge tags.
+    - For call to action templates, enter your message's text in the **Body** field, then add buttons for a phone number or website. 
 5. Once you've finished adding your template's content, click **Save and submit for WhatsApp approval** or **Save**. 
     - If you choose to submit your template for approval, confirm by clicking **Submit**.
 6. Segment confirms that your template was saved **or** saved and submitted for approval.
@@ -65,7 +66,7 @@ If a merge tag doesn't apply to a subscriber, Engage will use the content you en
 
 ## Template approvals
 
-Meta must first review and approve your WhatsApp template before you can use it in a campaign. Meta approves most templates in under an hour, but some approvals can take up to 48 hours. Keep this time frame in mind if you plan to send time-sensitive templates. 
+Meta must first review and approve your WhatsApp template before you can use it in a campaign. Meta approves most templates in under an hour, but some approvals can take up to 48 hours. Keep this time frame in mind if you plan to send time-sensitive campaigns. 
 
 For more on the template approval process, view [recommendations and best practices for creating WhatsApp Message Templates](https://support.twilio.com/hc/en-us/articles/360039737753-Recommendations-and-best-practices-for-creating-WhatsApp-Message-Templates){:target="_blank"}.
 

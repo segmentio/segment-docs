@@ -266,7 +266,7 @@ In the Facebook popup from the previous section, carry out these steps:
 3. Create a new WhatsApp Business Profile that follows [Meta's display name guidelines](https://www.facebook.com/business/help/757569725593362){:target="_blank"}. Fill out all fields, then select **Next**.
 4. In your Twilio console, copy the number shown in the **Number to register with WhatsApp** field. Paste it into the  **Phone number field** on the Facebook **Add a phone number for WhatsApp** page, then select **Next**.
 5. Facebook prompts you to verify your phone number. Select the **Text message** radio button, then select **Next**. 
-6. In your Twilio console, copy the number in the **Verify via text messages** section, then enter it into the Facebook **Verification code** field. Select **Next**.
+6. In your Twilio console, copy the code in the **Verify via text messages** section, then enter it into the Facebook **Verification code** field. Select **Next**.
 7. Facebook displays `You're now ready to chat with people on WhatsApp`. Click **Finish** to close the window.
 
 ### Create the WhatsApp messaging service
@@ -275,7 +275,7 @@ You'll now create a messaging service to connect your number to Engage:
 
 1. In the Twilio Console side menu, navigate to **Messaging > Services**.
 2. On the Messaging Services page, click **Create Messaging Service**.
-3. Enter a name for your Messaging Service. **You must include the word `WhatsApp` in the messaging service name.**, for example, `My New Service WhatsApp`.
+3. Enter a name for your Messaging Service. **You must include the word `WhatsApp` in the messaging service name**, for example, `My New Service WhatsApp`.
 4. Under the Messaging use dropdown, select **Market my services**, then select **Create messaging service**.
 5. From the **Sender Pool** tab, click **Add Senders > Add WhatsApp Numbers > Confirm**.
 6. Twilio confirms that the WhatsApp number has been assigned to the service.
