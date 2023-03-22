@@ -86,10 +86,10 @@ When Segment runs historical backfills:
 - The `id_graph_updates` and `external_id_mapping_updates` tables sync your entire historical data to your warehouse.
 - The `identities`, `page`, `screens`, and `tracks` tables sync the last two months of events to your warehouse.
 
+Segment lands the data on an internal staging location, then removes the backfill banner. Segment then syncs the backfill data to your warehouse.
+
 Reach out to [Segment support](https://app.segment.com/workspaces?contact=1){:target="blank"} if your use case exceeds the scope of the initial setup backfill.
 
-> warning ""
-> For event tables, Segment can only backfill up to 2,000 tables for each workspace.
 
 > success ""
 > While historical backfill is running, you can start building [materialized views](/docs/profiles/profiles-sync/tables/#tables-you-materialize) and running [sample queries](/docs/profiles/profiles-sync/sample-queries).   
@@ -103,6 +103,15 @@ To start seeing unified profiles in your warehouse and build attribution models,
   * `profile_traits`: the last seen value for all custom traits, computed traits, SQL traits, audiences, and journeys associated with a profile in a single row
 
 Please visit [Tables you materialize](/docs/profiles/profiles-sync/tables/#tables-you-materialize) for more on how to materialize these views either on your own, or with [Segment's open source dbt models](https://github.com/segmentio/profiles-sync-dbt){:target="blank"}.
+
+## Profiles Sync limits
+
+As you use Profiles Sync, please keep the following limits in mind:
+
+- For event tables, Segment can only backfill up to 2,000 tables for each workspace.
+- Segment can only initiate backfills after a successful sync with > 0 rows.
+- For every sync, the total dataset Segment can sync is limited to 20TB.
+
 
 ## Working with synced warehouses
 
