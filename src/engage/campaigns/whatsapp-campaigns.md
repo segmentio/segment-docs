@@ -49,3 +49,9 @@ With your entry condition added, you’re now ready to add an approved WhatsApp 
 6. Segment returns you to the Journey builder. Select **Publish**, then select **Publish journey** in the popup.
 
 Your Journey and WhatsApp campaign are now live. Users who trigger the WhatsApp step’s parent Journey condition will receive your SMS campaign.
+
+## Messaging limits
+
+WhatsApp limits the number of unique recipients that can receive your campaigns. If your Meta Business Account isn't verified, you'll begin with a messaging limit of 250 unique recipients every 24 hours.
+
+Once your Meta Business Account is verified, the number of unique recipients increases, depending on your messaging limit tier. For more information, view Meta's [messaging limits documentation](https://developers.facebook.com/docs/whatsapp/messaging-limits/){:target="_blank"}.
