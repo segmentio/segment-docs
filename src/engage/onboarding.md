@@ -251,7 +251,7 @@ To send WhatsApp messages in Twilio Engage, you'll register a Twilio number with
 
 ### Register a Twilio number with WhatsApp
 
-1. [Purchase a phone number](https://support.twilio.com/hc/en-us/articles/223135247-How-to-Search-for-and-Buy-a-Twilio-Phone-Number-from-Console){:target="_blank"} within your Twilio Console.
+1. [Purchase an SMS-capable phone number](https://support.twilio.com/hc/en-us/articles/223135247-How-to-Search-for-and-Buy-a-Twilio-Phone-Number-from-Console){:target="_blank"} within your Twilio Console.
 2. From the Twilio side menu, navigate to **Messaging > Senders > WhatsApp Senders**.
 3. Select **Create new sender**.
 4. From the **New Sender** builder, find **Twilio phone number**, then choose the phone number you purchased in Step 1. Select **Continue**.
