@@ -1,0 +1,2 @@
+# Redirect for Profiles -> Unify rename
+/docs/profiles/*                        /docs/unify/:splat
