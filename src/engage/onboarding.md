@@ -30,7 +30,7 @@ The following table shows a high-level checklist of tasks you’ll need to compl
 | Segment  | 1. Verify Engage identifiers in your Segment workspace. <br> 2. Add any missing identifiers.                                                                                                                                                                                                                                                                                      |
 | SendGrid | 1. Create a SendGrid account. <br> 2. Upgrade your account to a Pro plan. <br> 3. Configure an IP. <br> 4. Create a SendGrid subuser. <br> 5. Authenticate your domain. <br> 6. Enable subscription tracking. <br> 7. Enable an event webhook. <br> 8. Generate API credentials, then copy them into Engage settings. <br> 9. Warm up your IP. <br> 10. Contact SendGrid support. |
 | Twilio   | 1. Create a Twilio account. <br> 2. Purchase phone number(s). <br> 3. If necessary, register phone number(s). <br> 4. Create a messaging service. <br> 5. Generate an API key, then copy it into the Engage settings. <br> 6. Configure an event webhook.                                                                                                                         |
-| WhatsApp | 1. Provision a phone number through Twilio. <br> 2. Connect your Facebook account. <br> 2. Create the WhatsApp messaging service.                                                                                                                                                                                                                                                 |
+| WhatsApp | 1. Register a Twilio number with WhatsApp. <br> 2. Connect your Facebook account. <br> 2. Create the WhatsApp messaging service.                                                                                                                                                                                                                                                 |
 
 
 Several onboarding steps require copying and pasting information between Segment and SendGrid or Twilio. To streamline setup, open your Segment workspace in one browser tab and open two others for tasks you’ll carry out in SendGrid and Twilio.
@@ -249,7 +249,7 @@ To finish setting up your Messaging Service, you’ll now [configure an event we
 
 To send WhatsApp messages in Twilio Engage, you'll provision a phone number through Twilio, connect your Facebook account, and create a WhatsApp messaging service.
 
-### Provision a phone number through Twilio
+### Register a Twilio number with WhatApp
 
 1. [Purchase a phone number](https://support.twilio.com/hc/en-us/articles/223135247-How-to-Search-for-and-Buy-a-Twilio-Phone-Number-from-Console){:target="_blank"} within your Twilio Console.
 2. From the Twilio side menu, navigate to **Messaging > Senders > WhatsApp Senders**.
@@ -263,7 +263,7 @@ In the Facebook popup from the previous section, carry out these steps:
 
 1. Follow Facebook's instructions to log in to your Facebook account.
 2. When you reach the **Fill in your business information** page, choose your WhatsApp Business Account or create a new account. Select **Next**.
-3. Select your WhatsApp Business Profile or create a new profile. Select **Next**.
+3. Create a new WhatsApp Business Profile that follows [Meta's display name guidelines](https://www.facebook.com/business/help/757569725593362){:target="_blank"}. Fill out all fields, then select **Next**.
 4. In your Twilio console, copy the number shown in the **Number to register with WhatsApp** field. Paste it into the  **Phone number field** on the Facebook **Add a phone number for WhatsApp** page, then select **Next**.
 5. Facebook prompts you to verify your phone number. Select the **Text message** radio button, then select **Next**. 
 6. In your Twilio console, copy the number in the **Verify via text messages** section, then enter it into the Facebook **Verification code** field. Select **Next**.
@@ -277,8 +277,8 @@ You'll now create a messaging service to connect your number to Engage:
 2. On the Messaging Services page, click **Create Messaging Service**.
 3. Enter a name for your Messaging Service. **You must include the word `WhatsApp` in the messaging service name.**, for example, `My New Service WhatsApp`.
 4. Under the Messaging use dropdown, select **Market my services**, then select **Create messaging service**.
-5. From the **Sender Pool** tab, click **Add Senders**, then select the phone number you purchased in Step 1. Click **Add phone numbers,** then **Confirm**.
-6. Twilio confirms that the number has been assigned to the service.
+5. From the **Sender Pool** tab, click **Add Senders > Add WhatsApp Numbers > Confirm**.
+6. Twilio confirms that the WhatsApp number has been assigned to the service.
 
 Your WhatsApp messaging service is now created. 
 
