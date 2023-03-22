@@ -42,10 +42,10 @@ With your entry condition added, you’re now ready to add an approved WhatsApp 
 ### Add a WhatsApp step and publish your Journey
 
 1. Within the Journey builder, click the **+** node below your new condition.
-2. From the **Add step** window, click **Send a WhatsApp Message**.
+2. From the **Add step** window, click **Send a WhatsApp**.
 3. Pick an approved template from the template list, then choose **Select**.
 4. Give the WhatsApp message step a name.
-5. In the **Sender** field, choose **WhatsApp**. If successful, Segment returns `Messaging service validated`. Click **Save**.
+5. In the **Sender** field, choose **WhatsApp**, then click **Save**.
 6. Segment returns you to the Journey builder. Select **Publish**, then select **Publish journey** in the popup.
 
 Your Journey and WhatsApp campaign are now live. Users who trigger the WhatsApp step’s parent Journey condition will receive your SMS campaign.

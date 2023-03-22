@@ -247,9 +247,9 @@ To finish setting up your Messaging Service, you’ll now [configure an event we
 > info "WhatsApp Public Beta"
 > WhatsApp as an Engage channel is in public beta. 
 
-To send WhatsApp messages in Twilio Engage, you'll provision a phone number through Twilio, connect your Facebook account, and create a WhatsApp messaging service.
+To send WhatsApp messages in Twilio Engage, you'll register a Twilio number with WhatsApp, connect your Facebook account, and create a WhatsApp messaging service.
 
-### Register a Twilio number with WhatApp
+### Register a Twilio number with WhatsApp
 
 1. [Purchase a phone number](https://support.twilio.com/hc/en-us/articles/223135247-How-to-Search-for-and-Buy-a-Twilio-Phone-Number-from-Console){:target="_blank"} within your Twilio Console.
 2. From the Twilio side menu, navigate to **Messaging > Senders > WhatsApp Senders**.

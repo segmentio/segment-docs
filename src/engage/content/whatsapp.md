@@ -53,7 +53,7 @@ You can personalize your WhatsApp templates with merge tags based on profile tra
 
 To include merge tags in your template, click **+ Add merge tag** in the template builder and select the profile trait(s) you want to include in your message. 
 
-Segment displays the merge tag in the body as a numerical value surrounded by curly braces, like `{% raw %}{{1}}{% endraw %}`. When a user triggers your WhatsApp campaign, Segment will replace the merge tag with the specific value associated with that user's profile. 
+Segment displays the merge tag in the body as a numerical value surrounded by curly braces, like `{% raw %}{{1}}{% endraw %}`. When a susbcriber triggers your WhatsApp campaign, Segment will replace the merge tag with the specific value associated with that subscriber's profile. 
 
 If a merge tag doesn't apply to a subscriber, Engage will use the content you enter into the **Default content** field.
 
