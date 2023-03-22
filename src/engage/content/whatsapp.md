@@ -13,7 +13,7 @@ This page explains how to create, build, and submit WhatsApp templates for appro
 > warning "WhatsApp Template Approval"
 > WhatsApp templates must be approved by Meta before you can use them in campaigns. 
 
-## WhatsApp templates types
+## WhatsApp template types
 
 You can choose between three WhatsApp template types:
 
