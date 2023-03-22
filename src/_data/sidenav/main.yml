@@ -377,6 +377,10 @@ sections:
       title: Email Template Editor
     - path: '/engage/content/sms/template'
       title: SMS Template
+    - path: '/engage/content/sms/template'
+      title: SMS Template
+    - path: '/engage/content/whatsapp'
+      title: WhatsApp Template
   - section_title: Campaigns
     description: "Create multi-channel campaigns to get the right message to your users."
     section:
@@ -386,6 +390,8 @@ sections:
       title: Email Campaigns
     - path: '/engage/campaigns/sms-campaigns'
       title: SMS Campaigns
+    - path: '/engage/campaigns/whatsapp-campaigns'
+      title: WhatsApp Campaigns
   - path: '/engage/analytics'
     title: Analytics Overview
   - path: '/engage/settings'
