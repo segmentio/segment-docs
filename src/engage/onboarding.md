@@ -264,7 +264,7 @@ In the Facebook popup from the previous section, carry out these steps:
 1. Follow Facebook's instructions to log in to your Facebook account.
 2. When you reach the **Fill in your business information** page, choose your WhatsApp Business Account or create a new account. Select **Next**.
 3. Create a new WhatsApp Business Profile that follows [Meta's display name guidelines](https://www.facebook.com/business/help/757569725593362){:target="_blank"}. Fill out all fields, then select **Next**.
-4. In your Twilio console, copy the number shown in the **Number to register with WhatsApp** field. Paste it into the  **Phone number field** on the Facebook **Add a phone number for WhatsApp** page, then select **Next**.
+4. In your Twilio console, copy the number shown in the **Number to register with WhatsApp** field. Paste it into the **Phone number field** on the Facebook **Add a phone number for WhatsApp** page, then select **Next**.
 5. Facebook prompts you to verify your phone number. Select the **Text message** radio button, then select **Next**. 
 6. In your Twilio console, copy the code in the **Verify via text messages** section, then enter it into the Facebook **Verification code** field. Select **Next**.
 7. Facebook displays `You're now ready to chat with people on WhatsApp`. Click **Finish** to close the window.
