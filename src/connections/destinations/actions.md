@@ -170,6 +170,9 @@ The available operators depend on the property's data type:
 
 You can combine criteria in a single group using **ALL** or **ANY**.  Use an ANY to “subscribe” to multiple conditions. Use ALL when you need to filter for very specific conditions. You can only create one group condition per destination action. You cannot created nested conditions.
 
+> info "Unsupported Special Characters"
+> Mappings do not support the use of double quotes " or a tilde ~ in the trigger fields.
+
 > info "Destination Filters"
 > Destination filters are compatible with Destination Actions. Consider a Destination Filter when:
 > - You need to remove properties from the data sent to the destination
