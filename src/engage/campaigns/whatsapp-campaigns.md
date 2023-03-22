@@ -37,7 +37,7 @@ With your Journey created, you’ll now set a condition to trigger your WhatsApp
 2. In the **Add entry condition** pane, give the step a name.
 3. Click **+ Add Condition**, select your desired condition, then click **Save**.
 
-With your entry condition added, you’re now ready to add an approved WhatsApp template to build a campaign.
+With your entry condition added, you’re ready to add an approved WhatsApp template to build a campaign.
 
 ### Add a WhatsApp step and publish your Journey
 
