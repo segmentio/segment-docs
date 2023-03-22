@@ -5,7 +5,7 @@ id: V6ynUvQgbc
 ---
 [![Maven Central](https://maven-badges.herokuapp.com/maven-central/com.segment.analytics.java/analytics/badge.svg)](https://maven-badges.herokuapp.com/maven-central/com.segment.analytics.java/analytics)
 
-Our Java library lets you record analytics data from your Java code. The requests hit our servers, and then we route your data to any analytics service you enable on your destinations page.
+Segment's Java library lets you record analytics data from your Java code. The requests hit Segment's servers, and then route your data to any analytics service you enable on your destinations page.
 
 This library is open-source, so you can [check it out on GitHub](https://github.com/segmentio/analytics-java).
 
@@ -60,10 +60,17 @@ The following examples use [Guava's](https://github.com/google/guava) immutable 
 
 ### Regional configuration
 {% include content/regional-config.md %}
-## Identify
 
-> note ""
-> **Good to know**: For any of the different methods described on this page, you can replace the properties and traits in the code samples with variables that represent the data collected.
+
+## Basic tracking methods
+The basic tracking methods below serve as the building blocks of your Segment tracking. They include [Identify](#identify), [Track](#track), [Page](#page), [Group](#group), and [Alias](#alias). These methods correspond with those used in the [Segment Spec](/docs/connections/spec/). The documentation on this page explains how to use these methods in Analytics for Java. 
+
+> info ""
+> For any of the different methods described on this page, you can replace the properties and traits in the code samples with variables that represent the data collected. 
+>
+> Note that sending a property or trait with a null value won't be possible as Guava's immutable maps will reject the null value and the GSON library used to serialize the Java object will ignore it. As a workaround, you can send an empty string instead of a null value in on your properties or traits.
+
+### Identify
 
 `identify` lets you tie a user to their actions and record traits about them. It includes a unique User ID and any optional traits you know about them.
 
@@ -101,7 +108,7 @@ Read more in our [transformer reference section](/docs/connections/sources/catal
 
 Find details on the **identify method payload** in our [Spec](/docs/connections/spec/identify/).
 
-## Track
+### Track
 
 `track` lets you record the actions your users perform.  Every action triggers what we call an "event", which can also have associated properties.
 
@@ -144,7 +151,7 @@ The `track` call has the following fields:
 
 Find details on **best practices in event naming** as well as the **`track` method payload** in our [Spec](/docs/connections/spec/track/).
 
-## Screen
+### Screen
 
 The [`screen`](/docs/connections/spec/screen/) method lets you record whenever a user sees a screen of your mobile app, along with optional extra information about the screen being viewed.
 
@@ -184,7 +191,7 @@ The `screen` call has the following fields:
 
 Find details on the **`screen` payload** in our [Spec](/docs/connections/spec/screen/).
 
-## Page
+### Page
 
 The [`page`](/docs/connections/spec/page/) method lets you record whenever a user sees a page of your website, along with optional extra information about the page being viewed.
 
@@ -222,7 +229,7 @@ The `page` call has the following fields:
 
 Find details on the **`page` payload** in our [Spec](/docs/connections/spec/page/).
 
-## Group
+### Group
 
 `group` lets you associate an [identified user](/docs/connections/sources/catalog/libraries/server/java/#identify) user with a group. A group could be a company, organization, account, project or team! It also lets you record custom traits about the group, like industry or number of employees.
 
@@ -260,7 +267,7 @@ The `group` call has the following fields:
 
 Find more details about `group`, including the **`group` payload**, in our [Spec](/docs/connections/spec/group/).
 
-## Alias
+### Alias
 
 `alias` is how you associate one identity with another. This is an advanced method, but it is required to manage user identities successfully in *some* of our destinations.
 

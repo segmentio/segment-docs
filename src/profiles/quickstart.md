@@ -71,3 +71,6 @@ Once you validate that your data is flowing through Profiles, you're ready to cr
 
 > success ""
 > If you're using Engage, view additional steps to complete your space set up in the [Engage Foundations Onboarding Guide](/docs/engage/quickstart).
+
+> info ""
+> You can rename the Segment space UI name, but can't modify the space slug. As a result, you can't change the URL of a space.
