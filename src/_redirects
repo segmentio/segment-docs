@@ -1,4 +1,4 @@
 # Redirects file for Netlify
 
 # Redirect for Profiles -> Unify rename
-/docs/profiles/*                        /docs/unify/:splat
+# /docs/profiles/*                        /docs/unify/:splat
