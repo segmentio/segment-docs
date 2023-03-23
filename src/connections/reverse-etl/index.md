@@ -32,7 +32,7 @@ Follow these 4 steps to set up Reverse ETL and learn what each component is abou
 4. [Create Mappings](#step-4-create-mappings)
 
 > info ""
-> Depending on what plan you're on, the UI navigation and interface will look different from what's presented in the docs until Reverse ETL fully rolls out to all users. 
+> Depending on what plan you're on, the UI navigation and interface will look different from what's presented in the docs until Reverse ETL rolls out to all users for GA. 
 
 ### Step 1: Add a source
 A source is where your data originates from. Traditionally in Segment, a [source](/docs/connections/sources/#what-is-a-source) is a website, server library, mobile SDK, or cloud application which can send data into Segment. In Reverse ETL, your data warehouse is the source.
@@ -49,9 +49,9 @@ To add your warehouse as a source:
 2. Click **Add Reverse ETL source**.
 3. Select the source you want to add. You can choose between BigQuery, Redshift, and Snowflake.
 4. Follow the corresponding setup guide for your Reverse ETL source. 
-    * [BigQuery Reverse ETL setup guide](/docs/connections/reverse-etl/bigquery-setup/)
-    * [Redshift Reverse ETL setup guide](/docs/connections/reverse-etl/redshift-setup/)
-    * [Snowflake Reverse ETL setup guide](/docs/connections/reverse-etl/snowflake-setup/)
+    * [BigQuery Reverse ETL setup guide](/docs/connections/reverse-etl/reverse-etl-source-setup-guides/bigquery-setup/)
+    * [Redshift Reverse ETL setup guide](/docs/connections/reverse-etl/reverse-etl-source-setup-guides/redshift-setup/)
+    * [Snowflake Reverse ETL setup guide](/docs/connections/reverse-etl/reverse-etl-source-setup-guides/snowflake-setup/)
 5. Add the account information for your source.  
     * For Snowflake users: Learn more about the Snowflake Account ID [here](https://docs.snowflake.com/en/user-guide/admin-account-identifier.html){:target="_blank"}.
 5. Click **Test Connection** to test to see if the connection works.

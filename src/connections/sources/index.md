@@ -52,8 +52,8 @@ analytics.identify('user_123', {
 ## Types of sources
 
 Segment has three types of sources: 
-* [Event streams](#event-stream-sources)
-* [Cloud app objects](#cloud-apps)
+* [Event streams](#event-streams-sources)
+* [Cloud app objects](#cloud-app-sources)
 * [Reverse ETL](#reverse-etl-sources) 
 
 
