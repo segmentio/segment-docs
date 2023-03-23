@@ -247,6 +247,12 @@ For that, you need to make the following calls:
 }
 }
 ```
+### Regional Endpoint 
+
+Add in regional endpoint details
+Navigate to Customer.IO destination settings, click Advanced Settings, select region from the US to EU and Save Changes
+Add screenshot example
+
 
 ### Sending Data from Customer.io
 
