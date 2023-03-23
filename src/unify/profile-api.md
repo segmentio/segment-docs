@@ -1,6 +1,6 @@
 ---
 title: Profile API
-plan: profiles
+plan: unify
 redirect_from:
   - "/personas/profile-api"
 ---
@@ -43,7 +43,7 @@ Your access token enables you to call the Profile API and access customer data.
 > info "European Union requirements"
 > To implement the Profile API in the European Union, you must complete the following steps within an EU workspace. View the [regional Segment documentation](/docs/guides/regional-segment/#create-a-new-workspace-with-a-different-region) for more information.
 
-1.  Navigate to the API Access settings page **Profiles > Profiles Settings > API Access**.
+1.  Navigate to the API Access settings page **Unify > Unify Settings > API Access**.
 
 2.  Create your **Access Token** with a name that describes your use case, for example `testing/development`. Take note of the **space ID** value, you'll pass this into the Profile API request URL in a later step.
 
@@ -51,7 +51,7 @@ Your access token enables you to call the Profile API and access customer data.
 
 ### Find a user's external id
 
-1. Navigate to **Profiles > Profiles Explorer** and select the user you want to query through the API.
+1. Navigate to **Unify > Profiles Explorer** and select the user you want to query through the API.
 2. Take note of the user's available identifiers. For example, this user has a `user_id` with the value `9800664881`. The Profile API requires both the type of ID and the value separated by a colon. For example, `user_id:9800664881`.
 ![Retrieving a user's identifiers with the Profiles Explorer](images/profile_api_user_id.png)
 
@@ -161,7 +161,7 @@ The Segment API is organized around [REST](http://en.wikipedia.org/wiki/Represen
 
 The Profile API uses basic authentication for authorization — with the **Access Token** as the authorization key. Your **Access Token** carries access to all of your customer data, so be sure to keep them secret. Don't share your Access Token in publicly accessible areas such as GitHub or client-side code.
 
-You can create your Access Secret in your Profiles Settings page. Segment recommends that you name your tokens with the name of your app and its environment, such as `marketing_site/production`. Access tokens are shown once — you won't be able to see it again. In the event of a security incident, you can revoke and cycle the access token.
+You can create your Access Secret in your Unify Settings page. Segment recommends that you name your tokens with the name of your app and its environment, such as `marketing_site/production`. Access tokens are shown once — you won't be able to see it again. In the event of a security incident, you can revoke and cycle the access token.
 
 When you make requests to the Profile API, use the Access Token as the basic authentication username and keep the password blank.
 

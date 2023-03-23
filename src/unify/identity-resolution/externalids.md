@@ -1,12 +1,12 @@
 ---
 title: Identity Resolution ExternalIDs
-plan: profiles
+plan: unify
 redirect_from:
   - '/personas/identity-resolution/externalids'
 ---
 
 > note ""
-> The steps in this guide pertain to spaces created before September 27th, 2020. For spaces created after September 27th, 2020, please refer to the [Identity onboarding guide](/docs/profiles/identity-resolution/identity-resolution-onboarding/).
+> The steps in this guide pertain to spaces created before September 27th, 2020. For spaces created after September 27th, 2020, please refer to the [Identity onboarding guide](/docs/unify/identity-resolution/identity-resolution-onboarding/).
 
 ## Default externalIDs
 
@@ -33,7 +33,7 @@ Segment automatically promotes the following traits and IDs in track and identif
 
 ## Custom externalIDs
 
-Profiles resolves identity for any other externalIDs that you bind to users - such as a phone number or any custom identifier that you support.
+Unify resolves identity for any other externalIDs that you bind to users - such as a phone number or any custom identifier that you support.
 
 As long as you've configured custom externalIDs, such as `phone`, in your Space's Identity Resolution rules, you can include it with the `context.externalIds` array, the `properties` object, or the `context.traits` object.  
 
@@ -65,17 +65,17 @@ analytics.track('Subscription Upgraded', {
   ]
 })
 ```
-Additionally, adding `phone` with the `properties` object gets picked up by Profiles and applied as an externalID:
+Additionally, adding `phone` with the `properties` object gets picked up by Unify and applied as an externalID:
 ```js
 analytics.track('Subscription Upgraded', { plan: 'Pro', mrr: 99.99, phone: '123-456-7890'})
 ```
-You can also include `phone` using the [`context.traits`](/docs/connections/sources/catalog/libraries/website/javascript/identity/#saving-traits-to-the-context-object) object and Profiles adds it as an externalID to the profile.
+You can also include `phone` using the [`context.traits`](/docs/connections/sources/catalog/libraries/website/javascript/identity/#saving-traits-to-the-context-object) object and Unify adds it as an externalID to the profile.
 
 ```js
 analytics.track('Subscription Upgraded', { plan: 'Pro', mrr: 99.99}, {traits : {phone_number: '123-456-7890'}})
 ```
 
-Profiles creates a user (user_id: `use_123`)  with the custom externalID (phone: `123-456-7890`). Query the user's phone record by using the externalID (phone: `123-456-7890`), or update the profile with that externalID going forward. (Note: externalIDs must be lower-case.)
+Unify creates a user (user_id: `use_123`)  with the custom externalID (phone: `123-456-7890`). Query the user's phone record by using the externalID (phone: `123-456-7890`), or update the profile with that externalID going forward. (Note: externalIDs must be lower-case.)
 
 ## Viewing promoted externalIDs
 

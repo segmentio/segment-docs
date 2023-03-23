@@ -1,7 +1,6 @@
 ---
 title: Profiles Sync Tables and Materialized Views
-beta: true
-plan: profiles
+plan: unify
 ---
 
 Through Profiles Sync, Segment provides data sets and models that can help you enrich customer profiles using any warehouse data available to you.
@@ -170,10 +169,10 @@ Profiles Sync uses the following schema: `<profiles_space_name>.<tableName>`.
 > info ""
 > Note that the Profiles Sync schema is different from the Connections Warehouse schema: `<source_name>.<tableName>`.
 
-If your Profiles space has the same name as a source connected to your Segment Warehouse destination, Segment overwrites data to the Event tables.
+If your space has the same name as a source connected to your Segment Warehouse destination, Segment overwrites data to the Event tables.
 
 > success ""
-> For more on Profiles Sync logic, table mappings, and data types, download this [Profiles Sync ERD](/docs/profiles/files/ERD.png) or visit [schema evolution and compatibility](/docs/connections/storage/warehouses/schema/#schema-evolution-and-compatibility).
+> For more on Profiles Sync logic, table mappings, and data types, download this [Profiles Sync ERD](/docs/unify/files/ERD.png) or visit [schema evolution and compatibility](/docs/connections/storage/warehouses/schema/#schema-evolution-and-compatibility).
 
 {% comment %}
 

@@ -1,7 +1,6 @@
 ---
 title: Profiles Sync Setup
-beta: true
-plan: profiles
+plan: unify
 ---
 
 On this page, you’ll learn how to set up Profiles Sync, enable historical backfill, and adjust settings for warehouses that you’ve connected to Profiles Sync.
@@ -9,7 +8,7 @@ On this page, you’ll learn how to set up Profiles Sync, enable historical back
 ## Initial Profiles Sync setup
 
 > info "Identity Resolution Setup"
-> To use Profiles Sync, you must first set up [Identity Resolution](/docs/profiles/identity-resolution/).
+> To use Profiles Sync, you must first set up [Identity Resolution](/docs/unify/identity-resolution/).
 
 To set up Profiles Sync, you’ll first create a warehouse, then connect the warehouse within the Segment app.
 
@@ -21,7 +20,7 @@ Before you begin, prepare for setup with these tips:
 
 ### Step 1: Create a warehouse
 
-You’ll first choose the Destination warehouse to which Segment will sync Profiles. Profiles Sync supports the Snowflake, Redshift, BigQuery, Azure, and Postgres warehouse Destinations. Your initial setup will depend on the warehouse you choose.
+You’ll first choose the Destination warehouse to which Segment will sync profiles. Profiles Sync supports the Snowflake, Redshift, BigQuery, Azure, and Postgres warehouse Destinations. Your initial setup will depend on the warehouse you choose.
 
 The following table shows the supported Profiles Sync warehouse Destinations and the corresponding required steps for each. Select a warehouse, view its Segment documentation, then carry out the warehouse’s required steps before moving to Step 2 of Profiles Sync setup:
 
@@ -66,7 +65,7 @@ Segment may also display IP addresses you’ll need to allowlist in your warehou
 
 Follow these steps to connect your warehouse:
 
-1. In your Segment workspace, navigate to **Profiles > Profiles Sync**.
+1. In your Segment workspace, navigate to **Unify > Profiles Sync**.
 2. Select **Add warehouse**, choose the warehouse you just set up, then select **Next**.
 3. Segment shows an IP address to allowlist.  Copy it to your warehouse Destination.
 4. Segment prompts you to enter specific warehouse credentials. Enter them, then select **Test Connection**.
@@ -79,7 +78,7 @@ Segment staff then receives and enables live sync for your account.
 
 #### Using historical backfill
 
-Profiles Sync sends Profiles to your warehouse on an hourly basis, beginning after you complete setup. You can use backfill, however, to sync historical Profiles to your warehouse, as well.
+Profiles Sync sends profiles to your warehouse on an hourly basis, beginning after you complete setup. You can use backfill, however, to sync historical profiles to your warehouse, as well.
 
 When Segment runs historical backfills:
 
@@ -92,7 +91,7 @@ Reach out to [Segment support](https://app.segment.com/workspaces?contact=1){:ta
 
 
 > success ""
-> While historical backfill is running, you can start building [materialized views](/docs/profiles/profiles-sync/tables/#tables-you-materialize) and running [sample queries](/docs/profiles/profiles-sync/sample-queries).   
+> While historical backfill is running, you can start building [materialized views](/docs/unify/profiles-sync/tables/#tables-you-materialize) and running [sample queries](/docs/unify/profiles-sync/sample-queries).   
 
 ### Step 3: Materialize key views using a SQL automation tool
 
@@ -102,7 +101,7 @@ To start seeing unified profiles in your warehouse and build attribution models,
   * `external_id_mapping`: the current-state mapping between each external identifier you’ve observed and its corresponding, fully-merged `canonical_segment_id`
   * `profile_traits`: the last seen value for all custom traits, computed traits, SQL traits, audiences, and journeys associated with a profile in a single row
 
-Please visit [Tables you materialize](/docs/profiles/profiles-sync/tables/#tables-you-materialize) for more on how to materialize these views either on your own, or with [Segment's open source dbt models](https://github.com/segmentio/profiles-sync-dbt){:target="blank"}.
+Please visit [Tables you materialize](/docs/unify/profiles-sync/tables/#tables-you-materialize) for more on how to materialize these views either on your own, or with [Segment's open source dbt models](https://github.com/segmentio/profiles-sync-dbt){:target="blank"}.
 
 ## Profiles Sync limits
 
@@ -142,13 +141,13 @@ The **Settings** tab of the Profiles Sync page contains tools that can help you 
 
 In the **Basic settings** tab, you can disable warehouse syncs or delete your connected warehouse altogether.
 
-To disable syncs, toggle **Sync status** to off. Segment retains your warehouse credentials but stops further Profiles syncs. Toggle Sync status back on at any point to continue syncs.
+To disable syncs, toggle **Sync status** to off. Segment retains your warehouse credentials but stops further syncs. Toggle Sync status back on at any point to continue syncs.
 
 To delete your warehouse, toggle **Sync status** to off, then select **Delete warehouse**. Segment doesn’t retain credentials for deleted warehouses; to reconnect a deleted warehouse, you must set it up as a new warehouse.
 
 #### Connection settings
 
-In the **Connection settings** tab, you can verify your synced warehouse’s credentials and view IP addresses you’ll need to allowlist so that Segment can successfully sync Profiles.
+In the **Connection settings** tab, you can verify your synced warehouse’s credentials and view IP addresses you’ll need to allowlist so that Segment can successfully sync profiles.
 
 If you have write access, you can verify that your warehouse is successfully connected to Segment by entering your password and then selecting **Test Connection**.
 

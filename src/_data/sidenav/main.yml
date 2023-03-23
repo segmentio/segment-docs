@@ -251,59 +251,50 @@ sections:
     title: BigQuery Reverse ETL Setup
   - path: /reverse-etl/snowflake-setup
     title: Snowflake Reverse ETL Setup
-- section_title: Profiles
+- section_title: Unify
   section:
-  - path: /profiles
-    title: Profiles Overview
-  - path: /profiles/quickstart
-    title: Profiles Onboarding
-  # - section_title: User Subscriptions
-  #   slug: profiles/user-subscriptions
-  #   section:
-  #   - path: /profiles/user-subscriptions
-  #     title: User Subscriptions
-  #   - path: /profiles/user-subscriptions/set-user-subscriptions
-  #     title: Set User Subscriptions
-  #   - path: /profiles/user-subscriptions/subscription-states
-  #     title: Subscription States
+  - path: /unify
+    title: Unify Overview
+  - path: /unify/quickstart
+    title: Unify Onboarding
   - section_title: Identity Resolution
-    slug: profiles/identity-resolution
+    slug: unify/identity-resolution
     section:
-    - path: /profiles/identity-resolution
+    - path: /unify/identity-resolution
       title: Overview
-    - path: /profiles/identity-resolution/identity-resolution-onboarding
+    - path: /unify/identity-resolution/identity-resolution-onboarding
       title: Onboarding
-    - path: /profiles/identity-resolution/space-setup
+    - path: /unify/identity-resolution/space-setup
       title: Space Setup
-    - path: /profiles/identity-resolution/use-cases
+    - path: /unify/identity-resolution/use-cases
       title: Use Cases
-    - path: /profiles/identity-resolution/externalids
+    - path: /unify/identity-resolution/externalids
       title: External IDs
-    - path: /profiles/identity-resolution/identity-resolution-settings
+    - path: /unify/identity-resolution/identity-resolution-settings
       title: Settings
-    - path: /profiles/identity-resolution/ecommerce-example
+    - path: /unify/identity-resolution/ecommerce-example
       title: E-Commerce Example
   - section_title: Profiles Sync
-    slug: profiles/profiles-sync
+    slug: unify/profiles-sync
     section:
-    - path: /profiles/profiles-sync/overview
-      title: Profiles Sync Overview 
-    - path: /profiles/profiles-sync
+    - path: /unify/profiles-sync/overview
+      title: Profiles Sync Overview
+    - path: /unify/profiles-sync
       title: Setup
-    - path: /profiles/profiles-sync/sample-queries
+    - path: /unify/profiles-sync/sample-queries
       title: Sample Queries
-    - path: /profiles/profiles-sync/tables
+    - path: /unify/profiles-sync/tables
       title: Tables & Materialized Views
-  - path: /profiles/profile-api
+  - path: /unify/profile-api
     title: Profile API
-  - path: /profiles/profile-api-limits
+  - path: /unify/profile-api-limits
     title: Profile API Limits
-  - path: /profiles/debugger
+  - path: /unify/debugger
     title: Profile Debugger
-  - path: /profiles/profiles-gdpr
-    title: Profiles and GDPR
-  - path: /profiles/faqs
-    title: Profiles FAQs
+  - path: /unify/unify-gdpr
+    title: Unify and GDPR
+  - path: /unify/faqs
+    title: Unify FAQs
 
 - section_title: Engage
   section:

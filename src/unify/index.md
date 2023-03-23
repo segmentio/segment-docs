@@ -1,11 +1,11 @@
 ---
-title: Profiles Overview
-plan: profiles
+title: Unify Overview
+plan: unify
 redirect_from:
   - '/engage/profiles/'
 ---
 
-Use Segment Profiles for a complete view of your customers.
+Use Segment Unify, formerly known as Profiles, for a complete view of your customers.
 
 With [Identity Resolution](#identity-resolution), track every interaction across the entire user journey to create unified, real-time customer identities. View user profiles in one place through the [Profile Explorer](#profile-explorer) in the Segment app. Use the [Profile API](#profile-api) to programmatically query user profiles, traits, and events.
 
@@ -14,14 +14,14 @@ You can then use this interaction data with customer engagement tools, such as E
 ## Getting started
 
 > info ""
-> Profiles is an add-on to Segment Connections Business Tier. It's also a required add-on for Twilio Engage.
-> To use [Computed Traits](/docs/engage/audiences/computed-traits/) and [Audiences](/docs/engage/audiences/) with profiles, you must have access to Engage.
+> Unify is an add-on to Segment Connections Business Tier. It's also a required add-on for Twilio Engage.
+> To use [Computed Traits](/docs/engage/audiences/computed-traits/) and [Audiences](/docs/engage/audiences/) with Unify, you must have access to Engage.
 
-To set up and get data flowing through Profiles, visit Segment's [Onboarding Guide](/docs/profiles/quickstart).
+To set up and get data flowing through Unify, visit Segment's [Onboarding Guide](/docs/unify/quickstart).
 
 ## Identity Resolution
 
-Set [Identity Resolution](/docs/profiles/identity-resolution/identity-resolution-settings/#identity-resolution-rules) rules to take event data from across devices and channels and intelligently merge it into complete user- or account-level profiles. This enables you to understand customer behavior as it evolves in real-time across multiple touchpoints.
+Set [Identity Resolution](/docs/unify/identity-resolution/identity-resolution-settings/#identity-resolution-rules) rules to take event data from across devices and channels and intelligently merge it into complete user- or account-level profiles. This enables you to understand customer behavior as it evolves in real-time across multiple touchpoints.
 
 With Identity Resolution:
 
@@ -29,7 +29,7 @@ With Identity Resolution:
 - Track customer activity across multiple devices and apps.
 - Learn how a user interacts with your brand through different channels and departments.
 
-Visit Segment's [Identity Resolution docs](/docs/profiles/identity-resolution/) to learn more.
+Visit Segment's [Identity Resolution docs](/docs/unify/identity-resolution/) to learn more.
 
 ## Profile Explorer
 
@@ -55,8 +55,8 @@ Use the Profile API to help your organization:
 - Create personalized marketing campaigns.
 - Qualify leads faster.
 
-Visit Segment's [Profile API doc](/docs/profiles/profile-api/) for more information.
+Visit Segment's [Profile API doc](/docs/unify/profile-api/) for more information.
 
 ## Next steps: activate your profiles with Engage
 
-For Engage users, after you set up your identity rules and have data flowing through Profiles, you can activate Profiles to deliver personalized engagement experiences. Visit the [Engage docs](/docs/engage/) to learn more.
+For Engage users, after you set up your identity rules and have data flowing through Unify, you can activate profiles to deliver personalized engagement experiences. Visit the [Engage docs](/docs/engage/) to learn more.

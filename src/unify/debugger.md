@@ -1,6 +1,6 @@
 ---
 title: Using the Engage Source Debugger
-plan: profiles
+plan: unify
 redirect_from:
   - "/personas/debugger"
 ---
@@ -13,7 +13,7 @@ The Debugger provides you with the payload information you need to troubleshoot 
 
 ## Working with the Debugger
 
-Navigate to the Debugger tab on the Profiles Settings page of the space you want to debug. Select the Source you want to inspect in the Debugger.
+Navigate to the Debugger tab on the Unify Settings page of the space you want to debug. Select the Source you want to inspect in the Debugger.
 
 The Debugger presents a stream of incoming events. The event inspector displays three tabs for each event:
 

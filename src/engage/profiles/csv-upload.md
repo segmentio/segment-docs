@@ -4,7 +4,7 @@ plan: engage-premier
 ---
 Use the CSV Uploader to add or update user profiles and set subscription states.
 
-When you upload a CSV file, Twilio Engage adds new users and updates existing user profiles. Each CSV row corresponds to a user profile and columns to an identifier in your [identity resolution configuration](/docs/profiles/identity-resolution/identity-resolution-settings/).
+When you upload a CSV file, Twilio Engage adds new users and updates existing user profiles. Each CSV row corresponds to a user profile and columns to an identifier in your [identity resolution configuration](/docs/unify/identity-resolution/identity-resolution-settings/).
 
 You can also [set subscription states](#set-user-subscriptions) for each email and phone number that you upload in the CSV. Subscription states help you track which email addresses and numbers you have permission to market to.
 
@@ -12,7 +12,7 @@ You can also [set subscription states](#set-user-subscriptions) for each email a
 
 There are two ways you can navigate to the Upload CSV page:
 - Select **Engage > Audiences > Profile explorer** and click **Upload CSV**.
-- Select **Profiles > Profile explorer** and click **Upload CSV**.
+- Select **Unify > Profile explorer** and click **Upload CSV**.
 
 ### 1. Download your CSV template
 
@@ -21,7 +21,7 @@ Click **Download Template** to download a CSV template with identifier columns f
 > info ""
 > CSV files can only have a single **email** and **phone** identifier column. Include any additional email addresses or phone numbers for a user profile as a separate row.
 
-Navigate to **Profiles > Profiles settings** and select the **Identity resolution** tab to view or add identifiers in your Segment workspace.
+Navigate to **Unify > Unify settings** and select the **Identity resolution** tab to view or add identifiers in your Segment workspace.
 
 ### 2. Fill out your CSV file
 
@@ -53,7 +53,7 @@ Custom traits display in the Custom Traits tab of a user profile in the Profile 
 
 Use the Upload history page to view CSV file uploads in your workspace over the last 30 days.
 
-Navigate to **Engage > Audiences > Profile explorer** or **Profiles > Profile explorer** and select the **CSV upload history** tab.
+Navigate to **Engage > Audiences > Profile explorer** or **Unify > Profile explorer** and select the **CSV upload history** tab.
 
 Select links to view CSV files and any associated [error reports](#error-reports). View the status of the file upload and the custom trait name added to user profiles in the CSV upload.
 
