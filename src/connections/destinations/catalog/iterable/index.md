@@ -64,8 +64,8 @@ First `track` event with `userId` and `email`; user will be created
 
 Subsequent `track` with `userId`
 
- info ""
-> If you send ISO formatted date field in your events, Segment will automatically convert it into UTC to conform to standard Iterable format: "yyyy-MM-dd HH:mm:ss ZZ" (for example, "2023-02-05 20:42:10 +00:00"). Iterable has a specific date format that must be used to segment a field by date. Read more about Iterable date field here: https://support.iterable.com/hc/en-us/articles/208183076-Data-Field-Types-in-Iterable#date
+> info ""
+> If you send an ISO formatted date field in your events, Segment converts it into UTC to conform to standard Iterable format: `yyyy-MM-dd HH:mm:ss ZZ` (for example, `2023-02-05 20:42:10 +00:00`). Iterable has a specific date format that must be used to segment a field by date. Read more about Iterable date field [here](https://support.iterable.com/hc/en-us/articles/208183076-Data-Field-Types-in-Iterable#date){:target="_blank"}.
 
 ### Ecommerce
 
