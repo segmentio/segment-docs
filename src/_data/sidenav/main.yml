@@ -257,19 +257,6 @@ sections:
     title: Rate Limits
   - path: /connections/regional-segment
     title: Regional Segment
-<<<<<<< HEAD
-- section_title: Reverse ETL
-  section:
-  - path: /reverse-etl
-    title: Reverse ETL Overview
-  - path: /reverse-etl/bigquery-setup
-    title: BigQuery Reverse ETL Setup
-  - path: /reverse-etl/redshift-setup
-    title: Redshift Reverse ETL Setup
-  - path: /reverse-etl/snowflake-setup
-    title: Snowflake Reverse ETL Setup
-=======
->>>>>>> 892582b7c (reverse etl ga edits)
 - section_title: Profiles
   section:
   - path: /profiles
