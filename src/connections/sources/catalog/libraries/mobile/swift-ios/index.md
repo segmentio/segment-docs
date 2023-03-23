@@ -407,13 +407,13 @@ analytics.flush()
 {% endcodeexampletab %}
 {% endcodeexample %}
 
-## Destination filters
+<!-- ## Destination filters
 > info ""
 > Destination filters are only available to Business Tier customers.
 >
 > Destination filters on mobile device-mode destinations are in beta and only supports Analytics-Swift, [Analytics-Kotlin](/docs/connections/sources/catalog/libraries/mobile/kotlin-android/), and [Analytics-React-Native 2.0](/docs/connections/sources/catalog/libraries/mobile/react-native/).
 
-Use Analytics-Swift to set up [destination filters](docs/connections/destinations/destination-filters/) on your mobile device-mode destinations.
+Use Analytics-Swift to set up [destination filters](/docs/connections/destinations/destination-filters/) on your mobile device-mode destinations.
 
 > warning ""
 > Keep [these limitations](/docs/connections/destinations/destination-filters/#limitations) in mind when using destination filters.
@@ -429,7 +429,7 @@ To get started with destination filters using Swift:
 2. Add the plugin.
 ```swift
 analytics.add(DestinationFilters())
-```
+``` -->
 
 ## Ad Tracking and IDFA
 [Segment no longer automatically collects IDFA](/docs/connections/sources/catalog/libraries/mobile/ios/ios14-guide/#segment-no-longer-automatically-collects-idfa). If you need to collect the user's IDFA to pass it to specific destinations, or for other uses, [you can manually pass the IDFA to the Segment SDK](/docs/connections/sources/catalog/libraries/mobile/ios/ios14-guide/#you-can-manually-pass-the-idfa-to-the-segment-sdk).

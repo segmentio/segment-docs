@@ -135,7 +135,7 @@ All computed trait types support a common "Add Conditions" section. Conditions d
 
 The following operators are available.
 - equals
-- not equals -
+- not equals
 - less than
 - greater than
 - less than or equal
@@ -148,7 +148,9 @@ The following operators are available.
 - not exists
 - before date
 - after date
-
+- equals one of
+- contains one of
+- 
 ## Connecting your Computed Trait to a Destination
 
 Engage sends user-level computed Traits to destinations using the [Identify call](/docs/connections/spec/identify/) for user traits, or using the [Track call](/docs/connections/spec/track/) for event properties. Segment includes the trait value and property in the identify and track calls.

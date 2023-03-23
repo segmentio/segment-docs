@@ -12,7 +12,7 @@ With Transformations, you can change data as it flows through Segment to either 
 You can also use [Segment's Public API](https://docs.segmentapis.com/tag/Transformations){:target="_blank"} to transform events, properties, and property values for many [use cases](#use-cases).
 
 
-**Transformations are very powerful and should be applied with care!**
+**Transformations are very powerful and should be applied with care.**
 
 Transformations _irrevocably_ change the event payloads flowing through Segment and immediately affect either all destinations, or a single downstream destination, depending on your settings.
 
@@ -37,6 +37,9 @@ All Protocols Transformations are listed in the Transformations tab in the Proto
 Transformations can be enabled and disabled directly from the list view using the toggle.
 
 Transformations can be deleted and edited by clicking on the overflow menu. When editing a Transformation, only the resulting event or property names, and Transformation name can be edited. If you want to select a different event or source, create a separate Transformation rule.
+
+> note "Transformations created using the Public API"
+> On the Transformations page in the Segment app, you can view and rename transformations that you created with the Public API. In some cases, you can edit these transformations in the UI.
 
 ## Create a Transformation
 
@@ -112,11 +115,23 @@ Here's a list of Segment Transformations with some use case examples.
 
 - **Update a property value:** Use [Segment's Public API](https://docs.segmentapis.com/tag/Transformations){:target="_blank"} to transform the property `currency` to have the value `USD`. 
 
-- **Add a new property name and assign a value:** If you want to create a new property and set a static value, use [Segment's Public API](https://docs.segmentapis.com/tag/Transformations){:target="_blank"} to create `new_property: static_value`. Segment currently supports setting static values for top-level fields with `propertyValueTransformations`. However, Segment doesn't support changing fields outside the properties or traits object with `propertyRenames`.
-
-{% comment %}
-- **Change property value casing:** Transform property value casing to lowercase, uppercase, or title case. For example, Transform the property value `united states` to `USA` to remain consistent with your data tracking.
-{% endcomment %}
+- **Property Transformations**
+  - **Assigning static values:** If you want to create a new property and set a static value, use [Segment's Public API](https://docs.segmentapis.com/tag/Transformations){:target="_blank"} to create `new_property: static_value`. Segment currently supports setting static values for top-level fields, as well as fields within the `context` or `properties` object with `propertyValueTransformations`. However, Segment doesn't support changing fields outside the properties or traits object with `propertyRenames`. You can use `propertyValueTransformations` on a single object to assign the same value to different fields or on multiple objects to assign a static value to the same field across objects.
+  - **Casing functions:** Use [Segment's Public API](https://docs.segmentapis.com/tag/Transformations){:target="_blank"} to transform property value casing to `lowercase`, `uppercase`, `snakecase`, `kebabcase`, or `titlecase`. When transforming data with casing functions, use the [`fqlDefinedProperties`](https://docs.segmentapis.com/tag/Transformations#operation/createTransformation!ct=application/vnd.segment.v1+json&path=fqlDefinedProperties&t=request){:target="_blank"} array to define the FQL you want to use and the new or existing `propertyName` you'd like to transform.
+    - **Static and dynamic value casing:** Use casing functions to transform property values to create uniform tracking data. For example, you can convert `usa` to `USA` to keep your downstream data consistent. <br/>You can transform these properties using static casing functions: <br/>
+    ```
+    fqlDefinedProperties": [{"fql": "uppercase("United States)", "propertyName": "properties.propertyValue1"}]
+    ``` 
+    or dynamic casing functions:
+    ```
+    fqlDefinedProperties": [{"fql": "lowercase(properties.propertyValue1)", "propertyName": "properties.propertyValue1"}]
+    ```
+    - **Create a new property with applied casing**: Use [Segment's Public API](https://docs.segmentapis.com/tag/Transformations){:target="_blank"} to create a new property and set the value of the new property to the transformed value of an existing property. You can dynamically assign the value of one existing property to another, or assign the value of an existing property to a new property without applying casing functions. <br/>For example, create a new property (`prop2`) with a value of `lowercase(properties.prop1)` by including the following snippet in your payload:<br/>
+    ```
+    fqlDefinedProperties": [{"fql": "lowercase(properties.prop1)", "propertyName": "properties.prop2"}]
+    ```
+  - Note that you can only assign one property to `fqlDefinedProperties` array.
+  - Note that you cannot use `fqlDefinedProperties` along with event or property rename or property value transformations.
 
 > info ""
 > Segment displays an error if the following property conflicts occur:

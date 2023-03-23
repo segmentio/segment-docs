@@ -25,12 +25,19 @@ You need to set up two important parts, regardless of the CDN provider you use:
 - Proxy to Segment CDN (`cdn.segment.com`)
 - Proxy to Segment tracking API (`api.segment.io`)
 
-> info " "
+> warning ""
+> If you are using a [Regional Workspace](/docs/guides/regional-segment/#client-side-sources), please note that instead of using `api.segment.io` to proxy the Tracking API, you'll be using `events.eu1.segmentapis.com`
+
+> info ""
 > Segment only has the ability to enable the proxy setting for the Web (Analytics.js) source. Details for mobile source proxies are in the [Analytics for iOS](/docs/connections/sources/catalog/libraries/mobile/ios/#proxy-https-calls) and [Analytics for Android](/docs/connections/sources/catalog/libraries/mobile/android/#proxying-http-calls) documentation.  It is not currently possible to set up a proxy for server sources using the Segment UI.
 
 ## Set up
 
-Follow the directions listed for CloudFront or use your own CDN setup. Once you complete those steps and verify that your proxy works for both `cdn.segment.com` and `api.segment.io`, [contact Segment Product Support](https://segment.com/help/contact/) with the following template email:
+There are 2 options you can choose from when you set up your custom domain proxy.
+1. [CloudFront](#cloudfront)
+2. [Custom CDN or API proxy](#custom-cdn--api-proxy)
+
+Follow the directions listed for [CloudFront](#cloudfront) or [use your own CDN setup](#custom-cdn--api-proxy). Once you complete those steps and verify that your proxy works for both `cdn.segment.com` and `api.segment.io`, [contact Segment Product Support](https://segment.com/help/contact/) with the following template email:
 
 ```text
 Hi,
@@ -50,6 +57,62 @@ A Segment Customer Success team member will respond that they have enabled this 
 
 > info ""
 > The **Host Address** field does not appear in source settings until it's enabled by Segment Customer Success.
+
+
+## Custom CDN / API Proxy
+Follow these instructions after setting up a proxy such as [CloudFront](#cloudfront). Choose between the [snippet instructions](#snippet-instructions) or the [npm instructions](#npm-instructions).  
+
+### Snippet instructions
+If you're a snippet user, you need to modify the [analytics snippet](/docs/getting-started/02-simple-install/#step-1-copy-the-snippet) that's inside your `<head>`.
+
+To proxy settings and destination requests that typically go to `https://cdn.segment.com`, replace:
+```diff
+- t.src="https://cdn.segment.com/analytics.js/v1/" + key + "/analytics.min.js"
++ t.src="https://MY-CUSTOM-CDN-PROXY.com" + key + "/analytics.min.js"
+```
+
+To proxy tracking calls that typically go to `api.segment.io/v1`, replace:
+```diff
+- analytics.load("<MY_WRITE_KEY>")
++ analytics.load("<MY_WRITE_KEY>", { integrations: { "Segment.io": { apiHost: "MY-CUSTOM-API-PROXY.com/v1" }}})
+```
+
+### npm instructions
+See the [`npm` library-users instructions](https://www.npmjs.com/package/@segment/analytics-next){:target="_blank"} for more information.
+
+Proxy settings and destination requests that typically go to `https://cdn.segment.com` through a custom proxy.
+
+```ts
+const analytics = AnalyticsBrowser.load({
+  writeKey,
+  // GET https://MY-CUSTOM-CDN-PROXY.com/v1/project/<writekey>/settings --> proxies to
+  // https://cdn.segment.com/v1/projects/<writekey>/settings
+
+  // GET https://MY-CUSTOM-CDN-PROXY.com/next-integrations/actions/...js  --> proxies to
+  // https://cdn.segment.com/next-integrations/actions/...js
+  cdnURL: 'https://MY-CUSTOM-CDN-PROXY.com'
+ })
+```
+
+Proxy tracking calls that typically go to `api.segment.io/v1` by configuring `integrations['Segment.io'].apiHost`.
+```ts
+const analytics = AnalyticsBrowser.load(
+    {
+      writeKey,
+      cdnURL: 'https://MY-CUSTOM-CDN-PROXY.com'
+    },
+    {
+      integrations: {
+        'Segment.io': {
+          // POST https://MY-CUSTOM-API-PROXY.com/v1/t --> proxies to
+          // https://api.segment.io/v1/t
+          apiHost: 'MY-CUSTOM-API-PROXY.com/v1',
+          protocol: 'https' // optional
+        }
+      }
+    }
+  )
+```
 
 ## CloudFront
 

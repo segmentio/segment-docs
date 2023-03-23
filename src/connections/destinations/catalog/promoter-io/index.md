@@ -1,10 +1,11 @@
 ---
 title: Promoter Destination
 id: 55b6983e0a20f4e22f0fb3da
+deprecated: true
+hidden: true
+hide-dossier: true
 ---
 
-> warning "Promoter.io Deprecation"
-> The Promoter.io product was deprecated on January 31, 2023. The Segment Promoter Destination is no longer operational.
 
 ## Getting Started
 

@@ -93,3 +93,7 @@ To connect two resource instances, you must have access to both. You can either 
 To **view** transformations, you need `Source Read-only`, either for all Sources or the specific Sources using Protocols.
 
 To **create or edit** transformations you must have either `Source Admin` for all Sources, or for the specific Sources used with Protocols.
+
+## Roles for Privacy Portal
+
+To **view, create or edit** PII related configurations in Privacy Portal, you need to have the `Workspace Owner` role.

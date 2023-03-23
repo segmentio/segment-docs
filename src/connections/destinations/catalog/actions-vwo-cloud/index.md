@@ -3,7 +3,9 @@ title: VWO Cloud Mode (Actions) Destination
 hide-boilerplate: true
 hide-dossier: false
 id: 63bedc136a8484a53739e013
-private: true
+versions:
+  - name: 'VWO Web Mode (Actions)'
+    link: '/docs/connections/destinations/catalog/actions-vwo-web/'
 ---
 
 {% include content/plan-grid.md name="actions" %}
@@ -22,9 +24,9 @@ VWO Cloud Mode (Actions) provides the following benefits over the classic VWO de
 
 ## Getting started
 
-1. From the Segment web app dashboard, navigate to Connections > Catalog.
-2. Under the Destinations tab, search for “VWO Cloud Mode (Actions)”, and select the destination.
-3. Click Configure VWO Cloud Mode (Actions).
+1. From the Segment web app dashboard, navigate to **Connections > Catalog**.
+2. Under the **Destinations** tab, search for “VWO Cloud Mode (Actions)”, and select the destination.
+3. Click **Configure VWO Cloud Mode (Actions)**.
 4. Select the source that will send data to VWO Cloud Mode (Actions), click **Next** to enter the name of your destination, and click Save.
 5. On the **Settings** tab, under **Other Settings**, click on **Account ID**, enter your VWO account ID, and click **Save**. 
 6. To customize the mapping of actions, follow the steps in the Destinations Actions documentation on [Customizing mappings](/docs/connections/destinations/actions/#customize-mappings). Mappings in Segment allow you to control the events and attributes that are sent to VWO. 

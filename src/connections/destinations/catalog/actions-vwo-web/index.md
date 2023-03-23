@@ -3,7 +3,9 @@ title: VWO Web Mode (Actions) Destination
 hide-boilerplate: true
 hide-dossier: false
 id: 637c192eba61b944e08ee158
-private: true
+versions:
+  - name: 'VWO Cloud Mode (Actions)'
+    link: '/docs/connections/destinations/catalog/actions-vwo-cloud/'
 ---
 
 {% include content/plan-grid.md name="actions" %}
@@ -17,22 +19,22 @@ private: true
 
 VWO Web Mode (Actions) provides the following benefits over the classic VWO destination:
 
-- **Support for event architecture (Data360)**. With the Web mode destination enabled, you will be able to transfer all the events and attributes into your VWO account through the [Data360 module](https://help.vwo.com/hc/en-us/articles/8679651827737-About-VWO-Data360). You can use these events and attributes to [create segments](https://help.vwo.com/hc/en-us/articles/360020418454-Using-Segmentation-in-VWO) and [metrics](https://help.vwo.com/hc/en-us/articles/8675547113625) in your VWO campaigns.
+- **Support for Customer Data Platform (Data360)**. With the Web mode destination enabled, you will be able to transfer all the events and attributes into your VWO account through the [Data360 module](https://help.vwo.com/hc/en-us/articles/8679651827737-About-VWO-Data360). You can use these events and attributes to [create segments](https://help.vwo.com/hc/en-us/articles/360020418454-Using-Segmentation-in-VWO) and [metrics](https://help.vwo.com/hc/en-us/articles/8675547113625) in your VWO campaigns.
 
 ## Getting started
 
-1. From the Segment web app dashboard, navigate to Connections > Catalog.
-2. Under the Destinations tab, search for “VWO Web Mode (Actions)”, and select the destination.
-3. Click Configure VWO Web Mode (Actions).
+1. From the Segment web app dashboard, navigate to **Connections > Catalog**.
+2. Under the **Destinations** tab, search for “VWO Web Mode (Actions)”, and select the destination.
+3. Click **Configure VWO Web Mode (Actions)**.
 4. Select the source that will send data to VWO Web Mode (Actions), click Next to enter the name of your destination, and click Save.
-5. On the Basic Settings page that appears, configure the following details in the respective fields:
+5. On the **Basic Settings** page that appears, configure the following details in the respective fields:
    - Name of the destination
    - Your VWO Account ID
    - Settings Tolerance
    - Library Tolerance
-6. In order for VWO to function properly, it needs jQuery to be loaded on your web page. If jQuery already exists, then turn ON the Use Existing JQuery toggle switch. Else, VWO will load a jQuery on your web page. 
+6. In order for VWO to function properly, it needs jQuery to be loaded on your web page. If jQuery already exists, then turn ON the **Use Existing JQuery** toggle switch. Else, VWO will load a jQuery on your web page. 
 7. To customize the mapping of actions, follow the steps in the Destinations Actions documentation on [Customizing mappings](/docs/connections/destinations/actions/#customize-mappings). Mappings in Segment allow you to control the events and attributes that are sent to VWO. 
-8. Finally, enable the destination using the Enable Destination toggle switch and click Save Changes.
+8. Finally, enable the destination using the **Enable Destination** toggle switch and click **Save Changes**.
 
 
 {% include components/actions-fields.html %}

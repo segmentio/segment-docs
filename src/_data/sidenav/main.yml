@@ -249,6 +249,8 @@ sections:
     title: Reverse ETL Overview
   - path: /reverse-etl/bigquery-setup
     title: BigQuery Reverse ETL Setup
+  - path: /reverse-etl/redshift-setup
+    title: Redshift Reverse ETL Setup
   - path: /reverse-etl/snowflake-setup
     title: Snowflake Reverse ETL Setup
 - section_title: Unify
@@ -317,6 +319,8 @@ sections:
       title: Subscription States
     - path: /engage/user-subscriptions/engage-source
       title: Engage Events Source
+    - path: /engage/user-subscriptions/subscription-sql
+      title: Subscriptions with SQL Traits
   - section_title: Profiles
     description: "See how to create audiences based on data."
     section:
@@ -366,6 +370,10 @@ sections:
       title: Email Template Editor
     - path: '/engage/content/sms/template'
       title: SMS Template
+    - path: '/engage/content/sms/template'
+      title: SMS Template
+    - path: '/engage/content/whatsapp'
+      title: WhatsApp Template
   - section_title: Campaigns
     description: "Create multi-channel campaigns to get the right message to your users."
     section:
@@ -375,6 +383,8 @@ sections:
       title: Email Campaigns
     - path: '/engage/campaigns/sms-campaigns'
       title: SMS Campaigns
+    - path: '/engage/campaigns/whatsapp-campaigns'
+      title: WhatsApp Campaigns
   - path: '/engage/analytics'
     title: Analytics Overview
   - path: '/engage/settings'

@@ -1,6 +1,6 @@
 ---
 title: User Subscriptions Overview
-plan: engage-foundations
+plan: engage-premier
 ---
 
 Segment associates [subscription states](/docs/engage/user-subscriptions/set-user-subscriptions/) with each email address and phone number in your audiences. Subscription states indicate the level of consent end users have given to receive your marketing campaigns.
