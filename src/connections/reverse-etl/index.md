@@ -35,7 +35,7 @@ Follow these 4 steps to set up Reverse ETL and learn what each component is abou
 > Depending on what plan you're on, the UI navigation and interface will look different from what's presented in the docs until Reverse ETL fully rolls out to all users. 
 
 ### Step 1: Add a source
-A Source is where your data originates from. Traditionally in Segment, a [Source](/docs/connections/sources/#what-is-a-source) is a website, server library, mobile SDK, or cloud application which can send data into Segment. In Reverse ETL, your data warehouse is the Source.
+A source is where your data originates from. Traditionally in Segment, a [source](/docs/connections/sources/#what-is-a-source) is a website, server library, mobile SDK, or cloud application which can send data into Segment. In Reverse ETL, your data warehouse is the source.
 
 > info ""
 > Reverse ETL supports [these sources] and Segment is actively working on adding more. If you'd like to request Segment to add a particular source, please note it on the [feedback form](https://airtable.com/shriQgvkRpBCDN955){:target="_blank"}.
@@ -46,28 +46,13 @@ To add your warehouse as a source:
 > You need to be a user that has both read and write access to the warehouse.
 
 1. Navigate to **Connections > Sources** and select the **Reverse ETL** tab in the Segment app.
-<<<<<<< HEAD:src/connections/sources/reverse-etl/index.md
-2. Click **Add Source**.
-<<<<<<< HEAD
-<<<<<<< HEAD:src/reverse-etl/index.md
-3. Select the source you want to add. You can choose between **BigQuery**, **Snowflake**, and **Redshift**.
-=======
-3. Select the source you want to add. 
->>>>>>> 892582b7c (reverse etl ga edits):src/connections/sources/reverse-etl/index.md
-    * If you choose to use Snowflake, run the queries listed in the [Snowflake Reverse ETL setup guide](/docs/reverse-etl/snowflake-setup/) to set up the Segment Snowflake connector. Segment recommends using the `ACCOUNTADMIN` role to execute all the commands.
-    * If you choose to use BigQuery, use the permissions outlined in the [BigQuery Reverse ETL setup guide](/docs/reverse-etl/bigquery-setup/), to create a Service Account and generate JSON credentials that will then be copied into the Segment UI when creating a Reverse ETL Source.
-4. Add the account information for your source.  
-=======
-=======
 2. Click **Add Reverse ETL source**.
->>>>>>> 1eb6924a9 ([netlify-build]):src/connections/reverse-etl/index.md
 3. Select the source you want to add. You can choose between BigQuery, Redshift, and Snowflake.
 4. Follow the corresponding setup guide for your Reverse ETL source. 
-    * [BigQuery Reverse ETL setup guide](/docs/connections/reverse-etl/reverse-etl-source-setup-guides/bigquery-setup/)
-    * [Redshift Reverse ETL setup guide](/docs/connections/reverse-etl/reverse-etl-source-setup-guides/redshift-setup/)
-    * [Snowflake Reverse ETL setup guide](/docs/connections/reverse-etl/reverse-etl-source-setup-guides/snowflake-setup/)
+    * [BigQuery Reverse ETL setup guide](/docs/connections/reverse-etl/bigquery-setup/)
+    * [Redshift Reverse ETL setup guide](/docs/connections/reverse-etl/redshift-setup/)
+    * [Snowflake Reverse ETL setup guide](/docs/connections/reverse-etl/snowflake-setup/)
 5. Add the account information for your source.  
->>>>>>> 401fa6bc5 (edits)
     * For Snowflake users: Learn more about the Snowflake Account ID [here](https://docs.snowflake.com/en/user-guide/admin-account-identifier.html){:target="_blank"}.
 5. Click **Test Connection** to test to see if the connection works.
 6. Click **Create Source** if the test connection is successful.
