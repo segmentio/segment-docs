@@ -7,7 +7,7 @@ Profiles Sync connects identity-resolved customer profiles to a data warehouse o
 
 With a continual flow of synced profiles, teams can enrich and use these data sets as the basis for new audiences and models. Profiles Sync addresses a number of use cases, with applications for identity graph monitoring, attribution analysis, machine learning, and more. View [Profiles Sync Sample Queries](/docs/unify/profiles-sync/sample-queries) for an in-depth guide to Profiles Sync applications.
 
-
+ 
 ## Profiles Sync use cases
 
 To help you get started, here are a few example use cases:
