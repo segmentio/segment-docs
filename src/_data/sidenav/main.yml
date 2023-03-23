@@ -144,17 +144,6 @@ sections:
       menu_icon: read-more
     - path: /connections/sources/about-cloud-sources
       title: Cloud Sources
-    - section_title: Reverse ETL
-      slug: /connections/sources/reverse-etl
-      section:
-      - path: /connections/sources/reverse-etl
-        title: Reverse ETL Overview
-      - path: /connections/sources/reverse-etl/bigquery-setup/
-        title: BigQuery Reverse ETL Setup
-      - path: /connections/sources/reverse-etl/redshift-setup/
-        title: Redshift Reverse ETL Setup
-      - path: /connections/sources/reverse-etl/snowflake-setup/
-        title: Snowflake Reverse ETL Setup
     - path: /connections/sources/debugger
       title: Source Debugger
     - path: /connections/sources/custom-domains
@@ -175,6 +164,20 @@ sections:
       menu_icon: read-more
     - path: /connections/destinations/destination-filters
       title: Destination Filters
+  - section_title: Reverse ETL
+    slug: connections/reverse-etl
+    section:
+    - path: /connections/reverse-etl
+      title: Reverse ETL Overview
+    - section_title: Reverse ETL Source Setup Guides  
+      slug: connections/reverse-etl/reverse-etl-source-setup-guides
+      section: 
+      - path: /connections/reverse-etl/reverse-etl-source-setup-guides/bigquery-setup
+        title: BigQuery Reverse ETL Setup
+      - path: /connections/reverse-etl/reverse-etl-source-setup-guides/redshift-setup
+        title: Redshift Reverse ETL Setup
+      - path: /connections/reverse-etl/reverse-etl-source-setup-guides/snowflake-setup
+        title: Snowflake Reverse ETL Setup
   - section_title: Functions
     slug: connections/functions
     section:

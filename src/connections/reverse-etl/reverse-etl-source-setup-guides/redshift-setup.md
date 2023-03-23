@@ -1,9 +1,11 @@
 ---
 title: Redshift Reverse ETL Setup
 beta: true
+redirect_from:
+  - '/reverse-etl/redshift-setup/'
 ---
 
-Set up Redshift as your Reverse ETL source. You can also choose to set up Reverse ETL with [these sources](link_to_catalog).
+Set up Redshift as your Reverse ETL source. 
 
 To set up Redshift with Reverse ETL: 
 1. Log in to Redshift and select the Redshift cluster you want to connect with Reverse ETL.
@@ -17,7 +19,7 @@ To set up Redshift with Reverse ETL:
     -- allows the "segment" user to create new schemas on the specified database. (this is the name you chose when provisioning your cluster)
     GRANT CREATE ON DATABASE "<enter database name here>" TO "segment";
     ```
-4. Follow the steps listed in the [Add a source](/docs/connections/sources/reverse-etl#step-1-add-a-source) section to finish adding Redshift as your source.
+4. Follow the steps listed in the [Add a source](/docs/connections/reverse-etl#step-1-add-a-source) section to finish adding Redshift as your source.
 
 ### Extra Permissions
 Give the `segment` user read permissions for any resources (databases, schemas, tables) the query needs to access. 

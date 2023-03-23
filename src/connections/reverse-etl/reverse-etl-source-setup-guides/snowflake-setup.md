@@ -1,6 +1,8 @@
 ---
 title: Snowflake Reverse ETL Setup
 beta: true
+redirect_from:
+  - '/reverse-etl/snowflake-setup/'
 ---
 
 Set up Snowflake as your Reverse ETL source. 

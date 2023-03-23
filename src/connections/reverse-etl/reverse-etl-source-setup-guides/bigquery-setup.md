@@ -1,5 +1,7 @@
 ---
 title: BigQuery Reverse ETL Setup
+redirect_from:
+  - '/reverse-etl/bigquery-setup/'
 ---
 
 Set up BigQuery as your Reverse ETL source. 

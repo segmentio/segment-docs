@@ -1,9 +1,11 @@
 ---
 title: Reverse ETL
-beta: true
+beta: false
+redirect_from: 
+  - '/reverse-etl/'
 ---
 
-Reverse ETL (Extract, Transform, Load) extracts data from a data warehouse using a query you provide, and delivers the data to your 3rd party destinations. Reverse ETL allows you to connect your data warehouse to the tools that Marketing, Sales, Support, Product, Analytics, and other business teams use. For example, with Reverse ETL, you can sync rows from Snowflake to Salesforce. Reverse ETL supports event and object data. This includes customer profile data, subscriptions, product tables, shopping cart tables, and more.
+Reverse ETL (Extract, Transform, Load) extracts data from a data warehouse using a query you provide, and delivers the data to your 3rd party destinations. Reverse ETL allows you to connect your data warehouse to the tools that Marketing, Sales, Support, Product, Analytics, and other business teams use. For example, with Reverse ETL, you can sync records from Snowflake to Salesforce. Reverse ETL supports event and object data. This includes customer profile data, subscriptions, product tables, shopping cart tables, and more.
 
 As Segment is actively developing this feature, Segment welcomes your feedback on your experience with Reverse ETL. Click the button below to submit your feedback.
 
@@ -29,6 +31,9 @@ Follow these 4 steps to set up Reverse ETL and learn what each component is abou
 3. [Add a Destination](#step-3-add-a-destination)
 4. [Create Mappings](#step-4-create-mappings)
 
+> info ""
+> Depending on what plan you're on, the UI navigation and interface will look different from what's presented in the docs until Reverse ETL fully rolls out to all users. 
+
 ### Step 1: Add a source
 A Source is where your data originates from. Traditionally in Segment, a [Source](/docs/connections/sources/#what-is-a-source) is a website, server library, mobile SDK, or cloud application which can send data into Segment. In Reverse ETL, your data warehouse is the Source.
 
@@ -41,6 +46,7 @@ To add your warehouse as a source:
 > You need to be a user that has both read and write access to the warehouse.
 
 1. Navigate to **Connections > Sources** and select the **Reverse ETL** tab in the Segment app.
+<<<<<<< HEAD:src/connections/sources/reverse-etl/index.md
 2. Click **Add Source**.
 <<<<<<< HEAD
 <<<<<<< HEAD:src/reverse-etl/index.md
@@ -52,11 +58,14 @@ To add your warehouse as a source:
     * If you choose to use BigQuery, use the permissions outlined in the [BigQuery Reverse ETL setup guide](/docs/reverse-etl/bigquery-setup/), to create a Service Account and generate JSON credentials that will then be copied into the Segment UI when creating a Reverse ETL Source.
 4. Add the account information for your source.  
 =======
+=======
+2. Click **Add Reverse ETL source**.
+>>>>>>> 1eb6924a9 ([netlify-build]):src/connections/reverse-etl/index.md
 3. Select the source you want to add. You can choose between BigQuery, Redshift, and Snowflake.
 4. Follow the corresponding setup guide for your Reverse ETL source. 
-    * [BigQuery Reverse ETL setup guide](/docs/connections/sources/reverse-etl/bigquery-setup/)
-    * [Redshift Reverse ETL setup guide](/docs/connections/sources/reverse-etl/redshift-setup/)
-    * [Snowflake Reverse ETL setup guide](/docs/connections/sources/reverse-etl/snowflake-setup/)
+    * [BigQuery Reverse ETL setup guide](/docs/connections/reverse-etl/bigquery-setup/)
+    * [Redshift Reverse ETL setup guide](/docs/connections/reverse-etl/redshift-setup/)
+    * [Snowflake Reverse ETL setup guide](/docs/connections/reverse-etl/snowflake-setup/)
 5. Add the account information for your source.  
 >>>>>>> 401fa6bc5 (edits)
     * For Snowflake users: Learn more about the Snowflake Account ID [here](https://docs.snowflake.com/en/user-guide/admin-account-identifier.html){:target="_blank"}.
@@ -72,9 +81,9 @@ To add your first model:
 1. Navigate to **Connections > Sources** and select the **Reverse ETL** tab. Select your source and click **Add Model**.
 2. Click **SQL Editor** as your modeling method. (Segment will add more modeling methods in the future.)
 3. Enter the SQL query that’ll define your model. Your model is used to map data to your Reverse ETL destinations.
-4. Choose a column to use as the unique identifier for each row in the **Unique Identifier column** field.
-    * The Unique Identifier should be a column with unique values per row to ensure checkpointing works as expected. It can potentially be a primary key. This column is used to detect new, updated, and deleted rows.
-5. Click **Preview** to see a preview of the results of your SQL query. The data from the preview is extracted from the first 10 rows of your warehouse.
+4. Choose a column to use as the unique identifier for each record in the **Unique Identifier column** field.
+    * The Unique Identifier should be a column with unique values per record to ensure checkpointing works as expected. It can potentially be a primary key. This column is used to detect new, updated, and deleted records.
+5. Click **Preview** to see a preview of the results of your SQL query. The data from the preview is extracted from the first 10 records of your warehouse.
 6. Click **Next**.
 7. Enter your **Model Name**.
 8. Select the Schedule type for the times you want the model’s data to be extracted from your warehouse. You can choose from:
@@ -91,15 +100,17 @@ To add multiple models to your source, repeat steps 1-10 above.
 ### Step 3: Add a destination
 Once you’ve added a model, you need to add a destination. In Reverse ETL, destinations are the business tools or apps you use that Segment syncs the data from your warehouse to.
 
+If your destination is not listed in the Reverse ETL catalog, use the [Segment Connections Destination](#segment-connections-destination) to send data from your Reverse ETL warehouse to your destination.
+
 > info ""
 > Depending on the destination, you may need to know certain endpoints and have specific credentials to configure the destination.  
 >
 > If you'd like to request Segment to add a particular destination, please note it on the [feedback form](https://airtable.com/shriQgvkRpBCDN955){:target="_blank"}.  
 
 To add your first destination:
-1. Navigate to **Connections > Sources** and select the **Reverse ETL** tab.
-2. Click **Add Destination**.
-3. Select the destination you want to connect to.
+1. Navigate to **Connections > Destinations** and select the **Reverse ETL** tab.
+2. Click **Add Reverse ETL destination**.
+3. Select the destination you want to connect to and click **Configure**. 
 4. Select the source you want to connect the destination to.
 5. Enter the **Destination name** and click **Create Destination**.
 6. Enter the required information on the **Settings** tab of the destination.
@@ -108,7 +119,9 @@ To add your first destination:
 After you’ve added a destination, you can create mappings from your warehouse to the destination. Mappings enable you to map the data you extract from your warehouse to the fields in your destination.
 
 To create a mapping:
-1. Go to the **Mappings** tab of the destination and click **Add Mapping**.
+1. Navigate to **Conections > Destinations** and select the **Reverse ETL** tab. 
+2. Select the destination that you want to add a mapping to.  
+3. Click **Add Mapping**.
 2. Select the model to sync from.
 3. Select the **Action** you want to sync and click **Next**.
       * Actions determine the information sent to the destination. The list of Actions will be unique to each destination.
@@ -128,10 +141,10 @@ To create a mapping:
 To add multiple mappings from your warehouse to your destination, repeat steps 1-9 above.
 
 ## Using Reverse ETL
-After you've followed [all four steps](/docs/reverse-etl/#getting-started) and set up your source, model, destination, and mappings for Reverse ETL, your data will extract and sync to your destination(s) right away if you chose an interval schedule. If you set your data to extract at a specific day and time, the extraction will take place then.
+After you've followed [all four steps](/docs/connections/reverse-etl/#getting-started) and set up your source, model, destination, and mappings for Reverse ETL, your data will extract and sync to your destination(s) right away if you chose an interval schedule. If you set your data to extract at a specific day and time, the extraction will take place then.
 
-### Runs status and observability
-You can check the status of your data extractions and see details of your syncs. You can click into failed records to view additional details on the error, sample payloads to help you debug the issue, and recommended actions.
+### Sync status and observability
+Check the status of your data extractions and see details of your syncs. Click into failed records to view additional details on the error, sample payloads to help you debug the issue, and recommended actions.
 
 To check the status of your extractions:
 1. Navigate to **Reverse ETL > Destinations**.
@@ -158,44 +171,38 @@ To edit your mapping:
 2. Select the destination with the mapping you want to edit.
 3. Select the **...** three dots and click **Edit mapping**. If you want to delete your mapping, select **Delete**.
 
-## Data handling
-The Segment-owned infrastructure stores your data for no more than 14 days. After 14 days, the data is deleted. This means that some data in your sync history such as query results, detailed error messages, logs and other information will be unavailable after 14 days. 
-
-You can handle deletion of your data by deleting the data from your warehouse, and Segment will pick up that deletion on your next sync.
-
-> info "" 
-> All customer data is encrypted at all times.
 
 ## Record diffing
-The first time you run a query, Segment stores the unique identifier column or primary key (for example, segment_id) and a small checksum for every row in the customer data model within the customer’s warehouse. Segment doesn’t duplicate all column values for every row.
+Reverse ETL computes the incremental changes to your data directly within your data warehouse. The Unique Identifier column is used to detect the data changes, such as new, updated, and deleted records. 
 
-On subsequent runs of the query, Segment f irst performs that same checksumming operation for each row in the new result and uses a `JOIN` with the stored checksum table to create the list of new, updated, and deleted rows and to update the checksum table. This diffing operation is performed entirely using your data warehouse. This ensures that Segment doesn’t ingest data unnecessarily.
+In order for Segment to compute the data changes within your warehouse, Segment needs to have both read and write permissions to the warehouse schema table. At a high level, the extract process requires read permissions for the query being executed. Segment keeps track of changes to the query results through tables that Segment manages in a dedicated schema (for example, `_segment_reverse_etl`), which requires some write permissions. 
 
-If you want to resync individual rows (or all rows) whether they’ve changed or not, you need to delete those corresponding rows in the stored checksum table and Segment handles the rest.
+> warning ""
+> There may be cost implications to having Segment query your warehouse tables. 
 
 ## Segment Connections destination
-If you don’t see your destination listed in the [Reverse ETL catalog], use the [Segment Connections destination](/docs/connections/destinations/catalog/actions-segment/) to send data from your Reverse ETL warehouse to other destinations listed in the destinations catalog.  
+If you don’t see your destination listed in the [Reverse ETL catalog], use the [Segment Connections destination](/docs/connections/destinations/catalog/actions-segment/) to send data from your Reverse ETL warehouse to other destinations listed in the [catalog](/docs/connections/destinations/catalog/).  
 
-The Segment Connections destination enables you to mold data extracted from your warehouse in Segment Spec API calls that are then processed by [Segment’s HTTP Tracking API](/docs/connections/sources/catalog/libraries/server/http-api/). The Segment HTTP Tracking API lets you record analytics data from any website or application. The requests hit Segment’s servers, and then Segment routes your data to any destination you want. 	
+The Segment Connections destination enables you to mold data extracted from your warehouse in [Segment Spec](docs/connections/spec/) API calls that are then processed by [Segment’s HTTP Tracking API](/docs/connections/sources/catalog/libraries/server/http-api/). The Segment HTTP Tracking API lets you record analytics data. The requests hit Segment’s servers, and then Segment routes your data to any destination you want. Get started with the [Segment Connections destination](/docs/connections/destinations/catalog/actions-segment/). 	
 
-> info ""
-> If you use the Segment Connections destination, the destination sends data to Segment’s tracking API. This means that new users count as new MTUs and each call counts as an API call. This affects your Reverse ETL usage limits and also your Segment costs as it can drive overages. 
+> warning ""
+> There are cost implications to using the Segment Connections destination. New users count as new MTUs and each call counts as an API call, which affects your Reverse ETL usage limits and also your Segment costs. 
 
 ## Limits
-To provide consistent performance and reliability at scale, Segment enforces default use and rate limits. 
+To provide consistent performance and reliability at scale, Segment enforces default use and rate limits for Reverse ETL. 
 
 ### Usage limits
-Reverse ETL usage limits are measured based on the number of records processed to each destination – this includes both successful and failed records. For example, if you processed 50k records to Braze and 50k records to Mixpanel, then your total usage is 100k records. 
+Reverse ETL usage limits are measured based on the number of records processed to each destination – this includes both successful and failed records. Processed records represents the number of records attempted to send to each destination. Not all processed records are successfully delivered. For example, if you processed 50k records to Braze and 50k records to Mixpanel, then your total usage is 100k records. 
 
 Your plan determines how many Reverse ETL records you can process in one monthly billing cycle. When your limit is reached before the end of your billing period, your syncs will pause and then resume on your next billing cycle.
 
-Plan | Number of Reverse ETL records you can process to each destination per month | 
----- | ---------------------------------------------------------------------------
-Free | 500K 
-Teams | 1 million
-Business | 50 x the number of [MTUs](/docs/guides/usage-and-billing/mtus-and-throughput/#what-is-an-mtu) <br>or .25 x the number of monthly API calls
+Plan | Number of Reverse ETL records you can process to each destination per month | How to increase your number of Reverse ETL records
+---- | --------------------------------------------------------------------------- | ---------------------------------------------------
+Free | 500K | Upgrade to the Teams plan in the Segment app by navigating to **Settings > Usage & billing**.
+Teams | 1 million | Contact your sales representative to upgrade your plan to Business. 
+Business | 50 x the number of [MTUs](/docs/guides/usage-and-billing/mtus-and-throughput/#what-is-an-mtu) <br>or .25 x the number of monthly API calls | Contact your sales rep to upgrade your plan. 
 
-If you’re on a Teams or Business plan, to increase the number of processed Reverse ETL records, contact your sales representative to upgrade your plan. If you're on a Free plan, upgrade to the Teams plan in the Segment app.
+If you have a non-standard or high volume usage plan, you may have unique Reverse ETL limits or custom pricing. 
 
 To see how many records you’ve processed using Reverse ETL, navigate to **Settings > Usage & billing** and select the **Reverse ETL** tab. 
 
@@ -213,10 +220,8 @@ The extract phase is the time spent connecting to your database, executing the m
 
 Name | Details | Limit
 ----- | ------- | ------
-Record count | The maximum number of records a single sync will process. Note: This is the number of records extracted from the warehouse not the limit for the number of records loaded to the destination (for example, new/update/deleted). | 30 million records
+Record count | The maximum number of records a single sync will process. Note: This is the number of records extracted from the warehouse not the limit for the number of records loaded to the destination (for example, new/update/deleted). | 10 million records
 Column count | The maximum number of columns a single sync will process. | 512 columns
 Column name length | The maximum length of a record column. | 128 characters
 Record JSON Length | The maximum size for a record when converted to JSON (some of this limit is used by Segment). | 512 KiB
 Column JSON Length | The maximum size of any single column value. | 128 KiB
-
-
