@@ -74,7 +74,7 @@ If you [discarded events](/docs/protocols/enforce/schema-configuration) as a par
 
 ### Can I connect a Source to more than one Tracking Plan?
 
-Unfortunately, sources cannot be connected to more than one tracking plan. And in order to validate a tracking plan, you have to connect it to a source. The reason for this feature being unavailable is, if you were able to connect more than one tracking plan to a source, it could create conflict if events overlapped.
+Unfortunately, Sources cannot be connected to more than one Tracking Plan. If you were able to connect more than one Tracking Plan to a Source, it could create conflict if events overlapped. 
 
 ## Protocols Validation
 
