@@ -610,5 +610,7 @@ const segmentClient = createClient({
   writeKey: segmentWriteKey
 });
 ```
+### What is the instanceId set in context?
+The instanceId was introduced in [V 2.10.1](https://github.com/segmentio/analytics-react-native/releases/tag/%40segment%2Fanalytics-react-native-v2.10.1) and correlates events to a particular instance of the client in a scenario when you might have multiple instances on a single app. 
 ## Changelog
 [View the Analytics React Native 2.0 changelog on GitHub](https://github.com/segmentio/analytics-react-native/releases){:target="_blank"}.
