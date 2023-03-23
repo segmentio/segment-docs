@@ -63,9 +63,9 @@ To add your warehouse as a source:
 >>>>>>> 1eb6924a9 ([netlify-build]):src/connections/reverse-etl/index.md
 3. Select the source you want to add. You can choose between BigQuery, Redshift, and Snowflake.
 4. Follow the corresponding setup guide for your Reverse ETL source. 
-    * [BigQuery Reverse ETL setup guide](/docs/connections/reverse-etl/bigquery-setup/)
-    * [Redshift Reverse ETL setup guide](/docs/connections/reverse-etl/redshift-setup/)
-    * [Snowflake Reverse ETL setup guide](/docs/connections/reverse-etl/snowflake-setup/)
+    * [BigQuery Reverse ETL setup guide](/docs/connections/reverse-etl/reverse-etl-source-setup-guides/bigquery-setup/)
+    * [Redshift Reverse ETL setup guide](/docs/connections/reverse-etl/reverse-etl-source-setup-guides/redshift-setup/)
+    * [Snowflake Reverse ETL setup guide](/docs/connections/reverse-etl/reverse-etl-source-setup-guides/snowflake-setup/)
 5. Add the account information for your source.  
 >>>>>>> 401fa6bc5 (edits)
     * For Snowflake users: Learn more about the Snowflake Account ID [here](https://docs.snowflake.com/en/user-guide/admin-account-identifier.html){:target="_blank"}.

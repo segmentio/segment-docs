@@ -59,4 +59,4 @@ Follow the instructions below to set up the Segment Snowflake connector. Segment
    -- role access
    GRANT ROLE segment_reverse_etl TO USER segment_reverse_etl_user;
    ```
-7. Follow the steps listed in the [Add a Source](/docs/connections/sources/reverse-etl#step-1-add-a-source) section to finish adding Snowflake as a source.
+7. Follow the steps listed in the [Add a Source](/docs/connections/reverse-etl#step-1-add-a-source) section to finish adding Snowflake as a source.

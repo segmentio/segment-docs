@@ -174,7 +174,7 @@ Segment's [Pixel Tracking API](/docs/connections/sources/catalog/libraries/serve
 | Unsubscribe          | The recipient clicked on message's subscription management link.                                                      |
 
 ## Reverse ETL sources
-Reverse ETL sources are data warehouses that enable you to use [Reverse ETL](/docs/connections/sources/reverse-etl) to send data from your warehouse source to your destinations. 
+Reverse ETL sources are data warehouses that enable you to use [Reverse ETL](/docs/connections/reverse-etl) to send data from your warehouse source to your destinations. 
 
 Reverse ETL supports [these sources] and Segment is actively working on adding more. If you'd like to request Segment to add a particular source, please note it on the [feedback form](https://airtable.com/shriQgvkRpBCDN955){:target="_blank"}.
 
