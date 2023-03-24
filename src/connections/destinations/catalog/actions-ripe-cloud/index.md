@@ -87,10 +87,6 @@ analytics.group("0e8c78ea9d97a7b8185e8632", {
 
 Segment sends Group calls to Ripe as a `group` event. Group events can be augmented with group traits. Ripe displays these events as Workspaces by default. Including a name and a website (domain) as a trait is recommended, as Ripe will use the traits to populate Workspace views by default.
 
-### **Alias**
-
-We also support the Alias call, this is an advanced call and is not required for new installs. If you already have a setup with the Alias call Ripe will recognize and respect it. You can read more on when and how to use it in the [Alias method documentation](https://segment.com/docs/connections/spec/alias/).
-
 
 ## **Available Actions**
 
