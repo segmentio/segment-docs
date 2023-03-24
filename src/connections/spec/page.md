@@ -85,11 +85,9 @@ Here's the payload of a typical `page` call with most [common fields](/docs/conn
 
 <div class="output">
 <h3>Sample Page Call</h3>
-<!-- <div class="output-code" id="output-code" style="display:none"> -->
 <pre class="language-javascript"><code class="language-javascript" id="output_container">
 
 </code></pre>
-<!-- </div> -->
 </div>
 </div>
 
