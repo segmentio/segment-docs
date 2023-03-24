@@ -7,7 +7,7 @@ Profiles Sync connects identity-resolved customer profiles to a data warehouse o
 
 With a continual flow of synced profiles, teams can enrich and use these data sets as the basis for new audiences and models. Profiles Sync addresses a number of use cases, with applications for identity graph monitoring, attribution analysis, machine learning, and more. View [Profiles Sync Sample Queries](/docs/unify/profiles-sync/sample-queries) for an in-depth guide to Profiles Sync applications.
 
- 
+
 ## Profiles Sync use cases
 
 To help you get started, here are a few example use cases:
@@ -51,5 +51,8 @@ To learn more about Profiles Sync, visit the following docs:
 - [Sample Queries](/docs/unify/profiles-sync/sample-queries/): View sample queries you can run to help you familiarize yourself with Profiles Sync.
 - [Tables and materialized views](/docs/unify/profiles-sync/tables/): Learn how to use data sets and models that Segment provides to enrich customer profiles.
 
+{% comment %} (commenting out ERD draft for now)
 > info ""
 > For more on Profiles Sync logic, table mappings, and data types, download this [Profiles Sync ERD](/docs/unify/files/ERD.png).
+
+{% endcomment %}
