@@ -17,7 +17,7 @@ You can use this API to:
 - **Power personalized marketing campaigns** by enriching dynamic / custom properties with profile traits in marketing tools like Braze
 - **Qualify leads faster** by embedding the user event timeline in Salesforce
 
-This document has four parts:
+This document has four parts: 
 
 1. [**Product Highlights**](#product-highlights)
 2. [**Quickstart**](#quickstart): Walks you through how to get started querying your user profile in <1 min
