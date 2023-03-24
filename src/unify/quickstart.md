@@ -40,7 +40,7 @@ You probably have teammates who help set up your Segment Workspace with the data
    Segment recommends connecting your production website or App source as a great starting point.
 
 > info ""
-> If the source you want to add doesn't appear on the list, then check if the source is enabled. If the source is enabled, verify that you have set up a connection policy which enforces that you can only add sources with specific labels to this space. Read more about Segment's connection policy [here](/docs/profiles/identity-resolution/space-setup/#step-three-set-up-a-connection-policy).
+> If the source you want to add doesn't appear on the list, then check if the source is enabled. If the source is enabled, verify that you have set up a connection policy which enforces that you can only add sources with specific labels to this space. Read more about Segment's connection policy [here](/docs/unify/identity-resolution/space-setup/#step-three-set-up-a-connection-policy).
 
 > success ""
 > **Tip:** It sounds a little counter- intuitive to connect a production source to a developer space, but your production sources have rich user data in them, which is what you need to build and validate user profiles.
