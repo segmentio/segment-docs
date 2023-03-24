@@ -27,7 +27,7 @@ Follow these 4 steps to set up Reverse ETL and learn what each component is abou
 4. [Create Mappings](#step-4-create-mappings)
 
 > info ""
-> Depending on what plan you're on, the UI navigation and interface will look different from what's presented in the docs until Reverse ETL rolls out to all users for GA. 
+> The UI navigation and interface will look different from what's presented in the docs until Reverse ETL rolls out to all users for GA. 
 
 ### Step 1: Add a source
 A source is where your data originates from. Traditionally in Segment, a [source](/docs/connections/sources/#what-is-a-source) is a website, server library, mobile SDK, or cloud application which can send data into Segment. In Reverse ETL, your data warehouse is the source.
@@ -81,8 +81,6 @@ If your destination is not listed in the Reverse ETL catalog, use the [Segment C
 
 > info ""
 > Depending on the destination, you may need to know certain endpoints and have specific credentials to configure the destination.  
->
-> If you'd like to request Segment to add a particular destination, please note it on the [feedback form](https://airtable.com/shriQgvkRpBCDN955){:target="_blank"}.  
 
 To add your first destination:
 1. Navigate to **Connections > Destinations** and select the **Reverse ETL** tab.
@@ -139,16 +137,16 @@ To check the status of your extractions:
 ### Edit your model
 
 To edit your model:
-1. Navigate to **Reverse ETL > Sources**.
-2. Select the source with the model you want to edit.
+1. Navigate to **Connections > Destinations** and select the **Reverse ETL** tab.
+2. Select the source and the model you want to edit.
 3. On the overview tab, click **Edit** to edit your query.
 4. Click the **Settings** tab to edit the model name or change the schedule settings.  
 
 ### Edit your mapping
 
 To edit your mapping:
-1. Navigate to **Reverse ETL > Destinations**.
-2. Select the destination with the mapping you want to edit.
+1. Navigate to **Connections > Destinations** and select the **Reverse ETL** tab.
+2. Select the destination and the mapping you want to edit.
 3. Select the **...** three dots and click **Edit mapping**. If you want to delete your mapping, select **Delete**.
 
 
@@ -198,7 +196,7 @@ The extract phase is the time spent connecting to your database, executing the m
 
 Name | Details | Limit
 ----- | ------- | ------
-Record count | The maximum number of records a single sync will process. Note: This is the number of records extracted from the warehouse not the limit for the number of records loaded to the destination (for example, new/update/deleted). | 10 million records
+Record count | The maximum number of records a single sync will process. Note: This is the number of records extracted from the warehouse not the limit for the number of records loaded to the destination (for example, new/update/deleted). | 30 million records
 Column count | The maximum number of columns a single sync will process. | 512 columns
 Column name length | The maximum length of a record column. | 128 characters
 Record JSON Length | The maximum size for a record when converted to JSON (some of this limit is used by Segment). | 512 KiB
