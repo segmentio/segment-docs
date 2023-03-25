@@ -41,7 +41,7 @@ Use the date picker to view a Journey's analytics over a specific time frame in 
 
 The following table shows descriptions of the time frames you can select:
 
-| Time frame         | Description (based on UTC)                                 |
+| Time frame        | Description (based on UTC)                                 |
 | ----------------- | ---------------------------------------------------------- |
 | Today             | Today, beginning at midnight                               |
 | Yesterday         | The day before today                                       |
