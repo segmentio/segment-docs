@@ -479,7 +479,9 @@ div.highlighter-rouge {
 .sample-code-container {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  grid-gap: 20px;
+  gap: 10px;
+  padding: 5px;
+  overflow: scroll;
 }
 
 .output {
@@ -494,5 +496,5 @@ div.highlighter-rouge {
 
 .form {
   outline: 1px solid color(gray-600);
-  outline-offset: 4px
+  outline-offset: 4px;
 }
