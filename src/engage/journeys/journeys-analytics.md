@@ -23,20 +23,21 @@ Follow these steps to view the Analytics for a specific Journey:
 > info ""
 > Journeys in draft status don’t display Analytics.
 
-![An in-app screenshot of Journeys Level Analytics](images/journeys_analytics_tiles.png "Journeys Level Analytics tiles")
-
 ## Journey-Level Analytics statistics
 
 The following table shows the statistics available for a Journey:
 
 | Statistic   | Description                                                                   |
 | ----------- | ----------------------------------------------------------------------------- |
-| Entries     | The total number of users who entered your Journey                            |
+| Entered     | The total number of users who entered your Journey                            |
 | In progress | The total number of users who have entered the Journey without yet exiting it |
 | Completed   | The total number of users who entered the Journey and reached any final step  |
 | Exits       | The total number of users who have exited the Journey                         |
 
-Using the date picker, you can view a Journey's analytics over a specific period of time.
+> info ""
+> Completed and exits are mutually exclusive.
+
+Use the date picker to view a Journey's analytics over a specific time frame in any 180 day period.
 
 The following table shows descriptions of the time frames you can select:
 
@@ -65,7 +66,7 @@ With Step-Level Analytics, you can configure two settings that give you granular
 
 By default, Engage calculates an individual step’s analytics as a percentage of the number of users in the previous step. However, you can also view step analytics as a percentage of the initial number of users in the Journey’s entry step.  
 
-For example, suppose your Journey’s entry step contained 100 users, and 50 proceeded to the next step. For both calculation options, Engage would display 50% and 50 for the next step. If 25 users from the second step reached step three, however, Engage would display 50% and 25 for previous-step based calculations but 25% and 25 for entry-step based calculations.
+For example, suppose your Journey’s entry step contained 100 users, and 50 proceeded to the next step. For both calculation options, Engage would display **50% and 50** for the next step. If 25 users from the second step reached step three, however, Engage would display **50% and 25** for previous-step based calculations but **25% and 25** for entry-step based calculations.
 
 To change this base percentage, select **Calculate % based on**, then select **Entry step** or **Previous step**.
 
