@@ -1,15 +1,15 @@
 ---
-title: Using the Engage Source Debugger
+title: Using the Profile Source Debugger
 plan: unify
 redirect_from:
   - "/personas/debugger"
 ---
 
-The Engage Source Debugger enables you to inspect and monitor events that Engage sends downstream
+The Profile Source Debugger enables you to inspect and monitor events that Segment sends downstream
 
-Because Engage generates a unique Source for every Destination connected to a Space, the Debugger gives you insight into how Engage sends events before they reach their Destination. This automatically generated source cannot be deleted even when the destination is removed, in order for Engage to function as designed. The source will be reused by Engage as needed.
+Because Segment generates a unique Source for every Destination connected to a Space, the Debugger gives you insight into how Segment sends events before they reach their Destination. This automatically generated source cannot be deleted even when the destination is removed, in order for Segment to function as designed. The source will be reused by Segment as needed.
 
-The Debugger provides you with the payload information you need to troubleshoot potential formatting issues and ensure Engage sends events as your Destinations expect.
+The Debugger provides you with the payload information you need to troubleshoot potential formatting issues and ensure Segment sends events as your Destinations expect.
 
 ## Working with the Debugger
 
