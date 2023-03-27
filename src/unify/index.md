@@ -7,7 +7,7 @@ redirect_from:
 
 Use Segment Unify, formerly known as Profiles, for a complete view of your customers.
 
-With [Identity Resolution](#identity-resolution), track every interaction across the entire user journey to create unified, real-time customer identities. View user profiles in one place through the [Profile Explorer](#profile-explorer) in the Segment app. Use the [Profile API](#profile-api) to programmatically query user profiles, traits, and events.
+With [Identity Resolution](#identity-resolution), track every interaction across the entire user journey to create unified, real-time customer identities. View user profiles in one place through the [Profile explorer](#profile-explorer) in the Segment app. Use the [Profile API](#profile-api) to programmatically query user profiles, traits, and events.
 
 You can then use this interaction data with customer engagement tools, such as Engage, to deliver personalized, omnichannel experiences.
 
@@ -31,9 +31,9 @@ With Identity Resolution:
 
 Visit Segment's [Identity Resolution docs](/docs/unify/identity-resolution/) to learn more.
 
-## Profile Explorer
+## Profile explorer
 
-Use the Profile Explorer to view all user data, including their event history, traits, and identifiers.
+Use the Profile explorer to view all user data, including their event history, traits, and identifiers.
 
 With the Explorer, you have a complete view of your customers.
 
@@ -42,7 +42,7 @@ With the Explorer, you have a complete view of your customers.
 - **Provide sales and support context**: Look up a user profile to understand where they are on their journey with your business or product.
 
 > info ""
-> If you're using Engage, use the Profile Explorer to view audiences, traits, journey membership, and [subscription states](/docs/engage/user-subscriptions/) for email and phone numbers.
+> If you're using Engage, use the Profile explorer to view audiences, traits, journey membership, and [subscription states](/docs/engage/user-subscriptions/) for email and phone numbers.
 
 ## Profile API
 

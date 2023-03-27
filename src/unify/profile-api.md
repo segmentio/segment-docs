@@ -17,7 +17,7 @@ You can use this API to:
 - **Power personalized marketing campaigns** by enriching dynamic / custom properties with profile traits in marketing tools like Braze
 - **Qualify leads faster** by embedding the user event timeline in Salesforce
 
-This document has four parts: 
+This document has four parts:
 
 1. [**Product Highlights**](#product-highlights)
 2. [**Quickstart**](#quickstart): Walks you through how to get started querying your user profile in <1 min
@@ -43,7 +43,7 @@ Your access token enables you to call the Profile API and access customer data.
 > info "European Union requirements"
 > To implement the Profile API in the European Union, you must complete the following steps within an EU workspace. View the [regional Segment documentation](/docs/guides/regional-segment/#create-a-new-workspace-with-a-different-region) for more information.
 
-1.  Navigate to the API Access settings page **Unify > Unify Settings > API Access**.
+1.  Navigate to the API access settings page **Unify > Unify settings > API access**.
 
 2.  Create your **Access Token** with a name that describes your use case, for example `testing/development`. Take note of the **space ID** value, you'll pass this into the Profile API request URL in a later step.
 
@@ -51,9 +51,9 @@ Your access token enables you to call the Profile API and access customer data.
 
 ### Find a user's external id
 
-1. Navigate to **Unify > Profiles Explorer** and select the user you want to query through the API.
+1. Navigate to **Unify > Profile explorer** and select the user you want to query through the API.
 2. Take note of the user's available identifiers. For example, this user has an `anonymous_id` with the value `eml_3bca54b7fe7491add4c8d5d4d9bf6b3e085c6092`. The Profile API requires both the type of ID and the value separated by a colon. For example, `anonymous_id:eml_3bca54b7fe7491add4c8d5d4d9bf6b3e085c6092`. Click the duplicate icon to copy the identifier to your clipboard.   
-![Retrieving a user's identifiers with the Profiles Explorer](images/profile_api_anonymous_id.png)
+![Retrieving a user's identifiers with the Profile explorer](images/profile_api_anonymous_id.png)
 
 > warning ""
 > To query phone numbers that contain a plus sign (`+`), insert the escape characters `%2B` in place of the plus sign.
@@ -161,7 +161,7 @@ The Segment API is organized around [REST](http://en.wikipedia.org/wiki/Represen
 
 The Profile API uses basic authentication for authorization — with the **Access Token** as the authorization key. Your **Access Token** carries access to all of your customer data, so be sure to keep them secret. Don't share your Access Token in publicly accessible areas such as GitHub or client-side code.
 
-You can create your Access Secret in your Unify Settings page. Segment recommends that you name your tokens with the name of your app and its environment, such as `marketing_site/production`. Access tokens are shown once — you won't be able to see it again. In the event of a security incident, you can revoke and cycle the access token.
+You can create your Access Secret in your Unify settings page. Segment recommends that you name your tokens with the name of your app and its environment, such as `marketing_site/production`. Access tokens are shown once — you won't be able to see it again. In the event of a security incident, you can revoke and cycle the access token.
 
 When you make requests to the Profile API, use the Access Token as the basic authentication username and keep the password blank. Base64 is a requirement for authentication. If you use a tool like Postman, or if you use the `-u` flag in a cURL request, this encoding occurs automatically. Otherwise, you'll need to use Base64 to manually encode your Access Token.
 

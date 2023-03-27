@@ -35,7 +35,7 @@ You probably have teammates who help set up your Segment Workspace with the data
 
 ## Step 3: Connect production sources
 
-1. From your Segment space, navigate to **Unify Settings** and click **Sources**.
+1. From your Segment space, navigate to **Unify settings** and click **Profile sources**.
 2. On the screen that appears, choose one or two production sources from your Connections workspace.
    Segment recommends connecting your production website or App source as a great starting point.
 
@@ -57,11 +57,11 @@ Once the Source(s) finish replaying, data from your connected Sources flows into
 
 ## Step 4: Check your profile data
 
-Once the replay finishes, you can see the data replayed into Unify using the Profile Explorer. You should have a lot! The data should include information from multiple sources and multiple sessions, all resolved into a single profile per user.
+Once the replay finishes, you can see the data replayed into Unify using the Profile explorer. You should have a lot! The data should include information from multiple sources and multiple sessions, all resolved into a single profile per user.
 
 Before you continue, check a few user profiles to make sure they show an accurate and recent snapshot of your users.
 
-A good test is to look at _your own_ user profile, and maybe some colleagues' profiles. Look in the Profile Explorer for your Profile, and look at your event history, custom traits and identifiers. If these identifiers look correct across a few different profiles (and you can verify that they are all correct), then you're ready to create an audience.
+A good test is to look at _your own_ user profile, and maybe some colleagues' profiles. Look in the Profile explorer for your Profile, and look at your event history, custom traits and identifiers. If these identifiers look correct across a few different profiles (and you can verify that they are all correct), then you're ready to create an audience.
 
 If your user profiles look wrong, or you aren't confident users are being accurately defined and merged, stop here and troubleshoot. It's important to have accurate identity resolution before you continue. See the [detailed Identity Resolution documentation](/docs/unify/identity-resolution/) to better understand how it works, and why you may be running into problems. (Still need help? [Contact Segment](https://segment.com/help/contact/){:target="_blank"} for assistance.)
 

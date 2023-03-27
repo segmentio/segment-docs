@@ -14,7 +14,7 @@ Before you connect any source to the Dev space, Segment recommends that you firs
 
 ## Step three: Set up a connection policy
 
-If you haven't already, Segment highly recommends labeling all your sources with *Dev* or *Prod* [environments](/docs/segment-app/iam/labels/). Once your sources have been labeled, visit the **Connection Policy** page by navigating to **Unify > Unify Settings > Space Management**. Here, you can enforce that only sources labeled *Dev* can be connected to your *Dev* Unify instance.
+If you haven't already, Segment highly recommends labeling all your sources with *Dev* or *Prod* [environments](/docs/segment-app/iam/labels/). Once your sources have been labeled, visit the **Connection Policy** page by navigating to **Unify > Unify settings > Space management**. Here, you can enforce that only sources labeled *Dev* can be connected to your *Dev* Unify instance.
 
 [](images/connection-policy.png)
 
@@ -23,7 +23,7 @@ If you haven't already, Segment highly recommends labeling all your sources with
 
 ## Step four: Connect sources and create test audiences
 
-Once your connection policy is in place, select the **Sources** tab in **Unify Settings**. Now you can connect a few sources that will automatically begin to replay.
+Once your connection policy is in place, select the **Profile sources** tab in **Unify settings**. Now you can connect a few sources that will automatically begin to replay.
 
 Once the sources have finished replaying, check user profiles to ensure that profiles are merging as expected. This would also be an ideal time to create test audiences and confirm that these populate the expected number of users.
 
