@@ -170,7 +170,9 @@ The Segment Connections destination enables you to mold data extracted from your
 To provide consistent performance and reliability at scale, Segment enforces default use and rate limits for Reverse ETL. 
 
 ### Usage limits
-Reverse ETL usage limits are measured based on the number of records processed to each destination – this includes both successful and failed records. Processed records represents the number of records attempted to send to each destination. For example, if you processed 50k records to Braze and 50k records to Mixpanel, then your total usage is 100k records. 
+Reverse ETL usage limits are measured based on the number of records processed to each destination – this includes both successful and failed records. For example, if you processed 50k records to Braze and 50k records to Mixpanel, then your total Reverse ETL usage is 100k records. 
+
+Processed records represents the number of records Segment attempts to send to each destination. Keep in mind that not all processed records are successfully delivered, for example, such as when the destination experiences an issue. 
 
 Your plan determines how many Reverse ETL records you can process in one monthly billing cycle. When your limit is reached before the end of your billing period, your syncs will pause and then resume on your next billing cycle. To see how many records you’ve processed using Reverse ETL, navigate to **Settings > Usage & billing** and select the **Reverse ETL** tab. 
 
