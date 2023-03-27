@@ -340,7 +340,7 @@ If you don't do this, the old client instance would still exist and retain the t
 Ideally, you shouldn't have to use this method, and the Segment client should be initialized only once in the application lifecycle.
 
 ## Controlling Upload With Flush Policies
-To more granurily control when events are uploaded you can use `FlushPolicies`
+To granularly control when events are uploaded you can use `FlushPolicies`.
 A Flush Policy defines the strategy for deciding when to flush, this can be on an interval, on a certain time of day, after receiving a certain number of events or even after receiving a particular event. This gives you even more flexibility on when to send event to Segment.
 To make use of flush policies you can set them in the configuration of the client:
 ```ts
@@ -361,7 +361,7 @@ We have several standard FlushPolicies:
 - `StartupFlushPolicy` triggers on client startup only
 
 ### Adding or removing policies
-One of the main advatanges of FlushPolicies is that you can add and remove policies on the fly. This is very powerful when you want to reduce or increase the amount of flushes. 
+One of the main advantages of FlushPolicies is that you can add and remove policies on the fly. This is very powerful when you want to reduce or increase the amount of flushes. 
 For example you might want to disable flushes if you detect the user has no network:
 ```ts
 import NetInfo from "@react-native-community/netinfo";
@@ -392,7 +392,7 @@ A `FlushPolicy` only needs to implement 2 methods:
 - `start()`: Executed when the flush policy is enabled and added to the client. This is a good place to start background operations, make async calls, configure things before execution
 - `onEvent(event: SegmentEvent)`: Gets called on every event tracked by your client
 - `reset()`: Called after a flush is triggered (either by your policy, by another policy or manually)
-They also have a `shouldFlush` observable boolean value. When this is set to true the client will atempt to upload events. Each policy should reset this value to `false` according to its own logic, although it is pretty common to do it inside the `reset` method.
+They also have a `shouldFlush` observable boolean value. When this is set to true the client will attempt to upload events. Each policy should reset this value to `false` according to its own logic, although it is pretty common to do it inside the `reset` method.
 ```ts
 export class FlushOnScreenEventsPolicy extends FlushPolicyBase {
   onEvent(event: SegmentEvent): void {
