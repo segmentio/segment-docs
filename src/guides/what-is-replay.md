@@ -32,7 +32,7 @@ Replays can process an unlimited amount of data, however they are rate limited t
 
 Replays do not affect your [MTU count](/docs/guides/usage-and-billing/mtus-and-throughput/), unless you are using a [Repeater destination](/docs/connections/destinations/catalog/repeater/). Notify your team before initiating a Replay if you're using a Repeater destination.
 
-Please be advised once you have requested your data be replayed, and the replay starts, you will not see these events show up in the Event Delivery tab. 
+Once a replay starts, you will not see replayed events in the Event Delivery tab.
 
 ### Replay-eligible destinations
 
