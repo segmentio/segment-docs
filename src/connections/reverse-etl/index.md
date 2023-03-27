@@ -199,5 +199,5 @@ Name | Details | Limit
 Record count | The maximum number of records a single sync will process. Note: This is the number of records extracted from the warehouse not the limit for the number of records loaded to the destination (for example, new/update/deleted). | 30 million records
 Column count | The maximum number of columns a single sync will process. | 512 columns
 Column name length | The maximum length of a record column. | 128 characters
-Record JSON Length | The maximum size for a record when converted to JSON (some of this limit is used by Segment). | 512 KiB
-Column JSON Length | The maximum size of any single column value. | 128 KiB
+Record JSON size | The maximum size for a record when converted to JSON (some of this limit is used by Segment). | 512 KiB
+Column JSON size | The maximum size of any single column value. | 128 KiB
