@@ -9,9 +9,6 @@ The Segment Profiles destination allows you to send your warehouse data back to 
 > success "Source compatibility"
 > This destination supports connections from Reverse ETL warehouse sources, and is not compatible with other source types.
 
-> info ""
-> The Segment Profiles destination is in beta and is in active development. Some functionality may change before it becomes generally available.
-
 ## Getting started
 
 ### Create a Profile space

@@ -25,7 +25,7 @@ The following roles are only available to Segment Business Tier accounts.
 * **Scope:** Grants access to only End User Privacy Settings in the App.
 
 #### Profiles Identity Admin
-* Edit access to Identity settings in Profiles.
+* Edit access to Identity settings in Unify.
 * **Scope:** Grants access to *all* Identity settings.
 
 #### Source Read-only
@@ -38,16 +38,16 @@ The following roles are only available to Segment Business Tier accounts.
 * **Scope:** Grants access to either: all current and future Sources, or only specific Sources, or Sources with a specific Label (BT only).
 
 #### Profiles and Engage Admin
-* Edit access to Profiles settings and if purchased, Engage Audiences, Traits, Journeys, Content, and settings.
+* Edit access to Unify settings and if purchased, Engage Audiences, Traits, Journeys, Content, and settings.
 * **Scope:** Grants access to either: all current and future Spaces, or a specific list of Spaces, or Spaces with a specific Label (BT only).
 
 
 #### Profiles and Engage Read-only
-* Read-only access to Profiles settings and if purchased, Engage audiences, traits, journeys, and content. Cannot download PII or edit settings in Profiles or Engage.
+* Read-only access to Unify settings and if purchased, Engage audiences, traits, journeys, and content. Cannot download PII or edit settings in Unify or Engage.
 * **Scope:** Grants access to either: all current and future Spaces, or a specific list of Spaces, or Spaces with a specific Label (BT only).
 
 #### Profiles Read-only, Engage User
-* Read-only access to Profiles settings and if purchased, edit access to Engage audiences, traits, journeys, and content. Cannot download PII or edit settings in Profiles or Engage.
+* Read-only access to Unify settings and if purchased, edit access to Engage audiences, traits, journeys, and content. Cannot download PII or edit settings in Unify or Engage.
 * **Scope:** Grants access to either: all current and future Spaces, or a specific list of Spaces, or Spaces with a specific Label (BT only).
 
 #### Tracking Plan Admin

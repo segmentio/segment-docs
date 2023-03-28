@@ -121,6 +121,8 @@ All Engage data are omitted from billing MTU and API throughput calculations, in
 
 Replays only affect your MTU count if you are using a [Repeater](/docs/connections/destinations/catalog/repeater/) destination, which might send data that hasn't yet been seen this month back through a source.
 
+## MTUs and Reverse ETL 
+See the [Reverse ETL usage limits](/docs/connections/reverse-etl/#usage-limits) to see how MTUs affect your Reverse ETL usage limits. 
 
 ## Why is my MTU count different from what I see in my destinations and other tools?
 

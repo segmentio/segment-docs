@@ -4,15 +4,25 @@ title: Connections Overview
 
 Connections is Segment's core product offering: you can collect event data from your mobile apps, websites, and servers with one API, then pull in contextual data from cloud apps like your CRM, payment systems, and internal databases to build a unified picture of your customers.
 
-## What's a Source?
+## Sources
 
 {% include content/whats-a-source.md %}
 
-## What's a Destination?
+Learn more about sources from the [sources overview page](/docs/connections/sources/).
+
+
+## Destinations
 
 {% include content/whats-a-destination.md %}
 
-## What information can I see on Sources and Destinations pages?
+## Warehouses
+
+{% include content/whats-a-warehouse.md %}
+
+### Reverse ETL
+With [Reverse ETL](/docs/connections/reverse-etl/), your data warehouse acts as your source, enabling you to send data from your warehouse to your destinations. 
+
+## Information on sources and destinations pages
 
 The Sources and Destinations pages allow each user to decide what information appears in their personal view for each page.
 
@@ -40,6 +50,3 @@ You can then sort or filter each column to just the values you care about, by cl
 
 
 
-## What is a Warehouse?
-
-{% include content/whats-a-warehouse.md %}

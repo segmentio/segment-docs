@@ -214,7 +214,39 @@ async function onBatch(events, settings){
 > info ""
 > The `onBatch` handler is an optional extension. Destination functions must still contain single event handlers as a fallback, in cases where Segment does not receive enough events to execute the batch.
 
-The handler function receives an array of events. The events can be of any supported type, and a single batch may contain more than one event type. Handler functions also receive function settings.
+The handler function receives an array of events. The events can be of any supported type and a single batch may contain more than one event type. Handler functions can also receive function settings. Here is an example of what a batch can look like:
+
+```json
+[
+    {
+      "type": "identify",
+      "userId": "019mr8mf4r",
+      "traits": {
+        "email": "jake@yahoo.com",
+        "name": "Jake Peterson",
+        "age": 26
+      }
+    },
+    {
+      "type": "track",
+      "userId": "019mr8mf4r",
+      "event": "Song Played",
+      "properties": {
+        "name": "Fallin for You",
+        "artist": "Dierks Bentley"
+      }
+    },
+    {
+      "type": "track",
+      "userId": "971mj8mk7p",
+      "event": "Song Played",
+      "properties": {
+        "name": "Get Right",
+        "artist": "Jennifer Lopez"
+      }
+    }
+]
+```
 
 For example, you could send the array of events to an external services batch endpoint:
 
