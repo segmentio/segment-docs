@@ -341,7 +341,7 @@ Ideally, you shouldn't have to use this method, and the Segment client should be
 
 ## Control upload with Flush Policies
 To granularly control when Segment uploads events you can use `FlushPolicies`.
-A Flush Policy defines the strategy for deciding when to flush, this can be on an interval, on a certain time of day, after receiving a certain number of events or even after receiving a particular event. This gives you even more flexibility on when to send event to Segment.
+A Flush Policy defines the strategy for deciding when to flush. This can be on an interval, time of day, after receiving a certain number of events, or after receiving a particular event. This gives you more flexibility on when to send event to Segment.
 Set Flush Policies in the configuration of the client:
 ```ts
 const client = createClient({
