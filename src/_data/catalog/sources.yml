@@ -1482,8 +1482,8 @@ items:
   - id: 9g612WSOsA
     display_name: Qualtrics
     isCloudEventSource: true
-    slug: qualtrics
-    url: connections/sources/catalog/cloud-apps/qualtrics
+    slug: actions-qualtrics
+    url: connections/sources/catalog/cloud-apps/actions-qualtrics
     hidden: false
     regions:
       - us

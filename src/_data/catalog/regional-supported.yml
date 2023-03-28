@@ -728,8 +728,8 @@ sources:
       - eu
   - id: 9g612WSOsA
     display_name: Qualtrics
-    slug: qualtrics
-    url: connections/sources/catalog/cloud-apps/qualtrics
+    slug: actions-qualtrics
+    url: connections/sources/catalog/cloud-apps/actions-qualtrics
     regions:
       - us
     endpoints:

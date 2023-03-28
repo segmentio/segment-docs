@@ -1568,14 +1568,14 @@ items:
 - id: 61aa712b857e8c85c3b5a849
   display_name: Adobe Target Cloud Mode
   name: Adobe Target Cloud Mode
-  slug: adobe-target-cloud-mode
-  hidden: true
+  slug: actions-adobe-target-cloud
+  hidden: false
   endpoints:
   - US
   regions:
   - us-west-2
   - eu-west-1
-  url: connections/destinations/catalog/adobe-target-cloud-mode
+  url: connections/destinations/catalog/actions-adobe-target-cloud
   previous_names:
   - Adobe Target Cloud Mode
   website: https://business.adobe.com/products/target/adobe-target.html
@@ -9627,7 +9627,7 @@ items:
   previous_names:
   - Braze Cohorts
   website: https://www.braze.com
-  status: PUBLIC_BETA
+  status: PUBLIC
   categories:
   - Email Marketing
   - CRM
@@ -11838,14 +11838,14 @@ items:
 - id: 61d7456b078e79929de4ee8c
   display_name: CleverTap (Actions)
   name: CleverTap (Actions)
-  slug: clevertap-actions
-  hidden: true
+  slug: actions-clevertap
+  hidden: false
   endpoints:
   - US
   regions:
   - us-west-2
   - eu-west-1
-  url: connections/destinations/catalog/clevertap-actions
+  url: connections/destinations/catalog/actions-clevertap
   previous_names:
   - Clevertap (Actions)
   - CleverTap (Actions)
@@ -47126,14 +47126,14 @@ items:
 - id: 62e17e6f687e4a3d32d0f875
   display_name: Qualtrics
   name: Qualtrics
-  slug: qualtrics
-  hidden: true
+  slug: actions-qualtrics
+  hidden: false
   endpoints:
   - US
   regions:
   - us-west-2
   - eu-west-1
-  url: connections/destinations/catalog/qualtrics
+  url: connections/destinations/catalog/actions-qualtrics
   previous_names:
   - Qualtrics
   website: https://qualtrics.com
@@ -63441,14 +63441,14 @@ items:
 - id: 614a3c7d791c91c41bae7599
   display_name: Webhooks (Actions)
   name: Webhooks (Actions)
-  slug: webhooks-actions
-  hidden: true
+  slug: actions-webhook
+  hidden: false
   endpoints:
   - US
   regions:
   - us-west-2
   - eu-west-1
-  url: connections/destinations/catalog/webhooks-actions
+  url: connections/destinations/catalog/actions-webhook
   previous_names:
   - Webhook
   - Webhooks (Actions)
