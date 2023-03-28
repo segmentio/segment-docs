@@ -1,12 +1,12 @@
 ---
 title: Identity Resolution Onboarding
-plan: profiles
+plan: unify
 redirect_from:
   - "/personas/identity-resolution/identity-resolution-onboarding"
 ---
 
 > note ""
-> **NOTE:** The steps in this guide pertain to spaces created after **October 5th, 2020**. For spaces created before **October 5th, 2020**, please refer to [Identity Resolution Settings](/docs/profiles/identity-resolution/identity-resolution-settings).
+> **NOTE:** The steps in this guide pertain to spaces created after **October 5th, 2020**. For spaces created before **October 5th, 2020**, please refer to [Identity Resolution Settings](/docs/unify/identity-resolution/identity-resolution-settings).
 
 > note ""
 > **NOTE:** Workspace owners, administrators, and users with the Identity Admin role can edit Identity Resolution Settings.
