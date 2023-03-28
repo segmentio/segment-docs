@@ -4,14 +4,14 @@ plan: engage-premier
 ---
 Use the CSV Uploader to add or update user profiles and set subscription states.
 
-When you upload a CSV file, Twilio Engage adds new users and updates existing user profiles. Each CSV row corresponds to a user profile and columns to an identifier in your [identity resolution configuration](/docs/profiles/identity-resolution/identity-resolution-settings/).
+When you upload a CSV file, Twilio Engage adds new users and updates existing user profiles. Each CSV row corresponds to a user profile and columns to an identifier in your [identity resolution configuration](/docs/unify/identity-resolution/identity-resolution-settings/).
 
 You can also [set subscription states](#set-user-subscriptions) for each email and phone number that you upload in the CSV. Subscription states help you track which email addresses and numbers you have permission to market to.
 
 ## Upload a CSV file
 
 Use the **Upload CSV** page to upload a CSV file in your Segment space:
-1. Navigate to **Profiles > Profile explorer** or **Engage > Audiences > Profile explorer**.
+1. Navigate to **Unify > Profile explorer** or **Engage > Audiences > Profile explorer**.
 2. Click **Manage subscription statuses**, then select **Update subscription statuses**.
 3. Select **Upload a CSV**, then click **Configure**.
 
@@ -22,7 +22,7 @@ Click **Download Template** to download a CSV template with identifier columns f
 > info ""
 > CSV files can only have a single **email** and **phone** identifier column. Include any additional email addresses or phone numbers for a user profile as a separate row.
 
-Navigate to **Profiles > Profiles settings** and select the **Identity resolution** tab to view or add identifiers in your Segment workspace.
+Navigate to **Unify > Unify settings** and select the **Identity resolution** tab to view or add identifiers in your Segment workspace.
 
 ### 2. Fill out your CSV file
 
@@ -56,7 +56,7 @@ Use the Update History page to view CSV file uploads in your workspace over the 
 
 To view the Update History page:
 
-1. Navigate to **Profiles > Profile explorer** or **Engage > Audiences > Profile explorer**.
+1. Navigate to **Unify > Profile explorer** or **Engage > Audiences > Profile explorer**.
 2. Click **Manage subscription statuses**.
 3. Select **View update history**.
 

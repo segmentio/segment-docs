@@ -1,6 +1,6 @@
 ---
 title: Identity Resolution Use-Cases
-plan: profiles
+plan: unify
 redirect_from:
   - '/personas/identity-resolution/use-cases/'
 ---
@@ -33,7 +33,7 @@ If, however, each app should maintain its own metrics and LTV analysis, regardle
 > info ""
 > Each workspace has two spaces by default. Contact your CSM to enable additional spaces.
 
-To learn more, visit Segment's [eCommerce Example doc](/docs/profiles/identity-resolution/ecommerce-example/).
+To learn more, visit Segment's [eCommerce Example doc](/docs/unify/identity-resolution/ecommerce-example/).
 
 ## Cross-Channel identification
 A user can interact with a brand through multiple channels and departments. A user might have touch points with a sales team, a marketing team, and a customer support team throughout their customer journey. It's important for companies to have insights into these cross-functional activities to ensure they understand the complete customer experience.

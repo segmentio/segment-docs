@@ -1,6 +1,6 @@
 ---
 title: Identity Resolution eCommerce Example
-plan: profiles
+plan: unify
 redirect_from:
   - "/personas/identity-resolution/ecommerce-example"
 ---

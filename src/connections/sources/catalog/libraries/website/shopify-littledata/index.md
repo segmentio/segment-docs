@@ -111,7 +111,7 @@ In the Littledata application you can choose which of the following fields you w
 - **Email** - The email identifier is recommended when other platforms use the email and can't hash it, and you are comfortable with the privacy implications.
 - **None** (no identifier) - Choose “none” if user identity is already handled by your Segment implementation and you only need the extra events powered by Littledata's Shopify source.
 
-For [Engage](/docs/engage/), Littledata also sends `shopify_customer_id` as an [externalID](/docs/profiles/identity-resolution/externalids/) for advanced matching.
+For [Engage](/docs/engage/), Littledata also sends `shopify_customer_id` as an [externalID](/docs/unify/identity-resolution/externalids/) for advanced matching.
 
 ## Identify calls
 

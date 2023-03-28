@@ -10,9 +10,6 @@ hide-dossier: false
 
 Segment's Braze Cohorts destination syncs Engage audiences to Braze as cohorts. This is a more scalable alternative to storing audience subscription in user-level attributes in Braze. It also is more efficient as audiences are uploaded as a list, as opposed to individual events.
 
-> info ""
-> The Braze Cohorts destination is in beta and is in active development. Some functionality may change before it becomes generally available.
-
 ## Getting started
 
 Before connecting to the Braze Cohorts destination, you must have a [Braze](https://dashboard-01.braze.com/sign_in){:target="_blank"} account and an Ad Account ID.
