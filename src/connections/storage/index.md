@@ -5,13 +5,13 @@ title: Data Storage overview
 Off-the-shelf analytics tools (like Google Analytics and Mixpanel) offer quick and easy insights about common business questions, and often meet the needs of marketing teams and product managers. However, data analysts and data scientists need access to an organization's raw data to derive deeper and more customized insights to support their organization.
 
 > success ""
-> Warehouse Destination are only available and functional for Business and Team Tier customers.
+> Only users with Business or Team plans can add Warehouse destinations.
 
 Segment offers several [Data Storage Destinations](/docs/connections/storage/catalog/) to help you store your raw Segment data, including:
 
-- [Data Warehouses](/docs/connections/storage/warehouses/) (SQL-based databases, such as Postgres and Redshift)
-- [Amazon S3](/docs/connections/storage/catalog/amazon-s3/)
-- [Google Cloud Storage](/docs/connections/storage/catalog/google-cloud-storage/)
+- [Data Warehouses](/docs/connections/storage/warehouses/) (available to Team and Business Tier customers)
+- [AWS S3](/docs/connections/storage/catalog/aws-s3/) (available to all users)
+- [Google Cloud Storage](/docs/connections/storage/catalog/google-cloud-storage/) (available to all users)
 - [Segment Data Lakes](/docs/connections/storage/data-lakes/) (available to Business Tier customers only)
 
 
