@@ -391,7 +391,7 @@ You can create a custom FlushPolicy special for your application needs by implem
 A `FlushPolicy` only needs to implement 2 methods:
 - `start()`: Executed when the flush policy is enabled and added to the client. This is a good place to start background operations, make async calls, configure things before execution
 - `onEvent(event: SegmentEvent)`: Gets called on every event tracked by your client
-- `reset()`: Called after a flush is triggered (either by your policy, by another policy or manually)
+- `reset()`: Called after a flush is triggered (either by your policy, by another policy, or manually)
 They also have a `shouldFlush` observable boolean value. When this is set to true the client will attempt to upload events. Each policy should reset this value to `false` according to its own logic, although it is pretty common to do it inside the `reset` method.
 ```ts
 export class FlushOnScreenEventsPolicy extends FlushPolicyBase {
