@@ -103,6 +103,9 @@ To start seeing unified profiles in your warehouse and build attribution models,
 
 Please visit [Tables you materialize](/docs/unify/profiles-sync/tables/#tables-you-materialize) for more on how to materialize these views either on your own, or with [Segment's open source dbt models](https://github.com/segmentio/profiles-sync-dbt){:target="blank"}.
 
+> warning ""
+> Please note that dbt models are in beta and need modifications to run efficiently on BigQuery, Synapse, and Postgres warehouses. Segment is actively working on this feature. 
+
 ## Profiles Sync limits
 
 As you use Profiles Sync, please keep the following limits in mind:
