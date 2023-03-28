@@ -614,7 +614,7 @@ const segmentClient = createClient({
 The instanceId was introduced in [V 2.10.1](https://github.com/segmentio/analytics-react-native/releases/tag/%40segment%2Fanalytics-react-native-v2.10.1) and correlates events to a particular instance of the client in a scenario when you might have multiple instances on a single app. 
 
 ### How do I interact with the integrations object?
-The integrations object is no longer part of the Segment events method signature. To access the integrations object, in order to control what destinations the event reaches, you can instead use a Plugin:
+The integrations object is no longer part of the Segment events method signature. To access the integrations object and control what destinations the event reaches, you can use a Plugin:
 
 ```js
 import {
