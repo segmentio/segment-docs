@@ -27,7 +27,7 @@ When you call `identify` we call `Sentry.setUser` by passing in the `traits` you
 
 ## Troubleshoot Sentry
 
-Since Sentry is an error tracking application, we need to make sure to send something broken from the website to see the event appear in Sentry dashboard. For example, firing the following error event from the web console, Sentry.captureException(new Error("Some error"));we can see the relevant event payload with the event_id information as below -
+Since Sentry is an error tracking application, Segment needs to send something broken from the website to see the event appear in the Sentry dashboard. For example, firing the following error event from the web console, `Sentry.captureException(new Error("Some error"))`; Segment can see the relevant event payload with the `event_id` information.
  
  ![image](https://user-images.githubusercontent.com/96406241/226262825-d038a0c6-acbc-4b20-87bb-558c622a2be5.png)
  
