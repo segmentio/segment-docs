@@ -356,7 +356,7 @@ const client = createClient({
 You can set several policies at a time. When a flush occurs, it triggers an upload of the events, then resets the logic after every flush. 
 As a result, only the first policy to reach `shouldFlush` will trigger a flush. In the example above either the event count reaches 5 or the timer reaches 500ms, whatever comes first will trigger a flush.
 Segment has several standard Flush Policies:
-- `CountFlushPolicy` triggers whenever a certain number of events is reached
+- `CountFlushPolicy` triggers when you reach a certain number of events
 - `TimerFlushPolicy` triggers on an interval of milliseconds
 - `StartupFlushPolicy` triggers on client startup only
 
