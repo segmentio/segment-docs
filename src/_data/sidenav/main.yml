@@ -169,6 +169,8 @@ sections:
     section:
     - path: /connections/reverse-etl
       title: Reverse ETL Overview
+    - path: /connections/reverse-etl/reverse-etl-catalog
+      title: Reverse ETL Catalog
     - section_title: Reverse ETL Source Setup Guides  
       slug: connections/reverse-etl/reverse-etl-source-setup-guides
       section: 
@@ -257,16 +259,16 @@ sections:
     title: Rate Limits
   - path: /connections/regional-segment
     title: Regional Segment
-- section_title: Reverse ETL
-  section:
-  - path: /reverse-etl
-    title: Reverse ETL Overview
-  - path: /reverse-etl/bigquery-setup
-    title: BigQuery Reverse ETL Setup
-  - path: /reverse-etl/redshift-setup
-    title: Redshift Reverse ETL Setup
-  - path: /reverse-etl/snowflake-setup
-    title: Snowflake Reverse ETL Setup
+# - section_title: Reverse ETL
+#   section:
+#   - path: /reverse-etl
+#     title: Reverse ETL Overview
+#   - path: /reverse-etl/bigquery-setup
+#     title: BigQuery Reverse ETL Setup
+#   - path: /reverse-etl/redshift-setup
+#     title: Redshift Reverse ETL Setup
+#   - path: /reverse-etl/snowflake-setup
+#     title: Snowflake Reverse ETL Setup
 - section_title: Unify
   section:
   - path: /unify
