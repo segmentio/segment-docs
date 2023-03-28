@@ -340,7 +340,7 @@ If you don't do this, the old client instance would still exist and retain the t
 Ideally, you shouldn't have to use this method, and the Segment client should be initialized only once in the application lifecycle.
 
 ## Control upload with Flush Policies
-To granularly control when events are uploaded you can use `FlushPolicies`.
+To granularly control when Segment uploads events you can use `FlushPolicies`.
 A Flush Policy defines the strategy for deciding when to flush, this can be on an interval, on a certain time of day, after receiving a certain number of events or even after receiving a particular event. This gives you even more flexibility on when to send event to Segment.
 To make use of flush policies you can set them in the configuration of the client:
 ```ts
