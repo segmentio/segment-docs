@@ -3,7 +3,7 @@ title: Snowflake Reverse ETL Setup
 beta: true
 ---
 
-Set up Snowflake as your Reverse ETL source. You can also choose to [set up BigQuery](/docs/reverse-etl/bigquery-setup/) as your source.
+Set up Snowflake as your Reverse ETL source. 
 
 At a high level, when you set up Snowflake for Reverse ETL,  the configured user/role needs read permissions for any resources (databases, schemas, tables) the query needs to access. Segment keeps track of changes to your query results with a managed schema (`__SEGMENT_REVERSE_ETL`), which requires the configured user to allow write permissions for that schema.
 
@@ -57,4 +57,4 @@ Follow the instructions below to set up the Segment Snowflake connector. Segment
    -- role access
    GRANT ROLE segment_reverse_etl TO USER segment_reverse_etl_user;
    ```
-7. Follow the steps listed in the [Add a Source](/docs/reverse-etl/#step-1-add-a-source) section to finish adding Snowflake as a source.
+7. Follow the steps listed in the [Add a Source](/docs/reverse-etl#step-1-add-a-source) section to finish adding Snowflake as a source.

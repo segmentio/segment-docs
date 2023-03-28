@@ -537,13 +537,13 @@ These are the example plugins you can use and alter to meet your tracking needs:
 | Firebase            | `@segment/analytics-react-native-plugin-consent-firebase`    |
 | IDFA                | `@segment/analytics-react-native-plugin-idfa`                |
 
-## Destination Filters
+<!-- ## Destination Filters
 > info ""
 > Destination filters are only available to Business Tier customers.
 >
 > Destination filters on mobile device-mode destinations are in beta and only supports Analytics-React-Native 2.0, [Analytics-Swift](/docs/connections/sources/catalog/libraries/mobile/swift-ios/) and [Analytics-Kotlin](/docs/connections/sources/catalog/libraries/mobile/kotlin-android/).
 
-Use Analytics-React-Native 2.0 to set up [destination filters](docs/connections/destinations/destination-filters/) on your mobile device-mode destinations.
+Use Analytics-React-Native 2.0 to set up [destination filters](/docs/connections/destinations/destination-filters/) on your mobile device-mode destinations.
 
 > warning ""
 > You must use Analytics-React-Native version 2.9 or higher to implement destination filters.
@@ -574,7 +574,7 @@ To get started with destination filters on mobile device-mode destinations using
 
     segmentClient.add({ plugin: new DestinationFiltersPlugin() });
     segment.add({ plugin: new FirebasePlugin() })
-    ```
+    ``` -->
 
 ## Supported Destinations
 Segment supports a large number of [Cloud-mode](/docs/connections/destinations/#connection-modes) destinations. Segment also supports the below destinations for Analytics React Native 2.0 in device-mode, with more to follow:
@@ -637,5 +637,9 @@ import {
     }
   }
 ```
+
+### What is the instanceId set in context?
+The instanceId was introduced in [V 2.10.1](https://github.com/segmentio/analytics-react-native/releases/tag/%40segment%2Fanalytics-react-native-v2.10.1) and correlates events to a particular instance of the client in a scenario when you might have multiple instances on a single app. 
+
 ## Changelog
 [View the Analytics React Native 2.0 changelog on GitHub](https://github.com/segmentio/analytics-react-native/releases){:target="_blank"}.
