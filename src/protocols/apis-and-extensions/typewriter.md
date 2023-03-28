@@ -543,7 +543,7 @@ typewriter.setTypewriterOptions({
 
 Typewriter only supports `track` calls. However, you can continue to use the underlying (untyped) analytics instance to perform `identify`, `group`, `page`, `screen`, and `alias` calls.
 
-Not all languages support run-time validation. Currently, `analytics.js` and `analytics-node` support it using [AJV](https://github.com/epoberezkin/ajv){:target="_blank"} (both for JavaScript and TypeScript projects) while `analytics-swift` and `analytics-kotlin` don't support run-time validation. Typewriter also doesn't support run-time validation using Common JSON Schema.
+Not all languages support run-time validation. Currently, `analytics.js` and `analytics-node` support it using [AJV](https://github.com/epoberezkin/ajv){:target="_blank"} (both for JavaScript and TypeScript projects) while `analytics-swift` and `analytics-kotlin` don't support run-time validation. Typewriter also does not support event validation using the Common JSON Schema.
 
 ## Contributing
 

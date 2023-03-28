@@ -313,7 +313,7 @@ Engage sends **Account-Level data** to HubSpot using **Identify** calls to add a
 
 ### Verify the audience
 
-You can use the [Profiles Debugger](/docs/profiles/debugger) to see the calls sent to HubSpot.
+You can use the [Profiles Debugger](/docs/unify/debugger) to see the calls sent to HubSpot.
 
 ![](images/hubspot-personas07.png)
 

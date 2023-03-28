@@ -1,17 +1,17 @@
 ---
-title: Profiles and GDPR
-plan: profiles
+title: Unify and GDPR
+plan: unify
 redirect_from:
   - "/personas/personas-gdpr"
 ---
 
-All [Segment GDPR features](/docs/privacy/complying-with-the-gdpr/) apply to Profiles.
+All [Segment GDPR features](/docs/privacy/complying-with-the-gdpr/) apply to Unify.
 
-Segment never shares or sells user data. Profiles inherits Segment's holistic approach to security and privacy, using 256-bit AES standard encryption to safeguard data stores both at rest and in transit.
+Segment never shares or sells user data. Unify inherits Segment's holistic approach to security and privacy, using 256-bit AES standard encryption to safeguard data stores both at rest and in transit.
 
 ## User Rights
 
-End-user privacy and the GDPR principles informed the design of Profiles, a product powered by first-party data. Profiles integrates Segment's existing end-user privacy features with several user rights:
+End-user privacy and the GDPR principles informed the design of Unify, a product powered by first-party data. Unify integrates Segment's existing end-user privacy features with several user rights:
 
 
 - Right to Erasure
@@ -31,11 +31,11 @@ With [one-click suppression](/docs/privacy/user-deletion-and-suppression/#supres
 
 ### Right to Rectification
 
-When Segment receives new information, the platform updates user profiles and traits in both Segment and its downstream tools. Use the [Profile API](/docs/profiles/profile-api/) to confirm that an update has been processed.
+When Segment receives new information, the platform updates user profiles and traits in both Segment and its downstream tools. Use the [Profile API](/docs/unify/profile-api/) to confirm that an update has been processed.
 
 ### Rights to Access and Portability
 
-[Identity Resolution](/docs/profiles/identity-resolution/) connects information you've gathered about a customer into a single profile. Using the Profile API, you can provide end users with this data. You can also enable raw data integrations and warehouses to share a user's data in a structured format.
+[Identity Resolution](/docs/unify/identity-resolution/) connects information you've gathered about a customer into a single profile. Using the Profile API, you can provide end users with this data. You can also enable raw data integrations and warehouses to share a user's data in a structured format.
 
 ## Next Steps
 
