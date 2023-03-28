@@ -374,7 +374,7 @@ const client = createClient({
   // ...
   flushPolicies: policies,
 });
-// If we detect the user disconnects from the network remove all flush policies, 
+// If Segment detects the user disconnect from the network, Segment removes all flush policies. 
 // That way the Segment client won't keep attempting to send events to Segment but will still 
 // store them for future upload.
 // If the network comes back up, the Segment client adds the policies back. 
