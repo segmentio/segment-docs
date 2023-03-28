@@ -612,5 +612,32 @@ const segmentClient = createClient({
 ```
 ### What is the instanceId set in context?
 The instanceId was introduced in [V 2.10.1](https://github.com/segmentio/analytics-react-native/releases/tag/%40segment%2Fanalytics-react-native-v2.10.1) and correlates events to a particular instance of the client in a scenario when you might have multiple instances on a single app. 
+
+### How do I interact with the integrations object?
+The integrations object is no longer part of the Segment events method signature. To access the integrations object, in order to control what destinations the event reaches, you can instead use a Plugin:
+
+```js
+import {
+    EventType,
+    Plugin,
+    PluginType,
+    SegmentEvent,
+  } from '@segment/analytics-react-native';
+  
+  export class Modify extends Plugin {
+    type = PluginType.before;
+  
+    async execute(event: SegmentEvent) {
+      if (event.type == EventType.TrackEvent) {
+        let integrations = event.integrations;
+        if (integrations !== undefined) {
+          integrations['Appboy'] = false;
+        }
+      }
+      //console.log(event);
+      return event;
+    }
+  }
+```
 ## Changelog
 [View the Analytics React Native 2.0 changelog on GitHub](https://github.com/segmentio/analytics-react-native/releases){:target="_blank"}.
