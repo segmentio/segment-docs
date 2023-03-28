@@ -32,6 +32,8 @@ Replays can process an unlimited amount of data, however they are rate limited t
 
 Replays do not affect your [MTU count](/docs/guides/usage-and-billing/mtus-and-throughput/), unless you are using a [Repeater destination](/docs/connections/destinations/catalog/repeater/). Notify your team before initiating a Replay if you're using a Repeater destination.
 
+Once a replay starts, you will not see replayed events in the Event Delivery tab.
+
 ### Replay-eligible destinations
 
 Replays are available for any destinations which support cloud-mode data (meaning data routed through Segment) and which also process timestamps. Destinations that are only available in device-mode (meaning where data is sent directly from the users' devices to the destination tool) cannot receive Replays.
