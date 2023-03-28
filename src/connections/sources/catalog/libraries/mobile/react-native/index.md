@@ -361,7 +361,7 @@ We have several standard FlushPolicies:
 - `StartupFlushPolicy` triggers on client startup only
 
 ### Adding or removing policies
-One of the main advantages of FlushPolicies is that you can add and remove policies on the fly. This is very powerful when you want to reduce or increase the amount of flushes. 
+One of the main advantages of Flush Policies is that you can add and remove policies on the fly. This is very powerful when you want to reduce or increase the amount of flushes. 
 For example you might want to disable flushes if you detect the user has no network:
 ```ts
 import NetInfo from "@react-native-community/netinfo";
