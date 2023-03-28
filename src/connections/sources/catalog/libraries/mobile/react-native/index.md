@@ -377,7 +377,7 @@ const client = createClient({
 // If we detect the user disconnects from the network remove all flush policies, 
 // That way the Segment client won't keep attempting to send events to Segment but will still 
 // store them for future upload.
-// If the network comes back up we add the policies back
+// If the network comes back up, the Segment client adds the policies back. 
 const unsubscribe = NetInfo.addEventListener((state) => {
   if (state.isConnected) {
     client.addFlushPolicy(...policiesIfNetworkIsUp);
