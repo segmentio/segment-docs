@@ -23,6 +23,55 @@ Here's the payload of a typical `page` call with most [common fields](/docs/conn
 }
 ```
 
+And here's the corresponding JavaScript event that would generate the above payload. If you're using Segment's JavaScript library, the page name and URL are automatically gathered and passed as properties into the event payload:
+
+```js
+analytics.page("Retail Page","Home");
+```
+{% include content/syntax-note.md %}
+
+Beyond the common fields, the `page` call takes the following fields:
+
+<table>
+  {% include content/spec-table-header.md %}
+  {% include content/spec-field-page-category.md %}
+  {% include content/spec-field-page-name.md %}
+  {% include content/spec-field-page-properties.md %}
+</table>
+
+
+## Example
+
+Here's a complete example of a `page` call:
+
+```json
+{
+  "anonymousId": "507f191e810c19729de860ea",
+  "channel": "browser",
+  "context": {
+    "ip": "8.8.8.8",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_9_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/40.0.2214.115 Safari/537.36"
+  },
+  "integrations": {
+    "All": true,
+    "Mixpanel": false,
+    "Salesforce": false
+  },
+  "messageId": "022bb90c-bbac-11e4-8dfc-aa07a5b093db",
+  "name": "Home",
+  "properties": {
+    "title": "Welcome | Initech",
+    "url": "http://www.example.com"
+  },
+  "receivedAt": "2015-02-23T22:28:55.387Z",
+  "sentAt": "2015-02-23T22:28:55.111Z",
+  "timestamp": "2015-02-23T22:28:55.111Z",
+  "type": "page",
+  "userId": "97980cfea0067",
+  "version": "1.1"
+}
+```
+
 <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/9000.0.1/prism.min.js" integrity="sha512-UOoJElONeUNzQbbKQbjldDf9MwOHqxNz49NNJJ1d90yp+X9edsHyJoAs6O4K19CZGaIdjI5ohK+O2y5lBTW6uQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/9000.0.1/themes/prism.css" integrity="sha512-EaMmVtm5YHQNg4u9UXGOueWP6nyUtCpKZojcE4Rqt/6ifpzzzuQVMTffvo8FVj4xDG04gIyWm1z1b7GqELl1eQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 <script type="text/javascript">
@@ -90,55 +139,6 @@ Here's the payload of a typical `page` call with most [common fields](/docs/conn
 </code></pre>
 </div>
 </div>
-
-And here's the corresponding JavaScript event that would generate the above payload. If you're using Segment's JavaScript library, the page name and URL are automatically gathered and passed as properties into the event payload:
-
-```js
-analytics.page("Retail Page","Home");
-```
-{% include content/syntax-note.md %}
-
-Beyond the common fields, the `page` call takes the following fields:
-
-<table>
-  {% include content/spec-table-header.md %}
-  {% include content/spec-field-page-category.md %}
-  {% include content/spec-field-page-name.md %}
-  {% include content/spec-field-page-properties.md %}
-</table>
-
-
-## Example
-
-Here's a complete example of a `page` call:
-
-```json
-{
-  "anonymousId": "507f191e810c19729de860ea",
-  "channel": "browser",
-  "context": {
-    "ip": "8.8.8.8",
-    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_9_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/40.0.2214.115 Safari/537.36"
-  },
-  "integrations": {
-    "All": true,
-    "Mixpanel": false,
-    "Salesforce": false
-  },
-  "messageId": "022bb90c-bbac-11e4-8dfc-aa07a5b093db",
-  "name": "Home",
-  "properties": {
-    "title": "Welcome | Initech",
-    "url": "http://www.example.com"
-  },
-  "receivedAt": "2015-02-23T22:28:55.387Z",
-  "sentAt": "2015-02-23T22:28:55.111Z",
-  "timestamp": "2015-02-23T22:28:55.111Z",
-  "type": "page",
-  "userId": "97980cfea0067",
-  "version": "1.1"
-}
-```
 
 ## Identities
 
