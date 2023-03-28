@@ -2,6 +2,9 @@
 title: Reverse ETL Catalog
 hidden: true
 ---
+
+These destinations support [Reverse ETL](/docs/connections/reverse-etl/). If you don’t see your destination listed in the Reverse ETL catalog, use the [Segment Connections destination](/docs/connections/destinations/catalog/actions-segment/) to send data from your Reverse ETL warehouse to other destinations listed in the [catalog](/docs/connections/destinations/catalog/).  
+
 <div class="destinations-catalog">
       <div class="flex flex--wrap waffle waffle--xlarge">
         {% assign destinations = site.data.catalog.destinations.items%}
