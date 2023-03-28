@@ -124,7 +124,6 @@ To enable session tracking in Amplitude when using the [Segment Android library]
 The classic Amplitude destination captures the following user fields in device-mode (when it runs on the user's device):
 
 - Device Type (for example, Mac, PC, mobile device)
-- Platform (for example iOS or Android)
 
 Amplitude (Actions) runs in cloud-mode, and does not capture these fields.
 {% capture log-event-details %}
