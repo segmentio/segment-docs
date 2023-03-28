@@ -10,7 +10,7 @@ redirect_from:
 
 Audiences let you group users or accounts based on event behavior and traits that Segment tracks.
 
-You can build Audiences from core **tracking events**, **traits**, and **computed traits**. You can then sync Audiences to hundreds of [Destinations](/docs/connections/destinations/) or access them with the [Profile API](/docs/profiles/profile-api).
+You can build Audiences from core **tracking events**, **traits**, and **computed traits**. You can then sync Audiences to hundreds of [Destinations](/docs/connections/destinations/) or access them with the [Profile API](/docs/unify/profile-api).
 
 ## Building an Audience
 
@@ -160,7 +160,7 @@ To edit a realtime Trait or Audience, follow these steps:
 3. Select the **Builder** tab and make your edits.
 4. Preview the results, then select **Create Audience** to confirm your edits.
 
-Engage then processes your realtime Audience or Trait edits. While the edit task runs, the audience remains locked and you can't make further changes. Once Engage incorporates your changes, you'll be able to access your updated Audience or Trait. 
+Engage then processes your realtime Audience or Trait edits. While the edit task runs, the audience remains locked and you can't make further changes. Once Engage incorporates your changes, you'll be able to access your updated Audience or Trait.
 
 > warning ""
 > If your audience includes historical data (Historical Backfill is enabled), editing an audience creates a new backfill task. The backfill task, and therefore the edit task, take longer to process if the audience is connected to a destination with rate limits. Rate-limited destinations dictate how fast Engage can backfill. View a list of [rate-limited destinations](/docs/engage/using-engage-data/#rate-limits-on-engage-event-destinations).
@@ -192,7 +192,7 @@ The query would return the following payload:
         }
     }
 ```
-You can read the [full Profile API docs](/docs/profiles/profile-api/) to learn more.
+You can read the [full Profile API docs](/docs/unify/profile-api/) to learn more.
 
 ## Download your Audience as a CSV file
 

@@ -1,7 +1,7 @@
 ---
 title: Identity Resolution Settings
-plan: profiles
-redirect_from: 
+plan: unify
+redirect_from:
 - '/personas/identity-resolution/identity-graph-rules/'
 - '/personas/identity-resolution/identity-resolution-settings/'
 ---
@@ -10,11 +10,11 @@ redirect_from:
 
 
 > note ""
-> The steps in this guide pertain to spaces created before September 27th, 2020. For spaces created after September 27th, 2020, please refer to the onboarding guide [here](/docs/profiles/identity-resolution/identity-resolution-onboarding/).
+> The steps in this guide pertain to spaces created before September 27th, 2020. For spaces created after September 27th, 2020, please refer to the onboarding guide [here](/docs/unify/identity-resolution/identity-resolution-onboarding/).
 
 ## Configure Identity Graph rules
 
-Before you connect a source to Profiles, Segment recommends that you first review the default Identity settings and configure custom rules as needed. Segment applies configuration updates to all *new* data flowing through the space after you save your changes. As a result, if this is your first time setting up your Identity Graph, Segment recommends that you get started with a *Dev* space [here](/docs/profiles/identity-resolution/space-setup/).
+Before you connect a source to Unify, Segment recommends that you first review the default Identity settings and configure custom rules as needed. Segment applies configuration updates to all *new* data flowing through the space after you save your changes. As a result, if this is your first time setting up your Identity Graph, Segment recommends that you get started with a *Dev* space [here](/docs/unify/identity-resolution/space-setup/).
 
 > note ""
 > **NOTE:** Workspace owners and users with the Identity Admin role can edit the Identity Resolution table.
@@ -80,7 +80,7 @@ analytics.track('Subscription Upgraded', {
 Segment recommends that you add custom externalIDs to the Identity Resolution table *before* events containing this identifier flow through the space. Once an event with a new type of externalID flows into the space, the externalID is automatically added to the table if it wasn't manually added. When the externalID is automatically added, it defaults to the preset priority and limit, as explained below.
 
 ## Flat matching logic
-When a new event flows into Profiles, Segment looks for profiles that match any of the identifiers on the event.
+When a new event flows into Unify, Segment looks for profiles that match any of the identifiers on the event.
 
 Based on the existence of a match, one of three actions can occur:
 
@@ -148,7 +148,7 @@ When you choose the limit on an identifier, ask the following questions about ea
 
 Segment considers the priority of an identifier once that identifier exceeds the limit on the final profile.
 
-For example, consider a Profiles space with the following Identity Resolution configurations:
+For example, consider a Unify space with the following Identity Resolution configurations:
 
 | Identifier   | Limit | Priority |
 | ------------ | ----- | -------- |
@@ -190,4 +190,3 @@ When choosing the priority of your identifier, ask the following questions about
 1. Is it an immutable ID? Give immutable IDs, such as user_id, highest priority.
 2. Are they unique IDs? Give Unique IDs such as email higher priority than possibly shared identifiers like android.id or ios.id.
 3. Does it temporarily identify a user? Identifiers such as anonymous_id, ios.idfa, and ga_client_id are constantly updated or expired for a user. Generally speaking, rank these lower than identifiers that permanently identify a user.
-

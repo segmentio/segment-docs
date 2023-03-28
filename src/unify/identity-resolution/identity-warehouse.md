@@ -1,6 +1,6 @@
 ---
 title: Identity Warehouse (Limited Availability)
-plan: profiles
+plan: unify
 redirect_from:
 - '/personas/identity-resolution/identity-warehouse'
 ---

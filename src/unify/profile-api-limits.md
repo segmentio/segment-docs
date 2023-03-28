@@ -1,6 +1,6 @@
 ---
-title: Profiles Limits
-plan: profiles
+title: Unify Limits
+plan: unify
 redirect_from:
   - '/profiles/product-limits'
 ---
