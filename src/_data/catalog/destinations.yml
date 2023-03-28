@@ -29467,7 +29467,7 @@ items:
   previous_names:
   - Google Analytics 4 Web
   website: https://support.google.com/analytics/answer/10089681
-  status: PUBLIC_BETA
+  status: PUBLIC
   categories:
   - Analytics
   logo:
@@ -54134,7 +54134,7 @@ items:
   previous_names:
   - Segment Profiles
   website: https://segment.com/product/profiles/
-  status: PUBLIC_BETA
+  status: PUBLIC
   categories: []
   logo:
     url: https://cdn.filepicker.io/api/file/vorrYlOTuuGLZFVXG9xA
