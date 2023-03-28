@@ -353,7 +353,7 @@ const client = createClient({
   ],
 });
 ```
-You can set several policies at a time. Whenever any of them decides it is time for a flush it will trigger an upload of the events. The rest get reset so that their logic restarts after every flush. 
+You can set several policies at a time. When a flush occurs, it triggers an upload of the events, then resets the logic after every flush. 
 That means only the first policy to reach `shouldFlush` gets to trigger a flush at a time. In the example above either the event count gets to 5 or the timer reaches 500ms, whatever comes first will trigger a flush.
 We have several standard FlushPolicies:
 - `CountFlushPolicy` triggers whenever a certain number of events is reached
