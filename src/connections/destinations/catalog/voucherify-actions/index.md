@@ -34,6 +34,7 @@ On the Voucherify Dashboard page:
 
 ## Benefits of Voucherify (Actions) vs Voucherify (Classic)
 
+The integration works in outbound and inbound models, allowing brands to use Voucherify as both the Destination and Source of customer data. 
 New destination type allows any changes in mapping of fields from an event, more customization, adding filters to events.
 Thanks to the integration, your brands can quickly transfer customer data from Segment to Voucherify and the other way around. Now, the development team doesn’t have to create a separate app for customer data synchronisation, as it comes out of the box with this integration.
 From now you are able to choose who is eligible for the discount, what products should be in the cart, when they should receive the offer, via which channel, when and where customers can use it and how many times.
