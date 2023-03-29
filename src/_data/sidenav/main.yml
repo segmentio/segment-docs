@@ -355,6 +355,8 @@ sections:
       title: Computed Traits
     - path: '/engage/audiences/sql-traits'
       title:  SQL Traits
+    - path: '/engage/audiences/predictive-traits'
+      title:  Predictive Traits
 
   - section_title: Journeys
     description: "Learn how to create multi-step Journeys to tailor messages to your users."
