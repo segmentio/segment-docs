@@ -29,12 +29,12 @@ To get started with the Analytics for React Native 2.0 library:
 1. Create a React Native Source in Segment.
     1. Go to **Connections > Sources > Add Source**.
     2. Search for React Native and click **Add source**.
-2. Install `@segment/analytics-react-native`, [`@segment/sovran-react-native`](https://github.com/segmentio/sovran-react-native){:target="_blank"} and [`react-native-async-storage/async-storage`](https://github.com/react-native-async-storage/async-storage){:target="_blank"}:
+2. Install `@segment/analytics-react-native`, [`@segment/sovran-react-native`](https://github.com/segmentio/sovran-react-native){:target="_blank"} and [`react-native-get-random-values`](https://github.com/LinusU/react-native-get-random-values){:target="_blank"}:
 
     ```js
-    yarn add @segment/analytics-react-native @segment/sovran-react-native @react-native-async-storage/async-storage
+    yarn add @segment/analytics-react-native @segment/sovran-react-native react-native-get-random-values
     # or
-    npm install --save @segment/analytics-react-native @segment/sovran-react-native @react-native-async-storage/async-storage
+    npm install --save @segment/analytics-react-native @segment/sovran-react-native react-native-get-random-values
     ```
 3. If you're using iOS, install native modules with:
 
