@@ -4,7 +4,7 @@
 
 > (delete after reading) Include a 1-2 sentence introduction to your company and the value it provides to customers - updating the name and hyperlink. Please leave the utm string unchanged.
 
-[Voucherify](https://voucherify.io/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) an API-first Promotion Engine for growth teams. With Voucherify, marketers can run dynamic and personalized promotions and loyalty programs without the involvement of the development team. Run CDP-powered coupons, discounts, referrals, loyalty programs, gift cards, cashback, bundles, and more. The Destination integration provides a continuous flow of customer data from Segment to Voucherify to create custom events, create or update customers, and build audiences.
+[Voucherify](https://voucherify.io/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) is an API-first Promotion Engine for growth teams. With Voucherify, marketers can run dynamic and personalized promotions and loyalty programs without the involvement of the development team. Run CDP-powered coupons, discounts, referrals, loyalty programs, gift cards, cashback, bundles, and more. The Destination integration provides a continuous flow of customer data from Segment to Voucherify to create custom events, create or update customers, and build audiences.
 
 This destination is maintained by Voucherify. For any issues with the destination, [contact their Support team](mailto:support@voucherify.io).
 
