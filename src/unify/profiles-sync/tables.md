@@ -171,12 +171,10 @@ Profiles Sync uses the following schema: `<profiles_space_name>.<tableName>`.
 
 If your space has the same name as a source connected to your Segment Warehouse destination, Segment overwrites data to the Event tables.
 
-{% comment %} (commenting out ERD draft for now) 
 
 > success ""
 > For more on Profiles Sync logic, table mappings, and data types, download this [Profiles Sync ERD](/docs/unify/files/ERD.png) or visit [schema evolution and compatibility](/docs/connections/storage/warehouses/schema/#schema-evolution-and-compatibility).
 
-{% endcomment %}
 
 {% comment %}
 
