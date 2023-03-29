@@ -2,7 +2,7 @@
 
 > (delete after reading) Include a 1-2 sentence introduction to your company and the value it provides to customers - updating the name and hyperlink. Please leave the utm string unchanged.
 
-[Voucherify](https://voucherify.io/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) [text]
+[Voucherify](https://voucherify.io/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) helps developers integrate digital promotions across any marketing channel or customer touchpoint - eventually giving full control over campaigns back to the marketing team. The integration works in outbound and inbound models allowing brands to use Voucherify as both the Destination and Source of customer data.
 
 This is an [Event Cloud Source](https://segment.com/docs/sources/#event-cloud-sources) which can not only export data into your Segment warehouse, but they can also federate the exported data into your other enabled Segment Destinations.
 
@@ -22,21 +22,20 @@ _**NOTE:** The Voucherify Source is currently in beta, which means that they are
 2. Search for "Voucherify" in the Sources Catalog, select Voucherify, and click **Add Source**.
 3. On the next screen, give the Source a nickname configure any other settings.
 
-   - The nickname is used as a label in the Segment app, and Segment creates a related schema name in your warehouse. The nickname can be anything, but we recommend using something that reflects the source itself and distinguishes amongst your environments (eg. SourceName_Prod, SourceName_Staging, SourceName_Dev).
-
+   - The nickname is used as a label in the Segment app, and Segment creates a related schema name in your warehouse. The nickname can be anything, but we recommend using something that reflects the source itself and distinguishes amongst your environments.
 4. Click **Add Source** to save your settings.
 5. Copy the Write key from the Segment UI and log in to your Voucherify account. 
-6. To finish the set up, go to your Voucherify account, then go to Project Settings > Integrations > Segment.io, and enter the Write Key.
+6. To finish the set up, go to Project Settings > Integrations > Segment.io -> Connect, enter the Write Key and confirm.
 
 ## Stream
 
 > (delete after reading) Clarify the type of Segment events your integration will send. 
 
-Voucherify uses our stream Source component to send Segment event data. It uses a server-side (select from `track`, `identify`, `page`, `group`) method(s) to send data to Segment. These events are then available in any destination that accepts server-side events, and available in a schema in your data warehouse, so you can query using SQL.
+Voucherify uses our stream Source component to send Segment event data. It uses a server-side `track` method to send data to Segment. These events are then available in any destination that accepts server-side events, and available in a schema in your data warehouse, so you can query using SQL. These events are also assigned to user accounts in the Segment Profiles (Unify). 
 
-> (delete after reading) Clarify how your integration includes user identifiers in your event payloads, the example below is from Klaviyo:
+> (delete after reading) Clarify how your integration includes user identifiers in your event payloads:
 
-The default behavior is for Voucherify to pass the `userId` associated with the customer. There are cases in which Voucherify does not have an associated `userId`, in which case the customer will be associated with the `anonymousId`. 
+The default behavior is for Voucherify to pass the `userId` associated with the customer. There are cases in which Voucherify does not have an associated `userId`, and then the customer will be associated with the `anonymousId`. 
 
 > (delete after reading) For each of the below sections, populate the event and properties that a customer would expect to receive in their downstream tools from your Event Source.
 
