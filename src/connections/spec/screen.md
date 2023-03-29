@@ -66,6 +66,70 @@ Here's a complete example of a `screen` call:
 }
 ```
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/9000.0.1/prism.min.js" integrity="sha512-UOoJElONeUNzQbbKQbjldDf9MwOHqxNz49NNJJ1d90yp+X9edsHyJoAs6O4K19CZGaIdjI5ohK+O2y5lBTW6uQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<link rel="stylesheet" href="/src/_sass/components/_prisim.scss"/>
+<script type="text/javascript">
+  function showMessage(){
+      var name = document.getElementById("name").value;
+      var variation = document.getElementById("variation").value;
+      var output = 
+`{
+  "anonymousId": "3a12eab0-bca7-11e4-8dfc-aa07a5b093db",
+  "channel": "mobile",
+  "context": {
+    "ip": "8.8.8.8"
+  },
+  "integrations": {
+    "All": true,
+    "Mixpanel": false,
+    "Salesforce": false
+  },
+  "messageId": "022bb90c-bbac-11e4-8dfc-aa07a5b093db",
+  "name": "${name}",
+  "properties": {
+    "variation": "${variation}"
+  },
+  "receivedAt": "2015-02-23T22:28:55.387Z",
+  "sentAt": "2015-02-23T22:28:55.111Z",
+  "timestamp": "2015-02-23T22:28:55.111Z",
+  "type": "screen",
+  "userId": "97980cfea0067",
+  "version": "1.1"
+  }`
+    output_container.innerHTML = output
+    Prism.highlightElement(output_container)
+  }
+</script>
+<script>
+  function showOutput() {
+    var show = document.getElementById("output-code");
+    if (show.style.display === "block") {
+      show.style.display = "none";
+    } else {
+      show.style.display = "block";
+    }
+  }
+</script>
+
+<div class="sample-code-container">
+<div class="form">
+  <h3> Sample Screen </h3>
+  <p><b>See what your screen call looks like</b></p>
+  <label for="name">Name:</label>
+  <input type="text" id="name"><br>
+  <label for="variation">Variation:</label>
+  <input type="text" id="variation"><br>
+  <input type="submit" id="submit" onclick="showMessage(); showOutput()" value="See a sample Screen call">
+</div>
+
+<div class="output">
+<h3>Sample Screen Call</h3>
+<pre class="language-javascript"><code class="language-javascript" id="output_container">
+
+</code></pre>
+</div>
+</div>
+
 
 ## Identities
 
