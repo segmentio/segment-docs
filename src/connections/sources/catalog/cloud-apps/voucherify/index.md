@@ -2,7 +2,7 @@
 
 > (delete after reading) Include a 1-2 sentence introduction to your company and the value it provides to customers - updating the name and hyperlink. Please leave the utm string unchanged.
 
-[Voucherify](https://voucherify.io/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) helps developers integrate digital promotions across any marketing channel or customer touchpoint - eventually giving full control over campaigns back to the marketing team. The integration works in outbound and inbound models allowing brands to use Voucherify as both the Destination and Source of customer data.
+[Voucherify](https://voucherify.io/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) helps developers integrate digital promotions across any marketing channel or customer touchpoint, eventually giving full control over campaigns back to the marketing team. The integration works in outbound and inbound models allowing brands to use Voucherify as both the Destination and Source of customer data.
 
 This is an [Event Cloud Source](https://segment.com/docs/sources/#event-cloud-sources) which can not only export data into your Segment warehouse, but they can also federate the exported data into your other enabled Segment Destinations.
 
@@ -25,7 +25,7 @@ _**NOTE:** The Voucherify Source is currently in beta, which means that they are
    - The nickname is used as a label in the Segment app, and Segment creates a related schema name in your warehouse. The nickname can be anything, but we recommend using something that reflects the source itself and distinguishes amongst your environments.
 4. Click **Add Source** to save your settings.
 5. Copy the Write key from the Segment UI and log in to your Voucherify account. 
-6. To finish the set up, go to Project Settings > Integrations > Segment.io -> Connect, enter the Write Key and confirm.
+6. To finish the setup, go to Project Settings > Integrations > Segment.io -> Connect, enter the Write Key and confirm.
 
 ## Stream
 
@@ -35,13 +35,13 @@ Voucherify uses our stream Source component to send Segment event data. It uses 
 
 > (delete after reading) Clarify how your integration includes user identifiers in your event payloads:
 
-The default behavior is for Voucherify to pass the `userId` associated with the customer. There are cases in which Voucherify does not have an associated `userId`, and then the customer will be associated with the `anonymousId`. 
+The default behavior is for Voucherify to pass the `userId` associated with the customer. There are cases in which Voucherify does not have an associated `userId`, and then the customer will be associated with an `anonymousId`. 
 
 > (delete after reading) For each of the below sections, populate the event and properties that a customer would expect to receive in their downstream tools from your Event Source.
 
 ## Events
 
-The table below lists events that Voucherify sends to Segment. These events appear as tables in your warehouse, and as regular events in other Destinations. Voucherify includes the `userId` if available.
+The table below lists events that Voucherify sends to Segment. These events appear as tables in your warehouse and as regular events in other Destinations. Voucherify includes the `userId` if available.
 
 Redemption events: 
 
@@ -52,7 +52,7 @@ Redemption events:
   </tr>
   <tr>
    <td>Redemption failed</td>
-   <td>Triggered  when a redemption attempt fails, due to an issue with the voucher or customer.</td>
+   <td>Triggered  when a redemption attempt fails due to an issue with the voucher or customer.</td>
   </tr>
   <tr>
    <td>Redemption rollback succeeded</td>
@@ -85,7 +85,7 @@ Redemption events:
   </tr>
    <tr>
    <td>Customer rewarded</td>
-   <td>Triggered when a customer is rewarded with a main reward. (a type of reward that is associated with a specific voucher campaign and is typically the primary incentive offered to customers.</td>
+   <td>Triggered when a customer is rewarded with a main reward.</td>
   </tr>
     <tr>
    <td>Customer rewarded with loyalty points</td>
@@ -122,12 +122,12 @@ Publication events:
 
 ## Event Properties
 
-The table below list the properties included in the events listed above.
+The table below lists the properties included in the events listed above.
 
 <table>
   <tr>
    <td>voucherifyEvent</td>
-   <td>The entire event object that occured in Voucherify.</td>
+   <td>The entire event object that occurred in Voucherify.</td>
   </tr>
 </table>
 
