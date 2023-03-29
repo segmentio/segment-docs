@@ -70,7 +70,24 @@ const getDestinationData = async (id) => {
   let actions = destination.actions
   let presets = destination.presets
 
+  // Force screen method into supportedMethods object
+  destination.supportedMethods.screen = false
+  // Set it true for LiveLike, per request
+  if (destination.id == '63e42b47479274407b671071'){
+    destination.supportedMethods.screen = true
+  }
 
+  const clone = (obj) => Object.assign({}, obj)
+  const renameKey = (object, key, newKey) => {
+    const clonedObj = clone(object);
+    const targetKey = clonedObj[key];
+    delete clonedObj[key];
+
+    clonedObj[newKey] = targetKey;
+    return clonedObj;
+  };
+
+  destination.supportedMethods = renameKey(destination.supportedMethods, 'pageview', 'page')
 
   let updatePrivateDest = {
     id: destination.id,

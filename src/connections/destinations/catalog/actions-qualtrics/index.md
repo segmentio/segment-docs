@@ -3,8 +3,6 @@ title: Qualtrics Destination
 hide-boilerplate: true
 hide-dossier: true
 id: 62e17e6f687e4a3d32d0f875
-private: true
-hidden: true
 ---
 
 <!-- This template is meant for Actions-based destinations that do not have an existing Classic or non-Actions-based version. For Actions Destinations that are a new version of a classic destination, see the doc-template-update.md template. -->

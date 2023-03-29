@@ -1,6 +1,6 @@
 ---
 title: User Subscription States
-plan: engage-foundations
+plan: engage-premier
 ---
 
 Customer profiles in your Segment audiences contain **contact vectors**. A contact vector is a piece of unique, specific contact information associated with a customer, like the customer's email address or phone number.
@@ -84,6 +84,14 @@ You can set subscription states by either CSV file upload or, programmatically, 
 Uploading contacts with a CSV file works best for initial batches of contacts you’d like to bring into Engage. Syncing programmatically with the Public API is best suited for real-time and ongoing subscription maintenance, like when a user signs up for a form on your site or unsubscribes from your marketing campaigns within their notification center or account settings.
 
 To learn more about both options, reference the Engage documentation on using the [CSV uploader](/docs/engage/profiles/csv-upload/) and setting user subscriptions.
+
+### Sync subscription statuses with SQL
+
+Use SQL to import user subscription states from your data warehouse back to Engage. When you sync with SQL, you can query user subscription data at automated intervals. Pull subscription statuses for each contact vector and use your data warehouse as a single source of truth for subscription data.
+
+This option is especially useful if you don't have the ability to set subscription states with CSVs or Segment's Public API.
+
+View [Subscriptions with SQL Traits](/docs/engage/user-subscriptions/subscription-sql/) for more information.
 
 ### Troubleshooting subscription states
 

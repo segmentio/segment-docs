@@ -4,6 +4,7 @@ hide-cmodes: true
 hide-personas-partial: true
 cmode-override: true
 id: 54521fd725e721e32a72eec6
+private: true
 maintenance: true
 maintenance-content: New versions of the destination are available. See [Intercom Cloud Mode (Actions)](/docs/connections/destinations/catalog/actions-intercom-cloud/) and [Intercom Web (Actions)](/docs/connections/destinations/catalog/actions-intercom-web/) for more information.
 ---

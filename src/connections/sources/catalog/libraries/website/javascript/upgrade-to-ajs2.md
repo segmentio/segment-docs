@@ -6,8 +6,7 @@ strat: ajs
 Analytics.js 2.0 is fully backward compatible with Analytics.js Classic when you use the default Segment snippet in a standard implementation. To upgrade your sources, follow the manual upgrade steps below, or see the schedule for automatic migration. As with all upgrades, Segment recommends that you start development on a non-production source to test the upgrade process and outcome, prior to upgrading your production sources.
 
 > warning "Deprecation of Analytics.js Classic"
-> Segment ended support and maintenance for Analytics.js Classic on August 31, 2022. On February 28, 2023, Segment will remove access to Analytics.js Classic, and all Analytics.js Classic sources and any other source that is loading Analytics.js Classic will upgrade to Analytics.js 2.0.
-> <br><br>Upgrade to Analytics.js 2.0 before access ends for Analytics.js Classic. See the [Analytics.js 2.0 docs](/docs/connections/sources/catalog/libraries/website/javascript/) to learn more about the new source.
+> Analytics.js Classic was deprecated on February 28, 2023. At this time, Segment is upgrading all sources not yet upgraded to [Analytics.js 2.0](/docs/connections/sources/catalog/libraries/website/javascript/). The upgrade process will complete for all users by the end of March 2023. 
 
 ## Manual upgrade
 
@@ -56,11 +55,23 @@ Analytics.js 2.0 asynchronously loads different pieces of the library as needed.
 - `https://cdn.segment.com/analytics-next/bundles/*`
 - `https://cdn.segment.com/next-integrations/integrations/*`
 
+Your CSP may also require whitelisting approved domains, in which case you'll want to allow the following endpoints: 
+
+- `api.segment.io`
+- `api.segment.com`
+- `track.segment.com`
+- `cdn.segment.com`
+
+> info ""
+> Since Segment interacts with several integrations, support surrounding Content Security Policy issues is limited.
+
 ### Using trackLink on elements that are not links
 
 Previously, it was possible to attach `trackLink` to any element, and a `trackLink` call would fire for that element if it wasn't a link. Now, when you attach `trackLink` to a non-link element, an additional search of that element's children occurs for any nested links and fires track calls based on those links. If you wish to fire track calls on non-link elements that have links as children, you can use a `track` call instead.
 
 ### Using a custom proxy
+
+This will only apply if you've already [set up a custom domain proxy for Analytics.js](/docs/connections/sources/catalog/libraries/website/javascript/custom-proxy/). 
 
 Analytics.js 2.0 loads new files not usually loaded with Analytics.js Classic, so you'll also need to make sure these new files are considered in your proxy configuration. If the new files are not considered, Analytics.js 2.0 falls back to `cdn.segment.com`. You'll have to proxy the rest of the files used by Analytics.js 2.0 using a scheme similar to Segment's CDN. You have two options:
 

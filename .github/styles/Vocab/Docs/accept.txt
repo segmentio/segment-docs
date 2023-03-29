@@ -12,6 +12,7 @@
 (?:P|p)endo
 (?:P|p)odfile
 (?:P|p)ostgres
+(?:R|r)ealtime
 (?:R|r)emarketing
 (?:U|u)nlinks?\b
 (?:U|u)nmaps?\b
@@ -51,6 +52,7 @@ deeplink
 Dev
 Doubleclick
 Eloqua
+Emarsys
 enablement
 endcapture
 endfor
@@ -72,6 +74,7 @@ https
 HTTPS
 Hubspot
 incrementality
+Innovid
 ios
 iOS
 Iterable
@@ -110,6 +113,7 @@ Okta
 Omnichannel
 onboarding
 Optimizely
+Outfunnel
 param(:?s)
 Pardot
 Passcode
@@ -119,6 +123,7 @@ Pipedrive
 Preact
 Qualtrics
 reformat(:?s)
+remarket
 Responsys
 Rokt
 Sabil

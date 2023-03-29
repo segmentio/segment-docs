@@ -15,6 +15,9 @@ The library is regularly tested and is functional with the following browsers:
 - Microsoft Edge
 - Brave
 
+> warning "Deprecation of Analytics.js Classic"
+> Analytics.js Classic was deprecated on February 28, 2023. At this time, Segment is upgrading all sources not yet upgraded to [Analytics.js 2.0](/docs/connections/sources/catalog/libraries/website/javascript/). The upgrade process will complete for all users by the end of March 2023. 
+> <br><br>Learn how to [upgrade to Analytics.js 2.0](/docs/connections/sources/catalog/libraries/website/javascript/upgrade-to-ajs2). 
 
 ### Internet Explorer Support
 
@@ -34,7 +37,7 @@ For example, [Firefox Enhanced Tracking Protection (ETP)](https://blog.mozilla.o
 > info ""
 > **Note:** Segment cookies expire after seven days of user inactivity, like all other application cookies under the WebKit engine ITP policy.
 
-## Proxyies and Analytics.js
+## Proxies and Analytics.js
 
 Because of regulatory, environmental, or security concerns, some customers prefer to [set up proxy infrastructure for Analytics.js](/docs/connections/sources/catalog/libraries/website/javascript/custom-proxy/).
 

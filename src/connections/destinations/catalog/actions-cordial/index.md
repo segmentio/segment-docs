@@ -1,9 +1,8 @@
 ---
 title: Cordial (Actions) Destination
+id: 61eed75ba749df7601b12186
 hide-boilerplate: true
 hide-dossier: true
-redirect_from:
-  - '/connections/destinations/catalog/cordial-actions'
 ---
 
 {% include content/plan-grid.md name="actions" %}
@@ -54,6 +53,6 @@ To send events, define the `createContactactivity` destination action. In additi
 
 ### Adding users to and removing from lists
 
-If you plan to segment users in Cordial, make sure you define the `addContactToList` and `removeContactFromList` destination actions. Both actions require the Segment group ID. `addContactToList` optionally accepts a list name. 
+If you plan to segment users in Cordial, make sure you define the `addContactToList` and `removeContactFromList` destination actions. Both actions require the Segment group ID. `addContactToList` optionally accepts a list name.
 
 Although optional, you should consider the list name as a required option, because it simplifies segmenting contacts in Cordial based on lists. Lists without a name are called following the `segment_[groupId]` pattern.

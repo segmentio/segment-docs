@@ -65,7 +65,8 @@ To set up a new Actions-framework destination for the first time:
 7. Once you're satisfied with your mappings, click **Create Destination**.
 
 > info ""
-> At least one mapping to handle a connected source's event(s) must be configured and enabled in an Actions-framework destination in order for data to be sent downstream.
+> You must configure and enable at least one mapping to handle a connected source's event(s) in an Actions-framework destination in order for data to send downstream. 
+> Events send downstream in the order in which they appear in the mappings UI. There is no mechanism through which you can control the order of events that send to the downstream destinations outside of that. 
 
 ## Migrate a classic destination to an actions-based destination
 
@@ -169,6 +170,9 @@ The available operators depend on the property's data type:
 | boolean           | `is true`, `is false`                                                                        |
 
 You can combine criteria in a single group using **ALL** or **ANY**.  Use an ANY to “subscribe” to multiple conditions. Use ALL when you need to filter for very specific conditions. You can only create one group condition per destination action. You cannot created nested conditions.
+
+> info "Unsupported Special Characters"
+> Mappings do not support the use of double quotes " or a tilde ~ in the trigger fields.
 
 > info "Destination Filters"
 > Destination filters are compatible with Destination Actions. Consider a Destination Filter when:

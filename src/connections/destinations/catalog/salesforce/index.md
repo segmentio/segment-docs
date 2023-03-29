@@ -3,6 +3,7 @@ title: Salesforce Destination
 strat: salesforce
 id: 54521fda25e721e32a72eeef
 maintenance: true
+private: true
 ---
 
 Segment's Salesforce destination allows you to create and store leads and records for other objects in Salesforce Sales Cloud.

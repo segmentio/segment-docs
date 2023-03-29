@@ -19,6 +19,9 @@ This unlocks some interesting possibilities to help you meet your business goals
 
 Check out Segment's [SQL Traits blog post](https://segment.com/blog/sql-traits){:target="_blank"} for more customer case studies.
 
+> info ""
+> To view SQL Traits in a user profile, you must have [PII access](/docs/segment-app/iam/roles/#pii-access). Without this access, Segment redacts all SQL traits in a profile.
+
 
 ### Example: cloud sources sync
 

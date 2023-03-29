@@ -7,7 +7,7 @@ With Twilio Engage, you can send email and SMS campaigns to users who have opted
 
 Some knowledge of the Journeys product will benefit you as you read through this guide. If you’re new to Journeys, the [Journeys documentation](/docs/personas/journeys/) will bring you up to speed.
 
-## How Engage campaign works
+## How Engage campaigns work
 
 Twilio Engage uses Journeys to send email and SMS campaigns.  With Journeys, you add conditions and steps that trigger actions like sending an email or an SMS.
 
