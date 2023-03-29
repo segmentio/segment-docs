@@ -2,7 +2,8 @@
 
 > (delete after reading) Include a 1-2 sentence introduction to your company and the value it provides to customers - updating the name and hyperlink. Please leave the utm string unchanged.
 
-[Voucherify](https://voucherify.io/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) helps developers integrate digital promotions across any marketing channel or customer touchpoint, eventually giving full control over campaigns back to the marketing team. The integration works in outbound and inbound models allowing brands to use Voucherify as both the Destination and Source of customer data.
+[Voucherify](https://voucherify.io/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) is an API-first Promotion Engine for growth teams. With Voucherify, marketers can run dynamic and personalized promotions and loyalty programs without the involvement of the development team. Run CDP-powered coupons, discounts, referrals, loyalty programs, gift cards, cashback, bundles, and more.
+The integration works in outbound and inbound models allowing brands to use Voucherify as both the Destination and Source of customer data.
 
 This is an [Event Cloud Source](https://segment.com/docs/sources/#event-cloud-sources) which can not only export data into your Segment warehouse, but they can also federate the exported data into your other enabled Segment Destinations.
 
@@ -40,8 +41,12 @@ The default behavior is for Voucherify to pass the `userId` associated with the 
 > (delete after reading) For each of the below sections, populate the event and properties that a customer would expect to receive in their downstream tools from your Event Source.
 
 ## Events
+Integrating by adding Voucherify as a Source to Segment supports the following events to be sent out of the box:
+- Redemption events (successful, failed, rolled back). 
+- Validation events (only if connected with a customer). 
+- Customer reward events.
 
-The table below lists events that Voucherify sends to Segment. These events appear as tables in your warehouse and as regular events in other Destinations. Voucherify includes the `userId` if available.
+Below are the events that Voucherify sends to Segment. These events appear as tables in your warehouse and as regular events in other Destinations. Voucherify includes the `userId` if available.
 
 Redemption events: 
 
@@ -60,7 +65,7 @@ Redemption events:
   </tr>
   <tr>
    <td>Redemption rollback failed</td>
-   <td>Triggered when an attempt to rollback the redemption has failed. </td>
+   <td>Triggered when an attempt to rollback the redemption fails. </td>
   </tr>
   </table>
 
@@ -103,7 +108,7 @@ Validation events:
   </tr>
      <tr>
    <td>Validation failed</td>
-   <td>Triggered when a customer's validation has failed.</td>
+   <td>Triggered when a customer's validation fails.</td>
   </tr>
 </table>
 
@@ -116,7 +121,7 @@ Publication events:
   </tr>
    <tr>
    <td>Publication failed</td>
-   <td>Triggered when a publication (assigning a code to particular customer) has failed.</td>
+   <td>Triggered when a publication (assigning a code to particular customer) fails.</td>
   </tr>
 </table>
 
