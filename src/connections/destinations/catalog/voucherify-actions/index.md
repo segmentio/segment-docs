@@ -4,7 +4,7 @@
 
 > (delete after reading) Include a 1-2 sentence introduction to your company and the value it provides to customers - updating the name and hyperlink. Please leave the utm string unchanged.
 
-[Voucherify](https://voucherify.io/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) helps developers integrate digital promotions across any marketing channel or customer touchpoint - eventually giving full control over campaigns back to the marketing team. 
+[Voucherify](https://voucherify.io/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) an API-first Promotion Engine for growth teams. With Voucherify, marketers can run dynamic and personalized promotions and loyalty programs without the involvement of the development team. Run CDP-powered coupons, discounts, referrals, loyalty programs, gift cards, cashback, bundles, and more. The Destination integration provides a continuous flow of customer data from Segment to Voucherify to create custom events, create or update customers, and build audiences.
 
 This destination is maintained by Voucherify. For any issues with the destination, [contact their Support team](mailto:support@voucherify.io).
 
@@ -35,6 +35,4 @@ On the Voucherify Dashboard page:
 ## Benefits of Voucherify (Actions) vs Voucherify (Classic)
 
 The integration works in outbound and inbound models, allowing brands to use Voucherify as both the Destination and Source of customer data. 
-The new destination type allows for any changes in the mapping of fields from an event, more customization,and adding filters to events.
-Thanks to the integration, your brands can quickly transfer customer data from Segment to Voucherify and the other way around. Now, the development team doesn’t have to create a separate app for customer data synchronization, as it comes out of the box with this integration.
-From now on, you are able to choose who is eligible for the discount, what products should be in the cart, when they should receive the offer, via which channel, when and where customers can use it, and how many times.
+Previously developed Segment.io -> Voucherify integration uses Subscription Functions. To enable a simplified build experience and a more straightforward configuration, Segment launched a new type of Destination, which is called Destination Actions. The Destination Actions framework improves on classic destinations by enabling you to see and control how Segment sends the event data it receives from your sources to actions-based destinations. Each Action in a destination lists the event data it requires and the event data that is optional. You can also choose which event types, event names, or event property values trigger an Action. These Triggers and mappings make it possible to send different versions of the Action, depending on the context from which it is triggered.
