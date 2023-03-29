@@ -114,17 +114,7 @@ No new users enter archived Journeys, and progress stops for any users already i
 > success "Compute credits"
 > Steps in archived Journeys don't count towards your compute credits.
 
-## Journey exits and re-entry
-
-### Journey exits
-
-You can apply exit settings to both single entry and re-entry Journeys. Users who exit a Journey leave all Journey steps and Destinations. 
-
-Configure exit settings during initial Journey setup by enabling exit settings and entering the number of days that should pass before users exit the Journey. Journeys exits users once this time passes.
-
-If you don't apply exit settings to a Journey, users will remain in the Journey indefinitely.
-
-### Journey re-entry
+## Journey re-entry
 
 The Journeys re-entry setting allows users to repeat Journeys they've already exited. Common use cases for Journeys re-entry include the following:
 
@@ -134,12 +124,14 @@ The Journeys re-entry setting allows users to repeat Journeys they've already ex
 
 ### Exit and re-entry times
 
-To let users re-enter a Journey they've exited, you'll need to enable two Journeys settings:
+Users who exit a Journey leave all Journey steps and Destinations. To let users re-enter a Journey they've exited, you'll need to enable two Journeys settings:
 
 - Journeys exit time
 - Journeys re-entry time
 
-Journeys exits users based off of the exit time you configure. Users can re-enter the Journey once they meet the Journey's entry condition again and your defined re-entry time has passed. You can configure re-entry time by hour, day, or week. Re-entry time begins once a user exits the Journey.
+Users must first exit a Journey before re-entering. You can configure exit settings during initial Journey setup by enabling exit settings and entering the number of days that should pass before users exit the Journey. Journeys exits users once this time passes, allowing users to re-enter once they meet the Journey's entry conditions again.
+
+You can then configure re-entry time by hour, day, or week. An exited user won't re-enter the same Journey until the re-entry time has passed. Re-entry time begins once a user exits the Journey.
 
 Suppose, for example, you enable re-entry for an abandoned cart campaign. You set exit to seven days and re-entry to 30 days. A user who abandons their cart will progress through the Journey and exit no later than seven days after entering. Once 30 days after exit have passed, the user can re-enter the Journey.
 

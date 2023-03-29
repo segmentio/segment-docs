@@ -42,11 +42,11 @@ Keep the following terms in mind as you begin to explore Journeys.
 
 ## Steps with Audiences
 
-| Step             | Audience definition                                                                                                              |
-| ---------------- | -------------------------------------------------------------------------------------------------------------------------------- |
-| Entry condition  | All users who fulfill the entry condition criteria. "Use Historical Data" evaluates events before Journey publication.           |
+| Step             | Audience definition                                                                                                           |
+| ---------------- | ------------------------------------------------------------------------------------------------------------------------------ |
+| Entry condition  | All users who fulfill the entry condition criteria. "Use Historical Data" evaluates events before Journey publication.        |
 | Condition        | All users who fulfill condition criteria, at one point fulfilled preceding step criteria, and have met any step wait conditions. |
-| Destination Sync | All users who, at one point, fulfilled parent step criteria and have met any following wait conditions.                          |
+| Destination Sync | All users who, at one point, fulfilled parent step criteria and have met any following wait conditions.                        |
 
 ## Steps without Audiences
 
@@ -55,9 +55,3 @@ Keep the following terms in mind as you begin to explore Journeys.
 | Delay               | No audience. Segment appends the wait duration as a condition to the following step's audience.                    |
 | T/F split           | The split's resulting conditions contain two mutually exclusive audiences.  The split node itself has no audience. |
 | Multi-branch splits | The split's resulting conditions contain audiences.  The split node itself has no audience.                        |
-
-## Analytics
-
-| Metric              | Definition                                                                                                                                   |
-| ------------------- | -------------------------------------------------------------------------------------------------------------------------------------------- |
-| Entry               | When a user enters a Journey for the first time or re-enters a Journey after exiting; excludes users who re-enter a Journey without exiting. |
