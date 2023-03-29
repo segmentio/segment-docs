@@ -4,7 +4,7 @@
 
 > (delete after reading) Include a 1-2 sentence introduction to your company and the value it provides to customers - updating the name and hyperlink. Please leave the utm string unchanged.
 
-[Voucherify](https://voucherify.io/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) helps developers integrate digital promotions across any marketing channel or customer touchpoint - eventually giving full control over campaigns back to the marketing team. The integration works in outbound and inbound models allowing brands to use Voucherify as both the Destination and Source of customer data.
+[Voucherify](https://voucherify.io/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) helps developers integrate digital promotions across any marketing channel or customer touchpoint - eventually giving full control over campaigns back to the marketing team. 
 
 This destination is maintained by Voucherify. For any issues with the destination, [contact their Support team](mailto:support@voucherify.io).
 
@@ -35,6 +35,6 @@ On the Voucherify Dashboard page:
 ## Benefits of Voucherify (Actions) vs Voucherify (Classic)
 
 The integration works in outbound and inbound models, allowing brands to use Voucherify as both the Destination and Source of customer data. 
-New destination type allows any changes in mapping of fields from an event, more customization, adding filters to events.
-Thanks to the integration, your brands can quickly transfer customer data from Segment to Voucherify and the other way around. Now, the development team doesn’t have to create a separate app for customer data synchronisation, as it comes out of the box with this integration.
-From now you are able to choose who is eligible for the discount, what products should be in the cart, when they should receive the offer, via which channel, when and where customers can use it and how many times.
+The new destination type allows for any changes in the mapping of fields from an event, more customization,and adding filters to events.
+Thanks to the integration, your brands can quickly transfer customer data from Segment to Voucherify and the other way around. Now, the development team doesn’t have to create a separate app for customer data synchronization, as it comes out of the box with this integration.
+From now on, you are able to choose who is eligible for the discount, what products should be in the cart, when they should receive the offer, via which channel, when and where customers can use it, and how many times.
