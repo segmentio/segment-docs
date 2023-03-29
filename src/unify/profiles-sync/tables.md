@@ -1,7 +1,6 @@
 ---
 title: Profiles Sync Tables and Materialized Views
-beta: true
-plan: profiles
+plan: unify
 ---
 
 Through Profiles Sync, Segment provides data sets and models that can help you enrich customer profiles using any warehouse data available to you.
@@ -93,7 +92,7 @@ Using the profile merge scenario, Segment would generate three new entries to th
 
 <div style="overflow-x:auto;" markdown=1>
 
-| `segment_id` | `canonical_segment_id` | `triggering_event_type` | `triggering_event_id` | `timestamp`         |
+| `segment_id` (varchar) | `canonical_segment_id` (varchar) | `triggering_event_type` (varchar) | `triggering_event_id` (varchar) | `timestamp` (datetime)        |
 | ------------ | ---------------------- | ----------------------- | --------------------- | ------------------- |
 | `profile_1`  | `profile_1`            | `page`                  | `event_1`             | 2022-05-02 14:01:00 |
 | `profile_2`  | `profile_2`            | `page`                  | `event_3`             | 2022-06-22 10:47:15 |
@@ -102,6 +101,7 @@ Using the profile merge scenario, Segment would generate three new entries to th
 </div>
 
 In this example, the table shows `profile_2` mapping to two places: first to itself, then, later, to `profile_1` after the merge occurs.
+
 
 #### Recursive entries
 
@@ -117,7 +117,7 @@ The anonymous site visits sample used earlier would generate the following event
 
 <div style="overflow-x:auto;" markdown=1>
 
-| `segment_id` | `external_id_type` | `external_id_value`     | `triggering_event_type` | `triggering_event_id` | `timestamp`         |
+| `segment_id` (varchar) | `external_id_type` (varchar) | `external_id_value` (varchar)     | `triggering_event_type` (varchar) | `triggering_event_id` (varchar) | `timestamp` (datetime)        |
 | ------------ | -------------------| ------------------------| ----------------------- |-----------------------| ------------------- |
 | `profile_1`  | `anonymous_id`     | `5285bc35-05ef-4d21`    | `page`                  | `event_1`             | 2022-05-02 14:01:00 |
 | `profile_1`  | `email`            | `jane.kim@segment.com`  | `identify`              | `event_2`             | 2022-05-02 14:01:47 |
@@ -142,7 +142,7 @@ The previous result would generate two entries in the `pages` table:
 
 <div style="overflow-x:auto;" markdown=1>
 
-| `segment_id` | `context_url`          | `anonymous_id`       | `event_source_id` | `event_id` | `timestamp`         |
+| `segment_id` (varchar) | `context_url` (array)         | `anonymous_id` (varchar)      | `event_source_id` (varchar) | `event_id` (varchar) | `timestamp` (datetime)        |
 | ------------ | ---------------------- | -------------------- | ----------------- | ---------- | ------------------- |
 | `profile_1`  | `twilio.com`           | `5285bc35-05ef-4d21` | `source_1`        | `event_1`  | 2022-05-02 14:01:00 |
 | `profile_2`  | `twilio.com/education` | `b50e18a5-1b8d-451c` | `source_1`        | `event_3`  | 2022-06-22 10:47:15 |
@@ -153,7 +153,7 @@ And two entries in the `identifies` table:
 
 <div style="overflow-x:auto;" markdown=1>
 
-| `segment_id` | `context_url`                | `anonymous_id`       | `email`                | `event_source_id` | `event_id` | `timestamp`         |
+| `segment_id` (varchar) | `context_url` (array)                | `anonymous_id` (varchar)      | `email`  (varchar)              | `event_source_id` (varchar) | `event_id` (varchar) | `timestamp` (datetime)        |
 | ------------ | ---------------------------- | -------------------- | ---------------------- | ----------------- | ---------- | ------------------- |
 | `profile_1`  | `twilio.com/try_twilio`      | `5285bc35-05ef-4d21` | `jane.kim@segment.com` | `source_1`        | `event_2`  | 2022-05-02 14:01:47 |
 | `profile_2`  | `twilio.com/events/webinars` | `b50e18a5-1b8d-451c` | `jane.kim@segment.com` | `source_2`        | `event_4`  | 2022-06-22 10:48:00 |
@@ -162,13 +162,36 @@ And two entries in the `identifies` table:
 
 All these events were performed by the same person. If you use these tables to assemble your data models, though, always join them against `id_graph` to resolve each event’s `canonical_segment_id`.
 
+### Profiles Sync schema
+
+Profiles Sync uses the following schema: `<profiles_space_name>.<tableName>`.
+
+> info ""
+> Note that the Profiles Sync schema is different from the Connections Warehouse schema: `<source_name>.<tableName>`.
+
+If your space has the same name as a source connected to your Segment Warehouse destination, Segment overwrites data to the Event tables.
+
+{% comment %} (commenting out ERD draft for now)
+
+> success ""
+> For more on Profiles Sync logic, table mappings, and data types, download this [Profiles Sync ERD](/docs/unify/files/ERD.png) or visit [schema evolution and compatibility](/docs/connections/storage/warehouses/schema/#schema-evolution-and-compatibility).
+
+{% endcomment %}
+
+{% comment %}
+
+### Update your schema name
+
+Follow the steps below to change your schema name:
+{% endcomment %}
 
 ## Tables you materialize
 
 > info "dbt model definitions package"
-> To get started with your table materializations, try Segment's [open-source dbt models](https://github.com/segmentio/profiles-sync-dbt){:target="_blank"}.
+> To get started with your table materializations, try Segment's [open-source dbt models](https://github.com/segmentio/profiles-sync-dbt){:target="_blank"}, or materialize views with your own tools.
 
-With Profiles Traits materialized view, you can view all custom traits, computed traits, SQL traits, audiences, and journeys associated with a profile in a single row.
+> warning ""
+> Please note that dbt models are in beta and need modifications to run efficiently on BigQuery, Synapse, and Postgres warehouses. Segment is actively working on this feature. 
 
 Every customer profile (or `canonical_segment_id`) will be represented in each of the following tables.
 
@@ -178,7 +201,7 @@ This table represents the current state of your identity graph, showing only whe
 
 The most recent entry for each `segment_id` from `id_graph_updates` reflects this. After the four example events, `id_graph` would show the following:
 
-| `segment_id` | `canonical_segment_id` | `timestamp`         |
+| `segment_id` (varchar) | `canonical_segment_id` (varchar) | `timestamp`  (datetime)       |
 | ------------ | ---------------------- | ------------------- |
 | `profile_1`  | `profile_1`            | 2022-05-02 14:01:00 |
 | `profile_2`  | `profile_1`            | 2022-06-22 10:48:00 |
@@ -191,7 +214,7 @@ Use this table to view the full, current-state mapping between each external ide
 
 In the case study example, you’d see the following:
 
-| `canonical_segment_id` | `external_id_type` | `external_id_value`    | `timestamp`           |
+| `canonical_segment_id` (varchar) | `external_id_type` (varchar) | `external_id_value` (varchar)   | `timestamp` (datetime)          |
 | ---------------------- | ------------------ | ---------------------- | --------------------- |
 | `profile_1`            | `anonymous_id`     | `5285bc35-05ef-4d21`   | `2022-05-02 14:01:00` |
 | `profile_1`            | `email`            | `jane.kim@segment.com` | `2022-05-02 14:01:47` |
@@ -200,13 +223,15 @@ In the case study example, you’d see the following:
 
 ### `profile_traits` table
 
-This table contains the last seen value for any of your customer profile traits that Segment processes as an Identify call.
+Use the `profile_traits` table for a singular view of your customer. With this table, you can view all custom traits, computed traits, SQL traits, audiences, and journeys associated with a profile in a single row.
+
+The `profile_traits` table contains the last seen value for any of your customer profile traits that Segment processes as an Identify call.
 
 If Segment later merges away a profile, it populates the `segment_id` it merged in the `merged_to` column.
 
 In the case study example, Segment only collected email.  As a result, Segment would generate the following `profile_traits` table:
 
-| `canonical_segment_id` | `email`                | `merged_to` |
+| `canonical_segment_id` (varchar) | `email`  (varchar)       | `merged_to` (varchar)|
 | ---------------------- | ---------------------- | ----------- |
 | `profile_1`            | `jane.kim@segment.com` |             |
 | `profile_2`            |                        | `profile_1` |

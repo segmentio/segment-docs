@@ -18,7 +18,7 @@ This guide lists all required onboarding steps and walks you through Engage setu
 
 You’ll set up Twilio Engage in four stages:
 
-1. [Configure Engage identifiers in Profiles.](/docs/engage/onboarding/#stage-1-configure-engage-identifiers-in-profiles)
+1. [Configure Engage identifiers in Unify.](/docs/engage/onboarding/#stage-1-configure-engage-identifiers-in-unify)
 2. [Create and configure a SendGrid account.](/docs/engage/onboarding/#stage-2-create-and-configure-a-sendgrid-account)
 3. [Create and configure Twilio SMS services.](/docs/engage/onboarding/#stage-3-create-and-configure-twilio-sms-services)
 4. [Create and configure Twilio WhatsApp services.](/docs/engage/onboarding/#stage-4-create-and-configure-twilio-whatsapp-services)
@@ -37,13 +37,13 @@ Several onboarding steps require copying and pasting information between Segment
 
 Continue reading for a detailed, step-by-step breakdown of each onboarding stage.
 
-## Stage 1: Configure Engage Identifiers in Profiles
+## Stage 1: Configure Engage Identifiers in Unify
 
-Through [identity resolution](/docs/profiles/identity-resolution/), Segment uses the `phone` and `email` traits to identify users who can receive your Engage campaigns. To begin using Engage, you’ll need to verify that these identifiers exist in your workspace and add them if they don’t.
+Through [identity resolution](/docs/unify/identity-resolution/), Segment uses the `phone` and `email` traits to identify users who can receive your Engage campaigns. To begin using Engage, you’ll need to verify that these identifiers exist in your workspace and add them if they don’t.
 
 Follow these steps to configure the traits:
 
-1. In your Segment workspace, navigate to **Profiles > Profiles settings > Identity resolution**.
+1. In your Segment workspace, navigate to **Unify > Unify settings > Identity resolution**.
 2. Under the Identity resolution configuration table, verify that `phone` and `email` appear under the **Identifier** column. If so, the Engage identifiers are configured correctly; skip to [create and configure a SendGrid account](#stage-2-create-and-configure-a-sendgrid-account).
 3. If either identifier is missing, click the **Add identifier** button, then click **Custom identifiers**.
 4. In the **New Custom Identifier** modal, add the first missing trait (`phone` or `email`) in the **Trait/Property key** field, then click **Add Identifier**.
