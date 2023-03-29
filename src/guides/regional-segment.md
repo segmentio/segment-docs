@@ -55,7 +55,7 @@ When you send data from a server-side or project source, you can use the `host` 
 > info ""
 > Use [this form](https://segment.typeform.com/to/k5ADnN5e#user_id=xxxxx){:target="_blank"} if you need to transition from your existing US-based workspace to an EU workspace.
 
-To create a workspace with a different data processing region:
+To create a workspace with a different data processing region, reach out to the Segment Support team, and they will assist you with enabling the feature. Once the feature has been enabled, you'll be able to self-serve and create a new workspace in a different data processing region by following these steps:
 
 1. Log in to your Segment account.
 2. Click **New Workspace**.
