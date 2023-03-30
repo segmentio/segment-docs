@@ -80,7 +80,7 @@ Predicted Lifetime Value predicts a customer's future spend over the next 90 day
 
 #### Data requirements
 
-Predicted LTV has strict data requirements. Segment can only make predictions for customers that have purchased two or more times. Segment also requires a year of purchase data to perform LTV Calculations.
+Predicted LTV has strict data requirements. Segment can only make predictions for customers that have purchased two or more times. Segment also requires a year of purchase data to perform LTV calculations.
 
 ## Use cases
 
