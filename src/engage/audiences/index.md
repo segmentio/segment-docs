@@ -218,4 +218,4 @@ Before you can download the CSV, you will need to generate it. There are three d
 The audience summary is a breakdown of the percentages of external_ids of users in the audience. These are the default IDs that Segment includes in your Identity resolution configuration. Segment displays the percentage of the audience with each identifier, which you can use to verify the audience size and profiles are correct.
 
 > info ""
-> The Identifier breakdown won't show custom ID's included in identity resolution configuration. Only default external IDs will be shown in the breakdown.
+> The Identifier Breakdown won't show custom IDs included in your Identity resolution configuration. Segment only displays external IDs in the breakdown.
