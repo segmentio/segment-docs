@@ -82,3 +82,5 @@
   override: "actions-clevertap"
 - original: "qualtrics"
   override: "actions-qualtrics"
+- original: "tiktok-audiences"
+  override: "actions-tiktok-audiences"

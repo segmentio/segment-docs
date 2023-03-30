@@ -212,3 +212,10 @@ Before you can download the CSV, you will need to generate it. There are three d
     (If the audience recalculates between when you click Generate and when you download the file, you might want to regenerate the file. The CSV is a snapshot from when you clicked Generate, and could be outdated.)</td>
   </tr>
 </table>
+
+## Identifier Breakdown
+
+The audience summary is a breakdown of the percentages of external_ids of users in the audience. These are the default IDs that Segment includes in the Identity resolution configuration. Segment displays the percentage of the audience with each identifier, which you can use to verify the audience size and profiles are correct.
+
+> info ""
+> The Identifier Breakdown won't show custom IDs included in the Identity resolution configuration. Segment only displays external IDs in the breakdown.
