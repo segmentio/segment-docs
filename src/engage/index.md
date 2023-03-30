@@ -62,9 +62,9 @@ Use the CSV uploader to add or update user profiles and [subscription states](/d
 
 Set user subscription states in two ways:
 - [Upload a CSV file](/docs/engage/profiles/csv-upload/) with lists of users along with their phone, email, and WhatsApp subscription states.
-- Programmatically with Segment's [Public API](https://api.segmentapis.com/docs/spaces/#replace-messaging-subscriptions-in-spaces){:target="blank"}
+- Programmatically with Segment's [Public API](https://docs.segmentapis.com/tag/Spaces#operation/replaceMessagingSubscriptionsInSpaces){:target="blank"}
 
-Use Engage to add subscription states to user email addresses and phone numbers. Subscription states help determine which users you can send campaigns to in Engage. You can set user subscription states with a [CSV file upload](/docs/engage/profiles/csv-upload/), or programmatically with Segment's [Public API](https://api.segmentapis.com/docs/spaces/#replace-messaging-subscriptions-in-spaces){:target="blank"}.
+Use Engage to add subscription states to user email addresses and phone numbers. Subscription states help determine which users you can send campaigns to in Engage. You can set user subscription states with a [CSV file upload](/docs/engage/profiles/csv-upload/), or programmatically with Segment's [Public API](https://docs.segmentapis.com/tag/Spaces#operation/replaceMessagingSubscriptionsInSpaces){:target="blank"}.
 
 #### Message Analytics
 With analytics in Engage, you can monitor real-time conversion data. Track message performance and customer interaction beyond clicks and opens. Use campaign dashboards to view events such as `Email Delivered`, `Unsubscribed`, `Spam Reported`, and more.
