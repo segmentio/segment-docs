@@ -1484,7 +1484,7 @@ items:
     isCloudEventSource: true
     slug: actions-qualtrics
     url: connections/sources/catalog/cloud-apps/actions-qualtrics
-    hidden: true
+    hidden: false
     regions:
       - us
     endpoints:
