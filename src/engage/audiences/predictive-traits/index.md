@@ -76,7 +76,7 @@ Predicted Lifetime Value predicts a customer's future spend over the next 90 day
 | --------------- | ---------------------------------------------------------------------------------------------------------------------------- |
 | Purchase event  | Choose a target event that represents a customer making a purchase. For most companies, this is usually **Order Completed**. |
 | Purchase amount | Select the purchase event property that represents the total amount. For most companies, this is the **Revenue** property.   |
-| Currency        | Segment default all currencies to USD.                                                                                       |
+| Currency        | Segment defaults all currencies to USD.                                                                                       |
 
 #### Data requirements
 
