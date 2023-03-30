@@ -96,6 +96,9 @@ Here's a complete example of an `identify` call:
   "version": "1.1"
 }
 ```
+### Create your own Identify call
+
+Use the following interactive code pen to see what your Identify calls would look like with user-provided information:
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/9000.0.1/prism.min.js" integrity="sha512-UOoJElONeUNzQbbKQbjldDf9MwOHqxNz49NNJJ1d90yp+X9edsHyJoAs6O4K19CZGaIdjI5ohK+O2y5lBTW6uQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <link rel="stylesheet" href="/src/_sass/components/_prisim.scss"/>
@@ -108,8 +111,8 @@ Here's a complete example of an `identify` call:
       var street = document.getElementById("street").value;
       var city = document.getElementById("city").value;
       var state = document.getElementById("state").value;
-      var postalCode = document.getElementById("postalCode");
-      var country = document.getElementById("country");
+      var postcode = document.getElementById("postcode").value;
+      var country = document.getElementById("country").value;
       var output = `{
   "anonymousId": "507f191e810c19729de860ea",
   "channel": "browser",
@@ -135,7 +138,7 @@ Here's a complete example of an `identify` call:
       "street": "${street}",
       "city": "${city}",
       "state": "${state}",
-      "postalCode": "${postalCode}",
+      "postalCode": "${postcode}",
       "country": "${country}"
     }
   },
@@ -160,7 +163,7 @@ Here's a complete example of an `identify` call:
 
 <div class="sample-code-container">
 <div class="form">
-  <h3> Sample Identify </h3>
+  <h4> Sample Identify </h4>
   <p><b>See what your identify call looks like</b></p>
   <label for="name">Name:</label>
   <input type="text" id="name"><br>
@@ -176,16 +179,16 @@ Here's a complete example of an `identify` call:
   <input type="text" id="city"><br>
   <label for="state">State:</label>
   <input type="text" id="state"><br>
-  <label for="postalCode">Postal Code:</label>
-  <input type="text" id="postalCode"><br>
+  <label for="postcode">Postal Code:</label>
+  <input type="text" id="postcode"><br>
   <label for="country">Country:</label>
   <input type="text" id="country"><br>
   <input type="submit" id="submit" onclick="showMessage(); showOutput()" value="See a sample identify call">
 </div>
 
 <div class="output">
-<h3>Sample Identify Call</h3>
-<pre class="language-javascript"><code class="language-javascript" id="output_container"></code></pre>
+<h4>Sample Identify Call</h4>
+<pre><code class="language-javascript" id="output_container"></code></pre>
 </div></div>
 
 ## Identities

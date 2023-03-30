@@ -82,7 +82,6 @@ Here's a complete example of a `track` call:
   function showMessage(){
       var event = document.getElementById("event").value;
       var title = document.getElementById("title").value;
-      var variation = document.getElementById("variation").value;
       var output = 
 `{
   "anonymousId": "23adfd82-aa0f-45a7-a756-24f2a7a4c895",
@@ -141,7 +140,7 @@ Here's a complete example of a `track` call:
 </div>
 
 <div class="output">
-<h3>Sample Screen Call</h3>
+<h3>Sample Track Call</h3>
 <pre class="language-javascript"><code class="language-javascript" id="output_container">
 
 </code></pre>
