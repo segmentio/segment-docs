@@ -544,6 +544,15 @@ analytics.load('writekey', { obfuscate: true })
 
 The `obfuscate` value is `false` by default.
 
+#### ISO String Conversion
+By default, the Analytics.js library will convert ISO8061 strings to a Date object before passing it to downstream device-mode integrations. If you would like to disable this functionality and send those strings as they are passed to the event, you can use the load method to pass in the `disableAutoISOConversion` option. 
+
+For example:
+
+```js
+analytics.load('writekey', { disableAutoISOConversion: true })
+```
+
 
 ## Retries
 
