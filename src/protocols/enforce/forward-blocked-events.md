@@ -10,7 +10,7 @@ Select the source you'll forward events to from the Blocked Events and Traits dr
 
 Since forwarding happens server to server, Segment recommends creating a [HTTP Tracking API source](/docs/connections/sources/catalog/libraries/server/http-api/), though any server-side source will work. 
 
-![](../images/blocked_event_forwarding.png)
+![A screenshot of the blocked events and traits section on the Schema Configuration settings page](../images/blocked_event_forwarding.png)
 
 > note ""
 > Only blocked events are forwarded to the source. Events with omitted traits are not forwarded. Instead, Segment inserts a `context.protocols` object into the event payload which contains the omitted properties or traits.

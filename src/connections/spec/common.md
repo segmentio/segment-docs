@@ -185,6 +185,15 @@ Other libraries only collect `context.library`, any other context variables must
 - IP Address isn't collected by Segment's libraries, but is instead filled in by Segment's servers when it receives a message for **client side events only**.
 - The Android library collects `screen.density` with [this method](/docs/connections/spec/common/#context-fields-automatically-collected).
 
+To pass the context variables which are not automatically collected by Segment's libraries, you must manually include them in the event payload. The following code shows how to pass `groupId` as the context field of Analytics.js's `.track()` event:
+
+```js
+analytics.track("Report Submitted", {},
+    {"groupId": "1234"}
+);
+```
+
+
 ## Integrations
 
 A dictionary of destination names that the message should be sent to. `'All'` is a special key that applies when no key for a specific destination is found.
