@@ -21,6 +21,7 @@ Add detail to user profiles with new traits and use them to power personalized m
 
 - [**Computed Traits:**](/docs/engage/audiences/computed-traits/) Use the Engage drag-and-drop interface to build per-user (B2C) or per-account (B2B) metrics on user profiles (for example, “lifetime value” or “lead score”).
 - [**SQL Traits:**](/docs/engage/audiences/sql-traits/) Run custom queries on your data warehouse using the Engage SQL editor, and import the results into Segment. With SQL Traits, you can pull rich, uncaptured user data back into Segment.
+- [**Predictive Traits (Beta)**:](/docs/engage/audiences/predictive-traits/) Predict the likelihood that users will perform custom events tracked in Segment, like LTV, churn, and purchase.
 
 #### Build Audiences
 Create lists of users or accounts that match specific criteria. For example, after creating an `inactive accounts` audience that lists paid accounts with no logins in 60 days, you can push the audience to your analytics tools or send an SMS, email, or WhatsApp campaign with Engage Channels. Learn more about [Engage audiences](/docs/engage/audiences/).
