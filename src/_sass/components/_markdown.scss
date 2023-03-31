@@ -479,22 +479,12 @@ div.highlighter-rouge {
 .sample-code-container {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 10px;
-  padding: 5px;
   overflow: scroll;
 }
 
-.output {
-  outline: 1px solid color(gray-600);
-  outline-offset: 4px
-}
 .output-code {
   display: block;
   font: 12px color(code-gray) "Droid Sans Mono", "Lucida Console", "Monaco", monospace; 
   word-wrap: break-word;
 }
 
-.form {
-  outline: 1px solid color(gray-600);
-  outline-offset: 4px;
-}
