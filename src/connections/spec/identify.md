@@ -188,7 +188,7 @@ Use the following interactive code pen to see what your Identify calls would loo
 
 <div class="output">
 <h4>Sample Identify Call</h4>
-<pre><code class="language-javascript" id="output_container"></code></pre>
+<pre><code class="language-javascript" id="output_container">Sample output goes here!</code></pre>
 </div></div>
 
 ## Identities
