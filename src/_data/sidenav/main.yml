@@ -355,6 +355,13 @@ sections:
       title: Computed Traits
     - path: '/engage/audiences/sql-traits'
       title:  SQL Traits
+    - section_title: Predictive Traits
+      slug: engage/audiences/predictive-traits
+      section:
+      - path: '/engage/audiences/predictive-traits/'
+        title: Predictive Traits
+      - path: '/engage/audiences/predictive-traits/using-predictive-traits'
+        title: Using Predictive Traits
 
   - section_title: Journeys
     description: "Learn how to create multi-step Journeys to tailor messages to your users."

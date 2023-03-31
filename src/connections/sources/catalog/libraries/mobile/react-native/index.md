@@ -29,12 +29,12 @@ To get started with the Analytics for React Native 2.0 library:
 1. Create a React Native Source in Segment.
     1. Go to **Connections > Sources > Add Source**.
     2. Search for React Native and click **Add source**.
-2. Install `@segment/analytics-react-native`, [`@segment/sovran-react-native`](https://github.com/segmentio/sovran-react-native){:target="_blank"} and [`react-native-async-storage/async-storage`](https://github.com/react-native-async-storage/async-storage){:target="_blank"}:
+2. Install `@segment/analytics-react-native`, [`@segment/sovran-react-native`](https://github.com/segmentio/sovran-react-native){:target="_blank"} and [`react-native-get-random-values`](https://github.com/LinusU/react-native-get-random-values){:target="_blank"}:
 
     ```js
-    yarn add @segment/analytics-react-native @segment/sovran-react-native @react-native-async-storage/async-storage
+    yarn add @segment/analytics-react-native @segment/sovran-react-native react-native-get-random-values
     # or
-    npm install --save @segment/analytics-react-native @segment/sovran-react-native @react-native-async-storage/async-storage
+    npm install --save @segment/analytics-react-native @segment/sovran-react-native react-native-get-random-values
     ```
 3. If you're using iOS, install native modules with:
 
@@ -682,5 +682,32 @@ const segmentClient = createClient({
 ```
 ### What is the instanceId set in context?
 The instanceId was introduced in [V 2.10.1](https://github.com/segmentio/analytics-react-native/releases/tag/%40segment%2Fanalytics-react-native-v2.10.1) and correlates events to a particular instance of the client in a scenario when you might have multiple instances on a single app. 
+
+### How do I interact with the integrations object?
+The integrations object is no longer part of the Segment events method signature. To access the integrations object and control what destinations the event reaches, you can use a Plugin:
+
+```js
+import {
+    EventType,
+    Plugin,
+    PluginType,
+    SegmentEvent,
+  } from '@segment/analytics-react-native';
+  
+  export class Modify extends Plugin {
+    type = PluginType.before;
+  
+    async execute(event: SegmentEvent) {
+      if (event.type == EventType.TrackEvent) {
+        let integrations = event.integrations;
+        if (integrations !== undefined) {
+          integrations['Appboy'] = false;
+        }
+      }
+      //console.log(event);
+      return event;
+    }
+  }
+```
 ## Changelog
 [View the Analytics React Native 2.0 changelog on GitHub](https://github.com/segmentio/analytics-react-native/releases){:target="_blank"}.

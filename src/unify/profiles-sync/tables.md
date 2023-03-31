@@ -92,11 +92,11 @@ Using the profile merge scenario, Segment would generate three new entries to th
 
 <div style="overflow-x:auto;" markdown=1>
 
-| `segment_id` (varchar) | `canonical_segment_id` (varchar) | `triggering_event_type` (varchar) | `triggering_event_id` (varchar) | `timestamp` (datetime)        |
-| ------------ | ---------------------- | ----------------------- | --------------------- | ------------------- |
-| `profile_1`  | `profile_1`            | `page`                  | `event_1`             | 2022-05-02 14:01:00 |
-| `profile_2`  | `profile_2`            | `page`                  | `event_3`             | 2022-06-22 10:47:15 |
-| `profile_2`  | `profile_1`            | `identify`              | `event_4`             | 2022-06-22 10:48:00 |
+| `segment_id` (varchar) | `canonical_segment_id` (varchar) | `triggering_event_type` (varchar) | `triggering_event_id` (varchar) | `timestamp` (datetime) |
+| ---------------------- | -------------------------------- | --------------------------------- | ------------------------------- | ---------------------- |
+| `profile_1`            | `profile_1`                      | `page`                            | `event_1`                       | 2022-05-02 14:01:00    |
+| `profile_2`            | `profile_2`                      | `page`                            | `event_3`                       | 2022-06-22 10:47:15    |
+| `profile_2`            | `profile_1`                      | `identify`                        | `event_4`                       | 2022-06-22 10:48:00    |
 
 </div>
 
@@ -117,11 +117,11 @@ The anonymous site visits sample used earlier would generate the following event
 
 <div style="overflow-x:auto;" markdown=1>
 
-| `segment_id` (varchar) | `external_id_type` (varchar) | `external_id_value` (varchar)     | `triggering_event_type` (varchar) | `triggering_event_id` (varchar) | `timestamp` (datetime)        |
-| ------------ | -------------------| ------------------------| ----------------------- |-----------------------| ------------------- |
-| `profile_1`  | `anonymous_id`     | `5285bc35-05ef-4d21`    | `page`                  | `event_1`             | 2022-05-02 14:01:00 |
-| `profile_1`  | `email`            | `jane.kim@segment.com`  | `identify`              | `event_2`             | 2022-05-02 14:01:47 |
-| `profile_2`  | `anonymous_id`     | `b50e18a5-1b8d-451c`    | `page`                  | `event_3`             | 2022-06-22 10:48:00 |
+| `segment_id` (varchar) | `external_id_type` (varchar) | `external_id_value` (varchar) | `triggering_event_type` (varchar) | `triggering_event_id` (varchar) | `timestamp` (datetime) |
+| ---------------------- | ---------------------------- | ----------------------------- | --------------------------------- | ------------------------------- | ---------------------- |
+| `profile_1`            | `anonymous_id`               | `5285bc35-05ef-4d21`          | `page`                            | `event_1`                       | 2022-05-02 14:01:00    |
+| `profile_1`            | `email`                      | `jane.kim@segment.com`        | `identify`                        | `event_2`                       | 2022-05-02 14:01:47    |
+| `profile_2`            | `anonymous_id`               | `b50e18a5-1b8d-451c`          | `page`                            | `event_3`                       | 2022-06-22 10:48:00    |
 
 </div>
 
@@ -142,10 +142,10 @@ The previous result would generate two entries in the `pages` table:
 
 <div style="overflow-x:auto;" markdown=1>
 
-| `segment_id` (varchar) | `context_url` (array)         | `anonymous_id` (varchar)      | `event_source_id` (varchar) | `event_id` (varchar) | `timestamp` (datetime)        |
-| ------------ | ---------------------- | -------------------- | ----------------- | ---------- | ------------------- |
-| `profile_1`  | `twilio.com`           | `5285bc35-05ef-4d21` | `source_1`        | `event_1`  | 2022-05-02 14:01:00 |
-| `profile_2`  | `twilio.com/education` | `b50e18a5-1b8d-451c` | `source_1`        | `event_3`  | 2022-06-22 10:47:15 |
+| `segment_id` (varchar) | `context_url` (array)  | `anonymous_id` (varchar) | `event_source_id` (varchar) | `event_id` (varchar) | `timestamp` (datetime) |
+| ---------------------- | ---------------------- | ------------------------ | --------------------------- | -------------------- | ---------------------- |
+| `profile_1`            | `twilio.com`           | `5285bc35-05ef-4d21`     | `source_1`                  | `event_1`            | 2022-05-02 14:01:00    |
+| `profile_2`            | `twilio.com/education` | `b50e18a5-1b8d-451c`     | `source_1`                  | `event_3`            | 2022-06-22 10:47:15    |
 
 </div>
 
@@ -153,10 +153,10 @@ And two entries in the `identifies` table:
 
 <div style="overflow-x:auto;" markdown=1>
 
-| `segment_id` (varchar) | `context_url` (array)                | `anonymous_id` (varchar)      | `email`  (varchar)              | `event_source_id` (varchar) | `event_id` (varchar) | `timestamp` (datetime)        |
-| ------------ | ---------------------------- | -------------------- | ---------------------- | ----------------- | ---------- | ------------------- |
-| `profile_1`  | `twilio.com/try_twilio`      | `5285bc35-05ef-4d21` | `jane.kim@segment.com` | `source_1`        | `event_2`  | 2022-05-02 14:01:47 |
-| `profile_2`  | `twilio.com/events/webinars` | `b50e18a5-1b8d-451c` | `jane.kim@segment.com` | `source_2`        | `event_4`  | 2022-06-22 10:48:00 |
+| `segment_id` (varchar) | `context_url` (array)        | `anonymous_id` (varchar) | `email`  (varchar)     | `event_source_id` (varchar) | `event_id` (varchar) | `timestamp` (datetime) |
+| ---------------------- | ---------------------------- | ------------------------ | ---------------------- | --------------------------- | -------------------- | ---------------------- |
+| `profile_1`            | `twilio.com/try_twilio`      | `5285bc35-05ef-4d21`     | `jane.kim@segment.com` | `source_1`                  | `event_2`            | 2022-05-02 14:01:47    |
+| `profile_2`            | `twilio.com/events/webinars` | `b50e18a5-1b8d-451c`     | `jane.kim@segment.com` | `source_2`                  | `event_4`            | 2022-06-22 10:48:00    |
 
 </div>
 
@@ -171,12 +171,10 @@ Profiles Sync uses the following schema: `<profiles_space_name>.<tableName>`.
 
 If your space has the same name as a source connected to your Segment Warehouse destination, Segment overwrites data to the Event tables.
 
-{% comment %} (commenting out ERD draft for now) 
 
 > success ""
 > For more on Profiles Sync logic, table mappings, and data types, download this [Profiles Sync ERD](/docs/unify/files/ERD.png) or visit [schema evolution and compatibility](/docs/connections/storage/warehouses/schema/#schema-evolution-and-compatibility).
 
-{% endcomment %}
 
 {% comment %}
 
@@ -190,6 +188,9 @@ Follow the steps below to change your schema name:
 > info "dbt model definitions package"
 > To get started with your table materializations, try Segment's [open-source dbt models](https://github.com/segmentio/profiles-sync-dbt){:target="_blank"}, or materialize views with your own tools.
 
+> warning ""
+> Please note that dbt models are in beta and need modifications to run efficiently on BigQuery, Synapse, and Postgres warehouses. Segment is actively working on this feature. 
+
 Every customer profile (or `canonical_segment_id`) will be represented in each of the following tables.
 
 ### `id_graph` table
@@ -198,10 +199,10 @@ This table represents the current state of your identity graph, showing only whe
 
 The most recent entry for each `segment_id` from `id_graph_updates` reflects this. After the four example events, `id_graph` would show the following:
 
-| `segment_id` (varchar) | `canonical_segment_id` (varchar) | `timestamp`  (datetime)       |
-| ------------ | ---------------------- | ------------------- |
-| `profile_1`  | `profile_1`            | 2022-05-02 14:01:00 |
-| `profile_2`  | `profile_1`            | 2022-06-22 10:48:00 |
+| `segment_id` (varchar) | `canonical_segment_id` (varchar) | `timestamp`  (datetime) |
+| ---------------------- | -------------------------------- | ----------------------- |
+| `profile_1`            | `profile_1`                      | 2022-05-02 14:01:00     |
+| `profile_2`            | `profile_1`                      | 2022-06-22 10:48:00     |
 
 Segment drops most diagnostic information from this table, since it’s designed for reference use. In this case, you’d learn that any data references to `profile_2` or `profile_1` now map to the same customer, `profile_1`.
 
@@ -211,11 +212,11 @@ Use this table to view the full, current-state mapping between each external ide
 
 In the case study example, you’d see the following:
 
-| `canonical_segment_id` (varchar) | `external_id_type` (varchar) | `external_id_value` (varchar)   | `timestamp` (datetime)          |
-| ---------------------- | ------------------ | ---------------------- | --------------------- |
-| `profile_1`            | `anonymous_id`     | `5285bc35-05ef-4d21`   | `2022-05-02 14:01:00` |
-| `profile_1`            | `email`            | `jane.kim@segment.com` | `2022-05-02 14:01:47` |
-| `profile_1`            | `anonymous_id`     | `b50e18a5-1b8d-451c`   | `2022-06-22 10:48:00` |
+| `canonical_segment_id` (varchar) | `external_id_type` (varchar) | `external_id_value` (varchar) | `timestamp` (datetime) |
+| -------------------------------- | ---------------------------- | ----------------------------- | ---------------------- |
+| `profile_1`                      | `anonymous_id`               | `5285bc35-05ef-4d21`          | `2022-05-02 14:01:00`  |
+| `profile_1`                      | `email`                      | `jane.kim@segment.com`        | `2022-05-02 14:01:47`  |
+| `profile_1`                      | `anonymous_id`               | `b50e18a5-1b8d-451c`          | `2022-06-22 10:48:00`  |
 
 
 ### `profile_traits` table
@@ -228,10 +229,10 @@ If Segment later merges away a profile, it populates the `segment_id` it merged 
 
 In the case study example, Segment only collected email.  As a result, Segment would generate the following `profile_traits` table:
 
-| `canonical_segment_id` (varchar) | `email`  (varchar)       | `merged_to` (varchar)|
-| ---------------------- | ---------------------- | ----------- |
-| `profile_1`            | `jane.kim@segment.com` |             |
-| `profile_2`            |                        | `profile_1` |
+| `canonical_segment_id` (varchar) | `email`  (varchar)     | `merged_to` (varchar) |
+| -------------------------------- | ---------------------- | --------------------- |
+| `profile_1`                      | `jane.kim@segment.com` |                       |
+| `profile_2`                      |                        | `profile_1`           |
 
 > info "Merged profiles"
 > Profiles that Segment merges away are no longer canonical.

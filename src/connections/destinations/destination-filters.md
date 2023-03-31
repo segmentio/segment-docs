@@ -10,7 +10,7 @@ rewrite: true
 
 Use destination filters to prevent certain data from flowing into a destination. You can conditionally filter out event properties, traits, and fields, or even filter out the event itself.
 
-You can configure destination filters on cloud-mode, mobile, and web device-mode and actions-based destinations.  With device-mode destinations, you can use the same user interface or API mechanism that you use for your cloud-mode destinations, and have those filters acted upon for device-mode destinations on web and mobile.
+You can configure destination filters on cloud-mode, mobile cloud-mode destinations, and web device-mode and actions-based destinations.  With device-mode destinations, you can use the same user interface or API mechanism that you use for your cloud-mode destinations, and have those filters acted upon for device-mode destinations on web.
 
 Common use cases for destination filters include:
 - Managing PII (personally identifiable information) by blocking fields from reaching certain destinations
@@ -29,7 +29,9 @@ Keep the following limitations in mind when you use destination filters:
 - *(For device-mode)* Destination filters don't filter on native events that the destination SDK collects. Instead, you can use the load option to conditionally load relevant bundled JavaScript on the page. See the docs for [load options](/docs/connections/sources/catalog/libraries/website/javascript/#load-options).
 - *(For device-mode)* Destination filters don't filter some fields that are collected by the destination SDK outside of Segment such as `page.url` and `page.referrer`.
 - *(For web device-mode)* Destination filters for web device-mode only supports the Analytics.js 2.0 source. You need to enable device mode destination filters for your Analytics.js source. To do this, go to your Javascript source and navigate to **Settings > Analytics.js** and turn the toggle on for **Destination Filters**.
-- *(For web device-mode)* Destination filters for device-mode only supports the Analytics.js 2.0 source. Destination filters for mobile is currently not supported.
+- *(For web device-mode)* Destination filters for device-mode only supports the Analytics.js 2.0 source.
+- *(For mobile device-mode)* Destination filters for mobile device-mode is currenlty not supported.
+
 
 [Contact Segment](https://segment.com/help/contact/){:target="_blank"} if these limitations impact your use case.
 
