@@ -73,7 +73,6 @@ Here's a complete example of a `page` call:
 ```
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/9000.0.1/prism.min.js" integrity="sha512-UOoJElONeUNzQbbKQbjldDf9MwOHqxNz49NNJJ1d90yp+X9edsHyJoAs6O4K19CZGaIdjI5ohK+O2y5lBTW6uQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-<link rel="stylesheet" href="/src/_sass/components/_prisim.scss"/>
 <script type="text/javascript">
   function showMessage(){
       var name = document.getElementById("name").value;
