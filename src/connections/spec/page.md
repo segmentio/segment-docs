@@ -109,7 +109,7 @@ Here's a complete example of a `page` call:
 </script>
 <script>
   function showOutput() {
-    var show = document.getElementById("output-code");
+    var show = document.getElementById("output_container");
     if (show.style.display === "block") {
       show.style.display = "none";
     } else {
@@ -120,20 +120,21 @@ Here's a complete example of a `page` call:
 
 <div class="sample-code-container">
 <div class="form">
-  <h3> Sample Page </h3>
-  <p><b>See what your page call looks like</b></p>
-  <label for="name">Name:</label>
-  <input type="text" id="name"><br>
-  <label for="title">Title:</label>
-  <input type="text" id="title"><br>
-  <label for="url">URL:</label>
-  <input type="text" id="url"><br>
-  <input type="submit" id="submit" onclick="showMessage(); showOutput()" value="See a sample page call">
+  <h4> Sample Web Form </h4>
+  <div class="sample-form">
+    <label for="name">Name:</label>
+    <input type="text" class="input" id="name">
+    <label for="title">Title:</label>
+    <input type="text" class="input" id="title">
+    <label for="url">URL:</label>
+    <input type="text" class="input" id="url">
+    <input type="submit" class= "button button-hollow" id="submit" onclick="showMessage(); showOutput()" value="See a sample page call">
+  </div>
 </div>
 
 <div class="output">
-<h3>Sample Page Call</h3>
-<pre class="language-javascript"><code class="language-javascript" id="output_container">
+<h4>Sample Page Call</h4>
+<pre class="language-javascript code-output"><code class="language-javascript" id="output_container">
 
 </code></pre>
 </div>
