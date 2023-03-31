@@ -138,7 +138,7 @@ Use the following interactive code pen to see what your Group calls would look l
 
 <div class="sample-code-container">
 <div class="form">
-  <h3> Sample Group </h3>
+  <h3> Sample Group call</h3>
   <label for="name">Name:</label>
   <input type="text" id="name"><br>
   <label for="industry">Title:</label>

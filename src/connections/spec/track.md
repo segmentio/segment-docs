@@ -133,7 +133,7 @@ Use the following interactive code pen to see what your Track calls would look l
 
 <div class="sample-code-container">
 <div class="form">
-  <h3> Sample Track </h3>
+  <h3> Sample Track call</h3>
   <label for="event">Event:</label>
   <input type="text" id="event"><br>
   <label for="title">Title:</label>
