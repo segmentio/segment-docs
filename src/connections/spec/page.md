@@ -71,7 +71,9 @@ Here's a complete example of a `page` call:
   "version": "1.1"
 }
 ```
+### Create your own Page call
 
+Use the following interactive code pen to see what your Page calls would look like with user-provided information:
 <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/9000.0.1/prism.min.js" integrity="sha512-UOoJElONeUNzQbbKQbjldDf9MwOHqxNz49NNJJ1d90yp+X9edsHyJoAs6O4K19CZGaIdjI5ohK+O2y5lBTW6uQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script type="text/javascript">
   function showMessage(){

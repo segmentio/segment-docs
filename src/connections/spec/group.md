@@ -81,6 +81,10 @@ Here's a complete example of a `group` call:
 }
 ```
 
+### Create your own Group call
+
+Use the following interactive code pen to see what your Group calls would look like with user-provided information:
+
 <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/9000.0.1/prism.min.js" integrity="sha512-UOoJElONeUNzQbbKQbjldDf9MwOHqxNz49NNJJ1d90yp+X9edsHyJoAs6O4K19CZGaIdjI5ohK+O2y5lBTW6uQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script type="text/javascript">
   function showMessage(){
@@ -134,8 +138,7 @@ Here's a complete example of a `group` call:
 
 <div class="sample-code-container">
 <div class="form">
-  <h3> Sample Group </h3>
-  <p><b>See what your group call looks like</b></p>
+  <h3> Sample Group call</h3>
   <label for="name">Name:</label>
   <input type="text" id="name"><br>
   <label for="industry">Title:</label>
@@ -151,9 +154,9 @@ Here's a complete example of a `group` call:
 </div>
 
 <div class="output">
-<h3>Sample Group Call</h3>
+<h4>Sample Group Call</h4>
 <pre class="language-javascript"><code class="language-javascript" id="output_container">
-
+Sample output goes here!
 </code></pre>
 </div>
 </div>

@@ -163,7 +163,6 @@ Use the following interactive code pen to see what your Identify calls would loo
 <div class="sample-code-container">
 <div class="form">
   <h4> Sample Identify </h4>
-  <p><b>See what your identify call looks like</b></p>
   <label for="name">Name:</label>
   <input type="text" id="name"><br>
   <label for="email">Email:</label>

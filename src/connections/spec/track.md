@@ -76,6 +76,10 @@ Here's a complete example of a `track` call:
 }
 ```
 
+### Create your own Track call
+
+Use the following interactive code pen to see what your Track calls would look like with user-provided information:
+
 <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/9000.0.1/prism.min.js" integrity="sha512-UOoJElONeUNzQbbKQbjldDf9MwOHqxNz49NNJJ1d90yp+X9edsHyJoAs6O4K19CZGaIdjI5ohK+O2y5lBTW6uQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script type="text/javascript">
   function showMessage(){
@@ -129,8 +133,7 @@ Here's a complete example of a `track` call:
 
 <div class="sample-code-container">
 <div class="form">
-  <h3> Sample Track </h3>
-  <p><b>See what your track call looks like</b></p>
+  <h3> Sample Track call</h3>
   <label for="event">Event:</label>
   <input type="text" id="event"><br>
   <label for="title">Title:</label>
@@ -139,9 +142,9 @@ Here's a complete example of a `track` call:
 </div>
 
 <div class="output">
-<h3>Sample Track Call</h3>
+<h4>Sample Track Call</h4>
 <pre class="language-javascript"><code class="language-javascript" id="output_container">
-
+Sample output goes here!
 </code></pre>
 </div>
 </div>

@@ -145,6 +145,7 @@ Twilio
 upsert
 US
 utm
+varchar
 Vero
 Vidora
 viewability
