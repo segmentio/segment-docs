@@ -3,7 +3,7 @@ rewrite: true
 title: Innovid Destination
 id: 54521fdb25e721e32a72eefc
 ---
-[Innovid](https://www.innovid.com/) enables you to pull same-day TV performance analytics so you can manage TV spend, and create data-driven TV media plans based on network, days, programs, and genres.
+[Innovid's XP platform](https://www.innovid.com/) enables you to pull same-day TV performance analytics so you can manage TV spend, and create data-driven TV media plans based on network, days, programs, and genres.
 
 ## Getting Started
 
@@ -13,11 +13,11 @@ id: 54521fdb25e721e32a72eefc
 
 2. Search for "Innovid" in the Catalog, select it, and choose which of your JavaScript sources to connect the destination to.
 
-3. Add your Innovid Brand ID and Client ID to your Segment Settings UI. You can find this within your Innovid dashboard.
+3. Add your InnovidXP Brand ID and Client ID to your Segment Settings UI. You can find this within your Innovid dashboard.
 
-4. Segment automatically loads Innovid's JavaScript tracking snippet onto the page once analytics.js loads. Make sure you remove Innovid's snippet from your code.
+4. Segment automatically loads InnovidXP's JavaScript tracking snippet onto the page once analytics.js loads. Make sure you remove Innovid's snippet from your code.
 
-5. Innovid starts automatically recording events after approximately 45 minutes, once the CDN is updated.
+5. InnovidXP automatically starts recording events after approximately 45 minutes, once the CDN is updated.
 
 ## Page
 
@@ -27,7 +27,7 @@ If you're not familiar with the Segment Specs, take a look to understand what th
 analytics.page();
 ```
 
-When you call `page` in Analytics.js, Segment calls Innovid's `Basic Hit Tracker`. Analytics.js library sends a `page` call on every page on which it is loaded, so unless you want to call `Basic Hit Tracker` more than once, you shouldn't need to do anything additional here.
+When you call `page` in Analytics.js, Segment calls InnovidXP's `Basic Hit Tracker`. Analytics.js library sends a `page` call on every page on which it is loaded, so unless you want to call `Basic Hit Tracker` more than once, you shouldn't need to do anything additional here.
 
 ## Track
 
@@ -42,9 +42,9 @@ analytics.track('Completed Purchase', {
 });
 ```
 
-When you call [`track`](/docs/connections/spec/track/) in Analytics.js, Segment calls Innovid's `Action Tracker` - where in addition to the `event name`, you can specify a dictionary of properties that will get sent to Innovid.
+When you call [`track`](/docs/connections/spec/track/) in Analytics.js, Segment calls InnovidXP's `Action Tracker` - where in addition to the `event name`, you can specify a dictionary of properties that will get sent to Innovid.
 
-As per the example above, Innovid **requires** that you pass in a `revenue`, `productType`, `orderId`, and `promo` property into each of your calls. If you cannot provide a value for one or more of the aforementioned properties, don't worry, you can simply pass in an empty string to send the event.
+As per the example above, InnovidXP **requires** that you pass in a `revenue`, `productType`, `orderId`, and `promo` property into each of your calls. If you cannot provide a value for one or more of the aforementioned properties, don't worry, you can simply pass in an empty string to send the event.
 
 ### Event Allow-listing
 
