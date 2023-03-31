@@ -36,8 +36,12 @@
         font-size: 12px;
     }
 
-    input, button {
+    input {
         grid-column: 2 / 3;
+    }
+
+    input[type=submit]{
+        grid-column: 1 / 3;
     }
 }
 

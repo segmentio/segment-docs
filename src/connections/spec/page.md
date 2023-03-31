@@ -77,9 +77,9 @@ Use the following interactive code pen to see what your Page calls would look li
 <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/9000.0.1/prism.min.js" integrity="sha512-UOoJElONeUNzQbbKQbjldDf9MwOHqxNz49NNJJ1d90yp+X9edsHyJoAs6O4K19CZGaIdjI5ohK+O2y5lBTW6uQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script type="text/javascript">
   function showMessage(){
-      var name = document.getElementById("name").value;
-      var title = document.getElementById("title").value;
-      var url = document.getElementById("url").value;
+      var name = "Page call Spec"
+      var title = document.title
+      var url = window.location.href
       var output = `{
   "anonymousId": "507f191e810c19729de860ea",
   "channel": "browser",
@@ -122,15 +122,15 @@ Use the following interactive code pen to see what your Page calls would look li
 
 <div class="sample-code-container">
 <div class="form">
-  <h4> Sample Web Form </h4>
+  <h4> Make a Page Call </h4>
   <div class="sample-form">
-    <label for="name">Name:</label>
+    <!-- <label for="name">Name:</label>
     <input type="text" class="input" id="name">
     <label for="title">Title:</label>
     <input type="text" class="input" id="title">
     <label for="url">URL:</label>
-    <input type="text" class="input" id="url">
-    <input type="submit" class= "button button-hollow" id="submit" onclick="showMessage(); showOutput()" value="See a sample page call">
+    <input type="text" class="input" id="url"> -->
+    <input type="submit" class= "button button-hollow" id="submit" onclick="showMessage(); showOutput()" value="See a sample page call" />
   </div>
 </div>
 
