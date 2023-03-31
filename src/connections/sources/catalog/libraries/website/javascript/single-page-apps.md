@@ -1,0 +1,4 @@
+---
+title: Single Page Applications
+---
+
