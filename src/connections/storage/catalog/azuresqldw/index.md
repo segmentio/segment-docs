@@ -96,4 +96,4 @@ When setting up Azure warehouse, you might run into this error:
 > warning An unexpected error occurred
 > failed to connect to Azure SQL: lookup xxx.database.windows.net.database.windows.net: no such host
 
-If you encounter this error, it is possible that you have included `.database.windows.net` in your server name. For the Server Name field, you only need to enter the part of the server name **prior** to `.database.windows.net`. 
+If you encounter this error, it is possible that you have included `.database.windows.net` in your server name. For the Server Name field, you only need to enter the part of the server name prior to `.database.windows.net`. 
