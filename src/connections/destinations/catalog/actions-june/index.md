@@ -2,7 +2,7 @@
 title: June (Actions) Destination
 hide-boilerplate: true
 hide-dossier: false
-id: ????
+id: 6419fce5b6e12cf44efbd34c
 versions:
   - name: "June (Classic)"
     link: "/docs/connections/destinations/catalog/june"
