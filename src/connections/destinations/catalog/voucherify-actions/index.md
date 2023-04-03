@@ -26,5 +26,5 @@ On the Voucherify Dashboard page:
 
 ## Benefits of Voucherify (Actions) vs Voucherify (Classic)
 
-The integration works in outbound and inbound models, allowing brands to use Voucherify as both the Destination and Source of customer data. 
+The integration is bidirectional; therefore, Voucherify can be configured as both the Destination and Source of customer data.
 Previously developed Segment.io -> Voucherify integration uses Subscription Functions. To enable a simplified build experience and a more straightforward configuration, Segment launched a new type of Destination, which is called Destination Actions. The Destination Actions framework improves on classic destinations by enabling you to see and control how Segment sends the event data it receives from your sources to actions-based destinations. Each Action in a destination lists the event data it requires and the event data that is optional. You can also choose which event types, event names, or event property values trigger an Action. These Triggers and mappings make it possible to send different versions of the Action, depending on the context from which it is triggered.
