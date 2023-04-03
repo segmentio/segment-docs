@@ -3,7 +3,7 @@ rewrite: true
 title: Innovid Destination
 id: 54521fdb25e721e32a72eefc
 ---
-[Innovid's XP platform](https://www.innovid.com/) enables you to pull same-day TV performance analytics so you can manage TV spend, and create data-driven TV media plans based on network, days, programs, and genres.
+[Innovid's XP platform](https://www.innovid.com/){:target="_blank"} enables you to pull same-day TV performance analytics so you can manage TV spend and create data-driven TV media plans based on network, days, programs, and genres.
 
 ## Getting Started
 
