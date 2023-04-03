@@ -421,7 +421,7 @@ analytics.identify('teemo', { someTrait: 'x'}, {
 
 ### Control the Intercom Chat Widget (Browser)
 
-If you wish to control the position, or toggle the visiblity, of the Intercom Chat Widget you can use the Intercom `update` method to do this. After the Intercom instnaces is loaded on the cleint side, the widget styling can be updated.
+If you wish to control the position, or toggle the visibility, of the Intercom Chat Widget you can use the Intercom `update` method to do this. After the Intercom instance is loaded on the client side, the widget styling can be updated.
 
 ```js
 //Set styling
