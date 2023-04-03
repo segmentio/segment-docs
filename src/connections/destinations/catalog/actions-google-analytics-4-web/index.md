@@ -64,10 +64,7 @@ Ensure that at least one mapping has been configured and enabled in the destinat
 
 ### Page Views
 
-The 'Page Views' advanced setting prevents the `page_view` included in the gtag.js snippet from being sent, not Segment's `analytics.page()` event available in the Analytics.js snippet by default. If you keep this setting enabled, it is expected that once the page loads, two `page_view` events will still be sent to the GA4 SDK, one from the Segment snippet and one from gtag.js snippet. If you are seeing duplicate `page_view` events in your GA4 dashboard, you need to:
+The **Page Views** advanced setting prevents sending the `page_view` included in the gtag.js snippet, not Segment's `analytics.page()` event available in the Analytics.js snippet by default. If you enable this setting, once the page loads, two `page_view` events will still send to the GA4 SDK, one from the Segment snippet and one from the gtag.js snippet. If you see duplicate `page_view` events in your GA4 dashboard, you need to either:
 
-1. Disable the 'Page Views' advanced setting (set to False) so only Segment's `analytics.page()` is sent to the GA4 SDK.
-
-Or
-
-2.  Edit or disable the preset 'Set Configuration Fields' mapping so only the `page_view` included in the gtag.js snippet is sent to GA4 SDK.
+1. Disable the **Page Views** advanced setting (set it to *False*) so only Segment's `analytics.page()` sends to the GA4 SDK. Or,
+2.  Edit or disable the preset **Set Configuration Fields** mapping so only the `page_view` included in the gtag.js snippet sends to the GA4 SDK.
