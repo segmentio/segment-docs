@@ -66,7 +66,23 @@ Please note Salesforce only allows querying on fields that have the "Filter" pro
 
 ## Migrate from Salesforce (Classic)
 
-For instances of this destination created automatically as part of the Salesforce (Classic) deprecation, review the tables below to see how settings from Salesforce (Classic) were migrated to Salesforce (Actions).
+To migrate from Salesforce (Classic), complete the following steps before May 31, 2023:
+
+1. Log in to your Segment workspace and review the copied settings in each new Salesforce (Actions) instance to ensure their accuracy. 
+2. Authenticate Segment with Salesforce with OAuth.
+3. Enable the Salesforce (Actions) destination & disable the Classic destination.
+
+> info "Authenticate with Salesforce"
+> Salesforce (Actions) requires OAuth based authentication while Salesforce Classic uses tokens and credentials. Because of this, Segment can't migrate authentication credentials. Your workspace owner must login and configure OAuth Authentication for each Salesforce (Actions) destinations that were migrated.
+
+If you have more than one Salesforce instance connected to Segment, repeat these three steps for each instance. 
+
+Keep the following in mind as you begin to use Salesforce (Actions):
+- Salesforce (Actions) supports batching. The workspace owner can edit the enabled-batching field manually for any of the mappings. This setting is disabled by default.
+- Salesforce (Actions) doesn’t support Delete CRUD operations on Custom Object. Custom Objects with CRUD the operation set to `delete` are not migrated.
+- Sending Identify events to Salesforce (Classic) results in a create or update operation for Leads, and maps properties from `event.traits` Salesforce (Actions) does not support this behavior. By default, the migration tool maps only a subset of the most used Lead properties as mentioned below. The workspace owner must map any additional Salesforce properties or Custom properties manually.
+
+Review the tables below to see how settings from Salesforce (Classic) were migrated to Salesforce (Actions).
 
 ### Leads
 
