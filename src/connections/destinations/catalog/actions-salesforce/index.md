@@ -20,7 +20,7 @@ Segment’s Salesforce (Actions) destination allows you to create, update or ups
 The Salesforce (Actions) destination provides the following benefits over the classic Salesforce destination:
 - **Fewer settings**. Data mapping for actions-based destinations happens during configuration, which eliminates the need for most settings.
 - **Clearer mapping of data**. Actions-based destinations enable you to define the mapping between the data Segment receives from your source, and the data Segment sends to Salesforce.
-- **OAuth 2.0 support**. Authentication with Salesforce leverages OAuth 2.0 instead of a username/password.
+- **OAuth 2.0 support**. Authentication with Salesforce uses OAuth 2.0 instead of a username/password.
 - **Flexible match keys**. Upsert and update records based on any match key, including external IDs, record IDs, email and other object fields.
 - **Batch support**. Reduce Salesforce overages and rate-limit errors by batching your Segment data to Salesforce's Bulk API 2.0.
 
@@ -60,9 +60,41 @@ When using the `update` and `upsert` operations, you must specify the match key(
 
 If multiple fields are provided in the Record Matchers object, Segment uses an "OR" operator to query Salesforce for a record. If multiple records are returned upon query, no updates will be made. Segment will instead record a 300 error status for the request, and the request will not be retried. **Please use fields that result in unique records**.
 
-Please note Salesforce only allows querying on fields that have the "Filter" property. For example, we cannot query on the Case `Description` because it is not a filterable property. You can lookup the standard field properties in [Salesforce’s API documentation](https://developer.salesforce.com/docs/atlas.en-us.api_rest.meta/api_rest/intro_rest.htm){:target="_blank"} to determine if a field is available for querying.
+Please note Salesforce only allows querying on fields that have the "Filter" property. For example, Segment doesn't query on the Case `Description` because it is not a filterable property. You can lookup the standard field properties in [Salesforce’s API documentation](https://developer.salesforce.com/docs/atlas.en-us.api_rest.meta/api_rest/intro_rest.htm){:target="_blank"} to determine if a field is available for querying.
 
 ![the filter property](images/image1.png)
+
+## Migrate from Salesforce (Classic)
+
+For instances of this destination created automatically as part of the Salesforce (Classic) deprecation, review the tables below to see how settings from Salesforce (Classic) were migrated to Salesforce (Actions).
+
+### Leads
+
+| Salesforce (Actions) property | Migrated behavior                                                                                             |
+| ----------------------------- | ------------------------------------------------------------------------------------------------------------- |
+| Record Matchers               | Uses **Custom Lead Lookup** fields from Salesforce (Classic), if available, or **Email** as a fallback value. |
+| Name                          | Appears within the **Other Fields** property, defaults to `traits.name`.                                      |
+| Phone                         | Appears within the **Other Fields** property, defaults to `coalesce(traits.phone, traits.phoneNumber)`.       |
+| Title                         | Appears within the **Other Fields** property, defaults to `coalesce(traits.address.title, traits.position)`.  |
+| Website                       | Appears within the **Other Fields** property, defaults to `traits.website`.                                   |
+| Description                   | Appears within the **Other Fields** property, defaults to `traits.description`.                               |
+| Lead Source                   | Appears within the **Other Fields** property, defaults to `traits.leadSource`.                                |
+
+### Account
+
+| Salesforce (Actions) property | Migrated behavior                                                                                             |
+| ----------------------------- | ------------------------------------------------------------------------------------------------------------- |
+| Billing Street | Created only if the **Send Address as Billing Address** property is set in Salesforce (Classic). Defaults to `coalesce(traits.address.street, traits.street)`. |
+| Billing City | Created only if the **Send Address as Billing Address** property is set in Salesforce (Classic). Defaults to `coalesce(traits.address.city, traits.city)`. |
+| Billing State | Created only if the **Send Address as Billing Address** property is set in Salesforce (Classic). Defaults to `coalesce(traits.address.state, traits.state)`. |
+| Billing Country | Created only if the **Send Address as Billing Address** property is set in Salesforce (Classic). Defaults to `coalesce(traits.address.country, traits.country)`. |
+| Billing Postal Code | Created only if the **Send Address as Billing Address** property is set in Salesforce (Classic). Defaults to `coalesce(traits.address.postalCode, traits.postalCode)`. |
+| Shipping Street | Created only if the **Send Address as Shipping Address** property is set in Salesforce (Classic). Defaults to `coalesce(traits.address.street, traits.street)`. |
+| Shipping City | Created only if the **Send Address as Shipping Address** property is set in Salesforce (Classic). Defaults to `coalesce(traits.address.city, traits.city)`. |
+| Shipping State | Created only if the **Send Address as Shipping Address** property is set in Salesforce (Classic). Defaults to `coalesce(traits.address.state, traits.state)`. |
+| Shipping Country | Created only if the **Send Address as Shipping Address** property is set in Salesforce (Classic). Defaults to `coalesce(traits.address.country, traits.country)`. |
+| Shipping Postal Code | Created only if the **Send Address as Shipping Address** property is set in Salesforce (Classic). Defaults to `coalesce(traits.address.postalCode, traits.postalCode)`. |
+
 
 ## FAQ
 
@@ -72,7 +104,7 @@ To send data to a Salesforce sandbox instance, navigate to **Settings > Advanced
 Your Salesforce sandbox username appends the sandbox name to your Salesforce production username. For example, if a username for a production org is `user@acme.com` and the sandbox is named `test`, the username to log in to the sandbox is `user@acme.com.test`.
 
 ### How do I add custom fields?
-Custom fields can be included in the Other Fields mapping. Custom fields must be predefined in your Salesforce account and should end with `__c` (i.e. `My_Custom_Field__c`). Please include the `__c` in your mapping.
+Custom fields can be included in the Other Fields mapping. Custom fields must be predefined in your Salesforce account and should end with `__c` (for example, `My_Custom_Field__c`). Please include the `__c` in your mapping.
 
 You can see Salesforce API names in Salesforce under **Setup > Objects and Fields > Object Manager > Select your object > Fields & Relationships > FIELD NAME**.
 
