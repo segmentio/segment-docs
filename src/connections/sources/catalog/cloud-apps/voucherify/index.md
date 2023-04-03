@@ -1,23 +1,15 @@
 ## title: Voucherify Source
 
-> (delete after reading) Include a 1-2 sentence introduction to your company and the value it provides to customers - updating the name and hyperlink. Please leave the utm string unchanged.
-
 [Voucherify](https://voucherify.io/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) is an API-first Promotion Engine for growth teams. With Voucherify, marketers can run dynamic and personalized promotions and loyalty programs without the involvement of the development team. Run CDP-powered coupons, discounts, referrals, loyalty programs, gift cards, cashback, bundles, and more.
 The integration is bidirectional; therefore, Voucherify can be configured as both the Destination and Source of customer data.
 
 This is an [Event Cloud Source](https://segment.com/docs/sources/#event-cloud-sources) which can not only export data into your Segment warehouse, but they can also federate the exported data into your other enabled Segment Destinations.
 
-> (delete after reading) Update your company name and support email address.
-
 This source is maintained by Voucherify. For any issues with the source, [contact their Support team](mailto:support@voucherify.io).
-
-> (delete after reading) Update your company name (x2) and support email address.
 
 _**NOTE:** The Voucherify Source is currently in beta, which means that they are still actively developing the source. This doc was last updated on <Month_Name DD, YYYY>. If you are interested in joining their beta program or have any feedback to help improve the Voucherify Source and its documentation, [let their team know](mailto:support@voucherify.io)!_
 
 ## Getting Started
-
-> (delete after reading) Include clear, succinct steps including hyperlinks to where customers can locate the place in your app to enter their Segment writekey.
 
 1. From your workspace's [Sources catalog page](https://app.segment.com/goto-my-workspace/sources/catalog) click **Add Source**.
 2. Search for "Voucherify" in the Sources Catalog, select Voucherify, and click **Add Source**.
@@ -30,15 +22,9 @@ _**NOTE:** The Voucherify Source is currently in beta, which means that they are
 
 ## Stream
 
-> (delete after reading) Clarify the type of Segment events your integration will send. 
-
 Voucherify uses our stream Source component to send Segment event data. It uses a server-side `track` method to send data to Segment. These events are then available in any destination that accepts server-side events, and available in a schema in your data warehouse, so you can query using SQL. These events are also assigned to user accounts in the Segment Profiles (Unify). 
 
-> (delete after reading) Clarify how your integration includes user identifiers in your event payloads:
-
 The default behavior is for Voucherify to pass the `userId` associated with the customer. There are cases in which Voucherify does not have an associated `userId`, and then the customer will be associated with an `anonymousId`. 
-
-> (delete after reading) For each of the below sections, populate the event and properties that a customer would expect to receive in their downstream tools from your Event Source.
 
 ## Events
 Integrating by adding Voucherify as a Source to Segment supports the following events to be sent out of the box:
