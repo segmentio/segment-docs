@@ -109,7 +109,7 @@ Use the [Source Debugger](/docs/connections/sources/debugger/) to observe inboun
 Check the Source Debugger to verify that the events arrive and are formatted according to the Segment Spec.
 
 > info ""
->  To test an EU workspace, please reach out to Support through the Developer Portal. They can follow up on provisioning you an appropriate workspace.
+>  To test an EU workspace, reach out to Support through the Developer Portal. They can follow up on provisioning you an appropriate workspace.
 
 ## Write your source's documentation
 
