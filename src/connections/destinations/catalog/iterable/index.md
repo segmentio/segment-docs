@@ -24,7 +24,7 @@ When you call `identify` with one of Segment's sources, Segment calls Iterable's
 
 Iterable keys users by `email` or a user ID. This user ID will be the Segment `userId` if sent. To use a Segment `userId` for identify calls, first call identify with both a `userId` and `email`. Iterable won't accept the request and throws an error if you fail to send one of either the `userId` or `email`.
 
-If you send `phone` in traits, Iterable will perform some checks on the phone number before showing in User Profiles. You can read more about Iterable's phone number field here: https://support.iterable.com/hc/en-us/articles/211970843-SMS-Overview-#contact-phone-numbers.
+If you send `phone` in traits, Iterable performs checks on the phone number before showing them User Profiles. Read more about [Iterable's phone number field](https://support.iterable.com/hc/en-us/articles/211970843-SMS-Overview-#contact-phone-numbers){:target="_blank"}.
 
 <!-- commented out because this functionality isn't currently working ZD#355518
 ### Merge Nested Objects
