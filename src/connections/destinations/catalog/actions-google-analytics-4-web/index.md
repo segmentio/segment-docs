@@ -61,3 +61,10 @@ Google may take [24-48 hours](https://support.google.com/analytics/answer/933379
 ### Data is not sent to Google
 
 Ensure that at least one mapping has been configured and enabled in the destination mappings for an event you want to send to Google Analytics. If no mappings are enabled, the destination does not send events.
+
+### Page Views
+
+The **Page Views** advanced setting prevents sending the `page_view` included in the gtag.js snippet, not Segment's `analytics.page()` event available in the Analytics.js snippet by default. If you enable this setting, once the page loads, two `page_view` events will still send to the GA4 SDK, one from the Segment snippet and one from the gtag.js snippet. If you see duplicate `page_view` events in your GA4 dashboard, you need to either:
+
+1. Disable the **Page Views** advanced setting (set it to *False*) so only Segment's `analytics.page()` sends to the GA4 SDK. Or,
+2.  Edit or disable the preset **Set Configuration Fields** mapping so only the `page_view` included in the gtag.js snippet sends to the GA4 SDK.
