@@ -173,8 +173,8 @@ You can combine criteria in a single group using **ALL** or **ANY**.  Use an ANY
 
 ### Validation error when using the Event Tester
 
-A validation error with the description "You may not have any subscriptions that match this event" will surface when sending an event with an Actions destination's Event Tester that does not match the trigger of any configured and enabled mappings. To resolve this, either a mapping must be created with a trigger to handle the event being tested, or the test event's payload must be updated to match the trigger of any existing mappings. 
+When you send an event with an actions destination Event Tester that doesn't match the trigger of any configured and enabled mappings, you'll see an error message that states, *You may not have any subscriptions that match this event.* To resolve the error, create a mapping with a trigger to handle the event being tested, or update the test event's payload to match the trigger of any existing mappings. 
 
 ### Multiple mappings triggered by the same event
 
-A request will be generated for each mapping that's configured to trigger on an event. For example, with an event named "Subscription Updated", if two mappings are enabled and both have conditions defined to trigger on "Subscription Updated" events, two requests will be generated and sent to the destination for each "Subscription Updated" event. 
+When the same event triggers multiple mappings, a request will be generated for each mapping that's configured to trigger on an event. For example, for the *Subscription Updated* event, if two mappings are enabled and both have conditions defined to trigger on the *Subscription Updated* event, the two requests will be generated and sent to the destination for each *Subscription Updated* event. 
