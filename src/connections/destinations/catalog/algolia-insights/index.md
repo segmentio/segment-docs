@@ -5,7 +5,7 @@ beta: true
 redirect_from: '/connections/destinations/catalog/algolia/'
 id: 5d373a350abf930001a6b70f
 ---
-[Algolia Insights](https://www.algolia.com/products/analytics/) lets you push events related to how your product is being used. Sending those events is a required step for using several Algolia features:
+This [Algolia Insights](https://www.algolia.com/products/analytics/) destination is a means of facilitating sending [Insights Events](https://www.algolia.com/doc/guides/sending-events/getting-started/). Sending these events is a required step for using several Algolia features:
 
 - Click and conversion analytics
 - A/B Testing
@@ -24,17 +24,31 @@ This destination is maintained by [Algolia](https://www.algolia.com/). For any i
 2. Search for "Algolia" in the Catalog, select it, and choose which of your sources to connect the destination to.
 3. Enter the "App ID" & "API Key" into your Segment Settings UI which you can find on the Algolia Dashboard, under API Keys menu.
 
-_**NOTE:** The Algolia Insights Destination is not a plug-and-play integration. It requires you to modify your frontend code to send additional Algolia-related data like index name, queryID, etc._
+> _**NOTE:** The Algolia Insights Destination is not a plug-and-play integration. It requires you to modify your frontend code to send additional Algolia-related data like index name, queryID, etc._
 
+To access your queryID, make sure clickAnalytics are enabled in your search event. If you're using Insights.js this will look like
+```js
+index.search('query', {
+  userToken: 'user-1',
+  clickAnalytics: true
+})
+``` 
 
-You can read more about how to send Algolia-related data to Segment from [the documentation at Algolia](https://www.algolia.com/doc/guides/sending-events/implementing/connectors/segment/).
+Once this is enabled you will be able to send properties like queryId in your segment events. You can read more about how to send Algolia-related data to Segment from [the documentation at Algolia](https://www.algolia.com/doc/guides/sending-events/implementing/connectors/segment/).
 
+## Mapping Events
+
+By default, Algolia has set up mappings for Product Clicked, Product Viewed and Order Completed events. If your event structure doesn't match the spec you can update this by using the Mapping Tab.
+
+![Mappings Tab](images/mapping_tab.png)
+
+![Edit Mappings](images/mapping_tab_edit.png)
 
 ## Track
 
 If you're not familiar with the Segment Specs, take a look to understand what the [Track method](/docs/connections/spec/track/) does.
 
-Algolia supports the following six events from Segment's [Ecommerce Spec](/docs/connections/spec/ecommerce/v2/).
+Algolia supports the following events from Segment's [Ecommerce Spec](/docs/connections/spec/ecommerce/v2/).
 
 <table>
   <tr>
@@ -89,12 +103,4 @@ analytics.track('Order Completed', {
 Track calls will be sent to Algolia as a `track` event, and appear in your Click Analytics, A/B Testing and Personalization dashboard.
 
 
-_**NOTE:** If you send anonymous activity to Algolia, it will not be connected to activity attributed to that same user once they are identified._
-
-## Mapping Events
-
-By default, Algolia has set up mappings for Product Clicked, Product Viewed and Order Completed events. If your event structure doesn't match the spec you can update this by using the Mapping Tab.
-
-![Mappings Tab](images/mapping_tab.png)
-
-![Edit Mappings](images/mapping_tab_edit.png)
+> _**NOTE:** If you send anonymous activity to Algolia, it will not be connected to activity attributed to that same user once they are identified._
