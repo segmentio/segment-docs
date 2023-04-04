@@ -97,7 +97,6 @@ For accounts outside the US, the account ID includes the region. You can find yo
 
 If your web address is `https://myaccountname.snowflakecomputing.com/console#/internal/worksheet`, your account name would be `myaccountname`.
 
-
 You can also find part of your account name by running the following query on your worksheet in Snowflake:
 
 ```
