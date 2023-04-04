@@ -85,7 +85,7 @@ Here's a complete example of a `group` call:
 
 Use the following interactive code pen to see what your Group calls would look like with user-provided information:
 
-{% include components/codepens/group-spec.html %}
+{% include content/codepens/group-spec.html %}
 
 ## Identities
 
