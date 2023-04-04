@@ -100,3 +100,5 @@
   override: "actions-outfunnel"
 - original: "toplyne-cloud-mode-actions"
   override: "actions-toplyne-cloud"
+- original: "wisepops"
+  override: "actions-wisepops"
