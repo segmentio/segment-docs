@@ -58,53 +58,6 @@ analytics.page({
 })
 ```
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/9000.0.1/prism.min.js" integrity="sha512-UOoJElONeUNzQbbKQbjldDf9MwOHqxNz49NNJJ1d90yp+X9edsHyJoAs6O4K19CZGaIdjI5ohK+O2y5lBTW6uQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-<link href="/src/_sass/components/_prisim.scss"/>
-<script type="text/javascript">
-  function showMessage(){
-      var email = document.getElementById("email").value;
-      var fname = document.getElementById("fname").value;
-      var lname = document.getElementById("lname").value;
-      var output = `analytics.identify({
-  firstName: '${fname}',
-  lastName: '${lname}',
-  email: '${email}'
-}) `
-    output_container.innerHTML = output
-    Prism.highlightElement(output_container)
-  }
-</script>
-<script>
-  function showOutput() {
-    var show = document.getElementById("output-code");
-    if (show.style.display === "block") {
-      show.style.display = "none";
-    } else {
-      show.style.display = "block";
-    }
-  }
-</script>
-
-<div class="sample-code-container">
-<div class="form">
-  <h3> Web Form </h3>
-  <p><b>Newsletter Signup</b></p>
-  <label for="fname">First Name:</label>
-  <input type="text" id="fname"><br>
-  <label for="lname">Last Name:</label>
-  <input type="text" id="lname"><br>
-  <label for="email">Email:</label>
-  <input type="text" id="email"><br>
-  <input type="submit" id="submit" onclick="showMessage(); showOutput()" value="Submit">
-</div>
-
-<div class="output">
-<h3>Sample Identify Call</h3>
-<pre class="language-javascript"><code class="language-javascript" id="output_container">
-</code></pre>
-</div>
-</div>
-
 <!---[Page Call](https://user-images.githubusercontent.com/78389005/214352835-5c3f7f28-af28-428e-bb8a-88ad39d53b46.png)--->
 
 You can see in this full page event, the `anonymousId` is populated, and the `userId` is null.
