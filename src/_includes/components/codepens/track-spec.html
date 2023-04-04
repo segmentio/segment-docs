@@ -3,6 +3,13 @@
   function showMessage(){
       var event = document.getElementById("event").value;
       var title = document.getElementById("title").value;
+      var user_agent = window.navigator.userAgent
+      var ts = Date.now()
+      var date = new Date(ts) 
+      var now = date.toISOString()
+      var received = ts + 233
+      var received_ts = new Date(received)
+      var received_iso = received_ts.toISOString()
       var output = 
 `{
   "anonymousId": "23adfd82-aa0f-45a7-a756-24f2a7a4c895",
@@ -18,8 +25,8 @@
       "title": "Spec: Track",
       "url": "https://segment.com/docs/connections/spec/track/"
     },
-    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/46.0.2490.86 Safari/537.36",
-    "ip": "108.0.78.21"
+    "userAgent": "${user_agent}",
+    "ip": "8.8.8.8"
   },
   "event": "${event}",
   "integrations": {},
@@ -27,9 +34,9 @@
   "properties": {
     "title": "${title}"
   },
-  "receivedAt": "2015-12-12T19:11:01.266Z",
-  "sentAt": "2015-12-12T19:11:01.169Z",
-  "timestamp": "2015-12-12T19:11:01.249Z",
+  "receivedAt": "${received_iso}",
+  "sentAt": "${now}",
+  "timestamp": "${now}",
   "type": "track",
   "userId": "AiUGstSDIg",
   "originalTimestamp": "2015-12-12T19:11:01.152Z"
@@ -52,11 +59,17 @@
 <div class="sample-code-container">
 <div class="form">
   <h3> Sample Track call</h3>
+  <div class="sample-form">
   <label for="event">Event:</label>
-  <input type="text" id="event"><br>
+  <input type="text" id="event" value="Course clicked" disabled>
   <label for="title">Title:</label>
-  <input type="text" id="title"><br>
-  <input type="submit" id="submit" onclick="showMessage(); showOutput()" value="See a sample Track call">
+  <select name="title" id="title">
+    <option value="Intro to Analytics">Intro to Analytics</option>
+    <option value="Protocols 101">Protocols 101</option>
+    <option value="Reverse ETL">Reverse ETL</option>
+  </select>
+  <input type="submit" class="button button-hollow" id="submit" onclick="showMessage(); showOutput()" value="See a sample Track call">
+</div>
 </div>
 
 <div class="output">
