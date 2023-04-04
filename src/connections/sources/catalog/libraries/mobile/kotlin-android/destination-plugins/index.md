@@ -27,6 +27,12 @@ plugins:
       url: https://cdn.filepicker.io/api/file/9kBQvmLRR22d365ZqKRK
     mark:
       url: https://cdn.filepicker.io/api/file/HrjOOkkLR8WrUc1gEeeG
+  - name: BugSnag
+    url: connections/sources/catalog/libraries/mobile/kotlin-android/destination-plugins/bugsnag-kotlin-android/
+    logo:
+      url: https://cdn.filepicker.io/api/file/GoTtwMELTeWGtu44SBUh
+    mark:
+      url: https://cdn.filepicker.io/api/file/1ttsQcwwRDGHBG3XjVFT
   - name: comScore
     url: connections/sources/catalog/libraries/mobile/kotlin-android/destination-plugins/comscore-kotlin-android/
     logo:
@@ -45,6 +51,12 @@ plugins:
       url: https://cdn.filepicker.io/api/file/W6teayYkRmKgb8SMqxIn
     mark:
       url: https://cdn.filepicker.io/api/file/ztKtaLBUT7GUZKius5sa
+  - name: Flurry
+    url: connections/sources/catalog/libraries/mobile/kotlin-android/destination-plugins/flurry-kotlin-android/
+    logo:
+      url: https://d3hotuclm6if1r.cloudfront.net/logos/flurry-default.svg
+    mark:
+      url: https://cdn.filepicker.io/api/file/yxc3XuGQA2btML7kyWJg
   - name: Mixpanel
     url: connections/sources/catalog/libraries/mobile/kotlin-android/destination-plugins/mixpanel-kotlin-android/
     logo:
@@ -57,6 +69,12 @@ plugins:
       url: https://cdn.filepicker.io/api/file/fb5lNYEhQoWnABOjynZ6
     mark:
       url: https://cdn.filepicker.io/api/file/kWmScDJ3SvK1QBZTChGQ
+  - name: Quantcast
+    url: connections/sources/catalog/libraries/mobile/kotlin-android/destination-plugins/quantcast-kotlin-android/
+    logo:
+      url: https://cdn.filepicker.io/api/file/zeGaFc7rSEerWyM7dmVQ
+    mark:
+      url: https://cdn.filepicker.io/api/file/A0pxB2RWTNiVs2VBYGhx
 ---
 
 Analytics Kotlin uses its timeline/plugin architecture to support sending data to bundled SDKs when a Cloud Mode connection is not possible. Destination Plugins are similar to traditional Device Mode integrations available in Analytics Android in that Segment makes calls directly to the destination tool’s API from the device. However, Destination Plugins are more customizable, giving you the ability to control and enrich your data at a much more granular level on the device itself. 

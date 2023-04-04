@@ -4,7 +4,7 @@ strat: swift
 ---
 
 Bugsnag helps you detect and diagnose crashes in your application. Depending on the data you provide, Bugsnag can filter errors based on user name, user email, timeline, release stages, paying user status, and more.
-Add BugSnag tracking support to your applications via this plugin for [Analytics-Swift](https://github.com/segmentio/analytics-swift)
+Add BugSnag tracking support to your applications via this plugin for [Analytics-Swift](https://github.com/segmentio/analytics-swift).
 
 ## Getting Started
 

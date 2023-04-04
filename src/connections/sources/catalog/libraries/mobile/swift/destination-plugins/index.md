@@ -2,6 +2,12 @@
 title: Analytics Swift Destination Plugins
 strat: swift
 plugins:
+  - name: Adjust
+    url: connections/sources/catalog/libraries/mobile/swift/destination-plugins/adjust-swift/
+    logo:
+      url: https://cdn.filepicker.io/api/file/IefXQy6fRR27ZG1NvZgW
+    mark:
+      url: https://cdn.filepicker.io/api/file/lqTYxhVyT5WFDFdLS598
   - name: Amplitude
     url: connections/sources/catalog/libraries/mobile/swift/destination-plugins/amplitude-swift/
     logo:
@@ -50,6 +56,12 @@ plugins:
       url: https://cdn.filepicker.io/api/file/fb5lNYEhQoWnABOjynZ6
     mark:
       url: https://cdn.filepicker.io/api/file/kWmScDJ3SvK1QBZTChGQ
+  - name: Quantcast
+    url: connections/sources/catalog/libraries/mobile/swift/destination-plugins/quantcast-swift/
+    logo:
+      url: https://cdn.filepicker.io/api/file/zeGaFc7rSEerWyM7dmVQ
+    mark:
+      url: https://cdn.filepicker.io/api/file/A0pxB2RWTNiVs2VBYGhx
 ---
 Analytics Swift uses its timeline/plugin architecture to support sending data to bundled SDKs when a Cloud Mode connection is not possible. Destination Plugins are similar to traditional Device Mode integrations available in Analytics-iOS in that Segment makes calls directly to the destination tool’s API from the device. However, Destination Plugins are more customizable, giving you the ability to control and enrich your data at a much more granular level on the device itself. 
 
