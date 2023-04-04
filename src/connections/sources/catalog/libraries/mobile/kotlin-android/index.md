@@ -13,6 +13,36 @@ With Analytics Kotlin, you can send data using Kotlin and Java applications to a
 > warning ""
 > If you're migrating to Analytics Kotlin from a different mobile library, you can skip to the [migration guide](/docs/connections/sources/catalog/libraries/mobile/kotlin-android/migration/).
 
+## Benefits of Analytics Kotlin
+
+Analytics Kotlin provides several key benefits including stability, performance, and developer experience when compared to Analytics Android (Classic). 
+
+### Stability
+Analytis-Kotlin uses thread-safety strategies to isolate plugins, device-mode Destinations, and custom middleware from the host app. By isolating these dynamically added features we can protect the host app from from any crashes caused by these features.
+
+### Performance
+
+Analytics Kotlin is a huge leap forward in terms of performance when compared to Analytics Android (Classic). For a more detailed overview, you can reference our [blog post](https://segment.com/blog/sdk-performance-improvements/). 
+
+- Faster event processing and deliver
+- Significantly lower CPU usage
+- Small memory & disk usage footprint
+
+### Developer Experience
+
+Analytics Kotlin adds several improvements to the overall experience of using the core SDK, as well as improvements to the overall [Plugin Architecture](/docs/connections/sources/catalog/libraries/mobile/kotlin-android/kotlin-android-plugin-architecture)
+
+- Ability to use Type Safe data structures rather than just dictionaries.
+- Simpler syntax and more developer friendly overall.
+- More customization options than ever before.
+
+### Device Mode Transformations & Filtering
+For the first time ever, developers can filter and transform their users’ Events even before the events the mobile device. 
+What’s more, these Filters & transformations can be applied dynamically (either via the Segment Dashboard, or via Javascript uploaded to the workspace) and do not require any app updates!
+
+Learn more about [Destination Filters]() on Mobile, and [Edge Functions]() on Mobile. 
+
+
 ## Getting started
 
 To get started with the Analytics-Kotlin mobile library:

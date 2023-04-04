@@ -10,6 +10,35 @@ With Analytics Swift, you can send data from iOS, tvOS, iPadOS, WatchOS, macOS a
 > warning ""
 > If you're migrating to **Analytics Swift** from Analyitcs iOS (Classic), you can skip to the [migration guide](/docs/connections/sources/catalog/libraries/mobile/swift/migration/).
 
+## Benefits of Analytics Swift
+
+Analytics Swift provides several key benefits including stability, performance, and developer experience when compared to Analytics iOS (Classic). 
+
+### Stability
+ <  SAFELY BLURB >
+
+### Performance
+
+Analytics Swift is a huge leap forward in terms of performance when compared to Analytics iOS. For a more detailed overview, you can reference our [blog post](https://segment.com/blog/sdk-performance-improvements/). 
+
+- Faster event processing and deliver
+- Significantly lower CPU usage
+- Small memory & disk usage footprint
+
+### Developer Experience
+
+Analytics Swift adds several improvements to the overall experience of using the core SDK, as well as improvements to the overall [Plugin Architecture](/docs/connections/sources/catalog/libraries/mobile/swift/swift-plugin-architecture)
+
+- Ability to use Type Safe data structures rather than just dictionaries.
+- Simpler syntax and more developer friendly overall.
+- More customization options than ever before.
+
+### Device Mode Transformations & Filtering
+For the first time ever, developers can filter and transform their users’ Events even before the events the mobile device. 
+What’s more, these Filters & transformations can be applied dynamically (either via the Segment Dashboard, or via Javascript uploaded to the workspace) and do not require any app updates!
+
+Learn more about [Destination Filters]() on Mobile, and [Edge Functions]() on Mobile. 
+
 ## Getting started
 To get started with the Analytics Swift mobile library:
 
