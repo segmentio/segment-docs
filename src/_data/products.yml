@@ -138,7 +138,7 @@ items:
     business: true
     add-on: true
 - product_display_name: Regional Segment
-  slug: data-residency
+  slug: regional
   plan-note: "Regional Segment is available to customers on the Business Tier plan."
   plans:
     free: false
