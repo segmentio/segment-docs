@@ -180,3 +180,13 @@ You can combine criteria in a single group using **ALL** or **ANY**.  Use an ANY
 > - You need to filter data from multiple types of call (for example, Track, Page, and Identify calls)
 >
 > If your use case does not match these criteria, you might benefit from using Mapping-level Triggers to match only certain events.
+
+## FAQ & Troubleshooting
+
+### Validation error when using the Event Tester
+
+When you send an event with an actions destination Event Tester that doesn't match the trigger of any configured and enabled mappings, you'll see an error message that states, *You may not have any subscriptions that match this event.* To resolve the error, create a mapping with a trigger to handle the event being tested, or update the test event's payload to match the trigger of any existing mappings. 
+
+### Multiple mappings triggered by the same event
+
+When the same event triggers multiple mappings, a request will be generated for each mapping that's configured to trigger on an event. For example, for the *Subscription Updated* event, if two mappings are enabled and both have conditions defined to trigger on the *Subscription Updated* event, the two requests will be generated and sent to the destination for each *Subscription Updated* event. 
