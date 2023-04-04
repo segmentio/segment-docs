@@ -37,7 +37,7 @@ For example, you can use Analytics.js 2.0 to build features that:
 - Enrich events with customer or page context while in-flight with middleware
 - Check an event for errors after the event is sent to Segment
 
-## Getting Started
+## Getting started
 
 Use the [Analytics.js QuickStart Guide](/docs/connections/sources/catalog/libraries/website/javascript/quickstart/) to learn how to add Analytics.js to your site. Once you've installed the library, read on for the detailed API reference.
 
@@ -544,6 +544,15 @@ analytics.load('writekey', { obfuscate: true })
 
 The `obfuscate` value is `false` by default.
 
+#### ISO string conversion
+By default, the Analytics.js library will convert ISO8061 strings to a Date object before passing it to downstream device-mode integrations. If you would like to disable this functionality and send those strings as they are passed to the event, you can use the load method to pass in the `disableAutoISOConversion` option.
+
+For example:
+
+```js
+analytics.load('writekey', { disableAutoISOConversion: true })
+```
+
 
 ## Retries
 
@@ -760,7 +769,7 @@ Analytics.js tracks across subdomains out of the box. All Segment destinations f
 
 To track activity on your subdomains, include the Segment Analytics.js snippet on each subdomain. Segment sets users' `anonymousId` on the top-level domain, so that users are tracked across any subdomain.
 
-Because Segment tracks across subdomains, you can either use the same Segment source, or use separate sources for each subdomain. What you decide depends on your team's goals for tracking each subdomain. 
+Because Segment tracks across subdomains, you can either use the same Segment source, or use separate sources for each subdomain. What you decide depends on your team's goals for tracking each subdomain.
 
 ## UTM Tracking
 
@@ -777,7 +786,7 @@ So, for example, if somebody follows the link with above query string to your si
  "name": "mytestcampaign",
  "source": "mysource",
  },
- 
+
 
 Whenever the UTM parameters are no longer a part of the URL, Segment no longer includes them. For example, if the user goes to a new page within your website which does not contain these parameters, they will not be included in subsequent events. UTM parameters are non-persistent by default as they could potentially cause data accuracy problems. Here's an example of why: Say a user clicks on an ad and lands on your site. He navigates around and bookmarks an internal page - or maybe shares a link with a friend, who shares it with another friend. All those links would then point back to the same test utm_source as the initial referrer for any purchase.
 

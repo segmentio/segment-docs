@@ -1,12 +1,11 @@
 ---
 title: Regional Segment
+plan: regional
 redirect_from:
   - '/connections/regional-segment/'
   - '/docs/connections/regional-segment-eu/'
   - '/docs/connections/data-residency/'
 ---
-{% include content/plan-grid.md name="data-residency" %}
-
 As Schrems II restricts the transfer of personal data to any processors established in countries outside of Europe, all data in European workspaces must be ingested, stored, processed and delivered locally within the EU. Segment offers customers the option to lead on data residency by providing regional infrastructure in both Europe and the United States.
 
 The default region for all users is in Oregon, United States. Workspaces can be configured to use the EU West Data Processing Region ingest (for supported sources), process, filter, deduplicate, and archive data through Segment-hosted archives hosted in S3 AWS Dublin, Ireland. The regional infrastructure has the same [rate limits and SLA](/docs/connections/rate-limits/) as the default region.
@@ -75,7 +74,7 @@ Use Segment's custom CIDR `3.251.148.96/29` while authorizing Segment to write i
 ## Known Limitations
 -   Regional Segment is currently limited to the EU. Future expansion of Regional Segment beyond the EU is under evaluation by Segment Product and R&D.
 
--   Edge proxies are deprecated. Customers using edge proxies may see US-based IP addresses in event payloads. For EU customers, Segment recommends using a Regionalized EU workspace. For non-EU customers, Segment recommends using the US-based endpoint (`api.segment.io`) to preserve client IP addresses.
+-   Edge proxies are deprecated. Customers using Regional Endpoints may see US-based IP addresses in event payloads, Segment recommends using the US-based endpoint (`api.segment.io`) to preserve client IP addresses. For EU customers, Segment recommends using a Regionalized EU workspace. For non-EU customers.
 
 ## Destination support and Regional endpoint availability
 

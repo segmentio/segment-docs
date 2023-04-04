@@ -17,6 +17,8 @@ require('dotenv').config();
 const PAPI_URL = "https://api.segmentapis.com"
 
 const PRIVATE_DESTINATIONS = yaml.load(fs.readFileSync(path.resolve(__dirname, `../src/_data/catalog/destinations_private.yml`)))
+const slugOverrides = yaml.load(fs.readFileSync(path.resolve(__dirname, `../src/_data/catalog/slugs.yml`)))
+
 const privateDests = PRIVATE_DESTINATIONS.items
 let private = []
 const getCatalog = async (url, page_token = "MA==") => {
@@ -37,25 +39,65 @@ const getCatalog = async (url, page_token = "MA==") => {
     return res.data
   } catch (err) {
     console.error("Error response:");
-    console.error(err.response.data);    // ***
-    console.error(err.response.status);  // ***
+    console.error(err.response.data); // ***
+    console.error(err.response.status); // ***
     console.error(err.response.headers); // ***
   } finally {
-    
+
   }
 }
 
+const slugify = (displayName) => {
+  let slug = displayName
+    .toLowerCase()
+    .replace(/\s+/g, '-')
+    .replace('-&-', '-')
+    .replace('/', '-')
+    .replace(/[\(\)]/g, '')
+    .replace('.', '-')
+
+  for (key in slugOverrides) {
+    let original = slugOverrides[key].original
+    let override = slugOverrides[key].override
+
+    if (slug == original) {
+      slug = override
+    }
+  }
+
+  return slug
+}
 
 const checkDestinationStatus = async (id) => {
   const res = await getCatalog(`${PAPI_URL}/catalog/destinations/${id}`)
   let destination = res.data.destinationMetadata
   return destination
 }
+
+const makeDestinationPublic = async (itemURL) => {
+  const catalogPath = path.resolve('src/', itemURL, 'index.md')
+  const f = fm(fs.readFileSync(catalogPath, 'utf8'));
+  const fmatter = f.attributes
+  fmatter.private = false
+  fmatter.hidden = false
+  let new_fm = ""
+  for (const property in fmatter) {
+    if (property == "versions") {
+      console.log(`Need to fix versions on this one`)
+    }
+    //console.log(`${property}: ${fmatter[property]}`);
+    new_fm += `${property}: ${fmatter[property]}\n`
+  }
+  const attr = `---\n${new_fm}\n---\n`
+  const body = f.body
+  const content = attr + body
+  fs.writeFileSync(catalogPath, content)
+}
 const getDestinationData = async (id) => {
   const res = await getCatalog(`${PAPI_URL}/catalog/destinations/${id}`)
   if (res == null) {
     return
-  } 
+  }
   let destination = res.data.destinationMetadata
   let settings = destination.options
   settings.sort((a, b) => {
@@ -69,11 +111,13 @@ const getDestinationData = async (id) => {
   })
   let actions = destination.actions
   let presets = destination.presets
+  let slug = slugify(destination.name)
+  let url = `connections/destinations/catalog/${slug}`
 
   // Force screen method into supportedMethods object
   destination.supportedMethods.screen = false
   // Set it true for LiveLike, per request
-  if (destination.id == '63e42b47479274407b671071'){
+  if (destination.id == '63e42b47479274407b671071') {
     destination.supportedMethods.screen = true
   }
 
@@ -93,8 +137,9 @@ const getDestinationData = async (id) => {
     id: destination.id,
     display_name: destination.name,
     name: destination.name,
-    slug: destination.slug,
+    slug: slugify(destination.name),
     previous_names: destination.previousNames,
+    url,
     website: destination.website,
     status: destination.status,
     logo: {
@@ -119,6 +164,7 @@ const getDestinationData = async (id) => {
     private.push(updatePrivateDest)
   } else {
     console.log(`${destination.name} is public and will be removed`)
+    makeDestinationPublic(url)
   }
 
   const options = {
@@ -148,12 +194,18 @@ const checkExistingStatus = async () => {
     let id = existingIds[i]
     let destination = await checkDestinationStatus(id)
     let status = destination.status
+    let slug = slugify(destination.name)
+    let url = `connections/destinations/catalog/${slug}`
+
+    
+    
 
     if (status === "PRIVATE_BETA") {
       // console.log(`${destination.name} is private`)
       newIds.push(id)
     } else {
-      // console.log(`${destination.name}is public`)
+      console.log(`src/connections/${destination.name}is public`)
+      makeDestinationPublic(url)
     }
   }
   return newIds
