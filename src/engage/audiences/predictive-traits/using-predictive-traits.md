@@ -62,7 +62,7 @@ Predictions are most effective in the following situations:
 
 - **When your desired outcome is difficult to measure and not clearly defined**, like activation, retention, engagement, or long-term value Journeys.
 - **When your product has more than 100,000 average monthly users**; smaller sample sizes lead to less accurate statistical conclusions.
-- **When you need to save time building cohorts**; Predictive Traits lets marketers access and take action on predictive data without the help of data science teams, while also giving data teams out-of-the-box 
+- **When you need to save time building cohorts**; Predictive Traits lets marketers access and take action on predictive data without the help of data science teams, while also giving data teams out-of-the-box machine learning models they can use in downstream tools.
 
 ### When other approaches work better
 
