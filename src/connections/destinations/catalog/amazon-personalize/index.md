@@ -473,7 +473,7 @@ With Segment's ETL Job script created and saved, it's time to run the job to cre
 
 3. Click the **Security configuration, script libraries, and job parameters** section header to cause the job parameters fields to be displayed.
 
-    ![](images/GlueRunJobDialog.png)
+    ![A screenshot of the Parameters panel, with a red outline around the "Security configuration, script libraries, and job parameters section header"](images/GlueRunJobDialog.png)
 
 
 4. Scroll down to the **Job parameters** section. This is where Segment will specify the job parameters that Segment's script expects for the path to the input data and the path to the output file.
@@ -485,7 +485,7 @@ With Segment's ETL Job script created and saved, it's time to run the job to cre
     | --S3_JSON_INPUT_PATH | s3://personalize-data-[ACCOUNT_ID]/raw-events/ |
     | --S3_CSV_OUTPUT_PATH | s3://personalize-data-[ACCOUNT_ID]/transformed |
 
-    ![](images/GlueRunJobParams.png)
+    ![A screenshot of the job parameters section, showing two key/value pairs as outlined in the preceding table](images/GlueRunJobParams.png)
 
 
 6. Click **Run job** to start the job.  Note that this dialog scrolls.
@@ -502,7 +502,7 @@ To verify the output file:
 2. Click on the bucket name. If the job completed successfully, you'll see a folder named **transformed**.
 3. Click on **transformed** and you'll see the output file created by the ETL job.
 
-    ![](images/GlueJobOutputFile.png)
+    ![A screenshot of the overview for the personalize data bucket created in step 1, above, with a red box around the output file created by the ETL job](images/GlueJobOutputFile.png)
 
 
 ## Create Personalize Dataset Group, Solution and Campaign
@@ -515,11 +515,11 @@ To create a personalize dataset group:
 
 2. Click **View dataset groups** to get started.
 
-    ![](images/PersonalizeIntroPage.png)
+    ![A screenshot of the Amazon Personalize page, with red boxes around the data center (N. Virginia) and the View dataset groups button](images/PersonalizeIntroPage.png)
 
 3. On the Dataset Groups page, click **Create dataset group**.
 
-    ![](images/PersonalizeDatasetGroups.png)
+    ![A screenshot of the dataset groups page, with a red box around the Create dataset group button](images/PersonalizeDatasetGroups.png)
 
 4. On the **Create dataset group** page, give your dataset group a name.
 
@@ -527,12 +527,12 @@ To create a personalize dataset group:
 
 6. Click **Next** to continue.
 
-    ![](images/PersonalizeCreateGroup.png)
+    ![A screenshot of the create dataset group settings page, with a dataset group name, "MyEventData", entered and the "Upload user-item interaction data" option selected](images/PersonalizeCreateGroup.png)
 
 
 7. On the **Create user-item interaction data** page, select **Create new schema** and give your schema a name.
 
-    ![](images/PersonalizeSchema.png)
+    ![A screenshot of the "Create user-item interaction data" page in AWS, with the "Create new schema" setting selected](images/PersonalizeSchema.png)
 
 
 8. Scroll down to the **Schema definition** editor. Dataset schemas in Personalize are represented in [Avro](https://avro.apache.org/docs/current/spec.html){:target="_blank"}. Learn more about For detailed [Personalize schema definitions](https://docs.aws.amazon.com/personalize/latest/dg/how-it-works-dataset-schema.html){:target="_blank"}.

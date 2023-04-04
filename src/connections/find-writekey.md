@@ -8,6 +8,6 @@ To find a  write key, you first need to create a non-Cloud Source such as a webs
 
 Then, in the Source, go to "Settings', and then go to "API Keys".
 
-![](images/find_writekey.png)
+![Screenshot showing the Settings page of a web source, with the API Keys tab selected](images/find_writekey.png)
 
 Now you can add the Source's write key in your app, and begin sending us data.

@@ -4,7 +4,7 @@ The library file was built by Tonik, and is in Sketch. You'll need a Sketch lice
 
 You can also export the file, or diagrams you make with it, to `.svg` format for storage.
 
-![](sample-diagram.png)
+![Diagram showing how data is transferred from Segment Tracking API to a customer's AWS S3 bucket](sample-diagram.png)
 
 ## Using the Library
 

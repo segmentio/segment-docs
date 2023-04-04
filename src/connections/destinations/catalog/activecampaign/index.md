@@ -78,7 +78,7 @@ ActiveCampaign also supports updating a contact's custom fields with this integr
 
 For example, if you have a contact in ActiveCampaign with these custom fields:
 
-![](images/jda1490xo_screenshot2015-12-07at3.58.27pm.png)
+![A screenshot of the fields page in ActiveCampaign, featuring two custom fields: Shirt Size and State](images/jda1490xo_screenshot2015-12-07at3.58.27pm.png)
 
 You can update those fields using this identify call:
 

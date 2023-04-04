@@ -207,13 +207,15 @@ When configuring the mapping, the list of Track events must be defined in both A
 
 This means that you **must** create a mapping for each event and property to a corresponding Adobe Analytics `event`, `prop`, or `eVar`.
 
-The image below shows an example of how you might map an event and the corresponding custom variables in the Segment destination settings UI:
+The images below show an example of how you might map an event and the corresponding custom variables in the Segment destination settings UI:
 
-![](/docs/connections/destinations/catalog/adobe-analytics/images/event-mapping.png)
+<!--todo: rewrite this so that it doesn't rely on the screenshots to explain how to map events in Segment-->
 
-![](/docs/connections/destinations/catalog/adobe-analytics/images/prop-mapping.png)
+![A screenshot of the Adobe Analytics settings page in Segment, with the Mappings section selected and a sample event mapping under the "Events" tab.](images/event-mapping.png)
 
-![](/docs/connections/destinations/catalog/adobe-analytics/images/eVar-mapping.png)
+![A screenshot of the Adobe Analytics settings page in Segment, with the Mappings section selected and a sample property mapping under the "Props" tab.](images/prop-mapping.png)
+
+![A screenshot of the Adobe Analytics settings page in Segment, with the Mappings section selected and two sample mappings under the eVars tab.](images/eVar-mapping.png)
 
 Using the sample settings in the image above, if you make the Track call example below:
 
@@ -296,11 +298,11 @@ When you make a `page` call, here's what Segment does from the browser when you 
 
 6. Checks if any of the page call's properties are mapped to any custom Adobe Analytics variables such as `eVar`, `props`, and `hVar`.
 
-   Given the mapping setting below:
+   Given the mapping settings below:
 
-   ![](/docs/connections/destinations/catalog/adobe-analytics/images/props-page-mapping.png)
-   ![](/docs/connections/destinations/catalog/adobe-analytics/images/eVar-page-mapping.png)
-   ![](/docs/connections/destinations/catalog/adobe-analytics/images/hier-page-mapping.png)
+   ![A screenshot of the Adobe Analytics settings page in Segment, with the Mappings section selected and a sample property mapping under the "Props" tab.](images/props-page-mapping.png)
+   ![A screenshot of the Adobe Analytics settings page in Segment, with the Mappings section selected and two sample mappings under the "eVars" tab.](images/eVar-page-mapping.png)
+   ![A screenshot of the Adobe Analytics settings page in Segment, with the Mappings section selected and a sample event mapping under the "Hierarchy Values" tab.](images/hier-page-mapping.png)
 
    If you make the following page call:
 
@@ -329,7 +331,7 @@ Custom Conversion variables, also known as eVars, are how Adobe segments convers
 You must configure an eVar mapping in your Segment destination settings to send eVars to Adobe on Track and Page calls. When configuring the mapping, the list of eVars must be defined in the Adobe Analytics UI. Map your Adobe Analytics eVar names to the Segment property names you're using in your Segment events. Enter a Segment property name on the left and an Adobe Analytics eVar number on the right. You can view your Segment events and properties in your Schema.
 
 An example eVar mapping in the Segment Destination settings UI should look like this:
-![](/docs/connections/destinations/catalog/adobe-analytics/images/eVar-mapping.png)
+![A screenshot of the Adobe Analytics settings page in Segment, with the Mappings section selected and two sample mappings under the "eVars" tab.](/docs/connections/destinations/catalog/adobe-analytics/images/eVar-mapping.png)
 
 ## Merchandising events
 
@@ -353,7 +355,7 @@ The Segment Adobe Analytics Merchandising setting runs as follows:
 
 Let's take the following example:
 
-![](/docs/connections/destinations/catalog/adobe-analytics/images/merchandising-event.png)
+![A screenshot of the Adobe Analytics settings page in Segment, with the Mappings section selected and two sample mappings under the "Merchandising" tab. Two properties from the "eVar" tab are also included on this screenshot.](images/merchandising-event.png)
 
 The configuration in the example image above configures an `Order Completed` Segment event which sends Adobe Analytics:
 - `event1` in `s.events` with the value passed from `properties.increment`.
@@ -446,11 +448,11 @@ analytics.page({
 
 Custom Traffic Variables, also known as props, allow you to correlate custom data with specific traffic-related events in Adobe. To learn more about props and how to configure them in the Adobe UI, see the documentation [here](https://docs.adobe.com/content/help/en/analytics/admin/admin-tools/traffic-variables/traffic-var.html). You can map your Segment properties in your destination settings to any of your Adobe props.
 
-![](/docs/connections/destinations/catalog/adobe-analytics/images/prop-mapping.png)
+![A screenshot of the Adobe Analytics settings page in Segment, with the Mappings section selected and a sample property mapping under the "Props" tab.](images/prop-mapping.png)
 
 You can either send the property value as a string (ie. `'brady'`) or as an array (`['brady', 'edelman', 'blount']`). If you choose to send them as an array, Segment defaults to join it so that it is a pipe (`|`) delimited string before sending to Adobe (ie. `'brady|edelman|blount'`). See the [documentation on setting a custom delimiter](#custom-delimiter) to learn more.
 
-![](/docs/connections/destinations/catalog/adobe-analytics/images/prop-custom-delimiter.png)
+![A screenshot of the Adobe Analytics settings page in Segment, with the Mappings section selected and two sample properties mapped under the "Props" tab. The second property has an optional delimiter selected.](images/prop-custom-delimiter.png)
 
 ## List Variables - lVars
 
@@ -465,7 +467,7 @@ For list variables and props you can either send the property value as a comma d
 **Note:** You must configure the custom delimiter in _both_ the Adobe Analytics dashboard, and in the Segment Adobe Analytics destination settings, for each list variable and prop. Do this in the Adobe Analytics dashboard before setting up this mapping in the Segment destination settings.
 
 The example below shows how to configure the Segment custom delimiter mapping for a List Variable.
-![](/docs/connections/destinations/catalog/adobe-analytics/images/list-var-delimiter.png)
+![A screenshot of the Adobe Analytics settings page in Segment, with the Mappings section selected and a sample property with delimiter under the "List Variables" tab.](images/list-var-delimiter.png)
 
 When you send an event:
 ```javascript
@@ -486,7 +488,7 @@ Hierarchy variables mirror how customers can track “breadcrumbs” or “bread
 
 Map your Adobe Analytics hVars to the property names you use in your Segment Page calls. Enter a Segment property name on the left, and an Adobe Analytics hVar number on the right. You can view your Segment page calls and properties in your Schema.
 
-![](/docs/connections/destinations/catalog/adobe-analytics/images/hier-mapping.png)
+![A screenshot of the Adobe Analytics settings page in Segment, with the Mappings section selected and a sample hierarchy variable mapping under the "Hierarchy Variables" tab.](images/hier-mapping.png)
 
 ## Context Data Variables
 Context data variables let you define custom variables on each page that processing rules can read. See  the Adobe documentation to learn more about [how to use Adobe Analytics `contextData` and use processing rules](https://docs.adobe.com/content/help/en/analytics/implementation/vars/page-vars/contextdata.html) to populate analytics variables from that data.

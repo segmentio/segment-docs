@@ -13,7 +13,7 @@ id: 54521fd525e721e32a72ee8e
 2. Search for "Adroll" in the Catalog, select it, and choose which of your sources to connect the destination to.
 3. Locate both your AdRoll Advertiser ID and Pixel ID in AdRoll's "Audience" tab, "AdRoll Pixel" section. Click on "View Pixel". Your Advertiser ID will be listed beside `adroll_adv_id` and your AdRoll Pixel will be listed beside `adroll_pix_id`.
 
-    ![](images/adroll-pixel.png)
+    ![A screenshot of the Adroll Audience page, with Site Audiences selected. A green arrow points to the Adroll Pixel "View Pixel" button.](images/adroll-pixel.png)
 
 4. Add both your Advertiser ID and Pixel ID to your Segment Destination Settings.
 
@@ -44,17 +44,17 @@ analytics.track('Sign-up Form Completed');
 ```
 In order to send your `track` calls to AdRoll for segmenting your users, get started by creating a new "segment" in their interface, copying the "Segment ID", and pasting that following a `+` into the URL rule field.
 
-   ![](images/adrollSegmentId.gif)
+   ![An animation that creates a new user segment in Adroll using the instructions in the preceding paragraph](images/adrollSegmentId.gif)
 
 Map your client-side Analytics.js event names to the corresponding AdRoll "Segment ID" in the Segment Settings UI.
 
-   ![](images/segmentmapping.png)
+   ![A screenshot of the Events settings in the Adroll destination settings within Segment, with two custom events, Sign-up Form Completed and Button Clicked.](images/segmentmapping.png)
 
 We'll fire the correct pixel accordingly to put the user into that "segment" whenever they trigger the event you've chosen. Note that you will still need to map semantic events like `Viewed Product`, `Added Product`, and `Order Completed`.
 
 Then, inside AdRoll you can create a "segment" of all users doing any of those events by adding a `+` to the segment name and adding it in the URL field, like this:
 
-   ![](images/adroll-mapping.png)
+   ![A screenshot of the  New User Segment page in Adroll, with a specified name, url pattern, and duration.](images/adroll-mapping.png)
 
 ### Conversion Value
 
