@@ -41,7 +41,6 @@ If you are using [multiple instances of a destination](/docs/connections/destina
 
 Note that destination flags are **case sensitive** and match the destination's name in the docs (for example, "AdLearn Open Platform", "awe.sm", or "MailChimp").
 
-Your data is sent to your warehouse (if you have one) regardless of what is in the integrations object.
 
 ## Destination filters
 
@@ -49,8 +48,8 @@ Your data is sent to your warehouse (if you have one) regardless of what is in t
 
 > info ""
 > Destination filters are only available in workspaces that are on a Business Tier plan.
->
-> Destination filters for mobile device-mode destinations are in beta and only supports [Swift](/docs/connections/sources/catalog/libraries/mobile/swift-ios#destination-filters), [Kotlin (Android)](/docs/connections/sources/catalog/libraries/mobile/kotlin-android/#destination-filters), and [React Native 2.0](/docs/connections/sources/catalog/libraries/mobile/react-native/#destination-filters) libraries.
+<!-- >
+> Destination filters for mobile device-mode destinations are in beta and only supports [Swift](/docs/connections/sources/catalog/libraries/mobile/swift-ios#destination-filters), [Kotlin (Android)](/docs/connections/sources/catalog/libraries/mobile/kotlin-android/#destination-filters), and [React Native 2.0](/docs/connections/sources/catalog/libraries/mobile/react-native/#destination-filters) libraries. -->
 
 > warning ""
 > Keep [these limitations](/docs/connections/destinations/destination-filters/#limitations) in mind when using destination filters.

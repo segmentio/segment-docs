@@ -142,10 +142,10 @@ sections:
     - path: /connections/sources/catalog
       title: Sources Catalog
       menu_icon: read-more
-    - path: /connections/sources/debugger
-      title: Using the Source Debugger
     - path: /connections/sources/about-cloud-sources
       title: Cloud Sources
+    - path: /connections/sources/debugger
+      title: Source Debugger
     - path: /connections/sources/custom-domains
       title: Set Up a Custom Domain Proxy in Segment
     - path: /connections/sources/visual-tagger
@@ -164,6 +164,22 @@ sections:
       menu_icon: read-more
     - path: /connections/destinations/destination-filters
       title: Destination Filters
+  - section_title: Reverse ETL
+    slug: connections/reverse-etl
+    section:
+    - path: /connections/reverse-etl
+      title: Reverse ETL Overview
+    - path: /connections/reverse-etl/reverse-etl-catalog
+      title: Reverse ETL Catalog
+    - section_title: Reverse ETL Source Setup Guides  
+      slug: connections/reverse-etl/reverse-etl-source-setup-guides
+      section: 
+      - path: /connections/reverse-etl/reverse-etl-source-setup-guides/bigquery-setup
+        title: BigQuery Reverse ETL Setup
+      - path: /connections/reverse-etl/reverse-etl-source-setup-guides/redshift-setup
+        title: Redshift Reverse ETL Setup
+      - path: /connections/reverse-etl/reverse-etl-source-setup-guides/snowflake-setup
+        title: Snowflake Reverse ETL Setup
   - section_title: Functions
     slug: connections/functions
     section:
@@ -243,65 +259,60 @@ sections:
     title: Rate Limits
   - path: /connections/regional-segment
     title: Regional Segment
-- section_title: Reverse ETL
+# - section_title: Reverse ETL
+#   section:
+#   - path: /reverse-etl
+#     title: Reverse ETL Overview
+#   - path: /reverse-etl/bigquery-setup
+#     title: BigQuery Reverse ETL Setup
+#   - path: /reverse-etl/redshift-setup
+#     title: Redshift Reverse ETL Setup
+#   - path: /reverse-etl/snowflake-setup
+#     title: Snowflake Reverse ETL Setup
+- section_title: Unify
   section:
-  - path: /reverse-etl
-    title: Reverse ETL Overview
-  - path: /reverse-etl/bigquery-setup
-    title: BigQuery Reverse ETL Setup
-  - path: /reverse-etl/snowflake-setup
-    title: Snowflake Reverse ETL Setup
-- section_title: Profiles
-  section:
-  - path: /profiles
-    title: Profiles Overview
-  - path: /profiles/quickstart
-    title: Profiles Onboarding
-  # - section_title: User Subscriptions
-  #   slug: profiles/user-subscriptions
-  #   section:
-  #   - path: /profiles/user-subscriptions
-  #     title: User Subscriptions
-  #   - path: /profiles/user-subscriptions/set-user-subscriptions
-  #     title: Set User Subscriptions
-  #   - path: /profiles/user-subscriptions/subscription-states
-  #     title: Subscription States
+  - path: /unify
+    title: Unify Overview
+  - path: /unify/quickstart
+    title: Unify Onboarding
   - section_title: Identity Resolution
-    slug: profiles/identity-resolution
+    slug: unify/identity-resolution
     section:
-    - path: /profiles/identity-resolution
+    - path: /unify/identity-resolution
       title: Overview
-    - path: /profiles/identity-resolution/identity-resolution-onboarding
+    - path: /unify/identity-resolution/identity-resolution-onboarding
       title: Onboarding
-    - path: /profiles/identity-resolution/space-setup
+    - path: /unify/identity-resolution/space-setup
       title: Space Setup
-    - path: /profiles/identity-resolution/use-cases
+    - path: /unify/identity-resolution/use-cases
       title: Use Cases
-    - path: /profiles/identity-resolution/externalids
+    - path: /unify/identity-resolution/externalids
       title: External IDs
-    - path: /profiles/identity-resolution/identity-resolution-settings
+    - path: /unify/identity-resolution/identity-resolution-settings
       title: Settings
-    - path: /profiles/identity-resolution/ecommerce-example
+    - path: /unify/identity-resolution/ecommerce-example
       title: E-Commerce Example
   - section_title: Profiles Sync
-    slug: profiles/profiles-sync
+    slug: unify/profiles-sync
     section:
-    - path: /profiles/profiles-sync
+    - path: /unify/profiles-sync/overview
+      title: Profiles Sync Overview
+    - path: /unify/profiles-sync
       title: Setup
-    - path: /profiles/profiles-sync/sample-queries
+    - path: /unify/profiles-sync/sample-queries
       title: Sample Queries
-    - path: /profiles/profiles-sync/tables
+    - path: /unify/profiles-sync/tables
       title: Tables & Materialized Views
-  - path: /profiles/profile-api
+  - path: /unify/profile-api
     title: Profile API
-  - path: /profiles/profile-api-limits
+  - path: /unify/profile-api-limits
     title: Profile API Limits
-  - path: /profiles/debugger
+  - path: /unify/debugger
     title: Profile Debugger
-  - path: /profiles/profiles-gdpr
-    title: Profiles and GDPR
-  - path: /profiles/faqs
-    title: Profiles FAQs
+  - path: /unify/unify-gdpr
+    title: Unify and GDPR
+  - path: /unify/faqs
+    title: Unify FAQs
 
 - section_title: Engage
   section:
@@ -344,6 +355,13 @@ sections:
       title: Computed Traits
     - path: '/engage/audiences/sql-traits'
       title:  SQL Traits
+    - section_title: Predictive Traits
+      slug: engage/audiences/predictive-traits
+      section:
+      - path: '/engage/audiences/predictive-traits/'
+        title: Predictive Traits
+      - path: '/engage/audiences/predictive-traits/using-predictive-traits'
+        title: Using Predictive Traits
 
   - section_title: Journeys
     description: "Learn how to create multi-step Journeys to tailor messages to your users."
@@ -375,6 +393,10 @@ sections:
       title: Email Template Editor
     - path: '/engage/content/sms/template'
       title: SMS Template
+    - path: '/engage/content/sms/template'
+      title: SMS Template
+    - path: '/engage/content/whatsapp'
+      title: WhatsApp Template
   - section_title: Campaigns
     description: "Create multi-channel campaigns to get the right message to your users."
     section:
@@ -384,6 +406,8 @@ sections:
       title: Email Campaigns
     - path: '/engage/campaigns/sms-campaigns'
       title: SMS Campaigns
+    - path: '/engage/campaigns/whatsapp-campaigns'
+      title: WhatsApp Campaigns
   - path: '/engage/analytics'
     title: Analytics Overview
   - path: '/engage/settings'

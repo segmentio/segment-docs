@@ -24,6 +24,9 @@ When you call `identify` with one of Segment's sources, Segment calls Iterable's
 
 Iterable keys users by `email` or a user ID. This user ID will be the Segment `userId` if sent. To use a Segment `userId` for identify calls, first call identify with both a `userId` and `email`. Iterable won't accept the request and throws an error if you fail to send one of either the `userId` or `email`.
 
+> info ""
+> You must send the `email` parameter to Segment as `email`. The `email` value can't be passed in with any other key name in the payload. Sending `email` in with a different key name (for example, `customer_email`, `mail`) will not allow Iterable's processes to understand that key holds the `email` value you want to use. The same condition applies to the `userId` field. Using keys other than `email` and `userId` cause payloads to be silently rejected by Iterable.
+
 If you send `phone` in traits, Iterable performs checks on the phone number before showing them User Profiles. Read more about [Iterable's phone number field](https://support.iterable.com/hc/en-us/articles/211970843-SMS-Overview-#contact-phone-numbers){:target="_blank"}.
 
 <!-- commented out because this functionality isn't currently working ZD#355518
@@ -60,11 +63,17 @@ When you call `track` with one of Segment's sources, Segment calls Iterable's [t
 
 If a user does not already exist in Iterable, calling `track` for a user event will add that user into the system. You can track with either an `email` or userId (if a `userId` exists for that email).
 
+> info ""
+> You must send the `email` parameter to Segment as `email`. The `email` value can't be passed in with any other key name in the payload. Sending `email` in with a different key name (for example, `customer_email`, `mail`) will not allow Iterable's processes to understand that key holds the `email` value you want to use. The same condition applies to the `userId` field. Using keys other than `email` and `userId` cause payloads to be silently rejected by Iterable.
+
 ### Example steps:
 
 First `track` event with `userId` and `email`; user will be created
 
 Subsequent `track` with `userId`
+
+> info ""
+> If you send an ISO formatted date field in your events, Segment converts it into UTC to conform to standard Iterable format: `yyyy-MM-dd HH:mm:ss ZZ` (for example, `2023-02-05 20:42:10 +00:00`). Iterable has a specific date format that must be used to segment a field by date. Read more about Iterable date field [here](https://support.iterable.com/hc/en-us/articles/208183076-Data-Field-Types-in-Iterable#date){:target="_blank"}.
 
 ### Ecommerce
 

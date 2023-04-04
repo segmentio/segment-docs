@@ -45,6 +45,7 @@ Journeys offers the following steps:
 - **Connect to existing steps**, which joins two separate branches.
 - **Send an email**, which sends a [Channels email](/docs/engage/campaigns/email-campaigns/) to a group of users
 - **Send an SMS**, which sends a [Channels SMS](/docs/engage/campaigns/sms-campaigns/) to a group of users
+- **Send a WhatsApp** (Beta), which sends a [Channels WhatsApp](/docs/engage/campaigns/whatsapp-campaigns/) to a group of users
 - **Send to Destinations**, which delivers information about the Journey to the selected Destination
 
 For more details on each available Journey step, view the [Journey step types documentation](/docs/engage/journeys/step-types).

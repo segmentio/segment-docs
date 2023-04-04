@@ -10,7 +10,9 @@ redirect_from:
 
 Destination Filter Reference documentation can be found in the [main Config API reference docs](https://reference.segmentapis.com/#6c12fbe8-9f84-4a6c-848e-76a2325cb3c5).
 
-Filter Query Language ("FQL") is a simple language for filtering JSON objects used by the Transformations API to conditionally apply transformations. In the Transformations API, FQL statements evaluate to `true` or `false` based on the contents of each Segment event. If the statement evaluates to `true`, the transformation is applied, and if it is `false` the transformation is not applied.
+The Transformations API uses Filter Query Language (FQL) to filter JSON objects and conditionally apply transformations. You can use FQL statements to:
+- Apply filters that evaluate to `true` or `false` based on the contents of each Segment event. If the statement evaluates to `true`, the transformation is applied, and if it is `false` the transformation is not applied.
+- [Define new properties based on the result of an FQL statement](/docs/protocols/transform/#use-cases).
 
 In addition to boolean and equality operators like `and` and `>=`, FQL has built-in functions that make it more powerful such as `contains( str, substr )` and `match( str, pattern )`.
 
@@ -128,10 +130,17 @@ You can use parentheses to group subexpressions for more complex "and / or" logi
 | Function                            | Return Type | Result                                                                                                                                                     |
 | ----------------------------------- | ----------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `contains( s string, sub string )`  | `bool`      | Returns `true` if string `s` contains string `sub`.                                                                                                        |
-| `length( list or string )`          | `number`    | Returns the number of elements in a list or number of bytes (not necessarily characters) in a string. For example, `a`  is 1 byte and`ア` is 3 bytes long. |
+| `length( list or string )`          | `number`    | Returns the number of elements in a list or number of bytes (not necessarily characters) in a string. For example, `a`  is 1 byte and`ア` is 3 bytes long. Please note that you can't use this function with JSON as the argument. Using JSON may result in the function not working.  |
 | `lowercase( s string )`             | `string`    | Returns `s` with all uppercase characters replaced with their lowercase equivalent.                                                                        |
+| `uppercase( s string )`             | `string`    | Returns `s` with all lowercase characters replaced with their uppercase equivalent.                                                                        |
+| `snakecase( s string )`             | `string`    | Returns `s` with all space characters replaced by underscores. For example, `kebabcase("test string")` returns `test_string`.                                                                        |
+| `kebabcase( s string )`             | `string`    | Returns `s` with all space characters replaced by dashes. For example, `kebabcase("test string")` returns `test-string`.                                                                        |
+| `titlecase( s string )`             | `string`    | Returns `s` with all space characters replaced by dashes. For example, `titlecase("test string")` returns `Test String`.                                                                        |
 | `typeof( value )`                   | `string`    | Returns the type of the given value: `"string"`, `"number"`, `"list"`, `"bool"`, or `"null"`.                                                              |
 | `match( s string, pattern string )` | `bool`      | Returns `true` if the glob pattern `pattern` matches `s`. See below for more details about glob matching.                                                  |
+| `bool( list or string or number or nil )` | `bool`      | Converts the value to a boolean value.                                                  |
+| `string( list or string or number or nil )` | `string`      | Converts the value to a string value.                                                  |
+| `number( number or string )` | `number`      | Converts the value to a number value.                                                  |
 
 Functions handle `null` with sensible defaults to make writing FQL more concise.
 For example, you can write `length( userId ) > 0` instead of `typeof( userId ) =

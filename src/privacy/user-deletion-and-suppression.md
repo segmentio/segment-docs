@@ -42,7 +42,9 @@ When you create a `SUPPRESS_AND_DELETE` regulation, the user is actively suppres
 
 Segment deletes messages with this `userId` from connected raw data Destinations, including Redshift, BigQuery, Postgres, Snowflake, and Amazon S3. Warehouse deletions occur using a DML run against your cluster or instance, and Segment delete from S3 by "recopying" clean versions of any files in your bucket that included data about that `userId`.
 
-Segment forwards these deletion requests to a growing list of supported partners.
+Segment forwards these deletion requests to a [growing list of supported partners](/docs/privacy/faq/#which-destinations-can-i-send-deletion-requests-to).
+
+Note that Segment has a 30-day SLA for submitted deletion requests. Additionally, Segment's deletion manager can only accommodate 100,000 users within a 30-day period and cannot guarantee a 30-day SLA if there are more than 100,000 deletion requests submitted within those 30 days.
 
 **Segment cannot guarantee that data is deleted from your Destinations.**
 
@@ -100,9 +102,11 @@ Refer to the [List Regulations from Source](https://docs.segmentapis.com/tag/Del
 
 ## Data retention
 
-Set lifecycle policies for the data stored internally in Segment’s secure event Archives, on S3.
+Segment stores a copy of all event data received in Segment’s secure event archives on S3. By default, all workspaces store data for an unlimited period of time, but you can modify the lifecycle policies for the data stored internally. Segment uses this data for [data replays](/docs/guides/what-is-replay/) and for troubleshooting purposes.
 
-These limits represent the amount of time that Segment stores a copy of event data received by any of your sources. Segment recommends keeping at least 30 days of data to enable [Replays](/docs/guides/what-is-replay/) of your data.
+Segment recommends keeping your data for at least 30 days to enable [replays](/docs/guides/what-is-replay/) of your data.
+
+To change your data retention settings, navigate to **Privacy > Settings > Data Retention** in Segment.
 
 ### Workspace Default Archive Retention Period
 

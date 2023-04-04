@@ -1,9 +1,11 @@
 ---
 title: Hull Destination
 id: 5728ed9c80412f644ff132d9
+hidden: true
+deprecated: true
+hide-dossier: true
 ---
-> warning "Hull Deprecation"
-> Hull was deprecated on December 31, 2022 and the Segment Hull destination is no longer operational. For more information, see [Hull documentation](https://www.hull.io/faq/){:target="_blank"}.
+
 
 Hull is the one place to collect, transform, enrich, filter, search and segment customer data in all your tools.
 
