@@ -10,7 +10,7 @@ Analytics.js can be extended using two functions:
 
 ```js
 addSourceMiddleware(middleware)
-addDestinationMiddleware(targetIntegration, [middleware1, middleware2, ...])
+addDestinationMiddleware(targetIntegration, middleware1, middleware2, ...)
 ```
 
 The first function (Source Middleware) allows you to manipulate the payload and filter events on a per-source basis, while the second function (Destination Middleware) allows this on a per destination basis. Middlewares run in the browser.
@@ -65,13 +65,13 @@ The above defined Source & Destination Middleware can be added to the Analytics.
 
 ```js
 analytics.addSourceMiddleware(SMW1);
-analytics.addDestinationMiddleware('integrationA', [DMW1]);
+analytics.addDestinationMiddleware('integrationA', DMW1);
 ```
 
 
 You can call the `.addSourceMiddleware(fn)` multiple times, and the order of operations reflects the order in which you register your Source Middleware.
 
-Both `.addSourceMiddleware(fn)` and `.addDestinationMiddleware('integration', [fn, ...])` can be called before [`.load()`](/docs/connections/sources/catalog/libraries/website/javascript/#load-options).
+Both `.addSourceMiddleware(fn)` and `.addDestinationMiddleware('integration', fn, ...)` can be called before [`.load()`](/docs/connections/sources/catalog/libraries/website/javascript/#load-options).
 
 ## Braze Middleware
 

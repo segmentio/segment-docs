@@ -27,6 +27,8 @@ Iterable keys users by `email` or a user ID. This user ID will be the Segment `u
 > info ""
 > You must send the `email` parameter to Segment as `email`. The `email` value can't be passed in with any other key name in the payload. Sending `email` in with a different key name (for example, `customer_email`, `mail`) will not allow Iterable's processes to understand that key holds the `email` value you want to use. The same condition applies to the `userId` field. Using keys other than `email` and `userId` cause payloads to be silently rejected by Iterable.
 
+If you send `phone` in traits, Iterable performs checks on the phone number before showing them User Profiles. Read more about [Iterable's phone number field](https://support.iterable.com/hc/en-us/articles/211970843-SMS-Overview-#contact-phone-numbers){:target="_blank"}.
+
 <!-- commented out because this functionality isn't currently working ZD#355518
 ### Merge Nested Objects
 
