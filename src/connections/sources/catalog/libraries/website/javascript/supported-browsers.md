@@ -23,6 +23,8 @@ The library is regularly tested and is functional with the following browsers:
 
 Segment guarantees support for Internet Explorer 11 and later for Analytics.js. Remember that different bundled (device-mode) destinations might have different compatibility guarantees for their own products. Refer to the vendor's documentation to confirm browser compatibility.
 
+If you need support for pre-ie11  browsers or old versions of Opera, we've encourage you to either load a polyfill script in the head (https://cdnjs.cloudflare.com/ajax/libs/babel-polyfill/7.7.0/polyfill.min.js) or use the  analytics-next npm package and bundle/polyfill themselves: e.g.  https://babeljs.io/docs/babel-preset-env
+
 > info ""
 > Classic destinations and Analytics.js support Internet Explorer 11, but some Actions destinations are not yet supported. 
 
