@@ -8,7 +8,7 @@ id: 6411f979382d3759292d739f
 
 {% include content/plan-grid.md name="actions" %}
 
-[GWEN](https://gwenplatform.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) offer powerful gamification tools and insights to convert, engage, and retain users. With GWEN it has never been easier to understand your users behavior patterns and build better performing products with both speed and accuracy.
+[GWEN](https://gwenplatform.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners){:target="_blank"} offer powerful gamification tools and insights to convert, engage, and retain users. With GWEN it has never been easier to understand your users behavior patterns and build better performing products with both speed and accuracy.
 
 This destination is maintained by Insert Coin AB. For any issues with the destination, [contact their Support team](mailto:support@gwenplatform.com).
 
@@ -21,13 +21,14 @@ This destination is maintained by Insert Coin AB. For any issues with the destin
 5. Enter the following Basic Settings:
 
 - **Name**: A name to help you identify this destination in Segment.
-- **API Key**: Created under ["IAM & Billing" > "API Tokens"](https://app.gwenplatform.com/iam/api-token) in the GWEN Admin App
+- **API Key**: Created under ["IAM & Billing" > "API Tokens"](https://app.gwenplatform.com/iam/api-token){:target="_blank"} in the GWEN Admin App
 
-## Sending GWEN events
+## Send events to GWEN
 
 A GWEN event consists of two properties, a `type` and a `data` attribute.
-As per default, this destination maps the `type` of the event (track, identify etc.) to the `type` of the GWEN event being sent, and the entire `properties` object as the `data` attribute. This can be modified to further customize the possible events being sent to GWEN.
 
-You can read more about [Event Reporting here](https://app.gwenplatform.com/docs/event-reporting).
+By Default, this destination maps the Segment event type (for example, track or identify) to the `type` of the GWEN event being sent, and the Segment `properties` object to the GWEN `data` attribute. You can modify this configuration to futher customize the events you send to GWEN.
+
+You can read more about [Event Reporting here](https://app.gwenplatform.com/docs/event-reporting){:target="_blank"}.
 
 {% include components/actions-fields.html %}
