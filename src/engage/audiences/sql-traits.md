@@ -205,7 +205,7 @@ Yes, Segment limits request sizes to a maximum of 16KB. Records larger than this
 
 ### Do SQL Traits support arrays?
 
-It is not possible to pull in an array object via SQL Traits, only strings and numeric traits are supported. Arrays can instead be cast as a comma-separated string - if you were to use this later while building an audience, you would then be able to check whether the array contains a certain value by using the “contains” operator, but the value would be sent to any connected destinations as a string.
+It is not possible to pull in an array object with SQL Traits, only strings and numeric traits are supported. Arrays can instead be cast as a comma-separated string - if you were to use this later while building an audience, you would then be able to check whether the array contains a certain value by using the “contains” operator, but the value would be sent to any connected destinations as a string.
 
 ## Troubleshooting
 
