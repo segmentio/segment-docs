@@ -8,7 +8,7 @@ id: 6411f979382d3759292d739f
 
 {% include content/plan-grid.md name="actions" %}
 
-[GWEN](https://gwenplatform.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners){:target="_blank"} offer powerful gamification tools and insights to convert, engage, and retain users. With GWEN it has never been easier to understand your users behavior patterns and build better performing products with both speed and accuracy.
+[GWEN](https://gwenplatform.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners){:target="_blank"} offers powerful gamification tools and insights to convert, engage, and retain users. With GWEN it has never been easier to understand your users behavior patterns and build better performing products with both speed and accuracy.
 
 This destination is maintained by Insert Coin AB. For any issues with the destination, [contact their Support team](mailto:support@gwenplatform.com).
 
