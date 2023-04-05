@@ -156,7 +156,7 @@ If you're sending your experiment data to Google Analytics in the form of `track
 
 If you are using Optimizely SDKs v3+ or the React SDK, [Easy Event Tracking](https://blog.optimizely.com/2019/02/26/introducing-easy-event-tracking-the-easier-way-to-understand-and-optimize-the-customer-journey/) is enabled by default for decision events. Set up does not require maintaining the attributes of a user as long as the user id stays the same between Optimizely `activate` and `isFeatureEnabled` calls and Segment `track` calls to have Optimizely `metrics` populated in the Optimizely results page. If you would like to segment your Optimizely results by user `attribute`, then make sure the `attributes` passed in for the `activate` and `isFeatureEnabled` calls match the `attributes` passed in for the `track` calls for that user id.
 
-For more details on how events are attributed on the Optimizely results page, refer to their documentation [here])(https://help.optimizely.com/Analyze_Results/How_Optimizely_counts_conversions).
+For more details on how events are attributed on the Optimizely results page, refer to their documentation [here](https://help.optimizely.com/Analyze_Results/How_Optimizely_counts_conversions).
 
 ### Track
 
