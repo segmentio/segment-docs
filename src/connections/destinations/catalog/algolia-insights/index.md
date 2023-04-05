@@ -24,6 +24,18 @@ This destination is maintained by [Algolia](https://www.algolia.com/). For any i
 2. Search for "Algolia" in the Catalog, select it, and choose which of your sources to connect the destination to.
 3. Enter the "App ID" & "API Key" into your Segment Settings UI which you can find on the Algolia Dashboard, under API Keys menu.
 
+To find your App ID, there are two options. You can find the App Id in the Application dropdown in the Dashboard.
+
+![Application Dropdown](images/algolia_app_id_dropdown.png)
+
+The other location is where you will also find your API Keys. You can find your API Keys in your settings under API Keys, you will need a Search API Key to set up the Destination in Segment. 
+
+![Dashboard Settings](images/algolia_dashboard_settings.png)
+
+![Settings Menu](images/algolia_settings_menu.png)
+
+![Api Keys](images/algolia_api_keys.png)
+
 > _**NOTE:** The Algolia Insights Destination is not a plug-and-play integration. It requires you to modify your frontend code to send additional Algolia-related data like index name, queryID, etc._
 
 To access your queryID, make sure clickAnalytics are enabled in your search event. If you're using Insights.js this will look like
@@ -38,7 +50,7 @@ Once this is enabled you will be able to send properties like queryId in your se
 
 ## Mapping Events
 
-By default, Algolia has set up mappings for Product Clicked, Product Viewed and Order Completed events. If your event structure doesn't match the spec you can update this by using the Mapping Tab.
+By default, Algolia has set up mappings for Product Clicked, Product Viewed and Order Completed events. If your event structure doesn't match [Segments V2 Ecommerce Spec](/docs/connections/spec/ecommerce/v2/) you can update this by using the Mapping Tab.
 
 ![Mappings Tab](images/mapping_tab.png)
 
@@ -99,8 +111,5 @@ analytics.track('Order Completed', {
     ]
 })
 ```
-
-Track calls will be sent to Algolia as a `track` event, and appear in your Click Analytics, A/B Testing and Personalization dashboard.
-
 
 > _**NOTE:** If you send anonymous activity to Algolia, it will not be connected to activity attributed to that same user once they are identified._
