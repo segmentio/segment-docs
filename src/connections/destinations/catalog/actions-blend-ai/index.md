@@ -2,8 +2,6 @@
 title: Blend-AI (Actions) Destination
 hide-boilerplate: true
 hide-dossier: false
-private: true
-hidden: true
 id: 64244158b33d1380a79dc85c 
 ---
 {% include content/plan-grid.md name="actions" %}
