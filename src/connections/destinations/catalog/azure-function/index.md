@@ -24,42 +24,42 @@ To process events from Segment, first create a Azure Function that can handle yo
 
 
 1. Go to https://portal.azure.com, and click **Functions App**.
-   ![](images/azure1.png)
+   ![A screenshot of the Azure services dashboard, with an orange box around the Function Apps buttons](images/azure1.png)
 
 2. Click **+Add** to create your Function App.
-   ![](images/azure2.png)
+   ![A screenshot of the Function Apps dashboard, with an orange box around the "Add" button](images/azure2.png)
 
 3. Enter a name for your app in the **App name** field, and configure any other fields as needed own flavor.
 4. Click **Create**. Azure creates your new function app.
-   ![](images/azure3.png)
+   ![A screenshot of the Function App settings page, with blurbs point to the App Name field and the Create button](images/azure3.png)
 
 #### Create a new Azure function
 
 
 1. Click the new function app's name. (You might need to click the **Refresh** button if the new function doesn't appear.)
-   ![](images/azure4.png)
+   ![A screenshot of the Function App dashboard, with an orange box around the app you created above](images/azure4.png)
 
 2. On the left pane, click **Functions**.
-   ![](images/azure5.png)
+   ![A screenshot of the function dashboard, with an orange box around the Functions dropdown](images/azure5.png)
 
 3. In the main frame, click **New function**.
-   ![](images/azure6.png)
+   ![A screenshot of the function panel, with an orange box around the New function button](images/azure6.png)
 
 
 4. Choose **HTTP trigger**.
-   ![](images/azure7.png)
+   ![A screenshot of the new function setup page, with an orange box around the HTTP trigger box](images/azure7.png)
 
 5. Enter a name for your function, and choose `Function` for the **Authorization level** field.
-   ![](images/azure8.png)
+   ![A screenshot of the HTTP trigger setup panel, with a name entered in the Name field, Function chosen as the Authorization level, and an orange box around the Create button](images/azure8.png)
 6. Click `Create`.
 
 11. Set up your function code.
 12. In the created function screen, click on `</> Get function URL`.
-    ![](images/azure9.png)
+    ![A screenshot of the function panel, with an orange box around the "</> Get function URL" button](images/azure9.png)
 
 13. In the **Key** field, choose `default (Function key)`.
 14. Click **Copy** to the right of the URL. You'll use this URL to tell Segment where to connect to use this Azure Function.
-   ![](images/azure10.png)
+   ![A screenshot of the Get function URL popup, with an orange box around the "Copy" button](images/azure10.png)
 
 ## Configure Azure Function Destination
 
