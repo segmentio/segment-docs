@@ -37,8 +37,6 @@ Open your Package.swift file and add the following do your the `dependencies` se
             from: "1.0.0"
         ),
 ```
-
-
 ## Using the Plugin in your App
 
 Open the file where you setup and configure the Analytics-Swift library.  Add this plugin to the list of imports.

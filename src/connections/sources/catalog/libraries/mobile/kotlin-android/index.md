@@ -18,7 +18,7 @@ With Analytics Kotlin, you can send data using Kotlin and Java applications to a
 Analytics Kotlin provides several key benefits including stability, performance, and developer experience when compared to Analytics Android (Classic). 
 
 ### Stability
-Analytis Kotlin uses thread-safety strategies to isolate plugins, device-mode Destinations, and custom middleware from the host app. By isolating these dynamically added features we can protect the host app from from any crashes caused by these features.
+Analytics Kotlin uses thread-safety strategies to isolate Plugins, Device-Mode Destinations, and custom Middleware from the host app. By isolating these features from the host app we can protect the host app from any potential problems including Exceptions that would otherwise terminate the host app.
 
 ### Performance
 
