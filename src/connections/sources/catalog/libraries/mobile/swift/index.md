@@ -27,7 +27,7 @@ Analytics Swift is a huge leap forward in terms of performance when compared to 
 
 ### Developer Experience
 
-Analytics Swift adds several improvements to the overall experience of using the core SDK, as well as improvements to the overall [Plugin Architecture](/docs/connections/sources/catalog/libraries/mobile/swift/swift-plugin-architecture)
+Analytics Swift adds several improvements to the overall experience of using the core SDK, as well as improvements to the overall [Plugin Architecture](/docs/connections/sources/catalog/libraries/mobile/swift/swift-plugin-architecture).
 
 - Ability to use Type Safe data structures rather than just dictionaries.
 - Simpler syntax and more developer friendly overall.

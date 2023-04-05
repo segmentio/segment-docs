@@ -157,10 +157,11 @@ To get started with the Analytics-Kotlin mobile library:
 ## Tracking methods
 
 Once you've installed the mobile or server Analytics Kotlin library, you can start collecting data through Segment's tracking methods:
-- [Identify](#identify)
-- [Track](#track)
-- [Screen](#screen)
-- [Group](#group)
+- [Track](/docs/connections/sources/catalog/libraries/mobile/kotlin-android/implementation/#track)
+- [Identify](/docs/connections/sources/catalog/libraries/mobile/kotlin-android/implementation/#identify)
+- [Screen](/docs/connections/sources/catalog/libraries/mobile/kotlin-android/implementation/#screen)
+- [Group](/docs/connections/sources/catalog/libraries/mobile/kotlin-android/implementation/#group)
+- [Alias](/docs/connections/sources/catalog/libraries/mobile/kotlin-android/implementation/#alias)
 
 > info ""
 > For any of the different methods described, you can replace the properties and traits in the code samples with variables that represent the data collected.
@@ -196,7 +197,7 @@ Analytics for Kotlin is built with extensibility in mind. Use the tools list bel
 - [Plugin architecture](/docs/connections/sources/catalog/libraries/mobile/kotlin-android/kotlin-android-plugin-architecture)
 - [Typewriter](/docs/connections/sources/catalog/libraries/mobile/kotlin-android/kotlin-android-typewriter)
 - [Destination filters](/docs/connections/sources/catalog/libraries/mobile/kotlin-android/kotlin-android-destination-filters)
-- [Code samples]()
+- [Code samples](/docs/connections/sources/catalog/libraries/mobile/kotlin-android/kotlin-android-samples)
 - [Frequently Asked Questions](/docs/connections/sources/catalog/libraries/mobile/kotlin-android/kotlin-android-faq)
 
 > warning ""

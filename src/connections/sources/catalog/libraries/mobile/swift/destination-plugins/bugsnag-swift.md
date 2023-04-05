@@ -12,9 +12,6 @@ Add BugSnag tracking support to your applications via this plugin for [Analytics
 2. Search for "BugSnag" in the Catalog, select it, and choose which of your sources to connect the destination to.
 3. Add your API key to your connection settings. You can find your API key in your Bugsnag dashboard under “Settings”, which is located in the upper left-hand corner.
 
-> warning ""
-> This plugin simply adds session data for BugSnag, and events are sent via Cloud Mode.
-
 ## Adding the dependency
 
 ### via Xcode

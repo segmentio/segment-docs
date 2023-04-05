@@ -4,7 +4,7 @@ strat: kotlin-android
 
 plugins:
   - name: Adjust
-    url: connections/sources/catalog/libraries/mobile/kotlin-android/destination-plugins/optimizely-full-stack-kotlin-android/
+    url: connections/sources/catalog/libraries/mobile/kotlin-android/destination-plugins/adjust-kotlin-android/
     logo:
       url: https://cdn.filepicker.io/api/file/IefXQy6fRR27ZG1NvZgW
     mark:
