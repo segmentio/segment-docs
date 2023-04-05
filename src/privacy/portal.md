@@ -195,7 +195,7 @@ treat that property whenever it is appears in data Segment processes.
 
 **To create a Custom Matcher:**
 
-1. Click **New Matcher**.
+1. Click **Add a Custom Matcher**.
 2. Enter the **Symbol Name** (for example the property name, like "Social Insurance Number"). Segment matches against the **Symbol Name**, as well as the other context you provide in the next steps.
 3. Set the default classification:
    - **Red** for highly restricted
