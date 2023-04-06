@@ -152,7 +152,7 @@ The Segment Google Analytics 4 Cloud destination supports sending mobile app eve
 
 ### Reserved Names
 
-Google reserves certain event names, parameters, and user properties. Google silently drops any events that include [these reserved names](https://developers.google.com/analytics/devguides/collection/protocol/ga4/reference?client_type=gtag#reserved_names){:target="_blank"}. If you notice that your data isn't appearing in Google, please check that you're not using a reserved name.
+Google reserves certain event names, parameters, and user properties. Google silently drops any events that include [these reserved names](https://developers.google.com/analytics/devguides/collection/protocol/ga4/reference?client_type=gtag#reserved_names){:target="_blank"}. Google also will not except events where event or user property names have spaces in them. If you notice that your data isn't appearing in Google, please check that you're not using a reserved name. 
 
 ### Data taking a long time to appear in Google's reports
 

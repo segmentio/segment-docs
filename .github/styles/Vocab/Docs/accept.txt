@@ -149,6 +149,7 @@ varchar
 Vero
 Vidora
 viewability
+Voucherify
 waitlist
 walkthrough
 WebKit

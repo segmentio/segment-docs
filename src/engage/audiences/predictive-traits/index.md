@@ -64,7 +64,7 @@ You can create predictions outside of these suggestions, but your results may va
 
 ### Likelihood to Purchase
 
-Likelihood to Purchase is identical to Custom Predictive Goals, but Segment prefills the **Order Completed** event, assuming it's tracked in you Segment instance. 
+Likelihood to Purchase is identical to Custom Predictive Goals, but Segment prefills the **Order Completed** event, assuming it's tracked in your Segment instance. 
 
 If you don’t track Order Completed, choose a target event that represents a customer making a purchase.
 
