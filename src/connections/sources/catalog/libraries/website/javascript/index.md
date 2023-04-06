@@ -846,7 +846,7 @@ For more information, visit the [Segment localstorage-retry library](https://git
 You can set the `debug` cookie to `analytics.js` to log debug messages from Analytics.js to the console.
 
 ## Ad Blocking
-Segment doesn't endorse bypassing ad blockers for client-side tracking. You have control as to what gets loaded on the page, because you can add a plugin to block third party scripts from loading, which includes Segment. As you can expect some data loss in client-side tracking, there are three routes Segment recommends you to choose from:
+Segment doesn't endorse bypassing ad blockers for client-side tracking. Your users have control as to what gets loaded on the page, because they can add a plugin to block third party scripts from loading, which includes Segment. As you can expect some data loss in client-side tracking, there are three routes Segment recommends you to choose from:
 
 1. Honor the decision of the user to implement the ad blocker knowing that unfortunately, some data will be lost.
 2. Ask the customer to remove the ad blocker (for example, in the case of large, corporate customers).
@@ -854,7 +854,7 @@ Segment doesn't endorse bypassing ad blockers for client-side tracking. You have
 
 If the above routes don't work, Segment provides these workarounds to help with tracking and to mitigate data loss:
 
-* Utilize the [bundle obfuscation](#bundle-obfuscation) feature. You can add an obfuscate property to the object in the second parameter, which obscures the URL from which your integrations and destination actions are loaded. This helps prevent words that are flagged by ad blockers to not be detected in your URL, enabling the integration to properly load.
+* Use the [bundle obfuscation](#bundle-obfuscation) feature. You can add an obfuscate property to the object in the second parameter, which obscures the URL from which your integrations and destination actions are loaded. This helps prevent words that are flagged by ad blockers to not be detected in your URL, enabling the integration to properly load.
 
 * Create a [custom proxy](/docs/connections/sources/catalog/libraries/website/javascript/custom-proxy/). This changes the URL that Segment loads from (cdn.segment.com), as well as the outgoing requests generated when events are triggered (api.segment.io). By setting up proxies for these URLs, some ad blockers won't prevent Segment from loading, which means your events send downstream to your destinations. 
 
