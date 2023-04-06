@@ -8,14 +8,14 @@ id: dZeHygTSD4
 With Analytics Kotlin, you can send data using Kotlin and Java applications to any analytics or marketing tool without having to learn, test, or implement a new API every time. Analytics Kotlin enables you to process and track the history of a payload, while Segment controls the API and prevents unintended operations.
 
 > success ""
-> You can choose to set up your Analytics Kotlin source on [mobile](/docs/connections/sources/catalog/libraries/mobile/kotlin-android) or on the [server](/docs/connections/sources/catalog/libraries/server/kotlin). Segment doesn't support device-mode destinations on the server-side.
+> You can choose to set up your **Analytics Kotlin** source on [mobile](/docs/connections/sources/catalog/libraries/mobile/kotlin-android) or on the [server](/docs/connections/sources/catalog/libraries/server/kotlin). Segment doesn't support device-mode destinations on the server-side.
 
 > warning ""
 > If you're migrating to Analytics Kotlin from a different mobile library, you can skip to the [migration guide](/docs/connections/sources/catalog/libraries/mobile/kotlin-android/migration/).
 
 ## Benefits of Analytics Kotlin
 
-Analytics Kotlin provides several key benefits including stability, performance, and developer experience when compared to Analytics Android (Classic). 
+Analytics Kotlin provides several key benefits including improvements in stability, performance, and developer experience when compared to Analytics Android (Classic). 
 
 ### Stability
 Analytics Kotlin uses thread-safety strategies to isolate Plugins, Device-Mode Destinations, and custom Middleware from the host app. By isolating these features from the host app we can protect the host app from any potential problems including Exceptions that would otherwise terminate the host app.
@@ -37,7 +37,7 @@ Analytics Kotlin adds several improvements to the overall experience of using th
 - More customization options than ever before.
 
 ### Device Mode Transformations & Filtering
-For the first time ever, developers can filter and transform their users’ Events even before the events the mobile device. What’s more, these Filters & transformations can be applied dynamically (either via the Segment Dashboard, or via Javascript uploaded to the workspace) and do not require any app updates!
+For the first time ever, developers can filter and transform their users’ events even before the events leave the mobile device. What’s more, these Filters & transformations can be applied dynamically (either via the Segment Dashboard, or via Javascript uploaded to the workspace) and do not require any app updates!
 
 Learn more about [Destination Filters]() on Mobile, and [Edge Functions]() on Mobile. 
 

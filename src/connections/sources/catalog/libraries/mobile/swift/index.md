@@ -12,7 +12,7 @@ With Analytics Swift, you can send data from iOS, tvOS, iPadOS, WatchOS, macOS a
 
 ## Benefits of Analytics Swift
 
-Analytics Swift provides several key benefits including stability, performance, and developer experience when compared to Analytics iOS (Classic). 
+Analytics Swift provides several key benefits including improvements in stability, performance, and developer experience when compared to Analytics iOS (Classic). 
 
 ### Stability
  <  SAFELY BLURB >
@@ -34,7 +34,7 @@ Analytics Swift adds several improvements to the overall experience of using the
 - More customization options than ever before.
 
 ### Device Mode Transformations & Filtering
-For the first time ever, developers can filter and transform their users’ Events even before the events the mobile device. What’s more, these Filters & transformations can be applied dynamically (either via the Segment Dashboard, or via Javascript uploaded to the workspace) and do not require any app updates!
+For the first time ever, developers can filter and transform their users’ events even before the events leave the mobile device. What’s more, these Filters & transformations can be applied dynamically (either via the Segment Dashboard, or via Javascript uploaded to the workspace) and do not require any app updates!
 
 Learn more about [Destination Filters]() on Mobile, and [Edge Functions]() on Mobile. 
 
