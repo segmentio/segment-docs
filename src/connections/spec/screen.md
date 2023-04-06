@@ -65,6 +65,11 @@ Here's a complete example of a `screen` call:
   "version": "1.1"
 }
 ```
+### Create your own Screen call
+
+Use the following interactive code pen to see what your Screen calls would look like with user-provided information:
+
+{% include components/codepens/screen-spec.html %}
 
 
 ## Identities

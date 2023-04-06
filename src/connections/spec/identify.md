@@ -96,6 +96,11 @@ Here's a complete example of an `identify` call:
   "version": "1.1"
 }
 ```
+### Create your own Identify call
+
+Use the following interactive code pen to see what your Identify calls would look like with user-provided information:
+
+{% include components/codepens/identify-spec.html %}
 
 ## Identities
 
