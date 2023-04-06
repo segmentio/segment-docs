@@ -113,7 +113,7 @@ Authorization between an Google Ads (Classic) account and a third-party-applicat
 
 Once this step is complete, you should see a screen that looks like this showing the new Link Id:
 
-![](images/link-id-process.png)
+![A screenshot of Google Ads (Classic) showing Segment as an App analytics provider](images/link-id-process.png)
 
 #### Add your Link ID as an Integration Setting
 

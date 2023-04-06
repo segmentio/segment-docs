@@ -269,15 +269,15 @@ Engage sends **Account-Level data** to HubSpot using **Identify** calls to add a
 
 1. Create your audience criteria and preview the audience in Segment. Click Select Destinations.
 
-   ![](images/hubspot-personas01.png)
+   ![A screenshot of the Segment Configure and Preview Your Audience page, showing an audience created for all users who opened at least one email over the last 30 days](images/hubspot-personas01.png)
 
 2. Next, select HubSpot as a destination for the audience in Segment. Use the default settings, which send an Identify call to mark users as members of an audience or when they have a specific trait. <!-- some clarifying changes coming here in a future update, per Dadson.-->
 
-   ![](images/hubspot-personas02.png)
+   ![A screenshot of the Hubspot destination page in Segment, with the Send Identify setting selected](images/hubspot-personas02.png)
 
 3. Enter a name for the audience, and a description.
    Write down the **Audience key** (you'll need this to configure HubSpot in the next step), but don't click **Create Audience** yet.
-   ![](images/hubspot-personas03.png)
+   ![A screenshot of the last step in the Configure and Preview Your Audience setup flow, with a red arrow pointing to the audience key](images/hubspot-personas03.png)
 
 
 4. Go to your HubSpot Settings.
@@ -285,7 +285,7 @@ Engage sends **Account-Level data** to HubSpot using **Identify** calls to add a
    This is required because HubSpot's schema is explicitly defined.
    You must do this *before* you send any Engage data from Segment to HubSpot.
 
-   ![](images/hubspot-personas04.png)
+   ![A screenshot of the Settings page in Hubspot, with a green arrow pointing to the "Create a property" button](images/hubspot-personas04.png)
 
 
 6. Set the object type.
@@ -298,14 +298,14 @@ Engage sends **Account-Level data** to HubSpot using **Identify** calls to add a
 > The audience label's “internal name” in HubSpot *must exactly match* the Segment  `audience key`. You can check this by clicking the `</>` icon to the right of the Label field, and making corrections.
 
 
-   ![](images/hubspot-personas05.png)
+   ![A screenshot of the "Create a new property" setup flow in Hubspot, with a green arrow pointing to the code icon next to the Label field](images/hubspot-personas05.png)
 
 8. On the next screen, set the **Field type** for audiences to `Single Checkbox`. (This represents a boolean value that indicates audience membership.)
    (For computed traits, depending on whether the output is a string or number, select `Single-line text` or `Number`.)
 
    Click **Create** to finish adding the audience contact property.
 
-   ![](images/hubspot-personas06.png)
+   ![A screenshot of the final step in the "Create a new property" setup flow in Hubspot, with the field type set to Single checkbox](images/hubspot-personas06.png)
 
 
 9. Back in the Engage Audience builder, click **Create Audience**. Engage sends any users that meet the audience criteria to HubSpot immediately.
@@ -315,15 +315,15 @@ Engage sends **Account-Level data** to HubSpot using **Identify** calls to add a
 
 You can use the [Profiles Debugger](/docs/unify/debugger) to see the calls sent to HubSpot.
 
-![](images/hubspot-personas07.png)
+![A screenshot of the Profiles Debugger with a sample profile](images/hubspot-personas07.png)
 
 You can check back in HubSpot to see the audience boolean as a contact property. For the audience created in the example above, you could check individual contact profiles and see a contact property called  `Email Opened 30 Days` = `Yes`.
 
-![](images/hubspot-personas08.png)
+![A screenshot of the Hubspot Managed Properties settings page, with a green arrow pointing to the custom field "Email Opened 30 days" ](images/hubspot-personas08.png)
 
 You can also see this in the contact property history for each user record.
 
-![](images/hubspot-personas09.png)
+![A screenshot of the Property history for the profile present in the Profiles debugger, with the custom property "Email Opened 30 days" present](images/hubspot-personas09.png)
 
 
 

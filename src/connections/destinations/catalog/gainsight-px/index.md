@@ -16,7 +16,7 @@ Our Gainsight PX destination code is open sourced on GitHub, feel free to check 
 2. Search for "Gainsight PX" in the Catalog, select it, and choose which of your sources to connect the destination to.
 3. To find your Gainsight PX key, log into Gainsight PX and navigate to Settings > Products > Web App. If you have not already entered the URL for your web application, do that and click the Generate button. The Tag Key is the value to the right of the URL value. Use the "Copy" button to copy the value to your clipboard.
 
-   ![](images/TagKey.png)
+   ![A screenshot of the Gainsight PX Products tab, with a callout that says "Copy the value from your Aptrinsic Settings Screen"](images/TagKey.png)
 
 4. Paste the Gainsight PX Tag Key into the Segment connection settings API Key field.
 
