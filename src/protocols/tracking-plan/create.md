@@ -24,7 +24,7 @@ To create a new Tracking Plan:
 2. Once enabled, click **Protocols** in the left bar navigation.
 3. Click **New Tracking Plan**.
 4. Add events, properties, traits and filters in the Tracking Plan editor.
-  - You'll see an option to import events and traits to your tracking plan from a source in your workspace. This option is great if you want to get started with your current events. Note that Segment infers data types, but often can't if several data types are sent for a specific category.
+  - You'll see an option to import events and traits to your tracking plan that your source received in the last 24 hours, 7 days or 30 days. This option is great if you want to get started with your current events. Note that Segment infers data types, but often can't if several data types are sent for a specific category.
 
 
 ## Copy a Tracking Plan

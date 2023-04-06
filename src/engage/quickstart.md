@@ -8,11 +8,11 @@ redirect_from:
 This guide walks you through the set up process for a simple Engage space, which you can use if your Segment implementation is simple. If your implementation is complex, you can use this to demonstrate and test Engage before working on a more complex configuration.
 
 > success ""
-> The first four steps in this guide also apply to Profiles set up. To learn more, visit the [Profiles Onboarding Guide](/docs/profiles/quickstart).
+> The first four steps in this guide also apply to Unify set up. To learn more, visit the [Unify Onboarding Guide](/docs/unify/quickstart).
 
 ## Engage configuration requirements
 > info ""
-> Engage requires both [Connections](/docs/connections/) and [Profiles](/docs/profiles/).
+> Engage requires both [Connections](/docs/connections/) and [Unify](/docs/unify/).
 
 To configure and use Engage, you need the following:
 
@@ -42,11 +42,11 @@ Invite teammates to your Engage dev space and grant them access to the space. Na
 2. On the screen that appears, choose one or two production sources from your Connections workspace.
    Segment recommends connecting your production website or App source as a great starting point.
 
-To learn more, visit [Connect production sources](/docs/profiles/quickstart/#step-3-connect-production-sources).
+To learn more, visit [Connect production sources](/docs/unify/quickstart/#step-3-connect-production-sources).
 
 ## Step 4: Check your profile data
 
-Once the replay finishes, you can see the data replayed into Engage using the Profile Explorer. Visit the [Profiles Onboarding Guide](/docs/profiles/quickstart/#step-4-check-your-profile-data) for more info.
+Once the replay finishes, you can see the data replayed into Engage using the Profile Explorer. Visit the [Unify Onboarding Guide](/docs/unify/quickstart/#step-4-check-your-profile-data) for more info.
 
 ## Step 5: Create an Audience
 

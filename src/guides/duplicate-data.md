@@ -14,7 +14,7 @@ Segment deduplicates on the event's `messageId`, _not_ on the contents of the e
 > Keep in mind that Segment's libraries all generate `messageId`s for each event payload, with the exception of the Segment HTTP API, which assigns each event a unique `messageId` when the message is ingested. You can override these default generated IDs and manually assign a `messageId` if necessary.
 
 ## Warehouse deduplication
-Duplicate events that are more than 24 hours apart from one another deduplicate in the Warehouse. Segment deduplicates messages going into a Warehouse ([including Profiles Sync data](/docs/profiles/profiles-sync/)) based on the `messageId`, which is the `id` column in a Segment Warehouse.
+Duplicate events that are more than 24 hours apart from one another deduplicate in the Warehouse. Segment deduplicates messages going into a Warehouse ([including Profiles Sync data](/docs/unify/profiles-sync/)) based on the `messageId`, which is the `id` column in a Segment Warehouse.
 
 ## Data Lake deduplication
 To ensure clean data in your Data Lake, Segment removes duplicate events at the time your Data Lake ingests data. The Data Lake deduplication process dedupes the data the Data Lake syncs within the last 7 days with Segment deduping the data based on the `messageId`.

@@ -52,6 +52,7 @@ deeplink
 Dev
 Doubleclick
 Eloqua
+Emarsys
 enablement
 endcapture
 endfor
@@ -73,6 +74,7 @@ https
 HTTPS
 Hubspot
 incrementality
+Innovid
 ios
 iOS
 Iterable
@@ -111,6 +113,7 @@ Okta
 Omnichannel
 onboarding
 Optimizely
+Outfunnel
 param(:?s)
 Pardot
 Passcode
@@ -120,6 +123,7 @@ Pipedrive
 Preact
 Qualtrics
 reformat(:?s)
+remarket
 Responsys
 Rokt
 Sabil
@@ -141,6 +145,7 @@ Twilio
 upsert
 US
 utm
+varchar
 Vero
 Vidora
 viewability
@@ -152,4 +157,3 @@ Woopra
 Wootric
 Xcode
 Zendesk
-remarket

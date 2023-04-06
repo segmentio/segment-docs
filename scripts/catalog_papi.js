@@ -336,7 +336,6 @@ const updateSources = async () => {
 const updateDestinations = async () => {
   let destinations = []
   let destinationsUpdated = []
-  let regionalDestinationsUpdated = []
   let destinationCategories = []
   let categories = new Set()
   let nextPageToken = "MA=="
@@ -357,25 +356,23 @@ const updateDestinations = async () => {
     return 0;
   })
 
-  const regionalDestinationEndpoints = regionalSupport.destinations.endpoint
-  const regionalDestinationRegions = regionalSupport.destinations.region
-
 
   destinations.forEach(destination => {
-    let endpoints = ['us']
-    let regions = ['us']
+    let endpoints = []
+    let regions = []
 
     let slug = slugify(destination.name)
-
-    if (regionalDestinationEndpoints.includes(slug)) {
-      endpoints.push('eu')
+    
+    if (typeof destination.supportedRegions != "undefined") {
+      regions = destination.supportedRegions
+    } else {
+      regions.push('us-west-2','eu-west-1')
     }
-
-    if (regionalDestinationRegions.includes(slug)) {
-      regions.push('eu')
+    if (typeof destination.regionEndpoints != "undefined"){
+      endpoints = destination.regionEndpoints
+    } else {
+      endpoints.push('US')
     }
-
-
     let url = `connections/destinations/catalog/${slug}`
 
     let tempCategories = [destination.categories]
@@ -463,16 +460,6 @@ const updateDestinations = async () => {
     doesCatalogItemExist(updatedDestination)
     tempCategories.reduce((s, e) => s.add(e), categories)
 
-    let updatedRegionalDestination = {
-      id: destination.id,
-      display_name: destination.name,
-      slug,
-      url,
-      regions,
-      endpoints
-    }
-
-    regionalDestinationsUpdated.push(updatedRegionalDestination)
   })
 
 
@@ -514,13 +501,6 @@ const updateDestinations = async () => {
   }, options);
   fs.writeFileSync(path.resolve(__dirname, `../src/_data/catalog/destination_categories.yml`), output);
 
-  // Append regional destinations to regional file
-  output = yaml.dump({
-    destinations: regionalDestinationsUpdated
-  }, {
-    noArrayIndent: false
-  })
-  fs.appendFileSync(path.resolve(__dirname, `../src/_data/catalog/regional-supported.yml`), output);
   console.log("destinations done")
 }
 

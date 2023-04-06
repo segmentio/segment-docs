@@ -2,6 +2,7 @@
 title: Salesforce Pardot Destination
 strat: salesforce
 id: 54521fd925e721e32a72eee1
+private: true
 maintenance: true
 actions-slug: actions-pardot
 ---
