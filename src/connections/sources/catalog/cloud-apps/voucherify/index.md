@@ -3,14 +3,14 @@ title: Voucherify Source
 hidden: true
 ---
 [Voucherify](https://voucherify.io/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) is an API-first Promotion Engine for growth teams. With Voucherify, marketers can run dynamic and personalized promotions and loyalty programs without the involvement of the development team. Run CDP-powered coupons, discounts, referrals, loyalty programs, gift cards, cashback, bundles, and more.
-The integration is bidirectional; therefore, Voucherify can be configured as both the Destination and Source of customer data.
+The integration is bidirectional, which means you can configure Voucherify as both the destination and source of customer data.
 
-This is an [Event Cloud Source](/docs/sources/#event-cloud-sources) which can not only export data into your Segment warehouse, but they can also federate the exported data into your other enabled Segment Destinations.
+This is an [Event Cloud Source](/docs/sources/#event-cloud-sources) which can not only export data into your Segment warehouse, but can also sync the exported data into your other enabled Segment Destinations.
 
-This source is maintained by Voucherify. For any issues with the source, [contact their Support team](mailto:support@voucherify.io).
+This source is maintained by Voucherify. For any issues with the source, [contact the Voucherify team](mailto:support@voucherify.io).
 
 > info "This is a Beta source"
-> The Voucherify Source is currently in beta, which means that they are still actively developing the source. If you are interested in joining their beta program or have any feedback to help improve the Voucherify Source and its documentation, [let their team know](mailto:support@voucherify.io)!_
+> The Voucherify Source is currently in beta, which means that they are still actively developing the source. If you are interested in joining their beta program or have any feedback to help improve the Voucherify Source and its documentation, [contact the Voucherify team](mailto:support@voucherify.io).
 
 ## Getting Started
 
@@ -19,7 +19,7 @@ This source is maintained by Voucherify. For any issues with the source, [contac
 3. On the next screen, give the Source a nickname configure any other settings. The nickname is used as a label in the Segment app, and Segment creates a related schema name in your warehouse. The nickname can be anything, but Segment recommends you use something that reflects the source itself and distinguishes amongst your environments.
 4. Click **Add Source** to save your settings.
 5. Copy the Write key from the Segment UI and log in to your Voucherify account. 
-6. To finish the setup, go to Project Settings > Integrations > Segment.io -> Connect, enter the Write Key and confirm.
+6. In your Voucherify account, go to **Project Settings > Integrations > Segment.io > Connect** and enter the Write Key.
 
 ## Stream
 
