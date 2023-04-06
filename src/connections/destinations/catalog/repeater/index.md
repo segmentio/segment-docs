@@ -10,7 +10,7 @@ The Repeater destination forwards events from a source back into another source 
 
 Events are not cached in the Repeater, so it only handles real-time events. You can specify multiple sources as Repeater destinations.
 
-If you need to send events to a Source Function, please use the [Webhooks (Actions)]([url](https://segment.com/docs/connections/destinations/catalog/actions-webhook/)) destination instead. The Repeater bypasses the code of a Source Function and sends data only to the write key. The Webhook destination will allow data to be sent through the Source Function code as expected.
+If you need to send events to a Source Function, please use the [Webhooks (Actions)](/docs/connections/destinations/catalog/actions-webhook/) destination instead. The Repeater bypasses the code of a Source Function and sends data only to the write key. The Webhook destination allows data to be sent through the Source Function code as expected.
 
 ## Configuration
 
