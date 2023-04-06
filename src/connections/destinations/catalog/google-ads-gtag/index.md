@@ -19,6 +19,15 @@ The [Google global site tag (gtag.js)](https://support.google.com/google-ads/ans
 
 You can use this destination to map your `.page()` calls to **Page Load Conversions** or `.track()` calls to **Click Conversions**. Currently this is only supported on the browser.
 
+### Configure the Google Ads (Gtag) destination
+
+1. From the Segment Destinations Catalog find and select Google Ads (Gtag).
+2. Click **Configure Google Ads (Classic)**.
+3. Select the source you will use to send data to Google Ads (Gtag).
+4. Provide a meaningful name to this instance of the destination.
+5. On the destination Settings tab, enter the **Conversion ID** from your Google Ads (Gtag) account. 
+6. Select the 'Click Conversion' setting. Enter the name of the event as it appears in the [`track`](/docs/connections/spec/track) call and map it to your Google Ads (Gtag) conversion label.
+
 ## Page
 
 If you want to map all your unnamed `.page()` calls to a default Page Load Conversion, you can enter the Conversion ID in **Settings > Default Page Conversion**. However, if you created specific Page Load Conversions in Google Ads that you'd like to map your named `.page()` calls in Segment, you can map the events in **Settings > Page Load Conversions**.
