@@ -6,7 +6,7 @@ strat: ajs
 Analytics.js 2.0 is fully backward compatible with Analytics.js Classic when you use the default Segment snippet in a standard implementation. To upgrade your sources, follow the manual upgrade steps below, or see the schedule for automatic migration. As with all upgrades, Segment recommends that you start development on a non-production source to test the upgrade process and outcome, prior to upgrading your production sources.
 
 > warning "Deprecation of Analytics.js Classic"
-> Analytics.js Classic was deprecated on February 28, 2023. At this time, Segment is upgrading all sources not yet upgraded to [Analytics.js 2.0](/docs/connections/sources/catalog/libraries/website/javascript/). The upgrade process will complete for all users by the end of March 2023. 
+> Analytics.js Classic was deprecated on February 28, 2023. As of March 2023, Segment upgraded all sources to [Analytics.js 2.0](/docs/connections/sources/catalog/libraries/website/javascript/). 
 
 ## Revert to Analytics.js Classic
 
