@@ -22,7 +22,7 @@ If you're not familiar with the Segment Specs, take a look to understand what th
 analytics.identify('userId123');
 ```
 
-When you call `identify` we call [Heap's identify method](https://developers.heap.io/docs/using-identify) with the `userId` and `traits` you provide.
+When you call `identify`, Segment calls [Heap's identify method](https://developers.heap.io/docs/using-identify){:target="_blank"} with the `userId` and `traits` you provide.
 
 If one of your `traits` is of the date property type, we will convert it into an ISO string.
 
@@ -34,7 +34,7 @@ If you're not familiar with the Segment Specs, take a look to understand what th
 analytics.track('Clicked Button');
 ```
 
-When you call `track` from `analytics.js`, we call Heap's [track function](https://developers.heap.io/reference/track) with exactly the same parameters. Calling `track` from one of our mobile SDKs or server-side sources records a [Heap Custom Event](https://docs.heapanalytics.com/reference#track-1) with the same event name and properties.
+When you call `track` from `analytics.js`, Segment calls Heap's [track function](https://developers.heap.io/reference/track){:target="_blank"} with the same parameters. Calling `track` from one of Segment's mobile SDKs or server-side sources records a [Heap Custom Event](https://docs.heapanalytics.com/reference#track-1){:target="_blank"} with the same event name and properties.
 
 If one of your `properties` is of the date property type, we will convert it into an ISO string.
 
