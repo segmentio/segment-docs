@@ -114,7 +114,7 @@ The group id that Mixpanel will use is `12345`.
 {% include components/actions-fields.html content1=track_purchase_details section1="trackPurchase" content2=group_identify_user_details section2="groupIdentifyUser" content3=identify_user_details section3="identifyUser" %}
 
 > info ""
-> Mixpanel does have a specific requirement for the anonymousId. Using Analytics.js library to generate anonymousIds, there should not be a problem once identifying a user with a userId. And if the anonymousIds are manually assigned from your end then it should be sent with UUID v4 format. All Segment assigned anonymousIds are in UUID V4 format.
+> [Mixpanel](https://developer.mixpanel.com/reference/create-identity#create-identity) does have a specific requirement for the anonymousId. Using Analytics.js library to generate anonymousIds, there should not be a problem once identifying a user with a userId. And if the anonymousIds are manually assigned then it should be sent with UUID v4 format. All Segment assigned anonymousIds are in UUID V4 format.
 
 ## Migration from Mixpanel Classic
 
