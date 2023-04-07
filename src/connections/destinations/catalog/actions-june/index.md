@@ -21,7 +21,7 @@ June maintains this destination. For any issues with the destination, [contact t
 {% include content/connection-modes.md %}
 
 1. Go to the [June settings page](https://app.june.so/redirect-to-my-workspace/settings), click **Add your first source**. To add more instances of the June Destination, click on the Segment integration card and click on "Create new key" and copy that key.
-2. From the Segment web app, click **Catalog**, then click **Destinations**.
+2. From the Segment web app, navigate to **Connections > Catalog**, and select the **Destinations** tab in the catalog.
 3. Find the Destinations Actions item in the left navigation, and click it.
 4. Click the "June" item to select it and click **Configure**.
 5. Choose which of your sources to connect the destination to. (You can connect more sources to the destination later.)
