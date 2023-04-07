@@ -12,7 +12,7 @@ versions:
 
 {% include content/plan-grid.md name="actions" %}
 
-[June](https://june.so/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) is product analytics for B2B SaaS companies. June auto-generated reports focused on how companies use your product - just connect your Segment account.
+[June](https://june.so/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners){:target="_blank"} is a product analytics tool for B2B SaaS companies. June auto-generates reports that focus on how companies use your product.
 
 June maintains this destination. For any issues with the destination, [contact the June Support team](mailto:ferruccio@june.so).
 
