@@ -39,7 +39,7 @@
     "yaml-lint": "^1.7.0"
   },
   "dependencies": {
-    "@algolia/autocomplete-js": "^1.4.0",
+    "@algolia/autocomplete-js": "^1.8.3",
     "@algolia/autocomplete-plugin-algolia-insights": "^1.4.0",
     "@algolia/client-search": "^4.10.5",
     "@babel/runtime": "^7.15.4",
