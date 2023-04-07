@@ -42,7 +42,7 @@ This action sets or updates the properties of specific groups. Use this when you
 
 {% include content/ajs-upgrade.md %}
 
-Assuming you're already using Segment Cloud-mode, the June (Actions) destination is expected to have no breaking changes when upgrading. With the exception of a few new properties added to your events in the new Actions destination, there should be no difference in the data received in June when using either of the June destinations.
+If you're already using Segment cloud-mode, you're not expected to have breaking changes when upgrading to the June (Actions) destination. With the exception of a few new properties added to your events in the new Actions destination, there's no difference in the data received in June when using either of the June destinations.
 
 If you want to confirm, you can configure the new destination to point to a different June workspace and connect it to the same source(s) as the Classic destination and manually verify before fully switching over.
 
