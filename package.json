@@ -44,7 +44,7 @@
     "@algolia/client-search": "^4.10.5",
     "@babel/runtime": "^7.15.4",
     "ajv": "^6.10.2",
-    "algoliasearch": "^4.10.5",
+    "algoliasearch": "^4.15.0",
     "ansi-regex": "^6.0.1",
     "browser-sync": "^2.27.11",
     "check-links": "^1.1.8",
