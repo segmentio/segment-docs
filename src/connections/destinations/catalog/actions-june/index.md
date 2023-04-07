@@ -26,7 +26,7 @@ June maintains this destination. For any issues with the destination, [contact t
 4. Click the "June" item to select it and click **Configure**.
 5. Choose which of your sources to connect the destination to. (You can connect more sources to the destination later.)
 
-### Connection Modes for June (Actions) destination
+### Connection modes for June (Actions) destination
 
 The June (Actions) destination does not offer a device-mode connection mode. If you're using one of Segment's new libraries ([Analytics.js 2.0](/docs/connections/sources/catalog/libraries/website/javascript/), [Swift](https://github.com/segmentio/analytics-swift) or [Kotlin](https://github.com/segmentio/analytics-kotlin)) with the Actions-framework version of the destination, you do not need the device-mode connection.
 
