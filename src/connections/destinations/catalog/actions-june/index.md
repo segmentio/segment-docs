@@ -28,7 +28,7 @@ June maintains this destination. For any issues with the destination, [contact t
 
 ### Connection modes for June (Actions) destination
 
-The June (Actions) destination does not offer a device-mode connection mode. If you're using one of Segment's new libraries ([Analytics.js 2.0](/docs/connections/sources/catalog/libraries/website/javascript/), [Swift](https://github.com/segmentio/analytics-swift) or [Kotlin](https://github.com/segmentio/analytics-kotlin)) with the Actions-framework version of the destination, you do not need the device-mode connection.
+The June (Actions) destination does not offer a device-mode connection mode. If you're using one of Segment's new libraries ([Analytics.js 2.0](/docs/connections/sources/catalog/libraries/website/javascript/){:target="_blank"}, [Swift](https://github.com/segmentio/analytics-swift){:target="_blank"} or [Kotlin](https://github.com/segmentio/analytics-kotlin){:target="_blank"}) with the Actions-framework version of the destination, you do not need the device-mode connection.
 
 {% capture group_identify_user_details %}
 
