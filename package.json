@@ -41,7 +41,7 @@
   "dependencies": {
     "@algolia/autocomplete-js": "^1.4.0",
     "@algolia/autocomplete-plugin-algolia-insights": "^1.4.0",
-    "@algolia/client-search": "^4.10.5",
+    "@algolia/client-search": "^4.15.0",
     "@babel/runtime": "^7.15.4",
     "ajv": "^6.10.2",
     "algoliasearch": "^4.10.5",
