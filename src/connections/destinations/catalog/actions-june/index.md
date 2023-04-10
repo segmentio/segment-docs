@@ -22,7 +22,7 @@ June maintains this destination. For any issues with the destination, [contact t
 
 1. Go to the [June settings page](https://app.june.so/redirect-to-my-workspace/settings){:target="_blank"} and click **Add your first source**. To add more instances of the June Destination, click on the Segment integration card and click on **Create new key** and copy the key.
 2. From the Segment web app, navigate to **Connections > Catalog**, and select the **Destinations** tab in the catalog.
-3. Find the Destinations Actions item in the left navigation, and click it.
+3. Search for *June (Actions)* and select it.
 4. Click **Configure June (Actions)**.
 5. Select the source you want to connect the destination to. (You can connect more sources to the destination later.)
 6. Configure your settings. 
