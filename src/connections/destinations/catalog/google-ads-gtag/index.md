@@ -22,7 +22,7 @@ You can use this destination to map your `.page()` calls to **Page Load Conversi
 ### Configure the Google Ads (Gtag) destination
 
 1. From the Segment Destinations Catalog find and select Google Ads (Gtag).
-2. Click **Configure Google Ads (Classic)**.
+2. Click **Configure Google Ads (Gtag)**.
 3. Select the source you will use to send data to Google Ads (Gtag).
 4. Provide a meaningful name to this instance of the destination.
 5. On the destination Settings tab, enter the **Conversion ID** from your Google Ads (Gtag) account. 
