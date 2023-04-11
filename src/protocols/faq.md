@@ -141,9 +141,9 @@ All users with Protocols admin or read-only permissions can view transformations
 
 Transformations introduce advanced logic that at scale may impact performance of client-side libraries. If you are interested in testing new functionality which supports device-mode destination transformations in analytics.js, contact your account rep.
 
-### Is Destination Filters applied before or after my Protocol Transformation?
+### Are Destination Filters applied before or after my Protocols Transformations?
 
-That depends. If you are working with Source transformation level based, Protocols conversion will come first. If you are dealing with destination scoped transformation (specific destination setting), filtering comes prior to Protocols changes. 
+That depends. If you are working with source-level Transformations, the Protocols conversion will come first. If you are dealing with a destination scoped transformation (which is set to only impact data going to a specific destination), Destination Filters will be applied prior to Protocols Transformations.
 
 ### Why do I need Protocols to use transformations?
 
