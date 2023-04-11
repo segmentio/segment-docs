@@ -28,8 +28,9 @@ For more information, [Contact us](https://segment.com/help/contact/) and our Su
 
 Replays are currently only available for Business Tier customers, and due to their complex nature are not self-serve. [Contact us](https://segment.com/help/contact/) to learn more, or to request a replay for your workspace. When requesting a replay, include the workspace, the source to replay from, the destination tool or tools, and the time period.
 
-Replays can process an unlimited amount of data, however they are rate limited to respect the limitations in downstream partner tools. If you're also sending data to the destination being replayed to in realtime, then when determining your replay's limit you'll want to take into account the rate limit being used by realtime events, and you'll want to also account for a small margin of your rate limit to allow events to be retried. 
-The replay time depends on the tool we're replaying to, and the amount of data included in the replay.
+Replays can process unlimited data, but they're rate limited to respect limitations in downstream partner tools. If you're also sending data to the destination being replayed to in real time, then, when determining your replay's limit, you'll want to take into account the rate limit being used by real-time events. You should also account for a small margin of your rate limit to allow events to be retried. 
+
+Replay time depends both on the tool Segment replays to and the amount of data included in the replay.
 
 Replays do not affect your [MTU count](/docs/guides/usage-and-billing/mtus-and-throughput/), unless you are using a [Repeater destination](/docs/connections/destinations/catalog/repeater/). Notify your team before initiating a Replay if you're using a Repeater destination.
 
