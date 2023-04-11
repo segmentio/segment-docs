@@ -52,4 +52,4 @@ Customer.io makes an exception for the `created_at` trait, converting ISO-8601 t
 
 ## Device token collection
 
-Segment does not automatically collect push notification tokens. These parameters are required by Customer.io, requiring logic to be implemented to collect these values. You can use this [plugin](https://github.com/segmentio/analytics-react-native/tree/master/packages/plugins/plugin-device-token) for how to collect the Firebase Cloud Messaging device token for React Native as an example. 
+Segment does not automatically collect push notification tokens. These parameters are required by Customer.io, requiring logic to be implemented to collect these values. As an example, you can use [this plugin](https://github.com/segmentio/analytics-react-native/tree/master/packages/plugins/plugin-device-token){:target="_blank"} to collect the Firebase Cloud Messaging device token for React Native. 
