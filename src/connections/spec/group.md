@@ -81,6 +81,12 @@ Here's a complete example of a `group` call:
 }
 ```
 
+### Create your own Group call
+
+Use the following interactive code pen to see what your Group calls would look like with user-provided information:
+
+{% include components/codepens/group-spec.html %}
+
 ## Identities
 
 {% include content/spec-identities.md %}
@@ -119,3 +125,4 @@ If you pass these values, `on null` will throw a `NullPointerException`.
 You may continue to set values inside the trait.  If you do so, this would work the same as the rules do with NoSQL data. If you had set a value previously for a user and on the next request you sent the same value of that property as `on null`, it will be replaced by `null`, but if you do not send that property, the original value is persisted.
 
 **Traits are case-insensitive**, so in JavaScript you can match the rest of your camel-case code by sending `createdAt`, and in Ruby you can match your snake-case code by sending `created_at`. That way the API never seems alien to your code base.
+

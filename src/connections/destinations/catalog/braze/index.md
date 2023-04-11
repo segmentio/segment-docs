@@ -227,7 +227,7 @@ When you `track` an event, Segment sends that event to Braze as a custom event.
 > Braze requires that you include a `userId` or `braze_id` for all calls made in cloud-mode. Segment sends a `braze_id` if `userId` is missing. When you use a device-mode connection, Braze automatically tracks anonymous activity using the `braze_id` if a `userId` is missing.
 
 > note ""
-> Segment removes the following custom properties reserved by Braze:
+> Segment removes the following custom properties reserved by Braze when sending data in Cloud mode:
 >
 >  - `time`
 >  - `quantity`

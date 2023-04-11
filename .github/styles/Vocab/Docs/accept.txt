@@ -22,6 +22,7 @@ Aampe
 adset
 Adwords
 Aircall
+Algolia
 allowlist
 Amberflo
 API(:?s)
@@ -149,6 +150,7 @@ varchar
 Vero
 Vidora
 viewability
+Voucherify
 waitlist
 walkthrough
 WebKit

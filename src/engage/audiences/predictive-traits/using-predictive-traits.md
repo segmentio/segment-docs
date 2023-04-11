@@ -86,6 +86,14 @@ Once Segment creates your prediction, you can check the model statistics page, w
 Trait creation depends on the amount of data, but Segment expects predictions to be completed in around 24 hours. For larger customers, however, this could take 48 hours. Predictive Traits shows a status of `In Progress` while computing; Segment updates this status when customers are scored.
 {% endfaqitem %}
 
+{% faqitem What are AUC, log loss, and lift quality? %}
+These data science statistics measure the effectiveness of Segment's predictions when tested against historical data. For more information, refer to [ROC Curve and AUC](https://developers.google.com/machine-learning/crash-course/classification/roc-and-auc){:target="_blank"}, [The Lift Curve in Machine Learning](https://howtolearnmachinelearning.com/articles/the-lift-curve-in-machine-learning/){:target="_blank"}, and [Intuition behind log-loss score](https://towardsdatascience.com/intuition-behind-log-loss-score-4e0c9979680a){:target="_blank"}.
+{% endfaqitem %}
+
+{% faqitem What is the Prediction Quality Score? %}
+The Prediction Quality Score factors AUC, log loss, and lift quality to determine whether Segment recommends using the prediction. A model can have a score of Poor, Fair, Good, or Excellent.
+{% endfaqitem %}
+
 {% faqitem How do you store trait values? %}
 The created trait value represents the user's percentile cohort. This value refreshes every seven days. If you see `0.85` on a user's profile, this means the user is in the 85th percentile, or the top 15% for the Predictive Trait.
 {% endfaqitem %}

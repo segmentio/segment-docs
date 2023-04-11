@@ -76,6 +76,12 @@ Here's a complete example of a `track` call:
 }
 ```
 
+### Create your own Track call
+
+Use the following interactive code pen to see what your Track calls would look like with user-provided information:
+
+{% include components/codepens/track-spec.html %}
+
 ## Identities
 
 {% include content/spec-identities.md %}
