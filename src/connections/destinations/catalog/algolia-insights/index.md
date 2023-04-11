@@ -36,7 +36,8 @@ The other location is where you will also find your API Keys. You can find your 
 
 ![Api Keys](images/algolia_api_keys.png)
 
-> _**NOTE:** The Algolia Insights Destination is not a plug-and-play integration. It requires you to modify your frontend code to send additional Algolia-related data like index name, queryID, etc._
+> info ""
+> The Algolia Insights Destination is not a plug-and-play integration. It requires you to modify your frontend code to end additional Algolia-related data like index name or queryID.
 
 To access your queryID, make sure clickAnalytics are enabled in your search event. If you're using Insights.js this will look like
 ```js
@@ -112,4 +113,5 @@ analytics.track('Order Completed', {
 })
 ```
 
-> _**NOTE:** If you send anonymous activity to Algolia, it will not be connected to activity attributed to that same user once they are identified._
+> info ""
+> If you send anonymous activity to Algolia, Algolia does not connect it to activity attributed to that same user once they are identified.
