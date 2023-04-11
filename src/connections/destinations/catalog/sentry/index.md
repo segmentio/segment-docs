@@ -25,7 +25,7 @@ analytics.identify('userId123');
 
 When you call `identify` Segment calls `Sentry.setUser` by passing in the `traits` you provided. Segment maps the `userId` you provide as `traits.id`.
 
-## Troubleshoot Sentry
+## Troubleshooting
 
 Since Sentry is an error tracking application, Segment needs to send something broken from the website to see the event appear in the Sentry dashboard. For example, firing the following error event from the web console, `Sentry.captureException(new Error("Some error"))`; Segment can see the relevant event payload with the `event_id` information.
  
