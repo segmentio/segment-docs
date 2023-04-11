@@ -9,7 +9,7 @@ Reverse ETL (Extract, Transform, Load) extracts data from a data warehouse using
 
 ## Example use cases
 Use Reverse ETL when you want to:
-* Sync audiences and other data built in the warehouse to Braze, Iterable, Hubspot, or Salesforce Marketing Cloud for personalized marketing campaigns.
+* Sync audiences and other data built in the warehouse to Braze, Hubspot, or Salesforce Marketing Cloud for personalized marketing campaigns.
 * Sync enriched data to Mixpanel for a more complete view of the customer, or enrich Segment Profiles with data from the warehouse.
 * Send data in the warehouse back into Segment as events that can be activated in all supported destinations, including Twilio Engage and other platforms.
 * Pass offline or enriched data to conversion APIs like Facebook, Google Ads, TikTok, or Snapchat.
