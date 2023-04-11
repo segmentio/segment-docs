@@ -37,6 +37,7 @@ To create a Segment source:
 3. Click **Add Source**.
 4. Enter a name for the source. Segment recommends that you include the word `demo`, `test`, or `quickstart` in the name so you can easily find and delete this source later.
 5. *(Optional)* Add an Environment label of `dev` to the source in the **Labels** field. Segment recommends you do this so that you know this demo source isn't part of a production installation.
+6. *(Optional)* Add the website URL. Segment provides this field for customers to be able to flag the website being tracked to that source. Segment does not use this URL anywhere else.   
 
 ## Find your write key
 
