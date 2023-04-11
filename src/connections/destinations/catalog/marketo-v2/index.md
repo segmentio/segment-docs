@@ -12,7 +12,7 @@ We'll need your Munchkin Account ID, Client Secret, and Client ID.
 
 To get your Munchkin Account ID [login to your Marketo account](https://login.marketo.com/), click Admin in the top right corner, then click Munchkin on the left side bar.
 
-![](images/iL42ERv0g5X+.png)
+![A screenshot of a Marketo account, with an arrow pointing to the Admin and Munchkin tabs.](images/iL42ERv0g5X+.png)
 
 
 To get your Client Secret and Client ID, you must create a role that has full API access, an API only user, and then create a Service in Marketo.
@@ -23,7 +23,7 @@ To create a role with full API access:
 2. Click **Users & Roles** on the left side bar.
 3. Click on the **Roles** tab.
 4. Click **New Role**. Name your role and check the API Access box to assign the user full API access. Click Create.
-![](images/cV2x9pHb44g+.png)
+![A screenshot of the Create New Role popup in Marketo.](images/cV2x9pHb44g+.png)
 
 
 Now that you've created an API role, you have to assign that role to an API only user.
@@ -31,7 +31,7 @@ Now that you've created an API role, you have to assign that role to an API only
 1. Click the Users tab.
 2. Click Invite New User and fill out the necessary information in Step 1.
 3. Assign the new role you created to this user in Step 2 and check the API Only box. Click next then Send.
-![](images/cJkQ9XD6FsE+.png)
+![A screenshot of the Invite New User popup in Marketo.](images/cJkQ9XD6FsE+.png)
 
 
 Next, create a Service and get Client Secret and Client ID from that Service.
@@ -40,10 +40,10 @@ Next, create a Service and get Client Secret and Client ID from that Service.
 2. Click New and then New Service from the drop down.
 3. Select Custom for the Service from the drop down.
 4. Select the new API Only user you invited. This User must be an API Only user **and** be assigned a role that has full API access.
-![](images/cWwQBeVFto0+.png)
+![A screenshot of the New Service popup in Marketo.](images/cWwQBeVFto0+.png)
 
 1. Click View Details on the new service that you've created and a small window will display with your Client Secret and Client ID. Copy and paste them into your Destination's Settings.
-![](images/c3s0qJ-dDSO+.png)
+![A screenshot of the Marketo "Installed Services" tab.](images/c3s0qJ-dDSO+.png)
 
 
 ### Create a User ID and an Anonymous ID field in Marketo
@@ -54,7 +54,7 @@ Next, create a Service and get Client Secret and Client ID from that Service.
 4. Select String as the type.
 5. Name the field whatever you'd like.
 6. Set the API name to `userId` for the user ID field and then `anonymousId` for the anonymous ID field. **Important:** The API names for the user ID and anonymous ID fields must be `userId` and `anonymousId` exactly. If anything in the API name is different, the destination will not work.
-![](images/kzayYEY2JL.gif)
+![An animation showing someone do the above steps to create User ID and Anonymous ID fields.](images/kzayYEY2JL.gif)
 
 ----------
 ## Identify
@@ -69,7 +69,7 @@ There are additional steps you must take to send `.identify()` calls in Device-m
 
 1. Create an empty form in Marketo. This form will always be hidden and can remain empty as long as the traits you need downstream are mapped in the **Marketo Custom Fields** Destination setting.
 2. Input the associated **Marketo Form ID** and **Marketo Form URL** in your Marketo V2 Destination settings. This information can be found in Form Actions > Embed Code in the Marketo Design Studio:
-![](images/form-info.png)
+![A screenshot of the Embed Code popup in Marketo.](images/form-info.png)
 
 ### Traits
 Regardless of connection mode, we'll map the following spec'd Segment traits to Marketo's standard fields:
@@ -111,12 +111,12 @@ analytics.identify('1234', {
 
 If you'd like any other traits from your `.identify()` call to update a field in Marketo, you must create custom fields in Marketo and map them in the **Marketo Custom Fields** Destination setting.
 
-![](images/c1X7nf6wDIX+.png)
+![A screenshot of the Marketo Settings page in Segment.](images/c1X7nf6wDIX+.png)
 
 - **Segment Trait**. The name of the trait sent in your `.identify()` call.
 - **Marketo Field Name**. The Marketo REST API name for the field. To get the REST API name for your fields in Marketo, click Field Management, then Export Field Names. A spreadsheet will download and the first column is the REST API name for your Marketo fields. **Make sure to copy and paste the REST API name exactly. This is case sensitive.**
 - **Marketo Field Type**. When you are in Field Management, click on the field name in the bar on the right and you'll see the field type.
-![](images/cubJQKkGLfF+.png)
+![A screenshot of the Marketo Field Management tab.](images/cubJQKkGLfF+.png)
 
 **Note:** Custom `address` traits must go in the top level `traits` object, not in the `address` object.
 
@@ -143,21 +143,21 @@ Analytics.track(
 )
 ```
 
-![](images/c2l53wGTCVP+.png)
+![A screenshot of the Destination Settings page in Segment for the Marketo v2 Destination.](images/c2l53wGTCVP+.png)
 
 - **Segment Event Name**. Your Segment Event name.
 - **Marketo Activity ID**. When you are in [Marketo Custom Activities](http://docs.marketo.com/display/public/DOCS/Understanding+Custom+Activities), click on the Marketo Activity in the right side bar that you'd like to map your Segment Track event to. Copy and paste the ID into your Destination Settings.
-![](images/cwZqHwQfs3M+.png)
+![A screenshot of the Marketo Custom Activities page.](images/cwZqHwQfs3M+.png)
 
 - **Segment Property Name**. The name of the property in your `.track()` call. This is case sensitive so make sure the name matches exactly how you are passing it in your `.track()` call.
 - **Marketo Field Name**. The name of the Marketo Attribute for your Custom Activity. The Attribute names for a given Custom Activity can be found in the Fields tab of Marketo Custom Attributes. Click on the Custom Activity in the right side bar and a list of your Attributes for that Custom Activity will appear. **Make sure to copy and paste the API Name for your field exactly as it appears in Marketo. This is case sensitive.**
-![](images/cNSP-7ryT72+.png)
+![A screenshot of the Fields tab inside of the Marketo Custom Activities page.](images/cNSP-7ryT72+.png)
 
 - **Marketo Field Type**. The type of the Marketo Attribute. The Attribute type can be found in the Fields tab of Marketo Custom Attributes. Click on the Custom Activity in the right side bar and a list of your Attributes for that Custom Activity will appear.
-![](images/cIBsfYeh2B8+.png)
+![A screenshot of the Fields tab inside of the Marketo Custom Activities page.](images/cIBsfYeh2B8+.png)
 
 - **Primary Field**. When creating a Custom Activity in Marketo, you have to set a Primary Field. If you are unsure which field was set as the primary field, when you are looking at the list of fields for your Custom Activity in Marketo, there will be a red star next to your Primary Field.
-![](images/cZuvsHeaepX+.png)
+![A screenshot of the Fields tab inside of the Marketo Custom Activities page, with a red star next to Product Name field.](images/cZuvsHeaepX+.png)
 
 ## Page
 
@@ -194,7 +194,7 @@ If you would only like to track known users in Marketo, set your Track Anonymous
 
 If you'd like to track anonymous activity but don't want to have to parse through or view unknown leads, Marketo lets you create Smart Lists that will filter your leads (i.e. if you'd only like to view leads that have a user ID or an email). To do this, when you are in your Lead Database, click All Leads, then New. From the drop down, click New Smart List. Select the folder you'd like the Smart List to live in. After you've created the Smart List, select what field you'd like to filter by on the right side bar, drag it to the filters and then select what you'd specifically like to filter by for that field.
 
-![](images/5bxmcClCgU.gif)
+![An animation showing a Smart List being created.](images/5bxmcClCgU.gif)
 
 ## Marketo API Limits
 
@@ -250,11 +250,11 @@ There are a few necessary steps that have to be taken to migrate from Segment's 
 3. `Track` calls must be mapped in your Destination settings. Our Marketo Destination sent `track` calls as a Munchkin Visit WebPage event in Marketo. In Marketo V2, we'll send your track calls to your Marketo Custom Activities. Detailed instructions [here](/docs/connections/destinations/catalog/marketo-v2/#track).
 4. If there are any custom Lead fields that you'd like sent to Marketo in your `Identify` calls, you must create custom fields in Marketo and add them in your Destination settings. In addition, if you are connecting Marketo V2 in Device-mode, an empty form must be created in Marketo to create and update leads. Detailed instructions [here](/docs/connections/destinations/catalog/marketo-v2/#identify).
 5. Update anything in Marketo that rely on the way V1 sends `.track()` events to be triggered by your custom activities. For example, our V1 Marketo destination sent track events as a "Visit Web Page" event with `/event/<your_event_name>`. So if you a workflow that is triggered by a "Visit Web Page" event where the web page contains `/event/<your_event_name>`, you'll have to swap out the "Visit Web Page" event trigger you have with your Custom Attribute Trigger. In the right side bar, click the "Custom" folder under "Triggers" and select the trigger that you set for your custom activity:
-   ![](images/cPD4kP65buG+.png)
+   ![A screenshot of the Smart List tab in Marketo with an arrow pointing to the Custom folder.](images/cPD4kP65buG+.png)
 
 
    To figure out what the trigger name for that Custom Activity is, navigate to the admin section of Marketo > Marketo Custom Activities > Click on your activity from the side bar and you'll see the trigger name:
 
-   ![](images/cg6YhDEPWXv+.png)
+   ![A screenshot of the Marketo Custom Activities field, with a red box around the trigger field.](images/cg6YhDEPWXv+.png)
 
 6. When enabling Marketo V2, because of the way Marketo's API works, there is potential to create duplicate leads, especially when the first enabling the destination. For ways to prevent this, check out the Preventing Duplicate Leads.

@@ -138,7 +138,7 @@ This appends an additional property in your "Experiment Viewed" events called `n
   
 If you're sending your experiment data to Google Analytics in the form of `track` calls, Segment recommends creating hit-scoped custom dimensions in Google Analytics with titles like "Experiment Name" and "Variation Name," and then map the properties to those Custom Dimensions accordingly. For example, if you set Custom Dimension 5 to "Experiment Name" and Custom Dimension 1 to "Variation Name," here's how you'd configure the mappings in your Segment<>GA settings:
 
-  ![](images/customdimensions.png)
+  ![A screenshot of the Custom Dimensions tab of Optimzely.](images/customdimensions.png)
 
 ## Optimizely Full Stack (JavaScript SDK)
 
