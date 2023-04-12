@@ -82,5 +82,5 @@ Use Segment's custom CIDR `3.251.148.96/29` while authorizing Segment to write i
 > As more of the partner tools you use (Sources and Destinations) start to support a regional endpoint, Segment will update this list. Your contact for that tool should have a timeline for when they're hoping to support regional data ingestion. You can also visit Segment's [support page](https://segment.com/help/contact/) for any Segment-related questions.
 
 The following integrations marked with a ![Supports EU regional endpoints](/docs/images/supported.svg){:class="inline"} (checkmark) support EU Regional endpoints.
-
+Add EU Endpoint for Customer.io
 {% include content/regional-integrations-table.md %}
