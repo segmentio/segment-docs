@@ -95,11 +95,11 @@ To configure a custom dimension:
 
     In Segment:
 
-    ![A screenshot of the Segment Custom Dimensions page, with Gender mapped to dimension 1 and User Type mapped to dimension 2](images/segment-dimension.png)
+    ![A screenshot of the Segment Custom Dimensions page, with Gender mapped to dimension 1 and User Type mapped to dimension 2.](images/segment-dimension.png)
 
     In Google:
 
-    ![A screenshot of the Google Custom Dimensions page, with Gender mapped to index 1 and User Type mapped to dimension 2](images/ga-dimension.png)
+    ![A screenshot of the Google Custom Dimensions page, with Gender mapped to index 1 and User Type mapped to dimension 2.](images/ga-dimension.png)
 
 
 > note ""
@@ -206,7 +206,7 @@ For all events that include product details you must pass either `name` or `prod
 
 To take full advantage of all the features of Enhanced Ecommerce, you'll want to take advantage of some specific events. The biggest differentiator between ecommerce and Enhanced Ecommerce is support for checkout steps. To take advantage of tracking your checkout funnel and measuring metrics like cart abandonment, you'll first need to configure your checkout funnel in the Google Analytics admin interface, giving readable labels to the numeric checkout steps:
 
-![A screenshot of the Google Enhanced Ecommerce setup flow, showing that Ecommerce is enabled and showing the four configured Ecommerce checkout-funnel steps](images/ga-checkout-steps.png)
+![A screenshot of the Google Enhanced Ecommerce setup flow, showing that Ecommerce is enabled and showing the four configured Ecommerce checkout-funnel steps.](images/ga-checkout-steps.png)
 
 
 Then you'll instrument your checkout flow with `Viewed Checkout Step` and `Completed Checkout Step` events for each step of the funnel you configured in the Google Analytics admin interface, passing the step number and step-specific options through as a property of those events:
@@ -490,7 +490,7 @@ To populate the Site Search report in Google Analytics, complete the following s
 1. When someone searches on your site, you must add the search term they used to the URL query, like this: `domain.com?s=coconuts`. The key ("s" in this case) can be any letter or string of letters.
 2. In your Segment source destinations catalog open the Gtag settings, scroll down to the Page Call settings and make sure to check the box for **Include Query String**.
 3. Inside Google Analytics, go to the **Admin** section, then click **View Settings** for the view you want to add Site Search to. Turn on **Site search Tracking** and enter the string from #1 into the Query parameter field. In this example it'd look like this:
-![A screenshot of Google Analytics' Site Search Settings, with site search tracking enabled and the Query parameter field displaying a parameter, "s"](images/ga-search-query.png)
+![A screenshot of Google Analytics' Site Search Settings, with site search tracking enabled and the Query parameter field displaying a parameter, s.](images/ga-search-query.png)
 
 
 ### Webmaster tools

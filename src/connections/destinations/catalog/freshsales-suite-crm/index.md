@@ -71,7 +71,7 @@ However, Segment makes an exception for two attributes: `title` and `phone`, whi
 As part of traits, you can send custom fields created in Freshsales by using their internal names in camel case. You can find internal names in the corresponding field settings page. 
 
 Custom fields won't automatically create. You have to create them in Freshsales before proceeding to send data from Segment. [Learn more](https://crmsupport.freshworks.com/en/support/solutions/articles/50000002389-how-to-create-custom-fields-for-contacts-accounts-and-deals-){:target="_blank"} about creating custom fields in Freshsales.
-![A screenshot of the Freshsales edit field popup, with a custom field, Alternate Number, present](images/custom-traits.png)
+![A screenshot of the Freshsales edit field popup, with a custom field, Alternate Number.](images/custom-traits.png)
 
 
 #### Objects

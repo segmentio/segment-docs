@@ -9,14 +9,14 @@ The Identity Resolution destination settings are:
 - **Marketing Cloud ID**
 - **Drop VisitorID**, and **No Fallbacks for VisitorID:Server-Side Only** destination settings.
 
-![A screenshot of the Adobe Analytics settings page in Segment, with the Identity Resolution section selected](images/identity-resolution.png)
+![A screenshot of the Adobe Analytics settings page in Segment, with the Identity Resolution section selected.](images/identity-resolution.png)
 
 The Timestamp destination settings are:
 - **Timestamp Option**
 - **Send Both Timestamp and VisitorID for Timestamp Optional Reporting Suites**
 - **Prefer VisitorID for Hybrid Timestamp Reporting**
 
-![A screenshot of the Adobe Analytics settings page in Segment, with the Timestamps section selected](images/timestamps.png)
+![A screenshot of the Adobe Analytics settings page in Segment, with the Timestamps section selected.](images/timestamps.png)
 
 ## Analytics.js - Device Mode
 
@@ -65,4 +65,4 @@ If **No Fallbacks for Visitor ID** is enabled, and you're setting a `marketingCl
 
 This decision tree is a visual representation of how Segment's Adobe Analytics destination settings and payload data interact with Segment to determine when to send a `visitorId` to Adobe.
 
-![A decision tree outlining when and how visitorId is sent from Segment, as outlined in section above](images/adobe-identity-res-decision-tree.png)
+![A decision tree outlining when and how visitorId is sent from Segment, as outlined in the section above.](images/adobe-identity-res-decision-tree.png)

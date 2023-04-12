@@ -48,11 +48,11 @@ In this step, you'll create an API-Only Marketo user with both Access API and Le
 
 1. You can use an existing role with these permissions, or create a new role that has both Access API and Access Lead Database permissions. (Do this in Marketo by going to **Admin**→ **Users & Roles** → **Roles**).
 
-   ![A screenshot of the Marketo "Create New Role" popup.](images/marketosl-create-new-role.png)
+   ![A screenshot of the Marketo Create New Role popup.](images/marketosl-create-new-role.png)
 
 2. Go to **Admin**→ **Users & Roles** → **Users** → **Invite New User** and create a new **API Only user** with the role that has both Access API and Lead Database permissions. **Be sure to check the API Only box.**
 
-   ![A screenshot of the Marketo "Invite New User" page, with the roles "Marketo Static List" and "API only" selected.](images/marketosl-perms.png)
+   ![A screenshot of the Marketo Invite New User page, with the roles Marketo Static List and API only selected.](images/marketosl-perms.png)
 
 
 ### Step 2: Create a Marketo Launchpoint Service for Engage
@@ -70,7 +70,7 @@ In this step, you'll create an API-Only Marketo user with both Access API and Le
 1. Go to your Marketo Lead Database and create a new folder under Group Lists. Once connected, each Engage audience shows up as a list in this folder.
 
 
-   ![A screnshot of the Marketo Lead Database, with a New Folder menu item selected.](images/marketosl-newfolder.png)
+   ![A screenshot of the Marketo Lead Database, with a New Folder menu item selected.](images/marketosl-newfolder.png)
 
 2. Before you continue to the next step, in Marketo, go to **Admin → Web Services**, and copy or write down the REST API Endpoint. **Be sure to copy the REST endpoint and not the SOAP endpoint.** You'll need that in the next step.
 

@@ -13,7 +13,7 @@ id: 54521fd525e721e32a72ee8e
 2. Search for "Adroll" in the Catalog, select it, and choose which of your sources to connect the destination to.
 3. Locate both your AdRoll Advertiser ID and Pixel ID in AdRoll's "Audience" tab, "AdRoll Pixel" section. Click on "View Pixel". Your Advertiser ID will be listed beside `adroll_adv_id` and your AdRoll Pixel will be listed beside `adroll_pix_id`.
 
-    ![A screenshot of the Adroll Audience page, with Site Audiences selected. A green arrow points to the Adroll Pixel "View Pixel" button.](images/adroll-pixel.png)
+    ![A screenshot of the Adroll Audience page, with Site Audiences selected. An arrow points to the Adroll Pixel "View Pixel" button.](images/adroll-pixel.png)
 
 4. Add both your Advertiser ID and Pixel ID to your Segment Destination Settings.
 

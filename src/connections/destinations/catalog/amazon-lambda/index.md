@@ -31,7 +31,7 @@ To build a Lambda function:
 1. Go to the Lambda service page in your AWS account.
 2. Click **Create a function** to create a new function.
 
-    ![A screenshot of the AWS Lambda service page, with a red box around the "Create a function" button.](images/LambdaDashboard.png)
+    ![A screenshot of the AWS Lambda service page, with a box around the "Create a function" button.](images/LambdaDashboard.png)
 
 3. Select **Author from scratch** since Segment will be providing the source code for the function.
 4. Enter a name for your function and select your preferred runtime.
@@ -39,7 +39,7 @@ To build a Lambda function:
 6. Create a **Role name** and leave **Policy templates** empty. This will create a role that can write to Cloud Watch logs. Cloud Watch logs are optional, though Segment supports them in the Segment settings.
 7. Click **Create function**.
 
-    ![A screenshot of the AWS Lambda function settings page](images/LambdaCreateFunction.png)
+    ![A screenshot of the AWS Lambda function settings page.](images/LambdaCreateFunction.png)
 
 8. Copy the **ARN** for the Lambda and paste it into the **Lambda** setting in your Segment Lambda destination settings.
 
@@ -63,17 +63,17 @@ Using CloudFormation minimizes the setup steps needed, and is Segment's recommen
 2. Create the CloudFormation stack.
    1. Within the AWS Console, navigate to **CloudFormation > Stacks**.
 
-      ![A screenshot of the CloudFormation dropdown in AWS, with "Stacks" selected](images/CloudFormationStackNav.png)
+      ![A screenshot of the CloudFormation dropdown in AWS, with "Stacks" selected.](images/CloudFormationStackNav.png)
 
    2. Click **Create Stack**.
 
-      ![A screenshot of the CloudFormation Stacks page in AWS, with the "Create Stack" button visible](images/CloudFormationCreateStack.png)
+      ![A screenshot of the CloudFormation Stacks page in AWS, with the "Create Stack" button visible.](images/CloudFormationCreateStack.png)
 
    3. On the **Select Template** page, select **Upload a template to Amazon S3**. Using **Choose File**, select the SegmentLambdaDestinationCFTemplate you downloaded in the previous step.
 
    4. Click **Next**.
 
-      ![A screenshot of the CloudFormation Select Template settings page, with ](images/CloudFormationUploadTemplate.png)
+      ![A screenshot of the CloudFormation Select Template settings page.](images/CloudFormationUploadTemplate.png)
 
    5. Give your stack a name.
    6. For the **ExternalId** parameter, enter the "External ID" setting in your Segment Lambda destination settings.
@@ -86,19 +86,19 @@ Using CloudFormation minimizes the setup steps needed, and is Segment's recommen
    9. On the last page, review your template details and click **Create**.
    10. You will now see your new Stack listed in the Stacks page.
 
-        ![A screenshot of the Stacks page, with a Stack named SegmentLambdaRoleTest visible](images/CloudFormationCreateInProgress.png)
+        ![A screenshot of the Stacks page, with a Stack named SegmentLambdaRoleTest visible.](images/CloudFormationCreateInProgress.png)
 
    11. Once the status is **CREATE_COMPLETE**, click on the name of your Stack.
    12. On the Stack Detail page under the **Resources** section, you will see a policy and role listed.
 
-        ![A screenshot of the Resources section of the Stack Detail page, with a invokeLambdaPolicy and an invokeLambdaRole visible](images/CloudFormationLambdaRole.png)
+        ![A screenshot of the Resources section of the Stack Detail page, with a invokeLambdaPolicy and an invokeLambdaRole visible.](images/CloudFormationLambdaRole.png)
 
    13. Click the **Physical ID** of the role. You will be redirected to the summary page for the role within the IAM console.
    14. Copy the **Role ARN** and copy it into the **Role Address** setting in your Segment Lambda destination settings.
 
 Using the examples provided, your Segment Lambda destination settings will look something like this:
 
-![A screenshot of the connection settings page in Segment, with information visible in the Lambda, Region, and Role Address fields](images/SegmentLambdaSettingsPostCF.png)
+![A screenshot of the connection settings page in Segment, with information visible in the Lambda, Region, and Role Address fields.](images/SegmentLambdaSettingsPostCF.png)
 
 
 #### Create Policy and Role Manually
@@ -143,7 +143,7 @@ To create an IAM role:
 5. Search for and select your new roles from the [IAM home](https://console.aws.amazon.com/iam/home#/home){:target="_blank"}.
 6. Select the **Trust Relationships** tab, then click **Edit trust relationship**.
 
-    ![A screenshot of the AWS IAM home summary, with the Trust relationships tab selected](images/LambdaTrustRelationship.png)
+    ![A screenshot of the AWS IAM home summary, with the Trust relationships tab selected.](images/LambdaTrustRelationship.png)
 
 7. Copy and paste the following code into your trust relationship. You should replace `<your-source-id>` with either the Source ID of the attached Segment source (the default) or the External ID set in your AWS Lambda destination settings.
   * `arn:aws:iam::595280932656:root` refers to Segment's AWS Account, and is what allows Segment's Destination to access the role to invoke your Lambda.

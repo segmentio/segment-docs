@@ -43,7 +43,7 @@ Next, create a Service and get Client Secret and Client ID from that Service.
 ![A screenshot of the New Service popup in Marketo.](images/cWwQBeVFto0+.png)
 
 1. Click View Details on the new service that you've created and a small window will display with your Client Secret and Client ID. Copy and paste them into your Destination's Settings.
-![A screenshot of the Marketo "Installed Services" tab.](images/c3s0qJ-dDSO+.png)
+![A screenshot of the Marketo Installed Services tab.](images/c3s0qJ-dDSO+.png)
 
 
 ### Create a User ID and an Anonymous ID field in Marketo
@@ -255,6 +255,6 @@ There are a few necessary steps that have to be taken to migrate from Segment's 
 
    To figure out what the trigger name for that Custom Activity is, navigate to the admin section of Marketo > Marketo Custom Activities > Click on your activity from the side bar and you'll see the trigger name:
 
-   ![A screenshot of the Marketo Custom Activities field, with a red box around the trigger field.](images/cg6YhDEPWXv+.png)
+   ![A screenshot of the Marketo Custom Activities field, with a box around the trigger field.](images/cg6YhDEPWXv+.png)
 
 6. When enabling Marketo V2, because of the way Marketo's API works, there is potential to create duplicate leads, especially when the first enabling the destination. For ways to prevent this, check out the Preventing Duplicate Leads.

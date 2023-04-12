@@ -629,12 +629,12 @@ Audiences without a lookback window searches across all historical events and up
 Audiences with a lookback window only search across events that occurred within the specified time frame. Audiences *with* a lookback window are updated hourly.
 
 
-![A screenshot of the Confiugre and Preview Your Audience page in Segment, with an underline under the lookback window.](images/pers-10-lookback.png)
+![A screenshot of the Configure and Preview Your Audience page in Segment, with an underline under the lookback window.](images/pers-10-lookback.png)
 
 If you choose to include anonymous users when you create an audience, you must use the [alias call](#alias) to merge user profiles when they become a known user.
 
 
-![A screenshot of the Configure and Preview Your Audience page in Segment, with an underline under the "Include anonymous users" setting.](images/pers-11-incl-anons.png)
+![A screenshot of the Configure and Preview Your Audience page in Segment, with an underline under the Include anonymous users setting.](images/pers-11-incl-anons.png)
 
 
 ## Setting Up Engage and Mixpanel
@@ -652,7 +652,7 @@ To send computed traits or audiences to Mixpanel, connect the destination to you
 > **Tip**: Mixpanel now accepts Identify calls by default. Previously, this was an additional paid feature.
 
 
-![A screenshot of the settings page for the Mixpanel destination, with an underline under the "Use Mixpanel People setting".](images/pers-12-settings-people.png)
+![A screenshot of the settings page for the Mixpanel destination, with an underline under the Use Mixpanel People setting.](images/pers-12-settings-people.png)
 
 
 ## Mixpanel Engage Details

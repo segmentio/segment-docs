@@ -355,7 +355,7 @@ The Segment Adobe Analytics Merchandising setting runs as follows:
 
 Let's take the following example:
 
-![A screenshot of the Adobe Analytics settings page in Segment, with the Mappings section selected and two sample mappings under the "Merchandising" tab. Two properties from the "eVar" tab are also included on this screenshot.](images/merchandising-event.png)
+![A screenshot of the Adobe Analytics settings page in Segment, with the Mappings section selected and two sample mappings under the "Merchandising" tab. Two properties from the "eVar" tab are also included in this screenshot.](images/merchandising-event.png)
 
 The configuration in the example image above configures an `Order Completed` Segment event which sends Adobe Analytics:
 - `event1` in `s.events` with the value passed from `properties.increment`.

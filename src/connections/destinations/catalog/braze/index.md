@@ -531,15 +531,15 @@ You can send computed traits created in Engage as `identify` calls to create cus
 
 For example, if you have a computed trait for “Last Product Viewed Item,” that would be named `last_product_viewed_item` in the user's Engage profile.
 
-![A screenshot of a user's Engage profile with the Computed Traits button selected](images/last_viewed-user.png)
+![A screenshot of a user's Engage profile with the Computed Traits button selected.](images/last_viewed-user.png)
 
 If the “Last Product Viewed Item” trait is connected to Braze to send `identify` calls, as in this example:
 
-![A screenshot of the Last Product Viewed Item tab, with the Settings button selected](images/last_viewed-identify.png)
+![A screenshot of the Last Product Viewed Item tab, with the Settings button selected.](images/last_viewed-identify.png)
 
 The following custom attribute, “last_product_viewed_item” appears in Braze on the user's profile:
 
-![A screenshot of the "last_product_viewed_item" attribute in Braze](images/last_viewed-id-braze.png)
+![A screenshot of the last_product_viewed_item attribute in Braze.](images/last_viewed-id-braze.png)
 
 #### Computed Traits using Track calls
 
@@ -547,11 +547,11 @@ You can also send computed traits created in Engage as `track` calls to create c
 
 Using the same example as above, if a user has a computed trait for “Last Product Viewed Item” and the trait is connected to Braze and configured to send `track` calls:
 
-![A screenshot of the Braze settings tab in Segment, with the Send Track setting enabled and a Trait Computed value in the Compute Event field](images/last_viewed-track.png)
+![A screenshot of the Braze settings tab in Segment, with the Send Track setting enabled and a Trait Computed value in the Compute Event field.](images/last_viewed-track.png)
 
 The following custom event appears in Braze on the user's profile:
 
-![A screenshot of a user's profile in Braze, with a Trait Computed event present](images/last_viewed-track-braze.png)
+![A screenshot of a user's profile in Braze, with a Trait Computed event present.](images/last_viewed-track-braze.png)
 
 > info "Tip"
 > You can change the name of the “computed trait” event that Braze receives in the Destination Settings accessed through Engage.
@@ -571,15 +571,15 @@ You can send audiences created in Engage as `identify` calls to create custom at
 
 For example, if a user is in a “Dormant Shoppers” audience:
 
-![A screenshot of a user's profile in Engage, with the Audiences tab selected and the "Dormant Shoppers" trait present](images/dormant-user.png)
+![A screenshot of a user's profile in Engage, with the Audiences tab selected and the Dormant Shoppers trait present.](images/dormant-user.png)
 
 And the “Dormant Shoppers” audience is connected to Braze to send `identify` calls:
 
-![A screenshot of the Braze settings tab in Segment, with the Send Identify setting enabled](images/dormant-identify.png)
+![A screenshot of the Braze settings tab in Segment, with the Send Identify setting enabled.](images/dormant-identify.png)
 
 The “dormant_shoppers” custom attribute appears in Braze on the user's profile:
 
-![A screenshot of a user's profile in Braze, with a Trait Computed event present](images/dormant-identify-braze.png)
+![A screenshot of a user's profile in Braze, with a Trait Computed event present.](images/dormant-identify-braze.png)
 
 
 #### Audiences using Track calls
@@ -588,11 +588,11 @@ You can also send audiences created in Engage as `track` calls to create custom 
 
 Using the same example as above, if a user is in a “Dormant Shoppers” audience and the audience is connected to Braze to send `track` calls, Engage sends the following “Audience Entered” and “Audience Exited” events. (You can edit the names of these events from this screen.)
 
-![A screenshot of the Braze settings tab in Segment, with the Send Track setting enabled, Enter Event and Exit Event fields configured](images/dormant-track.png)
+![A screenshot of the Braze settings tab in Segment, with the Send Track setting enabled, Enter Event and Exit Event fields configured.](images/dormant-track.png)
 
 The following custom event appears in Braze on the user's profile when they enter the audience:
 
-![A screenshot of a user's profile in Braze, with an Audience Entered trait present](images/dormant-track-braze.png)
+![A screenshot of a user's profile in Braze, with an Audience Entered trait present.](images/dormant-track-braze.png)
 
 > info "Tip"
 > You can change the name of the “Audience Entered” event that Braze receives in the Destination Settings accessed through Engage.
