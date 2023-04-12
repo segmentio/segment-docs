@@ -148,7 +148,7 @@ You can send Computed Traits created in Engage as `identify` calls to create use
 
 From the Iterable UI, you can check a specific user profile for Computed Traits by going to **Audience → Contact Lookup**. Engage  updates user profiles that contain an `email` or `userId`.
 
-![A screenshot of a user profile in Iterable, with the two computed traits outlined in green.](images/pers-iterable-profile-computed.png)
+![A screenshot of a user profile in Iterable, with the two computed traits outlined.](images/pers-iterable-profile-computed.png)
 
 
 
@@ -156,7 +156,7 @@ Computed traits without a lookback window search across all historical events an
 
 Computed traits with a lookback window only search across events that occurred within the specified timeframe. Computed traits *with* a lookback window are updated hourly.
 
-![A screenshot of the Segment Configure and Preview Your Trait screen, with the lookback window outlined in green.](images/pers-lookback-2.png)
+![A screenshot of the Segment Configure and Preview Your Trait screen, with the lookback window outlined.](images/pers-lookback-2.png)
 
 ### Using Audiences with Iterable
 
@@ -168,11 +168,11 @@ You can send Engage Audiences to Iterable as `identify` or `track` calls. You ca
 
 When you send Audiences as `identify` calls, Engage adds a trait matching the name of the audience to the user's profile, with a boolean value to indicate if the user is in the audience. For example, when a user first completes an order in the last 30 days, Engage sends an `identify` call with the property `order_completed_last_30days:` `true`. When the user no longer satisfies these criteria (for example when their last purchase was more than 30 days ago) Engage sets that value to `false`.
 
-![A screenshot of the Audience tab in Segment, with a user profile selected and the trait "Order Completed Last 30 days" on the user's profile.](images/pers-audience-id.png)
+![A screenshot of the Audience tab in Segment, with a user profile selected and the trait Order Completed Last 30 days on the user's profile.](images/pers-audience-id.png)
 
 You can check a specific user profile for Audience membership in the Iterable UI by going to **Audience → Contact Lookup**.
 
-![A screenshot of the Contact Lookup page in Iterable, with a box around the "Order Completed Last 30 days" audience.](images/pers-iterable-profile-audience.png)
+![A screenshot of the Contact Lookup page in Iterable, with a box around the Order Completed Last 30 days audience.](images/pers-iterable-profile-audience.png)
 
 When you first create an audience, Engage sends an  `identify` call for every user in the audience. Later syncs only send updates for users who were added or removed from the audience since the last sync.
 

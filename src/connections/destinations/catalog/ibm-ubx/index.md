@@ -46,7 +46,7 @@ endpoint from Segment's support team._
    to "Endpoints", then "Register a new endpoint" and select "Segment". Then
    click "Register" to proceed.
 
-    ![A screenshot of the UBX dashboard, with a green arrow pointing to the Segment endpoint.](images/ubx-register-endpoint.png)
+    ![A screenshot of the UBX dashboard, with a arrow pointing to the Segment endpoint.](images/ubx-register-endpoint.png)
 
 5. Once registered, the new endpoint's status will remain "Pending" in the
    "Endpoints" tab until it has been activated. To activate an endpoint,
