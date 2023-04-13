@@ -119,7 +119,7 @@ Iterable supports sending [email events](/docs/connections/spec/email/) to other
 
 To enable this feature, go to Destinations, Third Party, and select Segment in the Add Destinations button. Then, enter your API key.
 
-![Send email events from Iterable](images/Iterable1.png)
+![Send email events from Iterable.](images/Iterable1.png)
 
 ## Sending Push Notification Data from Iterable
 
@@ -143,12 +143,12 @@ Iterable is a marketing platform that can accept Engage information. You can sen
 You can send Computed Traits created in Engage as `identify` calls to create user properties in Iterable.
 
 
-![](images/pers-computed-traits.png)
+![A screenshot of a profile in Segment, with the Traits tab selected.](images/pers-computed-traits.png)
 
 
 From the Iterable UI, you can check a specific user profile for Computed Traits by going to **Audience → Contact Lookup**. Engage  updates user profiles that contain an `email` or `userId`.
 
-![](images/pers-iterable-profile-computed.png)
+![A screenshot of a user profile in Iterable.](images/pers-iterable-profile-computed.png)
 
 
 
@@ -156,23 +156,23 @@ Computed traits without a lookback window search across all historical events an
 
 Computed traits with a lookback window only search across events that occurred within the specified timeframe. Computed traits *with* a lookback window are updated hourly.
 
-![](images/pers-lookback-2.png)
+![A screenshot of the Segment Configure and Preview Your Trait screen.](images/pers-lookback-2.png)
 
 ### Using Audiences with Iterable
 
 You can send Engage Audiences to Iterable as `identify` or `track` calls. You can choose the type of call to send when you add Iterable as a destination for an audience. Engage sends updates to Iterable for users who have a known `email` or `userId`.
 
-![](images/pers-iterable-audiences.png)
+![A screenshot of the Iterable settings page in Segment, with a defined Enter Event and Exit Event.](images/pers-iterable-audiences.png)
 
 #### Audiences using Identify Calls
 
 When you send Audiences as `identify` calls, Engage adds a trait matching the name of the audience to the user's profile, with a boolean value to indicate if the user is in the audience. For example, when a user first completes an order in the last 30 days, Engage sends an `identify` call with the property `order_completed_last_30days:` `true`. When the user no longer satisfies these criteria (for example when their last purchase was more than 30 days ago) Engage sets that value to `false`.
 
-![](images/pers-audience-id.png)
+![A screenshot of the Audience tab in Segment.](images/pers-audience-id.png)
 
 You can check a specific user profile for Audience membership in the Iterable UI by going to **Audience → Contact Lookup**.
 
-![](images/pers-iterable-profile-audience.png)
+![A screenshot of the Contact Lookup page in Iterable.](images/pers-iterable-profile-audience.png)
 
 When you first create an audience, Engage sends an  `identify` call for every user in the audience. Later syncs only send updates for users who were added or removed from the audience since the last sync.
 
@@ -180,24 +180,24 @@ When you first create an audience, Engage sends an  `identify` call for every us
 
 When you use `track` calls, Segment sends an Audience Entered event when the user enters the audience, with the audience name as a property of the event. When the user exists the audience, Engage sends an Audience Exited event with the same property.
 
-![](images/pers-audience-track.png)
+![A screenshot of Segment's Audience Explorer with an Audience Entered event.](images/pers-audience-track.png)
 
 You can check a specific user profile for an Audience event in the Iterable UI by going to **Audience → Contact Lookup→ Event History** tab.
 
-![](images/pers-iterable-profile-events.png)
+![A user profile in Iterable with the Event History tab selected.](images/pers-iterable-profile-events.png)
 
 Audiences without a lookback window search across all historical events, and update in real time.
 
 Audiences with a lookback window only searches across events that occurred within the specified timeframe. Audiences *with* a lookback window are updated hourly.
 
-![](images/pers-lookback.png)
+![A screenshot of the Segment audience builder.](images/pers-lookback.png)
 
 ## Setting Up Engage and Iterable
 
 To send computed traits or audiences to Iterable, you first must connect it to your Engage space. Once it's set up, you can select Iterable as a destination for Engage data when you create computed traits or audiences.
 
 1. In your Segment workspace, click Engage in the left navigation bar, and select your Space.
-2. Click **Engage Settomgs** and select the **Destinations** tab.
+2. Click **Engage Settings** and select the **Destinations** tab.
 3. Click **Add Destination**.
 2. Search for **Iterable** and add the destination to your Space.
 3. On the set up screen, enter in your API Key for the Iterable.

@@ -57,7 +57,7 @@ You can find default list of field names in Settings - > Custom fields for field
 
 All attributes that are a part of traits should correspond to the field Label of those fields in Freshmarketer. Attributes that are not mapped with their corresponding fields are ignored.
 
-![](images/contact-fields.png)
+![A screenshot of the Contact fields page in Freshmarketer, with an Edit Field sidebar.](images/contact-fields.png)
 
 ### Custom Traits
 
@@ -65,4 +65,4 @@ As part of traits, you can a Field Label to send custom fields created in Freshm
 
 Below is the Custom Field created in Freshmarketer product(Settings > Contact fields). You can drag and drop a field to create a new one.
 
-![](images/custom-fields.png)
+![A screenshot of the Contact fields page in Freshmarketer, with an Edit Field sidebar showing a custom field.](images/custom-fields.png)
