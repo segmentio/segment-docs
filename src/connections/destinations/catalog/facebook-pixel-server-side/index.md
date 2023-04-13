@@ -324,3 +324,12 @@ minutes. You can confirm that Facebook received them:
 > **Note**: It might take a few minutes before events appear in the Events Manager.
 
 ![Verify events in the Overview tab of the Events Manager](images/image2.png)
+
+## FAQ & Troubleshooting
+
+We're setting up Facebook Conversions API and have the following error message 
+"Unsupported post request. Object with ID 'XXXX' does not exist, cannot be loaded due to missing permissions, or does not support this operation. Please read the Graph API documentation at https://developers.facebook.com/docs/graph-api\". Any advice what we can do from here to integrate successfully?
+
+Usually, when this error appears, it is either an incorrect Pixel ID, or insufficient permissions. You would need to confirm the Pixel ID is right and that you have added Segment as a partner in your pixel as detailed here in the [Option 2 - Configure an existing pixel]([url](https://segment.com/docs/connections/destinations/catalog/facebook-pixel-server-side/#option-2---configure-an-existing-pixel))?
+
+
