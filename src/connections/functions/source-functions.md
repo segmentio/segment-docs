@@ -411,5 +411,5 @@ Segment alphabetizes payload fields that come in to **deployed** source function
 
 #### Can I use a Source Function in place of adding a Tracking Pixel to my code?
 
-Generally Tracking Pixels operate client-side only which means that they'll actually need to be loaded onto your website directly. Source Functions operate server-side and as such will not be able to capture or implement client-side tracking code such as a Pixel. If the tool you're hoping to integrate is server-side however, then you're likely able to use a Source Function to connect it to Segment.
+No. Tracking Pixels operate client-side only and need to be loaded onto your website directly. Source Functions operate server-side only, and aren't able to capture or implement client-side tracking code. If the tool you're hoping to integrate is server-side, then you can use a Source Function to connect it to Segment.
  
