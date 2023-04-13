@@ -18,7 +18,7 @@ This destination is maintained by TrafficGuard.
 2. Search for "TrafficGuard" in the Catalog, select it, and choose which of your sources to connect the destination to.
 3. Enter the "API Key" into your Segment Settings UI which you can find in the property in the TrafficGuard dashboard.
 
-![](images/trafficguard.png)
+![A screenshot of the input settings page in TrafficGuard, with the Segment API Key field present.](images/trafficguard.png)
 
 4. Calls will now be visible in TrafficGuard dashboards in real-time.
 

@@ -7,13 +7,13 @@ Analytics.js can trigger Track and Identify events based on the URL query string
 
 Here are the query parameters to use:
 
-| Parameter | Description | Triggers |
-| ----- | ----------- | -------- |
-| `ajs_uid` |  The userId to pass to an identify call. | This triggers an `identify` call. |
-| `ajs_event` | The event name to pass to a track call. | This triggers a `track` call.  |
-| `ajs_aid` | The anonymousId to set for the user.| This triggers an `analytics.user().anonymousId()` call.|
-| `ajs_prop_<property>` | A property to pass to the track call | This won't implicitly trigger an event and is dependent on you also passing `ajs_event` - this property  be included in the resulting `track` call |
-| `ajs_trait_<trait>` | A trait to pass to the identify call | This won't implicitly trigger any call and is dependent on you also passing `ajs_uid` - this trait is included in the resulting `identify` call |
+| Parameter             | Description                             | Triggers                                                                                                                                        |
+| --------------------- | --------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------- |
+| `ajs_uid`             | The userId to pass to an Identify call. | This triggers an Identify call.                                                                                                                 |
+| `ajs_event`           | The event name to pass to a Track call. | This triggers a Track call.                                                                                                                     |
+| `ajs_aid`             | The `anonymousId` to set for the user.  | This function returns the current `anonymousId`. When a value is passed, this function sets an `anonymousId` value.                             |
+| `ajs_prop_<property>` | A property to pass to the Track call.    | This won't implicitly trigger an event and is dependent on you also passing `ajs_event`. This property is included in the resulting Track call. |
+| `ajs_trait_<trait>`   | A trait to pass to the Identify call.    | This won't implicitly trigger any call and is dependent on you also passing `ajs_uid`. This trait is included in the resulting Identify call.   |
 
 For example, this URL:
 

@@ -26,7 +26,7 @@ You can also use the Slack Actions destination to set event triggers for context
 
 ## Protocols Tracking Plan
 
-### How do I add Page and Screen events to my tracking plan?
+### How do I add Page and Screen events to my Tracking Plan?
 
 To consolidate the views in the Schema tab, Segment automatically converts `page` and `screen` calls into `Page Viewed` and `Screen Viewed` events that appear in the Schema Events view. Segment recommends adding a `Page Viewed` or `Screen Viewed` event to your Tracking Plan with any properties you want to validate against. At this time, to validate that a specific named page/screen (`analytics.page('Homepage') | analytics.screen('Home')`) has a specific set of required properties, you will need to use the [JSON Schema](/docs/protocols/tracking-plan/create/#edit-underlying-json-schema).
 
@@ -40,7 +40,7 @@ The Tracking Plan to Source relationship is a one-to-many relationship. This mea
 
 ### Can I duplicate a Tracking Plan in the Segment UI?
 
-You can duplicate Tracking Plans in the Segment web app by following the [instructions to copy a tracking plan](/docs/protocols/tracking-plan/create/#copy-a-tracking-plan). You can also use the [Tracking Plan API](/docs/protocols/apis-and-extensions/) to copy the underlying JSON schema from one Tracking Plan to another.
+You can duplicate Tracking Plans in the Segment web app by following the [instructions to copy a tracking plan](/docs/protocols/tracking-plan/create/#copy-a-tracking-plan). You can also use the [Public API](/docs/protocols/apis-and-extensions/) to copy the underlying JSON schema from one Tracking Plan to another.
 
 ### How do I handle versioning with mobile apps?
 
@@ -61,6 +61,20 @@ You can search in a Tracking Plan to find a specific event, and then copy the UR
 ### Can I create a master Tracking Plan that supersedes all other Tracking Plans?
 
 Yes. [Tracking Plan Libraries](/docs/protocols/tracking-plan/libraries/) makes it easy to create groups of events or properties that can be easily imported into multiple Tracking plans.
+
+### Can I copy a Tracking Plan into a library?
+
+No. Unfortunately it's not yet possible to automatically transfer events from a Tracking Plan to Libraries. To import events into a new event library, import them directly from a source.
+
+### Can I transfer a Tracking Plan between production and staging environments?
+
+Yes. Using the [Public API](/docs/protocols/apis-and-extensions/), you can copy the underlying JSON schema from a Tracking Plan in one Workspace to a Tracking Plan in another Workspace. 
+
+If you [discarded events](/docs/protocols/enforce/schema-configuration) as a part of your original Tracking Plan, you must connect to the same Source and configure identical Schema Controls in your other Workspace so that blocked events behave as expected.
+
+### Can I connect a Source to more than one Tracking Plan?
+
+Unfortunately, Sources cannot be connected to more than one Tracking Plan. If you were able to connect more than one Tracking Plan to a Source, it could create conflict if events overlapped. 
 
 ## Protocols Validation
 
@@ -127,9 +141,13 @@ Only workspace admins are allowed to create transformations.
 
 All users with Protocols admin or read-only permissions can view transformations.
 
-### Why can't we support transformations for device-mode destinations?
+### Why can't Segment support transformations for device-mode destinations?
 
 Transformations introduce advanced logic that at scale may impact performance of client-side libraries. If you are interested in testing new functionality which supports device-mode destination transformations in analytics.js, contact your account rep.
+
+### Are Destination Filters applied before or after my Protocols Transformations?
+
+That depends. If you are working with source-level Transformations, the Protocols conversion will come first. If you are dealing with a destination scoped transformation (which is set to only impact data going to a specific destination), Destination Filters will be applied prior to Protocols Transformations.
 
 ### Why do I need Protocols to use transformations?
 

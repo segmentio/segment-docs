@@ -3,7 +3,7 @@ title: Ripe Web (Actions) Destination
 hide-boilerplate: true
 hide-dossier: true
 id: 63913b2bf906ea939f153851
-private: true
+redirect_from: '/connections/destinations/catalog/actions-ripe/'
 ---
 
 [Ripe](https://www.getripe.com/){:target="_blank"} is a product-led sales platform that empowers you to unlock revenue pipeline with product data. By identifying and showing which prospects to focus efforts on, you can convert leads into meetings inside your product.
@@ -106,20 +106,6 @@ analytics.page('Home')
 ```
 
 Segment sends Page calls to Ripe as a `pageview` event.
-
-### Alias
-
-Connects a new unique id to an existing identified user.
-
-If you aren't familiar with the Segment Spec, take a look at
-the [Alias method documentation](/docs/connections/spec/alias/) to learn about
-what it does. An example call would look like:
-
-```js
-analytics.alias('507f191e81')
-```
-
-Segment sends Page calls to Ripe as a `alias` event.
 
 ### Segment session
 

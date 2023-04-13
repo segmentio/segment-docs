@@ -4,11 +4,15 @@ layout: integration
 <div class="markdown">
    
   
-{% if page.hide-dossier != true  %}
+{% if page.hide-dossier != true %}
   {% capture destination-dossier %}{% include content/destination-dossier.html %}{% endcapture %}
-  
   {{destination-dossier | markdownify}}
 
+{% endif %}
+
+{% if page.deprecated == true %}
+  {% capture deprecation-note %}{% include content/deprecated.md %}{% endcapture %}
+  {{deprecation-note | markdownify}}
 {% endif %}
 
 {% if page.versions %}

@@ -35,11 +35,11 @@ Mammoth Segment destination requires that you have a dataset on Mammoth's side. 
 3. The add dataset dialog opens. Make sure the option selected is *Webhooks*.
 4. Give your dataset a name, and click **Done**. A new dataset appears in the data library.
 
-   ![](images/A8mLIPZ.png)
+   ![A screenshot of the Mammoth webhook dataset creation screen.](images/A8mLIPZ.png)
 
    The dataset you created shows an API KEY which you need to connect to Segment.
 
-   ![](images/JsTuMCy.png)
+   ![A screenshot of a dataset in Mammoth.](images/JsTuMCy.png)
 
 5. Click the new dataset you created in the previous step.
 6. From the preview panel, click **copy** to copy the API key to your clipboard.

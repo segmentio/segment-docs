@@ -32,11 +32,11 @@ Each time you [`track`](/docs/connections/spec/track) an event from the browser 
 
 You can find your conversion pixel IDs after you create the single conversion event inside Twitter:
 
-![](images/cS23YRgfUy9.png)
+![A screenshot of a single conversion event in Twitter, with a box around the conversion pixel ID.](images/cS23YRgfUy9.png)
 
 For example, if your mapping in Segment looks like this:
 
-![twitter conversion event mapping screenshot](images/event-mapping.png)
+![Twitter conversion event mapping screenshot.](images/event-mapping.png)
 
 Then every time you make this [`track`](/docs/connections/spec/track) call (from the browser):
 

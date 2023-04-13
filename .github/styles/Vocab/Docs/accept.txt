@@ -12,6 +12,7 @@
 (?:P|p)endo
 (?:P|p)odfile
 (?:P|p)ostgres
+(?:R|r)ealtime
 (?:R|r)emarketing
 (?:U|u)nlinks?\b
 (?:U|u)nmaps?\b
@@ -22,6 +23,7 @@ adset
 Adwords
 Aircall
 Airdat(?:e|es)
+Algolia
 allowlist
 Amberflo
 API(:?s)
@@ -56,6 +58,7 @@ deeplink
 Dev
 Doubleclick
 Eloqua
+Emarsys
 enablement
 endcapture
 endfor
@@ -77,6 +80,7 @@ https
 HTTPS
 Hubspot
 incrementality
+Innovid
 ios
 iOS
 Iterable
@@ -116,6 +120,7 @@ Okta
 Omnichannel
 onboarding
 Optimizely
+Outfunnel
 param(:?s)
 Pardot
 Passcode
@@ -126,6 +131,7 @@ Preact
 Proguard
 Qualtrics
 reformat(:?s)
+remarket
 Responsys
 Rokt
 Sabil
@@ -147,9 +153,11 @@ Twilio
 upsert
 US
 utm
+varchar
 Vero
 Vidora
 viewability
+Voucherify
 waitlist
 walkthrough
 WebKit

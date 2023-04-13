@@ -23,13 +23,13 @@ Click the account name for which you'd like to set up website retargeting, conve
 
 ### **2. [Create an Ad Account](https://www.linkedin.com/ad/accounts).**
 
-![](images/w53Sm6Jpg3.png)
+![A screenshot of the Linkedin Campaign manager accounts page.](images/w53Sm6Jpg3.png)
 
 Next, create an Ad Account in order to access the LinkedIn Insight Tag. It will ask for some currency information, but no payment is currently required to access the Insight Tag. Once the Ad Account is created, it's time to find the tag.
 
-### **3. Get the LinkedIn Data Parter ID.**
+### **3. Get the LinkedIn Data Partner ID.**
 
-![](images/K5HEnmgvse.png)
+![A screenshot of the LinkedIn Campaign Manager page, with the Account Assets dropdown selected.](images/K5HEnmgvse.png)
 
 From the Campaign Manager for the account, open the **Account Assets** dropdown menu. From there, select **Insight Tag** and move on to the specific tag.
 
@@ -39,17 +39,17 @@ Click **I will use a tag manager**.
 
 Your partner ID appears in a box below. Click the box to copy your partner ID to your clipboard.
 
-![](images/will-use-tag-manger.png)
+![A screenshot of LinkedIn's See Tag section.](images/will-use-tag-manger.png)
 
 
 ### **4. Activate the LinkedIn Insight Tag destination in Segment.**
 
 Log into your Segment account, go to the Destinations Catalog in the desired workspace, and select the LinkedIn Insight Tag destination (located at `https://segment.com/<Your Workspace>/destinations/catalog/linkedin-insight-tag`).
 
-![](images/kyTVBLjRyI.png)
+![A screenshot of the LinkedIn destination page in the Segment catalog.](images/kyTVBLjRyI.png)
 
 From there, click **Configure LinkedIn Insight Tag** and select the source for which you want to activate it. Click **Confirm Source**. The selected source loads, and a sidebar appears, asking for the LinkedIn Data Partner ID.
 
-![](images/Nmad4zYvWy.png)
+![A screenshot of the Settings page for the LinkedIn Insight Tag destination.](images/Nmad4zYvWy.png)
 
 Select that option and paste in the LinkedIn Data Partner ID that you copied earlier. Click **Save**, then click **Activate Destination**. Our servers build the latest CDN for that source, and the LinkedIn Insight Tag loads on the sites that use that source's Segment snippet!

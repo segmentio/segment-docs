@@ -4,15 +4,16 @@ plan: engage-premier
 ---
 Use the CSV Uploader to add or update user profiles and set subscription states.
 
-When you upload a CSV file, Twilio Engage adds new users and updates existing user profiles. Each CSV row corresponds to a user profile and columns to an identifier in your [identity resolution configuration](/docs/profiles/identity-resolution/identity-resolution-settings/).
+When you upload a CSV file, Twilio Engage adds new users and updates existing user profiles. Each CSV row corresponds to a user profile and columns to an identifier in your [identity resolution configuration](/docs/unify/identity-resolution/identity-resolution-settings/).
 
 You can also [set subscription states](#set-user-subscriptions) for each email and phone number that you upload in the CSV. Subscription states help you track which email addresses and numbers you have permission to market to.
 
 ## Upload a CSV file
 
-There are two ways you can navigate to the Upload CSV page:
-- Select **Engage > Audiences > Profile explorer** and click **Upload CSV**.
-- Select **Profiles > Profile explorer** and click **Upload CSV**.
+Use the **Upload CSV** page to upload a CSV file in your Segment space:
+1. Navigate to **Unify > Profile explorer** or **Engage > Audiences > Profile explorer**.
+2. Click **Manage subscription statuses**, then select **Update subscription statuses**.
+3. Select **Upload a CSV**, then click **Configure**.
 
 ### 1. Download your CSV template
 
@@ -21,11 +22,11 @@ Click **Download Template** to download a CSV template with identifier columns f
 > info ""
 > CSV files can only have a single **email** and **phone** identifier column. Include any additional email addresses or phone numbers for a user profile as a separate row.
 
-Navigate to **Profiles > Profiles settings** and select the **Identity resolution** tab to view or add identifiers in your Segment workspace.
+Navigate to **Unify > Unify settings** and select the **Identity resolution** tab to view or add identifiers in your Segment workspace.
 
 ### 2. Fill out your CSV file
 
-Enter values for the identifiers in your CSV file. You can also [set email and phone subscriptions](#set-user-subscriptions) using the `email_subscription_status` and `sms_subscription_status` columns.
+Enter values for the identifiers in your CSV file. You can also [set email, phone, and WhatsApp subscriptions](#set-user-subscriptions) using the `email_subscription_status`, `sms_subscription_status`, and `whatsapp_subscription_status` columns.
 
 A few best practices to keep in mind as you fill out your CSV:
 
@@ -49,11 +50,15 @@ Every time you upload a file, you have the option to add a custom trait to user 
 
 Custom traits display in the Custom Traits tab of a user profile in the Profile explorer.
 
-## View upload history
+## View Update History
 
-Use the Upload history page to view CSV file uploads in your workspace over the last 30 days.
+Use the Update History page to view CSV file uploads in your workspace over the last 30 days.
 
-Navigate to **Engage > Audiences > Profile explorer** or **Profiles > Profile explorer** and select the **CSV upload history** tab.
+To view the Update History page:
+
+1. Navigate to **Unify > Profile explorer** or **Engage > Audiences > Profile explorer**.
+2. Click **Manage subscription statuses**.
+3. Select **View update history**.
 
 Select links to view CSV files and any associated [error reports](#error-reports). View the status of the file upload and the custom trait name added to user profiles in the CSV upload.
 
@@ -61,12 +66,24 @@ Select links to view CSV files and any associated [error reports](#error-reports
 
 Use error reports to fix invalid rows and quickly re-upload data.
 
-From the Upload history page:
+From the Update History page:
 
 1. Select the link in the **Report** column to download an error report CSV. All rows not present in the error report were processed successfully.
 2. Correct data in the invalid rows.
 3. Remove any extra columns such as `row_number`, `error_message`, and `error_code`.
-3. Click **Upload CSV** and re-upload the file.
+3. Click **Update subscription statuses**, and select **Upload a CSV** to re-upload the file.
+
+Engage uses the following error codes on the report:
+
+|Error code                        | Description                                         |
+|----------------------------------|-----------------------------------------------------|
+|INVALID_EMAIL                 | The email address isn't formatted correctly.        |
+|INVALID_PHONE                 | The phone number is invalid.                        |
+|INVALID_SUBSCRIPTION_STATUS   | The subscription status is invalid. Check the status or leave it blank.   |
+|CONFIGURATION_ERROR          | Your SendGrid settings are not configured correctly. [Contact Segment support](https://app.segment.com/workspaces?contact=1){:target="_blank"} for help. |
+|SYSTEM_ERROR                  | Something went wrong. Please try again.             |
+|UNABLE_TO_SUBSCRIBE           | You can't update the subscription status for this phone number because the user unsubscribed by replying `STOP`. The user must reply `START` to resubscribe.                             |
+
 
 ## Set user subscriptions
 
@@ -77,9 +94,9 @@ Use the CSV Uploader to set subscription states for user email addresses and pho
 
 For each CSV file, Engage adds:
 - An `email_subscription_status` column next to the **Email** column.
-- An `sms_subscription_status` column next to the **Phone** column.
+- `whatsapp_subscription_status` and `sms_subscription_status` columns next to the **Phone** column.
 
-In the `email_subscription_status` and `sms_subscription_status` columns, set subscription states for email and phone numbers with the following values:
+In the `email_subscription_status`, `sms_subscription_status`, and `whatsapp_subscription_status` columns, set subscription states for email and phone numbers with the following values:
 
 - `subscribed`: The user has actively subscribed.
 - `unsubscribed`: The user has actively unsubscribed.

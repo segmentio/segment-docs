@@ -38,42 +38,46 @@ Braze uses Segment's [Stream Source component](/docs/partners/streams/) to send 
 
 The following table lists events that Braze sends to Segment. These events show up as tables in your Warehouse and as regular events in your other Destinations.
 
-| Event name                       | Description                                                                                                                                               |
-| -------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Email Sent                       | An email was successfully sent.                                                                                                                           |
-| Email Delivered                  | An email was successfully delivered to a User’s mail server.                                                                                              |
-| Email Opened                     | User opened an email.                                                                                                                                     |
-| Email Link Clicked               | User clicked a link in an email. Email click tracking must be enabled.                                                                                    |
-| Email Bounced                    | Braze attempted to send an email, but the User’s receiving mail server did not accept it.                                                                 |
-| Email Soft Bounced               | Braze attempted to send an email, but the User’s receiving mail server temporarily bounced it. (Reasons may include: inbox full, server down, and so on.) |
-| Email Marked As Spam             | User marked an email as spam.                                                                                                                             |
-| Email Unsubscribed               | User clicked the unsubscribe link in an email.                                                                                                            |
-| Subscription Group State Changed | User’s subscription group state changed to `Subscribed` or `Unsubscribed`.                                                                                |
-| Push Notification Sent           | A push notification was successfully sent                                                                                                                 |
-| Push Notification Tapped         | User tapped on a push notification.                                                                                                                       |
-| Push Notification Bounced        | Braze was not able to send a push notification to this User.                                                                                              |
-| iOS Foreground Push Opened       | User received a push notification on iOS while the app was open.                                                                                          |
-| In-App Message Viewed            | User viewed an in-app message.                                                                                                                            |
-| In-App Message Clicked           | User tapped or clicked a button in an in-app message.                                                                                                     |
-| News Feed Viewed                 | User viewed the native Braze News Feed.                                                                                                                   |
-| News Feed Card Viewed            | User viewed a Card within the native Braze News Feed.                                                                                                     |
-| News Feed Card Clicked           | User tapped or clicked on a Card within the native Braze News Feed.                                                                                       |
-| Webhook Sent                     | A webhook message was sent                                                                                                                                |
-| Campaign Converted               | User performed the primary conversion event for a Campaign within its conversion window.                                                                  |
-| Canvas Converted                 | User performed the primary conversion event for a Canvas within its conversion window.                                                                    |
-| Canvas Entered                   | User was entered into a Canvas.                                                                                                                           |
-| Campaign Control Group Entered   | User was enrolled in a Campaign control group.                                                                                                            |
-| Content Card Sent                | A Content Card was sent to a user's device.                                                                                                               |
-| Content Card Viewed              | User viewed a Content Card.                                                                                                                               |
-| Content Card Clicked             | User clicked a Content Card.                                                                                                                              |
-| Content Card Dismissed           | User dismissed a Content Card.                                                                                                                            |
-| SMS Sent                         | An SMS was sent.                                                                                                                                          |
-| SMS Sent to Carrier              | An SMS was sent to the Carrier for delivery.                                                                                                              |
-| SMS Delivered                    | An SMS was delivered successfully.                                                                                                                        |
-| SMS Delivery Failed              | An SMS was unable to be delivered successfully.                                                                                                           |
-| SMS Rejected                     | An SMS was rejected.                                                                                                                                      |
-| SMS Inbound Received             | An inbound SMS was received.                                                                                                                              |
-| Application Uninstalled          | User uninstalled the App.                                                                                                                                 |
+| Event name                             | Description                                                                                                                                               |
+| -------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Email Sent                             | An email was successfully sent.                                                                                                                           |
+| Email Delivered                        | An email was successfully delivered to a User’s mail server.                                                                                              |
+| Email Opened                           | User opened an email.                                                                                                                                     |
+| Email Link Clicked                     | User clicked a link in an email. Email click tracking must be enabled.                                                                                    |
+| Email Bounced                          | Braze attempted to send an email, but the User’s receiving mail server did not accept it.                                                                 |
+| Email Soft Bounced                     | Braze attempted to send an email, but the User’s receiving mail server temporarily bounced it. (Reasons may include: inbox full, server down, and so on.) |
+| Email Marked As Spam                   | User marked an email as spam.                                                                                                                             |
+| Email Unsubscribed                     | User clicked the unsubscribe link in an email.                                                                                                            |
+| Global Subscription Group State Change | User’s subscription global group state changed to `Subscribed` or `Unsubscribed`.                                                                         |
+| Subscription Group State Changed       | User’s subscription group state changed to `Subscribed` or `Unsubscribed`.                                                                                |
+| Push Notification Sent                 | A push notification was successfully sent.                                                                                                                 |
+| Push Notification Tapped               | User tapped on a push notification.                                                                                                                       |
+| Push Notification Bounced              | Braze was not able to send a push notification to this User.                                                                                              |
+| iOS Foreground Push Opened             | User received a push notification on iOS while the app was open.                                                                                          |
+| In-App Message Viewed                  | User viewed an in-app message.                                                                                                                            |
+| In-App Message Clicked                 | User tapped or clicked a button in an in-app message.                                                                                                     |
+| News Feed Viewed                       | User viewed the native Braze News Feed.                                                                                                                   |
+| News Feed Card Viewed                  | User viewed a Card within the native Braze News Feed.                                                                                                     |
+| News Feed Card Clicked                 | User tapped or clicked on a Card within the native Braze News Feed.                                                                                       |
+| Webhook Sent                           | A webhook message was sent.                                                                                                                                |
+| Campaign Converted                     | User performed the primary conversion event for a Campaign within its conversion window.                                                                  |
+| Canvas Converted                       | User performed the primary conversion event for a Canvas within its conversion window.                                                                    |
+| Canvas Entered                         | User was entered into a Canvas.                                                                                                                           |
+| Canvas Exited                          | User has exited Canvas.                                                                                                                          |
+| Campaign Control Group Entered         | User was enrolled in a Campaign control group.                                                                                                            |
+| Content Card Sent                      | A Content Card was sent to a user's device.                                                                                                               |
+| Content Card Viewed                    | User viewed a Content Card.                                                                                                                               |
+| Content Card Clicked                   | User clicked a Content Card.                                                                                                                              |
+| Content Card Dismissed                 | User dismissed a Content Card.                                                                                                                            |
+| SMS Sent                               | An SMS was sent.                                                                                                                                          |
+| SMS Sent to Carrier                    | An SMS was sent to the Carrier for delivery.                                                                                                              |
+| SMS Short Link Clicks                  | User clicked a short link in an SMS message.                                                                                                                |
+| SMS Delivered                          | An SMS was delivered successfully.                                                                                                                        |
+| SMS Delivery Failed                    | An SMS was unable to be delivered successfully.                                                                                                           |
+| SMS Rejected                           | An SMS was rejected.                                                                                                                                      |
+| SMS Inbound Received                   | An inbound SMS was received.                                                                                                                              |
+| Application Uninstalled                | User uninstalled the App.                                                                                                                                 |
+| Abort Message Events                   | Message was aborted based on quiet hours, rate limiting, frequency capping, or liquid aborts.                                                                                                                                |
 
 ## Braze Event Properties
 
@@ -87,6 +91,7 @@ The following table lists event properties included with all events Segment rece
 | `campaign_id`          | String | The API Identifier of the campaign associated with the event, if applicable.                                                                                                                                                                   |
 | `campaign_name`        | String | The name of the campaign associated with the event, if applicable.                                                                                                                                                                             |
 | `message_variation_id` | String | The API Identifier of the Message Variation for the campaign associated with the event, if applicable.                                                                                                                                         |
+| `message_variation_name`      | String | To further usability, in all events where Segment provides Message Variation ID, Segment now also provides the Message Variation Name.                                                                                                                                                                |
 | `canvas_id`            | String | The API Identifier of the Canvas associated with the event, if applicable                                                                                                                                                                      |
 | `canvas_name`          | String | The name of the Canvas associated with the event, if applicable.                                                                                                                                                                               |
 | `canvas_variation_id`  | String | The API Identifier of the Canvas Variation associated with the event, if applicable.                                                                                                                                                           |
@@ -103,6 +108,7 @@ This table lists event-specific properties Braze sends to Segment:
 | `link_url`              | String | For Email Clicked events, the URL of the link that the user clicked on.                                                |
 | `button_id`             | String | For In-App Message Clicked events, the index of the button the user clicked on.                                        |
 | `card_id`               | String | For News Feed Card and Content Card events, the API Identifier of the Card.                                            |
+| `state_change_source`   | String | Source of the state change (for example, REST, SDK, Dashboard, Preference Center, and more.)                                     |
 | `subscription_group_id` | String | For Subscription Group State Changed events, the API Identifier of the Subscription Group.                             |
 | `subscription_status`   | String | For Subscription Group State Changed events, the status the user changed to, either `Subscribed` or `Unsubscribed`.    |
 | `user_agent`            | String | For Email Click and Email Open events, description of the user’s system and browser for the event.                     |

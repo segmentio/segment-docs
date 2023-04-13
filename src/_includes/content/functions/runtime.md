@@ -16,23 +16,43 @@ The following dependencies are installed in the function environment by default.
 - [`@google-cloud/pubsub v2.6.0`](https://www.npmjs.com/package/@google-cloud/pubsub){:target="_blank"} exposed as `google.cloud.pubsub`
 - [`@google-cloud/storage v5.3.0`](https://www.npmjs.com/package/@google-cloud/storage){:target="_blank"} exposed as `google.cloud.storage`
 - [`@google-cloud/tasks v2.6.0`](https://www.npmjs.com/package/@google-cloud/tasks){:target="_blank"} exposed as `google.cloud.tasks`
+- [`hubspot-api-nodejs`](https://www.npmjs.com/package/@hubspot/api-client){:target="_blank"} exposed as `hubspotlib.hubspot`
 - [`jsforce v1.11.0`](https://www.npmjs.com/package/jsforce){:target="_blank"} exposed as `jsforce`
 - [`jsonwebtoken v8.5.1`](https://www.npmjs.com/package/jsonwebtoken){:target="_blank"} exposed as `jsonwebtoken`
-- [`lodash v4.17.19`](https://www.npmjs.com/package/lodash){:target="\_blank"} exposed as `_`
+- [`libphonenumber-js`](https://www.npmjs.com/package/libphonenumber-js){:target="_blank"} exposed as `libphonenumberjslib.libphonenumberjs`
+- [`lodash v4.17.19`](https://www.npmjs.com/package/lodash){:target="_blank"} exposed as `_`
+- [`mailjet`](https://www.npmjs.com/package/node-mailjet){:target="_blank"} exposed as `const mailJet = nodemailjet.nodemailjet;`
 - [`moment-timezone v0.5.31`](https://www.npmjs.com/package/moment-timezone/v/0.5.31){:target="_blank"} exposed as `moment`
 - [`node-fetch v2.6.0`](https://www.npmjs.com/package/node-fetch){:target="_blank"} exposed as `fetch`
 - [`oauth v0.9.15`](https://www.npmjs.com/package/oauth){:target="_blank"} exposed as `OAuth`
 - [`@sendgrid/client v7.4.7`](https://www.npmjs.com/package/@sendgrid/client){:target="_blank"} exposed as `sendgrid.client`
 - [`@sendgrid/mail v7.4.7`](https://www.npmjs.com/package/@sendgrid/mail){:target="_blank"} exposed as `sendgrid.mail`
+- [`skyflow`](https://www.npmjs.com/package/skyflow-node){:target="_blank"} exposed as `skyflowlib.skyflow`
 - [`stripe v8.115.0`](https://www.npmjs.com/package/stripe){:target="_blank"} exposed as `stripe`
 - [`twilio v3.68.0`](https://www.npmjs.com/package/twilio){:target="_blank"} exposed as `twilio`
-- [`uuidv5 v1.0.0`](https://www.npmjs.com/package/uuidv5){:target="_blank"} exposed as `uuidv5`
+- [`uuidv5 v1.0.0`](https://www.npmjs.com/package/uuidv5){:target="_blank"} exposed as `uuidv5.uuidv5`
 - [`winston v2.4.6`](https://www.npmjs.com/package/winston){:target="_blank"} exposed as `const winston = winstonlib.winston`
 - [`xml v1.0.1`](https://www.npmjs.com/package/xml){:target="_blank"} exposed as `xml`
 - [`xml2js v0.4.23`](https://www.npmjs.com/package/xml2js){:target="_blank"} exposed as `xml2js`
 - [`zlib v1.0.5`](https://www.npmjs.com/package/zlib){:target="_blank"} exposed as `zlib.zlib`
 
-    `zlib`'s asynchronous methods `inflate` and `deflate` must be used with `async` or `await`. For example:
+  <br> `uuidv5` is exposed as an object. Use `uuidv5.uuidv5` to access its functions. For example:
+
+    ```js
+    async function onRequest(request, settings) {
+	     uuidv5 = uuidv5.uuidv5;
+	     console.log(typeof uuidv5);
+
+	      //Generate a UUID in the default URL namespace
+	      var urlUUID = uuidv5('url', 'http://google/com/page');
+	      console.log(urlUUID);
+
+	      //Default DNS namespace
+	      var dnsUUID = uuidv5('dns', 'google.com');
+	      console.log(dnsUUID);
+      }
+    ```
+  `zlib`'s asynchronous methods `inflate` and `deflate` must be used with `async` or `await`. For example:
 
     ```js
   zlib = zlib.zlib;  // Required to access zlib objects and associated functions

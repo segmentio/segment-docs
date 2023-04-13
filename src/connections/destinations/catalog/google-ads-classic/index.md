@@ -33,7 +33,7 @@ With the release of Segment's latest Analytics-iOS SDK, which includes support f
 
 Google Adwords maps the IDFA to `rdid`, and returns a 4xx error on the outbound request if no `device.advertisingId` key appears in the payload.
 
-To work around this, enable the **Fallback to Zeroed IDFA when advertisingId key not present** destination setting for Google Adwords in the Segment web app. When enabled, Segment checks if a `device.advertisingId` exists in the payload, and if none exists, sets the `rdid` to `'00000000-0000-0000-0000-000000000000'`.
+To work around this, enable the **Fallback to Zeroed IDFA when `advertisingId` key not present** destination setting for Google Adwords in the Segment web app. When enabled, Segment checks if a `device.advertisingId` exists in the payload, and if none exists, sets the `rdid` to `'00000000-0000-0000-0000-000000000000'`.
 
 To maintain backwards compatibility, if you do not enable this setting and no `device.advertisingId` key appears in the payload, Segment rejects the message.
 
@@ -95,7 +95,7 @@ Google has replaced the concept of associating conversion events with **conversi
 The API has a new concept of **event types**. Each of these types are meant to be associated with common in-app actions that a user could take (app installs, product views, etc.). This is the same concept as the [Semantic Event Spec](/docs/connections/spec/semantic/). The event type mappings Segment supports are outlined in the sections below.
 
 > warning ""
-> If you have migrated from a legacy AdWords account to a new one, Google Ads (Classic) will automatically migrate your existing conversion events to your new account. Segment will continue to respect these event mappings even if they share the same event names as the new "spec'd" event mappings outlined below and ignore the new **event type** mapping. This is to ensure there is no disruption in your data. If you wish to bypass this, you simply need to delete the event mapping in your [settings](/docs/connections/destinations/catalog/google-ads-classic/#event-mappings).
+> If you have migrated from a legacy AdWords account to a new one, Google Ads (Classic) will automatically migrate your existing conversion events to your new account. Segment will continue to respect these event mappings even if they share the same event names as the new spec-matching event mappings outlined below and ignore the new **event type** mapping. This is to ensure there is no disruption in your data. If you wish to bypass this, you simply need to delete the event mapping in your [settings](/docs/connections/destinations/catalog/google-ads-classic/#event-mappings).
 
 1) Authorization/Authentication
 
@@ -113,7 +113,7 @@ Authorization between an Google Ads (Classic) account and a third-party-applicat
 
 Once this step is complete, you should see a screen that looks like this showing the new Link Id:
 
-![](images/link-id-process.png)
+![A screenshot of Google Ads (Classic) showing Segment as an App analytics provider.](images/link-id-process.png)
 
 #### Add your Link ID as an Integration Setting
 
@@ -122,15 +122,15 @@ Once you have a Link ID, you need to add them to your Google Ads (Classic) [dest
 ### Track
 All `track` events are by default sent to your Google Ads (Classic) account and from there, you can choose which ones you want to designate as **Conversion Events**. All events sent to Google Ads (Classic) require an **event type** specification. This is an enumerated list of nine potential values:
 
- 1. first_open
- 2. session_start
- 3. in_app_purchase
- 4. view_item_list
- 5. view_item
- 6. view_search_results
- 7. add_to_cart
- 8. ecommerce_purchase
- 9. custom
+ 1. `first_open`
+ 2. `session_start`
+ 3. `in_app_purchase`
+ 4. `view_item_list`
+ 5. `view_item`
+ 6. `view_search_results`
+ 7. `add_to_cart`
+ 8. `ecommerce_purchase`
+ 9. `custom`
 
 Segment integrates with these event types using the use of the [Semantic Event Spec](/docs/connections/spec/semantic/). Each individual mapping Segment supports is documented in the sections below. Any event Segment receives that is not a mapped semantic event will be sent to Google Ads (Classic) as a `custom` event type.
 
@@ -193,27 +193,27 @@ To track the monetary value of a conversion, make sure your event contains a `.r
 ## Mobile & Server (Legacy)
 
 > warning ""
-> Google Ads (Classic) has plans to deprecate the API that the functionality outlined here relies on. Reference the documentation that supports their new API version above.
+> Google Ads (Classic) has plans to deprecate the API on which the functionality outlined below relies. Reference the documentation that supports their new API version above.
 
 You can specify key mobile events as conversion events inside of Google Ads conversion dashboard. When these events fire from your mobile apps, Segment triggers these Google Ads (Classic) conversions. Segment SDKs should include the following properties, which are required to send the conversions. If you notice these properties aren't being logged, check the debugger to ensure the properties are included in your events.
 
 
 | Property   | Mapping                                                   |
 | ---------- | --------------------------------------------------------- |
-| label      | The Advertising Label from the destination settings panel |
-| rdid       | `context.device.advertisingId`                            |
-| bundleid   | `context.app.namespace`                                   |
-| appversion | `context.app.version`                                     |
-| osversion  | `context.os.version`                                      |
-| sdkversion | `contet.app.build`                                        |
+| `label`      | The Advertising Label from the destination settings panel |
+| `rdid`       | `context.device.advertisingId`                            |
+| `bundleid`   | `context.app.namespace`                                   |
+| `appversion` | `context.app.version`                                     |
+| `osversion`  | `context.os.version`                                      |
+| `sdkversion` | `contet.app.build`                                        |
 
 The following properties are optional, if you'd like to see more, [contact Segment Support](https://segment.com/help/contact/).
 
 | Property      | Mapping               |
 | ------------- | --------------------- |
-| referrer      | `context.referrer.id` |
-| value         | `properties.revenue`  |
-| currency_code | `properties.currency` |
+| `referrer`      | `context.referrer.id` |
+| `value`         | `properties.revenue`  |
+| `currency_code` | `properties.currency` |
 
 
 Here's Google documentation for the endpoint Segment connects to [for iOS apps](https://developers.google.com/app-conversion-tracking/ios/conversion-tracking-server#reporting_in-app_conversions_from_an_analytics_server) and [for Android Apps](https://developers.google.com/app-conversion-tracking/android/conversion-tracking-server#in-app_conversions). It can take 24-48 hours for conversions to show up in the conversions dashboard.

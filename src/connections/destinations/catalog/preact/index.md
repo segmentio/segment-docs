@@ -31,7 +31,7 @@ All you have to do is add a "!" as the first character in the event name and Pre
 Here's a JavaScript example:
 ```javascript
 analytics.track('!Image upload error', {
-    File size: '890kb',
+    File size: '890KB',
     File extension: '.JPG',
     Message: 'File size too large'
     });

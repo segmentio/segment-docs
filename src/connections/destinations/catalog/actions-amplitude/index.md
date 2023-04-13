@@ -53,13 +53,14 @@ To manually add the Log Purchases Action:
 
 The Amplitude (actions) destination does not offer a device-mode connection mode. If you're using one of Segment's new libraries ([Analytics.js 2.0](/docs/connections/sources/catalog/libraries/website/javascript/), [Swift](https://github.com/segmentio/analytics-swift) or [Kotlin](https://github.com/segmentio/analytics-kotlin)) with the Actions-framework version of the destination, you do not need the device-mode connection.
 
-Most previous deployments of the Amplitude Segment destination used the device-mode connection to use the `session_id` tracking feature. The new Actions-framework Amplitude destination, includes session ID tracking by default. This means you don't need to bundle any software to run on the user's device, or write any code. It also means that you can use more of the Segment platform features on data going to Amplitude, such as Protocols filtering and transformations, and Profiles Identity Resolution.
+
+Most previous deployments of the Amplitude Segment destination used the device-mode connection to use the `session_id` tracking feature. The new Actions-framework Amplitude destination, includes session ID tracking by default. When connected to the Analytics.js 2.0 source, Segment automatically loads a plugin on your website for session tracking and enrichment as an alternative to the Amplitude SDK. This means you don't need to bundle any software to run on the user's device, or write any code. It also means that you can use more of the Segment platform features on data going to Amplitude, such as Protocols filtering and transformations, and Profiles Identity Resolution.
 
 Session tracking is available with Segment's new libraries: [Analytics.js 2.0](/docs/connections/sources/catalog/libraries/website/javascript/), [Swift](https://github.com/segmentio/analytics-swift) or [Kotlin](https://github.com/segmentio/analytics-kotlin)
 
 
 ### Device ID Mappings
-The Amplitude destination requires that each event include either a Device ID or a User ID. If a User ID isn't present, Amplitude uses the a Device ID, and vice versa, if a Device ID isn't present, Amplitude uses the User ID.
+The Amplitude destination requires that each event include either a Device ID or a User ID. If a User ID isn't present, Amplitude uses a Device ID, and vice versa, if a Device ID isn't present, Amplitude uses the User ID.
 
 By default, Segment maps the Segment property `context.device.id` to the Amplitude property `Device ID`. If `context.device.id` isn't available, Segment maps the property `anonymousId` to the Amplitude `Device ID`. The Actions interface indicates this with the following contents of the Device ID field: `coalesce(` `context.device.id` `anonymousId` `)`.
 
@@ -67,7 +68,7 @@ By default, Segment maps the Segment property `context.device.id` to the Amplitu
 
 JavaScript sources automatically enable session tracking.
 
-The session ID Segment passes to Amplitude stores locally in a key-value pair. View the value associated with the `analytics_session_id`key to access the session ID. 
+The session ID Segment passes to Amplitude stores locally in a key-value pair. View the value associated with the `analytics_session_id`key to access the session ID.
 
 ### Enable Amplitude session tracking for Swift
 

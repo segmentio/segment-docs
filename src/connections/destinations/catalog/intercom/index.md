@@ -4,6 +4,7 @@ hide-cmodes: true
 hide-personas-partial: true
 cmode-override: true
 id: 54521fd725e721e32a72eec6
+private: true
 maintenance: true
 maintenance-content: New versions of the destination are available. See [Intercom Cloud Mode (Actions)](/docs/connections/destinations/catalog/actions-intercom-cloud/) and [Intercom Web (Actions)](/docs/connections/destinations/catalog/actions-intercom-web/) for more information.
 ---
@@ -418,7 +419,23 @@ analytics.identify('teemo', { someTrait: 'x'}, {
 > info ""
 > You can pass in the Intercom specific option using all supported calls for this destination (`page`, `identify`, and `group`).
 
-### Control the Intercom Chat Widget (Mobile only)
+### Control the Intercom Chat Widget (Browser)
+
+If you want to control the position or toggle the visibility of the Intercom Chat Widget, use the Intercom `update` method. After the Intercom instance is loaded on the client side, you can update the widget styling.
+
+```js
+//Set styling
+window.intercomSettings = {
+    alignment: 'right',
+    horizontal_padding: 20,
+    vertical_padding: 20
+  };
+
+//Apply update
+window.Intercom("update");
+```
+
+### Control the Intercom Chat Widget (Mobile)
 
 Segment's mobile SDKs let you tap into the Intercom instance that the integration creates so that you can call any of Intercom's native methods, including all methods required to interact with the Intercom chat widget.
 

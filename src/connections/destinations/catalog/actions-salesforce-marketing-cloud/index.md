@@ -15,9 +15,6 @@ Salesforce Marketing Cloud (SFMC) provides digital marketing automation and anal
 
 Segment’s Salesforce Marketing Cloud (Actions) destination allows you to create contacts, store contact and event data in data extensions, and send API events to SFMC. Segment sends data to the [SFMC REST API](https://developer.salesforce.com/docs/marketing/marketing-cloud/guide/rest-api-overview.html){:target="_blank"}. 
 
-> info ""
-> The Salesforce Marketing Cloud (Actions) destination is in beta and is in active development. Some functionality may change before it becomes generally available.
-
 ## Benefits of Salesforce Marketing Cloud (Actions) Destination vs Salesforce Marketing Cloud Destination Classic
 
 The Salesforce Marketing Cloud (Actions) destination provides the following benefits over the classic Salesforce Marketing Cloud destination:

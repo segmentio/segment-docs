@@ -5,7 +5,7 @@ hide-personas-partial: true
 hide-integrations-object: true
 maintenance: true
 maintenance-content: >
-  Future updates to this destination are limited to security updates and bug fixes. New versions of this destination are available. See [Braze Cloud Mode (Actions)](/docs/connections/destinations/catalog/braze-cloud-mode-actions) for a server-side integration and [Braze Web Mode (Actions)](/docs/connections/destinations/catalog/braze-web-device-mode-actions) for a device-mode integration with access to Braze SDK features. 
+  Future updates to this destination are limited to security updates and bug fixes. New versions of this destination are available. See [Braze Cloud Mode (Actions)](/docs/connections/destinations/catalog/braze-cloud-mode-actions) for a server-side integration and [Braze Web Mode (Actions)](/docs/connections/destinations/catalog/braze-web-device-mode-actions) for a device-mode integration with access to Braze SDK features.
   <br />
   If you use a Braze mobile [device-mode connection](/docs/connections/destinations/#connection-modes), for example to use Braze Content Cards or In-App Messaging, use the Braze (Classic) Destination. Segment will continue to make updates to the Segment Braze mobile device-mode SDK.
 
@@ -19,7 +19,7 @@ The Braze Destination is open-sourced on GitHub. Source code for the following i
 - [Android](https://github.com/Appboy/appboy-segment-android)(maintained by Braze)
 - [Swift](https://github.com/braze-inc/analytics-swift-braze)(maintained by Braze)
 - [Kotlin](https://github.com/braze-inc/braze-segment-kotlin)(maintained by Braze)
-- [Web](https://github.com/segment-integrations/analytics.js-integration-appboy) (maintained by Segment) 
+- [Web](https://github.com/segment-integrations/analytics.js-integration-appboy) (maintained by Segment)
 - [Server](https://github.com/segmentio/integration-appboy) (maintained by Segment)
 
 For issues with mobile platforms (iOS, Android, Swift, or Kotlin), contact Braze support. For issues with Web or Server platforms, contact [Segment support](https://segment.com/help/contact).
@@ -33,7 +33,7 @@ For issues with mobile platforms (iOS, Android, Swift, or Kotlin), contact Braze
 1. From the Segment web app, click **Catalog**.
 2. Search for "Braze" in the Catalog, select it, and choose which of your sources to connect the destination to.
 3. In the Destination Settings, add the **API Key**, found in the Braze Dashboard in *App Settings > Manage App Group*.
-4. Set up a new App Group REST API Key in the Braze Dashboard in *App Settings > Developer Console > API Settings*. For more information, see [Creating and Managing REST API Keys](https://www.braze.com/docs/api/basics/#creating-and-managing-rest-api-keys) in the Braze documentation. 
+4. Set up a new App Group REST API Key in the Braze Dashboard in *App Settings > Developer Console > API Settings*. For more information, see [Creating and Managing REST API Keys](https://www.braze.com/docs/api/basics/#creating-and-managing-rest-api-keys) in the Braze documentation.
   - Select the `users.track` endpoint in the **User Data** section.
 5. If you're adding Braze using Analytics.js, Segment automatically loads the [Braze Web SDK](https://www.braze.com/docs/developer_guide/platform_integration_guides/web/initial_sdk_setup). Otherwise, depending on the source you've selected, include Braze's library by adding the following lines to your dependency configuration.
 
@@ -135,7 +135,7 @@ If you're not familiar with the Segment Specs, take a look to understand what th
 analytics.page();
 ```
 
-Segment sends Page calls to Braze as custom events if you have enabled either **Track All Pages** or **Track Only Named Pages** in the Segment Settings. 
+Segment sends Page calls to Braze as custom events if you have enabled either **Track All Pages** or **Track Only Named Pages** in the Segment Settings.
 
 ## Identify
 
@@ -186,7 +186,7 @@ The endpoint returns:
     }
   ],
   "message": "success"
-} 
+}
 ```
 
 
@@ -227,7 +227,7 @@ When you `track` an event, Segment sends that event to Braze as a custom event.
 > Braze requires that you include a `userId` or `braze_id` for all calls made in cloud-mode. Segment sends a `braze_id` if `userId` is missing. When you use a device-mode connection, Braze automatically tracks anonymous activity using the `braze_id` if a `userId` is missing.
 
 > note ""
-> Segment removes the following custom properties reserved by Braze:
+> Segment removes the following custom properties reserved by Braze when sending data in Cloud mode:
 >
 >  - `time`
 >  - `quantity`
@@ -531,15 +531,15 @@ You can send computed traits created in Engage as `identify` calls to create cus
 
 For example, if you have a computed trait for “Last Product Viewed Item,” that would be named `last_product_viewed_item` in the user's Engage profile.
 
-![](images/last_viewed-user.png)
+![A screenshot of a user's Engage profile with the Computed Traits button selected.](images/last_viewed-user.png)
 
 If the “Last Product Viewed Item” trait is connected to Braze to send `identify` calls, as in this example:
 
-![](images/last_viewed-identify.png)
+![A screenshot of the Last Product Viewed Item tab, with the Settings button selected.](images/last_viewed-identify.png)
 
 The following custom attribute, “last_product_viewed_item” appears in Braze on the user's profile:
 
-![](images/last_viewed-id-braze.png)
+![A screenshot of the last_product_viewed_item attribute in Braze.](images/last_viewed-id-braze.png)
 
 #### Computed Traits using Track calls
 
@@ -547,11 +547,11 @@ You can also send computed traits created in Engage as `track` calls to create c
 
 Using the same example as above, if a user has a computed trait for “Last Product Viewed Item” and the trait is connected to Braze and configured to send `track` calls:
 
-![](images/last_viewed-track.png)
+![A screenshot of the Braze settings tab in Segment, with the Send Track setting enabled and a Trait Computed value in the Compute Event field.](images/last_viewed-track.png)
 
 The following custom event appears in Braze on the user's profile:
 
-![](images/last_viewed-track-braze.png)
+![A screenshot of a user's profile in Braze, with a Trait Computed event present.](images/last_viewed-track-braze.png)
 
 > info "Tip"
 > You can change the name of the “computed trait” event that Braze receives in the Destination Settings accessed through Engage.
@@ -571,15 +571,15 @@ You can send audiences created in Engage as `identify` calls to create custom at
 
 For example, if a user is in a “Dormant Shoppers” audience:
 
-![](images/dormant-user.png)
+![A screenshot of a user's profile in Engage, with the Audiences tab selected and the Dormant Shoppers trait present.](images/dormant-user.png)
 
 And the “Dormant Shoppers” audience is connected to Braze to send `identify` calls:
 
-![](images/dormant-identify.png)
+![A screenshot of the Braze settings tab in Segment, with the Send Identify setting enabled.](images/dormant-identify.png)
 
 The “dormant_shoppers” custom attribute appears in Braze on the user's profile:
 
-![](images/dormant-identify-braze.png)
+![A screenshot of a user's profile in Braze, with a Trait Computed event present.](images/dormant-identify-braze.png)
 
 
 #### Audiences using Track calls
@@ -588,11 +588,11 @@ You can also send audiences created in Engage as `track` calls to create custom 
 
 Using the same example as above, if a user is in a “Dormant Shoppers” audience and the audience is connected to Braze to send `track` calls, Engage sends the following “Audience Entered” and “Audience Exited” events. (You can edit the names of these events from this screen.)
 
-![](images/dormant-track.png)
+![A screenshot of the Braze settings tab in Segment, with the Send Track setting enabled, Enter Event and Exit Event fields configured.](images/dormant-track.png)
 
 The following custom event appears in Braze on the user's profile when they enter the audience:
 
-![](images/dormant-track-braze.png)
+![A screenshot of a user's profile in Braze, with an Audience Entered trait present.](images/dormant-track-braze.png)
 
 > info "Tip"
 > You can change the name of the “Audience Entered” event that Braze receives in the Destination Settings accessed through Engage.
@@ -629,9 +629,9 @@ If you use the Braze destination in either [cloud or device mode](/docs/connecti
 
 #### Which ID does Segment match on when sending data to Braze?
 
-By default, Engage data is sent to Braze by matching the `userId`. The Segment `userId` maps to Braze's External ID. If the user is anonymous and does not have a `userId`, you can also choose to send data using the `braze_id` auto-generated by Braze. To use `braze_id`, you must pass the `braze_id` to Segment as a [Segment externalId](/docs/profiles/identity-resolution/externalids/) in the `context.integrations.Braze.braze_id` object. If `braze_id` is sent as an `externalId` **and** `userId` is missing, Engage matches on `braze_id` when sending to Braze. You can check the **Identities** tab on a user's Engage profile to confirm that `braze_id` was successfully picked up as an `externalId`.
+By default, Engage data is sent to Braze by matching the `userId`. The Segment `userId` maps to Braze's External ID. If the user is anonymous and does not have a `userId`, you can also choose to send data using the `braze_id` auto-generated by Braze. To use `braze_id`, you must pass the `braze_id` to Segment as a [Segment externalId](/docs/unify/identity-resolution/externalids/) in the `context.integrations.Braze.braze_id` object. If `braze_id` is sent as an `externalId` **and** `userId` is missing, Engage matches on `braze_id` when sending to Braze. You can check the **Identities** tab on a user's Engage profile to confirm that `braze_id` was successfully picked up as an `externalId`.
 
-![](images/braze-anonid.png)
+![A screenshot of an anonymous user in Segment, with the Identities tab selected and a braze_id identity present](images/braze-anonid.png)
 
 You can find the `braze_id` in the Braze UI or by using Braze's [Users by Identifier API Endpoint](https://www.braze.com/docs/api/endpoints/export/user_data/post_users_identifier/){:target="_blank"}.
 

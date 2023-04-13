@@ -29,12 +29,12 @@ To get started with the Analytics for React Native 2.0 library:
 1. Create a React Native Source in Segment.
     1. Go to **Connections > Sources > Add Source**.
     2. Search for React Native and click **Add source**.
-2. Install `@segment/analytics-react-native`, [`@segment/sovran-react-native`](https://github.com/segmentio/sovran-react-native){:target="_blank"} and [`react-native-async-storage/async-storage`](https://github.com/react-native-async-storage/async-storage){:target="_blank"}:
+2. Install `@segment/analytics-react-native`, [`@segment/sovran-react-native`](https://github.com/segmentio/sovran-react-native){:target="_blank"} and [`react-native-get-random-values`](https://github.com/LinusU/react-native-get-random-values){:target="_blank"}:
 
     ```js
-    yarn add @segment/analytics-react-native @segment/sovran-react-native @react-native-async-storage/async-storage
+    yarn add @segment/analytics-react-native @segment/sovran-react-native react-native-get-random-values
     # or
-    npm install --save @segment/analytics-react-native @segment/sovran-react-native @react-native-async-storage/async-storage
+    npm install --save @segment/analytics-react-native @segment/sovran-react-native react-native-get-random-values
     ```
 3. If you're using iOS, install native modules with:
 
@@ -339,6 +339,76 @@ If you don't do this, the old client instance would still exist and retain the t
 
 Ideally, you shouldn't have to use this method, and the Segment client should be initialized only once in the application lifecycle.
 
+## Control upload with Flush Policies
+To granularly control when Segment uploads events you can use `FlushPolicies`.
+A Flush Policy defines the strategy for deciding when to flush. This can be on an interval, time of day, after receiving a certain number of events, or after receiving a particular event. This gives you more flexibility on when to send event to Segment.
+Set Flush Policies in the configuration of the client:
+```ts
+const client = createClient({
+  // ...
+  flushPolicies: [
+    new CountFlushPolicy(5),
+    new TimerFlushPolicy(500),
+    new StartupFlushPolicy(),
+  ],
+});
+```
+You can set several policies at a time. When a flush occurs, it triggers an upload of the events, then resets the logic after every flush. 
+As a result, only the first policy to reach `shouldFlush` will trigger a flush. In the example above either the event count reaches 5 or the timer reaches 500ms, whatever comes first will trigger a flush.
+Segment has several standard Flush Policies:
+- `CountFlushPolicy` triggers when you reach a certain number of events
+- `TimerFlushPolicy` triggers on an interval of milliseconds
+- `StartupFlushPolicy` triggers on client startup only
+
+### Adding or removing policies
+One of the main advantages of Flush Policies is that you can add and remove policies on the fly. This is very powerful when you want to reduce or increase the amount of flushes. 
+For example you might want to disable flushes if you detect the user has no network:
+```ts
+import NetInfo from "@react-native-community/netinfo";
+const policiesIfNetworkIsUp = [
+  new CountFlushPolicy(5),
+  new TimerFlushPolicy(500),
+];
+// Create our client with our policies by default
+const client = createClient({
+  // ...
+  flushPolicies: policies,
+});
+// If Segment detects the user disconnect from the network, Segment removes all flush policies. 
+// That way the Segment client won't keep attempting to send events to Segment but will still 
+// store them for future upload.
+// If the network comes back up, the Segment client adds the policies back. 
+const unsubscribe = NetInfo.addEventListener((state) => {
+  if (state.isConnected) {
+    client.addFlushPolicy(...policiesIfNetworkIsUp);
+  } else {
+    client.removeFlushPolicy(...policiesIfNetworkIsUp)
+  }
+});
+```
+### Creating your own flush policies
+You can create a custom Flush Policy special for your application needs by implementing the  `FlushPolicy` interface. You can also extend the `FlushPolicyBase` class that already creates and handles the `shouldFlush` value reset.
+A `FlushPolicy` only needs to implement two methods:
+- `start()`: Executed when the flush policy is enabled and added to the client. This is a good place to start background operations, make async calls, configure things before execution
+- `onEvent(event: SegmentEvent)`: Called on every event tracked by your client
+- `reset()`: Called after a flush is triggered (either by your policy, by another policy, or manually)
+Your policies also have a `shouldFlush` observable boolean value. When this is set to true the client attempts to upload events. Each policy should reset this value to `false` according to its own logic, although it's common to do it inside the `reset` method.
+```ts
+export class FlushOnScreenEventsPolicy extends FlushPolicyBase {
+  onEvent(event: SegmentEvent): void {
+    // Only flush when a screen even happens
+    if (event.type === EventType.ScreenEvent) {
+      this.shouldFlush.value = true;
+    }
+  }
+  reset(): void {
+    // Superclass will reset the shouldFlush value so that the next screen event triggers a flush again
+    // But you can also reset the value whenever, say another event comes in or after a timeout
+    super.reset();
+  }
+}
+```
+
 ## Automatic screen tracking
 As sending a screen() event with each navigation action can get tiresome, it's best to track navigation globally. The implementation is different depending on which library you use for navigation. The two main navigation libraries for React Native are [React Navigation](https://reactnavigation.org/){:target="_blank"} and [React Native Navigation](https://wix.github.io/react-native-navigation/docs/before-you-start/){:target="_blank"}.
 
@@ -537,13 +607,13 @@ These are the example plugins you can use and alter to meet your tracking needs:
 | Firebase            | `@segment/analytics-react-native-plugin-consent-firebase`    |
 | IDFA                | `@segment/analytics-react-native-plugin-idfa`                |
 
-## Destination Filters
+<!-- ## Destination Filters
 > info ""
 > Destination filters are only available to Business Tier customers.
 >
 > Destination filters on mobile device-mode destinations are in beta and only supports Analytics-React-Native 2.0, [Analytics-Swift](/docs/connections/sources/catalog/libraries/mobile/swift/) and [Analytics-Kotlin](/docs/connections/sources/catalog/libraries/mobile/kotlin-android/).
 
-Use Analytics-React-Native 2.0 to set up [destination filters](docs/connections/destinations/destination-filters/) on your mobile device-mode destinations.
+Use Analytics-React-Native 2.0 to set up [destination filters](/docs/connections/destinations/destination-filters/) on your mobile device-mode destinations.
 
 > warning ""
 > You must use Analytics-React-Native version 2.9 or higher to implement destination filters.
@@ -574,7 +644,7 @@ To get started with destination filters on mobile device-mode destinations using
 
     segmentClient.add({ plugin: new DestinationFiltersPlugin() });
     segment.add({ plugin: new FirebasePlugin() })
-    ```
+    ``` -->
 
 ## Supported Destinations
 Segment supports a large number of [Cloud-mode](/docs/connections/destinations/#connection-modes) destinations. Segment also supports the below destinations for Analytics React Native 2.0 in device-mode, with more to follow:
@@ -609,6 +679,35 @@ const segmentWriteKey = Platform.iOS ? 'ios-writekey' : 'android-writekey';
 const segmentClient = createClient({
   writeKey: segmentWriteKey
 });
+```
+### What is the instanceId set in context?
+The instanceId was introduced in [V 2.10.1](https://github.com/segmentio/analytics-react-native/releases/tag/%40segment%2Fanalytics-react-native-v2.10.1) and correlates events to a particular instance of the client in a scenario when you might have multiple instances on a single app. 
+
+### How do I interact with the integrations object?
+The integrations object is no longer part of the Segment events method signature. To access the integrations object and control what destinations the event reaches, you can use a Plugin:
+
+```js
+import {
+    EventType,
+    Plugin,
+    PluginType,
+    SegmentEvent,
+  } from '@segment/analytics-react-native';
+  
+  export class Modify extends Plugin {
+    type = PluginType.before;
+  
+    async execute(event: SegmentEvent) {
+      if (event.type == EventType.TrackEvent) {
+        let integrations = event.integrations;
+        if (integrations !== undefined) {
+          integrations['Appboy'] = false;
+        }
+      }
+      //console.log(event);
+      return event;
+    }
+  }
 ```
 ## Changelog
 [View the Analytics React Native 2.0 changelog on GitHub](https://github.com/segmentio/analytics-react-native/releases){:target="_blank"}.

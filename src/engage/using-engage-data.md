@@ -9,7 +9,7 @@ You can send your Computed Traits and Audiences to your Segment Destinations, wh
 <!-- TODO: image here? -->
 
 > success ""
-> **Tip!** You can also use the [Profile API](/docs/profiles/profile-api/) to activate Engage data programmatically.
+> **Tip!** You can also use the [Profile API](/docs/unify/profile-api/) to activate Engage data programmatically.
 
 ## Engage Destination types: Event vs. List
 
