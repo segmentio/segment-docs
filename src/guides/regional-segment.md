@@ -46,8 +46,14 @@ All Segment client-side SDKs read this setting and update themselves automatical
 
 ### Server-side and project sources
 When you send data from a server-side or project source, you can use the `host` configuration parameter to send data to the desired region:
-1. Oregon (Default) — `api.segment.io/v1`
-2. Dublin — `events.eu1.segmentapis.com/`
+1. Oregon (Default) — `https://events.segmentapis.com/v1`
+2. Dublin — `https://events.eu1.segmentapis.com/`
+
+Here is an example of how to set the host:
+
+```json
+Analytics.Initialize("<YOUR WRITEKEY HERE>", new Config().SetHost("https://events.eu1.segmentapis.com (https://events.eu1.segmentapis.com/)"));
+```
 
 ## Create a new workspace with a different region
 
