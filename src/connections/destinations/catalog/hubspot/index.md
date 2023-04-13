@@ -277,7 +277,7 @@ Engage sends **Account-Level data** to HubSpot using **Identify** calls to add a
 
 3. Enter a name for the audience, and a description.
    Write down the **Audience key** (you'll need this to configure HubSpot in the next step), but don't click **Create Audience** yet.
-   ![A screenshot of the last step in the Configure and Preview Your Audience setup flow, with a red arrow pointing to the audience key.](images/hubspot-personas03.png)
+   ![A screenshot of the last step in the Configure and Preview Your Audience setup flow.](images/hubspot-personas03.png)
 
 
 4. Go to your HubSpot Settings.
@@ -285,7 +285,7 @@ Engage sends **Account-Level data** to HubSpot using **Identify** calls to add a
    This is required because HubSpot's schema is explicitly defined.
    You must do this *before* you send any Engage data from Segment to HubSpot.
 
-   ![A screenshot of the Settings page in Hubspot, with an arrow pointing to the Create a property button.](images/hubspot-personas04.png)
+   ![A screenshot of the Settings page in Hubspot.](images/hubspot-personas04.png)
 
 
 6. Set the object type.
@@ -298,7 +298,7 @@ Engage sends **Account-Level data** to HubSpot using **Identify** calls to add a
 > The audience label's “internal name” in HubSpot *must exactly match* the Segment  `audience key`. You can check this by clicking the `</>` icon to the right of the Label field, and making corrections.
 
 
-   ![A screenshot of the Create a new property setup flow in Hubspot, with an arrow pointing to the code icon next to the Label field.](images/hubspot-personas05.png)
+   ![A screenshot of the Create a new property setup flow in Hubspot.](images/hubspot-personas05.png)
 
 8. On the next screen, set the **Field type** for audiences to `Single Checkbox`. (This represents a boolean value that indicates audience membership.)
    (For computed traits, depending on whether the output is a string or number, select `Single-line text` or `Number`.)
@@ -319,11 +319,11 @@ You can use the [Profiles Debugger](/docs/unify/debugger) to see the calls sent 
 
 You can check back in HubSpot to see the audience boolean as a contact property. For the audience created in the example above, you could check individual contact profiles and see a contact property called  `Email Opened 30 Days` = `Yes`.
 
-![A screenshot of the Hubspot Managed Properties settings page, with an arrow pointing to the custom field Email Opened 30 days.](images/hubspot-personas08.png)
+![A screenshot of the Hubspot Managed Properties settings page.](images/hubspot-personas08.png)
 
 You can also see this in the contact property history for each user record.
 
-![A screenshot of the Property history for the profile present in the Profiles debugger, with the custom property Email Opened 30 days present.](images/hubspot-personas09.png)
+![A screenshot of the Property history for the profile present in the Profiles debugger.](images/hubspot-personas09.png)
 
 
 

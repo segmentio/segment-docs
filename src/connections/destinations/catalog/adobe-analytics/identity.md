@@ -9,14 +9,14 @@ The Identity Resolution destination settings are:
 - **Marketing Cloud ID**
 - **Drop VisitorID**, and **No Fallbacks for VisitorID:Server-Side Only** destination settings.
 
-![A screenshot of the Adobe Analytics settings page in Segment, with the Identity Resolution section selected.](images/identity-resolution.png)
+![The Adobe Analytics settings page in Segment, with the Identity Resolution section selected.](images/identity-resolution.png)
 
 The Timestamp destination settings are:
 - **Timestamp Option**
 - **Send Both Timestamp and VisitorID for Timestamp Optional Reporting Suites**
 - **Prefer VisitorID for Hybrid Timestamp Reporting**
 
-![A screenshot of the Adobe Analytics settings page in Segment, with the Timestamps section selected.](images/timestamps.png)
+![The Adobe Analytics settings page in Segment, with the Timestamps section selected.](images/timestamps.png)
 
 ## Analytics.js - Device Mode
 

@@ -73,7 +73,7 @@ Here's an example of how you might map Segment events to Adobe Analytics events 
 
 <!--todo: rewrite this so that it doesn't rely on the screenshots to explain how to map events in Segment-->
 
-![A screenshot of the Adobe Analytics settings page in Segment, with the Mappings section selected and a sample event mapping under the "Event2 Mobile" tab.](images/eventsV2.png)
+![A screenshot of the Adobe Analytics settings page in Segment, with the Mappings section selected.](images/eventsV2.png)
 
 Here's an example of how you would implement the same mapping in Adobe's Mobile Services Dashboard:
 
@@ -83,7 +83,7 @@ Here's an example of how you would implement the same mapping in Adobe's Mobile 
 
 You can use the `Context Data Variables` settings to map Segment `properties` to any context data variable defined in your Adobe Analytics Mobile Services dashboard. This includes both Adobe `props` and `eVars`. You can see a list of the Adobe variable types in your Adobe Mobile Services dashboard.
 
-![A screenshot of the Adobe Analytics settings page in Segment, with the Mappings section selected and a sample event mapping under the "Context Data Variables" tab.](images/map-property-segment.png)
+![A screenshot of the Adobe Analytics settings page in Segment, with the Mappings section selected.](images/map-property-segment.png)
 
 Here's an example of how you would implement the same mapping in Adobe's Mobile Services Dashboard:
 

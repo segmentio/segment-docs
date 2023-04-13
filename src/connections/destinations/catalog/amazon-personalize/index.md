@@ -473,7 +473,7 @@ With Segment's ETL Job script created and saved, it's time to run the job to cre
 
 3. Click the **Security configuration, script libraries, and job parameters** section header to cause the job parameters fields to be displayed.
 
-    ![A screenshot of the Parameters panel, with an outline around the Security configuration, script libraries, and job parameters section.](images/GlueRunJobDialog.png)
+    ![A screenshot of the Parameters panel.](images/GlueRunJobDialog.png)
 
 
 4. Scroll down to the **Job parameters** section. This is where Segment will specify the job parameters that Segment's script expects for the path to the input data and the path to the output file.
@@ -502,7 +502,7 @@ To verify the output file:
 2. Click on the bucket name. If the job completed successfully, you'll see a folder named **transformed**.
 3. Click on **transformed** and you'll see the output file created by the ETL job.
 
-    ![A screenshot of the overview for the personalize data bucket created in step 1, above, with a box around the output file created by the ETL job.](images/GlueJobOutputFile.png)
+    ![A screenshot of the overview for the personalize data bucket created in step 1.](images/GlueJobOutputFile.png)
 
 
 ## Create Personalize Dataset Group, Solution and Campaign
@@ -579,7 +579,7 @@ To create a personalize dataset group:
 
 14. Find the location of the CSV file you generated in the earlier steps. This needs to be configured in the **Data Location** field on this screen.
 
-    ![A screenshot of the Import user-item interaction data, with the Data Location field visible.](images/PersonalizeImportJob.png)
+    ![A screenshot of the Import user-item interaction data, with the Data Location field present.](images/PersonalizeImportJob.png)
 
 15. After clicking the **Finish** button at the bottom of the page, you'll return to the Personalize Dashboard where you can monitor the progress of your interaction dataset as it is being created.
 
@@ -733,7 +733,7 @@ To build a Lambda function to process Segment events:
 
 7. Click **Create function**.
 
-    ![A screenshot of the Create a function settings, with a function name, runtime, permissions, and role name entered.](images/LambdaCreateFunction.png)
+    ![A screenshot of the Create a function settings page, with a function name, runtime, permissions, and role name entered.](images/LambdaCreateFunction.png)
 
 
 **Lambda Function Source Code**
@@ -947,7 +947,7 @@ You need to create a Personalize Event Tracker for the Dataset Group you created
 
 7. Returning to the Lambda function, paste the Event Tracker's tracking ID into an Environment variable for the function with the key `personalize_tracking_id`.
 
-    ![A screenshot of the key/value pairs under the Environment variables page, with the key personalize_tracking_id visible.](images/LambdaEnvVariable.png)
+    ![A screenshot of the key/value pairs under the Environment variables page, with the key personalize_tracking_id present.](images/LambdaEnvVariable.png)
 
 8. Add environment variables for Segment and for the function to tell it the Personalize Campaign to call for retrieving recommendations.
 
@@ -965,7 +965,7 @@ You need to create a Personalize Event Tracker for the Dataset Group you created
 13. Add an environment variable with the key `personalize_campaign_arn` and value of the Campaign ARN in your clipboard.
 14. Scroll to the top of the page and click **Save** to save your changes.
 
-    ![A screenshot of the environmental variables panel, with a key/value pair of "personalize_campaign_arn" included.](images/LambdaRecCampaignArn.png)
+    ![A screenshot of the environmental variables panel, with a key/value pair of personalize_campaign_arn included.](images/LambdaRecCampaignArn.png)
 
 15. You need a key for the Segment source that will get Segment's update events. Go back to your Segment workspace tab or window, and click on the source which will receive events from your Lambda, and copy the write key from the **Overview** tab.
 
@@ -976,7 +976,7 @@ You need to create a Personalize Event Tracker for the Dataset Group you created
 
 _Make sure to click **Save**_ here or you will need to do this again.
 
-![A screenshot of the environmental variables panel, with a key/value pair, "connections_source_api_key", included.](images/LambdaRecCampaignArn.png)
+![A screenshot of the environmental variables panel, with a key/value pair, connections_source_api_key, included.](images/LambdaRecCampaignArn.png)
 
 
 Your lambda is now ready to receive events from Segment.  Next, you will need to enable your Segment Personalize Destination.

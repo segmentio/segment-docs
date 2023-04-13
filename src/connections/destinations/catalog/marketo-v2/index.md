@@ -12,7 +12,7 @@ We'll need your Munchkin Account ID, Client Secret, and Client ID.
 
 To get your Munchkin Account ID [login to your Marketo account](https://login.marketo.com/), click Admin in the top right corner, then click Munchkin on the left side bar.
 
-![A screenshot of a Marketo account, with an arrow pointing to the Admin and Munchkin tabs.](images/iL42ERv0g5X+.png)
+![A screenshot of a Marketo account.](images/iL42ERv0g5X+.png)
 
 
 To get your Client Secret and Client ID, you must create a role that has full API access, an API only user, and then create a Service in Marketo.
@@ -157,7 +157,7 @@ Analytics.track(
 ![A screenshot of the Fields tab inside of the Marketo Custom Activities page.](images/cIBsfYeh2B8+.png)
 
 - **Primary Field**. When creating a Custom Activity in Marketo, you have to set a Primary Field. If you are unsure which field was set as the primary field, when you are looking at the list of fields for your Custom Activity in Marketo, there will be a red star next to your Primary Field.
-![A screenshot of the Fields tab inside of the Marketo Custom Activities page, with a red star next to Product Name field.](images/cZuvsHeaepX+.png)
+![A screenshot of the Fields tab inside of the Marketo Custom Activities page.](images/cZuvsHeaepX+.png)
 
 ## Page
 
@@ -250,11 +250,11 @@ There are a few necessary steps that have to be taken to migrate from Segment's 
 3. `Track` calls must be mapped in your Destination settings. Our Marketo Destination sent `track` calls as a Munchkin Visit WebPage event in Marketo. In Marketo V2, we'll send your track calls to your Marketo Custom Activities. Detailed instructions [here](/docs/connections/destinations/catalog/marketo-v2/#track).
 4. If there are any custom Lead fields that you'd like sent to Marketo in your `Identify` calls, you must create custom fields in Marketo and add them in your Destination settings. In addition, if you are connecting Marketo V2 in Device-mode, an empty form must be created in Marketo to create and update leads. Detailed instructions [here](/docs/connections/destinations/catalog/marketo-v2/#identify).
 5. Update anything in Marketo that rely on the way V1 sends `.track()` events to be triggered by your custom activities. For example, our V1 Marketo destination sent track events as a "Visit Web Page" event with `/event/<your_event_name>`. So if you a workflow that is triggered by a "Visit Web Page" event where the web page contains `/event/<your_event_name>`, you'll have to swap out the "Visit Web Page" event trigger you have with your Custom Attribute Trigger. In the right side bar, click the "Custom" folder under "Triggers" and select the trigger that you set for your custom activity:
-   ![A screenshot of the Smart List tab in Marketo with an arrow pointing to the Custom folder.](images/cPD4kP65buG+.png)
+   ![A screenshot of the Smart List tab in Marketo.](images/cPD4kP65buG+.png)
 
 
    To figure out what the trigger name for that Custom Activity is, navigate to the admin section of Marketo > Marketo Custom Activities > Click on your activity from the side bar and you'll see the trigger name:
 
-   ![A screenshot of the Marketo Custom Activities field, with a box around the trigger field.](images/cg6YhDEPWXv+.png)
+   ![A screenshot of the Marketo Custom Activities field.](images/cg6YhDEPWXv+.png)
 
 6. When enabling Marketo V2, because of the way Marketo's API works, there is potential to create duplicate leads, especially when the first enabling the destination. For ways to prevent this, check out the Preventing Duplicate Leads.

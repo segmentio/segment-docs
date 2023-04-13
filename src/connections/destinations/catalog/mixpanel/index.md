@@ -107,7 +107,7 @@ analytics.identify({
 Group calls are sent to Mixpanel if, **and only if**,
 
 1. The Group Identifier Traits setting has one or more traits saved in the destination settings for Mixpanel.
-   ![A screenshot of the Traits & Properties page in Mixpanel, with an arrow pointing to the Group Identifier Traits page](images/mixpanel-group-id-traits.png)
+   ![A screenshot of the Traits & Properties page in Mixpanel.](images/mixpanel-group-id-traits.png)
 2. You have created a group key of the same name in your Mixpanel [project settings](https://help.mixpanel.com/hc/en-us/articles/360025333632-Group-Analytics#implementation){:target="_blank"}.
 3. A Group trait with the same name as one of the configured Group Identifier Traits is sent with the group call.
 
@@ -577,29 +577,29 @@ You can send computed traits and audiences created in Engage to Mixpanel and use
 
 You can send Computed Traits created in Engage to Mixpanel as `identify` calls to create user properties in Mixpanel.
 
-![A screenshot of the Traits setting page in Segment, with the Computed Traits section selected](images/pers-01-computed.png)
+![A screenshot of the Traits setting page in Segment, with the Computed Traits section selected.](images/pers-01-computed.png)
 
 You can check a specific user profile in Mixpanel for Computed Traits by going to **Users → Explore** and search for a specific user to view their profile.
 
-![A screenshot of a user profile in Mixpanel with the Properties tab selected, and a box around the custom traits](images/pers-02-mpx-profile-computed.png)
+![A screenshot of a user profile in Mixpanel with the Properties tab selected.](images/pers-02-mpx-profile-computed.png)
 
 
 Computed traits without a lookback window search across all historical events, and update in real time.
 
 Computed traits with a lookback window only search across events that occurred within the specified time frame. Computed traits *with* a lookback window are updated hourly.
 
-![A screenshot of the "Configure and Preview Your Trait" page in Segment, with an arrow pointing to the Lookback window](images/pers-03-lookback.png)
+![A screenshot of the "Configure and Preview Your Trait" page in Segment.](images/pers-03-lookback.png)
 
 
 If you choose to include anonymous users when you create the computed trait, you must use the [`alias` call](#alias) to merge user profiles when they become a known user.
 
-![A screenshot of the A screenshot of the "Configure and Preview Your Trait" page in Segment, with the "Include anonymous users" box checked](images/pers-04-incl-anons.png)
+![A screenshot of the A screenshot of the "Configure and Preview Your Trait" page in Segment, with the "Include anonymous users" box checked.](images/pers-04-incl-anons.png)
 
 ### Using Engage Audiences with Mixpanel
 
 You can send Engage Audiences to Mixpanel as `identify` or `track` calls. You can choose the type of call to send when you add Mixpanel as a destination for an audience.
 
-![A screenshot of the Mixpanel Connection settings page in Segment](images/pers-05-pdest-settings.png)
+![A screenshot of the Mixpanel Connection settings page in Segment.](images/pers-05-pdest-settings.png)
 
 
 When you send custom traits as `identify` calls, the name of the audience is added to the user's profile as a user trait, with a boolean value to indicate if the user is in the audience. For example, when a user first completes an order in the last 30 days, Segment sends an `identify` call with the property `order_completed_last_30days: true`. When this user no longer satisfies these criteria (for example when their last purchase was more than 30 days ago) Engage sets that value to `false`.
@@ -622,19 +622,19 @@ When you use `track` calls, Segment sends an `Audience Entered` event when the u
 
 You can check a specific user profile in Mixpanel for audience events by going to **Users → Explore** and searching for a specific user to view their profile. Look for `Audience Entered` and `Audience Exited` events in the Activity Feed.
 
-![A screenshot of a user profile in Mixpanel, with the Properties tab selected and a box around the Activity Feed.](images/pers-09-mxp-profile-activityfeed.png)
+![A screenshot of a user profile in Mixpanel, with the Properties tab selected.](images/pers-09-mxp-profile-activityfeed.png)
 
 Audiences without a lookback window searches across all historical events and update in real time.
 
 Audiences with a lookback window only search across events that occurred within the specified time frame. Audiences *with* a lookback window are updated hourly.
 
 
-![A screenshot of the Configure and Preview Your Audience page in Segment, with an underline under the lookback window.](images/pers-10-lookback.png)
+![A screenshot of the Configure and Preview Your Audience page in Segment.](images/pers-10-lookback.png)
 
 If you choose to include anonymous users when you create an audience, you must use the [alias call](#alias) to merge user profiles when they become a known user.
 
 
-![A screenshot of the Configure and Preview Your Audience page in Segment, with an underline under the Include anonymous users setting.](images/pers-11-incl-anons.png)
+![A screenshot of the Configure and Preview Your Audience page in Segment, with an line under the Include anonymous users setting.](images/pers-11-incl-anons.png)
 
 
 ## Setting Up Engage and Mixpanel
@@ -652,7 +652,7 @@ To send computed traits or audiences to Mixpanel, connect the destination to you
 > **Tip**: Mixpanel now accepts Identify calls by default. Previously, this was an additional paid feature.
 
 
-![A screenshot of the settings page for the Mixpanel destination, with an underline under the Use Mixpanel People setting.](images/pers-12-settings-people.png)
+![A screenshot of the settings page for the Mixpanel destination.](images/pers-12-settings-people.png)
 
 
 ## Mixpanel Engage Details

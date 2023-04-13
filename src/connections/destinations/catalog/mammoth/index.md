@@ -39,7 +39,7 @@ Mammoth Segment destination requires that you have a dataset on Mammoth's side. 
 
    The dataset you created shows an API KEY which you need to connect to Segment.
 
-   ![A screenshot of a dataset in Mammoth, with a box around the API Key.](images/JsTuMCy.png)
+   ![A screenshot of a dataset in Mammoth.](images/JsTuMCy.png)
 
 5. Click the new dataset you created in the previous step.
 6. From the preview panel, click **copy** to copy the API key to your clipboard.

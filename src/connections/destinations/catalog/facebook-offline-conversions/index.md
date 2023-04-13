@@ -31,7 +31,7 @@ This page is about the **Facebook Offline Conversions**. For documentation on ot
 
 3. Authorize Segment to send data on your behalf by connecting through OAuth:
 
-![A screenshot of the Facebook Offline Conversions page in the Segment app, with an orange arrow pointing to the Connect to Facebook Offline Conversions button.](images/8acf724eb5cf484f29f4dd278ccbd118.png)
+![A screenshot of the Facebook Offline Conversions page in the Segment app.](images/8acf724eb5cf484f29f4dd278ccbd118.png)
 
 By doing so, we will ask for `ads_management` and `public_profile` access scopes which will allow Segment to have proper permissions to send offline events to your Event Sets. You can read more about Facebook's [access and authentication](https://developers.facebook.com/docs/marketing-api/access) if you would like to know exactly what these scopes allow.
 

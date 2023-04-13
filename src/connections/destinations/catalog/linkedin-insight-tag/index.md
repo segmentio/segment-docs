@@ -39,7 +39,7 @@ Click **I will use a tag manager**.
 
 Your partner ID appears in a box below. Click the box to copy your partner ID to your clipboard.
 
-![A screenshot of LinkedIn's See Tag section, with an outline around the partner ID.](images/will-use-tag-manger.png)
+![A screenshot of LinkedIn's See Tag section.](images/will-use-tag-manger.png)
 
 
 ### **4. Activate the LinkedIn Insight Tag destination in Segment.**

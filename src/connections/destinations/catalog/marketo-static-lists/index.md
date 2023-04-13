@@ -114,6 +114,6 @@ Only users in the audience who also have an email address are uploaded to the li
 
 You might need to adjust your query to filter out users without an email so you can get a better estimate of how many users will appear on the list. In the example below, we added an AND condition where users have a Custom trait of `email` which `exists`.
 
-![A screenshot of the Audiences page in Segment, with a box outlining the custom trait discussed above.](images/personas-add-emailtrait.png)
+![A screenshot of the Audiences page in Segment.](images/personas-add-emailtrait.png)
 
 If a user has multiple email addresses, each address appears once in the Marketo lists. 

@@ -45,7 +45,7 @@ To set up Adobe Analytics as a destination for your Segment data, Segment needs 
 
 - If you're using Device-mode data collection with Analytics.js, or using a server-side library, you need your Adobe Report Suite ID, and your Tracking Server URL. You'll add this information in the Destination settings in the Segment app UI so that Segment can send information to Adobe. An example tracking server is `jimsbrims.sc.omtrdc.net`. You do not  need to include the hypertext transfer protocol (ie. `http://`). For more information on  how to identify your analytics tracking server and report suites see Adobe's [documentation here](https://docs.adobe.com/content/help/en/analytics-learn/tutorials/implementation/implementation-basics/how-to-identify-your-analytics-tracking-server-and-report-suites.html).
 
-![A screenshot of the Adobe Analytics settings page in Segment, with the General section selected, and the above tracking server URL entered in the Tracking Server URL field.](images/trackingurl-setup.png)
+![The Adobe Analytics settings page in Segment, with the General section selected.](images/trackingurl-setup.png)
 
 - If you're collecting data from mobile devices, you can download the `ADBMobileConfig.json` file instead of specifying these settings in the UI which contains that information. Follow the instructions in Adobe's documentation, [here for iOS](https://marketing.adobe.com/resources/help/en_US/mobile/ios/dev_qs.html), and [here for Android](https://marketing.adobe.com/resources/help/en_US/mobile/android/dev_qs.html).
 
@@ -84,7 +84,7 @@ Segment's Analytics.js destination loads the Adobe `visitorAPI.js` library, but 
 
 To use Adobe's Marketing Cloud Visitor ID Service, enter your **Marketing Cloud Organization ID** in the **Identity Resolution** settings tab in the Segment app.
 
-![A screenshot of the Adobe Analytics settings page in Segment, with the Identity Resolution section selected and a sample Organization ID entered in the "Marketing Cloud Organization Id" field.](images/mcvid.png)
+![A screenshot of the Adobe Analytics settings page in Segment, with the Identity Resolution section selected.](images/mcvid.png)
 
 ---
 
