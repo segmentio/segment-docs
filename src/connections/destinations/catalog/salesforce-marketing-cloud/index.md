@@ -109,14 +109,14 @@ Before you leave this screen, copy the External Key for the Data Extension. You'
 
 The example below shows a Data Extension for Identify calls that stores Email, First Name, and Last Name traits. Note the external key in the left column.
 
-![](images/identify-dext.png)
+![A screenshot of the SFMC Contact Builder, with a Test Identify call on the Data Extensions page.](images/identify-dext.png)
 
 
 ### Configure the Salesforce Marketing Cloud Destination in Segment
 
 1. Add the Salesforce Marketing Cloud Destination to your Segment Workspace.
 2. In the **Destination Settings**, locate the **Identify Data Extension External Key** setting. Enter the External Key you copied for the Data Extension that you set up in SFMC.
-![](images/sfmc-identify-dext-key.png)
+![A screenshot of the settings page in Segment for SFMC, with an arrow pointing to the Identify Data Extension External Key field.](images/sfmc-identify-dext-key.png)
 
 
 #### Data Formatting Requirements
@@ -191,7 +191,7 @@ When you finish setting up the Data Extension, copy the External Key. You'll use
 
 The example below shows a Data Extension for `User Registered` Track calls that stores the `userId`, `timestamp`, and `plan` properties:
 
-![](images/dext-user-regd-example.png)
+![A screenshot of a User Registered call in the SFMC Data Extension tab.](images/dext-user-regd-example.png)
 
 > warning ""
 > Segment doesn't automatically send timestamps. You must add timestamps as a property in the Track Call to send timestamps to the destination.
@@ -205,7 +205,7 @@ Just as you did for the Identify Data Extension, copy and paste the External ID 
 
 1. Add the Salesforce Marketing Cloud Destination to your Segment Workspace if you haven't already.
 2. In the **Destination Settings**, locate the "Conversion events" setting. Enter the External Key you copied for the Track Data Extension that you set up in SFMC.
-![](images/sfmc-conversion-events.png)
+![A screenshot of the settings page in Segment for SFMC.](images/sfmc-conversion-events.png)
 
 
 #### Configuring Primary Keys for each conversion event
@@ -224,7 +224,7 @@ If you don't want to deduplicate rows, you can check the `UUID Primary Key` to c
 
 If we return to the example of one user clicking multiple buttons, if you check the `UUID Primary Key` box then every time the user clicks a button, it creates a new record in the `Button Clicked` Data Extension.
 
-![](images/uuid-primary-key.png)
+![A screenshot of the event conversion settings page in Segment.](images/uuid-primary-key.png)
 
 
 #### Using multiple Primary Keys
@@ -288,7 +288,7 @@ When you sync to an existing Data Extension, note these additional requirements:
 - All fields in the Data Extension must be nullable (meaning optional, or not required), except the `Contact Key` field.
 - Any fields that you send with Segment, and which already exist in the Data Extension, must be of the correct data type. The standard identifiers Segment sends come from the [Context object](/docs/connections/spec/common/#context), and appear in the image below.
 
-![](images/existing-dext-data-types.png)
+![A screenshot of the Fields section on the Data Extension page in SFMC.](images/existing-dext-data-types.png)
 
 
 ### Syncing Engage Audiences to SFMC
@@ -331,7 +331,7 @@ If your SFMC instance already contains data, then when Segment sends Identify ca
 
 When you send an email or push notification, you need to choose which email address or phone number to send to. The options for selecting an email/phone in the Journey Builder look like this:
 
-![](images/journey-builder-options.png)
+![A screenshot of the Journey Builder, with the Default Email Address and Default Mobile Number options present.](images/journey-builder-options.png)
 
 If you select **Use email attribute from Entry Source** you can use an email or phone attribute included in the API Event or Data Extension that triggers the Journey. (Otherwise, you must use an email address attribute or the default phone number attribute on a Contact record.)  To use this, you must include an email address and phone number as a property or trait in every single Track/Identify call mapped to SFMC.
 

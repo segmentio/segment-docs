@@ -22,6 +22,6 @@ Go back to the Repeater destination's settings, and add this `writeKey` to the w
 
 You can do this for as many sources as you need.
 
-![](images/write-key-settings.png)
+![A screenshot of the Write Keys field in the Repeater destination settings page.](images/write-key-settings.png)
 
 Repeater sends all events it receives to the sources you specified, identified by the write key(s) you added.
