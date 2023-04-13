@@ -2,8 +2,6 @@
 title: Outfunnel Destination
 hide-boilerplate: true
 hide-dossier: true
-private: true
-hidden: true
 id: 63ff8bae963d5cb4fc79f097
 ---
 
