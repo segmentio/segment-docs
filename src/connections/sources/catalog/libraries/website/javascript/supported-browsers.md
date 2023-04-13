@@ -16,8 +16,8 @@ The library is regularly tested and is functional with the following browsers:
 - Brave
 
 > warning "Deprecation of Analytics.js Classic"
-> Analytics.js Classic was deprecated on February 28, 2023. At this time, Segment is upgrading all sources not yet upgraded to [Analytics.js 2.0](/docs/connections/sources/catalog/libraries/website/javascript/). The upgrade process will complete for all users by the end of March 2023. 
-> <br><br>Learn how to [upgrade to Analytics.js 2.0](/docs/connections/sources/catalog/libraries/website/javascript/upgrade-to-ajs2). 
+> Analytics.js Classic was deprecated on February 28, 2023. As of March 2023, Segment upgraded all sources to [Analytics.js 2.0](/docs/connections/sources/catalog/libraries/website/javascript/). 
+
 
 ### Internet Explorer Support
 

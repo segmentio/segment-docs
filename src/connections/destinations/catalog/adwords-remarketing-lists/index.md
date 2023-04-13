@@ -88,7 +88,7 @@ Before you start, make sure you have administrative access to the Google Ads acc
 2. Give your audience a name, some event and trait criteria, then click **Preview**.
 3. Select “Google Ads Remarketing Lists” as a destination for your audience.
 4. Select either email or mobile ID to use as a custom matcher.
-![](images/garl-select_id.png)
+![A screenshot of the AdWords Remarketing Lists setup page in the Segment app, with the Connection settings dropdown showing Email and Mobile ID options.](images/garl-select_id.png)
 
 5. Give your audience a name, and click **Create**.
 
@@ -99,7 +99,7 @@ Before you start, make sure you have administrative access to the Google Ads acc
 
 In Google Ads, go to **Tools & Settings** > **Shared Library** > **Audience manager** > **Audience lists**.
 
-![](images/garl-audience_mgr.png)
+![A screenshot of the Google Ads Audience lists page, with one list currently populating.](images/garl-audience_mgr.png)
 
 > info ""
 > **Note**: Google Ads can take 24+ hours to fully process initial audience uploads before they can be used for a campaign. If the audience is still processing, the list status appears as “Populating”.
@@ -111,7 +111,7 @@ In Google Ads, go to **Tools & Settings** > **Shared Library** > **Audience mana
 - Make sure you authorized Google Ads and selected the correct account.
 - Make sure you have administrator access for your Google Ads account. You can check that your credentials are correct by navigating to the Google Ads Remarketing Lists destination in **Engage Settings** > **Destinations**, and viewing the settings.
 
-![](images/garl-configure_dest.png)
+![A screenshot of the Segment destinations page, with the Google AdWords Remarketing Lists destination selected.](images/garl-configure_dest.png)
 
 ### Audience size smaller than expected
 

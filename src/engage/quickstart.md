@@ -50,11 +50,9 @@ Once the replay finishes, you can see the data replayed into Engage using the Pr
 
 ## Step 5: Create an Audience
 
-You can build an audience using any of the source data that flows into your Engage space. To further verify your data, in this step create an Audience that you are familiar with, and that you already have a rough idea of the size of. For example, you might know the number of new website user sign-ups in the last seven days, if you've connected your production website source to Engage.
+You can build an audience using any source data that flows into your Engage space. 
 
-The Audience Builder UI prompts you to filter your users using on specific behaviors that they performed. The audience in the example below is all the users who have performed the event `User Signed Up` at least one time within the last 7 days:
-
-![Example audience with users who have performed the User Signed Up event](images/pers-qs-config_audience.png)
+In this step, use the Audience Builder UI to create an Audience using properties you're familiar with. For example, you might know the number of new website user signups in the last seven days, if you've connected your production website source to Engage. 
 
 To build your own audience:
 1. Navigate to your Engage space.
@@ -68,7 +66,7 @@ To build your own audience:
 4. Configure the settings for your condition. These vary by type, so explore the different options.
 5. Optionally, add more conditions until you're satisfied that the audience will only contain the users you want to target.
 
-Once you build your audience, click **Preview Results** to see the total number of users who meet the audience criteria, for example all users who signed up within the last seven days.
+Once you build your audience, click **Preview Results** to see the total number of users who meet the audience criteria.
 
 
 ## Step 6:  Connect the Audience to a Destination
