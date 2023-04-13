@@ -33,6 +33,9 @@ Each trigger parameter is optional. You can pass up to **one of each trigger par
 
 
 ## useQueryString option
+> info ""
+> Currently, the `useQueryString` option is only available when you load analytics.js through the [NPM package](https://www.npmjs.com/package/@segment/analytics-next){:target="_blank"}.
+
 Using `useQueryString` option enable you to control the query parameters behaviour. For example, you can entirely disable query string processing by setting `useQueryString` to `false`:
 ```
 analytics.load('<WRITE_KEY>', {
