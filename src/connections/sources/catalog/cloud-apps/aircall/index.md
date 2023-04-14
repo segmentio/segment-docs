@@ -29,7 +29,7 @@ Now you will be guided through three easy steps outlined below.
 
 * Click **Add** and a pop-up will appear.
     * From the pop-up, click on Authorize to allow this integration to access information about your calls in Aircall.
-![](images/XETcl1A.png)
+![Screenshot of the Aircall Authorize popup.](images/XETcl1A.png)
 
 If the integration is successful, you will see a message that says "Authentication for Aircall successfully created." Once you see this, click on Next.
 
@@ -43,17 +43,17 @@ Click on **Connect to Segment**
     * Login to your Segment account.
     * Go to Source from the left sidebar menu.
     * Click on Add Source and scroll to select HTTP API
-![](images/3edwOj6.png)
+![Screenshot of the Sources Catalog in Segment, with the HTTP API source selected.](images/3edwOj6.png)
 
     * Click on **Connect**
 
     * When creating a new Source setup, you will need to choose a name. We recommend that you choose an identifiable name such as "Aircall" for recognition. Then you may choose the warehouses or destination(s) where you'd like your data to be synced.
-![](images/eiXPdaW.png)
+![A screenshot of the Source setup page in Segment, with two warehouses connected.](images/eiXPdaW.png)
 
 
     * Once your source has been created, a **Write Key** will be generated. **Copy** this key and return to the configuration steps in Aircall to paste the key in the field as shown below.
-![](images/cUPCM42.png)
-![](images/uLu70VP.png)
+![Screenshot of the Aircall overview page in Segment, with the Write Key highlighted.](images/cUPCM42.png)
+![Screenshot of the Add Authentication popup in Aircall.](images/uLu70VP.png)
 
         - Note: if you see a field to input a **Engage Key**, this field is not required and you can leave this field blank.
 
@@ -66,7 +66,7 @@ If the integration is successful, you will see a message that says "Authenticati
 - There are up to [26 Aircall events](https://developer.aircall.io/api-references/#events) that can be pushed to Segment. As such, you will see a list of 26 possible events pre-populated for you as the default setting is for all and every Aircall event to be pushed to Segment.
 
 - **If there are events that you do not want to be sent to Segment**, delete the default value(s) shown in the list of 26 events (or write "null") if you determine that certain events should not be a source for Segment.
-![](images/qgbkbvA.png)
+![Screenshot of the Segment menu in Aircall with Segment event names entered in all of the event fields.](images/qgbkbvA.png)
 
 - Click on **Finish**.
 
