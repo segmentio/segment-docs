@@ -2,10 +2,12 @@
 title: Delivery Overview
 ---
 
-Delivery Overview is a visual observability tool designed to help Segment users diagnose event delivery issues to any cloud-streaming destination receiving events from cloud-streaming sources. 
+Delivery Overview is a visual observability tool designed to help Segment users diagnose event delivery issues for any cloud-streaming destination receiving events from cloud-streaming sources. 
 
 > info "Delivery Overview is currently in beta"
-> This means that the Delivery Overview feature is in active development, and some functionality may change before it becomes generally available. Beta users of Delivery Overview will still have access to the Event Delivery tab. During the public beta, Delivery Overview will only support event-streaming, cloud-mode destinations. 
+> This means that the Delivery Overview feature is in active development, and some functionality may change before it becomes generally available. Beta users of Delivery Overview will still have access to the Event Delivery tab. During the public beta, Delivery Overview will only support event-streaming, cloud-mode destinations.
+>
+> The Delivery Overview public beta was released to a select group of users on April 20, 2023, and will be released to all users on April 28, 2023.
 
 ## Key features
 
