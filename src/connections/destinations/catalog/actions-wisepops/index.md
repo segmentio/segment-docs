@@ -3,7 +3,6 @@ title: Wisepops Destination
 hide-boilerplate: true
 hide-dossier: true
 id: 6372e1e36d9c2181f3900834
-private: true
 ---
 
 {% include content/plan-grid.md name="actions" %}

@@ -88,3 +88,14 @@ Users with a Business Tier plan can enable Selective Sync for their Azure Synaps
 ### Segment is not able to connect to Azure Synapse Analytics
 
 If you encounter this error, create a [server-level firewall rule](https://docs.microsoft.com/en-us/azure/sql-data-warehouse/create-data-warehouse-portal#create-a-server-level-firewall-rule){:target="_blank"} that allows connections from the [Segment IPs](/docs/connections/storage/warehouses/faq/#which-ips-should-i-allowlist).
+
+### Incorrect server name - no such host
+
+When setting up Azure warehouse, you might run into this error:
+
+```
+An unexpected error occurred
+failed to connect to Azure SQL: lookup xxx.database.windows.net.database.windows.net: no such host
+```
+
+If you encounter this error, it is possible that you have included `.database.windows.net` in your server name. For the Server Name field, you only need to enter the part of the server name prior to `.database.windows.net`. 

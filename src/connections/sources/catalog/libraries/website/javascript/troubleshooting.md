@@ -76,7 +76,7 @@ The JavaScript console reveals all requests, outbound and inbound, to your brows
 
 ## Is there a size limit on requests?
 
-Yes, 32KB per event message. Events with a payload larger than 32KB are dropped, and Segment's servers respond with a `500` error.
+Yes, 32KB per event message. Events with a payload larger than 32KB are accepted by Analytics.js, with the browser returning a `200` response from the Segment servers, but the event will be silently dropped once it enters Segment's pipeline. 
 
 ## If Analytics.js fails to load, are callbacks not fired?
 
@@ -129,6 +129,18 @@ analytics.track("Receipt Viewed", {}, {
 })
 ```
 This works for any [context field](/docs/connections/spec/common/#context) that Segment automatically collects.
+
+When working with Page calls, you can overwrite context fields by following the same instructions above. However, because the `context.page` fields are also available in the `properties` parameter for page calls, you must also prevent the same fields in the `properties` parameter from being included in your Page call. The example below will allow you to overwrite `url` available in context field `page.url` and properties parameter:
+
+```js
+analytics.page("Receipt Page", {
+      url: null,
+},{
+    page: {
+        url: null
+    }
+})
+```
 
 
 ### What is the impact of exposing the source's write keys?

@@ -37,7 +37,7 @@ For example, you can use Analytics.js 2.0 to build features that:
 - Enrich events with customer or page context while in-flight with middleware
 - Check an event for errors after the event is sent to Segment
 
-## Getting Started
+## Getting started
 
 Use the [Analytics.js QuickStart Guide](/docs/connections/sources/catalog/libraries/website/javascript/quickstart/) to learn how to add Analytics.js to your site. Once you've installed the library, read on for the detailed API reference.
 
@@ -515,7 +515,7 @@ Destination flags are **case sensitive** and match [the destination's name in th
 > info ""
 > **Note:** To use this feature, you must be on snippet version 4.1.0 or later. You can get the latest version of the snippet [here](/docs/connections/sources/catalog/libraries/website/javascript/quickstart/#step-2-copy-the-segment-snippet).
 
-You can modify the `.load` method in Analytics.js (the second line of the snippet) to take a second argument. If you pass an object with an `integrations` dictionary (matching the format [above](#selecting-destinations-with-the-integrations-object)), then Segment only loads the integrations in that dictionary that are marked as enabled with the boolean value `true`.
+You can modify the `.load` method in Analytics.js (the second line of the snippet) to take a second argument. If you pass an object with an `integrations` dictionary, then Segment only loads the integrations in that dictionary that are marked as enabled with the boolean value `true`.
 
 You can only call `.load` on page load, or reload (refresh). If you modify the `.load` method between page loads, it doesn't have any effect until the page is reloaded.
 
@@ -543,6 +543,15 @@ analytics.load('writekey', { obfuscate: true })
 ```
 
 The `obfuscate` value is `false` by default.
+
+#### ISO string conversion
+By default, the Analytics.js library will convert ISO8061 strings to a Date object before passing it to downstream device-mode integrations. If you would like to disable this functionality and send those strings as they are passed to the event, you can use the load method to pass in the `disableAutoISOConversion` option.
+
+For example:
+
+```js
+analytics.load('writekey', { disableAutoISOConversion: true })
+```
 
 
 ## Retries
@@ -760,7 +769,7 @@ Analytics.js tracks across subdomains out of the box. All Segment destinations f
 
 To track activity on your subdomains, include the Segment Analytics.js snippet on each subdomain. Segment sets users' `anonymousId` on the top-level domain, so that users are tracked across any subdomain.
 
-Because Segment tracks across subdomains, you can either use the same Segment source, or use separate sources for each subdomain. What you decide depends on your team's goals for tracking each subdomain. 
+Because Segment tracks across subdomains, you can either use the same Segment source, or use separate sources for each subdomain. What you decide depends on your team's goals for tracking each subdomain.
 
 ## UTM Tracking
 
@@ -777,7 +786,7 @@ So, for example, if somebody follows the link with above query string to your si
  "name": "mytestcampaign",
  "source": "mysource",
  },
- 
+
 
 Whenever the UTM parameters are no longer a part of the URL, Segment no longer includes them. For example, if the user goes to a new page within your website which does not contain these parameters, they will not be included in subsequent events. UTM parameters are non-persistent by default as they could potentially cause data accuracy problems. Here's an example of why: Say a user clicks on an ad and lands on your site. He navigates around and bookmarks an internal page - or maybe shares a link with a friend, who shares it with another friend. All those links would then point back to the same test utm_source as the initial referrer for any purchase.
 
@@ -791,10 +800,10 @@ Segment loads the libraries required for your **enabled** Destinations. When you
 
 Using Analytics.js doesn't offer a large performance benefit, but is more performant than installing each of the destinations individually. And as more destinations move to accept data directly from Segment, you'll receive more performance benefits automatically.
 
-One option, if you don't want to use any bundled third-party tools, is to use the [Analytics-Node](https://github.com/segmentio/analytics-node) package. 
+One option, if you don't want to use any bundled third-party tools, is to use the [Analytics-Node](https://github.com/segmentio/analytics-node) package.
 
 > info ""
-> Analytics.js doesn't set third-party cookies and only sets first-party cookies. 
+> Analytics.js doesn't set third-party cookies and only sets first-party cookies.
 
 ### Bundle size
 
@@ -803,6 +812,27 @@ Segment's Analytics.js JavaScript snippet increases the page size by about 1.1KB
 The snippet asynchronously requests and loads a customized JavaScript bundle (`analytics.min.js`), which contains the code and settings needed to load your [device-mode destinations](/docs/connections/destinations/#connection-modes). The size of this file changes depending on the number of and which destinations you enable.
 
 Without any destinations enabled, the `analytics.min.js` file is about 62KB. Each time you enable a destination, the file's size may increase slightly.
+
+### Cookies set by Analytics.js
+
+Segment sets three cookies in general:
+
+| Cookie             | Description                                                                       |
+| ------------------ | --------------------------------------------------------------------------------- |
+| `ajs_anonymous_id` | An anonymous ID generated by Analytics.js, used for Segment calls.                |
+| `ajs_group_id`     | A group ID that can be specified by making a `group()` call with Analytics.js.    |
+| `ajs_user_id`      | A user ID that can be specified by making an `identify()` call with Analytics.js. |
+
+For Google Chrome, these cookies expire by default **one year** after the date created. Other [supported browsers](/docs/connections/sources/catalog/libraries/website/javascript/supported-browsers/) might have a different expiration time.
+
+Some user/group traits are also stored in `localStorage`:
+
+| Cookie                 | Description                                         |
+| ---------------------- | --------------------------------------------------- |
+| `ajs_user_traits`      | The traits that are passed in an `identify()` call. |
+| `ajs_group_properties` | The properties that are passed in a `group()` call. |
+
+Note that `localStorage` variables don't expire because the browser defines that functionality.
 
 ### Local storage cookies used by Analytics.js
 
@@ -814,6 +844,21 @@ Analytics.js uses `localstorage` cookies if you have retries enabled, to keep tr
 For more information, visit the [Segment localstorage-retry library](https://github.com/segmentio/localstorage-retry){:target="_blank"}.
 
 You can set the `debug` cookie to `analytics.js` to log debug messages from Analytics.js to the console.
+
+## Ad Blocking
+Segment doesn't endorse bypassing ad blockers for client-side tracking. Your users have control as to what gets loaded on the page, because they can add a plugin to block third party scripts from loading, which includes Segment. As you can expect some data loss in client-side tracking, there are three routes Segment recommends you to choose from:
+
+1. Honor the decision of the user to implement the ad blocker knowing that unfortunately, some data will be lost.
+2. Ask the customer to remove the ad blocker (for example, in the case of large, corporate customers).
+3. Move as many events and tracking over to a server-side library as possible, which won't run into the same limitations.
+
+If the above routes don't work, Segment provides these workarounds to help with tracking and to mitigate data loss:
+
+* Use the [bundle obfuscation](#bundle-obfuscation) feature. You can add an obfuscate property to the object in the second parameter, which obscures the URL from which your integrations and destination actions are loaded. This helps prevent words that are flagged by ad blockers to not be detected in your URL, enabling the integration to properly load.
+
+* Create a [custom proxy](/docs/connections/sources/catalog/libraries/website/javascript/custom-proxy/). This changes the URL that Segment loads from (cdn.segment.com), as well as the outgoing requests generated when events are triggered (api.segment.io). By setting up proxies for these URLs, some ad blockers won't prevent Segment from loading, which means your events send downstream to your destinations. 
+
+* Consider tracking data using one of Segment's [server-side libraries](/docs/connections/sources/#server). By using a server-side library, you no longer have to worry about ad blockers and privacy browsers preventing Segment from loading. This option may require more code to track something like a `.page()` call, since now you have to manually pass contextual information that otherwise would've been collected automatically by Analytics.js, such as `url`, `path`, `referrer`. Note that some destinations are device-mode only.
 
 ## Open source libraries
 

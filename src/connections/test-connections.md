@@ -19,7 +19,7 @@ There are two scenarios where you might want to use the Event Tester:
 
 Go to your Source Debugger, select an event and in the top right hand side of the debugger view, select "Validate".
 
-![A screenshot of the Source Debugger tab, with a red arrow pointing to the "Validate" button](images/event-tester_GgyOswJA.png)
+![Screenshot of the Debugger tab, with a Checkout Started event selected and an error pointing to the Validate button.](images/event-tester_GgyOswJA.png)
 
 **2. Choose the destination you want to test with**
 
@@ -36,6 +36,8 @@ The event payload from your debugger that you just selected will automatically l
 **4. Ensure you're happy to send the test event to the destination**
 
 This is a real event that will appear in your end tool alongside your existing data. If you're not comfortable with this, then select "Cancel" and do not send the event. 
+
+![Screenshot of the popup that appears when you click the Send test event button.](/guides/images/asset_Yxw1DJqb.png)
 
 **5. View the Partner API response**
 

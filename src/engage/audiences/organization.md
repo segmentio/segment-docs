@@ -5,7 +5,7 @@ redirect_from:
   - '/personas/audiences/organization'
 ---
 
-To add structure to your [Spaces](/docs/profiles/identity-resolution/space-setup/), you can organize Audiences into folders and clone Audiences within, and between, Spaces.
+To add structure to your [Spaces](/docs/unify/identity-resolution/space-setup/), you can organize Audiences into folders and clone Audiences within, and between, Spaces.
 
 ## Working with folders
 

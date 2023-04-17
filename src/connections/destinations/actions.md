@@ -65,7 +65,8 @@ To set up a new Actions-framework destination for the first time:
 7. Once you're satisfied with your mappings, click **Create Destination**.
 
 > info ""
-> At least one mapping to handle a connected source's event(s) must be configured and enabled in an Actions-framework destination in order for data to be sent downstream.
+> You must configure and enable at least one mapping to handle a connected source's event(s) in an Actions-framework destination in order for data to send downstream. 
+> Events send downstream in the order in which they appear in the mappings UI. There is no mechanism through which you can control the order of events that send to the downstream destinations outside of that. 
 
 ## Migrate a classic destination to an actions-based destination
 
@@ -170,9 +171,22 @@ The available operators depend on the property's data type:
 
 You can combine criteria in a single group using **ALL** or **ANY**.  Use an ANY to “subscribe” to multiple conditions. Use ALL when you need to filter for very specific conditions. You can only create one group condition per destination action. You cannot created nested conditions.
 
+> info "Unsupported Special Characters"
+> Mappings do not support the use of double quotes " or a tilde ~ in the trigger fields.
+
 > info "Destination Filters"
 > Destination filters are compatible with Destination Actions. Consider a Destination Filter when:
 > - You need to remove properties from the data sent to the destination
 > - You need to filter data from multiple types of call (for example, Track, Page, and Identify calls)
 >
 > If your use case does not match these criteria, you might benefit from using Mapping-level Triggers to match only certain events.
+
+## FAQ & Troubleshooting
+
+### Validation error when using the Event Tester
+
+When you send an event with an actions destination Event Tester that doesn't match the trigger of any configured and enabled mappings, you'll see an error message that states, *You may not have any subscriptions that match this event.* To resolve the error, create a mapping with a trigger to handle the event being tested, or update the test event's payload to match the trigger of any existing mappings. 
+
+### Multiple mappings triggered by the same event
+
+When the same event triggers multiple mappings, a request will be generated for each mapping that's configured to trigger on an event. For example, for the *Subscription Updated* event, if two mappings are enabled and both have conditions defined to trigger on the *Subscription Updated* event, the two requests will be generated and sent to the destination for each *Subscription Updated* event. 

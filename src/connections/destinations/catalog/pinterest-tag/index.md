@@ -21,7 +21,7 @@ In order to access the Pinterest Tag, you will need to have a Pinterest business
 
 This will redirect to your Pinterest tags menu.
 
-![](images/conversions-page.png)
+![The Pinterest Ads menu.](images/conversions-page.png)
 
 ### **3. Find the Pinterest Tag ID.**
 
@@ -34,11 +34,11 @@ If you haven't yet made a Pinterest tag, then select "Create Tag." Upon naming y
 
 Log into your Segment account, and go to the Destinations Catalog in the desired workspace and select the Pinterest Tag destination (located at `https://segment.com/<Your Workspace>/destinations/catalog/pinterest-tag`).
 
-![](images/pinterest-tag-configure.png)
+![The Pinterest Tag menu page.](images/pinterest-tag-configure.png)
 
 From there, select "Configure Pinterest Tag" and select the desired source to activate it for, and select "Confirm Source." The selected source will be loaded, and a sidebar will appear, asking for the Pinterest Tag ID.
 
-![](images/pinterest-tag-activate.png)
+![The Pinterest Tag destination page in the Segment app.](images/pinterest-tag-activate.png)
 
 Select that option and put in the Pinterest Tag ID that we collected earlier. Select "Save." In addition, one can optionally bind Segment track event names to specified Pinterest Event names. Details on that are provided below. In addition, Segment Track call properties can be added to this list to also be sent to Pinterest. Once ready, select "Activate Destination." Our servers will build the latest CDN, and the Pinterest Tag will then load on the sites that use that source's Segment snippet!
 

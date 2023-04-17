@@ -71,6 +71,11 @@ Here's a complete example of a `page` call:
   "version": "1.1"
 }
 ```
+### Create your own Page call
+
+Use the following interactive code pen to see what your Page calls would look like with user-provided information:
+
+{% include components/codepens/page-spec.html %}
 
 ## Identities
 

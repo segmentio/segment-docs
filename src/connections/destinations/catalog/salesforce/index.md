@@ -2,14 +2,18 @@
 title: Salesforce Destination
 strat: salesforce
 id: 54521fda25e721e32a72eeef
-maintenance: true
+maintenance: false
 private: true
 ---
-
+> warning "Deprecation Notice"
+> Due to Salesforce retiring certain APIs on May 31, 2023, Segment is deprecating this destination. During the week of April 24, 2023, Segment will create an instance of the [Salesforce (Actions)](/docs/connections/destinations/catalog/actions-salesforce/) destination for each version of the Salesforce classic destination in your workspace. 
+>
+> Settings will be migrated automatically, but you must take additional action to ensure the destination is properly enabled.For more information, see [Migrating from Salesforce Classic](/docs/connections/destinations/catalog/actions-salesforce/#migrate-from-salesforce-classic)
+>
+> For questions or issues, or to opt out of the automatic upgrade, contact [friends@segment.com](mailto:friends@segment.com).
 Segment's Salesforce destination allows you to create and store leads and records for other objects in Salesforce Sales Cloud.
 
-> info ""
-> Segment is aware of Salesforce's plans to enforce multi-factor authentication in 2022, and advises migrating to our new [Salesforce (Actions) destination](/docs/connections/destinations/catalog/actions-salesforce/) which supports OAuth 2.0.
+
 
 ### API Access
 

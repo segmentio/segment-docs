@@ -102,7 +102,7 @@ Follow these steps to add a Show an ad step to a Journey:
 
 ### Channels steps
 
-The **Send an Email** and **Send an SMS** steps are only available on [Engage Premier](/docs/engage/onboarding/).
+The **Send an email**, **Send an SMS**, and **Send a WhatsApp** steps are only available on [Engage Premier](/docs/engage/onboarding/).
 
 #### Send an email
 
@@ -111,7 +111,7 @@ Use Twilio Engage to send email as a step in a Journey.
 > note ""
 > To send email in Engage, you must connect a [SendGrid subuser account](https://docs.sendgrid.com/ui/account-and-settings/subusers#create-a-subuser){:target="blank"} to your Segment space. Visit the [onboarding steps](/docs/engage/onboarding/) for more information.
 
-1. Click **Send an Email** from the **Select a Step** window.
+1. From the **Add step** window, **Send an email**.
 2. Build an email from scratch, or use an existing template as a starting point. You can use an existing template as a base to build the email, but any changes made from within Journeys won't be saved in the original email template. Click **Manage Templates** to visit the Email Templates page.
 3. Configure the email step.
     1. Add a step name.
@@ -125,16 +125,14 @@ Use Twilio Engage to send email as a step in a Journey.
 
 `Subscribed` users will receive an email upon entering the step. Visit [Email Campaigns](/docs/engage/campaigns/email-campaigns/) for more information.
 
-### Send an SMS
+#### Send an SMS
 
-Send an SMS
-
-Use Engage to send an SMS message as a step in a Journey.
+Use Twilio Engage to send an SMS message as a step in a Journey.
 
 > note ""
-> To send SMS in Engage, you must connect a Twilio messaging service to your segment workspace. Visit the [onboarding steps](/docs/engage/onboarding/) for more information.
+> To send SMS in Engage, you must connect a Twilio messaging service to your Segment workspace. Visit the [onboarding steps](/docs/engage/onboarding/) for more information.
 
-1. Click **Send an SMS** from the **Select a Step** window.
+1. From the **Add step** window, click **Send an SMS**.
 2. Build an SMS template from scratch, or select a previously built template. Click **Manage Templates** to visit the SMS Templates page.
 3. Configure the Send SMS step.
     1. Add a name to describe the step.
@@ -145,6 +143,19 @@ Use Engage to send an SMS message as a step in a Journey.
 4. Click **Save** to add the SMS step to your Journey.
 
 As soon as a `subscribed` user enters the Send SMS step, they'll receive the text. Visit [SMS Campaigns](/docs/engage/campaigns/sms-campaigns/) for more information.
+
+#### Send a WhatsApp
+
+Use Twilio Engage to send a WhatsApp message as a step in a Journey.
+
+> info "WhatsApp Public Beta"
+> WhatsApp as an Engage channel is in public beta. 
+
+1. From the **Add step** window, click **Send a WhatsApp**.
+3. Pick an approved template from the template list, then choose **Select**.
+4. Give the WhatsApp message step a name.
+5. In the **Sender** field, choose **WhatsApp**, then click **Save** to add the WhatsApp message to your Journey.
+
 
 ### Send to Destinations
 

@@ -22,6 +22,7 @@ Aampe
 adset
 Adwords
 Aircall
+Algolia
 allowlist
 Amberflo
 API(:?s)
@@ -74,6 +75,7 @@ https
 HTTPS
 Hubspot
 incrementality
+Innovid
 ios
 iOS
 Iterable
@@ -144,9 +146,11 @@ Twilio
 upsert
 US
 utm
+varchar
 Vero
 Vidora
 viewability
+Voucherify
 waitlist
 walkthrough
 WebKit

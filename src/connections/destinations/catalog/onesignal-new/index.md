@@ -46,7 +46,7 @@ Segment sends Identify traits as [Player Data Tags](https://documentation.onesig
 > warning ""
 > OneSignal doesn't accept nested objects or arrays as user properties.
 
-![](images/demo.png)
+![A screenshot of the Users page in OneSignal.](images/demo.png)
 
 > info "Data Tag Limits"
 > Your OneSignal plan may cap incoming Data Tags. Once you've reached your Data Tag limit, your user traits won't update in your OneSignal destination.
@@ -66,7 +66,7 @@ OneSignal stores Track properties as Data Tags but drops the event name. In the 
 
 To keep the event names on OneSignal Data Tags, append the event name to the properties. For example, `Add_to_Cart_brand` instead of `brand`.
 
-![](images/track-example.png)
+![""](images/track-example.png)
 
 ## Engage
 
@@ -80,7 +80,7 @@ Track calls from Audiences create a OneSignal [segment](https://documentation.on
 
 Identify calls from Audiences create a OneSignal [segment](https://documentation.onesignal.com/docs/segmentation) with the Audience Name and add Data Tags on all the matching user records.
 
-![](images/audiences.jpg)
+![""](images/audiences.jpg)
 
 Audiences sends Identify and Track calls to OneSignal when a user enters or exits the Audience.
 
