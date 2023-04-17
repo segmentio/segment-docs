@@ -1,8 +1,9 @@
 ---
 title: Algolia Insights Destination
 rewrite: true
-beta: true
-redirect_from: '/connections/destinations/catalog/algolia/'
+redirect_from:
+  - '/connections/destinations/catalog/algolia/'
+  - '/connections/destinations/catalog/actions-algolia-insights/'
 id: 5d373a350abf930001a6b70f
 ---
 This [Algolia Insights](https://www.algolia.com/products/analytics/) destination is a means of facilitating sending [Insights Events](https://www.algolia.com/doc/guides/sending-events/getting-started/). Sending these events is a required step for using several Algolia features:
