@@ -3,6 +3,7 @@ title: Ripe Web (Actions) Destination
 hide-boilerplate: true
 hide-dossier: true
 id: 63913b2bf906ea939f153851
+redirect_from: '/connections/destinations/catalog/actions-ripe/'
 ---
 
 [Ripe](https://www.getripe.com/){:target="_blank"} is a product-led sales platform that empowers you to unlock revenue pipeline with product data. By identifying and showing which prospects to focus efforts on, you can convert leads into meetings inside your product.

@@ -18,5 +18,5 @@ You can search in the Debugger to find a specific payload using any information 
 
 Two views are available when viewing a payload:
 
-* The **Pretty view** is a recreation of the API call you made that was sent to Segment.
+* The **Pretty view** is an approximate recreation of the API call you made that was sent to Segment. The format shown depends on the library used at the source.
 * The **Raw view** is the complete JSON object Segment received from the calls you sent. These calls include all the details about what is being tracked: timestamps, properties, traits, ids, and [contextual information Segment automatically collects](/docs/connections/spec/common/#context-fields-automatically-collected) the moment the data is sent.

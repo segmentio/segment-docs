@@ -102,3 +102,7 @@
   override: "actions-toplyne-cloud"
 - original: "wisepops"
   override: "actions-wisepops"
+- original: "gwen-actions"
+  override: "actions-gwen-cloud"
+- original: "mixpanel-legacy"
+  override: "mixpanel"

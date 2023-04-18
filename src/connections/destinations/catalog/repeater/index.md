@@ -6,9 +6,11 @@ This destination is maintained by Segment and is not available to customers on t
 
 ## Getting Started
 
-The Repeater destination forwards events from a source back into another source, as though that event occurred in the second source.
+The Repeater destination forwards events from a source back into another source as though that event occurred in the second source.
 
 Events are not cached in the Repeater, so it only handles real-time events. You can specify multiple sources as Repeater destinations.
+
+If you need to send events to a Source Function, please use the [Webhooks (Actions)](/docs/connections/destinations/catalog/actions-webhook/) destination instead. The Repeater bypasses the code of a Source Function and sends data only to the write key. The Webhook destination allows data to be sent through the Source Function code as expected.
 
 ## Configuration
 
@@ -20,6 +22,6 @@ Go back to the Repeater destination's settings, and add this `writeKey` to the w
 
 You can do this for as many sources as you need.
 
-![](images/write-key-settings.png)
+![A screenshot of the Write Keys field in the Repeater destination settings page.](images/write-key-settings.png)
 
 Repeater sends all events it receives to the sources you specified, identified by the write key(s) you added.

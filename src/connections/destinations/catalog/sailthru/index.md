@@ -51,7 +51,7 @@ Segment will automatically alias users for you so if you `identify` a user who y
 
 An `identify` event will appear in Sailthru's user lookup feature if there is an email present (Sailthru only allows a user lookup up based on an email):
 
-![](images/1488751534977.png)
+![A screenshot of a user's profile as it appears in the Sailthru User Lookup page.](images/1488751534977.png)
 
 Or within the **Users > Lists** feature, based on the default list you configured in the Segment UI or passed in through the destinations object like so:
 
@@ -67,7 +67,7 @@ analytics.identify("38472034892",{
   });
 ```
 
-![](images/1488751628625.png)
+![A screenshot of a list of users on the the Manage Mailing List page in Sailthru.](images/1488751628625.png)
 
 You can also configure an `optout_email` value in the Segment UI, or pass in a value through the destinations object with one of the Sailthru expected values:
 
@@ -89,18 +89,18 @@ So if you send an `identify` call without a `traits.email` and only a `userId`, 
 
 When you `track` an event, we will send that event to Sailthru as a custom event. **Important**: You must have each event mapped in Sailthru within **Communications > Lifecycle Optimizer** in order to use the custom event. Be sure that the **Status** is set to **Active**:
 
-![](images/1488218489126.png)
+![A screenshot of a Flow in Sailthru. The Lifecycle Optimizer menu item is selected from the Communications menu dropdown. ](images/1488218489126.png)
 
 Your account must have triggers or lifecycle optimizer enabled. This should be enabled when the account is setup, however, just to be sure you may need to contact your account representative to confirm it is enabled.
 
 A custom event will hit the **Sailthru Lifecycle Optimizer** feature. Navigate to **Communications > Lifecycle Optimizer** in your Sailthru dashboard:
 
-![](images/1488751128521.png)
+![A screenshot of the Lifecycle Optimizer page in Sailthru, with a list of Flows.](images/1488751128521.png)
 
 
 Configure a custom event to a new flow and trigger a follow up action to the event:
 
-![](images/1488751210325.png)
+![A screenshot of a Flow in Sailthru, with two steps in the process diagram.](images/1488751210325.png)
 
 
 For instance, in the above example notice that the `Registered` event will add the user who trigger the event to a list.
@@ -109,14 +109,14 @@ For instance, in the above example notice that the `Registered` event will add t
 
 When you `track` an event with the name `Order Completed` using the [e-commerce tracking API](/docs/connections/spec/ecommerce/v2/#order-completed), we will send the products you've listed to Sailthru's purchase log:
 
-![](images/1488752018885.png)
+![A screenshot of Sailthru, with the Purchase Log item selected from the Analytics menu.](images/1488752018885.png)
 
 In addition, it will also appear within the user view under purchase history:
 
-![](images/1488752126668.png)
+![A screenshot of the fields collected in Sailthru when users make a purchase.](images/1488752126668.png)
 
 Note that the main identifier is `email` not `id`
-![](images/1487272939423.png)
+![A screenshot of a user's purchase history in Sailthru, showing two purchases.](images/1487272939423.png)
 
 Sailthru does not allow the `extid` to be the main lookup identifier for their Purchase API. Instead, Sailthru requires an `email` as the primary identifier. Segment will make a GET request to retrieve the user's email based on their `userId`, which is their `extid` in Sailthru.
 
