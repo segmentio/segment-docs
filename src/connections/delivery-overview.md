@@ -7,7 +7,7 @@ Delivery Overview is a visual observability tool designed to help Segment users 
 > info "Delivery Overview is currently in beta"
 > This means that the Delivery Overview feature is in active development, and some functionality may change before it becomes generally available. Beta users of Delivery Overview will still have access to the Event Delivery tab. During the public beta, Delivery Overview will only support event-streaming, cloud-mode destinations.
 >
-> The Delivery Overview public beta was released to a select group of users on April 20, 2023, and will be released to all users on April 28, 2023.
+> The Delivery Overview public beta was released to a select group of users on [DATE], and will be released to all users on [DATE].
 
 ## Key features
 
@@ -36,8 +36,8 @@ To open the breakdown table, select either the first step in the pipeline view (
 
 The breakdown table displays the following details:
 - **Event type**: The Segment spec event type (Track call vs. Identify call, for example)
-- **Event name**: The event name, provided by you or the source (*currently not available for inspection at all steps, but full availability is in development*)
-- **App version**: The app/release version, provided by you or the source (*currently not available for inspection at all steps, but full availability is in development*)
+- **Event name**: The event name, provided by you or the source (*not available for inspection at all steps*)
+- **App version**: The app/release version, provided by you or the source (*not available for inspection at all steps*)
 - **Event count**: How many of each event either successfully made it through this pipeline step (in the case of the first or last steps in the pipeline view) or were filtered out (if you access it from a discard table)
 - **% Change**: Insight into how the event counts differ from the last comparable time range as a percentage<sup>1</sup>
 
