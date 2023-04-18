@@ -16,14 +16,13 @@ The library is regularly tested and is functional with the following browsers:
 - Brave
 
 > warning "Deprecation of Analytics.js Classic"
-> Analytics.js Classic was deprecated on February 28, 2023. At this time, Segment is upgrading all sources not yet upgraded to [Analytics.js 2.0](/docs/connections/sources/catalog/libraries/website/javascript/). The upgrade process will complete for all users by the end of March 2023.
-> <br><br>Learn how to [upgrade to Analytics.js 2.0](/docs/connections/sources/catalog/libraries/website/javascript/upgrade-to-ajs2).
+> Analytics.js Classic was deprecated on February 28, 2023. As of March 2023, Segment upgraded all sources to [Analytics.js 2.0](/docs/connections/sources/catalog/libraries/website/javascript/). 
 
 ### Internet Explorer Support
 
 Segment guarantees support for Internet Explorer 11 and later for Analytics.js. Remember that different bundled (device-mode) destinations might have different compatibility guarantees for their own products. Refer to the vendor's documentation to confirm browser compatibility.
 
-If you need to support older versions of Internet Explorer or Opera, Segment encourages you to either load a polyfill script in the head (https://cdnjs.cloudflare.com/ajax/libs/babel-polyfill/7.7.0/polyfill.min.js) or use the analytics-next npm package and bundle/polyfill themselves. For example, https://babeljs.io/docs/babel-preset-env. 
+If you need to support older versions of Internet Explorer or Opera, Segment recommends you to either load a polyfill script in the head as shown [here](https://cdnjs.cloudflare.com/ajax/libs/babel-polyfill/7.7.0/polyfill.min.js){:target="_blank"}, or use the analytics-next npm package and polyfill bundle as shown in [Babel](https://babeljs.io/docs/babel-preset-env){:target="_blank"}. 
 
 > info ""
 > Classic destinations and Analytics.js support Internet Explorer 11, but some Actions destinations are not yet supported.
