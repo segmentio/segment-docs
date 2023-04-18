@@ -2,7 +2,6 @@
 title: OneTrust Source
 id: QhEUZnE5uF
 beta: true
-hidden: true
 ---
 
 OneTrust makes it easy for you to capture, centralize, govern, and sync consented first party data while keeping trust & transparency at the forefront of all consumer interactions. The OneTrust Integration provides data to Segment’s CDP and allows you to view & activate consented data in the appropriate way. 
@@ -30,14 +29,22 @@ OneTrust allows you to configure the userId from various sources from within the
 
 ## Events
 
-Use the OneTrust integration to define the events to be sent to Segment These events can be tailored to align with your existing process or particular use case.
+The following table lists events that OneTrust sends to Segment. These events show up as tables in your Warehouse and as regular events in your other Destinations.
+
+|  Event Name | Description |
+|  ------ | ------ |
+| Consent Updated | User has given or withdrawn consent for an express purpose |
 
 ## Event Properties
 
-The OneTrust integration allows you to define event properties within the following constraints:
+The following table lists event properties included with all events Segment receives from Braze.
 
-- Use `Track` events to define the `properties` object
-- Use `Identify` events to define the `traits` object
+|  Property Name | Type | Description |
+|  ------ | ------ | ------ |
+| Purpose ID | string | GUID assigned to the purpose in OneTrust |
+| Purpose Name | string | Name given to the purpose in OneTrust for which the user is giving or withdrawing their consent |
+| Status | string | Current status of the users consent after the update. Options include ACTIVE, WITHDRAWN, PENDING, OPT_OUT, EXPIRED, NO_CONSENT, HARD_OPT_OUT, and NOT_OPTED_OUT |
+
 
 
 ## Adding Destinations
