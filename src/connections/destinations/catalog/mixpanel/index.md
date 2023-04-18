@@ -126,7 +126,7 @@ Mixpanel supports multiple definitions of groups. For more information see [Mixp
 
 If the group call **does not** have a group trait that matches the Group Identifier Traits setting, then the event will be ignored.
 
-If you'd like to connect a Track call with a Group in Mixpanel, simply send the Group's ID as a property on the Track call named `$group_id`. 
+If you'd like to connect a track call to a group call in Mixpanel, send the group's ID as a property on the track call named `$group_id`. 
 
 ### Group using Device-mode
 
