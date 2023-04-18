@@ -1269,7 +1269,7 @@ items:
     isCloudEventSource: true
     slug: navattic
     url: connections/sources/catalog/cloud-apps/navattic
-    hidden: false
+    hidden: true
     regions:
       - us
     endpoints:
