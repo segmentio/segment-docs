@@ -25,7 +25,7 @@ The pipeline view shows the following steps:
 - **Successfully received**: Events that Segment ingested from your source
 - **Failed on ingest**: Events that Segment received, but were dropped due to internal data validation rules
 - **Filtered at source**: Events that were discarded due to schema settings or [Protocols](/docs/protocols/) tracking plans
-- **Filtered at destination**: Events that were discarded due to [Destination Filters](/docs/guides/filtering-data/#destination-filters), [filtering in the Integrations object](/docs/guides/filtering-data/#filtering-with-the-integrations-object), or [per source schema integration filters](/docs/guides/filtering-data/#per-source-schema-integrations-filters). Actions destinations also have a filtering capability: for example, if your action is set to only send “Identify” events, all other event types will be filtered out.
+- **Filtered at destination**: Events that were discarded due to [Destination Filters](/docs/guides/filtering-data/#destination-filters), [filtering in the Integrations object](/docs/guides/filtering-data/#filtering-with-the-integrations-object), or [per source schema integration filters](/docs/guides/filtering-data/#per-source-schema-integrations-filters). Actions destinations also have a filtering capability: for example, if your action is set to only send Identify events, all other event types will be filtered out.
 - **Failed delivery**: Events that have been discarded due to errors or unmet destination requirements
 - **Successful delivery**: Events that were successfully delivered to the destination
 
@@ -35,7 +35,7 @@ The breakdown table provides you with greater detail about the selected events.
 To open the breakdown table, select either the first step in the pipeline view (successfully received,) the last step in the pipeline view (successful delivery,) or select a discard step and then click on a discard reason. 
 
 The breakdown table displays the following details:
-- **Event type**: The Segment spec event type (track call vs. identify call, for example)
+- **Event type**: The Segment spec event type (Track call vs. Identify call, for example)
 - **Event name**: The event name, provided by you or the source (*currently not available for inspection at all steps, but full availability is in development*)
 - **App version**: The app/release version, provided by you or the source (*currently not available for inspection at all steps, but full availability is in development*)
 - **Event count**: How many of each event either successfully made it through this pipeline step (in the case of the first or last steps in the pipeline view) or were filtered out (if you access it from a discard table)
@@ -50,7 +50,7 @@ To open the discard table, click on one of the discard steps. If you click on a 
 
 The discard table displays the following details:
 - **Discard reason**: Any relevant error code, message, or description associated with the event's failure. When possible, Delivery Overview will link to any troubleshooting information you can use to get your events up and running again. Clicking on a discard reason brings you to the [breakdown table](#breakdown-table,) where you can see more detail about discarded events.
-- **Details & Samples**: View up to ten samples over the selected time range. Examine the error message and reason for the error or discard and inspect the payloads involved with the attempted transaction (*currently not available for inspection at all steps, but full availability is in development*)
+- **Details & Samples**: View up to ten samples over the selected time range. Examine the error message and reason for the error or discard and inspect the payloads involved with the attempted transaction (*not available for inspection at all steps*)
 - **Event count**: How many of each event were discarded in this pipeline step
 - **% Change**: Insight into how the event counts differ from the last comparable time range as a percentage<sup>1</sup>
 
