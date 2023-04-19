@@ -16,7 +16,14 @@ _If you're interested in learning about what to track,_ [check out our guide on 
 
 Digital marketing consists of owned marketing, earned marketing, and paid marketing.
 
-![](images/x-channel_WyEIhjxB.png)
+<!---![Table outlining the different types of marketing and how to track them.](images/x-channel_WyEIhjxB.png)--->
+
+| Type of marketing                  | How to track                                           |
+| ---------------------------------- | ------------------------------------------------------ |
+| Owned (domain, app)                | First-party data sources (on-page or in-app analytics) |
+| Owned (email, push notifications)  | Second-party data sources                              |
+| Earned (blogs, PR, partners, news) | UTM params, deep links on mobile                       |
+| Paid aquisition                    | UTM params, deep links on mobile                       |
 
 "Owned" marketing encompasses all activities you have full control over. It can be further split into first- and second-party data. First-party data is customer data generated on your site or in your app. Second-party data is customer data generated when your customers interact with your email or push notifications (e.g. "Email Opened", "Push Notification Received").
 
@@ -81,7 +88,7 @@ Add the complete URL as the `src` in the image tag.
 
 UTM parameters are types of query strings added to the end of a URL. When clicked, they let the domain owners track where incoming traffic is coming from and understand what aspects of their marketing campaigns are driving traffic.
 
-![](images/x-channel_GWqnp2I6.png)
+![Diagram showing how different UTM parameters redirect to your site and then are displayed in Traffic analytics.](images/x-channel_GWqnp2I6.png)
 
 UTM parameters are only used when linking to your site from outside of your domain. When a visitor arrives to your site using a link containing UTM parameters, Segment's client-side analytics.js library will automatically parse the URL's query strings, and store them within the `context` object as outlined [here](https://segment.com/docs/connections/spec/common/#context-fields-automatically-collected). These parameters do not persist to subsequent calls unless you pass them explicitly.
 
@@ -133,7 +140,15 @@ Your UTM parameters would match a pattern such as
 
 An example would be a National Toast Day campaign. This campaign would include emails, paid acquisition (via AdRoll and Facebook Ads), organic social (Twitter), and promotional content on partners' blogs.
 
-![](images/x-channel_Z3KerVHZ.png)
+<!---![Table outlining different channels and the UTM parameters you can pass through them.](images/x-channel_Z3KerVHZ.png)--->
+
+| Channel  | UTM Campaign      | UTM Medium     | UTM source  |
+| -------- | ----------------- | -------------- | ----------- |
+| Email    | national-toastday | email          | customer.io |
+| News     | national-toastday | news           | toastnation |
+| AdRoll   | national-toastday | display        | adroll      |
+| Facebook | national-toastday | paid-social    | facebook    |
+| Twitter  | national-toastday | organic-social | twitter     |
 
 Having the consistent UTM parameters naming convention simplifies the downstream analysis and the ease of querying across dimensions, such as within the campaign, which medium or source was the best. Or which placement of the display ad led to the most conversions.
 
