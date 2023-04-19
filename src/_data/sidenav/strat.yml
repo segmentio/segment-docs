@@ -203,3 +203,11 @@ sections:
     title: Analytics-Node.js Classic
   - path: /connections/sources/catalog/libraries/server/node/migration/
     title: Analytics-Node.js Migration Guide
+
+- slug: csharp
+  section_title: Analytics-CSharp Documentation
+  section: 
+  - path: 
+    title: 
+  - path: 
+    title: 
