@@ -10,13 +10,13 @@ hide-dossier: true
 {% include content/plan-grid.md name="actions" %}
 
 <!-- Include a brief description of the destination here, along with a link to your website. -->
+<!-- In the section below, explain the value of this actions-based destination. If you don't have a classic version of the destination, remove this section. -->
+[Usermaven](https://www.usermaven.com){:target="_blank"} helps marketing and product teams turn more visitors into customers, get more people to use the product, and keep them coming back. It is the easiest analytics tool to reduce churn, increase product adoption and grow the revenue of your SaaS business.
 
-<!-- This include describes the requirement of A.js 2.0 or higher for Actions compatibility, and is required if your destination has a web component. -->
+<!-- This includes describes the requirement of A.js 2.0 or higher for Actions compatibility, and is required if your destination has a web component. -->
 
 {% include content/ajs-upgrade.md %}
 
-<!-- In the section below, explain the value of this actions-based destination. If you don't have a classic version of the destination, remove this section. -->
-[Usermaven](https://www.usermaven.com){:target="_blank"} helps marketing and product teams turn more visitors into customers, get more people to use the product, and keep them coming back. It is the easiest analytics tool to reduce churn, increase product adoption and grow the revenue of your SaaS business.
 
 ## Benefits of Usermaven (Actions)
 
