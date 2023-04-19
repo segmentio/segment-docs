@@ -166,3 +166,16 @@ To add a CNAME record to your DNS settings:
    - **Value**: Tracking API CloudFront Distribution Domain Name
 3. Save your record. This might take some time to take effect, depending on your TTL settings.
 4. Run `curl` on your domain to check if the proxy is working correctly.
+
+
+## Self-Hosting AJS 
+
+Customers can use the open-source version of analytics.js to self-host/ import the library itself without hitting our resources to download Ajs via the CDN on every page load, and provide settings for all the providers directly:
+ 
+
+[Using-as-a-standalone-npm-package](https://github.com/segmentio/analytics-next#-using-as-an-npm-package) (NPM Package Ajs 2.0)
+ 
+
+However, we suggest that customers avoid self-hosting because then you have to keep your self-hosted scripts updated when your destinations or source settings change. Also, Segment still will load third-party libraries when the user enables them in device-mode, and that defeats the purpose. Note that self-hosting your own analytics.js as opposed to using the CDN means that you lose a big benefit of using Segment, which is on the fly updates to your analytics anytime you make changes. Self-hosting means that you need to configure the settings for each integration directly and will need to redeploy your analytics.js any time you want to make any changes to your settings.
+
+ Another caveat is using device mode destinations. If Ajs is self-hosted, meaning that the analytics.min.js script is a copy of the same script that we have on our CDN, then the third-party destinations will be loaded from the third-party CDN. 
