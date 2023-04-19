@@ -29,8 +29,7 @@ June maintains this destination. For any issues with the destination, [contact t
 7. Click the toggle to enable the destination. 
 
 ### Connection modes for June (Actions) destination
-
-The June (Actions) destination does not offer a device-mode connection mode. If you're using one of Segment's new libraries ([Analytics.js 2.0](/docs/connections/sources/catalog/libraries/website/javascript/){:target="_blank"}, [Swift](https://github.com/segmentio/analytics-swift){:target="_blank"} or [Kotlin](https://github.com/segmentio/analytics-kotlin){:target="_blank"}) with the Actions-framework version of the destination, you do not need the device-mode connection.
+June (Actions) does not offer a device-mode connection. All events generated in a browser or app are sent to June through Segment's servers.
 
 {% capture group_identify_user_details %}
 
@@ -40,6 +39,8 @@ This action sets or updates the properties of specific groups. Use this when you
 
 {% endcapture %}
 
+
+{% include components/actions-fields.html content1=group_identify_user_details section1="group" %}
 ## Migration from June Classic
 
 {% include content/ajs-upgrade.md %}
