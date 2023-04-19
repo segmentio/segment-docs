@@ -113,6 +113,9 @@ Segment's Mobile SDKs are the best way to simplify your iOS, Android, and Xamari
 - [Swift](/docs/connections/sources/catalog/libraries/mobile/swift-ios/)
 - [Xamarin](/docs/connections/sources/catalog/libraries/mobile/xamarin)
 
+> info "Analytics-Flutter library"
+>  The Analytics-Flutter library is currently only available in pilot phase and is governed by Segment's [First Access and Beta Preview Terms](https://www.twilio.com/en-us/legal/tos){:target="_blank"}. If you'd like to try out this library, access the [Analytics-Flutter GitHub repo](https://github.com/segmentio/analytics_flutter){:target="_blank"}. 
+
 ### Server
 
 Segment's server-side sources let you send analytics data directly from your servers. Segment recommends tracking from your servers when device-mode tracking (tracking on the client) doesn't work. Check out the [guide on server-side tracking](/docs/guides/how-to-guides/collect-on-client-or-server/) if you're not sure whether it makes sense for your use case.
