@@ -125,6 +125,26 @@ Add merge tags in the visual editor to personalize your message with user profil
 2. Select the profile traits to include from the drop down menu.
 3. Based on cursor placement, profile traits are added to the email from merge tags.
 
+Engage supports liquid templating to create dynamic content in the email design editor.
+
+{% raw %}
+
+For example, use  `{% if %}`, `{% elseif %}`, and `{% else %}` tags to call a product by name if known, or use a default message:
+
+```
+{% if profile.traits.product_title == "Sneakers" %}
+  Hey, view our latest sneakers!
+{% elsif profile.traits.product_title == "Sandals" %}
+  Hey, check out these sandals!
+{% else %}
+  Hey, check out our latest footwear.
+{% endif %}
+```
+{% endraw %}
+
+
+To view more examples related to your use case, visit the [LiquidJS docs](https://liquidjs.com/tags/if.html){:target="blank"}.
+
 ## Save the template
 
 After you design the email, click **Create Email Template**.
