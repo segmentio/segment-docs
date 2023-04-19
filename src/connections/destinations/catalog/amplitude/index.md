@@ -709,4 +709,4 @@ Have a question about the Amplitude/Segment integration that's already been answ
 
 ### I Don't See My Data In Amplitude
 
-If you aren't seeing your data arrive in Amplitude, take a look at our Analytics.js [guide to validating data being transmitted](/docs/connections/sources/catalog/libraries/website/javascript/troubleshooting#is-data-being-transmitted-to-your-third-party-destinations) to your third-party destination.
+If you aren't seeing your data arrive in Amplitude, take a look at our Analytics.js [guide to validating data being transmitted](/docs/connections/sources/catalog/libraries/website/javascript/troubleshooting#is-data-being-transmitted-to-your-third-party-destinations) to your third-party destination. Please also note that Amplitude doesn't support fields with a value of an array with nested arrays.
