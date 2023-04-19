@@ -24,7 +24,7 @@ June maintains this destination. For any issues with the destination, [contact t
 2. From the Segment web app, navigate to **Connections > Catalog**, and select the **Destinations** tab in the catalog.
 3. Search for *June (Actions)* and select it.
 4. Click **Configure June (Actions)**.
-5. Select the source you want to connect the destination to. (You can connect more sources to the destination later.)
+5. Select the source you want to connect the destination to. 
 6. Configure your settings. 
 7. Click the toggle to enable the destination. 
 
