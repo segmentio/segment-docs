@@ -22,7 +22,7 @@ If you don't have a Salesforce account, contact your Salesforce administrator. T
 To reconnect Pardot to Segment using SSO authentication:
 1. In the Segment app, click **Connections** on the left, then click **Destinations**. Select your Pardot destination.
 2. On your Pardot settings page, click **Connect to Pardot**, and follow the steps to connect using OAuth.
-   ![](images/connect-sso.png)
+   ![A screenshot of the Pardot settings page in the Segment app.](images/connect-sso.png)
 
 3. On the next screen, you are prompted to authenticate using your Salesforce username and password.
    If you don't have a Salesforce account, contact your Salesforce administrator. They can grant you a Salesforce Identity License, which allows you to use Salesforce for SSO purposes without provisioning a full Salesforce account.

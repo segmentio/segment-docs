@@ -7,6 +7,7 @@ items:
     slug: hubspot
     previous_names:
       - HubSpot
+    url: connections/destinations/catalog/hubspot
     website: http://www.hubspot.com
     status: PRIVATE_BETA
     logo:
@@ -123,6 +124,7 @@ items:
     slug: intercom
     previous_names:
       - Intercom
+    url: connections/destinations/catalog/intercom
     website: http://intercom.com
     status: PRIVATE_BETA
     logo:
@@ -231,6 +233,7 @@ items:
     slug: pardot
     previous_names:
       - Pardot
+    url: connections/destinations/catalog/pardot
     website: http://pardot.com
     status: PRIVATE_BETA
     logo:
@@ -342,6 +345,7 @@ items:
     slug: salesforce
     previous_names:
       - Salesforce
+    url: connections/destinations/catalog/salesforce
     website: http://salesforce.com
     status: PRIVATE_BETA
     logo:
@@ -472,6 +476,7 @@ items:
     slug: webhooks
     previous_names:
       - Webhooks
+    url: connections/destinations/catalog/webhooks
     website: https://segment.com/docs/integrations/webhooks
     status: PRIVATE_BETA
     logo:
@@ -531,9 +536,10 @@ items:
   - id: 62b256147cbb49302d1486d0
     display_name: Heap Web (Actions)
     name: Heap Web (Actions)
-    slug: actions-heap-web
+    slug: actions-heap
     previous_names:
       - Heap Web (Actions)
+    url: connections/destinations/catalog/actions-heap
     website: https://heap.io/
     status: PRIVATE_BETA
     logo:
@@ -735,6 +741,7 @@ items:
     slug: actions-iterate
     previous_names:
       - Iterate Web (Actions)
+    url: connections/destinations/catalog/actions-iterate
     website: http://www.segment.com
     status: PRIVATE_BETA
     logo:
@@ -846,6 +853,7 @@ items:
     slug: actions-sabil
     previous_names:
       - Sabil
+    url: connections/destinations/catalog/actions-sabil
     website: https://sabil.io
     status: PRIVATE_BETA
     logo:
@@ -923,6 +931,7 @@ items:
     slug: actions-saleswings
     previous_names:
       - Saleswings (Actions)
+    url: connections/destinations/catalog/actions-saleswings
     website: >-
       https://www.saleswingsapp.com/lead-scoring-segment-com/?utm_campaign=segmentcatalogue&utm_medium=partnerlisting&utm_source=segment
     status: PRIVATE_BETA
@@ -1805,6 +1814,7 @@ items:
     slug: actions-livelike-cloud
     previous_names:
       - LiveLike
+    url: connections/destinations/catalog/actions-livelike-cloud
     website: https://livelike.com/
     status: PRIVATE_BETA
     logo:
@@ -2046,18 +2056,19 @@ items:
           properties:
             '@path': $.properties
         trigger: type = "page"
-  - id: 63f65c1c42e3bded41f0499c
-    display_name: Emarsys (Actions)
-    name: Emarsys (Actions)
-    slug: actions-emarsys
+  - id: 63f529a8af3478b5a5363c53
+    display_name: Voucherify (Actions)
+    name: Voucherify (Actions)
+    slug: voucherify-actions
     previous_names:
-      - Emarsys (Actions)
-    website: http://www.emarsys.com
+      - Voucherify (Actions)
+    url: connections/destinations/catalog/voucherify-actions
+    website: https://www.voucherify.io/
     status: PRIVATE_BETA
     logo:
-      url: https://cdn.filepicker.io/api/file/a2LVYLBfR2mLIs3MzvPo
+      url: https://cdn.filepicker.io/api/file/y7S6IYET4CzWhbFD1ANn
     mark:
-      url: https://cdn.filepicker.io/api/file/engQ0gGiQ5ywznrR5Vs5
+      url: https://cdn.filepicker.io/api/file/rlrkojJNQfego98YFBZN
     methods:
       track: true
       identify: true
@@ -2075,286 +2086,488 @@ items:
     browserUnbundlingPublic: false
     replay: false
     settings:
-      - name: api_password
-        type: password
-        defaultValue: ''
-        description: Your Emarsys API password.
-        required: true
-        label: API password
-      - name: api_user
+      - name: apiKey
         type: string
         defaultValue: ''
-        description: Your Emarsys API username
-        required: true
-        label: API username
-    actions:
-      - id: 4B74JFPVbmV8VWe257mDAh
-        name: Add to Contact List
-        slug: addToContactList
         description: >-
-          Add a contact to a contact list. The contact must exist before it can
-          be added.
+          Application ID can be found in [Voucherify
+          dashboard](https://docs.voucherify.io/docs/authentication).
+        required: true
+        label: Application ID
+      - name: customURL
+        type: string
+        defaultValue: ''
+        description: >-
+          Check your API region in [Voucherify
+          dashboard](https://app.voucherify.io/#/login) -> Project settings ->
+          API endpoint. For example: `https://us1.api.voucherify.io` ->
+          `https://us1.segmentio.voucherify.io`. It also works for dedicated
+          URLs.
+        required: true
+        label: Custom Voucherify URL
+      - name: secretKey
+        type: password
+        defaultValue: ''
+        description: >-
+          Secret Key can be found in [Voucherify
+          dashboard](https://docs.voucherify.io/docs/authentication).
+        required: true
+        label: Secret Key
+    actions:
+      - id: grVqvKHnziNs3qba4Bn9V
+        name: Add custom event
+        slug: addCustomEvent
+        description: >-
+          Send the Track, Page or Screen event that will be saved as a [custom
+          event](https://docs.voucherify.io/reference/the-custom-event-object)
+          in Voucherify.
         platform: CLOUD
         hidden: false
-        defaultTrigger: null
+        defaultTrigger: type = "track" or type = "page" or type = "screen"
         fields:
-          - id: rhZJYaoLwYD2zMYXzod7zV
+          - id: xaAqvbRScmLUj7pXr7vKuS
             sortOrder: 0
-            fieldKey: contactlistid
-            label: Id of the contact list
-            type: INTEGER
-            description: The Id of the contactlist
-            placeholder: ''
-            required: true
-            multiple: false
-            choices: null
-            dynamic: true
-            allowNull: false
-          - id: jZUJEf92EHihcSov4GmARV
-            sortOrder: 1
-            fieldKey: key_field
-            label: Key field
-            type: STRING
-            description: The field to use to find the contact
-            placeholder: ''
-            required: true
-            multiple: false
-            choices: null
-            dynamic: true
-            allowNull: false
-          - id: p2cr6Pex8a2amNsW6mcdFX
-            sortOrder: 2
-            fieldKey: key_value
-            label: Key value
+            fieldKey: source_id
+            label: Source ID
             type: STRING
             description: >-
-              Value for the key field used to find the contact. E.g. the email
-              address  
-            placeholder: ''
-            required: true
-            multiple: false
-            choices: null
-            dynamic: false
-            allowNull: false
-          - id: fYu4RQeoB8GgJGZkaCf38Y
-            sortOrder: 3
-            fieldKey: enable_batching
-            label: Enable Batching?
-            type: BOOLEAN
-            description: When enabled, Segment will send events in batches.
-            defaultValue: false
-            required: false
-            multiple: false
-            choices: null
-            dynamic: false
-            allowNull: false
-      - id: arn7JhoTDPGbdjGYrqRJGL
-        name: Remove from Contact List
-        slug: removeFromContactList
-        description: Remove a contact from a contact list.
-        platform: CLOUD
-        hidden: false
-        defaultTrigger: null
-        fields:
-          - id: pVf6d4Ed3g7DQojUzAKEx9
-            sortOrder: 0
-            fieldKey: contactlistid
-            label: Id of the contact list
-            type: INTEGER
-            description: The Id of the contactlist
-            placeholder: ''
-            required: true
-            multiple: false
-            choices: null
-            dynamic: true
-            allowNull: false
-          - id: dGi5YeT3XeddM6yiYWGCr9
-            sortOrder: 1
-            fieldKey: key_field
-            label: Key field
-            type: STRING
-            description: The field to use to find the contact
-            placeholder: ''
-            required: true
-            multiple: false
-            choices: null
-            dynamic: true
-            allowNull: false
-          - id: kYeh1LHZ4mY2kWcNy5W45e
-            sortOrder: 2
-            fieldKey: key_value
-            label: Key value
-            type: STRING
-            description: >-
-              Value for the key field used to find the contact. E.g. the email
-              address  
-            placeholder: ''
-            required: true
-            multiple: false
-            choices: null
-            dynamic: false
-            allowNull: false
-          - id: mRVhNFCa1DzLPGizdQs4gV
-            sortOrder: 3
-            fieldKey: enable_batching
-            label: Enable Batching?
-            type: BOOLEAN
-            description: When enabled, Segment will send events in batches.
-            defaultValue: false
-            required: false
-            multiple: false
-            choices: null
-            dynamic: false
-            allowNull: false
-      - id: gvq4dDDTEHt8vEBSATSrzd
-        name: Upsert Contact
-        slug: upsertContact
-        description: Insert or update a contact on the Emarsys platform
-        platform: CLOUD
-        hidden: false
-        defaultTrigger: null
-        fields:
-          - id: 3ExS6zLEWX85HP9Cjn2MT1
-            sortOrder: 0
-            fieldKey: key_field
-            label: Key field
-            type: STRING
-            description: The field to use to find the contact
-            placeholder: ''
-            required: true
-            multiple: false
-            choices: null
-            dynamic: true
-            allowNull: false
-          - id: qLyycB8vysHYH9PnGS4BWR
-            sortOrder: 1
-            fieldKey: key_value
-            label: Key value
-            type: STRING
-            description: >-
-              Value for the key field used to find the contact. E.g. the email
-              address 
-            placeholder: ''
-            required: true
-            multiple: false
-            choices: null
-            dynamic: false
-            allowNull: false
-          - id: qNQn3NoS4yXMB6tJyRFHSV
-            sortOrder: 2
-            fieldKey: write_field
-            label: Fields to write
-            type: OBJECT
-            description: >-
-              Use the emarsys field id (number) as key and set a value (string)
-              (static, function or event variable)
+              The source_id which identifies the
+              [customer](https://docs.voucherify.io/reference/the-customer-object)
+              in Voucherify.
             placeholder: ''
             defaultValue:
-              '1':
-                '@path': $.traits.firstName
-              '2':
-                '@path': $.traits.lastName
-              '3':
-                '@path': $.traits.email
+              '@if':
+                exists:
+                  '@path': $.userId
+                then:
+                  '@path': $.userId
+                else:
+                  '@path': $.anonymousId
             required: true
             multiple: false
             choices: null
             dynamic: false
             allowNull: false
-          - id: 4a1WJ8ZyZHDPo2YSHBA253
-            sortOrder: 3
-            fieldKey: enable_batching
-            label: Enable Batching?
-            type: BOOLEAN
-            description: When enabled, Segment will send events in batches.
-            defaultValue: false
+          - id: EZNsUKWcVJVW6rpvN4WXw
+            sortOrder: 1
+            fieldKey: email
+            label: Email Address
+            type: STRING
+            description: >-
+              The email that identifies the
+              [customer](https://docs.voucherify.io/reference/the-customer-object)
+              in Voucherify.
+            placeholder: ''
+            defaultValue:
+              '@if':
+                exists:
+                  '@path': $.properties.email
+                then:
+                  '@path': $.properties.email
+                else:
+                  '@path': $.context.traits
             required: false
             multiple: false
             choices: null
             dynamic: false
             allowNull: false
-      - id: niQGHcuUUEF12e4mUcCrb8
-        name: Trigger Event
-        slug: triggerEvent
-        description: >-
-          Trigger an external event on the Emarsys platform to launch automation
-          programs. Note: You can only pass objects to event_payload (no
-          literals, no arrays).
-        platform: CLOUD
-        hidden: false
-        defaultTrigger: null
-        fields:
-          - id: uSG7uMSfSfxJYUqTSqgRG8
-            sortOrder: 0
-            fieldKey: eventid
-            label: Id of the external event
-            type: INTEGER
-            description: The Id of the external event
-            placeholder: ''
-            required: true
-            multiple: false
-            choices: null
-            dynamic: true
-            allowNull: false
-          - id: czwKbqMCo8zf8y3sFaAifp
-            sortOrder: 1
-            fieldKey: key_field
-            label: Key field
-            type: STRING
-            description: The field to use to find the contact
-            placeholder: ''
-            required: true
-            multiple: false
-            choices: null
-            dynamic: true
-            allowNull: false
-          - id: pxCjZ2nxdE1ipbsW1Wg9ps
+          - id: gv7h2bz1MsN7jzarFprdmp
             sortOrder: 2
-            fieldKey: key_value
-            label: Key value
+            fieldKey: event
+            label: Event Name
             type: STRING
             description: >-
-              Value for the key field used to find the contact. E.g. the email
-              address 
+              The name of the event that will be saved as a [custom
+              event](https://docs.voucherify.io/reference/the-custom-event-object)
+              in Voucherify.
             placeholder: ''
-            required: true
+            defaultValue:
+              '@if':
+                exists:
+                  '@path': $.event
+                then:
+                  '@path': $.event
+                else:
+                  '@path': $.name
+            required: false
             multiple: false
             choices: null
             dynamic: false
             allowNull: false
-          - id: hbcCECujY4ThTB2rFXYAX1
+          - id: vtnAdH8M9ysYEfHxegaY8A
             sortOrder: 3
-            fieldKey: event_payload
-            label: Event payload
+            fieldKey: metadata
+            label: Track Event Metadata
             type: OBJECT
             description: >-
-              A JSON object that will be passed to the Emarsys template engine
-              and can be used for personalization
+              Additional data that will be stored in the [custom
+              event](https://docs.voucherify.io/reference/the-custom-event-object)
+              metadata in Voucherify.
             placeholder: ''
-            required: false
-            multiple: false
-            choices: null
-            dynamic: false
-            allowNull: true
-          - id: qYutymxdSb4MyRNmjzKa6H
-            sortOrder: 4
-            fieldKey: enable_batching
-            label: Enable Batching?
-            type: BOOLEAN
-            description: When enabled, Segment will send events in batches.
-            defaultValue: false
+            defaultValue:
+              '@path': $.properties
             required: false
             multiple: false
             choices: null
             dynamic: false
             allowNull: false
-    presets: []
+          - id: fw8nVr5Z253Fay7dJApvgS
+            sortOrder: 4
+            fieldKey: type
+            label: Event Type
+            type: STRING
+            description: Type of the event. It can be track, page or screen.
+            placeholder: ''
+            defaultValue:
+              '@path': $.type
+            required: true
+            multiple: false
+            choices: null
+            dynamic: false
+            allowNull: false
+      - id: sH7RRLaB5yZHjZrVRvj7vh
+        name: Assign customer to group
+        slug: assignCustomerToGroup
+        description: Assign a specific group and its traits to the customer.
+        platform: CLOUD
+        hidden: false
+        defaultTrigger: type = "group"
+        fields:
+          - id: 32XCFt72xbh4wAWC3YgKiH
+            sortOrder: 0
+            fieldKey: source_id
+            label: Source ID
+            type: STRING
+            description: >-
+              The source_id which identifies the
+              [customer](https://docs.voucherify.io/reference/the-customer-object)
+              in Voucherify.
+            placeholder: ''
+            defaultValue:
+              '@if':
+                exists:
+                  '@path': $.userId
+                then:
+                  '@path': $.userId
+                else:
+                  '@path': $.anonymousId
+            required: true
+            multiple: false
+            choices: null
+            dynamic: false
+            allowNull: false
+          - id: 999mac3kn13tvDKku88B4g
+            sortOrder: 1
+            fieldKey: email
+            label: Email Address
+            type: STRING
+            description: >-
+              The email that identifies the
+              [customer](https://docs.voucherify.io/reference/the-customer-object)
+              in Voucherify.
+            placeholder: ''
+            defaultValue:
+              '@path': $.email
+            required: false
+            multiple: false
+            choices: null
+            dynamic: false
+            allowNull: false
+          - id: iTTP7YMcsRpmZ6HMwwDE6N
+            sortOrder: 2
+            fieldKey: group_id
+            label: Group ID
+            type: STRING
+            description: >-
+              The ID used to uniquely identify a group to which customer
+              belongs.
+            placeholder: ''
+            defaultValue:
+              '@path': $.groupId
+            required: true
+            multiple: false
+            choices: null
+            dynamic: false
+            allowNull: false
+          - id: wmiT9tcVqZyzpeAU95DMtE
+            sortOrder: 3
+            fieldKey: traits
+            label: Group traits
+            type: OBJECT
+            description: >-
+              Traits of the group that will be created in customer
+              [metadata](https://www.voucherify.io/glossary/metadata-custom-attributes).
+            placeholder: ''
+            defaultValue:
+              '@path': $.traits
+            required: false
+            multiple: false
+            choices: null
+            dynamic: false
+            allowNull: false
+          - id: py4TACKcoXNJYXKDxfefi2
+            sortOrder: 4
+            fieldKey: type
+            label: Event Type
+            type: STRING
+            description: >-
+              Type of the event [The Segment
+              Spec](https://segment.com/docs/connections/spec/).
+            placeholder: ''
+            defaultValue:
+              '@path': $.type
+            required: true
+            multiple: false
+            choices: null
+            dynamic: false
+            allowNull: false
+      - id: uzpGsfEyYviQS2cbcVX15S
+        name: ' Upsert Customer'
+        slug: upsertCustomer
+        description: >-
+          Send the [identify
+          event](https://segment.com/docs/connections/spec/identify/) to create
+          or update the
+          [customer](https://docs.voucherify.io/reference/the-customer-object)
+        platform: CLOUD
+        hidden: false
+        defaultTrigger: type = "identify"
+        fields:
+          - id: pgULqPABCcwknLQ7x7uWT7
+            sortOrder: 0
+            fieldKey: source_id
+            label: Source ID
+            type: STRING
+            description: >-
+              The source_id which identifies the
+              [customer](https://docs.voucherify.io/reference/the-customer-object)
+              in Voucherify.
+            placeholder: ''
+            defaultValue:
+              '@if':
+                exists:
+                  '@path': $.userId
+                then:
+                  '@path': $.userId
+                else:
+                  '@path': $.anonymousId
+            required: true
+            multiple: false
+            choices: null
+            dynamic: false
+            allowNull: false
+          - id: 8uUT61vJas2K23MX3toFHi
+            sortOrder: 1
+            fieldKey: email
+            label: Email Address
+            type: STRING
+            description: >-
+              The email that identifies the
+              [customer](https://docs.voucherify.io/reference/the-customer-object)
+              in Voucherify.
+            placeholder: ''
+            defaultValue:
+              '@path': $.traits.email
+            required: false
+            multiple: false
+            choices: null
+            dynamic: false
+            allowNull: false
+          - id: 8ATcrcVTNLsVQwTwh4DC9H
+            sortOrder: 2
+            fieldKey: traits
+            label: Customer Attributes
+            type: OBJECT
+            description: >-
+              Additional
+              [customer](https://docs.voucherify.io/reference/the-customer-object)
+              attributes, such as email, name, description, phone, address,
+              birthdate, metadata. When updating a customer, attributes are
+              either added or updated in the customer object.
+            placeholder: ''
+            defaultValue:
+              firstName:
+                '@path': $.traits.first_name
+              lastName:
+                '@path': $.traits.last_name
+              name:
+                '@path': $.traits.name
+              description:
+                '@path': $.traits.description
+              address:
+                '@path': $.traits.address
+              phone:
+                '@path': $.traits.phone
+              birthdate:
+                '@path': $.traits.birthdate
+              metadata:
+                '@path': $.traits.metadata
+            required: false
+            multiple: false
+            choices: null
+            dynamic: false
+            allowNull: false
+          - id: 98sAhDpyQRbmbMuTXw7iGe
+            sortOrder: 3
+            fieldKey: type
+            label: Event Type
+            type: STRING
+            description: >-
+              Type of the event [The Segment
+              Spec](https://segment.com/docs/connections/spec/).
+            placeholder: ''
+            defaultValue:
+              '@path': $.type
+            required: true
+            multiple: false
+            choices: null
+            dynamic: false
+            allowNull: false
+    presets:
+      - actionId: grVqvKHnziNs3qba4Bn9V
+        name: Add Custom Event (Screen Event)
+        fields:
+          source_id:
+            '@if':
+              exists:
+                '@path': $.userId
+              then:
+                '@path': $.userId
+              else:
+                '@path': $.anonymousId
+          email:
+            '@if':
+              exists:
+                '@path': $.properties.email
+              then:
+                '@path': $.properties.email
+              else:
+                '@path': $.context.traits
+          event:
+            '@template': Viewed {{name}} Screen
+          metadata:
+            '@path': $.properties
+          type:
+            '@path': $.type
+        trigger: type = "screen"
+      - actionId: grVqvKHnziNs3qba4Bn9V
+        name: Add Custom Event (Track Event)
+        fields:
+          source_id:
+            '@if':
+              exists:
+                '@path': $.userId
+              then:
+                '@path': $.userId
+              else:
+                '@path': $.anonymousId
+          email:
+            '@if':
+              exists:
+                '@path': $.properties.email
+              then:
+                '@path': $.properties.email
+              else:
+                '@path': $.context.traits
+          event:
+            '@if':
+              exists:
+                '@path': $.event
+              then:
+                '@path': $.event
+              else:
+                '@path': $.name
+          metadata:
+            '@path': $.properties
+          type:
+            '@path': $.type
+        trigger: type = "track"
+      - actionId: grVqvKHnziNs3qba4Bn9V
+        name: Add Custom Event (Page Event)
+        fields:
+          source_id:
+            '@if':
+              exists:
+                '@path': $.userId
+              then:
+                '@path': $.userId
+              else:
+                '@path': $.anonymousId
+          email:
+            '@if':
+              exists:
+                '@path': $.properties.email
+              then:
+                '@path': $.properties.email
+              else:
+                '@path': $.context.traits
+          event:
+            '@template': Viewed {{name}} Page
+          metadata:
+            '@path': $.properties
+          type:
+            '@path': $.type
+        trigger: type = "page"
+      - actionId: sH7RRLaB5yZHjZrVRvj7vh
+        name: Assign Customer To Group
+        fields:
+          source_id:
+            '@if':
+              exists:
+                '@path': $.userId
+              then:
+                '@path': $.userId
+              else:
+                '@path': $.anonymousId
+          email:
+            '@path': $.email
+          group_id:
+            '@path': $.groupId
+          traits:
+            '@path': $.traits
+          type:
+            '@path': $.type
+        trigger: type = "group"
+      - actionId: uzpGsfEyYviQS2cbcVX15S
+        name: Create Or Update Customer
+        fields:
+          source_id:
+            '@if':
+              exists:
+                '@path': $.userId
+              then:
+                '@path': $.userId
+              else:
+                '@path': $.anonymousId
+          email:
+            '@path': $.traits.email
+          traits:
+            firstName:
+              '@path': $.traits.first_name
+            lastName:
+              '@path': $.traits.last_name
+            name:
+              '@path': $.traits.name
+            description:
+              '@path': $.traits.description
+            address:
+              '@path': $.traits.address
+            phone:
+              '@path': $.traits.phone
+            birthdate:
+              '@path': $.traits.birthdate
+            metadata:
+              '@path': $.traits.metadata
+          type:
+            '@path': $.type
+        trigger: type = "identify"
   - id: 6408ac6c144a7d5ac55cf414
     display_name: Toplyne Cloud Mode (Actions)
     name: Toplyne Cloud Mode (Actions)
     slug: actions-toplyne-cloud
     previous_names:
       - Toplyne Cloud Mode (Actions)
+    url: connections/destinations/catalog/actions-toplyne-cloud
     website: http://www.segment.com
     status: PRIVATE_BETA
     logo:
@@ -2648,6 +2861,7 @@ items:
     slug: june-actions
     previous_names:
       - June (Actions)
+    url: connections/destinations/catalog/june-actions
     website: https://www.june.so/
     status: PRIVATE_BETA
     logo:

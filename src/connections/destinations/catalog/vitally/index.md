@@ -16,16 +16,16 @@ Enabling Vitally as a destination in Segment can be done in one click from your 
 
 1. Navigate to the Segment integration page within your Vitally account. This can be found in your **Account Settings** in Vitally by navigating to the **Product Data** integrations list.
 
-  ![](images/6fztyvS.png)
+  ![A screenshot of the Vitally Product Integrations page.](images/6fztyvS.png)
 
 2. In a separate tab/window, make sure you are logged into your Segment account
 3. Configure the Segment integration using the one-click "Enable with Segment" button. Choose the primary source of product usage data in Segment and Segment will automatically create a destination for Vitally:
 
-  ![](images/uGHrIvX.gif)
+  ![An animation where a user clicks the Configure button, selects Segment, clicks Enable with Segment, and is able to connect to the Segment app.](images/uGHrIvX.gif)
 
 4. You'll now be able to see and manage your Vitally Destination directly from your Segment workspace
 
-  ![](images/2JQwIBK.png)
+  ![A screenshot of the Segment Overview page, showing a Vitally destination.](images/2JQwIBK.png)
 
 5. Once Vitally receives at least one event from Segment, you'll be able to proceed with the set up process and configure how to [create accounts from Segment](https://docs.vitally.io/managing-the-customer-lifecycle/account-hierarchy-using-vitallys-organization-object/supported-integrations-and-how-to-create-the-hierarchy#segment){:target="_blank"}
 

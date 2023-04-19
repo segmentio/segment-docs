@@ -393,8 +393,6 @@ sections:
       title: Email Template Editor
     - path: '/engage/content/sms/template'
       title: SMS Template
-    - path: '/engage/content/sms/template'
-      title: SMS Template
     - path: '/engage/content/whatsapp'
       title: WhatsApp Template
   - section_title: Campaigns
