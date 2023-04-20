@@ -138,7 +138,7 @@ To sign up for warehouse sync notifications:
 Data in your warehouse is formatted into **schemas**, which involve a detailed description of database elements (tables, views, indexes, synonyms, etc.)
 and the relationships that exist between elements. Segment's schemas use the following template: <br/>`<source>.<collection>.<property>`, for example,
 `segment_engineering.tracks.user_id`, where source refers to the source or project name (segment_engineering), collection refers to the event (tracks),
-and the property refers to the data being collected (user_id). Note that it is not possible to have different sources feed data into the same schema in your warehouse. In fact, you will not have an option to use a schema name that is already associated with another source while setting up a new one. 
+and the property refers to the data being collected (user_id). **Note:** It is not possible to have different sources feed data into the same schema in your warehouse. While setting up a new schema, you cannot use a duplicate schema name. 
 
 Schema data for Segment warehouses is represented in snake case.
 
