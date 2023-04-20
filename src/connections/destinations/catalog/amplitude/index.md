@@ -13,7 +13,7 @@ Segment's Amplitude destination code is open source and available on GitHub. You
 - [Kotlin](https://github.com/segment-integrations/analytics-kotlin-amplitude){:target="_blank"}
 - [Swift](https://github.com/segment-integrations/analytics-swift-amplitude){:target="_blank"}
 
-In addition to Segment's Amplitude documentation, Amplitude provides a [Segment integration guide](https://developers.amplitude.com/docs/segment-amplitude-integration){:target="_blank"}, as well.
+In addition to Segment's Amplitude documentation, Amplitude provides a [Segment integration guide](https://docs.developers.amplitude.com/data/sources/segment/){:target="_blank"}, as well.
 
 > note ""
 > To delete users based on GDPR regulations, you must include a secret key in the **Secret Key** setting of every Amplitude destination. You can find your Secret Key on the [General Settings](https://help.amplitude.com/hc/en-us/articles/235649848-Settings#general) of your Amplitude project.
@@ -292,7 +292,7 @@ Property names should be `camelCase` for Android implementations, and `snake_cas
 
 > info ""
 > Amplitude [doesn't support currency conversion](https://help.amplitude.com/hc/en-us/articles/115003116888-Track-revenue){:target="_blank"}
-. Normalize all revenue data to your currency of choice before sending it to Amplitude.
+Normalize all revenue data to your currency of choice before sending it to Amplitude.
 
 
 ### Revenue
@@ -703,10 +703,10 @@ Segment logs the user out by setting the `userId` to `nil` and calling Amplitude
 
 Amplitude offers a robust [Instrumentation Explorer/Debugger](https://help.amplitude.com/hc/en-us/articles/360003032451-Instrumentation-Explorer-Debugger){:target="_blank"}. This is a helpful Chrome extension that shows each page interaction that sends an event to Amplitude.
 
-### Amplitude/Segment FAQ
-
-Have a question about the Amplitude/Segment integration that's already been answered? Take a look at [Amplitude's FAQ](https://developers.amplitude.com/docs/segment-amplitude-integration){:target="_blank"} for common issues integrating Amplitude with Segment.
-
 ### I Don't See My Data In Amplitude
 
-If you aren't seeing your data arrive in Amplitude, take a look at our Analytics.js [guide to validating data being transmitted](/docs/connections/sources/catalog/libraries/website/javascript/troubleshooting#is-data-being-transmitted-to-your-third-party-destinations) to your third-party destination.
+If you don't your data arrive in Amplitude, see the Analytics.js [guide to validating data being transmitted](/docs/connections/sources/catalog/libraries/website/javascript/troubleshooting#is-data-being-transmitted-to-your-third-party-destinations) to your third-party destination. 
+
+Also, Amplitude doesn't support fields with a value of an array with nested arrays.
+
+For more information on the Amplitude/Segment integration, view Amplitude's [Import Segment Data](https://docs.developers.amplitude.com/data/sources/segment/){:target="_blank"} documentation.
