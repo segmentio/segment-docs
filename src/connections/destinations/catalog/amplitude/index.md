@@ -705,8 +705,8 @@ Amplitude offers a robust [Instrumentation Explorer/Debugger](https://help.ampli
 
 ### I Don't See My Data In Amplitude
 
-If you aren't seeing your data arrive in Amplitude, take a look at our Analytics.js [guide to validating data being transmitted](/docs/connections/sources/catalog/libraries/website/javascript/troubleshooting#is-data-being-transmitted-to-your-third-party-destinations) to your third-party destination.
+If you don't your data arrive in Amplitude, see the Analytics.js [guide to validating data being transmitted](/docs/connections/sources/catalog/libraries/website/javascript/troubleshooting#is-data-being-transmitted-to-your-third-party-destinations) to your third-party destination. 
 
-### Other resources
+Also, Amplitude doesn't support fields with a value of an array with nested arrays.
 
 For more information on the Amplitude/Segment integration, view Amplitude's [Import Segment Data](https://docs.developers.amplitude.com/data/sources/segment/){:target="_blank"} documentation.
