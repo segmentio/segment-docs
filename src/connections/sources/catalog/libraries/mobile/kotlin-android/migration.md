@@ -821,3 +821,7 @@ After example
 ```
  {% endcodeexampletab %}
  {% endcodeexample %}  
+
+### Options
+
+Options are no longer supported and should be converted into plugins.
