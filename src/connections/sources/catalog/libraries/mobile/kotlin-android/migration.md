@@ -398,14 +398,8 @@ Before example:
  ```
  {% endcodeexampletab %}
  {% endcodeexample %}   
-
-
 ## Modify your tracking methods for Identify, Track, Group, Screen, and Alias
 {: .head-list}
-
-### Identify
-
-Before example:
 
  {% codeexample %}
  {% codeexampletab Java%}
@@ -716,3 +710,114 @@ After example:
 ```
  {% endcodeexampletab %}
  {% endcodeexample %}   
+
+
+## Properties and Options conversions
+
+Segment no longer supports the `Properties` or `Options` parameters in Analytics Kotlin. Follow the guide below to implement the `Builders.JSONObject` for your `Properties` and `plugins` to replace `Options`. 
+
+
+### Properties
+
+> info ""
+> The keys for properties are case-sensitive. Use the following casing to match the expected behavior in Analytics Android (Classic).
+
+Before example 
+
+ {% codeexample %}
+ {% codeexampletab Java%}
+ ```java
+   (new Properties())
+        .putRevenue(23.20)
+        .putCategory("foo")
+        .putProducts(Properties.Product("id", "sku", 1234.23))
+        .putCoupon("mycoupon")
+        .putCurrency("USD")
+        .putDiscount(1.00)
+        .putName("great product name")
+        .putPrice(19.99)
+        .putOrderId("x2390-129")
+        .putPath("/a/b/c/foo")
+        .putProductId("p1239")
+        .putReferrer("yahoo ads")
+        .putRepeatCustomer(true)
+        .putShipping(4.99)
+ ```
+ {% endcodeexampletab %}
+ {% codeexampletab Kotlin%}
+ ```kotlin
+    (Properties())
+        .putRevenue(23.20)
+        .putCategory("foo")
+        .putProducts(Properties.Product("id", "sku", 1234.23))
+        .putCoupon("mycoupon")
+        .putCurrency("USD")
+        .putDiscount(1.00)
+        .putName("great product name")
+        .putPrice(19.99)
+        .putOrderId("x2390-129")
+        .putPath("/a/b/c/foo")
+        .putProductId("p1239")
+        .putReferrer("yahoo ads")
+        .putRepeatCustomer(true)
+        .putShipping(4.99)
+```
+ {% endcodeexampletab %}
+ {% endcodeexample %}  
+
+After example 
+
+ {% codeexample %}
+ {% codeexampletab Java%}
+ ```java
+    Builders.buildJsonObject(o -> {
+        o.put("revenue", 23.20);
+        o.put("category", "foo");
+        o.put("products", Builders.buildJsonArray (a -> {
+            a.addJsonObject(p -> {
+                p.put("id", "id");
+                p.put("sku", "sku");
+                p.put("price", 1234.23);
+            });
+        }));
+        o.put("coupon", "mycoupon");
+        o.put("currency", "usd");
+        o.put("discount", 1.00);
+        o.put("name", "Great Product Name");
+        o.put("price", 19.99);
+        o.put("orderId", "x2390-129");
+        o.put("path", "/a/b/c/foo");
+        o.put("productId", "p1239");
+        o.put("referrer", "yahoo ads");
+        o.put("repeat", true);
+        o.put("shipping", 4.99);
+    });
+ ```
+ {% endcodeexampletab %}
+ {% codeexampletab Kotlin%}
+ ```kotlin
+    Builders.buildJsonObject { o -> {
+        o.put("revenue", 23.20)
+        o.put("category", "foo")
+        o.put("products", Builders.buildJsonArray {a -> {
+            a.addJsonObject{ p -> 
+                p.put("id", "id")
+                p.put("sku", "sku")
+                p.put("price", 1234.23)
+            }
+        }})
+        o.put("coupon", "mycoupon")
+        o.put("currency", "usd")
+        o.put("discount", 1.00)
+        o.put("name", "Great Product Name")
+        o.put("price", 19.99)
+        o.put("orderId", "x2390-129")
+        o.put("path", "/a/b/c/foo")
+        o.put("productId", "p1239")
+        o.put("referrer", "yahoo ads")
+        o.put("repeat", true)
+        o.put("shipping", 4.99)
+    }}
+```
+ {% endcodeexampletab %}
+ {% endcodeexample %}  

@@ -27,7 +27,7 @@ implementation 'com.segment.analytics.kotlin.destinations:mixpanel:<latest_versi
 Or the following for Kotlin DSL
 
 ```
-implementation("com.segment.analytics.kotlin.destinations:mixpanel:<latest_version>")
+implementation('com.segment.analytics.kotlin.destinations:mixpanel:<latest_version>')
 ```
 
 

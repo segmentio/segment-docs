@@ -20,7 +20,7 @@ implementation 'com.segment.analytics.kotlin.destinations:comscore:<latest_versi
 Or the following for Kotlin DSL
 
 ```
-implementation("com.segment.analytics.kotlin.destinations:comscore:<latest_version>")
+implementation('com.segment.analytics.kotlin.destinations:comscore:<latest_version>')
 ```
 
 

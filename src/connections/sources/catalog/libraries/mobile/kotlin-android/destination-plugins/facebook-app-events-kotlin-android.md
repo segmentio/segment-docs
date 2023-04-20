@@ -26,7 +26,7 @@ implementation 'com.segment.analytics.kotlin.destinations:facebookappevents:<lat
 Or the following for Kotlin DSL
 
 ```
-implementation("com.segment.analytics.kotlin.destinations:facebookappevents:<latest_version>")
+implementation('com.segment.analytics.kotlin.destinations:facebookappevents:<latest_version>')
 ```
 
 ## Using the Plugin in your App

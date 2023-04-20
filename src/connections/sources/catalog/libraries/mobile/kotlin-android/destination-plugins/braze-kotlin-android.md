@@ -29,7 +29,7 @@ implementation 'com.braze:braze-segment-kotlin:<latest_version>'
 Or the following for Kotlin DSL
 
 ```
-implementation("com.braze:braze-segment-kotlin:<latest_version>")
+implementation('com.braze:braze-segment-kotlin:<latest_version>')
 ```
 
 Also add the following lines to the build.gradle file

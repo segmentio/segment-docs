@@ -23,7 +23,7 @@ implementation 'com.segment.analytics.kotlin.destinations:optimizely-full-stack:
 Or the following for Kotlin DSL
 
 ```
-implementation("com.segment.analytics.kotlin.destinations:optimizely-full-stack:<latest_version>")
+implementation('com.segment.analytics.kotlin.destinations:optimizely-full-stack:<latest_version>')
 ```
 
 ## Using the Plugin in your App

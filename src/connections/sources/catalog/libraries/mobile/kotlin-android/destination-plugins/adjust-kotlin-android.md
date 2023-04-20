@@ -24,7 +24,7 @@ implementation 'com.segment.analytics.kotlin.destinations:adjust:<latest_version
 Or the following for Kotlin DSL
 
 ```
-implementation("com.segment.analytics.kotlin.destinations:adjust:<latest_version>")
+implementation('com.segment.analytics.kotlin.destinations:adjust:<latest_version>')
 ```
 
 ## Using the Plugin in your App

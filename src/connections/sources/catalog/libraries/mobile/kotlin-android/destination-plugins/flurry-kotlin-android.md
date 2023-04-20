@@ -27,7 +27,7 @@ implementation 'com.segment.analytics.kotlin.destinations:flurry:<latest_version
 Or the following for Kotlin DSL
 
 ```
-implementation("com.segment.analytics.kotlin.destinations:flurry:<latest_version>")
+implementation('com.segment.analytics.kotlin.destinations:flurry:<latest_version>')
 ```
 
 ## Using the Plugin in your App

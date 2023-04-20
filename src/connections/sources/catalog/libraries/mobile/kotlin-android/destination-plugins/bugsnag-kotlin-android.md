@@ -19,7 +19,7 @@ implementation 'com.segment.analytics.kotlin.destinations:bugsnag:<latest_versio
 ```
 Or the following for Kotlin DSL
 ```
-implementation("com.segment.analytics.kotlin.destinations:bugsnag:<latest_version>")
+implementation('com.segment.analytics.kotlin.destinations:bugsnag:<latest_version>')
 ```
 
 Also add the BugSnag Gradle plugin dependency to your project level build.gradle.

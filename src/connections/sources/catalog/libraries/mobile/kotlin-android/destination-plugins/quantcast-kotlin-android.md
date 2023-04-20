@@ -13,7 +13,7 @@ implementation 'com.segment.analytics.kotlin.destinations:quantcast:<latest_vers
 Or the following for Kotlin DSL
 
 ```
-implementation("com.segment.analytics.kotlin.destinations:quantcast:<latest_version>")
+implementation('com.segment.analytics.kotlin.destinations:quantcast:<latest_version>')
 ```
 
 At this time Quantcast's library is hosted in JCenter, which is deprecated. In order to satisfy the Quantcast library dependency, you may have to add the following to the repositories setup in your project's gradle files:
