@@ -35,7 +35,7 @@ other tools you might prefer for events and notifications. We recommend setting
 up alerts to help you ensure your Inventory is always up to date.
 
 
-![](images/privacy-alerts.png)
+![Screenshot of the Privacy Portal settings page in the Segment app.](images/privacy-alerts.png)
 
 
 **To set up a Slack Alert:**

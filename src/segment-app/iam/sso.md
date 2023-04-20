@@ -20,9 +20,9 @@ Segment's SSO configuration is entirely self-service; we don't require any back 
 
 To get started, go to your workspace settings and choose the "Connections" tab under "Authentication" and click "Add New Connection." Follow the steps to create a SAML connection.
 
-![](images/asset_JR9CRr6f.png)
+![Screenshot of the Segment Authentication settings page, with the Connections tab selected.](images/asset_JR9CRr6f.png)
 
-![](images/asset_XCyMZpwo.png)
+![Screenshot of the Connections page, with the Choose a Connection section selected.](images/asset_XCyMZpwo.png)
 
 ## Prepare your IdP for the connection.
 
@@ -32,7 +32,7 @@ If you're using a different IdP, you must create a custom SAML-based application
 
 Your provider will ask you for a few things from Segment, which we provide in the set up flow:
 
-![](images/asset_RRAJ92MY.png)
+![Screenshot of the Segment Configure Identity Provider screen, with an SSO URL, Audience URL, and attribute statements entered into the respective fields.](images/asset_RRAJ92MY.png)
 
 ### A few gotchas to look out for:
 
@@ -56,7 +56,7 @@ Once you create the application in your IdP, you can come back to Segment and cl
 
 Your IdP provides a URL and x.509 certificate. Copy them into their respective fields in Segment.
 
-![](images/asset_s19XDgWX.png)
+![Screenshot of the Segment Configure Connection screen.](images/asset_s19XDgWX.png)
 
 Then, click "Configure Connection."
 
@@ -66,7 +66,7 @@ You're all set!
 
 Back at the connections page, make sure your connection is enabled with the switch on the right.
 
-![](images/asset_SNxN4JhO.png)
+![Screenshot of the Segment Connections page, with one connection currently active.](images/asset_SNxN4JhO.png)
 
 You can now test using IdP-initiated SSO (by clicking login to Segment from within your IdP) is working correctly. If not, double check the IdP configuration gotchas section above.
 
@@ -76,7 +76,7 @@ For most customers we recommend requiring SSO for all users. If you do not requi
 
 These options are off by default, but configurable on the "Advanced Settings" page.
 
-![](images/asset_require_sso.png)
+![Screenshot of the Advanced Settings page in the Authentication settings tab.](images/asset_require_sso.png)
 
 ## Set up — GSuite
 
@@ -90,7 +90,7 @@ Segment supports SSO on the login page for emails that match your workspace's do
 
 In order to enable this, you'll need to verify your domain with Segment. To do that, go to the "Domains" tab under "Authentication" in the workspace settings page.
 
-![](images/asset_MSaDZk2f.png)
+![Screenshot of the Domains page under the Authentication section of the Workspace Settings.](images/asset_MSaDZk2f.png)
 
 Enter your domain and click "Add Domain." When you click verify, you're given two options to verify your domain, either using a meta tag to add to your `/index.html` at the root, or a DNS text record that you can add through your DNS provider. Once you do so and click verify, you're ready to go!
 
