@@ -62,7 +62,7 @@ The Suppressed Users tab shows an up-to-date list of **actively** suppressed `us
 
 To create a suppression regulation and add a `userId` to this list, click **Suppress New User**, and enter the `userId` in the field that appears. Then click **Request Suppression**.
 
-Segment creates a `SUPPRESS` regulation, and adds the `userId` to your suppression list within 24 hours. But the suppression request can take up to 30 days to process. 
+Segment creates a `SUPPRESS` regulation, and adds the `userId` to your suppression list within 24 hours. Note that the suppression request can take up to 30 days to process. 
 
 ### Remove a user from the suppression list
 
