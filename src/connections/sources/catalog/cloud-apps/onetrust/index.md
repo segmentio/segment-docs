@@ -33,7 +33,7 @@ The following table lists events that OneTrust sends to Segment. These events sh
 
 |  Event Name | Description |
 |  ------ | ------ |
-| Consent Updated | User has given or withdrawn consent for an express purpose |
+| Consent Updated | The user gave or withdrew consent for an express purpose. |
 
 ## Event Properties
 
@@ -41,9 +41,9 @@ The following table lists event properties included with all events Segment rece
 
 |  Property Name | Type | Description |
 |  ------ | ------ | ------ |
-| Purpose ID | string | GUID assigned to the purpose in OneTrust |
-| Purpose Name | string | Name given to the purpose in OneTrust for which the user is giving or withdrawing their consent |
-| Status | string | Current status of the users consent after the update. Options include ACTIVE, WITHDRAWN, PENDING, OPT_OUT, EXPIRED, NO_CONSENT, HARD_OPT_OUT, and NOT_OPTED_OUT |
+| Purpose ID | string | The GUID assigned to the purpose in OneTrust. |
+| Purpose Name | string | The name given to the purpose in OneTrust for which the user gives or withdraws their consent. |
+| Status | string | The current status of the users consent after the update. Options include ACTIVE, WITHDRAWN, PENDING, OPT_OUT, EXPIRED, NO_CONSENT, HARD_OPT_OUT, and NOT_OPTED_OUT. |
 
 
 
