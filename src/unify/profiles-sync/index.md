@@ -48,11 +48,11 @@ Review the required steps for each warehouse in the table above to see which per
 
 The following Segment access [roles](/docs/segment-app/iam/roles/) apply to Profiles Sync:
 
-**Profiles and Engage read-only**: Read-only access to Profiles Sync, including the sync history and configuration settings. With these roles assigned, you can't download PII or edit Profiles Sync settings.
+**Unify and Engage read-only**: Read-only access to Profiles Sync, including the sync history and configuration settings. With these roles assigned, you can't download PII or edit Profiles Sync settings.
 
-**Profiles read-only and Engage user**: Read-only access to Profiles Sync, including the sync history and configuration settings. With these roles assigned, you can't download PII or edit Profiles Sync settings.
+**Unify read-only and Engage user**: Read-only access to Profiles Sync, including the sync history and configuration settings. With these roles assigned, you can't download PII or edit Profiles Sync settings.
 
-**Profiles and Engage Admin access**: Full edit access to Profiles Sync, including the sync history and configuration settings.
+**Unify and Engage Admin access**: Full edit access to Profiles Sync, including the sync history and configuration settings.
 
 
 ### Step 2: Connect the warehouse and enable Profiles Sync
@@ -104,7 +104,7 @@ To start seeing unified profiles in your warehouse and build attribution models,
 Please visit [Tables you materialize](/docs/unify/profiles-sync/tables/#tables-you-materialize) for more on how to materialize these views either on your own, or with [Segment's open source dbt models](https://github.com/segmentio/profiles-sync-dbt){:target="blank"}.
 
 > warning ""
-> Please note that dbt models are in beta and need modifications to run efficiently on BigQuery, Synapse, and Postgres warehouses. Segment is actively working on this feature. 
+> Please note that dbt models are in beta and need modifications to run efficiently on BigQuery, Synapse, and Postgres warehouses. Segment is actively working on this feature.
 
 ## Profiles Sync limits
 
