@@ -3,7 +3,7 @@ title: Analytics Kotlin comScore Plugin
 strat: kotlin-android
 ---
 
-## Getting Started
+## Getting started
 
 1. From the Segment web app, click **Catalog**.
 2. Search for "comScore" in the Catalog, select it, and choose which of your sources to connect the destination to.
@@ -17,7 +17,7 @@ To install the Segment-comScore integration, simply add this line to your gradle
 implementation 'com.segment.analytics.kotlin.destinations:comscore:<latest_version>'
 ```
 
-Or the following for Kotlin DSL
+Or the following for Kotlin DSL:
 
 ```
 implementation('com.segment.analytics.kotlin.destinations:comscore:<latest_version>')

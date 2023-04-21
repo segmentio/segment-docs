@@ -11,7 +11,7 @@ strat: kotlin-android
 
 1. From the Segment web app, click **Catalog**.
 2. Search for "Adjust" in the Catalog, select it, and choose which of your sources to connect the destination to.
-3. You don't need to include Adjust's SDK natively, as this prevent you from successfully implementing the Adjust.
+3. You don't need to include Adjust's SDK natively, as this prevent you from successfully implementing Adjust.
 4. Depending on the source you've selected, include Adjust's library by adding the following lines to your dependency configuration.
 
 ## Adding the dependency

@@ -9,7 +9,6 @@ strat: swift
 ## Getting Started 
 
 If you're using a different mobile library such as Analytics-iOS, follow these steps to migrate to the Analytics-Swift library.
-ADDITIONAL COPY ABOUT HOW EASY IT IS TO MIGRATE/ HOW MUCH OF A TIME INVESTMENT PEOPLE  CAN EXPECT
 
 > success ""
 > This guide assumes you already have a Source in your Segment workspace. If you are creating a new one you can reference the [Source Overview Guide](/docs/connections/sources/)
