@@ -333,30 +333,30 @@ After example:
 
 Segment changed these config options:
 
-| Before                               | After                                                                                                     |
-| ------------------------------------ | --------------------------------------------------------------------------------------------------------- |
-| `collectDeviceId`                    | Name changed to `collectDeviceId`                                                                         |
-| `context`                            | Name changed to `application`                                                                             |
-| `defaultApiHost`                     | Name changed to `apiHost`                                                                                 |
-| `defaultProjectSettings`             | Name changed to `defaultSettings`                                                                         |
-| `experimentalUseNewLifecycleMethods` | Name changed to `useLifecycleObserver`Note: Used in tandem with `trackApplicationLifecycleEvents` |
-| `flushInterval`                      | Name changed to `flushInterval`                                                                           |
-| `flushQueueSize`                     | Name changed to `flushAt`                                                                                 |
+Before | After
+------ | ------
+`collectDeviceId` | Name changed to `collectDeviceId` |
+`context` | Name changed to `application` |
+`defaultApiHost` | Name changed to `apiHost` |
+`defaultProjectSettings` | Name changed to `defaultSettings` |
+`experimentalUseNewLifecycleMethods` | Name changed to `useLifecycleObserver`<br><br>Note: Used in tandem with `trackApplicationLifecycleEvents` |
+`flushInterval` | Name changed to `flushInterval` |
+`flushQueueSize` | Name changed to `flushAt` |
 
-Segment added this option:
+<br> Segment added these options:
 
-| Option                      | Details                                                                                                                                                                                             |
-| --------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `autoAddSegmentDestination` | The analytics client automatically adds the Segment Destination. Set this to `false`, if you want to customize the initialization of the Segment Destination, such as, add destination middleware). |
+Option | Details
+------ | -------
+`autoAddSegmentDestination` | The analytics client automatically adds the Segment Destination. Set this to `false`, if you want to customize the initialization of the Segment Destination, such as, add destination middleware). |
 
-Segment deprecated these options:
+<br> Segment deprecated these options:
 
-| Option                 | Details                                                                                                                                                        |
-| ---------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `defaultOptions`       | Deprecated in favor of a plugin that adds the default data to the event payloads. Segment doesn't provide a plugin example since it's dependent on your needs. |
-| `recordScreenViews`    | Deprecated in favor of the `AndroidRecordScreenPlugin` that provides the same functionality.                                                                   |
-| `trackAttributionData` | This feature no longer exists.                                                                                                                                 |
-
+Option | Details
+------ | --------
+`defaultOptions` | Deprecated in favor of a plugin that adds the default data to the event payloads. Segment doesn't provide a plugin example since it's dependent on your needs.|
+`recordScreenViews` | Deprecated in favor of the `AndroidRecordScreenPlugin` that provides the same functionality. |
+`trackAttributionData` | This feature no longer exists. |       
+                                        
 ## Add a destination
 {: .head-list}
 
