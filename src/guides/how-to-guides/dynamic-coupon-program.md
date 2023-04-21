@@ -38,7 +38,7 @@ We'll conduct a split test (half of the cohort will represent the control group 
 
 First, register for an account with Customer.io and Amplitude. Then, enable Customer.io and enable Amplitude on your Segment project. Finally, go into your Customer.io account and enable "sending data to Segment":
 
-![](images/dyncoupon_tps7HAgP.png)
+![Screenshot of the Streaming Data Out page in Customer.io, with an enabled Segment.com option.](images/dyncoupon_tps7HAgP.png)
 
 [You can find those destination settings in Customer.io here.](https://fly.customer.io/account/integration_settings)
 
@@ -50,13 +50,13 @@ When everything is enabled, customer event data such as `Order Completed` and `P
 
 Now we define the specific cohort in Customer.io as per our conditions listed earlier: someone who spends over $20 per order and shops over twice a month. In Customer.io, go to "Segments" and "Create Segment":
 
-![](images/dyncoupon_kTaK5L7l.png)
+![Screenshot of the Segment builder in Customer.io, with the title "Coupon Loyalty Experiment".](images/dyncoupon_kTaK5L7l.png)
 
 After this cohort is created, then when a customer makes the third purchase in a month and it's over $20, then she will be added to this segment.
 
 Next, we'll create a "segment trigger campaign", where Customer.io will send a message the first time someone enters a segment. The segment in this case will be the one we just created: Coupon Loyalty Experiment.
 
-![](images/dyncoupon_lE6v8cXN.png)
+![Screenshot of the Segment Trigger Campaign page in Customer.io, with a sample email ready to send to customers in the segment.](images/dyncoupon_lE6v8cXN.png)
 
 Save the changes and then enable the campaign!
 
@@ -71,29 +71,29 @@ In Amplitude, we can create a funnel that compares the two cohorts—one who rec
 
 First, let's define a behavioral cohort with the conditions of being loyal customers so we can use it when we analyze the conversion funnel:
 
-![](images/dyncoupon_uiJaB5iF.png)
+![Screenshot of a Loyal Customers segment in Amplitude, comprised of users who spent at least $20 and purchased more than two times in the last 30 days](images/dyncoupon_uiJaB5iF.png)
 
 We'll also have to create a second identical cohort, except with the only difference that these customers did not receive the coupon email. We need this cohort so we can create the conversion funnel with the control group.
 
-![](images/dyncoupon_vt165Rxc.png)
+![Screenshot of a Loyal Customers (Control) segment in Amplitude, comprised of users who spent at least $20 and purchased more than two times in the last 30 days, but did not get the loyal customer email.](images/dyncoupon_vt165Rxc.png)
 
 After we've created these two cohorts, we'll create two funnel charts. The first funnel will look at the control group. The second funnel will look at the group that received the coupon email.
 
-![](images/dyncoupon_2IEwSA4L.png)
+![Screenshot of the Funnel Analysis page in Amplitude showing the Loyal Customers (Control) segment.](images/dyncoupon_2IEwSA4L.png)
 
 Resulting in:
 
-![](images/dyncoupon_kEDuPed8.png)
+![A bar chart showing 233 visits to the main landing screen, 98 products added to cart, and 66 purchases.](images/dyncoupon_kEDuPed8.png)
 
 We can see that the control group that did not receive the email for the coupon resulted in 233 people visiting the store, with 66 conversions.
 
 The funnel for the group who did receive the emails can be created with these parameters:
 
-![](images/dyncoupon_AIZxZDJG.png)
+![Screenshot of the Funnel Analysis page in Amplitude showing the Loyal Customers segment.](images/dyncoupon_AIZxZDJG.png)
 
 Resulting in:
 
-![](images/dyncoupon_TUWSroDC.png)
+![A bar chart showing 758 emails delivered, 560 emails opened, 168 visits to the main landing screen, 134 products added to cart, and 95 purchases.](images/dyncoupon_TUWSroDC.png)
 
 The email itself drove 168 customers to the store, which also saw higher conversions to `Product Added` and ultimately `Order Completed` .
 

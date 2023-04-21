@@ -15,7 +15,7 @@ When you first log in, you go to your workspace. (If you're a member of several 
 
 This is a Segment workspace.
 
-![](images/workspace-overview.png)
+![Screenshot of the Overview page of a Segment workspace.](images/workspace-overview.png)
 
 The first thing you see is a graph of the Sources and Destinations you have connected to Segment. Sources send data to your workspace: these are your mobile apps, server sources, and website-based sources. Destinations are tools which get the data, and can also include Warehouses, which just store large amounts of data for later reuse and analysis.
 
@@ -29,7 +29,7 @@ You can always click the Segment logo in the top left corner to get back to the 
 
 ## Sources
 
-![](images/sources.png)
+![Screenshot of the My Sources page in the Segment app.](images/sources.png)
 
 The Sources tab lists everything that is sending data to your Segment workspace. Sources are organized by type: website, mobile, sever, or by cloud-app type, like CRM or payments.
 
@@ -37,13 +37,13 @@ Each Source has a Status and a list of Destinations. A Source's Status tells you
 
 ## Destinations
 
-![](images/destinations.png)
+![Screenshot of the My Destinations page in the Segment app.](images/destinations.png)
 
 The Destination tab lists all of the Destinations connected to your workspace. These are sorted into categories like Analytics, Email marketing and other tool types. The list also shows whether or not Segment is sending data to that tool, or if the tool is enabled or disabled.
 
 ## The Segment Integration Catalog
 
-![](images/catalog.png)
+![Screenshot of the Segment Integration Catalog.](images/catalog.png)
 
 Next up we have the Catalog. The catalog includes a list of all [sources](/docs/connections/sources/) and [destinations](/docs/connections/destinations/) available in Segment. You can search either by category, or name. When you click on a catalog tile, the tile shows instructions on how to connect the tool to your Segment workspace.
 
@@ -69,7 +69,7 @@ The **Health** tab lists any repeated or consistent errors, which can help alert
 
 Issues on the Health tab are sorted by Sources, Destinations, Warehouses, and again by type.
 
-![](images/health.png)
+![Screenshot of the Integration Health page in the Segment app.](images/health.png)
 
 If errors are present, they're sorted by type and include information about how long ago they were last seen, and how many times they've occurred. You can click the wrench icon on an individual error line to view the Event Delivery tool and see the erroring payload and response. You can also disable, or delete the erroring integration from this menu.
 
@@ -77,4 +77,4 @@ If errors are present, they're sorted by type and include information about how 
 
 The Privacy Portal allows you to inspect data coming into your Segment account, check it for Personally Identifying Information (PII), classify it based on how sensitive the information is, and then determine which categories of data to send to different destinations. Read more about these tools in the [Privacy Portal documentation](/docs/privacy/portal/).
 
-![](images/privacy.png)
+![Screenshot of the Detection tab in the Privacy Portal.](images/privacy.png)
