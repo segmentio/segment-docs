@@ -17,7 +17,7 @@ To install the Segment-comScore integration, simply add this line to your gradle
 implementation 'com.segment.analytics.kotlin.destinations:comscore:<latest_version>'
 ```
 
-Or the following for Kotlin DSL
+Or the following for Kotlin DSL:
 
 ```
 implementation('com.segment.analytics.kotlin.destinations:comscore:<latest_version>')
