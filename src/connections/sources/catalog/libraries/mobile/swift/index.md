@@ -13,10 +13,6 @@ With Analytics Swift, you can send data from iOS, tvOS, iPadOS, WatchOS, macOS a
 ## Benefits of Analytics Swift
 
 Analytics Swift provides several key benefits including improvements in stability, performance, and developer experience when compared to Analytics iOS (Classic). 
-
-### Stability
- <  SAFELY BLURB >
-
 ### Performance
 
 Analytics Swift is a huge leap forward in terms of performance when compared to Analytics iOS. For a more detailed overview, you can reference our [blog post](https://segment.com/blog/sdk-performance-improvements/). 
