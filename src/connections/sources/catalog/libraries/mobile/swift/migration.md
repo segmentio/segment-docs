@@ -169,33 +169,36 @@ If you don't need to transform all of your Segment calls, and only want to trans
 
     analytics.add(plugin: amplitudeDestination)
 ```
+
 ### Update your config options 
 
-<br> Segment changed these config options:
+Segment changed these config options:
 
-Before | After
------- | ------
-`defaultProjectSettings` | Name changed to `defaultSettings` |
+| Before                   | After                             |
+| ------------------------ | --------------------------------- |
+| `defaultProjectSettings` | Name changed to `defaultSettings` |
 
-<br> Segment added these options:
+Segment added these options:
 
-Name | Details
----- | -------
-`autoAddSegmentDestination` | The analytics client automatically adds the Segment Destination. Set this to `false` if you want to customize the initialization of the Segment Destination, such as, add destination middleware. |
+| Name                        | Details                                                                                                                                                                                           |
+| --------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `autoAddSegmentDestination` | The analytics client automatically adds the Segment Destination. Set this to `false` if you want to customize the initialization of the Segment Destination, such as, add destination middleware. |
 
- <br> Segment deprecated these options:
+Segment deprecated these options:
 
-Deprecated Option | Details
------------------ | -------
-`enableAdvertisingTracking` | Deprecated |
-`launchOptions` | Deprecated in favor of the enrichment plugin that adds the default data to the event payloads. |
-`maxQueueSize` | Deprecated |
-`recordScreenViews` | Deprecated in favor of a plugin that provides the same functionality. Use the `UIKitScreenTracking` plugin. |
-`shouldUseBluetooth` | Deprecated |
-`shouldUseLocationServices` | Deprecated |
-`trackAttributionData` | This feature no longer exists. |
-`trackInAppPurchases` | Deprecated |
-`trackPushNotifications` | Deprecated |
+
+| Deprecated Option           | Details                                                                                                     |
+| --------------------------- | ----------------------------------------------------------------------------------------------------------- |
+| `enableAdvertisingTracking` | Deprecated                                                                                                  |
+| `launchOptions`             | Deprecated in favor of the enrichment plugin that adds the default data to the event payloads.              |
+| `maxQueueSize`              | Deprecated                                                                                                  |
+| `recordScreenViews`         | Deprecated in favor of a plugin that provides the same functionality. Use the `UIKitScreenTracking` plugin. |
+| `shouldUseBluetooth`        | Deprecated                                                                                                  |
+| `shouldUseLocationServices` | Deprecated                                                                                                  |
+| `trackAttributionData`      | This feature no longer exists.                                                                              |
+| `trackInAppPurchases`       | Deprecated                                                                                                  |
+| `trackPushNotifications`    | Deprecated                                                                                                  |
+
 ### Add destination plugins
 
 > warning ""
