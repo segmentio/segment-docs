@@ -31,6 +31,7 @@ You can use the `integrations` JSON object as part of your Segment payloads to c
     "All": true,
     "Mixpanel": false,
     "Salesforce": false
+    "My Destination Function (My Workspace)": true
   }
 }
 ```
