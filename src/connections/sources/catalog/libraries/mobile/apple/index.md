@@ -8,14 +8,14 @@ id: dZeHygTSD4
 With Analytics Swift, you can send data from iOS, tvOS, iPadOS, WatchOS, macOS and Linux applications to any analytics or marketing tool without having to learn, test, or implement a new API every time. Analytics Swift is compatible with both Swift and Objective-C applications. 
 
 > warning ""
-> If you're migrating to **Analytics Swift** from Analyitcs iOS (Classic), you can skip to the [migration guide](/docs/connections/sources/catalog/libraries/mobile/swift/migration/).
+> If you're migrating to **Analytics Swift** from Analytics iOS (Classic), you can skip to the [migration guide](/docs/connections/sources/catalog/libraries/mobile/swift/migration/).
 
 ## Benefits of Analytics Swift
 
 Analytics Swift provides several key benefits including improvements in stability, performance, and developer experience when compared to Analytics iOS (Classic). 
 ### Performance
 
-Analytics Swift is a huge leap forward in terms of performance when compared to Analytics iOS. For a more detailed overview, you can reference our [blog post](https://segment.com/blog/sdk-performance-improvements/). 
+Analytics Swift is a huge leap forward in terms of performance when compared to Analytics iOS. For a more detailed overview, you can reference the [blog post](https://segment.com/blog/sdk-performance-improvements/). 
 
 - Faster event processing and deliver
 - Significantly lower CPU usage
@@ -30,7 +30,7 @@ Analytics Swift adds several improvements to the overall experience of using the
 - More customization options than ever before.
 
 ### Device Mode Transformations & Filtering
-For the first time ever, developers can filter and transform their users’ events even before the events leave the mobile device. What’s more, these Filters & transformations can be applied dynamically (either via the Segment Dashboard, or via Javascript uploaded to the workspace) and do not require any app updates!
+For the first time ever, developers can filter and transform their users’ events even before the events leave the mobile device. What’s more, these Filters & transformations can be applied dynamically (either through the Segment Dashboard, or Javascript uploaded to the workspace) and do not require any app updates.
 
 Learn more about [Destination Filters]() on Mobile, and [Edge Functions]() on Mobile. 
 

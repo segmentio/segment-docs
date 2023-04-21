@@ -20,7 +20,7 @@ Below is a list of the available sources on the Segment platform.
 
 <div class="destinations-catalog">
   {% assign categories = site.data.catalog.source_categories.items %}
-  {% assign promoted_categories = "New & Noteworthy, Website, Mobile, Server, Ott" | split: ", " %}
+  {% assign promoted_categories = "Website, Mobile, Server, Ott" | split: ", " %}
 
   {% for category in promoted_categories %}
     <div class="destinations-catalog__section markdown" id="{{ category | slugify }}">

@@ -177,7 +177,7 @@ sections:
 - slug: kotlin-android
   section_title: Analytics-Kotlin Documentation
   section:
-  - path: /connections/sources/catalog/libraries/mobile/kotlin-android
+  - path: /connections/sources/catalog/libraries/mobile/kotlin-android 
     title: Overview
   # - path: /connections/sources/catalog/libraries/server/kotlin
   #   title: Analytics-Kotlin (Server)
@@ -197,19 +197,19 @@ sections:
 - slug: swift
   section_title: Analytics-Swift Documentation
   section:
-  - path: /connections/sources/catalog/libraries/mobile/swift
+  - path: /connections/sources/catalog/libraries/mobile/apple
     title: Overview
-  - path: /connections/sources/catalog/libraries/mobile/swift/implementation
+  - path: /connections/sources/catalog/libraries/mobile/apple/implementation
     title: Implementation Guide
-  - path: /connections/sources/catalog/libraries/mobile/swift/migration
+  - path: /connections/sources/catalog/libraries/mobile/apple/migration
     title: Migration Guide
-  - path: /connections/sources/catalog/libraries/mobile/swift/destination-plugins
+  - path: /connections/sources/catalog/libraries/mobile/apple/destination-plugins
     title: Destination Plugins
-  - path: /connections/sources/catalog/libraries/mobile/swift/cloud-mode-destinations
+  - path: /connections/sources/catalog/libraries/mobile/apple/cloud-mode-destinations
     title: Cloud-mode Destinations
-  - path: /connections/sources/catalog/libraries/mobile/swift/swift-typewriter
+  - path: /connections/sources/catalog/libraries/mobile/apple/swift-typewriter
     title: Typewriter for Swift
-  - path: /connections/sources/catalog/libraries/mobile/swift/swift-destination-filters
+  - path: /connections/sources/catalog/libraries/mobile/apple/swift-destination-filters
     title: Destination Filters for Swift
 
 - slug: node-js
