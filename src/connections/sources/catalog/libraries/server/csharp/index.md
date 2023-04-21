@@ -11,7 +11,7 @@ With Analytics-CSharp, you can add Segment analytics to your .Net app which incl
 
 ### Supported platforms 
 These platforms support Analytics-CSharp: 
-* .Net/.Net core/.Net framework
+* .NET/.NET core/.NET framework
 * Mono
 * Universal Windows platform 
 * Xamarin 
@@ -24,11 +24,15 @@ These platforms support Analytics-CSharp:
    * PC, Mac, Linux 
 
 ## Getting started
+
+> info ""
+> If you'd like to migrate to Analytics-CSharp from a different library, follow the steps in the [Analytics-CSharp migration guide](/docs/connections/sources/catalog/libraries/server/csharp/migration-guide/). 
+
 To get started with the Analytics-CSharp library: 
 
 1. Create a Source in Segment. 
    1. Go to **Connections > Sources > Add Source**.
-   2. Search for *Xamarin, Unity, or .NET* (whichever source you want to use) and click **Add Source**.  
+   2. Search for *Xamarin, Unity, or .NET* (whichever source you want to use) and click **Add Source**.  **Note:** There is no CSharp source. To use Analytics-CSharp, use either Xamarin, Unity, or .NET as your source. 
 2. Add the Analytics dependency to your project. 
 
     ```git
