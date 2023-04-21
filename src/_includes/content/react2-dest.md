@@ -14,4 +14,4 @@ The {{thisDestName}} device-mode destination SDK is only available for {{thisDes
 </p></div></div>
 {%endif%}
 
-To add the {{thisDestName}} device-mode SDK to a [React Native](/docs/connections/sources/catalog/libraries/mobile/react-native/) project using Segment's new `2.0` release, please reference our supported [Destination Plugin documentation](/docs/connections/sources/catalog/libraries/mobile/react-native/#supported-destinations).
+To add the {{thisDestName}} device-mode SDK to a [React Native](/docs/connections/sources/catalog/libraries/mobile/react-native/) project using Segment's new `2.0` release, please reference the supported [Destination Plugin documentation](/docs/connections/sources/catalog/libraries/mobile/react-native/#supported-destinations).
