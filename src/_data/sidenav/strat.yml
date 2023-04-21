@@ -207,7 +207,7 @@ sections:
 - slug: csharp
   section_title: Analytics-CSharp Documentation
   section: 
-  - path: 
-    title: 
-  - path: 
-    title: 
+  - path: /connections/sources/catalog/libraries/server/csharp/
+    title: Analytics-CSharp
+  - path: /connections/sources/catalog/libraries/server/csharp/migration-guide/
+    title: Analytics-CSharp Migration Guide
