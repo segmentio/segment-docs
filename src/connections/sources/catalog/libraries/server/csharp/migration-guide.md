@@ -3,11 +3,14 @@ title: Analytics for CSharp (C#) Migration Guide
 strat: csharp
 ---
 
-If you’re using a different library such as Analytics .Net, follow the steps below to migrate to the Analytics-CSharp library.  
+If you’re using a different library, follow the steps below to migrate to the [Analytics-CSharp library](/docs/connections/sources/catalog/libraries/server/csharp/).  
+
+> info ""
+> This library is currently in beta and is governed by Segment’s [First Access and Beta terms](https://www.twilio.com/legal/tos){:target="_blank"}. 
 
 1. Create a source in Segment. If you want to reuse your current source, skip to step 2. 
     1. Go to Connections > Sources > Add Source.
-    2. Search for Xamarin or Unity or .NET and click Add source.
+    2. Search for *Xamarin, Unity* or *.NET* and click **Add source**. **Note:** There is no CSharp source. To use Analytics-CSharp, use either Xamarin, Unity, or .NET as your source. 
 2. Add the Analytics CSharp dependency to your project. 
 
     <br> Before:
@@ -46,14 +49,6 @@ If you’re using a different library such as Analytics .Net, follow the steps b
             { "email", "#{ user.email }" },
             { "friends", 29 }
         });
-
-        // below is the new way
-        analytics.Identify("019mr8mf4r", new JsonObject
-        {
-            ["name"] = "#{user.name}",
-            ["email"] = "#{user.email}",
-            ["friends"] = 29
-        });
       ```
 
     - Track
@@ -72,13 +67,6 @@ If you’re using a different library such as Analytics .Net, follow the steps b
         {
             { "revenue", 39.95 },
             { "shipping", "2-day" }
-        });
-
-        // below is the new way
-        analytics.Track("Item Purchased", new JsonObject
-        {
-            ["revenue"] = 39.95,
-            ["shipping"] = "2-days"
         });
         ```
         **Note:** The Analytics-CSharp SDK remembers the identity info from the last identify call, so you don’t have to pass an identity every time. If you still want to identify on every track call, you can achieve it with Segment's plugin system.
@@ -100,13 +88,6 @@ If you’re using a different library such as Analytics .Net, follow the steps b
             { "path", "/login" },
             { "title", "Initech Login" }
         });
-
-        // below is the new way
-        analytics.Page("Login", new JsonObject
-        {
-            ["path"] = "/login",
-            ["title"] = "Initech Login"
-        });
         ```
 
     - Screen
@@ -123,12 +104,6 @@ If you’re using a different library such as Analytics .Net, follow the steps b
         analytics.Screen("Register", new JsonObject()
         {
             { "type", "facebook" }
-        });
-
-        // below is the new way
-        analytics.Screen("Register", new JsonObject
-        {
-            ["type"] = "facebook"
         });
         ```
 
@@ -148,13 +123,6 @@ If you’re using a different library such as Analytics .Net, follow the steps b
         {
             { "name", "Initech, Inc." },
             { "website", "http://www.example.com" }
-        });
-
-        // below is the new way
-        analytics.Group("groupId", new JsonObject
-        {
-            ["name"] = "Initech, Inc.",
-            ["website"] = "http://www.example.com"
         });
         ```
     
@@ -190,7 +158,7 @@ If you’re using a different library such as Analytics .Net, follow the steps b
     Analytics.Initialize("YOUR_WRITE_KEY", new Config().SetAsync(false));
     ```
 
-    The new SDK by default, generates an Anonymous ID for you if you never all `analytics.Identify`. If you've called `Identify` and want to go back to anonymous, try:
+    The new SDK by default, generates an Anonymous ID for you if you never call `analytics.Identify`. If you've called `Identify` and want to go back to anonymous, try:
 
     <br> After:
     ```c#                  
@@ -222,17 +190,6 @@ If you’re using a different library such as Analytics .Net, follow the steps b
             { "street", "123 Fake Street" },
             { "city", "Boston" }
         }}
-    });
-
-    // below is the new way
-    analytics.Identify("hj2kf92ds212", new JsonObject
-    {
-        ["email"] = "tom@example.com",
-        ["name"] = "Tom Smykowski",
-        ["address"] = new JsonObject {
-            ["street"] = "123 Fake Street",
-            ["city"] =  "Boston"
-        }
     });
     ```
     

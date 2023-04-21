@@ -4,7 +4,7 @@ strat: csharp
 id: 
 ---
 
-With Analytics-CSharp, you can add Segment analytics to your .Net app which includes Unity, Xamarin, .Net. Analytics-CSharp helps you measure your users, product, and business. It unlocks insights into your app's funnel, core business metrics, and whether you have product-market fit.
+With Analytics-CSharp, you can add Segment analytics to your C# based app which includes Unity, Xamarin, .NET. Analytics-CSharp helps you measure your users, product, and business. It unlocks insights into your app's funnel, core business metrics, and whether you have product-market fit.
 
 > info ""
 > This library is currently in beta and is governed by Segment’s [First Access and Beta terms](https://www.twilio.com/legal/tos){:target="_blank"}. 
@@ -38,7 +38,7 @@ To get started with the Analytics-CSharp library:
     ```git
     dotnet add package Segment.Analytics.CSharp --version <LATEST_VERSION>
     ```
-    <br>**Note:** Analytics-CSharp is distributed through NuGet. Check out other installation options [here](https://www.nuget.org/packages/Segment.Analytics.CSharp/){:target="_blank"}.
+    <br>**Note:** Analytics-CSharp is distributed through NuGet. Check out other installation options [here](https://www.nuget.org/packages/Segment.Analytics.CSharp/){:target="_blank"}. For Unity, Analytics-Chsharp is distributed through [OpenUPM](https://openupm.com/packages/com.segment.analytics.csharp/?subPage=readme){:target="_blank"}. 
 
 3. Initialize and configure the client.
 
