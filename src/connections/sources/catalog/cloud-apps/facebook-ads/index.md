@@ -16,13 +16,13 @@ Facebook is one of the most efficient ways to advertise online. Take your compan
 3. Give the source a nickname.
    The nickname is a label used in the Segment interface, and Segment creates a related schema name which you query against in your warehouse. The nickname can be whatever you like, but we recommend sticking to something that reflects the source itself, like `Facebook Ads` or `Facebook Ads Prod`.
 
-   ![](images/setup.png)
+   ![Screenshot of the Facebook Ads setup flow in the Segment app.](images/setup.png)
 
 4. Click **Create And Continue** then **Connect** to OAuth into Facebook.
 
 5. Select which accounts you would like to sync (you may change this selection later).
 
-  ![](images/choose_account.png)
+  ![The second step in the Facebook Ads setup flow in the Segment app.](images/choose_account.png)
 
 6. Click **Finish**.
 
