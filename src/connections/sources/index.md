@@ -110,11 +110,11 @@ Segment's Mobile SDKs are the best way to simplify your iOS, Android, and Xamari
 - [iOS](/docs/connections/sources/catalog/libraries/mobile/ios)
 - [Kotlin](/docs/connections/sources/catalog/libraries/mobile/kotlin-android/)
 - [React Native](/docs/connections/sources/catalog/libraries/mobile/react-native)
-- [Swift](/docs/connections/sources/catalog/libraries/mobile/swift-ios/)
+- [Swift](/docs/connections/sources/catalog/libraries/mobile/swift/)
 - [Xamarin](/docs/connections/sources/catalog/libraries/mobile/xamarin)
 
 > info "Analytics-Flutter library"
->  The Analytics-Flutter library is currently only available in pilot phase and is governed by Segment's [First Access and Beta Preview Terms](https://www.twilio.com/en-us/legal/tos){:target="_blank"}. If you'd like to try out this library, access the [Analytics-Flutter GitHub repo](https://github.com/segmentio/analytics_flutter){:target="_blank"}. 
+>  The Analytics-Flutter library is currently only available in pilot phase and is governed by Segment's [First Access and Beta Preview Terms](https://www.twilio.com/en-us/legal/tos){:target="_blank"}. If you'd like to try out this library, access the [Analytics-Flutter GitHub repository](https://github.com/segmentio/analytics_flutter){:target="_blank"}. 
 
 ### Server
 

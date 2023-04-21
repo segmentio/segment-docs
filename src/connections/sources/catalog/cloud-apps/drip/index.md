@@ -26,7 +26,7 @@ If you have previously enabled sending email events using the Drip destination d
 
 5. To finish the setup, you'll have to go into your Drip account and enter this Segment write key in their integrations settings. Find the right place in Drip by clicking Settings > Integrations > Segment.
 
-![](images/drip.png)
+![Screenshot of the Integrations page in Drip, with the Segment tab selected.](images/drip.png)
 
 6. Click **Save**.
 

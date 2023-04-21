@@ -15,7 +15,10 @@ As your data volume grows and your team writes more queries, you might be runnin
 
 To check if you're getting close to your max, run this query. It will tell you the percentage of storage used in your cluster. Segment recommends that you don't exceed 75-80% of your storage capacity. If you approach that limit, consider adding more nodes to your cluster.
 
-![](images/asset_HvZs8FpE.png)
+```json
+SELECT sum(pct_used);
+FROM svv_table_info;
+```
 
 [Learn how to resize your cluster.](http://docs.aws.amazon.com/redshift/latest/mgmt/rs-resize-tutorial.html)
 
@@ -51,7 +54,7 @@ If you have multiple ETL processes loading into your warehouse at the same time,
 
 If you're a Segment Business Tier customer, you can schedule your sync times under Warehouses Settings.
 
-![](images/asset_fRccrNNd.png)
+![Screenshot of the Warehouse Settings page, with the Sync Schedule tab selected.](images/asset_fRccrNNd.png)
 
 You also might want to take advantage of Redshift's [Workload Management](http://docs.aws.amazon.com/redshift/latest/dg/c_workload_mngmt_classification.html) that helps ensure fast-running queries won't get stuck behind long ones.
 
@@ -70,7 +73,7 @@ Segment's initial recommendation is for 2 WLM queues:
 2.  leave the default queue with a concurrency of `5`
 
 
-![](images/asset_sHNEIURK.png)
+![Screenshot of the Workload Management Configuration settings page in AWS with a named queue, Queue 1, and the default queue present.](images/asset_sHNEIURK.png)
 
 Generally, Segment is responsible for most writes in the databases Segment connects to, so having a higher concurrency allows Segment to write as fast as possible. If you're also using the same database for your own ETL process, you may want to use the same concurrency for both groups. You may even require additional queues if you have other applications writing to the database.
 

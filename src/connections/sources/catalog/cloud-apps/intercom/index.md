@@ -16,16 +16,16 @@ Take your company's email analysis to the next level by **adding Intercom as a S
 2. Choose Intercom and press **connect**.
 
 3. OAuth into Intercom
-![](images/intercom_source_qnsoxh.png)
+![Screenshot of the Connect to Intercom screen in the Intercom setup flow.](images/intercom_source_qnsoxh.png)
 
 4. We will verify all the required permissions
-![](images/image_1_Intercom.png)
+![Screenshot of the Permissions Verified screen in the Intercom setup flow.](images/image_1_Intercom.png)
 
 5. Configure the name for the Intercom schema in your warehouse
-![](images/image_2_Intercom.png)
+![Screenshot of the SQL Schema Name screen in the Intercom setup flow.](images/image_2_Intercom.png)
 
 6. Add a warehouse or connect Intercom to an already existing warehouse in your workspace
-![](images/image_3_Intercom.png)
+![Screenshot of the Add Warehouse screen in the Intercom setup flow.](images/image_3_Intercom.png)
 
 Voila! We'll begin syncing your Intercom data into Segment momentarily, and it will be written to your warehouse at your next Warehouse run.
 
