@@ -64,8 +64,6 @@ To prevent this, you can enable the new **Fallback to send IDFV when advertising
 
 {% include content/react2-dest.md %}
 
-{% include content/react-dest.md %}
-
 ### Server
 
 AppsFlyer offers an **augmentative** server-side [HTTP API](https://support.appsflyer.com/hc/en-us/articles/207034486-Server-to-Server-In-App-Events-API-HTTP-API-) intended for use along side the AppsFlyer mobile SDK. Use the cloud-mode destination _with_ the mobile SDK to link out-of-app events (such as website or offline purchases) with attributed users and devices.
