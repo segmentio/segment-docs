@@ -2,7 +2,6 @@
 title: June (Actions) Destination
 hide-boilerplate: true
 hide-dossier: false
-redirect: '/connections/destinations/catalog/june-actions/'
 id: 6419fce5b6e12cf44efbd34c
 versions:
   - name: "June (Classic)"
@@ -23,9 +22,9 @@ June maintains this destination. For any issues with the destination, [contact t
 2. From the Segment web app, navigate to **Connections > Catalog**, and select the **Destinations** tab in the catalog.
 3. Search for *June (Actions)* and select it.
 4. Click **Configure June (Actions)**.
-5. Select the source you want to connect the destination to. 
-6. Configure your settings. 
-7. Click the toggle to enable the destination. 
+5. Select the source you want to connect the destination to.
+6. Configure your settings.
+7. Click the toggle to enable the destination.
 
 ### Connection modes for June (Actions) destination
 June (Actions) does not offer a device-mode connection. All events generated in a browser or app are sent to June through Segment's servers.
