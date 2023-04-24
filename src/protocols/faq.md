@@ -78,7 +78,7 @@ Unfortunately, Sources cannot be connected to more than one Tracking Plan. If yo
 
 ### Why are my unplanned properties still getting sent to my destinations even though I've set the dropdown to "Omit Properties"?
 
-Unplanned property omission is only supported in cloud-mode destinations. Unplanned properties will not be omitted when sending to device-mode destinations.
+Unplanned property omission is only supported for cloud-mode destinations. Unplanned properties will not be omitted when they're sent to device-mode destinations.
 
 ## Protocols Validation
 
