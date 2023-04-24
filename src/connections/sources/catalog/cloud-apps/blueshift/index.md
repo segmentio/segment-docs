@@ -18,7 +18,7 @@ In your favorite BI or analytics tool, you'll be able to analyze your email camp
 4. The next page ("Overview") will surface your Segment write key for Blueshift. Copy this write key.
 5. To finish the setup, you'll have to go into your Blueshift account and enter this Segment write key in their destinations settings. Find the right place in Blueshift by clicking Account > Webhooks:
 
-![](images/39c3955d4ea74e0a8ff07ef6651d4b30.png)
+![Screenshot of the Blueshift Account settings page, with the Segmentio Write Key and Webhook events highlighted.](images/39c3955d4ea74e0a8ff07ef6651d4b30.png)
 
 6. Click Save.
 7. Now when you go back to Segment, click into your Blueshift Source and you'll be able to add other downstream Destinations where you want to see email events.

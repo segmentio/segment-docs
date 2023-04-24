@@ -36,8 +36,17 @@ A Track call is the most basic type of call, and can represent any type of event
 
 ## Identify calls
 
-![](images/identify-call.png)
+<!---![An identify event that identifies Michael Phillips, a customer who lives in New York, New York.](images/identify-call.png)--->
 
+```js
+analytics.identify (user_id: "12345abcde",
+  traits: {
+    email: 'michael.phillips@segment.com',
+    name: 'Michael Phillips',
+    city: 'New York',
+    state: 'NY',
+    internal: True })
+```
 
 The Identify call allows Segment to know **who** is triggering an event.
 

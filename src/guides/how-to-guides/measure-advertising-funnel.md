@@ -10,13 +10,13 @@ In this article, we dig into the nuances of data collection and potential gotcha
 
 Today, most marketing teams think about their paid acquisition funnel as three major steps…
 
-![](images/funnel_hHyDC8eL.png)
+![Bar chart with three bars: Ad Impressions, Ad Clicks, and Conversion Event.](images/funnel_hHyDC8eL.png)
 
 This makes sense when looking at overall campaign performance, but hides several crucial funnel steps that can make the difference between increasing a campaign's spend and shutting it off due to poor results.
 
 Because page optimization and ad blockers can impact measurement of your funnel, it's important to look at the four additional steps happening between the ad click and conversions.
 
-![](images/funnel_WRSs3Iag.png)
+![Bar chart with two headers: Ad Platform Servers, which covers Ad impressions and Ad Clicks, and Your Servers, which covers Page Request Initiated, First Javascript Loaded, Page Fully Rendered, Third-Party Scripts Loaded, and Conversion Event.](images/funnel_WRSs3Iag.png)
 
 Let's go through each true funnel step in a little more detail.
 
@@ -38,7 +38,7 @@ There are three less-obvious contributors to fall-off across the paid acquisitio
 
 For the sake of illustration, this means that if you have 100 ad clicks, you will be able to count most but not all corresponding page views because some visitors may bounce (exit or hit the back button) before analytics.js is executed. Similarly, you may miss some attributable conversions due to slow load times (your page calls can't fire in time) and ad blockers (which often block analytics not just ads).
 
-![](images/funnel_AiN7L5rw.png)
+![Bar chart with three bars: Ad Clicks, Pageviews, and Conversions. Pageviews and Conversions have three segments: a segment with a number value, indicating the successfully recorded events, one segment with a value of ?, indicating events lost to Ad blockers, and one segment with a value of ?, indicating events lost to Bounces.](images/funnel_AiN7L5rw.png)
 
 Here's how it works.
 
@@ -68,7 +68,7 @@ That said, many ad blockers do block analytics tools like Google Analytics, Mixp
 
 Segment offers two ways of joining your user clickstream data to your paid acquisition channels: standard client-side tracking or advanced server-side page calls.
 
-![](images/funnel_TbpPljpe.png)
+![Bar chart with two headers: Ad Platform Servers, which covers Ad impressions and Ad Clicks, and Your Servers, which covers Page Request Initiated, First Javascript Loaded, Page Fully Rendered, Third-Party Scripts Loaded, and Conversion Event. The Page Request Initiated bar has a note, Serverside Page Call, and the Third-Party Scripts Loaded bar has a note, Recommended Client-Side Tracking.](images/funnel_TbpPljpe.png)
 
 Both options come with their own tradeoffs that are important to consider for your use case.
 
@@ -88,7 +88,7 @@ The general approach is to use an arbitrary `anonymousId` (e.g. a UUID) in the s
 
 If you want to get a quick estimate for the number of additional clicks you'd track using server-side tracking, you can use "redirect tracking" with a URL shortener to estimate the number of clicks coming from Google Adwords or Facebook Ads. This will give you an estimate for the number of times an ad is clicked (minus some bounce in the few hundred milliseconds of the redirect), which will closely match server-side `page()` tracking should you choose to implement it.
 
-![](images/funnel_pkFkyAKr.png)
+![Bar chart with two headers: Ad Platform Servers, which covers Ad impressions and Ad Clicks, and Your Servers, which covers Page Request Initiated, First Javascript Loaded, Page Fully Rendered, Third-Party Scripts Loaded, and Conversion Event. A line between the Ad Clicks and Page Request Initiated reads Bitly redirect.](images/funnel_pkFkyAKr.png)
 
 Here's how it works…
 
@@ -97,7 +97,7 @@ Here's how it works…
 2.  Add the shortened link to your ad.
 
 3.  Measure total clicks from the bit.ly stats page.
-    ![](images/funnel_vMpEZBVz.png)
+    ![Screenshot of the bit.ly stats page, with a bar chart showing spikes in clicks at 3am.](images/funnel_vMpEZBVz.png)
 
 4.  In your warehouse, count the number of pages with that unique url parameter from step 1 (make sure you're looking at the same timeframe).
 

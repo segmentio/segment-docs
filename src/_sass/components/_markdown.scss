@@ -1,11 +1,12 @@
 .markdown {
 
+  counter-reset: list;
+
   &>h1,
   &>h2,
   &>h3,
   &>h4,
-  &>h5,
-  &>h6 {
+  &>h5{
     position: relative;
     cursor: pointer;
     padding-left: 30px;
@@ -68,14 +69,6 @@
 
     @include breakpoint(medium up) {
       margin-top: 24px;
-    }
-  }
-
-  &>h6 {
-    margin-top: 8px;
-
-    @include breakpoint(medium up) {
-      margin-top: 16px;
     }
   }
 
@@ -322,6 +315,18 @@
     }
   }
 
+  h2.head-list::before {
+    counter-increment: list;
+    content: counter(list)". ";
+    position: initial;
+    top: 50%;
+    left: initial;
+    opacity: initial;
+    transform: translateY(-50%);
+    pointer-events: none;
+    transition: none;
+    cursor: pointer;
+  }
 
 }
 
