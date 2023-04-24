@@ -2,6 +2,7 @@
 title: June (Actions) Destination
 hide-boilerplate: true
 hide-dossier: false
+redirect: "/connections/destinations/catalog/june-actions/"
 id: 6419fce5b6e12cf44efbd34c
 versions:
   - name: "June (Classic)"
@@ -10,7 +11,7 @@ versions:
 
 {% include content/plan-grid.md name="actions" %}
 
-[June](https://june.so/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners){:target="_blank"} is a product analytics tool for B2B SaaS companies. June auto-generates reports that focus on how companies use your product.
+[June](https://june.so/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners){:target="\_blank"} is a product analytics tool for B2B SaaS companies. June auto-generates reports that focus on how companies use your product.
 
 June maintains this destination. For any issues with the destination, [contact the June Support team](mailto:ferruccio@june.so).
 
@@ -18,15 +19,16 @@ June maintains this destination. For any issues with the destination, [contact t
 
 {% include content/connection-modes.md %}
 
-1. Go to the [June settings page](https://app.june.so/redirect-to-my-workspace/settings){:target="_blank"} and click **Add your first source**. To add more instances of the June Destination, click on the Segment integration card and click on **Create new key** and copy the key.
+1. Go to the [June settings page](https://app.june.so/redirect-to-my-workspace/settings){:target="\_blank"} and click **Add your first source**. To add more instances of the June Destination, click on the Segment integration card and click on **Create new key** and copy the key.
 2. From the Segment web app, navigate to **Connections > Catalog**, and select the **Destinations** tab in the catalog.
-3. Search for *June (Actions)* and select it.
+3. Search for _June (Actions)_ and select it.
 4. Click **Configure June (Actions)**.
 5. Select the source you want to connect the destination to.
 6. Configure your settings.
 7. Click the toggle to enable the destination.
 
 ### Connection modes for June (Actions) destination
+
 June (Actions) does not offer a device-mode connection. All events generated in a browser or app are sent to June through Segment's servers.
 
 {% capture group_identify_user_details %}
@@ -37,8 +39,8 @@ This action sets or updates the properties of specific groups. Use this when you
 
 {% endcapture %}
 
-
 {% include components/actions-fields.html content1=group_identify_user_details section1="group" %}
+
 ## Migration from June Classic
 
 {% include content/ajs-upgrade.md %}
