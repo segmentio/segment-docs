@@ -124,3 +124,9 @@ If you want to confirm, you can configure the new destination to point to a diff
 > Contact Mixpanel support if you find features missing from the Mixpanel (Actions) destination that were available in the classic Mixpanel destination.
 
 {% include components/actions-map-table.html name="mixpanel" %}
+
+## FAQ & Troubleshooting
+
+### Track events not attributing to Mixpanel Groups
+
+Ensure that the mapping(s) handling your `track` events have the field for **Group ID** mapping to a valid value. By default, this field is mapped to the event variable `context.groupId`.
