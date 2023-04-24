@@ -28,7 +28,7 @@ Workspace owners can also grant specific [Roles](/docs/segment-app/iam/roles/) a
 
 Permissions can then be assigned to users in Access Management by label, on the Source Admin, Source Read-Only, Engage Admin, Engage User and Engage Read-Only users.
 
-![](images/labels-access-mgmt.png)
+![Screenshot of the Select Sources popup, with the Assign Source Admin to: All Sources in Workspace including future Sources option selected.](images/labels-access-mgmt.png)
 
 ## Custom Labels
 

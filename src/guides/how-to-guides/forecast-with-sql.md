@@ -91,13 +91,13 @@ To retrieve a table with the right columns for analysis, let's use the follow SQ
 
 This returns a table where each row is a unique user and the columns are email, number of purchases within the time window, number of discrete time units since last purchase, and average purchase order.
 
-![](images/forecast_MiUlaNKr.jpg)
+![Screenshot of a spreadsheet with columms email, frequency, days_since_last_transaction, days_since_first_transaction, and average_transaction_size.](images/forecast_MiUlaNKr.jpg)
 
 > Here is a screenshot of the first twelve rows returned from the query in Mode Analytics.
 
 Export this data to a CSV, then copy and paste it in the first sheet of the Google Sheet where the blue type is in the below screenshot:
 
-![](images/forecast_JBqlb4Hf.png)
+![Screenshot of the Segment Tracking Plan Google Spreadsheet, with 11 user records.](images/forecast_JBqlb4Hf.png)
 
 Also be sure to add the total time in days in cell B6. This is important as the second sheet uses this time duration for calculating net present value of future payments.
 
@@ -107,7 +107,7 @@ After you paste in the CSV from the table into the first tab of the sheet, the n
 
 You can export your Google Sheet as an Excel document. Then, use Excel Solver to minimize the log-likelihood number in cell B5, while keeping the parameters from B1:B4 greater than 0.0001.
 
-![](images/forecast_GkZFJP5q.png)
+![Screenshot of the Solver Parameters popup in Google Sheets, with the cells B1:B4 set greater than or equal to 1 E to the -5.](images/forecast_GkZFJP5q.png)
 
 After Solver runs, cells B1:B4 will be updated to represent the model's estimates. Now, you can hard code those back into the sheet on Google Sheets. The next sheet relies on these model estimates to calculate the expected purchases per customer.
 
@@ -184,7 +184,7 @@ Below is a simple query to get a table of a user's actions in rows. Just replace
 
 This above query for user whose `user_id` is `"46X8VF96G6"` returns the below table:
 
-![](images/forecast_3N82oB4v.png)
+![A table with two columns: event_or_page_viewed and recieved_at.](images/forecast_3N82oB4v.png)
 
 At Toastmates, most of the highest forward-looking expected LTV customers share one thing in common: averaging two orders per month with an average purchase size of $20.
 

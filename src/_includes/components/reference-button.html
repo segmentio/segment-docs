@@ -1,7 +1,7 @@
 <div>
   <a class="reference-button" {% unless include.newtab == 'false' %}target="_blank"{% endunless %} href="{% if include.variant == 'related' %}/docs{{ include.href }}{% else %}{{ include.href }}{% endif %}">
     {% if include.icon and include.icon != empty %}
-      <span class="reference-button__icon">
+      <span class="{% if include.logo == 'true' %}reference-button__logo {% else %}reference-button__icon {% endif %}">
         {% include icons/{{ include.icon }} %}
       </span>
     {% endif %}

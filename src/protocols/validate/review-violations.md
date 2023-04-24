@@ -8,7 +8,7 @@ title: Review and Resolve Event Violations
 Upon connecting your Tracking Plan to a Source, you will be able to view violations grouped by event. To view violations, click on the Violations button located on the Schema tab in a Source. A filter can be applied to only show events with violations within the past 24 hrs, 7 days and 30 days.
 
 
-![](../images/violations_summary.png)
+![Screenshot of the Violations page, with two Track events that have violations.](../images/violations_summary.png)
 
 
 To view detailed violations for an event, click on the specific event. Specific violations include:
@@ -20,7 +20,7 @@ To view detailed violations for an event, click on the specific event. Specific 
 In the event detail violations view, a filter can be applied to only show violations in the past 24 hrs, 7 days and 30 days.
 
 
-![](../images/violations_detail.png)
+![Screenshot of the Checkout Started Violations page, with two unique violations, a count for each violation, and the time that the violation was last seen.](../images/violations_detail.png)
 
 
 To view a specific violation, simply click on the violation to view recent sample payloads that generated the violation. These payloads can then be used to help engineering quickly pinpoint the root cause and release a fix.

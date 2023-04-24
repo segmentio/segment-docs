@@ -20,7 +20,7 @@ Take your company's email analysis to the next level by **adding Mandrill as a S
 4. Copy the auto-generated Webhook URL.
 5. In Mandrill, go to **Settings > Webhook** and paste the URL in the Event Notification settings pane.
 
-   ![](images/795640_mandrill-settings.png)
+   ![Screenshot of the Mandril Webhooks page.](images/795640_mandrill-settings.png)
 
    Once you enable the webhook, you're good to go! Segment automatically creates your collections based on which triggers you select. If any seem unnecessary for your analysis, feel free to leave them unchecked.
 

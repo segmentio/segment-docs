@@ -58,7 +58,7 @@ where event = 'completed_order'
 
 That SQL query returns a table that looks like this:
 
-![](images/sql-redshift-table-1.jpg)
+![Screenshot of a SQL table, with event, event_id, user_id, sent_at, item, color, size, and payment columns.](images/sql-redshift-table-1.jpg)
 
 But why are there columns in the table that weren't a part of the Track call, like `event_id`? 
 This is because the Track method (for client-side libraries) includes additional properties of the event, like `event_id`, `sent_at`, and `user_id`!
