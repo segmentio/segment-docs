@@ -49,6 +49,6 @@ By automatically revoking the exposed token, Segment helps keep your workspace s
 #### How do I enable this feature?
 This feature is automatically enabled for all workspaces on Team or Business tier plans.
 
-#### I'm getting a CORS error. What can I do?
-The Public API is meant to be used server-side only. If you're seeing a CORS error that means you're attempting to make a request to it on the front-end. Please move all Public API requests to a server.
+#### What should I do when I see a CORS error? 
+If you see a CORS error, this means you're attempting to make a request to the Public API on the front-end. The Public API is used for server-side only. To get rid of the error, move all Public API requests to a server.
 
