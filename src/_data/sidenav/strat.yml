@@ -116,6 +116,8 @@ sections:
     title: Custom proxy for Analytics.js
   - path: /connections/sources/catalog/libraries/website/javascript/persistence
     title: Client-side persistence in Analytics.js
+  - path: /connections/sources/catalog/libraries/website/javascript/single-page-apps
+    title: Single Page Applications
   - path: /connections/sources/catalog/libraries/website/javascript/identity
     title: Managing identity in Analytics.js
   - path: /connections/sources/catalog/libraries/website/javascript/middleware
