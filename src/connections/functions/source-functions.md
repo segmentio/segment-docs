@@ -408,4 +408,8 @@ Segment alphabetizes payload fields that come in to **deployed** source function
 #### Does the source function allow `GET` requests?
 
 `GET` requests are not supported with a source function. Source functions can only receive data through `POST` requests.
+
+#### Can I use a Source Function in place of adding a Tracking Pixel to my code?
+
+No. Tracking Pixels operate client-side only and need to be loaded onto your website directly. Source Functions operate server-side only, and aren't able to capture or implement client-side tracking code. If the tool you're hoping to integrate is server-side, then you can use a Source Function to connect it to Segment.
  
