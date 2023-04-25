@@ -64,6 +64,7 @@ warehouses:
 sources:
   - id: 8HWbgPTt3k
     display_name: .NET
+    hidden: false
     slug: net
     url: connections/sources/catalog/libraries/server/net
     regions:
@@ -74,6 +75,7 @@ sources:
       - eu
   - id: XE0vf1bTDh
     display_name: ActiveCampaign
+    hidden: false
     slug: activecampaign
     url: connections/sources/catalog/cloud-apps/activecampaign
     regions:
@@ -82,6 +84,7 @@ sources:
       - us
   - id: p1Kv6YKjE3
     display_name: Aircall
+    hidden: false
     slug: aircall
     url: connections/sources/catalog/cloud-apps/aircall
     regions:
@@ -90,6 +93,7 @@ sources:
       - us
   - id: 85V0O2lkFs
     display_name: Airship
+    hidden: false
     slug: airship
     url: connections/sources/catalog/cloud-apps/airship
     regions:
@@ -98,6 +102,7 @@ sources:
       - us
   - id: GNLT5OQ45P
     display_name: Amazon S3
+    hidden: false
     slug: amazon-s3
     url: connections/sources/catalog/cloud-apps/amazon-s3
     regions:
@@ -106,6 +111,7 @@ sources:
       - us
   - id: TNBRknbbnE
     display_name: AMP
+    hidden: false
     slug: amp
     url: connections/sources/catalog/libraries/server/amp
     regions:
@@ -116,6 +122,7 @@ sources:
       - eu
   - id: pHcia14h1B
     display_name: Amplitude Cohorts
+    hidden: false
     slug: amplitude-cohorts
     url: connections/sources/catalog/cloud-apps/amplitude-cohorts
     regions:
@@ -132,6 +139,7 @@ sources:
       - us
   - id: pMeSH8K0gq
     display_name: attacker
+    hidden: true
     slug: attacker
     url: connections/sources/catalog/cloud-apps/attacker
     regions:
@@ -140,6 +148,7 @@ sources:
       - us
   - id: R7eWaTLYUs
     display_name: AutopilotHQ
+    hidden: false
     slug: autopilothq
     url: connections/sources/catalog/cloud-apps/autopilothq
     regions:
@@ -148,6 +157,7 @@ sources:
       - us
   - id: ErcsNGMEwt
     display_name: Beamer
+    hidden: false
     slug: beamer
     url: connections/sources/catalog/cloud-apps/beamer
     regions:
@@ -156,6 +166,7 @@ sources:
       - us
   - id: GphcYR7Qpy
     display_name: Bento
+    hidden: true
     slug: bento
     url: connections/sources/catalog/cloud-apps/bento
     regions:
@@ -164,6 +175,7 @@ sources:
       - us
   - id: 78PbvP2yv8
     display_name: BigQuery
+    hidden: true
     slug: bigquery
     url: connections/sources/catalog/cloud-apps/bigquery
     regions:
@@ -172,6 +184,7 @@ sources:
       - us
   - id: lglFhNcZ9z
     display_name: Bluedot
+    hidden: false
     slug: bluedot
     url: connections/sources/catalog/cloud-apps/bluedot
     regions:
@@ -180,6 +193,7 @@ sources:
       - us
   - id: M4IdvFGSk9
     display_name: Blueshift
+    hidden: false
     slug: blueshift
     url: connections/sources/catalog/cloud-apps/blueshift
     regions:
@@ -188,6 +202,7 @@ sources:
       - us
   - id: L8TEm5Z8UV
     display_name: Braze
+    hidden: false
     slug: braze
     url: connections/sources/catalog/cloud-apps/braze
     regions:
@@ -196,6 +211,7 @@ sources:
       - us
   - id: nmb56PunPc
     display_name: Candu
+    hidden: false
     slug: candu
     url: connections/sources/catalog/cloud-apps/candu
     regions:
@@ -204,6 +220,7 @@ sources:
       - us
   - id: W3065KyMWF
     display_name: Chatlio
+    hidden: false
     slug: chatlio
     url: connections/sources/catalog/cloud-apps/chatlio
     regions:
@@ -212,6 +229,7 @@ sources:
       - us
   - id: B6L7qzHmhI
     display_name: Clojure
+    hidden: false
     slug: clojure
     url: connections/sources/catalog/libraries/server/clojure
     regions:
@@ -222,6 +240,7 @@ sources:
       - eu
   - id: QHndBw5kGO
     display_name: CommandBar
+    hidden: false
     slug: commandbar
     url: connections/sources/catalog/cloud-apps/commandbar
     regions:
@@ -230,6 +249,7 @@ sources:
       - us
   - id: sTypQz3Fd2
     display_name: Customer.io
+    hidden: false
     slug: customer-io
     url: connections/sources/catalog/cloud-apps/customer-io
     regions:
@@ -238,6 +258,7 @@ sources:
       - us
   - id: 3yeoUP8E3Y
     display_name: Delighted
+    hidden: false
     slug: delighted
     url: connections/sources/catalog/cloud-apps/delighted
     regions:
@@ -246,6 +267,7 @@ sources:
       - us
   - id: m6FUZHH7tQ
     display_name: Drip
+    hidden: false
     slug: drip
     url: connections/sources/catalog/cloud-apps/drip
     regions:
@@ -254,6 +276,7 @@ sources:
       - us
   - id: RPrXXW7nws
     display_name: Engage Events
+    hidden: true
     slug: engage-events
     url: connections/sources/catalog/cloud-apps/engage-events
     regions:
@@ -262,6 +285,7 @@ sources:
       - us
   - id: mazatB39IS
     display_name: Facebook Ads
+    hidden: false
     slug: facebook-ads
     url: connections/sources/catalog/cloud-apps/facebook-ads
     regions:
@@ -272,6 +296,7 @@ sources:
       - eu
   - id: ODf0vA6dcH
     display_name: Facebook Lead Ads
+    hidden: false
     slug: facebook-lead-ads
     url: connections/sources/catalog/cloud-apps/facebook-lead-ads
     regions:
@@ -280,6 +305,7 @@ sources:
       - us
   - id: n8YgCndi75
     display_name: Factual Engine
+    hidden: false
     slug: factual-engine
     url: connections/sources/catalog/cloud-apps/factual-engine
     regions:
@@ -290,6 +316,7 @@ sources:
       - eu
   - id: CvYws1p1ZA
     display_name: Flutter
+    hidden: true
     slug: flutter
     url: connections/sources/catalog/libraries/mobile/flutter
     regions:
@@ -298,6 +325,7 @@ sources:
       - us
   - id: f02zgzAWMG
     display_name: Formsort
+    hidden: true
     slug: formsort
     url: connections/sources/catalog/cloud-apps/formsort
     regions:
@@ -306,6 +334,7 @@ sources:
       - us
   - id: Eek5OnuA7e
     display_name: Foursquare Movement
+    hidden: false
     slug: foursquare-movement
     url: connections/sources/catalog/cloud-apps/foursquare-movement
     regions:
@@ -314,6 +343,7 @@ sources:
       - us
   - id: 1drDrwuySw
     display_name: Friendbuy
+    hidden: false
     slug: friendbuy
     url: connections/sources/catalog/cloud-apps/friendbuy
     regions:
@@ -322,6 +352,7 @@ sources:
       - us
   - id: 94LHXFps4k
     display_name: Gladly
+    hidden: false
     slug: gladly
     url: connections/sources/catalog/cloud-apps/gladly
     regions:
@@ -330,6 +361,7 @@ sources:
       - us
   - id: yBvi77aEwr
     display_name: Go
+    hidden: false
     slug: go
     url: connections/sources/catalog/libraries/server/go
     regions:
@@ -340,6 +372,7 @@ sources:
       - eu
   - id: cQ8NOxeApJ
     display_name: Google Ads
+    hidden: false
     slug: google-ads
     url: connections/sources/catalog/cloud-apps/google-ads
     regions:
@@ -350,6 +383,7 @@ sources:
       - eu
   - id: vMEJCURfHh
     display_name: GWEN
+    hidden: true
     slug: gwen
     url: connections/sources/catalog/cloud-apps/gwen
     regions:
@@ -358,6 +392,7 @@ sources:
       - us
   - id: xJSb170s6B
     display_name: Herow
+    hidden: false
     slug: herow
     url: connections/sources/catalog/cloud-apps/herow
     regions:
@@ -366,6 +401,7 @@ sources:
       - us
   - id: iUM16Md8P2
     display_name: HTTP API
+    hidden: false
     slug: http-api
     url: connections/sources/catalog/libraries/server/http-api
     regions:
@@ -376,6 +412,7 @@ sources:
       - eu
   - id: 2baks93o
     display_name: HubSpot
+    hidden: false
     slug: hubspot
     url: connections/sources/catalog/cloud-apps/hubspot
     regions:
@@ -386,6 +423,7 @@ sources:
       - eu
   - id: i1VLFDiFfq
     display_name: IBM Watson Assistant
+    hidden: false
     slug: ibm-watson-assistant
     url: connections/sources/catalog/cloud-apps/ibm-watson-assistant
     regions:
@@ -394,6 +432,7 @@ sources:
       - us
   - id: glwy6LwOVo
     display_name: Inflection
+    hidden: true
     slug: inflection
     url: connections/sources/catalog/cloud-apps/inflection
     regions:
@@ -402,6 +441,7 @@ sources:
       - us
   - id: S1lptUOqTq
     display_name: InMoment (formerly Wootric)
+    hidden: false
     slug: inmoment-formerly-wootric
     url: connections/sources/catalog/cloud-apps/inmoment-formerly-wootric
     regions:
@@ -410,6 +450,7 @@ sources:
       - us
   - id: pNvQ9udVMy
     display_name: Insider
+    hidden: false
     slug: insider
     url: connections/sources/catalog/cloud-apps/insider
     regions:
@@ -418,6 +459,7 @@ sources:
       - us
   - id: b3346ddd
     display_name: Intercom
+    hidden: false
     slug: intercom
     url: connections/sources/catalog/cloud-apps/intercom
     regions:
@@ -428,6 +470,7 @@ sources:
       - eu
   - id: lI8p2ldOqa
     display_name: Iterable
+    hidden: false
     slug: iterable
     url: connections/sources/catalog/cloud-apps/iterable
     regions:
@@ -436,6 +479,7 @@ sources:
       - us
   - id: V6ynUvQgbc
     display_name: Java
+    hidden: false
     slug: java
     url: connections/sources/catalog/libraries/server/java
     regions:
@@ -446,6 +490,7 @@ sources:
       - eu
   - id: IqDTy1TpoU
     display_name: Javascript
+    hidden: false
     slug: javascript
     url: connections/sources/catalog/libraries/website/javascript
     regions:
@@ -456,6 +501,7 @@ sources:
       - eu
   - id: V2kq0X7vYy
     display_name: Jebbit
+    hidden: false
     slug: jebbit
     url: connections/sources/catalog/cloud-apps/jebbit
     regions:
@@ -464,6 +510,7 @@ sources:
       - us
   - id: wFrliG3Ffg
     display_name: journy.io
+    hidden: true
     slug: journy-io
     url: connections/sources/catalog/cloud-apps/journy-io
     regions:
@@ -472,6 +519,7 @@ sources:
       - us
   - id: EfKbe2yt0J
     display_name: Klaviyo
+    hidden: false
     slug: klaviyo
     url: connections/sources/catalog/cloud-apps/klaviyo
     regions:
@@ -480,6 +528,7 @@ sources:
       - us
   - id: D6h3UEduNW
     display_name: Klenty
+    hidden: false
     slug: klenty
     url: connections/sources/catalog/cloud-apps/klenty
     regions:
@@ -488,6 +537,7 @@ sources:
       - us
   - id: yMu7LRR59b
     display_name: Kotlin
+    hidden: false
     slug: kotlin
     url: connections/sources/catalog/libraries/server/kotlin
     regions:
@@ -498,6 +548,7 @@ sources:
       - eu
   - id: 9EMcTqiKok
     display_name: Kotlin (Android)
+    hidden: false
     slug: kotlin-android
     url: connections/sources/catalog/libraries/mobile/kotlin-android
     regions:
@@ -508,6 +559,7 @@ sources:
       - eu
   - id: cODRw1GgIP
     display_name: LaunchDarkly
+    hidden: false
     slug: launchdarkly
     url: connections/sources/catalog/cloud-apps/launchdarkly
     regions:
@@ -516,6 +568,7 @@ sources:
       - us
   - id: NRgENc89eR
     display_name: Leanplum
+    hidden: false
     slug: leanplum
     url: connections/sources/catalog/cloud-apps/leanplum
     regions:
@@ -524,6 +577,7 @@ sources:
       - us
   - id: IONuS10olj
     display_name: Livelike
+    hidden: true
     slug: actions-livelike-cloud
     url: connections/sources/catalog/cloud-apps/actions-livelike-cloud
     regions:
@@ -532,6 +586,7 @@ sources:
       - us
   - id: kEQE5O66XH
     display_name: Livelike Test
+    hidden: true
     slug: livelike-test
     url: connections/sources/catalog/cloud-apps/livelike-test
     regions:
@@ -540,6 +595,7 @@ sources:
       - us
   - id: PhcJzMqz3Q
     display_name: Looker
+    hidden: false
     slug: looker
     url: connections/sources/catalog/cloud-apps/looker
     regions:
@@ -548,6 +604,7 @@ sources:
       - us
   - id: acd1bc21d
     display_name: Mailchimp
+    hidden: false
     slug: mailchimp
     url: connections/sources/catalog/cloud-apps/mailchimp
     regions:
@@ -558,6 +615,7 @@ sources:
       - eu
   - id: hWBbnJUp9G
     display_name: Mailjet
+    hidden: false
     slug: mailjet
     url: connections/sources/catalog/cloud-apps/mailjet
     regions:
@@ -566,6 +624,7 @@ sources:
       - us
   - id: asdf76as89
     display_name: Mandrill
+    hidden: false
     slug: mandrill
     url: connections/sources/catalog/cloud-apps/mandrill
     regions:
@@ -576,6 +635,7 @@ sources:
       - eu
   - id: VOXa199Bdm
     display_name: Marketo
+    hidden: false
     slug: marketo
     url: connections/sources/catalog/cloud-apps/marketo
     regions:
@@ -586,6 +646,7 @@ sources:
       - eu
   - id: RxxzG3Dyva
     display_name: Mixpanel Cohorts
+    hidden: false
     slug: mixpanel-cohorts
     url: connections/sources/catalog/cloud-apps/mixpanel-cohorts
     regions:
@@ -595,6 +656,7 @@ sources:
       - us
   - id: kpDbTUR9oD
     display_name: MoEngage (Source)
+    hidden: false
     slug: moengage-source
     url: connections/sources/catalog/cloud-apps/moengage-source
     regions:
@@ -603,6 +665,7 @@ sources:
       - us
   - id: tmy2gJdz77
     display_name: Moesif API Analytics
+    hidden: false
     slug: moesif-api-analytics
     url: connections/sources/catalog/cloud-apps/moesif-api-analytics
     regions:
@@ -611,6 +674,7 @@ sources:
       - us
   - id: JetsivdT2p
     display_name: name
+    hidden: true
     slug: name
     url: connections/sources/catalog/cloud-apps/name
     regions:
@@ -619,6 +683,7 @@ sources:
       - us
   - id: 8aF29Uq46F
     display_name: Navattic
+    hidden: true
     slug: navattic
     url: connections/sources/catalog/cloud-apps/navattic
     regions:
@@ -627,6 +692,7 @@ sources:
       - us
   - id: U9mT0bPcI6
     display_name: Node.js
+    hidden: false
     slug: node-js
     url: connections/sources/catalog/libraries/server/node-js
     regions:
@@ -637,6 +703,7 @@ sources:
       - eu
   - id: 5GkpcyvNey
     display_name: Nudgespot
+    hidden: false
     slug: nudgespot
     url: connections/sources/catalog/cloud-apps/nudgespot
     regions:
@@ -645,6 +712,7 @@ sources:
       - us
   - id: QhEUZnE5uF
     display_name: OneTrust
+    hidden: true
     slug: onetrust
     url: connections/sources/catalog/cloud-apps/onetrust
     regions:
@@ -653,6 +721,7 @@ sources:
       - us
   - id: IbYFcGd6B1
     display_name: Partner Source Example 500
+    hidden: true
     slug: partner-source-example-500
     url: connections/sources/catalog/cloud-apps/partner-source-example-500
     regions:
@@ -661,6 +730,7 @@ sources:
       - us
   - id: Zd5BXedXsa
     display_name: Paytronix
+    hidden: false
     slug: paytronix
     url: connections/sources/catalog/cloud-apps/paytronix
     regions:
@@ -669,6 +739,7 @@ sources:
       - us
   - id: lWnQVj7Zo4
     display_name: Pendo
+    hidden: false
     slug: pendo
     url: connections/sources/catalog/cloud-apps/pendo
     regions:
@@ -677,6 +748,7 @@ sources:
       - us
   - id: TDO70If4mD
     display_name: PHP
+    hidden: false
     slug: php
     url: connections/sources/catalog/libraries/server/php
     regions:
@@ -687,6 +759,7 @@ sources:
       - eu
   - id: 5WbGSRqoLY
     display_name: Pinwheel
+    hidden: true
     slug: pinwheel
     url: connections/sources/catalog/cloud-apps/pinwheel
     regions:
@@ -695,6 +768,7 @@ sources:
       - us
   - id: 7XqN9rJQOG
     display_name: Pixel Tracking API
+    hidden: false
     slug: pixel-tracking-api
     url: connections/sources/catalog/libraries/server/pixel-tracking-api
     regions:
@@ -705,6 +779,7 @@ sources:
       - eu
   - id: 6mJhCgRpsP
     display_name: PJ Test Source
+    hidden: true
     slug: pj-test-source
     url: connections/sources/catalog/cloud-apps/pj-test-source
     regions:
@@ -713,6 +788,7 @@ sources:
       - us
   - id: qqE6TuEDEM
     display_name: Project
+    hidden: true
     slug: project
     url: connections/sources/catalog/cloud-apps/project
     regions:
@@ -722,6 +798,7 @@ sources:
       - us
   - id: aC11S74HWK
     display_name: ProveSource
+    hidden: false
     slug: provesource
     url: connections/sources/catalog/cloud-apps/provesource
     regions:
@@ -730,6 +807,7 @@ sources:
       - us
   - id: XRksQPCr7X
     display_name: Python
+    hidden: false
     slug: python
     url: connections/sources/catalog/libraries/server/python
     regions:
@@ -740,6 +818,7 @@ sources:
       - eu
   - id: 9g612WSOsA
     display_name: Qualtrics
+    hidden: true
     slug: actions-qualtrics
     url: connections/sources/catalog/cloud-apps/actions-qualtrics
     regions:
@@ -748,6 +827,7 @@ sources:
       - us
   - id: bnpfpwKnhu
     display_name: Radar
+    hidden: false
     slug: radar
     url: connections/sources/catalog/cloud-apps/radar
     regions:
@@ -756,6 +836,7 @@ sources:
       - us
   - id: B0X0QmvMny
     display_name: React Native
+    hidden: false
     slug: react-native
     url: connections/sources/catalog/libraries/mobile/react-native
     regions:
@@ -766,6 +847,7 @@ sources:
       - eu
   - id: 0yMe8VfuDc
     display_name: Redshift
+    hidden: true
     slug: redshift
     url: connections/sources/catalog/cloud-apps/redshift
     regions:
@@ -774,6 +856,7 @@ sources:
       - us
   - id: 4pJ1eVPRnJ
     display_name: Refiner
+    hidden: false
     slug: refiner
     url: connections/sources/catalog/cloud-apps/refiner
     regions:
@@ -782,6 +865,7 @@ sources:
       - us
   - id: 1QTd6JKw53
     display_name: Regal.io
+    hidden: true
     slug: regal-io
     url: connections/sources/catalog/cloud-apps/regal-io
     regions:
@@ -790,6 +874,7 @@ sources:
       - us
   - id: BbupS2SB0b
     display_name: Roku (alpha)
+    hidden: false
     slug: roku
     url: connections/sources/catalog/libraries/ott/roku
     regions:
@@ -800,6 +885,7 @@ sources:
       - eu
   - id: aACTBqIbWT
     display_name: Ruby
+    hidden: false
     slug: ruby
     url: connections/sources/catalog/libraries/server/ruby
     regions:
@@ -810,6 +896,7 @@ sources:
       - eu
   - id: 2baks93n
     display_name: Salesforce
+    hidden: false
     slug: salesforce
     url: connections/sources/catalog/cloud-apps/salesforce
     regions:
@@ -820,6 +907,7 @@ sources:
       - eu
   - id: oQ5dZPW0Ii
     display_name: Salesforce Marketing Cloud
+    hidden: false
     slug: salesforce-marketing-cloud
     url: connections/sources/catalog/cloud-apps/salesforce-marketing-cloud
     regions:
@@ -830,6 +918,7 @@ sources:
       - eu
   - id: xn9YEaDaNS
     display_name: Selligent Marketing Cloud
+    hidden: false
     slug: selligent-marketing-cloud
     url: connections/sources/catalog/cloud-apps/selligent-marketing-cloud
     regions:
@@ -838,6 +927,7 @@ sources:
       - us
   - id: jhr8dT2yHn
     display_name: SendGrid
+    hidden: false
     slug: sendgrid
     url: connections/sources/catalog/cloud-apps/sendgrid
     regions:
@@ -848,6 +938,7 @@ sources:
       - eu
   - id: V8ji9rWzoS
     display_name: Shopify (by Littledata)
+    hidden: false
     slug: shopify-littledata
     url: connections/sources/catalog/libraries/website/shopify-littledata
     regions:
@@ -856,6 +947,7 @@ sources:
       - us
   - id: BQp3zGUgjV
     display_name: Snowflake
+    hidden: true
     slug: snowflake
     url: connections/sources/catalog/cloud-apps/snowflake
     regions:
@@ -864,6 +956,7 @@ sources:
       - us
   - id: 3x07B5Dn5h
     display_name: Statsig
+    hidden: false
     slug: statsig
     url: connections/sources/catalog/cloud-apps/statsig
     regions:
@@ -872,6 +965,7 @@ sources:
       - us
   - id: fO4vesv5NC
     display_name: Stitch
+    hidden: true
     slug: stitch
     url: connections/sources/catalog/cloud-apps/stitch
     regions:
@@ -880,6 +974,7 @@ sources:
       - us
   - id: 1bow82lmk
     display_name: Stripe
+    hidden: false
     slug: stripe
     url: connections/sources/catalog/cloud-apps/stripe
     regions:
@@ -890,6 +985,7 @@ sources:
       - eu
   - id: 86ctsPjqqd
     display_name: test
+    hidden: true
     slug: test
     url: connections/sources/catalog/cloud-apps/test
     regions:
@@ -898,6 +994,7 @@ sources:
       - us
   - id: QL7jLaHIfr
     display_name: test
+    hidden: true
     slug: test
     url: connections/sources/catalog/cloud-apps/test
     regions:
@@ -906,6 +1003,7 @@ sources:
       - us
   - id: 544Iy5fYSF
     display_name: test-jina
+    hidden: true
     slug: test-jina
     url: connections/sources/catalog/cloud-apps/test-jina
     regions:
@@ -914,6 +1012,7 @@ sources:
       - us
   - id: e93cwtHdmq
     display_name: test_c2
+    hidden: true
     slug: test_c2
     url: connections/sources/catalog/cloud-apps/test_c2
     regions:
@@ -922,6 +1021,7 @@ sources:
       - us
   - id: n8sibignLG
     display_name: test_niall
+    hidden: true
     slug: test_niall
     url: connections/sources/catalog/cloud-apps/test_niall
     regions:
@@ -930,6 +1030,7 @@ sources:
       - us
   - id: s2tcX4a0Qp
     display_name: Test_source_1
+    hidden: true
     slug: test_source_1
     url: connections/sources/catalog/cloud-apps/test_source_1
     regions:
@@ -938,6 +1039,7 @@ sources:
       - us
   - id: PXB5u2Ms2I
     display_name: testing-party-yay
+    hidden: true
     slug: testing-party-yay
     url: connections/sources/catalog/cloud-apps/testing-party-yay
     regions:
@@ -946,6 +1048,7 @@ sources:
       - us
   - id: LpQxxcJexw
     display_name: TestSource
+    hidden: true
     slug: testsource
     url: connections/sources/catalog/cloud-apps/testsource
     regions:
@@ -954,6 +1057,7 @@ sources:
       - us
   - id: QeIwSia7sQ
     display_name: TestSource2
+    hidden: true
     slug: testsource2
     url: connections/sources/catalog/cloud-apps/testsource2
     regions:
@@ -962,6 +1066,7 @@ sources:
       - us
   - id: vOlNDkP5qR
     display_name: Thomas Gilbert Test
+    hidden: true
     slug: thomas-gilbert-test
     url: connections/sources/catalog/cloud-apps/thomas-gilbert-test
     regions:
@@ -970,6 +1075,7 @@ sources:
       - us
   - id: 6nGX8vnUpM
     display_name: Thomas Source Test Portal
+    hidden: true
     slug: thomas-source-test-portal
     url: connections/sources/catalog/cloud-apps/thomas-source-test-portal
     regions:
@@ -978,6 +1084,7 @@ sources:
       - us
   - id: StjIoJAuBT
     display_name: Thomas Test Source
+    hidden: true
     slug: thomas-test-source
     url: connections/sources/catalog/cloud-apps/thomas-test-source
     regions:
@@ -986,6 +1093,7 @@ sources:
       - us
   - id: 43bb279b7
     display_name: Twilio
+    hidden: false
     slug: twilio
     url: connections/sources/catalog/cloud-apps/twilio
     regions:
@@ -996,6 +1104,7 @@ sources:
       - eu
   - id: lWMazCg4rS
     display_name: Twilio Event Streams
+    hidden: true
     slug: twilio-event-streams
     url: connections/sources/catalog/cloud-apps/twilio-event-streams
     regions:
@@ -1004,6 +1113,7 @@ sources:
       - us
   - id: 4zkHfaSKI8
     display_name: Unity
+    hidden: true
     slug: unity
     url: connections/sources/catalog/libraries/mobile/unity
     regions:
@@ -1012,6 +1122,7 @@ sources:
       - us
   - id: FOkpxVzfJJ
     display_name: Vero
+    hidden: false
     slug: vero
     url: connections/sources/catalog/cloud-apps/vero
     regions:
@@ -1020,6 +1131,7 @@ sources:
       - us
   - id: wFC7PGNwGR
     display_name: Voucherify
+    hidden: true
     slug: voucherify
     url: connections/sources/catalog/cloud-apps/voucherify
     regions:
@@ -1028,6 +1140,7 @@ sources:
       - us
   - id: 7GmYZcBQyw
     display_name: WorkRamp
+    hidden: false
     slug: workramp
     url: connections/sources/catalog/cloud-apps/workramp
     regions:
@@ -1036,6 +1149,7 @@ sources:
       - us
   - id: wcssVcPJrc
     display_name: Xamarin
+    hidden: false
     slug: xamarin
     url: connections/sources/catalog/libraries/mobile/xamarin
     regions:
@@ -1046,6 +1160,7 @@ sources:
       - eu
   - id: bKRWdrbfpc
     display_name: xyz1
+    hidden: true
     slug: xyz1
     url: connections/sources/catalog/cloud-apps/xyz1
     regions:
@@ -1054,6 +1169,7 @@ sources:
       - us
   - id: 117eYCe9jH
     display_name: Youbora
+    hidden: true
     slug: youbora
     url: connections/sources/catalog/cloud-apps/youbora
     regions:
@@ -1062,6 +1178,7 @@ sources:
       - us
   - id: ZlUsdHTkfU
     display_name: zaza
+    hidden: true
     slug: zaza
     url: connections/sources/catalog/cloud-apps/zaza
     regions:
@@ -1070,6 +1187,7 @@ sources:
       - us
   - id: 3hbak7a9
     display_name: Zendesk
+    hidden: false
     slug: zendesk
     url: connections/sources/catalog/cloud-apps/zendesk
     regions:
