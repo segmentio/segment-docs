@@ -3,8 +3,6 @@ title: LiveLike Cloud Mode (Actions) Destination
 id: 63e42b47479274407b671071
 hide-boilerplate: true
 hide-dossier: false
-private: true
-hidden: true
 ---
 
 {% include content/plan-grid.md name="actions" %}
