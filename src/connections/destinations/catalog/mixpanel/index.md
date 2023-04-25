@@ -53,7 +53,6 @@ When you use the Mixpanel destination in Cloud-mode, Segment sends events for ea
 
 When you use the Mixpanel destination in Device-mode, Segment prioritizes the options to prevent duplicate calls as follows:
 
-
 - If you select "Track all Pages to Mixpanel", all `page` calls regardless of how you have customized it will send a `Loaded A Page`. Even if you have the other options enabled, Segment sends this call to prevent double counting your pageviews.
 
 - If you select "Track Categorized Pages to Mixpanel", Segment sends a `Viewed [category] Page` event.

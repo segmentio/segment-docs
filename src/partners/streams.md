@@ -18,7 +18,7 @@ To complete the source set up flow, the customer will need to input the Segment 
 
 Customers can find their write key in the source settings and regenerate it as needed.
 
-![](images/s_8E933880F61B29168308B8A8203AE878319289A26E8E2054D0824C7A53E43DD4_1479162638952_file.png)
+![Screenshot of a Source's settings page, with the write key present.](images/s_8E933880F61B29168308B8A8203AE878319289A26E8E2054D0824C7A53E43DD4_1479162638952_file.png)
 
 > warning ""
 > Segment working on an OAuth solution to reduce friction for customers. Partner Streams submitted through the developer center *will* be required to support this OAuth as it comes available.

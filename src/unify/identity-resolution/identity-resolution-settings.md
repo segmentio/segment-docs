@@ -21,9 +21,9 @@ Before you connect a source to Unify, Segment recommends that you first review t
 
 ## ExternalIDs
 
-Segment creates and merges user profiles based on externalIDs used as identifiers. You can view these externalIDs in the Identities tab of a User Profile in the User Explorer:
+Segment creates and merges user profiles based on externalIDs used as identifiers. You can view these externalIDs in the Identities tab of a User Profile in the Profile explorer.
 
-![ExternalIDs of a profile in the User Explorer](images/jane_doe_new_identities.png)
+![ExternalIDs of a profile in the Profile explorer](images/jane_doe_new_identities.png)
 
 By default, Segment promotes the following traits and IDs in track and identify calls to externalIDs:
 

@@ -24,7 +24,7 @@ The diagram below illustrates how the S3 destination works.
 
 The Segment Tracking API processes data from your sources, and collects the Events in batches. When these batches reach a 100 MB, or once per hour, a Segment initiates a process which uploads them to a secure Segment S3 bucket, from which they are securely copied to your own S3 bucket.
 
-![](images/s3processdiagram.png)
+![Diagram showing how data is transferred from Segment Tracking API to a customer's AWS S3 bucket.](images/s3processdiagram.png)
 
 ## Create a new destination
 

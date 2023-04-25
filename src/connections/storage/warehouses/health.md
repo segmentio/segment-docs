@@ -26,7 +26,7 @@ Go to the Segment App, to the Destinations list, and select the warehouse. On th
 
 This dashboard displays aggregate trends from _all_ sources that sync to the specific warehouse.
 
-![](images/wh-health-warehouse.png)
+![Area graph displaying the cumulative number of rows synced to your warehouse over the last 30 days, and a bar chart displaying the number of daily syncs over the last 30 days.](images/wh-health-warehouse.png)
 _A warehouse level dashboard_
 
 ## Warehouse-Source dashboards
@@ -35,7 +35,7 @@ Go to the Segment App, to the Destinations list, and select the warehouse. On th
 
 This dashboard displays trends for each separate source that syncs to a specific warehouse. It also displays aggregations of the collections within that source.
 
-![](images/wh-health-warehouse-source.png)
+![A bar chart displaying the number of daily syncs over the last 30 days and a breakdown table displaying individual counts for each day.](images/wh-health-warehouse-source.png)
 _A warehouse-source level dashboard_
 
 ## Warehouse Health Dashboard FAQs

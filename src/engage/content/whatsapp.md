@@ -23,6 +23,9 @@ You can choose between three WhatsApp template types:
 
 ## Build a WhatsApp message template
 
+> info "Before you begin"
+> If you're new to Engage Premier, you'll need to sign up for the [Twilio Content Editor beta](https://ahoy.twilio.com/messaging-content-api-request-access-1){:target="_blank"} before you can use WhatsApp templates.
+
 Follow these steps to build a WhatsApp template:
 
 1. Navigate to **Engage > Content** and click **Create template**.

@@ -30,7 +30,7 @@ Apps represent a unit of functionality that Segment users can add to their works
 - Within Destinations, we have Streaming Destinations, Batch Destinations, and Warehouse Destinations, all of which receive different data, using different processes, at different intervals and with varying degrees of control and flexibility.
 - On the Sources side, integrations are categorized based on whether they send Objects or Events, whether they are "Push" or "Pull," and whether they are built and hosted by Segment or by Partners.
 
-![](images/product-model.svg)
+![Diagram showing how events are processed in Segment.](images/product-model.svg)
 
 These smaller pieces that support the source and destination model are called "Components".
 
