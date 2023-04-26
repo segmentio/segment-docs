@@ -9,7 +9,7 @@ You can forward Violations (data that does not conform to your Protocols trackin
 
 To set up forwarding, navigate to the settings tab of the Source, then Schema Configuration. Select the source you'll forward events to from the Forwarding Settings Violations dropdown. Similar to [Blocked Event forwarding](/docs/protocols/enforce/forward-blocked-events/), Segment recommends that you create a new Source for violations.
 
-![](../images/violation_forwarding.png)
+![Screenshot of the Violations setting on the Source settings tab.](../images/violation_forwarding.png)
 
 
 Violations are sent to the selected Source as `analytics.track()` calls. The call payload includes the following properties, along with the `context.app` and `context.library` objects to aid in filtering violations.

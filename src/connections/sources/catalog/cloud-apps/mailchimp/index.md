@@ -14,9 +14,9 @@ id: acd1bc21d
    **Note**: You can add multiple instances if you have multiple Mailchimp accounts. That's why we allow you to customize the source's nickname and schema name!
 4. Next, provide credentials to an account with API permissions to access your Mailchimp data. It is recommended that you create a brand new api key for the Segment source. MailChimp restricts each api key to a maximum of 10 concurrent requests, so creating a dedicated one for Segment will ensure maximum throughput. You can find your API key in **Account > Extras > API Keys**. You can read more about API keys on [MailChimp's docs](http://kb.mailchimp.com/integrations/api-integrations/about-api-keys).
 
-   ![](images/3027189_API+Keys.png)
+   ![Screenshot of the Overview page in Mailchimp, with the Extras menu selected.](images/3027189_API+Keys.png)
 
-   ![](images/3032880_ChimpKey.png)
+   ![Screenshot of the API keys settings page in Mailchimp.](images/3032880_ChimpKey.png)
 
 
 5. Back in Segment, go to the MailChimp source and paste key into the MailChimp API Key field.

@@ -28,7 +28,7 @@ You can also specify two different types of time-windows, `within` and `in betwe
 
 ### Custom Traits
 
-You can also build Audiences based on custom traits. These traits can be collected from your apps when a user completes a form or signs up using an [Identify](/docs/connections/spec/identify) call. You can view these traits in the user explorer, as well.
+You can also build Audiences based on custom traits. These traits can be collected from your apps when a user completes a form or signs up using an [Identify](/docs/connections/spec/identify) call. You can view these traits in the Profile explorer, as well.
 
 ### Computed Traits
 
@@ -207,7 +207,7 @@ Before you can download the CSV, you will need to generate it. There are three d
 
 <table>
   <tr>
-    <td>![](/docs/engage/images/large_audience_csv.png)</td>
+    <td>![Screenshot of the Download audience list popup in Segment, with the All external ID types and Unformatted settings selected.](/docs/engage/images/large_audience_csv.png)</td>
     <td width="45%">Generating a CSV can take a substantial amount of time for large audiences (around 30 seconds for a formatted CSV with 1 million rows). For CSVs that are expected to take over 20 seconds, Segment displays an estimated generation time. After you generate the CSV file, leave the modal window open while Segment creates the file.
     (If the audience recalculates between when you click Generate and when you download the file, you might want to regenerate the file. The CSV is a snapshot from when you clicked Generate, and could be outdated.)</td>
   </tr>

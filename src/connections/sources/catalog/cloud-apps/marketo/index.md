@@ -27,18 +27,18 @@ You will need Admin permissions to your Marketo account.
 2. Choose Marketo.
 3. Give the source a nickname and a schema name. The nickname is a label used in the Segment interface, and the schema name is the namespace you query against in your warehouse. Both can be whatever you like, but we recommend sticking to something that reflects the source itself, like Marketo for nickname and marketo or marketo_prod for the schema name.
 4. Configure your Marketo source with the required settings (see section below for details)
-![](images/add-source.png)
+![Screenshot of the set up flow for the Marketo source.](images/add-source.png)
 
 
 ### Configure your Marketo Source
 
 1. Open Marketo
 2. Go to Admin > Munchkin to find your Munchkin Account ID
-![](images/Image2018-04-30at5.28.54PM.png)
+![Screenshot of the Tracking Code section of Marketo's Munchkin page.](images/Image2018-04-30at5.28.54PM.png)
 3. Go to Admin > LaunchPoint
   a. If you don't already have a REST service setup, follow [these steps](http://developers.marketo.com/rest-api/custom-services/).
   b. Then, copy the "Client ID" and "Client Secret" parameters.
-  ![](images/Image2018-04-30at5.29.32PM.png)
+  ![Screenshot of the Details section of the LaunchPoint page.](images/Image2018-04-30at5.29.32PM.png)
   c. Paste the "Client ID" and "Client Secret" into the Segment Marketo source settings.
 
 You're done! Data should start flowing into your Warehouse in the next few hours.

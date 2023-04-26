@@ -14,7 +14,7 @@ To configure and use Unify, you need the following:
 
 1. **A Segment account and Workspace.**
 2. **Events flowing into Connections** from your digital properties where most of your valuable user behavior occurs.
-3. **Profiles or Engage identity admin access.** You must have edit access to identity resolution rules. You can check your permissions by navigating to [Access Management](https://app.segment.com/goto-my-workspace/settings/access-management){:target="_blank"} in your workspace settings. See the [Segment Access Management documentation](/docs/segment-app/iam/) for more details.
+3. **Unify or Engage identity admin access.** You must have edit access to identity resolution rules. You can check your permissions by navigating to [Access Management](https://app.segment.com/goto-my-workspace/settings/access-management){:target="_blank"} in your workspace settings. See the [Segment Access Management documentation](/docs/segment-app/iam/) for more details.
 
 ## Step 1: Create a new Developer space
 

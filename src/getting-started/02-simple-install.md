@@ -51,7 +51,7 @@ Make note of or write down your write key, as you'll need it in the next steps.
 
 Any time you change a library's settings in the Segment App, the write key regenerates.
 
-![](/docs/connections/images/find_writekey.png)
+![Screenshot of a source's settings page, with the API Keys tab selected.](images/find_writekey.png)
 
 > info ""
 > [Cloud-sources](/docs/connections/sources/about-cloud-sources/) do not have write keys, as they use a token or key from your account with that service. Cloud-sources have other considerations and aren't part of this tutorial.
@@ -388,7 +388,7 @@ Once you've set up your Segment library, and instrumented at least one call, you
 
 The Source Debugger is a real-time tool that helps you confirm that API calls made from your website, mobile app, or servers arrive at your Segment Source, so you can quickly see how calls are received by your Segment source, so you can troubleshoot quickly without having to wait for data processing.
 
-![](/docs/connections/sources/images/debugger_view.png)
+![Screenshot of a source's Debugger, with a Track call selected and the Pretty view for a sample event.](/docs/connections/sources/images/debugger_view.png)
 
 The Debugger is separate from your workspace's data pipeline, and is not an exhaustive view of all the events ever sent to your Segment workspace. The Debugger only shows a sample of the events that the Source receives in real time, with a cap of 500 events. The Debugger is a great way to test specific parts of your implementation to validate that events are being fired successfully and arriving to your Source.
 
@@ -399,7 +399,7 @@ The Debugger shows a live stream of sampled events arriving at the Source, but y
 
 You can search on any information you know is available in an event payload to search in the Debugger and show only matching payloads. You can also use advanced search options to limit the results to a specific event.
 
-![](/docs/connections/sources/images/debugger_search.png)
+![Screenshot of the Event Debugger Advanced settings.](/docs/connections/sources/images/debugger_search.png)
 
 
 Two views are available when viewing a payload:

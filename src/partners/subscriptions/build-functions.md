@@ -27,7 +27,7 @@ Review the steps outlined in the [Developer Center Overview](/docs/partners). Th
 
 Begin by selecting the _Subscription_ card in your Developer Center UI after creating an App and selecting _I want Segment to run functions I write_. Next, you will see the code editor where you can take full control of your Subscriptions's logic. Segment provides boilerplate functions that make it simple to send data to your API Endpoint. You can delete the example code and implement your own functions.
 
-![](/docs/partners/images/developer_center_customcode_page.png)
+![Screenshot of the Build tab in the Developer Center.](/docs/partners/images/developer_center_customcode_page.png)
 
 For every event you send to Segment, Segment invokes a function you provide for the event type. So you must define functions named after every type in the [Segment Spec](/docs/connections/spec/) that you support:
 
@@ -186,7 +186,7 @@ When testing your integration, proceed through two separate flows:
 
 Test your code directly from the Developer Center UI. Use the `Send Test Event` button and review the test event to make sure your function works as expected.
 
-![](/docs/partners/images/developer_center_customcode_test.png)
+![Screenshot of the Build tab in the Developer Center, with a View Output button selected in the test event panel.](/docs/partners/images/developer_center_customcode_test.png)
 
 In the debugger panel, check the two outputs. The **Callback Return** and the **Log Output**.
 
@@ -195,7 +195,7 @@ In the debugger panel, check the two outputs. The **Callback Return** and the **
 
 When your code is working with one event you can test it with a suite of more Segment events. Click `Save and Next: Test`, fill in an `API Key` and click `Test`. You will see the results of additional types of Segment data.
 
-![](/docs/partners/images/developer_center_test_suite.png)
+![Screenshot of the Test tab in the Developer Center, which shows the results for each Segment Spec method.](/docs/partners/images/developer_center_test_suite.png)
 
 ### The User Flow
 
@@ -211,7 +211,7 @@ Now you can use the JavaScript SDK in a browser to generate real analytics event
 
 Finally you should verify the data in your service.
 
-![](/docs/partners/images/test-destination.gif)
+![Animation showing someone configure a custom app, enable the app, and test three events.](/docs/partners/images/test-destination.gif)
 
 
 ## Handling deletions

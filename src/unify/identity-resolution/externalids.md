@@ -10,9 +10,12 @@ redirect_from:
 
 ## Default externalIDs
 
-The Identity Graph creates or merges profiles based on externalIDs. ExternalIDs will become the Identities attached to a User Profile in the User Explorer:
+The Identity Graph creates or merges profiles based on externalIDs. ExternalIDs will become the identities attached to a user profile in the Profile explorer.
 
-![Example of external identities in the User Explorer](images/jane_doe_new_identities.png)
+> success ""
+> Navigate to **Unify > Profile explorer** to view identities attached to a profile, along with custom traits, event history, and more.
+
+![Example of external identities in the Profile explorer](images/jane_doe_new_identities.png)
 
 Segment automatically promotes the following traits and IDs in track and identify calls to externalIDs:
 

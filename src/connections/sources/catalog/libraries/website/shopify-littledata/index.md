@@ -33,7 +33,7 @@ During the Segment connection setup, Littledata also adds a set of webhooks to y
 
 Here's an architecture diagram that shows how the Littledata app mediates data flow between Shopify and Segment.
 
-![](images/littledata_arch.png)
+![Diagram showing how data is processed between Littledata, Shopify, and Segment.](images/littledata_arch.png)
 
 > warning "Note"
 > This integration is maintained by Littledata _and isn't supported by Segment directly_. The Littledata app has been reviewed by the Segment team for conformance with Segment's [E-Commerce Spec](/docs/connections/spec/ecommerce/v2/), and is the recommended way of using Segment with Shopify. However, it does require a paid subscription with Littledata, who mediates the connection between Shopify and Segment. [Contact the Littledata Support team](mailto:help@littledata.io) with any questions.
@@ -42,15 +42,15 @@ Here's an architecture diagram that shows how the Littledata app mediates data f
 
 1. **Log in** to your Shopify Store account.
 2. Go the [Shopify app store listing](https://apps.shopify.com/segment-com-by-littledata){:target="_blank"} for **Segment.com by Littledata**.
-   ![](images/Nd5L0C6.png)
+   ![Screenshot of the Segment listing in the Shopify app store.](images/Nd5L0C6.png)
 3. Click **Add app** to begin the installation process.
 4. **Choose a Littledata subscription** suitable for your store's volume of monthly orders.
 5. Add the [**Segment write key**](/docs/connections/find-writekey/) for the source that is going to send data in the **input field**.
-   ![](images/eLUh6GF.png)
+   ![Screenshot of the Configure Segment step in the Shopify Littedata setup flow.](images/eLUh6GF.png)
 6. Choose either an **Automatic**, a **Manual**, or a **Headless** install. _Automatic installs work in most instances, but if you choose to do a manual install, just follow [this guide](https://help.littledata.io/posts/segment-installation-guide/){:target="\_blank"}._
-   ![](images/iYM76VI.png)
+   ![Screenshot of the Add code automatically? step in the Shopify Littedata setup flow.](images/iYM76VI.png)
 7. Segment's **Analytics.js** library, Littledata **tracking script** and **webhooks** automatically apply to the store and the installation process will then be complete.
-   ![](images/kvjNx4M.png)
+   ![Screenshot of the Add tracking code step in the Shopify Littedata setup flow.](images/kvjNx4M.png)
 
 ## Event schema
 

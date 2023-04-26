@@ -76,6 +76,10 @@ If you [discarded events](/docs/protocols/enforce/schema-configuration) as a par
 
 Unfortunately, Sources cannot be connected to more than one Tracking Plan. If you were able to connect more than one Tracking Plan to a Source, it could create conflict if events overlapped. 
 
+### Why are my unplanned properties still getting sent to my destinations even though I've set the dropdown to "Omit Properties"?
+
+Unplanned property omission is only supported for cloud-mode destinations. Unplanned properties will not be omitted when they're sent to device-mode destinations.
+
 ## Protocols Validation
 
 ### What is the difference between Violations Emails and the Violations page in the Segment UI?
