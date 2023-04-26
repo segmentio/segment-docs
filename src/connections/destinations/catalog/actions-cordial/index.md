@@ -3,8 +3,6 @@ title: Cordial (Actions) Destination
 id: 61eed75ba749df7601b12186
 hide-boilerplate: true
 hide-dossier: true
-redirect_from:
-  - '/connections/destinations/catalog/cordial-actions'
 ---
 
 {% include content/plan-grid.md name="actions" %}

@@ -1,6 +1,6 @@
 ---
 title: Set User Subscriptions
-plan: engage-foundations
+plan: engage-premier
 ---
 
 Segment associates a [user subscription state](/docs/engage/user-subscriptions/subscription-states/) with each email address and phone number in your Engage audiences. Subscription states give you insight into the level of consent a user has given you to receive your Engage campaigns.
@@ -75,12 +75,12 @@ The following example payload shows an Identify call with a `context` object, wh
       {
         "key": "(123) 555-5555",
         "type": "SMS",
-        "status": “SUBSCRIBED” | “UNSUBSCRIBED”| “DID_NOT_SUBSCRIBE”
+        "status": "SUBSCRIBED" | "UNSUBSCRIBED" | "DID_NOT_SUBSCRIBE"
       },
       {
         "key": "test@example.com",
         "type": "EMAIL",
-        "status": “SUBSCRIBED” | “UNSUBSCRIBED”| “DID_NOT_SUBSCRIBE”
+        "status": "SUBSCRIBED" | "UNSUBSCRIBED" | "DID_NOT_SUBSCRIBE"
       }
     ],
     "externalIds": [

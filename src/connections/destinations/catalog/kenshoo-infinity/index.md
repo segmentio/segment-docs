@@ -10,7 +10,7 @@ In order to track conversions, you want to make sure you insert your **Subdomain
 
 Next thing you need to do is to map the Segment `.track()` event names to the `conversionType` of the Kenshoo Infinity Pixel. The default value of this will be `'conv'`.
 
-![](images/e7ffbbc58004b02ad61a95d136c98769.png)
+![A screenshot of the Segment Events Mapper.](images/e7ffbbc58004b02ad61a95d136c98769.png)
 
 For each mapped `.track()` event, we will send `properties.revenue` (default to `'0'`), `properties.currency` (default to `'USD'`) and `properties.orderId` (capped at 64 chars). You can also map to Kenshoo's semantic `promoCode` property by passing in a destination-specific option:
 

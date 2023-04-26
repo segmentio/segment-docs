@@ -27,7 +27,7 @@ The following response indicates that Bob is indeed a high-value user:
 }
 ```
 
-For more information on profile queries, visit the [Profile API documentation](/docs/profiles/profile-api).
+For more information on profile queries, visit the [Profile API documentation](/docs/unify/profile-api).
 
 ## Can I reuse audience keys?
 

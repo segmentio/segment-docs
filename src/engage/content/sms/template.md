@@ -31,8 +31,8 @@ Send a test SMS message before you include it as a step in your Journey.
 
 1. After you build your SMS template, click **Test SMS**.
 2. Enter recipient phone numbers for the test message.
-3. Select a profile to test the SMS with and click  **Use as Test Profile**. To ensure merge tags work as expected, use test profiles with traits that apply to your campaign. The selected profile must have a userId assigned to it.
-4. Click **Send Test SMS**.
+- The profile that you send test messages to must have a userId in Segment.
+3. Click **Send Test SMS**.
 
 If a recipient replies "Stop" to the test SMS, Twilio unsubscribes their phone number and sends an opt-out confirmation.
 

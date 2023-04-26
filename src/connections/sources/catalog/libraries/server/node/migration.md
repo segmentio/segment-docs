@@ -60,9 +60,10 @@ If you're using the [classic version of Analytics Node.js](/docs/connections/sou
     ```
 * The `flushAt` configuration option changed to `maxEventsInBatch`.
 
+* The `enable` setting (for disabling analytics during tests) changed to `disable`. `enable: false` changed to `disable: true`.
+
 #### Removals
 The updated Analytics Node.js removed these configuration options:
-- `enable`
 - `errorHandler` (see the docs on [error handling](/docs/connections/sources/catalog/libraries/server/node//#error-handling) for more information)
 
 The updated Analytics Node.js library removed undocumented behavior around `track` properties 

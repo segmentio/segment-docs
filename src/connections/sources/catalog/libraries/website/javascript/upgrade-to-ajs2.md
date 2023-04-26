@@ -6,34 +6,15 @@ strat: ajs
 Analytics.js 2.0 is fully backward compatible with Analytics.js Classic when you use the default Segment snippet in a standard implementation. To upgrade your sources, follow the manual upgrade steps below, or see the schedule for automatic migration. As with all upgrades, Segment recommends that you start development on a non-production source to test the upgrade process and outcome, prior to upgrading your production sources.
 
 > warning "Deprecation of Analytics.js Classic"
-> Segment ended support and maintenance for Analytics.js Classic on August 31, 2022. Analytics.js Classic will enter End of Life status on February 28, 2023. At that time, Segment will begin upgrading all sources not yet upgraded to Analytics.js 2.0. The upgrade process will complete for all users by the end of March 2023.
-> <br><br>Upgrade to Analytics.js 2.0 before access ends for Analytics.js Classic. See the [Analytics.js 2.0 docs](/docs/connections/sources/catalog/libraries/website/javascript/) to learn more about the new source.
-
-## Manual upgrade
-
-To upgrade a source to Analytics.js 2.0:
-
-1. In your Segment workspace, open the **Connections** page.
-2. Open the JavaScript source you will upgrade.
-3. On the **Settings** tab, open the **Analytics.js** category.
-4. Enable the flag for Analytics 2.0.
-5. Within 5 minutes, the source receives Analytics.js 2.0. No code or tag changes required.
-6. Open the Debugger to ensure that events are flowing as expected.
-
-> info ""
-> If you set `'Segment.io:' false` in the integrations object, Analytics.js 2.0 drops the event before it reaches the Source Debugger.
-
-## Automatic migration
-
-On February 28, 2023, all Analytics.js Classic sources will automatically upgrade to Analytics.js 2.0.
+> Analytics.js Classic was deprecated on February 28, 2023. As of March 2023, Segment upgraded all sources to [Analytics.js 2.0](/docs/connections/sources/catalog/libraries/website/javascript/). 
 
 ## Revert to Analytics.js Classic
 
-Once a source moves to Analytics.js 2.0, you can follow the steps above in [Manual migration](#manual-migration) to roll back to Analytics.js Classic.
+It is no longer possible to revert to Analytics.js Classic. If you are experiencing technical issues after the automatic upgrade to Analytics.js 2.0, please see below for cases that may require additional intervention. If you are still having issues after reading through the section below, please reach out to the Segment support team. 
 
 ## Cases that require additional intervention
 
-In some cases, upgrading to Analytics.js 2.0 requires manual effort beyond enabling the Analytics.js 2.0 toggle.
+In some cases, upgrading to Analytics.js 2.0 may require some additional intervention. This only applies to customers who are experiencing these specific issues and do not apply to all customers. In most cases, upgrading to Analytics.js 2.0 should not cause technical issues. 
 
 ### Using in-domain instrumentation CDN aliasing
 
@@ -71,6 +52,8 @@ Your CSP may also require whitelisting approved domains, in which case you'll wa
 Previously, it was possible to attach `trackLink` to any element, and a `trackLink` call would fire for that element if it wasn't a link. Now, when you attach `trackLink` to a non-link element, an additional search of that element's children occurs for any nested links and fires track calls based on those links. If you wish to fire track calls on non-link elements that have links as children, you can use a `track` call instead.
 
 ### Using a custom proxy
+
+This will only apply if you've already [set up a custom domain proxy for Analytics.js](/docs/connections/sources/catalog/libraries/website/javascript/custom-proxy/). 
 
 Analytics.js 2.0 loads new files not usually loaded with Analytics.js Classic, so you'll also need to make sure these new files are considered in your proxy configuration. If the new files are not considered, Analytics.js 2.0 falls back to `cdn.segment.com`. You'll have to proxy the rest of the files used by Analytics.js 2.0 using a scheme similar to Segment's CDN. You have two options:
 

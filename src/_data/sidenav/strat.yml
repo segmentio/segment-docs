@@ -54,7 +54,9 @@ sections:
   - path: /connections/destinations/catalog/google-analytics
     title: Google Universal Analytics destination
   - path: /connections/destinations/catalog/actions-google-analytics-4
-    title: Google Analytics 4 destination
+    title: Google Analytics 4 Cloud destination
+  - path: /connections/destinations/catalog/actions-google-analytics-4-web
+    title: Google Analytics 4 Web destination
   - path: /connections/destinations/catalog/google-tag-manager
     title: Google Tag Manager destination
   - path: /connections/destinations/catalog/actions-google-enhanced-conversions

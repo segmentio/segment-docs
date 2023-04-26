@@ -52,7 +52,61 @@ If you're editing an existing function, you can **Save** changes without changin
 
 When you deploy your destination function in your workspace, you fill out the settings on the destination configuration page, similar to how you would configure a normal destination.
 
+## Functions Versioning
 
+With Functions Versioning, you can access a complete change history for each source or destination function. View version history and creation details, then use a unified or split display to compare code and restore previous versions of a function.
+
+> info "Functions Versioning in beta"
+> Functions Versioning is in beta, and Segment is actively working on this feature. Some functionality may change before it becomes generally available. Versioning is disabled in workspaces where you deploy source functions with multiple instances. [Contact Segment](https://segment.com/help/contact/){:target="_blank"} with any feedback or questions.
+
+
+### View and compare version history
+
+To view the version history of a function:
+1. Navigate to **Connections > Catalog > Functions**.
+2. Select your source or destination function.
+3. Select **Edit Function**, then click **Version history**.
+
+Select previous versions to compare code using a *unified* or *split* view. With the split view, Segment displays the latest version on the left and the version you've selected on the right.
+
+> success ""
+> Unified and split compare screens are read-only. While you can copy code, you can't make changes directly from these screens.
+
+#### `LATEST` and `DEPLOYED` versions
+
+ In the Version History panel, Segment displays `LATEST` and `DEPLOYED` labels that represent a function version state. You'll see the `LATEST` version at the top.
+
+Segment labels a version as the `LATEST` when:
+- You save a change to the function source code, but don't deploy the function at the same time.
+- You [restore a previous version](#restore-a-previous-version) from your function's version history.
+
+The `DEPLOYED` version is the function version that's currently deployed.
+
+### Restore a previous version
+
+To restore a previous function version:
+
+1. Select the function you want to restore.
+2. Click **Restore this version**.
+  - Segment creates a duplicate of the selected version and labels it as the `LATEST` version.
+3. Click **Restore** on the confirmation screen.
+4. To deploy the restored version, click **Save and Deploy** on the Source Code screen.
+
+### Use Versioning with Segment's Public API
+
+You can use Functions Versioning with Segment's [Public API](https://docs.segmentapis.com/tag/Functions){:target="_blank"} to retrieve version history records and source code, as well as to restore previous versions.
+
+Here are some Public API use case examples:
+
+**Get Version history**: Use the `/versions` endpoint to retrieve a list of version records and metadata of a certain page size. You can also use this endpoint to get version source code for a given version ID.
+
+**Restore a previous version**: Use the `/restore` endpoint to restore a previous function version. This creates a new version with the same source as the version you are restoring.
+
+**Create or update versions**: Create or update a function to add a version record and save the source code.
+
+**Deploy a function**: Use the Public API to deploy a function. After you deploy, Segment marks the function version as `DEPLOYED`. Learn more about function version states [here](#latest-and-deployed-versions).
+
+View Segment's [Public API](https://docs.segmentapis.com/tag/Functions){:target="_blank"} docs for more information on how to use Functions Versioning with the Public API.
 
 ## Functions permissions
 

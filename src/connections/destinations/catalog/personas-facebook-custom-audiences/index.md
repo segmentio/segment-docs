@@ -96,7 +96,7 @@ Once created, the audience should be available in Facebook in ten minutes unless
 - From within Facebook Ads, go to **Business Manager > All tools > Assets > Audiences**.
 - Click the Facebook audience name that matches your Engage audience name, and check **Audience History** to see how many users were added.
 
-![](images/fb_ca_final.png)
+![A screenshot of the Audiences page in Facebook Ads.](images/fb_ca_final.png)
 
 
 ## Additional Traits Matching

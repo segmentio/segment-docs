@@ -128,6 +128,9 @@ analytics.getContext().putDeviceToken(registrationId);
 
 Yes! You can use Segment's browserify'd [analytics-node](https://github.com/segmentio/analytics-node) package just like any other client-side JavaScript library.
 
+## Are there any limitations for using Segment with Huawei?
+
+No, there hasn't been any instances that show there are limitations when Segment tracks Huawei devices.
 
 ## Does LifecycleObserver (above version 2.6.0) work with Segment?
 

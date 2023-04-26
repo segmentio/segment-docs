@@ -46,14 +46,14 @@ endpoint from Segment's support team._
    to "Endpoints", then "Register a new endpoint" and select "Segment". Then
    click "Register" to proceed.
 
-    ![](images/ubx-register-endpoint.png)
+    ![A screenshot of the UBX dashboard.](images/ubx-register-endpoint.png)
 
 5. Once registered, the new endpoint's status will remain "Pending" in the
    "Endpoints" tab until it has been activated. To activate an endpoint,
    include your UBX account's API URL and your endpoint authentication key in an
    email to Segment using our [tech support form](https://segment.com/help/contact/).
 
-    ![](images/endpoint-details.png)
+    ![A screenshot of the UBX Endpoints tab showing a Segment endpoint with a status of Active.](images/endpoint-details.png)
 
 6. Segment will activate your endpoint within 24 hours, at which time its status
    will update to "Active" in the UBX dashboard. Now, you can grab your endpoint
@@ -102,7 +102,7 @@ Beware, however - UBX event destinations will only receive events to which they
 are subscribed. To subscribe a UBX destination to events from the Segment
 publisher, navigate to the "Events" tab and select "Subscribe to events".
 
-![](images/subscribe-to-events.png)
+![A screenshot of the UBX Events tab, with the Segment endpoint selected.](images/subscribe-to-events.png)
 
 Make sure that you subscribe your UBX event subscriber endpoints to the events
 you'd like them to consume from the Segment publisher.

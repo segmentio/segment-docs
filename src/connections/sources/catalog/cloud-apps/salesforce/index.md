@@ -99,9 +99,6 @@ Collections are the groupings of resources Segment pulls from your source. In yo
 
 Select and add custom objects from the Selective Sync page in the Salesforce source settings. 
 
-Self service customers, please contact Segment Support with the [API names](https://help.salesforce.com/articleView?id=000007594&language=en_US&type=1) of the custom objects you want to add.
-
-
 ### Deleting Records
 
 Segment supports the use of soft deletes in Salesforce. If you perform a soft delete on a record in Salesforce, your next one to two warehouses syncs will change the value of `is_deleted` for the associated record to `True`.
@@ -110,7 +107,7 @@ Segment does not support hard deletes in Salesforce. Use of hard deletes will re
 
 ## Collection Properties
 
-Segment performs a one-to-one mapping of all publicly available fields (standard and custom) from Salesforce. To see the full list of the standard fields refer to the Salesforce field documentation linked in each collection above. If you've added custom fields to an existing collection, [contact Segment Support](https://segment.com/help/contact/) to configure them to sync. You do not need to include the field names.
+Segment performs a one-to-one mapping of all publicly available fields (standard and custom) from Salesforce. To see the full list of the standard fields refer to the Salesforce field documentation linked in each collection above. If you've added and selected custom fields to an existing collection, [contact Segment Support](https://segment.com/help/contact/) to configure them to sync. You do not need to include the field names.
 
 ## Adding Destinations
 

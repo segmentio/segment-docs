@@ -1,0 +1,11 @@
+# Redirects file for Netlify
+
+# Redirect for Profiles -> Unify rename
+/docs/profiles/*                          /docs/unify/:splat
+
+
+# RETL Beta -> GA redirect
+/docs/reverse-etl/                         /docs/connections/reverse-etl
+/docs/reverse-etl/bigquery-setup/          /docs/connections/reverse-etl/reverse-etl-source-setup-guides/bigquery-setup/
+/docs/reverse-etl/redshift-setup/          /docs/connections/reverse-etl/reverse-etl-source-setup-guides/redshift-setup/
+/docs/reverse-etl/snowflake-setup/         /docs/connections/reverse-etl/reverse-etl-source-setup-guides/snowflake-setup/
