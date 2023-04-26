@@ -24,7 +24,7 @@ The following roles are only available to Segment Business Tier accounts.
 * Edit access to [End User Privacy Settings](/docs/privacy/user-deletion-and-suppression). Includes access to Data Privacy Agreement, and user suppression and deletion workflows.
 * **Scope:** Grants access to only End User Privacy Settings in the App.
 
-#### Profiles Identity Admin
+#### Identity Admin
 * Edit access to Identity settings in Unify.
 * **Scope:** Grants access to *all* Identity settings.
 
