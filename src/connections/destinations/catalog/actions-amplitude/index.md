@@ -206,6 +206,9 @@ To use Amplitude's groups with Segment, you must enable the following Action set
 
 Keep the following in mind if you plan to move to Amplitude (Actions) from a classic Amplitude destination.
 
+> info ""
+> Amplitude Classic uses different default mappings than Amplitude (Actions) in some cases (e.g. the `Viewed Home Page` event in Amplitude Classic will be `Viewed Home` in Amplitude Actions). Be sure to follow the steps in the Destination Actions documentation to [customize your mappings](https://segment.com/docs/connections/destinations/actions/#customizing-mappings). 
+
 ### Amplitude (Actions) uses Amplitude's HTTP API v2
 
 > warning ""
