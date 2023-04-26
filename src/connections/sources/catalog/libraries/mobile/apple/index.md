@@ -3,6 +3,7 @@ title: 'Analytics for Swift'
 strat: swift
 redirect_from:
   - '/connections/sources/catalog/cloud-apps/swift/'
+  - '/connections/sources/catalog/libraries/mobile/swift-ios/'
 id: dZeHygTSD4
 ---
 With Analytics Swift, you can send data from iOS, tvOS, iPadOS, WatchOS, macOS and Linux applications to any analytics or marketing tool without having to learn, test, or implement a new API every time. Analytics Swift is compatible with both Swift and Objective-C applications. 

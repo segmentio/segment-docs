@@ -37,16 +37,16 @@ The following roles are only available to Segment Business Tier accounts.
 * Edit access to assigned source(s), source settings, connected streaming destinations, schema, transformations, the source's [write key](/docs/connections/find-writekey/) and live data in the debugger.
 * **Scope:** Grants access to either: all current and future Sources, or only specific Sources, or Sources with a specific Label (BT only).
 
-#### Profiles and Engage Admin
+#### Unify and Engage Admin
 * Edit access to Unify settings and if purchased, Engage Audiences, Traits, Journeys, Content, and settings.
 * **Scope:** Grants access to either: all current and future Spaces, or a specific list of Spaces, or Spaces with a specific Label (BT only).
 
 
-#### Profiles and Engage Read-only
+#### Unify and Engage Read-only
 * Read-only access to Unify settings and if purchased, Engage audiences, traits, journeys, and content. Cannot download PII or edit settings in Unify or Engage.
 * **Scope:** Grants access to either: all current and future Spaces, or a specific list of Spaces, or Spaces with a specific Label (BT only).
 
-#### Profiles Read-only, Engage User
+#### Unify Read-only, Engage User
 * Read-only access to Unify settings and if purchased, edit access to Engage audiences, traits, journeys, and content. Cannot download PII or edit settings in Unify or Engage.
 * **Scope:** Grants access to either: all current and future Spaces, or a specific list of Spaces, or Spaces with a specific Label (BT only).
 

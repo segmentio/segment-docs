@@ -274,6 +274,7 @@ const updateSources = async () => {
     let updatedRegional = {
       id: source.id,
       display_name: source.name,
+      hidden: isCatalogItemHidden(url),
       slug,
       url,
       regions,

@@ -62,7 +62,7 @@ To prevent this, you can enable the new **Fallback to send IDFV when advertising
 
 #### Additional React Native device-mode set up
 
-{% include content/react-dest.md %}
+{% include content/react2-dest.md %}
 
 ### Server
 
