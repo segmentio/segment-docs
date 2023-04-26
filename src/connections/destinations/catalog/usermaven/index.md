@@ -13,12 +13,8 @@ hide-dossier: true
 <!-- In the section below, explain the value of this actions-based destination. If you don't have a classic version of the destination, remove this section. -->
 [Usermaven](https://www.usermaven.com){:target="_blank"} helps marketing and product teams turn more visitors into customers, get more people to use the product, and keep them coming back. It is the easiest analytics tool to reduce churn, increase product adoption and grow the revenue of your SaaS business.
 
-<!-- This includes describes the requirement of A.js 2.0 or higher for Actions compatibility, and is required if your destination has a web component. -->
 
-{% include content/ajs-upgrade.md %}
-
-
-## Benefits of Usermaven (Actions)
+## Benefits of Usermaven (Actions)`
 
 Usermaven (Actions) provides the following benefits:
 
@@ -32,9 +28,11 @@ Usermaven (Actions) provides the following benefits:
 ## Getting started
 
 1. From the Segment web app, click **Catalog**, then click **Destinations**.
-2. Find the Destinations Actions item in the left navigation, and click it.
+2. Search for "usermaven" in the Destinations Catalog, and select the destination.
 3. Click **Configure Usermaven**.
 4. Select an existing Source to connect to Usermaven (Actions).
+5. Go to the [Usermaven App](https://app.usermaven.com){:target="_blank"}, and navigate to **Workspace Settings** > **General Settings** and copy the **API Key**.
+6. Enter the "API Key" in the "Usermaven (Actions)" destination settings in Segment.
 
 <!-- The line below renders a table of connection settings (if applicable), Pre-built Mappings, and available actions. -->
 
