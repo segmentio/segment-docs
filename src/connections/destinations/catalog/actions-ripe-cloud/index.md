@@ -12,7 +12,7 @@ The Ripe Segment integration is an [Actions-based Destination in cloud mode](/do
 ## Getting started
 
 > info ""
-> Before getting started, since this is a [cloud-mode destination](https://segment.com/docs/connections/destinations/#connection-modes) this destination will not enable Ripe features that requires accsess to the client i.e. live calls and calendar. To use the full Ripe feature set you need to enable the device-mode [Ripe Destination](https://segment.com/docs/connections/destinations/catalog/actions-ripe-web/) on one of your web sources.
+> Since this is a [cloud-mode destination](https://segment.com/docs/connections/destinations/#connection-modes) it will not enable Ripe features that require access to the client, for example, live calls and calendar. To use the full Ripe feature set you need to enable the device-mode [Ripe Destination](https://segment.com/docs/connections/destinations/catalog/actions-ripe-web/) on one of your web sources.
 
 
 1. Sign in to your Segment Account
