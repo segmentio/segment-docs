@@ -42,7 +42,7 @@ To add the Google Analytics 4 Cloud destination:
 
 {% include components/actions-fields.html %}
 
-## Universal Analytics & Google Analytics 4
+## Universal Analytics and Google Analytics 4
 
 ### Differences between Universal Analytics and Google Analytics 4
 
@@ -59,12 +59,12 @@ Google Analytics 4 has different out-of-the-box reports. Google Analytics 4’s 
 
 Segment’s Google Analytics 4 Cloud integration is a server-side integration with the GA4 Measurement Protocol API. This is similar to Segment’s Google Universal Analytics cloud-mode integration in that all data is sent directly to Google’s servers. Please note that this means client-side functionality, such as [Enhanced Measurement](https://support.google.com/analytics/answer/9216061){:target='_blank'}, may not be available through Segment. In addition, as Google continues to develop the GA4 Measurement Protocol API ahead of general availability of the API, there may be limitations that impact what can be seen in the Google Analytics 4 reports.
 
-#### Recommended Events
+#### Recommended events
 Google Analytics 4 requires the use of [recommended events and properties](https://support.google.com/analytics/answer/9267735){:target='_blank'} to power certain built-in reports. Segment’s Google Analytics 4 Cloud destination provides prebuilt mappings to automatically map your [Segment spec](/docs/connections/spec/ecommerce/v2) events to the corresponding Google Analytics 4 events and properties. If your Segment events don't follow the Segment spec exactly, you can modify the mappings. For example, Segment maps "Order Completed" events to the Google Analytics 4 “Purchase” event by default. If your company uses “Products Purchase” to indicate a purchase, this can be mapped in the Purchase action’s Event Trigger instead.
 
 Segment recommends using the prebuilt mappings when possible, however the Segment spec doesn't have an equivalent event for every Google Analytics 4 recommended event. If there are other recommended events you would like to send, please use the [Custom Event action](/docs/connections/destinations/catalog/actions-google-analytics-4/#custom-event). For example, to send a `spend_virtual_currency` event, create a mapping for Custom Event, set up your Event Trigger criteria, and input a literal string of "spend_virtual_currency" as the Event Name. You can use the Event Parameters object to add fields that are in the `spend_virtual_currency` event such as `value` and `virtual_currency_name`.
 
-#### Custom Events
+#### Custom events
 In addition to recommended events, you can also send custom events using the [Custom Event action](/docs/connections/destinations/catalog/actions-google-analytics-4/#custom-event). Custom events are events that you name. Custom events don't appear in most standard reports; you need to set up custom reports for meaningful analysis. To create custom events in the Google Analytics 4 web interface, see Google’s [Modify and create events through the user interface](https://support.google.com/analytics/answer/10085872){:target='_blank'}.
 
 > info "Event naming limitations"
@@ -72,14 +72,14 @@ In addition to recommended events, you can also send custom events using the [Cu
 
 In all cases, event names in GA4 are case sensitive and require values in all properties. The Custom Event action includes a **Lowercase Event Name** option, to ensure consistency of all events sent to Google. For more information, see Google's articles [Google Analytics 4 event name rules](https://support.google.com/analytics/answer/10085872?hl=en&ref_topic=9756175#event-name-rules){:target='_blank'} and [Event name limitations](https://developers.google.com/analytics/devguides/collection/protocol/ga4/sending-events?client_type=firebase){:target="_blank"}.
 
-#### Custom Dimensions and Metrics
+#### Custom dimensions and metrics
 With Google Analytics 4, you must create custom dimensions and metrics within the Google Analytics 4 interface and link parameters to the corresponding dimension or metric. When you create the dimension or metric, you can either select a parameter from the list of already collected fields or enter the name of the parameter you plan to collect in the future. Custom dimensions can be either event-scoped or user-scoped, and custom metrics must be event-scoped.
 
 To send parameters to Google Analytics 4, use the Event Parameters or User Properties object available on every action. Only pass flat key-value pairs in the Event Parameters and User Properties objects. Keep in mind that Google silently drops any events that include nested parameters.
 
 To achieve parity with Universal Analytics, you should create the same custom dimensions that you defined in Universal Analytics. Additionally, in Google Analytics 4, you should recreate many of the values that you tracked as event dimensions in Universal Analytics, particularly event category and event label.  For more information, see [Google Analytics 4 Custom dimensions and metrics](https://support.google.com/analytics/answer/10075209){:target='_blank'}.
 
-#### Tracking Active Users and Sessions
+#### Tracking active users and sessions
 
 ##### Server-side Implementation using Google Analytics 4 Cloud Destination
 
@@ -112,10 +112,10 @@ Promise.all([sessionIdPromise, sessionNumPromise]).then(function(session_data) {
 });
 ```
 
-#### User Identification
-Segment requires a Client ID or Firebase App Instance ID to send data to Google Analytics 4. The Client ID is the web equivalent of a device identifier and uniquely identifies a given user instance of a web client. By default, Segment sets Client ID to the Segment `userId`, falling back on `anonymousId`. This mapping can be changed within each action if you prefer to map a different field to Client ID. 
+#### User identification
+Segment requires a Client ID or Firebase App Instance ID to send data to Google Analytics 4. The Client ID is the web equivalent of a device identifier and uniquely identifies a given user instance of a web client. By default, Segment sets Client ID to the Segment `userId`, falling back on `anonymousId`. This mapping can be changed within each action if you prefer to map a different field to Client ID.
 
-The Firebase App Instance ID is the mobile equivalent of a device identifier and uniquely identifiers a given Firebase app instance. No default is set for Firebase App Instance ID,  as [this value needs to be retrieved through the Firebase SDK](https://developers.google.com/analytics/devguides/collection/protocol/ga4/reference?client_type=firebase#payload_post_body){:target='_blank'}. 
+The Firebase App Instance ID is the mobile equivalent of a device identifier and uniquely identifiers a given Firebase app instance. No default is set for Firebase App Instance ID,  as [this value needs to be retrieved through the Firebase SDK](https://developers.google.com/analytics/devguides/collection/protocol/ga4/reference?client_type=firebase#payload_post_body){:target='_blank'}.
 
 Segment also allows you to send a User-ID with your events. The User-ID feature lets you associate your own identifiers with individual users so you can connect their behavior across different sessions and on various devices and platforms. For more information on User-ID, see Google’s [Measure activity across platforms](https://support.google.com/analytics/answer/9213390){:target='_blank'} and [Reporting: deduplicate user counts](https://support.google.com/analytics/answer/9355949){:target='_blank'}.
 
@@ -123,36 +123,36 @@ There are certain scenarios where sending a User-ID can be helpful. For example,
 - **Use the Gtag-generated Client ID.** Gtag will set a Client ID automatically. The Client ID is stored in a cookie and can be fetched on the web client. To tie data between client-side and server-side, pass the Gtag-generated Client ID to Segment as a property and use that value as the Client ID in the Google Analytics 4 Cloud destination mappings.
 - **Use the Segment `userId` for User-ID.** The Segment `userId` should be your company’s canonical user identifier. By setting Google's User-ID to the same value as `userId` on client-side and server-side, you can benefit from cross-platform analytics. In addition, if you use [Firebase to send mobile data to Google Analytics 4](/docs/connections/destinations/catalog/actions-google-analytics-4/#mobile-data), using the same User-ID across web and mobile will ensure users are stitched together across devices.
 
-#### Validating and Comparing Data
+#### Validating and comparing data
 Google recommends a period of dual-collection with both Universal Analytics and Google Analytics 4. This dual-collection approach lets you build a historical record in Google Analytics 4 while continuing to depend on Universal Analytics until you're ready to fully switch over.
 
 During this period, you may find it hard to perfectly compare between the two properties because reports and configuration settings vary between Universal Analytics and Google Analytics 4 properties. Google provides guidance on the [conditions that must be met](https://support.google.com/analytics/answer/9964640?hl=en&ref_topic=11192706#comparing){:target="_blank"} in order to compare data in the Realtime reports, as well as [which metrics are comparable versus not](https://support.google.com/analytics/answer/11986666?hl=en&ref_topic=10737980){:target="_blank"}.
 
 For a complete map of Universal Analytics functionality to corresponding Google Analytics 4 functionality, please see Google’s [Migration Reference](https://support.google.com/analytics/answer/10607999?hl=en&ref_topic=10737980){:target="_blank"}.
 
-## FAQ & Troubleshooting
+## FAQ and Troubleshooting
 
 ### Data not sending to Google
 
 Ensure that at least one mapping has been configured and enabled in the destination mappings for an event that you would like to reach Google. Without any mappings enabled to trigger on an event that has been ingested by the connected source, the destination will not send events downstream.
 
-### Attribution Reporting
+### Attribution reporting
 
 Google doesn't currently support passing certain reserved fields to the Google Analytics 4 Measurement Protocol API. This includes attribution data, like UTM parameters. If you rely on attribution reporting, you can either send this data as [custom dimensions](/docs/connections/destinations/catalog/actions-google-analytics-4/#custom-dimensions-and-metrics) or implement a parallel client-side integration to collect this data with gtag.js (web) or Firebase (mobile).
 
-### Debug Mode
+### Debug mode
 
 The Google Analytics 4 [debug mode](https://support.google.com/analytics/answer/7201382?hl=en){:target="_blank"} only works with a client-side implementation through gtag.js, Google Tag Manager, or Firebase. Because Segment's Google Analytics 4 Cloud integration is server-side and uses the Measurement Protocol API, debug mode is not supported.
 
-### Mobile Data
+### Mobile data
 
 To achieve complete reporting, Google recommends use of their Firebase SDKs to send mobile data to Google Analytics 4. To assist in your implementation, Segment has a [Firebase destination](/docs/connections/destinations/catalog/firebase) available for mobile analytics. For more information on linking Google Analytics 4 properties to Firebase, see [Google Analytics 4 Firebase integration](https://support.google.com/analytics/answer/9289234?hl=en){:target="_blank"}.
 
 The Segment Google Analytics 4 Cloud destination supports sending mobile app events server-side to supplement your Firebase implementation. To send mobile events server-side, configure the Firebase App ID in the Destination settings. In each mapping, change the Data Stream Type to `Mobile App` and set a Firebase App Instance ID so that data routes to a mobile stream.
 
-### Reserved Names
+### Reserved names
 
-Google reserves certain event names, parameters, and user properties. Google silently drops any events that include [these reserved names](https://developers.google.com/analytics/devguides/collection/protocol/ga4/reference?client_type=gtag#reserved_names){:target="_blank"}. Google also will not except events where event or user property names have spaces in them. If you notice that your data isn't appearing in Google, please check that you're not using a reserved name. 
+Google reserves certain event names, parameters, and user properties. Google silently drops any events that include [these reserved names](https://developers.google.com/analytics/devguides/collection/protocol/ga4/reference?client_type=gtag#reserved_names){:target="_blank"}. Google also will not accept events where event or user property names have spaces in them. If you notice that your data isn't appearing in Google, please check that you're not using a reserved name. You also cannot send fields with `null` values to Google.
 
 ### Data taking a long time to appear in Google's reports
 
