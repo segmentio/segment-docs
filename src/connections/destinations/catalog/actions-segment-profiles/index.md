@@ -35,3 +35,6 @@ To enable the Segment Profiles destination to send data to an existing Profile s
 
 ### API Calls and MTUs
 The Segment Profiles destination is not subject to API call or MTU costs. Any users or accounts created and updated by the Segment Profiles destination will not count towards your API call or MTU usage.
+
+### Error loading options from Segment Profiles
+Make sure you have a Public API token in your settings. If the Segment Profiles Destination doesn’t have a Public API token in the settings, the **Select Mappings** section fails to find any Profile (Engage) Spaces, which means you can't set your mappings. 
