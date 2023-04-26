@@ -76,9 +76,9 @@ If you [discarded events](/docs/protocols/enforce/schema-configuration) as a par
 
 Unfortunately, Sources cannot be connected to more than one Tracking Plan. If you were able to connect more than one Tracking Plan to a Source, it could create conflict if events overlapped. 
 
-## How is the  Track Plan implemented?
+## How does Tracking Plans work behind the scenes?
 
-The Tracking Plan is included in the source settings.  Essentials, Segment has logic in the code that checks to see if an event is in the Tracking Plan. 
+Segment's code has built-in logic that verifies if an event exists in the Tracking Plan and if not, it will follow the configuration the Schema Configuration settings for each source connected to the Tracking Plan.
 
 ## Protocols Validation
 
