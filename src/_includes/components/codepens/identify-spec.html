@@ -19,6 +19,42 @@
     var received = ts + 233
     var received_ts = new Date(received)
     var received_iso = received_ts.toISOString()
+    
+    // Add regular expression check for name
+    var nameRegex = /^[a-zA-Z]+(([',. -][a-zA-Z ])?[a-zA-Z]*)*$/;
+      if (!nameRegex.test(name)) {
+        alert("Please enter your name");
+        return;
+      }
+    
+    // Add regular expression check for login #s
+    var loginRegex = /^[0-9]+$/;
+      if (!loginRegex.test(logins)) {
+        alert("Please enter only numbers in the 'Logins' field");
+        return;
+      }
+
+    // Add regular expression check for valid email address
+    var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!emailRegex.test(email)) {
+        alert("Please enter a valid email address");
+        return;
+      }
+    
+    // Add regular expression check for city name
+    var cityRegex = /^[A-Za-z\s-']+$/;
+    if (!cityRegex.test(city)) {
+      alert("Please enter a valid city name in the 'City' field.");
+      return;
+    }  
+
+    // Add regular expression check for postcode  
+    var postcodeRegex = /^\d{5}$/;
+      if (!postcodeRegex.test(postcode)) {
+        alert("Please enter a valid five-digit zip code");
+        return
+      }
+
     var output = `{
   "anonymousId": "507f191e810c19729de860ea",
   "channel": "browser",
@@ -88,7 +124,7 @@
     <label for="state">State:</label>
     <input type="text" id="state" value="TN">
     <label for="postcode">Zip Code:</label>
-    <input type="text" id="postcode" value="37215-0307">
+    <input type="text" id="postcode" value="37215">
     <label for="country">Country:</label>
     <input type="text" id="country" value="USA">
     <input type="submit" class="button button-hollow" id="submit" onclick="showMessage(); showOutput()" value="See a sample identify call">

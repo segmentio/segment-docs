@@ -1,53 +1,69 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/9000.0.1/prism.min.js"
   integrity="sha512-UOoJElONeUNzQbbKQbjldDf9MwOHqxNz49NNJJ1d90yp+X9edsHyJoAs6O4K19CZGaIdjI5ohK+O2y5lBTW6uQ=="
   crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-<script type="text/javascript">
-  function showMessage() {
-    var name = document.getElementById("name").value;
-    var industry = document.getElementById("industry").value;
-    var employees = document.getElementById("employees").value;
-    var plan = document.getElementById("plan").value;
-    var totalBilled = document.getElementById("totalBilled").value;
-    var user_agent = window.navigator.userAgent
-    var ts = Date.now()
-    var date = new Date(ts)
-    var now = date.toISOString()
-    var received = ts + 233
-    var received_ts = new Date(received)
-    var received_iso = received_ts.toISOString()
-    var output = `{
-  "anonymousId": "507f191e810c19729de860ea",
-  "channel": "browser",
-  "context": {
-    "ip": "8.8.8.8",
-    "userAgent": "${user_agent}"
-  },
-  "integrations": {
-    "All": true,
-    "Mixpanel": false,
-    "Salesforce": false
-  },
-  "messageId": "022bb90c-bbac-11e4-8dfc-aa07a5b093db",
-  "receivedAt": "${received_iso}",
-  "sentAt": "${now}",
-  "timestamp": "${now}",
-  "traits": {
-    "name": "${name}",
-    "industry": "${industry}",
-    "employees": ${employees},
-    "plan": "${plan}",
-    "total billed": ${totalBilled}
-  },
-  "type": "group",
-  "userId": "97980cfea0067",
-  "groupId": "0e8c78ea9d97a7b8185e8632",
-  "version": "1.1"
-}`
-    output_container.innerHTML = output
-    Prism.highlightElement(output_container)
-  }
+  <script type="text/javascript">
+    function showMessage() {
+      var name = document.getElementById("name").value;
+      var industry = document.getElementById("industry").value;
+      var employees = document.getElementById("employees").value;
+      var plan = document.getElementById("plan").value;
+      var totalBilled = document.getElementById("totalBilled").value;
+      var user_agent = window.navigator.userAgent;
+      var ts = Date.now();
+      var date = new Date(ts);
+      var now = date.toISOString();
+      var received = ts + 233;
+      var received_ts = new Date(received);
+      var received_iso = received_ts.toISOString();
+    
+      // Add regular expression check for number of employees
+      var employeesRegex = /^[0-9]+$/;
+      if (!employeesRegex.test(employees)) {
+        alert("Please enter only numbers in the Employees field");
+        return;
+      }
 
-</script>
+      // Add regular expression check for total billed
+      var billedRegex = /^[0-9]+$/;
+      if (!billedRegex.test(totalBilled)) {
+        alert("Please enter only numbers in the Total Billed field");
+        return;
+      }
+    
+      var output = `{
+        "anonymousId": "507f191e810c19729de860ea",
+        "channel": "browser",
+        "context": {
+          "ip": "8.8.8.8",
+          "userAgent": "${user_agent}"
+        },
+        "integrations": {
+          "All": true,
+          "Mixpanel": false,
+          "Salesforce": false
+        },
+        "messageId": "022bb90c-bbac-11e4-8dfc-aa07a5b093db",
+        "receivedAt": "${received_iso}",
+        "sentAt": "${now}",
+        "timestamp": "${now}",
+        "traits": {
+          "name": "${name}",
+          "industry": "${industry}",
+          "employees": ${employees},
+          "plan": "${plan}",
+          "total billed": ${totalBilled}
+        },
+        "type": "group",
+        "userId": "97980cfea0067",
+        "groupId": "0e8c78ea9d97a7b8185e8632",
+        "version": "1.1"
+      }`;
+    
+      output_container.innerHTML = output;
+      Prism.highlightElement(output_container);
+    }
+    </script>
+    
 <script>
   function showOutput() {
     var show = document.getElementById("output-code");
