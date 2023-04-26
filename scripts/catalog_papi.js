@@ -15,7 +15,7 @@ const regionalSupport = yaml.load(fs.readFileSync(path.resolve(__dirname, `../sr
 const slugOverrides = yaml.load(fs.readFileSync(path.resolve(__dirname, `../src/_data/catalog/slugs.yml`)))
 
 
-const slugify = (displayName) => {
+const slugify = (displayName, type) => {
   let slug = displayName
     .toLowerCase()
     .replace(/\s+/g, '-')
@@ -24,15 +24,27 @@ const slugify = (displayName) => {
     .replace(/[\(\)]/g, '')
     .replace('.', '-')
 
-  for (key in slugOverrides) {
-    let original = slugOverrides[key].original
-    let override = slugOverrides[key].override
+  let overrides = ""
+  if (type == "sources") {
+    overrides = slugOverrides.sources
+  } 
+
+  if (type == "destinations") {
+    overrides = slugOverrides.destinations
+  } 
+
+    
+
+  for (key in overrides) {
+    let original = overrides[key].original
+    let override = overrides[key].override
 
     if (slug == original) {
       console.log(original + " -> " + override)
       slug = override
     }
   }
+
 
   return slug
 }
@@ -120,7 +132,7 @@ const getConnectionModes = (destination) => {
       connectionModes.cloud.server = true
     }
   }
- 
+
   return connectionModes
 }
 
@@ -208,7 +220,7 @@ const updateSources = async () => {
   const regionalSourceRegion = regionalSupport.sources.region
 
   sources.forEach(source => {
-    let slug = slugify(source.name)
+    let slug = slugify(source.name, "sources")
     let settings = source.options
     let hidden = false
     let regions = ['us']
@@ -362,14 +374,14 @@ const updateDestinations = async () => {
     let endpoints = []
     let regions = []
 
-    let slug = slugify(destination.name)
-    
+    let slug = slugify(destination.name, "destinations")
+
     if (typeof destination.supportedRegions != "undefined") {
       regions = destination.supportedRegions
     } else {
-      regions.push('us-west-2','eu-west-1')
+      regions.push('us-west-2', 'eu-west-1')
     }
-    if (typeof destination.regionEndpoints != "undefined"){
+    if (typeof destination.regionEndpoints != "undefined") {
       endpoints = destination.regionEndpoints
     } else {
       endpoints.push('US')
@@ -418,7 +430,7 @@ const updateDestinations = async () => {
       return clonedObj;
     };
 
-    
+
     // Force screen method into supportedMethods object
     destination.supportedMethods.screen = false
     // Set it true for LiveLike, per request
