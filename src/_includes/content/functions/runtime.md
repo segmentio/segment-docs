@@ -1,4 +1,6 @@
-Functions use Node.js 14.x.
+Beginning April 30, 2023, Functions is migrating from Node.js 14.x to Node.js 16.x. You're not required to take any further action.
+
+<div class="premonition success"><div class="fa fa-check-square"></div><div class="content"><p class="header">Node.js 18.x: </p><p markdown=1>Starting June 30, 2023, you can [contact Segment](https://segment.com/help/contact/){:target="_blank"} to migrate to Node.js 18.x.</p></div></div>
 
 Functions do not currently support importing dependencies, but you can [contact Segment Support](https://segment.com/help/contact/){:target="_blank"} to request that one be added.
 
