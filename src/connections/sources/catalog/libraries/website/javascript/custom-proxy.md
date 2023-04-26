@@ -172,4 +172,5 @@ To add a CNAME record to your DNS settings:
 
 By following the [npm instructions]((https://github.com/segmentio/analytics-next/tree/master/packages/browser#-using-as-an-npm-package), you can host Analytics.js and eliminate the requirement of downloading it via the CDN file during every page load. This will enable you to self-host/import the library itself.
 
-Please note that we advise against self-hosting as it would require you to manually update your self-hosted scripts whenever there are changes in your destinations or source settings. Additionally, when users enable third-party libraries in device-mode, Segment will still load them, which defeats the purpose of self-hosting. It's important to note that self-hosting Analytics.js means losing the benefit of on-the-fly updates to your analytics whenever changes are made. With self-hosting, you would need to configure integration settings individually and redeploy Analytics.js every time you make changes to your settings.
+> warning "Keep in mind"
+> Segment does not recommend self-hosting, as it requires that you configure integration settings individually and manually redeploy Analytics.js when there are changes to your settings. When you enable third-party libraries in device-mode, Segment loads them, which defeats the purpose of self-hosting. Self-hosting Analytics.js requires 
