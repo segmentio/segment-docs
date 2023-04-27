@@ -163,7 +163,10 @@ For account-level computed traits, you have the option to send either a [group](
 
 ## View compute status
 
-After you create a computed trait, use the Overview page to view the current [compute status](/docs/engage/audiences#compute-statuses), number of users with the trait, connected destinations, and more. For real-time traits, click **Refresh Trait** to update the current number of users with the trait.  
+After you create a computed trait, use the Overview page to view the current [compute status](/docs/engage/audiences#compute-statuses), number of users with the trait, connected destinations, and more. For real-time traits, click **Refresh Trait** to update the current number of users with the trait. 
+
+> warning ""
+> If a destination hasn't been connected to a computed trait, the trait's status will show as "Not Computing" until a destination is connected, or if the flag for "Compute without enabled destinations" is enabled in the computed trait's settings.
 
 ## Editing Realtime Traits
 
