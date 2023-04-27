@@ -629,3 +629,7 @@ This option is only available when you use a cloud mode (also called server-side
     }
  });
 ```
+### Download Your Mappings With Segment’s Public API
+
+You can download your Adobe Destination’s mappings by sending a GET request to Segment’s [Public API]([url](https://segment.com/docs/api/public-api/)) endpoint for [Get Destination]([url](https://docs.segmentapis.com/tag/Destinations#operation/getDestination)). The response from the Public API will include the field names for both the Segment fields and Adobe fields.
+The Endpoint : `https://api.segmentapis.com/destinations/{destinationId}/`
