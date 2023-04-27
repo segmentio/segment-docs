@@ -13,7 +13,7 @@ The Ripe Destination is an [Actions-based Destination in device mode](/docs/conn
 ## Getting started
 
 > info ""
-> Before you begin, create a free [Ripe](https://www.getripe.com/){:target="_blank"} workspace to acsess the API key that you'll use to configure the integration.
+> Before you begin, create a free [Ripe](https://www.getripe.com/){:target="_blank"} workspace to access the API key that you'll use to configure the integration.
 
 1. Sign in to your Segment Account
 2. Open the [Ripe Destination](https://app.segment.com/goto-my-workspace/destinations/catalog/actions-ripe/){:target="_blank"}
