@@ -33,8 +33,6 @@ const slugify = (displayName, type) => {
     overrides = slugOverrides.destinations
   } 
 
-    
-
   for (key in overrides) {
     let original = overrides[key].original
     let override = overrides[key].override
@@ -44,8 +42,6 @@ const slugify = (displayName, type) => {
       slug = override
     }
   }
-
-
   return slug
 }
 
