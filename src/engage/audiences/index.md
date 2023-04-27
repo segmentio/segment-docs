@@ -18,6 +18,8 @@ You can build an Audience from existing events, traits, computed traits, or othe
 
 ![Creating an Engage Audience from the conditions list](/docs/engage/images/audience_condition_list.png)
 
+There's also the option to _Include Anonymous Users_, which when selected will also include users who do not currently have a userId associated with their profile. When this is not selected, users who have a userId, email address, android.idfa, or ios.idfa are considered known users and thus included in the audience by default. The option to select _Include Anonymous Users_ is only available upon the initial creation of the audience and cannot be changed by an edit post-creation.
+
 ### Events
 
 You can build an Audience from any events that are connected to Engage, including [Track](/docs/connections/spec/track), [Page](/docs/connections/spec/page), and [Screen](/docs/connections/spec/screen) calls. You can use the `property` button to refine the audience on specific event properties, as well. Select `and not who` to indicate users that have not performed an event. For example, you might want to look at all users that have viewed a product above a certain price point but not completed the order.
