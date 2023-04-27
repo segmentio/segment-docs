@@ -41,3 +41,9 @@ Once a replay starts, you will not see replayed events in the Event Delivery tab
 Replays are available for any destinations which support cloud-mode data (meaning data routed through Segment) and which also process timestamps. Destinations that are only available in device-mode (meaning where data is sent directly from the users' devices to the destination tool) cannot receive Replays.
 
 Not all destinations support data deduplication, so you may need to delete, archive, or otherwise remove any old versions of the data before initiating a replay. [Contact us](https://segment.com/help/contact/) if you have questions or would like help.
+
+### Replays & Destination Filters
+
+Replays are subject to the [Destination Filters]([url](https://segment.com/docs/connections/destinations/destination-filters/)) you've configured on that destination. For example, this means that if you request that identify calls be included in the replay, but your destination has a Destination Filter that blocks identify events, then none of those identify events will actually make it to the destination, as they'd be blocked by the filter. _Though, the better practice would be to not include identify events in the Replay at all if you know they'll be blocked by the destination filter._
+
+When you request a replay, you'll be asked to provide a list of the events (type and/or name) that you'd like to be included in the replay. If you specify a list of events, then only those specified events will be included in the replay. If you'd like all events from that source to be sent in the replay, then you don't need to specify the events and all events will be included in the replay. 
