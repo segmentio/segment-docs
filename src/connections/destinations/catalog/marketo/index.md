@@ -120,4 +120,4 @@ For more information about syncronising your Marketo leads, [visit their documen
 
 To create a custom field in Marketo, follow Marketo's [documentation for creating a custom field](http://docs.marketo.com/display/public/DOCS/Create+a+Custom+Field+in+Marketo). Be sure that the **API Name** is `PascalCase`'d, as our destination will account for Marketo's Pascal trait standards.
 
-For instance, if you configure `SomeTrait` in the **API Name** field (the **Name** value does not matter), you can pass in this field as `someTrait`, and we will convert this to `SomeTrait` when sending into Marketo. Note that if you configured **API Name** to be `someTrait`, and passed it in as `someTrait` in your call, this would fail to send.
+For instance, if you configure `SomeTrait` in the **API Name** field (the **Name** value does not matter), you can pass in this field as `someTrait`, and we will convert this to `SomeTrait` when sending into Marketo. Note that if you configured **API Name** to be `someTrait`, and passed it in as `someTrait` in your call, this would fail to send. 
