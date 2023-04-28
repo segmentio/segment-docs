@@ -48,4 +48,4 @@ Since the code in the head of your website is executed only on initial page load
 
 ## How to track UTMs on a Single Page Application?
 
-UTMs should be passed either in the URL and Segment will capture it automatically, or you can manually pass it into the context campaign fields.
+UTMs should be passed either in the URL and Segment will capture it automatically, or you [can manually pass it into](https://segment.com/docs/connections/sources/catalog/libraries/website/javascript/#default-page-properties) the context campaign fields.
