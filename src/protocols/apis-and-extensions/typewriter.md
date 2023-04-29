@@ -11,9 +11,9 @@ At a high-level, Typewriter can take an event from your Tracking Plan like this 
 
 Typewriter uses the event to generate a typed analytics call in different languages:
 
-```js
+```ts
 // Example client in your web app
-const typewriter = require('./analytics')
+import typewriter from './analytics'  
 
 typewriter.orderCompleted({
   orderID: 'ck-f306fe0e-cc21-445a-9caa-08245a9aa52c',
@@ -63,19 +63,13 @@ Have feedback on Typewriter? Consider opening a [GitHub issue here](https://gith
 
 ## Prerequisites
 
-Typewriter is built using [Node.js](https://nodejs.org/en/), and requires `node@8.x` or later, and `npm@5.2.x` or later to function.
+Typewriter is built using [Node.js](https://nodejs.org/en/), and requires node >= 14.x
 
 You can check if you have Node and NPM installed by running the following commands in your command-line window:
 
 ```sh
 $ node --version
-v10.15.3
-
-$ npm --version
-6.9.0
-
-$ npx --version
-6.9.0
+v14.x
 ```
 
 If you don't have these, [you'll need to install `node`](https://nodejs.org/en/download/package-manager). Installing `node` also installs `npm` and `npx` for you. If you're on macOS, you can install it with [Homebrew](https://brew.sh/):
@@ -90,25 +84,51 @@ Once you've installed Node and NPM, run the `--version` commands again to verify
 
 To get started with Typewriter in your browser:
 1. Make sure you have `node` installed using the instructions in the [prerequisites](#prerequisites) above.
-2. Install `analytics.js` in your app. For now, you just need to complete [`Step 1: Copy the Snippet`](/docs/connections/sources/catalog/libraries/website/javascript/quickstart/#step-2-copy-the-segment-snippet) from the [`analytics.js` Quickstart Guide](/docs/connections/sources/catalog/libraries/website/javascript/quickstart/).
+2. Install `analytics.js` in your app. There are two methods.
+  - **Snippet method (most common)**: Paste the snippet in the[`Step 1: Copy the Snippet`](/docs/connections/sources/catalog/libraries/website/javascript/quickstart/#step-2-copy-the-segment-snippet) from the [`analytics.js` Quickstart Guide](/docs/connections/sources/catalog/libraries/website/javascript/quickstart/).
+  - **NPM method**: Load analytics.js via the npm library: @segment/analytics-next: https://github.com/segmentio/analytics-next
+
 3. Once you've got `analytics.js` installed, add Typewriter as a developer dependency in your project:
 
     ```sh
     $ npm install --save-dev typewriter
     ```
-
-4. Run `npx typewriter init` to use the Typewriter quickstart wizard that generates a [`typewriter.yml`](#configuration-reference) configuration, along with your first Typewriter client. When you run the command, it creates a `typewriter.yml` file in your project. For more information on the format of this file, see the [Typewriter Configuration Reference](#configuration-reference).
-
+4. If you are a snippet user that uses TypeScript, you should also install the npm library as a dev dependency to get the typescript types.
+    ```sh
+      $ npm install --save-dev @segment/analytics-next
+    ```
+5. Run `npx typewriter init` to use the Typewriter quickstart wizard that generates a [`typewriter.yml`](#configuration-reference) configuration, along with your first Typewriter client. When you run the command, it creates a `typewriter.yml` file in your project. For more information on the format of this file, see the [Typewriter Configuration Reference](#configuration-reference).
     The command also adds a new Typewriter client in `./analytics` (or whichever path you configured). You can import this client into your project, like so:
 
-    ```js
+    ```ts
     // Import your auto-generated Typewriter client:
-    const typewriter = require('./analytics')
+    import typewriter from './analytics'
 
     // Issue your first Typewriter track call!
     typewriter.orderCompleted({
       orderID: 'ck-f306fe0e-cc21-445a-9caa-08245a9aa52c',
       total:   39.99
+    })
+    ```
+    ### Configuration for snippet + TypeScript users
+    ```ts
+    // Optional but recommended: you can improve your developer experience by adding typings for the global analytics object.
+    import type { AnalyticsSnippet } from '@segment/analytics-next'
+    
+    declare global {
+      interface Window {
+        analytics: AnalyticsSnippet;
+    }
+    ```
+    ### Configuration for NPM users
+    ```ts
+    // As an npm user, you *must* explicitly pass in your analytics instance.
+    import { AnalyticsBrowser } from '@segment/analytics-next'
+    
+    const analytics = AnalyticsBrowser.load({ writeKey: 'YOUR_WRITE_KEY' })
+
+    typewriter.setTypewriterOptions({
+      analytics: analytics
     })
     ```
 
@@ -117,11 +137,9 @@ To get started with Typewriter in your browser:
 
 To help you minimize your bundle size, Typewriter supports [tree-shaking](https://webpack.js.org/guides/tree-shaking/){:target="_blank"} using named exports. All generated analytics calls generate and export automatically, so you can import them like so:
 
-```js
-// Import your auto-generated Typewriter client:
-const { orderCompleted } = require('./analytics')
+```ts
+import { orderCompleted } from './analytics'
 
-// Issue your first Typewriter track call!
 orderCompleted({
   orderID: 'ck-f306fe0e-cc21-445a-9caa-08245a9aa52c',
   total:   39.99
@@ -132,9 +150,9 @@ Typewriter wraps your analytics calls in an [ES6 `Proxy`](https://developer.mozi
 
 ## Node.js Quickstart
 
-To get started with Nodejs:
+To get started with Node.js:
 1. Make sure you have `node` installed using the instructions in the [prerequisites](#prerequisites) above.
-2. Install `analytics-node` in your app. For now, you just need to complete [`Step 2: Install the Module`](/docs/connections/sources/catalog/libraries/server/node/quickstart/#step-2-install-the-module) from the [`analytics-node` Quickstart Guide](/docs/connections/sources/catalog/libraries/server/node/quickstart).
+2. Install `@segment/analytics-node` in your app. For now, you just need to complete [`Step 2: Install the Module`](/docs/connections/sources/catalog/libraries/server/node/quickstart/#step-2-install-the-module) from the [`analytics-node` Quickstart Guide](/docs/connections/sources/catalog/libraries/server/node/quickstart).
 3. Once you have `analytics-node` installed, add Typewriter as a developer dependency in your project:
 
     ```sh
@@ -143,13 +161,14 @@ To get started with Nodejs:
 
 4. Run `npx typewriter init` to use the Typewriter quickstart wizard that generates a [`typewriter.yml`](#configuration-reference) configuration, along with your first Typewriter client. When you run the command, it creates a `typewriter.yml` file in your repo. For more information on the format of this file, see the [Typewriter Configuration Reference](#configuration-reference). The command also adds a new Typewriter client in `./analytics` (or whichever path you configured). You can import this client into your project, like so:
 
-    ```js
-    // Initialize analytics-node, per the analytics-node guide above.
-    const Analytics = require('analytics-node')
-    const analytics = new Analytics('YOUR_WRITE_KEY')
-
+    ```ts
     // Import your auto-generated Typewriter client.
-    const typewriter = require('./analytics')
+    import typewriter from './analytics'
+
+    // Initialize analytics-node, per the analytics-node guide above.
+    import { Analytics } from '@segment/analytics-node'
+
+    export const analytics = new Analytics({ writeKey: 'YOUR_WRITE_KEY' })
 
     // Pass in your analytics-node instance to Typewriter.
     typewriter.setTypewriterOptions({
@@ -330,7 +349,7 @@ Segment recommends you use a [Token Script](#token-script) to share an API token
 Segment also recommends you to pipe through your API Token as this will let you keep your token secret, but it also allows you to share it across your team.
 
 > warning ""
-> Segment is keeping the Token Script execution for compatibility purposes only in v8 of Typewriter. Segment might deprecate this feature in the future, and encourages you to execute your script and pipe in the token. For example, `echo $TW_TOKEN | typewriter build`.
+> Segment is temporarily keeping the Token Script execution for compatibility purposes. Segment might deprecate this feature in the future, and encourages you to execute your script and pipe in the token. For example, `echo $TW_TOKEN | typewriter build`.
 
 ## Editor Configuration
 
@@ -490,10 +509,10 @@ You can provide a custom handler that fires whenever a violation is seen. By def
 
 For `analytics.js` and `analytics-node` clients, you can configure this handler with `setTypewriterOptions`:
 
-```js
-const typewriter = require('./analytics')
+```ts
+import typewriter from './analytics'
 
-function yourViolationHandler(message, violations) {
+const yourViolationHandler = (message, violations) => {
   console.error(`Typewriter Violation found in ${message.event}`, violations)
 }
 
@@ -504,10 +523,10 @@ typewriter.setTypewriterOptions({
 
 A common use case for this handler is to configure Typewriter to detect when your tests are running and if so, throw an error to fail your unit tests. For example:
 
-```js
+```ts
 const typewriter = require('./analytics')
 
-function yourViolationHandler(message, violations) {
+const yourViolationHandler = (message, violations) => {
   if (process.env.IS_TESTING === 'true') {
     throw new Error(`Typewriter Violation found in ${message.event}`)
   }
@@ -524,9 +543,9 @@ Another common use case is to customize how violations are reported to your team
 
 ![Example toaster notification on app.segment.com](images/typewriter-violation-toast.png)
 
-```js
-const typewriter = require('./analytics')
-const { toaster } = require('evergreen-ui')
+```ts
+import typewriter from './analytics'
+import { toaster } from 'evergreen-ui'
 
 typewriter.setTypewriterOptions({
   // Note that this handler only fires in development mode, since we ship the production build
