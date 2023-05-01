@@ -22,7 +22,7 @@
     
     var errors = [];
 
-// Add regular expression check for name
+// Regular expression check for name
 var nameRegex = /^[a-zA-Z]+(([',. -][a-zA-Z ])?[a-zA-Z]*)*$/;
 if (!nameRegex.test(name)) {
   const nameError = document.getElementById("name-error");
@@ -37,7 +37,7 @@ if (!nameRegex.test(name)) {
   nameField.style.outline = "";
 }
 
-// Sub name for email - fix this
+// Regular expression to check for email
 var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 if (!emailRegex.test(name)) {
   const emailError = document.getElementById("email-error");
@@ -52,7 +52,7 @@ if (!emailRegex.test(name)) {
   emailField.style.outline = "";
 }
 
-// Add regular expression check for login #s
+// Regular expression check for login #s
 var loginRegex = /^[0-9]+$/;
 if (!loginRegex.test(logins)) {
   const loginsError = document.getElementById("logins-error");
@@ -67,7 +67,7 @@ if (!loginRegex.test(logins)) {
   loginsField.style.outline = "";
 }
 
-// Add regular expression check for city name
+// Regular expression check for city name
 var cityRegex = /^[A-Za-z\s-']+$/;
 if (!cityRegex.test(city)) {
   const cityError = document.getElementById("city-error");
@@ -82,7 +82,7 @@ if (!cityRegex.test(city)) {
   cityField.style.outline = "";
 }
 
-// Add regular expression check for postcode  
+// Regular expression check for postcode  
 var postcodeRegex = /^\d{5}$/;
   if (!postcodeRegex.test(postcode)) {
     const postcodeError = document.getElementById("postcode-error");
