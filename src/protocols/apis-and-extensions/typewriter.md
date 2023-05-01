@@ -86,7 +86,7 @@ To get started with Typewriter in your browser:
 1. Make sure you have `node` installed using the instructions in the [prerequisites](#prerequisites) above.
 2. Install `analytics.js` in your app. There are two methods.
   - **Snippet method (most common)**: Paste the snippet in the[`Step 1: Copy the Snippet`](/docs/connections/sources/catalog/libraries/website/javascript/quickstart/#step-2-copy-the-segment-snippet) from the [`analytics.js` Quickstart Guide](/docs/connections/sources/catalog/libraries/website/javascript/quickstart/).
-  - **NPM method**: Load analytics.js via the npm library: @segment/analytics-next: https://github.com/segmentio/analytics-next
+  - **NPM method**: Load analytics.js with the npm library. Learn more about using the npm method [here](https://github.com/segmentio/analytics-next/tree/master/packages/browser#readme). 
 
 3. Once you've got `analytics.js` installed, add Typewriter as a developer dependency in your project:
 
