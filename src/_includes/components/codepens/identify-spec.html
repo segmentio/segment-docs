@@ -20,42 +20,97 @@
     var received_ts = new Date(received)
     var received_iso = received_ts.toISOString()
     
-    // Add regular expression check for name
-    var nameRegex = /^[a-zA-Z]+(([',. -][a-zA-Z ])?[a-zA-Z]*)*$/;
-      if (!nameRegex.test(name)) {
-        alert("Please enter your name");
-        return;
-      }
-    
-    // Add regular expression check for login #s
-    var loginRegex = /^[0-9]+$/;
-      if (!loginRegex.test(logins)) {
-        alert("Please enter only numbers in the 'Logins' field");
-        return;
-      }
+    var errors = [];
 
-    // Add regular expression check for valid email address
-    var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-      if (!emailRegex.test(email)) {
-        alert("Please enter a valid email address");
-        return;
-      }
-    
-    // Add regular expression check for city name
-    var cityRegex = /^[A-Za-z\s-']+$/;
-    if (!cityRegex.test(city)) {
-      alert("Please enter a valid city name in the 'City' field.");
-      return;
-    }  
+// Add regular expression check for name
+var nameRegex = /^[a-zA-Z]+(([',. -][a-zA-Z ])?[a-zA-Z]*)*$/;
+if (!nameRegex.test(name)) {
+  const nameError = document.getElementById("name-error");
+  nameError.style.display = "block";
+  const nameField = document.getElementById("name");
+  nameField.style.outline = "2px solid red";
+  errors.push("Name is invalid");
+} else {
+  const nameError = document.getElementById("name-error");
+  nameError.style.display = "none";
+  const nameField = document.getElementById("name");
+  nameField.style.outline = "";
+}
 
-    // Add regular expression check for postcode  
-    var postcodeRegex = /^\d{5}$/;
-      if (!postcodeRegex.test(postcode)) {
-        alert("Please enter a valid five-digit zip code");
-        return
-      }
+// Sub name for email - fix this
+var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+if (!emailRegex.test(name)) {
+  const emailError = document.getElementById("email-error");
+  emailError.style.display = "block";
+  const emailField = document.getElementById("email");
+  emailField.style.outline = "2px solid red";
+  errors.push("Email is invalid");
+} else {
+  const emailError = document.getElementById("email-error");
+  emailError.style.display = "none";
+  const emailField = document.getElementById("email");
+  emailField.style.outline = "";
+}
 
-    var output = `{
+// Add regular expression check for login #s
+var loginRegex = /^[0-9]+$/;
+if (!loginRegex.test(logins)) {
+  const loginsError = document.getElementById("logins-error");
+  loginsError.style.display = "block";
+  const loginsField = document.getElementById("logins");
+  loginsField.style.outline = "2px solid red";
+  errors.push("Logins is invalid");
+} else {
+  const loginsError = document.getElementById("logins-error");
+  loginsError.style.display = "none";
+  const loginsField = document.getElementById("logins");
+  loginsField.style.outline = "";
+}
+
+// Add regular expression check for city name
+var cityRegex = /^[A-Za-z\s-']+$/;
+if (!cityRegex.test(city)) {
+  const cityError = document.getElementById("city-error");
+  cityError.style.display = "block";
+  const cityField = document.getElementById("city");
+  cityField.style.outline = "2px solid red";
+  errors.push("City is invalid");
+} else {
+  const cityError = document.getElementById("city-error")
+  cityError.style.display = "none";
+  const cityField = document.getElementById("city")
+  cityField.style.outline = "";
+}
+
+// Add regular expression check for postcode  
+var postcodeRegex = /^\d{5}$/;
+  if (!postcodeRegex.test(postcode)) {
+    const postcodeError = document.getElementById("postcode-error");
+    postcodeError.style.display = "block";
+    const postcodeField = document.getElementById("postcode");
+    postcodeField.style.outline = "2px solid red";
+    errors.push("Postcode is invalid");
+  } else {
+    const postcodeError = document.getElementById("postcode-error")
+    postcodeError.style.display = "none";
+    const postcodeField = document.getElementById("postcode")
+    postcodeField.style.outline = "";
+}
+
+if (errors.length > 0) {
+  // Display all the errors and highlight the respective fields
+  const errorDiv = document.getElementById("errors");
+  errorDiv.innerHTML = "";
+  errors.forEach(function(error) {
+    errorDiv.innerHTML += "<p>" + error + "</p>";
+  });
+  return false;
+}
+
+// If no errors, submit the form
+return true;  
+
+var output = `{
   "anonymousId": "507f191e810c19729de860ea",
   "channel": "browser",
   "context": {
@@ -111,20 +166,25 @@
     <div class="sample-form">
     <label for="name">Name:</label>
     <input type="text" id="name" value="Dolly Parton">
+    <span class="error-message" id="name-error">Please enter your name.</span>
     <label for="email">Email:</label>
     <input type="text" id="email" value="dollyparton@fake-email.com">
+    <span class="error-message" id="email-error">Please enter a valid email address.</span>
     <label for="plan">Plan:</label>
     <input type="text" id="plan" value="Premium">
     <label for="logins">Logins:</label>
     <input type="text" id="logins" value="2">
+    <span class="error-message" id="logins-error">Please enter only numbers in the 'Logins' field.</span>
     <label for="street">Street:</label>
     <input type="text" id="street" value="P.O. Box 150307">
     <label for="city">City:</label>
     <input type="text" id="city" value="Nashville">
+    <span class="error-message" id="city-error">Please enter a valid city name in the 'City' field.</span>
     <label for="state">State:</label>
     <input type="text" id="state" value="TN">
     <label for="postcode">Zip Code:</label>
     <input type="text" id="postcode" value="37215">
+    <span class="error-message" id="postcode-error">Please enter a valid five-digit zip code.</span>
     <label for="country">Country:</label>
     <input type="text" id="country" value="USA">
     <input type="submit" class="button button-hollow" id="submit" onclick="showMessage(); showOutput()" value="See a sample identify call">
