@@ -109,6 +109,14 @@ In this scenario, we do not support the transformation of product_id.
 
 After selecting a property/trait, select JSON Path or Simple String to change the property/trait. Simple string will change the name in-line, while JSON path allows you to move the property/trait in or out of an object.
 
+> info ""
+> When you see properties that have the escape character `\` in them - this escape character `\` is added to differentiate between a property name that has a . in it, and a nested field, like so:
+
+```
+> ingredients.salad → "ingredients": { "salad": "yum" }
+> ingredents\.salad → "ingredients.salad": "yum"
+```
+
 ### Step 3: Name the transformation and enable it
 
 Enter a descriptive name to act as a label for the transformation. This label helps you organize your Transformations, and Segment recommends that you make this descriptive and focused on the problem you're solving. For example `Fix misnamed order_completed event for ecommerce spec` is much better than `Map order_completed`.
