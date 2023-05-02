@@ -44,7 +44,7 @@ To download a Tracking Plan:
 2. On the row of the Tracking Plan you want to download, open the contextual menu(...), and select **Download Tracking Plan**.
 3. A toast pops up on the top of the page, with the message _"Your file is processing. When your file is ready it will be available to download from the Download History page."_
 4. Open the Download History page by clicking the link in the toast or clicking the **Download History** tab in the top navigation bar.
-5. Once the file status column indicates that the download was successful, click the link in the [File Name](#File-Name) column to download your CSV to your computer. If the file status column shows the download has failed, return to the Tracking Plan Overview page or the Tracking Plan page and try the download again.<br/> The Tracking Plan CSV name has the following format:<br/>`workspaceSlug-trackingPlanName--yyyy-mm-dd--hh-mm-utc`
+5. Once the file status column indicates that the download was successful, click the link in the File column to download your CSV to your computer. If the file status column shows the download has failed, return to the Tracking Plan Overview page or the Tracking Plan page and try the download again.<br/> The Tracking Plan CSV name has the following format:<br/>`workspaceSlug-trackingPlanName--yyyy-mm-dd--hh-mm-utc`
 
 ### Tracking Plan Columns
 The Tracking Plan editor is organized as a spreadsheet to help you  add new events and properties, and edit the relevant fields for each. Like a spreadsheet, you can navigate across cells in a single event with your arrow keys and press enter to edit a cell.
