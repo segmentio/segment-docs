@@ -47,11 +47,8 @@ Yes. Please refer to the [Java Compatibility](https://github.com/segmentio/analy
 
 ## My app crashes with NoClassDefFoundError Failed resolution of: Ljava/time/Instant
 
-If you're on a version prior to `1.10.4`, the SDK internally uses a number of Java 8 language APIs through desugaring (see [Java 8+ API](https://developer.android.com/studio/write/java8-support#library-desugaring) desugaring support). Please make sure your project:
+If you're on a version prior to `1.10.4`, the SDK internally uses a number of Java 8 language APIs through desugaring (see [Java 8+ API](https://developer.android.com/studio/write/java8-support#library-desugaring) desugaring support). Please make sure your project either uses Android Gradle plugin 4.0.0 or higher, has a minimum API level of 26, or is upgraded to the latest SDK.
 
-- either uses Android Gradle plugin 4.0.0 or higher
-- or requires a minimum API level of 26.
-- or upgrade to the latest SDK.
 
 ## My deeplinks are not tracked?
 
