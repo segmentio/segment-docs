@@ -45,3 +45,7 @@ To track more than the page field, pass those fields in as additional properties
 Analytics.js ships with a function called analytics.ready() which lets you make calls to the native integrations that Segment loads for you before they actually initialize. For instance, this is where you could choose to load a live chat widget only for users that you haven't yet identified with a userId.
 
 Since the code in the head of your website is executed only on initial page load or a refresh, you can still make calls to those native tools, but they won't run on each emulated page view.
+
+## How can I track UTMs on a single-page application?
+
+Segment automatically captures UTMs that you pass in URLs. You can also [manually pass UTMs](/docs/connections/sources/catalog/libraries/website/javascript/#default-page-properties) into the context campaign fields.
