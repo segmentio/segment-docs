@@ -3,8 +3,8 @@ title: Inkit Destination
 rewrite: true
 id: 5f0746ced1c79b49ddee49fd
 ---
-[Inkit](https://inkit.com) and Segment empower organizations to securely generate and distribute documents - both digitally as well as via direct mail. 
-For example, automatically create and send electronic documents like invoices, reports, notices, and more via a magic link or e-delivery. Or generate and send documents for e-signature, storage, postcards, letters, and more, all powered by the Inkit integration for Segment.
+[Inkit](https://inkit.com){:target="_blank"} empowers organizations to securely generate and distribute documents - both digitally as well as through direct mail. 
+For example, automatically create and send electronic documents like invoices, reports, notices, and more using a magic link or e-delivery. Or generate and send documents for e-signature, storage, postcards, letters, and more, all powered by the Inkit integration for Segment.
 
 > note ""
 > Inkit maintains this destination. For any issues with the destination, [email the Inkit support team](mailto:support@inkit.com).
@@ -19,8 +19,8 @@ Add the destination:
 
 Get the Inkit API Key:
 
-1. [Sign up](https://app.inkit.com/auth-init) and create an Inkit account.
-2. Follow the instructions in the documentation to [create an API key](https://docs.inkit.com/docs/add-an-api-key-to-your-account).
+1. [Sign up](https://app.inkit.com/auth-init){:target="_blank"} and create an Inkit account.
+2. Follow [the instructions to create an API key](https://docs.inkit.com/docs/add-an-api-key-to-your-account){:target="_blank"}.
 3.	Enter the “API Key” in the “Inkit” destination settings in Segment.
 
 
@@ -34,7 +34,7 @@ To use a Template ID:
 6.	Paste the id into the “template_id” field when setting up the Destination in Segment.
 
 
-For more information, see Inkit [documentation](https://docs.inkit.com/docs/welcome-to-inkit).
+For more information, see the Inkit [documentation](https://docs.inkit.com/docs/welcome-to-inkit){:target="_blank"}.
 
 ## Expected Data
 
