@@ -46,6 +46,6 @@ Analytics.js ships with a function called analytics.ready() which lets you make 
 
 Since the code in the head of your website is executed only on initial page load or a refresh, you can still make calls to those native tools, but they won't run on each emulated page view.
 
-## How to track UTMs on a Single Page Application?
+## How can I track UTMs on a single-page application?
 
-UTMs should be passed either in the URL and Segment will capture it automatically, or you [can manually pass it into](https://segment.com/docs/connections/sources/catalog/libraries/website/javascript/#default-page-properties) the context campaign fields.
+Segment automatically captures UTMs that you pass in URLs. You can also [manually pass UTMs](/docs/connections/sources/catalog/libraries/website/javascript/#default-page-properties) into the context campaign fields.
