@@ -4,7 +4,7 @@ sourceTitle: 'Xamarin'
 sourceCategory: 'Mobile'
 id: wcssVcPJrc
 ---
-Our [Xamarin](http://xamarin.com/) Portable Class Library ([PCL](http://developer.xamarin.com/guides/cross-platform/application_fundamentals/pcl/)) is the best way to integrate analytics into your Xamarin application. It lets you record analytics data from your C#, F#, and .NET code, and supports `PCL Profile 4.0 - Profile136`, which targets the following platforms:
+Segment's [Xamarin](http://xamarin.com/) Portable Class Library ([PCL](http://developer.xamarin.com/guides/cross-platform/application_fundamentals/pcl/)) is the best way to integrate analytics into your Xamarin application. It lets you record analytics data from your C#, F#, and .NET code, and supports `PCL Profile 4.0 - Profile136`, which targets the following platforms:
 
 - .NET Framework 4 or later
 - Windows Phone 8 or later
@@ -17,7 +17,10 @@ Our [Xamarin](http://xamarin.com/) Portable Class Library ([PCL](http://develope
 
 The library issues requests that hit our servers, and then we route your data to any analytics service you enable on our destinations page. This library is open-source, so you can [check it out on GitHub](https://github.com/segmentio/Analytics.Xamarin).
 
-**Note:** Since Xamarin requires our library to be portable to different builds, we can only enable server-side destinations, as opposed to bundling select native SDKs like we do for iOS and Android. Look for the "Server" icon when selecting destinations. For tools for which we offer both bundled and server-side destinations, like Mixpanel, Amplitude, and Google Analytics, our Xamarin library will only be able to use their server-side functionality.
+**Note:** Since Xamarin requires Segment's library to be portable to different builds, Segment can only enable server-side destinations, as opposed to bundling select native SDKs like we do for iOS and Android. Look for the "Server" icon when selecting destinations. For tools for which we offer both bundled and server-side destinations, like Mixpanel, Amplitude, and Google Analytics, Segment's Xamarin library will only be able to use their server-side functionality.
+
+> info "Analytics-CSharp (C#)"
+> With Analytics-CSharp, you can add Segment analytics to your C# based app which includes Xamarin. The [Analytics-CSharp library](/docs/connections/sources/catalog/libraries/server/csharp/) is currently in beta and is governed by Segment’s [First Access and Beta terms](https://www.twilio.com/legal/tos){:target="_blank"}. If you'd like to migrate to use Analytics-CSharp, see the [Analytics-CSharp migration guide](/docs/connections/sources/catalog/libraries/server/csharp/migration-guide/). 
 
 ## Getting Started
 
