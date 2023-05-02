@@ -114,7 +114,7 @@ After selecting a property/trait, select JSON Path or Simple String to change th
 
 ```
 > ingredients.salad → "ingredients": { "salad": "yum" }
-> ingredents\.salad → "ingredients.salad": "yum"
+> ingredients\.salad → "ingredients.salad": "yum"
 ```
 
 ### Step 3: Name the transformation and enable it
