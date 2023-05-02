@@ -49,4 +49,4 @@ To move a source between workspaces, navigate to the source's **Settings** tab, 
 > Segment recommends that you disconnect Tracking Plans from Sources before you initiate a workspace transfer. Once the transfer is complete, add and reconnect your Tracking Plans in the new workspace.
 
 > warning "Sources can't be transferred to EU workspaces"
-> Though transferring sources to the EU workspace is not blocked in the UI, the transfer will not work as expected. This feature is currently unsupported for cross region migration. We recommend re-creating the source from scratch in the new workspace.  
+> Though transferring sources to the EU workspace is not blocked in the UI, the transfer will not work as expected. This feature is currently unsupported for cross region migration. Segment recommends re-creating the source from scratch in the new workspace..  
