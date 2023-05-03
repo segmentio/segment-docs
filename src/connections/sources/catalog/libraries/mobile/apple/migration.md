@@ -162,7 +162,7 @@ If you don't need to transform all of your Segment calls, and only want to trans
 {% codeexampletab Swift%}
 
 ```swift
-     // define middleware we'll use for amplitude
+     // define middleware we'll use for Amplitude
 
        let customizeAmplitudeTrackCalls = BlockMiddleware { (context, next) in
         if context.eventType == .track {
