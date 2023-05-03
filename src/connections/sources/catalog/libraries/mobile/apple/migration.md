@@ -41,9 +41,11 @@ If you're using a different mobile library such as Analytics-iOS, follow these s
 ```
 {% endcodeexampletab %}
 {% codeexampletab Objective-C %}
+
 ```objc
-    SEGConfiguration *config = [[SEGConfiguration alloc] initWithWriteKey:@"<writekey>"];
+    SEGConfiguration *config = [[SEGConfiguration alloc] initWithWriteKey:@"<WRITE KEY>"];
     config.trackApplicationLifecycleEvents = YES;
+    config.flushAt = 1;
     
     _analytics = [[SEGAnalytics alloc] initWithConfiguration: config];
 ```
@@ -59,6 +61,8 @@ Middlewares are a powerful mechanism that can augment events collected by the An
 **Before example**
 <br>
 
+{% codeexample %}
+{% codeexampletab Swift%}
 ```swift
     let customizeAllTrackCalls = BlockMiddleware { (context, next) in
         if context.eventType == .track {
@@ -83,10 +87,34 @@ Middlewares are a powerful mechanism that can augment events collected by the An
 
     analytics.sourceMiddleware = [customizeAllTrackCalls]
 ```
+{% endcodeexampletab %}
+{% codeexampletab Objective-C %}
+```objc
+    SEGBlockMiddleware *customizeAllTrackCalls = [[SEGBlockMiddleware alloc] initWithBlock:^(SEGContext * _Nonnull context, SEGMiddlewareNext  _Nonnull next) {
+        if ([context.payload isKindOfClass:[SEGTrackPayload class]]) {
+            SEGTrackPayload *track = (SEGTrackPayload *)context.payload;
+            next([context modify:^(id<SEGMutableContext> _Nonnull ctx) {
+                NSString *newEvent = [NSString stringWithFormat:@"[New] %@", track.event];
+                NSMutableDictionary *newProps = (track.properties != nil) ? [track.properties mutableCopy] : [@{} mutableCopy];
+                newProps[@"customAttribute"] = @"Hello";
+                ctx.payload = [[SEGTrackPayload alloc] initWithEvent:newEvent
+                                                      properties:newProps
+                                                        context:track.context
+                                                    integrations:track.integrations];
+        }]);
+    } else {
+        next(context);
+    }
+}];
+```
+{% endcodeexampletab %}
+{% endcodeexample %}
 
 **After example**
 <br>
 
+{% codeexample %}
+{% codeexampletab Swift%}
 ```swift
     class customizeAllTrackCalls: EventPlugin {
         let type: PluginType = .enrichment
@@ -102,11 +130,36 @@ Middlewares are a powerful mechanism that can augment events collected by the An
 
     analytics.add(plugin: customizeAllTrackCalls())
 ```
+{% endcodeexampletab %}
+{% codeexampletab Objective-C %}
+```objc
+    SEGBlockMiddleware *customizeAllTrackCalls = [[SEGBlockMiddleware alloc] initWithBlock:^(SEGContext * _Nonnull context, SEGMiddlewareNext  _Nonnull next) {
+        if ([context.payload isKindOfClass:[SEGTrackPayload class]]) {
+            SEGTrackPayload *track = (SEGTrackPayload *)context.payload;
+            next([context modify:^(id<SEGMutableContext> _Nonnull ctx) {
+                NSString *newEvent = [NSString stringWithFormat:@"[New] %@", track.event];
+                NSMutableDictionary *newProps = (track.properties != nil) ? [track.properties mutableCopy] : [@{} mutableCopy];
+                newProps[@"customAttribute"] = @"Hello";
+                ctx.payload = [[SEGTrackPayload alloc] initWithEvent:newEvent
+                                                      properties:newProps
+                                                        context:track.context
+                                                    integrations:track.integrations];
+        }]);
+    } else {
+        next(context);
+    }
+}];
+```
+{% endcodeexampletab %}
+{% endcodeexample %}
+
 ### Destination middleware
 If you don't need to transform all of your Segment calls, and only want to transform the calls going to specific, device-mode destinations, use Destination plugins.
 
 **Before example**
 <br>
+{% codeexample %}
+{% codeexampletab Swift%}
 
 ```swift
      // define middleware we'll use for amplitude
@@ -138,10 +191,40 @@ If you don't need to transform all of your Segment calls, and only want to trans
     config.use(amplitude)
     config.destinationMiddleware = [DestinationMiddleware(key: amplitude.key(), middleware:[customizeAmplitudeTrackCalls])]
 ```
+{% endcodeexampletab %}
+{% codeexampletab Objective-C %}
+```objc
+    // define middleware we'll use for amplitude
+    SEGBlockMiddleware *customizeAmplitudeTrackCalls = [[SEGBlockMiddleware alloc] initWithBlock:^(SEGContext * _Nonnull context, SEGMiddlewareNext  _Nonnull next) {
+        if ([context.payload isKindOfClass:[SEGTrackPayload class]]) {
+            SEGTrackPayload *track = (SEGTrackPayload *)context.payload;
+            next([context modify:^(id<SEGMutableContext> _Nonnull ctx) {
+                NSString *newEvent = [NSString stringWithFormat:@"[Amplitude] %@", track.event];
+                NSMutableDictionary *newProps = (track.properties != nil) ? [track.properties mutableCopy] : [@{} mutableCopy];
+                newProps[@"customAttribute"] = @"Hello";
+                ctx.payload = [[SEGTrackPayload alloc] initWithEvent:newEvent
+                                                      properties:newProps
+                                                         context:track.context
+                                                    integrations:track.integrations];
+            }]);
+        } else {
+            next(context);
+        }
+    }];
+...
+    // configure destination middleware for amplitude
+    id<SEGIntegrationFactory> amplitude = [SEGAmplitudeIntegrationFactory instance];
+    [config use:amplitude];
+    config.destinationMiddleware = [SEGDestinationMiddleware alloc] initWithKey:amplitude.key middleware:@[customizeAmplitudeTrackCalls]];  
+```
+{% endcodeexampletab %}
+{% endcodeexample %}
 
 
 **After example**
 <br>
+{% codeexample %}
+{% codeexampletab Swift%}
 
 ```swift
     class customizeAllTrackCalls: EventPlugin {
@@ -168,6 +251,35 @@ If you don't need to transform all of your Segment calls, and only want to trans
 
     analytics.add(plugin: amplitudeDestination)
 ```
+{% endcodeexampletab %}
+{% codeexampletab Objective-C %}
+```objc
+    // define middleware we'll use for amplitude
+    SEGBlockMiddleware *customizeAmplitudeTrackCalls = [[SEGBlockMiddleware alloc] initWithBlock:^(SEGContext * _Nonnull context, SEGMiddlewareNext  _Nonnull next) {
+        if ([context.payload isKindOfClass:[SEGTrackPayload class]]) {
+            SEGTrackPayload *track = (SEGTrackPayload *)context.payload;
+            next([context modify:^(id<SEGMutableContext> _Nonnull ctx) {
+                NSString *newEvent = [NSString stringWithFormat:@"[Amplitude] %@", track.event];
+                NSMutableDictionary *newProps = (track.properties != nil) ? [track.properties mutableCopy] : [@{} mutableCopy];
+                newProps[@"customAttribute"] = @"Hello";
+                ctx.payload = [[SEGTrackPayload alloc] initWithEvent:newEvent
+                                                      properties:newProps
+                                                         context:track.context
+                                                    integrations:track.integrations];
+            }]);
+        } else {
+            next(context);
+        }
+    }];
+...
+    // configure destination middleware for amplitude
+    id<SEGIntegrationFactory> amplitude = [SEGAmplitudeIntegrationFactory instance];
+    [config use:amplitude];
+    config.destinationMiddleware = [SEGDestinationMiddleware alloc] initWithKey:amplitude.key middleware:@[customizeAmplitudeTrackCalls]];  
+```
+{% endcodeexampletab %}
+{% endcodeexample %}
+
 
 ### Update your config options 
 
@@ -207,35 +319,67 @@ Segment previously used Factories to initialize destinations. With Analytics Swi
 
 **Before example**
 <br> 
+{% codeexample %}
+{% codeexampletab Swift%}
 
 ```swift
     analyticsConfig.use(FooIntegrationFactory.instance()
     let analytics = Analytics.setup(with: analyticsConfig)
 ```
+{% endcodeexampletab %}
+{% codeexampletab Objective-C %}
+```objc
+    SEGConfiguration *config = [[SEGConfiguration alloc] initWithWriteKey:@"<WRITE KEY>"];
+   
+    _analytics = [[SEGAnalytics alloc] initWithConfiguration: config];
+```
+{% endcodeexampletab %}
+{% endcodeexample %}
+
 **After example**
 <br> 
+{% codeexample %}
+{% codeexampletab Swift%}
 
 ```swift  
     let destination = /* initialize your desired destination */
     analytics.add(plugin: destination)
 ```
-
+{% endcodeexampletab %}
+{% codeexampletab Objective-C %}
+```objc
+    SEGTestDestination *testDestination = [[SEGTestDestination alloc] init];
+    [self.analytics addPlugin:testDestination];
+```
+{% endcodeexampletab %}
+{% endcodeexample %}
 ## Modify your tracking methods 
 
 ### Identify
 
 **Before example**
 <br> 
+{% codeexample %}
+{% codeexampletab Swift%}
 
-```swift
-    analytics.identify(userId: "a user's id", traits: ["firstName": "John", "lastName": "Doe"])
+```swift  
+    Analytics.shared().identify(nil, traits: ["email": "a user's email address"], options: ["anonymousId" : "test_anonymousId"]);
 ```
+{% endcodeexampletab %}
+{% codeexampletab Objective-C %}
+```objc
+    [[SEGAnalytics sharedAnalytics] identify:@"a user's id"
+                            traits:@{ @"email": @"sloth@segment.com" }];
+```
+{% endcodeexampletab %}
+{% endcodeexample %}
 **After example**
 <br> 
 
-```swift    
-    // The newer APIs promote the use of strongly typed structures to keep codebases legible
+{% codeexample %}
+{% codeexampletab Swift%}
 
+```swift  
     struct UserTraits(
         let firstName: String,
         let lastName: String
@@ -244,48 +388,80 @@ Segment previously used Factories to initialize destinations. With Analytics Swi
 
     analytics.identify("a user's id", UserTraits(firstName = "John", lastName = "Doe"))
 ```
+{% endcodeexampletab %}
+{% codeexampletab Objective-C %}
+
+```objc
+    [self.analytics identify:@"testTraits" traits:@{@"email": @"sloth@segment.com"}];
+```
+{% endcodeexampletab %}
+{% endcodeexample %}
 ### Track
 
 **Before example**
 <br> 
 
-```swift
-      analytics.track("Item Purchased", properties: ["item": "Sword of Heracles", "revenue": 2.95])      
+{% codeexample %}
+{% codeexampletab Swift%}
+
+```swift  
+    Analytics.shared().track("Item Purchased", properties: ["item": "Sword of Heracles", "revenue": 2.95])
 ```
+{% endcodeexampletab %}
+{% codeexampletab Objective-C %}
+```objc
+    [[SEGAnalytics sharedAnalytics] track:@"Item Purchased"
+                        properties:@{ @"item": @"Sword of Heracles", @"revenue": @2.95 }];
+
+```
+{% endcodeexampletab %}
+{% endcodeexample %}
 
 **After example**
 <br> 
-      
-```swift    
 
-    // The newer APIs promote the use of strongly typed structures to keep codebases legible
+{% codeexample %}
+{% codeexampletab Swift%}
 
-    struct ItemPurchasedProperties(
-        let item: String
-        let revenue: Double
-    )
-
-    analytics.track(
-        name: "Item Purchased",
-        properties: ItemPurchasedProperties(
-            item = "Sword of Heracles",
-            price = 2.95
-        )
-    )
+```swift  
+    analytics.track(name: "Item Purchased", properties: TrackProperties(item: "Sword of Heracles"))
 ```
+{% endcodeexampletab %}
+{% codeexampletab Objective-C %}
+```objc
+    [ self.analytics track:@"Item Purchased"
+                        properties:@{ @"item": @"Sword of Hercules" }];
+```
+{% endcodeexampletab %}
+{% endcodeexample %}
 ### Group
 
 **Before example**
 <br> 
 
-```swift
-    analytics.identify(userId: "a user's id", traits: ["firstName": "John", "lastName": "Doe"])
+{% codeexample %}
+{% codeexampletab Swift%}
+
+```swift  
+    Analytics.shared().group("group123", traits: ["name": "Initech", "description": "Accounting Software"])
 ```
+{% endcodeexampletab %}
+{% codeexampletab Objective-C %}
+```objc
+    [[SEGAnalytics sharedAnalytics] group:@"group123"
+                                traits:@{ @"name": @"Initech", @"description": @"Accounting Software" }];
+
+```
+{% endcodeexampletab %}
+{% endcodeexample %}
 
 **After example**
 <br> 
 
-```swift    
+{% codeexample %}
+{% codeexampletab Swift%}
+
+```swift  
     // The newer APIs promote the use of strongly typed structures to keep codebases legible
 
     struct GroupTraits(
@@ -295,42 +471,83 @@ Segment previously used Factories to initialize destinations. With Analytics Swi
         
     analytics.group(groupId: "group123", traits: GroupTraits(name = "Initech", description = "Accounting Software"))
 ```
-
+{% endcodeexampletab %}
+{% codeexampletab Objective-C %}
+```objc
+     [self.analytics group:@"testTraits" properties:@{@"groupId": @"myTestGroupId"}];
+```
+{% endcodeexampletab %}
+{% endcodeexample %}
 ### Screen 
 
 **Before example**
 <br> 
 
-```swift
-    analytics.screen("Photo Feed", properties: ["Feed Type": "private"])
+{% codeexample %}
+{% codeexampletab Swift%}
+
+```swift  
+    Analytics.shared().screen("Photo Feed", properties: ["Feed Type": "private"])
 ```
+{% endcodeexampletab %}
+{% codeexampletab Objective-C %}
+```objc
+[[SEGAnalytics sharedAnalytics] screen:@"Photo Feed"
+                            properties:@{ @"Feed Type": @"private" }];
+```
+{% endcodeexampletab %}
+{% endcodeexample %}
 
 **After example**
 <br> 
 
-```swift    
-    // The newer APIs promote the use of strongly typed structures to keep codebases legible
+{% codeexample %}
+{% codeexampletab Swift%}
 
-
-    struct FeedScreenProperties(
-        let feedType: Int
-    )
-
-    analytics.screen(title: "Photo Feed", properties: FeedScreenProperties(feedType = "private"))
+```swift  
+    analytics.screen(title: "SomeScreen")
 ```
-
+{% endcodeexampletab %}
+{% codeexampletab Objective-C %}
+```objc
+    [self.analytics screen:@"SomeScreen"
+                        properties:@{ @"Feed Type": @"private" }];
+```
+{% endcodeexampletab %}
+{% endcodeexample %}
 ### Alias
 
 **Before example**
 <br> 
+{% codeexample %}
+{% codeexampletab Swift%}
 
-```swift
-    analytics.alias("new id");
+```swift  
+    Analytics.shared().group("group123", traits: ["name": "Initech", "description": "Accounting Software"])
 ```
+{% endcodeexampletab %}
+{% codeexampletab Objective-C %}
+```objc
+    [[SEGAnalytics sharedAnalytics] group:@"group123"
+                        traits:@{ @"name": @"Initech", @"description": @"Accounting Software" }];
+
+```
+{% endcodeexampletab %}
+{% endcodeexample %}
 
 **After example**
 <br> 
 
-```swift    
-    analytics.alias(newId: "new id")
+{% codeexample %}
+{% codeexampletab Swift%}
+
+```swift  
+    analytics.alias(newId: "user-123")
 ```
+{% endcodeexampletab %}
+{% codeexampletab Objective-C %}
+```objc
+    [self.analytics alias:@"some new id"];
+```
+{% endcodeexampletab %}
+{% endcodeexample %}
