@@ -31,7 +31,17 @@ Navattic generates its own ID for each visitor to your product demo. This ID wil
 
 The table below lists possible events that Navattic sends to Segment. With the exception of IDENTIFY_USER, all events are sent to the [Tracks table in Segment](https://segment.com/docs/connections/storage/warehouses/schema/#tracks-table). Additionally, every Navattic includes the `userId` and `anonymousId` (which are the same), which are Navattic-generated for each user.
 
-<table>
+Event Name | Description | 
+------------ | ------------|
+IDENTIFY_USER | A visitor submitted an email, usually through a form fill. This sends to the [Identifies table](/docs/connections/storage/warehouses/schema/#identifies-table) in Segment
+VIEW_STEP | A visitor viewed a step in the demo.
+START_FLOW | A visitor started a flow.
+COMPLETE_FLOW | A visitor has completed a flow.
+NAVIGATE | A visitor clicked on a link from within the demo.
+OPEN_CHECKLIST | A visitor expanded a checklist.
+CLOSE_CHECKLIST | A visitor collapsed a checklist.
+COMPLETE_TASK | A visitor completed a checklist task.
+CONVERTED | A visitor viewed a step tagged *Mark as converted*.
   <tr>
    <td>Event Name</td>
    <td>Description</td>
