@@ -10,7 +10,8 @@ This source is maintained by Navattic. For any issues with the source, [contact 
 ## Getting Started
 
 
-1. From your workspace's [Sources catalog page](https://app.segment.com/goto-my-workspace/sources/catalog) click **Add Source**.
+To get started with the Navattic source:
+1. Navigate to **Connections > Sources** and click **Add Source** in the Segment App. 
 2. Search for "Navattic" in the Sources Catalog, select Navattic, and click **Add Source**.
 3. On the next screen, give the Source a nickname configure any other settings.
 
