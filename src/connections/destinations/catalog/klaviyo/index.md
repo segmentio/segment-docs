@@ -142,7 +142,7 @@ analytics.track({
 
 When you call `track` on `analytics.js`, Segment calls Klaviyo's `track` with the same parameters.
 
-If you include `properties.revenue` in Track event, Segment maps it to Klaviyo's event `$value`.
+If you include `properties.revenue` in a track event, Segment maps it to Klaviyo's `$value` event.
 
 > info ""
 > When you're tracking client-side, some Klaviyo events require you send an Identify call  before a Track call. 
