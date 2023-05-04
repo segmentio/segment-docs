@@ -9,7 +9,6 @@ This source is maintained by Navattic. For any issues with the source, [contact 
 
 ## Getting Started
 
-> (delete after reading) Include clear, succinct steps including hyperlinks to where customers can locate the place in your app to enter their Segment writekey.
 
 1. From your workspace's [Sources catalog page](https://app.segment.com/goto-my-workspace/sources/catalog) click **Add Source**.
 2. Search for "Navattic" in the Sources Catalog, select Navattic, and click **Add Source**.
