@@ -15,7 +15,7 @@ To get started with the Navattic source:
 2. Search for *Navattic* in the Sources Catalog, and select the Navattic tile, and click **Add Source**.
 3. Give the Source a nickname configure any other settings.
 
-   - The nickname is used as a label in the Segment app, and Segment creates a related schema name in your warehouse. The nickname can be anything, but we recommend using something that reflects the source itself and distinguishes amongst your environments (eg. SourceName_Prod, SourceName_Staging, SourceName_Dev).
+   - The nickname is used as a label in the Segment app, and Segment creates a related schema name in your warehouse. The nickname can be anything, but Segment recommends using something that reflects the source itself and distinguishes amongst your environments (for example: SourceName_Prod, SourceName_Staging, SourceName_Dev).
 
 4. Click **Add Source** to save your settings.
 5. Copy the Write key from the Segment UI and log in to your Navattic account - navigate to Integrations > Segment and paste the key. Hit "Save" to connect.
