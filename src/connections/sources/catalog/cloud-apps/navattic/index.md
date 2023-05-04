@@ -61,6 +61,6 @@ url | If the event is NAVIGATE, then this property contains the URL of the link 
 
 Now that your Source is set up, you can connect it with Destinations.
 
-Log into your downstream tools and check to see that your events appear as expected, and that they contain all of the properties you expect. If your events and properties don’t appear, check the [Event Delivery](https://segment.com/docs/connections/event-delivery/) tool, and refer to the Destination docs for each tool for troubleshooting.
+Log in to your downstream tools and check to see that your events appear as expected, and that they contain all of the properties you expect. If your events and properties don’t appear, check the [Event Delivery](/docs/connections/event-delivery/) tool, and refer to the Destination docs for each tool for troubleshooting.
 
 If there are any issues with how the events are arriving to Segment, [contact the Navattic support team](mailto:team@navattic.com).
