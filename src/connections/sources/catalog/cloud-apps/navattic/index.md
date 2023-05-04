@@ -47,7 +47,15 @@ CONVERTED | A visitor viewed a step tagged *Mark as converted*.
 
 The table below list the properties included in the events listed above.
 
-<table>
+Property Name | Description
+--------------- | ------------
+project | An object containing the demo's (project's) ID and name.
+checklist | An object containing the checklist's ID and name. Populated only if the demo contains a checklist.
+flow | An object containing the current flow's ID and name.
+step | An object containing the current flow step's ID, name, and index (`step.indx`)
+session_id | A string that uniquely identifies this visitor's current session.
+url | If the event is NAVIGATE, then this property contains the URL of the link that the visitor clicked on. Otherwise, it is empty.
+
   <tr>
    <td>Property Name</td>
    <td>Description</td>
