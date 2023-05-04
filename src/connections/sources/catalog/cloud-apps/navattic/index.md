@@ -23,7 +23,7 @@ To get started with the Navattic source:
 
 ## Stream
 
-Navattic uses our stream Source component to send Segment event data. It uses a server-side `track`, and `identify` methods to send data to Segment. These events are then available in any destination that accepts server-side events, and available in a schema in your data warehouse, so you can query using SQL.
+Navattic uses the stream Source component to send Segment event data. It uses server-side `track`, and `identify` methods to send data to Segment. These events are then available in any destination that accepts server-side events, and is available in a schema in your data warehouse, so you can query using SQL.
 
 Navattic generates its own ID for each visitor to your product demo. This ID will be passed as both the `userId` and `anonymousId` when pushing Navattic events to Segment.
 
