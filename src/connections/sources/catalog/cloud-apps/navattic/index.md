@@ -42,47 +42,6 @@ OPEN_CHECKLIST | A visitor expanded a checklist.
 CLOSE_CHECKLIST | A visitor collapsed a checklist.
 COMPLETE_TASK | A visitor completed a checklist task.
 CONVERTED | A visitor viewed a step tagged *Mark as converted*.
-  <tr>
-   <td>Event Name</td>
-   <td>Description</td>
-  </tr>
-  <tr>
-   <td>IDENTIFY_USER</td>
-   <td>A visitor submitted an email, usually through a form fill. This sends to the <a href="https://segment.com/docs/connections/storage/warehouses/schema/#identifies-table">Identifies table in Segment</a>.</td>
-  </tr>
-  <tr>
-   <td>VIEW_STEP</td>
-   <td>A visitor viewed a step in the demo</td>
-  </tr>
-  <tr>
-   <td>START_FLOW</td>
-   <td>A visitor started a flow</td>
-  </tr>
-  <tr>
-   <td>COMPLETE_FLOW</td>
-   <td>A visitor has completed a flow</td>
-  </tr>
-  <tr>
-   <td>NAVIGATE</td>
-   <td>A visitor clicked on a link from within the demo</td>
-  </tr>
-  <tr>
-   <td>OPEN_CHECKLIST</td>
-   <td>A visitor expanded a checklist</td>
-  </tr>
-  <tr>
-   <td>CLOSE_CHECKLIST</td>
-   <td>A visitor collapsed a checklist</td>
-  </tr>
-  <tr>
-   <td>COMPLETE_TASK</td>
-   <td>A visitor completed a checklist task</td>
-  </tr>
-  <tr>
-    <td>CONVERTED</td>
-    <td>A visitor viewed a step tagged "Mark as converted"</td>
-  </tr>
-</table>
 
 ## Event Properties
 
