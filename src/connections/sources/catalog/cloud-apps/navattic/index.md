@@ -56,35 +56,6 @@ step | An object containing the current flow step's ID, name, and index (`step.i
 session_id | A string that uniquely identifies this visitor's current session.
 url | If the event is NAVIGATE, then this property contains the URL of the link that the visitor clicked on. Otherwise, it is empty.
 
-  <tr>
-   <td>Property Name</td>
-   <td>Description</td>
-  </tr>
-  <tr>
-   <td>project</td>
-   <td>An object containing the demo's (project's) ID and name.</td>
-  </tr>
-  <tr>
-   <td>checklist</td>
-   <td>An object containing the checklist's ID and name. Populated only if the demo contains a checklist</td>
-  </tr>
-  <tr>
-   <td>flow</td>
-   <td>An object containing the current flow's ID and name.</td>
-  </tr>
-  <tr>
-   <td>step</td>
-   <td>An object containing the current flow step's ID, name, and index (<code>step.indx</code>)</td>
-  </tr>
-  <tr>
-   <td>session_id</td>
-   <td>A string that uniquely identifies this visitor's current session</td>
-  </tr>
-  <tr>
-   <td>url</td>
-   <td>If the event is NAVIGATE, then this property contains the URL of the link that the visitor clicked on. Otherwise, it is empty.</td>
-  </tr>
-</table>
 
 ## Adding Destinations
 
