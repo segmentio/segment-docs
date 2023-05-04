@@ -3,7 +3,7 @@ title: "Navattic Source"
 hidden: true
 ---
 
-[Navattic](https://navattic.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) is a no-code tool which enables go-to-market teams to build beautiful, interactive demos of their products to excite and engage prospects.
+[Navattic](https://navattic.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners){:target="_blank"} is a no-code tool which enables go-to-market teams to build beautiful, interactive demos of their products to excite and engage prospects.
 
 This source is maintained by Navattic. For any issues with the source, [contact their Support team](mailto:team@navattic.com).
 
