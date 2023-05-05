@@ -11,6 +11,15 @@ To provide consistent performance and reliability at scale, Segment enforces def
 To learn more about custom limits and upgrades, contact your dedicated Customer Success Manager or [friends@segment.com](mailto:friends@segment.com).
 
 
+## Engage Ingestion Limits
+
+Engage silently drops inbound events if:
+- The groupId has more than 500 characters.
+- Events have more than 500 characters.
+- The messageId is longer than 100 characters.
+- The groupId is empty in a group call or context.groupId is empty in a track call.
+
+
 ## Default Limits
 
 | Name                                        | limit                                                       | Details                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
