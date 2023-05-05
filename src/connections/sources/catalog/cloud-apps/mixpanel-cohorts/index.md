@@ -14,7 +14,7 @@ This source is maintained by Mixpanel. For any issues with the source, contact t
 
 1. From your workspace's [Sources catalog page](https://app.segment.com/goto-my-workspace/sources/catalog) click **Add Source**.
 2. Search for **Mixpanel Cohorts** in the Sources Catalog and click **Add Source**.
-3. On the next screen, give the Source a nickname and configure any other settings. 
+3. On the next screen, give the Source a nickname and configure any other settings.
 4. From the new Source's Overview page, copy the Segment WriteKey
 5. To export users from Mixpanel to Segment, in Mixpanel first Connect Your segment workspace in  integrations page add add the copied WriteKey in the **API KEY** field and give the connection a desired name in **CONNECTOR NAME** field. ![Add the connector name](images/connect.png)
 6. Once connected you can go to mixpanel cohorts page and export any cohort to the connection.![Export cohorts](images/export.png)
@@ -36,7 +36,7 @@ The following identify call to Segment when a user enters the cohort:
   "userId": "user@email.com" // mixpanel uses the distinct_id property here
 }
 ```
- 
+
 
 Mixpanel sends the following identify call when a user exits the cohort:
 ```json
@@ -48,3 +48,16 @@ Mixpanel sends the following identify call when a user exits the cohort:
   "userId": "user@email.com" // mixpanel uses the distinct_id property here
 }
 ```
+
+### Sync Mixpanel Cohorts with Engage
+
+If you'd like your Cohorts data to flow to Engage, you'll need to connect Mixpanel Cohorts as a source in the Unify settings.
+
+To connect Mixpanel Cohorts:
+
+1. Navigate to **Unify > Unify settings** and select the **Profile sources** tab.
+2. Click **Connect source** to open the Connect sources window.
+3. Select **Replay data** to replay the last month of data into Engage.
+4. Locate Mixpanel Cohorts and click **Connect source**.
+
+Mixpanel Cohorts data will begin to flow into Engage.
