@@ -78,7 +78,7 @@ Unfortunately, Sources cannot be connected to more than one Tracking Plan. If yo
 
 ## How does Tracking Plans work behind the scenes?
 
-Segment's code has built-in logic that verifies if an event exists in the Tracking Plan and if not, it will follow the configuration the Schema Configuration settings for each source connected to the Tracking Plan.
+Segment's code has built-in logic that verifies if an event exists in the Tracking Plan and if not, it will follow the configuration the [Schema Configuration settings](https://segment.com/docs/protocols/enforce/schema-configuration/) for each source connected to the Tracking Plan.
 
 ## Protocols Validation
 
