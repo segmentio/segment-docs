@@ -71,10 +71,37 @@ Follow these steps to connect your warehouse:
 4. Segment prompts you to enter specific warehouse credentials. Enter them, then select **Test Connection**.
 5. If the connection test succeeds, Segment enables the **Next** button. Select it.
   * If the connection test fails, verify that you’ve correctly entered the warehouse credentials, then try again.
-6. Select **Next** on the **Sync schedule** page. Segment displays the Profiles Sync overview page.
+6. Set up a **Sync Schedule**, and select **Next**.
+7. From the [Set Selective Sync](#using-selective-sync) page, select the tables and columns you'd like to sync and click **Next**. Segment displays the Profiles Sync overview page.
 7. Select **Request sync to be enabled**.
 
 Segment staff then receives and enables live sync for your account.
+
+#### Using Selective Sync
+
+With Selective Sync, you can choose which tables and columns (also known as properties) to sync with Profiles Sync. Syncing fewer tables and properties will lead to faster and more frequent syncs, faster queries, and using less disk space.
+
+You can access Selective Sync in two ways:
+- From the Set Selective Sync page as you connect your warehouse to Profiles Sync.
+- From the Profiles Sync settings (**Profiles Sync** > **Settings** > **Selective sync**).
+
+
+You'll see a list of event type tables, event tables, and properties available to sync. Select the tables and properties that you'd like to sync, and be sure the ones you'd like to prevent from syncing aren't selected.
+
+
+Regardless of schema size, only the first 5,000 collections and 5,000 properties per collection can be managed using your Segment space. To edit Selective Sync settings for any collection which exceeds this limit, [contact Segment support](https://app.segment.com/workspaces?contact=1){:target="blank"}.
+
+> warning ""
+> Note that Profiles Sync will always sync the External ID Mapping and ID Graph Updates tables. These tables can't be removed using Selective Sync.
+
+> info ""
+> You must be a workspace owner to change Selective Sync settings.
+
+#### When to use Selective Sync
+
+By default, Segment syncs all tables and properties to your warehouse. Use Selective Sync when you'd like to prevent specific tables and properties from syncing to your warehouse. Segment stops syncing from disabled tables or properties, but will not delete any historical data from your warehouse.
+
+If you choose to re-enable a table or property to sync again, only new data generated after re-enabling will sync to your warehouse. Segment doesn't backfill data that was omitted with Selective Sync.
 
 #### Using historical backfill
 
