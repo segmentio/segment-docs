@@ -82,6 +82,21 @@ if (!cityRegex.test(city)) {
   cityField.style.outline = "";
 }
 
+// Regular expression check for city name
+var stateRegex = /^[A-Z]{2}$/;
+if (!stateRegex.test(state)) {
+  const stateError = document.getElementById("state-error");
+  stateError.style.display = "block";
+  const stateField = document.getElementById("state");
+  stateField.style.outline = "2px solid red";
+  errors.push("State is invalid");
+} else {
+  const stateError = document.getElementById("state-error")
+  stateError.style.display = "none";
+  const stateField = document.getElementById("state")
+  stateField.style.outline = "";
+}
+
 // Regular expression check for postcode  
 var postcodeRegex = /^\d{5}$/;
   if (!postcodeRegex.test(postcode)) {
@@ -183,6 +198,7 @@ return true;
     <span class="error-message" id="city-error">Please enter a valid city name in the 'City' field.</span>
     <label for="state">State:</label>
     <input type="text" id="state" value="TN">
+    <span class="error-message" id="state-error">Please enter a valid two-letter state code in all caps, like 'CA' for California.</span>
     <label for="postcode">Zip Code:</label>
     <input type="text" id="postcode" value="37215">
     <span class="error-message" id="postcode-error">Please enter a valid five-digit zip code.</span>
