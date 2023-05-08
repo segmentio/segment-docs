@@ -80,7 +80,7 @@ Facebook offers the Facebook Pixel, which allows you to retarget these types of 
 - Authorize Facebook Ads and select a Facebook account ID to sync to.
 
 > info ""
-> The destination needs to be added within the Engage space and not through the connections pipeline to regular sources.
+> Add the destination within the Engage space and not through the connections pipeline to ensure proper configuration.
 
 ### 2. Create an audience in Engage & connect to Facebook
 
