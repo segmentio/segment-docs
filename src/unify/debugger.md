@@ -7,7 +7,7 @@ redirect_from:
 
 The Profile Source Debugger enables you to inspect and monitor events that Segment sends downstream
 
-Because Segment generates a unique Source for every Destination connected to a Space, the Debugger gives you insight into how Segment sends events before they reach their Destination. This automatically generated source cannot be deleted even when the destination is removed, in order for Segment to function as designed. The source will be reused by Segment as needed.
+Because Segment generates a unique Source for every Destination connected to a Space, the Debugger gives you insight into how Segment sends events before they reach their Destination. This automatically generated source cannot be deleted and should not be disabled even when the destination is removed, in order for Segment to function as designed. The source will be reused by Segment as needed.
 
 The Debugger provides you with the payload information you need to troubleshoot potential formatting issues and ensure Segment sends events as your Destinations expect.
 
