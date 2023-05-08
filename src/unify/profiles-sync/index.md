@@ -76,7 +76,7 @@ Follow these steps to connect your warehouse:
 7. Select **Request sync to be enabled**.
 
 Segment staff then receives and enables live sync for your account.
-
+ 
 #### Using Selective Sync
 
 Use Selective Sync to manage the data you send to your warehouses by choosing which tables and columns (also known as properties) to sync. Syncing fewer tables and properties will lead to faster and more frequent syncs, faster queries, and using less disk space.
