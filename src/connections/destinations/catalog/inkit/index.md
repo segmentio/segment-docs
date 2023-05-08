@@ -103,3 +103,6 @@ analytics.identify('userId123', {
 All other fields are then added to the user's profile as custom fields within Inkit's dashboard.
 
 Segment sends Identify calls to Inkit as an `identify` event.
+
+
+SELECT COUNT(*) FROM destination_config WHERE destination_id = '54521fd525e721e32a72ee8f' AND enabled = 1 AND id IN (SELECT config_id FROM destination_config_options_2 WHERE option_name = 'canOmitAppsFlyerId' AND value = 'false')
