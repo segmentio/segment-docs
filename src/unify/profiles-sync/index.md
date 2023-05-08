@@ -90,7 +90,7 @@ You'll see a list of event type tables, event tables, and properties available t
 Regardless of schema size, only the first 5,000 collections and 5,000 properties per collection can be managed using your Segment space. To edit Selective Sync settings for any collection which exceeds this limit, [contact Segment support](https://app.segment.com/workspaces?contact=1){:target="blank"}.
 
 > warning ""
-> Note that Profiles Sync will always sync the External ID Mapping and ID Graph Updates tables. These tables can't be disabled with Selective Sync.
+> Profiles Sync will always sync the External ID Mapping and ID Graph Updates tables. These tables can't be disabled with Selective Sync.
 
 > info ""
 > You must be a workspace owner to change Selective Sync settings.
