@@ -1,5 +1,5 @@
 ---
-title: "Navattic Source"
+title: Navattic Source
 hidden: true
 ---
 
@@ -9,14 +9,11 @@ This source is maintained by Navattic. For any issues with the source, [contact 
 
 ## Getting Started
 
-
 To get started with the Navattic source:
 1. Navigate to **Connections > Sources** and click **Add Source** in the Segment App. 
 2. Search for *Navattic* in the Sources Catalog, and select the Navattic tile, and click **Add Source**.
 3. Give the Source a nickname configure any other settings.
-
    - The nickname is used as a label in the Segment app, and Segment creates a related schema name in your warehouse. The nickname can be anything, but Segment recommends using something that reflects the source itself and distinguishes amongst your environments (for example: SourceName_Prod, SourceName_Staging, SourceName_Dev).
-
 4. Click **Add Source** to save your settings.
 5. Copy the Write key from the Segment UI and log in to your Navattic account. Navigate to **Integrations > Segment** and paste the key. Click **Save** to connect.
 6. Choose which Navattic events to send to Segment, as well as which demos (projects) to activate for this integration.
@@ -33,7 +30,7 @@ The table below lists possible events that Navattic sends to Segment. With the e
 
 Event Name | Description | 
 ------------ | ------------|
-IDENTIFY_USER | A visitor submitted an email, usually through a form fill. This sends to the [Identifies table](/docs/connections/storage/warehouses/schema/#identifies-table) in Segment
+IDENTIFY_USER | A visitor submitted an email, usually through a form fill. This sends to the [Identifies table](/docs/connections/storage/warehouses/schema/#identifies-table) in Segment.
 VIEW_STEP | A visitor viewed a step in the demo.
 START_FLOW | A visitor started a flow.
 COMPLETE_FLOW | A visitor has completed a flow.
@@ -59,7 +56,7 @@ url | If the event is NAVIGATE, then this property contains the URL of the link 
 
 ## Adding Destinations
 
-Now that your Source is set up, you can connect it with Destinations.
+Once your Source is set up, you can connect it with Destinations.
 
 Log in to your downstream tools and check to see that your events appear as expected, and that they contain all of the properties you expect. If your events and properties don’t appear, check the [Event Delivery](/docs/connections/event-delivery/) tool, and refer to the Destination docs for each tool for troubleshooting.
 
