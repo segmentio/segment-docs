@@ -1,6 +1,6 @@
 ---
-title: Analytics Swift Amplitude Plugin
-strat: swift
+title: Analytics React Native Amplitude Plugin
+strat: react-native
 ---
 
 [Amplitude](https://amplitude.com/){:target="_blank"} is an event tracking and segmentation platform for your web and mobile apps. By analyzing the actions your users perform, you can gain a better understanding to drive retention, engagement, and conversion.
@@ -15,48 +15,37 @@ strat: swift
 
 Once you have a mapping, you can follow the steps in the Destinations Actions documentation on [Customizing mappings](/docs/connections/destinations/actions/#customizing-mappings).
 
-The Amplitude Swift plugin doesn't send events to Amplitude from the client side. It instead adds Amplitude session data and then sends it server side from the Amplitude Actions destination.
+The Amplitude React Native plugin doesn't send events to Amplitude from the client side. It instead adds Amplitude session data and then sends it server side from the Amplitude Actions destination.
 
 ## Adding the dependency
 
-### through Xcode
-In the Xcode `File` menu, click `Add Packages`.  You'll see a dialog where you can search for Swift packages.  In the search field, enter the URL to this repository.
-
-https://github.com/segment-integrations/analytics-swift-amplitude{:target="_blank"}
-
-You'll then have the option to pin to a version, or specific branch, as well as which project in your workspace to add it to.  Once you've made your selections, click the `Add Package` button.  
-
-### through Package.swift
-
-Open your Package.swift file and add the following do your the `dependencies` section:
-
-```
-.package(
-            name: "Segment",
-            url: "https://github.com/segment-integrations/analytics-swift-amplitude.git",
-            from: "1.1.3"
-        ),
+Using NPM:
+```bash
+npm install --save @segment/analytics-react-native-plugin-amplitude-session
 ```
 
-## Using the Plugin in your App
-
-Open the file where you setup and configure the Analytics-Swift library.  Add this plugin to the list of imports.
-
-```
-import Segment
-import SegmentAmplitude // <-- Add this line
+Using Yarn:
+```bash
+yarn add @segment/analytics-react-native-plugin-amplitude-session
 ```
 
-Just under your Analytics-Swift library setup, call `analytics.add(plugin: ...)` to add an instance of the plugin to the Analytics timeline.
+## Using the Plugin in your App 
 
-```
-let analytics = Analytics(configuration: Configuration(writeKey: "<YOUR WRITE KEY>")
-                    .flushAt(3)
-                    .trackApplicationLifecycleEvents(true))
-analytics.add(plugin: AmplitudeSession())
-```
+Follow the [instructions for adding plugins](https://github.com/segmentio/analytics-react-native#adding-plugins) on the main Analytics client:
 
-Your events receive session data and start flowing to Amplitude in Cloud Mode.
+In your code where you initialize the analytics client call the `.add(plugin)` method with an `AmplitudeSessionPlugin` instance:
+
+```ts
+import { createClient } from '@segment/analytics-react-native';
+
+import { AmplitudeSessionPlugin } from '@segment/analytics-react-native-plugin-amplitude-session';
+
+const segmentClient = createClient({
+  writeKey: 'SEGMENT_KEY'
+});
+
+segmentClient.add({ plugin: new AmplitudeSessionPlugin() });
+```
 
 ### Log Purchases in existing destination instances
 
@@ -74,28 +63,15 @@ To manually add the Log Purchases Action:
 
 ### Connection Modes for Amplitude (Actions) destination
 
-The Amplitude (actions) destination does not offer a device-mode connection mode. If you're using one of Segment's new libraries ([Analytics.js 2.0](/docs/connections/sources/catalog/libraries/website/javascript/), [Swift](https://github.com/segmentio/analytics-swift) or [Kotlin](https://github.com/segmentio/analytics-kotlin)) with the Actions-framework version of the destination, you do not need the device-mode connection.
+The Amplitude (actions) destination does not offer a device-mode connection mode. With the Actions-framework version of the destination, you do not need the device-mode connection.
 
 Most previous deployments of the Amplitude Segment destination used the device-mode connection to use the `session_id` tracking feature. The new Actions-framework Amplitude destination, includes session ID tracking by default. This means you don't need to bundle any software to run on the user's device, or write any code. It also means that you can use more of the Segment platform features on data going to Amplitude, such as Protocols filtering and transformations, and Profiles Identity Resolution.
 
-Session tracking is available with Segment's new libraries: [Analytics.js 2.0](/docs/connections/sources/catalog/libraries/website/javascript/), [Swift](https://github.com/segmentio/analytics-swift) or [Kotlin](https://github.com/segmentio/analytics-kotlin)
-
-
 ### Device ID Mappings
+
 The Amplitude destination requires that each event include either a Device ID or a User ID. If a User ID isn't present, Amplitude uses the a Device ID, and vice versa, if a Device ID isn't present, Amplitude uses the User ID.
 
 By default, Segment maps the Segment property `context.device.id` to the Amplitude property `Device ID`. If `context.device.id` isn't available, Segment maps the property `anonymousId` to the Amplitude `Device ID`. The Actions interface indicates this with the following contents of the Device ID field: `coalesce(` `context.device.id` `anonymousId` `)`.
-
-### Enable Amplitude session tracking
-
-To enable session tracking in Amplitude when using the [Segment Swift library](https://github.com/segmentio/analytics-swift):
-1. Enable `trackApplicationLifecycleEvents` in your configuration.
-2. Add the [Amplitude Session plugin](https://github.com/segmentio/analytics-swift/blob/main/Examples/destination_plugins/AmplitudeSession.swift
-) to your project.
-3. Initialize the plugin ([example](https://github.com/segmentio/analytics-swift/blob/main/Examples/apps/DestinationsExample/DestinationsExample/AppDelegate.swift))
-   ```swift
-   analytics?.add(plugin: AmplitudeSession(name: "Amplitude"))
-   ```
 
 ## Important differences from the classic Amplitude destination
 
@@ -138,10 +114,8 @@ Property names should be `camelCase` for Android implementations, and `snake_cas
 
 #### Send To Batch Endpoint
 
-
 > info ""
 > This endpoint is available when you send data in Cloud-mode.
-
 
 If `true`, the destination sends events to Amplitude's `batch` endpoint rather than the `httpapi` endpoint. Because Amplitude's `batch` endpoint throttles traffic less restrictively than the Amplitude `httpapi` endpoint, enabling this setting can help to reduce 429 errors (throttling errors) from Amplitude.
 

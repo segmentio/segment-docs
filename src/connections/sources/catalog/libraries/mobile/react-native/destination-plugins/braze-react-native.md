@@ -1,10 +1,11 @@
 ---
-title: Analytics Swift Braze Plugin
+title: Analytics React Native Braze Plugin
+strat: react-native
 ---
 
 [Braze](https://www.braze.com/), formerly Appboy, is an engagement platform that empowers growth by helping marketing teams to build customer loyalty through mobile, omni-channel customer experiences.
 
-Braze’s destination plugin code is open source and available on GitHub. You can view it [here.](https://github.com/braze-inc/analytics-swift-braze). This destination plugin is maintained by Braze. For any issues with the destination plugin code, please reach out to Braze's support.
+Braze’s destination plugin code is open source and available on GitHub. You can view it [here.](https://github.com/segmentio/analytics-react-native/tree/master/packages/plugins/plugin-braze).
 
 ## Getting Started
 
@@ -14,50 +15,51 @@ Braze’s destination plugin code is open source and available on GitHub. You ca
 4. Set up a new App Group REST API Key in the Braze Dashboard in *App Settings > Developer Console > API Settings*. For more information, see [Creating and Managing REST API Keys](https://www.braze.com/docs/api/basics/#creating-and-managing-rest-api-keys) in the Braze documentation. 
   - Select the `users.track` endpoint in the **User Data** section.
 
-## Adding the dependency
+## Installation
 
-### through Xcode
-In the Xcode `File` menu, click `Add Packages`.  You'll see a dialog where you can search for Swift packages.  In the search field, enter the URL to this repository.
+You need to install the `@segment/analytics-react-native-plugin-braze` and the `react-native-appboy-sdk` dependency.
 
-https://github.com/segment-integrations/analytics-swift-braze{:target="_blank"}
-
-You'll then have the option to pin to a version, or specific branch, as well as which project in your workspace to add it to.  Once you've made your selections, click the `Add Package` button.  
-
-### through Package.swift
-
-Open your Package.swift file and add the following do your the `dependencies` section:
-
-```
-.package(
-            name: "Segment",
-            url: "https://github.com/segment-integrations/analytics-swift-braze.git",
-            from: "1.0.0"
-        ),
+Using NPM:
+```bash
+npm install --save @segment/analytics-react-native-plugin-braze react-native-appboy-sdk
 ```
 
+Using Yarn:
+```bash
+yarn add @segment/analytics-react-native-plugin-braze react-native-appboy-sdk
+```
+
+Run `pod install` after the installation to autolink the Braze SDK.
+
+See [Braze React SDK](https://github.com/Appboy/appboy-react-sdk) for more details of this dependency.
 
 ## Using the Plugin in your App
 
-Open the file where you setup and configure the Analytics-Swift library.  Add this plugin to the list of imports.
+Follow the [instructions for adding plugins](https://github.com/segmentio/analytics-react-native#adding-plugins) on the main Analytics client:
 
-```
-import Segment
-import SegmentBraze // <-- Add this line
+In your code where you initialize the analytics client call the `.add(plugin)` method with an `BrazePlugin` instance:
+
+```ts
+import { createClient } from '@segment/analytics-react-native';
+
+import { BrazePlugin } from '@segment/analytics-react-native-plugin-braze';
+
+const segmentClient = createClient({
+  writeKey: 'SEGMENT_KEY'
+});
+
+segmentClient.add({ plugin: new BrazePlugin() });
 ```
 
-Just under your Analytics-Swift library setup, call `analytics.add(plugin: ...)` to add an instance of the plugin to the Analytics timeline.
-
-```
-let analytics = Analytics(configuration: Configuration(writeKey: "<YOUR WRITE KEY>")
-                    .flushAt(3)
-                    .trackApplicationLifecycleEvents(true))
-analytics.add(plugin: BrazeDestination())
-```
 ## Screen
 If you're not familiar with the Segment Specs, take a look to understand what the [Page method](/docs/connections/spec/page/) does. An example call would look like:
 
-```swift
-analytics.screen(title: "SomeScreen")
+```ts
+const { screen } = useAnalytics();
+
+screen('ScreenName', {
+  productSlug: 'example-product-123',
+});
 ```
 
 Segment sends Page calls to Braze as custom events if you have enabled either **Track All Pages** or **Track Only Named Pages** in the Segment Settings. 
@@ -69,12 +71,14 @@ Segment sends Page calls to Braze as custom events if you have enabled either **
 
 If you're not familiar with the Segment Specs, take a look to understand what the [Identify method](/docs/connections/spec/identify/) does. An example call would look like:
 
-```swift
-struct MyTraits: Codable {
-        let favoriteColor: String
-}
+```ts
+const { identify } = useAnalytics();
 
-analytics.identify(userId: "a user's id", MyTraits(favoriteColor: "fuscia"))
+identify('user-123', {
+  username: 'MisterWhiskers',
+  email: 'hello@test.com',
+  plan: 'premium',
+});
 ```
 
 When you Identify a user, Segment passes that user's information to Braze with `userId` as Braze's External User ID.
@@ -112,7 +116,6 @@ The endpoint returns:
 } 
 ```
 
-
 > info "Tip"
 > Braze is complex. If you decide to use the `braze_id`, consider [contacting Segment Success Engineering](https://segment.com/help/contact/) or a Solutions Architect to verify your Braze implementation.
 
@@ -137,13 +140,15 @@ Segment sends all other traits (except Braze's [reserved user profile fields](ht
 
 If you're not familiar with the Segment Specs, take a look to understand what the [Track method](/docs/connections/spec/track/) does. An example call looks like:
 
-```swift
-struct TrackProperties: Codable {
-        let someValue: String
-}
+```ts
+const { track } = useAnalytics();
 
-analytics.track(name: "My Event", properties: TrackProperties(someValue: "Hello"))
+track('View Product', {
+  productId: 123,
+  productName: 'Striped trousers',
+});
 ```
+
 When you `track` an event, Segment sends that event to Braze as a custom event.
 
 > note ""
@@ -166,13 +171,13 @@ When you `track` an event with the name `Order Completed` using the [e-commerce 
 
 When you pass [ecommerce events](/docs/connections/spec/ecommerce/v2/), the name of the event becomes the `productId` in Braze. An example of a purchase event looks like:
 
-```swift
-struct TrackProperties: Codable {
-        let revenue: String
-        let currency: String
-}
+```ts 
+const { track } = useAnalytics();
 
-analytics.track(name: "Purchased Item", properties: TrackProperties(revenue: "2000", currency: "USD"))
+track('Purchased Item', {
+  revenue: 200,
+  currenct: 'USD',
+});
 ```
 
 The example above would have "Purchased Item" as its `productId` and includes two required properties that you must pass in:
@@ -190,26 +195,16 @@ You can add more product details in the form of key-value pairs to the `properti
 - `event_name`
 - `price`
 
-
 ## Group
 
 If you're not familiar with the Segment Specs, take a look to understand what the [Group method](/docs/connections/spec/group/) does. An example call would look like:
 
-```swift
-struct MyTraits: Codable {
-        let username: String
-        let email: String
-        let plan: String
-}
+```js
+const { group } = useAnalytics();
 
-// ...
-
-analytics.group(groupId: "group123", traits: MyTraits(
-        username: "MisterWhiskers",
-        email: "hello@test.com",
-        plan: "premium"))
+group('some-company', {
+  name: 'Segment',
+});
 ```
 
 When you call `group`, Segment sends a custom attribute to Braze with the name `ab_segment_group_<groupId>`, where `<groupId>` is the group's ID in the method's parameters. For example, if the group's ID is `1234`, then the custom attribute name is `ab_segment_group_1234`. The value of the custom attribute is `true`.
-
-
