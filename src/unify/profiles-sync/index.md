@@ -76,7 +76,7 @@ Follow these steps to connect your warehouse:
 7. Select **Request sync to be enabled**.
 
 Segment staff then receives and enables live sync for your account.
- 
+
 #### Using Selective Sync
 
 Use Selective Sync to manage the data you send to your warehouses by choosing which tables and columns (also known as properties) to sync. Syncing fewer tables and properties will lead to faster and more frequent syncs, faster queries, and using less disk space.
@@ -104,6 +104,9 @@ If you choose to re-enable a table or property to sync again, only new data gene
 #### Using historical backfill
 
 Profiles Sync sends profiles to your warehouse on an hourly basis, beginning after you complete setup. You can use backfill, however, to sync historical profiles to your warehouse, as well.
+
+> info ""
+> You can only use historical backfill for tables that you enable with [Selective Sync](#using-selective-sync) during setup. Segment does not backfill tables that you disable with Selective Sync.
 
 When Segment runs historical backfills:
 
