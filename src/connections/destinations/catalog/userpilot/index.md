@@ -3,7 +3,7 @@ rewrite: true
 title: Userpilot Web Plugin
 id: 5ca9d0c1b7119500014381d3
 ---
-[Userpilot](https://userpilot.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners){:target="_blank"} helps product teams increase user adoption by allowing them to trigger highly personalized onboarding experiences across the user journey. The Segment integration will help you install and send data to Userpilot without added development time.
+[Userpilot Web Plugin](https://userpilot.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners){:target="_blank"} helps product teams increase user adoption by allowing them to trigger highly personalized onboarding experiences across the user journey. The Segment integration will help you install and send data to Userpilot without added development time.
 
 This destination is maintained by Userpilot. For any issues with the destination, [contact the Userpilot Support team](mailto:support@userpilot.io).
 
