@@ -6,7 +6,7 @@ hidden: false
 ---
 
 > info "Upgrade to the new Analytics Node.js package"
-> This is the docs for the legacy npm package (`analytics-node`). Please [upgrade to](/docs/connections/sources/catalog/libraries/server/node/migration/) to the new package (`@segment/analytics-node`). See the updated [Analytics Node.js docs](/docs/connections/sources/catalog/libraries/server/node) to learn more.
+> This is the docs for the legacy npm package (`analytics-node`). Please [upgrade to](/docs/connections/sources/catalog/libraries/server/node/migration/) the new package (`@segment/analytics-node`). See the updated [Analytics Node.js docs](/docs/connections/sources/catalog/libraries/server/node) to learn more.
 
 Segment's Node.js library lets you record analytics data from your node code. The requests hit Segment's servers, and then Segment routes your data to any destinations you have enabled.
 
