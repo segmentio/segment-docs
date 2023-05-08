@@ -162,6 +162,7 @@ track('View Product', {
 {% endcodeexample %}
   
 ### Core tracking methods
+
 Once you've installed the Analytics React Native library, you can start collecting data through Segment's tracking methods:
 
 - [Track](/docs/connections/sources/catalog/libraries/mobile/react-native/implementation/#track)
