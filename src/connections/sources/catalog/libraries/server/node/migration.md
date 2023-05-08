@@ -4,7 +4,10 @@ repo: analytics-next
 strat: node-js
 ---
 
-If you're using the [classic version of Analytics Node.js](/docs/connections/sources/catalog/libraries/server/node/classic) (named `analytics-node` on npm), follow these steps to upgrade to the [latest version of Analytics Node.js](/connections/sources/catalog/libraries/server/node/) (named `@segment/analytics-node` on npm). 
+> info ""
+> This version of Analytics for Node.js is in beta and Segment is actively working on this feature. Segment's [First-Access and Beta terms](https://segment.com/legal/first-access-beta-preview/) govern this feature. 
+
+If you're using the [classic version of Analytics Node.js](/docs/connections/sources/catalog/libraries/server/node/classic), follow these steps to upgrade to the [latest version of Analytics Node.js](/connections/sources/catalog/libraries/server/node/). 
 
 1. Change the named imports.
 
