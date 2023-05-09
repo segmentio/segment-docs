@@ -220,4 +220,4 @@ Segment's [Reverse ETL](/docs/connections/reverse-etl) product supports this use
 
 On Change - You can `.set` when the data changes, for example, when a user updates an account field on your website.
 
-Scheduled job - You can run scheduled scripts (hourly, nightly that pull data from your database and send it to Segment. This is a totally fine approach, even if you load the same data in every night.
+Scheduled job - You can run scheduled scripts hourly or nightly that pull data from your database and send it to Segment. This is a totally fine approach, even if you load the same data in every night.
