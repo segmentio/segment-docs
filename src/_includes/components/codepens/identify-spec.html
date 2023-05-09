@@ -52,6 +52,21 @@ if (!emailRegex.test(email)) {
   emailField.style.outline = "";
 }
 
+// Add regular expression check to make sure plan field is not empty
+var planRegex = /.+/;
+if (!planRegex.test(plan)) {
+  planError = document.getElementById("plan-error");
+  planError.style.display = "block";
+  plan = document.getElementById("plan");
+  plan.style.outline = "2px solid red";
+  errors.push("Plan is invalid");
+} else {
+  const planError = document.getElementById("plan-error");
+  planError.style.display = "none";
+  const plan = document.getElementById("plan");
+  plan.style.outline = "";
+} 
+
 // Regular expression check for login #s
 var loginRegex = /^[0-9]+$/;
 if (!loginRegex.test(logins)) {

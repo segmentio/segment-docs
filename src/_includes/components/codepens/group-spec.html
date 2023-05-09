@@ -18,6 +18,21 @@
     
       var errors = [];
 
+      // Regular expression check name field is not empty
+      var nameRegex = /.+/;
+      if (!nameRegex.test(name)) {
+        const nameError = document.getElementById("name-error");
+        nameError.style.display = "block";
+        const nameField = document.getElementById("name");
+        nameField.style.outline = "2px solid red";
+        errors.push("Name is invalid");
+      } else {
+        const nameError = document.getElementById("name-error")
+        nameError.style.display = "none";
+        const nameField = document.getElementById("name")
+        nameField.style.outline = "";
+    }
+
       // Regular expression check for industry name
       var industryRegex = /^[A-Za-z-]+$/;
       if (!industryRegex.test(industry)) {
@@ -48,6 +63,20 @@
         employeesField.style.outline = "";
     }
 
+      // Add regular expression check to make sure plan field is not empty
+      var planRegex = /.+/;
+      if (!planRegex.test(plan)) {
+        planError = document.getElementById("plan-error");
+        planError.style.display = "block";
+        plan = document.getElementById("plan");
+        plan.style.outline = "2px solid red";
+        errors.push("Plan is invalid");
+      } else {
+        const planError = document.getElementById("plan-error");
+        planError.style.display = "none";
+        const plan = document.getElementById("plan");
+        plan.style.outline = "";
+    }    
 
       // Add regular expression check for total billed
       var billedRegex = /^[0-9]+$/;
@@ -128,7 +157,8 @@
     <h3> Sample Group call</h3>
     <div class="sample-form">
       <label for="name">Name:</label>
-      <input type="text" id="name" value="Twilio">
+      <input type="text" id="name" value="Twilio" required>
+      <span class="error-message" id="name-error">This field is required.</span>
       <label for="industry">Industry:</label>
       <input type="text" id="industry" value="Software">
       <span class="error-message" id="industry-error">Please enter a valid industry name, using only letters and hyphens.</span>
@@ -137,6 +167,7 @@
       <span class="error-message" id="employees-error">Please enter a valid number of employees.</span>
       <label for="plan">Plan:</label>
       <input type="text" id="plan" value="Premium">
+      <span class="error-message" id="plan-error">This field is required.</span>
       <label for="totalBilled">Total Billed:</label>
       <input type="text" id="totalBilled" value="34000000">
       <span class="error-message" id="billed-error">Please enter only numbers in the Total Billed field.</span>
