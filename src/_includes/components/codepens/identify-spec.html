@@ -55,16 +55,16 @@ if (!emailRegex.test(email)) {
 // Add regular expression check to make sure plan field is not empty
 var planRegex = /.+/;
 if (!planRegex.test(plan)) {
-  planError = document.getElementById("plan-error");
+  const planError = document.getElementById("plan-error");
   planError.style.display = "block";
-  plan = document.getElementById("plan");
-  plan.style.outline = "2px solid red";
+  const planField = document.getElementById("plan");
+  planField.style.outline = "2px solid red";
   errors.push("Plan is invalid");
 } else {
   const planError = document.getElementById("plan-error");
   planError.style.display = "none";
-  const plan = document.getElementById("plan");
-  plan.style.outline = "";
+  const planField = document.getElementById("plan");
+  planField.style.outline = "";
 } 
 
 // Regular expression check for login #s
@@ -233,6 +233,7 @@ return true;
     <span class="error-message" id="email-error">Please enter a valid email address.</span>
     <label for="plan">Plan:</label>
     <input type="text" id="plan" value="Premium">
+    <span class="error-message" id="plan-error">Please enter a valid Plan name.</span>
     <label for="logins">Logins:</label>
     <input type="text" id="logins" value="2">
     <span class="error-message" id="logins-error">Please enter only numbers in the 'Logins' field.</span>
