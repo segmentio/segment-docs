@@ -55,7 +55,7 @@ To create a Transformation, navigate to the Transformations tab in Protocols and
 
 To create a Transformation, you first need to select which type of transformation you want to create. For each transformation type, Segment displays a description, use cases, and example payload. Current transformation types available in your Segment workspace include:
 
-**Rename track event:** Rename track event name at the source or per destination. The events listed in the dropdown menu for selecting event names when creating Transformations correspond to the events listed on the [source schema view](https://segment.com/docs/getting-started/implementation-guide/#event-anatomy-and-naming-standards).
+**Rename track event:** Rename track event name at the source or per destination. The events listed in the event names dropdown menu correspond to the events listed on the [source schema view](/docs/getting-started/implementation-guide/#event-anatomy-and-naming-standards).
 ![rename track event](../images/event-rename-example.png)
 
 **Edit track event properties:** Rename multiple properties and/or change property data structure at the source or per destination
