@@ -51,7 +51,7 @@ Mixpanel sends the following identify call when a user exits the cohort:
 
 ### Sync Mixpanel Cohorts with Engage
 
-If you'd like your Cohorts data to flow to Engage, you'll need to connect Mixpanel Cohorts as a source in the Unify settings.
+To send your Cohorts data to Engage, connect a Mixpanel Cohorts source in the Unify settings.
 
 To connect Mixpanel Cohorts:
 
