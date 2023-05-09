@@ -55,7 +55,7 @@ You can map your custom `.track()` events to any **Click Conversions** you creat
 
 If you pass `properties.value`, `properties.currency`, or `properties.order_id`, Segment maps them to Google's semantic `value`, `currency`, or `transaction_id` respectively.
 
-The only exception is that for `Order Completed` events, Segment will map Google's semantic `value` field to your `properties.revenue`.
+The only exception is that for `Order Completed` events, Segment will map Google's semantic `value` field to your `properties.revenue` or `properties.total`. If you pass both as properties, `properties.revenue` takes precedence.
 
 ## Troubleshooting Google Ads Conversions
 To figure out if an event is flagged for conversion, follow these steps:

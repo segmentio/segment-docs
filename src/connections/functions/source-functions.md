@@ -297,6 +297,10 @@ You can test your code directly from the editor in two ways: either by receiving
 
 The advantage of testing your source function with webhooks is that all incoming data is real, so you can test behavior while closely mimicking the production conditions.
 
+Note that Segment has updated the webhook URL to `api.segmentapis.com/functions`. To use webhooks with your function:
+- You must [generate a public API token](https://docs.segmentapis.com/tag/Getting-Started/#section/Get-an-API-token){:target="_blank"}.
+- For POST calls, you'll need to use this API token in the header.
+
 ### Testing source functions with a webhook
 
 You can use webhooks to test the source function either by sending requests manually (using any HTTP client such as cURL or Insomnia) or by pasting the webhook into an external server that supports webhooks (such as Slack).

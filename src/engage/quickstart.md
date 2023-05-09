@@ -18,7 +18,7 @@ To configure and use Engage, you need the following:
 
 1. **A Segment account and Workspace.**
 2. **Events flowing into Connections** from your digital properties where most of your valuable user behavior occurs.
-3. **Profiles Identity Admin access.** You must have edit access to identity resolution rules.
+3. **Identity Admin access.** You must have edit access to identity resolution rules.
 4. **Engage Administrator access.** You must be either be a workspace admin, or a workspace user with Engage admin access to set up audiences and computed traits. You can check your permissions by navigating to [Access Management](https://app.segment.com/goto-my-workspace/settings/access-management){:target="_blank"} in your workspace settings. See the [Segment Access Management documentation](/docs/segment-app/iam/) for more details.
 
 ## Step 1: Create a new Developer space
