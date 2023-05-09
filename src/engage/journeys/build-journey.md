@@ -90,7 +90,7 @@ Follow these steps to resume entry to a paused Journey:
 1. Select the **Journeys** tab within your Engage space.
 2. Select the **More Options** icon next to the Journey you want to resume.
 3. From the dropdown menu, select **Resume Entry**.
-4. A modal window appears. Select **Resume Entry** again to confirm.
+4. A modal window appears. Select **Resume Entry** again to confirm. After the confirmation, editing is locked until the Journey Resume process completes.
 
 ### Cloning a Journey
 
