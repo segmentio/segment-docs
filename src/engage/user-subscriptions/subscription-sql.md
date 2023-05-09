@@ -36,8 +36,8 @@ To configure Subscriptions with SQL Traits, you can write your own query or clic
 > Click **Reset Template** to reset your SQL query.
 
 Queries must return at least one pair of the columns below with a value of `subscribed`, `unsubscribed`, or `did_not_subscribe`:
-- `email` and `_segment_internal_email_subscription_`
-- `phone` and `_segment_internal_sms_subscription_`
+- `email` and `__segment_internal_email_subscription__`
+- `phone` and `__segment_internal_sms_subscription__`
 
 For more subscription SQL best practices, view the [query requirements](#query-requirements) below.
 
