@@ -199,7 +199,7 @@ Destinations are the business tools or apps that Segment forwards your data to. 
 
 <div class="double">
   {% include components/reference-button.html
-    href="/docs/connections/sources/catalog/libraries/mobile/swift/cloud-mode-destinations"
+    href="/docs/connections/sources/catalog/libraries/mobile/react-native/cloud-mode-destinations"
     icon="destinations-catalog/cloud-apps.svg"
     title="Cloud-mode Destinations"
     description="Destinations that can be enabled from your Segment workspace and require no additional app setup."

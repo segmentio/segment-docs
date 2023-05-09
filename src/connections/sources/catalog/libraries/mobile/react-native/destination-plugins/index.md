@@ -50,12 +50,24 @@ plugins:
       url: https://cdn.filepicker.io/api/file/W6teayYkRmKgb8SMqxIn
     mark:
       url: https://cdn.filepicker.io/api/file/ztKtaLBUT7GUZKius5sa
+  - name: FullStory
+    url: connections/sources/catalog/libraries/mobile/react-native//destination-plugins/fullstory-react-native/
+    logo:
+      url: https://cdn.filepicker.io/api/file/0ET4vgkqTGNMRtZcFWCA
+    mark:
+      url: https://cdn.filepicker.io/api/file/O9MoMg8SSallC8bvMmvw
   - name: Mixpanel
     url: connections/sources/catalog/libraries/mobile/react-native/destination-plugins/mixpanel-react-native/
     logo:
       url: https://cdn.filepicker.io/api/file/pUF0kwpTTu0Z5POuzZXV
     mark:
       url: https://cdn.filepicker.io/api/file/0mdiroESxtRQBoR8ieBg
+  - name: Taplytics
+    url: connections/sources/catalog/libraries/mobile/react-native/destination-plugins/taplytics-react-native/
+    logo:
+      url: https://d3hotuclm6if1r.cloudfront.net/logos/taplytics-default.svg
+    mark:
+      url: https://cdn.filepicker.io/api/file/QmY3nWHRStacuvHg097O
 ---
 
 Analytics React Native uses its timeline/plugin architecture to support sending data to bundled SDKs when a Cloud Mode connection is not possible. Destination Plugins are similar to traditional Device Mode integrations available in Analytics React Native 1.x in that Segment makes calls directly to the destination tool’s API from the device. However, Destination Plugins are more customizable, giving you the ability to control and enrich your data at a much more granular level on the device itself. 
