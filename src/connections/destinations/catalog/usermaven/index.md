@@ -13,16 +13,16 @@ private: true
 
 <!-- Include a brief description of the destination here, along with a link to your website. -->
 <!-- In the section below, explain the value of this actions-based destination. If you don't have a classic version of the destination, remove this section. -->
-[Usermaven](https://www.usermaven.com){:target="_blank"} helps marketing and product teams turn more visitors into customers, get more people to use the product, and keep them coming back. It is the easiest analytics tool to reduce churn, increase product adoption and grow the revenue of your SaaS business.
+[Usermaven](https://www.usermaven.com){:target="_blank"} is an all-in-one analytics solution for online businesses looking to unlock growth and make data-driven decisions - without spending hours on setup. 
 
 
-## Benefits of Usermaven (Actions)`
+## Benefits of Usermaven (Actions)
 
 Usermaven (Actions) provides the following benefits:
 
-- **Clear mapping of data** Actions-based destinations enable you to define the mapping between the data Segment received from your source and the data Segment sends to Usermaven.
-- **Pre-built mapping.** Mappings for Usermaven, are prebuilt with the prescribed parameters and available for customization.
-- **No 3rd party tool is involved.** Move the data directly from Segment to Usermaven without the requirement of a 3rd party tool to facilitate the data sync.
+- **Clear mapping of data.** Actions-based destinations enable you to define the mapping between the data Segment received from your source and the data Segment sends to Usermaven.
+- **Pre-built mapping.** Mappings for Usermaven are prebuilt with the prescribed parameters and available for customization.
+- **No 3rd party tool is involved.** Move the data directly from Segment to Usermaven without a 3rd party tool to facilitate the data sync.
 - **Track events, identify users and companies.** You can track events, identify users and companies in Usermaven using Actions-based destinations.
 
 <!-- The section below explains how to enable and configure the destination. Include any configuration steps not captured below. For example, obtaining an API key from your platform and any configuration steps required to connect to the destination. -->
