@@ -12,7 +12,7 @@ This source is maintained by Navattic. For any issues with the source, [contact 
 To get started with the Navattic source:
 1. Navigate to **Connections > Sources** and click **Add Source** in the Segment App. 
 2. Search for *Navattic* in the Sources Catalog, and select the Navattic tile, and click **Add Source**.
-3. Give the Source a nickname configure any other settings.
+3. Give the Source a nickname and configure any other settings.
    - The nickname is used as a label in the Segment app, and Segment creates a related schema name in your warehouse. The nickname can be anything, but Segment recommends using something that reflects the source itself and distinguishes amongst your environments (for example: SourceName_Prod, SourceName_Staging, SourceName_Dev).
 4. Click **Add Source** to save your settings.
 5. Copy the Write key from the Segment UI and log in to your Navattic account. Navigate to **Integrations > Segment** and paste the key. Click **Save** to connect.
@@ -42,7 +42,7 @@ CONVERTED | A visitor viewed a step tagged *Mark as converted*.
 
 ## Event Properties
 
-The table below list the properties included in the events listed above.
+The table below lists the properties included in the events listed above.
 
 Property Name | Description
 --------------- | ------------
@@ -58,6 +58,6 @@ url | If the event is NAVIGATE, then this property contains the URL of the link 
 
 Once your Source is set up, you can connect it with Destinations.
 
-Log in to your downstream tools and check to see that your events appear as expected, and that they contain all of the properties you expect. If your events and properties don’t appear, check the [Event Delivery](/docs/connections/event-delivery/) tool, and refer to the Destination docs for each tool for troubleshooting.
+Log in to your downstream tools and check to see that your events appear as expected and that they contain all of the properties you expect. If your events and properties don’t appear, check the [Event Delivery](/docs/connections/event-delivery/) tool, and refer to the Destination docs for each tool for troubleshooting.
 
 If there are any issues with how the events are arriving to Segment, [contact the Navattic support team](mailto:team@navattic.com).
