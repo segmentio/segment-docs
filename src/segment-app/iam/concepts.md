@@ -18,7 +18,7 @@ A *User Group* is a set of Team Members with a set of shared policies. A Segment
 
 You can generate tokens to programmatically access Segment resources using the [Segment Public API](/docs/api/public-api).
 
-![](images/token-overview.png)
+![Screenshot of the Workspace Settings tab, with the Access Management tab selected.](images/token-overview.png)
 
 ## Resources
 

@@ -3,10 +3,10 @@ title: LiveLike Cloud Mode (Actions) Destination
 id: 63e42b47479274407b671071
 hide-boilerplate: true
 hide-dossier: false
-private: true
-hidden: true
----
+private: false
+hidden: false
 
+---
 {% include content/plan-grid.md name="actions" %}
 
 [LiveLike](https://livelike.com/) is a technology company dedicated to empowering digital experiences that enable deeper fan engagement, increased retention rates, and new monetization opportunities.

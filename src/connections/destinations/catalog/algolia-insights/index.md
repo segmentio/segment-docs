@@ -16,9 +16,6 @@ This [Algolia Insights](https://www.algolia.com/products/analytics/) destination
 
 This destination is maintained by [Algolia](https://www.algolia.com/). For any issues with the destination, [contact the Algolia team](mailto:hey@algolia.com).
 
-{% include content/beta-note.md %}
-
-
 ## Getting Started
 
 1. From the Segment web app, click **Catalog**.

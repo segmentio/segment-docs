@@ -35,7 +35,7 @@ You can click a row in the Inbox to learn more about a field and where it was co
 - an example code snippet containing a payload that the field appears in
 
 
-![](images/privacy-inbox.gif)
+![Animation of a user selecting a row in the Privacy Portal and clicking on the expanded view.](images/privacy-inbox.gif)
 
 
 To streamline the classification process, Segment pre-classifies the data in the
@@ -56,7 +56,7 @@ dropdown menu to change. For example, you might manually change a field that
 does not contain personal information in your implementation from a "Yellow"
 classification to "Green."
 
-![](images/privacy-inbox-change-color.gif)
+![Animation of a user selecting the color dropdown menu and changing the phone field from a Yellow field to a Green field.](images/privacy-inbox-change-color.gif)
 
 
 When you're satisfied that the fields have been classified appropriately, you
@@ -86,7 +86,7 @@ The Inventory is a central repository of all of the properties _you_ classified 
 
 Once you've classified the fields as Red, Yellow, and Green in the Inbox, the classified fields appear in the Inventory. You can use the filter at the top left to filter down to specific categories of data (for example, Red data, data from a production environment, data from specific sources).
 
-![](images/privacy-inventory-filtering.gif)
+![Animation of a user filtering the data inventory to only show red fields in their production environment that came from Clearbrain.](images/privacy-inventory-filtering.gif)
 
 Click into a field (for example, `ip`) in the Inventory to open the Inventory
 details. The details sheet displays how many times a specific field has been
@@ -100,7 +100,7 @@ connected to the Source that contains the field. The Access tab displays a list
 of who within your organization has access to this field.
 
 
-![](images/privacy-inventory-overview.png)
+![Screenshot of the product_id Inventory details page in the Privacy Portal.](images/privacy-inventory-overview.png)
 
 
 Finally, workspace owners can use the **Download CSV** button to export a CSV of
@@ -195,7 +195,7 @@ treat that property whenever it is appears in data Segment processes.
 
 **To create a Custom Matcher:**
 
-1. Click **New Matcher**.
+1. Click **Add a Custom Matcher**.
 2. Enter the **Symbol Name** (for example the property name, like "Social Insurance Number"). Segment matches against the **Symbol Name**, as well as the other context you provide in the next steps.
 3. Set the default classification:
    - **Red** for highly restricted
@@ -207,10 +207,10 @@ treat that property whenever it is appears in data Segment processes.
    - **Similar to** matches a **Key** that is similar to a term within a fuzzy string distance (for example "email" and "e-mail"). We built fuzzy matching using [this public GitHub repository](https://github.com/imjasonmiller/godice). If the score is > 0.7, then we say it's a match.
 
 
-![](images/privacy-add-new-matcher.gif)
+![Animation of a user creating a new matcher, SIN, with the exact matching setting selected.](images/privacy-add-new-matcher.gif)
 
 
-![](images/privacy-edit-matcher.png)
+![Screenshot of the Edit Matcher popup.](images/privacy-edit-matcher.png)
 
 
 Unless the field value pattern is unique, we recommend matching on the Key. For

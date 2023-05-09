@@ -71,7 +71,7 @@ Follow these best practices to test your journeys:
 - While in the process of configuring a journey, use dev Spaces to model that journey without affecting production data.
 - Connect a data warehouse to each step of the journey to test for success or failure of that step.
 - For early version journeys, scaffold Send to Destination steps without connecting to your production advertising or messaging destinations.
-- Verify individual users' progress through the Journey in the Profiles Explorer view.
+- Verify individual users' progress through the Journey in the Profile explorer view.
 
 ## Frequently asked questions
 

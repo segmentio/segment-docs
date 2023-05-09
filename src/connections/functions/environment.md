@@ -56,10 +56,6 @@ When you deploy your destination function in your workspace, you fill out the se
 
 With Functions Versioning, you can access a complete change history for each source or destination function. View version history and creation details, then use a unified or split display to compare code and restore previous versions of a function.
 
-> info "Functions Versioning in beta"
-> Functions Versioning is in beta, and Segment is actively working on this feature. Some functionality may change before it becomes generally available. Versioning is disabled in workspaces where you deploy source functions with multiple instances. [Contact Segment](https://segment.com/help/contact/){:target="_blank"} with any feedback or questions.
-
-
 ### View and compare version history
 
 To view the version history of a function:

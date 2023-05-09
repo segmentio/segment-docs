@@ -23,8 +23,8 @@ At present, Business Tier workspaces can have **Owners,** **Read-Only Members,**
 
 To update your team members' roles, go to Workspace Settings > Team Settings, and select the appropriate role. 
 
-![](images/restrict_2wdC9nj8.gif)
+![Animation showing an admin changing the permissions of a team member from Owner to Read Only Member and back again.](images/restrict_2wdC9nj8.gif)
 
 To add a Source Collaborator, navigate to the Settings page for a given Source, and click Collaborators from the left-hand menu.
 
-![](images/restrict_NF4F4Vox.png)
+![Screenshot of the Collaborators Setting page in the Source settings.](images/restrict_NF4F4Vox.png)
