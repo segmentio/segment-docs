@@ -13,7 +13,7 @@ Use the Segment Objects API to send business objects relevant to your business r
 ### Authentication
 
 Authenticate to the Objects API by sending your project's **Write Key** along with a request.
-Authentication uses HTTP Basic Auth, which involves a 'username:password' that is base64 encoded and prepended with the string 'Basic '.
+Authentication uses HTTP Basic Auth, which involves a 'username:password' that is base64 encoded and pre-pended with the string 'Basic '.
 
 In practice that means taking a Segment source **Write Key**,`'abc123'`, as the username, adding a colon, and then the password field is left empty. After base64 encoding `'abc123:'` becomes `'YWJjMTIzOg=='`; and this is passed in the authorization header like so: `'Authorization: Basic YWJjMTIzOg=='`.
 
@@ -210,13 +210,13 @@ curl https://objects.segment.com/v1/set \
 
 ### Should I use the Objects API instead of .identify() and .group()?
 
-No; you should continue use `analytics.identify` to identify your customers. We'll sync that to your data warehouse as `select * from project.users`.
+No; you should continue use `analytics.identify` to identify your customers. Segment syncs that to your data warehouse as `select * from project.users`.
 
 ### Can you just pull data automatically from my database?
 
-[Contact Segment](https://segment.com/help/contact/){:target="_blank"} if you would like this feature.
+Segment's [Reverse ETL](/docs/connections/reverse-etl) product supports this use case.
 
-### How do you recommend we load object data into Segment?
+### How do you recommend I load object data into Segment?
 
 On Change - You can `.set` when the data changes, for example, when a user updates an account field on your website.
 
