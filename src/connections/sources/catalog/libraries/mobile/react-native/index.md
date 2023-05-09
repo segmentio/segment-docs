@@ -29,19 +29,29 @@ To get started with the Analytics for React Native 2.0 library:
     # or
     npm install --save @segment/analytics-react-native @segment/sovran-react-native react-native-get-random-values
     ```
-3. If you're using iOS, install native modules with:
+3. If you want to use the default persistor for the Segment Analytics client, you also have to install `react-native-async-storage/async-storage.`
+
+    ```js
+    yarn add @react-native-async-storage/async-storage 
+    # or
+    npm install --save @react-native-async-storage/async-storage
+    ```
+    > info ""
+    >If you wish to use your own persistence layer you can use the storePersistor option when initializing the client. Make sure you always have a persistor (either by having AsyncStorage package installed or by explicitly passing a value), else you might get unexpected sideeffects like multiple 'Application Installed' events
+
+4. If you're using iOS, install native modules with:
 
     ```js
     npx pod-install
     ```
 
-4. If you're using Android, you need to add extra permissions to your `AndroidManifest.xml`.  Add the line below between the `` tags:
+5. If you're using Android, you need to add extra permissions to your `AndroidManifest.xml`. 
 
     ```js
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     ```
 
-5. Initialize and configure the Analytics React Native 2.0 client. The package exposes a method called `createClient` which you can use to create the Segment Analytics client. This central client manages all the tracking events.
+6. Initialize and configure the Analytics React Native 2.0 client. The package exposes a method called `createClient` which you can use to create the Segment Analytics client. This central client manages all the tracking events.
 
     ```js    
     import { createClient, AnalyticsProvider } from '@segment/analytics-react-native';
@@ -53,32 +63,43 @@ To get started with the Analytics for React Native 2.0 library:
 
 These are the options you can apply to configure the client:
 
- Option Name | Description
------------ | ------------
-`writeKey` *required* | This is your Segment write key.
-`autoAddSegmentDestination` | The default is set to `true`. <br> This automatically adds the Segment Destination plugin. Set to `false` if you don't want to add the Segment Destination.  
-`debug` | The default is set to `true`. <br> The default value is `false` in   `defaultSettings` | The default is set to `undefined`. <br> Settings that will be used if the request to get the settings from Segment fails.
-`flushAt` | The default is set to `20`. <br> The count of events at which Segment sends to the backend.
-`flushInterval`| The default is set to `30`. <br> The interval in seconds at which Segment sends events to the backend.
-`maxBatchSize` | The default is set to `1000`. <br> The maxiumum batch size of how many events to send to the API at once.
-`trackAppLifecycleEvents` | The default is set to `false`. <br> This enables you to automatically track app lifecycle events, such as application installed, opened, updated, backgrounded. Set to true to `true` to track.
-`trackDeepLinks` | The default is set to `false`. <br> This automatically tracks when the user opens the app via a deep link. Set to Enable automatic tracking for when the user opens the app via a deep link.
-`proxy` | The default is set to `undefined`. <br> This is a batch url to post to instead of the default batch endpoint.
-`collectDeviceId` | The default is set to `fasle`. <br> This automatically adds a `device.Id` property to the context object from the DRM API on Android devices.
+| Name                       | Default   | Description                                                                                                                                    |
+| -------------------------- | --------- | -----------------------------------------------------------------------------------------------------------------------------------------------|
+| `writeKey` **required**  | ''        | Your Segment API key.                                                                                                                          |
+| `collectDeviceId`          | false    | Set to true to automatically collect the device Id.from the DRM API on Android devices.                                           |
+| `debug`                    | true\*    | When set to false, it will not generate any logs.                                                                                              |
+| `logger`                   | undefined | Custom logger instance to expose internal Segment client logging.                                                                            |
+| `flushAt`                  | 20        | How many events to accumulate before sending events to the backend.                                                                            |
+| `flushInterval`            | 30        | In seconds, how often to send events to the backend.                                                                                           |
+| `flushPolicies`            | undefined | Add more granular control for when to flush, see [Adding or removing policies](#adding-or-removing-policies)                                   |
+| `maxBatchSize`             | 1000      | How many events to send to the API at once                                                                                                     |
+| `trackAppLifecycleEvents`  | false     | Enable automatic tracking for [app lifecycle events](https://segment.com/docs/connections/spec/mobile/#lifecycle-events): application installed, opened, updated, backgrounded) |
+| `trackDeepLinks`           | false     | Enable automatic tracking for when the user opens the app via a deep link (Note: Requires additional setup on iOS, [see instructions](#ios-deep-link-tracking-setup))                                                            |
+| `defaultSettings`          | undefined | Settings that will be used if the request to get the settings from Segment fails. Type: [SegmentAPISettings](https://github.com/segmentio/analytics-react-native/blob/c0a5895c0c57375f18dd20e492b7d984393b7bc4/packages/core/src/types.ts#L293-L299)                                                               |
+| `autoAddSegmentDestination`| true      | Set to false to skip adding the SegmentDestination plugin                                                                                      |
+| `storePersistor`           | undefined | A custom persistor for the store that `analytics-react-native` leverages. Must match [`Persistor`](https://github.com/segmentio/analytics-react-native/blob/master/packages/sovran/src/persistor/persistor.ts#L1-L18) interface exported from [sovran-react-native](https://github.com/segmentio/analytics-react-native/blob/master/packages/sovran).|
+| `proxy`                    | undefined | `proxy` is a batch url to post to instead of 'https://api.segment.io/v1/b'.                                                                    |
+| `errorHandler`             | undefined | Create custom actions when errors happen, see [Handling errors](#handling-errors)                                                              |
 
-## Set up iOS Deep Link Tracking
-> warning ""
-> This is only required for iOS if you're using the `trackDeepLinks` option. Android doesn't require any additional setup.
 
-To track deep links in iOS, add the following to your `AppDelegate.m` file:
+## Adding Plugins to the Client
+
+You can add a plugin at any time through the `segmentClient.add()` method. More information about plugins, including a detailed architecture overview and a guide to creating your own can be found [here](/docs/connections/sources/catalog/libraries/mobile/react-native/react-native-plugin-architecture/).
+
 ```js
-- (BOOL)application:(UIApplication *)application
-            openURL: (NSURL *)url
-            options:(nonnull NSDictionary<UIApplicationOpenURLOptionsKey, id> *)options {
+import { createClient } from '@segment/analytics-react-native';
 
-  [AnalyticsReactNative trackDeepLink:url withOptions:options];  
-  return YES;
-}
+import { AmplitudeSessionPlugin } from '@segment/analytics-react-native-plugin-amplitude-session';
+import { FirebasePlugin } from '@segment/analytics-react-native-plugin-firebase';
+import { IdfaPlugin } from '@segment/analytics-react-native-plugin-idfa';
+
+const segmentClient = createClient({
+  writeKey: 'SEGMENT_KEY'
+});
+
+segmentClient.add({ plugin: new AmplitudeSessionPlugin() });
+segmentClient.add({ plugin: new FirebasePlugin() });
+segmentClient.add({ plugin: new IdfaPlugin() });
 ```
 ## Usage
 You can use Analytics React Native 2.0 with or without hooks. Detailed overviews of both implemenation options can be found below. 
@@ -194,7 +215,6 @@ Destinations are the business tools or apps that Segment forwards your data to. 
   %}
 </div>
 
-
 ## Tools and extensions
 
 Analytics for React Native is built with extensibility in mind. Use the tools list below to improve data collection.
@@ -202,9 +222,15 @@ Analytics for React Native is built with extensibility in mind. Use the tools li
 - [Plugin architecture](/docs/connections/sources/catalog/libraries/mobile/react-native/react-native-plugin-architecture)
 - [Typewriter](/docs/connections/sources/catalog/libraries/mobile/react-native/react-native-typewriter)
 - [Destination Filters](/docs/connections/sources/catalog/libraries/mobile/react-native/react-native-destination-filters)
-- [Advertising ID Collection](https://github.com/segmentio/analytics-react-native/tree/master/packages/plugins/plugin-advertising-id)
-- [Device token Collection](https://github.com/segmentio/analytics-react-native/tree/master/packages/plugins/plugin-device-token)
-- [IDFA Collection](https://github.com/segmentio/analytics-react-native/tree/master/packages/plugins/plugin-idfa)
+- [Advertising ID collection](https://github.com/segmentio/analytics-react-native/tree/master/packages/plugins/plugin-advertising-id)
+- [Device token collection](https://github.com/segmentio/analytics-react-native/tree/master/packages/plugins/plugin-device-token)
+- [IDFA collection](https://github.com/segmentio/analytics-react-native/tree/master/packages/plugins/plugin-idfa)
+- [Flush Policies](/docs/connections/sources/catalog/libraries/mobile/react-native/implementation/#control-upload-with-flush-policies)
+- [Automatic screen tracking](/docs/connections/sources/catalog/libraries/mobile/react-native/implementation/#automatic-screen-tracking)
+- [Error handling](/docs/connections/sources/catalog/libraries/mobile/react-native/implementation/#handling-errors)
+- [Native anonymousId](/docs/connections/sources/catalog/libraries/mobile/react-native/implementation/#native-anonymousId)
+- [Deep Link tracking](/docs/connections/sources/catalog/libraries/mobile/react-native/implementation/#set-up-ios-deep-link-tracking)
+
 
 ## Changelog
 [View the Analytics React Native 2.0 changelog on GitHub](https://github.com/segmentio/analytics-react-native/releases){:target="_blank"}.

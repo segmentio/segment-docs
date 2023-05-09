@@ -1,5 +1,5 @@
 ---
-title: Analytics for React Native 2.0 Implementation Guide
+title: Analytics for React Native Implementation Guide
 strat: react-native
 ---
 Once you've installed the Analytics React Native library, you can start collecting data through Segment's tracking methods:
@@ -190,10 +190,18 @@ If you don't do this, the old client instance would still exist and retain the t
 
 Ideally, you shouldn't have to use this method, and the Segment client should be initialized only once in the application lifecycle.
 
-## Control upload with Flush Policies
-To granularly control when Segment uploads events you can use `FlushPolicies`.
-A Flush Policy defines the strategy for deciding when to flush. This can be on an interval, time of day, after receiving a certain number of events, or after receiving a particular event. This gives you more flexibility on when to send event to Segment.
-Set Flush Policies in the configuration of the client:
+
+## Advanced Functionality
+
+Analytics React Native was built to be as exetnsible and customizable as possible to give you the ability to meet your bespoke analytics needs.  
+### Controlling Upload With Flush Policies
+
+To more granurily control when events are uploaded you can use `FlushPolicies`
+
+A Flush Policy defines the strategy for deciding when to flush, this can be on an interval, on a certain time of day, after receiving a certain number of events or even after receiving a particular event. This gives you even more flexibility on when to send event to Segment.
+
+To make use of flush policies you can set them in the configuration of the client:
+
 ```ts
 const client = createClient({
   // ...
@@ -204,31 +212,31 @@ const client = createClient({
   ],
 });
 ```
-You can set several policies at a time. When a flush occurs, it triggers an upload of the events, then resets the logic after every flush. 
-As a result, only the first policy to reach `shouldFlush` will trigger a flush. In the example above either the event count reaches 5 or the timer reaches 500ms, whatever comes first will trigger a flush.
-Segment has several standard Flush Policies:
-- `CountFlushPolicy` triggers when you reach a certain number of events
-- `TimerFlushPolicy` triggers on an interval of milliseconds
-- `StartupFlushPolicy` triggers on client startup only
-
 ### Adding or removing policies
-One of the main advantages of Flush Policies is that you can add and remove policies on the fly. This is very powerful when you want to reduce or increase the amount of flushes. 
+
+One of the main advatanges of FlushPolicies is that you can add and remove policies on the fly. This is very powerful when you want to reduce or increase the amount of flushes. 
+
 For example you might want to disable flushes if you detect the user has no network:
+
 ```ts
+
 import NetInfo from "@react-native-community/netinfo";
+
 const policiesIfNetworkIsUp = [
   new CountFlushPolicy(5),
   new TimerFlushPolicy(500),
 ];
+
 // Create our client with our policies by default
 const client = createClient({
   // ...
   flushPolicies: policies,
 });
-// If Segment detects the user disconnect from the network, Segment removes all flush policies. 
-// That way the Segment client won't keep attempting to send events to Segment but will still 
+
+// If we detect the user disconnects from the network remove all flush policies, 
+// that way we won't keep attempting to send events to segment but we will still 
 // store them for future upload.
-// If the network comes back up, the Segment client adds the policies back. 
+// If the network comes back up we add the policies back
 const unsubscribe = NetInfo.addEventListener((state) => {
   if (state.isConnected) {
     client.addFlushPolicy(...policiesIfNetworkIsUp);
@@ -236,22 +244,29 @@ const unsubscribe = NetInfo.addEventListener((state) => {
     client.removeFlushPolicy(...policiesIfNetworkIsUp)
   }
 });
+
 ```
 ### Creating your own flush policies
-You can create a custom Flush Policy special for your application needs by implementing the  `FlushPolicy` interface. You can also extend the `FlushPolicyBase` class that already creates and handles the `shouldFlush` value reset.
-A `FlushPolicy` only needs to implement two methods:
+
+You can create a custom FlushPolicy special for your application needs by implementing the  `FlushPolicy` interface. You can also extend the `FlushPolicyBase` class that already creates and handles the `shouldFlush` value reset.
+
+A `FlushPolicy` only needs to implement 2 methods:
 - `start()`: Executed when the flush policy is enabled and added to the client. This is a good place to start background operations, make async calls, configure things before execution
-- `onEvent(event: SegmentEvent)`: Called on every event tracked by your client
-- `reset()`: Called after a flush is triggered (either by your policy, by another policy, or manually)
-Your policies also have a `shouldFlush` observable boolean value. When this is set to true the client attempts to upload events. Each policy should reset this value to `false` according to its own logic, although it's common to do it inside the `reset` method.
+- `onEvent(event: SegmentEvent)`: Gets called on every event tracked by your client
+- `reset()`: Called after a flush is triggered (either by your policy, by another policy or manually)
+
+They also have a `shouldFlush` observable boolean value. When this is set to true the client will atempt to upload events. Each policy should reset this value to `false` according to its own logic, although it is pretty common to do it inside the `reset` method.
+
 ```ts
 export class FlushOnScreenEventsPolicy extends FlushPolicyBase {
+
   onEvent(event: SegmentEvent): void {
     // Only flush when a screen even happens
     if (event.type === EventType.ScreenEvent) {
       this.shouldFlush.value = true;
     }
   }
+
   reset(): void {
     // Superclass will reset the shouldFlush value so that the next screen event triggers a flush again
     // But you can also reset the value whenever, say another event comes in or after a timeout
@@ -260,7 +275,7 @@ export class FlushOnScreenEventsPolicy extends FlushPolicyBase {
 }
 ```
 
-## Automatic screen tracking
+### Automatic screen tracking
 As sending a screen() event with each navigation action can get tiresome, it's best to track navigation globally. The implementation is different depending on which library you use for navigation. The two main navigation libraries for React Native are [React Navigation](https://reactnavigation.org/){:target="_blank"} and [React Native Navigation](https://wix.github.io/react-native-navigation/docs/before-you-start/){:target="_blank"}.
 
 ### React Navigation
@@ -306,7 +321,7 @@ To set up automatic screen tracking with React Navigation:
       }
     }}
     >
-```
+    ```
 
 ### React Native Navigation
 In order to set up automatic screen tracking while using [React Native Navigation](https://wix.github.io/react-native-navigation/docs/before-you-start/){:target="_blank"}:
@@ -319,8 +334,124 @@ In order to set up automatic screen tracking while using [React Native Navigatio
         segmentClient.screen(componentName);
       });
 ```
+### Handling errors
 
-## Device identifiers
+You can handle analytics client errors through the `errorHandler` option.
+
+The error handler configuration receives a function which will get called whenever an error happens on the analytics client. It will receive an argument of [`SegmentError`](packages/core/src/errors.ts#L20) type. 
+
+You can use this error handling to trigger different behaviours in the client when a problem occurs. For example if the client gets rate limited you could use the error handler to swap flush policies to be less aggressive:
+
+```ts
+const flushPolicies = [new CountFlushPolicy(5), new TimerFlushPolicy(500)];
+
+const errorHandler = (error: SegmentError) => {
+  if (error.type === ErrorType.NetworkServerLimited) {
+    // Remove all flush policies
+    segmentClient.removeFlushPolicy(...segmentClient.getFlushPolicies());
+    // Add less persistent flush policies
+    segmentClient.addFlushPolicy(
+      new CountFlushPolicy(100),
+      new TimerFlushPolicy(5000)
+    );
+  }
+};
+
+const segmentClient = createClient({
+  writeKey: 'WRITE_KEY',
+  trackAppLifecycleEvents: true,
+  collectDeviceId: true,
+  debug: true,
+  trackDeepLinks: true,
+  flushPolicies: flushPolicies,
+  errorHandler: errorHandler,
+});
+
+```
+
+The reported errors can be of any of the [`ErrorType`](packages/core/src/errors.ts#L4) enum values. 
+
+### Reporting errors from plugins
+
+Plugins can also report errors to the handler by using the [`.reportInternalError`](packages/core/src/analytics.ts#L741) function of the analytics client, we recommend using the `ErrorType.PluginError` for consistency, and attaching the `innerError` with the actual exception that was hit:
+
+```ts
+  try {
+    distinctId = await mixpanel.getDistinctId();
+  } catch (e) {
+    analytics.reportInternalError(
+      new SegmentError(ErrorType.PluginError, 'Error: Mixpanel error calling getDistinctId', e)
+    );
+    analytics.logger.warn(e);
+  }
+```
+### Native AnonymousId 
+
+If you need to generate an `anonymousId` either natively or before the Analytics React Native package is initialized, you can send the anonymousId value from native code. The value has to be generated and stored by the caller. For reference, you can find a working example in the app and reference the code below: 
+
+**iOS**
+```objc
+...
+#import <segment_analytics_react_native-Swift.h>
+
+- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
+{
+  ...
+  // generate your anonymousId value
+  // dispatch it across the bridge
+
+  [AnalyticsReactNative setAnonymousId: @"My-New-Native-Id"];
+  return yes
+}
+```
+**Android**
+```java
+// MainApplication.java
+...
+import com.segmentanalyticsreactnative.AnalyticsReactNativePackage;
+
+...
+private AnalyticsReactNativePackage analytics = new AnalyticsReactNativePackage();
+
+...
+   @Override
+    protected List<ReactPackage> getPackages() {
+      @SuppressWarnings("UnnecessaryLocalVariable")
+      List<ReactPackage> packages = new PackageList(this).getPackages();
+      // AnalyticsReactNative will be autolinked by default, but to send the anonymousId before RN startup you need to manually link it to store a reference to the package
+      packages.add(analytics);
+      return packages;
+    }
+...
+  @Override
+  public void onCreate() {
+    super.onCreate();
+    ...
+
+  // generate your anonymousId value
+  // dispatch it across the bridge
+
+  analytics.setAnonymousId("My-New-Native-Id");
+  }
+```
+### Set up iOS Deep Link Tracking
+> warning ""
+> This is only required for iOS if you're using the `trackDeepLinks` option. Android doesn't require any additional setup.
+
+To track deep links in iOS, add the following to your `AppDelegate.m` file:
+  ```objc
+  #import <segment_analytics_react_native-Swift.h>
+  ....
+  - (BOOL)application:(UIApplication *)application
+            openURL: (NSURL *)url
+            options:(nonnull NSDictionary<UIApplicationOpenURLOptionsKey, id> *)options {
+
+    [AnalyticsReactNative trackDeepLink:url withOptions:options];  
+    return YES;
+  }
+```
+
+### Device identifiers
 On Android, Segment's React Native library generates a unique ID by using the DRM API as context.device.id. Some destinations rely on this field being the Android ID, so be sure to double-check the destination’s vendor documentation. If you choose to override the default value using a plugin, make sure the identifier you choose complies with Google’s User Data Policy. For iOS the context.device.id is set the IDFV.
 
 To collect the Android Advertising ID provided by Play Services, Segment provides a [plugin](https://github.com/segmentio/analytics-react-native/tree/master/packages/plugins/plugin-advertising-id){:target="_blank"} that can be used to collect that value. This value is set to context.device.advertisingId. For iOS, this [plugin](https://github.com/segmentio/analytics-react-native/tree/master/packages/plugins/plugin-idfa){:target="_blank"} can be used to set the IDFA context.device.advertisingId property.
