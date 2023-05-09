@@ -190,7 +190,6 @@ If you don't do this, the old client instance would still exist and retain the t
 
 Ideally, you shouldn't have to use this method, and the Segment client should be initialized only once in the application lifecycle.
 
-
 ## Advanced Functionality
 
 Analytics React Native was built to be as exetnsible and customizable as possible to give you the ability to meet your bespoke analytics needs.  
