@@ -111,11 +111,10 @@ After selecting a property/trait, select JSON Path or Simple String to change th
 
 > info ""
 > When you see properties that have the escape character `\` in them - this escape character `\` is added to differentiate between a property name that has a . in it, and a nested field, like so:
-
-```
+> ```
 > ingredients.salad → "ingredients": { "salad": "yum" }
 > ingredients\.salad → "ingredients.salad": "yum"
-```
+> ```
 
 ### Step 3: Name the transformation and enable it
 
