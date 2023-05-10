@@ -315,7 +315,6 @@ Segment previously used Factories to initialize destinations. With Analytics Swi
     AnalyticsConfiguration *config = AnalyticsConfiguration(writeKey: "YOUR_WRITE_KEY")
 
     // Add any of your Device-mode destinations.
-    config.use(SEGGoogleAnalyticsIntegrationFactory.instance())
     config.use(BNCBranchIntegrationFactory.instance())
     ...
 
@@ -327,7 +326,6 @@ Segment previously used Factories to initialize destinations. With Analytics Swi
     SEGAnalyticsConfiguration *config = [SEGAnalyticsConfiguration configurationWithWriteKey:@"YOUR_WRITE_KEY"];
 
     // Add any of your Device-mode destinations.
-    [config use:[SEGGoogleAnalyticsIntegrationFactory instance]];
     [config use:[BNCBranchIntegrationFactory instance]];
     ...
 
