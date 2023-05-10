@@ -223,7 +223,7 @@ If you don't need to transform all of your Segment calls, and only want to trans
 {% codeexampletab Swift%}
 
 ```swift
-    let customizeAllTrackCalls: EnrichmentClosure = { event in
+    let customizeAmplitudeTrackCalls: EnrichmentClosure = { event in
         guard let event = event as? TrackEvent else { return event }
         var workingEvent = event
         workingEvent.event = "[New] \(event.event)"
@@ -246,7 +246,7 @@ If you don't need to transform all of your Segment calls, and only want to trans
 {% endcodeexampletab %}
 {% codeexampletab Objective-C %}
 ```objc
-    SEGBlockPlugin *customizeAllTrackCalls = [[SEGBlockPlugin alloc] initWithBlock:^id<SEGRawEvent> _Nullable(id<SEGRawEvent> _Nullable event) {
+    SEGBlockPlugin *customizeAmplitudeTrackCalls = [[SEGBlockPlugin alloc] initWithBlock:^id<SEGRawEvent> _Nullable(id<SEGRawEvent> _Nullable event) {
         if ([event isKindOfClass: [SEGTrackEvent class]]) {
             SEGTrackEvent *track = (SEGTrackEvent *)event;
             NSString *newName = [NSString stringWithFormat: @"[New] %@", track.event];
@@ -260,7 +260,7 @@ If you don't need to transform all of your Segment calls, and only want to trans
         return event;
     }];
     
-    [self.analytics addPlugin:booyaAllTrackCalls destinationKey:@"Amplitude"];
+    [self.analytics addPlugin:customizeAmplitudeTrackCalls destinationKey:@"Amplitude"];
 ```
 {% endcodeexampletab %}
 {% endcodeexample %}
@@ -285,20 +285,20 @@ Segment added these options:
 | `errorHandler` | Sets an error handler to be called when errors are encountered by the Segment library.  See [AnalyticsError](https://github.com/segmentio/analytics-swift/blob/c7e3c1c31a5a281e94116852ef59e8221837dbb6/Sources/Segment/Errors.swift) for a list of possible error messages. |
 | `flushPolicies` | Add more granular control for how and when to flush events. |
 
-Segment deprecated these options:
+Segment removed these options:
 
 
 | Deprecated Option           | Details                                                                                                     |
 | --------------------------- | ----------------------------------------------------------------------------------------------------------- |
 | `enableAdvertisingTracking` | Removed                                                                                                     |
-| `launchOptions`             | Deprecated in favor of the enrichment plugin that adds the default data to the event payloads.              |
+| `launchOptions`             | Removed in favor of the enrichment plugin that adds the default data to the event payloads.              |
 | `maxQueueSize`              | Removed                                                                                                     |
-| `recordScreenViews`         | Deprecated in favor of a plugin that provides the same functionality. Use the [UIKitScreenTracking plugin](https://github.com/segmentio/analytics-swift/blob/main/Examples/other_plugins/UIKitScreenTracking.swift). |
+| `recordScreenViews`         | Removed in favor of a plugin that provides the same functionality. Use the [UIKitScreenTracking plugin](https://github.com/segmentio/analytics-swift/blob/main/Examples/other_plugins/UIKitScreenTracking.swift). |
 | `shouldUseBluetooth`        | Removed                                                                                                     |
 | `shouldUseLocationServices` | Removed                                                                                                     |
 | `trackAttributionData`      | Removed                                                                                                     |
 | `trackInAppPurchases`       | Removed                                                                                                     |
-| `trackPushNotifications`    | Deprecated  in favor of a plugin the provides the same functionality. Use the [Notification Tracking plugin](https://github.com/segmentio/analytics-swift/blob/main/Examples/other_plugins/NotificationTracking.swift).                                                                                            |
+| `trackPushNotifications`    | Removed in favor of a plugin the provides the same functionality. Use the [Notification Tracking plugin](https://github.com/segmentio/analytics-swift/blob/main/Examples/other_plugins/NotificationTracking.swift).                                                                                            |
 
 ### Add destination plugins
 
@@ -338,8 +338,8 @@ Segment previously used Factories to initialize destinations. With Analytics Swi
 {% endcodeexampletab %}
 {% codeexampletab Objective-C %}
 ```objc
-    SEGTestDestination *testDestination = [[SEGTestDestination alloc] init];
-    [self.analytics addPlugin:testDestination];
+    SEGTestDestination *destination = [[SEGDestination alloc] init];
+    [self.analytics addPlugin:destination];
 ```
 {% endcodeexampletab %}
 {% endcodeexample %}
@@ -353,7 +353,7 @@ Segment previously used Factories to initialize destinations. With Analytics Swi
 {% codeexampletab Swift%}
 
 ```swift  
-    Analytics.shared().identify(nil, traits: ["email": "a user's email address"], options: ["anonymousId" : "test_anonymousId"]);
+    Analytics.shared().identify("a user's id", traits: ["email": "sloth@segment.com"], options: ["anonymousId" : "test_anonymousId"]);
 ```
 {% endcodeexampletab %}
 {% codeexampletab Objective-C %}
@@ -373,16 +373,15 @@ Segment previously used Factories to initialize destinations. With Analytics Swi
     // The newer APIs promote the use of strongly typed structures to keep codebases legible
 
     struct UserTraits(
-        let firstName: String,
-        let lastName: String
+     let email: String
     )
 
 
-    analytics.identify("a user's id", UserTraits(firstName = "John", lastName = "Doe"))
+    analytics.identify("a user's id", UserTraits(email:"sloth@segment.com"))
 
     // or, if you prefer not to use strongly typed structures
 
-    analytics.identify("a user's id", ["firstName": "John", "lastName": "Doe"])
+    analytics.identify("a user's id", ["email": "sloth@segment.com"])
 ```
 {% endcodeexampletab %}
 {% codeexampletab Objective-C %}
@@ -437,7 +436,7 @@ Segment previously used Factories to initialize destinations. With Analytics Swi
 {% codeexampletab Objective-C %}
 ```objc
     [self.analytics track:@"Item Purchased"
-                        properties:@{ @"item": @"Sword of Hercules" }];
+                        properties:@{ @"item": @"Sword of Hercules", @"revenue": 2.95 }];
 ```
 {% endcodeexampletab %}
 {% endcodeexample %}
@@ -486,7 +485,7 @@ Segment previously used Factories to initialize destinations. With Analytics Swi
 {% endcodeexampletab %}
 {% codeexampletab Objective-C %}
 ```objc
-     [self.analytics group:@"testTraits" properties:@{@"groupId": @"myTestGroupId"}];
+     [self.analytics group:@"group123" properties:@{@"name": @"Initech", @"description": @"Accounting Software"}];
 ```
 {% endcodeexampletab %}
 {% endcodeexample %}
@@ -499,13 +498,13 @@ Segment previously used Factories to initialize destinations. With Analytics Swi
 {% codeexampletab Swift%}
 
 ```swift  
-    Analytics.shared().screen("Photo Feed", properties: ["Feed Type": "private"])
+    Analytics.shared().screen("Photo Feed", properties: ["feedType": "private"])
 ```
 {% endcodeexampletab %}
 {% codeexampletab Objective-C %}
 ```objc
 [[SEGAnalytics sharedAnalytics] screen:@"Photo Feed"
-                            properties:@{ @"Feed Type": @"private" }];
+                            properties:@{ @"feedType": @"private" }];
 ```
 {% endcodeexampletab %}
 {% endcodeexample %}
@@ -533,7 +532,7 @@ Segment previously used Factories to initialize destinations. With Analytics Swi
 {% codeexampletab Objective-C %}
 ```objc
     [self.analytics screen:@"SomeScreen"
-                        properties:@{ @"Feed Type": @"private" }];
+                        properties:@{ @"feedType": @"private" }];
 ```
 {% endcodeexampletab %}
 {% endcodeexample %}
