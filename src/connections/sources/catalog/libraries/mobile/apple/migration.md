@@ -237,7 +237,7 @@ If you don't need to transform all of your Segment calls, and only want to trans
 
     // add our enrichment plugin to amplitude
 
-    amplitudeDestination.add(plugin: customizeAmplitudeTrackCalls())
+    amplitudeDestination.add(enrichment: customizeAmplitudeTrackCalls())
 
     // add amplitude to analytics instance.
 
@@ -313,15 +313,26 @@ Segment previously used Factories to initialize destinations. With Analytics Swi
 {% codeexampletab Swift%}
 
 ```swift
-    analyticsConfig.use(FooIntegrationFactory.instance()
-    let analytics = Analytics.setup(with: analyticsConfig)
+    AnalyticsConfiguration *config = AnalyticsConfiguration(writeKey: "YOUR_WRITE_KEY")
+
+    // Add any of your Device-mode destinations.
+    config.use(SEGGoogleAnalyticsIntegrationFactory.instance())
+    config.use(BNCBranchIntegrationFactory.instance())
+    ...
+
+    Analyitcs.setup(with: config)
 ```
 {% endcodeexampletab %}
 {% codeexampletab Objective-C %}
 ```objc
-    SEGConfiguration *config = [[SEGConfiguration alloc] initWithWriteKey:@"<WRITE KEY>"];
-   
-    _analytics = [[SEGAnalytics alloc] initWithConfiguration: config];
+    SEGAnalyticsConfiguration *config = [SEGAnalyticsConfiguration configurationWithWriteKey:@"YOUR_WRITE_KEY"];
+
+    // Add any of your Device-mode destinations.
+    [config use:[SEGGoogleAnalyticsIntegrationFactory instance]];
+    [config use:[BNCBranchIntegrationFactory instance]];
+    ...
+
+    [SEGAnalytics setupWithConfiguration:config];
 ```
 {% endcodeexampletab %}
 {% endcodeexample %}
@@ -332,14 +343,13 @@ Segment previously used Factories to initialize destinations. With Analytics Swi
 {% codeexampletab Swift%}
 
 ```swift  
-    let destination = /* initialize your desired destination */
-    analytics.add(plugin: destination)
+    analytics.add(plugin: BranchPlugin())
 ```
 {% endcodeexampletab %}
 {% codeexampletab Objective-C %}
 ```objc
-    SEGTestDestination *destination = [[SEGDestination alloc] init];
-    [self.analytics addPlugin:destination];
+    SEGBranchDestination *branchDestination = [[SEGBranchDestination alloc] init];
+        [self.analytics addPlugin: branchDestination];
 ```
 {% endcodeexampletab %}
 {% endcodeexample %}
@@ -353,7 +363,7 @@ Segment previously used Factories to initialize destinations. With Analytics Swi
 {% codeexampletab Swift%}
 
 ```swift  
-    Analytics.shared().identify("a user's id", traits: ["email": "sloth@segment.com"], options: ["anonymousId" : "test_anonymousId"]);
+    Analytics.shared().identify("a user's id", traits: ["email": "sloth@segment.com"]);
 ```
 {% endcodeexampletab %}
 {% codeexampletab Objective-C %}
@@ -429,7 +439,7 @@ Segment previously used Factories to initialize destinations. With Analytics Swi
 
     // or, if you prefer not to use strongly typed structures
 
-    analytics.track("Item Purchased", ["item": "Sword of Heracles", revenue: 2.95])
+    analytics.track("Item Purchased", ["item": "Sword of Heracles", "revenue": 2.95])
 ```
 {% endcodeexampletab %}
 {% codeexampletab Objective-C %}
@@ -474,7 +484,7 @@ Segment previously used Factories to initialize destinations. With Analytics Swi
         let description: String
     )
         
-    analytics.group(groupId: "group123", traits: GroupTraits(name = "Initech", description = "Accounting Software"))
+    analytics.group(groupId: "group123", traits: GroupTraits("name" = "Initech", "description" = "Accounting Software"))
 
     // or, if you prefer not to use strongly typed structures
 
