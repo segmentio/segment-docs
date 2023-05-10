@@ -166,7 +166,7 @@ The available operators depend on the property's data type:
 | Data Type         | Supported Operators                                                                          |
 | ----------------- | -------------------------------------------------------------------------------------------- |
 | string            | `is`, `is not`, `contains`,  `does not contain`, `starts with`, `ends with`                  |
-| string or numeric | `is less than`, `is less than or equal to`, `is greater than`, `is greater than or equal to` |
+| numeric           | `is less than`, `is less than or equal to`, `is greater than`, `is greater than or equal to` |
 | boolean           | `is true`, `is false`                                                                        |
 
 You can combine criteria in a single group using **ALL** or **ANY**.  Use an ANY to “subscribe” to multiple conditions. Use ALL when you need to filter for very specific conditions. You can only create one group condition per destination action. You cannot created nested conditions.
