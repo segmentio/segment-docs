@@ -46,6 +46,8 @@ The setup is complete and the Audience will start syncing to Braze Cohorts. Segm
 
 To sync additional Audiences from your Engage space, create a separate mapping in the Braze Cohorts destination. Navigate to **Connections > Destinations**, search and select the Braze Cohorts destination, and follow Steps 9-11 above.
 
+If you are creating multiple mappings under the same Braze Cohorts destination, then it is recommended to clear the default subscription for all your mapppings. The default subscription is `Event Name is Audience Entered or Event Name is Audience Exited` which gets activated for any event from any Audience connected to your Braze Cohorts destination. To ensure that a mapping is activated only for a specific audience, update the subscription of all your mapings to `Event Property audience_key is` and input the Audience Key copied as instructed in Step 2 above.
+
 > info ""
 > A user can only be added to a cohort if the user already exists in Braze. This means that the Braze Cohorts destination should be used in parallel with the [Braze Cloud Mode (Actions) destination](/docs/connections/destinations/catalog/braze-cloud-mode-actions/) or the [Braze Web Mode (Actions) destination](/docs/connections/destinations/catalog/braze-web-device-mode-actions/), both of which can create users in Braze.
 
