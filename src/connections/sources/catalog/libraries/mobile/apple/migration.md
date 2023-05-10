@@ -375,8 +375,7 @@ Segment previously used Factories to initialize destinations. With Analytics Swi
     struct UserTraits(
      let email: String
     )
-
-
+    
     analytics.identify("a user's id", UserTraits(email:"sloth@segment.com"))
 
     // or, if you prefer not to use strongly typed structures
