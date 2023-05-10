@@ -62,9 +62,9 @@ Configure Link Shortening in your [Twilio Console](https://www.twilio.com/docs/m
 3. [Add Domain Name System (DNS) records](https://www.twilio.com/docs/messaging/how-to-configure-link-shortening#step-3-adding-dns-records){:target="blank"}
 4. [Generate a TLS certificate](https://www.twilio.com/docs/messaging/how-to-configure-link-shortening#step-4-generating-a-tls-certificate){:target="blank"}
 5. [Upload your TLS certificate](https://www.twilio.com/docs/messaging/how-to-configure-link-shortening#step-5-uploading-tls-certificate){:target="blank"}
-6. [Configure fallback and callback URLs](https://www.twilio.com/docs/messaging/how-to-configure-link-shortening#step-5-uploading-tls-certificate){:target="blank"}
+6. [Configure fallback and callback URLs](https://www.twilio.com/docs/messaging/how-to-configure-link-shortening#step-5-uploading-tls-certificate){:target="blank"} (Optional)
 
-Once you've configured Link Shortening, Twilio automatically shortens the link URLs that you send in your SMS messages.
+Once you've configured Link Shortening, Twilio automatically shortens the link URLs for recipients of your SMS messages. You won't see the shortened URLs inside the message editor.
 
 > info ""
 > At this time, Link Shortening is only available for SMS messages.
