@@ -485,7 +485,7 @@ Segment previously used Factories to initialize destinations. With Analytics Swi
 
     // or, if you prefer not to use strongly typed structures
 
-    analytics.group("group123", ["name": "Initech", description: "Accounting Software"])
+    analytics.group("group123", ["name": "Initech", "description": "Accounting Software"])
 
 ```
 {% endcodeexampletab %}
