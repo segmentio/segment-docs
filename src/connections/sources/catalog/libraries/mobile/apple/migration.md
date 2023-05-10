@@ -287,7 +287,6 @@ Segment added these options:
 
 Segment removed these options:
 
-
 | Deprecated Option           | Details                                                                                                     |
 | --------------------------- | ----------------------------------------------------------------------------------------------------------- |
 | `enableAdvertisingTracking` | Removed                                                                                                     |
