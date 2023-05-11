@@ -112,6 +112,8 @@ sections:
       title: 'Spec: Group'
     - path: /connections/spec/identify
       title: 'Spec: Identify'
+    - path: /connections/spec/alias
+      title: 'Spec: Alias'
     - path: /connections/spec/common
       title: 'Spec: Common Fields'
     - path: /connections/spec/mobile
