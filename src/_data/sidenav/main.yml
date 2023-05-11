@@ -173,9 +173,9 @@ sections:
       title: Reverse ETL Overview
     - path: /connections/reverse-etl/reverse-etl-catalog
       title: Reverse ETL Catalog
-    - section_title: Reverse ETL Source Setup Guides  
+    - section_title: Reverse ETL Source Setup Guides
       slug: connections/reverse-etl/reverse-etl-source-setup-guides
-      section: 
+      section:
       - path: /connections/reverse-etl/reverse-etl-source-setup-guides/bigquery-setup
         title: BigQuery Reverse ETL Setup
       - path: /connections/reverse-etl/reverse-etl-source-setup-guides/redshift-setup
