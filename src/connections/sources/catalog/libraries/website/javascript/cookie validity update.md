@@ -25,7 +25,7 @@ Here is the full list of available parameters with their default values:
 | Parameter | Description | Default value |
 | --- | --- | --- |
 | `domain` | The domain to set the cookie to. This must match the domain of the JavaScript origin. If an Analytics.js cookie already exists at the top-level domain, Segment carries the same cookie value to any subdomains, despite `domain` configuration. | Top-level domain |
-| `maxage` | The maximum amount of time in seconds before the cookie expires. Browsers may clear cookies before this elapses. | 1 year |
+| `maxage` | The maximum amount of time in days before the cookie expires. Browsers may clear cookies before this elapses. | 1 year |
 | `path` | The path the cookie is valid for. | `"/"` |
 | `sameSite` | This prevents the browser from sending the cookie along with cross-site requests. | `Lax` |
 | `secure` | This determines whether cookies can only be transmitted over secure protocols such as https. | `false` |
@@ -35,7 +35,7 @@ Example:
 analytics.load('writeKey', {
   cookie: {
     domain: 'sub.site.example',
-    maxage: 604800, // 7 days in seconds
+    maxage: 7, 7 days
     path: '/',
     sameSite: 'Lax',
     secure: true
