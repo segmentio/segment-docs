@@ -9,6 +9,7 @@ The following dependencies are installed in the function environment by default.
 - [`atob v2.1.2`](https://www.npmjs.com/package/atob){:target="_blank"} exposed as `atob`
 - [`aws-sdk v2.488.0`](https://www.npmjs.com/package/aws-sdk){:target="_blank"} exposed as `AWS`
 - [`btoa v1.2.1`](https://www.npmjs.com/package/btoa){:target="_blank"} exposed as `btoa`
+- [`fetch-retry`](https://www.npmjs.com/package/fetch-retry){:target="_blank"} exposed as `fetchretrylib.fetchretry`
 - [`form-data v2.4.0`](https://www.npmjs.com/package/form-data){:target="_blank"} exposed as `FormData`
 - [`@google-cloud/automl v2.2.0`](https://www.npmjs.com/package/@google-cloud/automl){:target="_blank"} exposed as `google.cloud.automl`
 - [`@google-cloud/bigquery v5.3.0`](https://www.npmjs.com/package/@google-cloud/bigquery){:target="_blank"} exposed as `google.cloud.bigquery`
