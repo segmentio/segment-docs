@@ -35,7 +35,7 @@ Example:
 analytics.load('writeKey', {
   cookie: {
     domain: 'sub.site.example',
-    maxage: 7, 7 days
+    maxage: 7, // 7 days
     path: '/',
     sameSite: 'Lax',
     secure: true
