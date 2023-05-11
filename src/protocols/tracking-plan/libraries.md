@@ -19,7 +19,7 @@ To create a new Library:
 2. Click **Libraries** in the top navigation bar
 3. Click **New Library** and follow the steps to create an event or property library
 
-![](../images/property_library_example.png)
+![Screenshot of the Ecommerce Properties Library.](../images/property_library_example.png)
 
 ### Tracking Plan Event Libraries
 
@@ -33,7 +33,7 @@ Tracking Plan property Libraries support Track event property groups. Property L
 
 You can import event and property libraries into a Tracking Plan. Enter the Draft mode for a Tracking Plan and click the **Import from Event or Property Library** dropdown. A wizard will appear allowing you to either add the events to a tracking plan, or add properties to selected events already in the tracking plan. After adding your events or properties, remember to merge your changes!
 
-![](../images/import_library_to_tracking_plan.gif)
+![Animation of a user importing events into their Tracking Plan using a Tracking Plan library.](../images/import_library_to_tracking_plan.gif)
 
 ### Library syncing
 
@@ -47,5 +47,5 @@ Syncing a Library makes events and properties un-editable, and bypasses the Trac
 > warning ""
 > All changes made to a synced library pass through to the Tracking Plans and may impact data deliverability
 
-![](../images/unsync_library.png)
+![Screenshot of the Synced Libraries page, with the overflow menu selected and the Unsync from Tracking setting visible.](../images/unsync_library.png)
 

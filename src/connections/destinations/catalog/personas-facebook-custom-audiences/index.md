@@ -74,10 +74,13 @@ Facebook offers the Facebook Pixel, which allows you to retarget these types of 
 
 ### 1. Authorize Facebook Custom Audiences
 
-- Go to your Space in your Segment Workspace.
-- Go to the Destinations tab and click “Add Destination”.
+- Go to your Space in your Segment Workspace and click Engage Settings.
+- Go to the Destinations tab and click “Add Destination”. 
 - Select the Facebook Custom Audiences option, and click **Configure Facebook Custom Audiences**.
 - Authorize Facebook Ads and select a Facebook account ID to sync to.
+
+> info ""
+> Add the destination within the Engage space and not through the connections pipeline to ensure proper configuration.
 
 ### 2. Create an audience in Engage & connect to Facebook
 
@@ -96,7 +99,7 @@ Once created, the audience should be available in Facebook in ten minutes unless
 - From within Facebook Ads, go to **Business Manager > All tools > Assets > Audiences**.
 - Click the Facebook audience name that matches your Engage audience name, and check **Audience History** to see how many users were added.
 
-![](images/fb_ca_final.png)
+![A screenshot of the Audiences page in Facebook Ads.](images/fb_ca_final.png)
 
 
 ## Additional Traits Matching

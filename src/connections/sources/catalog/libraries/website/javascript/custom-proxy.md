@@ -15,6 +15,9 @@ To set up a custom domain, you need:
 - Access to the CDN settings
 - A security certificate for the proxy domain
 
+> info "Custom Proxy Troubleshooting"
+> If you experience issues configuring a custom proxy, contact your organization's IT department for help. Segment does not have access to the resources you need to configure a custom proxy.
+
 This guide explains how to set up a custom domain in CloudFront. You can apply these principles to almost any modern CDN that supports proxies.
 
 You need to set up two important parts, regardless of the CDN provider you use:
@@ -22,32 +25,101 @@ You need to set up two important parts, regardless of the CDN provider you use:
 - Proxy to Segment CDN (`cdn.segment.com`)
 - Proxy to Segment tracking API (`api.segment.io`)
 
+> warning ""
+> If you are using a [Regional Workspace](/docs/guides/regional-segment/#client-side-sources), please note that instead of using `api.segment.io` to proxy the Tracking API, you'll be using `events.eu1.segmentapis.com`
+
+> info ""
+> Segment only has the ability to enable the proxy setting for the Web (Analytics.js) source. Details for mobile source proxies are in the [Analytics for iOS](/docs/connections/sources/catalog/libraries/mobile/ios/#proxy-https-calls) and [Analytics for Android](/docs/connections/sources/catalog/libraries/mobile/android/#proxying-http-calls) documentation.  It is not currently possible to set up a proxy for server sources using the Segment UI.
+
 ## Set up
 
-Follow the directions listed for CloudFront or use your own CDN setup. Once you complete those steps and verify that your proxy works for both `cdn.segment.com` and `api.segment.io`, [contact Segment Product Support](https://segment.com/help/contact/) with the following template email:
+There are 2 options you can choose from when you set up your custom domain proxy.
+1. [CloudFront](#cloudfront)
+2. [Custom CDN or API proxy](#custom-cdn--api-proxy)
+
+Follow the directions listed for [CloudFront](#cloudfront) or [use your own CDN setup](#custom-cdn--api-proxy). Once you complete those steps and verify that your proxy works for both `cdn.segment.com` and `api.segment.io`, [contact Segment Product Support](https://segment.com/help/contact/) with the following template email:
 
 ```text
 Hi,
 
 This is {person} from {company}. I would like to configure a proxy for the following source(s):
 
-* Source {link to source in Segment} with source ID {source id}
-* Source {link to source in Segment} with source ID {source id}
+* Source URL with Source ID
+* Source URL with Source ID
 ```
 
-Double-check the source link and the Source ID.
+- **Source URL**: link to the source in your Segment workspace (for example, `https://app.segment.com/<your_slug>/sources/<source>/overview`)
+- **Source ID**: navigate to **API Keys** on the left-hand side of the source **Settings** and provide the Source ID
+
+Double-check the Source URL and the Source ID.
 
 A Segment Customer Success team member will respond that they have enabled this option for your account. When you receive this confirmation, open the source in your workspace, and navigate to Settings > Analytics.js. Update the **Host Address** setting from `api.segment.io/v1` to `[your proxy host]/v1`.
 
 > info ""
 > The **Host Address** field does not appear in source settings until it's enabled by Segment Customer Success.
 
+
+## Custom CDN / API Proxy
+Follow these instructions after setting up a proxy such as [CloudFront](#cloudfront). Choose between the [snippet instructions](#snippet-instructions) or the [npm instructions](#npm-instructions).  
+
+### Snippet instructions
+If you're a snippet user, you need to modify the [analytics snippet](/docs/getting-started/02-simple-install/#step-1-copy-the-snippet) that's inside your `<head>`.
+
+To proxy settings and destination requests that typically go to `https://cdn.segment.com`, replace:
+```diff
+- t.src="https://cdn.segment.com/analytics.js/v1/" + key + "/analytics.min.js"
++ t.src="https://MY-CUSTOM-CDN-PROXY.com" + key + "/analytics.min.js"
+```
+
+To proxy tracking calls that typically go to `api.segment.io/v1`, replace:
+```diff
+- analytics.load("<MY_WRITE_KEY>")
++ analytics.load("<MY_WRITE_KEY>", { integrations: { "Segment.io": { apiHost: "MY-CUSTOM-API-PROXY.com/v1" }}})
+```
+
+### npm instructions
+See the [`npm` library-users instructions](https://www.npmjs.com/package/@segment/analytics-next){:target="_blank"} for more information.
+
+Proxy settings and destination requests that typically go to `https://cdn.segment.com` through a custom proxy.
+
+```ts
+const analytics = AnalyticsBrowser.load({
+  writeKey,
+  // GET https://MY-CUSTOM-CDN-PROXY.com/v1/project/<writekey>/settings --> proxies to
+  // https://cdn.segment.com/v1/projects/<writekey>/settings
+
+  // GET https://MY-CUSTOM-CDN-PROXY.com/next-integrations/actions/...js  --> proxies to
+  // https://cdn.segment.com/next-integrations/actions/...js
+  cdnURL: 'https://MY-CUSTOM-CDN-PROXY.com'
+ })
+```
+
+Proxy tracking calls that typically go to `api.segment.io/v1` by configuring `integrations['Segment.io'].apiHost`.
+```ts
+const analytics = AnalyticsBrowser.load(
+    {
+      writeKey,
+      cdnURL: 'https://MY-CUSTOM-CDN-PROXY.com'
+    },
+    {
+      integrations: {
+        'Segment.io': {
+          // POST https://MY-CUSTOM-API-PROXY.com/v1/t --> proxies to
+          // https://api.segment.io/v1/t
+          apiHost: 'MY-CUSTOM-API-PROXY.com/v1',
+          protocol: 'https' // optional
+        }
+      }
+    }
+  )
+```
+
 ## CloudFront
 
 These instructions refer to Amazon CloudFront, but apply more generally to other providers as well.
 
 ### CDN Proxy
-To set up your CDN Proxy: 
+To set up your CDN Proxy:
 1. Log in to the AWS console and navigate to CloudFront.
 2. Click **Create Distribution**.
 3. Configure the distribution settings. In the Origin section, update the following values:
@@ -68,11 +140,11 @@ Take note of the Domain Name for use in the next step.
 To add a CNAME record for the Segment proxy to your organizations DNS settings:
 1. Use a name that makes it clear what you are using the subdomain for, for example `analytics.mysite.com`.
 2. Go to your domain registrar and add a new record to your DNS of type "CNAME".
-3. Configure these values: 
+3. Configure these values:
     - **Name**: `<subdomain_name>.yourdomain.com`
     - **Value**:  The Domain Name value from CloudFront
-4. Save your record. This might take some time to take effect, depending on your TTL settings. 
-5. Make a `curl` request to your domain to verify that the proxy works. 
+4. Save your record. This might take some time to take effect, depending on your TTL settings.
+5. Make a `curl` request to your domain to verify that the proxy works.
 
 
 
@@ -94,5 +166,3 @@ To add a CNAME record to your DNS settings:
    - **Value**: Tracking API CloudFront Distribution Domain Name
 3. Save your record. This might take some time to take effect, depending on your TTL settings.
 4. Run `curl` on your domain to check if the proxy is working correctly.
-
-

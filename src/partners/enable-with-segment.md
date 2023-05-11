@@ -2,7 +2,7 @@
 title: Enable with OAuth
 ---
 
-Enable with OAuth, supported with the [Public API](/docs/api/public-api), allows partners to build seamless flows for customers to implement and enable integrations within their workspace. This is a [post-launch requirement](/docs/partners/#post-launch) for a partner to graduate from public beta to public.
+Enable with OAuth, supported with the [Config API](/docs/api/config-api), allows partners to build seamless flows for customers to implement and enable integrations within their workspace. 
 
 ## Concepts
 
@@ -10,17 +10,17 @@ Before getting started with your implementation, it's important to understand th
 
 ### Apps
 
-As a partner developing an integration using Segment's Public API, everything starts from an **App**. An App behaves like a standard OAuth client, but adds granular permissions. When a user installs your App through the familiar OAuth flow, Segment requires the user to grant access to a specific workspace and source. The user must also be a Workspace Owner of the authorized workspace.
+As a partner developing an integration using Segment's Config API, everything starts from an **App**. An App behaves like a standard OAuth client, but adds granular permissions. When a user installs your App through the familiar OAuth flow, Segment requires the user to grant access to a specific workspace and source. The user must also be a Workspace Owner of the authorized workspace.
 
 As a destination partner, you may only manage your own destination on the workspace and source authorized by the user.
 
-### App Installs
+### App installs
 
 Segment Workspace Owners authorize your App on their workspace using a web-based authorization flow, exactly like OAuth. When authorized, Segment creates an **App Install** on the workspace.
 
 Therefore, the token returned by Segment isn't tied to a user – it's tied to an App Install.
 
-## Set up Guide
+## Set up guide
 
 There are three steps to implement an "Enable with Segment" OAuth flow:
 
@@ -35,21 +35,21 @@ There are three steps to implement an "Enable with Segment" OAuth flow:
    ![Step 1](images/enable-with-segment/step1.png)
 3. Name your App, and click **Create**.
    ![Step 2](images/enable-with-segment/step2.png)
-   You'll be redirected to your App's main page. If you are implementing Enable with OAuth for an integration not built using the Developer Center and encounter an issue where your integration's name is already taken, you may choose another name (eg. TOOLNAME-enable). You will have the option to connect the two by selecting a scope in Step #2.
+   You'll be redirected to your App's main page. If you are implementing Enable with OAuth for an integration not built using the Developer Center and encounter an issue where your integration's name is already taken, you may choose another name (for example, TOOLNAME-enable). You will have the option to connect the two by selecting a scope in Step #2.
 4. Click the `App Info` tab.
    ![Step 3](images/enable-with-segment/step3.png)
 5. From the `App Info` tab, click `OAuth` in the left side navigation.
    ![Step 4](images/enable-with-segment/step4.png)
-6. Keep your Developer Center browser window open – we'll need the OAuth credentials on this page to set up an OAuth consumer.
+6. Keep your Developer Center browser window open – Segment needs the OAuth credentials on this page to set up an OAuth consumer.
    ![Step 5](images/enable-with-segment/step5.png)
 
 ### 2. Set up an OAuth consumer
 
-> For this step, we reference our example OAuth consumer at https://github.com/segmentio/partnerapp.
+> For this step, reference Segment's example OAuth consumer at https://github.com/segmentio/partnerapp.
 >
-> You should adapt our example to your own infrastructure.
+> You should adapt Segment's example to your own infrastructure.
 
-1. Clone our `partnerapp` repo:
+1. Clone Segment's `partnerapp` repo:
    ```sh
    git clone https://github.com/segmentio/partnerapp
    ```
@@ -66,7 +66,7 @@ There are three steps to implement an "Enable with Segment" OAuth flow:
 4. Optionally set a new scope. The options, from most to least restrictive are:
   * `destination/<SLUG>` (e.g. `destination/airship`) -- create or update a single destination type on a single source a user consents to. This allows you to manage a secret like `apiKey` on your company's destination automatically but nothing else. Note that you may need to update the scope to the right destination slug if your app name differs.
   * `workspace:read` -- read-only access to all the settings and metadata on a single workspace a user consents to. This allows you to build integrations like a dashboard that gets and displays a workspace event delivery metrics
-  * `workspace` -- full acess to all the settings on a single workspace a user consents to. This allows you to build deep integrations that create sources, destinations and more.
+  * `workspace` -- full access to all the settings on a single workspace a user consents to. This allows you to build deep integrations that create sources, destinations, and more.
 5. Finally, create a component of your choice in Developer Center.
    ![Step 8](images/enable-with-segment/step8.png)
 
@@ -74,9 +74,9 @@ There are three steps to implement an "Enable with Segment" OAuth flow:
 
 ### 3. Run through an example OAuth flow
 
-> For this step, we reference our example OAuth consumer at https://github.com/segmentio/partnerapp.
+> For this step, reference Segment's example OAuth consumer at https://github.com/segmentio/partnerapp.
 >
-> You should adapt our example to your own infrastructure.
+> You should adapt Segment's example to your own infrastructure.
 
 1. Back in the root directory of your `partnerapp` clone, update the following two pieces of configuration in `index.js`:
    ```js
@@ -93,22 +93,22 @@ There are three steps to implement an "Enable with Segment" OAuth flow:
    ```sh
    node index.js
    ```
-3. Navigate through our login and authorize OAuth flows:
+3. Navigate through Segment's login and authorize OAuth flows:
    ![Step 9](images/enable-with-segment/step9.png)
 4. Look for a JSON response in your browser window, and output in the terminal running `partnerapp`:
    ![Step 10](images/enable-with-segment/step10.png)
    ![Step 11](images/enable-with-segment/step11.png)
 
-## OAuth Implementation
+## OAuth implementation
 
 If you use a standard OAuth library in your programming language, all of this is done for you as shown in the [setup guide](#set-up-guide). These steps are just for illustration.
 
 1. When the user wants to authenticate, you redirect them to `https://id.segmentapis.com/oauth2/auth?response_type=code&scope=workspace:read&client_id=...`.
-   > **Note**: We only accept `response_type=code` here. That means Segment returns an `auth_code` that your library exchanges for an install token in Step 5 below.
+   > **Note**: Segment only accepts `response_type=code` here. That means Segment returns an `auth_code` that your library exchanges for an install token in Step 5 below.
 2. If the user is logged out, Segment redirects to `https://app.segment.com/login`
 3. If the user is logged in, Segment redirects to `https://app.segment.com/authorize`
 4. If user consents, Segment redirects with a code to your redirect_uri `http://localhost:8888/auth/segment/callback`. This app listens for this request and runs step #5 below.
-5. You exchange the code with for an install token from `https://id.segmentapis.com/oauth2/token`. The body of this POST request should include the code you received and your `redirect_uri`. Include your client secret and client id in a basic authorization header.
+5. You exchange the code for an install token from `https://id.segmentapis.com/oauth2/token`. The body of this POST request should include the code you received and your `redirect_uri`. Include your client secret and client id in a basic authorization header.
 6. You save the access token, install name, workspace name and source name for the user.
 
 At the end of a successful flow you get an "Install Token". If you passed in the scope as `destination/clearbrain` the user is prompted to select a source on which to install your Enable With Segment App, and that source is returned to you as well.
@@ -130,7 +130,7 @@ You can then perform API operations as the installed app on behalf a user.
 
 With the `destination/clearbrain` scope you can only change the destination specified (`clearbrain` in this case) on the user selected source. This is the recommended scope for apps trying to control just one destination for a user (Enable With Segment functionality). These apps can only access the Destinations API. You can find a detailed reference here: https://reference.segmentapis.com/ > Destinations
 
-You can GET a destination if it exists (and you have access to the user workspace and source) as shown below. You can also Create, Update or Delete it too.
+You can GET a destination if it exists (and you have access to the user workspace and source) as shown below. You can also Create, Update, or Delete it too.
 
 ```sh
 $ INSTALL_TOKEN=YL8a0w-Boz1EgZgmD2ELZvsxakjqSMwO8xe7tV-ToSk.nKaLX2QHocqalHR3O4BdoYdcopk3hjW4izYHMG14cxQ
@@ -179,7 +179,7 @@ $ curl \
 }
 ```
 
-## Advanced Use Cases
+## Advanced use cases
 
 > Developer Center Destinations must use their specific destination scope for their enable flows. More permissive apps are subject to revocation unless specifically approved. If you've been approved, however, this section may apply.
 
@@ -188,7 +188,7 @@ If you created an App with a more permissive scope, you have access to more APIs
 - With the `workspace` scope you can change all resources
 - With the `workspace:read` you can read all resources, but not change them
 
-A full list of APIs are here: https://segment.com/docs/api/public-api/
+A full list of APIs are here: https://segment.com/docs/api/config-api/
 
 The example below shows how you would get a users workspace if you had any of the above scopes:
 
@@ -254,7 +254,7 @@ If you created the app with the `destination/<slug>` scope, you can only access 
 
 ### How do I create or update a destination that requires more configuration than just a API Key?
 
-`GET` the destination settings using our catalog API first. This shows all of the fields the destination supports. You can then substitute the field values for the ones you need to specify.
+`GET` the destination settings using Segment's catalog API first. This shows all of the fields the destination supports. You can then substitute the field values for the ones you need to specify.
 
 Using this body, craft a `CREATE` request and substitute the appropriate field values. Check out https://reference.segmentapis.com/ > Destination > CREATE request for an example
 
@@ -280,19 +280,19 @@ Your `redirect_uri` probably doesn't match what you set in the App Create Reques
 
 ### How many redirect_uris can I have? Can I add more after the app is created?
 
-You can have five `redirect_uris` on app creation. Editing the app info directly is not supported at this time. [contact us](https://segment.com/help/contact/) if you want any of your `redirect_uris` or other info changed.
+You can have five `redirect_uris` on app creation. Editing the app info directly is not supported at this time. [contact Segment](https://segment.com/help/contact/) if you want any of your `redirect_uris` or other info changed.
 
 In the future we will allow you to update this information on your own.
 
 ### I am getting "malformed token" when I try to access the API. What is wrong?
 
- - Tokens expire every hour, so your token might have expired. To get a new access_token, hit the refresh endpoint. Make sure you pass in the correct `install_name`, `client_id` and `client_secret` in that request.
+ - Tokens expire every hour, so your token might have expired. To get a new access_token, hit the refresh endpoint. Make sure you pass in the correct `install_name`, `client_id`, and `client_secret` in that request.
 
  - You might not have permissions for the action you're trying to take. You can only write to a resource when you have `workspace:read` permission. If you need write access, then create a new app with `workspace` permission and then re-install it.
 
 ### Do you send CSRF state back when you redirect?
 
-Yes. If you set the `state=123` parameter in your initial request, we send it back to you.
+Yes. If you set the `state=123` parameter in your initial request, Segment sends it back to you.
 
 ### Do we still have to send the redirect_uri in the oauth2/token request?
 
@@ -306,4 +306,4 @@ When the app was installed, you should have received a Segment `workspace` and  
 
 ### OK I managed to create an App. How do I use your APIs?
 
-See [the API docs](/docs/api/public-api/).
+See [the API docs](/docs/api/config-api/).

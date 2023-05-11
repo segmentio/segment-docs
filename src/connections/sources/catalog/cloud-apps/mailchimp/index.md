@@ -14,9 +14,9 @@ id: acd1bc21d
    **Note**: You can add multiple instances if you have multiple Mailchimp accounts. That's why we allow you to customize the source's nickname and schema name!
 4. Next, provide credentials to an account with API permissions to access your Mailchimp data. It is recommended that you create a brand new api key for the Segment source. MailChimp restricts each api key to a maximum of 10 concurrent requests, so creating a dedicated one for Segment will ensure maximum throughput. You can find your API key in **Account > Extras > API Keys**. You can read more about API keys on [MailChimp's docs](http://kb.mailchimp.com/integrations/api-integrations/about-api-keys).
 
-   ![](images/3027189_API+Keys.png)
+   ![Screenshot of the Overview page in Mailchimp, with the Extras menu selected.](images/3027189_API+Keys.png)
 
-   ![](images/3032880_ChimpKey.png)
+   ![Screenshot of the API keys settings page in Mailchimp.](images/3032880_ChimpKey.png)
 
 
 5. Back in Segment, go to the MailChimp source and paste key into the MailChimp API Key field.
@@ -44,5 +44,6 @@ Collections are the groupings of resources we pull from your source. In your war
 |  ------ | ------ | ------ |
 |  `conversations` | object | Conversation tracking is a [paid feature](http://kb.mailchimp.com/accounts/billing/how-mailchimp-pricing-plans-work) that lets you view subscribers' replies to your campaigns from inside your MailChimp account. Fetched using Mailchimp's [`/conversations`endpoint](https://mailchimp.com/developer/reference/conversations/). |
 |  `lists` | object | The state of your various lists in Mailchimp. Fetched using Mailchimp's [`/lists` endpoint](https://mailchimp.com/developer/reference/lists/). |
+|  `list members` | object | Get the list of members in a MailChimp list. Fetched using Mailchimp's [`/lists` endpoint] If you are interested in this collection, [contact Segment Support](https://segment.com/help/contact/) |
 |  `campaigns` | object | Your Mailchimp campaigns. Fetched using Mailchimp's [`/campaigns` endpoint](https://mailchimp.com/developer/reference/campaigns/). |
 |  `subscriber activity` | object | **Currently unavailable** Mailchimp's subscriber activity endpoint cannot support our Sources product. If you are interested in this collection, contact your MailChimp Client Success Manager and request that they update their export API functionality.* |

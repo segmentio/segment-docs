@@ -4,7 +4,10 @@ rewrite: true
 redirect_from: '/connections/destinations/catalog/piwik/'
 id: 54521fda25e721e32a72eee7
 ---
-[Matomo](https://matomo.org/), formerly Piwik, is the leading open source web analytics platform that gives you valuable insights into your website's visitors, your marketing campaigns and much more, so you can optimize your strategy and online experience of your visitors.
+[Matomo](https://matomo.org/), formerly Piwik, is the leading open source web analytics platform that gives you valuable insights into your website's visitors, your marketing campaigns and much more, so you can optimize your strategy and online experience of your visitors. 
+
+Segment’s Matomo destination code is open-source and can be viewed on GitHub:
+- [Javascript](https://github.com/segmentio/analytics.js-integrations/blob/master/integrations/piwik/lib/index.js){:target="_blank"}
 
 ## Getting Started
 

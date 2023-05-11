@@ -93,7 +93,11 @@ To install and verify your accounts:
 snowsql -a <account>  -u <user>
 ```
 
-For accounts outside the US, the account ID includes the region. You can also find part of your account name by running the following query on your worksheet in Snowflake:
+For accounts outside the US, the account ID includes the region. You can find your account name from the browser address string.
+
+If your web address is `https://myaccountname.snowflakecomputing.com/console#/internal/worksheet`, your account name would be `myaccountname`.
+
+You can also find part of your account name by running the following query on your worksheet in Snowflake:
 
 ```
 SELECT CURRENT_ACCOUNT();
@@ -154,9 +158,9 @@ After creating a Snowflake warehouse, the next step is to connect Segment.
 
 ## Security
 
-### Whitelisting IPs
+### Allowlisting IPs
 
-If you create a network policy with Snowflake, add the following IP address to the "Allowed IP Addresses" list: `52.25.130.38/32`
+If you create a network policy with Snowflake, add the following IP addresses to the "Allowed IP Addresses" list: `52.25.130.38/32`, `34.223.203.0/28`
 
 ### Multi-Factor Authentication (MFA) & SSO
 

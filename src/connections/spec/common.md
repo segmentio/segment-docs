@@ -47,13 +47,6 @@ Here's an example of these common fields in raw JSON:
       "version": "2.11.1"
     },
     "locale": "en-US",
-    "location": {
-      "city": "San Francisco",
-      "country": "United States",
-      "latitude": 40.2964197,
-      "longitude": -76.9411617,
-      "speed": 0
-    },
     "network": {
       "bluetooth": false,
       "carrier": "T-Mobile US",
@@ -123,25 +116,26 @@ Beyond this common structure, each API call adds a few specialized top-level fie
 
 Context is a dictionary of extra information that provides useful context about a datapoint, for example the user's `ip` address or `locale`. You should **only use** Context fields for their intended meaning.
 
-| Field       | Type    |   Description            |
-|-------------|---------|--------------------------|
-| `active`    | Boolean | Whether a user is active. <br><br> This is usually used to flag an `.identify()` call to just update the traits but not "last seen." |
-| `app`       | Object  | dictionary of information about the current application, containing `name`, `version`, and `build`. <br><br> This is collected automatically from the mobile libraries when possible. |
-| `campaign`  | Object  | Dictionary of information about the campaign that resulted in the API call, containing `name`, `source`, `medium`, `term`, `content`, and any other custom UTM parameter. <br><br> This maps directly to the common UTM campaign parameters.  |
-| `device`    | Object  | Dictionary of information about the device, containing `id`, `advertisingId`, `manufacturer`, `model`, `name`, `type`, and `version`.                |
-| `ip`        | String  | Current user's IP address.     |
-| `library`   | Object  | Dictionary of information about the library making the requests to the API, containing `name` and `version`.       |
-| `locale`    | String  | Locale string for the current user, for example `en-US`.        |
-| `location`  | Object  | Dictionary of information about the user's current location, containing `city`, `country`, `latitude`, `longitude`, `region`, and `speed`.                 |
-| `network`   | Object  | Dictionary of information about the current network connection, containing `bluetooth`, `carrier`, `cellular`, and `wifi`.               |
-| `os`        | Object  | Dictionary of information about the operating system, containing `name` and `version`.               |
-| `page`      | Object  | Dictionary of information about the current page in the browser, containing `path`, `referrer`, `search`, `title` and `url`. This is automatically collected by [Analytics.js](/docs/connections/sources/catalog/libraries/website/javascript/#context--traits).    |
-| `referrer`  | Object  | Dictionary of information about the way the user was referred to the website or app, containing `type`, `name`, `url`, and `link`.                                                |
-| `screen`    | Object  | Dictionary of information about the device's screen, containing `density`, `height`, and `width`.                |
-| `timezone`  | String  | Timezones are sent as tzdata strings to add user timezone information which might be stripped from the timestamp, for example `America/New_York`.     |
-| `groupId`   | String  | Group / Account ID. <br><br> This is useful in B2B use cases where you need to attribute your non-group calls to a company or account. It is relied on by several Customer Success and CRM tools.          |
-| `traits`    | Object  | Dictionary of `traits` of the current user. <br><br> This is useful in cases where you need to `track` an event, but also associate information from a previous `identify` call. You should fill this object the same way you would fill traits in an [identify call](/docs/connections/spec/identify/#traits). |
-| `userAgent` | String  | User agent of the device making the request.             |
+| Field                                                                                                    | Type    | Description                                                                                                                                                                                                                                                                                                     |
+| -------------------------------------------------------------------------------------------------------- | ------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `active`                                                                                                 | Boolean | Whether a user is active. <br><br> This is usually used to flag an `.identify()` call to just update the traits but not "last seen."                                                                                                                                                                            |
+| `app`                                                                                                    | Object  | dictionary of information about the current application, containing `name`, `version`, and `build`. <br><br> This is collected automatically from the mobile libraries when possible.                                                                                                                           |
+| `campaign`                                                                                               | Object  | Dictionary of information about the campaign that resulted in the API call, containing `name`, `source`, `medium`, `term`, `content`, and any other custom UTM parameter. <br><br> This maps directly to the common UTM campaign parameters.                                                                    |
+| `device`                                                                                                 | Object  | Dictionary of information about the device, containing `id`, `advertisingId`, `manufacturer`, `model`, `name`, `type`, and `version`.                                                                                                                                                                           |
+| `ip`                                                                                                     | String  | Current user's IP address.                                                                                                                                                                                                                                                                                      |
+| `library`                                                                                                | Object  | Dictionary of information about the library making the requests to the API, containing `name` and `version`.                                                                                                                                                                                                    |
+| `locale`                                                                                                 | String  | Locale string for the current user, for example `en-US`.                                                                                                                                                                                                                                                        |
+| `network`                                                                                                | Object  | Dictionary of information about the current network connection, containing `bluetooth`, `carrier`, `cellular`, and `wifi`. If the `context.network.cellular` and `context.network.wifi` fields are empty, then the user is offline.                                                                                                                                                                                     |
+| `os`                                                                                                     | Object  | Dictionary of information about the operating system, containing `name` and `version`.                                                                                                                                                                                                                          |
+| `page`                                                                                                   | Object  | Dictionary of information about the current page in the browser, containing `path`, `referrer`, `search`, `title` and `url`. This is automatically collected by [Analytics.js](/docs/connections/sources/catalog/libraries/website/javascript/#context--traits).                                                |
+| `referrer`                                                                                               | Object  | Dictionary of information about the way the user was referred to the website or app, containing `type`, `name`, `url`, and `link`.                                                                                                                                                                              |
+| `screen`                                                                                                 | Object  | Dictionary of information about the device's screen, containing `density`, `height`, and `width`.                                                                                                                                                                                                               |
+| `timezone`                                                                                               | String  | Timezones are sent as tzdata strings to add user timezone information which might be stripped from the timestamp, for example `America/New_York`.                                                                                                                                                               |
+| `groupId`                                                                                                | String  | Group / Account ID. <br><br> This is useful in B2B use cases where you need to attribute your non-group calls to a company or account. It is relied on by several Customer Success and CRM tools.                                                                                                               |
+| `traits`                                                                                                 | Object  | Dictionary of `traits` of the current user. <br><br> This is useful in cases where you need to `track` an event, but also associate information from a previous `identify` call. You should fill this object the same way you would fill traits in an [identify call](/docs/connections/spec/identify/#traits). |
+| `userAgent`                                                                                              | String  | User agent of the device making the request.                                                                                                                                                                                                                                                                    |
+| `channel`                                                                                                | String  | where the request originated from: server, browser or mobile                                                                                                                                                                                                                                                    |
+
 
 ## Context fields automatically collected
 
@@ -170,9 +164,6 @@ Other libraries only collect `context.library`, any other context variables must
 | library.version          | ✅            | ✅             | ✅                 |
 | ip*                      | ✅            | ✅             | ✅                 |
 | locale                   | ✅            | ✅             | ✅                 |
-| location.latitude        |              |               |                   |
-| location.longitude       |              |               |                   |
-| location.speed           |              |               |                   |
 | network.bluetooth        |              |               | ✅                 |
 | network.carrier          |              | ✅             | ✅                 |
 | network.cellular         |              | ✅             | ✅                 |
@@ -188,11 +179,20 @@ Other libraries only collect `context.library`, any other context variables must
 | screen.height            |              | ✅             | ✅                 |
 | screen.width             |              | ✅             | ✅                 |
 | traits                   |              | ✅             | ✅                 |
-| userAgent                | ✅            |              | ✅                 |
+| userAgent                | ✅            |               | ✅                 |
 | timezone                 |              | ✅             | ✅                 |
 
 - IP Address isn't collected by Segment's libraries, but is instead filled in by Segment's servers when it receives a message for **client side events only**.
 - The Android library collects `screen.density` with [this method](/docs/connections/spec/common/#context-fields-automatically-collected).
+
+To pass the context variables which are not automatically collected by Segment's libraries, you must manually include them in the event payload. The following code shows how to pass `groupId` as the context field of Analytics.js's `.track()` event:
+
+```js
+analytics.track("Report Submitted", {},
+    {"groupId": "1234"}
+);
+```
+
 
 ## Integrations
 
@@ -223,12 +223,12 @@ Every API call has four timestamps, `originalTimestamp`, `timestamp`, `sentAt`, 
 
 ### Timestamp overview
 
-| Timestamp      | Calculated      | Description     |
-|----------------|-----------------|-----------------|
-| `originalTimestamp` | Time on the client device when call was invoked <br> **OR** <br> The `timestamp` value manually passed in through server-side libraries. | Used by Segment to calculate `timestamp`. <br><br> **Note:** `originalTimestamp` is not useful for analysis since it's not always trustworthy as it can be easily adjusted and affected by clock skew. |
-| `sentAt`       | Time on client device when call was sent. <br> **OR** <br> `sentAt` value manually passed in.    | Used by Segment to calculate `timestamp`. <br><br> **Note:** `sentAt` is not useful for analysis since it's not always trustworthy as it can be easily adjusted and affected by clock skew.       |
-| `receivedAt`   | Time on Segment server clock when call was received      | Used by Segment to calculate `timestamp`, and used as sort key in Warehouses. <br><br> **Note:** For max query speed, `receivedAt` is the recommended timestamp for analysis when chronology does not matter as chronology is not ensured. |
-| `timestamp`   |  Calculated by Segment to correct client-device clock skew using the following formula:<br> `receivedAt` - (`sentAt` - `originalTimestamp`) | Used by Segment to send to downstream destinations, and used for historical replays. <br><br>**Note:** Recommended timestamp for analysis when chronology does matter.  |
+| Timestamp           | Calculated                                                                                                                                 | Description                                                                                                                                                                                                                                |
+| ------------------- | ------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `originalTimestamp` | Time on the client device when call was invoked <br> **OR** <br> The `timestamp` value manually passed in through server-side libraries.   | Used by Segment to calculate `timestamp`. <br><br> **Note:** `originalTimestamp` is not useful for analysis since it's not always trustworthy as it can be easily adjusted and affected by clock skew.                                     |
+| `sentAt`            | Time on client device when call was sent. <br> **OR** <br> `sentAt` value manually passed in.                                              | Used by Segment to calculate `timestamp`. <br><br> **Note:** `sentAt` is not useful for analysis since it's not always trustworthy as it can be easily adjusted and affected by clock skew.                                                |
+| `receivedAt`        | Time on Segment server clock when call was received                                                                                        | Used by Segment to calculate `timestamp`, and used as sort key in Warehouses. <br><br> **Note:** For max query speed, `receivedAt` is the recommended timestamp for analysis when chronology does not matter as chronology is not ensured. |
+| `timestamp`         | Calculated by Segment to correct client-device clock skew using the following formula:<br> `receivedAt` - (`sentAt` - `originalTimestamp`) | Used by Segment to send to downstream destinations, and used for historical replays. <br><br>**Note:** Recommended timestamp for analysis when chronology does matter.                                                                     |
 
 
 ### originalTimestamp

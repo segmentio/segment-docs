@@ -8,7 +8,7 @@ Built on an older technology, tag managers inject either a piece of JavaScript o
 
 In addition to ad networks, today's data-driven businesses use a variety of tools to optimize their product and marketing spends. In order to a/b test copy, nurture sales leads, email customers, and provide fast support, businesses integrate variety of analytics and marketing tools. Segment makes it easy to install, try, and use them all. Tag managers primarily focus on ad networks, and can't support modern tools without extensive customization.
 
-Rather than "firing and forgetting," Segment takes a data-centric, deliberate approach to destinations. You don't need to set up special parameters for each tool – Segment does that for you. Segment structures your data so we can understand what it is, and can translate it correctly for each destination we send it to.  Segment works because [all of these tools](/docs/connections/destinations/catalog/) operate on the same customer data: who is on your app and what are they doing. Segment collects this data once, then translates and sends it to every tool you use. Because Segment also archives the data, we can [replay your historical data](/docs/guides/what-is-replay/) into new tools, and send your raw data to a [data storage solution](/docs/connections/storage/catalog/) for later analysis.
+Rather than "firing and forgetting," Segment takes a data-centric, deliberate approach to destinations. You don't need to set up special parameters for each tool – Segment does that for you. Segment structures your data so we can understand what it is, and can translate it correctly for each destination we send it to.  Segment works because [all of these tools](/docs/connections/destinations/catalog/) operate on the same customer data: who is on your app and what are they doing. Segment collects this data once, then translates and sends it to every tool you use. Because Segment also archives the data, Segment can [replay your historical data](/docs/guides/what-is-replay/) into new tools, and send your raw data to a [data storage solution](/docs/connections/storage/catalog/) for later analysis.
 
 
 <table><tbody>
@@ -18,9 +18,9 @@ Rather than "firing and forgetting," Segment takes a data-centric, deliberate ap
 <tr><td><strong>User Interface</strong></td><td>Delivers sleek user experience; automatically translate data for new tools when you enable a destination</td><td>Requires that you configure settings and rules for each pixel to fire</td></tr>
 <tr><td><strong>Tool Integrations</strong></td><td>Fully integrates analytics, advertising, email, customer support, marketing automation, usability tracking, error testing, and CRM tools with the flick of a switch</td><td>Manages ad pixels; requires custom engineering work to integrate any other complex tool</td></tr></tbody></table>
 
-Every organization's data stack and business requirements are unique. Segment can also works well in tandem with a tag manager. In fact, Segment can also send data directly to the [Google Tag Manager (GTM) destination](/docs/connections/destinations/catalog/google-tag-manager/).
+Every organization's data stack and business requirements are unique. Segment also works well in tandem with a tag manager. For example, Segment sends data directly to the [Google Tag Manager (GTM) destination](/docs/connections/destinations/catalog/google-tag-manager/).
 
-While you can use Segment's Analytics.js library through a tag manager, we don't recommended this for a few important reasons:
+While you can use Segment's Analytics.js library through a tag manager, Segment doesn't recommended this for a few reasons:
 
 - A hybrid approach makes it difficult to determine the root cause of technical problems, and complicates troubleshooting. Segment cannot guarantee destination compatibility in a "hybrid" Segment-tag-manager installation, and cannot guarantee support on these installations. All QA and regression testing assumes a native installation of Analytics.js on the page.
 

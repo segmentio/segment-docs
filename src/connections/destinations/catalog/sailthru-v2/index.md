@@ -46,8 +46,9 @@ Screen events require a `url` property. If Sailthru receives a Screen call witho
 
 ### Identify
 
-Send [Identify](/docs/connections/spec/identify) calls to to create or update a Sailthru profile for any identified user on your site.
+Send [Identify](/docs/connections/spec/identify) calls to create or update a Sailthru profile for any identified user on your site.
 
+Pass an email address at the top level using the `identify` call:
 ```js
 analytics.identify("assigned-userId", {
  "name": "Stephen Noel",
@@ -57,6 +58,22 @@ analytics.identify("assigned-userId", {
 });
 ```
 
+Pass an email under `context.traits` using the identify call:
+```js
+analytics.identify("assigned-userId", {
+ "name": "Stephen Noel",
+ "plan": "premium",
+ "logins": 5
+},
+{
+ "traits": {"email": "snoel@sailthru.com"}
+}
+);
+```
+
+> note ""
+> **NOTE:** Sailthru searches for the email address in the `identify` call under `context.traits` if it isn't provided at the top-level.
+
 ### Track
 
 Send [Track](/docs/connections/spec/track) calls to:
@@ -65,6 +82,7 @@ Send [Track](/docs/connections/spec/track) calls to:
 * record abandoned carts via “Product Added” and “Product Removed” events
 * subscribe users via “Subscribed” events
 * trigger Lifecycle Optimizer journeys with all other events
+* delete users via “User Deleted” events
 
 Sailthru automatically creates and maps custom fields from Segment.
 
@@ -77,6 +95,20 @@ analytics.track("Subscribed", {
  "list": "Master List"
 });
 ```
+
+#### Delete a User
+
+To delete a user, you need to include the email in the `userId` or `context.traits` track call, in a call like the following:
+
+```js
+analytics.track("User Deleted", {userId:"xxxxxx@example.com" })
+```
+
+```js
+analytics.track("User Deleted", {}, {"traits":{"email": "xxxxxxx@example.com"}})
+```
+
+If the user exists, it will be removed from both Segment and Sailthru.
 
 #### Record  a Purchase
 
@@ -118,7 +150,9 @@ analytics.track("Order Completed", {
 #### Update Cart
 Send `Product Added` and `Product Removed` Track events for Sailthru's abandoned cart messaging to enable the Cart Abandonment entry in Lifecycle Optimizer.
 
-Sailthru abandoned cart messaging requires the `url` to function properly. 
+Sailthru abandoned cart messaging requires the `url` to function properly.
+
+To determine if the cart is expired, the timestamp of the last payload received (`purchase_incomplete.time`) is compared with the `clearIncompleteCartAfterNHours` value. If the cart is expired, any pre-existing products in the cart will be removed.
 
 ```js
 analytics.track('Product Added', {
@@ -128,11 +162,21 @@ analytics.track('Product Added', {
   sku: 'G-32',
   category: 'Games',
   name: 'Monopoly: 3rd Edition',
+  url: "https://www.example.com/product/monopoly",
   brand: 'Hasbro',
   variant: '200 pieces',
   price: 18.99,
   quantity: 1,
   coupon: 'MAYDEALS',
-  position: 3
+  position: 3,
+  email: "xxxxxxx@example.com",
+  clearIncompleteCartAfterNHours: 24
 });
 ```
+
+**Notes:**
+* By default the value is null
+* Requirement is for the value to be greater than 0
+* Only whole positive numbers are supported. If fractional numbers are included, the number will be truncated (for example, 1.5 will be 1)
+* If a number is passed in a string format such as `"1"`, it will be parsed and converted to integer
+* Non-numeric characters are not allowed

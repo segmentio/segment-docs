@@ -2,8 +2,6 @@
 title: CommandBar Destination
 hide-boilerplate: true
 hide-dossier: true
-private: true
-hidden: true
 id: 638f843c4520d424f63c9e51
 ---
 

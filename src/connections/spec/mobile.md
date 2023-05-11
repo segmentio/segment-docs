@@ -180,7 +180,7 @@ Fire this event when a user uninstalls the application. Some destination partner
 
 ### Application Crashed
 
-You can send this event when you receive a crash notification from your app, but is not meant to supplant traditional crash reporting tools. By tracking crashes as an analytics event with device and user information, you can analyze the which types of users are impacted by crashes and how those crashes, in turn, affect their engagement. You may also want to target those customers with tailored communications in other channels if they've encountered several crashes.
+You can send this event when you receive a crash notification from your app, but it is not meant to supplant traditional crash reporting tools. By tracking crashes as an analytics event with device and user information, you can analyze the which types of users are impacted by crashes and how those crashes, in turn, affect their engagement. You may also want to target those customers with tailored communications in other channels if they've encountered several crashes. Segment does not collect this event. To capture the event, use a destination that collects this data and route that event back to Segment through a webhook or some other callback.
 
 {% comment %} api-example '{ "userId": "019mr8mf4r", "type": "track", "event": "Application Crashed", "properties": {}}'}}} {% endcomment %}
 

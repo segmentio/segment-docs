@@ -3,7 +3,7 @@ title: Warehouse Schemas
 ---
 
 A **schema** describes the way that the data in a warehouse is organized. Segment stores data in relational schemas, which organize data into the following template:
-`<source>.<collection>.<property>`, for example `segment_engineering.tracks.user_id`, where source refers to the source or project name (segment_engineering), collection refers to the event (tracks), and the property refers to the data being collected (user_id). All schemas convert collection and property names from `CamelCase` to `snake_case`.
+`<source>.<collection>.<property>`, for example `segment_engineering.tracks.user_id`, where source refers to the source or project name (segment_engineering), collection refers to the event (tracks), and the property refers to the data being collected (user_id). All schemas convert collection and property names from `CamelCase` to `snake_case` using the [go-snakecase](https://github.com/segmentio/go-snakecase) package.
 
 > note "Warehouse column creation"
 > **Note:** Segment creates tables for each of your custom events in your warehouse, with columns for each event's custom properties. Segment does not allow unbounded `event` or `property` spaces in your data. Instead of recording events like "Ordered Product 15", use a single property of "Product Number" or similar.
@@ -401,15 +401,15 @@ ORDER BY day
 | 2014-07-20 | $1,595  |
 | 2014-07-21 | $2,350  |
 
+## Schema Evolution and Compatibility 
+
 ### New Columns
 
 New event properties and traits create columns. Segment processes the incoming data in batches, based on either data size or an interval of time. If the table doesn't exist we lock and create the table. If the table exists but new columns need to be created, we perform a diff and alter the table to append new columns.
 
 When Segment process a new batch and discover a new column to add, we take the most recent occurrence of a column and choose its datatype.
 
-
-### Supported Data Types
-Data types are set up in your warehouse based on the first value that comes in from a source. For example, if the first value that came in from a source was a string, Segment would set the data type in the warehouse to `string`. 
+### Data Types
 
 The data types that Segment currently supports include:
 
@@ -423,10 +423,16 @@ The data types that Segment currently supports include:
 
 #### `varchar`
 
-> note " "
-> To change data types after they've been determined, please reach out to [Segment Support](https://segment.com/help/contact) for assistance. 
+Data types are set up in your warehouse based on the first value that comes in from a source. For example, if the first value that came in from a source was a string, Segment would set the data type in the warehouse to `string`. 
 
-## Column Sizing
+In cases where a data type is determined incorrectly, the support team can help you update the data type. As an example, if a field can include float values as well as integers, but the first value we received was an integer, we will set the data type of the field to integer, resulting in a loss of precision. 
+
+To update the data type, reach out to the Segment support team. They will update the internal schema that Segment uses to infer your warehouse schema. Once the change is made, Segment will start syncing the data with the correct data type. However, if you want to backfill the historical data , you must drop the impacted tables on your end so that Segment can recreate them and backfill those tables.
+
+To request data types changes, please reach out to [Segment Support](https://segment.com/help/contact) for assistance, and provide with these details for the affected columns in the following format:
+`<schema_name>.<table_name>.<column_name>.<current_datatype>.<new_datatype>`
+
+### Column Sizing
 
 After analyzing the data from dozens of customers, we set the string column length limit at 512 characters. Longer strings are truncated. We found this was the sweet spot for good performance and ignoring non-useful data.
 

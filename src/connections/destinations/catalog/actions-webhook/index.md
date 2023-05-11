@@ -12,9 +12,6 @@ versions:
 
 Segment's Webhooks (Actions) destination uses internet protocol and HTTP callback to submit real-time user data to your own HTTP endpoints. With this destination, you can POST, PUT, or PATCH data to any webhook URL.
 
-> info ""
-> The Webhooks (Actions) destination is in beta and is in active development. Some functionality may change before it becomes generally available.
-
 ## Getting Started
 
 1. From the Segment web app, navigate to **Connections > Catalog**.

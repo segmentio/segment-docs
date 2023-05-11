@@ -19,6 +19,9 @@ This unlocks some interesting possibilities to help you meet your business goals
 
 Check out Segment's [SQL Traits blog post](https://segment.com/blog/sql-traits){:target="_blank"} for more customer case studies.
 
+> info ""
+> To view SQL Traits in a user profile, you must have [PII access](/docs/segment-app/iam/roles/#pii-access). Without this access, Segment redacts all SQL traits in a profile.
+
 
 ### Example: cloud sources sync
 
@@ -135,7 +138,7 @@ When you're building your query, keep the following requirements in mind for the
 - The query must not return any `user_id`s, `anonymous_id`s, or `group_id`s with a `null` value.
 - The query must not return any records with duplicate `user_id`s.
 - The query must not return more than 25 million rows.
-- Each record must be less than 16kb in size to adhere to [Segment's maximum request size](/docs/connections/sources/catalog/libraries/server/http-api/#max-request-size).
+- Each record must be less than 16KB in size to adhere to [Segment's maximum request size](/docs/connections/sources/catalog/libraries/server/http-api/#max-request-size).
 
 A successful preview returns a sample of users and their traits.
 If Segment recognizes a user already in Engage, it displays a green checkmark on their profile. Clicking the checkmark displays the user's profile. If a user has a question mark, Segment hasn't detected this `user_id` in Engage before.
@@ -182,7 +185,7 @@ For each SQL Trait you create, you can set a compute schedule to query the data 
 
 ### What identifiers can I use to query a list?
 
-You can query based on `email`, `user_id` or `anonymous_id`. If Segment doesn't locate a match based on the chosen identifier, it creates a new profile. See more below.
+You can query based on `email`, `user_id`, or `anonymous_id`. If Segment doesn't locate a match based on the chosen identifier, it creates a new profile. See more below.
 
 ### Can I use SQL Traits to create users in Segment? Or do SQL Traits only append Traits to existing users?
 
@@ -198,7 +201,7 @@ If you're importing a large list of users and traits, you'll need to consider yo
 
 ### Is there a limit on the size of a SQL Trait's payload?
 
-Yes, Segment limits request sizes to a maximum of 16kb. Records larger than this are discarded.
+Yes, Segment limits request sizes to a maximum of 16KB. Records larger than this are discarded.
 
 ## Troubleshooting
 
@@ -225,8 +228,6 @@ Segment supports returning only 25 columns. [Contact Segment](https://segment.co
 
 ### I'm seeing a duplicate `user_id` error.
 
-![An example of a duplicate user_id error](../images/troubleshoot3.png)
-
 Each query row must correspond to a unique user. Segment displays this error if it detects multiple rows with the same `user_id`. Use a `distinct` or `group by` statement to ensure that each row has a unique user_id.
 
 ### I'm seeing some users/accounts in my preview with question marks. What does that mean?
@@ -242,3 +243,7 @@ In this case, for sources connected to Engage, Segment hasn't received any event
 You might be returning a value for `user_id` that's inconsistent with how you track `user_id` elsewhere. Some customers want to return `email` as the `user_id`, or a partner's tool ID as the `user_id`. These conflict with Segment best practices and corrupt the identity graph if you then track `user_id` differently elsewhere in your apps.
 
 If you see only question marks in the preview, and have already tracked data historically with Segment, then you likely have the wrong column. If your cloud source doesn't have the database `user_id`, Segment recommends using a `JOIN` clause with an internal users table before sending the results back to Segment.
+
+### Why do some SQL Trait settings not have the “Compute schedule” option?
+
+Segment added the compute schedule feature on Feb 8, 2021, so traits created prior to this date will not have this option. If your trait lacks this feature, recreating it will make it available.

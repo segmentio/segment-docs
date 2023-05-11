@@ -64,7 +64,9 @@ After your code is deployed, you'll receive an invitation to join the Segment De
 
 ### Write documentation
 
-Documentation is integral to enabling Segment's users to self-serve and onboard with your integration. Segment's documentation team will work with you during this part of the process to ensure your documentation matches the Segment style and is as instructive as possible.
+Documentation is integral to enabling Segment's users to self-serve and onboard with your integration. Segment's documentation team will work with you during this part of the process to ensure your documentation matches the Segment style and is as instructive as possible. 
+
+To create your documentation, follow the instructions outlined [in this template](https://github.com/segmentio/segment-docs/blob/develop/templates/partners/destination-new.md){:target="_blank"} if your destination is net new; If your destination is an updated version of a classic destination, follow the instructions outlined [in this template](https://github.com/segmentio/segment-docs/blob/develop/templates/partners/destination-update.md){:target="_blank"}.
 
 ### Release your Destination
 

@@ -20,7 +20,7 @@ Segment’s Salesforce (Actions) destination allows you to create, update or ups
 The Salesforce (Actions) destination provides the following benefits over the classic Salesforce destination:
 - **Fewer settings**. Data mapping for actions-based destinations happens during configuration, which eliminates the need for most settings.
 - **Clearer mapping of data**. Actions-based destinations enable you to define the mapping between the data Segment receives from your source, and the data Segment sends to Salesforce.
-- **OAuth 2.0 support**. Authentication with Salesforce leverages OAuth 2.0 instead of a username/password.
+- **OAuth 2.0 support**. Authentication with Salesforce uses OAuth 2.0 instead of a username/password.
 - **Flexible match keys**. Upsert and update records based on any match key, including external IDs, record IDs, email and other object fields.
 - **Batch support**. Reduce Salesforce overages and rate-limit errors by batching your Segment data to Salesforce's Bulk API 2.0.
 
@@ -50,9 +50,11 @@ When configuring a mapping, you must select the Operation that will be performed
 - **Update**. Updates fields on existing records in Salesforce. This operation is good for the following scenarios:
   - You have records in Salesforce that you want to add new information/fields to.
   - You want to update fields on existing records in Salesforce.
+- **Delete**. Deletes existing records in Salesforce. This operation is good for the following scenarios:
+  - You have records in Salesforce that you want to remove.
 
 ### Record Matchers
-When using the `update` and `upsert` operations, you must specify the match key(s) that will be used to query Salesforce for the record. You can do this within the Record Matchers object. Any field can be used as a record matcher, including:
+When using the `delete`, `update` and `upsert` operations, you must specify the match key(s) that will be used to query Salesforce for the record. You can do this within the Record Matchers object. Any field can be used as a record matcher, including:
 - **External IDs**. To map an External ID, the Salesforce API name should have `__c` appended to it.
 - **Record IDs**. To map a Record ID, the Salesforce API name is `Id`.
 - **Standard fields**. To map a standard field, the Salesforce API name should match what is in Salesforce for the given field, for example `Email`.
@@ -60,9 +62,57 @@ When using the `update` and `upsert` operations, you must specify the match key(
 
 If multiple fields are provided in the Record Matchers object, Segment uses an "OR" operator to query Salesforce for a record. If multiple records are returned upon query, no updates will be made. Segment will instead record a 300 error status for the request, and the request will not be retried. **Please use fields that result in unique records**.
 
-Please note Salesforce only allows querying on fields that have the "Filter" property. For example, we cannot query on the Case `Description` because it is not a filterable property. You can lookup the standard field properties in [Salesforce’s API documentation](https://developer.salesforce.com/docs/atlas.en-us.api_rest.meta/api_rest/intro_rest.htm){:target="_blank"} to determine if a field is available for querying.
+Please note Salesforce only allows querying on fields that have the "Filter" property. For example, Segment doesn't query on the Case `Description` because it is not a filterable property. You can lookup the standard field properties in [Salesforce’s API documentation](https://developer.salesforce.com/docs/atlas.en-us.api_rest.meta/api_rest/intro_rest.htm){:target="_blank"} to determine if a field is available for querying.
 
 ![the filter property](images/image1.png)
+
+## Migrate from Salesforce (Classic)
+
+To migrate from Salesforce (Classic), complete the following steps before May 31, 2023:
+
+1. Log in to your Segment workspace and review the copied settings in each new Salesforce (Actions) instance to ensure their accuracy. 
+2. Authenticate Segment with Salesforce with OAuth.
+3. Enable the Salesforce (Actions) destination & disable the Classic destination.
+
+> info "Authenticate with Salesforce"
+> Salesforce (Actions) requires OAuth based authentication while Salesforce Classic uses tokens and credentials. Because of this, Segment can't migrate authentication credentials. Your workspace owner must login and configure OAuth Authentication for each Salesforce (Actions) destinations that were migrated.
+
+If you have more than one Salesforce instance connected to Segment, repeat these three steps for each instance. 
+
+Keep the following in mind as you begin to use Salesforce (Actions):
+- Salesforce (Actions) supports batching. The workspace owner can edit the enabled-batching field manually for any of the mappings. This setting is disabled by default.
+- Salesforce (Actions) doesn’t support Delete CRUD operations on Custom Object. Custom Objects with CRUD the operation set to `delete` are not migrated.
+- Sending Identify events to Salesforce (Classic) results in a create or update operation for Leads, and maps properties from `event.traits` Salesforce (Actions) does not support this behavior. By default, the automatic migration maps only a subset of the most used Lead properties as mentioned below. The workspace owner must map any additional Salesforce properties or Custom properties manually.
+
+Review the tables below to see how settings from Salesforce (Classic) were migrated to Salesforce (Actions).
+
+### Leads
+
+| Salesforce (Actions) property | Migrated behavior                                                                                             |
+| ----------------------------- | ------------------------------------------------------------------------------------------------------------- |
+| Record Matchers               | Uses **Custom Lead Lookup** fields from Salesforce (Classic), if available, or **Email** as a fallback value. |
+| Name                          | Appears within the **Other Fields** property, defaults to `traits.name`.                                      |
+| Phone                         | Appears within the **Other Fields** property, defaults to `coalesce(traits.phone, traits.phoneNumber)`.       |
+| Title                         | Appears within the **Other Fields** property, defaults to `coalesce(traits.address.title, traits.position)`.  |
+| Website                       | Appears within the **Other Fields** property, defaults to `traits.website`.                                   |
+| Description                   | Appears within the **Other Fields** property, defaults to `traits.description`.                               |
+| Lead Source                   | Appears within the **Other Fields** property, defaults to `traits.leadSource`.                                |
+
+### Account
+
+| Salesforce (Actions) property | Migrated behavior                                                                                             |
+| ----------------------------- | ------------------------------------------------------------------------------------------------------------- |
+| Billing Street | Created only if the **Send Address as Billing Address** property is set in Salesforce (Classic). Defaults to `coalesce(traits.address.street, traits.street)`. |
+| Billing City | Created only if the **Send Address as Billing Address** property is set in Salesforce (Classic). Defaults to `coalesce(traits.address.city, traits.city)`. |
+| Billing State | Created only if the **Send Address as Billing Address** property is set in Salesforce (Classic). Defaults to `coalesce(traits.address.state, traits.state)`. |
+| Billing Country | Created only if the **Send Address as Billing Address** property is set in Salesforce (Classic). Defaults to `coalesce(traits.address.country, traits.country)`. |
+| Billing Postal Code | Created only if the **Send Address as Billing Address** property is set in Salesforce (Classic). Defaults to `coalesce(traits.address.postalCode, traits.postalCode)`. |
+| Shipping Street | Created only if the **Send Address as Shipping Address** property is set in Salesforce (Classic). Defaults to `coalesce(traits.address.street, traits.street)`. |
+| Shipping City | Created only if the **Send Address as Shipping Address** property is set in Salesforce (Classic). Defaults to `coalesce(traits.address.city, traits.city)`. |
+| Shipping State | Created only if the **Send Address as Shipping Address** property is set in Salesforce (Classic). Defaults to `coalesce(traits.address.state, traits.state)`. |
+| Shipping Country | Created only if the **Send Address as Shipping Address** property is set in Salesforce (Classic). Defaults to `coalesce(traits.address.country, traits.country)`. |
+| Shipping Postal Code | Created only if the **Send Address as Shipping Address** property is set in Salesforce (Classic). Defaults to `coalesce(traits.address.postalCode, traits.postalCode)`. |
+
 
 ## FAQ
 
@@ -72,7 +122,7 @@ To send data to a Salesforce sandbox instance, navigate to **Settings > Advanced
 Your Salesforce sandbox username appends the sandbox name to your Salesforce production username. For example, if a username for a production org is `user@acme.com` and the sandbox is named `test`, the username to log in to the sandbox is `user@acme.com.test`.
 
 ### How do I add custom fields?
-Custom fields can be included in the Other Fields mapping. Custom fields must be predefined in your Salesforce account and should end with `__c` (i.e. `My_Custom_Field__c`). Please include the `__c` in your mapping.
+Custom fields can be included in the Other Fields mapping. Custom fields must be predefined in your Salesforce account and should end with `__c` (for example, `My_Custom_Field__c`). Please include the `__c` in your mapping.
 
 You can see Salesforce API names in Salesforce under **Setup > Objects and Fields > Object Manager > Select your object > Fields & Relationships > FIELD NAME**.
 

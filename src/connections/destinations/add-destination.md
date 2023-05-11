@@ -132,6 +132,9 @@ You can add multiple instances of a destination using the Segment Public API. Se
     - **Warning**: If you bundle one instance of a destination in a mobile source but have other instances of that destination connected to that source you might see unexpected and inconsistent data.
 - **Non-mobile sources can only connect to one *device-mode* instance of a destination, in addition to up to 25 cloud-mode instances.** A web browser sending to a destination in device-mode sends data directly from the user's browser (instead of through the Segment servers), by bundling a copy of destination's code with the Segment SDK. Segment can't bundle multiple copies of the destination SDK and so it can't send data to multiple instances of the destination from the browser.
 - **You cannot connect a source to more than one instance of a destination that operates in device-mode only**. These destinations can only accept data from code directly on the user's device, and Segment cannot include duplicates of that code for a single source.
+- **Multi-instance support is not available for most hybrid Actions destinations, and will not support Web Mode Actions destinations**. Hybrid destinations are those that have some components that operate in device-mode and some that operate in cloud-mode. Actions destinations currently affected by this are Amplitude Actions and Braze Cloud Actions. 
+    - **Amplitude Actions** *does* have multi-instance support for Analytics.js and server sources, but *does not* have multi-instance support for mobile sources. 
+    - **Braze Cloud Actions** *does not* have multi-instance support because it includes a device-mode web plugin for the Debounce Middleware.
 
 
 ### Other multi-instance destination considerations

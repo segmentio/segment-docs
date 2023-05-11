@@ -1,39 +1,39 @@
 items:
 - product_display_name: Engage Foundations
   slug: engage-foundations
-  plan-note: "Engage Foundations requires a Business tier account and includes Profiles."
+  plan-note: "Engage Foundations requires a Business tier account and includes Unify."
   addon: true
   plans:
     free: false
     team: false
     business: true
   # addons:
-  #   profiles: true
+  #   unify: true
   #   engage-foundations: true
   #   engage-plus: false
 - product_display_name: Engage Premier
   slug: engage-premier
-  plan-note: "Engage Premier requires a Business tier account and includes Engage Foundations and Profiles."
+  plan-note: "Engage Premier requires a Business tier account and includes Engage Foundations and Unify."
   addon: true
   plans:
     free: false
     team: false
     business: true
   # addons:
-  #   profiles: false
+  #   unify: false
   #   engage-foundations: false
   #   engage-plus: true
 
-- product_display_name: Profiles
-  slug: profiles
-  plan-note: "Profiles requires a Business tier account and is included with Engage."
+- product_display_name: Unify
+  slug: unify
+  plan-note: "Unify requires a Business tier account and is included with Engage."
   addon: true
   plans:
     free: false
     team: false
     business: true
   # addons:
-  #   profiles: true
+  #   unify: true
   #   engage-foundations: false
   #   engage-plus: false
 
@@ -138,10 +138,19 @@ items:
     business: true
     add-on: true
 - product_display_name: Regional Segment
-  slug: data-residency
+  slug: regional
   plan-note: "Regional Segment is available to customers on the Business Tier plan."
   plans:
     free: false
     team: false
+    business: true
+    add-on: false
+
+- product_display_name: Public API
+  slug: papi
+  plan-note: "The Public API is available to customers on Team or Business plans."
+  plans:
+    free: false
+    team: true
     business: true
     add-on: false

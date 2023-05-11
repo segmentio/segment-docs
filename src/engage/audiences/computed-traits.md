@@ -66,13 +66,12 @@ User-level examples:
 - Favorite Blog Post
 - Top Purchase Category
 
-![A most frequent product-viewed trait](../images/1525836239527.png)
-
 Account-level examples:
 - Most frequent product viewed
 - Most active user
 
-![A most frequent order-completed trait](../images/1542073415630.png)
+![A most frequent product-viewed trait](../images/1525836239527.png)
+
 
 ### First
 
@@ -96,13 +95,12 @@ User-level examples:
 - Last seen at
 - Last utm parameter
 
-![The last event-seen trait builder](../images/1525836818177.png)
-
 Account-level examples:
 - Last unsubscribe timestamp
 - Last user active
 
-![An account-level last page-viewed trait](../images/1542073887657.png)
+![The last event-seen trait builder](../images/1525836818177.png)
+
 
 ### Unique List
 
@@ -124,13 +122,12 @@ User-level examples:
 - Unique products viewed count
 - Unique categories count
 
-![The unique list count builder](../images/1525837374378.png)
-
 Account-level examples:
 - Unique products viewed
 - Unique visitors count
 
-![An account-level unique list trait](../images/1542074153487.png)
+![The unique list count builder](../images/1525837374378.png)
+
 
 ## Conditions
 
@@ -138,7 +135,7 @@ All computed trait types support a common "Add Conditions" section. Conditions d
 
 The following operators are available.
 - equals
-- not equals -
+- not equals
 - less than
 - greater than
 - less than or equal
@@ -151,7 +148,9 @@ The following operators are available.
 - not exists
 - before date
 - after date
-
+- equals one of
+- contains one of
+- 
 ## Connecting your Computed Trait to a Destination
 
 Engage sends user-level computed Traits to destinations using the [Identify call](/docs/connections/spec/identify/) for user traits, or using the [Track call](/docs/connections/spec/track/) for event properties. Segment includes the trait value and property in the identify and track calls.
@@ -162,6 +161,10 @@ Learn more about [Computed trait generated events here](/docs/engage/using-engag
 
 For account-level computed traits, you have the option to send either a [group](/docs/connections/spec/group/) call and/or [identify](/docs/connections/spec/identify/) call. Group calls will send one event per account, whereas identify calls will send an identify call for each user in the account. This means that even if a user hasn't performed an event, Segment will still set the account-level computed trait on that user. Because most marketing tools are still based at the user level, it is often important to map this account-level trait onto each user within an account. See [Account-level Audiences](/docs/engage/audiences/account-audiences) for more information.
 
+## View compute status
+
+After you create a computed trait, use the Overview page to view the current [compute status](/docs/engage/audiences#compute-statuses), number of users with the trait, connected destinations, and more. For real-time traits, click **Refresh Trait** to update the current number of users with the trait.  
+
 ## Editing Realtime Traits
 
 Engage supports the editing of real-time Traits, which allows you to make nuanced changes to existing Traits in situations where cloning or building from scratch may not suit your use case.
@@ -171,9 +174,10 @@ To edit a real-time Trait, follow these steps:
 1. In your Engage Space, select the **Computed Traits** tab.
 2. Select the realtime Trait you want to edit.
 3. Select the **Builder** tab and make your edits.
-4. Select **Save Computed Trait** to confirm your edits.
+4. Preview the results, then select **Save Computed Trait** to confirm your edits.
 
-Engage then processes your Trait edits. While the edit task runs, the trait remains locked and you can't make further changes. Once Engage has finished incorporating your changes, you'll be able to access your updated Trait.
+Engage then processes your Trait edits. While the edit task runs, the trait remains locked and you can't make further changes. Once Engage incorporates your changes, you'll be able to access your updated Trait.
+
 
 > warning ""
 > It is not possible to edit a trait to convert it from real-time to batch, or vice-versa. If the computation type needs to be changed, you will need to recreate the trait with the appropiate conditions.
@@ -207,7 +211,7 @@ You can query a user's traits (such as `first_name`, `last_name`, and more):
 
 By default, the response includes 20 traits. You can return up to 200 traits by appending `?limit=200` to the querystring. If you wish to return a specific trait, append `?include={trait}` to the querystring (for example, `?include=age`). You can also use the ``?class=audience​`` or ``?class=computed_trait​`` URL parameters to retrieve audiences or computed traits specifically.
 
-You can read the [full Profile API docs](/docs/profiles/profile-api/) to learn more.
+You can read the [full Profile API docs](/docs/unify/profile-api/) to learn more.
 
 ## Downloading your Computed Trait as a CSV file
 

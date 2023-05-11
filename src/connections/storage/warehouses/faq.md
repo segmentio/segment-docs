@@ -74,7 +74,7 @@ Your source slug can be found in the URL when you're looking at the source desti
 
 Your warehouse id appears in the URL when you look at the [warehouse destinations page](https://app.segment.com/goto-my-workspace/warehouses/). The URL structure looks like this:
 
-​​`app.segment.com/[my-workspace]/warehouses/[my-warehouse-id]/overview`
+`app.segment.com/[my-workspace]/warehouses/[my-warehouse-id]/overview`
 
 
 ## How fresh is the data in Segment Warehouses?
@@ -95,7 +95,7 @@ Segment recommends scripting any sort of additions of data you might have to war
 
 ## Which IPs should I allowlist?
 
-You can allowlist Segment's custom IP `52.25.130.38/32` while authorizing Segment to write in to your Redshift or Postgres port.
+You must allowlist Segment's custom IPs `52.25.130.38/32` and `34.223.203.0/28` while authorizing Segment to write in to your Redshift or Postgres port.
 
 **EU workspace regions are currently in beta.**  If you're in the EU region and participating in the public beta program, use CIDR `3.251.148.96/29`. To learn more about the public beta for EU workspace locations, contact your account manager.
 
@@ -128,17 +128,17 @@ After a source is created, you can enable or disable a warehouse sync within the
 If you enabled activity notifications for your storage destination, you'll receive notifications in the Segment app for the fifth and 20th consecutive warehouse failures.
 
 To sign up for warehouse sync notifications:
-1. Open the Segment app. 
-2. Go to **Settings** > **User Preferences**. 
+1. Open the Segment app.
+2. Go to **Settings** > **User Preferences**.
 3. In the Activity Notifications section, select **Storage Destinations**.
-4. Enable **Storage Destination Sync Failed**. 
+4. Enable **Storage Destination Sync Failed**.
 
 ## How is the data formatted in my warehouse?
 
-Data in your warehouse is formatted into **schemas**, which involve a detailed description of database elements (tables, views, indexes, synonyms, etc.) 
-and the relationships that exist between elements. Segment's schemas use the following template: <br/>`<source>.<collection>.<property>`, for example, 
+Data in your warehouse is formatted into **schemas**, which involve a detailed description of database elements (tables, views, indexes, synonyms, etc.)
+and the relationships that exist between elements. Segment's schemas use the following template: <br/>`<source>.<collection>.<property>`, for example,
 `segment_engineering.tracks.user_id`, where source refers to the source or project name (segment_engineering), collection refers to the event (tracks),
-and the property refers to the data being collected (user_id). 
+and the property refers to the data being collected (user_id). **Note:** It is not possible to have different sources feed data into the same schema in your warehouse. While setting up a new schema, you cannot use a duplicate schema name. 
 
 Schema data for Segment warehouses is represented in snake case.
 
@@ -146,27 +146,31 @@ For more information about Warehouse Schemas, see the [Warehouse Schemas](/docs/
 
 ## If my syncs fail and get fixed, do I need to ask for a backfill?
 
-If your syncs fail, you do not need to reach out to Segment Support to request a backfill. Once a successful sync takes place, 
-Segment automatically loads all of the data generated since the last successful sync occurred. 
+If your syncs fail, you do not need to reach out to Segment Support to request a backfill. Once a successful sync takes place,
+Segment automatically loads all of the data generated since the last successful sync occurred.
 
 
 ## Can I change my schema names once they've been created?
 
-Segment stores the name of your schema in the **SQL Settings** page. Changing the name of your schema in the app without updating the name in your data warehouse causes a new schema to form, one that doesn't contain historical data.  
+Segment stores the name of your schema in the **SQL Settings** page. Changing the name of your schema in the app without updating the name in your data warehouse causes a new schema to form, one that doesn't contain historical data.
 
-To change the name of your schema without disruptions: 
+To change the name of your schema without disruptions:
 
-1. Open the Segment app, select **Connections** and click **Destinations**. 
+1. Open the Segment app, select **Connections** and click **Destinations**.
 2. Select the warehouse you'd like to rename the schema for from the list of destinations.
 3. On the overview page for your source, select **Settings**.
-4. Disable the **Sync Data** toggle and click **Save Settings**. 
-5. Select **Connections** and click **Sources**. 
-6. Select a source that syncs data with your warehouse from your list of sources, and select **Settings**. 
+4. Disable the **Sync Data** toggle and click **Save Settings**.
+5. Select **Connections** and click **Sources**.
+6. Select a source that syncs data with your warehouse from your list of sources, and select **Settings**.
 7. Select **SQL Settings** and update the "Schema Name" field with the new name for your schema and click **Save Changes.**
 > **Note**: This will set the schema name for all existing and future destinations.
-8. Repeat steps six and seven until you rename all sources that sync data to your warehouse. 
-9. Open the third-party host of your database, and rename the schema. 
+8. Repeat steps six and seven until you rename all sources that sync data to your warehouse.
+9. Open the third-party host of your database, and rename the schema.
 10. Open the Segment app, select **Connections** and click **Destinations**.
 11. Select the warehouse you disabled syncs for from the list of destinations.
-3. On the overview page for your source, select **Settings**.
-4. Enable the **Sync Data** toggle and click **Save Settings**. 
+12. On the overview page for your source, select **Settings**.
+13. Enable the **Sync Data** toggle and click **Save Settings**.
+
+## Can I change the data type of a column in the warehouse?
+
+Yes, data types are set up in your warehouse based on the first value that comes in from a source. However, you can request the support team to update the data type by reaching out to [support](https://app.segment.com/workspaces?contact=1). To learn more, check out [Data Types](/docs/connections/storage/warehouses/schema/#schema-evolution-and-compatibility) section.
