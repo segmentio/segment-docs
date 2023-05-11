@@ -372,7 +372,7 @@ const policiesIfNetworkIsUp = [
 // Create our client with our policies by default
 const client = createClient({
   // ...
-  flushPolicies: policies,
+  flushPolicies: [...policiesIfNetworkIsUp],
 });
 // If Segment detects the user disconnect from the network, Segment removes all flush policies. 
 // That way the Segment client won't keep attempting to send events to Segment but will still 
