@@ -3,8 +3,8 @@ title: Inkit Destination
 rewrite: true
 id: 5f0746ced1c79b49ddee49fd
 ---
-[Inkit](https://inkit.com){:target="_blank"} and Segment empower organizations to securely generate and distribute documents - both digitally as well as via direct mail. 
-For example, automatically create and send electronic documents like invoices, reports, notices, and more via a magic link or e-delivery. Or generate and send documents for e-signature, storage, postcards, letters, and more, all powered by the Inkit integration for Segment.
+[Inkit](https://inkit.com){:target="_blank"} and Segment empower organizations to securely generate and distribute documents - both digitally as well as through direct mail. 
+For example, automatically create and send electronic documents like invoices, reports, notices, and more through a magic link or e-delivery. Or generate and send documents for e-signature, storage, postcards, letters, and more, all powered by the Inkit integration for Segment.
 
 > note ""
 > Inkit maintains this destination. For any issues with the destination, [email the Inkit support team](mailto:support@inkit.com).
@@ -37,7 +37,7 @@ To use a Template ID:
 For more information, see Inkit [documentation](https://docs.inkit.com/docs/welcome-to-inkit){:target="_blank"}.
 
 ## Expected Data
-The merge fields in the template dictate what data you must pass to Inkit via the integration. The only must-have data point is the "template_id". 
+The merge fields in the template dictate what data you must pass to Inkit through the integration. The only must-have data point is the "template_id". 
 
 
 | Field | Type | Description |
