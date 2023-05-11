@@ -1,6 +1,10 @@
 ---
 title: Analytics for Kotlin Migration Guide
 strat: kotlin-android
+tags:
+  - android
+  - kotlin
+  - android-kotlin
 ---
 
 > info ""
