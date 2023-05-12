@@ -65,3 +65,5 @@ HubSpot has several limits for custom behavioral events, including a limit on th
 ### Does the HubSpot Cloud Mode (Actions) destination support EU data residency?
 Yes. HubSpot will automatically redirect API requests directly to an EU data center if your HubSpot instance is on an EU data center. See more in HubSpot's [Routing API Traffic](https://product.hubspot.com/blog/routing-api-traffic){:target="_blank"} article.
 
+### Email and User Token both fields are mapped in "Send custom behavioural event" mapping and sent over the event paylaod too. But the event is failing for delivery with "Payload validation error" as the email is not in valid format, why it is not taking the User token for validation?
+Event payload should have the email with valid format or empty string, so that the user token will take precedence and can be validated. An invalid email will not pass mapping validation. Hence the event delivery is failing.
