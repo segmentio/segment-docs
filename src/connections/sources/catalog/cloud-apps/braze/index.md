@@ -77,12 +77,12 @@ The following table lists events that Braze sends to Segment. These events show 
 | SMS Rejected                           | An SMS was rejected.                                                                                                                                      |
 | SMS Inbound Received                   | An inbound SMS was received.                                                                                                                              |
 | Application Uninstalled                | User uninstalled the App.                                                                                                                                 |
-| WhatsApp Abort                | WhatsApp message was aborted                                                                                                                                |
+| WhatsApp Abort                | WhatsApp message was aborted.                                                                                                                                |
 | WhatsApp Delivery                | WhatsApp message the App.                                                                                                                                 |
-| WhatsApp Failure                | WhatsApp message failed to deliver                                                                                                                                 |
-| WhatsApp Inbound Received                | WhatsApp inbound received                                                                                                                                 |
-| WhatsApp Read                | WhatsApp message was read                                                                                                                                 |
-| WhatsApp Send                | WhatsApp message was sent                                                                                                                                 |
+| WhatsApp Failure                | WhatsApp message failed to deliver.                                                                                                                                 |
+| WhatsApp Inbound Received                | WhatsApp inbound received.                                                                                                                                 |
+| WhatsApp Read                | WhatsApp message was read.                                                                                                                                 |
+| WhatsApp Send                | WhatsApp message was sent.                                                                                                                                 |
 | Abort Message Events                   | Message was aborted based on quiet hours, rate limiting, frequency capping, or liquid aborts.                                                                                                                                |
 
 ## Braze Event Properties
