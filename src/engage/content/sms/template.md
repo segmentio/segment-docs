@@ -7,7 +7,7 @@ Use Twilio Engage to build SMS message templates to include throughout your mark
 You can build an SMS template and include personalized content in messages based on user profile traits. Once you build the SMS, Twilio Engage saves the template for you to preview, maintain, and reuse.
 
 Use personalized SMS messages to connect with users in real-time, as they reach a specific step in a journey.
-
+ 
 ## Build an SMS message template
 
 > info ""
