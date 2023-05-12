@@ -30,9 +30,11 @@ Use the SMS Templates screen to preview and update existing SMS message template
 Send a test SMS message before you include it as a step in your Journey.
 
 1. After you build your SMS template, click **Test SMS**.
-2. Enter recipient phone numbers for the test message.
-- The profile that you send test messages to must have a userId in Segment.
-3. Click **Send Test SMS**.
+2. If your template has profile traits, enter a trait value for the test SMS. This ensures that your merge tags work as expected.
+- Empty fields show the default value that you've assigned. For example, `loyal customer` would be the default for the following merge tag: {% raw %}```{{profile.traits.first_name | default: "loyal customer"}}```{% endraw %}. If there's no default value, the field will be blank.
+3. Enter recipient phone numbers for the test message.
+- Profiles that you send test messages to must have a userId in Segment.
+4. Click **Send test SMS**.
 
 If a recipient replies "Stop" to the test SMS, Twilio unsubscribes their phone number and sends an opt-out confirmation.
 
