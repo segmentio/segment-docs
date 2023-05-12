@@ -42,7 +42,8 @@ analytics.load('writeKey', {
   }
 })
 ```
-**Note**: Chrome allows 400 days as a maximum limit for cookies so if a value is set beyond that, then the upper limit will be set to 400 days instead of rejecting it. More information on this here: https://developer.chrome.com/blog/cookie-max-age-expires/ 
+> info ""
+>  Chrome has a maximum limit of 400 days for cookies. If a value is set beyond that, then Chrome sets the upper limit to 400 days instead of rejecting it. Visit Chrome's [docs](https://developer.chrome.com/blog/cookie-max-age-expires/ ){:target="blank"} to learn more. 
 
 ### User settings
 
