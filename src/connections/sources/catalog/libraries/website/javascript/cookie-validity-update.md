@@ -1,5 +1,6 @@
 ---
 title: Client-side persistence in Analytics.js
+redirect_from: '/connections/sources/catalog/libraries/website/javascript/persistence/'
 strat: ajs
 ---
 
@@ -43,7 +44,7 @@ analytics.load('writeKey', {
 })
 ```
 > info ""
-> Chrome has a maximum limit of 400 days for cookies. If a value is set beyond that, then Chrome sets the upper limit to 400 days instead of rejecting it. Visit Chrome's [docs](https://developer.chrome.com/blog/cookie-max-age-expires/){:target="blank"} to learn more. 
+> Chrome has a maximum limit of 400 days for cookies. If a value is set beyond that, then Chrome sets the upper limit to 400 days instead of rejecting it. Visit Chrome's [docs](https://developer.chrome.com/blog/cookie-max-age-expires/){:target="blank"} to learn more.
 
 ### User settings
 
