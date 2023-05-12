@@ -104,7 +104,7 @@ group('some-company', {
 {% endcodeexampletab %}
 {% endcodeexample %}
 
-## Utility Methods
+## Utility methods
 The Analytics React Native 2.0 utility methods help you to manage your data. They include:
 - Alias
 - Reset
@@ -190,12 +190,28 @@ If you don't do this, the old client instance would still exist and retain the t
 
 Ideally, you shouldn't have to use this method, and the Segment client should be initialized only once in the application lifecycle.
 
-## Advanced Functionality
+## Advanced functionality
 
-Analytics React Native was built to be as exetnsible and customizable as possible to give you the ability to meet your bespoke analytics needs.  
-### Controlling Upload With Flush Policies
+Analytics React Native was built to be as extensible and customizable as possible to give you the ability to meet your bespoke analytics needs.
 
-To more granurily control when events are uploaded you can use `FlushPolicies`
+- [Control upload with flush policies](#control-upload-with-flush-policies)
+- [Add or remove policies](#add-or-remove-policies)
+- [Create your own flush policies](#create-your-own-flush-policies)
+- [Automatic screen tracking](#automatic-screen-tracking)
+- [React navigation](#react-navigation)
+- [React Native navigation](#react-native-navigation)
+- [Handle errors](#handle-errors)
+- [Report errors from plugins](#report-errors-from-plugins)
+- [Native AnonymousId](#native-anonymousid)
+- [Configure iOS deep link tracking](#configure-ios-deep-link-tracking)
+- [Device identifiers](#device-identifiers)
+
+
+
+
+### Control upload with flush policies
+
+To more granularly control when events are uploaded you can use `FlushPolicies`
 
 A Flush Policy defines the strategy for deciding when to flush, this can be on an interval, on a certain time of day, after receiving a certain number of events or even after receiving a particular event. This gives you even more flexibility on when to send event to Segment.
 
@@ -211,9 +227,9 @@ const client = createClient({
   ],
 });
 ```
-### Adding or removing policies
+### Add or remove policies
 
-One of the main advatanges of FlushPolicies is that you can add and remove policies on the fly. This is very powerful when you want to reduce or increase the amount of flushes. 
+One of the main advantages of FlushPolicies is that you can add and remove policies on the fly. This is very powerful when you want to reduce or increase the amount of flushes. 
 
 For example you might want to disable flushes if you detect the user has no network:
 
@@ -245,7 +261,7 @@ const unsubscribe = NetInfo.addEventListener((state) => {
 });
 
 ```
-### Creating your own flush policies
+### Create your own flush policies
 
 You can create a custom FlushPolicy special for your application needs by implementing the  `FlushPolicy` interface. You can also extend the `FlushPolicyBase` class that already creates and handles the `shouldFlush` value reset.
 
@@ -254,7 +270,7 @@ A `FlushPolicy` only needs to implement 2 methods:
 - `onEvent(event: SegmentEvent)`: Gets called on every event tracked by your client
 - `reset()`: Called after a flush is triggered (either by your policy, by another policy or manually)
 
-They also have a `shouldFlush` observable boolean value. When this is set to true the client will atempt to upload events. Each policy should reset this value to `false` according to its own logic, although it is pretty common to do it inside the `reset` method.
+They also have a `shouldFlush` observable boolean value. When this is set to true the client will attempt to upload events. Each policy should reset this value to `false` according to its own logic, although it is pretty common to do it inside the `reset` method.
 
 ```ts
 export class FlushOnScreenEventsPolicy extends FlushPolicyBase {
@@ -277,7 +293,7 @@ export class FlushOnScreenEventsPolicy extends FlushPolicyBase {
 ### Automatic screen tracking
 As sending a screen() event with each navigation action can get tiresome, it's best to track navigation globally. The implementation is different depending on which library you use for navigation. The two main navigation libraries for React Native are [React Navigation](https://reactnavigation.org/){:target="_blank"} and [React Native Navigation](https://wix.github.io/react-native-navigation/docs/before-you-start/){:target="_blank"}.
 
-### React Navigation
+### React navigation
 When setting up React Navigation, you'll essentially find the root level navigation container and call `screen()` whenever the user navigates to a new screen. Segment's [example app](https://github.com/segmentio/analytics-react-native/tree/master/example){:target="_blank"} is set up with screen tracking using React Navigation, so you can use it as a guide.
 
 To set up automatic screen tracking with React Navigation:
@@ -322,7 +338,7 @@ To set up automatic screen tracking with React Navigation:
     >
     ```
 
-### React Native Navigation
+### React Native navigation
 In order to set up automatic screen tracking while using [React Native Navigation](https://wix.github.io/react-native-navigation/docs/before-you-start/){:target="_blank"}:
 1. Use an event listener at the point where you set up the root of your application (for example, `Navigation.setRoot`).
 2. Access your `SegmentClient` at the root of your application.
@@ -333,7 +349,7 @@ In order to set up automatic screen tracking while using [React Native Navigatio
         segmentClient.screen(componentName);
       });
 ```
-### Handling errors
+### Handle errors
 
 You can handle analytics client errors through the `errorHandler` option.
 
@@ -370,9 +386,9 @@ const segmentClient = createClient({
 
 The reported errors can be of any of the [`ErrorType`](packages/core/src/errors.ts#L4) enum values. 
 
-### Reporting errors from plugins
+### Report errors from plugins
 
-Plugins can also report errors to the handler by using the [`.reportInternalError`](packages/core/src/analytics.ts#L741) function of the analytics client, we recommend using the `ErrorType.PluginError` for consistency, and attaching the `innerError` with the actual exception that was hit:
+Plugins can also report errors to the handler by using the [`.reportInternalError`](packages/core/src/analytics.ts#L741) function of the analytics client, Segment recommends that you use the `ErrorType.PluginError` for consistency, and attaching the `innerError` with the actual exception that was hit:
 
 ```ts
   try {
@@ -433,7 +449,7 @@ private AnalyticsReactNativePackage analytics = new AnalyticsReactNativePackage(
   analytics.setAnonymousId("My-New-Native-Id");
   }
 ```
-### Set up iOS Deep Link Tracking
+### Configure iOS deep link tracking
 > warning ""
 > This is only required for iOS if you're using the `trackDeepLinks` option. Android doesn't require any additional setup.
 
@@ -456,4 +472,4 @@ On Android, Segment's React Native library generates a unique ID by using the DR
 To collect the Android Advertising ID provided by Play Services, Segment provides a [plugin](https://github.com/segmentio/analytics-react-native/tree/master/packages/plugins/plugin-advertising-id){:target="_blank"} that can be used to collect that value. This value is set to context.device.advertisingId. For iOS, this [plugin](https://github.com/segmentio/analytics-react-native/tree/master/packages/plugins/plugin-idfa){:target="_blank"} can be used to set the IDFA context.device.advertisingId property.
 
 ## Changelog
-[View the Analytics React Native changelog on GitHub](https://github.com/segmentio/analytics-react-native/releases){:target="_blank"}.   -->
+[View the Analytics React Native changelog on GitHub](https://github.com/segmentio/analytics-react-native/releases){:target="_blank"}.
