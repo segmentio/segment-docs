@@ -73,14 +73,6 @@ The Amplitude destination requires that each event include either a Device ID or
 
 By default, Segment maps the Segment property `context.device.id` to the Amplitude property `Device ID`. If `context.device.id` isn't available, Segment maps the property `anonymousId` to the Amplitude `Device ID`. The Actions interface indicates this with the following contents of the Device ID field: `coalesce(` `context.device.id` `anonymousId` `)`.
 
-## Important differences from the classic Amplitude destination
-
-The classic Amplitude destination captures the following user fields in device-mode (when it runs on the user's device):
-
-- Device Type (for example, Mac, PC, mobile device)
-- Platform (for example iOS or Android)
-
-Amplitude (Actions) runs in cloud-mode, and does not capture these fields.
 {% capture log-event-details %}
 #### Track Revenue Per Product
 
