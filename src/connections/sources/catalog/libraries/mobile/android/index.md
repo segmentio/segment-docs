@@ -38,7 +38,7 @@ The queue behavior might differ for Device-mode destinations. For example, Mixpa
 
 This is why even if you see events in the debugger, the Device-mode destination may not show them on their dashboards yet because they might still be in their mobile SDK's queue. The opposite may also happen: the Device-mode destination SDK might send events to its servers before Segment sends its queue, so events could show up in the destination's dashboard before they appear in the Segment debugger.
 
-### Queue persistance in Analytics-Android
+### Queue persistence in Analytics-Android
 
 Analytics-Android uses a persistent disk queue, so the events persist even when the app is killed. On app restart, the library reads them from disk and uploads the events. The queue works on top of [Tape](http://square.github.io/tape/), which is designed to even survive process and system crashes.
 
@@ -501,7 +501,7 @@ Find more details about the Group method, including the Group call payload, in t
 
 Alias is how you associate one identity with another. This is an advanced method, but it is required to manage user identities successfully in *some* Segment destinations, such as Mixpanel or Kissmetrics.
 
-[Mixpanel](/docs/connections/destinations/catalog/mixpanel/#alias) used the Alais call to associate an anonymous user with an identified user once they sign up. For [Kissmetrics](/docs/connections/destinations/catalog/kissmetrics/#alias), if your user switches IDs, you can use 'alias' to rename the 'userId'.
+[Mixpanel](/docs/connections/destinations/catalog/mixpanel/#alias) used the Alias call to associate an anonymous user with an identified user once they sign up. For [Kissmetrics](/docs/connections/destinations/catalog/kissmetrics/#alias), if your user switches IDs, you can use 'alias' to rename the 'userId'.
 
 Example `alias` call:
 
@@ -534,7 +534,7 @@ The `alias` call has the following fields:
   </tr>
 </table>
 
-For more details about `alias`, including the **`alias` call payload**, check out [the Segment Alais call spec](/docs/connections/spec/alias/).
+For more details about `alias`, including the **`alias` call payload**, check out [the Segment Alias call spec](/docs/connections/spec/alias/).
 
 Note that the `previousId` is the value passed in as the `userId`, which Segment cached after you made an `identify` call. Segment passes that value as the `previousId` when you call `alias` and pass in a `newId`. If you have not called `identify`, the `previousId` is set to the `anonymousId`.
 

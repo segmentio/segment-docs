@@ -1,9 +1,9 @@
 ---
 rewrite: true
-title: tvsquared Destination
+title: Innovid Destination
 id: 54521fdb25e721e32a72eefc
 ---
-[TV Squared](https://tvsquared.com/) enables you to pull same-day TV performance analytics so you can manage TV spend, and create data-driven TV media plans based on network, days, programs, and genres. Our TV Squared Destination is open-source. You can browse the code [in GitHub](https://github.com/segmentio/analytics.js-integrations/tree/master/integrations/tvsquared).
+[Innovid's XP platform](https://www.innovid.com/){:target="_blank"} enables you to pull same-day TV performance analytics so you can manage TV spend and create data-driven TV media plans based on network, days, programs, and genres.
 
 ## Getting Started
 
@@ -11,13 +11,13 @@ id: 54521fdb25e721e32a72eefc
 
 1. From the Segment web app, click **Catalog**.
 
-2. Search for "TV Squared" in the Catalog, select it, and choose which of your JavaScript sources to connect the destination to.
+2. Search for "Innovid" in the Catalog, select it, and choose which of your JavaScript sources to connect the destination to.
 
-3. Add your TV Squared Brand ID and Client ID to your Segment Settings UI. You can find this within your TV Squared dashboard.
+3. Add your InnovidXP Brand ID and Client ID to your Segment Settings UI. You can find this within your Innovid dashboard.
 
-4. Segment automatically loads TV Squared's JavaScript tracking snippet onto the page once analytics.js loads. Make sure you remove TV Squared's snippet from your code.
+4. Segment automatically loads InnovidXP's JavaScript tracking snippet onto the page once analytics.js loads. Make sure you remove Innovid's snippet from your code.
 
-5. TV Squared starts automatically recording events after approximately 45 minutes, once our CDN is updated.
+5. InnovidXP automatically starts recording events after approximately 45 minutes, once the CDN is updated.
 
 ## Page
 
@@ -27,7 +27,7 @@ If you're not familiar with the Segment Specs, take a look to understand what th
 analytics.page();
 ```
 
-When you call `page` in Analytics.js, we call TV Squared's `Basic Hit Tracker`. Keep in mind, our Analytics.js library will **automatically fire a `page` call on every page on which it is loaded**, and so unless you want to call `Basic Hit Tracker` more than once, you shouldn't need to do anything additional here.
+When you call `page` in Analytics.js, Segment calls InnovidXP's `Basic Hit Tracker`. Analytics.js library sends a `page` call on every page on which it is loaded, so unless you want to call `Basic Hit Tracker` more than once, you shouldn't need to do anything additional here.
 
 ## Track
 
@@ -42,13 +42,13 @@ analytics.track('Completed Purchase', {
 });
 ```
 
-When you call [`track`](/docs/connections/spec/track/) in Analytics.js, we call TV Squared's `Action Tracker` - where in addition to the `event name`, you can specify a dictionary of properties that will get sent to TV Squared.
+When you call [`track`](/docs/connections/spec/track/) in Analytics.js, Segment calls InnovidXP's `Action Tracker` - where in addition to the `event name`, you can specify a dictionary of properties that will get sent to Innovid.
 
-As per the example above, TV Squared **requires** that you pass in a `revenue`, `productType`, `orderId`, and `promo` property into each of your calls. If you cannot provide a value for one or more of the aforementioned properties, don't worry, you can simply pass in an empty string to send the event.
+As per the example above, InnovidXP **requires** that you pass in a `revenue`, `productType`, `orderId`, and `promo` property into each of your calls. If you cannot provide a value for one or more of the aforementioned properties, don't worry, you can simply pass in an empty string to send the event.
 
 ### Event Allow-listing
 
-For each event that you want to track (e.g. using `analytics.track(your_event_name, …)`), you must allow-list the event in your destination settings (under "Event Allow-list"). For example, if you want `analytics.track('Order Completed')` and `analytics.track('Sale')` events to be sent, then you must add Order Completed and Sale to this list.
+For each event that you want to track (for example, using `analytics.track(your_event_name, …)`), you must allow-list the event in your destination settings (under "Event Allow-list"). For example, if you want `analytics.track('Order Completed')` and `analytics.track('Sale')` events to be sent, then you must add Order Completed and Sale to this list.
 
 ### Custom Track Properties
 

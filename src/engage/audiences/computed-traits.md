@@ -150,7 +150,7 @@ The following operators are available.
 - after date
 - equals one of
 - contains one of
-- 
+
 ## Connecting your Computed Trait to a Destination
 
 Engage sends user-level computed Traits to destinations using the [Identify call](/docs/connections/spec/identify/) for user traits, or using the [Track call](/docs/connections/spec/track/) for event properties. Segment includes the trait value and property in the identify and track calls.
@@ -163,7 +163,10 @@ For account-level computed traits, you have the option to send either a [group](
 
 ## View compute status
 
-After you create a computed trait, use the Overview page to view the current [compute status](/docs/engage/audiences#compute-statuses), number of users with the trait, connected destinations, and more. For real-time traits, click **Refresh Trait** to update the current number of users with the trait.  
+After you create a computed trait, use the Overview page to view a compute progress bar, current [status](/docs/engage/audiences#compute-statuses), number of users with the trait, connected destinations, and more. For real-time traits, click **Refresh Trait** to update the current number of users with the trait.  
+
+> info "Viewing compute progress"
+> When you create a real-time computed trait, you'll see a progress bar, computed percentage, and status updates. For existing traits that you edit, Engage displays the compute status but not the progress bar or percentage.
 
 ## Editing Realtime Traits
 
@@ -176,7 +179,7 @@ To edit a real-time Trait, follow these steps:
 3. Select the **Builder** tab and make your edits.
 4. Preview the results, then select **Save Computed Trait** to confirm your edits.
 
-Engage then processes your Trait edits. While the edit task runs, the trait remains locked and you can't make further changes. Once Engage incorporates your changes, you'll be able to access your updated Trait. 
+Engage then processes your Trait edits. While the edit task runs, the trait remains locked and you can't make further changes. Once Engage incorporates your changes, you'll be able to access your updated Trait.
 
 
 > warning ""
@@ -211,7 +214,7 @@ You can query a user's traits (such as `first_name`, `last_name`, and more):
 
 By default, the response includes 20 traits. You can return up to 200 traits by appending `?limit=200` to the querystring. If you wish to return a specific trait, append `?include={trait}` to the querystring (for example, `?include=age`). You can also use the ``?class=audience​`` or ``?class=computed_trait​`` URL parameters to retrieve audiences or computed traits specifically.
 
-You can read the [full Profile API docs](/docs/profiles/profile-api/) to learn more.
+You can read the [full Profile API docs](/docs/unify/profile-api/) to learn more.
 
 ## Downloading your Computed Trait as a CSV file
 

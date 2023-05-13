@@ -27,7 +27,7 @@ If you previously sent email events using the Customer.io destination during our
 
 5. To finish the set up, go to your Customer.io account, go to **Data & Integrations > Integrations > Segment**, and enter the Segment write key.
 
-   ![](images/customerio_streaming_data_out.png)
+   ![Screenshot of the Segment Source settings page in Customer.io.](images/customerio_streaming_data_out.png)
 
 6. Click **Connect Segment**.
 

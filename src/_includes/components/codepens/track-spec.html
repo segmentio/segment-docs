@@ -1,0 +1,81 @@
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/9000.0.1/prism.min.js" integrity="sha512-UOoJElONeUNzQbbKQbjldDf9MwOHqxNz49NNJJ1d90yp+X9edsHyJoAs6O4K19CZGaIdjI5ohK+O2y5lBTW6uQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script type="text/javascript">
+  function showMessage(){
+      var event = document.getElementById("event").value;
+      var title = document.getElementById("title").value;
+      var user_agent = window.navigator.userAgent
+      var ts = Date.now()
+      var date = new Date(ts) 
+      var now = date.toISOString()
+      var received = ts + 233
+      var received_ts = new Date(received)
+      var received_iso = received_ts.toISOString()
+      var output = 
+`{
+  "anonymousId": "23adfd82-aa0f-45a7-a756-24f2a7a4c895",
+  "context": {
+    "library": {
+      "name": "analytics.js",
+      "version": "2.11.1"
+    },
+    "page": {
+      "path": "/docs/connections/spec/track/",
+      "referrer": "",
+      "search": "",
+      "title": "Spec: Track",
+      "url": "https://segment.com/docs/connections/spec/track/"
+    },
+    "userAgent": "${user_agent}",
+    "ip": "8.8.8.8"
+  },
+  "event": "${event}",
+  "integrations": {},
+  "messageId": "ajs-f8ca1e4de5024d9430b3928bd8ac6b96",
+  "properties": {
+    "title": "${title}"
+  },
+  "receivedAt": "${received_iso}",
+  "sentAt": "${now}",
+  "timestamp": "${now}",
+  "type": "track",
+  "userId": "AiUGstSDIg",
+  "originalTimestamp": "2015-12-12T19:11:01.152Z"
+}`
+    output_container.innerHTML = output
+    Prism.highlightElement(output_container)
+  }
+</script>
+<script>
+  function showOutput() {
+    var show = document.getElementById("output-code");
+    if (show.style.display === "block") {
+      show.style.display = "none";
+    } else {
+      show.style.display = "block";
+    }
+  }
+</script>
+
+<div class="sample-code-container">
+<div class="form">
+  <h3> Sample Track call</h3>
+  <div class="sample-form">
+  <label for="event">Event:</label>
+  <input type="text" id="event" value="Course clicked" disabled>
+  <label for="title">Title:</label>
+  <select name="title" id="title">
+    <option value="Intro to Analytics">Intro to Analytics</option>
+    <option value="Protocols 101">Protocols 101</option>
+    <option value="Reverse ETL">Reverse ETL</option>
+  </select>
+  <input type="submit" class="button button-hollow" id="submit" onclick="showMessage(); showOutput()" value="See a sample Track call">
+</div>
+</div>
+
+<div class="output">
+<h4>Sample Track Call</h4>
+<pre class="language-javascript"><code class="language-javascript" id="output_container">
+Sample output goes here!
+</code></pre>
+</div>
+</div>

@@ -1,4 +1,6 @@
-Functions use Node.js 14.x.
+Beginning April 30, 2023, Functions is migrating from Node.js 14.x to Node.js 16.x. You're not required to take any further action.
+
+<div class="premonition success"><div class="fa fa-check-square"></div><div class="content"><p class="header">Node.js 18.x: </p><p markdown=1>Starting June 30, 2023, you can [contact Segment](https://segment.com/help/contact/){:target="_blank"} to migrate to Node.js 18.x.</p></div></div>
 
 Functions do not currently support importing dependencies, but you can [contact Segment Support](https://segment.com/help/contact/){:target="_blank"} to request that one be added.
 
@@ -7,6 +9,7 @@ The following dependencies are installed in the function environment by default.
 - [`atob v2.1.2`](https://www.npmjs.com/package/atob){:target="_blank"} exposed as `atob`
 - [`aws-sdk v2.488.0`](https://www.npmjs.com/package/aws-sdk){:target="_blank"} exposed as `AWS`
 - [`btoa v1.2.1`](https://www.npmjs.com/package/btoa){:target="_blank"} exposed as `btoa`
+- [`fetch-retry`](https://www.npmjs.com/package/fetch-retry){:target="_blank"} exposed as `fetchretrylib.fetchretry`
 - [`form-data v2.4.0`](https://www.npmjs.com/package/form-data){:target="_blank"} exposed as `FormData`
 - [`@google-cloud/automl v2.2.0`](https://www.npmjs.com/package/@google-cloud/automl){:target="_blank"} exposed as `google.cloud.automl`
 - [`@google-cloud/bigquery v5.3.0`](https://www.npmjs.com/package/@google-cloud/bigquery){:target="_blank"} exposed as `google.cloud.bigquery`
@@ -19,6 +22,7 @@ The following dependencies are installed in the function environment by default.
 - [`hubspot-api-nodejs`](https://www.npmjs.com/package/@hubspot/api-client){:target="_blank"} exposed as `hubspotlib.hubspot`
 - [`jsforce v1.11.0`](https://www.npmjs.com/package/jsforce){:target="_blank"} exposed as `jsforce`
 - [`jsonwebtoken v8.5.1`](https://www.npmjs.com/package/jsonwebtoken){:target="_blank"} exposed as `jsonwebtoken`
+- [`libphonenumber-js`](https://www.npmjs.com/package/libphonenumber-js){:target="_blank"} exposed as `libphonenumberjslib.libphonenumberjs`
 - [`lodash v4.17.19`](https://www.npmjs.com/package/lodash){:target="_blank"} exposed as `_`
 - [`mailjet`](https://www.npmjs.com/package/node-mailjet){:target="_blank"} exposed as `const mailJet = nodemailjet.nodemailjet;`
 - [`moment-timezone v0.5.31`](https://www.npmjs.com/package/moment-timezone/v/0.5.31){:target="_blank"} exposed as `moment`

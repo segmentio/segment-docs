@@ -23,7 +23,7 @@ To use Subscriptions with SQL Traits, you need the following:
 
 ## Sync subscription data with SQL
 
-You can sync with SQL from two locations in the Segment app. Navigate to **Profiles > Profile explorer** or **Engage > Audiences > Profile explorer**, then:
+You can sync with SQL from two locations in the Segment app. Navigate to **Unify > Profile explorer** or **Engage > Audiences > Profile explorer**, then:
 
 1. Click **Manage subscription statuses**, and select **Update subscription statuses**.
 2. Select **Sync with SQL**, and click **Configure**.
@@ -36,8 +36,8 @@ To configure Subscriptions with SQL Traits, you can write your own query or clic
 > Click **Reset Template** to reset your SQL query.
 
 Queries must return at least one pair of the columns below with a value of `subscribed`, `unsubscribed`, or `did_not_subscribe`:
-- `email` and `_segment_internal_email_subscription_`
-- `phone` and `_segment_internal_sms_subscription_`
+- `email` and `__segment_internal_email_subscription__`
+- `phone` and `__segment_internal_sms_subscription__`
 
 For more subscription SQL best practices, view the [query requirements](#query-requirements) below.
 
@@ -64,7 +64,7 @@ You can schedule sync intervals to import subscription data from your warehouse 
 
 Use the Update History page to view all SQL jobs.
 
-1. Navigate to **Profiles > Profile explorer** or **Engage > Audiences > Profile explorer.**
+1. Navigate to **Unify > Profile explorer** or **Engage > Audiences > Profile explorer.**
 2. Click **Manage subscription statuses**.
 3. Select **View update history**, then select the **SQL Jobs** tab.
 
@@ -76,7 +76,7 @@ When you build your SQL query, keep the following requirements in mind for the d
 
 **Your query must:**
 
-- Return at least one column with `user_id`, `anonymous_id`, `email`, `phone` (or `group_id` for account traits if Profiles for B2B is enabled).
+- Return at least one column with `user_id`, `anonymous_id`, `email`, `phone` (or `group_id` for account traits if Unify for B2B is enabled).
 - Return records less than 16KB in size.
 
 **Your query must not:**

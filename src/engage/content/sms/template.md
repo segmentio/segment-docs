@@ -50,6 +50,25 @@ Engage inserts the selected traits inside merge tags based on cursor placement i
 > info ""
 > To learn more about profile traits, visit Segment's [Computed Traits](/docs/engage/audiences/computed-traits/) and [SQL Traits](/docs/engage/audiences/sql-traits/) documentation.
 
+## Configure Link Shortening
+
+Use Link Shortening to send shorter, more manageable link URLs in your Engage SMS campaigns.
+
+Configure Link Shortening in your [Twilio Console](https://www.twilio.com/docs/messaging/how-to-configure-link-shortening){:target="blank"} in six steps:
+
+
+1. [Set up an Organization](https://www.twilio.com/docs/messaging/how-to-configure-link-shortening#step-1-setting-up-an-organization){:target="blank"}
+2. [Register Domains](https://www.twilio.com/docs/messaging/how-to-configure-link-shortening#step-2-registering-domains){:target="blank"}
+3. [Add Domain Name System (DNS) records](https://www.twilio.com/docs/messaging/how-to-configure-link-shortening#step-3-adding-dns-records){:target="blank"}
+4. [Generate a TLS certificate](https://www.twilio.com/docs/messaging/how-to-configure-link-shortening#step-4-generating-a-tls-certificate){:target="blank"}
+5. [Upload your TLS certificate](https://www.twilio.com/docs/messaging/how-to-configure-link-shortening#step-5-uploading-tls-certificate){:target="blank"}
+6. [Configure fallback and callback URLs](https://www.twilio.com/docs/messaging/how-to-configure-link-shortening#step-5-uploading-tls-certificate){:target="blank"} (Optional)
+
+Once you've configured Link Shortening, Twilio automatically shortens the link URLs for recipients of your SMS messages. Link shortening occurs during the message sending process, so shortened links don't appear in the message editor.
+
+> info ""
+> Link Shortening is only available for SMS messages.
+
 ## Clone an SMS message template
 
 You can clone existing SMS templates to edit and use in your message campaigns.

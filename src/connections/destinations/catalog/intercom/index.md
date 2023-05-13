@@ -419,7 +419,23 @@ analytics.identify('teemo', { someTrait: 'x'}, {
 > info ""
 > You can pass in the Intercom specific option using all supported calls for this destination (`page`, `identify`, and `group`).
 
-### Control the Intercom Chat Widget (Mobile only)
+### Control the Intercom Chat Widget (Browser)
+
+If you want to control the position or toggle the visibility of the Intercom Chat Widget, use the Intercom `update` method. After the Intercom instance is loaded on the client side, you can update the widget styling.
+
+```js
+//Set styling
+window.intercomSettings = {
+    alignment: 'right',
+    horizontal_padding: 20,
+    vertical_padding: 20
+  };
+
+//Apply update
+window.Intercom("update");
+```
+
+### Control the Intercom Chat Widget (Mobile)
 
 Segment's mobile SDKs let you tap into the Intercom instance that the integration creates so that you can call any of Intercom's native methods, including all methods required to interact with the Intercom chat widget.
 
@@ -477,7 +493,7 @@ If you are sending those two calls, then check that the CSS selector for the wid
 
 ### My client-side and server-side calls are going to one Segment source, but different Intercom projects
 
-Server-side calls go the the project selected when you authenticated your Intercom account while setting up the destination. Client-side calls go to the project referenced with the [App ID setting](#app-id-required-for-analyticsjs-and-mobile).
+Server-side calls go to the project selected when you authenticated your Intercom account while setting up the destination. Client-side calls go to the project referenced with the [App ID setting](#app-id-required-for-analyticsjs-and-mobile).
 Make sure those projects are the same.
 
 ### I'm seeing a "Cannot have more than 120 active event names" error
