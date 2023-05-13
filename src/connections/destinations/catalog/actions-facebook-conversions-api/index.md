@@ -149,6 +149,19 @@ Segment creates a SHA-256 hash of the following fields before sending to Faceboo
 
 If you use Facebook Pixel, the Pixel library also hashes the External ID. This means External IDs will match across Facebook Pixel and Facebook Conversions API if they use the External ID for [deduplication](https://developers.facebook.com/docs/marketing-api/conversions-api/deduplicate-pixel-and-server-events/#fbp-or-external-id){:target="_blank"}.
 
+### User Data Formatting
+
+Segment applies formatting to User Data Parameters as follows:
+
+| User Data Field                                                                     | Formatting applied to field value before hashing                                                                                                               |
+|-------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| External ID, Email, Gender,  Last Name, First Name,  City, State, Zip Code, Country | All whitespace is removed from string, set to lowercase.                                                                                                       |
+| Phone                                                                               | All non-numeric characters are removed from string.                                                                                                            |
+| Gender                                                                              | A string of 'male' will be transformed to 'm', and 'female' to 'f'.                                                                                            |
+| Date of Birth                                                                       | No formatting is applied.                                                                                                                                      |
+| State                                                                               | Compared against a Map object of states and their 2-character ANSI abbreviation code. Example: "Texas", "TX", or "tx" in this field will be formatted as "tx". |
+| Country                                                                             | Compared against a Map object of countries and their 2-letter ISO 3166-1 alpha-2 country codes.                                                                |
+
 ### User Data Parameters
 
 Segment automatically maps User Data fields to their corresponding parameters [as expected by the Conversions API](https://developers.facebook.com/docs/marketing-api/conversions-api/parameters/customer-information-parameters/){:target="_blank"} before sending to Facebook:
