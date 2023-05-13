@@ -5,6 +5,14 @@ redirect_from:
   - '/profiles/product-limits'
 ---
 
+###Unify Ingestion Limitations
+
+Unify will silently drop events if:
+- The groupId has more than 500 characters.
+- Events have more than 300 properties/traits.
+- messageId is longer than 100 characters.
+- The groupId is empty in a group call or context.groupId is empty in a track call.
+
 ## Profile API
 
 | Name                    | limit                   | Details                                                                                                                                                             |
