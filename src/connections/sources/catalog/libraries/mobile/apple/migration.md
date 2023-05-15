@@ -3,21 +3,20 @@ title: Analytics for Swift Migration Guide
 strat: swift
 ---
 
-> info ""
-> Analytics Swift supports [these destinations](/docs/connections/sources/catalog/libraries/mobile/apple/destination-plugins) with more to come.
-
-## Getting Started 
-
-If you're using a different mobile library such as Analytics-iOS, follow these steps to migrate to the Analytics-Swift library.
-
 > success ""
 > This guide assumes you already have a Source in your Segment workspace. If you are creating a new one you can reference the [Source Overview Guide](/docs/connections/sources/)
 
-> warning ""
-> Segment no longer supports installing Analytics-Swift through Cocoapods.
 
+If you're using a previous Segment mobile library such as Analytics-iOS, follow these steps to migrate to the Analytics-Swift library. Analytics-Swift is designed to work with your Objective-C codebase as well. 
 
-## Add the SDK as a Dependency
+1. [Import Analytics-Swift](#1-import-analytics-swift)
+2. [Upgrade you Destinations](#2-upgrade-your-destinations)
+3. [Advanced: Upgrade your Middleware](#3advanced-upgrade-middleware-to-plugins)
+4. [Upgrade Notes: Changes to the Config](#4-upgrade-notes-update-your-config-options)
+
+## 1. Import Analytics-Swift
+
+### 1.a) Add the SDK via Swift Package Manager
 
 1. Open your project in Xcode.
 2. If using Xcode 12, go to **File > Swift Packages > Add Package Dependency…**. If using Xcode 13, go to **File > Add Packages…**
@@ -26,19 +25,18 @@ If you're using a different mobile library such as Analytics-iOS, follow these s
 5. Make sure the Segment Library checkbox is selected.
 6. Click **Finish**.
 
-<br> You have now added Analytics-Swift to your project. Segment and Sovran show as Swift package dependencies.
+<br> You have now added Analytics-Swift to your project. Segment and Sovran show as Swift package dependencies.You can remove the analytics-iOS SDK from your app.
 
-## Modify your initialized instance.
+## 1.b) Modify your initialized instance.
 
 {% codeexample %}
 {% codeexampletab Swift%}
 ```swift
     let configuration = Configuration(writeKey: "YOUR_WRITE_KEY")
-    .configuration.trackApplicationLifecycleEvents = true
-    .configuration.flushAt = 3
-    .configuration.flushInterval = 10
-    
-    analytics = Analytics(configuration: configuration)
+    configuration.trackApplicationLifecycleEvents = true
+    configuration.flushAt = 3
+    configuration.flushInterval = 10
+    Analytics.setup(with: configuration)
 ```
 {% endcodeexampletab %}
 {% codeexampletab Objective-C %}
@@ -53,11 +51,56 @@ If you're using a different mobile library such as Analytics-iOS, follow these s
 {% endcodeexampletab %}
 {% endcodeexample %}
 
-## Convert Middlewares to Plugins
+
+> success ""
+> NOTE: Analytics-Swift supports running multiple instances of the analytics object, so it does not assume a singleton. However, if you’re migrating from Analytics-iOS and all your track calls are routed to the Analytics.shared() singleton, you can very easily forward these calls to your new Analytics-swift object.
+
+With this simple extension, all of your existing Segment calls should work with Analytics-Swift. 
+
+```swift
+@extension Analytics {
+    (SegAnalytics)shared() {
+        return analytics; // or whatever variable name you're using
+    } 
+}
+```
+## 2. Upgrade your Destinations 
+
+If your app uses Segment to route data to Destinations via Segment-cloud (i.e. Cloud-mode destinations), you can skip this step. Analytics-Swift treats Device-mode Destinations as [plugins](/docs/connections/sources/catalog/libraries/mobile/swift/plugin-architecture), and simplifies the process in integrating them into your app. Analytics-Swift supports these [Device-Mode Destinations](/docs/connections/sources/catalog/libraries/mobile/swift/destination-plugins) with more to come. 
+
+### 2.a) Include Plugin via SPM 
+
+```
+.package(
+            name: "Segment",
+            url: "https://github.com/segment-integrations/analytics-swift-<destination>.git",
+            from: "1.1.3"
+        ),
+```
+### 2.b) Add Plugin to your Analytics instnace
+
+```
+import Segment
+import Segment<Destination> // <-- Add this line
+```
+
+Just under your Analytics-Swift library setup, call `analytics.add(plugin: ...)` to add an instance of the plugin to the Analytics timeline.
+
+```
+let analytics = Analytics(configuration: Configuration(writeKey: "<YOUR WRITE KEY>")
+                    .flushAt(3)
+                    .trackApplicationLifecycleEvents(true))
+analytics.add(plugin: <Destination>())
+```
+
+Your events will now begin to flow to the added destination in Device-Mode.
+
+## 3.Advanced: Upgrade Middleware to Plugins
+
 
 Middlewares are a powerful mechanism that can augment events collected by the Analytics iOS (Classic) SDK. A middleware is a simple function that is invoked by the Segment SDK and can be used to monitor, modify, augment or reject events. Analytics Swift replaces the concept of middlewares with Enrichment Plugins to give you even more control over your event data. Refer to the [Plugin Architecture Overview](/docs/connections/sources/catalog/libraries/mobile/swift/plugin-architecture) for more information. 
 
-### Source middleware
+### 3.a) Upgrading source middleware
 
 **Before example**
 <br>
@@ -117,12 +160,16 @@ Middlewares are a powerful mechanism that can augment events collected by the An
 {% codeexample %}
 {% codeexampletab Swift%}
 ```swift
-    let customizeAllTrackCalls: EnrichmentClosure = { event in
-        guard let event = event as? TrackEvent else { return event }
-        var workingEvent = event
-        workingEvent.event = "[New] \(event.event)"
-        workingEvent.properties?[keyPath: "customAttribute"] = "Hello"
-        return workingEvent
+    class customizeAllTrackCalls: EventPlugin {
+        let type: PluginType = .enrichment
+        let analytics: Analytics
+
+        public func track(event: TrackEvent) -> TrackEvent? {
+            var workingEvent = event
+            workingEvent.event = "[New] \(event.event)"
+            workingEvent.properties["customAttribute"] = "Hello"
+            return workingEvent
+        }
     }
 
     analytics.add(plugin: customizeAllTrackCalls())
@@ -130,26 +177,27 @@ Middlewares are a powerful mechanism that can augment events collected by the An
 {% endcodeexampletab %}
 {% codeexampletab Objective-C %}
 ```objc
-    SEGBlockPlugin *customizeAllTrackCalls = [[SEGBlockPlugin alloc] initWithBlock:^id<SEGRawEvent> _Nullable(id<SEGRawEvent> _Nullable event) {
-        if ([event isKindOfClass: [SEGTrackEvent class]]) {
-            SEGTrackEvent *track = (SEGTrackEvent *)event;
-            NSString *newName = [NSString stringWithFormat: @"[New] %@", track.event];
-            track.event = newName;
-            NSMutableDictionary *newProps = (track.properties != nil) ? [track.properties mutableCopy] : [@{} mutableCopy];
-            newProps[@"customAttribute"] = @"Hello";
-            track.properties = newProps;
-            
-            return track;
-        }
-        return event;
-    }];
-    
-    [self.analytics addPlugin:customizeAllTrackCalls];
+    SEGBlockMiddleware *customizeAllTrackCalls = [[SEGBlockMiddleware alloc] initWithBlock:^(SEGContext * _Nonnull context, SEGMiddlewareNext  _Nonnull next) {
+        if ([context.payload isKindOfClass:[SEGTrackPayload class]]) {
+            SEGTrackPayload *track = (SEGTrackPayload *)context.payload;
+            next([context modify:^(id<SEGMutableContext> _Nonnull ctx) {
+                NSString *newEvent = [NSString stringWithFormat:@"[New] %@", track.event];
+                NSMutableDictionary *newProps = (track.properties != nil) ? [track.properties mutableCopy] : [@{} mutableCopy];
+                newProps[@"customAttribute"] = @"Hello";
+                ctx.payload = [[SEGTrackPayload alloc] initWithEvent:newEvent
+                                                      properties:newProps
+                                                        context:track.context
+                                                    integrations:track.integrations];
+        }]);
+    } else {
+        next(context);
+    }
+}];
 ```
 {% endcodeexampletab %}
 {% endcodeexample %}
 
-### Destination middleware
+###  3.b) Upgrading destination middleware
 If you don't need to transform all of your Segment calls, and only want to transform the calls going to specific, device-mode destinations, use Destination plugins.
 
 **Before example**
@@ -158,7 +206,7 @@ If you don't need to transform all of your Segment calls, and only want to trans
 {% codeexampletab Swift%}
 
 ```swift
-     // define middleware we'll use for Amplitude
+     // define middleware we'll use for amplitude
 
        let customizeAmplitudeTrackCalls = BlockMiddleware { (context, next) in
         if context.eventType == .track {
@@ -223,12 +271,16 @@ If you don't need to transform all of your Segment calls, and only want to trans
 {% codeexampletab Swift%}
 
 ```swift
-    let customizeAmplitudeTrackCalls: EnrichmentClosure = { event in
-        guard let event = event as? TrackEvent else { return event }
-        var workingEvent = event
-        workingEvent.event = "[New] \(event.event)"
-        workingEvent.properties?[keyPath: "customAttribute"] = "Hello"
-        return workingEvent
+    class customizeAllTrackCalls: EventPlugin {
+        let type: PluginType = .enrichment
+        let analytics: Analytics
+
+        public func track(event: TrackEvent) -> TrackEvent? {
+            var workingEvent = event
+            workingEvent.event = "[New] \(event.event)"
+            workingEvent.properties["customAttribute"] = "Hello"
+            return workingEvent
+        }
     }
 
     // create an instance of the Amplitude plugin
@@ -237,7 +289,7 @@ If you don't need to transform all of your Segment calls, and only want to trans
 
     // add our enrichment plugin to amplitude
 
-    amplitudeDestination.add(enrichment: customizeAmplitudeTrackCalls())
+    amplitudeDestination.add(plugin: customizeAmplitudeTrackCalls())
 
     // add amplitude to analytics instance.
 
@@ -246,27 +298,34 @@ If you don't need to transform all of your Segment calls, and only want to trans
 {% endcodeexampletab %}
 {% codeexampletab Objective-C %}
 ```objc
-    SEGBlockPlugin *customizeAmplitudeTrackCalls = [[SEGBlockPlugin alloc] initWithBlock:^id<SEGRawEvent> _Nullable(id<SEGRawEvent> _Nullable event) {
-        if ([event isKindOfClass: [SEGTrackEvent class]]) {
-            SEGTrackEvent *track = (SEGTrackEvent *)event;
-            NSString *newName = [NSString stringWithFormat: @"[New] %@", track.event];
-            track.event = newName;
-            NSMutableDictionary *newProps = (track.properties != nil) ? [track.properties mutableCopy] : [@{} mutableCopy];
-            newProps[@"customAttribute"] = @"Hello";
-            track.properties = newProps;
-            
-            return track;
+    // define middleware we'll use for amplitude
+    SEGBlockMiddleware *customizeAmplitudeTrackCalls = [[SEGBlockMiddleware alloc] initWithBlock:^(SEGContext * _Nonnull context, SEGMiddlewareNext  _Nonnull next) {
+        if ([context.payload isKindOfClass:[SEGTrackPayload class]]) {
+            SEGTrackPayload *track = (SEGTrackPayload *)context.payload;
+            next([context modify:^(id<SEGMutableContext> _Nonnull ctx) {
+                NSString *newEvent = [NSString stringWithFormat:@"[Amplitude] %@", track.event];
+                NSMutableDictionary *newProps = (track.properties != nil) ? [track.properties mutableCopy] : [@{} mutableCopy];
+                newProps[@"customAttribute"] = @"Hello";
+                ctx.payload = [[SEGTrackPayload alloc] initWithEvent:newEvent
+                                                      properties:newProps
+                                                         context:track.context
+                                                    integrations:track.integrations];
+            }]);
+        } else {
+            next(context);
         }
-        return event;
     }];
-    
-    [self.analytics addPlugin:customizeAmplitudeTrackCalls destinationKey:@"Amplitude"];
+...
+    // configure destination middleware for amplitude
+    id<SEGIntegrationFactory> amplitude = [SEGAmplitudeIntegrationFactory instance];
+    [config use:amplitude];
+    config.destinationMiddleware = [SEGDestinationMiddleware alloc] initWithKey:amplitude.key middleware:@[customizeAmplitudeTrackCalls]];  
 ```
 {% endcodeexampletab %}
 {% endcodeexample %}
 
 
-### Update your config options 
+## 4. Upgrade Notes: Changes to the Configuration Object
 
 Segment changed these config options:
 
@@ -279,300 +338,21 @@ Segment added these options:
 | Name                        | Details                                                                                                                                                                                           |
 | --------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `autoAddSegmentDestination` | The analytics client automatically adds the Segment Destination. Set this to `false` if you want to customize the initialization of the Segment Destination, such as, add destination middleware. |
-| `apiHost` | Sets an alternative API host. This is useful when a proxy is in use or when events need to be routed to certain locales (such as the EU). |
-| `cdnHost`| Sets an alternative CDN host for settings retrieval. This is useful when a proxy is in use or when settings need to be queried from certain locales (such as the EU). |
-| `requestFactory` | Sets a block to be used when generating outgoing HTTP requests. Useful in proxying, or adding additional header information for outbound traffic. |
-| `errorHandler` | Sets an error handler to be called when errors are encountered by the Segment library.  See [AnalyticsError](https://github.com/segmentio/analytics-swift/blob/c7e3c1c31a5a281e94116852ef59e8221837dbb6/Sources/Segment/Errors.swift) for a list of possible error messages. |
-| `flushPolicies` | Add more granular control for how and when to flush events. |
 
 Segment removed these options:
 
+
 | Deprecated Option           | Details                                                                                                     |
 | --------------------------- | ----------------------------------------------------------------------------------------------------------- |
-| `enableAdvertisingTracking` | Removed                                                                                                     |
-| `launchOptions`             | Removed in favor of the enrichment plugin that adds the default data to the event payloads.              |
-| `maxQueueSize`              | Removed                                                                                                     |
-| `recordScreenViews`         | Removed in favor of a plugin that provides the same functionality. Use the [UIKitScreenTracking plugin](https://github.com/segmentio/analytics-swift/blob/main/Examples/other_plugins/UIKitScreenTracking.swift). |
-| `shouldUseBluetooth`        | Removed                                                                                                     |
-| `shouldUseLocationServices` | Removed                                                                                                     |
-| `trackAttributionData`      | Removed                                                                                                     |
-| `trackInAppPurchases`       | Removed                                                                                                     |
-| `trackPushNotifications`    | Removed in favor of a plugin the provides the same functionality. Use the [Notification Tracking plugin](https://github.com/segmentio/analytics-swift/blob/main/Examples/other_plugins/NotificationTracking.swift).                                                                                            |
+| `enableAdvertisingTracking` | Deprecated                                                                                                  |
+| `launchOptions`             | Deprecated in favor of the enrichment plugin that adds the default data to the event payloads.              |
+| `maxQueueSize`              | Deprecated                                                                                                  |
+| `recordScreenViews`         | Deprecated in favor of a plugin that provides the same functionality. Use the `UIKitScreenTracking` plugin. |
+| `shouldUseBluetooth`        | Deprecated                                                                                                  |
+| `shouldUseLocationServices` | Deprecated                                                                                                  |
+| `trackAttributionData`      | This feature no longer exists.                                                                              |
+| `trackInAppPurchases`       | Deprecated                                                                                                  |
+| `trackPushNotifications`    | Deprecated                                                                                                  |
 
-### Add destination plugins
-
-> warning ""
-> You should remove all of your Analytics iOS (Classic) device-mode destinations as they are not compatible with Analytics Swift
-
-Segment previously used Factories to initialize destinations. With Analytics Swift, Segment treats destinations similar to plugins and simplifies the process in adding them. Refer to the [Plugin Architecture Overview](/docs/connections/sources/catalog/libraries/mobile/swift/plugin-architecture) for more information. 
-
-**Before example**
-<br> 
-{% codeexample %}
-{% codeexampletab Swift%}
-
-```swift
-    AnalyticsConfiguration *config = AnalyticsConfiguration(writeKey: "YOUR_WRITE_KEY")
-
-    // Add any of your Device-mode destinations.
-    config.use(BNCBranchIntegrationFactory.instance())
-    ...
-
-    Analyitcs.setup(with: config)
-```
-{% endcodeexampletab %}
-{% codeexampletab Objective-C %}
-```objc
-    SEGAnalyticsConfiguration *config = [SEGAnalyticsConfiguration configurationWithWriteKey:@"YOUR_WRITE_KEY"];
-
-    // Add any of your Device-mode destinations.
-    [config use:[BNCBranchIntegrationFactory instance]];
-    ...
-
-    [SEGAnalytics setupWithConfiguration:config];
-```
-{% endcodeexampletab %}
-{% endcodeexample %}
-
-**After example**
-<br> 
-{% codeexample %}
-{% codeexampletab Swift%}
-
-```swift  
-    analytics.add(plugin: BranchPlugin())
-```
-{% endcodeexampletab %}
-{% codeexampletab Objective-C %}
-```objc
-    SEGBranchDestination *branchDestination = [[SEGBranchDestination alloc] init];
-        [self.analytics addPlugin: branchDestination];
-```
-{% endcodeexampletab %}
-{% endcodeexample %}
-## Modify your tracking methods 
-
-### Identify
-
-**Before example**
-<br> 
-{% codeexample %}
-{% codeexampletab Swift%}
-
-```swift  
-    Analytics.shared().identify("a user's id", traits: ["email": "sloth@segment.com"]);
-```
-{% endcodeexampletab %}
-{% codeexampletab Objective-C %}
-```objc
-    [[SEGAnalytics sharedAnalytics] identify:@"a user's id"
-                            traits:@{ @"email": @"sloth@segment.com" }];
-```
-{% endcodeexampletab %}
-{% endcodeexample %}
-**After example**
-<br> 
-
-{% codeexample %}
-{% codeexampletab Swift%}
-
-```swift  
-    // The newer APIs promote the use of strongly typed structures to keep codebases legible
-
-    struct UserTraits(
-     let email: String
-    )
-
-    analytics.identify("a user's id", UserTraits(email:"sloth@segment.com"))
-
-    // or, if you prefer not to use strongly typed structures
-
-    analytics.identify("a user's id", ["email": "sloth@segment.com"])
-```
-{% endcodeexampletab %}
-{% codeexampletab Objective-C %}
-
-```objc
-    [self.analytics identify:@"testTraits" traits:@{@"email": @"sloth@segment.com"}];
-```
-{% endcodeexampletab %}
-{% endcodeexample %}
-### Track
-
-**Before example**
-<br> 
-
-{% codeexample %}
-{% codeexampletab Swift%}
-
-```swift  
-    Analytics.shared().track("Item Purchased", properties: ["item": "Sword of Heracles", "revenue": 2.95])
-```
-{% endcodeexampletab %}
-{% codeexampletab Objective-C %}
-```objc
-    [[SEGAnalytics sharedAnalytics] track:@"Item Purchased"
-                        properties:@{ @"item": @"Sword of Heracles", @"revenue": @2.95 }];
-
-```
-{% endcodeexampletab %}
-{% endcodeexample %}
-
-**After example**
-<br> 
-
-{% codeexample %}
-{% codeexampletab Swift%}
-
-```swift  
-    // The newer APIs promote the use of strongly typed structures to keep codebases legible
-
-    struct TrackProperties(
-        let item: String,
-        let revenue: Double
-    )
-
-    analytics.track(name: "Item Purchased", properties: TrackProperties(item: "Sword of Heracles", revenue: 2.95))
-
-    // or, if you prefer not to use strongly typed structures
-
-    analytics.track("Item Purchased", ["item": "Sword of Heracles", "revenue": 2.95])
-```
-{% endcodeexampletab %}
-{% codeexampletab Objective-C %}
-```objc
-    [self.analytics track:@"Item Purchased"
-                        properties:@{ @"item": @"Sword of Hercules", @"revenue": 2.95 }];
-```
-{% endcodeexampletab %}
-{% endcodeexample %}
-### Group
-
-**Before example**
-<br> 
-
-{% codeexample %}
-{% codeexampletab Swift%}
-
-```swift  
-    Analytics.shared().group("group123", traits: ["name": "Initech", "description": "Accounting Software"])
-```
-{% endcodeexampletab %}
-{% codeexampletab Objective-C %}
-```objc
-    [[SEGAnalytics sharedAnalytics] group:@"group123"
-                                traits:@{ @"name": @"Initech", @"description": @"Accounting Software" }];
-
-```
-{% endcodeexampletab %}
-{% endcodeexample %}
-
-**After example**
-<br> 
-
-{% codeexample %}
-{% codeexampletab Swift%}
-
-```swift  
-    // The newer APIs promote the use of strongly typed structures to keep codebases legible
-
-    struct GroupTraits(
-        let name: String
-        let description: String
-    )
-        
-    analytics.group(groupId: "group123", traits: GroupTraits("name" = "Initech", "description" = "Accounting Software"))
-
-    // or, if you prefer not to use strongly typed structures
-
-    analytics.group("group123", ["name": "Initech", "description": "Accounting Software"])
-
-```
-{% endcodeexampletab %}
-{% codeexampletab Objective-C %}
-```objc
-     [self.analytics group:@"group123" properties:@{@"name": @"Initech", @"description": @"Accounting Software"}];
-```
-{% endcodeexampletab %}
-{% endcodeexample %}
-### Screen 
-
-**Before example**
-<br> 
-
-{% codeexample %}
-{% codeexampletab Swift%}
-
-```swift  
-    Analytics.shared().screen("Photo Feed", properties: ["feedType": "private"])
-```
-{% endcodeexampletab %}
-{% codeexampletab Objective-C %}
-```objc
-[[SEGAnalytics sharedAnalytics] screen:@"Photo Feed"
-                            properties:@{ @"feedType": @"private" }];
-```
-{% endcodeexampletab %}
-{% endcodeexample %}
-
-**After example**
-<br> 
-
-{% codeexample %}
-{% codeexampletab Swift%}
-
-```swift  
-    // The newer APIs promote the use of strongly typed structures to keep codebases legible
-
-   struct ScreenProperties(
-        feedType: String
-    )
-        
-    analytics.screen(title: "Photo Feed", properties: ScreenProperties("feedType": "private"))
-
-    // or, if you prefer not to use strongly typed structures
-
-    analytics.screen("Photo Feed", ["feedType": "private"])
-```
-{% endcodeexampletab %}
-{% codeexampletab Objective-C %}
-```objc
-    [self.analytics screen:@"SomeScreen"
-                        properties:@{ @"feedType": @"private" }];
-```
-{% endcodeexampletab %}
-{% endcodeexample %}
-### Alias
-
-**Before example**
-<br> 
-{% codeexample %}
-{% codeexampletab Swift%}
-
-```swift  
-    Analytics.shared().alias("some new id")
-```
-{% endcodeexampletab %}
-{% codeexampletab Objective-C %}
-```objc
-    [[SEGAnalytics sharedAnalytics] alias:@"some new id"];
-```
-{% endcodeexampletab %}
-{% endcodeexample %}
-
-**After example**
-<br> 
-
-{% codeexample %}
-{% codeexampletab Swift%}
-
-```swift  
-    analytics.alias(newId: "some new id")
-```
-{% endcodeexampletab %}
-{% codeexampletab Objective-C %}
-```objc
-   [self.analytics alias:@"some new id"];
-```
-{% endcodeexampletab %}
-{% endcodeexample %}
+### Conclusion
+Hopefully this simplifies your migration to Analytics-Swift. Once you’re up and running, you can take advantage of Analytics-Swift’s additional features, such as Destination Filters, Functions & Typewriter support. 
