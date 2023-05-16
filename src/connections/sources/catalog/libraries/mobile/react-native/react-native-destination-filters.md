@@ -8,14 +8,14 @@ strat: react-native
 > Destination filters are in beta and only available to Business Tier customers.
 >
 
-Use Analytics-React-Native 2.0 to set up [destination filters](/docs/connections/destinations/destination-filters/) on your mobile device-mode destinations.
+Use Analytics-React-Native to set up [destination filters](/docs/connections/destinations/destination-filters/) on your mobile device-mode destinations.
 
 > warning ""
 > You must use Analytics-React-Native version 2.9 or higher to implement destination filters.
 >
 > Keep [these limitations](/docs/connections/destinations/destination-filters/#limitations) in mind when using destination filters.
 
-To get started with destination filters on mobile device-mode destinations using Analytics-React-Native 2.0:
+To get started with destination filters on mobile device-mode destinations using Analytics-React-Native:
 1. Download and install the `@segment/analytics-react-native-plugin-destination-filters` package as a dependency in your project.
     * Using NPM:
       ```npm

@@ -1,23 +1,23 @@
 ---
-title: Analytics for React Native 2.0
+title: Analytics for React Native
 strat: react-native
 id: B0X0QmvMny
 ---
 
-React Native 2.0 is a major version upgrade to the [existing React Native library](/docs/connections/sources/catalog/libraries/mobile/react-native/classic) that is production-ready. With Analytics for React Native 2.0, you can collect analytics in your React Native application and send data to any analytics or marketing tool without having to learn, test, or implement a new API every time. Analytics React Native 2.0 enables you to process and track the history of a payload, while Segment controls the API and prevents unintended operations.
+With Analytics for React Native, you can collect analytics in your React Native application and send data to any analytics or marketing tool without having to learn, test, or implement a new API every time. Analytics React Native enables you to process and track the history of a payload, while Segment controls the API and prevents unintended operations.
 
-All of Segment's libraries are open-source, and you can view Analytics for React Native 2.0 on GitHub. For more information, see the [Analytics React Native 2.0 GitHub repository](https://github.com/segmentio/analytics-react-native){:target="_blank"}.
+All of Segment's libraries are open-source, and you can view Analytics for React Native on GitHub. For more information, see the [Analytics React Native GitHub repository](https://github.com/segmentio/analytics-react-native){:target="_blank"}.
 
 > info "Using Analytics for React Native Classic?"
-> Analytics React Native versions 1.5.1 and older are no longer supported by Segment. You can reference the [migration guide](/docs/connections/sources/catalog/libraries/mobile/react-native/migration/) to upgrade to the latest version. 
+> Analytics React Native versions 1.5.1 and older are no longer supported by Segment. You can reference the [implementation guide](/docs/connections/sources/catalog/libraries/mobile/react-native/implementation/) to upgrade to the latest version. 
 
 > warning ""
-> `@segment/analytics-react-native 2.0` is compatible with Expo's [Custom Dev Client](https://docs.expo.dev/development/getting-started/){:target="_blank"} and [EAS builds](https://docs.expo.dev/build/introduction/){:target="_blank"} without any additional configuration. Destination Plugins that require native modules may require custom [Expo Config Plugins](https://docs.expo.dev/guides/config-plugins/){:target="_blank"}.
+> `@segment/analytics-react-native` is compatible with Expo's [Custom Dev Client](https://docs.expo.dev/development/getting-started/){:target="_blank"} and [EAS builds](https://docs.expo.dev/build/introduction/){:target="_blank"} without any additional configuration. Destination Plugins that require native modules may require custom [Expo Config Plugins](https://docs.expo.dev/guides/config-plugins/){:target="_blank"}.
 >
-> `@segment/analytics-react-native 2.0` isn't compatible with Expo Go.
+> `@segment/analytics-react-native` isn't compatible with Expo Go.
 ## Getting Started
 
-To get started with the Analytics for React Native 2.0 library:
+To get started with the Analytics for React Native library:
 
 1. Create a React Native Source in Segment.
     1. Go to **Connections > Sources > Add Source**.
@@ -51,7 +51,7 @@ To get started with the Analytics for React Native 2.0 library:
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     ```
 
-6. Initialize and configure the Analytics React Native 2.0 client. The package exposes a method called `createClient` which you can use to create the Segment Analytics client. This central client manages all the tracking events.
+6. Initialize and configure the Analytics React Native client. The package exposes a method called `createClient` which you can use to create the Segment Analytics client. This central client manages all the tracking events.
 
     ```js    
     import { createClient, AnalyticsProvider } from '@segment/analytics-react-native';
@@ -102,7 +102,7 @@ segmentClient.add({ plugin: new FirebasePlugin() });
 segmentClient.add({ plugin: new IdfaPlugin() });
 ```
 ## Usage
-You can use Analytics React Native 2.0 with or without hooks. Detailed overviews of both implemenation options can be found below. 
+You can use Analytics React Native with or without hooks. Detailed overviews of both implemenation options can be found below. 
 
 ### Usage with hooks
 To use the `useAnalytics` hook within the application, wrap the application in an AnalyticsProvider. This uses the [Context API](https://reactjs.org/docs/context.html){:target="_blank"} which allows access to the analytics client anywhere in the application.
@@ -230,7 +230,7 @@ Analytics for React Native is built with extensibility in mind. Use the tools li
 - [Error handling](/docs/connections/sources/catalog/libraries/mobile/react-native/implementation/#handling-errors)
 - [Native anonymousId](/docs/connections/sources/catalog/libraries/mobile/react-native/implementation/#native-anonymousId)
 - [Deep Link tracking](/docs/connections/sources/catalog/libraries/mobile/react-native/implementation/#set-up-ios-deep-link-tracking)
-
+- [Analytics React Native Classic](/docs/connections/sources/catalog/libraries/mobile/react-native/classic)
 
 ## Changelog
-[View the Analytics React Native 2.0 changelog on GitHub](https://github.com/segmentio/analytics-react-native/releases){:target="_blank"}.
+[View the Analytics React Native changelog on GitHub](https://github.com/segmentio/analytics-react-native/releases){:target="_blank"}.

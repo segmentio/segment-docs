@@ -4,7 +4,7 @@ strat: react-native
 ---
 ## FAQs
 ### Can I use the catalog of device-mode destinations from Segment's 1.X.X React-Native release?
-No, only the plugins listed above are supported in device-mode for Analytics React Native 2.0.
+No, only the plugins listed above are supported in device-mode for Analytics React Native.
 ### Will I still see device-mode integrations listed as `false` in the integrations object?
 When you successfully package a plugin in device-mode, you won't see the integration listed as `false` in the integrations object for a Segment event. This logic is packaged in the event metadata, and isn't surfaced in the Segment debugger.
 

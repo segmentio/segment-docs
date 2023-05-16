@@ -105,7 +105,7 @@ group('some-company', {
 {% endcodeexample %}
 
 ## Utility methods
-The Analytics React Native 2.0 utility methods help you to manage your data. They include:
+The Analytics React Native utility methods help you to manage your data. They include:
 - Alias
 - Reset
 - Flush
@@ -206,9 +206,6 @@ Analytics React Native was built to be as extensible and customizable as possibl
 - [Configure iOS deep link tracking](#configure-ios-deep-link-tracking)
 - [Device identifiers](#device-identifiers)
 
-
-
-
 ### Control upload with flush policies
 
 To more granularly control when events are uploaded you can use `FlushPolicies`
@@ -259,7 +256,6 @@ const unsubscribe = NetInfo.addEventListener((state) => {
     client.removeFlushPolicy(...policiesIfNetworkIsUp)
   }
 });
-
 ```
 ### Create your own flush policies
 
