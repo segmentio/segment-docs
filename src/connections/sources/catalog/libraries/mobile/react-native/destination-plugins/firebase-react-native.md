@@ -24,6 +24,10 @@ Run `pod install` after the installation to autolink the Firebase SDK.
 
 See [React Native Firebase](https://rnfirebase.io) and [React Native Firebase Analytics](https://rnfirebase.io/analytics/usage) for more details of Firebase packages.
 
+> info "rnfirebase dependency"
+> You will need to follow the [install guide](/docs/connections/sources/catalog/libraries/mobile/react-native/classic) for the rnfirebase dependency too. This may include adding the `GoogleService-Info.plist` and the `google-services.json` file.
+
+
 ## Using the Plugin in your App
 
 Follow the [instructions for adding plugins](https://github.com/segmentio/analytics-react-native#adding-plugins) on the main Analytics client:
@@ -120,38 +124,9 @@ Segment maps the followed Segment spec-matching properties (left) to the corresp
 | `order_id`       | `transaction_id`  | (String) "o555636"           |
 | `currency`       | `currency`        | (String) "USD"               |
 
-### Passing Revenue and Currency
-
-Ecommerce events containing "revenue" or "total" must also include the appropriate ISO 4217 "currency" string for revenue data to populate to the Firebase dashboard. If a "currency" value is not included, Segment default to "USD".
-
-```ts
-const { track } = useAnalytics();
-
-track('Order Completed', {
-  orderId: 123,
-  revenue: '23.00',
-  currenct: 'USD',
-});
-```
-
 ## Screen
 
-Segment doesn't map screen events to Firebase - that's because Firebase's SDK collects screen information out of the box for you.
-
-For iOS, you can configure `recordScreenViews` which will automatically track screen views, or pass in a screen manually using a [screen](/docs/connections/spec/screen/) call. You should be able to disable the Automatic Screen reporting by adding the plist flag `FirebaseScreenReportingEnabled` to `Info.plist` and set its value to `NO` (Boolean).
-
-Google Analytics for Firebase iOS does NOT support the case of manual-only screen reporting. Firebase only supports automatic + manual screen reporting or no screen reporting at all.
-
-
-#### **Firebase Dynamic Linking** (iOS only)
-
-Firebase Dynamic Links are smart URLs that can change behavior dynamically depending on the platform where the user clicks them. Use them in web, email, social media, referral and physical promotions to increase user acquisition, retention and lifetime value. Key features include ability to survive app installs, controlling user experience depending on what platform they access the link on and knowing which content and campaigns are working using tracking in the Firebase console. [Check out Firebase's Docs here](https://firebase.google.com/docs/dynamic-links/).
-
-To use Firebase Dynamic Links, search for the Firebase package in Swift Package Manager and add the Dynamic Links library:
-
-`https://github.com/firebase/firebase-ios-sdk`
-
-Then, enter the deep link URL scheme in your Segment Firebase destination settings. [Here's a sample app delegate that shows how to implement the Dynamic Linking Logic](https://github.com/firebase/quickstart-ios/blob/master/dynamiclinks/DynamicLinksExample/AppDelegate.m#L41-L135).
+Segment will map Screen events to the [logScreenView](https://rnfirebase.io/reference/analytics#logScreenView) method. This will set the screen name and class the user is currently viewing.
 
 ### **Conversion Tracking and Adwords Conversions**
 
