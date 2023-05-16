@@ -9,7 +9,7 @@ id: VOXa199Bdm
 <!-- Marketo is listed as an object source, but doesn't appear in our configapi source catalog, so leave the "source-type" set here -->
 
 
-[Marketo](https://www.marketo.com/) is a leader in marketing automation. Use the Marketo source, to load your campaigns, emails, leads and other collections into your data warehouse.
+[Marketo](https://www.marketo.com/) is a leader in marketing automation. Use the Marketo source to load your campaigns, emails, leads and other collections into your data warehouse.
 
 This will allow you to write SQL to analyze your analyze your email marketing campaigns ROI, or join your email data to other data sources like web and mobile events, Salesforce, and Zendesk to tie nurture emails to re-activation rates in your app.
 
