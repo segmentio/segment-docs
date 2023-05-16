@@ -35,6 +35,8 @@ By using Segment's TikTok Audiences destination, you can increase traffic and dr
 7. Navigate to the **Mappings** tab, click **New Mapping**, and select **Add Users**.
 
 8. Under Select mappings, select the TikTok "Advertiser ID" of the audience segment you want to add users to. Input the `audience_id` of that audience segment under "Audience ID." **Note: A separate mapping must be created for each audience segment you plan to send Engage audiences to.**
+> info ""
+> You can get the "Audience ID" from "Assets->Audiences" page of TikTok once you have created the audience with the name of Segment's audience key. And the "Advertiser ID" can be visible over the TikTok URL as "aadvid".
 
 9. Repeat Steps 7 and 8 to also set up a **Remove Users** mapping.
      
