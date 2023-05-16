@@ -32,13 +32,6 @@ All other traits will be sent to CleverTap as custom attributes. The default log
 > In cloud mode CleverTap uses Segment anononymous ID as the CleverTap ID
 > In device mode, CleverTap ignores the anonymous ID and CleverTap injects it's own ID
 
-## Alias
-
-> warning ""
-> Alias is supported by Device-mode Web connections
-
-When you send an Alias call to CleverTap, CleverTap updates the user's profile with the contents of the Alias call.
-
 ## Track
 
 When you `track` an event, Segment sends that event to CleverTap as a custom event.  Note that CleverTap does not support arrays or nested objects for custom track event properties.
