@@ -7,7 +7,7 @@ Use Twilio Engage to build SMS message templates to include throughout your mark
 You can build an SMS template and include personalized content in messages based on user profile traits. Once you build the SMS, Twilio Engage saves the template for you to preview, maintain, and reuse.
 
 Use personalized SMS messages to connect with users in real-time, as they reach a specific step in a journey.
- 
+
 ## Build an SMS message template
 
 > info ""
@@ -36,7 +36,6 @@ Send a test SMS message before you include it as a step in your Journey.
 - Profiles that you send test messages to must have a userId in Segment.
 4. Click **Send test SMS**.
 
-If a recipient replies "Stop" to the test SMS, Twilio unsubscribes their phone number and sends an opt-out confirmation.
 
 > success ""
 > You can also test SMS templates [directly within Journeys](/docs/engage/journeys/build-journey/#send-an-sms) before you send them.
