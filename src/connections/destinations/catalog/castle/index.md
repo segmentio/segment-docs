@@ -56,6 +56,28 @@ Calls are now visible in Castle dashboards in real-time.
   
 ### Android
 
+1. Add the Castle Segment dependency
+
+	To install the Segment-Castle integration, simply add this line to your gradle file:
+
+  ```
+  implementation 'com.segment.analytics.kotlin.destinations:castle:<latest_version>'
+  ```
+
+  Or the following for Kotlin DSL
+  
+  ```
+  implementation("com.segment.analytics.kotlin.destinations:castle:<latest_version>")
+  ```
+    
+2. Next, add the Castle destination to your analytics instance:
+
+	```kotlin
+    analytics = Analytics("<YOUR WRITE KEY>", applicationContext)
+    analytics.add(plugin = CastleDestination(userJwt = "<USER_JWT>"))
+  ```
+  
+
 ## Page
 
 If you're not familiar with the Segment Specs, take a look to understand what the [Page call](/docs/connections/spec/page/) does. An example call looks like:
