@@ -379,7 +379,7 @@ window.criteo_q.push({ event: 'viewItem', item: 'PRODUCT-ID', sub_status: 'trial
 
 ### Setting Emails
 
-It's easy to associate emails with a user, if there's an `email` property in a [`track`](/docs/connections/spec/track/) call, we'll include the `setHashedEmail` event to Criteo along with your event. We'll take care of hashing it for you
+Once an [identify call](/docs/connections/spec/identify/) has been made that has an `email` trait in the payload, this email will be stored as a trait on the client. We then include this email in subsequent [`track`](/docs/connections/spec/track/) calls, by pushing the `setHashedEmail` event to Criteo along with your event. We'll take care of hashing it for you.
 
 ### Criteo Data Centers
 
