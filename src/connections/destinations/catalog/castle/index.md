@@ -22,7 +22,7 @@ Calls are now visible in Castle dashboards in real-time.
 
 > info ""
 > Castle ingests Segment Client-side events. Server-side events are dropped and not processed.
-> Castle only supports web integrations through Segment, but is in the process of working on mobile support.
+> Castle supports web, Android and iOS integrations through Segment.
 
 ### iOS
 
