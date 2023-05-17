@@ -4,6 +4,12 @@ id: 56a8f566e954a874ca44d3b0
 ---
 [Castle](https://castle.io/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners){:target="_blank"} monitors every step of the customer journey to help visualize and proactively block fraud that would otherwise fly under the radar. Types of fraud or abuse that can be managed include bots, fake accounts, multi-accounting, and account sharing.
 
+The Castle destination source code is available on GitHub. Source code for the following integrations are available:
+
+- [iOS](https://github.com/castle/analytics-ios-integration-castle)
+- [Android](https://github.com/castle/analytics-kotlin-integration-castle)
+- [Web](https://github.com/segmentio/analytics.js-integrations/tree/master/integrations/castle)
+
 Castle maintains this destination. For any issues with the destination, contact the [Castle support team](mailto:support@castle.io).
 
 ## Getting Started
@@ -18,9 +24,37 @@ Calls are now visible in Castle dashboards in real-time.
 > Castle ingests Segment Client-side events. Server-side events are dropped and not processed.
 > Castle only supports web integrations through Segment, but is in the process of working on mobile support.
 
+### iOS
 
+1. Add the Castle Segment dependency
 
+	#### via Xcode
+	In the Xcode `File` menu, click `Add Packages`.  You'll see a dialog where you can search for Swift packages.  In the search field, enter the URL to this repo.
 
+	[https://github.com/castle/analytics-ios-integration-castle](https://github.com/castle/analytics-ios-integration-castle)
+
+	You'll then have the option to pin to a version, or specific branch, as well as which project in your workspace to add it to.  Once you've made your selections, click the `Add Package` button.
+	
+	#### via Package.swift
+
+    ```
+    .package(
+        name: "SegmentCastle",
+        url: "https://github.com/castle/analytics-ios-integration-castle",
+        from: "1.0.0"
+    ),
+    ```
+    
+2. Next, add the Castle destination to your analytics instance:
+
+	```swift
+	let analytics = Analytics(configuration: Configuration(writeKey: "<YOUR_WRITE_KEY_HERE>")
+	
+    let castleDestination = CastleDestination(userJwt: "<USER_JWT>")
+    analytics.add(plugin: castleDestination)
+  ```
+  
+### Android
 
 ## Page
 
@@ -29,8 +63,6 @@ If you're not familiar with the Segment Specs, take a look to understand what th
 ```
 analytics.page()
 ```
-
-
 
 Segment sends Page calls to Castle as `$page` events.
 
