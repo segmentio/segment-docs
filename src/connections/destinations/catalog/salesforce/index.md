@@ -6,7 +6,7 @@ maintenance: false
 private: true
 ---
 > warning "Deprecation Notice"
-> Due to Salesforce retiring certain APIs in the summer of 2025, Segment is deprecating this destination. During the week of April 24, 2023, Segment will create an instance of the [Salesforce (Actions)](/docs/connections/destinations/catalog/actions-salesforce/) destination for each version of the Salesforce classic destination in your workspace. 
+> Due to Salesforce retiring certain APIs in the summer of 2025, Segment is deprecating this destination. During the week of April 24, 2023, Segment created an instance of the [Salesforce (Actions)](/docs/connections/destinations/catalog/actions-salesforce/) destination for each version of the Salesforce classic destination in your workspace. 
 >
 > Settings will be migrated automatically, but you must take additional action to ensure the destination is properly enabled.For more information, see [Migrating from Salesforce Classic](/docs/connections/destinations/catalog/actions-salesforce/#migrate-from-salesforce-classic)
 >
