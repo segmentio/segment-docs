@@ -457,6 +457,8 @@ All four timestamps pass through to your Warehouse for every ETL'd event. In mos
 
 `received_at` does not ensure chronology of events.  For queries based on event chronology, `timestamp` should be used.
 
+For Business Tier customers, it is recommended to have `received_at` enabled in the Selective Sync settings to ensure the syncs and backfills complete successfully. 
+
 > info ""
 > ISO-8601 date strings with timezones included are required when using timestamps with [Engage](/docs/engage/). Sending custom traits without a timezone included in the timestamp will result in the value not being saved. 
 
