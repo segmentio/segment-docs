@@ -38,7 +38,7 @@ Google Analytics 4 does not accept custom event names that include spaces. Segme
 
 Google Analytics 4 is also case sensitive. If you would like all event names to be lowercase, use the `Lowercase Event Name` setting in the Custom Event action. If this setting is disabled, Google will treat event names with different casing as distinct events. For more information, see [Google Analytics 4 Event name rules]([(https://support.google.com/analytics/answer/13316687?hl=en&ref_topic=13367860&sjid=2167389739796023681-NA#zippy=%2Cweb)]){:target="_blank"}.
 
-### Custom Dimensions & Metrics
+### Custom Dimensions and Metrics
 
 With Google Analytics 4, you must create custom dimensions and metrics within the Google Analytics 4 interface and link event parameters to the corresponding dimension or metric. When creating the dimension or metric, you can either select a parameter from the list of already collected fields or enter the name of the parameter you plan to collect in the future. For more information, see [Google Analytics 4 Custom dimensions and metrics](https://support.google.com/analytics/answer/10075209?hl=en){:target="_blank"}.
 
