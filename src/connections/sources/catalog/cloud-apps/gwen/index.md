@@ -14,14 +14,12 @@ This source is maintained by Insert Coin AB. For any issues with the source, [co
 > info ""
 > The GWEN Source is currently in beta, which means that they are actively developing the source. This doc was last updated on May 3rd, 2023. If you're interested in joining their beta program or have any feedback to help improve the GWEN Source and its documentation, [let GWEN know](mailto:tech@gwenplatform.com)!
 
-## Getting Started
+## Getting started
 
 1. From your workspace's [Sources catalog page](https://app.segment.com/goto-my-workspace/sources/catalog) click **Add Source**.
 2. Search for "GWEN" in the Sources Catalog, select GWEN, and click **Add Source**.
 3. On the next screen, give the Source a nickname and configure any other settings.
-
-   - The nickname is used as a label in the Segment app, and Segment creates a related schema name in your warehouse. The nickname can be anything, but we recommend using something that reflects the source itself and distinguishes amongst your environments (eg. SourceName_Prod, SourceName_Staging, SourceName_Dev).
-
+   - The nickname is used as a label in the Segment app, and Segment creates a related schema name in your warehouse. The nickname can be anything, but we recommend using something that reflects the source itself and distinguishes amongst your environments (for example, SourceName_Prod, SourceName_Staging, or SourceName_Dev).
 4. Click **Add Source** to save your settings.
 5. Copy the Write key from the Segment UI and log in to your GWEN account - navigate to [Setup Management > Webhooks](http://app.gwenplatform/setup-management/webhooks) - click the **Set credentials** button next to **Segment Source webhooks** and paste the key to connect.
 
