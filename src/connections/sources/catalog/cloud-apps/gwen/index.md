@@ -11,7 +11,8 @@ This is an [Event Cloud Source](https://segment.com/docs/sources/#event-cloud-so
 
 This source is maintained by Insert Coin AB. For any issues with the source, [contact their Support team](mailto:support@gwenplatform.com).
 
-_**NOTE:** The GWEN Source is currently in beta, which means that they are still actively developing the source. This doc was last updated on May 3rd, 2023. If you are interested in joining their beta program or have any feedback to help improve the GWEN Source and its documentation, [let their team know](mailto:tech@gwenplatform.com)!_
+> info ""
+> The GWEN Source is currently in beta, which means that they are actively developing the source. This doc was last updated on May 3rd, 2023. If you're interested in joining their beta program or have any feedback to help improve the GWEN Source and its documentation, [let GWEN know](mailto:tech@gwenplatform.com)!_
 
 ## Getting Started
 
