@@ -5,14 +5,14 @@ hidden: true
 
 ## GWEN Source
 
-[GWEN](https://gwenplatform.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) offers powerful gamification tools and insights to convert, engage, and retain users. With GWEN it has never been easier to understand your users behavior patterns and build better performing products with both speed and accuracy.
+[GWEN](https://gwenplatform.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners){:target="blank"} offers powerful gamification tools and insights to convert, engage, and retain users. With GWEN it has never been easier to understand your users behavior patterns and build better performing products with both speed and accuracy.
 
-This is an [Event Cloud Source](https://segment.com/docs/sources/#event-cloud-sources) which can not only export data into your Segment warehouse, but they can also federate the exported data into your other enabled Segment Destinations.
+This is an [Event Cloud Source](https://segment.com/docs/sources/#event-cloud-sources) which can not only export data into your Segment warehouse, but can also federate the exported data into your other enabled Segment Destinations.
 
 This source is maintained by Insert Coin AB. For any issues with the source, [contact their Support team](mailto:support@gwenplatform.com).
 
 > info ""
-> The GWEN Source is currently in beta, which means that they are actively developing the source. This doc was last updated on May 3rd, 2023. If you're interested in joining their beta program or have any feedback to help improve the GWEN Source and its documentation, [let GWEN know](mailto:tech@gwenplatform.com).
+> The GWEN Source is currently in beta, which means that the GWEN support team is actively developing the source. This doc was last updated on May 3rd, 2023. If you're interested in joining the beta program or have any feedback to help improve the GWEN Source and its documentation, [let the GWEN support team know](mailto:tech@gwenplatform.com).
 
 ## Getting started
 
@@ -26,7 +26,7 @@ This source is maintained by Insert Coin AB. For any issues with the source, [co
 
 ## Stream
 
-GWEN uses a stream Source component to send Segment event data. It uses a server-side (select from `track`, `identify`, `page`, `group`) method(s) to send GWEN user data to Segment (Read more about GWEN webhook data [here](app.gwenplatform.com/docs/webhooks/segment)). These events are then available in any destination that accepts server-side events, and available in a schema in your data warehouse, so you can query using SQL.
+GWEN uses a stream Source component to send Segment event data. It uses a server-side (select from `track`, `identify`, `page`, `group`) method(s) to send GWEN user data to Segment (Read more about GWEN webhook data [here](app.gwenplatform.com/docs/webhooks/segment)). These events are then available in any destination that accepts server-side events, and also available in a schema in your data warehouse, so you can query using SQL.
 
 The default behavior is for GWEN to pass the userId associated with the user who triggered the given update. This may or may not be a userId that you are keeping track of, depending on under what circumstances the user has been created within GWEN.
 For example, users created anonymously by using the [GWEN Analytics script](https://app.gwenplatform.com/docs/gwen-analytics){:target="blank"} will likely have a userId unknown to you.
