@@ -12,23 +12,24 @@ This is an [Event Cloud Source](https://segment.com/docs/sources/#event-cloud-so
 This source is maintained by Insert Coin AB. For any issues with the source, [contact their Support team](mailto:support@gwenplatform.com).
 
 > info ""
-> The GWEN Source is currently in beta, which means that they are actively developing the source. This doc was last updated on May 3rd, 2023. If you're interested in joining their beta program or have any feedback to help improve the GWEN Source and its documentation, [let GWEN know](mailto:tech@gwenplatform.com)!
+> The GWEN Source is currently in beta, which means that they are actively developing the source. This doc was last updated on May 3rd, 2023. If you're interested in joining their beta program or have any feedback to help improve the GWEN Source and its documentation, [let GWEN know](mailto:tech@gwenplatform.com).
 
 ## Getting started
 
 1. From your workspace's [Sources catalog page](https://app.segment.com/goto-my-workspace/sources/catalog) click **Add Source**.
 2. Search for "GWEN" in the Sources Catalog, select GWEN, and click **Add Source**.
 3. On the next screen, give the Source a nickname and configure any other settings.
-   - The nickname is used as a label in the Segment app, and Segment creates a related schema name in your warehouse. The nickname can be anything, but we recommend using something that reflects the source itself and distinguishes amongst your environments (for example, SourceName_Prod, SourceName_Staging, or SourceName_Dev).
+   - The nickname is used as a label in the Segment app, and Segment creates a related schema name in your warehouse. The nickname can be anything, but Segment recommends using something that reflects the source itself and distinguishes amongst your environments (for example, SourceName_Prod, SourceName_Staging, or SourceName_Dev).
 4. Click **Add Source** to save your settings.
-5. Copy the Write key from the Segment UI and log in to your GWEN account - navigate to [Setup Management > Webhooks](http://app.gwenplatform/setup-management/webhooks) - click the **Set credentials** button next to **Segment Source webhooks** and paste the key to connect.
+5. Copy the Write key from the Segment UI and log in to your GWEN account.
+6. Navigate to [Setup Management > Webhooks](http://app.gwenplatform/setup-management/webhooks){:target="blank"} and click the **Set credentials** button next to **Segment Source webhooks**. Paste the key to connect.
 
 ## Stream
 
-GWEN uses our stream Source component to send Segment event data. It uses a server-side (select from `track`, `identify`, `page`, `group`) method(s) to send GWEN user data to Segment (Read more about GWEN webhook data [here](app.gwenplatform.com/docs/webhooks/segment)). These events are then available in any destination that accepts server-side events, and available in a schema in your data warehouse, so you can query using SQL.
+GWEN uses a stream Source component to send Segment event data. It uses a server-side (select from `track`, `identify`, `page`, `group`) method(s) to send GWEN user data to Segment (Read more about GWEN webhook data [here](app.gwenplatform.com/docs/webhooks/segment)). These events are then available in any destination that accepts server-side events, and available in a schema in your data warehouse, so you can query using SQL.
 
 The default behavior is for GWEN to pass the userId associated with the user who triggered the given update. This may or may not be a userId that you are keeping track of, depending on under what circumstances the user has been created within GWEN.
-For example, users created anonymously by using the [GWEN Analytics script](https://app.gwenplatform.com/docs/gwen-analytics) will likely have a userId unknown to you.
+For example, users created anonymously by using the [GWEN Analytics script](https://app.gwenplatform.com/docs/gwen-analytics){:target="blank"} will likely have a userId unknown to you.
 
 ## Events
 
@@ -67,7 +68,7 @@ The table below lists events that GWEN sends to Segment. These events appear as 
 
 ## Event Properties
 
-The table below list the properties included in the events listed above. You can read about specific GWEN mechanic states and updates under **modules** in the [GWEN platform documentation](https://app.gwenplatform.com/docs)
+The table below list the properties included in the events listed above. You can read about specific GWEN mechanic states and updates under **modules** in the [GWEN platform documentation](https://app.gwenplatform.com/docs){:target="blank"}.
 
 <table>
   <tr>
@@ -88,7 +89,7 @@ The table below list the properties included in the events listed above. You can
   </tr>
   <tr>
    <td>`segmentId`</td>
-   <td>The ID of the GWEN segment that the user belongs to. Nothing to do with Twilio Segment!</td>
+   <td>The ID of the GWEN segment that the user belongs to. (Nothing to do with Twilio Segment)</td>
   </tr>
   <tr>
    <td>`productId`</td>
@@ -110,4 +111,4 @@ Now that your Source is set up, you can connect it with Destinations.
 
 Log into your downstream tools and check to see that your events appear as expected, and that they contain all of the properties you expect. If your events and properties don’t appear, check the [Event Delivery](https://segment.com/docs/connections/event-delivery/) tool, and refer to the Destination docs for each tool for troubleshooting.
 
-If there are any issues with how the events are arriving to Segment, [contact the GWEN support team](mailto:support@gwenplatform.com).
+If there are any issues with how the events are arriving in Segment, [contact the GWEN support team](mailto:support@gwenplatform.com).
