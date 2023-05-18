@@ -52,7 +52,7 @@ You can then sort or filter each column to just the values you care about, by cl
 
 ### My source was disabled and it wasn't done by anyone in my workspace
 
-Sources without enabled destinations are auto-disabled after 14 days. You should receive an email from us prior to disabling the source, though. The context behind this is that data that flows into Segment, but does not flow to any downstream tools is not valuable, and takes up space unnecessarily. 
+Segment disables sources that don't have enabled destinations after 14 days, and emails you before disabling any sources. Disabling these sources helps maintain a clean workspace.
 
 We do understand there maybe cases to keep a source active, if you'd like to add your source(s) to an exception list, you can do so by filling out this (airtable form)[https://airtable.com/shr7V9LFDZh31cYWW].
 
