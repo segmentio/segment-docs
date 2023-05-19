@@ -8,6 +8,12 @@ redirect_from:
 strat: ajs
 id: IqDTy1TpoU
 ---
+
+
+
+
+
+
 Analytics.js 2.0, the latest version of Segment's JavaScript source, enables you to send your data to any tool without having to learn, test, or use a new API every time.
 
 > info ""

@@ -30,11 +30,12 @@ Use the SMS Templates screen to preview and update existing SMS message template
 Send a test SMS message before you include it as a step in your Journey.
 
 1. After you build your SMS template, click **Test SMS**.
-2. Enter recipient phone numbers for the test message.
-- The profile that you send test messages to must have a userId in Segment.
-3. Click **Send Test SMS**.
+2. If your template has profile traits, enter a trait value for the test SMS. This ensures that your merge tags work as expected.
+- Empty fields show the default value that you've assigned. For example, `loyal customer` would be the default for the following merge tag: {% raw %}```{{profile.traits.first_name | default: "loyal customer"}}```{% endraw %}. If there's no default value, the field will be blank.
+3. Enter recipient phone numbers for the test message.
+- Profiles that you send test messages to must have a userId in Segment.
+4. Click **Send test SMS**.
 
-If a recipient replies "Stop" to the test SMS, Twilio unsubscribes their phone number and sends an opt-out confirmation.
 
 > success ""
 > You can also test SMS templates [directly within Journeys](/docs/engage/journeys/build-journey/#send-an-sms) before you send them.
@@ -49,6 +50,25 @@ Engage inserts the selected traits inside merge tags based on cursor placement i
 
 > info ""
 > To learn more about profile traits, visit Segment's [Computed Traits](/docs/engage/audiences/computed-traits/) and [SQL Traits](/docs/engage/audiences/sql-traits/) documentation.
+
+## Configure Link Shortening
+
+Use Link Shortening to send shorter, more manageable link URLs in your Engage SMS campaigns.
+
+Configure Link Shortening in your [Twilio Console](https://www.twilio.com/docs/messaging/how-to-configure-link-shortening){:target="blank"} in six steps:
+
+
+1. [Set up an Organization](https://www.twilio.com/docs/messaging/how-to-configure-link-shortening#step-1-setting-up-an-organization){:target="blank"}
+2. [Register Domains](https://www.twilio.com/docs/messaging/how-to-configure-link-shortening#step-2-registering-domains){:target="blank"}
+3. [Add Domain Name System (DNS) records](https://www.twilio.com/docs/messaging/how-to-configure-link-shortening#step-3-adding-dns-records){:target="blank"}
+4. [Generate a TLS certificate](https://www.twilio.com/docs/messaging/how-to-configure-link-shortening#step-4-generating-a-tls-certificate){:target="blank"}
+5. [Upload your TLS certificate](https://www.twilio.com/docs/messaging/how-to-configure-link-shortening#step-5-uploading-tls-certificate){:target="blank"}
+6. [Configure fallback and callback URLs](https://www.twilio.com/docs/messaging/how-to-configure-link-shortening#step-5-uploading-tls-certificate){:target="blank"} (Optional)
+
+Once you've configured Link Shortening, Twilio automatically shortens the link URLs for recipients of your SMS messages. Link shortening occurs during the message sending process, so shortened links don't appear in the message editor.
+
+> info ""
+> Link Shortening is only available for SMS messages.
 
 ## Clone an SMS message template
 

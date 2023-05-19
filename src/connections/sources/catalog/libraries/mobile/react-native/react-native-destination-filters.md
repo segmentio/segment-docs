@@ -3,10 +3,10 @@ title: Analytics for React Native Destination Filters
 strat: react-native
 ---
 
- ## Destination Filters
+
 > info ""
 > Destination filters are in beta and only available to Business Tier customers.
->
+
 
 Use Analytics-React-Native to set up [destination filters](/docs/connections/destinations/destination-filters/) on your mobile device-mode destinations.
 

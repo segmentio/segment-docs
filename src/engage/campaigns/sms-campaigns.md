@@ -52,14 +52,15 @@ Follow these steps to create an SMS campaign:
 
 At this point, you can send a test SMS before publishing your campaign. Testing the SMS confirms that your content and merge tags appear as expected.
 
-As part of the test send, you can select a test profile. The test profile populates any SMS merge tags with personalized content. The phone number associated with the test profile won't receive the test SMS.
+As part of your test send, you can enter custom values to populate the profile traits in your SMS message.
 
 Follow these steps to test your campaign:
 
-1. In the **Send SMS** pane, click **Test SMS**.
-2. In the **Recipients** field, enter the phone number(s) that will receive your test SMS.
-3. Select a test profile and click **Use as Test Profile**.
-4. Click **Send Test SMS**.
+1. In the **Send an SMS** pane, click **Test SMS**.
+2. If your template has profile traits, enter a trait value for the test SMS. This ensures that your merge tags work as expected.
+- To test a default value, leave the profile traits field blank. Default values must be assigned in your merge tags. For example, `loyal customer` would be the default for the following merge tag: {% raw %}```{{profile.traits.first_name | default: "loyal customer"}}```{% endraw %}.
+3. In the **Recipients** field, enter the phone number(s) that will receive your test SMS.
+4. Click **Send test SMS**.
 
 ### Publish your SMS campaign
 
