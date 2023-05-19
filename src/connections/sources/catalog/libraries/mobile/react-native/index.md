@@ -372,7 +372,7 @@ const policiesIfNetworkIsUp = [
 // Create our client with our policies by default
 const client = createClient({
   // ...
-  flushPolicies: policies,
+  flushPolicies: [...policiesIfNetworkIsUp],
 });
 // If Segment detects the user disconnect from the network, Segment removes all flush policies. 
 // That way the Segment client won't keep attempting to send events to Segment but will still 
@@ -652,6 +652,7 @@ Segment supports a large number of [Cloud-mode](/docs/connections/destinations/#
 - [Amplitude Session](https://www.npmjs.com/package/@segment/analytics-react-native-plugin-amplitude-session){:target="_blank"}
 - [Appsflyer](https://www.npmjs.com/package/@segment/analytics-react-native-plugin-appsflyer){:target="_blank"}
 - [Braze](https://www.npmjs.com/package/@segment/analytics-react-native-plugin-braze){:target="_blank"}
+- [CleverTap](https://www.npmjs.com/package/@segment/analytics-react-native-plugin-clevertap){:target="_blank"}
 - [Facebook App Events](https://www.npmjs.com/package/@segment/analytics-react-native-plugin-facebook-app-events){:target="_blank"}
 - [Firebase](https://www.npmjs.com/package/@segment/analytics-react-native-plugin-firebase){:target="_blank"}
 

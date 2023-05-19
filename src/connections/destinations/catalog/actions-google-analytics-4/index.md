@@ -152,8 +152,16 @@ The Segment Google Analytics 4 Cloud destination supports sending mobile app eve
 
 ### Reserved names
 
-Google reserves certain event names, parameters, and user properties. Google silently drops any events that include [these reserved names](https://developers.google.com/analytics/devguides/collection/protocol/ga4/reference?client_type=gtag#reserved_names){:target="_blank"}. Google also will not accept events where event or user property names have spaces in them. If you notice that your data isn't appearing in Google, please check that you're not using a reserved name. You also cannot send fields with `null` values to Google.
+Google reserves certain event names, parameters, and user properties. Google silently drops any events that include [these reserved names](https://developers.google.com/analytics/devguides/collection/protocol/ga4/reference?client_type=gtag#reserved_names){:target="_blank"}. Google doesn't accept events in the following conditions:
+- event or user property names have spaces in them
+- fields with `null` values
+- fields or events with reserved names 
+ 
+### Verifying Event Meet GA4's Measurement Protocol API
+**Why are the events returning an error _Param [PARAM] has unsupported value._?**
+Google has some requirements/[limitations](https://developers.google.com/analytics/devguides/collection/protocol/ga4/sending-events?client_type=gtag#limitations){:target="_blank"} imposed by their [Measurement Protocol API](https://developers.google.com/analytics/devguides/collection/protocol/ga4/sending-events?client_type=gtag){:target="_blank"}. If an event contains `null`/`object`/`array` parameters, GA4 silently drops the event, so Segment does not attempt to send the event but instead returns an error of `Invalid Type` that can be found in the destination's Event Delivery tab. To verify whether an event will return this error, you can send an event to [GA4's debug endpoint](https://developers.google.com/analytics/devguides/collection/protocol/ga4/validating-events?client_type=gtag){:target="_blank"} with an API tool like [Postman](https://www.postman.com/){:target="_blank"}.
 
-### Data taking a long time to appear in Google's reports
+### Data takes a long time to appear in Google's reports
 
 Google may take [24-48 hours](https://support.google.com/analytics/answer/9333790)  to process data sent to Google Analytics. As a result, the Google Analytics user interface may not reflect the most current data. The Google Analytics [Realtime report](https://support.google.com/analytics/answer/9271392){:target="_blank"} displays activity on your site as it happens.
+

@@ -1,6 +1,10 @@
 ---
 title: Analytics for Kotlin Implementation Guide
 strat: kotlin-android
+tags:
+  - android
+  - kotlin
+  - android-kotlin
 ---
 
 Once you've installed the mobile or server Analytics Kotlin library, you can start collecting data through Segment's tracking methods:

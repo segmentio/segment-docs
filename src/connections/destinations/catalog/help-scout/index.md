@@ -8,25 +8,27 @@ id: 54521fd725e721e32a72eebf
 
 ## Getting Started
 
-{% include content/connection-modes.md %}
-
 1. From the Segment web app, click **Catalog**.
 2. Search for Help Scout in the Catalog, select it, and choose which of your sources to connect the destination to.
 3. Click "Connect to Help Scout" to start the Help Scout authentication process. Help Scout provides a secure token that Segment uses to send data to Help Scout. If you need to change accounts, click **Disconnect**, then connect to a new Help Scout account.
 4. Enable the Destination.
-5. Start sending events!
+
+> warning "Help Scout OAuth supports one destination per user"
+> Help Scout's OAuth connection to Segment supports one destination per user. If you try to create two destinations with the same user, you'll receive invalid token errors when you use the destination.
 
 ## Identify
 
 If you're not familiar with the Segment Specs, take a look to understand what the [Identify method](/docs/connections/spec/identify/) does. An example call would look like this:
 
-    analytics.identify({
-      userId: '019mr8mf4r',
-      traits: {
-        name: 'Kamala Khan',
-        email: 'kkhan@colesacademic.edu',
-      }
-    });
+```js
+  analytics.identify({
+    userId: '019mr8mf4r',
+    traits: {
+      name: 'Kamala Khan',
+      email: 'kkhan@colesacademic.edu',
+    }
+  });
+```
 
 You can use the Identify call to create or update customers in your Help Scout account.
 

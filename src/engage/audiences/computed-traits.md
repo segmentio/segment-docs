@@ -150,7 +150,7 @@ The following operators are available.
 - after date
 - equals one of
 - contains one of
-- 
+
 ## Connecting your Computed Trait to a Destination
 
 Engage sends user-level computed Traits to destinations using the [Identify call](/docs/connections/spec/identify/) for user traits, or using the [Track call](/docs/connections/spec/track/) for event properties. Segment includes the trait value and property in the identify and track calls.
@@ -163,7 +163,10 @@ For account-level computed traits, you have the option to send either a [group](
 
 ## View compute status
 
-After you create a computed trait, use the Overview page to view the current [compute status](/docs/engage/audiences#compute-statuses), number of users with the trait, connected destinations, and more. For real-time traits, click **Refresh Trait** to update the current number of users with the trait.  
+After you create a computed trait, use the Overview page to view a compute progress bar, current [status](/docs/engage/audiences#compute-statuses), number of users with the trait, connected destinations, and more. For real-time traits, click **Refresh Trait** to update the current number of users with the trait.  
+
+> info "Viewing compute progress"
+> When you create a real-time computed trait, you'll see a progress bar, computed percentage, and status updates. For existing traits that you edit, Engage displays the compute status but not the progress bar or percentage.
 
 ## Editing Realtime Traits
 

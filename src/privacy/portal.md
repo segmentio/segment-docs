@@ -186,7 +186,8 @@ This is where you can create your very own matchers to tell Segment what to scan
 for in your workspace. You can use this feature to detect properties that are
 unique to your company or region, or that aren't already handled by the default
 matchers above. You can have up to 100 custom matchers per workspace. Custom
-Matchers detect data in your Web, Mobile, Server, and Cloud Event Sources, and
+Matchers detect data in your Web, Mobile, Server, and Cloud Event Sources for 
+fields under `contexts`, `traits` and `properties` objects, and
 the data they detect appears in the Inbox.
 
 For example, if you have a restricted data point at your company called "SIN"
