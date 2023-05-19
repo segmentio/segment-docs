@@ -28,7 +28,7 @@ You can also specify two different types of time-windows, `within` and `in betwe
 
 ### Custom Traits
 
-You can also build Audiences based on custom traits. These traits can be collected from your apps when a user completes a form or signs up using an [Identify](/docs/connections/spec/identify) call. You can view these traits in the user explorer, as well.
+You can also build Audiences based on custom traits. These traits can be collected from your apps when a user completes a form or signs up using an [Identify](/docs/connections/spec/identify) call. You can view these traits in the Profile explorer, as well.
 
 ### Computed Traits
 
@@ -89,8 +89,8 @@ As a result, **Segment recommends waiting at least 24 hours for an Audience to f
 
 From the Overview page, you can view Audience details including the current compute status and a progress bar for real-time and batch Audiences. Engage updates the progress bar and status for real-time computations approximately every 10 minutes.
 
-> info ""
-> Engage only displays the progress bar and status updates when you create a new Audience or Trait.
+> info "Viewing compute progress"
+> When you create a real-time Audience, you'll see a progress bar, computed percentage, and status updates. For existing Audiences that you edit, Engage displays the compute status but not the progress bar or percentage.
 
 > warning ""
 > Engage syncs the Overview page for an individual audience more frequently than the Engage Audiences page (**Engage > Audiences**). As a result, you might see temporary discrepancies in Audience details, such as user counts, between these two pages.
@@ -207,7 +207,7 @@ Before you can download the CSV, you will need to generate it. There are three d
 
 <table>
   <tr>
-    <td>![](/docs/engage/images/large_audience_csv.png)</td>
+    <td>![Screenshot of the Download audience list popup in Segment, with the All external ID types and Unformatted settings selected.](/docs/engage/images/large_audience_csv.png)</td>
     <td width="45%">Generating a CSV can take a substantial amount of time for large audiences (around 30 seconds for a formatted CSV with 1 million rows). For CSVs that are expected to take over 20 seconds, Segment displays an estimated generation time. After you generate the CSV file, leave the modal window open while Segment creates the file.
     (If the audience recalculates between when you click Generate and when you download the file, you might want to regenerate the file. The CSV is a snapshot from when you clicked Generate, and could be outdated.)</td>
   </tr>

@@ -13,6 +13,9 @@ All CRUD endpoints in the API follow REST conventions and use standard HTTP meth
   description="Research and test the Public API's available endpoints."
 %}
 
+> success "Getting started with the Public API"
+> If your application is built in Javascript / Typescript, Go, Java, or Swift, check out [Segment's Public API SDKs](https://docs.segmentapis.com/tag/Getting-Started#section/Install-and-use-an-SDK){:target="_blank"}.
+
 ## Config API vs Public API
 The Public API includes the following benefits over the Config API:
 
@@ -24,7 +27,7 @@ The Public API includes the following benefits over the Config API:
 | Higher rate limits      | The Public API can offer higher rate limits when needed or different rate limits per endpoint or token.                                                             |
 | Improved architecture   | The Public API is built with improved security, checks for authentication, authorization, input validation, HTTPS exposed services, auto-scaling, and more in mind. |
 | Cleaner mapping         | The Public API uses unique IDs for reference, in place of slugs in the Config API. Unique IDs are, by design, unique.                                               |
-| Available in Europe     | The Public API is accessible to both US and EU-based workspaces.                                                                                                                                                                   |
+| Available in Europe     | The Public API is accessible to both US and EU-based workspaces.                                                                                                    |                                                               |
 | Increased reliability   | The Public API features more stable endpoints, and a 99.8% success rate                                                                                             |
 
 
@@ -48,4 +51,7 @@ By automatically revoking the exposed token, Segment helps keep your workspace s
 
 #### How do I enable this feature?
 This feature is automatically enabled for all workspaces on Team or Business tier plans.
+
+#### What should I do when I see a CORS error? 
+If you see a CORS error, this means you're attempting to make a request to the Public API on the front-end. The Public API is used for server-side only. To get rid of the error, move all Public API requests to a server.
 

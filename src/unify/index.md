@@ -35,7 +35,7 @@ Visit Segment's [Identity Resolution docs](/docs/unify/identity-resolution/) to 
 
 Use the Profile explorer to view all user data, including their event history, traits, and identifiers.
 
-With the Explorer, you have a complete view of your customers.
+With the Profile explorer, you have a complete view of your customers.
 
 - **Visualize unified profiles**: Explore profiles from a single location in Segment to understand who's using your product.
 - **Ensure quality data**: Be sure that the data you receive is the data you expect.

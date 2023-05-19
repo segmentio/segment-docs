@@ -4,15 +4,11 @@ id: 63d2e550fb90f1632ed8820a
 hide-personas-partial: true
 hide-boilerplate: true
 hide-dossier: false
-hidden: true
 ---
 
 The TikTok Audiences destination enables advertisers to send Engage audiences to TikTok as Custom Audiences using [TikTok's Segment API](https://ads.tiktok.com/marketing_api/docs?id=1739940504185857){:target="_blank"}.
 
 By using Segment's TikTok Audiences destination, you can increase traffic and drive conversions with hyper-relevant ads that promote product discovery.
-
-> info ""
-> The TikTok Audiences destination is in beta and is in active development. Some functionality may change before it becomes generally available.
 
 ## Getting started
 

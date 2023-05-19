@@ -372,7 +372,7 @@ const policiesIfNetworkIsUp = [
 // Create our client with our policies by default
 const client = createClient({
   // ...
-  flushPolicies: policies,
+  flushPolicies: [...policiesIfNetworkIsUp],
 });
 // If Segment detects the user disconnect from the network, Segment removes all flush policies. 
 // That way the Segment client won't keep attempting to send events to Segment but will still 
@@ -611,7 +611,7 @@ These are the example plugins you can use and alter to meet your tracking needs:
 > info ""
 > Destination filters are only available to Business Tier customers.
 >
-> Destination filters on mobile device-mode destinations are in beta and only supports Analytics-React-Native 2.0, [Analytics-Swift](/docs/connections/sources/catalog/libraries/mobile/swift-ios/) and [Analytics-Kotlin](/docs/connections/sources/catalog/libraries/mobile/kotlin-android/).
+> Destination filters on mobile device-mode destinations are in beta and only supports Analytics-React-Native 2.0, [Analytics-Swift](/docs/connections/sources/catalog/libraries/mobile/swift/) and [Analytics-Kotlin](/docs/connections/sources/catalog/libraries/mobile/kotlin-android/).
 
 Use Analytics-React-Native 2.0 to set up [destination filters](/docs/connections/destinations/destination-filters/) on your mobile device-mode destinations.
 
@@ -652,6 +652,7 @@ Segment supports a large number of [Cloud-mode](/docs/connections/destinations/#
 - [Amplitude Session](https://www.npmjs.com/package/@segment/analytics-react-native-plugin-amplitude-session){:target="_blank"}
 - [Appsflyer](https://www.npmjs.com/package/@segment/analytics-react-native-plugin-appsflyer){:target="_blank"}
 - [Braze](https://www.npmjs.com/package/@segment/analytics-react-native-plugin-braze){:target="_blank"}
+- [CleverTap](https://www.npmjs.com/package/@segment/analytics-react-native-plugin-clevertap){:target="_blank"}
 - [Facebook App Events](https://www.npmjs.com/package/@segment/analytics-react-native-plugin-facebook-app-events){:target="_blank"}
 - [Firebase](https://www.npmjs.com/package/@segment/analytics-react-native-plugin-firebase){:target="_blank"}
 

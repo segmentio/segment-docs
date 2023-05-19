@@ -47,7 +47,7 @@ const getCatalog = async (url, page_token = "MA==") => {
   }
 }
 
-const slugify = (displayName) => {
+const slugify = (displayName, type) => {
   let slug = displayName
     .toLowerCase()
     .replace(/\s+/g, '-')
@@ -56,15 +56,24 @@ const slugify = (displayName) => {
     .replace(/[\(\)]/g, '')
     .replace('.', '-')
 
-  for (key in slugOverrides) {
-    let original = slugOverrides[key].original
-    let override = slugOverrides[key].override
+  let overrides = ""
+  if (type == "sources") {
+    overrides = slugOverrides.sources
+  } 
+
+  if (type == "destinations") {
+    overrides = slugOverrides.destinations
+  } 
+
+  for (key in overrides) {
+    let original = overrides[key].original
+    let override = overrides[key].override
 
     if (slug == original) {
+      console.log(original + " -> " + override)
       slug = override
     }
   }
-
   return slug
 }
 
@@ -111,7 +120,7 @@ const getDestinationData = async (id) => {
   })
   let actions = destination.actions
   let presets = destination.presets
-  let slug = slugify(destination.name)
+  let slug = slugify(destination.name, "destinations")
   let url = `connections/destinations/catalog/${slug}`
 
   // Force screen method into supportedMethods object
@@ -137,7 +146,7 @@ const getDestinationData = async (id) => {
     id: destination.id,
     display_name: destination.name,
     name: destination.name,
-    slug: slugify(destination.name),
+    slug: slugify(destination.name, "destinations"),
     previous_names: destination.previousNames,
     url,
     website: destination.website,
@@ -194,7 +203,7 @@ const checkExistingStatus = async () => {
     let id = existingIds[i]
     let destination = await checkDestinationStatus(id)
     let status = destination.status
-    let slug = slugify(destination.name)
+    let slug = slugify(destination.name, "destinations")
     let url = `connections/destinations/catalog/${slug}`
 
     
