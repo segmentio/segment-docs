@@ -52,7 +52,7 @@ Here are the five most common options:
 
 - `Sentence case` — Account created
 
-You can read more about Segment's recommended naming conventions in [here](https://segment.com/academy/collecting-data/naming-conventions-for-clean-data/){:target="_blank"}.
+You can read more about Segment's recommended naming conventions [here](https://segment.com/academy/collecting-data/naming-conventions-for-clean-data/){:target="_blank"}.
 
 
 ### `userId`
