@@ -150,3 +150,11 @@ Segment does not currently support SSH tunneling to Redshift. You can usually al
 ### Do you support Redshift Serverless?
 
 Segment does not currently support Serverless Redshift. While you can set up the connection in the Segment app, Segment does not have the functionality to query Redshift's SYS tables.
+
+Despite the fact we need a public IP address to access your remote instance, Segment supports several layers of Redshift's security model:
+ 
+Security group — This is the firewall that Segment asks customers to open a pinhole in for Segment's IP address. Security groups are a fundamental building block of AWS security;
+
+SSL — This secures data in transit and also allows client apps like Segment to validate that the warehouse at the other end is actually a warehouse owned by AWS. This is especially important if your Redshift warehouse is not within the us-west-2 region;
+
+Username /password — This is the basic method used to authenticate database users and apply varying levels of permissions like who can create tables, who can delete data, who can see which tables, etc.
