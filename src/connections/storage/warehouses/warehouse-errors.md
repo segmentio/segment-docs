@@ -57,4 +57,4 @@ This error is generally a network error when Redshift closes the connection. If 
 
 ### ERROR: failed to create table: 002318 (42601): SQL compilation error: invalid column definition name "XXX" (ANSI reserved)
 
-This error indicates that a column that is attempting to sync has the same title as a reserved word in Snowflake. More information regarding Snowflake's reserved keywords can be found [here](https://docs.snowflake.com/en/sql-reference/reserved-keywords).
+This error indicates that a column that is attempting to sync has the same title as a reserved keyword in Snowflake. More information regarding Snowflake's reserved keywords can be found [here](https://docs.snowflake.com/en/sql-reference/reserved-keywords).
