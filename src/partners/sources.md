@@ -34,7 +34,26 @@ Building your source will require defining the event data that you send to Segme
 
 If you break the spec, you are breaking the promise of Segment, which is grounds for removal from the catalog. To learn about the semantics of the five supported API calls, and the semantic event names and properties Segment recognizes, read the [Segment Spec](/docs/connections/spec).
 
-Within the Spec, there are a few requirements for partner Streams worth pointing out. 
+Within the Spec, there are a few requirements for partner Streams worth pointing out.
+
+### Naming Conventions
+
+When you're creating events and the properties associated with them, you also want to be crystal clear about the casing. This might seem nitpicky, but it's imperative in the long run. We recommend `Proper Case` for event names, and `snake_case` for properties. If you need to deviate for specific reasons to your platform this is allowable.
+
+Here are the five most common options:
+
+- `all lowercase` — account created
+
+- `snake_case` — account_created
+
+- `Proper Case` — Account Created
+
+- `camelCase` — accountCreated
+
+- `Sentence case` — Account created
+
+You can read more about Segment's recommended naming conventions in [here](https://segment.com/academy/collecting-data/naming-conventions-for-clean-data/){:target="_blank"}.
+
 
 ### `userId`
 
