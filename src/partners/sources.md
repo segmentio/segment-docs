@@ -38,7 +38,7 @@ Within the Spec, there are a few requirements for partner Streams worth pointing
 
 ### Naming Conventions
 
-When you're creating events and the properties associated with them, you want to be crystal clear about the casing. This might seem nitpicky, but it's imperative in the long run. We recommend `Proper Case` for event names, and `snake_case` for properties. If you need to deviate for specific reasons to your platform this is allowable.
+When you're creating events and the properties associated with them, you want to be crystal clear about the casing. This might seem nitpicky, but it's imperative in the long run. We recommend `Proper Case` for event names, and `snake_case` for properties. If you have platform-specific requirements that necessitate the use of different casing, it is permissible.
 
 Here are the five most common options:
 
