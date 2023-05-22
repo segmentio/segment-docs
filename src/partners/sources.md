@@ -12,7 +12,7 @@ Before you begin, you need access to the Developer Portal. To access the Develop
 2. Once approved, you'll receive an invitation to join the Segment Developer Portal.
 3. Log in to Segment, navigate to the User dropdown in the top right of the screen, and click [**Developer Portal**](https://app.segment.com/dev-portal){:target="_blank"}.
 
-## Build the Source
+## Build the source
 
 1. Once in the Developer Portal, navigate to **Integrations** and click **Build integration** > **Build a source**
 
@@ -36,9 +36,9 @@ If you break the spec, you are breaking the promise of Segment, which is grounds
 
 Within the Spec, there are a few requirements for partner Streams worth pointing out.
 
-### Naming Conventions
+### Naming conventions
 
-When you're creating events and the properties associated with them, you want to be crystal clear about the casing. This might seem nitpicky, but it's imperative in the long run. We recommend `Proper Case` for event names, and `snake_case` for properties. If you have platform-specific requirements that necessitate the use of different casing, it is permissible.
+When you're creating events and the properties associated with them, you want to be crystal clear about the casing. This might seem nitpicky, but it's imperative in the long run. Segment recommends `Proper Case` for event names, and `snake_case` for properties. If you have platform-specific requirements that necessitate the use of different casing, it is permissible.
 
 Here are the five most common options:
 
@@ -110,7 +110,7 @@ Segment offers customers the option to lead on data residency by providing [regi
 - Oregon (US Default) — `api.segment.io/v1`
 - Dublin — `events.eu1.segmentapis.com/`
 
-## Test your Source
+## Test your source
 
 1. From your source's page in the Developer Portal, navigate to **Settings** > **Add to workspace**. From the dropdown, select the Segment workspace you'll use to test your source, and click **Add to workspace**. The selected workspace will open in a new tab.
 
