@@ -36,8 +36,8 @@ To get started with the Analytics for React Native library:
     # or
     npm install --save @react-native-async-storage/async-storage
     ```
-    > info ""
-    >If you wish to use your own persistence layer you can use the storePersistor option when initializing the client. Make sure you always have a persistor (either by having AsyncStorage package installed or by explicitly passing a value), else you might get unexpected side effects like multiple 'Application Installed' events
+    
+    To use your own persistence layer you can use the storePersistor option when initializing the client. Make sure you always have a persistor (either by having AsyncStorage package installed or by explicitly passing a value), else you might get unexpected side effects like multiple 'Application Installed' events
 
 4. If you're using iOS, install native modules with:
 
