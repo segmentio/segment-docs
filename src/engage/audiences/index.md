@@ -89,8 +89,8 @@ As a result, **Segment recommends waiting at least 24 hours for an Audience to f
 
 From the Overview page, you can view Audience details including the current compute status and a progress bar for real-time and batch Audiences. Engage updates the progress bar and status for real-time computations approximately every 10 minutes.
 
-> info ""
-> Engage only displays the progress bar and status updates when you create a new Audience or Trait.
+> info "Viewing compute progress"
+> When you create a real-time Audience, you'll see a progress bar, computed percentage, and status updates. For existing Audiences that you edit, Engage displays the compute status but not the progress bar or percentage.
 
 > warning ""
 > Engage syncs the Overview page for an individual audience more frequently than the Engage Audiences page (**Engage > Audiences**). As a result, you might see temporary discrepancies in Audience details, such as user counts, between these two pages.

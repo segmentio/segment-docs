@@ -1,6 +1,10 @@
 ---
 title: Analytics for Swift Implementation Guide
 strat: swift
+tags:
+  - apple
+  - swift
+  - ios
 ---
 Once you've installed the Analytics-Swift library, you can start collecting data through Segment's tracking methods:
 

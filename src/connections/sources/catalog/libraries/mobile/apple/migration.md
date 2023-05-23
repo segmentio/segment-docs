@@ -1,6 +1,10 @@
 ---
 title: Analytics for Swift Migration Guide
 strat: swift
+tags:
+  - apple
+  - swift
+  - ios
 ---
 
 > info ""
