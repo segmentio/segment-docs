@@ -29,6 +29,7 @@ The Pinterest Conversions API destination provides the following benefits :-
 - **Fewer settings**. Data mapping for actions-based destinations happens during configuration, which eliminates the need for most settings.
 - **Clearer mapping of data**. Actions-based destinations enable you to define the mapping between the data Segment receives from your source, and the data Segment sends to Pinterest Conversions API.
 - **Prebuilt mappings**. Mappings for standard Pinterest Conversions API events, like `Add to Cart`, are prebuilt with the prescribed parameters and available for customization.
+- **Support Deduplication**. Deduplication removes duplicates events which improves the accuracy of your conversions
 - **Support for page calls**. Page calls can be sent to Pinterest as a standard Page View.
 - **Support for multi-user arrays**. User data nested within arrays, like the `User Data` array in the Order Completed event, can be sent to Pinterest.
 - **Data normalization**. Data is normalized before it is hashed to send to Pinterest Conversions.
@@ -44,6 +45,21 @@ For example, if a user triggers an add to cart event and the tag reports the dat
 By using deduplication advertisers can report conversions using both the tag and the API without having to worry about overcounting conversions. This will result in more conversions being attributed than either alone, because if the tag doesn’t match an event, but the API does (or vice versa), the event can still be linked. 
 
 Advertisers should use deduplication for any events they expect to be reported by multiple sources across the API and the Pinterest Tag.
+
+## Limited Data Processing
+Starting from Jan 1, 2023, Pinterest introduced the Limited Data Processing flag as per California Consumer Privacy Act (CCPA). With this flag set Pinterest will allow advertisers  to comply with CCPA.
+
+Advertisers are responsible for complying with user opt-outs, as well as identifying the user’s state of residency when implementing the Limited Data Processing flag.
+
+Keep in mind that the Limited Data Processing flag could impact campaign performance and targeting use cases. Pinterest recommends using the Limited Data Processing flag on a per-user basis for best results.
+
+LDP relies on 3 fields and is enabled only when all 3 combinations are met, if one of them is not met then LDP is disabled / ignored.
+
+| Field Name   |          Field Description                     | Required Value for LDP |
+|--------------|------------------------------------------------|------------------------|
+| opt_out_type | Opt Out Type based on User’s privacy preference| "LDP"                  |
+| st           | State of Residence                             | "CA"                   |
+| country      | Country of Residence                           | "US"                   |
 
 ## Getting started
 
@@ -66,3 +82,69 @@ To connect the Pinterst Conversions API Destination:
 
 
 {% include components/actions-fields.html settings="true"%}
+
+## FAQ & Troubleshooting
+
+### PII Hashing
+
+Segment creates a SHA-256 hash of the following fields before sending to Facebook:
+- External ID
+- Mobile Ad Identifier
+- Email
+- Phone
+- Gender
+- Date of Birth
+- Last Name
+- First Name
+- City  
+- State
+- Zip Code
+- Country
+
+### User Data Parameters
+
+Segment automatically maps User Data fields to their corresponding parameters [as expected by the Conversions API](https://developers.pinterest.com/docs/conversions/best/#Authenticating%20for%20the%20Conversion%20Tracking%20endpoint#The%20%2Cuser_data%2C%20and%20%2Ccustom_data%2C%20objects#Required%2C%20recommended%2C%20and%20optional%20fields#Required%2C%20recommended%2C%20and%20optional%20fields#User_data%2C%20and%20%2Ccustom_data%2C%20objects){:target="_blank"} before sending to Pinterest Conversions:
+
+| User Data Field  | Conversions API User Data Parameter |
+|------------------|-------------------------------------|
+| External ID      | external_id                         |
+| Mobile Ad Id     | hashed_maids                        |
+| Client Ip Address| client_ip_address                   |
+| Client User Agent| client_user_agent                   |
+| Email            | em                                  |
+| Phone            | ph                                  |
+| Gender           | ge                                  |
+| Date of Birth    | db                                  |
+| Last Name        | ln                                  |
+| First Name       | fn                                  |
+| City             | ct                                  |
+| State            | st                                  |
+| Zip Code         | zp                                  |
+| Country          | country                             |
+
+### Custom Data Parameters
+
+Segment automatically maps Custom Data fields to their corresponding parameters [as expected by the Conversions API](https://developers.pinterest.com/docs/conversions/best/#Authenticating%20for%20the%20Conversion%20Tracking%20endpoint#The%20%2Cuser_data%2C%20and%20%2Ccustom_data%2C%20objects#Required%2C%20recommended%2C%20and%20optional%20fields#Required%2C%20recommended%2C%20and%20optional%20fields#User_data%2C%20and%20%2Ccustom_data%2C%20objects){:target="_blank"} before sending to Pinterest Conversions:
+
+| User Data Field  | Conversions API Custom Data Parameter |
+|------------------|-------------------------------------|
+| Currency         | currency                            |
+| Value            | value                               |
+| Content IDs      | content_ids                         |
+| Contents         | contents                            |
+| Number of Items  | num_items                           |
+| Order ID         | order_id                            |
+| Search String    | search_string                       |
+| Opt Out Type     | opt_out_type                        |
+
+### Server Event Parameter Requirements
+
+Pinterest requires the `action_source` server event parameter for all events sent to the Pinterest Conversions API. This parameter specifies where the conversions occur.
+
+### Verify Events in Pinterest Conversions Dashboard
+
+After you start sending events, you should start seeing them in dashboard. You can confirm that Pinterest received them:
+
+1. Go to the Events Overview.
+2. Click on the Event History to see all the events sent to pinterest conversions.
+
