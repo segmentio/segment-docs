@@ -30,7 +30,6 @@ The Pinterest Conversions API destination provides the following benefits :-
 - **Clearer mapping of data**. Actions-based destinations enable you to define the mapping between the data Segment receives from your source, and the data Segment sends to Pinterest Conversions API.
 - **Prebuilt mappings**. Mappings for standard Pinterest Conversions API events, like `Add to Cart`, are prebuilt with the prescribed parameters and available for customization.
 - **Support for page calls**. Page calls can be sent to Pinterest as a standard Page View.
-- **Support for Custom event**. Custom event can also be sent to Pinterest Conversions.
 - **Support for multi-user arrays**. User data nested within arrays, like the `User Data` array in the Order Completed event, can be sent to Pinterest.
 - **Data normalization**. Data is normalized before it is hashed to send to Pinterest Conversions.
 
