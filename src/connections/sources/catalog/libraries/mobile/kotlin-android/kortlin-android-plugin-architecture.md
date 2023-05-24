@@ -2,7 +2,6 @@
 title: Analytics for Kotlin Plugin Architecture
 strat: kotlin
 ---
-
 ## Plugin architecture
 Segment's plugin architecture enables you to modify and augment how the analytics client works. From modifying event payloads to changing analytics functionality, plugins help to speed up the process of getting things done.
 
