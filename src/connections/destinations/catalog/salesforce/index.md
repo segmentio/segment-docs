@@ -210,7 +210,7 @@ You can add whatever lookup fields you want to help Segment find the object you 
 
 ### Custom Fields Aren't Updating
 
-Make sure that the traits you're passing through match the Custom Field's API name and data type!
+Make sure that the traits you're passing through match the Custom Field's API name and data type.
 
 
 ### Password Expiration
