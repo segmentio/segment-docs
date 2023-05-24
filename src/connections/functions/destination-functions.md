@@ -186,7 +186,7 @@ If your function fails, you can check the error details and logs in the **Output
 Batch handlers are an extension of destination functions. When you define an `onBatch` handler alongside the handler functions for single events (for example: `onTrack` or `onIdentity`), you're telling Segment that the destination function can accept and handle batches of events.
 
 > info ""
-> Batching is available for destination functions only.
+> Batching is available for insert and destination functions only.
 
 ### When to use batching
 
