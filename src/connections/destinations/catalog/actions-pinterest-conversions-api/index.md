@@ -6,21 +6,11 @@ hide-boilerplate: false
 hide-dossier: true
 ---
 
-Conversion tracking lets you see what a user does on your websites, in your mobile apps, or in your physical stores. When you share your users’ conversion data with Pinterest, we are able to provide you insights that will help you evaluate your ads' effectiveness and improve the content, targeting, and placement of future ad.
+ The Pinterest Conversions API destination is a server-to-server integrations with [The Pinterest API for Conversions](https://help.pinterest.com/en/business/article/the-pinterest-api-for-conversions) that allows advertisers to send conversions directly to Pinterest without requiring a Pinterest Tag. These conversions are mapped to Pinterest campaigns for conversion reporting to improve conversion visibility. By passing events, avertisers can leverage Pinterest's insights to evaluate ads' effectiveness and improve content, targeting, and placement of future ad.
 
-The Pinterest API for Conversions enables advertisers to send conversions directly to Pinterest via a server-to-server method without requiring a Pinterest Tag. These conversions are mapped to Pinterest campaigns for conversion reporting to improve conversion visibility.
+Advertisers can send web, in-app, or offline conversions to Pinterest’s server to server endpoint in real-time. Events received in real time or within an hour of the event occurring will be reported as web or app events. Events received outside of this window, as well as delayed batch events are categorized as offline events.
 
-Advertisers can send web, in-app, or offline conversions to Pinterest’s server to server endpoint in real-time or batch. Events received in real time or within an hour of the event occurring will be reported as web or app events. Events received outside of this window, as well as delayed batch events are categorized as offline events.
-
-The API for Conversions can help Pinterest in continuing to provide a more comprehensive view of your campaign performance. All advertisers who currently use the Pinterest Tag will benefit from using it in tandem with the API for Conversions, as the best practice is to use the two solutions together to maximize visibility into the conversions your campaigns are driving.
-
-## Authentication
-Pinterest requires users to generate a conversion token that will be sent as the access_token in the header as part of authentication whenever the Post request is sent to the Conversion API endpoint.
-
-To test authentication, a request needs to be made with ?test=true. Pinterest will return the expected response but the events will not be recorded.
-
-Document to get conversion access_token is available [here](https://developers.pinterest.com/docs/conversions/conversions/#Get%20the%20conversion%20token).
-
+The API for Conversions can help Pinterest in continuing to provide a more comprehensive view of your campaign performance. All advertisers who currently use the Pinterest Tag will benefit from using it in tandem with the API for Conversions.
 
 ## Benefits of Pinterest Conversions API (Actions)
 
@@ -34,7 +24,31 @@ The Pinterest Conversions API destination provides the following benefits :-
 - **Support for multi-user arrays**. User data nested within arrays, like the `User Data` array in the Order Completed event, can be sent to Pinterest.
 - **Data normalization**. Data is normalized before it is hashed to send to Pinterest Conversions.
 
-## Deduplication
+## Getting started
+
+Before connecting to the Pinterest Conversions destination, you must have a [Pinterest](https://ads.pinterest.com/login/){:target="_blank"} account and an Ad Account ID.
+
+To connect the Pinterst Conversions API Destination:
+
+1. From the Segment web app, navigate to **Connections > Catalog**.
+2. Search for **Pinterest Conversions API** in the Destinations Catalog, and select the destination.
+3. Click **Configure Pinterest Conversions API**.
+4. Select the source that will send data to Pinterest Conversions API and follow the steps to name your destination.
+5. On the **Basic Settings** page, configure the following fields:
+   - Destination Name
+   - [Ad Account ID](https://developers.pinterest.com/docs/conversions/conversions/#Find%20your%20%2Cad_account_id#Find%20your%20%2Cad_account_id#Find%20your%20%2Cad_account_id)
+   - [Conversions Token]((https://developers.pinterest.com/docs/conversions/conversions/#Get%20the%20conversion%20token))
+6. Navigate to the **Mappings** tab, there are already Prebuilt mapping like `Checkout,Search,Add to Cart` defined with prescribed parameter . All required ,recommended and optional fields are listed [here](https://developers.pinterest.com/docs/conversions/best/#Authenticating%20for%20the%20Conversion%20Tracking%20endpoint#The%20%2Cuser_data%2C%20and%20%2Ccustom_data%2C%20objects#Required%2C%20recommended%2C%20and%20optional%20fields#Required%2C%20recommended%2C%20and%20optional%20fields)
+7. If you want to create **New Mapping**, and select **Report Conversions Event** ,configure and enable it.
+8. Follow the steps in the Destinations Actions documentation on [Customizing mappings](/docs/connections/destinations/actions/#customize-mappings).
+9. Enable the destination using the **Enable Destination** toggle switch and click **Save Changes**.
+
+
+{% include components/actions-fields.html settings="true"%}
+
+## FAQ & Troubleshooting
+
+### Deduplication with Pinterest Tag
 
 Pinterest cannot inherently know if a conversion reported by the Tag and another reported by the API for Conversions are the same.
 
@@ -45,6 +59,15 @@ For example, if a user triggers an add to cart event and the tag reports the dat
 By using deduplication advertisers can report conversions using both the tag and the API without having to worry about overcounting conversions. This will result in more conversions being attributed than either alone, because if the tag doesn’t match an event, but the API does (or vice versa), the event can still be linked. 
 
 Advertisers should use deduplication for any events they expect to be reported by multiple sources across the API and the Pinterest Tag.
+
+Conversion Events must meet the following requirements to be considered for deduplication: 
+
+1. The event has non-empty and non-null values for `event_id` and `event_name`
+2. The `action_source` of the event is not `offline` (e.g. events that occurred in the physical world, like in a local store)  The `action_source` parameter is an enum that gives the source of the event –  `app_android`, `app_ios`, `web`, or `offline`.
+3. The duplicate events arrived within 24 hours of the time of receipt of the first unique event.
+
+> info ""
+> Segment offers a client-side destination specifically designed for the Pinterest Tag. You can find detailed documentation and further information on how to implement this integration by following this [link](https://segment.com/catalog/integrations/pinterest-tag/).
 
 ## Limited Data Processing
 Starting from Jan 1, 2023, Pinterest introduced the Limited Data Processing flag as per California Consumer Privacy Act (CCPA). With this flag set Pinterest will allow advertisers  to comply with CCPA.
@@ -61,29 +84,7 @@ LDP relies on 3 fields and is enabled only when all 3 combinations are met, if o
 | st           | State of Residence                             | "CA"                   |
 | country      | Country of Residence                           | "US"                   |
 
-## Getting started
 
-Before connecting to the Pinterest Conversions destination, you must have a [Pinterest](https://ads.pinterest.com/login/){:target="_blank"} account and an Ad Account ID.
-
-To connect the Pinterst Conversions API Destination:
-
-1. From the Segment web app, navigate to **Connections > Catalog**.
-2. Search for **Pinterest Conversions API** in the Destinations Catalog, and select the destination.
-3. Click **Configure Pinterest Conversions API**.
-4. Select the source that will send data to Pinterest Conversions API and follow the steps to name your destination.
-5. On the **Basic Settings** page that appears, configure the following details in the respective fields:
-   - Name of the destination
-   - Your Ad Account ID
-   - Conversions Token
-6. Navigate to the **Mappings** tab , there are already Prebuilt mapping like `Checkout,Search,Add to Cart` defined with prescribed parameter . All required ,recommended and optional fields are listed [here](https://developers.pinterest.com/docs/conversions/best/#Authenticating%20for%20the%20Conversion%20Tracking%20endpoint#The%20%2Cuser_data%2C%20and%20%2Ccustom_data%2C%20objects#Required%2C%20recommended%2C%20and%20optional%20fields#Required%2C%20recommended%2C%20and%20optional%20fields)
-7. If you want to create **New Mapping**, and select **Report Conversions Event** ,configure and enable it.
-8. Follow the steps in the Destinations Actions documentation on [Customizing mappings](/docs/connections/destinations/actions/#customize-mappings).
-9. Finally, enable the destination using the **Enable Destination** toggle switch and click **Save Changes**.
-
-
-{% include components/actions-fields.html settings="true"%}
-
-## FAQ & Troubleshooting
 
 ### PII Hashing
 
