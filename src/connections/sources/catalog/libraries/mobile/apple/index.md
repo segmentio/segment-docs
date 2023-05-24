@@ -13,7 +13,7 @@ tags:
 With Analytics Swift, you can send data from iOS, tvOS, iPadOS, WatchOS, macOS and Linux applications to any analytics or marketing tool without having to learn, test, or implement a new API every time. Analytics Swift is compatible with both Swift and Objective-C applications. 
 
 > warning ""
-> If you're migrating to **Analytics Swift** from Analytics iOS (Classic), you can skip to the [migration guide](/docs/connections/sources/catalog/libraries/mobile/swift/migration/).
+> If you're migrating to **Analytics Swift** from Analytics iOS (Classic), you can skip to the [migration guide](/docs/connections/sources/catalog/libraries/mobile/apple/migration/).
 
 ## Benefits of Analytics Swift
 
