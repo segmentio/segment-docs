@@ -18,7 +18,7 @@ Before you begin, you need a Workspace (which is a container that holds all of t
 Next, create an iOS source from your Workspace:
 
 1. Click **Add Source**.
-2. From the source catalog page, click **iOS**.
+2. From the source catalog page, click **Apple**.
 3. Click **Add Source** again from the informational panel that appears to the right.
 4. Give the source a display name, and enter the URL the source will collect data from.
 
