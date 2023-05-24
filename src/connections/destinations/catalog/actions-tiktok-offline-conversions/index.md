@@ -1,6 +1,6 @@
 ---
 title: Tiktok Offline Conversions (Actions) Destination
-id: <integration_id>
+id: 6447ca8bfaa773a2ba0777a0
 ---
 
 {% include content/plan-grid.md name="actions" %}
