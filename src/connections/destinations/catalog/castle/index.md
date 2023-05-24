@@ -6,9 +6,9 @@ id: 56a8f566e954a874ca44d3b0
 
 The Castle destination source code is available on GitHub. Source code for the following integrations are available:
 
-- [iOS](https://github.com/castle/analytics-ios-integration-castle)
-- [Android](https://github.com/castle/analytics-kotlin-integration-castle)
-- [Web](https://github.com/segmentio/analytics.js-integrations/tree/master/integrations/castle)
+- [iOS](https://github.com/castle/analytics-ios-integration-castle){:target="_blank"}
+- [Android](https://github.com/castle/analytics-kotlin-integration-castle){:target="_blank"}
+- [Web](https://github.com/segmentio/analytics.js-integrations/tree/master/integrations/castle){:target="_blank"}
 
 Castle maintains this destination. For any issues with the destination, contact the [Castle support team](mailto:support@castle.io).
 
@@ -28,27 +28,27 @@ Calls are now visible in Castle dashboards in real-time.
 
 1. Add the Castle Segment dependency
 
-	#### via Xcode
-	In the Xcode `File` menu, click `Add Packages`.  You'll see a dialog where you can search for Swift packages.  In the search field, enter the URL to this repo.
+	- With Xcode:
 
-	[https://github.com/castle/analytics-ios-integration-castle](https://github.com/castle/analytics-ios-integration-castle)
+      In the Xcode **File** menu, click **Add Packages**. In the resulting dialog dialog where you can search for Swift packages. In the search field, enter the URL to this repository: `https://github.com/castle/analytics-ios-integration-castle`
 
-	You'll then have the option to pin to a version, or specific branch, as well as which project in your workspace to add it to.  Once you've made your selections, click the `Add Package` button.
+
+      You can optionally pin the package to a specific branch or version, and select the project in your workspace to which you'll add the package. When you're done, click **Add Package**. 
 	
-	#### via Package.swift
+	- With Package.swift:
 
-    ```
-    .package(
-        name: "SegmentCastle",
-        url: "https://github.com/castle/analytics-ios-integration-castle",
-        from: "1.0.0"
-    ),
-    ```
+      ```
+      .package(
+          name: "SegmentCastle",
+          url: "https://github.com/castle/analytics-ios-integration-castle",
+          from: "1.0.0"
+      ),
+      ```
     
 2. Next, add the Castle destination to your analytics instance:
 
 	```swift
-	let analytics = Analytics(configuration: Configuration(writeKey: "<YOUR_WRITE_KEY_HERE>")
+	let analytics = Analytics(configuration: Configuration(writeKey: "<YOUR_WRITE_KEY_HERE>"))
 	
     let castleDestination = CastleDestination(userJwt: "<USER_JWT>")
     analytics.add(plugin: castleDestination)
@@ -56,20 +56,20 @@ Calls are now visible in Castle dashboards in real-time.
   
 ### Android
 
-1. Add the Castle Segment dependency
+1. You can add the Castle Segment dependency two ways:
 
-	To install the Segment-Castle integration, simply add this line to your gradle file:
+	- Add this line to your gradle file:
 
-  ```
-  implementation 'com.segment.analytics.kotlin.destinations:castle:<latest_version>'
-  ```
+      ```
+      implementation 'com.segment.analytics.kotlin.destinations:castle:<latest_version>'
+      ```
 
-  Or the following for Kotlin DSL
-  
-  ```
-  implementation("com.segment.analytics.kotlin.destinations:castle:<latest_version>")
-  ```
+	- Add the following for Kotlin DSL:
     
+      ```
+      implementation("com.segment.analytics.kotlin.destinations:castle:<latest_version>")
+      ```
+
 2. Next, add the Castle destination to your analytics instance:
 
 	```kotlin
