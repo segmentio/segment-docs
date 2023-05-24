@@ -31,13 +31,13 @@ To create an insert function from Segment's catalog:
 2. From the Select Type screen, select **Insert Functions** and click **Next: Build function**.
 3. Write your function code, then click **Use Sample Event** to test it. Create a sample event, then click **Run** to test.
 4. Click **Next: Configure and Deploy** to add a function name, description, and logo.
-5. Click **Create function** to create your insert function. You'll see the insert function displayed in the Insert functions tab.
+5. Click **Create function** to create your insert function. You'll see the function displayed in the Insert functions tab.
 
-Next, you'll need to connect your insert function to a destination:
+For data to flow to your downstream destinations, you'll need to connect your insert function to a destination:
 
-1. Select the insert function you'd like to connect. From the pop-out side pane, you can edit, delete, and connect the insert function.
+1. Select the insert function you'd like to connect. From the side pane, you can edit, delete, and connect the insert function.
 2. Click **Connect to a destination**.
-3. From the drop down menu, select the destination you'd like to connect to and click **Connect to destination**.
+3. Select the destination you'd like to connect to and click **Connect to destination**.
 
 ### Using the Destinations tab
 
@@ -45,9 +45,59 @@ To access insert functions through the Destinations tab, navigate to **Connectio
 
 You can also use this page to [enable insert functions](#enable-the-insert-function) in your workspace.
 
+## Code the insert function
+
+Segment invokes a separate part of the function (called a "handler") for each event type that you send to your destination function.
+
+> info ""
+> Your function isn't invoked for an event if you've configured a [destination filter](/docs/connections/destinations/destination-filters/), and the event doesn't pass the filter.
+
+The default source code template includes handlers for all event types. You don't need to implement all of them - just use the ones you need, and skip the ones you don't.
+
+Destination functions can define handlers for each message type in the [Segment spec](/docs/connections/spec/):
+
+- `onIdentify`
+- `onTrack`
+- `onPage`
+- `onScreen`
+- `onGroup`
+- `onAlias`
+- `onDelete`
+- `onBatch`
+
+Each of the functions above accepts two arguments:
+
+- **event** - Segment event object, where fields and values depend on the event type. For example, in "Identify" events, Segment formats the object to match the [Identify spec](/docs/connections/spec/identify/).
+- **settings** - Set of [settings](#create-settings-and-secrets) for this function.
+
+The example below shows a destination function that listens for "Track" events, and sends some details about them to an external service.
+
+```js
+async function onTrack(event) {
+  await fetch('https://example-service.com/api', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({
+      event_name: event.event,
+      event_properties: event.properties,
+      timestamp: event.timestamp
+    })
+  })
+}
+```
+
+To change which event type the handler listens to, you can rename it to the name of the message type. For example, if you rename this function `onIdentify`, it listens for "Identify" events instead.
+
+> info ""
+> Functions' runtime includes a `fetch()` polyfill using a `node-fetch` package. Check out the [node-fetch documentation](https://www.npmjs.com/package/node-fetch){:target="_blank"} for usage examples.
+
+
+
 ## Testing the insert function
 
-You can test your code directly from the functions editor in two ways:
+You can test your code directly from the editor in two ways:
 
 Use a sample event:
 1. From the **Test** tab click **Use sample event**. 
