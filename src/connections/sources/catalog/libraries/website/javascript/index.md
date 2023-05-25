@@ -751,7 +751,7 @@ window.analytics.ready(() => {
     })
 ```
 
-You can view Segment's [existing plugins](https://github.com/segmentio/analytics-next/tree/master/src/plugins){:target="_blank"} to see more examples.
+You can view Segment's [existing plugins](https://github.com/segmentio/analytics-next/tree/master/packages/browser/src/plugins){:target="_blank"} to see more examples.
 
 ### Register a plugin
 Registering plugins enable you to modify your analytics implementation to best fit your needs. You can register a plugin using this:
