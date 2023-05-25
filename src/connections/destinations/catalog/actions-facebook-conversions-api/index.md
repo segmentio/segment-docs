@@ -118,14 +118,14 @@ Use this approach if you don't want to track users from the browser with Faceboo
 
 ### Send app events
 
-App events may be sent through the Conversions API by first setting up a dataset in your Facebook Events Manager. Learn more about passing app events through the Conversions API [here](https://developers.facebook.com/docs/marketing-api/conversions-api/app-events). Learn how to create a dataset [here](https://www.facebook.com/business/help/750785952855662?id=490360542427371).
+App events may be sent through the Conversions API by first setting up a dataset in your Facebook Events Manager. Learn more about passing app events through the Conversions API [here](https://developers.facebook.com/docs/marketing-api/conversions-api/app-events){:target="_blank"}. Learn how to create a dataset [here](https://www.facebook.com/business/help/750785952855662?id=490360542427371){:target="_blank"}.
 
-#### Configuring App Events
+#### Configuring app events
 Sending app events requires the `action_source` parameter to be set to `app`.
 
-App Events usage is opt-in, and setting the `use_app_data` field to `Yes` is required before app data can be sent.
+App events usage is opt-in, and you're required to set the `use_app_data` field to `Yes` before sending app data.
 
-Additionally configure the "App Events Fields" object with the required fields:
+Additionally, configure the "App Events Fields" object with the required fields:
 * `advertiser_tracking_enabled`
 * `application_tracking_enabled`
 * `version`
