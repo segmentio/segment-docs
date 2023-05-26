@@ -84,7 +84,7 @@ dependencies {
 
 ## 2. Upgrade your Destinations
 
-If your app uses Segment to route data to Destinations via Segment-cloud (i.e. Cloud-mode destinations), you can skip this step. Analytics-Kotlin treats Device-mode Destinations as plugins, and simplifies the process in integrating them into your app. Analytics-Kotlin supports these Device-Mode Destinations with more to come.
+If your app uses Segment to route data to Destinations through Segment-cloud (for example, Cloud-mode destinations), you can skip this step. Analytics-Kotlin treats Device-mode Destinations as plugins, and simplifies the process in integrating them into your app. Analytics-Kotlin supports these Device-Mode Destinations with more to come.
 
 ### 2.a) Import the Destination Plugin
 
@@ -400,4 +400,4 @@ JsonElement json = JSONKt.toJsonElement(map);
 ### 4.c) Options
 Options are no longer supported and should be converted into plugins.
 ## Conclusion
-Hopefully this simplifies your migration to Analytics-Kotlin. Once you’re up and running, you can take advantage of Analytics-Kotlin’s additional features, such as Destination Filters, Functions & Typewriter support.
+Once you’re up and running, you can take advantage of Analytics-Kotlin’s additional features, like [Destination Filters](/docs/connections/sources/catalog/libraries/mobile/kotlin-android/kotlin-android-destination-filters/), [Functions](https://segment.com/docs/connections/functions/), and [Typewriter](/docs/connections/sources/catalog/libraries/mobile/kotlin-android/kotlin-android-typewriter/) support.

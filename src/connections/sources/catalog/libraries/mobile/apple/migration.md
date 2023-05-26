@@ -1,6 +1,10 @@
 ---
 title: Analytics for Swift Migration Guide
 strat: swift
+tags:
+  - apple
+  - swift
+  - ios
 ---
 
 > success ""
@@ -53,9 +57,9 @@ If you're using a previous Segment mobile library such as Analytics-iOS, follow 
 
 
 > success ""
-> NOTE: Analytics-Swift supports running multiple instances of the analytics object, so it does not assume a singleton. However, if you’re migrating from Analytics-iOS and all your track calls are routed to the Analytics.shared() singleton, you can very easily forward these calls to your new Analytics-swift object.
+> Analytics-Swift supports running multiple instances of the analytics object, so it does not assume a singleton. However, if you’re migrating from Analytics-iOS and all your track calls are routed to the `Analytics.shared()` singleton, you can these calls to your new Analytics-swift object.
 
-With this simple extension, all of your existing Segment calls should work with Analytics-Swift. 
+With this extension, your existing Segment calls should work with Analytics-Swift. 
 
 ```swift
 @extension Analytics {
@@ -66,7 +70,7 @@ With this simple extension, all of your existing Segment calls should work with 
 ```
 ## 2. Upgrade your Destinations 
 
-If your app uses Segment to route data to Destinations via Segment-cloud (i.e. Cloud-mode destinations), you can skip this step. Analytics-Swift treats Device-mode Destinations as [plugins](/docs/connections/sources/catalog/libraries/mobile/swift/plugin-architecture), and simplifies the process in integrating them into your app. Analytics-Swift supports these [Device-Mode Destinations](/docs/connections/sources/catalog/libraries/mobile/swift/destination-plugins) with more to come. 
+If your app uses Segment to route data to Destinations through Segment-cloud (for example, Cloud-mode destinations), you can skip this step. Analytics-Swift treats Device-mode Destinations as [plugins](/docs/connections/sources/catalog/libraries/mobile/swift/plugin-architecture), and simplifies the process of integrating them into your app. Analytics-Swift supports these [Device-Mode Destinations](/docs/connections/sources/catalog/libraries/mobile/swift/destination-plugins). 
 
 ### 2.a) Include Plugin via SPM 
 
@@ -84,7 +88,7 @@ import Segment
 import Segment<Destination> // <-- Add this line
 ```
 
-Just under your Analytics-Swift library setup, call `analytics.add(plugin: ...)` to add an instance of the plugin to the Analytics timeline.
+Under your Analytics-Swift library setup, call `analytics.add(plugin: ...)` to add an instance of the plugin to the Analytics timeline.
 
 ```
 let analytics = Analytics(configuration: Configuration(writeKey: "<YOUR WRITE KEY>")
@@ -355,4 +359,4 @@ Segment removed these options:
 | `trackPushNotifications`    | Deprecated                                                                                                  |
 
 ### Conclusion
-Hopefully this simplifies your migration to Analytics-Swift. Once you’re up and running, you can take advantage of Analytics-Swift’s additional features, such as Destination Filters, Functions & Typewriter support. 
+Once you’re up and running, you can take advantage of Analytics-Swift’s additional features, such as [Destination Filters](/docs/connections/sources/catalog/libraries/mobile/apple/swift-destination-plugins), [Functions](/docs/connections/functions/), and [Typewriter](/docs/connections/sources/catalog/libraries/mobile/apple/swift-typewriter) support. 
