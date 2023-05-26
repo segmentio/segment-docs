@@ -32,3 +32,12 @@ Use cases:
 
 Learn more about [destination functions](/docs/connections/functions/destination-functions).
 
+#### Destination insert functions
+Destination insert functions help you enrich your data with code before you send it to downstream destinations.  
+
+Use cases:
+- Implement custom logic and enrich data with third party sources 
+- Transform outgoing data with advanced filtration and computation
+- Ensure data compliance by performing tokenisation, encryption, or decryption before sending data out 
+
+To learn more, visit [destination insert functions](/docs/connections/functions/insert-functions).
