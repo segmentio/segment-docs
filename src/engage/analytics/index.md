@@ -28,7 +28,7 @@ Campaign engagement metrics are based only on delivered campaigns. Suppose, for 
 
 Clicking on a campaign in a Journey opens a side panel that shows your campaign’s analytics. You can change both the date range and the base percentage type for any campaign.
 
-![The date range picker and metric calculator dropdown in the Segment UI](../images/analytics_pickers.png)
+![The date range picker and metric calculator dropdown in the Segment UI](../images/analytics_pickers.png "Date range picker and metric calculator")
 
 The date range picker initially inherits the date range set in the campaign’s parent Journey, but you can use the campaign date range picker to define a range for the specific campaign you’re viewing. Changing a campaign’s date range won’t impact the parent Journey’s date range.
 
