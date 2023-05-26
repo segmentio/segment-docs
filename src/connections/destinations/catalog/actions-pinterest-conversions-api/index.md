@@ -47,7 +47,7 @@ To connect the Pinterest Conversions API Destination:
 {% include components/actions-fields.html settings="true"%}
 
 > warning ""
-> By default, all mappings are sent as `web` conversions. If you want to send events as mobile or offline conversions, update the Action Source in each mapping to be `app_android`, `app_ios`, `offline`.
+> By default, all mappings send as `web` conversions. If you want to send events as mobile or offline conversions, update the Action Source in each mapping to be `app_android`, `app_ios`, `offline`.
 
 ## FAQ & Troubleshooting
 
