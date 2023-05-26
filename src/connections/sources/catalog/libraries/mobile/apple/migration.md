@@ -1,5 +1,5 @@
 ---
-title: Analytics for Swift Migration Guide
+title: Upgrade to Analytics-Swift
 strat: swift
 tags:
   - apple
@@ -20,7 +20,7 @@ If you're using a previous Segment mobile library such as Analytics-iOS, follow 
 
 ## 1. Import Analytics-Swift
 
-### 1.a) Add the SDK via Swift Package Manager
+### 1.a) Add the SDK with Swift Package Manager
 
 1. Open your project in Xcode.
 2. If using Xcode 12, go to **File > Swift Packages > Add Package Dependency…**. If using Xcode 13, go to **File > Add Packages…**
@@ -29,7 +29,7 @@ If you're using a previous Segment mobile library such as Analytics-iOS, follow 
 5. Make sure the Segment Library checkbox is selected.
 6. Click **Finish**.
 
-<br> You have now added Analytics-Swift to your project. Segment and Sovran show as Swift package dependencies.You can remove the analytics-iOS SDK from your app.
+<br> You have now added Analytics-Swift to your project. Segment and Sovran show as Swift package dependencies. You can remove the analytics-iOS SDK from your app.
 
 ## 1.b) Modify your initialized instance.
 
@@ -59,7 +59,7 @@ If you're using a previous Segment mobile library such as Analytics-iOS, follow 
 > success ""
 > Analytics-Swift supports running multiple instances of the analytics object, so it does not assume a singleton. However, if you’re migrating from Analytics-iOS and all your track calls are routed to the `Analytics.shared()` singleton, you can these calls to your new Analytics-swift object.
 
-With this extension, your existing Segment calls should work with Analytics-Swift. 
+Add this extension to your code to ensure that tracking calls written for Analytics-iOS work with Analytics-Swift.
 
 ```swift
 @extension Analytics {
@@ -68,11 +68,11 @@ With this extension, your existing Segment calls should work with Analytics-Swif
     } 
 }
 ```
-## 2. Upgrade your Destinations 
+## 2. Upgrade your destinations 
 
 If your app uses Segment to route data to Destinations through Segment-cloud (for example, Cloud-mode destinations), you can skip this step. Analytics-Swift treats Device-mode Destinations as [plugins](/docs/connections/sources/catalog/libraries/mobile/swift/plugin-architecture), and simplifies the process of integrating them into your app. Analytics-Swift supports these [Device-Mode Destinations](/docs/connections/sources/catalog/libraries/mobile/swift/destination-plugins). 
 
-### 2.a) Include Plugin via SPM 
+### 2.a) Include the plugin with SPM 
 
 ```
 .package(
@@ -81,7 +81,7 @@ If your app uses Segment to route data to Destinations through Segment-cloud (fo
             from: "1.1.3"
         ),
 ```
-### 2.b) Add Plugin to your Analytics instnace
+### 2.b) Add the plugin to your analytics instance
 
 ```
 import Segment
@@ -331,19 +331,20 @@ If you don't need to transform all of your Segment calls, and only want to trans
 
 ## 4. Upgrade Notes: Changes to the Configuration Object
 
-Segment changed these config options:
+The following option was renamed in Analytics-Swift:
 
 | Before                   | After                             |
 | ------------------------ | --------------------------------- |
 | `defaultProjectSettings` | Name changed to `defaultSettings` |
 
-Segment added these options:
+The following options were added in Analytics-Swift:
+
 
 | Name                        | Details                                                                                                                                                                                           |
 | --------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `autoAddSegmentDestination` | The analytics client automatically adds the Segment Destination. Set this to `false` if you want to customize the initialization of the Segment Destination, such as, add destination middleware. |
 
-Segment removed these options:
+The following options were removed in Analytics-Swift:
 
 
 | Removed Option           | Details                                                                                                     |
