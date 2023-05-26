@@ -4,7 +4,7 @@ beta: true
 
 ---
 
-Use Destination Insert Functions to compute, transform, and enrich your data before it reaches downstream destinations.
+Use Destination Insert Functions to enrich, transform, or filter your data before it reaches downstream destinations.
 
 **Implement advanced data computation**: Write custom computation, operations, and business logic on streaming data that you send to downstream destinations.
 
@@ -14,7 +14,7 @@ Use Destination Insert Functions to compute, transform, and enrich your data bef
 
 **Customize filtration for your destinations**: Create custom logic with nested if-else statements, regex, custom business rules, and more to filter event data.
 
-> info "Private Beta"
+> info "Destination Insert Functions in Private Beta"
 > Destination Insert Functions is in Private Beta, and Segment is actively working on this feature. Some functionality may change before it becomes generally available. [Contact Segment](https://segment.com/help/contact/){:target="_blank"} with any feedback or questions.
 
 
