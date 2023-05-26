@@ -32,6 +32,7 @@ Keep the following limitations in mind when you use destination filters:
 - *(For web device-mode)* Destination filters for device-mode only supports the Analytics.js 2.0 source.
 - *(For mobile device-mode)* Destination filters for mobile device-mode is currenlty not supported.
 - Destination Filters don't apply to events that send through the destination Event Tester.
+- Destination Filters within the UI and [FQL]([url](https://segment.com/docs/api/public-api/fql/)) do not currently support matching on event fields containing '.$' or '.$.', which references fields with an array type. 
 
 
 [Contact Segment](https://segment.com/help/contact/){:target="_blank"} if these limitations impact your use case.
