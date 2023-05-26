@@ -1,7 +1,7 @@
 ---
 title: Destination Insert Functions
 beta: true
-
+ 
 ---
 
 Use Destination Insert Functions to enrich, transform, or filter your data before it reaches downstream destinations.
