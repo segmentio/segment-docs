@@ -18,7 +18,7 @@ To enable blocking, go to the **Settings** tab for your source and click on **Sc
 > You can [export your Source Schema](/docs/connections/destination-data-control/#export-your-source-schema) as a CSV file to quickly audit events from your Tracking Plan.
 
 > warning "Archived Events"
-> **Important:** If you archive events while your source is connected to a tracking plan, and then later disconnect your tracking plan from that source, any archived events will stay archived, but they will be allowed at that point. To view all archived events, go to your **Source Schema** page, click **Filter** next to the search bar, and select **Archived**. To unarchive events that have been archived, click **Unarchive** in the far right-hand column of the event. 
+> **Important:** If you archive events while your source is connected to a tracking plan, and then later disconnect your tracking plan from that source, any archived events will stay archived, but they will be allowed if the Schema Configuration was previously set to block unplanned events when your tracking plan was connected to the source. To view all archived events, go to your **Source Schema** page, click **Filter** next to the search bar, and select **Archived**. To unarchive events that have been archived, click **Unarchive** in the far right-hand column of the event. 
 
 ## Track Calls - Unplanned Events
 When you set this dropdown to Block Event, Segment drops any events that are not defined in your Tracking Plan. Only allowlisted `track` calls in your Tracking Plan flow through Segment to your Destinations.
