@@ -1,5 +1,6 @@
 ---
 title: Destination Insert Functions
+beta: true
 
 ---
 
@@ -47,14 +48,14 @@ You can also use this page to [enable insert functions](#enable-the-insert-funct
 
 ## Code the insert function
 
-Segment invokes a separate part of the function (called a "handler") for each event type that you send to your destination function.
+Segment invokes a separate part of the function (called a "handler") for each event type that you send to your insert function.
 
 > info ""
 > Your function isn't invoked for an event if you've configured a [destination filter](/docs/connections/destinations/destination-filters/), and the event doesn't pass the filter.
 
 The default source code template includes handlers for all event types. You don't need to implement all of them - just use the ones you need, and skip the ones you don't.
 
-Destination functions can define handlers for each message type in the [Segment spec](/docs/connections/spec/):
+Insert functions can define handlers for each message type in the [Segment spec](/docs/connections/spec/):
 
 - `onIdentify`
 - `onTrack`
@@ -70,7 +71,7 @@ Each of the functions above accepts two arguments:
 - **event** - Segment event object, where fields and values depend on the event type. For example, in "Identify" events, Segment formats the object to match the [Identify spec](/docs/connections/spec/identify/).
 - **settings** - Set of [settings](#create-settings-and-secrets) for this function.
 
-The example below shows a destination function that listens for "Track" events, and sends some details about them to an external service.
+The example below shows a function that listens for "Track" events, and sends some details about them to an external service.
 
 ```js
 async function onTrack(event) {
@@ -92,8 +93,6 @@ To change which event type the handler listens to, you can rename it to the name
 
 > info ""
 > Functions' runtime includes a `fetch()` polyfill using a `node-fetch` package. Check out the [node-fetch documentation](https://www.npmjs.com/package/node-fetch){:target="_blank"} for usage examples.
-
-
 
 ## Testing the insert function
 
@@ -147,6 +146,9 @@ Note the following limitations for batching with insert functions:
 > info ""
 > Batching is available for insert and destination functions only. Read more about batching [here](/docs/connections/functions/destination-functions/#batching-the-destination-function). 
 
+## Destination Insert Functions logs and errors
+
+## Caching in Destination Insert Functions
 
 ## Managing insert functions
 
@@ -158,6 +160,10 @@ Note the following limitations for batching with insert functions:
 ### Editing and deleting functions
 
 If you are a **Workspace Owner** or **Functions Admin**, you can manage your function from the [Functions](https://app.segment.com/goto-my-workspace/functions/catalog){:target="_blank"} page.
+
+## Destination Insert Functions FAQs
+
+{% comment %}
 
 ## Using Segment's Public API
 
@@ -208,3 +214,5 @@ DELETE deleteInsertFunction(fn_id)
 ```
 
 For more information, visit Segment's [Public API docs](https://docs.segmentapis.com/tag/Functions){:target="_blank"}.
+
+{% endcomment %}
