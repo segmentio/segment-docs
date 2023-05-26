@@ -125,7 +125,7 @@ Add merge tags in the visual editor to personalize your message with user profil
 2. Select the profile traits to include from the drop down menu.
 3. Based on cursor placement, profile traits are added to the email from merge tags.
 
-Engage supports liquid templating to create dynamic content in the email design editor.
+Engage supports liquid templating to create dynamic content in the email design editor and the SMS editor.
 
 {% raw %}
 
