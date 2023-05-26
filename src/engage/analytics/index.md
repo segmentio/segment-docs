@@ -22,8 +22,6 @@ Understanding when and how Engage measures campaign analytics will help you as y
 
 Engage begins tracking campaign performance after you send a campaign. As a result, a campaign's analytics only reflect conversions that occurred after campaign publication. For example, suppose you send an email campaign promoting a sale in your online store. If a customer purchases a qualifying product **before** receiving your campaign, their purchase would not count as a conversion.
 
-Campaign engagement metrics are based only on delivered campaigns. Suppose, for example, you send an email campaign to 20 email addresses but only 10 successfully deliver. Engagement metrics like opens, clicks, and conversions would display as a percentage of the 10 delivered campaigns. In this case, then, if five users opened your campaign, you'd see a 50% total opened rate in the campaign's analytics.
-
 ### Changing a campaign's base metrics 
 
 Clicking on a campaign in a Journey opens a side panel that shows your campaign’s analytics. You can change both the date range and the base percentage type for any campaign.
