@@ -224,13 +224,13 @@ Note the following limitations for batching with insert functions:
 
 {% endcomment %}
 
-## Destination Insert Functions logs and errors
+## Destination insert functions logs and errors
 
 A function can throw errors, or Segment might encounter errors while invoking your function. You can view these errors in the [Event Delivery](/docs/connections/event-delivery/) tab for your Destination as in the example below.
 
 ![A screenshot of the event delivery tab, showing 519 failed events broken into categories explaining why they failed](images/event-delivery.png)
 
-### Destination functions error types
+### Destination insert functions error types
 
 - **Bad Request** - Any error thrown by the function code that is not covered by the other errors.
 - **Invalid Settings** - A configuration error prevented Segment from executing your code. If this error persists for more than an hour, [contact Segment Support](https://segment.com/help/contact/){:target="_blank"}.
@@ -242,7 +242,7 @@ Segment only attempts to send the event to your destination function again if a 
 
 You can view Segment's list of [Integration Error Codes](/docs/connections/integration_error_codes/) for more information about what might cause an error.
 
-### Destination functions logs
+### Destination insert functions logs
 
 If your function throws an error, execution halts immediately. Segment captures the event, any outgoing requests/responses, any logs the function might have printed, as well as the error itself.
 
@@ -267,7 +267,7 @@ async function onTrack(event, settings) {
 > warning ""
 > Don't log sensitive data, such as personally-identifying information (PII), authentication tokens, or other secrets. Avoid logging entire request/response payloads. The **Function Logs** tab may be visible to other workspace members if they have the necessary permissions.
 
-## Caching in Destination Insert Functions
+## Caching in destination insert functions
 
 Functions execute only in response to incoming data, but the environments that functions run in are generally long-running. Because of this, you can use global variables to cache small amounts of information between invocations. For example, you can reduce the number of access tokens you generate by caching a token, and regenerating it only after it expires. Segment cannot make any guarantees about the longevity of environments, but by using this strategy, you can improve the performance and reliability of your Functions by reducing the need for redundant API requests.
 
@@ -291,7 +291,7 @@ async function getAccessToken () {
 }
 ```
 
-## Managing insert functions
+## Managing destination insert functions
 
 ### Functions permissions
 
@@ -302,7 +302,7 @@ async function getAccessToken () {
 
 If you are a **Workspace Owner** or **Functions Admin**, you can manage your function from the [Functions](https://app.segment.com/goto-my-workspace/functions/catalog){:target="_blank"} page.
 
-## Destination Insert Functions FAQs
+## Destination insert functions FAQs
 
 ##### Can I see who made changes to a function?
 
