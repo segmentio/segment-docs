@@ -97,3 +97,7 @@ To **create or edit** transformations you must have either `Source Admin` for al
 ## Roles for Privacy Portal
 
 To **view, create or edit** PII related configurations in Privacy Portal, you need to have the `Workspace Owner` role.
+
+## Roles for Data Retention settings
+
+To **view or edit** Data Retention period in End-user privacy settings, you need to have the `Workspace Owner` role.
