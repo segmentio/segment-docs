@@ -3,7 +3,7 @@ title: Analytics React Native AppsFlyer Plugin
 strat: react-native
 ---
 
-AppsFlyer is the world’s leading mobile attribution & marketing analytics platform, helping app marketers around the world make better decisions. Segment’s AppsFlyer destination plugin code is open source and available on GitHub. You can view it [here.](https://github.com/segmentio/analytics-react-native/tree/master/packages/plugins/plugin-appsflyer)
+AppsFlyer is the world’s leading mobile attribution and marketing analytics platform, helping app marketers around the world make better decisions. Segment’s AppsFlyer destination plugin code is open source and available on GitHub. You can view it [here.](https://github.com/segmentio/analytics-react-native/tree/master/packages/plugins/plugin-appsflyer)
 
 ## Getting Started
 
