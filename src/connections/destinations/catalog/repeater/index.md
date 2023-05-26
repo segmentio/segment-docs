@@ -25,3 +25,7 @@ You can do this for as many sources as you need.
 ![A screenshot of the Write Keys field in the Repeater destination settings page.](images/write-key-settings.png)
 
 Repeater sends all events it receives to the sources you specified, identified by the write key(s) you added.
+
+## Replays with a Repeater
+
+Replays can affect your MTU count when using a Repeater destination. Notify your team before initiating a Replay if you’re using a Repeater destination. There are edge cases where the repeater would count towards MTUs, specifically when replaying historical data from the source connected to feed data into that Repeater destination. This is because userIds/anonymousIds would not have been seen by the source the Repeater sends data to. The API plans count by events sent through the pipeline; the repeater resends an event through the entire pipeline [Source → Repeater → Source → Destinations] so one event is sent through twice, and would increase the throughput count.
