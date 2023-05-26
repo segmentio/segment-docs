@@ -14,11 +14,11 @@ Use Destination Insert Functions to compute, transform, and enrich your data bef
 
 **Customize filtration for your destinations**: Create custom logic with nested if-else statements, regex, custom business rules, and more to filter event data.
 
-> info "Destination Insert Functions in Beta"
-> Destination Insert Functions is in beta, and Segment is actively working on this feature. Some functionality may change before it becomes generally available. [Contact Segment](https://segment.com/help/contact/){:target="_blank"} with any feedback or questions.
+> info "Destination Insert Functions is in Private Beta"
+> Destination Insert Functions is in Private Beta, and Segment is actively working on this feature. Some functionality may change before it becomes generally available. [Contact Segment](https://segment.com/help/contact/){:target="_blank"} with any feedback or questions.
 
 
-## Create and manage insert functions
+## Create and manage destination insert functions
 
 There are two ways you can access Destination Insert Functions from your Segment space:
 - From the Connections [catalog](#using-the-catalog).
@@ -95,15 +95,15 @@ To change which event type the handler listens to, you can rename it to the name
 > Functions' runtime includes a `fetch()` polyfill using a `node-fetch` package. Check out the [node-fetch documentation](https://www.npmjs.com/package/node-fetch){:target="_blank"} for usage examples.
 
 ## Testing the insert function
-
+{% comment %}
 You can test your code directly from the editor in two ways:
 
 Use a sample event:
 1. From the **Test** tab click **Use sample event**. 
 2. Select a destination or source to use events from. Then, select a sample event to use.
 2. Click **Use event**, and select **Run** from the **Test** tab. 
-
-Test using manual input:
+{% endcomment %}
+You can manually test your code from the functions editor:
 1. From the **Test** tab, click **customize the event yourself** and manually input your own JSON payload. 
 2. If your test fails, you can check the error details and logs in the Output section.
 - Error messages display errors surfaced from your function.
@@ -133,6 +133,7 @@ To enable your insert function:
 
 To prevent your insert function from processing data, toggle Enable Function off.
 
+{% comment %}
 ## Batching the insert function
 
 Insert functions support batching with the `onBatch` handler. 
@@ -145,6 +146,8 @@ Note the following limitations for batching with insert functions:
 
 > info ""
 > Batching is available for insert and destination functions only. Read more about batching [here](/docs/connections/functions/destination-functions/#batching-the-destination-function). 
+
+{% endcomment %}
 
 ## Destination Insert Functions logs and errors
 
