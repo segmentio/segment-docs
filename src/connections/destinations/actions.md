@@ -82,6 +82,52 @@ Moving from a classic destination to an actions-based destination is a manual pr
 5. Verify that data is flowing from the development or test source to the partner tool.
 6. Repeat the steps above with your production source.
 
+For a more comprehensive migration from a classic destination to an actions-based destination, please follow the steps outlined below. This implementation strategy is only available for customers on a Segment Business Tier plan with access to Destination Filters. To remove the possibility of duplicate events or dropped events, adding an additional line of defense with Destination Filters will ensure that events sent before/after a specified `received_at` timestamp will be sent to each destination.
+
+This migration strategy involves configuring a destination filter on both the Classic destination as well as the Actions destination. The Classic destination filter will be configured to block events by the `received_at` field with a certain value, and the Actions destination to drop events until the `received_at` timestamp field reaches that same value. Destination Filters within the UI have a limitation where they cannot access any top-level fields, but this is not a limitation for [Destination Filters]([url](https://docs.segmentapis.com/tag/Destination-Filters/)) created by the [Public API]([url](https://segment.com/docs/api/public-api/)) using [FQL]([url](https://segment.com/docs/api/public-api/fql/)). Since the `received_at` is a top-level field in the payload, you'll need to create a destination filter with the Public API, and submit the request with that FQL information described below.
+
+The idea behind combining these Filters is that events will send through the Classic integration up until a specified time, and then they’ll be blocked after that time. Then the Actions integration will block events until that specified time, and only allow events beginning at that specified time.
+
+Classic Destination's Destination Filter : Public API - [Create Filter for Destination]([url](https://docs.segmentapis.com/tag/Destination-Filters#operation/createFilterForDestination))
+ENDPOINT : `POST` `https://api.segmentapis.com/destination/classic_destination_id_from_url/filters`
+``` 
+// JSON BODY : 
+{
+  "sourceId": "add_source_id_here",
+  "destinationId": "classic_destination_id_from_url",
+  "title": "drop event after (timestamp) received_at > value April 4, 2023 19:55pm",
+  "description": "drop event after (timestamp) received_at > value April 4, 2023 19:55pm",
+  "if": "(received_at >= '2023-04-21T19:55:00.933Z')",
+  "actions": [
+    {
+      "type":"DROP"
+    }
+  ],
+  "enabled": true
+}
+```
+
+Actions Destination's Destination Filter : Public API - [Create Filter for Destination]([url](https://docs.segmentapis.com/tag/Destination-Filters#operation/createFilterForDestination))
+ENDPOINT : `POST` `https://api.segmentapis.com/destination/actions_destination_id_from_url/filters`
+```
+// JSON BODY :
+{
+  "sourceId": "add_source_id_here",
+  "destinationId": "actions_destination_id_from_url",
+  "title": "drop event before (timestamp) received_at < value April 4, 2023 19:55pm",
+  "description": "drop event before (timestamp) received_at < value April 4, 2023 19:55pm",
+  "if": "(received_at < '2023-04-21T19:55:00.933Z')",
+  "actions": [
+    {
+      "type":"DROP"
+    }
+  ],
+  "enabled": true
+}
+```
+
+Once the Destination Filter is configured on both the Classic and Actions destination, visit each destination's Filter's tab and enable the filters. Once the migration is complete, you can disable the Classic destination on its Settings page, and remove each of the filters from both destinations.
+
 ## Edit a destination action
 You can add or remove, disable and re-enable, and rename individual actions from the Actions tab on the destination's information page in the Segment app. Click an individual action to edit it.
 
