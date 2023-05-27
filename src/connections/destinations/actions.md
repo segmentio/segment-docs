@@ -82,6 +82,16 @@ Moving from a classic destination to an actions-based destination is a manual pr
 5. Verify that data is flowing from the development or test source to the partner tool.
 6. Repeat the steps above with your production source.
 
+Copying over your Destination Filters from the Classic Destination to the Actions Destination
+
+This functionality is not available within the UI, but is available via the Public API for all customers on Segment's Business Tier Plan.
+1. Send a request to the Public API endpoint : [List Filters from Destination]([url](https://docs.segmentapis.com/tag/Destination-Filters#operation/listFiltersFromDestination)). The `destinationId` can be found in the URL while viewing the destination in your Segment workspace.
+  - List Filters from Destination : `GET` - `https://api.segmentapis.com/destination/{destinationId}/filters?pagination%5Bcount%5D=100`
+2. Grab the response and parse through the `data.filters` object. Each object returned inside the `data.filters` object is an individual filter associated with that Intercom Prod destination.
+4. Next, send individual `POST` requests to the Public API endpoint : [Create Filter for Destination]([url](https://docs.segmentapis.com/tag/Destination-Filters/#operation/createFilterForDestination)), for each of the filters from step 2. Specify the Actions `destinationId`, found in the URL when viewing that destination, and then the body of the request is the individual filters from step 2.
+  - POST - https://api.segmentapis.com/destination/{destinationId}/filters
+6. If the bodies of those requests didn't already include the field `"enabled": true`, make sure to enable each of those filters after creating them.
+
 ## Edit a destination action
 You can add or remove, disable and re-enable, and rename individual actions from the Actions tab on the destination's information page in the Segment app. Click an individual action to edit it.
 
