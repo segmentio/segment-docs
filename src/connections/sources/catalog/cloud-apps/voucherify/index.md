@@ -25,7 +25,7 @@ This source is maintained by Voucherify. For any issues with the source, [contac
 
 Voucherify uses the stream Source component to send Segment event data. It uses a server-side `track` method to send data to Segment. These events are then available in any destination that accepts server-side events, and available in a schema in your data warehouse, so you can query using SQL. These events are also assigned to user accounts in the Segment Profiles (Unify). 
 
-The default behavior is for Voucherify to pass the `userId` associated with the customer. Events sent to the Voucherify source are only the events that the customer triggered, so there is no situation where `anonymousId` is sent.
+The default behavior is for Voucherify to pass the `userId` associated with the customer. Events sent to the Voucherify source are only the events that the customer triggered, so there is no situation where `anonymousId` is sent. The Voucherify Source will not send anonymous events to Segment. This means that events that are not assigned to customer and not called by the customer will be ignored. The `source_id` field from Voucherify will become the `userId` field in Segment.
 
 ## Events
 Integrating by adding Voucherify as a Source to Segment supports the following events to be sent out of the box:
