@@ -29,15 +29,15 @@ There are two ways you can access destination insert functions from your Segment
 To create an insert function from Segment's catalog:
 
 1. Navigate to **Connections > Catalog > Functions** and click **New Function**.
-2. From the Select Type screen, select **Insert** and click **Next: Build function**.
-3. Write your function code, and test it. Manually enter a sample event, then click **Run** to test.
+2. From the Select Type screen, select **Insert** and click **Next: Build Function**.
+3. Write your function code, and test it. Manually enter a sample event and click **Run** to test.
 4. Click **Next: Configure & Create** to add a function name, description, and logo.
-5. Click **Create function** to create your insert function. You'll see the function displayed in the Insert functions tab.
+5. Click **Create Function** to create your insert function. You'll see the insert function displayed in the Functions tab.
 
 For data to flow to your downstream destinations, you'll need to connect your insert function to a destination:
 
 1. Select the insert function you'd like to connect. From the side pane, you can edit, delete, and connect the insert function.
-2. Click **Connect to a destination**.
+2. Click **Connect a destination**.
 3. Select the destination you'd like to connect to and click **Connect to destination**.
 
 ### Using the Destinations tab
