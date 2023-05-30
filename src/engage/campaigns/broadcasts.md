@@ -98,11 +98,11 @@ The following table lists the email broadcast metrics that Engage tracks:
 | Sent               | The number of emails broadcasts that you sent.                                                       |
 | Delivered          | The number of emails broadcasts that were accepted by the receiving inbox server.                    |
 | Opened             | The number of times that your email broadcasts were opened.                                          |
-| Clicked            | The number of times that recipients clicked within your email broadcasts.                            |
-| Converted          | The number of conversions that took place after broadcasts publication; based on delivered messages. |
-| Click-to-Open Rate | The number of clicks compared to the number of opens for a broadcasts.                               |
+| Clicked            | The number of times that recipients clicked within your email broadcast.                            |
+| Converted          | The number of conversions that took place after broadcast publication; based on delivered messages. |
+| Click-to-Open Rate | The number of clicks compared to the number of opens for a broadcast.                               |
 | Bounced            | The number of email broadcasts that bounced instead of being delivered.                              |
-| Unsubscribed       | The number of broadcasts recipients who chose to unsubscribe from within the email campaigns.        |
+| Unsubscribed       | The number of broadcast recipients who chose to unsubscribe from within the email campaigns.        |
 | Spam Reported      | The number of recipients who marked your email broadcast as spam.                                    |
 
 SendGrid powers Engage's email campaign event analytics. For more details on email metrics, view SendGrid's [Marketing Campaigns Statistics Overview](https://docs.sendgrid.com/ui/analytics-and-reporting/marketing-campaigns-stats-overview){:target="_blank"}.
