@@ -1,23 +1,21 @@
 ---
-title: "GWEN Source"
-hidden: true
+title: "GWEN Webhooks Source"
+id: vMEJCURfHh
 ---
 
-## GWEN Source
-
-[GWEN](https://gwenplatform.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners){:target="blank"} offers powerful gamification tools and insights to convert, engage, and retain users. With GWEN it has never been easier to understand your users behavior patterns and build better performing products with both speed and accuracy.
+[GWEN Webhooks](https://gwenplatform.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners){:target="blank"} offers powerful gamification tools and insights to convert, engage, and retain users. With GWEN it has never been easier to understand your users behavior patterns and build better performing products with both speed and accuracy.
 
 This is an [Event Cloud Source](https://segment.com/docs/sources/#event-cloud-sources) which can not only export data into your Segment warehouse, but can also federate the exported data into your other enabled Segment Destinations.
 
 This source is maintained by Insert Coin AB. For any issues with the source, [contact their Support team](mailto:support@gwenplatform.com).
 
 > info ""
-> The GWEN Source is currently in beta, which means that the GWEN support team is actively developing the source. This doc was last updated on May 3rd, 2023. If you're interested in joining the beta program or have any feedback to help improve the GWEN Source and its documentation, [let the GWEN support team know](mailto:tech@gwenplatform.com).
+> The GWEN Webhooks Source is currently in beta, which means that the GWEN support team is actively developing the source. This doc was last updated on May 3rd, 2023. If you're interested in joining the beta program or have any feedback to help improve the GWEN Webhooks Source and its documentation, [let the GWEN support team know](mailto:tech@gwenplatform.com).
 
 ## Getting started
 
 1. From your workspace's [Sources catalog page](https://app.segment.com/goto-my-workspace/sources/catalog) click **Add Source**.
-2. Search for "GWEN" in the Sources Catalog, select GWEN, and click **Add Source**.
+2. Search for "GWEN Webhooks" in the Sources Catalog, select GWEN Webhooks, and click **Add Source**.
 3. On the next screen, give the Source a nickname and configure any other settings.
    - The nickname is used as a label in the Segment app, and Segment creates a related schema name in your warehouse. The nickname can be anything, but Segment recommends using something that reflects the source itself and distinguishes amongst your environments (for example, SourceName_Prod, SourceName_Staging, or SourceName_Dev).
 4. Click **Add Source** to save your settings.
@@ -26,14 +24,14 @@ This source is maintained by Insert Coin AB. For any issues with the source, [co
 
 ## Stream
 
-GWEN uses a stream Source component to send Segment event data. It uses a server-side (select from `track`, `identify`, `page`, `group`) method(s) to send GWEN user data to Segment (Read more about GWEN webhook data [here](app.gwenplatform.com/docs/webhooks/segment)). These events are then available in any destination that accepts server-side events, and also available in a schema in your data warehouse, so you can query using SQL.
+GWEN Webhooks uses a stream Source component to send Segment event data. It uses a server-side (select from `track`, `identify`, `page`, `group`) method(s) to send GWEN user data to Segment (Read more about GWEN webhook data [here](app.gwenplatform.com/docs/webhooks/segment)). These events are then available in any destination that accepts server-side events, and also available in a schema in your data warehouse, so you can query using SQL.
 
-The default behavior is for GWEN to pass the userId associated with the user who triggered the given update. This may or may not be a userId that you are keeping track of, depending on under what circumstances the user has been created within GWEN.
+The default behavior is for GWEN Webhooks to pass the userId associated with the user who triggered the given update. This may or may not be a userId that you are keeping track of, depending on under what circumstances the user has been created within GWEN.
 For example, users created anonymously by using the [GWEN Analytics script](https://app.gwenplatform.com/docs/gwen-analytics){:target="blank"} will likely have a userId unknown to you.
 
 ## Events
 
-The table below lists events that GWEN sends to Segment. These events appear as tables in your warehouse, and as regular events in other Destinations.
+The table below lists events that GWEN Webhooks sends to Segment. These events appear as tables in your warehouse, and as regular events in other Destinations.
 
 <table>
   <tr>
@@ -41,27 +39,27 @@ The table below lists events that GWEN sends to Segment. These events appear as 
    <td>Description</td>
   </tr>
   <tr>
-   <td>achievement_update</td>
+   <td>Achievement Update</td>
    <td>Progress was made on an Achievement</td>
   </tr>
   <tr>
-   <td>progression_update</td>
+   <td>Progression Update</td>
    <td>Progress was made on a Progression</td>
   </tr>
   <tr>
-   <td>mission_update</td>
+   <td>Mission Update</td>
    <td>Progress was made on a Mission path</td>
   </tr>
   <tr>
-   <td>shop_item_update</td>
+   <td>Shop Item Update</td>
    <td>An update related to a specific shop item</td>
   </tr>
   <tr>
-   <td>wallet_update</td>
+   <td>Wallet Update</td>
    <td>An update related to the users wallet</td>
   </tr>
   <tr>
-   <td>webhook_verification</td>
+   <td>Webhook verification</td>
    <td>An event only used for validating the connection to Segment</td>
   </tr>
 </table>
