@@ -107,3 +107,5 @@ destinations:
     override: "actions-gwen-cloud"
   - original: "mixpanel-legacy"
     override: "mixpanel"
+  - original: "pinterest-conversions-api"
+    override: "actions-pinterest-conversions-api"

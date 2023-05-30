@@ -1,5 +1,6 @@
 ---
 title: Client-side persistence in Analytics.js
+redirect_from: '/connections/sources/catalog/libraries/website/javascript/persistence/'
 strat: ajs
 ---
 
@@ -18,14 +19,14 @@ If a user returns to your site after the cookie expires, Analytics.js looks for 
 Analytics.js sets some default properties when creating cookies for user or group identities. You can override the default cookie properties in code when loading Analytics.js by passing in a `cookie` object to the load method.
 
 > info ""
-> Analytics.js doesn't set third-party cookies and only sets first-party cookies. 
+> Analytics.js doesn't set third-party cookies and only sets first-party cookies.
 
 Here is the full list of available parameters with their default values:
 
 | Parameter | Description | Default value |
 | --- | --- | --- |
 | `domain` | The domain to set the cookie to. This must match the domain of the JavaScript origin. If an Analytics.js cookie already exists at the top-level domain, Segment carries the same cookie value to any subdomains, despite `domain` configuration. | Top-level domain |
-| `maxage` | The maximum amount of time in seconds before the cookie expires. Browsers may clear cookies before this elapses. | 1 year |
+| `maxage` | The maximum amount of time in days before the cookie expires. Browsers may clear cookies before this elapses. | 1 year |
 | `path` | The path the cookie is valid for. | `"/"` |
 | `sameSite` | This prevents the browser from sending the cookie along with cross-site requests. | `Lax` |
 | `secure` | This determines whether cookies can only be transmitted over secure protocols such as https. | `false` |
@@ -35,13 +36,15 @@ Example:
 analytics.load('writeKey', {
   cookie: {
     domain: 'sub.site.example',
-    maxage: 604800, // 7 days in seconds
+    maxage: 7, // 7 days
     path: '/',
     sameSite: 'Lax',
     secure: true
   }
 })
 ```
+> info ""
+> Chrome has a maximum limit of 400 days for cookies. If a value is set beyond that, then Chrome sets the upper limit to 400 days instead of rejecting it. Visit Chrome's [docs](https://developer.chrome.com/blog/cookie-max-age-expires/){:target="blank"} to learn more.
 
 ### User settings
 

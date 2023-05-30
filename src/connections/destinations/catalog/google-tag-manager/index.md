@@ -90,4 +90,4 @@ If you are seeing `404` error on the JavaScript console of your page and it is a
 By default Segment pushes the `anonymousId` and `userId`(if exists) into the `dataLayer` for each `page` or `track` call. Since the `anonymousId` is created by Segment, namespaces that property in the `dataLayer` as `segmentAnonymousId`.
 
 ### Environments
-If you're using an 'environment' variable for `gtm_preview` in your tag's query string, you can set that string in the **Environment** of your Optional Settings. IMPORTANT: Make sure the string includes the `gtm_auth` variable. For example, your string should look like: `env-xxxxx&gtm_auth=xxxxx`.
+If you're using an 'environment' variable for `gtm_preview` in your tag's query string, you can set that string in the **Environment** of your Optional Settings. IMPORTANT: Make sure the string includes the `gtm_auth` variable. For example, your string should look like: `env-xx&gtm_auth=xxxxx`.

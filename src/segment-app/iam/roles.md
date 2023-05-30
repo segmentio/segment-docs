@@ -96,4 +96,4 @@ To **create or edit** transformations you must have either `Source Admin` for al
 
 ## Roles for Privacy Portal
 
-To **view, create or edit** PII related configurations in Privacy Portal, you need to have the `Workspace Owner` role.
+The Privacy Portal is only accessible by `Workspace owners`. To **view, create or edit** any section of the Privacy Portal, you need to have the `Workspace Owner` role.

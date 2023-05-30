@@ -8,6 +8,12 @@ redirect_from:
 strat: ajs
 id: IqDTy1TpoU
 ---
+
+
+
+
+
+
 Analytics.js 2.0, the latest version of Segment's JavaScript source, enables you to send your data to any tool without having to learn, test, or use a new API every time.
 
 > info ""
@@ -745,7 +751,7 @@ window.analytics.ready(() => {
     })
 ```
 
-You can view Segment's [existing plugins](https://github.com/segmentio/analytics-next/tree/master/src/plugins){:target="_blank"} to see more examples.
+You can view Segment's [existing plugins](https://github.com/segmentio/analytics-next/tree/master/packages/browser/src/plugins){:target="_blank"} to see more examples.
 
 ### Register a plugin
 Registering plugins enable you to modify your analytics implementation to best fit your needs. You can register a plugin using this:

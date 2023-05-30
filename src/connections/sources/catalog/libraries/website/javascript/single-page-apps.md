@@ -48,4 +48,4 @@ Since the code in the head of your website is executed only on initial page load
 
 ## How can I track UTMs on a single-page application?
 
-Segment automatically captures UTMs that you pass in URLs. You can also [manually pass UTMs](/docs/connections/sources/catalog/libraries/website/javascript/#default-page-properties) into the context campaign fields.
+Segment automatically captures UTMs that you pass in URLs. You can also [manually pass UTMs](/docs/connections/sources/catalog/libraries/website/javascript#utm-tracking) into the context campaign fields.

@@ -70,7 +70,7 @@ Start by creating a SendGrid account and then upgrading to the SendGrid Pro Plan
 
 ### Create a subuser and check the dedicated IP address
 
-Next, you’ll create a SendGrid subuser and ensure that a dedicated IP has been assigned:
+Next, you’ll [create a SendGrid subuser](https://docs.sendgrid.com/ui/account-and-settings/subusers#create-a-subuser){:target="_blank"} and ensure that a dedicated IP has been assigned:
 
 1. In your SendGrid space, navigate to **Settings > Subuser Management**, then click **Create New Subuser**.
 2. In the **Create New Subuser** window, create a username for the subuser, then add an email address and password. Your SendGrid subuser username must begin with the prefix `twilio_engage_app_`. Add a unique identifier to the end of the prefix, for example, `twilio_engage_app_someusername`.
@@ -137,7 +137,10 @@ You’ll now need to enable event webhooks, which trigger webhook notifications 
 
 Now, you'll generate an API key and API Key ID within SendGrid. **With your SendGrid account open in one tab, open your [Segment workspace](https://app.segment.com/workspaces){:target="_blank"} open in another. You’ll need both open to copy and paste the API credentials into your Engage settings.**
 
-1. Within your SendGrid subuser space, navigate to **Settings > API Keys**.
+> info "SendGrid Subuser Step"
+> Carry out the following steps in your SendGrid **subuser** space.
+
+1. **Within your SendGrid subuser space**, navigate to **Settings > API Keys**.
 2. Click the **Create API Key** button.
 3. In the Create API Key window, name your API key using the prefix `twilio_engage_app_`, with a suffix of your choice added to the end, like `twilio_engage_app_somekey`.
 4. Under API Key Permissions, select the **Full Access** radio button, then click **Create & View**.
