@@ -38,32 +38,29 @@ Below are the events that Voucherify sends to Segment. These events appear as ta
 ### Redemption events
 | Event                         | Description                                                                                                                                    |
 | ----------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------- |
-| Redemption succeeded          | Triggered when a redemption is successfully completed by a customer (successful use of a voucher to receive a discount or other reward).       |
-| Redemption failed             | Triggered  when a redemption attempt fails due to an issue with the voucher or customer.                                                       |
-| Redemption rollback succeeded | Triggered when a redemption is successfully rolled back, which means removal of the voucher and reversal of any associated discount or reward. |
-| Redemption rollback failed    | Triggered when an attempt to rollback the redemption fails.                                                                                    |
+| Redemption Succeeded          | Triggered when a redemption is successfully completed by a customer (successful use of a voucher to receive a discount or other reward).       |
+| Redemption Failed             | Triggered when a redemption attempt fails due to an issue with the voucher or customer.                                                       |
+| Redemption Rollback Succeeded | Triggered when a redemption is successfully rolled back, which means removal of the voucher and reversal of any associated discount or reward. |
+| Redemption Rollback Failed    | Triggered when an attempt to rollback the redemption fails.                                                                                    |
 
 ### Customer rewarded events
 
 | Event                                        | Description                                                                                 |
 | -------------------------------------------- | ------------------------------------------------------------------------------------------- |
-| Customer creates a reward redemption request | Triggered when a customer redeems a reward in Voucherify account.                           |
-| Customer reward redemption completed         | Triggered when a customer's redemption request is completed (customer received the reward). |
-| Reward redemption created                    | Triggered when a reward redemption is created.                                              |
-| Reward redemption completed                  | Triggered when a reward redemption is successfully completed.                               |
-| Customer rewarded                            | Triggered when a customer is rewarded with a main reward.                                   |
-| Customer rewarded with loyalty points        | Triggered when a customer is rewarded with loyalty points.                                  |
-
+| Customer Creates a Reward Redemption Request | Triggered when a customer redeems a reward in Voucherify account.                           |
+| Customer Reward Redemption Completed         | Triggered when a customer's redemption request is completed (customer received the reward). |
+| Reward Redemption Created                    | Triggered when a reward redemption is created.                                              |
+| Reward Redemption Completed                  | Triggered when a reward redemption is successfully completed.                               |
+| Customer Rewarded                            | Triggered when a customer is rewarded with a main reward.                                   |
+| Customer Rewarded with Loyalty Points        | Triggered when a customer is rewarded with loyalty points.                                  |
 
 
 ### Validation events
 
 | Event                | Description                                                                        |
 | -------------------- | ---------------------------------------------------------------------------------- |
-| Validation succeeded | Triggered when a customer's validation is completed (customer entered valid code). |
-| Validation failed    | Triggered when a customer's validation fails.                                      |
-
-Publication events:
+| Validation Succeeded | Triggered when a customer's validation is completed (customer entered valid code). |
+| Validation Failed    | Triggered when a customer's validation fails.                                      |
 
 
 ## Event Properties
