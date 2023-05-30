@@ -68,7 +68,7 @@ Keep the following information in mind as you work with broadcasts.
 
 ### SMS segments
 
-SMS broadcasts longer than 160 characters are split into segments and then joined together by the recipient's device. As a result, you can send long SMS broadcasts longer than 160 characters, but each 160-character segment is billed individually. 
+SMS broadcasts longer than 160 characters are split into segments and then joined together by the recipient's device. As a result, you can send SMS broadcasts longer than 160 characters, but each 160-character segment is billed individually. 
 
 For more on message segments, view [SMS character limits](https://www.twilio.com/docs/glossary/what-sms-character-limit){:target="_blank"}.
 
