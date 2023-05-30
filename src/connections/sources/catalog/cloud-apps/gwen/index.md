@@ -39,27 +39,27 @@ The table below lists events that GWEN sends to Segment. These events appear as 
    <td>Description</td>
   </tr>
   <tr>
-   <td>achievement_update</td>
+   <td>Achievement Update</td>
    <td>Progress was made on an Achievement</td>
   </tr>
   <tr>
-   <td>progression_update</td>
+   <td>Progression Update</td>
    <td>Progress was made on a Progression</td>
   </tr>
   <tr>
-   <td>mission_update</td>
+   <td>Mission Update</td>
    <td>Progress was made on a Mission path</td>
   </tr>
   <tr>
-   <td>shop_item_update</td>
+   <td>Shop Item Update</td>
    <td>An update related to a specific shop item</td>
   </tr>
   <tr>
-   <td>wallet_update</td>
+   <td>Wallet Update</td>
    <td>An update related to the users wallet</td>
   </tr>
   <tr>
-   <td>webhook_verification</td>
+   <td>Webhook verification</td>
    <td>An event only used for validating the connection to Segment</td>
   </tr>
 </table>
