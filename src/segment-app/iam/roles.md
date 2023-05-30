@@ -96,4 +96,4 @@ To **create or edit** transformations you must have either `Source Admin` for al
 
 ## Roles for Privacy Portal
 
-The Privacy Portal is only accessible by `Workspace owners`. To **view, create or edit** any section of Privacy Portal, you will need to have the `Workspace Owner` role.
+The Privacy Portal is only accessible by `Workspace owners`. To **view, create or edit** any section of the Privacy Portal, you need to have the `Workspace Owner` role.
