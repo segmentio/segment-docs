@@ -41,6 +41,12 @@ If you no longer want to track an event, you can either remove it from your code
 
 Once you block an event in Segment, Segment stops forwarding it to all of your Destinations, including your warehouses. You can remove it from your code at your leisure. In addition to blocking track calls, Business plan customers can block all Page and Screen calls, as well as Identify traits and Group properties. 
 
+## What does adding a new event via the 'New Event' button do?
+
+The 'New Event' button in your source schema adds the event to the source schema only. It does not add any events to your tracking code. If you want to track an event, you still need to manually add it to your source code. 
+
+A use case for this feature might be to enable [schema filtering](https://segment.com/docs/guides/filtering-data/#per-source-schema-integrations-filters) for a new event before it arrives in the source to prevent it from reaching specific down stream destinations. 
+
 ## Export your Source Schema
 
 Segment allows users with Source Read-only permissions to download Source Schemas as a CSV file, maximizing portability and access to event data. You can download a copy of your schema by visiting the Source Schema page.
