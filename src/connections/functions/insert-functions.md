@@ -30,7 +30,7 @@ To create an insert function from Segment's catalog:
 
 1. Navigate to **Connections > Catalog > Functions** and click **Create function**.
 2. From the Select Type screen, select **Insert Functions** and click **Next: Build function**.
-3. Write your function code, then click **Use Sample Event** to test it. Create a sample event, then click **Run** to test.
+3. Write your function code, and test it. Manually enter a sample event, then click **Run** to test.
 4. Click **Next: Configure and Deploy** to add a function name, description, and logo.
 5. Click **Create function** to create your insert function. You'll see the function displayed in the Insert functions tab.
 
@@ -96,58 +96,7 @@ To change which event type the handler listens to, you can rename it to the name
 
 ### Errors and error handling
 
-Segment considers a function's execution successful if it finishes without error. You can also `throw` an error to create a failure on purpose. Use these errors to validate event data before processing it, to ensure the function works as expected.
-
-You can `throw` the following pre-defined error types to indicate that the function ran as expected, but that data was deliverable:
-
-- `EventNotSupported`
-- `InvalidEventPayload`
-- `ValidationError`
-- `RetryError`
-
-The examples show basic uses of these error types.
-
-```js
-async function onGroup(event) {
-  if (!event.traits.company) {
-    throw new InvalidEventPayload('Company name is required')
-  }
-}
-
-async function onPage(event) {
-  if (!event.properties.pageName) {
-    throw new ValidationError('Page name is required')
-  }
-}
-
-async function onAlias(event) {
-  throw new EventNotSupported('Alias event is not supported')
-}
-
-async function onTrack(event) {
-  let res
-  try {
-    res = await fetch('http://example-service.com/api', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify({ event })
-    })
-  } catch (err) {
-    // Retry on connection error
-    throw new RetryError(err.message)
-  }
-  if (res.status >= 500 || res.status === 429) {
-    // Retry on 5xx and 429s (ratelimits)
-    throw new RetryError(`HTTP Status ${res.status}`)
-  }
-}
-
-```
-If you don't supply a function for an event type, Segment throws an `EventNotSupported` error by default.
-
-You can read more about [error handling](#destination-functions-logs-and-errors) below.
+{% include content/functions/errors-and-error-handling.md %}
 
 ## Create settings and secrets
 
@@ -238,58 +187,20 @@ A function can throw errors, or Segment might encounter errors while invoking yo
 - **Unsupported Event Type** - Your code doesn't implement a specific event type (for example, `onTrack()`) or threw an `EventNotSupported` error.
 - **Retry** - Your code threw `RetryError` indicating that the function should be retried.
 
-Segment only attempts to send the event to your destination function again if a **Retry** error occurs.
+Segment only attempts to send the event to your destination insert function again if a **Retry** error occurs.
 
 You can view Segment's list of [Integration Error Codes](/docs/connections/integration_error_codes/) for more information about what might cause an error.
 
 ### Destination insert functions logs
 
-If your function throws an error, execution halts immediately. Segment captures the event, any outgoing requests/responses, any logs the function might have printed, as well as the error itself.
-
-Segment then displays the captured error information in the [Event Delivery](/docs/connections/event-delivery/) page for your destination insert function. You can use this information to find and fix unexpected errors.
-
-You can throw [an error or a custom error](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Error){:target="_blank"} and you can also add helpful context in logs using the [`console` API](https://developer.mozilla.org/en-US/docs/Web/API/console){:target="_blank"}. For example:
-
-```js
-async function onTrack(event, settings) {
-  const userId = event.userId
-
-  console.log('User ID is', userId)
-
-  if (typeof userId !== 'string' || userId.length < 8) {
-    throw new ValidationError('User ID is invalid')
-  }
-
-  console.log('User ID is valid')
-}
-```
+{% include content/functions/logs.md %}
 
 > warning ""
 > Don't log sensitive data, such as personally-identifying information (PII), authentication tokens, or other secrets. Avoid logging entire request/response payloads. The **Function Logs** tab may be visible to other workspace members if they have the necessary permissions.
 
 ## Caching in destination insert functions
 
-Functions execute only in response to incoming data, but the environments that functions run in are generally long-running. Because of this, you can use global variables to cache small amounts of information between invocations. For example, you can reduce the number of access tokens you generate by caching a token, and regenerating it only after it expires. Segment cannot make any guarantees about the longevity of environments, but by using this strategy, you can improve the performance and reliability of your Functions by reducing the need for redundant API requests.
-
-This example code fetches an access token from an external API and refreshes it every hour:
-
-```js
-const TOKEN_EXPIRE_MS = 60 * 60 * 1000 // 1 hour
-let token = null
-async function getAccessToken () {
-  const now = new Date().getTime()
-  if (!token || now - token.ts > TOKEN_EXPIRE_MS) {
-    const resp = await fetch('https://example.com/tokens', {
-      method: 'POST'
-    }).then(resp => resp.json())
-    token = {
-      ts: now,
-      value: resp.token
-    }
-  }
-  return token.value
-}
-```
+{% include content/functions/caching.md %}
 
 ## Managing destination insert functions
 
