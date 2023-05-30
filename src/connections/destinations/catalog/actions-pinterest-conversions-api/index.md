@@ -4,7 +4,6 @@ id: 63e42e512566ad7c7ca6ba9b
 hide-personas-partial: true
 hide-boilerplate: false
 hide-dossier: true
-private: true
 ---
 
 The Pinterest Conversions API destination is a server-to-server integration with [The Pinterest API for Conversions](https://help.pinterest.com/en/business/article/the-pinterest-api-for-conversions){:target="_blank"} that allows advertisers to send conversions directly to Pinterest without requiring a Pinterest Tag. These conversions map to Pinterest campaigns for conversion reporting to improve conversion visibility. When you pass events to Pinterest, advertisers can use Pinterest's insights to evaluate an ad's effectiveness to improve content, targeting, and placement of future ads.
@@ -46,6 +45,9 @@ To connect the Pinterest Conversions API Destination:
 
 
 {% include components/actions-fields.html settings="true"%}
+
+> warning ""
+> By default, all mappings send as `web` conversions. If you want to send events as mobile or offline conversions, update the Action Source in each mapping to be `app_android`, `app_ios`, `offline`.
 
 ## FAQ & Troubleshooting
 
