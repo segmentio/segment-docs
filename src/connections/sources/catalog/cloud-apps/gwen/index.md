@@ -1,9 +1,7 @@
 ---
 title: "GWEN Source"
-hidden: true
+id: vMEJCURfHh
 ---
-
-## GWEN Source
 
 [GWEN](https://gwenplatform.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners){:target="blank"} offers powerful gamification tools and insights to convert, engage, and retain users. With GWEN it has never been easier to understand your users behavior patterns and build better performing products with both speed and accuracy.
 
