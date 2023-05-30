@@ -42,7 +42,12 @@ For data to flow to your downstream destinations, you'll need to connect your in
 
 ### Using the Destinations tab
 
-To access insert functions through the Destinations tab, navigate to **Connections > Destinations > Functions** and select your insert function. Use this page to edit and manage insert functions in your workspace. 
+To access insert functions through the Destinations tab: 
+1. Navigate to **Connections > Destinations** 
+2. Select your destination
+3. Select **Functions** and then select your insert function. 
+
+Use this page to edit and manage insert functions in your workspace. 
 
 You can also use this page to [enable destination insert functions](#enable-the-insert-function) in your workspace.
 
