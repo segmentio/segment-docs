@@ -11,7 +11,7 @@ beta: true
 
 With Encharge, you can nurture, convert, and onboard customers with advanced behavior emails, company profiles, billing integrations, and CRM sync. 
 
-This destination is maintained by Encharge. For any issues with the destination, [contact the Encharge Support team](mailto:support@encharge.com).
+This destination is maintained by Encharge. For any issues with the destination, [contact the Encharge Support team](mailto:support@encharge.io).
 
 {% include content/beta-note.md %}
 
