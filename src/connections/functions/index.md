@@ -41,6 +41,6 @@ Destination insert functions help you enrich your data with code before you send
 Use cases:
 - Implement custom logic and enrich data with third party sources 
 - Transform outgoing data with advanced filtration and computation
-- Ensure data compliance by performing tokenisation, encryption, or decryption before sending data out 
+- Ensure data compliance by performing tokenisation, encryption, or decryption before sending data downstream 
 
 To learn more, visit [destination insert functions](/docs/connections/functions/insert-functions).

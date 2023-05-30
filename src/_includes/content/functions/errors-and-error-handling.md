@@ -2,7 +2,7 @@
 
 Segment considers a function's execution successful if it finishes without error. You can also `throw` an error to create a failure on purpose. Use these errors to validate event data before processing it, to ensure the function works as expected.
 
-You can `throw` the following pre-defined error types to indicate that the function ran as expected, but that data was deliverable:
+You can `throw` the following pre-defined error types to indicate that the function ran as expected, but that data was not deliverable:
 
 - `EventNotSupported`
 - `InvalidEventPayload`
@@ -51,4 +51,3 @@ async function onTrack(event) {
 ```
 If you don't supply a function for an event type, Segment throws an `EventNotSupported` error by default.
 
-You can read more about [error handling](#destination-functions-logs-and-errors) below.

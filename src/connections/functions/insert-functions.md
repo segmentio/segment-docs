@@ -30,7 +30,7 @@ To create an insert function from Segment's catalog:
 
 1. Navigate to **Connections > Catalog > Functions** and click **New Function**.
 2. From the Select Type screen, select **Insert** and click **Next: Build Function**.
-3. Write your function code, and test it. Manually enter a sample event and click **Run** to test.
+3. Write and test your function code. Manually enter a sample event and click **Run** to test.
 4. Click **Next: Configure & Create** to add a function name, description, and logo.
 5. Click **Create Function** to create your insert function. You'll see the insert function displayed in the Functions tab.
 
@@ -103,6 +103,8 @@ To change which event type the handler listens to, you can rename it to the name
 
 {% include content/functions/errors-and-error-handling.md %}
 
+You can read more about [error handling](#destination-insert-functions-logs-and-errors) below.
+
 ## Create settings and secrets
 
 {% include content/functions/settings.md %}
@@ -174,7 +176,7 @@ Note the following limitations for batching with insert functions:
 - Max count begins with 100 and goes up to 1,000.
 
 > info ""
-> Batching is available for insert and destination functions only. Read more about batching [here](/docs/connections/functions/destination-functions/#batching-the-destination-function). 
+> Batching is available for insert and destination functions only. Read more about batching [in the Destination Functions docs](/docs/connections/functions/destination-functions/#batching-the-destination-function). 
 
 {% endcomment %}
 

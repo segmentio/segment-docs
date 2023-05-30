@@ -83,6 +83,8 @@ To change which event type the handler listens to, you can rename it to the name
 
 {% include content/functions/errors-and-error-handling.md %}
 
+You can read more about [error handling](#destination-functions-logs-and-errors) below.
+
 ### Runtime and dependencies
 
 {% include content/functions/runtime.md %}
