@@ -59,3 +59,15 @@ You can, but the sooner you switch to the spec'd events, the further back you'll
 ### How will I be able to take advantage of new campaign events?
 
 In the coming months, we'll be updating our mobile marketing destinations to automatically capture campaign events around attribution, deep linking, and push notifications. These events will go to [destinations](/docs/connections/destinations/), including [warehouses](/docs/connections/storage/catalog/).
+
+### Why don't Push Notification events reach Segment when my Android App is backgrounded?
+
+Android applications can't receive Push Notifications when the process is not running, and when apps are put into background they are eligible to have their Process killed when there is memory pressure. For more more on Android processes, view Android's [Processes and app lifecycle documentation](https://developer.android.com/guide/components/activities/process-lifecycle){:target="_blank"}.
+
+Segment tracks messages delivered to the application. So if the process has been killed for any reason, messages won't be delivered. 
+
+### Why do Push Notifications work with Firebase Cloud Messaging when the app is backgrounded?
+
+Firebase Cloud Messaging (FCM) has its own servers. When an FCM message is created and sent to a device, that message travels through FCM servers and is delivered to the local FCM client device that is part of Android OS. This FCM client is almost always running, even when the app is backgrounded. From there, the FCM message is intended to be delivered to a local application. If the app process is running, the message gets delivered. Otherwise, the user must tap a notification that starts the app and delivers the FCM message.
+
+For more context on how this process works, view the [Firebase FCM architecture documentation](https://firebase.google.com/docs/cloud-messaging/fcm-architecture){:target="_blank"}. 
