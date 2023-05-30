@@ -62,7 +62,7 @@ In the coming months, we'll be updating our mobile marketing destinations to aut
 
 ### Why don't Push Notification events reach Segment when my Android App is backgrounded?
 
-Android applications can't receive Push Notifications when the process is not running, and when apps are put into background they are eligible to have their Process killed when there is memory pressure. You can read more on Android processes and the [app lifecycle here](https://developer.android.com/guide/components/activities/process-lifecycle){:target="_blank"}.
+Android applications can't receive Push Notifications when the process is not running, and when apps are put into background they are eligible to have their Process killed when there is memory pressure. For more more on Android processes, view Android's [Processes and app lifecycle documentation](https://developer.android.com/guide/components/activities/process-lifecycle){:target="_blank"}.
 
 Segment tracks messages delivered to the application. So if the process has been killed for any reason, messages won't be delivered. 
 
