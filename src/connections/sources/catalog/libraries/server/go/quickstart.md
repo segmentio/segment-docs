@@ -27,7 +27,7 @@ When you create a Source in the Segment web app, it tells the Segment servers th
 Installing our Go library is easy, just run the following:
 
 ```bash
-go get gopkg.in/segmentio/analytics-go.v3
+go get github.com/segmentio/analytics-go/v3
 ```
 
 Then just import the library and initialize a new client your Segment source's **Write Key**, like so:

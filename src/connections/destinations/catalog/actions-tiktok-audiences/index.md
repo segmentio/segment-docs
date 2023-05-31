@@ -4,15 +4,11 @@ id: 63d2e550fb90f1632ed8820a
 hide-personas-partial: true
 hide-boilerplate: true
 hide-dossier: false
-hidden: true
 ---
 
 The TikTok Audiences destination enables advertisers to send Engage audiences to TikTok as Custom Audiences using [TikTok's Segment API](https://ads.tiktok.com/marketing_api/docs?id=1739940504185857){:target="_blank"}.
 
 By using Segment's TikTok Audiences destination, you can increase traffic and drive conversions with hyper-relevant ads that promote product discovery.
-
-> info ""
-> The TikTok Audiences destination is in beta and is in active development. Some functionality may change before it becomes generally available.
 
 ## Getting started
 
@@ -39,6 +35,8 @@ By using Segment's TikTok Audiences destination, you can increase traffic and dr
 7. Navigate to the **Mappings** tab, click **New Mapping**, and select **Add Users**.
 
 8. Under Select mappings, select the TikTok "Advertiser ID" of the audience segment you want to add users to. Input the `audience_id` of that audience segment under "Audience ID." **Note: A separate mapping must be created for each audience segment you plan to send Engage audiences to.**
+> info ""
+> Once you've created the audience using the name of Segment's audience key, you can get the Audience ID from TikTok's Assets>Audiences page. You'll also find the Advertised ID, noted by `aadvid`, over the TikTok URL.
 
 9. Repeat Steps 7 and 8 to also set up a **Remove Users** mapping.
      
