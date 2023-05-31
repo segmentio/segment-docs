@@ -8,7 +8,9 @@ sections:
     title: Conceptual model
   - path: /partners/sources
     title: Build a Source
-  - section_title: Build a Destination
+  - path: /partners/direct-destination
+    title: Build a Direct Destination
+  - section_title: Build an Actions Destination
     slug: partners/subscriptions
     section:
     - path: /partners/destinations
