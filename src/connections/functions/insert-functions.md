@@ -43,8 +43,8 @@ For data to flow to your downstream destinations, you'll need to connect your in
 ### Using the Destinations tab
 
 To access insert functions through the Destinations tab: 
-1. Navigate to **Connections > Destinations** 
-2. Select your destination
+1. Navigate to **Connections > Destinations**. 
+2. Select your destination.
 3. Select **Functions** and then select your insert function. 
 
 Use this page to edit and manage insert functions in your workspace. 
@@ -142,7 +142,7 @@ You can manually test your code from the functions editor:
 
 ## Save and deploy the destination insert function
 
-Once you finish building your insert function, click **Next: Configure and deploy** to name it, then click **Create function** to save it.
+Once you finish building your insert function, click **Next: Configure & Create** to name it, then click **Create Function** to save it.
 
 Once you do that, you'll see the insert function from the Functions page in your catalog. 
 
@@ -159,7 +159,8 @@ You need to enable your insert function for it to process your data.
 
 To enable your insert function:
 
-1. Navigate to **Connections > Destinations > Functions**.
+1. Navigate to **Connections > Destinations**.
+2. Select your destination, then select the **Functions** tab.
 2. Select the **Enable Function** toggle, and click **Enable** on the pop-out window. 
 
 To prevent your insert function from processing data, toggle Enable Function off.
