@@ -36,10 +36,10 @@ dependencies {
   {% codeexample %}
   {% codeexampletab Kotlin%}
   ```java
-	val analytics = Analytics("YOUR_WRITE_KEY", context) {
+	    val analytics = Analytics("YOUR_WRITE_KEY", context) {
         trackApplicationLifecycleEvents = true
     }
-
+    ...
     // Optionally add extension to recreate Analytics.with(context).track/screen/etc calls
     fun Analytics.with(context: Context) {
         // Return the analytics instance from above.
@@ -50,7 +50,7 @@ dependencies {
   {% codeexampletab Java%}
   ```java
     // Initialize an Analytics object with the Kotlin Analytics method
-    Analytics androidAnalytics = AndroidAnalyticsKt.Analytics           ("YOUR_WRITE_KEY", context, configuration -> {
+    Analytics androidAnalytics = AndroidAnalyticsKt.Analytics         ("YOUR_WRITE_KEY", context, configuration -> {
         configuration.setTrackApplicationLifecycleEvents(true);
         return Unit.INSTANCE;
         }
@@ -65,33 +65,35 @@ dependencies {
 
 ### 1.b) Update your import statements
 
-  {% codeexample %}
-  {% codeexampletab Before%}
+**Before example**
+<br> 
+
   ```java
     import com.segment.analytics.Analytics;
     import com.segment.analytics.Middleware;   
   ```
-  {% endcodeexampletab %}
-  {% codeexampletab After%}
+
+**After example**
+<br> 
+
   ```java
     import com.segment.analytics.kotlin.core.Analytics;
     import com.segment.analytics.kotlin.android.AndroidAnalyticsKt; // For calling from Android
     import com.segment.analytics.kotlin.core.compat.JavaAnalytics; // For calling from Java
     import com.segment.analytics.kotlin.core.platform.Plugin; // Replaces Middleware
   ```
-  {% endcodeexampletab %}
-  {% endcodeexample %}
+
 
 ## 2. Upgrade your Destinations
 
-If your app uses Segment to route data to Destinations through Segment-cloud (for example, Cloud-mode destinations), you can skip this step. Analytics-Kotlin treats Device-mode Destinations as plugins, and simplifies the process in integrating them into your app. Analytics-Kotlin supports these Device-Mode Destinations with more to come.
+If your app uses Segment to route data to Destinations via Segment-cloud (i.e. Cloud-mode destinations), you can skip this step. Analytics-Kotlin treats Device-mode Destinations as [plugins](/docs/connections/sources/catalog/libraries/mobile/kotlin-android/kotlin-android-plugin-architecture), and simplifies the process in integrating them into your app. Analytics-Kotlin supports these [Device-Mode Destinations](/docs/connections/sources/catalog/libraries/mobile/kotlin-android/destination-plugins) with more to come.
+
 
 ### 2.a) Import the Destination Plugin
 
 ```java
     implementation '<owner>:<project>:<version>'
 ```
-
 ### 2.b) Add Plugin to your Analytics instance
 
   {% codeexample %}
@@ -111,7 +113,7 @@ Your events will now begin to flow to the added destination in Device-Mode.
 
 ## 3. Upgrade Middleware to Plugins
 
-Middlewares are a powerful mechanism that can augment events collected by the Analytics iOS (Classic) SDK. A middleware is a simple function that is invoked by the Segment SDK and can be used to monitor, modify, augment or reject events. Analytics Swift replaces the concept of middlewares with Enrichment Plugins to give you even more control over your event data. Refer to the Plugin Architecture Overview for more information.
+Middlewares are a powerful mechanism that can augment events collected by the Analytics Android (Classic) SDK. A middleware is a simple function that is invoked by the Segment SDK and can be used to monitor, modify, augment or reject events. [Analytics Kotlin](/docs/connections/sources/catalog/libraries/mobile/kotlin-android/kotlin-android-plugin-architecture)replaces the concept of middlewares with Enrichment Plugins to give you even more control over your event data. Refer to the Plugin Architecture Overview for more information.
 
 ### 3.a) Upgrading source middleware
 
@@ -146,7 +148,7 @@ Middlewares are a powerful mechanism that can augment events collected by the An
   {% endcodeexampletab %}
   {% codeexampletab Kotlin%}
   ```java
-         builder
+      builder
    .useSourceMiddleware(
      Middleware { chain ->
          // Get the payload.
@@ -175,7 +177,7 @@ Middlewares are a powerful mechanism that can augment events collected by the An
   {% codeexample %}
   {% codeexampletab Java%}
   ```java
-     analytics.add(new Plugin() {
+  analytics.add(new Plugin() {
      private Analytics analytics;
 
      @Override
@@ -207,7 +209,7 @@ Middlewares are a powerful mechanism that can augment events collected by the An
      public void setAnalytics(@NonNull Analytics analytics) {
          this.analytics = analytics;
      }
- });
+  });
   ```
   {% endcodeexampletab %}
   {% codeexampletab Kotlin%}
@@ -386,16 +388,23 @@ Option | Details
 ### 4.b) Properties
 
 Properties have been replace by JsonElement. Since Properties are essentially a map we provide a conversion function
-to convert Maps of type Map<String, Object> to JsonElement:
+to convert Maps of type `Map<String, Object>` to `JsonElement`:
 
-Kotlin
-val map : MutableMap<String, Object> = HashMap<String, Object>()
+  {% codeexample %}
+  {% codeexampletab Java%}
+  ```java
+    Map map = new HashMap<String, Object>();
+    JsonElement json = JSONKt.toJsonElement(map);
+  ```
+  {% endcodeexampletab %}
+  {% codeexampletab Kotlin%}
+  ```java
+    val map : MutableMap<String, Object> = HashMap<String, Object>()
 
-val json = map.toJsonElement()
-
-Java
-Map map = new HashMap<String, Object>();
-JsonElement json = JSONKt.toJsonElement(map);
+    val json = map.toJsonElement()
+  ```
+  {% endcodeexampletab %}
+  {% endcodeexample %}
 
 ### 4.c) Options
 Options are no longer supported and should be converted into plugins.
