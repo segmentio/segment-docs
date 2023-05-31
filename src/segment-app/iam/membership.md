@@ -102,7 +102,7 @@ To review an access request, workspace owners click the link in the access reque
 
 ## Remove invalid or expired Invite
 
-When you send an invitation to an incorrect email address or the token included in the email invite link expires, the invite might still show up as "Invite Pending" in Segment App. In these cases, you can revoke the invite to remove it and resend the invite if needed. The invitation will expire within a few days. Therefore, if the user accepts the invite containing an expired link, that user will not be granted any accesses. 
+When you send an invitation to an incorrect email address or the token included in the email invite link expires, the invite might still show up as "Invite Pending" in the Segment App. In these cases, you can revoke the invite to remove it and resend the invite if needed. The invitation will expire within a few days. Therefore, if a user accepts an invite with an expired link, Segment does not grant them access. 
 
 To revoke invite:
 1. Navigate to the **Workspace settings** > **Access management**
