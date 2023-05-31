@@ -93,7 +93,7 @@ LDP relies on 3 fields and is enabled only when all 3 combinations are met, if o
 
 ### PII Hashing
 
-Segment creates a SHA-256 hash of the following fields before sending to Facebook:
+Segment creates a SHA-256 hash of the following fields before sending to Pinterest:
 - External ID
 - Mobile Ad Identifier
 - Email
