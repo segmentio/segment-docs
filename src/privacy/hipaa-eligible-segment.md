@@ -4,6 +4,11 @@ title: HIPAA Eligible Segment
 
 Segment is a HIPAA eligible platform, and meets the data privacy and security requirements of healthcare customers and their stakeholders. For more information about Segment becoming HIPAA eligible, see the [announcement blog post](http://segment.com/blog/segment-for-healthcare){:target="_blank"}.
 
+> note "HIPAA Auditing"
+> Segment maintains audit logs of every read and update action a user performs in the Segment app that may or may not involve PHI/PII. These logs can be provided upon request.
+>
+> For specific requests, please reach out to [friends@segment.com](mailto:friends@segment.com){:target="_blank"}.
+
 ## Business Associate Addendum
 
 > info ""
