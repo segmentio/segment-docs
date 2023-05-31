@@ -96,6 +96,9 @@ When you call Identify, Segment creates or updates the user in Intercom using th
 
 Keep reading for more information about the Identify call depending on the source type you send it from.
 
+When you send a field that has a timestamp as the value to Intercom, Segment converts the timestamp to the UNIX format and appends the suffix `_at` to the field name. This instructs Intercom that the field holds a timestamp value rather than a number. For more information, see [How Dates work in Intercom](https://www.intercom.com/help/en/articles/3605703-how-dates-work-in-intercom){:target="_blank"}. 
+
+
 ### Client
 
 - Passing `traits.company` creates a new Intercom Company if the `company_id` does not match a known company. See the [Intercom contact model documentation](https://developers.intercom.com/intercom-api-reference/reference/the-contact-model){:target="_blank"} for more details.
