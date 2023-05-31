@@ -1,3 +1,8 @@
+---
+title: Analytics React Native Braze Middleware Plugin
+strat: react-native
+---
+
 [Braze](https://www.braze.com/), formerly Appboy, is an engagement platform that empowers growth by helping marketing teams to build customer loyalty through mobile, omni-channel customer experiences.
 
 Braze’s middleware plugin code is open source and available on GitHub. You can view it [here.](https://github.com/segmentio/analytics-react-native/tree/master/packages/plugins/plugin-braze-middleware).
