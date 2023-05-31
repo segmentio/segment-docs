@@ -35,6 +35,7 @@ Each trigger parameter is optional. You can pass up to **one of each trigger par
 ## How can I control query string processing?
 
 The `useQueryString` option allows you to control the behavior of the query parameters. For example, you can entirely disable query string processing by setting `useQueryString` to `false`:
+
 ```js
 analytics.load('<WRITE_KEY>', {
   useQueryString: false
