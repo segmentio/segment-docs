@@ -247,3 +247,8 @@ If you see only question marks in the preview, and have already tracked data his
 ### Why do some SQL Trait settings not have the “Compute schedule” option?
 
 Segment added the compute schedule feature on Feb 8, 2021, so traits created prior to this date will not have this option. If your trait lacks this feature, recreating it will make it available.
+
+### Why do the SQL traits value showing in preview is not reflecting over the profile even after a successful sync?
+### Why doesn't the value of a SQL trait show in a user profile after a successful sync?
+
+Check that you've configured the identifier that uniquely identifies users in a SQL query (`user_id`, `anonymous_id`, `email`, or `group_id` for account traits) in Identity Resolution settings as an identifier. This ensures the trait is added to the user's profile with the correct identifier. If you don't configure the identifier in Identity Resolution settings, the trait's value is not added to the user profile.
