@@ -140,7 +140,7 @@ Ensure that at least one mapping has been configured and enabled in the destinat
 
 Google doesn't currently support passing certain reserved fields to the Google Analytics 4 Measurement Protocol API. This includes attribution data, like UTM parameters. If you rely on attribution reporting, you can either send this data as [custom dimensions](/docs/connections/destinations/catalog/actions-google-analytics-4/#custom-dimensions-and-metrics) or implement a parallel client-side integration to collect this data with gtag.js (web) or Firebase (mobile).
 
-Google also does not have a mechanism for tracking which device traffic is coming from. When using the Google Analytics 4 Cloud integration, all device tracking will default to `Desktop`. If you need more granular information, you can make use of [custom dimensions](/docs/connections/destinations/catalog/actions-google-analytics-4/#custom-dimensions-and-metrics) or you can switch to Segment's [Google Analytics 4 Web]([url](https://segment.com/docs/connections/destinations/catalog/actions-google-analytics-4-web/)) destination which will capture device data client-side.
+Google also does not have a mechanism for tracking which device traffic comes from. When you use the Google Analytics 4 Cloud integration, all device tracking defaults to `Desktop`. If you need more granular information, use [custom dimensions](/docs/connections/destinations/catalog/actions-google-analytics-4/#custom-dimensions-and-metrics) or switch to Segment's [Google Analytics 4 Web](https://segment.com/docs/connections/destinations/catalog/actions-google-analytics-4-web/)) destination which captures device data client-side.
 
 ### Debug Mode
 
