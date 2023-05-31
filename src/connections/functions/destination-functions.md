@@ -158,6 +158,9 @@ async function onTrack(request, settings) {
 
 When you deploy your destination function in your workspace, you fill out the settings on the destination configuration page, similar to how you would configure a normal destination.
 
+> info ""
+> You must pass the settings object to the function at runtime. Functions can't access the settings object when it's stored as a global variable.
+
 ## Test the destination function
 
 You can test your code directly from the editor in two ways:
