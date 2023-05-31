@@ -17,8 +17,8 @@ sections:
       title: Build a Destination
     - path: /partners/destinations/testing
       title: Test a Destination
-    - path: /partners/destinations/get-access
-      title: Get Access
+    # - path: /partners/destinations/get-access
+    #   title: Get Access
     - path: /partners/destinations/authentication
       title: Authentication
   # - path: /partners/plugins
