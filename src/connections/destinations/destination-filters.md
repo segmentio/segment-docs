@@ -216,4 +216,4 @@ Use the destination filter tester during setup to verify that you're filtering o
 
 #### Can I use destination filters to drop events unsupported by a destination?
 
-The check for unsupported events types is performed before any destination filter checks and not after. As a result, you cannot prevent unsupported event type errors with a Destination Filter. To filter these events, you will need to use the [Integrations Object](https://segment.com/docs/guides/filtering-data/#filtering-with-the-integrations-object).
+The check for unsupported events types happens before any destination filter checks. As a result, Destination Filters can't prevent unsupported event type errors. To filter these events, use the [Integrations Object](/docs/guides/filtering-data/#filtering-with-the-integrations-object).
