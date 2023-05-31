@@ -89,7 +89,7 @@ To add your first destination:
 4. Select the Reverse ETL source you want to connect the destination to.
 5. Enter the **Destination name** and click **Create Destination**.
 6. Enter the required information on the **Settings** tab of the destination.
-7. Enable the destination.
+7. Navigate to the destination settings tab and enable the destination. If the destination is disabled, then Segment won't be able to start sync.
 
 ### Step 4: Create mappings
 After you’ve added a destination, you can create mappings from your warehouse to the destination. Mappings enable you to map the data you extract from your warehouse to the fields in your destination.

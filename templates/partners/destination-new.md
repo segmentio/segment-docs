@@ -14,11 +14,11 @@
 >
 > The below template intends to provide a standardized structure. To submit your documentation, complete the following steps:
 >
-> 1. Clone the `segment-docs` repo locally
+> 1. Fork and clone the `segment-docs` repo locally
 > 2. Create a new branch (e.g., partner-name/destination)
 > 3. Create an `index.md` file in the following path `src/connections/destinations/catalog/{destination-slug}/index.md
 > 4. Copy the template below into your `index.md` file, and edit it to be in line with how your integration operates
-> 5. Add, commit, and push your code to the `segment-docs` repo and submit a pull request
+> 5. Add, commit, and push your code, then submit a pull request to the `segment-docs` repo
 >
 > If a section does not apply to your integration, feel free to remove. Please don’t create separate sections unless absolutely necessary. In most cases, creating a H3 (###) sub-heading under an existing section is the best option!
 >
