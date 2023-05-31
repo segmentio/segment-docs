@@ -207,7 +207,7 @@ We do our best to limit the amount of API calls that we are making to Marketo bu
         firstName: 'Alex'
       },
       integrations: {
-        'Marketo': false,
+        'Marketo V2': false,
         'Google Analytics': true
       }
     })

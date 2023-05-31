@@ -27,7 +27,7 @@ plugins:
     mark:
       url: https://cdn.filepicker.io/api/file/HrjOOkkLR8WrUc1gEeeG
   - name: Braze Middleware
-    url: connections/sources/catalog/libraries/mobile/react-native/destination-plugins/braze-react-native/
+    url: connections/sources/catalog/libraries/mobile/react-native/destination-plugins/braze-middleware-react-native/
     logo:
       url: https://cdn.filepicker.io/api/file/9kBQvmLRR22d365ZqKRK
     mark:
