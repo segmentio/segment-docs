@@ -203,6 +203,10 @@ If you're importing a large list of users and traits, you'll need to consider yo
 
 Yes, Segment limits request sizes to a maximum of 16KB. Records larger than this are discarded.
 
+### Do SQL Traits support arrays?
+
+No, SQL Traits supports string and numeric data types. You can cast arrays as a comma-separated string. In this case, if you used this trait to build an audience, you could check if the array contains a certain value with the "contains" operator, but the value is sent to any connected destinations as a string.
+
 ## Troubleshooting
 
 ### I'm getting a permissions error.
