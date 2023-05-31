@@ -31,7 +31,7 @@ For more information on profile queries, visit the [Profile API documentation](/
 
 ## Can I modify audience keys?
 
-Audience key cannot be changed once the audience is created. You will have to re-create the audience if you want a new audience key.
+You can't change the audience key after it's created. To change the key, you need to re-create the audience.
  
 
 ## Can I reuse audience keys?
