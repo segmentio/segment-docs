@@ -3,9 +3,9 @@ title: Building a Direct Destination
 redirect_from: '/partners/build-webhook/'
 ---
 
-Direct Destinations allow Segment Partners to ingest Segment Event Data using a just webhook. This guide explains how to set up your webhook with Segment.
+Direct Destinations allow Segment Partners to ingest Segment Event Data using just a webhook. This guide explains how to set up your webhook with Segment.
 
-## Getting Started
+## Getting started
 
 Review the steps outlined in the [Developer Center Overview](/docs/partners). This document outlines specific details for Step four as it relates to building a Subscription Webhook.
 
@@ -46,7 +46,7 @@ This would result in a final string of `'Basic c2VnbWVudDo='`. This is what is c
 
 See the [headers](#headers) section for more details.
 
-#### Custom Settings
+#### Custom settings
 All direct destinations have an API key setting by default, which Segment will send in the Authorization Header. To add more custom settings, go to the `Settings Editor` page. Any custom settings you add will be sent in the custom header `X-Segment-Settings` (See the [headers](#headers) section for more details.)
 
 
@@ -66,7 +66,7 @@ Segment sends you the following HTTP headers with all requests:
 | `X-Segment-Settings` | Except for the API key (which is sent in the Authorization header), Segment will send the base 64 encoding of the rest of your custom settings encoded in this header. | `X-Segment-Settings: eyJjdXN0b21TZXR0aW5nT25lIjoiY3VzdG9tIHNldHRpbmcgdmFsdWUifQ==` |
 
 
-#### Request Body
+#### Request body
 
 Segment's [Spec](/docs/connections/spec) standardizes the data that you can expect from Segment. You can choose to implement four types types of calls:
 
@@ -103,7 +103,7 @@ For example, you might implement the `.identify(userId, traits)` call to create 
 > The casing on these fields will vary by customer, so be ready to accept any casing.
 
 
-#### Status Code
+#### Status code
 
 Segment uses standard HTTP status code conventions to help diagnose problems quickly and give better insight into how the destination is working.
 
@@ -120,7 +120,7 @@ Upon receiving data, your endpoint should reply with one of the following status
 | `501` | If Segment sends you an [API call type](https://segment.com/docs/connections/spec/#api-calls) (indicated by the `type` property included on all messages) you don't support, reply with this code. Read more about the API call types Segment supports [here](https://segment.com/docs/connections/spec/#api-calls). |
 | `503` | Send Segment this code when your endpoint is temporarily down for maintenance or otherwise not accepting messages. This helps Segment avoid dropping users' messages during your downtime.                                                                                                                           |
 
-#### Response Body
+#### Response body
 
 You can normally send back an empty body, but when sending back a `4xx`- or `5xx`-class error, you can optionally send Segment a diagnostic message that explains the error. This message is displayed to the user in the Segment debugger, and is be used in Segment's Event Delivery summaries.
 
@@ -148,17 +148,17 @@ When testing your integration, proceed through two separate flows:
 1. Test that your endpoint successfully ingests data in the way you would expect.
 2. Mimic a user implementing your integration within their Segment workspace.
 
-### Your Endpoint
+### Your endpoint
 
 Test your code directly from the Developer Portal UI. Use the `Send Test Events` tab and review the test events to make sure your destination works as expected.
 
 
 In the debugger panel, check the two outputs. The **Request from Segment** and the **Response from destination**.
 
-* **Request from Segment** - What we posted to your endpoint
+* **Request from Segment** - What Segment posted to your endpoint
 * **Response from destination** - How your server responded
 
-### The User Flow
+### The user flow
 
 The ultimate goal is for Partners like yourself to create and publish high quality Destinations in [the Segment Catalog](https://segment.com/catalog/). Your Segment account doubles as a sandbox account to test your destination while you are still in a private "building" state.
 
