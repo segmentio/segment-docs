@@ -127,3 +127,15 @@ You can still manually track identity by calling `analytics.identify()` with the
 Analytics.js tries to detect when a page is about to be closed and saves pending events to `localStorage`. When the user navigates to another page within the same domain, Analytics.js attempts to send any events it finds in localStorage.
 
 When `disableClientPersistence` is set to `true`, Analytics.js won't store any pending events into `localStorage`.
+
+## Client Side Cookie Methods (Get, Set, Clear)
+
+To access or assign a value to a cookie, outside of the standard Segment methods (track/identify/page/group), you can use the following methods. To access the cookie's value pass an empty `()` at the end of the method. To assign the value, include the string value inside those parenthesis `('123-abc')`. To clear (remove) the value for a specific field, pass in an empty value of its type, for string `('')`, for object `({})`.
+
+| Field | Cookie Name | Analytics.js Method | Local Storage Method | Set Example | Clear Example |
+| ----- | ----------- | ------------------- | -------------------- | --------------- | ------------- |
+| `userId` | `ajs_user_id` | `analytics.user().id();` | `window.localStorage.ajs_user_id` | `analytics.user().id('123-abc');` | `analytics.user().id('');` |
+| `anonymousId` | `ajs_anonymous_id` | `analytics.user().anonymousId();` | `window.localStorage.ajs_anonymous_id` | `analytics.user().anonymousId('333-abc-456-dfg');` | `analytics.user().anonymousId('');` |
+| `user traits` | `ajs_user_traits` | `analytics.user().traits();` | `window.localStorage.ajs_user_traits` | `analytics.user().traits({firstName:'Jane'});` | `analytics.user().traits({});` |
+| `groupId` | `ajs_group_id` | `analytics.group().id();` | `window.localStorage.ajs_group_id` | `analytics.group().id('777-qwe-098');` | `analytics.group().id('');` |
+| `group traits` | `ajs_group_properties` | `analytics.group().traits()` | `window.localStorage.ajs_group_properties` | `analytics.group().traits({name:'Segment'})` | `analytics.group().traits({})` |
