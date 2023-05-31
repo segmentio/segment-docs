@@ -217,3 +217,7 @@ You must have write access to save and edit filters. Read permission access only
 #### How can I test my filter?
 
 Use the destination filter tester during setup to verify that you're filtering out the right events. Filtered events show up on the schema page but aren't counted in event deliverability graphs.
+
+#### Can I use destination filters to drop events unsupported by a destination?
+
+The check for unsupported events types happens before any destination filter checks. As a result, Destination Filters can't prevent unsupported event type errors. To filter these events, use the [Integrations Object](/docs/guides/filtering-data/#filtering-with-the-integrations-object).
