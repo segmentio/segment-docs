@@ -40,7 +40,9 @@ analytics.load('<WRITE_KEY>', {
   useQueryString: false
 })
 ```
+
 You can also keep query string processing on, but enforce validation rules. For example:
+
 ```js
 analytics.load('<WRITE_KEY>', {
   useQueryString: {
