@@ -387,25 +387,28 @@ Option | Details
                                         
 ### 4.b) Properties
 
-Properties have been replace by JsonElement. Since Properties are essentially a map we provide a conversion function
-to convert Maps of type `Map<String, Object>` to `JsonElement`:
+Properties have been replaced by JsonElement. Since Properties are essentially a `Map<String, Object>` we provide the ability to pass a map into our core tracking methods: 
 
   {% codeexample %}
   {% codeexampletab Java%}
   ```java
-    Map map = new HashMap<String, Object>();
-    JsonElement json = JSONKt.toJsonElement(map);
+    Map<String, Object> map = new HashMap<>();
+    map.put("feature", "chat");
+    Map<String, Object> miniMap = new HashMap<>();
+    miniMap.put("colorChoice", "green");
+    map.put("prefs", miniMap);
+    analytics.track("UseFeature", map);;
   ```
   {% endcodeexampletab %}
   {% codeexampletab Kotlin%}
   ```java
-    val map : MutableMap<String, Object> = HashMap<String, Object>()
-
-    val json = map.toJsonElement()
+    val map = HashMap<String, Any>()
+    map.put("feature", "chat")
+    map.put("prefs", buildJsonObject { put("colorChoice", JsonPrimitive("green")) })
+    analytics.track("UseFeature", map)
   ```
   {% endcodeexampletab %}
   {% endcodeexample %}
-
 ### 4.c) Options
 Options are no longer supported and should be converted into plugins.
 ## Conclusion
