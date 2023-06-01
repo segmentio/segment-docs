@@ -7,7 +7,7 @@ Direct Destinations allow Segment Partners to ingest Segment Event Data using a 
 
 ## Getting Started
 
-Review the steps outlined in the [Developer Center Overview](/docs/partners). This document outlines specific details for Step four as it relates to building a Subscription Webhook.
+Review the steps outlined in the [Developer Center Overview](/docs/partners). This document outlines specific details for building a direct webhook destination.
 
 1. Apply to become a [Segment Select Partner](https://segment.com/partners/integration/){:target="_blank"}.
 2. Understand Segment's [Conceptual Model](/docs/partners/conceptual-model) and [Spec](/docs/connections/spec).
@@ -21,7 +21,7 @@ Review the steps outlined in the [Developer Center Overview](/docs/partners). Th
 
 ## Build
 
-Begin by selecting "Build a direct destination" within the [Developer Portal](https://app.segment.com/dev-portal/overview). Next, you will see a field to input your destination name and slug (Once created you will not be able to change the destination slug). Within the "Build and test" section of the portal UI, add the destination endpoint where Segment data will be forwarded to. 
+Begin by selecting "Build a direct destination" within the [Developer Portal](https://app.segment.com/dev-portal/overview). Next, you will see a field to input your destination name and slug (once created you will not be able to change the destination slug). Within the "Build and test" section of the portal UI, add the destination endpoint where Segment data will be forwarded to. 
 
 Continue reading below to understand what is expected when accepting and responding to Segment data.
 
