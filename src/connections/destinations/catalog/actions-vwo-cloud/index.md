@@ -38,7 +38,7 @@ VWO Cloud Mode (Actions) provides the following benefits over the classic VWO de
 ## Using VWO Cloud mode destination with Web
 
 > info ""
-> We recommend using [VWO Web Mode destination](https://segment.com/docs/connections/destinations/catalog/actions-vwo-web/) for webpages as it requires minimal to no additional setup.
+> VWO recommends using the [VWO Web Mode destination](/docs/connections/destinations/catalog/actions-vwo-web/) for webpages as it requires minimal to no additional setup.
 
 1. Install VWO SmartCode on your website. You can follow the steps given [here](https://help.vwo.com/hc/en-us/articles/360019422834-Configuring-SmartCode-for-Your-Website){:target="_blank"} to do the same.
 2. Create a VWO campaign on your website.
