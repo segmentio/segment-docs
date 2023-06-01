@@ -81,7 +81,7 @@ To link your VWO FullStack environment with Segment:
 1. From your VWO dashboard, navigate to the navbar on the left > **FullStack > Projects** and select the appropriate project.
 2. Under the **Environments** section, click the **Copy** button corresponding to the environment that you want to link to Segment.
 3. In the **VWO SDK Key** field in the destination settings in Segment, paste the copied SDK key from the previous step.
-4. Click on **Save Changes**.
+4. Click **Save Changes**.
 
 To integrate Segment with VWO FullStack:
 
