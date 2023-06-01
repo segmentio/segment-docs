@@ -124,7 +124,7 @@ analytics.track("Segment Test Event", {
 
 ### Identify
 The [Identify](https://segment.com/docs/connections/spec/identify/){:target="_blank"} call lets you associate a visitor with their actions and capture their traits. 
-The destination forwards these traits to VWO Data360 where they can be seen under the **UNREGISTERED ATTRIBUTES** section in the **Data360 > Attributes** in VWO. These attributes can be registered and used to create [segments in VWO](https://help.vwo.com/hc/en-us/articles/8976459309465-Working-with-Segments-in-VWO-Data360){:target="_blank"}. To know more about Attributes in VWO Data360, [click here](https://help.vwo.com/hc/en-us/articles/8681465703705-Working-with-Attributes-in-VWO){:target="_blank"}.
+The destination forwards these traits to VWO Data360 where they can be seen under the **UNREGISTERED ATTRIBUTES** section in the **Data360 > Attributes** in VWO. These attributes can be registered and used to create [segments in VWO](https://help.vwo.com/hc/en-us/articles/8976459309465-Working-with-Segments-in-VWO-Data360){:target="_blank"}. For more information about Attributes in VWO Data360, see [Working with Attributes in VWO](https://help.vwo.com/hc/en-us/articles/8681465703705-Working-with-Attributes-in-VWO){:target="_blank"}.
 
 **Sample payload for Identify call to the destination**
 
