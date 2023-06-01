@@ -81,56 +81,7 @@ To change which event type the handler listens to, you can rename it to the name
 
 ### Errors and error handling
 
-Segment considers a function's execution successful if it finishes without error. You can also `throw` an error to create a failure on purpose. Use these errors to validate event data before processing it, to ensure the function works as expected.
-
-You can `throw` the following pre-defined error types to indicate that the function ran as expected, but that data was deliverable:
-
-- `EventNotSupported`
-- `InvalidEventPayload`
-- `ValidationError`
-- `RetryError`
-
-The examples show basic uses of these error types.
-
-```js
-async function onGroup(event) {
-  if (!event.traits.company) {
-    throw new InvalidEventPayload('Company name is required')
-  }
-}
-
-async function onPage(event) {
-  if (!event.properties.pageName) {
-    throw new ValidationError('Page name is required')
-  }
-}
-
-async function onAlias(event) {
-  throw new EventNotSupported('Alias event is not supported')
-}
-
-async function onTrack(event) {
-  let res
-  try {
-    res = await fetch('http://example-service.com/api', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify({ event })
-    })
-  } catch (err) {
-    // Retry on connection error
-    throw new RetryError(err.message)
-  }
-  if (res.status >= 500 || res.status === 429) {
-    // Retry on 5xx and 429s (ratelimits)
-    throw new RetryError(`HTTP Status ${res.status}`)
-  }
-}
-
-```
-If you don't supply a function for an event type, Segment throws an `EventNotSupported` error by default.
+{% include content/functions/errors-and-error-handling.md %}
 
 You can read more about [error handling](#destination-functions-logs-and-errors) below.
 
@@ -379,43 +330,7 @@ You can also choose to **Save & Deploy** to save the changes, and then choose wh
 
 ## Destination functions logs and errors
 
-A function can throw errors, or Segment might encounter errors while invoking your function. You can view these errors in the [Event Delivery](/docs/connections/event-delivery/) tab for your Destination as in the example below.
-
-![A screenshot of the event delivery tab, showing 519 failed events broken into categories explaining why they failed](images/event-delivery.png)
-
-### Destination functions error types
-
-- **Bad Request** - Any error thrown by the function code that is not covered by the other errors.
-- **Invalid Settings** - A configuration error prevented Segment from executing your code. If this error persists for more than an hour, [contact Segment Support](https://segment.com/help/contact/){:target="_blank"}.
-- **Message Rejected** - Your code threw `InvalidEventPayload` or `ValidationError` due to invalid input.
-- **Unsupported Event Type** - Your code doesn't implement a specific event type (for example, `onTrack()`) or threw an `EventNotSupported` error.
-- **Retry** - Your code threw `RetryError` indicating that the function should be retried.
-
-Segment only attempts to send the event to your destination function again if a **Retry** error occurs.
-
-You can view Segment's list of [Integration Error Codes](/docs/connections/integration_error_codes/) for more information about what might cause an error.
-
-### Destination functions logs
-
-If your function throws an error, execution halts immediately. Segment captures the event, any outgoing requests/responses, any logs the function might have printed, as well as the error itself.
-
-Segment then displays the captured error information in the [Event Delivery](/docs/connections/event-delivery/) page for your destination function. You can use this information to find and fix unexpected errors.
-
-You can throw [an error or a custom error](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Error){:target="_blank"} and you can also add helpful context in logs using the [`console` API](https://developer.mozilla.org/en-US/docs/Web/API/console){:target="_blank"}. For example:
-
-```js
-async function onTrack(event, settings) {
-  const userId = event.userId
-
-  console.log('User ID is', userId)
-
-  if (typeof userId !== 'string' || userId.length < 8) {
-    throw new ValidationError('User ID is invalid')
-  }
-
-  console.log('User ID is valid')
-}
-```
+{% include content/functions/logs.md %}
 
 > warning ""
 > **Warning:** Do not log sensitive data, such as personally-identifying information (PII), authentication tokens, or other secrets. Avoid logging entire request/response payloads. The **Function Logs** tab may be visible to other workspace members if they have the necessary permissions.
