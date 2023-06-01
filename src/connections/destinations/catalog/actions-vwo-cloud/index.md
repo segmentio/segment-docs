@@ -69,7 +69,7 @@ VWO Cloud Mode (Actions) provides the following benefits over the classic VWO de
 </script>
 ```
 
-5. All the events triggered in Segment will be available under **UNREGISTERED EVENTS** in the **Data360 > Events** section in VWO. To know more about Events in VWO Data360, [click here](https://help.vwo.com/hc/en-us/articles/8676443712537-Working-with-Events-in-VWO){:target="_blank"}.
+5. All the events triggered in Segment will be available under **UNREGISTERED EVENTS** in the **Data360 > Events** section in VWO.  For more information about Events in VWO Data360, see VWO's article [Working with Events in VWO](https://help.vwo.com/hc/en-us/articles/8676443712537-Working-with-Events-in-VWO){:target="_blank"}.
 
 
 ## Using VWO Cloud mode destination with VWO FullStack
