@@ -40,7 +40,7 @@ VWO Cloud Mode (Actions) provides the following benefits over the classic VWO de
 > info ""
 > VWO recommends using the [VWO Web Mode destination](/docs/connections/destinations/catalog/actions-vwo-web/) for webpages as it requires minimal to no additional setup.
 
-1. Install VWO SmartCode on your website. You can follow the steps given [here](https://help.vwo.com/hc/en-us/articles/360019422834-Configuring-SmartCode-for-Your-Website){:target="_blank"} to do the same.
+1. Install the VWO SmartCode on your website following VWO's guide [Configuring SmartCode for Your Website](https://help.vwo.com/hc/en-us/articles/360019422834-Configuring-SmartCode-for-Your-Website){:target="_blank"}
 2. Create a VWO campaign on your website.
 3. Once a visitor lands on your website a `_vwo_uuid` cookie is generated that acts as a unique identifier for the visitor. To know more about VWO UUID, [click here](https://help.vwo.com/hc/en-us/articles/360034891513-How-to-Locate-your-VWO-UUID-){:target="_blank"}.
 4. Pass this cookie (*_vwo_uuid*) value with every call to Segment in the `vwo_uuid` key. The `vwo_uuid` key must be included in *properties* for Track and Page calls whereas it should be added in the *traits* for Identify calls.<br><br>To automate this step, you can use [Segment Analytics.js middleware](https://segment.com/docs/connections/sources/catalog/libraries/website/javascript/middleware/){:target="_blank"} and use the following script on your website. This script fetches the VWO UUID from the cookie and adds it to the segment payload so that you don’t have to do the same manually.
