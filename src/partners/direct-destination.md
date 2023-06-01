@@ -7,8 +7,6 @@ Direct Destinations allow Segment Partners to ingest Segment Event Data using ju
 
 ## Getting started
 
-Review the steps outlined in the [Developer Center Overview](/docs/partners). This document outlines specific details for building a direct webhook destination.
-
 1. Apply to become a [Segment Select Partner](https://segment.com/partners/integration/){:target="_blank"}.
 2. Understand Segment's [Conceptual Model](/docs/partners/conceptual-model) and [Spec](/docs/connections/spec).
 3. [Request access to the Segment Developer Portal](https://segment.com/partners/developer-portal){:target="_blank"}.
