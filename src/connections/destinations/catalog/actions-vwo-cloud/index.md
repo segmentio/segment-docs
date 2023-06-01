@@ -94,7 +94,8 @@ To integrate Segment with VWO FullStack:
 VWO Supports the following calls, as specified in the [Segment Spec](/docs/connections/spec/).
 
 ### Track
-The [Track](https://segment.com/docs/connections/spec/track/){:target="_blank"} API call is used to record any actions your visitors perform, along with any properties that describe the action. Each action is known as an event. 
+The [Track](/docs/connections/spec/track/) call records any actions your visitors perform, along with any properties that describe the action. Each action is known as an event. 
+
 The destination forwards these events to VWO Data360 where they can be seen under the **UNREGISTERED EVENTS** section in **Data360 > Events** in VWO. These events can be registered and used as [Metrics](https://help.vwo.com/hc/en-us/articles/8675547113625-Working-with-Metrics-in-VWO){:target="_blank"} in VWO.
 
 **Sample payload for Track Call to the destination**
