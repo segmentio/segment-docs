@@ -76,7 +76,7 @@ VWO Cloud Mode (Actions) provides the following benefits over the classic VWO de
 
 To use the VWO Cloud mode destination with the VWO FullStack suite, link your VWO FullStack environment with Segment using the environment’s SDK key. After that's done, integrate your VWO account with Segment.
 
-To link your VWO FullStack environment with Segment, perform the following steps:
+To link your VWO FullStack environment with Segment:
 
 1. From your VWO dashboard, navigate to the navbar on the left > **FullStack > Projects** and select the appropriate project.
 2. Under the **Environments** section, click the **Copy** button corresponding to the environment that you want to link to Segment.
