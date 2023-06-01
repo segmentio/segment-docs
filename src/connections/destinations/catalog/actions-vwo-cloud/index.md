@@ -85,7 +85,7 @@ To link your VWO FullStack environment with Segment:
 
 To integrate Segment with VWO FullStack:
 
-1. Initialize VWO FullStack SDK. Follow the steps mentioned [here](https://developers.vwo.com/docs/quick-start-guide){:target="_blank"}, as per your server application.
+1. Initialize VWO FullStack SDK. Follow the steps for your server in VWO's [Quick Start Guide](https://developers.vwo.com/docs/quick-start-guide){:target="_blank"}.
 2. In order to track your visitors in VWO, you need to provide the user IDs of the visitors, which were used to track them in the VWO FullStack campaign. You need to pass that same User ID as `vwo_uuid` with all the calls. The `vwo_uuid` key must be included in *properties* for Track and Page API calls whereas it should be added in *traits* for Identify API calls. 
 3. All the events triggered in Segment will be available under **UNREGISTERED EVENTS** section which can be accessed by navigating from the left navbar > **Data360 > Events**.
 
