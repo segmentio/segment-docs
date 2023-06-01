@@ -38,7 +38,7 @@ VWO Cloud Mode (Actions) provides the following benefits over the classic VWO de
 ## Using VWO Cloud mode destination with Web
 
 > info ""
-> VWO recommends using the [VWO Web Mode destination](/docs/connections/destinations/catalog/actions-vwo-web/) for webpages as it requires minimal to no additional setup.
+> VWO recommends using the [VWO Web Mode destination](/docs/connections/destinations/catalog/actions-vwo-web/) for web pages as it requires minimal to no additional setup.
 
 1. Install the VWO SmartCode on your website following VWO's guide [Configuring SmartCode for Your Website](https://help.vwo.com/hc/en-us/articles/360019422834-Configuring-SmartCode-for-Your-Website){:target="_blank"}
 2. Create a VWO campaign on your website.
@@ -69,7 +69,7 @@ VWO Cloud Mode (Actions) provides the following benefits over the classic VWO de
 </script>
 ```
 
-5. All the events triggered in Segment will be available under **UNREGISTERED EVENTS** in the **Data360 > Events** section in VWO.  For more information about Events in VWO Data360, see VWO's article [Working with Events in VWO](https://help.vwo.com/hc/en-us/articles/8676443712537-Working-with-Events-in-VWO){:target="_blank"}.
+All the events triggered in Segment will be available under **UNREGISTERED EVENTS** in the **Data360 > Events** section in VWO.  For more information about Events in VWO Data360, see VWO's article [Working with Events in VWO](https://help.vwo.com/hc/en-us/articles/8676443712537-Working-with-Events-in-VWO){:target="_blank"}.
 
 
 ## Use VWO Cloud mode destination with VWO FullStack
@@ -78,7 +78,7 @@ To use the VWO Cloud mode destination with the VWO FullStack suite, link your VW
 
 To link your VWO FullStack environment with Segment:
 
-1. From your VWO dashboard, navigate to the navbar on the left > **FullStack > Projects** and select the appropriate project.
+1. From your VWO dashboard, navigate to the nav bar on the left > **FullStack > Projects** and select the appropriate project.
 2. Under the **Environments** section, click the **Copy** button corresponding to the environment that you want to link to Segment.
 3. In the **VWO SDK Key** field in the destination settings in Segment, paste the copied SDK key from the previous step.
 4. Click **Save Changes**.
