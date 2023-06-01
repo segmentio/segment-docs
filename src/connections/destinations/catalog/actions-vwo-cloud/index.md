@@ -74,7 +74,7 @@ VWO Cloud Mode (Actions) provides the following benefits over the classic VWO de
 
 ## Use VWO Cloud mode destination with VWO FullStack
 
-To use the VWO Cloud mode destination with the VWO FullStack suite, you first need to link your VWO FullStack environment with Segment using the environment’s SDK key. Post this, you have to integrate your VWO account with Segment.
+To use the VWO Cloud mode destination with the VWO FullStack suite, link your VWO FullStack environment with Segment using the environment’s SDK key. After that's done, integrate your VWO account with Segment.
 
 To link your VWO FullStack environment with Segment, perform the following steps:
 
