@@ -33,7 +33,7 @@ VWO Cloud Mode (Actions) provides the following benefits over the classic VWO de
 7. Enable the destination using the toggle switch.
 
 > info ""
-> VWO requires you to include a `vwo_uuid` key for all calls made in cloud-mode. The value of this key must be the VWO UUID(in the case of a website) or the User ID (in the case of FullStack). The `vwo_uuid` field must be included in *properties* for Track and Page calls whereas, it should be added in the *traits* for Identify calls.
+> VWO requires you to include a `vwo_uuid` key for all calls made in cloud-mode. The value of this key must be the VWO UUID(in the case of a website) or the User ID (in the case of FullStack). Track and Page calls require the `vwo_uuid` in the *properties* object. For Identify calls, you can place `vwo_uuid` in the *traits* object.
 
 ## Using VWO Cloud mode destination with Web
 
