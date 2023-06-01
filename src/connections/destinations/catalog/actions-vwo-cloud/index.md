@@ -121,7 +121,7 @@ analytics.track("Segment Test Event", {
 ```
 
 > info ""
-> The event name will be prepended with “**segment.**” before sending it to VWO. So if an event named "**ctaClick**" is triggered in Segment, it’ll appear as "**segment.ctaClick**" under **UNREGISTERED EVENTS** in VWO.
+> Event names are prepended with `segment.` before they're sent to VWO. If an event named "**ctaClick**" is triggered in Segment, it appears as `segment.ctaClick` under **UNREGISTERED EVENTS** in VWO.
 
 ### Identify
 The [Identify](/docs/connections/spec/identify/) call associates a visitor with their actions and captures their traits. 
