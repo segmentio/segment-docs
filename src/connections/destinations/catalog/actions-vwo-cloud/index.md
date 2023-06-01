@@ -91,7 +91,7 @@ To integrate Segment with VWO FullStack:
 
 ## Supported Segment Calls in VWO
 
-VWO Supports the following calls, as specified in the [Segment Spec](https://segment.com/docs/connections/spec/){:target="_blank"}.
+VWO Supports the following calls, as specified in the [Segment Spec](/docs/connections/spec/).
 
 ### Track
 The [Track](https://segment.com/docs/connections/spec/track/){:target="_blank"} API call is used to record any actions your visitors perform, along with any properties that describe the action. Each action is known as an event. 
