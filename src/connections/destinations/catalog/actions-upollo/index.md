@@ -11,7 +11,7 @@ Understand who your users truly are, if they are ready to convert, churn or expa
 
 Upollo also enriches your identify data with firmopgrahic data so you can understand your users in Upollo or in your data warehouse. See company name, size and industry for your users as soon as they sign in, for free at unlimited scale.
 
-Upollo maintains this destination. For any questions or issues with the destination, please [contact the Upollo team](https://upollo.ai/contact?utm_source=segmentio&utm_medium=docs&utm_campaign=partners){:target="\_blank"}.
+Upollo maintains this destination. For any questions or issues with the destination, please [contact the Upollo team](https://upollo.ai/contact?utm_source=segmentio&utm_medium=docs&utm_campaign=partners){:target="\blank"}.
 
 ## Benefits of Upollo (Actions)
 
