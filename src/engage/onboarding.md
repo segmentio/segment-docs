@@ -123,7 +123,9 @@ You’ll now need to enable event webhooks, which trigger webhook notifications 
 3. On the Event Webhook page, set authorization method to none.
 4. Copy and paste the following URL into the **HTTP Post URL** field:
 
-    <br> `https://engage-ma-webhook-api.engage.segment.com/sendgrid`
+    <br> `https://engage-ma-webhook-api.engage.segment.com/sendgrid` <br>
+    > NOTE: if you're in a EU-based region, use the EU host name: <br>
+    > `https://engage-ma-webhook-api.euw1.engage.segment.com/sendgrid`
 
     ![Adding the HTTP Post URL](images/webhook.png "Adding the HTTP Post URL")
 
