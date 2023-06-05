@@ -46,7 +46,7 @@ Personalize SMS content in Engage using profile traits as merge tags in your mes
 
 To personalize an SMS, click **Merge Tags** in the SMS builder and select the profile traits to include in your message.
 
-Engage inserts the selected traits inside merge tags based on cursor placement in the message. This allows you to personalize each SMS you send to recipients.  
+Engage inserts the selected traits inside merge tags based on cursor placement in the message. This allows you to personalize each SMS you send to recipients. You can also use [liquid templating](https://liquidjs.com/tags/if.html){:target="blank"} to create dynamic content in the SMS editor. 
 
 > info ""
 > To learn more about profile traits, visit Segment's [Computed Traits](/docs/engage/audiences/computed-traits/) and [SQL Traits](/docs/engage/audiences/sql-traits/) documentation.

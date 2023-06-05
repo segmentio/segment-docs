@@ -1,12 +1,12 @@
 ---
-title: Set up a custom domain proxy for Analytics.js
+title: Self Hosting or Proxying Analytics.js
 redirect_from: '/connections/sources/custom-domains/'
 strat: ajs
 ---
 
 Custom domains allow you to proxy Analytics.js and proxy all tracking event requests through your domain.
 
-## Prerequisites
+## Custom Proxy Prerequisites
 
 To set up a custom domain, you need:
 
@@ -31,7 +31,7 @@ You need to set up two important parts, regardless of the CDN provider you use:
 > info ""
 > Segment only has the ability to enable the proxy setting for the Web (Analytics.js) source. Details for mobile source proxies are in the [Analytics for iOS](/docs/connections/sources/catalog/libraries/mobile/ios/#proxy-https-calls) and [Analytics for Android](/docs/connections/sources/catalog/libraries/mobile/android/#proxying-http-calls) documentation.  It is not currently possible to set up a proxy for server sources using the Segment UI.
 
-## Set up
+## Custom Proxy Set up
 
 There are 2 options you can choose from when you set up your custom domain proxy.
 1. [CloudFront](#cloudfront)
@@ -114,7 +114,7 @@ const analytics = AnalyticsBrowser.load(
   )
 ```
 
-## CloudFront
+## Custom Proxy CloudFront
 
 These instructions refer to Amazon CloudFront, but apply more generally to other providers as well.
 
@@ -166,3 +166,11 @@ To add a CNAME record to your DNS settings:
    - **Value**: Tracking API CloudFront Distribution Domain Name
 3. Save your record. This might take some time to take effect, depending on your TTL settings.
 4. Run `curl` on your domain to check if the proxy is working correctly.
+
+
+## Self Hosting Analytics.js
+
+Follow the instructions at [Using Analytics.js as an NPM Package](https://github.com/segmentio/analytics-next/tree/master/packages/browser#-using-as-an-npm-package), to host Analytics.js and eliminate the requirement of downloading it from the CDN file during every page load. This enables you to self-host/import the library itself.
+
+> warning "Keep in mind"
+> Segment does not recommend self-hosting, as it requires that you configure integration settings individually and manually redeploy Analytics.js when there are changes to your settings. When you enable third-party libraries in device-mode, Segment loads them, which defeats the purpose of self-hosting. Self-hosting Analytics.js requires 

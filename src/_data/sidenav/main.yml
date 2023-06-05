@@ -191,6 +191,8 @@ sections:
       title: Source Functions
     - path: /connections/functions/destination-functions
       title: Destination Functions
+    - path: /connections/functions/insert-functions
+      title: Destination Insert Functions
     - path: /connections/functions/environment
       title: Functions Environment
     - path: /connections/functions/usage
@@ -253,6 +255,8 @@ sections:
     title: Using Schema Controls
   - path: /connections/event-delivery
     title: Event Delivery
+  - path: /connections/delivery-overview
+    title: Delivery Overview
   - path: /connections/find-writekey
     title: Locate Your Write Key
   - path: /connections/integration_error_codes
