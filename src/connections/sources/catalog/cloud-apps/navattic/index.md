@@ -28,7 +28,7 @@ Navattic generates its own ID for each visitor to your product demo. This ID pas
 
 ## Events
 
-The table below lists possible events that Navattic sends to Segment. With the exception of IDENTIFY_USER, all events are sent to the [Tracks table in Segment](/docs/connections/storage/warehouses/schema/#tracks-table). Additionally, every Navattic event includes the `userId`, which are Navattic-generated for each user.
+The table below lists possible events that Navattic sends to Segment. With the exception of IDENTIFY_USER, all events are sent to the [Tracks table in Segment](/docs/connections/storage/warehouses/schema/#tracks-table). Additionally, every Navattic event includes the `userId`, which is Navattic-generated for each user.
 
 Event Name | Description | 
 ------------ | ------------|
