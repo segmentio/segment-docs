@@ -19,7 +19,156 @@
     var received = ts + 233
     var received_ts = new Date(received)
     var received_iso = received_ts.toISOString()
-    var output = `{
+    
+    var errors = [];
+
+// Regular expression check for name
+var nameRegex = /^[a-zA-Z]+(([',. -][a-zA-Z ])?[a-zA-Z]*)*$/;
+if (!nameRegex.test(name)) {
+  const nameError = document.getElementById("name-error");
+  nameError.style.display = "block";
+  const nameField = document.getElementById("name");
+  nameField.style.outline = "2px solid red";
+  errors.push("Name is invalid");
+} else {
+  const nameError = document.getElementById("name-error");
+  nameError.style.display = "none";
+  const nameField = document.getElementById("name");
+  nameField.style.outline = "";
+}
+
+// Regular expression to check for email
+var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+if (!emailRegex.test(email)) {
+  const emailError = document.getElementById("email-error");
+  emailError.style.display = "block";
+  const emailField = document.getElementById("email");
+  emailField.style.outline = "2px solid red";
+  errors.push("Email is invalid");
+} else {
+  const emailError = document.getElementById("email-error");
+  emailError.style.display = "none";
+  const emailField = document.getElementById("email");
+  emailField.style.outline = "";
+}
+
+// Add regular expression check to make sure plan field is not empty
+var planRegex = /.+/;
+if (!planRegex.test(plan)) {
+  const planError = document.getElementById("plan-error");
+  planError.style.display = "block";
+  const planField = document.getElementById("plan");
+  planField.style.outline = "2px solid red";
+  errors.push("Plan is invalid");
+} else {
+  const planError = document.getElementById("plan-error");
+  planError.style.display = "none";
+  const planField = document.getElementById("plan");
+  planField.style.outline = "";
+} 
+
+// Regular expression check for login #s
+var loginRegex = /^[0-9]+$/;
+if (!loginRegex.test(logins)) {
+  const loginsError = document.getElementById("logins-error");
+  loginsError.style.display = "block";
+  const loginsField = document.getElementById("logins");
+  loginsField.style.outline = "2px solid red";
+  errors.push("Logins is invalid");
+} else {
+  const loginsError = document.getElementById("logins-error");
+  loginsError.style.display = "none";
+  const loginsField = document.getElementById("logins");
+  loginsField.style.outline = "";
+}
+
+// Regular expression check for street
+var streetRegex = /^\d+\s[A-z]+\s[A-z]+/;
+if (!streetRegex.test(street)) {
+  const streetError = document.getElementById("street-error");
+  streetError.style.display = "block";
+  const streetField = document.getElementById("street");
+  streetField.style.outline = "2px solid red";
+  errors.push("Street is invalid");
+} else {
+  const streetError = document.getElementById("street-error");
+  streetError.style.display = "none";
+  const streetField = document.getElementById("street");
+  streetField.style.outline = "";
+}
+
+// Regular expression check for city name
+var cityRegex = /^[A-Za-z\s-']+$/;
+if (!cityRegex.test(city)) {
+  const cityError = document.getElementById("city-error");
+  cityError.style.display = "block";
+  const cityField = document.getElementById("city");
+  cityField.style.outline = "2px solid red";
+  errors.push("City is invalid");
+} else {
+  const cityError = document.getElementById("city-error")
+  cityError.style.display = "none";
+  const cityField = document.getElementById("city")
+  cityField.style.outline = "";
+}
+
+// Regular expression check for state
+var stateRegex = /^[A-Z]{2}$/;
+if (!stateRegex.test(state)) {
+  const stateError = document.getElementById("state-error");
+  stateError.style.display = "block";
+  const stateField = document.getElementById("state");
+  stateField.style.outline = "2px solid red";
+  errors.push("State is invalid");
+} else {
+  const stateError = document.getElementById("state-error")
+  stateError.style.display = "none";
+  const stateField = document.getElementById("state")
+  stateField.style.outline = "";
+}
+
+// Regular expression check for country
+var countryRegex = /^[A-Z]{2}$/;
+if (!countryRegex.test(country)) {
+  const countryError = document.getElementById("country-error");
+  countryError.style.display = "block";
+  const countryField = document.getElementById("country");
+  countryField.style.outline = "2px solid red";
+  errors.push("Country is invalid");
+} else {
+  const countryError = document.getElementById("country-error");
+  countryError.style.display = "none";
+  const countryField = document.getElementById("country");
+  countryField.style.outline = "";
+}
+
+// Regular expression check for postcode  
+var postcodeRegex = /^\d{5}$/;
+  if (!postcodeRegex.test(postcode)) {
+    const postcodeError = document.getElementById("postcode-error");
+    postcodeError.style.display = "block";
+    const postcodeField = document.getElementById("postcode");
+    postcodeField.style.outline = "2px solid red";
+    errors.push("Postcode is invalid");
+  } else {
+    const postcodeError = document.getElementById("postcode-error")
+    postcodeError.style.display = "none";
+    const postcodeField = document.getElementById("postcode")
+    postcodeField.style.outline = "";
+}
+
+if (errors.length > 0) {
+  // Display all the errors and highlight the respective fields
+  const errorDiv = document.getElementById("errors");
+  errorDiv.innerHTML = "";
+  errors.forEach(function(error) {
+    errorDiv.innerHTML += "<p>" + error + "</p>";
+  });
+  return false;
+}
+
+// If no errors, submit the form
+var output = `{
   "anonymousId": "507f191e810c19729de860ea",
   "channel": "browser",
   "context": {
@@ -51,10 +200,13 @@
   "type": "identify",
   "userId": "97980cfea0067",
   "version": "1.1"
-}`
-    output_container.innerHTML = output
-    Prism.highlightElement(output_container)
-  }
+}`;
+ 
+var output_container = document.getElementById("output_container");
+output_container.innerHTML = output;
+Prism.highlightElement(output_container);
+return true;
+}
 
 </script>
 <script>
@@ -74,23 +226,32 @@
     <h4> Sample Identify </h4>
     <div class="sample-form">
     <label for="name">Name:</label>
-    <input type="text" id="name">
+    <input type="text" id="name" value="John Smith">
+    <span class="error-message" id="name-error">Please enter your name.</span>
     <label for="email">Email:</label>
-    <input type="text" id="email">
+    <input type="text" id="email" value="john-smith@gmail.com">
+    <span class="error-message" id="email-error">Please enter a valid email address.</span>
     <label for="plan">Plan:</label>
-    <input type="text" id="plan">
+    <input type="text" id="plan" value="Premium">
+    <span class="error-message" id="plan-error">Please enter a valid Plan name.</span>
     <label for="logins">Logins:</label>
-    <input type="text" id="logins">
+    <input type="text" id="logins" value="2">
+    <span class="error-message" id="logins-error">Please enter only numbers in the 'Logins' field.</span>
     <label for="street">Street:</label>
-    <input type="text" id="street">
+    <input type="text" id="street" value="101 Spear Street">
+    <span class="error-message" id="street-error">Please enter a valid street address, including the street name and number.</span>
     <label for="city">City:</label>
-    <input type="text" id="city">
+    <input type="text" id="city" value="San Francisco">
+    <span class="error-message" id="city-error">Please enter a valid city name in the 'City' field.</span>
     <label for="state">State:</label>
-    <input type="text" id="state">
+    <input type="text" id="state" value="CA">
+    <span class="error-message" id="state-error">Please enter a valid two-letter state code in all caps, like 'CA' for California.</span>
     <label for="postcode">Zip Code:</label>
-    <input type="text" id="postcode">
+    <input type="text" id="postcode" value="94105">
+    <span class="error-message" id="postcode-error">Please enter a valid five-digit zip code.</span>
     <label for="country">Country:</label>
-    <input type="text" id="country">
+    <input type="text" id="country" value="US">
+    <span class="error-message" id="country-error">Please enter a two-letter country code in all caps, like 'US' for United States.</span>
     <input type="submit" class="button button-hollow" id="submit" onclick="showMessage(); showOutput()" value="See a sample identify call">
   </div>
   </div>
