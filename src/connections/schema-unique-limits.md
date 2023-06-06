@@ -29,7 +29,3 @@ If you hit any of the limits or would like to clear out old events or properties
 
 At this time, you cannot clear or archive old event properties individually. An alternative for this is to archive the event itself, and then clear the archive. After you clear the archive, the event will re-populate in the schema with only the current properties.
 
-**What are the default limits per source schema?**
-- Event limit default 4000
-- Properties limit default 300
-- Traits limit default 300
