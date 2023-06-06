@@ -91,8 +91,8 @@ Here's an example of these common fields in raw JSON:
           "version": "24"
         }
       ],
-      mobile: false,
-      platform: 'macOS'
+      "mobile": false,
+      "platform": "macOS"
     }
   },
   "integrations": {
