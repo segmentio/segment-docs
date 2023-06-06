@@ -679,7 +679,7 @@ items:
     isCloudEventSource: true
     slug: freshchat-source
     url: connections/sources/catalog/cloud-apps/freshchat-source
-    hidden: false
+    hidden: true
     regions:
       - us
     endpoints:
@@ -1486,7 +1486,7 @@ items:
     isCloudEventSource: true
     slug: navattic
     url: connections/sources/catalog/cloud-apps/navattic
-    hidden: true
+    hidden: false
     regions:
       - us
     endpoints:

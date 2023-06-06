@@ -801,7 +801,7 @@ sources:
       - us
   - id: 8aF29Uq46F
     display_name: Navattic
-    hidden: true
+    hidden: false
     slug: navattic
     url: connections/sources/catalog/cloud-apps/navattic
     regions:
