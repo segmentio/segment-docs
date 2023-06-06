@@ -208,7 +208,7 @@ Other libraries only collect `context.library`, any other context variables must
   
 - The Android library collects `screen.density` with [this method](/docs/connections/spec/common/#context-fields-automatically-collected).
 
-- userAgentData is only collected if the [Client Hints API](https://developer.mozilla.org/en-US/docs/Web/API/User-Agent_Client_Hints_API) is available on the browser.
+- userAgentData is only collected if the [Client Hints API](https://developer.mozilla.org/en-US/docs/Web/API/User-Agent_Client_Hints_API){:target="_blank"} is available on the browser.
 
 To pass the context variables which are not automatically collected by Segment's libraries, you must manually include them in the event payload. The following code shows how to pass `groupId` as the context field of Analytics.js's `.track()` event:
 
