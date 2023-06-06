@@ -44,7 +44,6 @@ Segment sends an identify or track call for every user in the audience when the 
 
 Most destinations require that you configure a column in your schema to receive the audience data, however, some destinations (like Braze and Iterable) allow you to send audiences without doing this. This depends on the individual destination, so consult the destination's documentation for details.
 
-
 ### List Destinations
 
 List destinations can only receive Audiences, and cannot receive computed traits.
@@ -56,6 +55,8 @@ When syncing to a list destination Engage uploads lists of users directly to the
 
 User-list destinations can have individual limits on how often Segment can sync with them. For example, an AdWords audience is updated once every six hours or more, because that's what AdWords recommends.
 
+- **Journeys**: The destination receives a list of users who qualify for the associated journey step. Unlike lists associated with Engage Audiences, users who are added to a journey list cannot be subsequently removed. See [best practices](/docs/engage/journeys/faq-best-practices#suppress-targeting-with-journey-lists) for techniques to suppress targeting with journey lists.
+For more information, see [Using Engage Data](/docs/engage/using-engage-data/).
 
 ## What do the payloads look like for Engage data?
 
@@ -119,6 +120,8 @@ Engage only sends events to the destination if the computed trait value has chan
 }
 ```
 
+### Journeys generated events
+The data type you send to a destination depends on whether the destination is an Event destination, or a List destination. Please see the [Journeys documentation]([url](https://segment.com/docs/engage/journeys/send-data/#:~:text=a%20List%20destination.-,Event%20destination,%22traits%22%3A%20%7B%0A%20%20%20%20%22j_o_first_purchase__opened_email_dje83h%22%3A%20%22true%22%0A%20%20%7D%0A%7D,-List%20destination)) on how Journeys' Identity and Track event payloads are formatted when sending to Event destinations.
 
 
 ## Additional identifiers
