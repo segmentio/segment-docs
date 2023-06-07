@@ -22,7 +22,7 @@ This source is maintained by Friendbuy. For any issues with the source, [contact
 
 Friendbuy uses our Segment Integration to stream event data to Segment in real time. It uses the server-side `track` and `identify` methods to send data to Segment. These events are then available in any destination that accepts server-side events, and available in a schema in your data warehouse, so you can query using SQL.
 
-The default behavior is for Friendbuy to include an Anonymous ID for every event. The Anonymous ID is a hashed email. Friendbuy will also include a User ID, which is the Friendbuy the Customer ID.  If Friendbuy does not have the Customer ID, then only the Anonymous ID will be included. 
+Friendbuy includes an Anonymous ID (a hashed email) for every event. Friendbuy also includes a User ID, which in Friendbuy is the Customer ID.  If Friendbuy does not have the Customer ID, then only the Anonymous ID is included. 
 
 ## Referral Events
 
