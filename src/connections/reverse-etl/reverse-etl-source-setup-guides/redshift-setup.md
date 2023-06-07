@@ -25,3 +25,10 @@ To set up Redshift with Reverse ETL:
 Give the `segment` user read permissions for any resources (databases, schemas, tables) the query needs to access. 
 
 Give the `segment` user write permissions for the Segment managed schema (`__segment_reverse_etl`), which keeps track of changes to the query results.  
+
+### Troubleshooting
+#### Extraction failures: relation does not exist
+If you are able to run the query in the Query Builder, but the sync fails with `relation does not exist` error, please make sure the schema name is included before the database table name, and check that the schema name is correct:
+```ts
+SELECT id FROM <schema_name>.<table_name>
+```
