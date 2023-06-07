@@ -264,7 +264,7 @@ The tables below lists the properties included in each loyalty event.
 
 ## Adding Destinations
 
-Now that your Source is set up, you can connect it with Destinations.
+Now that your Friendbuy Source is set up, you can connect it to Destinations.
 
 Log into your downstream tools and check to see that your events appear as expected, and that they contain all of the properties you expect. If your events and properties don’t appear, check the [Event Delivery](https://segment.com/docs/connections/event-delivery/) tool, and refer to the Destination docs for each tool for troubleshooting.
 
