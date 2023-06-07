@@ -61,5 +61,5 @@ Setting this dropdown to Omit Traits will ensure that traits not defined in your
 **IMPORTANT: Unplanned identify trait blocking is ONLY supported in cloud-mode Destinations. Events with invalid traits will not be blocked from sending to device-mode Destinations.**
 
 ## Identify Calls - Common JSON Schema Violations
-To block _unplanned_ `identify` calls in your Schema Configuration, go to **Advanced Blocking Controls** and choose Block Events from the dropdown. Next, you will need to [edit the underlying JSON schema](https://segment.com/docs/protocols/tracking-plan/create/#edit-underlying-json-schema) and add a rule to the Common JSON Schema definition that you know won't exisit in your `identify` events. Any `identify` event that generates a common JSON schema violation will be blocked. 
+To block _unplanned_ `identify` calls, go to your **Schema Configuration**, then go to **Advanced Blocking Controls** and choose Block Events from the dropdown. Next, you will need to [edit the underlying JSON schema](https://segment.com/docs/protocols/tracking-plan/create/#edit-underlying-json-schema) and add a rule to the Common JSON Schema definition that you know won't exisit in your `identify` events and then trigger an `identify` event. Any `identify` event that generates a common JSON schema violation will be blocked. 
 
