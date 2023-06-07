@@ -16,7 +16,7 @@ This source is maintained by Friendbuy. For any issues with the source, [contact
    - The nickname is used as a label in the Segment app, and Segment creates a related schema name in your warehouse. The nickname can be anything, but we recommend using something that reflects the source itself and distinguishes amongst your environments (eg. Friendbuy_Prod, Friendbuy_Staging, Friendbuy_Dev).
 
 4. Click **Add Source** to save your settings.
-5. Copy the **Write Key** from the Segment UI and log in to your Friendbuy account - navigate to Settings > Developer Center > Integrations > Select Segment Integration and paste the **Write Key** > Click Install.
+5. Copy the **Write Key** from the Segment UI and log in to your Friendbuy account - navigate to Settings > Developer Center > Integrations > Select Segment Integration and paste the **Write Key**. Click **Install**.
 
 ## Stream
 
