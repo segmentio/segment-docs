@@ -116,7 +116,8 @@ const analytics = AnalyticsBrowser.load(
 
 ## Custom Proxy CloudFront
 
-These instructions refer to Amazon CloudFront, but apply more generally to other providers as well.
+These instructions refer to Amazon CloudFront, but apply more generally to other providers as well. Once you've updated the SDK initialization in your application, you can proceed with the following steps to set up your CDN Proxy. 
+(Changing the configuration in the Segment UI before the SDK initialization has been made can result in unexpected changes in app behavior)
 
 ### CDN Proxy
 To set up your CDN Proxy:
