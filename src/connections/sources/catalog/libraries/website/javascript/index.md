@@ -559,6 +559,14 @@ For example:
 analytics.load('writekey', { disableAutoISOConversion: true })
 ```
 
+#### Client hints
+Some `userAgent` strings are frozen and contain less information. If you would like to request more information when it's available, you can pass an array of strings with fields you would like to request to the `highEntropyValuesClientHints` option. The example array below contains all possible values.
+
+For example:
+
+```js
+analytics.load('writekey', { highEntropyValuesClientHints: ['architecture', 'bitness', 'model', 'platformVersion', 'uaFullVersion', 'fullVersionList', 'wow64'] })
+```
 
 ## Retries
 
