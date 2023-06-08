@@ -25,7 +25,7 @@ This source is maintained by CleverTap. For any issues with the source, [contact
 4. Click **Add Source** to save your settings.
 5. Copy the write key from the Segment UI. You will need to input this key on the CleverTap > Partners Page.
 6. Once you have the CleverTap Source's Write Key, go to CleverTap Dashboard > Settings > Partners. Search for Segment, and a click "Add Integration". 
-7. Give your connection a name, enter your **Write Key**, select a Segment Region and, select a User Identity.
+7. Give your connection a name, enter your write key, select a Segment Region, and choose a User Identity.
     - Note: Cross-region data is not allowed, so your events will be dropped by Segment if the region you select on the CleverTap is different from your Segment Workspace Region.
 8. Go back to Segment and navigate to your CleverTap source. Click **Add Destinations** to add any destinations that you want to receive CleverTap data.
 
