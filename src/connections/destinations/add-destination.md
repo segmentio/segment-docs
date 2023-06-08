@@ -114,8 +114,8 @@ Some destinations do not support having multiple instances connected to the same
 
 You can create unique destination filters for each destination instance connected to the same source.
 
->info ""
->Some destinations do not support having multiple instances connected to the same source. In that case, the option to add a second instance of that destination does not appear.
+> info ""
+> Some destinations don't support multiple instances connected to the same source. If this is the case, you won't see the option to add a second instance of that destination.
 
 ### Connect multiple sources to one instance of a destination
 
