@@ -5,7 +5,7 @@ hidden: true
 
 [CleverTap](https://clevertap.com/){:target="_blank”} is the all-in-one customer engagement platform that helps brands personalize and optimize all consumer touch points to improve user engagement, retention, and lifetime value.
 
-Using CleverTap as a source on Segment, you can evolve your team's engagement and marketing efforts. With CleverTap Exports, you can automatically forward your users' engagement and activity events to Segment. This will enable you to forward these events to your destinations or warehouses.
+Using CleverTap as a source on Segment, you can evolve your team's engagement and marketing efforts. With CleverTap Exports, you can automatically send your users' engagement and activity events to Segment and forward them to your destinations or warehouses.
 
 Segment allows you to move CleverTap data to your favorite BI or analytics tool in a seamless manner using which you can combine CleverTap data with the event data already flowing into Segment. This will help you get a holistic report of your engagement and marketing efforts.
 
