@@ -11,7 +11,7 @@ Segment allows you to move CleverTap data to your favorite BI or analytics tool 
 
 This is an [Event Cloud Source](/docs/sources/#event-cloud-sources) which can export data into your Segment warehouse and federate the exported data into your enabled Segment destinations.
 
-This source is maintained by CleverTap. For any issues with the source, [contact their Support team]().
+This source is maintained by CleverTap. For any issues with the source, [contact their Support team](https://help.clevertap.com/hc/en-us/requests/new){:target="_blank”}.
 
 > info "This is a Beta source"
 > The CleverTap Source is in beta, which means that they are still actively developing the source. If you're interested in joining their beta program or have any feedback to help improve the CleverTap Source and its documentation, [let their team know](https://help.clevertap.com/hc/en-us/requests/new)._
