@@ -31,7 +31,7 @@ This source is maintained by CleverTap. For any issues with the source, [contact
 
 ## Events
 
-The table below lists events that CleverTap sends to Segment. These events appear as tables in your warehouse, and as regular events in other Destinations.
+The table below lists events that CleverTap sends to Segment. These events appear as tables in your warehouse and as regular events in other Destinations.
 
 | Name | Description
 | --------------- | ----------- | ------------------------- |
