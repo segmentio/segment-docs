@@ -87,5 +87,5 @@ If there are any issues with how the events are arriving to Segment, [contact th
 
 ## Send Data to CleverTap
 
-You can take better advantage of CleverTap source when you also connect CleverTap as a destination in Segment. Using CleverTap as a destination, Segment translates your data and routes it to CleverTap in the format CleverTap understands, saving your engineering resources from a data conversion project. Learn more about how to use [CleverTap with Segment.](/docs/connections/destinations/catalog/clevertap/)
+You can take better advantage of CleverTap source when you also connect CleverTap as a destination in Segment. Using CleverTap as a destination, Segment translates your data and routes it to CleverTap in the format CleverTap understands, saving your engineering resources from a data conversion project. Learn more about how to use [CleverTap with Segment](/docs/connections/destinations/catalog/clevertap/).
 
