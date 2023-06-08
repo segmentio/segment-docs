@@ -20,7 +20,7 @@ This source is maintained by CleverTap. For any issues with the source, [contact
 
 1. From your workspace's [Sources catalog page](https://app.segment.com/goto-my-workspace/sources/catalog) click **Add Source**.
 2. Search for "CleverTap" in the Sources Catalog, select CleverTap, and click **Add Source**.
-3. On the next screen, give the Source **a nickname** configure any other settings.
+3. On the next screen, give the Source a nickname and configure any other applicable settings.
     - The nickname is used as a label in the Segment app, and Segment creates a related schema name in your warehouse. The nickname can be anything, but Segment recommends using something that reflects the source itself and distinguishes amongst your environments (like `CleverTap_Prod`, `CleverTap_Staging`, or `CleverTap_Dev`).
 4. Click **Add Source** to save your settings.
 5. Copy the **Write key** from the Segment UI. You will need to input this key on the CleverTap > Partners Page.
