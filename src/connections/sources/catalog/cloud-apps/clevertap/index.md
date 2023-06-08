@@ -7,7 +7,7 @@ hidden: true
 
 Using CleverTap as a source on Segment, you can evolve your team's engagement and marketing efforts. With CleverTap Exports, you can automatically send your users' engagement and activity events to Segment and forward them to your destinations or warehouses.
 
-Segment allows you to move CleverTap data to your favorite BI or analytics tool in a seamless manner using which you can combine CleverTap data with the event data already flowing into Segment. This will help you get a holistic report of your engagement and marketing efforts.
+Segment allows you to seamlessly move CleverTap data to your favorite BI or analytics tool to combine CleverTap data with the event data already flowing into Segment. This helps you get a holistic report of your engagement and marketing efforts.
 
 This is an [Event Cloud Source](/docs/sources/#event-cloud-sources) which can export data into your Segment warehouse and federate the exported data into your enabled Segment destinations.
 
