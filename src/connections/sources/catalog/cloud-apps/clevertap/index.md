@@ -23,7 +23,7 @@ This source is maintained by CleverTap. For any issues with the source, [contact
 3. On the next screen, give the Source a nickname and configure any other applicable settings.
     - The nickname is used as a label in the Segment app, and Segment creates a related schema name in your warehouse. The nickname can be anything, but Segment recommends using something that reflects the source itself and distinguishes amongst your environments (like `CleverTap_Prod`, `CleverTap_Staging`, or `CleverTap_Dev`).
 4. Click **Add Source** to save your settings.
-5. Copy the **Write key** from the Segment UI. You will need to input this key on the CleverTap > Partners Page.
+5. Copy the write key from the Segment UI. You will need to input this key on the CleverTap > Partners Page.
 6. Once you have the CleverTap Source's Write Key, go to CleverTap Dashboard > Settings > Partners. Search for Segment, and a click "Add Integration". 
 7. Give your connection a name, enter your **Write Key**, select a Segment Region and, select a User Identity.
     - Note: Cross-region data is not allowed, so your events will be dropped by Segment if the region you select on the CleverTap is different from your Segment Workspace Region.
