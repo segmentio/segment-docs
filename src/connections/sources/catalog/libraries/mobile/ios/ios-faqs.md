@@ -250,3 +250,8 @@ Some destinations, especially mobile attribution tools (for example, [Kochava](h
 ## tvOS / macOS / Catalyst Support
 
 As of [Version 4.1.0](https://github.com/segmentio/analytics-ios/releases/tag/4.1.0){:target="blank"}, Analytics-iOS now supports tvOS, macOS, and Catalyst as well. You can follow the [quickstart documentation](/docs/connections/sources/catalog/libraries/mobile/ios/quickstart/) to set it up.
+
+
+## AppClip tracking Support
+
+If you are tracking App Clips using iOS or Swift libraries, there is a chance that you may encounter zeros in your device ID. Segment recommends that you set your own device ID in this instance to avoid running into this issue.
