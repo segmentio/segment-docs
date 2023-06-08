@@ -29,6 +29,6 @@ Data captured in the HIPAA audit logs includes:
  - `actor_user_id`: unique identifier Segment assigns to the logged in user
  - `event_type`: The action performed by the user. For example, `Source Debugger Raw Viewed`, `Destination Filter Modified`, or other events
  - `end_user_id`: Segment sometimes assigns this unique identifier to an end-user, event, audience, or journey, depending on the event type
- - `timestamp`: Time, in UTC, when the action occurred
+ - `timestamp`: Time in UTC when the action occurred
 
 These logs can be provided upon request. For specific requests, please reach out to [friends@segment.com](mailto:friends@segment.com){:target="_blank"}.
