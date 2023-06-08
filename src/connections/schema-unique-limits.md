@@ -6,15 +6,15 @@ title: Segment Schema Limits
 
 While you can technically track unlimited events with Segment, only the first 4,000 events will be visible on the Schema page for a given Source. After you hit the 4,000 event limit, all future events will still be tracked and sent to your Destinations. They will not, however, be logged in the Segment Schema table.
 
-**How many unique event properties can be logged on the event details page?**
+**How many unique event properties and traits can be logged on the event details page?**
 
-While you can track unlimited event properties and traits with Segment, the Schema page will have the following default limits:
+While you can track unlimited event properties and traits with Segment, the Schema page has the following default limits:
 
-* Properties: the event details page for a specific event can only show the first 300 properties by default. 
+* Properties: The event details page for a specific event can only show the first 300 properties by default. 
 
-* Traits: the Identify page can only show the first 300 traits by default.
+* Traits: The Identify page can only show the first 300 traits by default.
 
-After you hit the limit for both properties or traits, future properties/traits are still tracked and sent to your Destinations, but they won’t appear on the event details page. This limit includes nested properties in an event’s properties object.
+After you hit the limit for both properties or traits, future properties and traits are still tracked and sent to your Destinations, but they won’t appear on the event details page. This limit includes nested properties in an event’s properties object.
 
 These limits can also affect the traits and properties that you can see in the Computed Trait and Audience builder tools in Engage. If expected traits or properties do not appear in these tools, contact the [Segment Support team](https://segment.com/help/contact/){:target="blank"}.
 
