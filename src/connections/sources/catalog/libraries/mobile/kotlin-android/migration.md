@@ -7,31 +7,37 @@ tags:
   - android-kotlin
 ---
 
-If you're using a different library such as Analytics-Android, follow these steps to migrate to the Analytics-Kotlin library:
+> success ""
+> This guide assumes you already have an Analytics-Android Source in your Segment workspace. If you are creating a new one you can reference the [Source Overview Guide](/docs/connections/sources/mobile/kotlin)
 
-1. [Import Analytics Kotlin](#1-import-analytics-kotlin)
+If you're using a previous Segment mobile library such as Analytics-Android, follow these steps to migrate to the Analytics-Kotlin library. Analytics-Kotlin is designed to work with your Java codebase as well.:
+
+1. [Import Analytics-Kotlin](#1-import-analytics-kotlin)
 2. [Upgrade your Destinations](#2-upgrade-your-destinations)
 3. [Advanced: Upgrade your Middleware](#3-upgrade-middleware-to-plugins)
 4. [Upgrade Notes](#4-upgrade-notes-changes-to-the-configuration-object)
 
-> success ""
-> You can continue to use your Android source write key for the migration to view historical events.
-
 ## 1. Import Analytics-Kotlin
 
+### 1.a) Add the dependencies to your app.
+
+In your top-level build.gradle:
 ```java
 repositories {
     mavenCentral()
 }
+```
 
-...
-
+In your app module's build.gradle:
+```java
 dependencies {
     implementation 'com.segment.analytics.kotlin:android:<latest_version>'
 }
 ```
 
-### 1.a) Modify your initialized instance
+You have now added Analytics-Kotlin to your project. You can remove the Analytics-Android SDK from your app.
+
+### 1.b) Modify your initialized instance
 
   {% codeexample %}
   {% codeexampletab Kotlin%}
@@ -39,18 +45,12 @@ dependencies {
 	    val analytics = Analytics("YOUR_WRITE_KEY", context) {
         trackApplicationLifecycleEvents = true
     }
-    ...
-    // Optionally add extension to recreate Analytics.with(context).track/screen/etc calls
-    fun Analytics.with(context: Context) {
-        // Return the analytics instance from above.
-        return analytics
-    }
   ```
   {% endcodeexampletab %}
   {% codeexampletab Java%}
   ```java
     // Initialize an Analytics object with the Kotlin Analytics method
-    Analytics androidAnalytics = AndroidAnalyticsKt.Analytics         ("YOUR_WRITE_KEY", context, configuration -> {
+    Analytics androidAnalytics = AndroidAnalyticsKt.Analytics("YOUR_WRITE_KEY", context, configuration -> {
         configuration.setTrackApplicationLifecycleEvents(true);
         return Unit.INSTANCE;
         }
@@ -63,7 +63,9 @@ dependencies {
   {% endcodeexampletab %}
   {% endcodeexample %}
 
-### 1.b) Update your import statements
+### 1.c) Update your import statements
+
+You'll need to update the imports for Analytics-Kotlin.
 
 **Before example**
 <br> 
@@ -78,10 +80,30 @@ dependencies {
 
   ```java
     import com.segment.analytics.kotlin.core.Analytics;
-    import com.segment.analytics.kotlin.android.AndroidAnalyticsKt; // For calling from Android
-    import com.segment.analytics.kotlin.core.compat.JavaAnalytics; // For calling from Java
+    import com.segment.analytics.kotlin.android.AndroidAnalyticsKt; // Only for calling from Android
+    import com.segment.analytics.kotlin.core.compat.JavaAnalytics; // Only for calling from Java
     import com.segment.analytics.kotlin.core.platform.Plugin; // Replaces Middleware
   ```
+
+> success ""
+> Analytics-Kotlin supports running multiple instances of the analytics object, so it does not assume a singleton. However, if you’re migrating from Analytics-Android and all your track calls are routed to the `Analytics.shared()` singleton, you can these calls to your new Analytics-Kotlin object.
+
+Add this extension to your code to ensure that tracking calls written for Analytics-Android work with Analytics-Kotlin.
+
+```java
+
+// Application's onCreate
+...
+
+sharedAnalytics = Analytics(...)...
+
+fun Analytics.with {
+    // TODO: Finish this
+        return MyApplication.sharedAnalytics; // or whatever variable name you're using
+}
+```
+
+
 
 
 ## 2. Upgrade your Destinations
@@ -91,10 +113,16 @@ If your app uses Segment to route data to Destinations via Segment-cloud (i.e. C
 
 ### 2.a) Import the Destination Plugin
 
-```java
+  ```java
     implementation '<owner>:<project>:<version>'
-```
-### 2.b) Add Plugin to your Analytics instance
+  ```
+### 2.b) Add Plugin to your Analytics instance:
+
+Import the plugin:
+  ```java
+    import com.example.SomeDestinationPlugin
+  ```
+Add the pluging to the Analytics Instance
 
   {% codeexample %}
   {% codeexampletab Java%}
@@ -113,7 +141,7 @@ Your events will now begin to flow to the added destination in Device-Mode.
 
 ## 3. Upgrade Middleware to Plugins
 
-Middlewares are a powerful mechanism that can augment events collected by the Analytics Android (Classic) SDK. A middleware is a simple function that is invoked by the Segment SDK and can be used to monitor, modify, augment or reject events. [Analytics Kotlin](/docs/connections/sources/catalog/libraries/mobile/kotlin-android/kotlin-android-plugin-architecture)replaces the concept of middlewares with Enrichment Plugins to give you even more control over your event data. Refer to the Plugin Architecture Overview for more information.
+Middlewares are a powerful mechanism that can augment events collected by the Analytics Android (Classic) SDK. A middleware is a simple function that is invoked by the Segment SDK and can be used to monitor, modify, augment or reject events. Analytics-Kotlin replaces the concept of middlewares with Enrichment Plugins to give you even more control over your event data. Refer to the [Plugin Architecture Overview](/docs/connections/sources/catalog/libraries/mobile/kotlin-android/kotlin-android-plugin-architecture) for more information.
 
 ### 3.a) Upgrading source middleware
 
@@ -232,7 +260,7 @@ Middlewares are a powerful mechanism that can augment events collected by the An
   {% endcodeexample %}
 
 ### 3.b) Upgrading destination middleware
-If you don’t need to transform all of your Segment calls, and only want to transform the calls going to specific destinations, use Destination middleware instead of Source middleware. Destination middleware is available for device-mode destinations only.
+If you don't need to transform all of your Segment calls, and only want to transform the calls going to specific, device-mode destinations, use Destination plugins.
 
 **Before example**
 <br>
@@ -355,9 +383,11 @@ If you don’t need to transform all of your Segment calls, and only want to tra
   {% endcodeexample %}
 
 
-## 4. Upgrade Notes: Changes to the Configuration Object
+## 4. Upgrade Notes
 
-Segment changed these config options:
+### 4.a) Changes to the Configuration Object
+
+The following option was renamed in Analytics-Kotlin:
 
 | Before                   | After                             |
 | ------------------------ | --------------------------------- |
@@ -366,15 +396,15 @@ Segment changed these config options:
 | `defaultProjectSettings` | Name changed to `defaultSettings`             |
 | `experimentalUseNewLifecycleMethods` | Name changed to `useLifecycleObserver`             |
 
-Segment added these options:
+The following option was added in Analytics-Kotlin:
 
-Option | Details
+Added Option | Details
 ------ | -------
 `autoAddSegmentDestination` | The analytics client automatically adds the Segment Destination. Set this to `false`, if you want to customize the initialization of the Segment Destination, such as, add destination middleware). |
 
-<br> Segment removed these options:
+<br> The following option was removed in Analytics-Kotlin:
 
-Option | Details
+Removed Option | Details
 ------ | --------
 `defaultOptions` | Removed in favor of a plugin that adds the default data to the event payloads. Segment doesn't provide a plugin example since it's dependent on your needs.|
 `recordScreenViews` | Removed in favor of the `AndroidRecordScreenPlugin` that provides the same functionality. |
@@ -404,7 +434,7 @@ Properties have been replaced by JsonElement. Since Properties are essentially a
   ```
   {% endcodeexampletab %}
   {% endcodeexample %}
-### 4.c) Options
+### 4.c) Options Support Removed
 Options are no longer supported and should be converted into plugins.
 ## Conclusion
 Once you’re up and running, you can take advantage of Analytics-Kotlin’s additional features, like [Destination Filters](/docs/connections/sources/catalog/libraries/mobile/kotlin-android/kotlin-android-destination-filters/), [Functions](https://segment.com/docs/connections/functions/), and [Typewriter](/docs/connections/sources/catalog/libraries/mobile/kotlin-android/kotlin-android-typewriter/) support.
