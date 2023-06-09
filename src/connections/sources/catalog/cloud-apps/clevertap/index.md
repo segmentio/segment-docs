@@ -74,7 +74,7 @@ The table below list the properties included in the events listed above.
 | Journey Id | Helps uniquely identify the journey in which the campaign is present. |
 | Campaign labels | Represent the labels added for the campaign. |
 
-You can refer to CleverTap's [Derived Events & Attributes](https://docs.clevertap.com/docs/export-format){:target="_blank”} to determine which attributes CleverTap forward to Segment.
+You can refer to CleverTap's [Derived Events & Attributes](https://docs.clevertap.com/docs/export-format){:target="_blank”} documentation to determine which attributes CleverTap forward to Segment.
 
 ## Adding Destinations
 
