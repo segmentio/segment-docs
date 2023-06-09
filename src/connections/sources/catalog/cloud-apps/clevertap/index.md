@@ -35,7 +35,7 @@ The table below lists events that CleverTap sends to Segment. These events appea
 
 | Name | Description
 | --------------- | ----------- | ------------------------- |
-| App Launched | This event is raised every time a user launches the application. |
+| App Launched | This event is captured every time a user launches the application. |
 | App Installed | The event is raised when the user launches the app for the first time. |
 | App Uninstalled | This event is captured when a user uninstalls your application. |
 | App Version Changed | This event is captured when a user’s current app version is different from the user’s previous app version. |
