@@ -7,5 +7,3 @@ title: Consent Management Overview
 ## Consent preferences
 
 ## Consent object
-
-### Consent object vs integrations object
