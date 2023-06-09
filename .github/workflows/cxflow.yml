@@ -1,0 +1,17 @@
+name: CxFlow-GitHub-Pull-Request
+on:
+  pull_request:
+    types: [ready_for_review]
+jobs:
+  build:
+    runs-on: self-runner-node
+    steps:
+    - name: Trigger to Scanner Lambda
+      run: |
+        python -c '
+        import json,sys,requests;
+        github = {"repository": "'${{ github.event.repository.name }}'", "ref": "'${{ github.head_ref }}'"};
+        github_request = {"checkmarx_gitaction": github};
+        requests.post("'$LambdaWebHook'", json=github_request);'
+      env:
+        LambdaWebHook: ${{ secrets.CHECKMARX_LAMBDA_WEBHOOK }}
