@@ -45,7 +45,7 @@ The table below lists events that CleverTap sends to Segment. These events appea
 | Push Impressions | This event is tracked when a Push notification sent from CleverTap is delivered on a user’s device. |
 | Notification Replied | This event is recorded when a user replies to a WhatsApp message. |
 | Control Group | The event is raised when a campaign is activated with a Control group. |
-| Channel Unsubscribed | The event is raised when a user Unsubscribes to receive further communication through a channel|
+| Channel Unsubscribed | The event is captured when a user Unsubscribes to receive further communication through a channel|
 | Reply Sent | This event is recorded when an agent (CleverTap user) replies to a message from the end user.|
 | Webhook Delivered | This event is tracked when a Webhook is delivered from CleverTap |
 | UTM Visited | This event is tracked when a user clicks on a link from a marketing campaign that has a UTM parameter defined on it. |
