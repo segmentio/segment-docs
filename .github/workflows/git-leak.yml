@@ -1,0 +1,44 @@
+name: gitleaks
+on:
+  pull_request:
+    types: [ready_for_review]
+env:
+  GIT_DISCOVERY_ACROSS_FILESYSTEM: 1
+jobs:
+  gitleaks:
+    runs-on: self-runner-node
+    steps:
+    - name: Checkout Repository
+      uses: actions/checkout@v2
+      with:
+        fetch-depth: '2'
+    - name: Detecting new added lines
+      run: |
+        git fetch origin ${{ github.event.repository.default_branch }}
+        git diff origin/${{ github.event.repository.default_branch }}..HEAD --name-only | xargs git diff origin/${{ github.event.repository.default_branch }}..HEAD -- | grep '+' | sed 's/+//' | sed 's/^[ \t]*//' > new-added-lines.txt
+      working-directory: ${{ github.workspace }}
+    - name: Install Go
+      uses: actions/setup-go@v2
+      with:
+        go-version: 1.16
+    - name: Install gitleaks
+      run: |
+        go get github.com/zricethezav/gitleaks/v7
+    - name: Run gitleaks
+      run: |
+        gitleaks --no-git  --path ${{ github.workspace }}/new-added-lines.txt --verbose --report=${{ github.workspace }}/gitleaks-report.json
+    - name: Send to Lambda
+      if: ${{ always() }}
+      run: |
+        python -c '
+        import json,sys,requests;
+        try:
+            output=open("./gitleaks-report.json");
+        except IOError:
+            sys.exit(0);
+        json_result=json.loads(output.read());
+        github_result = {"repository": "'${{ github.repository }}'", "server_url": "'${{ github.server_url }}'", "run_id": "'${{ github.run_id }}'", "pr_number": "'${{ github.event.number }}'"};
+        request_json = {"gitleaks_result": json_result,"github": github_result};
+        requests.post("'$LambdaWebHook'", json=request_json)'    
+      env:
+        LambdaWebHook: ${{ secrets.CHECKMARX_LAMBDA_WEBHOOK }}
