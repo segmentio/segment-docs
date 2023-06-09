@@ -51,7 +51,7 @@ The table below lists events that CleverTap sends to Segment. These events appea
 | UTM Visited | This event is tracked when a user clicks on a link from a marketing campaign that has a UTM parameter defined on it. |
 | AB Experiment Stopped | This event is recorded when the A/B experiment is stopped. |
 | AB Experiment Rolled Out | This event is recorded when the A/B experiment is started. |
-| AB Experiment Disqualified | This event is raised when the device is disqualified. |
+| AB Experiment Disqualified | This event is captured when the device is disqualified. |
 | Geocluster Entered | This event is recorded to mark when a device enters a geofence. |
 | Geocluster Exited | This event is recorded to mark when a device exits a geofence. |
 
