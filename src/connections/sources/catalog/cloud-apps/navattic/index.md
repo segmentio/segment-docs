@@ -1,6 +1,6 @@
 ---
 title: Navattic Source
-hidden: true
+id: 8aF29Uq46F
 ---
 
 [Navattic](https://navattic.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners){:target="_blank"} is a no-code tool which enables go-to-market teams to build beautiful, interactive demos of their products to excite and engage prospects.
@@ -15,18 +15,20 @@ To get started with the Navattic source:
 3. Give the Source a nickname and configure any other settings.
    - The nickname is used as a label in the Segment app, and Segment creates a related schema name in your warehouse. The nickname can be anything, but Segment recommends using something that reflects the source itself and distinguishes amongst your environments (for example: SourceName_Prod, SourceName_Staging, SourceName_Dev).
 4. Click **Add Source** to save your settings.
-5. Copy the Write key from the Segment UI and log in to your Navattic account. Navigate to **Integrations > Segment** and paste the key. Click **Save** to connect.
-6. Choose which Navattic events to send to Segment, as well as which demos (projects) to activate for this integration.
+5. Copy the Write key from the Segment UI and log in to your Navattic account. Navigate to **Integrations > Segment** and paste the key.
+6. Optionally, select either the US (default) or EU region for your events.
+7. Click **Save** to connect.
+8. Choose which Navattic events to send to Segment, as well as which demos (projects) to activate for this integration.
 
 ## Stream
 
 Navattic uses the stream Source component to send Segment event data. It uses server-side Track and Identify methods to send data to Segment. These events are then available both in destinations that accepts server-side events and in a schema in your data warehouse, so you can query using SQL.
 
-Navattic generates its own ID for each visitor to your product demo. This ID passes as both the `userId` and `anonymousId` when pushing Navattic events to Segment.
+Navattic generates its own ID for each visitor to your product demo. This ID passes as the `userId` when pushing Navattic events to Segment.
 
 ## Events
 
-The table below lists possible events that Navattic sends to Segment. With the exception of IDENTIFY_USER, all events are sent to the [Tracks table in Segment](/docs/connections/storage/warehouses/schema/#tracks-table). Additionally, every Navattic event includes the `userId` and `anonymousId` (which are the same), which are Navattic-generated for each user.
+The table below lists possible events that Navattic sends to Segment. With the exception of IDENTIFY_USER, all events are sent to the [Tracks table in Segment](/docs/connections/storage/warehouses/schema/#tracks-table). Additionally, every Navattic event includes the `userId`, which is Navattic-generated for each user.
 
 Event Name | Description | 
 ------------ | ------------|

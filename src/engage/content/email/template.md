@@ -52,7 +52,7 @@ Personalize email content in Twilio Engage with real-time profile traits in your
 
 As you configure the template, click **Merge Tags** and select the profile traits to include. Engage inserts the merge tags based on cursor placement.
 
-You can also add merge tags in heading and body text as you design an email with the [visual editor](/docs/engage/content/email/editor/).
+You can also add merge tags in heading and body text as you design an email with the [visual editor](/docs/engage/content/email/editor/). Engage supports [liquid templating](https://liquidjs.com/tags/if.html){:target="blank"} to create dynamic content in the email design editor.
 
 > info ""
 > To learn more about profile traits, visit Segment's [Computed Traits](/docs/engage/audiences/computed-traits) and [SQL Traits](/docs/engage/audiences/sql-traits/) documentation.

@@ -116,6 +116,22 @@ If you choose this option, each source sends different events, and deduplication
 
 Use this approach if you don't want to track users from the browser with Facebook Pixel. By default, Facebook Pixel collects cookie data, as well as browser data such as the IP Address and the User Agent, some of which you might not want to collect. By sending from a Segment server source to Facebook's Conversions API, you can control which identifiers you pass to Facebook.
 
+### Send app events
+
+App events may be sent through the Conversions API by first setting up a dataset in your Facebook Events Manager. Learn more about passing app events through the Conversions API [here](https://developers.facebook.com/docs/marketing-api/conversions-api/app-events){:target="_blank"}. Learn how to create a dataset [here](https://www.facebook.com/business/help/750785952855662?id=490360542427371){:target="_blank"}.
+
+#### Configuring app events
+Sending app events requires the `action_source` parameter to be set to `app`.
+
+App events usage is opt-in, and you're required to set the `use_app_data` field to `Yes` before sending app data.
+
+Additionally, configure the "App Events Fields" object with the required fields:
+* `advertiser_tracking_enabled`
+* `application_tracking_enabled`
+* `version`
+* `osVersion`
+
+![the app data object](images/app_data.png)
 #### Match rate considerations
 
 If you use Facebook Conversions API as a stand-alone without certain data fields collected from the browser, the match rate might not be as high as if you included them. You can increase the match rate for events from a server source by including User Data, such as Zip Code, Country and State.

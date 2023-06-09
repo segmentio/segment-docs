@@ -63,7 +63,7 @@
 </thead>
 <tbody>
   {% for preset in presets %}
-  {% assign triggers = preset.trigger | split: "or" %}
+  {% assign triggers = preset.trigger | split: " or" %}
   {% assign id = preset.actionId %}
   {% assign actionName = actions | where: "id", id | first %}
   <tr>

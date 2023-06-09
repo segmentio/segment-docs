@@ -55,7 +55,7 @@ analytics.track('Article Completed', {
 });
 ```
 
-When you make a Track call in with GTM enabled through Segment, the event data is pushed to the GTM `dataLayer`.
+When you make a `track` call with GTM enabled through Segment, the event data is pushed to the GTM `dataLayer`.
 
 For example, if you make this `track` call:
 
@@ -66,7 +66,7 @@ analytics.track('Played Video', {
 })
 ```
 
-Segment it to the `dataLayer` as an object like this:
+Segment sends it to the `dataLayer` as an object like this:
 
 ```json
 {

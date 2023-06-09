@@ -493,10 +493,16 @@ Map your Adobe Analytics hVars to the property names you use in your Segment Pag
 ## Context Data Variables
 Context data variables let you define custom variables on each page that processing rules can read. See  the Adobe documentation to learn more about [how to use Adobe Analytics `contextData` and use processing rules](https://docs.adobe.com/content/help/en/analytics/implementation/vars/page-vars/contextdata.html) to populate analytics variables from that data.
 
-Segment will automatically sends all event properties as context data on specced eccommerce events, `page()`, `track()`, and `screen()` calls if you are using a device-mode ("bundled") destination for Analytics.js, or if you are sending unbundled events from a [Server library](/docs/connections/sources/catalog/). If you want to send additional context data from within your context data object ini your Segment payload, you can configure the Context Data Variables mapping in your destination settings to tell Segment which context variables to send to Adobe as context data.
+Segment automatically sends event properties as context data on the following:
+- ecommerce events that adhere to the [Ecommerce Spec](/docs/connections/spec/ecommerce/v2/)
+- Page calls
+- Track calls
+- Screen calls if you are using a device-mode ("bundled") destination for Analytics.js, or if you are sending unbundled events from a [Server library](/docs/connections/sources/catalog/). 
 
-> note ""
-> **Note**: The context data value cannot be an object or an array as this not an Adobe accepted data type by Adobe Analytics.
+If you want to send additional context data from the context data object in the Segment payload, configure the Context Data Variables mapping in the destination's settings to tell Segment which context variables to send to Adobe as context data.
+
+> info ""
+> The context data value cannot be an object or an array as this is not an Adobe accepted data type by Adobe Analytics.
 
 For more information on how to set up Context Data for iOS and Android see the [Sending Custom Properties section](/docs/connections/destinations/catalog/adobe-analytics/mobile/#sending-custom-properties) in [Setting up Adobe Analytics for Mobile](/docs/connections/destinations/catalog/adobe-analytics/mobile). For more information on how to set up Context Data for Heartbeat Events see the [Custom Video Metadata section](/docs/connections/destinations/catalog/adobe-analytics/heartbeat/#custom-video-metadata) in [Setting up Adobe Analytics Heartbeat guide](/docs/connections/destinations/catalog/adobe-analytics/heartbeat).
 
