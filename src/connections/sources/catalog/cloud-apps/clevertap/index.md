@@ -71,7 +71,7 @@ The table below list the properties included in the events listed above.
 | Campaign type | Represents the type of campaign, the message was part of. |
 | wzrk_pivot | Tracked when a campaign is sent using A/B Testing. Represents the variation. |
 | wzrk_c2a | Indicates the value of the button clicked by the user. This button can be present for the following campaign types: In-App, Push, or Mobile In-Box. |
-| Journey Id | Helps uniquely identify the journey in which the campaign is present. |
+| Journey Id | Helps uniquely identify the journey where the campaign is present. |
 | Campaign labels | The labels added for the campaign. |
 
 You can refer to CleverTap's [Derived Events & Attributes](https://docs.clevertap.com/docs/export-format){:target="_blank”} documentation to determine which attributes CleverTap forward to Segment.
