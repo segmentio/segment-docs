@@ -44,7 +44,7 @@ The table below lists events that CleverTap sends to Segment. These events appea
 | Notification Clicked | This event is tracked only when a user clicks on a notification sent via CleverTap.Recorded when a user clicks on a mobile push, in-app, email, web popup, or web push message sent via the CleverTap dashboard or through the campaign API.|
 | Push Impressions | This event is tracked when a Push notification sent from CleverTap is delivered on a user’s device. |
 | Notification Replied | This event is recorded when a user replies to a WhatsApp message. |
-| Control Group | The event is raised when a campaign is activated with a Control group. |
+| Control Group | The event is captured when a campaign is activated with a Control group. |
 | Channel Unsubscribed | The event is captured when a user Unsubscribes to receive further communication through a channel|
 | Reply Sent | This event is recorded when an agent (CleverTap user) replies to a message from the end user.|
 | Webhook Delivered | This event is tracked when a Webhook is delivered from CleverTap |
