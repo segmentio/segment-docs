@@ -16,7 +16,30 @@ By using Segment's TikTok Audiences destination, you can increase traffic and dr
 
 1. Before connecting to the TikTok Audiences destination, you must have a [TikTok Ads Manager](https://www.tiktok.com/business/en-US/solutions/ads-manager){:target="_blank"} account. 
 
-2. You must also have an audience segment created in your TikTok Advertising account. You can send Engage audiences to an existing audience segment, or you can create a new audience in TikTok. Please take note of the `audience_id` as this will be required to send Engage audiences to TikTok. See TikTok's [Create/Delete an audience segment](https://ads.tiktok.com/marketing_api/docs?id=1739940583739393){:target="_blank"} for instructions on how to create a TikTok audience segment. 
+
+### TikTok Audience Segments
+
+You must have an audience segment created in your TikTok Advertising account. You can send Engage audiences to an existing audience segment, or you can create a new audience. Please take note of the `audience_id` as this will be required to send Engage audiences to TikTok. See [Create An Audience below for instructions]()on how to create a TikTok audience segment. 
+
+#### Create a TikTok Audience
+
+- Follow the steps below to create an audience in Segment: 
+
+1. Go to New Mapping and select Create Audience 
+2. On the `Add test event` pannel - Click on `Load Sample Event`
+3. On the `Select mappings` pannel - Fill in the mappings accordingly
+4. On the `Send test event` pannel - Click `Test Mapping` 
+5. You audience is created! Take note of the `audience_id` from the response as you will need it when creating additional mappings. 
+
+> info ""
+> You can use the same mapping to create as many audiences as you would like. You just need to change the audience name and click the `Test Mapping` button again.
+
+> You can create duplicate audience since TikTok does not restrict users from having multple audiences with the same name, if you click `Test Mapping` mulitple times you will create audiences with the same name. However, each audience will have its own unique `audience_id` 
+
+> You do not need to update the status of the mapping to `enabled`.
+
+
+- See TikTok's [Create/Delete an audience segment](https://ads.tiktok.com/marketing_api/docs?id=1739940583739393){:target="_blank"} for instructions on how to create a TikTok audience segment. 
 
 ### Connect the TikTok Audiences destination
 
