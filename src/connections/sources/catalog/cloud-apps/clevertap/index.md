@@ -66,7 +66,7 @@ The table below list the properties included in the events listed above.
 | CT App Version | Mobile Application version on which this event was tracked. App Version is tracked with all events. |
 | CT SDK Version | CleverTap SDK version on which this event was tracked. SDK Version is tracked with all events. |
 | CT Source | Source on which this event was tracked: for example, SDK or API. The source is tracked with all events. |
-| Campaign Id | Id of the campaign associated with this event. |
+| Campaign Id | ID of the campaign associated with this event. |
 | Campaign name | The name of the campaign that the message was part of. |
 | Campaign type | The type of campaign that the message was part of. |
 | wzrk_pivot | Tracked when a campaign is sent using A/B Testing. Represents the variation. |
