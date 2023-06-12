@@ -45,7 +45,7 @@ With the customer lifecycle in mind, use the following table as a starting point
 | ------------------------------------------------ | ------------------------------- |
 | I want to send email and SMS campaigns.          | Journey or Broadcast            |
 | I want to send a one-time email or SMS campaign. | Broadcast                       |
-| I only have one intended touchpoint.             | Audience                        |
+| I only have one intended touchpoint.             | Audience or Broadcast           |
 | I need branching logic.                          | Journey                         |
 | I want to run A/B tests.                         | Journey                         |
 | I want to re-target customers with the same ad.  | Audience                        |
