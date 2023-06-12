@@ -121,9 +121,9 @@ You’ll now need to enable event webhooks, which trigger webhook notifications 
 1. Within your SendGrid **subuser** space, navigate to **Settings > Mail Settings**.
 2. Click the pencil edit icon next to **Event Webhook**.
 3. On the Event Webhook page, set authorization method to none.
-4. Copy and paste the following URL into the **HTTP Post URL** field:
-
-    <br> `https://engage-ma-webhook-api.engage.segment.com/sendgrid`
+4. Copy and paste the following URL, depending on your region,  into the **HTTP Post URL** field:
+  - US: `https://engage-ma-webhook-api.engage.segment.com/sendgrid`
+  - EU:`https://engage-ma-webhook-api.euw1.engage.segment.com/sendgrid`
 
     ![Adding the HTTP Post URL](images/webhook.png "Adding the HTTP Post URL")
 

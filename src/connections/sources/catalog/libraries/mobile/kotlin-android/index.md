@@ -43,7 +43,7 @@ Analytics Kotlin adds several improvements to the overall experience of using th
 ### Device Mode Transformations & Filtering
 For the first time ever, developers can filter and transform their users’ events even before the events leave the mobile device. What’s more, these Filters & transformations can be applied dynamically (either via the Segment Dashboard, or via Javascript uploaded to the workspace) and do not require any app updates!
 
-Learn more about [Destination Filters]() on Mobile, and [Edge Functions]() on Mobile. 
+Learn more about [Destination Filters](https://github.com/segmentio/DestinationFilters-kotlin){:target="_blank"} on Mobile, and [Edge Functions](https://github.com/segmentio/EdgeFn-kotlin){:target="_blank"} on Mobile. 
 
 
 ## Getting started

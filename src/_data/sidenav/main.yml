@@ -191,6 +191,8 @@ sections:
       title: Source Functions
     - path: /connections/functions/destination-functions
       title: Destination Functions
+    - path: /connections/functions/insert-functions
+      title: Destination Insert Functions
     - path: /connections/functions/environment
       title: Functions Environment
     - path: /connections/functions/usage
