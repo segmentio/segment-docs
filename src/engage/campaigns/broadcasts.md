@@ -74,52 +74,17 @@ For more on message segments, view [SMS character limits](https://www.twilio.com
 
 ### Scale and throughput
 
-The following table lists geographic availability, scale, and speed details for email broadcasts, [short code SMS](https://support.twilio.com/hc/en-us/articles/223182068-What-is-a-Messaging-Short-Code-){:target="_blank"} broadcasts, and long code SMS broadcasts:
+The following table lists geographic availability, scale, and speed details for email broadcasts and [short code SMS](https://support.twilio.com/hc/en-us/articles/223182068-What-is-a-Messaging-Short-Code-){:target="_blank"} broadcasts:
 
 | Broadcast type | Availability                            | Throughput                                                                 |
 | -------------- | --------------------------------------- | -------------------------------------------------------------------------- |
-| Email          | All countries where Engage is available | 5 million per hour                                                         |
-| SMS short code | US, Canada, UK                          | 360000 per hour                                                            |
-| SMS long code  | All countries where Engage is available | Between 12-225 messages per second; 10 messages per second internationally |
+| Email          | All countries where Engage is available | 1 million per hour                                                         |
+| SMS short code | US, Canada, UK                          | 360,000 per hour                                                            |
 
-Long-code message throughput depends on a number of factors, including your [10DLC trust score](https://support.twilio.com/hc/en-us/articles/1260803225669-Message-throughput-MPS-and-Trust-Scores-for-A2P-10DLC-in-the-US){:target="_blank"}.
+Long-code message throughput depends on a number of factors, including your [10DLC trust score](https://support.twilio.com/hc/en-us/articles/1260803225669-Message-throughput-MPS-and-Trust-Scores-for-A2P-10DLC-in-the-US){:target="_blank"}. 
 
+Segment recommends that you use short code phone numbers for SMS broadcasts sent to more than 5000 recipients.
 
 ## Broadcast analytics
 
-Engage tracks analytics for both email and SMS broadcasts.
-
-### Email broadcast metrics
-
-The following table lists the email broadcast metrics that Engage tracks:
-
-| Metric             | Description                                                                                           |
-| ------------------ | ----------------------------------------------------------------------------------------------------- |
-| Sent               | The number of email broadcasts that you sent.                                                         |
-| Delivered          | The number of email broadcasts that were accepted by the receiving inbox server.                      |
-| Opened             | The number of times that your email broadcasts were opened.                                           |
-| Clicked            | The number of times that recipients clicked within your email broadcast.                              |
-| Converted          | The number of conversions that took place after broadcast publication; based on delivered broadcasts. |
-| Click-to-Open Rate | The number of clicks compared to the number of opens for a broadcast.                                 |
-| Bounced            | The number of email broadcasts that bounced instead of being delivered.                               |
-| Unsubscribed       | The number of broadcast recipients who chose to unsubscribe from within the email campaigns.          |
-| Spam Reported      | The number of recipients who marked your email broadcast as spam.                                     |
-
-SendGrid powers Engage's email campaign event analytics. For more details on email metrics, view SendGrid's [Marketing Campaigns Statistics Overview](https://docs.sendgrid.com/ui/analytics-and-reporting/marketing-campaigns-stats-overview){:target="_blank"}.
-
-
-### SMS broadcast metrics
-
-The following table lists the SMS broadcast metrics that Engage tracks:
-
-
-| Metric      | Description                                                            |
-| ----------- | ---------------------------------------------------------------------- |
-| Queued      | The number of SMS broadcasts queued for delivery, but not yet sent.    |
-| Sent        | The number of SMS broadcasts that you sent.                            |
-| Delivered   | The number of SMS broadcasts that were accepted by the user's carrier. |
-| Undelivered | The number of undelivered SMS broadcasts.                              |
-| Failed      | The number of SMS broadcasts that didn't send.                         |
-
-
-For more information on Engage analytics, view [Analytics Overview](/docs/engage/analytics/).
+Engage tracks analytics for both email and SMS broadcasts. For more information on Engage analytics, view [Analytics Overview](/docs/engage/analytics/).
