@@ -10,7 +10,7 @@ Segment sends data only to destinations in categories the end user has consented
 ## Reconcile consent object and integrations object conflicts
 
 ### Integrations object
-The Integrations object is a JSON object you can add to your Segment payloads to control how Segment routes data to your destinations. The Integrations object filters `track`, `page`, `group`, `identify` and `screen` events from client and cloud based sources, and routes or prevents them from going to listen destinations. 
+The Integrations object is a JSON object you can add to your Segment payloads to control how Segment routes data to your destinations. The Integrations object filters `track`, `page`, `group`, `identify` and `screen` events from client and cloud based sources, and routes or prevents them from going to listed destinations.
 
 > success " "
 > For more information about the Integrations object, please see [Filtering your Segment Data](/docs/guides/filtering-data/#filtering-with-the-integrations-object).
