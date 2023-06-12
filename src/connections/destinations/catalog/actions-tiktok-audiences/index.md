@@ -29,7 +29,7 @@ You must have an audience segment created in your TikTok Advertising account. Yo
 2. On the `Add test event` pannel - Click on `Load Sample Event`
 3. On the `Select mappings` pannel - Fill in the mappings accordingly
 4. On the `Send test event` pannel - Click `Test Mapping` 
-5. You audience is created! Take note of the `audience_id` from the response as you will need it when creating additional mappings. 
+5. Your audience is created! Take note of the `audience_id` from the response as you will need it when creating additional mappings. 
 
 > info ""
 > You can use the same mapping to create as many audiences as you would like. You just need to change the audience name and click the `Test Mapping` button again.
