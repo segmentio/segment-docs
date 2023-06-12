@@ -37,7 +37,7 @@ Analytics Swift adds several improvements to the overall experience of using the
 ### Device Mode Transformations & Filtering
 For the first time ever, developers can filter and transform their users’ events even before the events leave the mobile device. What’s more, these Filters & transformations can be applied dynamically (either through the Segment Dashboard, or Javascript uploaded to the workspace) and do not require any app updates.
 
-Learn more about [Destination Filters]() on Mobile, and [Edge Functions]() on Mobile. 
+Learn more about [Destination Filters](https://github.com/segmentio/DestinationFilters-swift) on Mobile, and [Edge Functions](https://github.com/segmentio/EdgeFn-Swift) on Mobile. 
 
 ## Getting started
 To get started with the Analytics Swift mobile library:

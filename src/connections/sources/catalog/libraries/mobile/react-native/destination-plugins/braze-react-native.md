@@ -21,17 +21,17 @@ You need to install the `@segment/analytics-react-native-plugin-braze` and the `
 
 Using NPM:
 ```bash
-npm install --save @segment/analytics-react-native-plugin-braze react-native-appboy-sdk
+npm install --save @segment/analytics-react-native-plugin-braze @braze/react-native-sdk
 ```
 
 Using Yarn:
 ```bash
-yarn add @segment/analytics-react-native-plugin-braze react-native-appboy-sdk
+yarn add @segment/analytics-react-native-plugin-braze @braze/react-native-sdk
 ```
 
 Run `pod install` after the installation to autolink the Braze SDK.
 
-See [Braze React SDK](https://github.com/Appboy/appboy-react-sdk) for more details of this dependency.
+See [Braze React SDK](https://github.com/braze-inc/braze-react-native-sdk) for more details of this dependency.
 
 ## Using the Plugin in your App
 
@@ -67,7 +67,7 @@ Segment sends Page calls to Braze as custom events if you have enabled either **
 ## Identify
 
 > info "Tip"
-> Add Segment's [Enrichment Plugin](/docs/connections/sources/catalog/libraries/mobile/react-native/destination-plugins/braze-middleware-plugin) tool to optimize your integration. This tool limits [Data Point](https://www.braze.com/docs/user_guide/onboarding_with_braze/data_points/) use by debouncing duplicate identify() calls from Segment.
+> Add Segment's [Enrichment Plugin](/docs/connections/sources/catalog/libraries/mobile/react-native/destination-plugins/braze-middleware-react-native) tool to optimize your integration. This tool limits [Data Point](https://www.braze.com/docs/user_guide/onboarding_with_braze/data_points/){:target="_blank"} use by debouncing duplicate identify() calls from Segment.
 
 If you're not familiar with the Segment Specs, take a look to understand what the [Identify method](/docs/connections/spec/identify/) does. An example call would look like:
 
