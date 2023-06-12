@@ -80,7 +80,7 @@ To generate a new key pair:
 
 ### Remove encryption
 
-Disabling the **Have Segment encrypt sensitive data** setting removes encryption on all data that comes into a source after 
+Disabling the **Have Segment encrypt sensitive data** setting removes encryption on all data that comes into a source after the setting was disabled. Disabling the **Have Segment encrypt sensitive data** setting does not decrypt any previously encrypted data.
 
 To remove encryption from future data coming into a destination:
 1. Open the [My destinations page](https://app.segment.com/goto-my-workspace/destinations){:target="_blank”} in the Segment app.
