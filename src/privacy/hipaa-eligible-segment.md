@@ -36,6 +36,10 @@ These logs can be provided upon request. For specific requests, please reach out
 
 When workspace owners add new destinations to a HIPAA eligible Segment workspace, they can encrypt any fields [marked as yellow in the Privacy Portal](/docs/privacy/portal) before data is sent to the destination. 
 
+> info "Auto encryption is currently in public beta"
+> This means that the data encryption features are in active development, and some functionality may change before it becomes generally available. [Contact Segment](https://segment.com/help/contact/){:target="_blank"} with any feedback or questions.
+
+
 ### Configure data encryption for a new destination
 
 To configure data encryption while setting up a new destination:
