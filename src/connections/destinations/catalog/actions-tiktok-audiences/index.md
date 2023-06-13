@@ -26,7 +26,7 @@ You must create an audience segment in your TikTok Advertising account. You can 
 - Follow the steps below to create an audience in Segment: 
 
 1. Go to New Mapping and select Create Audience 
-2. On the `Add test event` pannel - Click on `Load Sample Event`
+2. On the Add test event panel, click **Load Sample Event**.
 3. On the `Select mappings` pannel - Fill in the mappings accordingly
 4. On the `Send test event` pannel - Click `Test Mapping` 
 5. Your audience is created! Take note of the `audience_id` from the response as you will need it when creating additional mappings. 
