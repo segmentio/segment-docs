@@ -50,6 +50,19 @@ Some email campaign fields, like **Sender email** and **Subject**, are required.
 > info "Editing Templates"
 > If you use a template for your email, Engage creates an editable copy of the original.  Editing the template within the Journey won’t alter the original template.
 
+### Send an email to all users
+
+As you create your email campaign, you can set an email to send to all users regardless of their [subscription state](/docs/engage/user-subscriptions/#the-four-subscription-states). This may be useful, for example, when you need to send a transactional message to a user who hasn't subscribed to your marketing emails.
+
+To send an email to all users:
+
+1. In the email builder, navigate to the **Which subscription states should receive this message?** field.
+2. From the dropdown menu, select **All subscription states including unsubscribed**.
+
+When you bypass subscription states, be sure to follow local laws and comply with [CAN-SPAM guidance](https://www.ftc.gov/business-guidance/resources/can-spam-act-compliance-guide-business). 
+
+For more, view SendGrid's [email deliverability best practices](https://support.sendgrid.com/hc/en-us/articles/360041790453-Best-Practices-for-ensuring-Email-Deliverability). 
+
 ### Test your email campaign
 
 At this point, you can send a test email before publishing your campaign. Test emails confirm that your design, unsubscribe links, and merge tags appear as expected.
@@ -89,6 +102,7 @@ The following table contains descriptions of all available fields in the Journey
 | Preview text     | A brief message that displays next to the email subject.                                                                                                                                        |
 | Subject *        | The email subject.                                                                                                                                                                              |
 | Body *           | The email’s content.  Select Build Email Content to create a new campaign, or Use a template to choose an existing template.                                                                    |
+| Which subscription states should receive this message?     |  The [subscription state](/docs/engage/user-subscriptions/#the-four-subscription-states) that Engage will send email campaigns to. Defaults to `subscribed` users only. Select **All subscription states including unsubscribed** to send emails to all users regardless of subscription state.  |
 
 
 ## Next steps
