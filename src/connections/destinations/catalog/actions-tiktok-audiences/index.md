@@ -23,18 +23,18 @@ You must create an audience segment in your TikTok Advertising account. You can 
 
 #### Create a TikTok Audience
 
-- Follow the steps below to create an audience in Segment: 
+- To create an audience in Segment: 
 
-1. Go to New Mapping and select Create Audience 
+1. Navigate to New Mapping and select **Create Audience**. 
 2. On the Add test event panel, click **Load Sample Event**.
-3. On the `Select mappings` pannel - Fill in the mappings accordingly
-4. On the `Send test event` pannel - Click `Test Mapping` 
-5. Your audience is created! Take note of the `audience_id` from the response as you will need it when creating additional mappings. 
+3. Fill in the mappings on the Select mappings panel accordingly.
+4. On the Send test event panel, click **Test Mapping**.
+5. You've created your audience. Take note of the `audience_id` from the response as you will need it when you create additional mappings. 
 
 > info ""
-> You can use the same mapping to create as many audiences as you would like. You just need to change the audience name and click the `Test Mapping` button again.
+> You can use the same mapping to create as many audiences as you would like. You just need to change the audience name and click **Test Mapping** again.
 
-> You can create duplicate audience since TikTok does not restrict users from having multple audiences with the same name, if you click `Test Mapping` mulitple times you will create audiences with the same name. However, each audience will have its own unique `audience_id` 
+> You can create a duplicate audience since TikTok doesn't restrict users from having multiple audiences with the same name. If you click **Test Mapping** multiple times, you will create audiences with the same name. However, each audience will have its own unique `audience_id`. 
 
 > You do not need to update the status of the mapping to `enabled`.
 
