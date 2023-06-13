@@ -4,6 +4,7 @@ title: HIPAA Eligible Segment
 
 Segment is a HIPAA eligible platform, and meets the data privacy and security requirements of healthcare customers and their stakeholders. For more information about Segment becoming HIPAA eligible, see the [announcement blog post](http://segment.com/blog/segment-for-healthcare){:target="_blank"}.
 
+
 ## Business Associate Addendum
 
 > info ""
@@ -39,6 +40,7 @@ When workspace owners add new destinations to a HIPAA eligible Segment workspace
 > info "Auto encryption is currently in public beta"
 > This means that the data encryption features are in active development, and some functionality may change before it becomes generally available. [Contact Segment](https://segment.com/help/contact/){:target="_blank"} with any feedback or questions.
 
+These logs can be provided upon request. For specific requests, please reach out to [friends@segment.com](mailto:friends@segment.com){:target="_blank"}.
 
 ### Configure data encryption for a new destination
 
