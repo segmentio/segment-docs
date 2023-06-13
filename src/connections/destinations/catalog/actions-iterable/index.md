@@ -34,14 +34,6 @@ Follow these steps to connect the Iterable (Actions) destination to your Segment
 
 Since the release of Iterable's Classic Segment destination, Iterable has expanded its support for multiple project types. To determine the appropriate identifier for your project type, please refer to the list of available project types and their respective identifiers found at the following link: [Project Types and Unique Identifiers](https://support.iterable.com/hc/en-us/articles/9216719179796-Project-Types-and-Unique-Identifiers).
 
-<!-- When creating or updating users in Iterable, the method for identifying users depends on the project type you are working with.
-
-**Email-based Projects**: In email-based projects, an email must be passed in the traits to successfully create a user in Iterable. Once both the email and userId have been set in Iterable, the userId can be utilized for any future user updates.
-
-**UserID-based Projects**: For projects that rely on a userID-based approach, a unique userId is required to create a user in Iterable. Although adding an email to a userID-based user profile is optional, all subsequent user updates must be passed using the userId.
-
-**Hybrid Projects**: In hybrid projects, you have the flexibility to choose between using a unique email or a userId to create a user in Iterable. -->
-
 ### Creating or Updating Users
 
 In Iterable's previous classic destination, when making Identify calls, certain context fields were automatically mapped to user profiles. However, this behavior has been changed. Please note that the following context fields are no longer automatically mapped to Iterable user profiles during Identify calls:
