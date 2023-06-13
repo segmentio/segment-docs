@@ -19,7 +19,7 @@ By using Segment's TikTok Audiences destination, you can increase traffic and dr
 
 ### TikTok Audience Segments
 
-You must have an audience segment created in your TikTok Advertising account. You can send Engage audiences to an existing audience segment, or you can create a new audience. Please take note of the `audience_id` as this will be required to send Engage audiences to TikTok. See [Create An Audience below for instructions]()on how to create a TikTok audience segment. 
+You must create an audience segment in your TikTok Advertising account. You can send Engage audiences to an existing audience segment, or create a new audience. Please note the `audience_id` as this is required to send Engage audiences to TikTok. See [Create An Audience below for instructions](#create-a-tiktok-audience)on how to create a TikTok audience segment. 
 
 #### Create a TikTok Audience
 
