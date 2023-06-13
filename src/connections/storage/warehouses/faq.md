@@ -163,7 +163,7 @@ To change the name of your schema without disruptions:
 5. Select **Connections** and click **Sources**.
 6. Select a source that syncs data with your warehouse from your list of sources, and select **Settings**.
 7. Select **SQL Settings** and update the "Schema Name" field with the new name for your schema and click **Save Changes.**
-> **Note**: This will set the schema name for all existing and future destinations.
+> **Note**: This will set the schema name for all existing and future destinations. The new name must be lowercase and may include underscores. 
 8. Repeat steps six and seven until you rename all sources that sync data to your warehouse.
 9. Open the third-party host of your database, and rename the schema.
 10. Open the Segment app, select **Connections** and click **Destinations**.
