@@ -12,7 +12,7 @@ Some knowledge of the Journeys product will benefit you as you read through this
 Twilio Engage uses Journeys to send email and SMS campaigns.  With Journeys, you add conditions and steps that trigger actions like sending an email or an SMS.
 
 You’ll build and then send your campaign in three stages:
-
+ 
 1. Create a Journey.
 2. Add a Journey condition.
 3. Create, test, and send your email campaign.
