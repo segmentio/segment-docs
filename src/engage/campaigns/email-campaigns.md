@@ -52,7 +52,7 @@ Some email campaign fields, like **Sender email** and **Subject**, are required.
 
 ### Send an email to all users
 
-As you create your email campaign, you can set an email to send to all users regardless of their [subscription state](/docs/engage/user-subscriptions/#the-four-subscription-states). This may be useful, for example, when you need to send marketing transactional emails to a user who hasn't subscribed to your marketing emails.
+As you create your email campaign, you can set an email to send to all users regardless of their [subscription state](/docs/engage/user-subscriptions/#the-four-subscription-states). This may be useful, for example, when you need to send a marketing transactional email to a user who hasn't subscribed to your marketing emails.
 
 To send an email to all users:
 
