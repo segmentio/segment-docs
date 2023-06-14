@@ -311,3 +311,6 @@ By default, Segment syncs the following fields on the leads collection:
 - `updatedAt`
 
 You can find a full list of standard fields and their REST API names [here](http://developers.marketo.com/rest-api/lead-database/fields/list-of-standard-fields/). If there are other fields you're interested in, [contact support](https://segment.com/help/contact/)  for assistance.
+
+### Why our Marketo Source connection is missing the "Lead Activities" Collection?
+In order to see the lead_activities, please fill the Activity Type IDs (optional) in the Marketo source Connection Settings page. Once you filled out this field, we will start pulling in the data as expected.
