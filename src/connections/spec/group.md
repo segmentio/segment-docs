@@ -8,7 +8,9 @@ The `group` call is one of our methods that will enable you to identify what acc
 
 {% include components/reference-button.html href="https://university.segment.com/introduction-to-segment/324252?reg=1&referrer=docs" icon="media/academy.svg" title="Segment University: The Segment Methods" description="Check out our high-level overview of these APIs in Segment University. (Must be logged in to access.)" %}
 
-It also lets you record custom traits about the group, like industry or number of employees.  Calling `group` is a slightly more advanced feature, but it's helpful if you have accounts with multiple users.
+In addition to the groupId, which is how you'd identify the specific group or company, the group method can also receive traits that are specific to the group, like industry or number of employees for example, that will belong to that specific "account". And, like the traits of an identify call, these can be updated when you call the same trait with a different value.
+
+Calling `group` is a slightly more advanced feature, but it's helpful if you have accounts with multiple users.
 
 Here's the payload of a typical `group` call, with most [common fields](/docs/connections/spec/common/) removed:
 
