@@ -16,8 +16,8 @@ Email addresses and phone numbers in your audience have one of the four followin
 - `did-not-subscribe`; users who are neither subscribed nor unsubscribed
 - **No subscription status**; users who never gave Segment the email or phone number in your audience
 
-> warning "User Consent"
-> It's best practice to only send Engage campaigns to users with a `subscribed` status. However, if you need to send an email to someone who isn't subscribed, you can create an email campaign that you [send to all users](/docs/engage/campaigns/email-campaigns/#send-an-email-to-all-users/).
+> info ""
+> It's best practice to only send Engage campaigns to users with a `subscribed` status. However, if you need to send an email to someone who hasn't subscribed, you can create an email campaign that you [send to all users](/docs/engage/campaigns/email-campaigns/#send-an-email-to-all-users/).
 
 
 To learn how Segment determines user subscription states, read the [User Subscription State documentation](/docs/engage/user-subscriptions/subscription-states/).

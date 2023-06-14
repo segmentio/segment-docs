@@ -33,6 +33,8 @@ Follow these steps to create an email broadcast:
     - To send your broadcast immediately, select **Send now**, then click **Send now ->**. Confirm a final time by clicking **Send** in the popup.
     - To send your broadcast later, select **Schedule**, then enter the date, time, and time zone for your scheduled broadcast. Click **Schedule ->**, then confirm by clicking **Schedule** in the **Schedule message** popup.
 
+> info ""
+> It's best practice to only send emails to users with a `subscribed` status. However, if you need to send an email broadcast to someone who hasn't subscribed, you can configure an email to [send to all users](/docs/engage/campaigns/email-campaigns/#send-an-email-to-all-users/).
 
 ## Create and send an SMS broadcast
 
