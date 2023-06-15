@@ -59,7 +59,7 @@ To send an email to all users:
 1. In the email builder, navigate to the **Which subscription states should receive this message?** field.
 2. From the dropdown menu, select **All subscription states including unsubscribed**.
 
-When you bypass subscription states, be sure to follow local laws and comply with [CAN-SPAM guidance](https://www.ftc.gov/business-guidance/resources/can-spam-act-compliance-guide-business). 
+When you bypass subscription states, be sure to follow local laws and comply with [CAN-SPAM guidance](https://www.ftc.gov/business-guidance/resources/can-spam-act-compliance-guide-business){:target="_blank"}. 
 
 For more, view SendGrid's [email deliverability best practices](https://support.sendgrid.com/hc/en-us/articles/360041790453-Best-Practices-for-ensuring-Email-Deliverability). 
 
