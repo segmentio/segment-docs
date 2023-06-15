@@ -32,7 +32,9 @@ For more information on profile queries, visit the [Profile API documentation](/
 ## Can I modify audience keys?
 
 You can't change the audience key after it's created. To change the key, you need to re-create the audience.
- 
+
+## Can I delete an audience?
+In order to delete an audience, you will need to disable it first by toggling the Enabled button to Disabled. After it is disabled, the audience can be deleted by clicking on the "Delete Audience..." button.  
 
 ## Can I reuse audience keys?
 
