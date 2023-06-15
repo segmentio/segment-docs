@@ -20,6 +20,12 @@ Some of Segment's previous plans, including the legacy API plan, limited integra
 
 No. Deleting your account only stops you from accessing workspaces through your login. The workspace is where the subscription is managed, and it will not be deleted. Data will still flow into Segment and your Destinations, and you will still be charged if you delete your account but don't delete your workspace.
 
+##How do I delete my account?
+
+To delete your account, go to the [User Settings](https://app.segment.com/settings/user) menu, click the **Delete account** option from the bottom of the page.
+
+Please note that, Once the account is deleted you will not have access to the workspaces associated with your account attached to the email address you sign up with.
+
 ## How do I delete my workspace entirely?
 
 To delete your workspace, go to your [Workspace Settings](https://app.segment.com/goto-my-workspace/settings/basic), click the **General** tab, then click **Delete Workspace**.
