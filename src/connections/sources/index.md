@@ -48,6 +48,8 @@ analytics.identify('user_123', {
 {% endcodeexample %}
 {% endcomment %}
 
+> info "If you don't see the source you're looking for in our catalog"
+> If a tool is not listed as a supported source in our [catalog](https://segment.com/catalog/){:target='_blank’}, then it is not possible to incorporate the integration within a Segment workspace out-of-the-box. However, as an alternative, you can use the [HTTP API](https://segment.com/docs/connections/sources/catalog/libraries/server/http-api/){:target='_blank’} source to collect data from the tool's API or the [Webhooks](https://segment.com/docs/connections/destinations/catalog/webhooks/){:target='_blank’} destination to send data to the tool's public API. You can also use [Functions](https://segment.com/docs/connections/functions/){:target='_blank’} to send or receive data from other tools.
 
 ## Types of sources
 
@@ -182,16 +184,3 @@ Reverse ETL sources are data warehouses that enable you to use [Reverse ETL](/do
 Reverse ETL supports [these sources] and Segment is actively working on adding more. If you'd like to request Segment to add a particular source, please note it on the [feedback form](https://airtable.com/shriQgvkRpBCDN955){:target="_blank"}.
 
 
-## Create a source
-To create a source:
-1. Navigate to **Connections** and click **Add Source**.
-2. Click the Source you’d like to add. *Note:* More than 80% of workspaces start by adding their JavaScript website.
-3. Click **Add Source**.
-4. Enter a name for your source as well as any information on the setup page.
-5. Click **Add Source**.
-
-> info "One source or multiple sources?"
-> Segment suggests that you create one source for each type of data you want to collect. For example, you might have one source for all of your website tracking and a different source for any mobile tracking. Creating one source per data type provides the following benefits:
-> - Debugger ease of use - mixing libraries/sources on a single API key means you’re heavily reliant on filtering to actually test events
-> - Flexibility sending data to different projects - if you want to have different warehouse schemas, analytics projects, etc, having multiple sources would create this separation
-> - More control - as your account grows with the number of destinations you enable, having separate sources allows you to have more control
