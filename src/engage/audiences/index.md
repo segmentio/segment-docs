@@ -169,7 +169,7 @@ Engage then processes your realtime Audience or Trait edits. While the edit task
 > It is not possible to edit an audience to convert it from real-time to batch, or vice-versa. If the computation type needs to be changed, you will need to recreate the audience with the appropriate conditions.
 
 > warning ""
-> It is not possible to edit an audience to include anonymous users. If anonymous profiles need to be included, you will need to recreate the audience with the appropriate conditions.
+> You can't edit an audience to include anonymous users. If you need to include anonymous profiles, recreate the audience with the appropriate conditions
 
 ## Access your Audiences using the Profiles API
 
