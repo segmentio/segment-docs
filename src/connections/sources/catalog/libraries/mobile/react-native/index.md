@@ -9,7 +9,7 @@ With Analytics for React Native, you can collect analytics in your React Native 
 All of Segment's libraries are open-source, and you can view Analytics for React Native on GitHub. For more information, see the [Analytics React Native GitHub repository](https://github.com/segmentio/analytics-react-native){:target="_blank"}.
 
 > info "Using Analytics for React Native Classic?"
-> Segment no longer supports Analytics React Native versions [1.5.1 and older](/docs/connections/sources/cataog/libraries/mobile/react-native/classic). Use the [implementation guide](/docs/connections/sources/catalog/libraries/mobile/react-native/implementation/) to upgrade to the latest version. 
+> As of May 15, 2023, Segment ended support for [Analytics React Native Classic](/docs/connections/sources/catalog/libraries/mobile/react-native/classic), which includes versions 1.5.1 and older. Use the [implementation guide](/docs/connections/sources/catalog/libraries/mobile/react-native/implementation/) to upgrade to the latest version.
 
 > warning ""
 > `@segment/analytics-react-native` is compatible with Expo's [Custom Dev Client](https://docs.expo.dev/development/getting-started/){:target="_blank"} and [EAS builds](https://docs.expo.dev/build/introduction/){:target="_blank"} without any additional configuration. Destination Plugins that require native modules may require custom [Expo Config Plugins](https://docs.expo.dev/guides/config-plugins/){:target="_blank"}.
