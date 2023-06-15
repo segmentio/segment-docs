@@ -36,6 +36,17 @@ Since the release of Iterable's Classic Segment destination, Iterable has expand
 
 ### Creating or Updating Users
 
+When it comes to creating or updating users in Iterable, the method for identifying users depends on the project type you are working with.
+
+**Email-based Projects**:
+In email-based projects, it is necessary to include the email to successfully create a user in Iterable. Once both the email and userId have been set in Iterable, the userId can be utilized for any future user updates.
+
+**UserID-based Projects**:
+For userID-based projects, a unique userId is required for creating a user in Iterable. While it is optional to add an email to a userID-based user profile, all subsequent user updates must be performed using the userId.
+
+**Hybrid Projects**:
+In hybrid projects, you have the flexibility to choose between using a unique email or a userId to create a user in Iterable.
+
 In Iterable's previous classic destination, when making Identify calls, certain context fields were automatically mapped to user profiles. However, this behavior has been changed. Please note that the following context fields are no longer automatically mapped to Iterable user profiles during Identify calls:
 
 - app
@@ -48,6 +59,16 @@ In Iterable's previous classic destination, when making Identify calls, certain 
 To include these fields in user profiles, you will now need to explicitly pass them as traits during Identify calls. This change offers more control and customization options for managing user data within Iterable.
 
 Additionally, the integration has been updated to support explicit mappings for updating the `phoneNumber` user profile field, as well as support of the `mergeNestedObject` boolean field in user update calls.
+
+### Custom Events
+
+In UserID and Hybrid projects, when a passed userId doesn't match an existing user, Iterable will create a new user automatically. However, in email-based projects, tracking a custom event for an unidentified user will not create a user profile.
+
+To ensure proper user profile creation in email-based projects, it is recommended to follow these steps:
+
+Call the identify method with both a userId and an email to create a user profile.
+After creating the user profile, proceed with tracking the custom event for that user.
+By following this approach, you can guarantee the creation of user profiles and accurately track custom events within Iterable for email-based projects.
 
 ### Commerce Events
 
