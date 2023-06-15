@@ -72,7 +72,7 @@ SMS broadcasts longer than 160 characters are split into segments and then joine
 
 For more on message segments, view [SMS character limits](https://www.twilio.com/docs/glossary/what-sms-character-limit){:target="_blank"}.
 
-### Email Templates Limits
+### Email template limits
 
 The total size of your email, including attachments, must be less than 30MB.
 
