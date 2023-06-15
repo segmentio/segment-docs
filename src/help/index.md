@@ -31,3 +31,6 @@ Wondering what you can do with Segment? Check out [Segment Recipes](https://segm
 ## Other Resources
 
 Head over to [Segment Resources](https://segment.com/resources/?utm=docs){:target="_blank"} for Segment case studies, webinars, courses, and more.
+
+Segment has the [Status Page](https://status.segment.com/) to communicate more widespread issues accross the product. It is encouraged for users to subcribe to updates as this will be the best place to ensure Segment is working as expected. This page will offer details about System Metrics as well as report on uptime for each part of the Segment product. Additioinally you can search here for past incidents and see when the issue was resolved. 
+
