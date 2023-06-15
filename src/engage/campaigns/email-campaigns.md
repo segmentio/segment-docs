@@ -61,7 +61,7 @@ To send an email to all users:
 
 When you bypass subscription states, be sure to follow local laws and comply with [CAN-SPAM guidance](https://www.ftc.gov/business-guidance/resources/can-spam-act-compliance-guide-business){:target="_blank"}. 
 
-For more, view SendGrid's [email deliverability best practices](https://support.sendgrid.com/hc/en-us/articles/360041790453-Best-Practices-for-ensuring-Email-Deliverability). 
+For more, view SendGrid's [email deliverability best practices](https://support.sendgrid.com/hc/en-us/articles/360041790453-Best-Practices-for-ensuring-Email-Deliverability){:target="_blank"}. 
 
 ### Test your email campaign
 
