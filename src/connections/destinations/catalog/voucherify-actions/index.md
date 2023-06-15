@@ -1,6 +1,9 @@
 ---
 title: Voucherify (Actions) Destination
 id: 63f529a8af3478b5a5363c53
+private: false
+hidden: false
+
 ---
 {% include content/plan-grid.md name="actions" %}
 
