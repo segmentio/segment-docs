@@ -76,7 +76,7 @@ For more on message segments, view [SMS character limits](https://www.twilio.com
 
 The total size of your email, including attachments, must be less than 30MB.
 
-For more on email limits, view [Email Limits](https://docs.sendgrid.com/api-reference/mail-send/limitations#:~:text=The%20total%20size%20of%20your,must%20no%20more%20than%201000.){:target="_blank"}.
+To learn more, view SendGrid's [email limits](https://docs.sendgrid.com/api-reference/mail-send/limitations#:~:text=The%20total%20size%20of%20your,must%20no%20more%20than%201000.){:target="_blank"}.
 
 ### Scale and throughput
 
