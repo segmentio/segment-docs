@@ -13,7 +13,7 @@ This source is maintained by Mailmodo. For any issues with the source, [contact 
 1. From your workspace’s [Sources catalog page](https://app.segment.com/goto-my-workspace/sources/catalog) click Add Source.
 2. Search for “Mailmodo” in the Sources Catalog, select click Mailmodo, and click Add Source.
 3. On the next screen, give the Source a nickname and configure any other settings.
-4. The nickname is used as a label in the Segment app, and Segment creates a related schema name in your warehouse. The nickname can be anything, but we recommend using something that reflects the source itself and distinguishes it amongst your environments (e.g. Mailmodo_Campaigns).
+  The nickname is used as a label in the Segment app, and Segment creates a related schema name in your warehouse. The nickname can be anything, but we recommend using something that reflects the source itself and distinguishes it amongst your environments (e.g. Mailmodo_Campaigns).
 5. Click Add Source to save your settings.
 6. Copy the Write key from the Segment UI. You will need to input this key on the Mailmodo integration page.
 
@@ -36,119 +36,40 @@ If there are problems with how the events arrive at Segment, [contact the Mailmo
 
 The following table lists events that Mailmodo sends to Segment. These events show up as tables in your Warehouse and as regular events in your other Destinations. Mailmodo will send campaign activity data only for those contacts for whom we have received identify calls previously from Segment.
 
-<table>
-  <tr>
-   <td>Event Name</td>
-   <td>Description</td>
-  </tr>
-  <tr>
-   <td>Email Sent</td>
-   <td>An email was successfully sent.</td>
-  </tr>
-  <tr>
-   <td>Email Opened</td>
-   <td>Contact opened an email.</td>
-  </tr>
-  <tr>
-   <td>Link Clicked</td>
-   <td>Contact clicked a link in an email.</td>
-  </tr>
-  <tr>
-   <td>Email Form Submitted</td>
-   <td>Contact submitted form or widget in an email.</td>
-  </tr>
-  <tr>
-   <td>Email Marked as Spam</td>
-   <td>Contact marked an email as spam.</td>
-  </tr>
-  <tr>
-   <td>Email Bounced</td>
-   <td>Contact email was bounced.</td>
-  </tr>
-  <tr>
-   <td>Email Unsubscribed</td>
-   <td>Contact unsubscribed from the email.</td>
-  </tr>
-</table>
+| Event Name           | Description                                  |
+| -------------------- | -------------------------------------------- |
+| Email Sent           | An email was successfully sent               |
+| Email Opened         | Contact opened an email                      |
+| Link Clicked         | Contact clicked a link in an email           |
+| Email Form Submitted | Contact submitted form or widget in an email |
+| Email Marked as Spam | Contact marked an email as spam              |
+| Email Bounced        | Contact email was bounced                    |
+| Email Unsubscribed   | Contact unsubscribed from the email          |
 
 ## Event Properties
 
 This table lists event-specific properties Mailmodo sends to Segment:
 
-<table>
-  <tr>
-   <td>Property Name</td>
-   <td>Description</td>
-  </tr>
-  <tr>
-   <td>email_id</td>
-   <td>The guid of email address identifier stored in the Mailmodo system</td>
-  </tr>
-  <tr>
-   <td>email_subject</td>
-   <td>	The subject line used for the email campaign</td>
-  </tr>
-  <tr>
-   <td>email_type</td>
-   <td>The email type used for the template</td>
-  </tr>
-  <tr>
-   <td>template_id</td>
-   <td>The unique identifier for the template</td>
-  </tr>
-  <tr>
-   <td>template_name</td>
-   <td>	The name of the template used in the campaign</td>
-  </tr>
-  <tr>
-   <td>campaign_id</td>
-   <td>	The unique identifier for the campaign</td>
-  </tr>
-  <tr>
-   <td>campaign_name</td>
-   <td>The name of the campaign</td>
-  </tr>
-  <tr>
-   <td>campaign_type</td>
-   <td>	The value represents the type of campaign. Value can be - CONTACT_LIST (for the bulk campaign) or TRIGGERED (for the triggered campaign)</td>
-  </tr>
-  <tr>
-   <td>campaign_trigger_source</td>
-   <td>Applicable only for triggered campaigns. This field highlights the source of the triggered campaign (e.g. Journey, Rest API, etc.) </td>
-  </tr>
-  <tr>
-   <td>apple_privacy_open</td>
-   <td> Applicable only for email open events. This field informs whether the contact has opened the email on the Apple Mail client. The value can be true or false. </td>
-  </tr>
-  <tr>
-   <td>link_id</td>
-   <td>	The unique identifier for the link in the template</td>
-  </tr>
-  <tr>
-   <td>link_url</td>
-   <td>The actual URL link in the template</td>
-  </tr>
-  <tr>
-   <td>form_id</td>
-   <td>	The unique identifier of the form or widget submitted in the email </td>
-  </tr>
-  <tr>
-   <td>form_name</td>
-   <td>	The name of the form or widget submitted in the email</td>
-  </tr>
-  <tr>
-   <td>submission_type</td>
-   <td>	This field informs whether the submission was made via AMP or the web (aka HTML fallback)</td>
-  </tr>
-  <tr>
-   <td>reason</td>
-   <td>	The field provides the reason for unsubscribed or bounced. </td>
-  </tr>
-  <tr>
-   <td>is_hard_bounce</td>
-   <td>The field informs if the bounce was a hard bounce. </td>
-  </tr>
-</table>
+| Property Name | Description |
+| ------------- | ----------- |
+| email_id     | The guid of email address identifier stored in the Mailmodo system |
+| email_subject | The subject line used for the email campaign |
+| email_type | The email type used for the template  |
+| template_id | The unique identifier for the template |
+| template_name | The name of the template used in the campaign |
+| campaign_id | The unique identifier for the campaign |
+| campaign_name | The name of the campaign | 
+| campaign_type | The value represents the type of campaign. Value can be - CONTACT_LIST (for the bulk campaign) or TRIGGERED (for the triggered campaign) |
+| campaign_trigger_source | Applicable only for triggered campaigns. This field highlights the source of the triggered campaign (for example, Journey, Rest API, etc.) |
+| apple_privacy_open | Applicable only for email open events. This field informs whether the contact has opened the email on the Apple Mail client. The value can be true or false. |
+| link_id | The unique identifier for the link in the template |
+| link_url | The actual URL link in the template |
+| form_id | The unique identifier of the form or widget submitted in the email |
+| form_name | The name of the form or widget submitted in the email |
+| submission_type | This field informs whether the submission was made via AMP or the web (aka HTML fallback) |
+| reason | The field provides the reason for unsubscribed or bounced. |
+| is_hard_bounce | The field informs if the bounce was a hard bounce. |
+
 
 ## Sending Data To Mailmodo
 
