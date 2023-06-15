@@ -8,7 +8,7 @@ hide-dossier: true
 
 {% include content/plan-grid.md name="actions" %}
 
-[Iterable](https://www.iterable.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) is a cross-channel marketing platform that powers unified customer experiences and empowers you to create, optimize and measure every interaction across the entire customer journey.
+[Iterable](https://www.iterable.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners){:target="_blank"} is a cross-channel marketing platform that powers unified customer experiences and empowers you to create, optimize and measure every interaction across the entire customer journey.
 
 This destination is maintained by Iterable. For any issues with the destination, [contact the Iterable Support team](mailto:support@iterable.com).
 
@@ -34,7 +34,7 @@ Follow these steps to connect the Iterable (Actions) destination to your Segment
 
 ## Important differences from the classic Iterable destination
 
-Since the release of Iterable's Classic Segment destination, Iterable has expanded its support for multiple project types. To determine the appropriate identifier for your project type, please refer to the list of available project types and their respective identifiers found at the following link: [Project Types and Unique Identifiers](https://support.iterable.com/hc/en-us/articles/9216719179796-Project-Types-and-Unique-Identifiers).
+Since the release of Iterable's Classic Segment destination, Iterable has expanded its support for multiple project types. To determine the appropriate identifier for your project type, please refer to the list of available project types and their respective identifiers found at the following link: [Project Types and Unique Identifiers](https://support.iterable.com/hc/en-us/articles/9216719179796-Project-Types-and-Unique-Identifiers){:target="_blank"}.
 
 ### Creating or Updating Users
 
@@ -46,7 +46,7 @@ In email-based projects, it is necessary to include the email to successfully cr
 #### UserID-based Projects
 For userID-based projects, a unique `userId` is required for creating a user in Iterable. While it is optional to add an email to a userID-based user profile, all subsequent user updates must be performed using the `userId`.
 
-#### Hybrid Projects**
+#### Hybrid Projects
 In hybrid projects, you have the flexibility to choose between using a unique email or a `userId` to create a user in Iterable.
 
 In Iterable's previous classic destination, when making Identify calls, certain context fields were automatically mapped to user profiles. However, this behavior has been changed. Please note that the following context fields are no longer automatically mapped to Iterable user profiles during Identify calls:
@@ -64,11 +64,11 @@ Additionally, the integration has been updated to support explicit mappings for 
 
 ### Custom Events
 
-In UserID and Hybrid projects, when a passed ``userId`` doesn't match an existing user, Iterable creates a new user automatically. In email-based projects, tracking a custom event for an unidentified user will not create a user profile.
+In UserID and Hybrid projects, when a passed `userId` doesn't match an existing user, Iterable creates a new user automatically. In email-based projects, tracking a custom event for an unidentified user will not create a user profile.
 
 To ensure proper user profile creation in email-based projects:
 
-- Call the Identify method with both a ``userId`` and an `email` to create a user profile.
+- Call the Identify method with both a `userId` and an `email` to create a user profile.
 - After you create the user profile, proceed with tracking the custom event for that user.
 
 If you follow this approach, you can guarantee the creation of user profiles and accurately track custom events within Iterable for email-based projects.
