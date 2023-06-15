@@ -14,7 +14,7 @@ This destination is maintained by [Mammoth](https://mammoth.io). For any issues 
 
 ## Getting Started
 
-{% include content/connection-modes.md %}
+
 
 There are three steps to get started using Mammoth with Segment. First, [register for an account with Mammoth](https://mammoth.io/register/choose/starter).
 

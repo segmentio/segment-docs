@@ -10,7 +10,7 @@ This destination is maintained by June. For any issues with the destination, [co
 
 ## Getting Started
 
-{% include content/connection-modes.md %}
+
 
 1. Go to the [June settings page](https://app.june.so/redirect-to-my-workspace/settings), click **Add your first source**. To add more instances of the June Destination, click on the Segment integration card and **Add more sources**.
 2. The Segment App opens in a new window. Log in to authenticate the connection from June.

@@ -8,7 +8,7 @@ This destination is maintained by Jivox. For any issues with the destination, [c
 
 ## Getting Started
 
-{% include content/connection-modes.md %} 
+ 
 
 1. Contact [Jivox IQ Support Team](mailto:support@jivox.com?subject=Need%20API%20key%20for%20Segment%20Destination%20configuration%20for%20) to get the API Key.
 2. From the Destinations catalog page in the Segment App, click **Add Destination**.
