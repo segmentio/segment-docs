@@ -80,7 +80,3 @@ from iterable.email_delivered
 
 <table>
 </table> -->
-
-## Send data to Iterable
-
-The Iterable Source works better when you also connect Iterable as a destination. With the Iterable **Destination**, you can use Segment to send Iterable user and event data from which you trigger email campaigns. For more information, see the [Iterable destination docs](/docs/connections/destinations/catalog/iterable/).
