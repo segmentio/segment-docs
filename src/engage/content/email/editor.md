@@ -1,16 +1,16 @@
 ---
-title: Email Template Editor
+title: Drag and Drop Editor
 plan: engage-premier
 ---
-Use Twilio Engage to build email templates with a *what you see is what you get* (WYSIWYG) visual editor. Use drag and drop tools to design the template layout and include user profile traits to personalize the message for each recipient.
+Use Twilio Engage to build email templates with a *what you see is what you get* (WYSIWYG) Drag and Drop Editor. Use drag and drop tools to design the template layout and include user profile traits to personalize the message for each recipient.
 
-You can navigate to the visual editor from the **Select Editor** screen:
+You can navigate to the Drag and Drop Editor from the **Select Editor** screen:
 - When you build a new email template or edit an existing one.
 - From a Send Email step in a Journey.
 
-From the **Select Editor** screen, select **Visual Editor** and click **Build Email**.
+From the **Select Editor** screen, select **Drag and Drop Editor** and click **Build Email**.
 
-The visual editor consists of a [left sidebar](#left-sidebar) with design modules and an [email canvas](#email-canvas).
+The Drag and Drop Editor consists of a [left sidebar](#left-sidebar) with design modules and an [email canvas](#email-canvas).
 
 ## Left sidebar
 
@@ -89,7 +89,7 @@ Select and drag and image into the canvas, then return to the sidebar to set ima
 ## Upload an image
 Use the Uploads tool to upload an image for the email template. Click **Upload Image** to select an image stored locally or drag and drop images in the sidebar dropzone.
 
-> note ""
+> info ""
 > The maximum image file size you can upload is 10 MB.
 
 ## Link actions
@@ -119,11 +119,11 @@ Add an unsubscribe link to text:
 You can alternatively add a [predefined unsubscribe](#add-blank-columns-or-predefined-content-blocks) link content block.
 
 ## Personalize with merge tags
-Add merge tags in the visual editor to personalize your message with user profile traits.
+Add merge tags in the Drag and Drop Editor to personalize your message with user profile traits.
 
 1. Select any heading or body text in the email canvas. From the text toolbar, click **Merge Tags**.
 2. Select the profile traits to include from the drop down menu.
-3. Based on cursor placement, profile traits are added to the email from merge tags.
+3. Based on cursor placement, Engage adds merge tags to your email template. 
 
 Engage supports liquid templating to create dynamic content in the email design editor and the SMS editor.
 
@@ -148,3 +148,10 @@ To view more examples related to your use case, visit the [LiquidJS docs](https:
 ## Save the template
 
 After you design the email, click **Create Email Template**.
+
+
+## Next steps
+
+- Learn more about [building email templates](/docs/engage/content/template/) to include in your Engage campaigns. 
+
+- You can also use the [Visual HTML Editor](/docs/engage/content/email/visual-html-editor) for both code and visual editing capabilities from a single view.
