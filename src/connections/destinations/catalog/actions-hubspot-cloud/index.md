@@ -64,7 +64,7 @@ HubSpot has several limits for custom behavioral events, including a limit on th
 
 ### Why can't I set an entire object for the Other properties field?
 
-This destination does not allow selecting an entire object for the Other properties field. HubSpot rejects API calls if a property name does not match with HubSpot's internal name. To prevent the possibility of rejection when working with a large object of key/value pairs, explicit mapping of each key/value pair is required. This helps to ensure that every key matches the pre-created property names in HubSpot.
+This destination doesn't allow selecting an entire object for the Other properties field. HubSpot rejects API calls if a property name doesn't match with HubSpot's internal name. When working with a large object of key/value pairs, map each key/value pair to prevent rejection. This ensures that every key matches the pre-created property names in HubSpot.
 
 ### Does the HubSpot Cloud Mode (Actions) destination support EU data residency?
 Yes. HubSpot will automatically redirect API requests directly to an EU data center if your HubSpot instance is on an EU data center. See more in HubSpot's [Routing API Traffic](https://product.hubspot.com/blog/routing-api-traffic){:target="_blank"} article.
