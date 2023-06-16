@@ -1,12 +1,18 @@
-## Insider Cloud Mode (Actions) Destination
+---
+title: Insider Cloud Mode (Actions)
+private: true
+hidden: true
+id: 643697f531f98a978f414453
+versions:
+  - name: Insider Destination
+    link: /docs/connections/destinations/catalog/insider/
+---
 
 {% include content/plan-grid.md name="actions" %}
 
 [Insider](https://useinsider.com/integration/segment/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) Growth Management Platform (GMP) helps digital marketers drive growth across the funnel. Insider GMP helps marketers deliver personalized journeys across the web, mobile web, mobile apps, messaging, email, and ad channels using the unified data.
 
 This destination is maintained by Insider. For any issues with the destination, contact the [Insider Support team.](mailto:insiderhelp@useinsider.com)
-
-success "" Good to know: This page is about the [Actions-framework](https://segment.com/docs/connections/destinations/actions/) Insider Segment destination. There's also a page about the [non-Actions Insider destination](https://segment.com/docs/connections/destinations/catalog/insider/). Both of these destinations receives data from Segment.
 
 {% include content/ajs-upgrade.md %}
 
