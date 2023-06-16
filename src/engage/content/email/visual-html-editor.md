@@ -98,9 +98,9 @@ From the visual editor:
 3. Enter the link attributes and text. 
 4. Click **Save**.
 
-To add a link from the code editor, use ```<a href = "[unsubscribe]"> </a>````. 
+To add a link from the code editor, use `<a href = "[unsubscribe]"> </a>` in your HTML. 
 
-For more on email unsubscribe links, view SendGrid's [best practices](https://sendgrid.com/blog/managing-your-marketing-email-unsubscribes/).
+For more on email unsubscribe links, view SendGrid's [best practices](https://sendgrid.com/blog/managing-your-marketing-email-unsubscribes/){:target="blank"}.
 
 
 ## Save the template
