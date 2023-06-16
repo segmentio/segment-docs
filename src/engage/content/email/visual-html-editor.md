@@ -113,3 +113,4 @@ After you design the email, click **Create Email Template**. Navigate to **Engag
 
 - You can also use the [Drag and Drop Editor](/docs/engage/content/email/editor/) in Engage to build Email templates with drag and drop functionality. 
 
+ 
