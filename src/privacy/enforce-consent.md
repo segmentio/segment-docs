@@ -2,15 +2,18 @@
 title: Enforce Consent
 ---
 
-Segment sends data only to destinations in categories the end user has consented to sending data to.
+Segment sends data only to destinations in categories consented to by the end user. When conflicts arise between the consent object and integrations object or your consent management tool, Segment reconciles consent according to the following tables.
 
 > info "Consent Management is currently in private beta"
 > This means that the Consent Management features are in active development, and some functionality may change before it becomes generally available. [Contact Segment](https://segment.com/help/contact/){:target="_blank"} with any feedback or questions.
 
+## Reconcile consent category trait conflicts
+
+Segment detects when there are conflicting consent categories for a user and 
+
 ## Reconcile consent object and integrations object conflicts
 
-### Integrations object
-The Integrations object is a JSON object you can add to your Segment payloads to control how Segment routes data to your destinations. The Integrations object filters `track`, `page`, `group`, `identify` and `screen` events from client and cloud based sources, and routes or prevents them from going to listed destinations.
+You can add the integrations object and the consent object to your Segment payloads to control how Segment routes data to your downstream destination. 
 
 > success " "
 > For more information about the Integrations object, please see [Filtering your Segment Data](/docs/guides/filtering-data/#filtering-with-the-integrations-object).
@@ -25,6 +28,7 @@ If the consent object and integrations object have conflicting destination infor
 | `{ad: true,` <br>`analytics: false}`<br> <br>//ad = facebook, google ads                                        | `{facebook: true,`<br>`amplitude: false}`   | Message delivered to all ad destinations even though google-ads is not provided in the integrations object. Use metadata if provided for Facebook (the current behavior). No data is delivered to analytics destinations. |
 | `{ad: true,` <br>`analytics: false}`<br> <br>//ad = facebook, google ads                                        | `{facebook: false,`<br>`amplitude: false}`  | Message delivered to all ad destinations (Google Ads) but NOT to Facebook. <br> No data delivered to analytics destinations |
 | `{ad: true,` <br>`analytics: false}`<br> <br>//ad = facebook, google ads <br> //analytics = facebook, snowflake |  `{facebook: false,`<br>`amplitude: false}` | Message delivered to all ad destinations (even though Facebook belongs to analytics and user is not consenting to analytics.) Use metadata if provided for Facebook (current behavior)<br>No data delivered to analytics destinations (Snowflake) |
+
 
 ## Reconcile Consent Management tool and Segment tool conflicts
 
