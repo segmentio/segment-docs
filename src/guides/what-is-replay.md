@@ -36,7 +36,7 @@ Replays do not affect your [MTU count](/docs/guides/usage-and-billing/mtus-and-t
 
 Once a replay starts, you will not see replayed events in the Event Delivery tab.
 
-Replays can be initiated for some or all events but it is not possible to apply conditional filters that exclude certain rows of data from being replayed. You can set up [destination filters](/docs/connections/destinations/destination-filters/) to conditionally filter replayed events.
+You can initiate replays for some or all events, but you can't apply conditional filters that exclude certain rows of data from being replayed. You can set up [destination filters](/docs/connections/destinations/destination-filters/) to conditionally filter replayed events.
 
 ### Replay-eligible destinations
 
