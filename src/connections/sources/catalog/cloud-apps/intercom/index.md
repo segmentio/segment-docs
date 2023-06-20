@@ -37,7 +37,7 @@ Segment begins to sync your Intercom data into Segment, and writes it to your wa
 
 The Intercom source has a sync component, which means Segment make requests to [their API](https://developers.intercom.io/docs/) on your behalf on a 3 hour interval to pull all historical data into Segment. In the initial sync, Segment grabs all the Intercom objects (and their corresponding properties) according to the collections table below. The objects will be written into a designated schema corresponding to the source instance's schema name you designated upon creation. For example, if you went with `intercom_prod`, the `users` collection will be accessible at `intercom_prod.users` in SQL.
 
-The sync component uses an upsert API, so the data loaded to your warehouse during syncs will reflect the latest state of the corresponding resource in Intercom.  For example, if the `users.last_seen_ip` will be the latest value upon each sync.
+The sync component uses an upsert API, so the data in your warehouse loaded using sync will reflect the latest state of the corresponding resource in Intercom.  For example, if the `users.last_seen_ip` will be the latest value upon each sync.
 
 The source syncs and warehouse syncs are independent processes. Source runs pull your data into the Segment Hub, and warehouse runs flush that data to your warehouse. Sources will sync with Segment every 3 hours. Depending on your Warehouses plan, Segment pushes the Source data to your warehouse on the interval associated with your billing plan.
 
