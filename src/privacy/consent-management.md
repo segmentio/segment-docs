@@ -9,8 +9,8 @@ related:
 
 Consent management is a [description]
 
-> warning "Website sources and event streaming destinations are available to map to consent categories"
-> During the private beta, you can map website sources and event streaming destinations to a consent category. All other sources and destinations will not be affected by consent mappings.
+> warning "You can map website sources and event streaming destinations to consent categories during the private beta"
+> All other sources and destinations are not affected by consent mappings.
 
 When an end-user visits your site, they set consent preferences, or make decisions about the types of data they want you to collect, use, and share. These consent preferences are typically presented as a set list of categories (for example, personalization, advertising, and site performance) that describe how your company intends to use that data.
 
