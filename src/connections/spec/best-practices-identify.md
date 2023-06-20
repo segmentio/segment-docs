@@ -44,7 +44,7 @@ You should make an `identify` call in the following situations:
 - When first you create a user (and so it is assigned a `userId`)
 - When a user changes information in their profile
 - When a user logs in
-- Optionally, when you call `identify` upon loading any pages that aren't accessible by a logged in user
+- *(Optional)* Upon loading any pages that are accessible by a logged in user
 
 ## Soft User Registration
 
