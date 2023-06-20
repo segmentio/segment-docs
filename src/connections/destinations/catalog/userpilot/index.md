@@ -12,7 +12,7 @@ This destination is maintained by Userpilot. For any issues with the destination
 
 ## Getting Started
 
-{% include content/connection-modes.md %}
+
 
 1. From the Segment web app, click **Catalog**.
 2. Search for *Userpilot Web Plugin* in the Catalog, select it, and choose the source you want to connect the destination to.

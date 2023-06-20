@@ -18,7 +18,7 @@ maintenance-content: New versions of the destination are available. See [HubSpot
 
 ## Getting Started
 
-{% include content/connection-modes.md %}
+
 
 1. From the Segment web app, click **Catalog**.
 2. Search for "HubSpot" in the Catalog, select it, and choose which of your sources to connect the destination to.

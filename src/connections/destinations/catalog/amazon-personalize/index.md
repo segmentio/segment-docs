@@ -13,7 +13,7 @@ Developing the machine-learning capabilities necessary to produce these recommen
 
 ## Getting Started
 
-{% include content/connection-modes.md %}
+
 
 These are the pre-requisites you need before getting started:
 

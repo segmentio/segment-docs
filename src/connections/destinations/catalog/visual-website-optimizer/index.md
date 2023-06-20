@@ -11,7 +11,7 @@ If you notice any gaps, outdated information or simply want to leave some feedba
 
 ## Getting Started
 
-{% include content/connection-modes.md %}
+
 
 Because the VWO destination needs to be on the page right away, there are two ways for the VWO JavaScript snippet to be loaded on your page. You can either:
 

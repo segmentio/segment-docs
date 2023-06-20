@@ -9,7 +9,7 @@ This destination is maintained by Mutiny. For any issues with the destination, [
 
 ## Getting Started
 
-{% include content/connection-modes.md %}
+
 
 To set up Mutiny to receive Segment data:
 1. From your Segment Project's Destinations page click on "Add Destination".

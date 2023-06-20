@@ -30,7 +30,7 @@ This page is about the **Facebook Pixel**. For documentation on other Facebook d
 
 ## Getting Started
 
-{% include content/connection-modes.md %}
+
 
 1. From the Segment web app, click **Catalog**.
 2. Search for "Facebook Pixel" in the Catalog, select it, and choose which of your sources to connect the destination to.

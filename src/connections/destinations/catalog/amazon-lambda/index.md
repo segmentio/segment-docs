@@ -14,7 +14,7 @@ With Lambda, you can run code for any type of application or backend service - a
 
 ## Getting started
 
-{% include content/connection-modes.md %}
+
 
 To get started, you'll need to:
 1. [Build a Lambda function to process Segment events](/docs/connections/destinations/catalog/amazon-lambda/#build-a-lambda-function-to-process-segment-events)

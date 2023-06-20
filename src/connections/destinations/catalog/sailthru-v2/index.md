@@ -11,7 +11,7 @@ Sailthru maintains this destination. For any issues with the destination, [conta
 
 ## Getting Started
 
-{% include content/connection-modes.md %}
+
 
 1. Contact the [Sailthru Support team](mailto:support@sailthru.com) to enable your account for EXTID support and request your integration-specific API Key and Secret.
 2. From the Destinations catalog page in the Segment App, click **Add Destination**.

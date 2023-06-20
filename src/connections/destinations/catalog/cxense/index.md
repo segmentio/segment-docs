@@ -5,7 +5,7 @@ hidden: true
 
 ## Getting Started
 
-{% include content/connection-modes.md %}
+
 
 Currently this destination supports events originating from Web sources (not Server or Mobile). You can read more about how define a source [here](/docs/connections/sources/#what-is-a-source).
 

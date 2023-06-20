@@ -13,7 +13,7 @@ This destination is maintained by Maxia. For any issues with the destination, [c
 
 ## Getting Started
 
-{% include content/connection-modes.md %}
+
 
 1. Login to [Segment](https://app.segment.com/) and navigate to the Destinations catalog page.
 2. Search for and select "Maxia" in the Destinations Catalog.

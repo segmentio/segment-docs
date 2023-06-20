@@ -8,7 +8,7 @@ id: 558c9f7b0a20f4e22f0fb3bc
 
 ## Getting Started
 
-{% include content/connection-modes.md %}
+
 
 1. From the Segment web app, click **Catalog**.
 2. Search for "Parsely" in the Catalog, select it, and choose which of your sources to connect the destination to.

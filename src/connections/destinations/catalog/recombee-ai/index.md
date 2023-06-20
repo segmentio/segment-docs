@@ -17,7 +17,7 @@ This destination is maintained by Recombee. For any issues with the destination,
 
 ## Getting Started
 
-{% include content/connection-modes.md %}
+
 
 1. If you don't already have one, set up a [Recombee account](https://recombee.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners).
 1. From the Destinations catalog page in the Segment App, click **Add Destination**.
