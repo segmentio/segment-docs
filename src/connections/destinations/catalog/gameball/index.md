@@ -10,7 +10,7 @@ This destination is maintained by Gameball. For any issues with the destination,
 
 ## Getting Started
 
-{% include content/connection-modes.md %}
+
 
 1. From the Segment app Destinations page click "Gameball".
 2. Search for "Gameball" in the Destinations Catalog and confirm the Source you'd like to connect to.

@@ -15,7 +15,7 @@ This destination is maintained by the company Serenytics. For any issues with th
 
 ## Getting Started
 
-{% include content/connection-modes.md %}
+
 
 From Serenytics app using OAuth:
 1. In Serenytics, in the [datasources list](https://app.serenytics.com/studio/data_sources), click on the button `New data source` and select the tab `Web services and API` and click on `Segment`.

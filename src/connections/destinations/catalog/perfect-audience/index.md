@@ -9,7 +9,7 @@ If you notice any gaps, out-dated information or simply want to leave some feedb
 
 ## Getting Started
 
-{% include content/connection-modes.md %}
+
 
 1. From the Segment web app, click **Catalog**.
 2. Search for "Perfect Audience" in the Catalog, select it, and choose which of your sources to connect the destination to.

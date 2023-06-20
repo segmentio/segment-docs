@@ -13,7 +13,7 @@ This destination is maintained by Ortto. For any issues with the destination, [c
 
 ## Getting Started
 
-{% include content/connection-modes.md %}
+
 
 1. From the Destinations catalog page in the Segment App, click **Add Destination**.
 2. Search for "Ortto" in the Destinations Catalog, and select the "Ortto" destination.

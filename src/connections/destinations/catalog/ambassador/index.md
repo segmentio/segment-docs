@@ -7,7 +7,7 @@ id: 573a3dfb80412f644ff13679
 
 ## Getting Started
 
-{% include content/connection-modes.md %}
+
 
 1. From the Segment web app, click **Catalog**.
 2. Search for "Ambassador" in the Catalog, select it, and choose which of your sources to connect the destination to.
