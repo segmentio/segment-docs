@@ -12,7 +12,7 @@ Consent management is a [description]
 > warning "You can map website sources and event streaming destinations to consent categories during the private beta"
 > All other sources and destinations are not affected by consent mappings.
 
-When an end-user visits your site, they set consent preferences, or make decisions about the types of data they want you to collect, use, and share. These consent preferences are typically presented as a set list of categories (for example, personalization, advertising, and site performance) that describe how your company intends to use that data.
+When an end user visits your site, they set **consent preferences**, or make decisions about the types of data they want you to collect, use, and share. These consent preferences are typically presented as a set list of categories that describe how your company intends to use that data. Common categories include personalization, advertising, and site performance.
 
 After a user sets their consent preferences, Segment updates the [consent object](#consent-object) with a user's preferences. The events are then sent downstream to any destinations in categories consented to by the user.
 
