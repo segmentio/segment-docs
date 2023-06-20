@@ -1,5 +1,7 @@
-
-## Mailmodo Source
+---
+title: 'Mailmodo Source'
+id: YWOGVbyMVz
+---
 
 
 [Mailmodo](https://www.mailmodo.com){:target="_blank”} is an email marketing platform that helps you create interactive emails powered by AMP. With our no-code editor, you can create an interactive email in minutes and send engaging and personalized emails that boost conversions.
