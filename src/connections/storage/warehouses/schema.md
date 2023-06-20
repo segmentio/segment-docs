@@ -7,6 +7,7 @@ A **schema** describes the way that the data in a warehouse is organized. Segmen
 
 > note "Warehouse column creation"
 > **Note:** Segment creates tables for each of your custom events in your warehouse, with columns for each event's custom properties. Segment does not allow unbounded `event` or `property` spaces in your data. Instead of recording events like "Ordered Product 15", use a single property of "Product Number" or similar.
+> Segment creates and populates a column only when it receives a non-null value from the source.
 
 ### How warehouse tables handle nested objects and arrays
 
