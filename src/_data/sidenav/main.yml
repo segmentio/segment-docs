@@ -452,8 +452,8 @@ sections:
       title: Consent Management Overview
     - path: /privacy/configure-consent-management
       title: Configure Consent Management
-    - path: /privacy/enforce-consent
-      title: Enforce Consent Management
+    - path: /privacy/reconcile-consent
+      title: Reconcile Consent Conflicts
   - path: /privacy/account-deletion
     title: Account & Data Deletion
   - path: /privacy/hipaa-eligible-segment

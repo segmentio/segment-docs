@@ -1,5 +1,5 @@
 ---
-title: Enforce Consent
+title: Reconciling Consent Conflicts
 ---
 
 Segment sends data only to destinations in categories consented to by the end user. When conflicts arise between the consent object and integrations object or your consent management tool, Segment reconciles consent according to the following tables.
@@ -11,14 +11,27 @@ Segment sends data only to destinations in categories consented to by the end us
 
 Segment detects when there are conflicting consent categories for a user and 
 
+<!--- ask Emma about table/edge cases --->
+
+## Reconcile a user's conflicting preferences
+
+If a user has conflicting preferences (for example, they consented yes for a category on mobile, but not on the web, or consented differently using two different emails,) Segment routes data according to the following table:
+
+| Category | Consent on mobile | Consent on the web |
+| -------- | ----------------- | ------------------ | 
+
+<!--- can you treat mobile/web data differently? -->
+
 ## Reconcile consent object and integrations object conflicts
 
-You can add the integrations object and the consent object to your Segment payloads to control how Segment routes data to your downstream destination. 
+You can add the integrations object and the consent object to your Segment payloads to control how Segment routes data to your downstream destinations. 
 
 > success " "
 > For more information about the Integrations object, please see [Filtering your Segment Data](/docs/guides/filtering-data/#filtering-with-the-integrations-object).
 
 If the consent object and integrations object have conflicting destination information, Segment routes data according to the following table:
+
+<!-- ask Atit if consent object takes precedence over integrations object, except if specifically called out in Integrations object-->
 
 | Consent Object                                                                                                  | Integration Object                          | Result |
 | --------------------------------------------------------------------------------------------------------------- | ------------------------------------------- | ------ |
