@@ -1,5 +1,7 @@
 ---
 title: Segment Schema Limits
+redirect_from:
+   - '/connections/schema-unique-limits/'
 ---
 
 #### How many unique events can be logged in my Segment Schema table?

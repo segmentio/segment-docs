@@ -1,5 +1,7 @@
 ---
 title: Schema Controls
+redirect_from:
+  - '/protocols/schema/'
 ---
 
 {% include content/plan-grid.md name="protocols" %}
