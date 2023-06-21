@@ -34,8 +34,6 @@ Braze Web Mode (Actions) provides the following benefits over Braze Classic:
 
 {% include components/actions-fields.html settings="true"%}
 
-{% include components/actions-fields.html%}
-
 ## Other features
 
 Braze Web Mode (Actions) can use the following features of Braze.
