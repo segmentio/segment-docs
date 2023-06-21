@@ -1,5 +1,6 @@
 ---
 title: Verify Destination Connection Modes
+published: false
 hidden: true
 tests:
 - test-1:

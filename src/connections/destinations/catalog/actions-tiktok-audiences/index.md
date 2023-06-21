@@ -16,7 +16,29 @@ By using Segment's TikTok Audiences destination, you can increase traffic and dr
 
 1. Before connecting to the TikTok Audiences destination, you must have a [TikTok Ads Manager](https://www.tiktok.com/business/en-US/solutions/ads-manager){:target="_blank"} account. 
 
-2. You must also have an audience segment created in your TikTok Advertising account. You can send Engage audiences to an existing audience segment, or you can create a new audience in TikTok. Please take note of the `audience_id` as this will be required to send Engage audiences to TikTok. See TikTok's [Create/Delete an audience segment](https://ads.tiktok.com/marketing_api/docs?id=1739940583739393){:target="_blank"} for instructions on how to create a TikTok audience segment. 
+
+### TikTok Audience Segments
+
+You must create an audience segment in your TikTok Advertising account. You can send Engage audiences to an existing audience segment, or create a new audience. Please note the `audience_id` as this is required to send Engage audiences to TikTok. 
+
+#### Create a TikTok Audience
+
+To create an audience in Segment: 
+
+1. Navigate to New Mapping and select **Create Audience**. 
+2. On the Add test event panel, click **Load Sample Event**.
+3. Fill in the mappings on the Select mappings panel accordingly.
+4. On the Send test event panel, click **Test Mapping**.
+5. You've created your audience. Take note of the `audience_id` from the response as you will need it when you create additional mappings. 
+
+
+You can use the same mapping to create as many audiences as you would like. You just need to change the audience name and click **Test Mapping** again.
+
+You can create a duplicate audience since TikTok doesn't restrict users from having multiple audiences with the same name. If you click **Test Mapping** multiple times, you will create audiences with the same name. However, each audience will have its own unique `audience_id`. 
+
+You do not need to update the status of the mapping to `enabled`.
+
+See TikTok's [Create/Delete an audience segment](https://ads.tiktok.com/marketing_api/docs?id=1739940583739393){:target="_blank"} for instructions on how to create a TikTok audience segment. 
 
 ### Connect the TikTok Audiences destination
 

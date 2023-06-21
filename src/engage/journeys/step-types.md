@@ -123,7 +123,7 @@ Use Twilio Engage to send email as a step in a Journey.
     7. Add conversion goals.
 4. Click **Save** to add the email step to your Journey.
 
-`Subscribed` users will receive an email upon entering the step. Visit [Email Campaigns](/docs/engage/campaigns/email-campaigns/) for more information.
+`Subscribed` users will receive an email upon entering the step. To send an email to users regardless of their subscription state, you can use Engage to [send a message to all users](/docs/engage/campaigns/email-campaigns/#send-an-email-to-all-users/). Visit [Email Campaigns](/docs/engage/campaigns/email-campaigns/) for more information.
 
 #### Send an SMS
 

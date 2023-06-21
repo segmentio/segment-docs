@@ -13,7 +13,7 @@ This destination is maintained by Derdack SIGNL4. For any issues with the destin
 
 ## Getting Started
 
-{% include content/connection-modes.md %} 
+ 
 
 1. From the Destinations catalog page in your Segment Workspace, click Add Destination.
 2. Search for “SIGNL4” in the Destinations Catalog, and select the SIGNL4 Alerting destination.
