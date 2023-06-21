@@ -5,8 +5,6 @@ hide-boilerplate: true
 hide-cmodes: true
 beta: true
 id: 642440d46b66b3eeac42b581
-private: true 
-hidden: true
 ---
 {% include content/plan-grid.md name="actions" %}
 
