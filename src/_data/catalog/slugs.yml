@@ -109,3 +109,5 @@ destinations:
     override: "mixpanel"
   - original: "pinterest-conversions-api"
     override: "actions-pinterest-conversions-api"
+  - original: "encharge-actions"
+    override: "encharge-cloud-actions"

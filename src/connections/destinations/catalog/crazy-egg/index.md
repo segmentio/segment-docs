@@ -7,7 +7,7 @@ id: 54521fd525e721e32a72eea7
 
 ## Getting Started
 
-{% include content/connection-modes.md %}
+
 
 1. From the Segment web app, click **Catalog**.
 2. Search for "Crazy Egg" in the Catalog, select it, and choose which of your sources to connect the destination to.

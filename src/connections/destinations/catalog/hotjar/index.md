@@ -14,7 +14,7 @@ Knowing who your users are and what they're doing unlocks more advanced filterin
 
 ## Getting Started
 
-{% include content/connection-modes.md %}
+
 
 1. Navigate to **Connections** and click **Add Destination** From the Segment web app.
 

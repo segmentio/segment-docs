@@ -11,7 +11,7 @@ This destination is maintained by Tamber. For any issues with the destination, [
 
 ## Getting Started
 
-{% include content/connection-modes.md %}
+
 
 1. From your [Tamber dashboard](https://dashboard.tamber.com), head to Sources > Segment and click enable.
 2. Follow the instructions to configure your Destination and optionally defined a custom name for your `item` and click save.

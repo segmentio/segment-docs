@@ -10,7 +10,7 @@ Our Clicky destination code is open-source on GitHub. You can check out the code
 
 ## Getting Started
 
-{% include content/connection-modes.md %}
+
 
 
 1. From the Segment web app, click **Catalog**.

@@ -453,7 +453,9 @@ All four timestamps pass through to your Warehouse for every ETL'd event. In mos
 `received_at` is UTC timestamp set by the Segment API when the API receives the payload from client or server. All tables use `received_at` for the sort key.
 
 > info ""
-> We recommend using the `received_at` timestamp for all queries based on time. The reason for this is two-fold. First, the `sent_at` timestamp relies on a client's device clock being accurate, which is generally unreliable. Secondly, we set `received_at` as the sort key in Redshift schemas, which means queries will execute much faster when using `received_at`. You can continue to use `timestamp` or `sent_at` timestamps in queries if `received_at` doesn't work for your analysis, but the queries will take longer to complete.
+> Segment recommends using the `received_at` timestamp for all queries based on time. The reason for this is two-fold. First, the `sent_at` timestamp relies on a client's device clock being accurate, which is generally unreliable. Secondly, Segment sets `received_at` as the sort key in Redshift schemas, which means queries will execute much faster when using `received_at`. You can continue to use `timestamp` or `sent_at` timestamps in queries if `received_at` doesn't work for your analysis, but the queries will take longer to complete. 
+>
+> For Business Tier customers, Segment suggests enabling `received_at` in the Selective Sync settings to ensure syncs and backfills complete successfully. 
 
 `received_at` does not ensure chronology of events.  For queries based on event chronology, `timestamp` should be used.
 
