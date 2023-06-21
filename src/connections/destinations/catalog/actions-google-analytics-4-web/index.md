@@ -34,13 +34,13 @@ Some parameters automatically populate prebuilt [dimensions and metrics](https:/
 
 Other parameters require you to create [custom dimensions and metrics](https://support.google.com/analytics/answer/10075209){:target="_blank"} to see the parameter values in Google Analytics. Whenever you create a custom parameter, you need to create a corresponding custom dimension or metric so you can see that data.
 
-{% include components/actions-fields.html settings="true"%}
-
 ### Understanding Event Parameters 
 
 Parameters provide additional information about the ways users interact with your website. For example, when someone views a product you sell, you can include parameters that describe the product they viewed, such as the name, category, and price.
 
 The automatically collected and enhanced measurement events include parameters by default. Google also provides a set of required and optional parameters to include with each recommended event. Additionally, you can add more event parameters when you need them.
+
+{% include components/actions-fields.html settings="true"%}
 
 ## FAQ & Troubleshooting
 
