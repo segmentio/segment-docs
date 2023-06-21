@@ -2,7 +2,6 @@
 title: Iterable (Actions) Destination
 hide-boilerplate: true
 id: 645babd9362d97b777391325
-private: true
 hide-dossier: true
 ---
 
