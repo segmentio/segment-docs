@@ -77,5 +77,8 @@ Note: Due to the way deep links are handled in Android, we can not know the refe
 
 For a sample implementation see our [Kotlin Sample App](https://github.com/segmentio/analytics-kotlin/tree/main/samples/kotlin-android-app).
 
-### Will I still see device-mode integrations listed as `false` in the integrations object?
+## Will I still see device-mode integrations listed as `false` in the integrations object?
 When you successfully package a plugin in device-mode, you will no longer see the integration listed as `false` in the integrations object for a Segment event. This logic is now packaged in the event metadata, and is not surfaced in the Segment debugger.
+
+## What is the instanceId set in context?
+The instanceId was introduced in [V 1.10.1](https://github.com/segmentio/analytics-kotlin/releases/tag/1.10.1) and correlates events to a particular instance of the client in a scenario when you might have multiple instances on a single app.
