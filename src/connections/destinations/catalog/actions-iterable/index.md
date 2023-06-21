@@ -27,8 +27,14 @@ Follow these steps to connect the Iterable (Actions) destination to your Segment
 
 1. Access the Segment web app and click on **Catalog**.
 2. In the Catalog, use the search function to find "Iterable". Select the **Iterable (Actions)** destination from the results, and choose which of your sources to connect the destination to.
-3. Configure the Connection Settings by adding the following information:
-   - **API Key**: To obtain the API Key, go to the Iterable app and navigate to Integrations > API Keys. Create a new API key with the 'Server-Side' type.
+
+
+1. From the Segment web app, navigate to **Connections > Catalog > Destinations**.
+2. Click the **Destination Actions** category item in the left navigation.
+3. Search for **Iterable (Actions)** and select it.
+4. Click **Configure Iterable (Actions)**.
+5. Select an existing Source to connect to Iterable (Actions).
+6. Complete the Destination Settings as listed below.
 
 {% include components/actions-fields.html %}
 
