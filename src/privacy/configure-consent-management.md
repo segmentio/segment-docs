@@ -26,6 +26,9 @@ Before you can configure consent in Segment, you'll need to take the following s
 
 ## Step 1: Create consent categories
 
+> warning "You can map website sources and event streaming destinations to consent categories during the private beta"
+> All other sources and destinations are not affected by consent mappings.
+
 1. From the [Segment homepage](https://app.segment.com/goto-my-workspace/){:target="_blank”}, select the Privacy tab and click **Consent Management**.
 2. On the Consent management page, click **Get started**.
 3. 
