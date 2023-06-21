@@ -35,7 +35,7 @@ You can also build Audiences based on custom traits. These traits can be collect
 You can also use computed traits in an Audience definition. For example, you can create a `total_revenue` computed trait and use it to generate an audience of `big_spender` customers that exceed a certain threshold.
 
 > info ""
-> Engage does support nested traits, however, accessing objects nested in arrays is not currently supported by the Audience builder. When arrays of objects are sent, they will be flattened into strings. For building audiences based on array traits, all the same conditions that would work on strings will work on the array. Within the builder, you can only use string operations like 'contains' and 'does not contain' to look for individual characters or a set of characters in the flattened array.
+> Engage supports nested traits, but the Audience builder doesn’t support accessing objects nested in arrays. When you send arrays of objects, they are flattened into strings. As a result, the same conditions that work on strings will work on the array. Within the builder, you can only use string operations like `contains` and `does not contain` to look for individual characters or a set of characters in the flattened array.
 
 ### Funnel Audiences
 
