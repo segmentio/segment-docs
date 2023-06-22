@@ -331,7 +331,7 @@ var body: some Scene {
     }
 }
 ```
-
+Calling this method with a valid URL parameter, will also trigger a Segment `Deep Link Opened` track event. 
 
 ## Changelog
 [View the Analytics Swift changelog on GitHub](https://github.com/segmentio/analytics-swift/releases){:target="_blank"}.   -->
