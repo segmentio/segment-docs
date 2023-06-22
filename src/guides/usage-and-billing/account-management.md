@@ -22,7 +22,7 @@ No. Deleting your account only stops you from accessing workspaces through your 
 
 ##How do I delete my account?
 
-To delete your account, go to the [User Settings](https://app.segment.com/settings/user) menu, click the **Delete account** option from the bottom of the page.
+To delete your account, go to the [User Settings](https://app.segment.com/settings/user){:target="_blank"} menu, and click **Delete account** at the bottom of the page.
 
 Please note that, Once the account is deleted you will not have access to the workspaces associated with your account attached to the email address you sign up with.
 
