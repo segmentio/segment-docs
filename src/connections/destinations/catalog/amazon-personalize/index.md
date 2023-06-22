@@ -720,7 +720,7 @@ Segment provides an example Lambda function, written in Python, for you to get u
 
 To build a Lambda function to process Segment events:
 1. Go to the Lambda service page in your AWS account.
-2. Ensure that you are in AWS Region 'us-west-2' (Required for communication from segment's lambdas).
+2. Ensure that you are in AWS Region 'us-west-2'. You must be in us-west-2 so that Segment's Lambdas can  communicate with your resources.
 3. Click **Create a function** to create a new function.
 
     ![A screenshot of the Lambda service page in AWS, with a box around the Create a function button.](images/LambdaDashboard.png)
