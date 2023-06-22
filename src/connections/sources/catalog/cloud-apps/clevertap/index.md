@@ -1,6 +1,6 @@
 ---
 title: 'CleverTap Source'
-hidden: true
+id: CwGEZ7eCcA
 ---
 
 [CleverTap](https://clevertap.com/){:target="_blank”} is the all-in-one customer engagement platform that helps brands personalize and optimize all consumer touch points to improve user engagement, retention, and lifetime value.
