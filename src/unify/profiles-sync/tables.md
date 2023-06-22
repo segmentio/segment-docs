@@ -127,6 +127,19 @@ The anonymous site visits sample used earlier would generate the following event
 
 In this table, Segment shows three observed identifiers. For each of the three identifiers, Segment outputs the Segment ID initially associated with the identifier.
 
+### The profile_traits_updates table
+
+The `profile_traits_updates` table maps each `segment_id` with all associated profile traits. 
+
+Segment updates this table:
+- for each identify call that updates one or more traits for a `segment_id`.
+- for any merge where traits from two previously separated profiles are now combined. 
+
+In the event that two profiles merge, Segment only updates the `profile_traits_updates` table for the `canonical_segment_id`, or the fully merged id.
+
+From the `profile_traits_updates` table, Segment materializes the [`profile_traits`](#the-profile_traits-table) table with all profiles and associated profile traits in your data warehouse. 
+
+
 ### The identifies, page, screens, and track tables
 
 These tables show the instrumented events themselves. Entries in these tables reflect payloads that you instrument according to the Segment spec.
