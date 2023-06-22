@@ -13,7 +13,7 @@ Use personalized SMS messages to connect with users in real-time, as they reach 
 You can choose between two SMS template types:
 
 - **Media**, which contains media and text content
-- **Text**, which contain text content of up to 1600 characters
+- **Text**, which contains text content of up to 1600 characters
 
 ## Build an SMS message template
 
