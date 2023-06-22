@@ -14,6 +14,7 @@ Since this is our most advanced method we have added sections to each docs page 
 - [Kissmetrics](/docs/connections/destinations/catalog/kissmetrics#alias)
 - [Mixpanel](/docs/connections/destinations/catalog/mixpanel#alias)
 - [Vero](/docs/connections/destinations/catalog/vero#alias)
+- [Amplitude](/docs/connections/destinations/catalog/amplitude/#alias)
 
 Here's the payload of a basic `alias` call that will associate this user's existing `id` (email address) with a new one (a database ID), with most [common fields](/docs/connections/spec/common/) removed:
 
