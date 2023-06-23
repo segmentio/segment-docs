@@ -71,10 +71,10 @@ This destination doesn't allow selecting an entire object for the Other properti
 Yes. HubSpot will automatically redirect API requests directly to an EU data center if your HubSpot instance is on an EU data center. See more in HubSpot's [Routing API Traffic](https://product.hubspot.com/blog/routing-api-traffic){:target="_blank"} article.
 
 ### How can we disable or delete a destination from segment?
-Please follow the instructions mentioned here to [disable](https://segment.com/docs/connections/destinations/actions/#disable-a-destination-action) or [delete](https://segment.com/docs/connections/destinations/actions/#delete-a-destination-action) a destination action from segment.
+Follow the instructions mentioned here to [disable](https://segment.com/docs/connections/destinations/actions/#disable-a-destination-action) or [delete](https://segment.com/docs/connections/destinations/actions/#delete-a-destination-action) a destination action from segment.
 
 ### How to uninstall your app from a HubSpot account?
-Please follow the steps mentioned [here](https://knowledge.hubspot.com/integrations/connect-apps-to-hubspot#uninstall-an-app) to uninstall or disconnect an app from your HubSpot account.
+Follow the steps mentioned [here](https://knowledge.hubspot.com/integrations/connect-apps-to-hubspot#uninstall-an-app) to uninstall or disconnect an app from your HubSpot account.
 
 ### How disconnecting and uninstalling might affect user's HubSpot accounts and data ?
 Segment will stop sending data to HubSpot right away.
