@@ -7715,7 +7715,7 @@ __metadata:
     remark-preset-lint-markdown-style-guide: ^5.1.0
     remark-preset-lint-recommended: ^6.1.0
     search-insights: ^2.0.3
-    semver: ^7.3.5
+    semver: ^7.5.2
     superagent: ^6.1.0
     tap-spot: ^1.1.1
     tippy.js: 5.2.0
@@ -7769,6 +7769,17 @@ __metadata:
   bin:
     semver: bin/semver.js
   checksum: 5eafe6102bea2a7439897c1856362e31cc348ccf96efd455c8b5bc2c61e6f7e7b8250dc26b8828c1d76a56f818a7ee907a36ae9fb37a599d3d24609207001d60
+  languageName: node
+  linkType: hard
+
+"semver@npm:^7.5.2":
+  version: 7.5.3
+  resolution: "semver@npm:7.5.3"
+  dependencies:
+    lru-cache: ^6.0.0
+  bin:
+    semver: bin/semver.js
+  checksum: 9d58db16525e9f749ad0a696a1f27deabaa51f66e91d2fa2b0db3de3e9644e8677de3b7d7a03f4c15bc81521e0c3916d7369e0572dbde250d9bedf5194e2a8a7
   languageName: node
   linkType: hard
 
