@@ -39,6 +39,7 @@ HubSpot Cloud Mode (Actions) provides the following benefits over the classic Hu
 3. Click **Configure HubSpot Cloud Mode (Actions)**.
 4. Select the source that will send data to HubSpot Cloud Mode (Actions) and follow the steps to name your destination.
 5. On the **Settings** tab, authenticate with HubSpot using OAuth. Your user must be a [super admin](https://knowledge.hubspot.com/settings/hubspot-user-permissions-guide#super-admin){:target="_blank"} in the HubSpot account to authenticate the connection.
+![Hubspot Scope Approval Screen](images/scopeApproval.png)
 6. Follow the steps in the Destinations Actions documentation on [Customizing mappings](/docs/connections/destinations/actions/#customize-mappings).
 7. Enable the destination and configured mappings.
 
@@ -68,4 +69,13 @@ This destination doesn't allow selecting an entire object for the Other properti
 
 ### Does the HubSpot Cloud Mode (Actions) destination support EU data residency?
 Yes. HubSpot will automatically redirect API requests directly to an EU data center if your HubSpot instance is on an EU data center. See more in HubSpot's [Routing API Traffic](https://product.hubspot.com/blog/routing-api-traffic){:target="_blank"} article.
+
+### How can we disable or delete a destination from segment?
+Please follow the instructions mentioned here to [disable](https://segment.com/docs/connections/destinations/actions/#disable-a-destination-action) or [delete](https://segment.com/docs/connections/destinations/actions/#delete-a-destination-action) a destination action from segment.
+
+### How to uninstall your app from a HubSpot account?
+Please follow the steps mentioned [here](https://knowledge.hubspot.com/integrations/connect-apps-to-hubspot#uninstall-an-app) to uninstall or disconnect an app from your HubSpot account.
+
+### How disconnecting and uninstalling might affect user's HubSpot accounts and data ?
+Segment will stop sending data to HubSpot right away.
 
