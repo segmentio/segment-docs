@@ -168,7 +168,9 @@ sections:
   - path: /connections/sources/catalog/libraries/mobile/react-native
     title: Overview
   - path: /connections/sources/catalog/libraries/mobile/react-native/implementation
-    title: Implementation / Upgrade
+    title: Implementation
+  - path: /connections/sources/catalog/libraries/mobile/react-native/migration
+    title: Upgrade
   - path: /connections/sources/catalog/libraries/mobile/react-native/destination-plugins
     title: Destination Plugins
   - path: /connections/sources/catalog/libraries/mobile/react-native/cloud-mode-destinations
