@@ -3,7 +3,7 @@ title: Visual HTML Editor
 beta: true
 ---
 
-Use the Visual HTML Editor for both code and visual editing capabilities from a single view. With the Visual HTML Editor, you can import or update your email template with code, or use the visual editor for a code free design experience. 
+Use the Visual HTML Editor for both code and visual editing capabilities from a single view. With the Visual HTML Editor, you can build your email template with code, copy and paste existing code, or use the visual editor for a code free design experience. 
 
 On this page, you'll learn how to use the Visual HTML Editor to build personalized email templates for your Engage campaigns.
 
@@ -18,7 +18,7 @@ From the **Select Editor** screen, select **Visual HTML Editor** and click **Bui
 ## Visual Editor 
 
 Use the visual editor on the right for a no-code option to design your email. With the visual editor, you can:
-- Add headings and text
+- Add or modify headings and text
 - Modify text color, size, and style
 - [Insert an image](#insert-an-image) 
 - Add [merge tags](#personalize-with-merge-tags) and links
@@ -35,8 +35,6 @@ To insert an image from the visual editor:
   - You can also click and drag the corners of the image to resize it in the visual editor. 
 4. Click **Save**.
 
-> info ""
-> The maximum image file size you can upload is 10 MB.
 
 ### Preview for desktop or mobile display
 
@@ -46,13 +44,13 @@ From the preview screen, you can toggle between desktop or mobile to view the em
 
 ## HTML Editor
 
-Use the HTML editor on the left to maintain your email template with code. Import existing code or build a new template in the editor. 
+Use the HTML editor on the left to maintain your email template with code. Copy and paste existing code or build a new template in the editor. 
 
-Engage displays any changes you make to the HTML editor in the [visual editor](#visual-editor) in real-time. However, if there are any errors in your code, you must fix the errors before Engage displays your updates.
+Engage displays any changes you make to the HTML editor in the [visual editor](#visual-editor) in real-time. However, if there are any errors detected in your code, you must fix the errors before Engage displays your updates.
 
 ### Error flagging
 
-Engage displays in-line error flags in the code editor to help you debug your code. If there are errors, Engage doesn't render any content in the visual editor until you've debugged your code. 
+Engage displays in-line error flags in the code editor to help you debug your code. If there are errors, Engage doesn't render any of the updated content in the visual editor until you've debugged your code. 
 
 ## Personalize with merge tags 
 Add merge tags to personalize your message with user profile traits.
@@ -83,6 +81,8 @@ For example, use  `{% if %}`, `{% elseif %}`, and `{% else %}` tags to call a pr
 ```
 {% endraw %}
 
+> success ""
+> If you use liquid templating, be sure to [test your email](/docs/engage/content/email/template/#test-the-email-template/) to make sure that everything renders properly. 
 
 To view more examples related to your use case, visit the [LiquidJS docs](https://liquidjs.com/tags/if.html){:target="blank"}.
 
@@ -111,6 +111,9 @@ After you design the email, click **Create Email Template**. Navigate to **Engag
 
 - Learn more about [building email templates](/docs/engage/content/template/) to include in your Engage campaigns.
 
-- You can also use the [Drag and Drop Editor](/docs/engage/content/email/editor/) in Engage to build Email templates with drag and drop functionality. 
+- You can also learn about the [Drag and Drop Editor](/docs/engage/content/email/editor/) in Engage to build Email templates with drag and drop functionality. 
+
+> warning ""
+> once you create an email with the Visual HTML Editor, you can't modify it with the Drag and Drop Editor, and vice versa.  
 
  

@@ -154,4 +154,7 @@ After you design the email, click **Create Email Template**.
 
 - Learn more about [building email templates](/docs/engage/content/template/) to include in your Engage campaigns. 
 
-- You can also use the [Visual HTML Editor](/docs/engage/content/email/visual-html-editor) for both code and visual editing capabilities from a single view.
+- You can learn about the [Visual HTML Editor](/docs/engage/content/email/visual-html-editor) for both code and visual editing capabilities from a single view.
+
+> warning ""
+> once you create an email with the Drag and Drop Editor, you can't modify it with the Visual HTML Editor, and vice versa.  
