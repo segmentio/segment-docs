@@ -11,7 +11,7 @@ This destination is maintained by Canny. For any issues with the destination, [c
 
 ## Getting Started
 
-{% include content/connection-modes.md %}
+
 
 1. Go to your [Canny Admin Segment Settings](https://canny.io/redirect?to=%2Fadmin%2Fsettings%2Fsegment).
 2. You will then be routed to Segment where you will be prompted to login and authorize the Canny Destination. Select the workspace and source you would like to integrate and click allow.

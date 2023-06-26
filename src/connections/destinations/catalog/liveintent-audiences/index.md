@@ -14,7 +14,7 @@ LiveIntent maintains this destination. For more information about this destinati
 
 ## Getting Started
 
-{% include content/connection-modes.md %}
+
 
 Before getting started, you need to request an API Key and AppId by sending an email to LiveIntent support at `support@liveintent.com`.
 

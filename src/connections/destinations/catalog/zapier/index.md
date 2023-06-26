@@ -8,7 +8,7 @@ id: 57c4996480412f644ff29f78
 
 ## Getting Started
 
-{% include content/connection-modes.md %}
+
 
 1. Navigate to your Zapier dashboard and select "Make A Zap" - you'll need at least one Zap so you can tell Segment where to route data later on.
 2. Search "Webhooks", then select "Catch Raw Hook" (Segment POSTs raw data to Zapier using our destination).

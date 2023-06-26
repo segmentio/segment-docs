@@ -3,9 +3,6 @@ title: WhatsApp Template
 plan: engage-premier
 ---
 
-> info "WhatsApp Public Beta"
-> WhatsApp as an Engage channel is in public beta. 
-
 With Twilio Engage, you can build personalized WhatsApp templates to store and use throughout marketing campaigns. 
 
 This page explains how to create, build, and submit WhatsApp templates for approval.

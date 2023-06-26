@@ -7,7 +7,7 @@ id: 59d3b44b8f1480000104be6b
 ---
 ## Getting Started
 
-{% include content/connection-modes.md %}
+
 
 Segment's **Optimizely Full Stack (previously Optimizely X)** destination supports the following Optimizely products:
 
