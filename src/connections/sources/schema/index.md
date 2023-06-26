@@ -12,13 +12,18 @@ Blocking events within the source schema will exclude them from API and MTU calc
 
 ## Schema view
 
-The Schema tab shows the schema of events/properties/traits for each source that Segment receives over a specific timeframe. It also shows when the events were last seen, how many events were allowed vs. blocked, and the downstream destinations those events are connected to.
+The Schema tab shows the schema of events, properties, and traits for each source that Segment receives over a specific timeframe. It also shows when the events were last seen, how many events were allowed vs. blocked, and the downstream destinations those events are connected to.
 
-You can view events by Segment call type in the Source Schema with the **Track**, **Identify**, and **Group** tabs. The Schema tracks Track event details by _event_ name while Identify and Group event details are tracked by _trait_ name. Additional event properties for Page or Track events can be viewed by clicking on the arrow to the left of the event name. Since the Schema tracks **Identify** traits, you will need to make sure you are passing traits into your Identify call in order to view event data in your schema. 
+You can view events by Segment call type in the Source Schema with the **Track**, **Identify**, and **Group** tabs. 
+The Schema tracks: 
+- Track event details by _event_ name 
+- Identify and Group event details by _trait_ name 
+
+Click the arrow to the left of the event name to view additional event properties for Page or Track events. Since the Schema tracks Identify traits, you will need to make sure you are passing traits into your Identify call in order to view event data in your schema. 
 
 The Schema shows "Page Viewed" for all Page calls under the **Track** tab. 
 
-The Source Schema UI changes slightly depending on whether you have a [Protocols Tracking Plan](https://segment.com/docs/protocols/tracking-plan/create/){:target='_blank’} connected to the source. If you do have a Tracking Plan connected to your source, the UI will show a **Planned** column that will indicate if the event is planned or unplanned. This allows you to quickly identify unplanned events and take action to align your schema with your Tracking Plan. If there is no Tracking Plan connected to the source, the UI will display a toggle next to each event where, if you're a Business Tier customer, you can simply block or allow that event at the source level. More about event filters below. 
+The Source Schema UI changes slightly depending on whether you have a [Protocols Tracking Plan](https://segment.com/docs/protocols/tracking-plan/create/){:target='_blank’} connected to the source. If you have a Tracking Plan connected to your source, the UI displays a **Planned** column that will indicate if the event is planned or unplanned. This allows you to quickly identify unplanned events and take action to align your schema with your Tracking Plan. If there is no Tracking Plan connected to the source, the UI will display a toggle next to each event where, if you're a Business Tier customer, you can simply block or allow that event at the source level.  
 
 ## Event filters
 
