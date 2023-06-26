@@ -14,7 +14,7 @@ You can navigate to the Visual HTML Editor in two ways:
 - From a Send Email step in a Journey. 
 
 From the **Select Editor** screen, select **Visual HTML Editor** and click **Build Email**.
-
+ 
 ## Visual Editor 
 
 Use the visual editor on the right for a no-code option to design your email. With the visual editor, you can:
