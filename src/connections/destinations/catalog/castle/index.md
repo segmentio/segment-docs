@@ -53,7 +53,8 @@ Calls are now visible in Castle dashboards in real-time.
     let castleDestination = CastleDestination(userJwt: "<USER_JWT>")
     analytics.add(plugin: castleDestination)
   ```
-  
+
+
 ### Android
 
 1. You can add the Castle Segment dependency two ways:
@@ -76,7 +77,7 @@ Calls are now visible in Castle dashboards in real-time.
     analytics = Analytics("<YOUR WRITE KEY>", applicationContext)
     analytics.add(plugin = CastleDestination(userJwt = "<USER_JWT>"))
   ```
-  
+
 
 ## Page
 
