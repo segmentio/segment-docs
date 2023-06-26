@@ -4,7 +4,7 @@ repo: analytics-next
 strat: node-js
 ---
 
-If you're using the [classic version of Analytics Node.js](/docs/connections/sources/catalog/libraries/server/node/classic) (named `analytics-node` on npm), follow these steps to upgrade to the [latest version of Analytics Node.js](/connections/sources/catalog/libraries/server/node/) (named `@segment/analytics-node` on npm). 
+If you're using the [classic version of Analytics Node.js](/docs/connections/sources/catalog/libraries/server/node/classic) (named `analytics-node` on npm), [upgrade to the latest version of Analytics Node.js](/connections/sources/catalog/libraries/server/node/) (named `@segment/analytics-node` on npm). 
 
 1. Change the named imports.
 
