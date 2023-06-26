@@ -12,7 +12,7 @@ Sprig maintains this destination. For any issues with the destination, consult [
 > **Good to know**: This page is about the [non-Actions Sprig (formerly UserLeap) destination](/docs/connections/destinations/catalog/userleap/). There's also a page about the [Actions-framework](/docs/connections/destinations/actions/) Sprig Segment destination. Both of these destinations receive data from Segment.
 ## Getting Started
 
-{% include content/connection-modes.md %}
+
 
 1. From the Destinations catalog page in the Segment App, click **Add Destination**.
 2. Search for "Sprig Cloud" in the Destinations Catalog, and select the Sprig Cloud destination.

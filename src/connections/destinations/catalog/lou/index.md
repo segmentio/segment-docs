@@ -9,7 +9,7 @@ This destination is maintained by Lou. For any issues with the destination, [con
 
 ## Getting Started
 
-{% include content/connection-modes.md %}
+
 
 1. From the Destinations catalog page in the Segment App, click **Add Destination**.
 2. Search for "Lou" in the Destinations Catalog, and select the Lou destination.

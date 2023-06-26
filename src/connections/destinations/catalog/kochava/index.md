@@ -11,7 +11,7 @@ This destination is maintained by Kochava. For any issues with the destination, 
 
 ## Getting Started
 
-{% include content/connection-modes.md %}
+
 
 1. If you have not already, create your app within the Kochava dashboard. Check out Kochava's documentation for information on [creating your app](http://support.kochava.com/create-manage-apps/create-edit-apps).
 2. From your Segment UI's Destinations page click on "Add Destination".

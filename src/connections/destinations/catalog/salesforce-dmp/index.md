@@ -17,7 +17,7 @@ us improve the Salesforce DMP Destination and its documentation,
 
 ## Getting Started
 
-{% include content/connection-modes.md %}
+
 
 Next, configure the Destination in the Segment web app:
 

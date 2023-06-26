@@ -14,7 +14,7 @@ iOS | [iOS SDK 1.0.3](https://github.com/segment-integrations/analytics-ios-inte
 
 ## Getting Started
 
-{% include content/connection-modes.md %}
+
 
 ### Web
 

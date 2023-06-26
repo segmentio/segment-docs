@@ -9,7 +9,7 @@ This destination is maintained by Button. For any issues with the destination, [
 
 ## Getting Started
 
-{% include content/connection-modes.md %}
+
 
 > info ""
 > Contact your Button representative for your Button API Key.
