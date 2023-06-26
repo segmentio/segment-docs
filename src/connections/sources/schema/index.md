@@ -48,8 +48,6 @@ If you no longer want to capture specific traits within `.identify()` and `.grou
 > warning ""
 > Blocked traits are not omitted from calls to device-mode Destinations.
 
-Segment's Page call will be 
-
 ## Schema Integration Filters
 
 All customers can filter specific events from being sent to specific Destinations (except for warehouses) by updating their tracking code. Here is an example showing how to send a single message only to Intercom and Google Analytics:
@@ -74,14 +72,3 @@ Segment Business tier customers can block track calls from delivering to specifi
 
 ![Schema integration filters](images/asset_d3SRmkWy.gif "Animation showing how to block events with the toggle switch")
 
-## Schema View
-
-At the top of your source page, you will see a row of tabs. 
-
-The Schema tab shows your Source Schema with all events that flow into that source.
-
-Page calls under the hood are Track calls (with some differences) which is why they can show up under Track calls in some areas of the UI.
-
-The Source Schema view has three 
-
-"Page Viewed" for all Page calls under the Track tab. 
