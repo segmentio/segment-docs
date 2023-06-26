@@ -36,7 +36,7 @@ This page is about the **Facebook Pixel**. For documentation on other Facebook d
 2. Search for "Facebook Pixel" in the Catalog, select it, and choose which of your sources to connect the destination to.
 3. In the destination settings, enter your `pixelId` from the [Pixels tab in Facebook Ads Manager](https://www.facebook.com/ads/manager/pixel/facebook_pixel).
 
-When you enable Facebook Pixel as a destination in your Segment workspace, Segment automatically initializes Facebook's pixel with your `pixelId` upon loading `analytics.js` for you, which means you should remove the native Facebook script from your page. 
+When you enable Facebook Pixel as a destination in your Segment workspace, Segment automatically initializes Facebook's pixel with your `pixelId` upon loading `analytics.js`. This means you should remove the native Facebook script from your page. 
 
 ## Page
 
