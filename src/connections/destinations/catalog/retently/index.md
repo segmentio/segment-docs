@@ -11,7 +11,7 @@ This destination is maintained by Retently. For any issues with the destination,
 
 ## Getting Started
 
-{% include content/connection-modes.md %}
+
 
 The Retently destination allows you to send transactional surveys when an event is triggered in Segment.
 

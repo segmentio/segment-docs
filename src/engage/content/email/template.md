@@ -36,10 +36,12 @@ To configure an email template, click **Create Template**.
 You can send test emails before you include a template in marketing campaigns
 
 1. Select the email template you want to test on the Templates screen.
-2. From the Template Settings page, click **Test Email**.
-3. Enter email addresses that will receive the test email.
-  - The profile that you send test messages to must have a userId in Segment.
-4. Select **Send Test Email**.
+2. From the Template Settings page, click **Test email**.
+3. If your template has profile traits, enter a trait value for the test email. This ensures that your merge tags work as expected.
+- To test a default value, leave the profile traits field blank. Default values must be assigned in your merge tags. For example, `loyal customer` would be the default for the following merge tag: {% raw %}```{{profile.traits.first_name | default: "loyal customer"}}```{% endraw %}.
+4. Enter recipient email addresses for the test message.
+- Profiles that you send test messages to must have a userId in Segment.
+5. Select **Send test email**.
 
 > success ""
 > You can also test email templates directly from a [Send an Email step](/docs/engage/journeys/build-journey/#send-an-email) in Journeys.
@@ -50,7 +52,7 @@ Personalize email content in Twilio Engage with real-time profile traits in your
 
 As you configure the template, click **Merge Tags** and select the profile traits to include. Engage inserts the merge tags based on cursor placement.
 
-You can also add merge tags in heading and body text as you design an email with the [visual editor](/docs/engage/content/email/editor/).
+You can also add merge tags in heading and body text as you design an email with the [visual editor](/docs/engage/content/email/editor/). Engage supports [liquid templating](https://liquidjs.com/tags/if.html){:target="blank"} to create dynamic content in the email design editor.
 
 > info ""
 > To learn more about profile traits, visit Segment's [Computed Traits](/docs/engage/audiences/computed-traits) and [SQL Traits](/docs/engage/audiences/sql-traits/) documentation.

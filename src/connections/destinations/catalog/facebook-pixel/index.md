@@ -30,7 +30,7 @@ This page is about the **Facebook Pixel**. For documentation on other Facebook d
 
 ## Getting Started
 
-{% include content/connection-modes.md %}
+
 
 1. From the Segment web app, click **Catalog**.
 2. Search for "Facebook Pixel" in the Catalog, select it, and choose which of your sources to connect the destination to.
@@ -129,7 +129,7 @@ To send *Legacy Conversion* events, use the Segment setting called "Legacy Conve
 
 ### Custom Events
 
-To send *Custom* events, send any event that does not appear in either mapping. All properties you included in the event will be included as event properties.
+To send *Custom* events, send any event that does not appear in either mapping. All properties you include in the event are included as event properties. Any events you don't add to the "Map Your Events to Standard FB Events" setting are sent to Facebook as a custom event. There is no setting to add custom events in the Facebook Pixel Destination configuration.
 
 ### Timestamps
 

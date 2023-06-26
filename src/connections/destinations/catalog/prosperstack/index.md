@@ -10,7 +10,7 @@ ProsperStack maintains this destination. For any issues with the ProsperStack De
 
 ## Getting Started
 
-{% include content/connection-modes.md %}
+
 
 ### Automated setup
 

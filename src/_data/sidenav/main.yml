@@ -112,6 +112,8 @@ sections:
       title: 'Spec: Group'
     - path: /connections/spec/identify
       title: 'Spec: Identify'
+    - path: /connections/spec/alias
+      title: 'Spec: Alias'
     - path: /connections/spec/common
       title: 'Spec: Common Fields'
     - path: /connections/spec/mobile
@@ -150,6 +152,15 @@ sections:
       title: Set Up a Custom Domain Proxy in Segment
     - path: /connections/sources/visual-tagger
       title: Visual Tagger
+    - section_title: Schema
+      slug: connections/schema
+      section: 
+      - path: /connections/sources/schema/
+        title: Schema Controls 
+      - path: /connections/sources/schema/destination-data-control
+        title: Using Schema Controls 
+      - path: /connections/sources/schema/schema-unique-limits
+        title: Schema Unique Limits   
   - section_title: Destinations
     slug: connections/destinations
     section:
@@ -171,9 +182,9 @@ sections:
       title: Reverse ETL Overview
     - path: /connections/reverse-etl/reverse-etl-catalog
       title: Reverse ETL Catalog
-    - section_title: Reverse ETL Source Setup Guides  
+    - section_title: Reverse ETL Source Setup Guides
       slug: connections/reverse-etl/reverse-etl-source-setup-guides
-      section: 
+      section:
       - path: /connections/reverse-etl/reverse-etl-source-setup-guides/bigquery-setup
         title: BigQuery Reverse ETL Setup
       - path: /connections/reverse-etl/reverse-etl-source-setup-guides/redshift-setup
@@ -189,6 +200,8 @@ sections:
       title: Source Functions
     - path: /connections/functions/destination-functions
       title: Destination Functions
+    - path: /connections/functions/insert-functions
+      title: Destination Insert Functions
     - path: /connections/functions/environment
       title: Functions Environment
     - path: /connections/functions/usage
@@ -251,6 +264,8 @@ sections:
     title: Using Schema Controls
   - path: /connections/event-delivery
     title: Event Delivery
+  - path: /connections/delivery-overview
+    title: Delivery Overview
   - path: /connections/find-writekey
     title: Locate Your Write Key
   - path: /connections/integration_error_codes
@@ -404,6 +419,8 @@ sections:
       title: Email Campaigns
     - path: '/engage/campaigns/sms-campaigns'
       title: SMS Campaigns
+    - path: '/engage/campaigns/broadcasts'
+      title: Broadcasts
     - path: '/engage/campaigns/whatsapp-campaigns'
       title: WhatsApp Campaigns
   - path: '/engage/analytics'

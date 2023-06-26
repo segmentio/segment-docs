@@ -1,6 +1,7 @@
 ---
 title: test tier table
 hidden: true
+published: false
 ---
 
 

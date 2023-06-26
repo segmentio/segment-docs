@@ -10,7 +10,7 @@ This destination is maintained by Vitally. For any issues with the destination, 
 
 ## Getting Started
 
-{% include content/connection-modes.md %}
+
 
 Enabling Vitally as a destination in Segment can be done in one click from your Vitally account. 
 

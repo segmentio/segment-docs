@@ -8,7 +8,6 @@ Braze’s destination plugin code is open source and available on GitHub. You ca
 
 ## Getting Started
 
-
 1. From the Segment web app, click **Catalog**.
 2. Search for "Braze" in the Catalog, select it, and choose which of your sources to connect the destination to.
 3. In the Destination Settings, add the **API Key**, found in the Braze Dashboard in *App Settings > Manage App Group*.

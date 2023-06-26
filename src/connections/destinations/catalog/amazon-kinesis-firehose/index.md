@@ -7,7 +7,7 @@ id: 59022a2270a3e552b955caa9
 
 ## Getting Started
 
-{% include content/connection-modes.md %}
+
 
 To get started:
   1. Create at least one Kinesis Firehose delivery stream. You can follow these [instructions](http://docs.aws.amazon.com/firehose/latest/dev/basic-create.html){:target="_blank"} to create a new delivery stream.

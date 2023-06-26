@@ -2,6 +2,8 @@
 title: CustomFit Destination
 rewrite: true
 id: 5cee939ff784ec0001f1cf91
+hidden: true
+published: false
 ---
 [CustomFit.ai](https://customfit.ai/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) is an intelligent `App Experience Engine` for B2C apps(Mobile/Web/IoT), with which one can effortlessly craft hyper-personalized app experiences & alternative user journeys to each of their user or segment of users with zero code. Every user is unique, so should be your app.
 
@@ -11,7 +13,7 @@ This destination is maintained by CustomFit.ai. For any issues with the destinat
 
 ## Getting Started
 
-{% include content/connection-modes.md %}
+
 
 1. From the Segment web app, click **Catalog**.
 2. Search for "CustomFit.ai" in the Catalog, select it, and choose which of your sources to connect the destination to.

@@ -12,7 +12,7 @@ This destination is maintained by CustomerSuccessBox. For any issues with the de
 
 ## Getting Started
 
-{% include content/connection-modes.md %}
+
 
 
 ### Adding Destination
