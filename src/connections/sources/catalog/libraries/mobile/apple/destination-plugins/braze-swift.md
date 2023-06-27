@@ -128,7 +128,7 @@ Segment sends all other traits (except Braze's [reserved user profile fields](ht
 > info "Tip"
 > To lower [Data Point](https://www.braze.com/docs/user_guide/onboarding_with_braze/data_points/) use, limit the events you send to Braze to those that are relevant for campaigns and segmentation to the Braze destination. For more information, see [Schema Controls](/docs/protocols/schema/).
 
-The Braze Swift destination plugin currently only supports sending `logPurchase` events, and cusotm evnets are not supported in device mode. Please review the [plugin code](https://github.com/braze-inc/analytics-swift-braze/blob/main/Sources/SegmentBraze/BrazeDestination.swift) for more information.
+The Braze Swift destination plugin currently only supports sending `logPurchase` events, and custom events are not supported in device mode. Please review the [plugin code](https://github.com/braze-inc/analytics-swift-braze/blob/main/Sources/SegmentBraze/BrazeDestination.swift) for more information.
 
 Braze supports currency codes as specified in [their Purchase Object Specification](https://www.braze.com/docs/api/objects_filters/purchase_object/). Be aware that any currency reported other than USD displays in [the Braze UI in USD based on the exchange rate on the date it was reported](https://www.braze.com/docs/developer_guide/platform_integration_guides/web/analytics/logging_purchases/#logging-purchases).
 
