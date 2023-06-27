@@ -15,7 +15,7 @@ You can navigate to the Visual HTML Editor in two ways:
 
 From the **Select Editor** screen, select **Visual HTML Editor** and click **Build Email**.
  
-## Visual Editor 
+## Visual editor 
 
 Use the visual editor on the right for a no-code option to design your email. With the visual editor, you can:
 - Add or modify headings and text
@@ -42,7 +42,7 @@ To preview your email template, click the preview icon in the visual editor tool
 
 From the preview screen, you can toggle between desktop or mobile to view the email in both displays.  
 
-## HTML Editor
+## HTML editor
 
 Use the HTML editor on the left to maintain your email template with code. Copy and paste existing code or build a new template in the editor. 
 
@@ -50,7 +50,7 @@ Engage displays any changes you make to the HTML editor in the [visual editor](#
 
 ### Error flagging
 
-Engage displays in-line error flags in the code editor to help you debug your code. If there are errors, Engage doesn't render any of the updated content in the visual editor until you've debugged your code. 
+Engage displays in-line error flags in the code editor to help you debug your code. If there are errors, Engage doesn't render any of the updated content in the visual editor until you debug your code. 
 
 ## Personalize with merge tags 
 Add merge tags to personalize your message with user profile traits.
@@ -93,7 +93,7 @@ You can add unsubscribe links from the visual or HTML editor.
 
 From the visual editor: 
 
-1. Select the link icon in the visual editor toolbar. 
+1. Select the link icon in the [visual editor](#visual-editor) toolbar. 
 2. Enter `[unsubscribe]` in the URL field. 
 3. Enter the link attributes and text. 
 4. Click **Save**.
