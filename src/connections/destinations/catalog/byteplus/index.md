@@ -14,7 +14,7 @@ This destination is maintained by BytePlus. For any issues with the destination,
 
 ## Getting Started
 
-{% include content/connection-modes.md %}
+
 
 
 1. From the Destinations catalog page in the Segment App, click **Add Destination**.

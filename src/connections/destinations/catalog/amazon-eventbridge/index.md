@@ -10,7 +10,7 @@ In addition to already supported destinations like Kinesis, S3, and Redshift, yo
 
 ## Getting Started
 
-{% include content/connection-modes.md %}
+
 
   1. Provide Segment your AWS Account ID and the region you'd like us to configure the Segment Partner Event Source in. Ensure you've provided the same region in Segment where you'd like to configure your Event Bus.
   2. Once you send an event through with the destination enabled, we'll create a Partner Event Source in Amazon EventBridge, which you can activate in the AWS Console.

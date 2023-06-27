@@ -9,7 +9,7 @@ Our Flurry destination code is open sourced on GitHub. Feel free to check it out
 
 ## Getting Started
 
-{% include content/connection-modes.md %}
+
 
 1. From the Segment web app, click **Catalog**.
 2. Search for "Flurry" in the Catalog, select it, and choose which of your sources to connect the destination to.

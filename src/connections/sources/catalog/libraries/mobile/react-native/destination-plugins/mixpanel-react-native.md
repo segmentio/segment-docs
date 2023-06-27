@@ -9,7 +9,7 @@ Segment's Mixpanel destination plugin code is open source and available on GitHu
 
 ## Getting Started
 
-{% include content/connection-modes.md %}
+
 
 1. From the Segment app Destinations page click on **Add Destination**.
 2. Search for Mixpanel in the Destinations Catalog and confirm the Source to connect to.

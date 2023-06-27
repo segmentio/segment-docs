@@ -12,7 +12,7 @@ This destination is maintained by Freshmarketer. For any issues with the destina
 
 ## Getting Started
 
-{% include content/connection-modes.md %}
+
 
 1. From your Segment UI's Destinations page click **Add Destination**.
 2. Search for "Freshmarketer" in the Destinations Catalog and confirm the Source you'd like to connect to.

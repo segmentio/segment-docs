@@ -19,7 +19,7 @@ Segment provides specific implementation details for A/B Smartly in the sections
 
 ## Getting Started
 
-{% include content/connection-modes.md %}
+
 
 1. From the Destinations catalog page in the Segment App, click **Add Destination**.
 2. Search for "A/B Smartly" in the Destinations Catalog, and select the "A/B Smartly" destination.

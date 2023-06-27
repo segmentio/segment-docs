@@ -7,7 +7,7 @@ SnapEngage is an enterprise chat software for businesses. It allows you to captu
 
 ## Getting Started
 
-{% include content/connection-modes.md %}
+
 
 1. From the Segment web app, click **Catalog**.
 

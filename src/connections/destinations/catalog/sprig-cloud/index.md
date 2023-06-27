@@ -17,7 +17,7 @@ Segment placed the Classic destination framework in maintenance mode. Sprig enco
 
 ## Getting Started with Classic
 
-{% include content/connection-modes.md %}
+
 
 1. In the Segment web app, navigate to **Catalog > Destinations**.
 2. Type *Sprig* in the **Filter Destinations** field.
