@@ -911,7 +911,7 @@ items:
     isCloudEventSource: true
     slug: inflection
     url: connections/sources/catalog/cloud-apps/inflection
-    hidden: true
+    hidden: false
     regions:
       - us
     endpoints:
@@ -1595,7 +1595,7 @@ items:
     isCloudEventSource: false
     slug: postgres
     url: connections/sources/catalog/cloud-apps/postgres
-    hidden: false
+    hidden: true
     regions:
       - us
     endpoints:
