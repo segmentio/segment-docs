@@ -4,7 +4,7 @@ title: Analytics Swift Braze Plugin
 
 [Braze](https://www.braze.com/), formerly Appboy, is an engagement platform that empowers growth by helping marketing teams to build customer loyalty through mobile, omni-channel customer experiences.
 
-Braze’s destination plugin code is open source and available on GitHub. You can view it [here.](https://github.com/braze-inc/analytics-swift-braze). This destination plugin is maintained by Braze. For any issues with the destination plugin code, please reach out to Braze's support.
+Braze’s destination plugin code is open source and available on GitHub. You can view it [here](https://github.com/braze-inc/analytics-swift-braze). This destination plugin is maintained by Braze. For any issues with the destination plugin code, please reach out to Braze's support.
 
 ## Getting Started
 
@@ -16,16 +16,17 @@ Braze’s destination plugin code is open source and available on GitHub. You ca
 
 ## Adding the dependency
 
-### through Xcode
+### Through Xcode
 In the Xcode `File` menu, click `Add Packages`.  You'll see a dialog where you can search for Swift packages.  In the search field, enter the URL to this repository.
+```
+https://github.com/segment-integrations/analytics-swift-braze
+```
 
-https://github.com/segment-integrations/analytics-swift-braze{:target="_blank"}
+You'll then have the option to pin to a version, or specific branch, as well as which project in your workspace to add it to. Once you've made your selections, click the `Add Package` button.  
 
-You'll then have the option to pin to a version, or specific branch, as well as which project in your workspace to add it to.  Once you've made your selections, click the `Add Package` button.  
+### Through Package.swift
 
-### through Package.swift
-
-Open your Package.swift file and add the following do your the `dependencies` section:
+Open your Package.swift file and add the following to the `dependencies` section:
 
 ```
 .package(
@@ -53,14 +54,6 @@ let analytics = Analytics(configuration: Configuration(writeKey: "<YOUR WRITE KE
                     .trackApplicationLifecycleEvents(true))
 analytics.add(plugin: BrazeDestination())
 ```
-## Screen
-If you're not familiar with the Segment Specs, take a look to understand what the [Page method](/docs/connections/spec/page/) does. An example call would look like:
-
-```swift
-analytics.screen(title: "SomeScreen")
-```
-
-Segment sends Page calls to Braze as custom events if you have enabled either **Track All Pages** or **Track Only Named Pages** in the Segment Settings. 
 
 ## Identify
 
@@ -135,81 +128,7 @@ Segment sends all other traits (except Braze's [reserved user profile fields](ht
 > info "Tip"
 > To lower [Data Point](https://www.braze.com/docs/user_guide/onboarding_with_braze/data_points/) use, limit the events you send to Braze to those that are relevant for campaigns and segmentation to the Braze destination. For more information, see [Schema Controls](/docs/protocols/schema/).
 
-If you're not familiar with the Segment Specs, take a look to understand what the [Track method](/docs/connections/spec/track/) does. An example call looks like:
-
-```swift
-struct TrackProperties: Codable {
-        let someValue: String
-}
-
-analytics.track(name: "My Event", properties: TrackProperties(someValue: "Hello"))
-```
-When you `track` an event, Segment sends that event to Braze as a custom event.
-
-> note ""
-> Braze requires that you include a `userId` or `braze_id` for all calls made in cloud-mode. Segment sends a `braze_id` if `userId` is missing. When you use a device-mode connection, Braze automatically tracks anonymous activity using the `braze_id` if a `userId` is missing.
-
-> note ""
-> Segment removes the following custom properties reserved by Braze:
->
->  - `time`
->  - `quantity`
->  - `event_name`
->  - `price`
->  - `currency`
-
-### Order Completed
-
-When you `track` an event with the name `Order Completed` using the [e-commerce tracking API](/docs/connections/spec/ecommerce/v2/), Segment sends the products you've listed to Braze as purchases.
-
-### Purchases
-
-When you pass [ecommerce events](/docs/connections/spec/ecommerce/v2/), the name of the event becomes the `productId` in Braze. An example of a purchase event looks like:
-
-```swift
-struct TrackProperties: Codable {
-        let revenue: String
-        let currency: String
-}
-
-analytics.track(name: "Purchased Item", properties: TrackProperties(revenue: "2000", currency: "USD"))
-```
-
-The example above would have "Purchased Item" as its `productId` and includes two required properties that you must pass in:
-
-- `revenue`
-- `currency`
+The Braze Swift destination plugin currently only supports sending `logPurchase` events, and cusotm evnets are not supported in device mode. Please review the [plugin code](https://github.com/braze-inc/analytics-swift-braze/blob/main/Sources/SegmentBraze/BrazeDestination.swift) for more information.
 
 Braze supports currency codes as specified in [their Purchase Object Specification](https://www.braze.com/docs/api/objects_filters/purchase_object/). Be aware that any currency reported other than USD displays in [the Braze UI in USD based on the exchange rate on the date it was reported](https://www.braze.com/docs/developer_guide/platform_integration_guides/web/analytics/logging_purchases/#logging-purchases).
-
-You can add more product details in the form of key-value pairs to the `properties` object. The following reserved keys are not passed to Braze if included in your Track call's `properties` object:
-
-- `time`
-- `product_id`
-- `quantity`
-- `event_name`
-- `price`
-
-
-## Group
-
-If you're not familiar with the Segment Specs, take a look to understand what the [Group method](/docs/connections/spec/group/) does. An example call would look like:
-
-```swift
-struct MyTraits: Codable {
-        let username: String
-        let email: String
-        let plan: String
-}
-
-// ...
-
-analytics.group(groupId: "group123", traits: MyTraits(
-        username: "MisterWhiskers",
-        email: "hello@test.com",
-        plan: "premium"))
-```
-
-When you call `group`, Segment sends a custom attribute to Braze with the name `ab_segment_group_<groupId>`, where `<groupId>` is the group's ID in the method's parameters. For example, if the group's ID is `1234`, then the custom attribute name is `ab_segment_group_1234`. The value of the custom attribute is `true`.
-
 
