@@ -80,8 +80,12 @@ Segment sends it to the `dataLayer` as an object like this:
 ## Troubleshooting
 
 ### 404 Error
-
 If you are seeing `404` error on the JavaScript console of your page and it is attributed to Google Tag Manager, it is likely that you have yet to publish your GTM container.
+
+### Duplicate Events
+If you have Google Ads enabled and are seeing duplicate events in GTM, check to see if the event is set as a conversion in Google Ads. Duplicate conversions are relatively common when using both Google Ads and GTM, as our Adwords destination initializes the gtag script with the dataLayer itself. So, when you fire a mapped event, we submit the payload directly to the dataLayer.
+
+Google recommends using [transactionIds](https://support.google.com/google-ads/answer/6386790) to prevent this duplication from occurring. 
 
 
 ## Appendices
