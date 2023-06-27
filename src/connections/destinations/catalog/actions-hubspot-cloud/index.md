@@ -74,7 +74,7 @@ Yes. HubSpot will automatically redirect API requests directly to an EU data cen
 Follow the instructions in the docs to [disable](/docs/connections/destinations/actions/#disable-a-destination-action) or [delete](/docs/connections/destinations/actions/#delete-a-destination-action) a destination action from Segment.
 
 ### How can I uninstall an app from my HubSpot account?
-Follow the steps mentioned [here](https://knowledge.hubspot.com/integrations/connect-apps-to-hubspot#uninstall-an-app) to uninstall or disconnect an app from your HubSpot account.
+Follow the steps mentioned [here](https://knowledge.hubspot.com/integrations/connect-apps-to-hubspot#uninstall-an-app){:target="_blank"} to uninstall or disconnect an app from your HubSpot account.
 
 ### How does disconnecting and uninstalling affect a user's data and HubSpot account?
 Segment immediately stops sending data to HubSpot after you disconnect and uninstall a HubSpot account.
