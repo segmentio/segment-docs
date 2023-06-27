@@ -27408,7 +27408,7 @@ items:
   display_name: Google Analytics 4 Cloud
   name: Google Analytics 4 Cloud
   slug: google-analytics-4-cloud
-  hidden: false
+  hidden: true
   endpoints:
   - US
   regions:
@@ -69849,14 +69849,14 @@ items:
 - id: 63bedc136a8484a53739e013
   display_name: VWO Cloud Mode (Actions)
   name: VWO Cloud Mode (Actions)
-  slug: vwo-cloud-mode-actions
-  hidden: true
+  slug: actions-vwo-cloud
+  hidden: false
   endpoints:
   - US
   regions:
   - us-west-2
   - eu-west-1
-  url: connections/destinations/catalog/vwo-cloud-mode-actions
+  url: connections/destinations/catalog/actions-vwo-cloud
   previous_names:
   - VWO Cloud Mode (Actions)
   website: https://vwo.com
@@ -70250,6 +70250,173 @@ items:
       timestamp:
         '@path': $.timestamp
     trigger: type = "track"
+- id: 637c192eba61b944e08ee158
+  display_name: VWO Web Mode (Actions)
+  name: VWO Web Mode (Actions)
+  slug: actions-vwo-web
+  hidden: false
+  endpoints:
+  - US
+  regions:
+  - us-west-2
+  - eu-west-1
+  url: connections/destinations/catalog/actions-vwo-web
+  previous_names:
+  - VWO Web Mode (Actions)
+  website: https://vwo.com
+  status: PUBLIC_BETA
+  categories:
+  - A/B Testing
+  - Heatmaps & Recordings
+  logo:
+    url: https://cdn.filepicker.io/api/file/o9X4IJO1RDegnGVmfje0
+  mark:
+    url: https://cdn.filepicker.io/api/file/L6U6f3KrRoScOQbUDMKj
+  methods:
+    track: true
+    identify: true
+    group: true
+    alias: true
+    screen: false
+    page: true
+  platforms:
+    browser: true
+    mobile: false
+    server: false
+    warehouse: false
+  components: []
+  browserUnbundlingSupported: false
+  browserUnbundlingPublic: false
+  replay: false
+  connection_modes:
+    device:
+      web: false
+      mobile: false
+      server: false
+    cloud:
+      web: true
+      mobile: false
+      server: false
+  settings:
+  - name: addSmartcode
+    type: boolean
+    defaultValue: true
+    description: >-
+      When enabled, Segment will load the VWO SmartCode onto the webpage. When
+      disabled, you will have to manually add SmartCode to your webpage. The
+      setting is enabled by default, however we recommended manually adding
+      SmartCode to the webpage to avoid flicker issues.
+    required: true
+    label: Add Asynchronous SmartCode
+  - name: libraryTolerance
+    type: number
+    defaultValue: 2500
+    description: >-
+      The maximum amount of time (in milliseconds) to wait for VWO’s full
+      library to be downloaded before simply displaying your original page.
+    required: true
+    label: Library Tolerance
+  - name: settingsTolerance
+    type: number
+    defaultValue: 2000
+    description: >-
+      The maximum amount of time (in milliseconds) to wait for test settings
+      before VWO will simply display your original page.
+    required: true
+    label: Settings Tolerance
+  - name: useExistingJquery
+    type: boolean
+    defaultValue: false
+    description: >-
+      If your page already includes JQuery, you can set this to “true”.
+      Otherwise, VWO will include JQuery onto the page for you. VWO needs JQuery
+      on the page to function correctly. 
+    required: true
+    label: Use Existing JQuery
+  - name: vwoAccountId
+    type: number
+    defaultValue: 0
+    description: Your VWO account ID, used for fetching your VWO async smart code.
+    required: true
+    label: VWO Account ID
+  actions:
+  - id: 6uTbf9uHvZBJ3YnMmFHWtZ
+    name: Track Event
+    slug: trackEvent
+    description: Sends Segment's track event to VWO
+    platform: WEB
+    hidden: false
+    defaultTrigger: type = "track"
+    fields:
+    - id: jNmcxw9HaJsSVJUp54bW9d
+      sortOrder: 0
+      fieldKey: eventName
+      label: Name
+      type: STRING
+      description: Name of the event.
+      placeholder: ''
+      defaultValue:
+        '@path': $.event
+      required: true
+      multiple: false
+      choices: null
+      dynamic: false
+      allowNull: false
+    - id: 7nTcRCU7denYUgiFAqxr5x
+      sortOrder: 1
+      fieldKey: properties
+      label: Properties
+      type: OBJECT
+      description: >-
+        JSON object containing additional properties that will be associated
+        with the event.
+      placeholder: ''
+      defaultValue:
+        '@path': $.properties
+      required: false
+      multiple: false
+      choices: null
+      dynamic: false
+      allowNull: false
+  - id: tR1J9N9e3vk4XtqGjUfTSm
+    name: Identify User
+    slug: identifyUser
+    description: Sends Segment's page event to VWO
+    platform: WEB
+    hidden: false
+    defaultTrigger: type = "identify"
+    fields:
+    - id: nL8QQNucajeL5tiekANaDm
+      sortOrder: 0
+      fieldKey: attributes
+      label: Attributes
+      type: OBJECT
+      description: >-
+        JSON object containing additional attributes that will be associated
+        with the user.
+      placeholder: ''
+      defaultValue:
+        '@path': $.traits
+      required: true
+      multiple: false
+      choices: null
+      dynamic: false
+      allowNull: false
+  presets:
+  - actionId: 6uTbf9uHvZBJ3YnMmFHWtZ
+    name: Track Event
+    fields:
+      eventName:
+        '@path': $.event
+      properties:
+        '@path': $.properties
+    trigger: type = "track"
+  - actionId: tR1J9N9e3vk4XtqGjUfTSm
+    name: Identify User
+    fields:
+      attributes:
+        '@path': $.traits
+    trigger: type = "identify"
 - id: 5d25d6e0885427000195bf80
   display_name: WalkMe
   name: WalkMe
