@@ -150,3 +150,9 @@ Segment does not currently support SSH tunneling to Redshift. You can usually al
 ### Do you support Redshift Serverless?
 
 Segment does not currently support Serverless Redshift. While you can set up the connection in the Segment app, Segment does not have the functionality to query Redshift's SYS tables.
+
+### How can I change the host for an existing Redshift destination?
+
+Segment recommends that you first disable the sync for the warehouse, check that the syncs that are in progress have stopped/finished, and then update the host. Once you've updated the host, you can then re-enable the sync.
+
+The Segment connector picks up where the last completed sync left off, and does not sync any historical data with the new host. The historical data that occurred when you were updating the host needs to be backfilled to your new connection using the [Replay Feature](/docs/guides/what-is-replay/). Replays are currently only available for Business Tier customers. [Contact Segment Support](https://segment.com/contact){:target="_blank”} and Segment's Success Engineers will be able to assist you with a Replay.
