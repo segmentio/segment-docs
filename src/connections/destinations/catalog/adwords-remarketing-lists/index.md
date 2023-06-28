@@ -123,6 +123,10 @@ You can set an email on the user profile by including `email` as a trait, as a p
 
 If a user has more than one email address or IDFA on their account as `external_ids`, Engage sends the most recent id on the user profile to Adwords for matching. The match rate will be low if Google can't identify users based on the data that you provide.
 
+### Invalid Settings error in Event Delivery
+
+Make sure that this destination was created in [Engage](/docs/engage/) as it requires additional event data not available in standard destinations.
+
 ## FAQs
 
 #### What Google Ads campaigns does Engage support?
