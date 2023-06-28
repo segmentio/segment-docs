@@ -15,7 +15,7 @@ This destination is maintained by PlayerZero. For any issues with the destinatio
 3. Select PlayerZero Cloud, then click **Configure PlayerZero Cloud**.
 4. Select an existing Source to connect to PlayerZero Cloud and Click **Next**.
 5. Enter a destination name and click **Create Destination**.
-6. Congratulations! You completed setup and events will begin streaming into PlayerZero.
+6. Congratulations! You've completed setup and events will begin streaming into PlayerZero.
 
 
 {% include components/actions-fields.html %}
