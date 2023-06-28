@@ -693,7 +693,7 @@ import {
   }
 ```
 ### How do I add to the context Object?
-Similar to the integrations object above you'll need to use a plugin to access and modify the context object. For example, if you'd like to add `context.groupId` to every Track call this can be added like so:
+Like with the integrations object above, you'll need to use a plugin to access and modify the context object. For example, if you'd like to add `context.groupId` to every Track call, you should create a plugin like this:
 ```js
 //in AddToContextPlugin.js
 import {
