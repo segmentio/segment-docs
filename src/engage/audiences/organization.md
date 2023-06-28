@@ -89,9 +89,8 @@ If your target Space doesn't include the cloned Audience's events and traits, En
 
 To delete an Audience, follow the steps below:
 
-1. Navigate to the Audiences tab within your Space.
+1. Navigate to the **Audiences** tab within your Space.
 2. Select the Audience you want to delete, then click **Settings**.
-3. In **Settings**, click **Enabled** to toggle to **Disabled**.
-4. Click on the **Delete Audience...** button.
-5. A prompt to Delete Audience will appear. To confirm the deletion, click **Delete Audience**.
+3. Click **Enabled** to toggle to **Disabled**, then click **Delete Audience...**.
+4. On the Delete Audience prompt, click **Delete Audience** to confirm.
 
