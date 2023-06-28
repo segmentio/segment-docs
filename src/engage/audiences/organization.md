@@ -85,7 +85,7 @@ To clone an Audience between Spaces, follow the steps below:
 If your target Space doesn't include the cloned Audience's events and traits, Engage prompts you to resolve the Space incompatibilities during Step 5.  As a best practice, verify that the target Space includes the Audience's traits and events before cloning.
 
 
-## Delete Audience
+## Delete an Audience
 
 To delete an Audience, follow the steps below:
 
