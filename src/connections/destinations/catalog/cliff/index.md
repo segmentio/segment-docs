@@ -9,7 +9,7 @@ This destination is maintained by Cliff.ai. For any issues with the destination,
 
 ## Getting Started
 
-{% include content/connection-modes.md %}
+
 
 1. Go to the [Cliff Integrations library](https://app.cliff.ai/apps/anomaly-detection/integrations/inbound).
 2. Find "Segment" in the list of available integrations and click **Start**.

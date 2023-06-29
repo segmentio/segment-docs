@@ -5,8 +5,10 @@ hide-personas-partial: true
 cmode-override: true
 id: 54521fd725e721e32a72eec1
 maintenance: true
-private: true
+private: false
 maintenance-content: New versions of the destination are available. See [HubSpot Cloud Mode (Actions)](/docs/connections/destinations/catalog/actions-hubspot-cloud/) and [HubSpot Web (Actions)](/docs/connections/destinations/catalog/actions-hubspot-web/) for more information.
+hidden: false
+
 ---
 [HubSpot](https://www.hubspot.com/){:target="_blank"} is an inbound marketing and sales platform that helps companies attract visitors, convert leads, and close customers. The `analytics.js` HubSpot Destination is open-source. You can browse the code [on GitHub](https://github.com/segmentio/analytics.js-integrations/tree/master/integrations/hubspot){:target="_blank"}.
 
@@ -18,7 +20,7 @@ maintenance-content: New versions of the destination are available. See [HubSpot
 
 ## Getting Started
 
-{% include content/connection-modes.md %}
+
 
 1. From the Segment web app, click **Catalog**.
 2. Search for "HubSpot" in the Catalog, select it, and choose which of your sources to connect the destination to.

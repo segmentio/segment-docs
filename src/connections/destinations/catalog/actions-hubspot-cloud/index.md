@@ -38,7 +38,8 @@ HubSpot Cloud Mode (Actions) provides the following benefits over the classic Hu
 2. Search for **HubSpot Cloud Mode (Actions)** in the Destinations Catalog, and select the destination.
 3. Click **Configure HubSpot Cloud Mode (Actions)**.
 4. Select the source that will send data to HubSpot Cloud Mode (Actions) and follow the steps to name your destination.
-5. On the **Settings** tab, authenticate with HubSpot using OAuth. Your user must be a [super admin](https://knowledge.hubspot.com/settings/hubspot-user-permissions-guide#super-admin){:target="_blank"} in the HubSpot account to authenticate the connection.
+5. On the **Settings** tab, authenticate with HubSpot using OAuth. Your user must be a [super admin](https://knowledge.hubspot.com/settings/hubspot-user-permissions-guide#super-admin){:target="_blank"} in the HubSpot account to authenticate the connection. Click **Connect app**.
+![Hubspot Scope Approval Screen](images/scopeApproval.png)
 6. Follow the steps in the Destinations Actions documentation on [Customizing mappings](/docs/connections/destinations/actions/#customize-mappings).
 7. Enable the destination and configured mappings.
 
@@ -62,6 +63,18 @@ HubSpot has several limits for custom behavioral events, including a limit on th
 > note ""
 > A HubSpot Enterprise Marketing Hub account is required to send Custom Behavioral Events.
 
+### Why can't I set an entire object for the Other properties field?
+
+This destination doesn't allow selecting an entire object for the Other properties field. HubSpot rejects API calls if a property name doesn't match with HubSpot's internal name. When working with a large object of key/value pairs, map each key/value pair to prevent rejection. This ensures that every key matches the pre-created property names in HubSpot.
+
 ### Does the HubSpot Cloud Mode (Actions) destination support EU data residency?
 Yes. HubSpot will automatically redirect API requests directly to an EU data center if your HubSpot instance is on an EU data center. See more in HubSpot's [Routing API Traffic](https://product.hubspot.com/blog/routing-api-traffic){:target="_blank"} article.
 
+### How can I disable or delete a destination from Segment?
+Follow the instructions in the docs to [disable](/docs/connections/destinations/actions/#disable-a-destination-action) or [delete](/docs/connections/destinations/actions/#delete-a-destination-action) a destination action from Segment.
+
+### How can I uninstall an app from my HubSpot account?
+Follow the steps mentioned [here](https://knowledge.hubspot.com/integrations/connect-apps-to-hubspot#uninstall-an-app){:target="_blank"} to uninstall or disconnect an app from your HubSpot account.
+
+### How does disconnecting and uninstalling affect a user's data and HubSpot account?
+Segment immediately stops sending data to HubSpot after you disconnect and uninstall a HubSpot account.
