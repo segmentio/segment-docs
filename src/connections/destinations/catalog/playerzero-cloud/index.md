@@ -4,7 +4,7 @@ id: 6492cbd495feedacdcf431a4
 ---
 {% include content/plan-grid.md name="actions" %}
 
-[PlayerZero](https://www.playerzero.ai/) is an AI copilot that gives you the power to ask complex product questions in simple human language and find cause and effect relationships between customer experiences and the work your team is doing.
+[PlayerZero](https://www.playerzero.ai/){:target="_blank”} is an AI copilot that gives you the power to ask complex product questions in simple human language and find cause and effect relationships between customer experiences and the work your team is doing.
 
 This destination is maintained by PlayerZero. For any issues with the destination, [contact their Support team](mailto:support@playerzero.ai).
 
