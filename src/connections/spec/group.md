@@ -4,7 +4,7 @@ title: 'Spec: Group'
 
 The `group` API call is how you associate an individual user with a group, such as a company, organization, account, project, or team.
 
-The `group` call enables you to identify what account or organization your users are part of. There are two IDs that are relevant in a `group` call: the `userId`, which belongs and refers to the user, and the `groupId`, which belongs and refers to the specific group. A user can be in more than one group which would mean different `groupId`s, but the user will only have one `userId` that is associated to each of the different groups. Kkeep in mind that not all platforms support multiple groups for a single user. 
+The `group` call enables you to identify what account or organization your users are part of. There are two IDs that are relevant in a `group` call: the `userId`, which belongs and refers to the user, and the `groupId`, which belongs and refers to the specific group. A user can be in more than one group which would mean different `groupId`s, but the user will only have one `userId` that is associated to each of the different groups. Keep in mind that not all platforms support multiple groups for a single user. 
 
 {% include components/reference-button.html href="https://university.segment.com/introduction-to-segment/324252?reg=1&referrer=docs" icon="media/academy.svg" title="Segment University: The Segment Methods" description="Check out our high-level overview of these APIs in Segment University. (Must be logged in to access.)" %}
 
