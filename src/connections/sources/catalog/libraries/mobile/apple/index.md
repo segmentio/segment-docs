@@ -106,7 +106,9 @@ These are the options you can apply to configure the client:
 `flushAt`| The default is set to `20`. <br> The count of events at which Segment flushes events.
 `flushInterval`| The default is set to `30` (seconds). <br> The interval in seconds at which Segment flushes events.
 `trackApplicationLifecycleEvents`| The default is set to `true`. <br> This automatically tracks lifecycle events. Set to `false` to stop tracking lifecycle events.
-`trackDeepLinks` | The default is set to `true`. <br> This automatically track deep links. Set to `false` to stop tracking Deep Links.
+
+> info "AppClip Tracking"
+> If you are tracking App Clips using iOS or Swift libraries, you may encounter zeros in your device ID. Segment recommends that you set your own device ID in these instances to avoid this issue.
 
 ### Core tracking methods
 Once you've installed the Analytics-Swift library, you can start collecting data through Segment's tracking methods:

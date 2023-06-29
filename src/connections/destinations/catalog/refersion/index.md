@@ -11,7 +11,7 @@ This destination is maintained by Refersion. For any issues with the destination
 
 ## Getting Started
 
-{% include content/connection-modes.md %}
+
 
 You have two options to connect - either automatically within your Refersion dashboard, or manually by copying and pasting an API key into the Segment dashboard.
 

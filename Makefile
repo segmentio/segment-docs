@@ -140,7 +140,7 @@ seed:
 
 .PHONY: node_modules
 node_modules: package.json yarn.lock
-	yarn --frozen-lockfile
+	yarn --immutable
 
 .PHONY: vendor/bundle
 vendor/bundle:

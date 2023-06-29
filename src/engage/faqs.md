@@ -29,6 +29,11 @@ The following response indicates that Bob is indeed a high-value user:
 
 For more information on profile queries, visit the [Profile API documentation](/docs/unify/profile-api).
 
+## Can I modify audience keys?
+
+You can't change the audience key after it's created. To change the key, you need to re-create the audience.
+ 
+
 ## Can I reuse audience keys?
 
 Avoid using the same audience key twice, even if you've deleted the key's original audience. Downstream tools and Destinations might have trouble distinguishing between different audiences that at any point shared the same key.
