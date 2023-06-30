@@ -19,8 +19,7 @@ Canny maintains this destination. For any issues with the destination, [contact 
 
 ## Benefits of Canny (Actions) vs Canny Classic
 
-Canny (Actions) provides the following benefits over the classic Canny destination:
-
+Canny (Actions) provides the following benefit over the classic Canny destination:
 - **Group Events**. Canny (Actions) supports group events and updates or adds properties to companies.
 
 ## Getting started
@@ -32,7 +31,7 @@ Canny (Actions) provides the following benefits over the classic Canny destinati
 5. Click **Configure Canny (Actions)**.
 6. Select an existing Source to connect to Canny (Actions).
 7. Enter your configuration settings.
-8. Update hte API key in the Canny (Actions) destination settings.
+8. Update the API key in the Canny (Actions) destination settings.
 9. Enable the destination and save changes.
 
 {% include components/actions-fields.html %}
