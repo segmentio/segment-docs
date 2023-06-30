@@ -25,15 +25,14 @@ Canny (Actions) provides the following benefit over the classic Canny destinatio
 ## Getting started
 
 1. Go to your [Canny Admin Segment Settings](https://canny.io/redirect?to=%2Fadmin%2Fsettings%2Fsegment){:target="\_blank"}.
-2. Obtain your API key by installing the integration.
+2. Install the integration to get your API key.
 3. From the Segment web app, navigate to **Connections > Catalog**, then select the **Destinations** tab in the catalog.
-4. Search fpr _Canny (Actions)_ and select it.
+4. Search for **Canny (Actions)** and select it.
 5. Click **Configure Canny (Actions)**.
 6. Select an existing Source to connect to Canny (Actions).
 7. Enter your configuration settings.
-8. Update the API key in the Canny (Actions) destination settings.
+8. Enter the Canny API key in the Canny (Actions) destination settings.
 9. Enable the destination and save changes.
 
 {% include components/actions-fields.html %}
 
----
