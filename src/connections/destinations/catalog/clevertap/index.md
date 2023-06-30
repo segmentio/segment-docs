@@ -29,7 +29,7 @@ All other traits will be sent to CleverTap as custom attributes. The default log
 
 
 > info ""
-> In cloud mode CleverTap uses Segment anononymous ID as the CleverTap ID.
+> In cloud mode, CleverTap uses Segment anonymous ID as the CleverTap ID.
 > In device mode, CleverTap ignores the anonymous ID and CleverTap injects its own ID.
 
 ## Alias
