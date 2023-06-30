@@ -195,7 +195,7 @@ You can send this event when you receive a crash notification from your app, but
 
 ## Campaign events
 
-As the walls between apps become increasingly lowered, capturing information about the content and campaigns that drive users to engage with your app is critical to building more targeted, relevant, personalized experiences for your users.
+As the walls between apps become increasingly lowered, capturing information about the content and campaigns that drive users to engage with your app is critical to building more targeted, relevant, personalized experiences for your users. Segment does not collect any campaign events automatically unless configured to do so. 
 
 ### Install Attributed
 
