@@ -12,9 +12,16 @@ private: true
 
 Canny maintains this destination. For any issues with the destination, [contact the Canny Support team](mailto:segment-help@canny.io).
 
+> success ""
 > **Good to know**: This page is about the [Actions-framework](/docs/connections/destinations/actions/) Canny Segment destination. There's also a page about the [non-Actions Canny destination](/docs/connections/destinations/catalog/canny/). Both of these destinations receive data from Segment.
 
 {% include content/ajs-upgrade.md %}
+
+## Benefits of Canny (Actions) vs Canny Classic
+
+Canny (Actions) provides the following benefits over the classic Canny destination:
+
+- **Group Events**. Canny (Actions) supports group events and updates or adds properties to companies.
 
 ## Getting started
 
@@ -29,11 +36,5 @@ Canny maintains this destination. For any issues with the destination, [contact 
 9. Enable the destination and save changes.
 
 {% include components/actions-fields.html %}
-
-## Benefits of Canny (Actions) vs Canny Classic
-
-Canny (Actions) provides the following benefits over the classic Canny destination:
-
-- **Group Events**. Canny (Actions) supports group events and updates or adds properties to companies.
 
 ---
