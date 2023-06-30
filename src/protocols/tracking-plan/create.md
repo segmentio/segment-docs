@@ -224,4 +224,17 @@ analytics.track('Order Completed', {
 });
 ```
 > info ""
+
+###Delete a source from your Tracking Plan
+
+Deleting a source from your tracking plan requires you to go to your list of tracking plans click the icon under connected sources a side menu will pop up and will advise you have a button to click disconnect.
+<img width="1139" alt="Screenshot 2023-06-30 at 7 21 45 PM" src="https://github.com/segmentio/segment-docs/assets/82051355/cc5e3ec6-9eb8-4d39-ac1f-e3c6fc4ccca4">
+<img width="1511" alt="Screenshot 2023-06-30 at 7 22 04 PM" src="https://github.com/segmentio/segment-docs/assets/82051355/bc52465b-6a45-4934-956b-2c6d269a8161">
+
+
+
+
+
+
+
 > **Note:** Protocols validate events against the oldest event version in the Tracking Plan for event payloads that are 1) missing the context.protocols.event_version key, or 2) contain an invalid/undefined event version (ex: event_version:3.2).
