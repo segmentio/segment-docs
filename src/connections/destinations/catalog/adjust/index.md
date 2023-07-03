@@ -113,6 +113,9 @@ After you build and release to the App Store, Segment automatically starts trans
 
 {% include content/react-dest.md %}
 
+React Native 2.0
+For those using React Native verison 2.0 and greater, you'll need to utilize the [Adjust Plugin](https://segment.com/docs/connections/sources/catalog/libraries/mobile/react-native/destination-plugins/adjust-react-native/). 
+
 ### Server
 
 The Cloud-mode integration allows you to send *supplemental* data to Adjust.  This *does not* include attribution events. If you rely on the Adjust server-side component, and do not bundle the Segment-Adjust SDK, your installs will not be attributed. E-commerce events and other general `track` events are supported out of the box. You **must** map your `track` events to your custom Adjust Event Token in your [Adjust destination settings](#map-your-events-to-custom-adjust-event-tokens).
