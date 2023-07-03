@@ -114,7 +114,7 @@ After you build and release to the App Store, Segment automatically starts trans
 {% include content/react-dest.md %}
 
 React Native 2.0
-For those using React Native verison 2.0 and greater, you'll need to utilize the [Adjust Plugin](https://segment.com/docs/connections/sources/catalog/libraries/mobile/react-native/destination-plugins/adjust-react-native/) you can find [instructions on how to add this plugin here](https://www.npmjs.com/package/@segment/analytics-react-native-plugin-adjust). 
+For those using React Native verison 2.0 and greater, you'll need to utilize the [Adjust Plugin](https://segment.com/docs/connections/sources/catalog/libraries/mobile/react-native/destination-plugins/adjust-react-native/). 
 
 ### Server
 
