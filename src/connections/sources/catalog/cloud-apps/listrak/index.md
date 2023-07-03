@@ -37,10 +37,6 @@ _NOTE: The Listrak Source is currently in beta, which means that they are still 
 
 **Stream**
 
-Klaviyo uses our stream Source component to send Segment email events. It uses a server-side `track` method to send data to Segment. These events are then available in any destination that accepts server-side events, and available in a schema in your data warehouse, so you can query using SQL. 
-
-The default behavior is for Klaviyo to pass the `userId` associated with the email recipient as the `userId`. There are cases in which Klaviyo does not have an associated `userId`, in which case the email address will be passed in as the `anonymousId`. 
-
 Listrak uses our stream Source component to send Segment event data. It uses server-side `track` and `identify` methods to send data to Segment. These events are then available in any destination that accepts server-side events, and available in a schema in your data warehouse, so you can query using SQL.
 
 The default behavior is for Listrak to pass the `userId` associated with the email recipient as the `userId`. The Listrak Segment integration maps a Listrak `Segmentation Field` to Segment's `userId`. If we do not have a value for the `Segmentation Field` we will not pass a `userId`. We will always use the contact’s email address as the `anonymousId` and we will always add a trait called `email` with the user's email. We will also provide a trait that contains the Listrak `listId` with the name `Listrak_list_{listId}` where `{listId}` is the id of the list. Ex. `Listrak_list_12345`.
