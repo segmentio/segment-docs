@@ -123,5 +123,5 @@ An audience/computed trait Run or a Sync may fail on its first attempt, but Enga
 
 If your team would like to avoid receiving the notifications for transient failures, please **[reach out to support](https://segment.com/help/contact/)**, who upon request can disable transient failure notifications.
 
-### Can I delete certain events of users from Engage? 
-No. Alternatively, you could achieve this by deleting the entire user profile from Segment. 
+### Can I delete specific user events from Engage? 
+No. Alternatively, you may delete the entire user profile from Segment. 
