@@ -7,6 +7,9 @@ id: 5a4d24dcc5836400017188f6
 ---
 ## Overview
 
+> info ""
+> Using this destination requires a Business tier account and includes [Engage](/docs/engage/).
+
 The Facebook Custom Audiences Destination is one of the most popular Engage Destinations. It has a variety of use cases related to suppression, acquisition (using lookalikes), retargeting, and more.
 
 This Destination can send audiences (lists of users) created in Engage to Facebook Custom Audiences as a **User-List**. Once you set this up, Segment sends an initial list of users to Facebook, and then keeps it up-to-date as new users enter or exit that audience.
