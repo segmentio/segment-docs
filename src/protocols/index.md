@@ -4,7 +4,7 @@ plan: protocols
 ---
 
 > info ""
-> Protocols is **only** available for the [event streams sources](/docs/connections/sources/#event-streams-sources) (website, mobile, and server sources).
+> Protocols is **only** available for the [event streams](/docs/connections/sources/#event-streams-sources) (website, mobile, and server sources) and [Engage](/docs/engage/) sources.
 
 Segment helps customers collect and integrate customer data across a wide range of tools and Destinations. To do so reliably, the data Segment receives must be clean, consistent and adhere to a well thought out tracking plan.
 
