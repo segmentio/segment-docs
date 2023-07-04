@@ -122,3 +122,6 @@ Yes, Engage supports the ability to send an audience or computed trait to two or
 An audience/computed trait Run or a Sync may fail on its first attempt, but Engage will retry up to 5 times before considering it a hard failure and display on that audience/compute trait's Overview page. As long as the runs/syncs within the specific Audience's Overview page say they are successful, then these can be safely ignored.  The Audit Trail logic, however, is configured in the way that it simply notifies about every task failure, even if it then later succeeds.
 
 If your team would like to avoid receiving the notifications for transient failures, please **[reach out to support](https://segment.com/help/contact/)**, who upon request can disable transient failure notifications.
+
+### Can I delete specific events from a user profile in Unify? 
+No. Alternatively, you may delete the entire user profile from Segment.
