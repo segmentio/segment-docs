@@ -191,7 +191,7 @@ To add the ability to send SMS campaigns in Engage, you’ll now create a Twilio
 ### Create a Twilio account and generate an API key
 
 > info "Copying Twilio Credentials"
-> This step generates an Account SID, API key SID, and API key secret that you’ll later add to Segment. Make sure you’re ready to copy and save both proceeding.
+> This step generates an Account SID, API key SID, and API key secret that you’ll later add to Segment. Make sure you’re ready to copy and save both before proceeding.
 
 Start by creating your Twilio account and getting an API key for Engage:
 
