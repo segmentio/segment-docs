@@ -50,3 +50,6 @@ Any of the external IDs can be used to query a profile. When a profile is reques
 
 ### Can ExternalID's be changed or removed from the profiles?
 No. As the Identity Graph uses ExternalIDs, they remain for the lifetime of the user profile.
+
+### Can I delete specific events from a user profile in Unify? 
+No. Alternatively, you may delete the entire user profile from Segment.
