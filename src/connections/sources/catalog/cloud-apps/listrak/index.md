@@ -5,50 +5,48 @@ private: true
 ---
 {% include content/source-region-unsupported.md %}
 
+> info ""
+> The Listrak Source is in beta, and Listrak is still developing the source. To join Listrak's beta program or to give any feedback to help improve the Listrak Source and its documentation, [let Listrak know](mailto:support@listrak.com).
+
 Listrak is the retail industry’s leading customer engagement platform. Listrak delivers results for more than 1,000 retailers by providing best-in-class email, text message marketing, identity resolution marketing and push notifications through seamless cross-channel orchestration. Listrak’s data-first approach delivers 1:1 personalization at scale so you can send messages at precisely the right time across the right combination of channels and devices to maximize customer engagement, revenue, and lifetime value.
 
 The Listrak as an Event Cloud Source integration enables marketers to utilize behavioral activities such as sending, opening, clicking, converting, bouncing, abuse complaints, and unsubscribing events within the Segment platform. This capability empowers marketers to perform downstream analysis by leveraging additional platform integrations set up as Segment destinations.
 
-[Listrak](https://listrak.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners){:target="_blank"} provides self-serve predictive analytics for growth marketers, leveraging machine learning to automate audience insights and recommendations.
+[Listrak](https://listrak.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners){:target="_blank"} provides self-serve predictive analytics for growth marketers, using machine learning to automate audience insights and recommendations.
 
-This is an [Event Cloud Source](https://segment.com/docs/sources/#event-cloud-sources){:target="_blank"} which can not only export data into your Segment warehouse, but they can also federate the exported data into your other enabled Segment Destinations.
+This is an [Event Cloud Source](https://segment.com/docs/sources/#event-cloud-sources){:target="_blank"} can export data into your Segment warehouse and federate the exported data into your other enabled Segment Destinations.
 
-This Initial release for Listrak as an Event Cloud Source enables marketers to align contacts in Listrak’s lists to audiences in Segment.
+Listrak as an Event Cloud Source enables marketers to align contacts in Listrak’s lists to audiences in Segment.
 
-This source is maintained by Listrak. For any issues with the source, [contact Listrak's Support team](mailto:support@listrak.com).
-
-_NOTE: The Listrak Source is currently in beta, which means that they are still actively developing the source. This doc was last updated on July 3, 2023. If you are interested in joining their beta program or have any feedback to help improve the Listrak Source and its documentation, [let Listrak know](mailto:support@listrak.com)!_
-
+Listrak maintains this Source. For any issues with the source, [contact Listrak's Support team](mailto:support@listrak.com).
 
 ## Getting Started
 
 1.	From your workspace's [Sources catalog page](https://app.segment.com/goto-my-workspace/sources/catalog){:target="_blank"} click **Add Source**.
 
-1.  Search for "Listrak" in the Sources Catalog, select “Listrak”, and click **Add Source**.
+1.  Search for **Listrak** in the Sources Catalog, select **Listrak**, and click **Add Source**.
 
 1.	On the next screen, give the Source a nickname configure any other settings.
-    - The nickname is used as a label in the Segment app, and Segment creates a related schema name in your warehouse. The nickname can be anything, but we recommend using something that reflects the source itself and distinguishes amongst your environments (eg. Listrak_Prod, Listrak_Staging, Listrak_Dev).
+    - The nickname is used as a label in the Segment app, and Segment creates a related schema name in your warehouse. The nickname can be anything, but Segment recommends using something that reflects the source itself and distinguishes amongst your environments (for example, `Listrak_Prod`, `Listrak_Staging`, `Listrak_Dev`).
 
 1.	Click **Add Source** to save your settings.
 
-1.	Copy the Write key from the Segment UI and log in to your Listrak account - navigate to Integrations > Integrations Manager > New Integration > Segment Integration.
+1.	Copy the Write key from the Segment UI and log in to your Listrak account - navigate to **Integrations > Integrations Manager > New Integration > Segment Integration**.
     - You should see the Information tab for the Segment Integration.
-    - Click the Setup tab, here you will have input fields that allow you to enter the write key as well as other relevant information.
+    - Click the Setup tab, where you'll find input fields that allow you to enter the write key as well as other relevant information.
 
 ## Components
 
 **Stream**
 
-Listrak uses our stream Source component to send Segment event data. It uses server-side `track` and `identify` methods to send data to Segment. These events are then available in any destination that accepts server-side events, and available in a schema in your data warehouse, so you can query using SQL.
+Listrak uses Segment's Source component to send Segment event data. It uses server-side Track and Identify methods to send data to Segment. These events are then available in any destination that accepts server-side events, and available in a schema in your data warehouse, so you can query using SQL.
 
-The default behavior is for Listrak to pass the `userId` associated with the email recipient as the `userId`. The Listrak Segment integration maps a Listrak `Segmentation Field` to Segment's `userId`. If we do not have a value for the `Segmentation Field` we will not pass a `userId`. We will always use the contact’s email address as the `anonymousId` and we will always add a trait called `email` with the user's email. We will also provide a trait that contains the Listrak `listId` with the name `Listrak_list_{listId}` where `{listId}` is the id of the list. Ex. `Listrak_list_12345`.
+The default behavior is for Listrak to pass the `userId` associated with the email recipient as the `userId`. The Listrak Segment integration maps a Listrak `Segmentation Field` to Segment's `userId`. If no value for the `Segmentation Field` exists, Listrak won't pass a `userId`. Listrak always uses the contact’s email address as the `anonymousId` and always adds a trait called `email` with the user's email. Listrak also provides a trait that contains the Listrak `listId` with the name `Listrak_list_{listId}`, where `{listId}` is the id of the list, for example, `Listrak_list_12345`.
 
 
 **Events**
 
-The table below lists events that Listrak sends to Segment. These events appear as tables in your warehouse, and as regular events in other Destinations. Listrak includes the `userId` if available.
-
-This Initial release for Listrak as an Event Cloud Source enables marketers to align contacts in Listrak’s lists to audiences in Segment.
+The following table lists events that Listrak sends to Segment. These events appear as tables in your warehouse and as regular events in other Destinations. Listrak includes the `userId` if available.
 
 The following events will be available in a future release.
 
@@ -64,7 +62,8 @@ The following events will be available in a future release.
 
 **Event Properties**
 
-The table below list the properties included in the events listed above.
+The following table lists the properties included in the events table:
+
 |Property Name	|Description |
 | -----------	| ----------- |
 |`event`		|Email event type |
@@ -80,8 +79,8 @@ The table below list the properties included in the events listed above.
 
 Now that your Source is set up, you can connect it with Destinations. 
 
-Please note that the Listrak Source works better when you also connect Listrak as a Destination Action. With the Listrak Destination Action, you can use Segment to send Listrak user and event data, enabling you to trigger email campaigns. Listrak is currently developing the Destination Action features, enabling you to send website or mobile data to Listrak. 
+The Listrak Source works better when you also connect Listrak as a Destination Action. With the Listrak Destination Action, you can use Segment to send Listrak user and event data, enabling you to trigger email campaigns. Listrak is developing the Destination Action features, enabling you to send website or mobile data to Listrak. 
 
-Log into your downstream tools and check to see that your events appear as expected, and that they contain all of the properties you expect. If your events and properties don’t appear, check the [Event Delivery](https://segment.com/docs/connections/event-delivery/){:target="_blank"} tool, and refer to the Destination docs for each tool for troubleshooting.
+Log into your downstream tools and check to see that your events appear as expected and that they contain all of the properties you expect. If your events and properties don’t appear, check the [Event Delivery](https://segment.com/docs/connections/event-delivery/){:target="_blank"} tool, and refer to the Destination docs for each tool for troubleshooting.
 
 If there are any issues with how the events are arriving to Segment, [contact the Listrak support team](mailto:support@listrak.com).
