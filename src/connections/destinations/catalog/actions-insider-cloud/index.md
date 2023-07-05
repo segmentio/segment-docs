@@ -8,9 +8,9 @@ versions:
 
 {% include content/plan-grid.md name="actions" %}
 
-[Insider](https://useinsider.com/integration/segment/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners){:target="\_blank”} Growth Management Platform (GMP) helps digital marketers drive growth across the funnel. Insider GMP helps marketers deliver personalized journeys across the web, mobile web, mobile apps, messaging, email, and ad channels using unified data.
+[Insider](https://useinsider.com/integration/segment/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners){:target="_blank”} Growth Management Platform (GMP) helps digital marketers drive growth across the funnel. Insider GMP helps marketers deliver personalized journeys across the web, mobile web, mobile apps, messaging, email, and ad channels using unified data.
 
-This destination is maintained by Insider. For any issues with the destination, contact the [Insider Support team.](mailto:insiderhelp@useinsider.com){:target="\_blank”}
+This destination is maintained by Insider. For any issues with the destination, contact the [Insider Support team.](mailto:insiderhelp@useinsider.com){:target="_blank”}
 
 {% include content/ajs-upgrade.md %}
 
@@ -36,7 +36,7 @@ Insider (Actions) provides the following benefits over the classic Insider desti
 6. On the settings page for your destination, add the following settings:
 
    - **Account Name**: Your Insider Account (Partner) Name.
-   - **API Key**: Your Unified Customer Database API Key, see how you can generate API key in the [Insider Academy API Authentication Tokens](https://academy.useinsider.com/docs/api-authentication-tokens#generate-api-key){:target="\_blank”} documentation.\*\*
+   - **API Key**: Your Unified Customer Database API Key, see how you can generate API key in the [Insider Academy API Authentication Tokens](https://academy.useinsider.com/docs/api-authentication-tokens#generate-api-key){:target="_blank”} documentation.\*\*
 
 7. Enable your destination and click **Save**.
 
