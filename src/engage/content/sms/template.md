@@ -8,20 +8,29 @@ You can build an SMS template and include personalized content in messages based
 
 Use personalized SMS messages to connect with users in real-time, as they reach a specific step in a journey.
 
+## SMS template types
+
+You can choose between two SMS template types:
+
+- **Media**, which contains media and text content
+- **Text**, which contains text content of up to 1600 characters
+
 ## Build an SMS message template
 
 > info ""
 > You must first configure your SMS service with Twilio to build an SMS template in Engage. Visit the [onboarding steps](/docs/engage/onboarding/) for more on how to connect a Twilio account.
 
-To build an SMS template, navigate to **Engage > Content** and click **Create Template**.
+Follow these steps to build an SMS template:
 
-1. Select **SMS**, then click **Configure**.
-2. Add a template name and description.
-3. Select a [Twilio Engage messaging service](https://support.twilio.com/hc/en-us/articles/223181308-Getting-started-with-Messaging-Services){:target="blank"} to use.  
-4. Add the body of your text message. To personalize your message based on user profile traits, include [merge tags](#personalize-with-merge-tags).
-  1. Include an opt-out message in the body of your text. For example, "Reply STOP to unsubscribe." See [SMS Best Practices](#sms-best-practices-and-limitations) for more information.
-5. [Test your personalized SMS](#test-your-sms-template) with relevant user profiles.
-6. Click **Create SMS Template**.
+1. Navigate to **Engage > Content** and click **Create template**.
+2. Select **SMS**, then click **Configure**.
+3. Enter a template name and select your template's language.
+4. Select your template's content type, then click **Next**.
+    - For text templates, enter your message's text in the **Body** field and add any desired [merge tags](#personalize-with-merge-tags).
+    - For media templates, enter your message's text in the **Body** field, add the media URL, then add any desired merge tags. Media templates support PNG, JPEG, and GIF files.
+5. Include an opt-out message in the body of your text. For example, "Reply STOP to unsubscribe." See [SMS Best Practices](#sms-best-practices-and-limitations) for more information.
+6. Once you've finished adding your template's content, click **Save**. 
+7. Segment confirms that your template was saved.
 
 Use the SMS Templates screen to preview and update existing SMS message templates.
 
@@ -46,7 +55,7 @@ Personalize SMS content in Engage using profile traits as merge tags in your mes
 
 To personalize an SMS, click **Merge Tags** in the SMS builder and select the profile traits to include in your message.
 
-Engage inserts the selected traits inside merge tags based on cursor placement in the message. This allows you to personalize each SMS you send to recipients.  
+Engage inserts the selected traits inside merge tags based on cursor placement in the message. This allows you to personalize each SMS you send to recipients. You can also use [liquid templating](https://liquidjs.com/tags/if.html){:target="blank"} to create dynamic content in the SMS editor. 
 
 > info ""
 > To learn more about profile traits, visit Segment's [Computed Traits](/docs/engage/audiences/computed-traits/) and [SQL Traits](/docs/engage/audiences/sql-traits/) documentation.
@@ -70,24 +79,42 @@ Once you've configured Link Shortening, Twilio automatically shortens the link U
 > info ""
 > Link Shortening is only available for SMS messages.
 
-## Clone an SMS message template
+## Working with SMS message templates
 
-You can clone existing SMS templates to edit and use in your message campaigns.
+You can edit, duplicate, and delete SMS templates within your Engage workspace. 
 
-To clone a template, navigate to the Templates page (**Engage > Content**). You can also clone from the Overview page of an individual template.
+### Edit an SMS message template
 
-1. Click the **...** icon.
-2. Select **Clone**.
-3. Enter a template name.
-4. Click **Clone** to save the template.
+To edit an SMS template:
 
-After you clone a template, you can edit it from the Templates page.
+1. Navigate to **Engage > Content**.
+2. Select the **...** icon next to template you want to edit. Click **Edit**.
+3. From the template's overview page, select **Edit** or **Settings**.
+4. Edit your template, then click **Update Template** to save your changes.
+
+### Duplicate an SMS message template
+
+To duplicate an SMS template:
+
+1. Navigate to **Engage > Content**.
+2. Select the **...** icon next to template you want to duplicate. Click **Duplicate**.
+3. From the **Duplicate Template** popup, click **Duplicate**.
+
+After you duplicate a template, you can edit it from the Templates page.
+
+### Delete an SMS message template
+
+To delete an SMS template:
+
+1. Navigate to **Engage > Content**.
+2. Select the **...** icon next to template you want to delete. Click **Delete**.
+2. From the **Confirm Template Deletion** popup, click **Delete Template**.
 
 ## SMS best practices and limitations
 
 ### Include an SMS opt-out message
 
-When you build an SMS, it's important to include an opt-out message in the body of your text that informs recipients they can unsubscribe from a message channel.
+When you build an SMS, include an opt-out message in the body of your text that informs recipients they can unsubscribe from a message channel.
 
 When an SMS recipient replies "Stop" to an SMS, they'll receive an opt-out confirmation, and Engage updates their phone number subscription status. Visit the [User Subscription States](/docs/engage/user-subscriptions/subscription-states/) documentation to learn more about user subscriptions in Engage.
 

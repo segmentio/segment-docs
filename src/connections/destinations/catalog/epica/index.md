@@ -12,7 +12,7 @@ This destination is maintained by EPICA. For any issues with the destination, [c
 
 ## Getting Started
 
-{% include content/connection-modes.md %}
+
 
 1. From the Segment web app, click **Catalog**.
 2. Search for "EPICA" in the Catalog, select it, and choose which of your sources to connect the destination to.

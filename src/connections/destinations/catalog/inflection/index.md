@@ -8,7 +8,7 @@ id: 62260e5dbc37b83046a847be
 This destination is maintained by Inflection. For any issues with the destination, [contact the Inflection Support team](mailto:support@inflection.io).
 
 ## Getting Started
-{% include content/connection-modes.md %}
+
 
 1. From the Destinations catalog page in the Segment App, select **Inflection**.
 2. Choose the Source from which events have to be sent to Inflection destination.

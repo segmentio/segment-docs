@@ -13,7 +13,7 @@ PAPI_URL = "https://api.segmentapis.com"
 
 const regionalSupport = yaml.load(fs.readFileSync(path.resolve(__dirname, `../src/_data/regional-support.yml`)))
 const slugOverrides = yaml.load(fs.readFileSync(path.resolve(__dirname, `../src/_data/catalog/slugs.yml`)))
-
+const testSources = yaml.load(fs.readFileSync(path.resolve(__dirname, `../src/_data/catalog/test_sources.yml`)))
 
 const slugify = (displayName, type) => {
   let slug = displayName
@@ -27,11 +27,11 @@ const slugify = (displayName, type) => {
   let overrides = ""
   if (type == "sources") {
     overrides = slugOverrides.sources
-  } 
+  }
 
   if (type == "destinations") {
     overrides = slugOverrides.destinations
-  } 
+  }
 
   for (key in overrides) {
     let original = overrides[key].original
@@ -223,6 +223,7 @@ const updateSources = async () => {
     let endpoints = ['us']
     let mainCategory = source.categories[0] ? source.categories[0].toLowerCase() : ''
 
+
     // determine the doc url based on the source's main category
     if (libraryCategories.includes(mainCategory)) {
       url = `connections/sources/catalog/libraries/${mainCategory}/${slug}`
@@ -256,27 +257,37 @@ const updateSources = async () => {
     }
 
     // create the catalog metadata
-    let updatedSource = {
-      id: source.id,
-      display_name: source.name,
-      isCloudEventSource: source.isCloudEventSource,
-      slug,
-      url,
-      hidden: isCatalogItemHidden(url),
-      regions,
-      endpoints,
-      source_type: mainCategory,
-      description: source.description,
-      logo: {
-        url: source.logos.default
-      },
-      // mark: {
-      //   url: source.logos.mark
-      // },
-      categories: source.categories,
+    // A lot of test sources are visible in the catalog. We filter them out here.
+    // If they aren't in the testSources array, we add them to the catalog.
+    if (testSources.includes(source.id)) {
+      console.log(`skipped ${source.name}`)
+    } else {
+      let updatedSource = {
+        id: source.id,
+        display_name: source.name,
+        isCloudEventSource: source.isCloudEventSource,
+        slug,
+        url,
+        hidden: isCatalogItemHidden(url),
+        regions,
+        endpoints,
+        source_type: mainCategory,
+        description: source.description,
+        logo: {
+          url: source.logos.default
+        },
+        // mark: {
+        //   url: source.logos.mark
+        // },
+        categories: source.categories,
+      }
+      sourcesUpdated.push(updatedSource)
+      doesCatalogItemExist(updatedSource)
+
     }
-    sourcesUpdated.push(updatedSource)
-    doesCatalogItemExist(updatedSource)
+
+
+
     source.categories.reduce((s, e) => s.add(e), categories);
 
     let updatedRegional = {

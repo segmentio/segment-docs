@@ -16,7 +16,7 @@ When you create a function, write code for it, and save it, the function appears
 Only [Functions admins](#functions-permissions) can create or edit functions.
 
 1. From your workspace, go to the Catalog and click the [Functions tab](https://app.segment.com/goto-my-workspace/functions/catalog){:target="_blank"}.
-2. Click **New Function**.
+2. Click **Create function**.
 3. Select the type of function you want to build, and click **Build**.
 
    When you click **Build**, a code editor appears. Different template code is available depending on which type of function you created.

@@ -9,7 +9,7 @@ This destination is maintained by ActiveCampaign. For any issues with the destin
 
 ## Getting Started
 
-{% include content/connection-modes.md %}
+
 
 1.  From your Segment UI's Destinations page click on "Add Destination".
 2.  Search for "Active Campaign" in the Catalog, select it, and choose which of your sources to connect the destination to.
