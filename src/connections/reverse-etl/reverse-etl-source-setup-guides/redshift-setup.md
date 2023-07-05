@@ -21,12 +21,12 @@ To set up Redshift with Reverse ETL:
     ```
 4. Follow the steps listed in the [Add a source](/docs/connections/reverse-etl#step-1-add-a-source) section to finish adding Redshift as your source.
 
-### Extra Permissions
+## Extra Permissions
 Give the `segment` user read permissions for any resources (databases, schemas, tables) the query needs to access. 
 
 Give the `segment` user write permissions for the Segment managed schema (`__segment_reverse_etl`), which keeps track of changes to the query results.  
 
-### Troubleshooting
+## Troubleshooting
 #### Extraction failures: relation does not exist
 If you are able to run the query in the Query Builder, but the sync fails with the `relation does not exist` error, please make sure the schema name is included before the database table name, and check that the schema name is correct:
 ```ts
