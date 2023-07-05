@@ -1,4 +1,4 @@
-<!-- Use for destination and insert functions -->
+<!-- Use for destination functions -->
 
 Segment considers a function's execution successful if it finishes without error. You can also `throw` an error to create a failure on purpose. Use these errors to validate event data before processing it, to ensure the function works as expected.
 
