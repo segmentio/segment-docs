@@ -31,12 +31,12 @@ Insider (Actions) provides the following benefits over the classic Insider desti
 
 4. Select an existing Source to connect to Insider Cloud Mode (Actions) and click **Next**.
 
-5. Give your destination a name and click \*_Create destination_.
+5. Give your destination a name and click **Create destination**.
 
 6. On the settings page for your destination, add the following settings:
 
    - **Account Name**: Your Insider Account (Partner) Name.
-   - **API Key**: Your Unified Customer Database API Key, see how you can generate API key in the [Insider Academy API Authentication Tokens](https://academy.useinsider.com/docs/api-authentication-tokens#generate-api-key){:target="_blank”} documentation.\*\*
+   - **API Key**: Your Unified Customer Database API Key, see how you can generate API key in the [Insider Academy API Authentication Tokens](https://academy.useinsider.com/docs/api-authentication-tokens#generate-api-key){:target="_blank”} documentation.
 
 7. Enable your destination and click **Save**.
 
