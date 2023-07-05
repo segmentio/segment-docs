@@ -30,7 +30,7 @@ Keep the following limitations in mind when you use destination filters:
 - *(For device-mode)* Destination filters don't filter some fields that are collected by the destination SDK outside of Segment such as `page.url` and `page.referrer`.
 - *(For web device-mode)* Destination filters for web device-mode only supports the Analytics.js 2.0 source. You need to enable device mode destination filters for your Analytics.js source. To do this, go to your Javascript source and navigate to **Settings > Analytics.js** and turn the toggle on for **Destination Filters**.
 - *(For web device-mode)* Destination filters for device-mode only supports the Analytics.js 2.0 source.
-- *(For mobile device-mode)* Destination filters for mobile device-mode is currently not supported.
+- *(For mobile device-mode)* Destination filters for mobile device-mode doesn't support iOS and Android libraries.
 - Destination Filters don't apply to events that send through the destination Event Tester.
 
 
