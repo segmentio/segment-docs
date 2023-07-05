@@ -181,3 +181,4 @@ To create a source:
 > - Debugger ease of use - mixing libraries/sources on a single API key means you’re heavily reliant on filtering to actually test events
 > - Flexibility sending data to different projects - if you want to have different warehouse schemas, analytics projects, etc, having multiple sources would create this separation
 > - More control - as your account grows with the number of destinations you enable, having separate sources allows you to have more control
+> - A source type cannot be changed once it is created. You must create a new source if you would like to use a different source type.
