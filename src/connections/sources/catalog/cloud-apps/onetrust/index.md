@@ -37,7 +37,7 @@ The following table lists events that OneTrust sends to Segment. These events sh
 
 ## Event Properties
 
-The following table lists event properties included with all events Segment receives from Braze.
+The following table lists event properties included with all events Segment receives from OneTrust.
 
 |  Property Name | Type | Description |
 |  ------ | ------ | ------ |
