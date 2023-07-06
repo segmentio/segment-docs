@@ -177,16 +177,14 @@ When you set up destination actions in Reverse ETL, depending on the destination
 You can send data to a mapping field that requires object data. An example of object mapping is an `Order completed` model with a `Products` column that’s in object format. 
 
 Example: 
-
     
     {
-        "product1": {
-            "productColor": "pink",
-            "productName": "tshirt"
-        },
-        "product2": {
-            "productColor": "white",
-            "productName": "skirt"
+        "product": {
+            "id": 0001,
+            "color": "pink",
+            "name": "tshirt",
+            "revenue": 20,
+            "inventory": 500
         }
     }
 
@@ -228,8 +226,8 @@ To send data to a mapping field that requires array data, you can choose between
 
 Option | Details
 ------ | --------
-Customize array | This enables you to select the specific nested properties to send to the destination. 
-Select array | This enables you to send all nested properties within the array.
+Customize Array | This enables you to select the specific nested properties to send to the destination. 
+Select Array | This enables you to send all nested properties within the array.
 
 > success ""
 > Certain array mapping fields have a fixed list of properties they can accept. If the names of the nested properties in your array don't match the destination properties, the data won't send. Segment recommends you to use the **Customize array** option to ensure your mapping is successful.
