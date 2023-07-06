@@ -11,7 +11,7 @@ _**NOTE:** Tag Injector is only available for select customers at this time._
 
 ## Getting Started
 
-{% include content/connection-modes.md %}
+
 
 1. Once you have access, with the link provided confirm the Source you'd like to connect to.
 2. You have the following configuration options which will manipulate the page at runtime:

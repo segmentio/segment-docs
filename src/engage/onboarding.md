@@ -191,7 +191,7 @@ To add the ability to send SMS campaigns in Engage, you’ll now create a Twilio
 ### Create a Twilio account and generate an API key
 
 > info "Copying Twilio Credentials"
-> This step generates an Account SID, API key SID, and API key secret that you’ll later add to Segment. Make sure you’re ready to copy and save both proceeding.
+> This step generates an Account SID, API key SID, and API key secret that you’ll later add to Segment. Make sure you’re ready to copy and save both before proceeding.
 
 Start by creating your Twilio account and getting an API key for Engage:
 
@@ -252,14 +252,12 @@ To finish setting up your Messaging Service, you’ll now [configure an event we
 
 ## Stage 4: Create and configure Twilio WhatsApp services
 
-> info "WhatsApp Public Beta"
-> WhatsApp as an Engage channel is in public beta. 
-
 To send WhatsApp messages in Twilio Engage, you'll register a Twilio number with WhatsApp, connect your Facebook account, and create a WhatsApp messaging service.
 
 ### Register a Twilio number with WhatsApp
 
 1. [Purchase an SMS-capable phone number](https://support.twilio.com/hc/en-us/articles/223135247-How-to-Search-for-and-Buy-a-Twilio-Phone-Number-from-Console){:target="_blank"} within your Twilio Console.
+  - For international numbers, view Twilio's [Phone Number Regulations](https://www.twilio.com/en-us/guidelines/regulatory){:target="_blank"} guidelines. 
 2. From the Twilio side menu, navigate to **Messaging > Senders > WhatsApp Senders**.
 3. Select **Create new sender**.
 4. From the **New Sender** builder, find **Twilio phone number**, then choose the phone number you purchased in Step 1. Select **Continue**.

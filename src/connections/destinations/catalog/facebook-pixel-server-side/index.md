@@ -34,7 +34,7 @@ This page is about the **Facebook Conversions API** destination. For documentati
 
 ## Getting started
 
-{% include content/connection-modes.md %}
+
 
 Next, set up your Pixel to work with the Facebook Conversions API destination. You can use an existing Facebook Pixel that you already have set up, or create a new one. If you don't already have a Facebook Pixel configured, follow the "New Pixel" instructions below to create one.
 

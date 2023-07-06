@@ -8,7 +8,7 @@ id: 54521fd625e721e32a72eeb5
 
 ## Getting Started
 
-{% include content/connection-modes.md %}
+
 
 1. From the Segment web app, click **Catalog**.
 2. Search for Gainsight in the Catalog, select it, and choose which of your sources to connect the destination to.

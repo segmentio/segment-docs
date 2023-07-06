@@ -28,11 +28,11 @@
   to = "/assets/docs.bundle.js"
   status = 200
 
-[[plugins]]
-  package = "netlify-plugin-jekyll-cache"
+# [[plugins]]
+#   package = "netlify-plugin-jekyll-cache"
 
-	[plugins.inputs]
-  	jekyllSource = "/src"
+# 	[plugins.inputs]
+#   	jekyllSource = "/src"
 
 
 [[headers]]

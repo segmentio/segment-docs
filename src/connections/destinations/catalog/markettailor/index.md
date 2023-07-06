@@ -8,7 +8,7 @@ id: 6096714984bdd26c427c9250
 Markettailor maintains this destination. For any issues with the destination, contact the Markettailor Support team.
 
 ## Getting Started
-{% include content/connection-modes.md %}
+
 
 1. From the destinations catalog page in the Segment App, click **Add destination**.
 2. Search for “Markettailor” in the destinations Catalog, and select the Markettailor destination.
