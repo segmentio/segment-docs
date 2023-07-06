@@ -4,10 +4,6 @@ redirect_from: '/connections/sources/catalog/libraries/server/node-js/quickstart
 strat: node-js
 ---
 
-> info ""
-> This version of Analytics for Node.js is in beta and Segment is actively working on this feature. Segment's [First-Access and Beta terms](https://segment.com/legal/first-access-beta-preview/) govern this feature. 
-> <br><br> If you’re using the [classic version of Analytics for Node.js](/docs/connections/sources/catalog/libraries/server/node/classic/), consider upgrading to the [latest Analytics for Node.js library](/docs/connections/sources/catalog/libraries/server/node). 
-
 This tutorial will help you start sending data from your Node servers to Segment and any destination, using Segment's Node library. Check out the full documentation for [Analytics Node.js](/docs/connections/sources/catalog/libraries/server/node) to learn more.  
 
 To get started with Analytics Node.js:
