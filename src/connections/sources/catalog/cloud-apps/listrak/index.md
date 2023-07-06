@@ -48,8 +48,6 @@ The default behavior is for Listrak to pass the `userId` associated with the ema
 
 The following table lists events that Listrak sends to Segment. These events appear as tables in your warehouse and as regular events in other Destinations. Listrak includes the `userId` if available.
 
-The following events will be available in a future release.
-
 | Event Name			| Description |
 | -----------			| ----------- |
 | `Email Sent`			| Email was sent successfully |
