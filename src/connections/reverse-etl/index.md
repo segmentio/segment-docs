@@ -169,9 +169,9 @@ The Segment Connections destination enables you to mold data extracted from your
 > warning ""
 >  The Segment Connections destination sends data to Segment’s Tracking API, which has cost implications. New users count as new MTUs and each call counts as an API call. For information on how Segment calculates MTUs and API calls, please see [MTUs, Throughput and Billing](/docs/guides/usage-and-billing/mtus-and-throughput/).
 
-## Supported Object and Arrays 
+## Supported object and arrays 
 
-When you set up destination actions in Reverse ETL, depending on the destination, some mapping fields may require data to be in the form of an object or array. 
+When you set up destination actions in Reverse ETL, depending on the destination, some [mapping fields](#step-4-create-mappings) may require data to be in the form of an [object](#object-mapping) or [array](#array-mapping). 
 
 ### Object mapping
 You can send data to a mapping field that requires object data. An example of object mapping is an `Order completed` model with a `Products` column that’s in object format. 
@@ -192,8 +192,8 @@ To send data to a mapping field that requires object data, you can choose betwee
 
 Option | Details
 ------ | --------
-Customize Object | This enables you to manually set up the mapping fields with any data from the model. If the model contains some object data, you can select properties within the object to set up the mappings as well.
-Select Object | This enables you to send all nested properties within an object. The model needs to provide data in the format of the object. 
+Customize object | This enables you to manually set up the mapping fields with any data from the model. If the model contains some object data, you can select properties within the object to set up the mappings as well.
+Select object | This enables you to send all nested properties within an object. The model needs to provide data in the format of the object. 
 
 > success ""
 > Certain object mapping fields have a fixed list of properties they can accept. If the names of the nested properties in your object don't match with the destination properties, the data won't send. Segment recommends you to use **Customize Object** to ensure your mapping is successful.
@@ -226,8 +226,8 @@ To send data to a mapping field that requires array data, you can choose between
 
 Option | Details
 ------ | --------
-Customize Array | This enables you to select the specific nested properties to send to the destination. 
-Select Array | This enables you to send all nested properties within the array.
+Customize array | This enables you to select the specific nested properties to send to the destination. 
+Select array | This enables you to send all nested properties within the array.
 
 > success ""
 > Certain array mapping fields have a fixed list of properties they can accept. If the names of the nested properties in your array don't match the destination properties, the data won't send. Segment recommends you to use the **Customize array** option to ensure your mapping is successful.
