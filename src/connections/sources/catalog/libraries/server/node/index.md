@@ -284,6 +284,7 @@ Setting | Details
 `flushInterval` _number_ | The number of milliseconds to wait before flushing the queue automatically. The default is: `10000`
 `httpRequestTimeout` | The maximum number of milliseconds to wait for an http request. The default is: `10000`
 `disable` | Disable the analytics library for testing. The default is: `false`
+`httpClient` | Optional custom AnalyticsHTTPClient implementation to support alternate libraries or proxies.  Defaults to global fetch or node-fetch for older versions of node.
 
 ## Graceful shutdown
 Avoid losing events after shutting down your console. Call `.closeAndFlush()` to stop collecting new events and flush all existing events. If a callback on an event call is included, this also waits for all callbacks to be called, and any of their subsequent promises to be resolved.
@@ -553,7 +554,44 @@ Different parts of your application may require different types of batching, or 
 const marketingAnalytics = new Analytics({ writeKey: 'MARKETING_WRITE_KEY' });
 const appAnalytics = new Analytics({ writeKey: 'APP_WRITE_KEY' });
 ```
+## AnalyticsHTTPClient
 
+In some cases such as supporting an environment with an http proxy in place, you may need to use something other than our multiplatform `fetch` call.  You can create a custom `AnalyticsHTTPClient` implementation and pass it in to the Analytics Configuration.
+
+An example of supporting proxies with a popular library, axios:
+```javascript
+const axios = require('axios')
+
+export class ProxyAxiosClient implements AnalyticsHTTPClient {
+  public proxy = null
+  async send(
+    url: string,
+    options: AnalyticsHTTPClientOptions
+  ): Promise<AnalyticsHTTPClientResponse> {
+    const proxyoptions = Object.assign({}, options, this.proxy)
+    return await axios.get(url, proxyoptions)
+  }
+}
+```
+And then in your initialization:
+```javascript
+const proxyHttpClient = new ProxyAxiosClient()
+proxyHttpClient.proxy = {
+  proxy: {
+    protocol: 'http',
+    host: 'proxy.example.com',
+    port: 8886,
+    auth: {
+      username: 'user',
+      password: 'pass',
+    },
+  },
+}
+const analytics = new Analytics({
+  writeKey: '<YOUR_WRITE_KEY>',
+  httpClient: proxyHttpClient,
+})
+```
 
 ## Troubleshooting
 
