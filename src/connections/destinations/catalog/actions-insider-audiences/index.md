@@ -4,6 +4,8 @@ id: 643698ffee21b544f6aa756a
 beta: true
 hidden: true
 private: true
+hide-boilerplate: true
+hide-dossier: true
 ---
 
 {% include content/plan-grid.md name="actions" %}
@@ -16,7 +18,7 @@ This destination is maintained by Insider. For any issues with the destination, 
 
 ## Getting started
 
-> success ""
+> info "Prerequisites"
 > Before connecting to the Insider Audiences (Actions) destination, you must have an Insider Account, Account Name and a [Unified Customer Database API Key](https://academy.useinsider.com/docs/api-authentication-tokens){:target="_blank"}.
 
 To add the Insider Audiences Destination:
