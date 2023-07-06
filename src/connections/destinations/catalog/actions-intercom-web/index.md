@@ -44,7 +44,7 @@ Intercom Web (Actions) provides the following benefits over the classic Intercom
 ## Troubleshooting
 
 ### Requests to Intercom return a 404 response
-If you are seeing 404 responses in your browser network tab, it's likely you have run into one of two issues:
+If you are seeing 404 responses in your browser's network tab, you've likely encountered one of two issues:
 
-- You have set the wrong App ID in the Segment settings UI.
-- You have set the wrong Regional Data Hosting value in the Segment settings UI. Regiaonal endpoints are gated on plan level by Intercom, so you may not have access to EU data hosting.
+- You set the wrong App ID on the Intercom Actions (Web) destination settings page.
+- You set the wrong Regional Data Hosting value on the Intercom Actions (Web) destination settings page. Intercom gates regional endpoints by plan level, so you may not have access to EU data hosting.
