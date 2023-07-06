@@ -19,7 +19,7 @@ This destination is maintained by Insider. For any issues with the destination, 
 ## Getting started
 
 > info "Prerequisites"
-> Before connecting to the Insider Audiences (Actions) destination, you must have an Insider Account, Account Name and a [Unified Customer Database API Key](https://academy.useinsider.com/docs/api-authentication-tokens){:target="_blank"}.
+> Before connecting to the Insider Audiences (Actions) destination, you must have an Insider Account, Account Name, and a [Unified Customer Database API Key](https://academy.useinsider.com/docs/api-authentication-tokens){:target="_blank"}.
 
 To add the Insider Audiences Destination:
 
