@@ -16,7 +16,6 @@ This destination is maintained by Bloomreach Engagement. For any issues with the
 
 1. From the Segment web app, click **Catalog**.
 2. Search for "Bloomreach Engagement" in the Catalog, select it, and choose which of your sources to connect the destination to.
-3. Create a [public API group](https://documentation.bloomreach.com/engagement/reference/authentication){:target="_blank”} for your Segment integration in your Bloomreach Engagement project. Don't forget to set the appropriate [group permissions](https://documentation.bloomreach.com/engagement/reference/authentication#using-the-api-groups){:target="_blank”} to allow recieveing events and customer updates.
 4. Fill in the "API Base URL", "API key" and "Project Token" into your Segment Settings UI. You can find all of the above in the API settings page of your Bloomreach Engagement project.
 5. Enter your Bloomreach Engagement hard ID and soft ID names into the corresponding fields to specify Segment's userId and anonymousId mapping into your Bloomreach Engagement ID structure.
 
@@ -143,7 +142,7 @@ This identify call is translated into a customer update for user with Bloomreach
 
 ## Alias
 
-If you have not had a chance to review our spec, take a look to understand what the [Alias method](/docs/connections/spec/alias/) does.
+If you have not had a chance to review the Segment spec, take a look to understand what the [Alias method](/docs/connections/spec/alias/) does.
 
 The alias call can be used to merge two user identities and their data to one. The `previousId` field should always contain a previously used `anonymousId`, as merging users by specifying two `userIds` is not supported. Sending an alias event with `previousId` and no `userId` will cause the event to be ignored. Note that users are also merged when any call specifies both a userId and an anonymousId, which previously belonged to two separate users.
 
