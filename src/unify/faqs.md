@@ -52,4 +52,5 @@ Any of the external IDs can be used to query a profile. When a profile is reques
 No. As the Identity Graph uses ExternalIDs, they remain for the lifetime of the user profile.
 
 ### Can I delete specific events from a user profile in Unify? 
-No. Alternatively, you may delete the entire user profile from Segment via a [GDPR deletion request]([url](https://segment.com/docs/privacy/user-deletion-and-suppression/)https://segment.com/docs/privacy/user-deletion-and-suppression/)
+No. Alternatively, you may delete the entire user profile from Segment using a [GDPR deletion request](/docs/privacy/user-deletion-and-suppression/).
+ 
