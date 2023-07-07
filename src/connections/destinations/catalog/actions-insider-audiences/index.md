@@ -2,8 +2,6 @@
 title: Insider Audiences (Actions)
 id: 643698ffee21b544f6aa756a
 beta: true
-hidden: true
-private: true
 hide-boilerplate: true
 hide-dossier: true
 ---
@@ -13,8 +11,6 @@ hide-dossier: true
 [Insider](https://useinsider.com/integration/segment/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners){:target="_blank"} Growth Management Platform (GMP) helps digital marketers drive growth across the funnel. Insider GMP helps marketers deliver personalized journeys across the web, mobile web, mobile apps, messaging, email, and ad channels using the unified data.
 
 This destination is maintained by Insider. For any issues with the destination, contact the [Insider Support team.](mailto:insiderhelp@useinsider.com){:target="_blank"}
-
-{% include content/ajs-upgrade.md %}
 
 ## Getting started
 
