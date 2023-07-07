@@ -54,7 +54,7 @@ You can then sort or filter each column to just the values you care about, by cl
 
 Segment disables sources that don't have enabled destinations after 14 days, and emails you before disabling any sources. Disabling these sources helps maintain a clean workspace.
 
-We do understand there maybe cases to keep a source active, if you'd like to add your source(s) to an exception list, you can do so by filling out this [airtable form](https://airtable.com/shr7V9LFDZh31cYWW).
+Segment understands there maybe cases to keep a source active. If you'd like to add your source(s) to an exception list, you can do so by filling out this [Airtable form](https://airtable.com/shr7V9LFDZh31cYWW){:target="_blank"}.
 
 
 
