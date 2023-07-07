@@ -55,6 +55,7 @@ plugins:
   - jekyll-commonmark
   - jekyll-last-modified-at
   - jekyll-dotenv
+  - jekyll-glossary_tooltip
 algolia:
   max_record_size: 20000
   application_id: UINQ2M4D9S

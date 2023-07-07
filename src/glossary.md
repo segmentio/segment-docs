@@ -7,6 +7,6 @@ layout: page
 ---
 <span id="doc-content" />
 
-{% for entry in site.data.glossary %}### **{{ entry[0] }}**
-{{ entry[1] | markdownify }}
+{% for entry in site.data.glossary %}### **{{ term }}**
+{{ definition | markdownify }}
 {% endfor %}

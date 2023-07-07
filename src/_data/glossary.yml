@@ -1,154 +1,160 @@
-Analytics.js: |
-  The Segment Javascript library wrapper, which makes it simple to send your data to any tool without having to learn, test or implement the new API for each tool every time.
+- term: Analytics.js
+  definition: The Segment Javascript library wrapper, which makes it simple to send your data to any tool without having to learn, test or implement the new API for each tool every time.
 
-API: |
-  Application Programming Interface. In software, this term describes a way of interacting with software in an automated fashion, without the use of a user-interface designed for humans. In Segment, we call the standard calls (`track`, `page` and `screen`, `identify` and `group`) our API. We also provide the [Public API](/docs/api/public-api), which you can use to configure sources and destinations, and perform other functions in your workspace, without logging in using a web browser.
+- term: API
+  definition: Application Programming Interface. In software, this term describes a way of interacting with software in an automated fashion, without the use of a user-interface designed for humans. In Segment, we call the standard calls (`track`, `page` and `screen`, `identify` and `group`) our API. We also provide the Public API, which you can use to configure sources and destinations, and perform other functions in your workspace, without logging in using a web browser.
 
-App: |
-  The app is what we call the main Segment web application, the part you log in to, and where you configure sources and destinations, see events in the debugger, manage your tracking plan, and so on.
+- term: App
+  definition: The app is what we call the main Segment web application, the part you log in to, and where you configure sources and destinations, see events in the debugger, manage your tracking plan, and so on.
 
-Asynchronous: |
-  Asynchronous means occurring without a specific order or sequence. In engineering, it's most often used for things like when you have to ask a server for a piece of information. If that was a synchronous task, while you were waiting for the server to respond you wouldn't be able to do anything else, you'd just be stuck waiting. But since it's asynchronous, you can request information from a server, continue to go do a bunch of other tasks, and then when the server responds you can get back to what you were doing to start. Basically it lets you work on multiple things at once (in parallel) instead of needing to finish everything in the order it comes in. Think of it like one of the ways computers are able to multi-task.
+- term: Asynchronous
+  definition: Asynchronous means occurring without a specific order or sequence. In engineering, it's most often used for things like when you have to ask a server for a piece of information. If that was a synchronous task, while you were waiting for the server to respond you wouldn't be able to do anything else, you'd just be stuck waiting. But since it's asynchronous, you can request information from a server, continue to go do a bunch of other tasks, and then when the server responds you can get back to what you were doing to start. Basically it lets you work on multiple things at once (in parallel) instead of needing to finish everything in the order it comes in. Think of it like one of the ways computers are able to multi-task.
 
-Audience: |
-  [Personas Audiences](/docs/personas/audiences/) allow you to define cohorts of users or accounts based on their event behavior and traits that Segment then keeps up-to-date over time. Audiences can be built from your core tracking events, traits, or computed traits. These audiences can then be synced to hundreds of destinations or available using the Profile API.
+- term: Audience
+  definition: Personas Audiences allow you to define cohorts of users or accounts based on their event behavior and traits that Segment then keeps up-to-date over time. Audiences can be built from your core tracking events, traits, or computed traits. These audiences can then be synced to hundreds of destinations or available using the Profile API.
 
-AWS: |
-  Amazon Web Services, a large cloud service provider.
+- term: AWS
+  definition: Amazon Web Services, a large cloud service provider.
 
-Catalog: |
-  Segment's list of available sources, destinations, and warehouses. You can access the catalog from the [Segment website](https://segment.com/catalog/), and from inside the Segment app.
+- term: Branch
+  definition: Paths that lead users away from a step. For example, a True/False split creates one True branch and one False branch. 
 
-CDN: |
-  Content Delivery Network. CDNs are a network of servers which make downloading files faster for the user, by placing them all around the world to reduce data transit time. When you have servers in a CDN, they're much closer on average to the end user. If someone is using Segment in Asia, they don't have to download our files all the way from California, they can get them from a server much closer to them in the network.
+- term: Catalog
+  definition: Segment's list of available sources, destinations, and warehouses. You can access the catalog from the Segment website and from inside the Segment app.
+  link: https://segment.com/catalog/
 
-CDP: |
-  Customer Data Platform: a central platform that brokers the flow of customer data through their application infrastructure so that they can build a central understanding of each customer's interactions, comply with regulations that require them to carefully manage customer data, and ensure that their interactions with the customer are optimized.
+- term: CDN
+  definition: Content Delivery Network. CDNs are a network of servers which make downloading files faster for the user, by placing them all around the world to reduce data transit time. When you have servers in a CDN, they're much closer on average to the end user. If someone is using Segment in Asia, they don't have to download our files all the way from California, they can get them from a server much closer to them in the network.
 
-Cookies: |
-  Cookies are small pieces of text that are stored by the browser on a website. Cookies have a **name** and a **value**. They may also be set from Javascript using `document.cookie`. Our analytics.js script sets up a cookie called `ajs_uid` to store the user's id.
+- term: CDP
+  definition: Customer Data Platform - a central platform that brokers the flow of customer data through their application infrastructure so that they can build a central understanding of each customer's interactions, comply with regulations that require them to carefully manage customer data, and ensure that their interactions with the customer are optimized.
 
-  Every time you make a request to a website, you send along the cookies that you have stored. It's how the website figures out who you should be logged in as. You can think of it sort of like a passport as a form of ID. When you first enter your username and password, the website generates a secure cookie, and tells your browser to store it. From then on, your browser sends along the cookie as a way of identifying yourself to the website.
+- term: Cookies
+  definition: Cookies are small pieces of text that are stored by the browser on a website. Cookies have a **name** and a **value**. They may also be set from Javascript using `document.cookie`. Our analytics.js script sets up a cookie called `ajs_uid` to store the user's id. Every time you make a request to a website, you send along the cookies that you have stored. It's how the website figures out who you should be logged in as. You can think of it sort of like a passport as a form of ID. When you first enter your username and password, the website generates a secure cookie, and tells your browser to store it. From then on, your browser sends along the cookie as a way of identifying yourself to the website.
 
-Client Side: |
-  This refers to a group of libraries that can send data to Segment and which send [Device-mode](#device-mode) data. The term "client side" is usually used in contrast to [Server Side](#server-side).
+- term: Client Side
+  definition: This refers to a group of libraries that can send data to Segment and which send Device-mode data. The term "client side" is usually used in contrast to Server Side.
 
-Cloud mode: |
-  *Cloud mode*, (or [Server-side](#server-side)) libraries send data to Segment, where it's then sent on to destinations. Usually used in contrast to [Device mode](#device-mode) libraries, which send the data directly to the destination's API endpoints.
+- term: Cloud mode
+  definition: Cloud mode, (or Server-side) libraries send data to Segment, where it's then sent on to destinations. Usually used in contrast to Device mode libraries, which send the data directly to the destination's API endpoints. *Cloud mode libraries* run on a server and are completely invisible to end users. You can find the full list of server-side languages Segment supports in the Sources catalog. These libraries can be used to track a user in realtime as they use your app, but are also able to run batches of calls to update many end users at once. Cloud-mode libraries do not maintain "state" which means every API call you make must include every detail you want to see inside of Segment.
 
-  *Cloud mode libraries* run on a server and are completely invisible to end users. You can find the full list of server-side languages Segment supports [in the Sources catalog](/docs/connections/sources/catalog/#server). These libraries can be used to track a user in realtime as they use your app, but are also able to run batches of calls to update many end users at once. Cloud-mode libraries do not maintain "state" which means every API call you make must include every detail you want to see inside of Segment.
+- term: Computed trait
+  definition: Computed traits are per-user, or per-account traits that you create or “compute” in Personas. When you build a Computed Trait, Personas adds it to relevant user profiles.
 
-Computed trait: |
-  [Computed traits](/docs/personas/computed-traits/) are per-user, or per-account [traits](#traits) that you create or “compute” in [Personas](/docs/personas/). When you build a Computed Trait, Personas adds it to relevant user profiles.
+- term: Custom trait
+  definition: Custom Traits are user or account properties collected from all the events you send to Personas.  For example, you can add any properties that you send as a part of your track calls or identify calls (`email`, `first_name`, `last_name`) as custom traits. You can then view them in the profile explorer, and use them in your audiences, computed traits and SQL traits.
 
-Custom trait: |
-  [Custom Traits](/docs/engage/audiences/#custom-traits) are user or account properties collected from all the events you send to Personas.  For example, you can add any properties that you send as a part of your track calls or identify calls (`email`, `first_name`, `last_name`) as custom traits. You can then view them in the profile explorer, and use them in your audiences, computed traits and SQL traits.
+- term: Debugger
+  definition: This is the place in the app where you can see your events flowing through Segment
 
-Debugger: |
-  This is the place in the app where you can see your events flowing through Segment
+- term: Destination
+  definition: A destination is a target for Segment to forward data to, and represents a tool or storage destination.
 
-Destination: |
-  A destination is a target for Segment to forward data to, and represents a tool or storage destination.
+- term: Device mode
+  definition: Device mode, (or client-side) libraries are loaded on the on the user's client (for example their web browser, or mobile device), which means they can collect contextual data about the user. The three main libraries that are considered "device mode" are Analytics.js, which is used on websites, our iOS SDK, and our Android SDK. Device mode libraries can maintain a cache of information about each user on the device so we know that device belongs to a consistent `anonymousId` or `userId`, and has a consistent list of traits like name, email, etc.
 
-Device mode: |
-  *Device mode*, (or [client-side](#client-side)) libraries are loaded on the on the user's client (for example their web browser, or mobile device), which means they can collect contextual data about the user. The three main libraries that are considered "device mode" are [Analytics.js](/docs/connections/sources/catalog/libraries/website/javascript/), which is used on websites, our [iOS SDK](/docs/connections/sources/catalog/libraries/mobile/ios/), and our [Android SDK](/docs/connections/sources/catalog/libraries/mobile/android/). Device mode libraries can maintain a cache of information about each user on the device so we know that device belongs to a consistent `anonymousId` or `userId`, and has a consistent list of traits like name, email, etc.
+- term: DMP
+  definition: Data management platform
 
+- term: DSP
+  definition: Demand-side platform
 
-DMP: |
-  Data management platform
+- term: ETL
+  definition: Extract, Transform and Load. Referring to the process of extracting data from a production system, transforming it with enriching data into a new format, and then loading it into a data warehouse for analysis (a separate database from production).
 
-DSP: |
-  Demand-side platform
+- term: Event
+  definition: An event can refer to either an action by a user, or something a user does which triggers a track call. Events have a name (for example "Product viewed") and properties (for example the product name, price, and category), and take place in a single moment in time. (This is in contrast to "objects" which persist over a period of time, and which have properties that might change.)
 
-ETL: |
-  Extract, Transform and Load. Referring to the process of extracting data from a production system, transforming it with enriching data into a new format, and then loading it into a data warehouse for analysis (a separate database from production).
+- term: Identify
+  definition: a call that gathers information about who the user is.
 
-Event: |
-  An event can refer to either an action by a user, or something a user does which triggers a [track call](/docs/connections/spec/track/). Events have a name (for example "Product viewed") and properties (for example the product name, price, and category), and take place in a single moment in time. (This is in contrast to "[objects](#object)" which persist over a period of time, and which have properties that might change.)
+- term: Journey
+  definition: A multi-step workflow that progresses users through steps based on time logic, real-time customer interactions, and customer traits.
 
-Identify: |
-  a call that gathers information about who the user is.
+- term: Journey list view
+  definition: The journeys tab shows all Journeys in the selected Engage space.
 
-JSON: |
-  JSON, or JavaScript Object Notation, is a convenient format for storing structured data.
+- term: Journey builder
+  definition: A visual canvas where you can view and edit step definitions and types.
 
-Library: |
-  A library is a reusable piece of code which acts as a building block for higher level pieces of code. It's the software equivalent of a 'tool'. For instance, take Instagram filters. In the good old days, to take a picture with an interesting filter, you had to adjust the aperture length, the focal length, the exposure and film speed to get the desired effect. But now, you can just use Instagram, and press a button to get the pre-tuned filter that you want. They've packaged those effects in software and made them re-usable.
+- term: Journey overview
+  definition: A visual canvas where you can view all steps and definitions.
 
-  The most common use case for this term at Segment is in reference to the libraries people use to send data to our API. [A full list of libraries can be found in our docs](/docs/connections/sources/catalog/). Libraries can collect either in "[Device mode](#device-mode)" or "[Cloud mode](#cloud-mode)".
+- term: JSON
+  definition: JSON, or JavaScript Object Notation, is a convenient format for storing structured data.
 
-Lookback: |
-  A “lookback window” limits the period of time in which data is considered when calculating a trait or audience. For example, you might set a lookback window of 7 days on an audience or trait like `new_users_7_days`, but you would not add a lookback window to a trait that isn't time-bounded, such as `lifetime_value`.
+- term: Library
+  definition: A library is a reusable piece of code which acts as a building block for higher level pieces of code. It's the software equivalent of a 'tool'. For instance, take Instagram filters. In the good old days, to take a picture with an interesting filter, you had to adjust the aperture length, the focal length, the exposure and film speed to get the desired effect. But now, you can just use Instagram, and press a button to get the pre-tuned filter that you want. They've packaged those effects in software and made them re-usable. The most common use case for this term at Segment is in reference to the libraries people use to send data to our API. A full list of libraries can be found in our docs. Libraries can collect either in "Device mode" or "Cloud mode".
 
-Method: |
-  A method is programming speak for "an action an object can take". It's a specific type of function that is attached to an object. All of our analytics tracking libraries create `analytics` objects, and then `track`, `identify`, `page`, [etc](/docs/connections/spec/) are methods you can invoke on those objects.
+- term: Lookback
+  definition: A “lookback window” limits the period of time in which data is considered when calculating a trait or audience. For example, you might set a lookback window of 7 days on an audience or trait like `new_users_7_days`, but you would not add a lookback window to a trait that isn't time-bounded, such as `lifetime_value`.
 
-MTU: |
-  Monthly Tracked Users. You can find more about how they are calculated [here](/docs/guides/usage-and-billing/mtus-and-throughput/#how-does-segment-calculate-mtus) but in short, they are calculated by adding the number unique userIds and number of unique anonymousIds that a customer tracks with Segment.
+- term: Method
+  definition: A method is programming speak for "an action an object can take". It's a specific type of function that is attached to an object. All of our analytics tracking libraries create `analytics` objects, and then `track`, `identify`, `page`, etc. are methods you can invoke on those objects.
 
-Object: |
-  An object is a type of data that persists over time and can be updated, for example a Business or a User record. Objects have "traits" which record information about that object, and which can change over time. For example a "user" object could have a trait of "email" which doesn't change often, but could also have a [computed trait](#computed-trait) like `logged_in_last_7_days`. (Objects are in contrast to "[events](#event)" which happen at a single moment in time, and whose properties do not change.)
+- term: MTU
+  definition: Monthly Tracked Users. You can find more about how they are calculated at the link below, but in short, they are calculated by adding the number unique userIds and number of unique anonymousIds that a customer tracks with Segment.
+  link: /docs/guides/usage-and-billing/mtus-and-throughput/#how-does-segment-calculate-mtus
 
-OTT (Over the Top): |
-  Over the top (OTT) refers to content providers that distribute streaming media as a standalone product directly to viewers over the Internet, bypassing telecommunications, multichannel television, and broadcast television platforms that traditionally act as a controller or distributor of such content.
+- term: Object
+  definition: An object is a type of data that persists over time and can be updated, for example a Business or a User record. Objects have "traits" which record information about that object, and which can change over time. For example a "user" object could have a trait of "email" which doesn't change often, but could also have a computed trait like `logged_in_last_7_days`. (Objects are in contrast to "events" which happen at a single moment in time, and whose properties do not change.)
 
-Page: |
-  The Segment API call records that a user "viewed a page". It's recorded by calling `analytics.page()`. You can optionally pass in a `name` and a `category`.
+- term: OTT (Over the Top)
+  definition: Over the top (OTT) refers to content providers that distribute streaming media as a standalone product directly to viewers over the Internet, bypassing telecommunications, multichannel television, and broadcast television platforms that traditionally act as a controller or distributor of such content.
 
-Postgres: |
-  An open-source [SQL](#sql) server
+- term: Page
+  definition: The Segment API call records that a user "viewed a page". It's recorded by calling `analytics.page()`. You can optionally pass in a `name` and a `category`.
 
-Redshift: |
-  An analytics data warehouse from Amazon Web Services. Made for loading in tons of event data, and then analyzing it with complex queries. It's designed to be fast and cheap.
+- term: Postgres
+  definition: An open-source SQL server
 
-Retry: |
-  How often we attempt to redeliver a payload before marking it as failed.
+- term: Redshift
+  definition: An analytics data warehouse from Amazon Web Services. Made for loading in tons of event data, and then analyzing it with complex queries. It's designed to be fast and cheap.
 
-Replay: |
-  The ability to re-send your user data to new destinations and tools.
+- term: Retry
+  definition: How often we attempt to redeliver a payload before marking it as failed.
 
-Schema: |
-  A schema is a word used to refer to the design of a database, including what fields there are, and what data types each one contains. If you were to think of a database as a spreadsheet, the schema would be the top row with the field labels, plus the data types and formatting rules for each column.
+- term: Replay
+  definition: The ability to re-send your user data to new destinations and tools.
 
-  In Segment, you can send data to a Warehouse which has a schema based on the types of data you collect and route through Segment, and which updates as the data you collect changes.
+- term: Schema
+  definition: A schema is a word used to refer to the design of a database, including what fields there are, and what data types each one contains. If you were to think of a database as a spreadsheet, the schema would be the top row with the field labels, plus the data types and formatting rules for each column. In Segment, you can send data to a Warehouse which has a schema based on the types of data you collect and route through Segment, and which updates as the data you collect changes.
 
-Server Side: |
-  Refers to a group of libraries that can send data to Segment, in [Cloud mode](#cloud-mode), meaning through the Segment cloud. "Server side" can could refer to people sending data directly to [our HTTP API](/docs/connections/sources/catalog/libraries/server/http-api/) without using a "library". Usually used in contrast to [Client Side](#client-side).
+- term: Server Side
+  definition: Refers to a group of libraries that can send data to Segment, in Cloud mode, meaning through the Segment cloud. "Server side" can could refer to people sending data directly to our HTTP API without using a "library". Usually used in contrast to Client Side.
 
+- term: SDK
+  definition: Software Development Kit. This is a combination of libraries and used mostly in the context of building mobile or native apps.
 
-SDK: |
-  Software Development Kit. This is a combination of libraries and used mostly in the context of building mobile or native apps.
+- term: SQL
+  definition: (pronounced 'sequel'). Structured Query Language. The standard language for retrieving information from a database. It's often called "relational" because all the queries are related to relations between the data. For instance, find me all users who are named "Alice" would translate to... ```SQL select * from users where first_name equals "Alice" ```
+- term: SQL Trait
+  definition: SQL traits are per-user or per-account traits that you create by running queries against your data warehouse, which can include data not captured using your Segment implementation. Segment imports the results into Personas, and appends these traits to the user profile.
+  link: /docs/personas/sql-traits/
 
-SQL: |
-  (pronounced 'sequel')
-  Structured Query Language. The standard language for retrieving information from a database. It's often called "relational" because all the queries are related to relations between the data. For instance, find me all users who are named "Alice" would translate to...
+- term: Source
+  definition: A website, server library, mobile SDK, or cloud application which can send data into Segment.
 
-  ```SQL
-  select * from users where first_name equals "Alice"
-  ```
-SQL Trait: |
-  [SQL traits](/docs/personas/sql-traits/) are per-user or per-account traits that you create by running queries against your data warehouse, which can include data not captured using your Segment implementation. Segment imports the results into Personas, and appends these traits to the user profile.
+- term: Spec
+  definition: Short for "Specification", the Segment Spec is our set of recommendations for what data to collect and how to format it.
 
-Source: |
-  A website, server library, mobile SDK, or cloud application which can send data into Segment.
+- term: SSP
+  definition: Supply-side Platform
 
-Spec: |
-  Short for "Specification", the Segment Spec is our set of recommendations for what data to collect and how to format it.
+- term: Step
+  definition: An individual point in the Journey that can be any of the following - Wait for condition, Wait for duration, True/false split, Multi-branch split, Send to destinations.
 
-SSP: |
-  Supply-side Platform
+- term: Throughput
+  definition: The number of API calls and Objects your account makes, per MTU. The limit on this number is defined by your account plan.
 
-Throughput: |
-  The number of API calls and Objects your account makes, per MTU. The limit on this number is defined by your account plan.
+- term: Track
+  definition: Type of API call (method) which records any actions that users perform on a web or mobile app.
 
-Track: |
-  Type of API call (method) which records any actions that users perform on a web or mobile app.
+- term: Tracking Plan
+  definition: A tracking plan is a tool that our customers use to keep track of their analytics setup. It contains all of the events, pages, traits and properties they want to record with information about how each is laid out. It's often in a spreadsheet or document, but we're actually building the functionality into the core product so that people can plan out their tracking setup right from inside Segment.
 
-Tracking Plan: |
-  A tracking plan is a tool that our customers use to keep track of their analytics setup. It contains all of the events, pages, traits and properties they want to record with information about how each is laid out. It's often in a spreadsheet or document, but we're actually building the functionality into the core product so that people can plan out their tracking setup right from inside Segment.
+- term: Traits
+  definition: Traits are individual pieces of information that we know about an object. Objects persist over time, so traits can change over time.
 
-Traits: |
-  Traits are individual pieces of information that we know about an [object](#object). Objects persist over time, so traits can change over time.
-
-Warehouses: |
-  Segment's Data warehouse product. All event data can be sent to one of several Warehouses, where your team can use it to perform more complex analysis of the data.
+- term: Warehouses
+  definition: Segment's Data warehouse product. All event data can be sent to one of several Warehouses, where your team can use it to perform more complex analysis of the data.

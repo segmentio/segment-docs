@@ -34,3 +34,5 @@ gem "wdm", "~> 0.1.0", :install_if => Gem.win_platform?
 group :jekyll_plugins do
   gem "jekyll-last-modified-at"
 end
+
+gem "jekyll-glossary_tooltip", "~> 1.5", :group => :jekyll_plugins
