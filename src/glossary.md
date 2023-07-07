@@ -7,6 +7,8 @@ layout: page
 ---
 <span id="doc-content" />
 
-{% for entry in site.data.glossary %}### **{{ term }}**
-{{ definition | markdownify }}
+{% assign dictionary = site.data.glossary | sort_natural: "term" %}
+
+{% for term in dictionary %}
+<li> {{ term }} </li>
 {% endfor %}
