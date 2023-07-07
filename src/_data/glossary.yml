@@ -107,6 +107,7 @@
 
 - term: Postgres
   definition: An open-source SQL server
+  link: www.testing.com
 
 - term: Redshift
   definition: An analytics data warehouse from Amazon Web Services. Made for loading in tons of event data, and then analyzing it with complex queries. It's designed to be fast and cheap.

@@ -3,7 +3,7 @@
   position: relative;
   display: inline-block;
   border-bottom: 2px solid color(secondary);
-  cursor: help;
+  cursor: context-menu;
 }
 
 .jekyll-glossary .jekyll-glossary-tooltip {
@@ -27,12 +27,8 @@
 
 }
 
-/* Show the tooltip text when you mouse over or focus on the tooltip container */
+/* Show the tooltip text when you mouse over the tooltip container */
 .jekyll-glossary:hover .jekyll-glossary-tooltip {
-  visibility: visible;
-}
-
-.jekyll-glossary:focus-visible .jekyll-glossary-tooltip {
   visibility: visible;
 }
 
@@ -53,14 +49,11 @@
   border-color: black transparent transparent transparent;
 }
 
-/* Animation from invisible to visible on hover or focus. */
+/* Animation from invisible to visible on hover. */
 .jekyll-glossary .jekyll-glossary-tooltip {
   opacity: 0;
   transition: opacity 1s;
 }
 .jekyll-glossary:hover .jekyll-glossary-tooltip {
-  opacity: 1;
-}
-.jekyll-glossary:focus-visible .jekyll-glossary-tooltip {
   opacity: 1;
 }
