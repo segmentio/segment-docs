@@ -6,7 +6,7 @@ id: <integration_id>
 
 {% include content/plan-grid.md name="actions" %}
 
-Userpilot helps product, UX and customer success teams increase user adoption through behavior-driven product experiences. When you integrate Userpilot with Segment, you can send your Segment events to Userpilot, which allows you to create more personalized experiences for your users.
+Userpilot helps product teams deliver personalized in-app experiences to increase growth metrics at every stage of the user journey. When you integrate Userpilot with Segment, you can send your Segment events to Userpilot, which allows you to create more personalized experiences for your users.
 
 
 This destination is maintained by Userpilot. For any issues with the destination, [contact their Support team](mailto:support@userpilot.co).
