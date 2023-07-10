@@ -41,7 +41,7 @@ Invite teammates to your Engage dev space and grant them access to the space. Na
 
 ## Step 3: Connect production sources
 
-1. From your Engage space, go to your space Settings and click **Sources**.
+1. From your Engage space, navigate to **Unify settings** and click **Profile sources**.
 2. On the screen that appears, choose one or two production sources from your Connections workspace.
    Segment recommends connecting your production website or App source as a great starting point.
 
