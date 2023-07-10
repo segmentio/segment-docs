@@ -3,7 +3,7 @@ title: Visual HTML Editor
 beta: true
 ---
 
-Use the Visual HTML Editor for both code and visual editing capabilities from a single view. With the Visual HTML Editor, you can build your email template with code, copy and paste existing code, or use the visual editor for a code free design experience. 
+Use the Visual HTML Editor to design your email template with both code and visual editing capabilities. Build your email template with code, copy and paste existing code, or use the visual editor for a code free design experience. 
 
 On this page, you'll learn how to use the Visual HTML Editor to build personalized email templates for your Engage campaigns.
 
@@ -14,14 +14,17 @@ You can navigate to the Visual HTML Editor in two ways:
 - From a Send Email step in a Journey. 
 
 From the **Select Editor** screen, select **Visual HTML Editor** and click **Build Email**.
+
+From the editor screen, click **Use HTML Editor** or **Use Visual Editor** to toggle between the two editors. 
  
 ## Visual editor 
 
-Use the visual editor on the right for a no-code option to design your email. With the visual editor, you can:
+Use the visual editor for a no-code option to design your email. With the visual editor, you can:
 - Add or modify headings and text
 - Modify text color, size, and style
 - [Insert an image](#insert-an-image) 
 - Add [merge tags](#personalize-with-merge-tags) and links
+- Use [liquid templating](#liquid-templating)
 - Add emojis
 
 Engage updates any changes you make in the visual editor to the [HTML editor](#html-editor) in real-time.
@@ -44,13 +47,16 @@ From the preview screen, you can toggle between desktop or mobile to view the em
 
 ## HTML editor
 
-Use the HTML editor on the left to maintain your email template with code. Copy and paste existing code or build a new template in the editor. 
+Use the HTML editor to maintain your email template with code. Copy and paste existing code or build a new template in the editor. 
 
-Engage displays any changes you make to the HTML editor in the [visual editor](#visual-editor) in real-time. However, if there are any errors detected in your code, you must fix the errors before Engage displays your updates.
+Engage displays any changes you make in a preview screen to the right of your code. You can preview your email in both desktop and mobile display.
+
+> info ""
+> When you toggle from the HTML Editor to the Visual Editor, Engage may make minor changes to your code formatting. If Engage re-formats your code, it will not affect the email layout.
 
 ### Error flagging
 
-Engage displays in-line error flags in the code editor to help you debug your code. If there are errors, Engage doesn't render any of the updated content in the visual editor until you debug your code. 
+Engage displays in-line error flags in the code editor to help you debug your code. If there are errors, you might not see content as expected in the preview screen until you've debugged your code.
 
 ## Personalize with merge tags 
 Add merge tags to personalize your message with user profile traits.
@@ -105,7 +111,7 @@ For more on email unsubscribe links, view SendGrid's [best practices](https://se
 
 ## Save the template
 
-After you design the email, click **Create Email Template**. Navigate to **Engage > Content > Templates** to view and maintain your email template. 
+After you design the email, click **Create Email Template**. You can navigate to **Engage > Content > Templates** to view and maintain your email template. 
 
 ## Next steps
 
