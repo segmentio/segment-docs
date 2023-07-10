@@ -1,7 +1,8 @@
 
 ---
 title: Userpilot Web (Actions) Destination
-id: <integration_id>
+id: 6480b4eeab29eca5415089d4
+beta: true
 ---
 
 {% include content/plan-grid.md name="actions" %}
@@ -44,10 +45,10 @@ analytics.identify('userId123', {
 
 Calling `identify` from `analytics.js` will trigger the `userpilot.identify`. We recommend passing as much data as possible to get the most out of Userpilot.
 
-Data passed in the `identify` can be organized under different categories.
-* Properties about the user such as `plan` or `userRole` to help targetting a specifc segment.
-* Properties to personalize the content of the Userpilot experiences such as `name` or `company`.
-* Properties to target users based on their lifecycle such as `createdAt`. This will allow you to target newly created accounts or accounts that have yet to achieve a certain feature in the user lifecyle.
+Data passed in an Identify call can be organized under different categories.
+* Properties about the user such as `plan` or `userRole` to help targeting a specifc segment
+* Properties to personalize the content of the Userpilot experiences, such as `name` or `company`
+* Properties to target users based on their lifecycle, such as `createdAt`, which allows you to target newly created accounts or accounts that have yet to achieve a certain feature in the user lifecyle
 
 
 ## Track
