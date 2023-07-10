@@ -36,7 +36,7 @@ You can't change the audience key after it's created. To change the key, you nee
 
 ## Can I reuse audience keys?
 
-Avoid using the same audience key twice, even if you've deleted the key's original audience. Downstream tools and Destinations might have trouble distinguishing between different audiences that at any point shared the same key.
+Avoid using the same audience key twice, even if you've deleted the key's original audience. Downstream tools and Destinations might have trouble distinguishing between different audiences that at any point shared the same key. And may create mismatch on the audience size between Segment and Destination as the destination will be having more audience count as the users of the old audience still exist over the destination.
 
 ## How do historical lookback windows work?
 
@@ -122,8 +122,4 @@ Yes, Engage supports the ability to send an audience or computed trait to two or
 An audience/computed trait Run or a Sync may fail on its first attempt, but Engage will retry up to 5 times before considering it a hard failure and display on that audience/compute trait's Overview page. As long as the runs/syncs within the specific Audience's Overview page say they are successful, then these can be safely ignored.  The Audit Trail logic, however, is configured in the way that it simply notifies about every task failure, even if it then later succeeds.
 
 If your team would like to avoid receiving the notifications for transient failures, please **[reach out to support](https://segment.com/help/contact/)**, who upon request can disable transient failure notifications.
-
-## How can be the audience count is high in the connected destination than the Segment UI?
-
-This can happen only when the audiences with same name was created earlier and connected to the corresponding destination. And later if the audience was deleted and recreated with the same name is connected to the same destination. Users of the audience created previously was still available on the destination, then added to that, the audience newly created will also send the users to the destination. Hence, the audience count will be high in destination than the Segment UI.
 
