@@ -7,7 +7,7 @@ id: 54521fd725e721e32a72eec7
 
 ## Getting Started
 
-{% include content/connection-modes.md %}
+
 
 To enable Kissmetrics in Segment:
 

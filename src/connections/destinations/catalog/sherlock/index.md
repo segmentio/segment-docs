@@ -10,7 +10,7 @@ This integration is maintained by Sherlock. For questions or help with your inte
 
 ## Getting Started
 
-{% include content/connection-modes.md %}
+
 
 1. From the Segment web app, click **Catalog**.
 2. Search for "Sherock" in the Catalog, select it, and choose which of your sources to connect the destination to.

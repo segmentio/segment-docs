@@ -13,7 +13,7 @@ It also means that, for the time being, there is a longer delay for us to deploy
 
 ## Getting Started
 
-{% include content/connection-modes.md %}
+
 
 1. Go to your [Auryc Installation Guides](https://portal.auryc.com/auth/session?modal=integrations) and click  **Install Segment**.
 2. On the Segment page, log in and authorize the Auryc Destination.

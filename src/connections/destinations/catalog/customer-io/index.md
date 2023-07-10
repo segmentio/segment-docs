@@ -15,7 +15,7 @@ actions-slug: "customer-io-actions"
 
 ## Getting Started
 
-{% include content/connection-modes.md %}
+
 
 You can follow the setup guide through Segment using the steps below, or you can automatically sync your Customer.io connection settings to your Segment source using the flow in your Customer.io workspace's Integrations page.
 

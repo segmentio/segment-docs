@@ -32,6 +32,19 @@ To connect the Google Analytics 4 Web destination:
 
 ## FAQ & Troubleshooting
 
+### Resolving Duplicate Page Views
+
+When enabled, the **Page Views** advanced setting sends the `page_view` event from Google's gtag.js snippet. It does not prevent sending Segment's `analytics.page()` event. If you enable this setting, once the page loads, Segment sends two `page_view` events to the GA4 SDK, one from the Segment snippet and one from the gtag.js snippet. If you see duplicate `page_view` events in your GA4 dashboard, you need to either:
+
+1. Disable the **Page Views** advanced setting (set it to *False*) so only Segment's `analytics.page()` sends to the GA4 SDK.
+2.  Edit or disable the preset **Set Configuration Fields** mapping so only the `page_view` included in the gtag.js snippet sends to the GA4 SDK.
+
+The GA4 SDK also tracks a native `page_view` event if you have the [following setting enabled](https://developers.google.com/analytics/devguides/collection/ga4/views?client_type=gtag#manual_pageviews){:target='_blank'} setting enabledin your GA4 account:
+
+
+
+
+
 ### Custom Event Naming
 
 Google Analytics 4 does not accept custom event names that include spaces. Segment replaces spaces in the Event Name in the Custom Event action with an underscore. As a result, you will see custom events snake cased in Google Analytics 4.
@@ -62,9 +75,4 @@ Google may take [24-48 hours](https://support.google.com/analytics/answer/933379
 
 Ensure that at least one mapping has been configured and enabled in the destination mappings for an event you want to send to Google Analytics. If no mappings are enabled, the destination does not send events.
 
-### Page Views
 
-The **Page Views** advanced setting prevents sending the `page_view` included in the gtag.js snippet, not Segment's `analytics.page()` event available in the Analytics.js snippet by default. If you enable this setting, once the page loads, two `page_view` events will still send to the GA4 SDK, one from the Segment snippet and one from the gtag.js snippet. If you see duplicate `page_view` events in your GA4 dashboard, you need to either:
-
-1. Disable the **Page Views** advanced setting (set it to *False*) so only Segment's `analytics.page()` sends to the GA4 SDK. Or,
-2.  Edit or disable the preset **Set Configuration Fields** mapping so only the `page_view` included in the gtag.js snippet sends to the GA4 SDK.
