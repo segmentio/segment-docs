@@ -3,17 +3,15 @@ const path = require('path');
 const fs = require('fs');
 const fm = require('front-matter');
 const yaml = require('js-yaml');
-const {
-  type
-} = require('os');
+const { type } = require('os');
 
 require('dotenv').config();
 
-PAPI_URL = "https://api.segmentapis.com"
+const PAPI_URL = "https://api.segmentapis.com";
 
-const regionalSupport = yaml.load(fs.readFileSync(path.resolve(__dirname, `../src/_data/regional-support.yml`)))
-const slugOverrides = yaml.load(fs.readFileSync(path.resolve(__dirname, `../src/_data/catalog/slugs.yml`)))
-const testSources = yaml.load(fs.readFileSync(path.resolve(__dirname, `../src/_data/catalog/test_sources.yml`)))
+const regionalSupport = yaml.load(fs.readFileSync(path.resolve(__dirname, `../src/_data/regional-support.yml`)));
+const slugOverrides = yaml.load(fs.readFileSync(path.resolve(__dirname, `../src/_data/catalog/slugs.yml`)));
+const testSources = yaml.load(fs.readFileSync(path.resolve(__dirname, `../src/_data/catalog/test_sources.yml`)));
 
 const slugify = (displayName, type) => {
   let slug = displayName
@@ -22,28 +20,28 @@ const slugify = (displayName, type) => {
     .replace('-&-', '-')
     .replace('/', '-')
     .replace(/[\(\)]/g, '')
-    .replace('.', '-')
+    .replace('.', '-');
 
-  let overrides = ""
+  let overrides = "";
   if (type == "sources") {
-    overrides = slugOverrides.sources
+    overrides = slugOverrides.sources;
   }
 
   if (type == "destinations") {
-    overrides = slugOverrides.destinations
+    overrides = slugOverrides.destinations;
   }
 
   for (key in overrides) {
-    let original = overrides[key].original
-    let override = overrides[key].override
+    let original = overrides[key].original;
+    let override = overrides[key].override;
 
     if (slug == original) {
-      console.log(original + " -> " + override)
-      slug = override
+      console.log(original + " -> " + override);
+      slug = override;
     }
   }
-  return slug
-}
+  return slug;
+};
 
 const getCatalog = async (url, page_token = "MA==") => {
   try {
@@ -60,11 +58,11 @@ const getCatalog = async (url, page_token = "MA==") => {
       }
     });
 
-    return res.data
+    return res.data;
   } catch (error) {
-    console.log(error)
+    console.log(error);
   }
-}
+};
 
 const getConnectionModes = (destination) => {
   let connectionModes = {
@@ -77,114 +75,111 @@ const getConnectionModes = (destination) => {
       web: false,
       mobile: false,
       server: false
-    },
-  }
+    }
+  };
 
-  // if destination has device specific components
   if (destination.components.length) {
     destination.components.forEach(component => {
       switch (component.type) {
         case 'IOS':
-          connectionModes.device.mobile = true
-          break
+          connectionModes.device.mobile = true;
+          break;
         case 'ANDROID':
-          connectionModes.device.mobile = true
-          break
+          connectionModes.device.mobile = true;
+          break;
         case 'BROWSER':
           if (destination.browserUnbundling) {
-            connectionModes.cloud.web = true
+            connectionModes.cloud.web = true;
           }
-          connectionModes.device.web = true
-          break
+          connectionModes.device.web = true;
+          break;
         case 'SERVER':
-          connectionModes.cloud.mobile = true
+          connectionModes.cloud.mobile = true;
           if (destination.platforms.server) {
-            connectionModes.cloud.server = true
+            connectionModes.cloud.server = true;
           }
           if (destination.platforms.browser) {
-            connectionModes.cloud.web = true
+            connectionModes.cloud.web = true;
           }
-          break
+          break;
         case 'CLOUD':
-          connectionModes.cloud.mobile = true
+          connectionModes.cloud.mobile = true;
           if (destination.platforms.server) {
-            connectionModes.cloud.server = true
+            connectionModes.cloud.server = true;
           }
           if (destination.platforms.browser) {
-            connectionModes.cloud.web = true
+            connectionModes.cloud.web = true;
           }
-          break
+          break;
       }
-    })
-    // if destination has no device specific components, check for supported platforms
+    });
   } else {
     if (destination.platforms.browser) {
-      connectionModes.cloud.web = true
+      connectionModes.cloud.web = true;
     }
     if (destination.platforms.mobile) {
-      connectionModes.cloud.mobile = true
+      connectionModes.cloud.mobile = true;
     }
     if (destination.platforms.server) {
-      connectionModes.cloud.server = true
+      connectionModes.cloud.server = true;
     }
   }
 
-  return connectionModes
-}
+  return connectionModes;
+};
 
-/**
- * If catalog item does not exist, create folder and index.md file for it, and record it as incomplete for later fill in
- */
 const doesCatalogItemExist = (item) => {
-  const docsPath = `src/${item.url}`
+  const docsPath = `src/${item.url}`;
 
   if (!fs.existsSync(docsPath)) {
-    console.log(`${item.slug} does not exist: ${docsPath}`)
-    let content = `---\ntitle: '${item.display_name} Source'\nhidden: true\n---`
+    console.log(`${item.slug} does not exist: ${docsPath}`);
+    let content = `---\ntitle: '${item.display_name} Source'\nhidden: true\n---`;
+
     if (!docsPath.includes('/sources/')) {
-      let betaFlag = ''
+      let betaFlag = '';
       if (item.status === 'PUBLIC_BETA') {
-        betaFlag = 'beta: true\n'
+        betaFlag = 'beta: true\n';
       }
-      content = `---\ntitle: '${item.display_name} Destination'\nhidden: true\nid: ${item.id}\npublished: false\n${betaFlag}---\n`
+      content = `---\ntitle: '${item.display_name} Destination'\nhidden: true\nid: ${item.id}\npublished: false\n${betaFlag}---\n`;
     }
-    fs.mkdirSync(docsPath)
-    fs.writeFileSync(`${docsPath}/index.md`, content)
+
+    fs.mkdirSync(docsPath);
+    fs.writeFileSync(`${docsPath}/index.md`, content);
   }
-}
+};
 
 const isCatalogItemHidden = (itemURL) => {
   try {
-    const catalogPath = path.resolve('src', itemURL, 'index.md')
+    const catalogPath = path.resolve('src', itemURL, 'index.md');
     if (fs.existsSync(catalogPath)) {
       const f = fm(fs.readFileSync(catalogPath, 'utf8'));
-      if (f.attributes.hidden) return true
+      if (f.attributes.hidden) return true;
     }
-    return false
+    return false;
   } catch (e) {
-    console.log(error)
-    return false
+    console.log(error);
+    return false;
   }
-}
+};
 
 const sanitize = (text) => {
   const regex = /(<[^\/a].*?>)/ig;
-  result = text.replace(regex, "`$1`")
-  return result
-}
+  result = text.replace(regex, "`$1`");
+  return result;
+};
 
 const updateSources = async () => {
-  let sources = []
-  let sourcesUpdated = []
-  let regionalSourcesUpdated = []
-  let nextPageToken = "MA=="
-  let categories = new Set()
-  let sourceCategories = []
+  let sources = [];
+  let sourcesUpdated = [];
+  let regionalSourcesUpdated = [];
+  let nextPageToken = "MA==";
+  let categories = new Set();
+  let sourceCategories = [];
 
   while (nextPageToken !== undefined) {
-    const res = await getCatalog(`${PAPI_URL}/catalog/sources/`, nextPageToken)
-    sources = sources.concat(res.data.sourcesCatalog)
-    nextPageToken = res.data.pagination.next
+    const res = await getCatalog(`${PAPI_URL}/catalog/sources/`, nextPageToken);
+    sources = sources.concat(res.data.sourcesCatalog);
+    nextPageToken = res.data.pagination.next;
   }
 
   sources.sort((a, b) => {
@@ -195,7 +190,7 @@ const updateSources = async () => {
       return 1;
     }
     return 0;
-  })
+  });
 
   const libraryCategories = [
     'server',
@@ -203,36 +198,33 @@ const updateSources = async () => {
     'ott',
     'roku',
     'website'
-  ]
+  ];
 
   const hiddenSources = [
     'amp',
     'factual-engine',
     'twilio-event-streams-beta',
     'ibm-watson-assistant'
-  ]
+  ];
 
-  const regionalSourceEndpoint = regionalSupport.sources.endpoint
-  const regionalSourceRegion = regionalSupport.sources.region
+  const regionalSourceEndpoint = regionalSupport.sources.endpoint;
+  const regionalSourceRegion = regionalSupport.sources.region;
 
   sources.forEach(source => {
-    let slug = slugify(source.name, "sources")
-    let settings = source.options
-    let hidden = false
-    let regions = ['us']
-    let endpoints = ['us']
-    let mainCategory = source.categories[0] ? source.categories[0].toLowerCase() : ''
+    let slug = slugify(source.name, "sources");
+    let settings = source.options;
+    let hidden = false;
+    let regions = ['us'];
+    let endpoints = ['us'];
+    let mainCategory = source.categories[0] ? source.categories[0].toLowerCase() : '';
 
-
-    // determine the doc url based on the source's main category
     if (libraryCategories.includes(mainCategory)) {
-      url = `connections/sources/catalog/libraries/${mainCategory}/${slug}`
+      url = `connections/sources/catalog/libraries/${mainCategory}/${slug}`;
     } else {
-      url = `connections/sources/catalog/cloud-apps/${slug}`
-      mainCategory = 'cloud-app'
+      url = `connections/sources/catalog/cloud-apps/${slug}`;
+      mainCategory = 'cloud-app';
     }
 
-    // sort the sources alphabetically. JS's default sort is case sensistve which is why we compare lowercase on the fly
     settings.sort((a, b) => {
       if (a.name.toLowerCase() < b.name.toLowerCase()) {
         return -1;
@@ -241,26 +233,23 @@ const updateSources = async () => {
         return 1;
       }
       return 0;
-    })
+    });
 
-    // check if the source should be hidden
     if (hiddenSources.includes(slug)) {
-      hidden = true
+      hidden = true;
     }
 
     if (regionalSourceEndpoint.includes(slug)) {
-      endpoints.push('eu')
+      endpoints.push('eu');
     }
 
     if (regionalSourceRegion.includes(slug)) {
-      regions.push('eu')
+      regions.push('eu');
     }
 
-    // create the catalog metadata
-    // A lot of test sources are visible in the catalog. We filter them out here.
-    // If they aren't in the testSources array, we add them to the catalog.
+// create the catalog metadata
     if (testSources.includes(source.id)) {
-      console.log(`skipped ${source.name}`)
+      console.log(`skipped ${source.name}`);
     } else {
       let updatedSource = {
         id: source.id,
@@ -276,17 +265,11 @@ const updateSources = async () => {
         logo: {
           url: source.logos.default
         },
-        // mark: {
-        //   url: source.logos.mark
-        // },
         categories: source.categories,
-      }
-      sourcesUpdated.push(updatedSource)
-      doesCatalogItemExist(updatedSource)
-
+      };
+      sourcesUpdated.push(updatedSource);
+      doesCatalogItemExist(updatedSource);
     }
-
-
 
     source.categories.reduce((s, e) => s.add(e), categories);
 
@@ -298,18 +281,16 @@ const updateSources = async () => {
       url,
       regions,
       endpoints
-    }
-    regionalSourcesUpdated.push(updatedRegional)
+    };
+    regionalSourcesUpdated.push(updatedRegional);
+  });
 
-
-  })
-
-  const sourceArray = Array.from(categories)
+  const sourceArray = Array.from(categories);
   sourceArray.forEach(category => {
     sourceCategories.push({
       display_name: category,
       slug: slugify(category)
-    })
+    });
     sourceCategories.sort((a, b) => {
       if (a.display_name.toLowerCase() < b.display_name.toLowerCase()) {
         return -1;
@@ -318,52 +299,44 @@ const updateSources = async () => {
         return 1;
       }
       return 0;
-    })
-  })
+    });
+  });
 
-
-  // Create source catalog yaml file
   const options = {
     noArrayIndent: false
   };
-  var todayDate = new Date().toISOString().slice(0, 10);
-  output = "# AUTOGENERATED FROM PUBLIC API. DO NOT EDIT\n"
+  const todayDate = new Date().toISOString().slice(0, 10);
+
+  // Create source catalog YAML file
+  let output = "# AUTOGENERATED FROM PUBLIC API. DO NOT EDIT\n";
   output += "# sources last updated " + todayDate + " \n";
-  output += yaml.dump({
-    items: sourcesUpdated
-  }, options);
+  output += yaml.dump({ items: sourcesUpdated }, options);
   fs.writeFileSync(path.resolve(__dirname, `../src/_data/catalog/sources.yml`), output);
 
-  // Create source-category mapping yaml file
-  var todayDate = new Date().toISOString().slice(0, 10);
-  output = "# AUTOGENERATED FROM PUBLIC API. DO NOT EDIT\n"
-  output += "# source cateogries last updated " + todayDate + " \n";
-  output += yaml.dump({
-    items: sourceCategories
-  }, options);
+  // Create source-category mapping YAML file
+  output = "# AUTOGENERATED FROM PUBLIC API. DO NOT EDIT\n";
+  output += "# source categories last updated " + todayDate + " \n";
+  output += yaml.dump({ items: sourceCategories }, options);
   fs.writeFileSync(path.resolve(__dirname, `../src/_data/catalog/source_categories.yml`), output);
 
+  // Create regional support YAML file
+  output = yaml.dump({ sources: regionalSourcesUpdated }, options);
+  fs.writeFileSync(path.resolve(__dirname, `../src/_data/catalog/regional-supported.yml`), output);
 
-  // output = "# AUTOGENERATED LIST OF CONNECTIONS THAT SUPPORT REGIONAL\n"
-  // output += "# Last updated " + todayDate + " \n";
-  output = yaml.dump({
-    sources: regionalSourcesUpdated
-  }, options)
-  fs.appendFileSync(path.resolve(__dirname, `../src/_data/catalog/regional-supported.yml`), output);
-  console.log("sources done")
-}
+  console.log("sources done");
+};
 
 const updateDestinations = async () => {
-  let destinations = []
-  let destinationsUpdated = []
-  let destinationCategories = []
-  let categories = new Set()
-  let nextPageToken = "MA=="
+  let destinations = [];
+  let destinationsUpdated = [];
+  let destinationCategories = [];
+  let categories = new Set();
+  let nextPageToken = "MA==";
 
   while (nextPageToken !== undefined) {
-    const res = await getCatalog(`${PAPI_URL}/catalog/destinations/`, nextPageToken)
-    destinations = destinations.concat(res.data.destinationsCatalog)
-    nextPageToken = res.data.pagination.next
+    const res = await getCatalog(`${PAPI_URL}/catalog/destinations/`, nextPageToken);
+    destinations = destinations.concat(res.data.destinationsCatalog);
+    nextPageToken = res.data.pagination.next;
   }
 
   destinations.sort((a, b) => {
@@ -374,30 +347,31 @@ const updateDestinations = async () => {
       return 1;
     }
     return 0;
-  })
-
+  });
 
   destinations.forEach(destination => {
-    let endpoints = []
-    let regions = []
+    let endpoints = [];
+    let regions = [];
 
-    let slug = slugify(destination.name, "destinations")
+    let slug = slugify(destination.name, "destinations");
 
     if (typeof destination.supportedRegions != "undefined") {
-      regions = destination.supportedRegions
+      regions = destination.supportedRegions;
     } else {
-      regions.push('us-west-2', 'eu-west-1')
+      regions.push('us-west-2', 'eu-west-1');
     }
-    if (typeof destination.regionEndpoints != "undefined") {
-      endpoints = destination.regionEndpoints
-    } else {
-      endpoints.push('US')
-    }
-    let url = `connections/destinations/catalog/${slug}`
 
-    let tempCategories = [destination.categories]
-    tempCategories = tempCategories.filter(category => category != '')
-    tempCategories = tempCategories.flat()
+    if (typeof destination.regionEndpoints != "undefined") {
+      endpoints = destination.regionEndpoints;
+    } else {
+      endpoints.push('US');
+    }
+
+    let url = `connections/destinations/catalog/${slug}`;
+
+    let tempCategories = [destination.categories];
+    tempCategories = tempCategories.filter(category => category != '');
+    tempCategories = tempCategories.flat();
 
     let connection_modes = getConnectionModes({
       components: destination.components,
@@ -405,9 +379,9 @@ const updateDestinations = async () => {
       browserUnbundling: destination.supportedFeatures.browserUnbundling,
       browserUnbundlingPublic: destination.supportedFeatures.browserUnbundlingPublic,
       methods: destination.supportedMethods
-    })
+    });
 
-    let settings = destination.options
+    let settings = destination.options;
 
     settings.sort((a, b) => {
       if (a.name.toLowerCase() < b.name.toLowerCase()) {
@@ -417,17 +391,16 @@ const updateDestinations = async () => {
         return 1;
       }
       return 0;
-    })
-
-    settings.forEach(setting => {
-      setting.description = sanitize(setting.description)
     });
 
+    settings.forEach(setting => {
+      setting.description = sanitize(setting.description);
+    });
 
-    let actions = destination.actions
-    let presets = destination.presets
+    let actions = destination.actions;
+    let presets = destination.presets;
 
-    const clone = (obj) => Object.assign({}, obj)
+    const clone = (obj) => Object.assign({}, obj);
     const renameKey = (object, key, newKey) => {
       const clonedObj = clone(object);
       const targetKey = clonedObj[key];
@@ -437,14 +410,11 @@ const updateDestinations = async () => {
       return clonedObj;
     };
 
-
-    // Force screen method into supportedMethods object
-    destination.supportedMethods.screen = false
-    // Set it true for LiveLike, per request
+    destination.supportedMethods.screen = false;
     if (destination.id == '63e42b47479274407b671071') {
-      destination.supportedMethods.screen = true
+      destination.supportedMethods.screen = true;
     }
-    destination.supportedMethods = renameKey(destination.supportedMethods, 'pageview', 'page')
+    destination.supportedMethods = renameKey(destination.supportedMethods, 'pageview', 'page');
 
     let updatedDestination = {
       id: destination.id,
@@ -475,20 +445,19 @@ const updateDestinations = async () => {
       settings,
       actions,
       presets
-    }
-    destinationsUpdated.push(updatedDestination)
-    doesCatalogItemExist(updatedDestination)
-    tempCategories.reduce((s, e) => s.add(e), categories)
+    };
 
-  })
+    destinationsUpdated.push(updatedDestination);
+    doesCatalogItemExist(updatedDestination);
+    tempCategories.reduce((s, e) => s.add(e), categories);
+  });
 
-
-  const destinationArray = Array.from(categories)
+  const destinationArray = Array.from(categories);
   destinationArray.forEach(category => {
     destinationCategories.push({
       display_name: category,
       slug: slugify(category)
-    })
+    });
     destinationCategories.sort((a, b) => {
       if (a.display_name.toLowerCase() < b.display_name.toLowerCase()) {
         return -1;
@@ -497,43 +466,38 @@ const updateDestinations = async () => {
         return 1;
       }
       return 0;
-    })
-  })
-
+    });
+  });
 
   const options = {
     noArrayIndent: true
   };
-  output = "# AUTOGENERATED FROM PUBLIC API. DO NOT EDIT\n"
-  var todayDate = new Date().toISOString().slice(0, 10);
+  const todayDate = new Date().toISOString().slice(0, 10);
+
+  // Create destination catalog YAML file
+  let output = "# AUTOGENERATED FROM PUBLIC API. DO NOT EDIT\n";
   output += "# destination data last updated " + todayDate + " \n";
-  output += yaml.dump({
-    items: destinationsUpdated
-  }, options);
+  output += yaml.dump({ items: destinationsUpdated }, options);
   fs.writeFileSync(path.resolve(__dirname, `../src/_data/catalog/destinations.yml`), output);
 
-  // Create destination-category mapping yaml file
-  output = "# AUTOGENERATED FROM PUBLIC API. DO NOT EDIT\n"
-  var todayDate = new Date().toISOString().slice(0, 10);
+  // Create destination-category mapping YAML file
+  output = "# AUTOGENERATED FROM PUBLIC API. DO NOT EDIT\n";
   output += "# destination categories last updated " + todayDate + " \n";
-  output += yaml.dump({
-    items: destinationCategories
-  }, options);
+  output += yaml.dump({ items: destinationCategories }, options);
   fs.writeFileSync(path.resolve(__dirname, `../src/_data/catalog/destination_categories.yml`), output);
 
-  console.log("destinations done")
-}
+  console.log("destinations done");
+};
 
 const updateWarehouses = async () => {
-  let warehouses = []
-  let nextPageToken = "MA=="
-  let warehousesUpdated = []
-
+  let warehouses = [];
+  let nextPageToken = "MA==";
+  let warehousesUpdated = [];
 
   while (nextPageToken !== undefined) {
-    const res = await getCatalog(`${PAPI_URL}/catalog/warehouses/`, nextPageToken)
-    warehouses = warehouses.concat(res.data.warehousesCatalog)
-    nextPageToken = res.data.pagination.next
+    const res = await getCatalog(`${PAPI_URL}/catalog/warehouses/`, nextPageToken);
+    warehouses = warehouses.concat(res.data.warehousesCatalog);
+    nextPageToken = res.data.pagination.next;
   }
 
   warehouses.sort((a, b) => {
@@ -544,36 +508,24 @@ const updateWarehouses = async () => {
       return 1;
     }
     return 0;
-  })
+  });
 
-  const regionalWarehouseEndpoints = regionalSupport.warehouses.endpoint
-  const regionalWarehouseRegions = regionalSupport.warehouses.region
-
+  const regionalWarehouseEndpoints = regionalSupport.warehouses.endpoint;
+  const regionalWarehouseRegions = regionalSupport.warehouses.region;
 
   warehouses.forEach(warehouse => {
-    let slug = slugify(warehouse.slug)
-    let endpoints = ['us']
-    let regions = ['us']
-    let url = `connections/storage/catalog/${slug}`
+    let slug = slugify(warehouse.slug);
+    let endpoints = ['us'];
+    let regions = ['us'];
+    let url = `connections/storage/catalog/${slug}`;
 
     if (regionalWarehouseEndpoints.includes(slug)) {
-      endpoints.push('eu')
+      endpoints.push('eu');
     }
 
     if (regionalWarehouseRegions.includes(slug)) {
-      regions.push('eu')
+      regions.push('eu');
     }
-
-    let settings = warehouse.options
-    settings.sort((a, b) => {
-      if (a.name.toLowerCase() < b.name.toLowerCase()) {
-        return -1;
-      }
-      if (a.name.toLowerCase() > b.name.toLowerCase()) {
-        return 1;
-      }
-      return 0;
-    })
 
     let updatedWarehouse = {
       id: warehouse.id,
@@ -582,34 +534,26 @@ const updateWarehouses = async () => {
       slug,
       endpoints,
       regions
+    };
 
-    }
-    warehousesUpdated.push(updatedWarehouse)
+    warehousesUpdated.push(updatedWarehouse);
+  });
 
-
-  })
   const options = {
     noArrayIndent: true
   };
-  // output = "# AUTOGENERATED FROM PUBLIC API. DO NOT EDIT\n"
   const todayDate = new Date().toISOString().slice(0, 10);
-  // output += "# warehouse data last updated " + todayDate + " \n";
-  // output += yaml.dump({
-  //   items: warehousesUpdated
-  // }, options);
-  // fs.writeFileSync(path.resolve(__dirname, `../src/_data/catalog/warehouse_papi.yml`), output);
 
-  // Create regional support map
-  output = "# AUTOGENERATED LIST OF CONNECTIONS THAT SUPPORT REGIONAL\n"
+  // Create regional support YAML file
+  let output = "# AUTOGENERATED LIST OF CONNECTIONS THAT SUPPORT REGIONAL\n";
   output += "# Last updated " + todayDate + " \n";
-  output += yaml.dump({
-    warehouses: warehousesUpdated
-  }, {
-    noArrayIndent: false
-  })
+  output += yaml.dump({ warehouses: warehousesUpdated }, options);
   fs.writeFileSync(path.resolve(__dirname, `../src/_data/catalog/regional-supported.yml`), output);
-  console.log("warehouses done")
-}
-updateWarehouses()
-updateSources()
-updateDestinations()
+
+  console.log("warehouses done");
+};
+
+// Execute the update functions
+updateWarehouses();
+updateSources();
+updateDestinations();

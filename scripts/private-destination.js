@@ -3,26 +3,21 @@ const path = require('path');
 const fs = require('fs');
 const fm = require('front-matter');
 const yaml = require('js-yaml');
-const {
-  prompt
-} = require('enquirer');
-const {
-  type
-} = require('os');
+const { prompt } = require('enquirer');
+const { type } = require('os');
 
 require('dotenv').config();
 
+// Global variables
+const PAPI_URL = "https://api.segmentapis.com";
+const PRIVATE_DESTINATIONS = yaml.load(fs.readFileSync(path.resolve(__dirname, `../src/_data/catalog/destinations_private.yml`)));
+const slugOverrides = yaml.load(fs.readFileSync(path.resolve(__dirname, `../src/_data/catalog/slugs.yml`)));
+const privateDests = PRIVATE_DESTINATIONS.items;
+let private = [];
 
-// Here, global variables are set
-const PAPI_URL = "https://api.segmentapis.com"
-
-const PRIVATE_DESTINATIONS = yaml.load(fs.readFileSync(path.resolve(__dirname, `../src/_data/catalog/destinations_private.yml`)))
-const slugOverrides = yaml.load(fs.readFileSync(path.resolve(__dirname, `../src/_data/catalog/slugs.yml`)))
-
-const privateDests = PRIVATE_DESTINATIONS.items
-let private = []
+// Retrieves catalog data with pagination
 const getCatalog = async (url, page_token = "MA==") => {
-  let res = null
+  let res = null;
   try {
     res = await axios.get(url, {
       headers: {
@@ -36,17 +31,17 @@ const getCatalog = async (url, page_token = "MA==") => {
         }
       }
     });
-    return res.data
+    return res.data;
   } catch (err) {
     console.error("Error response:");
-    console.error(err.response.data); // ***
-    console.error(err.response.status); // ***
-    console.error(err.response.headers); // ***
-  } finally {
-
+    console.error(err.response.data);
+    console.error(err.response.status);
+    console.error(err.response.headers);
   }
-}
+};
 
+// Generates a slug from the display name and type
+// and overrides any slugs based on slugs.yml
 const slugify = (displayName, type) => {
   let slug = displayName
     .toLowerCase()
@@ -54,61 +49,65 @@ const slugify = (displayName, type) => {
     .replace('-&-', '-')
     .replace('/', '-')
     .replace(/[\(\)]/g, '')
-    .replace('.', '-')
+    .replace('.', '-');
 
-  let overrides = ""
+  let overrides = "";
   if (type == "sources") {
-    overrides = slugOverrides.sources
-  } 
+    overrides = slugOverrides.sources;
+  }
 
   if (type == "destinations") {
-    overrides = slugOverrides.destinations
-  } 
+    overrides = slugOverrides.destinations;
+  }
 
   for (key in overrides) {
-    let original = overrides[key].original
-    let override = overrides[key].override
+    let original = overrides[key].original;
+    let override = overrides[key].override;
 
     if (slug == original) {
-      console.log(original + " -> " + override)
-      slug = override
+      console.log(original + " -> " + override);
+      slug = override;
     }
   }
-  return slug
-}
+  return slug;
+};
 
+// Checks the status of a destination
 const checkDestinationStatus = async (id) => {
-  const res = await getCatalog(`${PAPI_URL}/catalog/destinations/${id}`)
-  let destination = res.data.destinationMetadata
-  return destination
-}
+  const res = await getCatalog(`${PAPI_URL}/catalog/destinations/${id}`);
+  let destination = res.data.destinationMetadata;
+  return destination;
+};
 
+// Updates the frontmatter to make a destination public
+// if it is currently private and the status has changed
 const makeDestinationPublic = async (itemURL) => {
-  const catalogPath = path.resolve('src/', itemURL, 'index.md')
+  const catalogPath = path.resolve('src/', itemURL, 'index.md');
   const f = fm(fs.readFileSync(catalogPath, 'utf8'));
-  const fmatter = f.attributes
-  fmatter.private = false
-  fmatter.hidden = false
-  let new_fm = ""
+  const fmatter = f.attributes;
+  fmatter.private = false;
+  fmatter.hidden = false;
+  let new_fm = "";
   for (const property in fmatter) {
     if (property == "versions") {
-      console.log(`Need to fix versions on this one`)
+      console.log(`Need to fix versions on this one`);
     }
-    //console.log(`${property}: ${fmatter[property]}`);
-    new_fm += `${property}: ${fmatter[property]}\n`
+    new_fm += `${property}: ${fmatter[property]}\n`;
   }
-  const attr = `---\n${new_fm}\n---\n`
-  const body = f.body
-  const content = attr + body
-  fs.writeFileSync(catalogPath, content)
-}
+  const attr = `---\n${new_fm}\n---\n`;
+  const body = f.body;
+  const content = attr + body;
+  fs.writeFileSync(catalogPath, content);
+};
+
+// Retrieves destination data and updates the private destinations
 const getDestinationData = async (id) => {
-  const res = await getCatalog(`${PAPI_URL}/catalog/destinations/${id}`)
+  const res = await getCatalog(`${PAPI_URL}/catalog/destinations/${id}`);
   if (res == null) {
-    return
+    return;
   }
-  let destination = res.data.destinationMetadata
-  let settings = destination.options
+  let destination = res.data.destinationMetadata;
+  let settings = destination.options;
   settings.sort((a, b) => {
     if (a.name.toLowerCase() < b.name.toLowerCase()) {
       return -1;
@@ -117,20 +116,20 @@ const getDestinationData = async (id) => {
       return 1;
     }
     return 0;
-  })
-  let actions = destination.actions
-  let presets = destination.presets
-  let slug = slugify(destination.name, "destinations")
-  let url = `connections/destinations/catalog/${slug}`
+  });
+  let actions = destination.actions;
+  let presets = destination.presets;
+  let slug = slugify(destination.name, "destinations");
+  let url = `connections/destinations/catalog/${slug}`;
 
   // Force screen method into supportedMethods object
-  destination.supportedMethods.screen = false
+  destination.supportedMethods.screen = false;
   // Set it true for LiveLike, per request
   if (destination.id == '63e42b47479274407b671071') {
-    destination.supportedMethods.screen = true
+    destination.supportedMethods.screen = true;
   }
 
-  const clone = (obj) => Object.assign({}, obj)
+  const clone = (obj) => Object.assign({}, obj);
   const renameKey = (object, key, newKey) => {
     const clonedObj = clone(object);
     const targetKey = clonedObj[key];
@@ -140,7 +139,7 @@ const getDestinationData = async (id) => {
     return clonedObj;
   };
 
-  destination.supportedMethods = renameKey(destination.supportedMethods, 'pageview', 'page')
+  destination.supportedMethods = renameKey(destination.supportedMethods, 'pageview', 'page');
 
   let updatePrivateDest = {
     id: destination.id,
@@ -166,93 +165,87 @@ const getDestinationData = async (id) => {
     settings,
     actions,
     presets
-  }
-
+  };
 
   if (destination.status === "PRIVATE_BETA" || destination.status === "PRIVATE_BUILDING") {
-    private.push(updatePrivateDest)
+    private.push(updatePrivateDest);
   } else {
-    console.log(`${destination.name} is public and will be removed`)
-    makeDestinationPublic(url)
+    console.log(`${destination.name} is public and will be removed`);
+    makeDestinationPublic(url);
   }
 
   const options = {
     noArrayIndent: false
-  }
+  };
 
-  output = "# AUTOGENERATED FROM PUBLIC API. DO NOT EDIT\n"
+  output = "# AUTOGENERATED FROM PUBLIC API. DO NOT EDIT\n";
   var todayDate = new Date().toISOString().slice(0, 10);
   output += "# destination data last updated " + todayDate + " \n";
   output += yaml.dump({
     items: private
-  }, options)
+  }, options);
   fs.writeFileSync(path.resolve(__dirname, `../src/_data/catalog/destinations_private.yml`), output);
-}
+};
 
-
+// Checks the status of existing private destinations and handles public destinations
 const checkExistingStatus = async () => {
-  let existingIds = []
-  let newIds = []
+  let existingIds = [];
+  let newIds = [];
   for (let [key] of Object.entries(privateDests)) {
-    existingIds.push(privateDests[key].id)
+    existingIds.push(privateDests[key].id);
   }
 
-  existingIds.sort()
+  existingIds.sort();
 
   for (i in existingIds) {
-    let id = existingIds[i]
-    let destination = await checkDestinationStatus(id)
-    let status = destination.status
-    let slug = slugify(destination.name, "destinations")
-    let url = `connections/destinations/catalog/${slug}`
-
-    
-    
+    let id = existingIds[i];
+    let destination = await checkDestinationStatus(id);
+    let status = destination.status;
+    let slug = slugify(destination.name, "destinations");
+    let url = `connections/destinations/catalog/${slug}`;
 
     if (status === "PRIVATE_BETA") {
-      // console.log(`${destination.name} is private`)
-      newIds.push(id)
+      newIds.push(id);
     } else {
-      console.log(`src/connections/${destination.name}is public`)
-      makeDestinationPublic(url)
+      console.log(`src/connections/${destination.name} is public`);
+      makeDestinationPublic(url);
     }
   }
-  return newIds
-}
+  return newIds;
+};
+
+// Adds a new private destination or updates existing ones
 const addPrivateDestination = async () => {
-  let ids = await checkExistingStatus()
+  let ids = await checkExistingStatus();
   ids.sort();
+
   const DEST_ID = await prompt({
     type: 'input',
     name: 'id',
     message: 'Enter the destination ID'
-  })
+  });
 
   if (DEST_ID.id == '0') {
     for (const element in ids) {
-      let currentId = ids[element]
-      await getDestinationData(currentId)
+      let currentId = ids[element];
+      await getDestinationData(currentId);
     }
-    console.log("Updating exsting Private Beta destinations.")
+    console.log("Updating existing Private Beta destinations.");
   } else {
     if (ids.includes(DEST_ID.id)) {
-      console.log("This destination is already captured.")
-      return
+      console.log("This destination is already captured.");
+      return;
     } else {
-      ids.push(DEST_ID.id)
+      ids.push(DEST_ID.id);
       fs.writeFileSync(path.resolve(__dirname, `../src/_data/catalog/destinations_private.yml`), '');
-
     }
     ids.sort();
 
-
     for (const element in ids) {
-      let currentId = ids[element]
-      await getDestinationData(currentId)
+      let currentId = ids[element];
+      await getDestinationData(currentId);
     }
   }
+};
 
-}
-
-
-addPrivateDestination()
+addPrivateDestination();
