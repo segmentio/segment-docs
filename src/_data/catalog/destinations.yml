@@ -9068,8 +9068,7 @@ items:
     type: string
     defaultValue: ''
     description: >-
-      This can be found in your Braze dashboard under App Settings > Developer
-      Console. (Formerly 'App Group Identifier')
+      This can be found in your Braze dashboard under **Settings > API Keys**. (Formerly 'App Group Identifier')
     required: true
     label: REST API Key
   - name: automatic_in_app_message_registration_enabled
@@ -9167,7 +9166,7 @@ items:
       **Web Only:** By default, a trigger action will only fire if at least 30
       seconds have elapsed since the last trigger action. Provide a value for
       this configuration option to override that default with a value of your
-      own. We do not recommend making this value any smaller than 10 to avoid
+      own. Segment doesn't recommend making this value any smaller than 10 to avoid
       spamming the user with notifications. **This setting is only applicable if
       you are using version 2 of the Braze Web SDK.**
     required: false
