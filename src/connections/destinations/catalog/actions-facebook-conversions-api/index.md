@@ -159,8 +159,8 @@ Segment applies formatting to User Data Parameters as follows:
 | Phone                                                                               | All non-numeric characters are removed from string.                                                                                                            |
 | Gender                                                                              | A string of 'male' will be transformed to 'm', and 'female' to 'f'.                                                                                            |
 | Date of Birth                                                                       | No formatting is applied.                                                                                                                                      |
-| State                                                                               | Compared against a Map object of states and their 2-character ANSI abbreviation code. Example: "Texas", "TX", or "tx" in this field will be formatted as "tx". |
-| Country                                                                             | Compared against a Map object of countries and their 2-letter ISO 3166-1 alpha-2 country codes.                                                                |
+| State                                                                               | Compared against a Map object of states and their two-character ANSI abbreviation code. Example: "Texas", "TX", or "tx" in this field will be formatted as "tx". |
+| Country                                                                             | Compared against a Map object of countries and their two-letter ISO 3166-1 alpha-2 country codes.                                                                |
 
 ### User Data Parameters
 
