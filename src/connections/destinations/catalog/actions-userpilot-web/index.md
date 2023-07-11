@@ -10,7 +10,7 @@ beta: true
 Userpilot helps product teams deliver personalized in-app experiences to increase growth metrics at every stage of the user journey. When you integrate Userpilot with Segment, you can send your Segment events to Userpilot, which allows you to create more personalized experiences for your users.
 
 
-This destination is maintained by Userpilot. For any issues with the destination, [contact their Support team](mailto:support@userpilot.co).
+This destination is maintained by Userpilot. For any issues with the destination, [contact Userpilot's Support team](mailto:support@userpilot.co){:target="_blank"}.
 
 {% include content/ajs-upgrade.md %}
 
