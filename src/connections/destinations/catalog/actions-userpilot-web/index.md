@@ -15,7 +15,7 @@ This destination is maintained by Userpilot. For any issues with the destination
 {% include content/ajs-upgrade.md %}
 
 
-## Getting Started
+## Getting started
 
 1. From the Segment web app, click **Catalog**, then click **Destinations**.
 2. Find the Destinations Actions item in the left navigation, and click it.
