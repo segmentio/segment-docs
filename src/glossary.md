@@ -9,6 +9,7 @@ layout: page
 
 {% assign dictionary = site.data.glossary | sort_natural: "term" %}
 
-{% for term in dictionary %}
-<li> {{ term }} </li>
+{% for item in dictionary %}
+  <h3>{{ item.term }}</h3>
+  {{ item.definition }}
 {% endfor %}
