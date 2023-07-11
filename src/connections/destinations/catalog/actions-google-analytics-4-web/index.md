@@ -39,10 +39,7 @@ When enabled, the **Page Views** advanced setting sends the `page_view` event fr
 1. Disable the **Page Views** advanced setting (set it to *False*) so only Segment's `analytics.page()` sends to the GA4 SDK.
 2.  Edit or disable the preset **Set Configuration Fields** mapping so only the `page_view` included in the gtag.js snippet sends to the GA4 SDK.
 
-The GA4 SDK also tracks a native `page_view` event if you have the [following setting enabled](https://developers.google.com/analytics/devguides/collection/ga4/views?client_type=gtag#manual_pageviews){:target='_blank'} setting enabledin your GA4 account:
-
-
-
+The GA4 SDK also tracks a native `page_view` event if you have the [following setting enabled](https://developers.google.com/analytics/devguides/collection/ga4/views?client_type=gtag#measure_virtual_pageviews){:target='_blank'} in your GA4 account. To avoid the native GA4 `page_view` event, disable **Page changes based on browser history events** under the advanced settings of the **Page views** section.
 
 
 ### Custom Event Naming
