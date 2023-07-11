@@ -43,4 +43,4 @@ If you experience any issues while setting up Userpilot as a destination, follow
 
 - Check your Userpilot API Key. Make sure it's correctly entered in Segment.
 - Verify that you've enabled Userpilot as a destination in Segment.
-- If you're still having trouble, contact Segment's support team for further assistance.
+- If you're still having trouble, [contact Segment's support team](https://segment.com/help/contact/){:target="_blank"} for further assistance.
