@@ -21,8 +21,10 @@ FullStory’s cloud mode destination requires that you also use FullStory’s ta
 
 The FullStory cloud mode destination sends information about your users and related events to FullStory. It uses [FullStory’s REST APIs](https://developer.fullstory.com){:target="_blank"}.
 
-- **Identify User:** Converts Segment [Identify](/docs/connections/spec/identify/) calls to [FullStory Set User Properties API calls](https://developer.fullstory.com/set-user-properties){:target="_blank"}. Use this to set custom attributes which can be used to search and segment within FullStory.
+- **Identify User**: Converts Segment [Identify](/docs/connections/spec/identify/) calls to [FullStory Set User Properties API calls](https://developer.fullstory.com/set-user-properties){:target="_blank"}. Use this to set custom attributes which can be used to search and segment within FullStory.
 - **Track Custom Event**: Converts Segment [Track](/docs/connections/spec/track/) calls to [FullStory custom event API calls](https://developer.fullstory.com/server-events){:target="_blank"}. Use this to capture more context about your user’s experience on your site or to capture user’s actions in other applications to build a more complete understanding of your user’s overall experience.
+- **Identify User V2**: Converts Segment [Identify](/docs/connections/spec/identify/) calls to [FullStory Create User API calls](https://developer.fullstory.com/server/v2/users/create-user/){:target="_blank"}. Use this to upsert a user and their attributes which can be used to search and segment within FullStory.
+- **Track Custom Event V2**: Converts Segment [Track](/docs/connections/spec/track/) calls to [FullStory Create Event API calls](https://developer.fullstory.com/server/v2/events/create-events/){:target="_blank"}. Use this to capture more context about your user’s experience on your site or to capture user’s actions in other applications to build a more complete understanding of your user’s overall experience.
 
 ### Benefits of FullStory Cloud Mode (Actions)
 
@@ -32,7 +34,7 @@ The FullStory cloud mode destination sends information about your users and rela
 
 ### Getting Started
 
-1. You need a FullStory API Key to use the FullStory cloud mode destination. Refer to [this article](https://help.fullstory.com/hc/en-us/articles/360052021773-Managing-API-Keys){:target="_blank"} to learn how to generate a new API Key within FullStory.
+1. You need a FullStory Admin API Key to use the FullStory cloud mode destination. Refer to [this article](https://help.fullstory.com/hc/en-us/articles/360052021773-Managing-API-Keys){:target="_blank"} to learn how to generate a new API Key within FullStory.
 2. From the Segment web app, click **Catalog**, then click **Destinations**.
 3. Find “FullStory Cloud Mode (Actions)” in the Destinations list and click it.
 4. Click **Configure FullStory Cloud Mode (Actions)**.
@@ -48,8 +50,11 @@ The FullStory cloud mode destination sends information about your users and rela
 
 ### Why am I getting a ‘404 Not Found’ error?
 
-The user for which the API request is being made can not be found in the identified set of users within your FullStory organization. If you expect that user to already exist, you can search for that User ID in FullStory to confirm. Also, double check that you are using an API key from the same organization.
+This applies to the orginal 'Identify User' and 'Track Event' actions. The user for which the API request is being made can not be found in the identified set of users within your FullStory organization. If you expect that user to already exist, you can search for that User ID in FullStory to confirm. Also, double check that you are using an API key from the same organization.
 
 Data sent server-side for users must match an already existing userId that was sent from a client-side connection.
+
+The new 'Identify User V2' and 'Track Event V2' actions will automatically create users when a user matching the
+provided UID is not found.
 
 {% include components/actions-fields.html %}
