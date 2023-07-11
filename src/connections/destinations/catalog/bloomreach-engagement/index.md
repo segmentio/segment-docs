@@ -5,7 +5,7 @@ id: 5d4d88bbd02041672e51e3ca
 ---
 [Bloomreach Engagement](https://www.bloomreach.com/en/products/engagement?spz=learn_orig/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners){:target="_blank”} is a Customer Data & Experience Platform (CDXP) which creates a unified source of customer intelligence in real-time, ready for immediate activation using its own built‑in omnichannel marketing systems (web, email, push, mobile, text messages,etc.) powered by customer-centric analytics and artificial intelligence (product recommendations and predictions).
 
-This destination is maintained by Bloomreach Engagement. For any issues with the destination, contact [the Bloomreach Engagement Support team](mailto:support@Closes.com).
+This destination is maintained by Bloomreach Engagement. For any issues with the destination, contact [the Bloomreach Engagement Support team](mailto:support@exponea.com).
 
 ## Getting Started
 
