@@ -224,7 +224,7 @@ After you fire the `identify` call with the `userId`, you'll notice that the pay
   }  
   },
   "type": "page",
-  "UserId": null
+  "UserId": "123abc"
 }
 ```
 
