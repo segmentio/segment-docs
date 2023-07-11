@@ -9,7 +9,7 @@ title: Configure Consent Management
 ## Prerequisites
 
 Before you can configure consent in Segment, you'll need to take the following steps:
-- **Access your consent management tool**. You'll need a list of your consent categories and the key or ID associated with each topic.
+- **Access your consent management tool and set up consent categories**. You'll need a list of your consent categories and the key or ID associated with each topic.
 - **Know how your company maps each destination**. You'll need to know which destinations map to each categories. 
 - **Update your web libraries with the consent object**. To ensure Segment is receiving your end-user consent preferences, you'll need access to your web libraries so you can include the consent object to every event.
 
