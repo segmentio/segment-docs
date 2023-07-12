@@ -44,9 +44,9 @@ This source is maintained by <integration_name>. For any issues with the source,
 
 > (delete after reading) Update your company name (x2) and support email address.
 
-_**NOTE:** The <integration_name> Source is currently in beta, which means that they are still actively developing the source. If you are interested in joining their beta program or have any feedback to help improve the <integration_name> Source and its documentation, [let their team know](mailto:support@<integration_name>.com)._
+_**NOTE:** The <integration_name> Source is currently in beta, which means that they are still actively developing the source. If you are interested in joining their beta program or have any feedback to help improve the <integration_name> Source and its documentation, [let the <integration_name> team know](mailto:support@<integration_name>.com)._
 
-## Getting Started
+## Getting started
 
 > (delete after reading) Include clear, succinct steps including hyperlinks to where customers can locate the place in your app to enter their Segment writekey.
 
