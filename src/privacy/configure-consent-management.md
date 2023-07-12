@@ -8,10 +8,10 @@ title: Configure Consent Management
 
 ## Prerequisites
 
-Before you can configure consent in Segment, you'll need to take the following steps:
-- **Access your consent management tool and set up consent categories**. You'll need a list of your consent categories and the key or ID associated with each topic.
-- **Know how your company maps each destination**. You'll need to know which destinations map to each categories. 
-- **Update your web libraries with the consent object**. To ensure Segment is receiving your end-user consent preferences, you'll need access to your web libraries so you can include the consent object to every event.
+Before you can configure consent in Segment, take the following steps:
+- **Access your consent management tool and set up consent categories**. You need a list of your consent categories and the key or ID associated with each topic.
+- **Know how your company maps each destination**. You need to know which destinations map to which categories. 
+- **Update your web libraries with the consent object**. You need access to your web libraries so you can include the consent object in every event.
 
 <!-- Ask Aaron about consent object order of ops/can it be tested??? Can you undo or pause this?? -->
 
@@ -29,6 +29,8 @@ Before you can configure consent in Segment, you'll need to take the following s
 > warning "You can map website sources and event streaming destinations to consent categories during the private beta"
 > All other sources and destinations are not affected by consent mappings.
 
+<!-- Add note that category ID is case sensitive--->
+
 1. From the [Segment homepage](https://app.segment.com/goto-my-workspace/){:target="_blank”}, select the Privacy tab and click **Consent Management**.
 2. On the Consent management page, click **Get started**.
 3. 
@@ -38,7 +40,6 @@ Before you can configure consent in Segment, you'll need to take the following s
 > warning "Segment recommends mapping all destinations to a category"
 > Any destination that doesn't have a mapping won't receive events with a consent object. 
 
-<!-- does it get backfilled???--->
 
 ## Step 2: 
 
