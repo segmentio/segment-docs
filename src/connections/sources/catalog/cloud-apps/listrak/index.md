@@ -47,6 +47,6 @@ Listrak maintains a trait for each email list you add to the integration. The tr
 
 Now that your Source is set up, you can connect it with Destinations.
 
-Log into your downstream tools and check to see that your events appear as expected, and that they contain all of the properties you expect. If your events and properties don’t appear, check the [Event Delivery](https://segment.com/docs/connections/event-delivery/) tool, and refer to the Destination docs for each tool for troubleshooting.
+Log into your downstream tools and check to see that your events appear as expected and that they contain all of the properties you expect. If your events and properties don’t appear, check the [Event Delivery](/docs/connections/event-delivery/) tool and refer to the docs for each Destination.
 
 If there are any issues with how the events are arriving to Segment, [contact the Listrak support team](mailto:support@listrak.com).
