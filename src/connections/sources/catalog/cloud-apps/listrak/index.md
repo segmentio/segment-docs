@@ -29,7 +29,7 @@ This source is maintained by Listrak. For any issues with the source, [contact t
 7. Click the Segment card
 8. Click Setup Integration
 9. Paste the Write key you copied from Segment and click **Save**.
-10. Add at least one email list that you want to sync with Segment and click Save again
+10. Add at least one email list that you want to sync with Segment and click **Save**.
 
 ## Components
 
