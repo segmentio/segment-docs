@@ -25,7 +25,7 @@ This source is maintained by Listrak. For any issues with the source, [contact t
 4. Click **Add Source** to save your settings.
 5. Copy the Write key from the Segment UI.
 6.  Log in to your [Listrak account](https://admin.listrak.com){:target="_blank"}, and navigate to Integrations > Integrations Management.
-6. Click New Integration
+6. Click **New Integration**.
 7. Click the Segment card
 8. Click Setup Integration
 9. Paste the Write key you copied and click Save
