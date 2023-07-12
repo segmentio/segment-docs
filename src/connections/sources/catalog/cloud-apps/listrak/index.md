@@ -23,7 +23,8 @@ This source is maintained by Listrak. For any issues with the source, [contact t
    - The nickname is used as a label in the Segment app, and Segment creates a related schema name in your warehouse. The nickname can be anything, but we recommend using something that reflects the source itself and distinguishes amongst your environments (eg. Listrak_Prod, Listrak_Staging, Listrak_Dev).
 
 4. Click **Add Source** to save your settings.
-5. Copy the Write key from the Segment UI and [log in to your Listrak account](https://admin.listrak.com) - navigate to  Integrations > Integrations Management
+5. Copy the Write key from the Segment UI.
+6.  Log in to your [Listrak account](https://admin.listrak.com){:target="_blank"}, and navigate to Integrations > Integrations Management.
 6. Click New Integration
 7. Click the Segment card
 8. Click Setup Integration
