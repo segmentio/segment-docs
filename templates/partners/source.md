@@ -76,71 +76,29 @@ The default behavior is for Klaviyo to pass the userId associated with the email
 
 The table below lists events that <integration_name> sends to Segment. These events appear as tables in your warehouse, and as regular events in other Destinations. <integration_name> includes the `userId` if available.
 
-<table>
-  <tr>
-   <td>Event Name</td>
-   <td>Description</td>
-  </tr>
-  <tr>
-   <td>Email Sent</td>
-   <td>Email was sent successfully</td>
-  </tr>
-  <tr>
-   <td>Email Opened</td>
-   <td>Prospect opened the email</td>
-  </tr>
-  <tr>
-   <td>Link Clicked</td>
-   <td>Prospect clicked the tracking link</td>
-  </tr>
-  <tr>
-   <td>Email Replied</td>
-   <td>Prospect replied to the email sent</td>
-  </tr>
-  <tr>
-   <td>Email Bounced</td>
-   <td>Email servers rejected the email</td>
-  </tr>
-  <tr>
-   <td>Email Unsubscribed</td>
-   <td>Prospect clicked the unsubscribe link</td>
-  </tr>
-</table>
+| Event Name         | Description                           |
+| ------------------ | ------------------------------------- |
+| Email Sent         | Email was sent successfully           |
+| Email Opened       | Prospect opened the email             | 
+| Link Clicked       | Prospect clicked the tracking link    | 
+| Email Replied      | Prospect replied to email sent        | 
+| Email Bounced      | Email servers rejected the email      | 
+| Email Unsubscribed | Prospect clicked the unsubscribe link | 
+
 
 ## Event Properties
 
 The table below list the properties included in the events listed above.
 
-<table>
-  <tr>
-   <td>Property Name</td>
-   <td>Description</td>
-  </tr>
-  <tr>
-   <td>`event`</td>
-   <td>Email event type</td>
-  </tr>
-  <tr>
-   <td>`userId`</td>
-   <td>Prospect email ID</td>
-  </tr>
-  <tr>
-   <td>`email_id`</td>
-   <td>ID of the email</td>
-  </tr>
-  <tr>
-   <td>`fromId`</td>
-   <td>Sender email ID</td>
-  </tr>
-  <tr>
-   <td>`email_subject`</td>
-   <td>Subject line of the email</td>
-  </tr>
-  <tr>
-   <td>`link`</td>
-   <td>URL of the link clicked</td>
-  </tr>
-</table>
+| Property Name   | Description               |
+| --------------- | ------------------------- |
+| `event`         | Email event type          |
+| `userId`        | Prospect user ID          |
+| `email_id`      | ID of the email           |
+| `fromId`        | Sender email ID           |
+| `email_subject` | Subject line of the email |
+| `link`          | URL of the link clicked   |
+ 
 
 ## Adding Destinations
 
