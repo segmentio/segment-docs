@@ -3,8 +3,13 @@ title: Configure Consent Management
 ---
 > info "Consent Management is currently in private beta"
 > This means that the Consent Management features are in active development, and some functionality may change before it becomes generally available. [Contact Segment](https://segment.com/help/contact/){:target="_blank"} with any feedback or questions.
+>
+> During the private beta, Consent Management only supports website sources and event streaming destinations. All other sources and destinations are not impacted.
+
+After setting up a third-party consent management platform (CMP,) you can enforce the consent collected from your users by configuring consent categories in your your Segment workspace and adding the [consent object](/docs/privacy/consent-management/#consent-object) to your web libraries. After you've configured consent in the Segment app, your events will be routed only to those streaming destinations consented to by your users.
 
 <!--- note to include: how to find your category ID in tools other than onetrust-->
+<!--- Folks need to do some prereq setup, there are two docs - read through and setup ourselves before including information -->
 
 ## Prerequisites
 
@@ -13,21 +18,7 @@ Before you can configure consent in Segment, take the following steps:
 - **Know how your company maps each destination**. You need to know which destinations map to which categories. 
 - **Update your web libraries with the consent object**. You need access to your web libraries so you can include the consent object in every event.
 
-<!-- Ask Aaron about consent object order of ops/can it be tested??? Can you undo or pause this?? -->
-
-> error "After adding the consent object to your events, your data is immediately impacted"
-> If you disable a consent category, events are not sent to mapped destinations.
->  
-> If a destination is mapped to multiple categories, and the end user has conflicting preferences, data will be sent to the destination.
-> 
-> If Segment receives an API call with both an integrations object and a consent object, the consent object takes preference.
-
-<!-- does this need to be added to multiple pages-->
-
 ## Step 1: Create consent categories
-
-> warning "You can map website sources and event streaming destinations to consent categories during the private beta"
-> All other sources and destinations are not affected by consent mappings.
 
 <!-- Add note that category ID is case sensitive--->
 
@@ -36,14 +27,21 @@ Before you can configure consent in Segment, take the following steps:
 3. 
 
 
+## Step 2: Map destinations to consent categories
+
 <br/>
 > warning "Segment recommends mapping all destinations to a category"
 > Any destination that doesn't have a mapping won't receive events with a consent object. 
 
 
-## Step 2: 
+## Step 3: Add the consent object to your web libraries
 
 
-## Step 3: 
+> error "After adding the consent object to your events, your data is immediately impacted"
+> If you disable a consent category, events are not sent to mapped destinations.
+>  
+> If a destination is mapped to multiple categories, and the end user has conflicting preferences, data will be sent to the destination.
+> 
+> If Segment receives an API call with both an integrations object and a consent object, the consent object takes preference.
 
 ## Ingesting consent data

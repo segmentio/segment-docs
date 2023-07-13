@@ -1,5 +1,6 @@
 ---
 title: Reconciling Consent Conflicts
+hidden: true
 ---
 
 Segment sends data only to destinations in categories consented to by the end user. When conflicts arise between the consent object and integrations object or your consent management tool, Segment reconciles consent according to the following tables.
