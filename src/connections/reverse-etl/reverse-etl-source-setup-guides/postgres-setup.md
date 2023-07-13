@@ -19,7 +19,8 @@ To set up Postgres with Reverse ETL:
     -- create a user named "segment" that Segment will use when connecting to your Postgres cluster.
     CREATE USER segment PASSWORD '<enter password here>';
 
-    -- allows the "segment" user to create new schemas on the specified database. (this is the name you chose when provisioning your cluster) GRANT CREATE ON DATABASE "<enter database name here>" TO "segment";
+    -- allows the "segment" user to create new schemas on the specified database. (this is the name you chose when provisioning your cluster) 
+    GRANT CREATE ON DATABASE "<enter database name here>" TO "segment";
     ```
 4. Make sure the user has correct access permissions to the database.
 5. Follow the steps listed in the [Add a source](/docs/connections/reverse-etl/#step-1-add-a-source) section to finish adding Postgres as a source. 
