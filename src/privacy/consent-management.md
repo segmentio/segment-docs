@@ -7,13 +7,13 @@ related:
 > info "Consent Management is currently in private beta"
 > This means that the Consent Management features are in active development, and some functionality may change before it becomes generally available. [Contact Segment](https://segment.com/help/contact/){:target="_blank"} with any feedback or questions.
 
-Segment works with your third-party consent management platform to capture the categories consented to by an end user and route events to the streaming destinations in the categories consented to by a user. 
+Segment works with your third-party consent management platform (CMP) to capture the categories consented to by an end user and route events to the streaming destinations in the categories consented to by a user. 
 
 ![Diagram outlining information flowing from an end user to Segment destinations](/docs/privacy/images/consent-overview.png)
 
 When an end user visits your site, they set **consent preferences**, or make decisions about the types of data they want you to collect, use, and share. These consent preferences are typically presented as a set list of categories that describe how your company intends to use that data. Common categories include personalization, advertising, and site performance.
 
-Segment captures and then enforces an end user's consent preferences. To collect your users' preferences, you must use a third-party consent management platform (CMP), like OneTrust.
+Segment captures and then enforces an end user's consent preferences. To collect your users' preferences, you must use a third-party CMP like OneTrust.
 
 After a user sets their consent preferences, Segment updates the [consent object](#consent-object) with that information. The events are then sent downstream to any streaming destinations in categories that a user consented to share data with.
 
