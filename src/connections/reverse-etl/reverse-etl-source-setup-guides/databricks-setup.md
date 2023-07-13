@@ -9,20 +9,20 @@ At a high level, when you set up Databricks for Reverse ETL, the configured user
 ## Required permissions
 * To grant access to read data from the tables used in the model query run: 
 
-    ```ts
+    ```
     GRANT USAGE ON SCHEMA <schema_name> TO `<user or service principal you are using to connect to Segment>`; 
     GRANT SELECT, READ_METADATA ON SCHEMA <schema_name> TO `<user or service principal you are using to connect to Segment>`; 
     ```
 
 * To grant Segment access to create a schema to keep track of the running syncs, run: 
 
-    ```ts
+    ```
     GRANT CREATE on catalog <name of the catalog, usually hive_metastore or main if using unity-catalog> TO `<user or service principal you are using to connect to Segment>`;
     ```
 
 * If you want to create the schema yourself instead and then give Segment access to it, run:
 
-    ```ts
+    ```
     CREATE SCHEMA IF NOT EXISTS __segment_reverse_etl; 
     GRANT ALL PRIVILEGES ON SCHEMA __segment_reverse_etl TO `<user or service principal you are using to connect to Segment>`;
     ```
