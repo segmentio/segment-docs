@@ -14,7 +14,7 @@
   definition: The Segment Javascript library wrapper, which makes it simple to send your data to any tool without having to learn, test or implement the new API for each tool every time.
 
 - term: API
-  definition: Application Programming Interface. In software, this term describes a way of interacting with software in an automated fashion, without the use of a user-interface designed for humans. In Segment, we call the standard calls (`track`, `page` and `screen`, `identify` and `group`) our API. We also provide the Public API, which you can use to configure sources and destinations, and perform other functions in your workspace, without logging in using a web browser.
+  definition: Application Programming Interface. In software, this term describes a way of interacting with software in an automated fashion, without the use of a user-interface designed for humans. In Segment, we call the standard calls (`track`, `page` and `screen`, `identify` and `group`) our API. We also provide the [Public API](/docs/api/public-api), which you can use to configure sources and destinations, and perform other functions in your workspace, without logging in using a web browser.
 
 - term: App
   definition: The app is what we call the main Segment web application, the part you log in to, and where you configure sources and destinations, see events in the debugger, manage your tracking plan, and so on.
@@ -23,7 +23,7 @@
   definition: Asynchronous means occurring without a specific order or sequence. In engineering, it's most often used for things like when you have to ask a server for a piece of information. If that was a synchronous task, while you were waiting for the server to respond you wouldn't be able to do anything else, you'd just be stuck waiting. But since it's asynchronous, you can request information from a server, continue to go do a bunch of other tasks, and then when the server responds you can get back to what you were doing to start. Basically it lets you work on multiple things at once (in parallel) instead of needing to finish everything in the order it comes in. Think of it like one of the ways computers are able to multi-task.
 
 - term: Audience
-  definition: Personas Audiences allow you to define cohorts of users or accounts based on their event behavior and traits that Segment then keeps up-to-date over time. Audiences can be built from your core tracking events, traits, or computed traits. These audiences can then be synced to hundreds of destinations or available using the Profile API.
+  definition: Personas [Audiences](/docs/personas/audiences/) allow you to define cohorts of users or accounts based on their event behavior and traits that Segment then keeps up-to-date over time. Audiences can be built from your core tracking events, traits, or computed traits. These audiences can then be synced to hundreds of destinations or available using the Profile API.
 
 - term: AWS
   definition: Amazon Web Services, a large cloud service provider.
@@ -32,7 +32,7 @@
   definition: Paths that lead users away from a step. For example, a True/False split creates one True branch and one False branch. 
 
 - term: Catalog
-  definition: Segment's list of available sources, destinations, and warehouses. You can access the catalog from the Segment website and from inside the Segment app.
+  definition: Segment's list of available sources, destinations, and warehouses. You can access the catalog from the [Segment website](https://segment.com/catalog/) and from inside the Segment app.
   link: https://segment.com/catalog/
 
 - term: CDN
@@ -45,10 +45,10 @@
   definition: Cookies are small pieces of text that are stored by the browser on a website. Cookies have a **name** and a **value**. They may also be set from Javascript using `document.cookie`. Our analytics.js script sets up a cookie called `ajs_uid` to store the user's id. Every time you make a request to a website, you send along the cookies that you have stored. It's how the website figures out who you should be logged in as. You can think of it sort of like a passport as a form of ID. When you first enter your username and password, the website generates a secure cookie, and tells your browser to store it. From then on, your browser sends along the cookie as a way of identifying yourself to the website.
 
 - term: Client Side
-  definition: This refers to a group of libraries that can send data to Segment and which send Device-mode data. The term "client side" is usually used in contrast to Server Side.
+  definition: This refers to a group of libraries that can send data to Segment and which send [Device-mode](#device-mode) data. The term "client side" is usually used in contrast to [Server Side](#server-side).
 
 - term: Cloud mode
-  definition: Cloud mode, (or Server-side) libraries send data to Segment, where it's then sent on to destinations. Usually used in contrast to Device mode libraries, which send the data directly to the destination's API endpoints. *Cloud mode libraries* run on a server and are completely invisible to end users. You can find the full list of server-side languages Segment supports in the Sources catalog. These libraries can be used to track a user in realtime as they use your app, but are also able to run batches of calls to update many end users at once. Cloud-mode libraries do not maintain "state" which means every API call you make must include every detail you want to see inside of Segment.
+  definition: Cloud mode, (or [Server Side](#server-side)) libraries send data to Segment, where it's then sent on to destinations. Usually used in contrast to [Device mode](#device-mode) libraries, which send the data directly to the destination's API endpoints. *Cloud mode libraries* run on a server and are completely invisible to end users. You can find the full list of server-side languages Segment supports in the Sources catalog. These libraries can be used to track a user in realtime as they use your app, but are also able to run batches of calls to update many end users at once. Cloud-mode libraries do not maintain "state" which means every API call you make must include every detail you want to see inside of Segment.
 
 - term: Computed trait
   definition: Computed traits are per-user, or per-account traits that you create or “compute” in Personas. When you build a Computed Trait, Personas adds it to relevant user profiles.
