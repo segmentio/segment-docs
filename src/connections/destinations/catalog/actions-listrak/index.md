@@ -22,7 +22,7 @@ This destination is maintained by Listrak. For any issues with the destination, 
 6. On the **Setup** tab, name your destination. For example, `Listrak`.
 7. Enter your Listrak API client ID and client secret.
 8. Click **Save Changes**.
-9. Follow the steps in the Destinations Actions documentation on [Customize mappings](/docs/connections/destinations/actions/#customize-mappings) or follow the steps below to Sync an Engage Audience.
+9. Follow the steps in the Destinations Actions documentation to [customize mappings](/docs/connections/destinations/actions/#customize-mappings) or follow the steps below to Sync an Engage Audience.
 10. Enable the destination and configured mappings.
 
 ### Sync an Engage Audience
