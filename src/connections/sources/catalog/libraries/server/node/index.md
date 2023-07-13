@@ -556,40 +556,67 @@ const appAnalytics = new Analytics({ writeKey: 'APP_WRITE_KEY' });
 ```
 ## AnalyticsHTTPClient
 
-In some cases such as supporting an environment with an http proxy in place, you may need to use something other than our multiplatform `fetch` call.  You can create a custom `AnalyticsHTTPClient` implementation and pass it in to the Analytics Configuration.
+We attempt to use the global `fetch` implementation if available in order to support several diverse environments.  Some special cases (e.g. http proxy) may require a different implementation for http communication.  A customized wrapper can be provided in the Analytics configuration to support this.  Here are a few approaches:
 
-An example of supporting proxies with a popular library, axios:
+Use a custom fetch-like implementation with proxy (simple, recommended)
+```
+import { HTTPFetchFn } from '../lib/http-client'
+
+const httpClient: HTTPFetchFn = async (url, options) => {
+  return axios({
+    url,
+    proxy: {
+        protocol: 'http',
+        host: 'proxy.example.com',
+        port: 8886,
+        auth: {
+          username: 'user',
+          password: 'pass',
+        },
+      },
+    ...options,
+  })
+}
+
+new Analytics({
+  writeKey: '<YOUR_WRITE_KEY>',
+  httpClient,
+})
+```
+Augment the default HTTP Client
 ```javascript
-const axios = require('axios')
-
-export class ProxyAxiosClient implements AnalyticsHTTPClient {
-  public proxy = null
-  async send(
-    url: string,
-    options: AnalyticsHTTPClientOptions
-  ): Promise<AnalyticsHTTPClientResponse> {
-    const proxyoptions = Object.assign({}, options, this.proxy)
-    return await axios.get(url, proxyoptions)
+import { FetchHTTPClient, HTTPClientRequest  } from '@segment/analytics-node' 
+ 
+class MyClient extends FetchHTTPClient {
+  async makeRequest(options: HTTPClientRequest) {
+    return super.makeRequest({
+         ...options, 
+         headers: { ...options.headers, foo: 'bar'  }
+      }})
   }
 }
+
+const analytics = new Analytics({ 
+  writeKey: '<YOUR_WRITE_KEY>', 
+  httpClient: new MyClient() 
+})
 ```
-And then in your initialization:
+Completely override the full HTTPClient (Advanced, you probably don't need to do this)
 ```javascript
-const proxyHttpClient = new ProxyAxiosClient()
-proxyHttpClient.proxy = {
-  proxy: {
-    protocol: 'http',
-    host: 'proxy.example.com',
-    port: 8886,
-    auth: {
-      username: 'user',
-      password: 'pass',
-    },
-  },
+import { HTTPClient, HTTPClientRequest } from '@segment/analytics-node'
+
+class CustomClient implements HTTPClient {
+  async makeRequest(options: HTTPClientRequest) {
+    return someRequestLibrary(options.url, { 
+      method: options.method,
+      body: JSON.stringify(options.data) // serialize data
+      headers: options.headers,
+    })
+  }
 }
-const analytics = new Analytics({
-  writeKey: '<YOUR_WRITE_KEY>',
-  httpClient: proxyHttpClient,
+const analytics = new Analytics({ 
+  writeKey: '<YOUR_WRITE_KEY>', 
+  httpClient: new CustomClient() 
 })
 ```
 
