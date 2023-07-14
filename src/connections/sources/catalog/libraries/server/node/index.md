@@ -559,8 +559,9 @@ const appAnalytics = new Analytics({ writeKey: 'APP_WRITE_KEY' });
 Segment attempts to use the global `fetch` implementation if available in order to support several diverse environments.  Some special cases (for example, http proxy) may require a different implementation for http communication.  You can provide a customized wrapper in the Analytics configuration to support this.  Here are a few approaches:
 
 Use a custom fetch-like implementation with proxy (simple, recommended)
-```
+```javascript
 import { HTTPFetchFn } from '../lib/http-client'
+import axios from 'axios'
 
 const httpClient: HTTPFetchFn = async (url, options) => {
   return axios({
@@ -578,7 +579,7 @@ const httpClient: HTTPFetchFn = async (url, options) => {
   })
 }
 
-new Analytics({
+const analytics = new Analytics({
   writeKey: '<YOUR_WRITE_KEY>',
   httpClient,
 })
