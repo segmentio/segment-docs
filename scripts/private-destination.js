@@ -1,76 +1,18 @@
-const axios = require('axios');
 const path = require('path');
 const fs = require('fs');
 const fm = require('front-matter');
 const yaml = require('js-yaml');
 const { prompt } = require('enquirer');
-const { type } = require('os');
+const {slugify, getCatalog} = require('./utilities.js');
+
 
 require('dotenv').config();
 
 // Global variables
 const PAPI_URL = "https://api.segmentapis.com";
 const PRIVATE_DESTINATIONS = yaml.load(fs.readFileSync(path.resolve(__dirname, `../src/_data/catalog/destinations_private.yml`)));
-const slugOverrides = yaml.load(fs.readFileSync(path.resolve(__dirname, `../src/_data/catalog/slugs.yml`)));
 const privateDests = PRIVATE_DESTINATIONS.items;
 let private = [];
-
-// Retrieves catalog data with pagination
-const getCatalog = async (url, page_token = "MA==") => {
-  let res = null;
-  try {
-    res = await axios.get(url, {
-      headers: {
-        'Content-Type': 'application/json',
-        'Authorization': `Bearer ${process.env.PAPI_TOKEN}`
-      },
-      data: {
-        "pagination": {
-          "count": 200,
-          "cursor": page_token
-        }
-      }
-    });
-    return res.data;
-  } catch (err) {
-    console.error("Error response:");
-    console.error(err.response.data);
-    console.error(err.response.status);
-    console.error(err.response.headers);
-  }
-};
-
-// Generates a slug from the display name and type
-// and overrides any slugs based on slugs.yml
-const slugify = (displayName, type) => {
-  let slug = displayName
-    .toLowerCase()
-    .replace(/\s+/g, '-')
-    .replace('-&-', '-')
-    .replace('/', '-')
-    .replace(/[\(\)]/g, '')
-    .replace('.', '-');
-
-  let overrides = "";
-  if (type == "sources") {
-    overrides = slugOverrides.sources;
-  }
-
-  if (type == "destinations") {
-    overrides = slugOverrides.destinations;
-  }
-
-  for (key in overrides) {
-    let original = overrides[key].original;
-    let override = overrides[key].override;
-
-    if (slug == original) {
-      console.log(original + " -> " + override);
-      slug = override;
-    }
-  }
-  return slug;
-};
 
 // Checks the status of a destination
 const checkDestinationStatus = async (id) => {

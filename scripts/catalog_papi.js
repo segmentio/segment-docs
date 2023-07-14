@@ -1,173 +1,18 @@
-const axios = require('axios');
+// const axios = require('axios');
 const path = require('path');
 const fs = require('fs');
-const fm = require('front-matter');
+// const fm = require('front-matter');
 const yaml = require('js-yaml');
 const { type } = require('os');
-const slugify = require('./slugify.js');
+const {slugify, getCatalog, getConnectionModes, isCatalogItemHidden, sanitize, doesCatalogItemExist} = require('./utilities.js');
 
 require('dotenv').config();
 
 const PAPI_URL = "https://api.segmentapis.com";
 
 const regionalSupport = yaml.load(fs.readFileSync(path.resolve(__dirname, `../src/_data/regional-support.yml`)));
-const slugOverrides = yaml.load(fs.readFileSync(path.resolve(__dirname, `../src/_data/catalog/slugs.yml`)));
 const testSources = yaml.load(fs.readFileSync(path.resolve(__dirname, `../src/_data/catalog/test_sources.yml`)));
 
-const slugify = (displayName, type) => {
-  let slug = displayName
-    .toLowerCase()
-    .replace(/\s+/g, '-')
-    .replace('-&-', '-')
-    .replace('/', '-')
-    .replace(/[\(\)]/g, '')
-    .replace('.', '-');
-
-  let overrides = "";
-  if (type == "sources") {
-    overrides = slugOverrides.sources;
-  }
-
-  if (type == "destinations") {
-    overrides = slugOverrides.destinations;
-  }
-
-  for (key in overrides) {
-    let original = overrides[key].original;
-    let override = overrides[key].override;
-
-    if (slug == original) {
-      console.log(original + " -> " + override);
-      slug = override;
-    }
-  }
-  return slug;
-};
-
-const getCatalog = async (url, page_token = "MA==") => {
-  try {
-    const res = await axios.get(url, {
-      headers: {
-        'Content-Type': 'application/json',
-        'Authorization': `Bearer ${process.env.PAPI_TOKEN}`
-      },
-      data: {
-        "pagination": {
-          "count": 200,
-          "cursor": page_token
-        }
-      }
-    });
-
-    return res.data;
-  } catch (error) {
-    console.log(error);
-  }
-};
-
-const getConnectionModes = (destination) => {
-  let connectionModes = {
-    device: {
-      web: false,
-      mobile: false,
-      server: false
-    },
-    cloud: {
-      web: false,
-      mobile: false,
-      server: false
-    }
-  };
-
-  if (destination.components.length) {
-    destination.components.forEach(component => {
-      switch (component.type) {
-        case 'IOS':
-          connectionModes.device.mobile = true;
-          break;
-        case 'ANDROID':
-          connectionModes.device.mobile = true;
-          break;
-        case 'BROWSER':
-          if (destination.browserUnbundling) {
-            connectionModes.cloud.web = true;
-          }
-          connectionModes.device.web = true;
-          break;
-        case 'SERVER':
-          connectionModes.cloud.mobile = true;
-          if (destination.platforms.server) {
-            connectionModes.cloud.server = true;
-          }
-          if (destination.platforms.browser) {
-            connectionModes.cloud.web = true;
-          }
-          break;
-        case 'CLOUD':
-          connectionModes.cloud.mobile = true;
-          if (destination.platforms.server) {
-            connectionModes.cloud.server = true;
-          }
-          if (destination.platforms.browser) {
-            connectionModes.cloud.web = true;
-          }
-          break;
-      }
-    });
-  } else {
-    if (destination.platforms.browser) {
-      connectionModes.cloud.web = true;
-    }
-    if (destination.platforms.mobile) {
-      connectionModes.cloud.mobile = true;
-    }
-    if (destination.platforms.server) {
-      connectionModes.cloud.server = true;
-    }
-  }
-
-  return connectionModes;
-};
-
-const doesCatalogItemExist = (item) => {
-  const docsPath = `src/${item.url}`;
-
-  if (!fs.existsSync(docsPath)) {
-    console.log(`${item.slug} does not exist: ${docsPath}`);
-    let content = `---\ntitle: '${item.display_name} Source'\nhidden: true\n---`;
-
-    if (!docsPath.includes('/sources/')) {
-      let betaFlag = '';
-      if (item.status === 'PUBLIC_BETA') {
-        betaFlag = 'beta: true\n';
-      }
-      content = `---\ntitle: '${item.display_name} Destination'\nhidden: true\nid: ${item.id}\npublished: false\n${betaFlag}---\n`;
-    }
-
-    fs.mkdirSync(docsPath);
-    fs.writeFileSync(`${docsPath}/index.md`, content);
-  }
-};
-
-const isCatalogItemHidden = (itemURL) => {
-  try {
-    const catalogPath = path.resolve('src', itemURL, 'index.md');
-    if (fs.existsSync(catalogPath)) {
-      const f = fm(fs.readFileSync(catalogPath, 'utf8'));
-      if (f.attributes.hidden) return true;
-    }
-    return false;
-  } catch (e) {
-    console.log(error);
-    return false;
-  }
-};
-
-const sanitize = (text) => {
-  const regex = /(<[^\/a].*?>)/ig;
-  result = text.replace(regex, "`$1`");
-  return result;
-};
 
 const updateSources = async () => {
   let sources = [];
