@@ -1,19 +1,19 @@
 ---
-title: Visual HTML Editor
+title: Advanced HTML Editor
 beta: true
 ---
 
-Use the Visual HTML Editor to design your email template with both code and visual editing capabilities. Build your email template with code, copy and paste existing code, or use the visual editor for a code free design experience. 
+Use the Advanced HTML Editor to design your email template with both code and visual editing capabilities. Build your email template with code, copy and paste existing code, or use the visual editor for a code free design experience. 
 
-On this page, you'll learn how to use the Visual HTML Editor to build personalized email templates for your Engage campaigns.
+On this page, you'll learn how to use the Advanced HTML Editor to build personalized email templates for your Engage campaigns.
 
 ## Getting started
 
-You can navigate to the Visual HTML Editor in two ways:
+You can navigate to the Advanced HTML Editor in two ways:
 - When you build a new email template or edit an existing one.
 - From a Send Email step in a Journey. 
 
-From the **Select Editor** screen, select **Visual HTML Editor** and click **Build Email**.
+From the **Select Editor** screen, select **Advanced HTML Editor** and click **Build Email**.
 
 From the editor screen, click **Use HTML Editor** or **Use Visual Editor** to toggle between the two editors. 
  
@@ -24,7 +24,6 @@ Use the visual editor for a no-code option to design your email. With the visual
 - Modify text color, size, and style
 - [Insert an image](#insert-an-image) 
 - Add [merge tags](#personalize-with-merge-tags) and links
-- Use [liquid templating](#liquid-templating)
 - Add emojis
 
 Engage updates any changes you make in the visual editor to the [HTML editor](#html-editor) in real-time.
@@ -51,8 +50,10 @@ Use the HTML editor to maintain your email template with code. Copy and paste ex
 
 Engage displays any changes you make in a preview screen to the right of your code. You can preview your email in both desktop and mobile display.
 
+Click **Format** at any time to properly indent and format your code in the HTML editor. 
+
 > info ""
-> When you toggle from the HTML Editor to the Visual Editor, Engage may make minor changes to your code formatting. If Engage re-formats your code, it will not affect the email layout.
+> When you toggle from the HTML editor to the visual editor, Engage may make minor changes to your code formatting. If Engage re-formats your code, it will not affect the email layout.
 
 ### Error flagging
 
@@ -70,7 +71,7 @@ Add merge tags to personalize your message with user profile traits.
 
 ### Liquid templating
 
-Engage supports liquid templating to create dynamic content in the Visual HTML Editor.
+Engage supports liquid templating to create dynamic content in the Advanced HTML Editor. 
 
 {% raw %}
 
@@ -87,8 +88,13 @@ For example, use  `{% if %}`, `{% elseif %}`, and `{% else %}` tags to call a pr
 ```
 {% endraw %}
 
+If you use liquid templating, be sure to [test your email](/docs/engage/content/email/template/#test-the-email-template/) to make sure that everything renders properly. 
+
 > success ""
-> If you use liquid templating, be sure to [test your email](/docs/engage/content/email/template/#test-the-email-template/) to make sure that everything renders properly. 
+> While both the HTML and visual editor support liquid templating, Engage recommends using the HTML editor to write liquid templating.
+
+> warning ""
+> Engage doesn't support liquid template syntax that produces partial blocks of HTML. 
 
 To view more examples related to your use case, visit the [LiquidJS docs](https://liquidjs.com/tags/if.html){:target="blank"}.
 
@@ -120,6 +126,6 @@ After you design the email, click **Create Email Template**. You can navigate to
 - You can also learn about the [Drag and Drop Editor](/docs/engage/content/email/editor/) in Engage to build Email templates with drag and drop functionality. 
 
 > warning ""
-> once you create an email with the Visual HTML Editor, you can't modify it with the Drag and Drop Editor, and vice versa.  
+> Once you create an email with the Advanced HTML Editor, you can't modify it with the Drag and Drop Editor, and vice versa.  
 
  
