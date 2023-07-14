@@ -4,6 +4,7 @@ rewrite: true
 redirect_from:
   - '/connections/warehouses/catalog/redshift/'
 ---
+{% include content/warehouse-ip.html %}
 
 This guide explains the process to provision a Redshift cluster and allow the Segment warehouse connector to write to it.
 

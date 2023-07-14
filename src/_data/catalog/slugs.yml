@@ -115,5 +115,7 @@ destinations:
     override: "actions-pinterest-conversions-api"
   - original: "encharge-actions"
     override: "encharge-cloud-actions"
+  - original: "pardot-actions"
+    override: "actions-pardot"
   - original: "airship-actions"
     override: "actions-airship"
