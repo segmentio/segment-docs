@@ -284,7 +284,7 @@ Setting | Details
 `flushInterval` _number_ | The number of milliseconds to wait before flushing the queue automatically. The default is: `10000`
 `httpRequestTimeout` | The maximum number of milliseconds to wait for an http request. The default is: `10000`
 `disable` | Disable the analytics library for testing. The default is: `false`
-`httpClient` | Optional custom AnalyticsHTTPClient implementation to support alternate libraries or proxies.  Defaults to global fetch or node-fetch for older versions of node.
+`httpClient` *Optional* | A custom AnalyticsHTTPClient implementation to support alternate libraries or proxies.  Defaults to global fetch or node-fetch for older versions of node.
 
 ## Graceful shutdown
 Avoid losing events after shutting down your console. Call `.closeAndFlush()` to stop collecting new events and flush all existing events. If a callback on an event call is included, this also waits for all callbacks to be called, and any of their subsequent promises to be resolved.
