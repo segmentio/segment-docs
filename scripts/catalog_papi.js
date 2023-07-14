@@ -1,9 +1,6 @@
-// const axios = require('axios');
 const path = require('path');
 const fs = require('fs');
-// const fm = require('front-matter');
 const yaml = require('js-yaml');
-const { type } = require('os');
 const {slugify, getCatalog, getConnectionModes, isCatalogItemHidden, sanitize, doesCatalogItemExist} = require('./utilities.js');
 
 require('dotenv').config();
