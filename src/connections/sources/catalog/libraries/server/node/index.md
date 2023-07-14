@@ -556,7 +556,7 @@ const appAnalytics = new Analytics({ writeKey: 'APP_WRITE_KEY' });
 ```
 ## AnalyticsHTTPClient
 
-We attempt to use the global `fetch` implementation if available in order to support several diverse environments.  Some special cases (e.g. http proxy) may require a different implementation for http communication.  A customized wrapper can be provided in the Analytics configuration to support this.  Here are a few approaches:
+Segment attempts to use the global `fetch` implementation if available in order to support several diverse environments.  Some special cases (for example, http proxy) may require a different implementation for http communication.  You can provide a customized wrapper in the Analytics configuration to support this.  Here are a few approaches:
 
 Use a custom fetch-like implementation with proxy (simple, recommended)
 ```
