@@ -42,7 +42,7 @@ To set up Databricks as your Reverse ETL source:
 9. Select **Databricks** and click **Add Source**. 
 10. Enter the configuration settings for your Databricks source. 
     * Copy the Hostname, Http Path, and Port from the Databricks console from step 5. 
-    * To generate a **Token**, follow the steps listed in the [Databricks docs](https://docs.databricks.com/dev-tools/auth.html#pat). Segment recommends you create a token with no expiration date by leaving the lifetime field empty when creating it. If you already have a token with an expiration date, be sure to keep track of the date and renew it on time.     
+    * To generate a **Token**, follow the steps listed in the [Databricks docs](https://docs.databricks.com/dev-tools/auth.html#pat){:target="_blank"}. Segment recommends you create a token with no expiration date by leaving the lifetime field empty when creating it. If you already have a token with an expiration date, be sure to keep track of the date and renew it on time.     
 11. Click **Test Connection** to see if the connection works. If the connection fails, make sure you have the right permissions and credentials, then try again.
 12. Click **Create Source** if the test connection is successful. 
 
