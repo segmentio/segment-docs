@@ -4,6 +4,7 @@ const fs = require('fs');
 const fm = require('front-matter');
 const yaml = require('js-yaml');
 const { type } = require('os');
+const slugify = require('./slugify.js');
 
 require('dotenv').config();
 
