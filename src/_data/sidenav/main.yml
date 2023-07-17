@@ -187,6 +187,10 @@ sections:
       section:
       - path: /connections/reverse-etl/reverse-etl-source-setup-guides/bigquery-setup
         title: BigQuery Reverse ETL Setup
+      - path: /connections/reverse-etl/reverse-etl-source-setup-guides/databricks-setup
+        title: Databricks Reverse ETL Setup
+      - path: /connections/reverse-etl/reverse-etl-source-setup-guides/postgres-setup
+        title: Postgres Reverse ETL Setup
       - path: /connections/reverse-etl/reverse-etl-source-setup-guides/redshift-setup
         title: Redshift Reverse ETL Setup
       - path: /connections/reverse-etl/reverse-etl-source-setup-guides/snowflake-setup
