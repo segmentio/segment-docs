@@ -2,11 +2,16 @@
 title: Databricks Reverse ETL Setup
 ---
 
+> info ""
+> The Databricks Reverse ETL source is in beta and Segment is actively working on this feature. Segment's [First-Access and Beta terms](https://segment.com/legal/first-access-beta-preview/) govern this feature. 
+
 Set up Databricks as your Reverse ETL source. 
 
 At a high level, when you set up Databricks for Reverse ETL, the configured user needs read permissions for any resources (databases, schemas, tables) the query needs to access. Segment keeps track of changes to your query results with a managed schema (`__SEGMENT_REVERSE_ETL`), which requires the configured user to allow write permissions for that schema.
 
 ## Required permissions
+* Make sure the user or the service principal you use to connect to Segment has permissions to use that warehouse. In the Databricks console go to **SQL warehouses** and select the warehouse you're using. Navigate to **Overview > Permissions** and make sure the user or the service principal you use to connect to Segment has *can use* permissions.
+
 * To grant access to read data from the tables used in the model query, run: 
 
     ```
