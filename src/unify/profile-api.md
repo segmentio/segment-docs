@@ -169,7 +169,15 @@ When you make requests to the Profile API, use the Access Token as the basic aut
 curl https://profiles.segment.com/v1/spaces/<space_id>/collections/users/profiles
   -u $SEGMENT_ACCESS_TOKEN:
 ```
+If you're using a Segment Function or Node.js you can format your header object to include authentication like so:
 
+```
+headers: {
+          'Content-Type': 'application/json',
+          Authorization:
+            `Basic ${btoa('<access_token>' + ':')}`,
+        }
+```
 
 ### Errors
 
