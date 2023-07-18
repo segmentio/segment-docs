@@ -92,7 +92,8 @@ To integrate Segment with VWO FullStack:
 
 By adding the VWO Cloud mode destination to your Segment audiences, you can export audiences to your VWO account to target your campaigns in VWO. To achieve this, perform the following steps:
 
-1. Navigate to **Engage > Engage Settings**, and click **Destinations**. Ensure that you're in the Engage space you plan to use for VWO.
+1. Navigate to **Engage > Engage Settings**, and click **Destinations**. 
+- Ensure that you're in the Engage space you plan to use for VWO.
 2. Click **Add Destination**.
 3. Search for “VWO Cloud Mode (Actions)” and select the destination. Click **Add Destination**.
 4. On the **Select Source** screen, you'll see your Engage space selected as the source. Click **Confirm Source**.
@@ -104,7 +105,7 @@ By adding the VWO Cloud mode destination to your Segment audiences, you can expo
 9. Click **Add Destination** and select the VWO Cloud Mode destination you created. From the **Connection Settings** screen, toggle the Send Track option on. Be sure you don't change the **Audience Entered/Audience Exited** event names. Click **Save**.
 
 > success ""
-> After you set up your destination, repeat steps eight and nine to sync any subsequent audiences. 
+> After you set up your destination, you can repeat steps eight and nine to sync any subsequent audiences. 
 
 Visit [Using Data From Segment](https://help.vwo.com/hc/en-us/articles/16147461611161){:target="_blank"} for more on how to configure audiences in VWO. 
 
