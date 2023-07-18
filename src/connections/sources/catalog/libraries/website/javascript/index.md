@@ -211,6 +211,7 @@ analytics.trackForm(form, 'Signed Up', {
 The [Page](/docs/connections/spec/page/) method lets you record page views on your website, along with optional extra information about the page viewed by the user.
 
 Because some Destinations require a `page` call to instantiate their libraries, **you must call `page`** at least once per page load. You can call it more than once if needed, for example, on virtual page changes in a single page app.
+|Please visit our implementation guide for more information on [when to call page()](https://segment.com/docs/getting-started/04-full-install/#when-to-call-page).
 
 Analytics.js includes a Page call by default as the final line in [the Analytics.js snippet](/docs/connections/sources/catalog/libraries/website/javascript/quickstart/#step-2-copy-the-segment-snippet). You can update this `page` call within the guidelines below.
 
