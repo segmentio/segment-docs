@@ -36,7 +36,7 @@ You can't change the audience key after it's created. To change the key, you nee
 
 ## Can I reuse audience keys?
 
-Avoid using the same audience key twice, even if you've deleted the key's original audience. Downstream tools and Destinations might have trouble distinguishing between different audiences that at any point shared the same key. And may create mismatch on the audience size between Segment and Destination as the destination may have more audience count as the users of the old audience still exist over the destination.
+Avoid using the same audience key twice, even if you've deleted the key's original audience. Downstream tools and Destinations might have trouble distinguishing between different audiences that at any point shared the same key. And this may create mismatch on the audience size between Segment and Destination as the destination may have more audience count as the users of the old audience still exist over the destination.
 
 ## How do historical lookback windows work?
 
