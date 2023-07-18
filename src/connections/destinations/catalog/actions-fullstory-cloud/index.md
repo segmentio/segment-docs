@@ -34,7 +34,7 @@ The FullStory cloud mode destination sends information about your users and rela
 
 ### Getting Started
 
-1. You need a FullStory Admin API Key to use the FullStory cloud mode destination. Refer to [this article](https://help.fullstory.com/hc/en-us/articles/360052021773-Managing-API-Keys){:target="_blank"} to learn how to generate a new API Key within FullStory.
+1. You need a FullStory API Key to use the FullStory cloud mode destination. Refer to [this article](https://help.fullstory.com/hc/en-us/articles/360052021773-Managing-API-Keys){:target="_blank"} to learn how to generate a new API Key within FullStory. You need an `Admin` or `Architect` API Key for GDPR deletions to propagate. You may also contact FullStory directly for deletions.
 2. From the Segment web app, click **Catalog**, then click **Destinations**.
 3. Find “FullStory Cloud Mode (Actions)” in the Destinations list and click it.
 4. Click **Configure FullStory Cloud Mode (Actions)**.
