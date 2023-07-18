@@ -124,7 +124,7 @@ Use the [Public API](https://docs.segmentapis.com/tag/Destination-Filters/){:tar
     "destinationId": "<DESTIANTION_ID>",
     "title": "Don't send event if userId is null",
     "description": "Drop event if there is no userId on the request",
-    "if": "length( userId ) < 1 or typeof( userId ) != 'string'",
+    "if": "length( userId ) < 1",
     "actions": [
       {
         "type": "DROP"
