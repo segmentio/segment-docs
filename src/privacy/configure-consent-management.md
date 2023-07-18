@@ -130,11 +130,23 @@ analytics.load({ writeKey: '<MY_WRITE_KEY'> })
 
 1. 
 
-## Editing consent categories
+## Edit consent categories
 
 If you need to make changes to your consent categories, you can edit them on the Consent Management page. 
 
 1. From the [Segment homepage](https://app.segment.com/goto-my-workspace/){:target="_blank”}, select the Privacy tab and click **Consent Management**.
 2. On the Consent Management page, navigate to the consent category you'd like to edit and click **Edit**.
 3. On the Edit consent category page, you can make changes to the consent category name, ID, and the destinations connected to a category.
-4. When you have made your changes, click **Save**. 
+4. When you have made your changes, click **Save**.
+
+## View discarded events
+
+You can view events that were discarded due to consent preferences in your [Tracking Plan](/docs/protocols/tracking-plan/create/) and in [Delivery Overview](/docs/connections/delivery-overview/). 
+
+### Tracking Plan
+
+<!-- ask for more context on this. "Events that are discarded due to consent preferences are surfaced in Protocols as a new Tracking Plan. While you can edit this Tracking Plan, Segment recommends leaving it intact" <!---why??--->
+
+### Delivery Overview
+
+Events discarded due to consent preferences appear in Delivery Overview at the "Filtered at destination" step with the discard reason "Filtered by end user consent". 
