@@ -71,8 +71,7 @@ VWO Cloud Mode (Actions) provides the following benefits over the classic VWO de
 
 All the events triggered in Segment will be available under **UNREGISTERED EVENTS** in the **Data360 > Events** section in VWO.  For more information about Events in VWO Data360, see VWO's article [Working with Events in VWO](https://help.vwo.com/hc/en-us/articles/8676443712537-Working-with-Events-in-VWO){:target="_blank"}.
 
-
-## Use VWO Cloud mode destination with VWO FullStack
+## Using VWO Cloud mode destination with VWO FullStack
 
 To use the VWO Cloud mode destination with the VWO FullStack suite, link your VWO FullStack environment with Segment using the environment’s SDK key. After that's done, integrate your VWO account with Segment.
 
@@ -88,6 +87,28 @@ To integrate Segment with VWO FullStack:
 1. Initialize VWO FullStack SDK. Follow the steps for your server in VWO's [Quick Start Guide](https://developers.vwo.com/docs/quick-start-guide){:target="_blank"}.
 2. To track visitors in VWO, provide the user IDs of the visitors, which were used to track them in the VWO FullStack campaign. Pass that same User ID as `vwo_uuid` with all calls to Segment. Track and Page calls require the `vwo_uuid` in the *properties* object. For Identify calls, you can place `vwo_uuid` in the *traits* object.. 
 3. All the events triggered in Segment will be available under **UNREGISTERED EVENTS** section which can be accessed by navigating from the left navbar > **Data360 > Events**.
+
+## Using VWO Cloud mode destination to use Segment audience in VWO
+
+By adding the VWO Cloud mode destination to your Segment audiences, you will be able to export the audiences to your VWO account, which can be further used to target your campaigns in VWO. To achieve this, perform the following steps:
+
+1. From the Segment dashboard, navigate to **Engage > Engage Settings**, and click Destinations. Ensure that you are in the Engage space you plan to use for VWO.
+2. Click on **Add Destination**.
+3. Search for “VWO Cloud Mode (Actions)” and select the destination. Click on **Add Destination**.
+4. On the **Select Source** screen, your Engage space should already be selected as the source. Click **Confirm Source**.
+5. Now, select the VWO Cloud mode destination that you’ve just created and navigate to the **Settings** tab. Name your destination and enter your **VWO Account ID**. Toggle **Enable Destination** to ON and click **Save Changes**.
+
+> info ""
+> Your VWO account ID is present on the horizontal panel at the top of the VWO dashboard.
+
+6. Navigate to the **Mappings** tab, click **New Mapping**, and select **Sync Audience** under **PRE-BUILT MAPPINGS**. Click **Save**.
+7. The **STATUS** of the mapping appears as disabled by default. Enable the mapping using the toggle switch. 
+8. Navigate to **Engage > Audiences**. Either choose an existing Engage audience or create a new one that you want to export to VWO.
+9. Click **Add Destination** and select the VWO Cloud Mode destination you just created. In the **Connection Settings** screen that appears for the destination, toggle the Send Track option to ON and do not change the **Audience Entered/Audience Exited** event names. Click **Save**.
+
+Post this, you can configure the audiences that you need to be used in VWO by performing the steps mentioned in this article [Using Data From Segment](https://help.vwo.com/hc/en-us/articles/16147461611161){:target="_blank"}.
+
+Once the destination is set up as mentioned above, any subsequent audiences can be synced by following Steps 8-9.
 
 ## Supported Segment Calls in VWO
 
