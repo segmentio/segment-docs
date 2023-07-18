@@ -218,9 +218,9 @@ You must have write access to save and edit filters. Read permission access only
 
 Use the destination filter tester during setup to verify that you're filtering out the right events. Filtered events show up on the schema page but aren't counted in event deliverability graphs.
 
-#### Can I filter on properties/traits that have spaces in the name (ex. `properties.test event field`)? 
+#### Can I filter on properties/traits that have spaces in the name (for example, `properties.test event field`)? 
 
-Unfortunately, properties or traits with spaces in the field name cannot be targeted by Destination Filters at this time. Another option would be to use an [Insert Function]([url](https://segment.com/docs/connections/functions/insert-functions/)) where you can write code that could take care of such filtering.
+Destination Filters can't target properties or traits with spaces in the field name. As an alternative, use [Insert Functions](/docs/connections/functions/insert-functions/), which let you write code to take care of such filtering.
 
 
 #### Can I use destination filters to drop events unsupported by a destination?
