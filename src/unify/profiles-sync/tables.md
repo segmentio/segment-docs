@@ -163,7 +163,7 @@ And two entries in the `identifies` table:
 All these events were performed by the same person. If you use these tables to assemble your data models, though, always join them against `id_graph` to resolve each event’s `canonical_segment_id`.
 
 > info ""
-> In the data for profiles involved in Journey steps, columns appended with `hidden_entry` or `hidden_entry_joined_at` may appear. These denote internal Segment processes for user integration into Journeys, and do not require user attention or action.
+> You might see columns appended with `hidden_entry` or `hidden_entry_joined_at` in profile data of users in Journeys. Segment uses these for internal purposes, and they do not require any attention or action.
 
 ### Profiles Sync schema
 
