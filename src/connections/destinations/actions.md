@@ -174,6 +174,9 @@ You can combine criteria in a single group using **ALL** or **ANY**.  Use an ANY
 > info "Unsupported Special Characters"
 > Mappings do not support the use of double quotes " or a tilde ~ in the trigger fields.
 
+>info "Limitations"
+>Mapping fields do not support dot notation. i.e. properties.amount.cost or properties_amount.cost.
+
 > info "Destination Filters"
 > Destination filters are compatible with Destination Actions. Consider a Destination Filter when:
 > - You need to remove properties from the data sent to the destination
