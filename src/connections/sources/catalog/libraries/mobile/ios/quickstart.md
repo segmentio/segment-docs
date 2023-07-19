@@ -81,7 +81,7 @@ Some destinations do not accept data coming from the Segment servers and require
 
 Many advanced marketing automation and analytics tools offer an SDK or allow you to choose to send data server to server -- depending on the features you need. Most optimization, deep linking, error tracking, and survey tools *must* be included on the device to use their core features.
 
-In those cases, follow the additional steps to [bundle the destination tools](/docs/connections/sources/catalog/libraries/mobile/ios/#packaging-device-mode-destination-sdks).
+In those cases, follow the additional steps to [bundle the destination tools](/docs/connections/sources/catalog/libraries/mobile/ios#packaging-device-mode-destination-sdks).
 
 Now that the SDK is installed and set up, you're ready to start making calls.
 

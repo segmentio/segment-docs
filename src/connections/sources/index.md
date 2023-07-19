@@ -71,20 +71,6 @@ Segment has five types of sources:
 
 Web, Mobile, and Server sources send first-party data from your digital properties. Cloud-app sources send data about your users from your connected web apps such as [Zendesk](/docs/connections/sources/catalog/cloud-apps/zendesk/),  [Stripe](/docs/connections/sources/catalog/cloud-apps/stripe/), and [Braze](/docs/connections/sources/catalog/cloud-apps/braze/). -->
 
-## Create a source
-To create a source:
-1. Navigate to **Connections** and click **Add Source**.
-2. Click the Source you’d like to add. *Note:* More than 80% of workspaces start by adding their JavaScript website.
-3. Click **Add Source**.
-4. Enter a name for your source as well as any information on the setup page.
-5. Click **Add Source**.
-
-> info "One source or multiple sources?"
-> Segment suggests that you create one source for each type of data you want to collect. For example, you might have one source for all of your website tracking and a different source for any mobile tracking. Creating one source per data type provides the following benefits:
-> - Debugger ease of use - mixing libraries/sources on a single API key means you’re heavily reliant on filtering to actually test events
-> - Flexibility sending data to different projects - if you want to have different warehouse schemas, analytics projects, etc, having multiple sources would create this separation
-> - More control - as your account grows with the number of destinations you enable, having separate sources allows you to have more control
-> - A source type cannot be changed once it is created. You must create a new source if you would like to use a different source type.
 
 ## Event streams sources 
 Event streams sources collect data from your website or app to monitor user actions. These sources include [website libraries](#website-libraries), [mobile](#mobile), and [server sources](#server). 
@@ -195,3 +181,4 @@ To create a source:
 > - Debugger ease of use - mixing libraries/sources on a single API key means you’re heavily reliant on filtering to actually test events
 > - Flexibility sending data to different projects - if you want to have different warehouse schemas, analytics projects, etc, having multiple sources would create this separation
 > - More control - as your account grows with the number of destinations you enable, having separate sources allows you to have more control
+> - A source type cannot be changed once it is created. You must create a new source if you would like to use a different source type.
