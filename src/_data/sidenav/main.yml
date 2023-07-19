@@ -455,14 +455,6 @@ sections:
       title: Complying With GDPR
     - path: /privacy/user-deletion-and-suppression
       title: User Deletion and Suppression
-  - section_title: Consent Management
-    slug: /privacy/consent-management
-    expanded: true
-    section:
-    - path: /privacy/consent-management
-      title: Consent Management Overview
-    - path: /privacy/configure-consent-management
-      title: Configure Consent Management
   - path: /privacy/account-deletion
     title: Account & Data Deletion
   - path: /privacy/hipaa-eligible-segment
