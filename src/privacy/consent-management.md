@@ -54,7 +54,7 @@ If a user changes the categories they consent to or if they consent using a diff
 
 --->
 
-To learn more about configuring consent categories in your workspace, see the [Configure Consent Management documentation](/docs/src/privacy/configure-consent-management).
+To learn more about configuring consent categories in your workspace, see the [Configure Consent Management documentation](/docs/privacy/configure-consent-management/).
 
 ## Consent object
 
