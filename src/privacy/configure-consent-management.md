@@ -80,7 +80,7 @@ analytics.load({ writeKey: '<MY_WRITE_KEY'> })
 ```
 
 > warning "Events may be generated while the Analytics.js SDK loads"
-> "Any events generated before the Analytics.js SDK is loaded fully may be lost."
+> Any events generated before the Analytics.js SDK is fully loaded may be lost.
 
 ## Edit consent categories
 
@@ -102,12 +102,8 @@ Disabling a consent category means that Segment no longer enforces end user cons
 
 ## Consent Observability
 
-You can view consent preference events in your [Tracking Plan](/docs/protocols/tracking-plan/create/) and view discarded events in [Delivery Overview](/docs/connections/delivery-overview/). 
-
-### Tracking Plan
-
-<!---Ask Atit--->
-
+<!--- You can view consent preference events in your [Tracking Plan](/docs/protocols/tracking-plan/create/) and view discarded events in [Delivery Overview](/docs/connections/delivery-overview/). ---> 
+<!---### Tracking Plan
 ### Delivery Overview
-
-Events discarded due to consent preferences appear in Delivery Overview at the "Filtered at destination" step with the discard reason `Filtered by end user consent`. 
+out of current scope--->
+Events discarded due to consent preferences appear in [Delivery Overview](/docs/connections/delivery-overview/) at the "Filtered at destination" step with the discard reason `Filtered by end user consent`.

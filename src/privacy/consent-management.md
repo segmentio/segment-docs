@@ -21,7 +21,7 @@ After a user sets their consent preferences, Segment captures them with the [Ana
 
 If a user changes the categories they consent to or if they consent using a different device or identifier, any events they generate after updating their consent preferences will contain the updated consent information. 
 
-For example, if a user agreed to share their information with you for functional and advertising purposes, but not for analytics or data sharing, a [Track call](/docs/connections/spec/track/) demonstrating their new consent preferences would have the following format:
+For example, if a user agreed to share their information with you for all categories on their first visit to your site, and then on their next visit to the site only consented to sharing data for functional and advertising purposes but not for analytics or data sharing, a [Track call](/docs/connections/spec/track/) demonstrating their new consent preferences would have the following format:
 
 ``` json
 {
@@ -89,3 +89,11 @@ If the consent object and integrations object have conflicting destination infor
 | `{ad: true,` <br>`analytics: false}`<br> <br>//ad = facebook, google ads                                        | `{facebook: true,`<br>`amplitude: false}`   | Message delivered to all ad destinations even though google-ads is not provided in the integrations object. Use metadata if provided for Facebook (the current behavior). No data is delivered to analytics destinations. |
 | `{ad: true,` <br>`analytics: false}`<br> <br>//ad = facebook, google ads                                        | `{facebook: false,`<br>`amplitude: false}`  | Message delivered to all ad destinations (Google Ads) but NOT to Facebook. <br> No data delivered to analytics destinations |
 | `{ad: true,` <br>`analytics: false}`<br> <br>//ad = facebook, google ads<br> //analytics = facebook, snowflake |  `{facebook: false,`<br>`amplitude: false}` | Message delivered to all ad destinations (even though Facebook belongs to analytics and user is not consenting to analytics.) Use metadata if provided for Facebook (current behavior)<br>No data delivered to analytics destinations (Snowflake) |
+
+## Consent Observability
+
+<!--- You can view consent preference events in your [Tracking Plan](/docs/protocols/tracking-plan/create/) and view discarded events in [Delivery Overview](/docs/connections/delivery-overview/). ---> 
+<!---### Tracking Plan
+### Delivery Overview
+out of current scope--->
+Events discarded due to consent preferences appear in [Delivery Overview](/docs/connections/delivery-overview/) at the "Filtered at destination" step with the discard reason `Filtered by end user consent`.
