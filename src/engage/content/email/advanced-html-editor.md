@@ -91,7 +91,7 @@ For example, use  `{% if %}`, `{% elseif %}`, and `{% else %}` tags to call a pr
 If you use liquid templating, be sure to [test your email](/docs/engage/content/email/template/#test-the-email-template/) to make sure that everything renders properly. 
 
 > success ""
-> While both the HTML and visual editor support liquid templating, Engage recommends using the HTML editor to write liquid templating.
+> While both the HTML and visual editor support liquid templating, Segment recommends using the HTML editor to write liquid templating.
 
 > warning ""
 > Engage doesn't support liquid template syntax that produces partial blocks of HTML. 
