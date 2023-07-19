@@ -1,5 +1,6 @@
 ---
 title: Consent Management Overview
+hidden: true
 related:
   - "/privacy/account-deletion/"
   - "/privacy/complying-with-the-gdpr/"
@@ -51,6 +52,8 @@ For example, if a user agreed to share their information with you for functional
 >
 > See the [Semantic Events](/docs/connections/spec/semantic/) docs for more details.
 
+To learn more about configuring consent categories in your workspace, see the [Configure Consent Management documentation](/docs/src/privacy/configure-consent-management).
+
 ## Consent object
 
 Segment requires every event from all of your sources to include the end-user consent preferences, captured by your consent management tools or your application logic, in the form of the **consent object**. The consent object is a JSON object with the following format:
@@ -67,7 +70,7 @@ Segment requires every event from all of your sources to include the end-user co
 
 ```
 
-The consent information and a consent conflict flag are visible as traits on a user's profile in Unify.
+A consent conflict flag and the categories consented to by a user are both pulled from the consent object and are visible as traits on a user's profile in Unify.
 
 ### Reconcile consent object and integrations object conflicts
 
@@ -86,5 +89,3 @@ If the consent object and integrations object have conflicting destination infor
 | `{ad: true,` <br>`analytics: false}`<br> <br>//ad = facebook, google ads                                        | `{facebook: true,`<br>`amplitude: false}`   | Message delivered to all ad destinations even though google-ads is not provided in the integrations object. Use metadata if provided for Facebook (the current behavior). No data is delivered to analytics destinations. |
 | `{ad: true,` <br>`analytics: false}`<br> <br>//ad = facebook, google ads                                        | `{facebook: false,`<br>`amplitude: false}`  | Message delivered to all ad destinations (Google Ads) but NOT to Facebook. <br> No data delivered to analytics destinations |
 | `{ad: true,` <br>`analytics: false}`<br> <br>//ad = facebook, google ads<br> //analytics = facebook, snowflake |  `{facebook: false,`<br>`amplitude: false}` | Message delivered to all ad destinations (even though Facebook belongs to analytics and user is not consenting to analytics.) Use metadata if provided for Facebook (current behavior)<br>No data delivered to analytics destinations (Snowflake) |
-
-To learn more about configuring consent management categories in your workspace, see the [Configure Consent Management documentation](/docs/src/privacy/configure-consent-management).
