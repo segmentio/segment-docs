@@ -23,19 +23,22 @@ const testSources = yaml.load(fs.readFileSync(path.resolve(__dirname, `../src/_d
 
 
 const updateSources = async () => {
-  let sources = [];
-  let sourcesUpdated = [];
-  let regionalSourcesUpdated = [];
-  let nextPageToken = "MA==";
-  let categories = new Set();
-  let sourceCategories = [];
+  let sources = [];                     // Initialize an empty array to hold all sources  
+  let sourcesUpdated = [];              // Initialize an empty array to hold all sources that have been updated    
+  let regionalSourcesUpdated = [];      // Initialize an empty array to hold updated source regional information            
+  let nextPageToken = "MA==";           // Set the initial page token to the first page      
+  let categories = new Set();           // Initialize an empty set to hold all categories      
+  let sourceCategories = [];            // Initialize an empty array to hold all source categories      
 
+
+  // Get all sources from the catalog
   while (nextPageToken !== undefined) {
     const res = await getCatalog(`${PAPI_URL}/catalog/sources/`, nextPageToken);
     sources = sources.concat(res.data.sourcesCatalog);
     nextPageToken = res.data.pagination.next;
   }
 
+  // Sort the sources alphabetically
   sources.sort((a, b) => {
     if (a.name.toLowerCase() < b.name.toLowerCase()) {
       return -1;
@@ -46,6 +49,7 @@ const updateSources = async () => {
     return 0;
   });
 
+  // Set the list of categories for libraries
   const libraryCategories = [
     'server',
     'mobile',
@@ -62,9 +66,12 @@ const updateSources = async () => {
     'ibm-watson-assistant'
   ];
 
+  // More regional stuff
   const regionalSourceEndpoint = regionalSupport.sources.endpoint;
   const regionalSourceRegion = regionalSupport.sources.region;
 
+  
+  // Loop through all sources and create a new object with the data we want
   sources.forEach(source => {
     let slug = slugify(source.name, "sources");
     let settings = source.options;
@@ -80,6 +87,7 @@ const updateSources = async () => {
       mainCategory = 'cloud-app';
     }
 
+    // Sort the settings alphabetically
     settings.sort((a, b) => {
       if (a.name.toLowerCase() < b.name.toLowerCase()) {
         return -1;
@@ -102,6 +110,8 @@ const updateSources = async () => {
       regions.push('eu');
     }
 
+    // If the source ID is in the list of test sources, skip it.
+    // If it's not, add it to the list of sources to be written to yaml.
     if (testSources.includes(source.id)) {
       console.log(`skipped ${source.name}`);
     } else {
@@ -187,6 +197,7 @@ const updateSources = async () => {
   console.log("sources done");
 };
 
+// Update destinations
 const updateDestinations = async () => {
   let destinations = [];
   let destinationsUpdated = [];
@@ -194,12 +205,14 @@ const updateDestinations = async () => {
   let categories = new Set();
   let nextPageToken = "MA==";
 
+  // Get all destinations from the Public API
   while (nextPageToken !== undefined) {
     const res = await getCatalog(`${PAPI_URL}/catalog/destinations/`, nextPageToken);
     destinations = destinations.concat(res.data.destinationsCatalog);
     nextPageToken = res.data.pagination.next;
   }
 
+  // Sort the destinations alphabetically
   destinations.sort((a, b) => {
     if (a.name.toLowerCase() < b.name.toLowerCase()) {
       return -1;
@@ -210,6 +223,7 @@ const updateDestinations = async () => {
     return 0;
   });
 
+  // Loop through all destinations and create a new object with the data we want
   destinations.forEach(destination => {
     let endpoints = [];
     let regions = [];
@@ -271,12 +285,17 @@ const updateDestinations = async () => {
       return clonedObj;
     };
 
+    // I honestly don't remember why I did this.
+    // I think someone wanted to mention support for the Screen method to whatever destination that is
     destination.supportedMethods.screen = false;
     if (destination.id == '63e42b47479274407b671071') {
       destination.supportedMethods.screen = true;
     }
+
+    // Pageview is renamed to Page
     destination.supportedMethods = renameKey(destination.supportedMethods, 'pageview', 'page');
 
+    // All updated destination information gets added to this object
     let updatedDestination = {
       id: destination.id,
       display_name: destination.name,
@@ -308,6 +327,7 @@ const updateDestinations = async () => {
       presets
     };
 
+    // Add the updated destination to the destinationsUpdated array
     destinationsUpdated.push(updatedDestination);
     doesCatalogItemExist(updatedDestination);
     tempCategories.reduce((s, e) => s.add(e), categories);
