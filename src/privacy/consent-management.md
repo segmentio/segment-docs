@@ -10,7 +10,7 @@ related:
 
 When an end user visits your site, they set **consent preferences**, or make decisions about the types of data they want you to collect, use, and share. These consent preferences are typically presented as a set list of categories that describe how your company intends to use that data. Common categories include personalization, advertising, and site performance.
 
-Segment works with your third-party consent management platform (CMP) or bespoke consent solution to capture an end user's consent preferences and enforce those preferences by routing events to the categories consented to by an end user. 
+Segment works with your third-party consent management platform (CMP) or bespoke consent solution to capture an end user's consent preferences and enforce those preferences by only routing events to the categories consented to by an end user. 
 
 ![Diagram outlining information flowing from an end user to Segment destinations](/docs/privacy/images/consent-overview.png)
 
@@ -21,7 +21,7 @@ After a user sets their consent preferences, Segment captures them with the [Ana
 
 If a user changes the categories they consent to or if they consent using a different device or identifier, any events they generate after updating their consent preferences will contain the updated consent information. 
 
-For example, if a user agreed to share their information with you for all categories on their first visit to your site, and then on their next visit to the site only consented to sharing data for functional and advertising purposes but not for analytics or data sharing, a [Track call](/docs/connections/spec/track/) demonstrating their new consent preferences would have the following format:
+<!--- out of scope for Q2: For example, if a user agreed to share their information with you for all categories on their first visit to your site, and then on their next visit to the site only consented to sharing data for functional and advertising purposes but not for analytics or data sharing, a [Track call](/docs/connections/spec/track/) demonstrating their new consent preferences would have the following format:
 
 ``` json
 {
@@ -51,6 +51,8 @@ For example, if a user agreed to share their information with you for all catego
 > Segment has standardized a series of reserved event names that have special semantic meaning and maps these events to tools that support them. 
 >
 > See the [Semantic Events](/docs/connections/spec/semantic/) docs for more details.
+
+--->
 
 To learn more about configuring consent categories in your workspace, see the [Configure Consent Management documentation](/docs/src/privacy/configure-consent-management).
 
@@ -96,4 +98,4 @@ If the consent object and integrations object have conflicting destination infor
 <!---### Tracking Plan
 ### Delivery Overview
 out of current scope--->
-Events discarded due to consent preferences appear in [Delivery Overview](/docs/connections/delivery-overview/) at the "Filtered at destination" step with the discard reason `Filtered by end user consent`.
+Events discarded due to consent preferences appear in [Delivery Overview](/docs/connections/delivery-overview/) at the "Filtered at destination" step with the discard reason __Filtered by end user consent__.
