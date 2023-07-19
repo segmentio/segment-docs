@@ -94,9 +94,9 @@ Besides Engagement Time in Milliseconds, you can also generate your own `session
 
 If you choose to integrate with Google Analytics 4 client-side (either with Segment's Google Analytics 4 Web destination or outside of Segment) _and_ also use Segment's Google Analytics 4 Cloud destination to send events through the API, you will have all the reserved parameters and sessions tracking information available in Google Analytics 4 reports.
 
-When using Gtag, [Google generates a `session_id` and `session_number` when a session begins](https://support.google.com/analytics/answer/9191807?hl=en){:target='_blank'}. The `session_id` and `session_number` generated on the client can be passed as Event Parameters to stitch events sent through the API with the same session that was collected client-side. For events to stitch properly, server-side events must arrive within a 48 hour window of when the client-side events arrive.
+When using Gtag, [Google generates a `session_id` and `session_number` when a session begins](https://support.google.com/analytics/answer/9191807?hl=en){:target='_blank'}. The `session_id` and `session_number` generated on the client can be passed as Event Parameters to stitch events sent through the API with the same session that was collected client-side. Additionally, `client_id` must also align between client-side and server-side events in order to deduplicate user counts in GA4 (unless User-ID is used as the basis for user identification). For events to stitch properly, server-side events must arrive within a 48 hour window of when the client-side events arrive.
 
-You can check your `session_id` and `session_number` with the [Google Site Tag function](https://developers.google.com/tag-platform/gtagjs/reference){:target='_blank'} or by running this script in your JavaScript console and replacing `G-xxxxxxxxxx` with your Google Analytics 4 Measurement ID:
+You can check your `client_id`, `session_id` and `session_number` with the [Google Site Tag function](https://developers.google.com/tag-platform/gtagjs/reference){:target='_blank'} or by running this script in your JavaScript console and replacing `G-xxxxxxxxxx` with your Google Analytics 4 Measurement ID:
 
 ```java
 const sessionIdPromise =  new  Promise(resolve => {
@@ -106,9 +106,14 @@ const sessionNumPromise =  new  Promise(resolve => {
 	gtag('get', 'G-xxxxxxxxxx', 'session_number', resolve)
 });
 
-Promise.all([sessionIdPromise, sessionNumPromise]).then(function(session_data) {
+const clientIdPromise =  new  Promise(resolve => {
+	gtag('get', 'G-xxxxxxxxxx', 'client_id', resolve)
+});
+
+Promise.all([sessionIdPromise, sessionNumPromise, clientIdPromise]).then(function(session_data) {
 	console.log("session ID: "+session_data[0]);
 	console.log("session Number: "+session_data[1]);
+  console.log("session Number: "+session_data[2]);
 });
 ```
 
