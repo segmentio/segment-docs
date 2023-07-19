@@ -36,7 +36,7 @@ You can't change the audience key after it's created. To change the key, you nee
 
 ## Can I reuse audience keys?
 
-Avoid using the same audience key twice, even if you've deleted the key's original audience. Downstream tools and Destinations might have trouble distinguishing between different audiences that at any point shared the same key.
+Avoid using the same audience key twice, even if you've deleted the key's original audience. Downstream tools and destinations might have trouble distinguishing between different audiences that once shared the same key. This may create mismatch in audience size between Segment and the destination because the destination may count users of the old audience, resulting in a larger audience size.
 
 ## How do historical lookback windows work?
 
@@ -122,3 +122,4 @@ Yes, Engage supports the ability to send an audience or computed trait to two or
 An audience/computed trait Run or a Sync may fail on its first attempt, but Engage will retry up to 5 times before considering it a hard failure and display on that audience/compute trait's Overview page. As long as the runs/syncs within the specific Audience's Overview page say they are successful, then these can be safely ignored.  The Audit Trail logic, however, is configured in the way that it simply notifies about every task failure, even if it then later succeeds.
 
 If your team would like to avoid receiving the notifications for transient failures, please **[reach out to support](https://segment.com/help/contact/)**, who upon request can disable transient failure notifications.
+
