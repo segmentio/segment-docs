@@ -38,6 +38,12 @@ plugins:
       url: https://cdn.filepicker.io/api/file/W6teayYkRmKgb8SMqxIn
     mark:
       url: https://cdn.filepicker.io/api/file/ztKtaLBUT7GUZKius5sa
+  - name: Intercom
+    url: connections/sources/catalog/libraries/mobile/apple/destination-plugins/intercom-swift/
+    logo:
+      url: https://cdn.filepicker.io/api/file/yAaMHY8SLO675CweWW7f
+    mark:
+      url: https://cdn.filepicker.io/api/file/4WP9nICQSOCwh6Ppj7Ks
   - name: Mixpanel
     url: connections/sources/catalog/libraries/mobile/apple/destination-plugins/mixpanel-swift/
     logo:
