@@ -303,7 +303,7 @@ If you are a partner, looking to publish your destination and distribute your ap
 
 ##### Are there any nuances to consider in using Insert Functions with Actions destinations?
 
-Yes. Without Insert Functions enabled, it's possible to have two or more mappings that are triggered off of a single event. Due to the way Segment works on the backend, when an Insert Funcion is enabled events will only trigger ONE Actions mapping even if there is more than one mapping set up to run when a particular event is seen.
+Yes. Without Insert Functions enabled, a single event could trigger multiple mappings. With Insert Functions enabled, though, events only trigger one Actions mapping, even if more than one mapping is set up to run when a particular event is seen.
 
 
 {% comment %}
