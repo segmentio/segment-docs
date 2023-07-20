@@ -14,7 +14,7 @@
 
 [context.branch-deploy]
   command = "yarn build"
-#  ignore = "./scripts/ignore.sh"
+  # ignore = "./scripts/ignore.sh"
 
 [context.develop]
   command = "yarn develop"
