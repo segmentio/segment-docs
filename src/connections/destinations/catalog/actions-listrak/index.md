@@ -29,7 +29,7 @@ This destination is maintained by Listrak. For any issues with the destination, 
 
 1. Each Engage audience to be synced to Listrak must only include email addresses subscribed to the list. To do this, add a condition to the Engage audience that ensures the custom trait for the list exists (eg. have a Custom Trait listrak_list_12345 exists, where 12345 is the list ID).
 2. In Listrak, go to **Contacts > Profile Fields** and click **Create Field Group**. 
-3. Enter `Engage Audiences` for the name and Click **Save**.
+3. Enter a name for the Profile Field Group (eg. `Engage Audiences`) and Click **Save**.
 4. Enter a name for the audience for the **Field Name**.
 5. Select **Check Box** for the **Data Type**.
 6. Click the **Update** button.
