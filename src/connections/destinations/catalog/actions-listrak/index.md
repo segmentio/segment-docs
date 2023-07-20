@@ -18,12 +18,12 @@ This destination is maintained by Listrak. For any issues with the destination, 
 2. From your Segment workspace, go to **Connections > Catalog** and click **Destinations**.
 3. Search for **Listrak** in the Destinations Catalog and select the destination.
 4. Click **Add destination**.
-5. Select an existing Source to connect to Listrak.
-6. On the **Setup** tab, name your destination. For example, `Listrak`.
-7. Enter your Listrak API client ID and client secret.
+5. Select an existing Source to connect to Listrak. If you are connecting the destination to an Engage Audience, select the Engage space. Click **Confirm Source**.
+6. On the **Settings** tab, name your destination. For example, `Listrak`.
+7. In same section of the **Settings** tab, enter your Listrak API client ID and client secret.
 8. Click **Save Changes**.
 9. Follow the steps in the Destinations Actions documentation to [customize mappings](/docs/connections/destinations/actions/#customize-mappings) or follow the steps below to Sync an Engage Audience.
-10. Enable the destination and configured mappings.
+10. Enable the destination and configure mappings.
 
 ### Sync an Engage Audience
 
