@@ -68,7 +68,7 @@ Twilio powers Engage SMS delivery. For more information, view [Twilio's document
 | Email Bounced            | The receiving server permanently rejected the email.                                  |
 | Email Dropped            | The email was dropped before delivery.                                                |
 | Email Marked as Spam     | The recipient marked the email as spam.                                               |
-| Email Machine Opened     | The email was [machined opened](/docs/engage/analytics/#understanding-machine-opens). |
+| Email Machine Opened     | The email was [machine opened](/docs/engage/analytics/#understanding-machine-opens). |
 | Email Unsubscribed       | The recipient unsubscribed from all emails.                                           |
 | Email Group Unsusbcribed | The recipient unsubscribed from a specific group.                                     |
 | Email Subscribed         | The recipient subscribed to all emails.                                               |
