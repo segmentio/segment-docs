@@ -7,7 +7,7 @@ redirect_from:
 id: 54521fd725e721e32a72eebb
 ---
 > warning ""
-> Google announced that all standard Universal Analytics properties will stop processing new data on July 1, 2023. 360 Universal Analytics properties will receive a one-time processing extension ending on July 1, 2024. Segment encourages all customers to [migrate to using our Google Analytics 4 destination](https://segment.com/docs/connections/destinations/catalog/actions-google-analytics-4/#migrating-from-universal-analytics-to-google-analytics-4){:target='_blank'} as soon as possible. Learn more about when [Google Analytics 4 will replace Universal Analytics](https://support.google.com/analytics/answer/11583528?sjid=13479291677968058253-NA){:target='_blank'}.
+> Google announced that all standard Universal Analytics properties will stop processing new data on July 1, 2023. 360 Universal Analytics properties will receive a one-time processing extension ending on July 1, 2024. Segment recommends [migrating to Google Analytics 4](https://segment.com/docs/connections/destinations/catalog/actions-google-analytics-4/#migrating-from-universal-analytics-to-google-analytics-4){:target='_blank'} as soon as possible. Learn more about when [Google Analytics 4 will replace Universal Analytics](https://support.google.com/analytics/answer/11583528?sjid=13479291677968058253-NA){:target='_blank'}.
 
 
 > warning "Migrate mobile implementations to Firebase"
