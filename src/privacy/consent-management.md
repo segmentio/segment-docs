@@ -19,7 +19,16 @@ After a user sets their consent preferences, Segment captures them with the [Ana
 > success ""
 > Segment collects consent for both registered users and anonymous users.
 
-If a user changes the categories they consent to or if they consent using a different device or identifier, any events they generate after updating their consent preferences will contain the updated consent information. 
+## Enforce consent
+Segment routes events with a consent object to the destinations in categories consented to by a user and to destinations that do not have a consent category.
+
+If a user changes the categories they consent to or if they consent using a different device or identifier, any events they generate after updating their consent preferences will contain the updated consent information and will be sent only to the destinations in the categories that are currently consented to.
+
+> warning "Segment recommends mapping all destinations to a category"
+> For more fine-grained control of your end user consent, Segment recommends that you map all destinations to a consent category. 
+> 
+> Any destinations without a mapping are assumed to not require user consent and will receive all events containing a consent object. 
+
 
 <!--- out of scope for Q2: For example, if a user agreed to share their information with you for all categories on their first visit to your site, and then on their next visit to the site only consented to sharing data for functional and advertising purposes but not for analytics or data sharing, a [Track call](/docs/connections/spec/track/) demonstrating their new consent preferences would have the following format:
 
