@@ -30,5 +30,4 @@ Repeater sends all events it receives to the sources you specified, identified b
 
 ##### What is the `context.repeatChain` field that I can see on my repeated events?
 
-The `context.repeatChain` array that you will see on repeated events holds two values. The first will be the md5 hashed write key where the event originated. The second will be the md5 hashed write key that the event was sent to through the Repeater. This behavior exists to allow Segment to check to make sure the event isn't being sent to a pipeline that will result in an infinite loop.
-
+The `context.repeatChain` array that you will see on repeated events holds two values. The first value is the MD5-hashed write key where the event originated. The second value is the MD5-hashed write key that the event was sent to through the Repeater. This behavior lets Segment verify that the event isn't sent to a pipeline that will result in an infinite loop.
