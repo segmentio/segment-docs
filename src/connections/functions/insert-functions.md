@@ -301,6 +301,10 @@ No, destination insert functions are currently available as cloud-mode destinati
 
 If you are a partner, looking to publish your destination and distribute your app through Segment catalog, visit the [Developer Center](https://segment.com/partners/developer-center/){:target="_blank"} and check out the Segment [partner docs](/docs/partners/).
 
+##### Are there any nuances to consider in using Insert Functions with Actions destinations?
+
+Yes. Without Insert Functions enabled, it's possible to have two or more mappings that are triggered off of a single event. Due to the way Segment works on the backend, when an Insert Funcion is enabled events will only trigger ONE Actions mapping even if there is more than one mapping set up to run when a particular event is seen.
+
 
 {% comment %}
 
