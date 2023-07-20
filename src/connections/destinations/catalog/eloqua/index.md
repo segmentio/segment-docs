@@ -124,7 +124,7 @@ in Eloqua and a property called `AccountType` in your Segment event, the
 mapping will get handled.
 
 > info "Track event mapping limitations"
-> Each track event can only be mapped to a single custom object; mapping a single track event to multiple custom objects is not supported.
+> Each `track` event can only be mapped to a single custom object. Segment doesn't support mapping a single `track` event to multiple custom objects.
 
 For `track` event properties you intend to send to Eloqua as Custom Object
 fields, make sure the value of the data type sent to Segment matches the
