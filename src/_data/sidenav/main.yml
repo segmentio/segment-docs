@@ -348,8 +348,6 @@ sections:
       title: Set User Subscriptions
     - path: /engage/user-subscriptions/subscription-states
       title: Subscription States
-    - path: /engage/user-subscriptions/engage-source
-      title: Engage Events Source
     - path: /engage/user-subscriptions/subscription-sql
       title: Subscriptions with SQL Traits
   - section_title: Profiles
