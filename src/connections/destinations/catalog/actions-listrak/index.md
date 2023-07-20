@@ -39,7 +39,7 @@ This destination is maintained by Listrak. For any issues with the destination, 
 10. Under **Select events to map and send**, select **Track** for the **Event Type**.  
 11. Click **Add Condition** and create a condition **Event Name** is `Audience Entered`.
 12. Under **Select mappings**, enter the list ID and map the email address if `context.traits.email` is not desired.
-13. Still under **Select mappings**, in the section for mapping the `Profile Field Values`, enter the profile field ID for the `Enter Key Name` textbox on the right and `on` in textbox for value to the left.
+13. Still under **Select mappings**, in the section for mapping the `Profile Field Values`, enter the profile field ID for the `Enter Key Name` textbox on the right and `on` in the textbox for its value to the left.
 14. Repeat steps 9 through 13 using `Audience Exited` for the **Event Name** and `off` for the profile field value.
 15. **Enable** both mappings.
 16. Go to the **Settings** tab and **Enable** the destination.
