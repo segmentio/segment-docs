@@ -12,9 +12,9 @@ Once you've configured consent in the Segment app, your events are routed only t
 ## Prerequisites
 
 Before you can configure consent in Segment, take the following steps:
-- **Set up your third-party consent management tool and create consent categories**. Take note of your consent categories and the key or ID associated with each topic.
+- **Set up your third-party consent management tool and create consent categories**. Take note of your consent categories and the key or ID associated with each category.
 - **Know how your company uses each destination**. You need to know which destinations to map to each category. 
-- **A way to update your web libraries with the consent object**. After you set up consent categories in the Segment app, you need to add the Analytics.js snippet to your web libraries so that Segment receives your end users' preferences. 
+- **A way to update your web libraries with the consent object**. After you set up consent categories in the Segment app, you need to add a wrapper to your Analytics.js snippet so that Segment can receive your end users' preferences. Segment provides a [wrapper for OneTrust](#step-2-add-the-consent-wrapper-to-analyticsjs), or if you're using a different CMP, you can create your own wrapper using the [instructions provided in the analytics-next repository](https://github.com/segmentio/analytics-next/tree/master/packages/consent/consent-tools){:target="_blank”}. 
 
 ## Step 1: Create consent categories in the Segment app
 
@@ -81,7 +81,7 @@ analytics.load({ writeKey: '<MY_WRITE_KEY'> })
 
 ## Edit consent categories
 
-If you need to make changes to your consent categories, you can edit them on the Consent Management page. 
+If you need to make changes to your consent categories, you can edit them on the Consent Management page. You may experience some latency between making the changes and having the changes take effect.
 
 1. From the [Segment homepage](https://app.segment.com/goto-my-workspace/){:target="_blank”}, select the Privacy tab and click **Consent Management**.
 2. On the Consent Management page, navigate to the consent category you'd like to edit and click **Edit**.
