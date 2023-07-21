@@ -4,7 +4,7 @@ plan: engage-premier
 ---
 Use Twilio Engage to build personalized email templates to store and use throughout marketing campaigns.  
 
-Build an email template from scratch using the [Drag and Drop Editor](/docs/engage/content/email/editor/) or the [Advanced HTML Editor](/docs/engage/content/advanced-html-editor/). Include [personalized content](#personalize-with-merge-tags) in the subject line, preview text, and email body to engage with users based on their profile traits and actions.
+Build an email template from scratch using the [Drag and Drop Editor](/docs/engage/content/email/editor/) or the [HTML Editor](/docs/engage/content/html-editor/). Include [personalized content](#personalize-with-merge-tags) in the subject line, preview text, and email body to engage with users based on their profile traits and actions.
 
 
 ## Build an Email template
@@ -29,7 +29,7 @@ To configure an email template, click **Create Template**.
     6. Add preview text and the subject line. Use [merge tags](#personalize-with-merge-tags) to personalize the email template with real-time profile traits.
 3. Select the design method to build your email template:
   - [**Drag and Drop Editor**](/docs/engage/content/email/editor/) is a drag and drop WYSIWYG tool with customizable content blocks.
-  - [**Advanced HTML Editor**](/docs/engage/content/email/advanced-html-editor/) contains both a code and visual editor from a single view. This editor provides complete HTML editing access with error flagging.
+  - [**HTML Editor**](/docs/engage/content/email/html-editor/) contains both a code and visual editor from a single view. This editor provides complete HTML editing access with error flagging.
 4. Design the email template, then click **Create Email Template**.
 
 ## Test the Email template
@@ -59,7 +59,7 @@ You can also add merge tags in the heading or body text as you design an email w
 
 ## Include unsubscribe links
 
-When you build email templates, it's your responsibility to include an unsubscribe link in your message. Add unsubscribe links to an email template from the Drag and Drop or Advanced HTML editors.
+When you build email templates, it's your responsibility to include an unsubscribe link in your message. Add unsubscribe links to an email template from the Drag and Drop or HTML editors.
 
 When a recipient clicks on an unsubscribe link, they'll see a confirmation page and the recipient's subscription state is updated.
 

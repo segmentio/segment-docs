@@ -406,8 +406,8 @@ sections:
       title: Email Template
     - path: '/engage/content/email/editor'
       title: Drag and Drop Editor
-    - path: '/engage/content/email/advanced-html-editor'
-      title: Advanced HTML Editor
+    - path: '/engage/content/email/html-editor'
+      title: HTML Editor
     - path: '/engage/content/sms/template'
       title: SMS Template
     - path: '/engage/content/whatsapp'
