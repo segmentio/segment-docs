@@ -81,4 +81,4 @@ Segment builds this Audience with the `Page Viewed` event and `Likelihood to Pur
 
 Choose a **Dormant** Predictive Audience to target inactive customers. 
 
-Segment builds this Audience with the `Page Viewed` eent and the `Likelihood to Purchase` Predictive Trait. Audiene members have a low likelihood to purchase and haven't been active on your site in the last 60 days.
+Segment builds this Audience with the `Page Viewed` event and the `Likelihood to Purchase` Predictive Trait. Audience members have a low likelihood to purchase and haven't been active on your site in the last 60 days.
