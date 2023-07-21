@@ -2,23 +2,32 @@ const path = require('path');
 const fs = require('fs');
 const fm = require('front-matter');
 const yaml = require('js-yaml');
-const { prompt } = require('enquirer');
-const {slugify, getCatalog} = require('./utilities.js');
+const {
+  prompt
+} = require('enquirer');
+const {
+  slugify,
+  getCatalog
+} = require('./utilities.js');
 
 
 require('dotenv').config();
 
 // Global variables
 const PAPI_URL = "https://api.segmentapis.com";
-const PRIVATE_DESTINATIONS = yaml.load(fs.readFileSync(path.resolve(__dirname, `../src/_data/catalog/destinations_private.yml`)));
+const PRIVATE_DESTINATIONS = yaml.load(fs.readFileSync(path.resolve(__dirname, `../../src/_data/catalog/destinations_private.yml`)));
 const privateDests = PRIVATE_DESTINATIONS.items;
 let private = [];
 
 // Checks the status of a destination
 const checkDestinationStatus = async (id) => {
-  const res = await getCatalog(`${PAPI_URL}/catalog/destinations/${id}`);
-  let destination = res.data.destinationMetadata;
-  return destination;
+  try {
+    const res = await getCatalog(`${PAPI_URL}/catalog/destinations/${id}`);
+    let destination = res.data.destinationMetadata;
+    return destination;
+  } catch (error) {
+    console.log(error);
+  }
 };
 
 // Updates the frontmatter to make a destination public
@@ -126,7 +135,7 @@ const getDestinationData = async (id) => {
   output += yaml.dump({
     items: private
   }, options);
-  fs.writeFileSync(path.resolve(__dirname, `../src/_data/catalog/destinations_private.yml`), output);
+  fs.writeFileSync(path.resolve(__dirname, `../../src/_data/catalog/destinations_private.yml`), output);
 };
 
 // Checks the status of existing private destinations and handles public destinations
@@ -157,37 +166,11 @@ const checkExistingStatus = async () => {
 };
 
 // Adds a new private destination or updates existing ones
-const addPrivateDestination = async () => {
-  let ids = await checkExistingStatus();
-  ids.sort();
 
-  const DEST_ID = await prompt({
-    type: 'input',
-    name: 'id',
-    message: 'Enter the destination ID'
-  });
 
-  if (DEST_ID.id == '0') {
-    for (const element in ids) {
-      let currentId = ids[element];
-      await getDestinationData(currentId);
-    }
-    console.log("Updating existing Private Beta destinations.");
-  } else {
-    if (ids.includes(DEST_ID.id)) {
-      console.log("This destination is already captured.");
-      return;
-    } else {
-      ids.push(DEST_ID.id);
-      fs.writeFileSync(path.resolve(__dirname, `../src/_data/catalog/destinations_private.yml`), '');
-    }
-    ids.sort();
 
-    for (const element in ids) {
-      let currentId = ids[element];
-      await getDestinationData(currentId);
-    }
-  }
-};
 
-addPrivateDestination();
+exports.checkDestinationStatus = checkDestinationStatus;
+exports.makeDestinationPublic = makeDestinationPublic;
+exports.getDestinationData = getDestinationData;
+exports.checkExistingStatus = checkExistingStatus;
