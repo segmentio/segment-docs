@@ -24,7 +24,7 @@ The Segment Native Mobile Spec includes the following semantic events:
 - [Overview of events](#overview-of-events)
 - [Lifecycle events](#lifecycle-events)
   - [Application Installed](#application-installed)
-  - [Application Opened](#application-opened)
+  - [Application Foregrounded](#application-foregrounded)
   - [Application Backgrounded](#application-backgrounded)
   - [Application Updated](#application-updated)
   - [Application Uninstalled](#application-uninstalled)
@@ -41,7 +41,7 @@ The Segment Native Mobile Spec includes the following semantic events:
 - [Overview of events](#overview-of-events)
 - [Lifecycle events](#lifecycle-events)
   - [Application Installed](#application-installed)
-  - [Application Opened](#application-opened)
+  - [Application Foregrounded](#application-foregrounded)
   - [Application Backgrounded](#application-backgrounded)
   - [Application Updated](#application-updated)
   - [Application Uninstalled](#application-uninstalled)
@@ -66,7 +66,7 @@ Mobile applications live within a fairly bounded lifecycle. In order to understa
 The following events will be tracked automatically when lifecycle events are enabled:
 
 - [Application Installed](#application-installed)
-- [Application Opened](#application-opened)
+- [Application Foregrounded](#application-foregrounded)
 - [Application Updated](#application-updated)
 
 ### Application Installed
@@ -93,17 +93,17 @@ This event fires when a user **first** opens your mobile application. Note, if t
 | `build`      | String   | The build number of the installed app. |
 
 
-### Application Opened
+### Application Foregrounded
 
 This event fires when a user launches or foregrounds your mobile application after the first open. It will fire after the `Application Installed` event and again after the app is re-opened after being closed. This event does not wait for attribution information to be received but may include information about referring applications or deep link URLs if available to the application upon open.
 
-{% comment %} api-example '{"userId": "019mr8mf4r", "type": "track", "event": "Application Opened", "properties": { "from_background": false, "referring_application": "GMail", "url": "url://location" }}'}}} {% endcomment %}
+{% comment %} api-example '{"userId": "019mr8mf4r", "type": "track", "event": "Application Foregrounded", "properties": { "from_background": false, "referring_application": "GMail", "url": "url://location" }}'}}} {% endcomment %}
 
 ```json
 {
   "userId": "019mr8mf4r",
   "type": "track",
-  "event": "Application Opened",
+  "event": "Application Foregrounded",
   "properties": {
     "from_background": false,
     "referring_application": "GMail",
@@ -138,7 +138,7 @@ This event should be sent when a user backgrounds the application upon [`applica
 
 ### Application Updated
 
-This event fires when a user updates the application. Segment's SDK will automatically collect this event instead of an "Application Opened" event when we determine that the Open is first since an update.
+This event fires when a user updates the application. Segment's SDK will automatically collect this event instead of an "Application Foregrounded" event when we determine that the Open is first since an update.
 
 {% comment %} api-example '{ "userId": "019mr8mf4r", "type": "track", "event": "Application Updated", "properties": { "previous_version": "1.1.2", "previous_build": 1234, "version": "1.2.0", "build": "1456" }}'}}} {% endcomment %}
 
@@ -333,7 +333,7 @@ This event fires when a push notification from a provider bounces. If your push 
 
 When your application is opened using a referring link, Segment or your packaged deep link partner can fire this event on your behalf. If the deep link has additional data associated with it, either passed through the third party service or as `annotations` in `launchOption`, you may want to include those values as properties here as well.
 
-This event is fired *in addition* to the associated `Application Opened` event.
+This event is fired *in addition* to the associated `Application Foregrounded` event.
 
 Our [iOS](/docs/connections/sources/catalog/libraries/mobile/ios/#automatic-deep-link-tracking) SDK can collect this event automatically if configured to do so.
 
