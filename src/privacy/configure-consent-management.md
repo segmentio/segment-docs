@@ -32,8 +32,6 @@ Before you can configure consent in Segment, take the following steps:
 5. Once you have finished setting up your category or categories, click **Save**.
 
 > warning "Segment recommends mapping all destinations to a category"
-> For more fine-grained control of your end user consent, Segment recommends that you map all destinations to a consent category. 
-> 
 > Any destinations without a mapping are assumed to not require user consent and will receive all events containing a consent object. 
 
 ## Step 2: Add the consent wrapper to Analytics.js
