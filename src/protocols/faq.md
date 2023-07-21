@@ -84,6 +84,10 @@ Segment's code uses built-in logic to verify if an event exists in the Tracking 
 
 Unplanned property omission is only supported for cloud-mode destinations. Unplanned properties will not be omitted when they're sent to device-mode destinations.
 
+### Why do I have to different Tracking Plan Ids?
+
+Your tracking plan id allows you to send data to Segments API end point and directs it to a specific tracking plan you have created. Depending on which API you are using will determine what tracking plan Id you will use. 
+
 
 ## Protocols Validation
 
