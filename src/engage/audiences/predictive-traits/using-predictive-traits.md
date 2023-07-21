@@ -3,9 +3,6 @@ title: Using Predictive Traits
 plan: engage-foundations
 ---
 
-> info ""
-> Predictive Traits is in public beta.
-
 ## Working with Predictive Traits in Segment
 
 Segment creates Predictive Traits as Computed Traits, with scores saved to user profiles as a percentage cohort. For example, `0.8` on a user's profile indicates that the user is in the the cohort's 80th percentile, or the top 20%. 

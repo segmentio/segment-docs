@@ -3,20 +3,19 @@ title: Predictive Traits
 plan: engage-foundations
 ---
 
-Predictive Traits, Segment's artificial intelligence and machine learning feature, lets you predict the likelihood that users will perform any event tracked in Segment. 
+Predictions, Segment's artificial intelligence and machine learning feature, lets you predict the likelihood that users will perform any event tracked in Segment. 
 
-With Predictive Traits, you can identify users with, for example, a high propensity to purchase, refer a friend, or use a promo code. Predictive Traits also lets you predict a user's lifetime value (LTV).
+With Predictions, you can identify users with, for example, a high propensity to purchase, refer a friend, or use a promo code. Predictions also lets you predict a user's lifetime value (LTV).
 
-Segment saves Predictive Traits to user profiles, letting you build Audiences, trigger Journeys, and send data to downstream Destinations.
+Segment saves Predictions to user profiles, letting you build Audiences, trigger Journeys, and send data to downstream Destinations.
 
 On this page, you'll learn how to build a Predictive Trait.
 
-## Access and build Predictive Traits
+## Access and build a Prediction
 
-To create Predictive Traits, you'll first request demo access, then build a Predictive Trait.
+To create a Prediction, you'll first request demo access, then build a Predictive Trait.
 
 ![The Predictive Trait builder in the Segment UI](../../images/trait_builder.png)
-
 
 ### Request Predictive Traits access
 
