@@ -1,5 +1,5 @@
 ---
-title: Listrak Destination
+title: Listrak Actions Destination
 id: <integration_id>
 ---
 
@@ -10,22 +10,26 @@ id: <integration_id>
 
 [Listrak](https://www.listrak.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners){:target="_blank”} is the retail industry’s leading customer engagement platform. Listrak delivers results for more than 1,000 retailers by providing best-in-class email, text message marketing, identity resolution marketing and push notifications through seamless cross-channel orchestration. Listrak’s data-first approach delivers 1:1 personalization at scale so you can send messages at precisely the right time across the right combination of channels and devices to maximize customer engagement, revenue, and lifetime value.
 
-This destination is maintained by Listrak. For any issues with the destination, [contact their Support team](mailto:support@listrak.com).
+Listrak maintains this destination. For any issues with the destination, [contact the Listrak Support team](mailto:support@listrak.com).
 
 ## Getting started
 
-1. Before connecting to the Listrak Destination, set up the [Listrak Source](/docs/connections/sources/catalog/cloud-apps/listrak/). Note the API client ID and client secret after creating the integration in Listrak.
+To add the Listrak Actions destination: 
+
+1. Set up the [Listrak Source](/docs/connections/sources/catalog/cloud-apps/listrak/) first before connecting to the Listrak Actions Destination. Note the API client ID and client secret after creating the integration in Listrak.
 2. From your Segment workspace, go to **Connections > Catalog** and click **Destinations**.
-3. Search for **Listrak** in the Destinations Catalog and select the destination.
+3. Search for **Listrak (Actions)** in the Destinations Catalog and select the destination.
 4. Click **Add destination**.
-5. Select an existing Source to connect to Listrak. If you are connecting the destination to an Engage Audience, select the Engage space. Click **Confirm Source**.
+5. Select an existing Source to connect to Listrak (Actions). If you are connecting the destination to an Engage Audience, select the Engage space. Click **Confirm Source**.
 6. On the **Settings** tab, name your destination. For example, `Listrak`.
-7. In same section of the **Settings** tab, enter your Listrak API client ID and client secret.
+7. In the same section of the **Settings** tab, enter your Listrak API client ID and client secret.
 8. Click **Save Changes**.
 9. Follow the steps in the Destinations Actions documentation to [customize mappings](/docs/connections/destinations/actions/#customize-mappings) or follow the steps below to Sync an Engage Audience.
 10. Enable the destination and click **Save Changes**.
 
 ### Sync an Engage Audience
+
+To sync an Engage audience with your Listrak (Actions) destination:
 
 1. Each Engage audience to be synced to Listrak must only include email addresses subscribed to the list. To do this, add a condition to the Engage audience that ensures the custom trait for the list exists (eg. have a Custom Trait listrak_list_12345 exists, where 12345 is the list ID).
 2. In Listrak, go to **Contacts > Profile Fields** and click **Create Field Group**. 
