@@ -71,7 +71,6 @@ Segment requires every event from all of your sources to include the end-user co
 {
 "context": {
   "consent": {
-    "version": 2,
     "consentPreferences": {
         "Advertising": true,
         "Analytics": false,
@@ -83,8 +82,16 @@ Segment requires every event from all of your sources to include the end-user co
 }
 
 ```
+<!--- Q3 scope: 
 
-<!--- Q3 scope: A consent conflict flag and the categories consented to by a user are both pulled from the consent object and are visible as traits on a user's profile in Unify. --->
+### Consent policy version
+
+add to snippet above:"     "version": 1,"
+
+Segment assigns a `version` to your consent object. The `version` describes the version of Segment's consent schema that message used.
+
+A consent conflict flag and the categories consented to by a user are both pulled from the consent object and are visible as traits on a user's profile in Unify. --->
+
 
 ### Reconcile consent object and integrations object conflicts
 

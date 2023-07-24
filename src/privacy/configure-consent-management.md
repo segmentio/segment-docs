@@ -11,6 +11,9 @@ Once you've configured consent in the Segment app, your events are routed only t
 
 ## Prerequisites
 
+> info "Consent management edit and update capabilities limited to Workspace Owners"
+> Only users with the Workspace Owner role are able to create, edit, and disable consent categories. All other users have read-only access to Consent Management features. 
+
 Before you can configure consent in Segment, take the following steps:
 - **Set up your third-party consent management tool and create consent categories**. Take note of your consent categories and the key or ID associated with each category.
 - **Know how your company uses each destination**. You need to know which destinations to map to each category. 
@@ -19,13 +22,15 @@ Before you can configure consent in Segment, take the following steps:
 ## Step 1: Create consent categories in the Segment app
 
 > info "Limited availability of sources and destinations during private beta"
-> During private beta, you can send events from web sources to consent categories. Enforcement of consent preferences is only available for event streaming destinations, webhooks, and functions. You can map one event streaming destination, webhook, or function to multiple consent categories. All other source and destination types are not impacted by consent mappings. 
+> During private beta, you can send events from web sources to consent categories. Enforcement of consent preferences is only available for event streaming destinations, webhooks, and functions. You can map one event streaming destination, webhook, or function to multiple consent categories. All other source and destination types are not impacted by consent mappings.
+>
+> Storage, RETL, and Engage destinations do not enforce consent preferences. 
 
 1. From the [Segment homepage](https://app.segment.com/goto-my-workspace/){:target="_blank”}, select the Privacy tab and click **Consent Management**.
 2. On the Consent management page, click **Create categories**.
 3. Confirm that you have completed the required prerequisites, and click **Next**.
 4. On the Create consent categories page, add the following information to the category form:
-  - **Category name**: Enter a name that describes your use case for the data sent to this destination.
+  - **Category name**: Enter a name that describes your use case for the data sent to this destination. This field only accepts category names that are 20 characters or less.
   - **Category ID**: In OneTrust, this is a string of up to five alphanumeric characters, but other CMPs may have a different format. This field is case sensitive.
   - **Mapped destinations**: Select one or more of your destinations to map to this category. Category mappings apply to all instances of a destination. 
   <br/><br/>**Optional**: Click **Add category** to create another category.
@@ -48,7 +53,13 @@ If you have a CMP other than OneTrust, you can install the `@segment/analytics-c
 > If an event includes both an integrations object and a consent object, Segment will look at the consent object first, and then take into account the integrations object.
 
 ### OneTrust for snippet users (window.analytics)
-Use the following initialization code: 
+Delete the `analytics.load()` line from the snippet in the header of your website:
+
+```diff
+- analytics.load("<MY_WRITE_KEY>");
+```
+
+Run the following initialization code in your project, replacing `<MY_WRITE_KEY>` with your write key:<sup>1</sup> 
 ```ts
 import { oneTrust } from '@segment/analytics-consent-wrapper-onetrust'
 
@@ -58,13 +69,9 @@ oneTrust(window.analytics)
 window.analytics.load('<WRITE_KEY>')
 ```
 
-Delete the `analytics.load()` line from the snippet
-
-```diff
-- analytics.load("<MY_WRITE_KEY>");
-```
-
 ### OneTrust for npm library users
+
+Initialize the OneTrust wrapper by running the following code on your command line, replacing `<MY_WRITE_KEY>` with your write key:<sup>1</sup> 
 
 ```ts
 import { oneTrust } from '@segment/analytics-consent-wrapper-onetrust'
@@ -76,6 +83,8 @@ oneTrust(analytics)
 
 analytics.load({ writeKey: '<MY_WRITE_KEY'> })
 ```
+
+<sup>1</sup>: You can find your write key by navigating to Connections > Sources > [Source Name] > Settings.
 
 ## Edit consent categories
 
