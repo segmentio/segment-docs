@@ -121,9 +121,7 @@ If an event includes both an integrations and consent object, Segment will look 
 
 ### Reconcile CMP and Segment consent category conflicts
 
-If you have a category configured in your consent management tool (for example, `advertising`) and there is no matching category in the Segment app, data will flow to unmapped destinations. If destinations are mapped to a different category in the Segment app, data will flow to those destinations.
-
-If destination names do not match exactly (for example, your CMP has a `advertising` category and the Segment app has an `ad` category,) data will not flow to destinations in the `ad` category.
+If you have a category configured in your consent management tool (for example, `advertising`) and there is no category of the same name in the Segment app, data will flow to unmapped destinations. If destinations are mapped to a different category in the Segment app, data will flow to those destinations.
 
 If there is a category configured in Segment (`functional`) that is not mapped in your CMP, data will not flow to destinations mapped to the `functional` category. 
 
