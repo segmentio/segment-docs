@@ -26,7 +26,7 @@ Use the visual editor for a no-code option to design your email. With the visual
 - Add [merge tags](#personalize-with-merge-tags) and links
 - Add emojis
 
-Engage updates any changes you make in the visual editor to the [HTML editor](#html-editor) in real-time.
+Engage updates any changes you make in the visual editor to the HTML editor in real-time.
 
 ### Insert an image
 

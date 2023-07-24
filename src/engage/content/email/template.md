@@ -4,7 +4,7 @@ plan: engage-premier
 ---
 Use Twilio Engage to build personalized email templates to store and use throughout marketing campaigns.  
 
-Build an email template from scratch using the [Drag and Drop Editor](/docs/engage/content/email/editor/) or the [HTML Editor](/docs/engage/content/html-editor/). Include [personalized content](#personalize-with-merge-tags) in the subject line, preview text, and email body to engage with users based on their profile traits and actions.
+Build an email template from scratch using the [Drag and Drop Editor](/docs/engage/content/email/editor/) or the [HTML Editor](/docs/engage/content/email/html-editor/). Include [personalized content](#personalize-with-merge-tags) in the subject line, preview text, and email body to engage with users based on their profile traits and actions.
 
 
 ## Build an Email template
