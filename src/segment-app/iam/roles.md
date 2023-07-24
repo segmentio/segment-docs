@@ -78,7 +78,7 @@ Workspace Owners can grant specific individuals or groups access to PII from the
 
 Engage destinations aren't included in the Engage roles by default. Users with Engage roles (including the Engage Admin) need additional permissions for each Engage space they work with to manage that Engage space's destinations.
 
-Grant these users `Source Admin` on the source named `Engage (space name)` to grant them access to the Engage destinations for that Engage space.
+Grant these users `Unify and Engage Admin` on the selected Engage space and `Source Admin` on the source named `Engage (space name)` to grant them access to the Engage destinations for that Engage space.
 
 ## Roles for connecting resources
 

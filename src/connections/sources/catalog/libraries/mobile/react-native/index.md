@@ -692,5 +692,34 @@ import {
     }
   }
 ```
+### How do I add to the context Object?
+Like with the integrations object above, you'll need to use a plugin to access and modify the context object. For example, if you'd like to add `context.groupId` to every Track call, you should create a plugin like this:
+```js
+//in AddToContextPlugin.js
+import {
+  Plugin,
+  PluginType,
+  SegmentEvent,
+} from '@segment/analytics-react-native';
+
+export class AddToContextPlugin extends Plugin {
+  // Note that `type` is set as a class property
+  // If you do not set a type your plugin will be a `utility` plugin (see Plugin Types above)
+  type = PluginType.enrichment;
+
+ async execute(event: SegmentEvent) {
+    if (event.type == EventType.TrackEvent) {
+      event.context['groupId'] = 'test - 6/8'
+      }
+      return event;
+    }
+}
+ // in App.js
+
+import { AddToContextPlugin } from './AddToContextPlugin'
+
+segmentClient.add({ plugin: new AddToContextPlugin() });  
+```
+
 ## Changelog
 [View the Analytics React Native changelog on GitHub](https://github.com/segmentio/analytics-react-native/releases){:target="_blank"}.

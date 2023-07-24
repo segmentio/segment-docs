@@ -6,6 +6,10 @@ redirect_from:
   - '/connections/destinations/catalog/google-universal-analytics'
 id: 54521fd725e721e32a72eebb
 ---
+> warning ""
+> Google announced that all standard Universal Analytics properties will stop processing new data on July 1, 2023. 360 Universal Analytics properties will receive a one-time processing extension ending on July 1, 2024. Segment recommends [migrating to Google Analytics 4](https://segment.com/docs/connections/destinations/catalog/actions-google-analytics-4/#migrating-from-universal-analytics-to-google-analytics-4){:target='_blank'} as soon as possible. Learn more about when [Google Analytics 4 will replace Universal Analytics](https://support.google.com/analytics/answer/11583528?sjid=13479291677968058253-NA){:target='_blank'}.
+
+
 > warning "Migrate mobile implementations to Firebase"
 > Google ended support for Google Analytics classic on iOS and Android mobile apps on October 31st 2019. To continue measuring and optimizing user engagement in your mobile apps, [migrate your implementation to use the Firebase SDKs](migrating). If you are using Google Analytics 360 you do not need to migrate.
 

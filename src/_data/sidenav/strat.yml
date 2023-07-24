@@ -210,7 +210,7 @@ sections:
   - path: /connections/sources/catalog/libraries/mobile/apple/migration
     title: Migration Guide
   - path: /connections/sources/catalog/libraries/mobile/apple/destination-plugins
-    title: Destination Plugins
+    title: Device Mode Destinations
   - path: /connections/sources/catalog/libraries/mobile/apple/cloud-mode-destinations
     title: Cloud-mode Destinations
   - path: /connections/sources/catalog/libraries/mobile/apple/swift-typewriter

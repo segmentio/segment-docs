@@ -55,28 +55,7 @@ package: build
 serve: package
 	@docker run -p 4000:80 segment-docs:latest
 
-# gives us user-transparent way to swap between two different systems
-.PHONY: catalog
-catalog: catalog-papi
-
-# uses the old configapi
-.PHONY: capi
-capi: vendor/bundle
-	@node scripts/catalog_capi.js
-
-# shorter alias
-.PHONY: catalog-capi
-catalog-capi: vendor/bundle
-	@node scripts/catalog_capi.js
-
-# uses the new public api
-.PHONY: catalog-papi
-catalog-papi: vendor/bundle
-	@node scripts/catalog_papi.js
-
-# shorter alias
-.PHONY: papi
-papi: vendor/bundle
+catalog:
 	@node scripts/catalog_papi.js
 
 # make the list of beta connections

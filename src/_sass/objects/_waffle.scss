@@ -3,19 +3,19 @@
 
   $size: map-get($waffle-sizes, $waffle-size);
 
-  margin: -#{$size / 2};
+  margin: -#{$size * 0.5};
 
   & > * {
-    padding: $size / 2;
+    padding: $size * 0.5;
   }
 
   @each $name, $size in $waffle-sizes {
     @if $name != $waffle-size {
       &--#{$name} {
-        margin: -#{$size / 2};
+        margin: -#{$size * 0.5};
 
         & > * {
-          padding: $size / 2;
+          padding: $size * 0.5;
         }
       }
     }
@@ -25,10 +25,10 @@
     @include breakpoint($breakpoint up) {
       @each $name, $size in $waffle-sizes {
         &--#{$name}\@#{$breakpoint} {
-          margin: -#{$size / 2};
+          margin: -#{$size * 0.5};
 
           & > * {
-            padding: $size / 2;
+            padding: $size * 0.5;
           }
         }
       }
