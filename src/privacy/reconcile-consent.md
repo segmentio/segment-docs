@@ -5,7 +5,7 @@ hidden: true
 
 Segment sends data only to destinations in categories consented to by the end user. When conflicts arise between the consent object and integrations object or your consent management tool, Segment reconciles consent according to the following tables.
 
-> info "Consent Management is currently in private beta"
+> info "Consent Management is in private beta"
 > This means that the Consent Management features are in active development, and some functionality may change before it becomes generally available. [Contact Segment](https://segment.com/help/contact/){:target="_blank"} with any feedback or questions.
 
 ## Reconcile consent category trait conflicts
@@ -16,7 +16,7 @@ Segment detects when there are conflicting consent categories for a user and
 
 ## Reconcile a user's conflicting preferences
 
-If a user has conflicting preferences (for example, they consented yes for a category on mobile, but not on the web, or consented differently using two different emails,) Segment routes data according to the following table:
+If a user has conflicting preferences (for example, they consented yes for a category on mobile, but not on the web, or consented differently using two different emails) Segment routes data according to the following table:
 
 | Category | Consent on mobile | Consent on the web |
 | -------- | ----------------- | ------------------ | 

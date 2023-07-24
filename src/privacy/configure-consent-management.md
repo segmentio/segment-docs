@@ -2,7 +2,7 @@
 title: Configure Consent Management
 hidden: true
 ---
-> info "Consent Management is currently in private beta"
+> info "Consent Management is in private beta"
 > This means that the Consent Management features are in active development, and some functionality may change before it becomes generally available. [Contact Segment](https://segment.com/help/contact/){:target="_blank"} with any feedback or questions.
 
 After setting up a third-party consent management platform (CMP), you can enforce the consent collected from your users by configuring consent categories in your your Segment workspace and adding the [consent object](/docs/privacy/consent-management/#consent-object) to your web libraries. 
@@ -19,20 +19,20 @@ Before you can configure consent in Segment, take the following steps:
 ## Step 1: Create consent categories in the Segment app
 
 > info "Limited availability of sources and destinations during private beta"
-> During the private beta, you can send events from web sources to consent categories. Enforcement of consent preferences is only available for event streaming destinations, webhooks, and functions. You can map one event streaming destination, webhook, or function to multiple consent categories. All other source and destination types are not impacted by consent mappings. 
+> During private beta, you can send events from web sources to consent categories. Enforcement of consent preferences is only available for event streaming destinations, webhooks, and functions. You can map one event streaming destination, webhook, or function to multiple consent categories. All other source and destination types are not impacted by consent mappings. 
 
 1. From the [Segment homepage](https://app.segment.com/goto-my-workspace/){:target="_blank”}, select the Privacy tab and click **Consent Management**.
 2. On the Consent management page, click **Create categories**.
 3. Confirm that you have completed the required prerequisites, and click **Next**.
 4. On the Create consent categories page, add the following information to the category form:
-  - **Category name**: Enter a name that describes your use case for the data sent to this destination
+  - **Category name**: Enter a name that describes your use case for the data sent to this destination.
   - **Category ID**: In OneTrust, this is a string of up to five alphanumeric characters, but other CMPs may have a different format. This field is case sensitive.
   - **Mapped destinations**: Select one or more of your destinations to map to this category. Category mappings apply to all instances of a destination. 
   <br/><br/>**Optional**: Click **Add category** to create another category.
-5. Once you have finished setting up your category or categories, click **Save**.
+5. Once you've finished setting up your category or categories, click **Save**.
 
 > warning "Segment recommends mapping all destinations to a category"
-> Any destinations without a mapping are assumed to not require user consent and will receive all events containing a consent object. 
+> Destinations without a mapping are assumed to not require user consent and will receive all events containing a consent object. 
 
 ## Step 2: Add the consent wrapper to Analytics.js
 
@@ -84,11 +84,11 @@ If you need to make changes to your consent categories, you can edit them on the
 1. From the [Segment homepage](https://app.segment.com/goto-my-workspace/){:target="_blank”}, select the Privacy tab and click **Consent Management**.
 2. On the Consent Management page, navigate to the consent category you'd like to edit and click **Edit**.
 3. On the Edit consent category page, you can make changes to the consent category name, ID, and the destinations connected to a category.
-4. When you have made your changes, click **Save**.
+4. When you've made your changes, click **Save**.
 
 ## Disable consent categories
 
-Disabling a consent category means that Segment no longer enforces end user consent preferences for the destinations in the disabled category. Other consent categories are not affected.  
+Disabling a consent category means that Segment no longer enforces end user consent preferences for the destinations in the disabled category. Other consent categories aren't affected.  
 
 1. From the [Segment homepage](https://app.segment.com/goto-my-workspace/){:target="_blank”}, select the Privacy tab and click **Consent Management**.
 2. On the Consent Management page, disable the toggle for the category you'd like to disable. 

@@ -5,8 +5,8 @@ related:
   - "/privacy/account-deletion/"
   - "/privacy/complying-with-the-gdpr/"
 ---
-> info "Consent Management is currently in private beta"
-> This means that the Consent Management features are in active development, and some functionality may change before it becomes generally available. [Contact Segment](https://segment.com/help/contact/){:target="_blank"} with any feedback or questions.
+> info "Consent Management is in private beta"
+> This means that Consent Management features are in active development, and some functionality may change before it becomes generally available. [Contact Segment](https://segment.com/help/contact/){:target="_blank"} with any feedback or questions.
 
 When an end user visits your site, they set **consent preferences**, or make decisions about the types of data they want you to collect, use, and share. These consent preferences are typically presented as a set list of categories that describe how your company intends to use that data. Common categories include personalization, advertising, and site performance.
 
@@ -25,7 +25,7 @@ Segment routes events with a consent object to the destinations in categories co
 If an end user changes the categories they consent to (or if they consent using a different device or identifier,) any events they generate after updating their consent preferences will contain the updated consent information. Events will be sent only to the destinations in the categories that are currently consented to.
 
 > warning "Segment recommends mapping all destinations to a category"
-> Any destinations without a mapping are assumed to not require user consent and will receive all events containing a consent object. 
+> Segment assumes any destinations without a mapping do not require user consent and will receive all events containing a consent object. 
 
 
 <!--- out of scope for Q2: For example, if a user agreed to share their information with you for all categories on their first visit to your site, and then on their next visit to the site only consented to sharing data for functional and advertising purposes but not for analytics or data sharing, a [Track call](/docs/connections/spec/track/) demonstrating their new consent preferences would have the following format:
