@@ -1,6 +1,8 @@
 ---
 title: Listrak Actions Destination
-id: <integration_id>
+id: 64b6a221baf168a989be641a
+private: true
+hidden: true
 ---
 
 {% include content/plan-grid.md name="actions" %}
@@ -51,7 +53,7 @@ To sync an Engage audience with your Listrak (Actions) destination:
 18. Click **Add Destination** and select the Listrak Audience destination. 
 19. In the settings that appear on the right-hand side, toggle the **Send Track** option on and disable **Send Identify**.
 20. Click **Save**.
-21. To filter email sends in Listrak using the new audience profile field, see this [help article](https://help.listrak.com/en/articles/3951597-introduction-to-building-filter-2-0-segments).
+21. To filter email sends in Listrak using the new audience profile field, see this [help article](https://help.listrak.com/en/articles/3951597-introduction-to-building-filter-2-0-segments){:target="_blank”}.
 22. If you want to sync another audience, repeat steps 1 through 20.
 
 {% include components/actions-fields.html %}
