@@ -162,6 +162,9 @@ And two entries in the `identifies` table:
 
 All these events were performed by the same person. If you use these tables to assemble your data models, though, always join them against `id_graph` to resolve each event’s `canonical_segment_id`.
 
+> info ""
+> You might see columns appended with `hidden_entry` or `hidden_entry_joined_at` in profile data of users in Journeys. Segment uses these for internal purposes, and they do not require any attention or action.
+
 ### Profiles Sync schema
 
 Profiles Sync uses the following schema: `<profiles_space_name>.<tableName>`.

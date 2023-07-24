@@ -33,12 +33,13 @@ To configure an email template, click **Create Template**.
 4. Design the email template, then click **Create Email Template**.
 
 ## Test the Email template
-You can send test emails before you include a template in marketing campaigns
+You can send test emails before you include a template in marketing campaigns.
 
 1. Select the email template you want to test on the Templates screen.
 2. From the Template Settings page, click **Test email**.
 3. If your template has profile traits, enter a trait value for the test email. This ensures that your merge tags work as expected.
 - To test a default value, leave the profile traits field blank. Default values must be assigned in your merge tags. For example, `loyal customer` would be the default for the following merge tag: {% raw %}```{{profile.traits.first_name | default: "loyal customer"}}```{% endraw %}.
+- To test traits with arrays, you must input the array in JSON format. For example, `[“item1”, “item2”]` or `[{“itemName”: “shoes”}]`. If you don't use JSON format for arrays in the test message side sheet, your template might not render as expected. 
 4. Enter recipient email addresses for the test message.
 - Profiles that you send test messages to must have a userId in Segment.
 5. Select **Send test email**.
