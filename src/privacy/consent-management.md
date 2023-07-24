@@ -95,7 +95,7 @@ A consent conflict flag and the categories consented to by a user are both pulle
 
 ## Reconcile consent conflicts
 
-Segment resolves conflicts between your [consent object and your integration object](#reconcile-consent-object-and-integrations-object-conflicts) and between your C[MP and the consent categories you configured in the Segment app](#reconcile-cmp-and-segment-consent-category-conflicts). 
+Segment resolves conflicts between your [consent object and your integration object](#reconcile-consent-object-and-integrations-object-conflicts) and between your [CMP and the consent categories you configured in the Segment app](#reconcile-cmp-and-segment-consent-category-conflicts). 
 
 ### Reconcile consent object and integrations object conflicts
 
