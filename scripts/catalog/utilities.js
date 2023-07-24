@@ -7,7 +7,7 @@ const fm = require('front-matter');
 
 
 
-const slugOverrides = yaml.load(fs.readFileSync(path.resolve(__dirname, `../src/_data/catalog/slugs.yml`)));
+const slugOverrides = yaml.load(fs.readFileSync(path.resolve(__dirname, `../../src/_data/catalog/slugs.yml`)));
 
 const slugify = (displayName, type) => {
   let slug = displayName
@@ -32,7 +32,7 @@ const slugify = (displayName, type) => {
     let override = overrides[key].override;
 
     if (slug == original) {
-      console.log(original + " -> " + override);
+      // console.log(original + " -> " + override);
       slug = override;
     }
   }
@@ -56,7 +56,7 @@ const getCatalog = async (url, page_token = "MA==") => {
 
     return res.data;
   } catch (error) {
-    console.log(error);
+    console.log("Something went wrong with the request to the Public API.\nIf you're updating a private destination, ensure the ID is correct.");
   }
 };
 
@@ -163,6 +163,7 @@ const sanitize = (text) => {
   result = text.replace(regex, "`$1`");
   return result;
 };
+
 
 
 exports.slugify = slugify;
