@@ -30,18 +30,21 @@ You can add the integrations object and the consent object to your Segment paylo
 > success " "
 > For more information about the Integrations object, please see [Filtering your Segment Data](/docs/guides/filtering-data/#filtering-with-the-integrations-object).
 
-If the consent object and integrations object have conflicting destination information, Segment routes data according to the following table:
+If an event includes both an integrations and consent object, Segment will look at the consent object first, and then take into account the integrations object according to the following table:
 
-<!-- ask Atit if consent object takes precedence over integrations object, except if specifically called out in Integrations object-->
 
 | Consent Object                                                                                                  | Integration Object                          | Result |
 | --------------------------------------------------------------------------------------------------------------- | ------------------------------------------- | ------ |
-| Not provided or empty object                                                                                    | Not provided or empty object                | Message delivered to all enabled destinations |
-| Not provided or empty object                                                                                    | `{facebook: true,`<br>`amplitude: false}`   | Message and metadata delivered to Facebook |
-| `{ad: true,` <br>`analytics: false}`<br> <br>//ad = facebook, google ads                                        | Not provided or empty object                | Message delivered to the destinations mapped to the consented category. In this case, the message would be delivered to the Ad category (Facebook and Google Ads). No data is delivered to destinations mapped to the analytics category. |
-| `{ad: true,` <br>`analytics: false}`<br> <br>//ad = facebook, google ads                                        | `{facebook: true,`<br>`amplitude: false}`   | Message delivered to all ad destinations even though google-ads is not provided in the integrations object. Use metadata if provided for Facebook (the current behavior). No data is delivered to analytics destinations. |
-| `{ad: true,` <br>`analytics: false}`<br> <br>//ad = facebook, google ads                                        | `{facebook: false,`<br>`amplitude: false}`  | Message delivered to all ad destinations (Google Ads) but NOT to Facebook. <br> No data delivered to analytics destinations |
-| `{ad: true,` <br>`analytics: false}`<br> <br>//ad = facebook, google ads <br> //analytics = facebook, snowflake |  `{facebook: false,`<br>`amplitude: false}` | Message delivered to all ad destinations (even though Facebook belongs to analytics and user is not consenting to analytics.) Use metadata if provided for Facebook (current behavior)<br>No data delivered to analytics destinations (Snowflake) |
+| Not provided or empty object                                                                                    | Not provided or empty object                | Message delivered to all destinations |
+| `context {consent{}}` <br> OR <br> `context {consent {categoryPreference{}}}`                 | Not provided or empty object | Data **NOT** delivered - consent is considered to be `false` for all categories |
+| Not provided or empty object <br><br> `context{}`                                                                   | `{facebook: true,`<br>`amplitude: false}`   | Message and metadata delivered to Facebook |
+| Empty consent object <br>`context {consent{}}` <br> OR <br> `context {``consent {``categoryPreference{}``}}`     | `{facebook: true,`<br>`amplitude: false}` | Data **NOT** delivered - consent is considered to be `false` for all categories |
+| `{ad: true,` <br>`analytics: false}`<br> <br>_Segment has no category-to-destination mapping for ad and analytics_ | Provided, not provided, or empty object | Data **NOT** delivered |
+| `{ad: true,` <br>`analytics: false}`<br> <br>_ad = facebook, google ads_ <br>                                   | Not provided or empty object                | Data delivered to destinations that map to consented purpose. In this case, data is delivered to all ad destinations (Facebook and Google Ads).<br><br> No data delivered to analytics destinations |
+| `{ad: true,` <br>`analytics: false}`<br><br>_ad = facebook, google ads_ <br> _analytics = amplitude_ | `{facebook: true,`<br>`amplitude: false}` | Data delivered to all ad destinations even though Google Ads is not present in the integrations object.<br> Metadata is sent from Facebook. <br><br> Data **NOT** delivered to analytics destinations. |
+| `{ad: true,` <br>`analytics: false}`<br><br>_ad = facebook, google ads_ <br> _analytics = amplitude_  | `{facebook: false,`<br>`amplitude: false}` | Data delivered only to Google Ads, not to Facebook. Data **NOT** delivered to analytics destinations. |
+| `{ad: true,` <br>`analytics: true}`<br><br>_ad = facebook, google ads_ <br> _analytics = facebook, amplitude_ | `{facebook: true,`<br>`amplitude: false}` | Data delivered to all ad destinations, including Facebook, because analytics is true. <br> Metadata is sent from Facebook. <br> No data is sent to Amplitude because it is `false` in the integrations object. |
+| `{ad: false,` <br>`analytics: true}` <br><br>_ad = facebook, google ads_ <br> _analytics = facebook, amplitude_ | `{facebook: true,`<br>`amplitude: false}` | Data **NOT** delivered to ad destinations. Data delivered to Facebook for analytics only and not to Amplitude. |
 
 
 ## Reconcile Consent Management tool and Segment tool conflicts

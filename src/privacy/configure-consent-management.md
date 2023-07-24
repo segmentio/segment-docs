@@ -14,7 +14,7 @@ Once you've configured consent in the Segment app, your events are routed only t
 Before you can configure consent in Segment, take the following steps:
 - **Set up your third-party consent management tool and create consent categories**. Take note of your consent categories and the key or ID associated with each category.
 - **Know how your company uses each destination**. You need to know which destinations to map to each category. 
-- **A way to update your web libraries with the consent object**. After you set up consent categories in the Segment app, you need to add a wrapper to your Analytics.js snippet so that Segment can receive your end users' preferences. Segment provides a [wrapper for OneTrust](#step-2-add-the-consent-wrapper-to-analyticsjs), or if you're using a different CMP, you can create your own wrapper using the [instructions provided in the analytics-next repository](https://github.com/segmentio/analytics-next/tree/master/packages/consent/consent-tools){:target="_blank”}. 
+- **Access to your web libraries**. After you set up consent categories in the Segment app, you need to add a wrapper to your Analytics.js snippet so that Segment can receive your end users' preferences. Segment provides a [wrapper for OneTrust](#step-2-add-the-consent-wrapper-to-analyticsjs), or if you're using a different CMP, you can create your own wrapper using the [instructions provided in the analytics-next repository](https://github.com/segmentio/analytics-next/tree/master/packages/consent/consent-tools){:target="_blank”}. 
 
 ## Step 1: Create consent categories in the Segment app
 
