@@ -93,6 +93,10 @@ Segment assigns a `version` to your consent object. The `version` describes the 
 A consent conflict flag and the categories consented to by a user are both pulled from the consent object and are visible as traits on a user's profile in Unify. --->
 
 
+## Reconcile consent conflicts
+
+Segment resolves conflicts between your [consent object and your integration object](#reconcile-consent-object-and-integrations-object-conflicts) and between your CMP and the consent categories you configured in the Segment app. 
+
 ### Reconcile consent object and integrations object conflicts
 
 You can add both the integrations object and the consent object to your Segment payloads for greater control over how Segment routes data to your downstream destinations. 
@@ -115,7 +119,13 @@ If an event includes both an integrations and consent object, Segment will look 
 | `{ad: true,` <br>`analytics: true}`<br><br>_ad = facebook, google ads_ <br> _analytics = facebook, amplitude_ | `{facebook: true,`<br>`amplitude: false}` | Data delivered to all ad destinations, including Facebook, because analytics is true. <br> Metadata is sent from Facebook. <br> No data is sent to Amplitude because it is `false` in the integrations object. |
 | `{ad: false,` <br>`analytics: true}` <br><br>_ad = facebook, google ads_ <br> _analytics = facebook, amplitude_ | `{facebook: true,`<br>`amplitude: false}` | Data **NOT** delivered to ad destinations. Data delivered to Facebook for analytics only and not to Amplitude. |
 
+### Reconcile CMP and Segment consent category conflicts
 
+If you have a category configured in your consent management tool (for example, `advertising`) and there is no matching category in the Segment app, data will flow to unmapped destinations. If destinations are mapped to a different category in the Segment app, data will flow to those destinations.
+
+If destination names do not match exactly (for example, your CMP has a `advertising` category and the Segment app has an `ad` category,) data will not be shared with destinations in the `ad` category.
+
+If there is a category configured in Segment (`functional`) that is not mapped in your CMP, no data will be shared with the destinations mapped to the `functional` category. 
 
 ## Consent observability
 
