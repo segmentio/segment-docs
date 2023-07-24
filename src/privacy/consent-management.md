@@ -16,13 +16,13 @@ Segment works with your third-party consent management platform (CMP) or bespoke
 
 After a user sets their consent preferences, Segment captures them with the [Analytics.js Consent Tools wrapper](https://github.com/segmentio/analytics-next/tree/master/packages/consent/consent-tools) and updates the [consent object](#consent-object). The events are then sent downstream to any streaming destinations in categories that a user consented to share data with.
 
-> success ""
+> info ""
 > Segment collects consent for both registered users and anonymous users.
 
 ## Enforce consent
 Segment routes events with a consent object to the destinations in categories consented to by a user and to destinations that do not have a consent category.
 
-If a user changes the categories they consent to or if they consent using a different device or identifier, any events they generate after updating their consent preferences will contain the updated consent information and will be sent only to the destinations in the categories that are currently consented to.
+If an end user changes the categories they consent to (or if they consent using a different device or identifier,) any events they generate after updating their consent preferences will contain the updated consent information. Events will be sent only to the destinations in the categories that are currently consented to.
 
 > warning "Segment recommends mapping all destinations to a category"
 > Any destinations without a mapping are assumed to not require user consent and will receive all events containing a consent object. 
@@ -69,16 +69,18 @@ Segment requires every event from all of your sources to include the end-user co
 
 ```json
 {
-  "consent" {
-     "consentPreferences": {
+"context": {
+  "consent": {
+    "version": 2,
+    "consentPreferences": {
         "Advertising": true,
         "Analytics": false,
         "Functional": true,
         "DataSharing": false
-       }
+      }
    }
+  }
 }
-
 
 ```
 
