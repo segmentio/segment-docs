@@ -157,4 +157,4 @@ After you design the email, click **Create Email Template**.
 - You can learn about the [HTML Editor](/docs/engage/content/email/html-editor) for both code and visual editing capabilities from a single view.
 
 > warning ""
-> once you create an email with the Drag and Drop Editor, you can't modify it with the Visual HTML Editor, and vice versa.  
+> once you create an email with the Drag and Drop Editor, you can't modify it with the HTML Editor, and vice versa.  

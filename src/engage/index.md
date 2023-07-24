@@ -51,7 +51,7 @@ To learn more, visit the [CSV Uploader](/docs/engage/profiles/csv-upload/) docum
 
 #### Build Email, SMS, and WhatsApp message templates
 
-Build personalized [email](/docs/engage/content/email/template/), [SMS](/docs/engage/content/sms/template), and [WhatsApp](/docs/engage/content/whatsapp) templates in Twilio Engage for use in your campaigns. Design email templates with a WYSIWYG [Drag and Drop Editor](/docs/engage/content/email/editor/) or a [Visual HTML Editor](/docs/engage/content/email/visual-html-editor/). Engage saves the templates for you to preview, edit, and reuse throughout Journeys.
+Build personalized [email](/docs/engage/content/email/template/), [SMS](/docs/engage/content/sms/template), and [WhatsApp](/docs/engage/content/whatsapp) templates in Twilio Engage for use in your campaigns. Design email templates with a WYSIWYG [Drag and Drop Editor](/docs/engage/content/email/editor/) or the [HTML Editor](/docs/engage/content/email/html-editor/). Engage saves the templates for you to preview, edit, and reuse throughout Journeys.
 
 #### Personalize with merge tags
 Insert real-time user profile traits from merge tags to personalize each message. For example, address recipients by name or highlight new products from a user's favorite brand.
