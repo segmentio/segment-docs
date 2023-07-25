@@ -109,9 +109,9 @@ If an event includes both an integrations and consent object, Segment will look 
 | Consent Object                                                                                                  | Integration Object                          | Result |
 | --------------------------------------------------------------------------------------------------------------- | ------------------------------------------- | ------ |
 | Not provided or empty object                                                                                    | Not provided or empty object                | Message delivered to all destinations |
-| `context {consent{}}` <br> OR <br> `context {consent {categoryPreference{}}}`                 | Not provided or empty object | Data **NOT** delivered - consent is considered to be `false` for all categories |
-| Not provided or empty object <br><br> `context{}`                                                                   | `{facebook: true,`<br>`amplitude: false}`   | Message and metadata delivered to Facebook |
-| Empty consent object <br>`context {consent{}}` <br> OR <br> `context {``consent {``categoryPreference{}``}}`     | `{facebook: true,`<br>`amplitude: false}` | Data **NOT** delivered - consent is considered to be `false` for all categories |
+| Empty consent object <br><br> `"context": {`<br>`     "consent:" {`<br>`     }`<br>`}` <br> OR <br> `"context": {`<br>`     "consent:" {`<br>`           "categoryPreference:" {` <br>`           }`<br>`     }` <br> `}`| Not provided or empty object | Data **NOT** delivered - consent is considered to be `false` for all categories |
+| Not provided or empty object <br><br> `"context": {` <br>`}`                                                                   | `{facebook: true,`<br>`amplitude: false}`   | Message and metadata delivered to Facebook |
+| Empty consent object <br><br> `"context": {`<br>`     "consent:" {`<br>`     }`<br>`}` <br> OR <br> `"context": {`<br>`     "consent:" {`<br>`           "categoryPreference:" {` <br>`           }`<br>`     }` <br> `}`| `{facebook: true,`<br>`amplitude: false}` | Data **NOT** delivered - consent is considered to be `false` for all categories |
 | `{ad: true,` <br>`analytics: false}`<br> <br>_Segment has no category-to-destination mapping for ad and analytics_ | Provided, not provided, or empty object | Data **NOT** delivered |
 | `{ad: true,` <br>`analytics: false}`<br> <br>_ad = facebook, google ads_ <br>                                   | Not provided or empty object                | Data delivered to destinations that map to consented purpose. In this case, data is delivered to all ad destinations (Facebook and Google Ads).<br><br> No data delivered to analytics destinations |
 | `{ad: true,` <br>`analytics: false}`<br><br>_ad = facebook, google ads_ <br> _analytics = amplitude_ | `{facebook: true,`<br>`amplitude: false}` | Data delivered to all ad destinations even though Google Ads is not present in the integrations object.<br> Metadata is sent from Facebook. <br><br> Data **NOT** delivered to analytics destinations. |
@@ -121,7 +121,7 @@ If an event includes both an integrations and consent object, Segment will look 
 
 ### Reconcile CMP and Segment consent category conflicts
 
-If you have a category configured in your consent management tool (for example, `advertising`) and there is no category of the same name in the Segment app, data will flow to unmapped destinations. If destinations are mapped to a different category in the Segment app, data will flow to those destinations.
+If you have a category configured in your consent management tool (for example, `advertising`) and there is no category with the same ID in Segment, the data will flow to unmapped destinations. If destinations are mapped to a different category in the Segment app, data flow will honor end user consent for that category.
 
 If there is a category configured in Segment (`functional`) that is not mapped in your CMP, data will not flow to destinations mapped to the `functional` category. 
 

@@ -10,7 +10,7 @@ Segment sends data only to destinations in categories consented to by the end us
 
 ## Reconcile consent category trait conflicts
 
-Segment detects when there are conflicting consent categories for a user and 
+Segment detects when there are conflicting consent categories for a user and reconciles them according to the following table: 
 
 <!--- ask Emma about table/edge cases --->
 
