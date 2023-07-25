@@ -270,7 +270,7 @@ analytics.page('Pricing', {
 });
 ```
 
-The `path` and `url` property will be set to the value of the canoncial element on your page. If a canonical element is not set, the values will be set from the browser. 
+Segment sets the `path` and `url` property to the value of the canonical element on your page. If a canonical element is not set, the values will be set from the browser. 
 
 ### Group
 
