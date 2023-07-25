@@ -3,7 +3,7 @@ title: Configure Consent Management
 hidden: true
 ---
 > info "Consent Management is in private beta"
-> This means that the Consent Management features are in active development, and some functionality may change before it becomes generally available. [Contact Segment](https://segment.com/help/contact/){:target="_blank"} with any feedback or questions.
+> This means that Consent Management features are in active development, and some functionality may change before it becomes generally available. [Contact Segment](https://segment.com/help/contact/){:target="_blank"} with any feedback or questions.
 
 After setting up a third-party consent management platform (CMP), you can enforce the consent collected from your users by configuring consent categories in your your Segment workspace and adding the [consent object](/docs/privacy/consent-management/#consent-object) to your web libraries. 
 
@@ -37,7 +37,7 @@ Before you can configure consent in Segment, take the following steps:
 5. Once you've finished setting up your category or categories, click **Save**.
 
 > warning "Segment recommends mapping all destinations to a category"
-> Destinations without a mapping are assumed to not require user consent and will receive all events containing a consent object. 
+> Segment assumes all destinations without a mapping do not require user consent and will receive all events containing a consent object. 
 
 ## Step 2: Add the consent wrapper to Analytics.js
 
