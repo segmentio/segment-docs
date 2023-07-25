@@ -23,11 +23,4 @@ page, copy your **Primary access key**, and paste the value into the **Blackbaud
 Event Types and/or Event Names will trigger each mapping.
 8. Enable the destination and configured mappings.
 
-## Note on Authentication
-
-If you wish to connect multiple sources to the Blackbaud Raiser's Edge NXT destination, you must
-authenticate using a different Blackbaud Developer account for each source. If you authenticate using the
-same Blackbaud Developer account with more than one source, only the most recent source will send data to
-Raiser's Edge NXT.
-
 {% include components/actions-fields.html %}
