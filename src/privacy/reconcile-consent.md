@@ -5,6 +5,8 @@ hidden: true
 
 Segment sends data only to destinations in categories consented to by the end user. When conflicts arise between the consent object and integrations object or your consent management tool, Segment reconciles consent according to the following tables.
 
+<!--- Only use case is Engage --->
+
 > info "Consent Management is in private beta"
 > This means that Consent Management features are in active development, and some functionality may change before it becomes generally available. [Contact Segment](https://segment.com/help/contact/){:target="_blank"} with any feedback or questions.
 
@@ -22,6 +24,8 @@ If a user has conflicting preferences (for example, they consented yes for a cat
 | -------- | ----------------- | ------------------ | 
 
 <!--- can you treat mobile/web data differently? -->
+<!-- Conflict resolution would "stack" - could have device level and identifier level conflicts (3 devices out of sync - most recent strategy is what could use) 
+Would want a matrix in the docs if you "stacked" device/identifier conflict resolution -->
 
 ## Reconcile consent object and integrations object conflicts
 
