@@ -22,7 +22,7 @@ After a user sets their consent preferences, Segment captures them with the [Ana
 ## Enforce consent
 Segment routes events with a consent object to the destinations in categories consented to by a user and to destinations that do not have a consent category.
 
-If an end user changes the categories they consent to (or if they consent using a different device or identifier,) any events they generate after updating their consent preferences will contain the updated consent information. Events will be sent only to the destinations in the categories that are currently consented to.
+If an end user changes the categories they consent to (or if they consent using a different device or identifier,) any events they generate after updating their consent preferences will contain the updated consent information. Segment only sends events to the destinations in the categories that are currently consented to.
 
 > warning "Segment recommends mapping all destinations to a category"
 > Segment assumes any destinations without a mapping do not require user consent and will receive all events containing a consent object. 
