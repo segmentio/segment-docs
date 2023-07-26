@@ -16,7 +16,8 @@ const slugify = (displayName, type) => {
     .replace('-&-', '-')
     .replace('/', '-')
     .replace(/[\(\)]/g, '')
-    .replace('.', '-');
+    .replace('.', '-')
+    .replace(/'/g, '');
 
   let overrides = "";
   if (type == "sources") {
@@ -128,7 +129,7 @@ const doesCatalogItemExist = (item) => {
   const docsPath = `src/${item.url}`;
 
   if (!fs.existsSync(docsPath)) {
-    console.log(`${item.slug} does not exist: ${docsPath}`);
+    console.log(`${item.slug} (id: ${item.id}) does not exist: ${docsPath}`);
     let content = `---\ntitle: '${item.display_name} Source'\nhidden: true\n---`;
 
     if (!docsPath.includes('/sources/')) {
