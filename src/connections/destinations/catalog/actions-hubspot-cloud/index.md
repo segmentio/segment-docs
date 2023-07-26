@@ -92,5 +92,3 @@ Follow the steps mentioned [here](https://knowledge.hubspot.com/integrations/con
 
 ### How does disconnecting and uninstalling affect a user's data and HubSpot account?
 Segment immediately stops sending data to HubSpot after you disconnect and uninstall a HubSpot account.
-
-
