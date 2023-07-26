@@ -4,7 +4,7 @@ id: 641d5acea88fa531b9068608
 hide-personas-partial: true
 hide-boilerplate: false
 hide-dossier: true
-hidden: true
+hidden: false
 ---
 
 [Optimizely Feature Experimentation](https://www.optimizely.com/products/experiment/feature-experimentation/){:target="_blank"} is a feature flagging and experimentation platform for websites, mobile apps, chatbots, APIs, smart devices and anything else with a network connection.
