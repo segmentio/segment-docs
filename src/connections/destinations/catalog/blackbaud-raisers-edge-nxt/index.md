@@ -2,6 +2,7 @@
 title: Blackbaud Raiser's Edge NXT Destination
 hide-boilerplate: true
 hide-dossier: false
+id: 63e42d44b0a59908dc4cacc6
 ---
 
 [Blackbaud Raiser's Edge NXT](https://www.blackbaud.com/products/blackbaud-raisers-edge-nxt){:target="_blank"}
