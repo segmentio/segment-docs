@@ -1,19 +1,15 @@
 ---
-title: Predictive Audiences
+title: Suggested Predictive Audiences
 plan: engage-foundations
-hidden: true
 ---
 
-> info ""
-> Predictive Traits is in public beta.
+Powered by CustomerAI Campaigns, Suggested Predictive Audiences can help you improve customer engagement, drive higher conversion rates, and reduce ad spend.
 
-Powered by CustomerAI Campaigns, Predictive Audiences can help you improve customer engagement, drive higher conversion rates, and reduce ad spend.
+This page explains what a Suggested Predictive Audience is, how to build a Suggested Predictive Audience, and what each available Audience targets.
 
-This page explains what a Predictive Audience is, how to build a Predictive Audience, and what each available Audience targets.
+## Suggested Predictive Audience basics
 
-## Predictive Audience basics
-
-A Predictive Audience is an out-of-the-box Audience template that uses machine learning.
+A Suggested Predictive Audience is an out-of-the-box Audience template driven by machine learning.
 
 Segment offers [five templates](/docs/engage/audiences/predictive-traits/predictive-audiences/#predictive-audience-types) that are prebuilt with [Predictive Traits](/docs/engage/audiences/predictive-traits) like likelihood to purchase and lifetime predicted value. Selecting a template generates a Predictive Audience whose members you can engage in a number of ways:
 
@@ -22,25 +18,25 @@ Segment offers [five templates](/docs/engage/audiences/predictive-traits/predict
 - Target the Audience members with online ads
 - Send personalized product recommendations
 
-## Build a Predictive Audience
+## Build a Suggested Predictive Audience
 
-Follow these steps to build a Predictive Audience:
+Follow these steps to build a Suggested Predictive Audience:
 
 1. In your Segment workspace, navigate to **Engage > Audiences**.
 2. From the Audiences tab, select **Go to Predictive Audiences**.
 3. On the Audience you want to build, click **Build Audience > + Add Audience**.
 4. Select the Audience type you want to build, then click **Next**.
-5. On the **Set up requirements** tab, confirm that you have the right events and traits required for the Predictive Audience, then click **Next**.
- - If you're missing a required event or trait, Segment prompts you to select it from the dropdown and match it to the required fields.
+5. On the **Set up requirements** tab, confirm that you have the right events and traits required for the Suggested Predictive Audience, then click **Next**.
+ - If you're missing a required event or trait, Segment prompts you to select it from the dropdown and match it to the required field(s).
 6. Preview your Audience, then click **Next**.
 7. (Optional:) Connect the new Audience to a Destination.
-8. Give your Predictive Audience a name, then click **Create Audience**.
+8. Give your Suggested Predictive Audience a name, then click **Create Audience**.
 
-Your Predictive Audience is now live.
+Your Suggested Predictive Audience is now live.
 
-## Predictive Audience types
+## Suggested Predictive Audience types
 
-Engage offers five Predictive Audiences. The following table summarizes the customers each Audience targets and the events and traits Engage uses to build the Audience:
+Engage offers five Suggested Predictive Audiences. The following table summarizes the customers each Audience targets and the events and traits Engage uses to build the Audience:
 
 | Audience           | Target                                                                                       | Built with                                                       |
 | ------------------ | -------------------------------------------------------------------------------------------- | ---------------------------------------------------------------- |
