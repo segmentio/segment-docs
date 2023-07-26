@@ -237,6 +237,16 @@ Note the following limitations for batching with insert functions:
 
 {% endcomment %}
 
+{% comment %}
+
+## Destination insert functions logs and errors
+
+A function can throw errors, or Segment might encounter errors while invoking your function. You can view these errors in the [Event Delivery](/docs/connections/event-delivery/) tab for your Destination as in the example below.
+
+![A screenshot of the event delivery tab, showing 519 failed events broken into categories explaining why they failed](images/event-delivery.png)
+
+{% endcomment %}
+
 ### Destination insert functions error types
 
 - **Bad Request** - Any error thrown by the function code that is not covered by the other errors.
