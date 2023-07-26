@@ -24,13 +24,10 @@
 >
 > If you have any questions in the meantime, please reach out to our team at partner-support@segment.com.
 
----
-
 ## Template begins here...
-
 ---
-
-## title: <integration_name> Source
+title: [integration_name] Source
+---
 
 > (delete after reading) Include a 1-2 sentence introduction to your company and the value it provides to customers - updating the name and hyperlink. Please leave the utm string unchanged.
 
