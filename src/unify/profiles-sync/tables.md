@@ -139,6 +139,9 @@ In the event that two profiles merge, Segment only updates the `profile_traits_u
 
 From the `profile_traits_updates` table, Segment materializes the [`profile_traits`](#the-profile_traits-table) table with all profiles and associated profile traits in your data warehouse. 
 
+> warning ""
+> The `profile_traits_updates` table doesn't backfill by default. [Contact Segment support](https://app.segment.com/workspaces?contact=1){:target="blank"} to request historical data backfill for this table. 
+
 
 ### The identifies, page, screens, and track tables
 
@@ -174,6 +177,9 @@ And two entries in the `identifies` table:
 </div>
 
 All these events were performed by the same person. If you use these tables to assemble your data models, though, always join them against `id_graph` to resolve each event’s `canonical_segment_id`.
+
+> warning ""
+> Beginning August 1, 2023, new Profiles Sync users will not see the `identifies` table sync by default. To sync this table, [contact Segment support](https://app.segment.com/workspaces?contact=1){:target="blank"}.
 
 ### Profiles Sync schema
 
