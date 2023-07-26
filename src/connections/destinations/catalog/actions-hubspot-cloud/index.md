@@ -48,6 +48,20 @@ HubSpot Cloud Mode (Actions) provides the following benefits over the classic Hu
 
 {% include components/actions-fields.html %}
 
+
+## Association Support between two Custom Object Records in Upsert Custom Object Record
+To Associate two records , it is mandatory to have **Search Fields to associate , ObjectType to associate and Association Label.** If anyone of these three fields is not configured, it will skip association.
+- **ObjectType to associate.** Select custom Object Type with which you want to associate the created/updated custom object record.
+- **Search Fields to associate Custom Object record.** It is for finding an unique custom object record on the basis of search properties provided in key:value format,so that records can get associated.
+   - If Search association object meets more than one record and returns more than one record,Association will get failed but it will not impact on upserting a custom object record.
+   - If a Record is not found on the basis of data provided here in key:value format will skip the association.
+    **Ensure that you use an unique identifier to lookup an association object.**
+- **Association Label.** Select an association label between both the Object Types.You can create an association between any of Object Type from Hubspot Dashboard. 
+  1. Login to [HubSpot Dashboard](https://app.hubspot.com/).
+  2. Go to Data Management -> Objects -> Custom Objects.
+![Show Association Label](images/getAssociationLabel.png)
+![Create Association Label](images/createAssociationLabel.png)
+
 ## FAQ & Troubleshooting
 
 ### How do I send other standard objects to HubSpot?
@@ -78,3 +92,5 @@ Follow the steps mentioned [here](https://knowledge.hubspot.com/integrations/con
 
 ### How does disconnecting and uninstalling affect a user's data and HubSpot account?
 Segment immediately stops sending data to HubSpot after you disconnect and uninstall a HubSpot account.
+
+
