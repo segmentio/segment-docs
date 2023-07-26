@@ -313,7 +313,7 @@ sources:
       - us
   - id: RPrXXW7nws
     display_name: Engage Events
-    hidden: true
+    hidden: false
     slug: engage-events
     url: connections/sources/catalog/cloud-apps/engage-events
     regions:
@@ -1286,6 +1286,15 @@ sources:
     hidden: false
     slug: thomas-gilbert-test
     url: connections/sources/catalog/cloud-apps/thomas-gilbert-test
+    regions:
+      - us
+    endpoints:
+      - us
+  - id: EETZm2l5gU
+    display_name: Thomas Partner Source
+    hidden: false
+    slug: thomas-partner-source
+    url: connections/sources/catalog/cloud-apps/thomas-partner-source
     regions:
       - us
     endpoints:
