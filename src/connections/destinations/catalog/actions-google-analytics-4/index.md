@@ -155,7 +155,8 @@ The Segment Google Analytics 4 Cloud destination supports sending mobile app eve
 Google reserves certain event names, parameters, and user properties. Google silently drops any events that include [these reserved names](https://developers.google.com/analytics/devguides/collection/protocol/ga4/reference?client_type=gtag#reserved_names){:target="_blank"}. Google doesn't accept events in the following conditions:
 - event or user property names have spaces in them
 - fields with `null` values
-- fields or events with reserved names 
+- fields or events with reserved names
+- fields with a number as the key
  
 ### Verifying Event Meet GA4's Measurement Protocol API
 **Why are the events returning an error _Param [PARAM] has unsupported value._?**
