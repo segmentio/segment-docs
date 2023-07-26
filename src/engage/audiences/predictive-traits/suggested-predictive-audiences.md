@@ -11,9 +11,9 @@ This page explains what a Suggested Predictive Audience is, how to build a Sugge
 
 A Suggested Predictive Audience is an out-of-the-box Audience template driven by machine learning.
 
-Segment offers [five templates](/docs/engage/audiences/predictive-traits/predictive-audiences/#predictive-audience-types) that are prebuilt with [Predictive Traits](/docs/engage/audiences/predictive-traits) like likelihood to purchase and lifetime predicted value. Selecting a template generates a Predictive Audience whose members you can engage in a number of ways:
+Segment offers [five templates](/docs/engage/audiences/predictive-traits/suggested-predictive-audiences/#suggested-predictive-audience-types) that are prebuilt with [Predictive Traits](/docs/engage/audiences/predictive-traits) like likelihood to purchase and lifetime predicted value. Selecting a template generates a Predictive Audience whose members you can engage in a number of ways:
 
-- Send an email or SMS campaign with a discount code
+- [Send an email or SMS campaign](/docs/engage/campaigns/) with a discount code
 - Promote a new product line with a drip campaign
 - Target the Audience members with online ads
 - Send personalized product recommendations
@@ -53,7 +53,7 @@ Engage offers five Suggested Predictive Audiences. The following table summarize
 
 Choose a **Ready to buy** Predictive Audience to target customers who show a high propensity to make a purchase.
 
-Segment builds this Audience with the `Likelihood to Purchase` [Predictive Trait](/docs/engage/audiences/predictive-traits/#likelihood-to-purchase). Audience members show encouraging engagement and have a likelihood to buy in the top 20th percentile. 
+Segment builds this Audience with the [Likelihood to Purchase Predictive Trait](/docs/engage/audiences/predictive-traits//#likelihood-to-purchase). Audience members show encouraging engagement and have a likelihood to buy in the top 20th percentile. 
 
 #### Long shots
 
@@ -65,16 +65,16 @@ Segment builds this Audience with the `Order Completed` event and `Likelihood to
 
 Choose a **High lifetime value** Predictive Audience to target customers that show a high predicted lifetime value.
 
-Segment builds this Audience with the `Predicted LTV` Trait. Audience members are in the top 10th percentile of predicted lifetime value and Segment expects that they'll spend the most over the next 90 days.
+Segment builds this Audience with the [Predicted LTV Predictive Trait](/docs/engage/audiences/predictive-traits//#predicted-lifetime-value). Audience members are in the top 10th percentile of predicted lifetime value and Segment expects that they'll spend the most over the next 90 days.
 
 #### Potential VIPs
 
 Choose a **Potential VIPs** Predictive Audience to target customers exhibiting several promising marketing behaviors.
 
-Segment builds this Audience with the `Page Viewed` event and `Likelihood to Purchase` and `Predicted LTV` traits. Audience members have been active on your site within the last two weeks, have a high predicted lifetime value, and a high propensity to purchase. 
+Segment builds this Audience with the `Page Viewed` event and Likelihood to Purchase and Predicted LTV Predictive Traits. Audience members have been active on your site within the last two weeks, have a high predicted lifetime value, and a high propensity to purchase. 
 
 #### Dormant
 
 Choose a **Dormant** Predictive Audience to target inactive customers. 
 
-Segment builds this Audience with the `Page Viewed` event and the `Likelihood to Purchase` Predictive Trait. Audience members have a low likelihood to purchase and haven't been active on your site in the last 60 days.
+Segment builds this Audience with the `Page Viewed` event and the Likelihood to Purchase Predictive Trait. Audience members have a low likelihood to purchase and haven't been active on your site in the last 60 days.
