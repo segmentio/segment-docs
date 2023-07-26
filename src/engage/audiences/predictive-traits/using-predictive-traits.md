@@ -45,7 +45,7 @@ Predictions offer more value in some situations than others. This sections cover
 - **Improve ad targeting**; build targeted audience segments based on predictive behavior. 
 - **Optimize campaign performance**; reduce customer acquisition costs (CAC), and improve customer lifetime value (LTV) by building campaigns that target customers most likely to purchase or perform another desired action.
 - **Power more personalization**; With Predictive Traits, you can deliver the right message at the right time. You can create targeted customer Journeys with personalized offers and recommendations that boost conversion and promote upsell and cross sell.
-- **Win back unengaged customers**; Predictive Traits let you identify unengaged customers you can reengage and create personalized winback campaigns to reengage them.
+- **Win back unengaged customers**; Predictive Traits let you identify unengaged customers you can re-engage with personalized winback campaigns.
 
 ### Data science use cases
 
