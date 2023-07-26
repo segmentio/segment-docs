@@ -113,7 +113,7 @@ const clientIdPromise =  new  Promise(resolve => {
 Promise.all([sessionIdPromise, sessionNumPromise, clientIdPromise]).then(function(session_data) {
 	console.log("session ID: "+session_data[0]);
 	console.log("session Number: "+session_data[1]);
-  console.log("session Number: "+session_data[2]);
+  console.log("client ID: "+session_data[2]);
 });
 ```
 
