@@ -1,5 +1,5 @@
 ---
-title: Listrak Actions Destination
+title: Listrak (Actions) Destination
 id: 64b6a221baf168a989be641a
 private: true
 hidden: true
