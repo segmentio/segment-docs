@@ -19,6 +19,15 @@ sources:
       - us
     endpoints:
       - us
+  - id: pndBZqzhCE
+    display_name: AddShoppers Suppression
+    hidden: false
+    slug: addshoppers-suppression
+    url: connections/sources/catalog/cloud-apps/addshoppers-suppression
+    regions:
+      - us
+    endpoints:
+      - us
   - id: p1Kv6YKjE3
     display_name: Aircall
     hidden: false
@@ -71,6 +80,15 @@ sources:
     hidden: false
     slug: amplitude-cohorts
     url: connections/sources/catalog/cloud-apps/amplitude-cohorts
+    regions:
+      - us
+    endpoints:
+      - us
+  - id: 4bgxmPX5vR
+    display_name: Analytics JS
+    hidden: false
+    slug: analytics-js
+    url: connections/sources/catalog/cloud-apps/analytics-js
     regions:
       - us
     endpoints:
@@ -1241,6 +1259,15 @@ sources:
     hidden: false
     slug: test_source_1
     url: connections/sources/catalog/cloud-apps/test_source_1
+    regions:
+      - us
+    endpoints:
+      - us
+  - id: u1nD2DJamN
+    display_name: Tester
+    hidden: false
+    slug: tester
+    url: connections/sources/catalog/cloud-apps/tester
     regions:
       - us
     endpoints:
