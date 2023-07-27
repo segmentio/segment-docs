@@ -41,7 +41,10 @@ To add the Google Analytics 4 Cloud destination:
 6. Follow the steps in the Destinations Actions documentation on [Customizing mappings](/docs/connections/destinations/actions/#customizing-mappings).
 
 > info "limitations on sending events and event properties"
-> Google Analyics 4 destination is having few limitations on receiving events and event properties. Please check this [Google's](https://developers.google.com/analytics/devguides/collection/protocol/ga4/sending-events?client_type=firebase){:target='_blank'} documentation for more information.
+> The Google Analyics 4 destination is having few limitations when receiving events and event properties when sent data server side.
+> 1.Events can have a maximum of 25 user properties.
+> 2.User property names must be 24 characters or fewer, etc.
+> Please see this [Google's](https://developers.google.com/analytics/devguides/collection/protocol/ga4/sending-events?client_type=firebase){:target='_blank'} documentation for more information.
 
 {% include components/actions-fields.html %}
 
