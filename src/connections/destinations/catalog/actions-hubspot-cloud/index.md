@@ -49,20 +49,14 @@ HubSpot Cloud Mode (Actions) provides the following benefits over the classic Hu
 {% include components/actions-fields.html %}
 
 
-## A Support for Association between two Custom Object Records in Upsert Custom Object Records
-To Associate two records , it is mandatory to have **Search Fields to associate , ObjectType to associate and Association Label.** If any of these three fields are not configured, it will skip the association.
-- **ObjectType to associate.** To associate the newly created/updated custom object record with another object type,select object type you want it to be associated with.
-- **Search Fields to associate Custom Object record.** It finds an unique record of custom object based on key-value search properties,so that records can be associated together.
-   - An Association record will fail if there is more than one record returned from the search association object , but it will not have an effect on the upsert of a custom object record.
-   - An association will be skipped if no Record is found with the data provided here in key:value format.
+## Support for association between two custom object records in upsert custom object records
+To associate two records , it's mandatory to have these three fields: **Search Fields to associate** , **ObjectType to associate**, and **Association Label**. If any of these three fields aren't configured, the association skips.
 
- **Ensure that you use an unique identifier to lookup an association object.**
- 
-- **Association Label.** Select an association label between both the object types.From HubSpot Dashboard,you can associations between any type of object.
-  1. Login to [HubSpot Dashboard](https://app.hubspot.com/).
-  2. Go to Data Management -> Objects -> Custom Objects.
-![Show Association Label](images/getAssociationLabel.png)
-![Create Association Label](images/createAssociationLabel.png)
+Field | Details
+----- | --------
+Search Fields to associate |  This finds a unique record of custom object based on key-value search properties so that records can be associated together. <br> * An association record fails if there is more than one record returned from the search association object. <br> * An association skips if no record is found with the data provided in key:value format. 
+ObjectType to associate | To associate the newly created and updated custom object record with another object type, select the object type you want it to be associated with.
+Association Label | Select an association label between both the object types. From the HubSpot Dashboard, you can create associations between any type of object. To create an association label: <br>1. Log in to the [HubSpot Dashboard](https://app.hubspot.com/){:target="_blank"}. <br>2. Go to **Data Management > Objects > Custom Objects**. <br>3. Go to the **Associations** tab and click **Create association label**. 
 
 ## FAQ & Troubleshooting
 
