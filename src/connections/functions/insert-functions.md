@@ -61,7 +61,7 @@ Segment invokes a separate part of the function (called a "handler") for each ev
 The default source code template includes handlers for all event types. You don't need to implement all of them - just use the ones you need, and skip the ones you don't.
 
 > info ""
-> Removing the handler for a specific event type will result in the events of that type being blocked from arriving at their destination.
+> Removing the handler for a specific event type results in blocking the events of that type from arriving at their destination. 
 
 Insert functions can define handlers for each message type in the [Segment spec](/docs/connections/spec/):
 
