@@ -116,10 +116,10 @@ This table maps Segment-generated identifiers, like `segment_id`, to external id
 | field                         | description                                                                                         |
 | ----------------------------- | --------------------------------------------------------------------------------------------------- |
 | `EXTERNAL_ID_HASH`            | The hash of the identifier sent in the incoming event.                                              |
-| `EXTERNAL_ID_TYPE`            | The type of  the external identifier sent in the incoming event such as `user_id` or `anonymous_id`. External identifiers become the identities attached to a user profile. |
+| `EXTERNAL_ID_TYPE`            | The type of external identifier sent in the incoming event, such as `user_id` or `anonymous_id`. External identifiers become the identities attached to a user profile. |
 | `EXTERNAL_ID_VALUE`           | The value of the identifier sent in the incoming event.                                             |
 | `ID`                          | A unique identifier for the table row.                                                              |
-| `RECEIVED_AT`                 | The timestamp when the Segment API receives the payload from client or server.                      |
+| `RECEIVED_AT`                 | The timestamp when the Segment API receives the payload from the client or server.                      |
 | `SEGMENT_ID`                  | The Profile ID that Segment appends to an event or an identifier at the time it was first observed. |
 | `SEQ`                         | A sequential value derived from the timestamp.                                                      |
 | `TIMESTAMP`                   | The UTC-converted timestamp set by the Segment library.                                             |
@@ -128,7 +128,7 @@ This table maps Segment-generated identifiers, like `segment_id`, to external id
 | `TRIGGERING_EVENT_SOURCE_ID`  | The specific source ID of the incoming event.                                                       |
 | `TRIGGERING_EVENT_SOURCE_NAME`| The name of the source that triggered the event.                                                    |
 | `TRIGGERING_EVENT_SOURCE_SLUG`| The slug of the source that triggered the event.                                                    |
-| `TRIGGERING_EVENT_TYPE`       | The type of the tracking method used for triggering the incoming event.                             |
+| `TRIGGERING_EVENT_TYPE`       | The type of tracking method used for triggering the incoming event.                             |
 | `UUID_TS`                     | A unique identifier of the timestamp.                                                               |
 
 
