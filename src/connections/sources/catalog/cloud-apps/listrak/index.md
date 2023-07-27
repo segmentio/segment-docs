@@ -23,7 +23,11 @@ This source is maintained by Listrak. For any issues with the source, [contact t
 
 4. Click **Add Source** to save your settings.
 5. Copy the Write key from the Segment UI.
-6. If using Unify and Engage Audiences, connect the new Listrak source under Unify > Unify settings > Profile sources.
+6. If using Unify and Engage Audiences:
+    1. Go to Unify > Unify settings > Profile sources
+    2. Click **Connect source**
+    3. Select the new Listrak source
+    4. Click **Connect source**
 7.  Log in to your [Listrak account](https://admin.listrak.com){:target="_blank"}, and navigate to Integrations > Integrations Management.
 8. Click **New Integration**.
 9. Click the Segment card
