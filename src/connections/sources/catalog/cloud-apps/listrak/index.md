@@ -43,6 +43,92 @@ If a profile field was entered when the email list was added to the integration 
 
 Listrak maintains a trait for each email list you add to the integration. The trait is named `Listrak_list_{listId}`, where `{listId}` is the ID of the list (eg. `Listrak_list_12345`). The trait will be set to true if the email address is subscribed to the list. The trait will be removed if the email address is not subscribed to the list. This trait can be used to create Engage audiences that only contain profiles that are subscribed to a Listrak list.
 
+## Events
+
+The table below lists events that Listrak sends to Segment. These events appear as tables in your warehouse, and as regular events in other Destinations.
+
+<table>
+  <tr>
+   <td>Event Name</td>
+   <td>Description</td>
+  </tr>
+  <tr>
+   <td>Email Opened</td>
+   <td>Recipient opened the email</td>
+  </tr>
+  <tr>
+   <td>Email Link Clicked</td>
+   <td>Recipient clicked on a link in the email’s body</td>
+  </tr>
+  <tr>
+   <td>Email Bounced</td>
+   <td>Email servers rejected the email</td>
+  </tr>
+  <tr>
+   <td>Email Converted</td>
+   <td>Recipient placed an order after clicking on the email</td>
+  </tr>
+</table>
+
+## Event Properties
+
+The table below list the properties included in the events listed above.
+
+<table>
+  <tr>
+   <td>Property Name</td>
+   <td>Description</td>
+  </tr>
+  <tr>
+   <td>`email_id`</td>
+   <td>An ID used to identify the email.</td>
+  </tr>
+  <tr>
+   <td>`email_subject`</td>
+   <td>The email’s subject line.</td>
+  </tr>
+  <tr>
+   <td>`campaign_name`</td>
+   <td>A name used to identify a campaign.</td>
+  </tr>
+  <tr>
+   <td>`link_id`</td>
+   <td>An ID used to identify a link.</td>
+  </tr>
+  <tr>
+   <td>`link_url`</td>
+   <td>The URL the link points to.</td>
+  </tr>
+  <tr>
+   <td>`google_analytics_campaign_name`</td>
+   <td>A name used to identify a Google Analytics campaign.</td>
+  </tr>
+  <tr>
+   <td>`list_id`</td>
+   <td>An ID used to identify a list.</td>
+  </tr>
+  <tr>
+   <td>`list_name`</td>
+   <td>A name used to identify a list.</td>
+  </tr>
+  <tr>
+   <td>`order_total`</td>
+   <td>The order total associated with the conversion</td>
+  </tr>
+  <tr>
+   <td>`context.ip`</td>
+   <td>The opening computer’s public IP address.</td>
+  </tr>
+  <tr>
+   <td>`context.traits.email`</td>
+   <td>The intended recipient’s email address.</td>
+  </tr>
+  <tr>
+   <td>`context.user_agent`</td>
+   <td>The opening browser’s user agent.</td>
+  </tr>
+</table>
+
 ## Adding Destinations
 
 Now that your Source is set up, you can connect it with Destinations.
