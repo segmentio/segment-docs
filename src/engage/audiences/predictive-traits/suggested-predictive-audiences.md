@@ -3,7 +3,7 @@ title: Suggested Predictive Audiences
 plan: engage-foundations
 ---
 
-Powered by CustomerAI Campaigns, Suggested Predictive Audiences can help you improve customer engagement, drive higher conversion rates, and reduce ad spend.
+Suggested Predictive Audiences can help you improve customer engagement, drive higher conversion rates, and reduce ad spend.
 
 This page explains what a Suggested Predictive Audience is, how to build a Suggested Predictive Audience, and what each available Audience targets.
 
