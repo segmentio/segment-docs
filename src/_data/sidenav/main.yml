@@ -379,6 +379,8 @@ sections:
         title: Predictive Traits
       - path: '/engage/audiences/predictive-traits/using-predictive-traits'
         title: Using Predictive Traits
+      - path: '/engage/audiences/predictive-traits/suggested-predictive-audiences'
+        title: Suggested Predictive Audiences
 
   - section_title: Journeys
     description: "Learn how to create multi-step Journeys to tailor messages to your users."
