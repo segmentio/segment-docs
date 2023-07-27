@@ -113,7 +113,7 @@ The table below list the properties included in the events listed above.
   </tr>
   <tr>
    <td>`order_total`</td>
-   <td>The order total associated with the conversion</td>
+   <td>The order total associated with the conversion.</td>
   </tr>
   <tr>
    <td>`context.ip`</td>
