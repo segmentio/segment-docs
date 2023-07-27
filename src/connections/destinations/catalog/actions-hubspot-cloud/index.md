@@ -50,7 +50,7 @@ HubSpot Cloud Mode (Actions) provides the following benefits over the classic Hu
 
 
 ## Support for association between two custom object records in upsert custom object records
-To associate two records , it's mandatory to have these three fields: **Search Fields to associate** , **ObjectType to associate**, and **Association Label**. If any of these three fields aren't configured, the association skips.
+To associate two records, it's mandatory to have these three fields: **Search Fields to associate** , **ObjectType to associate**, and **Association Label**. If any of these three fields aren't configured, the association skips.
 
 Field | Details
 ----- | --------
