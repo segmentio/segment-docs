@@ -3,12 +3,12 @@ title: Middleware for iOS
 strat: ios
 ---
 
-Middlewares are simple functions invoked by the Segment libraries, which give you a way to add information to the events you collect using the Segment SDKs. They can be used to monitor, modify, or reject events. Source Middleware are available on `analytics-ios` 3.6.0 and later. Destination Middleware are available on `analytics-ios` 4.0.0 and later.
+Middlewares are simple functions invoked by the Segment libraries, which give you a way to add information to the events you collect using the Segment SDKs. They can be used to monitor, modify, or reject events. Source Middlewares are available on `analytics-ios` 3.6.0 and later. 
 
 You can access the middleware API in both Objective-C and Swift.
 
 > info ""
-> **Note**: Destination-middleware only act on [data sent to destinations in device-mode](/docs/connections/destinations#connection-modes). Since the destination middleware code exists in your app or project, it cannot transform the data sent from the Segment servers to the destination endpoint. 
+> **Note**: Destination middleware is **not** available for iOS.
 
 ### Use
 
@@ -122,11 +122,6 @@ Finally, to use a middleware, you must provide it to the `SEGAnalyticsConfigurat
  */
 @property (nonatomic, strong, nullable) NSArray<id<SEGMiddleware>> *sourceMiddleware;
 
-/**
- * Set custom destination middleware. Will be run before the associated integration for a destination.
- */
-@property (nonatomic, strong, nullable) NSArray<SEGDestinationMiddleware *> *destinationMiddleware;
-
 // ...
 @end
 ```
@@ -162,11 +157,8 @@ config.sourceMiddleware = [
     turnScreenIntoTrack,
     enforceEventTaxonomy,
     customizeAllTrackCalls,
-    blockScreenCallsToAmplitude,
-]
-config.destinationMiddleware = [
-    SEGDestinationMiddleware(key: mixpanelIntegration.key(), middleware: [sampleEventsToMixpanel]),
-    SEGDestinationMiddleware(key: amplitudeIntegration.key(), middleware: [customizeAmplitudeTrackCalls])
+    dropSpecificEvents,
+    blockScreenCallsToAmplitude
 ]
 
 Analytics.setup(with: config)
@@ -190,12 +182,8 @@ config.sourceMiddleware = @[
     turnScreenIntoTrack,
     enforceEventTaxonomy,
     customizeAllTrackCalls,
-    blockScreenCallsToAmplitude,
-];
-
-config.destinationMiddleware = @[
-    [[SEGDestinationMiddleware alloc] initWithKey:mixpanelIntegration.key middleware:@[sampleEventsToMixpanel]];
-    [[SEGDestinationMiddleware alloc] initWithKey:amplitudeIntegration.key middleware:@[customizeAmplitudeTrackCalls]];
+    dropSpecificEvents,
+    blockScreenCallsToAmplitude
 ];
 
 [SEGAnalytics setupWithConfiguration:config];
@@ -367,7 +355,7 @@ SEGBlockMiddleware *dropSpecificEvents = [[SEGBlockMiddleware alloc] initWithBlo
 
 #### Block specific call types to a specific destination
 
-The following example blocks only screen calls from reaching the Amplitude destination.
+The following example blocks only screen calls from reaching the Amplitude destination. 
 
 
 {% codeexample %}
@@ -406,113 +394,6 @@ SEGBlockMiddleware *blockScreenCallsToAmplitude = [[SEGBlockMiddleware alloc] in
     }
     next(context);
 }];
-```
-{% endcodeexampletab %}
-{% endcodeexample %}
-
-
-#### Sample events to a destination
-
-The following example records a random selection of events sent to the Mixpanel device-mode destination.
-
-{% codeexample %}
-{% codeexampletab Swift %}
-```swift
-let sampleEventsToMixpanel = BlockMiddleware { (context, next) in
-    if let track = context.payload as? TrackPayload {
-        let numberBetween0To4 = arc4random() % 5
-        if numberBetween0To4 != 0 {
-            return
-        }
-    }
-    next(context)
-}
-```
-
-{% endcodeexampletab %}
-{% codeexampletab Objective-C %}
-
-```objc
-SEGBlockMiddleware *sampleEventsToMixpanel = [[SEGBlockMiddleware alloc] initWithBlock:^(SEGContext * _Nonnull context, SEGMiddlewareNext  _Nonnull next) {
-    if ([context.payload isKindOfClass:[SEGTrackPayload class]]) {
-        NSUInteger numberBetween0To4 = arc4random() % 5;
-        if (numberBetween0To4 != 0) {
-            return;
-        }
-    }
-    next(context);
-}];
-```
-{% endcodeexampletab %}
-{% endcodeexample %}
-
-
-
-#### Add a custom attribute for a specific destination
-
-The following example adds a custom attribute to the `context` object when sending data to Amplitude in device-mode.
-
-{% codeexample %}
-{% codeexampletab Swift %}
-```swift
-// define middleware we'll use for amplitude
-let customizeAmplitudeTrackCalls = BlockMiddleware { (context, next) in
-    if context.eventType == .track {
-        next(context.modify { ctx in
-            guard let track = ctx.payload as? TrackPayload else {
-                return
-            }
-            let newEvent = "[Amplitude] \(track.event)"
-            var newProps = track.properties ?? [:]
-            newProps["customAttribute"] = "Hello"
-            ctx.payload = TrackPayload(
-                event: newEvent,
-                properties: newProps,
-                context: track.context,
-                integrations: track.integrations
-            )
-        })
-    } else {
-        next(context)
-    }
-}
-
-...
-
-// configure destination middleware for amplitude
-let amplitude = SEGAmplitudeIntegrationFactory.instance()
-config.use(amplitude)
-config.destinationMiddleware = [DestinationMiddleware(key: amplitude.key(), middleware:[customizeAmplitudeTrackCalls])]
-```
-
-{% endcodeexampletab %}
-{% codeexampletab Objective-C %}
-
-```objc
-// define middleware we'll use for amplitude
-SEGBlockMiddleware *customizeAmplitudeTrackCalls = [[SEGBlockMiddleware alloc] initWithBlock:^(SEGContext * _Nonnull context, SEGMiddlewareNext  _Nonnull next) {
-    if ([context.payload isKindOfClass:[SEGTrackPayload class]]) {
-        SEGTrackPayload *track = (SEGTrackPayload *)context.payload;
-        next([context modify:^(id<SEGMutableContext> _Nonnull ctx) {
-            NSString *newEvent = [NSString stringWithFormat:@"[Amplitude] %@", track.event];
-            NSMutableDictionary *newProps = (track.properties != nil) ? [track.properties mutableCopy] : [@{} mutableCopy];
-            newProps[@"customAttribute"] = @"Hello";
-            ctx.payload = [[SEGTrackPayload alloc] initWithEvent:newEvent
-                                                      properties:newProps
-                                                         context:track.context
-                                                    integrations:track.integrations];
-        }]);
-    } else {
-        next(context);
-    }
-}];
-
-...
-
-// configure destination middleware for amplitude
-id<SEGIntegrationFactory> amplitude = [SEGAmplitudeIntegrationFactory instance];
-[config use:amplitude];
-config.destinationMiddleware = [SEGDestinationMiddleware alloc] initWithKey:amplitude.key middleware:@[customizeAmplitudeTrackCalls]];
 ```
 {% endcodeexampletab %}
 {% endcodeexample %}
