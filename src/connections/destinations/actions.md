@@ -174,7 +174,7 @@ You can combine criteria in a single group using **ALL** or **ANY**.  Use an ANY
 > info "Unsupported Special Characters"
 > Mappings do not support the use of double quotes " or a tilde ~ in the trigger fields.
 
->info "Limitations"
+> info "Limitations"
 > Mapping fields don't support dot notation. For example, properties.amount.cost or properties_amount.cost aren't supported.
 
 > info "Destination Filters"
