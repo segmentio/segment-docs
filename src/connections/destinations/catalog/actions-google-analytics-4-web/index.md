@@ -26,17 +26,17 @@ To connect the Google Analytics 4 Web destination:
 3. Click **Configure Google Analytics 4 Web**.
 4. Select the web source that will send data to Google Analytics 4 and follow the steps to name your destination. The web source chosen must use [Analytics.js 2.0](/docs/connections/sources/catalog/libraries/website/javascript/){:target='_blank'}.
 5. On the **Settings** tab, under **Basic Settings**, enter in the [Measurement ID](https://support.google.com/analytics/answer/9539598){:target='_blank'} associated with your GA4 web stream.
-6. Set up your event mappings by following the steps in the Destinations Actions documentation on [Customizing mappings](/docs/connections/destinations/actions/#customizing-mappings){:target="_blank"}.
+6. Set up your event mappings by following the steps in the Destinations Actions documentation on [Customizing mappings](/docs/connections/destinations/actions/#customizing-mappings).
 
-After you've set up at least one event in your **Mappings** tab, you should be able to see your events and their parameters using Google's [Realtime](https://support.google.com/analytics/answer/9271392){:target="_blank"} and [DebugView](https://support.google.com/analytics/answer/7201382){:target="_blank"} reports. Note that the DebugView report requires some additional configuration before you can use the report. These two reports show you the events users trigger on your website as the events are triggered.
+After you've set up at least one event in your **Mappings** tab, you can see your events and parameters using the Google [Realtime](https://support.google.com/analytics/answer/9271392){:target="_blank"} and [DebugView](https://support.google.com/analytics/answer/7201382){:target="_blank"} reports. These two reports show you the events users trigger on your website as they occur. The DebugView report requires additional configuration before you can use it. 
 
-Some parameters automatically populate prebuilt [dimensions and metrics](https://support.google.com/analytics/answer/9143382){:target="_blank"} in Google Analytics. For example, the parameters on the automatically collected and enhanced measurement events, as well as the required and optional parameters you send with the recommended events, populate pre-built dimensions and metrics.
+Some parameters automatically populate prebuilt [dimensions and metrics](https://support.google.com/analytics/answer/9143382){:target="_blank"} in Google Analytics. For example, the parameters on the automatically collected and enhanced measurement events and the required and optional parameters you send with the recommended events both populate pre-built dimensions and metrics.
 
-Other parameters require you to create [custom dimensions and metrics](https://support.google.com/analytics/answer/10075209){:target="_blank"} to see the parameter values in Google Analytics. Whenever you create a custom parameter, you need to create a corresponding custom dimension or metric so you can see that data.
+With custom parameters, you must create [custom dimensions and metrics](https://support.google.com/analytics/answer/10075209){:target="_blank"} so you can see the parameter values in Google Analytics. 
 
 ### Understanding Event Parameters 
 
-Parameters provide additional information about the ways users interact with your website. For example, when someone views a product you sell, you can include parameters that describe the product they viewed, such as the name, category, and price.
+Parameters provide additional information about the ways users interact with your website. For example, when someone views a product you sell, you can include parameters that describe the product they viewed, like `product_name`, `category`, and `price`.
 
 The automatically collected and enhanced measurement events include parameters by default. Google also provides a set of required and optional parameters to include with each recommended event. Additionally, you can add more event parameters when you need them.
 
@@ -52,7 +52,7 @@ Google Analytics 4 is also case sensitive. If you would like all event names to 
 
 ### Custom Dimensions and Metrics
 
-With Google Analytics 4, you must create custom dimensions and metrics within the Google Analytics 4 interface to link event parameters to the corresponding custom dimension or metric. When creating the dimension or metric, you can either select a parameter from the list of already collected fields or enter the name of the parameter you plan to collect in the future. For more information, see [Google Analytics 4 Custom dimensions and metrics](https://support.google.com/analytics/answer/10075209?hl=en){:target="_blank"}.
+With Google Analytics 4, you must create custom dimensions and metrics within the Google Analytics 4 interface to link event parameters to the corresponding custom dimensions or metrics. When creating the dimension or metric, you can either select a parameter from the list of already collected fields or enter the name of the parameter you plan to collect in the future. For more information, see [Google Analytics 4 Custom dimensions and metrics](https://support.google.com/analytics/answer/10075209?hl=en){:target="_blank"}.
 
 ### Debug Mode
 
