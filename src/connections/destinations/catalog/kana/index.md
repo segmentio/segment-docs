@@ -10,7 +10,7 @@ This destination is maintained by Kana. For any issues with the destination, [co
 
 ## Getting Started
 
-{% include content/connection-modes.md %} 
+ 
 
 1. From the Destinations catalog page in the Segment App, click **Add Destination**.
 2. Search for "Kana" in the Destinations Catalog, and select the "Kana" destination.

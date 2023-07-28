@@ -14,7 +14,7 @@ This destination is maintained by LaunchDarkly. For any issues with the destinat
 
 ## Getting Started
 
-{% include content/connection-modes.md %}
+
 
 1. From the Destinations catalog page in the Segment App, click **Add Destination**.
 2. Search for “LaunchDarkly” in the Destinations Catalog, and select the LaunchDarkly destination.

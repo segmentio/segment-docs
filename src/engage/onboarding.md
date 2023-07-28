@@ -14,6 +14,11 @@ This guide lists all required onboarding steps and walks you through Engage setu
 > info ""
 > The steps in this guide are only required if you plan to send email, SMS, and WhatsApp messages with Engage. Visit the [Engage Foundations Onboarding Guide](/docs/engage/quickstart) for general onboarding steps to set up your Engage space, connect sources, create audiences, and more.
 
+> info "Regional Segment"
+> You can use Engage Premier on [Segment's regional infrastructure in the EU](/docs/guides/regional-segment/). Twilio Engage ensures data residency in the EU, but the channels you connect to, may not guarantee the same level of data residency. Check directly with the providers of the channels you use for information about data residency in their applications. Native channels like email and SMS, which use Twilio, are not data resident. 
+> 
+> Twilio is GDPR compliant, and has [Binding Corporate Rules](https://www.twilio.com/legal/binding-corporate-rules){:target="_blank"} to ensure that data is protected when it's transferred between countries.
+
 ## Before you begin: overview and task checklist
 
 You’ll set up Twilio Engage in four stages:
@@ -70,7 +75,7 @@ Start by creating a SendGrid account and then upgrading to the SendGrid Pro Plan
 
 ### Create a subuser and check the dedicated IP address
 
-Next, you’ll create a SendGrid subuser and ensure that a dedicated IP has been assigned:
+Next, you’ll [create a SendGrid subuser](https://docs.sendgrid.com/ui/account-and-settings/subusers#create-a-subuser){:target="_blank"} and ensure that a dedicated IP has been assigned:
 
 1. In your SendGrid space, navigate to **Settings > Subuser Management**, then click **Create New Subuser**.
 2. In the **Create New Subuser** window, create a username for the subuser, then add an email address and password. Your SendGrid subuser username must begin with the prefix `twilio_engage_app_`. Add a unique identifier to the end of the prefix, for example, `twilio_engage_app_someusername`.
@@ -121,9 +126,9 @@ You’ll now need to enable event webhooks, which trigger webhook notifications 
 1. Within your SendGrid **subuser** space, navigate to **Settings > Mail Settings**.
 2. Click the pencil edit icon next to **Event Webhook**.
 3. On the Event Webhook page, set authorization method to none.
-4. Copy and paste the following URL into the **HTTP Post URL** field:
-
-    <br> `https://engage-ma-webhook-api.engage.segment.com/sendgrid`
+4. Copy and paste the following URL, depending on your region,  into the **HTTP Post URL** field:
+  - US: `https://engage-ma-webhook-api.engage.segment.com/sendgrid`
+  - EU:`https://engage-ma-webhook-api.euw1.engage.segment.com/sendgrid`
 
     ![Adding the HTTP Post URL](images/webhook.png "Adding the HTTP Post URL")
 
@@ -137,7 +142,10 @@ You’ll now need to enable event webhooks, which trigger webhook notifications 
 
 Now, you'll generate an API key and API Key ID within SendGrid. **With your SendGrid account open in one tab, open your [Segment workspace](https://app.segment.com/workspaces){:target="_blank"} open in another. You’ll need both open to copy and paste the API credentials into your Engage settings.**
 
-1. Within your SendGrid subuser space, navigate to **Settings > API Keys**.
+> info "SendGrid Subuser Step"
+> Carry out the following steps in your SendGrid **subuser** space.
+
+1. **Within your SendGrid subuser space**, navigate to **Settings > API Keys**.
 2. Click the **Create API Key** button.
 3. In the Create API Key window, name your API key using the prefix `twilio_engage_app_`, with a suffix of your choice added to the end, like `twilio_engage_app_somekey`.
 4. Under API Key Permissions, select the **Full Access** radio button, then click **Create & View**.
@@ -183,7 +191,7 @@ To add the ability to send SMS campaigns in Engage, you’ll now create a Twilio
 ### Create a Twilio account and generate an API key
 
 > info "Copying Twilio Credentials"
-> This step generates an Account SID, API key SID, and API key secret that you’ll later add to Segment. Make sure you’re ready to copy and save both proceeding.
+> This step generates an Account SID, API key SID, and API key secret that you’ll later add to Segment. Make sure you’re ready to copy and save both before proceeding.
 
 Start by creating your Twilio account and getting an API key for Engage:
 
@@ -230,7 +238,7 @@ To finish setting up your Messaging Service, you’ll now [configure an event we
 
 1. Switch to the browser tab or window with your Engage workspace.
 2. Navigate to **Engage > Engage settings > Channels**.  Under **SMS Service with Twilio**, click the **Get Started** button.
-3. The **Set up and valide your Twilio account** overlay appears (pictured below). Click the **Copy webhook URL** button. Your computer copies the URL to your clipboard.
+3. The **Set up and validate your Twilio account** overlay appears (pictured below). Click the **Copy webhook URL** button. Your computer copies the URL to your clipboard.
 
     ![Engage webhook URL](images/engagewebhook.png "Engage webhook URL")
 
@@ -244,14 +252,12 @@ To finish setting up your Messaging Service, you’ll now [configure an event we
 
 ## Stage 4: Create and configure Twilio WhatsApp services
 
-> info "WhatsApp Public Beta"
-> WhatsApp as an Engage channel is in public beta. 
-
 To send WhatsApp messages in Twilio Engage, you'll register a Twilio number with WhatsApp, connect your Facebook account, and create a WhatsApp messaging service.
 
 ### Register a Twilio number with WhatsApp
 
 1. [Purchase an SMS-capable phone number](https://support.twilio.com/hc/en-us/articles/223135247-How-to-Search-for-and-Buy-a-Twilio-Phone-Number-from-Console){:target="_blank"} within your Twilio Console.
+  - For international numbers, view Twilio's [Phone Number Regulations](https://www.twilio.com/en-us/guidelines/regulatory){:target="_blank"} guidelines. 
 2. From the Twilio side menu, navigate to **Messaging > Senders > WhatsApp Senders**.
 3. Select **Create new sender**.
 4. From the **New Sender** builder, find **Twilio phone number**, then choose the phone number you purchased in Step 1. Select **Continue**.
@@ -281,6 +287,12 @@ You'll now create a messaging service to connect your number to Engage:
 6. Twilio confirms that the WhatsApp number has been assigned to the service.
 
 Your WhatsApp messaging service is now created. 
+
+## Regional Segment
+
+You can use Engage Premier on [Segment's regional infrastructure in the EU](/docs/guides/regional-segment/). Twilio Engage ensures data residency in the EU, but the channels you connect to, may not guarantee the same level of data residency. Check directly with the providers of the channels you use for information about data residency in their applications. Native channels like email and SMS, which use Twilio, are not data resident. 
+
+Twilio is GDPR compliant, and has [Binding Corporate Rules](https://www.twilio.com/legal/binding-corporate-rules){:target="_blank"} to ensure that data is protected when it's transferred between countries.
 
 ## Next steps
 

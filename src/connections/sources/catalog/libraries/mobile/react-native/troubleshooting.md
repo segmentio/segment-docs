@@ -11,7 +11,6 @@ strat: react-native
     - If the `writeKey` you entered is a valid format, but not the correct `writeKey` for your specific source, you won't see an error response. Segment accepts the data, but can't route it to your source's debugger.
 3. [Enable logging](/docs/connections/sources/catalog/libraries/mobile/react-native/#logging) to confirm if call is being sent to Segment
 
-
 ## No events in my destinations
 1. Verify that your destination is enabled
 2. Verify the destination credentials you entered in the Segment app are correct
@@ -19,7 +18,6 @@ strat: react-native
    - Does the integration have device-mode/cloud-mode support? Confirm you are sending using the correct connection mode.
    - Does the destination accept the type of call you are sending? Not all destinations accept all calls: page, track, etc.
 4. If you still don't see data in your destination, continue debugging based on which type of connection mode you are using.
-
 
 ## Debugging Device-mode Destinations
 
@@ -32,7 +30,6 @@ Enable verbose [logging](/docs/connections/sources/catalog/libraries/mobile/reac
 Look at the raw JSON in your debugger.  Does the call look like what is expected?
 
 Read through [the docs for that destination](/docs/connections/destinations/) to see expected event format, behavior and caveats for that destination.
-
 
 ## Still having issues?
 

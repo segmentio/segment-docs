@@ -47,7 +47,7 @@ Workspace Owners can manage permissions for groups of team members who should ha
 
 You can make changes to group membership from two places in the Segment App: From the Edit Team Member page (the user's individual access page), and from the Edit User Group page, where you can see all members of the group.
 
-![](images/user-group-overview.png)
+![Screenshot of the Access Management settings page, with the User Groups section selected.](images/user-group-overview.png)
 
 To add a team member from the **Edit Team Member** page:
 1. Navigate to the **Workspace settings** > **Access management** and click the **Members** tab.
@@ -59,7 +59,7 @@ To add a team member from the **Edit Team Member** page:
 > success ""
 > **Tip**: This method is best when adding a *single* team member to one or more user groups.
 
-![](images/user-group-members.png)
+![Screenshot of the Groups/Edit Leadership page, with the Members tab selected.](images/user-group-members.png)
 
 To add a team member from the **Edit User Group** page:
 1. Navigate to the **Workspace settings** > **Access management** and click the **Groups** tab.
@@ -99,3 +99,13 @@ Segment does not support programmatic de-provisioning at this time. However, if 
 If you are a [workspace member](/docs/segment-app/iam/roles), you might encounter a section of the Segment App that you do not have access to view. If you need expanded permissions, you can request access directly in the Segment App. Once submitted, Access requests are sent to all workspace owners by email.
 
 To review an access request, workspace owners click the link in the access request email to go to their workspace's Access Management Settings. The requestor's access request message appears on the Segment Access Management page, and the workspace owner can adjust the user's permissions. The access request message disappears after the permissions are updated.
+
+## Remove invalid or expired Invite
+
+When you send an invitation to an incorrect email address or the token included in the email invite link expires, the invite might still show up as "Invite Pending" in the Segment App. In these cases, you can revoke the invite to remove it and resend the invite if needed. The invitation will expire within a few days. Therefore, if a user accepts an invite with an expired link, Segment does not grant them access. 
+
+To revoke invite:
+1. Navigate to the **Workspace settings** > **Access management**
+2. Click on the invite that you would like to remove, which also shows **Invite Pending**
+3. Click **Edit Invite** in the panel on the right.
+4. Click the **Revoke Invite** on the top right side to remove the invite

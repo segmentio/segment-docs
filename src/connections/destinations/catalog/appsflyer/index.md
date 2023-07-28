@@ -14,7 +14,7 @@ Segment's Appsflyer destination code is open source and available on GitHub. You
 
 ## Getting Started
 
-{% include content/connection-modes.md %}
+
 
   1. From the Segment web app, click **Catalog**.
   2. Search for "AppsFlyer" in the Catalog, select it, and choose which of your sources to connect the destination to.
@@ -62,7 +62,7 @@ To prevent this, you can enable the new **Fallback to send IDFV when advertising
 
 #### Additional React Native device-mode set up
 
-{% include content/react-dest.md %}
+{% include content/react2-dest.md %}
 
 ### Server
 

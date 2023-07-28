@@ -10,6 +10,9 @@ This guide walks you through the set up process for a simple Engage space, which
 > success ""
 > The first four steps in this guide also apply to Unify set up. To learn more, visit the [Unify Onboarding Guide](/docs/unify/quickstart).
 
+> info "Regional Segment"
+> Engage Foundations is available on Segment's regional infrastructure. For more information, see the article [Regional Segment](/docs/guides/regional-segment/).
+
 ## Engage configuration requirements
 > info ""
 > Engage requires both [Connections](/docs/connections/) and [Unify](/docs/unify/).
@@ -18,7 +21,7 @@ To configure and use Engage, you need the following:
 
 1. **A Segment account and Workspace.**
 2. **Events flowing into Connections** from your digital properties where most of your valuable user behavior occurs.
-3. **Profiles identity admin access.** You must have edit access to identity resolution rules.
+3. **Identity Admin access.** You must have edit access to identity resolution rules.
 4. **Engage Administrator access.** You must be either be a workspace admin, or a workspace user with Engage admin access to set up audiences and computed traits. You can check your permissions by navigating to [Access Management](https://app.segment.com/goto-my-workspace/settings/access-management){:target="_blank"} in your workspace settings. See the [Segment Access Management documentation](/docs/segment-app/iam/) for more details.
 
 ## Step 1: Create a new Developer space
@@ -38,7 +41,7 @@ Invite teammates to your Engage dev space and grant them access to the space. Na
 
 ## Step 3: Connect production sources
 
-1. From your Engage space, go to your space Settings and click **Sources**.
+1. From your Engage space, navigate to **Unify settings** and click **Profile sources**.
 2. On the screen that appears, choose one or two production sources from your Connections workspace.
    Segment recommends connecting your production website or App source as a great starting point.
 
@@ -46,13 +49,13 @@ To learn more, visit [Connect production sources](/docs/unify/quickstart/#step-3
 
 ## Step 4: Check your profile data
 
-Once the replay finishes, you can see the data replayed into Engage using the Profile Explorer. Visit the [Unify Onboarding Guide](/docs/unify/quickstart/#step-4-check-your-profile-data) for more info.
+Once the replay finishes, you can see the data replayed into Engage using the Profile explorer. Visit the [Unify Onboarding Guide](/docs/unify/quickstart/#step-4-check-your-profile-data) for more info.
 
 ## Step 5: Create an Audience
 
-You can build an audience using any source data that flows into your Engage space. 
+You can build an audience using any source data that flows into your Engage space.
 
-In this step, use the Audience Builder UI to create an Audience using properties you're familiar with. For example, you might know the number of new website user signups in the last seven days, if you've connected your production website source to Engage. 
+In this step, use the Audience Builder UI to create an Audience using properties you're familiar with. For example, you might know the number of new website user signups in the last seven days, if you've connected your production website source to Engage.
 
 To build your own audience:
 1. Navigate to your Engage space.

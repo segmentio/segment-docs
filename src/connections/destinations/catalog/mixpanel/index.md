@@ -15,7 +15,7 @@ Segment's Mixpanel destination code is open source and available on GitHub. You 
 
 ## Getting Started
 
-{% include content/connection-modes.md %}
+
 
 1. From the Segment app Destinations page click on **Add Destination**.
 2. Search for Mixpanel in the Destinations Catalog and confirm the Source to connect to.
@@ -53,7 +53,6 @@ When you use the Mixpanel destination in Cloud-mode, Segment sends events for ea
 
 When you use the Mixpanel destination in Device-mode, Segment prioritizes the options to prevent duplicate calls as follows:
 
-
 - If you select "Track all Pages to Mixpanel", all `page` calls regardless of how you have customized it will send a `Loaded A Page`. Even if you have the other options enabled, Segment sends this call to prevent double counting your pageviews.
 
 - If you select "Track Categorized Pages to Mixpanel", Segment sends a `Viewed [category] Page` event.
@@ -79,7 +78,7 @@ analytics.identify('userId123', {
 The first thing you'll want to do is to identify your users so Mixpanel knows who they are. You'll use the Identify method to accomplish this which takes the unique `userId` of a user and any `traits` you know about them.
 
 > info ""
-> **Important:** Mixpanel used to require that you call `alias` in all libraries to connect anonymous visitors to identified users. However, with the release of Mixpanel's new [Identity Merge feature](https://help.mixpanel.com/hc/en-us/articles/360039133851#enable-id-merge){:target="_blank"} this is no longer necessary. To enable ID Merge, go to your Mixpanel Settings Dashboard, navigate to **Project Settings > Identity Merge** and enable the setting from that screen. If you are _not_ using this setting, use the instructions below.
+> **Important:** Mixpanel used to require that you call `alias` in all libraries to connect anonymous visitors to identified users. However, with the release of Mixpanel's new [Identity Merge feature](https://help.mixpanel.com/hc/en-us/articles/9648680824852#introduction){:target="_blank"} this is no longer necessary. To enable ID Merge, go to your Mixpanel Settings Dashboard, navigate to **Project Settings > Identity Merge** and enable the setting from that screen. If you are _not_ using this setting, use the instructions below.
 
 
 As soon as you have a `userId` for a visitor that was previously anonymous you'll need to [`alias`](/docs/connections/spec/alias/) their old anonymous `id` to the new `userId`. In Mixpanel only **one** anonymous user history can be merged to **one** identified user. For that reason you should only call `alias` once, right after a user registered, but before the first `identify`.
@@ -125,6 +124,8 @@ analytics.group("0e8c78ea9d97a7b8185e8632", {
 Mixpanel supports multiple definitions of groups. For more information see [Mixpanel's Group Analytics documentation](https://help.mixpanel.com/hc/en-us/articles/360025333632-Group-Analytics){:target="_blank"}.
 
 If the group call **does not** have a group trait that matches the Group Identifier Traits setting, then the event will be ignored.
+
+If you'd like to connect a track call to a group call in Mixpanel, send the group's ID as a property on the track call named `$group_id`. 
 
 ### Group using Device-mode
 
@@ -365,7 +366,7 @@ analytics.identify({
 
 ### UTM Campaign Parameters
 
-Since Segment's client-side javascript library (`analytics.js`) loads `mixpanel.js` in the background, you'll get the exact same functionality of Mixpanel around UTM Campaign Parameters as you would when using Mixpanel directly.
+When used in Device Mode through a web source, Segment's client-side Javascript library, Analytics.js, loads `mixpanel.js` (Mixpanel’s direct SDK) in the background. As a result, you'll get the exact same functionality from Mixpanel around UTM Campaign Parameters as you would when using Mixpanel directly.
 
 [Read more in Mixpanel's UTM docs](https://mixpanel.com/help/questions/articles/can-i-track-google-analytics-style-utm-tags-with-mixpanel)
 

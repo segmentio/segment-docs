@@ -10,9 +10,12 @@ redirect_from:
 
 ## Default externalIDs
 
-The Identity Graph creates or merges profiles based on externalIDs. ExternalIDs will become the Identities attached to a User Profile in the User Explorer:
+The Identity Graph creates or merges profiles based on externalIDs. ExternalIDs will become the identities attached to a user profile in the Profile explorer.
 
-![Example of external identities in the User Explorer](images/jane_doe_new_identities.png)
+> success ""
+> Navigate to **Unify > Profile explorer** to view identities attached to a profile, along with custom traits, event history, and more.
+
+![Example of external identities in the Profile explorer](images/jane_doe_new_identities.png)
 
 Segment automatically promotes the following traits and IDs in track and identify calls to externalIDs:
 
@@ -24,12 +27,14 @@ Segment automatically promotes the following traits and IDs in track and identif
 | android.idfa       | context.device.advertisingId when context.device.type = 'android' AND context.device.adTrackingEnabled = true |
 | android.push_token | context.device.token when context.device.type = 'android'                                                     |
 | anonymous_id       | anonymousId                                                                                                   |
-| cross_domain_id    | cross_domain_id when XID has been enabled for the workspace                                                   |
 | ga_client_id       | context.integrations['Google Analytics'].clientId when explicitly captured by users                           |
 | group_id           | groupId                                                                                                       |
 | ios.id             | context.device.id when context.device.type = 'ios'                                                            |
 | ios.idfa           | context.device.advertisingId when context.device.type = 'ios'     |
 | ios.push_token     | context.device.token when context.device.type = 'ios'                                                         |
+
+> note ""
+> The Google clientID(ga_clientid) is a unique value created for each browser-device pair and will exist for 2 years if the cookie is not cleared. The analytics.reset() call should be triggered from Segment end when the user logs off. This call will clear the cookies and local Storage created by Segment. It doesn’t clear data from other integrated tools. So on the next login, the user will be assigned with a new unique anonymous_id, but the same ga_clientid will remain if this cookie is not cleared. Hence, the profiles with different anonymous_id but with same ga_clientid will get merged.
 
 ## Custom externalIDs
 

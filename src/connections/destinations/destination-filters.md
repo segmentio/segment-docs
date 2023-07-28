@@ -30,7 +30,8 @@ Keep the following limitations in mind when you use destination filters:
 - *(For device-mode)* Destination filters don't filter some fields that are collected by the destination SDK outside of Segment such as `page.url` and `page.referrer`.
 - *(For web device-mode)* Destination filters for web device-mode only supports the Analytics.js 2.0 source. You need to enable device mode destination filters for your Analytics.js source. To do this, go to your Javascript source and navigate to **Settings > Analytics.js** and turn the toggle on for **Destination Filters**.
 - *(For web device-mode)* Destination filters for device-mode only supports the Analytics.js 2.0 source.
-- *(For mobile device-mode)* Destination filters for mobile device-mode is currenlty not supported.
+- *(For mobile device-mode)* Destination filters for mobile device-mode doesn't support iOS and Android libraries.
+- Destination Filters don't apply to events that send through the destination Event Tester.
 
 
 [Contact Segment](https://segment.com/help/contact/){:target="_blank"} if these limitations impact your use case.
@@ -123,7 +124,7 @@ Use the [Public API](https://docs.segmentapis.com/tag/Destination-Filters/){:tar
     "destinationId": "<DESTIANTION_ID>",
     "title": "Don't send event if userId is null",
     "description": "Drop event if there is no userId on the request",
-    "if": "length( userId ) < 1 or typeof( userId ) != 'string'",
+    "if": "length( userId ) < 1",
     "actions": [
       {
         "type": "DROP"
@@ -216,3 +217,12 @@ You must have write access to save and edit filters. Read permission access only
 #### How can I test my filter?
 
 Use the destination filter tester during setup to verify that you're filtering out the right events. Filtered events show up on the schema page but aren't counted in event deliverability graphs.
+
+#### Can I filter on properties/traits that have spaces in the name (for example, `properties.test event field`)? 
+
+Destination Filters can't target properties or traits with spaces in the field name. As an alternative, use [Insert Functions](/docs/connections/functions/insert-functions/), which let you write code to take care of such filtering.
+
+
+#### Can I use destination filters to drop events unsupported by a destination?
+
+The check for unsupported events types happens before any destination filter checks. As a result, Destination Filters can't prevent unsupported event type errors. To filter these events, use the [Integrations Object](/docs/guides/filtering-data/#filtering-with-the-integrations-object).

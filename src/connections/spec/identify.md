@@ -11,13 +11,8 @@ Segment recommends that you make an Identify call:
 - After a user first registers
 - After a user logs in
 - When a user updates their info (for example, they change or add a new address)
-- Upon loading any pages that are accessible by a logged in user (optional)
 
 The first three examples are pretty self-explanatory, but many might ask: why you would call identify on every page load if we're storing the `userId` in the cookie/local storage?
-
-Let's imagine this scenario:
-
-I log into your app. Identify is called. For whatever reason, I close the browser and don't return until later. There's no way of knowing where I will reenter your app from. I could start my session from anywhere. And because there are many tools out there that require an initial identify call for certain features (e.g. Intercom chat widget) it's important to tell your end tools who the user is when they first start their session.
 
 Calling `identify` in one of our [libraries](/docs/connections/sources/) is one of the first steps to getting started with Segment. Refer to library-specific documentation for more details.
 

@@ -113,7 +113,7 @@ Yes. To allow users to re-enter Journeys that they've exited, [enable re-entry](
 
 ### What happens to traits and audiences when I delete a Journey?
 
-Deleting a Journey removes its underlying audiences from profile views in the Profiles Explorer.  However, the Journey's True/False traits remain in the user's last recorded state.
+Deleting a Journey removes its underlying audiences from profile views in the Profile explorer. However, the Journey's True/False traits remain in the user's last recorded state.
 
 > info "Note"
 > Cloning a Journey generates new, unique traits and sync keys.  Deleting the original Journey won't impact any cloned Journeys.

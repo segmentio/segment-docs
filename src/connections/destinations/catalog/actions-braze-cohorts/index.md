@@ -37,6 +37,7 @@ To connect the Braze Cohorts destination:
 10. Under Select mappings, input the Audience Key you copied in Step 2 as the “Segment Engage Audience Key.” Do not change any other defaults. Click **Save** and toggle to enable the mapping.
      * **Note:** Users can be added or removed from cohorts through `ExternalId`, `DeviceId`, or the `UserAlias` object. The priority is `ExternalId`, then `DeviceId`, and finally `UserAlias` if all are provided.
      * The Audience Key must be manually entered to ensure users in the Engage Audience are sent to the correct cohort in Braze. For every Engage Audience you want to send to Braze, a separate **Sync Audience** mapping must be created. You can create up to 50 mappings within an instance of the Braze Cohorts destination.
+     * Create the mapping with trigger conditions: `Event Name` is `Audience Entered/Exited` and `Event Property` `audience_key` is `<audience_key>`. Hardcode the audience key in the "Segment Engage Audience Key" field of the mapping. 
      
 11. Navigate back to **Engage > Audiences** and click on the Audience from Step 1. 
 
@@ -45,6 +46,8 @@ To connect the Braze Cohorts destination:
 The setup is complete and the Audience will start syncing to Braze Cohorts. Segment will create a new cohort (if one does not already exist for the given Audience Key) and add/remove users to/from the cohort accordingly. The Audience appears in your [Braze account](https://dashboard-01.braze.com/sign_in){:target="_blank"}, account under **Engagement > Segments**.
 
 To sync additional Audiences from your Engage space, create a separate mapping in the Braze Cohorts destination. Navigate to **Connections > Destinations**, search and select the Braze Cohorts destination, and follow Steps 9-11 above.
+
+If you are creating multiple mappings in one Braze Cohorts destination, Segment recommends clearing the default subscription for all your mappings from `Event Name is Audience Entered or Event Name is Audience Exited` to `Event Property audience_key is <your_audience_key>`, replacing `<your_audience_key>` with the Audience Key copied as per step 2 above.
 
 > info ""
 > A user can only be added to a cohort if the user already exists in Braze. This means that the Braze Cohorts destination should be used in parallel with the [Braze Cloud Mode (Actions) destination](/docs/connections/destinations/catalog/braze-cloud-mode-actions/) or the [Braze Web Mode (Actions) destination](/docs/connections/destinations/catalog/braze-web-device-mode-actions/), both of which can create users in Braze.

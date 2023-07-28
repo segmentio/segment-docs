@@ -5,9 +5,6 @@ repo: analytics-next
 strat: node-js
 ---
 
-> info ""
-> This version of Analytics for Node.js is in beta and Segment is actively working on this feature. Segment's [First-Access and Beta terms](https://segment.com/legal/first-access-beta-preview/) govern this feature. If you’re using the classic version of Analytics for Node.js, you can refer to the documentation [here](/docs/connections/sources/catalog/libraries/server/node/classic).
-
 Segment's Analytics Node.js library lets you record analytics data from your node code. The requests hit Segment's servers, and then Segment routes your data to any destinations you have enabled.
 
 The [Segment Analytics Node.js Next library is open-source](https://github.com/segmentio/analytics-next/tree/master/packages/node){:target="_blank"} on GitHub.
@@ -287,6 +284,7 @@ Setting | Details
 `flushInterval` _number_ | The number of milliseconds to wait before flushing the queue automatically. The default is: `10000`
 `httpRequestTimeout` | The maximum number of milliseconds to wait for an http request. The default is: `10000`
 `disable` | Disable the analytics library for testing. The default is: `false`
+`httpClient` *Optional* | A custom AnalyticsHTTPClient implementation to support alternate libraries or proxies.  Defaults to global fetch or node-fetch for older versions of node.
 
 ## Graceful shutdown
 Avoid losing events after shutting down your console. Call `.closeAndFlush()` to stop collecting new events and flush all existing events. If a callback on an event call is included, this also waits for all callbacks to be called, and any of their subsequent promises to be resolved.
@@ -556,7 +554,72 @@ Different parts of your application may require different types of batching, or 
 const marketingAnalytics = new Analytics({ writeKey: 'MARKETING_WRITE_KEY' });
 const appAnalytics = new Analytics({ writeKey: 'APP_WRITE_KEY' });
 ```
+## AnalyticsHTTPClient
 
+Segment attempts to use the global `fetch` implementation if available in order to support several diverse environments.  Some special cases (for example, http proxy) may require a different implementation for http communication.  You can provide a customized wrapper in the Analytics configuration to support this.  Here are a few approaches:
+
+Use a custom fetch-like implementation with proxy (simple, recommended)
+```javascript
+import { HTTPFetchFn } from '../lib/http-client'
+import axios from 'axios'
+
+const httpClient: HTTPFetchFn = async (url, options) => {
+  return axios({
+    url,
+    proxy: {
+        protocol: 'http',
+        host: 'proxy.example.com',
+        port: 8886,
+        auth: {
+          username: 'user',
+          password: 'pass',
+        },
+      },
+    ...options,
+  })
+}
+
+const analytics = new Analytics({
+  writeKey: '<YOUR_WRITE_KEY>',
+  httpClient,
+})
+```
+Augment the default HTTP Client
+```javascript
+import { FetchHTTPClient, HTTPClientRequest  } from '@segment/analytics-node' 
+ 
+class MyClient extends FetchHTTPClient {
+  async makeRequest(options: HTTPClientRequest) {
+    return super.makeRequest({
+         ...options, 
+         headers: { ...options.headers, foo: 'bar'  }
+      }})
+  }
+}
+
+const analytics = new Analytics({ 
+  writeKey: '<YOUR_WRITE_KEY>', 
+  httpClient: new MyClient() 
+})
+```
+Completely override the full HTTPClient (Advanced, you probably don't need to do this)
+```javascript
+import { HTTPClient, HTTPClientRequest } from '@segment/analytics-node'
+
+class CustomClient implements HTTPClient {
+  async makeRequest(options: HTTPClientRequest) {
+    return someRequestLibrary(options.url, { 
+      method: options.method,
+      body: JSON.stringify(options.data) // serialize data
+      headers: options.headers,
+    })
+  }
+}
+const analytics = new Analytics({ 
+  writeKey: '<YOUR_WRITE_KEY>', 
+  httpClient: new CustomClient() 
+})
+```
 
 ## Troubleshooting
 

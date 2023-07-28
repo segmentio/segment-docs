@@ -7,7 +7,7 @@ id: 54bee265db31d978f14a7e21
 
 ## Getting Started
 
-{% include content/connection-modes.md %}
+
 
 1. From the Destinations catalog page in the Segment App, click **Add Destination**.
 2. Search for "Natero" in the Destinations Catalog, and select the "Natero" destination.

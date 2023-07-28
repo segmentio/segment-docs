@@ -14,7 +14,7 @@ This destination is maintained by Extole. For any issues with the destination, [
 
 ## Getting Started
 
-{% include content/connection-modes.md %}
+
 
 1. Go to your [Extole Tech Center](https://my.extole.com/tech-center#access-token) page and generate an API Key. Copy that key. If you encounter any problems, check this [Extole Help Page on access tokens](https://success.extole.com/hc/en-us/articles/360001616668-Generating-Long-Lived-Access-Tokens).
 2. From the Segment Destinations page, click **Add Destination**.

@@ -9,7 +9,7 @@ Using a practical example of how Segment connects and then merges anonymous prof
 
 ## Case study: anonymous site visits lead to profile merge
 
-To help illustrate the possible entries and values populated into Profiles Sync tables, consider the following scenario.
+To help illustrate the possible entries and values populated into Profiles Sync tables, view the event tabs below and consider the following scenario.
 
 Suppose the following four events lead to the creation of two separate profiles:
 
@@ -79,7 +79,7 @@ Profiles Sync tracks and provides information about these events through a set o
 
 Using the events from the profile merge case study, Segment would land the following tables as part of Profiles Sync.
 
-### The `id_graph_updates` table
+### The id_graph_updates table
 
 The `id_graph_updates` table maps between the following:
 
@@ -109,9 +109,28 @@ Segment shows the complete history of every profile. If, later, `profile_1` merg
 
 If you’ll use Profiles Sync to build models, refer to the `id_graph` model, which can help you put together a complete view of a customer.
 
-### The `external_id_mapping_updates` table
+### The external_id_mapping_updates table
 
-This table maps Segment-generated identifiers, like `segment_id`, to external identifiers that your users provide.
+This table maps Segment-generated identifiers, like `segment_id`, to external identifiers that your users provide. It has the following columns:
+
+| field                         | description                                                                                         |
+| ----------------------------- | --------------------------------------------------------------------------------------------------- |
+| `EXTERNAL_ID_HASH`            | The hash of the identifier sent in the incoming event.                                              |
+| `EXTERNAL_ID_TYPE`            | The type of external identifier sent in the incoming event, such as `user_id` or `anonymous_id`. External identifiers become the identities attached to a user profile. |
+| `EXTERNAL_ID_VALUE`           | The value of the identifier sent in the incoming event.                                             |
+| `ID`                          | A unique identifier for the table row.                                                              |
+| `RECEIVED_AT`                 | The timestamp when the Segment API receives the payload from the client or server.                      |
+| `SEGMENT_ID`                  | The Profile ID that Segment appends to an event or an identifier at the time it was first observed. |
+| `SEQ`                         | A sequential value derived from the timestamp.                                                      |
+| `TIMESTAMP`                   | The UTC-converted timestamp set by the Segment library.                                             |
+| `TRIGGERING_EVENT_ID`         | The specific ID of the incoming event.                                                              |
+| `TRIGGERING_EVENT_NAME`       | The specific name of the incoming event.                                                            |
+| `TRIGGERING_EVENT_SOURCE_ID`  | The specific source ID of the incoming event.                                                       |
+| `TRIGGERING_EVENT_SOURCE_NAME`| The name of the source that triggered the event.                                                    |
+| `TRIGGERING_EVENT_SOURCE_SLUG`| The slug of the source that triggered the event.                                                    |
+| `TRIGGERING_EVENT_TYPE`       | The type of tracking method used for triggering the incoming event.                             |
+| `UUID_TS`                     | A unique identifier of the timestamp.                                                               |
+
 
 The anonymous site visits sample used earlier would generate the following events:
 
@@ -127,7 +146,7 @@ The anonymous site visits sample used earlier would generate the following event
 
 In this table, Segment shows three observed identifiers. For each of the three identifiers, Segment outputs the Segment ID initially associated with the identifier.
 
-### `identifies`, `page`, `screens`, and track tables
+### The identifies, page, screens, and track tables
 
 These tables show the instrumented events themselves. Entries in these tables reflect payloads that you instrument according to the Segment spec.
 
@@ -162,6 +181,9 @@ And two entries in the `identifies` table:
 
 All these events were performed by the same person. If you use these tables to assemble your data models, though, always join them against `id_graph` to resolve each event’s `canonical_segment_id`.
 
+> info ""
+> You might see columns appended with `hidden_entry` or `hidden_entry_joined_at` in profile data of users in Journeys. Segment uses these for internal purposes, and they do not require any attention or action.
+
 ### Profiles Sync schema
 
 Profiles Sync uses the following schema: `<profiles_space_name>.<tableName>`.
@@ -189,11 +211,11 @@ Follow the steps below to change your schema name:
 > To get started with your table materializations, try Segment's [open-source dbt models](https://github.com/segmentio/profiles-sync-dbt){:target="_blank"}, or materialize views with your own tools.
 
 > warning ""
-> Please note that dbt models are in beta and need modifications to run efficiently on BigQuery, Synapse, and Postgres warehouses. Segment is actively working on this feature. 
+> Please note that dbt models are in beta and need modifications to run efficiently on BigQuery, Synapse, and Postgres warehouses. Segment is actively working on this feature.
 
 Every customer profile (or `canonical_segment_id`) will be represented in each of the following tables.
 
-### `id_graph` table
+### The id_graph table
 
 This table represents the current state of your identity graph, showing only where a `segment_id` is now understood to point.
 
@@ -204,9 +226,10 @@ The most recent entry for each `segment_id` from `id_graph_updates` reflects thi
 | `profile_1`            | `profile_1`                      | 2022-05-02 14:01:00     |
 | `profile_2`            | `profile_1`                      | 2022-06-22 10:48:00     |
 
+
 Segment drops most diagnostic information from this table, since it’s designed for reference use. In this case, you’d learn that any data references to `profile_2` or `profile_1` now map to the same customer, `profile_1`.
 
-### `external_id_mapping` table
+### The external_id_mapping table
 
 Use this table to view the full, current-state mapping between each external identifier you’ve observed and its corresponding, fully-merged `canonical_segment_id`.
 
@@ -219,7 +242,7 @@ In the case study example, you’d see the following:
 | `profile_1`                      | `anonymous_id`               | `b50e18a5-1b8d-451c`          | `2022-06-22 10:48:00`  |
 
 
-### `profile_traits` table
+### The profile_traits table
 
 Use the `profile_traits` table for a singular view of your customer. With this table, you can view all custom traits, computed traits, SQL traits, audiences, and journeys associated with a profile in a single row.
 

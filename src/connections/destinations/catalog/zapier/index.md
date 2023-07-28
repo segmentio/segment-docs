@@ -8,19 +8,19 @@ id: 57c4996480412f644ff29f78
 
 ## Getting Started
 
-{% include content/connection-modes.md %}
+
 
 1. Navigate to your Zapier dashboard and select "Make A Zap" - you'll need at least one Zap so you can tell Segment where to route data later on.
 2. Search "Webhooks", then select "Catch Raw Hook" (Segment POSTs raw data to Zapier using our destination).
 
-    ![](images/webhooks-by-zapier.png)
-    ![](images/zapier-catch-raw-hook.gif)
+    ![Screenshot of the Make a Zap setup flow in Zapier.](images/webhooks-by-zapier.png)
+    ![Animation showing someone select the Catch Raw Hook option on the Select Webhooks by Zapier Trigger page. ](images/zapier-catch-raw-hook.gif)
 
 3. Complete the remaining Webhook set up steps, and Zapier will present you with a custom Webhook URL.
 4. Repeat step 3 to create as many Webhook URLs as you like.
 5. Remember that each Zapier "trigger" should be connected to an "Action" - i.e. posting the Webhook data to another downstream tool, such as Slack.
 
-    ![](images/zapier-choose-action.png)
+    ![Screenshot of the Zapier sidebar.](images/zapier-choose-action.png)
 
 6. From your Segment UI's Destinations page click on "Add Destination".
 7. Search for "Zapier" in the Catalog, select it, and choose which of your sources to connect the destination to.

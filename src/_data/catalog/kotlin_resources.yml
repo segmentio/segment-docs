@@ -1,0 +1,41 @@
+items: 
+- name: Destinations Example
+  url: https://github.com/segmentio/analytics-kotlin/tree/main/samples/kotlin-android-app-destinations
+  categories: 
+  - app
+- name: Java Android App
+  url: https://github.com/segmentio/analytics-kotlin/tree/main/samples/java-android-app
+  categories: 
+  - app
+- name: Kotlin Android App
+  url: https://github.com/segmentio/analytics-kotlin/tree/main/samples/kotlin-android-app
+  categories: 
+  - app
+- name: Kotlin JVM App
+  url: https://github.com/segmentio/analytics-kotlin/tree/main/samples/kotlin-jvm-app
+  categories: 
+  - app
+- name: Android AdvertisingId Plugin
+  url: https://github.com/segmentio/analytics-kotlin/blob/main/samples/kotlin-android-app/src/main/java/com/segment/analytics/next/plugins/AndroidAdvertisingIdPlugin.kt
+  categories: 
+  - plugin
+- name: Screen Recording Plugin
+  url: https://github.com/segmentio/analytics-kotlin/blob/main/samples/kotlin-android-app/src/main/java/com/segment/analytics/next/plugins/AndroidRecordScreenPlugin.kt
+  categories: 
+  - plugin
+- name: Consent Tracking Plugin
+  url: https://github.com/segmentio/analytics-kotlin/blob/main/samples/kotlin-android-app/src/main/java/com/segment/analytics/next/plugins/ConsentTracking.kt
+  categories: 
+  - plugin
+- name: Trait Injection Plugin
+  url: https://github.com/segmentio/analytics-kotlin/blob/main/samples/kotlin-android-app/src/main/java/com/segment/analytics/next/plugins/ConsentTracking.kt
+  categories: 
+  - plugin
+- name: Trait Injection Plugin
+  url: https://github.com/segmentio/analytics-kotlin/blob/main/samples/kotlin-android-app/src/main/java/com/segment/analytics/next/plugins/InjectTraitsPlugin.kt
+  categories: 
+  - plugin
+- name: Push Notification Tracking
+  url: https://github.com/segmentio/analytics-kotlin/blob/main/samples/kotlin-android-app/src/main/java/com/segment/analytics/next/plugins/PushNotificationTracking.kt
+  categories: 
+  - plugin

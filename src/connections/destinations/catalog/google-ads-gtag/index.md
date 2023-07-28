@@ -19,6 +19,15 @@ The [Google global site tag (gtag.js)](https://support.google.com/google-ads/ans
 
 You can use this destination to map your `.page()` calls to **Page Load Conversions** or `.track()` calls to **Click Conversions**. Currently this is only supported on the browser.
 
+### Configure the Google Ads (Gtag) destination
+
+1. From the Segment Destinations Catalog find and select Google Ads (Gtag).
+2. Click **Configure Google Ads (Gtag)**.
+3. Select the source you will use to send data to Google Ads (Gtag).
+4. Provide a meaningful name to this instance of the destination.
+5. On the destination Settings tab, enter the **Conversion ID** from your Google Ads (Gtag) account. 
+6. Select the 'Click Conversion' setting. Enter the name of the event as it appears in the [`track`](/docs/connections/spec/track) call and map it to your Google Ads (Gtag) conversion label.
+
 ## Page
 
 If you want to map all your unnamed `.page()` calls to a default Page Load Conversion, you can enter the Conversion ID in **Settings > Default Page Conversion**. However, if you created specific Page Load Conversions in Google Ads that you'd like to map your named `.page()` calls in Segment, you can map the events in **Settings > Page Load Conversions**.
@@ -46,7 +55,7 @@ You can map your custom `.track()` events to any **Click Conversions** you creat
 
 If you pass `properties.value`, `properties.currency`, or `properties.order_id`, Segment maps them to Google's semantic `value`, `currency`, or `transaction_id` respectively.
 
-The only exception is that for `Order Completed` events, Segment will map Google's semantic `value` field to your `properties.revenue`.
+The only exception is that for `Order Completed` events, Segment will map Google's semantic `value` field to your `properties.revenue` or `properties.total`. If you pass both as properties, `properties.revenue` takes precedence.
 
 ## Troubleshooting Google Ads Conversions
 To figure out if an event is flagged for conversion, follow these steps:
@@ -61,7 +70,7 @@ To figure out if an event is flagged for conversion, follow these steps:
       ```
 
 2. Verify that the [Google Conversion ID](/docs/connections/destinations/catalog/google-ads-gtag/#google-conversion-id) in your Segment workspace is correct.
-3. Find your ad online and click on it. This will redirect you to your website.
+3. Find your ad online and click it. This will redirect you to your website.
 4. Open the Network tab in your browser and make sure the **Preserve log** checkbox is checked and **All** is selected. Keep this Network tab and webpage open.
 
       ![Network tab](../../images/network-tab.png)
@@ -76,6 +85,9 @@ To figure out if an event is flagged for conversion, follow these steps:
       ![Network tab](../../images/network-tab-search.png)
 
 8. See if the value for the `ct_cookie_present` changed to `true`. If `true`, it means that Google Ads counts the event as a conversion.  
+
+> info ""
+> Google Ads considers an event as a conversion when the user arrives to your website as a result of an Ad _click_. The Google SDK is responsible for checking if the user came from an Ad click and sets the parameter `ct_cookie_present` to true. Without clicking through an ad, Google Ads doesn't reflect the conversion because this information is missing in the network requests.
 
 ## Multiple Google Ads Accounts
 
