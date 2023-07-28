@@ -119,8 +119,6 @@ Engage only sends events to the destination if the computed trait value has chan
 }
 ```
 
-
-
 ## Additional identifiers
 
 Engage has a flexible identity resolution layer that allows you to build user profiles based on multiple identifiers like `user_id`, `email`, or `mobile advertisingId`. However, different destinations may require different keys, so they can do their own matching and identification. For example, Zendesk requires that you include the `name` property.
@@ -131,6 +129,8 @@ If you send events to a destination that requires specific enrichment Segment do
 > note ""
 > **Note**: Profiles with multiple identifiers (for example, `user_id` and `email`) will trigger one API call per identifier when the audience or computed trait is first synced to a destination.
 
+> note ""
+> **Note**: Email as an identifier is set in `traits.email` for identify calls, and `context.traits.email` for track calls. 
 
 ## Multiple identifiers of the same type
 
