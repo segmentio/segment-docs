@@ -56,4 +56,4 @@ This feature is automatically enabled for all workspaces on Team or Business tie
 If you see a CORS error, this means you're attempting to make a request to the Public API on the front-end. The Public API is used for server-side only. To get rid of the error, move all Public API requests to a server.
 
 #### What User Role / Workspace permissions are required to generate Public API tokens?
-Only [users that have "Workspace Owner"](https://segment.com/docs/segment-app/iam/roles/#global-roles) can create Public API Tokens.
+Only [users that have a `Workspace Owner` role](https://segment.com/docs/segment-app/iam/roles/#global-roles) can create Public API Tokens.
