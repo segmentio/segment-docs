@@ -1,38 +1,39 @@
 [build]
+  # This line defines the command that is run during production builds
+  # It first updated the Algolia index through the Algolia plugin for Jekyll
+  # then runs the standard build command. See package.json for more details 
+  # about the available build targets (develop, develop-inc, build)
   command = "jekyll algolia && yarn build"
-  # Ignore builds unless [netlify-build] is present in commit message
-  # ignore = "git log -1 --pretty=%B | ( ! grep -q '\[netlify\-build\]' )"
-  # Ignore if [netlify-ignore] is present
-
-  # Don't build if there are no changes to src/
-  ## ignore = "git diff --quiet HEAD^ HEAD src/"
 
 [context.deploy-preview]
+  # For deploy previews, use the testing Jekyll environment, the develop build target calls
   command = "yarn develop"
+  # Check this file to see if the site should build. ignore.sh checks for the presence of 
+  # [netlify-build] in the commit message
   ignore = "./scripts/ignore.sh"
 
 [context.branch-deploy]
   command = "yarn build"
-#  ignore = "./scripts/ignore.sh"
+  # ignore = "./scripts/ignore.sh"
 
 [context.develop]
   command = "yarn develop"
 
 [[redirects]]
+  # Don't touch these settings. They are required for the redirect to work, since the docs site
+  # is located at /docs and not the root of the site.
   from = "/docs/*"
   to = "/:splat"
   status = 200
   
 [[redirects]]
+  # Sam thing as above, but specifically for the js bundle
   from = "/docs/assets/docs.bundle.js"
   to = "/assets/docs.bundle.js"
   status = 200
 
 # [[plugins]]
-#   package = "netlify-plugin-jekyll-cache"
-
-# 	[plugins.inputs]
-#   	jekyllSource = "/src"
+# if we want to include plugins, this is where to ensure they run
 
 
 [[headers]]

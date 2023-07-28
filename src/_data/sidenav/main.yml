@@ -187,6 +187,10 @@ sections:
       section:
       - path: /connections/reverse-etl/reverse-etl-source-setup-guides/bigquery-setup
         title: BigQuery Reverse ETL Setup
+      - path: /connections/reverse-etl/reverse-etl-source-setup-guides/databricks-setup
+        title: Databricks Reverse ETL Setup
+      - path: /connections/reverse-etl/reverse-etl-source-setup-guides/postgres-setup
+        title: Postgres Reverse ETL Setup
       - path: /connections/reverse-etl/reverse-etl-source-setup-guides/redshift-setup
         title: Redshift Reverse ETL Setup
       - path: /connections/reverse-etl/reverse-etl-source-setup-guides/snowflake-setup
@@ -348,8 +352,6 @@ sections:
       title: Set User Subscriptions
     - path: /engage/user-subscriptions/subscription-states
       title: Subscription States
-    - path: /engage/user-subscriptions/engage-source
-      title: Engage Events Source
     - path: /engage/user-subscriptions/subscription-sql
       title: Subscriptions with SQL Traits
   - section_title: Profiles
@@ -377,6 +379,8 @@ sections:
         title: Predictive Traits
       - path: '/engage/audiences/predictive-traits/using-predictive-traits'
         title: Using Predictive Traits
+      - path: '/engage/audiences/predictive-traits/suggested-predictive-audiences'
+        title: Suggested Predictive Audiences
 
   - section_title: Journeys
     description: "Learn how to create multi-step Journeys to tailor messages to your users."
@@ -405,7 +409,9 @@ sections:
     - path: '/engage/content/email/template'
       title: Email Template
     - path: '/engage/content/email/editor'
-      title: Email Template Editor
+      title: Drag and Drop Editor
+    - path: '/engage/content/email/html-editor'
+      title: HTML Editor
     - path: '/engage/content/sms/template'
       title: SMS Template
     - path: '/engage/content/whatsapp'
