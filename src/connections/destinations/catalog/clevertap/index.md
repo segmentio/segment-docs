@@ -182,4 +182,4 @@ If you decide to implement your own Push Message processors, then you can pass p
 
 ### Verbose Logging
 
-When using Web Device-mode, you can enable verbose logging of all communication with CleverTap servers by setting the `theWZRK_D` variable in `sessionStorage`. In the developer console of your browser, enter `sessionStorage['WZRK_D'] = '';`, you will see error messages and warnings logged. 
+When using Web Device-mode, you can enable verbose logging of all communication with CleverTap servers by setting the `theWZRK_D` variable in `sessionStorage`. In the developer console of your browser, enter `sessionStorage['WZRK_D'] = '';`, you will see error messages and warnings logged. Please check [CleverTap docs](https://developer.clevertap.com/docs/web-quickstart-guide#debugging) for more details.
