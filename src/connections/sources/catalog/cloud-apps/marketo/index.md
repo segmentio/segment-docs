@@ -282,54 +282,27 @@ Currently, Warehouses are the only supported destination for object-cloud source
 
 Segment couldn't provide the statistics regarding the number of API calls we consumed, becasue our systems only log the number of objects that we pulled from Marketo as throughput. 
 
-<<<<<<< HEAD
 ### Could I limit the API usage on the source?
 
 Yes, you have the option to specify a cap to the API calls that our source will consume per day. If no cap is specified, we will by default consume as many API calls that are available within your limit that you agreed with Marketo to sync the entire source.
 
 We also use the `Lead` and  `Activity` Bulk Extract APIs to reduce the number of requests needed to sync the data; this however, also has a limit of 500MB worth of files downloaded per day.
-=======
-At set up time, you have the option to specify a cap to the API calls that a source can consume. If no cap is specified, Segment consumes as many API calls that are available to sync the entire source.
-
-Segment uses the Lead Activities bulk API to reduce the number of requests needed to sync the data; this however, also has a limit of 500MB worth of files downloaded per day.
-
-If your source requires more than 10k calls or over 500MB from the bulk API to sync, Segment continues the sync the following day when a new batch of API calls are available.
->>>>>>> develop
 
 ### What happens when my Marketo API limits daily quota is not enough?
 
 If your source requires more than 10k Rest API calls, or over 500MB via the Bulk Extract API to sync, we will continue the sync when a new batch of API calls are available.
 
-<<<<<<< HEAD
 Please be aware that the Marketo API quota is available across your subscription, if other applications are sharing the quota, it will interfere with our ability to sync the source.
 
-### Why the `lead_activities` collections is not ingested by Segment? Why I couldn't find `lead_activities` table in my data warehouse?
+### Why the `lead_activities` collections is not ingested by Segment? / Why I couldn't find `lead_activities` table in my data warehouse?
 
-Please fill the Activity Type IDs (optional) setting in the Marketo source. It is required to pull the `lead_activities` collection source. Once Segment pulled data, the data will be availabe in your data warehouses shortly 
-=======
-Segment uses the REST API in most situations, but also uses the Lead Activity Bulk API to reduce the number of requests needed to sync.
->>>>>>> develop
+Please fill the "Activity Type IDs (optional)" setting in the Marketo source. It is required to pull the `lead_activities` collection source. Once Segment pulled data, the data will be availabe in your data warehouses shortly 
 
 ### Can I get other collections not default synced by the source?
 
-[Contact Support](https://segment.com/help/contact/) to request additional collections.
+Please [Contact Support](https://segment.com/help/contact/) to request additional collections added to your source.
 
 ### Can I get other columns not default synced by the source?
-<<<<<<< HEAD
-Yes! For `leads` and `activities`, we've introduced "Custom Lead Fields (optional)" where you can enter comma-separated custom fields, which will be synced by Marketo's REST API name.
+Yes. For `leads` and `activities`, we've introduced "Custom Lead Fields (optional)" where you can enter comma-separated custom fields, which will be synced by Marketo's REST API name.
 
 Full list of standard fields and Maketo's REST API names can be found at [here](http://developers.marketo.com/rest-api/lead-database/fields/list-of-standard-fields/). If there are other fields you're interested in, [contact support](https://segment.com/help/contact/)  for assistance.
-=======
-For leads and activities, Segment added  a custom fields setting where you can enter comma-separated custom fields to sync by their REST API name.
-
-By default, Segment syncs the following fields on the leads collection:
-
-- `id`
-- `email`
-- `firstName`
-- `lastName`
-- `createdAt`
-- `updatedAt`
-
-You can find a full list of standard fields and their REST API names [here](http://developers.marketo.com/rest-api/lead-database/fields/list-of-standard-fields/). If there are other fields you're interested in, [contact support](https://segment.com/help/contact/)  for assistance.
->>>>>>> develop
