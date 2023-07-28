@@ -198,7 +198,7 @@ Destinations are the business tools or apps that Segment forwards your data to. 
 
 Analytics for Kotlin is built with extensibility in mind. Use the tools list below to improve data collection.
 
-- [Plugin architecture](/docs/connections/sources/catalog/libraries/mobile/kotlin-android/kotlin-android-plugin-architecture)
+- [Plugin architecture](https://segment.com/docs/connections/sources/catalog/libraries/mobile/kotlin-android/destination-plugins/)
 - [Typewriter](/docs/connections/sources/catalog/libraries/mobile/kotlin-android/kotlin-android-typewriter)
 - [Destination filters](/docs/connections/sources/catalog/libraries/mobile/kotlin-android/kotlin-android-destination-filters)
 - [Code samples](/docs/connections/sources/catalog/libraries/mobile/kotlin-android/kotlin-android-samples)
