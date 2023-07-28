@@ -165,7 +165,14 @@ Segment's [Pixel Tracking API](/docs/connections/sources/catalog/libraries/serve
 ## Reverse ETL sources
 Reverse ETL sources are data warehouses that enable you to use [Reverse ETL](/docs/connections/reverse-etl) to send data from your warehouse source to your destinations. 
 
-Reverse ETL supports [these sources](/docs/connections/reverse-etl/reverse-etl-catalog/) and Segment is actively working on adding more. If you'd like to request Segment to add a particular source, please note it on the [feedback form](https://airtable.com/shriQgvkRpBCDN955){:target="_blank"}.
+Reverse ETL supports these sources: 
+* [BigQuery](/docs/connections/reverse-etl/reverse-etl-source-setup-guides/bigquery-setup/)
+* [Databricks](/docs/connections/reverse-etl/reverse-etl-source-setup-guides/databricks-setup/)
+* [Postgres](/docs/connections/reverse-etl/reverse-etl-source-setup-guides/postgres-setup/)
+* [Redshift](/docs/connections/reverse-etl/reverse-etl-source-setup-guides/redshift-setup/)
+* [Snowflake](/docs/connections/reverse-etl/reverse-etl-source-setup-guides/snowflake-setup/)
+
+Segment is actively working on adding more sources. If you'd like to request Segment to add a particular source, please note it on the [feedback form](https://airtable.com/shriQgvkRpBCDN955){:target="_blank"}.
 
 
 ## Create a source
