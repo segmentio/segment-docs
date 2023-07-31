@@ -7,12 +7,22 @@ redirect_from:
 ---
 
 > info ""
-> Beginning August 18, 2023, all new Engage and Unify Plus users can refer to this page for Segment's updated product limits. Visit Segment's [pricing page](https://segment.com/pricing/){:target="_blank"} to learn more. All existing users prior to this date can refer to the Engage product limits [here](/docs/engage/product-limits/).
+> Beginning August 18, 2023, new Unify Plus and Engage users can refer to this page for Segment's updated product limits. Existing users prior to this date can continue to refer to the Engage product limits [here](/docs/engage/product-limits/).
 
 
 To provide consistent performance and reliability at scale, Segment enforces default use and rate limits within Unify. Most customers do not exceed these limits.
 
 To learn more about custom limits and upgrades, contact your dedicated Customer Success Manager or [friends@segment.com](mailto:friends@segment.com){:target="_blank"}.
+
+## Unify Plus limits
+
+Beginning August 18, 2023, new Unify Plus users will receive 50 Computed or SQL Traits in addition to five AI Traits. 
+
+In addition, new Engage users will receive the following: 
+- **Engage Foundations**: 100 Audiences and 75 Journey Steps
+- **Engage Premier**: 125 Audiences and 100 Journey Steps
+
+Visit Segment's [pricing page](https://segment.com/pricing/){:target="_blank"} to learn more about Unify Plus. 
 
 
 ## Default limits
@@ -24,16 +34,6 @@ To learn more about custom limits and upgrades, contact your dedicated Customer 
 
 
 ## Audiences and Computed Traits
-
-> info ""
-> Beginning August 18, 2023, new Unify Plus users will receive 50 Computed or SQL Traits in addition to five AI Traits. 
->
-> In addition, new Engage users will receive the following: 
-> - **Engage Foundations**: 100 Audiences and 75 Journey Steps
-> - **Engage Premier**: 125 Audiences and 100 Journey Steps
->
-> Visit Segment's [pricing page](https://segment.com/pricing/){:target="_blank"} to learn more about Unify Plus. 
-
 
 | name                                          | limit                                 | Details                                                                                                                                                                                                                                                                                                                                                                        |
 | --------------------------------------------- | ------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
@@ -49,9 +49,6 @@ To learn more about custom limits and upgrades, contact your dedicated Customer 
 
 
 ## SQL Traits
-
-> info ""
-> Beginning August 18, 2023, new Unify Plus users will receive 50 Computed or SQL Traits in addition to five AI Traits. Visit Segment's [pricing page](https://segment.com/pricing/){:target="_blank"} to learn more about Unify Plus. 
 
 
 | name                        | limit                      | Details                                                                                                      |
@@ -85,5 +82,4 @@ Unify will silently drop events if:
 - Events have more than 300 properties/traits.
 - messageId is longer than 100 characters.
 - The groupId is empty in a group call or context.groupId is empty in a track call.
-
 
