@@ -39,4 +39,11 @@ Permission | Details
 `bigquery.datasets.get` | This allows Segment to determine if the aforementioned dataset exists
 `bigquery.jobs.create` | This allows Segment to execute queries on any datasets/tables your model query references and manage tables that Segment uses for tracking
 
-The `bigquery.datasets.*` permissions can be scoped only to the `__segment_reverse_etl` dataset. If you don't wish to grant `bigquery.datasets.create` access, you may create this dataset yourself, but Segment still needs  `bigquery.datasets.get` access.
+If you don't wish to grant `bigquery.datasets.create` access, you may create this dataset yourself, and Segment needs the following permissions:
+Permission | Details
+---------- | --------
+`bigquery.datasets.get` | This allows Segment to determine if the `__segment_reverse_etl` dataset exists
+`bigquery.tables.create` | This allows Segment to determine if the tables Segment uses to track state in `__segment_reverse_etl` dataset exists
+`bigquery.jobs.create` | This allows Segment to execute queries on any datasets/tables your model query references and manage tables that Segment uses for tracking
+
+The `bigquery.datasets.*` permissions can be scoped only to the `__segment_reverse_etl` dataset. 
