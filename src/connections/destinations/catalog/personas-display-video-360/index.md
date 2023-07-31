@@ -212,7 +212,7 @@ When you select the destination, you're prompted to complete the destination set
 | Setting                        | Description                                                                                                                                                               |
 | ------------------------------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | User Role Granted              | The permission you requested from Google. Either `Advertiser`, `Partner`, or `Publisher`. **Note:** Select `Publisher` only if you plan to connect to Google Ad Manager.  |
-| Account ID                     | The ID of your DV360 or Ad Manager account.                                                                                                                               |
+| Account ID                     | The ID of your DV360 or Ad Manager account. The Account ID can be found [here](https://support.google.com/displayvideo/answer/3423704?hl=en#zippy=)                                                                                                                       |
 
 On Step 3: Review & Create, **deselect** the Historical Backfill option to ensure that audience sizes between Engage and DV360 align more closely.
 
