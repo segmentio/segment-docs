@@ -1,11 +1,18 @@
 ---
 title: Computed Traits
-plan: engage-foundations
+plan: unify-plus
 redirect_from:
   - "/personas/computed-traits"
+  - "/engage/audiences/computed-traits"
 ---
 
+> info ""
+> Beginning August 18, 2023, new Unify Plus users can access Computed Traits in Unify. 
 
+<!--
+> info ""
+> Unify Plus includes 50 compute credits, which can be used towards either [SQL](/docs/unify/traits/sql-traits/) or Computed Traits. To learn more, visit [Segment's pricing page](https://segment.com/pricing/){:target="_blank"}.
+-->
 
 Computed Traits allow you to quickly create user or account-level calculations that Segment keeps up-to-date over time. These can be computations like the `total_num_orders` a customer has completed, the `lifetime_revenue` of a customer, the `most_frequent_user` to determine which user is most active in an account, or the `unique_visitors_count` to assess how many visitors from a single domain. These computations are based on your events and event properties that you are sending through Segment on the [page](/docs/connections/spec/page/) and [track](/docs/connections/spec/track) calls.
 

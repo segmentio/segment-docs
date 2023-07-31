@@ -322,16 +322,23 @@ sections:
       title: Sample Queries
     - path: /unify/profiles-sync/tables
       title: Tables & Materialized Views
+  - section_title: Traits
+    slug: unify/traits
+    section:
+    - path: '/unify/traits/computed-traits'
+      title: Computed Traits
+    - path: '/unify/traits/sql-traits'
+      title:  SQL Traits
   - path: /unify/profile-api
     title: Profile API
-  - path: /unify/profile-api-limits
-    title: Profile API Limits
   - path: /unify/debugger
     title: Profile Debugger
   - path: /unify/unify-gdpr
     title: Unify and GDPR
   - path: /unify/faqs
     title: Unify FAQs
+  - path: /unify/product-limits
+    title: Unify Limits
 
 - section_title: Engage
   section:
@@ -368,10 +375,6 @@ sections:
       title: Account-level Audiences
     - path: '/engage/audiences/organization'
       title: Organize Audiences
-    - path: '/engage/audiences/computed-traits'
-      title: Computed Traits
-    - path: '/engage/audiences/sql-traits'
-      title:  SQL Traits
     - section_title: Predictive Traits
       slug: engage/audiences/predictive-traits
       section:
