@@ -50,7 +50,7 @@ The FullStory cloud mode destination sends information about your users and rela
 
 ### Why am I getting a ‘404 Not Found’ error?
 
-This applies to the orginal 'Identify User' and 'Track Event' actions. The user for which the API request is being made can not be found in the identified set of users within your FullStory organization. If you expect that user to already exist, you can search for that User ID in FullStory to confirm. Also, double check that you are using an API key from the same organization.
+If you are using the original 'Identify User' and 'Track Event' actions and encounter a "404 Not Found" error, the user for which the API request is being made can not be found in the identified set of users within your FullStory organization. If you expect that user to already exist, you can search for that User ID in FullStory to confirm. Also, double check that you are using an API key from the same organization.
 
 Data sent server-side for users must match an already existing userId that was sent from a client-side connection.
 
