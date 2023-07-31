@@ -61,7 +61,7 @@ Once you've created a subscription group and added subscribers to it, follow the
 ## Frequently asked questions
 
 {% faq %}
-{% faqitem How may subscription groups can I have? %}
+{% faqitem How many subscription groups can I have? %}
 Your Engage space includes up to 25 subscription groups.
 {% endfaqitem %}
 
