@@ -27,8 +27,7 @@ If an end user changes the categories they consent to (or if they consent using 
 > warning "Segment recommends mapping all destinations to a category"
 > Segment assumes any destinations without a mapping do not require user consent and will receive all events containing a consent object. 
 
-
-<!--- out of scope for Q2: For example, if a user agreed to share their information with you for all categories on their first visit to your site, and then on their next visit to the site only consented to sharing data for functional and advertising purposes but not for analytics or data sharing, a [Track call](/docs/connections/spec/track/) demonstrating their new consent preferences would have the following format:
+For example, if a user agreed to share their information with you for all categories on their first visit to your site, and then on their next visit to the site only consented to sharing data for functional and advertising purposes but not for analytics or data sharing, a [Track call](/docs/connections/spec/track/) demonstrating their new consent preferences would have the following format:
 
 ``` json
 {
@@ -59,7 +58,6 @@ If an end user changes the categories they consent to (or if they consent using 
 >
 > See the [Semantic Events](/docs/connections/spec/semantic/) docs for more details.
 
---->
 
 To learn more about configuring consent categories in your workspace, see the [Configure Consent Management documentation](/docs/privacy/configure-consent-management/).
 
@@ -71,6 +69,7 @@ Segment requires every event from all of your sources to include the end-user co
 {
 "context": {
   "consent": {
+    "version": 1,
     "consentPreferences": {
         "Advertising": true,
         "Analytics": false,
@@ -82,15 +81,12 @@ Segment requires every event from all of your sources to include the end-user co
 }
 
 ```
-<!--- Q3 scope: 
 
 ### Consent policy version
 
-add to snippet above:"     "version": 1,"
-
 Segment assigns a `version` to your consent object. The `version` describes the version of Segment's consent schema that message used.
 
-A consent conflict flag and the categories consented to by a user are both pulled from the consent object and are visible as traits on a user's profile in Unify. --->
+A consent conflict flag and the categories consented to by a user are both pulled from the consent object and are visible as traits on a user's profile in Unify.
 
 
 ## Reconcile consent conflicts
