@@ -57,4 +57,8 @@ Data sent server-side for users must match an already existing userId that was s
 The new 'Identify User V2' and 'Track Event V2' actions will automatically create users when a user matching the
 provided UID is not found.
 
+### Why can't I propagate GDPR deletions?
+
+GDPR deletions require an `Admin` or `API` key to propagate. You may also contact FullStory directly for deletions. 
+
 {% include components/actions-fields.html %}
