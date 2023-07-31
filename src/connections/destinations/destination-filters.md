@@ -48,6 +48,9 @@ To create a destination filter:
 7. Name your filter and click the toggle to enable it.
 8. Click **Save**.
 
+> info "Toggle Destination Filters On"
+> Go to your Analytics.js settings and be sure to toggle **Destination Filters** on. Enabling device mode destination filters will enable the destination filters that you have configured on destinations attached to this source to operate in device mode where applicable.
+
 ## Destination filters API
 
 The destination filters API provides more power than Segment's dashboard destination filters settings. With the API, you can create complex filters that are conditionally applied using Segment's [Filter Query Language (FQL)](/docs/api/config-api/fql/).
