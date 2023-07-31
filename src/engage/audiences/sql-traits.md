@@ -259,4 +259,4 @@ Check that you've configured the identifier that uniquely identifies users in a 
 
 ### Why doesn't the identifier updated by a SQL trait show the correct value found in the column?
 
-Ensure that the name given to the SQL trait is not the same name as the identifier or column name from the query. To use SQL trait to update the identifier, the identifier will need to be a column in the query of your SQL trait. The column name in the query of SQL trait should be the one that Identity Resolution use to generate the identifier. 
+Ensure that the name given to the SQL trait is not the same name as the identifier or column name from the query. To use SQL traits to update an identifier, the identifier will need to be a column in the query of your SQL trait. The column name in the query of the SQL trait should be the one that Identity Resolution uses to generate the identifier. 
