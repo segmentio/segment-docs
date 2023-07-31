@@ -34,7 +34,7 @@ Analytics Kotlin is a huge leap forward in terms of performance when compared to
 
 ### Developer Experience
 
-Analytics Kotlin adds several improvements to the overall experience of using the core SDK, as well as improvements to the overall [Plugin Architecture](/docs/connections/sources/catalog/libraries/mobile/kotlin-android/kotlin-android-plugin-architecture)
+Analytics Kotlin adds several improvements to the overall experience of using the core SDK, as well as improvements to the overall [Plugin Architecture](/docs/connections/sources/catalog/libraries/mobile/kotlin-android/kortlin-android-plugin-architecture)
 
 - Ability to use Type Safe data structures rather than just dictionaries.
 - Simpler syntax and more developer friendly overall.
