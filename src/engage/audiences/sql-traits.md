@@ -257,6 +257,6 @@ Segment added the compute schedule feature on Feb 8, 2021, so traits created pri
 
 Check that you've configured the identifier that uniquely identifies users in a SQL query (`user_id`, `anonymous_id`, `email`, or `group_id` for account traits) in Identity Resolution settings as an identifier. This ensures the trait is added to the user's profile with the correct identifier. If you don't configure the identifier in Identity Resolution settings, the trait's value is not added to the user profile.
 
-### Why doesn't the identifier updated by SQL trait shows the correct value found in the column?
+### Why doesn't the identifier updated by a SQL trait show the correct value found in the column?
 
 Ensure that the name given to the SQL trait is not the same name as the identifier or column name from the query. To use SQL trait to update the identifier, the identifier will need to be a column in the query of your SQL trait. The column name in the query of SQL trait should be the one that Identity Resolution use to generate the identifier. 
