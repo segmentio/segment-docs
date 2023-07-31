@@ -69,8 +69,8 @@ This query computes whether a user has an open ticket:
 To use SQL Traits, you need the following:
 
 - a warehouse connected to Segment
-- an Engage Segment workspace
-- a user account with access to Engage in that workspace
+- a Segment workspace
+- a user account with access to Unify in that workspace
 
 ### Step 1. Set up a warehouse source
 
