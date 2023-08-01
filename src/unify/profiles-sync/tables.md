@@ -146,6 +146,7 @@ The anonymous site visits sample used earlier would generate the following event
 
 In this table, Segment shows three observed identifiers. For each of the three identifiers, Segment outputs the Segment ID initially associated with the identifier.
 
+
 ### The identifies, page, screens, and track tables
 
 These tables show the instrumented events themselves. Entries in these tables reflect payloads that you instrument according to the Segment spec.
@@ -181,8 +182,10 @@ And two entries in the `identifies` table:
 
 All these events were performed by the same person. If you use these tables to assemble your data models, though, always join them against `id_graph` to resolve each event’s `canonical_segment_id`.
 
+
 > info ""
 > You might see columns appended with `hidden_entry` or `hidden_entry_joined_at` in profile data of users in Journeys. Segment uses these for internal purposes, and they do not require any attention or action.
+
 
 ### Profiles Sync schema
 

@@ -84,4 +84,13 @@ Google may take [24-48 hours](https://support.google.com/analytics/answer/933379
 
 Ensure that at least one mapping has been configured and enabled in the destination mappings for an event you want to send to Google Analytics. If no mappings are enabled, the destination does not send events.
 
+1. Disable the **Page Views** advanced setting (set it to *False*) so only Segment's `analytics.page()` sends to the GA4 SDK. Or,
+2. Edit or disable the preset **Set Configuration Fields** mapping so only the `page_view` included in the gtag.js snippet sends to the GA4 SDK.
+
+### Tracking UTM Parameters
+
+UTM Parameters are automatically tracked and sent to Google when they are present in the URL. For example, with the following URL:
+`https://www.example.com/?utm_content=email_variation1&utm_medium=email&utm_source=email_promo&utm_campaign=summer_sale&utm_id=abcd`
+
+Without any further configuration, traffic-source data for `campaign`, `campaign_id`, `content`, `medium`, and `source` will populate in GA4. This can be observed on Google's side by triggering a `Page` call with UTM parameters present in the URL and navigating to the **Realtime overview** report in GA4 to see the resulting `page_view` event under the _Event count by Event name_ card. 
 
