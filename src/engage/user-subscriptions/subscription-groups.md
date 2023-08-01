@@ -7,7 +7,7 @@ Subscription groups let your users choose the emails they want to recieve from y
 
 ## About subscription groups
 
-A subscription group let you send emails campaigns to specific groups of users. Subscription groups also give your customers the ability to manage their email preferences, ensuring they only get emails they want to receive.
+A subscription group lets you send email campaigns to specific groups of users. Subscription groups also give your customers the ability to manage their email preferences, ensuring they only get emails they want to receive.
 
 For example, you may want to create a subscription group that will receive only promotional email campaigns. Should a customer decide to opt out of your promotional campaigns, they'll still be able to receive email campaigns from other subscription groups you've created and to which they've subscribed.
 
