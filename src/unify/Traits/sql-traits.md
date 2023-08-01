@@ -9,12 +9,8 @@ redirect_from:
 > info ""
 > Beginning August 18, 2023, new Unify Plus users can access SQL Traits in Unify. 
  
-<!--
-> info ""
-> Unify Plus includes 50 compute credits, which can be used towards either SQL or [Computed Traits](/docs/unify/traits/computed-traits/). To learn more, visit [Segment's pricing page](https://segment.com/pricing/){:target="_blank"}.
--->
  
-Use SQL Traits to import user or account traits from your data warehouse back into Engage to build audiences or to enhance Segment data that you send to other Destinations.
+Use SQL Traits to import user or account traits from your data warehouse back into Unify or Engage to build audiences or to enhance data that you send to other Destinations.
 
 SQL Traits are only limited by the data in your warehouse. Because anything you can write a query for can become a SQL Trait, you can add detail to your user and account profiles, resulting in more nuanced personalization.
 

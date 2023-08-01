@@ -9,16 +9,12 @@ redirect_from:
 > info ""
 > Beginning August 18, 2023, new Unify Plus users can access Computed Traits in Unify. 
 
-<!--
-> info ""
-> Unify Plus includes 50 compute credits, which can be used towards either [SQL](/docs/unify/traits/sql-traits/) or Computed Traits. To learn more, visit [Segment's pricing page](https://segment.com/pricing/){:target="_blank"}.
--->
 
 Computed Traits allow you to quickly create user or account-level calculations that Segment keeps up-to-date over time. These can be computations like the `total_num_orders` a customer has completed, the `lifetime_revenue` of a customer, the `most_frequent_user` to determine which user is most active in an account, or the `unique_visitors_count` to assess how many visitors from a single domain. These computations are based on your events and event properties that you are sending through Segment on the [page](/docs/connections/spec/page/) and [track](/docs/connections/spec/track) calls.
 
 ## Types of Computed Traits
 
-Engage currently supports the following types of computed traits:
+Segment currently supports the following types of computed traits:
 - [Types of Computed Traits](#types-of-computed-traits)
   - [Event Counter](#event-counter)
   - [Aggregation](#aggregation)
@@ -160,7 +156,7 @@ The following operators are available.
 
 ## Connecting your Computed Trait to a Destination
 
-Engage sends user-level computed Traits to destinations using the [Identify call](/docs/connections/spec/identify/) for user traits, or using the [Track call](/docs/connections/spec/track/) for event properties. Segment includes the trait value and property in the identify and track calls.
+Segment sends user-level computed Traits to destinations using the [Identify call](/docs/connections/spec/identify/) for user traits, or using the [Track call](/docs/connections/spec/track/) for event properties. Segment includes the trait value and property in the identify and track calls.
 
 For example, the name of a computed trait is added to the user profile as a trait, and the trait's value is set to the value of the computed trait. Segment sends an identify or track call when the trait is computed, depending on the destination configuration. If a computed trait counts the number of times a user visits your pricing page, and the user visits your pricing page five times, Segment sends an identify call with the property `pricing_page_visits: 5`.
 
@@ -173,20 +169,20 @@ For account-level computed traits, you have the option to send either a [group](
 After you create a computed trait, use the Overview page to view a compute progress bar, current [status](/docs/engage/audiences#compute-statuses), number of users with the trait, connected destinations, and more. For real-time traits, click **Refresh Trait** to update the current number of users with the trait.  
 
 > info "Viewing compute progress"
-> When you create a real-time computed trait, you'll see a progress bar, computed percentage, and status updates. For existing traits that you edit, Engage displays the compute status but not the progress bar or percentage.
+> When you create a real-time computed trait, you'll see a progress bar, computed percentage, and status updates. For existing traits that you edit, Segment displays the compute status but not the progress bar or percentage.
 
 ## Editing Realtime Traits
 
-Engage supports the editing of real-time Traits, which allows you to make nuanced changes to existing Traits in situations where cloning or building from scratch may not suit your use case.
+Segment supports the editing of real-time Traits, which allows you to make nuanced changes to existing Traits in situations where cloning or building from scratch may not suit your use case.
 
 To edit a real-time Trait, follow these steps:
 
-1. In your Engage Space, select the **Computed Traits** tab.
+1. In your Unify or Engage space, select the **Computed Traits** tab.
 2. Select the realtime Trait you want to edit.
 3. Select the **Builder** tab and make your edits.
 4. Preview the results, then select **Save Computed Trait** to confirm your edits.
 
-Engage then processes your Trait edits. While the edit task runs, the trait remains locked and you can't make further changes. Once Engage incorporates your changes, you'll be able to access your updated Trait.
+Segment then processes your Trait edits. While the edit task runs, the trait remains locked and you can't make further changes. Once Segment incorporates your changes, you'll be able to access your updated Trait.
 
 
 > warning ""
