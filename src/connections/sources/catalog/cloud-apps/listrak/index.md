@@ -75,60 +75,20 @@ The table below lists events that Listrak sends to Segment. These events appear 
 
 The table below lists the properties included in the events listed above.
 
-<table>
-  <tr>
-   <td>Property Name</td>
-   <td>Description</td>
-  </tr>
-  <tr>
-   <td>`email_id`</td>
-   <td>An ID used to identify the email</td>
-  </tr>
-  <tr>
-   <td>`email_subject`</td>
-   <td>The email’s subject line</td>
-  </tr>
-  <tr>
-   <td>`campaign_name`</td>
-   <td>A name used to identify a Listrak campaign</td>
-  </tr>
-  <tr>
-   <td>`link_id`</td>
-   <td>An ID used to identify a link</td>
-  </tr>
-  <tr>
-   <td>`link_url`</td>
-   <td>The URL the link points to</td>
-  </tr>
-  <tr>
-   <td>`google_analytics_campaign_name`</td>
-   <td>A name used to identify a Google Analytics campaign</td>
-  </tr>
-  <tr>
-   <td>`list_id`</td>
-   <td>An ID used to identify a list</td>
-  </tr>
-  <tr>
-   <td>`list_name`</td>
-   <td>A name used to identify a list</td>
-  </tr>
-  <tr>
-   <td>`order_total`</td>
-   <td>The order total associated with the conversion</td>
-  </tr>
-  <tr>
-   <td>`context.ip`</td>
-   <td>The opening computer’s public IP address</td>
-  </tr>
-  <tr>
-   <td>`context.traits.email`</td>
-   <td>The intended recipient’s email address</td>
-  </tr>
-  <tr>
-   <td>`context.user_agent`</td>
-   <td>The opening browser’s user agent</td>
-  </tr>
-</table>
+Property Name | Description
+--------------- | ------------
+`email_id`| An ID used to identify the email.
+`email_subject`| The email’s subject line.
+`campaign_name`| A name used to identify a Listrak campaign.
+`link_id` | An ID used to identify a link.
+`link_url` | The URL the link points to.
+`google_analytics_campaign_name` | A name used to identify a Google Analytics campaign.
+`list_id` | An ID used to identify a list.
+`list_name` | A name used to identify a list.
+`order_total` | The order total associated with the conversion.
+`context.ip` | The opening computer’s public IP address.
+`context.traits.email` | The intended recipient’s email address.
+`context.user_agent` | The opening browser’s user agent.
 
 ## Adding Destinations
 
