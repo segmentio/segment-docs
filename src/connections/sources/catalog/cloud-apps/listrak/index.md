@@ -39,7 +39,7 @@ This source is maintained by Listrak. For any issues with the source, [contact t
 
 Listrak uses our stream Source component to send Segment event data. It uses the server-side `identify` and `track` methods to send data to Segment. These events are then available in any destination that accepts server-side events, and available in a schema in your data warehouse, so you can query using SQL.
 
-Listrak always sets the `anonymousId` and the `email` trait to the email address of the contact.
+Listrak sets the `anonymousId` and the `email` trait to the email address of the contact.
 
 If a profile field was entered when the email list was added to the integration and the email address has a value for that profile field, the `userId` will be set to that value when sending `identify` events. Otherwise, Listrak will not set the `userId`. The `userId` will not be set for any `track` events. 
 
