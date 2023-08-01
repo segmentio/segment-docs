@@ -13,7 +13,7 @@ Developing the machine-learning capabilities necessary to produce these recommen
 
 ## Getting Started
 
-{% include content/connection-modes.md %}
+
 
 These are the pre-requisites you need before getting started:
 
@@ -720,18 +720,19 @@ Segment provides an example Lambda function, written in Python, for you to get u
 
 To build a Lambda function to process Segment events:
 1. Go to the Lambda service page in your AWS account.
-2. Click **Create a function** to create a new function.
+2. Ensure that you are in AWS Region 'us-west-2'. You must be in us-west-2 so that Segment's Lambdas can  communicate with your resources.
+3. Click **Create a function** to create a new function.
 
     ![A screenshot of the Lambda service page in AWS, with a box around the Create a function button.](images/LambdaDashboard.png)
 
-3. Select **Author from scratch** since Segment will be providing the source code for the function.
+4. Select **Author from scratch** since Segment will be providing the source code for the function.
 
-4. Enter a name for your function and select **Python 3.7** for the runtime.
+5. Enter a name for your function and select **Python 3.7** for the runtime.
 
-5. For the **Role** field, select **Create a new role from AWS policy templates** from the dropdown.
-6. Create a **Role name** that makes sense for you, and leave **Policy templates** empty. You will come back to modify this role shortly.
+6. For the **Role** field, select **Create a new role from AWS policy templates** from the dropdown.
+7. Create a **Role name** that makes sense for you, and leave **Policy templates** empty. You will come back to modify this role shortly.
 
-7. Click **Create function**.
+8. Click **Create function**.
 
     ![A screenshot of the Create a function settings page, with a function name, runtime, permissions, and role name entered.](images/LambdaCreateFunction.png)
 

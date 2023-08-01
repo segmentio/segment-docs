@@ -12,7 +12,7 @@ The Perkville Destination is in beta, which means that they are still actively d
 
 ## Getting Started
 
-{% include content/connection-modes.md %}
+
 
 1. From the Destinations catalog page in the Segment App, click **Add Destination**.
 2. Search for "Perkville" in the Destinations Catalog, and select the "Perkville" destination.

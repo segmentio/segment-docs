@@ -9,7 +9,7 @@ This destination is maintained by SegMetrics. For any issues with the destinatio
 
 ## Getting Started
 
-{% include content/connection-modes.md %}
+
 
 1. Go to your [Integrations tab](https://app.segmetrics.io/a/integration) in SegMetrics, and click **Connect** for the Segment Integration.
 2. Go to your [Account Settings](https://app.segmetrics.io/a/account/edit) and copy your SegMetrics `Account Id` and `API Key`.

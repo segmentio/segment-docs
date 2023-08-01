@@ -458,6 +458,7 @@ If you hate defaults, than you'll love how configurable the Analytics.NET is. Ch
 Analytics.Initialize("YOUR_WRITE_KEY", new Config()
     .SetAsync(true)
     .SetTimeout(TimeSpan.FromSeconds(10))
+    .SetHost("https://events.eu1.segmentapis.com")
     .SetMaxQueueSize(10000));));
 ```
 
@@ -469,6 +470,10 @@ Analytics.Initialize("YOUR_WRITE_KEY", new Config()
   <tr>
     <td>`timeout` _TimeSpan_</td>
     <td>The amount of time to wait before calling the HTTP request a timeout.</td>
+  </tr>
+  <tr>
+    <td>`host` _string_</td>
+    <td>The API host server address - can be set with the EU endpoint "https://events.eu1.segmentapis.com" instead of default server "https://api.segment.io"</td>
   </tr>
   <tr>
     <td>`maxQueueSize` _int_</td>

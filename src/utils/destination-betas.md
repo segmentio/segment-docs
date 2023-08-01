@@ -1,6 +1,7 @@
 ---
 title: Destination Beta finder
 hidden: true
+published: false
 ---
 
 <table>

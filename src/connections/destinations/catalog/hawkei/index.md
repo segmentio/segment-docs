@@ -13,7 +13,7 @@ This destination is maintained by Hawkei. For any issues with the destination, [
 
 ## Getting Started
 
-{% include content/connection-modes.md %}
+
 
 1. From the Segment web app, click **Catalog**.
 2. Search for "Hawkei" in the Catalog, select it, and choose which of your sources to connect the destination to.

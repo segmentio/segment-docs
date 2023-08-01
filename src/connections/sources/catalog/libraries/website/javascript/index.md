@@ -212,6 +212,8 @@ The [Page](/docs/connections/spec/page/) method lets you record page views on yo
 
 Because some Destinations require a `page` call to instantiate their libraries, **you must call `page`** at least once per page load. You can call it more than once if needed, for example, on virtual page changes in a single page app.
 
+See the implementation guide for more information about [calling the Page method](/docs/getting-started/04-full-install/#when-to-call-page).
+
 Analytics.js includes a Page call by default as the final line in [the Analytics.js snippet](/docs/connections/sources/catalog/libraries/website/javascript/quickstart/#step-2-copy-the-segment-snippet). You can update this `page` call within the guidelines below.
 
 The `page` method follows the format below.
@@ -267,6 +269,8 @@ analytics.page('Pricing', {
   referrer: 'https://segment.com/warehouses'
 });
 ```
+
+Segment sets the `path` and `url` property to the value of the canonical element on your page. If a canonical element is not set, the values will be set from the browser. 
 
 ### Group
 
@@ -559,6 +563,14 @@ For example:
 analytics.load('writekey', { disableAutoISOConversion: true })
 ```
 
+#### Client hints
+Some `userAgent` strings are frozen and contain less information. If you would like to request more information when it's available, you can pass an array of strings with fields you would like to request to the `highEntropyValuesClientHints` option. The example array below contains all possible values.
+
+For example:
+
+```js
+analytics.load('writekey', { highEntropyValuesClientHints: ['architecture', 'bitness', 'model', 'platformVersion', 'uaFullVersion', 'fullVersionList', 'wow64'] })
+```
 
 ## Retries
 

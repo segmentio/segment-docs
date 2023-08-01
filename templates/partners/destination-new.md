@@ -27,8 +27,7 @@
 ## Template begins here...
 
 ---
-title: <integration_name> Destination
-id: <integration_id>
+title: [integration_name] Destination
 ---
 
 > (delete after reading) This template is meant for Actions-based destinations that do not have an existing Classic or non-Actions-based version. For Actions Destinations that are a new version of a classic destination, see the doc-template-update.md template.

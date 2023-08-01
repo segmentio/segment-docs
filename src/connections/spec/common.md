@@ -75,7 +75,25 @@ Here's an example of these common fields in raw JSON:
     },
     "groupId": "12345",
     "timezone": "Europe/Amsterdam",
-    "userAgent": "Mozilla/5.0 (iPhone; CPU iPhone OS 9_1 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Version/9.0 Mobile/13B143 Safari/601.1"
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/113.0.0.0 Safari/537.36",
+    "userAgentData": {
+      "brands": [
+        {
+          "brand": "Google Chrome",
+          "version": "113"
+        },
+        {
+          "brand": "Chromium",
+          "version": "113"
+        },
+        {
+          "brand": "Not-A.Brand",
+          "version": "24"
+        }
+      ],
+      "mobile": false,
+      "platform": "macOS"
+    }
   },
   "integrations": {
     "All": true,
@@ -134,6 +152,7 @@ Context is a dictionary of extra information that provides useful context about 
 | `groupId`   | String  | Group / Account ID. <br><br> This is useful in B2B use cases where you need to attribute your non-group calls to a company or account. It is relied on by several Customer Success and CRM tools.                                                                                                               |
 | `traits`    | Object  | Dictionary of `traits` of the current user. <br><br> This is useful in cases where you need to `track` an event, but also associate information from a previous `identify` call. You should fill this object the same way you would fill traits in an [identify call](/docs/connections/spec/identify/#traits). |
 | `userAgent` | String  | User agent of the device making the request.                                                                                                                                                                                                                                                                    |
+| `userAgentData` | Object | The user agent data of the device making the request. This always contains `brands`, `mobile`, `platform`, and may contain `bitness`, `model`, `platformVersion`,`uaFullVersion`, `fullVersionList`, `wow64`, if [requested](/docs/connections/sources/catalog/libraries/website/javascript/#client-hints) and available. <br><br> This populates if the [Client Hints API](https://developer.mozilla.org/en-US/docs/Web/API/User-Agent_Client_Hints_API){:target="_blank"} is available on the browser. <br><br> This may contain more information than is available in the `userAgent` in some cases.                                                                                                                                |
 | `channel`   | String  | where the request originated from: server, browser or mobile                                                                                                                                                                                                                                                    |
 
 
@@ -180,6 +199,7 @@ Other libraries only collect `context.library`, any other context variables must
 | screen.width             |              | ✅             | ✅                 |
 | traits                   |              | ✅             | ✅                 |
 | userAgent                | ✅            |               | ✅                 |
+| userAgentData*           | ✅           |                |                    |
 | timezone                 |              | ✅             | ✅                 |
 
 - IP Address isn't collected by Segment's libraries, but is instead filled in by Segment's servers when it receives a message for **client side events only**.
@@ -187,6 +207,8 @@ Other libraries only collect `context.library`, any other context variables must
 > Segment does not support collection of IP addresses that are in the IPv6 format.
   
 - The Android library collects `screen.density` with [this method](/docs/connections/spec/common/#context-fields-automatically-collected).
+
+- userAgentData is only collected if the [Client Hints API](https://developer.mozilla.org/en-US/docs/Web/API/User-Agent_Client_Hints_API){:target="_blank"} is available on the browser.
 
 To pass the context variables which are not automatically collected by Segment's libraries, you must manually include them in the event payload. The following code shows how to pass `groupId` as the context field of Analytics.js's `.track()` event:
 
@@ -263,3 +285,6 @@ The `timestamp` timestamp specifies when the data point occurred, corrected for 
 If you are using the Segment server Source libraries, or passing calls directly to the HTTP API endpoint, you can manually set the `timestamp` field. This change updates the `originalTimestamp` field of the Segment event. If you use a Segment Source in device mode, the library generates `timestamp` and you cannot manually set one directly in the call payload.  
 
 Segment calculates `timestamp` as `timestamp = receivedAt - (sentAt - originalTimeStamp)`.
+
+> info ""
+> For client-side tracking it's possible for the client to spoof the `originalTimeStamp`, which may result in a calcualted `timestamp` value set in the future.

@@ -9,7 +9,7 @@ rewrite: true
 
 ## Getting started
 
-{% include content/connection-modes.md %}
+
 
 1. From the Destinations catalog page in your Segment Workspace, click **Add Destination**.
 2. Search for "Worthy" in the Destinations Catalog, and select the **Worthy** destination.
