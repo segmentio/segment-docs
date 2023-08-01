@@ -258,3 +258,15 @@ There are a few necessary steps that have to be taken to migrate from Segment's 
    ![A screenshot of the Marketo Custom Activities field.](images/cg6YhDEPWXv+.png)
 
 6. When enabling Marketo V2, because of the way Marketo's API works, there is potential to create duplicate leads, especially when the first enabling the destination. For ways to prevent this, check out the Preventing Duplicate Leads.
+
+## Segment Sources Cannot Have Multiple Instances of Marketo V2 Destination
+Multiple instances of Marketo V2 are not allowed for any source in Segment, in either Device-Mode or Cloud-Mode. If you need a single source's data sent to multiple Marketo V2 workspaces, then follow the steps listed below on configuring a [Repeater destination]([url](https://segment.com/docs/connections/destinations/catalog/repeater/)) to route your source's data through the Repeater destination into a new source and new Marketo V2 destination instance.
+**Steps to Create a Repeater Destination, New Source, and second Marketo V2 destination**
+1. Create and Connect a new Repeater destination to your source : [link to Repeater destination in catalog]([url](https://app.segment.com/goto-my-workspace/destinations/catalog/repeater)) and select the intended source.
+2. Click Add destination, name the destination, and select Fill in settings manually.
+3. On the Repeater destination's Settings page, under Connection Settings is a setting called Write Keys. This is where your second source's writeKey will go, from Step 4.
+4. Create a new source (any type of source). Once created, navigate to its Settings tab / API Keys / and copy the value under Write Key.
+5. Navigate back to your Repeater destination and paste in the source's writeKey into that Write Key setting.
+6. Add a Marketo V2 destination to your new source with the desired configuration settings.
+7. Enable all three : Repeater Destination, new Source, new Marketo V2 Destination.
+8. You will begin seeing data transmitted from your originating source → to the Repeater Destination (Event Delivery) → to the new source (Debugger) → to Marketo V2 destination (Event Delivery)
