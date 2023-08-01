@@ -19,7 +19,7 @@ Listrak maintains this destination. For any issues with the destination, [contac
 To add the Listrak Actions destination: 
 
 1. Set up the [Listrak Source](/docs/connections/sources/catalog/cloud-apps/listrak/) first before connecting to the Listrak Actions Destination. Note the API client ID and client secret after creating the integration in Listrak.
-2. From your Segment workspace, go to **Connections > Catalog**.
+2. From your Segment workspace, go to **Connections > Catalog** and select the **Destinations** tab.
 3. Search for **Listrak (Actions)** in the Catalog and select the destination.
 4. Click **Add destination**.
 5. On the **Select data source** step, select your desired source. The source should not be a Listrak source. If you want to sync an Engage Audience, select the Engage space as the source. Click **Confirm Source**.
