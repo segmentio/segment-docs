@@ -37,7 +37,7 @@ This source is maintained by Listrak. For any issues with the source, [contact t
 
 ## Stream
 
-Listrak uses our stream Source component to send Segment event data. It uses the server-side `identify` and `track` methods to send data to Segment. These events are then available in any destination that accepts server-side events, and available in a schema in your data warehouse, so you can query using SQL.
+Listrak uses Segment's stream Source component to send Segment event data. It uses the server-side `identify` and `track` methods to send data to Segment. These events are then available in any destination that accepts server-side events, and available in a schema in your data warehouse, so you can query using SQL.
 
 Listrak sets the `anonymousId` and the `email` trait to the email address of the contact.
 
