@@ -187,7 +187,7 @@ sections:
     title: Implementation Guide
   - path: /connections/sources/catalog/libraries/mobile/kotlin-android/migration
     title: Migration Guide
-  - path: /connections/sources/catalog/libraries/mobile/kotlin-android/kortlin-android-plugin-architecture
+  - path: /connections/sources/catalog/libraries/mobile/kotlin-android/kotlin-android-plugin-architecture
     title: Plugin Architecture
   - path: /connections/sources/catalog/libraries/mobile/kotlin-android/destination-plugins
     title: Destination Plugins
