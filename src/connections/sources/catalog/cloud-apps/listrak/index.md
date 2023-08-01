@@ -48,28 +48,12 @@ Listrak maintains a trait for each email list you add to the integration using `
 
 The table below lists events that Listrak sends to Segment. These events appear as tables in your warehouse, and as regular events in other Destinations.
 
-<table>
-  <tr>
-   <td>Event Name</td>
-   <td>Description</td>
-  </tr>
-  <tr>
-   <td>Email Opened</td>
-   <td>Recipient opened the email</td>
-  </tr>
-  <tr>
-   <td>Email Link Clicked</td>
-   <td>Recipient clicked on a link in the email’s body</td>
-  </tr>
-  <tr>
-   <td>Email Bounced</td>
-   <td>Email servers rejected the email</td>
-  </tr>
-  <tr>
-   <td>Email Converted</td>
-   <td>Recipient placed an order after clicking on the email</td>
-  </tr>
-</table>
+Event Name | Description
+------------ | -------------
+Email Opened | The recipient opened the email.
+Email Link Clicked | The recipient clicked on a link in the email's body. 
+Email Bounced | The email servers rejected the email. 
+Email Converted | The recipient placed an order after clicking on the email. 
 
 ## Event Properties
 
