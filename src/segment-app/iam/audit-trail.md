@@ -93,15 +93,14 @@ The Audit Trail includes information on the following activity:
 
 ## Audit forwarding
 
-You can forward events in your workspace to supported sources which you have configured in the workspace.
+You can forward events in your workspace to supported sources that you have configured in the workspace.
 
 To forward Audit Trail events:
 
-1. Navigate to **Settings > Workspace Settings > Audit Forwarding**
-2. Select or Create an [event streams source](/docs/connections/sources/#event-streams-sources) to which you will forward workspace events
-3. Toggle the setting to **On** and click **Save Changes**
+1. Navigate to **Settings > Workspace Settings > Audit Forwarding**.
+2. Select or create an [event streams source](/docs/connections/sources/#event-streams-sources) to which you'll forward workspace events.
+3. Toggle the setting to **On** and click **Save Changes**.
 
-> info "Create a dedicated source for audit trail events"
-> It is more managable when all the audit trail events are forwarded to a dedicated source. In which case, we normally recommend the [HTTP API](/docs/connections/sources/catalog/libraries/server/http-api/) source.
+> info "Segment recommends creating a dedicated source for audit trail events"
+> Segment recommends forwarding all events to one instance of the [HTTP API](/docs/connections/sources/catalog/libraries/server/http-api/) source.  Segment passes all forwarded events through its entire processing pipeline. This ensures that Tracking Plans, Filters, and other features work with the audit events, and also ensures you can send those events to multiple downstream destinations.
 
-When you forward audit events to a supported source, Segment passes those events through its entire processing pipeline. This ensures that tracking plans, filters, and other features work with the audit events, and also ensures you can send those events to multiple downstream destinations.
