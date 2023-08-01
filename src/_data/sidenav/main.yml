@@ -352,6 +352,8 @@ sections:
       title: Set User Subscriptions
     - path: /engage/user-subscriptions/subscription-states
       title: Subscription States
+    - path: /engage/user-subscriptions/subscription-groups
+      title: Subscription Groups
     - path: /engage/user-subscriptions/subscription-sql
       title: Subscriptions with SQL Traits
   - section_title: Profiles
