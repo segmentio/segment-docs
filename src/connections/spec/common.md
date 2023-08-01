@@ -285,3 +285,5 @@ The `timestamp` timestamp specifies when the data point occurred, corrected for 
 If you are using the Segment server Source libraries, or passing calls directly to the HTTP API endpoint, you can manually set the `timestamp` field. This change updates the `originalTimestamp` field of the Segment event. If you use a Segment Source in device mode, the library generates `timestamp` and you cannot manually set one directly in the call payload.  
 
 Segment calculates `timestamp` as `timestamp = receivedAt - (sentAt - originalTimeStamp)`.
+
+**Note:** For client-side tracking it's possible for the client to spoof the `originalTimeStamp`, which may result in a calcualted `timestamp` value set in the future.
