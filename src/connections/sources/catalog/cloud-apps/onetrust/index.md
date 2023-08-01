@@ -8,7 +8,7 @@ OneTrust makes it easy for you to capture, centralize, govern, and sync consente
 
 This is an Event Cloud Source which can not only export data into your Segment warehouse, but they can also federate the exported data into your other enabled Segment Destinations. 
 
-This source is maintained by OneTrust. For any issues with the source, [contact their support team](support@onetrust.com).
+This source is maintained by OneTrust. For any issues with the source, [contact their support team](mailto:support@onetrust.com){:target="_blank”}.
 
 ## Getting Started 
 
@@ -37,7 +37,7 @@ The following table lists events that OneTrust sends to Segment. These events sh
 
 ## Event Properties
 
-The following table lists event properties included with all events Segment receives from Braze.
+The following table lists event properties included with all events Segment receives from OneTrust.
 
 |  Property Name | Type | Description |
 |  ------ | ------ | ------ |

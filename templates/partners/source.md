@@ -14,23 +14,20 @@
 >
 > The below template intends to provide a standardized structure. To submit your documentation, complete the following steps:
 >
-> 1. Clone the `segment-docs` repo locally
+> 1. Fork and clone the `segment-docs` repo locally
 > 2. Create a new branch (e.g., partner-name/source)
 > 3. Create an `index.md` file in the following path `src/connections/sources/catalog/cloud-apps/{source-slug}/index.md
 > 4. Copy the template below into your `index.md` file, and edit it to be in line with how your integration operates
-> 5. Add, commit, and push your code to the `segment-docs` repo and submit a pull request
+> 5. Add, commit, and push your code, then submit a pull request to the `segment-docs` repo
 >
 > If a section does not apply to your integration, feel free to remove. Please don’t create separate sections unless absolutely necessary. In most cases, creating a H3 (###) sub-heading under an existing section is the best option!
 >
 > If you have any questions in the meantime, please reach out to our team at partner-support@segment.com.
 
----
-
 ## Template begins here...
-
 ---
-
-## title: <integration_name> Source
+title: [integration_name] Source
+---
 
 > (delete after reading) Include a 1-2 sentence introduction to your company and the value it provides to customers - updating the name and hyperlink. Please leave the utm string unchanged.
 

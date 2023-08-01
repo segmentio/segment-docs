@@ -1,5 +1,5 @@
 ---
-title: CleverTap (Actions)
+title: CleverTap (Actions) Destination
 hide-boilerplate: true
 hide-dossier: true
 id: 61d7456b078e79929de4ee8c

@@ -11,7 +11,7 @@ This destination is maintained by Groundswell. For any issues with the destinati
 
 ## Getting Started
 
-{% include content/connection-modes.md %}
+
 
 1. From the Destinations catalog page in the Segment App, click **Add Destination**.
 2. Search for "Groundswell" in the Destinations Catalog, and select the Groundswell destination.

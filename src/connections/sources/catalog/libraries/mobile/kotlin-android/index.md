@@ -34,7 +34,7 @@ Analytics Kotlin is a huge leap forward in terms of performance when compared to
 
 ### Developer Experience
 
-Analytics Kotlin adds several improvements to the overall experience of using the core SDK, as well as improvements to the overall [Plugin Architecture](/docs/connections/sources/catalog/libraries/mobile/kotlin-android/kotlin-android-plugin-architecture)
+Analytics Kotlin adds several improvements to the overall experience of using the core SDK, as well as improvements to the overall [Plugin Architecture](/docs/connections/sources/catalog/libraries/mobile/kotlin-android/kotlin-android-plugin-architecture):
 
 - Ability to use Type Safe data structures rather than just dictionaries.
 - Simpler syntax and more developer friendly overall.
@@ -43,7 +43,7 @@ Analytics Kotlin adds several improvements to the overall experience of using th
 ### Device Mode Transformations & Filtering
 For the first time ever, developers can filter and transform their users’ events even before the events leave the mobile device. What’s more, these Filters & transformations can be applied dynamically (either via the Segment Dashboard, or via Javascript uploaded to the workspace) and do not require any app updates!
 
-Learn more about [Destination Filters]() on Mobile, and [Edge Functions]() on Mobile. 
+Learn more about [Destination Filters](https://github.com/segmentio/DestinationFilters-kotlin){:target="_blank"} on Mobile, and [Edge Functions](https://github.com/segmentio/EdgeFn-kotlin){:target="_blank"} on Mobile. 
 
 
 ## Getting started
@@ -198,7 +198,7 @@ Destinations are the business tools or apps that Segment forwards your data to. 
 
 Analytics for Kotlin is built with extensibility in mind. Use the tools list below to improve data collection.
 
-- [Plugin architecture](/docs/connections/sources/catalog/libraries/mobile/kotlin-android/kotlin-android-plugin-architecture)
+- [Plugin architecture](https://segment.com/docs/connections/sources/catalog/libraries/mobile/kotlin-android/destination-plugins/)
 - [Typewriter](/docs/connections/sources/catalog/libraries/mobile/kotlin-android/kotlin-android-typewriter)
 - [Destination filters](/docs/connections/sources/catalog/libraries/mobile/kotlin-android/kotlin-android-destination-filters)
 - [Code samples](/docs/connections/sources/catalog/libraries/mobile/kotlin-android/kotlin-android-samples)

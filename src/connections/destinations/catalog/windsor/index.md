@@ -15,7 +15,7 @@ You can find more information on Windsor on [the Windsor docs site](https://docs
 ## Getting Started
 
 
-{% include content/connection-modes.md %}
+
 
 1. From the Destinations catalog page in the Segment App, click **Add Destination**.
 2. Search for "Windsor" in the Destinations Catalog, and select the Windsor destination.

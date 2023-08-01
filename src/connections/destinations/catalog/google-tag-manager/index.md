@@ -55,7 +55,7 @@ analytics.track('Article Completed', {
 });
 ```
 
-When you make a Track call in with GTM enabled through Segment, the event data is pushed to the GTM `dataLayer`.
+When you make a `track` call with GTM enabled through Segment, the event data is pushed to the GTM `dataLayer`.
 
 For example, if you make this `track` call:
 
@@ -66,7 +66,7 @@ analytics.track('Played Video', {
 })
 ```
 
-Segment it to the `dataLayer` as an object like this:
+Segment sends it to the `dataLayer` as an object like this:
 
 ```json
 {
@@ -80,8 +80,12 @@ Segment it to the `dataLayer` as an object like this:
 ## Troubleshooting
 
 ### 404 Error
-
 If you are seeing `404` error on the JavaScript console of your page and it is attributed to Google Tag Manager, it is likely that you have yet to publish your GTM container.
+
+### Duplicate Events
+If you have Google Ads enabled and see duplicate events in GTM, check to see if the event is set as a conversion in Google Ads. Duplicate conversions are common when you use both Google Ads and GTM, since Segment's Adwords destination initializes the gtag script with the dataLayer itself. So, when you fire a mapped event, Segment submits the payload directly to the dataLayer.
+
+Google recommends using [transactionIds](https://support.google.com/google-ads/answer/6386790){:target="_blank" to prevent this duplication. 
 
 
 ## Appendices

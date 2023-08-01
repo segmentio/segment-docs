@@ -13,7 +13,7 @@ Segment makes it easy to send your data to Google Cloud Function (and lots of ot
 
 # Getting Started
 
-{% include content/connection-modes.md %}
+
 
 ## Build a Google Cloud Function to Process Segment Events
 

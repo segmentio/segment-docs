@@ -152,6 +152,15 @@ sections:
       title: Set Up a Custom Domain Proxy in Segment
     - path: /connections/sources/visual-tagger
       title: Visual Tagger
+    - section_title: Schema
+      slug: connections/schema
+      section: 
+      - path: /connections/sources/schema/
+        title: Schema Controls 
+      - path: /connections/sources/schema/destination-data-control
+        title: Using Schema Controls 
+      - path: /connections/sources/schema/schema-unique-limits
+        title: Schema Unique Limits   
   - section_title: Destinations
     slug: connections/destinations
     section:
@@ -178,6 +187,10 @@ sections:
       section:
       - path: /connections/reverse-etl/reverse-etl-source-setup-guides/bigquery-setup
         title: BigQuery Reverse ETL Setup
+      - path: /connections/reverse-etl/reverse-etl-source-setup-guides/databricks-setup
+        title: Databricks Reverse ETL Setup
+      - path: /connections/reverse-etl/reverse-etl-source-setup-guides/postgres-setup
+        title: Postgres Reverse ETL Setup
       - path: /connections/reverse-etl/reverse-etl-source-setup-guides/redshift-setup
         title: Redshift Reverse ETL Setup
       - path: /connections/reverse-etl/reverse-etl-source-setup-guides/snowflake-setup
@@ -191,6 +204,8 @@ sections:
       title: Source Functions
     - path: /connections/functions/destination-functions
       title: Destination Functions
+    - path: /connections/functions/insert-functions
+      title: Destination Insert Functions
     - path: /connections/functions/environment
       title: Functions Environment
     - path: /connections/functions/usage
@@ -337,8 +352,8 @@ sections:
       title: Set User Subscriptions
     - path: /engage/user-subscriptions/subscription-states
       title: Subscription States
-    - path: /engage/user-subscriptions/engage-source
-      title: Engage Events Source
+    - path: /engage/user-subscriptions/subscription-groups
+      title: Subscription Groups
     - path: /engage/user-subscriptions/subscription-sql
       title: Subscriptions with SQL Traits
   - section_title: Profiles
@@ -366,6 +381,8 @@ sections:
         title: Predictive Traits
       - path: '/engage/audiences/predictive-traits/using-predictive-traits'
         title: Using Predictive Traits
+      - path: '/engage/audiences/predictive-traits/suggested-predictive-audiences'
+        title: Suggested Predictive Audiences
 
   - section_title: Journeys
     description: "Learn how to create multi-step Journeys to tailor messages to your users."
@@ -394,7 +411,9 @@ sections:
     - path: '/engage/content/email/template'
       title: Email Template
     - path: '/engage/content/email/editor'
-      title: Email Template Editor
+      title: Drag and Drop Editor
+    - path: '/engage/content/email/html-editor'
+      title: HTML Editor
     - path: '/engage/content/sms/template'
       title: SMS Template
     - path: '/engage/content/whatsapp'
@@ -408,6 +427,8 @@ sections:
       title: Email Campaigns
     - path: '/engage/campaigns/sms-campaigns'
       title: SMS Campaigns
+    - path: '/engage/campaigns/broadcasts'
+      title: Broadcasts
     - path: '/engage/campaigns/whatsapp-campaigns'
       title: WhatsApp Campaigns
   - path: '/engage/analytics'

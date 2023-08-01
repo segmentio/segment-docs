@@ -30,13 +30,13 @@ This page is about the **Facebook Pixel**. For documentation on other Facebook d
 
 ## Getting Started
 
-{% include content/connection-modes.md %}
+
 
 1. From the Segment web app, click **Catalog**.
 2. Search for "Facebook Pixel" in the Catalog, select it, and choose which of your sources to connect the destination to.
 3. In the destination settings, enter your `pixelId` from the [Pixels tab in Facebook Ads Manager](https://www.facebook.com/ads/manager/pixel/facebook_pixel).
 
-Segment automatically initializes Facebook's pixel with your `pixelId` upon loading `analytics.js`.
+When you enable Facebook Pixel as a destination in your Segment workspace, Segment automatically initializes Facebook's pixel with your `pixelId` upon loading `analytics.js`. This means you should remove the native Facebook script from your page. 
 
 ## Page
 
@@ -129,7 +129,7 @@ To send *Legacy Conversion* events, use the Segment setting called "Legacy Conve
 
 ### Custom Events
 
-To send *Custom* events, send any event that does not appear in either mapping. All properties you included in the event will be included as event properties.
+To send *Custom* events, send any event that does not appear in either mapping. All properties you include in the event are included as event properties. Any events you don't add to the "Map Your Events to Standard FB Events" setting are sent to Facebook as a custom event. There is no setting to add custom events in the Facebook Pixel Destination configuration.
 
 ### Timestamps
 

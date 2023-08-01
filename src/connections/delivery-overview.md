@@ -6,8 +6,6 @@ Delivery Overview is a visual observability tool designed to help Segment users 
 
 > info "Delivery Overview is currently in beta"
 > This means that the Delivery Overview feature is in active development, and some functionality may change before it becomes generally available. Beta users of Delivery Overview will still have access to the Event Delivery tab. During the public beta, Delivery Overview will only support event-streaming, cloud-mode destinations.
->
-> The Delivery Overview public beta will be released to all Segment users on May 23, 2023 in a phased rollout. Users can expect to see the Delivery Overview tab in their destination details page by 5 PM PDT on May 26, 2023.
 
 ## Key features
 
@@ -25,7 +23,7 @@ The pipeline view shows the following steps:
 - **Successfully received**: Events that Segment ingested from your source
 - **Failed on ingest**: Events that Segment received, but were dropped due to internal data validation rules
 - **Filtered at source**: Events that were discarded due to schema settings or [Protocols](/docs/protocols/) tracking plans
-- **Filtered at destination**: Events that were discarded due to [Destination Filters](/docs/guides/filtering-data/#destination-filters), [filtering in the Integrations object](/docs/guides/filtering-data/#filtering-with-the-integrations-object), or [per source schema integration filters](/docs/guides/filtering-data/#per-source-schema-integrations-filters). Actions destinations also have a filtering capability: for example, if your action is set to only send Identify events, all other event types will be filtered out.
+- **Filtered at destination**: Events that were discarded due to [Destination Filters](/docs/guides/filtering-data/#destination-filters), [filtering in the Integrations object](/docs/guides/filtering-data/#filtering-with-the-integrations-object), or [per source schema integration filters](/docs/guides/filtering-data/#per-source-schema-integrations-filters). Actions destinations also have a filtering capability: for example, if your action is set to only send Identify events, all other event types will be filtered out. <!--- Beta users of [Consent Management](/docs/privacy/consent-management/) also see events discarded due to consent preferences.--->
 - **Failed delivery**: Events that have been discarded due to errors or unmet destination requirements
 - **Successful delivery**: Events that were successfully delivered to the destination
 

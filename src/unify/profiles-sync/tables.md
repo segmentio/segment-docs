@@ -111,7 +111,26 @@ If you’ll use Profiles Sync to build models, refer to the `id_graph` model, wh
 
 ### The external_id_mapping_updates table
 
-This table maps Segment-generated identifiers, like `segment_id`, to external identifiers that your users provide.
+This table maps Segment-generated identifiers, like `segment_id`, to external identifiers that your users provide. It has the following columns:
+
+| field                         | description                                                                                         |
+| ----------------------------- | --------------------------------------------------------------------------------------------------- |
+| `EXTERNAL_ID_HASH`            | The hash of the identifier sent in the incoming event.                                              |
+| `EXTERNAL_ID_TYPE`            | The type of external identifier sent in the incoming event, such as `user_id` or `anonymous_id`. External identifiers become the identities attached to a user profile. |
+| `EXTERNAL_ID_VALUE`           | The value of the identifier sent in the incoming event.                                             |
+| `ID`                          | A unique identifier for the table row.                                                              |
+| `RECEIVED_AT`                 | The timestamp when the Segment API receives the payload from the client or server.                      |
+| `SEGMENT_ID`                  | The Profile ID that Segment appends to an event or an identifier at the time it was first observed. |
+| `SEQ`                         | A sequential value derived from the timestamp.                                                      |
+| `TIMESTAMP`                   | The UTC-converted timestamp set by the Segment library.                                             |
+| `TRIGGERING_EVENT_ID`         | The specific ID of the incoming event.                                                              |
+| `TRIGGERING_EVENT_NAME`       | The specific name of the incoming event.                                                            |
+| `TRIGGERING_EVENT_SOURCE_ID`  | The specific source ID of the incoming event.                                                       |
+| `TRIGGERING_EVENT_SOURCE_NAME`| The name of the source that triggered the event.                                                    |
+| `TRIGGERING_EVENT_SOURCE_SLUG`| The slug of the source that triggered the event.                                                    |
+| `TRIGGERING_EVENT_TYPE`       | The type of tracking method used for triggering the incoming event.                             |
+| `UUID_TS`                     | A unique identifier of the timestamp.                                                               |
+
 
 The anonymous site visits sample used earlier would generate the following events:
 
@@ -126,6 +145,19 @@ The anonymous site visits sample used earlier would generate the following event
 </div>
 
 In this table, Segment shows three observed identifiers. For each of the three identifiers, Segment outputs the Segment ID initially associated with the identifier.
+
+### The profile_traits_updates table
+
+The `profile_traits_updates` table maps each `segment_id` with all associated profile traits. 
+
+Segment updates this table:
+- for each identify call that updates one or more traits for a `segment_id`.
+- for any merge where traits from two previously separated profiles are now combined. 
+
+In the event that two profiles merge, Segment only updates the `profile_traits_updates` table for the `canonical_segment_id`, or the fully merged id.
+
+From the `profile_traits_updates` table, use Segment's [open-source dbt models](https://github.com/segmentio/profiles-sync-dbt){:target="_blank"}, or your own tools to materialize the [`profile_traits`](#the-profile-traits-table) table with all profiles and associated profile traits in your data warehouse. 
+
 
 ### The identifies, page, screens, and track tables
 
@@ -161,6 +193,11 @@ And two entries in the `identifies` table:
 </div>
 
 All these events were performed by the same person. If you use these tables to assemble your data models, though, always join them against `id_graph` to resolve each event’s `canonical_segment_id`.
+
+
+> info ""
+> You might see columns appended with `hidden_entry` or `hidden_entry_joined_at` in profile data of users in Journeys. Segment uses these for internal purposes, and they do not require any attention or action.
+
 
 ### Profiles Sync schema
 

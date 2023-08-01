@@ -3,9 +3,7 @@ title: Analytics React Native AppsFlyer Plugin
 strat: react-native
 ---
 
-AppsFlyer is the world’s leading mobile attribution & marketing analytics platform, helping app marketers around the world make better decisions. The AppsFlyer destination code is open-source. You can browse the code on GitHub for iOS and Android.
-
-Segment’s AppsFlyer destination plugin code is open source and available on GitHub. You can view it [here.](https://github.com/segmentio/analytics-react-native/tree/master/packages/plugins/plugin-appsflyer)
+AppsFlyer is the world’s leading mobile attribution and marketing analytics platform, helping app marketers around the world make better decisions. Segment’s AppsFlyer destination plugin code is open source and available on GitHub. You can view it [here.](https://github.com/segmentio/analytics-react-native/tree/master/packages/plugins/plugin-appsflyer)
 
 ## Getting Started
 
@@ -71,7 +69,7 @@ The Analytics React Native SDK [requires additonal setup](https://github.com/seg
 
 ## Identify
 
-If you're not familiar with the Segment Specs, take a look to understand what the [Identify method](/docs/connections/spec/identify/) does. An example iOS call would look like:
+If you're not familiar with the Segment Specs, take a look to understand what the [Identify method](/docs/connections/spec/identify/) does. An example call would look like:
 
 ```ts
 const { identify } = useAnalytics();
@@ -88,7 +86,7 @@ When you call `.identify()`, Segment uses AppsFlyer's `setCustomerUserID` to sen
 
 ## Track
 
-If you're not familiar with the Segment Specs, take a look to understand what the [Track method](/docs/connections/spec/track/) does. An example iOS call would look like:
+If you're not familiar with the Segment Specs, take a look to understand what the [Track method](/docs/connections/spec/track/) does. An example call would look like:
 
 ```ts
 const { track } = useAnalytics();

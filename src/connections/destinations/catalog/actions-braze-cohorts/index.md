@@ -37,6 +37,7 @@ To connect the Braze Cohorts destination:
 10. Under Select mappings, input the Audience Key you copied in Step 2 as the “Segment Engage Audience Key.” Do not change any other defaults. Click **Save** and toggle to enable the mapping.
      * **Note:** Users can be added or removed from cohorts through `ExternalId`, `DeviceId`, or the `UserAlias` object. The priority is `ExternalId`, then `DeviceId`, and finally `UserAlias` if all are provided.
      * The Audience Key must be manually entered to ensure users in the Engage Audience are sent to the correct cohort in Braze. For every Engage Audience you want to send to Braze, a separate **Sync Audience** mapping must be created. You can create up to 50 mappings within an instance of the Braze Cohorts destination.
+     * Create the mapping with trigger conditions: `Event Name` is `Audience Entered/Exited` and `Event Property` `audience_key` is `<audience_key>`. Hardcode the audience key in the "Segment Engage Audience Key" field of the mapping. 
      
 11. Navigate back to **Engage > Audiences** and click on the Audience from Step 1. 
 

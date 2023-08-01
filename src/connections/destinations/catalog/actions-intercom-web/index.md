@@ -40,3 +40,11 @@ Intercom Web (Actions) provides the following benefits over the classic Intercom
 7. Enable the destination and configured mappings.
 
 {% include components/actions-fields.html settings="true"%}
+
+## Troubleshooting
+
+### Requests to Intercom return a 404 response
+If you are seeing 404 responses in your browser's network tab, you've likely encountered one of two issues:
+
+- You set the wrong App ID on the Intercom Actions (Web) destination settings page.
+- You set the wrong Regional Data Hosting value on the Intercom Actions (Web) destination settings page. Intercom gates regional endpoints by plan level, so you may not have access to EU data hosting.

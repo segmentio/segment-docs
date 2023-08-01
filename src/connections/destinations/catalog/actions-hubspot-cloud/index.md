@@ -17,7 +17,7 @@ HubSpot is an all-in-one marketing tool that helps attract new leads and convert
 When you use the HubSpot Cloud Mode (Actions) destination, Segment sends your data to [HubSpot's REST API](https://developers.hubspot.com/docs/api/overview){:target="_blank"}.
 
 > warning ""
-> The **Upsert Company** action is not compatible with the Segment Event Tester. As a result, Segment recommends using other tools to test and troubleshoot the creation and updates of companies in HubSpot.
+> The **Upsert Company** action is not compatible with the Mapping Tester on the mappings page if Associate Contact is set to **Yes**. As a result, Segment recommends using the Event Tester or other tools to test and troubleshoot creating and updating companies in HubSpot. Please note, for the company to contact association to work, you are required to trigger an Upsert Contact action before triggering an Upsert Company action.
 
 
 ## Benefits of HubSpot Cloud Mode (Actions) vs HubSpot Classic
@@ -38,7 +38,8 @@ HubSpot Cloud Mode (Actions) provides the following benefits over the classic Hu
 2. Search for **HubSpot Cloud Mode (Actions)** in the Destinations Catalog, and select the destination.
 3. Click **Configure HubSpot Cloud Mode (Actions)**.
 4. Select the source that will send data to HubSpot Cloud Mode (Actions) and follow the steps to name your destination.
-5. On the **Settings** tab, authenticate with HubSpot using OAuth. Your user must be a [super admin](https://knowledge.hubspot.com/settings/hubspot-user-permissions-guide#super-admin){:target="_blank"} in the HubSpot account to authenticate the connection.
+5. On the **Settings** tab, authenticate with HubSpot using OAuth. Your user must be a [super admin](https://knowledge.hubspot.com/settings/hubspot-user-permissions-guide#super-admin){:target="_blank"} in the HubSpot account to authenticate the connection. Click **Connect app**.
+![Hubspot Scope Approval Screen](images/scopeApproval.png)
 6. Follow the steps in the Destinations Actions documentation on [Customizing mappings](/docs/connections/destinations/actions/#customize-mappings).
 7. Enable the destination and configured mappings.
 
@@ -46,6 +47,16 @@ HubSpot Cloud Mode (Actions) provides the following benefits over the classic Hu
 > To ensure that data is sent downstream, configure and enable at least one mapping to handle a connected sources event(s).
 
 {% include components/actions-fields.html %}
+
+
+## Support for association between two custom object records in upsert custom object records
+To associate two records, it's mandatory to have these three fields: **Search Fields to associate** , **ObjectType to associate**, and **Association Label**. If any of these three fields aren't configured, the association skips.
+
+Field | Details
+----- | --------
+Search Fields to associate |  This finds a unique record of custom object based on key-value search properties so that records can be associated together. <br> * An association record fails if there is more than one record returned from the search association object. <br> * An association skips if no record is found with the data provided in key:value format. 
+ObjectType to associate | To associate the newly created and updated custom object record with another object type, select the object type you want it to be associated with.
+Association Label | Select an association label between both the object types. From the HubSpot Dashboard, you can create associations between any type of object. To create an association label: <br>1. Log in to the [HubSpot Dashboard](https://app.hubspot.com/){:target="_blank"}. <br>2. Go to **Data Management > Objects > Custom Objects**. <br>3. Go to the **Associations** tab and click **Create association label**. 
 
 ## FAQ & Troubleshooting
 
@@ -62,6 +73,18 @@ HubSpot has several limits for custom behavioral events, including a limit on th
 > note ""
 > A HubSpot Enterprise Marketing Hub account is required to send Custom Behavioral Events.
 
+### Why can't I set an entire object for the Other properties field?
+
+This destination doesn't allow selecting an entire object for the Other properties field. HubSpot rejects API calls if a property name doesn't match with HubSpot's internal name. When working with a large object of key/value pairs, map each key/value pair to prevent rejection. This ensures that every key matches the pre-created property names in HubSpot.
+
 ### Does the HubSpot Cloud Mode (Actions) destination support EU data residency?
 Yes. HubSpot will automatically redirect API requests directly to an EU data center if your HubSpot instance is on an EU data center. See more in HubSpot's [Routing API Traffic](https://product.hubspot.com/blog/routing-api-traffic){:target="_blank"} article.
 
+### How can I disable or delete a destination from Segment?
+Follow the instructions in the docs to [disable](/docs/connections/destinations/actions/#disable-a-destination-action) or [delete](/docs/connections/destinations/actions/#delete-a-destination-action) a destination action from Segment.
+
+### How can I uninstall an app from my HubSpot account?
+Follow the steps mentioned [here](https://knowledge.hubspot.com/integrations/connect-apps-to-hubspot#uninstall-an-app){:target="_blank"} to uninstall or disconnect an app from your HubSpot account.
+
+### How does disconnecting and uninstalling affect a user's data and HubSpot account?
+Segment immediately stops sending data to HubSpot after you disconnect and uninstall a HubSpot account.

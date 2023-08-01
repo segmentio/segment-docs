@@ -15,7 +15,7 @@ Segment's Mixpanel destination code is open source and available on GitHub. You 
 
 ## Getting Started
 
-{% include content/connection-modes.md %}
+
 
 1. From the Segment app Destinations page click on **Add Destination**.
 2. Search for Mixpanel in the Destinations Catalog and confirm the Source to connect to.
@@ -366,7 +366,7 @@ analytics.identify({
 
 ### UTM Campaign Parameters
 
-Since Segment's client-side javascript library (`analytics.js`) loads `mixpanel.js` in the background, you'll get the exact same functionality of Mixpanel around UTM Campaign Parameters as you would when using Mixpanel directly.
+When used in Device Mode through a web source, Segment's client-side Javascript library, Analytics.js, loads `mixpanel.js` (Mixpanel’s direct SDK) in the background. As a result, you'll get the exact same functionality from Mixpanel around UTM Campaign Parameters as you would when using Mixpanel directly.
 
 [Read more in Mixpanel's UTM docs](https://mixpanel.com/help/questions/articles/can-i-track-google-analytics-style-utm-tags-with-mixpanel)
 
