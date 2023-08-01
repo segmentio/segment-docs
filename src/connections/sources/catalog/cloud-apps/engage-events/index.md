@@ -58,21 +58,23 @@ Twilio powers Engage SMS delivery. For more information, view [Twilio's document
 
 {% faqitem Email events %}
 
-| Event                    | Definition                                                                            |
-| ------------------------ | ------------------------------------------------------------------------------------- |
-| Email Processed          | An email was processed and is ready to be delivered.                                  |
-| Email Deferred           | The receiving server temporarily rejected the email.                                  |
-| Email Delivered          | An email was successfully delivered to the receiving server.                          |
-| Email Opened             | The recipient opened the email.                                                       |
-| Email Link Clicked       | The recipient clicked a link within the email.                                        |
-| Email Bounced            | The receiving server permanently rejected the email.                                  |
-| Email Dropped            | The email was dropped before delivery.                                                |
-| Email Marked as Spam     | The recipient marked the email as spam.                                               |
-| Email Machine Opened     | The email was [machine opened](/docs/engage/analytics/#understanding-machine-opens). |
-| Email Unsubscribed       | The recipient unsubscribed from all emails.                                           |
-| Email Group Unsusbcribed | The recipient unsubscribed from a specific group.                                     |
-| Email Subscribed         | The recipient subscribed to all emails.                                               |
-| Email Group Subscribed   | The recipient subscribed to a specific group.                                         |
+| Event                        | Definition                                                                           |
+| ---------------------------- | ------------------------------------------------------------------------------------ |
+| Email Processed              | An email was processed and is ready to be delivered.                                 |
+| Email Deferred               | The receiving server temporarily rejected the email.                                 |
+| Email Delivered              | An email was successfully delivered to the receiving server.                         |
+| Email Opened                 | The recipient opened the email.                                                      |
+| Email Link Clicked           | The recipient clicked a link within the email.                                       |
+| Email Bounced                | The receiving server permanently rejected the email.                                 |
+| Email Dropped                | The email was dropped before delivery.                                               |
+| Email Marked as Spam         | The recipient marked the email as spam.                                              |
+| Email Machine Opened         | The email was [machine opened](/docs/engage/analytics/#understanding-machine-opens). |
+| Email Unsubscribed           | The recipient unsubscribed from all emails.                                          |
+| Email Group Unsusbcribed     | The recipient unsubscribed from a specific group.                                    |
+| Email Subscribed             | The recipient subscribed to all emails.                                              |
+| Email Group Subscribed       | The recipient subscribed to a specific group.                                        |
+| Channel Subscription Updated | The user's subscription state was globally updated.                                  |
+| Group Subscription Updated   | A change was made to the user's subscription state for a specific group.             |
 
 <br>
 
