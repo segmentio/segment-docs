@@ -74,7 +74,7 @@ The table below lists events that Listrak sends to Segment. These events appear 
 
 ## Event Properties
 
-The table below list the properties included in the events listed above.
+The table below lists the properties included in the events listed above.
 
 <table>
   <tr>
