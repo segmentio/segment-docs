@@ -41,8 +41,7 @@ Listrak uses our stream Source component to send Segment event data. It uses the
 
 Listrak sets the `anonymousId` and the `email` trait to the email address of the contact.
 
-If a profile field was entered when the email list was added to the integration and the email address has a value for that profile field, the `userId` will be set to that value when sending `identify` events. Otherwise, Listrak will not set the `userId`. The `userId` will not be set for any `track` events. 
-
+If you entered a profile field when the email list was added to the integration and the email address has a value for that profile field, the `userId` is set to that value when you send identify events. Otherwise, Listrak won't send the `userId`. The `userId` won't be set for any `track` events.
 Listrak maintains a trait for each email list you add to the integration using `identify` events. The trait is named `listrak_list_{listId}`, where `{listId}` is the ID of the list (eg. `listrak_list_12345`). The trait will be set to true if the email address is subscribed to the list. The trait will be removed if the email address is not subscribed to the list. This trait can be used to create Engage audiences that only contain profiles that are subscribed to a Listrak list.
 
 ## Events
