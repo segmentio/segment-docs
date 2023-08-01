@@ -23,24 +23,56 @@ This source is maintained by Listrak. For any issues with the source, [contact t
 
 4. Click **Add Source** to save your settings.
 5. Copy the Write key from the Segment UI.
-6.  Log in to your [Listrak account](https://admin.listrak.com){:target="_blank"}, and navigate to Integrations > Integrations Management.
-6. Click **New Integration**.
-7. Click the Segment card
-8. Click Setup Integration
-9. Paste the Write key you copied from Segment and click **Save**.
-10. Add at least one email list that you want to sync with Segment and click **Save**.
+6. If using Unify and Engage Audiences:
+    1. Go to Unify > Unify settings > Profile sources
+    2. Click **Connect source**
+    3. Select the new Listrak source
+    4. Click **Connect source**
+7.  Log in to your [Listrak account](https://admin.listrak.com){:target="_blank"}, and navigate to Integrations > Integrations Management.
+8. Click **New Integration**.
+9. Click the Segment card
+10. Click Setup Integration
+11. Paste the Write key you copied from Segment and click **Save**.
+12. Add at least one email list that you want to sync with Segment and click **Save**.
 
-## Components
+## Stream
 
-**Stream**
+Listrak uses Segment's stream Source component to send Segment event data. It uses the server-side `identify` and `track` methods to send data to Segment. These events are then available in any destination that accepts server-side events, and available in a schema in your data warehouse, so you can query using SQL.
 
-Listrak uses our stream Source component to send Segment event data. It uses a server-side `identify` method to send data to Segment. These events are then available in any destination that accepts server-side events, and available in a schema in your data warehouse, so you can query using SQL.
+Listrak sets the `anonymousId` and the `email` trait to the email address of the contact.
 
-Listrak always sets the `anonymousId` and the `email` trait to the email address of the contact. 
+If you entered a profile field when the email list was added to the integration and the email address has a value for that profile field, the `userId` is set to that value when you send identify events. Otherwise, Listrak won't send the `userId`. The `userId` won't be set for any `track` events.
+Listrak maintains a trait for each email list you add to the integration using `identify` events. The trait is named `listrak_list_{listId}`, where `{listId}` is the ID of the list (eg. `listrak_list_12345`). The trait will be set to true if the email address is subscribed to the list. The trait will be removed if the email address is not subscribed to the list. This trait can be used to create Engage audiences that only contain profiles that are subscribed to a Listrak list.
 
-If a profile field was entered when the email list was added to the integration and the email address has a value for that profile field, the `userId` will be set to that value. Otherwise, Listrak will not set the `userId`. 
+## Events
 
-Listrak maintains a trait for each email list you add to the integration. The trait is named `Listrak_list_{listId}`, where `{listId}` is the ID of the list (eg. `Listrak_list_12345`). The trait will be set to true if the email address is subscribed to the list. The trait will be removed if the email address is not subscribed to the list. This trait can be used to create Engage audiences that only contain profiles that are subscribed to a Listrak list.
+The table below lists events that Listrak sends to Segment. These events appear as tables in your warehouse, and as regular events in other Destinations.
+
+Event Name | Description
+------------ | -------------
+Email Opened | The recipient opened the email.
+Email Link Clicked | The recipient clicked on a link in the email's body. 
+Email Bounced | The email servers rejected the email. 
+Email Converted | The recipient placed an order after clicking on the email. 
+
+## Event Properties
+
+The table below lists the properties included in the events listed above.
+
+Property Name | Description
+--------------- | ------------
+`email_id`| An ID used to identify the email.
+`email_subject`| The email’s subject line.
+`campaign_name`| A name used to identify a Listrak campaign.
+`link_id` | An ID used to identify a link.
+`link_url` | The URL the link points to.
+`google_analytics_campaign_name` | A name used to identify a Google Analytics campaign.
+`list_id` | An ID used to identify a list.
+`list_name` | A name used to identify a list.
+`order_total` | The order total associated with the conversion.
+`context.ip` | The opening computer’s public IP address.
+`context.traits.email` | The intended recipient’s email address.
+`context.user_agent` | The opening browser’s user agent.
 
 ## Adding Destinations
 
