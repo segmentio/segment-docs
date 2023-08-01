@@ -102,6 +102,15 @@ sources:
       - us
     endpoints:
       - us
+  - id: oKDLxtGyGI
+    display_name: Appy Pie Connect
+    hidden: false
+    slug: appy-pie-connect
+    url: connections/sources/catalog/cloud-apps/appy-pie-connect
+    regions:
+      - us
+    endpoints:
+      - us
   - id: pMeSH8K0gq
     display_name: attacker
     hidden: true
@@ -1113,6 +1122,15 @@ sources:
     hidden: false
     slug: shopify-littledata
     url: connections/sources/catalog/libraries/website/shopify-littledata
+    regions:
+      - us
+    endpoints:
+      - us
+  - id: rsNCavQtg2
+    display_name: Skyvia
+    hidden: false
+    slug: skyvia
+    url: connections/sources/catalog/cloud-apps/skyvia
     regions:
       - us
     endpoints:
