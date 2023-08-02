@@ -26,6 +26,9 @@ yarn add @segment/analytics-react-native-plugin-clevertap clevertap-react-native
 Run `pod install` after the installation to autolink the Clevertap SDK.
 
 See [CleverTap React Native SDK](https://github.com/CleverTap/clevertap-react-native/blob/master/docs/install.md) for more details of this dependency.
+> note ""
+> CleverTap requires a number of additional configuration steps whcih must be done outside of the Semgent Clevertap Plugin. you can find these details [here](https://developer.clevertap.com/docs/react-native-quick-start-guide).
+> 
 ## Usage
 
 Follow the [instructions for adding plugins](https://github.com/segmentio/analytics-react-native#adding-plugins) on the main Analytics client:
