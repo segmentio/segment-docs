@@ -1,5 +1,5 @@
 ---
-title: Analytics for Swift Plugin Architecture
+title: Analytics-Swift Plugin Architecture
 strat: swift
 ---
 
