@@ -40,6 +40,7 @@ Permission | Details
 `bigquery.jobs.create` | This allows Segment to execute queries on any datasets or tables your model query references, and also allows Segment to manage tables used for tracking.
 
 If you don't want to grant Segment `bigquery.datasets.create` access, you can create your own `__segment_reverse_etl` dataset and give Segment the following permissions: 
+
 Permission | Details
 ---------- | --------
 `bigquery.datasets.get` | This allows Segment to determine if the `__segment_reverse_etl` dataset exists.
