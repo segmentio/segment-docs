@@ -7,7 +7,7 @@ redirect_from:
 ---
 
 > info ""
-> Beginning August 18, 2023, new Unify Plus and Engage users can use this page for Segment's product limits. Existing users prior to this date can continue to refer to the Engage product limits [here](/docs/engage/product-limits/).
+> Beginning August 18, 2023, new Unify Plus and Engage users can refer to this page for Segment's product limits. Existing users prior to this date can continue to refer to the Engage product limits [here](/docs/engage/product-limits/).
 
 
 To provide consistent performance and reliability at scale, Segment enforces default use and rate limits within Unify. Most customers do not exceed these limits.
