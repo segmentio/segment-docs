@@ -1,9 +1,7 @@
 ---
 title: Protocols Frequently Asked Questions
+plan: protocols
 ---
-
-{% include content/plan-grid.md name="protocols" %}
-
 
 ## Protocols Notifications
 
