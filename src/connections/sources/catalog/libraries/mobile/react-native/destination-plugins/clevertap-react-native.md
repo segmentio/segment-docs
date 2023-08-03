@@ -29,6 +29,7 @@ See [CleverTap React Native SDK](https://github.com/CleverTap/clevertap-react-na
 
 > info ""
 > CleverTap requires a number of additional configuration steps which you must do outside of the Segment Clevertap Plugin. Learn more details in the [CleverTap React Native Quick Start Guide](https://developer.clevertap.com/docs/react-native-quick-start-guide){:target="_blank"}.
+
 ## Usage
 
 Follow the [instructions for adding plugins](https://github.com/segmentio/analytics-react-native#adding-plugins) on the main Analytics client:
