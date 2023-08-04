@@ -284,7 +284,7 @@ Setting | Details
 `flushInterval` _number_ | The number of milliseconds to wait before flushing the queue automatically. The default is: `10000`
 `httpRequestTimeout` _number_ | The maximum number of milliseconds to wait for an http request. The default is: `10000`
 `disable` _boolean_ | Disable the analytics library for testing. The default is: `false`
-`httpClient` _HTTPClient or HTTPClientFn_ | A custom HTTP Client implementation to support alternate libraries or proxies. Defaults to global fetch or node-fetch for older versions of node. See the [Overriding the default HTTP Client](#overriding-the-default-http-client) section for more details.
+`httpClient` _HTTPClient or HTTPClientFn_ | A custom HTTP Client implementation to support alternate libraries or proxies. Defaults to global fetch or node-fetch for older versions of node. See the [Overriding the default HTTP Client](#override-the-default-http-client) section for more details.
 
 > info ""
 > See the complete [`AnalyticsSettings` interface](https://github.com/segmentio/analytics-next/blob/master/packages/node/src/app/settings.ts){:target="_blank"}
