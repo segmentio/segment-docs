@@ -110,7 +110,7 @@ Profiles Sync sends profiles to your warehouse on an hourly basis, beginning aft
 
 When Segment runs historical backfills:
 
-- The `id_graph_updates` and `external_id_mapping_updates` tables sync your entire historical data to your warehouse.
+- The `id_graph_updates`, `external_id_mapping_updates`, and `profile_traits_updates` tables sync your entire historical data to your warehouse.
 - Profiles Sync gathers the last two months of all events, including those from the `identities`, `page`, `screens`, and `tracks` tables, and syncs them to your warehouse.
 
 Segment lands the data on an internal staging location, then removes the backfill banner. Segment then syncs the backfill data to your warehouse.
