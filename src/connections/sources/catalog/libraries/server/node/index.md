@@ -556,7 +556,7 @@ Different parts of your application may require different types of batching, or 
 const marketingAnalytics = new Analytics({ writeKey: 'MARKETING_WRITE_KEY' });
 const appAnalytics = new Analytics({ writeKey: 'APP_WRITE_KEY' });
 ```
-## Overriding the default HTTP Client
+## Override the default HTTP Client
 
 Segment attempts to use the global `fetch` implementation if available in order to support several diverse environments.  Some special cases (for example, http proxy) may require a different implementation for http communication.  You can provide a customized wrapper in the Analytics configuration to support this.  Here are a few approaches:
 
