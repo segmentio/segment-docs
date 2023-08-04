@@ -1,7 +1,7 @@
 ---
 title: Privacy Portal
+plan: privacy
 ---
-{% include content/plan-grid.md name="privacy" %}
 
 When preparing for new privacy regulations (like HIPAA, the GDPR, or the CCPA), the
 best practice is to create a comprehensive data inventory which includes details
