@@ -124,7 +124,7 @@ Use the [Public API](https://docs.segmentapis.com/tag/Destination-Filters/){:tar
     "destinationId": "<DESTIANTION_ID>",
     "title": "Don't send event if userId is null",
     "description": "Drop event if there is no userId on the request",
-    "if": "length( userId ) < 1 or typeof( userId ) != 'string'",
+    "if": "length( userId ) < 1",
     "actions": [
       {
         "type": "DROP"
@@ -217,6 +217,11 @@ You must have write access to save and edit filters. Read permission access only
 #### How can I test my filter?
 
 Use the destination filter tester during setup to verify that you're filtering out the right events. Filtered events show up on the schema page but aren't counted in event deliverability graphs.
+
+#### Can I filter on properties/traits that have spaces in the name (for example, `properties.test event field`)? 
+
+Destination Filters can't target properties or traits with spaces in the field name. As an alternative, use [Insert Functions](/docs/connections/functions/insert-functions/), which let you write code to take care of such filtering.
+
 
 #### Can I use destination filters to drop events unsupported by a destination?
 

@@ -60,6 +60,9 @@ Segment invokes a separate part of the function (called a "handler") for each ev
 
 The default source code template includes handlers for all event types. You don't need to implement all of them - just use the ones you need, and skip the ones you don't.
 
+> info ""
+> Removing the handler for a specific event type results in blocking the events of that type from arriving at their destination. 
+
 Insert functions can define handlers for each message type in the [Segment spec](/docs/connections/spec/):
 
 - `onIdentify`
@@ -196,6 +199,9 @@ You can manually test your code from the functions editor:
 - Error messages display errors surfaced from your function.
 - Logs display any messages to console.log() from the function.
 
+- > info ""
+> The Event Tester won't make use of an Insert Function, show how an Insert Function impacts your data, or send data downstream through the Insert Function pipeline.
+
 ## Save and deploy the destination insert function
 
 Once you finish building your insert function, click **Next: Configure & Create** to name it, then click **Create Function** to save it.
@@ -237,11 +243,15 @@ Note the following limitations for batching with insert functions:
 
 {% endcomment %}
 
+{% comment %}
+
 ## Destination insert functions logs and errors
 
 A function can throw errors, or Segment might encounter errors while invoking your function. You can view these errors in the [Event Delivery](/docs/connections/event-delivery/) tab for your Destination as in the example below.
 
 ![A screenshot of the event delivery tab, showing 519 failed events broken into categories explaining why they failed](images/event-delivery.png)
+
+{% endcomment %}
 
 ### Destination insert functions error types
 
@@ -300,6 +310,10 @@ No, destination insert functions are currently available as cloud-mode destinati
 ##### How do I publish a destination to the public Segment catalog?
 
 If you are a partner, looking to publish your destination and distribute your app through Segment catalog, visit the [Developer Center](https://segment.com/partners/developer-center/){:target="_blank"} and check out the Segment [partner docs](/docs/partners/).
+
+##### Are there any nuances to consider in using Insert Functions with Actions destinations?
+
+Yes. Without Insert Functions enabled, a single event could trigger multiple mappings. With Insert Functions enabled, though, events only trigger one Actions mapping, even if more than one mapping is set up to run when a particular event is seen.
 
 
 {% comment %}

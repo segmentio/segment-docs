@@ -4,6 +4,7 @@ rewrite: true
 redirect_from:
   - '/connections/warehouses/catalog/db2/'
 ---
+{% include content/warehouse-ip.html %}
 
 Use [IBM Db2](https://www.ibm.com/analytics/us/en/db2/){:target="_blank"} with Segment to get
 all of your event and Cloud Source data in a {% glossary warehouses, display: warehouse %} built by IBM. This

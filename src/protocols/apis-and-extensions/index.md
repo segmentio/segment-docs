@@ -1,8 +1,7 @@
 ---
 title: 'Protocols: APIs and Extensions'
+plan: protocols
 ---
-
-{% include content/plan-grid.md name="protocols" %}
 
 Built from the ground up, Protocols addresses a wide range of customer needs.
 
