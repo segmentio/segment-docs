@@ -1035,6 +1035,15 @@ sources:
       - us
     endpoints:
       - us
+  - id: d81EwdLbU4
+    display_name: Rehook
+    hidden: true
+    slug: rehook
+    url: connections/sources/catalog/cloud-apps/rehook
+    regions:
+      - us
+    endpoints:
+      - us
   - id: BbupS2SB0b
     display_name: Roku (alpha)
     hidden: false
