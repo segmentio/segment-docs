@@ -7,7 +7,7 @@ redirect_from:
 {% include content/warehouse-ip.html %}
 
 Use [IBM Db2](https://www.ibm.com/analytics/us/en/db2/){:target="_blank"} with Segment to get
-all of your event and Cloud Source data in a {% glossary warehouses, display: warehouse %} built by IBM. This
+all of your event and Cloud Source data in a warehouse built by IBM. This
 guide will walk through what you need to know to get up and running with Db2
 Warehouse and Segment.
 
