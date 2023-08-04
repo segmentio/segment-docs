@@ -286,8 +286,7 @@ Setting | Details
 `disable` _boolean_ | Disable the analytics library for testing. The default is: `false`
 `httpClient` _HTTPClient or HTTPClientFn_ | A custom HTTP Client implementation to support alternate libraries or proxies. Defaults to global fetch or node-fetch for older versions of node. See the [Overriding the default HTTP Client](#override-the-default-http-client) section for more details.
 
-> info ""
-> See the complete [`AnalyticsSettings` interface](https://github.com/segmentio/analytics-next/blob/master/packages/node/src/app/settings.ts){:target="_blank"}
+See the complete `AnalyticsSettings` interface [here](https://github.com/segmentio/analytics-next/blob/master/packages/node/src/app/settings.ts){:target="_blank"}.
 
 ## Graceful shutdown
 Avoid losing events after shutting down your console. Call `.closeAndFlush()` to stop collecting new events and flush all existing events. If a callback on an event call is included, this also waits for all callbacks to be called, and any of their subsequent promises to be resolved.
