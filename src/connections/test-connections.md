@@ -56,3 +56,7 @@ The Event Tester is only accessible to users with write access in their Segment 
 **The Event Tester experienced an error when sending my event. Why did this happen?**
 
 If you experience an error, [let Segment know](mailto:friends@segment.com) and the Segment team will help you troubleshoot the issue.
+
+**Is this feature available for Datalakes ?**
+
+No, currently Event Tester is not available for Datalakes.
