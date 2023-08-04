@@ -200,7 +200,7 @@ You can manually test your code from the functions editor:
 - Logs display any messages to console.log() from the function.
 
 - > info ""
-> Please note that the Event Tester will not make use of an Insert Function. It will not show how your data is impacted by an Insert Function and it will not allow data to be sent downstream through the Insert Function pipeline.
+> The Event Tester won't make use of an Insert Function, show how an Insert Function impacts your data, or send data downstream through the Insert Function pipeline.
 
 ## Save and deploy the destination insert function
 
