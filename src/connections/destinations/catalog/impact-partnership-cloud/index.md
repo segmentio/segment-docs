@@ -5,7 +5,7 @@ id: 5ed96e0b97e7ba0c0346cc04
 ---
 [Impact Partnership Cloud](https://impact.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) lets you expand your program and scale every type of partnership by managing the partnership lifecycle - from discovery, contracting and payments through tracking and optimization.
 
-This destination is maintained by Impact. For any issues with the destination, contact the [Impact Partnership Cloud team](https://impact.com/contact/) or check out [Impact Partnership Cloud's documentation](https://integrations.impact.com/impact-brand/docs/integrate-with-segment).
+This destination is maintained by Impact. For any issues with the destination, contact the [Impact Partnership Cloud team](https://impact.com/contact/){:target="_blank”} or check out [Impact Partnership Cloud's documentation](https://integrations.impact.com/impact-brand/docs/integrate-with-segment){:target="_blank”}.
 
 ## Getting Started
 
