@@ -131,7 +131,11 @@ Additionally, configure the "App Events Fields" object with the required fields:
 * `version`
 * `osVersion`
 
+> info ""
+> The value for the `version` field should be **a2** for Android or **i2** for iOS, per Facebook's documentation [here](https://developers.facebook.com/docs/marketing-api/conversions-api/app-events){:target="_blank"}
+
 ![the app data object](images/app_data.png)
+
 #### Match rate considerations
 
 If you use Facebook Conversions API as a stand-alone without certain data fields collected from the browser, the match rate might not be as high as if you included them. You can increase the match rate for events from a server source by including User Data, such as Zip Code, Country and State.
