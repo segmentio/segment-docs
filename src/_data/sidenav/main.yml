@@ -325,6 +325,13 @@ sections:
   - section_title: Traits
     slug: unify/traits
     section:
+    - section_title: Predictive Traits
+      slug: engage/audiences/predictive-traits
+      section:
+      - path: '/engage/audiences/predictive-traits/'
+        title: Predictive Traits
+      - path: '/engage/audiences/predictive-traits/using-predictive-traits'
+        title: Using Predictive Traits
     - path: '/unify/traits/computed-traits'
       title: Computed Traits
     - path: '/unify/traits/sql-traits'
@@ -375,13 +382,6 @@ sections:
       title: Account-level Audiences
     - path: '/engage/audiences/organization'
       title: Organize Audiences
-    - section_title: Predictive Traits
-      slug: engage/audiences/predictive-traits
-      section:
-      - path: '/engage/audiences/predictive-traits/'
-        title: Predictive Traits
-      - path: '/engage/audiences/predictive-traits/using-predictive-traits'
-        title: Using Predictive Traits
 
   - section_title: Journeys
     description: "Learn how to create multi-step Journeys to tailor messages to your users."
