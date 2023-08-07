@@ -86,4 +86,4 @@ Predicted LTV has strict data requirements. Segment can only make predictions fo
 
 ## Use cases
 
-For use cases and information on how Segment builds Predictive Traits, read [Using Predictive Traits](/docs/engage/audiences/predictive-traits/using-predictive-traits/).
+For use cases and information on how Segment builds Predictive Traits, read [Using Predictive Traits](/docs/unify/traits/predictive-traits/using-predictive-traits/).
