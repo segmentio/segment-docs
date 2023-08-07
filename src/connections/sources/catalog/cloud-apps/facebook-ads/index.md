@@ -57,7 +57,7 @@ Collections are the groupings of resources we pull from your source. In your war
 
 ## Collection Properties
 
-Below are tables outlining the properties included in the collections listed above.
+The following tables outline the properties included in collections.
 
 ### Ad Accounts
 
@@ -123,20 +123,14 @@ Below are tables outlining the properties included in the collections listed abo
 | clicks                    | The number of clicks on your ads.                                                                                                                          |
 | date_start                | The start date for your data.                                                                                                                              |
 | date_stop                 | The end date for your data.                                                                                                                                |
-| ~~deeplink_clicks~~       | *Deprecated by Facebook.* Aliased to `click_to_app_deeplink`.                                                                                              |
-| ~~website_clicks~~        | *Deprecated by Facebook.* Aliased to `click_to_website`                                                                                                    |
 | frequency                 | The average number of times each person saw your ad.                                                                                                       |
 | impressions               | The number of times your ads were on screen.                                                                                                               |
 | inline_post_engagements   | The total number of actions that people take involving your ads.                                                                                           |
-| ~~social_clicks~~         | *Deprecated by Facebook.* The number of clicks (all) when your ad was displayed with social information.                                                   |
-| ~~social_impressions~~    | *Deprecated by Facebook.* The number of times your ads were viewed when displayed with social information.                                                 |
 | social_spend              | The total amount you've spent so far for your ads showed with social information.                                                                          |
 | spend                     | The estimated total amount of money you've spent on your campaign, ad set or ad during its schedule.                                                       |
 | unique_clicks             | The number of people who performed a click (all). This metric is estimated.                                                                                |
 | unique_impressions        | Deprecated in favor of `reach` . You can continue to query `unique_impressions` for this metric, but zero-values will now be `null`.                       |
-| ~~unique_social_clicks~~  | *Deprecated by Facebook.* The number of people who performed a click (all) on your ad when it was displayed with social information.                       |
 | reach                     | The number of people who saw your ads at least once. Reach is different from impressions, which may include multiple views of your ads by the same people. |
-| ~~call_to_action_clicks~~ | *Deprecated by Facebook.* The number of times people clicked the call-to-action button on your ad.                                                         |
 
 ## Adding Destinations
 
