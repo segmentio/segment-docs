@@ -326,11 +326,11 @@ sections:
     slug: unify/traits
     section:
     - section_title: Predictive Traits
-      slug: engage/audiences/predictive-traits
+      slug: unify/traits/predictive-traits
       section:
-      - path: '/engage/audiences/predictive-traits/'
+      - path: '/unify/traits/predictive-traits/'
         title: Predictive Traits
-      - path: '/engage/audiences/predictive-traits/using-predictive-traits'
+      - path: '/unify/traits/predictive-traits/using-predictive-traits'
         title: Using Predictive Traits
     - path: '/unify/traits/computed-traits'
       title: Computed Traits
