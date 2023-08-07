@@ -1,6 +1,8 @@
 ---
 title: Predictive Traits
 plan: engage-foundations
+redirect_from:
+  - "/engage/audiences/predictive-traits"
 ---
 
 > info ""
