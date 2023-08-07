@@ -53,7 +53,7 @@ To configure data encryption while setting up a new destination:
 3. On the Select data source page, select the source you want to connect to your destination.
 4. Click **Next**.
 5. On the Setup page, give your destination a name, fill in any optional settings, and select the **Have Segment encrypt sensitive data** checkbox.
-6. From the **Fields** dropdown, select one or more fields from which you'd like to encrypt data and click the **Generate Encryption Keys** button. 
+6. Open the **Fields** dropdown, select one or more fields you'd like to encrypt and click the **Generate Encryption Keys** button. 
 7. Copy the Private Key to a secure location - **once you finish setting up the destination, this key cannot be retrieved**. 
 8. Click **Save**.
 
@@ -65,9 +65,9 @@ To configure data encryption while setting up a new destination:
  
 To configure data encryption for an existing destination:
 1. Open the [My destinations page](https://app.segment.com/goto-my-workspace/destinations){:target="_blank”} in the Segment app.
-2. Select a destination, and click **Settings**.
-3. On the Settings page, select the **Have Segment encrypt sensitive data** checkbox.
-4. From the **Fields** dropdown, select one or more fields from which you'd like to encrypt data and click the **Generate Encryption Keys** button. 
+2. Select a destination, and click the **Data Encryption tab**.
+3. On the Data Encryption page, select the **Have Segment encrypt sensitive data** checkbox.
+4. Open the **Fields** dropdown, select one or more fields you'd like to encrypt and click the **Generate Encryption Keys** button. 
 5. Copy the Private Key to a secure location - **once you finish configuring data encryption, this key cannot be retrieved**. 
 6. Click **Save**.
 
