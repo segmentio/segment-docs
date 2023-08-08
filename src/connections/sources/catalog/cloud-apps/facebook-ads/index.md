@@ -147,7 +147,7 @@ Segment also supports Breakdowns for Insights. Breakdowns are not enabled by def
 | `video_p95_watched_actions`      | The number of times your video played at 95% of its length, including plays that skipped to this point.                    |
 | `video_p100_watched_actions`     | The number of times your video played at 100% of its length, including plays that skipped to this point.                   |
 | `video_30_sec_watched_actions`   | The number of times your video played for at least 30 seconds, or for nearly its total length if it's shorter than 30 seconds. |
-| `video_avg_time_watched_actions` | The average time a video was played, including any time spent replaying the video for a single impression.                     |
+| `video_avg_time_watched_actions` | The average time a video played, including any time spent replaying the video for a single impression.                     |
 
 For more information, view [Meta's Insights documentation](https://developers.facebook.com/docs/marketing-api/reference/ads-insights/){:target="_blank"}.
 
