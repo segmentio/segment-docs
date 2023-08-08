@@ -16,9 +16,7 @@ To learn more about custom limits and upgrades, contact your dedicated Customer 
 
 ## Unify Plus limits
 
-Beginning August 18, 2023, new Unify Plus users will receive 50 Computed or SQL Traits in addition to five AI Traits. 
-
-In addition, new Engage users will receive the following: 
+Beginning August 18, 2023, new Unify Plus users will receive 50 Computed or SQL Traits and five AI Traits. In addition, new users will receive the following depending on your Engage plan: 
 - **Engage Foundations**: 100 Audiences and 75 Journey Steps
 - **Engage Premier**: 125 Audiences and 100 Journey Steps
 
