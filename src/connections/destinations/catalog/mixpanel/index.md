@@ -682,3 +682,7 @@ If you delete an audience or trait in Segment, it isn't deleted from Mixpanel. T
 **If a user has multiple external ids in Segment, what happens when they enter an audience or have a computed trait?**
 
 Segment sends an `identify` or a  `track` call for each external on the user's account. For example, if a user has three email addresses, and you are sending `identify` calls for your audience, Engage sends three `identify` calls to Mixpanel and adds the latest email address to the user profile as the email “address of record” on the Mixpanel user profile.
+
+**What happens if I receive the following error, "Timestamp must be within the last 5 years." and my timestamp is showing 1970-01-01?**
+
+The Segment PHP Library (2.1.0) version requires a UNIX timestamp. If you send anything other than a UNIX timestamp, it simply converts this to 0 which is the 01-01-1970 timestamp. If you are experiencing failed events due to this error and you have a connected PHP source, please update your version to 2.1.0. 
