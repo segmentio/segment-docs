@@ -10,6 +10,8 @@ To provide consistent performance and reliability at scale, Segment enforces def
 
 To learn more about custom limits and upgrades, contact your dedicated Customer Success Manager or [friends@segment.com](mailto:friends@segment.com).
 
+> info ""
+> Beginning August 18, 2023, Segment has [updated product limits](/docs/unify/product-limits/) that apply to new Engage and Unify users. 
 
 ## Default limits
 
@@ -47,16 +49,16 @@ To learn more about custom limits and upgrades, contact your dedicated Customer 
 ## Journeys
 
 > info ""
-> Beginning August 18, 2023, Segment has [updated product-limits](/docs/unify/product-limits/) that apply to new Engage and Unify users.  
+> These limits only apply to existing users who started with Engage prior to August 18, 2023. Visit Segment's updated Unify and Engage [limits](/docs/unify/product-limits/) to learn more.
 
 
 | Item            | Limit description                | Details                                                                      |
 | --------------- | -------------------------------- | ---------------------------------------------------------------------------- |
-| Steps           | 500                              | The maximum number of steps per Journey. *This limit only applies to existing users who started with Engage prior to August 23, 2023.*                                     |
+| Steps           | 500                              | The maximum number of steps per Journey.                                     |
 | Step Name       | Maximum length of 170 characters | Once the limit is reached, you cannot add additional characters to the name. |
 | Key             | Maximum length of 255 characters | Once the limit is reached, you cannot add additional characters to the key.  |
 | Journey Name    | Maximum length of 73 characters  | Once the limit is reached, you cannot add additional characters to the name. |
-| Compute credits | Half a credit for each step      | Each step in a published Journey consumes half of one compute credit.        |
+| Compute credits | Half a credit for each step     | Each step in a published Journey consumes half of one compute credit.       |
 
 
 ## Channels
