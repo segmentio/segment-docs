@@ -142,7 +142,7 @@ Segment also supports Breakdowns for Insights. Breakdowns are not enabled by def
 | `actions_values`                 | The total value of all conversions attributed to your ads.                                                                     |
 | `unique_actions`                 | The total number of unique actions attributed to your ads.                                                                     |
 | `video_p25_watched_actions`      | The number of times your video played at 25% of its length, including plays that skipped to this point.                    |
-| `video_p50_watched_actions`      | The number of times your video was played at 50% of its length, including plays that skipped to this point.                    |
+| `video_p50_watched_actions`      | The number of times your video played at 50% of its length, including plays that skipped to this point.                    |
 | `video_p75_watched_actions`      | The number of times your video played at 75% of its length, including plays that skipped to this point.                    |
 | `video_p95_watched_actions`      | The number of times your video was played at 95% of its length, including plays that skipped to this point.                    |
 | `video_p100_watched_actions`     | The number of times your video was played at 100% of its length, including plays that skipped to this point.                   |
