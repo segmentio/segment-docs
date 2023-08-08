@@ -144,7 +144,7 @@ Segment also supports Breakdowns for Insights. Breakdowns are not enabled by def
 | `video_p25_watched_actions`      | The number of times your video played at 25% of its length, including plays that skipped to this point.                    |
 | `video_p50_watched_actions`      | The number of times your video played at 50% of its length, including plays that skipped to this point.                    |
 | `video_p75_watched_actions`      | The number of times your video played at 75% of its length, including plays that skipped to this point.                    |
-| `video_p95_watched_actions`      | The number of times your video was played at 95% of its length, including plays that skipped to this point.                    |
+| `video_p95_watched_actions`      | The number of times your video played at 95% of its length, including plays that skipped to this point.                    |
 | `video_p100_watched_actions`     | The number of times your video was played at 100% of its length, including plays that skipped to this point.                   |
 | `video_30_sec_watched_actions`   | The number of times your video played for at least 30 seconds, or for nearly its total length if it's shorter than 30 seconds. |
 | `video_avg_time_watched_actions` | The average time a video was played, including any time spent replaying the video for a single impression.                     |
