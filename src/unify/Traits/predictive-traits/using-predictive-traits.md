@@ -1,6 +1,6 @@
 ---
 title: Using Predictive Traits
-plan: engage-foundations
+plan: unify-plus
 redirect_from:
   - "/engage/audiences/predictive-traits/using-predictive-traits"
 ---
