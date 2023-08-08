@@ -138,6 +138,15 @@ sources:
       - us
     endpoints:
       - us
+  - id: 2QEQGbmIJv
+    display_name: b2_testsource
+    hidden: false
+    slug: b2_testsource
+    url: connections/sources/catalog/cloud-apps/b2_testsource
+    regions:
+      - us
+    endpoints:
+      - us
   - id: ErcsNGMEwt
     display_name: Beamer
     hidden: false
@@ -597,11 +606,33 @@ sources:
     endpoints:
       - us
       - eu
+  - id: VfR29KdimB
+    display_name: jAvascript
+    hidden: false
+    slug: javascript
+    url: connections/sources/catalog/cloud-apps/javascript
+    regions:
+      - us
+      - eu
+    endpoints:
+      - us
+      - eu
   - id: IqDTy1TpoU
     display_name: Javascript
     hidden: false
     slug: javascript
     url: connections/sources/catalog/libraries/website/javascript
+    regions:
+      - us
+      - eu
+    endpoints:
+      - us
+      - eu
+  - id: zZjAgSjgHi
+    display_name: jAvascript
+    hidden: false
+    slug: javascript
+    url: connections/sources/catalog/cloud-apps/javascript
     regions:
       - us
       - eu
@@ -1037,7 +1068,7 @@ sources:
       - us
   - id: d81EwdLbU4
     display_name: Rehook
-    hidden: true
+    hidden: false
     slug: rehook
     url: connections/sources/catalog/cloud-apps/rehook
     regions:
@@ -1167,6 +1198,15 @@ sources:
     hidden: false
     slug: source_b2
     url: connections/sources/catalog/cloud-apps/source_b2
+    regions:
+      - us
+    endpoints:
+      - us
+  - id: 5sm7ImJ0LJ
+    display_name: sourceTest
+    hidden: false
+    slug: sourcetest
+    url: connections/sources/catalog/cloud-apps/sourcetest
     regions:
       - us
     endpoints:
@@ -1396,6 +1436,15 @@ sources:
     hidden: false
     slug: unity
     url: connections/sources/catalog/libraries/mobile/unity
+    regions:
+      - us
+    endpoints:
+      - us
+  - id: cCCwrwHZoD
+    display_name: Unlocking Attribution
+    hidden: false
+    slug: unlocking-attribution
+    url: connections/sources/catalog/cloud-apps/unlocking-attribution
     regions:
       - us
     endpoints:

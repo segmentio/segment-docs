@@ -1,8 +1,7 @@
 ---
 title: Access Management Concepts
+plan: iam
 ---
-{% include content/plan-grid.md name="iam" %}
-
 
 ## Team Members
 

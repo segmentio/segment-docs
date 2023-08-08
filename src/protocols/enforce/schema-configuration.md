@@ -1,9 +1,8 @@
 ---
 title: Customize your schema controls
 redirect_from: '/protocols/enforce/'
+plan: protocols
 ---
-
-{% include content/plan-grid.md name="protocols" %}
 
 The Schema Configuration settings for each source can be used to selectively block events, or omit properties and traits from `.track()`, `.identify()` and `.group()` calls. Segment can permanently drop events that are not included in your Tracking Plan, depending on the settings you select. Segment can also block events with invalid properties or invalid property values.
 
