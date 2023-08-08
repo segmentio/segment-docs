@@ -38,3 +38,6 @@ The Segment Profiles destination is not subject to API call or MTU costs. Any us
 
 ### Error loading options from Segment Profiles
 Make sure you have a Public API token in your settings. If the Segment Profiles Destination doesn’t have a Public API token in the settings, the **Select Mappings** section fails to find any Profile (Engage) Spaces, which means you can't set your mappings. 
+
+### Succesful syncs but no changes on profiles
+Make sure that the Endpoint Region setting matches the region of your workspace. If the region is properly set, and changes are still not applied, [contact Segment](https://segment.com/help/contact/){:target="_blank"}.
