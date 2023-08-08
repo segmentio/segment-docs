@@ -60,7 +60,7 @@ To learn more about custom limits and upgrades, contact your dedicated Customer 
 | Journey Name    | Maximum length of 73 characters  | Once the limit is reached, you cannot add additional characters to the name. |
 | Compute credits | Half a credit for each step     | Each step in a published Journey consumes half of one compute credit.       |
 
-
+ 
 ## Channels
 
 | Item     | Limit description                                                   | Details                                                                                             |
