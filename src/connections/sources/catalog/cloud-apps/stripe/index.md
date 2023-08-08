@@ -226,17 +226,18 @@ Below are tables outlining the properties included in the collections listed abo
 
 ### coupons
 
-| Property Name        | Description                                                                                                  |
-| -------------------- | ------------------------------------------------------------------------------------------------------------ |
-| `amount_off`         | Amount (in the currency specified) that will be taken off the subtotal of any invoices for this customer     |
-| `currency`           | The three-letter ISO code for the currency of the amount to take off                                         |
-| `duration_in_months` | If duration is repeating, the number of months the coupon applies                                            |
-| `duration`           | Describes how long a customer who applies this coupon will get the discount                                  |
-| `max_redemptions`    | Maximum number of times this coupon can be redeemed, in total, before it is no longer valid                  |
-| `metadata`           | A set of key-value pairs that describe additional information about the object                               |
-| `percent_off`        | Percent that will be taken off the subtotal of any invoices for this customer for the duration of the coupon |
-| `times_redeemed`     | Number of times this coupon has been applied to a customer                                                   |
-| `valid`              | Taking account of the above properties, whether this coupon can still be applied to a customer               |
+| Property Name         | Description                                                                                                                   |
+| --------------------- | ----------------------------------------------------------------------------------------------------------------------------- |
+| `amount_off`          | Amount (in the currency specified) that will be taken off the subtotal of any invoices for this customer                      |
+| `currency`            | The three-letter ISO code for the currency of the amount to take off                                                          |
+| `duration_in_months`  | If duration is repeating, the number of months the coupon applies                                                             |
+| `duration`            | Describes how long a customer who applies this coupon will get the discount                                                   |
+| `max_redemptions`     | Maximum number of times this coupon can be redeemed, in total, before it is no longer valid                                   |
+| `metadata`            | A set of key-value pairs that describe additional information about the object                                                |
+| `percent_off`         | Percent that will be taken off the subtotal of any invoices for this customer for the duration of the coupon                  |
+| `percent_off_precise` | Percent that will be taken off the subtotal of any invoices for this customer for the duration of the coupon, in decimal form |
+| `times_redeemed`      | Number of times this coupon has been applied to a customer                                                                    |
+| `valid`               | Taking account of the above properties, whether this coupon can still be applied to a customer                                |
 
 ### customers
 
