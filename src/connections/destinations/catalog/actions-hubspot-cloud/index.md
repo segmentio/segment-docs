@@ -35,7 +35,9 @@ HubSpot Cloud Mode (Actions) provides the following benefits over the classic Hu
 ## Getting started
 
 > info ""
-> Before you begin, you'll need to generate a Private App in HubSpot. To generate a Private App from the HubSpot dashboard, navigate to **Integrations > Private Apps**. Segment requires the following scopes: `business-intelligence`, `crm.objects.contacts.read`, `crm.objects.contacts.write`, `crm.schemas.contacts.read`, `crm.objects.companies.read`, `crm.objects.companies.write`, and `crm.schemas.companies.read`. For more information, see HubSpot's [Private Apps](https://developers.hubspot.com/docs/api/private-apps){:target="_blank"} article.
+> Before you begin, you need to generate a Private App in HubSpot. To generate a Private App from the HubSpot dashboard, navigate to **Integrations > Private Apps**. 
+>
+> Segment requires the following scopes: `business-intelligence`, `crm.objects.contacts.read`, `crm.objects.contacts.write`, `crm.schemas.contacts.read`, `crm.objects.companies.read`, `crm.objects.companies.write`, and `crm.schemas.companies.read`. For more information, see HubSpot's [Private Apps](https://developers.hubspot.com/docs/api/private-apps){:target="_blank"} article.
 
 1. From the Segment web app, navigate to **Connections > Catalog**.
 2. Search for **HubSpot Cloud Mode (Actions)** in the Destinations Catalog, and select the destination.
