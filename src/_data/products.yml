@@ -154,3 +154,12 @@ items:
     team: true
     business: true
     add-on: false
+
+- product_display_name: HIPAA Eligible Segment
+  slug: hipaa-eligible
+  plan-note: "HIPAA eligible workspaces require a Business Assosciate Addendum."
+  plans:
+    free: false
+    team: false
+    business: true
+    addon: true

@@ -1,5 +1,6 @@
 ---
 title: HIPAA Eligible Segment
+plan: hipaa-eligible
 ---
 
 Segment is a HIPAA eligible platform, and meets the data privacy and security requirements of healthcare customers and their stakeholders. For more information about Segment becoming HIPAA eligible, see the [announcement blog post](http://segment.com/blog/segment-for-healthcare){:target="_blank"}.
@@ -35,9 +36,7 @@ These logs can be provided upon request. For specific requests, please reach out
 
 ## Data encryption
 
-You can automatically encrypt the data in any fields [marked as yellow in the Privacy Portal](/docs/privacy/portal) before data is sent to your destinations. 
-
-After Segment encrypts the data, it converts the data type to `string`. Any validation that looks for the datatype `integer` will fail for encrypted values.
+Segment encrypts the data in fields [marked as yellow in the Privacy Portal](/docs/privacy/portal) using a key pair. After Segment encrypts the data, it converts the data type to `string`. Any validation that looks for the datatype `integer` will fail for encrypted values.
 
 > info "Data encryption is currently in public beta"
 > This means that the data encryption features are in active development, and some functionality may change before it becomes generally available. [Contact Segment](https://segment.com/help/contact/){:target="_blank"} with any feedback or questions.
@@ -57,7 +56,6 @@ To configure data encryption while setting up a new destination:
 7. Copy the Private Key to a secure location - **once you finish setting up the destination, this key cannot be retrieved**. 
 8. Click **Save**.
 
-
 > error "Private Key is not recoverable"
 > Segment does not save the private key created during the data encryption setup flow, and cannot retrieve the key after you finish setting up your destination. You can generate a new key without decrypting your data using the instructions in the [Configure new key pairs](#configure-new-key-pairs) section.
 
@@ -65,15 +63,14 @@ To configure data encryption while setting up a new destination:
  
 To configure data encryption for an existing destination:
 1. Open the [My destinations page](https://app.segment.com/goto-my-workspace/destinations){:target="_blank”} in the Segment app.
-2. Select a destination, and click the **Data Encryption tab**.
+2. Select a destination, and click the **Data Encryption** tab.
 3. On the Data Encryption page, select the **Have Segment encrypt sensitive data** checkbox.
 4. Open the **Fields** dropdown, select one or more fields you'd like to encrypt and click the **Generate Encryption Keys** button. 
 5. Copy the Private Key to a secure location - **once you finish configuring data encryption, this key cannot be retrieved**. 
 6. Click **Save**.
 
-
 > error "Private Key is not recoverable"
-> Segment does not save the private key created during the data encryption setup, and cannot retrieve the key after you add data encryption to your destination. You can generate a new key without decrypting your data using the instructions in the [Configure new key pairs](#configure-new-key-pairs) section.
+> Segment does not save the private key created during the data encryption setup, and cannot retrieve the key after you add data encryption to your destination. Segment cannot decrypt data if this key is lost. You can generate a new key without decrypting your data using the instructions in the [Configure new key pairs](#configure-new-key-pairs) section.  
 
 
 ### Configure new key pairs
@@ -89,7 +86,7 @@ To generate a new key pair:
 
 ### Remove encryption
 
-Disabling the **Have Segment encrypt sensitive data** setting removes encryption on all data that comes into a source after the setting was disabled. Disabling the **Have Segment encrypt sensitive data** setting does not decrypt any previously encrypted data.
+Disabling the **Have Segment encrypt sensitive data** setting removes encryption on all data that comes into a source after the setting was disabled. Disabling the **Have Segment encrypt sensitive data** setting does not decrypt any data that has already been encrypted.
 
 To remove encryption from future data coming into a destination:
 1. Open the [My destinations page](https://app.segment.com/goto-my-workspace/destinations){:target="_blank”} in the Segment app.
@@ -98,4 +95,4 @@ To remove encryption from future data coming into a destination:
 4. On the **Turn off data encryption?** popup, click **Confirm**.
 
 > success ""
-> Disabling the data encryption setting does not decrypt data that is already in the destination, but does prevents any future data from being encrypted. 
+> Disabling the data encryption setting does not decrypt data that is already in the destination, but does prevent any future data from being encrypted. 
