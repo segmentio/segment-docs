@@ -27,7 +27,7 @@ To create Predictive Traits, you'll first request demo access, then build a Pred
 
 Follow these steps to access Predictive Trait:
 
-1. Navigate to **Engage > Audiences > Computed Traits**. Select **Create computed trait**.
+1. Navigate to **Engage > Audiences > Computed traits** or **Unify > Traits**. Select **Create computed trait**.
 2. Select **Request Demo** to access Predictive Traits.
 
 ### Build a Predictive Trait
