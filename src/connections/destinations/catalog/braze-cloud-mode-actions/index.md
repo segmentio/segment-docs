@@ -48,4 +48,4 @@ Keep the following in mind if you plan to move to Braze (Actions) from the class
 ## Troubleshooting
 
 ### Missing required fields
-Braze require one of "external_id" or "user_alias" or "braze_id" to be present in all events sent. If events are faileing to send, please chcek your event mappings to make sure these fields are resolving to valid values.
+Braze requires one of either `external_id`, `user_alias`, or `braze_id` to be present in all events sent. If events are failing to send, please check your event mappings to make sure these fields are resolving to valid values.
