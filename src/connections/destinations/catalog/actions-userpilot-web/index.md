@@ -43,7 +43,7 @@ analytics.identify('userId123', {
 });
 ```
 
-Calling `identify` from `analytics.js` will trigger the `userpilot.identify`. We recommend passing as much data as possible to get the most out of Userpilot.
+Calling `identify` from `analytics.js` will trigger the `userpilot.identify`. Segment recommends passing as much data as possible to get the most out of Userpilot.
 
 Data passed in an Identify call can be organized under different categories.
 * Properties about the user such as `plan` or `userRole` to help targeting a specifc segment
