@@ -12,7 +12,6 @@ Userpilot helps product teams deliver personalized in-app experiences to increas
 
 This destination is maintained by Userpilot. For any issues with the destination, [contact Userpilot's Support team](mailto:support@userpilot.co){:target="_blank"}.
 
-{% include content/ajs-upgrade.md %}
 
 ## Getting started
 
