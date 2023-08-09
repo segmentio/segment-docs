@@ -97,7 +97,7 @@ Segment recommends scripting any sort of additions of data you might have to war
 
 {% include content/warehouse-ip.html %}
 
-You must allowlist Segment's custom IPs `52.25.130.38/32` and `34.223.203.0/28` while authorizing Segment to write in to your warehouse port. Currently, Redshift and Postgres are the only connectors that require configuing an IP upon set-up. However, we recommend enabling IP allowlists for added security if they are not already being used.
+You must allowlist Segment's custom IPs `52.25.130.38/32` and `34.223.203.0/28` while authorizing Segment to write in to your warehouse port. Currently, Redshift and Postgres are the only connectors that require you to configure an IP upon setup. Segment recommends enabling IP allowlists for added security.
 
 
 If you're in the EU region, use CIDR `3.251.148.96/29`. To learn more about EU workspace locations, contact your account manager.
