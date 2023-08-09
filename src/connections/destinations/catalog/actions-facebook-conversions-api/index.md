@@ -153,14 +153,17 @@ If you use Facebook Pixel, the Pixel library also hashes the External ID. This m
 
 Segment applies formatting to User Data Parameters as follows:
 
-| User Data Field                                                                     | Formatting applied to field value before hashing                                                                                                               |
-|-------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| External ID, Email, Gender,  Last Name, First Name,  City, State, Zip Code, Country | All whitespace is removed from string, set to lowercase.                                                                                                       |
-| Phone                                                                               | All non-numeric characters are removed from string.                                                                                                            |
-| Gender                                                                              | A string of 'male' will be transformed to 'm', and 'female' to 'f'.                                                                                            |
-| Date of Birth                                                                       | No formatting is applied.                                                                                                                                      |
-| State                                                                               | Compared against a Map object of states and their two-character ANSI abbreviation code. Example: "Texas", "TX", or "tx" in this field will be formatted as "tx". |
-| Country                                                                             | Compared against a Map object of countries and their two-letter ISO 3166-1 alpha-2 country codes.                                                                |
+| User Data Field       | Formatting applied to field value before hashing                                                                                                                                                                             |
+|-----------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| External ID           | All whitespace is removed from string, set to lowercase.                                                                                                                                                                     |
+| Email                 | All whitespace is removed from string, set to lowercase.                                                                                                                                                                     |
+| First Name, Last Name | All whitespace is removed from string, set to lowercase.                                                                                                                                                                     |
+| Gender                | All whitespace is removed from string, set to lowercase. "male" is set to "m", "female" is set to "f".                                                                                                                       |
+| Date of Birth         | No formatting is applied.                                                                                                                                                                                                    |
+| Phone                 | All whitespace is removed from string.                                                                                                                                                                                       |
+| Zip Code              | All whitespace is removed from string.                                                                                                                                                                                       |
+| State                 | All whitespace is removed from string and the result is compared against a map object of states and their two-character ANSI abbreviation code.  Example: "Texas", "TX", or "tx" in this field will be formatted as "tx".    |
+| Country               | All whitespace is removed from string and the result is compared against a map object of countries and their two-letter ISO 3166-1 alpha-2 country code.  Example: "Germany", "germany", or "de" will be formatted as "de".  |
 
 ### User Data Parameters
 
