@@ -10,9 +10,25 @@ This destination is maintained by Astrolabe. For any issues with the destination
 
 {% include content/connection-modes.md %}
 
+### Obtain your Astrolabe API Key
+
 1. Login to your [Astrolabe workspace](https://console.astrolabe.so/login).
-2. Go to the [Connectors page](https://console.astrolabe.so/connectors) and click **Add Connector**.
-3. Select the Segment.com Connector and sign in to your Segment account to grant Astrolabe access.
+2. Navigate to the [Connectors page](https://console.astrolabe.so/connectors) and click **Add Connector**.
+3. Choose the **Segment.com Connector**.
+4. Name the Connector and click **Continue**.
+5. Decide whether to allow or block users with free email providers, then click **Finish**.
+6. Copy the **API key** displayed in the dialog window.
+
+### Add Astrolabe Destination to your Segment Workspace
+
+1. In the Segment web app, go to **Connections > Catalog** and then click on the **Destinations** tab.
+2. Search for **Astrolabe** and select it.
+3. Click **Add destination**.
+4. Choose an existing data Source to connect to **Astrolabe**.
+5. Give the destination a name that is recognizable.
+6. Paste the **Astrolabe API key** (copied earlier).
+7. Enable the destination by changing the bottom **Enable Destination** toggle to active.
+8. Click **Save Changes**.
 
 ## Supported methods
 
