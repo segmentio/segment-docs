@@ -25,7 +25,7 @@ This destination is maintained by Userpilot. For any issues with the destination
 
 The Userpilot cloud-mode destination uses [Userpilot’s REST APIs](https://docs.userpilot.com/article/195-identify-users-and-track-api){:target="_blank"} to transmit user data and associated events directly to Userpilot. This lets you use Userpilot’s capabilities based on the real-time data received from your application.
 
-- **User Identification** Send [Identify](/docs/connections/spec/identify/) calls from Segment to Userpilot for identifying or updating user and company properties. This data is dispatched directly from your backend servers and can be used for segmenting users and triggering personalized content in real-time
+- **User Identification** Send [Identify](/docs/connections/spec/identify/) calls from Segment to Userpilot for identifying or updating user and company properties. This data is dispatched directly from your backend servers and can be used for segmenting users and triggering personalized content in real-time.
 
 - **Event Tracking:** Segment [Track](/docs/connections/spec/track/) calls are converted into Userpilot events. This feature captures user actions on your web application, allowing you to build a comprehensive understanding of your user's overall experience. You can trigger live, targeted content based on certain user actions like clicking a button or completing a transaction.
 
