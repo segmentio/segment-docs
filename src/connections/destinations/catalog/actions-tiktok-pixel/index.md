@@ -20,9 +20,10 @@ This destination is maintained by Tiktok. For any issues with the destination, [
 1. From the Segment web app, click **Catalog**, then click **Destinations**.
 2. Find the Destinations Actions item in the left navigation, and click it.
 3. Click **Configure TikTok Pixel**.
-4. Select an existing Source to connect to TikTok Pixel.
+4. Select an existing Javascript Source to connect to TikTok Pixel.
 5. Give Destination a name.
-6. On the Settings screen, provide Pixel Code and toggle "Use Existin Pixel" to use existing Pixel that is already installed on your website.
+6. On the Settings screen, provide Pixel Code and toggle "Use Existing Pixel" to use existing Pixel that is already installed on your website.
+    - dd
 7. Toggle on the Destination.
 8. Hit the Save Change button.
 
@@ -43,27 +44,24 @@ After setting up the Destination, seven mappings will be enabled by default. You
 ## Getting Started with Pixel & Obtaining Pixel Code
 Please refer to the [TikTok Help Center documentation](https://ads.tiktok.com/help/article/get-started-pixel?redirected=2) to learn more about how to get started with TikTok Pixel. Once the Pixel is created, please retrieve the Pixel Code from TikTok Events Manager (TTEM).
 
-## PII Requirement & Validation
-The email addresses and phone numbers need to be hashed using SHA-256 before they are sent to TikTok. Please normalize and hash the PIIs before sending them to Segment. In addition, TikTok Pixel Destination will validate all web events before forwarding them to TikTok.
+## Advanced Matching
 
-**Important notes for passing PIIs**
+Advanced Matching helps you optimize your TikTok ads and drive performance by matching customer information with people on TikTok. Hashed customer information can be shared with any TikTok event to attribute more conversions, build bigger audiences and improve campaign optimization.
 
-**Emails**
-- Must reduce all letters into lowercase prior to hashing.
-- Leading/Trailing spaces need to be trimmed before hashing.
-- Do not perform any other types of normalization on emails prior to hashing.
-- Only sha-256 is accepted. Here is the [recommended package](https://github.com/emn178/js-sha256).
+There are two ways to enable Advanced Matching: manual or automatic.
 
-**Phone Numbers**
-- Normalize your phone numbers to E164 format, a combination of+{country code}{phone number}.
-- Recommend using [this package](https://github.com/catamphetamine/libphonenumber-js) for E164 parsing.
-- Only sha-256 is accepted. Here is the [recommended package](https://github.com/emn178/js-sha256).
+- **Manual Advanced Matching** is the passing of customer information to TikTok from your website. This can be implemented using code for each event on your website or if you're using a partner integration, you can enable Manual Advanced Matching in the data sharing settings of the partner platform. With this option, you have the flexibility to configure what information and for which event you want to pass to TikTok.
+- **Automatic Advanced Matching** is when advertisers instruct TikTok to automatically identify form fields on pages where Pixel is installed and to hash and collect email and phone numbers entered on those pages for ad measurement and attribution purposes.
 
-**External IDs**
+We recommend advertisers use both Manual and Automatic Advanced Matching at the same time, as this setting maximizes Advanced Matching's full performance.
 
-- Leading/Trailing spaces need to be trimmed before hashing.
+Learn more about Automatic Advanced Matching and how to turn it on in our [help center](https://ads.tiktok.com/help/article/advanced-matching-web?lang=en).
 
-Please refer to the [TikTok Pixel Advanced Matching documentation](https://ads.tiktok.com/marketing_api/docs?id=1739585700402178) for additional information regarding sharing cusomter information with TikTok.
+## PII Hashing
+TikTok will automatically hash value with sha256 before value enters TikTok's system.
+
+- Normalize your phone numbers to E.164 format, a combination of +［country code]［phone number]. An example of a US number in the E.164 format: +12133734253
+Recommend using [this library](https://github.com/catamphetamine/libphonenumber-js) for E.164 parsing.
 
 ## Data and Privacy Considerations
 
