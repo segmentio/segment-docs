@@ -132,22 +132,24 @@ The following tables outline the properties included in collections.
 | unique_impressions        | Deprecated in favor of `reach` . You can continue to query `unique_impressions` for this metric, but zero-values will now be `null`.                       |
 | reach                     | The number of people who saw your ads at least once. Reach is different from impressions, which may include multiple views of your ads by the same people. |
 
-#### Insights Breakdowns
+#### Additional Insights fields
 
-Segment also supports Breakdowns for Insights. Breakdowns are not enabled by default; [reach out to Segment support](https://segment.com/help/contact/){:target="_blank"} to enable them. Segment supports the following properties:
+Segment supports both [Breakdowns for Insights](https://developers.facebook.com/docs/marketing-api/insights/breakdowns){:target="_blank"} and [Ads Actions Stats](https://developers.facebook.com/docs/marketing-api/reference/ads-action-stats/){:target="_blank"}. Breakdowns and Ads Action Stats are not enabled by default; [reach out to Segment support](https://segment.com/help/contact/){:target="_blank"} to enable them. 
 
-| Property Name                    | Description                                                                                                                    |
+The following table lists the Ads Action Stats that Segment supports:
+
+| Field                            | Description                                                                                                                    |
 | -------------------------------- | ------------------------------------------------------------------------------------------------------------------------------ |
 | `actions`                        | The total number of actions people took that are attributed to your ads.                                                       |
 | `actions_values`                 | The total value of all conversions attributed to your ads.                                                                     |
 | `unique_actions`                 | The total number of unique actions attributed to your ads.                                                                     |
-| `video_p25_watched_actions`      | The number of times your video played at 25% of its length, including plays that skipped to this point.                    |
-| `video_p50_watched_actions`      | The number of times your video played at 50% of its length, including plays that skipped to this point.                    |
-| `video_p75_watched_actions`      | The number of times your video played at 75% of its length, including plays that skipped to this point.                    |
-| `video_p95_watched_actions`      | The number of times your video played at 95% of its length, including plays that skipped to this point.                    |
-| `video_p100_watched_actions`     | The number of times your video played at 100% of its length, including plays that skipped to this point.                   |
+| `video_p25_watched_actions`      | The number of times your video played at 25% of its length, including plays that skipped to this point.                        |
+| `video_p50_watched_actions`      | The number of times your video played at 50% of its length, including plays that skipped to this point.                        |
+| `video_p75_watched_actions`      | The number of times your video played at 75% of its length, including plays that skipped to this point.                        |
+| `video_p95_watched_actions`      | The number of times your video played at 95% of its length, including plays that skipped to this point.                        |
+| `video_p100_watched_actions`     | The number of times your video played at 100% of its length, including plays that skipped to this point.                       |
 | `video_30_sec_watched_actions`   | The number of times your video played for at least 30 seconds, or for nearly its total length if it's shorter than 30 seconds. |
-| `video_avg_time_watched_actions` | The average time a video played, including any time spent replaying the video for a single impression.                     |
+| `video_avg_time_watched_actions` | The average time a video played, including any time spent replaying the video for a single impression.                         |
 
 For more information, view [Meta's Insights documentation](https://developers.facebook.com/docs/marketing-api/reference/ads-insights/){:target="_blank"}.
 
