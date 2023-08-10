@@ -26,6 +26,12 @@ plugins:
       url: https://cdn.filepicker.io/api/file/9kBQvmLRR22d365ZqKRK
     mark:
       url: https://cdn.filepicker.io/api/file/HrjOOkkLR8WrUc1gEeeG
+  - name: Bugsnag
+    url: connections/sources/catalog/libraries/mobile/apple/destination-plugins/bugsnag-swift
+    logo:
+      url: https://cdn.filepicker.io/api/file/GoTtwMELTeWGtu44SBUh
+    mark:
+      url: https://cdn.filepicker.io/api/file/1ttsQcwwRDGHBG3XjVFT
   - name: Facebook App Events
     url: connections/sources/catalog/libraries/mobile/apple/destination-plugins/facebook-app-events-swift/
     logo:
@@ -44,12 +50,6 @@ plugins:
       url: https://cdn.filepicker.io/api/file/pUF0kwpTTu0Z5POuzZXV
     mark:
       url: https://cdn.filepicker.io/api/file/0mdiroESxtRQBoR8ieBg
-  - name: Bugsnag
-    url: connections/sources/catalog/libraries/mobile/apple/destination-plugins/bugsnag-swift
-    logo:
-      url: https://cdn.filepicker.io/api/file/GoTtwMELTeWGtu44SBUh
-    mark:
-      url: https://cdn.filepicker.io/api/file/1ttsQcwwRDGHBG3XjVFT
   - name: Optimizely Full Stack
     url: connections/sources/catalog/libraries/mobile/apple/destination-plugins/optimizely-full-stack-swift
     logo:

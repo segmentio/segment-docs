@@ -1,15 +1,29 @@
 ---
-title: Schema Controls
+title: Source Schema 
 redirect_from:
   - '/protocols/schema/'
 ---
 
 {% include content/plan-grid.md name="protocols" %}
 
-
-Segment Business plan customers can use Schema Controls to manage which events are allowed to pass through Segment and on to Destinations. These filters are a first-line defense to help you protect the integrity of your data, and the decisions made with it.
+Segment Business Tier customers can use Schema Controls to manage which events are allowed to pass through Segment and on to Destinations. These filters are a first-line defense to help you protect the integrity of your data, and the decisions made with it.
 
 Blocking events within the source schema will exclude them from API and MTU calculations. These events are discarded before they reach the pipeline that Segment uses for MTU calculations. 
+
+## Schema view
+
+The Schema tab shows the schema of events, properties, and traits for each source that Segment receives over a specific timeframe. It also shows when the events were last seen, how many events were allowed vs. blocked, and the downstream destinations those events are connected to.
+
+You can view events by Segment call type in the Source Schema with the **Track**, **Identify**, and **Group** tabs. 
+The Schema tracks: 
+- Track event details by _event_ name 
+- Identify and Group event details by _trait_ name 
+
+Click the arrow to the left of the event name to view additional event properties for Page or Track events. Since the Schema tracks Identify traits, you will need to make sure you are passing traits into your Identify call in order to view event data in your schema. 
+
+The Schema shows "Page Viewed" for all Page calls under the **Track** tab. 
+
+The Source Schema UI changes slightly depending on whether you have a [Protocols Tracking Plan](https://segment.com/docs/protocols/tracking-plan/create/){:target='_blank’} connected to the source. If you have a Tracking Plan connected to your source, the UI displays a **Planned** column that will indicate if the event is planned or unplanned. This allows you to quickly identify unplanned events and take action to align your schema with your Tracking Plan. If there is no Tracking Plan connected to the source, the UI will display a toggle next to each event where, if you're a Business Tier customer, you can simply block or allow that event at the source level.  
 
 ## Event filters
 
@@ -24,7 +38,7 @@ If you no longer want to track a specific event, you can either remove it from y
 
 Once you block an event, Segment stops forwarding it to all of your Cloud and Device-mode Destinations, including your warehouses. You can remove the events from your code at your leisure. In addition to blocking track calls, Business plan customers can block all Page and Screen calls, as well as Identify traits and Group properties.
 
-When an event is blocked, the name of the event or property is added to your Schema page with a counter to show how many events have been blocked. By default, data from blocked events and properties is not recoverable. You can always re-enable the event to continue sending it to downstream Destinations.
+When an event is blocked, the name of the event or property is added to your Schema page with a counter to show how many events have been blocked. By default, data from blocked events and properties is not recoverable. You can always re-enable the event to continue sending it to downstream Destinations. 
 
 In most cases, blocking an event immediately stops that event from sending to Destinations. In rare cases, it can take **up to six hours** to fully block an event from delivering to all Destinations.
 
@@ -62,3 +76,4 @@ Segment Business tier customers can block track calls from delivering to specifi
 
 
 ![Schema integration filters](images/asset_d3SRmkWy.gif "Animation showing how to block events with the toggle switch")
+

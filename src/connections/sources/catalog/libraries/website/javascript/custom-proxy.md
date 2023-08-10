@@ -34,10 +34,10 @@ You need to set up two important parts, regardless of the CDN provider you use:
 ## Custom Proxy Set up
 
 There are 2 options you can choose from when you set up your custom domain proxy.
-1. [CloudFront](#cloudfront)
+1. [CloudFront](#custom-proxy-cloudfront)
 2. [Custom CDN or API proxy](#custom-cdn--api-proxy)
 
-Follow the directions listed for [CloudFront](#cloudfront) or [use your own CDN setup](#custom-cdn--api-proxy). Once you complete those steps and verify that your proxy works for both `cdn.segment.com` and `api.segment.io`, [contact Segment Product Support](https://segment.com/help/contact/) with the following template email:
+Follow the directions listed for [CloudFront](#custom-proxy-cloudfront) or [use your own CDN setup](#custom-cdn--api-proxy). Once you complete those steps and verify that your proxy works for both `cdn.segment.com` and `api.segment.io`, [contact Segment Product Support](https://segment.com/help/contact/) with the following template email:
 
 ```text
 Hi,
@@ -60,7 +60,7 @@ A Segment Customer Success team member will respond that they have enabled this 
 
 
 ## Custom CDN / API Proxy
-Follow these instructions after setting up a proxy such as [CloudFront](#cloudfront). Choose between the [snippet instructions](#snippet-instructions) or the [npm instructions](#npm-instructions).  
+Follow these instructions after setting up a proxy such as [CloudFront](#custom-proxy-cloudfront). Choose between the [snippet instructions](#snippet-instructions) or the [npm instructions](#npm-instructions).  
 
 ### Snippet instructions
 If you're a snippet user, you need to modify the [analytics snippet](/docs/getting-started/02-simple-install/#step-1-copy-the-snippet) that's inside your `<head>`.
@@ -68,7 +68,7 @@ If you're a snippet user, you need to modify the [analytics snippet](/docs/getti
 To proxy settings and destination requests that typically go to `https://cdn.segment.com`, replace:
 ```diff
 - t.src="https://cdn.segment.com/analytics.js/v1/" + key + "/analytics.min.js"
-+ t.src="https://MY-CUSTOM-CDN-PROXY.com" + key + "/analytics.min.js"
++ t.src="https://MY-CUSTOM-CDN-PROXY.com/analytics.js/v1/" + key + "/analytics.min.js"
 ```
 
 To proxy tracking calls that typically go to `api.segment.io/v1`, replace:

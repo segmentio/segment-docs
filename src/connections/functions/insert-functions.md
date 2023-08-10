@@ -14,8 +14,8 @@ Use Destination Insert Functions to enrich, transform, or filter your data befor
 
 **Customize filtration for your destinations**: Create custom logic with nested if-else statements, regex, custom business rules, and more to filter event data.
 
-> info "Destination Insert Functions in Private Beta"
-> Destination Insert Functions is in Private Beta, and Segment is actively working on this feature. Some functionality may change before it becomes generally available. [Contact Segment](https://segment.com/help/contact/){:target="_blank"} with any feedback or questions.
+> info "Destination Insert Functions in Public Beta"
+> Destination Insert Functions is in Public Beta, and Segment is actively working on this feature. Some functionality may change before it becomes generally available. [Contact Segment](https://segment.com/help/contact/){:target="_blank"} with any feedback or questions.
 
 
 ## Create destination insert functions
@@ -60,6 +60,9 @@ Segment invokes a separate part of the function (called a "handler") for each ev
 
 The default source code template includes handlers for all event types. You don't need to implement all of them - just use the ones you need, and skip the ones you don't.
 
+> info ""
+> Removing the handler for a specific event type results in blocking the events of that type from arriving at their destination. 
+
 Insert functions can define handlers for each message type in the [Segment spec](/docs/connections/spec/):
 
 - `onIdentify`
@@ -91,6 +94,9 @@ async function onTrack(event) {
       timestamp: event.timestamp
     })
   })
+
+  return event;
+  
 }
 ```
 
@@ -101,7 +107,60 @@ To change which event type the handler listens to, you can rename it to the name
 
 ### Errors and error handling
 
-{% include content/functions/errors-and-error-handling.md %}
+Segment considers a function's execution successful if it finishes without error. You can `throw` an error to create a failure on purpose. Use these errors to validate event data before processing it to ensure the function works as expected.
+
+You can `throw` the following pre-defined error types to indicate that the function ran as expected, but the data was not deliverable:
+
+- `EventNotSupported`
+- `InvalidEventPayload`
+- `ValidationError`
+- `RetryError`
+
+The examples show basic uses of these error types.
+
+```js
+async function onGroup(event) {
+  if (!event.traits.company) {
+    throw new InvalidEventPayload('Company name is required')
+  }
+}
+
+async function onPage(event) {
+  if (!event.properties.pageName) {
+    throw new ValidationError('Page name is required')
+  }
+}
+
+async function onAlias(event) {
+  throw new EventNotSupported('Alias event is not supported')
+}
+
+async function onTrack(event) {
+  let res
+  try {
+    res = await fetch('http://example-service.com/api', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({ event })
+    })
+
+    return event;
+    
+  } catch (err) {
+    // Retry on connection error
+    throw new RetryError(err.message)
+  }
+  if (res.status >= 500 || res.status === 429) {
+    // Retry on 5xx and 429s (ratelimits)
+    throw new RetryError(`HTTP Status ${res.status}`)
+  }
+}
+
+```
+If you don't supply a function for an event type, Segment throws an `EventNotSupported` error by default.
+
 
 You can read more about [error handling](#destination-insert-functions-logs-and-errors) below.
 
@@ -139,6 +198,9 @@ You can manually test your code from the functions editor:
 2. If your test fails, you can check the error details and logs in the Output section.
 - Error messages display errors surfaced from your function.
 - Logs display any messages to console.log() from the function.
+
+- > info ""
+> The Event Tester won't make use of an Insert Function, show how an Insert Function impacts your data, or send data downstream through the Insert Function pipeline.
 
 ## Save and deploy the destination insert function
 
@@ -181,11 +243,15 @@ Note the following limitations for batching with insert functions:
 
 {% endcomment %}
 
+{% comment %}
+
 ## Destination insert functions logs and errors
 
 A function can throw errors, or Segment might encounter errors while invoking your function. You can view these errors in the [Event Delivery](/docs/connections/event-delivery/) tab for your Destination as in the example below.
 
 ![A screenshot of the event delivery tab, showing 519 failed events broken into categories explaining why they failed](images/event-delivery.png)
+
+{% endcomment %}
 
 ### Destination insert functions error types
 
@@ -244,6 +310,10 @@ No, destination insert functions are currently available as cloud-mode destinati
 ##### How do I publish a destination to the public Segment catalog?
 
 If you are a partner, looking to publish your destination and distribute your app through Segment catalog, visit the [Developer Center](https://segment.com/partners/developer-center/){:target="_blank"} and check out the Segment [partner docs](/docs/partners/).
+
+##### Are there any nuances to consider in using Insert Functions with Actions destinations?
+
+Yes. Without Insert Functions enabled, a single event could trigger multiple mappings. With Insert Functions enabled, though, events only trigger one Actions mapping, even if more than one mapping is set up to run when a particular event is seen.
 
 
 {% comment %}
