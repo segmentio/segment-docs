@@ -355,7 +355,7 @@ SEGBlockMiddleware *dropSpecificEvents = [[SEGBlockMiddleware alloc] initWithBlo
 
 #### Block specific call types to a specific destination
 
-The following example blocks only screen calls from reaching the Amplitude destination. 
+The following example blocks only screen calls from reaching the Amplitude destination.
 
 
 {% codeexample %}
