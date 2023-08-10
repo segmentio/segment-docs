@@ -23,7 +23,7 @@ With this destination, you can have website or external events trigger action wi
 
 - When a user requests a demo, create work (ticket or issue) with the details
 - When a user fills out a form, create a RevUser (lead) object
-- More to come!
+- Track user events within DevRev
 <!-- The section below explains how to enable and configure the destination. Include any configuration steps not captured below. For example, obtaining an API key from your platform and any configuration steps required to connect to the destination. -->
 
 ## Getting started
@@ -34,7 +34,14 @@ With this destination, you can have website or external events trigger action wi
 4. Select an existing Source to connect to DevRev (Actions).
 5. Give it a name and choose how to configure the destination
 6. You can generate an API key from the [DevRev app](https://app.devrev.ai/). Be sure you're in the DevOrg you want the events sent to and then go to Settings (the gear in the top left) -> Account -> New Token
-7. The email blacklist is the
+7. The email blacklist is the a comma separated list of domains that you want the integration to consisder personal (vs business) email addresses.
+
+### Accounts, Domains, Emails, and the blacklist
+
+By default, the `createRevUser` function will create a new RevUser (Contact) object in DevRev. This contact will be assoicated with an Account as well, based on the following rules:
+
+1. If the email address is a personal email address (defined by having a domain in the domain blacklist), then the Account will be searched for using the email address specifically (aka `test@gmail.com` would look for an account with external_ref of `test@gmail.com`)
+2. If the email address is a company address (defined by having a domain not in the domain blacklist), then we will look for an account with the company domain. If found, the RevUser will be created attached to this Account. If there is no existing account, a new one will be created with the company domain (aka `test@company.com` would be added under the Account with the domain `company.com`)
 
 <!-- The line below renders a table of connection settings (if applicable), Pre-built Mappings, and available actions. -->
 
