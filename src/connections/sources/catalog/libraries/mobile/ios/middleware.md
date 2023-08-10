@@ -158,7 +158,7 @@ config.sourceMiddleware = [
     enforceEventTaxonomy,
     customizeAllTrackCalls,
     dropSpecificEvents,
-    blockScreenCallsToAmplitude
+    blockScreenCallsToAmplitude,
 ]
 
 Analytics.setup(with: config)
