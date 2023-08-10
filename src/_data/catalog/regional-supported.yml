@@ -1451,7 +1451,7 @@ sources:
       - us
   - id: l5eaZFs2Mj
     display_name: Unlocking Simulation
-    hidden: true
+    hidden: false
     slug: unlocking-simulation
     url: connections/sources/catalog/cloud-apps/unlocking-simulation
     regions:
