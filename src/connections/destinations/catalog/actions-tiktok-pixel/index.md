@@ -23,7 +23,8 @@ This destination is maintained by Tiktok. For any issues with the destination, [
 4. Select an existing Javascript Source to connect to TikTok Pixel.
 5. Give Destination a name.
 6. On the Settings screen, provide Pixel Code and toggle "Use Existing Pixel" to use existing Pixel that is already installed on your website.
-    - dd
+    - If you want to re-use the exsiting Pixel that has been installed separately, please toggle the "Use Existing Pixel" to prevent the Segment library from installing a new Pixel on your website.
+    - Segment TikTok Pixel browser destination provides built-in presets for available web events that can be easily mapped to send web events via Pixel without any additional configuration.
 7. Toggle on the Destination.
 8. Hit the Save Change button.
 
