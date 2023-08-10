@@ -8,7 +8,7 @@ Middlewares are simple functions invoked by the Segment libraries, which give yo
 You can access the middleware API in both Objective-C and Swift.
 
 > info ""
-> **Note**: Destination middleware is **not** available for iOS.
+> **Note**: Destination Middlewares are **not** available for iOS.
 
 ### Use
 
