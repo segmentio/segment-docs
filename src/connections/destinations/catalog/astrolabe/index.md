@@ -1,5 +1,6 @@
 ---
 title: Astrolabe Destination
+id: 64d2643196f4937712e54198
 ---
 
 [Astrolabe](https://astrolabe.so/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) is a Revenue Operations Platform built for go-to-market teams to generate pipelines, prioritize, close, and grow accounts. It's a no-code AI-based platform that empowers teams to easily access data, build advanced predictive machine learning models, create efficient workflows, and drive better results without technical expertise.
