@@ -3,7 +3,7 @@ title: Astrolabe Destination
 id: 64d2643196f4937712e54198
 ---
 
-[Astrolabe](https://astrolabe.so/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) is a Revenue Operations Platform built for go-to-market teams to generate pipelines, prioritize, close, and grow accounts. It's a no-code AI-based platform that empowers teams to easily access data, build advanced predictive machine learning models, create efficient workflows, and drive better results without technical expertise.
+[Astrolabe](https://astrolabe.so/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners){:target="_blank"} is a Revenue Operations Platform built for go-to-market teams to generate pipelines, prioritize, close, and grow accounts. It's a no-code AI-based platform that empowers teams to easily access data, build advanced predictive machine learning models, create efficient workflows, and drive better results without technical expertise.
 
 This destination is maintained by Astrolabe. For any issues with the destination, [contact the Astrolabe Support team](mailto:team@astrolabe.so).
 
@@ -13,8 +13,8 @@ This destination is maintained by Astrolabe. For any issues with the destination
 
 ### Obtain your Astrolabe API Key
 
-1. Login to your [Astrolabe workspace](https://console.astrolabe.so/login).
-2. Navigate to the [Connectors page](https://console.astrolabe.so/connectors) and click **Add Connector**.
+1. Login to your [Astrolabe workspace](https://console.astrolabe.so/login){:target="_blank"}.
+2. Navigate to the [Connectors page](https://console.astrolabe.so/connectors){:target="_blank"} and click **Add Connector**.
 3. Choose the **Segment.com Connector**.
 4. Name the Connector and click **Continue**.
 5. Decide whether to allow or block users with free email providers, then click **Finish**.
