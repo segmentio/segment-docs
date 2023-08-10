@@ -19,7 +19,7 @@ This destination is maintained by Tiktok. For any issues with the destination, [
 
 1. From the Segment web app, click **Catalog**, then click **Destinations**.
 2. Find the Destinations Actions item in the left navigation, and click it.
-3. Click **Configure TikTok Pixel**.
+3. Click **Add Destination**.
 4. Select an existing Javascript Source to connect to TikTok Pixel.
 5. Give Destination a name.
 6. On the Settings screen, provide Pixel Code and toggle "Use Existing Pixel" to use existing Pixel that is already installed on your website.
