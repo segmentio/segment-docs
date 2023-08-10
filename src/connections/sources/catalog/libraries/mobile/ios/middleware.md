@@ -183,7 +183,7 @@ config.sourceMiddleware = @[
     enforceEventTaxonomy,
     customizeAllTrackCalls,
     dropSpecificEvents,
-    blockScreenCallsToAmplitude
+    blockScreenCallsToAmplitude,
 ];
 
 [SEGAnalytics setupWithConfiguration:config];
