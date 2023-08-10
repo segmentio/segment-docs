@@ -20,23 +20,23 @@ _**NOTE:** The Unlocking Simulation Source is currently in beta, which means tha
 
 1. From your workspace's [Sources catalog page](https://app.segment.com/goto-my-workspace/sources/catalog) click **Add Source**.
 2. Search for "Unlocking Simulation" in the Sources Catalog, select Unlocking Simulation, and click **Add Source**.
-3. On the next screen, give the Source a nickname configure any other settings.
+3. On the next screen, give the Source a nickname and configure any other settings.
 
    - The nickname is used as a label in the Segment app, and Segment creates a related schema name in your warehouse. The nickname can be anything, but we recommend using something that reflects the source itself and distinguishes amongst your environments (eg. SourceName_Prod, SourceName_Staging, SourceName_Dev).
 
 4. Click **Add Source** to save your settings.
-5. Copy the Write key from the Segment UI and log in to your Unlocking Simulation account - navigate to Settings > Integrations > Segment Integration and paste the key to connect.
+5. Copy the Write key from the Segment UI and log in to your Unlocking Simulation account - click on Manage Sources to add your Segment Source details including the Write key.
 
 ## Stream
 
-Unlocking Simulation uses our stream Source component to send Segment event data. It uses server-side (`track`, `identify`, `page`, `group`) method(s) to send data to Segment. These events are then available in any destination that accepts server-side events, and available in a schema in your data warehouse, so you can query using SQL.
+Unlocking Simulation uses our stream Source component to send Segment event data. It uses server-side (`track`, `identify`, and `group`) method(s) to send data to Segment. These events are then available in any destination that accepts server-side events, and available in a schema in your data warehouse, so you can query using SQL.
 
 As part of the simulated events, Unlocking Simulation generates fake userIds and emails and includes them in the relevant traits and track events.
 
 
 ## Events
 
-The events generated into Segment are based on what you configure within Unlocking Simulation.  If, for example, you have set up Unlocking Simulation to generate a "Login" event for each new user on a daily basis, then that event will be generated into Segment.
+The events generated into Segment are based on what you configure within Unlocking Simulation.  If, for example, you have set up Unlocking Simulation to generate a "Login" event for each user, then that event will be generated into Segment.
 
 
 > (delete the below sentence and table)
