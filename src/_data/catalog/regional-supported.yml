@@ -1449,6 +1449,15 @@ sources:
       - us
     endpoints:
       - us
+  - id: l5eaZFs2Mj
+    display_name: Unlocking Simulation
+    hidden: true
+    slug: unlocking-simulation
+    url: connections/sources/catalog/cloud-apps/unlocking-simulation
+    regions:
+      - us
+    endpoints:
+      - us
   - id: FOkpxVzfJJ
     display_name: Vero
     hidden: false
