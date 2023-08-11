@@ -24,7 +24,7 @@ Once Segment has generated your Prediction, you can access it in your Trait's **
 The **Explore your prediction** section of the Prediction tab visualizes Prediction data and lets you create Audiences to target. An interactive chart displays a percentile cohort score that indicates the likelihood of users in each group to convert on your chosen goal. You can choose the top 20%, bottom 80%, or create custom ranges for specific use cases.
 
 You can then create an Audience from the group you've selected, letting you send efficient, targeted marketing campaigns within Journeys. You can also send your Prediction data to downstream Destinations.
-
+ 
 #### Model statistics
 
 The Predictions tab's **Understand your prediction** section provides insights into the performance of the underlying predictive model. This information helps you understand the data points that contribute to the prediction results.
