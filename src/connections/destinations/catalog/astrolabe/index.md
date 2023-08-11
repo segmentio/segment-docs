@@ -11,7 +11,7 @@ This destination is maintained by Astrolabe. For any issues with the destination
 
 ### Obtain your Astrolabe API Key
 
-1. Login to your [Astrolabe workspace](https://console.astrolabe.so/login){:target="_blank"}.
+1. Log in to your [Astrolabe workspace](https://console.astrolabe.so/login){:target="_blank"}.
 2. Navigate to the [Connectors page](https://console.astrolabe.so/connectors){:target="_blank"} and click **Add Connector**.
 3. Choose the **Segment.com Connector**.
 4. Name the Connector and click **Continue**.
