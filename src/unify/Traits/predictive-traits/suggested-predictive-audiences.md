@@ -1,6 +1,6 @@
 ---
 title: Suggested Predictive Audiences
-plan: engage-foundations
+plan: unify-plus
 ---
 
 Suggested Predictive Audiences can help you improve customer engagement, drive higher conversion rates, and reduce ad spend.
