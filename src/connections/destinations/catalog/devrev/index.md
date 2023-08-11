@@ -14,7 +14,7 @@ id: 649adeaa719bd3f55fe81bef
 
 DevRev is a business software company that brings developers (dev) and customers (rev) together in the era of product-led growth. We are building an API-first dev-centric CRM that uses data, design, and machine intelligence to empower devs to build, support, and grow their revs. Learn more at [devrev.ai](https://devrev.ai){:target="_blank”}, Twitter [@devrevinc](https://twitter.com/devrevinc){:target="_blank”} and [Medium](https://medium.com/devrev){:target="_blank”}.
 
-The DevRev destination utilizes Segment's action framework to take action in your DevOrg when particular events or activity is sent from enabled Segment Sources.
+The DevRev destination uses Segment's action framework to take action in your DevOrg when particular events or activity is sent from enabled Segment Sources.
 
 <!-- In the section below, explain the value of this actions-based destination. If you don't have a classic version of the destination, remove this section. -->
 
