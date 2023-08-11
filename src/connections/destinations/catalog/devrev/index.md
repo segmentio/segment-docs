@@ -32,7 +32,7 @@ For example:
 ## Getting started
 
 1. From the Segment web app, click **Catalog**, then click **Destinations**.
-2. Search for DevRev (Actions) and click it
+2. Search for DevRev (Actions) and click it.
 3. Click **Configure DevRev**.
 4. Select an existing Source to connect to DevRev (Actions).
 5. Give it a name and choose how to configure the destination
