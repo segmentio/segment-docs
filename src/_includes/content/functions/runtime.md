@@ -1,4 +1,4 @@
-Beginning April 30, 2023, Functions is migrating from Node.js 14.x to Node.js 16.x. You're not required to take any further action.
+As of April 30, 2023, Functions has migrated from Node.js 14.x to Node.js 16.x. This change automatically takes effect as you update and deploy an existing function. All new functions will use Node.js 16x. While you're not required to take any action, Segment recommends checking your function post-deployment to ensure everything's working as expected. 
 
 <div class="premonition success"><div class="fa fa-check-square"></div><div class="content"><p class="header">Node.js 18.x: </p><p markdown=1>Starting June 30, 2023, you can [contact Segment](https://segment.com/help/contact/){:target="_blank"} to migrate to Node.js 18.x.</p></div></div>
 
