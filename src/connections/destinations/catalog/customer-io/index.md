@@ -120,7 +120,7 @@ Track events send to Customer.io as `custom events`. In the Customer.io "Activit
 
 ## Device Token Set up
 
-Set `device.token` before you send the `Application Installed`, `Application Uninstalled`, or `Application Opened` events to Segment.
+Set `device.token` before you send the `Application Installed`, `Application Uninstalled`, or `Application Opened` events to Segment. To understand why you would want to send the `device.token`, please see Customer.io's [documentation](https://customer.io/docs/journeys/device-tokens/#what-is-a-device-token). You will likely need to extract this value from your push notification provider.
 
 For that, you need to make the following calls:
 
