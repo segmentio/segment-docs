@@ -1,6 +1,6 @@
 ---
 # The end name should be similar to `Slack  Destination`
-title: DevRev
+title: DevRev (Actions) Destination
 hide-boilerplate: true
 hide-dossier: true
 ---
