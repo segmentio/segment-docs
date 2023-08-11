@@ -20,7 +20,9 @@ The DevRev destination uses Segment's action framework to take action in your De
 
 ## Use Cases of the DevRev Destination (Actions)
 
-With this destination, you can have website or external events trigger action within DevRev for instance:
+With this destination, website or external events can trigger action within DevRev.
+
+For example:
 
 - When a user requests a demo, create work (ticket or issue) with the details
 - When a user fills out a form, create a RevUser (lead) object
