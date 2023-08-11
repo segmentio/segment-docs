@@ -36,6 +36,9 @@ The Snapchat Conversions API destination provides the following benefits:
 
 ## FAQ and Troubleshooting
 
+### Invalid Token Error
+If you are experiencing many 400 Bad Requests errors related to an invalid token, please make sure you reauthorize your account by following the steps [here](https://segment.com/docs/connections/destinations/catalog/actions-snap-conversions/#getting-started): On the Settings tab, authenticate with Snap using OAuth. Click Connect to Snapchat Conversions API. Follow the prompts to authenticate using OAuth, with a Snapchat login that is a member of the Snapchat Ads account you want to connect.
+
 ### Deduplication with the Snap Pixel or App Ads Kit (SDK)
 There are many ways to send conversion data to Snap, including through the Snap Pixel, App Ads Kit or Conversions API. Snap recommends sending redundant data across sources to ensure the best optimization, targeting, and measurement capabilities. The Client Deduplication ID, Transaction ID, and Mobile Ad Identifier are used by Snap to deduplicate events across sources. Please see below for guidance on when to use each field for deduplication.
 - **Web**: Snap Conversions API and PixeI
