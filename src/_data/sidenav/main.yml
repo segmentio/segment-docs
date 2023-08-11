@@ -332,6 +332,8 @@ sections:
         title: Predictive Traits
       - path: '/unify/traits/predictive-traits/using-predictive-traits'
         title: Using Predictive Traits
+      - path: '/unify/traits/predictive-traits/suggested-predictive-audiences'
+        title: Suggested Predictive Audiences
     - path: '/unify/traits/computed-traits'
       title: Computed Traits
     - path: '/unify/traits/sql-traits'
@@ -366,6 +368,8 @@ sections:
       title: Set User Subscriptions
     - path: /engage/user-subscriptions/subscription-states
       title: Subscription States
+    - path: /engage/user-subscriptions/subscription-groups
+      title: Subscription Groups
     - path: /engage/user-subscriptions/subscription-sql
       title: Subscriptions with SQL Traits
   - section_title: Profiles
@@ -410,7 +414,9 @@ sections:
     - path: '/engage/content/email/template'
       title: Email Template
     - path: '/engage/content/email/editor'
-      title: Email Template Editor
+      title: Drag and Drop Editor
+    - path: '/engage/content/email/html-editor'
+      title: HTML Editor
     - path: '/engage/content/sms/template'
       title: SMS Template
     - path: '/engage/content/whatsapp'

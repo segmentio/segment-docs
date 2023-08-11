@@ -64,7 +64,7 @@ plugins:
     mark:
       url: https://cdn.filepicker.io/api/file/0mdiroESxtRQBoR8ieBg
   - name: Optimizely Full Stack
-    url: connections/sources/catalog/libraries/mobile/kotlin-android/destination-plugins/optimizely-full-stack-kotlin-android/
+    url: connections/sources/catalog/libraries/mobile/kotlin-android/destination-plugins/optimizely-full-stack-android-kotlin/
     logo:
       url: https://cdn.filepicker.io/api/file/fb5lNYEhQoWnABOjynZ6
     mark:

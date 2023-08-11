@@ -1,8 +1,7 @@
 ---
 title: Lake Formation
+plan: data-lakes
 ---
-
-{% include content/plan-grid.md name="data-lakes" %}
 
 Lake Formation is a fully managed service built on top of the AWS Glue Data Catalog that provides one central set of tools to build and manage a Data Lake. These tools help import, catalog, transform, and deduplicate data, as well as provide strategies to optimize data storage and security. To learn more about Lake Formation features, see [Amazon Web Services documentation](https://aws.amazon.com/lake-formation/features/){:target="_blank"}.
 

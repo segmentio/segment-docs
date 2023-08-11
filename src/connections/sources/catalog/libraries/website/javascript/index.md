@@ -270,6 +270,8 @@ analytics.page('Pricing', {
 });
 ```
 
+Segment sets the `path` and `url` property to the value of the canonical element on your page. If a canonical element is not set, the values will be set from the browser. 
+
 ### Group
 
 The Group method associates an [identified user](/docs/connections/sources/catalog/libraries/website/javascript/#identify) with a company, organization, project, workspace, team, tribe, platoon, assemblage, cluster, troop, gang, party, society or any other collective noun you come up with for the same concept.

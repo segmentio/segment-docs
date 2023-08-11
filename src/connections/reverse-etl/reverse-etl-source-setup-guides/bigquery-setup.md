@@ -36,7 +36,15 @@ When you construct your own role or policy, Segment needs the following permissi
 Permission | Details
 ---------- | --------
 `bigquery.datasets.create` | This allows Segment to create/manage a `__segment_reverse_etl` dataset for tracking state between syncs.
-`bigquery.datasets.get` | This allows Segment to determine if the aforementioned dataset exists
-`bigquery.jobs.create` | This allows Segment to execute queries on any datasets/tables your model query references and manage tables that Segment uses for tracking
+`bigquery.datasets.get` | This allows Segment to determine if the aforementioned dataset exists.
+`bigquery.jobs.create` | This allows Segment to execute queries on any datasets or tables your model query references, and also allows Segment to manage tables used for tracking.
 
-The `bigquery.datasets.*` permissions can be scoped only to the `__segment_reverse_etl` dataset. If you don't wish to grant `bigquery.datasets.create` access, you may create this dataset yourself, but Segment still needs  `bigquery.datasets.get` access.
+If you don't want to grant Segment `bigquery.datasets.create` access, you can create your own `__segment_reverse_etl` dataset and give Segment the following permissions: 
+
+Permission | Details
+---------- | --------
+`bigquery.datasets.get` | This allows Segment to determine if the `__segment_reverse_etl` dataset exists.
+`bigquery.tables.create` | This allows Segment to determine if the tables Segment uses to track state in the `__segment_reverse_etl` dataset exists.
+`bigquery.jobs.create` | This allows Segment to execute queries on any datasets or tables your model query references, and also allows Segment to manage tables used for tracking.
+
+The `bigquery.datasets.*` permissions can be scoped only to the `__segment_reverse_etl` dataset. 
