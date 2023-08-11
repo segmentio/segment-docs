@@ -1,7 +1,7 @@
 ---
 title: Humanic AI Destination
 id: 64b0e177091331e4a2a00c83
-___
+---
 
 [Humanic AI](https://humanic.ai/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners){:target="_blank"} is revolutionizing the CRM space to make it easier than ever for growing companies to maximize revenue from their existing users. Humanic is the industry's first PLG CRM for today’s modern revenue teams. With support from top industry veterans at DoorDash, Notion, Miro, Canvas, MailChimp and more - there's no better time explore what Humanic can offer your business.
 
