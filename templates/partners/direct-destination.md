@@ -41,7 +41,7 @@ This destination is maintained by YOURINTEGRATION. For any issues with the desti
 > Update your company name (x2) and support email address.
 
 
-## Getting Started
+## Getting started
 
 > Include clear, succinct steps including hyperlinks to where customers can locate their API Key in your app. If there is an expected delay for a customer to see data flow into your integration, please make that explicit.
 
