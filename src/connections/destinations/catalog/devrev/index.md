@@ -4,7 +4,6 @@ title: DevRev (Actions) Destination
 hide-boilerplate: true
 hide-dossier: true
 id: 649adeaa719bd3f55fe81bef
-id: 649adeaa719bd3f55fe81bef
 ---
 
 <!-- This template is meant for Actions-based destinations that do not have an existing Classic or non-Actions-based version. For Actions Destinations that are a new version of a classic destination, see the doc-template-update.md template. -->
@@ -13,7 +12,7 @@ id: 649adeaa719bd3f55fe81bef
 
 <!-- Include a brief description of the destination here, along with a link to your website. -->
 
-DevRev is a business software company that brings developers (dev) and customers (rev) together in the era of product-led growth. We are building an API-first dev-centric CRM that uses data, design, and machine intelligence to empower devs to build, support, and grow their revs. Learn more at [devrev.ai](https://devrev.ai){:target="_blank”}, Twitter [@devrevinc](https://twitter.com/devrevinc){:target="_blank”} and [Medium](https://medium.com/devrev){:target="_blank”}.
+DevRev is a business software company that brings developers (dev) and customers (rev) together in the era of product-led growth. We are building an API-first dev-centric CRM that uses data, design, and machine intelligence to empower devs to build, support, and grow their revs. Learn more at [devrev.ai](https://devrev.ai){:target="\_blank”}, Twitter [@devrevinc](https://twitter.com/devrevinc){:target="\_blank”} and [Medium](https://medium.com/devrev){:target="\_blank”}.
 
 The DevRev destination uses Segment's action framework to take action in your DevOrg when particular events or activity is sent from enabled Segment Sources.
 
@@ -32,13 +31,13 @@ For example:
 
 ## Getting started
 
-1.  Generate an API key from the [DevRev app](https://app.devrev.ai/). Be sure you're in the DevOrg you want the events sent to and then go to Settings (the gear in the top left) > Account > New Token. Copy this API key, as you'll need it when setting up your DevRev (Actions) destination in Segment. 
-2. Open the Segment web app, click **Catalog**, then click **Destinations**.
-2. Search for DevRev (Actions) and click it.
-3. Click **Configure DevRev**.
-4. Select an existing Source to connect to DevRev (Actions).
-5. Give it a name and choose how to configure the destination
-7. The email blacklist is a comma separated list of domains that you want the integration to consider personal (vs business) email addresses.
+1.  Generate an API key from the [DevRev app](https://app.devrev.ai/). Be sure you're in the DevOrg you want the events sent to and then go to Settings (the gear in the top left) > Account > New Token. Copy this API key, as you'll need it when setting up your DevRev (Actions) destination in Segment.
+2.  Open the Segment web app, click **Catalog**, then click **Destinations**.
+3.  Search for DevRev (Actions) and click it.
+4.  Click **Configure DevRev**.
+5.  Select an existing Source to connect to DevRev (Actions).
+6.  Give it a name and choose how to configure the destination
+7.  The email blacklist is a comma separated list of domains that you want the integration to consider personal (vs business) email addresses.
 
 ### Accounts, domains, emails, and the blacklist
 
