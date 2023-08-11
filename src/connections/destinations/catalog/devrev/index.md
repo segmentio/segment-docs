@@ -31,7 +31,8 @@ For example:
 
 ## Getting started
 
-1. From the Segment web app, click **Catalog**, then click **Destinations**.
+1.  Generate an API key from the [DevRev app](https://app.devrev.ai/). Be sure you're in the DevOrg you want the events sent to and then go to Settings (the gear in the top left) > Account > New Token. Copy this API key, as you'll need it when setting up your DevRev (Actions) destination in Segment. 
+2. Open the Segment web app, click **Catalog**, then click **Destinations**.
 2. Search for DevRev (Actions) and click it.
 3. Click **Configure DevRev**.
 4. Select an existing Source to connect to DevRev (Actions).
