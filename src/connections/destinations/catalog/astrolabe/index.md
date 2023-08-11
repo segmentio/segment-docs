@@ -7,7 +7,7 @@ id: 64d2643196f4937712e54198
 
 This destination is maintained by Astrolabe. For any issues with the destination, [contact the Astrolabe Support team](mailto:team@astrolabe.so).
 
-## Getting Started
+## Getting started
 
 ### Obtain your Astrolabe API Key
 
