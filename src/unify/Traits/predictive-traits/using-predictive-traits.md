@@ -11,7 +11,7 @@ Segment creates Predictive Traits as Computed Traits, with scores saved to user 
 
 Once you've selected a cohort, you can use Predictive Traits in concert with other Segment features:
 
-- [Audiences](/docs/engage/audiences/), which you can create with Predictive Traits as a base. As part of Engage, Segment also offers prebuilt [Suggested Predictive Audiences](/docs/engage/audiences/predictive-traits/suggested-predictive-audiences/).
+- [Audiences](/docs/engage/audiences/), which you can create with Predictive Traits as a base. As part of Engage, Segment also offers prebuilt [Suggested Predictive Audiences](/docs/unify/traits/predictive-traits/suggested-predictive-audiences/).
 - [Journeys](/docs/engage/journeys/); use Predictive Traits in Journeys to trigger [Engage marketing campaigns](/docs/engage/campaigns/) when users enter a high-percentage cohort, or send promotional material if a customer shows interest and has a high propensity to buy.
 - [Destinations](/docs/connections/destinations/); send your Predictive Traits downstream to [Warehouses](/docs/connections/storage/warehouses/), support systems, and ad platforms.
 
