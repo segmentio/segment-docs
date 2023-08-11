@@ -34,7 +34,7 @@ With this destination, you can have website or external events trigger action wi
 4. Select an existing Source to connect to DevRev (Actions).
 5. Give it a name and choose how to configure the destination
 6. You can generate an API key from the [DevRev app](https://app.devrev.ai/). Be sure you're in the DevOrg you want the events sent to and then go to Settings (the gear in the top left) -> Account -> New Token
-7. The email blacklist is the a comma separated list of domains that you want the integration to consisder personal (vs business) email addresses.
+7. The email blacklist is a comma separated list of domains that you want the integration to consider personal (vs business) email addresses.
 
 ### Accounts, Domains, Emails, and the blacklist
 
