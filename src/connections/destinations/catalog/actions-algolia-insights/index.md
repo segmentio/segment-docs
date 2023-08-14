@@ -1,12 +1,11 @@
 ---
-title: Algolia Insights Destination
+title: Algolia Insights (Actions) Destination
 rewrite: true
 redirect_from:
   - '/connections/destinations/catalog/algolia/'
-  - '/connections/destinations/catalog/actions-algolia-insights/'
-id: 5d373a350abf930001a6b70f
+id: 63e52bea7747fbc311d5b872
 ---
-This [Algolia Insights](https://www.algolia.com/products/analytics/) destination is a means of facilitating sending [Insights Events](https://www.algolia.com/doc/guides/sending-events/getting-started/). Sending these events is a required step for using several Algolia features:
+This [Algolia Insights (Actions)](https://www.algolia.com/products/analytics/) destination is a means of facilitating sending [Insights Events](https://www.algolia.com/doc/guides/sending-events/getting-started/). Sending these events is a required step for using several Algolia features:
 
 - Click and conversion analytics
 - A/B Testing
