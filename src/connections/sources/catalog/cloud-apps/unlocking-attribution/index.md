@@ -2,8 +2,6 @@
 title: Unlocking Attribution Source
 ---
 
-> (delete after reading) Include a 1-2 sentence introduction to your company and the value it provides to customers - updating the name and hyperlink. Please leave the utm string unchanged.
-
 The [Unlocking Attribution](https://yourintegration.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) source is a powerful solution designed to model attribution data, aiding marketers in identifying the most effective inbound channels for driving conversions. This documentation will guide you through the process of setting up and utilizing the "Unlocking Attribution" source within your Twilio Segment environment.  Unlocking Attribution is built on top of your pre-existing Segment implementation, ensuring you can be up and running in under an hour.
 
 This is an [Object Cloud Source](https://segment.com/docs/connections/sources/#object-cloud-sources) which can data into your Segment warehouse.  This means it can be used both within the Unlocking Attribution tool itself, or from reporting/analytics tools which read from your data warehouse.
@@ -115,13 +113,6 @@ Each row in the Media Spend Items table represent a unique combination of the ab
 
 
 ### media_spend_daily_spend
-All cost data from the various media platforms is downloaded and stored in the the Media Spend Items and Media Spend Daily Spend tables. Regardless of the media platform, the data is formatted to have the following key unique identifiers/attributes:
-
-* **Campaign Name** - The name of the campaign as defined the media platform. In some platforms, this could be derived from the “Category” field or “Campaign Group” field
-* **Ad Collective Name** - The name of the Ad Collective (also known as Ad Set, or Ad Group across various platforms)
-* **Campaign Id** - The unique ID of the campaign, as determined by the media platform
-* **Ad Collective Id** - The unique ID of the Ad Collective, as determined by the media platform
-Each row in the Media Spend Items table represent a unique combination of the above 4 attributes. After matching a touch against a campaign, the `campaign` identifier in the `touches` collection points to a row from this table.
 
 
 | Property Name                 | Description                                                                                           |
