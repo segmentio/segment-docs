@@ -76,8 +76,8 @@ Visit Segment's [pricing page](https://segment.com/pricing/){:target="_blank"} t
 ### Unify ingestion limitations
 
 Unify will silently drop events if:
-- The groupId has more than 500 characters.
+- The `groupId` has more than 500 characters.
 - Events have more than 300 properties/traits.
-- messageId is longer than 100 characters.
-- The groupId is empty in a group call or context.groupId is empty in a track call.
+- `messageId` is longer than 100 characters.
+- The `groupId` is empty in a Group call or `context.groupId` is empty in a Track call.
 
