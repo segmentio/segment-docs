@@ -49,14 +49,14 @@ If you are receiving an error and are unsure how to fix the issue, visit the par
 
 ## FAQ
 
-**Why can't I see the Event Tester when I log into my workspace?**
+#### Why can't I see the Event Tester when I log into my workspace?
 
 The Event Tester is only accessible to users with write access in their Segment workspace (read-only users will not see the Event Tester in their workspace). 
 
-**The Event Tester experienced an error when sending my event. Why did this happen?**
+#### The Event Tester experienced an error when sending my event. Why did this happen?
 
 If you experience an error, [let Segment know](mailto:friends@segment.com) and the Segment team will help you troubleshoot the issue.
 
-**Is this feature available for Datalakes ?**
+#### Is this feature available for Datalakes?**
 
-No, currently Event Tester is not available for Datalakes.
+The Event Tester is not available for Datalakes.
