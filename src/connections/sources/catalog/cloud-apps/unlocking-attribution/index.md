@@ -33,7 +33,7 @@ _**NOTE:** The Unlocking Attribution Source is currently in beta, which means th
 
 ### Sync
 
-The Unlocking Attribution source is built with a sync component, which means that Unlocking Attribution writes to Segment on a regular basis, when modelling is re-performed on your customer data (typically on a daily basis).  In the initial sync, all historical modelling is performed and written according to the Collections Table below. The objects are written into a separate schema, corresponding to the source instance's schema name you designated upon creation (for example, `ug_attribution.media_spend_items`).
+The Unlocking Attribution source is built with a sync component, which means that Unlocking Attribution writes to Segment on a regular basis, when modelling is re-performed on your customer data (typically on a daily basis).  In the initial sync, all historical modelling is performed and written according to the Collections structure below. The objects are written into a separate schema, corresponding to the source instance's schema name you designated upon creation (for example, `ug_attribution.media_spend_items`).
 
 Segment's sync component uses an upsert API, so the data in your warehouse loaded using sync reflects the latest state of the corresponding resource in Unlocking Attribution. For example, if `conversions.value` goes from `0` to `212` between syncs, on its next sync that conversion's value will be `212`.
 
@@ -45,11 +45,11 @@ Collections are the groupings of resources that Segment pulls from your source. 
 
 | Collection                        | Type   | Description                                                                                                                                                                                                                                                                                                                                                                                                          |
 | --------------------------------- | ------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `conversions`                     | object | This table contains each identified conversion event, as configured in Unlocking Attribution and detected by the modelling.                                                                                         |
-| `convresion_touch_lookup`         | object | This table contains a cross-reference between each conversion and all the pre-conversion touches which the end-user had.                                                                                                    |
+| `conversions`                     | object | This collection contains each identified conversion event, as configured in Unlocking Attribution and detected by the modelling.                                                                                         |
+| `convresion_touch_lookup`         | object | This collection contains a cross-reference between each conversion and all the pre-conversion touches which the end-user had.                                                                                                    |
 | `touches`                         | object | A touch is defined as any interaction that a user/customer/prospect had leading up to the conversion event. This generally means website visits, but can sometimes have broader definitions, based on the exact implementation.
-| `media_spend_items`               | object | All cost data from the various media platforms is downloaded and stored in the the Media Spend Items and Media Spend Daily Spend tables.
-| `media_spend_daily_spend`         | object | This table captures the daily spend for each campaign (and sometimes broken down by Ad Collective or Ad Id).
+| `media_spend_items`               | object | All cost data from the various media platforms is downloaded and stored in the the Media Spend Items and Media Spend Daily Spend collections.
+| `media_spend_daily_spend`         | object | This collection captures the daily spend for each campaign (and sometimes broken down by Ad Collective or Ad Id).
 
 ## Collection Properties
 Below are tables outlining the properties included in the collections listed above.
@@ -92,13 +92,13 @@ Below are tables outlining the properties included in the collections listed abo
 
 
 ### media_spend_items
-All cost data from the various media platforms is downloaded and stored in the the Media Spend Items and Media Spend Daily Spend tables. Regardless of the media platform, the data is formatted to have the following key unique identifiers/attributes:
+All cost data from the various media platforms is downloaded and stored in the the Media Spend Items and Media Spend Daily Spend collections. Regardless of the media platform, the data is formatted to have the following key unique identifiers/attributes:
 
 * **Campaign Name** - The name of the campaign as defined the media platform. In some platforms, this could be derived from the “Category” field or “Campaign Group” field
 * **Ad Collective Name** - The name of the Ad Collective (also known as Ad Set, or Ad Group across various platforms)
 * **Campaign Id** - The unique ID of the campaign, as determined by the media platform
 * **Ad Collective Id** - The unique ID of the Ad Collective, as determined by the media platform
-Each row in the Media Spend Items table represent a unique combination of the above 4 attributes. After matching a touch against a campaign, the `campaign` identifier in the `touches` collection points to a row from this table.
+Each row in the Media Spend Items collection represent a unique combination of the above 4 attributes. After matching a touch against a campaign, the `campaign` identifier in the `touches` collection points to a row from this collection.
 
 
 | Property Name                 | Description                                                                                           |
