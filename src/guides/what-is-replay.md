@@ -1,8 +1,7 @@
 ---
 title: Replay
+plan: replay
 ---
-
-{% include content/plan-grid.md name="replay" %}
 
 Replay takes an archived copy of your Segment data, and re-sends it to new or existing tools.
 
