@@ -4,10 +4,12 @@ hide-boilerplate: true
 hide-dossier: false
 id: 644ad6c6c4a87a3290450602
 private: true
+hidden: true
 ---
 
-[LiveRamp](https://liveramp.com/) gives companies and their partners the power to connect, control, and activate data to transform customer experiences and generate more valuable business outcomes. Our integration with LiveRamp enables you to push user audiences created in [Twilio Engage](https://www.twilio.com/en-us/engage) into your LiveRamp account to execute various marketing use cases.
-Our integration will allow users to connect their Engage Audiences to LiveRamp via their SFTP or a customer managed S3 cloud storage bucket. Users will be able to configure their delivery preferences within Segment.
+[LiveRamp](https://liveramp.com/){:target="_blank"} gives companies and their partners the power to connect, control, and activate data to transform customer experiences and generate more valuable business outcomes. Segment's integration with LiveRamp enables you to push user audiences created in [Twilio Engage](https://www.twilio.com/en-us/engage){:target="_blank"} into your LiveRamp account to execute various marketing use cases.
+
+The LiveRamp Audiences destination allows users to connect their Engage Audiences to LiveRamp through their SFTP or a customer-managed S3 cloud storage bucket. Users will be able to configure their delivery preferences within Segment.
 
 The LiveRamp Audiences destination can be connected to **Twilio Engage sources only**. 
 
@@ -16,14 +18,14 @@ The LiveRamp Audiences destination can be connected to **Twilio Engage sources o
 ### Setup your file drop
 
 #### SFTP
-1. Contact your LiveRamp representative to gain a set of [SFTP](https://docs.liveramp.com/connect/en/upload-a-file-via-liveramp-s-sftp.html) credentials.
+1. Contact your LiveRamp representative to gain a set of [SFTP](https://docs.liveramp.com/connect/en/upload-a-file-via-liveramp-s-sftp.html){:target="_blank"} credentials.
 2. Connect to the SFTP server using the client of your choice, and create a new folder under `/uploads` with the name of your audience.
 
 #### S3
 1. Create a new S3 bucket.
 2. Create a new IAM Role with `PutObject` access to the S3 bucket.
 3. Create a new IAM User and assign them the role.
-4. Generate a new Access Key pair for the user and note them down as we will use it for the settings.
+4. Generate a new Access Key pair for the user and note them down; you'll use it for the settings.
 
 ### Connect LiveRamp Audiences
 1. Create and configure your Engage Audience.
@@ -43,6 +45,3 @@ The LiveRamp Audiences destination can be connected to **Twilio Engage sources o
 * Audience sync is a full sync.
 * Files are created per audience.
 * After initial ingestion is complete, changing the mappings will cause the LiveRamp ingestion to start failing until ingestion setup is run again.
-
-## FAQ
-
