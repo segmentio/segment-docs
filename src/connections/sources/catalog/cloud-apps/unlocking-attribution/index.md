@@ -1,151 +1,134 @@
-# 💥 Segment Partner Source Documentation Template
-
-> Hi Partners 👋🏼
->
-> Welcome to Segment - glad to have you onboard! This doc serves as a guideline for your team to create best-in-class documentation alongside your amazing product.
->
-> Here are the guidelines we want you to have in mind when writing out your documentation:
->
-> - Be succinct and simple in your writing. Reduce text bloat where possible.
-> - Avoid 1st person language as it’s confusing for customers if they don’t know who wrote the docs (Segment or the Partner).
-> - Where pre-reading is required, hyperlink to other more generic parts of Segment’s (or your) documentation.
->
-> - Screenshots/Images are generally discouraged unless absolutely necessary
->
-> The below template intends to provide a standardized structure. To submit your documentation, complete the following steps:
->
-> 1. Fork and clone the `segment-docs` repo locally
-> 2. Create a new branch (e.g., partner-name/source)
-> 3. Create an `index.md` file in the following path `src/connections/sources/catalog/cloud-apps/{source-slug}/index.md
-> 4. Copy the template below into your `index.md` file, and edit it to be in line with how your integration operates
-> 5. Add, commit, and push your code, then submit a pull request to the `segment-docs` repo
->
-> If a section does not apply to your integration, feel free to remove. Please don’t create separate sections unless absolutely necessary. In most cases, creating a H3 (###) sub-heading under an existing section is the best option!
->
-> If you have any questions in the meantime, please reach out to our team at partner-support@segment.com.
-
-## Template begins here...
 ---
-title: [integration_name] Source
+title: Unlocking Attribution Source
 ---
 
 > (delete after reading) Include a 1-2 sentence introduction to your company and the value it provides to customers - updating the name and hyperlink. Please leave the utm string unchanged.
 
-[<integration_name>](https://yourintegration.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) provides self-serve predictive analytics for growth marketers, leveraging machine learning to automate audience insights and recommendations.
+The [Unlocking Attribution](https://yourintegration.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) source is a powerful solution designed to model attribution data, aiding marketers in identifying the most effective inbound channels for driving conversions. This documentation will guide you through the process of setting up and utilizing the "Unlocking Attribution" source within your Twilio Segment environment.  Unlocking Attribution is built on top of your pre-existing Segment implementation, ensuring you can be up and running in under an hour.
 
-This is an [Event Cloud Source](https://segment.com/docs/sources/#event-cloud-sources) which can not only export data into your Segment warehouse, but they can also federate the exported data into your other enabled Segment Destinations.
+This is an [Object Cloud Source](https://segment.com/docs/connections/sources/#object-cloud-sources) which can data into your Segment warehouse.  This means it can be used both within the Unlocking Attribution tool itself, or from reporting/analytics tools which read from your data warehouse.
 
-> (delete after reading) Update your company name and support email address.
+This source is maintained by Unlocking Attribution. For any issues with the source, [contact their Support team](mailto:support@unlockinggrowth.co).
 
-This source is maintained by <integration_name>. For any issues with the source, [contact their Support team](mailto:support@<integration_name>.com).
-
-> (delete after reading) Update your company name (x2) and support email address.
-
-_**NOTE:** The <integration_name> Source is currently in beta, which means that they are still actively developing the source. This doc was last updated on <Month_Name DD, YYYY>. If you are interested in joining their beta program or have any feedback to help improve the <integration_name> Source and its documentation, [let their team know](mailto:support@<integration_name>.com)!_
+_**NOTE:** The Unlocking Attribution Source is currently in beta, which means that they are still actively developing the source. This doc was last updated on August 14th, 2023. If you are interested in joining their beta program or have any feedback to help improve the Unlocking Attribution Source and its documentation, [let their team know](mailto:support@unlockinggrowth.co)!_
 
 ## Getting Started
 
 > (delete after reading) Include clear, succinct steps including hyperlinks to where customers can locate the place in your app to enter their Segment writekey.
 
 1. From your workspace's [Sources catalog page](https://app.segment.com/goto-my-workspace/sources/catalog) click **Add Source**.
-2. Search for "<integration_name>" in the Sources Catalog, select <integration_name>, and click **Add Source**.
+2. Search for "Unlocking Attribution" in the Sources Catalog, select Unlocking Attribution, and click **Add Source**.
 3. On the next screen, give the Source a nickname configure any other settings.
 
    - The nickname is used as a label in the Segment app, and Segment creates a related schema name in your warehouse. The nickname can be anything, but we recommend using something that reflects the source itself and distinguishes amongst your environments (eg. SourceName_Prod, SourceName_Staging, SourceName_Dev).
 
 4. Click **Add Source** to save your settings.
-5. Copy the Write key from the Segment UI and log in to your <integration_name> account - navigate to Settings > Integrations > Segment Integration and paste the key to connect.
+5. Select "Workplace Settings" from within the "Settings" section of the left hand side menu.
+6. Select the "Access Management" section from this page.
+7. Select the "Tokens" section from this page.
+8. Click the "+ Create Token" button on this page
+9. Enter a description such as "Unlocking Attribution", select "Workspace Owner" and click "Create"
+10. Copy the token that is presented on the screen.
+11. Now, switch to your account in Unlocking Attribution and within the Onboarding Wizard, paste the taken you copied in step 10.
+12. Click "Connect" and then follow the remaining steps within the onboarding wizard.
 
-## Stream
 
-> (delete after reading) Clarify the type of Segment events your integration will send. 
+### Sync
 
-<integration_name> uses our stream Source component to send Segment event data. It uses a server-side (select from `track`, `identify`, `page`, `group`) method(s) to send data to Segment. These events are then available in any destination that accepts server-side events, and available in a schema in your data warehouse, so you can query using SQL.
+The Unlocking Attribution source is built with a sync component, which means that Unlocking Attribution writes to Segment on a regular basis, when modelling is re-performed on your customer data (typically on a daily basis).  In the initial sync, all historical modelling is performed and written according to the Collections Table below. The objects are written into a separate schema, corresponding to the source instance's schema name you designated upon creation (for example, `ug_attribution.media_spend_items`).
 
-> (delete after reading) Clarify how your integration includes user identifiers in your event payloads, the example below is from Klaviyo:
+Segment's sync component uses an upsert API, so the data in your warehouse loaded using sync reflects the latest state of the corresponding resource in Unlocking Attribution. For example, if `conversions.value` goes from `0` to `212` between syncs, on its next sync that conversion's value will be `212`.
 
-The default behavior is for Klaviyo to pass the userId associated with the email recipient as the userId. There are cases in which Klaviyo does not have an associated userId, in which case the email address will be passed in as the anonymousId.
+The source syncs and warehouse syncs are independent processes. Source runs pull your data into the Segment Hub, and warehouse runs flush that data to your warehouse. Sources will sync with Segment daily. Depending on your Warehouses plan, Segment pushes the Source data to your warehouse on the interval associated with your billing plan.
 
-> (delete after reading) For each of the below sections, populate the event and properties that a customer would expect to receive in their downstream tools from your Event Source.
 
-## Events
+## Collections
+Collections are the groupings of resources that Segment pulls from your source. In your warehouse, each collection gets its own table.
 
-The table below lists events that <integration_name> sends to Segment. These events appear as tables in your warehouse, and as regular events in other Destinations. <integration_name> includes the `userId` if available.
+| Collection                        | Type   | Description                                                                                                                                                                                                                                                                                                                                                                                                          |
+| --------------------------------- | ------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `conversions`                     | object | This table contains each identified conversion event, as configured in Unlocking Attribution and detected by the modelling.                                                                                         |
+| `convresion_touch_lookup`         | object | This table contains a cross-reference between each conversion and all the pre-conversion touches which the end-user had.                                                                                                    |
+| `touches`                         | object | A touch is defined as any interaction that a user/customer/prospect had leading up to the conversion event. This generally means website visits, but can sometimes have broader definitions, based on the exact implementation.
+| `media_spend_items`               | object | All cost data from the various media platforms is downloaded and stored in the the Media Spend Items and Media Spend Daily Spend tables.
+| `media_spend_daily_spend`         | object | This table captures the daily spend for each campaign (and sometimes broken down by Ad Collective or Ad Id).
 
-<table>
-  <tr>
-   <td>Event Name</td>
-   <td>Description</td>
-  </tr>
-  <tr>
-   <td>Email Sent</td>
-   <td>Email was sent successfully</td>
-  </tr>
-  <tr>
-   <td>Email Opened</td>
-   <td>Prospect opened the email</td>
-  </tr>
-  <tr>
-   <td>Link Clicked</td>
-   <td>Prospect clicked the tracking link</td>
-  </tr>
-  <tr>
-   <td>Email Replied</td>
-   <td>Prospect replied to the email sent</td>
-  </tr>
-  <tr>
-   <td>Email Bounced</td>
-   <td>Email servers rejected the email</td>
-  </tr>
-  <tr>
-   <td>Email Unsubscribed</td>
-   <td>Prospect clicked the unsubscribe link</td>
-  </tr>
-</table>
+## Collection Properties
+Below are tables outlining the properties included in the collections listed above.
 
-## Event Properties
+### conversions
 
-The table below list the properties included in the events listed above.
+| Property Name                 | Description                                                                                           |
+| ----------------------------- | ----------------------------------------------------------------------------------------------------- |
+| `id`                          | The unique ID of this conversion event                                                                |
+| `anonymous_id`                | If available, the anonymous_id of the user who performed the conversion event                         |
+| `user_id`                     | If available, the user_id of the user who performed the conversion event                              |
+| `conversiontype`              | The name of the conversion event                                                                      |
+| `timestamp`                   | The date/time that the conversion event occurred                                                      |
+| `value`                       | The value (typically revenue) of the conversion event                                                 |
 
-<table>
-  <tr>
-   <td>Property Name</td>
-   <td>Description</td>
-  </tr>
-  <tr>
-   <td>`event`</td>
-   <td>Email event type</td>
-  </tr>
-  <tr>
-   <td>`userId`</td>
-   <td>Prospect email ID</td>
-  </tr>
-  <tr>
-   <td>`email_id`</td>
-   <td>ID of the email</td>
-  </tr>
-  <tr>
-   <td>`fromId`</td>
-   <td>Sender email ID</td>
-  </tr>
-  <tr>
-   <td>`email_subject`</td>
-   <td>Subject line of the email</td>
-  </tr>
-  <tr>
-   <td>`link`</td>
-   <td>URL of the link clicked</td>
-  </tr>
-</table>
+### conversion_touch_lookup
 
-## Adding Destinations
+| Property Name                 | Description                                                                                           |
+| ----------------------------- | ----------------------------------------------------------------------------------------------------- |
+| `conversion`                  | The unique ID of the conversion event                                                                 |
+| `touch_id`                    | The unique ID of the specific touch                                                                   |
 
-Now that your Source is set up, you can connect it with Destinations.
+### touches
 
-Log into your downstream tools and check to see that your events appear as expected, and that they contain all of the properties you expect. If your events and properties don’t appear, check the [Event Delivery](https://segment.com/docs/connections/event-delivery/) tool, and refer to the Destination docs for each tool for troubleshooting.
+| Property Name                 | Description                                                                                           |
+| ----------------------------- | ----------------------------------------------------------------------------------------------------- |
+| `timestamp`                   | The date/time that the touch occurred                                                                 |
+| `id`                          | The unique ID of this touch                                                                           |
+| `context_page_url`            | The full URL of the page viewed                                                                       |
+| `context_page_path`           | The path of the page viewed                                                                           |
+| `context_page_title`          | The title of the page viewed                                                                          |
+| `context_page_referrer`       | The referrer from where the user clicked from to get to this page                                     |
+| `context_campaign_source`     | The contents of the utm_source query parameter in the URL                                             |
+| `context_campaign_medium`     | The contents of the utm_medium query parameter in the URL                                             |
+| `context_campaign_name`       | The contents of the utm_campaign query parameter in the URL                                           |
+| `context_campaign_content`    | The contents of the utm_content query parameter in the URL                                            |
+| `context_campaign_terms`      | The contents of the utm_terms query parameter in the URL                                              |
+| `campaign`                    | The unique ID of the “Media Spend Item” object which this touch was mapped to                         |
+| `search_narrative`            | The plain-English description of how this particular touch was mapped to campaign cost data           |
 
-If there are any issues with how the events are arriving to Segment, [contact the <integration_name> support team](mailto:support@<integration_name>.com).
+
+### media_spend_items
+All cost data from the various media platforms is downloaded and stored in the the Media Spend Items and Media Spend Daily Spend tables. Regardless of the media platform, the data is formatted to have the following key unique identifiers/attributes:
+
+* **Campaign Name** - The name of the campaign as defined the media platform. In some platforms, this could be derived from the “Category” field or “Campaign Group” field
+* **Ad Collective Name** - The name of the Ad Collective (also known as Ad Set, or Ad Group across various platforms)
+* **Campaign Id** - The unique ID of the campaign, as determined by the media platform
+* **Ad Collective Id** - The unique ID of the Ad Collective, as determined by the media platform
+Each row in the Media Spend Items table represent a unique combination of the above 4 attributes. After matching a touch against a campaign, the `campaign` identifier in the `touches` collection points to a row from this table.
+
+
+| Property Name                 | Description                                                                                           |
+| ----------------------------- | ----------------------------------------------------------------------------------------------------- |
+| `campaign_name`               | The name of the campaign                                                                              |
+| `campaign_id`                 | The unique ID of the campaign, as set by the paid media platform                                      |
+| `id`                          | The unique ID of this item                                                                            |
+| `ad_collective_name`          | The name of the Ad Collective                                                                         |
+| `ad_collective_id`            | The unique ID of the Ad Collective, as set by the paid media platform                                 |
+| `media_source`                | The platform of this media item                                                                       |
+| `type`                        | The type of this media item (Paid, Organic)                                                           |
+
+
+### media_spend_daily_spend
+All cost data from the various media platforms is downloaded and stored in the the Media Spend Items and Media Spend Daily Spend tables. Regardless of the media platform, the data is formatted to have the following key unique identifiers/attributes:
+
+* **Campaign Name** - The name of the campaign as defined the media platform. In some platforms, this could be derived from the “Category” field or “Campaign Group” field
+* **Ad Collective Name** - The name of the Ad Collective (also known as Ad Set, or Ad Group across various platforms)
+* **Campaign Id** - The unique ID of the campaign, as determined by the media platform
+* **Ad Collective Id** - The unique ID of the Ad Collective, as determined by the media platform
+Each row in the Media Spend Items table represent a unique combination of the above 4 attributes. After matching a touch against a campaign, the `campaign` identifier in the `touches` collection points to a row from this table.
+
+
+| Property Name                 | Description                                                                                           |
+| ----------------------------- | ----------------------------------------------------------------------------------------------------- |
+| `campaign`                    | The unique ID of the media_spend_items item, which this spend row corresponds to                      |
+| `date_start`                  | The date of this spending item                                                                        |
+| `spend`                       | The amount of spend on that day                                                                       |
+
 
 ---
-
-> Congratulations! 🎉 You’ve finished the documentation for your Segment integration. If there’s any additional information or nuance which did not fit in the above template and that you want to share with our mutual customers, feel free to include these as a separate section for us to review. If not, you may now submit this doc to our team.
