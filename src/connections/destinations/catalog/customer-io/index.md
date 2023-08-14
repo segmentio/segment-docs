@@ -118,9 +118,9 @@ analytics.track('Clicked Button');
 
 Track events send to Customer.io as `custom events`. In the Customer.io "Activity Logs", "Activity Type" sets to `event` and "Activity Name" sets to the event name.
 
-## Device Token Set up
+## Device token setup
 
-Set `device.token` before you send the `Application Installed`, `Application Uninstalled`, or `Application Opened` events to Segment. To understand why you would want to send the `device.token`, please see Customer.io's [documentation](https://customer.io/docs/journeys/device-tokens/#what-is-a-device-token). You will likely need to extract this value from your push notification provider.
+Set `device.token` before you send the `Application Installed`, `Application Uninstalled`, or `Application Opened` events to Segment. For more on why you'd want to send `device.token`, see Customer.io's [device token documentation](https://customer.io/docs/journeys/device-tokens/#what-is-a-device-token){:target="_blank"}. You'll likely need to extract this value from your push notification provider.
 
 For that, you need to make the following calls:
 
