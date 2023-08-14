@@ -5,7 +5,7 @@ redirect_from:
   - '/connections/destinations/catalog/algolia/'
 id: 63e52bea7747fbc311d5b872
 ---
-This [Algolia Insights (Actions)](https://www.algolia.com/products/analytics/) destination is a means of facilitating sending [Insights Events](https://www.algolia.com/doc/guides/sending-events/getting-started/). Sending these events is a required step for using several Algolia features:
+With the [Algolia Insights (Actions)](https://www.algolia.com/products/analytics/){:target="_blank"}  destination, you can send [Insights Events](https://www.algolia.com/doc/guides/sending-events/getting-started/){:target="_blank"}. It's required to send Insight Events to use these Algolia features: 
 
 - Click and conversion analytics
 - A/B Testing
