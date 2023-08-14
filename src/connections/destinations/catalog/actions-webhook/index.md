@@ -24,6 +24,6 @@ Segment's Webhooks (Actions) destination uses internet protocol and HTTP callbac
 
 {% include components/actions-fields.html settings="true"%}
 
-## Batch Size Considerations
+## Batch size limits
 
 In Webhook Actions mapping, the default value of batch size is '1000'. It can be changed to lower or higher value, however, note that there is a upper limit of '4000' as well.
