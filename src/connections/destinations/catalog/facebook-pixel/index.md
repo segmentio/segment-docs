@@ -28,7 +28,7 @@ This page is about the **Facebook Pixel** destination. For documentation on othe
 | **[Facebook Conversions API](/docs/connections/destinations/catalog/actions-facebook-conversions-api/)**    | Yes                 |
 
 
-## Getting Started
+## Getting started
 
 1. From the Segment web app, click **Catalog**.
 2. Search for "Facebook Pixel" in the Catalog, select it, and choose which of your sources to connect the destination to.
@@ -120,11 +120,11 @@ Here is how you'd specify standard events in the settings view:
 
 You can map more than one Track event to the same Facebook standard event.
 
-### Legacy Events
+### Legacy events
 
 To send *Legacy Conversion* events, use the Segment setting called "Legacy Conversion Pixel IDs". Any events that appear in that mapping will be sent to Facebook with the specified Pixel ID used as the Facebook Pixel `eventName`. Conversion events only support `currency` and `value` as event properties, so only these will be associated with the event. `currency` will default to `USD` if left out.
 
-### Custom Events
+### Custom events
 
 To send *Custom* events, send any event that does not appear in either mapping. All properties you include in the event are included as event properties. Segment sends any events you don't add to the "Map Your Events to Standard FB Events" setting to Facebook as a custom event. There is no setting to add custom events in the Facebook Pixel Destination configuration.
 
@@ -141,7 +141,7 @@ Facebook Pixel uses a custom timestamp format: an ISO 8601 timestamp without tim
 - `travelEnd`
 - `travelStart`
 
-### Advanced Matching
+### Advanced matching
 
 The Segment Facebook Pixel integration supports [Advanced Matching](https://developers.facebook.com/docs/facebook-pixel/advanced/advanced-matching){:target="_blank"}, which enables you to send your customer data through the pixel to match more website actions with Facebook users. With this additional data, you can report and optimize your ads for more conversions and build larger re-marketing audiences. When the page loads, and before Segment fires off the pixels, Segment checks for traits that the user has been previously identified with and sends that along with each call.
 
@@ -164,7 +164,7 @@ When you use Advanced Matching, Facebook also accepts an `external_id`. This can
 - Send the Segment `userId` or `anonymousId` as `external_id` using the **Use User ID or Anonymous ID as External ID** setting
 - Indicate which user trait you would like Segment to map to `external_id` using the **Advanced Match Trait Key for External ID** setting
 
-## Limited Data Use
+## Limited data use
 
 {% include content/facebook-ldu-intro.md %}
 
@@ -187,7 +187,7 @@ analytics.load("replace_with_your_write_key", {
 });
 ```
 
-## Map categories to FB content types
+## Map categories to Facebook content types
 
 If you're using real estate, travel, or automotive [Dynamic Ads](https://www.facebook.com/business/learn/facebook-create-ad-dynamic-ads){:target="_blank"} you can map `category` values to `content_type` values. For example, you might map the category "cars" to the "vehicle" content type so Facebook promotes relevant vehicles from your catalog. To understand which content types you can map to, consult the [Facebook Dynamic Ads documentation](https://developers.facebook.com/docs/marketing-api/dynamic-ad){:target="_blank"}.
 
