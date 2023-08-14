@@ -164,6 +164,14 @@ If you don't supply a function for an event type, Segment throws an `EventNotSup
 
 You can read more about [error handling](#destination-insert-functions-logs-and-errors) below.
 
+## Insert Functions and Actions Destinations
+
+There are a couple of behavorial nuances to consider when using Insert Functions with Actions destinations.
+
+One thing to keep in mind is that Insert Functions block Actions destinations from triggering multiple mapping subscriptions for a single payload. If you have a single payload coming through the pipeline that you expect to trigger multiple mapping subscriptions in your configuration, that will work as expected without an Insert Function enabled. With an Insert Function enabled, however, when a payload that is meant to trigger multiple mappings subscriptions is seen you will find that none of the mappings subscriptions will fire. Please ensure that your payloads are only configured to trigger a single mapping subscription if you have an Insert Function enabeld on that destination.
+
+Another thing to know is that a payload must come into the pipeline with the attributes that allow it to match your mapping triggers. You can't use an Insert Function to change the event to match your mapping triggers. If an event comes into an Actions destiantion and already matches a mapping trigger, that mapping subscription will fire. If a payload does not come to the Actions destination matching a mapping trigger, even if an Insert Function is meant to alter the event to allow to to match a trigger, it will not fire that mapping subscription. The mapping trigger is seen first in the pipeline so a payload won't make it to the Insert Function at all if it doesn't come into the pipeline matching a mapping trigger. 
+
 ## Create settings and secrets
 
 {% include content/functions/settings.md %}
@@ -310,10 +318,6 @@ No, destination insert functions are currently available as cloud-mode destinati
 ##### How do I publish a destination to the public Segment catalog?
 
 If you are a partner, looking to publish your destination and distribute your app through Segment catalog, visit the [Developer Center](https://segment.com/partners/developer-center/){:target="_blank"} and check out the Segment [partner docs](/docs/partners/).
-
-##### Are there any nuances to consider in using Insert Functions with Actions destinations?
-
-Yes. Without Insert Functions enabled, a single event could trigger multiple mappings. With Insert Functions enabled, though, events only trigger one Actions mapping, even if more than one mapping is set up to run when a particular event is seen.
 
 
 {% comment %}
