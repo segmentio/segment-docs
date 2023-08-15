@@ -215,6 +215,8 @@ sections:
     title: Typewriter for Swift
   - path: /connections/sources/catalog/libraries/mobile/apple/swift-destination-filters
     title: Destination Filters for Swift
+  - path: /connections/sources/catalog/libraries/mobile/apple/ios-17
+    title: iOS 17 & Privacy Manifests
 
 - slug: node-js
   section_title: Analytics-Node.js Documentation
