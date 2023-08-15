@@ -1,5 +1,8 @@
 ---
 title: TikTok Pixel Destination
+private: true
+hidden: true
+id: 64c1690a9f08c84a420aba78
 ---
 
 {% include content/plan-grid.md name="actions" %}
@@ -44,7 +47,7 @@ After setting up the Destination, Segment enables seven mappings by default. You
 
 {% include components/actions-fields.html %}
 
-## Getting started with Pixel and obtaining Pixel code
+## Getting started with Pixel and obtaining the Pixel code
 
 Please refer to the [TikTok Help Center documentation](https://ads.tiktok.com/help/article/get-started-pixel?redirected=2){:target="_blank"} to learn more about how to get started with TikTok Pixel. Once the Pixel is created, please retrieve the Pixel Code from TikTok Events Manager (TTEM).
 
