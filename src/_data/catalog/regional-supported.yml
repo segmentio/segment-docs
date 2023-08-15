@@ -93,6 +93,15 @@ sources:
       - us
     endpoints:
       - us
+  - id: T4gvCx0YNM
+    display_name: AppICETest
+    hidden: false
+    slug: appicetest
+    url: connections/sources/catalog/cloud-apps/appicetest
+    regions:
+      - us
+    endpoints:
+      - us
   - id: dZeHygTSD4
     display_name: Apple
     hidden: false
