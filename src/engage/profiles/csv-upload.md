@@ -12,7 +12,7 @@ You can also [set subscription states](#set-user-subscriptions) for each email a
 > Uploading a CSV creates new profiles and updates existing profiles. These profile updates may lead to users entering existing audiences or message campaigns.
 
 > info ""
-> Using the CSV Uploader to upload user profiles to Engage will **not** increase your MTUs count. For more information about MTUs and Engage, see [here](/docs/guides/usage-and-billing/mtus-and-throughput/#mtus-and-engage).
+> Using the CSV Uploader to upload user profiles to Engage will **not** increase your MTUs count. [Learn more](/docs/guides/usage-and-billing/mtus-and-throughput/#mtus-and-engage) about MTUs and Engage.
 
 
 ## Upload a CSV file
