@@ -23,7 +23,7 @@ You can build an Audience from existing events, traits, computed traits, or othe
 You can build an Audience from any events that are connected to Engage, including [Track](/docs/connections/spec/track), [Page](/docs/connections/spec/page), and [Screen](/docs/connections/spec/screen) calls. You can use the `property` button to refine the audience on specific event properties, as well. 
 
 > info ""
-> Audience builder **does not** return every value for the traits/properties in the Constant value/Traits dropdowns. Currently, it only samples a percentage of values from the incoming data stream, which does not guarantee that all values will be displayed, especially those with lower volumes. However, if a value is not appearing, you may manually enter it.
+> The Audience builder doesn't return every property value in the Constant value or Traits drop-downs. Segment displays a portion of values from the incoming data stream. However, if you don't see the value you're looking for, you can manually enter it.
 
 Select `and not who` to indicate users that have not performed an event. For example, you might want to look at all users that have viewed a product above a certain price point but not completed the order.
 
