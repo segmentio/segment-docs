@@ -7,7 +7,7 @@ id: 5661eb58e954a874ca44cc07
 [Facebook Pixel](https://developers.facebook.com/docs/facebook-pixel) lets you measure and optimize the performance of your Facebook Ads, making conversion tracking, optimization and remarketing easier than ever. The Facebook Pixel Destination is open-source. You can browse the code [on GitHub](https://github.com/segment-integrations/analytics.js-integration-facebook-pixel){:target="_blank"}.
 
 > warning ""
-> Facebook has deprecated the modular Ads For Websites suite, which previously comprised Facebook Custom Audiences and Facebook Conversion Tracking. Segment has consolidated those two destinations into this new and improved Facebook Pixel destination.
+> Facebook deprecated the modular Ads For Websites suite, which previously comprised Facebook Custom Audiences and Facebook Conversion Tracking. Segment consolidated those two destinations into this new and improved Facebook Pixel destination.
 
 
 
