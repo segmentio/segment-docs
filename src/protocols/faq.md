@@ -86,8 +86,13 @@ Unplanned property omission is only supported for cloud-mode destinations. Unpla
 
 ### Why do I have to different Tracking Plan Ids?
 
-Your tracking plan id allows you to send data to Segments API end point and directs it to a specific tracking plan you have created. Depending on which API you are using will determine what tracking plan Id you will use. 
+When you access a Tracking Plan, you'll come across two IDs: tp_ and rs_:
 
+If you are using Public API, copy the ID that starts with "tp". 
+
+If you are using Config API, copy the ID that starts with "rs". 
+
+Please be aware that depending on how you access your tracking plan will depend on the slug that is presented in the URL.
 
 ## Protocols Validation
 
