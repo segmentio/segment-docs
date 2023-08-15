@@ -29,7 +29,7 @@ For example:
 3.  Search for DevRev (Actions) and click it.
 4.  Click **Configure DevRev**.
 5.  Select an existing Source to connect to DevRev (Actions).
-6.  Give it a name and choose how to configure the destination
+6.  Give it a name and choose how to configure the destination.
 7.  The email blacklist is a comma separated list of domains that you want the integration to consider personal (vs business) email addresses.
 
 ### Accounts, domains, emails, and the blacklist
