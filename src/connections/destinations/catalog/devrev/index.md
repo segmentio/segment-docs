@@ -37,6 +37,6 @@ For example:
 By default, the `createRevUser` function will create a new RevUser (Contact) object in DevRev. This contact will be associated with an Account as well, based on the following rules:
 
 1. If the email address is a personal email address (defined by having a domain in the domain blacklist), then the Account will be searched for using the email address specifically (for example, `test@gmail.com` would look for an account with external_ref of `test@gmail.com`).
-2. If the email address is a company address (not having a domain in the domain blacklist), then DevRev looks for an account with the company domain. If found, the RevUser will be attached to this Account. If there is no existing account, a new one will be created with the company domain (for example, DevRev would add `test@company.com` under the Account with the domain `company.com`)
+2. If the email address is a company address (not having a domain in the domain blacklist), then DevRev looks for an account with the company domain. If found, the RevUser will be attached to this Account. If there is no existing account, a new one will be created with the company domain (for example, DevRev would add `test@company.com` under the Account with the domain `company.com`).
 
 {% include components/actions-fields.html %}
