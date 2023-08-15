@@ -1,4 +1,3 @@
-
 ---
 title: Userpilot Cloud (Actions) Destination
 id: 647f30a35eedd03afde0a1c3
