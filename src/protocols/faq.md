@@ -92,7 +92,7 @@ If you are using Public API, copy the ID that starts with "tp".
 
 If you are using Config API, copy the ID that starts with "rs". 
 
-Please be aware that depending on how you access your tracking plan will depend on the slug that is presented in the URL.
+*Please be aware that depending on how you access your tracking plan will depend on the slug that is presented in the URL.*
 
 ## Protocols Validation
 
