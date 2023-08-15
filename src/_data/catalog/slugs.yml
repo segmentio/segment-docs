@@ -119,3 +119,5 @@ destinations:
     override: "actions-pardot"
   - original: "airship-actions"
     override: "actions-airship"
+  - original: "algolia-insights-actions"
+    override: "actions-algolia-insights"

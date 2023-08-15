@@ -1,4 +1,3 @@
-
 ---
 title: Userpilot Web (Actions) Destination
 id: 6480b4eeab29eca5415089d4

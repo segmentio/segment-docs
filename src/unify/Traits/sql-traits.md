@@ -196,9 +196,9 @@ You can query based on `email`, `user_id`, or `anonymous_id`. If Segment doesn't
 
 Yes. The Engage engine sends an identify call if there is no match between the identifier you chose and an existing record. When this happens, Segment creates a new user profile. This identify call takes place in the back-end and doesn't show up in your Debugger.
 
-### Does Engage send identify/group calls on every run?
+### Does Engage send identify/track/group calls on every run?
 
-No. Engage only sends an identify/group call if the values in a row have changed from previous runs.
+No. Engage only sends an identify/track/group call if the values in a row have changed from previous runs.
 
 ### I have a large (1M+) query of users to import, should I be worried?
 
