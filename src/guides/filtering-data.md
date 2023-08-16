@@ -108,6 +108,10 @@ If you have Protocols in your workspace, **and** have a tracking plan associated
 ![Schema Configuration section of a source's Settings page](images/protocols-unplanned.png)
 
 
+## Destination Insert Function
+
+The newest, most customizable way to filter or alter data going from a source to a Cloud Mode destination is to use [Insert Functions]([url](https://segment.com/docs/connections/functions/insert-functions/)). This feature gives you the abiltiy to receive data from your Segment source, write custom code to alter or block it, and then pass that altered payload to a downstream Cloud Mode destination.
+
 ## Warehouse Selective Sync
 
 Warehouse Selective Sync allows you to stop sending specific data to specific warehouses. You can use this to stop syncing specific events or properties that aren't relevant, and could be slowing down your warehouse syncs. See the [Warehouse Selective Sync documentation](/docs/connections/storage/warehouses/warehouse-syncs/#warehouse-selective-sync) to learn more.
