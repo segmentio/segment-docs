@@ -26,7 +26,7 @@ In an effort to limit fingerprinting, Apple is also making plans to have develop
 Apple is also introducing the concept of [NSPrivacyTrackingDomains](https://developer.apple.com/documentation/bundleresources/privacy_manifest_files#4284009) to Privacy Manifests in iOS 17. This is an array of strings that lists the URLs the app connects to in order to aid in tracking. If the user has not granted tracking permission through the App Tracking Transparency framework, network requests to these domains fail and your app receives an error. The Analytics-Swift Privacy Manifest includes the endpoint Segment events are sent to. 
 
 > info ""
-> If you set NSPrivacyTracking to true then you need to provide at least one internet domain > in NSPrivacyTrackingDomains; otherwise, you can provide zero or more domains.
+> If you set NSPrivacyTracking to true then you need to provide at least one internet domain in NSPrivacyTrackingDomains; otherwise, you can provide zero or more domains.
 
 
 ## Analytics-Swift Privacy Manifest 
