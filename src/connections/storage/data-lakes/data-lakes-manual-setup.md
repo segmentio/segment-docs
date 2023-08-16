@@ -1,9 +1,8 @@
 ---
 hidden: true
 title: Configure the Data Lakes AWS Environment
+plan: data-lakes
 ---
-{% include content/plan-grid.md name="data-lakes" %}
-
 
 The instructions below will guide you through the process required to configure the environment required to begin loading data into your Segment Data Lake. For a more automated process, see [Set Up Segment Data Lakes](/docs/connections/storage/catalog/data-lakes).
 

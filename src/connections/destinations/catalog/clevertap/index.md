@@ -176,3 +176,10 @@ CleverTap has created a sample iOS application that integrates CleverTap using S
 If you chose not to bundle the CleverTap Mobile SDK, then you will have to implement your own Push Message processors (and you won't have access to CleverTap's In-App feature).
 
 If you decide to implement your own Push Message processors, then you can pass push tokens to CleverTap using the server-side destination. You can do this by sending it inside context.device.token.
+
+
+## Troubleshooting
+
+### Verbose Logging
+
+When using Web Device-mode, you can enable verbose logging of all communication with CleverTap servers by setting the `theWZRK_D` variable in `sessionStorage`. In the developer console of your browser, enter `sessionStorage['WZRK_D'] = '';`, you'll see error messages and warnings logged. See the [CleverTap Web Quickstart Guide](https://developer.clevertap.com/docs/web-quickstart-guide#debugging){:target="_blank"} for more details.

@@ -29,13 +29,13 @@ The following roles are only available to Segment Business Tier accounts.
 * **Scope:** Grants access to *all* Identity settings.
 
 #### Source Read-only
-* Read access to assigned source(s), source settings, connected streaming destinations, schema, transformations, and live data in the debugger.
-* **Scope:** Grants access to either: all current and future Sources, or only specific Sources, or Sources with a specific Label (BT only).
+* Read access to assigned source(s), source settings, connected streaming destinations, schema, transformations, and live data in the debugger. Reverse ETL sources are also included.
+* **Scope:** Grants access to either: all current and future Sources, or only specific Sources, or Sources with a specific Label (BT only). 
 
 
 #### Source Admin
-* Edit access to assigned source(s), source settings, connected streaming destinations, schema, transformations, the source's [write key](/docs/connections/find-writekey/) and live data in the debugger.
-* **Scope:** Grants access to either: all current and future Sources, or only specific Sources, or Sources with a specific Label (BT only).
+* Edit access to assigned source(s), source settings, connected streaming destinations, schema, transformations, the source's [write key](/docs/connections/find-writekey/) and live data in the debugger. Reverse ETL sources are also included.
+* **Scope:** Grants access to either: all current and future Sources, or only specific Sources, or Sources with a specific Label (BT only). 
 
 #### Unify and Engage Admin
 * Edit access to Unify settings and if purchased, Engage Audiences, Traits, Journeys, Content, and settings.
@@ -78,7 +78,7 @@ Workspace Owners can grant specific individuals or groups access to PII from the
 
 Engage destinations aren't included in the Engage roles by default. Users with Engage roles (including the Engage Admin) need additional permissions for each Engage space they work with to manage that Engage space's destinations.
 
-Grant these users `Source Admin` on the source named `Engage (space name)` to grant them access to the Engage destinations for that Engage space.
+Grant these users `Unify and Engage Admin` on the selected Engage space and `Source Admin` on the source named `Engage (space name)` to grant them access to the Engage destinations for that Engage space.
 
 ## Roles for connecting resources
 

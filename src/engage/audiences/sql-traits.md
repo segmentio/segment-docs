@@ -191,9 +191,9 @@ You can query based on `email`, `user_id`, or `anonymous_id`. If Segment doesn't
 
 Yes. The Engage engine sends an identify call if there is no match between the identifier you chose and an existing record. When this happens, Segment creates a new user profile. This identify call takes place in the back-end and doesn't show up in your Debugger.
 
-### Does Engage send identify/group calls on every run?
+### Does Engage send identify/track/group calls on every run?
 
-No. Engage only sends an identify/group call if the values in a row have changed from previous runs.
+No. Engage only sends an identify/track/group call if the values in a row have changed from previous runs.
 
 ### I have a large (1M+) query of users to import, should I be worried?
 
@@ -256,3 +256,7 @@ Segment added the compute schedule feature on Feb 8, 2021, so traits created pri
 ### Why doesn't the value of a SQL trait show in a user profile after a successful sync?
 
 Check that you've configured the identifier that uniquely identifies users in a SQL query (`user_id`, `anonymous_id`, `email`, or `group_id` for account traits) in Identity Resolution settings as an identifier. This ensures the trait is added to the user's profile with the correct identifier. If you don't configure the identifier in Identity Resolution settings, the trait's value is not added to the user profile.
+
+### Why doesn't the identifier updated by a SQL trait show the correct value found in the column?
+
+Ensure that the name given to the SQL trait is not the same name as the identifier or column name from the query. To use SQL traits to update an identifier, the identifier will need to be a column in the query of your SQL trait. The column name in the query of the SQL trait should be the one that Identity Resolution uses to generate the identifier. 

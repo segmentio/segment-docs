@@ -144,7 +144,7 @@ To attach multiple sources to your IAM role:
         {
           "Effect": "Allow",
           "Principal": {
-            "AWS": "arn:aws:iam::595280932656:root"
+            "AWS": "arn:aws:iam::595280932656:role/customer-firehose-access"
           },
           "Action": "sts:AssumeRole",
           "Condition": {
@@ -166,7 +166,7 @@ To attach multiple sources to your IAM role:
         {
           "Effect": "Allow",
           "Principal": {
-            "AWS": "arn:aws:iam::595280932656:root"
+            "AWS": "arn:aws:iam::595280932656:role/customer-firehose-access"
           },
           "Action": "sts:AssumeRole",
           "Condition": {
@@ -198,7 +198,7 @@ To set this value for a Secret ID:
         {
           "Effect": "Allow",
           "Principal": {
-            "AWS": "arn:aws:iam::595280932656:root"
+            "AWS": "arn:aws:iam::595280932656:role/customer-firehose-access"
           },
           "Action": "sts:AssumeRole",
           "Condition": {
