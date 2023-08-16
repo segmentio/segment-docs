@@ -60,6 +60,9 @@ Delivery Overview is useful to diagnose delivery errors in the following scenari
 - **When data is missing from your destination**: The pipeline view can help you see where your data is getting "stuck" on the way to your destination, which can help you quickly diagnose and address problems in your data pipeline.
 - **When emission or delivery volume fluctuates out of expected norms**: Delivery Overview will highlight where the largest rate change(s) occurred and what events were associated with the change.
 
+> info "Delivery Overview in Engage Destinations"
+> Having "filtered at destination" events, with the integrations object, in destinations linked to Engage is expected. Engage will use its sources for multiple reasons, not only to send events to a particular destination. Engage uses the integrations object to route events to the destinations you have added to your audiences, traits and journey steps, so events that were filtered due to the integrations object are simply events that are not meant to be delivered by this destination, and hence, are filtered.
+
 ## Where do I find Delivery Overview?
 To view the Delivery Overview page:
 1. Sign into Segment.
