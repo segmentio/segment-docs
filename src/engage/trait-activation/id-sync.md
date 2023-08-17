@@ -25,14 +25,14 @@ To use ID Sync, you must have the following:
 To configure ID Sync:
 
 1. Navigate to **Engage** > **Audiences**.
-2. [Create a new Audience](/docs/engage/audiences/). From the **Select Destination** tab in the Audience builder, add your destination.
+2. [Create a new Audience](/docs/engage/audiences/). From the **Select Destination** tab in the Audience builder, add a destination.
 - If you don't see any destinations to add, you'll need to [add the destination](/docs/connections/destinations/add-destination/#adding-a-destination) to your Engage space first.
-- For existing Audiences, select the connected Destination from the Audience Overview page.
+- For existing Audiences, you'll find your connected Destination on the Audience Overview page.
 3. In the **Event Settings** section, you'll see two options: **Default Setup** and **Customized Setup**. To use ID Sync, select [**Customized Setup**](#customized-setup). 
 
 ### Default setup 
 
-Default setup uses default Segment Destination behavior. To use the default settings, click **Save** then resume building your Audience. 
+Default setup uses default Segment Destination behavior. To use the default settings, click **Save** and resume building your Audience. 
 
 You can return to customize additional event settings at any time. 
 
@@ -42,9 +42,9 @@ With Customized setup, you can choose which identifiers you want to map downstre
 
 1. Using **Customized Setup**, click **+ Add Identifier** and add the identifiers:
 - **Segment**: Choose your identifiers from Segment.
-- **Destination**: Choose which identifiers you want to map to your Destination. If the destination doesn't contain the property, then outgoing events may not be delivered to your destination.
+- **Destination**: Choose which identifiers you want to map to in your Destination. If the destination doesn't contain the property, then outgoing events may not be delivered to your destination.
 - *Facebook Custom Audiences* and *Google Ads Remarketing Lists* display a dropdown for you to choose available identifiers. 
-- *Iterable* and *Zendesk*, autopopulate an open text field which you can modify.
+- *Iterable* and *Zendesk* autopopulate an open text field which you can modify.
 2. Add an ID strategy. 
 - This is a strategy for a particular identifier which sends either the `last added`, `first added`, or `all` identifiers to your destination.
 3. Click **Save**, then finish building your Audience.
