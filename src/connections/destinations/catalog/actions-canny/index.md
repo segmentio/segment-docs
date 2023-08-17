@@ -1,7 +1,6 @@
 ---
 title: Canny (Actions) Destination
 id: 6489bbade6fe3eb57c13bd6a
-beta: true
 ---
 
 {% include content/plan-grid.md name="actions" %}
