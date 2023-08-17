@@ -142,7 +142,7 @@ Real-time Compute allows you to update traits and Audiences as Segment receives 
 - **Operational Workflows:** Supercharge your sales and support teams by responding to customer needs faster, based on the latest understanding of a user.
 
 > warning ""
-> Real-time Compute doesn't support time window conditions. Audiences using time window conditions will be created as batch computations. Additionally, [Funnel Audiences](#funnel-audiences) will be created as batch computations.
+> Real-time Compute doesn't support time window conditions. Segment creates Audiences using time window conditions as batch computations. Additionally, Segment creates [Funnel Audiences](#funnel-audiences) as batch computations.
 
 To create a new Audience or Trait:
 
