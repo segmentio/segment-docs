@@ -423,6 +423,15 @@ sources:
       - us
     endpoints:
       - us
+  - id: tCkZda6aKQ
+    display_name: Freshchat
+    hidden: false
+    slug: freshchat
+    url: connections/sources/catalog/cloud-apps/freshchat
+    regions:
+      - us
+    endpoints:
+      - us
   - id: xqegKCQA0W
     display_name: Freshchat Source
     hidden: true
