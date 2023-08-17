@@ -133,7 +133,7 @@ Similar to track calls in Connections, Engage track calls appear in your warehou
 
 There are a couple of nuances to keep in mind when it comes to the users table. This table is an aggregate view based on the `user_id` field. This means that anonymous profiles with just an `anonymous_id` identifier aren't included in this view. You can still view identify calls for anonymous audiences and computed traits in the `identifies` table. 
 
-Users table will be synced as soon as the warehouse is connected as a destination in Engage, if you have previously created Engage computations. As a result, the table might contain the data from computations not directly connected to the warehouse.
+The users table is synced as soon as the warehouse is connected as a destination in Engage, if you've previously created Engage computations. As a result, the table might contain data from computations not directly connected to the warehouse.
 
 ## Sync frequency
 
