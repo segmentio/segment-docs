@@ -110,7 +110,7 @@ If you have Protocols in your workspace, **and** have a tracking plan associated
 
 ## Destination Insert Function
 
-The newest, most customizable way to filter or alter data going from a source to a Cloud Mode destination is to use [Insert Functions]([url](https://segment.com/docs/connections/functions/insert-functions/)). This feature gives you the abiltiy to receive data from your Segment source, write custom code to alter or block it, and then pass that altered payload to a downstream Cloud Mode destination.
+A customizable way to filter or alter data going from a source to a cloud-mode destination is to use [Insert Functions](/docs/connections/functions/insert-functions/)). This feature gives you the ability to receive data from your Segment source, write custom code to alter or block it, and then pass that altered payload to a downstream cloud-mode destination.
 
 ## Warehouse Selective Sync
 
