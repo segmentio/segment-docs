@@ -61,7 +61,7 @@ Delivery Overview is useful to diagnose delivery errors in the following scenari
 - **When emission or delivery volume fluctuates out of expected norms**: Delivery Overview will highlight where the largest rate change(s) occurred and what events were associated with the change.
 
 > info "Delivery Overview in Engage Destinations"
-> Having "filtered at destination" events, with the integrations object, in destinations linked to Engage is expected. Engage will use its sources for multiple reasons, not only to send events to a particular destination. Engage uses the integrations object to route events to the destinations you have added to your audiences, traits and journey steps, so events that were filtered due to the integrations object are simply events that are not meant to be delivered by this destination, and hence, are filtered.
+> Because Engage uses sources for multiple purposes, you can expect to see `filtered at destination` events with the integrations object in destinations linked to Engage. Engage uses the integrations object to route events to destinations you've added to your audiences, traits, and journey steps. As a result, some events aren't meant to be delivered by the destination, so the integrations object filters them.
 
 ## Where do I find Delivery Overview?
 To view the Delivery Overview page:
