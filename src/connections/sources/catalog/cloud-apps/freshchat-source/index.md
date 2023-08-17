@@ -2,7 +2,7 @@
 title: Freshchat Source
 hidden: true
 beta: true
-id: xqegKCQA0W
+id: tCkZda6aKQ
 ---
 
 [Freshchat](https://www.freshworks.com/live-chat-software/){:target="_blank"} is a modern messaging software built for sales and customer engagement teams to talk to customers across websites, emails and social networks.
