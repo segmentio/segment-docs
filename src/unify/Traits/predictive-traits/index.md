@@ -1,6 +1,8 @@
 ---
 title: Predictive Traits
-plan: engage-foundations
+plan: unify-plus 
+redirect_from:
+  - "/engage/audiences/predictive-traits"
 ---
 
 Predictive Traits, Segment's artificial intelligence and machine learning feature, lets you predict the likelihood that users will perform any event tracked in Segment. 
@@ -21,7 +23,7 @@ To create a Predictive Trait, you'll first request access, then build a Predicti
 
 Follow these steps to access Predictive Trait:
 
-1. Navigate to **Engage > Audiences > Computed Traits**. Select **Create computed trait**.
+1. Navigate to **Engage > Audiences > Computed traits** or **Unify > Traits**. Select **Create computed trait**.
 2. Select **Request Access** to access Predictive Traits.
 
 ### Build a Predictive Trait
@@ -90,4 +92,4 @@ Predicted LTV has strict data requirements. Segment can only make predictions fo
 
 ## Use cases
 
-For use cases and information on how Segment builds Predictive Traits, read [Using Predictive Traits](/docs/engage/audiences/predictive-traits/using-predictive-traits/).
+For use cases and information on how Segment builds Predictive Traits, read [Using Predictive Traits](/docs/unify/traits/predictive-traits/using-predictive-traits/).
