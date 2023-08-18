@@ -423,6 +423,17 @@ sections:
       title: Broadcasts
     - path: '/engage/campaigns/whatsapp-campaigns'
       title: WhatsApp Campaigns
+  - section_title: Trait Activation
+    slug: engage/trait-activation
+    section:
+    - path: /engage/trait-activation/overview
+      title: Trait Activation Overview
+    - path: /engage/trait-activation/trait-activation-setup
+      title: Trait Activation Setup
+    - path: /engage/trait-activation/trait-enrichment
+      title: Trait Enrichment
+    - path: /engage/trait-activation/id-sync
+      title: ID Sync
   - path: '/engage/analytics'
     title: Analytics Overview
   - path: '/engage/settings'

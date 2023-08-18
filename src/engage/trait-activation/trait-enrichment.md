@@ -1,6 +1,7 @@
 ---
 title: Trait Enrichment 
-
+beta: true 
+plan: engage-foundations
 ---
 
 Use Trait Enrichment to access Segment profile traits when you sync Audiences to Destinations. With Trait Enrichment, you can use custom, SQL, computed, and predictive traits to enrich the data you map to your Destinations. 
@@ -10,7 +11,7 @@ Visit [Trait Enrichment Sample Data](#) to view sample data synced using Trait E
 -->
 
 > info ""
-> The steps you'll need to get use Trait Enrichment will depend on the type of destination [you've connected](/docs/unify/trait-activation/trait-activation-setup/). 
+> The steps you'll need to get use Trait Enrichment will depend on the type of destination [you've connected](/docs/engage/trait-activation/trait-activation-setup/). 
 > - For Iterable, Facebook Custom Audiences, Zendesk, and Google Adwords, start with [set up Trait Enrichment](#set-up-trait-enrichment). 
 > - If you're using SendGrid, Braze, or Salesforce Actions, use the [Destination Actions setup steps](#setup-for-destination-actions). 
 
