@@ -53,4 +53,3 @@ Log into your downstream tools and check to see that your events appear as expec
 If there are any issues with how the events are arriving to Segment, [contact the Unlocking Simulation support team](mailto:support@Unlocking Simulation.com).
 
 
----
