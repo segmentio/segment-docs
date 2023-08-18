@@ -4,6 +4,8 @@ rewrite: true
 id: 64c02312ff0ce798cc8d1a7e
 ---
 
+{% include content/plan-grid.md name="actions" %}
+
 [Rehook](https://rehook.ai/){:target="_blank"} is a powerful and dedicated user-incentivization solution that enables businesses to reward and engage users without any dependency on tech teams. With an elegant and easy-to-use interface, Rehook is designed to help you run user-promotion campaigns that are flexible, customizable and scalable.
 
 
@@ -23,7 +25,7 @@ Rehook maintains this destination; for any issues with the destination, [contact
 
 ## Supported methods
 
-Rehook supports the following methods, as specified in the [Segment Spec](/docs/connections/spec).
+Rehook's destination is designed to support the following methods, as specified in the [Segment Spec](/docs/connections/spec). Note that because this is an Actions Destination, you will also have the capability to map other Segment methods if neccessary.
 
 ### Identify
 
@@ -95,3 +97,5 @@ Segment sends `Track` calls to Rehook as a Custom Event. When you call the track
 > * The userId field is required. Rehook drops track calls without a userId.
 > * If a call is made with anonymousId, Rehook drops the track call.
 > * The referral_code field is required, if event name is set as a conversion event on Rehook. 
+
+{% include components/actions-fields.html %}
