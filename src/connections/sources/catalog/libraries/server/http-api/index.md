@@ -37,7 +37,7 @@ Segment welcomes feedback on API responses and error messages. [Reach out to sup
 
 ## Rate Limits
 
-Segment recommends not exceeding 100,000 requests per second with the HTTP API. Additionally, for [`batch` requests](#batch), there's a limit of 500 KB per request. 
+Segment recommends you to not exceed 100,000 requests per second with the HTTP API. For [`batch` requests](#batch), there's a limit of 500 KB per request. 
 
 ## Max Request Size
 
