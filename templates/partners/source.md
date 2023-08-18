@@ -92,7 +92,7 @@ The table below list the properties included in the events listed above.
 | `event`         | Email event type          |
 | `userId`        | Prospect user ID          |
 | `email_id`      | ID of the email           |
-| `fromId`        | Sender email ID           |
+| `from_id`        | Sender email ID           |
 | `email_subject` | Subject line of the email |
 | `link`          | URL of the link clicked   |
  
