@@ -1,7 +1,5 @@
 ---
 title: TikTok Pixel Destination
-private: true
-hidden: true
 id: 64c1690a9f08c84a420aba78
 ---
 
