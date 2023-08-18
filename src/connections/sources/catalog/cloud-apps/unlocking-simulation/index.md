@@ -1,7 +1,7 @@
-# 💥 Segment Partner Source Documentation Template
-
 ---
 title: Unlocking Simulation Source
+id: l5eaZFs2Mj
+hidden: true
 ---
 
 
