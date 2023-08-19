@@ -317,7 +317,7 @@ No, destination insert functions are currently available as cloud-mode destinati
 
 ##### Can I connect an insert function to multiple destinations?
 
-No, a destination insert function currently can be connected to one destinations only.
+No, a Destination Insert Function currently can be connected to one destination only.
 
 ##### How do I publish a destination to the public Segment catalog?
 
