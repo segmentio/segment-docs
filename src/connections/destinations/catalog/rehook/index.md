@@ -8,7 +8,7 @@ id: 64c02312ff0ce798cc8d1a7e
 
 [Rehook](https://rehook.ai/){:target="_blank"} is a powerful and dedicated user-incentivization solution that enables businesses to reward and engage users without any dependency on tech teams. With an elegant and easy-to-use interface, Rehook is designed to help you run user-promotion campaigns that are flexible, customizable and scalable.
 
-Rehook maintains this destination; for any issues with the destination, [contact the Rehook Support team](mailto:services@rehook.ai).
+This destination is maintained by Rehook. For any issues with the destination, [contact the Rehook Support team](mailto:services@rehook.ai).
 
 
 ## Getting started
