@@ -15,7 +15,7 @@ Rehook maintains this destination; for any issues with the destination, [contact
 
 1. From the Destinations catalog page in the Segment App, click **Add Destination**.
 2. Search for **Rehook** in the Destinations Catalog, and select the **Rehook** destination.
-3. Choose which Source should send data to the Rehook destination.
+3. Select which Source should send data to the Rehook destination.
 4. Open the [Rehook Dashboard](https://dashboard.rehook.ai/){:target="_blank"} and navigate to **Settings > API Keys & Secret Key**. Copy your key. 
 5. Enter the **API Key & Secret Key** in the Rehook destination settings in Segment.
 
