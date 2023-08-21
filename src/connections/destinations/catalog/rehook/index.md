@@ -91,7 +91,7 @@ analytics.track('signup', {
 
 Segment sends Track calls to Rehook as a Custom Event. When you make a Track call, Segment sends the event to Rehook with the event name and all properties that you specified.
 
-> info "How Rehook handles incoming userId and referral_code in Track calls"
+> info "How Rehook handles incoming userId and referral_code in Track calls:"
 > * The `userId` field is required. Rehook drops Track calls without a `userId`.
 > * If a call is made with `anonymousId`, Rehook drops the Track call.
 > * The `referral_code` field is required if event name is set as a conversion event in Rehook. 
