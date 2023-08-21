@@ -67,7 +67,9 @@ All the [special traits](/docs/connections/spec/identify#traits) recognized by S
 
 ### Track
 
-Take a look at the [Track method documentation](/docs/connections/spec/track) to learn about what it does. An example call looks like:
+If you're not familiar with the Segment Spec, take a moment to understand what the [Track method](/docs/connections/spec/track/) does.
+
+An example call looks like this: 
 
 #### Example 1:
 ```js
