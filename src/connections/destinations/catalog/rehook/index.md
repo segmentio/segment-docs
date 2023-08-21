@@ -8,13 +8,10 @@ id: 64c02312ff0ce798cc8d1a7e
 
 [Rehook](https://rehook.ai/){:target="_blank"} is a powerful and dedicated user-incentivization solution that enables businesses to reward and engage users without any dependency on tech teams. With an elegant and easy-to-use interface, Rehook is designed to help you run user-promotion campaigns that are flexible, customizable and scalable.
 
-
 Rehook maintains this destination; for any issues with the destination, [contact the Rehook Support team](mailto:services@rehook.ai).
 
 
-## Getting Started
-
-
+## Getting started
 
 1. From the Destinations catalog page in the Segment App, click **Add Destination**.
 2. Search for **Rehook** in the Destinations Catalog, and select the **Rehook** destination.
@@ -25,7 +22,7 @@ Rehook maintains this destination; for any issues with the destination, [contact
 
 ## Supported methods
 
-Rehook's destination is designed to support the following methods, as specified in the [Segment Spec](/docs/connections/spec). Note that because this is an Actions Destination, you will also have the capability to map other Segment methods if neccessary.
+Rehook's destination is designed to support the following methods, as specified in the [Segment Spec](/docs/connections/spec). Because this is an Actions Destination, you will also have the capability to map other Segment methods if neccessary.
 
 ### Identify
 
@@ -54,18 +51,19 @@ analytics.identify('userId12345', {
 });
 ```
 
-Every time you make an identify call with userId included:
-1.	Rehook verifies that the userId exists.
-2.	If the userId does not exist, Rehook adds the user as a Customer to the Rehook database and matches user properties with the Segment `traits` sent in the identify call payload.
-3.	If the userId exists, Rehook updates the user properties for the Customer against the Segment `traits` sent in the identify call payload.
-4.  If referral_code is unique, Rehook updates the user properties in its database.
+Every time you make an Identify call with `userId` included:
+
+1.	Rehook verifies that the `userId` exists.
+2.	If the `userId` does not exist, Rehook adds the user as a Customer to the Rehook database and matches user properties with the Segment `traits` sent in the Identify call payload.
+3.	If the `userId` exists, Rehook updates the user properties for the Customer against the Segment `traits` sent in the Identify call payload.
+4.  If `referral_code` is unique, Rehook updates the user properties in its database.
 
 All the [special traits](/docs/connections/spec/identify#traits) recognized by Segment are translated and matched with the Rehook user properties for a Customer. These fields are automatically created or mapped for a Customer in Rehook and are available for personalization and advance segmentation.
 
-> info "How Rehook handles incoming userId and referral_code in identify call"
-> * The userId field is required. Rehook drops identify calls without a userId.
-> * If a call is made with anonymousID, Rehook drops the identify call.
-> * If referral_code matches with another userId, Rehook drops the identify call.
+> info "How Rehook handles incoming userId and referral_code in Identify calls"
+> * The `userId` field is required. Rehook drops identify calls without a userId.
+> * If a call is made with `anonymousID`, Rehook drops the Identify call.
+> * If `referral_code` matches with another `userId`, Rehook drops the Identify call.
 
 ### Track
 
@@ -91,11 +89,11 @@ analytics.track('signup', {
 });
 ```
 
-Segment sends `Track` calls to Rehook as a Custom Event. When you call the track, Segment sends the event to Rehook with the event name and all properties that you specified.
+Segment sends Track calls to Rehook as a Custom Event. When you make a Track call, Segment sends the event to Rehook with the event name and all properties that you specified.
 
-> info "How Rehook handles incoming userId and referral_code in track call"
-> * The userId field is required. Rehook drops track calls without a userId.
-> * If a call is made with anonymousId, Rehook drops the track call.
-> * The referral_code field is required, if event name is set as a conversion event on Rehook. 
+> info "How Rehook handles incoming userId and referral_code in Track calls"
+> * The `userId` field is required. Rehook drops track calls without a `userId`.
+> * If a call is made with `anonymousId`, Rehook drops the track call.
+> * The `referral_code` field is required, if event name is set as a conversion event on Rehook. 
 
 {% include components/actions-fields.html %}
