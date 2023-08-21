@@ -226,3 +226,7 @@ Destination Filters can't target properties or traits with spaces in the field n
 #### Can I use destination filters to drop events unsupported by a destination?
 
 The check for unsupported events types happens before any destination filter checks. As a result, Destination Filters can't prevent unsupported event type errors. To filter these events, use the [Integrations Object](/docs/guides/filtering-data/#filtering-with-the-integrations-object).
+
+#### Why do I see events being sent through after I just added a destination filter?
+
+If Event Delivery page shows events have been retried, the retries could account for events that did not get filtered when the Destination Filter is just added. Such scenario can occur when an event was sent to the destination and encountered timeout error, and retries for the events are attempted. While the retries are attempted, and a Destination Filter is then added, these retries will not subject to the filtering since these are from the events sent before the Destination Filter is added.
