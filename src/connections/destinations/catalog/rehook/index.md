@@ -1,6 +1,5 @@
 ---
 title: Rehook Destination
-rewrite: true
 id: 64c02312ff0ce798cc8d1a7e
 ---
 
