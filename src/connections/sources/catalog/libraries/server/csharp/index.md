@@ -323,12 +323,9 @@ The `reset` method clears the SDK’s internal stores for the current user and g
 analytics.Reset()
 ```
 
-## Compatibility
-This library targets `.NET Standard 2.0`. See the [list of compatible platforms](https://docs.microsoft.com/en-us/dotnet/standard/net-standard?tabs=net-standard-2-0){:target="_blank"}.
+## Arrays
+To send an array as an event property, reference the [GitHub repo](https://github.com/segmentio/Serialization.NET/blob/main/Tests/JsonUtilityTest.cs#L24){:target="_blank"}. Below is an example of code you can implement to send an array of strings:
 
-## FAQ
-### Arrays
-To send an array as an event property you can reference the repo [here](https://github.com/segmentio/Serialization.NET/blob/main/Tests/JsonUtilityTest.cs#L24). For example, to send an array of strings the following code could be implemented:
 ```c#
 List<string> listOfStrings = new List<string> { "test1", "test2", "test3" };
 
@@ -337,6 +334,10 @@ JsonObject customerJsonObj = new JsonObject
     ["event_name"] = new JsonArray(listOfStrings.ConvertAll(o => (JsonElement)o))
 }; 
 ```
+
+## Compatibility
+This library targets `.NET Standard 2.0`. See the [list of compatible platforms](https://docs.microsoft.com/en-us/dotnet/standard/net-standard?tabs=net-standard-2-0){:target="_blank"}.
+
 ## Changelog
 [View the Analytics-CSharp changelog on GitHub](https://github.com/segmentio/analytics-csharp/releases){:target="_blank"}.
 
