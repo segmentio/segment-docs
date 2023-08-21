@@ -149,7 +149,7 @@ If you include `properties.revenue` in a track event, Segment maps it to Klaviyo
 
 ### Server-side Track
 
-When you call `track` from one of Segment's mobile or server-side libraries, Segment keys the user with the `userId` and also provides the Klaviyo `$email` `customer_property` if your `userId` is an email, or you provide `email` as one of your event `properties`.
+When you make a Track call from one of Segment's mobile or server-side libraries, Segment keys the user with the `userId` and also provides the Klaviyo `$email` `customer_property` if your `userId` is an email, or you provide `email` as one of your event `properties`.
 
 Segment also maps the following Segment spec'd properties to Klaviyo's [special people properties](https://developers.klaviyo.com/en/docs/javascript_api#identify-people){:target="_blank"}:.
 
