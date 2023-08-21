@@ -93,7 +93,7 @@ Segment sends Track calls to Rehook as a Custom Event. When you make a Track cal
 
 > info "How Rehook handles incoming userId and referral_code in Track calls"
 > * The `userId` field is required. Rehook drops track calls without a `userId`.
-> * If a call is made with `anonymousId`, Rehook drops the track call.
+> * If a call is made with `anonymousId`, Rehook drops the Track call.
 > * The `referral_code` field is required if event name is set as a conversion event in Rehook. 
 
 {% include components/actions-fields.html %}
