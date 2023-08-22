@@ -5,7 +5,6 @@ plan: hipaa-eligible
 
 Segment is a HIPAA eligible platform, and meets the data privacy and security requirements of healthcare customers and their stakeholders. For more information about Segment becoming HIPAA eligible, see the [announcement blog post](http://segment.com/blog/segment-for-healthcare){:target="_blank"}.
 
-
 ## Business Associate Addendum
 
 > info ""
@@ -36,18 +35,20 @@ These logs can be provided upon request. For specific requests, please reach out
 
 ## Data encryption
 
-Segment encrypts the data in fields [marked as yellow in the Privacy Portal](/docs/privacy/portal) using a key pair. After Segment encrypts the data, it converts the data type to `string`. Any downstream validation that looks for the datatype `integer` will fail for encrypted values.
+Segment can encrypt PHI/PII before sending it to event stream, cloud mode destinations, further supporting HIPAA compliance in your destinations. 
+
+Segment encrypts the data in fields [marked as yellow in the Privacy Portal](/docs/privacy/portal) with a public/private key pair. After Segment encrypts the data, it converts the data into a `string`. Any downstream validation that looks for `integer` data types will fail for encrypted values.
 
 > info "Data encryption is currently in public beta"
-> This means that the data encryption features are in active development, and some functionality may change before it becomes generally available. [Contact Segment](https://segment.com/help/contact/){:target="_blank"} with any feedback or questions.
+> This means that the data encryption features are in active development and some functionality may change before it becomes generally available. [Contact Segment](https://segment.com/help/contact/){:target="_blank"} with any feedback or questions.
 >
-> During the public beta, data encryption supports event-streaming, cloud-mode destinations. Only data fields in `context`, `traits`, and `property` objects can be encrypted.  
+> During the public beta, data encryption supports event-stream, cloud-mode destinations. Engage destinations are not supported. Only data fields in `context`, `traits`, and `property` objects can be encrypted.  
 
 
 ### Configure data encryption for a new destination
 
 To configure data encryption while setting up a new destination:
-1. From the Destinations page in the Segment App, click **Add destination**.
+1. From the [Destinations page in the Segment App](https://app.segment.com/goto-my-workspace/destinations/){:target="_blank"}, click **Add destination**.
 2. Select a destination from the catalog and click **Configure**.
 3. On the destination's overview page, click **Add destination**. 
 4. On the Select data source page, select the source you want to connect to your destination and click **Next**.
@@ -75,24 +76,24 @@ To configure data encryption for an existing destination:
 
 ### Configure new key pairs
 
-If you lose access to your initial private key, you can generate a new key pair in the settings tab of your destination. Any data previously encrypted using the previous key pair will remain encrypted.
+If you lose access to your initial private key, you can generate a new key pair in your destination's Data Encryption tab. Any data previously encrypted using the previous key pair will remain encrypted.
 
 To generate a new key pair:
 1. Open the [My destinations page](https://app.segment.com/goto-my-workspace/destinations){:target="_blank”} in the Segment app.
-2. Select a destination, and click **Settings**.
-3. 
-
-<!---todo: after test env access, verify steps beyond step #3--->
+2. Select the destination you'd like to create new keys for and click **Settings**.
+3. Click **Regenerate Encryption Keys**.
+4. Copy the Private Key to a secure location - **once you close the dialog box, this key cannot be retrieved**. 
+5. Click **Save Changes** to update the key pair. 
 
 ### Remove encryption
 
-Disabling the **Have Segment encrypt sensitive data** setting removes encryption on all data that comes into a source after the setting was disabled. Disabling the **Have Segment encrypt sensitive data** setting does not decrypt any data that has already been encrypted.
+Disabling the data encryption setting removes encryption on all data that comes into a destination after the setting was disabled. Disabling data encryption does not decrypt any data that was previously encrypted.
 
 To remove encryption from incoming data:
 1. Open the [My destinations page](https://app.segment.com/goto-my-workspace/destinations){:target="_blank”} in the Segment app.
-2. Select a destination, and click **Settings**.
-3. On the Settings page, deselect the **Have Segment encrypt sensitive data** checkbox.
+2. Select a destination, and click **Data Encryption**.
+3. On the Data Encryption page, deselect the **Have Segment encrypt sensitive data** checkbox.
 4. On the **Turn off data encryption?** popup, click **Confirm**.
 
 > success ""
-> Disabling the data encryption setting does not decrypt data that is already in the destination, but does prevent any future data from being encrypted. 
+> Disabling the data encryption setting does not decrypt existing data, but does prevent any future data from being encrypted. 
