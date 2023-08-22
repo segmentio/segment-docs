@@ -27,7 +27,7 @@ Before you start, make sure that you have admin rights in Freshchat and [Workspa
     - On Conversation Update
     - On Message Create
 For more information about Product Events, see the [Freshchat Product Events](https://developers.freshchat.com/v2/docs/product-events/){:target="_blank”} documentation.
-10. There are [4 events](https://developers.freshchat.com/v2/docs/product-events/#) that can be pushed to Segment. You will be able to choose the events that you want to send to Segment
+10. There are [four events](https://developers.freshchat.com/v2/docs/product-events/#){:target="_blank"} that can be pushed to Segment. You can choose the events that you want to send to Segment.
 11. You can add/remove the events that you want to send anytime after the app installation
 
 ### Events
