@@ -347,6 +347,15 @@ sources:
       - us
     endpoints:
       - us
+  - id: VETiUX9u66
+    display_name: Elastic Path
+    hidden: false
+    slug: elastic-path
+    url: connections/sources/catalog/cloud-apps/elastic-path
+    regions:
+      - us
+    endpoints:
+      - us
   - id: PT2vYn4zUh
     display_name: Encharge
     hidden: true
@@ -423,7 +432,7 @@ sources:
       - us
     endpoints:
       - us
-  - id: tCkZda6aKQ
+  - id: xqegKCQA0W
     display_name: Freshchat
     hidden: false
     slug: freshchat
@@ -432,9 +441,9 @@ sources:
       - us
     endpoints:
       - us
-  - id: xqegKCQA0W
+  - id: tCkZda6aKQ
     display_name: Freshchat Source
-    hidden: true
+    hidden: false
     slug: freshchat-source
     url: connections/sources/catalog/cloud-apps/freshchat-source
     regions:
@@ -1472,6 +1481,15 @@ sources:
     hidden: false
     slug: unlocking-simulation
     url: connections/sources/catalog/cloud-apps/unlocking-simulation
+    regions:
+      - us
+    endpoints:
+      - us
+  - id: h6tGyJ8rYY
+    display_name: Unstack
+    hidden: false
+    slug: unstack
+    url: connections/sources/catalog/cloud-apps/unstack
     regions:
       - us
     endpoints:
