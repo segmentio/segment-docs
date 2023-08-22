@@ -37,7 +37,7 @@ The event payload from your debugger that you just selected will automatically l
 
 This is a real event that will appear in your end tool alongside your existing data. If you're not comfortable with this, then select "Cancel" and do not send the event. 
 
-![Screenshot of the popup that appears when you click the Send test event button.](/guides/images/asset_Yxw1DJqb.png)
+![Screenshot of the popup that appears when you click the Send test event button.](/docs/guides/images/asset_Yxw1DJqb.png)
 
 **5. View the Partner API response**
 
