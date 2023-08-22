@@ -41,7 +41,7 @@ Segment encrypts the data in fields [marked as yellow in the Privacy Portal](/do
 > info "Data encryption is currently in public beta"
 > This means that the data encryption features are in active development, and some functionality may change before it becomes generally available. [Contact Segment](https://segment.com/help/contact/){:target="_blank"} with any feedback or questions.
 >
-> During the public beta, data encryption supports event-streaming, cloud-mode destinations.
+> During the public beta, data encryption supports event-streaming, cloud-mode destinations. Only data fields in `context`, `traits`, and `property` objects can be encrypted.  
 
 
 ### Configure data encryption for a new destination
