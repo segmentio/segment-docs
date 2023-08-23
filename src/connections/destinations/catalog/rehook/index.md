@@ -57,7 +57,7 @@ Every time you make an Identify call with `userId` included:
 3.	If the `userId` exists, Rehook updates the user properties for the Customer against the Segment `traits` sent in the Identify call payload.
 4.  If `referral_code` is unique, Rehook updates the user properties in its database.
 
-All the [special traits](/docs/connections/spec/identify#traits) recognized by Segment are translated and matched with the Rehook user properties for a Customer. These fields are automatically created or mapped for a Customer in Rehook and are available for personalization and advance segmentation.
+All of the [traits](/docs/connections/spec/identify#traits) recognized by Segment are translated and matched with the Rehook Customer user properties. These fields are automatically created or mapped for a Customer in Rehook and are available for personalization and advanced segmentation.
 
 > info "How Rehook handles incoming userId and referral_code in Identify calls:"
 > * The `userId` field is required. Rehook drops Identify calls without a userId.
