@@ -172,3 +172,14 @@ You can see the current destination endpoint API success rates and final deliver
 
 > warning ""
 > If you submitted [`suppress_only` requests](https://segment.com/docs/privacy/user-deletion-and-suppression/#suppressed-users), Segment still retains historical events for those users, which can be replayed. If you do not want historical events replayed for suppressed users, submit `suppress_and_delete` requests instead.
+
+### IP Allowlisting
+
+In terms of data leaving Segment’s servers to go to various destinations (not including warehouses), Segment uses Amazon Web Services (AWS), utilizing many different machines in order to send requests. 
+
+These IP addresses can be found [here](https://ip-ranges.amazonaws.com/ip-ranges.json). If you’d like to do so, you will need to allowlist all the IPs from your workspace’s location range.
+
+- US Workspace— AWS us-west-2
+
+- EU workspace— AWS eu-west-1 
+
