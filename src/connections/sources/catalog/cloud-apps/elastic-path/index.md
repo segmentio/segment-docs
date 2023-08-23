@@ -70,7 +70,9 @@ The following payload contains the properties for the following events:
 | `event`                                 | Event name e.g. `Checkout Started`, `Order Completed` etc.             |
 | `properties`                            | This will hold information about the order                             |
 | `properties.order_id`                   | Elastic Path Order ID                                                  |
-| `properties.value`                      | Revenue ($) with discounts and coupons added in. For better flexibility and total control over tracking, we let you decide how to calculate how coupons and discounts are applied                                                                                                            |
+| `properties.value`                      | Revenue ($) with discounts and coupons added in. For better flexibility and total control over tracking, we let you decide how to calculate how coupons and discounts are applied. Usually this is required for `Checkout Started` event                                                                              |
+| `properties.total`                      | Revenue ($) with discounts and coupons added in. For better flexibility and total control over tracking, we let you decide how to calculate how coupons and discounts are applied. Usually this is required for all the events apart from `Checkout Started` event                                                    |
+| `properties.revenue`                    | Revenue ($) associated with the transaction (excluding shipping and tax). Usually this is required for all the events apart from `Checkout Started` event                                    |
 | `properties.tax`                        | Total tax associated with the transaction                              |
 | `properties.discount`                   | Total discount associated with the transaction                         |
 | `properties.shipping`                   | Shipping cost associated with the transaction                          |
