@@ -16,16 +16,17 @@ This destination is maintained by Rehook. For any issues with the destination, [
 2. Search for **Rehook** in the Destinations Catalog, and select the **Rehook** destination.
 3. Select which Source should send data to the Rehook destination.
 4. Open the [Rehook Dashboard](https://dashboard.rehook.ai/){:target="_blank"} and navigate to **Settings > API Keys & Secret Key**. Copy your key. 
-5. Enter the **API Key & Secret Key** in the Rehook destination settings in Segment.
+5. Open the Segment app and paste the **API Key & Secret Key** in the Rehook destination settings page.
 
 
 ## Supported methods
 
-Rehook's destination is designed to support the following methods, as specified in the [Segment Spec](/docs/connections/spec). Because this is an Actions Destination, you will also have the capability to map other Segment methods if neccessary.
+Rehook's destination is designed to support the following [Segment Spec](/docs/connections/spec) methods. Because this is an Actions Destination, you can also map other Segment methods.
 
 ### Identify
 
-Take a look at the [Identify method documentation](/docs/connections/spec/identify) to learn about what it does.
+If you're not familiar with the Segment Spec, take a moment to understand what the [Identify method](/docs/connections/spec/identify/) does.
+An example call looks like this:
 
 #### Example 1:
 ```js
@@ -50,7 +51,7 @@ analytics.identify('userId12345', {
 });
 ```
 
-Every time you make an Identify call with `userId` included:
+Every time you make an Identify call with an included `userId`:
 
 1.	Rehook verifies that the `userId` exists.
 2.	If the `userId` does not exist, Rehook adds the user as a Customer to the Rehook database and matches user properties with the Segment `traits` sent in the Identify call payload.
