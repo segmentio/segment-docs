@@ -49,7 +49,7 @@ To create a destination filter:
 8. Click **Save**.
 
 > info "Toggle Destination Filters On"
-> Go to your Analytics.js settings and be sure to toggle **Destination Filters** on. Enabling device mode destination filters will enable the destination filters that you have configured on destinations attached to this source to operate in device mode where applicable.
+> If you are currently utilizing Analytics.js as your source and wish to apply filters to device-mode destinations, you'll need to enable device mode destination filters for your Analytics.js source. To do this, go to your Javascript source and navigate to Settings > Analytics.js and turn the toggle on for **Destination Filters**. This will ensure the filters are effectively applied to device-mode destinations.
 
 ## Destination filters API
 
