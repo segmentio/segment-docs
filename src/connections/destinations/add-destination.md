@@ -2,13 +2,17 @@
 title: Sending Segment Data to Destinations
 ---
 
-You've decided how to format your data, and collected it using [Segment Sources](/docs/connections/sources/). Now what do you do with it? You send the data to Destinations!
+You've decided how to format your data, and collected it using [Segment Sources](/docs/connections/sources/). Now what do you do with it? You send the data to Destinations.
 
 Destinations are tools or services which can use the data sent from Segment to power analytics, marketing, customer outreach, and more.
 
 > info ""
-> Each Segment Workspace has its own set of destinations, which are connected to the workspace's sources. When you add or modify a destination, make sure you're working with the correct workspace!
+> Each Segment Workspace has its own set of destinations, which are connected to the workspace's sources. When you add or modify a destination, make sure you're working with the correct workspace.
 
+> info "HLS customers can encrypt data flowing into their destinations"
+> If you are a HLS customer with a HIPAA Eligible workspace, you can enable data encryption to encrypt data before it flows into your destination. 
+>
+> To learn more about data encryption, see the [HIPAA Eligible Segment](/docs/privacy/hipaa-eligible-segment/#data-encryption) documentation.
 
 ## Adding a destination
 
@@ -58,7 +62,7 @@ You can use the Segment Public API to add destinations to your workspace using t
 
 Adding a destination can have a few different effects, depending on which sources you set up to collect your data, and how you configured them.
 
-#### Analytics.js
+### Analytics.js
 
 If you are using [Segment's JavaScript library, Analytics.js](/docs/connections/sources/catalog/libraries/website/javascript/), then Segment handles any configuration changes you need for you. If you're using Analytics.js in cloud-mode, the library sends its tracking data to the Segment servers, which route it to your destinations. When you change which destinations you send data to, the Segment servers automatically add that destination to the distribution list.
 
@@ -66,13 +70,13 @@ If you're using Analytics.js in device-mode, then Analytics.js serves as a wrapp
 
 You can enable device-mode for some destinations from the destination's Settings page in the Segment web app. You don't need to use the same mode for all destinations in a workspace; some can use device-mode, and some can use cloud-mode.
 
-#### Mobile sources
+### Mobile sources
 
 By default, Segment's [mobile sources](/docs/connections/sources/catalog/#mobile) send data to Segment in cloud-mode to help minimize the size of your apps. In cloud-mode the mobile source libraries forward the tracking data to the Segment servers, which route the data to the destinations. Since the Segment servers know which destinations you're using, you don't need to take any action to add destinations to mobile apps using cloud-mode.
 
 However, if the destination you're adding has features that run on the user's device, you might need to update the app to package that destination's SDK with the library. Some destinations require that you package the SDK, and some only offer it
 
-#### Server sources
+### Server sources
 
 Segment's [server sources](/docs/connections/sources/catalog/#server) run on your internal app code, and never have access to the user's device. They run in cloud-mode only, and forward their tracking calls to the Segment servers, which forward the data to any destinations you enabled.
 

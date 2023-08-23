@@ -35,12 +35,12 @@ These logs can be provided upon request. For specific requests, please reach out
 
 ## Data encryption
 
-Segment can encrypt PHI/PII before sending it to event stream, cloud mode destinations, further supporting HIPAA compliance in your destinations. 
-
-Segment encrypts the data in fields [marked as yellow in the Privacy Portal](/docs/privacy/portal/#default-pii-matchers) with a public/private key pair. After Segment encrypts the data, it is converted into a `string`. Any downstream validation that looks for `integer` data types will fail for encrypted values.
+Segment encrypts the data in fields [marked as yellow in the Privacy Portal](/docs/privacy/portal/#default-pii-matchers) before sending it to event stream, cloud mode destinations, further supporting HIPAA compliance in your destinations. 
 
 > info "Data encryption is currently in public beta"
-> Data encryption supports event-stream, cloud-mode destinations. Engage destinations are not supported. Only data fields in `context`, `traits`, and `property` objects can be encrypted.  =
+> Data encryption supports event-stream, cloud-mode destinations. Engage destinations are not supported. Only data fields in `context`, `traits`, and `property` objects can be encrypted. 
+>
+> After Segment encrypts the data, it is converted into a `string`. Any downstream validation that looks for `integer` data types will fail for encrypted values.
 
 ### Configure data encryption for a new destination
 
@@ -55,7 +55,7 @@ To configure data encryption while setting up a new destination:
 8. Click **Create destination**.
 
 > error "Private Key is not recoverable"
-> Segment does not save the private key created during the data encryption setup flow, and cannot retrieve the key after you finish setting up your destination. You can generate a new key without decrypting your data using the instructions in the [Configure new key pairs](#configure-new-key-pairs) section.
+> Segment does not save the private key created during the data encryption setup flow, and cannot retrieve the key after you finish setting up your destination. You can generate a new key without decrypting your data using the instructions in the [Configure new key pairs](#configure-new-key-pairs) section. Any data encrypted prior to generating a new key pair cannot be decrypted with the new key. 
 
 ### Configure data encryption for an existing destination
  
@@ -68,8 +68,7 @@ To configure data encryption for an existing destination:
 6. Click **Save**.
 
 > error "Private Key is not recoverable"
-> Segment does not save the private key created during the data encryption setup, and cannot retrieve the key after you add data encryption to your destination. Segment cannot decrypt data if this key is lost. You can generate a new key any time using the instructions in the [Configure new key pairs](#configure-new-key-pairs) section. All updates are forward looking 
-
+> Segment does not save the private key created during the data encryption setup, and cannot retrieve the key after you add data encryption to your destination. Segment cannot decrypt data if this key is lost. You can generate a new key any time using the instructions in the [Configure new key pairs](#configure-new-key-pairs) section. Any data encrypted prior to generating a new key pair cannot be decrypted with the new key. 
 
 ### Configure new key pairs
 
