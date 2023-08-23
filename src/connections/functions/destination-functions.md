@@ -419,6 +419,16 @@ No, destination functions are currently available as cloud-mode destinations onl
 
 If you are a partner, looking to publish your destination and distribute your app through Segment catalog, visit the [Developer Center](https://segment.com/partners/developer-center/){:target="_blank"} and check out the Segment [partner docs](/docs/partners/).
 
+##### Which IP addresses should be allowlisted?
+
+In terms of data leaving Segment’s servers to go to various destinations (not including warehouses), Segment uses Amazon Web Services (AWS), utilizing many different machines in order to send requests. 
+
+These IP addresses can be found [here:](https://ip-ranges.amazonaws.com/ip-ranges.json). If you’d like to do so, you will need to allowlist all the IPs from your workspace’s location range.
+
+- US Workspace— AWS us-west-2
+
+- EU workspace— AWS eu-west-1 
+
 ##### How does batching affect visibility?
 
 The [Event Delivery tab](/docs/connections/event-delivery/) continues to show metrics for individual events, even if they are batched by your function code. For more information, see [Destination functions logs and errors](#destination-functions-logs-and-errors).
