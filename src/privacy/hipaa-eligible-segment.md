@@ -35,12 +35,12 @@ These logs can be provided upon request. For specific requests, please reach out
 
 ## Data encryption
 
-Segment encrypts the data in fields [marked as yellow in the Privacy Portal](/docs/privacy/portal/#default-pii-matchers) before sending it to event stream, cloud mode destinations, further supporting HIPAA compliance in your destinations. 
+Segment encrypts the data in select fields [marked as yellow in the Privacy Portal](/docs/privacy/portal/#default-pii-matchers) before sending them to event stream, cloud mode destinations, further supporting HIPAA compliance in your destinations. 
 
 > info "Data encryption is currently in public beta"
-> Data encryption supports event-stream, cloud-mode destinations. Engage destinations are not supported. Only data fields in `context`, `traits`, and `property` objects can be encrypted. 
+> Data encryption only supports event-stream, cloud-mode destinations. Only data fields in `context`, `traits`, and `property` objects can be encrypted. 
 >
-> After Segment encrypts the data, it is converted into a `string`. Any downstream validation that looks for `integer` data types will fail for encrypted values.
+> After Segment encrypts the data, the encrypted data value will always be a `string`. Any downstream validation that looks for `integer` data types will fail for encrypted values.
 
 ### Configure data encryption for a new destination
 
@@ -50,12 +50,12 @@ To configure data encryption while setting up a new destination:
 3. On the destination's overview page, click **Add destination**. 
 4. On the Select data source page, select the source you want to connect to your destination and click **Next**.
 5. On the Setup page, give your destination a name, fill in any optional settings, and select the **Have Segment encrypt sensitive data** checkbox.
-6. Open the **Fields** dropdown, select one or more fields you'd like to encrypt and click the **Generate Encryption Keys** button. <br> *If you don't see all of the fields that you want to encrypt, [change the classification of your missing data fields](/docs/privacy/portal/#change-a-recommended-classification) in the Privacy Portal*.<br> 
+6. Open the **Fields** dropdown, select one or more fields you'd like to encrypt and click the **Generate Encryption Keys** button. <br> *If you don't see all of the fields that you want to encrypt, [change the classification of your missing data fields](/docs/privacy/portal/#change-a-recommended-classification) to Yellow in the Privacy Portal*.<br> 
 7. Securely store your private key - **once you finish setting up the destination, this key cannot be retrieved**. 
 8. Click **Create destination**.
 
 > error "Private Key is not recoverable"
-> Segment does not save the private key created during the data encryption setup flow, and cannot retrieve the key after you finish setting up your destination. You can generate a new key without decrypting your data using the instructions in the [Configure new key pairs](#configure-new-key-pairs) section. Any data encrypted prior to generating a new key pair cannot be decrypted with the new key. 
+> Segment does not save the private key created during the data encryption setup flow, and cannot retrieve the key after you finish setting up your destination. You can generate a new key using the instructions in the [Configure new key pairs](#configure-new-key-pairs) section. Any data encrypted prior to generating a new key pair cannot be decrypted with the new key. 
 
 ### Configure data encryption for an existing destination
  
@@ -63,12 +63,12 @@ To configure data encryption for an existing destination:
 1. Open the [My destinations page](https://app.segment.com/goto-my-workspace/destinations){:target="_blank”} in the Segment app.
 2. Select a destination, and click the **Data Encryption** tab.
 3. On the Data Encryption page, select the **Have Segment encrypt sensitive data** checkbox.
-4. Open the **Fields** dropdown, select one or more fields you'd like to encrypt and click the **Generate Encryption Keys** button. <br> *If you don't see all of the fields that you want to encrypt, [change the classification of your missing data fields](/docs/privacy/portal/#change-a-recommended-classification) in the Privacy Portal*.<br> 
+4. Open the **Fields** dropdown, select one or more fields you'd like to encrypt and click the **Generate Encryption Keys** button. <br> *If you don't see all of the fields that you want to encrypt, [change the classification of your missing data fields](/docs/privacy/portal/#change-a-recommended-classification) to Yellow in the Privacy Portal*.<br> 
 5. Securely store your private key - **once you finish configuring data encryption, this key cannot be retrieved**. 
 6. Click **Save**.
 
 > error "Private Key is not recoverable"
-> Segment does not save the private key created during the data encryption setup, and cannot retrieve the key after you add data encryption to your destination. Segment cannot decrypt data if this key is lost. You can generate a new key any time using the instructions in the [Configure new key pairs](#configure-new-key-pairs) section. Any data encrypted prior to generating a new key pair cannot be decrypted with the new key. 
+> Segment does not save the private key created during the data encryption setup flow, and cannot retrieve the key after you finish setting up your destination. You can generate a new key using the instructions in the [Configure new key pairs](#configure-new-key-pairs) section. Any data encrypted prior to generating a new key pair cannot be decrypted with the new key. 
 
 ### Configure new key pairs
 
@@ -76,14 +76,27 @@ If you lose access to your private key, you can generate a new key pair in your 
 
 To generate a new key pair:
 1. Open the [My destinations page](https://app.segment.com/goto-my-workspace/destinations){:target="_blank”} in the Segment app.
-2. Select the destination you'd like to create new keys for and click **Settings**.
+2. Select the destination you'd like to create new keys for and click **Data Encryption**.
 3. Click **Regenerate Encryption Keys**.
 4. Securely store your private key - **once you close the dialog box, this key cannot be retrieved**. 
 5. Click **Save Changes** to update the key pair. 
 
+### Edit encrypted fields
+
+After enabling encryption for a destination, you can add or remove encrypted data fields in your destination's Data Encryption tab. All changes made to fields are forward-looking. You may experience some latency between making the changes and having the changes take effect.
+
+To make changes to your selected fields:
+1. Open the [My destinations page](https://app.segment.com/goto-my-workspace/destinations){:target="_blank”} in the Segment app.
+2. Select the destination you'd like to edit your selected fields for and click **Data Encryption**.
+3. Add or remove fields. 
+  - To add fields, click into the **Fields** box to open the dropdown and select one or more fields you'd like to add.
+  - To remove fields, click the x icon next to the name of the field you'd like to remove. 
+4. Click **Save Changes**. 
+
+
 ### Remove encryption
 
-Disabling the data encryption setting removes encryption on all data that comes into a destination after the setting was disabled.
+Disabling the data encryption setting removes encryption on all previously configured data.
 
 To remove encryption from incoming data:
 1. Open the [My destinations page](https://app.segment.com/goto-my-workspace/destinations){:target="_blank”} in the Segment app.
