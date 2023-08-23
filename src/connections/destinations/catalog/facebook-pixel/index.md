@@ -236,8 +236,6 @@ If someone saw or clicked on your ad on a mobile phone then later came back dire
 
 ### Are Facebook Pixel events reflected in Facebook Ads Manager in real-time?
 
-Facebook Pixel events typically do not show up in real-time within the Facebook Ads Manager or other reporting interfaces. While Facebook Pixel events are tracked in near real-time, there can be some delay before they are reflected in your reporting.
-
-If someone saw or clicked on your ad on a mobile phone then later came back directly to purchase on a desktop machine, Google Analytics wouldn't know that this was the same person, but Facebook would. In that scenario, Google Analytics would count two unique visits with a conversion last attributed to a direct visit on desktop. Facebook would count one conversion with the conversion properly attributed to the last ad click/view on mobile.
+Facebook Pixel events typically do not show up in real-time within the Facebook Ads Manager or other reporting interfaces. While Facebook Pixel events are tracked in near real-time, there can be some delay before they are reflected in your reporting. More about [ways that Ads Reporting conversion counts may differ with a third-party reporting tools](https://www.facebook.com/business/help/147965221941551) in Facebook's documentation. 
 
 {% include content/client-side-script-unverified.md %}
