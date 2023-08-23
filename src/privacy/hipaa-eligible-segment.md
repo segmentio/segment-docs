@@ -72,7 +72,7 @@ To configure data encryption for an existing destination:
 
 ### Configure new key pairs
 
-If you lose access to your private key, you can generate a new key pair in your destination's Data Encryption tab. Any data previously encrypted using the previous key pair is unaffected.
+If you lose access to your private key, you can generate a new key pair in your destination's Data Encryption tab. Any data previously encrypted using the previous key pair is unaffected, but cannot be decrypted using the new key.
 
 To generate a new key pair:
 1. Open the [My destinations page](https://app.segment.com/goto-my-workspace/destinations){:target="_blank”} in the Segment app.
