@@ -31,7 +31,7 @@ To use Trait Enrichment, you must have the following:
 To map Trait Enrichment to your destination:
 
 1. Navigate to **Engage** > **Audiences**.
-2. [Create a new Audience](/docs/engage/audiences/). From the **Select Destination** tab in the Audience builder, add your destination.
+2. [Create a new Audience](/docs/engage/audiences/). From the **Select Destination** tab in the Audience builder, select your destination.
 - If you don't see any destinations to add, you'll need to [add the destination](/docs/connections/destinations/add-destination/#adding-a-destination) to your Engage space first.
 - For existing Audiences, select the connected Destination from the Audience Overview page.
 3. In the **Event Settings** section, you'll see two options: **Default Setup** and **Customized Setup**. To use Trait Enrichment, select [**Customized Setup**](#customized-setup). 
@@ -49,7 +49,7 @@ With Customized setup, you can choose which traits you want to map downstream to
 1. Click **Customized Setup**, then click **Add Trait**.
 2. Select all traits you want to sync to your destination, and click **Save**. 
 - Use the **Segment** column to select traits from the Segment Spec. 
-- Use the **Destination** column to select which traits you want to map to from your Destination. By default, Segment attempts to find traits with matching names.
+- Use the **Destination** column to select which traits you want to map to in your Destination. By default, Segment attempts to find traits with matching names.
 3. Once you've selected traits and customized your mappings, click **Save** and finish building your Audience. 
 
 ### Destination requirements 

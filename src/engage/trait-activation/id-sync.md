@@ -25,7 +25,7 @@ To use ID Sync, you must have the following:
 To configure ID Sync:
 
 1. Navigate to **Engage** > **Audiences**.
-2. [Create a new Audience](/docs/engage/audiences/). From the **Select Destination** tab in the Audience builder, add a destination.
+2. [Create a new Audience](/docs/engage/audiences/). From the **Select Destination** tab in the Audience builder, select your Destination.
 - If you don't see any destinations to add, you'll need to [add the destination](/docs/connections/destinations/add-destination/#adding-a-destination) to your Engage space first.
 - For existing Audiences, you'll find your connected Destination on the Audience Overview page.
 3. In the **Event Settings** section, you'll see two options: **Default Setup** and **Customized Setup**. To use ID Sync, select [**Customized Setup**](#customized-setup). 
