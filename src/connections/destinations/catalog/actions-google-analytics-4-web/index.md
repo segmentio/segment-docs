@@ -94,7 +94,6 @@ UTM Parameters are automatically tracked and sent to Google when they are presen
 
 Without any further configuration, traffic-source data for `campaign`, `campaign_id`, `content`, `medium`, and `source` will populate in GA4. This can be observed on Google's side by triggering a `Page` call with UTM parameters present in the URL and navigating to the **Realtime overview** report in GA4 to see the resulting `page_view` event under the _Event count by Event name_ card. 
 
-### Compare Google Analytics 4 metrics with Universal Analytics
+### Differences between Google Analytics 4 Cloud and Google Analytics 4 Web destinations 
 
-As you set up Google Analytics 4, you should compare the reported results in your Google Analytics 4 property with those in your Universal Analytics property. This [Google article](https://support.google.com/analytics/answer/11986666?hl=en&sjid=3421230313554474956-NA#acquisition&zippy=%2Cin-this-article){:target="_blank"} explains the extent to which you can and cannot compare metrics between Universal Analytics and Google Analytics 4.
-
+Segment's [Google Analytics 4 Cloud](/docs/connections/destinations/catalog/actions-google-analytics-4/) server-side destination uses Google's Measurement Protocol API to send event data server to server, whereas Segment's [Google Analytics 4 Web](/docs/connections/destinations/catalog/actions-google-analytics-4-web/) device-mode destination loads the gtag.js library client-side and uses Segment's event data to map to gtag.js events directly. Each destination has its own advantages and disadvantages. Your choice between the two will depend on your specific use case, technical expertise, and the platforms from which you want to track data.
