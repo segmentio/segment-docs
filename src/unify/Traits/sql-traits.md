@@ -1,11 +1,16 @@
 ---
 title: SQL Traits
-plan: engage-foundations
+plan: unify-plus
 redirect_from:
   - '/personas/sql-traits'
+  - '/engage/audiences/sql-traits'
 ---
 
-Use SQL Traits to import user or account traits from your data warehouse back into Engage to build audiences or to enhance Segment data that you send to other Destinations.
+> info ""
+> Beginning August 18, 2023, new Unify Plus users can access SQL Traits in Unify. 
+ 
+ 
+Use SQL Traits to import user or account traits from your data warehouse back into Unify or Engage to build audiences or to enhance data that you send to other Destinations.
 
 SQL Traits are only limited by the data in your warehouse. Because anything you can write a query for can become a SQL Trait, you can add detail to your user and account profiles, resulting in more nuanced personalization.
 
@@ -60,8 +65,8 @@ This query computes whether a user has an open ticket:
 To use SQL Traits, you need the following:
 
 - a warehouse connected to Segment
-- an Engage Segment workspace
-- a user account with access to Engage in that workspace
+- a Segment workspace
+- a user account with access to Unify in that workspace
 
 ### Step 1. Set up a warehouse source
 

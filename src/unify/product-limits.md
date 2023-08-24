@@ -1,17 +1,27 @@
 ---
-title: Engage Default Limits
-plan: engage-foundations
-redirect_from: 
-  - '/personas/rate-limits'
-  - '/personas/product-limits'
+title: Unify Limits
+plan: unify-plus
+redirect_from:
+  - '/profiles/product-limits'
+  - '/unify/profile-api-limits'
 ---
 
-To provide consistent performance and reliability at scale, Segment enforces default use and rate limits within Engage. Most customers do not exceed these limits.
-
-To learn more about custom limits and upgrades, contact your dedicated Customer Success Manager or [friends@segment.com](mailto:friends@segment.com).
-
 > info ""
-> Beginning August 18, 2023, Segment has [updated product limits](/docs/unify/product-limits/) that apply to new Engage and Unify users. 
+> Beginning August 18, 2023, new Unify Plus and Engage users can refer to this page for Segment's product limits. Existing users prior to this date can continue to refer to the Engage product limits [here](/docs/engage/product-limits/).
+
+
+To provide consistent performance and reliability at scale, Segment enforces default use and rate limits within Unify. Most customers do not exceed these limits.
+
+To learn more about custom limits and upgrades, contact your dedicated Customer Success Manager or [friends@segment.com](mailto:friends@segment.com){:target="_blank"}.
+
+## Unify Plus limits
+
+Beginning August 18, 2023, new Unify Plus users will receive 50 Computed or SQL Traits and five AI Traits. In addition, new users will receive the following depending on your Engage plan: 
+- **Engage Foundations**: 100 Audiences and 75 Journey Steps
+- **Engage Premier**: 125 Audiences and 100 Journey Steps
+
+Visit Segment's [pricing page](https://segment.com/pricing/){:target="_blank"} to learn more. 
+
 
 ## Default limits
 
@@ -38,6 +48,7 @@ To learn more about custom limits and upgrades, contact your dedicated Customer 
 
 ## SQL Traits
 
+
 | name                        | limit                      | Details                                                                                                      |
 | --------------------------- | -------------------------- | ------------------------------------------------------------------------------------------------------------ |
 | SQL Traits                  | 25                         | The number of SQL traits you can sync to your Space.                                                         |
@@ -46,24 +57,27 @@ To learn more about custom limits and upgrades, contact your dedicated Customer 
 | SQL Traits - Columns        | 25                         | The number of columns each SQL trait can return.                                                             |
 
 
-## Journeys
+## Profile API
 
-> info ""
-> These limits only apply to existing users who started with Engage prior to August 18, 2023. Visit Segment's updated Unify and Engage [limits](/docs/unify/product-limits/) to learn more.
-
-
-| Item            | Limit description                | Details                                                                      |
-| --------------- | -------------------------------- | ---------------------------------------------------------------------------- |
-| Steps           | 500                              | The maximum number of steps per Journey.                                     |
-| Step Name       | Maximum length of 170 characters | Once the limit is reached, you cannot add additional characters to the name. |
-| Key             | Maximum length of 255 characters | Once the limit is reached, you cannot add additional characters to the key.  |
-| Journey Name    | Maximum length of 73 characters  | Once the limit is reached, you cannot add additional characters to the name. |
-| Compute credits | Half a credit for each step (up to 250 compute credits)     | Each step in a published Journey consumes half of one compute credit.        |
+| Name                    | limit                   | Details                                                                                                                                                             |
+| ----------------------- | ----------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Profile API Throughput  | 100 requests per second | If requests exceed 100 per second, the Profile API returns HTTP Error `429 Too Many Requests`.                                                                      |
+| Events Lookback History | 14 days                 | The Profile API retrieves up to 14 days of a profile's historical events within a collection. This applies to Track events, not traits sent through Identify calls. |
 
 
- 
-## Channels
+## Identity
 
-| Item     | Limit description                                                   | Details                                                                                             |
-| -------- | ------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------- |
-| Channels | Does not support [Regional Segment](/docs/guides/regional-segment/) | Workspaces with Channels functionality enabled must be deployed in the default region (Oregon, US). |
+| name              | Limit         | Details                                                                                                                                                                                                                                                                                                                                                                                                                                        |
+| ----------------- | ------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Identity Merges   | 100 merges    | Engage supports up to 100 merges per profile in its identity graph. Merges occur when a common `external_id` joins two existing profiles. For example, if a user initiates a mobile session but then signs in through a web application, a common identifier like `user_id` will join the two user profiles. No additional merges will be added once the profile reaches this limit. Event resolution for the profile, however, will continue. |
+| Identity Mappings | 1000 mappings | Engage supports up to 1000 mappings per profile in its identity graph. Mappings are external identifier values like a `user_id`, email, mobile advertising `id`, or any custom identifier. No additional mappings will be added once the profile reaches this limit. Event resolution for the profile, however, will continue.                                                                                                                 |
+| Identify calls    | 300 traits    | Engage rejects Identify events with 300 or more traits. If your use case requires more than 300 traits, you can split the traits into multiple Identify calls.                                                                                                                                                                                                                                                                                 |
+
+### Unify ingestion limitations
+
+Unify will silently drop events if:
+- The `groupId` has more than 500 characters.
+- Events have more than 300 properties/traits.
+- `messageId` is longer than 100 characters.
+- The `groupId` is empty in a Group call or `context.groupId` is empty in a Track call.
+
