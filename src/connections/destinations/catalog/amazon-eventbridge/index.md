@@ -47,7 +47,7 @@ analytics.track("User Registered", {
 
 ## FAQ
 
-### Can I change my Account ID?
-Currently you can only set up one Account ID per source, and once it is set it cannot be changed. 
+### Can I change my AWS Account ID?
+You are only able to configure one AWS Account ID per source. Once you've configured your Amazon EventBridge destination with an AWS Account ID, it is not possible to modify it. If you do need to change the AWS Account ID for any reason, you will need to create a new Segment source and configure a new destination.
 
 We recommend that you create a separate Segment source for testing if you use a test Account ID, because you cannot change it to a production Account ID at a later date. 
