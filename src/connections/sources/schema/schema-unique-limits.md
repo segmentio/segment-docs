@@ -25,6 +25,8 @@ If you hit any of the limits or would like to clear out old events or properties
 
 ![Clear your Schema data with Clear Schema History](images/schema_config_clear_schema.png)
 
+Clearing events from the Source Schema only clears it from the Segment interface. It does not impact the data sent to your destinations or storage warehouse. Once you clear the events, the Schema page will start to repopulate with new events.
+
 #### How can I clear/archive properties in my source schema?
 
 At this time, you cannot clear or archive old event properties individually. An alternative for this is to archive the event itself, and then clear the archive. After you clear the archive, the event will re-populate in the schema with only the current properties.
