@@ -49,7 +49,7 @@ Add detail to user profiles with new traits and use them to power personalized m
 
 - [**Computed Traits:**](/docs/unify/traits/computed-traits/) Use the Unify drag-and-drop interface to build per-user (B2C) or per-account (B2B) metrics on user profiles (for example, “lifetime value” or “lead score”).
 - [**SQL Traits:**](/docs/unify/traits/sql-traits/) Run custom queries on your data warehouse using the Unify SQL editor, and import the results into Segment. With SQL Traits, you can pull rich, uncaptured user data back into Segment.
-- [**Predictive Traits (Beta)**:](/docs/unify/traits/predictive-traits/) Predict the likelihood that users will perform custom events tracked in Segment, like LTV, churn, and purchase.
+- [**Predictions**:](/docs/unify/traits/predictions/) Predict the likelihood that users will perform custom events tracked in Segment, like LTV, churn, and purchase.
 
 ## Profile API
 

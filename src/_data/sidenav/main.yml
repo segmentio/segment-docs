@@ -325,14 +325,14 @@ sections:
   - section_title: Traits
     slug: unify/traits
     section:
-    - section_title: Predictive Traits
-      slug: unify/traits/predictive-traits
+    - section_title: Predictions
+      slug: unify/traits/predictions
       section:
-      - path: '/unify/traits/predictive-traits/'
-        title: Predictive Traits
-      - path: '/unify/traits/predictive-traits/using-predictive-traits'
-        title: Using Predictive Traits
-      - path: '/unify/traits/predictive-traits/suggested-predictive-audiences'
+      - path: '/unify/traits/predictions/'
+        title: Predictions
+      - path: '/unify/traits/predictions/using-predictions'
+        title: Using Predictions
+      - path: '/unify/traits/predictions/suggested-predictive-audiences'
         title: Suggested Predictive Audiences
     - path: '/unify/traits/computed-traits'
       title: Computed Traits
