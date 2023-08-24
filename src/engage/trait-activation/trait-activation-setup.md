@@ -1,0 +1,33 @@
+---
+title: Trait Activation Setup
+plan: engage-foundations
+---
+
+On this page, you'll learn how to set up the Destination that you'll use to get started with [Trait Enrichment](/docs/engage/trait-activation/trait-enrichment/) and [ID Sync](/docs/engage/trait-activation/id-sync/).  
+
+## Set up a Destination
+
+You'll first choose a Destinaton to connect to your Audience and use with Trait Activation. Trait Activation supports real-time and batch audiences for the Destinations listed in the table below. Select your Destination, view its Segment documentation, then follow the required setup steps. 
+
+
+|-----------------------|---------------|---------------------------|
+|Destination            |  Type         |  Required Steps           |
+| [Facebook Custom Audiences](/docs/connections/destinations/catalog/personas-facebook-custom-audiences/) | List | 1. Authorize Facebook Custom Audiences. <br> 2. Create an Audience in Engage and Connect to Facebook. <br> 3. Verify that the Audience appears in Facebook. |
+| [Google Ads Remarketing List](/docs/connections/destinations/catalog/adwords-remarketing-lists/#overview) | List | 1. Add Google Ads Remarketing Lists as an Engage Destination. <br> 2. Create an Audience in Segment and connect it to Google Ads Remarketing Lists. <br> 3. Confirm that the list is building in Google Ads Audience manager. |
+|[Iterable](/docs/connections/destinations/catalog/iterable/)              | Event         | 1. Add Iterable Destination to your Segment workspace. <br> 2. Enter your API Key for Iterable.                          |
+|[Zendesk](/docs/connections/destinations/catalog/zendesk/)                | Event         | 1. Add Zendesk to your Segment workspace. <br> 2. Enter your Zendesk domain (not including `.zendesk.com`) and click **Connect**. <br> 3. You'll see the Zendesk oAuth login open. Sign in with your Zendesk credentials to authenticate and allow Segment integration. |
+|[Braze Cloud Mode (Actions)](/docs/connections/destinations/catalog/braze-cloud-mode-actions/) | Event | 1. Connect Braze Cloud Mode (Actions) to your Segment workspace. <br> 2. Add the following connection settings: API Key, App ID, and REST Endpoint. |
+| [Adobe Target (Actions)](/docs/connections/destinations/catalog/actions-adobe-target-cloud/#available-actions)    | Event      |  1. Connect Adobe Target (Actions) to your Segment workspace. <br> 2. On the **Settings** tab, input your Adobe Target destination settings. <br> 3. Follow the Destination Actions documentation for [customized mappings](/docs/connections/destinations/actions/#customizing-mappings). <br> 4. Enable the destination and configured mappings.                        |
+| [Salesforce (Actions) Destination](/docs/connections/destinations/catalog/actions-salesforce/) | Event          | 1. Connect Salesforce to your Segment workspace. <br> 2. Select **Actions** as the destination framework. <br> 3. From the **Settings** tab, authenticate with Salesforce using OAuth. <br> 4. Follow steps in the Destination Actions [Customizing Mappings documentation](/docs/connections/destinations/actions/#customizing-mappings). <br> 5. Enable the Destination and configured mappings.                  |
+|[SendGrid Marketing Campaigns](/docs/connections/destinations/catalog/actions-sendgrid/)   |   Event           |  1. Connect SendGrid Marketing Campaigns to your Segment workspace. <br> 2. In the Destination settings, enter your SendGrid Marketing Campaigns API key into the connection settings.                      |
+
+## Resyncs
+
+Segment recommends creating a new Audience for Trait Enrichment and ID Sync. For existing Audience destinations, both Trait Enrichment and ID Sync don't automatically resync the entire Audience. Only new data flowing into Segment will adhere to new trait criteria. 
+
+[Contact Segment support](https://segment.com/help/contact/){:target="_blank"} if you'd like your Audience data resynced with Trait Enrichment and ID Sync. 
+
+> warning ""
+> For Audiences larger than 50 million users, it may take up to several hours or even days, to sync or resync. Only one resync is allowed at a time for each workspace. 
+
+
