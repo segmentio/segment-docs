@@ -40,7 +40,7 @@ Segment encrypts the data in select fields [marked as yellow in the Privacy Port
 > info "Data encryption is currently in public beta"
 > Data encryption only supports event-stream, cloud-mode destinations. Only data fields in `context`, `traits`, and `property` objects can be encrypted. 
 >
-> After Segment encrypts the data, the encrypted data value will always be a `string`. Any downstream validation that looks for `integer` data types will fail for encrypted values.
+> After Segment encrypts the data, the encrypted data value will always be a `string`. Any downstream validation that looks for `integer` or `boolean` data types will fail for encrypted values.
 
 ### Configure data encryption for a new destination
 
