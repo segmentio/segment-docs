@@ -1,12 +1,14 @@
 ---
 title: Screeb (Actions) Destination
+id: 64820d8030d09e775fbac372
 ---
 
 {% include content/plan-grid.md name="actions" %}
 
-[Screeb](https://screeb.app/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) provides self-serve predictive analytics for growth marketers, leveraging machine learning to automate audience insights and recommendations.
+[Screeb](https://screeb.app/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners){:target="_blank"}
+ provides self-serve predictive analytics for growth marketers, using machine learning to automate audience insights and recommendations.
 
-This destination is maintained by Screeb. For any issues with the destination, consult [Screeb's documentation](https://github.com/ScreebApp/developers/wiki), [contact their Support team](mailto:support@screeb.app).
+Screeb maintains this destination. For any issues with the destination, consult [Screeb's documentation](https://github.com/ScreebApp/developers/wiki){:target="_blank"} or [contact their support team](mailto:support@screeb.app).
 
 {% include content/ajs-upgrade.md %}
 
@@ -17,7 +19,7 @@ This destination is maintained by Screeb. For any issues with the destination, c
 3. Click **Configure Screeb (Actions)**.
 4. Select an existing Source to connect to **Screeb (Actions)**.
 5. Find your Website ID on [Screeb > Settings > Install Screeb > Web App](https://admin.screeb.app/org/last/settings/install?from=segment){:target="_blank"}
-6. In the destination configuration, input that Website ID.
+6. In the destination configuration, input the Website ID.
 7. Enable the destination.
 
 {% include components/actions-fields.html %}
