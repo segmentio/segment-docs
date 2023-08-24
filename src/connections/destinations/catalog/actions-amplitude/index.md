@@ -74,8 +74,7 @@ The session ID Segment passes to Amplitude stores locally in a key-value pair. V
 
 To enable session tracking in Amplitude when using the [Segment Swift library](https://github.com/segmentio/analytics-swift):
 1. Enable `trackApplicationLifecycleEvents` in your configuration.
-2. Add the [Amplitude Session plugin](https://github.com/segmentio/analytics-swift/blob/main/Examples/destination_plugins/AmplitudeSession.swift
-) to your project.
+2. Add the [Amplitude Session plugin](https://github.com/segment-integrations/analytics-swift-amplitude/blob/main/Sources/SegmentAmplitude/AmplitudeSession.swift) to your project.
 3. Initialize the plugin ([example](https://github.com/segmentio/analytics-swift/blob/main/Examples/apps/DestinationsExample/DestinationsExample/AppDelegate.swift))
    ```swift
    analytics?.add(plugin: AmplitudeSession(name: "Amplitude"))
@@ -85,7 +84,7 @@ To enable session tracking in Amplitude when using the [Segment Swift library](h
 
 To enable session tracking in Amplitude when using the [Segment Kotlin library](https://github.com/segmentio/analytics-kotlin):
 1. Enable `trackApplicationLifecycleEvents` in your configuration.
-2. Add the [Amplitude Session plugin](https://github.com/segmentio/analytics-kotlin/blob/main/samples/kotlin-android-app-destinations/src/main/java/com/segment/analytics/destinations/plugins/AmplitudeSession.kt) to your project.
+2. Add the [Amplitude Session plugin](https://github.com/segment-integrations/analytics-kotlin-amplitude/blob/main/lib/src/main/java/com/segment/analytics/kotlin/destinations/amplitude/AmplitudeSession.kt) to your project.
 2. Initialize the plugin
    ```kotlin
    analytics.add(AmplitudeSession())
