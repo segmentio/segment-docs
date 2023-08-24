@@ -1494,6 +1494,15 @@ sources:
       - us
     endpoints:
       - us
+  - id: 9TYqEh3nMe
+    display_name: Upollo
+    hidden: false
+    slug: upollo
+    url: connections/sources/catalog/cloud-apps/upollo
+    regions:
+      - us
+    endpoints:
+      - us
   - id: FOkpxVzfJJ
     display_name: Vero
     hidden: false
