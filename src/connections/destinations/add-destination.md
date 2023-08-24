@@ -10,9 +10,9 @@ Destinations are tools or services which can use the data sent from Segment to p
 > Each Segment Workspace has its own set of destinations, which are connected to the workspace's sources. When you add or modify a destination, make sure you're working with the correct workspace.
 
 > info "HLS customers can encrypt data flowing into their destinations"
-> If you are a HLS customer with a HIPAA Eligible workspace, you can enable data encryption to encrypt data before it flows into your destination. 
+> HLS customers with a HIPAA Eligible workspaces can encrypt data in fields marked as Yellow in the Privacy Portal before they flow into your destination.
 >
-> To learn more about data encryption, see the [HIPAA Eligible Segment](/docs/privacy/hipaa-eligible-segment/#data-encryption) documentation.
+> To learn more about data encryption, see the [HIPAA Eligible Segment documentation](/docs/privacy/hipaa-eligible-segment/#data-encryption).
 
 ## Adding a destination
 
