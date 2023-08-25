@@ -89,7 +89,7 @@ To make changes to your selected fields:
 1. Open the [My destinations page](https://app.segment.com/goto-my-workspace/destinations){:target="_blank”} in the Segment app.
 2. Select the destination you'd like to edit your selected fields for and click **Data Encryption**.
 3. Add or remove fields. 
-  - To add fields, click into the **Fields** box to open the dropdown and select one or more fields you'd like to add.
+  - To add fields, click the **Fields** box to open the dropdown and select the fields you'd like to add.
   - To remove fields, click the **x** icon next to the name of the field you'd like to remove. 
 4. Click **Save Changes**. 
 
