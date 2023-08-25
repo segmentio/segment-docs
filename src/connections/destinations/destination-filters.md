@@ -84,9 +84,9 @@ Property-level allowlisting is available with Segment's API. Using destination f
 
 ![PII management example](images/destination-filters/pii_example.png)
 
-> info "HLS customers can encrypt data flowing into their destinations"
-> HLS customers with a HIPAA Eligible workspace can encrypt data in fields marked as Yellow in the Privacy Portal before they flow into an event stream, cloud mode destination.
-> 
+> info "Healthcare and Life Sciences (HLS) customers can encrypt data flowing into their destinations"
+> HLS customers with a HIPAA eligible workspace can encrypt data in fields marked as Yellow in the Privacy Portal before they flow into an event stream, cloud mode destination.
+>
 > To learn more about data encryption, see the [HIPAA Eligible Segment documentation](/docs/privacy/hipaa-eligible-segment/#data-encryption).
 
 ### Control event volume
