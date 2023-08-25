@@ -348,7 +348,7 @@ The Analytics.js utility methods help you change how Segment loads on your page.
 > info ""
 > The `load` method is also available when you load analytics.js through the [NPM package](https://www.npmjs.com/package/@segment/analytics-next){:target="_blank"}.
 
-You can load a buffered version of analytics.js that requires you call `load` explicitly to before analytics.js initiates any network activity. This is useful if you want to, for example, wait for user consent before you fetch tracking destinations or send buffered events to Segment.
+You can load a buffered version of analytics.js that requires you to call `load` explicitly before analytics.js initiates any network activity. This is useful if you want to, for example, wait for user consent before you fetch tracking destinations or send buffered events to Segment.
 
 > warning ""
 > Call `load` one time only.
