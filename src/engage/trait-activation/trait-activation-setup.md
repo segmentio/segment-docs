@@ -1,6 +1,7 @@
 ---
 title: Trait Activation Setup
 plan: engage-foundations
+beta: true
 ---
 
 On this page, you'll learn how to set up the Destination that you'll use to get started with [Trait Enrichment](/docs/engage/trait-activation/trait-enrichment/) and [ID Sync](/docs/engage/trait-activation/id-sync/).  

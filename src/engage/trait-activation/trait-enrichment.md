@@ -9,8 +9,8 @@ Use Trait Enrichment to access Segment profile traits when you sync Audiences to
 
 > info ""
 > The setup steps you'll use for Trait Enrichment depend on the type of Destination [you've connected](/docs/engage/trait-activation/trait-activation-setup/). 
-> - For Iterable, Facebook Custom Audiences, Zendesk, and Google Adwords, start with [set up Trait Enrichment](#set-up-trait-enrichment). 
-> - If you're using SendGrid, Braze, or Salesforce Actions, use the [Destination Actions setup steps](#setup-for-destination-actions). 
+> - For Iterable, Facebook Custom Audiences, Zendesk, and Google Adwords, use [set up Trait Enrichment](#set-up-trait-enrichment). 
+> - If you're using SendGrid, Braze, or Salesforce Actions, use the [Destination Actions setup steps](#destination-actions-setup). 
 
 ## Requirements
 
@@ -23,7 +23,7 @@ To use Trait Enrichment, you must have the following:
 ## Set up Trait Enrichment
 
 > info ""
-> If you're using Destination Actions, visit the setup instructions [here](#setup-for-destination-actions).
+> If you're using Destination Actions, visit the setup instructions [here](#destination-actions-setup).
 
 To map Trait Enrichment to your destination:
 
@@ -55,11 +55,11 @@ The following are a list of destination-specific requirements for using Trait En
 
 #### Iterable
 
-Users can sync as many traits as they would like to Iterable. Iterable also doesn't require you to map Segment traits to specific Iterable fields. 
+Users can sync as many traits as they would like to Iterable. Iterable doesn't require you to map Segment traits to specific Iterable fields. 
 
 #### Facebook Custom Audiences
 
-You can only sync the following traits to Faceook. Each trait you select must map to a Facebook key:
+You can only sync the following traits to Faceookz:
 - `email`
 - `context.device.advertisingId`
 - `firstName`
@@ -73,6 +73,7 @@ You can only sync the following traits to Faceook. Each trait you select must ma
 - `address.city`
 - `address.postalCode`
 - `address.country`
+Each trait you select must map to a Facebook key.
 
 #### Zendesk
 
@@ -84,7 +85,7 @@ If you're using Zendesk, you must include the `firstName` and `lastName` traits 
 
 Additionally, you can only map one trait per audience to Google as a phone number.
 
-## Setup for Destination Actions 
+## Destination Actions setup
 
 If you're using Destination Actions, use the following steps to set up Trait Enrichment.
 
@@ -109,9 +110,9 @@ After you add traits, configure how your selected traits will map to your Destin
 1. Navigate to **Connections > Destinations** and select your destination.
 1. From the Destination overview screen, select the **Mappings** tab. 
 2. Click **+ New Mapping**.
-- **Braze Cloud Mode (Actions)**: Has a preset mapping called **Update User Profile**. 
-- **Salesforce (Actions)** Use `Identify calls` as your event trigger.
-- **SendGrid Marketing Campaigns** Configure an **Upsert Contact** mapping. Use `Identify calls` as the event trigger. 
+- **Braze Cloud Mode (Actions)**: Use a preset mapping called "Update User Profile". 
+- **Salesforce (Actions)**: Use `Identify calls` as your event trigger.
+- **SendGrid Marketing Campaigns**: Configure an "Upsert Contact" mapping. Use `Identify calls` as the event trigger. 
 3. Locate the  **Select mappings** section to confirm the default field mappings match the traits in your custom setup. 
 - To update a trait field mapping click on a field, and in the dropdown search bar enter `traits.` followed by your trait. For example, `traits.email`. Then, click **Use as an event variable**.
 4. Click **Save** and navigate back to Engage to finish building your Audience. 
