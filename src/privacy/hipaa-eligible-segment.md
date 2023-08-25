@@ -83,7 +83,7 @@ To generate a new key pair:
 
 ### Edit encrypted fields
 
-After enabling encryption for a destination, you can add or remove encrypted data fields in your destination's Data Encryption tab. All changes made to fields are forward-looking. You may experience some latency between making the changes and having the changes take effect.
+After enabling encryption for a destination, you can add or remove encrypted data fields in your destination's **Data Encryption** tab. All changes made to fields are forward-looking. You may experience some latency between making the changes and having the changes take effect.
 
 To make changes to your selected fields:
 1. Open the [My destinations page](https://app.segment.com/goto-my-workspace/destinations){:target="_blank”} in the Segment app.
