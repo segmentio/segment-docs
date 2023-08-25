@@ -24,6 +24,7 @@ The following dependencies are installed in the function environment by default.
 - [`jsonwebtoken v8.5.1`](https://www.npmjs.com/package/jsonwebtoken){:target="_blank"} exposed as `jsonwebtoken`
 - [`libphonenumber-js`](https://www.npmjs.com/package/libphonenumber-js){:target="_blank"} exposed as `libphonenumberjslib.libphonenumberjs`
 - [`lodash v4.17.19`](https://www.npmjs.com/package/lodash){:target="_blank"} exposed as `_`
+- [`mailchimp marketing`](https://www.npmjs.com/package/@mailchimp/mailchimp_marketing){:target="_blank"} exposed as `mailchimplib.mailchimp`
 - [`mailjet`](https://www.npmjs.com/package/node-mailjet){:target="_blank"} exposed as `const mailJet = nodemailjet.nodemailjet;`
 - [`moment-timezone v0.5.31`](https://www.npmjs.com/package/moment-timezone/v/0.5.31){:target="_blank"} exposed as `moment`
 - [`node-fetch v2.6.0`](https://www.npmjs.com/package/node-fetch){:target="_blank"} exposed as `fetch`
