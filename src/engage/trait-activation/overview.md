@@ -13,11 +13,11 @@ Trait Activation includes both [Trait Enrichment](/docs/engage/trait-activation/
 
 Trait Enrichment and ID Sync can help you:
 
-- **Increase advertising match rates**: Expand the pool of users you advertise to and increase match rates by using more traits and identifiers to find the right customers. 
+- **Increase advertising match rates**: Expand the pool of users you advertise to and increase match rates by using traits and identifiers to find the right customers. 
 
-- **Include more personalized message content**: Use Trait Enrichment to include traits in your payload. This leads to more up-to-date, accurate data that you can use for personalization.
+- **Include more personalized message content**: Include traits in your payload for more up-to-date, accurate data. 
 
-- **Configure how you send identifiers to Destinations**: Send the right identifiers to your destinations. When profiles have multiple identifiers, you can choose the right strategy to select identifiers and send them downstream.
+- **Configure how you send identifiers to Destinations**: Send the right identifiers to your destinations. For profiles with multiple identifiers, choose a strategy to select identifiers and send them downstream.
 
 
 ## Next steps 
