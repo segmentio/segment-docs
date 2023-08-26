@@ -20,7 +20,7 @@ When you use the HubSpot Cloud Mode (Actions) destination, Segment sends your da
 > The **Upsert Company** action is not compatible with the Segment Event Tester. As a result, Segment recommends using other tools to test and troubleshoot the creation and updates of companies in HubSpot.
 
 > warning ""
-> **Behavioral Events (Legacy)** are only supported with [Hubspot Classic Destination]([https://duckduckgo.com](https://segment.com/docs/connections/destinations/catalog/hubspot/)).
+> **Behavioral Events (Legacy)** are only supported with [Hubspot Classic Destination](https://segment.com/docs/connections/destinations/catalog/hubspot/).
 
 
 ## Benefits of HubSpot Cloud Mode (Actions) vs HubSpot Classic
