@@ -320,15 +320,16 @@ sections:
       title: Tables & Materialized Views
   - section_title: Linked Profiles 
     slug: unify/linked-profiles
-    section_title: Setup Guides
-    slug: unify/linked-profiles/setup-guides
     section: 
-      - path: /unify/linked-profiles/setup-guides/bigquery-setup
-      - title: BigQuery Setup
-      - path: /unify/linked-profiles/setup-guides/snowflake-setup
-      - title: Snowflake Setup
+    - section_title: Setup Guides
+      slug: unify/linked-profiles/setup-guides
+      section: 
+        - path: /unify/linked-profiles/setup-guides/bigquery-setup
+          title: BigQuery Setup
+        - path: /unify/linked-profiles/setup-guides/snowflake-setup
+          title: Snowflake Setup
     - path: /unify/linked-profiles/linked-events
-    title: Linked Events
+      title: Linked Events
   - path: /unify/profile-api
     title: Profile API
   - path: /unify/profile-api-limits
