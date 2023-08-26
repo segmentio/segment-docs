@@ -14,17 +14,18 @@ Follow the instructions below to set up the Segment Snowflake connector. Segment
 
 1. Log in to your Snowflake account.
 2. Navigate to *Worksheets*.
-3. Enter and run the code below to create a database.
-   Segment uses the database specified in your connection settings to create a schema called `__segment_reverse_etl` to avoid collision with your data. The schema is used for tracking changes to your model query results between syncs.
-   An existing database can be reused, if desired. Segment recommends you to use the same database across all your models attached to this source to keep all the state tracking tables in one place.
+3. Enter and run the following code to create a database.
+   this source to keep all the state tracking tables in one place.
 
    ```sql
    -- not required if another database is being reused
    CREATE DATABASE segment_entities;
    ```
+   Segment uses the database specified in your connection settings to create a schema called `__segment_reverse_etl` to avoid collision with your data. The schema is used for tracking changes to your model query results between syncs.
+   An existing database can be reused, if desired. Segment recommends you to use the same database across all your models attached to 
 
    4. Enter and run the code below to create a virtual warehouse.
-   Segment Reverse ETL needs to execute queries on your Snowflake account, which requires a Virtual Warehouse to handle the compute. You can also reuse an existing warehouse.
+   Linked Events needs to execute queries on your Snowflake account, which requires a Virtual Warehouse to handle the compute. You can also reuse an existing warehouse.
 
    ```sql
    -- not required if reusing another warehouse
@@ -34,8 +35,7 @@ Follow the instructions below to set up the Segment Snowflake connector. Segment
       AUTO_SUSPEND = 600 -- 5 minutes
       AUTO_RESUME = TRUE;
    ```
-5. Enter and run the code below to create specific roles for Reverse ETL.
-   All Snowflake access is specified through roles, which are then assigned to the user you’ll create later.
+5. Enter and run the code below to create specific roles for Linked Events. All Snowflake access is specified through roles, which are then assigned to the user you’ll create later.
 
     ```sql
    -- create role
@@ -70,9 +70,16 @@ Follow the instructions below to set up the Segment Snowflake connector. Segment
 
 If you're using an existing database, follow the steps below to get started.
 
-### View schemas
+## Grant Access to Tables 
 
-Grant permission based on user needs. Visit [Snowflake's docs](https://docs.snowflake.com/en/user-guide/security-access-control-privileges#schema-privileges) to learn more about schema priveledges. 
+To use Linked Events, you'll also need to grant access to `segment_entities_user` for the schemas and tables you'd like to read from to perform enrichments. 
+
+These tables don't need to live in the same database as the one used for storing sync deltas. You can give as broad or narrow of access as you require. If you give broad access to multiple schemas, you can sort through the schemas in the Segment UI to select the appropriate tables to create models from.
+
+> success ""
+> Visit Snowflake's docs to learn more about [Snowflake schema priveleges](https://docs.snowflake.com/en/user-guide/security-access-control-privileges#schema-privileges) and [Snowflake table priveleges](https://docs.snowflake.com/en/user-guide/security-access-control-privileges#table-privileges). 
+
+To give Segment access to all current and future schemas in a database, use the following two commands:
 
 ```sql 
 -- view all schemas in database
@@ -81,14 +88,16 @@ segment_entities;
 
 -- view future schemas in database
 GRANT USAGE ON FUTURE SCHEMAS IN DATABASE segment_entities TO ROLE segment_entities;
+```
 
+To lock down access to a specific schema, use the following command:
+
+```sql
 -- view specific schemas in database
 GRANT USAGE ON SCHEMA <schema_name> TO ROLE segment_entities;
 ``` 
 
-### View tables and columns
-
-Grant permission based on user needs. Visit [Snowflake's docs](https://docs.snowflake.com/en/user-guide/security-access-control-privileges#table-privileges) to learn more about table priveleges. 
+Use the following commands to open up table-level access to Segment based on your comfort level:
 
 ```sql
 -- view all tables/columns in a database
@@ -110,6 +119,8 @@ segment_entities;
 GRANT REFERENCES ON TABLE <schema-name>.<table_name> TO ROLE segment_entities;
 ```
 
+
+<!-- Probably cut
 If Reverse ETL has ever run in the database (Segment managed schema is created)
 
 ```sql 
@@ -122,3 +133,5 @@ GRANT SELECT, INSERT, UPDATE, DELETE ON ALL TABLES IN SCHEMA __segment_reverse_e
 -- ?
 --GRANT SELECT, INSERT, UPDATE, DELETE ON FUTURE TABLES IN SCHEMA
 __segment_reverse_etl TO ROLE segment_entities;
+
+-->
