@@ -3,8 +3,7 @@ title: Analytics Swift Amplitude Plugin
 strat: swift
 ---
 
-[Amplitude](https://amplitude.com/){:target="_blank"} is an event tracking and segmentation platform for your web and mobile apps. By analyzing the actions your users
-perform, you can gain a better understanding to drive retention, engagement, and conversion.
+[Amplitude](https://amplitude.com/){:target="_blank"} is an event tracking and segmentation platform for your web and mobile apps. By analyzing the actions your users perform, you can gain a better understanding to drive retention, engagement, and conversion.
 
 ## Getting started
 

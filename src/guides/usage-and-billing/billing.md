@@ -32,88 +32,7 @@ Be aware that if you notify Segment of wanting to cancel your annual plan, but c
 
 All Segment customers with a US business address may be subject to state and local sales taxes. The applicable tax law applies based on your business location address, which may be different from your billing address. Customers who purchase a taxable product or service, and are located in a jurisdiction where Segment currently charges sales tax, will see the calculated sales tax on their invoice.
 
-Segment charges sales tax in the these states:
 
-- Alabama
-- Arizona
-- Arkansas
-- Colorado (Denver only)
-- Connecticut
-- District of Columbia
-- Florida
-- Hawaii
-- Illinois (Chicago only)
-- Maryland
-- Massachusetts
-- Minnesota
-- Mississippi
-- Nebraska
-- New Jersey
-- New Mexico
-- New York
-- Ohio
-- Pennsylvania
-- Rhode Island
-- South Carolina
-- South Dakota
-- Tennessee
-- Texas
-- Utah
-- Washington
-- West Virginia
-- Wisconsin
-
-Additionally, Segment may charge sales tax in the following countries or regions:
-
-- Countries in the European Economic Area (EAA)
-  - Austria
-  - Belgium
-  - Bulgaria
-  - Croatia
-  - Cyprus
-  - Czech Republic
-  - Denmark
-  - Estonia
-  - Finland
-  - France
-  - Germany
-  - Greece
-  - Hungary
-  - Ireland
-  - Italy
-  - Latvia
-  - Lithuania
-  - Luxembourg
-  - Malta
-  - Netherlands
-  - Poland
-  - Portugal
-  - Romania
-  - Slovakia
-  - Slovenia
-  - Spain
-  - Sweden
-- Australia
-- Canada
-- Iceland
-- Liechtenstein
-- Monaco
-- Norway
-- Singapore
-- Switzerland
-- United Kingdom
-
-
-## How should I format my tax ID?
-
-The format of your tax ID depends on your region. For more information, see the following resources:
-
-| Tax       | Region    | Validation                                                                                                                                                                          |
-| --------- | --------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| VAT       | Europe    | [vatlayer.com](https://vatlayer.com){:target="_blank"}                                                                                                                              |
-| GST       | Australia | [ABN Lookup](https://abr.business.gov.au/Help/AbnFormat){:target="_blank"}                                                                                                          |
-| GST       | Singapore | [IRAS](https://mytax.iras.gov.sg/ESVWeb/default.aspx?target=GSTListingSearch){:target="_blank"}                                                                                     |
-| GST / PST | Canada    | [Confirming a GST/HST account number](https://www.canada.ca/en/revenue-agency/services/e-services/e-services-businesses/confirming-a-gst-hst-account-number.html){:target="_blank"} |
  
 ## Do I qualify for a tax exemption?
 
@@ -133,7 +52,7 @@ In most cases Segment doesn't offer refunds, as noted in the [Terms of Service](
 
 ## Is there a free trial for paid plans?
 
-Yes! Segment offers a _**2-week trial on the Team plan**_ to let you try the plan before you purchase it! 
+Segment offers a _**2-week trial on the Team plan**_ to let you try the plan before you purchase it.
 
 Segment also offers the Free plan, which includes up to 1,000 MTUs, at no cost to you. 
 

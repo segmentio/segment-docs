@@ -48,5 +48,13 @@ On the Destinations page, you can choose among the following properties:
 
 You can then sort or filter each column to just the values you care about, by clicking on the arrow next to each displayed column.
 
+## FAQs
+
+### My source was disabled and it wasn't done by anyone in my workspace
+
+Segment disables sources that don't have enabled destinations after 14 days, and emails you before disabling any sources. Disabling these sources helps maintain a clean workspace.
+
+Segment understands there maybe cases to keep a source active. If you'd like to add your source(s) to an exception list, you can do so by filling out this [Airtable form](https://airtable.com/shr7V9LFDZh31cYWW){:target="_blank"}.
+
 
 

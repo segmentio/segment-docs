@@ -104,10 +104,6 @@ sections:
   section:
   - path: /connections/sources/catalog/libraries/website/javascript
     title: Analytics.js (JavaScript) Source
-  - path: /connections/sources/catalog/libraries/website/javascript/ajs-classic
-    title: Analytics.js Classic
-  - path: /connections/sources/catalog/libraries/website/javascript/upgrade-to-ajs2
-    title: Upgrade to Analytics.js 2.0
   - path: /connections/sources/catalog/libraries/website/javascript/supported-browsers
     title: Analytics.js supported browsers
   - path: /connections/sources/catalog/libraries/website/javascript/quickstart
@@ -166,15 +162,19 @@ sections:
   section_title: Analytics-React-Native Documentation
   section:
   - path: /connections/sources/catalog/libraries/mobile/react-native
-    title: Analytics-React-Native mobile source
+    title: Overview
+  - path: /connections/sources/catalog/libraries/mobile/react-native/implementation
+    title: Implementation
   - path: /connections/sources/catalog/libraries/mobile/react-native/migration
-    title: Upgrade to React-Native 2.0
-  - path: /connections/sources/catalog/libraries/mobile/react-native/troubleshooting
-    title: Troubleshooting Analytics-React-Native
-  - path: /connections/sources/catalog/libraries/mobile/react-native/react-faqs/
-    title: React-Native FAQs
-  - path: /connections/sources/catalog/libraries/mobile/react-native/changelog
-    title: Analytics-React-Native Changelog
+    title: Upgrade
+  - path: /connections/sources/catalog/libraries/mobile/react-native/destination-plugins
+    title: Destination Plugins
+  - path: /connections/sources/catalog/libraries/mobile/react-native/cloud-mode-destinations
+    title: Cloud-mode Destinations
+  - path: /connections/sources/catalog/libraries/mobile/react-native/react-native-typewriter
+    title: Typewriter for React Native
+  - path: /connections/sources/catalog/libraries/mobile/react-native/react-native-destination-filters
+    title: Destination Filters for React Native
 
 - slug: kotlin-android
   section_title: Analytics-Kotlin Documentation
@@ -187,6 +187,8 @@ sections:
     title: Implementation Guide
   - path: /connections/sources/catalog/libraries/mobile/kotlin-android/migration
     title: Migration Guide
+  - path: /connections/sources/catalog/libraries/mobile/kotlin-android/kotlin-android-plugin-architecture
+    title: Plugin Architecture
   - path: /connections/sources/catalog/libraries/mobile/kotlin-android/destination-plugins
     title: Destination Plugins
   - path: /connections/sources/catalog/libraries/mobile/kotlin-android/cloud-mode-destinations
@@ -206,7 +208,7 @@ sections:
   - path: /connections/sources/catalog/libraries/mobile/apple/migration
     title: Migration Guide
   - path: /connections/sources/catalog/libraries/mobile/apple/destination-plugins
-    title: Destination Plugins
+    title: Device Mode Destinations
   - path: /connections/sources/catalog/libraries/mobile/apple/cloud-mode-destinations
     title: Cloud-mode Destinations
   - path: /connections/sources/catalog/libraries/mobile/apple/swift-typewriter

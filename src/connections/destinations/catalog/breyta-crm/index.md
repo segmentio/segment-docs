@@ -9,7 +9,7 @@ This destination is maintained by Breyta. For any issues with the destination, [
 
 ## Getting started
 
-{% include content/connection-modes.md %} 
+ 
 
 1. Login to your [Breyta account](https://app.breyta.io){:target="_blank"}.
 2. Go to the Integrations page and click **Add New**.

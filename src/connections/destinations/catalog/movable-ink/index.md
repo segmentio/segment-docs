@@ -11,7 +11,7 @@ This destination is maintained by [Movable Ink](https://movableink.com/). If you
 
 ## Getting Started
 
-{% include content/connection-modes.md %}
+
 
 Perform the following steps to get started with Segment's Movable Ink destination:
 1. Ensure you have an active Movable Ink account.

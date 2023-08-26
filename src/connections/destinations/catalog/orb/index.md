@@ -9,7 +9,7 @@ Orb maintains this destination. For any issues with the destination, [contact th
 
 ## Getting started
 
-{% include content/connection-modes.md %}
+
 
 1. Navigate to **Connections** and click **Add Destination** in the Segment app. 
 2. Search for *Orb* in the Destinations Catalog, and select the **Orb** destination.

@@ -23,7 +23,7 @@ This page is about the **Facebook Offline Conversions**. For documentation on ot
 
 ## Getting Started
 
-{% include content/connection-modes.md %}
+
 
 1. From the Segment web app, click **Catalog**.
 

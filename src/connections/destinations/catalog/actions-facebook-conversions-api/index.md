@@ -116,6 +116,22 @@ If you choose this option, each source sends different events, and deduplication
 
 Use this approach if you don't want to track users from the browser with Facebook Pixel. By default, Facebook Pixel collects cookie data, as well as browser data such as the IP Address and the User Agent, some of which you might not want to collect. By sending from a Segment server source to Facebook's Conversions API, you can control which identifiers you pass to Facebook.
 
+### Send app events
+
+App events may be sent through the Conversions API by first setting up a dataset in your Facebook Events Manager. Learn more about passing app events through the Conversions API [here](https://developers.facebook.com/docs/marketing-api/conversions-api/app-events){:target="_blank"}. Learn how to create a dataset [here](https://www.facebook.com/business/help/750785952855662?id=490360542427371){:target="_blank"}.
+
+#### Configuring app events
+Sending app events requires the `action_source` parameter to be set to `app`.
+
+App events usage is opt-in, and you're required to set the `use_app_data` field to `Yes` before sending app data.
+
+Additionally, configure the "App Events Fields" object with the required fields:
+* `advertiser_tracking_enabled`
+* `application_tracking_enabled`
+* `version`
+* `osVersion`
+
+![the app data object](images/app_data.png)
 #### Match rate considerations
 
 If you use Facebook Conversions API as a stand-alone without certain data fields collected from the browser, the match rate might not be as high as if you included them. You can increase the match rate for events from a server source by including User Data, such as Zip Code, Country and State.
@@ -148,6 +164,22 @@ Segment creates a SHA-256 hash of the following fields before sending to Faceboo
 - Country
 
 If you use Facebook Pixel, the Pixel library also hashes the External ID. This means External IDs will match across Facebook Pixel and Facebook Conversions API if they use the External ID for [deduplication](https://developers.facebook.com/docs/marketing-api/conversions-api/deduplicate-pixel-and-server-events/#fbp-or-external-id){:target="_blank"}.
+
+### User Data Formatting
+
+Segment applies formatting to User Data Parameters as follows:
+
+| User Data Field       | Formatting applied to field value before hashing                                                                                                                                                                             |
+|-----------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| External ID           | All whitespace is removed from string, set to lowercase.                                                                                                                                                                     |
+| Email                 | All whitespace is removed from string, set to lowercase.                                                                                                                                                                     |
+| First Name, Last Name | All whitespace is removed from string, set to lowercase.                                                                                                                                                                     |
+| Gender                | All whitespace is removed from string, set to lowercase. "male" is set to "m", "female" is set to "f".                                                                                                                       |
+| Date of Birth         | No formatting is applied.                                                                                                                                                                                                    |
+| Phone                 | All whitespace is removed from string.                                                                                                                                                                                       |
+| Zip Code              | All whitespace is removed from string.                                                                                                                                                                                       |
+| State                 | All whitespace is removed from string and the result is compared against a map object of states and their two-character ANSI abbreviation code.  Example: "Texas", "TX", or "tx" in this field will be formatted as "tx".    |
+| Country               | All whitespace is removed from string and the result is compared against a map object of countries and their two-letter ISO 3166-1 alpha-2 country code.  Example: "Germany", "germany", or "de" will be formatted as "de".  |
 
 ### User Data Parameters
 

@@ -107,11 +107,15 @@ The group id that Mixpanel will use is `12345`.
 
 {% capture identify_user_details %}
 > success ""
-> The below special traits will be mapped to Mixpanel reserved properties automatically to fit Mixpanel's use cases. `traits.created` -> `$created`, `traits.email` -> `$email`, `traits.firstName` -> `$first_name`, `traits.lastName` -> `$last_name`, `traits.name` -> `$name`, `traits.username` -> `$username` and `traits.phone` -> `$phone`.
+> Segment maps the userId set in the identify event to the distinct ID in Mixpanel. Segment also maps the following traits to Mixpanel reserved properties to fit Mixpanel's use cases: `traits.created` -> `$created`, `traits.email` -> `$email`, `traits.firstName` -> `$first_name`, `traits.lastName` -> `$last_name`, `traits.name` -> `$name`, `traits.username` -> `$username` and `traits.phone` -> `$phone`.
 
 {% endcapture %}
 
 {% include components/actions-fields.html content1=track_purchase_details section1="trackPurchase" content2=group_identify_user_details section2="groupIdentifyUser" content3=identify_user_details section3="identifyUser" %}
+
+> info "Anonymous ID format"
+> [Mixpanel](https://developer.mixpanel.com/reference/create-identity#create-identity){:target="_blank"} requires that values it receives for the anonymous identifier (`anonymousId` in Segment) must be in the UUID v4 format. Analytics.js sends `anonymousId` in this format by default. If you manually send anonymous identifiers to Mixpanel, ensure they are in the correct format.
+
 ## Migration from Mixpanel Classic
 
 {% include content/ajs-upgrade.md %}
@@ -124,3 +128,10 @@ If you want to confirm, you can configure the new destination to point to a diff
 > Contact Mixpanel support if you find features missing from the Mixpanel (Actions) destination that were available in the classic Mixpanel destination.
 
 {% include components/actions-map-table.html name="mixpanel" %}
+
+## Troubleshooting
+
+### Track events are not attributed to Mixpanel Groups
+
+Ensure that the mapping(s) handling your `track` events have the field for **Group ID** mapped to a valid value. By default, this field is mapped to the event variable `context.groupId`.
+

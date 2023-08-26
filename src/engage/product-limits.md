@@ -10,8 +10,10 @@ To provide consistent performance and reliability at scale, Segment enforces def
 
 To learn more about custom limits and upgrades, contact your dedicated Customer Success Manager or [friends@segment.com](mailto:friends@segment.com).
 
+> info ""
+> Beginning August 18, 2023, Segment has [updated product limits](/docs/unify/product-limits/) that apply to new Engage and Unify users. 
 
-## Default Limits
+## Default limits
 
 | Name                                        | limit                                                       | Details                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
 | ------------------------------------------- | ----------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -23,7 +25,8 @@ To learn more about custom limits and upgrades, contact your dedicated Customer 
 
 | name                                          | limit                                 | Details                                                                                                                                                                                                                                                                                                                                                                        |
 | --------------------------------------------- | ------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| Compute Concurrency                           | 5 concurrent audiences                | Segment computes five new audiences or computed traits at a time. Once the limit is reached, Segment queues additional audience computations until one of the five audiences finishes computing.                                                                                                                                                                               |
+| Compute Concurrency                           | 5 concurrent audiences or computed traits               | Segment computes five new audiences or computed traits at a time. Once the limit is reached, Segment queues additional computations until one of the five finishes computing.                                                                                                                                                                               |
+| Edit Concurrency                           | 2 concurrent audiences or computed traits               | You can edit two concurrent audiences or computed traits at a time. Once the limit is reached, Segment queues and locks additional computations until one of the two finishes computing.                                                                                                                                                                               |
 | Compute Throughput                            | 10000 computations per second         | Computations include any Track or Identify call that triggers an audience or computed trait re-computation. Once the limit is reached, Segment may slow audience processing.                                                                                                                                                                                                   |
 | Events Lookback History                       | 3 years                               | The period of time for which Segment stores audience and computed traits computation events.                                                                                                                                                                                                                                                                                   |
 | Real-time to batch destination sync frequency | 2-3 hours                             | The frequency with which Segment syncs real-time audiences to batch destinations.                                                                                                                                                                                                                                                                                              |
@@ -45,15 +48,20 @@ To learn more about custom limits and upgrades, contact your dedicated Customer 
 
 ## Journeys
 
+> info ""
+> These limits only apply to existing users who started with Engage prior to August 18, 2023. Visit Segment's updated Unify and Engage [limits](/docs/unify/product-limits/) to learn more.
+
+
 | Item            | Limit description                | Details                                                                      |
 | --------------- | -------------------------------- | ---------------------------------------------------------------------------- |
 | Steps           | 500                              | The maximum number of steps per Journey.                                     |
 | Step Name       | Maximum length of 170 characters | Once the limit is reached, you cannot add additional characters to the name. |
 | Key             | Maximum length of 255 characters | Once the limit is reached, you cannot add additional characters to the key.  |
 | Journey Name    | Maximum length of 73 characters  | Once the limit is reached, you cannot add additional characters to the name. |
-| Compute credits | Half a credit for each step      | Each step in a published Journey consumes half of one compute credit.        |
+| Compute credits | Half a credit for each step (up to 250 compute credits)     | Each step in a published Journey consumes half of one compute credit.        |
 
 
+ 
 ## Channels
 
 | Item     | Limit description                                                   | Details                                                                                             |

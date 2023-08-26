@@ -1,9 +1,8 @@
 ---
 title: Customize your schema controls
 redirect_from: '/protocols/enforce/'
+plan: protocols
 ---
-
-{% include content/plan-grid.md name="protocols" %}
 
 The Schema Configuration settings for each source can be used to selectively block events, or omit properties and traits from `.track()`, `.identify()` and `.group()` calls. Segment can permanently drop events that are not included in your Tracking Plan, depending on the settings you select. Segment can also block events with invalid properties or invalid property values.
 
@@ -16,6 +15,11 @@ To enable blocking, go to the **Settings** tab for your source and click on **Sc
 
 > success ""
 > You can [export your Source Schema](/docs/connections/destination-data-control/#export-your-source-schema) as a CSV file to quickly audit events from your Tracking Plan.
+
+> warning "Archived events"
+> If you archive events while your source is connected to a Tracking Plan, and then later disconnect your Tracking Plan from that source, any archived events will remain archived, but will be allowed if the Schema Configuration was previously set to block unplanned events when your Tracking Plan was connected to the source.
+>
+> To view all archived events, go to your **Source Schema** page, click **Filter** next to the search bar, and select **Archived**. To unarchive events that have been archived, click **Unarchive** in the event column. 
 
 ## Track Calls - Unplanned Events
 When you set this dropdown to Block Event, Segment drops any events that are not defined in your Tracking Plan. Only allowlisted `track` calls in your Tracking Plan flow through Segment to your Destinations.

@@ -42,7 +42,7 @@ items:
       mobile: true
       server: false
     cloud:
-      web: true
+      web: false
       mobile: true
       server: true
 - slug: criteo-app-web-events

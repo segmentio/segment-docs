@@ -10,7 +10,7 @@ This destination is maintained by Kameleoon. For any issues with the destination
 
 ## Getting Started
 
-{% include content/connection-modes.md %}
+
 
 Segment's Kameleoon destination supports the following Kameleoon products:
 * [Kameleoon Experiment](https://www.kameleoon.com/en/platform/ab-testing-client-side){:target="_blank"} (Web Client-side)

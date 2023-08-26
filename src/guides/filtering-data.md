@@ -30,7 +30,8 @@ You can use the `integrations` JSON object as part of your Segment payloads to c
   "integrations": {
     "All": true,
     "Mixpanel": false,
-    "Salesforce": false
+    "Salesforce": false,
+    "My Destination Function (My Workspace)": true
   }
 }
 ```
@@ -106,6 +107,10 @@ If you have Protocols in your workspace, **and** have a tracking plan associated
 
 ![Schema Configuration section of a source's Settings page](images/protocols-unplanned.png)
 
+
+## Destination Insert Function
+
+A customizable way to filter or alter data going from a source to a cloud-mode destination is to use [Insert Functions](/docs/connections/functions/insert-functions/)). This feature gives you the ability to receive data from your Segment source, write custom code to alter or block it, and then pass that altered payload to a downstream cloud-mode destination.
 
 ## Warehouse Selective Sync
 
