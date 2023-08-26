@@ -66,4 +66,4 @@ HubSpot has several limits for custom behavioral events, including a limit on th
 Yes. HubSpot will automatically redirect API requests directly to an EU data center if your HubSpot instance is on an EU data center. See more in HubSpot's [Routing API Traffic](https://product.hubspot.com/blog/routing-api-traffic){:target="_blank"} article.
 
 ### How do I attribute a custom behavioral event with a user token instead of Email?
-Event payload should have the email with valid format or empty string or null, so that the user token will take precedence and can be validated in the "Send custom behavioural event" mapping. An invalid email will not pass mapping validation. And the event can't be delivered to the destination.
+Event payloads should contain an email with either a valid format, empty string, or a `null` value. As a result, the user token takes precedence and is validated in a `Send custom behavioral event` mapping. Segment can't deliver the event to your destination if the email is invalid.
