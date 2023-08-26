@@ -685,4 +685,4 @@ Segment sends an `identify` or a  `track` call for each external on the user's a
 
 **What happens if I receive the following error, "Timestamp must be within the last 5 years." and my timestamp is showing 1970-01-01?**
 
-The Segment PHP Library (2.1.0) version requires a UNIX timestamp. If you send anything other than a UNIX timestamp, it simply converts this to 0 which is the 01-01-1970 timestamp. If you are experiencing failed events due to this error and you have a connected PHP source, please update your version to 2.1.0. 
+The Segment PHP Library (2.1.0) version requires a UNIX timestamp. If you send anything other than a UNIX timestamp, Segment converts this to the `1970-01-01` timestamp. If you're experiencing failed events due to this error and you have a connected PHP source, update your PHP Library version to 2.1.0. 
