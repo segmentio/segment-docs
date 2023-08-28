@@ -41,7 +41,7 @@ items:
       mobile: true
       server: false
     cloud:
-      web: true
+      web: false
       mobile: false
       server: true
 - slug: clevertap
