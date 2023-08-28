@@ -13,6 +13,7 @@ strat: react-native
   4. Copy your `Branch Key` from the Settings page of your [Branch dashboard](https://dashboard.branch.io/#/settings){:target="_blank”}.
   5. Paste the Branch Key in the destination settings and click **Save**.
 
+
 ## Installation
 
 You need to install the `@segment/analytics-react-native-plugin-branch` and the `react-native-branch` dependencies to use the Branch plugin.
