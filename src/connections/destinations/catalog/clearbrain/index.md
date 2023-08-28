@@ -16,7 +16,7 @@ This destination is maintained by ClearBrain. For any issues with the destinatio
 
 1. From the Segment web app, click **Catalog**.
 2. Search for "ClearBrain" in the Catalog, select it, and choose which of your sources to connect the destination to.
-3. Enter the "API Key" into your Segment Settings UI which you can find from your [ClearBrain dashboard](https://app.clearbrain.com/connections).
+3. Enter the "API Key" into your Segment Settings UI which you can find from your [ClearBrain dashboard](https://app.clearbrain.com/connections){:target="_blank”}.
 
 > tip ""
 > **Optional**: If you are on a Business tier Segment plan, you can sync past events sent through Segment to your ClearBrain instance using [Segment Replay](/docs/guides/what-is-replay/).

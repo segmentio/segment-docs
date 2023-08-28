@@ -17,7 +17,7 @@ This destination is maintained by BuzzBoard. For any issues with the destination
 
 1. From the Segment web app, click **Catalog**.
 2. Search for "BuzzBoard" in the Catalog, select it, and choose which of your sources to connect the destination to.
-3. Enter the "API Key" into your Segment Settings UI which you can find from your BuzzBoard [Dashboard](https://sales.buzzboard.com/v5/stream-dashboard).
+3. Enter the "API Key" into your Segment Settings UI which you can find from your BuzzBoard [Dashboard](https://sales.buzzboard.com/v5/stream-dashboard){:target="_blank”}.
 
 
 ## Identify
@@ -36,4 +36,4 @@ Identify calls will be sent to BuzzBoard with the required traits, matching and 
 
 While your data is being enriched, a `track` call will appear in your Segment Debugger with event name `enrichment_in_progress`.
 
-In order to send back the data to your Segment source, BuzzBoard would need the write key access. For this, you would have to add the Segment write key by going into the BuzzBoard [Dashboard](https://sales.buzzboard.com/v5/stream-dashboard).
+In order to send back the data to your Segment source, BuzzBoard would need the write key access. For this, you would have to add the Segment write key by going into the BuzzBoard [Dashboard](https://sales.buzzboard.com/v5/stream-dashboard){:target="_blank”}.

@@ -16,7 +16,7 @@ To enable Kissmetrics in Segment:
 3. In the destination settings, enter your Kissmetrics "API Key".
 4. If you are using Kissmetrics using Segment's client-side analytics.js library, Segment asynchronously loads Kissmetrics JavaScript library onto the page. (This means you should remove Kissmetrics's snippet from your page.)
 
-Your Kissmetrics source starts automatically collecting "Visited Site" events and [other automatically tracked events](https://support.kissmetrics.io/docs/javascript-settings).
+Your Kissmetrics source starts automatically collecting "Visited Site" events and [other automatically tracked events](https://support.kissmetrics.io/docs/javascript-settings){:target="_blank”}.
 
 ## Page
 
@@ -106,7 +106,7 @@ Kissmetrics automatically aliases anonymous visitors the first time you call [`i
 
 We will automatically call [`alias`](/docs/connections/spec/alias/) for you the first time you [`identify`](/docs/connections/spec/identify/) users from our iOS SDK. That way it works exactly like web browser tracking - you don't have to manually [`alias`](/docs/connections/spec/alias/) new users.
 
-You can read more about how Kissmetrics recommends using [`alias`](/docs/connections/spec/alias/) [in their docs](https://support.kissmetrics.io/docs/understanding-identities).
+You can read more about how Kissmetrics recommends using [`alias`](/docs/connections/spec/alias/) [in their docs](https://support.kissmetrics.io/docs/understanding-identities){:target="_blank”}.
 
 
 
@@ -206,4 +206,4 @@ In order to enable this feature,
 
 ### E-Commerce
 
-If you are using our ecommerce api, we will forward that data along to Kissmetrics following the [Kissmetrics Ecommerce Essentials Guide](https://support.kissmetrics.io/docs/e-commerce-javascript-code-examples).
+If you are using our ecommerce api, we will forward that data along to Kissmetrics following the [Kissmetrics Ecommerce Essentials Guide](https://support.kissmetrics.io/docs/e-commerce-javascript-code-examples){:target="_blank”}.

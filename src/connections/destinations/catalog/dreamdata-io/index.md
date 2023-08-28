@@ -15,8 +15,8 @@ This destination is maintained by Dreamdata. For any issues with the destination
 
 1. From the Segment web app, click **Catalog**.
 2. Search for "Dreamdata" in the Catalog, select it, and choose which of your sources to connect the destination to.
-3. Enter the "API Key" into your Segment Settings UI which you can find from your [Dreamdata settings](https://app.dreamdata.io/settings).
-4. You will be able to verify that data is flowing into Dreamdata from your [Dreamdata settings](https://app.dreamdata.io/settings).
+3. Enter the "API Key" into your Segment Settings UI which you can find from your [Dreamdata settings](https://app.dreamdata.io/settings){:target="_blank”}.
+4. You will be able to verify that data is flowing into Dreamdata from your [Dreamdata settings](https://app.dreamdata.io/settings){:target="_blank”}.
 
 
 ## Page

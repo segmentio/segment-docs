@@ -14,9 +14,9 @@ This destination is maintained by Anodot. For any issues with the destination, [
 1. From the Destinations catalog page in the Segment App, click **Add Destination**.
 2. Search for "Anodot" in the Destinations Catalog, and select the Anodot destination.
 3. Choose which Source should send data to the Anodot destination.
-4. Go to Anodot's [Data Management Page](https://app.anodot.com/#!/r/bc/data-manager), create a new "Segment" Source, and copy the Integration Token.
+4. Go to Anodot's [Data Management Page](https://app.anodot.com/#!/r/bc/data-manager){:target="_blank”}, create a new "Segment" Source, and copy the Integration Token.
 5. Enter the Integration Token into the "API Key" field in the Anodot Destination settings in Segment.
-6. [Create a Stream in Anodot](https://support.anodot.com/hc/en-us/articles/360018508380-Segment-Integration). Choose which Segment Methods and which [Dimensions](https://support.anodot.com/hc/en-us/articles/360009537879-Mapping-Dimensions-to-Measures-BETA-) to track.
+6. [Create a Stream in Anodot](https://support.anodot.com/hc/en-us/articles/360018508380-Segment-Integration){:target="_blank”}. Choose which Segment Methods and which [Dimensions](https://support.anodot.com/hc/en-us/articles/360009537879-Mapping-Dimensions-to-Measures-BETA-){:target="_blank”} to track.
 
 ## Page
 

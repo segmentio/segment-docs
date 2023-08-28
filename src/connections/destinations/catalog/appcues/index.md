@@ -4,14 +4,14 @@ title: Appcues Destination
 hide-cmodes: true
 id: 554926390a20f4e22f0fb38a
 ---
-[Appcues](https://www.appcues.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners){:target="_blank”} adds an experience layer to your product so you can build user onboarding, NPS surveys, or feature announcements in minutes instead of weeks. The Appcues JavaScript Destination is open-source. You can browse the code [on GitHub](https://github.com/appcues/analytics.js-integration-appcues).
+[Appcues](https://www.appcues.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners){:target="_blank”} adds an experience layer to your product so you can build user onboarding, NPS surveys, or feature announcements in minutes instead of weeks. The Appcues JavaScript Destination is open-source. You can browse the code [on GitHub](https://github.com/appcues/analytics.js-integration-appcues){:target="_blank”}.
 
 
 ## Getting Started
 
 1. From the Segment web app, click **Catalog**.
 2. Search for "Appcues" in the Catalog, select it, and choose the source you'll connect to the destination.
-3. In the destination settings, enter your `Account ID` (for client-side integration functionality) and/or your `API Key` (for server-side integration functionality) from the [Appcues account page](https://my.appcues.com/account).
+3. In the destination settings, enter your `Account ID` (for client-side integration functionality) and/or your `API Key` (for server-side integration functionality) from the [Appcues account page](https://my.appcues.com/account){:target="_blank”}.
 
 ### Server
 

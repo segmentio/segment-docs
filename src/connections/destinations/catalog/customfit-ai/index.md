@@ -17,7 +17,7 @@ This destination is maintained by CustomFit.ai. For any issues with the destinat
 
 1. From the Segment web app, click **Catalog**.
 2. Search for "CustomFit.ai" in the Catalog, select it, and choose which of your sources to connect the destination to.
-3. Enter the "Server Key" into your Segment Settings UI which you can find from your [CustomFit.ai dashboard](https://dashboard.customfit.ai/settings/app-settings).
+3. Enter the "Server Key" into your Segment Settings UI which you can find from your [CustomFit.ai dashboard](https://dashboard.customfit.ai/settings/app-settings){:target="_blank”}.
 
 ## Identify
 
@@ -35,7 +35,7 @@ Segment handles the following mapping:
 1. Segment `identify` event userId to CustomFit.ai `user_customer_id` field.
 2. Segment `identify` event traits to CustomFit.ai `properties`.
 
-Identify calls will be sent to CustomFit.ai as an `identify` event. You can find the user details in [users profile page](https://dashboard.customfit.ai/users/profiles).
+Identify calls will be sent to CustomFit.ai as an `identify` event. You can find the user details in [users profile page](https://dashboard.customfit.ai/users/profiles){:target="_blank”}.
 
 ## Track
 

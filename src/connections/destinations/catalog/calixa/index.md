@@ -11,8 +11,8 @@ This destination is maintained by Calixa. For any issues with the destination, [
 
 
 
-1. Login to your [Calixa account](https://console.calixa.io/login).
-2. Go to the [Integrations page](https://console.calixa.io/integrations) and click **Add Integration**.
+1. Login to your [Calixa account](https://console.calixa.io/login){:target="_blank”}.
+2. Go to the [Integrations page](https://console.calixa.io/integrations){:target="_blank”} and click **Add Integration**.
 3. Select the Segment Integration and sign in to your Segment account to grant Calixa access.
 
 ## Track

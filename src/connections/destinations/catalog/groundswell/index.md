@@ -16,7 +16,7 @@ This destination is maintained by Groundswell. For any issues with the destinati
 1. From the Destinations catalog page in the Segment App, click **Add Destination**.
 2. Search for "Groundswell" in the Destinations Catalog, and select the Groundswell destination.
 3. Choose which Source should send data to the Groundswell destination.
-4. Connect Segment from the ["Integrations" page](https://app.trygroundswell.com/integrations) of the Groundswell web app, then copy the "API Key".
+4. Connect Segment from the ["Integrations" page](https://app.trygroundswell.com/integrations){:target="_blank”} of the Groundswell web app, then copy the "API Key".
 5. Enter the "API Key" in the Groundswell destination settings in Segment.
 6. When you return to the Groundswell web app, you'll be prompted to select mappings between Segment traits and Groundswell properties. You'll be able to use these later to define workflows and send data to other tools.
     - Select whether you are identifying Companies with `Group` or `Identify` traits.

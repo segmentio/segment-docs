@@ -39,7 +39,7 @@ Follow these steps to connect the Iterable (Actions) destination to your Segment
 
 ## Important differences from the classic Iterable destination
 
-Since the release of Iterable's Classic Segment destination, Iterable has expanded its support for multiple project types. To determine the appropriate identifier for your project type, please refer to the list of available project types and their respective identifiers found at the following link: [Project Types and Unique Identifiers](https://support.iterable.com/hc/en-us/articles/9216719179796-Project-Types-and-Unique-Identifiers).
+Since the release of Iterable's Classic Segment destination, Iterable has expanded its support for multiple project types. To determine the appropriate identifier for your project type, please refer to the list of available project types and their respective identifiers found at the following link: [Project Types and Unique Identifiers](https://support.iterable.com/hc/en-us/articles/9216719179796-Project-Types-and-Unique-Identifiers){:target="_blank”}.
 
 ### Creating or Updating Users
 

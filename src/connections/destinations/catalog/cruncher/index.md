@@ -16,9 +16,9 @@ This destination is maintained by Cruncher. For any issues with the destination,
 
 1. From the Segment web app, click **Catalog**.
 2. Search for "Cruncher" in the Catalog, select it, and choose which of your sources to connect the destination to.
-3. Enter the "API Key" into your Segment Settings UI which you can find from your [Cruncher dashboard](https://tower.cruncherlabs.com/connectors).
+3. Enter the "API Key" into your Segment Settings UI which you can find from your [Cruncher dashboard](https://tower.cruncherlabs.com/connectors){:target="_blank”}.
 
-Alternatively, you can connect Segment to Cruncher directly from your [Cruncher dashboard](https://tower.cruncherlabs.com/connectors). For more information, visit [Cruncher Documentation](https://docs.cruncherlabs.com/connectors/saas/segment).
+Alternatively, you can connect Segment to Cruncher directly from your [Cruncher dashboard](https://tower.cruncherlabs.com/connectors). For more information, visit [Cruncher Documentation](https://docs.cruncherlabs.com/connectors/saas/segment){:target="_blank”}.
 
 _Optional:_ If you would like to sync your past events which were sent through Segment into your Cruncher instance as a Business Tier customer, you have the option of leveraging [Segment Replay](/docs/connections/data-export-options/#business-plan-customers).
 

@@ -3,7 +3,7 @@ title: BugHerd Destination
 rewrite: true
 id: 54521fd525e721e32a72ee99
 ---
-[BugHerd](http://bugherd.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners){:target="_blank”} is a bug tracking software that lets users report bugs right in your interface. Once reported, you get a Trello-like management interface for taking care of the issues. The `analytics.js` BugHerd Destination is open-source. You can browse the code [on GitHub](https://github.com/segment-integrations/analytics.js-integration-bugherd).
+[BugHerd](http://bugherd.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners){:target="_blank”} is a bug tracking software that lets users report bugs right in your interface. Once reported, you get a Trello-like management interface for taking care of the issues. The `analytics.js` BugHerd Destination is open-source. You can browse the code [on GitHub](https://github.com/segment-integrations/analytics.js-integration-bugherd){:target="_blank”}.
 
 ## Getting Started
 

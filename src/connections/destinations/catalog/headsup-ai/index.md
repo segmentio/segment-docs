@@ -14,7 +14,7 @@ This destination is maintained by HeadsUp. For any issues with the destination, 
 1. From the Destinations catalog page in the Segment App, click **Add Destination**.
 2. Search for "HeadsUp AI" in the Destinations Catalog, and select the HeadsUp AI Destination.
 3. Choose which Source should send data to the HeadsUp AI destination.
-4. Go to the [HeadsUp Onboarding](https://app.headsup.ai/welcome) page, find and copy the "Segment API key".
+4. Go to the [HeadsUp Onboarding](https://app.headsup.ai/welcome){:target="_blank”} page, find and copy the "Segment API key".
 5. Back in the Segment App, go back to the the HeadsUp AI Destination settings, and enter the "API Key".
 
 ## Identify

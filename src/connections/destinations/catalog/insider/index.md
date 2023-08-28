@@ -15,7 +15,7 @@ This destination is maintained by Insider. For any issues with the destination, 
 1. From the Destinations catalog page in the Segment App, click **Add Destination**.
 2. Search for "Insider" in the Destinations Catalog, and select the Insider destination.
 3. Choose which Source should send data to the Insider destination.
-4. Go to the [Insider dashboard](https://inone.useinsider.com/), navigate to **Settings > Integration Settings**, then find and copy the **Segment.com API Key**.
+4. Go to the [Insider dashboard](https://inone.useinsider.com/){:target="_blank”}, navigate to **Settings > Integration Settings**, then find and copy the **Segment.com API Key**.
 5. Enter your **Partner Name** and API Key in the Insider destination settings in Segment.
 
 ## Page

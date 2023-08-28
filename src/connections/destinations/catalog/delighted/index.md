@@ -48,7 +48,7 @@ This also enables you to define the "Sample Rate" and an optional "Delay" for th
 
 ![trigger-delighted-surveys-segment](images/e3ed84b8608df907bcf753f52c17249d.png)
 
-**NOTE**: Delighted has built in protections for over surveying called *Survey Throttling*. This will ensure the same person won't be surveyed more than once per month ([adjustable in your Delighted account settings](https://delighted.com/account/edit_min_survey_interval)). *Survey Throttling* provides you peace of mind so that you can use frequent `track` calls like purchase or contact events.
+**NOTE**: Delighted has built in protections for over surveying called *Survey Throttling*. This will ensure the same person won't be surveyed more than once per month ([adjustable in your Delighted account settings](https://delighted.com/account/edit_min_survey_interval){:target="_blank”}). *Survey Throttling* provides you peace of mind so that you can use frequent `track` calls like purchase or contact events.
 
 ## Sending data from Delighted back to Segment (optional)
 

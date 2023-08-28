@@ -5,9 +5,9 @@ id: 5515e05c0a20f4e22f0fb36f
 ---
 [Autopilot](https://www.autopilothq.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners){:target="_blank”} helps thousands of organizations around the world automate their marketing with visual and simple customer journey marketing software.
 
-This destination is maintained by Autopilot.  See [Autopilot's documentation](https://support.autopilothq.com/hc/en-us/categories/200396835-Segment) for more information.  For any issues with the destination, [contact our friends at Autopilot](https://support.autopilothq.com/hc/en-us/requests/new).
+This destination is maintained by Autopilot.  See [Autopilot's documentation](https://support.autopilothq.com/hc/en-us/categories/200396835-Segment){:target="_blank”} for more information.  For any issues with the destination, [contact our friends at Autopilot](https://support.autopilothq.com/hc/en-us/requests/new){:target="_blank”}.
 
-Are you instead trying to set up Autopilot as a Source to get data from Autopilot into your data warehouse or other downstream tools? See our documentation on our [Autopilot source](/docs/connections/sources/catalog/cloud-apps/autopilothq/) instead.
+Are you instead trying to set up Autopilot as a Source to get data from Autopilot into your data warehouse or other downstream tools? See our documentation on our [Autopilot source](/docs/connections/sources/catalog/cloud-apps/autopilothq/){:target="_blank”} instead.
 
 ## Getting Started
 
@@ -15,7 +15,7 @@ Are you instead trying to set up Autopilot as a Source to get data from Autopilo
 
   1. From the Segment web app, click **Catalog**.
   2. Search for "Autopilot" in the Catalog, select it, and choose which of your sources to connect the destination to.
-  3. In the destination settings, enter your "API Key" from [here](https://login.autopilothq.com/login#settings/app-connections/segment-sync) or go to Autopilot: Settings -> App Connections -> Segment and copy/paste the API key which is listed there.
+  3. In the destination settings, enter your "API Key" from [here](https://login.autopilothq.com/login#settings/app-connections/segment-sync){:target="_blank”} or go to Autopilot: Settings -> App Connections -> Segment and copy/paste the API key which is listed there.
   4. Once enabled 'identify' and 'track' calls will be sent to Autopilot.
 
 ## Identify
@@ -48,4 +48,4 @@ Additional Autopilot Tracking code will be required on your site to unlock the f
   - Triggering Headsup messages.
   - User association using the Autopilot JavaScript library.
 
-For complete details, visit the Autopilot page [How to use Segment with Autopilot](https://support.autopilothq.com/hc/en-us/articles/203658119).
+For complete details, visit the Autopilot page [How to use Segment with Autopilot](https://support.autopilothq.com/hc/en-us/articles/203658119){:target="_blank”}.

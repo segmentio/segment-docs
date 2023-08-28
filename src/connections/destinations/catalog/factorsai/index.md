@@ -15,7 +15,7 @@ This destination is maintained by FactorsAI. For any issues with the destination
 
 1. From the Segment web app, click **Catalog**.
 2. Search for "FactorsAI" in the Catalog, select it, and choose which of your sources to connect the destination to.
-3. Enter the "API Key" into your Segment Settings UI which you can find from your [FactorsAI dashboard](https://app.factors.ai/#/settings/segment).
+3. Enter the "API Key" into your Segment Settings UI which you can find from your [FactorsAI dashboard](https://app.factors.ai/#/settings/segment){:target="_blank”}.
 
 ## Page
 

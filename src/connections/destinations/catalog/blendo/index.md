@@ -15,7 +15,7 @@ This destination is maintained by Blendo. For any issues with the destination, [
 
 1. From the Segment web app, click **Catalog**.
 2. Search for "Blendo" in the Catalog, select it, and choose which of your sources to connect the destination to.
-3. Enter the "API Key" into your Segment Settings UI that was created when you set up your Segment pipeline. If you don't have it available, log in to your [Blendo account](https://app.blendo.co) and select the Segment pipeline you want to sent data to. Click on the "Edit" button and copy the "API Key" as shown in the modal window that appears.
+3. Enter the "API Key" into your Segment Settings UI that was created when you set up your Segment pipeline. If you don't have it available, log in to your [Blendo account](https://app.blendo.co){:target="_blank”} and select the Segment pipeline you want to sent data to. Click on the "Edit" button and copy the "API Key" as shown in the modal window that appears.
 4. Blendo will collect any Segment data as soon as they arrive but will sync data to your data warehouse according to your pipeline's schedule. By default, this is at the start of each hour. You can also manually sync any collected data by selecting your Segment pipeline from your pipelines' list, and clicking "Sync Now" on the overview section of your pipeline's syncing status.
 
 

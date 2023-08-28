@@ -68,7 +68,7 @@ analytics.track('Clicked Login Button', {
 })
 ```
 
-Track calls will be sent to EPICA as a `track` event and can be seen populated in the `Data Platform > Personas` section of EPICA [admin panel](https://platform.epica.ai/personas), which includes unified profiles across a single customer journey.
+Track calls will be sent to EPICA as a `track` event and can be seen populated in the `Data Platform > Personas` section of EPICA [admin panel](https://platform.epica.ai/personas){:target="_blank”}, which includes unified profiles across a single customer journey.
 
 There are two types of Personas:
 

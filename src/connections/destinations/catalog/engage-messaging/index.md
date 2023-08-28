@@ -14,7 +14,7 @@ This destination is maintained by Engage Messaging. For any issues with the dest
 
 1. From the Destinations catalog page in the Segment App, click **Add Destination**.
 2. Search for "Engage Messaging" in the Destinations Catalog, after selecting it, choose the Source that will send data to Engage Messaging.
-4. Go to your [Engage dashboard](https://app.engage.so/settings/account), find and copy your "Public API key".
+4. Go to your [Engage dashboard](https://app.engage.so/settings/account){:target="_blank”}, find and copy your "Public API key".
 5. Enter the API Key in the destination settings in Segment.
 
 ## Supported methods

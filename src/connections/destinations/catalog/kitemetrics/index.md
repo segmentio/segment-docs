@@ -17,7 +17,7 @@ This destination is maintained by Kitemetrics. For any issues with the destinati
 
 1. From the Segment web app, click **Catalog**.
 2. Search for "Kitemetrics" in the Catalog, select it, and choose which of your sources to connect the destination to.
-3. Enter the "API Key" into your Segment Settings UI which you can find from your [Kitemetrics Account Settings -> Applications page](https://cloud.kitemetrics.com/applications).
+3. Enter the "API Key" into your Segment Settings UI which you can find from your [Kitemetrics Account Settings -> Applications page](https://cloud.kitemetrics.com/applications){:target="_blank”}.
 4. Once data is flowing from your source to the Kitemetrics destination, you will need to refresh your browser to view the latest data in your Kitemetrics analytics or keywords dashboard.
 
 
@@ -25,7 +25,7 @@ This destination is maintained by Kitemetrics. For any issues with the destinati
 
 If you're not familiar with the Segment Specs, take a look to understand what the [Track method](/docs/connections/spec/track/) does.
 
-In order to track Apple Search Ads attribution events you will need to include the [Analytics-iAds-Attribution](https://github.com/segmentio/analytics-ios-iads-attribution) middleware library in your iOS source application.
+In order to track Apple Search Ads attribution events you will need to include the [Analytics-iAds-Attribution](https://github.com/segmentio/analytics-ios-iads-attribution){:target="_blank”} middleware library in your iOS source application.
 
 If you are using Cocoa Pods, ensure the following two lines are included:
 

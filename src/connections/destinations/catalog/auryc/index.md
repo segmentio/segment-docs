@@ -15,7 +15,7 @@ It also means that, for the time being, there is a longer delay for us to deploy
 
 
 
-1. Go to your [Auryc Installation Guides](https://portal.auryc.com/auth/session?modal=integrations) and click  **Install Segment**.
+1. Go to your [Auryc Installation Guides](https://portal.auryc.com/auth/session?modal=integrations){:target="_blank”} and click  **Install Segment**.
 2. On the Segment page, log in and authorize the Auryc Destination.
 3. Select the workspace and source you to add Auryc to, and click **Allow**.
 
