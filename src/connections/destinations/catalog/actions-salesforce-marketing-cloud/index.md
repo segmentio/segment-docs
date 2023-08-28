@@ -60,7 +60,7 @@ Once you save the API integration and add permissions, you will see a Summary pa
 
 > info ""
 > Note that **send contact to data extension** handles a pre-defined structure of contacts being filled into a data extension, whereas **send event to data extension action** customizes event data extensions. 
->For example, **contactKey** is the fixed Primary Key that will be available on **send contact to data extension** action and the same has to be created as a Primary Key in SFMC too. But the Primary Key can be set as per our requirement in the **send event to data extension** action.
+> For example, `contactKey` is the fixed Primary Key that is available when you use **send contact to data extension** action, which you also have to create as a Primary Key in SFMC. However, the Primary Key can be set as per Segment's requirements using **send event to data extension**.
 
 ## FAQ and troubleshooting
 
