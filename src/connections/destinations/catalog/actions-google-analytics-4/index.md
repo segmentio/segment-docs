@@ -171,3 +171,6 @@ Google has some requirements/[limitations](https://developers.google.com/analyti
 
 Google may take [24-48 hours](https://support.google.com/analytics/answer/9333790){:target='_blank'}  to process data sent to Google Analytics. As a result, the Google Analytics user interface may not reflect the most current data. The Google Analytics [Realtime report](https://support.google.com/analytics/answer/9271392){:target="_blank"} displays activity on your site as it happens.
 
+## Events with older timestamps are not showing on Google end
+
+[Google Measurement Protocol API](https://developers.google.com/analytics/devguides/collection/protocol/ga4/reference?client_type=gtag#payload_post_body){:target='_blank'} only accepts events that can be backdated by 72 hours, so GA4 simply won't accept events older than 3 days.
