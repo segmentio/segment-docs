@@ -6,7 +6,7 @@ redirect_from:  '/connections/sources/catalog/cloud-apps/regal-voice'
 ---
 {% include content/source-region-unsupported.md %}
 
-[Regal.io](https://regalvoice.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) is a next-gen customer engagement platform built for B2C services brands to proactively reach out to customers on voice and sms before they buy elsewhere.
+[Regal.io](https://regalvoice.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners){:target="_blank”} is a next-gen customer engagement platform built for B2C services brands to proactively reach out to customers on voice and sms before they buy elsewhere.
 
 This source is maintained by Regal.io. For any issues with the source, [contact the Regal.io Support team](mailto:support@regal.io).
 

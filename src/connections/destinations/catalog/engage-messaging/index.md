@@ -4,7 +4,7 @@ id: 607482568738ee46aaa8404c
 ---
 ## Engage Messaging
 
-[Engage Messaging](https://engage.so/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) helps businesses send personalised messages to customers based on customer traits and actions.
+[Engage Messaging](https://engage.so/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners){:target="_blank”} helps businesses send personalised messages to customers based on customer traits and actions.
 
 This destination is maintained by Engage Messaging. For any issues with the destination, [contact the Engage Messaging Support team](mailto:hello@engage.so).
 

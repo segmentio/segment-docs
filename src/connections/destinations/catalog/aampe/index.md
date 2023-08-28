@@ -3,7 +3,7 @@ title: Aampe Destination
 id: 6188d844be5cf0e3b59189d2
 ---
 
-[Aampe](https://aampe.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) uses automated, rapid learning to personalize notifications, and continuously learns what messages bring value to your customer.
+[Aampe](https://aampe.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners){:target="_blank”} uses automated, rapid learning to personalize notifications, and continuously learns what messages bring value to your customer.
 
 This destination is maintained by Aampe. For any issues with the destination, [contact the Aampe Support team](mailto:support@aampe.com).
 

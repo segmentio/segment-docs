@@ -3,7 +3,7 @@ rewrite: true
 title: Autopilot Destination
 id: 5515e05c0a20f4e22f0fb36f
 ---
-[Autopilot](https://www.autopilothq.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) helps thousands of organizations around the world automate their marketing with visual and simple customer journey marketing software.
+[Autopilot](https://www.autopilothq.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners){:target="_blank”} helps thousands of organizations around the world automate their marketing with visual and simple customer journey marketing software.
 
 This destination is maintained by Autopilot.  See [Autopilot's documentation](https://support.autopilothq.com/hc/en-us/categories/200396835-Segment) for more information.  For any issues with the destination, [contact our friends at Autopilot](https://support.autopilothq.com/hc/en-us/requests/new).
 

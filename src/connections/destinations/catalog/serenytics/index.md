@@ -3,7 +3,7 @@ rewrite: true
 title: Serenytics Destination
 id: 5cb99b9cb26aa60001c3a896
 ---
-[Serenytics](https://www.serenytics.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) provides an all-in-one data platform to create dashboards. It comes with an embedded Redshift data warehouse, an ETL, a Python scheduler and a  dashboard editor. It is dedicated to small/medium data teams looking for a full-featured data stack who don't want to create and maintain it internally.
+[Serenytics](https://www.serenytics.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners){:target="_blank”} provides an all-in-one data platform to create dashboards. It comes with an embedded Redshift data warehouse, an ETL, a Python scheduler and a  dashboard editor. It is dedicated to small/medium data teams looking for a full-featured data stack who don't want to create and maintain it internally.
 
 When the Serenytics destination is enabled in Segment, messages from Segment will be stored in the Serenytics Redshift and will be available for transformation and to create dashboards.
 

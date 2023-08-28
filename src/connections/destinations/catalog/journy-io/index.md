@@ -3,7 +3,7 @@ rewrite: true
 title: journy.io Destination
 id: 607d4f97829762f3b69a807b
 ---
-[journy.io](https://www.journy.io/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) empowers your marketing, sales and support teams with actionable customer insights, needed to improve conversions, increase sales, and reduce churn, right in the tools they already use.
+[journy.io](https://www.journy.io/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners){:target="_blank”} empowers your marketing, sales and support teams with actionable customer insights, needed to improve conversions, increase sales, and reduce churn, right in the tools they already use.
 
 This destination is maintained by journy.io. For any issues with the destination, [contact the journy.io Support team](mailto:hi@journy.io).
 

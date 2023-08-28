@@ -3,7 +3,7 @@ rewrite: true
 title: WalkMe Destination
 id: 5d25d6e0885427000195bf80
 ---
-[WalkMe](https://www.walkme.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) Digital Adoption Platform provides guidance, engagement, insights and automation to users.
+[WalkMe](https://www.walkme.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners){:target="_blank”} Digital Adoption Platform provides guidance, engagement, insights and automation to users.
 
 This destination is maintained by WalkMe. For any issues with the destination, [contact the WalkMe Support team](mailto:support@walkme.com).
 

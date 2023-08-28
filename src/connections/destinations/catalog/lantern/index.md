@@ -4,7 +4,7 @@ rewrite: true
 redirect_from: '/connections/destinations/catalog/lazy-lantern/'
 id: 5d336888e0cb6900011f1188
 ---
-[Lantern](https://lantern.so/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) provides autonomous anomaly detection for all your product metrics. It only takes a minute to enable with Segment, no coding involved.
+[Lantern](https://lantern.so/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners){:target="_blank”} provides autonomous anomaly detection for all your product metrics. It only takes a minute to enable with Segment, no coding involved.
 
 Lantern is a user behavior monitoring solution for modern product teams. Lantern alerts you on Slack when something doesn't look right. You get full-coverage over your product and the confidence that you will be notified of any significant variation.
 

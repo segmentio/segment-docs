@@ -3,7 +3,7 @@ title: Kustomer Destination
 rewrite: true
 id: 5c73feeb9947e900010a60ac
 ---
-[Kustomer](https://www.kustomer.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) is the next-generation customer management platform for the people-first enterprise. It enables support teams to get a holistic view of the customers they are engaging with, resulting in meaningful interactions between businesses and customers.
+[Kustomer](https://www.kustomer.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners){:target="_blank”} is the next-generation customer management platform for the people-first enterprise. It enables support teams to get a holistic view of the customers they are engaging with, resulting in meaningful interactions between businesses and customers.
 
 This destination is maintained by Kustomer. For any issues with the destination, [contact the Kustomer Support team](mailto:support@kustomer.com).
 

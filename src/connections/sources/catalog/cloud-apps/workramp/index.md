@@ -5,7 +5,7 @@ id: 7GmYZcBQyw
 ---
 {% include content/source-region-unsupported.md %}
 
-[WorkRamp](https://www.workramp.com/products/external-learning/customer-academy/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) is the All-in-One Platform that powers learning as a growth engine for the modern enterprise.
+[WorkRamp](https://www.workramp.com/products/external-learning/customer-academy/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners){:target="_blank”} is the All-in-One Platform that powers learning as a growth engine for the modern enterprise.
 
 This is an [Event Cloud Source](https://segment.com/docs/sources/#event-cloud-sources) which can not only export data into your Segment warehouse, but also federate data into other enabled Segment Destinations.
 

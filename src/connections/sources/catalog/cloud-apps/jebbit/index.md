@@ -3,7 +3,7 @@ title: 'Jebbit Source'
 id: V2kq0X7vYy
 ---
 
-[Jebbit](https://jebbit.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) helps build and design fun, engaging quizzes and customer experiences with speed and control, all while capturing customer preferences as zero-party data. 
+[Jebbit](https://jebbit.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners){:target="_blank”} helps build and design fun, engaging quizzes and customer experiences with speed and control, all while capturing customer preferences as zero-party data. 
 
 This is an [Event Cloud Source](/docs/sources/#event-cloud-sources) which can not only export data into your Segment warehouse, but they can also federate the exported data into your other enabled Segment Destinations.
 

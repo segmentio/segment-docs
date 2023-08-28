@@ -3,7 +3,7 @@ title: Statsig Source
 id: 3x07B5Dn5h
 ---
 
-[Statsig](https://www.statsig.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) helps companies safely A/B test features in production before rolling them out, avoiding product debates and costly mistakes when shipping out new features. Statsig serves all your experimentation needs with a unified platform that connects what you build with the impact you deliver. Statsig powers A/B tests and experiments on any device, in any part of the application stack, at any scale. Statsig gives you a comprehensive 360° view of how your product is performing.
+[Statsig](https://www.statsig.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners){:target="_blank”} helps companies safely A/B test features in production before rolling them out, avoiding product debates and costly mistakes when shipping out new features. Statsig serves all your experimentation needs with a unified platform that connects what you build with the impact you deliver. Statsig powers A/B tests and experiments on any device, in any part of the application stack, at any scale. Statsig gives you a comprehensive 360° view of how your product is performing.
 
 The Statsig integration enables custom events and exposure events to be forwarded from Statsig to Segment without any additional work on the client — this is a pure server-to-server integration.
 

@@ -4,7 +4,7 @@ title: Courier Destination
 id: 5e4b07ed88472cc19ea4f8d0
 ---
 
-[Courier](https://courier.com?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) provides a way to design and deliver notifications. Design once with a rich visual editor and deliver to any channel through one API request.
+[Courier](https://courier.com?utm_source=segmentio&utm_medium=docs&utm_campaign=partners){:target="_blank”} provides a way to design and deliver notifications. Design once with a rich visual editor and deliver to any channel through one API request.
 
 This destination is maintained by Courier. For any issues with the destination, [contact the Courier support team](mailto:support@courier.com).
 
@@ -79,7 +79,7 @@ Segment sends Track calls to Courier as a `track` event.
 
 ### Inbound Events and Properties
 
-Segment Track events are inbound events that might trigger a notification when Courier receives them. To begin, events appear in [Courier's Data Logs](https://app.courier.com/data/messages?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) after you configure the Courier destination.
+Segment Track events are inbound events that might trigger a notification when Courier receives them. To begin, events appear in [Courier's Data Logs](https://app.courier.com/data/messages?utm_source=segmentio&utm_medium=docs&utm_campaign=partners){:target="_blank”} after you configure the Courier destination.
 
 All Inbound Events coming from Segment Track calls appear with a `Segment-TrackEvent` prefix in Courier to help distinguish them from other inbound events.
 
@@ -101,4 +101,4 @@ analytics.track('Login Button Clicked', {
 
 ### Mapping Inbound Events to Notification Templates
 
-Once you are comfortable with the Notification Template(s) and are ready to send Notifications, you can map these inbound events to start sending. You can do this directly from the [Event Log in Courier](https://app.courier.com/data/messages?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) or in the `Events` settings page.
+Once you are comfortable with the Notification Template(s) and are ready to send Notifications, you can map these inbound events to start sending. You can do this directly from the [Event Log in Courier](https://app.courier.com/data/messages?utm_source=segmentio&utm_medium=docs&utm_campaign=partners){:target="_blank”} or in the `Events` settings page.

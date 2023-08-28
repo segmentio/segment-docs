@@ -3,7 +3,7 @@ title: Vidora Destination
 rewrite: true
 id: 5ff67d3d4b6491271c0deae0
 ---
-[Vidora](https://vidora.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) provides a Machine Learning Platform for Marketing, AdTech, and Product teams to quickly and easily transform raw consumer data into valuable business decisions. Examples include: [next-best-action](https://www.vidora.com/general/video-building-real-time-decisioning-in-cortex-for-next-best-offer-and-next-best-action), next-best-offer, [dynamic decisioning](https://www.vidora.com/ml-in-business/dynamic-decisioning-using-real-time-machine-learning), [predictions](https://segment.com/recipes/using-predictive-purchase-behavior-to-increase-campaign-roi/), and prescriptive modeling.
+[Vidora](https://vidora.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners){:target="_blank”} provides a Machine Learning Platform for Marketing, AdTech, and Product teams to quickly and easily transform raw consumer data into valuable business decisions. Examples include: [next-best-action](https://www.vidora.com/general/video-building-real-time-decisioning-in-cortex-for-next-best-offer-and-next-best-action), next-best-offer, [dynamic decisioning](https://www.vidora.com/ml-in-business/dynamic-decisioning-using-real-time-machine-learning), [predictions](https://segment.com/recipes/using-predictive-purchase-behavior-to-increase-campaign-roi/), and prescriptive modeling.
 
 This destination is maintained by Vidora. For any issues with the destination, [contact the Vidora Support team](mailto:support@vidora.com).
 

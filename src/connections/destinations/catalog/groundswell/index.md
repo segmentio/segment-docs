@@ -4,7 +4,7 @@ rewrite: true
 id: 60be57310e36edd15805ca36
 ---
 
-[Groundswell](https://www.trygroundswell.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) empowers sales teams with just-in-time notifications and account prioritization based on product usage insights.
+[Groundswell](https://www.trygroundswell.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners){:target="_blank”} empowers sales teams with just-in-time notifications and account prioritization based on product usage insights.
 
 This destination is maintained by Groundswell. For any issues with the destination, [contact the Groundswell Support team](mailto:support@trygroundswell.com).
 

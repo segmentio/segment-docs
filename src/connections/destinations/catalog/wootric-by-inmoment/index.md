@@ -7,7 +7,7 @@ redirect_from:
 hide-dossier: true
 ---
 
-[InMoment (formerly Wootric)](https://www.wootric.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) is the modern customer feedback management platform that brands around the globe use to make experience their competitive advantage.
+[InMoment (formerly Wootric)](https://www.wootric.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners){:target="_blank”} is the modern customer feedback management platform that brands around the globe use to make experience their competitive advantage.
 
 The InMoment Destination is open-source. You can browse the code [on GitHub](https://github.com/segmentio/analytics.js-integrations/tree/master/integrations/wootric).
 

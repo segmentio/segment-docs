@@ -3,7 +3,7 @@ title: Insider Source
 id: pNvQ9udVMy
 ---
 
-[Insider](https://useinsider.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) Growth Management Platform (GMP) helps digital marketers drive growth across the funnel. Insider GMP helps marketers deliver personalized journeys across the web, mobile web, mobile apps, messaging, email, and ad channels using the unified data.
+[Insider](https://useinsider.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners){:target="_blank”} Growth Management Platform (GMP) helps digital marketers drive growth across the funnel. Insider GMP helps marketers deliver personalized journeys across the web, mobile web, mobile apps, messaging, email, and ad channels using the unified data.
 
 Take your company’s marketing analysis to the next level by adding Insider as a Source to Segment. Insider will automatically collect cross-channel messaging channel events like `Email Clicked`, `App Push Opened` and `SMS Clicked`, forward them to your destinations and load them into your data warehouse.
 

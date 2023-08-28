@@ -3,7 +3,7 @@ rewrite: true
 title: Personyze Destination
 id: 5c6de64f037dcf00014f8f84
 ---
-[Personyze](https://www.personyze.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) is a complete cross-channel personalization solution for showing highly optimized content in websites, emails, and apps using targeting and recommendation engines, and a variety of content creation, editing, and A/B testing tools.
+[Personyze](https://www.personyze.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners){:target="_blank”} is a complete cross-channel personalization solution for showing highly optimized content in websites, emails, and apps using targeting and recommendation engines, and a variety of content creation, editing, and A/B testing tools.
 
 This destination is maintained by Personyze. For any issues with the destination, [contact the Personyze Support team](mailto:info@personyze.com).
 

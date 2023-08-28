@@ -5,7 +5,7 @@ id: 5d835f71811b923a6883c2eb
 ---
 ## Salescamp CRM Destination
 
-Now it's easy to send customer data to [Salescamp](https://www.salescamp.app/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) from Segment. Once you've tracked your data through Segment's open source libraries Segment will translate and route your data into Salescamp in a format they understand.
+Now it's easy to send customer data to [Salescamp](https://www.salescamp.app/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners){:target="_blank”} from Segment. Once you've tracked your data through Segment's open source libraries Segment will translate and route your data into Salescamp in a format they understand.
 
 This destination is maintained by [Salescamp](https://www.salescamp.app/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners). Feel free to contact us at [hello@salescamp.app](mailto:hello@salescamp.app) for any help.
 

@@ -3,7 +3,7 @@ title: Hydra Destination
 rewrite: true
 id: 5cd30f824e267500018a1063
 ---
-[Hydra](https://hydra.ai/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) helps marketing, sales operations and customer success teams implement holistic predictive analytics tailored to their own business without writing a single line of code. Hydra is capable of scanning a wide range of sources such as product usage, user demographic data, firmographic data, chat conversations, help desk tickets, emails and marketing engagement to discover signals and make predictions.
+[Hydra](https://hydra.ai/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners){:target="_blank”} helps marketing, sales operations and customer success teams implement holistic predictive analytics tailored to their own business without writing a single line of code. Hydra is capable of scanning a wide range of sources such as product usage, user demographic data, firmographic data, chat conversations, help desk tickets, emails and marketing engagement to discover signals and make predictions.
 
 This destination is maintained by Hydra. For any issues with the destination, [contact the Hydra Support team](mailto:hello@hydra.ai).
 

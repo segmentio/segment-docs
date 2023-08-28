@@ -6,7 +6,7 @@ id: 5d65e2aa4da0623cbe367a05
 hidden: true
 published: false
 ---
-[Modern Pricing](https://modernpricing.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) provides intelligent, real-time pricing recommendations for every potential customer visiting your web application.
+[Modern Pricing](https://modernpricing.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners){:target="_blank”} provides intelligent, real-time pricing recommendations for every potential customer visiting your web application.
 
 This destination is maintained by Modern Pricing. For any issues with the destination, [contact the Modern Pricing Support team](mailto:john@modernpricing.com).
 

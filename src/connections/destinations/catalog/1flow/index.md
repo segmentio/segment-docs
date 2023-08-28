@@ -5,7 +5,7 @@ redirect_from:
   - '/connections/destinations/catalog/1flow-analytics'
 ---
 
-[1Flow](https://1flow.app/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) is a leading in-app user survey and messaging platform for Mobile app and SaaS businesses.
+[1Flow](https://1flow.app/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners){:target="_blank”} is a leading in-app user survey and messaging platform for Mobile app and SaaS businesses.
 
 Using 1Flow, you can reach users _in-the-moment_ while they are interacting with your website or application, to collect highly contextual user insights that help you improve your product offering and customer experience.
 

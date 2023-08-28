@@ -5,7 +5,7 @@ id: ErcsNGMEwt
 ---
 {% include content/source-region-unsupported.md %}
 
-[Beamer](https://www.getbeamer.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) is a changelog and notification center that lets you announce new features, product updates, special offers and more.
+[Beamer](https://www.getbeamer.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners){:target="_blank”} is a changelog and notification center that lets you announce new features, product updates, special offers and more.
 
 This source is maintained by Beamer. For any issues with the source, [contact the Beamer Support team](mailto:info@getbeamer.com).
 

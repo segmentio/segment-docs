@@ -3,7 +3,7 @@ rewrite: true
 title: Tamber Destination
 id: 5c8ad1622b2a130001a7664a
 ---
-[Tamber](https://tamber.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) enables you to build your own Google-scale recommendation features in minutes. Deploy cutting edge deep learning models, and run A/B tests to optimize results.
+[Tamber](https://tamber.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners){:target="_blank”} enables you to build your own Google-scale recommendation features in minutes. Deploy cutting edge deep learning models, and run A/B tests to optimize results.
 
 This destination is maintained by Tamber. For any issues with the destination, [contact the Tambler Support team](mailto:support@tamber.com).
 

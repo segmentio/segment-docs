@@ -7,7 +7,7 @@ hide-dossier: true
 
 {% include content/plan-grid.md name="actions" %}
 
-[Iterable](https://www.iterable.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) is a cross-channel marketing platform that powers unified customer experiences and empowers you to create, optimize and measure every interaction across the entire customer journey.
+[Iterable](https://www.iterable.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners){:target="_blank”} is a cross-channel marketing platform that powers unified customer experiences and empowers you to create, optimize and measure every interaction across the entire customer journey.
 
 This destination is maintained by Iterable. For any issues with the destination, [contact the Iterable Support team](mailto:support@iterable.com).
 

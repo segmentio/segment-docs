@@ -3,7 +3,7 @@ rewrite: true
 title: Startdeliver Destination
 id: 5fa3ce52d18ccdfb384b13f7
 ---
-[Startdeliver](https://startdeliver.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) connects data from a variety of sources to provide a customer view optimized to Customer Success Managers.
+[Startdeliver](https://startdeliver.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners){:target="_blank”} connects data from a variety of sources to provide a customer view optimized to Customer Success Managers.
 
 Startdeliver maintains this destination. For any issues with the destination, [contact their support team](mailto:support@startdeliver.com).
 

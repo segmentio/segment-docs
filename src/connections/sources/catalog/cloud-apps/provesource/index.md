@@ -5,7 +5,7 @@ id: aC11S74HWK
 ---
 {% include content/source-region-unsupported.md %}
 
-[ProveSource](https://provesrc.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) is a social proof platform, that lets you show recent activities and reviews that happen on your website - signups, purchases, positive reviews and more, this helps build trust with your visitors and ultimately increases your conversions rates.
+[ProveSource](https://provesrc.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners){:target="_blank”} is a social proof platform, that lets you show recent activities and reviews that happen on your website - signups, purchases, positive reviews and more, this helps build trust with your visitors and ultimately increases your conversions rates.
 
 This source is maintained by ProveSource. For any issues with the source, [contact the ProveSouce Support team](mailto:support@provesrc.com).
 

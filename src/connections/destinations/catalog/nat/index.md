@@ -3,7 +3,7 @@ title: Nat Destination
 rewrite: true
 id: 5ebff2ce1c6481e9795533f9
 ---
-[Nat.app](https://nat.app?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) is a CRM tool for founders and sales people that makes it easy to stay in touch with users and find product market fit.
+[Nat.app](https://nat.app?utm_source=segmentio&utm_medium=docs&utm_campaign=partners){:target="_blank”} is a CRM tool for founders and sales people that makes it easy to stay in touch with users and find product market fit.
 
 This destination is maintained by Nat.app. For any issues with the destination, [contact the Nat team](mailto:segment@nat.app).
 

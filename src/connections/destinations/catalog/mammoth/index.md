@@ -3,7 +3,7 @@ rewrite: true
 title: Mammoth Destination
 id: 5cd3f02701645a0001cf49a0
 ---
-[Mammoth](https://mammoth.io/integrations/segment/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) provides self-serve analytics for analysts, businesses, and developers who can use Mammoth's data warehousing, data discovery & data preparation abilities to arrive at insights.
+[Mammoth](https://mammoth.io/integrations/segment/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners){:target="_blank”} provides self-serve analytics for analysts, businesses, and developers who can use Mammoth's data warehousing, data discovery & data preparation abilities to arrive at insights.
 
 Mammoth allows you to blend your data from Segment with other sources of data such as databases and files. Using Mammoth, you can build multiple data pipelines, which are constructed by applying transforms through a no coding interface. Mammoth also allows for the visual discovery of the data and easy exports to databases such as MySQL, Elasticsearch, and PostgreSQL.
 

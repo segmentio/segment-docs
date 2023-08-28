@@ -3,7 +3,7 @@ rewrite: true
 title: Savio Destination
 id: 5c6ddad405424a0001ecff86
 ---
-[Savio](https://savio.io/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) enables B2B SaaS teams to centrally manage customer feedback so they can make better product decisions.
+[Savio](https://savio.io/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners){:target="_blank”} enables B2B SaaS teams to centrally manage customer feedback so they can make better product decisions.
 
 This destination is maintained by Savio. For any issues with the destination, [contact the Savio Support team](mailto:support@savio.io).
 

@@ -2,7 +2,7 @@
 title: Inflection Source
 id: glwy6LwOVo
 ---
-[Inflection](https://inflection.io/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) provides a B2B marketing automation platform for product-led growth companies.
+[Inflection](https://inflection.io/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners){:target="_blank”} provides a B2B marketing automation platform for product-led growth companies.
 
 This is an [Event Cloud Source](/docs/sources/#event-cloud-sources) which can not only export data into your Segment warehouse, but can also federate the exported data into your other enabled Segment Destinations.
 

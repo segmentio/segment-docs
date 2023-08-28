@@ -3,7 +3,7 @@ title: Anodot Destination
 rewrite: true
 id: 5feb4422ecbab07ade913573
 ---
-[Anodot](https://www.anodot.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) rapidly identifies revenue-critical issues by leveraging AI to constantly monitor and correlate business performance, providing real-time alerts and forecasts.
+[Anodot](https://www.anodot.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners){:target="_blank”} rapidly identifies revenue-critical issues by leveraging AI to constantly monitor and correlate business performance, providing real-time alerts and forecasts.
 
 This destination is maintained by Anodot. For any issues with the destination, [contact the Anodot Support team](mailto:support@anodot.com).
 

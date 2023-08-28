@@ -3,7 +3,7 @@ rewrite: true
 title: EnjoyHQ Destination
 id: 5fb411aeff3f6d1023f2ae8d
 ---
-[EnjoyHQ](https://getenjoyhq.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) helps UX and product teams learn from customers faster by streamlining their customer research process. EnjoyHQ makes it easy to centralize, organize and share all their customer insights and user research data in one place.
+[EnjoyHQ](https://getenjoyhq.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners){:target="_blank”} helps UX and product teams learn from customers faster by streamlining their customer research process. EnjoyHQ makes it easy to centralize, organize and share all their customer insights and user research data in one place.
 
 
 This destination is maintained by EnjoyHQ. For any issues with the destination, [contact the EnjoyHQ support team](mailto:support@getenjoyhq.com).
