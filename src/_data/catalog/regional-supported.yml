@@ -93,6 +93,15 @@ sources:
       - us
     endpoints:
       - us
+  - id: T4gvCx0YNM
+    display_name: AppICETest
+    hidden: false
+    slug: appicetest
+    url: connections/sources/catalog/cloud-apps/appicetest
+    regions:
+      - us
+    endpoints:
+      - us
   - id: dZeHygTSD4
     display_name: Apple
     hidden: false
@@ -134,6 +143,15 @@ sources:
     hidden: false
     slug: autopilothq
     url: connections/sources/catalog/cloud-apps/autopilothq
+    regions:
+      - us
+    endpoints:
+      - us
+  - id: 2QEQGbmIJv
+    display_name: b2_testsource
+    hidden: false
+    slug: b2_testsource
+    url: connections/sources/catalog/cloud-apps/b2_testsource
     regions:
       - us
     endpoints:
@@ -329,6 +347,15 @@ sources:
       - us
     endpoints:
       - us
+  - id: VETiUX9u66
+    display_name: Elastic Path
+    hidden: false
+    slug: elastic-path
+    url: connections/sources/catalog/cloud-apps/elastic-path
+    regions:
+      - us
+    endpoints:
+      - us
   - id: PT2vYn4zUh
     display_name: Encharge
     hidden: true
@@ -406,8 +433,17 @@ sources:
     endpoints:
       - us
   - id: xqegKCQA0W
+    display_name: Freshchat
+    hidden: false
+    slug: freshchat
+    url: connections/sources/catalog/cloud-apps/freshchat
+    regions:
+      - us
+    endpoints:
+      - us
+  - id: tCkZda6aKQ
     display_name: Freshchat Source
-    hidden: true
+    hidden: false
     slug: freshchat-source
     url: connections/sources/catalog/cloud-apps/freshchat-source
     regions:
@@ -597,11 +633,33 @@ sources:
     endpoints:
       - us
       - eu
+  - id: VfR29KdimB
+    display_name: jAvascript
+    hidden: false
+    slug: javascript
+    url: connections/sources/catalog/cloud-apps/javascript
+    regions:
+      - us
+      - eu
+    endpoints:
+      - us
+      - eu
   - id: IqDTy1TpoU
     display_name: Javascript
     hidden: false
     slug: javascript
     url: connections/sources/catalog/libraries/website/javascript
+    regions:
+      - us
+      - eu
+    endpoints:
+      - us
+      - eu
+  - id: zZjAgSjgHi
+    display_name: jAvascript
+    hidden: false
+    slug: javascript
+    url: connections/sources/catalog/cloud-apps/javascript
     regions:
       - us
       - eu
@@ -1037,7 +1095,7 @@ sources:
       - us
   - id: d81EwdLbU4
     display_name: Rehook
-    hidden: true
+    hidden: false
     slug: rehook
     url: connections/sources/catalog/cloud-apps/rehook
     regions:
@@ -1167,6 +1225,15 @@ sources:
     hidden: false
     slug: source_b2
     url: connections/sources/catalog/cloud-apps/source_b2
+    regions:
+      - us
+    endpoints:
+      - us
+  - id: 5sm7ImJ0LJ
+    display_name: sourceTest
+    hidden: false
+    slug: sourcetest
+    url: connections/sources/catalog/cloud-apps/sourcetest
     regions:
       - us
     endpoints:
@@ -1396,6 +1463,42 @@ sources:
     hidden: false
     slug: unity
     url: connections/sources/catalog/libraries/mobile/unity
+    regions:
+      - us
+    endpoints:
+      - us
+  - id: cCCwrwHZoD
+    display_name: Unlocking Attribution
+    hidden: false
+    slug: unlocking-attribution
+    url: connections/sources/catalog/cloud-apps/unlocking-attribution
+    regions:
+      - us
+    endpoints:
+      - us
+  - id: l5eaZFs2Mj
+    display_name: Unlocking Simulation
+    hidden: false
+    slug: unlocking-simulation
+    url: connections/sources/catalog/cloud-apps/unlocking-simulation
+    regions:
+      - us
+    endpoints:
+      - us
+  - id: h6tGyJ8rYY
+    display_name: Unstack
+    hidden: false
+    slug: unstack
+    url: connections/sources/catalog/cloud-apps/unstack
+    regions:
+      - us
+    endpoints:
+      - us
+  - id: 9TYqEh3nMe
+    display_name: Upollo
+    hidden: false
+    slug: upollo
+    url: connections/sources/catalog/cloud-apps/upollo
     regions:
       - us
     endpoints:

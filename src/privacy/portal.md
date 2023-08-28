@@ -25,7 +25,7 @@ The Inbox helps you keep track of new restricted data types as they are captured
 
 Segment detects these fields by scanning data from your Web, Mobile, Server, and Cloud Event Sources to detect PII based on the [default PII matchers](#default-pii-matchers). New properties sent into Segment appear in the Inbox in realtime.
 
-When you view the Inbox for the first time, it displays every property that was sent into Segment from Web, Mobile, Server, and Cloud Event Sources dating back to August 9, 2019. ([Cloud Object Sources](/docs/connections/sources/#cloud-apps) do not appear in the Inbox at this time.)
+When you view the Inbox for the first time, it displays every property that was sent into Segment from Web, Mobile, Server, and Cloud Event Sources dating back to August 9, 2019. ([Object Cloud Sources](/docs/connections/sources/#object-cloud-sources) and [Reverse ETL Sources](/docs/connections/sources/#reverse-etl-sources) do not appear in the Inbox at this time.)
 
 You can click a row in the Inbox to learn more about a field and where it was collected. The expanded view shows:
 
@@ -187,7 +187,7 @@ for in your workspace. You can use this feature to detect properties that are
 unique to your company or region, or that aren't already handled by the default
 matchers above. You can have up to 100 custom matchers per workspace. Custom
 Matchers detect data in your Web, Mobile, Server, and Cloud Event Sources for 
-fields under `contexts`, `traits` and `properties` objects, and
+fields under `context`, `traits` and `properties` objects, and
 the data they detect appears in the Inbox.
 
 For example, if you have a restricted data point at your company called "SIN"
@@ -201,7 +201,6 @@ treat that property whenever it is appears in data Segment processes.
 3. Set the default classification:
    - **Red** for highly restricted
    - **Yellow** for moderately restricted
-   - **Green** for least restricted
 4. Choose whether to match on a **Key** (for example, "SIN", "Social Insurance Number", "Social Insurance No.", "SocInsNo") or on a **Value** (for example. "123-456-789", "1234567")
 5. Select how precise the match should be, by choosing **Exact** or **Similar** match.
    - **Exact** matches mean that a key matches the term exactly (for example "phone number" but never "phne number")

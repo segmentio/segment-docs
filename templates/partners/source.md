@@ -2,7 +2,7 @@
 
 > Hi Partners 👋🏼
 >
-> Welcome to Segment - glad to have you onboard! This doc serves as a guideline for your team to create best-in-class documentation alongside your amazing product.
+> Welcome to Segment - glad to have you on board! This doc serves as a guideline for your team to create best-in-class documentation alongside your amazing product.
 >
 > Here are the guidelines we want you to have in mind when writing out your documentation:
 >
@@ -31,9 +31,9 @@ title: [integration_name] Source
 
 > (delete after reading) Include a 1-2 sentence introduction to your company and the value it provides to customers - updating the name and hyperlink. Please leave the utm string unchanged.
 
-[<integration_name>](https://yourintegration.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) provides self-serve predictive analytics for growth marketers, leveraging machine learning to automate audience insights and recommendations.
+[<integration_name>](https://yourintegration.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners){:target="_blank”} provides self-serve predictive analytics for growth marketers, leveraging machine learning to automate audience insights and recommendations.
 
-This is an [Event Cloud Source](https://segment.com/docs/sources/#event-cloud-sources) which can not only export data into your Segment warehouse, but they can also federate the exported data into your other enabled Segment Destinations.
+This is an [Event Cloud Source](/docs/sources/#event-cloud-sources) which can not only export data into your Segment warehouse, but can also federate the exported data into your other enabled Segment Destinations.
 
 > (delete after reading) Update your company name and support email address.
 
@@ -41,20 +41,21 @@ This source is maintained by <integration_name>. For any issues with the source,
 
 > (delete after reading) Update your company name (x2) and support email address.
 
-_**NOTE:** The <integration_name> Source is currently in beta, which means that they are still actively developing the source. This doc was last updated on <Month_Name DD, YYYY>. If you are interested in joining their beta program or have any feedback to help improve the <integration_name> Source and its documentation, [let their team know](mailto:support@<integration_name>.com)!_
+_**NOTE:** The <integration_name> Source is currently in beta, which means that they are still actively developing the source. If you are interested in joining their beta program or have any feedback to help improve the <integration_name> Source and its documentation, [let the <integration_name> team know](mailto:support@<integration_name>.com)._
 
-## Getting Started
+## Getting started
 
 > (delete after reading) Include clear, succinct steps including hyperlinks to where customers can locate the place in your app to enter their Segment writekey.
 
-1. From your workspace's [Sources catalog page](https://app.segment.com/goto-my-workspace/sources/catalog) click **Add Source**.
+1. From your workspace's [Sources catalog page](https://app.segment.com/goto-my-workspace/sources/catalog){:target="_blank”} click **Add Source**.
 2. Search for "<integration_name>" in the Sources Catalog, select <integration_name>, and click **Add Source**.
 3. On the next screen, give the Source a nickname configure any other settings.
 
    - The nickname is used as a label in the Segment app, and Segment creates a related schema name in your warehouse. The nickname can be anything, but we recommend using something that reflects the source itself and distinguishes amongst your environments (eg. SourceName_Prod, SourceName_Staging, SourceName_Dev).
 
 4. Click **Add Source** to save your settings.
-5. Copy the Write key from the Segment UI and log in to your <integration_name> account - navigate to Settings > Integrations > Segment Integration and paste the key to connect.
+5. Copy the Write key from the Segment UI.
+6. Log in to your <integration_name> account - navigate to Settings > Integrations > Segment Integration and paste the key to connect.
 
 ## Stream
 
@@ -72,77 +73,35 @@ The default behavior is for Klaviyo to pass the userId associated with the email
 
 The table below lists events that <integration_name> sends to Segment. These events appear as tables in your warehouse, and as regular events in other Destinations. <integration_name> includes the `userId` if available.
 
-<table>
-  <tr>
-   <td>Event Name</td>
-   <td>Description</td>
-  </tr>
-  <tr>
-   <td>Email Sent</td>
-   <td>Email was sent successfully</td>
-  </tr>
-  <tr>
-   <td>Email Opened</td>
-   <td>Prospect opened the email</td>
-  </tr>
-  <tr>
-   <td>Link Clicked</td>
-   <td>Prospect clicked the tracking link</td>
-  </tr>
-  <tr>
-   <td>Email Replied</td>
-   <td>Prospect replied to the email sent</td>
-  </tr>
-  <tr>
-   <td>Email Bounced</td>
-   <td>Email servers rejected the email</td>
-  </tr>
-  <tr>
-   <td>Email Unsubscribed</td>
-   <td>Prospect clicked the unsubscribe link</td>
-  </tr>
-</table>
+| Event Name         | Description                           |
+| ------------------ | ------------------------------------- |
+| Email Sent         | Email was sent successfully           |
+| Email Opened       | Prospect opened the email             | 
+| Link Clicked       | Prospect clicked the tracking link    | 
+| Email Replied      | Prospect replied to email sent        | 
+| Email Bounced      | Email servers rejected the email      | 
+| Email Unsubscribed | Prospect clicked the unsubscribe link | 
+
 
 ## Event Properties
 
 The table below list the properties included in the events listed above.
 
-<table>
-  <tr>
-   <td>Property Name</td>
-   <td>Description</td>
-  </tr>
-  <tr>
-   <td>`event`</td>
-   <td>Email event type</td>
-  </tr>
-  <tr>
-   <td>`userId`</td>
-   <td>Prospect email ID</td>
-  </tr>
-  <tr>
-   <td>`email_id`</td>
-   <td>ID of the email</td>
-  </tr>
-  <tr>
-   <td>`fromId`</td>
-   <td>Sender email ID</td>
-  </tr>
-  <tr>
-   <td>`email_subject`</td>
-   <td>Subject line of the email</td>
-  </tr>
-  <tr>
-   <td>`link`</td>
-   <td>URL of the link clicked</td>
-  </tr>
-</table>
+| Property Name   | Description               |
+| --------------- | ------------------------- |
+| `event`         | Email event type          |
+| `userId`        | Prospect user ID          |
+| `email_id`      | ID of the email           |
+| `from_id`        | Sender email ID           |
+| `email_subject` | Subject line of the email |
+| `link`          | URL of the link clicked   |
+ 
 
 ## Adding Destinations
 
 Now that your Source is set up, you can connect it with Destinations.
 
-Log into your downstream tools and check to see that your events appear as expected, and that they contain all of the properties you expect. If your events and properties don’t appear, check the [Event Delivery](https://segment.com/docs/connections/event-delivery/) tool, and refer to the Destination docs for each tool for troubleshooting.
+Log into your downstream tools and check to see that your events appear as expected, and that they contain all of the properties you expect. If your events and properties don’t appear, check the [Event Delivery](/docs/connections/event-delivery/) tool, and refer to the Destination docs for each tool for troubleshooting.
 
 If there are any issues with how the events are arriving to Segment, [contact the <integration_name> support team](mailto:support@<integration_name>.com).
 

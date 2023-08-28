@@ -50,10 +50,13 @@ The table below lists events that Listrak sends to Segment. These events appear 
 
 Event Name | Description
 ------------ | -------------
-Email Opened | The recipient opened the email.
-Email Link Clicked | The recipient clicked on a link in the email's body. 
 Email Bounced | The email servers rejected the email. 
 Email Converted | The recipient placed an order after clicking on the email. 
+Email Link Clicked | The recipient clicked on a link in the email's body. 
+Email Marked As Spam | The recipient marked an email as spam.
+Email Opened | The recipient opened the email.
+Email Sent | An email was sent to the recipient.
+Unsubscribed | The recipient unsubscribed from the email list.
 
 ## Event Properties
 
@@ -70,6 +73,7 @@ Property Name | Description
 `list_id` | An ID used to identify a list.
 `list_name` | A name used to identify a list.
 `order_total` | The order total associated with the conversion.
+`unsubscribe_type` | The method by which the contact was removed from the list. See the [Unsubscribed Contacts Report Help Article](https://help.listrak.com/en/articles/1550570-unsubscribed-contacts-report#unsubscribe-method-definitions).
 `context.ip` | The opening computer’s public IP address.
 `context.traits.email` | The intended recipient’s email address.
 `context.user_agent` | The opening browser’s user agent.

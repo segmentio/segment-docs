@@ -155,7 +155,7 @@ To attach multiple sources to your IAM role:
         {
           "Effect": "Allow",
           "Principal": {
-            "AWS": "arn:aws:iam::595280932656:root"
+            "AWS": "arn:aws:iam::595280932656:role/customer-kinesis-access"
           },
           "Action": "sts:AssumeRole",
           "Condition": {
@@ -175,7 +175,7 @@ To attach multiple sources to your IAM role:
         {
           "Effect": "Allow",
           "Principal": {
-            "AWS": "arn:aws:iam::595280932656:root"
+            "AWS": "arn:aws:iam::595280932656:role/customer-kinesis-access"
           },
           "Action": "sts:AssumeRole",
           "Condition": {
@@ -228,7 +228,7 @@ If you have many sources using Kinesis that it's impractical to attach all of th
         {
           "Effect": "Allow",
           "Principal": {
-            "AWS": "arn:aws:iam::595280932656:root"
+            "AWS": "arn:aws:iam::595280932656:role/customer-kinesis-access"
           },
           "Action": "sts:AssumeRole",
           "Condition": {
