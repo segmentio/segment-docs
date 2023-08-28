@@ -60,6 +60,9 @@ Delivery Overview is useful to diagnose delivery errors in the following scenari
 - **When data is missing from your destination**: The pipeline view can help you see where your data is getting "stuck" on the way to your destination, which can help you quickly diagnose and address problems in your data pipeline.
 - **When emission or delivery volume fluctuates out of expected norms**: Delivery Overview will highlight where the largest rate change(s) occurred and what events were associated with the change.
 
+> info "Delivery Overview in Engage Destinations"
+> Because Engage uses sources for multiple purposes, you can expect to see `filtered at destination` events with the integrations object in destinations linked to Engage. Engage uses the integrations object to route events to destinations you've added to your audiences, traits, and journey steps. As a result, some events aren't meant to be delivered by the destination, so the integrations object filters them.
+
 ## Where do I find Delivery Overview?
 To view the Delivery Overview page:
 1. Sign into Segment.
@@ -80,4 +83,7 @@ With Delivery Overview, you can verify that your source receives your events, th
 
 ## How can I configure alerts?
 During the Delivery Overview beta, you can use the Event Delivery alerting features (Delivery Alerts) by selecting the **Alerts** tab in the destination header.
+
+## Why is the Delivery Overview page only available for cloud-mode destinations? 
+Similar to Segment's [Event Delivery](/docs/connections/event-delivery/) feature, the Delivery Overview page is only available for server-side integrations (also known as cloud-mode destinations). You won't be able to use the Delivery Overview page for client side integrations (also known as device-mode destinations) because device-mode data is sent directly to the destination tool's API. In order to report on deliverability, data must be sent to destinations using a server-side connection. 
 

@@ -323,6 +323,18 @@ The `reset` method clears the SDK’s internal stores for the current user and g
 analytics.Reset()
 ```
 
+## Arrays
+To send an array as an event property, reference the [GitHub repo](https://github.com/segmentio/Serialization.NET/blob/main/Tests/JsonUtilityTest.cs#L24){:target="_blank"}. Below is an example of code you can implement to send an array of strings:
+
+```c#
+List<string> listOfStrings = new List<string> { "test1", "test2", "test3" };
+
+JsonObject customerJsonObj = new JsonObject
+{
+    ["event_name"] = new JsonArray(listOfStrings.ConvertAll(o => (JsonElement)o))
+}; 
+```
+
 ## Compatibility
 This library targets `.NET Standard 2.0`. See the [list of compatible platforms](https://docs.microsoft.com/en-us/dotnet/standard/net-standard?tabs=net-standard-2-0){:target="_blank"}.
 
