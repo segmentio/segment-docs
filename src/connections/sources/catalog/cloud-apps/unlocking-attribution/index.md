@@ -102,15 +102,15 @@ All cost data from the various media platforms is downloaded and stored in the t
 Each row in the Media Spend Items collection represent a unique combination of the above 4 attributes. After matching a touch against a campaign, the `campaign` identifier in the `touches` collection points to a row from this collection.
 
 
-| Property Name                 | Description                                                                                           |
-| ----------------------------- | ----------------------------------------------------------------------------------------------------- |
-| `campaign_name`               | The name of the campaign                                                                              |
-| `campaign_id`                 | The unique ID of the campaign, as set by the paid media platform                                      |
-| `id`                          | The unique ID of this item                                                                            |
-| `ad_collective_name`          | The name of the Ad Collective                                                                         |
-| `ad_collective_id`            | The unique ID of the Ad Collective, as set by the paid media platform                                 |
-| `media_source`                | The platform of this media item                                                                       |
-| `type`                        | The type of this media item (Paid, Organic)                                                           |
+Property Name | Description  
+--------------- | --------------                                                                                         
+`campaign_name` | The name of the campaign.                                                                              
+`campaign_id` | The unique ID of the campaign. This is set by the paid media platform.                                     
+`id` | The unique ID of the item.                                                                            
+`ad_collective_name` | The name of the Ad Collective.                                                                         
+`ad_collective_id` | The unique ID of the Ad Collective. This is set by the paid media platform.                                 
+`media_source` | The platform of the media item.                                                                       
+`type` | The type of the media item (Paid, Organic).                                                      
 
 
 ### media_spend_daily_spend
