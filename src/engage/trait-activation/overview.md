@@ -27,7 +27,7 @@ Trait Enrichment and ID Sync can help you:
 
 To learn more about Trait Activation, visit the following docs:
 
-- View [Trait Activation Setup](/docs/engage/trait-activation/trait-activation-setup/) to learn how to set up Trait Enrichment or ID Sync with Engage [Audiences](/docs/engage/audiences/) and [Journeys](/docs/engage/journeys/).
+- View [Trait Activation Setup](/docs/engage/trait-activation/trait-activation-setup/) to learn how to set up Trait Enrichment or ID Sync with Engage [Audiences](/docs/engage/audiences/).
 - Learn more about how to get started with [Trait Enrichment](/docs/engage/trait-activation/trait-enrichment/) and [ID Sync](/docs/engage/trait-activation/id-sync/).
 
 

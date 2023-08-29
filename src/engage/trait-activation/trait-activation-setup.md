@@ -24,7 +24,9 @@ You'll first choose a Destinaton to connect to your Audience and use with Trait 
 | [Adobe Target (Actions)](/docs/connections/destinations/catalog/actions-adobe-target-cloud/#available-actions)    | Event      |  1. Connect Adobe Target (Actions) to your Segment space. <br> 2. On the **Settings** tab, input your Adobe Target destination settings. <br> 3. Follow the Destination Actions documentation for [customized mappings](/docs/connections/destinations/actions/#customizing-mappings). <br> 4. Enable the destination and configured mappings.                        |
 | [Salesforce (Actions)](/docs/connections/destinations/catalog/actions-salesforce/) | Event          | 1. Connect Salesforce to your Segment space. <br> 2. Select **Actions** as the destination framework. <br> 3. From the **Settings** tab, authenticate with Salesforce using OAuth. <br> 4. Follow steps in the [Customizing Mappings documentation](/docs/connections/destinations/actions/#customizing-mappings). <br> 5. Enable the Destination and configured mappings.                  |
 |[SendGrid Marketing Campaigns](/docs/connections/destinations/catalog/actions-sendgrid/)   |   Event           |  1. Connect SendGrid Marketing Campaigns to your Segment space. <br> 2. Enter your SendGrid Marketing Campaigns API key into the connection settings.                      |
-|[LiveRamp](/docs/connections/destinations/catalog/actions-liveramp-audiences/)   |   Event           |  1. Set up your LiveRamp file drop. <br> 2. Connect LiveRamp Audiences to your Segment space.
+|[LiveRamp](/docs/connections/destinations/catalog/actions-liveramp-audiences/)   |   Event           |  1. Set up your LiveRamp file drop. <br> 2. Connect LiveRamp Audiences to your Segment space.                       |
+|[Iterable (Actions)](/docs/connections/destinations/catalog/actions-iterable/)   |   Event           |  1. Connect Iterable (Actions) to your Segment space. <br> 2. Enter your Iterable (Actions) API key and Data Center Location into the Destination Settings.           |
+
 
 ## Resyncs
 

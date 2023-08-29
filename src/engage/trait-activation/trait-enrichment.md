@@ -57,7 +57,7 @@ Users can sync as many traits as they would like to Iterable. Iterable doesn't r
 
 #### Facebook Custom Audiences
 
-You can only sync the following traits to Faceookz:
+You can only sync the following traits to Faceook:
 - `email`
 - `context.device.advertisingId`
 - `firstName`
@@ -71,6 +71,7 @@ You can only sync the following traits to Faceookz:
 - `address.city`
 - `address.postalCode`
 - `address.country`
+
 Each trait you select must map to a Facebook key.
 
 #### Zendesk
