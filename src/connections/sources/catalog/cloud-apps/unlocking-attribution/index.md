@@ -12,7 +12,6 @@ _**NOTE:** The Unlocking Attribution Source is currently in beta, which means th
 
 ## Getting Started
 
-> (delete after reading) Include clear, succinct steps including hyperlinks to where customers can locate the place in your app to enter their Segment writekey.
 
 1. From your workspace's [Sources catalog page](https://app.segment.com/goto-my-workspace/sources/catalog) click **Add Source**.
 2. Search for "Unlocking Attribution" in the Sources Catalog, select Unlocking Attribution, and click **Add Source**.
