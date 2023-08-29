@@ -1,5 +1,5 @@
 ---
-title: Rupt Destination
+title: Rupt (Actions) Destination
 hide-boilerplate: true
 hide-dossier: true
 ---
@@ -21,11 +21,11 @@ Rupt (Actions) provides the following benefits:
 ## Getting started
 
 1. From the Segment web app, click **Catalog**, then click **Destinations**.
-2. Find the Destinations Actions item in the left navigation, and click it.
-3. Click **Configure Rupt**.
+2. Search for *Rupt (Actions)* and select it.
+3. Click **Configure Rupt (Actions)**.
 4. Select an existing Source to connect to Rupt (Actions).
-5. Get your **API key Client ID** from the [Rupt dashboard](https://dashboard.rupt.dev?utm_source=segment.com&utm_medium=docs&utm_campaign=partners){:target="_blank"}.
-6. Add your API key to the segment Rupt Action settings.
+5. Copy your **API key Client ID** from the [Rupt dashboard](https://dashboard.rupt.dev?utm_source=segment.com&utm_medium=docs&utm_campaign=partners){:target="_blank"}.
+6. Add your API key to the Rupt (Actions) settings in Segment.
 
 {% include components/actions-fields.html %}
 
