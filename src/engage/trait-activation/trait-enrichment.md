@@ -57,7 +57,7 @@ Users can sync as many traits as they would like to Iterable. Iterable doesn't r
 
 #### Facebook Custom Audiences
 
-You can only sync the following traits to Faceook:
+You can only sync the following traits to Facebook:
 - `email`
 - `context.device.advertisingId`
 - `firstName`
