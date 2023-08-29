@@ -4,7 +4,12 @@ title: Unlocking Attribution Source
 
 The [Unlocking Attribution](https://unlockinggrowth.co/products/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) source is a powerful solution designed to model attribution data, aiding marketers in identifying the most effective inbound channels for driving conversions. This documentation will guide you through the process of setting up and utilizing the "Unlocking Attribution" source within your Twilio Segment environment.  Unlocking Attribution is built on top of your pre-existing Segment implementation, ensuring you can be up and running in under an hour.
 
-This is an [Object Cloud Source](/docs/connections/sources/#object-cloud-sources) which can import data into your Segment warehouse.  This means it can be used both within the Unlocking Attribution tool itself, or from the analytics tools which read from your data warehouse.
+Additionally, it provides a way to bring in critical event and object data from key systems such as:
+- Marketo Event Streaming - This ensures that all key events occurring in Marketo are fed in real-time to Segment.  These include events such as "Email Sent", "Email Opened", "Link Clicked", etc
+- LinkedIn, Twitter, Capterra Paid Media Data - Similar to the Segment-provided Google and Facebook paid media sources, this brings in the paid media spend data for these other paid media networks
+- SaaSOptics Object Source - Bringing in object data from SaaSOptics
+
+This source generates both [Events and Objects](docs/connections/sources).  Event data can be streamed into your downstream tools and written to the data warehouse while the Object sources can be written to your data warehouse.  This means this data can be used both within the Unlocking Attribution tool itself, or from reporting/analytics tools which read from your data warehouse.
 
 This source is maintained by Unlocking Attribution. For any issues with the source, [contact their Support team](mailto:support@unlockinggrowth.co).
 
