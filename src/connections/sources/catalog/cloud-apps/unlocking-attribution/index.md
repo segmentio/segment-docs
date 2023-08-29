@@ -17,19 +17,19 @@ This source is maintained by Unlocking Attribution. For any issues with the sour
 1. From your workspace's [Sources catalog page](https://app.segment.com/goto-my-workspace/sources/catalog) click **Add Source**.
 2. Search for *Unlocking Attribution* in the Sources Catalog.
 3. Select **Unlocking Attribution** and click **Add Source**.
-3. On the next screen, give the Source a nickname configure any other settings.
+4. Give the Source a nickname.
+     - The nickname is used as a label in the Segment app, and Segment creates a related schema name in your warehouse. The nickname can be anything, but we recommend using something that reflects the source itself and distinguishes amongst your environments (eg. SourceName_Prod, SourceName_Staging, SourceName_Dev).
 
-   - The nickname is used as a label in the Segment app, and Segment creates a related schema name in your warehouse. The nickname can be anything, but we recommend using something that reflects the source itself and distinguishes amongst your environments (eg. SourceName_Prod, SourceName_Staging, SourceName_Dev).
-
-4. Click **Add Source** to save your settings.
-5. Select "Workplace Settings" from within the "Settings" section of the left hand side menu.
-6. Select the "Access Management" section from this page.
-7. Select the "Tokens" section from this page.
-8. Click the "+ Create Token" button on this page
-9. Enter a description such as "Unlocking Attribution", select "Workspace Owner" and click "Create"
+5. Enter the configuration setting.  
+6. Click **Add Source** to save your settings.
+7. Navigate to **Settings > Workspace Settings**
+8. Select the **Access Management** tab.
+7. Select the **Tokens** tab. 
+8. Click the **+ Create Token**.
+9. Enter a description such as *Unlocking Attribution*, select **Workspace Owner** and click **Create**.
 10. Copy the token that is presented on the screen.
-11. Now, switch to your account in Unlocking Attribution and within the Onboarding Wizard, paste the taken you copied in step 10.
-12. Click "Connect" and then follow the remaining steps within the onboarding wizard.
+11. Switch to your account in Unlocking Attribution and within the Onboarding Wizard, paste the token you copied.
+12. Click **Connect** and follow the remaining steps within the onboarding wizard.
 
 
 ### Sync
