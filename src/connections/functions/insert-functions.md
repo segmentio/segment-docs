@@ -317,6 +317,10 @@ No, Segment can't guarantee the order in which the events are delivered to an en
 
 No, destination insert functions are currently available as cloud-mode destinations only. Segment is in the early phases of exploration and discovery for supporting customer "web plugins" for custom device-mode destinations and other use cases, but this is unsupported today.
 
+##### Can I connect an insert function to multiple destinations?
+
+No, an insert function can only be connected to one destination.
+
 ##### How do I publish a destination to the public Segment catalog?
 
 If you are a partner, looking to publish your destination and distribute your app through Segment catalog, visit the [Developer Center](https://segment.com/partners/developer-center/){:target="_blank"} and check out the Segment [partner docs](/docs/partners/).
