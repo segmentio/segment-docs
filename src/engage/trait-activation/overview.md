@@ -22,7 +22,7 @@ Trait Enrichment and ID Sync can help you:
 
 - **Configure how you send identifiers to Destinations**: Send the right identifiers to your destinations. For profiles with multiple identifiers, choose a strategy to select identifiers and send them downstream.
 
-
+ 
 ## Next steps 
 
 To learn more about Trait Activation, visit the following docs:
