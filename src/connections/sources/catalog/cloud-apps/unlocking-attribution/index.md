@@ -14,7 +14,8 @@ _**NOTE:** The Unlocking Attribution Source is currently in beta, which means th
 
 
 1. From your workspace's [Sources catalog page](https://app.segment.com/goto-my-workspace/sources/catalog) click **Add Source**.
-2. Search for "Unlocking Attribution" in the Sources Catalog, select Unlocking Attribution, and click **Add Source**.
+2. Search for *Unlocking Attribution* in the Sources Catalog.
+3. Select **Unlocking Attribution** and click **Add Source**.
 3. On the next screen, give the Source a nickname configure any other settings.
 
    - The nickname is used as a label in the Segment app, and Segment creates a related schema name in your warehouse. The nickname can be anything, but we recommend using something that reflects the source itself and distinguishes amongst your environments (eg. SourceName_Prod, SourceName_Staging, SourceName_Dev).
