@@ -34,7 +34,7 @@ This source is maintained by Unlocking Attribution. For any issues with the sour
 
 ### Sync
 
-The Unlocking Attribution source is built with a sync component, which means that Unlocking Attribution writes to Segment on a regular basis, when modelling is re-performed on your customer data (typically on a daily basis).  In the initial sync, all historical modelling is performed and written according to the Collections structure below. The objects are written into a separate schema, corresponding to the source instance's schema name you designated upon creation (for example, `ug_attribution.media_spend_items`).
+The Unlocking Attribution source is built with a sync component, which means that Unlocking Attribution writes to Segment on a regular basis when modeling is re-performed on your customer data (typically on a daily basis).  In the initial sync, all historical modeling is performed and written according to the Collections structure below. The objects are written into a separate schema, corresponding to the source instance's schema name you designated upon creation (for example, `ug_attribution.media_spend_items`).
 
 Segment's sync component uses an upsert API, so the data in your warehouse loaded using sync reflects the latest state of the corresponding resource in Unlocking Attribution. For example, if `conversions.value` goes from `0` to `212` between syncs, on its next sync, that conversion's value will be `212`.
 
