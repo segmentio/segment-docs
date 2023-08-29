@@ -733,6 +733,15 @@ sources:
       - us
     endpoints:
       - us
+  - id: JM48JTU88b
+    display_name: LavieTest
+    hidden: false
+    slug: lavietest
+    url: connections/sources/catalog/cloud-apps/lavietest
+    regions:
+      - us
+    endpoints:
+      - us
   - id: NRgENc89eR
     display_name: Leanplum
     hidden: false
