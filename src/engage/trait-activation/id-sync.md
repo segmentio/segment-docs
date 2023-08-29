@@ -12,7 +12,7 @@ On this page, you'll learn how to configure and begin using ID Sync.
 > ID Sync is in beta, and Segment is actively working on this feature. Some functionality may change before it becomes generally available. [Contact Segment](https://segment.com/help/contact/){:target="_blank"} with any feedback or questions.
 
 > warning ""
-> You must have Engage Foundations to use Trait Enrichment.
+> You must have Engage Foundations to use Trait Enrichment. 
 
 ## Set up ID Sync
 
