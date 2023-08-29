@@ -2,7 +2,7 @@
 title: Unlocking Attribution Source
 ---
 
-The [Unlocking Attribution](https://yourintegration.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) source is a powerful solution designed to model attribution data, aiding marketers in identifying the most effective inbound channels for driving conversions. This documentation will guide you through the process of setting up and utilizing the "Unlocking Attribution" source within your Twilio Segment environment.  Unlocking Attribution is built on top of your pre-existing Segment implementation, ensuring you can be up and running in under an hour.
+The [Unlocking Attribution](https://unlockinggrowth.co/products/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) source is a powerful solution designed to model attribution data, aiding marketers in identifying the most effective inbound channels for driving conversions. This documentation will guide you through the process of setting up and utilizing the "Unlocking Attribution" source within your Twilio Segment environment.  Unlocking Attribution is built on top of your pre-existing Segment implementation, ensuring you can be up and running in under an hour.
 
 This is an [Object Cloud Source](/docs/connections/sources/#object-cloud-sources) which can import data into your Segment warehouse.  This means it can be used both within the Unlocking Attribution tool itself, or from the analytics tools which read from your data warehouse.
 
