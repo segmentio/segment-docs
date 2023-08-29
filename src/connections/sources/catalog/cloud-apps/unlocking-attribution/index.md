@@ -68,10 +68,10 @@ Property Name  | Description
 
 ### conversion_touch_lookup
 
-| Property Name                 | Description                                                                                           |
-| ----------------------------- | ----------------------------------------------------------------------------------------------------- |
-| `conversion`                  | The unique ID of the conversion event                                                                 |
-| `touch_id`                    | The unique ID of the specific touch                                                                   |
+Property Name | Description         
+--------------- | ------------
+`conversion` | The unique ID of the conversion event.        
+`touch_id` | The unique ID of the specific touch.
 
 ### touches
 
