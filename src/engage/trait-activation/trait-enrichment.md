@@ -12,13 +12,11 @@ Use Trait Enrichment to access Segment profile traits when you sync Audiences to
 > - For Iterable, Facebook Custom Audiences, Zendesk, and Google Adwords, use [set up Trait Enrichment](#set-up-trait-enrichment). 
 > - If you're using SendGrid, Braze, or Salesforce Actions, use the [Destination Actions setup steps](#destination-actions-setup). 
 
-## Requirements
+> info "Trait Enrichment in beta"
+> Trait Enrichment is in beta, and Segment is actively working on this feature. Some functionality may change before it becomes generally available. [Contact Segment](https://segment.com/help/contact/){:target="_blank"} with any feedback or questions.
 
-To use Trait Enrichment, you must have the following:
-
-- Engage Foundations 
-- A workspace approved for Trait Enrichment 
-- Less than 10 million cumulative number of users across Audiences with Trait Enrichment configured
+> warning ""
+> You must have Engage Foundations to use Trait Enrichment.
 
 ## Set up Trait Enrichment
 
@@ -87,7 +85,7 @@ Additionally, you can only map one trait per audience to Google as a phone numbe
 
 ## Destination Actions setup
 
-If you're using Destination Actions, use the following steps to set up Trait Enrichment.
+If you're using [Destination Actions](/docs/connections/destinations/actions/), use the following steps to set up Trait Enrichment.
 
 1. Navigate to **Engage > Engage settings**. 
 2. Select the Destinations tab, then click **+ Add Destination**. Search for either Braze Cloud Mode (Actions), Salesforce (Actions), or SendGrid Marketing Campaigns. 
@@ -118,15 +116,11 @@ After you add traits, configure how your selected traits will map to your Destin
 4. Click **Save** and navigate back to Engage to finish building your Audience. 
 
 
-## Limits and best practices
+## Best practices
 
-Note the following limitations and best practices for Trait Enrichment:
-
-1. To enable Trait Enrichment, the total number of profiles across all Audiences must be less than 10 million.
-2. Segment supports a maximum of five concurrent syncs. 
-- Concurrent syncs could be five Audiences connected to a destination or one Audience connected to five destinations.
-3. Segment recommends using Trait Enrichment with new Audiences. 
-4. Trait Enrichment supports mapping 15 traits by default. If you'd like to map additional traits, please reach out to [Segment support](https://segment.com/help/contact/){:target="_blank"}.
+For best results with Trait Enrichment, Segment recommends:
+- Using Trait Enrichment with new Audiences.
+- Using smaller Audiences for real-time use cases, as data delivery is slower for large Audiences. 
 
 ## Frequently asked questions
 {% faq %}

@@ -7,18 +7,12 @@ plan: engage-foundations
 Use ID Sync to select identifiers and a sync strategy when you send Audience data to your destinations. Configure how you send identifiers, which provides more control over the data you send downstream. 
 
 On this page, you'll learn how to configure and begin using ID Sync.
- 
 
-> success ""
-> If you haven't connected a Destination yet, view more about [Trait Activation setup](/docs/engage/trait-activation/trait-activation-setup/).
+> info "ID Sync in beta"
+> ID Sync is in beta, and Segment is actively working on this feature. Some functionality may change before it becomes generally available. [Contact Segment](https://segment.com/help/contact/){:target="_blank"} with any feedback or questions.
 
-## Requirements
-
-To use ID Sync, you must have the following:
-
-- Engage Foundations
-- A workspace approved for ID Sync
-- No more than three identifiers using the **ALL** strategy for an Audience or Destination
+> warning ""
+> You must have Engage Foundations to use Trait Enrichment.
 
 ## Set up ID Sync
 

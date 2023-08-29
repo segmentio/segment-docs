@@ -6,6 +6,9 @@ beta: true
 
 On this page, you'll learn how to set up the Destination that you'll use to get started with [Trait Enrichment](/docs/engage/trait-activation/trait-enrichment/) and [ID Sync](/docs/engage/trait-activation/id-sync/).  
 
+> info "Trait Activation in beta"
+> Trait Activation is in beta, and Segment is actively working on this feature. Some functionality may change before it becomes generally available. [Contact Segment](https://segment.com/help/contact/){:target="_blank"} with any feedback or questions.
+
 ## Set up a Destination
 
 You'll first choose a Destinaton to connect to your Audience and use with Trait Activation. Trait Activation supports real-time and batch audiences for the Destinations listed in the table below. Select your Destination, view its Segment documentation, then follow the required setup steps. 
@@ -21,6 +24,7 @@ You'll first choose a Destinaton to connect to your Audience and use with Trait 
 | [Adobe Target (Actions)](/docs/connections/destinations/catalog/actions-adobe-target-cloud/#available-actions)    | Event      |  1. Connect Adobe Target (Actions) to your Segment space. <br> 2. On the **Settings** tab, input your Adobe Target destination settings. <br> 3. Follow the Destination Actions documentation for [customized mappings](/docs/connections/destinations/actions/#customizing-mappings). <br> 4. Enable the destination and configured mappings.                        |
 | [Salesforce (Actions)](/docs/connections/destinations/catalog/actions-salesforce/) | Event          | 1. Connect Salesforce to your Segment space. <br> 2. Select **Actions** as the destination framework. <br> 3. From the **Settings** tab, authenticate with Salesforce using OAuth. <br> 4. Follow steps in the [Customizing Mappings documentation](/docs/connections/destinations/actions/#customizing-mappings). <br> 5. Enable the Destination and configured mappings.                  |
 |[SendGrid Marketing Campaigns](/docs/connections/destinations/catalog/actions-sendgrid/)   |   Event           |  1. Connect SendGrid Marketing Campaigns to your Segment space. <br> 2. Enter your SendGrid Marketing Campaigns API key into the connection settings.                      |
+|[LiveRamp](/docs/connections/destinations/catalog/actions-liveramp-audiences/)   |   Event           |  1. Set up your LiveRamp file drop. <br> 2. Connect LiveRamp Audiences to your Segment space.
 
 ## Resyncs
 
