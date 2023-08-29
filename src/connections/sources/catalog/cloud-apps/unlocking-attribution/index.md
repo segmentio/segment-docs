@@ -116,11 +116,11 @@ Each row in the Media Spend Items collection represent a unique combination of t
 ### media_spend_daily_spend
 
 
-| Property Name                 | Description                                                                                           |
-| ----------------------------- | ----------------------------------------------------------------------------------------------------- |
-| `campaign`                    | The unique ID of the media_spend_items item, which this spend row corresponds to                      |
-| `date_start`                  | The date of this spending item                                                                        |
-| `spend`                       | The amount of spend on that day                                                                       |
+Property Name | Description 
+--------------- | -------------
+`campaign` | The unique ID of the media_spend_items item, which the spend row corresponds to.   
+`date_start` | The date of the spending item.                                                               
+`spend` | The amount spent on that day.                                        
 
 
 ---
