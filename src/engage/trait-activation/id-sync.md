@@ -41,14 +41,14 @@ With Customized setup, you can choose which identifiers you want to map downstre
 - *Iterable* and *Zendesk* autopopulate an open text field which you can modify.
 2. Add an ID strategy. 
 - This is a strategy for a particular identifier which sends either the `last added`, `first added`, or `all` identifiers to your destination.
-3. Click **Save**, then finish building your Audience.
+3. Click **Save**, then finish building your audience.
 
 
 ## Limits and best practices
 
-- Segment recommends using ID Sync with new Audiences. 
+- Segment recommends using ID Sync with new audiences. 
 - ID sync configuration changes apply to new data flowing after about five minutes. Changes don't apply to active or running syncs. 
-- ID Sync used on existing Audience destinations doesn't resync the entire audience. Only new data flowing into Segment follows your ID Sync configuration. 
+- ID Sync used on existing audience destinations doesn't resync the entire audience. Only new data flowing into Segment follows your ID Sync configuration. 
 - Segment doesn't maintain ID Sync history, which means that any changes are irreversible. 
 - You can only select a maximum of three identifiers with an `All` strategy.
 
@@ -57,13 +57,13 @@ With Customized setup, you can choose which identifiers you want to map downstre
 {% faq %}
 {% faqitem What's the difference between Trait Enrichment and ID Sync? %}
 
-**Trait Enrichment** maps the traits data you've collected with Engage to use when syncing Audiences to destinations. 
+**Trait Enrichment** maps the traits data you've collected with Engage to use when syncing audiences to destinations. 
 
 **ID Sync** maps the identities data gathered for a profile for use when syncing Audiences to destinations.
 
 {% endfaqitem %}
 
-{% faqitem How do syncs differ between Audiences with ID Sync and Audiences without ID Sync? %}
+{% faqitem How do syncs differ between audiences with ID Sync and audiences without ID Sync? %}
 
 Audiences without ID Sync aren't allowed to select any strategy, and by default will send all values of an identifier to the destination. Also, audiences without ID Sync don't send any custom identifiers that are present in your space. 
 

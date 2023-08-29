@@ -44,8 +44,8 @@ With Customized setup, you can choose which traits you want to map to your desti
 1. Click **Customized Setup**, then click **Add Trait**.
 2. Select all traits you want to sync to your destination, and click **Save**. 
 - Use the **Segment** column to select traits from the Segment Spec. 
-- Use the **Destination** column to select which traits you want to map to in your Destination. By default, Segment attempts to find traits with matching names.
-3. Click **Save** and finish building your Audience. 
+- Use the **Destination** column to select which traits you want to map to in your destination. By default, Segment attempts to find traits with matching names.
+3. Click **Save** and finish building your audience. 
 
 ### Destination requirements 
 
@@ -113,15 +113,15 @@ After you add traits, configure how your selected traits will map to your Destin
 - **Salesforce (Actions)**: Use `Identify calls` as your event trigger.
 - **SendGrid Marketing Campaigns**: Configure an "Upsert Contact" mapping. Use `Identify calls` as the event trigger. 
 3. Locate the  **Select mappings** section to confirm the default field mappings match the traits in your custom setup. 
-- To update a trait field mapping click on a field, and in the dropdown search bar enter `traits.` followed by your trait. For example, `traits.email`. Then, click **Use as an event variable**.
+- To update a trait field mapping, click on a field, and in the dropdown search bar enter `traits.` followed by your trait. For example, `traits.email`. Then, click **Use as an event variable**.
 4. Click **Save** and navigate back to Engage to finish building your Audience. 
 
 
 ## Best practices
 
 For best results with Trait Enrichment, Segment recommends:
-- Using Trait Enrichment with new Audiences.
-- Using smaller Audiences for real-time use cases, as data delivery is slower for large Audiences. 
+- Using Trait Enrichment with new audiences.
+- Using smaller audiences for real-time use cases, as data delivery is slower for large audiences. 
 
 ## Frequently asked questions
 {% faq %}
