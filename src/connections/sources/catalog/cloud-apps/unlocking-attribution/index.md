@@ -44,13 +44,13 @@ The source syncs and warehouse syncs are independent processes. Source runs pull
 ## Collections
 Collections are the groupings of resources that Segment pulls from your source. In your warehouse, each collection gets its own table.
 
-| Collection                        | Type   | Description                                                                                                                                                                                                                                                                                                                                                                                                          |
-| --------------------------------- | ------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `conversions`                     | object | This collection contains each identified conversion event, as configured in Unlocking Attribution and detected by the modelling.                                                                                         |
-| `convresion_touch_lookup`         | object | This collection contains a cross-reference between each conversion and all the pre-conversion touches which the end-user had.                                                                                                    |
-| `touches`                         | object | A touch is defined as any interaction that a user/customer/prospect had leading up to the conversion event. This generally means website visits, but can sometimes have broader definitions, based on the exact implementation.
-| `media_spend_items`               | object | All cost data from the various media platforms is downloaded and stored in the the Media Spend Items and Media Spend Daily Spend collections.
-| `media_spend_daily_spend`         | object | This collection captures the daily spend for each campaign (and sometimes broken down by Ad Collective or Ad Id).
+Collection | Type | Description
+---------- | ----- | -------------                                                                                                                                                                                                                                                                                                                                                                                                       
+`conversions` | object | This collection contains each identified conversion event, as configured in Unlocking Attribution and detected by the modeling.                                                                                         |
+`conversion_touch_lookup` | object | This collection contains a cross-reference between each conversion and all the pre-conversion touches the end-user had.                                                                                                    |
+`touches` | object | A touch is defined as any interaction that a user had leading up to the conversion event. This generally means website visits, but can sometimes have broader definitions, based on the exact implementation.
+`media_spend_items` | object | All cost data from the various media platforms is downloaded and stored in the the Media Spend Items and Media Spend Daily Spend collections.
+`media_spend_daily_spend` | object | This collection captures the daily spend for each campaign (and is sometimes broken down by Ad Collective or Ad Id).
 
 ## Collection Properties
 Below are tables outlining the properties included in the collections listed above.
