@@ -57,14 +57,14 @@ Below are tables outlining the properties included in the collections listed abo
 
 ### conversions
 
-| Property Name                 | Description                                                                                           |
-| ----------------------------- | ----------------------------------------------------------------------------------------------------- |
-| `id`                          | The unique ID of this conversion event                                                                |
-| `anonymous_id`                | If available, the anonymous_id of the user who performed the conversion event                         |
-| `user_id`                     | If available, the user_id of the user who performed the conversion event                              |
-| `conversiontype`              | The name of the conversion event                                                                      |
-| `timestamp`                   | The date/time that the conversion event occurred                                                      |
-| `value`                       | The value (typically revenue) of the conversion event                                                 |
+Property Name  | Description
+---------------- | ------------                                                                                          
+`id` | The unique ID of the conversion event.
+`anonymous_id` | The anonymous_id of the user who performed the conversion event.                  
+`user_id` | The user_id of the user who performed the conversion event.                            
+`conversiontype` | The name of the conversion event.                                                                 
+`timestamp` | The date and time that the conversion event occurred.                                             
+`value` | The value of the conversion event. This is typically revenue.                                                
 
 ### conversion_touch_lookup
 
