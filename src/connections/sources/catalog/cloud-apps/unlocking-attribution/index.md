@@ -8,7 +8,8 @@ This is an [Object Cloud Source](/docs/connections/sources/#object-cloud-sources
 
 This source is maintained by Unlocking Attribution. For any issues with the source, [contact their Support team](mailto:support@unlockinggrowth.co).
 
-_**NOTE:** The Unlocking Attribution Source is currently in beta, which means that they are still actively developing the source. This doc was last updated on August 14th, 2023. If you are interested in joining their beta program or have any feedback to help improve the Unlocking Attribution Source and its documentation, [let their team know](mailto:support@unlockinggrowth.co)!_
+> info "" 
+> The Unlocking Attribution Source is currently in beta. If you're interested in joining the beta program or have any feedback to help improve the Unlocking Attribution Source and its documentation, [let the team know](mailto:support@unlockinggrowth.co).
 
 ## Getting Started
 
