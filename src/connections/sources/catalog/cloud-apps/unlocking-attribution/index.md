@@ -14,7 +14,7 @@ This source is maintained by Unlocking Attribution. For any issues with the sour
 ## Getting Started
 
 
-1. From your workspace's [Sources catalog page](https://app.segment.com/goto-my-workspace/sources/catalog) click **Add Source**.
+1. Navigate to **Connections > Catalog** and select the **Sources** tab of the catalog. 
 2. Search for *Unlocking Attribution* in the Sources Catalog.
 3. Select **Unlocking Attribution** and click **Add Source**.
 4. Give the Source a nickname.
