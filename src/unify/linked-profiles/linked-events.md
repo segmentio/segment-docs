@@ -8,7 +8,7 @@ plan: unify
 > Linked Events is in private beta, and Segment is actively working on this feature. Some functionality may change before it becomes generally available. [Contact Segment](https://segment.com/help/contact/){:target="_blank"} with any feedback or questions.
 
 
-Use Linked Events, powered by Linked Profiles, to enrich events streams flowing from your data warehouse to your Destinations. Insert additional event context for downstream applications for richer data about each event. For example, append specific product details for a user who is looking to renew a subscription. 
+Use Linked Events, powered by Linked Profiles, to enrich events streams flowing from your data warehouse to your Destinations. Insert additional event context for downstream applications for richer data about each event. 
 
 On this page, you'll learn how to get started with Linked Events.
 
