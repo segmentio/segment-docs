@@ -8,8 +8,7 @@ plan: unify
 > Linked Events is in private beta, and Segment is actively working on this feature. Some functionality may change before it becomes generally available. [Contact Segment](https://segment.com/help/contact/){:target="_blank"} with any feedback or questions.
 
 
-Use Linked Events, powered by Linked Profiles, to enrich events streams flowing from your data warehouse to your Destinations. Insert additional event context for downstream applications for richer data about each event. For example, you can append specific product details for a user who is looking to renew a 
-subscription. 
+Use Linked Events, powered by Linked Profiles, to enrich events streams flowing from your data warehouse to your Destinations. Insert additional event context for downstream applications for richer data about each event. For example, append specific product details for a user who is looking to renew a subscription. 
 
 On this page, you'll learn how to get started with Linked Events.
 
@@ -17,17 +16,17 @@ On this page, you'll learn how to get started with Linked Events.
 
 Before getting started, note the following requirements for Linked Events. 
 
-1. Snowflake or BigQuery data warehouse support.
-2. Write access to your data warehouse. For more information, view the [BigQuery](/docs/unify/linked-profiles/setup-guides/bigquery/) and [Snowflake](/docs/unify/linked-profiles/setup-guides/snowflake/) setup guides. 
-3. Access to Unify in your workspace. 
-4. Access to the Destination you'll be using with Linked Events. This will help you to validate your data. 
+1. Snowflake or BigQuery data warehouse support and write access.
+- For more information, view the [BigQuery](/docs/unify/linked-profiles/setup-guides/bigquery/) and [Snowflake](/docs/unify/linked-profiles/setup-guides/snowflake/) setup guides. 
+2. Access to Unify in your workspace. 
+3. Access to the Destination you'll be using with Linked Events. This will help you to validate your data. 
 
 
 #### Linked Events permissions
 
 The following Segment access [roles](/docs/segment-app/iam/roles/) apply to Linked Events:
 
-**Entities Admin Access**: Full CRUD access to all Enttiies within a workspace. You can also grant or revoke user permissions.
+**Entities Admin Access**: Full CRUD access to all Entities within a workspace. You can also grant or revoke user permissions.
 
 **Entities Read-only Access**: Read access to all Entities models and destinations in a workspace. 
 
@@ -51,7 +50,7 @@ For Linked Events:
 > success ""
 > Linked Events uses Segment's [Reverse ETL](/docs/connections/reverse-etl/) infrastructure for pulling in data from your warehouse. 
 
-To get started, you'll need to connect a data warehouse which Segment will use for Linked Events. Linked Events supports BigQuery and Snowflake data warehouses.
+To get started, you'll need to connect a data warehouse which Segment will use for Linked Events. Linked Events supports [BigQuery](/docs/unify/linked-profiles/setup-guides/bigquery/) and [Snowflake](/docs/unify/linked-profiles/setup-guides/snowflake/) data warehouses.
 
 1. Navigate to **Unify** > **Data graph** and click **Add warehouse**. 
 2. Select a warehouse to connect from the [supported warehouse Destinations](#supported-warehouse-destinations). 
@@ -179,7 +178,7 @@ Below are some tips to help you troubleshoot common questions that come up.
 
 ### Data Warehouse Permissions
 
-To use Linked Events, be sure that you have proper permissions for the Data Warehouse you're using. Learn more about [updating permissions](#).
+To use Linked Events, be sure that you have proper permissions for the Data Warehouse you're using. Visit the [BigQuery](/docs/unify/linked-profiles/setup-guides/bigquery/) and [snowflake](/docs/unify/linked-profiles/setup-guides/snowflake/) setup guides to learn more about updating permissions. 
 
 ### Data Warehouse Sync
 
@@ -201,6 +200,5 @@ Linked Events uses the existing Audit Trail UI in the Settings page. Navigate to
 
 You can define a schedule for refreshing the linked data from your data warehouse.
 
-### Multiple linked events from different tables and databases 
 
 
