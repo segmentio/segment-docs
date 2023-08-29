@@ -4,7 +4,7 @@ redirect_from:
   - '/connections/sources/catalog/libraries/website/analytics.js/'
   - '/sources/website/javascript/'
   - '/sources/website/analytics.js/'
-  - '/connections/sources/catalog/libraries/website/javascript/analytics-js-2/'
+  - '/connections/sources/catalog/libraries/website/javascript/analytics-js-2/' 
 strat: ajs
 id: IqDTy1TpoU
 ---
