@@ -75,21 +75,21 @@ Property Name | Description
 
 ### touches
 
-| Property Name                 | Description                                                                                           |
-| ----------------------------- | ----------------------------------------------------------------------------------------------------- |
-| `timestamp`                   | The date/time that the touch occurred                                                                 |
-| `id`                          | The unique ID of this touch                                                                           |
-| `context_page_url`            | The full URL of the page viewed                                                                       |
-| `context_page_path`           | The path of the page viewed                                                                           |
-| `context_page_title`          | The title of the page viewed                                                                          |
-| `context_page_referrer`       | The referrer from where the user clicked from to get to this page                                     |
-| `context_campaign_source`     | The contents of the utm_source query parameter in the URL                                             |
-| `context_campaign_medium`     | The contents of the utm_medium query parameter in the URL                                             |
-| `context_campaign_name`       | The contents of the utm_campaign query parameter in the URL                                           |
-| `context_campaign_content`    | The contents of the utm_content query parameter in the URL                                            |
-| `context_campaign_terms`      | The contents of the utm_terms query parameter in the URL                                              |
-| `campaign`                    | The unique ID of the “Media Spend Item” object which this touch was mapped to                         |
-| `search_narrative`            | The plain-English description of how this particular touch was mapped to campaign cost data           |
+Property Name | Description
+--------------- | -------------   
+`timestamp` | The time that the touch occurred.                                                                 
+`id` | The unique ID of the touch.                                                                           
+`context_page_url` | The full URL of the page viewed.                                                                       
+`context_page_path` | The path of the page viewed.                                                                           
+`context_page_title` | The title of the page viewed.                                                                          
+`context_page_referrer` | The referrer from where the user clicked from to get to the page.                                     
+`context_campaign_source` | The contents of the utm_source query parameter in the URL.                                             
+`context_campaign_medium` | The contents of the utm_medium query parameter in the URL.                                             
+`context_campaign_name` | The contents of the utm_campaign query parameter in the URL.                                           
+`context_campaign_content` | The contents of the utm_content query parameter in the URL.                                            
+`context_campaign_terms` | The contents of the utm_terms query parameter in the URL.                                              
+`campaign` | The unique ID of the “Media Spend Item” object which the touch was mapped to.                         
+`search_narrative` | The description of how the touch was mapped to campaign cost data.           
 
 
 ### media_spend_items
