@@ -36,7 +36,7 @@ This source is maintained by Unlocking Attribution. For any issues with the sour
 
 The Unlocking Attribution source is built with a sync component, which means that Unlocking Attribution writes to Segment on a regular basis, when modelling is re-performed on your customer data (typically on a daily basis).  In the initial sync, all historical modelling is performed and written according to the Collections structure below. The objects are written into a separate schema, corresponding to the source instance's schema name you designated upon creation (for example, `ug_attribution.media_spend_items`).
 
-Segment's sync component uses an upsert API, so the data in your warehouse loaded using sync reflects the latest state of the corresponding resource in Unlocking Attribution. For example, if `conversions.value` goes from `0` to `212` between syncs, on its next sync that conversion's value will be `212`.
+Segment's sync component uses an upsert API, so the data in your warehouse loaded using sync reflects the latest state of the corresponding resource in Unlocking Attribution. For example, if `conversions.value` goes from `0` to `212` between syncs, on its next sync, that conversion's value will be `212`.
 
 The source syncs and warehouse syncs are independent processes. Source runs pull your data into the Segment Hub, and warehouse runs flush that data to your warehouse. Sources sync with Segment daily. Depending on your Warehouses plan, Segment pushes the Source data to your warehouse on the interval associated with your billing plan.
 
