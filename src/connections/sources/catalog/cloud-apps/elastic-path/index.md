@@ -90,4 +90,4 @@ Note: We are using properties of these events from [eCommerce Spec](https://segm
 
 ## Add destinations
 
-Now that your Source is configured, you can connect it with Destinations. Log into your downstream tools and check to see that your events appear as expected, and that they contain all of the properties you expect. If your events and properties don’t appear, check the Event Delivery tool, and refer to the Destination docs for each tool for troubleshooting. If there are any issues with how the events are arriving to Segment, contact the [Elastic Path's Support team](https://support.elasticpath.com/hc/en-us){:target="_blank"}.
+Now that you've configured your source, you can connect it with destinations. Log in to your downstream tools and check to see that your events appear as expected, and that they contain all of the properties you expect. If your events and properties don’t appear, check the Event Delivery tool, and refer to the Destination docs for each tool for troubleshooting. If there are any issues with how the events arrive to Segment, contact the [Elastic Path Support team](https://support.elasticpath.com/hc/en-us){:target="_blank"}.
