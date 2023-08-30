@@ -34,7 +34,7 @@ The table below lists events that Elastic Path sends to Segment. These events ap
 | `Order Completed`                | Tracks when a user completes their order. For example, when an order is paid or authorized.            |
 | `Order Updated`                  | When an order is updated. For example, when the user updates the shipping address.              |
 | `Order Cancelled`                | When a user cancels an order.                                                  |
-| `Order Refunded`                 | Order refunded event                                                   |
+| `Order Refunded`                 | When a user refunds an order.                                                   |
 
 ## Event properties
 
