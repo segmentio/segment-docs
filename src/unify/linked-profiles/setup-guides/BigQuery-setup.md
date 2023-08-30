@@ -41,40 +41,9 @@ OR
 
 These can be scoped to projects or [datasets](https://cloud.google.com/bigquery/docs/control-access-to-resources-iam#grant_access_to_a_dataset){:target="_blank"}. 
 
-<!--
-
-Add the following or any predefined role that contains below permissions to:
-`__segment_reverse_etl` dataset:
-- bigquery.tables.create
-- bigquery.tables.getData
-- bigquery.tables.update
-- bigquery.tables.updateData
-
-Visit the [BigQuery docs](https://cloud.google.com/bigquery/docs/control-access-to-resources-iam#grant_access_to_a_dataset) to learn more. 
-
--->
-
 > info ""
-> If you've provided a [BigQuery User role](https://cloud.google.com/bigquery/docs/access-control#bigquery.user){:target="_blank"} at project level following general setup, you've already given `bigquery.datasets.get` and `bigquery.tables.list` at project level. 
 > Segment needs to list tables which is only allowed at dataset level. As a result, Segment needs `bigquery.tables.get` and `bigquery.tables.getData` at dataset level so that you can create Linked Events on all listed tables. However, you can still scope `bigquery.tables.get` and `bigquery.tables.getData` to specific tables. See BigQuery's [docs](https://cloud.google.com/bigquery/docs/control-access-to-resources-iam#grant_access_to_a_table_or_view){:target="_blank"} for more info.
 
 
-<!--
-16. Enter your **Data Location**.
-17. Click **Test Connection** to test to see if the connection works. If the connection fails, make sure you have the right permissions and credentials and try again.
-18. Click **Create Source** if the test connection is successful.
 
-
-## Constructing your own role or policy
-When you construct your own role or policy, Segment needs the following permissions:
-
-Permission | Details
----------- | --------
-`bigquery.datasets.create` | This allows Segment to create/manage a `__segment_reverse_etl` dataset for tracking state between syncs.
-`bigquery.datasets.get` | This allows Segment to determine if the aforementioned dataset exists
-`bigquery.jobs.create` | This allows Segment to execute queries on any datasets/tables your model query references and manage tables that Segment uses for tracking
-
-The `bigquery.datasets.*` permissions can be scoped only to the `__segment_reverse_etl` dataset. If you don't wish to grant `bigquery.datasets.create` access, you may create this dataset yourself, but Segment still needs  `bigquery.datasets.get` access.
-
--->
 
