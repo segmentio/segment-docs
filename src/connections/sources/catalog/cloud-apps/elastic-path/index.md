@@ -17,8 +17,9 @@ This source is maintained by Elastic Path. For any issues with the source, conta
 4. Click **Add Source** to save your settings.
 5. Copy the Write key from the Segment UI and log in to the Elastic Path Commerce Manager.  
 6. Navigate to Integrations Hub > Select Segment integration > [configure integration](https://elasticpath.dev/docs/composer/integration-hub/customer-management/segment){:target="_blank"} where you need to use Segment key.
-6. This integration is using JSONata templates to provide flexibility to send your custom fields as well to Segment.
-7. In this integration, you can configure that how you want to associate Elastic Path event with Segment event for streaming data e.g. send `Order Completed` event to Segment when Elastic Path order event is `order.paid` or `order.authorized` or if order is fulfilled i.e. `order.fulfilled`.
+
+This integration is uses JSONata templates to provide flexibility to send your custom fields to Segment.
+You can configure how you want to associate an Elastic Path event with Segment event for streaming data. For example, send the `Order Completed` event to Segment when the Elastic Path order event is `order.paid` or `order.authorized` or if order is fulfilled, for example, `order.fulfilled`.
 
 
 ## Events
