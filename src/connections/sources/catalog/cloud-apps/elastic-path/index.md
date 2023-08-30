@@ -12,7 +12,7 @@ This source is maintained by Elastic Path. For any issues with the source, conta
 
 1. Navigate to **Connections > Catalog** and make sure you're on the **Sources** tab of the catalog.
 2. Search for **Elastic Path** in the Sources Catalog, select **Elastic Path**, and click **Add Source**.
-3. On the next screen, give the Source a name configure any other settings.
+3. Give the Source a name and configure any other settings.
     - The name identifies this source within your workspace, and typically reflects the name of the application. The name can be anything, but Segment recommends that you use something that reflects the source itself and distinguishes amongst your environments (for example, `SourceName_Prod`, `SourceName_Staging`, or `SourceName_Dev`).
 4. Click **Add Source** to save your settings.
 5. Copy the Write key from the Segment UI and log in to Elastic Path Commerce Manager - navigate to Integrations Hub > Select Segment integration > [configure integration](https://elasticpath.dev/docs/composer/integration-hub/customer-management/segment){:target="_blank"} where you need to use Segment key
