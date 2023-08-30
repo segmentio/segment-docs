@@ -13,6 +13,9 @@ On this page, you'll learn how to set up the Destination that you'll use to get 
 
 You'll first choose a Destinaton to connect to your Audience and use with Trait Activation. Trait Activation supports real-time and batch audiences for the Destinations listed in the table below. Select your Destination, view its Segment documentation, then follow the required setup steps. 
 
+> warning ""
+> Trait Activation only supports [Iterable Classic](/docs/connections/destinations/catalog/iterable/) and [Zendesk Classic](/docs/connections/destinations/catalog/zendesk/) during beta.
+
 
 |-----------------------|---------------|---------------------------|
 |Destination            |  Type         |  Required Steps           |
@@ -28,7 +31,7 @@ You'll first choose a Destinaton to connect to your Audience and use with Trait 
 |[Iterable (Actions)](/docs/connections/destinations/catalog/actions-iterable/)   |   Event           |  1. Connect Iterable (Actions) to your Segment space. <br> 2. Enter your Iterable (Actions) API key and Data Center Location into the Destination Settings.           |
 
 
-## Resyncs
+## Resyncs 
 
 Segment recommends creating a new Audience for Trait Enrichment and ID Sync. For existing Audience destinations, both Trait Enrichment and ID Sync won't resync the entire Audience. Only new data flowing into Segment will adhere to new trait settings. 
 
