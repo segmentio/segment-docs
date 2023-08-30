@@ -660,6 +660,9 @@ Segment does not recommend using `external_ids` as a lookup field that might con
 
 ### Performance
 
+> note ""
+> While Segment strives to provide a highly reliable service, we do not guarantee a 100% success rate for the Profile API. Our Uptime Service Level Objective (SLO) is set at 99%. Please note that transient issues may occasionally arise due to system scalability adjustments or during database maintenance.
+
 Segment typically sees p95 response times under 200ms for the `/traits` endpoint, based on an in-region test in `us-west` to retrieve 50 traits. However, if you know which traits you're looking for, Segment suggests you use the `/traits?include=` parameter to provide a list of traits you want to retrieve.
 
 Another best practice to optimize performance in high-throughput applications is to use connection pooling. Your personalization service should share existing connections when making a request to the Profile API, instead of opening and closing a connection for each request. This additional TLS handshake is a common source of overhead for each request.
