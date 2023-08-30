@@ -19,10 +19,10 @@ To setup the Segment BigQuery connector:
 6. Click **+ Add another role** and add the *BigQuery Job User* role.
 7. Click **+ Add another role** and add the [*BigQuery Metadata Viewer*](https://cloud.google.com/bigquery/docs/access-control#bigquery.metadataViewer){:target="_blank"} role. 
 8. Click **Continue**, then click **Done**.
-9. Search for the service account you just created.
+9. Search for the service account you've just created.
 11. From your service account, click the three dots under **Actions** and select **Manage keys**.
 12. Click **Add Key > Create new key**.
-13. In the pop-up window, select **JSON** for the key type, and click **Create**. The file will download.
+13. In the pop-up window, select **JSON** for the key type, and click **Create**. 
 14. Copy all the content within the file you've created and downloaded.
 15. Navigate to Segment and paste all the credentials you copied from step 13 into the **Enter your credentials** section as you connect your warehouse destination.
 
@@ -34,16 +34,15 @@ Grant
 - [BigQuery Data Viewer](https://cloud.google.com/bigquery/docs/access-control#bigquery.dataViewer){:target="_blank"} role
 OR
 - Permissions:
-    - bigquery.datasets.get
-    - bigquery.tables.list
-    - bigquery.tables.get
-    - bigquery.tables.getData
+    - `bigquery.datasets.get`
+    - `bigquery.tables.list`
+    - `bigquery.tables.get`
+    - `bigquery.tables.getData`
 
 These can be scoped to projects or [datasets](https://cloud.google.com/bigquery/docs/control-access-to-resources-iam#grant_access_to_a_dataset){:target="_blank"}. 
 
 > info ""
-> Segment needs to list tables which is only allowed at dataset level. As a result, Segment needs `bigquery.tables.get` and `bigquery.tables.getData` at dataset level so that you can create Linked Events on all listed tables. However, you can still scope `bigquery.tables.get` and `bigquery.tables.getData` to specific tables. See BigQuery's [docs](https://cloud.google.com/bigquery/docs/control-access-to-resources-iam#grant_access_to_a_table_or_view){:target="_blank"} for more info.
-
+> To create Linked Events on your listed tables, Segment needs `bigquery.tables.get` and `bigquery.tables.getData` at dataset level. However, you can still scope `bigquery.tables.get` and `bigquery.tables.getData` to specific tables. See BigQuery's [docs](https://cloud.google.com/bigquery/docs/control-access-to-resources-iam#grant_access_to_a_table_or_view){:target="_blank"} for more info.
 
 
 
