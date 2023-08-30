@@ -189,7 +189,7 @@ When you use Segment's Analytics.js Device Mode integration, Segment does the fo
 
    However, Segment checks the `properties.currency` property to see if you passed a currency in your event. If you did not, the default `currencyCode` set on page load is `USD`.
 
-   **Important**: To collect `transactionID`, make sure you enable the transactionID storage setting inside your [Adobe Reporting Suite](https://marketing.adobe.com/resources/help/en_US/sc/implement/transactionID.html)!
+   **Important**: To collect `transactionID`, make sure you enable the transactionID storage setting inside your [Adobe Reporting Suite](https://marketing.adobe.com/resources/help/en_US/sc/implement/transactionID.html){:target="_blank”}.
 
 7. Attaches the `timestamp` as `window.s.timestamp` if your **Timestamp Option** (in the Adobe settings in Segment) is set to **Timestamp Enabled** or **Timestamp Optional**.
 
@@ -326,7 +326,7 @@ When you make a `page` call, here's what Segment does from the browser when you 
 
 ## Conversion Variables - eVars
 
-Custom Conversion variables, also known as eVars, are how Adobe segments conversion success metrics in custom marketing reports. To learn more, see the [Adobe documentation about eVars and how to configure them](https://docs.adobe.com/content/help/en/analytics/admin/admin-tools/conversion-variables/conversion-var-admin.html).
+Custom Conversion variables, also known as eVars, are how Adobe segments conversion success metrics in custom marketing reports. To learn more, see the [Adobe documentation about eVars and how to configure them](https://docs.adobe.com/content/help/en/analytics/admin/admin-tools/conversion-variables/conversion-var-admin.html){:target="_blank”}.
 
 You must configure an eVar mapping in your Segment destination settings to send eVars to Adobe on Track and Page calls. When configuring the mapping, the list of eVars must be defined in the Adobe Analytics UI. Map your Adobe Analytics eVar names to the Segment property names you're using in your Segment events. Enter a Segment property name on the left and an Adobe Analytics eVar number on the right. You can view your Segment events and properties in your Schema.
 
@@ -335,7 +335,7 @@ An example eVar mapping in the Segment Destination settings UI should look like 
 
 ## Merchandising events
 
-The Merchandising Events setting allows you to set eVars and events on a per-product basis within the "products" string, and supports increment and currency events. This provides robust product string support, which you can read more about [in the Adobe Analytics Compontents guide](https://marketing.adobe.com/resources/help/en_US/sc/implement/products.html).
+The Merchandising Events setting allows you to set eVars and events on a per-product basis within the "products" string, and supports increment and currency events. This provides robust product string support, which you can read more about [in the Adobe Analytics Compontents guide](https://marketing.adobe.com/resources/help/en_US/sc/implement/products.html){:target="_blank”}.
 
 Per the Adobe documentation, Segment formats the `s.products` as `[category][item][quantity][total][incrementor][merchString]`. Segment automatically assigns the product category, quantity, and total. The `[item]` defaults to the Product Name. If you want to use the SKU or ID instead, you can change this by using the [Product Identifier setting](#product-identifier-setting).
 
@@ -446,7 +446,7 @@ analytics.page({
 
 ## Custom Traffic Variables - props
 
-Custom Traffic Variables, also known as props, allow you to correlate custom data with specific traffic-related events in Adobe. To learn more about props and how to configure them in the Adobe UI, see the documentation [here](https://docs.adobe.com/content/help/en/analytics/admin/admin-tools/traffic-variables/traffic-var.html). You can map your Segment properties in your destination settings to any of your Adobe props.
+Custom Traffic Variables, also known as props, allow you to correlate custom data with specific traffic-related events in Adobe. To learn more about props and how to configure them in the Adobe UI, see the documentation [here](https://docs.adobe.com/content/help/en/analytics/admin/admin-tools/traffic-variables/traffic-var.html){:target="_blank”}. You can map your Segment properties in your destination settings to any of your Adobe props.
 
 ![A screenshot of the Adobe Analytics settings page in Segment, with the Mappings section selected and a sample property mapping under the Props tab.](images/prop-mapping.png)
 
@@ -456,7 +456,7 @@ You can either send the property value as a string (ie. `'brady'`) or as an arra
 
 ## List Variables - lVars
 
-List variables are similar to eVars except you can send multiple values for the same event. You can map your Segment properties in your settings to any of your list variables. To learn more about list variables and how to configure them in the Adobe UI, see [the list vars documentation](https://docs.adobe.com/content/help/en/analytics/implementation/vars/page-vars/list.html).
+List variables are similar to eVars except you can send multiple values for the same event. You can map your Segment properties in your settings to any of your list variables. To learn more about list variables and how to configure them in the Adobe UI, see [the list vars documentation](https://docs.adobe.com/content/help/en/analytics/implementation/vars/page-vars/list.html){:target="_blank”}.
 
 To represent the multiple values in a list, you can either send the property value as a comma delimited string (ie. `'brady,edelman,blount'`) or as an array (`['brady', 'edelman', 'blount']`). If you choose to send them as an array, Segment joins it as a comma delimited string by default before sending it to Adobe. To set up a custom delimiter, see the [documentation section below on custom delimiters](#custom-delimiter).
 
@@ -484,14 +484,14 @@ Segment concatenates `list_var1` into `hello|world` before sending it to Adobe. 
 
 ## Hierarchy Variables - hVars
 
-Hierarchy variables mirror how customers can track “breadcrumbs” or “breadcrumb trails”  which are a type of secondary navigation scheme that reveals the user's location in a website or Web application. See the Adobe documentation to learn more about [`hier` variables and how to configure them](https://docs.adobe.com/content/help/en/analytics/implementation/vars/page-vars/hier.html).
+Hierarchy variables mirror how customers can track “breadcrumbs” or “breadcrumb trails”  which are a type of secondary navigation scheme that reveals the user's location in a website or Web application. See the Adobe documentation to learn more about [`hier` variables and how to configure them](https://docs.adobe.com/content/help/en/analytics/implementation/vars/page-vars/hier.html){:target="_blank”}.
 
 Map your Adobe Analytics hVars to the property names you use in your Segment Page calls. Enter a Segment property name on the left, and an Adobe Analytics hVar number on the right. You can view your Segment page calls and properties in your Schema.
 
 ![A screenshot of the Adobe Analytics settings page in Segment, with the Mappings section selected and a sample hierarchy variable mapping under the Hierarchy Variables tab.](images/hier-mapping.png)
 
 ## Context Data Variables
-Context data variables let you define custom variables on each page that processing rules can read. See  the Adobe documentation to learn more about [how to use Adobe Analytics `contextData` and use processing rules](https://docs.adobe.com/content/help/en/analytics/implementation/vars/page-vars/contextdata.html) to populate analytics variables from that data.
+Context data variables let you define custom variables on each page that processing rules can read. See  the Adobe documentation to learn more about [how to use Adobe Analytics `contextData` and use processing rules](https://docs.adobe.com/content/help/en/analytics/implementation/vars/page-vars/contextdata.html){:target="_blank”} to populate analytics variables from that data.
 
 Segment automatically sends event properties as context data on the following:
 - ecommerce events that adhere to the [Ecommerce Spec](/docs/connections/spec/ecommerce/v2/)

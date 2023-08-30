@@ -17,7 +17,7 @@ This destination is maintained by 1Flow. For any issues with the destination, [c
 1. From the Destinations catalog page in the Segment App, click **Add Destination**.
 2. Search for **1Flow** in the Destinations Catalog, and select the **1Flow** destination.
 3. Choose which Source should send data to the 1Flow destination.
-4. Go to the [1Flow dashboard](https://dashboard.1flow.app/){:target="\_blank"} and find the **API Key** in Project Settings.
+4. Go to the [1Flow dashboard](https://dashboard.1flow.app/){:target="_blank"} and find the **API Key** in Project Settings.
 5. Enter the **API Key** in the 1Flow destination settings in Segment.
 
 ## Supported methods
