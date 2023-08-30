@@ -6,7 +6,7 @@ plan: unify
 
 > info "Linked Events is in private beta"
 > Linked Events is in private beta, and Segment is actively working on this feature. Some functionality may change before it becomes generally available. [Contact Segment](https://segment.com/help/contact/){:target="_blank"} with any feedback or questions.
-
+ 
 
 Use Linked Events, powered by Linked Profiles, to enrich real-time event streams flowing from your data warehouse to your Destinations. Insert additional event context for downstream applications for richer data about each event. 
 
