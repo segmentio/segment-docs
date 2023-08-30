@@ -128,9 +128,9 @@ Analytics.js tries to detect when a page is about to be closed and saves pending
 
 When `disableClientPersistence` is set to `true`, Analytics.js won't store any pending events into `localStorage`.
 
-## Client Side Cookie Methods (Get, Set, Clear)
+## Client side cookie methods (get, set, clear)
 
-To access or assign a value to a cookie, outside of the standard Segment methods (track/identify/page/group), you can use the following methods. To access the cookie's value pass an empty `()` at the end of the method. To assign the value, include the string value inside those parenthesis `('123-abc')`. To clear (remove) the value for a specific field, pass in an empty value of its type, for string `('')`, for object `({})`.
+To access or assign a value to a cookie outside of the standard Segment methods (track/identify/page/group), you can use the following methods. To access the cookie's value, pass an empty `()` at the end of the method. To assign the value, include the string value inside those parenthesis, for example, `('123-abc')`. To clear or remove the value for a specific field, pass in an empty value of its type. For example, for string `('')`, or for object `({})`.
 
 | Field | Cookie Name | Analytics.js Method | Local Storage Method | Set Example | Clear Example |
 | ----- | ----------- | ------------------- | -------------------- | --------------- | ------------- |
