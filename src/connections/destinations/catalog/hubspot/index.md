@@ -61,7 +61,7 @@ analytics.identify('user1234', {
 
 HubSpot does not accept any trait keys that contain upper case letters or spaces. Segment converts any custom traits you send to lower case, and replaces spaces with an underscore.
 
-HubSpot removes from the request any traits that aren't contact fields in HubSpot. To find out which fields you can set, navigate to **Settings > Data Management > Objects > Contacts** and select **Manage contact properties** under the **Setup** tab. Example field names are `firstname`, `lastname`, `company`, and `phone`.
+HubSpot removes any traits from the request that aren't contact fields in HubSpot. To find out which fields you can set, navigate to **Settings > Data Management > Objects > Contacts** and select **Manage contact properties** under the **Setup** tab. Example field names are `firstname`, `lastname`, `company`, and `phone`.
 
 If you specify a company name (using `traits.company.name`), it appears as a *property* of the contact (you can find it in HubSpot's UI using **About [contact] > View > View All Properties**), but it does not appear as the user's company under **[contact]'s Company**.
 

@@ -58,7 +58,11 @@ Once you save the API integration and add permissions, you will see a Summary pa
 
 {% include components/actions-fields.html settings="true"%}
 
-## FAQ & Troubleshooting
+> info ""
+> Note that **send contact to data extension** handles a pre-defined structure of contacts being filled into a data extension, whereas **send event to data extension action** customizes event data extensions. 
+> For example, `contactKey` is the fixed Primary Key that is available when you use **send contact to data extension** action, which you also have to create as a Primary Key in SFMC. However, the Primary Key can be set as per Segment's requirements using **send event to data extension**.
+
+## FAQ and troubleshooting
 
 ### Batching Data to SFMC
 

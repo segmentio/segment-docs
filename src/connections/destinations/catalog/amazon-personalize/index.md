@@ -691,7 +691,7 @@ To create an IAM role:
     {
       "Effect": "Allow",
       "Principal": {
-        "AWS": "arn:aws:iam::595280932656:root"
+        "AWS": "arn:aws:iam::595280932656:role/customer-personalize-prod-destination-access"
       },
       "Action": "sts:AssumeRole",
       "Condition": {

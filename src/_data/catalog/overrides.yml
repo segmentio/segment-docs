@@ -33,7 +33,17 @@ items:
       web: false
       mobile: true
       server: true
-
+- slug: webengage
+  id: 54521fdc25e721e32a72ef02
+  connection_modes: 
+    device: 
+      web: true
+      mobile: true
+      server: false
+    cloud:
+      web: false
+      mobile: false
+      server: true
 - slug: clevertap
   id: 5711271880412f644ff13150
   connection_modes:
@@ -42,7 +52,7 @@ items:
       mobile: true
       server: false
     cloud:
-      web: true
+      web: false
       mobile: true
       server: true
 - slug: criteo-app-web-events

@@ -68,7 +68,7 @@ If you're a snippet user, you need to modify the [analytics snippet](/docs/getti
 To proxy settings and destination requests that typically go to `https://cdn.segment.com`, replace:
 ```diff
 - t.src="https://cdn.segment.com/analytics.js/v1/" + key + "/analytics.min.js"
-+ t.src="https://MY-CUSTOM-CDN-PROXY.com" + key + "/analytics.min.js"
++ t.src="https://MY-CUSTOM-CDN-PROXY.com/analytics.js/v1/" + key + "/analytics.min.js"
 ```
 
 To proxy tracking calls that typically go to `api.segment.io/v1`, replace:
