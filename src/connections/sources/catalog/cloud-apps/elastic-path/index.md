@@ -49,10 +49,10 @@ The following payload contains the properties for the following events:
 
 | Property Name           | Description                                                                                                        |
 | ----------------------- | ------------------------------------------------------------------------------------------------------------------ |
-| `userId`                | Customer ID of Elastic Path Composable Commerce                               |
-| `traits`                | Free-form dictionary of traits of the user, like email or                     |
-| `traits.name`           | Customer name                                                                 |
-| `traits.email`          | Customer email                                                                |
+| `userId`                | The customer ID of Elastic Path Composable Commerce.                               |
+| `traits`                | The free-form dictionary of traits of the user, like email.                     |
+| `traits.name`           | The customer name.                                                                 |
+| `traits.email`          | The customer email.                                                                |
 
 **Note**: You can add any custom fields as well as part of the traits e.g. age, gender, title, phone etc.
 
