@@ -85,13 +85,13 @@ for AQI from the drop-down box under **the air quality** section.
 
   | AQI risk levels     | Index Values    | What it means               |
   |---------------------|-----------------|-----------------------------|
-  | Good                | 0-50            | Air quality is good and poses little or no risk.              |
-  | Moderate            | 51-100          | Air quality is acceptable; however, there may be some health concerns for a small number of extremely sensitive people.               |
+  | Good                | 0-50            | Air quality is good and poses little or no risk.                 |
+  | Moderate            | 51-100          | Air quality is acceptable; however, there may be some health concerns for a small number of extremely sensitive people.   |
   | Unhealthy for sensitive groups | 101-150 | When air quality is in this range, people in sensitive groups may experience health effects when engaging in outdoor activities.           |
-  | Unhealthy           | 151-200   | When air quality is in this range, everyone who is active outdoors may experience effects. Members of sensitive groups are likely to experience more serious effects.   |
-  | Very unhealthy      | 201-300              | When air quality is in this range, it is expected that there will be widespread effects among general population and more serious effects in members of sensitive groups.    |
-  | Hazardous           | 301-400               | Air quality in this range triggers health warnings of emergency conditions. The entire population is more likely to be affected by serious health effects.          |
-  |                     | 401-500              |                           |
+  | Unhealthy           | 151-200         | When air quality is in this range, everyone who is active outdoors may experience effects. Members of sensitive groups are likely to experience more serious effects.   |
+  | Very unhealthy      | 201-300         | When air quality is in this range, it is expected that there will be widespread effects among general population and more serious effects in members of sensitive groups.  |
+  | Hazardous           | 301-400         | Air quality in this range triggers health warnings of emergency conditions. The entire population is more likely to be affected by serious health effects.          |
+  |                     | 401-500         |                           |
   
 ### Ambee Pollen Subscription
 
@@ -115,9 +115,9 @@ select the risk levels for pollen from the drop-down box under the
 | Risk Level    | Tree    | Grass     |   Weed      | What it means   |
 |---------------|---------|-----------|-------------|-----------------|
 | Low           | 0-95    | 0-29      | 0-20        | Individuals susceptible to pollen may experience mild allergic symtoms.        |
-| Moderate      | 96-207  | 30-60      | 21-77      | Many individuals sensitive to pollen may experience allergic symptoms.            |
-| High          | 208-703 | 61-341    | 78-266      | Most individuals with any sensitivty to pollen will experience allergic symptoms. Extremely sensitive groups could experience serious symptoms.                  |
-| Very High     | 704+    | 342+      | 267+        | Almost all individuals with any sensitivity to pollen will experience symptoms. |
+| Moderate      | 96-207  | 30-60     | 21-77       | Many individuals sensitive to pollen may experience allergic symptoms.            |
+| High          | 208-703 | 61-341    | 78-266      | Most individuals with any sensitivty to pollen will experience allergic symptoms. Extremely sensitive groups could experience serious symptoms.    |
+| Very High     | 704+    | 342+      | 267+        | Almost all individuals with any sensitivity to pollen will experience symptoms.     |
 
 ### IP Address
 
