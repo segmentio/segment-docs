@@ -163,7 +163,7 @@ analytics.ready(function() {
 
 ## Migration from the classic A/B Smartly destination
 
-To migrate from the classic A/B Smartly destination to ABsmartly (Actions) be sure to disconnect the classic A/B Smartly destination before enabling the ABsmartly (Actions) destination to avoid duplicate experimentation events in ABsmartly.
+To migrate from the classic A/B Smartly destination to ABsmartly (Actions) be sure to disconnect the classic A/B Smartly destination before enabling the ABsmartly (Actions) destination to avoid duplicate experimentation events.
 
 ---
 
