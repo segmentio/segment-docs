@@ -8,21 +8,29 @@ plan: unify
 > Linked Events is in private beta, and Segment is actively working on this feature. Some functionality may change before it becomes generally available. [Contact Segment](https://segment.com/help/contact/){:target="_blank"} with any feedback or questions.
 
 
-Use Linked Events, powered by Linked Profiles, to enrich events streams flowing from your data warehouse to your Destinations. Insert additional event context for downstream applications for richer data about each event. 
+Use Linked Events, powered by Linked Profiles, to enrich real-time event streams flowing from your data warehouse to your Destinations. Insert additional event context for downstream applications for richer data about each event. 
 
 On this page, you'll learn how to get started with Linked Events.
 
+## Use cases
+
+With Linked Events, you can:
+
+- **Add details to events for precise targeting**. Enable targeting based on appending product events that just have `product_id` with full product SKU details from your warehouse.
+- **Sync enriched data**. Add a loyalty ID to event payloads before sending it downstream to destinations such as Amplitude, Mixpanel, and more.
+- **Reduce load times**. Enrich page view events with products and subscriptions connected to that view, and send that to Google Analytics 4 to lighten the front end and reduce page loading time.
+
 ## Requirements
 
-Before getting started, note the following requirements for Linked Events. 
+Before getting started, note the following requirements for Linked Events: 
 
 1. Snowflake or BigQuery data warehouse support and write access.
-- For more information, view the [BigQuery](/docs/unify/linked-profiles/setup-guides/bigquery/) and [Snowflake](/docs/unify/linked-profiles/setup-guides/snowflake/) setup guides. 
+- View the [BigQuery](/docs/unify/linked-profiles/setup-guides/bigquery/) and [Snowflake](/docs/unify/linked-profiles/setup-guides/snowflake/) setup guides. 
 2. Access to Unify in your workspace. 
-3. Access to the Destination you'll be using with Linked Events. This will help you to validate your data. 
+3. Access to the Destination you'll be using with Linked Events. This helps you validate your data. 
 
 
-#### Linked Events permissions
+### Linked Events roles
 
 The following Segment access [roles](/docs/segment-app/iam/roles/) apply to Linked Events:
 
@@ -30,7 +38,7 @@ The following Segment access [roles](/docs/segment-app/iam/roles/) apply to Link
 
 **Entities Read-only Access**: Read access to all Entities models and destinations in a workspace. 
 
-Additionally you'll need the following permissions or roles to use both Connections and Linked Events.
+You'll need the following roles to use both Connections and Linked Events.
 
 For Connections:
 - Workspace owner
@@ -42,17 +50,18 @@ For Linked Events:
 - Workspace owner 
 - Source Admin
 
-> info "Data residency"
-> For Linked Profiles, any customer data residency is ok, but your data store can only be in the United States.
+### Data residency
+
+For Linked Profiles, any customer data residency is ok, however your data store can only be in the United States.
 
 ## Step 1: Connect a data warehouse
 
 > success ""
 > Linked Events uses Segment's [Reverse ETL](/docs/connections/reverse-etl/) infrastructure for pulling in data from your warehouse. 
 
-To get started, you'll need to connect a data warehouse which Segment will use for Linked Events. Linked Events supports [BigQuery](/docs/unify/linked-profiles/setup-guides/bigquery/) and [Snowflake](/docs/unify/linked-profiles/setup-guides/snowflake/) data warehouses.
+To get started, you'll need to connect a data warehouse. Linked Events supports [BigQuery](/docs/unify/linked-profiles/setup-guides/bigquery/) and [Snowflake](/docs/unify/linked-profiles/setup-guides/snowflake/) data warehouses.
 
-1. Navigate to **Unify** > **Data graph** and click **Add warehouse**. 
+1. Navigate to **Unify > Data graph** and click **Add warehouse**. 
 2. Select a warehouse to connect from the [supported warehouse Destinations](#supported-warehouse-destinations). 
 3. [Connect your warehouse](#connect-your-warehouse).  
 3. Click **Test Connection** to be sure your warehouse is connected.
@@ -64,11 +73,11 @@ For Linked Events, the sync destination is an internal Segment data store. To tr
 
 ### Supported warehouse Destinations
 
-The table below shows the supported warehouse Destinations and the corresponding steps for each. View the Segment documentation for your warehouse, then carry out the required steps. 
+The table below shows the supported warehouse Destinations and the corresponding steps for each. View the Segment docs for your warehouse, then carry out the required steps. 
 
 | **Table**              |      **Steps**          |
 |------------------------|-------------------------|
-| [Snowflake](/docs/connections/storage/catalog/snowflake/#getting-started)              | 1. Configure your snowflake database. <br> 2. Enter your credentials. <br> 3. Test the Connection <br> 4. Click **Save**. |
+| [Snowflake](/docs/connections/storage/catalog/snowflake/#getting-started)              | 1. Configure your snowflake database. <br> 2. Enter your credentials. <br> 3. Test the Connection. <br> 4. Click **Save**. |
 | [BigQuery](/docs/connections/storage/catalog/bigquery/)           | 1. Add your credentials to the database that has tables with the Entities you want to enrich your event with. <br> 2. Test your connection. | 
 
 <!-- 
@@ -79,7 +88,7 @@ The table below shows the supported warehouse Destinations and the corresponding
 
 ## Step 2: Add a model
 
-After you connect your warehouse, use the Data graph overview screen (**Unify** > **Data graph**) to view models that Segment has synced from your data warehouse, add a new model, and view data warehouse settings. 
+After you connect your warehouse, use the Data graph overview screen (**Unify > Data graph**) to view models that Segment has synced from your data warehouse, add a new model, and view data warehouse settings. 
 
 You can select a model to view the table schema including columns, column type, primary key, and sync information.
 
@@ -91,31 +100,6 @@ To add a new model:
 4. Click **Add model**.
 
 Once you've added a model, visit the Data graph overview page and select the model to view table columns, data type, and sync status information. 
-
-
-<!-- this might not be included with Private beta 
-### Sync status 
-
-For Linked Events, syncs occur roughly once every hour.  
-The following table displays the sync statuses Segment displays for each model you sync from your data warehouse. 
-
-| **Sync status**  | **Description** |
-|---------|------------|
-| In progress | The sync is in progress.    |
-| Success | You'll see this status when Segment successfully extracts and loads all records. Segment also displays this status if no changes were detected during the sync.|
-| Partial success               | While Segment synced some rows, other rows failed to sync. (Add other content here) |
-| Failed            | Segment displays this status in two scenarios: <br> - **Extraction failure**: Segment failed to extract any rows from your data warehouse. <br> - **Loading failure**: Segment failed to load any rows from your data warehouse. <br><br> In both scenarios, Segment will try again on the next sync, however you won't see any diffs displayed from failed syncs. |
-
-
-
-
-
-
-
-((((I don't think this is true for the time being)))
-> success ""
-> Before you set enrich events, you must first set up a data graph.
--->
 
 ## Step 3: Add a Destination
 
@@ -168,8 +152,6 @@ After you’ve added Enrichments, you’ll want to test and save your enrichment
 5. Test the mapping with data from a sample event.
 - The edit panel shows you the mapping output in the format for the destination tool. You can change your mapping as needed and re-test.
 6. When you're satisfied with the mapping, click **Save**. Segment returns you to the Mappings table.
-
-
 
 
 ## Troubleshooting and limitations
