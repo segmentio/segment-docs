@@ -10,7 +10,7 @@ With this approach, you might use a request "middleware" to log a `pageview` w
 
 There are a few things to be mindful of if you want to make sure you can attribute these (anonymous) page views to the appropriate user in your client-side source (eg, for effectively joining these tables together to do down-funnel behavioral attribution). You'll want to ensure they share an `anonymousId` by respecting one if it's already there, and setting it yourself if not. To do that, you can read and modify the `ajs_anonymous_id` cookie value in the request.
 
-Be sure to pass through as many fields as you can in our [page](https://segment.com/docs/connections/spec/page/) and [context](https://segment.com/docs/connections/spec/common/) spec, so that you get full functionality in any downstream tools you choose to enable. We recommend specifically ensuring you pass the **url, path, host, title, query, and referrer** in the message `properties` and **ip and user-agent** in the message `context` .
+Be sure to pass through as many fields as you can in our [page](https://segment.com/docs/connections/spec/page/) and [context](https://segment.com/docs/connections/spec/common/) spec, so that you get full functionality in any downstream tools you choose to enable. We recommend specifically ensuring you pass the **url, path, host, title, search, and referrer** in the message `properties` and **ip and user-agent** in the message `context` .
 
 Here's an example of an express middleware function that covers all those edge cases!
 
@@ -25,15 +25,15 @@ const app = express()
 const analytics = new Analytics('write-key')
 
 app.use((req, res, next) => {
-  const { query, cookies, url, path, ip, host } = req
+  const { search, cookies, url, path, ip, host } = req
 
   // populate campaign object with any utm params
   const campaign = {}
-  if (query.utm_content) campaign.content = query.utm_content
-  if (query.utm_campaign) campaign.name = query.utm_campaign
-  if (query.utm_medium) campaign.medium = query.utm_medium
-  if (query.utm_source) campaign.source = query.utm_source
-  if (query.utm_term) campaign.keyword = query.utm_term
+  if (search.utm_content) campaign.content = search.utm_content
+  if (search.utm_campaign) campaign.name = search.utm_campaign
+  if (search.utm_medium) campaign.medium = search.utm_medium
+  if (search.utm_source) campaign.source = search.utm_source
+  if (search.utm_term) campaign.keyword = search.utm_term
 
   // grab userId if present
   let userId = null
@@ -53,7 +53,7 @@ app.use((req, res, next) => {
   const userAgent = req.get('User-Agent')
 
   const properties = {
-    query: stringify(query)
+    search: stringify(query)
     referrer,
     path,
     host,

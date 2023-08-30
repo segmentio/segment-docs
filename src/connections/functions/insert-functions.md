@@ -60,7 +60,13 @@ Segment invokes a separate part of the function (called a "handler") for each ev
 
 The default source code template includes handlers for all event types. You don't need to implement all of them - just use the ones you need, and skip the ones you don't.
 
+> info ""
+> Removing the handler for a specific event type results in blocking the events of that type from arriving at their destination. 
+
 Insert functions can define handlers for each message type in the [Segment spec](/docs/connections/spec/):
+
+> info "onBatch handler"
+> At this time, Destination Insert Functions do not support the onBatch handler. 
 
 - `onIdentify`
 - `onTrack`
@@ -69,7 +75,6 @@ Insert functions can define handlers for each message type in the [Segment spec]
 - `onGroup`
 - `onAlias`
 - `onDelete`
-- `onBatch`
 
 Each of the functions above accepts two arguments:
 
@@ -161,6 +166,14 @@ If you don't supply a function for an event type, Segment throws an `EventNotSup
 
 You can read more about [error handling](#destination-insert-functions-logs-and-errors) below.
 
+## Insert Functions and Actions destinations
+
+There are a couple of behavorial nuances to consider when using Insert Functions with Actions destinations.
+
+Insert Functions block Actions destinations from triggering multiple mapping subscriptions for a single payload. If you have a single payload coming through the pipeline that you expect to trigger multiple mapping subscriptions in your configuration, it will work as expected without an Insert Function enabled. With an Insert Function enabled, however, when a payload that is meant to trigger multiple mappings subscriptions is seen, no mappings subscriptions will fire. If you have an Insert Function enabled for a destination, make sure that you configure your payloads so that they only trigger a single mapping subscription.
+
+A payload must also come into the pipeline with the attributes that allow it to match your mapping triggers. You can't use an Insert Function to change the event to match your mapping triggers. If an event comes into an Actions destination and already matches a mapping trigger, that mapping subscription will fire. If a payload doesn't come to the Actions destination matching a mapping trigger, even if an Insert Function is meant to alter the event to allow it to match a trigger, it won't fire that mapping subscription. Segment sees the mapping trigger first in the pipeline, so a payload won't make it to the Insert Function at all if it doesn't come into the pipeline matching a mapping trigger. 
+
 ## Create settings and secrets
 
 {% include content/functions/settings.md %}
@@ -195,6 +208,9 @@ You can manually test your code from the functions editor:
 2. If your test fails, you can check the error details and logs in the Output section.
 - Error messages display errors surfaced from your function.
 - Logs display any messages to console.log() from the function.
+
+- > info ""
+> The Event Tester won't make use of an Insert Function, show how an Insert Function impacts your data, or send data downstream through the Insert Function pipeline.
 
 ## Save and deploy the destination insert function
 
@@ -237,11 +253,15 @@ Note the following limitations for batching with insert functions:
 
 {% endcomment %}
 
+{% comment %}
+
 ## Destination insert functions logs and errors
 
 A function can throw errors, or Segment might encounter errors while invoking your function. You can view these errors in the [Event Delivery](/docs/connections/event-delivery/) tab for your Destination as in the example below.
 
 ![A screenshot of the event delivery tab, showing 519 failed events broken into categories explaining why they failed](images/event-delivery.png)
+
+{% endcomment %}
 
 ### Destination insert functions error types
 
@@ -296,6 +316,10 @@ No, Segment can't guarantee the order in which the events are delivered to an en
 ##### Can I create a device-mode destination?
 
 No, destination insert functions are currently available as cloud-mode destinations only. Segment is in the early phases of exploration and discovery for supporting customer "web plugins" for custom device-mode destinations and other use cases, but this is unsupported today.
+
+##### Can I connect an insert function to multiple destinations?
+
+No, an insert function can only be connected to one destination.
 
 ##### How do I publish a destination to the public Segment catalog?
 

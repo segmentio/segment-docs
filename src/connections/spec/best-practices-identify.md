@@ -95,7 +95,7 @@ You can see in this full page event, the `anonymousId` is populated, and the `us
   "sentAt": "2020-04-23T22:38:48.55Z",
   "timestamp": "2020-04-23T22:38:48.55Z",
   "type": "page",
-  "UserId": null
+  "userId": null
 }
 ```
 
@@ -153,7 +153,7 @@ You'll notice the `identify` call contains no `userId`. These traits will be ass
     "last_name": "Visitor"
   },
   "type": "page",
-  "UserId": null
+  "userId": null
 }
 ```
 
@@ -224,7 +224,7 @@ After you fire the `identify` call with the `userId`, you'll notice that the pay
   }  
   },
   "type": "page",
-  "UserId": null
+  "userId": "123abc"
 }
 ```
 
