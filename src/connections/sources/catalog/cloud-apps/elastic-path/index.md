@@ -3,7 +3,7 @@ title: Elastic Path Source
 hidden: true
 ---
 
-[Elastic Path](https://www.elasticpath.com?utm_source=segmentio&utm_medium=docs&utm_campaign=partners){:target="_blank"} is a SaaS based headless commerce platform that provides core commerce with a focus on catalog & product data management and modern merchandising capabilities so that brands can power their complex commerce experiences across multiple geographies, touchpoints, brands, and business models.
+[Elastic Path](https://www.elasticpath.com?utm_source=segmentio&utm_medium=docs&utm_campaign=partners){:target="_blank"} is a SaaS based headless commerce platform that provides core commerce with a focus on catalog and product data management and modern merchandising capabilities so that brands can power their complex commerce experiences across multiple geographies, touchpoints, brands, and business models.
 
 This is an [Event Cloud Source](/docs/sources/#event-cloud-sources){:target="_blank"} which can not only export data into your Segment warehouse, but can also federate the exported data into your other enabled Segment Destinations.
 
