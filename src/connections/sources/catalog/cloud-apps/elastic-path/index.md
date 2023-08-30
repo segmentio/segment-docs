@@ -38,7 +38,7 @@ The table below lists events that Elastic Path sends to Segment. These events ap
 
 ## Event properties
 
-The table below list the properties included in the events listed above.
+The tables below list the properties included in the events listed above.
 
 ### Identity events
 
