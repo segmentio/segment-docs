@@ -68,23 +68,23 @@ The following payload contains the properties for the following events:
 
 | Property Name                                       | Description                                                                                                                                           |
 | --------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `userId`                                | If registered user place order then the value of userId will be the Customer ID otherwise it will be order ID. You can change this as per your requirement.                                                                                                       |
-| `event`                                 | Event name e.g. `Checkout Started`, `Order Completed` etc.             |
-| `properties`                            | This will hold information about the order                             |
-| `properties.order_id`                   | Elastic Path Order ID                                                  |
-| `properties.value`                      | Revenue ($) with discounts and coupons added in. For better flexibility and total control over tracking, we let you decide how to calculate how coupons and discounts are applied. Usually this is required for `Checkout Started` event                                                                              |
-| `properties.total`                      | Revenue ($) with discounts and coupons added in. For better flexibility and total control over tracking, we let you decide how to calculate how coupons and discounts are applied. Usually this is required for all the events apart from `Checkout Started` event                                                    |
-| `properties.revenue`                    | Revenue ($) associated with the transaction (excluding shipping and tax). Usually this is required for all the events apart from `Checkout Started` event                                    |
-| `properties.tax`                        | Total tax associated with the transaction                              |
-| `properties.discount`                   | Total discount associated with the transaction                         |
-| `properties.shipping`                   | Shipping cost associated with the transaction                          |
-| `properties.currency`                   | Currency code associated with the transaction e.g. GBP, USD etc.       |
-| `properties.products`                   | List of products in the order                                          |
-| `properties.products.$.product_id`      | Product ID                                                             |
-| `properties.products.$.name`            | Product Name                                                           |
-| `properties.products.$.sku`             | Product SKU                                                            |
-| `properties.products.$.price`           | Product Unit Price                                                     |
-| `properties.products.$.quantity`        | Quantity of a product                                                  |
+| `userId`                                | If the registered user places an order, then the value of the userId is the Customer ID. Otherwise, it will be the order ID. You can change this as per your requirement.                                                                                                       |
+| `event`                                 | The event name, for example,  `Checkout Started`, `Order Completed`.             |
+| `properties`                            | This holds information about the order.                             |
+| `properties.order_id`                   | The Elastic Path Order ID.                                                  |
+| `properties.value`                      | The revenue ($) with discounts and coupons added in. For better flexibility and total control over tracking, Elastic Path lets you decide how to calculate how coupons and discounts are applied. This is usually required for the `Checkout Started` event.                                                                              |
+| `properties.total`                      | The revenue ($) with discounts and coupons added in. For better flexibility and total control over tracking, Elastic Path lets you decide how to calculate how coupons and discounts are applied. This is usually required for all the events apart from the `Checkout Started` event.                                                    |
+| `properties.revenue`                    | The revenue ($) associated with the transaction (excluding shipping and tax). This is usually required for all the events apart from the `Checkout Started` event.                                    |
+| `properties.tax`                        | The total tax associated with the transaction.                              |
+| `properties.discount`                   | The total discount associated with the transaction.                         |
+| `properties.shipping`                   | The shipping cost associated with the transaction.                          |
+| `properties.currency`                   | The currency code associated with the transaction. For example, GBP, USD.       |
+| `properties.products`                   | The list of products in order.                                          |
+| `properties.products.$.product_id`      | The product ID.                                                             |
+| `properties.products.$.name`            | The product name.                                                           |
+| `properties.products.$.sku`             | The product SKU.                                                            |
+| `properties.products.$.price`           | The product unit price.                                                     |
+| `properties.products.$.quantity`        | The quantity of a product.                                                  |
 
 Note: We are using properties of these events from [eCommerce Spec](https://segment-docs.netlify.app/docs/connections/spec/ecommerce/v2){:target="_blank"} defined by Segment doc. Add more properties as per this documentation based on your business requirement.
 
