@@ -86,7 +86,7 @@ The following payload contains the properties for the following events:
 | `properties.products.$.price`           | The product unit price.                                                     |
 | `properties.products.$.quantity`        | The quantity of a product.                                                  |
 
-Note: We are using properties of these events from [eCommerce Spec](https://segment-docs.netlify.app/docs/connections/spec/ecommerce/v2){:target="_blank"} defined by Segment doc. Add more properties as per this documentation based on your business requirement.
+Note: Elastic path is using properties of these events from the [eCommerce Spec](https://segment-docs.netlify.app/docs/connections/spec/ecommerce/v2){:target="_blank"} defined by the Segment doc. Add more properties as per this documentation based on your business requirement.
 
 ## Add destinations
 
