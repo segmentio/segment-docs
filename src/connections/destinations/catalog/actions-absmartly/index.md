@@ -35,7 +35,7 @@ other destinations. The Segment spec includes the [Experiment Viewed semantic ev
 for this purpose.
 
 > info ""
-> By default, the _Track Calls_ mapping will filter and not send to ABsmartly events with name `Experiment Viewed`.
+> By default, the _Track Calls_ mapping will filter and not send any events with the name `Experiment Viewed` to ABsmartly.
 
 In the ABsmartly context, we can [install a custom event logger](https://docs.absmartly.com/docs/sdk%20documentation/getting-started/#using-a-custom-event-logger) and send exposures directly to Segment.
 
