@@ -10,7 +10,7 @@ This source is maintained by Elastic Path. For any issues with the source, conta
 
 ## Getting started
 
-1. From your workspace's [Sources catalog page](https://app.segment.com/goto-my-workspace/sources/catalog){:target="_blank"} click **Add Source**.
+1. Navigate to **Connections > Catalog** and make sure you're on the **Sources** tab of the catalog.
 2. Search for **Elastic Path** in the Sources Catalog, select **Elastic Path**, and click **Add Source**.
 3. On the next screen, give the Source a name configure any other settings.
     - The name identifies this source within your workspace, and typically reflects the name of the application. The name can be anything, but Segment recommends that you use something that reflects the source itself and distinguishes amongst your environments (for example, `SourceName_Prod`, `SourceName_Staging`, or `SourceName_Dev`).
