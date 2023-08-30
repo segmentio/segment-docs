@@ -1,11 +1,12 @@
 ---
 title: Snowflake Setup
-
+plan: unify
+beta: true
 ---
 
 On this page, you'll learn how to set up Snowflake as your warehouse destination. 
 
-Make sure that you log in with a user that has read and write permissions so that Segment can write to your database. 
+Be sure to log in with a user that has read and write permissions so that Segment can write to your database. 
 
 
 ## Getting started 
@@ -18,7 +19,6 @@ Follow the instructions below to set up the Segment Snowflake connector. Segment
    this source to keep all the state tracking tables in one place.
 
    ```sql
-   -- not required if another database is being reused
    CREATE DATABASE segment_entities;
    ```
    Segment uses the database specified in your connection settings to create a schema called `__segment_reverse_etl` to avoid collision with your data. The schema is used for tracking changes to your model query results between syncs.
@@ -28,7 +28,6 @@ Follow the instructions below to set up the Segment Snowflake connector. Segment
    Linked Events needs to execute queries on your Snowflake account, which requires a Virtual Warehouse to handle the compute. You can also reuse an existing warehouse.
 
    ```sql
-   -- not required if reusing another warehouse
    CREATE WAREHOUSE segment_entities
     WITH WAREHOUSE_SIZE = 'XSMALL'
       WAREHOUSE_TYPE = 'STANDARD'
@@ -118,20 +117,3 @@ segment_entities;
 -- view a specfic table/column in a schema 
 GRANT REFERENCES ON TABLE <schema-name>.<table_name> TO ROLE segment_entities;
 ```
-
-
-<!-- Probably cut
-If Reverse ETL has ever run in the database (Segment managed schema is created)
-
-```sql 
-GRANT USAGE ON SCHEMA __segment_reverse_etl TO ROLE segment_entities;
-
-GRANT CREATE TABLE ON SCHEMA __segment_reverse_etl TO ROLE segment_entities;
-
-GRANT SELECT, INSERT, UPDATE, DELETE ON ALL TABLES IN SCHEMA __segment_reverse_etl TO ROLE segment_entities;
-
--- ?
---GRANT SELECT, INSERT, UPDATE, DELETE ON FUTURE TABLES IN SCHEMA
-__segment_reverse_etl TO ROLE segment_entities;
-
--->
