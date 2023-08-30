@@ -32,7 +32,7 @@ The table below lists events that Elastic Path sends to Segment. These events ap
 | `Customer Updated`               | Updating identity in Segment                                           |
 | `Checkout Started`               | When a user started the checkout process. For example, when a user creates an order.                     |
 | `Order Completed`                | Tracks when a user completes their order. For example, when an order is paid or authorized.            |
-| `Order Updated`                  | Order updated event e.g. when shipping address is updated              |
+| `Order Updated`                  | When an order is updated. For example, when the user updates the shipping address.              |
 | `Order Cancelled`                | Order cancelled event                                                  |
 | `Order Refunded`                 | Order refunded event                                                   |
 
