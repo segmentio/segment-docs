@@ -60,7 +60,10 @@ A Segment Customer Success team member will respond that they have enabled this 
 
 
 ## Custom CDN / API Proxy
+
 Follow these instructions after setting up a proxy such as [CloudFront](#custom-proxy-cloudfront). Choose between the [snippet instructions](#snippet-instructions) or the [npm instructions](#npm-instructions).  
+> info ""
+> If you have followed the instructions above to have a Segment team member enable the apiHost settings in the UI, you can skip the instructions in this section. You only need to have one or the other configured. 
 
 ### Snippet instructions
 If you're a snippet user, you need to modify the [analytics snippet](/docs/getting-started/02-simple-install/#step-1-copy-the-snippet) that's inside your `<head>`.
