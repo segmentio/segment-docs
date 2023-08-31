@@ -20,6 +20,9 @@ The Event Source will be denoted by your Segment Source ID, which you can find i
 
 We'll forward all the messages in the source (pending any Destination Filters you've enabled) to the Segment Partner Event Source we create for you in EventBridge.
 
+> info "Create a separate Segment source for testing"
+> We recommend that you create a separate Segment source for testing if you use a test Account ID, because you cannot change the test Account ID to a production Account ID at a later date. 
+
 ## Page
 If you're not familiar with the Segment Specs, take a look to understand what the [Page method](/docs/connections/spec/page/) does. An example call would look like:
 ```javascript
@@ -45,9 +48,9 @@ analytics.track("User Registered", {
 });
 ```
 
-## FAQ
+## FAQs
 
 ### Can I change my AWS Account ID?
 You are only able to configure one AWS Account ID per source. Once you've configured your Amazon EventBridge destination with an AWS Account ID, it is not possible to modify it. If you do need to change the AWS Account ID for any reason, you will need to create a new Segment source and configure a new destination.
 
-We recommend that you create a separate Segment source for testing if you use a test Account ID, because you cannot change it to a production Account ID at a later date. 
+As an alternative, you can use a [Repeater destination](https://segment-docs.netlify.app/docs/connections/destinations/catalog/repeater/) to your existing source, which will repeat the events through the new source you create. This new source can then be connected to a new EventBridge destination which can be configured with a new Account ID in the settings. 
