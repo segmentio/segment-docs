@@ -77,8 +77,8 @@ The table below shows the warehouse Destinations Linked Events supports. View th
 
 | **Table**              |      **Steps**          |
 |------------------------|-------------------------|
-| [Snowflake](/docs/connections/storage/catalog/snowflake/#getting-started)              | 1. Configure your snowflake database. <br> 2. Enter your credentials. <br> 3. Test the Connection. <br> 4. Click **Save**. |
-| [BigQuery](/docs/connections/storage/catalog/bigquery/)           | 1. Add your credentials to the database that has tables with the Entities you want to enrich your event with. <br> 2. Test your connection. | 
+| [Snowflake](docs/unify/linked-profiles/setup-guides/snowflake-setup/)              | 1. Configure your snowflake database. <br> 2. Enter your credentials. <br> 3. Test the Connection. <br> 4. Click **Save**. |
+| [BigQuery](/docs/unify/linked-profiles/setup-guides/bigquery-setup/)           | 1. Add your credentials to the database that has tables with the Entities you want to enrich your event with. <br> 2. Test your connection. | 
 
 <!-- 
 | [Redshift](/docs/connections/storage/catalog/redshift/#getting-started)           | 1. Choose an instance. <br> 2. Provision a new Redshift cluster. |
@@ -117,7 +117,7 @@ You can add data models and enrichments from the destination Mappings tab:
 
 1. Navigate to **Connections > Destinations > Event streams**
 2. Select the destination you'd like to create an enrichment on.
-3. From the destination overview page, click **Mappings**.
+3. From the Destination overview page, click **Mappings**.
 4. Click **New Mapping**, and select the type of mapping you'd like to add.
 - Click the **...** icon to edit an existing mapping.
 5. In the "Select Events to Map and Send", define the [conditions](/docs/connections/destinations/actions/#conditions) under which the action should run. 
@@ -143,7 +143,7 @@ You’ll have access to all rows/columns in your data warehouse associated with 
 You can then add the key name on the right side, which is what Segment sends to your destination. 
 
 > info ""
-> For Linked Evets, Segment doesn't provide a preview of the enriched payloads.
+> For Linked Events, Segment doesn't provide a preview of the enriched payloads.
 
 ### Test and save your Enrichments
 
@@ -154,32 +154,45 @@ After you’ve added Enrichments, you’ll want to test and save your enrichment
 6. When you're satisfied with the mapping, click **Save**. Segment returns you to the Mappings table.
 
 
-## Troubleshooting and limitations
+## Frequently asked questions
 
-Below are some tips to help you troubleshoot common questions that come up. 
+{% faq %}
+{% faqitem What data warehouse permissions does Segment require? %}
 
-### Data Warehouse Permissions
+To use Linked Events, be sure that you have proper permissions for the Data Warehouse you're using. Visit the [BigQuery](/docs/unify/linked-profiles/setup-guides/bigquery/) and [Snowflake](/docs/unify/linked-profiles/setup-guides/snowflake/) setup guides to learn more about updating permissions.
 
-To use Linked Events, be sure that you have proper permissions for the Data Warehouse you're using. Visit the [BigQuery](/docs/unify/linked-profiles/setup-guides/bigquery/) and [snowflake](/docs/unify/linked-profiles/setup-guides/snowflake/) setup guides to learn more about updating permissions. 
+{% endfaqitem %}
 
-### Data Warehouse Sync
+{% faqitem How often do syncs occur? %}
+
 Segment currently syncs once every hour.
 
-### Action Destinations support
+{% endfaqitem %}
+
+
+{% faqitem Which Action Destinations does Linked Events support? %}
 
 For Linked Events, Segment supports all Actions Destinations. 
 
-### Action Event Tester
+{% endfaqitem %}
 
-Test events don't send linked events, it only sends the test events that come from the source debugger, which is ahead of the event enrichment.
+{% faqitem Why aren't test events working? %}
 
-### Audit logs
+Test events don't send Linked Events, it only sends the test events that come from the source debugger, which is ahead of the event enrichment.
+
+{% endfaqitem %}
+
+{% faqitem Can I view my Linked Events Audit Trail? %}
 
 Linked Events uses the existing Audit Trail in your Segment workspace. To view your Audit Trail, navigate to **Settings > Admin > Audit Trail**.
 
-### Sync schedule config
+{% endfaqitem %}
+
+{% faqitem How can I refresh linked data from my warehouse? %}
 
 You can define a schedule for refreshing the linked data from your data warehouse.
 
+{% endfaqitem %}
+{% endfaq %}
 
 
