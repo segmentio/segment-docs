@@ -342,6 +342,7 @@ The Analytics.js utility methods help you change how Segment loads on your page.
 - [On (Emitter)](#emitter)
 - [Timeout](#extending-timeout)
 - [Reset (Logout)](#reset-or-log-out)
+- [Keepalive](#keepalive)
 
 ### Load
 
@@ -472,6 +473,9 @@ The `reset` method only clears the cookies and `localStorage` created by Segment
 
 Segment doesn't share `localStorage` across subdomains. If you use Segment tracking on multiple subdomains, you must call `analytics.reset()` for each subdomain to completely clear out the user session.
 
+### Keepalive
+
+This can be utilised in instances where an API call is firing on a hard redirect, and are being missed from getting captured in Segment, you can then set this flag to true, which enables firing the event before the redirect. This was earlier availble only for [batched events](https://segment.com/docs/connections/sources/catalog/libraries/website/javascript/#will-analyticsjs-deliver-events-that-are-in-the-queue-when-a-user-closes-the-browser), we have now made this available for all events. You can read more about this in our PR [here](https://github.com/segmentio/analytics-next/issues/768#issuecomment-1386100830)
 
 
 ## Managing data flow with the Integrations object
