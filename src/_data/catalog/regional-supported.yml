@@ -349,7 +349,7 @@ sources:
       - us
   - id: VETiUX9u66
     display_name: Elastic Path
-    hidden: false
+    hidden: true
     slug: elastic-path
     url: connections/sources/catalog/cloud-apps/elastic-path
     regions:
