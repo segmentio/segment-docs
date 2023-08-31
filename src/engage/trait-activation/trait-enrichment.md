@@ -48,7 +48,7 @@ With Customized setup, you can choose which traits you want to map to your desti
 3. Click **Save** and finish building your audience.
 
 > info ""
-> Traits selected for enrichment will be sent in the traits object in identify calls, and as properties in the properties object in track calls.
+> Segment sends traits you select for enrichment in the traits object in Identify calls, and as properties in the properties object in Track calls.
 
 ### Destination requirements 
 
