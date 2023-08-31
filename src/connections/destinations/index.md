@@ -6,6 +6,8 @@ Destinations are the business tools or apps that Segment forwards your data to. 
 
 > info "Destinations Catalog"
 > If you want to explore the destinations compatible with Segment, check out the [Destinations catalog](/docs/connections/destinations/catalog/). Select an item from the catalog to learn more about it. The documentation for each destination explains how the Segment Tracking API methods are implemented for that destination.
+>
+> If a tool is not listed as a destination in our catalog, then it is not possible to incorporate the integration within a Segment workspace out-of-the-box. However, as an alternative, you can use the [Webhooks](https://segment.com/docs/connections/destinations/catalog/webhooks/){:target='_blank’} destination to send data to the tool's public API. Or you also can build your own [Plugin](https://segment.com/docs/partners/plugins/). 
 
 ## Sources vs Destinations
 
