@@ -45,7 +45,10 @@ With Customized setup, you can choose which traits you want to map to your desti
 2. Select all traits you want to sync to your destination, and click **Save**. 
 - Use the **Segment** column to select traits from the Segment Spec. 
 - Use the **Destination** column to select which traits you want to map to in your destination. By default, Segment attempts to find traits with matching names.
-3. Click **Save** and finish building your audience. 
+3. Click **Save** and finish building your audience.
+
+> info ""
+> Segment sends traits you select for enrichment in the traits object in Identify calls, and as properties in the properties object in Track calls.
 
 ### Destination requirements 
 
