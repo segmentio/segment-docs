@@ -428,3 +428,7 @@ The [Event Delivery tab](/docs/connections/event-delivery/) continues to show me
 A function's use depends on the number of times it's invoked, and the amount of time it takes to execute. When you enable batching, Segment invokes your function _once per batch_ rather than once per event. The volume of events flowing through the function determines the number of batches, which determines the number of invocations.
 
 If you're sending your batch to an external service, the execution time of the function depends on the end-to-end latency of that service's batch endpoint, which may be higher than an endpoint that receives a single event.
+
+##### Which IP addresses should be allowlisted?
+
+{% include content/ip-allowlist.md %}
