@@ -139,9 +139,12 @@ analytics.track({
 ```
 > Check your specific [server-side library docs](/docs/connections/sources/#server) for specifics on how to format the method properly.
 
+> info ""
+> Please see the **Can Omit AppsFlyerId** and **Fallback to send IDFV when advertisingId key not present (Server-Side Only)** settings descriptions for more details on excluding the above fields in server side events.
+
 Finally, the server-side component will look for the following `properties` and handle them specially:
 
-- `ip` (this should be the `ip` of your customer--this is not collected by Segment's libraries out-of-the-box)
+- `ip` (this should be the `ip` of your customer--this is not collected by Segment's libraries out-of-the-box. This should be passed into the payload under context in order to be properly attributed by AppsFlyer)
 - `timestamp` (refer to AppsFlyer's docs on [how they process timestamps](https://support.appsflyer.com/hc/en-us/articles/207034486-Server-to-Server-In-App-Events-API-HTTP-API-){:target="blank"}. Since the libraries generate a [timestamp](/docs/connections/spec/common/#timestamps), Segment always sets this value)
 - `currency` (defaults to `"USD"`)
 - `revenue` (For `Order Completed` events, precedence is given to `total`, falling back to `properties.revenue`)
