@@ -8,7 +8,7 @@ plan: unify
 > Linked Events is in private beta, and Segment is actively working on this feature. Some functionality may change before it becomes generally available. [Contact Segment](https://segment.com/help/contact/){:target="_blank"} with any feedback or questions.
  
 
-Use Linked Events, powered by Linked Profiles, to enrich real-time event streams flowing from your data warehouse to your Destinations. Insert additional event context for downstream applications for richer data about each event. 
+Use Linked Events to enrich real-time event streams flowing from your data warehouse to your destinations. Insert additional event context for downstream applications for richer data about each event. 
 
 On this page, you'll learn how to get started with Linked Events.
 
@@ -29,30 +29,28 @@ Before getting started, note the following requirements for Linked Events:
 2. Access to Unify in your workspace. 
 3. Access to the Destination you'll be using with Linked Events. This helps you validate your data. 
 
+> warning "Data store requirement"
+> While any customer data residency is ok with Linked Profiles, your data store must be in the United States.
+
 
 ### Linked Events roles
 
 The following Segment access [roles](/docs/segment-app/iam/roles/) apply to Linked Events:
 
-**Entities Admin Access**: Full CRUD access to all Entities within a workspace. You can also grant or revoke user permissions.
+**Entities Admin Access**: Full CRUD (create, read, access, and delete) access to all Entities within a workspace. You can also grant or revoke user permissions.
 
-**Entities Read-only Access**: Read access to all Entities models and destinations in a workspace. 
+**Entities Read-only Access**: Read-only access to all Entities models and destinations in a workspace. 
 
-You'll need the following roles to use both Connections and Linked Events.
+For Linked Events, you need the following roles: 
+- `Workspace Owner`
+- `Entities Admin`
+- `Source Admin`
 
-For Connections:
-- Workspace owner
-- Unify Read-only or Admin
-- Entities Admin 
-- Source Admin
-
-For Linked Events: 
-- Workspace owner 
-- Source Admin
-
-### Data residency
-
-For Linked Profiles, any customer data residency is ok, however your data store can only be in the United States.
+To use Connections with Linked Events:
+- `Workspace Owner`
+- `Unify Read-only or Admin`
+- `Entities Admin` 
+- `Source Admin`
 
 ## Step 1: Connect a data warehouse
 
@@ -69,11 +67,13 @@ To get started, you'll need to connect a data warehouse. Linked Events supports 
 
 ### Schema
 
-For Linked Events, the sync destination is an internal Segment data store. To track the data you've previously sent to Segment, you can view deltas/diffs in tables within a single schema Segment creates called `_segment_reverse_etl`. You can choose which database within your warehouse this data lives in. 
+For Linked Events, the sync destination is an internal Segment data store. To track the data you send to Segment, you can view deltas/diffs in tables within a single schema Segment creates called `_segment_reverse_etl`. 
+
+You can choose which database within your warehouse this data lives in. 
 
 ### Supported warehouse Destinations
 
-The table below shows the supported warehouse Destinations and the corresponding steps for each. View the Segment docs for your warehouse, then carry out the required steps. 
+The table below shows the warehouse Destinations Linked Events supports. View the Segment docs for your warehouse, then carry out the corresponding steps. 
 
 | **Table**              |      **Steps**          |
 |------------------------|-------------------------|
@@ -115,7 +115,7 @@ With Linked Events, you can select models and properties from your data warehous
 
 You can add data models and enrichments from the destination Mappings tab:
 
-1. Navigate to **Connections** > **Destinations** > **Event streams**
+1. Navigate to **Connections > Destinations > Event streams**
 2. Select the destination you'd like to create an enrichment on.
 3. From the destination overview page, click **Mappings**.
 4. Click **New Mapping**, and select the type of mapping you'd like to add.
@@ -163,7 +163,6 @@ Below are some tips to help you troubleshoot common questions that come up.
 To use Linked Events, be sure that you have proper permissions for the Data Warehouse you're using. Visit the [BigQuery](/docs/unify/linked-profiles/setup-guides/bigquery/) and [snowflake](/docs/unify/linked-profiles/setup-guides/snowflake/) setup guides to learn more about updating permissions. 
 
 ### Data Warehouse Sync
-
 Segment currently syncs once every hour.
 
 ### Action Destinations support
@@ -176,7 +175,7 @@ Test events don't send linked events, it only sends the test events that come fr
 
 ### Audit logs
 
-Linked Events uses the existing Audit Trail UI in the Settings page. Navigate to () to view more.
+Linked Events uses the existing Audit Trail in your Segment workspace. To view your Audit Trail, navigate to **Settings > Admin > Audit Trail**.
 
 ### Sync schedule config
 

@@ -24,7 +24,7 @@ Follow the instructions below to set up the Segment Snowflake connector. Segment
    Segment uses the database specified in your connection settings to create a schema called `__segment_reverse_etl` to avoid collision with your data. The schema is used for tracking changes to your model query results between syncs.
    An existing database can be reused, if desired. Segment recommends you to use the same database across all your models attached to 
 
-   4. Enter and run the code below to create a virtual warehouse.
+4. Enter and run the code below to create a virtual warehouse.
    Linked Events needs to execute queries on your Snowflake account, which requires a Virtual Warehouse to handle the compute. You can also reuse an existing warehouse.
 
    ```sql
@@ -48,7 +48,7 @@ Follow the instructions below to set up the Segment Snowflake connector. Segment
    GRANT CREATE SCHEMA ON DATABASE segment_entities TO ROLE segment_entities;
    ```
 
-   6. Enter and run the code below to create the username and password combination that will be used to execute queries. Make sure to enter your password where it says `my_strong_password`.
+6. Enter and run the code below to create the username and password combination that will be used to execute queries. Make sure to enter your password where it says `my_strong_password`.
 
    ```sql
    -- create user

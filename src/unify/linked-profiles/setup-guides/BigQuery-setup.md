@@ -31,7 +31,7 @@ To setup the Segment BigQuery connector:
 Grant access to datasets and tables so that Segment can list datasets, tables, and columns, and create Linked Events.
 
 Grant
-- [BigQuery Data Viewer](https://cloud.google.com/bigquery/docs/access-control#bigquery.dataViewer){:target="_blank"} role
+- [`BigQuery Data Viewer`](https://cloud.google.com/bigquery/docs/access-control#bigquery.dataViewer){:target="_blank"} role <br>
 OR
 - Permissions:
     - `bigquery.datasets.get`
