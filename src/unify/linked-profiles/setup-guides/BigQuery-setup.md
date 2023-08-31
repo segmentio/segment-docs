@@ -24,7 +24,7 @@ To setup the Segment BigQuery connector:
 12. Click **Add Key > Create new key**.
 13. In the pop-up window, select **JSON** for the key type, and click **Create**. 
 14. Copy all the content within the file you've created and downloaded.
-15. Navigate to Segment and paste all the credentials you copied from step 13 into the **Enter your credentials** section as you connect your warehouse destination.
+15. Navigate to Segment and paste all the credentials you've just copied into the **Enter your credentials** section as you connect your warehouse destination.
 
 ## Grant access to datasets and tables for enrichment
 
