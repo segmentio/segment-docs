@@ -49,3 +49,7 @@ Additional Autopilot Tracking code will be required on your site to unlock the f
   - User association using the Autopilot JavaScript library.
 
 For complete details, visit the Autopilot page [How to use Segment with Autopilot](https://support.autopilothq.com/hc/en-us/articles/203658119).
+
+## Important notes
+### Engage
+The Autopilot destination requires either email or userId in all Identify events. If neither are provided in the payload then the Autopilot destination's Event Delivery tab will show a 400 Bad Request error message : _"Missing unique identifier traits. Either `email` or `user_id` traits must be provided"_
