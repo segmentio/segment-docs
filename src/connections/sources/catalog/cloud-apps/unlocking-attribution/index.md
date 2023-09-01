@@ -98,21 +98,17 @@ Property Name | Description
 
 
 ### media_spend_items
-All cost data from the various media platforms is downloaded and stored in the the Media Spend Items and Media Spend Daily Spend collections. Regardless of the media platform, the data is formatted to have the following key unique identifiers/attributes:
+All cost data from the various media platforms is downloaded and stored in the the Media Spend Items and Media Spend Daily Spend collections. Regardless of the media platform, the data is formatted to have a consistent set of key identifiers and attributes as shown in the table below.
 
-* **Campaign Name** - The name of the campaign as defined the media platform. In some platforms, this could be derived from the “Category” field or “Campaign Group” field
-* **Ad Collective Name** - The name of the Ad Collective (also known as Ad Set, or Ad Group across various platforms)
-* **Campaign Id** - The unique ID of the campaign, as determined by the media platform
-* **Ad Collective Id** - The unique ID of the Ad Collective, as determined by the media platform
-Each row in the Media Spend Items collection represent a unique combination of the above 4 attributes. After matching a touch against a campaign, the `campaign` identifier in the `touches` collection points to a row from this collection.
+Each row in the Media Spend Items collection represent a unique combination of the 4 key attributes(`campaign_name`,`ad_collective_name`, `campaign_id`, `ad_collective_id`). After matching a touch against a campaign, the `campaign` identifier in the `touches` collection points to a row from this collection.
 
 
 Property Name | Description  
 --------------- | --------------                                                                                         
-`campaign_name` | The name of the campaign.                                                                              
-`campaign_id` | The unique ID of the campaign. This is set by the paid media platform.                                     
+`campaign_name` | The name of the campaign as defined the media platform. In some platforms, this could be derived from the “Category” field or “Campaign Group” field                                                                              
+`campaign_id` | The unique ID of the campaign, as determined by the media platform                                     
 `id` | The unique ID of the item.                                                                            
-`ad_collective_name` | The name of the Ad Collective.                                                                         
+`ad_collective_name` | The name of the Ad Collective (also known as Ad Set, or Ad Group across various platforms)
 `ad_collective_id` | The unique ID of the Ad Collective. This is set by the paid media platform.                                 
 `media_source` | The platform of the media item.                                                                       
 `type` | The type of the media item (Paid, Organic).                                                      
