@@ -25,13 +25,12 @@ With Linked Events, you can:
 Before getting started, note the following requirements for Linked Events: 
 
 1. Snowflake or BigQuery data warehouse support and write access.
-- View the [BigQuery](/docs/unify/linked-profiles/setup-guides/bigquery/) and [Snowflake](/docs/unify/linked-profiles/setup-guides/snowflake/) setup guides. 
+- View the [BigQuery](/docs/unify/linked-profiles/setup-guides/bigquery-setup/) and [Snowflake](/docs/unify/linked-profiles/setup-guides/snowflake-setup/) setup guides. 
 2. Access to Unify in your workspace. 
 3. Access to the Destination you'll be using with Linked Events. This helps you validate your data. 
 
-> warning "Data store requirement"
-> While any customer data residency is ok with Linked Profiles, your data store must be in the United States.
-
+> info ""
+> Segment stores and processes all data in the United States.
 
 ### Linked Events roles
 
