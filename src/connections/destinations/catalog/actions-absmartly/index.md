@@ -26,7 +26,7 @@ This destination is maintained by ABsmartly. For any issues with the destination
 {% include components/actions-fields.html %}
 
 > info ""
-> If you need support setting things up, you can contact the ABsmartly support team on Slack or via email at [ABsmartly's Support](mailto:support@absmartly.com).
+> If you need support setting things up, you can contact the ABsmartly support team on Slack or [via email](mailto:support@absmartly.com).
 
 # Sending exposures to Segment
 
