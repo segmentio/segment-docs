@@ -79,7 +79,7 @@ analytics.ready(function() {
 ### Publishing experiment exposures through Segment
 
 To publish experiment exposures through Segment, you must first configure
-and enable the _Exposures (Verbatim)_ mapping on your ABsmartly (Actions) destination.
+and enable the _Exposures (Verbatim)_ mapping in your ABsmartly (Actions) destination.
 
 We want to replace the direct flow of exposure events from the ABsmartly SDK to the ABsmartly collector, by instead sending them to Segment
 for processing by the destination function.
