@@ -157,7 +157,7 @@ After you’ve added Enrichments, you’ll want to test and save your enrichment
 To use Linked Events, be sure that you have proper permissions for the Data Warehouse you're using. Visit the [BigQuery](/docs/unify/linked-profiles/setup-guides/bigquery/) and [Snowflake](/docs/unify/linked-profiles/setup-guides/snowflake/) setup guides to learn more about updating permissions.
 
 {% endfaqitem %}
-
+ 
 {% faqitem How often do syncs occur? %}
 
 Segment currently syncs once every hour.
