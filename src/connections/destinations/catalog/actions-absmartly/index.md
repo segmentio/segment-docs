@@ -11,7 +11,7 @@ This destination is maintained by ABsmartly. For any issues with the destination
 ## Benefits of ABsmartly (Actions) vs A/B Smartly Classic
 
 - **Easier Setup**: Actions-based destinations are easier to configure with clear default settings, letting you quickly get started.
-- **Control and clearer mapping**. Actions-based destinations enable you to define the mapping between the data Segment receives from your source, and the data Segment sends to ABsmartly.
+- **Control and clearer mapping**: Actions-based destinations enable you to define the mapping between the data Segment receives from your source and the data Segment sends to ABsmartly.
 
 ## Getting started
 
