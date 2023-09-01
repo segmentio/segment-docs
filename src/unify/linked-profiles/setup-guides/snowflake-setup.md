@@ -13,7 +13,7 @@ Be sure to log in with a user that has read and write permissions so that Segmen
 
 Follow the instructions below to set up the Segment Snowflake connector. Segment recommends you use the `ACCOUNTADMIN` role to execute the commands below.
 
-> note ""
+> info ""
 > Use the following steps if you haven't used the Segment Reverse ETL before, or don't want to use the same database as where Reverse ETL deltas are stored. 
 
 1. Log in to your Snowflake account.
@@ -72,7 +72,7 @@ Follow the instructions below to set up the Segment Snowflake connector. Segment
 
 If you're using an existing database, follow the steps below to get started.
 
-## Grant Access to Tables 
+### Grant Access to Tables 
 
 To use Linked Events, you'll need to grant access to `segment_entities_user` for the schemas and tables you'd like to read from to perform enrichments. 
 

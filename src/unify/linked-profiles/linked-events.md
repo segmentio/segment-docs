@@ -16,18 +16,18 @@ On this page, you'll learn how to get started with Linked Events.
 
 With Linked Events, you can:
 
-- **Add details to events for precise targeting**. Enable targeting based on appending product events that just have `product_id` with full product SKU details from your warehouse.
+- **Add details to events for precise targeting**. Enable targeting by appending product events that only have `product_id` with full product SKU details from your warehouse.
 - **Sync enriched data**. Add a loyalty ID to event payloads before sending it downstream to destinations such as Amplitude, Mixpanel, and more.
 - **Reduce load times**. Enrich page view events with products and subscriptions connected to that view, and send that to Google Analytics 4 to lighten the front end and reduce page loading time.
 
 ## Requirements
 
-Before getting started, note the following requirements for Linked Events: 
+Before getting started with Linked Events, you'll need:
 
 1. Snowflake or BigQuery data warehouse support and write access.
 - View the [BigQuery](/docs/unify/linked-profiles/setup-guides/bigquery-setup/) and [Snowflake](/docs/unify/linked-profiles/setup-guides/snowflake-setup/) setup guides. 
 2. Access to Unify in your workspace. 
-3. Access to the Destination you'll be using with Linked Events. This helps you validate your data. 
+3. Access to the Destination you'll be using with Linked Events so that you can validate your data. 
 
 > info ""
 > Segment stores and processes all data in the United States.
@@ -70,16 +70,16 @@ For Linked Events, the sync destination is an internal Segment data store. To tr
 
 You can choose which database within your warehouse this data lives in. 
 
-### Supported warehouse Destinations
+### Supported data warehouses
 
-The table below shows the warehouse Destinations Linked Events supports. View the Segment docs for your warehouse, then carry out the corresponding steps. 
+The table below shows the data warehouses Linked Events supports. View the Segment docs for your warehouse, then carry out the corresponding steps. 
 
 | **Table**              |      **Steps**          |
 |------------------------|-------------------------|
 | [Snowflake](docs/unify/linked-profiles/setup-guides/snowflake-setup/)              | 1. Configure your snowflake database. <br> 2. Enter your credentials. <br> 3. Test the Connection. <br> 4. Click **Save**. |
 | [BigQuery](/docs/unify/linked-profiles/setup-guides/bigquery-setup/)           | 1. Add your credentials to the database that has tables with the Entities you want to enrich your event with. <br> 2. Test your connection. | 
 
-<!-- 
+<!--
 | [Redshift](/docs/connections/storage/catalog/redshift/#getting-started)           | 1. Choose an instance. <br> 2. Provision a new Redshift cluster. |
 | [Azure](/docs/connections/storage/catalog/azuresqldw/)              | 1. Sign up for an Azure subscription. 2. Provision a dedicated SQL pool.                     |
 | [Postgres](/docs/connections/storage/catalog/postgres/)           | 1. Follow the steps in the Postgres getting started section. 
@@ -87,9 +87,7 @@ The table below shows the warehouse Destinations Linked Events supports. View th
 
 ## Step 2: Add a model
 
-After you connect your warehouse, use the Data graph overview screen (**Unify > Data graph**) to view models that Segment has synced from your data warehouse, add a new model, and view data warehouse settings. 
-
-You can select a model to view the table schema including columns, column type, primary key, and sync information.
+After you connect your warehouse, use the Data graph overview screen (**Unify > Data graph**) to view models Segment has synced from your data warehouse, add a new model, and view data warehouse settings. 
 
 To add a new model:
 1. Click **Add model**.
@@ -102,8 +100,7 @@ Once you've added a model, visit the Data graph overview page and select the mod
 
 ## Step 3: Add a Destination
 
-To use Linked Events, you'll need to add a destination to send enriched events to.
-Navigate to **Connections > Destinations**. Select an existing destination, or click **+ Add destination** to add a new destination.  
+To use Linked Events, you'll need to add a destination to send enriched events to. Navigate to **Connections > Destinations**. Select an existing destination, or click **+ Add destination** to add a new destination.  
 
 > info ""
 > For Linked Events, Segment supports [Destination Actions](/docs/connections/destinations/actions/).
