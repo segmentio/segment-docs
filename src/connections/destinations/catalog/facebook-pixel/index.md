@@ -236,6 +236,8 @@ If someone saw or clicked on your ad on a mobile phone then later came back dire
 
 ### Are Facebook Pixel events reflected in Facebook Ads Manager in real-time?
 
+
 Facebook Pixel events typically don't display in real-time within the Facebook Ads Manager or other reporting interfaces. While Facebook Pixel events are tracked in near real-time, there might be some delay before you see them in your reporting. Visit [Facebook's documentation](https://www.facebook.com/business/help/147965221941551){:target="_blank"} to learn more. 
+
 
 {% include content/client-side-script-unverified.md %}
