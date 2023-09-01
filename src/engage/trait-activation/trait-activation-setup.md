@@ -14,7 +14,7 @@ On this page, you'll learn how to set up the Destination that you'll use to get 
 You'll first choose a Destinaton to connect to your Audience and use with Trait Activation. Trait Activation supports real-time and batch audiences for the Destinations listed in the table below. Select your Destination, view its Segment documentation, then follow the required setup steps. 
 
 > warning ""
-> Trait Activation only supports [Iterable](/docs/connections/destinations/catalog/iterable/) and [Zendesk](/docs/connections/destinations/catalog/zendesk/) during beta.
+> For Trait Activation, Segment only supports [Iterable](/docs/connections/destinations/catalog/iterable/) and [Zendesk](/docs/connections/destinations/catalog/zendesk/) during beta. Segment won't support both destinations for Trait Activation after GA.
 
 
 |-----------------------|---------------|---------------------------|
