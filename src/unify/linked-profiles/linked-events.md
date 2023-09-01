@@ -141,9 +141,6 @@ You’ll have access to all rows/columns in your data warehouse associated with 
 
 You can then add the key name on the right side, which is what Segment sends to your destination. 
 
-> info ""
-> For Linked Events, Segment doesn't provide a preview of the enriched payloads.
-
 ### Test and save your Enrichments
 
 After you’ve added Enrichments, you’ll want to test and save your enrichments.
@@ -152,6 +149,8 @@ After you’ve added Enrichments, you’ll want to test and save your enrichment
 - The edit panel shows you the mapping output in the format for the destination tool. You can change your mapping as needed and re-test.
 6. When you're satisfied with the mapping, click **Save**. Segment returns you to the Mappings table.
 
+> info ""
+> At this time, when you select mappings or test events, you won’t see enrichment data. Enrichment data is only available with real events.
 
 ## Frequently asked questions
 
