@@ -40,8 +40,10 @@ For example, if you include a single `subscription_id` property in the `Subscrip
 
 **IMPORTANT: Unplanned property omission is ONLY supported in cloud-mode Destinations. Unplanned properties will not be omitted when sending to device-mode Destinations.**
 
-## Track Calls - JSON Schema Violations
-Setting this dropdown to Block Event will ensure that all events with JSON schema violations (for example, missing required properties, incorrect property value data types, or invalid regex patterns) will be blocked. A less aggressive option is to select Omit from the dropdown which will simply remove the offending property from the event.
+## Block Track Calls - Common JSON Schema Violations
+To block all `track` calls that generate a common JSON schema violation, go to your **Schema Configuration**, then go to **Advanced Blocking Controls** and choose **Block Event** from the dropdown. Next, you will need to [edit the underlying JSON schema](https://segment.com/docs/protocols/tracking-plan/create/#edit-underlying-json-schema) and add a rule to the Common JSON Schema definition that you know won't exisit in your `track` event and then trigger a `track` event. Any `track` event that generates a common JSON schema violation will be blocked. 
+
+Setting the dropdown to **Block Event** will ensure that all `track` events with JSON schema violations (for example, missing required properties, incorrect property value data types, or invalid regex patterns) will be blocked. A less aggressive option is to select Omit from the dropdown which will simply remove the offending property from the event.
 
 This is an advanced feature that requires extensive testing and a squeaky clean data set + tracking plan to enable. To get a sense of which events will be blocked, or properties omitted, go to the Violations view for a source and note all events with a violation. For example, if you added a `subscription_id` required property to your `Subscription Cancelled` event in your Tracking Plan, the below track call would be blocked by Protocols, or property omitted, depending on your setting.
 
@@ -60,6 +62,9 @@ Setting this dropdown to Omit Traits will ensure that traits not defined in your
 
 **IMPORTANT: Unplanned identify trait blocking is ONLY supported in cloud-mode Destinations. Events with invalid traits will not be blocked from sending to device-mode Destinations.**
 
-## Identify Calls - Common JSON Schema Violations
-To block _unplanned_ `identify` calls, go to your **Schema Configuration**, then go to **Advanced Blocking Controls** and choose Block Events from the dropdown. Next, you will need to [edit the underlying JSON schema](https://segment.com/docs/protocols/tracking-plan/create/#edit-underlying-json-schema) and add a rule to the Common JSON Schema definition that you know won't exisit in your `identify` events and then trigger an `identify` event. Any `identify` event that generates a common JSON schema violation will be blocked. 
+## Block Identify Calls - Common JSON Schema Violations
+To block all `identify` calls that generate a common JSON schema violation, go to your **Schema Configuration**, then go to **Advanced Blocking Controls** and choose **Block Event** from the dropdown. Next, you will need to [edit the underlying JSON schema](https://segment.com/docs/protocols/tracking-plan/create/#edit-underlying-json-schema) and add a rule to the Common JSON Schema definition that you know won't exisit in your `identify` event and then trigger an `identify` event. Any `identify` event that generates a common JSON schema violation will be blocked. 
 
+Setting the dropdown to **Block Event** will ensure that all `identify` events with JSON schema violations (for example, missing required traits, incorrect property value data types, or invalid regex patterns) will be blocked. A less aggressive option is to select Omit from the dropdown which will simply remove the offending property from the event.
+
+**IMPORTANT: JSON schema violation event blocking is ONLY supported in cloud-mode Destinations. Events with invalid properties will not be blocked from sending to device-mode Destinations.**
