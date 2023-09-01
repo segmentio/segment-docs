@@ -31,7 +31,7 @@ This destination is maintained by ABsmartly. For any issues with the destination
 # Sending exposures to Segment
 
 It can be useful to send experiment exposures to Segment for visibility from 
-other destinations. The Segment spec includes the [Experiment Viewed semantic event](https://segment.com/docs/connections/spec/ab-testing/)
+other destinations. The Segment Spec includes the [Experiment Viewed semantic event](/docs/connections/spec/ab-testing/)
 for this purpose.
 
 > info ""
