@@ -9,7 +9,7 @@ On this page, you'll learn how to connect your BigQuery data warehouse to Segmen
 > warning ""
 > You need to be an account admin to set up the Segment BigQuery connector as well as write permissions for the `__segment_reverse_etl` dataset. 
 
-To setup the Segment BigQuery connector:
+To set up the Segment BigQuery connector:
 
 1. Navigate to **IAM & Admin > Service Accounts** in BigQuery.  
 2. Click **+ Create Service Account** to create a new service account.

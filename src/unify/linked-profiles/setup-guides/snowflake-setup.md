@@ -4,7 +4,7 @@ plan: unify
 beta: true
 ---
 
-On this page, you'll learn how to set up Snowflake as your warehouse destination. 
+On this page, you'll learn how to connect your Snowflake data warehouse to Segment.
 
 Be sure to log in with a user that has read and write permissions so that Segment can write to your database. 
 
