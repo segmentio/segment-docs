@@ -19,7 +19,7 @@ This destination is maintained by ABsmartly. For any issues with the destination
 2. Search for "ABsmartly" in the Catalog, select **ABsmartly (Actions)**, and choose which of your sources to connect the destination to.
 3. Add the following Connection Settings:
    - **Collector Endpoint**: Your ABsmartly Collector REST Endpoint. Usually `https://<your-subdomain>.absmartly.io/v1`
-   - **API Key**: An existing API Key. Created under Settings->API Keys in the ABsmartly Web Console.
+   - **API Key**: An existing API Key. Created under Settings > API Keys in the ABsmartly Web Console.
    - **Environment**: The environment where the events are originated matching an existing environment in ABsmartly. Created under Settings->Environments in the ABsmartly Web Console.
 5. Enable the _Track Calls_ mapping to send events to ABsmartly.
 
