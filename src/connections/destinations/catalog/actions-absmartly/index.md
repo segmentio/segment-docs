@@ -20,7 +20,7 @@ This destination is maintained by ABsmartly. For any issues with the destination
 3. Add the following Connection Settings:
    - **Collector Endpoint**: Your ABsmartly Collector REST Endpoint. Usually `https://<your-subdomain>.absmartly.io/v1`
    - **API Key**: An existing API Key. Created under Settings > API Keys in the ABsmartly Web Console.
-   - **Environment**: The environment where the events are originated matching an existing environment in ABsmartly. Created under Settings->Environments in the ABsmartly Web Console.
+   - **Environment**: The environment where the events are originated matching an existing environment in ABsmartly. Created under Settings > Environments in the ABsmartly Web Console.
 5. Enable the _Track Calls_ mapping to send events to ABsmartly.
 
 {% include components/actions-fields.html %}
@@ -30,7 +30,7 @@ This destination is maintained by ABsmartly. For any issues with the destination
 
 # Sending exposures to Segment
 
-It can be useful to send experiment exposures to Segment for visibility from 
+It can be useful to send experiment exposures to Segment for visibility from
 other destinations. The Segment Spec includes the [Experiment Viewed semantic event](/docs/connections/spec/ab-testing/)
 for this purpose.
 
