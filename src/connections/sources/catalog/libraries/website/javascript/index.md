@@ -475,7 +475,7 @@ Segment doesn't share `localStorage` across subdomains. If you use Segment track
 
 ### Keepalive
 
-This can be utilised in instances where an API call is firing on a hard redirect, and are being missed from getting captured in Segment, you can then set this flag to true, which enables firing the event before the redirect. This was earlier availble only for [batched events](https://segment.com/docs/connections/sources/catalog/libraries/website/javascript/#will-analyticsjs-deliver-events-that-are-in-the-queue-when-a-user-closes-the-browser), we have now made this available for all events. You can read more about this in our PR [here](https://github.com/segmentio/analytics-next/issues/768#issuecomment-1386100830)
+You can utilize this in instances where an API call fires on a hard redirect, and are missed from getting captured in Segment. If you set this flag to true, it enables firing the event before the redirect. This is available for all events. You can read more about this in the [Github PR](https://github.com/segmentio/analytics-next/issues/768#issuecomment-1386100830){:target="_blank"}.
 
 
 ## Managing data flow with the Integrations object
