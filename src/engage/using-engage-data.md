@@ -146,7 +146,7 @@ The first is when the value of the trait or audience changes.
 
 The second, less common case is that Engage re-syncs an audience or computed trait when a new `external_id` is added to a profile. For example, an ecommerce company has an anonymous visitor with a computed trait called `last_viewed_category = 'Shoes'`. That visitor then creates an account and an email address is added to that profile, even though the computed trait value hasn't changed. When that email address is added to the profile, Engage re-syncs the computed trait that includes an email to downstream tools. This allows the ecommerce company to start personalizing the user's experience from a more complete profile.
 
-If you encounter an undesired behavior, such as the re-syncing of a computed trait or audience when the underlying trait or audience value hasn't changed in your system, [contact Segment](https://segment.com/help/contact/){:target="_blank"}.
+If this behavior—re-syncing a computed trait or audience when the underlying trait or audience value hasn’t changed—isn’t desired in your system, [contact Segment](https://segment.com/help/contact/){:target="_blank"}.
 
 
 ## Rate limits on Engage Event Destinations
