@@ -85,6 +85,14 @@ In addition, Segment creates a SHA-256 hash of the following fields before sendi
 - Identifier for Vendor (IDFV)
 - Phone Number
 - IP Address
+- First Name
+- Middle Name
+- Last Name
+- City
+- State
+- Zip
+- Birth Month
+- Birth Day
 
 > warning ""
 > If you hash identifiers upstream before sending to Segment, Segment still hashes that data before sending to Snap. This results in a double hash that won't be able to be matched on. Please ensure your fields are not hashed prior to sending through the Snapchat Conversions API destination.
