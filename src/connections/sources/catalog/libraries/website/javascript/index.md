@@ -14,12 +14,12 @@ id: IqDTy1TpoU
 
 
 
-Analytics.js 2.0 is the newest version of Segment's most popular JavaScript library. It is backwards compatible with our original Analytics.js Classic library, so in most cases, no code changes are necessary in order to start using Analytics.js 2.0. Analytics.js 2.0 enables you to send your data to hundreds of [destination tools](https://segment.com/docs/connections/destinations/catalog/){:target="_blank"} without having to learn, test, or use a new API every time.
+Analytics.js 2.0 is the newest version of Segment's most popular JavaScript library. It is backwards compatible with our original Analytics.js Classic library, so in most cases, no code changes are necessary in order to start using Analytics.js 2.0. Analytics.js 2.0 enables you to send your data to hundreds of [destination tools](/docs/connections/destinations/catalog/) without having to learn, test, or use a new API every time.
 
 Segment's Analytics.js 2.0 library is fully open-source and can be viewed on [GitHub](https://github.com/segmentio/analytics-next/){:target="_blank"}.
 
 > info ""
-> All sources created after April 5, 2022 will use Analytics.js 2.0 by default. 
+> All sources created after April 5, 2022 use Analytics.js 2.0 by default. 
 
 
 ## Benefits of Analytics.js 2.0
@@ -31,7 +31,7 @@ Analytics.js 2.0 provides two key benefits over the previous version.
 Analytics.js 2.0 reduces page load time and improves site performance. Its package size is **~70%** smaller than its predecessor, Analytics.js.
 
 > info ""
-> Many factors impact page load time, including network conditions, hosting locations, and page weight. Each customer integration will vary based on the number of device-mode destinations that are enabled for each source. The more device-mode destinations that are enabled, the more data gets added to the library, which will impact the weight of the library.
+> Many factors impact page load time, including network conditions, hosting locations, and page weight. Page weight for each customer integration varies based on the number of device-mode destinations that are enabled for each source. The more device-mode destinations that are enabled, the more data gets added to the library, which will impact the weight of the library.
 
 
 ### Developer experience
