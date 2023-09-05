@@ -65,6 +65,9 @@ The default source code template includes handlers for all event types. You don'
 
 Insert functions can define handlers for each message type in the [Segment spec](/docs/connections/spec/):
 
+> info "onBatch handler"
+> At this time, Destination Insert Functions do not support the onBatch handler. 
+
 - `onIdentify`
 - `onTrack`
 - `onPage`
@@ -72,7 +75,6 @@ Insert functions can define handlers for each message type in the [Segment spec]
 - `onGroup`
 - `onAlias`
 - `onDelete`
-- `onBatch`
 
 Each of the functions above accepts two arguments:
 
@@ -314,6 +316,10 @@ No, Segment can't guarantee the order in which the events are delivered to an en
 ##### Can I create a device-mode destination?
 
 No, destination insert functions are currently available as cloud-mode destinations only. Segment is in the early phases of exploration and discovery for supporting customer "web plugins" for custom device-mode destinations and other use cases, but this is unsupported today.
+
+##### Can I connect an insert function to multiple destinations?
+
+No, an insert function can only be connected to one destination.
 
 ##### How do I publish a destination to the public Segment catalog?
 

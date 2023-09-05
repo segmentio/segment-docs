@@ -48,6 +48,9 @@ To create a destination filter:
 7. Name your filter and click the toggle to enable it.
 8. Click **Save**.
 
+> info "Enable destination filters for Analytics.js sources"
+> If you are currently using Analytics.js as your source and want to apply filters to device-mode destinations, you need to enable device mode destination filters for your Analytics.js source. To do this, go to your Javascript source, navigate to Settings > Analytics.js, and turn on the toggle for **Destination Filters**. This will ensure the filters are effectively applied to device-mode destinations.
+
 ## Destination filters API
 
 The destination filters API provides more power than Segment's dashboard destination filters settings. With the API, you can create complex filters that are conditionally applied using Segment's [Filter Query Language (FQL)](/docs/api/config-api/fql/).
@@ -231,3 +234,9 @@ Destination Filters can't target properties or traits with spaces in the field n
 #### Can I use destination filters to drop events unsupported by a destination?
 
 The check for unsupported events types happens before any destination filter checks. As a result, Destination Filters can't prevent unsupported event type errors. To filter these events, use the [Integrations Object](/docs/guides/filtering-data/#filtering-with-the-integrations-object).
+
+#### Why do I see events sent through after I just added a destination filter?
+
+Destination filters only filter events sent after filter setup. If you just added a destination filter but still see some events going through, you're likely seeing retries from failed events that occurred before you set up the filter.
+
+When Segment sends an event to a destination but encounters a timeout error, it attempts to send the event again. As a result, if you add a destination filter while Segment is trying to send a failed event, these retries could filter through, since they reflect events that occurred before filter setup.

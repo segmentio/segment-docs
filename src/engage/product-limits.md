@@ -10,8 +10,10 @@ To provide consistent performance and reliability at scale, Segment enforces def
 
 To learn more about custom limits and upgrades, contact your dedicated Customer Success Manager or [friends@segment.com](mailto:friends@segment.com).
 
+> info ""
+> Beginning August 18, 2023, Segment has [updated product limits](/docs/unify/product-limits/) that apply to new Engage and Unify users. 
 
-## Default Limits
+## Default limits
 
 | Name                                        | limit                                                       | Details                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
 | ------------------------------------------- | ----------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -46,6 +48,10 @@ To learn more about custom limits and upgrades, contact your dedicated Customer 
 
 ## Journeys
 
+> info ""
+> These limits only apply to existing users who started with Engage prior to August 18, 2023. Visit Segment's updated Unify and Engage [limits](/docs/unify/product-limits/) to learn more.
+
+
 | Item            | Limit description                | Details                                                                      |
 | --------------- | -------------------------------- | ---------------------------------------------------------------------------- |
 | Steps           | 500                              | The maximum number of steps per Journey.                                     |
@@ -55,6 +61,7 @@ To learn more about custom limits and upgrades, contact your dedicated Customer 
 | Compute credits | Half a credit for each step (up to 250 compute credits)     | Each step in a published Journey consumes half of one compute credit.        |
 
 
+ 
 ## Channels
 
 | Item     | Limit description                                                   | Details                                                                                             |
