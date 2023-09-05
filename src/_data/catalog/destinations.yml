@@ -14586,7 +14586,7 @@ items:
   display_name: Canny (Actions)
   name: Canny (Actions)
   slug: canny-actions
-  hidden: false
+  hidden: true
   endpoints:
   - US
   regions:
@@ -19499,7 +19499,7 @@ items:
   display_name: Data Lakes
   name: Data Lakes
   slug: data-lakes
-  hidden: false
+  hidden: true
   endpoints:
   - US
   regions:
@@ -37564,7 +37564,7 @@ items:
   display_name: Google Cloud Storage
   name: Google Cloud Storage
   slug: google-cloud-storage
-  hidden: false
+  hidden: true
   endpoints:
   - US
   regions:
@@ -41159,7 +41159,7 @@ items:
   display_name: InMoment (formerly Wootric)
   name: InMoment (formerly Wootric)
   slug: inmoment-formerly-wootric
-  hidden: false
+  hidden: true
   endpoints:
   - US
   regions:
@@ -41384,7 +41384,7 @@ items:
   display_name: Insider Audiences
   name: Insider Audiences
   slug: insider-audiences
-  hidden: false
+  hidden: true
   endpoints:
   - US
   regions:
@@ -55027,7 +55027,7 @@ items:
   display_name: Optimizely Feature Experimentation (Actions)
   name: Optimizely Feature Experimentation (Actions)
   slug: optimizely-feature-experimentation-actions
-  hidden: false
+  hidden: true
   endpoints:
   - US
   regions:
@@ -60495,7 +60495,7 @@ items:
   display_name: RevX Cloud (Actions)
   name: RevX Cloud (Actions)
   slug: revx-cloud-actions
-  hidden: false
+  hidden: true
   endpoints:
   - US
   regions:
@@ -75451,7 +75451,7 @@ items:
   display_name: TikTok Pixel
   name: TikTok Pixel
   slug: tiktok-pixel
-  hidden: false
+  hidden: true
   endpoints:
   - US
   regions:
