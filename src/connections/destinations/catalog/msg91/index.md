@@ -12,7 +12,7 @@ This destination is maintained by MSG91. For any issues with the destination, [c
 
 ## Getting Started
 
-{% include content/connection-modes.md %}
+
 
 1.  From your Segment UI's Destinations page click on "Add Destination".
 

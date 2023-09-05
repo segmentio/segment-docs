@@ -81,7 +81,6 @@ If you have more than one Salesforce instance connected to Segment, repeat these
 
 Keep the following in mind as you begin to use Salesforce (Actions):
 - Salesforce (Actions) supports batching. The workspace owner can edit the enabled-batching field manually for any of the mappings. This setting is disabled by default.
-- Salesforce (Actions) doesn’t support Delete CRUD operations on Custom Object. Custom Objects with CRUD the operation set to `delete` are not migrated.
 - Sending Identify events to Salesforce (Classic) results in a create or update operation for Leads, and maps properties from `event.traits` Salesforce (Actions) does not support this behavior. By default, the automatic migration maps only a subset of the most used Lead properties as mentioned below. The workspace owner must map any additional Salesforce properties or Custom properties manually.
 
 Review the tables below to see how settings from Salesforce (Classic) were migrated to Salesforce (Actions).
@@ -155,7 +154,12 @@ When using the `create` operation, it's possible for duplicate records to be cre
 Please note this is only a concern when using the `create` operation. You can use the `upsert` operation instead to avoid duplicates if `upsert` meets your needs.
 
 ### How does Salesforce Bulk API work?
-When **Use Salesforce Bulk API** is enabled for your mapping, events are sent to [Salesforce’s Bulk API 2.0](https://developer.salesforce.com/docs/atlas.en-us.api_asynch.meta/api_asynch/asynch_api_intro.htm){:target="_blank"} rather than their streaming REST API. If enabled, Segment will collect events into batches of 1000 before sending to Salesforce. Bulk support can be used for the `upsert` or `update` operations only.
+When **Use Salesforce Bulk API** is enabled for your mapping, events are sent to [Salesforce’s Bulk API 2.0](https://developer.salesforce.com/docs/atlas.en-us.api_asynch.meta/api_asynch/asynch_api_intro.htm){:target="_blank"} rather than their streaming REST API. If enabled, Segment will collect events into batches of up to 1000 before sending to Salesforce. Bulk support can be used for the `upsert` or `update` operations only.
 
 For bulk `update`, if a record in a batch is missing a Bulk Update Record ID, Segment will still send it to Salesforce. Salesforce will reject the individual record because it will be unable to find a record to update. Other records in the batch that are valid will still be processed. Please note that Segment's Event Delivery tab will show the entire batch as successful as Segment cannot currently break down Event Delivery stats into individual failed/passed events.
+
+### Which fields are supposed to map to Salesforce’s required fields for "Bulk Update Record ID" and "Bulk Upsert External ID"?
+
+For "Bulk Update Record ID", see [Salesforce’s help documentation](https://help.salesforce.com/s/articleView?id=000385008&type=1){:target="_blank"}.
+For "Bulk Upsert External ID", see[Salesforce’s help documentation](https://help.salesforce.com/s/articleView?id=000383278&type=1){:target="_blank"}.
 

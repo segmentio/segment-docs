@@ -9,7 +9,7 @@ id: 54ec1baddb31d978f14aa7f9
 
 ## Getting Started
 
-{% include content/connection-modes.md %}
+
 
 1. From the Segment web app, click **Catalog**.
 2. Search for "Zopim" in the Catalog, select it, and choose which of your sources to connect the destination to. (This is the old name.)

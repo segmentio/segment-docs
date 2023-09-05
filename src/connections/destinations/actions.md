@@ -1,8 +1,7 @@
 ---
 title: Destination Actions
+plan: dest-actions
 ---
-
-{% include content/plan-grid.md name="dest-actions" %}
 
 The Destination Actions framework improves on classic destinations by enabling you to see and control how Segment sends the event data it receives from your sources, to actions-based destinations. Each Action in a destination lists the event data it requires, and the event data that is optional.
 
@@ -174,6 +173,9 @@ You can combine criteria in a single group using **ALL** or **ANY**.  Use an ANY
 > info "Unsupported Special Characters"
 > Mappings do not support the use of double quotes " or a tilde ~ in the trigger fields.
 
+> info "Limitations"
+> Mapping fields don't support dot notation. For example, properties.amount.cost or properties_amount.cost aren't supported.
+
 > info "Destination Filters"
 > Destination filters are compatible with Destination Actions. Consider a Destination Filter when:
 > - You need to remove properties from the data sent to the destination
@@ -186,6 +188,10 @@ You can combine criteria in a single group using **ALL** or **ANY**.  Use an ANY
 ### Validation error when using the Event Tester
 
 When you send an event with an actions destination Event Tester that doesn't match the trigger of any configured and enabled mappings, you'll see an error message that states, *You may not have any subscriptions that match this event.* To resolve the error, create a mapping with a trigger to handle the event being tested, or update the test event's payload to match the trigger of any existing mappings. 
+
+### Data not sending downstream
+
+If no mappings are enabled to trigger on an event that has been received from the connected source, the destination will not send any events. Ensure that at least one mapping has been configured and enabled in the destination mappings for an event that you would like to reach downstream. 
 
 ### Multiple mappings triggered by the same event
 

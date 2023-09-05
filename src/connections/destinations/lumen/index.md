@@ -16,7 +16,7 @@ Lumen maintains this destination. For any issues with the destination, [contact 
 ## Getting Started
 
 
-{% include content/connection-modes.md %}
+
 
 1. From the Destinations catalog page in the Segment App, click **Add Destination**.
 2. Search for **Lumen** and select the **Lumen** destination.

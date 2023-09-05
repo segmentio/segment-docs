@@ -15,7 +15,7 @@ To configure Klaviyo as an Event Source to get data into your warehouse or other
 
 ## Getting started
 
-{% include content/connection-modes.md %}
+
 
 1. From the Segment web app, click **Catalog**.
 2. Search for "Klaviyo" in the Catalog, select it, and choose which of your sources to connect the destination to.
@@ -142,12 +142,14 @@ analytics.track({
 
 When you call `track` on `analytics.js`, Segment calls Klaviyo's `track` with the same parameters.
 
+If you include `properties.revenue` in a track event, Segment maps it to Klaviyo's `$value` event.
+
 > info ""
 > When you're tracking client-side, some Klaviyo events require you send an Identify call  before a Track call. 
 
 ### Server-side Track
 
-When you call make a Track call from one of Segment's mobile or server-side libraries, Segment keys the user with the `userId` and also provides the Klaviyo `$email` `customer_property` if your `userId` is an email, or you provide `email` as one of your event `properties`.
+When you make a Track call from one of Segment's mobile or server-side libraries, Segment keys the user with the `userId` and also provides the Klaviyo `$email` `customer_property` if your `userId` is an email, or you provide `email` as one of your event `properties`.
 
 Segment also maps the following Segment spec'd properties to Klaviyo's [special people properties](https://developers.klaviyo.com/en/docs/javascript_api#identify-people){:target="_blank"}:.
 

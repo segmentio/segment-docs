@@ -8,13 +8,13 @@ OneTrust makes it easy for you to capture, centralize, govern, and sync consente
 
 This is an Event Cloud Source which can not only export data into your Segment warehouse, but they can also federate the exported data into your other enabled Segment Destinations. 
 
-This source is maintained by OneTrust. For any issues with the source, [contact their support team](support@onetrust.com).
+This source is maintained by OneTrust. For any issues with the source, [contact their support team](mailto:support@onetrust.com){:target="_blank”}.
 
 ## Getting Started 
 
 1. From your workspace's [Sources catalog page](https://app.segment.com/goto-my-workspace/sources/catalog) click **Add Source**.
 
-2. Search for “OneTrust” in the Sources Catalog, select MoEOneTrustngage, and click **Add Source**.
+2. Search for “OneTrust” in the Sources Catalog, select OneTrust, and click **Add Source**.
 
 3. On the next screen, give the Source **a nickname** configure any other settings.
     - The nickname is used as a label in the Segment app, and Segment creates a related schema name in your warehouse. The nickname can be anything, but Segment recommends using something that reflects the source itself and distinguishes amongst your environments (like `OneTrust_Prod`, `OneTrust_Staging`, or `OneTrust_Dev`).
@@ -37,7 +37,7 @@ The following table lists events that OneTrust sends to Segment. These events sh
 
 ## Event Properties
 
-The following table lists event properties included with all events Segment receives from Braze.
+The following table lists event properties included with all events Segment receives from OneTrust.
 
 |  Property Name | Type | Description |
 |  ------ | ------ | ------ |

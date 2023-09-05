@@ -11,7 +11,7 @@ This destination is maintained by [Split](https://split.io/?utm_source=segmentio
 
 ## Getting Started
 
-{% include content/connection-modes.md %}
+
 
 1. From the Segment web app, click **Catalog**.
 2. Search for Split in the Catalog, select it, and choose which of your sources to connect the destination to.

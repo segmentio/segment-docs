@@ -20,7 +20,12 @@ You can build an Audience from existing events, traits, computed traits, or othe
 
 ### Events
 
-You can build an Audience from any events that are connected to Engage, including [Track](/docs/connections/spec/track), [Page](/docs/connections/spec/page), and [Screen](/docs/connections/spec/screen) calls. You can use the `property` button to refine the audience on specific event properties, as well. Select `and not who` to indicate users that have not performed an event. For example, you might want to look at all users that have viewed a product above a certain price point but not completed the order.
+You can build an Audience from any events that are connected to Engage, including [Track](/docs/connections/spec/track), [Page](/docs/connections/spec/page), and [Screen](/docs/connections/spec/screen) calls. You can use the `property` button to refine the audience on specific event properties, as well. 
+
+> info ""
+> The Audience builder doesn't return every property value in the Constant value or Traits drop-downs. Segment displays a portion of values from the incoming data stream. However, if you don't see the value you're looking for, you can manually enter it.
+
+Select `and not who` to indicate users that have not performed an event. For example, you might want to look at all users that have viewed a product above a certain price point but not completed the order.
 
 ![Creating an Audience of users who viewed a product without buying it](/docs/engage/images/audience_builder.png)
 
@@ -34,6 +39,8 @@ You can also build Audiences based on custom traits. These traits can be collect
 
 You can also use computed traits in an Audience definition. For example, you can create a `total_revenue` computed trait and use it to generate an audience of `big_spender` customers that exceed a certain threshold.
 
+> info ""
+> Engage supports nested traits, but the Audience builder doesn’t support accessing objects nested in arrays. When you send arrays of objects, they are flattened into strings. As a result, the same conditions that work on strings will work on the array. Within the builder, you can only use string operations like `contains` and `does not contain` to look for individual characters or a set of characters in the flattened array.
 
 ### Funnel Audiences
 
@@ -89,8 +96,8 @@ As a result, **Segment recommends waiting at least 24 hours for an Audience to f
 
 From the Overview page, you can view Audience details including the current compute status and a progress bar for real-time and batch Audiences. Engage updates the progress bar and status for real-time computations approximately every 10 minutes.
 
-> info ""
-> Engage only displays the progress bar and status updates when you create a new Audience or Trait.
+> info "Viewing compute progress"
+> When you create a real-time Audience, you'll see a progress bar, computed percentage, and status updates. For existing Audiences that you edit, Engage displays the compute status but not the progress bar or percentage.
 
 > warning ""
 > Engage syncs the Overview page for an individual audience more frequently than the Engage Audiences page (**Engage > Audiences**). As a result, you might see temporary discrepancies in Audience details, such as user counts, between these two pages.
@@ -134,6 +141,9 @@ Real-time Compute allows you to update traits and Audiences as Segment receives 
 - **Instant Messaging:** Trigger messages in email, live chat, and push notifications instantly, to deliver immediate experiences across channels.
 - **Operational Workflows:** Supercharge your sales and support teams by responding to customer needs faster, based on the latest understanding of a user.
 
+> warning ""
+> Real-time Compute doesn't support time window conditions. Segment creates Audiences using time window conditions as batch computations. Additionally, Segment creates [Funnel Audiences](#funnel-audiences) as batch computations.
+
 To create a new Audience or Trait:
 
 1. Go to your **Computed Traits** or **Audiences** tab in Engage and select **Create**.
@@ -168,6 +178,8 @@ Engage then processes your realtime Audience or Trait edits. While the edit task
 > warning ""
 > It is not possible to edit an audience to convert it from real-time to batch, or vice-versa. If the computation type needs to be changed, you will need to recreate the audience with the appropriate conditions.
 
+> warning ""
+> You can't edit an audience to include anonymous users. If you need to include anonymous profiles, recreate the audience with the appropriate conditions
 
 ## Access your Audiences using the Profiles API
 

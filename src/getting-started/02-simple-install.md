@@ -51,7 +51,7 @@ Make note of or write down your write key, as you'll need it in the next steps.
 
 Any time you change a library's settings in the Segment App, the write key regenerates.
 
-![Screenshot of a source's settings page, with the API Keys tab selected.](images/find_writekey.png)
+![Screenshot of a source's settings page, with the API Keys tab selected.](/docs/connections/images/find_writekey.png)
 
 > info ""
 > [Cloud-sources](/docs/connections/sources/about-cloud-sources/) do not have write keys, as they use a token or key from your account with that service. Cloud-sources have other considerations and aren't part of this tutorial.

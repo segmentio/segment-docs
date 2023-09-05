@@ -12,7 +12,7 @@ _**NOTE:** The Delighted Destination is currently only compatible with email sur
 
 ## Getting Started
 
-{% include content/connection-modes.md %}
+
 
 1. From the Segment web app, click **Catalog**.
 2. Search for "Delighted" in the Catalog, select it, and choose which of your sources to connect the destination to.

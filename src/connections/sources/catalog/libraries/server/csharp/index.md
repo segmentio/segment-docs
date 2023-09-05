@@ -3,7 +3,8 @@ title: Analytics for CSharp (C#)
 strat: csharp
 id: 
 redirect_from:
-   - '/connections/sources/catalog/libraries/mobile/unity'          
+   - '/connections/sources/catalog/libraries/mobile/unity'
+   - '/connections/sources/catalog/libraries/mobile/csharp/'          
 ---
 
 With Analytics-CSharp, you can add Segment analytics to your C# based app which includes Unity, Xamarin, .NET. Analytics-CSharp helps you measure your users, product, and business. It unlocks insights into your app's funnel, core business metrics, and whether you have product-market fit. The Analytics-CSharp library is open-source [on GitHub](https://github.com/segmentio/analytics-csharp){:target="_blank"}. 
@@ -320,6 +321,18 @@ The `reset` method clears the SDK’s internal stores for the current user and g
 
 ```c#
 analytics.Reset()
+```
+
+## Arrays
+To send an array as an event property, reference the [GitHub repo](https://github.com/segmentio/Serialization.NET/blob/main/Tests/JsonUtilityTest.cs#L24){:target="_blank"}. Below is an example of code you can implement to send an array of strings:
+
+```c#
+List<string> listOfStrings = new List<string> { "test1", "test2", "test3" };
+
+JsonObject customerJsonObj = new JsonObject
+{
+    ["event_name"] = new JsonArray(listOfStrings.ConvertAll(o => (JsonElement)o))
+}; 
 ```
 
 ## Compatibility

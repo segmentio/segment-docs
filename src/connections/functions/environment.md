@@ -16,7 +16,7 @@ When you create a function, write code for it, and save it, the function appears
 Only [Functions admins](#functions-permissions) can create or edit functions.
 
 1. From your workspace, go to the Catalog and click the [Functions tab](https://app.segment.com/goto-my-workspace/functions/catalog){:target="_blank"}.
-2. Click **New Function**.
+2. Click **Create function**.
 3. Select the type of function you want to build, and click **Build**.
 
    When you click **Build**, a code editor appears. Different template code is available depending on which type of function you created.
@@ -55,10 +55,6 @@ When you deploy your destination function in your workspace, you fill out the se
 ## Functions Versioning
 
 With Functions Versioning, you can access a complete change history for each source or destination function. View version history and creation details, then use a unified or split display to compare code and restore previous versions of a function.
-
-> info "Functions Versioning in beta"
-> Functions Versioning is in beta, and Segment is actively working on this feature. Some functionality may change before it becomes generally available. Versioning is disabled in workspaces where you deploy source functions with multiple instances. [Contact Segment](https://segment.com/help/contact/){:target="_blank"} with any feedback or questions.
-
 
 ### View and compare version history
 

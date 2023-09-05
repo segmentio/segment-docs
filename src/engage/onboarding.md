@@ -14,6 +14,11 @@ This guide lists all required onboarding steps and walks you through Engage setu
 > info ""
 > The steps in this guide are only required if you plan to send email, SMS, and WhatsApp messages with Engage. Visit the [Engage Foundations Onboarding Guide](/docs/engage/quickstart) for general onboarding steps to set up your Engage space, connect sources, create audiences, and more.
 
+> info "Regional Segment"
+> You can use Engage Premier on [Segment's regional infrastructure in the EU](/docs/guides/regional-segment/). Twilio Engage ensures data residency in the EU, but the channels you connect to, may not guarantee the same level of data residency. Check directly with the providers of the channels you use for information about data residency in their applications. Native channels like email and SMS, which use Twilio, are not data resident. 
+> 
+> Twilio is GDPR compliant, and has [Binding Corporate Rules](https://www.twilio.com/legal/binding-corporate-rules){:target="_blank"} to ensure that data is protected when it's transferred between countries.
+
 ## Before you begin: overview and task checklist
 
 You’ll set up Twilio Engage in four stages:
@@ -70,7 +75,7 @@ Start by creating a SendGrid account and then upgrading to the SendGrid Pro Plan
 
 ### Create a subuser and check the dedicated IP address
 
-Next, you’ll create a SendGrid subuser and ensure that a dedicated IP has been assigned:
+Next, you’ll [create a SendGrid subuser](https://docs.sendgrid.com/ui/account-and-settings/subusers#create-a-subuser){:target="_blank"} and ensure that a dedicated IP has been assigned:
 
 1. In your SendGrid space, navigate to **Settings > Subuser Management**, then click **Create New Subuser**.
 2. In the **Create New Subuser** window, create a username for the subuser, then add an email address and password. Your SendGrid subuser username must begin with the prefix `twilio_engage_app_`. Add a unique identifier to the end of the prefix, for example, `twilio_engage_app_someusername`.
@@ -121,9 +126,9 @@ You’ll now need to enable event webhooks, which trigger webhook notifications 
 1. Within your SendGrid **subuser** space, navigate to **Settings > Mail Settings**.
 2. Click the pencil edit icon next to **Event Webhook**.
 3. On the Event Webhook page, set authorization method to none.
-4. Copy and paste the following URL into the **HTTP Post URL** field:
-
-    <br> `https://engage-ma-webhook-api.engage.segment.com/sendgrid`
+4. Copy and paste the following URL, depending on your region,  into the **HTTP Post URL** field:
+  - US: `https://engage-ma-webhook-api.engage.segment.com/sendgrid`
+  - EU:`https://engage-ma-webhook-api.euw1.engage.segment.com/sendgrid`
 
     ![Adding the HTTP Post URL](images/webhook.png "Adding the HTTP Post URL")
 
@@ -137,7 +142,10 @@ You’ll now need to enable event webhooks, which trigger webhook notifications 
 
 Now, you'll generate an API key and API Key ID within SendGrid. **With your SendGrid account open in one tab, open your [Segment workspace](https://app.segment.com/workspaces){:target="_blank"} open in another. You’ll need both open to copy and paste the API credentials into your Engage settings.**
 
-1. Within your SendGrid subuser space, navigate to **Settings > API Keys**.
+> info "SendGrid Subuser Step"
+> Carry out the following steps in your SendGrid **subuser** space.
+
+1. **Within your SendGrid subuser space**, navigate to **Settings > API Keys**.
 2. Click the **Create API Key** button.
 3. In the Create API Key window, name your API key using the prefix `twilio_engage_app_`, with a suffix of your choice added to the end, like `twilio_engage_app_somekey`.
 4. Under API Key Permissions, select the **Full Access** radio button, then click **Create & View**.
@@ -158,23 +166,31 @@ To finish linking the API credentials to your Segment account, follow these step
 
 ### Warm up your IP
 
-To finish configuring your SendGrid account for usage with Twilio Engage, you’ll [warm up your IP](https://docs.sendgrid.com/ui/sending-email/warming-up-an-ip-address){:target="_blank"}. Depending on when you created your SendGrid account, you'll either warm up your IP manually or use SendGrid's automated IP warmup process.
+> info ""
+> If you already send emails regularly on your chosen IP, proceed to [Stage 3](#stage-3-create-and-configure-twilio-sms-services).
+
+To finish configuring your SendGrid account for usage with Twilio Engage, you’ll [warm up your IP](https://docs.sendgrid.com/ui/sending-email/warming-up-an-ip-address){:target="_blank"}. IP warmup protects your sender reputation and ensures that you avoid email deliverability issues. 
 
 As a best practice, **only warm up your IP when you're ready to begin sending campaigns.**
 
-#### Manual IP warmup
-
-If your SendGrid account is new, you'll need to warm up your IP manually. For details on the manual warmup process, view SendGrid's [manual IP warmup documentation](https://docs.sendgrid.com/ui/sending-email/warming-up-an-ip-address#manually-warmup-your-ip){:target="_blank"}.
-
 #### Automated IP warmup
 
-If you've already warmed up an IP with your SendGrid account in the past, you can enable automated IP warmup by following these steps:
+You can enable automated IP warmup by following these steps:
 
-1. Within your SendGrid space, navigate to **Settings > IP Addresses**.
-2. On the **Dedicated IP Addresses** page, click the pencil edit button next to your Engage IP address.
-3. Under **Additional options**, check **Use Automated IP warmup** and **Allow my subusers to send mail using this IP address**. Click **Save**.
+1. Within your SendGrid space, navigate to **Settings > IP Addresses**. 
+2. Click the action menu for the IP you want to warmup, which brings up the **Edit Your Dedicated IP Address** screen.
+3. Select **Use Automated IP warmup**, then click **Save**.
 
-Your SendGrid account is now fully configured and ready to use with Engage.  You’re ready to move to Stage 3 and configure Twilio SMS.
+Once you've enabled IP warmup, you're ready to send as many campaigns as you'd like. SendGrid will begin sending your campaigns through a shared pool of IP addresses, including your own. Over the next 30 days, SendGrid will gradually increase the number of campaigns sent through your chosen IP. After 30 days, SendGrid will send all your emails from your dedicated IP.
+
+### IP warmup best practices
+
+Keep the following in mind once you've enabled automated IP warmup:
+
+- Use the IP you warmed up for marketing campaigns; avoid using the IP for transactional emails.
+- Segment recommends that you start by sending low-volume campaigns before high-volume campaigns. This will help establish your domain reputation with SendGrid.
+
+Once you've completed IP warmup, your SendGrid account will be fully configured and ready to use with Engage.  You’re ready to move to Stage 3 and set up Twilio SMS.
 
 ## Stage 3: Create and configure Twilio SMS services
 
@@ -183,7 +199,7 @@ To add the ability to send SMS campaigns in Engage, you’ll now create a Twilio
 ### Create a Twilio account and generate an API key
 
 > info "Copying Twilio Credentials"
-> This step generates an Account SID, API key SID, and API key secret that you’ll later add to Segment. Make sure you’re ready to copy and save both proceeding.
+> This step generates an Account SID, API key SID, and API key secret that you’ll later add to Segment. Make sure you’re ready to copy and save both before proceeding.
 
 Start by creating your Twilio account and getting an API key for Engage:
 
@@ -230,7 +246,7 @@ To finish setting up your Messaging Service, you’ll now [configure an event we
 
 1. Switch to the browser tab or window with your Engage workspace.
 2. Navigate to **Engage > Engage settings > Channels**.  Under **SMS Service with Twilio**, click the **Get Started** button.
-3. The **Set up and valide your Twilio account** overlay appears (pictured below). Click the **Copy webhook URL** button. Your computer copies the URL to your clipboard.
+3. The **Set up and validate your Twilio account** overlay appears (pictured below). Click the **Copy webhook URL** button. Your computer copies the URL to your clipboard.
 
     ![Engage webhook URL](images/engagewebhook.png "Engage webhook URL")
 
@@ -244,14 +260,12 @@ To finish setting up your Messaging Service, you’ll now [configure an event we
 
 ## Stage 4: Create and configure Twilio WhatsApp services
 
-> info "WhatsApp Public Beta"
-> WhatsApp as an Engage channel is in public beta. 
-
 To send WhatsApp messages in Twilio Engage, you'll register a Twilio number with WhatsApp, connect your Facebook account, and create a WhatsApp messaging service.
 
 ### Register a Twilio number with WhatsApp
 
 1. [Purchase an SMS-capable phone number](https://support.twilio.com/hc/en-us/articles/223135247-How-to-Search-for-and-Buy-a-Twilio-Phone-Number-from-Console){:target="_blank"} within your Twilio Console.
+  - For international numbers, view Twilio's [Phone Number Regulations](https://www.twilio.com/en-us/guidelines/regulatory){:target="_blank"} guidelines. 
 2. From the Twilio side menu, navigate to **Messaging > Senders > WhatsApp Senders**.
 3. Select **Create new sender**.
 4. From the **New Sender** builder, find **Twilio phone number**, then choose the phone number you purchased in Step 1. Select **Continue**.
@@ -281,6 +295,12 @@ You'll now create a messaging service to connect your number to Engage:
 6. Twilio confirms that the WhatsApp number has been assigned to the service.
 
 Your WhatsApp messaging service is now created. 
+
+## Regional Segment
+
+You can use Engage Premier on [Segment's regional infrastructure in the EU](/docs/guides/regional-segment/). Twilio Engage ensures data residency in the EU, but the channels you connect to, may not guarantee the same level of data residency. Check directly with the providers of the channels you use for information about data residency in their applications. Native channels like email and SMS, which use Twilio, are not data resident. 
+
+Twilio is GDPR compliant, and has [Binding Corporate Rules](https://www.twilio.com/legal/binding-corporate-rules){:target="_blank"} to ensure that data is protected when it's transferred between countries.
 
 ## Next steps
 

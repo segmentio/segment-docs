@@ -35,7 +35,7 @@ Before you start working with SFMC, work through the following sections to confi
 
 ### Confirm that Salesforce Marketing Cloud supports your source type and connection mode
 
-{% include content/connection-modes.md %}
+
 
 ### Grant Segment API access to Salesforce Marketing Cloud
 

@@ -9,7 +9,7 @@ This destination is maintained by Calixa. For any issues with the destination, [
 
 ## Getting Started
 
-{% include content/connection-modes.md %}
+
 
 1. Login to your [Calixa account](https://console.calixa.io/login).
 2. Go to the [Integrations page](https://console.calixa.io/integrations) and click **Add Integration**.

@@ -1,126 +1,271 @@
 ---
-title: 'Friendbuy Source'
-id: 1drDrwuySw
+title: Friendbuy Source
 ---
-{% include content/source-region-unsupported.md %}
 
-Friendbuy is a referral marketing platform that powers modern day word of mouth. Designed for growth marketers, Friendbuy allows companies to acquire new customers at scale through seamlessly integrated referral and influencer campaigns.
+[Friendbuy](https://www.friendbuy.com/friendbuy-segment-integration){:target='_blank'} sends referral and loyalty event data to Segment in real time, allowing you to send data instantly to connected tools like your data warehouse. This enables timely and up-to-date insights, personalized user experiences, and customer cohort analysis.
 
-Adding Friendbuy as a Source to Segment is a surefire way to elevate analysis of your referral program performance. Friendbuy will automatically send referral events and important metadata to Segment.
 
-These events can be passed to your Segment Destinations such as data warehouses and analytics tools. Joined with data from other marketing programs, you can start telling a unified story of each customer's journey and tailor your reporting to the KPIs that matter most.
+This source is maintained by Friendbuy. For any issues with the source, [contact their Support team](mailto:support@friendbuy.com).
 
 ## Getting Started
- 1. From your Sources page in Segment, click **Add source**.
- 2. Choose Friendbuy.
- 3. Click Connect.
- 4. Give the Source a nickname.  The nickname will be used to designate
-    the Source in the Segment interface.
- 5. Copy the Segment write key for Friendbuy from the Overview page.
- 6. Login to your Friendbuy account and enter this Segment write key at this location: [Settings>Configurations>Integrations](https://retailer.friendbuy.com/app).
- 7. Click Save.
 
-![Segment write key](images/segment-write-key.png)
+1. From your workspace's [Sources catalog page](https://app.segment.com/goto-my-workspace/sources/catalog) click **Add Source**.
+2. Search for "Friendbuy" in the Sources Catalog, select Friendbuy, and click **Add Source**.
+3. On the next screen, give the Source a nickname configure any other settings.
 
- 8. From your Segment account, click into your Friendbuy Source and you'll be able to add other downstream Destinations where you want to see referral events.
+   - The nickname is used as a label in the Segment app, and Segment creates a related schema name in your warehouse. The nickname can be anything, but we recommend using something that reflects the source itself and distinguishes amongst your environments (eg. Friendbuy_Prod, Friendbuy_Staging, Friendbuy_Dev).
 
-you're all set! Referral events such as shares, conversions, and reward evaluations will now be sent to Segment and any other destinations that you've enabled.
+4. Click **Add Source** to save your settings.
+5. Copy the **Write Key** from the Segment UI and log in to your Friendbuy account - navigate to Settings > Developer Center > Integrations > Select Segment Integration and paste the **Write Key**. Click **Install**.
 
-## Customer Data
-All referral events provided to Segment are in the context of specific customer (the advocate).  Below are the customer attributes that Friendbuy provides to Segment along with these events.  Wherever possible, customer data is mapped to Segment's reserved properties as defined in the [Segment Identify spec](https://segment.com/docs/connections/spec/identify/).
+## Stream
 
-|Trait Name	|	Description |
-|--|--|
-|	id	|	Customer id assigned by the Merchant (Segment reserved property) 	|
-|	email	|	Customer email address (Segment reserved property)	|
-|	firstName	|	Customer first name (Segment reserved property)	|
-|	lastName	|	Customer last name (Segment reserved property)	|
-|	friendbuy_id	|	Internal id of the customer record in Friendbuy	|
-|	stripe_customer_id	|	Customer id of the advocate in Stripe	|
-|	chargebee_customer_id	|	Customer id of the advocate in Chargebee	|
+Friendbuy uses our Segment Integration to stream event data to Segment in real time. It uses the server-side `track` and `identify` methods to send data to Segment. These events are then available in any destination that accepts server-side events, and available in a schema in your data warehouse, so you can query using SQL.
+
+Friendbuy includes an Anonymous ID (a hashed email) for every event. Friendbuy also includes a User ID, which in Friendbuy is the Customer ID.  If Friendbuy does not have the Customer ID, then only the Anonymous ID is included. 
 
 ## Referral Events
 
-Below are the events that Friendbuy sends to Segment. These events will also appear in your Destinations, depending on which platforms you've enabled in Segment.
+The table below lists referral events that Friendbuy sends to Segment. These events appear as tables in your warehouse, and as regular events in other Destinations. Friendbuy always includes the Anonymous ID and includes the User ID if available.
 
-| Event	Name |	Description |
-|--|--|
-|	Referral Shared	|	An advocate shares with a friend through a Friendbuy referral widget (or REST API) to a channel such as email, Facebook, Messenger, Twitter, etc.	|
-|	Referral Converted	|	A referred friend signs up or orders through an advocate's referral	|
-|	Referral Reward Evaluated	|	A conversion is evaluated for fraud checks and criteria to determine if an advocate reward should be approved or rejected	|
+| Event Name | Description |
+| ---------- | ----------- |
+| [Advocate Created](#advocate-created) | Segment receives this event when a customer submits their name, email and/or phone number in a Referral Widget on your site |
+| [Referred Friend Created](#referred-friend-created) | Segment receives this event when a customer is referred by and Advocate and submits their name, email and/or phone number in a Friend Widget on your site |
+| [Referral Share](#referral-share) | Segment receives this event when an advocate shares the referral program offer through the Referral Widget with a Friend via Email, PURL, SMS or Social (Facebook, Messenger, Twitter) |
+| [Referral Advocate Reward Earned](#referral-advocate-reward-earned) | Segment receives this event when an Advocate earns a reward after a referred Friend completes the referral conversion event and passes all business rules and fraud checks |
+| [Referral Friend Incentive Earned](#referral-friend-incentive-earned) | Segment receives this event when a referred Friend completes the referral conversion event, passes all business rules and fraud checks, and then earns an incentive |
+| [Referral Advocate Reward Rejected](#referral-advocate-reward-rejected) | Segment receives this event when an Advocate reward is rejected and not distributed because they did not passes all business rules and fraud checks |
+| [Referral Friend Incentive Rejected](#referral-friend-incentive-rejected) | Segment receives this event when a referred Friend completes the referral conversion event, but does not pass all business rules and fraud checks, and incentive is not distributed |
 
-### Referral Shared
-Below are the properties that are included in the Referral Shared event payload.
+## Loyalty Events 
 
-| Property Name | Property Description |
-|--|--|
-|	share_id	|	Friendbuy internal id of the share 	|
-|	share_date 	|	Date and time of the share 	|
-|	ip_address	|	Ip_address of advocate at time of share 	|
-|	referral_code	|	Friendbuy internal identifier used to make attribution between friend order and advocate referral 	|
-|	message	|	Advocate provided message to the friend 	|
-|	channel	|	Friendbuy channel the share was issued from (email, facebook, facebook messenger, twitter) 	|
-|	recipients	|	Array of recipient email addresses for shares sent using email 	|
-|	variant_id	|	Friendbuy internal id for the widget variant the share is associated with 	|
-|	variant_name	|	Merchant defined name for the widget variant 	|
-|	reward_type	|	Merchant defined Reward Type for the advocate reward 	|
-|	reward_amount	|	Merchant defined Reward Amount for the advocate reward 	|
-|	newsletter_opt_in	|	Indicates if an advocate opted in to receiving newsletter communications 	|
-|	reminder_opt_in	|	Indicates if an advocate requested Friendbuy to send referred friend a reminder if they haven't converted within 3 days 	|
+The table below lists loyalty events that Friendbuy sends to Segment. These events appear as tables in your warehouse, and as regular events in other Destinations. Friendbuy always includes the Anonymous ID and includes the User ID if available.
 
-###  Referral Converted
-Below are the properties that are included in the Referral Converted event payload. Wherever possible, referral conversion data is mapped to Segment's reserved properties as defined in the [Segment Ecommerce spec](https://segment.com/docs/connections/spec/ecommerce/v2/#core-ordering).
+| Event Name                                      | Description                                                                                                                                   |
+| ----------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------- |
+| [Loyalty Reward Earned](#loyalty-reward-earned) | Segment receives this event when a Loyalty Member completes a rewardable event, passes all associated earning event rules, and earns a reward |
+| [Loyalty Credit Earned](#loyalty-credit-event)  | Segment receives this event when there is an update to a Loyalty Member’s credit. For example, when a Friendbuy Loyalty Credit is redeemed    |
 
-| Property Name | Property Description |
-|--|--|
-|	conversion_id	|	Friendbuy internal id of the conversion 	|
-|	conversion_date	|	Date and time of the conversion 	|
-|	order_id	|	Order id of the order (Segment reserved property)	|
-|	total	|	Total amount of the order (Segment reserved property)	|
-|	coupon	|	Coupon code used at checkout  (Segment reserved property)	|
-|	products	|	Array of products in the order	|
-|	products.sku	|	Sku for a single product (Segment reserved property) 	|
-|	products.price	|	Price of a single product (Segment reserved property)	|
-|	products.quantity	|	Quantity of a single product (Segment reserved property) 	|
-|	purchase_date	|	Date and time of the order was placed 	|
-|	friend_new_customer	|	Indicator from the merchant that the order is associated to a new customer 	|
-|	friend_email	|	Email address of the purchaser 	|
-|	flagged_self_referral	|	Indicates a self referral based fraud checks enabled by the merchant	|
-|	fraud_same browser	|	Result of Friendbuy's automatic comparison of referrals and orders made by the same browser and session 	|
-|	fraud_same_customer_id	|	Result of Friendbuy's automatic comparison of referrals and purchases with the same email addresses 	|
-|	fraud_normal_sensitivity_email_address	|	Result of Friendbuy's automatic comparison of referrals and orders with a similar email address based on a basic algorithm that uses case normalization and strips domain 	|
-|	fraud_high_sensitivity_email_address	|	Result of Friendbuy's automatic comparison of referrals and orders with a similar email address based on a advanced algorithm with an adjustable threshold 	|
-|	fraud_same_ip_address	|	Result of Friendbuy's automatic comparison of referrals and orders made with the same IP addresses 	|
-|	fraud_same_ip_and_user_agent	|	Result of Friendbuy's automatic comparison of referrals and orders with made with the same IP addresses and same user agent 	|
-|	share_id	|	Friendbuy internal id of the share (NULL if channel is PURL) 	|
-|	referral_code	|	Friendbuy internal identifier used to make attribution between friend order and advocate referral 	|
-|	channel	|	Friendbuy channel the share was issued from (email, facebook, facebook messenger, twitter) 	|
-|	variant_id	|	Friendbuy internal id for the widget variant the share is associated with 	|
-|	variant_name	|	Merchant defined name for the widget variant 	|
-|	reward_type	|	Merchant defined Reward Type for the advocate reward 	|
-|	reward_amount	|	Merchant defined Reward Amount for the advocate reward 	|
 
-### Referral Reward Evaluated
-Below are the properties that are included in the Referral Reward Evaluated event payload.
+## Referral Event Properties
 
-| Property Name | Property Description |
-|--|--|
-|	id	|	Friendbuy internal id of the reward 	|
-|	reward_date	|	Date and time the pending reward record was created 	|
-|	evaluated_date	|	Date and time the reward was evaluated and set to rejected or approved 	|
-|	status	|	Status of the reward, either rejected or approved 	|
-|	rejected_reasons	|	Reason(s) why a reward was rejected based on fraud and reward criteria evaluation 	|
-|	share_id	|	Friendbuy internal id of the share 	|
-|	conversion_id	|	Friendbuy internal id of the conversion 	|
-|	referral_code	|	Friendbuy internal identifier used to make attribution between friend order and advocate referral 	|
-|	channel	|	Friendbuy channel the share was issued from (email, facebook, facebook messenger, twitter) 	|
-|	variant_id	|	Friendbuy internal id for the widget variant the share is associated with 	|
-|	variant_name	|	Merchant defined name for the widget variant 	|
-|	reward_type	|	Merchant defined Reward Type for the advocate reward 	|
-|	reward_amount	|	Merchant defined Reward Amount for the advocate reward 	|
+The tables below list the properties included in each referral event.
 
-## Prerequisites for Source Integration
-In order to take advantage of this Source destination, you must be sending Friendbuy customer data either through  their ['track','order' JavaScript integration](https://developers.friendbuy.com/#tracking) or by POSTing shares and orders to the [REST API](https://developers.friendbuy.com/#rest-api).
+### Advocate Created
 
-## Send Data to Friendbuy
-The Friendbuy Source works better when you also connect Friendbuy as a downstream destination within Segment. With the Friendbuy Destination, you can use Segment's snippets to load Friendbuy's JavaScript integration used to power loading widgets and tracking of customers, orders, and products. Check out the [Friendbuy Destination documentation](https://segment.com/docs/connections/destinations/catalog/friendbuy/) to get started.
+| Property Name | Description                           | Always Included |
+| ------------- | ------------------------------------- | --------------- |
+| email         | Email address of the Advocate created | &#x2705;        |
+| phone         | Phone number of the Advocate created  | &#x2705;        |
+| customer_id   | Customer ID of the Advocate created. This will be the same value as the User ID that Segment receives for this event | &#x2705;        |
+| ip            | IP address of the Advocate created                                                                                   | &#x2705;        |
+| referral_link | Referral link assigned to the Advocate created.<br><br> A Referral link, also called a personal referral link or personal URL (PURL), is a link that uniquely associates an advocate to a referral program. An advocate uses their personal referral link to refer friends to a site or business. When this link is clicked by a friend, the friend is taken to the associated destination URL. Also, the referred friend’s browser will be cookied by Friendbuy with information about the referral | &#x2705;        |
+| referral_code | Referral code assigned to the Advocate created.<br><br> A referral code is a unique code generated by Friendbuy to associate an advocate to a referral campaign. A referral code can be used to look up the advocate’s name, the advocate’s customer ID, and offer information for that particular referral campaign. Note: referral code is not a coupon code. It solely provides information to associate the advocate to a campaign | &#x2705; |
+| campaign_name | The name of the referral campaign associated with the Referral Widget that was used to create this Advocate | &#x2705; |
+| campaign_id   | The ID of the referral campaign associated with the Referral Widget that was used to create this Advocate | &#x2705; |
+| customer_name | Name of the Advocate created | Only included if known. <br><br> This will be the full name if known. Otherwise, it might just be first name, depending on how the widget is configured or what the customer provides |
+| widget_name | The name of the Referral Widget that was used to create the Advocate | &#x2705; |
+| ab_test_variant_id | The ID of the variant used | Only included if the referral campaign is running an A/B test |
+| email_marketing_opt_in_status | The email subscription status of the Advocate created | &#x2705; |
+| sms_marketing_opt_in_status | The SMS subscription status of the Advocate created | &#x2705; |
+
+
+
+### Referred Friend Created
+
+| Property Name            | Description                                                                                                                                                    | Always Included                                                 |
+|--------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------|
+| email                    | Email address of the Friend created                                                                                                                           | &#x2705;                                                        |
+| phone                    | Phone number of the Friend created                                                                                                                            | &#x2705;                                                        |
+| customer_id              | Customer ID of the Friend created.<br><br>This will be the same value as the User ID that Segment receives for this event                                      | &#x2705;                                                        |
+| ip                       | IP address of the Friend created                                                                                                                              | &#x2705;                                                        |
+| advocate_referral_code   | Referral code of the Advocate who referred this Friend.<br><br>A referral code is a unique code generated by Friendbuy to associate an advocate to a referral campaign.                                                | &#x2705;                                                        |
+|                          | A referral code can be used to look up the advocate’s name, the advocate’s customer ID, and offer information for that particular referral campaign. Note: referral code is not a coupon code. It solely provides information to associate the advocate to a campaign |                                                                 |
+| campaign_name            | The name of the referral campaign associated with the Friend Widget that was used to create this Friend                                                       | &#x2705;                                                        |
+| campaign_id              | The ID of the referral campaign associated with the Friend Widget that was used to create this Friend                                                         | &#x2705;                                                        |
+| customer_name            | Name of the Friend created                                                                                                                                     | Only included if known.<br><br>This will be the full name if known. Otherwise, it might just be first name depending on how the widget is configured or what the customer provides |
+| widget_name              | The name of the Friend Widget that was used to create this Friend                                                                                              | &#x2705;                                                        |
+| ab_test_variant_id       | The ID of the variant used                                                                                                                                     | Only included if the referral campaign is running an A/B test     |
+| email_marketing_opt_in_status  | The email subscription status of the Friend created                                                                                                         | &#x2705;                                                        |
+| sms_marketing_opt_in_status    | The SMS subscription status of the Friend created                                                                                                           | &#x2705;                                                        |
+
+
+
+
+### Referral Share
+
+| Property Name          | Description                                                                                                                                                                                                                                                                                                                     | Always Included                                        |
+|------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|--------------------------------------------------------|
+| email                  | Email address of the Advocate                                                                                                                                                                                                                                                                                                   | &#x2705;                                               |
+| phone                  | Phone number of the Advocate                                                                                                                                                                                                               | &#x2705;                                               |
+| customer_id            | Customer ID of the Advocate.<br><br>This will be the same value as the User ID that Segment receives for this event                                                                                                                                                                                                                                                                                                       | &#x2705;                                               |
+| share_channel          | The share channel used by the Advocate.<br><br>An advocate can refer a friend through several different channels, including email, personal referral link (PURL), SMS, or social channels like Facebook, Messenger, Twitter or WhatsApp                                                                                         | &#x2705;                                               |
+| referral_link          | Referral link assigned to the Advocate.<br><br>A Referral link, also called a personal referral link or personal URL (PURL), is a link that uniquely associates an advocate to a referral program. An advocate uses their personal referral link to refer friends to a site or business. When this link is clicked by a friend, the friend is taken to the associated destination URL. | &#x2705;                                               |
+| email_share_reminder   | Indicates whether the Advocate chose to send the Friend a reminder email after 3 days                                                                                                                                                                                                                                           | Only included if the share channel is email              |
+| referral_code          | Referral code assigned to the Advocate.<br><br>A referral code is a unique code generated by Friendbuy to associate an advocate to a referral campaign. A referral code can be used to look up the advocate’s name, the advocate’s customer ID, and offer information for that particular referral campaign. Note: referral code is not a coupon code. It solely provides information to associate the advocate to a campaign | &#x2705;                                               |
+| campaign_name          | The name of the referral campaign associated with this referral share                                                                                                                                                                                                                                                           | &#x2705;                                               |
+| campaign_id            | The ID of the referral campaign associated with this referral share                                                                                                                                                                                                                                                             | &#x2705;                                               |
+| widget_name            | The name of the Referral Widget that was used to create this referral                                                                                                                                                                                                                                                           | &#x2705;                                               |
+| ab_test_variant_id     | The ID of the variant used                                                                                                                                                                                                                                                                                                       | Only included if the referral campaign is running an AB test |
+
+
+### Referral Advocate Reward Earned
+
+| Property Name             | Description                                                                                                                                                                                                                                                                                                                     | Always Included                                        |
+|---------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|--------------------------------------------------------|
+| email                     | Email address of the Advocate                                                                                                                                                                                                                                                                                                   | &#x2705;                                               |
+| customer_id               | Customer ID of the Advocate.<br><br>This will be the same value as the User ID that Segment receives for this event                                                                                                                                                                                                               | &#x2705;                                               |
+| ip                        | IP address of the Advocate that earned the reward                                                                                                                                                                                                                                                                               | &#x2705;                                               |
+| coupon_code               | The code used to receive a discount on a purchase, commonly set up as a percentage or dollar amount off an item. In a refer-a-friend program, a coupon code can be used to reward advocates or incentivize friends to make a purchase. The code can also be used to establish attribution between the referred friend and the advocate   | Only included if the reward type is Coupon Code         |
+| reward_value              | The value of the reward earned by the Advocate                                                                                                                                                                                                                                                                                  | &#x2705;                                               |
+| reward_currency           | The currency of the reward earned by the Advocate                                                                                                                                                                                                                                                                                | &#x2705;                                               |
+| campaign_name             | The name of the referral campaign associated with this Advocate reward                                                                                                                                                                                                                                                           | &#x2705;                                               |
+| campaign_id               | The ID of the referral campaign associated with this Advocate reward                                                                                                                                                                                                                                                             | &#x2705;                                               |
+| conversion_event          | The type of event the Friend needed to perform in order for the Advocate to earn this reward (e.g., purchase, email capture, sign up, or custom event)                                                                                                                                                                         | &#x2705;                                               |
+| friend_email              | The email address of the Friend who performed the referral conversion event                                                                                                                                                                                                                                                       | &#x2705;                                               |
+| friend_customer_id        | Customer ID of the Friend who performed the referral conversion event                                                                                                                                                                                                                                                             | &#x2705;                                               |
+| friend_ip_address         | IP address of the Friend who performed the referral conversion event                                                                                                                                                                                                                                                             | &#x2705;                                               |
+| friend_purchase_total     | The total amount that the Friend spent at the time of conversion                                                                                                                                                                                                                                                                 | Only included if the `conversion_event` is a purchase |
+| friend_order_id           | The Order ID of the purchase that the Friend made at the time of conversion                                                                                                                                                                                                                                                       | Only included if the `conversion_event` is a purchase |
+| friend_new_customer_status| Indicates whether the Friend is a new customer                                                                                                                                                                                                                                                                                  | Only included if the `conversion_event` is a purchase |
+| reward_tier               | The Reward Tier of the Advocate                                                                                                                                                                                                                                                                                                 | Only included if you have set up Tier-based rewards    |
+| widget_name               | The name of the Referral Widget that the Advocate used to share                                                                                                                                                                                                                                                                 | &#x2705;                                               |
+| ab_test_variant_id        | The ID of the variant used                                                                                                                                                                                                                                                                                                     | &#x2705;                                               |
+| share_channel             | The share channel used by the Advocate.<br><br>An advocate can refer a friend through several different channels, including email, personal referral link (PURL), SMS, or social channels like Facebook, Messenger, Twitter or WhatsApp                                                                                         | &#x2705;                                               |
+| referral_code             | Referral code assigned to the Advocate.<br><br>A referral code is a unique code generated by Friendbuy to associate an advocate to a referral campaign. A referral code can be used to look up the advocate’s name, the advocate’s customer ID, and offer information for that particular referral campaign. Note: referral code is not a coupon code. It solely provides information to associate the advocate to a campaign | &#x2705;                                               |
+
+
+
+
+### Referral Friend Incentive Earned
+
+| Property Name            | Description                                                                                                                                                                                                                                                                                                                     | Always Included                                       |
+|--------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-------------------------------------------------------|
+| email                    | Email address of the Friend that earned the incentive                                                                                                                                                                                                                                                                           | &#x2705;                                              |
+| customer_id              | Customer ID of the Friend that earned the incentive.<br><br>This will be the same value as the User ID that Segment receives for this event                                                                                                                                                                                       | &#x2705;                                              |
+| ip                       | IP address of the Friend that earned the incentive                                                                                                                                                                                                                                                                              | &#x2705;                                              |
+| coupon_code              | The coupon code provided to the Friend, in order to incentivize them to make a purchase.<br><br>A code used to receive a discount on a purchase, commonly set up as a percentage or dollar amount off an item. The code can also be used to establish attribution between the referred friend and the advocate                      | Only included if the reward type is Coupon Code        |
+| incentive_value          | The value of the incentive earned by the Friend                                                                                                                                                                                                                                                                                  | &#x2705;                                              |
+| incentive_currency       | The currency of the incentive earned by the Friend                                                                                                                                                                                                                                                                                | &#x2705;                                              |
+| campaign_name            | The name of the referral campaign associated with this Friend incentive                                                                                                                                                                                                                                                          | &#x2705;                                              |
+| campaign_id              | The ID of the referral campaign associated with this Friend incentive                                                                                                                                                                                                                                                            | &#x2705;                                              |
+| conversion_event         | The type of event the Friend needed to perform, in order for the Advocate to earn a reward (e.g., purchase, email capture, sign up, or custom event)                                                                                                                                                                          | &#x2705;                                              |
+| incentive_tier           | The Reward Tier of the Advocate                                                                                                                                                                                                                                                                                                | Only included if you have set up Tier-based rewards   |
+| ab_ test_variant_id      | The ID of the variant used                                                                                                                                                                                                                                                                                                    | Only included if the referral campaign is running an AB test |
+| share_channel            | The share channel used by the Advocate.<br><br>An advocate can refer a friend through several different channels, including email, personal referral link (PURL), SMS, or social channels like Facebook, Messenger, Twitter or WhatsApp                                                                                          | &#x2705;                                              |
+| referral_code            | Referral code assigned to the Advocate.<br><br>A referral code is a unique code generated by Friendbuy to associate an advocate to a referral campaign. A referral code can be used to look up the advocate’s name, the advocate’s customer ID and offer information for that particular referral campaign. Note: referral code is not a coupon code. It solely provides information to associate the advocate to a campaign. | &#x2705;                                              |
+| advocate_email           | The email address of the Advocate who referred the Friend that earned this incentive                                                                                                                                                                                                                                             | &#x2705;                                              |
+| advocate_customer_id     | The Customer ID of the Advocate who referred the Friend that earned this incentive                                                                                                                                                                                                                                               | &#x2705;                                              |
+| advocate_ip_address      | The IP address of the Advocate who referred the Friend that earned this incentive                                                                                                                                                                                                                                                | &#x2705;                                              |
+| widget_name              | The name that the referred Friend used to enter their information to receive their incentive                                                                                                                                                                                                                                     | &#x2705;                                              |
+| friend_purchase_total    | The total amount that the Friend spent at the time of conversion                                                                                                                                                                                                                                                                | Only included if the `conversion_event` is a purchase |
+| friend_order_id          | The Order ID of the purchase that the Friend made at the time of conversion                                                                                                                                                                                                                                                      | Only included if the `conversion_event` is a purchase |
+| friend_new_customer_status | Indicates whether the Friend is a new customer                                                                                                                                                                                                                                                                                   | Only included if the `conversion_event` is a purchase |
+
+
+
+
+### Referral Advocate Reward Rejected
+
+| Property Name         | Description                                                                                                                                                                                                                                                                                                                     | Always Included                                       |
+|-----------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-------------------------------------------------------|
+| email                 | Email address of the Advocate                                                                                                                                                                                                                                                                                                  | &#x2705;                                              |
+| customer_id           | Customer ID of the Advocate.<br><br>This will be the same value as the User ID that Segment receives for this event                                                                                                                                                                                                              | &#x2705;                                              |
+| ip                    | IP address of the Advocate that earned the reward                                                                                                                                                                                                                                                                              | &#x2705;                                              |
+| rejection_reasons     | The reason or reasons that this Advocate reward was rejected.<br><br>This could be due to one or more business rules not being passed, such as a Friend who completed a conversion but did so outside of an established attribution window.<br><br>This could be due to fraud detection, such as the referred Friend and the Advocate sharing the same IP address. | &#x2705;                                              |
+| campaign_name         | The name of the referral campaign associated with this Advocate reward                                                                                                                                                                                                                                                          | &#x2705;                                              |
+| campaign_id           | The ID of the referral campaign associated with this Advocate reward                                                                                                                                                                                                                                                            | &#x2705;                                              |
+| conversion_event      | The type of event the Friend needed to perform in order for the Advocate to earn this reward (e.g., purchase, email capture, sign up, or custom event)                                                                                                                                                                          | &#x2705;                                              |
+| friend_email          | The email address of the Friend who performed the referral conversion event                                                                                                                                                                                                                                                     | &#x2705;                                              |
+| friend_customer_id    | Customer ID of the Friend who performed the referral conversion event                                                                                                                                                                                                                                                           | &#x2705;                                              |
+| friend_ip_address     | IP address of the Friend who performed the referral conversion event                                                                                                                                                                                                                                                            | &#x2705;                                              |
+| friend_purchase_total | The total amount that the Friend spent at the time of conversion                                                                                                                                                                                                                                                                | Only included if the `conversion_event` is a purchase |
+| friend_order_id       | The Order ID of the purchase that the Friend made at the time of conversion                                                                                                                                                                                                                                                      | Only included if the `conversion_event` is a purchase |
+| friend_new_customer_status | Indicates whether the Friend is a new customer                                                                                                                                                                                                                                                                                   | Only included if the `conversion_event` is a purchase |
+| reward_tier           | The Reward Tier of the Advocate                                                                                                                                                                                                                                                                                                | Only included if you have set up Tier-based rewards   |
+| widget_name           | The name of the Referral Widget that was used to refer the Friend that converted                                                                                                                                                                                                                                               | &#x2705;                                              |
+| ab_test_variant_id    | The ID of the variant used                                                                                                                                                                                                                                                                                                    | Only included if the referral campaign is running an AB test |
+| share_channel         | The share channel used by the Advocate.<br><br>An advocate can refer a friend through several different channels, including email, personal referral link (PURL), SMS, or social channels like Facebook, Messenger, Twitter, or WhatsApp                                                                                          | &#x2705;                                              |
+| referral_code         | Referral code assigned to the Advocate.<br><br>A referral code is a unique code generated by Friendbuy to associate an advocate to a referral campaign. A referral code can be used to look up the advocate’s name, the advocate’s customer ID, and offer information for that particular referral campaign. Note: referral code is not a coupon code. It solely provides information to associate the advocate to a campaign. | &#x2705;                                              |
+
+
+
+
+### Referral Friend Incentive Rejected
+
+
+| Property Name              | Description                                                                                                                                                                                                                                                                                                                     | Always Included                                       |
+|----------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-------------------------------------------------------|
+| email                      | Email address of the Friend that had the incentive rejected                                                                                                                                                                                                                                                                    | &#x2705;                                              |
+| customer_id                | Customer ID of the Friend that had the incentive rejected.<br><br>This will be the same value as the User ID that Segment receives for this event                                                                                                                                                                                | &#x2705;                                              |
+| ip                         | IP address of the Friend that had the incentive rejected                                                                                                                                                                                                                                                                        | &#x2705;                                              |
+| rejection_reasons          | The reason or reasons that this Friend incentive was rejected.<br><br>This could be due to one or more business rules not being passed, such as the Friend needing to be a new customer or needing the purchase to be a certain minimum order amount.<br><br>This could be due to fraud detection, such as the referred Friend and the Advocate sharing the same IP address. | &#x2705;                                              |
+| campaign_name              | The name of the referral campaign associated with this Friend incentive                                                                                                                                                                                                                                                          | &#x2705;                                              |
+| campaign_id                | The ID of the referral campaign associated with this Friend incentive                                                                                                                                                                                                                                                            | &#x2705;                                              |
+| conversion_event           | The type of event the Friend needed to perform in order for the Advocate to earn a reward (e.g., purchase, email capture, sign up, or custom event)                                                                                                                                                                          | &#x2705;                                              |
+| reward_tier                | The Reward Tier of the Advocate                                                                                                                                                                                                                                                                                                | Only included if you have set up Tier-based rewards   |
+| ab_test_variant_id         | The ID of the variant used                                                                                                                                                                                                                                                                                                    | Only included if the referral campaign is running an AB test |
+| share_channel              | The share channel used by the Advocate.<br><br>An advocate can refer a friend through several different channels, including email, personal referral link (PURL), SMS, or social channels like Facebook, Messenger, Twitter, or WhatsApp                                                                                          | &#x2705;                                              |
+| referral_code              | Referral code assigned to the Advocate.<br><br>A referral code is a unique code generated by Friendbuy to associate an advocate to a referral campaign. A referral code can be used to look up the advocate’s name, the advocate’s customer ID, and offer information for that particular referral campaign. Note: referral code is not a coupon code. It solely provides information to associate the advocate to a campaign. | &#x2705;                                              |
+| advocate_email             | The email address of the Advocate who referred the Friend that earned this incentive                                                                                                                                                                                                                                            | &#x2705;                                              |
+| advocate_customer_id       | The Customer ID of the Advocate who referred the Friend that earned this incentive                                                                                                                                                                                                                                              | &#x2705;                                              |
+| advocate_ip_address        | The IP address of the Advocate who referred the Friend that earned this incentive                                                                                                                                                                                                                                               | &#x2705;                                              |
+| widget_name                | The name of the Referral Widget that was used to refer the Friend that converted                                                                                                                                                                                                                                               | &#x2705;                                              |
+| friend_purchase_total      | The total amount that the Friend spent at the time of conversion                                                                                                                                                                                                                                                                | Only included if the `conversion_event` is a purchase |
+| friend_order_id            | The Order ID of the purchase that the Friend made at the time of conversion                                                                                                                                                                                                                                                      | Only included if the `conversion_event` is a purchase |
+| friend_new_customer_status | Indicates whether the Friend is a new customer                                                                                                                                                                                                                                                                                   | Only included if the `conversion_event` is a purchase |
+
+
+
+## Loyalty Event Properties
+
+The tables below lists the properties included in each loyalty event.
+
+### Loyalty Reward Earned
+
+| Property Name       | Description                                                                                                                                         | Always Included                                  |
+|---------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------|--------------------------------------------------|
+| email               | Email address of the Loyalty Member                                                                                                                 | &#x2705;                                         |
+| customer_id         | Customer ID of the Loyalty Member.<br><br>This will be the same value as the User ID that Segment receives for this event                            | &#x2705;                                         |
+| ip                  | IP address of the Loyalty Member                                                                                                                     | &#x2705;                                         |
+| earning_event       | The name of the event the Loyalty Member needed to perform in order to earn this reward (e.g., Joined Program, Purchase, Refer a Friend, Sign Up, or Custom Event) | &#x2705;                                         |
+| friend_email        | The email address of the Friend who performed the referral conversion event                                                                         | Only included for “refer a friend” type earning events |
+| friend_customer_id  | The Customer ID of the Friend who performed the referral conversion event                                                                           | Only included for “refer a friend” type earning events |
+| friend_ip_address   | The IP address of the Friend who performed the referral conversion event                                                                            | Only included for “refer a friend” type earning events |
+| coupon_code         | The coupon code provided to the Loyalty Member in order to redeem this reward.<br><br>A code used to receive a discount on a purchase, commonly set up as a percentage or dollar amount off an item           | Only included if the reward type is Coupon Code |
+| reward_value        | The value of the reward earned by the Loyalty Member                                                                                                 | &#x2705;                                         |
+| reward_currency     | The currency of the reward earned by the Loyalty Member                                                                                              | &#x2705;                                         |
+| campaign_name       | The name of the loyalty campaign associated with this loyalty reward                                                                                | &#x2705;                                         |
+| campaign_id         | The ID of the loyalty campaign associated with this loyalty reward                                                                                  | &#x2705;                                         |
+| order_id            | The Order ID of the purchase that the Loyalty Member made, which created this rewardable event                                                     | Only included if the `conversion_event` is a purchase |
+| purchase_total      | The total amount spent by the Loyalty Member on the purchase that created this rewardable event                                                    | Only included if the `conversion_event` is a purchase |
+| birthday            | The birth date of the Loyalty Member                                                                                                                 | Only included if known                            |
+
+
+
+### Loyalty Credit Event
+
+| Property Name            | Description                                                                                                          | Always Included                                 |
+|--------------------------|----------------------------------------------------------------------------------------------------------------------|-------------------------------------------------|
+| email                    | Email address of the Loyalty Member                                                                                   | &#x2705;                                        |
+| customer_id              | Customer ID of the Loyalty Member.<br><br>This will be the same value as the User ID that Segment receives for this event | &#x2705;                                        |
+| earning_event            | The type of event the Loyalty Member performed in order to earn this reward (e.g., Joined Program, Purchase, Refer a Friend, Sign Up, or Custom Event) | Only included if the `credit_event_type` is earned |
+| credit_amount            | The amount of the update to the Loyalty Member's credit                                                               | &#x2705;                                        |
+| reward_currency          | The currency of the update to the Loyalty Member's credit                                                            | &#x2705;                                        |
+| customer_running_balance | The current balance of the Loyalty Member's credit                                                                    | &#x2705;                                        |
+| credit_event_type        | The type of update to the Loyalty Member's credit (e.g., earned, redeemed, expired, reversed)                        | &#x2705;                                        |
+| credit_issuer            | The email address of the Friendbuy user who manually issued the credit                                               | Only sent if credit is issued manually           |
+| credit_description       | The description provided when a credit is manually issued                                                             | Only sent if credit is issued manually and the description field is filled in |
+
+
+
+
+
+## Adding Destinations
+
+Now that your Friendbuy Source is set up, you can connect it to Destinations.
+
+Log into your downstream tools and check to see that your events appear as expected, and that they contain all of the properties you expect. If your events and properties don’t appear, check the [Event Delivery](https://segment.com/docs/connections/event-delivery/) tool, and refer to the Destination docs for each tool for troubleshooting.
+
+If there are any issues with how the events are arriving to Segment, [contact the Friendbuy support team](mailto:support@friendbuy.com).

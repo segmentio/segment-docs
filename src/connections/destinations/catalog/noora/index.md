@@ -9,7 +9,7 @@ This destination is maintained by Noora. For any issues with the destination, [c
 
 ## Getting Started
 
-{% include content/connection-modes.md %}
+
 
 1. Navigate to the Contacts tab while in your Noora workspace's Admin view.
 2. Click **+** to add a Contact source and choose **Connect to Segment**.

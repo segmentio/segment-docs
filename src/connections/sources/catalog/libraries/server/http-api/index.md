@@ -1,5 +1,5 @@
 ---
-title: HTTP Tracking API Source
+title: HTTP API Source
 redirect_from: '/connections/sources/catalog/libraries/server/http/'
 id: iUM16Md8P2
 ---
@@ -37,7 +37,7 @@ Segment welcomes feedback on API responses and error messages. [Reach out to sup
 
 ## Rate Limits
 
-The HTTP API has no hard rate limit. However, Segment recommends not exceeding 500 requests per second, including large groups of events sent with a single [`batch` request](#batch).
+Segment recommends you to not exceed 100,000 requests per second with the HTTP API. For [`batch` requests](#batch), there's a limit of 500 KB per request. 
 
 ## Max Request Size
 

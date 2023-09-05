@@ -15,7 +15,7 @@ Segment's Mixpanel destination code is open source and available on GitHub. You 
 
 ## Getting Started
 
-{% include content/connection-modes.md %}
+
 
 1. From the Segment app Destinations page click on **Add Destination**.
 2. Search for Mixpanel in the Destinations Catalog and confirm the Source to connect to.
@@ -78,7 +78,7 @@ analytics.identify('userId123', {
 The first thing you'll want to do is to identify your users so Mixpanel knows who they are. You'll use the Identify method to accomplish this which takes the unique `userId` of a user and any `traits` you know about them.
 
 > info ""
-> **Important:** Mixpanel used to require that you call `alias` in all libraries to connect anonymous visitors to identified users. However, with the release of Mixpanel's new [Identity Merge feature](https://help.mixpanel.com/hc/en-us/articles/360039133851#enable-id-merge){:target="_blank"} this is no longer necessary. To enable ID Merge, go to your Mixpanel Settings Dashboard, navigate to **Project Settings > Identity Merge** and enable the setting from that screen. If you are _not_ using this setting, use the instructions below.
+> **Important:** Mixpanel used to require that you call `alias` in all libraries to connect anonymous visitors to identified users. However, with the release of Mixpanel's new [Identity Merge feature](https://help.mixpanel.com/hc/en-us/articles/9648680824852#introduction){:target="_blank"} this is no longer necessary. To enable ID Merge, go to your Mixpanel Settings Dashboard, navigate to **Project Settings > Identity Merge** and enable the setting from that screen. If you are _not_ using this setting, use the instructions below.
 
 
 As soon as you have a `userId` for a visitor that was previously anonymous you'll need to [`alias`](/docs/connections/spec/alias/) their old anonymous `id` to the new `userId`. In Mixpanel only **one** anonymous user history can be merged to **one** identified user. For that reason you should only call `alias` once, right after a user registered, but before the first `identify`.
@@ -366,7 +366,7 @@ analytics.identify({
 
 ### UTM Campaign Parameters
 
-Since Segment's client-side javascript library (`analytics.js`) loads `mixpanel.js` in the background, you'll get the exact same functionality of Mixpanel around UTM Campaign Parameters as you would when using Mixpanel directly.
+When used in Device Mode through a web source, Segment's client-side Javascript library, Analytics.js, loads `mixpanel.js` (Mixpanel’s direct SDK) in the background. As a result, you'll get the exact same functionality from Mixpanel around UTM Campaign Parameters as you would when using Mixpanel directly.
 
 [Read more in Mixpanel's UTM docs](https://mixpanel.com/help/questions/articles/can-i-track-google-analytics-style-utm-tags-with-mixpanel)
 
@@ -682,3 +682,7 @@ If you delete an audience or trait in Segment, it isn't deleted from Mixpanel. T
 **If a user has multiple external ids in Segment, what happens when they enter an audience or have a computed trait?**
 
 Segment sends an `identify` or a  `track` call for each external on the user's account. For example, if a user has three email addresses, and you are sending `identify` calls for your audience, Engage sends three `identify` calls to Mixpanel and adds the latest email address to the user profile as the email “address of record” on the Mixpanel user profile.
+
+**What happens if I receive a `Timestamp must be within the last 5 years` error, and my timestamp displays `1970-01-01`?**
+
+The Segment PHP Library (2.1.0) version requires a UNIX timestamp. If you send anything other than a UNIX timestamp, Segment converts this to the `1970-01-01` timestamp. If you're experiencing failed events due to this error and you have a connected PHP source, update your PHP Library version to 2.1.0. 
