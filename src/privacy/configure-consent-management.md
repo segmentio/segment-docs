@@ -40,51 +40,7 @@ Before you can configure consent in Segment, take the following steps:
 > Segment assumes all destinations without a mapping do not require user consent and will receive all events containing a consent object. 
 
 ## Step 2: Add the consent wrapper to Analytics.js
-
-If you're using OneTrust as your CMP, you can install the OneTrust integration consent wrapper (`@segment/analytics-wrapper-onetrust`) using a [snippet](#onetrust-for-snippet-users-windowanalytics) or [npm](#onetrust-for-npm-library-users).
-
-If you have a CMP other than OneTrust, you can install the `@segment/analytics-consent-tools` package using the [instructions in the analytics-next repository](https://github.com/segmentio/analytics-next/tree/master/packages/consent/consent-tools){:target="_blank”}. 
-
-> error "After adding the consent object to your events, your data is immediately impacted"
-> If you disable a consent category, end user consent preferences for that category will not be enforced.
->  
-> If a destination is mapped to more than one other consent category, and an end user's consent preferences is "false" for either category, data will not get sent.
->
-> If an event includes both an integrations object and a consent object, Segment will look at the consent object first, and then take into account the integrations object.
-
-### OneTrust for snippet users (window.analytics)
-Delete the `analytics.load()` line from the snippet in the header of your website:
-
-```diff
-- analytics.load("<MY_WRITE_KEY>");
-```
-
-Run the following initialization code in your project, replacing `<MY_WRITE_KEY>` with your write key:<sup>1</sup> 
-```ts
-import { oneTrust } from '@segment/analytics-consent-wrapper-onetrust'
-
-
-// snippet users
-oneTrust(window.analytics)
-window.analytics.load('<WRITE_KEY>')
-```
-
-### OneTrust for npm library users
-
-Initialize the OneTrust wrapper by running the following code on your command line, replacing `<MY_WRITE_KEY>` with your write key:<sup>1</sup> 
-
-```ts
-import { oneTrust } from '@segment/analytics-consent-wrapper-onetrust'
-import { AnalyticsBrowser } from '@segment/analytics-next'
-
-export const analytics = new AnalyticsBrowser()
-
-oneTrust(analytics)
-
-analytics.load({ writeKey: '<MY_WRITE_KEY'> })
-```
-
-<sup>1</sup>: You can find your write key by navigating to Connections > Sources > [Source Name] > Settings.
+Please follow the instructions from the README in the [@segment/analytics-consent-wrapper-onetrust repository](https://github.com/segmentio/analytics-next/tree/master/packages/consent/consent-wrapper-onetrust){:target="_blank"}.
 
 ## Edit consent categories
 

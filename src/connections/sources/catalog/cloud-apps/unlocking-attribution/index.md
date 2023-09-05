@@ -1,5 +1,7 @@
 ---
 title: Unlocking Attribution Source
+hidden: true
+private: true
 ---
 
 The [Unlocking Attribution](https://unlockinggrowth.co/products/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners){:target="_blank"} source is a powerful solution designed to model attribution data, aiding marketers in identifying the most effective inbound channels for driving conversions. This documentation will guide you through the process of setting up and utilizing the "Unlocking Attribution" source within your Twilio Segment environment.  Unlocking Attribution is built on top of your pre-existing Segment implementation, ensuring you can be up and running in under an hour.
@@ -118,6 +120,3 @@ Property Name | Description
 `campaign` | The unique ID of the `media_spend_items` item, which the spend row corresponds to.   
 `date_start` | The date of the spending item.                                                               
 `spend` | The amount spent on that day.                                        
-
-
----

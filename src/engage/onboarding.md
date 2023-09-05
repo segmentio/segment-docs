@@ -166,23 +166,31 @@ To finish linking the API credentials to your Segment account, follow these step
 
 ### Warm up your IP
 
-To finish configuring your SendGrid account for usage with Twilio Engage, you’ll [warm up your IP](https://docs.sendgrid.com/ui/sending-email/warming-up-an-ip-address){:target="_blank"}. Depending on when you created your SendGrid account, you'll either warm up your IP manually or use SendGrid's automated IP warmup process.
+> info ""
+> If you already send emails regularly on your chosen IP, proceed to [Stage 3](#stage-3-create-and-configure-twilio-sms-services).
+
+To finish configuring your SendGrid account for usage with Twilio Engage, you’ll [warm up your IP](https://docs.sendgrid.com/ui/sending-email/warming-up-an-ip-address){:target="_blank"}. IP warmup protects your sender reputation and ensures that you avoid email deliverability issues. 
 
 As a best practice, **only warm up your IP when you're ready to begin sending campaigns.**
 
-#### Manual IP warmup
-
-If your SendGrid account is new, you'll need to warm up your IP manually. For details on the manual warmup process, view SendGrid's [manual IP warmup documentation](https://docs.sendgrid.com/ui/sending-email/warming-up-an-ip-address#manually-warmup-your-ip){:target="_blank"}.
-
 #### Automated IP warmup
 
-If you've already warmed up an IP with your SendGrid account in the past, you can enable automated IP warmup by following these steps:
+You can enable automated IP warmup by following these steps:
 
-1. Within your SendGrid space, navigate to **Settings > IP Addresses**.
-2. On the **Dedicated IP Addresses** page, click the pencil edit button next to your Engage IP address.
-3. Under **Additional options**, check **Use Automated IP warmup** and **Allow my subusers to send mail using this IP address**. Click **Save**.
+1. Within your SendGrid space, navigate to **Settings > IP Addresses**. 
+2. Click the action menu for the IP you want to warmup, which brings up the **Edit Your Dedicated IP Address** screen.
+3. Select **Use Automated IP warmup**, then click **Save**.
 
-Your SendGrid account is now fully configured and ready to use with Engage.  You’re ready to move to Stage 3 and configure Twilio SMS.
+Once you've enabled IP warmup, you're ready to send as many campaigns as you'd like. SendGrid will begin sending your campaigns through a shared pool of IP addresses, including your own. Over the next 30 days, SendGrid will gradually increase the number of campaigns sent through your chosen IP. After 30 days, SendGrid will send all your emails from your dedicated IP.
+
+### IP warmup best practices
+
+Keep the following in mind once you've enabled automated IP warmup:
+
+- Use the IP you warmed up for marketing campaigns; avoid using the IP for transactional emails.
+- Segment recommends that you start by sending low-volume campaigns before high-volume campaigns. This will help establish your domain reputation with SendGrid.
+
+Once you've completed IP warmup, your SendGrid account will be fully configured and ready to use with Engage.  You’re ready to move to Stage 3 and set up Twilio SMS.
 
 ## Stage 3: Create and configure Twilio SMS services
 

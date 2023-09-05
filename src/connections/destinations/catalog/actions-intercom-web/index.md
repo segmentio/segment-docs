@@ -29,7 +29,7 @@ Intercom Web (Actions) provides the following benefits over the classic Intercom
 - **Granular control over data sent.** You can customize the conditions under which the events are sent to Intercom.
 - **Selectively shows the Intercom chat widget.**
 
-## Getting Started
+## Getting started
 
 1. From the Segment web app, navigate to **Connections > Catalog**.
 2. Search for **Intercom Web (Actions)** in the Destinations Catalog, and select the destination.
@@ -38,6 +38,9 @@ Intercom Web (Actions) provides the following benefits over the classic Intercom
 5. On the **Settings** tab, input your Intercom App ID and other destination settings.
 6. Follow the steps in the Destinations Actions documentation on [Customizing mappings](/docs/connections/destinations/actions/#customizing-mappings).
 7. Enable the destination and configured mappings.
+
+> info "Regional Data Hosting in the EU and Australia"
+> For Regional Data Hosting in the EU and Australia, you'll need an Intercom plan that [supports regional data hosting](https://www.intercom.com/help/en/articles/5778275-additional-details-on-intercom-regional-data-hosting){:target="_blank"}.
 
 {% include components/actions-fields.html settings="true"%}
 
