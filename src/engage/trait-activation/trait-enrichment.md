@@ -9,7 +9,7 @@ Use Trait Enrichment to access Segment profile traits when you sync Audiences to
 
 > info ""
 > The setup steps you'll use for Trait Enrichment depend on the type of Destination [you've connected](/docs/engage/trait-activation/trait-activation-setup/). 
-> - For Iterable, Facebook Custom Audiences, Zendesk, and Google Adwords, use [set up Trait Enrichment](#set-up-trait-enrichment). 
+> - For Facebook Custom Audiences and Google Adwords, use [set up Trait Enrichment](#set-up-trait-enrichment). 
 > - If you're using SendGrid, Braze, or Salesforce Actions, use the [Destination Actions setup steps](#destination-actions-setup). 
 
 > info "Trait Enrichment in beta"
@@ -53,11 +53,7 @@ With Customized setup, you can choose which traits you want to map to your desti
 ### Destination requirements 
 
 The following are a list of destination-specific requirements for using Trait Enrichment. 
-
-#### Iterable
-
-Users can sync as many traits as they would like to Iterable. Iterable doesn't require you to map Segment traits to specific Iterable fields. 
-
+ 
 #### Facebook Custom Audiences
 
 You can only sync the following traits to Facebook:
@@ -77,9 +73,6 @@ You can only sync the following traits to Facebook:
 
 Each trait you select must map to a Facebook key.
 
-#### Zendesk
-
-If you're using Zendesk, you must include the `firstName` and `lastName` traits as part your mapping. 
 
 #### Google Ads Remarketing Lists
 
