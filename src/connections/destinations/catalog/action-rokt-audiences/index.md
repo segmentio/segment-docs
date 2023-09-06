@@ -46,7 +46,7 @@ To add the Rokt Audiences (Actions) destination:
 
 5. On the **Settings** tab, name your destination. For example, `Rokt audiences – <audience name>`.
 
-6. Enter your Rokt API key.
+6. Enter your Rokt **API key**.
 
 7. Click **Save Changes**.  
 
