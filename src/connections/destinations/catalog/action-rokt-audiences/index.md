@@ -64,6 +64,6 @@ To add the Rokt Audiences (Actions) destination:
 Your Rokt destination is now ready to receive audiences, and your Persona audiences are now accessible in your Rokt Advertiser dashboard. Be aware, it can take 12-24 hours for the first sync when the number email identifies are in the millions. 
 
 > warning ""
-> You can connect **ONE** Engage audience to a single instance of Rokt Audience destination. If you have multiple audiences, repeat the above process to create a new Rokt audience destination and connect the audience to new destination each time.
+> You can only connect **one** Engage audience to a single instance of the Rokt Audience (Actions) destination. If you have multiple audiences, repeat the above process to create a new Rokt Audience (Actions) destination and connect the audience to a new destination each time.
 
 {% include components/actions-fields.html %}
