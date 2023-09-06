@@ -13,7 +13,7 @@ Rokt Audiences enables advertisers to send Segment Persona Audiences to Rokt usi
 
 By using Segment's Persona Audiences with Rokt, you can increase the efficieiny of your ad campaigns through suppression and targeting of existing or new customers. 
 
-## Benefits of Rokt Audiences
+## Benefits of Rokt Audiences (Actions)
 
 Benefits of the Rokt destination include:
 - **Improved email matching**: This integration creates a direct connection between Segment and Rokt for a 100% match rate of email identifiers. 
