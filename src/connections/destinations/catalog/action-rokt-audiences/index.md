@@ -57,7 +57,7 @@ To add the Rokt Audiences (Actions) destination:
 
 9. Go to the **Settings** tab and **Enable** the destination.
 
-10. Select your space, and navigate to **Engage > Audiences**. Select the source audience that you want to send to your Rokt Audiences destination.
+10. Select your space, and navigate to **Engage > Audiences**. Select the source audience that you want to send to your Rokt Audiences (Actions) destination.
 
 11. Click **Add Destinations** and select the Rokt Audience destination you created. In the settings that appear on the right-hand side, toggle the **Send Track** option on and **Send Identify**. Click **Save**. 
 
