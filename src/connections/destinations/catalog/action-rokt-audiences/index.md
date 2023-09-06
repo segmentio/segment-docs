@@ -40,7 +40,7 @@ To add the Rokt Audiences (Actions) destination:
 
 2. Search for **Rokt Audiences (Actions)** and select the destination.
 
-3. Click **Configure Rokt Audiences**.
+3. Click **Add destination**.
 
 4. Select the space in Engage to use as the Source as this destination only supports sending Engage Audiences to Rokt.
 
