@@ -50,7 +50,7 @@ To add the Rokt Audiences (Actions) destination:
 
 7. Click **Save Changes**.  
 
-8. In the **Mappings** tab, click **New Mapping** and select **Add Users to Audience**. Don't change any defaults.
+8. In the **Mappings** tab, select **+ New Mapping** and select **Add Users to Audience**. Don't change any defaults.
 
 9. Under the **Configure actions fields**, set **Enable Batching** to *Yes* and click **Save**.  
 
