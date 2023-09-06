@@ -30,7 +30,8 @@ Benefits of the Rokt Audiences (Actions) destination include:
 
 Before connecting to the Rokt Audiences destination, you must have an account with Rokt and receive your API key.
 
-### To Add the Rokt Audiences Destination:
+### Add the destination:
+To add the Rokt Audiences (Actions) destination:
 
 1. From your Segment workspace, go to **Connections > Catalog** and click **Destinations**.
 
