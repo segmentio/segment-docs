@@ -64,7 +64,7 @@ To add the Rokt Audiences (Actions) destination:
 
 11. Click **Add Destinations** and select the Rokt Audience destination you created. In the settings that appear on the right-hand side, toggle the **Send Track** option on and **Send Identify**. Click **Save**. 
 
-Your Rokt destination is now ready to receive audiences, and your Persona audiences are now accessible in your Rokt Advertiser dashboard. Be aware, it can take 12-24 hours for the first sync when the number email identifies are in the millions. 
+Your Rokt destination is now ready to receive audiences, and your Persona audiences are now accessible in your Rokt Advertiser dashboard. Keep in mind that it can take 12-24 hours for the first sync when the number of email identifies are in the millions. 
 
 > warning ""
 > You can only connect **one** Engage audience to a single instance of the Rokt Audience (Actions) destination. If you have multiple audiences, repeat the above process to create a new Rokt Audience (Actions) destination and connect the audience to a new destination each time.
