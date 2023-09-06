@@ -24,7 +24,7 @@ Benefits of the Rokt Audiences (Actions) destination include:
 
 - **Near real-time audience updates**: The actions destination helps Rokt receive real-time events and add or remove users from Rokt audiences appropriately.
 
-## Getting Started
+## Getting started
 
 ### Prerequisites:
 
