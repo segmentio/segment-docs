@@ -58,7 +58,7 @@ To add the Rokt Audiences (Actions) destination:
 
 8. **Enable** both mappings.
 
-9. Go to the **Settings** tab and **Enable** the destination.
+9. Go to the **Settings** tab and select the toggle to **Enable** the destination.
 
 10. Select your space, and navigate to **Engage > Audiences**. Select the source audience that you want to send to your Rokt Audiences (Actions) destination.
 
