@@ -68,12 +68,7 @@ If you want to send a Snap Event Type that Segment doesn’t have a prebuilt map
 2. Set up your Event Trigger criteria for trial starts.
 3. Input a literal string of “START_TRIAL” as the Event Type.
 
-The Snapchat Conversions API only supports sending Event Types that are in the [predefined `event_type` list](https://marketingapi.snapchat.com/docs/conversion.html#conversion-parameters){:target="_blank"}. This includes custom events. You must use `CUSTOM_EVENT_1`, `CUSTOM_EVENT_2`, `CUSTOM_EVENT_3`, `CUSTOM_EVENT_4`, or `CUSTOM_EVENT_5` as the Event Type. Events sent with an invalid event type will fail with an `Unrecognized event type` error.
-
-### Single or multiple products or items
-It's possible to send details of either single or multiple products / items in a single conversion event. 
-Single product / item: Use the 'Item ID', 'Item Category', 'Brand', 'Number of Items' and 'Price' fields. 
-Multiple products / items: Use the 'Products' field which accepts an array of products / items.  
+The Snapchat Conversions API only supports sending Event Types that are in the [predefined `event_type` list](https://marketingapi.snapchat.com/docs/conversion.html#conversion-parameters){:target="_blank"}. This includes custom events. You must use `CUSTOM_EVENT_1`, `CUSTOM_EVENT_2`, `CUSTOM_EVENT_3`, `CUSTOM_EVENT_4`, or `CUSTOM_EVENT_5` as the Event Type. Events sent with an invalid event type will fail with an `Unrecognized event type` error. 
 
 ### Required parameters and hashing
 To match visitor events with Snapchat ads, Snap requires that one or a combination of the following parameters are sent to the Conversions API:
