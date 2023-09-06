@@ -36,7 +36,7 @@ Before connecting to the Rokt Audiences destination, you must have an account wi
 ### Add the destination:
 To add the Rokt Audiences (Actions) destination:
 
-1. From your Segment workspace, go to **Connections > Catalog** and click **Destinations**.
+1. From your Segment workspace, go to **Connections > Catalog** and select the **Destinations** tab of the catalog.
 
 2. Search for **Rokt Audiences** in the Destinations Catalog and select the destination.
 
