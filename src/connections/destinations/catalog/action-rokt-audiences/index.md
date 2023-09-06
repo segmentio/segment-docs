@@ -1,5 +1,5 @@
 ---
-title: Rokt Audiences Destination
+title: Rokt Audiences (Actions) Destination
 hide-personas-partial: true
 hide-boilerplate: true
 hide-dossier: false
