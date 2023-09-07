@@ -19,7 +19,7 @@ This destination is maintained by LaunchDarkly. For any issues with the destinat
 ## Getting started
 
 1. In LaunchDarkly, navigate to [Account settings](https://app.launchdarkly.com/settings/projects) and copy the client-side ID for the project and environment where you would like to create a Engage Audience synced segment.
-2. In LaunchDarkly, create a service token with either a Writer role or a custom role. If your service token has a custom role, it must have the actions `createSegment` and `updateIncluded` to sync a segment from Twilio Segment. To learn how to create a service token, read [Creating API access tokens](https://docs.launchdarkly.com/home/account-security/api-access-tokens#creating-api-access-tokens).
+2. In LaunchDarkly, create a service token with either a Writer role or a custom role. If your service token has a custom role, it must have the actions `createSegment` and `updateIncluded` to sync a segment from and Engage Audience. To learn how to create a service token, read [Creating API access tokens](https://docs.launchdarkly.com/home/account-security/api-access-tokens#creating-api-access-tokens).
 3. From the Segment web app, navigate to **Engage > Audiences**. Ensure you are in the Engage space you plan to use with the LaunchDarkly Audiences destination. Either choose an existing Engage audience or create a new one. This is the audience you plan to sync with LaunchDarkly.
 4. Navigate to **Engage > Engage Settings** and click **Destinations**. Please ensure you are still in the correct Engage space.
 5. Search for LaunchDarkly Audiences” and select the destination. Click **Add destination**.
