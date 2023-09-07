@@ -62,6 +62,13 @@ Protocols customers can also use [Transformations](/docs/protocols/transform/) t
 
 > **Note**: Transformations are currently limited to event, property and trait name changes, and do **not** apply to historical data.
 
+## Can I change the data type of a column in the warehouse?
+
+Yes, data types are set up in your warehouse based on the first value that comes in from a source. However, you can request the support team to update the data type by reaching out to [support](https://app.segment.com/workspaces?contact=1). To learn more, check out [Data Types](/docs/connections/storage/warehouses/schema/#schema-evolution-and-compatibility) section.
+
+## Can the data type definitions in Protocols be enforced on warehouse schema?
+
+The data type definitions in Protocols are not utilized by warehouse connectors for schema creation, and has no impact on the warehouse schema. 
 
 ## How do I find my source slug?
 
@@ -171,7 +178,3 @@ To change the name of your schema without disruptions:
 11. Select the warehouse you disabled syncs for from the list of destinations.
 12. On the overview page for your source, select **Settings**.
 13. Enable the **Sync Data** toggle and click **Save Settings**.
-
-## Can I change the data type of a column in the warehouse?
-
-Yes, data types are set up in your warehouse based on the first value that comes in from a source. However, you can request the support team to update the data type by reaching out to [support](https://app.segment.com/workspaces?contact=1). To learn more, check out [Data Types](/docs/connections/storage/warehouses/schema/#schema-evolution-and-compatibility) section.
