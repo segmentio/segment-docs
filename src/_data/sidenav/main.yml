@@ -322,16 +322,32 @@ sections:
       title: Sample Queries
     - path: /unify/profiles-sync/tables
       title: Tables & Materialized Views
+  - section_title: Traits
+    slug: unify/traits
+    section:
+    - section_title: Predictions
+      slug: unify/traits/predictions
+      section:
+      - path: '/unify/traits/predictions/'
+        title: Predictions
+      - path: '/unify/traits/predictions/using-predictions'
+        title: Using Predictions
+      - path: '/unify/traits/predictions/suggested-predictive-audiences'
+        title: Suggested Predictive Audiences
+    - path: '/unify/traits/computed-traits'
+      title: Computed Traits
+    - path: '/unify/traits/sql-traits'
+      title:  SQL Traits
   - path: /unify/profile-api
     title: Profile API
-  - path: /unify/profile-api-limits
-    title: Profile API Limits
   - path: /unify/debugger
     title: Profile Debugger
   - path: /unify/unify-gdpr
     title: Unify and GDPR
   - path: /unify/faqs
     title: Unify FAQs
+  - path: /unify/product-limits
+    title: Unify Limits
 
 - section_title: Engage
   section:
@@ -352,6 +368,8 @@ sections:
       title: Set User Subscriptions
     - path: /engage/user-subscriptions/subscription-states
       title: Subscription States
+    - path: /engage/user-subscriptions/subscription-groups
+      title: Subscription Groups
     - path: /engage/user-subscriptions/subscription-sql
       title: Subscriptions with SQL Traits
   - section_title: Profiles
@@ -368,19 +386,6 @@ sections:
       title: Account-level Audiences
     - path: '/engage/audiences/organization'
       title: Organize Audiences
-    - path: '/engage/audiences/computed-traits'
-      title: Computed Traits
-    - path: '/engage/audiences/sql-traits'
-      title:  SQL Traits
-    - section_title: Predictive Traits
-      slug: engage/audiences/predictive-traits
-      section:
-      - path: '/engage/audiences/predictive-traits/'
-        title: Predictive Traits
-      - path: '/engage/audiences/predictive-traits/using-predictive-traits'
-        title: Using Predictive Traits
-      - path: '/engage/audiences/predictive-traits/suggested-predictive-audiences'
-        title: Suggested Predictive Audiences
 
   - section_title: Journeys
     description: "Learn how to create multi-step Journeys to tailor messages to your users."
@@ -429,6 +434,17 @@ sections:
       title: Broadcasts
     - path: '/engage/campaigns/whatsapp-campaigns'
       title: WhatsApp Campaigns
+  - section_title: Trait Activation
+    slug: engage/trait-activation
+    section:
+    - path: /engage/trait-activation/overview
+      title: Trait Activation Overview
+    - path: /engage/trait-activation/trait-activation-setup
+      title: Trait Activation Setup
+    - path: /engage/trait-activation/trait-enrichment
+      title: Trait Enrichment
+    - path: /engage/trait-activation/id-sync
+      title: ID Sync
   - path: '/engage/analytics'
     title: Analytics Overview
   - path: '/engage/settings'

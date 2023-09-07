@@ -1,8 +1,7 @@
 ---
 title: Destination Actions
+plan: dest-actions
 ---
-
-{% include content/plan-grid.md name="dest-actions" %}
 
 The Destination Actions framework improves on classic destinations by enabling you to see and control how Segment sends the event data it receives from your sources, to actions-based destinations. Each Action in a destination lists the event data it requires, and the event data that is optional.
 

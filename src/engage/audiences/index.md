@@ -20,7 +20,12 @@ You can build an Audience from existing events, traits, computed traits, or othe
 
 ### Events
 
-You can build an Audience from any events that are connected to Engage, including [Track](/docs/connections/spec/track), [Page](/docs/connections/spec/page), and [Screen](/docs/connections/spec/screen) calls. You can use the `property` button to refine the audience on specific event properties, as well. Select `and not who` to indicate users that have not performed an event. For example, you might want to look at all users that have viewed a product above a certain price point but not completed the order.
+You can build an Audience from any events that are connected to Engage, including [Track](/docs/connections/spec/track), [Page](/docs/connections/spec/page), and [Screen](/docs/connections/spec/screen) calls. You can use the `property` button to refine the audience on specific event properties, as well. 
+
+> info ""
+> The Audience builder doesn't return every property value in the Constant value or Traits drop-downs. Segment displays a portion of values from the incoming data stream. However, if you don't see the value you're looking for, you can manually enter it.
+
+Select `and not who` to indicate users that have not performed an event. For example, you might want to look at all users that have viewed a product above a certain price point but not completed the order.
 
 ![Creating an Audience of users who viewed a product without buying it](/docs/engage/images/audience_builder.png)
 
@@ -135,6 +140,9 @@ Real-time Compute allows you to update traits and Audiences as Segment receives 
 - **Intra-Session App Personalization:** change your app experience with personalized onboarding, product recommendations, and faster funnels based on a user entering and exiting an audience.
 - **Instant Messaging:** Trigger messages in email, live chat, and push notifications instantly, to deliver immediate experiences across channels.
 - **Operational Workflows:** Supercharge your sales and support teams by responding to customer needs faster, based on the latest understanding of a user.
+
+> warning ""
+> Real-time Compute doesn't support time window conditions. Segment creates Audiences using time window conditions as batch computations. Additionally, Segment creates [Funnel Audiences](#funnel-audiences) as batch computations.
 
 To create a new Audience or Trait:
 

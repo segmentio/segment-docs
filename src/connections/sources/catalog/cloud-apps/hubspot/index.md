@@ -29,7 +29,7 @@ Voila! We'll begin syncing your HubSpot data into Segment momentarily, and it wi
 
 The HubSpot source is built with a sync component, which means we'll make requests to their API on your behalf on a 3 hour interval to pull the latest data into Segment. In the initial sync, we'll grab all the HubSpot objects (and their corresponding properties) according to the Collections Table below. The objects will be written into a separate schema, corresponding to the source instance's schema name you designated upon creation (ie. my_source.charges).
 
-Our sync component uses an upsert API, so the data in your warehouse loaded using sync will reflect the latest state of the corresponding resource in HubSpot. For example, if `ticket_status` goes from `open` to `closed` between syncs, on its next sync that tickets status will be `closed`.
+Our sync component uses an upsert API, so the data in your warehouse loaded using sync will reflect the latest state of the corresponding resource in HubSpot. For example, if `deals` goes from `open` to `closed` between syncs, on its next sync that deal's status will be `closed`.
 
 The source syncs and warehouse syncs are independent processes. Source runs pull your data into the Segment Hub, and warehouse runs flush that data to your warehouse. Sources will sync with Segment every 3 hours. Depending on your Warehouses plan, we will push the Source data to your warehouse on the interval associated with your billing plan.
 

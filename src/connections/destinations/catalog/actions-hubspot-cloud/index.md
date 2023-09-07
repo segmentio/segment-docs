@@ -12,12 +12,15 @@ versions:
 
 {% include content/plan-grid.md name="actions" %}
 
-HubSpot is an all-in-one marketing tool that helps attract new leads and converts them into paying customers, with features like landing page creation and email automation.
+HubSpot is an all-in-one marketing tool that helps attract new leads and converts them into paying customers, with features like landing page creation and email automation. 
 
 When you use the HubSpot Cloud Mode (Actions) destination, Segment sends your data to [HubSpot's REST API](https://developers.hubspot.com/docs/api/overview){:target="_blank"}.
 
 > warning ""
 > The **Upsert Company** action is not compatible with the Mapping Tester on the mappings page if Associate Contact is set to **Yes**. As a result, Segment recommends using the Event Tester or other tools to test and troubleshoot creating and updating companies in HubSpot. Please note, for the company to contact association to work, you are required to trigger an Upsert Contact action before triggering an Upsert Company action.
+
+> warning ""
+> **Behavioral Events (Legacy)** are only supported with [Hubspot Classic Destination](/docs/connections/destinations/catalog/hubspot/).
 
 
 ## Benefits of HubSpot Cloud Mode (Actions) vs HubSpot Classic
@@ -33,6 +36,11 @@ HubSpot Cloud Mode (Actions) provides the following benefits over the classic Hu
 
 
 ## Getting started
+
+> info ""
+> Before you begin, you need to generate a Private App in HubSpot. To generate a Private App from the HubSpot dashboard, navigate to **Integrations > Private Apps**. 
+>
+> Segment requires the following scopes: `business-intelligence`, `crm.objects.contacts.read`, `crm.objects.contacts.write`, `crm.schemas.contacts.read`, `crm.objects.companies.read`, `crm.objects.companies.write`, and `crm.schemas.companies.read`. For more information, see HubSpot's [Private Apps](https://developers.hubspot.com/docs/api/private-apps){:target="_blank"} article.
 
 1. From the Segment web app, navigate to **Connections > Catalog**.
 2. Search for **HubSpot Cloud Mode (Actions)** in the Destinations Catalog, and select the destination.
@@ -58,7 +66,7 @@ Search Fields to associate |  This finds a unique record of custom object based 
 ObjectType to associate | To associate the newly created and updated custom object record with another object type, select the object type you want it to be associated with.
 Association Label | Select an association label between both the object types. From the HubSpot Dashboard, you can create associations between any type of object. To create an association label: <br>1. Log in to the [HubSpot Dashboard](https://app.hubspot.com/){:target="_blank"}. <br>2. Go to **Data Management > Objects > Custom Objects**. <br>3. Go to the **Associations** tab and click **Create association label**. 
 
-## FAQ & Troubleshooting
+## FAQ and troubleshooting
 
 ### How do I send other standard objects to HubSpot?
 Segment provides prebuilt mappings for contacts and companies. If there are other standard objects you would like to create records in, please use the **Create Custom Object Record** action. For example, to create a deal in HubSpot, add a mapping for Create Custom Object Record, set up your Event Trigger criteria, and input a literal string of "deals" as the Object Type. You can use the Properties object to add fields that are in the [deals object](https://developers.hubspot.com/docs/api/crm/deals){:target="_blank"}, such as `dealname` and `dealstage`. The same can be done with other object types (for example, tickets, quotes, etc). Ending fields that are to go to HubSpot outside of the properties object isn't supported. This includes sending [associations](https://developers.hubspot.com/docs/api/crm/associations){:target="_blank"}.  Please note, Segment only supports creating new records in these cases; updates to existing records are only supported for contacts and companies. 
@@ -80,6 +88,9 @@ This destination doesn't allow selecting an entire object for the Other properti
 ### Does the HubSpot Cloud Mode (Actions) destination support EU data residency?
 Yes. HubSpot will automatically redirect API requests directly to an EU data center if your HubSpot instance is on an EU data center. See more in HubSpot's [Routing API Traffic](https://product.hubspot.com/blog/routing-api-traffic){:target="_blank"} article.
 
+### How do I attribute a custom behavioral event with a user token instead of Email?
+Event payloads should contain an email with either a valid format, empty string, or a `null` value. As a result, the user token takes precedence and is validated in a `Send custom behavioral event` mapping. Segment can't deliver the event to your destination if the email is invalid.
+
 ### How can I disable or delete a destination from Segment?
 Follow the instructions in the docs to [disable](/docs/connections/destinations/actions/#disable-a-destination-action) or [delete](/docs/connections/destinations/actions/#delete-a-destination-action) a destination action from Segment.
 
@@ -88,3 +99,4 @@ Follow the steps mentioned [here](https://knowledge.hubspot.com/integrations/con
 
 ### How does disconnecting and uninstalling affect a user's data and HubSpot account?
 Segment immediately stops sending data to HubSpot after you disconnect and uninstall a HubSpot account.
+
