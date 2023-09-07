@@ -49,7 +49,7 @@ analytics.identify('user_123', {
 {% endcomment %}
 
 > info "If you don't see the source you're looking for in our catalog"
-> If a tool is not listed as a supported source in our [catalog](https://segment.com/catalog/){:target='_blank’}, then it is not possible to incorporate the integration within a Segment workspace out-of-the-box. However, as an alternative, you can use the [HTTP API](https://segment.com/docs/connections/sources/catalog/libraries/server/http-api/){:target='_blank’} source to collect data from the tool's API. You can also use [Functions](https://segment.com/docs/connections/functions/){:target='_blank’} to send or receive data from other tools.
+> If a tool is not listed as a supported source in our [catalog](https://segment.com/catalog/){:target='_blank’}, then it is not possible to incorporate the integration out-of-the-box within a Segment workspace. However, as an alternative, you can use the [HTTP API](/docs/connections/sources/catalog/libraries/server/http-api/) source to collect data from the tool's API. You can also use [Functions](/docs/connections/functions/) to send or receive data from other tools.
 
 ## Types of sources
 
