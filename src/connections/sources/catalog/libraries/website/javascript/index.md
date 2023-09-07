@@ -887,6 +887,38 @@ If the above routes don't work, Segment provides these workarounds to help with 
 
 * Consider tracking data using one of Segment's [server-side libraries](/docs/connections/sources/#server). By using a server-side library, you no longer have to worry about ad blockers and privacy browsers preventing Segment from loading. This option may require more code to track something like a `.page()` call, since now you have to manually pass contextual information that otherwise would've been collected automatically by Analytics.js, such as `url`, `path`, `referrer`. Note that some destinations are device-mode only.
 
+## Add destinations from npm
+
+Bundle the destinations you want loaded from [npm](https://www.npmjs.com/package/@segment/analytics-next){:target="_blank"} instead of having them loaded from CDN. This enables you to have fewer network requests when adding destinations.
+
+* To add actions-based destinations from npm: 
+
+  ```js
+  import vwo from '@segment/analytics-browser-actions-vwo'
+  import braze from '@segment/analytics-browser-actions-braze'
+
+  AnalyticsBrowser.load({
+    writeKey,
+    plugins: [vwo, braze],
+  })
+  ```
+
+  Pass in the destination plugin to the added config option called `plugins`.  A list of all action destination packages can be found [here](https://github.com/segmentio/action-destinations/blob/main/packages/destinations-manifest/package.json){:target="_blank"}.
+
+
+* To add classic destinations from npm: 
+
+  ```js
+  import { AnalyticsBrowser } from '@segment/analytics-next'
+  import GoogleAnalyticsIntegration from '@segment/analytics.js-integration-google-analytics'
+
+  // the following rig assumes configuration for Google Analytics will be available in the fetched settings
+  const analytics = AnalyticsBrowser.load({
+    writeKey: '<WRITE_KEY>',
+    classicIntegrations: [ GoogleAnalyticsIntegration ]
+  }),
+  ```
+
 ## Open source libraries
 
 Analytics.js 2.0 includes the following open source components:
