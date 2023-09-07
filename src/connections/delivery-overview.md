@@ -84,3 +84,6 @@ With Delivery Overview, you can verify that your source receives your events, th
 ## How can I configure alerts?
 During the Delivery Overview beta, you can use the Event Delivery alerting features (Delivery Alerts) by selecting the **Alerts** tab in the destination header.
 
+## Why is the Delivery Overview page only available for cloud-mode destinations? 
+Similar to Segment's [Event Delivery](/docs/connections/event-delivery/) feature, the Delivery Overview page is only available for server-side integrations (also known as cloud-mode destinations). You won't be able to use the Delivery Overview page for client side integrations (also known as device-mode destinations) because device-mode data is sent directly to the destination tool's API. In order to report on deliverability, data must be sent to destinations using a server-side connection. 
+

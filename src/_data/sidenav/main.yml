@@ -325,14 +325,14 @@ sections:
   - section_title: Traits
     slug: unify/traits
     section:
-    - section_title: Predictive Traits
-      slug: unify/traits/predictive-traits
+    - section_title: Predictions
+      slug: unify/traits/predictions
       section:
-      - path: '/unify/traits/predictive-traits/'
-        title: Predictive Traits
-      - path: '/unify/traits/predictive-traits/using-predictive-traits'
-        title: Using Predictive Traits
-      - path: '/unify/traits/predictive-traits/suggested-predictive-audiences'
+      - path: '/unify/traits/predictions/'
+        title: Predictions
+      - path: '/unify/traits/predictions/using-predictions'
+        title: Using Predictions
+      - path: '/unify/traits/predictions/suggested-predictive-audiences'
         title: Suggested Predictive Audiences
     - path: '/unify/traits/computed-traits'
       title: Computed Traits
@@ -434,6 +434,17 @@ sections:
       title: Broadcasts
     - path: '/engage/campaigns/whatsapp-campaigns'
       title: WhatsApp Campaigns
+  - section_title: Trait Activation
+    slug: engage/trait-activation
+    section:
+    - path: /engage/trait-activation/overview
+      title: Trait Activation Overview
+    - path: /engage/trait-activation/trait-activation-setup
+      title: Trait Activation Setup
+    - path: /engage/trait-activation/trait-enrichment
+      title: Trait Enrichment
+    - path: /engage/trait-activation/id-sync
+      title: ID Sync
   - path: '/engage/analytics'
     title: Analytics Overview
   - path: '/engage/settings'

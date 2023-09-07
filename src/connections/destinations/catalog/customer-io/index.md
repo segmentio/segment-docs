@@ -269,6 +269,7 @@ Customer.io has limits on the data collected by their API. To ensure your events
 
 ### No Events in Customer.io from the Browser
 Remember that before Segment can send events to Customer.io from client-side JavaScript, the current user must identify with their `userId`. The user's email address is only used to identify them if that is the ID on record for them in Customer.io.
+Verify that your Customer.io workspace doesn't have any filters configured, as these filters could prevent campaigns from triggering.
 
 ### Page events not associated with user
 Page events will associate to a user if the user has been previously identified in Customer.io. If you identify a user after making Page calls, the previous page events won't associate to the user in Customer.io.

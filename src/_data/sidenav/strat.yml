@@ -207,6 +207,8 @@ sections:
     title: Implementation Guide
   - path: /connections/sources/catalog/libraries/mobile/apple/migration
     title: Migration Guide
+  - path: /connections/sources/catalog/libraries/mobile/apple/swift-plugin-architecture
+    title: Plugin Architecture    
   - path: /connections/sources/catalog/libraries/mobile/apple/destination-plugins
     title: Device Mode Destinations
   - path: /connections/sources/catalog/libraries/mobile/apple/cloud-mode-destinations
