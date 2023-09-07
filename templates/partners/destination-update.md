@@ -24,13 +24,11 @@
 >
 > If you have any questions in the meantime, please reach out to our team at partner-support@segment.com.
 
----
-
 ## Template begins here...
-
+---
+title: [integration_name] Destination
 ---
 
-## title: <integration_name> Destination
 
 > (delete after reading) This template is meant for Actions-based destinations that represent a new version of an existing, or Classic Segment destination. For new Actions-based destinations, see destination-new-template.md template.
 

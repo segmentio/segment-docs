@@ -1,10 +1,8 @@
 ---
 title: Connect a Tracking Plan
 redirect_from: '/protocols/validate/'
+plan: protocols
 ---
-
-{% include content/plan-grid.md name="protocols" %}
-
 
 With your Tracking Plan complete, it's time to apply the Tracking Plan to one or more Sources. Select **Connect Source** from the right hand menu for your specific Tracking Plan.
 

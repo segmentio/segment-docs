@@ -12,7 +12,7 @@ This destination is maintained by Kitemetrics. For any issues with the destinati
 
 ## Getting Started
 
-{% include content/connection-modes.md %}
+
 
 
 1. From the Segment web app, click **Catalog**.

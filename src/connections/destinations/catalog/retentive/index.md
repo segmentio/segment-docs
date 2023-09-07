@@ -8,7 +8,7 @@ Retentive maintains this destination. For any issues with the destination, [cont
 
 ## Getting Started
 
-{% include content/connection-modes.md %}
+
 
 1. From the Destinations catalog page in the Segment App, click **Add Destination**.
 2. In the Destinations Catalog, search for "Retentive" and select the Retentive destination.

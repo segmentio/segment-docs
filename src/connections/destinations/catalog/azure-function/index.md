@@ -14,7 +14,7 @@ Segment makes it easy to send your data to Azure Function (and lots of other des
 
 # Getting Started
 
-{% include content/connection-modes.md %}
+
 
 ## Build an Azure Function to Process Segment Events
 

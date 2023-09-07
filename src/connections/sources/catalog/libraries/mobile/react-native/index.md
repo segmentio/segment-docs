@@ -9,7 +9,7 @@ With Analytics for React Native, you can collect analytics in your React Native 
 All of Segment's libraries are open-source, and you can view Analytics for React Native on GitHub. For more information, see the [Analytics React Native GitHub repository](https://github.com/segmentio/analytics-react-native){:target="_blank"}.
 
 > info "Using Analytics for React Native Classic?"
-> Segment no longer supports Analytics React Native versions [1.5.1 and older](/docs/connections/sources/cataog/libraries/mobile/react-native/classic). Use the [implementation guide](/docs/connections/sources/catalog/libraries/mobile/react-native/implementation/) to upgrade to the latest version. 
+> As of May 15, 2023, Segment ended support for [Analytics React Native Classic](/docs/connections/sources/catalog/libraries/mobile/react-native/classic), which includes versions 1.5.1 and older. Use the [implementation guide](/docs/connections/sources/catalog/libraries/mobile/react-native/implementation/) to upgrade to the latest version.
 
 > warning ""
 > `@segment/analytics-react-native` is compatible with Expo's [Custom Dev Client](https://docs.expo.dev/development/getting-started/){:target="_blank"} and [EAS builds](https://docs.expo.dev/build/introduction/){:target="_blank"} without any additional configuration. Destination Plugins that require native modules may require custom [Expo Config Plugins](https://docs.expo.dev/guides/config-plugins/){:target="_blank"}.
@@ -692,5 +692,34 @@ import {
     }
   }
 ```
+### How do I add to the context Object?
+Like with the integrations object above, you'll need to use a plugin to access and modify the context object. For example, if you'd like to add `context.groupId` to every Track call, you should create a plugin like this:
+```js
+//in AddToContextPlugin.js
+import {
+  Plugin,
+  PluginType,
+  SegmentEvent,
+} from '@segment/analytics-react-native';
+
+export class AddToContextPlugin extends Plugin {
+  // Note that `type` is set as a class property
+  // If you do not set a type your plugin will be a `utility` plugin (see Plugin Types above)
+  type = PluginType.enrichment;
+
+ async execute(event: SegmentEvent) {
+    if (event.type == EventType.TrackEvent) {
+      event.context['groupId'] = 'test - 6/8'
+      }
+      return event;
+    }
+}
+ // in App.js
+
+import { AddToContextPlugin } from './AddToContextPlugin'
+
+segmentClient.add({ plugin: new AddToContextPlugin() });  
+```
+
 ## Changelog
 [View the Analytics React Native changelog on GitHub](https://github.com/segmentio/analytics-react-native/releases){:target="_blank"}.

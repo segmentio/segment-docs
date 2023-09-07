@@ -65,7 +65,7 @@ When you update user subscriptions with Segment's Public API, however, you'll ge
 
 For Segment to process the subscription status request, your Identify call payload must include at least one object that contains an email address or phone number, its subscription type, and its subscription status. Engage accepts both uppercase and lowercase subscription statuses in Identify calls.
 
-The following example payload shows an Identify call with a `context` object, which you'll add to the Identify call to update user subscriptions. The `context` object contains a `messaging_subscriptions` array with two objects that update both SMS and email subscription statuses:
+The following example payload shows an Identify call with a `context` object, which you'll add to the Identify call to update user subscriptions. The `context` object contains a `messaging_subscriptions` array with three objects that update SMS, WhatsApp, and email subscription statuses:
 
 ```json
 {
@@ -75,6 +75,11 @@ The following example payload shows an Identify call with a `context` object, wh
       {
         "key": "(123) 555-5555",
         "type": "SMS",
+        "status": "SUBSCRIBED" | "UNSUBSCRIBED" | "DID_NOT_SUBSCRIBE"
+      },
+      {
+        "key": "(123) 555-5555",
+        "type": "WhatsApp",
         "status": "SUBSCRIBED" | "UNSUBSCRIBED" | "DID_NOT_SUBSCRIBE"
       },
       {
@@ -101,3 +106,6 @@ The following example payload shows an Identify call with a `context` object, wh
 ```
 
 For successful requests, Segment instantly updates subscription states in your workspace. You can then display successful updates or error messages with users in your notification center.
+
+> success ""
+> While SMS and WhatsApp share the same number, you must add a separate subscription state for both of them.

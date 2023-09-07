@@ -9,7 +9,7 @@ This destination is maintained by Digioh. For any issues with the destination, [
 
 ## Getting Started
 
-{% include content/connection-modes.md %}
+
 
 1. Open the [Digioh Integrations tab](https://account.digioh.com/Integration/List), click **New Integration**.
 2. The Segment App opens in a new window. Log in to authenticate the connection from Digioh.

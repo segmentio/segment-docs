@@ -1,8 +1,7 @@
 ---
 title: Forward blocked events
+plan: protocols
 ---
-{% include content/plan-grid.md name="protocols" %}
-
 
 If you're concerned about permanently discarding blocked events, you can enable blocked event forwarding on a Segment Source. To set up forwarding, navigate to the settings tab of the Source, then Schema Configuration. 
 
