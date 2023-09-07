@@ -14,6 +14,11 @@ This guide lists all required onboarding steps and walks you through Engage setu
 > info ""
 > The steps in this guide are only required if you plan to send email, SMS, and WhatsApp messages with Engage. Visit the [Engage Foundations Onboarding Guide](/docs/engage/quickstart) for general onboarding steps to set up your Engage space, connect sources, create audiences, and more.
 
+> info "Regional Segment"
+> You can use Engage Premier on [Segment's regional infrastructure in the EU](/docs/guides/regional-segment/). Twilio Engage ensures data residency in the EU, but the channels you connect to, may not guarantee the same level of data residency. Check directly with the providers of the channels you use for information about data residency in their applications. Native channels like email and SMS, which use Twilio, are not data resident. 
+> 
+> Twilio is GDPR compliant, and has [Binding Corporate Rules](https://www.twilio.com/legal/binding-corporate-rules){:target="_blank"} to ensure that data is protected when it's transferred between countries.
+
 ## Before you begin: overview and task checklist
 
 You’ll set up Twilio Engage in four stages:
@@ -121,9 +126,9 @@ You’ll now need to enable event webhooks, which trigger webhook notifications 
 1. Within your SendGrid **subuser** space, navigate to **Settings > Mail Settings**.
 2. Click the pencil edit icon next to **Event Webhook**.
 3. On the Event Webhook page, set authorization method to none.
-4. Copy and paste the following URL into the **HTTP Post URL** field:
-
-    <br> `https://engage-ma-webhook-api.engage.segment.com/sendgrid`
+4. Copy and paste the following URL, depending on your region,  into the **HTTP Post URL** field:
+  - US: `https://engage-ma-webhook-api.engage.segment.com/sendgrid`
+  - EU:`https://engage-ma-webhook-api.euw1.engage.segment.com/sendgrid`
 
     ![Adding the HTTP Post URL](images/webhook.png "Adding the HTTP Post URL")
 
@@ -233,7 +238,7 @@ To finish setting up your Messaging Service, you’ll now [configure an event we
 
 1. Switch to the browser tab or window with your Engage workspace.
 2. Navigate to **Engage > Engage settings > Channels**.  Under **SMS Service with Twilio**, click the **Get Started** button.
-3. The **Set up and valide your Twilio account** overlay appears (pictured below). Click the **Copy webhook URL** button. Your computer copies the URL to your clipboard.
+3. The **Set up and validate your Twilio account** overlay appears (pictured below). Click the **Copy webhook URL** button. Your computer copies the URL to your clipboard.
 
     ![Engage webhook URL](images/engagewebhook.png "Engage webhook URL")
 
@@ -284,6 +289,12 @@ You'll now create a messaging service to connect your number to Engage:
 6. Twilio confirms that the WhatsApp number has been assigned to the service.
 
 Your WhatsApp messaging service is now created. 
+
+## Regional Segment
+
+You can use Engage Premier on [Segment's regional infrastructure in the EU](/docs/guides/regional-segment/). Twilio Engage ensures data residency in the EU, but the channels you connect to, may not guarantee the same level of data residency. Check directly with the providers of the channels you use for information about data residency in their applications. Native channels like email and SMS, which use Twilio, are not data resident. 
+
+Twilio is GDPR compliant, and has [Binding Corporate Rules](https://www.twilio.com/legal/binding-corporate-rules){:target="_blank"} to ensure that data is protected when it's transferred between countries.
 
 ## Next steps
 

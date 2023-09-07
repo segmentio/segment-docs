@@ -11,7 +11,7 @@ Segment recommends that you make an Identify call:
 - After a user first registers
 - After a user logs in
 - When a user updates their info (for example, they change or add a new address)
-- Upon loading any pages that are accessible by a logged in user (optional)
+- Upon loading any pages that aren't accessible by a logged in user (optional)
 
 The first three examples are pretty self-explanatory, but many might ask: why you would call identify on every page load if we're storing the `userId` in the cookie/local storage?
 

@@ -166,15 +166,17 @@ sections:
   section_title: Analytics-React-Native Documentation
   section:
   - path: /connections/sources/catalog/libraries/mobile/react-native
-    title: Analytics-React-Native mobile source
-  - path: /connections/sources/catalog/libraries/mobile/react-native/migration
-    title: Upgrade to React-Native 2.0
-  - path: /connections/sources/catalog/libraries/mobile/react-native/troubleshooting
-    title: Troubleshooting Analytics-React-Native
-  - path: /connections/sources/catalog/libraries/mobile/react-native/react-faqs/
-    title: React-Native FAQs
-  - path: /connections/sources/catalog/libraries/mobile/react-native/changelog
-    title: Analytics-React-Native Changelog
+    title: Overview
+  - path: /connections/sources/catalog/libraries/mobile/react-native/implementation
+    title: Implementation / Upgrade
+  - path: /connections/sources/catalog/libraries/mobile/react-native/destination-plugins
+    title: Destination Plugins
+  - path: /connections/sources/catalog/libraries/mobile/react-native/cloud-mode-destinations
+    title: Cloud-mode Destinations
+  - path: /connections/sources/catalog/libraries/mobile/react-native/react-native-typewriter
+    title: Typewriter for React Native
+  - path: /connections/sources/catalog/libraries/mobile/react-native/react-native-destination-filters
+    title: Destination Filters for React Native
 
 - slug: kotlin-android
   section_title: Analytics-Kotlin Documentation

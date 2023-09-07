@@ -54,14 +54,15 @@ Some email campaign fields, like **Sender email** and **Subject**, are required.
 
 At this point, you can send a test email before publishing your campaign. Test emails confirm that your design, unsubscribe links, and merge tags appear as expected.
 
-As part of the test send, you can select a test profile. The test profile populates the test email and replaces merge tags with personalized content, but doesn't send a test email to the test address.
+As part of the test send, you can enter custom values to populate the profile traits in your message.
 
 Follow these steps to test your campaign:
 
-1. In the **Send Email** pane, navigate to Body, then click **Test Email**.
-2. In the **Recipients** field, enter the email address(es) that will receive your test email.
-3. Search for and select a test profile.
-4. Click **Send Test Email**.
+1. In the **Send an email** pane, navigate to Body, then click **Test email**.
+2. If your template has profile traits, enter a trait value for the test email. This ensures that your merge tags work as expected.
+- To test a default value, leave the profile traits field blank. Default values must be assigned in your merge tags. For example, `loyal customer` would be the default for the following merge tag: {% raw %}```{{profile.traits.first_name | default: "loyal customer"}}```{% endraw %}.
+3. In the **Recipients** field, enter the email address(es) that will receive your test email.
+4. Click **Send test email**.
 
 ### Publish your email campaign
 

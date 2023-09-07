@@ -4,6 +4,10 @@ strat: kotlin-android
 redirect_from:
   - '/connections/sources/catalog/cloud-apps/kotlin/'
 id: dZeHygTSD4
+tags:
+  - android
+  - kotlin
+  - android-kotlin
 ---
 With Analytics Kotlin, you can send data using Kotlin and Java applications to any analytics or marketing tool without having to learn, test, or implement a new API every time. Analytics Kotlin enables you to process and track the history of a payload, while Segment controls the API and prevents unintended operations.
 
@@ -39,7 +43,7 @@ Analytics Kotlin adds several improvements to the overall experience of using th
 ### Device Mode Transformations & Filtering
 For the first time ever, developers can filter and transform their users’ events even before the events leave the mobile device. What’s more, these Filters & transformations can be applied dynamically (either via the Segment Dashboard, or via Javascript uploaded to the workspace) and do not require any app updates!
 
-Learn more about [Destination Filters]() on Mobile, and [Edge Functions]() on Mobile. 
+Learn more about [Destination Filters](https://github.com/segmentio/DestinationFilters-kotlin){:target="_blank"} on Mobile, and [Edge Functions](https://github.com/segmentio/EdgeFn-kotlin){:target="_blank"} on Mobile. 
 
 
 ## Getting started

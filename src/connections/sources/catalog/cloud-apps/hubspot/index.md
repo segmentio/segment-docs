@@ -61,7 +61,10 @@ Due to HubSpot's [API Rate Limits](http://developers.hubspot.com/apps/api_guidel
 
 Below are tables outlining the properties included in the collections listed above. To see the full description of each property, refer to the HubSpot documentation linked in the collections above.
 
-If you have Custom Properties on any of these collections that you would like to sync, submit a ticket detailing the custom properties [here](http://segment.com/help/contact) and we can enable it for you.
+If you have Custom Properties on Contacts or Companies collections that you would like to sync, submit a ticket detailing the custom properties [here](http://segment.com/help/contact){:target="_blank"}.
+
+> info ""
+> For Deals collection, Segment retrieves properties that the HubSpot API returns, which means you can add the new fields on your own from HubSpot if you have the necessary permissions.
 
 ### Contacts
 

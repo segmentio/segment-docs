@@ -14,7 +14,7 @@ This source is maintained by OneTrust. For any issues with the source, [contact 
 
 1. From your workspace's [Sources catalog page](https://app.segment.com/goto-my-workspace/sources/catalog) click **Add Source**.
 
-2. Search for “OneTrust” in the Sources Catalog, select MoEOneTrustngage, and click **Add Source**.
+2. Search for “OneTrust” in the Sources Catalog, select OneTrust, and click **Add Source**.
 
 3. On the next screen, give the Source **a nickname** configure any other settings.
     - The nickname is used as a label in the Segment app, and Segment creates a related schema name in your warehouse. The nickname can be anything, but Segment recommends using something that reflects the source itself and distinguishes amongst your environments (like `OneTrust_Prod`, `OneTrust_Staging`, or `OneTrust_Dev`).
