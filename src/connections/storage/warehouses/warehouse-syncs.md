@@ -70,7 +70,7 @@ When you disable a source, collection or property, Segment no longer syncs data 
 > For each warehouse only the first 5,000 collections per source and 5,000 properties per collection are visible in the Selective Sync user interface. [Learn more about the limits](#selective-sync-user-interface-limits).
 
 > warning ""
-> All tables use `receieved_at` for the sort key, disabling this column will cause your syncs to fail.
+> Disabling the `recieved_at` column will cause your syncs to fail, as all tables use `receieved_at` as the sort key.
  
 ### When to use Selective Sync
 
