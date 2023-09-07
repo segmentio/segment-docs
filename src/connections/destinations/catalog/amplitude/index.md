@@ -511,7 +511,7 @@ analytics.alias({
 
 [Segment doesn't have a concept for a session](https://segment.com/blog/facts-vs-stories-why-segment-has-no-sessions-api/).
 
-Device-mode calls to Amplitude include session information because Segment bundles Amplitude's SDK. To set up the same `sessionId` for cloud-mode calls to Amplitude, you must explicitly set the [`session_id`](https://developers.amplitude.com/docs/http-api-v2#optional-keyst){:target="_blank"} as an integration-specific option, as in the example below.
+Device-mode calls to Amplitude to include session information because Segment bundles Amplitude's SDK. To set up the same `sessionId` for cloud-mode calls to Amplitude, you must explicitly set the [`session_id`](https://developers.amplitude.com/docs/http-api-v2#optional-keyst){:target="_blank"} as an integration-specific option, as in the example below.
 
 ```js
 {
