@@ -49,43 +49,15 @@ The default behavior is for Customer.io to pass the `userId` associated with the
 
 Collections are the groupings of data Segment pulls from your Source. In your warehouse, each collection gets its own table, as well as a `tracks` table that aggregates all the events into a single table. 
 
-<table>
-  <tr>
-    <td>**Collection**</td>
-    <td>**Type**</td>
-    <td>**Description**</td>
-  </tr>
-  <tr>
-    <td>Email Delivered</td>
-    <td>Event</td>
-    <td>Message has been successfully delivered to the receiving server</td>
-  </tr>
-  <tr>
-    <td>Email Opened</td>
-    <td>Event</td>
-    <td>Recipient has opened the HTML message. You need to enable Open Tracking for getting this type of event</td>
-  </tr>
-    <tr>
-    <td>Email Link Clicked</td>
-    <td>Event</td>
-    <td>Recipient clicked on a link within the message. You need to enable Click Tracking for getting this type of event</td>
-  </tr>
-    <tr>
-    <td>Email Unsubscribed</td>
-    <td>Event</td>
-    <td>Recipient clicked on message's subscription management link</td>
-  </tr>
-    <tr>
-    <td>Email Bounced</td>
-    <td>Event</td>
-    <td>Receiving server could not or would not accept message</td>
-  </tr>
-  <tr>
-    <td>Email Marked as Spam</td>
-    <td>Event</td>
-    <td>Recipient marked message as spam</td>
-  </tr>
-</table>
+
+| Collection           | Type  | Description                                                                                              |
+| -------------------- | ----- | -------------------------------------------------------------------------------------------------------- |
+| Email Delivered      | Event | Message has been successfully delivered to the receiving server                                          |
+| Email Opened         | Event | Recipient has opened the HTML message. You need to enable Open Tracking for this kind of event           |
+| Email Link Clicked   | Event | Recipient clicked on a link within the message. You need to enable Click Tracking for this kind of event | 
+| Email Unsubscribed   | Event | Recipient clicked on message's subscription management link                                              |
+| Email Bounced        | Event | Receiving server could not or would not accept message                                                   |
+| Email Marked as Spam | Event | Recipient marked message as spam                                                                         |
 
 <!-- Example: To query the Email Delivered table, you'd write a query like this:
 
