@@ -22,9 +22,9 @@ Before you can configure consent in Segment, take the following steps:
 ## Step 1: Create consent categories in the Segment app
 
 > info "Limited availability of sources and destinations during private beta"
-> During private beta, you can send events from web sources to consent categories. Enforcement of consent preferences is only available for event streaming destinations, webhooks, and functions. You can map one event streaming destination, webhook, or function to multiple consent categories. All other source and destination types are not impacted by consent mappings.
+> During private beta, you can send events from web sources to consent categories. Enforcement of consent preferences is only available for data lakes, warehouses, event streaming destinations, webhooks, and functions. You can map one data lake, warehouse, event streaming destination, webhook, or function to multiple consent categories. All other source and destination types are not impacted by consent mappings.
 >
-> Storage, RETL, and Engage destinations do not enforce consent preferences. 
+> Blob storage, RETL, and Engage destinations do not enforce consent preferences. 
 
 1. From the [Segment homepage](https://app.segment.com/goto-my-workspace/){:target="_blank”}, select the Privacy tab and click **Consent Management**.
 2. On the Consent management page, click **Create categories**.
