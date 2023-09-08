@@ -722,7 +722,7 @@ segmentClient.add({ plugin: new AddToContextPlugin() });
 ```
 
 ### I've upgraded to React Native 2.0, but I am still getting warnings in the Google Play Store that my app is not compliant. Why is this?
-The React Native 2.0 library is compliant with the Google Play store policies. However, we recommend that you check to see if there are any old and inactive tracks on the Google Play store that are not updated to the latest build. If this is the case, we recommend updating those tracks to see if it resolves the issue. 
+The React Native 2.0 library is compliant with the Google Play store policies. However, we recommend that you check to see if there are any old and inactive [tracks on the Google Play store](https://developers.google.com/android-publisher/tracks) that are not updated to the latest build. If this is the case, we recommend updating those tracks to see if it resolves the issue. 
 
 ## Changelog
 [View the Analytics React Native changelog on GitHub](https://github.com/segmentio/analytics-react-native/releases){:target="_blank"}.
