@@ -107,11 +107,21 @@ Segment does not support hard deletes in Salesforce. Use of hard deletes will re
 
 ## Collection Properties
 
-Segment performs a one-to-one mapping of all publicly available fields (standard and custom) from Salesforce. To see the full list of the standard fields refer to the Salesforce field documentation linked in each collection above. If you've added and selected custom fields to an existing collection, [contact Segment Support](https://segment.com/help/contact/) to configure them to sync. You do not need to include the field names.
+Segment performs a one-to-one mapping of all publicly available fields (standard and custom) from Salesforce. To see the full list of the standard fields refer to the Salesforce field documentation linked in each collection above. 
 
 ## Adding Destinations
 
 Warehouses are the only supported destination for object-cloud sources.
+
+## Historical Data
+When a new Object/Collection is enabled, Segment automatically runs a full historical re-sync on that Object.
+
+However, for custom properties/columns, Segment only populates the custom property with data that comes in after the custom field was enabled. In order to populate the new custom field(s) for records that have previously been synced, a manual re-sync needs to be initated.
+
+For Salesfroce, Segment uses the `SystemModstamp`(system_modstamp) field to checkpoint collections that sync incrementally. When it is enabled, we sync collections incrementally. When it is disabled, we sync collections fully. If you would like to force a collection to sync fully on the next run to bring in historical data, you can disable the `SystemModstamp` field on the collection, allow the next sync to complete and then re-enable `SystemModstamp` so the collection syncs incrementally in the coming syncs. 
+
+If you've added and selected custom fields to an existing collection and would not like to use the SystemModstamp to bring in historical data, please feel free to [contact Segment Support](https://segment.com/help/contact/) to configure them to sync. You do not need to include the field names.
+
 
 ## Troubleshooting
 
