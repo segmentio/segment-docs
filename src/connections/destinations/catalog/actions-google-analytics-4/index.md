@@ -169,5 +169,8 @@ Google has some requirements/[limitations](https://developers.google.com/analyti
 
 ### Data takes a long time to appear in Google's reports
 
-Google may take [24-48 hours](https://support.google.com/analytics/answer/9333790){:target='_blank'}  to process data sent to Google Analytics. As a result, the Google Analytics user interface may not reflect the most current data. The Google Analytics [Realtime report](https://support.google.com/analytics/answer/9271392){:target="_blank"} displays activity on your site as it happens.
+Google may take [24-48 hours](https://support.google.com/analytics/answer/9333790){:target='_blank'} to process data sent to Google Analytics. As a result, the Google Analytics user interface may not reflect the most current data. The Google Analytics [Realtime report](https://support.google.com/analytics/answer/9271392){:target="_blank"} displays activity on your site as it happens.
 
+### Google Optimize Support
+
+The Google Analytics 4 Cloud destination does not support Google Optimize. This destination operates in cloud-mode (sending events from Segment servers to Google Analytics using the Measurement Protocol API), which prevents the required [Optimize SDK](https://support.google.com/optimize/answer/11287798?visit_id=637903946258690719-978290187&rd=1){:target="_blank"} snippet from loading on the page.
