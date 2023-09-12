@@ -139,3 +139,38 @@ To access or assign a value to a cookie outside of the standard Segment methods 
 | `user traits` | `ajs_user_traits` | `analytics.user().traits();` | `window.localStorage.ajs_user_traits` | `analytics.user().traits({firstName:'Jane'});` | `analytics.user().traits({});` |
 | `groupId` | `ajs_group_id` | `analytics.group().id();` | `window.localStorage.ajs_group_id` | `analytics.group().id('777-qwe-098');` | `analytics.group().id('');` |
 | `group traits` | `ajs_group_properties` | `analytics.group().traits()` | `window.localStorage.ajs_group_properties` | `analytics.group().traits({name:'Segment'})` | `analytics.group().traits({})` |
+
+## Storage Priority
+
+By default Analytics.js uses `localStorage` as its preferred storage location, with Cookies as a fallback when `localStorage` is not available or not populated. An in-memory storage is used as a last fallback if all the previous ones are disabled.
+
+Default Storage Priority:
+
+```md
+LocalStorage -> Cookie -> InMemory
+```
+
+Some scenarios might require to switch the priority of the storage systems.
+
+- Apps that move the user across different subdomains
+- Apps where the server needs control over the user data
+- User Consent
+- Availability
+
+The storage priority can be configured in the Analytics.js client using the `storage` property either globally or only for user or group data.
+
+The `storage` property accepts an array of supported storage names (`localStorage`, `cookie`, `memory`) to be used in the priority order of the array.
+
+```js
+analytics.load('writeKey', {
+  // Global Storage Priority: Both User and Group data
+  storage: ['cookie', 'localStorage', 'memory']
+  // Specific Storage Priority
+  user: {
+    storage: ['cookie', 'localStorage', 'memory']
+  },
+  group: {
+    storage: ['cookie', 'localStorage', 'memory']
+  },
+}
+```
