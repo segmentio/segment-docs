@@ -332,6 +332,8 @@ sections:
           title: BigQuery Setup
         - path: /unify/linked-profiles/setup-guides/snowflake-setup
           title: Snowflake Setup
+        - path: /unify/linked-profiles/setup-guides/redshift-setup
+          title: Redshift Setup
     - path: /unify/linked-profiles/linked-events
       title: Linked Events
   - section_title: Traits
