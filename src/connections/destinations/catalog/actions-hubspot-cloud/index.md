@@ -74,8 +74,8 @@ The [Track Page View action](/docs/connections/destinations/catalog/actions-hubs
 ### Why aren't my custom behavioral events appearing in HubSpot?
 HubSpot has several limits for custom behavioral events, including a limit on the number of event properties per event. Each event can contain data for up to 50 properties. If this limit is exceeded, the request will fail. See [HubSpot documentation](https://knowledge.hubspot.com/analytics-tools/create-custom-behavioral-events#define-the-api-call){:target="_blank"} for other limits.
 
-### I'm seeing a `403` errors for custom behavioral events. How do I resolve them?
-`403` errors indicate that Segment was unable to send your event to HubSpot because the account connected doesn't have sufficient permissions. If you are observing 403s for Custom Behavioral Events, please ensure that your HubSpot account is a `HubSpot Enterprise Marketing Hub` account. After upgrading your account to `Enterprise Marketing Hub`, please **Reauthorize** from the `Settings` page of your destination to resolve `403` errors.
+### How do I resolve a `403` error for custom behavioral events?
+`403` errors indicate that Segment is unable to send your event to HubSpot because the account connected doesn't have sufficient permissions. If you're observing `403` errors for Custom Behavioral Events, ensure that your HubSpot account is a `HubSpot Enterprise Marketing Hub` account. After upgrading your account to `Enterprise Marketing Hub`, **Reauthorize** from the **Settings** page of your destination to resolve the `403` errors.
 
 ### Why can't I set an entire object for the Other properties field?
 
