@@ -125,4 +125,4 @@ If you've added and selected custom fields to an existing collection and would n
 
 ## Troubleshooting
 
-If you are syncing data from a Salesforce sandbox environment and see an "Invalid credentials" error, [contact Segment Support](https://segment.com/help/contact/){:target="_blank"}, who will configure your Segment source to use sandbox data. 
+If you are syncing data from a Salesforce sandbox environment and see an "Invalid credentials" error, [contact Segment Support](https://segment.com/help/contact/){:target="_blank"} to configure your Segment source to use sandbox data. 
