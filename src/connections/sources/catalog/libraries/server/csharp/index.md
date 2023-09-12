@@ -34,12 +34,15 @@ To get started with the Analytics-CSharp library:
 1. Create a Source in Segment. 
    1. Go to **Connections > Sources > Add Source**.
    2. Search for *Xamarin, Unity, or .NET* (whichever source you want to use) and click **Add Source**.  **Note:** There is no CSharp source. To use Analytics-CSharp, use either Xamarin, Unity, or .NET as your source. 
-2. Add the Analytics dependency to your project. 
+2. Add the Analytics dependency to your project. **Analytics-CSharp** is distributed via NuGet. Check other installation options [here](https://www.nuget.org/packages/Segment.Analytics.CSharp/).
 
-    ```git
+    ```
     dotnet add package Segment.Analytics.CSharp --version <LATEST_VERSION>
     ```
-    <br>**Note:** Analytics-CSharp is distributed through NuGet. Check out other installation options [here](https://www.nuget.org/packages/Segment.Analytics.CSharp/){:target="_blank"}. For Unity, Analytics-Chsharp is distributed through [OpenUPM](https://openupm.com/packages/com.segment.analytics.csharp/?subPage=readme){:target="_blank"}. 
+    For Unity, it is distributed via OpenUPM. Read more about it [here](https://openupm.com/packages/com.segment.analytics.csharp/?subPage=readme).
+    ```
+   openupm add com.segment.analytics.csharp
+   ``` 
 
 3. Initialize and configure the client.
 

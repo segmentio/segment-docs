@@ -5,8 +5,6 @@ strat: csharp
 
 If you’re using a different library, follow the steps below to migrate to the [Analytics-CSharp library](/docs/connections/sources/catalog/libraries/server/csharp/).  
 
-> info ""
-> This library is currently in beta and is governed by Segment’s [First Access and Beta terms](https://www.twilio.com/legal/tos){:target="_blank"}. 
 
 ## Start the Migration
 
