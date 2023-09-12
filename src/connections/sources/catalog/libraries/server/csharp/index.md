@@ -1,5 +1,5 @@
 ---
-title: Analytics for CSharp (C#)
+title: Analytics-CSharp (C#)
 strat: csharp
 id: 
 redirect_from:

@@ -1,5 +1,5 @@
 ---
-title: Analytics for CSharp (C#) Migration Guide
+title: Analytics-CSharp (C#) Migration Guide
 strat: csharp
 ---
 
@@ -8,10 +8,9 @@ If you’re using a different library, follow the steps below to migrate to the 
 > info ""
 > This library is currently in beta and is governed by Segment’s [First Access and Beta terms](https://www.twilio.com/legal/tos){:target="_blank"}. 
 
-1. Create a source in Segment. If you want to reuse your current source, skip to step 2. 
-    1. Go to Connections > Sources > Add Source.
-    2. Search for *Xamarin, Unity* or *.NET* and click **Add source**. **Note:** There is no CSharp source. To use Analytics-CSharp, use either Xamarin, Unity, or .NET as your source. 
-2. Add the Analytics CSharp dependency to your project. 
+## Start the Migration
+
+1. Add the Analytics-CSharp dependency to your project. 
 
     <br> Before:
     ```js
@@ -28,116 +27,25 @@ If you’re using a different library, follow the steps below to migrate to the 
     dotnet add package Segment.Analytics.CSharp --version <VERSION>
     ```
 
-3. Modify your tracking methods. 
-    - Identify
+2. Replace namespaces. 
 
       <br> Before:
       ```c#    
-        Analytics.Client.Identify("019mr8mf4r", new Traits() {
-            { "name", "#{ user.name }" },
-            { "email", "#{ user.email }" },
-            { "friends", 29 }
-        });
+        using Segment;
+        using Segment.Flush;
+        using Segment.Model;
+        using Segment.Request;
       ```
 
       <br> After:
       ```c#    
-        // compatible with the old way
-        analytics.Identify("019mr8mf4r", new JsonObject()
-        {
-            { "name", "#{ user.name }" },
-            { "email", "#{ user.email }" },
-            { "friends", 29 }
-        });
+        using Segment.Analytics;
+        using Segment.Analytics.Compat;
       ```
 
-    - Track
-        <br> Before:
-        ```c#    
-            Analytics.Client.Track("019mr8mf4r", "Item Purchased", new Properties() {
-                { "revenue", 39.95 },
-                { "shipping", "2-day" }
-            });
-        ```
+## Optional Changes
 
-        <br> After:
-        ```c#
-        // compatible with the old way
-        analytics.Track("Item Purchased", new JsonObject()
-        {
-            { "revenue", 39.95 },
-            { "shipping", "2-day" }
-        });
-        ```
-        **Note:** The Analytics-CSharp SDK remembers the identity info from the last identify call, so you don’t have to pass an identity every time. If you still want to identify on every track call, you can achieve it with Segment's plugin system.
-
-    - Page 
-        <br> Before:
-        ```c#               
-        Analytics.Client.Page("019mr8mf4r", "Login", new Properties() {
-            { "path", "/login" },
-            { "title", "Initech Login" }
-        });
-        ```
-
-        <br> After:
-        ```c#
-        // compatible with the old way
-        analytics.Page("Login", new JsonObject()
-        {
-            { "path", "/login" },
-            { "title", "Initech Login" }
-        });
-        ```
-
-    - Screen
-        <br> Before:
-        ```c#               
-        Analytics.Client.Screen("019mr8mf4r", "Register", new Properties() {
-            { "type", "facebook" }
-        });
-        ```
-
-        <br> After:
-        ```c#               
-        // compatible with the old way
-        analytics.Screen("Register", new JsonObject()
-        {
-            { "type", "facebook" }
-        });
-        ```
-
-    - Group
-        <br> Before:
-        ```c#               
-        Analytics.Client.Group("userId", "groupId", new Traits() {
-            { "name", "Initech, Inc." },
-            { "website", "http://www.example.com" }
-        });
-        ```
-
-        <br> After:
-        ```c#               
-        // compatible with the old way
-        analytics.Group("groupId", new JsonObject()
-        {
-            { "name", "Initech, Inc." },
-            { "website", "http://www.example.com" }
-        });
-        ```
-    
-    - Alias
-        <br> Before:
-        ```c#                  
-        Analytics.Client.Alias("previousId", "userId")
-        ```
-
-        <br> After:
-        ```c#                  
-        analytics.Alias("newId");
-        ```
-
-4. Change your development settings if you would like to make analytics run synchronously for testing purposes. 
+1. Change your development settings if you would like to make analytics run synchronously for testing purposes. 
 
     <br> Before:
     ```c#                  
@@ -147,11 +55,11 @@ If you’re using a different library, follow the steps below to migrate to the 
     <br> After:
     ```c#                  
     var configuration = new Configuration("YOUR WRITE KEY",
-        userSynchronizeDispatcher: true);
+        useSynchronizeDispatcher: true);
     var analytics = new Analytics(configuration);
     ```
 
-5. Review your anonymous ID settings. 
+2. Review your anonymous ID settings. 
 
     <br> Before:
     ```c#                  
@@ -165,7 +73,7 @@ If you’re using a different library, follow the steps below to migrate to the 
     analytics.Reset();
     ```
 
-6. Change your nested properties settings. 
+3. Change your nested properties settings. 
 
     <br> Before:
     ```c#                  
@@ -218,7 +126,7 @@ If you’re using a different library, follow the steps below to migrate to the 
     };
     ```
 
-7. Review your Flush settings.
+4. Review your Flush settings.
      
      <br> Before:
     ```c#                  
