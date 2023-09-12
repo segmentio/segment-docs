@@ -24,10 +24,16 @@ With Linked Events, you can:
 
 Before getting started with Linked Events, you'll need:
 
-1. Snowflake or BigQuery data warehouse support and write access.
-- View the [BigQuery](/docs/unify/linked-profiles/setup-guides/bigquery-setup/) and [Snowflake](/docs/unify/linked-profiles/setup-guides/snowflake-setup/) setup guides. 
+1. Snowflake, BigQuery, or Redshift data warehouse credentials with **write** access.
+- View the [BigQuery](/docs/unify/linked-profiles/setup-guides/bigquery-setup/), [Snowflake](/docs/unify/linked-profiles/setup-guides/snowflake-setup/), and [Redshift](/docs/unify/linked-profiles/setup-guides/redshift-setup/) setup guides. 
 2. Access to Unify in your workspace. 
 3. Access to the Destination you'll be using with Linked Events so that you can validate your data. 
+
+<!-- 
+> success ""
+> Segment recommends using a test table with under 1,000 rows. Using a copy of the production table allows Segment to keep the Primary Key and mimic real life use cases, but keep the scale low for quick testing.
+
+-->
 
 > info ""
 > Segment stores and processes all data in the United States.
@@ -56,10 +62,10 @@ To use Connections with Linked Events:
 > success ""
 > Linked Events uses Segment's [Reverse ETL](/docs/connections/reverse-etl/) infrastructure for pulling in data from your warehouse. 
 
-To get started, you'll need to connect a data warehouse. Linked Events supports [BigQuery](/docs/unify/linked-profiles/setup-guides/bigquery/) and [Snowflake](/docs/unify/linked-profiles/setup-guides/snowflake/) data warehouses.
+To get started, you'll need to connect a data warehouse. Linked Events supports [BigQuery](/docs/unify/linked-profiles/setup-guides/bigquery/), [Snowflake](/docs/unify/linked-profiles/setup-guides/snowflake/), and [Redshift](/docs/unify/linked-profiles/setup-guides/redshift-setup/) data warehouses.
 
 1. Navigate to **Unify > Data graph** and click **Add warehouse**. 
-2. Select a warehouse to connect from the [supported warehouse Destinations](#supported-warehouse-destinations). 
+2. Select a warehouse to connect from the [supported data warehouses](#supported-data-warehouses). 
 3. [Connect your warehouse](#connect-your-warehouse).  
 3. Click **Test Connection** to be sure your warehouse is connected.
 4. After a successful test, click **Save**.  
@@ -70,6 +76,9 @@ For Linked Events, the sync destination is an internal Segment data store. To tr
 
 You can choose which database within your warehouse this data lives in. 
 
+> success ""
+> Linked Events syncs data from your warehouse approximately once every hour. 
+
 ### Supported data warehouses
 
 The table below shows the data warehouses Linked Events supports. View the Segment docs for your warehouse, then carry out the corresponding steps. 
@@ -78,14 +87,9 @@ The table below shows the data warehouses Linked Events supports. View the Segme
 |------------------------|-------------------------|
 | [Snowflake](docs/unify/linked-profiles/setup-guides/snowflake-setup/)              | 1. Configure your snowflake database. <br> 2. Enter your credentials. <br> 3. Test the Connection. <br> 4. Click **Save**. |
 | [BigQuery](/docs/unify/linked-profiles/setup-guides/bigquery-setup/)           | 1. Add your credentials to the database that has tables with the Entities you want to enrich your event with. <br> 2. Test your connection. | 
+| [Redshift](/docs/unify/linked-profiles/setup-guides/redshift-setup/)           | 1. Select the Redshift cluster you want to connect. <br> 2. [Configure](/docs/connections/storage/catalog/redshift/#networking) the correct network and security settings. |
 
-<!--
-| [Redshift](/docs/connections/storage/catalog/redshift/#getting-started)           | 1. Choose an instance. <br> 2. Provision a new Redshift cluster. |
-| [Azure](/docs/connections/storage/catalog/azuresqldw/)              | 1. Sign up for an Azure subscription. 2. Provision a dedicated SQL pool.                     |
-| [Postgres](/docs/connections/storage/catalog/postgres/)           | 1. Follow the steps in the Postgres getting started section. 
--->
-
-## Step 2: Add a model
+## Step 2: Add models
 
 After you connect your warehouse, use the Data graph overview screen (**Unify > Data graph**) to view models Segment has synced from your data warehouse, add a new model, and view data warehouse settings. 
 
@@ -154,7 +158,7 @@ After you’ve added Enrichments, you’ll want to test and save your enrichment
 {% faq %}
 {% faqitem What data warehouse permissions does Segment require? %}
 
-To use Linked Events, be sure that you have proper permissions for the Data Warehouse you're using. Visit the [BigQuery](/docs/unify/linked-profiles/setup-guides/bigquery/) and [Snowflake](/docs/unify/linked-profiles/setup-guides/snowflake/) setup guides to learn more about updating permissions.
+To use Linked Events, be sure that you have proper permissions for the Data Warehouse you're using. Visit the [BigQuery](/docs/unify/linked-profiles/setup-guides/bigquery-setup/), [Snowflake](/docs/unify/linked-profiles/setup-guides/snowflake-setup/), and [Redshift](/docs/unify/linked-profiles/setup-guides/redshift-setup/) setup guides to learn more about updating permissions.
 
 {% endfaqitem %}
  
