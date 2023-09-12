@@ -14,7 +14,7 @@ This destination is maintained by 1Flow. For any issues with the destination, [c
 2. Find the Destinations Actions item in the left navigation, and click it.
 3. Click **Configure 1Flow**.
 4. Select an existing Source to connect to 1Flow (Actions).
-5. Copy 1Flow project key and paste it into the Connection Settings in Segment.
+5. Go to 1flow.ai -> Settings -> Project Settings -> Copy 1Flow project key and paste it into the Connection Settings in Segment.
 
 
 ## Supported methods
