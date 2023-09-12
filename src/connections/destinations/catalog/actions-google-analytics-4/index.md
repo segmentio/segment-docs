@@ -173,4 +173,4 @@ Google may take [24-48 hours](https://support.google.com/analytics/answer/933379
 
 ### Google Optimize Support
 
-Google Optimize is not a supported feature with Segment's Google Analytics 4 Cloud destination. This destination operates in cloud-mode (sending events from Segment servers to Google Analytics using the Measurement Protocol API), preventing the required [Optimize SDK](https://support.google.com/optimize/answer/11287798?visit_id=637903946258690719-978290187&rd=1) snippet from loading on the page.
+The Google Analytics 4 Cloud destination does not support Google Optimize. This destination operates in cloud-mode (sending events from Segment servers to Google Analytics using the Measurement Protocol API), which prevents the required [Optimize SDK](https://support.google.com/optimize/answer/11287798?visit_id=637903946258690719-978290187&rd=1){:target="_blank"} snippet from loading on the page.
