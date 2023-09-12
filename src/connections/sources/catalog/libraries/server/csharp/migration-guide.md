@@ -42,7 +42,7 @@ If you’re using a different library, follow the steps below to migrate to the 
 
       <br> After:
       ```c#    
-        // compatbile with the old way
+        // compatible with the old way
         analytics.Identify("019mr8mf4r", new JsonObject()
         {
             { "name", "#{ user.name }" },
@@ -62,7 +62,7 @@ If you’re using a different library, follow the steps below to migrate to the 
 
         <br> After:
         ```c#
-        // compatbile with the old way
+        // compatible with the old way
         analytics.Track("Item Purchased", new JsonObject()
         {
             { "revenue", 39.95 },
@@ -82,7 +82,7 @@ If you’re using a different library, follow the steps below to migrate to the 
 
         <br> After:
         ```c#
-        // compatbile with the old way
+        // compatible with the old way
         analytics.Page("Login", new JsonObject()
         {
             { "path", "/login" },
@@ -100,7 +100,7 @@ If you’re using a different library, follow the steps below to migrate to the 
 
         <br> After:
         ```c#               
-        // compatbile with the old way
+        // compatible with the old way
         analytics.Screen("Register", new JsonObject()
         {
             { "type", "facebook" }
@@ -118,7 +118,7 @@ If you’re using a different library, follow the steps below to migrate to the 
 
         <br> After:
         ```c#               
-        // compatbile with the old way
+        // compatible with the old way
         analytics.Group("groupId", new JsonObject()
         {
             { "name", "Initech, Inc." },
