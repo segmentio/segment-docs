@@ -10,7 +10,7 @@ related:
 
 When an end user visits your site, they set **consent preferences**, or make decisions about the types of data they want you to collect, use, and share. These consent preferences are typically presented as a set list of categories that describe how your company intends to use that data. Common categories include personalization, advertising, and site performance.
 
-Segment works with your third-party consent management platform (CMP) or bespoke consent solution to *capture* an end user's consent preferences and *enforce* those preferences by only routing events to the categories consented to by an end user. 
+Segment works with your third-party consent management platform (CMP) or bespoke consent solution to capture an end user's consent preferences and enforce those preferences by only routing events to the categories consented to by an end user. 
 
 ![Diagram outlining information flowing from an end user to Segment destinations](/docs/privacy/images/consent-overview.png)
 
@@ -18,6 +18,29 @@ After a user sets their consent preferences, Segment captures them with the [Ana
 
 > info ""
 > Segment collects consent for both registered users and anonymous users.
+
+## Consent object
+
+Segment requires every event from all of your sources to include the end-user consent preferences, captured by your consent management tools or your application logic, in the form of the **consent object**. The consent object is a JSON object with the following format:
+
+```json
+{
+"context": {
+  "consent": {
+    "version": 1,
+    "consentPreferences": {
+        "Advertising": true,
+        "Analytics": false,
+        "Functional": true,
+        "DataSharing": false
+      }
+   }
+  }
+}
+
+```
+
+A consent conflict flag and the categories consented to by a user are both pulled from the consent object and are visible as traits on a user's profile in Unify.
 
 ## Enforce consent
 Segment routes events with a consent object to the destinations in categories consented to by a user and to destinations that do not have a consent category.
@@ -58,36 +81,6 @@ For example, if a user agreed to share their information with you for all catego
 > Segment has standardized a series of reserved event names that have special semantic meaning and maps these events to tools that support them. 
 >
 > See the [Semantic Events](/docs/connections/spec/semantic/) docs for more details.
-
-## Consent object
-
-Segment requires every event from all of your sources to include the end-user consent preferences, captured by your consent management tools or your application logic, in the form of the **consent object**. The consent object is a JSON object with the following format:
-
-```json
-{
-"context": {
-  "consent": {
-    "version": 1,
-    "consentPreferences": {
-        "Advertising": true,
-        "Analytics": false,
-        "Functional": true,
-        "DataSharing": false
-      }
-   }
-  }
-}
-
-```
-
-### Consent policy version
-
-Segment assigns a `version` to your consent object. The `version` describes the version of Segment's consent schema that message used.
-
-A consent conflict flag and the categories consented to by a user are both pulled from the consent object and are visible as traits on a user's profile in Unify.
-
-<!--- To learn more about configuring consent categories in your workspace, see the [Configure Consent Management documentation](/docs/privacy/configure-consent-management/). --->
-
 
 ## Reconcile consent conflicts
 
