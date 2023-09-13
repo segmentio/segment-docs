@@ -96,6 +96,9 @@ To add your first destination:
 ### Step 4: Create mappings
 After you’ve added a destination, you can create mappings from your warehouse to the destination. Mappings enable you to map the data you extract from your warehouse to the fields in your destination.
 
+> info ""
+> When adding new mappings to an existing model, only the changes that have transpired since the last sync will be synchronized, not the entire dataset. For a comprehensive data synchronization, we advise you to first recreate the model, followed by establishing a one-to-one mapping with the new model. This approach ensures that all data synchronizes effectively.
+
 To create a mapping:
 1. Navigate to **Conections > Destinations** and select the **Reverse ETL** tab.
 2. Select the destination that you want to create a mapping for.  
