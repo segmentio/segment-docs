@@ -29,12 +29,6 @@ Before getting started with Linked Events, you'll need:
 2. Access to Unify in your workspace. 
 3. Access to the Destination you'll be using with Linked Events so that you can validate your data. 
 
-<!-- 
-> success ""
-> Segment recommends using a test table with under 1,000 rows. Using a copy of the production table allows Segment to keep the Primary Key and mimic real life use cases, but keep the scale low for quick testing.
-
--->
-
 > info ""
 > Segment stores and processes all data in the United States.
 
@@ -76,7 +70,7 @@ For Linked Events, the sync destination is an internal Segment data store. To tr
 
 You can choose which database within your warehouse this data lives in. 
 
-> success ""
+> info ""
 > Linked Events syncs data from your warehouse approximately once every hour. 
 
 ### Supported data warehouses
@@ -89,18 +83,20 @@ The table below shows the data warehouses Linked Events supports. View the Segme
 | [BigQuery](/docs/unify/linked-profiles/setup-guides/bigquery-setup/)           | 1. Add your credentials to the database that has tables with the Entities you want to enrich your event with. <br> 2. Test your connection. | 
 | [Redshift](/docs/unify/linked-profiles/setup-guides/redshift-setup/)           | 1. Select the Redshift cluster you want to connect. <br> 2. [Configure](/docs/connections/storage/catalog/redshift/#networking) the correct network and security settings. |
 
-## Step 2: Add models
+## Step 2: Add entities
 
-After you connect your warehouse, use the Data graph overview screen (**Unify > Data graph**) to view models Segment has synced from your data warehouse, add a new model, and view data warehouse settings. 
+After you connect your warehouse, use the Data graph overview screen (**Unify > Data graph**) to view entities Segment has synced from your data warehouse, add a new entity, and view data warehouse settings. 
 
-To add a new model:
-1. Click **Add model**.
-2. Select the table(s) from your warehouse that you'll use as a model. 
+To add a new entity:
+1. Click **Add entity**.
+2. Select the table(s) from your warehouse that you'll use as an entity. 
 3. For each table you select, choose a primary key from the drop-down menu.
 - The primary key uniquely identifies rows in your table.
-4. Click **Add model**.
+4. Click **Add entities**.
 
-Once you've added a model, visit the Data graph overview page and select the model to view table columns, data type, and sync status information. 
+> success ""
+> If you don't see data you need, or have recently updated your warehouse, click **Refresh** to update the schema and tables list. 
+
 
 ## Step 3: Add a Destination
 
@@ -110,10 +106,10 @@ To use Linked Events, you'll need to add a destination to send enriched events t
 > For Linked Events, Segment supports [Destination Actions](/docs/connections/destinations/actions/).
 
 
-## Step 4: Create an event enrichment
-With Linked Events, you can select models and properties from your data warehouse, then add enrichments to map properties to your connected destination.
+## Step 4: Enrich events with entities
+With Linked Events, you can select entities and properties from your data warehouse, then add enrichments to map properties to your connected destination.
 
-You can add data models and enrichments from the destination Mappings tab:
+Add entities and enrichments from the destination Mappings tab:
 
 1. Navigate to **Connections > Destinations > Event streams**
 2. Select the destination you'd like to create an enrichment on.
@@ -121,36 +117,38 @@ You can add data models and enrichments from the destination Mappings tab:
 4. Click **New Mapping**, and select the type of mapping you'd like to add.
 - Click the **...** icon to edit an existing mapping.
 5. In the "Select Events to Map and Send", define the [conditions](/docs/connections/destinations/actions/#conditions) under which the action should run. 
-6. Click **Load Sample Event**, then add your data models.
+6. Click **Load Sample Event**, then add your entities.
 
-### Add data models 
+### Add entities
 
-After you load a sample event, you can add data models from the **Enrich events with data models** section. You’ll select a data model, then a model match property. 
-- The model match property is the property in the event that you want to match to the primary key. 
+After you load a sample event, you can add entities from the **Enrich events with entities** section. You’ll select an entity, then an entity match property. 
+- The entity match property is the property in the event that you want to match to the primary key. 
 
-After you’ve added a data model and match property, add your event enrichments. 
+After you’ve added an entity and match property, add your event enrichments. 
 
 ### Add enrichments
 
 Use enrichments to select the entity you wish to send to your downstream destination. 
 
-In the Mappings tab, locate the **Select Mappings** section where you can enrich source properties from the data models you've selected in the previous step.
+In the Mappings tab, locate the **Select Mappings** section where you can enrich source properties from the entities you've selected in the previous step.
 
-Select the property field that you'd like to enrich, then select the **Enrichments** tab. Next, select the properties you want to send to your destination. 
+1. Select the propery field that you'd like to enrich, then select the **Enrichments** tab. 
+2. Select the entity you want to send to your destination. 
+- You’ll have access to all rows/columns in your data warehouse associated with the property you've selected in the previous step.
+3. Add the key name on the right side, which is what Segment sends to your destination. 
 
-You’ll have access to all rows/columns in your data warehouse associated with the match property you've selected in the previous step.
-
-You can then add the key name on the right side, which is what Segment sends to your destination. 
+> warning ""
+> At this time, Linked Events doesn't support a preview of enriched payloads.
 
 ### Test and save your Enrichments
 
-After you’ve added Enrichments, you’ll want to test and save your enrichments.
+After you’ve added Enrichments, test and save your enrichments.
 
-5. Test the mapping with data from a sample event.
+1. Test the mapping with data from a sample event.
 - The edit panel shows you the mapping output in the format for the destination tool. You can change your mapping as needed and re-test.
-6. When you're satisfied with the mapping, click **Save**. Segment returns you to the Mappings table.
+2. When you're satisfied with the mapping, click **Save**. Segment returns you to the Mappings table.
 
-> info ""
+> warning ""
 > At this time, when you select mappings or test events, you won’t see enrichment data. Enrichment data is only available with real events.
 
 ## Frequently asked questions
