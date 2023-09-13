@@ -32,11 +32,11 @@ GRANT ROLE segment_entities TO segment_entities_user;
 
 ## Grant access to schemas and tables
 
-You'll need to grant access to schemas and tables that you'd like to enrich with. This allows Segment to list schemas, tables, and columns, as well as create entities with data extracted and ingested to Segment
+You'll need to grant access to schemas and tables that you'd like to enrich with. This allows Segment to list schemas, tables, and columns, as well as create entities with data extracted and ingested to Segment.
 
 ### Schemas
 
-Grant schema permissions based on customer need. View Amazon's docs for more on [schema permissions](https://docs.aws.amazon.com/redshift/latest/dg/r_GRANT.html){:target="_blank"} and to view some [example commands](https://docs.aws.amazon.com/redshift/latest/dg/r_GRANT-examples.html){:target="_blank"} that you can use to grant permissions.
+Grant schema permissions based on customer need. Visit Amazon's docs for more on [schema permissions](https://docs.aws.amazon.com/redshift/latest/dg/r_GRANT.html){:target="_blank"} and to view [example commands](https://docs.aws.amazon.com/redshift/latest/dg/r_GRANT-examples.html){:target="_blank"} that you can use to grant permissions.
 
 ```sql 
 -- view specific schemas in database
@@ -45,19 +45,21 @@ GRANT USAGE ON SCHEMA <schema-name> TO ROLE segment_entities;
 
 ### Tables
 
-Grant table permissions based on customer need. View descriptions of table permissions in [Amazon's docs](https://docs.aws.amazon.com/redshift/latest/dg/r_GRANT.html){:target="_blank"}.
+Grant table permissions based on customer need. View descriptions of [table permissions](https://docs.aws.amazon.com/redshift/latest/dg/r_GRANT.html){:target="_blank"} from Amazon.
 
 ```sql
 -- query data from a specific table in a schema
 GRANT SELECT ON TABLE <schema-name>.<table-name> TO ROLE segment_entities;
 ```
 
-## Grant access to Reverse ETL
+### RETL table permissions
 
-Run the SQL commands below if RETL has ever run in your database and you add a new user. 
+If you've used RETL in your database, and added a new user, you'll need to add the following table permissions:
 
 ```sql
 GRANT USAGE, CREATE ON SCHEMA __segment_reverse_etl TO ROLE segment_entities;
 
 GRANT SELECT, INSERT, UPDATE, DELETE ON ALL TABLES IN SCHEMA __segment_reverse_etl TO ROLE segment_entities;
 ```
+
+Learn more about Redshift's [table permissions](https://docs.aws.amazon.com/redshift/latest/dg/r_GRANT.html){:target="_blank"}.
