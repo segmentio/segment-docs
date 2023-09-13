@@ -1548,6 +1548,15 @@ sources:
       - us
     endpoints:
       - us
+  - id: 9gM6IAq7G6
+    display_name: WordPress / WooCommerce
+    hidden: true
+    slug: wordpress---woocommerce
+    url: connections/sources/catalog/cloud-apps/wordpress---woocommerce
+    regions:
+      - us
+    endpoints:
+      - us
   - id: 7GmYZcBQyw
     display_name: WorkRamp
     hidden: false
