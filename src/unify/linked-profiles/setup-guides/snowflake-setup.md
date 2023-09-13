@@ -11,7 +11,7 @@ Be sure to log in with a user that has read and write permissions so that Segmen
 
 ## Getting started 
 
-To begin Snowflake setup:
+To get started:
 
 1. Log in to your Snowflake account.
 2. Navigate to *Worksheets*.
@@ -39,19 +39,19 @@ Enter and run the code below to create specific roles for Linked Events. All Sno
 
     ```sql
    -- create role
-   CREATE ROLE segment_entities;
+   GRANT USAGE ON SCHEMA <schema-name-1> TO ROLE segment_entities;
 
    -- warehouse access
    GRANT USAGE ON WAREHOUSE segment_entities TO ROLE segment_entities;
 
    -- database access
-   GRANT USAGE ON DATABASE segment_entities TO ROLE segment_entities;
-   GRANT CREATE SCHEMA ON DATABASE segment_entities TO ROLE segment_entities;
+   GRANT USAGE ON DATABASE <your_database> TO ROLE segment_entities;
+   GRANT CREATE SCHEMA ON DATABASE <your_database> TO ROLE segment_entities;
    ```
 
 ## Create a new user 
 
-Enter and run the code below to create the username and password combination that will be used to execute queries. Make sure to enter your password where it says `my_strong_password`.
+Enter and run the code below to create the username and password combination that will be used to execute queries. Make sure to enter your password where it says `<my_strong_password>`.
 
    ```sql
    -- create user
@@ -71,7 +71,7 @@ To use Linked Events, you'll need to grant access to `segment_entities_user` for
 These tables need to live in the same database as the one used for storing sync deltas. You can give as broad or narrow of access as you require. If you give broad access to multiple schemas, you can sort through the schemas in the Segment UI to select the appropriate tables to create models from.
 
 > success ""
-> Visit Snowflake's docs to learn more about [Snowflake schema priveleges](https://docs.snowflake.com/en/user-guide/security-access-control-privileges#schema-privileges) and [Snowflake table priveleges](https://docs.snowflake.com/en/user-guide/security-access-control-privileges#table-privileges). 
+> Visit Snowflake's docs to learn more about [schema priveleges](https://docs.snowflake.com/en/user-guide/security-access-control-privileges#schema-privileges){:target="_blank"} and [table priveleges](https://docs.snowflake.com/en/user-guide/security-access-control-privileges#table-privileges){:target="_blank"}. 
 
 ### Schema access
 
@@ -89,11 +89,11 @@ Choose from the following commands to open up table level access to Segment base
 
 ```sql
 -- query data from all tables in a database
-GRANT SELECT ON ALL TABLES IN DATABASE segment_entities TO ROLE 
+GRANT SELECT ON ALL TABLES IN DATABASE <your_database> TO ROLE 
 segment_entities;
 
 -- query data from future tables in a database
-GRANT SELECT ON FUTURE TABLES IN DATABASE segment_entities TO ROLE segment_entities;
+GRANT SELECT ON FUTURE TABLES IN DATABASE <your_database> TO ROLE segment_entities;
 
 -- query data from all tables in a schema
 GRANT SELECT ON ALL TABLES IN SCHEMA <schema-name> TO ROLE 
@@ -107,6 +107,8 @@ segment_entities;
 GRANT SELECT ON TABLE <schema-name>.<table_name> TO ROLE segment_entities;
 ```
 
+### RETL table permissions
+
 If you've used RETL in your database, and added a new user, you'll need to add the following table permissions described in [Snowflake's docs](https://docs.snowflake.com/en/user-guide/security-access-control-privileges#table-privileges). 
 
 ```sql
@@ -116,3 +118,16 @@ GRANT CREATE TABLE ON SCHEMA __segment_reverse_etl TO ROLE segment_entities;
 
 GRANT SELECT, INSERT, UPDATE, DELETE ON ALL TABLES IN SCHEMA __segment_reverse_etl TO ROLE segment_entities;
 ```
+
+### Confirm table permissions
+
+To confirm table permissions, run the following command:
+
+```sql
+use role segment_entities;
+use <your_database>;
+show schemas;
+select * from <your_database>.<schema-name>.<table-name> limit 10
+```
+
+The output should match the permissions you've given in previous steps.
