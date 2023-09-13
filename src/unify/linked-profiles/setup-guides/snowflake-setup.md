@@ -11,7 +11,7 @@ Be sure to log in with a user that has read and write permissions so that Segmen
 
 ## Getting started 
 
-To get started:
+To get started with Snowflake:
 
 1. Log in to your Snowflake account.
 2. Navigate to *Worksheets*.
@@ -32,21 +32,21 @@ Enter and run the code below to create a virtual warehouse. Linked Events needs 
       AUTO_SUSPEND = 600 -- 5 minutes
       AUTO_RESUME = TRUE;
    ```
-  
+   
 ## Create a new role 
 
 Enter and run the code below to create specific roles for Linked Events. All Snowflake access is specified through roles, which are then assigned to the user you’ll create later.
 
-    ```sql
+   ```ts
    -- create role
-   GRANT USAGE ON SCHEMA <schema-name-1> TO ROLE segment_entities;
+   GRANT ROLE segment_entities;
 
    -- warehouse access
    GRANT USAGE ON WAREHOUSE segment_entities TO ROLE segment_entities;
 
    -- database access
-   GRANT USAGE ON DATABASE <your_database> TO ROLE segment_entities;
-   GRANT CREATE SCHEMA ON DATABASE <your_database> TO ROLE segment_entities;
+   GRANT USAGE ON DATABASE segment_entities TO ROLE segment_entities;
+   GRANT CREATE SCHEMA ON DATABASE segment_entities TO ROLE segment_entities;
    ```
 
 ## Create a new user 
@@ -77,39 +77,32 @@ These tables need to live in the same database as the one used for storing sync 
 
 Run the following command to give access to specific schemas you want to use for enrichment.
 
-```sql
---view specific schemas in database
+```ts
+-- view specific schemas in database
 GRANT USAGE ON SCHEMA <schema-name-1> TO ROLE segment_entities;
 GRANT USAGE ON SCHEMA <schema-name-2> TO ROLE segment_entities;
+
+-- query data from all tables in a schema
+GRANT SELECT ON ALL TABLES IN SCHEMA <schema-name-1> TO ROLE segment_entities;
+GRANT SELECT ON ALL TABLES IN SCHEMA <schema-name-2> TO ROLE segment_entities;
+
+-- query data from future tables in a schema
+GRANT SELECT ON FUTURE TABLES IN SCHEMA <schema-name-1> TO ROLE segment_entities;
+GRANT SELECT ON FUTURE TABLES IN SCHEMA <schema-name-2> TO ROLE segment_entities;
 ```
 
 ### Table access
 
-Choose from the following commands to open up table level access to Segment based on your comfort level. 
+If you'd like to restrict access to specific tables, use the following command:
 
-```sql
--- query data from all tables in a database
-GRANT SELECT ON ALL TABLES IN DATABASE <your_database> TO ROLE 
-segment_entities;
-
--- query data from future tables in a database
-GRANT SELECT ON FUTURE TABLES IN DATABASE <your_database> TO ROLE segment_entities;
-
--- query data from all tables in a schema
-GRANT SELECT ON ALL TABLES IN SCHEMA <schema-name> TO ROLE 
-segment_entities;
-
--- query data from future tables in a schema
-GRANT SELECT ON FUTURE TABLES IN SCHEMA <schema-name> TO ROLE
-segment_entities;
-
+```ts
 -- query data from a specific table in a schema 
 GRANT SELECT ON TABLE <schema-name>.<table_name> TO ROLE segment_entities;
 ```
 
 ### RETL table permissions
 
-If you've used RETL in your database, and added a new user, you'll need to add the following table permissions described in [Snowflake's docs](https://docs.snowflake.com/en/user-guide/security-access-control-privileges#table-privileges). 
+If Reverse ETL has ever run in your database, a Segment-managed schema is created and a new user is added. You'll need to add the following [table permissions](https://docs.snowflake.com/en/user-guide/security-access-control-privileges#table-privileges) with the command below.
 
 ```sql
 GRANT USAGE ON SCHEMA __segment_reverse_etl TO ROLE segment_entities;
@@ -121,9 +114,11 @@ GRANT SELECT, INSERT, UPDATE, DELETE ON ALL TABLES IN SCHEMA __segment_reverse_e
 
 ### Confirm table permissions
 
-To confirm table permissions, run the following command:
+To confirm table permissions:
+1. Log in as the user you've created (`segment_entities_user`).
+2. Verify the role created has the correct permissions with the following command:
 
-```sql
+```ts
 use role segment_entities;
 use <your_database>;
 show schemas;
