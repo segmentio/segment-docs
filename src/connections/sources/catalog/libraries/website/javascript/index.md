@@ -889,7 +889,7 @@ If the above routes don't work, Segment provides these workarounds to help with 
 
 ## Add destinations from npm
 
-Bundle the destinations you want loaded from [npm](https://www.npmjs.com/package/@segment/analytics-next){:target="_blank"} instead of having them loaded from CDN. This enables you to have fewer network requests when adding destinations.
+Bundle the destinations you want loaded from [npm](https://www.npmjs.com/package/@segment/analytics-next){:target="_blank"} instead of having them loaded from a remote CDN. This enables you to have fewer network requests when adding destinations.
 
 * To add actions-based destinations from npm: 
 
@@ -897,8 +897,8 @@ Bundle the destinations you want loaded from [npm](https://www.npmjs.com/package
   import vwo from '@segment/analytics-browser-actions-vwo'
   import braze from '@segment/analytics-browser-actions-braze'
 
-  AnalyticsBrowser.load({
-    writeKey,
+  const analytics = AnalyticsBrowser.load({
+    writeKey: '<WRITE_KEY>',
     plugins: [vwo, braze],
   })
   ```
@@ -912,7 +912,7 @@ Bundle the destinations you want loaded from [npm](https://www.npmjs.com/package
   import { AnalyticsBrowser } from '@segment/analytics-next'
   import GoogleAnalyticsIntegration from '@segment/analytics.js-integration-google-analytics'
 
-  // the following rig assumes configuration for Google Analytics will be available in the fetched settings
+  // The following example assumes configuration for Google Analytics will be available in the fetched settings
   const analytics = AnalyticsBrowser.load({
     writeKey: '<WRITE_KEY>',
     classicIntegrations: [ GoogleAnalyticsIntegration ]
