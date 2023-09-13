@@ -20,7 +20,7 @@ This destination is maintained by Branch. For any issues with the destination, [
 
 ## Getting Started
 
-{% include content/connection-modes.md %}
+
 
   1. From the Segment web app, click **Catalog**.
   2. Search for "Branch Metrics" in the Catalog, select it, and choose which of your sources to connect the destination to.

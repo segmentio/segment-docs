@@ -95,11 +95,12 @@ Segment recommends scripting any sort of additions of data you might have to war
 
 ## Which IPs should I allowlist?
 
-You must allowlist Segment's custom IPs `52.25.130.38/32` and `34.223.203.0/28` while authorizing Segment to write in to your Redshift or Postgres port.
+{% include content/warehouse-ip.html %}
 
-**EU workspace regions are currently in beta.**  If you're in the EU region and participating in the public beta program, use CIDR `3.251.148.96/29`. To learn more about the public beta for EU workspace locations, contact your account manager.
+You must allowlist Segment's custom IPs `52.25.130.38/32` and `34.223.203.0/28` while authorizing Segment to write in to your warehouse port. Currently, Redshift and Postgres are the only connectors that require you to configure an IP upon setup. Segment recommends enabling IP allowlists for added security.
 
-BigQuery does not require allowlisting an IP address. To learn how to set up BigQuery, check out Segment's BigQuery [set up guide](/docs/connections/storage/catalog/bigquery/#getting-started).
+
+If you're in the EU region, use CIDR `3.251.148.96/29`. To learn more about EU workspace locations, contact your account manager.
 
 
 ## Will Segment sync my historical data?
@@ -163,7 +164,7 @@ To change the name of your schema without disruptions:
 5. Select **Connections** and click **Sources**.
 6. Select a source that syncs data with your warehouse from your list of sources, and select **Settings**.
 7. Select **SQL Settings** and update the "Schema Name" field with the new name for your schema and click **Save Changes.**
-> **Note**: This will set the schema name for all existing and future destinations.
+> **Note**: This will set the schema name for all existing and future destinations. The new name must be lowercase and may include underscores. 
 8. Repeat steps six and seven until you rename all sources that sync data to your warehouse.
 9. Open the third-party host of your database, and rename the schema.
 10. Open the Segment app, select **Connections** and click **Destinations**.

@@ -12,7 +12,7 @@ This destination is maintained by [Salescamp](https://www.salescamp.app/?utm_sou
 ## Getting Started
 Segment's Salescamp destination allows you to identify leads without using rest APIs.
 
-{% include content/connection-modes.md %}
+
 
 1. From the Segment web app, click **Catalog**.
 2. Search for "Salescamp" in the Catalog, select it, and choose which of your sources to connect the destination to.

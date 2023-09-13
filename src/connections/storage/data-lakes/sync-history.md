@@ -1,7 +1,7 @@
 ---
 title: Data Lakes Sync History and Health
+plan: data-lakes
 ---
-{% include content/plan-grid.md name="data-lakes" %}
 
 The Segment Data Lakes sync history and health tabs generate real-time information about data syncs so you can monitor the health and performance of your data lakes. These tools provide monitoring and debugging capabilities within the Data Lakes UI, so you can identify and proactively address data sync or data pipeline failures.
 

@@ -8,7 +8,7 @@ id: 57da359580412f644ff33fb9
 
 ## Getting Started
 
-{% include content/connection-modes.md %}
+
 
 To get started:
 1. Create a Kinesis stream. Follow these [instructions](http://docs.aws.amazon.com/streams/latest/dev/learning-kinesis-module-one-create-stream.html){:target="_blank"} in order to create a new AWS Kinesis Stream.
@@ -155,7 +155,7 @@ To attach multiple sources to your IAM role:
         {
           "Effect": "Allow",
           "Principal": {
-            "AWS": "arn:aws:iam::595280932656:root"
+            "AWS": "arn:aws:iam::595280932656:role/customer-kinesis-access"
           },
           "Action": "sts:AssumeRole",
           "Condition": {
@@ -175,7 +175,7 @@ To attach multiple sources to your IAM role:
         {
           "Effect": "Allow",
           "Principal": {
-            "AWS": "arn:aws:iam::595280932656:root"
+            "AWS": "arn:aws:iam::595280932656:role/customer-kinesis-access"
           },
           "Action": "sts:AssumeRole",
           "Condition": {
@@ -228,7 +228,7 @@ If you have many sources using Kinesis that it's impractical to attach all of th
         {
           "Effect": "Allow",
           "Principal": {
-            "AWS": "arn:aws:iam::595280932656:root"
+            "AWS": "arn:aws:iam::595280932656:role/customer-kinesis-access"
           },
           "Action": "sts:AssumeRole",
           "Condition": {

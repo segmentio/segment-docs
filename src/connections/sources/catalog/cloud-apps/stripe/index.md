@@ -34,14 +34,12 @@ Collections are the groupings of resources that Segment pulls from your source. 
 | `balance_transaction_fee_details` | object | Balance transaction fee details include a breakdown of fees (in cents) paid for each transaction. For more information, see [Stripe's API docs](https://stripe.com/docs/api#balance_transaction_object)                                                                                                                                                                                                              |
 | `balance_transactions`            | object | Balance transactions lists the transaction balance history. For more information, see [Stripe's API docs](https://stripe.com/docs/api#balance_transaction_object)                                                                                                                                                                                                                                                    |
 | `bank_accounts`                   | object | Bank accounts are used at Stripe in two ways: as a payment method on Customer objects and as a transfer destination on Account objects for managed accounts. The accepted and required parameters are different for each context. For more information, see [Stripe's API docs](https://stripe.com/docs/api#bank_accounts)                                                                                           |
-| `bitcoin_receivers`               | object | A Bitcoin receiver wraps a Bitcoin address so that a customer can push a payment to you. This guide describes how to use receivers to create Bitcoin payments. For more information, see [Stripe's API docs](https://stripe.com/docs/api#bitcoin_receivers)                                                                                                                                                          |
 | `cards`                           | object | You can store multiple cards on a customer in order to charge the customer later. You can also store multiple debit cards on a recipient or a managed account in order to transfer to those cards later. For more information, see [Stripe's API docs](https://stripe.com/docs/api#cards)                                                                                                                            |
 | `charges`                         | object | To charge a credit or a debit card, you create a charge object. You can retrieve and refund individual charges as well as list all charges. For more information, see [Stripe's API docs](https://stripe.com/docs/api#charges)                                                                                                                                                                                       |
 | `coupons`                         | object | A coupon contains information about a percent-off or amount-off discount you might want to apply to a customer. Coupons only apply to invoices; they do not apply to one-off charges. For more information, see [Stripe's API docs](https://stripe.com/docs/api#coupons)                                                                                                                                             |
 | `customers`                       | object | Customer objects allow you to perform recurring charges and track multiple charges that are associated with the same customer. For more information, see [Stripe's API docs](https://stripe.com/docs/api#customers)                                                                                                                                                                                                  |
 | `discounts`                       | object | A discount represents the actual application of a coupon to a particular customer. It contains information about when the discount began and when it will end. For more information, see [Stripe's API docs](https://stripe.com/docs/api#discounts)                                                                                                                                                                  |
 | `disputes`                        | object | A dispute occurs when a customer questions your charge with their bank or credit card company. When a customer disputes your charge, you're given the opportunity to respond to the dispute with evidence that shows the charge is legitimate. You can find more information about the dispute process in the disputes FAQ. For more information, see [Stripe's API docs](https://stripe.com/docs/api#disputes)      |
-| `file_uploads`                    | object | There are various times when you'll want to upload files to Stripe (for example, when uploading dispute evidence). This can be done by creating a file upload object. When you upload a file, the API responds with a file token and other information about the file. The token can then be used to retrieve a file object. For more information, see [Stripe's API docs](https://stripe.com/docs/api#file_uploads) |
 | `invoice_items`                   | object | Sometimes you want to add a charge or credit to a customer but only actually charge the customer's card at the end of a regular billing cycle. This is useful for combining several charges to minimize per-transaction fees or having Stripe tabulate your usage-based billing totals. For more information, see [Stripe's API docs](https://stripe.com/docs/api#invoiceitems)                                      |
 | `invoice_lines`                   | object | When retrieving an invoice, you'll get a lines property containing the total count of line items and the first handful of those items For more information, see [Stripe's API docs](https://stripe.com/docs/api#invoice_lines)                                                                                                                                                                                       |
 | `invoices`                        | object | Invoices are statements of what a customer owes for a particular billing period, including subscriptions, invoice items, and any automatic proration adjustments if necessary. For more information, see [Stripe's API docs](https://stripe.com/docs/api#invoices)                                                                                                                                                   |
@@ -124,19 +122,19 @@ Below are tables outlining the properties included in the collections listed abo
 
 ### balance_transactions
 
-| Property Name | Description                                                                       |
-| ------------- | --------------------------------------------------------------------------------- |
-| `amount`      | Gross amount of the transaction, in cents                                         |
-| `currency`    | Three-letter ISO currency code, in lowercase                                      |
-| `description` | An arbitrary string attached to the object                                        |
-| `fee`         | Fees (in cents) paid for this transaction                                         |
-| `metadata`    | A set of key-value pairs that describe additional information about the object    |
-| `net`         | Net amount of the transaction, in cents                                           |
-| `source`      | The Stripe object to which this transaction is related                            |
-| `status`      | If the transaction's net funds are available in the Stripe balance yet            |
-| `type`        | Transaction type                                                                  |
-| `created`     | Time at which the object was created                                              |
-| `available`   | The date the transactions's net funds will become available in the Stripe balance |
+| Property Name | Description                                                                      |
+| ------------- | -------------------------------------------------------------------------------- |
+| `amount`      | Gross amount of the transaction, in cents                                        |
+| `currency`    | Three-letter ISO currency code, in lowercase                                     |
+| `description` | An arbitrary string attached to the object                                       |
+| `fee`         | Fees (in cents) paid for this transaction                                        |
+| `metadata`    | A set of key-value pairs that describe additional information about the object   |
+| `net`         | Net amount of the transaction, in cents                                          |
+| `source`      | The Stripe object to which this transaction is related                           |
+| `status`      | If the transaction's net funds are available in the Stripe balance yet           |
+| `type`        | Transaction type                                                                 |
+| `created`     | Time at which the object was created                                             |
+| `available`   | The date the transaction's net funds will become available in the Stripe balance |
 
 ### balance_transaction_fee_details
 
@@ -221,24 +219,25 @@ Below are tables outlining the properties included in the collections listed abo
 | `shipping_address_state`       | State/County/Province/Region                                                                   |
 | `shipping_carrier`             | The delivery service that shipped the charged order                                            |
 | `shipping_name`                | The recipient's name                                                                           |
-| `shipping_phone`               | The recipient's phone numbe, including extension                                               |
+| `shipping_phone`               | The recipient's phone number, including extension                                              |
 | `shipping_tracking_number`     | The tracking number obtained from the specified carrier                                        |
 | `statement_descriptor`         | Extra information about a charge. This will appear on your customer's credit card statement    |
 | `status`                       | The status of the payment                                                                      |
 
 ### coupons
 
-| Property Name        | Description                                                                                                  |
-| -------------------- | ------------------------------------------------------------------------------------------------------------ |
-| `amount_off`         | Amount (in the currency specified) that will be taken off the subtotal of any invoices for this customer     |
-| `currency`           | The three-letter ISO code for the currency of the amount to take off                                         |
-| `duration_in_months` | If duration is repeating, the number of months the coupon applies                                            |
-| `duration`           | Describes how long a customer who applies this coupon will get the discount                                  |
-| `max_redemptions`    | Maximum number of times this coupon can be redeemed, in total, before it is no longer valid                  |
-| `metadata`           | A set of key-value pairs that describe additional information about the object                               |
-| `percent_off`        | Percent that will be taken off the subtotal of any invoices for this customer for the duration of the coupon |
-| `times_redeemed`     | Number of times this coupon has been applied to a customer                                                   |
-| `valid`              | Taking account of the above properties, whether this coupon can still be applied to a customer               |
+| Property Name         | Description                                                                                                                   |
+| --------------------- | ----------------------------------------------------------------------------------------------------------------------------- |
+| `amount_off`          | Amount (in the currency specified) that will be taken off the subtotal of any invoices for this customer                      |
+| `currency`            | The three-letter ISO code for the currency of the amount to take off                                                          |
+| `duration_in_months`  | If duration is repeating, the number of months the coupon applies                                                             |
+| `duration`            | Describes how long a customer who applies this coupon will get the discount                                                   |
+| `max_redemptions`     | Maximum number of times this coupon can be redeemed, in total, before it is no longer valid                                   |
+| `metadata`            | A set of key-value pairs that describe additional information about the object                                                |
+| `percent_off`         | Percent that will be taken off the subtotal of any invoices for this customer for the duration of the coupon                  |
+| `percent_off_precise` | Percent that will be taken off the subtotal of any invoices for this customer for the duration of the coupon, in decimal form |
+| `times_redeemed`      | Number of times this coupon has been applied to a customer                                                                    |
+| `valid`               | Taking account of the above properties, whether this coupon can still be applied to a customer                                |
 
 ### customers
 
@@ -306,10 +305,12 @@ Segment flattens Stripe's Evidence and Evidence Details objects. See Stripe's [D
 | `application_fee`      | The fee in cents that will be applied to the invoice and transferred to the application owner's Stripe account when the invoice is paid      |
 | `attempt_count`        | Number of payment attempts made for this invoice, from the perspective of the payment retry schedule                                         |
 | `attempted`            | Whether an attempt has been made to pay the invoice                                                                                          |
+| `billing_reason`       | The reason for the invoice.                                                                                                                  |
 | `charge_id`            | ID of the latest charge generated for this invoice, if any                                                                                   |
 | `currency`             | Three-letter ISO currency code, in lowercase                                                                                                 |
 | `customer_id`          | ID of the customer                                                                                                                           |
 | `description`          | An arbitrary string attached to the object                                                                                                   |
+| `due_date`             | The invoice's due date.                                                                                                                      |
 | `ending_balance`       | Ending customer balance after the invoice is frozen                                                                                          |
 | `metadata`             | A set of key-value pairs that describe additional information about the object                                                               |
 | `paid`                 | Whether payment was successfully collected for this invoice                                                                                  |
@@ -357,7 +358,7 @@ Segment flattens Stripe's Delivery Estimate object.
 | `delivery_estimate_` | The estimated delivery date for a given shipping method. For example, `delivery_estimate_date`.   |
 | `description`        | An arbitrary string attached to the object                                                        |
 | `order_id`           | The identifier of the order associated with the shipping method                                   |
-| `shipping_id`        | A unique identifer for a given shipping method                                                    |
+| `shipping_id`        | A unique identifier for a given shipping method                                                   |
 
 ### payment_intents
 
@@ -485,6 +486,7 @@ Segment flattens Stripes `inventory`, `package_dimensions` objects.
 | `application_fee_percent` | This represents the percentage of the subscription invoice subtotal that will be transferred to the application owner's Stripe account                                                                                                                                                                                      |
 | `cancel_at_period_end`    | If the subscription has been canceled with the `at_period_end` flag set to true, `cancel_at_period_end` on the subscription will be true                                                                                                                                                                                    |
 | `canceled_at`             | If the subscription has been canceled, the date of that cancellation. If the subscription was canceled with `cancel_at_period_end`, `canceled_at` will still reflect the date of the initial cancellation request, not the end of the subscription period when the subscription is automatically moved to a canceled state. |
+| `collection_method`       | The method used to collect the subscription.                                                                                                                                                                                                                                                                                |
 | `created`                 | Time at which the object was created. Measured in seconds since the Unix epoch.                                                                                                                                                                                                                                             |
 | `current_period_end`      | End of the current period that the subscription has been invoiced for. At the end of this period, a new invoice will be created.                                                                                                                                                                                            |
 | `current_period_start`    | Start of the current period that the subscription has been invoiced for.                                                                                                                                                                                                                                                    |

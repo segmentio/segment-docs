@@ -10,7 +10,7 @@ Segment Webhooks submit real-time user data to your own HTTP endpoints. A Webhoo
 
 ## Getting Started
 
-{% include content/connection-modes.md %}
+
 
 1. From the Segment web app, click **Catalog**.
 2. Search for "Webhooks" in the Catalog, select it, and choose which of your sources to connect the destination to.

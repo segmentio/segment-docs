@@ -13,7 +13,7 @@ This destination is maintained by OneSignal. For any issues with the destination
 
 ## Getting Started
 
-{% include content/connection-modes.md %}
+
 
 1. Log in to the [OneSignal Dashboard](https://app.onesignal.com/){:target="_new"}
 2. Navigate to **Segment App** -> **Settings** -> **Analytics** -> **Segment.com** and click **Activate**.

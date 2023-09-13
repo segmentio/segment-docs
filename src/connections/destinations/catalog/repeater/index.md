@@ -25,3 +25,9 @@ You can do this for as many sources as you need.
 ![A screenshot of the Write Keys field in the Repeater destination settings page.](images/write-key-settings.png)
 
 Repeater sends all events it receives to the sources you specified, identified by the write key(s) you added.
+
+## Repeater FAQ
+
+##### What is the `context.repeatChain` field that I can see on my repeated events?
+
+The `context.repeatChain` array that you will see on repeated events holds two values. The first value is the MD5-hashed write key where the event originated. The second value is the MD5-hashed write key that the event was sent to through the Repeater. This behavior lets Segment verify that the event isn't sent to a pipeline that will result in an infinite loop.

@@ -9,7 +9,7 @@ This destination is maintained by Crisp. For any issues with the destination, [c
 
 ## Getting Started
 
-{% include content/connection-modes.md %} 
+ 
 
 1. Go to the [Crisp Plugins page](http://app.crisp.chat).
 2. Search for the "Segment" plugin, click **Connect to Segment**.

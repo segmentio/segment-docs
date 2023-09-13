@@ -5,14 +5,14 @@ strat: react-native
 
 [Braze](https://www.braze.com/), formerly Appboy, is an engagement platform that empowers growth by helping marketing teams to build customer loyalty through mobile, omni-channel customer experiences.
 
-Braze’s destination plugin code is open source and available on GitHub. You can view it [here.](https://github.com/segmentio/analytics-react-native/tree/master/packages/plugins/plugin-braze).
+Braze’s destination plugin code is open source [and available on GitHub](https://github.com/segmentio/analytics-react-native/tree/master/packages/plugins/plugin-braze){:target="_blank"}.
 
 ## Getting Started
 
 1. From the Segment web app, click **Catalog**.
 2. Search for "Braze" in the Catalog, select it, and choose which of your sources to connect the destination to.
 3. In the Destination Settings, add the **API Key**, found in the Braze Dashboard in *App Settings > Manage App Group*.
-4. Set up a new App Group REST API Key in the Braze Dashboard in *App Settings > Developer Console > API Settings*. For more information, see [Creating and Managing REST API Keys](https://www.braze.com/docs/api/basics/#creating-and-managing-rest-api-keys) in the Braze documentation. 
+4. Set up a new App Group REST API Key in the Braze Dashboard in *App Settings > Developer Console > API Settings*. For more information, see [Creating and Managing REST API Keys](https://www.braze.com/docs/api/basics/#creating-and-managing-rest-api-keys){:target="_blank"} in the Braze documentation. 
   - Select the `users.track` endpoint in the **User Data** section.
 
 ## Installation
@@ -21,23 +21,23 @@ You need to install the `@segment/analytics-react-native-plugin-braze` and the `
 
 Using NPM:
 ```bash
-npm install --save @segment/analytics-react-native-plugin-braze react-native-appboy-sdk
+npm install --save @segment/analytics-react-native-plugin-braze @braze/react-native-sdk
 ```
 
 Using Yarn:
 ```bash
-yarn add @segment/analytics-react-native-plugin-braze react-native-appboy-sdk
+yarn add @segment/analytics-react-native-plugin-braze @braze/react-native-sdk
 ```
 
 Run `pod install` after the installation to autolink the Braze SDK.
 
-See [Braze React SDK](https://github.com/Appboy/appboy-react-sdk) for more details of this dependency.
+See [Braze React SDK](https://github.com/braze-inc/braze-react-native-sdk){:target="_blank"} for more details of this dependency.
 
 ## Using the Plugin in your App
 
-Follow the [instructions for adding plugins](https://github.com/segmentio/analytics-react-native#adding-plugins) on the main Analytics client:
+Follow the [instructions for adding plugins](https://github.com/segmentio/analytics-react-native#adding-plugins){:target="_blank"} on the main Analytics client:
 
-In your code where you initialize the analytics client call the `.add(plugin)` method with an `BrazePlugin` instance:
+In your code where you initialize the analytics client, call the `.add(plugin)` method with a `BrazePlugin` instance:
 
 ```ts
 import { createClient } from '@segment/analytics-react-native';
@@ -94,7 +94,7 @@ Pass one of the many identifiers that may exist on an anonymous user profile to 
 
 Choose an identifier that is available on the user profile at that point in the user lifecycle.
 
-For example, if you pass device_id to the User by Identifier endpoint:
+For example, if you pass `device_id` to the User by Identifier endpoint:
 
 ```js
 {
@@ -131,12 +131,12 @@ Segment's special traits recognized as Braze's standard user profile fields (in 
 | `address.country` | `country`   |
 | `gender`          | `gender`    |
 
-Segment sends all other traits (except Braze's [reserved user profile fields](https://www.braze.com/docs/api/objects_filters/user_attributes_object/#braze-user-profile-fields)) to Braze as custom attributes. You can send an array of strings as trait values but not nested objects.
+Except for Braze's [reserved user profile fields](https://www.braze.com/docs/api/objects_filters/user_attributes_object/#braze-user-profile-fields){:target="_blank"}, Segment sends all other traits to Braze as custom attributes. You can send an array of strings as trait values but not nested objects.
 
 ## Track
 
 > info "Tip"
-> To lower [Data Point](https://www.braze.com/docs/user_guide/onboarding_with_braze/data_points/) use, limit the events you send to Braze to those that are relevant for campaigns and segmentation to the Braze destination. For more information, see [Schema Controls](/docs/protocols/schema/).
+> To lower [Data Point](https://www.braze.com/docs/user_guide/onboarding_with_braze/data_points/){:target="_blank"} use, limit the events you send to Braze to those that are relevant for campaigns and segmentation to the Braze destination. For more information, see [Schema Controls](/docs/protocols/schema/).
 
 If you're not familiar with the Segment Specs, take a look to understand what the [Track method](/docs/connections/spec/track/) does. An example call looks like:
 
@@ -152,7 +152,7 @@ track('View Product', {
 When you `track` an event, Segment sends that event to Braze as a custom event.
 
 > note ""
-> Braze requires that you include a `userId` or `braze_id` for all calls made in cloud-mode. Segment sends a `braze_id` if `userId` is missing. When you use a device-mode connection, Braze automatically tracks anonymous activity using the `braze_id` if a `userId` is missing.
+> Braze requires that you include a `userId` or `braze_id` for all calls made in cloud mode. Segment sends a `braze_id` if `userId` is missing. When you use a device-mode connection, Braze automatically tracks anonymous activity using the `braze_id` if a `userId` is missing.
 
 > note ""
 > Segment removes the following custom properties reserved by Braze:
@@ -185,7 +185,7 @@ The example above would have "Purchased Item" as its `productId` and includes tw
 - `revenue`
 - `currency`
 
-Braze supports currency codes as specified in [their Purchase Object Specification](https://www.braze.com/docs/api/objects_filters/purchase_object/). Be aware that any currency reported other than USD displays in [the Braze UI in USD based on the exchange rate on the date it was reported](https://www.braze.com/docs/developer_guide/platform_integration_guides/web/analytics/logging_purchases/#logging-purchases).
+Braze supports currency codes as specified in [their Purchase Object Specification](https://www.braze.com/docs/api/objects_filters/purchase_object/){:target="_blank"}. Any currency reported other than USD displays in [the Braze UI in USD based on the exchange rate on the date it was reported](https://www.braze.com/docs/developer_guide/platform_integration_guides/web/analytics/logging_purchases/#logging-purchases){:target="_blank"}.
 
 You can add more product details in the form of key-value pairs to the `properties` object. The following reserved keys are not passed to Braze if included in your Track call's `properties` object:
 

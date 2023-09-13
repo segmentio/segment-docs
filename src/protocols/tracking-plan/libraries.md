@@ -1,9 +1,7 @@
 ---
 title: Tracking Plan Libraries
+plan: protocols
 ---
-
-{% include content/plan-grid.md name="protocols" %}
-
 
 Tracking Plan Libraries make it easy to scale Tracking Plan creation within your workspace. You can create libraries for track events or track event properties. Editing Tracking Plan Libraries is identical to [editing Tracking Plans](/docs/protocols/tracking-plan/create/).
 
