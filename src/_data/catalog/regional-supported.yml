@@ -629,8 +629,10 @@ sources:
     url: connections/sources/catalog/cloud-apps/iterable
     regions:
       - us
+      - eu
     endpoints:
       - us
+      - eu
   - id: V6ynUvQgbc
     display_name: Java
     hidden: false
@@ -1544,6 +1546,15 @@ sources:
     hidden: false
     slug: voucherify
     url: connections/sources/catalog/cloud-apps/voucherify
+    regions:
+      - us
+    endpoints:
+      - us
+  - id: 9gM6IAq7G6
+    display_name: WordPress / WooCommerce
+    hidden: true
+    slug: wordpress---woocommerce
+    url: connections/sources/catalog/cloud-apps/wordpress---woocommerce
     regions:
       - us
     endpoints:

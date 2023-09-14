@@ -89,7 +89,7 @@ Proxy settings and destination requests that typically go to `https://cdn.segmen
 ```ts
 const analytics = AnalyticsBrowser.load({
   writeKey,
-  // GET https://MY-CUSTOM-CDN-PROXY.com/v1/project/<writekey>/settings --> proxies to
+  // GET https://MY-CUSTOM-CDN-PROXY.com/v1/projects/<writekey>/settings --> proxies to
   // https://cdn.segment.com/v1/projects/<writekey>/settings
 
   // GET https://MY-CUSTOM-CDN-PROXY.com/next-integrations/actions/...js  --> proxies to

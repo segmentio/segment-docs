@@ -48,6 +48,8 @@ analytics.identify('user_123', {
 {% endcodeexample %}
 {% endcomment %}
 
+> info "If you don't see the source you're looking for in our catalog"
+> If a tool is not listed as a supported source in our [catalog](https://segment.com/catalog/){:target='_blank’}, then it is not possible to incorporate the integration out-of-the-box within a Segment workspace. However, as an alternative, you can use the [HTTP API](/docs/connections/sources/catalog/libraries/server/http-api/) source to collect data from the tool's API. You can also use [Functions](/docs/connections/functions/) to send or receive data from other tools.
 
 ## Types of sources
 
@@ -174,7 +176,6 @@ Reverse ETL supports these sources:
 
 Segment is actively working on adding more sources. If you'd like to request Segment to add a particular source, please note it on the [feedback form](https://airtable.com/shriQgvkRpBCDN955){:target="_blank"}.
 
-
 ## Create a source
 To create a source:
 1. Navigate to **Connections** and click **Add Source**.
@@ -189,3 +190,4 @@ To create a source:
 > - Flexibility sending data to different projects - if you want to have different warehouse schemas, analytics projects, etc, having multiple sources would create this separation
 > - More control - as your account grows with the number of destinations you enable, having separate sources allows you to have more control
 > - A source type cannot be changed once it is created. You must create a new source if you would like to use a different source type.
+
