@@ -21,7 +21,7 @@ Gainsight PX Cloud (Actions) provides the following benefits over the classic Ga
 
 ## Getting started
 
-1. From the Segment web app, click **Catalog**, then click **Destinations**.
+1. From the Segment web app, navigate to **Connections > Catalog** and select the **Destinations** tab.
 2. Find the Destinations Actions item in the left navigation, and click it.
 3. Click **Configure Gainsight PX Cloud (Actions)**.
 4. Select an existing Source to connect to Gainsight PX Cloud (Actions).
