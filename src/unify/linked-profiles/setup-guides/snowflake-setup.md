@@ -68,7 +68,7 @@ Enter and run the code below to create the username and password combination tha
 
 To use Linked Events, you'll need to grant access to `segment_entities_user` for the schemas and tables you'd like to read from to perform enrichments. 
 
-These tables need to live in the same database as the one used for storing sync deltas. You can give as broad or narrow of access as you require. If you give broad access to multiple schemas, you can sort through the schemas in the Segment UI to select the appropriate tables to create models from.
+These tables need to live in the same database as the one used for storing sync deltas. You can give as broad or narrow of access as you require. If you give broad access to multiple schemas, you can sort through the schemas in Segment to select the appropriate tables to create models from.
 
 > success ""
 > Visit Snowflake's docs to learn more about [schema priveleges](https://docs.snowflake.com/en/user-guide/security-access-control-privileges#schema-privileges){:target="_blank"} and [table priveleges](https://docs.snowflake.com/en/user-guide/security-access-control-privileges#table-privileges){:target="_blank"}. 
@@ -102,7 +102,7 @@ GRANT SELECT ON TABLE <schema-name>.<table_name> TO ROLE segment_entities;
 
 ### RETL table permissions
 
-If Reverse ETL has ever run in your database, a Segment-managed schema is created and a new user is added. You'll need to add the following [table permissions](https://docs.snowflake.com/en/user-guide/security-access-control-privileges#table-privileges) with the command below.
+If you've ever run Reverse ETL in your database, you'll need to add the following [table permissions](https://docs.snowflake.com/en/user-guide/security-access-control-privileges#table-privileges){:target="_blank"}:
 
 ```sql
 GRANT USAGE ON SCHEMA __segment_reverse_etl TO ROLE segment_entities;
@@ -116,7 +116,7 @@ GRANT SELECT, INSERT, UPDATE, DELETE ON ALL TABLES IN SCHEMA __segment_reverse_e
 
 To confirm table permissions:
 1. Log in as the user you've created (`segment_entities_user`).
-2. Verify the role created has the correct permissions with the following command:
+2. Verify the role created has the correct permissions with the commands below.
 
 ```ts
 use role segment_entities;

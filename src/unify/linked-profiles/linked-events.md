@@ -24,7 +24,7 @@ With Linked Events, you can:
 
 Before getting started with Linked Events, you'll need:
 
-1. Snowflake, BigQuery, or Redshift data warehouse credentials with **write** access.
+1. BigQuery, Snowflake, or Redshift data warehouse credentials with **write** access.
 - View the [BigQuery](/docs/unify/linked-profiles/setup-guides/bigquery-setup/), [Snowflake](/docs/unify/linked-profiles/setup-guides/snowflake-setup/), and [Redshift](/docs/unify/linked-profiles/setup-guides/redshift-setup/) setup guides. 
 2. Access to Unify in your workspace. 
 3. Access to the Destination you'll be using with Linked Events so that you can validate your data. 
@@ -56,7 +56,7 @@ To use Connections with Linked Events:
 > success ""
 > Linked Events uses Segment's [Reverse ETL](/docs/connections/reverse-etl/) infrastructure for pulling in data from your warehouse. 
 
-To get started, you'll need to connect a data warehouse. Linked Events supports [BigQuery](/docs/unify/linked-profiles/setup-guides/bigquery/), [Snowflake](/docs/unify/linked-profiles/setup-guides/snowflake/), and [Redshift](/docs/unify/linked-profiles/setup-guides/redshift-setup/) data warehouses.
+To get started, you'll need to connect a data warehouse. Linked Events supports [BigQuery](/docs/unify/linked-profiles/setup-guides/bigquery/), [Snowflake](/docs/unify/linked-profiles/setup-guides/snowflake/), and [Redshift](/docs/unify/linked-profiles/setup-guides/redshift-setup/).
 
 1. Navigate to **Unify > Data graph** and click **Add warehouse**. 
 2. Select a warehouse to connect from the [supported data warehouses](#supported-data-warehouses). 
@@ -80,12 +80,12 @@ The table below shows the data warehouses Linked Events supports. View the Segme
 | **Table**              |      **Steps**          |
 |------------------------|-------------------------|
 | [Snowflake](docs/unify/linked-profiles/setup-guides/snowflake-setup/)              | 1. Configure your snowflake database. <br> 2. Enter your credentials. <br> 3. Test the Connection. <br> 4. Click **Save**. |
-| [BigQuery](/docs/unify/linked-profiles/setup-guides/bigquery-setup/)           | 1. Add your credentials to the database that has tables with the Entities you want to enrich your event with. <br> 2. Test your connection. | 
+| [BigQuery](/docs/unify/linked-profiles/setup-guides/bigquery-setup/)           | 1. Add your credentials to the database that has tables with the entities you want to enrich your event with. <br> 2. Test your connection. | 
 | [Redshift](/docs/unify/linked-profiles/setup-guides/redshift-setup/)           | 1. Select the Redshift cluster you want to connect. <br> 2. [Configure](/docs/connections/storage/catalog/redshift/#networking) the correct network and security settings. |
 
 ## Step 2: Add entities
 
-After you connect your warehouse, use the Data graph overview screen (**Unify > Data graph**) to view entities Segment has synced from your data warehouse, add a new entity, and view data warehouse settings. 
+After you connect your warehouse, use the Data graph overview page (**Unify > Data graph**) to view entities Segment has synced from your data warehouse, add a new entity, and view data warehouse settings. 
 
 To add a new entity:
 1. Click **Add entity**.
@@ -109,7 +109,7 @@ To use Linked Events, you'll need to add a destination to send enriched events t
 ## Step 4: Enrich events with entities
 With Linked Events, you can select entities and properties from your data warehouse, then add enrichments to map properties to your connected destination.
 
-Add entities and enrichments from the destination Mappings tab:
+To enrich events with entities:
 
 1. Navigate to **Connections > Destinations > Event streams**
 2. Select the destination you'd like to create an enrichment on.
@@ -125,7 +125,7 @@ After you load a sample event, you can add entities from the **Enrich events wit
 - The entity match property is the property in the event that you want to match to the primary key. 
 
 After you’ve added an entity and match property, add your event enrichments. 
-
+ 
 ### Add enrichments
 
 Use enrichments to select the entity you wish to send to your downstream destination. 
@@ -175,7 +175,7 @@ For Linked Events, Segment supports all Actions Destinations.
 
 {% faqitem Why aren't test events working? %}
 
-Test events don't send Linked Events, it only sends the test events that come from the source debugger, which is ahead of the event enrichment.
+Test events don't send Linked Events. You'll only see test events that come from the source debugger, which is ahead of the event enrichment.
 
 {% endfaqitem %}
 
