@@ -2,33 +2,34 @@
 title: Upollo Source
 ---
 
-[Upollo](https://upollo.ai?utm_source=segmentio&utm_medium=docs&utm_campaign=partners){:target="_blank"} gives unique and actionable insights that lead to conversion, retention and expansion.
+[Upollo](https://upollo.ai?utm_source=segmentio&utm_medium=docs&utm_campaign=partners){:target="_blank"} gives unique and actionable insights that lead to conversion, retention, and expansion.
 
-This source is maintained by Upollo. For any issues with the source, [contact their Support team](mailto:support@upollo.ai).
+This source is maintained by Upollo. For any issues with the source, [contact Upollo's Support team](mailto:support@upollo.ai).
 
-_**NOTE:** The Upollo Source is currently in beta, which means that they are still actively developing the source. If you are interested in joining their beta program or have any feedback to help improve the Upollo Source and its documentation, [let the Upollo team know](mailto:support@upollo.ai)._
+> info ""
+> The Upollo Source is currently in beta, which means that Upollo still actively developing the source. If you are interested in joining the beta program or have any feedback to help improve the Upollo Source and its documentation, [let the Upollo team know](mailto:support@upollo.ai).
 
 ## Getting started
 
 1. From your workspace's [Sources catalog page](https://app.segment.com/goto-my-workspace/sources/catalog){:target="_blank”} click **Add Source**.
 2. Search for "Upollo" in the Sources Catalog, select Upollo, and click **Add Source**.
-3. On the next screen, give the Source a nickname configure any other settings.
+3. On the next screen, give the Source a nickname and configure any other settings.
 
-   - The nickname is used as a label in the Segment app, and Segment creates a related schema name in your warehouse. The nickname can be anything, but we recommend using something that reflects the source itself and distinguishes amongst your environments (eg. SourceName_Prod, SourceName_Staging, SourceName_Dev).
+   - The nickname is used as a label in the Segment app, and Segment creates a related schema name in your warehouse. The nickname can be anything, but Segment recommends using something that reflects the source itself and distinguishes amongst your environments (for example, SourceName_Prod, SourceName_Staging, SourceName_Dev).
 
 4. Click **Add Source** to save your settings.
 5. Copy the Write key from the Segment UI.
-6. Log in to your Upollo account - navigate to [Connections](https://upollo.ai/app/settings/connections) > Connect Segment Source and paste the key to connect.
+6. Log in to your Upollo account and navigate to [Connections](https://upollo.ai/app/settings/connections). Connect the Segment Source and paste the Write key to connect.
 
 
 ## Stream
 
 Upollo uses server-side `identify` calls to send information about users. The table below describes the fields.
-Upollo uses our stream Source component to send Segment event data. It uses a server-side `identify` method to send data to Segment. These events are then available in any destination that accepts server-side events, and available in a schema in your data warehouse, so you can query using SQL.
+Upollo uses a stream Source component to send Segment event data. It uses a server-side `identify` method to send data to Segment. These events are then available in any destination that accepts server-side events, and available in a schema in your data warehouse, so you can query using SQL.
 
-## Event Properties
+## Event properties
 
-The table below list the properties included in the events. You can learn more about the different types in the Upollo [documentation](https://upollo.ai/docs/reference?utm_source=segmentio&utm_medium=docs&utm_campaign=partners)
+The table below list the properties included in the events. Learn more about different properties in the Upollo [documentation](https://upollo.ai/docs/reference?utm_source=segmentio&utm_medium=docs&utm_campaign=partners){:target="_blank”}
 
 | Property Name                           | Description                                               |
 | --------------------------------------- | --------------------------------------------------------- |
