@@ -629,8 +629,10 @@ sources:
     url: connections/sources/catalog/cloud-apps/iterable
     regions:
       - us
+      - eu
     endpoints:
       - us
+      - eu
   - id: V6ynUvQgbc
     display_name: Java
     hidden: false
