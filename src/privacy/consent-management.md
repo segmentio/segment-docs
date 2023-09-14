@@ -14,7 +14,7 @@ Segment works with your third-party consent management platform (CMP) or bespoke
 
 ![Diagram outlining information flowing from an end user to Segment destinations](/docs/privacy/images/consent-overview.png)
 
-After a user sets their consent preferences, Segment captures them with the [Analytics.js Consent Tools wrapper](https://github.com/segmentio/analytics-next/tree/master/packages/consent/consent-tools){:target="_blank"} and updates the [consent object](#consent-object). The events are then sent downstream to any streaming destinations in categories that a user consented to share data with.
+After a user sets their consent preferences, Segment captures them with a wrapper for your mobile and web libraries and updates the [consent object](#consent-object). The events are then sent downstream to any streaming destinations in categories that an end user consented to share data with.
 
 > info ""
 > Segment collects consent for both registered users and anonymous users.
@@ -27,7 +27,6 @@ Segment requires every event from all of your sources to include the end-user co
 {
 "context": {
   "consent": {
-    "version": 1,
     "consentPreferences": {
         "Advertising": true,
         "Analytics": false,
@@ -65,7 +64,6 @@ For example, if a user agreed to share their information with you for all catego
   "timestamp": "2023-01-01T00:00:00.000Z",
   "context": {
     "consent": {
-      "version": 1,
       "consentPreferences" : {
    "Advertising": true,
    "Analytics": false,
