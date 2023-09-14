@@ -22,7 +22,7 @@ Gainsight PX Cloud (Actions) provides the following benefits over the classic Ga
 ## Getting started
 
 1. From the Segment web app, navigate to **Connections > Catalog** and select the **Destinations** tab.
-2. Find the Destinations Actions item in the left navigation, and click it.
+2. Search for *Gainsight PX Cloud (Actions)* and select it.
 3. Click **Configure Gainsight PX Cloud (Actions)**.
 4. Select an existing Source to connect to Gainsight PX Cloud (Actions).
 5. To find your Gainsight PX key, log into Gainsight PX and navigate to Settings > Products > Web App. If you have not already entered the URL for your web application, do that and click the Generate button. The Tag Key is the value that begins with "AP-" to the right of the URL value. Use the “Copy” button to copy the value to your clipboard.
