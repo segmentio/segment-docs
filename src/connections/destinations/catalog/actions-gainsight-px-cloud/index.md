@@ -28,6 +28,6 @@ Gainsight PX Cloud (Actions) provides the following benefits over the classic Ga
 5. Find your Gainsight PX key. 
      * Log in to Gainsight PX and navigate to **Settings > Products > Web App**. Enter the URL for your web application and click the **Generate** button. The Tag Key is the value that begins with "AP-" to the right of the URL value. Copy the value to your clipboard.
 6. Paste the Gainsight PX Tag Key into the Segment connection settings API Key field.
-7. Choose the appropriate data center value in the "Other Settings" Data Center dropdown.  If the PX instance is accessed via app.aptrinsic.com, select 'United States', otherwise choose the appropriate selection based on the suffix after "app-" in the application's URL.
+7. Choose the appropriate data center value in the "Other Settings" Data Center dropdown.  If you access the PX instance with app.aptrinsic.com, select 'United States', otherwise, choose the appropriate selection based on the suffix after "app-" in the application's URL.
 
 {% include components/actions-fields.html %}
