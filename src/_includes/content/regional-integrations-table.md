@@ -1,4 +1,4 @@
-{% assign sources = site.data.catalog.regional-supported.sources | where: "hidden", false%}
+{% assign sources = site.data.catalog.sources.items | where: "hidden", "false" %}
 {% assign destinations = site.data.catalog.destinations.items %}
 {% assign warehouses = site.data.catalog.regional-supported.warehouses %}
 
