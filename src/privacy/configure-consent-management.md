@@ -47,7 +47,10 @@ You can add a consent wrapper to your analytics-js, Swift, and Kotlin libraries.
 
 Adding the consent wrapper to another [mobile library](/docs/connections/sources/catalog/#mobile) requires additional configuration. See the README in the [@segment/analytics-consent-wrapper-onetrust repository](https://github.com/segmentio/analytics-next/tree/master/packages/consent/consent-wrapper-onetrust){:target="_blank"} for more details. 
 
-<!--- Replace above link with accurate mobile libraries wrapper link when I have it -->
+> info "Consent Management is not backwards compatible with Segment's legacy iOS and Android libraries"
+> If you are using one of Segment's legacy mobile libraries (Android or iOS,) you will need to upgrade to [Kotlin](/docs/connections/sources/catalog/libraries/mobile/kotlin-android/migration/) or [Swift](/docs/connections/sources/catalog/libraries/mobile/apple/migration/) before using Consent Management. 
+
+<!--- TODO: replace above link with accurate mobile libraries wrapper link when I have it -->
 
 ### Analytics.js
 
@@ -55,13 +58,13 @@ Please follow the instructions from the README in the [@segment/analytics-consen
 
 ### Swift
 
-<!--- Replace this with the real instructions when I have them -->
+<!--- TODO: Replace this with the real instructions when I have them -->
 
 Please follow the instructions from the README in the [@segment/analytics-consent-wrapper-onetrust repository](https://github.com/segmentio/analytics-next/tree/master/packages/consent/consent-wrapper-onetrust){:target="_blank"}.
 
 ### Kotlin
 
-<!--- Replace this with the real instructions when I have them -->
+<!--- TODO: Replace this with the real instructions when I have them -->
 
 Please follow the instructions from the README in the [@segment/analytics-consent-wrapper-onetrust repository](https://github.com/segmentio/analytics-next/tree/master/packages/consent/consent-wrapper-onetrust){:target="_blank"}.
 
