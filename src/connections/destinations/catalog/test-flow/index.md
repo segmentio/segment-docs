@@ -1,8 +1,11 @@
 ---
 title: 1Flow Mobile Plugin Destination
+id: 64dd07c1fed86b6866cd93f5
+beta: true
+hidden: true
 ---
 
-[1Flow](https://1flow.ai/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) is a leading in-app user survey and messaging platform for Mobile app and SaaS businesses.
+[1Flow](https://1flow.ai/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners){:target="_blank"} is a leading in-app user survey and messaging platform for Mobile app and SaaS businesses.
 
 Using 1Flow, you can reach users _in-the-moment_ while they are interacting with your website or application, to collect highly contextual user insights that help you improve your product offering and customer experience
 
