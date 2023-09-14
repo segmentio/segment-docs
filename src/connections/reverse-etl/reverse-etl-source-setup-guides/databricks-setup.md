@@ -36,7 +36,7 @@ To set up Databricks as your Reverse ETL source:
 1. Log in to your Databricks account.
 2. Navigate to **Workspaces** and select the workspace you want to use. 
 3. Select **SQL** in the main navigation. 
-4. Select **SQL Warehouses** and select the warehouse you want to use. Note that Segment does not support Compute.
+4. Select **SQL Warehouses** and select the warehouse you want to use. Note that Segment doesn't support the `Compute` connection parameter.
 5. Go to the **Connection details** tab.
 6. In a new tab on your browser, go to the Segment app. 
 7. Navigate to **Connections > Sources > Reverse ETL**.
