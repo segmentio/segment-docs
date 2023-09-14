@@ -7,7 +7,7 @@ hidden: true
 
 After setting up a third-party consent management platform (CMP), you can enforce the consent collected from your users by configuring consent categories in your your Segment workspace and adding the [consent object](/docs/privacy/consent-management/#consent-object) to your web libraries. 
 
-Once you've configured consent in the Segment app, your events are routed only to the categories your end users consented to share data with.
+Once you've configured consent in the Segment app and updated your libraries with the consent wrapper, your events are routed only to the categories your end users consented to share data with.
 
 ## Prerequisites
 
@@ -17,7 +17,9 @@ Once you've configured consent in the Segment app, your events are routed only t
 Before you can configure consent in Segment, take the following steps:
 - **Set up your third-party consent management tool and create consent categories**. Take note of your consent categories and the key or ID associated with each category.
 - **Know how your company uses each destination**. You need to know which destinations to map to each category. 
-- **Access to your web libraries**. After you set up consent categories in the Segment app, you need to add a wrapper to your Analytics.js snippet so that Segment can receive your end users' preferences. Segment provides a [wrapper for OneTrust](#step-2-add-the-consent-wrapper-to-analyticsjs), or if you're using a different CMP, you can create your own wrapper using the [instructions provided in the analytics-next repository](https://github.com/segmentio/analytics-next/tree/master/packages/consent/consent-tools){:target="_blank”}. 
+- **Access to your web and mobile libraries**. After you set up consent categories in the Segment app, you need to add a wrapper to your Analytics.js, Swift, or Kotlin libraries so that Segment can receive your end users' preferences. Segment provides a [wrapper for OneTrust](#step-2-add-the-consent-wrapper-to-analyticsjs), or if you're using a different CMP, you can create your own wrapper for Analytics.js using the [instructions provided in the analytics-next repository](https://github.com/segmentio/analytics-next/tree/master/packages/consent/consent-tools){:target="_blank”} and for your mobile libraries using the [instructions provided in the mobile-consent repository](link.com){:target="_blank”}. 
+
+<!-- TODO: fix above link to mobile consent repository-->
 
 ## Step 1: Create consent categories in the Segment app
 
@@ -39,7 +41,28 @@ Before you can configure consent in Segment, take the following steps:
 > warning "Segment recommends mapping all destinations to a category"
 > Segment assumes all destinations without a mapping do not require user consent and will receive all events containing a consent object. 
 
-## Step 2: Add the consent wrapper to Analytics.js
+## Step 2: Add a consent wrapper to your library
+
+You can add a consent wrapper to your analytics-js, Swift, and Kotlin libraries. 
+
+Adding the consent wrapper to another [mobile library](/docs/connections/sources/catalog/#mobile) requires additional configuration. See the README in the [@segment/analytics-consent-wrapper-onetrust repository](https://github.com/segmentio/analytics-next/tree/master/packages/consent/consent-wrapper-onetrust){:target="_blank"} for more details. 
+
+<!--- Replace above link with accurate mobile libraries wrapper link when I have it -->
+
+### Analytics.js
+
+Please follow the instructions from the README in the [@segment/analytics-consent-wrapper-onetrust repository](https://github.com/segmentio/analytics-next/tree/master/packages/consent/consent-wrapper-onetrust){:target="_blank"}.
+
+### Swift
+
+<!--- Replace this with the real instructions when I have them -->
+
+Please follow the instructions from the README in the [@segment/analytics-consent-wrapper-onetrust repository](https://github.com/segmentio/analytics-next/tree/master/packages/consent/consent-wrapper-onetrust){:target="_blank"}.
+
+### Kotlin
+
+<!--- Replace this with the real instructions when I have them -->
+
 Please follow the instructions from the README in the [@segment/analytics-consent-wrapper-onetrust repository](https://github.com/segmentio/analytics-next/tree/master/packages/consent/consent-wrapper-onetrust){:target="_blank"}.
 
 ## Edit consent categories
