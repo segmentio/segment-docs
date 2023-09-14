@@ -6,7 +6,7 @@ id: 61f83101210c42a28a88d240
 
 {% include content/plan-grid.md name="actions" %}
 
-Gainsight PX provides a personalized product experience platform to help companies acquire, retain, and grow customers by creating real-time, personalized engagements driven by product usage data. With Gainsight PX, companies can implement an effective product-led go-to-market strategy that will increase product adoption and customer lifetime value.
+[Gainsight PX](https://www.gainsight.com/product-experience/analytics/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners){:target="_blank"} provides a personalized product experience platform to help companies acquire, retain, and grow customers by creating real-time, personalized engagements driven by product usage data. With Gainsight PX, companies can implement an effective product-led go-to-market strategy that will increase product adoption and customer lifetime value.
 This destination is maintained by Gainsight PX. For any issues with the destination, [contact their Support team](mailto:pxsupport@gainsight.com).
 
 > **Good to know**: This page is about the [Actions-framework](/docs/connections/destinations/actions/actions-gainsight-px-cloud) Gainsight PX Cloud Segment destination. There's also a page about the [non-Actions Gainsight PX Cloud destination](/docs/connections/destinations/catalog/gainsight-px-cloud-server). Both of these destinations receives data from Segment.
