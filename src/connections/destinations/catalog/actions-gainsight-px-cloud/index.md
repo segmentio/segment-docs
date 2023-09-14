@@ -6,7 +6,6 @@ id: 61f83101210c42a28a88d240
 
 {% include content/plan-grid.md name="actions" %}
 
-[<integration_name>](https://www.gainsight.com/product-experience/analytics/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners)
 Gainsight PX provides a personalized product experience platform to help companies acquire, retain, and grow customers by creating real-time, personalized engagements driven by product usage data. With Gainsight PX, companies can implement an effective product-led go-to-market strategy that will increase product adoption and customer lifetime value.
 This destination is maintained by Gainsight PX. For any issues with the destination, [contact their Support team](mailto:pxsupport@gainsight.com).
 
