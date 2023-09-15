@@ -552,16 +552,16 @@ For sample usages of the SDK in specific platforms, checkout the following:
 |-------------|----------------------------------------------------------------------------------------------------------------------------------------|
 | Asp.Net     | [Set up with dependency injection](https://github.com/segmentio/Analytics-CSharp/tree/main/Samples/AspNetSample){:target="_blank"}                        |
 | Asp.Net MVC | [Set up with dependency injection](https://github.com/segmentio/Analytics-CSharp/blob/main/Samples/AspNetMvcSample){:target="_blank"}                     |
-| Console     | [Basic setups](https://github.com/segmentio/Analytics-CSharp/tree/main/Samples/ConsoleSample/Program.cs)                               |
-| Unity       | [Singleton Analytics](https://github.com/segmentio/Analytics-CSharp/blob/main/Samples/UnitySample/SingletonAnalytics.cs)               |
-|             | [Lifecycle plugin](https://github.com/segmentio/Analytics-CSharp/blob/main/Samples/UnitySample/LifecyclePlugin.cs)                     |
-|             | [Custom HTTPClient](https://github.com/segmentio/Analytics-CSharp/blob/main/Samples/UnitySample/UnityHTTPClient.cs)                    |
-| Xamarin     | [Basic setups](https://github.com/segmentio/Analytics-CSharp/tree/main/Samples/XamarinSample)                                          |
-| General     | [Custom HTTP client](https://github.com/segmentio/Analytics-CSharp/tree/main/Samples/ConsoleSample/ProxyHttpClient.cs)                 |
-|             | [Custom Storage](https://github.com/segmentio/Analytics-CSharp/blob/main/Analytics-CSharp/Segment/Analytics/Utilities/Storage.cs#L200) |
-|             | [Flush Policy](https://github.com/segmentio/Analytics-CSharp/tree/main/Samples/ConsoleSample/FlushOnScreenEventsPolicy.cs)             |
-|             | [Custom Logger](https://github.com/segmentio/Analytics-CSharp/tree/main/Samples/ConsoleSample/SegmentLogger.cs)                        |
-|             | [Custom Error Handler](https://github.com/segmentio/Analytics-CSharp/tree/main/Samples/ConsoleSample/NetworkErrorHandler.cs)           |
+| Console     | [Basic setup](https://github.com/segmentio/Analytics-CSharp/tree/main/Samples/ConsoleSample/Program.cs){:target="_blank"}                               |
+| Unity       | [Singleton Analytics](https://github.com/segmentio/Analytics-CSharp/blob/main/Samples/UnitySample/SingletonAnalytics.cs){:target="_blank"}               |
+|             | [Lifecycle plugin](https://github.com/segmentio/Analytics-CSharp/blob/main/Samples/UnitySample/LifecyclePlugin.cs){:target="_blank"}                     |
+|             | [Custom HTTPClient](https://github.com/segmentio/Analytics-CSharp/blob/main/Samples/UnitySample/UnityHTTPClient.cs){:target="_blank"}                    |
+| Xamarin     | [Basic setup](https://github.com/segmentio/Analytics-CSharp/tree/main/Samples/XamarinSample){:target="_blank"}                                          |
+| General     | [Custom HTTP client](https://github.com/segmentio/Analytics-CSharp/tree/main/Samples/ConsoleSample/ProxyHttpClient.cs){:target="_blank"}                 |
+|             | [Custom Storage](https://github.com/segmentio/Analytics-CSharp/blob/main/Analytics-CSharp/Segment/Analytics/Utilities/Storage.cs#L200{:target="_blank"}) |
+|             | [Flush Policy](https://github.com/segmentio/Analytics-CSharp/tree/main/Samples/ConsoleSample/FlushOnScreenEventsPolicy.cs){:target="_blank"}             |
+|             | [Custom Logger](https://github.com/segmentio/Analytics-CSharp/tree/main/Samples/ConsoleSample/SegmentLogger.cs){:target="_blank"}                        |
+|             | [Custom Error Handler](https://github.com/segmentio/Analytics-CSharp/tree/main/Samples/ConsoleSample/NetworkErrorHandler.cs){:target="_blank"}           |
 
 
 
