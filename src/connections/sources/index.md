@@ -79,9 +79,11 @@ Event streams sources collect data from your website or app to monitor user acti
 
 ### Source Overview
 
-When viewing an the Source Overview page for an event stream source, you can view a line chart and breakdown table that reflects the volume and details of the events that Segment ingested from your source.
+When viewing the Source Overview page for an event stream source, you can view a line chart and breakdown table that reflects the volume and details of the events that Segment ingested from your source.
 
-You can use the time picker located on the Source Overview page to specify a time period (last 10 minutes, 1 hour, 24 hours, or 7 days) for which you’d like to see data.
+You can use the time picker located on the Source Overview page to specify a time period (last 10 minutes, 1 hour, 24 hours, 7 days, 2 weeks, or a custom date range over the last two weeks) for which you’d like to see data.
+
+![A screenshot of the Source Overview page for an Android source.](images/source-overview.jpeg)
 
 The breakdown table displays the following details:
 * **Event type**: The Segment Spec event type (Track call vs. Identify call, for example)
