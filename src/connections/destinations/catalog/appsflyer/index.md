@@ -106,9 +106,9 @@ If you'd like to attribute offline events with a certain user or device, the ser
 
 AppsFlyer requires the following properties for this attribution:
 
-**AppsFlyer Device ID**
+**AppsFlyer ID**
 
-Send the **AppsFlyer Device ID** with each event at `integrations.AppsFlyer.appsFlyerId`, see example below.
+Send the **AppsFlyer ID** with each event at `integrations.AppsFlyer.appsFlyerId`, see example below.
 This identifier is unique to each device and can be [retrieved using the AppsFlyer SDK](https://support.appsflyer.com/hc/en-us/articles/207034486-Server-to-Server-In-App-Events-API-HTTP-API-). It is a good idea to store this value in an external database where it may be easily accessible by a server or website environments.
 
 **Device Type**
