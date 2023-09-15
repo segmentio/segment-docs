@@ -45,7 +45,7 @@ Before you can configure consent in Segment, take the following steps:
 
 You can add a consent wrapper to your analytics-js, Swift, and Kotlin libraries. 
 
-If you'd like to add the consent wrapper to a [mobile library](/docs/connections/sources/catalog/#mobile) that is not Swift or Kotlin, you must generate your own plugin. You can use the [Swift](TODO: ADD LINK) and [Kotlin](TODO: ADD LINK) plugins as an example.
+If you'd like to add the consent wrapper to a [mobile library](/docs/connections/sources/catalog/#mobile) that is not Swift or Kotlin, you must generate your own plugin. You can use the [Swift](TODO: ADD LINK) and [Kotlin](https://github.com/segment-integrations/analytics-kotlin-consent/blob/main/README.md#getting-started){:target="_blank"} plugins as an example.
 
 > info "Consent Management is not backwards compatible with Segment's legacy iOS and Android libraries"
 > If you are using one of Segment's legacy mobile libraries (iOS or Android,) you will need to upgrade to [Swift](/docs/connections/sources/catalog/libraries/mobile/apple/migration/) or [Kotlin](/docs/connections/sources/catalog/libraries/mobile/kotlin-android/migration/) before using Consent Management. 
