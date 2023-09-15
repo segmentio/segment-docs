@@ -10,7 +10,7 @@ On this page, you'll learn how to connect your Redshift data warehouse to Segmen
 
 To get started with Redshift:
 1. Log in to Redshift and select the Redshift cluster you want to connect. 
-2. Follow [these networking instructions](/docs/connections/storage/catalog/redshift/#networking) to configure network and security settings.
+2. Follow these [networking instructions](/docs/connections/storage/catalog/redshift/#networking) to configure network and security settings.
 
 ## Create a new role and user
 

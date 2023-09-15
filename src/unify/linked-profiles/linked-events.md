@@ -24,8 +24,7 @@ With Linked Events, you can:
 
 Before getting started with Linked Events, you'll need:
 
-1. BigQuery, Snowflake, or Redshift data warehouse credentials with **write** access.
-- View the [BigQuery](/docs/unify/linked-profiles/setup-guides/bigquery-setup/), [Snowflake](/docs/unify/linked-profiles/setup-guides/snowflake-setup/), and [Redshift](/docs/unify/linked-profiles/setup-guides/redshift-setup/) setup guides. 
+1. [BigQuery](/docs/unify/linked-profiles/setup-guides/bigquery-setup/), [Snowflake](/docs/unify/linked-profiles/setup-guides/snowflake-setup/), or [Redshift](/docs/unify/linked-profiles/setup-guides/redshift-setup/) data warehouse credentials with **write** access.
 2. Access to Unify in your workspace. 
 3. Access to the Destination you'll be using with Linked Events so that you can validate your data. 
 
@@ -53,7 +52,7 @@ To use Connections with Linked Events:
 
 ## Step 1: Connect a data warehouse
 
-> success ""
+> info ""
 > Linked Events uses Segment's [Reverse ETL](/docs/connections/reverse-etl/) infrastructure for pulling in data from your warehouse. 
 
 To get started, you'll need to connect a data warehouse. Linked Events supports [BigQuery](/docs/unify/linked-profiles/setup-guides/bigquery/), [Snowflake](/docs/unify/linked-profiles/setup-guides/snowflake/), and [Redshift](/docs/unify/linked-profiles/setup-guides/redshift-setup/).

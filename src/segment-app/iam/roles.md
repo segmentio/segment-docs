@@ -66,11 +66,11 @@ The following roles are only available to Segment Business Tier accounts.
 * Read-only access warehouse destination and warehouse destination settings. *(For example, Redshift, Postgres, BigQuery)*
 * **Scope:** Grants access to *all* warehouses.
 
-#### Entities Admin
-Full CRUD access to all Enttiies within a workspace, and can grant or revoke user permission.
+#### Entities Admin 
+Full CRUD (create, read, access, and delete) access to all Entities within a workspace. You can also grant or revoke user permissions.
 
-#### Entities Read-only 
-Read access to all Entities models and destinations in a workspace. 
+#### Entities Read-only
+Read-only access to all Entities models and destinations in a workspace. 
 
 ## PII Access
 
