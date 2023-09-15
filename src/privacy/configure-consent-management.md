@@ -45,10 +45,10 @@ Before you can configure consent in Segment, take the following steps:
 
 You can add a consent wrapper to your analytics-js, Swift, and Kotlin libraries. 
 
-Adding the consent wrapper to another [mobile library](/docs/connections/sources/catalog/#mobile) requires additional configuration. See the README in the [@segment/analytics-consent-wrapper-onetrust repository](https://github.com/segmentio/analytics-next/tree/master/packages/consent/consent-wrapper-onetrust){:target="_blank"} for more details. 
+If you'd like to add the consent wrapper to a [mobile library](/docs/connections/sources/catalog/#mobile) that is not Swift or Kotlin, you must generate your own plugin. You can use the [Swift](TODO: ADD LINK) and [Kotlin](TODO: ADD LINK) plugins as an example.
 
 > info "Consent Management is not backwards compatible with Segment's legacy iOS and Android libraries"
-> If you are using one of Segment's legacy mobile libraries (Android or iOS,) you will need to upgrade to [Kotlin](/docs/connections/sources/catalog/libraries/mobile/kotlin-android/migration/) or [Swift](/docs/connections/sources/catalog/libraries/mobile/apple/migration/) before using Consent Management. 
+> If you are using one of Segment's legacy mobile libraries (iOS or Android,) you will need to upgrade to [Swift](/docs/connections/sources/catalog/libraries/mobile/apple/migration/) or [Kotlin](/docs/connections/sources/catalog/libraries/mobile/kotlin-android/migration/) before using Consent Management. 
 
 <!--- TODO: replace above link with accurate mobile libraries wrapper link when I have it -->
 
@@ -64,9 +64,7 @@ Please follow the instructions from the README in the [@segment/analytics-consen
 
 ### Kotlin
 
-<!--- TODO: Replace this with the real instructions when I have them -->
-
-Please follow the instructions from the README in the [@segment/analytics-consent-wrapper-onetrust repository](https://github.com/segmentio/analytics-next/tree/master/packages/consent/consent-wrapper-onetrust){:target="_blank"}.
+Please follow the instructions from the README in the [@segment-integrations/analytics-kotlin-consent](https://github.com/segment-integrations/analytics-kotlin-consent/blob/main/README.md#getting-started){:target="_blank"} repository.
 
 ## Edit consent categories
 
