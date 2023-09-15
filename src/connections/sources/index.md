@@ -77,6 +77,21 @@ Web, Mobile, and Server sources send first-party data from your digital properti
 ## Event streams sources 
 Event streams sources collect data from your website or app to monitor user actions. These sources include [website libraries](#website-libraries), [mobile](#mobile), and [server sources](#server). 
 
+### Source Overview
+
+When viewing the Source Overview page for an event stream source, you can view a line chart and breakdown table that reflects the volume and details of the events that Segment ingested from your source.
+
+You can use the time picker located on the Source Overview page to specify a time period (last 10 minutes, 1 hour, 24 hours, 7 days, 2 weeks, or a custom date range over the last two weeks) for which you’d like to see data.
+
+![A screenshot of the Source Overview page for an Android source.](images/source-overview.jpeg)
+
+The breakdown table displays the following details:
+* **Event type**: The Segment Spec event type (Track call vs. Identify call, for example)
+* **Event name**: The event name, provided by you or the source
+<!-- NOT SUPPORTED IN CURRENT VERSION: ADD IN ONCE THIS IS SUPPORTED* **App version**: The app/release version, provided by you or the source-->
+* **Event count**: How many of each event was successfully received by your source
+* **% Change**: Insight into how the event counts differ from the last comparable time range as a percentage
+
 ### Website libraries
 
 [Analytics.js](/docs/connections/sources/catalog/libraries/website/javascript/), the JavaScript library, is the most powerful way to track customer data from your website. If you're just starting out, Segment recommends it over server-side libraries as the simplest installation for any website.
