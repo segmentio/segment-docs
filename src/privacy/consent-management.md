@@ -14,7 +14,7 @@ Segment works with your third-party consent management platform (CMP) or bespoke
 
 ![Diagram outlining information flowing from an end user to Segment destinations](/docs/privacy/images/consent-overview.png)
 
-After a user sets their consent preferences, Segment captures them with a wrapper for your mobile and web libraries and updates the [consent object](#consent-object). The events are then sent downstream to any streaming destinations in categories that an end user consented to share data with.
+After a user sets their consent preferences, Segment captures them with a wrapper for your mobile and web libraries and updates the [consent object](#consent-object). The events are then sent downstream to any destinations in categories that an end user consented to share data with.
 
 > info ""
 > Segment collects consent for both registered users and anonymous users.
@@ -39,15 +39,12 @@ Segment requires every event from all of your sources to include the end-user co
 
 ```
 
-A consent conflict flag and the categories consented to by a user are both pulled from the consent object and are visible as traits on a user's profile in Unify.
+The categories consented to by a user and a flag if a [consent conflict](#reconcile-consent-conflicts) exists are pulled from the consent object and are visible as traits on a user's profile in Unify. 
 
 ## Enforce consent
 Segment routes events with a consent object to the destinations in categories consented to by a user and to destinations that do not have a consent category.
 
-If an end user changes the categories they consent to (or if they consent using a different device or identifier,) any events they generate after updating their consent preferences will contain the updated consent information. Segment only sends events to the destinations in the categories that are currently consented to.
-
-> warning "Segment recommends mapping all destinations to a category"
-> Segment assumes any destinations without a mapping do not require user consent and will receive all events containing a consent object. 
+If an end user consents for the first time or changes the categories they consent to (or if they consent using a different device or identifier,) Segment generates a **Segment Consent Preference** event. 
 
 For example, if a user agreed to share their information with you for all categories on their first visit to your site, and then on their next visit to the site only consented to sharing data for functional and advertising purposes but not for analytics or data sharing, a [Track call](/docs/connections/spec/track/) demonstrating their new consent preferences would have the following format:
 
