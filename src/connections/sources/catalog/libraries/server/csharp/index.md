@@ -39,7 +39,7 @@ To get started with the Analytics-CSharp library:
     ```
     dotnet add package Segment.Analytics.CSharp --version <LATEST_VERSION>
     ```
-    For Unity, it is distributed via OpenUPM. Read more about it [here](https://openupm.com/packages/com.segment.analytics.csharp/?subPage=readme).
+    For Unity, Analytics-CSharp is distributed through OpenUPM. Read more about [OpenUPM](https://openupm.com/packages/com.segment.analytics.csharp/?subPage=readme){:target="_blank"}.
     ```
    openupm add com.segment.analytics.csharp
    ``` 
