@@ -15,7 +15,7 @@ id: 554926390a20f4e22f0fb38a
 
 ### Server
 
-As an alternative to a traditional JavaScript implementation, Appcues offers a server-side destination with Segment. Please note, as a default, Analytics.js connects in device-mode. For all other sources the default connection is cloud-mode.
+As an alternative to a traditional JavaScript implementation, Appcues offers a server-side destination with Segment. 
 
 You may find the server-side destination useful if you'd like to send user profile or event data to Appcues from another Segment partner service. You can use the server-side destination alongside the JavaScript destination, which you may find preferable to routing all data through the JavaScript destination. 
 
@@ -23,7 +23,7 @@ As with the JavaScript destination, you can segment and target user profile and 
 
 For example, using the server-side destination, you can direct customer profile and event data from a CRM tool into Appcues. You can then use the directed data for content targeting and user segmentation in the Appcues content editor, alongside data from Segment's `analytics.js` destination.
 
-
+Please note, server side implementations can only be used with server or mobile sources. Analytics.js sources will default to a device-mode connection.
 
 ## Page
 
