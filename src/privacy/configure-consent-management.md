@@ -50,7 +50,7 @@ If you'd like to add the consent wrapper to a [mobile library](/docs/connections
 > info "Consent Management is not backwards compatible with Segment's legacy iOS and Android libraries"
 > If you are using one of Segment's legacy mobile libraries (iOS or Android,) you will need to upgrade to [Swift](/docs/connections/sources/catalog/libraries/mobile/apple/migration/) or [Kotlin](/docs/connections/sources/catalog/libraries/mobile/kotlin-android/migration/) before using Consent Management. 
 
-<!--- TODO: replace above link with accurate mobile libraries wrapper link when I have it -->
+<!--- TODO: replace above link with accurate Swift wrapper link when I have it -->
 
 ### Analytics.js
 
