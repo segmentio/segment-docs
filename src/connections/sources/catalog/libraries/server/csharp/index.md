@@ -550,7 +550,7 @@ For sample usages of the SDK in specific platforms, checkout the following:
 
 | Platform    | Sample                                                                                                                                 |
 |-------------|----------------------------------------------------------------------------------------------------------------------------------------|
-| Asp.Net     | [Setup with dependency injection](https://github.com/segmentio/Analytics-CSharp/tree/main/Samples/AspNetSample)                        |
+| Asp.Net     | [Set up with dependency injection](https://github.com/segmentio/Analytics-CSharp/tree/main/Samples/AspNetSample){:target="_blank"}                        |
 | Asp.Net MVC | [Setup with dependency injection](https://github.com/segmentio/Analytics-CSharp/blob/main/Samples/AspNetMvcSample)                     |
 | Console     | [Basic setups](https://github.com/segmentio/Analytics-CSharp/tree/main/Samples/ConsoleSample/Program.cs)                               |
 | Unity       | [Singleton Analytics](https://github.com/segmentio/Analytics-CSharp/blob/main/Samples/UnitySample/SingletonAnalytics.cs)               |
