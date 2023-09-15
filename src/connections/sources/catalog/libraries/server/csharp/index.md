@@ -379,7 +379,7 @@ A `FlushPolicy` only needs to implement 2 methods:
 - `Unschedule`: Called when policy should stop running any scheduled flushes
 - `Reset`: Called after a flush is triggered (either by your policy, by another policy or manually)
 
-They also have a `ShouldFlush` observable boolean value. When this is set to true the client will attempt to upload events. Each policy should reset this value to `false` according to its own logic, although it is pretty common to do it inside the `Reset` method.
+Your `FlushPolicy` should also have a `ShouldFlush` observable boolean value. When this is set to true the client attempts to upload events. Each policy should reset this value to `false` according to its own logic.
 
 ```csharp
 class FlushOnScreenEventsPolicy : IFlushPolicy
