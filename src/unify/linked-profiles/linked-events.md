@@ -8,7 +8,7 @@ plan: unify
 > Linked Events is in private beta, and Segment is actively working on this feature. Some functionality may change before it becomes generally available. [Contact Segment](https://segment.com/help/contact/){:target="_blank"} with any feedback or questions.
  
 
-Use Linked Events to enrich real-time event streams flowing from your data warehouse to your destinations. Insert additional event context for downstream applications for richer data about each event. 
+Use Linked Events to enrich real-time event streams with entities from your data warehouse to your destinations. Insert additional event context for downstream applications for richer data about each event. 
 
 On this page, you'll learn how to get started with Linked Events.
 
