@@ -11,7 +11,7 @@ Segment's .NET library is the best way to integrate analytics into your .NET app
 All of Segment's server-side libraries are built for high-performance, so you can use them in your web server controller code. This library uses an internal queue to make `identify` and `track` calls non-blocking and fast. It also batches messages and flushes asynchronously to our servers.
 
 > info "Analytics-CSharp (C#)"
-> With Analytics-CSharp, you can add Segment analytics to your C# based app which includes .NET. The [Analytics-CSharp library](/docs/connections/sources/catalog/libraries/server/csharp/) is currently in general availability. If you'd like to migrate to use Analytics-CSharp, see the [Analytics-CSharp migration guide](/docs/connections/sources/catalog/libraries/server/csharp/migration-guide/). 
+> With [Analytics-CSharp](/docs/connections/sources/catalog/libraries/server/csharp/), you can add Segment analytics to your C# based app which includes .NET. If you'd like to migrate to use Analytics-CSharp, see the [Analytics-CSharp migration guide](/docs/connections/sources/catalog/libraries/server/csharp/migration-guide/). 
 
 ## Getting Started
 
