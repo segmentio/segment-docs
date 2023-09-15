@@ -86,7 +86,7 @@ You can use the time picker located on the Source Overview page to specify a tim
 The breakdown table displays the following details:
 * **Event type**: The Segment Spec event type (Track call vs. Identify call, for example)
 * **Event name**: The event name, provided by you or the source
-<!-- NOT SUPPORTED IN CURRENT VERSION: ADD IN ONCE THIS IS SUPPORTED* **App version**: The app/release version, provided by you or the source-->
+<!-- NOT SUPPORTED IN CURRENT VERSION: ADD IN ONCE THIS IS SUPPORTED* **App version**: The app/release version, provided by you or the source--->
 * **Event count**: How many of each event was successfully received by your source
 * **% Change**: Insight into how the event counts differ from the last comparable time range as a percentage
 
