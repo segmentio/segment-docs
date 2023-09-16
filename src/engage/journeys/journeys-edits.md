@@ -26,8 +26,8 @@ Follow these steps to edit a journey:
 3. On the Journey overview page, select **Edit**. Segment creates a new version in draft mode.
 4. Edit your Journey, then select **Publish version**.
     - If the previous version is live, Segment asks whether you want to pause or archive the previous version.
-    - If you choose to pause the previous version, users can continue through the journey version, but no new users can enter. You will not be able to resume this journey version if it is paused this way.
-    - If you choose to archive the previous version, users **won't** continue through the journey version.
+    - If you pause the previous version, users can continue through the journey version, but no new users can enter. You will not be able to resume this journey version if it is paused this way.
+    - If you archive the previous version, users **won't** continue through the journey version.
 5. (Optional:) Enable version exclusion.
 6. Click **Publish**.
 
@@ -49,7 +49,7 @@ Suppose you have a journey with exit settings enabled. The following table lists
 | Archive Version 1 and publish Version 2                                                       | Users can enter Version 2 when they meet its entry criteria.                                                                                                                                                                                                                                                                                                                                                                                     |
 | Pause Version 1, publish Version 2, then archive Version 1 before users have exited Version 1 | Users won’t be able to enter Version 2. Users must successfully exit the paused Version 1 before entering Version 2.  <br><br> In this situation, Segment recommends that you wait until users have exited the journey through exit settings before archiving the version. <br><br> Alternatively, instead of pausing and archiving a version, Segment recommends that you archive the previous version when you publish the subsequent version. |
 
-Suppose you have a journey **without** enabled exit settings. If you pause or archive Version 1 when publishing Version 2 of that journey, then users can immediately enter Version 2 when they meet its entry criteria, even if they’re still in Version 1 because exit settings were not enabled.
+Suppose you have a journey **without** enabled exit settings. If you pause or archive Version 1 when publishing Version 2 of that journey, then users can immediately enter Version 2 when they meet its entry criteria, even if they’re still in Version 1.
 
 > info "Version exclusion"
 > To prevent users from a previous journey from ever entering a new journey version, enable version exclusion when you create the new journey version.
@@ -59,6 +59,6 @@ Suppose you have a journey **without** enabled exit settings. If you pause or ar
 
 Adding a list destination to a journey version creates a new record in Segment’s systems. This process can take up to ten hours. During this time, you’ll be unable to publish new versions of a journey.
 
-For example, if you add a list destination to Version 1 of a journey, and users begin flowing into the version, then Segment will begin creating the new record. If you create a Version 2 draft from Version 1 of the journey while the Segment is still creating the new record, you won’t be able to publish Version 2 until this process is completed. 
+For example, if you add a list destination to Version 1 of a journey, and users begin flowing into the version, then Segment will begin creating the new record. If you create a Version 2 draft from Version 1 of the journey while Segment is still creating the new record, you won’t be able to publish Version 2 until this process is completed. 
 
 If the version has a list destination but no users have flowed into the version, though, Segment won't create a new record for that list destination and you won't have to wait to publish a new journey version.
