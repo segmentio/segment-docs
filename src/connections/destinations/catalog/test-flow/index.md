@@ -85,7 +85,7 @@ defaultConfig {
 dependencies {
         ....
     implementation 'com.segment.analytics.android:analytics:4.11.3'
-    implementation "com.github.1Flow-Inc:1flow-segment-tool:2023.09.14"
+    implementation "com.github.1Flow-Inc:segment-1flow-android:2023.09.16"
 }
 ```
 
