@@ -41,7 +41,6 @@ You can return to the Journeys list page to view the new live journey and its pr
 
 Exit settings determine how users flow between journey versions.
 
-
 Suppose you have a journey with exit settings enabled. The following table lists the actions you can take with the journey, as well as the results: 
 
 | Action                                                                                        | Result                                                                                                                                                                                                                                                                                                                                                                                                                                             |
