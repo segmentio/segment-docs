@@ -29,16 +29,18 @@ This source is maintained by Upollo. For any issues with the source, [contact Up
 Upollo uses server-side `identify` calls to send information about users. The table below describes the fields.
 Upollo uses a stream Source component to send Segment event data. It uses a server-side `identify` method to send data to Segment. These events are then available in any destination that accepts server-side events, and available in a schema in your data warehouse, so you can query using SQL.
 
+The default behavior is for Upollo to pass the userId associated with the email recipient as the userId. There are cases in which Upollo does not have an associated userId, in which case the email address will be passed in as the anonymousId.
+
 ## Event properties
 
 The table below list the properties included in the events. Learn more about different properties in the Upollo [documentation](https://upollo.ai/docs/reference?utm_source=segmentio&utm_medium=docs&utm_campaign=partners){:target="_blank”}
 
 | Property Name                           | Description                                               |
 | --------------------------------------- | --------------------------------------------------------- |
-| `traits.preductions`                    | An array of predictions about the user                    |
-| `traits.preductions[*].name`            | The name of the prediction                                |
-| `traits.preductions[*].score`           | A percentage of how likely the prediction is to come true |
-| `traits.preductions[*].timestamp`       | When the prediction was calculated                        |
+| `traits.predictions`                    | An array of predictions about the user                    |
+| `traits.predictions[*].name`            | The name of the prediction                                |
+| `traits.predictions[*].score`           | A percentage of how likely the prediction is to come true |
+| `traits.predictions[*].timestamp`       | When the prediction was calculated                        |
 | `traits.flags`                          | An array of the users flags                               |
 | `traits.flags[*].type`                  | The type of this flag                                     |
 | `traits.flags[*].first_flagged`         | When this flag was first triggered                        |
