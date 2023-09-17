@@ -1,5 +1,7 @@
 ---
 title: Upollo Source
+id: 9TYqEh3nMe
+beta: true
 ---
 
 [Upollo](https://upollo.ai?utm_source=segmentio&utm_medium=docs&utm_campaign=partners){:target="_blank"} gives unique and actionable insights that lead to conversion, retention, and expansion.
@@ -15,7 +17,7 @@ This source is maintained by Upollo. For any issues with the source, [contact Up
 2. Search for "Upollo" in the Sources Catalog, select Upollo, and click **Add Source**.
 3. On the next screen, give the Source a nickname and configure any other settings.
 
-   - The nickname is used as a label in the Segment app, and Segment creates a related schema name in your warehouse. The nickname can be anything, but Segment recommends using something that reflects the source itself and distinguishes amongst your environments (for example, SourceName_Prod, SourceName_Staging, SourceName_Dev).
+   - The nickname is used as a label in the Segment app, and Segment creates a related schema name in your warehouse. The nickname can be anything, but Segment recommends using something that reflects the source itself and distinguishes amongst your environments (for example, Upollo_Prod, Upollo_Staging, Upollo_Dev).
 
 4. Click **Add Source** to save your settings.
 5. Copy the Write key from the Segment UI.
