@@ -223,6 +223,21 @@ North American phone number (without country code) is also ten digits.
 
 {% include components/reference-button.html href="/segment-app/iam/roles/#pii-access" icon="media/academy.svg" title="PII Access" description="Use Access Roles to control who has access to the PII identified by your matchers." variant="related" %}
 
+### Using Synonyms
+
+The matchers scan data coming from your Sources for PII based on both
+exact-matching (and fuzzy-matching if you select 'Similar to' option).
+As an example, if you have a custom matcher for detecting "credit card
+number", it will also detect variations like "credit-card number", or
+typos such as "creditt card number".
+
+Our fuzzy matching uses [this public GitHub repository](https://github.com/imjasonmiller/godice)
+to determine if it is a match.  However, it will not detect all variations
+and for those scenarios, you can use synonyms. You can add "credit card no",
+"debit card number", or similar variations in the synonyms section.
+
+![Screenshot of the Synonym used in Custom Matcher.](images/privacy-synonym-in-matcher.png)
+
 #### An intro to Regular expressions
 
 Custom Matchers use [regular expressions](https://en.wikipedia.org/wiki/Regular_expression) (using the [Golang Regex Package](https://golang.org/pkg/regexp/)) to provide you great flexibility for your matching patterns.
