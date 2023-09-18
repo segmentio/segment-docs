@@ -21,7 +21,7 @@ This source is maintained by Upollo. For any issues with the source, [contact Up
 
 4. Click **Add Source** to save your settings.
 5. Copy the Write key from the Segment UI.
-6. Log in to your Upollo account and navigate to [Connections](https://upollo.ai/app/settings/connections). Connect the Segment Source and paste the Write key to connect.
+6. Log in to your Upollo account and navigate to [Connections](https://upollo.ai/app/settings/connections){:target="_blank”}. Connect the Segment Source and paste the Write key to connect.
 
 
 ## Stream
@@ -29,11 +29,11 @@ This source is maintained by Upollo. For any issues with the source, [contact Up
 Upollo uses server-side `identify` calls to send information about users. The table below describes the fields.
 Upollo uses a stream Source component to send Segment event data. It uses a server-side `identify` method to send data to Segment. These events are then available in any destination that accepts server-side events, and available in a schema in your data warehouse, so you can query using SQL.
 
-The default behavior is for Upollo to pass the userId associated with the email recipient as the userId. There are cases in which Upollo does not have an associated userId, in which case the email address will be passed in as the anonymousId.
+The default behavior is for Upollo to pass the `userId` associated with the email recipient as the `userId`. There are cases in which Upollo does not have an associated userId, in which case the email address is passed in as the `anonymousId`.
 
 ## Event properties
 
-The table below list the properties included in the events. Learn more about different properties in the Upollo [documentation](https://upollo.ai/docs/reference?utm_source=segmentio&utm_medium=docs&utm_campaign=partners){:target="_blank”}
+The table below lists the properties included in the events. Learn more about different properties in the Upollo [documentation](https://upollo.ai/docs/reference?utm_source=segmentio&utm_medium=docs&utm_campaign=partners){:target="_blank”}
 
 | Property Name                           | Description                                               |
 | --------------------------------------- | --------------------------------------------------------- |
