@@ -84,7 +84,16 @@ The deletion requests tab shows a log of all regulations with a deletion element
 
 In the Segment App (Settings > End User Privacy > Deletion Requests), you can click a userId to view its status in Segment internal systems, and in the connected destinations.
 
-When checking the status of deletion requests via the API, the deletion will report an overall status of all of the deletion processes. This means that, even if the deletion from Segment Internal Systems and supported destinations were completed successfully, the status can still be 'FAILED', due to a failure on a unsupported destination.
+The deletion request can have one of the following statuses:
+1. "FAILED"
+2. "FINISHED"
+3. "INITIALIZED"
+4. "INVALID"
+5. "NOT_SUPPORTED"
+6. "PARTIAL_SUCCESS"
+7. "RUNNING"
+
+When checking the status of deletion requests via the API, the deletion will report an overall status of all of the deletion processes. As a result, we will return a 'FAILED' status because of  a failure on a unsupported destination, even if the deletion from Segment Internal Systems and supported destinations were completed successfully.
 
 ### Regulate User from a single Source in a Workspace
 
