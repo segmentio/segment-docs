@@ -4,6 +4,9 @@ beta: true
 plan: unify
 ---
 
+> info "Linked Events is in private beta"
+> Linked Events is in private beta, and Segment is actively working on this feature. Some functionality may change before it becomes generally available. [Contact Segment](https://segment.com/help/contact/){:target="_blank"} with any feedback or questions.
+
 On this page, you'll learn how to connect your Redshift data warehouse to Segment. 
 
 ## Getting started 
@@ -54,7 +57,7 @@ GRANT SELECT ON TABLE <schema-name>.<table-name> TO ROLE segment_entities;
 
 ### RETL table permissions
 
-If you've used RETL in your database, you'll need to add the following [table permissions](https://docs.aws.amazon.com/redshift/latest/dg/r_GRANT.html){:target="_blank"}:
+If you used RETL in your database, you'll need to add the following [table permissions](https://docs.aws.amazon.com/redshift/latest/dg/r_GRANT.html){:target="_blank"}:
 
 ```ts
 GRANT USAGE, CREATE ON SCHEMA __segment_reverse_etl TO ROLE segment_entities;

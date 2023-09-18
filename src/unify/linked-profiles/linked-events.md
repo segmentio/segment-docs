@@ -76,7 +76,7 @@ You can choose which database within your warehouse this data lives in.
 
 The table below shows the data warehouses Linked Events supports. View the Segment docs for your warehouse, then carry out the corresponding steps. 
 
-| **Table**              |      **Steps**          |
+| Data Warehouse              |      Steps         |
 |------------------------|-------------------------|
 | [Snowflake](docs/unify/linked-profiles/setup-guides/snowflake-setup/)              | 1. Configure your snowflake database. <br> 2. Enter your credentials. <br> 3. Test the Connection. <br> 4. Click **Save**. |
 | [BigQuery](/docs/unify/linked-profiles/setup-guides/bigquery-setup/)           | 1. Add your credentials to the database that has tables with the entities you want to enrich your event with. <br> 2. Test your connection. | 
@@ -152,43 +152,30 @@ After you’ve added Enrichments, test and save your enrichments.
 
 ## Frequently asked questions
 
-{% faq %}
-{% faqitem What data warehouse permissions does Segment require? %}
+#### What data warehouse permissions does Segment require? 
 
 To use Linked Events, be sure that you have proper permissions for the Data Warehouse you're using. Visit the [BigQuery](/docs/unify/linked-profiles/setup-guides/bigquery-setup/), [Snowflake](/docs/unify/linked-profiles/setup-guides/snowflake-setup/), and [Redshift](/docs/unify/linked-profiles/setup-guides/redshift-setup/) setup guides to learn more about updating permissions.
 
-{% endfaqitem %}
- 
-{% faqitem How often do syncs occur? %}
+#### How often do syncs occur? 
 
 Segment currently syncs once every hour.
 
-{% endfaqitem %}
-
-
-{% faqitem Which Action Destinations does Linked Events support? %}
+#### Which Action Destinations does Linked Events support? 
 
 For Linked Events, Segment supports all Actions Destinations. 
 
-{% endfaqitem %}
-
-{% faqitem Why aren't test events working? %}
+#### Why aren't test events working? 
 
 Test events don't send Linked Events. You'll only see test events that come from the source debugger, which is ahead of the event enrichment.
 
-{% endfaqitem %}
-
-{% faqitem Can I view my Linked Events Audit Trail? %}
+ #### Can I view my Linked Events Audit Trail? 
 
 Linked Events uses the existing Audit Trail in your Segment workspace. To view your Audit Trail, navigate to **Settings > Admin > Audit Trail**.
 
-{% endfaqitem %}
-
-{% faqitem How can I refresh linked data from my warehouse? %}
+#### How can I refresh linked data from my warehouse? 
 
 You can define a schedule for refreshing the linked data from your data warehouse.
 
-{% endfaqitem %}
-{% endfaq %}
+
 
 

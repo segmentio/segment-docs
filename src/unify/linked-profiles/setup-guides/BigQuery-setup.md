@@ -4,6 +4,9 @@ beta: true
 plan: unify
 ---
 
+> info "Linked Events is in private beta"
+> Linked Events is in private beta, and Segment is actively working on this feature. Some functionality may change before it becomes generally available. [Contact Segment](https://segment.com/help/contact/){:target="_blank"} with any feedback or questions.
+
 On this page, you'll learn how to connect your BigQuery data warehouse to Segment. 
 
 > warning ""

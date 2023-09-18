@@ -119,7 +119,7 @@ If necessary, click **New Mapping** to create a new, blank action.
 2. Test those conditions to make sure that they correctly match an expected event.
     This step looks for events that match the criteria in the [debugger queue](/docs/connections/sources/debugger/), so you might need to Trigger some events with the expected criteria to test your conditions. You can skip the test step if needed, and re-try it at any time.
 3. Select data models to [enrich your events](/docs/unify/linked-profiles/linked-events/) with.
-4. Next, set up the data mapping from the Segment format to the destination tool format.
+4. Set up the data mapping from the Segment format to the destination tool format.
 - You can click the Source field, then select the **Enrichments** tab to view and select Enrichments to use.
 5. Test the mapping with data from a sample event.
     The edit panel shows you the mapping output in the format for the destination tool. You can change your mapping as needed and re-test.
