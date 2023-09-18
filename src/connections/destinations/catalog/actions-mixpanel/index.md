@@ -133,5 +133,7 @@ If you want to confirm, you can configure the new destination to point to a diff
 
 ### Track events are not attributed to Mixpanel Groups
 
-Ensure that the mapping(s) handling your `track` events have the field for **Group ID** mapped to a valid value. By default, this field is mapped to the event variable `context.groupId`.
+For Mixpanel (Actions) destination that uses `$group_id` as the group key, ensure that the mapping(s) handling your `track` events have the field for **Group ID** mapped to a valid value. By default, this field is mapped to the event variable `context.groupId`.
+
+
 
