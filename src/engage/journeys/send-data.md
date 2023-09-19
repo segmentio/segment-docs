@@ -51,7 +51,7 @@ The data type you send to a destination depends on whether the destination is an
 ### Event destination
 
 The format in which the destination receives updates depends on the call type.
-
+ 
 #### Track calls
 
 When the user enters the step:
