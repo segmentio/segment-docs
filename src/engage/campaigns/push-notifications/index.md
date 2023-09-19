@@ -1,5 +1,5 @@
 ---
-title: Push Notifications
+title: Push Notifications Onboarding
 plan: engage-premier
 ---
 
