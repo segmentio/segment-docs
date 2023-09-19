@@ -46,7 +46,7 @@ Cloud-App Sources allow you to pull in data from third-party tools so you can us
   </tr>
 </thead>
 <tbody>
-  {% assign integrations = site.data.catalog.sources.items %}
+  {% assign integrations = site.data.catalog.sources.items | where: "hidden", "false" %}
   {% for integration in integrations %}
     {% unless integration.categories contains promoted_categories[0] or integration.categories contains promoted_categories[1] or integration.categories contains promoted_categories[2] or integration.categories contains promoted_categories[3]%}
     {% unless integration.display_name == "Project"%}

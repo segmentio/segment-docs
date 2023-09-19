@@ -38,7 +38,6 @@ With Customized setup, you can choose which identifiers you want to map downstre
 - **Segment**: Choose your identifiers from Segment.
 - **Destination**: Choose which identifiers you want to map to from your destination. If the destination doesn't contain the property, then outgoing events may not be delivered to your destination.
 - *Facebook Custom Audiences* and *Google Ads Remarketing Lists* display a dropdown for you to choose available identifiers. 
-- *Iterable* and *Zendesk* autopopulate an open text field which you can modify.
 2. Add an ID strategy. 
 - This is a strategy for a particular identifier which sends either the `last added`, `first added`, or `all` identifiers to your destination.
 3. Click **Save**, then finish building your audience.
