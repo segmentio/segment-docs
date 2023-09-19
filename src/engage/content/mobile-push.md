@@ -15,9 +15,9 @@ You can choose between two push notification template types:
 ## Build a push notification message template
 
 > info ""
-> To build a push notification template in Engage, you must first [configure Engage for push notifications](/docs/engage/campaigns/push-notifications/). 
+> To build push notification templates in Engage, first [configure Engage for push notifications](/docs/engage/campaigns/push-notifications/). 
 
-Follow these steps to build an push notification template:
+Follow these steps to build a push notification template:
 
 1. Navigate to **Engage > Content** and click **Create template**.
 2. Select **Push**, then click **Configure**.
@@ -33,11 +33,11 @@ Follow these steps to build an push notification template:
 
 When you build a push notification template, you can choose between three click behaviors, which determine what happens when a user taps on the mobile push:
 
-| Click behavior | Description                                                                                                                                                                                                                                                                                                            |
-| -------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Open app       | Opens an app. You can specify a URL with or without merge tags to take the user to a specific screen with your app. If you don't enter a URL, this behavior will take the user to the app's home screen.                                                                                                               |
-| Open URL       | Opens the specified URL.                                                                                                                                                                                                                                                                                               |
-| Custom action  | Takes any value as text input. Your app determines how to handle the value. For example, you could enter a custom action of `open_settings`, and then instruct your application to open the settings application when a user taps the notification and the notification arrives with `click behavior = open_settings`. |
+| Behavior      | Description                                                                                                                                                                                                                                                                                                            |
+| ------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Open app      | Opens an app. You can specify a URL with or without merge tags to take the user to a specific screen with your app. If you don't enter a URL, this behavior will take the user to the app's home screen.                                                                                                               |
+| Open URL      | Opens the specified URL.                                                                                                                                                                                                                                                                                               |
+| Custom action | Takes any value as text input. Your app determines how to handle the value. For example, you could enter a custom action of `open_settings`, and then instruct your application to open the settings application when a user taps the notification and the notification arrives with `click behavior = open_settings`. |
 
 ## Test your mobile push template
 
@@ -51,7 +51,7 @@ Follow these steps to test your push notification:
     - For new templates, select **Test** once you've finished building a template. 
     - For existing templates, navigate to **Engage > Content > Push**, select the template you want to test, then click **Test**.
 2. Choose a messaging service and add a recipient.
-    - You can add recipients either by either their email address or user ID. 
+    - You can add recipients using an email address or user ID. 
 3. Click **Send test push**.
 
 Segment verifies that the the profile you're sending a test to has push tokens enabled, then sends the test. If the test push notification doesn't work as expected, confirm that the profile you're sending to has enabled push tokens.
