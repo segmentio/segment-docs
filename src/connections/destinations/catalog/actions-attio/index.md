@@ -5,9 +5,11 @@ hide-boilerplate: true
 
 {% include content/plan-grid.md name="actions" %}
 
-Powerful, flexible and data-driven, [Attio](https://attio.com) makes it easy to build the exact CRM that your business needs.
+Powerful, flexible and data-driven, [Attio](https://attio.com) makes it easy to build the
+exact CRM that your business needs.
 
-This destination allows you to use your existing Segment events to create or update records in Attio, for example creating User objects from identify events.
+This destination allows you to use your existing Segment events to create or update
+records in Attio, for example creating User records from identify events.
 
 ## Getting started
 
@@ -28,20 +30,25 @@ events.
 both a Person and User and links them together. If you only need to assert either a Person
 or User, you should configure [Assert Record](#assert-record) instead.*
 
-In Attio, a **Person** is an object which represents a human. People have names, email
-addresses, Twitter profiles, email and calendar interactions, etc.
+In Attio, a **Person** represents a human. People have names, email addresses, Twitter
+profiles, email and calendar interactions, etc.
 
-Meanwhile, a **User** is an object which represents how they exist in your product.
-Users might have feature flags, permission levels, etc.
+Meanwhile, a **User** is a user of your product. Users might have feature flags,
+permission levels, etc. A Person can have multiple Users, for example if they exist in
+different workspaces or have different sets of permissions, but are ultimately the same
+Person.
 
 > info ""
 > To use the User standard object, you'll need to make sure it's activated first. Visit
 > your [Workspace Settings > Objects](https://app.attio.com/_/settings/data/objects) page
 > and click the "Activate" button next to the Users object.
 
-This mapping only makes one assumption about your data, which is that it includes an email
-address property. You can specify additional attributes to be mapped on the **Edit
-Mapping** page.
+This mapping makes the assumption that your Segment event includes two properties:
+
+  1. An `email_address` property, to create or update a Person
+  2. A `id` property, to create or update an associated User
+
+ You can specify additional attributes to be mapped on the **Edit Mapping** page.
 
 For example, we could set some additional properties on the Person using these Mapping
 Fields under "Additional Person attributes". The column on the left should contain
@@ -78,23 +85,22 @@ Create or update a **Company** using the provided domain, then create or update 
 both a Company and Workspace and links them together. If you only need to assert either a
 Company or Workspace, you should configure [Assert Record](#assert-record) instead.*
 
-In Attio, a **Company** is an object which can represent any of your customers, suppliers,
-partners or competitors. Companies have names and domains, as well as enriched properties
-like ARR or category.
+In Attio, a **Company** can have names and domains, as well as enriched properties like
+ARR or category.
 
-Meanwhile, a **Workspace** is an object which represents how they might exist in your
-product. Workspaces might have feature flags, billing configurations, customer support
-representatives, etc.
+Meanwhile, a **Workspace** represents a group of Users in your product. Workspaces might
+have feature flags, billing configurations, customer support representatives, etc. A
+Company can have many Workspaces.
 
 > info ""
 > To use the Workspace standard object, you'll need to make sure it's activated first. Visit
 > your [Workspace Settings > Objects](https://app.attio.com/_/settings/data/objects) page
 > and click the "Activate" button next to the Workspaces object.
 
-This mapping makes the assumption that your data includes two properties:
+This mapping makes the assumption that your Segment event includes two properties:
 
-  1. A `domain` property to create or update a Company
-  2. A `name` property, to create or update an associated Workspace
+  1. A `domain` property, to create or update a Company
+  2. A `id` property, to create or update an associated Workspace
 
 You can specify additional attributes to be mapped on the **Edit Mapping** page.
 
