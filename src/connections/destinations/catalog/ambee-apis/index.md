@@ -1,8 +1,8 @@
 ---
-title: "Ambee"
+title: "Ambee (Actions) Destination"
 hidden: true
 beta: true
-id: 
+id: 647f2f7ce3b561ab931c2b77
 ---
 
 {% include content/plan-grid.md name="actions" %}
