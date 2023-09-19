@@ -106,7 +106,7 @@ ad content based on the user's geolocation, for example:
 
 NAB recommends the risk levels below to understand the risks
 users are exposed to, and help them take preventative measures to
-reduce their exposure to pollen. Ambee uses the NAB-compliant index to
+reduce exposure to pollen. Ambee uses the NAB-compliant index to
 provide accurate insights. If you are subscribed to **pollen**, you can
 select the risk levels for pollen from the drop-down box under the
 **pollen** section.
