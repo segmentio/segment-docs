@@ -39,6 +39,8 @@ Keep the following terms in mind as you begin to explore Journeys.
 | ------------------------ | --------------------------------------------------------------------------------------------------------------------------------- |
 | Draft Journey            | A Journey which is not yet computing nor sending data to destinations. <br /><br />For more information, see [Draft Journeys](#draft-journeys). |
 | Published (live) Journey | A Journey that is computing and sending data to destinations. <br /><br />For more information, see [Published Journeys](#published-journeys).                  |
+| Archived Journey         | A Journey that has been archived. <br /><br />For more information, see [Archive a Journey](https://segment.com/docs/engage/journeys/build-journey/#archive-a-journey).                  |
+| Failed (live) Journey    | A Journey that has been published, but failed during the live computations due to an unforeseen error. <br /><br />Contact [Segment Support](https://segment.com/help/contact/) to learn more. |
 
 ## Steps with Audiences
 
