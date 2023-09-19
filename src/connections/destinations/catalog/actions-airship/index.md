@@ -19,6 +19,7 @@ Airship maintains this destination. For any issues with the destination, [contac
 Airship (Actions) provides the following benefits over the classic Airship destination:
 
 - **Flexibility**. Complete flexibility for mapping your data from any Segment event type to one of three Airship endpoints. Make optimal use of data from Segment to trigger Automations, audience segmentation, or to personalize end-users in-app experiences and messages.
+- **Additional functionality**. Supports email registration, named user association, as well as delete for GDPR compliance. This is in addition to the previously supported custom events, tag management, and attributes.
 - **Reporting**. Better and more meaningful feedback from the Airship API. This integration calls the Airship API directly, so the endpoint response shows precisely how the integration is performing.
 
 
