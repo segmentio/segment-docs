@@ -32,6 +32,18 @@ Follow these steps to send a test event:
 
 If your Destination successfully handled the event, Segment displays a `200 OK` HTTP status code along with the full response. If an error occurred, Segment displays any available details in the Event lifecyle section.
 
+## Use Trait Activation with Journeys
+
+Use Trait Enrichment and ID Sync to configure sync payloads that you send from Journeys to your destination.
+-  With [Trait Enrichment](/docs/engage/trait-activation/trait-enrichment/), use custom, SQL, computed, and predictive traits to enrich the data you map to your destinations. 
+- Use [ID Sync](/docs/engage/trait-activation/id-sync/) to select identifiers and a sync strategy for the data you send to your destination.
+
+To use Trait Activation with Journeys:
+1. Navigate to the Journeys builder of a new or existing Journey. 
+2. Select [a supported](/docs/engage/trait-activation/trait-activation-setup/#set-up-a-destination) destination from a Journeys step.
+3. Select **Customized Setup**, then add identifier and trait mappings to customize the way you send data to your destination. For more, visit the [Trait Enrichment](/docs/engage/trait-activation/trait-enrichment/#customized-setup/) and [ID Sync](/docs/engage/trait-activation/id-sync/#customized-setup/) setup docs.
+
+
 ## What do I send to destinations?
 
 The data type you send to a destination depends on whether the destination is an Event destination, or a List destination.
