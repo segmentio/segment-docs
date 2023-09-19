@@ -14,7 +14,9 @@ Segment works with your third-party consent management platform (CMP) or bespoke
 
 ![Diagram outlining information flowing from an end user to Segment destinations](/docs/privacy/images/consent-overview.png)
 
-After a user sets their consent preferences, Segment captures them with a wrapper for your mobile and web libraries and updates the [consent object](#consent-object). The events are then sent downstream to any destinations in categories that an end user consented to share data with.
+After a user sets their consent preferences on your website or mobile app, Segment requires you to add the [consent object](#consent-object) to all events. If you are using OneTrust, Segment provides a wrapper for your mobile and web libraries that can add the consent object to your events. If you are using another CMP, you are required to add the consent object to your events by creating your own wrapper. For more information, see the [Configure Consent Management documentation](/docs/privacy/configure-consent-management). 
+
+The events, stamped with the consent object, are then sent downstream to any destinations in categories that an end user consented to share data with.
 
 > info ""
 > Segment collects consent for both registered users and anonymous users.
@@ -27,7 +29,7 @@ Segment requires every event from all of your sources to include the end-user co
 {
 "context": {
   "consent": {
-    "consentPreferences": {
+    "categoryPreferences": {
         "Advertising": true,
         "Analytics": false,
         "Functional": true,
@@ -39,14 +41,21 @@ Segment requires every event from all of your sources to include the end-user co
 
 ```
 
-The categories consented to by a user and a flag if a [consent conflict](#reconcile-consent-conflicts) exists are pulled from the consent object and are visible as traits on a user's profile in Unify. 
+<!-- Not currently in scope The categories consented to by a user and a flag if a [consent conflict](#reconcile-consent-conflicts) exists are pulled from the consent object and are visible as traits on a user's profile in Unify.--> 
 
 ## Enforce consent
-Segment routes events with a consent object to the destinations in categories consented to by a user and to destinations that do not have a consent category.
+Segment routes events with a consent object to the destinations in categories consented to by a user and to destinations that do not have a consent category. Segment requires the use of the [Segment Consent Preference event](#segment-consent-preference-event) to route events to Unify and Engage. 
 
-If an end user consents for the first time or changes the categories they consent to (or if they consent using a different device or identifier,) Segment generates a **Segment Consent Preference** event. 
+If you are using Segment's OneTrust consent wrappers, Segment automatically generates a Segment Consent Preference event.
 
-For example, if a user agreed to share their information with you for all categories on their first visit to your site, and then on their next visit to the site only consented to sharing data for functional and advertising purposes but not for analytics or data sharing, a [Track call](/docs/connections/spec/track/) demonstrating their new consent preferences would have the following format:
+If you do not use OneTrust as your CMP and you only use Segment Connections, you do not have to generate a Segment Consent Preference event.
+
+If you use Unify and Engage in your Segment instance, you must generate the Segment Consent Preference event, regardless of what consent management solution you use.
+
+### Segment Consent Preference event 
+If an end user consents for the first time or changes the categories they consent to, Segment requires you to generate a **Segment Consent Preference** Track event. This event is automatically generated if you are using one of Segment's [OneTrust consent wrappers](/docs/privacy/configure-consent-management/#step-2-add-the-consent-wrapper-to-analyticsjs), or you can generate it using a wrapper you created on your own. 
+
+For example, if an end user agreed to share their information for functional and advertising purposes but not for analytics or data sharing, the Segment Consent Preference [Track call](/docs/connections/spec/track/) demonstrating their new consent preferences would have the following format:
 
 ``` json
 {
@@ -61,16 +70,18 @@ For example, if a user agreed to share their information with you for all catego
   "timestamp": "2023-01-01T00:00:00.000Z",
   "context": {
     "consent": {
-      "consentPreferences" : {
-   "Advertising": true,
-   "Analytics": false,
-   "Functional": true,
-   "DataSharing": false
-}
+      "categoryPreferences" : {
+        "Advertising": true,
+        "Analytics": false,
+        "Functional": true,
+        "DataSharing": false
+      }
     }
   }
 }
 ```
+
+If you use Protocols, the Segment app automatically adds the Segment Consent Preference Track event to all your existing Tracking Plans and for every new Tracking Plan. Segment recommends you don’t delete or edit the default fields in the Segment Consent Preference Track events, but you can add new fields as needed.
 
 > info "Segment Consent Preference is a reserved event name"
 > Segment has standardized a series of reserved event names that have special semantic meaning and maps these events to tools that support them. 
