@@ -7,7 +7,7 @@ hidden: true
 
 After setting up your consent management platform (CMP), you can enforce the consent collected from your users by adding the [consent object](/docs/privacy/consent-management/#consent-object) to your events. 
 
-Once you've configured consent in the Segment app and updated your sources to contain consent preference in every event, your events are routed only to the categories your end users consented to share data with. Events without the consent preference will continue to flow to destinations without consent enforcement
+Once you've configured consent in the Segment app and updated your sources to contain consent preference in every event, your events are routed only to the categories your end users consented to share data with. Events without the consent preference will continue to flow to destinations without consent enforcement.
 
 ## Prerequisites
 
