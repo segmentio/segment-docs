@@ -53,10 +53,11 @@ When enabled, the **Page Views** advanced setting sends the `page_view` event fr
 
 The GA4 SDK also tracks a native `page_view` event if you have the [following setting enabled](https://developers.google.com/analytics/devguides/collection/ga4/views?client_type=gtag#measure_virtual_pageviews){:target='_blank'} in your GA4 account. To avoid the native GA4 `page_view` event, disable **Page changes based on browser history events** under the advanced settings of the **Page views** section.
 
+### Custom Events
 
-### Custom Event Naming
+Before creating a custom event in your mappings, Google recommends that you make sure the event you want to create isn't already collected through an [automatically collected event](https://support.google.com/analytics/answer/9234069){:target='_blank'} or recommended as a [recommended event](https://support.google.com/analytics/answer/9267735){:target='_blank'}. It's always better to use an existing event because these events automatically populate [dimensions and metrics](https://support.google.com/analytics/answer/9143382){:target='_blank'} in your Analytics workspace that are used in your reports. This excerpt was taken directly from [Google's documentation](https://support.google.com/analytics/answer/12229021?hl=en&sjid=15743549721457858295-NA#:~:text=Before%20you%20create%20a%20custom%20event%2C%20make,metrics%20that%20are%20used%20in%20your%20reports.){:target='_blank'} where you can read more!
 
-Google Analytics 4 does not accept custom event names that include spaces. Segment replaces spaces in the Event Name in the Custom Event action with an underscore. As a result, you will see custom events snake cased in Google Analytics 4.
+For custom event naming, Google Analytics 4 does not accept custom event names that include spaces. Segment replaces spaces in the Event Name in the Custom Event action with an underscore. As a result, you will see custom events snake cased in Google Analytics 4.
 
 Google Analytics 4 is also case sensitive. If you would like all event names to be lowercase, use the `Lowercase Event Name` setting in the Custom Event action. If this setting is disabled, Google will treat event names with different casing as distinct events. For more information, see [Google Analytics 4 Event name rules](https://support.google.com/analytics/answer/13316687?hl=en&ref_topic=13367860&sjid=2167389739796023681-NA#zippy=%2Cweb){:target="_blank"}.
 
