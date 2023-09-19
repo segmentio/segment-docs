@@ -53,3 +53,11 @@ If you are creating multiple mappings in one Braze Cohorts destination, Segment 
 > A user can only be added to a cohort if the user already exists in Braze. This means that the Braze Cohorts destination should be used in parallel with the [Braze Cloud Mode (Actions) destination](/docs/connections/destinations/catalog/braze-cloud-mode-actions/) or the [Braze Web Mode (Actions) destination](/docs/connections/destinations/catalog/braze-web-device-mode-actions/), both of which can create users in Braze.
 
 {% include components/actions-fields.html settings="true"%}
+
+### Supplementing Audience Payloads
+
+Event payloads sent via Computed Traits and Audiences will only contain the computed trait/audience key in question, in addition to user identities userId/anonymousId and email if present: https://segment.com/docs/engage/using-engage-data/#event-destinations. If you need supplemental fields from user profiles to map to Braze consider using an Insert Function + Engage Profile API to do so. Essentially, using the Profile API, you can pull the traits for a user from your Engage space within your insert function code, before the event hits the destination. You can then use these traits to then enrich the event payload that is sent to the destination.
+
+When dealing with event payloads transmitted through Computed Traits and Audiences, it's important to note that these payloads typically include only the specific computed trait or audience key in question in addition to user identities such as `userId` and `anonymousId`, as well as `email` if available, [for more information, see here](/docs/engage/using-engage-data/#event-destinations).
+
+If your requirements involve including additional fields from user profiles into your mappings, you can achieve this by leveraging an [Insert Function](/docs/connections/functions/insert-functions/) in conjunction with the [Engage Profile API](docs/unify/profile-api/). With the Profile API, you can retrieve the traits associated with a user from your Engage space within your insert function code, all before the event reaches the Braze Cohorts destination. 
