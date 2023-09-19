@@ -120,28 +120,28 @@ For every event where there is an identifiable Shopify customer (from both the d
 
 The following traits are included with an Identify call:
 
-| **Property Name**          | **Description**                                                                               | **Property Type** |
-| -------------------------- | --------------------------------------------------------------------------------------------- | ----------------- |
-| userId                     | Chosen user identifier, defaulting to Shopify Customer ID                                     | Double            |
-| createdAt                  | Date customer record was created                                                              | Date              |
-| customerLifetimeValue      | Total spend of customer on the Shopify store                                                  | Double            |
-| default_address.street     | The customer's default street address                                                         | String            |
-| default.address.postalCode | The customer's ZIP / post code                                                                | String            |
-| default_address.state      | The customer's state address                                                                  | String            |
-| default_address.country    | The customer's country                                                                        | String            |
-| description                | Customer notes                                                                                | String            |
-| email                      | Customer's email address                                                                      | String            |
-| firstName                  | Customer's first name                                                                         | String            |
-| lastName                   | Customer's last name                                                                          | String            |
-| email_consent_state        | If the user has subscribed or not with e-mail                                                 | String, Null      |
-| email_opt_in_level         | Level of user's opt in to notifications                                                       | String, Null      |
-| sms_consent_state          | If the user has subscribed or not with sms                                                    | String, Null      |
-| sms_opt_in_level           | Level of user's opt in to notifications                                                       | String, Null      |
-| phone                      | Customer's phone number                                                                       | String            |
-| purchaseCount              | Number of orders by this customer                                                             | Integer           |
-| state                      | Shopify customer state - enabled, disabled, invited to create an account or customer declined | String            |
-| tags                       | Custom tags applied to the customer                                                           | String            |
-| verified_email             | Whether the customer has verified their email                                                 | Boolean           |
+| **Property Name**          | **Description**                                                                                                                                           | **Property Type** |
+| -------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------- |
+| userId                     | Chosen user identifier, defaulting to Shopify Customer ID                                                                                                 | Double            |
+| createdAt                  | Date customer record was created                                                                                                                          | Date              |
+| customerLifetimeValue      | Total spend of customer on the Shopify store                                                                                                              | Double            |
+| default_address.street     | The customer's default street address                                                                                                                     | String            |
+| default.address.postalCode | The customer's ZIP / post code                                                                                                                            | String            |
+| default_address.state      | The customer's state address                                                                                                                              | String            |
+| default_address.country    | The customer's country                                                                                                                                    | String            |
+| description                | Customer notes                                                                                                                                            | String            |
+| email                      | Customer's email address                                                                                                                                  | String            |
+| email_consent_state        | If the user has consented to email marketing (mapping to [EmailMarketingState](https://shopify.dev/docs/api/customer/unstable/enums/EmailMarketingState)) | String, Null      |
+| email_opt_in_level         | Level of user's opt in email marketing (mapping to [MarketingOptInLevel](https://shopify.dev/docs/api/customer/unstable/enums/MarketingOptInLevel))       | String, Null      |
+| firstName                  | Customer's first name                                                                                                                                     | String            |
+| lastName                   | Customer's last name                                                                                                                                      | String            |
+| phone                      | Customer's phone number                                                                                                                                   | String            |
+| purchaseCount              | Number of orders by this customer                                                                                                                         | Integer           |
+| sms_consent_state          | If the user has consented to SMS marketing (mapping to [SmsMarketingState](https://shopify.dev/docs/api/customer/unstable/enums/SmsMarketingState))       | String, Null      |
+| sms_opt_in_level           | Level of user's opt in to SMS marketing (mapping to [MarketingOptInLevel](https://shopify.dev/docs/api/customer/unstable/enums/MarketingOptInLevel))      | String, Null      |
+| state                      | Shopify customer state - enabled, disabled, invited to create an account or customer declined                                                             | String            |
+| tags                       | Custom tags applied to the customer                                                                                                                       | String            |
+| verified_email             | Whether the customer has verified their email                                                                                                             | Boolean           |
 
 ## Support for Google Analytics destination
 
@@ -216,8 +216,8 @@ Each item in the `products` array, or Product Viewed and Product Added events, w
 
 | **Property**         | **Description**                                                    | **Property Type** |
 | -------------------- | ------------------------------------------------------------------ | ----------------- |
-| `brand`              | The brand of the product (Shopify vendor)                          | String            |
-| `category`           | The category of the product (defaults to all)                      | String            |
+| `brand`              | The brand of the product (Shopify `vendor`)                        | String            |
+| `category`           | The category of the product (defaults to `all`)                    | String            |
 | `compare_at_price`   | The product price before any discount                              | String            |
 | `coupon`             | Coupon code associated with the product                            | String            |
 | `image_url`          | The URL of the first product image                                 | String            |
