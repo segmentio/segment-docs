@@ -12,18 +12,18 @@ This page walks you through the process of setting up mobile push notifications 
 
 You'll set up push notifications in four steps:
 
-1. [Set up analytics for push notifications](#1-set-up-analytics-for-push-notifications)
-2. [Add the Engage SDK plugin](#2-add-the-engage-sdk-plugin)
-3. [Configure push credentials](#3-configure-push-credentials)
-4. [Configure push notifications in Engage](#4-configure-push-notifications-in-engage)
+1. [Set up analytics for push notifications](#1-set-up-analytics-for-push-notifications).
+2. [Add the Engage SDK plugin](#2-add-the-engage-sdk-plugin).
+3. [Configure push credentials](#3-configure-push-credentials).
+4. [Configure push notifications in Engage](#4-configure-push-notifications-in-engage).
 
 ## 1. Set up analytics for push notifications
 
-Before you can send push notifications, you'll need to set up analytics to track user interactions. In this step, you'll integrate Segment's mobile SDK into your app.
+Before you can send push notifications, you'll need to set up analytics. In this step, you'll integrate Segment's mobile SDK into your app.
 
 ### Add the Segment base SDK
 
-This section outlines the process for adding Segment's base SDK to your app, including the Analytics Kotlin, Analytics Swift, and React Native libraries.
+This section outlines the process for adding Segment's base SDK to your app, including the Analytics Kotlin, Analytics-Swift, and React Native libraries.
 
 #### Kotlin
 
@@ -64,7 +64,7 @@ Follow these steps to integrate the React Native library:
 3. Use yarn or npm to install `@segment/analytics-react-native`, `@segment/sovran-react-native` and `react-native-get-random-values`.
 4. Initialize and configure the Analytics React Native client.
 
-For detailed instructions on integrating Analytics for React Native, follow the steps in the [Analytics for React Native started section](/docs/connections/sources/catalog/libraries/mobile/react-native#getting-started).
+For detailed instructions on integrating Analytics for React Native, follow the steps in the [Analytics for React Native getting started section](/docs/connections/sources/catalog/libraries/mobile/react-native#getting-started). 
 
 ## 2. Add the Engage SDK Plugin
 
@@ -93,7 +93,7 @@ In this step, you'll configure your iOS and Android push credentials for use wit
 
 Follow the steps in Twilio's [How to Configure iOS Push Notifications documentation](https://www.twilio.com/docs/notify/configure-ios-push-notifications){:target="_blank"}.
 
-### Configure Android push notifications
+### Configure Android push notifications 
 
 Follow the steps in Twilio's [Configuring Android Push Notifications](https://www.twilio.com/docs/notify/configure-android-push-notifications){:target="_blank"}.
 
@@ -101,7 +101,7 @@ During Step 5, [Upload your API Key to Twilio](https://www.twilio.com/docs/notif
 
 1. In the Firebase console, click the **Cloud Messaging** tab.
 2. Select the three dots menu next to **Cloud Messaging API (Legacy) Disabled**, then select **Manage API in Google Cloud Console**. A new window opens.
-3. In the new Cloud Messaging window, select **Enable**
+3. In the new Cloud Messaging window, select **Enable**.
 4. Return to the Firebase Cloud Messaging tab and refresh the page.
 5. Cloud Messaging API (Legacy) is now enabled. Copy the server key; you'll need it later.
 
