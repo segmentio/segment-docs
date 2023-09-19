@@ -104,7 +104,7 @@ ad content based on the user's geolocation, for example:
 
 - Promote OTC medicines to allergy sufferers
 
-The risk levels below are recommended by NAB to understand the risks
+NAB recommends the risk levels below to understand the risks
 they are exposed to, and it helps them take preventative measures to
 reduce their exposure to pollen. Ambee uses the NAB-compliant index to
 provide accurate insights. If you are subscribed to **pollen**, you can
