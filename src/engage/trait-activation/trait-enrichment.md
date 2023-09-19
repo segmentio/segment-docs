@@ -4,16 +4,15 @@ beta: true
 plan: engage-foundations
 ---
 
-Use Trait Enrichment to access Segment profile traits when you sync Audiences to Destinations. With Trait Enrichment, you can use custom, SQL, computed, and predictive traits to enrich the data you map to your destinations. 
+Use Trait Enrichment to access Segment profile traits when you sync Audiences and Journeys to Destinations. With Trait Enrichment, you can use custom, SQL, computed, and predictive traits to enrich the data you map to your destinations. 
 
+> success "Trait Activation setup"
+> Visit the Trait Activation [setup doc](/docs/engage/trait-activation/trait-activation-setup/) for supported destinations and more on how to get started with Trait Activation.
 
 > info ""
 > The setup steps you'll use for Trait Enrichment depend on the type of Destination [you've connected](/docs/engage/trait-activation/trait-activation-setup/). 
 > - For Iterable, Facebook Custom Audiences, Zendesk, and Google Adwords, use [set up Trait Enrichment](#set-up-trait-enrichment). 
 > - If you're using SendGrid, Braze, or Salesforce Actions, use the [Destination Actions setup steps](#destination-actions-setup). 
-
-> info "Trait Enrichment in beta"
-> Trait Enrichment is in beta, and Segment is actively working on this feature. Some functionality may change before it becomes generally available. [Contact Segment](https://segment.com/help/contact/){:target="_blank"} with any feedback or questions.
 
 > warning ""
 > You must have Engage Foundations to use Trait Enrichment.
@@ -93,10 +92,7 @@ If you're using [Destination Actions](/docs/connections/destinations/actions/), 
 
 1. Navigate to **Engage > Engage settings**. 
 2. Select the Destinations tab, then click **+ Add Destination**. Search for either Braze Cloud Mode (Actions), Salesforce (Actions), or SendGrid Marketing Campaigns. 
-3. Enter your destination credentials:
-- **Braze**: Input the API Key and REST Endpoint. Use the toggle to enable the destination, and click **Save**. 
-- **Salesforce (Actions)**: Navigate through the OAuth flow. Use the toggle to enable the destination, and click **Save**. 
-- **SendGrid Marketing Campaigns**: Input the API Key. Use the toggle to enable the destination, and click **Save**.
+3. Enter your destination credentials.
 4. Navigate to **Engage > Audiences**, and click **+ Create**. 
 5. From the Select Destinations screen in the Audience builder, select your destination. 
 6. Confirm that "Send Identify" is toggled on. Next, select **Customized Setup**.
@@ -119,6 +115,15 @@ After you add traits, configure how your selected traits will map to your Destin
 - To update a trait field mapping, click on a field, and in the dropdown search bar enter `traits.` followed by your trait. For example, `traits.email`. Then, click **Use as an event variable**.
 4. Click **Save** and navigate back to Engage to finish building your Audience. 
 
+
+## Use Trait Enrichment with Journeys
+
+You can also use Trait Enrichment with [Journeys](/docs/engage/journeys/). 
+
+As you're creating or editing your Journey, set up Trait Enrichment with any of the [supported destinations](/docs/engage/trait-activation/trait-activation-setup/).
+
+1. From a Journeys step, select your destination to customize event settings. 
+2. On the Connection Settings tab, select **Customized Setup**  and use the [steps above](#customized-setup) to customize the way data is sent to your destination by creating identifier and trait mappings. 
 
 ## Best practices
 
