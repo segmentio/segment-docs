@@ -5,11 +5,13 @@ redirect_from:
   - '/connections/warehouses/catalog/snowflake/'
 ---
 
+{% include content/warehouse-ip.html %}
+
 [Snowflake](https://docs.snowflake.net/manuals/index.html) is a data warehouse built for the cloud. Snowflake delivers performance, simplicity, concurrency and affordability.
 
 ## Getting Started
 
-There are six steps to get started using Snowflake with Segment. Make sure that you are running the commands in each step while logged in as an `ACCOUNTADMIN`, or an account that has `MANAGE GRANTS`. While we are using predefined user (`SEGMENT_USER`), role (`SEGMENT`), warehouse (`SEGMENT_WAREHOUSE`) and database (`SEGMENT_EVENTS`) names, you can use any names you like.
+There are six steps to get started using Snowflake with Segment. Make sure that you are running the commands in each step while logged in as an `ACCOUNTADMIN`, or an account that has `MANAGE GRANTS`. While Segment uses predefined user (`SEGMENT_USER`), role (`SEGMENT`), warehouse (`SEGMENT_WAREHOUSE`) and database (`SEGMENT_EVENTS`) names, you can use any names you like.
 
 1. Create Virtual Warehouse
 2. Create Database
@@ -20,9 +22,7 @@ There are six steps to get started using Snowflake with Segment. Make sure that 
 
 ### Create Virtual Warehouse
 
-The Segment Snowflake destination requires a Snowflake [virtual warehouse](https://docs.snowflake.net/manuals/user-guide/warehouses.html) to load data in to. To avoid conflicts with other regular operations in your cluster, we recommend creating a new warehouse just for Segment loads, but this is not mandatory. An X-Small warehouse works for most customers when starting.
-
-![](images/create_virtual_warehouse.png)
+The Segment Snowflake destination requires a Snowflake [virtual warehouse](https://docs.snowflake.net/manuals/user-guide/warehouses.html){:target="_blank"} to load data in to. To avoid conflicts with other regular operations in your cluster, Segment recommends that you create a new warehouse just for Segment loads, but this is not mandatory. An X-Small warehouse works for most customers when starting.
 
 ```sql
 CREATE WAREHOUSE "SEGMENT_WAREHOUSE"
@@ -38,8 +38,6 @@ Make sure `AUTO_SUSPEND` is set to ~10 minutes in the UI (or 600 if using SQL) a
 
 The Segment Snowflake destination creates its own schemas and tables, so it's recommended to create a new database for this purpose to avoid name conflicts with existing data.
 
-![](images/create_database.png)
-
 ```sql
 CREATE DATABASE "SEGMENT_EVENTS";
 ```
@@ -48,7 +46,7 @@ CREATE DATABASE "SEGMENT_EVENTS";
 
 You need to run these commands rather than creating a role with the "Create Role" dialog in the UI.
 
-This role will be attached to Segment's user and it gives just enough permissions for loading data in your database. We recommend not reusing this role for other operations.
+This role will be attached to Segment's user and it gives just enough permissions for loading data in your database. Segment recommends that you not reuse this role for other operations.
 
 1. Click on to Worksheets;
 2. Select SEGMENT_EVENTS under database objects
@@ -74,12 +72,6 @@ GRANT CREATE SCHEMA ON DATABASE "SEGMENT_EVENTS" TO ROLE "SEGMENT";
 
 Finally, you need to create the user that will be connected to Segment. Be sure to use a strong, unique password.
 
-![](images/create_user_1.png)
-
-![](images/create_user_2.png)
-
-![](images/create_user_3.png)
-
 ```sql
 CREATE USER "SEGMENT_USER"
   MUST_CHANGE_PASSWORD = FALSE
@@ -92,19 +84,22 @@ GRANT ROLE "SEGMENT" TO USER "SEGMENT_USER";
 
 Before you continue, test and validate the new user and credentials. When you can run the following commands successfully, you can connect Snowflake to Segment.
 
-We use [snowsql](https://docs.snowflake.net/manuals/user-guide/snowsql.html) to run these verification steps.
+Segment uses [snowsql](https://docs.snowflake.net/manuals/user-guide/snowsql.html){:target="_blank"} to run these verification steps.
 To install and verify your accounts:
 
-1. Download [snowsql](https://docs.snowflake.net/manuals/user-guide/snowsql.html);
-
-2. Open the Installer and follow instructions;
+1. Download [snowsql](https://docs.snowflake.net/manuals/user-guide/snowsql.html){:target="_blank"}
+2. Open the Installer and follow instructions
 3. Once the installation is complete, run the following command, replacing "account" and "user" with your Snowflake Account and username:
 
 ```
 snowsql -a <account>  -u <user>
 ```
 
-For accounts outside the US, the account ID includes the region. You can also find part of your account name by running the following query on your worksheet in Snowflake:
+For accounts outside the US, the account ID includes the region. You can find your account name from the browser address string.
+
+If your web address is `https://myaccountname.snowflakecomputing.com/console#/internal/worksheet`, your account name would be `myaccountname`.
+
+You can also find part of your account name by running the following query on your worksheet in Snowflake:
 
 ```
 SELECT CURRENT_ACCOUNT();
@@ -159,17 +154,15 @@ After creating a Snowflake warehouse, the next step is to connect Segment.
 3. Add your credentials as follows:
 - User - The user name (as created above).
 - Password - The password for the user.
-- Account - The account id of your cluster, not the url (e.g. url: `my-business.snowflakecomputing.com`, account-id: `my-business`. **Note:** If you are using Snowflake on AWS, the account id includes the region, for example your url might look like: `my-business.us-east-1.snowflakecomputing.com/` and your  accound-id would be: `my-business.us-east-1`)
+- Account - The account id of your cluster, not the url (for example, url: `my-business.snowflakecomputing.com`, account-id: `my-business`. **Note:** If you are using Snowflake on AWS, the account id includes the region, for example your url might look like: `my-business.us-east-1.snowflakecomputing.com/` and your  accound-id would be: `my-business.us-east-1`)
 - Database - The database name (as created above).
 - Warehouse - The warehouse name (as created above).
 
-![](images/connect_snowflake.png)
-
 ## Security
 
-### Whitelisting IPs
+### Allowlisting IPs
 
-If you create a network policy with Snowflake, add the following IP address to the "Allowed IP Addresses" list: `52.25.130.38/32`
+If you create a network policy with Snowflake, add the following IP addresses to the "Allowed IP Addresses" list: `52.25.130.38/32`, `34.223.203.0/28`
 
 ### Multi-Factor Authentication (MFA) & SSO
 
@@ -181,15 +174,14 @@ At this time, the Segment Snowflake destination is not compatible with Snowflake
 
 Set `AUTO_SUSPEND` to ~10 minutes in the UI (or 600 if using SQL) to avoid credit consumption by the Segment syncing process.
 
-![](images/auto_suspend.png)
 
 ### Auto Resume
 
-If you enable the `AUTO_SUSPEND` feature, we recommend that you also enable `AUTO-RESUME`. This will ensure that your Snowflake warehouse automatically resumes when Segment loads data. Otherwise, Segment will not be able to load data unless you [manually resume your Snowflake warehouse](https://docs.snowflake.net/manuals/user-guide/warehouses-considerations.html#automating-warehouse-resumption).
+If you enable the `AUTO_SUSPEND` feature, Segment recommends that you also enable `AUTO-RESUME`. This will ensure that your Snowflake warehouse automatically resumes when Segment loads data. Otherwise, Segment will not be able to load data unless you [manually resume your Snowflake warehouse](https://docs.snowflake.net/manuals/user-guide/warehouses-considerations.html#automating-warehouse-resumption){:target="_blank"}.
 
 ### Unique Warehouse, Database, and Role
 
-We strongly recommend creating a unique Warehouse, Database and Role for the Segment Snowflake connection to your Snowflake instance.
+Segment recommends creating a unique Warehouse, Database and Role for the Segment Snowflake connection to your Snowflake instance.
 
 ## Troubleshooting
 
@@ -220,7 +212,7 @@ Most customers have the best luck starting with a X-Small instance.
 A `rollback` is issued at the end of each session to make sure there's no "in-flight" processes hanging out that could block other processes later.
 
 ### Does Segment use transactions for loading data?
-We don't open transactions explicitly because that would lock resources. However, if autocommit is enabled, each statement functions as it's own transaction, and a silent commit is issued after each.
+Segment doesn't open transactions explicitly because that would lock resources. However, if autocommit is enabled, each statement functions as it's own transaction, and a silent commit is issued after each.
 
 ### What privileges do I need to grant?
 You shouldn't need to grant any additional privileges. However, you may need to confirm that the USAGE privilege on those schemas is granted to the same role granted to the user connecting to Snowflake through data bricks.

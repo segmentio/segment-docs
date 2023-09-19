@@ -2,7 +2,11 @@
 title: Salesforce Pardot Destination
 strat: salesforce
 id: 54521fd925e721e32a72eee1
+private: true
+maintenance: true
+actions-slug: actions-pardot
 ---
+
 ## Getting Started
 
 When you enable Pardot in the Segment web app, your changes appear in the Segment CDN in about 45 minutes, and then Analytics.js starts asynchronously loading Pardot's javascript onto your page. This means you should remove Pardot's snippet from your page. Pardot automatically collects anonymous visitor data data on your site. Pardot is supported on the client-side and server-side.
@@ -18,7 +22,7 @@ If you don't have a Salesforce account, contact your Salesforce administrator. T
 To reconnect Pardot to Segment using SSO authentication:
 1. In the Segment app, click **Connections** on the left, then click **Destinations**. Select your Pardot destination.
 2. On your Pardot settings page, click **Connect to Pardot**, and follow the steps to connect using OAuth.
-   ![](images/connect-sso.png)
+   ![A screenshot of the Pardot settings page in the Segment app.](images/connect-sso.png)
 
 3. On the next screen, you are prompted to authenticate using your Salesforce username and password.
    If you don't have a Salesforce account, contact your Salesforce administrator. They can grant you a Salesforce Identity License, which allows you to use Salesforce for SSO purposes without provisioning a full Salesforce account.

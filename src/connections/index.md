@@ -4,15 +4,25 @@ title: Connections Overview
 
 Connections is Segment's core product offering: you can collect event data from your mobile apps, websites, and servers with one API, then pull in contextual data from cloud apps like your CRM, payment systems, and internal databases to build a unified picture of your customers.
 
-## What's a Source?
+## Sources
 
 {% include content/whats-a-source.md %}
 
-## What's a Destination?
+Learn more about sources from the [sources overview page](/docs/connections/sources/).
+
+
+## Destinations
 
 {% include content/whats-a-destination.md %}
 
-## What information can I see on Sources and Destinations pages?
+## Warehouses
+
+{% include content/whats-a-warehouse.md %}
+
+### Reverse ETL
+With [Reverse ETL](/docs/connections/reverse-etl/), your data warehouse acts as your source, enabling you to send data from your warehouse to your destinations. 
+
+## Information on sources and destinations pages
 
 The Sources and Destinations pages allow each user to decide what information appears in their personal view for each page.
 
@@ -38,8 +48,13 @@ On the Destinations page, you can choose among the following properties:
 
 You can then sort or filter each column to just the values you care about, by clicking on the arrow next to each displayed column.
 
+## FAQs
+
+### My source was disabled and it wasn't done by anyone in my workspace
+
+Segment disables sources that don't have enabled destinations after 14 days, and emails you before disabling any sources. Disabling these sources helps maintain a clean workspace.
+
+Segment understands there maybe cases to keep a source active. If you'd like to add your source(s) to an exception list, you can do so by filling out this [Airtable form](https://airtable.com/shr7V9LFDZh31cYWW){:target="_blank"}.
 
 
-## What is a Warehouse?
 
-{% include content/whats-a-warehouse.md %}

@@ -9,7 +9,7 @@ Once the Segment library is integrated, toggle CleverTap on in your Segment dest
 
 You can integrate CleverTap using a server-side or mobile destination (iOS or Android). If you are interested in using CleverTap's push notifications or in-app notifications products, you should use the mobile destinations.
 
-All server-side destination requests requires both the Segment Anonymous ID or a userId in the payload. This is a requirement from CleverTap.
+All server-side destination requests require both the Segment `anonymousId` and `userId` in the payload. This is a requirement from CleverTap. CleverTap maintains the server-side integration. For any issues with the server-side integration, [contact the CleverTap Support team](https://help.clevertap.com/hc/en-us/requests/new){:target="_blank"}.
 
 CleverTap supports the `identify`, `track`, `page` (server-side only), and `screen` (iOS and server-side only) methods.
 
@@ -26,6 +26,18 @@ When you identify a user, Segment passes that user's information to CleverTap wi
 - `email` maps to `Email`
 
 All other traits will be sent to CleverTap as custom attributes. The default logic will lower case and snake_case any user traits - custom or special - passed to CleverTap.
+
+
+> info ""
+> In cloud mode, CleverTap uses Segment anonymous ID as the CleverTap ID.
+> In device mode, CleverTap ignores the anonymous ID and CleverTap injects its own ID.
+
+## Alias
+
+> warning ""
+> Alias is supported by Device-mode Web connections
+
+When you send an Alias call to CleverTap, CleverTap updates the user's profile with the contents of the Alias call.
 
 ## Track
 
@@ -164,3 +176,10 @@ CleverTap has created a sample iOS application that integrates CleverTap using S
 If you chose not to bundle the CleverTap Mobile SDK, then you will have to implement your own Push Message processors (and you won't have access to CleverTap's In-App feature).
 
 If you decide to implement your own Push Message processors, then you can pass push tokens to CleverTap using the server-side destination. You can do this by sending it inside context.device.token.
+
+
+## Troubleshooting
+
+### Verbose Logging
+
+When using Web Device-mode, you can enable verbose logging of all communication with CleverTap servers by setting the `theWZRK_D` variable in `sessionStorage`. In the developer console of your browser, enter `sessionStorage['WZRK_D'] = '';`, you'll see error messages and warnings logged. See the [CleverTap Web Quickstart Guide](https://developer.clevertap.com/docs/web-quickstart-guide#debugging){:target="_blank"} for more details.

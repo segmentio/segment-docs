@@ -45,6 +45,7 @@ Journeys offers the following steps:
 - **Connect to existing steps**, which joins two separate branches.
 - **Send an email**, which sends a [Channels email](/docs/engage/campaigns/email-campaigns/) to a group of users
 - **Send an SMS**, which sends a [Channels SMS](/docs/engage/campaigns/sms-campaigns/) to a group of users
+- **Send a WhatsApp** (Beta), which sends a [Channels WhatsApp](/docs/engage/campaigns/whatsapp-campaigns/) to a group of users
 - **Send to Destinations**, which delivers information about the Journey to the selected Destination
 
 For more details on each available Journey step, view the [Journey step types documentation](/docs/engage/journeys/step-types).
@@ -66,12 +67,12 @@ You may find that you need to make changes to a published Journey, like adding n
 
 ### Pausing and resuming a Journey
 
-Pausing a published Journey prevents new users from joining your Journey. Users already in the Journey, however, will continue their progress.
+Pausing a published Journey prevents new users from joining your Journey. Users already in the Journey, however, will continue their progress.
 
 Follow these steps to pause a Journey:
 
-1. Select the **Journeys** tab within your Engage space.
-2. Select the **More Options** icon next to the Journey you want to pause.
+1. Select the **Journeys** tab within your Engage space.
+2. Select the **More Options** icon next to the Journey you want to pause.
 3. From the dropdown menu, select **Pause Entry**.
 4. A modal window appears. Select **Pause Entry** again to confirm.
 
@@ -80,16 +81,16 @@ Follow these steps to pause a Journey:
 
 ### Resuming a Journey
 
-You can resume new user entries to a paused Journey at any time. 
+You can resume new user entries to a paused Journey at any time. 
 
-After you resume a Journey, users who meet the Journey's entry conditions will join the Journey. New users will not enter the Journey, however, if they met its entry conditions while it was paused. 
+After you resume a Journey, users who meet the Journey's entry conditions will join the Journey. New users will not enter the Journey, however, if they met its entry conditions while it was paused. 
 
 Follow these steps to resume entry to a paused Journey:
 
-1. Select the **Journeys** tab within your Engage space.
-2. Select the **More Options** icon next to the Journey you want to resume.
+1. Select the **Journeys** tab within your Engage space.
+2. Select the **More Options** icon next to the Journey you want to resume.
 3. From the dropdown menu, select **Resume Entry**.
-4. A modal window appears. Select **Resume Entry** again to confirm.
+4. A modal window appears. Select **Resume Entry** again to confirm. After the confirmation, editing locks until the Journey Resume process completes.
 
 ### Cloning a Journey
 
@@ -104,7 +105,26 @@ Segment then creates a draft of your Journey.
 
 You can also clone a Journey from a Journey's Overview by clicking the **…** icon.
 
-## Journey re-entry
+### Archive a Journey
+
+Use the Journey archive setting when you want to end a Journey but preserve its data.
+
+No new users enter archived Journeys, and progress stops for any users already in the Journey. Archived Journeys no longer [send data to Destinations](/docs/engage/journeys/send-data/).
+
+> success "Compute credits"
+> Steps in archived Journeys don't count towards your compute credits.
+
+## Journey exits and re-entry
+
+### Journey exits
+
+You can apply exit settings to both single entry and re-entry Journeys. Users who exit a Journey leave all Journey steps and Destinations. 
+
+Configure exit settings during initial Journey setup by enabling exit settings and entering the number of days that should pass before users exit the Journey. Journeys exits users once this time passes.
+
+If you don't apply exit settings to a Journey, users will remain in the Journey indefinitely.
+
+### Journey re-entry
 
 The Journeys re-entry setting allows users to repeat Journeys they've already exited. Common use cases for Journeys re-entry include the following:
 
@@ -114,16 +134,17 @@ The Journeys re-entry setting allows users to repeat Journeys they've already ex
 
 ### Exit and re-entry times
 
-To enable re-entry, you'll need to specify two Journeys settings:
+To let users re-enter a Journey they've exited, you'll need to enable two Journeys settings:
 
 - Journeys exit time
 - Journeys re-entry time
 
-Users must first exit a Journey before re-entering. To enable re-entry, then, you'll need to specify a Journey's exit settings. You can configure exit by hour, day, or week. Journeys exits users once this time passes, allowing users to re-enter once they meet the Journey's entry conditions again.
+Journeys exits users based off of the exit time you configure. Users can re-enter the Journey once they meet the Journey's entry condition again and your defined re-entry time has passed. You can configure re-entry time by hour, day, or week. Re-entry time begins once a user exits the Journey.
 
-You'll also configure re-entry time by hour, day, or week. An exited user won't re-enter the same Journey until the re-entry time has passed. Re-entry time begins once a user exits the Journey.
+Suppose, for example, you enable re-entry for an abandoned cart campaign. You set exit to seven days and re-entry to 30 days. A user who abandons their cart will progress through the Journey and exit no later than seven days after entering. Once 30 days after exit have passed, the user can re-enter the Journey.
 
-Suppose, for example, you enable re-entry for an abandoned cart campaign. You set exit to one week and re-entry to 30 days. A user who abandons their cart will progress through the Journey and exit no later than one week after entering. Once 30 days after exit have passed, the user can re-enter the Journey.
+> info "Ad-based exit settings"
+> Exit settings you configure for the [Show an ad step](/docs/engage/journeys/step-types/#show-an-ad) don't impact other Journey steps. Users can exit an ad step but remain in the Journey.
 
 ### Setting up re-entry
 
@@ -144,7 +165,7 @@ When you've finished creating your Journey, click **Save as Draft** in the botto
 
 ### About published Journeys
 
-Keep the following considerations in mind when working with a published Journey:
+Keep the following in mind when working with a published Journey:
 
 - It may take up to three hours for Journeys to compute user counts after publication.
 - You can edit a Journey's name, description, and Destination steps.

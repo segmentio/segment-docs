@@ -12,7 +12,7 @@ This destination is maintained by Lantern. For any issues with the destination, 
 
 ## Getting Started
 
-{% include content/connection-modes.md %}
+
 
 ### Automated Setup
 1. Log into your [Lantern dashboard](https://app.lantern.so).

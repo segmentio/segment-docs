@@ -2,13 +2,18 @@
 title: Salesforce Destination
 strat: salesforce
 id: 54521fda25e721e32a72eeef
-maintenance: true
+maintenance: false
+private: true
 ---
-
+> warning "Deprecation Notice"
+> Due to Salesforce retiring certain APIs in the summer of 2025, Segment is deprecating this destination. During the week of April 24, 2023, Segment created an instance of the [Salesforce (Actions)](/docs/connections/destinations/catalog/actions-salesforce/) destination for each version of the Salesforce classic destination in your workspace. 
+>
+> Settings will be migrated automatically, but you must take additional action to ensure the destination is properly enabled.For more information, see [Migrating from Salesforce Classic](/docs/connections/destinations/catalog/actions-salesforce/#migrate-from-salesforce-classic)
+>
+> For questions or issues, or to opt out of the automatic upgrade, contact [friends@segment.com](mailto:friends@segment.com). For more information about Salesforce's deprecation, see their [deprecation notice](https://help.salesforce.com/s/articleView?id=000389618&type=1){:target="_blank"}
 Segment's Salesforce destination allows you to create and store leads and records for other objects in Salesforce Sales Cloud.
 
-> info ""
-> Segment is aware of Salesforce's plans to enforce multi-factor authentication in 2022, and advises migrating to our new [Salesforce (Actions) destination](/docs/connections/destinations/catalog/actions-salesforce/) which supports OAuth 2.0.
+
 
 ### API Access
 
@@ -205,7 +210,7 @@ You can add whatever lookup fields you want to help Segment find the object you 
 
 ### Custom Fields Aren't Updating
 
-Make sure that the traits you're passing through match the Custom Field's API name and data type!
+Make sure that the traits you're passing through match the Custom Field's API name and data type.
 
 
 ### Password Expiration

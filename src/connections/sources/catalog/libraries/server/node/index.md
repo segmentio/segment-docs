@@ -1,53 +1,58 @@
 ---
 title: Analytics for Node.js
 redirect_from: '/connections/sources/catalog/libraries/server/node-js/'
-repo: analytics-node
+repo: analytics-next
 strat: node-js
 ---
 
-Our Node.js library lets you record analytics data from your node code. The requests hit our servers, and then we route your data to any destinations you have enabled.
+Segment's Analytics Node.js library lets you record analytics data from your node code. The requests hit Segment's servers, and then Segment routes your data to any destinations you have enabled.
 
-The [Segment Node.js library is open-source](https://github.com/segmentio/analytics-node) on GitHub.
+The [Segment Analytics Node.js Next library is open-source](https://github.com/segmentio/analytics-next/tree/master/packages/node){:target="_blank"} on GitHub.
 
-All of Segment's server-side libraries are built for high-performance, so you can use them in your web server controller code. This library uses an internal queue to make `identify` and `track` calls non-blocking and fast. It also batches messages and flushes asynchronously to our servers.
-
-Want to stay updated on releases? Subscribe to the [release feed](https://github.com/segmentio/analytics-node/releases.atom).
+All of Segment's server-side libraries are built for high-performance, so you can use them in your web server controller code. This library uses an internal queue to make `identify` and `track` calls non-blocking and fast. It also batches messages and flushes asynchronously to Segment's servers.
 
 ## Getting Started
 
-Run:
+> warning ""
+> Make sure you're using a version of Node that's 14 or higher. 
 
-```bash
-npm install --save analytics-node
-```
+1. Run the relevant command to add Segment's Node library module to your `package.json`.
 
-This will add our Node library module to your `package.json`. The module exposes an `Analytics` constructor, which you need to initialize with your Segment source's **Write Key**, like so:
+    ```bash
+    # npm
+    npm install @segment/analytics-node
+    # yarn
+    yarn add @segment/analytics-node
+    # pnpm
+    pnpm install @segment/analytics-node
+    ```
 
-```javascript
-var Analytics = require('analytics-node');
-var analytics = new Analytics('YOUR_WRITE_KEY');
-```
+2. Initialize the `Analytics` constructor the module exposes with your Segment source **Write Key**, like so:
 
-Of course, you'll want to replace `YOUR_WRITE_KEY` with your actual **Write Key** which you can find in Segment under your source settings.
+    ```javascript
+    import { Analytics } from '@segment/analytics-node'
+    // or, if you use require:
+    const { Analytics } = require('@segment/analytics-node')
 
-This will create an instance of `Analytics` that you can use to send data to Segment for your project. The default initialization settings are production-ready and queue 20 messages before sending any requests. In development you might want to use [development settings](/docs/connections/sources/catalog/libraries/server/node/#development).
+    // instantiation
+    const analytics = new Analytics({ writeKey: '<YOUR_WRITE_KEY>' })
+    ```
 
-### Regional configuration
-For Business plans with access to [Regional Segment](/docs/guides/regional-segment), you can use the `host` configuration parameter to send data to the desired region:
-1. Oregon (Default) — `api.segment.io/v1`
-2. Dublin — `events.eu1.segmentapis.com`
+  Be sure to replace `YOUR_WRITE_KEY` with your actual **Write Key** which you can find in Segment by navigating to: **Connections > Sources** and selecting your source and going to the **Settings** tab.
 
-An example of setting the host to the EU endpoint using the Node library would be:
-```javascript
-var analytics = new Analytics('YOUR_WRITE_KEY', {
-    host: "https://events.eu1.segmentapis.com"
-  });
-```
+  This creates an instance of `Analytics` that you can use to send data to Segment for your project. The default initialization settings are production-ready and queue 20 messages before sending any requests. 
 
-## Identify
 
-> note ""
-> **Good to know**: For any of the different methods described on this page, you can replace the properties and traits in the code samples with variables that represent the data collected.
+## Basic tracking methods
+The basic tracking methods below serve as the building blocks of your Segment tracking. They include [Identify](#identify), [Track](#track), [Page](#page), [Group](#group), and [Alias](#alias).
+
+These methods correspond with those used in the [Segment Spec](/docs/connections/spec/). The documentation on this page explains how to use these methods in Analytics Node.js Next.
+
+
+### Identify
+
+> info "Good to know"
+> For any of the different methods described on this page, you can replace the properties and traits in the code samples with variables that represent the data collected.
 
 `identify` lets you tie a user to their actions and record traits about them.  It includes a unique User ID and/or anonymous ID, and any optional traits you know about them.
 
@@ -83,32 +88,17 @@ The call above identifies Michael by his unique User ID (the one you know him by
 
 The `identify` call has the following fields:
 
-<table class="api-table">
-  <tr>
-    <td>`userId` _String, optional_</td>
-    <td>The ID for this user in your database. _Note: at least one of `userId` or `anonymousId` must be included in any identify call._</td>
-  </tr>
-  <tr>
-    <td>`anonymousId` _String, optional_</td>
-    <td>An ID associated with the user when you don't know who they are (for example, [the anonymousId generated by `analytics.js`](/docs/connections/sources/catalog/libraries/website/javascript/#anonymous-id)). _Note: You must include at least one of `userId` or `anonymousId` in all identify calls._</td>
-  </tr>
-  <tr>
-    <td>`traits` _Object, optional_</td>
-    <td>A dictionary of [traits](/docs/connections/spec/identify#traits) you know about the user. Things like: `email`, `name` or `friends`.</td>
-  </tr>
-  <tr>
-    <td>`timestamp` _Date, optional_</td>
-    <td>A JavaScript date object representing when the identify took place. If the identify just happened, leave it out and we'll use the server's time. If you're importing data from the past make sure you to send a `timestamp`.</td>
-  </tr>
-  <tr>
-    <td>`context` _Object, optional_</td>
-    <td>A dictionary of extra [context](https://segment.com/docs/connections/spec/common/#context) to attach to the call. _Note: `context` differs from `traits` because it is not attributes of the user itself._</td>
-  </tr>
-</table>
+Field | Details
+----- | -------
+`userId` _String, optional_ | The ID for this user in your database. _Note: at least one of `userId` or `anonymousId` must be included in any identify call._
+`anonymousId` _String, optional_ | An ID associated with the user when you don't know who they are (for example, [the anonymousId generated by `analytics.js`](/docs/connections/sources/catalog/libraries/website/javascript/#anonymous-id)). _Note: You must include at least one of `userId` or `anonymousId` in all identify calls._
+`traits` _Object, optional_ | A dictionary of [traits](/docs/connections/spec/identify#traits) you know about the user. Things like: `email`, `name` or `friends`.
+`timestamp` _Date, optional_ | A JavaScript date object representing when the identify took place. If the identify just happened, leave it out as Segment uses the server's time. If you're importing data from the past make sure to send a `timestamp`.
+`context` _Object, optional_ | A dictionary of extra [context](https://segment.com/docs/connections/spec/common/#context) to attach to the call. _Note: `context` differs from `traits` because it is not attributes of the user itself._
 
-Find details on the **identify method payload** in our [Spec](/docs/connections/spec/identify/).
+Find details on the **identify method payload** in Segment's [Spec](/docs/connections/spec/identify/).
 
-## Track
+### Track
 
 `track` lets you record the actions your users perform. Every action triggers what we call an "event", which can also have associated properties.
 
@@ -148,36 +138,18 @@ This example `track` call tells us that your user just triggered the **Item Purc
 
 The `track` call has the following fields:
 
-<table>
-  <tr>
-    <td>`userId` _String, optional_</td>
-    <td>The ID for this user in your database. _Note: at least one of `userId` or `anonymousId` must be included in any track call._</td>
-  </tr>
-  <tr>
-    <td>`anonymousId` _String, optional_</td>
-    <td>An ID associated with the user when you don't know who they are (for example, [the anonymousId generated by `analytics.js`](/docs/connections/sources/catalog/libraries/website/javascript/#anonymous-id)). _Note: You must include at least one of `userId` or `anonymousId` in all track calls._</td>
-  </tr>
-  <tr>
-    <td>`event` _String_</td>
-    <td>The name of the event you're tracking. We recommend human-readable names like `Song Played` or `Status Updated`.</td>
-  </tr>
-  <tr>
-    <td>`properties` _Object, optional_</td>
-    <td>A dictionary of properties for the event. If the event was `Product Added`, it might have properties like `price` or `product`.</td>
-  </tr>
-  <tr>
-    <td>`timestamp` _Date, optional_</td>
-    <td>A JavaScript date object representing when the track took place. If the track just happened, leave it out and we'll use the server's time. If you're importing data from the past make sure you to send a `timestamp`.</td>
-  </tr>
-  <tr>
-    <td>`context` _Object, optional_</td>
-    <td>A dictionary of extra [context](https://segment.com/docs/connections/spec/common/#context) to attach to the call. _Note: `context` differs from `traits` because it is not attributes of the user itself._</td>
-  </tr>
-</table>
+Field | Details 
+----- | --------
+`userId` _String, optional_ | The ID for this user in your database. _Note: at least one of `userId` or `anonymousId` must be included in any track call.
+`anonymousId` _String, optional_ | An ID associated with the user when you don't know who they are (for example, [the anonymousId generated by `analytics.js`](/docs/connections/sources/catalog/libraries/website/javascript/#anonymous-id)). _Note: You must include at least one of `userId` or `anonymousId` in all track calls._
+`event` _String_ | The name of the event you're tracking. We recommend human-readable names like `Song Played` or `Status Updated`.
+`properties` _Object, optional_ | A dictionary of properties for the event. If the event was `Product Added`, it might have properties like `price` or `product`.
+`timestamp` _Date, optional_ | A JavaScript date object representing when the track took place. If the track just happened, leave it out and we'll use the server's time. If you're importing data from the past make sure you to send a `timestamp`.
+`context` _Object, optional_ | A dictionary of extra [context](https://segment.com/docs/connections/spec/common/#context) to attach to the call. _Note: `context` differs from `traits` because it is not attributes of the user itself._
 
-Find details on **best practices in event naming** as well as the **`track` method payload** in our [Spec](/docs/connections/spec/track/).
+Find details on **best practices in event naming** as well as the **`track` method payload** in the Segment [Spec](/docs/connections/spec/track/).
 
-## Page
+### Page
 
 The [`page`](/docs/connections/spec/page/) method lets you record page views on your website, along with optional extra information about the page being viewed.
 
@@ -201,40 +173,19 @@ analytics.page({
 
 The `page` call has the following fields:
 
-<table>
-  <tr>
-    <td>`userId` _String, optional_</td>
-    <td>The ID for this user in your database. _Note: at least one of `userId` or `anonymousId` must be included in any page call._</td>
-  </tr>
-  <tr>
-    <td>`anonymousId` _String, optional_</td>
-    <td>An ID associated with the user when you don't know who they are (eg., [the anonymousId generated by `analytics.js`](/docs/connections/sources/catalog/libraries/website/javascript/#anonymous-id)). _Note: at least one of `userId` or `anonymousId` must be included in any page call._</td>
-  </tr>
-  <tr>
-    <td>`category` _String, optional_</td>
-    <td>The category of the page. Useful for things like ecommerce where many pages often live under a larger category.</td>
-  </tr>
-  <tr>
-    <td>`name` _String, optional_</td>
-    <td>The name of the page, for example **Signup** or **Home**.</td>
-  </tr>
-  <tr>
-    <td>`properties` _Object, optional_</td>
-    <td>A dictionary of properties of the page. A few properties specially recognized and automatically translated: `url`, `title`, `referrer` and `path`, but you can add your own too!</td>
-  </tr>
-  <tr>
-    <td>`timestamp` _Date, optional_</td>
-    <td>A JavaScript date object representing when the track took place. If the track just happened, leave it out and we'll use the server's time. If you're importing data from the past make sure you to send a `timestamp`.</td>
-  </tr>
-  <tr>
-    <td>`context` _Object, optional_</td>
-    <td>A dictionary of extra [context](https://segment.com/docs/connections/spec/common/#context) to attach to the call. _Note: `context` differs from `traits` because it is not attributes of the user itself._</td>
-  </tr>
-</table>
+Field | Details 
+----- | --------
+`userId` _String, optional_ | The ID for this user in your database. _Note: at least one of `userId` or `anonymousId` must be included in any page call.
+`anonymousId` _String, optional_ | An ID associated with the user when you don't know who they are (eg., [the anonymousId generated by `analytics.js`](/docs/connections/sources/catalog/libraries/website/javascript/#anonymous-id)). _Note: at least one of `userId` or `anonymousId` must be included in any page call._
+`category` _String, optional_ | The category of the page. Useful for things like ecommerce where many pages often live under a larger category.
+`name` _String, optional_ | The name of the page, for example **Signup** or **Home**.
+`properties` _Object, optional_ | A dictionary of properties of the page. A few properties specially recognized and automatically translated: `url`, `title`, `referrer` and `path`, but you can add your own too.
+`timestamp` _Date, optional_ | A JavaScript date object representing when the track took place. If the track just happened, leave it out and we'll use the server's time. If you're importing data from the past make sure you to send a `timestamp`.
+`context` _Object, optional_ | A dictionary of extra [context](https://segment.com/docs/connections/spec/common/#context) to attach to the call. _Note: `context` differs from `traits` because it is not attributes of the user itself._
 
-Find details on the **`page` payload** in our [Spec](/docs/connections/spec/page/).
+Find details on the **`page` payload** in the Segment [Spec](/docs/connections/spec/page/).
 
-## Group
+### Group
 
 `group` lets you associate an [identified user](/docs/connections/sources/catalog/libraries/server/node/#identify) with a group. A group could be a company, organization, account, project or team! It also lets you record custom traits about the group, like industry or number of employees.
 
@@ -255,40 +206,19 @@ analytics.group({
 
 The `group` call has the following fields:
 
-<table class="api-table">
-  <tr>
-    <td>`userId` _String, optional_</td>
-    <td>The ID for this user in your database. _Note: at least one of `userId` or `anonymousId` must be included in any group call._</td>
-  </tr>
-  <tr>
-    <td>`anonymousId` _String, optional_</td>
-    <td>An ID associated with the user when you don't know who they are (eg., [the anonymousId generated by `analytics.js`](/docs/connections/sources/catalog/libraries/website/javascript/#anonymous-id)). _Note: at least one of `userId` or `anonymousId` must be included in any group call._</td>
-  </tr>
-  <tr>
-    <td>`groupId` _string</td>
-    <td>The ID of the group.</td>
-  </tr>
-  <tr>
-    <td>`traits` _dict, optional_</td>
-    <td>A dict of traits you know about the group. For a company, they might be things like `name`, `address`, or `phone`.</td>
-  </tr>
-  <tr>
-    <td>`context` _dict, optional_</td>
-    <td>A dict containing any context about the request. To see the full reference of supported keys, check them out in the [context reference](/docs/connections/spec/common/#context)</td>
-  </tr>
-  <tr>
-    <td>`timestamp` _datetime, optional_</td>
-    <td>A `datetime` object representing when the group took place. If the group just happened, leave it out and we'll use the server's time. If you're importing data from the past make sure you send `timestamp`.</td>
-  </tr>
-  <tr>
-    <td>`integrations` _dict, optional_</td>
-    <td>A dictionary of destinations to enable or disable</td>
-  </tr>
-</table>
+Field | Details
+----- | --------
+`userId` _String, optional_ | The ID for this user in your database. _Note: at least one of `userId` or `anonymousId` must be included in any group call.
+`anonymousId` _String, optional_ | An ID associated with the user when you don't know who they are (eg., [the anonymousId generated by `analytics.js`](/docs/connections/sources/catalog/libraries/website/javascript/#anonymous-id)). _Note: at least one of `userId` or `anonymousId` must be included in any group call._
+`groupId` _string | The ID of the group.
+`traits` _dict, optional_ | A dict of traits you know about the group. For a company, they might be things like `name`, `address`, or `phone`. [Learn more about traits](/docs/connections/spec/group/#traits).
+`context` _dict, optional_ | A dict containing any context about the request. To see the full reference of supported keys, check them out in the [context reference](/docs/connections/spec/common/#context)
+`timestamp` _datetime, optional_ | A `datetime` object representing when the group took place. If the group just happened, leave it out and we'll use the server's time. If you're importing data from the past make sure you send `timestamp`.
+`integrations` _dict, optional_ | A dictionary of destinations to enable or disable.
 
-Find more details about `group`, including the **`group` payload**, in our [Spec](/docs/connections/spec/group/).
+Find more details about `group`, including the **`group` payload**, in the Segment [Spec](/docs/connections/spec/group/).
 
-## Alias
+### Alias
 
 The `alias` call allows you to associate one identity with another. This is an advanced method and should not be widely used, but is required to manage user identities in _some_  destinations. Other destinations do not support the alias call.
 
@@ -305,18 +235,12 @@ analytics.alias({
 
 The `alias` call has the following fields:
 
-<table class="api-table">
-  <tr>
-    <td>`userId` _String_</td>
-    <td>The ID for this user in your database.</td>
-  </tr>
-  <tr>
-    <td>`previousId` _String_</td>
-    <td>The previous ID to alias from.</td>
-  </tr>
-</table>
+Field | Details 
+----- | --------
+`userId` _String_ | The ID for this user in your database.
+`previousId` _String_ | The previous ID to alias from.
 
-Here's a full example of how we might use the `alias` call:
+Here's a full example of how Segment might use the `alias` call:
 
 ```javascript
 // the anonymous user does actions ...
@@ -329,71 +253,228 @@ analytics.identify({ userId: 'identified@example.com', traits: { plan: 'Free' } 
 analytics.track({ userId: 'identified@example.com', event: 'Identified Action' })
 ```
 
-For more details about `alias`, including the **`alias` call payload**, check out our [Spec](/docs/connections/spec/alias/).
+For more details about `alias`, including the **`alias` call payload**, check out the Segment [Spec](/docs/connections/spec/alias/).
 
 ---
 
 
 ## Configuration
 
-The second argument to the `Analytics` constructor is an optional dictionary of settings to configure the module.
+The second argument to the `Analytics` constructor is an optional list of settings to configure the module.
 
 ```javascript
-var analytics = new Analytics('YOUR_WRITE_KEY', {
-  flushAt: 20,
-  flushInterval: 10000,
-  enable: false
+const analytics = new Analytics({
+    writeKey: '<MY_WRITE_KEY>',
+    host: 'https://api.segment.io',
+    path: '/v1/batch',
+    maxRetries: 3,
+    maxEventsInBatch: 15,
+    flushInterval: 10000,
+    // ... and more!
+  })
+```
+
+Setting | Details
+------- | --------
+`writeKey` _string_ | The key that corresponds to your Segment.io project
+`host` _string_ | The base URL of the API. The default is: "https://api.segment.io"
+`path` _string_ | The API path route. The default is: "/v1/batch"
+`maxRetries` _number_ | The number of times to retry flushing a batch. The default is: `3`
+`maxEventsInBatch` _number_ | The number of messages to enqueue before flushing. The default is: `15`
+`flushInterval` _number_ | The number of milliseconds to wait before flushing the queue automatically. The default is: `10000`
+`httpRequestTimeout` _number_ | The maximum number of milliseconds to wait for an http request. The default is: `10000`
+`disable` _boolean_ | Disable the analytics library for testing. The default is: `false`
+`httpClient` _HTTPClient or HTTPClientFn_ | A custom HTTP Client implementation to support alternate libraries or proxies. Defaults to global fetch or node-fetch for older versions of node. See the [Overriding the default HTTP Client](#override-the-default-http-client) section for more details.
+
+See the complete `AnalyticsSettings` interface [here](https://github.com/segmentio/analytics-next/blob/master/packages/node/src/app/settings.ts){:target="_blank"}.
+
+## Graceful shutdown
+Avoid losing events after shutting down your console. Call `.closeAndFlush()` to stop collecting new events and flush all existing events. If a callback on an event call is included, this also waits for all callbacks to be called, and any of their subsequent promises to be resolved.
+
+```javascript
+await analytics.closeAndFlush()
+// or
+await analytics.closeAndFlush({ timeout: 5000 }) // force resolve after 5000ms
+```
+
+Here's an example of how to use graceful shutdown:
+```javascript
+const app = express()
+const server = app.listen(3000)
+
+const onExit = async () => {
+  await analytics.closeAndFlush()
+  server.close(() => {
+    console.log("Gracefully closing server...")
+    process.exit()
+  })
+}
+['SIGINT', 'SIGTERM'].forEach((code) => process.on(code, onExit))
+```
+
+### Collect unflushed events 
+If you need to preserve all of your events in the instance of a forced timeout, even ones that came in after analytics.closeAndFlush() was called, you can still collect those events by using:
+
+```javascript
+const unflushedEvents = []
+
+analytics.on('call_after_close', (event) => unflushedEvents.push(events))
+await analytics.closeAndFlush()
+
+console.log(unflushedEvents) // all events that came in after closeAndFlush was called
+```
+
+## Regional configuration
+For Business plans with access to [Regional Segment](/docs/guides/regional-segment), you can use the `host` configuration parameter to send data to the desired region:
+1. Oregon (Default) — `api.segment.io/v1`
+2. Dublin — `events.eu1.segmentapis.com`
+
+An example of setting the host to the EU endpoint using the Node library is:
+```javascript
+const analytics = new Analytics({
+  ...
+  host: "https://events.eu1.segmentapis.com"
 });
 ```
 
-<table>
-  <tr>
-    <td>`flushAt` _Number_</td>
-    <td>The number of messages to enqueue before flushing.</td>
-  </tr>
-  <tr>
-    <td>`flushInterval` _Number_</td>
-    <td>The number of milliseconds to wait before flushing the queue automatically.</td>
-  </tr>
-  <tr>
-    <td>`enable` _Boolean_</td>
-    <td>Enable (default) or disable flush. Useful when writing tests and you do not want to send data to Segment Servers.</td>
-  </tr>
-</table>
+## Error handling
 
-### Error Handling
+To keep track of errors, subscribe and log all event delivery errors by running:
 
-Additionally there is an optional `errorHandler` property available to the class constructor's options.
-If unspecified, the behaviour of the library does not change.
-If specified, when an axios request fails, `errorHandler(axiosError)` will be called instead of re-throwing the axios error.
-
-Example usage:
 ```javascript
-const Analytics = require('analytics-node');
+const analytics = new Analytics({ writeKey: '<MY_WRITE_KEY>' })
 
-const client = new Analytics('write key', {
-  errorHandler: (err) => {
-    console.error('analytics-node flush failed.')
-    console.error(err)
+analytics.on('error', (err) => console.error(err))
+```
+
+
+### Event emitter interface
+The event emitter interface allows you to track events, such as `track` and `identify` calls, and it calls the function you provided with some arguments upon successful delivery. `error` emits on delivery error. 
+
+```javascript
+analytics.on('error', (err) => console.error(err))
+
+analytics.on('identify', (ctx) => console.log(ctx))
+
+analytics.on('track', (ctx) => console.log(ctx))
+```
+
+Use the emitter to log all HTTP Requests.
+
+  ```javascript
+  analytics.on('http_request', (event) => console.log(event))
+
+  // when triggered, emits an event of the shape:
+  {
+      url: 'https://api.segment.io/v1/batch',
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        ...
+      },
+      body: '...',
   }
-});
+  ```
 
-client.track({
-  event: 'event name',
-  userId: 'user id'
-});
 
+## Plugin architecture
+When you develop in [Analytics.js 2.0](/docs/connections/sources/catalog/libraries/website/javascript/), the plugins you write can improve functionality, enrich data, and control the flow and delivery of events. From modifying event payloads to changing analytics functionality, plugins help to speed up the process of getting things done.
+
+Though middlewares function the same as plugins, it's best to use plugins as they are easier to implement and are more testable.
+
+### Plugin categories
+Plugins are bound by Analytics.js 2.0 which handles operations such as observability, retries, and error handling. There are two different categories of plugins:
+* **Critical Plugins**: Analytics.js expects this plugin to be loaded before starting event delivery. Failure to load a critical plugin halts event delivery. Use this category sparingly, and only for plugins that are critical to your tracking.
+* **Non-critical Plugins**: Analytics.js can start event delivery before this plugin finishes loading. This means your plugin can fail to load independently from all other plugins. For example, every Analytics.js destination is a non-critical plugin. This makes it possible for Analytics.js to continue working if a partner destination fails to load, or if users have ad blockers turned on that are targeting specific destinations.
+
+> info ""
+> Non-critical plugins are only non-critical from a loading standpoint. For example, if the `before` plugin crashes, this can still halt the event delivery pipeline.
+
+Non-critical plugins run through a timeline that executes in order of insertion based on the entry type. Segment has these five entry types of non-critical plugins:
+
+| Type | Details
+------ | --------              
+| `before`      | Executes before event processing begins. These are plugins that run before any other plugins run. <br><br>For example, validating events before passing them along to other plugins. A failure here could halt the event pipeline. <br><br> See the example of how Analytics.js uses the [Event Validation plugin](https://github.com/segmentio/analytics-next/blob/master/packages/browser/src/plugins/validation/index.ts){:target="_blank"} to verify that every event has the correct shape. 
+| `enrichment`  | Executes as the first level of event processing. These plugins modify an event. <br><br> See the example of how Analytics.js uses the [Page Enrichment plugin](https://github.com/segmentio/analytics-next/blob/master/packages/browser/src/plugins/page-enrichment/index.ts){:target="_blank"} to enrich every event with page information. 
+| `destination` | Executes as events begin to pass off to destinations. <br><br> This doesn't modify the event outside of the specific destination, and failure doesn't halt the execution.  
+| `after`       | Executes after all event processing completes. You can use this to perform cleanup operations. <br><br>An example of this is the [Segment.io Plugin](https://github.com/segmentio/analytics-next/blob/master/packages/browser/src/plugins/segmentio/index.ts){:target="_blank"} which waits for destinations to succeed or fail so it can send it observability metrics.  
+| `utility`     | Executes once during the bootstrap, to give you an outlet to make any modifications as to how Analytics.js works internally. This allows you to augment Analytics.js functionality.                                                                                                                                                                                
+
+### Example plugins
+Here's an example of a plugin that converts all track event names to lowercase before the event goes through the rest of the pipeline:
+
+```js
+export const lowercase: Plugin = {
+  name: 'Lowercase events',
+  type: 'enrichment',
+  version: '1.0.0',
+
+  isLoaded: () => true,
+  load: () => Promise.resolve(),
+
+  track: (ctx) => {
+    ctx.updateEvent('event', ctx.event.event.toLowerCase())
+    return ctx
+  }
+}
+
+const identityStitching = () => {
+  let user
+
+  const identity = {
+    // Identifies your plugin in the Plugins stack.
+    // Access `window.analytics.queue.plugins` to see the full list of plugins
+    name: 'Identity Stitching',
+    // Defines where in the event timeline a plugin should run
+    type: 'enrichment',
+    version: '0.1.0',
+
+    // Used to signal that a plugin has been property loaded
+    isLoaded: () => user !== undefined,
+
+    // Applies the plugin code to every `identify` call in Analytics.js
+    // You can override any of the existing types in the Segment Spec.
+    async identify(ctx) {
+      // Request some extra info to enrich your `identify` events from
+      // an external API.
+      const req = await fetch(
+        `https://jsonplaceholder.typicode.com/users/${ctx.event.userId}`
+      )
+      const userReq = await req.json()
+
+      // ctx.updateEvent can be used to update deeply nested properties
+      // in your events. It's a safe way to change events as it'll
+      //  create any missing objects and properties you may require.
+      ctx.updateEvent('traits.custom', userReq)
+      user.traits(userReq)
+
+      // Every plugin must return a `ctx` object, so that the event
+      // timeline can continue processing.
+      return ctx
+    },
+  }
+
+  return identity
+}
 ```
-If this fails when flushed no exception will be thrown, instead the axios error will be logged to the console.
 
-## Development
+You can view Segment's [existing plugins](https://github.com/segmentio/analytics-next/tree/master/src/plugins){:target="_blank"} to see more examples.
 
-You can use this initialization during development to make the library flush every time a message is submitted, so that you can be sure your calls are working properly before pushing to production.
+### Register a plugin
+Registering plugins enable you to modify your analytics implementation to best fit your needs. You can register a plugin using this:
 
-```javascript
-var analytics = new Analytics('YOUR_WRITE_KEY', { flushAt: 1 });
+```js
+// A promise will resolve once the plugins have been successfully loaded into Analytics.js
+// Register multiple plugins at once by using the variable args interface in Analytics.js
+await analytics.register(pluginA, pluginB, pluginC)
 ```
 
+### Deregister a plugin
+Deregister a plugin by using: 
+
+```js
+await analytics.deregister("pluginNameA", "pluginNameB") // takes strings
+```
 
 ## Selecting Destinations
 
@@ -413,9 +494,9 @@ analytics.track({
 })
 ```
 
-In this case, we're specifying that we want this `track` to only go to Vero. `All: false` says that no destination should be enabled unless otherwise specified. `Vero: true` turns on Vero, etc.
+In this case, Segment specifies that they want this `track` to only go to Vero. `All: false` says that no destination should be enabled unless otherwise specified. `Vero: true` turns on Vero.
 
-Destination flags are **case sensitive** and match [the destination's name in the docs](/docs/connections/destinations/) (i.e. "AdLearn Open Platform", "awe.sm", "MailChimp", etc.). In some cases, there may be several names for a destination; if that happens you'll see a "Adding (destination name) to the Integrations Object" section in the destination's doc page with a list of valid names.
+Destination flags are **case sensitive** and match [the destination's name in the docs](/docs/connections/destinations/) (for example, "AdLearn Open Platform", "awe.sm", "MailChimp"). In some cases, there may be several names for a destination; if that happens you'll see a "Adding (destination name) to the Integrations Object" section in the destination's doc page with a list of valid names.
 
 **Note:**
 
@@ -429,138 +510,118 @@ You can import historical data by adding the `timestamp` argument to any of your
 
 Historical imports can only be done into destinations that can accept historical timestamped data. Most analytics tools like Mixpanel, Amplitude, Kissmetrics, etc. can handle that type of data just fine. One common destination that does not accept historical data is Google Analytics since their API cannot accept historical data.
 
-**Note:** If you're tracking things that are happening right now, leave out the `timestamp` and our servers will timestamp the requests for you.
+**Note:** If you're tracking things that are happening right now, leave out the `timestamp` and Segment's servers will timestamp the requests for you.
 
 
 ## Batching
 
-Our libraries are built to support high performance environments. That means it is safe to use our Node library on a web server that's serving hundreds of requests per second.
+Segment's libraries are built to support high performance environments. That means it is safe to use Segment's Node library on a web server that's serving hundreds of requests per second.
 
-Every method you call **does not** result in an HTTP request, but is queued in memory instead. Messages are then flushed in batch in the background, which allows for much faster operation.
+Every method you call **doesn't** result in a HTTP request, but is queued in memory instead. Messages are then flushed in batch in the background, which allows for much faster operation.
 
-By default, our library will flush:
+By default, Segment's library will flush:
 
-  - The very first time it gets a message.
-  - Every 20 messages (controlled by `options.flushAt`).
-  - If 10 seconds has passed since the last flush (controlled by `options.flushInterval`)
+  - Every 15 messages (controlled by `settings.maxEventsInBatch`).
+  - If 10 seconds has passed since the last flush (controlled by `settings.flushInterval`)
 
 There is a maximum of `500KB` per batch request and `32KB` per call.
 
-If you don't want to batch messages, you can turn batching off by setting the `flushAt` option to `1`, like so:
+If you don't want to batch messages, you can turn batching off by setting the `maxEventsInBatch` setting to `1`, like so:
 
 ```javascript
-var analytics = new Analytics('YOUR_WRITE_KEY', { flushAt: 1 });
-```
-
-Batching means that your message might not get sent right away. But every method call takes an optional `callback`, which you can use to know when a particular message is flushed from the queue, like so:
-
-```javascript
-analytics.track({
-  userId: '019mr8mf4r',
-  event: 'Ultimate Played'
-}, function(err, batch){
-  if (err) // There was an error flushing your message...
-  // Your message was successfully flushed!
+const analytics = new Analytics({
+  ...
+  maxEventsInBatch: 1
 });
 ```
 
-You can also flush on demand. For example, at the end of your program, you need to flush to make sure that nothing is left in the queue. To do that, call the `flush` method:
+Batching means that your message might not get sent right away. Every method call takes an optional `callback`, which you can use to know when a particular message is flushed from the queue, like so:
 
 ```javascript
-analytics.flush(function(err, batch){
-  console.log('Flushed, and now this program can exit!');
-});
-```
-
-## Long running process
-
-You should call `client.track(...)` and know that events will be queued and eventually sent to Segment. To prevent losing messages, be sure to capture any interruption (for example, a server restart) and call flush to know of and delay the process shutdown.
-
-```js
-import { randomUUID } from 'crypto';
-import Analytics from 'analytics-node'
-
-const WRITE_KEY = '...';
-
-const analytics = new Analytics(WRITE_KEY, { flushAt: 10 });
-
 analytics.track({
-  anonymousId: randomUUID(),
-  event: 'Test event',
-  properties: {
-    name: 'Test event',
-    timestamp: new Date()
+    userId: '019mr8mf4r',
+    event: 'Ultimate Played',
+  },
+  (err, ctx) => {
+    ...
   }
-});
-
-const exitGracefully = async (code) => {
-  console.log('Flushing events');
-  await analytics.flush(function(err, batch) {
-    console.log('Flushed, and now this program can exit!');
-    process.exit(code);
-  });
-};
-
-[
-  'beforeExit', 'uncaughtException', 'unhandledRejection',
-  'SIGHUP', 'SIGINT', 'SIGQUIT', 'SIGILL', 'SIGTRAP',
-  'SIGABRT','SIGBUS', 'SIGFPE', 'SIGUSR1', 'SIGSEGV',
-  'SIGUSR2', 'SIGTERM',
-].forEach(evt => process.on(evt, exitGracefully));
-
-function logEvery2Seconds(i) {
-    setTimeout(() => {
-        console.log('Infinite Loop Test n:', i);
-        logEvery2Seconds(++i);
-    }, 2000);
-}
-
-logEvery2Seconds(0);
+)
 ```
-
-## Short lived process
-
-Short-lived functions have a predictably short and linear lifecycle, so use a queue big enough to hold all messages and then await flush to complete its work.
-
-
-```js
-import { randomUUID } from 'crypto';
-import Analytics from 'analytics-node'
-
-
-async function lambda()
-{
-  const WRITE_KEY = '...';
-  const analytics = new Analytics(WRITE_KEY, { flushAt: 20 });
-  analytics.flushed = true;
-
-  analytics.track({
-    anonymousId: randomUUID(),
-    event: 'Test event',
-    properties: {
-      name: 'Test event',
-      timestamp: new Date()
-    }
-  });
-  await analytics.flush(function(err, batch) {
-    console.log('Flushed, and now this program can exit!');
-  });
-}
-
-lambda();
-```
-
 
 ## Multiple Clients
 
 Different parts of your application may require different types of batching, or even sending to multiple Segment sources. In that case, you can initialize multiple instances of `Analytics` with different settings:
 
 ```javascript
-var Analytics = require('analytics-node');
-var marketingAnalytics = new Analytics('MARKETING_WRITE_KEY');
-var appAnalytics = new Analytics('APP_WRITE_KEY');
+const marketingAnalytics = new Analytics({ writeKey: 'MARKETING_WRITE_KEY' });
+const appAnalytics = new Analytics({ writeKey: 'APP_WRITE_KEY' });
 ```
+## Override the default HTTP Client
 
+Segment attempts to use the global `fetch` implementation if available in order to support several diverse environments.  Some special cases (for example, http proxy) may require a different implementation for http communication.  You can provide a customized wrapper in the Analytics configuration to support this.  Here are a few approaches:
+
+Use a custom fetch-like implementation with proxy (simple, recommended)
+```javascript
+import { HTTPFetchFn } from '../lib/http-client'
+import axios from 'axios'
+
+const httpClient: HTTPFetchFn = async (url, { body, ...options }) =>
+  axios({
+    url,
+    data: body,
+    proxy: {
+      protocol: 'http',
+      host: 'proxy.example.com',
+      port: 8886,
+      auth: {
+        username: 'user',
+        password: 'pass',
+      },
+     },
+    ...options,
+  })
+
+const analytics = new Analytics({
+  writeKey: '<YOUR_WRITE_KEY>',
+  httpClient,
+})
+```
+Augment the default HTTP Client
+```javascript
+import { FetchHTTPClient, HTTPClientRequest  } from '@segment/analytics-node' 
+ 
+class MyClient extends FetchHTTPClient {
+  async makeRequest(options: HTTPClientRequest) {
+    return super.makeRequest({
+        ...options, 
+        headers: { ...options.headers, foo: 'bar' }
+      }})
+  }
+}
+
+const analytics = new Analytics({ 
+  writeKey: '<YOUR_WRITE_KEY>', 
+  httpClient: new MyClient() 
+})
+```
+Completely override the full HTTPClient (Advanced, you probably don't need to do this)
+```javascript
+import { HTTPClient, HTTPClientRequest } from '@segment/analytics-node'
+
+class CustomClient implements HTTPClient {
+  async makeRequest(options: HTTPClientRequest) {
+    return someRequestLibrary(options.url, { 
+      method: options.method,
+      body: JSON.stringify(options.data) // serialize data
+      headers: options.headers,
+    })
+  }
+}
+const analytics = new Analytics({ 
+  writeKey: '<YOUR_WRITE_KEY>', 
+  httpClient: new CustomClient() 
+})
+```
 
 ## Troubleshooting
 

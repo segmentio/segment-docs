@@ -40,7 +40,11 @@ That will create a `client` that you can use to send data to Segment for your so
 The default initialization settings are production-ready and queue 20 messages before sending a batch request, and a 5 second interval.
 
 ### Regional configuration
-{% include content/regional-config.md %}
+For Business plans with access to Regional Segment, you can use the host configuration parameter to send data to the desired region:
+
+Oregon (Default) — api.segment.io/
+Dublin — events.eu1.segmentapis.com
+
 ## Identify
 
 > note ""

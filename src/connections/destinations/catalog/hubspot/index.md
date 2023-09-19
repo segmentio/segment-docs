@@ -4,6 +4,11 @@ title: HubSpot Destination
 hide-personas-partial: true
 cmode-override: true
 id: 54521fd725e721e32a72eec1
+maintenance: true
+private: false
+maintenance-content: New versions of the destination are available. See [HubSpot Cloud Mode (Actions)](/docs/connections/destinations/catalog/actions-hubspot-cloud/) and [HubSpot Web (Actions)](/docs/connections/destinations/catalog/actions-hubspot-web/) for more information.
+hidden: false
+
 ---
 [HubSpot](https://www.hubspot.com/){:target="_blank"} is an inbound marketing and sales platform that helps companies attract visitors, convert leads, and close customers. The `analytics.js` HubSpot Destination is open-source. You can browse the code [on GitHub](https://github.com/segmentio/analytics.js-integrations/tree/master/integrations/hubspot){:target="_blank"}.
 
@@ -15,7 +20,7 @@ id: 54521fd725e721e32a72eec1
 
 ## Getting Started
 
-{% include content/connection-modes.md %}
+
 
 1. From the Segment web app, click **Catalog**.
 2. Search for "HubSpot" in the Catalog, select it, and choose which of your sources to connect the destination to.
@@ -56,7 +61,7 @@ analytics.identify('user1234', {
 
 HubSpot does not accept any trait keys that contain upper case letters or spaces. Segment converts any custom traits you send to lower case, and replaces spaces with an underscore.
 
-HubSpot removes from the request any traits that aren't contact fields in HubSpot. To find out which fields you can set, check out the custom field names in **Contacts > Contact Settings**. Example field names are `firstname`, `lastname`, `company`, and `phone`.
+HubSpot removes any traits from the request that aren't contact fields in HubSpot. To find out which fields you can set, navigate to **Settings > Data Management > Objects > Contacts** and select **Manage contact properties** under the **Setup** tab. Example field names are `firstname`, `lastname`, `company`, and `phone`.
 
 If you specify a company name (using `traits.company.name`), it appears as a *property* of the contact (you can find it in HubSpot's UI using **About [contact] > View > View All Properties**), but it does not appear as the user's company under **[contact]'s Company**.
 
@@ -170,6 +175,11 @@ Segment can send the following group traits to HubSpot as special properties:
 
 ## Troubleshooting
 
+
+### I Don't See My Data In HubSpot
+
+If you don't see your data in HubSpot, verify the HubSpot configuration in your Segment workspace. If you've selected the **Enable HubSpot SDK for EU** option, confirm with HubSpot that your HubSpot account is enabled for EU data residency.
+
 ### API Call Limits
 
 HubSpot limits the total amount of hourly and daily requests Segment can make to their API on your behalf. See HubSpot's [API Usage Guidelines](https://developers.hubspot.com/apps/api_guidelines){:target="_blank"} for more information.
@@ -261,15 +271,15 @@ Engage sends **Account-Level data** to HubSpot using **Identify** calls to add a
 
 1. Create your audience criteria and preview the audience in Segment. Click Select Destinations.
 
-   ![](images/hubspot-personas01.png)
+   ![A screenshot of the Segment Configure and Preview Your Audience page, showing an audience created for all users who opened at least one email over the last 30 days.](images/hubspot-personas01.png)
 
 2. Next, select HubSpot as a destination for the audience in Segment. Use the default settings, which send an Identify call to mark users as members of an audience or when they have a specific trait. <!-- some clarifying changes coming here in a future update, per Dadson.-->
 
-   ![](images/hubspot-personas02.png)
+   ![A screenshot of the Hubspot destination page in Segment, with the Send Identify setting selected.](images/hubspot-personas02.png)
 
 3. Enter a name for the audience, and a description.
    Write down the **Audience key** (you'll need this to configure HubSpot in the next step), but don't click **Create Audience** yet.
-   ![](images/hubspot-personas03.png)
+   ![A screenshot of the last step in the Configure and Preview Your Audience setup flow.](images/hubspot-personas03.png)
 
 
 4. Go to your HubSpot Settings.
@@ -277,7 +287,7 @@ Engage sends **Account-Level data** to HubSpot using **Identify** calls to add a
    This is required because HubSpot's schema is explicitly defined.
    You must do this *before* you send any Engage data from Segment to HubSpot.
 
-   ![](images/hubspot-personas04.png)
+   ![A screenshot of the Settings page in Hubspot.](images/hubspot-personas04.png)
 
 
 6. Set the object type.
@@ -290,14 +300,14 @@ Engage sends **Account-Level data** to HubSpot using **Identify** calls to add a
 > The audience label's “internal name” in HubSpot *must exactly match* the Segment  `audience key`. You can check this by clicking the `</>` icon to the right of the Label field, and making corrections.
 
 
-   ![](images/hubspot-personas05.png)
+   ![A screenshot of the Create a new property setup flow in Hubspot.](images/hubspot-personas05.png)
 
 8. On the next screen, set the **Field type** for audiences to `Single Checkbox`. (This represents a boolean value that indicates audience membership.)
    (For computed traits, depending on whether the output is a string or number, select `Single-line text` or `Number`.)
 
    Click **Create** to finish adding the audience contact property.
 
-   ![](images/hubspot-personas06.png)
+   ![A screenshot of the final step in the Create a new property setup flow in Hubspot, with the field type set to Single checkbox.](images/hubspot-personas06.png)
 
 
 9. Back in the Engage Audience builder, click **Create Audience**. Engage sends any users that meet the audience criteria to HubSpot immediately.
@@ -305,17 +315,17 @@ Engage sends **Account-Level data** to HubSpot using **Identify** calls to add a
 
 ### Verify the audience
 
-You can use the [Profiles Debugger](/docs/profiles/debugger) to see the calls sent to HubSpot.
+You can use the [Profiles Debugger](/docs/unify/debugger) to see the calls sent to HubSpot.
 
-![](images/hubspot-personas07.png)
+![A screenshot of the Profiles Debugger with a sample profile](images/hubspot-personas07.png)
 
 You can check back in HubSpot to see the audience boolean as a contact property. For the audience created in the example above, you could check individual contact profiles and see a contact property called  `Email Opened 30 Days` = `Yes`.
 
-![](images/hubspot-personas08.png)
+![A screenshot of the Hubspot Managed Properties settings page.](images/hubspot-personas08.png)
 
 You can also see this in the contact property history for each user record.
 
-![](images/hubspot-personas09.png)
+![A screenshot of the Property history for the profile present in the Profiles debugger.](images/hubspot-personas09.png)
 
 
 

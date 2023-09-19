@@ -1,8 +1,7 @@
 ---
 title: "System for Cross-domain Identity Management (SCIM) Configuration Guide"
+plan: sso
 ---
-
-{% include content/plan-grid.md name="sso" %}
 
 The SCIM specification is designed to make managing user identities in cloud-based applications like Segment easier. SCIM allows your Identity Provider (IdP) to manage users and groups within your Segment workspace.
 
@@ -30,7 +29,7 @@ The other value you need is an API key (sometimes referred to as an Authorizatio
 
 This page is located as part of the settings sidebar: https://app.segment.com/CUSTOMER_WORKSPACE_SLUG/settings/advanced
 
-![](images/asset_generate_scim_token.png)
+![Screenshot of the Segment settings sidebar, with Advanced Settings selected.](images/asset_generate_scim_token.png)
 
 ## Features
 
@@ -92,23 +91,23 @@ For example, you might map `{firstName} {lastName}` from your IdP to `displayNam
 2. Click **Provisioning**, then click **Configure API Integration** and select **Enable API Integration**.
 3. [Generate an API key](#api-key), then copy and paste this value into the **API Token** field in Okta, and click **Save**.
 
-   ![](images/okta_provisioning.png)
+   ![Screenshot of the Okta provisioning settings page, with the Integrations setting selected and the Enable API Integration checkbox enabled.](images/okta_provisioning.png)
 
 4. Next, select **To App** in the left sidebar of the **Provisioning** tab. Click **Edit** and select both **Create Users** and **Deactivate Users**. Click **Save**.
 5. Click the **Assignments** tab. You can now assign people or groups. Before you continue, read through the [features section](#features) in this doc to make sure you understand how groups work. Segment recommends that you assign users to the Segment app by Okta group. This allows you to manage which groups in your organization can authenticate to Segment. You can also assign users individually.
 
-   ![](images/scim_assignments.png)
+   ![Screenshot of the Okta Assignments tab, with the Assign button clicked and the Groups tab selected.](images/scim_assignments.png)
 
 6. Once you assign your users, push the assigned Okta groups to Segment.
 
-   ![](images/scim_group_push.png)
+   ![Screenshot of the Push Groups tab, with the Push Groups button selected.](images/scim_group_push.png)
 
 7. Next, go to the Segment app and assign permissions to these groups.
 
 > success ""
 > **Tip**: You can also link Okta groups to an existing group from in the Segment app using the Okta UI.
 
-![](images/scim_edit_groups.png)
+![Screenshot of the Segment Settings page, with the Access Management and User Groups tabs selected, and the user group created in the steps above present on the page.](images/scim_edit_groups.png)
 
 ## Azure AD Set up Guide
 

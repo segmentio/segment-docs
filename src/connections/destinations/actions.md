@@ -1,8 +1,7 @@
 ---
 title: Destination Actions
+plan: dest-actions
 ---
-
-{% include content/plan-grid.md name="dest-actions" %}
 
 The Destination Actions framework improves on classic destinations by enabling you to see and control how Segment sends the event data it receives from your sources, to actions-based destinations. Each Action in a destination lists the event data it requires, and the event data that is optional.
 
@@ -36,7 +35,7 @@ The following Actions-based Destinations are available:
 
 ## Components of a Destination Action
 
-A Destination Action contains a hierarchy of components, that work together to ensure the right data is sent to the destination. 
+A Destination Action contains a hierarchy of components, that work together to ensure the right data is sent to the destination.
 
 | Component       | Description                                                                                                                                                                                                                                                                                                                                                                                             |
 | --------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -64,6 +63,10 @@ To set up a new Actions-framework destination for the first time:
     You can choose **Quick Setup** to use the default mappings, or choose **Customized Setup** (if available) to create new mappings and conditions from a blank state. You can always edit these mappings later.
 7. Once you're satisfied with your mappings, click **Create Destination**.
 
+> info ""
+> You must configure and enable at least one mapping to handle a connected source's event(s) in an Actions-framework destination in order for data to send downstream. 
+> Events send downstream in the order in which they appear in the mappings UI. There is no mechanism through which you can control the order of events that send to the downstream destinations outside of that. 
+
 ## Migrate a classic destination to an actions-based destination
 
 {% include content/ajs-upgrade.md %}
@@ -83,9 +86,7 @@ You can add or remove, disable and re-enable, and rename individual actions from
 
 From the edit screen you can change the action's name and mapping, and toggle it on or off. See [Customizing mappings](#customize-mappings) for more information.
 
-![](images/actions-list.png)
-
-![](images/actions-edit.png)
+![Screenshot of the Mappings table with several enabled mappings](images/actions-list.png)
 
 ## Disable a destination action
 If you find that you need to stop an action from running, but don't want to delete it completely, you can click the action to select it, then click the toggle next to the action's name to disable it. This takes effect within minutes, and disables the action until you reenable it.
@@ -95,6 +96,14 @@ To delete a destination action: click the action to select it, and click **Delet
 
 This takes effect within minutes, and removes the action completely. Any data that would have gone to the destination is not delivered. Once deleted, the saved action cannot be restored.
 
+## Test a destination action
+To test a destination action, follow the instructions in [Testing Connections](/docs/connections/test-connections/). You must enable a mapping in order to test the destination. Otherwise, this error occurs: *You may not have any subscriptions that match this event.*
+
+You can also test within the mapping itself. To test the mapping:
+1. Navigate to the **Mappings** tab of your destination. 
+2. Select a mapping and click the **...** and select **Edit Mapping**. 
+3. In step 2 of the mappings edit page, click **Load Test Event from Source** to add a test event from the source, or you can add your own sample event. 
+4. Scroll to step 4 on the page, and click **Test Mapping** to test the mapping and view the response from the destination. 
 
 ## Customize mappings
 
@@ -112,11 +121,18 @@ If necessary, click **New Mapping** to create a new, blank action.
 3. Next, set up the data mapping from the Segment format to the destination tool format.
 4. Test the mapping with data from a sample event.
     The edit panel shows you the mapping output in the format for the destination tool. You can change your mapping as needed and re-test.
-5. When you're satisfied with the mapping, click **Save**.
+5. When you're satisfied with the mapping, click **Save**. Segment returns you to the Mappings table.
+6. In the Mappings table **Status** column, verify that the **Enabled** toggle is on for the mapping you just customized.
 
 
 > info ""
 > The required fields for a destination mapping appear automatically. Click the + sign to see optional fields.
+
+### Coalesce function
+
+The coalesce function takes a primary value and uses it if it is available. If the value isn't available, the function uses the fallback value instead. 
+
+
 
 ### Conditions
 
@@ -128,14 +144,55 @@ The following type filters and operators are available to help you build conditi
 
 - **Event type** (`is`/`is not`). This allows you to filter by the [event types in the Segment Spec](/docs/connections/spec).
 - **Event name** (`is`, `is not`, `contains`, `does not contain`, `starts with`, `ends with`). Use these filters to find events that match a specific name, regardless of the event type.
-- **Event property** (`is`, `is not`, `less than`, `less than or equal to`, `greater than`, `greater than or equal to`, `contains`,  `does not contain`, `starts with`, `ends with`, `exists`, `does not exist`).  Use these filters to trigger the action only when an event with a specific property occurs.  You can specify nested properties using dot notation, for example `context.app.name`. If the property might appear in more than one format or location, you can use an ANY statement and add conditions for each of those formats. For example, you might filter for both `context.device.type = ios`  as well as `context.os.name = "iPhone OS``"`
+- **Event property** (`is`, `is not`, `less than`, `less than or equal to`, `greater than`, `greater than or equal to`, `contains`,  `does not contain`, `starts with`, `ends with`, `exists`, `does not exist`).  Use these filters to trigger the action only when an event with a specific property occurs. 
+
+    You can specify nested properties using dot notation, for example `context.app.name`. If the property might appear in more than one format or location, you can use an ANY statement and add conditions for each of those formats. For example, you might filter for both `context.device.type = ios`  as well as `context.os.name = "iPhone OS``"`
     The `does` `not exist` operator matches both a `null` value or a missing property.
+{% comment %}
+> info "Event property operators and supported data types"
+> Operators support matching on values with a **string** data type:
+> - `is`, `is not`, `contains`,  `does not contain`, `starts with`, `ends with`
+> 
+> Operators that support matching on values with either a **string** or **numeric** data type:
+> - `is less than`, `is less than or equal to`, `is greater than`, `is greater than or equal to`
+> 
+> Operators that support matching on values with a **boolean** data type:
+> - `is true`, `is false`
+{% endcomment %}
+
+The available operators depend on the property's data type:
+
+| Data Type         | Supported Operators                                                                          |
+| ----------------- | -------------------------------------------------------------------------------------------- |
+| string            | `is`, `is not`, `contains`,  `does not contain`, `starts with`, `ends with`                  |
+| string or numeric | `is less than`, `is less than or equal to`, `is greater than`, `is greater than or equal to` |
+| boolean           | `is true`, `is false`                                                                        |
 
 You can combine criteria in a single group using **ALL** or **ANY**.  Use an ANY to “subscribe” to multiple conditions. Use ALL when you need to filter for very specific conditions. You can only create one group condition per destination action. You cannot created nested conditions.
+
+> info "Unsupported Special Characters"
+> Mappings do not support the use of double quotes " or a tilde ~ in the trigger fields.
+
+> info "Limitations"
+> Mapping fields don't support dot notation. For example, properties.amount.cost or properties_amount.cost aren't supported.
 
 > info "Destination Filters"
 > Destination filters are compatible with Destination Actions. Consider a Destination Filter when:
 > - You need to remove properties from the data sent to the destination
 > - You need to filter data from multiple types of call (for example, Track, Page, and Identify calls)
-> 
+>
 > If your use case does not match these criteria, you might benefit from using Mapping-level Triggers to match only certain events.
+
+## FAQ & Troubleshooting
+
+### Validation error when using the Event Tester
+
+When you send an event with an actions destination Event Tester that doesn't match the trigger of any configured and enabled mappings, you'll see an error message that states, *You may not have any subscriptions that match this event.* To resolve the error, create a mapping with a trigger to handle the event being tested, or update the test event's payload to match the trigger of any existing mappings. 
+
+### Data not sending downstream
+
+If no mappings are enabled to trigger on an event that has been received from the connected source, the destination will not send any events. Ensure that at least one mapping has been configured and enabled in the destination mappings for an event that you would like to reach downstream. 
+
+### Multiple mappings triggered by the same event
+
+When the same event triggers multiple mappings, a request will be generated for each mapping that's configured to trigger on an event. For example, for the *Subscription Updated* event, if two mappings are enabled and both have conditions defined to trigger on the *Subscription Updated* event, the two requests will be generated and sent to the destination for each *Subscription Updated* event. 

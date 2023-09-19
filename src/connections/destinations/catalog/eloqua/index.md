@@ -2,6 +2,20 @@
 title: Eloqua Destination
 id: 54521fd525e721e32a72eeac
 ---
+Eloqua is Oracle’s B2B Cross-Channel Marketing solution, and it operates by tracking the identities and event actions of users that interact with your properties.
+
+With Segment, all the customer data you’re collecting from your websites, mobile apps, or servers sends directly into Eloqua, using your existing Segment implementation. This means you don’t need to write any custom code or create duplicate event tracking, but you can start using Eloqua with a simplified setup effort. 
+
+## Getting Started
+1. From the Segment web app, navigate to **Connections > Catalog** and select the **Destinations** tab within the catalog.
+2. Search for **Eloqua** and select the destination.
+3. Click **Configure Eloqua**.
+4. Select the web source that will send data to Eloqua and follow the steps to name your destination. 
+5. On the **Settings** tab, input your **Company Name**, **Password**, **Site ID**, **Username**, and configure **Other Settings**.
+6. Enable the destination.
+
+When you enable Eloqua in your Segment integrations page, Segment automatically loads Eloqua’s JavaScript libraries onto your web pages. For mobile and server-side events, Segment routes your event data directly through Eloqua's servers, eliminating the need for any Eloqua code to be loaded in your applications.
+
 ## Page
 
 Client-side page-view tracking is achieved using an integration with the [Eloqua
@@ -108,6 +122,9 @@ fields of the same name. The integration does an automatic case- and
 formatting-insensitive match so that if you have a field called `Account Type`
 in Eloqua and a property called `AccountType` in your Segment event, the
 mapping will get handled.
+
+> info "Track event mapping limitations"
+> Each `track` event can only be mapped to a single custom object. Segment doesn't support mapping a single `track` event to multiple custom objects.
 
 For `track` event properties you intend to send to Eloqua as Custom Object
 fields, make sure the value of the data type sent to Segment matches the

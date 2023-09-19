@@ -15,7 +15,7 @@ Retina AI maintains this destination. For any issues with the destination, conta
 
 ## Getting Started
 
-{% include content/connection-modes.md %}
+
 
 To integrate Retina AI with Segment as a **Destination**:
 1. From your Segment UI's Destinations page click on “Add Destination”.

@@ -16,7 +16,7 @@ This destination is maintained by Beamer. For any issues with the destination, [
 
 ## Getting Started
 
-{% include content/connection-modes.md %}
+
 
 1. From the Segment web app, click **Catalog**.
 2. Search for "Beamer" in the Catalog, select it, and choose which of your sources to connect the destination to.

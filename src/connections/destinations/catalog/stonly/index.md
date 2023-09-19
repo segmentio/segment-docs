@@ -14,7 +14,7 @@ This destination is maintained by Stonly. For any issues with the destination, [
 
 Before you start, make sure Stonly destination supports the source type and connection mode you've chosen to implement. You can learn more about [connection modes here](/docs/connections/destinations/#connection-modes).
 
-{% include content/connection-modes.md %}
+
 
 1. From the Destinations catalog page in the Segment App, click **Add Destination**.
 2. Search for "Stonly" within the Destinations Catalog, and select Stonly destination.

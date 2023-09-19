@@ -1,0 +1,67 @@
+.sample-code-container {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 10px;
+    padding: 5px;
+    overflow: scroll;
+  }
+  
+  .output {
+
+    max-width: 100%;
+    overflow: scroll;
+  }
+
+  .form, .output {
+    outline: 1px solid color(gray-400);
+    outline-offset: 4px;
+    padding: 10px;
+  }
+  .output-code {
+    display: block;
+    font: 12px color(code-gray) "Droid Sans Mono", "Lucida Console", "Monaco", monospace; 
+    word-wrap: break-word;
+  }
+
+ .sample-form {
+    display: grid;
+    grid-template-columns: 50px 1fr;
+    grid-gap: 16px;
+    margin-top: 6px;
+    align-items: center;
+
+    label {
+        grid-column: 1 / 2;
+        text-align: right;
+        font-size: 12px;
+    }
+
+    input {
+        grid-column: 2 / 3;
+        color: #696f8c;
+    }
+
+    select, input {
+      font-size: 14px;
+    }
+
+    input[type=submit]{
+        grid-column: 1 / 3;
+        color: #474d66;
+    }
+}
+
+.error-message {
+  color: red;
+  font-size: 12px;
+  grid-column: 2 / 3;
+  margin-top: 0px;
+  gap: 2px;
+  display: none;
+
+}
+
+.invalid-field {
+  outline: 2px red;
+}
+

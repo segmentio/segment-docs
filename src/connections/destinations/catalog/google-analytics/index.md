@@ -6,6 +6,10 @@ redirect_from:
   - '/connections/destinations/catalog/google-universal-analytics'
 id: 54521fd725e721e32a72eebb
 ---
+> warning ""
+> Google announced that all standard Universal Analytics properties will stop processing new data on July 1, 2023. 360 Universal Analytics properties will receive a one-time processing extension ending on July 1, 2024. Segment recommends [migrating to Google Analytics 4](https://segment.com/docs/connections/destinations/catalog/actions-google-analytics-4/#migrating-from-universal-analytics-to-google-analytics-4){:target='_blank'} as soon as possible. Learn more about when [Google Analytics 4 will replace Universal Analytics](https://support.google.com/analytics/answer/11583528?sjid=13479291677968058253-NA){:target='_blank'}.
+
+
 > warning "Migrate mobile implementations to Firebase"
 > Google ended support for Google Analytics classic on iOS and Android mobile apps on October 31st 2019. To continue measuring and optimizing user engagement in your mobile apps, [migrate your implementation to use the Firebase SDKs](migrating). If you are using Google Analytics 360 you do not need to migrate.
 
@@ -150,7 +154,7 @@ You can specify what the event action should be called in the Google Universal A
 
 Segment makes it simple to save your A/B testing versions to custom dimensions in Google Universal Analytics by mapping an experiment to a custom dimension in the Google Universal Analytics destination settings.
 
-If you are using cloud-mode or server-side Google Universal Analytics destinations, you can also send this data automatically using the `experiment_id`, `experiment_name`, `variation_id`, and `variation_name` properties. If both an experiment and variation are defined, then this is sent automatically. Segment uses the ids before using the names. If both an ID and a name exist, Segment sends the ID first. For example, if you an `experiment_id`, an `experiment_name`, and a `variation_name` in a call, only the `experiment_id` and `variation_name` are sent to Google Universal Analytics.
+If you are using cloud-mode or server-side Google Universal Analytics destinations, you can also send this data automatically using the `experiment_id`, `experiment_name`, `variation_id`, and `variation_name` properties. If both an experiment and variation are defined, then this is sent automatically. Segment uses the ids before using the names. If both an ID and a name exist, Segment sends the ID first. For example, if you have an `experiment_id`, an `experiment_name`, and a `variation_name` in a call, only the `experiment_id` and `variation_name` are sent to Google Universal Analytics.
 
 When you have an active A/B test on a page, Segment either sets that experiment as a property or a user trait, depending on how you choose to send experiment data to other tools on your A/B testing tool's Segment settings page. The property or trait for A/B test experiments are labeled like the following examples:
 

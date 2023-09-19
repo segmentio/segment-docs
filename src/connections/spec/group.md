@@ -2,11 +2,15 @@
 title: 'Spec: Group'
 ---
 
-The `group` API call is how you associate an individual user with a group—be it a company, organization, account, project, team or whatever other crazy name you came up with for the same concept!
+The `group` API call is how you associate an individual user with a group, such as a company, organization, account, project, or team.
+
+The `group` call enables you to identify what account or organization your users are part of. There are two IDs that are relevant in a `group` call: the `userId`, which belongs and refers to the user, and the `groupId`, which belongs and refers to the specific group. A user can be in more than one group which would mean different `groupId`s, but the user will only have one `userId` that is associated to each of the different groups. Keep in mind that not all platforms support multiple groups for a single user. 
 
 {% include components/reference-button.html href="https://university.segment.com/introduction-to-segment/324252?reg=1&referrer=docs" icon="media/academy.svg" title="Segment University: The Segment Methods" description="Check out our high-level overview of these APIs in Segment University. (Must be logged in to access.)" %}
 
-A user can be in more than one group; however, not all platforms support multiple groups. It also lets you record custom traits about the group, like industry or number of employees.  Calling `group` is a slightly more advanced feature, but it's helpful if you have accounts with multiple users.
+In addition to the `groupId`, which is how you'd identify the specific group or company, the group method receives traits that are specific to the group, like industry or number of employees for example, that belong to that specific account. Like the traits of an identify call, you can update these when you call the same trait with a different value.
+
+When using the `group` call, it's helpful if you have accounts with multiple users.
 
 Here's the payload of a typical `group` call, with most [common fields](/docs/connections/spec/common/) removed:
 
@@ -81,6 +85,12 @@ Here's a complete example of a `group` call:
 }
 ```
 
+### Create your own Group call
+
+Use the following interactive code pen to see what your Group calls would look like with user-provided information:
+
+{% include components/codepens/group-spec.html %}
+
 ## Identities
 
 {% include content/spec-identities.md %}
@@ -119,3 +129,4 @@ If you pass these values, `on null` will throw a `NullPointerException`.
 You may continue to set values inside the trait.  If you do so, this would work the same as the rules do with NoSQL data. If you had set a value previously for a user and on the next request you sent the same value of that property as `on null`, it will be replaced by `null`, but if you do not send that property, the original value is persisted.
 
 **Traits are case-insensitive**, so in JavaScript you can match the rest of your camel-case code by sending `createdAt`, and in Ruby you can match your snake-case code by sending `created_at`. That way the API never seems alien to your code base.
+

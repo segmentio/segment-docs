@@ -6,11 +6,11 @@ rewrite: true
 > info ""
 > Destination filters are only available to Business Tier customers.
 >
-> Destination filters for mobile device-mode destinations are in beta and only supports [Swift](/docs/connections/sources/catalog/libraries/mobile/swift-ios#destination-filters), [Kotlin](/docs/connections/sources/catalog/libraries/mobile/kotlin-android/#destination-filters) and [React Native 2.0](/docs/connections/sources/catalog/libraries/mobile/react-native/#destination-filters) libraries.
+<!-- > Destination filters for mobile device-mode destinations are in beta and only supports [Swift](/docs/connections/sources/catalog/libraries/mobile/swift-ios#destination-filters), [Kotlin](/docs/connections/sources/catalog/libraries/mobile/kotlin-android/#destination-filters) and [React Native 2.0](/docs/connections/sources/catalog/libraries/mobile/react-native/#destination-filters) libraries. -->
 
 Use destination filters to prevent certain data from flowing into a destination. You can conditionally filter out event properties, traits, and fields, or even filter out the event itself.
 
-You can configure destination filters on cloud-mode, mobile, and web device-mode and actions-based destinations.  With device-mode destinations, you can use the same user interface or API mechanism that you use for your cloud-mode destinations, and have those filters acted upon for device-mode destinations on web and mobile.
+You can configure destination filters on cloud-mode, mobile cloud-mode destinations, and web device-mode and actions-based destinations.  With device-mode destinations, you can use the same user interface or API mechanism that you use for your cloud-mode destinations, and have those filters acted upon for device-mode destinations on web.
 
 Common use cases for destination filters include:
 - Managing PII (personally identifiable information) by blocking fields from reaching certain destinations
@@ -29,6 +29,10 @@ Keep the following limitations in mind when you use destination filters:
 - *(For device-mode)* Destination filters don't filter on native events that the destination SDK collects. Instead, you can use the load option to conditionally load relevant bundled JavaScript on the page. See the docs for [load options](/docs/connections/sources/catalog/libraries/website/javascript/#load-options).
 - *(For device-mode)* Destination filters don't filter some fields that are collected by the destination SDK outside of Segment such as `page.url` and `page.referrer`.
 - *(For web device-mode)* Destination filters for web device-mode only supports the Analytics.js 2.0 source. You need to enable device mode destination filters for your Analytics.js source. To do this, go to your Javascript source and navigate to **Settings > Analytics.js** and turn the toggle on for **Destination Filters**.
+- *(For web device-mode)* Destination filters for device-mode only supports the Analytics.js 2.0 source.
+- *(For mobile device-mode)* Destination filters for mobile device-mode doesn't support iOS and Android libraries.
+- Destination Filters don't apply to events that send through the destination Event Tester.
+
 
 [Contact Segment](https://segment.com/help/contact/){:target="_blank"} if these limitations impact your use case.
 
@@ -43,6 +47,9 @@ To create a destination filter:
 6. Click **Next Step**.
 7. Name your filter and click the toggle to enable it.
 8. Click **Save**.
+
+> info "Enable destination filters for Analytics.js sources"
+> If you are currently using Analytics.js as your source and want to apply filters to device-mode destinations, you need to enable device mode destination filters for your Analytics.js source. To do this, go to your Javascript source, navigate to Settings > Analytics.js, and turn on the toggle for **Destination Filters**. This will ensure the filters are effectively applied to device-mode destinations.
 
 ## Destination filters API
 
@@ -68,6 +75,8 @@ The following examples illustrate common destinations filters use cases:
 * [Remove internal and test events from production tools](#remove-internal-and-test-events-from-production-tools)
 * [Sample a percentage of events](#sample-a-percentage-of-events)
 * [Drop events](#drop-events)  
+* [Only send events with userId](#only-send-events-with-userid) 
+* [Remove userId from payload](#remove-userid-from-payload) 
 
 ### PII management
 
@@ -77,6 +86,11 @@ Property-level allowlisting is available with Segment's API. Using destination f
 
 
 ![PII management example](images/destination-filters/pii_example.png)
+
+> info "Healthcare and Life Sciences (HLS) customers can encrypt data flowing into their destinations"
+> HLS customers with a HIPAA eligible workspace can encrypt data in fields marked as Yellow in the Privacy Portal before they flow into an event stream, cloud mode destination.
+>
+> To learn more about data encryption, see the [HIPAA Eligible Segment documentation](/docs/privacy/hipaa-eligible-segment/#data-encryption).
 
 ### Control event volume
 
@@ -107,6 +121,50 @@ Using the [destination filters API](https://docs.segmentapis.com/tag/Destination
 ### Drop events
 
 [Watch this destination filters walkthrough](https://www.youtube.com/watch?v=47dhAF1Hoco){:target="_blank"} to learn how to use event names to filter events sent to destinations.
+
+### Only send events with userId
+
+Use the [Public API](https://docs.segmentapis.com/tag/Destination-Filters/){:target="_blank"} to only send events to your destination if they contain a `userId`. Here's an example of how you might format this request:
+
+```json
+{
+    "sourceId": "<SOURCE_ID>",
+    "destinationId": "<DESTIANTION_ID>",
+    "title": "Don't send event if userId is null",
+    "description": "Drop event if there is no userId on the request",
+    "if": "length( userId ) < 1",
+    "actions": [
+      {
+        "type": "DROP"
+      }
+    ],
+    "enabled": true
+  }
+```
+
+### Remove userId from payload
+
+There are certain destinations to which you may not want to send the `userId`. To accomplish this, you can use the [Public API](https://docs.segmentapis.com/tag/Destination-Filters/) to create a Filter that will target and remove the `userId` (or any other top-level field) like this:
+
+```json
+{
+    "sourceId": "<sourceId>",
+    "destinationId": "<destinationId>",
+    "title": "Don't send userId at all",
+    "description": "Drop userId on all requests",
+    "if": "all",
+    "actions": [
+       {
+        "type": "DROP_PROPERTIES",
+          "fields": {
+            "":["userId"]
+            }
+       }
+      ],
+      "enabled": true
+}
+```
+
 
 ## Important notes
 
@@ -167,3 +225,18 @@ You must have write access to save and edit filters. Read permission access only
 #### How can I test my filter?
 
 Use the destination filter tester during setup to verify that you're filtering out the right events. Filtered events show up on the schema page but aren't counted in event deliverability graphs.
+
+#### Can I filter on properties/traits that have spaces in the name (for example, `properties.test event field`)? 
+
+Destination Filters can't target properties or traits with spaces in the field name. As an alternative, use [Insert Functions](/docs/connections/functions/insert-functions/), which let you write code to take care of such filtering.
+
+
+#### Can I use destination filters to drop events unsupported by a destination?
+
+The check for unsupported events types happens before any destination filter checks. As a result, Destination Filters can't prevent unsupported event type errors. To filter these events, use the [Integrations Object](/docs/guides/filtering-data/#filtering-with-the-integrations-object).
+
+#### Why do I see events sent through after I just added a destination filter?
+
+Destination filters only filter events sent after filter setup. If you just added a destination filter but still see some events going through, you're likely seeing retries from failed events that occurred before you set up the filter.
+
+When Segment sends an event to a destination but encounters a timeout error, it attempts to send the event again. As a result, if you add a destination filter while Segment is trying to send a failed event, these retries could filter through, since they reflect events that occurred before filter setup.

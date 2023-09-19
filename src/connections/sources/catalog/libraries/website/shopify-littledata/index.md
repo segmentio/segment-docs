@@ -33,7 +33,7 @@ During the Segment connection setup, Littledata also adds a set of webhooks to y
 
 Here's an architecture diagram that shows how the Littledata app mediates data flow between Shopify and Segment.
 
-![Connecting Shopify to Segment](images/segment.png)
+![Diagram showing how data is processed between Littledata, Shopify, and Segment.](images/littledata_arch.png)
 
 > warning "Note"
 > This integration is maintained by Littledata _and isn't supported by Segment directly_. The Littledata app has been reviewed by the Segment team for conformance with Segment's [E-Commerce Spec](/docs/connections/spec/ecommerce/v2/), and is the recommended way of using Segment with Shopify. However, it does require a paid subscription with Littledata, who mediates the connection between Shopify and Segment. [Contact the Littledata Support team](mailto:help@littledata.io) with any questions.
@@ -42,15 +42,15 @@ Here's an architecture diagram that shows how the Littledata app mediates data f
 
 1. **Log in** to your Shopify Store account.
 2. Go the [Shopify app store listing](https://apps.shopify.com/segment-com-by-littledata){:target="\_blank"} for **Segment.com by Littledata**.
-   ![](images/Nd5L0C6.png)
+   ![Screenshot of the Segment listing in the Shopify app store.](images/Nd5L0C6.png)
 3. Click **Add app** to begin the installation process.
 4. **Choose a Littledata subscription** suitable for your store's volume of monthly orders.
 5. Add the [**Segment write key**](/docs/connections/find-writekey/) for the source that is going to send data in the **input field**.
-   ![](images/eLUh6GF.png)
+   ![Screenshot of the Configure Segment step in the Shopify Littedata setup flow.](images/eLUh6GF.png)
 6. Choose either an **Automatic**, a **Manual**, or a **Headless** install. _Automatic installs work in most instances, but if you choose to do a manual install, just follow [this guide](https://help.littledata.io/posts/segment-installation-guide/){:target="\_blank"}._
-   ![](images/iYM76VI.png)
+   ![Screenshot of the Add code automatically? step in the Shopify Littedata setup flow.](images/iYM76VI.png)
 7. Segment's **Analytics.js** library, Littledata **tracking script** and **webhooks** automatically apply to the store and the installation process will then be complete.
-   ![](images/kvjNx4M.png)
+   ![Screenshot of the Add tracking code step in the Shopify Littedata setup flow.](images/kvjNx4M.png)
 
 ## Event schema
 
@@ -111,7 +111,7 @@ In the Littledata application you can choose which of the following fields you w
 - **Email** - The email identifier is recommended when other platforms use the email and can't hash it, and you are comfortable with the privacy implications.
 - **None** (no identifier) - Choose “none” if user identity is already handled by your Segment implementation and you only need the extra events powered by Littledata's Shopify source.
 
-For [Engage](/docs/engage/), Littledata also sends `shopify_customer_id` as an [externalID](/docs/profiles/identity-resolution/externalids/) for advanced matching.
+For [Engage](/docs/engage/), Littledata also sends `shopify_customer_id` as an [externalID](/docs/unify/identity-resolution/externalids/) for advanced matching.
 
 ## Identify calls
 
@@ -232,7 +232,7 @@ Each item in the `products` array, or Product Viewed and Product Added events, w
 
 ## Import all orders
 
-With an [annual Littledata Plus plan](https://www.littledata.io/app/enterprise){:target="_blank"} you can import all Shopify orders and refunds from before you started using Segment, to sync with destinations that support timestamped events (for example, a data warehouse). This enables you to build a complete customer history in your chosen destination.
+With an [annual Littledata Plus plan](https://www.littledata.io/app/enterprise){:target="\_blank"} you can import all Shopify orders and refunds from before you started using Segment, to sync with destinations that support timestamped events (for example, a data warehouse). This enables you to build a complete customer history in your chosen destination.
 
 This data import includes all the [event properties](#event-properties) usually sent with an `Order Completed` event, including the [customer traits](#identify-calls).
 

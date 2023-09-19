@@ -2,13 +2,17 @@
 title: Sending Segment Data to Destinations
 ---
 
-You've decided how to format your data, and collected it using [Segment Sources](/docs/connections/sources/). Now what do you do with it? You send the data to Destinations!
+You've decided how to format your data, and collected it using [Segment Sources](/docs/connections/sources/). Now what do you do with it? You send the data to Destinations.
 
 Destinations are tools or services which can use the data sent from Segment to power analytics, marketing, customer outreach, and more.
 
 > info ""
-> Each Segment Workspace has its own set of destinations, which are connected to the workspace's sources. When you add or modify a destination, make sure you're working with the correct workspace!
+> Each Segment Workspace has its own set of destinations, which are connected to the workspace's sources. When you add or modify a destination, make sure you're working with the correct workspace.
 
+> info "Healthcare and Life Sciences (HLS) customers can encrypt data flowing into their destinations"
+> HLS customers with a HIPAA eligible workspace can encrypt data in fields marked as Yellow in the Privacy Portal before they flow into an event stream, cloud mode destination.
+>
+> To learn more about data encryption, see the [HIPAA Eligible Segment documentation](/docs/privacy/hipaa-eligible-segment/#data-encryption).
 
 ## Adding a destination
 
@@ -58,7 +62,7 @@ You can use the Segment Public API to add destinations to your workspace using t
 
 Adding a destination can have a few different effects, depending on which sources you set up to collect your data, and how you configured them.
 
-#### Analytics.js
+### Analytics.js
 
 If you are using [Segment's JavaScript library, Analytics.js](/docs/connections/sources/catalog/libraries/website/javascript/), then Segment handles any configuration changes you need for you. If you're using Analytics.js in cloud-mode, the library sends its tracking data to the Segment servers, which route it to your destinations. When you change which destinations you send data to, the Segment servers automatically add that destination to the distribution list.
 
@@ -66,13 +70,13 @@ If you're using Analytics.js in device-mode, then Analytics.js serves as a wrapp
 
 You can enable device-mode for some destinations from the destination's Settings page in the Segment web app. You don't need to use the same mode for all destinations in a workspace; some can use device-mode, and some can use cloud-mode.
 
-#### Mobile sources
+### Mobile sources
 
 By default, Segment's [mobile sources](/docs/connections/sources/catalog/#mobile) send data to Segment in cloud-mode to help minimize the size of your apps. In cloud-mode the mobile source libraries forward the tracking data to the Segment servers, which route the data to the destinations. Since the Segment servers know which destinations you're using, you don't need to take any action to add destinations to mobile apps using cloud-mode.
 
 However, if the destination you're adding has features that run on the user's device, you might need to update the app to package that destination's SDK with the library. Some destinations require that you package the SDK, and some only offer it
 
-#### Server sources
+### Server sources
 
 Segment's [server sources](/docs/connections/sources/catalog/#server) run on your internal app code, and never have access to the user's device. They run in cloud-mode only, and forward their tracking calls to the Segment servers, which forward the data to any destinations you enabled.
 
@@ -114,6 +118,8 @@ Some destinations do not support having multiple instances connected to the same
 
 You can create unique destination filters for each destination instance connected to the same source.
 
+> info ""
+> Some destinations don't support multiple instances connected to the same source. If this is the case, you won't see the option to add a second instance of that destination.
 
 ### Connect multiple sources to one instance of a destination
 
@@ -132,6 +138,9 @@ You can add multiple instances of a destination using the Segment Public API. Se
     - **Warning**: If you bundle one instance of a destination in a mobile source but have other instances of that destination connected to that source you might see unexpected and inconsistent data.
 - **Non-mobile sources can only connect to one *device-mode* instance of a destination, in addition to up to 25 cloud-mode instances.** A web browser sending to a destination in device-mode sends data directly from the user's browser (instead of through the Segment servers), by bundling a copy of destination's code with the Segment SDK. Segment can't bundle multiple copies of the destination SDK and so it can't send data to multiple instances of the destination from the browser.
 - **You cannot connect a source to more than one instance of a destination that operates in device-mode only**. These destinations can only accept data from code directly on the user's device, and Segment cannot include duplicates of that code for a single source.
+- **Multi-instance support is not available for most hybrid Actions destinations, and will not support Web Mode Actions destinations**. Hybrid destinations are those that have some components that operate in device-mode and some that operate in cloud-mode. Actions destinations currently affected by this are Amplitude Actions and Braze Cloud Actions. 
+    - **Amplitude Actions** *does* have multi-instance support for Analytics.js and server sources, but *does not* have multi-instance support for mobile sources. 
+    - **Braze Cloud Actions** *does not* have multi-instance support because it includes a device-mode web plugin for the Debounce Middleware.
 
 
 ### Other multi-instance destination considerations

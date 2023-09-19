@@ -11,13 +11,8 @@ Segment recommends that you make an Identify call:
 - After a user first registers
 - After a user logs in
 - When a user updates their info (for example, they change or add a new address)
-- Upon loading any pages that are accessible by a logged in user (optional)
 
 The first three examples are pretty self-explanatory, but many might ask: why you would call identify on every page load if we're storing the `userId` in the cookie/local storage?
-
-Let's imagine this scenario:
-
-I log into your app. Identify is called. For whatever reason, I close the browser and don't return until later. There's no way of knowing where I will reenter your app from. I could start my session from anywhere. And because there are many tools out there that require an initial identify call for certain features (e.g. Intercom chat widget) it's important to tell your end tools who the user is when they first start their session.
 
 Calling `identify` in one of our [libraries](/docs/connections/sources/) is one of the first steps to getting started with Segment. Refer to library-specific documentation for more details.
 
@@ -96,6 +91,11 @@ Here's a complete example of an `identify` call:
   "version": "1.1"
 }
 ```
+### Create your own Identify call
+
+Use the following interactive code pen to see what your Identify calls would look like with user-provided information:
+
+{% include components/codepens/identify-spec.html %}
 
 ## Identities
 
@@ -159,6 +159,6 @@ Reserved traits Segment has standardized:
 | `username`    | String   | User's username. This should be unique to each user, like the usernames of Twitter or GitHub.             |
 | `website`     | String   | Website of a user       |
 
-**Note:** You might be used to some destinations recognizing special traits by slightly different names. For example, Mixpanel recognizes a `$created` trait when the user's account was first created, while Intercom recognizes the same trait as `created_at` instead.  Luckily, you don't have to worry about those inconsistencies. Just pass along `createdAt`. **Segment handles all of the destination-specific conversions for you automatically.**  Same goes for the rest of the reserved traits.
+**Note:** You might be used to some destinations recognizing special traits by slightly different names. For example, Mixpanel recognizes a `$created` trait when the user's account was first created, while Intercom recognizes the same trait as `created_at` instead. Segment attempts to handle all the destination-specific conversions for you automatically. If you need help understanding if a specific field will be converted to a destination, take a look at Segment's [open source integration code](https://github.com/segment-integrations?q=&type=all&language=&sort=){:target="_blank"}, view the destination's documentation, or [contact Segment support](https://app.segment.com/workspaces?contact=1).
 
 **You can pass these reserved traits using camelCase or snake_case**, so in JavaScript you can match the rest of your camel-case code by sending `firstName`, while in Ruby you can match your snake-case code by sending `first_name`. That way the API never seems alien to your code base. Keep in mind that not all destinations support these reserved traits, so sending these traits in camelCase and snake_case can result in two sets of traits in other destinations.

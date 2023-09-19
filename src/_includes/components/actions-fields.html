@@ -63,7 +63,7 @@
 </thead>
 <tbody>
   {% for preset in presets %}
-  {% assign triggers = preset.trigger | split: "or" %}
+  {% assign triggers = preset.trigger | split: " or" %}
   {% assign id = preset.actionId %}
   {% assign actionName = actions | where: "id", id | first %}
   <tr>
@@ -88,7 +88,7 @@ Build your own Mappings! Combine supported [triggers](/docs/connections/destinat
   <div class="fa fa-info-circle"></div>
   <div class="content">
     <p class="header">Mapping limits per destination</p>
-    <p>Individual destination instances support a maximum of 50 mappings.</p>
+    <p>Individual destination instances have support a maximum of 50 mappings.</p>
   </div>
 </div>
 
@@ -117,12 +117,10 @@ Build your own Mappings! Combine supported [triggers](/docs/connections/destinat
   </thead>
   <tbody>
 {% for field in action.fields %}
-{% unless field.type == "HIDDEN" %}
 <tr>
 <td>{{field.label}}{% if field.required %}<span class="required" title="This field is required">*</span>{% endif %}</td>
 <td>{% if field.type %}Type: <code>{{field.type}}</code><br />{%endif%}{{field.description | markdownify}}</td>
 </tr>
-{% endunless %}
 {%endfor%}
 </tbody>
 </table>
@@ -143,3 +141,4 @@ This action does not have any fields.
 {% endif %}
 {% endunless %}
 {% endfor %}
+

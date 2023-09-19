@@ -9,7 +9,7 @@ This destination is maintained by ActiveCampaign. For any issues with the destin
 
 ## Getting Started
 
-{% include content/connection-modes.md %}
+
 
 1.  From your Segment UI's Destinations page click on "Add Destination".
 2.  Search for "Active Campaign" in the Catalog, select it, and choose which of your sources to connect the destination to.
@@ -78,7 +78,7 @@ ActiveCampaign also supports updating a contact's custom fields with this integr
 
 For example, if you have a contact in ActiveCampaign with these custom fields:
 
-![](images/jda1490xo_screenshot2015-12-07at3.58.27pm.png)
+![A screenshot of the fields page in ActiveCampaign, featuring two custom fields: Shirt Size and State.](images/jda1490xo_screenshot2015-12-07at3.58.27pm.png)
 
 You can update those fields using this identify call:
 

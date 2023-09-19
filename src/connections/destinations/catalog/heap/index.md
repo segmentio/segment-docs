@@ -7,12 +7,12 @@ id: 54521fd725e721e32a72eebd
 
 ## Getting Started
 
-{% include content/connection-modes.md %}
+
 
 1. From the Segment web app, click **Catalog**.
 2. Search for "Heap" in the Catalog, select it, and choose which of your sources to connect the destination to.
 3. In the destination settings, enter your Heap "App ID" into the connection settings.
-4. If you are using Heap using Segment's client-side `analytics.js` library, we asynchronously load Heap's JavaScript library onto the page. As such, all native functionality of Heap, including auto-capturing of all events.
+4. Remove Heap's snippet from your page if you're using Segment's client-side Analytics.js library to load Heap. With the Analytics.js library, Segment asynchronously loads Heap's JavaScript library onto your page. All native functionality of Heap, including auto-capturing of all events are available to you.  
 
 ## Identify
 
@@ -22,7 +22,7 @@ If you're not familiar with the Segment Specs, take a look to understand what th
 analytics.identify('userId123');
 ```
 
-When you call `identify` we call [Heap's identify method](https://heapanalytics.com/docs/custom-api#identify) with the `userId` and `traits` you provide.
+When you call `identify`, Segment calls [Heap's identify method](https://developers.heap.io/docs/using-identify){:target="_blank"} with the `userId` and `traits` you provide.
 
 If one of your `traits` is of the date property type, we will convert it into an ISO string.
 
@@ -34,7 +34,7 @@ If you're not familiar with the Segment Specs, take a look to understand what th
 analytics.track('Clicked Button');
 ```
 
-When you call `track` from `analytics.js`, we call Heap's [track function](https://docs.heapanalytics.com/reference#track) with exactly the same parameters. Calling `track` from one of our mobile SDKs or server-side sources records a [Heap Custom Event](https://docs.heapanalytics.com/reference#track-1) with the same event name and properties.
+When you call `track` from `analytics.js`, Segment calls Heap's [track function](https://developers.heap.io/reference/track){:target="_blank"} with the same parameters. Calling `track` from one of Segment's mobile SDKs or server-side sources records a [Heap Custom Event](https://docs.heapanalytics.com/reference#track-1){:target="_blank"} with the same event name and properties.
 
 If one of your `properties` is of the date property type, we will convert it into an ISO string.
 

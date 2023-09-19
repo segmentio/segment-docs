@@ -2,11 +2,10 @@
 title: AB Smartly Destination
 id: 605dd9d7e5ff0b3873e250a4
 ---
+
 [A/B Smartly](https://absmartly.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners){:target="_blank"} provides an on-premise, full-stack experimentation platform for engineering and product teams that do continuous experimentation embedded into their development process. A/B Smartly's real-time analytics helps engineering and product teams ensure that new features will improve the customer experience without breaking or degrading performance and/or business metrics.
 
 This destination is maintained by A/B Smartly. For any issues with the destination, [contact A/B Smartly's Support](mailto:support@absmartly.com).
-
-
 
 ## Implementation Prerequisite
 
@@ -20,7 +19,7 @@ Segment provides specific implementation details for A/B Smartly in the sections
 
 ## Getting Started
 
-{% include content/connection-modes.md %}
+
 
 1. From the Destinations catalog page in the Segment App, click **Add Destination**.
 2. Search for "A/B Smartly" in the Destinations Catalog, and select the "A/B Smartly" destination.
@@ -33,18 +32,15 @@ Segment provides specific implementation details for A/B Smartly in the sections
 9. And finally a mapping of Segment Identities to A/B Smartly Units(`https://your-org-name.absmartly.com/unit/list`). You should map all of your Segment identities that you would like to use in your A/B tests to the units that you already have in A/B Smartly. Users must map all the identity types, but not for the individual users. Map all of your ids in your Unit List(`https://your-org-name.absmartly.com/unit/list`).
 10. Optionally go to "Goal Mapping" and start adding the track calls that you would like to see showing up on A/B Smartly as goals. You only need to create a name mapping if the name of the goal on A/B Smartly's platform is different from the name of the track call in Segment.
 
-
-
 ## Page
 
 Take a look at the [Page method documentation](/docs/connections/spec/page/) to understand what it does. An example call would look like:
 
 ```js
-analytics.page()
+analytics.page();
 ```
 
-Segment sends Page calls to A/B Smartly as a `pageview` goal. The goal name is`<page_name>_pageview`. The page name is lower-cased and any spaces or special characters are replaced with underscores. For example, a view of the "Home" page triggers the `home_pageview` goal. If the goal doesn't exist in the A/B Smartly web console, it is ignored.
-
+Segment sends Page calls to A/B Smartly as a `Page` goal. The goal name is `Page: <Page Name>`. For example, `Page: Home`. If the goal doesn't exist in the A/B Smartly web console, it is ignored.
 
 ## Screen
 
@@ -54,15 +50,14 @@ Take a look at the [Screen method documentation](/docs/connections/spec/screen/)
 [[SEGAnalytics sharedAnalytics] screen:@"Home"];
 ```
 
-Segment sends Screen calls to A/B Smartly as a `screenview` goal. The goal name is `<screen_name>_screenview`. The screen name is lower-cased and any spaces or special characters are replaced with underscores. For example, a view of the "Home" screen triggers the `home_screenview` goal. If the goal doesn't exist in the A/B Smartly web console, it is ignored.
-
+Segment sends Screen calls to A/B Smartly as a `Screen` goal. The goal name is `Screen: <Screen Name>`. For example, `Screen: Login`. If the goal doesn't exist in the A/B Smartly web console, it is ignored.
 
 ## Track
 
 Take a look at the [Track method documentation](/docs/connections/spec/track/) to understand what it does. An example call would look like:
 
 ```js
-analytics.track('Login Button Clicked')
+analytics.track("Login Button Clicked");
 ```
 
 Segment sends Track calls to A/B Smartly as a `track` event. A/B Smartly's track calls are the way to track goals. `analytics.track('booking')` is equivalent to an A/B Smartly SDK track call `context.track('booking')`.

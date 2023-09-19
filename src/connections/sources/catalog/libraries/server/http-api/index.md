@@ -1,5 +1,5 @@
 ---
-title: HTTP Tracking API Source
+title: HTTP API Source
 redirect_from: '/connections/sources/catalog/libraries/server/http/'
 id: iUM16Md8P2
 ---
@@ -14,7 +14,9 @@ Segment has native [sources](/docs/connections/sources/) for most use cases (lik
 Authenticate to the Tracking API by sending your project's **Write Key** along with a request.
 Authentication uses HTTP Basic Auth, which involves a `username:password` that is base64 encoded and prepended with the string `Basic`.
 
-In practice that means taking a Segment source **Write Key**,`'abc123'`, as the username, adding a colon, and then the password field is left empty. After base64 encoding `'abc123'` becomes `'YWJjMTIz'`; and this is passed in the authorization header like so: `'Authorization: Basic YWJjMTIz'`.
+In practice that means taking a Segment source **Write Key**,`'abc123'`, as the username, adding a colon, and then the password field is left empty. After base64 encoding `'abc123:'` becomes `'YWJjMTIzOg=='`; and this is passed in the authorization header like so: `'Authorization: Basic YWJjMTIzOg=='`.
+
+**Note:** Encoding the write key without a colon may work due to backward compatibility, but this may not always be the case, so it's important to include the colon before encoding.
 
 ### Content-Type
 
@@ -22,13 +24,20 @@ To send data to Segment's HTTP API, a content-type header must be set to `'appli
 
 ## Errors
 
-Segment returns a `200` response for all API requests so debugging should be done in the Segment Debugger. The only exception is if the request is too large / JSON is invalid it will respond with a `400`.
+Segment returns a `200` response for all API requests except errors caused by large payloads and JSON errors (which return `400` responses.) To debug events that return `200` responses but aren't accepted by Segment, use the Segment Debugger.
 
-Segment welcomes feedback on API responses and error messages. [Reach out to support](https://segment.com/help/contact/) with any requests or suggestions you may have.
+Common reasons events are not accepted by Segment include: 
+  - **Payload is too large:** The HTTP API can handle API requests that are 32KB or smaller. The batch API endpoint accepts a maximum of 500KB per request, with a limit of 32KB per event in the batch. If these limits are exceeded, Segment returns a 400 Bad Request error. 
+  - **Identifier is not present**: The HTTP API requires that each payload has a userId and/or anonymousId.
+  - **Track event is missing name**: All `track` events sent to Segment must have an `event` field. 
+  - **Deduplication**: Segment deduplicates events using the `messageId` field, which is automatically added to all payloads coming into Segment. If you're setting up the HTTP API yourself, ensure all events have unique messageId values.
+  - **Invalid JSON**: If you send an event with invalid JSON, Segment returns a 400 Bad Request error.
+
+Segment welcomes feedback on API responses and error messages. [Reach out to support](https://segment.com/help/contact/){:target="_blank"} with any requests or suggestions you may have.
 
 ## Rate Limits
 
-The HTTP API has no hard rate limit. However, Segment recommends not exceeding 500 requests per second, including large groups of events sent with a single [`batch` request](#batch).
+Segment recommends you to not exceed 100,000 requests per second with the HTTP API. For [`batch` requests](#batch), there's a limit of 500 KB per request. 
 
 ## Max Request Size
 

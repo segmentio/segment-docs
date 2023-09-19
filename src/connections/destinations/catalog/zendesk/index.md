@@ -8,12 +8,12 @@ id: 54521fdc25e721e32a72ef06
 
 ## Getting Started
 
+
+
+
 1. From the Segment web app, click **Catalog**.
 2. Search for "Zendesk" in the Catalog, select it, and choose which of your sources to connect the destination to.
-3. There are two ways to authenticate your Zendesk account with Segment:
-   * Use the standard email and password you use to Sign In to your Zendesk account. In the Zendesk settings, add your email in the **Email** setting and your password in the **Password** setting.
-   * Use Zendesk OAuth with a unique token. Get the corresponding token from your Zendesk account: **Settings > Channels > API** and under the Settings Tab choose the corresponding token from the "Active API Tokens" list. In the Zendesk settings, add your `email/token` in the **Email** setting (for example, `peter@intech.com/token` - use the actual word token in your email address) and add the actual token in the **Password** setting.
-4. Add your Zendesk subdomain in the **Subdomain** setting (not including `.zendesk.com`).
+3. Enter your Zendesk domain (not including `.zendesk.com`) and click **Connect**. The Zendesk OAuth login opens in a new tab. Sign in with your Zendesk credentials to authenticate and allow the Segment integration.
 
 ## Identify
 
@@ -32,6 +32,17 @@ When you call `identify`, Segment inserts or updates a user record in Zendesk an
 
 Here's an example:
 
+{% comment %} api-example '{
+  "action": "identify",
+  "userId": "12345",
+  "traits": {
+    "name": "Kobe Bryant",
+    "email": "kobe@lakers.com",
+    "timezone": "America/Los_Angeles",
+    "organizationId": 6789,
+    "phone": "763-555-2342"
+  }
+}'}}} {% endcomment %}
 
 ```js
 {
@@ -47,9 +58,6 @@ Here's an example:
 }
 ```
 
-> info "The `role` trait in Zendesk"
-> 'role1 us a reserved trait in Zendesk. As a result, you can't pass data into that field. To get role-related data into Zendesk, map it as a separate field, for example `user_role`.
-
 By default, Users in Zendesk have many standard attributes associated with a single User record. Segment, at this time, is mapping to a subset of these. If you attempt to send data to a Zendesk attribute that are not yet mapped, it will create a custom field for this (it will not update the existing attribute).
 
 Here are the Zendesk User Attributes Segment maps to and their syntax.
@@ -64,8 +72,7 @@ Here are the Zendesk User Attributes Segment maps to and their syntax.
 | userId             | user_id            |
 | userId             | external_id        |
 
-> info "About the Name field" 
-> If `name` is provided, Segment parses `firstName` and `lastName` from this, or you can send `firstName` and `lastName` separately and Zendesk concatenates them to `name`.
+**Note on Name:** If `name` is provided, Segment will parse `firstName` and `lastName` from this, or you can send `firstName` and `lastName`separately and they will be concatenated to `name`.
 
 ### Removing Users from a Zendesk Organization Membership on Segment Identify
 
@@ -91,7 +98,7 @@ Here's an example:
 ```
 
 > note ""
-> **Note**: When a request is made, Zendesk schedules a job to un-assign all working tickets currently assigned to the user and organization combination. The `organization_id` of the unassigned tickets is set to `null`.
+> **Note**: When a request is made, Zendesk schedules a job to unassign all working tickets currently assigned to the user and organization combination. The `organization_id` of the unassigned tickets is set to `null`.
 
 ### Zendesk Verification Email at User Creation
 
@@ -160,17 +167,6 @@ analytics.group("0e8c78ea9d97a7b8185e8632", {
 When you call `group` Segment inserts or update an organization in Zendesk and uses the `groupId` you include in the call to match organization records in Zendesk. If there are multiple organizations matching the name, then no updates are submitted.
 
 Here's an example:
-
-{% comment %} api-example '{
-  "action": "group",
-  "groupId": "908172409",
-  "userId": "6789",
-  "traits": {
-    "name": "LA Lakers",
-    "url": "https://lakers.com",
-    "deleted": false
-  }
-}'}}} {% endcomment %}
 
 ```js
 {

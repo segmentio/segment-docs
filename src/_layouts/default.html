@@ -23,6 +23,7 @@
   {%- assign priority = 4 -%}
 {%- endif -%}
 <!-- {{site.env.ENVIRONMENT}} -->
+<!-- {{page.layout}} -->
 <html lang="{{ page.lang | default: site.lang | default: "en" }}">
 <head>
   <base href="{{ basehref }}" />
@@ -47,8 +48,19 @@
   <meta class="swiftype" name="priority" data-type="integer" content="{{priority}}" />
   {%- endif -%}
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"/>
-  <link rel="icon" href="https://segment.com/favicon.ico">
-  
+  <link rel="apple-touch-icon" sizes="57x57" href="https://segment.com/_next/static/images/apple-icon-57x57-10393af61491fa24a5c6b35bf41591e4.png"/>
+  <link rel="apple-touch-icon" sizes="60x60" href="https://segment.com/_next/static/images/apple-icon-60x60-8d091c0057084d1316fecf2da8e0b286.png" />
+  <link rel="apple-touch-icon" sizes="72x72" href="https://segment.com/_next/static/images/apple-icon-72x72-113c8249d92d07d6acf0e3aff7bbf051.png" />
+  <link rel="apple-touch-icon" sizes="76x76" href="https://segment.com/_next/static/images/apple-icon-76x76-2981e3e40fc23a679158f5303356c1f6.png" />
+  <link rel="apple-touch-icon" sizes="114x114" href="https://segment.com/_next/static/images/apple-icon-114x114-70292d70fcf8d23b3ce0011dc55d4dbd.png" />
+  <link rel="apple-touch-icon" sizes="120x120" href="https://segment.com/_next/static/images/apple-icon-120x120-0fffebf1d373ade10b22ac65b3fbea6d.png" />
+  <link rel="apple-touch-icon" sizes="144x144" href="https://segment.com/_next/static/images/apple-icon-144x144-741e771a56d717d9592548c772e72635.png" />
+  <link rel="apple-touch-icon" sizes="152x152" href="https://segment.com/_next/static/images/apple-icon-152x152-3b4034819056f00a47ed3e19b754b45d.png" />
+  <link rel="icon" type="image/png" sizes="192x192" href="https://segment.com/_next/static/images/android-icon-192x192-143dc4bdade264025b8b5989dbddaeb3.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="https://segment.com/_next/static/images/favicon-32x32-58e71271c081d9f71b1d8a6fe1350a8a.png" />
+  <link rel="icon" type="image/png" sizes="96x96" href="https://segment.com/_next/static/images/favicon-96x96-caacb8a36b7b385b8c0473d8cdade803.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="https://segment.com/_next/static/images/favicon-16x16-34494a07d899bde300ee54030b1a6e1a.png" />
+    
   {%- if jekyll.environment == "production" -%}
     {%- assign hostname = "https://segment.com" -%}
   {%- elsif jekyll.environment == "staging" -%}
@@ -69,6 +81,7 @@
   <link rel="stylesheet" href="{{ '/assets/algolia.css' | relative_url }}">
 </head>
 <body>
+  <a href="#{{ page.title | remove:':' | remove:'?' | remove:'(' | remove:')' | remove:',' | remove:'&' | replace:"'", "-"| replace:'.', '-' | downcase | split:' ' | join:"-" }}" class="skiplink">Skip to main content</a>
   <div id="consent-manager"></div>
   {{ content }}
   <a class="back-scrolling" data-back-scrolling data-active-class="back-scrolling--active">

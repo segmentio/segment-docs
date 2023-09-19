@@ -22,6 +22,9 @@ changelog:
       labels:
         - fixed-content
         - fixed-site
+    - title: Knowledge Centered Support 
+      labels:
+        - KCS
     - title: Other Updates
       labels:
         - "*"

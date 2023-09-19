@@ -1,8 +1,7 @@
 ---
 title: 'Anomaly Detection'
+plan: protocols
 ---
-
-{% include content/plan-grid.md name="protocols" %}
 
 If you're using Protocols, you might want to get notifications when an anomaly in event volumes or [Protocols violation](/docs/protocols/validate/forward-violations/) counts occurs. This document clarifies what we mean by anomaly detection, gives examples of anomalies that might be relevant to your business, and provides some example solutions of how to monitor and alert on anomalies using some standard tools available today.
 
@@ -29,7 +28,7 @@ Regardless of the solution you choose, we recommend that you create a new Segmen
 
 Next, set up [Violation forwarding](/docs/protocols/validate/forward-violations/) for each Tracking Plan connected to the Source. Once connected, your sources will look like:
 
-![](images/protocols_meta_source_setup.png)
+![Diagram showing how violations and production events are routed to their respective destinations.](images/protocols_meta_source_setup.png)
 
 **Note: When you enable violation forwarding, it counts as 1 MTU toward your monthly MTU limit. If you are on an API plan, all forwarded violations count against your API limit. Violations might also generate costs in downstream destinations and data warehouses.**
 
@@ -49,13 +48,13 @@ Source: {% raw %}`{{properties.sourceName}}` \nEvent: `{{properties.eventName}}`
 ```
 When you're done, it'll look like the screenshot below.
 
-![](images/slack_violation_generated_setup.png)
+![Screenshot of a Slack destination settings page with Segment Event Name and Event Template fields filled out. The Event Template follows the convention outlined above.](images/slack_violation_generated_setup.png)
 
 
 ### Create customized Anomaly Detection dashboards in a BI tool
 Custom dashboards are a great way to focus your teams around the metrics and events that matter most to your business. With a few simple queries you can build a dashboard to share with teams, so everyone can understand how well they're doing against your data quality objectives. Here's an example dashboard that combines [forwarded Violations](/docs/protocols/validate/forward-violations/) with production event data to track data quality. See below for detailed SQL queries!
 
-![](images/anomaly_detection_dashboard.png)
+![Graphic with five bar charts created with sample data, showing different comparisons of violations across events and sources.](images/anomaly_detection_dashboard.png)
 
 Note: For all queries below, replace `protocols_audit_source` with whatever schema name you set for your forwarded violations source.
 

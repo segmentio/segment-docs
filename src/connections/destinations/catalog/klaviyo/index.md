@@ -15,7 +15,7 @@ To configure Klaviyo as an Event Source to get data into your warehouse or other
 
 ## Getting started
 
-{% include content/connection-modes.md %}
+
 
 1. From the Segment web app, click **Catalog**.
 2. Search for "Klaviyo" in the Catalog, select it, and choose which of your sources to connect the destination to.
@@ -78,7 +78,7 @@ If your `userId` is an email, or you provide an email in `traits.email`, Segment
 
 #### Enforce email as primary identifier
 
-If this option is enabled, Segment won't set the `$id` field to your `userId` when you call ``.identify()`` or ``.track()``. Instead, Segment will set a custom attribute `id` and only set `$email` as the primary identifier with your `traits.email` or `properties.email`. You should be careful when enabling this option and understand its full implications. This should only be enabled if you are experiencing an issue with duplicate profiles being created inside Klaviyo.
+This option is enabled by default to ensure duplicate profiles are not being created inside of Klaviyo. When enabled, Segment will never set the $id field to your `userId` when you call `.identify()` or `.track()`. Instead, Segment will only set $email as the primary identifier with your `traits.email` or `properties.email`. Please note that if you have this setting toggled on, you must send `email` in on your payloads or your events will not go through to Klaviyo.
 
 #### Fallback on Anonymous ID
 
@@ -142,11 +142,16 @@ analytics.track({
 
 When you call `track` on `analytics.js`, Segment calls Klaviyo's `track` with the same parameters.
 
+If you include `properties.revenue` in a track event, Segment maps it to Klaviyo's `$value` event.
+
+> info ""
+> When you're tracking client-side, some Klaviyo events require you send an Identify call  before a Track call. 
+
 ### Server-side Track
 
-When you call make a Track call from one of Segment's mobile or server-side libraries, Segment keys the user with the `userId` and also provides the Klaviyo `$email` `customer_property` if your `userId` is an email, or you provide `email` as one of your event `properties`.
+When you make a Track call from one of Segment's mobile or server-side libraries, Segment keys the user with the `userId` and also provides the Klaviyo `$email` `customer_property` if your `userId` is an email, or you provide `email` as one of your event `properties`.
 
-Segment also maps the following Segment spec'd properties to Klaviyo's [special people properties](http://www.klaviyo.com/docs){:target="_blank"}:
+Segment also maps the following Segment spec'd properties to Klaviyo's [special people properties](https://developers.klaviyo.com/en/docs/javascript_api#identify-people){:target="_blank"}:.
 
 ### Ecommerce
 

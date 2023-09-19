@@ -1,9 +1,9 @@
 ---
 title: Privacy Portal
+plan: privacy
 ---
-{% include content/plan-grid.md name="privacy" %}
 
-When preparing for new privacy regulations (such as the GDPR or the CCPA), the
+When preparing for new privacy regulations (like HIPAA, the GDPR, or the CCPA), the
 best practice is to create a comprehensive data inventory which includes details
 about what personal information you collect, where you collect it from, where
 you store the data, and who has access to it. The Privacy Portal helps automate
@@ -23,9 +23,9 @@ Privacy Portal features are available to all Segment workspaces, however only wo
 
 The Inbox helps you keep track of new restricted data types as they are captured, quickly classify them, and build a data Inventory.
 
-We detect these fields by scanning data from your Web, Mobile, Server, and Cloud Event Sources to detect PII based on our [default PII matchers](#default-pii-matchers). New properties sent into Segment appear in the Inbox in realtime.
+Segment detects these fields by scanning data from your Web, Mobile, Server, and Cloud Event Sources to detect PII based on the [default PII matchers](#default-pii-matchers). New properties sent into Segment appear in the Inbox in realtime.
 
-When you view the Inbox for the first time, it displays every property that was sent into Segment from Web, Mobile, Server, and Cloud Event Sources dating back to August 9, 2019. ([Cloud Object Sources](/docs/connections/sources/#cloud-apps) do not appear in the Inbox at this time.)
+When you view the Inbox for the first time, it displays every property that was sent into Segment from Web, Mobile, Server, and Cloud Event Sources dating back to August 9, 2019. ([Object Cloud Sources](/docs/connections/sources/#object-cloud-sources) and [Reverse ETL Sources](/docs/connections/sources/#reverse-etl-sources) do not appear in the Inbox at this time.)
 
 You can click a row in the Inbox to learn more about a field and where it was collected. The expanded view shows:
 
@@ -35,7 +35,7 @@ You can click a row in the Inbox to learn more about a field and where it was co
 - an example code snippet containing a payload that the field appears in
 
 
-![](images/privacy-inbox.gif)
+![Animation of a user selecting a row in the Privacy Portal and clicking on the expanded view.](images/privacy-inbox.gif)
 
 
 To streamline the classification process, Segment pre-classifies the data in the
@@ -56,7 +56,7 @@ dropdown menu to change. For example, you might manually change a field that
 does not contain personal information in your implementation from a "Yellow"
 classification to "Green."
 
-![](images/privacy-inbox-change-color.gif)
+![Animation of a user selecting the color dropdown menu and changing the phone field from a Yellow field to a Green field.](images/privacy-inbox-change-color.gif)
 
 
 When you're satisfied that the fields have been classified appropriately, you
@@ -86,7 +86,7 @@ The Inventory is a central repository of all of the properties _you_ classified 
 
 Once you've classified the fields as Red, Yellow, and Green in the Inbox, the classified fields appear in the Inventory. You can use the filter at the top left to filter down to specific categories of data (for example, Red data, data from a production environment, data from specific sources).
 
-![](images/privacy-inventory-filtering.gif)
+![Animation of a user filtering the data inventory to only show red fields in their production environment that came from Clearbrain.](images/privacy-inventory-filtering.gif)
 
 Click into a field (for example, `ip`) in the Inventory to open the Inventory
 details. The details sheet displays how many times a specific field has been
@@ -100,7 +100,7 @@ connected to the Source that contains the field. The Access tab displays a list
 of who within your organization has access to this field.
 
 
-![](images/privacy-inventory-overview.png)
+![Screenshot of the product_id Inventory details page in the Privacy Portal.](images/privacy-inventory-overview.png)
 
 
 Finally, workspace owners can use the **Download CSV** button to export a CSV of
@@ -138,16 +138,14 @@ Below is a full list of automatically detected restricted fields.
 | Matcher                | Classification |
 | ---------------------- | -------------- |
 | social security number | red            |
-| health                 | red            |
 | password               | red            |
 | visa                   | red            |
 | veteran                | red            |
 | disability             | red            |
 | credit card            | red            |
-| genetic                | red            |
-| race                   | red            |
 | passport               | red            |
 | token                  | red            |
+| race                   | yellow         |
 | birthdate              | yellow         |
 | phone                  | yellow         |
 | address                | yellow         |
@@ -172,7 +170,11 @@ Below is a full list of automatically detected restricted fields.
 | sex                    | yellow         |
 | gender                 | yellow         |
 | sexual orientation     | yellow         |
-
+| medication             | yellow         |
+| allergy                | yellow         |
+| condition              | yellow         |
+| diagnosis              | yellow         |
+| procedure              | yellow         |
 
 When Segment detects data that meets the criteria for one of the default
 matchers (in the list above) in properties in your Web, Mobile, Server, or Cloud
@@ -184,7 +186,8 @@ This is where you can create your very own matchers to tell Segment what to scan
 for in your workspace. You can use this feature to detect properties that are
 unique to your company or region, or that aren't already handled by the default
 matchers above. You can have up to 100 custom matchers per workspace. Custom
-Matchers detect data in your Web, Mobile, Server, and Cloud Event Sources, and
+Matchers detect data in your Web, Mobile, Server, and Cloud Event Sources for 
+fields under `context`, `traits` and `properties` objects, and
 the data they detect appears in the Inbox.
 
 For example, if you have a restricted data point at your company called "SIN"
@@ -193,22 +196,21 @@ treat that property whenever it is appears in data Segment processes.
 
 **To create a Custom Matcher:**
 
-1. Click **New Matcher**.
+1. Click **Add a Custom Matcher**.
 2. Enter the **Symbol Name** (for example the property name, like "Social Insurance Number"). Segment matches against the **Symbol Name**, as well as the other context you provide in the next steps.
 3. Set the default classification:
    - **Red** for highly restricted
    - **Yellow** for moderately restricted
-   - **Green** for least restricted
 4. Choose whether to match on a **Key** (for example, "SIN", "Social Insurance Number", "Social Insurance No.", "SocInsNo") or on a **Value** (for example. "123-456-789", "1234567")
 5. Select how precise the match should be, by choosing **Exact** or **Similar** match.
    - **Exact** matches mean that a key matches the term exactly (for example "phone number" but never "phne number")
    - **Similar to** matches a **Key** that is similar to a term within a fuzzy string distance (for example "email" and "e-mail"). We built fuzzy matching using [this public GitHub repository](https://github.com/imjasonmiller/godice). If the score is > 0.7, then we say it's a match.
 
 
-![](images/privacy-add-new-matcher.gif)
+![Animation of a user creating a new matcher, SIN, with the exact matching setting selected.](images/privacy-add-new-matcher.gif)
 
 
-![](images/privacy-edit-matcher.png)
+![Screenshot of the Edit Matcher popup.](images/privacy-edit-matcher.png)
 
 
 Unless the field value pattern is unique, we recommend matching on the Key. For

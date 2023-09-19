@@ -54,7 +54,7 @@ If this outbound request is not showing up in the network when you fire an `iden
 
 ## Is your web site deployed under a domain on the Public Suffix List?
 
-The [Public Suffix List](https://publicsuffix.org/list/) is a catalog of certain Internet effective top-level domains, enumerating all domain suffixes controlled by registrars.
+The [Public Suffix List](https://publicsuffix.org/list/){:target="blank"} is a catalog of certain Internet effective top-level domains, enumerating all domain suffixes controlled by registrars.
 
 The implications of these domain suffixes is that first party cookies cannot be set on them. Meaning, `foo.example.co.uk` can share cookie access with `bar.example.co.uk`, but `example.co.uk` should be walled off from cookies at `example2.co.uk`. The latter two domains could be registered by different owners.
 
@@ -76,7 +76,7 @@ The JavaScript console reveals all requests, outbound and inbound, to your brows
 
 ## Is there a size limit on requests?
 
-Yes, 32KB per event message. Events with a payload larger than 32kb are dropped, and Segment's servers respond with a `500` error. 
+Yes, 32KB per event message. Events with a payload larger than 32KB are accepted by Analytics.js, with the browser returning a `200` response from the Segment servers, but the event will be silently dropped once it enters Segment's pipeline. 
 
 ## If Analytics.js fails to load, are callbacks not fired?
 
@@ -93,7 +93,7 @@ Segment added these metrics to proactively identify and resolve issues with indi
 There should be no noticeable impact to your data flow. You may notice Analytics.js make an extra network request in the network tab to carry the metrics data to Segment's servers. This should be very infrequent since the data is sampled and batched every 30 seconds, and should not have any impact of website performance.
 
 ## How are properties with `null` and `undefined` values treated?
-Segment uses the [`JSON.stringify()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON/stringify) method under the hood. Property values set to `null` or `undefined` are treated in accordance with the expected behaviour for the standard method:
+Segment uses the [`JSON.stringify()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON/stringify){:target="blank"} method under the hood. Property values set to `null` or `undefined` are treated in accordance with the expected behaviour for the standard method:
 
 ```js
 console.log(JSON.stringify({ x: null, y: 6 }));
@@ -128,8 +128,51 @@ analytics.track("Receipt Viewed", {}, {
     }
 })
 ```
-
 This works for any [context field](/docs/connections/spec/common/#context) that Segment automatically collects.
+
+When working with Page calls, you can overwrite context fields by following the same instructions above. However, because the `context.page` fields are also available in the `properties` parameter for page calls, you must also prevent the same fields in the `properties` parameter from being included in your Page call. The example below will allow you to overwrite `url` available in context field `page.url` and properties parameter:
+
+```js
+analytics.page("Receipt Page", {
+      url: null,
+},{
+    page: {
+        url: null
+    }
+})
+```
+
+
+### What is the impact of exposing the source's write keys?
+
+For the Segment script to work in the browser, you need to expose the write key in order for client-side tracking to work. Segment's library architecture requires the write key to be exposed, similar to that of other major tools like Google Analytics, Mixpanel, Kissmetrics, Hubspot, and Marketo.
+
+If you see any unusual behavior associated with your write key, you can generate a new key. Navigate to **Connections > Sources** and select your source. On the **Settings** tab, go to the **API Keys** section, and click **Generate New Key**.
+
+If you want to hide the write key, you can use Segment's [HTTP Tracking API source](/docs/connections/sources/catalog/libraries/server/http-api/) or one of the other [server-side libraries](/docs/connections/sources/catalog/#server).
+
+### Can I add context fields that do not already exist?
+
+Yes. Similar to overwriting context, you can add context fields by passing them into the options object as the third argument of the event call. For example, the analytics.js library does not automatically collect location information. To add this into the context object, pass it into the third argument as in the example below:
+
+```js
+analytics.track("Order Completed", {}, {
+    location: {
+        latitude: '39.7392',
+        longitude: '104.9903'
+    }
+})
+```
+
+> info ""
+> You must pass the context object with the call, event if it's empty, as shown by the empty object in the example above.
+
+Some destinations accept properties only. As a result, custom context fields you add may not forward to these destinations.
+
+### Why am I seeing additional cookies on my website?
+
+The AJS cookies being set under segment.com are first-party cookies. They are part of Segment's own implementation as well as the destination Segment uses. These cookies are not related to your implementation of Segment, and you only see them because you've visited Segment's domain using the same browser. They are sent to the writekey connected to Segment's own workspace, and are associated with the events Segment tracks when you visit segment.com.
+
 
 ## Known issues:
 

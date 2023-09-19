@@ -20,15 +20,24 @@ Some of Segment's previous plans, including the legacy API plan, limited integra
 
 No. Deleting your account only stops you from accessing workspaces through your login. The workspace is where the subscription is managed, and it will not be deleted. Data will still flow into Segment and your Destinations, and you will still be charged if you delete your account but don't delete your workspace.
 
+##How do I delete my account?
+
+To delete your account, go to the [User Settings](https://app.segment.com/settings/user){:target="_blank"} menu, and click **Delete Account** at the bottom of the page.
+
+Once the account is deleted you will not have access to workspaces associated with your account that are attached to the email address you signed up with.
+
 ## How do I delete my workspace entirely?
 
-To delete your workspace, go your [Workspace Settings](https://app.segment.com/goto-my-workspace/settings/basic), click the **General** tab, then click **Delete Workspace**.
+To delete your workspace, go to your [Workspace Settings](https://app.segment.com/goto-my-workspace/settings/basic){:target="_blank"}, click the **General** tab, then click **Delete Workspace**.
 
 You should also change your write keys for each source and remove all Segment snippets from your codebase.
 
 ## What happens if I change my workspace name or slug?
 
 Changing your workspace name or slug won't impact any sources or destinations you've already configured. If you're using [Segment's Public API](/docs/api), you'll need to change the slug in your request URLs.
+
+> error "We were unable to save your changes, please try again"
+> If you see this error message when trying to change a workspace slug, it often means the slug is already taken.
 
 ## Can I recover a source or workspace after I delete it?
 
@@ -45,4 +54,8 @@ To move a source between workspaces, navigate to the source's **Settings** tab, 
 
 ![Image of the Transfer to Workspace tab in Segment's platform](images/transfer-source.png "Transferring a source")
 
-Transferring a source removes all associated destination configurations.  Be sure to set up the destinations you want after the transfer.
+> warning "Tracking Plans do not transfer"
+> Segment recommends that you disconnect Tracking Plans from Sources before you initiate a workspace transfer. Once the transfer is complete, add and reconnect your Tracking Plans in the new workspace.
+
+> warning "Sources can't be transferred to EU workspaces"
+> Though transferring sources to the EU workspace is not blocked in the UI, the transfer will not work as expected. This feature is not supported for cross region migration. Segment recommends that you re-create the source in the new workspace. 

@@ -14,19 +14,28 @@ To get started with Analytics Node.js:
    4. Give the source a display name, and enter the URL the source will collect data from.
       * When you create a Source in the Segment web app, it tells the Segment servers that you'll be sending data from a specific source type. When you create or change a Source in the Segment app, Segment generates a new Write Key for that source. You use the write key in your code to tell the Segment servers where the data is coming from, so Segment can route it to your destinations and other tools.
 2. Install the module.
-   1. Run the following npm command to install Segment:
+   1. Run the following commands to install Segment:
        ```
-       npm install --save analytics-node
+        # npm
+        npm install @segment/analytics-node
+        # yarn
+        yarn add @segment/analytics-node
+        # pnpm
+        pnpm install @segment/analytics-node
        ```
 
        This will add the Node library module to your `package.json`. The module exposes an `Analytics` constructor, which you need to initialize with your Segment project's **Write Key**, like so:
 
        ```javascript
-       var Analytics = require('analytics-node');
-       var analytics = new Analytics('YOUR_WRITE_KEY');
+        import { Analytics } from '@segment/analytics-node'
+        // or, if you use require:
+        const { Analytics } = require('@segment/analytics-node')
+
+        // instantiation
+        const analytics = new Analytics({ writeKey: '<YOUR_WRITE_KEY>' })
        ```
 
-       This will create an instance of `Analytics` that you can use to send data to Segment for your project. The default initialization settings are production-ready and queue 20 messages before sending any requests. In development you might want to use [development settings](/docs/connections/sources/catalog/libraries/server/node#development).
+       This creates an instance of `Analytics` that you can use to send data to Segment for your project. The default initialization settings are production-ready and queue 20 messages before sending any requests. In development you might want to use [development settings](/docs/connections/sources/catalog/libraries/server/node#development).
 3. Identify Users.
 
     * **Note:** For any of the different methods described in this quickstart, you can replace the properties and traits in the code samples with variables that represent the data collected.

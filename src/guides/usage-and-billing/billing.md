@@ -32,22 +32,10 @@ Be aware that if you notify Segment of wanting to cancel your annual plan, but c
 
 All Segment customers with a US business address may be subject to state and local sales taxes. The applicable tax law applies based on your business location address, which may be different from your billing address. Customers who purchase a taxable product or service, and are located in a jurisdiction where Segment currently charges sales tax, will see the calculated sales tax on their invoice.
 
-Segment currently charges sales tax in the these states:
+Segment collects Value Added Tax (VAT) and Goods and Services Tax (GST) on the services sold to its international customers located in certain foreign jurisdictions. 
 
-- Arizona
-- Colorado (Denver only)
-- Connecticut
-- District of Columbia
-- Illinois (Chicago only)
-- Massachusetts
-- New York
-- Ohio
-- Pennsylvania
-- South Carolina
-- Tennessee
-- Texas
-- Utah
-- Washington
+For more information about sales tax, VAT, and GST, see the [Segment VAT/GST FAQs](/docs/assets/pdf/faq-segment-dissolution-vat.pdf).
+
 
 ## Do I qualify for a tax exemption?
 
@@ -67,7 +55,7 @@ In most cases Segment doesn't offer refunds, as noted in the [Terms of Service](
 
 ## Is there a free trial for paid plans?
 
-Yes! Segment offers a _**2-week trial on the Team plan**_ to let you try the plan before you purchase it! 
+Segment offers a _**2-week trial on the Team plan**_ to let you try the plan before you purchase it.
 
 Segment also offers the Free plan, which includes up to 1,000 MTUs, at no cost to you. 
 

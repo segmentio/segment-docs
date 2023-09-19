@@ -5,22 +5,22 @@ strat: ios
 
 ## How big is the Segment SDK?
 
-The core Segment SDK is extremely lightweight. It weighs in at about 212kb.
+The core Segment SDK is extremely lightweight. It weighs in at about 212KB.
 
 
 ## Can I install the SDK manually using a dynamic framework?
 
-Segment **highly recommends** using Swift Package Manager or Cocoapods. We cannot guarantee support if you do not use a dependency manager.
+Segment **highly recommends** using Swift Package Manager or Cocoapods. Segment can't guarantee support if you do not use a dependency manager.
 
-However, if you cannot use Swift Package Manager or Cocoapods, you can manually install our dynamic framework allowing you to send data to Segment and on to enabled cloud-mode destinations. We do not support sending data to bundled, device-mode integrations outside of Cocoapods.
+However, if you cannot use Swift Package Manager or Cocoapods, you can manually install Segment's dynamic framework allowing you to send data to Segment and on to enabled cloud-mode destinations. Segment doesn't support sending data to bundled, device-mode integrations outside of Cocoapods.
 
 To install manually:
 
-1. Download the [latest built SDK](https://github.com/segmentio/analytics-ios/releases/), and unzip the zip file
+1. Download the [latest built SDK](https://github.com/segmentio/analytics-ios/releases/){:target="blank"}, and unzip the zip file
 2. Drag the unzipped `Segment.framework` folder into your XCode project
 3. In the **General Tab** for your project, search for `Embedded Binaries` and add the `Segment.framework`
 
-![](images/embeddedbinaries.png)
+![Segment framework example](images/embeddedbinaries.png)
 
 
 Once you install the framework, import the header file and install as described in [Install the SDK](https://segment.com/docs/connections/sources/catalog/libraries/mobile/ios#install-the-sdk).
@@ -58,7 +58,7 @@ CLLocation *location = locationManager.location;
 
 ## How do I use push notifications?
 
-For services that send push notifications, you must first [create a Push SSL certificate](https://developer.apple.com/library/content/documentation/IDEs/Conceptual/AppDistributionGuide/AddingCapabilities/AddingCapabilities.html). Then configure your application delegate similarly to the example code below, replacing `YOUR_WRITE_KEY` with your own Segment source write key.  Detailed examples of how to complete the process can be found in [Apple's documentation on the subject](https://developer.apple.com/documentation/usernotifications/handling_notifications_and_notification-related_actions).
+For services that send push notifications, you must first [create a Push SSL certificate](https://developer.apple.com/library/content/documentation/IDEs/Conceptual/AppDistributionGuide/AddingCapabilities/AddingCapabilities.html){:target="blank"}. Then configure your application delegate similarly to the example code below, replacing `YOUR_WRITE_KEY` with your own Segment source write key.  Detailed examples of how to complete the process can be found in [Apple's documentation on the subject](https://developer.apple.com/documentation/usernotifications/handling_notifications_and_notification-related_actions){:target="blank"}.
 
 
 {% codeexample %}
@@ -71,7 +71,7 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
     configuration.launchOptions = launchOptions
     Analytics.setup(with: configuration)
 
-    // See the Apple linked above for detailed setup information, as it will vary 
+    // See the Apple linked above for detailed setup information, as it will vary
     // based on which versions of iOS are supported and what language is being used.
     ...
 
@@ -90,7 +90,7 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
     configuration.launchOptions = launchOptions;
     [SEGAnalytics setupWithConfiguration:configuration];
 
-    // See the Apple documentation linked above for detailed setup information, as it will vary 
+    // See the Apple documentation linked above for detailed setup information, as it will vary
     // based on which versions of iOS are supported and what language is being used.
     ...
 
@@ -161,17 +161,17 @@ Analytics.shared().identify(nil, traits: ["email": "example@example.com", "gende
 
 ## Do you support iOS 10.x?
 
-Analytics-iOS supports iOS 11.0+. If you need support for older operating systems you can fork [the Segment iOS repo on GitHub](https://github.com/segmentio/analytics-ios/) and [build the framework](https://github.com/segmentio/analytics-ios/wiki/Building-the-framework) with support for your version of iOS.
+Analytics-iOS supports iOS 11.0+. If you need support for older operating systems you can fork [the Segment iOS repo on GitHub](https://github.com/segmentio/analytics-ios/){:target="blank"} and [build the framework](https://github.com/segmentio/analytics-ios/wiki/Building-the-framework){:target="blank"} with support for your version of iOS.
 
 
 ## Is the Segment SDK compatible with Swift?
 
-Yes, Swift's compatibility with Objective-C lets you create a source that contains files written in either language. To use the Segment Analytics-iOS SDK from a Swift source, [follow these instructions from Apple](https://developer.apple.com/library/ios/documentation/Swift/Conceptual/BuildingCocoaApps/MixandMatch.html).
+Yes, Swift's compatibility with Objective-C lets you create a source that contains files written in either language. To use the Segment Analytics-iOS SDK from a Swift source, [follow these instructions from Apple](https://developer.apple.com/library/ios/documentation/Swift/Conceptual/BuildingCocoaApps/MixandMatch.html){:target="blank"}.
 
 
 ## Can I help develop a destination?
 
-Yes, the Segment [Analytics-iOS SDK is open-source](https://github.com/segmentio/analytics-ios). If you'd like to contribute, fix a bug, or add a destination please [see the contributing guide](https://github.com/segmentio/analytics-ios/blob/master/CONTRIBUTING.md).
+Yes, the Segment [Analytics-iOS SDK is open-source](https://github.com/segmentio/analytics-ios){:target="blank"}. If you'd like to contribute, fix a bug, or add a destination please [see the contributing guide](https://github.com/segmentio/analytics-ios/blob/master/CONTRIBUTING.md){:target="blank"}.
 
 
 ## How do I know when a destination is initialized?
@@ -249,4 +249,9 @@ Some destinations, especially mobile attribution tools (for example, [Kochava](h
 
 ## tvOS / macOS / Catalyst Support
 
-As of [Version 4.1.0](https://github.com/segmentio/analytics-ios/releases/tag/4.1.0), Analytics-iOS now supports tvOS, macOS and Catalyst as well. You can follow the [quickstart documentation](/docs/connections/sources/catalog/libraries/mobile/ios/quickstart/) to set it up!
+As of [Version 4.1.0](https://github.com/segmentio/analytics-ios/releases/tag/4.1.0){:target="blank"}, Analytics-iOS now supports tvOS, macOS, and Catalyst as well. You can follow the [quickstart documentation](/docs/connections/sources/catalog/libraries/mobile/ios/quickstart/) to set it up.
+
+
+## AppClip tracking support
+
+If you are tracking App Clips using iOS or Swift libraries, there is a chance that you may encounter zeros in your device ID. Segment recommends that you set your own device ID in this instance to avoid running into this issue.

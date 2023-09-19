@@ -1,13 +1,16 @@
 ---
 rewrite: true
 title: Webhooks Destination
+maintenance: true
 id: 54521fdc25e721e32a72ef04
+private: true
+actions-slug: actions-webhook
 ---
 Segment Webhooks submit real-time user data to your own HTTP endpoints. A Webhook is an HTTP callback: a simple event-notification using HTTP POST. A web application implementing Webhooks will POST a message to a URL when certain things happen.
 
 ## Getting Started
 
-{% include content/connection-modes.md %}
+
 
 1. From the Segment web app, click **Catalog**.
 2. Search for "Webhooks" in the Catalog, select it, and choose which of your sources to connect the destination to.

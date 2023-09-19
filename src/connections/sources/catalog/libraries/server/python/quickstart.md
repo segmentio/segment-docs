@@ -33,7 +33,7 @@ If you're using a system for managing dependencies, you'll want to pin the libra
 Then inside your app, you'll want to set your `write_key` before making any analytics calls:
 
 ```python
-import analytics
+import segment.analytics as analytics
 
 analytics.write_key = 'YOUR_WRITE_KEY'
 ```

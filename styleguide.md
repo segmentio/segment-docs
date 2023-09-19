@@ -8,7 +8,7 @@ This doc is for keeping track of [style decisions](#style-decisions), [structure
 
 - Titles and headings should be in sentence case, meaning you only capitalize the first word, and any product names and proper nouns.
 
-- UI items are described by their text label in **Bold**. Don't add an explicit reference to the type of control (button, toggle, etc) unless needed for clarity.  "Click **Send**." rather than "Click the **Send**  button."
+- UI items are described by their text label in **Bold**. We don't add an explicit reference to what type of affordance it is (button, toggle, etc) unless needed for clarity.  "Click **Send**." rather than "Click the **Send**  button."
 
 - Use single-backtick `code format` for variables, for commands or values that need to be entered by the user, and the names of methods or calls when referring to them in context of an implementation (for example: "You'll make an identify call to capture this information" vs "In your code, edit the `identify` call...").
 
@@ -16,14 +16,14 @@ This doc is for keeping track of [style decisions](#style-decisions), [structure
 
 - Code blocks must use the triple-backtick format, and must include a syntax highlighter cue (even if that cue is "text" or "none".)
 
-### Use Active Voice / Write in the Present
+### Use Active Voice / Write in the Present / Yes We Do
 
 Write in the active voice.
 This one is harder to encapsulate.
 
 Instead of saying "Segment will create..." use "Segment creates..."
 Instead of saying "You should see your data in (x) minutes..." use "Your data arrives within..."
-Instead of saying "You will see a new dialog with your key..." use "A dialog appears and displays your key..."
+Instead of saying "You will see a new dialog with your key..." use "A diaglog appears and displays your key..."
 
 ### We and they
 
@@ -139,7 +139,7 @@ We have some fairly complex CSS, and lists with lots of "stuff" in them. Normall
 
 On top of this, some of the Premonition callouts we use, for some reason, break list ordering. So you can't add an "info" box inside a running list. (Boooo.)
 
-To get around this, you can let the previous list item end where ever if needs to, then create an entire new ordered list with specific HTML to allow you to override the start number.
+To get around this, you can let the previous list item end whereever if needs to, then create an entire new ordered list with specific HTML to allow you to override the start number.
 
 ```html
 <ol style="counter-reset: none;">
@@ -179,6 +179,19 @@ Tables in HTML can include html formatting, OR markdown formatting, but not both
 
 Many of these docs were exported from Paper, which means that they'll have some quirks to sort out.
 
+### Endumben-ing
+Paper uses smart-quotes and smart apostrophes, which often can break syntax-sensitive formatting. You can replace them with "dumb" or straight quotes. The characters you're going to want to look for are...
+
+’ ‘ “ ”  If you "change all" in Atom, you'll remove these examples so please revert changes to this file. ;)
+
+Note that these won't always render in Github, so you'll have to make this change using Atom or another text editor.
+
+If the examples get removed you can also type these on a Mac by typing
+- Option + [
+- Option + Shift + [
+- Option + ]
+- Option + Shift + ]
+
 ### Headings vs Titles
 
 Our titles are our H1s, so you can remove a top-line H1 if if shows up, and demote all following ones. (This assumes you're using heading formats semantically and not just for formatting. :P )
@@ -200,7 +213,3 @@ By default, Paper uses an old style of markdown that allows you to start a code 
 Instead, de-indent your code (shift-tab), and add a code-fence of three backticks at the top and bottom.
 
 If you know what language it's in, you can also add a "cue" to the first codeblock, which improves how the syntax highlighter renders it (assuming it knows how to format that specific language). See the [section on code fences](#code-fences-and-syntax-highligher-cues) above for more details.
-
-### Linting
-
-Segment docs uses the Vale linter to enforce loose grammar guidelines. These checks run on any updated content as part of the Pull Request process, and can also be run locally if you install Vale. For more information, see [Vale.sh](https://www.vale.sh) or our implementation at `.github/styles`.

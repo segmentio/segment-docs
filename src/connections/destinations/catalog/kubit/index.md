@@ -9,10 +9,10 @@ This destination is maintained by Kubit. For any issues with the destination, [c
 
 ## Getting Started
 
-{% include content/connection-modes.md %}
+
 
 1. On Kubit's [Welcome Page](https://segment.kubit.ai/segment), click on “**Connect to Segment**”.
-   ![](images/oauth.png)
+   ![A screenshot of the Kubit Segment Configuration page.](images/oauth.png)
 2. In Segment, select the Source to connect to the Kubit destination.
 3. Click **Allow**.
 

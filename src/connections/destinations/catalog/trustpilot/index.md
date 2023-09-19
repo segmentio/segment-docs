@@ -7,11 +7,9 @@ id: 5c6e52858392d6000101d4c1
 
 This destination is maintained by Trustpilot. For any issues with the destination, [contact the Trustpilot Support team](https://support.trustpilot.com/hc/en-us/articles/215949867-Contact-Trustpilot-s-Support-Team).
 
-{% include content/beta-note.md %}
-
 ## Getting Started
 
-{% include content/connection-modes.md %}
+
 
 1. From the Segment web app, click **Catalog**.
 2. Search for "Trustpilot" in the Catalog, select it, and choose which of your sources to connect the destination to.

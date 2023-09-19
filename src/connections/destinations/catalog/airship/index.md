@@ -21,7 +21,7 @@ This destination is maintained by Airship. For any issues [contact the Airship S
 
 ## Getting Started
 
-{% include content/connection-modes.md %}
+
 
 Follow these steps to configure the integration
 

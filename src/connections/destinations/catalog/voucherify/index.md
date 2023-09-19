@@ -3,6 +3,7 @@ title: Voucherify Destination
 rewrite: true
 beta: true
 id: 5e42baaecf559c535c8cbe97
+hide-personas-partial: true
 ---
 [Voucherify](https://voucherify.io?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) helps developers integrate digital promotions across any marketing channel or customer touchpoint - eventually giving full control over campaigns back to the marketing team.
 
@@ -12,7 +13,7 @@ This destination is maintained by Voucherify. For any issues with the destinatio
 
 ## Getting Started
 
-{% include content/connection-modes.md %}
+
 
 1. From the Segment web app, click **Catalog**.
 2. Search for "Voucherify" in the Catalog, select it, and choose which of your sources to connect the destination to.

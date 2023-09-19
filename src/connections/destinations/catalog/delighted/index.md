@@ -12,7 +12,7 @@ _**NOTE:** The Delighted Destination is currently only compatible with email sur
 
 ## Getting Started
 
-{% include content/connection-modes.md %}
+
 
 1. From the Segment web app, click **Catalog**.
 2. Search for "Delighted" in the Catalog, select it, and choose which of your sources to connect the destination to.
@@ -32,7 +32,7 @@ analytics.identify('userId123', {
 });
 ```
 
-Identify calls will add to your list of People in Delighted. The only trait that is required by Delighted is `email`. All additional traits will be added to Delighted surveys as metadata (Delighted calls this metadata *Properties*) which you can use to [segment feedback](https://help.delighted.com/article/111-introduction).
+The only trait that is required by Delighted is email. All additional traits will be added to Delighted surveys as metadata (Delighted calls this metadata Properties) which you can use to segment feedback. For a contact to receive a survey, the identify method must occur before the track method.
 
 ## Track
 
@@ -42,7 +42,7 @@ If you're not familiar with the Segment Specs, take a look to understand what th
 analytics.track('Purchased Product');
 ```
 
-Track calls will trigger a Delighted survey if you have configured the event name in [your Delighted dashboard](https://delighted.com/integrations/segment) to appear _exactly_ as the event name in your Track call.
+Track calls will create a person in Delighted and schedule a survey to be sent to that person; make sure that event name configured on Delighted's Segment integration page exactly matches the event name in your Track call.
 
 This also enables you to define the "Sample Rate" and an optional "Delay" for the triggered surveys.
 

@@ -297,6 +297,10 @@ You can test your code directly from the editor in two ways: either by receiving
 
 The advantage of testing your source function with webhooks is that all incoming data is real, so you can test behavior while closely mimicking the production conditions.
 
+Note that Segment has updated the webhook URL to `api.segmentapis.com/functions`. To use webhooks with your function:
+- You must [generate a public API token](https://docs.segmentapis.com/tag/Getting-Started/#section/Get-an-API-token){:target="_blank"}.
+- For POST calls, you'll need to use this API token in the header.
+
 ### Testing source functions with a webhook
 
 You can use webhooks to test the source function either by sending requests manually (using any HTTP client such as cURL or Insomnia) or by pasting the webhook into an external server that supports webhooks (such as Slack).
@@ -386,6 +390,12 @@ Copy and paste this URL into the upstream tool or service to send data to this s
 ##### What is the retry policy for a webhook payload?
 
 Segment retries invocations that throw RetryError or Timeout errors up to six times. After six attempts, the request is dropped.
+The initial wait time for the retried event is a random value between one and three minutes.
+Wait time increases exponentially after every retry attempt. The maximum wait time between attempts can reach 20 minutes.
+
+##### I configured RetryError in a function, but it doesn't appear in my source function error log.
+
+Retry errors only appear in the source function error logs if the event has exhausted all six retry attempts and, as a result, has been dropped.
 
 ##### What is the maximum payload size for the incoming webhook?
 
@@ -402,4 +412,8 @@ Segment alphabetizes payload fields that come in to **deployed** source function
 #### Does the source function allow `GET` requests?
 
 `GET` requests are not supported with a source function. Source functions can only receive data through `POST` requests.
+
+#### Can I use a Source Function in place of adding a Tracking Pixel to my code?
+
+No. Tracking Pixels operate client-side only and need to be loaded onto your website directly. Source Functions operate server-side only, and aren't able to capture or implement client-side tracking code. If the tool you're hoping to integrate is server-side, then you can use a Source Function to connect it to Segment.
  

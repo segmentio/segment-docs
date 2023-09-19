@@ -8,7 +8,7 @@ id: 5ec499003e60e9200f681768
 This destination is maintained by Gist. For any issues with the destination, [contact the Gist Support team](mailto:support@getgist.com).
 
 ## Getting Started
-{% include content/connection-modes.md %}
+
 
 1. From the Segment App's Destinations catalog page, click **Add Destination**.
 2. Search for "Gist" in the Destinations Catalog, and select the Gist destination.

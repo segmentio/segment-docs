@@ -133,7 +133,7 @@ Source: |
   A website, server library, mobile SDK, or cloud application which can send data into Segment.
 
 Spec: |
-  Short for "Specification", the Segment Spec is our set of recommendations for what data to collect, and how to format it, for best
+  Short for "Specification", the Segment Spec is our set of recommendations for what data to collect and how to format it.
 
 SSP: |
   Supply-side Platform

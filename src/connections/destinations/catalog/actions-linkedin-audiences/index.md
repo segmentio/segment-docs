@@ -3,17 +3,13 @@ title: LinkedIn Audiences Destination
 hide-personas-partial: true
 hide-boilerplate: true
 hide-dossier: false
-hidden: true
-private: true
 id: 62f435d1d311567bd5bf0e8d
 ---
+
 
 LinkedIn Audiences enables advertisers to send Segment Engage Audiences to LinkedIn as Matched Audiences using [LinkedIn's API](https://learn.microsoft.com/en-us/linkedin/marketing/integrations/matched-audiences/matched-audiences){:target="_blank"}.
 
 By using Segment's Engage Audiences with LinkedIn, you can increase traffic and drive conversions with hyper-relevant ads that promote product discovery.
-
-> info ""
-> The LinkedIn Audiences destination is in beta and is in active development. Some functionality may change before it becomes generally available.
 
 ## Getting Started
 
@@ -43,9 +39,8 @@ To add the LinkedIn Audiences destination:
      * **Note:** The Audience Key must be manually entered to ensure users in the Engage Audience are sent to the correct DMP Segment in LinkedIn. For every Engage Audience you want to send to your LinkedIn Ads Account, a separate **Sync To LinkedIn DMP Segment** mapping must be created. You can create up to 50 mappings within an instance of the LinkedIn Audiences destination.
 
 11. Navigate back to **Engage > Audiences** and click on the Audience from Step 1. 
-12. Click **Add Destinations** and select the LinkedIn Audiences destination you just created. In the settings that appear in the side panel, toggle the **Send Track** option on and disable **Send Identify**. Click **Save Settings**.
 
-![engage audience destination settings](images/image1.png)
+12. Click **Add Destinations** and select the LinkedIn Audiences destination you just created. In the settings that appear in the side panel, toggle the **Send Track** option on and do **not** change the Audience Entered/Audience Exited event names. Click **Save Settings**.
 
 The setup is complete and the Audience will start syncing to LinkedIn. Segment automatically creates a new DMP Segment in LinkedIn and will add or remove users accordingly. The Audience appears in your [LinkedIn Campaign Manager](https://www.linkedin.com/campaignmanager){:target="_blank"}, account under **Plan > Audiences > Matched**.
 

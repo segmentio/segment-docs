@@ -43,6 +43,8 @@ sections:
     title: Replay
   - path: /guides/regional-segment
     title: Regional Segment
+  - path: /guides/audiences-and-journeys
+    title: Audiences and Journeys
 
   - section_title: How-to Guides
     slug: guides/how-to-guides
@@ -110,6 +112,8 @@ sections:
       title: 'Spec: Group'
     - path: /connections/spec/identify
       title: 'Spec: Identify'
+    - path: /connections/spec/alias
+      title: 'Spec: Alias'
     - path: /connections/spec/common
       title: 'Spec: Common Fields'
     - path: /connections/spec/mobile
@@ -140,14 +144,23 @@ sections:
     - path: /connections/sources/catalog
       title: Sources Catalog
       menu_icon: read-more
-    - path: /connections/sources/debugger
-      title: Using the Source Debugger
     - path: /connections/sources/about-cloud-sources
       title: Cloud Sources
+    - path: /connections/sources/debugger
+      title: Source Debugger
     - path: /connections/sources/custom-domains
       title: Set Up a Custom Domain Proxy in Segment
     - path: /connections/sources/visual-tagger
       title: Visual Tagger
+    - section_title: Schema
+      slug: connections/schema
+      section: 
+      - path: /connections/sources/schema/
+        title: Schema Controls 
+      - path: /connections/sources/schema/destination-data-control
+        title: Using Schema Controls 
+      - path: /connections/sources/schema/schema-unique-limits
+        title: Schema Unique Limits   
   - section_title: Destinations
     slug: connections/destinations
     section:
@@ -162,6 +175,26 @@ sections:
       menu_icon: read-more
     - path: /connections/destinations/destination-filters
       title: Destination Filters
+  - section_title: Reverse ETL
+    slug: connections/reverse-etl
+    section:
+    - path: /connections/reverse-etl
+      title: Reverse ETL Overview
+    - path: /connections/reverse-etl/reverse-etl-catalog
+      title: Reverse ETL Catalog
+    - section_title: Reverse ETL Source Setup Guides
+      slug: connections/reverse-etl/reverse-etl-source-setup-guides
+      section:
+      - path: /connections/reverse-etl/reverse-etl-source-setup-guides/bigquery-setup
+        title: BigQuery Reverse ETL Setup
+      - path: /connections/reverse-etl/reverse-etl-source-setup-guides/databricks-setup
+        title: Databricks Reverse ETL Setup
+      - path: /connections/reverse-etl/reverse-etl-source-setup-guides/postgres-setup
+        title: Postgres Reverse ETL Setup
+      - path: /connections/reverse-etl/reverse-etl-source-setup-guides/redshift-setup
+        title: Redshift Reverse ETL Setup
+      - path: /connections/reverse-etl/reverse-etl-source-setup-guides/snowflake-setup
+        title: Snowflake Reverse ETL Setup
   - section_title: Functions
     slug: connections/functions
     section:
@@ -171,6 +204,8 @@ sections:
       title: Source Functions
     - path: /connections/functions/destination-functions
       title: Destination Functions
+    - path: /connections/functions/insert-functions
+      title: Destination Insert Functions
     - path: /connections/functions/environment
       title: Functions Environment
     - path: /connections/functions/usage
@@ -233,6 +268,8 @@ sections:
     title: Using Schema Controls
   - path: /connections/event-delivery
     title: Event Delivery
+  - path: /connections/delivery-overview
+    title: Delivery Overview
   - path: /connections/find-writekey
     title: Locate Your Write Key
   - path: /connections/integration_error_codes
@@ -241,49 +278,76 @@ sections:
     title: Rate Limits
   - path: /connections/regional-segment
     title: Regional Segment
-- section_title: Profiles
+# - section_title: Reverse ETL
+#   section:
+#   - path: /reverse-etl
+#     title: Reverse ETL Overview
+#   - path: /reverse-etl/bigquery-setup
+#     title: BigQuery Reverse ETL Setup
+#   - path: /reverse-etl/redshift-setup
+#     title: Redshift Reverse ETL Setup
+#   - path: /reverse-etl/snowflake-setup
+#     title: Snowflake Reverse ETL Setup
+- section_title: Unify
   section:
-  - path: /profiles
-    title: Profiles Overview
-  - path: /profiles/quickstart
-    title: Profiles Onboarding
-  # - section_title: User Subscriptions
-  #   slug: profiles/user-subscriptions
-  #   section:
-  #   - path: /profiles/user-subscriptions
-  #     title: User Subscriptions
-  #   - path: /profiles/user-subscriptions/set-user-subscriptions
-  #     title: Set User Subscriptions
-  #   - path: /profiles/user-subscriptions/subscription-states
-  #     title: Subscription States
+  - path: /unify
+    title: Unify Overview
+  - path: /unify/quickstart
+    title: Unify Onboarding
   - section_title: Identity Resolution
-    slug: profiles/identity-resolution
+    slug: unify/identity-resolution
     section:
-    - path: /profiles/identity-resolution
+    - path: /unify/identity-resolution
       title: Overview
-    - path: /profiles/identity-resolution/identity-resolution-onboarding
+    - path: /unify/identity-resolution/identity-resolution-onboarding
       title: Onboarding
-    - path: /profiles/identity-resolution/space-setup
+    - path: /unify/identity-resolution/space-setup
       title: Space Setup
-    - path: /profiles/identity-resolution/use-cases
+    - path: /unify/identity-resolution/use-cases
       title: Use Cases
-    - path: /profiles/identity-resolution/externalids
+    - path: /unify/identity-resolution/externalids
       title: External IDs
-    - path: /profiles/identity-resolution/identity-resolution-settings
+    - path: /unify/identity-resolution/identity-resolution-settings
       title: Settings
-    - path: /profiles/identity-resolution/ecommerce-example
+    - path: /unify/identity-resolution/ecommerce-example
       title: E-Commerce Example
-  - path: /profiles/profile-api
+  - section_title: Profiles Sync
+    slug: unify/profiles-sync
+    section:
+    - path: /unify/profiles-sync/overview
+      title: Profiles Sync Overview
+    - path: /unify/profiles-sync
+      title: Setup
+    - path: /unify/profiles-sync/sample-queries
+      title: Sample Queries
+    - path: /unify/profiles-sync/tables
+      title: Tables & Materialized Views
+  - section_title: Traits
+    slug: unify/traits
+    section:
+    - section_title: Predictions
+      slug: unify/traits/predictions
+      section:
+      - path: '/unify/traits/predictions/'
+        title: Predictions
+      - path: '/unify/traits/predictions/using-predictions'
+        title: Using Predictions
+      - path: '/unify/traits/predictions/suggested-predictive-audiences'
+        title: Suggested Predictive Audiences
+    - path: '/unify/traits/computed-traits'
+      title: Computed Traits
+    - path: '/unify/traits/sql-traits'
+      title:  SQL Traits
+  - path: /unify/profile-api
     title: Profile API
-  - path: /profiles/profile-api-limits
-    title: Profile API Limits
-  - path: /profiles/debugger
+  - path: /unify/debugger
     title: Profile Debugger
-  - path: /profiles/profiles-gdpr
-    title: Profiles and GDPR
-  - path: /profiles/faqs
-    title: Profiles FAQs
-
+  - path: /unify/unify-gdpr
+    title: Unify and GDPR
+  - path: /unify/faqs
+    title: Unify FAQs
+  - path: /unify/product-limits
+    title: Unify Limits
 
 - section_title: Engage
   section:
@@ -304,6 +368,10 @@ sections:
       title: Set User Subscriptions
     - path: /engage/user-subscriptions/subscription-states
       title: Subscription States
+    - path: /engage/user-subscriptions/subscription-groups
+      title: Subscription Groups
+    - path: /engage/user-subscriptions/subscription-sql
+      title: Subscriptions with SQL Traits
   - section_title: Profiles
     description: "See how to create audiences based on data."
     section:
@@ -318,10 +386,6 @@ sections:
       title: Account-level Audiences
     - path: '/engage/audiences/organization'
       title: Organize Audiences
-    - path: '/engage/audiences/computed-traits'
-      title: Computed Traits
-    - path: '/engage/audiences/sql-traits'
-      title:  SQL Traits
 
   - section_title: Journeys
     description: "Learn how to create multi-step Journeys to tailor messages to your users."
@@ -350,9 +414,13 @@ sections:
     - path: '/engage/content/email/template'
       title: Email Template
     - path: '/engage/content/email/editor'
-      title: Email Template Editor
+      title: Drag and Drop Editor
+    - path: '/engage/content/email/html-editor'
+      title: HTML Editor
     - path: '/engage/content/sms/template'
       title: SMS Template
+    - path: '/engage/content/whatsapp'
+      title: WhatsApp Template
   - section_title: Campaigns
     description: "Create multi-channel campaigns to get the right message to your users."
     section:
@@ -362,6 +430,21 @@ sections:
       title: Email Campaigns
     - path: '/engage/campaigns/sms-campaigns'
       title: SMS Campaigns
+    - path: '/engage/campaigns/broadcasts'
+      title: Broadcasts
+    - path: '/engage/campaigns/whatsapp-campaigns'
+      title: WhatsApp Campaigns
+  - section_title: Trait Activation
+    slug: engage/trait-activation
+    section:
+    - path: /engage/trait-activation/overview
+      title: Trait Activation Overview
+    - path: /engage/trait-activation/trait-activation-setup
+      title: Trait Activation Setup
+    - path: /engage/trait-activation/trait-enrichment
+      title: Trait Enrichment
+    - path: /engage/trait-activation/id-sync
+      title: ID Sync
   - path: '/engage/analytics'
     title: Analytics Overview
   - path: '/engage/settings'
@@ -396,6 +479,8 @@ sections:
       title: User Deletion and Suppression
   - path: /privacy/account-deletion
     title: Account & Data Deletion
+  - path: /privacy/hipaa-eligible-segment
+    title: HIPAA Eligible Segment
   - path: /privacy/faq
     title: Privacy FAQs
 - section_title: Protocols
@@ -473,10 +558,17 @@ sections:
     title: Prod and Testing Environments in Segment
   - path: /segment-app/verify-email-address
     title: Verifying Your Email Address
+  - path: /segment-app/support-access
+    title: Support Access
 - section_title: API
   section:
-  - path: /api/public-api
-    title: Public API
+  - section_title: Public API
+    slug: api/public-api
+    section:
+      - path: /api/public-api
+        title: Public API
+      - path: /api/public-api/fql
+        title: Destination Filter Query Language
   - section_title: Config API
     slug: api/config-api
     section:

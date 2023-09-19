@@ -25,7 +25,7 @@ Yes! You can use the Segment library with Maven, or any other custom build syste
 
 ## How big is the Segment SDK?
 
-The core Segment SDK is extremely lightweight! It contains just under 1k methods, the JAR weighs in at 123kb and the dex size is 113kb.
+The core Segment SDK is extremely lightweight. It contains just under 1k methods, the JAR weighs in at 123KB and the dex size is 113KB.
 
 ## How can I swap out debugging and production keys?
 
@@ -127,3 +127,19 @@ analytics.getContext().putDeviceToken(registrationId);
 ## Do you support Phonegap or Cordova?
 
 Yes! You can use Segment's browserify'd [analytics-node](https://github.com/segmentio/analytics-node) package just like any other client-side JavaScript library.
+
+## Are there any limitations for using Segment with Huawei?
+
+No, there hasn't been any instances that show there are limitations when Segment tracks Huawei devices.
+
+## Does LifecycleObserver (above version 2.6.0) work with Segment?
+
+No. It depends on androidx-startup for initialization, this snippet prevents the Segment SDK from tracking app lifecycle events.
+The solution is to either remove the snippet completely or use `tools:node="merge"` instead of `tools:node="remove"`.
+
+```java
+<provider
+    android:name="androidx.startup.InitializationProvider"
+    android:authorities="${applicationId}.androidx-startup"
+    tools:node="merge"></provider>
+```

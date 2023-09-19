@@ -17,7 +17,7 @@ us improve the Salesforce DMP Destination and its documentation,
 
 ## Getting Started
 
-{% include content/connection-modes.md %}
+
 
 Next, configure the Destination in the Segment web app:
 
@@ -36,7 +36,7 @@ Next, configure the Destination in the Segment web app:
 4. In the **Sites** tab, locate the site you want to use as the SFDMP destination.
    If you haven't created any sites yet, click **Create Site** and go through the options to create a new site.
 
-   ![](images/salesforce-dmp-setup1.png)
+   ![A screenshot of the Manage tab in Salesforce DMP, with the Sites item selected.](images/salesforce-dmp-setup1.png)
 
 5. In the dropdown, find the site tag for the site you want to use. The string you need is under "Config" and will look something like `r0u08k4tz`.
 6. Go back to the Segment App, and navigate to the Salesforce DMP destination you're setting up. Locate the ConfigID setting, and paste the value you found in that field.

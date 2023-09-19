@@ -68,10 +68,10 @@ Destinations are the business tools or apps that Segment forwards your data to. 
 To add a Destination:
 1. Navigate to **Connections**.
 2. Click **Add Destination**.
-3. Choose the Destination you want to add and click **Configure**. Most users eventually add destinations for: Analytics, Advertising, Email Marketing and/or Live Chat.
+3. Choose the Destination you want to add and click **Configure**. Most users eventually add destinations for: Analytics, Advertising, Email Marketing, and/or Live Chat.
 4. Select the Source you want to connect to your Destination.
 5. Click **Next**.
-5. Give you Destination a name.
+5. Give your Destination a name.
 6. Click **Save**.
 7. Configure the settings and enable your destination on the destination settings page.
 
@@ -189,14 +189,14 @@ A data warehouse also allows you to collect and compile data from third party to
 > - [Analytics Academy: Why you should own your data](https://segment.com/academy/intro/why-you-should-own-your-data/?referrer=docs){:target="_blank"}
 
 ### Add more destinations
-Adding more destinations allows you to connect all your business tools to run through Segment. This gives you the confidence that they are all acting on the same data. Most users connect a variety of marketing, advertising, product, & analytics tools.
+Adding more destinations allows you to connect all your business tools to run through Segment. This gives you the confidence that they are all acting on the same data. Most users connect a variety of marketing, advertising, product, and analytics tools.
 
 With all your tools acting on the same set of customer data, you can personalize your customer engagement and deliver a consistent message across multiple channels
 
 To add more destinations:
 1. Navigate to **Connections**.
 2. Click **Add Destination**.
-3. Choose the Destination you want to add and click **Configure**. Most users eventually add destinations for: Analytics, Advertising, Email Marketing and/or Live Chat.
+3. Choose the Destination you want to add and click **Configure**. Most users eventually add destinations for: Analytics, Advertising, Email Marketing, and/or Live Chat.
 4. Select the Source you want to connect to your Destination.
 5. Click **Next**.
 5. Give you Destination a name.
@@ -273,5 +273,3 @@ There are steps to take when you use Protocols:
 Engage is a powerful personalization platform that enables you to create unified customer profiles in Segment, to build and enrich audiences, and to activate audiences across marketing tools.
 
 Engage allows you to enrich user profiles with custom traits, allowing you to create granular audiences for campaigns, advertising, and analysis.
-
-

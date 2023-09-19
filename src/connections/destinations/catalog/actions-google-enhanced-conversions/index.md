@@ -1,60 +1,61 @@
 ---
-title: Google Enhanced Conversions Destination
+title: Google Ads Conversions Destination
 strat: google
 hide-boilerplate: true
 hide-dossier: false
 id: 60ae8b97dcb6cc52d5d0d5ab
-hide_action:
-  - id: 2n3RKy5oyzS1kLdEEYV99N
-    name: "Upload Conversion Adjustment"
-  - id: uEYL2A2fTEoxCzYmsRwRmT
-    name: "Upload Call Conversion"
-  - id: fv1r2SiUg6i12jzdy8hitm
-    name: "Upload Click Conversion"
 ---
 
-The Google Enhanced Conversions destination enables you to improve the accuracy of your conversion measurement. You can supplement existing conversion tags by sending first-party customer conversion data from your website, such as email address, to Google Ads. Segment hashes this data and sends it in a privacy-safe way. Google matches hashed data with signed-in Google accounts to attribute the conversion to ad events, such as clicks or views. To learn more about Google Enhanced Conversions, see Google's documentation [About enhanced conversions](https://support.google.com/google-ads/answer/9888656?hl=en-GB){:target="_blank"}.
-
-> warning "Before you begin"
-> Enable Enhanced Conversions in your Google Ads account. For each Conversion, specify in the settings that you will use the Enhanced Conversions API:
-> 1.  When you log in to Google Ads, make sure you are in [Expert Mode](https://support.google.com/google-ads/answer/9520605?hl=en){:target="_blank"}.
-> 2. Click **Tools & Settings** in the top bar, and select **Conversions** from the dropdown. Select the website **Conversion Action** you want Segment to log to.
-> 3. Expand the tab for **Enhanced conversions**. Enable **Turn on enhanced conversions**. Under "To start, select how you want to set up enhanced conversions", select **API**.
-> 
-> When you authenticate your Segment workspace with your Google Account, use a Google Account that is a member of your Google Ads account.
-
-
-> info ""
-> To deduplicate conversions that are recorded from the Google Ads Conversion tag (Gtag) from the data that is sent to Google Enhanced Conversions, Order ID (Transaction ID) must be implemented in the Google Ads Conversion tag (Gtag) **and** the same Order IDs must be sent with the corresponding Enhanced Conversions data. This is required for Google to successfully process your enhancement data.
+The Google Ads Conversions destination enables you to upload offline conversions and conversion adjustments to Google Ads in a privacy safe way. With this server-side destination, you can upload conversions to the [Google Ads API](https://developers.google.com/google-ads/api/docs/conversions/overview){:target="_blank"} and tie them to a user's online click or phone call. In addition, you can improve the accuracy of your conversion measurement by sending conversion enhancements, restatements, and retractions.
 
 ## Getting started
 1. From the Segment web app, click **Catalog**, then click **Destinations**.
-2. Search for “Google Enhanced Conversions” in the Destinations Catalog, and select the destination.
-3. Click **Configure Google Enhanced Conversions** in the top-right corner of the screen.
-4. Select the source that will send data to Google Enhanced Conversions and follow the steps to name your destination.
-5. On the **Settings** tab, enter the Conversion ID and click **Save**. Find the Conversion ID in your Google Ads account using the instructions in the article [Google Ads conversions](https://support.google.com/tagmanager/answer/6105160?hl=en){:target="_blank"}. You'll follow these same instructions to get the Conversion Label, which you'll need when you set up your first Mapping.
-6. On the **Settings** tab, authenticate with Google using OAuth. Click **Connect to Google Enhanced Conversions**. Follow the prompts to authenticate using OAuth, with a Google login that is a member of the Google Ads account with Enhanced Conversions enabled.
+2. Search for “Google Ads Conversions” in the Destinations Catalog, and select the destination.
+3. Click **Configure Google Ads Conversions** in the top-right corner of the screen.
+4. Select the source that will send data to Google Ads Conversions and follow the steps to name your destination.
+5. On the **Settings** tab, enter your account-level Conversion ID and/or Customer ID and click **Save**.
+6. On the **Settings** tab, authenticate with Google using OAuth. Click **Connect to Google Ads Conversions**. Follow the prompts to authenticate using OAuth, with a Google account that is a member of your Google Ads account.
 7. Follow the steps in the Destinations Actions documentation on [Customizing mappings](/docs/connections/destinations/actions/#customizing-mappings).
 
 > info ""
-> The Conversion ID is a global setting because it's an account-level ID that's the same for all conversion actions in your Google Ads account. The Conversion Label is unique to each conversion action and is therefore configured per Mapping.
+> When you use the "Upload Enhanced Conversion (Legacy)" action, Segment sends data to the legacy Enhanced Conversions API. To authenticate into the legacy API and send enhancement data, Segment needs your Conversion ID and Conversion Label. 
+> 
+> The Conversion ID is a global setting because it's an account-level ID that's the same for all conversion actions in your Google Ads account. 
+> 
+> The Conversion Label is unique to each conversion action and is therefore configured per mapping. Find the Conversion ID and Conversion Label in your Google Ads account using the instructions in the article [Google Ads conversions](https://support.google.com/tagmanager/answer/6105160?hl=en){:target="_blank"}.
 
-{% include components/actions-fields.html content1=conv_label section1="postConversion" content2=test_mapping section2="postConversion" %}
+> info ""
+> When you use the "Upload Click Conversion", "Upload Call Conversion", and "Upload Conversion Adjustment" actions, Segment sends data to the new Google Ads API. 
+> 
+> To authenticate into the Google Ads API, Segment needs your Customer ID and Conversion Action ID. The Customer ID is a global setting because it's an account-level ID that's the same for all conversion actions in your Google Ads account. The Conversion Action ID is unique to each conversion action and is  configured per mapping. The Conversion Action ID can only be found in the browser URL of your given conversion action under the `ctId` parameter. For example, if the URL is `https://ads.google.com/aw/conversions/detail?ocid=00000000&ctId=576882000`, your Conversion Action ID is `576882000`.
+
+
+> info ""
+> Conversion ID, Conversion Label, Customer ID, and Conversion Action ID should always be different values.
+
+{% include components/actions-fields.html settings="true"%}
 
 ## FAQ & Troubleshooting
 
-### Conversion Tracking with Gtag
+### Enhanced Conversions
 
-To use Google Enhanced Conversions, you must record conversions using the standard Google Ads Conversion tag (Gtag). After a conversion is recorded, you can send hashed first-party data through Segment's Google Enhanced Conversions destination for up to 24 hours after the conversion. Segment offers a [Google Ads (Gtag) destination](/docs/connections/destinations/catalog/google-ads-gtag/) so you can use your existing Segment implementation to activate Gtag.
+[Enhanced conversions](https://support.google.com/google-ads/answer/11062876){:target="_blank"} is a feature that can improve the accuracy of your conversion measurement and unlock more powerful bidding. It supplements your existing conversion tags by sending hashed, first-party conversion data from your website to Google in a privacy safe way. You can use the "Upload Conversion Adjustment" action to send enhancements to the Google Ads API. In order to send enhanced conversions, you must record first conversions using the standard Google Ads Conversion tag (Gtag). Segment offers a [Google Ads (Gtag) destination](/docs/connections/destinations/catalog/google-ads-gtag/) so you can use your existing Segment implementation to activate Gtag. Enhancements can be sent to web conversion actions that have **Turn on enhanced conversions** by API enabled.
 
-Conversions tracked by other means, such as importing goals from Google Analytics, are not eligible for Google Enhanced Conversions.
+Conversions tracked by other means, such as importing goals from Google Analytics, are not eligible for enhancement.
+
+> info ""
+> To send enhancements for conversions that are initially tracked with Gtag, an Order ID (Transaction ID) must be implemented in the Gtag **and** the same Order IDs must be sent with the corresponding enhancement data. This is required for Google to successfully process your enhancement data.
+
+### Enhanced Conversions for Leads
+
+[Enhanced conversions for leads](https://developers.google.com/google-ads/api/docs/conversions/upload-identifiers){:target="_blank"} allows you to use hashed, first-party user-provided data from your website lead forms for offline lead measurement. When you upload your leads, the provided hashed information is used to attribute back to the Google Ad campaign. In order to send enhanced conversions for leads, you can use the "Upload Click Conversion" action. Instead of sending GCLID, send an email address or phone number of the user for Segment to hash and send to Google Ads. 
 
 ### Refreshing Access Tokens
 
-When you use OAuth to authenticate into the Google Enhanced Conversions destination, Segment stores an access token and refresh token. Access tokens for Google Enhanced Conversions expire after one hour. Once expired, Segment receives an error and then uses the refresh token to fetch a new access token. This results in two API requests to Google Enhanced Conversions, one failure and one success.
+When you use OAuth to authenticate into the Google Ads Conversions destination, Segment stores an access token and refresh token. Access tokens for Google Ads Conversions expire after one hour. Once expired, Segment receives an error and then uses the refresh token to fetch a new access token. This results in two API requests to Google Ads Conversions, one failure and one success.
 
-Because of the duplicate API requests, you may see a warning in Google for unprocessed conversions due to incorrect or missing OAuth credentials. This warning is expected and does not indicate data loss. Google has confirmed that conversions are being processed, and OAuth retry behavior will not cause any issues for your web conversions. Whenever possible, Segment caches access tokens to reduce the total number of requests we make to Google Enhanced Conversions.
+Because of the duplicate API requests, you may see a warning in Google for unprocessed conversions due to incorrect or missing OAuth credentials. This warning is expected and does not indicate data loss. Google has confirmed that conversions are being processed, and OAuth retry behavior will not cause any issues for your web conversions. Whenever possible, Segment caches access tokens to reduce the total number of requests made to Google Ads Conversions.
 
-### Sending App Conversions for Incrementality Studies
+### Sending App Conversions for Incrementality Studies (Legacy Enhanced Conversions API only)
 
-The Google Enhanced Conversions API does not offer standard reporting for app conversions at this point. As such, Google requires that you set up a new web conversion action specifically for the purposes of app incrementality studies. To send app conversions in your incrementality study, be sure to input the Conversion Label associated with your incrementality study **and** set the App Conversion for Incrementality Study field to `true`. You should create separate web conversion actions in Google Ads for each app event you want to send data for.
+The legacy Enhanced Conversions API does not offer standard reporting for app conversions. As such, Google requires that you set up a new web conversion action specifically for the purposes of app incrementality studies. To send app conversions in your incrementality study, use the "Upload Enhanced Conversion (Legacy)" action. Be sure to input the Conversion Label associated with your incrementality study **and** set the App Conversion for Incrementality Study field to `true`. You should create separate web conversion actions in Google Ads for each app event you want to send data for.

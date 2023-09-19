@@ -12,7 +12,7 @@ This destination is maintained by mabl. For any issues with the destination, [co
 
 ## Getting Started
 
-{% include content/connection-modes.md %}
+
 
 
 1. From the Destinations catalog page in the Segment App, click **Add Destination**.

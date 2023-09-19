@@ -74,10 +74,13 @@ Facebook offers the Facebook Pixel, which allows you to retarget these types of 
 
 ### 1. Authorize Facebook Custom Audiences
 
-- Go to your Space in your Segment Workspace.
-- Go to the Destinations tab and click “Add Destination”.
+- Go to your Space in your Segment Workspace and click Engage Settings.
+- Go to the Destinations tab and click “Add Destination”. 
 - Select the Facebook Custom Audiences option, and click **Configure Facebook Custom Audiences**.
 - Authorize Facebook Ads and select a Facebook account ID to sync to.
+
+> info ""
+> Add the destination within the Engage space and not through the connections pipeline to ensure proper configuration.
 
 ### 2. Create an audience in Engage & connect to Facebook
 
@@ -96,15 +99,18 @@ Once created, the audience should be available in Facebook in ten minutes unless
 - From within Facebook Ads, go to **Business Manager > All tools > Assets > Audiences**.
 - Click the Facebook audience name that matches your Engage audience name, and check **Audience History** to see how many users were added.
 
-![](images/fb_ca_final.png)
+![A screenshot of the Audiences page in Facebook Ads.](images/fb_ca_final.png)
 
 
 ## Additional Traits Matching
 
-> note ""
+> info ""
 > This feature is in Public Preview and usage is subject to the terms contained in the [First Access and Beta Preview Terms](https://segment.com/legal/first-access-beta-preview/){:target="_blank"}. For access, contact your CSM or email Segment at [friends@segment.com](mailto:friends@segment.com).
 
 Previously, Segment only sent email and mobile IDs to Facebook. A new beta feature can send an expanded list of identifiers or traits to Facebook, so that Facebook can try to use these additional data points to match to their user profiles. If you have this feature enabled and implemented any of these traits in your Segment tracking, Engage can send this data to Facebook. Segment can now also sync multiple emails if the profile contains more than one. Additionally as part of this feature, Segment hashes fields before sending them downstream to Facebook, if required. (See the table below for hashing requirements.) Please note that the trait data implemented in your Segment tracking must match the naming convention and format specified in the table below, otherwise Segment can't send it to Facebook.
+
+> success ""
+> Visit Segment's [Trait Enrichment](/docs/engage/trait-activation/trait-enrichment/) to learn more.
 
 
 | **Name**        | **Trait Key formats supported**   | **Facebook Keys**  | **FB Hashing Required** | **FB Guidelines**     |

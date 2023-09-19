@@ -1,9 +1,8 @@
 ---
 title: Segment Data Lakes Overview
 redirect_from: '/connections/destinations/catalog/data-lakes/'
+plan: data-lakes
 ---
-
-{% include content/plan-grid.md name="data-lakes" %}
 
 > warning "Segment Data Lakes (Azure) deletion policies"
 > Data deletion is not supported by Segment Data Lakes (Azure), as customers retain data in systems that they manage.
@@ -29,7 +28,7 @@ To learn more about Segment Data Lakes, check out the Segment blog post [Introdu
 
 Segment supports Data Lakes hosted on two cloud providers: Amazon Web Services (AWS) and Microsoft Azure. Each cloud provider has a similar system for managing data, but offer different query engines, post-processing systems, and analytics options.
 
-### How Segment Data Lakes works
+### How Segment Data Lakes (AWS) works
 
 Data Lakes store Segment data in S3 in a read-optimized encoding format (Parquet) which makes the data more accessible and actionable. To help you zero-in on the right data, Data Lakes also creates logical data partitions and event tables, and integrates metadata with existing schema management tools, such as the AWS Glue Data Catalog. The resulting data set is optimized for use with systems like Spark, Athena, EMR, or machine learning vendors like DataBricks or DataRobot.
 
@@ -49,13 +48,13 @@ Data Lakes store Segment data in ADLS in a read-optimized encoding format (Parqu
 
 For detailed Segment Data Lakes (Azure) setup instructions, see the [Data Lakes setup page](/docs/connections/storage/catalog/data-lakes/).
 
-### Set up Segment Data Lakes
+### Set up Segment Data Lakes (AWS)
 
 When setting up your data lake using the [Data Lakes catalog page](/docs/connections/storage/catalog/data-lakes/), be sure to consider the EMR and AWS IAM components listed below.
 
 #### EMR
 
-Data Lakes uses an EMR cluster to run jobs that load events from all sources into Data Lakes. The [AWS resources portion of the set up instructions](/docs/connections/storage/catalog/data-lakes/#step-1---set-up-aws-resources) sets up an EMR cluster using the `m5.xlarge` node type. Data Lakes keeps the cluster always running, however the cluster auto-scales to ensure it's not always running at full capacity. Check the Terraform module documentation for the [EMR specifications](https://github.com/segmentio/terraform-aws-data-lake/tree/master/modules/emr){:target="_blank"}.
+Data Lakes uses an EMR cluster to run jobs that load events from all sources into Data Lakes. The [AWS resources portion of the set up instructions](/docs/connections/storage/catalog/data-lakes/#step-1---set-up-aws-resources) sets up an EMR cluster using the `m5.xlarge` node type. Data Lakes keeps the cluster always running, however the cluster auto-scales to ensure it's not always running at full capacity. Check the Terraform module documentation for the [EMR specifications](https://github.com/segmentio/terraform-segment-data-lakes/tree/master/aws_datalake/modules/emr){:target="_blank"}.
 
 #### AWS IAM role
 
@@ -84,7 +83,7 @@ TODO:
 add schema overview (tables/columns generated)
 -->
 
-### Segment Data Lakes schema
+### Segment Data Lakes (AWS) schema
 
 #### S3 partition structure
 

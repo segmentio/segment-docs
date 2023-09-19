@@ -7,7 +7,7 @@ id: 54521fd725e721e32a72eec4
 
 ## Getting Started
 
-{% include content/connection-modes.md %}
+
 
 1. [Create an Indicative account](https://app.indicative.com/?utm_source=segment&utm_medium=partners&utm_campaign=setupguide#/login/register).
 

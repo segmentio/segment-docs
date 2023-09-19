@@ -10,7 +10,7 @@ redirect_from:
 
 Audiences let you group users or accounts based on event behavior and traits that Segment tracks.
 
-You can build Audiences from core **tracking events**, **traits**, and **computed traits**. You can then sync Audiences to hundreds of [Destinations](/docs/connections/destinations/) or access them with the [Profile API](/docs/profiles/profile-api).
+You can build Audiences from core **tracking events**, **traits**, and **computed traits**. You can then sync Audiences to hundreds of [Destinations](/docs/connections/destinations/) or access them with the [Profile API](/docs/unify/profile-api).
 
 ## Building an Audience
 
@@ -20,7 +20,12 @@ You can build an Audience from existing events, traits, computed traits, or othe
 
 ### Events
 
-You can build an Audience from any events that are connected to Engage, including [Track](/docs/connections/spec/track), [Page](/docs/connections/spec/page), and [Screen](/docs/connections/spec/screen) calls. You can use the `property` button to refine the audience on specific event properties, as well. Select `and not who` to indicate users that have not performed an event. For example, you might want to look at all users that have viewed a product above a certain price point but not completed the order.
+You can build an Audience from any events that are connected to Engage, including [Track](/docs/connections/spec/track), [Page](/docs/connections/spec/page), and [Screen](/docs/connections/spec/screen) calls. You can use the `property` button to refine the audience on specific event properties, as well. 
+
+> info ""
+> The Audience builder doesn't return every property value in the Constant value or Traits drop-downs. Segment displays a portion of values from the incoming data stream. However, if you don't see the value you're looking for, you can manually enter it.
+
+Select `and not who` to indicate users that have not performed an event. For example, you might want to look at all users that have viewed a product above a certain price point but not completed the order.
 
 ![Creating an Audience of users who viewed a product without buying it](/docs/engage/images/audience_builder.png)
 
@@ -28,13 +33,14 @@ You can also specify two different types of time-windows, `within` and `in betwe
 
 ### Custom Traits
 
-You can also build Audiences based on custom traits. These traits can be collected from your apps when a user completes a form or signs up using an [Identify](/docs/connections/spec/identify) call. You can view these traits in the user explorer, as well.
+You can also build Audiences based on custom traits. These traits can be collected from your apps when a user completes a form or signs up using an [Identify](/docs/connections/spec/identify) call. You can view these traits in the Profile explorer, as well.
 
 ### Computed Traits
 
 You can also use computed traits in an Audience definition. For example, you can create a `total_revenue` computed trait and use it to generate an audience of `big_spender` customers that exceed a certain threshold.
 
-![Creating an Audience from a computed trait based on the user's number of Twitter followers](/docs/engage/images/audience_builder_computed.png)
+> info ""
+> Engage supports nested traits, but the Audience builder doesn’t support accessing objects nested in arrays. When you send arrays of objects, they are flattened into strings. As a result, the same conditions that work on strings will work on the array. Within the builder, you can only use string operations like `contains` and `does not contain` to look for individual characters or a set of characters in the flattened array.
 
 ### Funnel Audiences
 
@@ -54,7 +60,7 @@ If you have a B2B business, you might want to build an Audience of accounts. You
 
 See [Account-level Audiences](/docs/engage/audiences/account-audiences) for more information.
 
-![Building an Audience of accounts where no user viewed their dashboard in the last 30 days](/docs/engage/images/1542075123519.png)
+
 
 ## Send Audiences to Destinations
 With the help of Sources and Destinations in Segment's catalog, you can create and send Audiences and computed traits to third-party services.
@@ -88,6 +94,45 @@ Because a number of factors (like system load, backfills, or user bases) determi
 
 As a result, **Segment recommends waiting at least 24 hours for an Audience to finish computing** before you resume working with the Audience.
 
+From the Overview page, you can view Audience details including the current compute status and a progress bar for real-time and batch Audiences. Engage updates the progress bar and status for real-time computations approximately every 10 minutes.
+
+> info "Viewing compute progress"
+> When you create a real-time Audience, you'll see a progress bar, computed percentage, and status updates. For existing Audiences that you edit, Engage displays the compute status but not the progress bar or percentage.
+
+> warning ""
+> Engage syncs the Overview page for an individual audience more frequently than the Engage Audiences page (**Engage > Audiences**). As a result, you might see temporary discrepancies in Audience details, such as user counts, between these two pages.
+
+### Refresh real-time Audiences and Traits
+
+For real-time computations, you can click **Refresh Audience** or **Refresh Trait** to update user counts, status, and compute progress.
+
+### Compute statuses
+
+Engage displays the following compute statuses for Audiences and Traits.
+
+#### Real-time computations
+
+| Computation status        | Description                           |
+|---------------------------|---------------------------------------|
+| Preparing                 | Engage is preparing the computation.  |
+| Computing                 | Engage is computing the Audience or Trait.           |
+| Live                      | The Audience or Trait is live. Users will enter in real-time as they meet entry criteria.        |
+| Disabled                  | The Audience or Trait is disabled.                   |
+| Failed                    | The computation was cancelled or failed to compute. Please contact [Segment support](https://segment.com/help/contact/){:target="_blank"}.            |
+
+
+#### Batch computations
+
+| Computation status        | Description                           |
+|---------------------------|---------------------------------------|
+| Preparing                 | Engage is preparing the computation.  |
+| Computing                 | Engage is computing the Audience or Trait.  |
+| Live                      | The Audience or Trait is up-to-date, based on the most recent sync cadence. When you edit a batch Audience or Trait, Engage displays the compute status as `Live` and incorporates your edits in the next scheduled sync.                 |
+| Not Computing             | Engage displays this status when there are no destinations connected or `Compute without connected destinations` isn't selected.         |
+| Disabled                  | The Audience or Trait is disabled.    |
+| Failed                    | The computation was cancelled or failed to compute. Please contact [Segment support](https://segment.com/help/contact/){:target="_blank"}.    |
+
+
 ## Real-time compute compared to batch
 
 Real-time Compute allows you to update traits and Audiences as Segment receives new events. Real-time Compute unlocks exciting use cases:
@@ -96,20 +141,20 @@ Real-time Compute allows you to update traits and Audiences as Segment receives 
 - **Instant Messaging:** Trigger messages in email, live chat, and push notifications instantly, to deliver immediate experiences across channels.
 - **Operational Workflows:** Supercharge your sales and support teams by responding to customer needs faster, based on the latest understanding of a user.
 
-To create a new Audience:
+> warning ""
+> Real-time Compute doesn't support time window conditions. Segment creates Audiences using time window conditions as batch computations. Additionally, Segment creates [Funnel Audiences](#funnel-audiences) as batch computations.
 
-1. Go to your **Computed Traits** or **Audiences** tab in Engage and select **New**.
+To create a new Audience or Trait:
 
-2. Create your computed trait or Audience.
+1. Go to your **Computed Traits** or **Audiences** tab in Engage and select **Create**.
 
-   A lightning bolt indicates that the computation updates in real-time.
+2. Configure and preview your Audience or Trait.
+- A lightning bolt next to `Realtime Enabled` indicates that the computation updates in real-time.
+- By default, Segment queries all historical data to set the current value of the computed trait and Audience. Backfill computes historical data up to the point of audience creation. You can uncheck **Include Historical Data** to compute values for the Audience or trait without historical data. With backfill disabled, the trait or Audience only uses the data that arrives after you create it.
 
-   ![A screenshot of the Audience preview in the Audience Builder](/docs/engage/images/1538693443980_image.png)
+3. Select destinations to connect, then review and create your Audience or Trait.
 
-3. To preview your Audience, select **Select Destinations**, then select **Review & Create**.
-
-   By default, Segment queries all historical data to set the current value of the computed trait and Audience. You can uncheck **Historical Backfill** to compute values for the Audience or trait without using this data. With this disabled, the trait or Audience only uses the data that arrives after you created it.
-
+While Engage is computing, use the Audience Explorer to see users or accounts that enter your Audience. Engage displays the Audience as computing in the Explorer until at least one user or account enters.
 
 > warning ""
 > [Facebook Custom Audiences](/docs/connections/destinations/catalog/personas-facebook-custom-audiences/), [Marketo Lists](/docs/connections/destinations/catalog/marketo-static-lists/), and [Adwords Remarking Lists](/docs/connections/destinations/catalog/adwords-remarketing-lists) impose rate limits on how quickly Segment can update an Audience. Segment syncs at the highest frequency allowed by the tool, which is between one and six hours.
@@ -123,12 +168,18 @@ To edit a realtime Trait or Audience, follow these steps:
 1. In your Engage Space, select the **Computed Traits** or **Audiences** tab.
 2. Select the realtime Audience or Trait you want to edit.
 3. Select the **Builder** tab and make your edits.
-4. Select **Save Audience** to confirm your edits.
+4. Preview the results, then select **Create Audience** to confirm your edits.
 
-Engage then processes your realtime Audience or Trait edits. While the edit task runs, the audience remains locked and you can't make further changes. Once Engage has finished incorporating your changes, you'll be able to access your updated Audience or Trait.
+Engage then processes your realtime Audience or Trait edits. While the edit task runs, the audience remains locked and you can't make further changes. Once Engage incorporates your changes, you'll be able to access your updated Audience or Trait.
 
 > warning ""
 > If your audience includes historical data (Historical Backfill is enabled), editing an audience creates a new backfill task. The backfill task, and therefore the edit task, take longer to process if the audience is connected to a destination with rate limits. Rate-limited destinations dictate how fast Engage can backfill. View a list of [rate-limited destinations](/docs/engage/using-engage-data/#rate-limits-on-engage-event-destinations).
+
+> warning ""
+> It is not possible to edit an audience to convert it from real-time to batch, or vice-versa. If the computation type needs to be changed, you will need to recreate the audience with the appropriate conditions.
+
+> warning ""
+> You can't edit an audience to include anonymous users. If you need to include anonymous profiles, recreate the audience with the appropriate conditions
 
 ## Access your Audiences using the Profiles API
 
@@ -153,7 +204,7 @@ The query would return the following payload:
         }
     }
 ```
-You can read the [full Profile API docs](/docs/profiles/profile-api/) to learn more.
+You can read the [full Profile API docs](/docs/unify/profile-api/) to learn more.
 
 ## Download your Audience as a CSV file
 
@@ -168,8 +219,15 @@ Before you can download the CSV, you will need to generate it. There are three d
 
 <table>
   <tr>
-    <td>![](/docs/engage/images/large_audience_csv.png)</td>
+    <td>![Screenshot of the Download audience list popup in Segment, with the All external ID types and Unformatted settings selected.](/docs/engage/images/large_audience_csv.png)</td>
     <td width="45%">Generating a CSV can take a substantial amount of time for large audiences (around 30 seconds for a formatted CSV with 1 million rows). For CSVs that are expected to take over 20 seconds, Segment displays an estimated generation time. After you generate the CSV file, leave the modal window open while Segment creates the file.
     (If the audience recalculates between when you click Generate and when you download the file, you might want to regenerate the file. The CSV is a snapshot from when you clicked Generate, and could be outdated.)</td>
   </tr>
 </table>
+
+## Identifier Breakdown
+
+The audience summary is a breakdown of the percentages of external_ids of users in the audience. These are the default IDs that Segment includes in the Identity resolution configuration. Segment displays the percentage of the audience with each identifier, which you can use to verify the audience size and profiles are correct.
+
+> info ""
+> The Identifier Breakdown won't show custom IDs included in the Identity resolution configuration. Segment only displays external IDs in the breakdown.

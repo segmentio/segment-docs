@@ -1,8 +1,7 @@
 ---
 title: Replay
+plan: replay
 ---
-
-{% include content/plan-grid.md name="replay" %}
 
 Replay takes an archived copy of your Segment data, and re-sends it to new or existing tools.
 
@@ -28,12 +27,24 @@ For more information, [Contact us](https://segment.com/help/contact/) and our Su
 
 Replays are currently only available for Business Tier customers, and due to their complex nature are not self-serve. [Contact us](https://segment.com/help/contact/) to learn more, or to request a replay for your workspace. When requesting a replay, include the workspace, the source to replay from, the destination tool or tools, and the time period.
 
-Replays can process an unlimited amount of data, however they are rate limited to respect the limitations in downstream partner tools. The replay time depends on the tool we're replaying to, and the amount of data included in the replay.
+Replays can process unlimited data, but they're rate limited to respect limitations in downstream partner tools. If you're also sending data to the destination being replayed to in real time, then, when determining your replay's limit, you'll want to take into account the rate limit being used by real-time events. You should also account for a small margin of your rate limit to allow events to be retried. 
+
+Replay time depends both on the tool Segment replays to and the amount of data included in the replay.
 
 Replays do not affect your [MTU count](/docs/guides/usage-and-billing/mtus-and-throughput/), unless you are using a [Repeater destination](/docs/connections/destinations/catalog/repeater/). Notify your team before initiating a Replay if you're using a Repeater destination.
+
+Once a replay starts, you will not see replayed events in the Event Delivery tab.
+
+You can initiate replays for some or all events, but you can't apply conditional filters that exclude certain rows of data from being replayed. You can set up [destination filters](/docs/connections/destinations/destination-filters/) to conditionally filter replayed events.
 
 ### Replay-eligible destinations
 
 Replays are available for any destinations which support cloud-mode data (meaning data routed through Segment) and which also process timestamps. Destinations that are only available in device-mode (meaning where data is sent directly from the users' devices to the destination tool) cannot receive Replays.
 
 Not all destinations support data deduplication, so you may need to delete, archive, or otherwise remove any old versions of the data before initiating a replay. [Contact us](https://segment.com/help/contact/) if you have questions or would like help.
+
+### Replays & Destination Filters
+
+Replays are subject to the [Destination Filters](/docs/connections/destinations/destination-filters/) you've configured on that destination. For example, if you request that Identify calls be included in the replay, but your destination has a Destination Filter that blocks Identify events, the filter would block all Identify events from making it to the destination. In this case, Segment would recommend that you avoid including Identify events in the replay if you know they'll be blocked by the destination filter.
+
+When you request a replay, Segment asks you to provide a list of the events (type and/or name) that you want included in the replay. If you specify a list of events, then Segment only includes those specified events in the replay. If you need to exclude events in your replay, [reach out to Segment support](https://segment.com/help/contact/){:target="_blank"}. The Segment team can help you handle filtering you're unable to do in the replay.

@@ -15,7 +15,7 @@ The Segment Tracking Plan feature allows you to validate your expected events ag
 
 Tracking Plans are stored in workspaces and can be connected to one or more Sources.
 
-![](./images/tracking-plan.png)
+![A screenshot of the Tracking Plans page, showing one tracking plan titled "Ecommerce Spec".](./images/tracking-plan.png)
 
 ## Create a Tracking Plan
 
@@ -24,7 +24,7 @@ To create a new Tracking Plan:
 2. Once enabled, click **Protocols** in the left bar navigation.
 3. Click **New Tracking Plan**.
 4. Add events, properties, traits and filters in the Tracking Plan editor.
-  - You'll see an option to import events and traits to your tracking plan from a source in your workspace. This option is great if you want to get started with your current events. Note that Segment infers data types, but often can't if several data types are sent for a specific category.
+  - You'll see an option to import events and traits to your tracking plan that your source received in the last 24 hours, 7 days or 30 days. This option is great if you want to get started with your current events. Note that Segment infers data types, but often can't if several data types are sent for a specific category.
 
 
 ## Copy a Tracking Plan
@@ -34,6 +34,17 @@ To create a copy of an existing Tracking Plan:
 1. Click **Protocols** in the left navigation bar.
 2. On the row of the Tracking Plan you want to copy, open the contextual menu(...), and select Duplicate Tracking Plan.
 3. Enter a name for the new Tracking Plan instance, and click Duplicate.
+
+
+## Download a Tracking Plan
+
+To download a Tracking Plan:
+
+1. Click **Protocols** in the left navigation bar.
+2. On the row of the Tracking Plan you want to download, open the contextual menu(...), and select **Download Tracking Plan**.
+3. A toast pops up on the top of the page, with the message _"Your file is processing. When your file is ready it will be available to download from the Download History page."_
+4. Open the Download History page by clicking the link in the toast or clicking the **Download History** tab in the top navigation bar.
+5. Once the file status column indicates that the download was successful, click the link in the File column to download your CSV to your computer. If the file status column shows the download has failed, return to the Tracking Plan Overview page or the Tracking Plan page and try the download again.<br/> The Tracking Plan CSV name has the following format:<br/>`workspaceSlug-trackingPlanName--yyyy-mm-dd--hh-mm-utc`
 
 ### Tracking Plan Columns
 The Tracking Plan editor is organized as a spreadsheet to help you  add new events and properties, and edit the relevant fields for each. Like a spreadsheet, you can navigate across cells in a single event with your arrow keys and press enter to edit a cell.
@@ -70,7 +81,9 @@ You can apply `key:value` labels to each event to help organize your tracking pl
 
 For consistency purposes, it's best that you create a standard way of labeling events and share it with all parts of your organization that will use Segment.
 
-![](./images/labels.png)
+![A screenshot of a tracking plan, zoomed in to show the event labels search bar. A label of "platform:ios" is present in the search bar.](./images/labels.png)
+> info ""
+> **Note:** Tracking Plan Labels are only available for Track and Page events. 
 
 ### Filter track calls in the Tracking Plan
 You can filter the Tracking Plan events by keyword or by label. The applied filter generates a permanent link so you can share specific events with teammates. Label filters also persist after you leave the Tracking Plan.
@@ -158,6 +171,9 @@ To edit the common JSON schema using the Public API, you'll need to add your new
 > info ""
 > [Negative lookahead regexes (`?!`)](https://www.regular-expressions.info/lookaround.html) aren't supported. This means you can't use regex to prevent matches with a specific following character or expression. But, you can use `not` in the regex of your JSON schema to generate violations when a property key or value doesn't match the provided regex pattern.
 
+> info "Specifying data type"
+> Property or trait data type should adhere to the [data types defined by JSON schema](https://json-schema.org/understanding-json-schema/reference/type.html){:target="_blank”}. Data type names must be lower-cased as specified in JSON schema. Datetime properties should be represented as a `string` type with [`format` keyword](https://json-schema.org/understanding-json-schema/reference/string.html#format){:target="_blank”} (for example: "format": "date-time").
+
 ### Extend the Tracking Plan
 Some customers prefer to manage the Tracking Plan with outside tools and resources. See the [APIs and extensions](/docs/protocols/apis-and-extensions/) section to learn more.
 
@@ -174,19 +190,19 @@ This can be helpful for mobile developers who might have several released versio
 
 For example, say you want to add `subtotal` as a required property to your `Order Completed` event. You would start by adding the required property to the event in the Tracking Plan as shown in the example below.
 
-![](../images/breaking_change_event_versioning.png)
+![Two screenshots edited together. The first screenshot shows all the properties in an Order Completed event with none highlighted, and the second screenshot shows the subtotal property selected.](../images/breaking_change_event_versioning.png)
 
 Before Segment introduced event versioning, you would need to add the change to your tracking plan and any non-compliant events would generate violations, and possibly be blocked depending on your [event blocking settings](/docs/protocols/enforce/schema-configuration/).
 
 ### Create a new event version
 With event versioning, you can now create multiple versions of the event definition as shown in the example below. To create a new event version, click into the overflow menu for an event and select **Add Event Version**.
 
-![](../images/add_event_version.png)
+![A screenshot of the overflow menu, with the event versioning setting visible.](../images/add_event_version.png)
 
 ### Dynamically validate track events against an event version
 To ensure the Track events you send to a Segment source validate against the correct event version, you need to instrument your events to include a `context.protocols.event_version` key and version value. The version value must pass as an integer, and should match the number shown in the Tracking Plan version tab. In the example below, the version number would be **2**.
 
-![](../images/pull_event_version.png)
+![A zoomed in version of the Order Completed tab, showing Version 1 and Version 2.](../images/pull_event_version.png)
 
 Next, add the event version number to the context object. For [analytics.js](/docs/connections/sources/catalog/libraries/website/javascript) Track calls, you would instrument the event as in the example below. Note how the JSON objects for `context`, `protocols`, and `event_version` are nested.
 

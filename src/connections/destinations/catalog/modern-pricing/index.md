@@ -3,6 +3,8 @@ title: Modern Pricing Destination
 rewrite: true
 hide-personas-partial: true
 id: 5d65e2aa4da0623cbe367a05
+hidden: true
+published: false
 ---
 [Modern Pricing](https://modernpricing.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) provides intelligent, real-time pricing recommendations for every potential customer visiting your web application.
 
@@ -11,7 +13,7 @@ This destination is maintained by Modern Pricing. For any issues with the destin
 
 ## Getting Started
 
-{% include content/connection-modes.md %}
+
 
 1. From the Segment web app, click **Catalog**.
 2. Search for "Modern Pricing" in the Catalog, select it, and choose which of your sources to connect the destination to.

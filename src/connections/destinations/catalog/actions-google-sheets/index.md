@@ -2,17 +2,12 @@
 title: Google Sheets Destination
 hide-boilerplate: true
 hide-dossier: false
-hidden: true
-private: true
 id: 627ea052118e3cd530d28963
 ---
 
-The Google Sheets destination allows you to sync your warehouse data to a Google spreadsheet, and automate updates to that spreadsheet as your data changes. This destination allows you to automate the workflow of exporting CSVs from your warehouse.
+The Google Sheets destination allows you to sync your warehouse data to a Google spreadsheet, and update the spreadsheet automatically as your data changes. This destination automates the workflow of exporting CSVs from your warehouse.
 
-The Google Sheets destination is intended for use with **Reverse ETL sources only**. 
-
-> info ""
-> The Google Sheets destination is in beta and is in active development. Some functionality may change before it becomes generally available.
+The Google Sheets destination can be connected to **Reverse ETL warehouse sources only**. 
 
 ## Getting started
 
@@ -26,13 +21,13 @@ The Google Sheets destination is intended for use with **Reverse ETL sources onl
 3. Navigate to the **Reverse ETL > Destinations** tab and click **Add Destination**. 
 4. Select Google Sheets and click **Next**. Select the source you configured and name the destination.
 5. On the **Settings** tab, authenticate the Google Sheets API using OAuth. Select the email account that owns the spreadsheet you created above. Make sure you enable the `See, edit, create, and delete all your Google Sheets spreadsheets` permission. 
-6. On the **Mappings** tab, click **Add Mapping** and create a Post Sheet mapping. Follow the steps in the Destinations Actions documentation on [Customizing mappings](/docs/connections/destinations/actions/#customizing-mappings).
+6. On the **Mappings** tab, click **Add Mapping** and create a Post Sheet mapping. Within the mapping, configure how warehouse records should map to your Google Sheets spreadsheet.
 7. Enable the destination and configured mappings.
 
 > info ""
 > The Google Sheets destination only supports sending new or updated rows to your spreadsheet. Deleting rows is not supported.
 
-{% include components/actions-fields.html %}
+{% include components/actions-fields.html settings="false"%}
 
 ## FAQ
 
@@ -42,4 +37,4 @@ The Record Identifier mapping is used to make a distinction between adding a new
 
 ### How do I define the columns in my spreadsheet?
 
-The Fields mapping controls which fields in your model will be written as columns. Input the desired column name(s) on the left, and select the data variable that will populate the value for that column on the right. Please note,at least one Field must be configured to send data to Google Sheets otherwise no columns will be created or synced.
+The Fields mapping controls which fields in your model will be written as columns. Input the desired column name(s) on the left, and select the data variable that will populate the value for that column on the right. Please note, at least one field must be configured to send data to Google Sheets otherwise no columns will be created or synced.

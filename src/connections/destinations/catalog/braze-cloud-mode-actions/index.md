@@ -7,7 +7,7 @@ redirect_from:
 id: 60f9d0d048950c356be2e4da
 versions:
   - name: 'Braze Web Mode (Actions)'
-    link: '/docs/connections/destinations/catalog/braze-web-mode-actions'
+    link: '/docs/connections/destinations/catalog/braze-web-device-mode-actions/'
   - name: 'Braze (Classic)'
     link: '/docs/connections/destinations/catalog/braze'
 ---
@@ -44,3 +44,8 @@ Braze Cloud Mode (Actions) provides the following benefit over Braze Classic:
 
 Keep the following in mind if you plan to move to Braze (Actions) from the classic Braze destination.
 {% include components/actions-map-table.html name="braze-cloud" %}
+
+## Troubleshooting
+
+### Missing required fields
+Braze requires one of either `external_id`, `user_alias`, or `braze_id` to be present in all events sent. If events are failing to send, please check your event mappings to make sure these fields are resolving to valid values.

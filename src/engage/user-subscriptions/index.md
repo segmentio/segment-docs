@@ -1,6 +1,6 @@
 ---
 title: User Subscriptions Overview
-plan: engage-foundations
+plan: engage-premier
 ---
 
 Segment associates [subscription states](/docs/engage/user-subscriptions/set-user-subscriptions/) with each email address and phone number in your audiences. Subscription states indicate the level of consent end users have given to receive your marketing campaigns.
@@ -16,8 +16,9 @@ Email addresses and phone numbers in your audience have one of the four followin
 - `did-not-subscribe`; users who are neither subscribed nor unsubscribed
 - **No subscription status**; users who never gave Segment the email or phone number in your audience
 
-> warning "User Consent"
-> You can only send Engage campaigns to users with a `subscribed` status.
+> info ""
+> It's best practice to only send Engage campaigns to users with a `subscribed` status. However, if you need to send an email to someone who hasn't subscribed, you can create an email campaign that you [send to all users](/docs/engage/campaigns/email-campaigns/#send-an-email-to-all-users/).
+
 
 To learn how Segment determines user subscription states, read the [User Subscription State documentation](/docs/engage/user-subscriptions/subscription-states/).
 

@@ -4,10 +4,7 @@ hide-cmodes: true
 maintenance: true
 id: 54521fd525e721e32a72ee91
 ---
-[Amplitude](https://amplitude.com/) is an event tracking and segmentation
-platform for your web and mobile apps. By analyzing the actions your users
-perform, you can gain a better understanding to drive retention, engagement,
-and conversion.
+[Amplitude](https://amplitude.com/){:target="_blank"} is an event tracking and segmentation platform for your web and mobile apps. By analyzing the actions your users perform, you can gain a better understanding to drive retention, engagement, and conversion.
 
 Segment's Amplitude destination code is open source and available on GitHub. You can view these repositories:
 - [Android](https://github.com/segment-integrations/analytics-android-integration-amplitude){:target="_blank"}
@@ -16,7 +13,7 @@ Segment's Amplitude destination code is open source and available on GitHub. You
 - [Kotlin](https://github.com/segment-integrations/analytics-kotlin-amplitude){:target="_blank"}
 - [Swift](https://github.com/segment-integrations/analytics-swift-amplitude){:target="_blank"}
 
-In addition to the docs below, Amplitude created a [integration guide](https://developers.amplitude.com/docs/segment-amplitude-integration).
+In addition to Segment's Amplitude documentation, Amplitude provides a [Segment integration guide](https://docs.developers.amplitude.com/data/sources/segment/){:target="_blank"}, as well.
 
 > note ""
 > To delete users based on GDPR regulations, you must include a secret key in the **Secret Key** setting of every Amplitude destination. You can find your Secret Key on the [General Settings](https://help.amplitude.com/hc/en-us/articles/235649848-Settings#general) of your Amplitude project.
@@ -27,7 +24,7 @@ In addition to the docs below, Amplitude created a [integration guide](https://d
 
 
 > success ""
-> **Good to know**: This page is about the Amplitude Segment destination, which receives data _from_ Segment. There's also a page about the [Amplitude Engage Segment source](/docs/connections/sources/catalog/cloud-apps/amplitude-cohorts/), which sends data _to_ Segment!
+> **Good to know**: This page is about the Amplitude Segment destination, which receives data _from_ Segment. There's also a page about the [Amplitude Engage Segment source](/docs/connections/sources/catalog/cloud-apps/amplitude-cohorts/), which sends data _to_ Segment.
 
 
 
@@ -39,7 +36,8 @@ In addition to the docs below, Amplitude created a [integration guide](https://d
 3. Choose which sources to connect the destination to.
 4. In the destination settings, enter your Amplitude API key.
 
-   You can find your Amplitude API key in the [Amplitude project settings](https://analytics.amplitude.com/settings/projects). It is a 32-character string of numbers and letters. Locate the project you want to receive your Segment data, copy that project's API key, and paste it into your Amplitude destination settings in Segment.
+   You can find your Amplitude API key in the [Amplitude project settings](https://analytics.amplitude.com/settings/projects){:target="_blank"}
+. It is a 32-character string of numbers and letters. Locate the project you want to receive your Segment data, copy that project's API key, and paste it into your Amplitude destination settings in Segment.
 
 
 If you included Segment's JavaScript snippet on your page, then Amplitude's SDK loads on your page automatically and you can use Segment's to begin sending events right away.
@@ -76,7 +74,8 @@ analytics.screen({
 
 Page and Screen calls have two important properties: a *page name*, such as "Settings", and a *category*, such as "Merchant". How you pass these properties depends on which Segment library you use. Segment determines when to send events to Amplitude based on the settings you enable, and whether the call has a name or category included.
 
-**Important:** If you enable more than one of the following settings, Segment might send multiple events for the same call.
+> warning ""
+> If you enable more than one of the following settings, Segment might send multiple events for the same call.
 
 ### Event type settings for cloud-mode and Analytics.js
 
@@ -121,8 +120,7 @@ The following settings are available on Android for device-mode connections.
 | Track All Pages         | Always                                | If a `screen` *name* is provided: `Viewed (Name) Screen`. Otherwise `Loaded a Screen` | "Viewed Settings Screen"                                    |
 | Track All Screens       | Always                                | Loaded a Screen                                                                       | "Loaded a Screen"                                           |
 
-You can learn more about Page calls from our [Page spec](/docs/connections/spec/page/)
-and Screen calls from our [Screen spec](/docs/connections/spec/screen/).
+You can learn more about Page calls from the [Page spec](/docs/connections/spec/page/) and Screen calls from the [Screen spec](/docs/connections/spec/screen/).
 
 ## Identify
 
@@ -148,14 +146,13 @@ analytics.identify({
 })
 ```
 
-When you make an Identify call, Segment uses the `userId` you provide to set the [User Id in Amplitude](https://help.amplitude.com/hc/en-us/articles/206404628-Step-2-Assign-User-IDs-and-Identify-Your-Users), and
-sets any `traits` you provide as Amplitude custom `user_properties`.
+When you make an Identify call, Segment uses the `userId` you provide to set the [User Id in Amplitude](https://help.amplitude.com/hc/en-us/articles/206404628-Step-2-Assign-User-IDs-and-Identify-Your-Users){:target="_blank"}, and sets any `traits` you provide as Amplitude custom `user_properties`.
 
 ### Merging users with Anonymous ID and User ID
 
 To have Amplitude recognize an anonymous user and a known or logged-in user, make sure you include both the user's `userId` and the `anonymousId` they had before that in your Identify call. If you don't include the `anonymousId`, Amplitude can't tell that the anonymous user is the same person as the logged-in user.
 
-If you're using a Segment server library or the Segment HTTP API, you must explicitly include both `anonymousId` and `userId`. If you're using Analytics.js in device-mode, or a bundled SDK, Segment automatically includes `anonymousId` for you.
+If you're using a Segment server library or the [Segment HTTP API](/docs/connections/sources/catalog/libraries/server/http-api/), you must explicitly include both `anonymousId` and `userId`. If you're using Analytics.js in device-mode, or a bundled SDK, Segment automatically includes `anonymousId` for you.
 
 ### Amplitude Device ID
 
@@ -228,7 +225,7 @@ When a user logs in, be sure to send the same Amplitude `deviceID` in your Ident
 
 ## Track
 
-If you're not familiar with the Segment Specs, take a look to understand what the [Track method](/docs/connections/spec/track/) does. Amplitude supports several special properties, all of which are included in the example below:
+If you're not familiar with the Segment Specs, take a look to understand what the [Track method](/docs/connections/spec/track/) does. Amplitude supports several special properties, all of which are included in the following example:
 
 ```js
 // On server-side
@@ -293,7 +290,9 @@ Segment's iOS and Android sources can send revenue using Amplitude's preferred `
 
 Property names should be `camelCase` for Android implementations, and `snake_case` for iOS implementations.
 
-**Note**: Amplitude does not currently support currency conversion. You should normalize all revenue data to your currency of choice before sending it to Amplitude.
+> info ""
+> Amplitude [doesn't support currency conversion](https://help.amplitude.com/hc/en-us/articles/115003116888-Track-revenue){:target="_blank"}
+Normalize all revenue data to your currency of choice before sending it to Amplitude.
 
 
 ### Revenue
@@ -312,10 +311,10 @@ For Segment's Analytics.js (device-mode), iOS, and Android sources, if you do no
 | `eventProperties`  | Any remaining properties (cloud-mode only)        | A NSDictionary or Map of event properties to include in the revenue event. |
 
 
-^ In Segment's Analytics.js, iOS and Android sources, if `properties.price` isn't present, Segment falls back to `revenue` and sends that as `price`. The Segment iOS and Android sources also do an additional fallback to `total`, if `revenue` isn't present either.
+In Segment's Analytics.js, iOS and Android sources, if `properties.price` isn't present, Segment falls back to `revenue` and sends that as `price`. The Segment iOS and Android sources also do an additional fallback to `total`, if `revenue` isn't present either.
 
 > success ""
-> **Tip** If your site allows users to perform a single transaction with multiple products (such as a shopping cart checkout), we recommend that you use an [Order Completed](/docs/connections/destinations/catalog/amplitude/#order-completed) event to track revenue with Amplitude.
+> **Tip** If your site allows users to perform a single transaction with multiple products (such as a shopping cart checkout), Segment recommends that you use an [Order Completed](/docs/connections/destinations/catalog/amplitude/#order-completed) event to track revenue with Amplitude.
 
 
 
@@ -375,16 +374,16 @@ If you disable the setting ("off"), Segment sends a single revenue event with th
 
 If you enable the setting ("on"), Segment sends a single revenue event for each product that was purchased. Revenue data is added to each "Product Purchased" event, and the "Order Completed" event does not contain any native Amplitude revenue data.
 
-Make sure you are using formatting your events using the [Track method spec](/docs/connections/spec/track/), and pass at minimum a `revenue` property, as well as a `price` and `quantity` property for each product in the products list.
+Make sure you're formatting your events using the [Track method spec](/docs/connections/spec/track/), and pass at minimum a `revenue` property, as well as a `price` and `quantity` property for each product in the products list.
 
 ## Group
 
 If you're not familiar with the Segment Specs, take a look to understand what the [Group method](/docs/connections/spec/group/) does.
 
 > warning ""
-> Groups are an enterprise-only feature in Amplitude, and are only available if you've purchased the Accounts add-on.
+> Groups are an enterprise-only feature in Amplitude and are only available if you've purchased the Accounts add-on.
 
-The example below shows a Group call made from a server library.
+The following example shows a Group call made from a server library:
 
 ```js
 // On server-side
@@ -397,7 +396,7 @@ analytics.group("some_group_id", {
 })
 ```
 
-And the example below shows a call made from a device-mode library that sends directly from the client.
+And this example shows a call made from a device-mode library that sends directly from the client:
 
 ```js
 // On client-side
@@ -449,10 +448,9 @@ Segment Alias call allows you to associate a Segment user's `previousId`
 with the user's `userId`, or what Amplitude refers to, respectively, as a
 `user_id` and a `global_user_id`.
 
-By default, Segment does **NOT** send Alias events to Amplitude. To forward Alias events from Segment, go to your Amplitude destination settings in the
-Segment web app, and set the **Enable Alias** setting to "on". Once enabled, Segment forwards Alias events from Segment's servers only. This means
-that Alias events reach Amplitude only when you're sending events from the client and have set your Amplitude instance's connection mode to "Cloud Mode",
-or are sending Alias events from a Segment server-side library (such as Node).
+By default, Segment does **NOT** send Alias events to Amplitude. To forward Alias events from Segment, go to your Amplitude destination settings in the Segment web app, and set the **Enable Alias** setting to "on".
+
+Once enabled, Segment forwards Alias events from Segment's servers only. This means that Alias events reach Amplitude only when you're sending events from the client and have set your Amplitude instance's connection mode to "Cloud Mode", or are sending Alias events from a Segment server-side library (such as Node).
 
 > note ""
 > To use Alias, you must have the Amplitude Portfolio add-on enabled.
@@ -466,10 +464,10 @@ For more information, see the [Segment Spec page for the Alias method](/docs/con
 
 ### Mapping Users
 
-Mapping a Segment user's `previousId` to the user's `userId` in Amplitude is as
-simple as invoking a Segment Alias method with an argument for each value.
+You can map a Segment user's `previousId` to the user's `userId` in Amplitude by invoking a Segment Alias method with an argument for each value.
+
 The example Alias call below maps the `previousId` with the value of `123` to the `userId` with a value of `456` in Amplitude. Both user `123` and `456` still have separate user profiles, but the profiles get merged together when you look at the user's behavior in
-[Amplitude's Cross Project view](https://help.amplitude.com/hc/en-us/articles/360002750712-Portfolio-Cross-Project-Analysis#user-mapping-aliasing).
+[Amplitude's Cross Project view](https://help.amplitude.com/hc/en-us/articles/360002750712-Portfolio-Cross-Project-Analysis#user-mapping-aliasing){:target="_blank"}.
 
 This kind of mapping is useful for users who have different ids across different Amplitude projects. The user's `user_ids` act as child ids, and can all be mapped to a single `global_user_id` in Amplitude. This allows you to analyze the user's aggregate behavior in Amplitude's Cross Portfolio view.
 
@@ -513,7 +511,7 @@ analytics.alias({
 
 [Segment doesn't have a concept for a session](https://segment.com/blog/facts-vs-stories-why-segment-has-no-sessions-api/).
 
-Device-mode calls to Amplitude include session information because Segment bundles Amplitude's SDK. To set up the same `sessionId` for cloud-mode calls to Amplitude, you must explicitly set the [`session_id`](https://developers.amplitude.com/docs/http-api-v2#optional-keyst) as an integration-specific option, as in the example below.
+Device-mode calls to Amplitude include session information because Segment bundles Amplitude's SDK. To set up the same `sessionId` for cloud-mode calls to Amplitude, you must explicitly set the [`session_id`](https://developers.amplitude.com/docs/http-api-v2#optional-keyst){:target="_blank"} as an integration-specific option, as in the example below.
 
 ```js
 {
@@ -537,7 +535,7 @@ Device-mode calls to Amplitude include session information because Segment bundl
 
 You must pass the start time of a session as `<Timestamp>`.
 
-When you pass a timestamp value from the `session_id` it must be in Unix format or else it generates an error when it is delivered to Amplitude. For example, a date of January 1, 2020 and 9:30am UTC would be written as `2020-12-07T19:33:44+00:00` in ISO 8601, but `1577871000` in Unix epoch time. There are many tools and libraries available to help you convert your timestamps.
+When you pass a timestamp value from the `session_id` it must be in Unix format, otherwise it generates an error when it is delivered to Amplitude. For example, a date of January 1, 2020 and 9:30am UTC would be written as `2020-12-07T19:33:44+00:00` in ISO 8601, but `1577871000` in Unix epoch time. There are many tools and libraries available to help you convert your timestamps.
 
 ### Setting event-level groups using Track calls
 
@@ -564,7 +562,7 @@ analytics.track("Clicked Benefits Dropdown", {
 
 ### Setting Amplitude Version User Property using Identify calls
 
-If you are sending event data to Amplitude in cloud-mode (through the Segment servers) and want to use the [Amplitude Release objects feature](https://help.amplitude.com/hc/en-us/articles/360017800371), you can set the app version user property  as in the example below. Be sure that you send the version details in the context object and not as a standard user trait.
+If you are sending event data to Amplitude in cloud-mode (through the Segment servers) and want to use the [Amplitude Release objects feature](https://help.amplitude.com/hc/en-us/articles/360017800371){:target="_blank"}, you can set the app version user property  as in the example below. Make sure to send the version details in the `context` object and not as a standard user trait.
 
 ```js
 analytics.identify('testUser', {
@@ -613,13 +611,13 @@ Amplitude does not prompt the user for location permission, so your app must exp
 
 On iOS, the user's location is only recorded once per session. If you need to
 force update the location in Amplitude, you can use the native method
-`updateLocation` (iOS only) as documented
-[here](https://developers.amplitude.com/docs/ios). When you call `enableLocationListening` on the iOS SDK, it forces the SDK to update (and overwrite) the initial location that was cached during app startup.
+`updateLocation` (iOS only) referenced in [Amplitude's iOS SDK documentation](https://developers.amplitude.com/docs/ios){:target="_blank"}
+. When you call `enableLocationListening` on the iOS SDK, it forces the SDK to update (and overwrite) the initial location that was cached during app startup.
 
 On Android, when enabled, this setting adds a latitude and longitude property
 to each Track call, which reflecte where geographically the event was triggered.
 
-Even you disable location listening, Amplitude's ingestion layer attempts to determine the user's location from their IP address.  To prevent tracking of any location information, contact your Amplitude CSM to disable all location tracking.
+Even if you disable location listening, Amplitude's ingestion layer attempts to determine the user's location from their IP address.  To prevent tracking of any location information, contact your Amplitude CSM to disable all location tracking.
 
 ### Set AdvertisingId for DeviceId
 
@@ -662,7 +660,7 @@ be useful if you are logging events triggered by push notifications, for
 example. To set an out of session event, send the a Track call with an integration option property `outOfSession` set to `true`.
 
 
-The example below shows how you might set this on iOS.
+The example below shows how you might set this on iOS:
 
 ```objc
 [[SEGAnalytics sharedAnalytics]
@@ -678,7 +676,7 @@ The example below shows how you might set this on iOS.
 ];
 ```
 
-The example below shows how you might set this on Android.
+The following example shows how you might set this on Android:
 
 ```java
 Properties properties = new Properties();
@@ -695,7 +693,7 @@ The Segment mobile device-mode bundles for Amplitude map Segment's `flush` metho
 
 ### Reset
 
-The Segment mobile device-mode bundles for Amplitude support logging out users in Amplitude using Segment's `reset` method. You do not need to aliasing users, as Amplitude merges user data on the backend so that any events up to that point from the same client are tracked under the same user.
+The Segment mobile device-mode bundles for Amplitude support logging out users in Amplitude using Segment's `reset` method. You don't need to alias users, as Amplitude merges user data on the backend so that any events up to that point from the same client are tracked under the same user.
 
 Segment logs the user out by setting the `userId` to `nil` and calling Amplitude's method to regenerate a new `deviceId`.
 
@@ -703,12 +701,12 @@ Segment logs the user out by setting the `userId` to `nil` and calling Amplitude
 
 ### Instrumentation Explorer
 
-Amplitude offers a robust [Instrumentation Explorer/Debugger](https://help.amplitude.com/hc/en-us/articles/360003032451-Instrumentation-Explorer-Debugger). This is a helpful Chrome extension that shows each page interaction that sends an event to Amplitude.
-
-### Amplitude/Segment FAQ
-
-Have a question about the Amplitude/Segment integration that's already been answered? Take a look at [Amplitude's FAQ](https://developers.amplitude.com/docs/segment-amplitude-integration) for common issues integrating Amplitude with Segment.
+Amplitude offers a robust [Instrumentation Explorer/Debugger](https://help.amplitude.com/hc/en-us/articles/360003032451-Instrumentation-Explorer-Debugger){:target="_blank"}. This is a helpful Chrome extension that shows each page interaction that sends an event to Amplitude.
 
 ### I Don't See My Data In Amplitude
 
-If you aren't seeing your data arrive in Amplitude, we recommend you start by taking a look at our [Analytics.js Guide on validating data being transmitted](/docs/connections/sources/catalog/libraries/website/javascript/troubleshooting#is-data-being-transmitted-to-your-third-party-destinations) to your third-party destination.
+If you don't your data arrive in Amplitude, see the Analytics.js [guide to validating data being transmitted](/docs/connections/sources/catalog/libraries/website/javascript/troubleshooting#is-data-being-transmitted-to-your-third-party-destinations) to your third-party destination. 
+
+Also, Amplitude doesn't support fields with a value of an array with nested arrays.
+
+For more information on the Amplitude/Segment integration, view Amplitude's [Import Segment Data](https://docs.developers.amplitude.com/data/sources/segment/){:target="_blank"} documentation.

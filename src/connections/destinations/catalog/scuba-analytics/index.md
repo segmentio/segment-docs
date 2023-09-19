@@ -12,7 +12,7 @@ This destination is maintained by Scuba Analytics. For any issues with the desti
 
 ## Getting Started
 
-{% include content/connection-modes.md %}
+
 
 To set up the Scuba Analytics Integration, first you will need:
 The root URL for your destination cloud storage directory

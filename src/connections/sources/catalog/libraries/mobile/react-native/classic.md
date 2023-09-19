@@ -3,6 +3,9 @@ title: Analytics React Native Classic
 hidden: true
 ---
 
+> warning "End of support"
+> On May 15, 2023, Segment will end support for Analytics React Native Classic, which includes versions 1.5.1 and older. [Upgrade to Analytics React Native 2.0](/docs/connections/sources/catalog/libraries/mobile/react-native/migration/). See the [Analytics React Native 2.0 docs](/docs/connections/sources/catalog/libraries/mobile/react-native/) to learn more. 
+
 > info "Analytics for React Native 2.0"
 > Analytics for React Native 2.0 is available. For more information, see the [Analytics for React Native 2.0 GitHub repository](https://github.com/segmentio/analytics-react-native){:target="_blank"}.
 

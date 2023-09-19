@@ -13,7 +13,7 @@ Developing the machine-learning capabilities necessary to produce these recommen
 
 ## Getting Started
 
-{% include content/connection-modes.md %}
+
 
 These are the pre-requisites you need before getting started:
 
@@ -473,7 +473,7 @@ With Segment's ETL Job script created and saved, it's time to run the job to cre
 
 3. Click the **Security configuration, script libraries, and job parameters** section header to cause the job parameters fields to be displayed.
 
-    ![](images/GlueRunJobDialog.png)
+    ![A screenshot of the Parameters panel.](images/GlueRunJobDialog.png)
 
 
 4. Scroll down to the **Job parameters** section. This is where Segment will specify the job parameters that Segment's script expects for the path to the input data and the path to the output file.
@@ -485,7 +485,7 @@ With Segment's ETL Job script created and saved, it's time to run the job to cre
     | --S3_JSON_INPUT_PATH | s3://personalize-data-[ACCOUNT_ID]/raw-events/ |
     | --S3_CSV_OUTPUT_PATH | s3://personalize-data-[ACCOUNT_ID]/transformed |
 
-    ![](images/GlueRunJobParams.png)
+    ![A screenshot of the job parameters section, showing two key/value pairs as outlined in the preceding table.](images/GlueRunJobParams.png)
 
 
 6. Click **Run job** to start the job.  Note that this dialog scrolls.
@@ -502,7 +502,7 @@ To verify the output file:
 2. Click on the bucket name. If the job completed successfully, you'll see a folder named **transformed**.
 3. Click on **transformed** and you'll see the output file created by the ETL job.
 
-    ![](images/GlueJobOutputFile.png)
+    ![A screenshot of the overview for the personalize data bucket created in step 1.](images/GlueJobOutputFile.png)
 
 
 ## Create Personalize Dataset Group, Solution and Campaign
@@ -515,11 +515,11 @@ To create a personalize dataset group:
 
 2. Click **View dataset groups** to get started.
 
-    ![](images/PersonalizeIntroPage.png)
+    ![A screenshot of the Amazon Personalize page, with boxes around the data center (N. Virginia) and the View dataset groups button.](images/PersonalizeIntroPage.png)
 
 3. On the Dataset Groups page, click **Create dataset group**.
 
-    ![](images/PersonalizeDatasetGroups.png)
+    ![A screenshot of the dataset groups page, with a box around the Create dataset group button.](images/PersonalizeDatasetGroups.png)
 
 4. On the **Create dataset group** page, give your dataset group a name.
 
@@ -527,12 +527,12 @@ To create a personalize dataset group:
 
 6. Click **Next** to continue.
 
-    ![](images/PersonalizeCreateGroup.png)
+    ![A screenshot of the create dataset group settings page, with a dataset group name, MyEventData, entered and the Upload user-item interaction data option selected.](images/PersonalizeCreateGroup.png)
 
 
 7. On the **Create user-item interaction data** page, select **Create new schema** and give your schema a name.
 
-    ![](images/PersonalizeSchema.png)
+    ![A screenshot of the Create user-item interaction data page in AWS, with the Create new schema setting selected.](images/PersonalizeSchema.png)
 
 
 8. Scroll down to the **Schema definition** editor. Dataset schemas in Personalize are represented in [Avro](https://avro.apache.org/docs/current/spec.html){:target="_blank"}. Learn more about For detailed [Personalize schema definitions](https://docs.aws.amazon.com/personalize/latest/dg/how-it-works-dataset-schema.html){:target="_blank"}.
@@ -579,13 +579,13 @@ To create a personalize dataset group:
 
 14. Find the location of the CSV file you generated in the earlier steps. This needs to be configured in the **Data Location** field on this screen.
 
-    ![](images/PersonalizeImportJob.png)
+    ![A screenshot of the Import user-item interaction data, with the Data Location field present.](images/PersonalizeImportJob.png)
 
 15. After clicking the **Finish** button at the bottom of the page, you'll return to the Personalize Dashboard where you can monitor the progress of your interaction dataset as it is being created.
 
 Be patient as this process can take a long time to complete.
 
-![](images/PersonalizeInteractionDatasetCreating.png)
+![A screenshot of the Dataset groups dashboard, with a box around the status of the dataset upload (Create in progress).](images/PersonalizeInteractionDatasetCreating.png)
 
 ### Create Personalize Solution
 
@@ -593,17 +593,17 @@ Once Segment's event CSV is finished importing into a user-item interaction data
 
 1. From the Dashboard page for the dataset group created above, click **Start** in the **Create solutions** column.
 
-    ![](images/PersonalizeCreateSolution.png)
+    ![A screenshot of the Dataset groups dashboard, with a box around the Start button in the Create solutions column.](images/PersonalizeCreateSolution.png)
 
 2. On the **Create solution** page, enter a **Solution name**.
   * For a discussion on the different recipes you can use with Personalize, see [here](https://docs.aws.amazon.com/personalize/latest/dg/working-with-predefined-recipes.html){:target="_blank"}.
 
-    ![](images/PersonalizeSolutionConfig.png)
+    ![A screenshot of the Create solution page, with a solution name entered in the Solution name field.](images/PersonalizeSolutionConfig.png)
 
 
 3. Click **Finish** to create your Solution. This process can take several minutes to several hours to complete.
 
-    ![](images/PersonalizeSolutionInProgress.png)
+    ![A screenshot of the Dataset groups dashboard, with a box around the status of the solution creation (Create in progress).](images/PersonalizeSolutionInProgress.png)
 
 ### Create Personalize Campaign
 
@@ -613,16 +613,16 @@ To create a Personalize campaign:
 
 1. From the Dataset Group Dashboard, click **Create new campaign**.
 
-    ![](images/PersonalizeCreateCampaignDash.png)
+    ![A screenshot of the Dataset Group Dashboard, with a box around the Create new campaign button in the Launch Campaigns column.](images/PersonalizeCreateCampaignDash.png)
 
 2. Enter the name for your campaign.
 3. Select the solution you created above and click **Create campaign**.
 
-    ![](images/PersonalizeCreateCampaign.png)
+    ![A screenshot of the Create new campaign page, with a campaign name entered and a solution selected (the solution created above).](images/PersonalizeCreateCampaign.png)
 
 4. Personalize will start creating your new campaign. This process can take several minutes.
 
-    ![](images/PersonalizeCampaignCreating.png)
+    ![A screenshot of the overview page for the campaign created in the previous step, with a banner reading Campaign creation in progress.](images/PersonalizeCampaignCreating.png)
 
 
 In the next section, Segment will build a real-time clickstream ingestion pipeline that accepts events from Segment and can query the solution you just deployed.
@@ -675,7 +675,7 @@ To create an IAM role:
 4. Search for and click on your new roles from the [IAM home](https://console.aws.amazon.com/iam/home#/home){:target="_blank"}.
 5. Select the **Trust Relationships** tab, then click **Edit trust relationship**.
 
-    ![](images/LambdaTrustRelationship.png)
+    ![A screenshot of the Trust Relationships tab, with the Edit trust relationship button visible.](images/LambdaTrustRelationship.png)
 
 6. Copy and paste the following into your trust relationship. You should replace `<your-source-id>` with either the Source ID of the attached Segment source (the default) or the custom external ID you set in your Amazon Lambda destination settings.
 
@@ -691,7 +691,7 @@ To create an IAM role:
     {
       "Effect": "Allow",
       "Principal": {
-        "AWS": "arn:aws:iam::595280932656:root"
+        "AWS": "arn:aws:iam::595280932656:role/customer-personalize-prod-destination-access"
       },
       "Action": "sts:AssumeRole",
       "Condition": {
@@ -720,20 +720,21 @@ Segment provides an example Lambda function, written in Python, for you to get u
 
 To build a Lambda function to process Segment events:
 1. Go to the Lambda service page in your AWS account.
-2. Click **Create a function** to create a new function.
+2. Ensure that you are in AWS Region 'us-west-2'. You must be in us-west-2 so that Segment's Lambdas can  communicate with your resources.
+3. Click **Create a function** to create a new function.
 
-    ![](images/LambdaDashboard.png)
+    ![A screenshot of the Lambda service page in AWS, with a box around the Create a function button.](images/LambdaDashboard.png)
 
-3. Select **Author from scratch** since Segment will be providing the source code for the function.
+4. Select **Author from scratch** since Segment will be providing the source code for the function.
 
-4. Enter a name for your function and select **Python 3.7** for the runtime.
+5. Enter a name for your function and select **Python 3.7** for the runtime.
 
-5. For the **Role** field, select **Create a new role from AWS policy templates** from the dropdown.
-6. Create a **Role name** that makes sense for you, and leave **Policy templates** empty. You will come back to modify this role shortly.
+6. For the **Role** field, select **Create a new role from AWS policy templates** from the dropdown.
+7. Create a **Role name** that makes sense for you, and leave **Policy templates** empty. You will come back to modify this role shortly.
 
-7. Click **Create function**.
+8. Click **Create function**.
 
-    ![](images/LambdaCreateFunction.png)
+    ![A screenshot of the Create a function settings page, with a function name, runtime, permissions, and role name entered.](images/LambdaCreateFunction.png)
 
 
 **Lambda Function Source Code**
@@ -745,7 +746,7 @@ To build a Lambda function to process Segment events:
 
 You should now be able to see the code (and associate folders) in the code editor.
 
-![](images/LambdaFunctionCode.png)
+![A screenshot of the Lambda code editor.](images/LambdaFunctionCode.png)
 
 Segment will call your lambda once per event.  The provided code maps Segment event fields from the Segment event it gets, and sends them to your Personalize Tracker. It then calls Personalize to get a recommendation for the userId in the event, and pushes that recommendation back as a user trait into Segment, using the `identify` call.
 
@@ -767,35 +768,35 @@ To install Segment's Layer:
 
 1. Open the Lambda navigation panel and click **Layers**.
 
-    ![Lambda Nav Panel](images/LambdaNav.png)
+    ![Lambda Nav Panel.](images/LambdaNav.png)
 
-    ![Lambda Layers Nav](images/LambdaLayersNav.png)
+    ![Lambda Layers Nav.](images/LambdaLayersNav.png)
 
 2. From the Lambda Layers view, click **Create layer**.
 
-    ![Lambda Create Layer](images/LambdaCreateLayer.png)
+    ![Lambda Create Layer.](images/LambdaCreateLayer.png)
 
 3. Create the layer by specifying a name such as "PersonalizeApiInstaller", browsing to the pre-made zip in https://github.com/segmentio/segment-lambda-recipes/blob/master/segment-personalize/support/python_personalize_init.zip, and select **Python 3.7** as the compatible runtime.
 4. Click **Create** to upload the zip file and create the layer.
 
-    ![Lambda Create Layer Config](images/LambdaCreateLayerConfig.png)
+    ![Lambda Create Layer Config.](images/LambdaCreateLayerConfig.png)
 
 5. Add the layer just created to Segment's function.
 6. Return to the Lambda function by opening the Lambda navigation panel and clicking **Functions**.
 
-    ![Lambda Nav Panel](images/LambdaNav.png)
+    ![Lambda Nav Panel.](images/LambdaNav.png)
 
-    ![Lambda Function Layer Add](images/LambdaFunctionsNav.png)
+    ![Lambda Function Layer Add.](images/LambdaFunctionsNav.png)
 
 7. Click on your function name to access the configuration page again.
 8. In the Lambda Designer, click the **Layers** panel below the function name and then **Add layer**  in the **Referenced layers** panel at the bottom of the page.
 
-    ![Lambda Function Layer Add](images/LambdaLayerAdd.png)
+    ![Lambda Function Layer Add.](images/LambdaLayerAdd.png)
 
 9. Select the layer you just added and the latest version.
 10. Click **Add** to add the layer to the function.
 
-    ![Lambda Function Layer Add](images/LambdaLayerAddSelect.png)
+    ![Lambda Function Layer Add.](images/LambdaLayerAddSelect.png)
 
 **Update your IAM role for your Lambda to call Personalize**
 
@@ -803,11 +804,11 @@ You need to modify the IAM Role & Policy originally created with this Lambda to 
 
 1. From the **Execution role** section of your Lambda function, click the **View the <your-role-name>** link.
 
-    ![](images/ExecutionRoleIAM.png)
+    ![A screenshot of the execution role settings section on your Lambda.](images/ExecutionRoleIAM.png)
 
 2. Click the arrow next to your policy in this role, then **Edit Policy**.
 
-    ![](images/EditPolicy.png)
+    ![A screenshot of the permissions policies settings section on your Lambda.](images/EditPolicy.png)
 
 3. Add the code below to the existing permissions from within the JSON editor.
 4. Click **Review Policy** and **Save Changes**.
@@ -856,7 +857,7 @@ You need to create a Personalize Event Tracker for the Dataset Group you created
 
 3. Click **Create event tracker** button.
 
-    ![](images/PersonalizeCreateTracker.png)
+    ![A screenshot of the Event trackers settings page, with a box around the Create event tracker button.](images/PersonalizeCreateTracker.png)
 
 4. Enter a name for your Event Tracker.
 
@@ -938,16 +939,16 @@ You need to create a Personalize Event Tracker for the Dataset Group you created
           }
       ```
 
-      ![](images/PersonalizeEventTrackerConfig.png)
+      ![A screenshot of the Configure tracker setup page.](images/PersonalizeEventTrackerConfig.png)
 
 
 6. The Event Tracker's tracking ID is displayed on the following page and is also available on the Event Tracker's detail page. Copy this value to your clipboard.
 
-    ![](images/PersonalizeEventTrackerCreating.png)
+    ![A screenshot of the Install the SDK page, with a box around the Tracking Id value.](images/PersonalizeEventTrackerCreating.png)
 
 7. Returning to the Lambda function, paste the Event Tracker's tracking ID into an Environment variable for the function with the key `personalize_tracking_id`.
 
-    ![](images/LambdaEnvVariable.png)
+    ![A screenshot of the key/value pairs under the Environment variables page, with the key personalize_tracking_id present.](images/LambdaEnvVariable.png)
 
 8. Add environment variables for Segment and for the function to tell it the Personalize Campaign to call for retrieving recommendations.
 
@@ -957,7 +958,7 @@ You need to create a Personalize Event Tracker for the Dataset Group you created
 
 11. Click on the campaign you created earlier and copy the **Campaign ARN** to your clipboard.
 
-    ![](images/PersonalizeCampaignArn.png)
+    ![A screenshot of the campaign overview page, with a box around Campaigns in the side navigation.](images/PersonalizeCampaignArn.png)
 
 
 12. Return to your Lambda function and scroll down to the **Environment variables** panel.
@@ -965,18 +966,18 @@ You need to create a Personalize Event Tracker for the Dataset Group you created
 13. Add an environment variable with the key `personalize_campaign_arn` and value of the Campaign ARN in your clipboard.
 14. Scroll to the top of the page and click **Save** to save your changes.
 
-    ![](images/LambdaRecCampaignArn.png)
+    ![A screenshot of the environmental variables panel, with a key/value pair of personalize_campaign_arn included.](images/LambdaRecCampaignArn.png)
 
 15. You need a key for the Segment source that will get Segment's update events. Go back to your Segment workspace tab or window, and click on the source which will receive events from your Lambda, and copy the write key from the **Overview** tab.
 
-  ![](images/SegmentWriteKey.png)
+  ![A screenshot of a Source's overview panel in Segment, with an arrow pointing to the Write Key field.](images/SegmentWriteKey.png)
 
 
 16. Go back to your Lambda tab or window, and paste the key under a property called `connections_source_api_key`.
 
 _Make sure to click **Save**_ here or you will need to do this again.
 
-![](images/LambdaRecCampaignArn.png)
+![A screenshot of the environmental variables panel, with a key/value pair, connections_source_api_key, included.](images/LambdaRecCampaignArn.png)
 
 
 Your lambda is now ready to receive events from Segment.  Next, you will need to enable your Segment Personalize Destination.

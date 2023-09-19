@@ -7,12 +7,12 @@ With Twilio Engage, you can send email and SMS campaigns to users who have opted
 
 Some knowledge of the Journeys product will benefit you as you read through this guide. If you’re new to Journeys, the [Journeys documentation](/docs/personas/journeys/) will bring you up to speed.
 
-## How Engage campaign works
+## How Engage campaigns work
 
 Twilio Engage uses Journeys to send email and SMS campaigns.  With Journeys, you add conditions and steps that trigger actions like sending an email or an SMS.
 
 You’ll build and then send your campaign in three stages:
-
+ 
 1. Create a Journey.
 2. Add a Journey condition.
 3. Create, test, and send your email campaign.
@@ -50,18 +50,32 @@ Some email campaign fields, like **Sender email** and **Subject**, are required.
 > info "Editing Templates"
 > If you use a template for your email, Engage creates an editable copy of the original.  Editing the template within the Journey won’t alter the original template.
 
+### Send an email to all users
+
+As you create your email campaign, you can set an email to send to all users regardless of their [subscription state](/docs/engage/user-subscriptions/#the-four-subscription-states). This may be useful, for example, when you need to send a marketing transactional email to a user who hasn't subscribed to your marketing emails.
+
+To send an email to all users:
+
+1. In the email builder, navigate to the **Which subscription states should receive this message?** field.
+2. From the dropdown menu, select **All subscription states including unsubscribed**.
+
+When you bypass subscription states, be sure to follow local laws and comply with [CAN-SPAM guidance](https://www.ftc.gov/business-guidance/resources/can-spam-act-compliance-guide-business){:target="_blank"}. 
+
+For more, view SendGrid's [email deliverability best practices](https://support.sendgrid.com/hc/en-us/articles/360041790453-Best-Practices-for-ensuring-Email-Deliverability){:target="_blank"}. 
+
 ### Test your email campaign
 
 At this point, you can send a test email before publishing your campaign. Test emails confirm that your design, unsubscribe links, and merge tags appear as expected.
 
-As part of the test send, you can select a test profile. The test profile populates the test email and replaces merge tags with personalized content, but doesn't send a test email to the test address.
+As part of the test send, you can enter custom values to populate the profile traits in your message.
 
 Follow these steps to test your campaign:
 
-1. In the **Send Email** pane, navigate to Body, then click **Test Email**.
-2. In the **Recipients** field, enter the email address(es) that will receive your test email.
-3. Search for and select a test profile.
-4. Click **Send Test Email**.
+1. In the **Send an email** pane, navigate to Body, then click **Test email**.
+2. If your template has profile traits, enter a trait value for the test email. This ensures that your merge tags work as expected.
+- To test a default value, leave the profile traits field blank. Default values must be assigned in your merge tags. For example, `loyal customer` would be the default for the following merge tag: {% raw %}```{{profile.traits.first_name | default: "loyal customer"}}```{% endraw %}.
+3. In the **Recipients** field, enter the email address(es) that will receive your test email.
+4. Click **Send test email**.
 
 ### Publish your email campaign
 
@@ -88,6 +102,7 @@ The following table contains descriptions of all available fields in the Journey
 | Preview text     | A brief message that displays next to the email subject.                                                                                                                                        |
 | Subject *        | The email subject.                                                                                                                                                                              |
 | Body *           | The email’s content.  Select Build Email Content to create a new campaign, or Use a template to choose an existing template.                                                                    |
+| Which subscription states should receive this message?     |  The [subscription state](/docs/engage/user-subscriptions/#the-four-subscription-states) that Engage will send email campaigns to. Defaults to `subscribed` users only. Select **All subscription states including unsubscribed** to send emails to all users regardless of subscription state.  |
 
 
 ## Next steps

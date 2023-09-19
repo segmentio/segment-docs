@@ -14,7 +14,7 @@ Data shared through the Events API is processed similarly to information shared 
 The TikTok Conversions destination provides the following benefits:
 
 1. **Clear mapping of data.** Actions-based destinations enable you to define the mapping between the data Segment receives from your source and the data Segment sends to TikTok.
-2. **Prebuilt mappings.** Mappings for TikTok Standard Events, like `PlaceAnOrder`, are prebuilt with the prescribed parameters and available for customization.
+2. **Prebuilt mappings.** Mappings for TikTok Standard Events, like `PlaceAnOrder`, are prebuilt with the prescribed parameters and available for customization. 
 3. **Streamlined stability and security.** Integrate and iterate without client-side limitations, like network connectivity or ad blocker issues.
 4. **Privacy-focused**: Stay compliant with rapidly evolving requirements with automatic PII hashing and flexible controls that let you adapt what data you share.
 5. **Maximum event measurement**: Capture more events with improved accuracy across different browsers, apps, and devices to get a unified view of your customer's journey from page view to purchase.
@@ -64,6 +64,8 @@ If you want to send a [TikTok standard event](https://ads.tiktok.com/marketing_a
 1. Create a mapping for Report Web Event.
 2. Set up your Event Trigger criteria for completed registrations.
 3. Input a literal string of "CompleteRegistration" as the Event Name.
+
+Please be aware that TikTok only supports [these event names](https://ads.tiktok.com/marketing_api/docs?id=1727541103358977){:target="_blank"}.
 
 ### PII Hashing
 

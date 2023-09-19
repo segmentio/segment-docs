@@ -81,56 +81,7 @@ To change which event type the handler listens to, you can rename it to the name
 
 ### Errors and error handling
 
-Segment considers a function's execution successful if it finishes without error. You can also `throw` an error to create a failure on purpose. Use these errors to validate event data before processing it, to ensure the function works as expected.
-
-You can `throw` the following pre-defined error types to indicate that the function ran as expected, but that data was deliverable:
-
-- `EventNotSupported`
-- `InvalidEventPayload`
-- `ValidationError`
-- `RetryError`
-
-The examples show basic uses of these error types.
-
-```js
-async function onGroup(event) {
-  if (!event.traits.company) {
-    throw new InvalidEventPayload('Company name is required')
-  }
-}
-
-async function onPage(event) {
-  if (!event.properties.pageName) {
-    throw new ValidationError('Page name is required')
-  }
-}
-
-async function onAlias(event) {
-  throw new EventNotSupported('Alias event is not supported')
-}
-
-async function onTrack(event) {
-  let res
-  try {
-    res = await fetch('http://example-service.com/api', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify({ event })
-    })
-  } catch (err) {
-    // Retry on connection error
-    throw new RetryError(err.message)
-  }
-  if (res.status >= 500 || res.status === 429) {
-    // Retry on 5xx and 429s (ratelimits)
-    throw new RetryError(`HTTP Status ${res.status}`)
-  }
-}
-
-```
-If you don't supply a function for an event type, Segment throws an `EventNotSupported` error by default.
+{% include content/functions/errors-and-error-handling.md %}
 
 You can read more about [error handling](#destination-functions-logs-and-errors) below.
 
@@ -157,6 +108,9 @@ async function onTrack(request, settings) {
 ```
 
 When you deploy your destination function in your workspace, you fill out the settings on the destination configuration page, similar to how you would configure a normal destination.
+
+> info ""
+> You must pass the settings object to the function at runtime. Functions can't access the settings object when it's stored as a global variable.
 
 ## Test the destination function
 
@@ -214,7 +168,39 @@ async function onBatch(events, settings){
 > info ""
 > The `onBatch` handler is an optional extension. Destination functions must still contain single event handlers as a fallback, in cases where Segment does not receive enough events to execute the batch.
 
-The handler function receives an array of events. The events can be of any supported type, and a single batch may contain more than one event type. Handler functions also receive function settings.
+The handler function receives an array of events. The events can be of any supported type and a single batch may contain more than one event type. Handler functions can also receive function settings. Here is an example of what a batch can look like:
+
+```json
+[
+    {
+      "type": "identify",
+      "userId": "019mr8mf4r",
+      "traits": {
+        "email": "jake@yahoo.com",
+        "name": "Jake Peterson",
+        "age": 26
+      }
+    },
+    {
+      "type": "track",
+      "userId": "019mr8mf4r",
+      "event": "Song Played",
+      "properties": {
+        "name": "Fallin for You",
+        "artist": "Dierks Bentley"
+      }
+    },
+    {
+      "type": "track",
+      "userId": "971mj8mk7p",
+      "event": "Song Played",
+      "properties": {
+        "name": "Get Right",
+        "artist": "Jennifer Lopez"
+      }
+    }
+]
+```
 
 For example, you could send the array of events to an external services batch endpoint:
 
@@ -258,7 +244,7 @@ async function onBatch(events, settings) {
     // ...handle other event types here...
     }
   })
-  await Promise.all(promises)
+  return Promise.all(promises)
 }
 
 async function onTrackBatch(events, settings) {
@@ -320,7 +306,7 @@ Standard [function error types](/docs/connections/functions/destination-function
 ]
 ```
 
-After receiving the response from the `onBatch` handler, only **event_3** and **event_4** will be retried.
+After receiving the response from the `onBatch` handler, Segment only retries **event_4** and **event_5**.
 
 | Error Type             | Result  |
 | ---------------------- | ------- |
@@ -344,43 +330,7 @@ You can also choose to **Save & Deploy** to save the changes, and then choose wh
 
 ## Destination functions logs and errors
 
-A function can throw errors, or Segment might encounter errors while invoking your function. You can view these errors in the [Event Delivery](/docs/connections/event-delivery/) tab for your Destination as in the example below.
-
-![A screenshot of the event delivery tab, showing 519 failed events broken into categories explaining why they failed](images/event-delivery.png)
-
-### Destination functions error types
-
-- **Bad Request** - Any error thrown by the function code that is not covered by the other errors.
-- **Invalid Settings** - A configuration error prevented Segment from executing your code. If this error persists for more than an hour, [contact Segment Support](https://segment.com/help/contact/){:target="_blank"}.
-- **Message Rejected** - Your code threw `InvalidEventPayload` or `ValidationError` due to invalid input.
-- **Unsupported Event Type** - Your code doesn't implement a specific event type (for example, `onTrack()`) or threw an `EventNotSupported` error.
-- **Retry** - Your code threw `RetryError` indicating that the function should be retried.
-
-Segment only attempts to send the event to your destination function again if a **Retry** error occurs.
-
-You can view Segment's list of [Integration Error Codes](/docs/connections/integration_error_codes/) for more information about what might cause an error.
-
-### Destination functions logs
-
-If your function throws an error, execution halts immediately. Segment captures the event, any outgoing requests/responses, any logs the function might have printed, as well as the error itself.
-
-Segment then displays the captured error information in the [Event Delivery](/docs/connections/event-delivery/) page for your destination function. You can use this information to find and fix unexpected errors.
-
-You can throw [an error or a custom error](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Error){:target="_blank"} and you can also add helpful context in logs using the [`console` API](https://developer.mozilla.org/en-US/docs/Web/API/console){:target="_blank"}. For example:
-
-```js
-async function onTrack(event, settings) {
-  const userId = event.userId
-
-  console.log('User ID is', userId)
-
-  if (typeof userId !== 'string' || userId.length < 8) {
-    throw new ValidationError('User ID is invalid')
-  }
-
-  console.log('User ID is valid')
-}
-```
+{% include content/functions/logs.md %}
 
 > warning ""
 > **Warning:** Do not log sensitive data, such as personally-identifying information (PII), authentication tokens, or other secrets. Avoid logging entire request/response payloads. The **Function Logs** tab may be visible to other workspace members if they have the necessary permissions.
@@ -443,7 +393,7 @@ In addition to using [Destination Filters](/docs/connections/destinations/destin
 ...
 ```
 
-In the example above, the integrations object directly references and enables the `My Destination Function`. Be sure to include the workspace name in which the destination function is created, as shown. Like all items in the integration object, destination functions (and workspace names) are case sensitive.
+In the example above, the integrations object directly references and enables the destination function (`My Destination Function`), located inside your workspace (`My Workspace`). Include the workspace name in parentheses, as shown in the example above. Like all items in the integration object, destination function and workspace names are case sensitive.
 
 ## Destination functions FAQs
 
@@ -478,3 +428,7 @@ The [Event Delivery tab](/docs/connections/event-delivery/) continues to show me
 A function's use depends on the number of times it's invoked, and the amount of time it takes to execute. When you enable batching, Segment invokes your function _once per batch_ rather than once per event. The volume of events flowing through the function determines the number of batches, which determines the number of invocations.
 
 If you're sending your batch to an external service, the execution time of the function depends on the end-to-end latency of that service's batch endpoint, which may be higher than an endpoint that receives a single event.
+
+##### Which IP addresses should be allowlisted?
+
+{% include content/ip-allowlist.md %}

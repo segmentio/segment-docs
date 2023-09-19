@@ -26,10 +26,10 @@ To finish adding the SendGrid source, return to your Segment Workspace and follo
 3. Give the Source a name and add any labels to help you organize and filter your sources.
    Segment recommends a name that reflects the source itself, as this name populates the schema name. For example, the source name `SendGrid` creates the schema `SendGrid`. You can add multiple instances if you have multiple SendGrid accounts.
 4. Paste the SendGrid API Key you copied above into the Segment interface. Click **Connect**.
-![](images/601347_Key.png)
+![Screenshot of the Settings page in the setup flow for the Sendgrid source.](images/601347_Key.png)
 
 6. Copy the auto-generated Webhook URL and paste it into SendGrid's Event Notification settings pane under **Settings > Mail Settings**.
-![](images/694785_Webhook.png)
+![Screenshot of the Webhook page in the setup flow for the Sendgrid source.](images/694785_Webhook.png)
 
 7. Enable Event Notification in SendGrid. Select **Next** and then **Finish** to complete setup.
 
