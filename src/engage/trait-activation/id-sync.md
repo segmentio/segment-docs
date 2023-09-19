@@ -4,12 +4,12 @@ beta: true
 plan: engage-foundations
 ---
 
-Use ID Sync to select identifiers and a sync strategy when you send Audience data to your destinations. Configure how you send identifiers, which provides more control over the data you send downstream. 
+Use ID Sync to select identifiers and a sync strategy when you send Audience or Journeys data to your destinations. Configure how you send identifiers, which provides more control over the data you send downstream. 
 
 On this page, you'll learn how to configure and begin using ID Sync.
 
-> info "ID Sync in beta"
-> ID Sync is in beta, and Segment is actively working on this feature. Some functionality may change before it becomes generally available. [Contact Segment](https://segment.com/help/contact/){:target="_blank"} with any feedback or questions.
+> success "Trait Activation setup"
+> To view supported destinations and learn more about getting started with Trait Activation, visit the [setup guide](/docs/engage/trait-activation/trait-activation-setup/).
 
 > warning ""
 > You must have Engage Foundations to use Trait Enrichment. 
@@ -42,6 +42,16 @@ With Customized setup, you can choose which identifiers you want to map downstre
 2. Add an ID strategy. 
 - This is a strategy for a particular identifier which sends either the `last added`, `first added`, or `all` identifiers to your destination.
 3. Click **Save**, then finish building your audience.
+
+
+## Use ID Sync with Journeys
+
+You can also use ID Sync with [Journeys](/docs/engage/journeys/). 
+
+As you're creating or editing a Journey, you can configure how you send identifiers with ID Sync from any of the [supported destinations](/docs/engage/trait-activation/trait-activation-setup/).
+
+1. From a Journeys step, select your destination to customize event settings. 
+2. On the Connection Settings tab, select **Customized Setup**  and use the [steps above](#customized-setup) to customize which identifiers you want to map downstream to your destination. 
 
 
 ## Limits and best practices
