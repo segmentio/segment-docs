@@ -140,6 +140,9 @@ You’ll now need to enable event webhooks, which trigger webhook notifications 
 > warning "Copying SendGrid Credentials"
 > This step creates an API key and API Key ID that you’ll immediately add to Segment. Make sure you’re ready to copy and save the API key before proceeding; SendGrid only displays the API key once. You must follow these steps from within the SendGrid subuser account [you created for use with Twilio Engage](/docs/engage/onboarding/#create-a-subuser-and-check-the-dedicated-ip-address).
 
+> info "Re-using API Keys"
+> It is not possible to re-use API Keys in different Engage spaces. For each space, a new API Key is required.
+
 Now, you'll generate an API key and API Key ID within SendGrid. **With your SendGrid account open in one tab, open your [Segment workspace](https://app.segment.com/workspaces){:target="_blank"} open in another. You’ll need both open to copy and paste the API credentials into your Engage settings.**
 
 > info "SendGrid Subuser Step"

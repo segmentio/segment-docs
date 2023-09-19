@@ -50,8 +50,6 @@ Client SDK Plugins are used to augment Subscriptions and Streams by shipping cod
 - [Swift](/docs/connections/sources/catalog/libraries/mobile/apple/destination-plugins/)
 - [Kotlin](/docs/connections/sources/catalog/libraries/mobile/kotlin-android/destination-plugins)
 - [React Native](/docs/connections/sources/catalog/libraries/mobile/react-native/destination-plugins/)
-- [analytics-ios](/docs/connections/sources/catalog/libraries/mobile/ios/#packaging-device-mode-destination-sdks)
-- [analytics-android](/docs/connections/sources/catalog/libraries/mobile/android/#sending-data-to-destinations)
 
 These SDKs serve as microcosms of the Segment runtime — they enable the dynamic orchestration of event collection, cleaning/transformation, and delivery.
 
@@ -67,8 +65,6 @@ Mobile plugins are loaded into:
 - [Swift](/docs/connections/sources/catalog/libraries/mobile/apple/destination-plugins/)
 - [Kotlin](/docs/connections/sources/catalog/libraries/mobile/kotlin-android/destination-plugins)
 - [React Native](/docs/connections/sources/catalog/libraries/mobile/react-native/destination-plugins/)
-- [analytics-ios](/docs/connections/sources/catalog/libraries/mobile/ios/#packaging-device-mode-destination-sdks)
-- [analytics-android](/docs/connections/sources/catalog/libraries/mobile/android/#sending-data-to-destinations).
 
 > note ""
 > **Note:** The [Swift](/docs/connections/sources/catalog/libraries/mobile/apple/destination-plugins/), [Kotlin](/docs/connections/sources/catalog/libraries/mobile/kotlin-android/destination-plugins) and [React Native](/docs/connections/sources/catalog/libraries/mobile/react-native/destination-plugins/) libraries were all built with the plugin architecture in mind. This makes adding custom destinations far simpler than the older mobile libraries.  

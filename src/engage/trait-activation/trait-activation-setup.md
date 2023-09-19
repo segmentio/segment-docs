@@ -13,16 +13,11 @@ On this page, you'll learn how to set up the Destination that you'll use to get 
 
 You'll first choose a Destinaton to connect to your Audience and use with Trait Activation. Trait Activation supports real-time and batch audiences for the Destinations listed in the table below. Select your Destination, view its Segment documentation, then follow the required setup steps. 
 
-> warning ""
-> Trait Activation only supports [Iterable Classic](/docs/connections/destinations/catalog/iterable/) and [Zendesk Classic](/docs/connections/destinations/catalog/zendesk/) during beta.
-
 
 |-----------------------|---------------|---------------------------|
 |Destination            |  Type         |  Required Steps           |
 | [Facebook Custom Audiences](/docs/connections/destinations/catalog/personas-facebook-custom-audiences/) | List | 1. Authorize Facebook Custom Audiences. <br> 2. Create an Audience in Engage and connect to Facebook. <br> 3. Verify that the Audience appears in Facebook. |
 | [Google Ads Remarketing Lists](/docs/connections/destinations/catalog/adwords-remarketing-lists/#overview) | List | 1. Add Google Ads Remarketing Lists as an Engage Destination. <br> 2. Create an Audience in Segment and connect it to Google Ads Remarketing Lists. <br> 3. Confirm that the list is building in Google Ads Audience manager. |
-|[Iterable](/docs/connections/destinations/catalog/iterable/)              | Event         | 1. Add Iterable Destination to your Segment space. <br> 2. Enter your API Key for Iterable.                          |
-|[Zendesk](/docs/connections/destinations/catalog/zendesk/)                | Event         | 1. Add Zendesk to your Segment space. <br> 2. Enter your Zendesk domain (not including `.zendesk.com`) and click **Connect**. <br> 3. From the Zendesk oAuth screen, sign in with your Zendesk credentials. |
 |[Braze Cloud Mode (Actions)](/docs/connections/destinations/catalog/braze-cloud-mode-actions/) | Event | 1. Connect Braze Cloud Mode (Actions) to your Segment space. <br> 2. Add the API Key, App ID, and REST Endpoint connection settings. |
 | [Adobe Target (Actions)](/docs/connections/destinations/catalog/actions-adobe-target-cloud/#available-actions)    | Event      |  1. Connect Adobe Target (Actions) to your Segment space. <br> 2. On the **Settings** tab, input your Adobe Target destination settings. <br> 3. Follow the Destination Actions documentation for [customized mappings](/docs/connections/destinations/actions/#customizing-mappings). <br> 4. Enable the destination and configured mappings.                        |
 | [Salesforce (Actions)](/docs/connections/destinations/catalog/actions-salesforce/) | Event          | 1. Connect Salesforce to your Segment space. <br> 2. Select **Actions** as the destination framework. <br> 3. From the **Settings** tab, authenticate with Salesforce using OAuth. <br> 4. Follow steps in the [Customizing Mappings documentation](/docs/connections/destinations/actions/#customizing-mappings). <br> 5. Enable the Destination and configured mappings.                  |

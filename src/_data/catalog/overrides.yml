@@ -337,3 +337,95 @@ items:
     label: >-
       Fallback to Zeroed IDFA when advertisingId key not present (Server-Side
       Only)
+- slug: actions-intercom-web
+  id: 62d9daff84a6bf190da9f592
+  display_name: Intercom Web (Actions)
+  name: Intercom Web (Actions)
+  hidden: false
+  endpoints:
+  - EU
+  - US
+  regions:
+  - us-west-2
+  - eu-west-1
+  url: connections/destinations/catalog/actions-intercom-web
+  previous_names:
+  - Intercom Web (Actions)
+  website: http://www.intercom.com
+  status: PUBLIC
+  categories:
+  - Customer Success
+  - Livechat
+  - Email Marketing
+  logo:
+    url: https://cdn.filepicker.io/api/file/PLYt4sbQsa4vXGtq0oxe
+  mark:
+    url: https://cdn.filepicker.io/api/file/TPPTdCreS9SO46zTF0ax
+  methods:
+    track: true
+    identify: true
+    group: true
+    alias: true
+    screen: false
+    page: true
+  platforms:
+    browser: true
+    mobile: false
+    server: false
+    warehouse: false
+  components: []
+  browserUnbundlingSupported: false
+  browserUnbundlingPublic: false
+  replay: false
+  connection_modes:
+    device:
+      web: false
+      mobile: false
+      server: false
+    cloud:
+      web: true
+      mobile: false
+      server: false
+  settings:
+  - name: activator
+    type: string
+    defaultValue: '#IntercomDefaultWidget'
+    description: >-
+      By default, Intercom will inject their own inbox button onto the page, but
+      you can choose to use your own custom button instead by providing a CSS
+      selector, e.g. #my-button. You must have the "Show the Messenger Launcher"
+      setting disabled for this to work. The default value is
+      #IntercomDefaultWidget.
+    required: true
+    label: Custom Inbox Button Selector
+  - name: apiBase
+    type: select
+    defaultValue: https://api-iam.intercom.io
+    description: The regional API to use for processing the data
+    required: true
+    label: Regional Data Hosting
+  - name: appId
+    type: string
+    defaultValue: ''
+    description: >-
+      The app_id of your Intercom app which will indicate where to store any
+      data.
+    required: true
+    label: App ID
+  - name: richLinkProperties
+    type: array
+    defaultValue: ''
+    description: A list of rich link property keys.
+    required: true
+    label: Rich Link Properties
+- slug: singular
+  id: 5c768ec31413290001ebdd2e
+  connection_modes:
+    device:
+      web: false
+      mobile: true
+      server: false
+    cloud:
+      web: false
+      mobile: true
+      server: false
