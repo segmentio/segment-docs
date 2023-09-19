@@ -66,3 +66,7 @@ Engage inserts the selected traits inside merge tags based on cursor placement i
 
 > info ""
 > To learn more about profile traits, visit Segment's [Computed Traits](/docs/engage/audiences/computed-traits/) and [SQL Traits](/docs/engage/audiences/sql-traits/) documentation.
+
+## Next steps
+
+Now that you've built a mobile push template, you're ready to begin [sending mobile push campaigns](/docs/engage/campaigns/push-notifications/push-campaigns/).
