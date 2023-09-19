@@ -19,10 +19,14 @@ Use Trait Enrichment to access Segment profile traits when you sync Audiences an
 
 ## Set up Trait Enrichment
 
+Use the following steps to set up Trait Enrichment with Audiences or Journeys.
+
 > info ""
 > If you're using Destination Actions, visit the setup instructions [here](#destination-actions-setup).
 
-To map Trait Enrichment to your destination:
+### Use Trait Enrichment with Audiences
+
+To configure Trait Enrichment with [Audiences](/docs/engage/audiences/):
 
 1. Navigate to **Engage** > **Audiences**.
 2. [Create a new Audience](/docs/engage/audiences/). From the **Select Destination** tab in the Audience builder, select your destination.
@@ -30,9 +34,19 @@ To map Trait Enrichment to your destination:
 - For existing Audiences, select the connected Destination from the Audience Overview page.
 3. In the **Event Settings** section, you'll see two options: **Default Setup** and **Customized Setup**. For Trait Enrichment, select [**Customized Setup**](#customized-setup). 
 
+### Use Trait Enrichment with Journeys
+
+To use Trait Enrichment with [Journeys](/docs/engage/journeys/):
+
+As you're creating or editing your Journey in the [builder](/docs/engage/journeys/build-journey/), set up Trait Enrichment with any of the [supported destinations](/docs/engage/trait-activation/trait-activation-setup/).
+
+1. From a Journeys step, select the destination you're going to use with Trait Enrichment. 
+2. On the Connection Settings tab, select **Customized Setup**  and use the corresponding [steps below](#customized-setup) to customize the way data is sent to your destination by creating identifier and trait mappings. 
+
+
 ### Default setup 
 
-Default setup uses default Segment Destination settings without Trait Enrichment. To use the default settings, select **Default Setup**, then click **Save** to resume building your Audience. 
+Default setup uses default Segment Destination settings without Trait Enrichment. To use the default settings, select **Default Setup**, then click **Save** to resume building your Audience or Journey. 
 
 You can customize event settings at any time. 
 
@@ -44,7 +58,7 @@ With Customized setup, you can choose which traits you want to map to your desti
 2. Select all traits you want to sync to your destination, and click **Save**. 
 - Use the **Segment** column to select traits from the Segment Spec. 
 - Use the **Destination** column to select which traits you want to map to in your destination. By default, Segment attempts to find traits with matching names.
-3. Click **Save** and finish building your audience.
+3. Click **Save** and finish building your Audience or Journey.
 
 > info ""
 > Segment sends traits you select for enrichment in the traits object in Identify calls, and as properties in the properties object in Track calls.
@@ -108,7 +122,7 @@ After you add traits, configure how your selected traits will map to your Destin
 - To update a trait field mapping, click on a field, and in the dropdown search bar enter `traits.` followed by your trait. For example, `traits.email`. Then, click **Use as an event variable**.
 4. Click **Save** and navigate back to Engage to finish building your Audience. 
 
-
+<!--
 ## Use Trait Enrichment with Journeys
 
 You can also use Trait Enrichment with [Journeys](/docs/engage/journeys/). 
@@ -117,6 +131,8 @@ As you're creating or editing your Journey, set up Trait Enrichment with any of 
 
 1. From a Journeys step, select your destination to customize event settings. 
 2. On the Connection Settings tab, select **Customized Setup**  and use the [steps above](#customized-setup) to customize the way data is sent to your destination by creating identifier and trait mappings. 
+
+-->
 
 ## Best practices
 
