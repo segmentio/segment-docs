@@ -110,7 +110,7 @@ With your server key copied, finish steps 5 and 6 in the Twilio documentation.
 ## 4. Configure push notifications in Engage
 
 > success ""
-> If you've already configured SMS services for Twilio Engage, you can skip this setp.
+> If you've already configured SMS services for Twilio Engage, you can skip this step.
 
 To set up push notifications in Twilio Engage and complete push notifications onboarding, follow the steps in the [Create and configure Twilio SMS services documentation](/docs/engage/onboarding/#stage-3-create-and-configure-twilio-sms-services).
 
