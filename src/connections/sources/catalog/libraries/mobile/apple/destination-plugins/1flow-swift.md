@@ -4,14 +4,14 @@ title: 1Flow Swift Plugin
 
 [1Flow](https://1flow.ai/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners){:target="_blank"} is a leading in-app user survey and messaging platform for Mobile app and SaaS businesses.
 
-Using 1Flow, you can reach users _in-the-moment_ while they are interacting with your website or application, to collect highly contextual user insights that help you improve your product offering and customer experience.
+Using 1Flow, you can reach users _in-the-moment_ while they are interacting with your website or application to collect highly contextual user insights that help you improve your product offering and customer experience.
 
 ## Getting started
 
 1. From the Segment web app, click **Catalog**, then search for **1Flow Mobile Plugin**.
 2. Click **Add Destination**.
 4. Select an existing Source to connect to 1Flow Mobile Plugin.
-5. Go to 1flow.ai -> Settings -> Project Settings, copy the 1Flow project key, and paste it into the Destination Settings in Segment.
+5. Go to **1flow.ai > Settings > Project Settings**, copy the 1Flow project key, and paste it into the Destination Settings in Segment.
 6. Depending on the mobile source you’ve selected, include 1Flow's library by adding the following lines to your dependency configuration.
 
 ## Adding the dependency
@@ -24,7 +24,7 @@ https://github.com/1Flow-Inc/segment-1flow-ios.git
 ```
 
 
-You'll then have the option to pin to a version, or specific branch, as well as which project in your workspace to add it to. Once you've made your selections, click the `Add Package` button.  
+You'll then have the option to pin to a version, or specific branch, as well as which project in your workspace to add it to. Once you've made your selections, click **Add Package**.  
 
 ### Through Package.swift
 
@@ -38,9 +38,9 @@ Open your Package.swift file and add the following to the `dependencies` section
         ),
 ```
 
-## Using the Plugin in your App
+## Using the Plugin in your app
 
-Open the file where you setup and configure the Analytics-Swift library.  Add this plugin to the list of imports.
+Open the file where you set up and configure the Analytics-Swift library.  Add this plugin to the list of imports.
 
 ```
 import Segment
@@ -66,7 +66,7 @@ analytics.identify(userId: "peter@example.com", traits: [
     "mobile": 1234567890
 ])
 ```
-When you call identify method of segment, it will be equivalent to `logUser` of 1Flow. `userId` will be `userID` and `traits` will be `userDetails`.
+The Segment identify method is equivalent to `logUser` of 1Flow. `userId` will be `userID` and `traits` will be `userDetails`.
 
 ## Track
 If you're not familiar with the Segment Specs, take a look to understand what the [Track method](/docs/connections/spec/track/) does. An example call would look like:
