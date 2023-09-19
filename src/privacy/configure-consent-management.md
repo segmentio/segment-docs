@@ -5,7 +5,7 @@ hidden: true
 > info "Consent Management is in private beta"
 > This means that Consent Management features are in active development, and some functionality may change before it becomes generally available. [Contact Segment](https://segment.com/help/contact/){:target="_blank"} with any feedback or questions.
 
-After setting up a third-party or bespoke consent management platform (CMP), you can enforce the consent collected from your users by adding the [consent object](/docs/privacy/consent-management/#consent-object) to your web libraries. 
+After setting up your consent management platform (CMP), you can enforce the consent collected from your users by adding the [consent object](/docs/privacy/consent-management/#consent-object) to your events. 
 
 Once you've configured consent in the Segment app and updated your sources to contain consent preference in every event, your events are routed only to the categories your end users consented to share data with. Events without the consent preference will continue to flow to destinations without consent enforcement
 
@@ -24,9 +24,7 @@ Before you can configure consent in Segment, take the following steps:
 ## Step 1: Create consent categories in the Segment app
 
 > info "Limited availability of sources and destinations during private beta"
-> During private beta, you can send events from web sources to consent categories. Enforcement of consent preferences is only available for data lakes, warehouses, event streaming destinations, webhooks, and functions. You can map one data lake, warehouse, event streaming destination, webhook, or function to multiple consent categories. All other source and destination types are not impacted by consent mappings.
->
-> AWS S3, RETL, and Engage destinations do not enforce consent preferences. 
+> During private beta, AWS S3, RETL, and Engage destinations do not enforce consent preferences. 
 
 1. From the [Segment homepage](https://app.segment.com/goto-my-workspace/){:target="_blank”}, select the Privacy tab and click **Consent Management**.
 2. On the Consent management page, click **Create categories**.
