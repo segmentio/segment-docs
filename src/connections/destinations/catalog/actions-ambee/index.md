@@ -66,7 +66,7 @@ by pasting your API key under **the API Key section** in **Mapping**.
 ### Ambee Air Quality Subscription
 
 Ambee's air quality subscription helps you personalize and position your
-messaging via emails, SMS, and push notifications to improve user
+messaging with emails, SMS, and push notifications to improve user
 engagement on your website based on air quality triggers for locations
 across the world. You can also retarget messaging based on your user's
 geo-location, for example:
