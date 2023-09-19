@@ -15,12 +15,12 @@ In keeping with Segment's commitment to GDPR and CCPA readiness, Segment offers 
 ## Overview
 
 All deletion and suppression actions in Segment are asynchronous and categorized as Regulations. Regulations are requests to Segment to control your data flow. You can issue Regulations from:
- - Your Segment Workspace (via Settings > End User Privacy)
- - [Public API](https://docs.segmentapis.com/tag/Deletion-and-Suppression){:target="_blank"}
+ - Your Segment Workspace (Settings > End User Privacy)
+ - [Segment's Public API](https://docs.segmentapis.com/tag/Deletion-and-Suppression){:target="_blank"}
 
-You can programmatically interact with the User Deletion and Suppression system via the [Public API](https://docs.segmentapis.com/tag/Deletion-and-Suppression){:target="_blank"}.
+You can programmatically interact with the User Deletion and Suppression system using the [Public API](https://docs.segmentapis.com/tag/Deletion-and-Suppression){:target="_blank"}.
 
-With Regulations, you can issue a single request to delete and suppress data about a user by `userId`. Segment can scopes Regulations to your workspace (which targets all sources within the workspace), or to a specific source or a cloud source.
+With Regulations, you can issue a single request to delete and suppress data about a user by `userId`. Segment scopes Regulations to your workspace (which targets all sources within the workspace), to a specific source, or to a cloud source.
 
 The following regulation types are available:
 
@@ -32,7 +32,7 @@ The following regulation types are available:
 
 ## Suppression Support and the Right to Revoke Consent
 
-`SUPPRESS` regulations add a user to your suppression list by the `userId`. Segment blocks suppressed users across all sources; messages you send to Segment with a suppressed `userId` are blocked at the API. These messages do not appear in the debugger, are not saved in archives and systems, and are not sent to any downstream server-side destinations. However, if a destnation is set up in [device-mode](/docs/connections/destinations/#connection-modes), then the events are sent directly to destinations as well and, and Suppression will not suppress events in this case.
+`SUPPRESS` regulations add a user to your suppression list by the `userId`. Segment blocks suppressed users across all sources; messages you send to Segment with a suppressed `userId` are blocked at the API. These messages do not appear in the debugger, are not saved in archives and systems, and are not sent to any downstream server-side destinations. However, if you set up a destination in [device-mode](/docs/connections/destinations/#connection-modes), the events are sent directly to destinations as well. In this case, Suppression doesn't suppress the events.
 
 When a customer exercises the right to erasure, they expect that you stop collecting data about them. Suppression regulations ensure that regardless of how you're sending data to Segment, if a user opts out, Segment respects their wishes on an ongoing basis and across applications.
 
@@ -50,7 +50,7 @@ Segment deletes messages with this `userId` from connected raw data Destinations
 
 Segment forwards these deletion requests to a [growing list of supported partners](/docs/privacy/faq/#which-destinations-can-i-send-deletion-requests-to).
 
-Note that Segment has a 30-day SLA for submitted deletion requests. Additionally, Segment's deletion manager can only accommodate 100,000 users within a 30-day period and cannot guarantee a 30-day SLA if there are more than 100,000 deletion requests submitted within those 30 days. [Contact Support](https://segment.com/help/contact/) if you need to process more than 100,000 users within a 30 day period.
+Note that Segment has a 30-day SLA for submitted deletion requests. Additionally, Segment's deletion manager can only accommodate 100,000 users within a 30-day period and cannot guarantee a 30-day SLA if there are more than 100,000 deletion requests submitted within those 30 days. [Contact Support](https://segment.com/help/contact/){:target="_blank"} if you need to process more than 100,000 users within a 30 day period.
 
 **Segment cannot guarantee that data is deleted from your Destinations.**
 
@@ -62,9 +62,9 @@ Note that if you later **UNSUPPRESS** a user, the deletion functionality does no
 
 ## Suppressed users
 
-The Suppressed Users tab in Segment App (Settings > End User Privacy) allows you to create new Suppression requests and also shows an list of `userId`s which are **actively** being suppressed. It can take a few hour/days for the suppression to become active, depending on the number of requests that are in the queue for your workspace. Once the request is active, Segment blocks data about these users across all sources. 
+The Suppressed Users tab in Segment App (Settings > End User Privacy) allows you to create new Suppression requests and also shows an list of `userId`s which are **actively** being suppressed. It can take a few hours/days for the suppression to become active, depending on the number of requests that are in the queue for your workspace. Once the request is active, Segment blocks data about these users across all sources. 
 
-Note that list only include regulations of type "SUPPRESS_ONLY". If you created a User Deletion request using UI, you will need to check the 'Deletion Requests' tab, as those regulations are basically of type "SUPPRESS_WITH_DELETE".
+Note that list only includes `SUPPRESS_ONLY` regulations. If you created a User Deletion request using UI, you will need to check the **Deletion Requests** tab, as those are `SUPPRESS_WITH_DELETE` regulation types.
 
 ### Suppress a new user
 
@@ -85,15 +85,15 @@ The deletion requests tab shows a log of all regulations with a deletion element
 In the Segment App (Settings > End User Privacy > Deletion Requests), you can click a userId to view its status in Segment internal systems, and in the connected destinations.
 
 The deletion request can have one of the following statuses:
-1. "FAILED"
-2. "FINISHED"
-3. "INITIALIZED"
-4. "INVALID"
-5. "NOT_SUPPORTED"
-6. "PARTIAL_SUCCESS"
-7. "RUNNING"
+1. `FAILED`
+2. `FINISHED`
+3. `INITIALIZED`
+4. `INVALID`
+5. `NOT_SUPPORTED`
+6. `PARTIAL_SUCCESS`
+7. `RUNNING`
 
-When checking the status of deletion requests via the API, the deletion will report an overall status of all of the deletion processes. As a result, we will return a 'FAILED' status because of  a failure on a unsupported destination, even if the deletion from Segment Internal Systems and supported destinations were completed successfully.
+When checking the status of deletion requests using Segment's API, the deletion will report an overall status of all of the deletion processes. As a result, Segment returns a `FAILED` status because of a failure on an unsupported destination, even if the deletion from the Segment Internal Systems and supported destinations were completed successfully.
 
 ### Regulate User from a single Source in a Workspace
 
