@@ -198,14 +198,14 @@ The list below outlines the properties included in most events. See the 'Track (
 | `revenue`                               | The product revenue (excluding discounts, shipping and tax) \*                             | Float             |
 | `sent_from`                             | The unique property to identify events sent by Littledata.                                  | String            |
 | `shipping`                              | The shipping cost.                                                                          | Float             |
-| `shipping_method`                       | Shipping method chosen for checkout                                                    | String            |
-| `shopify_customer_id_littledata`        | Shopify’s identifier for the customer                                                  | Integer           |
-| `source_name`                           | The source of the order (e.g. `web`, `android`, `pos`)                                 | String            |
-| `step`                                  | Checkout step                                                                          | Integer           |
-| `subscription_revenue`                  | The revenue associated with a Subscription Event                                       | Float             |
-| `subtotal`                              | Total after discounts but before taxes and shipping                                    | Float             |
-| `tax`                                   | The amount of tax on the order                                                         | Float             |
-| `total`                                 | Total value of the order                                                               | Float             |
+| `shipping_method`                       | The shipping method chosen for checkout.                                                    | String            |
+| `shopify_customer_id_littledata`        | Shopify’s identifier for the customer.                                                  | Integer           |
+| `source_name`                           | The source of the order (e.g. `web`, `android`, `pos`).                                 | String            |
+| `step`                                  | The checkout step.                                                                          | Integer           |
+| `subscription_revenue`                  | The revenue associated with a Subscription Event.                                       | Float             |
+| `subtotal`                              | The total after discounts but before taxes and shipping.                                    | Float             |
+| `tax`                                   | The amount of tax on the order.                                                         | Float             |
+| `total`                                 | The total value of the order.                                                               | Float             |
 | `userId`                                | Chosen user identifier, defaulting to Shopify Customer ID                              | String            |
 
 > note "" \*`revenue` is available only with the Order Completed event, and only if the store opts in through the Littledata application. Revenue is a reserved property in many Segment destinations. Opting in overrides the `total` property sent to Google Analytics.
