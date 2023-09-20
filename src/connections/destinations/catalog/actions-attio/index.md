@@ -1,15 +1,18 @@
 ---
 title: Attio (Actions) Destination
 hide-boilerplate: true
+id: 64c031541451bb784943f809
+beta: true
+hidden: true
 ---
 
 {% include content/plan-grid.md name="actions" %}
 
-Powerful, flexible and data-driven, [Attio](https://attio.com) makes it easy to build the
+Powerful, flexible and data-driven, [Attio](https://attio.com){:target="_blank”} makes it easy to build the
 exact CRM that your business needs.
 
 This destination allows you to use your existing Segment events to create or update
-records in Attio, for example creating User records from identify events.
+records in Attio, for example creating Attio User records from Segment Identify events.
 
 ## Getting started
 
@@ -40,7 +43,7 @@ Person.
 
 > info ""
 > To use the User standard object, you'll need to make sure it's activated first. Visit
-> your [Workspace Settings > Objects](https://app.attio.com/_/settings/data/objects) page
+> your [Workspace Settings > Objects](https://app.attio.com/_/settings/data/objects){:target="_blank”} page
 > and click the "Activate" button next to the Users object.
 
 This mapping makes the assumption that your Segment event includes two properties:
@@ -50,7 +53,7 @@ This mapping makes the assumption that your Segment event includes two propertie
 
  You can specify additional attributes to be mapped on the **Edit Mapping** page.
 
-For example, we could set some additional properties on the Person using these Mapping
+For example, you could set some additional properties on the Person using these Mapping
 Fields under "Additional Person attributes". The column on the left should contain
 properties from your event, or custom text, and the column on the right should reference
 attributes on that object type in Attio, represented by their slug.
@@ -104,7 +107,7 @@ This mapping makes the assumption that your Segment event includes two propertie
 
 You can specify additional attributes to be mapped on the **Edit Mapping** page.
 
-For example, we could set some additional properties on the Company using these Mapping
+For example, you could set some additional properties on the Company using these Mapping
 Fields under "Additional Company attributes". The column on the left should contain
 properties from your event, or custom text, and the column on the right should reference
 attributes on that object type in Attio, represented by their slug. For example:
@@ -123,7 +126,7 @@ Create or update a single type of Object, given a matching attribute name and va
 example, you could assert that a Company exists using a given `domain` property.
 
 This mapping makes the assumption that your data includes the matching property. For the
-following example, we'll assume you have domain and twitter properties, like so:
+following example, assume you have domain and twitter properties, like so:
 
 ```json
 {
@@ -135,13 +138,13 @@ following example, we'll assume you have domain and twitter properties, like so:
 }
 ```
 
-First, we'll need to set the "Attio Object" property - it should pre-populate with all of
-the activated objects in your Attio instance. Then, we'll need to set the "Matching
+First, you'll need to set the "Attio Object" property - it should pre-populate with all of
+the activated objects in your Attio instance. Then, you'll need to set the "Matching
 Attribute" property. This is the slug for the attribute in Attio, and must also be present
-in your "Attributes" mapping in the next form. In this example, we'll select "Company" as
+in your "Attributes" mapping in the next form. In this example, you'll select "Company" as
 the Attio Object, and "domains" as the Matching Attribute.
 
-We would then need to ensure the Attributes mapping is populated like so:
+You would then need to ensure the Attributes mapping is populated like so:
 
 | Select event variable                   | Enter key name |
 |-----------------------------------------|----------------|
