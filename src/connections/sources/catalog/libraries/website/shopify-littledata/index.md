@@ -122,7 +122,7 @@ The following traits are included with an Identify call:
 
 |  Property Name          |  Description                                                                                                                                            |  Property Type  |
 | -------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------- |
-| userId                     | Chosen user identifier, defaulting to Shopify Customer ID                                                                                                 | Double            |
+| userId                     | The chosen user identifier. This defaults to the Shopify Customer ID.                                                                                                 | Double            |
 | createdAt                  | Date customer record was created                                                                                                                          | Date              |
 | customerLifetimeValue      | Total spend of customer on the Shopify store                                                                                                              | Double            |
 | default_address.street     | The customer's default street address                                                                                                                     | String            |
