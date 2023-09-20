@@ -64,7 +64,7 @@ If your requirements involve including additional fields from user profiles into
 
 ### Braze Device ID
 
-If you would like to use the `Device ID` mapping for the Cohort Destination you will need to ensure you have captured the Braze device_id which is not the same as the Segment device_id. Braze has some methods (linked below) that customers can use to capture the Braze device_id for use in the above workaround:
+If you would like to use the `Device ID` mapping for the Cohort Destination you will need to ensure you have captured the Braze device_id, which is not the same as the Segment device_id. Braze has some methods (linked below) that customers can use to capture the Braze device_id for use in the above workaround:
 - [Swift method](https://braze-inc.github.io/braze-swift-sdk/documentation/brazekit/braze/deviceid/)
 - [Android method](https://braze-inc.github.io/braze-android-sdk/kdoc/braze-android-sdk/com.braze/-i-braze/device-id.html)
 - [Web method](https://js.appboycdn.com/web-sdk/latest/doc/modules/braze.html#getdeviceid)
