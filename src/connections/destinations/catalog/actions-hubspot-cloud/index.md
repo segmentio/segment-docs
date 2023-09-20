@@ -17,7 +17,9 @@ HubSpot is an all-in-one marketing tool that helps attract new leads and convert
 When you use the HubSpot Cloud Mode (Actions) destination, Segment sends your data to [HubSpot's REST API](https://developers.hubspot.com/docs/api/overview){:target="_blank"}.
 
 > warning ""
-> The **Upsert Company** action is not compatible with the Mapping Tester on the mappings page if Associate Contact is set to **Yes**. As a result, Segment recommends using the Event Tester or other tools to test and troubleshoot creating and updating companies in HubSpot. **Please note**, for the company to contact association to work, you are required to trigger an Upsert Contact action before triggering an Upsert Company action.But Contacts created with batch endpoint can’t be associated to a Company from the UpsertCompany Action.
+> The **Upsert Company** action is not compatible with the Mapping Tester on the mappings page if Associate Contact is set to **Yes**. As a result, Segment recommends using the Event Tester or other tools to test and troubleshoot creating and updating companies in HubSpot. 
+>
+> Note that for the company to contact association to work, you are required to trigger an Upsert Contact action before triggering an Upsert Company action. Contacts created with batch endpoint can not be associated to a Company from the Upsert Company Action.
 
 > warning ""
 > **Behavioral Events (Legacy)** are only supported with [Hubspot Classic Destination](/docs/connections/destinations/catalog/hubspot/).
