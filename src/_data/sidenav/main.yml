@@ -322,6 +322,20 @@ sections:
       title: Sample Queries
     - path: /unify/profiles-sync/tables
       title: Tables & Materialized Views
+  - section_title: Linked Profiles 
+    slug: unify/linked-profiles
+    section: 
+    - section_title: Setup Guides
+      slug: unify/linked-profiles/setup-guides
+      section: 
+        - path: /unify/linked-profiles/setup-guides/bigquery-setup
+          title: BigQuery Setup
+        - path: /unify/linked-profiles/setup-guides/snowflake-setup
+          title: Snowflake Setup
+        - path: /unify/linked-profiles/setup-guides/redshift-setup
+          title: Redshift Setup
+    - path: /unify/linked-profiles/linked-events
+      title: Linked Events
   - section_title: Traits
     slug: unify/traits
     section:
