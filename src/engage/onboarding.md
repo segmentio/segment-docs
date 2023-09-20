@@ -214,7 +214,6 @@ Start by creating your Twilio account and getting an API key for Engage:
 6. Click **Create API Key**.
 7. Copy and save both the **SID** and **Secret** field contents.
 
-
     ![Copying the Twilio API key](images/apikeys.png "Copying the Twilio API key")
 
 8. Return to the API keys & tokens page. In the **Live credentials** section, copy the Account SID credentials.
