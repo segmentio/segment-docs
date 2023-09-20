@@ -11,8 +11,8 @@ Using 1Flow, you can reach users _in-the-moment_ while they are interacting with
 
 The 1Flow Mobile Plugin Destination is open-source and available on GitHub. You can view these repositories here:
 
-- [iOS](https://github.com/1Flow-Inc/Segment1Flow.git){:target="_blank"} 
-- [Android](https://github.com/1Flow-Inc/1flow-segment-tool.git){:target="_blank"}
+- [iOS](https://github.com/1Flow-Inc/segment-1flow-ios.git){:target="_blank"} 
+- [Android](https://github.com/1Flow-Inc/segment-1flow-android.git){:target="_blank"}
 
 This destination is maintained by 1Flow. For any issues with the destination, [contact Support team](mailto:support@1flow.app).
 
@@ -30,16 +30,18 @@ This destination is maintained by 1Flow. For any issues with the destination, [c
 
 In the Xcode File menu, click Add Packages. You'll see a dialog where you can search for Swift packages. In the search field, enter the URL to this repo.
 
-https://github.com/1Flow-Inc/Segment1Flow
+https://github.com/1Flow-Inc/segment-1flow-ios
 
 You'll then have the option to pin to a version, or specific branch, as well as which project in your workspace to add it to. Once you've made your selections, click the Add Package button.
 
 ### Step 2: Initialise Segment and Add 1Fow Destination
 
 ```
-    let config = Configuration(writeKey: "YOUR_WRITE_KEY_HERE")
-    let analytics = Analytics(configuration: config)
-    analytics.add(plugin: OneFlowDestination())
+import  Segment1Flow
+...
+let config = Configuration(writeKey: "YOUR_WRITE_KEY_HERE")
+let analytics = Analytics(configuration: config)
+analytics.add(plugin: OneFlowDestination())
 ```
 
 ## Android
@@ -83,7 +85,7 @@ defaultConfig {
 dependencies {
         ....
     implementation 'com.segment.analytics.android:analytics:4.11.3'
-    implementation "com.github.1Flow-Inc:1flow-segment-tool:2023.09.14"
+    implementation "com.github.1Flow-Inc:segment-1flow-android:2023.09.16"
 }
 ```
 
