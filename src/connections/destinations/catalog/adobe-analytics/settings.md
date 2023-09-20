@@ -335,6 +335,11 @@ An example eVar mapping in the Segment Destination settings UI should look like 
 
 >info ""
 > Please note, only properties can be mapped to Adobe eVar properties. So for example, you could map the following properties to Adobe: path, referrer, search, signup_mode, title and url
+>![Adobe evar](https://github.com/segmentio/segment-docs/assets/82051355/999b398a-f752-47f6-8511-9b2ec866cbae)
+>![adobe mapping](https://github.com/segmentio/segment-docs/assets/82051355/c22eb82d-c9cd-4a2a-b216-b9b36569a606)
+
+
+
 
 ## Merchandising events
 
