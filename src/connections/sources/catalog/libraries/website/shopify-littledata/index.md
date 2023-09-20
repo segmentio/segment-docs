@@ -208,7 +208,7 @@ The list below outlines the properties included in most events. See the 'Track (
 | `total`                                 | Total value of the order                                                               | Float             |
 | `userId`                                | Chosen user identifier, defaulting to Shopify Customer ID                              | String            |
 
-> note "" \*`revenue` is available only with the Order Completed event, and only if the store opts in through the Littledata application. Revenue is a reserved property in many Segment destinations. Opting in will override the `total` property sent to Google Analytics.
+> note "" \*`revenue` is available only with the Order Completed event, and only if the store opts in through the Littledata application. Revenue is a reserved property in many Segment destinations. Opting in overrides the `total` property sent to Google Analytics.
 
 ## Product properties
 
