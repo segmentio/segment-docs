@@ -55,8 +55,8 @@ To get started with the Analytics-CSharp library:
     var analytics = new Analytics(configuration);
     ```
 
-| Option Name                 | Description                                                                                                                                                                                                                                                                                                                                   |
-|-----------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Option Name                 | Description   |
+|-----------------------------|---------------|
  | `writeKey` *required*       | This is your Segment write key.                                                                                                                                                                                                                                                                                                               |
 | `flushAt`                   | The default is set to `20`. <br> The count of events at which Segment flushes events.                                                                                                                                                                                                                                                                |
 | `flushInterval`             | The default is set to `30` (seconds). <br> The interval in seconds at which Segment flushes events.                                                                                                                                                                                                                                                  |
@@ -489,7 +489,7 @@ class SegmentLogger : ISegmentLogger
 
 ## Customize HTTP Client
 
-The SDK allows you to have full control over the network components. You can easily swap out System.Net with your favorite network library by implementing `IHTTPClientProvider` and extending `HTTPClient`. Take a look at [this example](https://github.com/segmentio/Analytics-CSharp/blob/main/Samples/UnitySample/UnityHTTPClient.cs) where the default http client is fully replaced by Unity's `UnityWebRequest`.
+The SDK allows you to have full control over the network components. You can easily swap out System.Net with your favorite network library by implementing `IHTTPClientProvider` and extending `HTTPClient`. Take a look at [this example](https://github.com/segmentio/Analytics-CSharp/blob/main/Samples/UnitySample/UnityHTTPClient.cs){:target="_blank"} where the default http client is fully replaced by Unity's `UnityWebRequest`.
 
 ### Proxying HTTP Calls
 
@@ -525,7 +525,7 @@ class ProxyHttpClientProvider : IHTTPClientProvider
 
 ## Customize Storage
 
-The SDK also allows you to fully customize your storage strategy. It comes with two standard providers: `DefaultStorageProvider` that stores data to local disk and `InMemoryStorageProvider` that stores data all in memory. You can write up your own provider according to your needs, for example, store data to a database or to your own server directly, by implementing `IStorage` and `IStorageProvider`. Please refer to the implementation of [`Storage`](https://github.com/segmentio/Analytics-CSharp/blob/main/Analytics-CSharp/Segment/Analytics/Utilities/Storage.cs) as example.
+The SDK also allows you to fully customize your storage strategy. It comes with two standard providers: `DefaultStorageProvider` that stores data to local disk and `InMemoryStorageProvider` that stores data all in memory. You can write up your own provider according to your needs, for example, store data to a database or to your own server directly, by implementing `IStorage` and `IStorageProvider`. Please refer to the implementation of [`Storage`](https://github.com/segmentio/Analytics-CSharp/blob/main/Analytics-CSharp/Segment/Analytics/Utilities/Storage.cs){:target="_blank"} as an example.
 
 ## Json Library
 
@@ -551,8 +551,8 @@ JsonObject customerJsonObj = new JsonObject
 
 For sample usages of the SDK in specific platforms, checkout the following:
 
-| Platform    | Sample                                                                                                                                 |
-|-------------|----------------------------------------------------------------------------------------------------------------------------------------|
+| Platform    | Sample         |
+|-------------|----------------|
 | Asp.Net     | [Set up with dependency injection](https://github.com/segmentio/Analytics-CSharp/tree/main/Samples/AspNetSample){:target="_blank"}                        |
 | Asp.Net MVC | [Set up with dependency injection](https://github.com/segmentio/Analytics-CSharp/blob/main/Samples/AspNetMvcSample){:target="_blank"}                     |
 | Console     | [Basic setup](https://github.com/segmentio/Analytics-CSharp/tree/main/Samples/ConsoleSample/Program.cs){:target="_blank"}                               |
