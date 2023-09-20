@@ -1,11 +1,15 @@
 ---
 title: Configure Consent Management
 hidden: true
+related:
+  - "/privacy/consent-management/"
+  - "/privacy/consent-in-segment-connections/"
+  - "/privacy/consent-in-unify/"
 ---
 > info "Consent Management is in private beta"
 > This means that Consent Management features are in active development, and some functionality may change before it becomes generally available. [Contact Segment](https://segment.com/help/contact/){:target="_blank"} with any feedback or questions.
 
-After setting up your consent management platform (CMP), you can enforce the consent collected from your users by adding the [consent object](/docs/privacy/consent-management/#consent-object) to your events. 
+After setting up your consent management platform (CMP), you can enforce the consent collected from your users by adding the [consent object](/docs/privacy/consent-in-segment-connections/#consent-object) to your events. 
 
 Once you've configured consent in the Segment app and updated your sources to contain consent preference in every event, your events are routed only to the categories your end users consented to share data with. Events without the consent preference will continue to flow to destinations without consent enforcement.
 
@@ -42,8 +46,8 @@ Before you can configure consent in Segment, take the following steps:
 ## Step 2: Integrating your CMP with Segment
 
 Once you've created consent categories in the Segment app, you need to integrate your CMP with Segment. Segment recommends using a CMP wrapper, but you can use any solution provided it meets the following criteria:
-- Reads the end user consent preference from your CMP and includes the [consent object](/docs/privacy/consent-management/#consent-object) in every event
-- If using Unify and Engage, generates the [Segment Consent Preference Track](/docs/privacy/consent-management/#segment-consent-preference-track) event every time a user provides or updates their consent preferences with their anonymousId and userId
+- Reads the end user consent preference from your CMP and includes the [consent object](/docs/privacy/consent-in-segment-connections/#consent-object) in every event
+- If using Unify and Engage, generates the [Segment Consent Preference](/docs/privacy/consent-in-unify/#segment-consent-preference-event) event every time a user provides or updates their consent preferences with their anonymousId and userId
 
 Segment provides a OneTrust wrapper for the following sources:
 - **Analytics.js**: Please follow the instructions from the README in the [@segment/analytics-consent-wrapper-onetrust repository](https://github.com/segmentio/analytics-next/tree/master/packages/consent/consent-wrapper-onetrust){:target="_blank"}.
