@@ -197,40 +197,7 @@ Once you've completed IP warmup, your SendGrid account will be fully configured 
 
 ## Stage 3: Create and configure Twilio SMS services
 
-To add the ability to send SMS campaigns in Engage, you’ll now create a Twilio account, generate an API key, and set up a phone number and messaging service.
-
-### Create a Twilio account, generate an API key, and select your messaging service(s)
-
-> info "Copying Twilio Credentials"
-> This step generates an Account SID, API key SID, and API key secret that you’ll later add to Segment. Make sure you’re ready to copy and save both before proceeding.
-
-Start by creating your Twilio account and getting an API key for Engage:
-
-1. Visit the [Twilio website](https://www.twilio.com/try-twilio){:target="_blank"} and sign up for a **paid account**. Trial accounts generate sending errors.
-2. In your Twilio console, select the **Account** dropdown menu, then **API keys & tokens**.
-3. On the Auth tokens & API keys page, click **Create API key**.
-4. Enter a name for the API key in the **Friendly name** field.
-5. Set the region to **United States (US1) - Default** and key type to **Main**.
-6. Click **Create API Key**.
-7. Copy and save both the **SID** and **Secret** field contents.
-
-    ![Copying the Twilio API key](images/apikeys.png "Copying the Twilio API key")
-
-8. Return to the API keys & tokens page. In the **Live credentials** section, copy the Account SID credentials.
-
-    ![Copying the Twilio Account SID key](images/twilioaccountsid.png "Copying the Twilio API key")
-
-9. Switch to the browser tab with your Segment workspace.
-10. Navigate to **Engage > Engage settings > Channels**.  Under **SMS Service with Twilio**, click the **Get Started** button. The **Set up and validate your Twilio account** page appears.
-11. Under **Enter your Twilio API Key information** (shown below), paste the Account SID, API Key SID, and API Key Secret you copied above into their corresponding fields.
-
-    ![Entering Twilio API key into Engage](images/engageapifields.png "Entering Twilio API key into Engage")
-
-12. Click **Verify**, then select the messaging services you want to use in your space.
-13. Click **Save Twilio Account.**
-
-> info ""
-> If you’re unable to verify your Account SID, SID, or API Key secret, you may have copied an extra space at the end of one or the other. Verify that you’ve not added any extra characters or spaces, then try to verify again.
+To add the ability to send SMS campaigns in Engage, you’ll now create a Twilio account, set up a phone number and messaging service, and generate an API key.
 
 ### Set up a Twilio Messaging Service
 
@@ -239,14 +206,50 @@ Start by creating your Twilio account and getting an API key for Engage:
 
 Once you've identified the type of phone number you'll use with Twilio Engage, follow these steps to create a Twilio Messaging Service:
 
-1. [Purchase a phone number](https://support.twilio.com/hc/en-us/articles/223135247-How-to-Search-for-and-Buy-a-Twilio-Phone-Number-from-Console){:target="_blank"} within your Twilio Console. If necessary, [register the number](https://support.twilio.com/hc/en-us/articles/1260801864489-How-do-I-register-to-use-A2P-10DLC-messaging-){:target="_blank"}.
-2. In the Twilio Console side menu, navigate to **Messaging > Services**.
-3. On the Messaging Services page, click **Create Messaging Service**.
-4. Enter a name for your Messaging Service.
-5. Under the Messaging use dropdown, select **Market my services**.
-6. From the **Sender Pool** tab, click **Add Senders**, then select the phone number you purchased in Step 1. Click **Step 3: Set up Integration**. Leave this tab open.
-6. Verify that the dropdown next to the **Request URL** field is set to **HTTP Post**.
-7. (If applicable:) Click **Step 4: Add compliance info**. Finish compliance setup, then click **Complete Messaging Service Setup**.
+1. Visit the [Twilio website](https://www.twilio.com/try-twilio){:target="_blank"} and sign up for a **paid account**. Trial accounts generate sending errors.
+2. [Purchase a phone number](https://support.twilio.com/hc/en-us/articles/223135247-How-to-Search-for-and-Buy-a-Twilio-Phone-Number-from-Console){:target="_blank"} within your Twilio Console. If necessary, [register the number](https://support.twilio.com/hc/en-us/articles/1260801864489-How-do-I-register-to-use-A2P-10DLC-messaging-){:target="_blank"}.
+3. In the Twilio Console side menu, navigate to **Messaging > Services**.
+4. On the Messaging Services page, click **Create Messaging Service**.
+5. Enter a name for your Messaging Service.
+6. Under the Messaging use dropdown, select **Market my services**.
+7. From the **Sender Pool** tab, click **Add Senders**, then select the phone number you purchased in Step 1. Click **Step 3: Set up Integration**. Leave this tab open.
+8. Verify that the dropdown next to the **Request URL** field is set to **HTTP Post**.
+9. (If applicable:) Click **Step 4: Add compliance info**. Finish compliance setup, then click **Complete Messaging Service Setup**.
+
+### Generate an API key, and select your messaging service(s)
+
+> info "Copying Twilio Credentials"
+> This step generates an Account SID, API key SID, and API key secret that you’ll later add to Segment. Make sure you’re ready to copy and save both before proceeding.
+
+Start by creating your Twilio account and getting an API key for Engage:
+
+1. In your Twilio console, select the **Account** dropdown menu, then **API keys & tokens**.
+2. On the Auth tokens & API keys page, click **Create API key**.
+3. Enter a name for the API key in the **Friendly name** field.
+4. Set the region to **United States (US1) - Default** and key type to **Main**.
+5. Click **Create API Key**.
+6. Copy and save both the **SID** and **Secret** field contents.
+
+    ![Copying the Twilio API key](images/apikeys.png "Copying the Twilio API key")
+
+7. Return to the API keys & tokens page. In the **Live credentials** section, copy the Account SID credentials.
+
+    ![Copying the Twilio Account SID key](images/twilioaccountsid.png "Copying the Twilio API key")
+
+8. Switch to the browser tab with your Segment workspace.
+9. Navigate to **Engage > Engage settings > Channels**.  Under **SMS Service with Twilio**, click the **Get Started** button. The **Set up and validate your Twilio account** page appears.
+10. Under **Enter your Twilio API Key information** (shown below), paste the Account SID, API Key SID, and API Key Secret you copied above into their corresponding fields.
+
+    ![Entering Twilio API key into Engage](images/engageapifields.png "Entering Twilio API key into Engage")
+
+11. Click **Verify**, then select the messaging services you want to use in your space.
+
+    ![Selecting messaging services in Engage setup](images/messaging_service.png "Selecting messaging services in Engage setup")
+
+12. Click **Save Twilio Account.**
+
+> info ""
+> If you’re unable to verify your Account SID, SID, or API Key secret, you may have copied an extra space at the end of one or the other. Verify that you’ve not added any extra characters or spaces, then try to verify again.
 
 ## Stage 4: Create and configure Twilio WhatsApp services
 
