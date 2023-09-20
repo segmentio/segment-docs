@@ -78,7 +78,7 @@ Below is a table of events that **Shopify by Littledata** sends to Segment throu
 
 You can _opt out_ of device-mode pageviews or events by setting `disableClientSideEvents: true` or `disablePageviews: true` in the `LittledataLayer` settings.
 
-The source also respects [GDPR-compliant cookie](https://blog.littledata.io/2021/06/18/shopify-cookie-banner-gdpr-compliance/) consent through Shopify's cookie banner, or popular consent management platforms such as [OneTrust](https://help.littledata.io/help/integrating-onetrust-with-shopify/) and [TrustArc](https://help.littledata.io/posts/integrating-trustarc-with-shopify/).
+The source also respects [GDPR-compliant cookie](https://blog.littledata.io/2021/06/18/shopify-cookie-banner-gdpr-compliance/){:target="_blank"} consent through Shopify's cookie banner, or popular consent management platforms such as [OneTrust](https://help.littledata.io/help/integrating-onetrust-with-shopify/){:target="_blank"} and [TrustArc](https://help.littledata.io/posts/integrating-trustarc-with-shopify/){:target="_blank"}.
 
 ## Cloud-mode events
 
@@ -131,14 +131,14 @@ The following traits are included with an Identify call:
 | default_address.country    | The customer's country.                                                                                                                                    | String            |
 | description                | The customer's notes.                                                                                                                                            | String            |
 | email                      | The customer's email address.                                                                                                                                  | String            |
-| email_consent_state        | If the user has consented to email marketing (mapping to [EmailMarketingState](https://shopify.dev/docs/api/customer/unstable/enums/EmailMarketingState)) | String, Null      |
-| email_opt_in_level         | Level of user's opt in email marketing (mapping to [MarketingOptInLevel](https://shopify.dev/docs/api/customer/unstable/enums/MarketingOptInLevel))       | String, Null      |
+| email_consent_state        | If the user has consented to email marketing (mapping to [EmailMarketingState](https://shopify.dev/docs/api/customer/unstable/enums/EmailMarketingState){:target="_blank"}) | String, Null      |
+| email_opt_in_level         | Level of user's opt in email marketing (mapping to [MarketingOptInLevel](https://shopify.dev/docs/api/customer/unstable/enums/MarketingOptInLevel){:target="_blank"})       | String, Null      |
 | firstName                  | The customer's first name.                                                                                                                                     | String            |
 | lastName                   | The customer's last name.                                                                                                                                      | String            |
 | phone                      | The customer's phone number.                                                                                                                                   | String            |
 | purchaseCount              | The number of orders by the customer.                                                                                                                         | Integer           |
-| sms_consent_state          | If the user has consented to SMS marketing (mapping to [SmsMarketingState](https://shopify.dev/docs/api/customer/unstable/enums/SmsMarketingState))       | String, Null      |
-| sms_opt_in_level           | The level of the user's opt in to SMS marketing (mapping to [MarketingOptInLevel](https://shopify.dev/docs/api/customer/unstable/enums/MarketingOptInLevel))      | String, Null      |
+| sms_consent_state          | If the user has consented to SMS marketing (mapping to [SmsMarketingState](https://shopify.dev/docs/api/customer/unstable/enums/SmsMarketingState){:target="_blank"})       | String, Null      |
+| sms_opt_in_level           | The level of the user's opt in to SMS marketing (mapping to [MarketingOptInLevel](https://shopify.dev/docs/api/customer/unstable/enums/MarketingOptInLevel){:target="_blank"})      | String, Null      |
 | state                      | The Shopify customer state - enabled, disabled, invited to create an account or customer declined.                                                             | String            |
 | tags                       | The custom tags applied to the customer.                                                                                                                       | String            |
 | verified_email             | Whether the customer has verified their email.                                                                                                             | Boolean           |
