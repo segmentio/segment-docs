@@ -9,7 +9,8 @@ This is an [Event Cloud Source](/docs/sources/#event-cloud-sources){:target="_bl
 
 This source is maintained by Elastic Path. For any issues with the source, contact the [Elastic Path Support team](https://support.elasticpath.com/hc/en-us){:target="_blank"}.
 
-_**NOTE:** The Elastic Path Source is currently in beta, which means that they are still actively developing the source. If you are interested in joining their beta program or have any feedback to help improve the Elastic Path Source and its documentation, [let the Elastic Path team know](https://support.elasticpath.com/hc/en-us)._
+> info ""
+> The Elastic Path Source is currently in beta, which means that they are still actively developing the source. If you are interested in joining their beta program or have any feedback to help improve the Elastic Path Source and its documentation, [let the Elastic Path team know](https://support.elasticpath.com/hc/en-us).
 
 ## Getting started
 
