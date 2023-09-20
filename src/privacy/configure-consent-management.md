@@ -17,7 +17,7 @@ Once you've configured consent in the Segment app and updated your sources to co
 Before you can configure consent in Segment, take the following steps:
 - **Set up your third-party consent management tool and create consent categories**. Take note of your consent categories and the key or ID associated with each category.
 - **Know how your company uses each destination**. You need to know which destinations to map to each category. 
-- **Access to your web and mobile libraries**. After you set up consent categories in the Segment app, you need to integrate your CDP and your Segment sources using a wrapper or other solution. 
+- **Access to your web and mobile libraries**. After you set up consent categories in the Segment app, you need to integrate your CMP and your Segment sources using a wrapper or other solution. 
 
 <!-- TODO: fix above link to mobile consent repository-->
 
@@ -42,8 +42,8 @@ Before you can configure consent in Segment, take the following steps:
 ## Step 2: Integrating your CMP with Segment
 
 Once you've created consent categories in the Segment app, you need to integrate your CMP with Segment. Segment recommends using a CMP wrapper, but you can use any solution provided it meets the following criteria:
-- Reads the end user consent preference from your CMP and includes the consent object in every event
-- Generates the Segment Consent Preference Track event every time a user provides or updates their consent preferences with their anonymousId and userId
+- Reads the end user consent preference from your CMP and includes the [consent object](/docs/privacy/consent-management/#consent-object) in every event
+- Generates the [Segment Consent Preference Track](/docs/privacy/consent-management/#segment-consent-preference-track) event every time a user provides or updates their consent preferences with their anonymousId and userId
 
 Segment provides a OneTrust wrapper for the following sources:
 - **Analytics.js**: Please follow the instructions from the README in the [@segment/analytics-consent-wrapper-onetrust repository](https://github.com/segmentio/analytics-next/tree/master/packages/consent/consent-wrapper-onetrust){:target="_blank"}.
