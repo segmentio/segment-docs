@@ -136,12 +136,12 @@ The following traits are included with an Identify call:
 | firstName                  | Customer's first name                                                                                                                                     | String            |
 | lastName                   | Customer's last name                                                                                                                                      | String            |
 | phone                      | Customer's phone number                                                                                                                                   | String            |
-| purchaseCount              | Number of orders by this customer                                                                                                                         | Integer           |
+| purchaseCount              | The number of orders by the customer.                                                                                                                         | Integer           |
 | sms_consent_state          | If the user has consented to SMS marketing (mapping to [SmsMarketingState](https://shopify.dev/docs/api/customer/unstable/enums/SmsMarketingState))       | String, Null      |
-| sms_opt_in_level           | Level of user's opt in to SMS marketing (mapping to [MarketingOptInLevel](https://shopify.dev/docs/api/customer/unstable/enums/MarketingOptInLevel))      | String, Null      |
-| state                      | Shopify customer state - enabled, disabled, invited to create an account or customer declined                                                             | String            |
-| tags                       | Custom tags applied to the customer                                                                                                                       | String            |
-| verified_email             | Whether the customer has verified their email                                                                                                             | Boolean           |
+| sms_opt_in_level           | The level of the user's opt in to SMS marketing (mapping to [MarketingOptInLevel](https://shopify.dev/docs/api/customer/unstable/enums/MarketingOptInLevel))      | String, Null      |
+| state                      | The Shopify customer state - enabled, disabled, invited to create an account or customer declined.                                                             | String            |
+| tags                       | The custom tags applied to the customer.                                                                                                                       | String            |
+| verified_email             | Whether the customer has verified their email.                                                                                                             | Boolean           |
 
 ## Support for Google Analytics destination
 
