@@ -29,7 +29,7 @@ To set up Trait Enrichment with [Audiences](/docs/engage/audiences/):
 1. Navigate to **Engage** > **Audiences**.
 2. [Create a new Audience](/docs/engage/audiences/). From the **Select Destination** tab in the Audience builder, select your destination.
 - If you don't see any destinations to add, you'll need to [add a destination](/docs/connections/destinations/add-destination/#adding-a-destination) to your Engage space first.
-- For existing Audiences, select the connected Destination from the Audience Overview page.
+- For existing audiences, select the connected Destination from the Audience Overview page.
 3. In the **Event Settings** section, you'll see two options: **Default Setup** and **Customized Setup**. For Trait Enrichment, select [**Customized Setup**](#customized-setup). 
 
 ### Set up Trait Enrichment with Journeys
@@ -126,30 +126,22 @@ For best results with Trait Enrichment, Segment recommends:
 - Using smaller audiences for real-time use cases, as data delivery is slower for large audiences. 
 
 ## Frequently asked questions
-{% faq %}
-{% faqitem What's the difference between Trait Enrichment and ID Sync? %}
 
-**Trait Enrichment** lets you map the traits data you've collected with Engage to use when syncing Engage Audiences and Journeys to destinations. 
+#### What's the difference between Trait Enrichment and ID Sync? 
 
-**ID Sync** lets you map the identities data gathered for a profile for use when syncing Engage Audiences and Journeys to destinations.
+**Trait Enrichment** lets you map the traits data you've collected with Engage to use when syncing audiences and Journeys to destinations. 
 
-{% endfaqitem %}
+**ID Sync** lets you map the identities data gathered for a profile for use when syncing audiences and Journeys to destinations.
 
-{% faqitem How do syncs differ between Audiences with Trait Enrichment and Audiences without Trait Enrichment? %}
+#### How do syncs differ between audiences with Trait Enrichment and audiences without Trait Enrichment? 
 
-Trait Enrichment on existing Audience destinations doesn't automatically resync the entire audience. Only new data flowing into Segment will adhere to the new trait criteria. 
+Trait Enrichment on existing audience destinations doesn't automatically resync the entire audience. Only new data flowing into Segment will adhere to the new trait criteria. 
 
-{% endfaqitem %}
-
-{% faqitem Can I edit mappings once Segment syncs the Audience? %}
+#### Can I edit mappings once Segment syncs the audience? 
 
 Yes, you can edit mappings in the Destination `Mappings` tab at any time. However, changes will only take place in subsequent audience syncs or in new audiences connected to the destination.
 
-{% endfaqitem %}
-
-{% faqitem Does Trait Enrichment guarantee match rate improvements? %}
+#### Does Trait Enrichment guarantee match rate improvements? 
 
 No. Segment doesn't guarantee match rate improvements with Trait Enrichment. Match rates depend on data quality.
 
-{% endfaqitem %}
-{% endfaq %}

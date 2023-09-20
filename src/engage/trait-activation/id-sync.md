@@ -63,23 +63,17 @@ With Customized setup, you can choose which identifiers you want to map downstre
 
 
 ## Frequently asked questions
-{% faq %}
-{% faqitem What's the difference between Trait Enrichment and ID Sync? %}
 
-**Trait Enrichment** maps the traits data you've collected with Engage to use when syncing Audiences and Journeys to destinations. 
+#### What's the difference between Trait Enrichment and ID Sync?
 
-**ID Sync** maps the identities data gathered for a profile for use when syncing Audiences and Journeys to destinations.
+**Trait Enrichment** maps the traits data you've collected with Engage to use when syncing audiences and Journeys to destinations. 
 
-{% endfaqitem %}
+**ID Sync** maps the identities data gathered for a profile for use when syncing audiences and Journeys to destinations.
 
-{% faqitem How do syncs differ between Audiences with ID Sync and Audiences without ID Sync? %}
+#### How do syncs differ between audiences with ID Sync and audiences without ID Sync? 
 
 Audiences without ID Sync aren't allowed to select any strategy, and by default will send all values of an identifier to the destination. Also, audiences without ID Sync don't send any custom identifiers that are present in your space. 
 
 
-{% endfaqitem %}
-
-{% faqitem Can I edit config once the audience has synced? %}
+#### Can I edit config once the audience has synced? 
 Yes, you can edit configuration in the Destination **Settings** tab at any time. However, changes will only take place in subsequent audience syncs, or in new audiences connected to the destination.
-{% endfaqitem %}
-{% endfaq %}
