@@ -175,7 +175,7 @@ Additional subscription lifecycle events through Littledata's [ReCharge connecti
 
 The list below outlines the properties included in most events. See the 'Track (eCommerce)' tab of the [event schema](https://docs.google.com/spreadsheets/d/1aljowRhMU9_7uGXmcipbP1Y14S4cOSdXGQA2Vx7BHko/edit){:target="\_blank"} for exactly which properties are sent with which events.
 
-| **Property**                            | **Description**                                                                        | **Property Type** |
+|  Property                             |  Description                                                                         |  Property Type  |
 | --------------------------------------- | -------------------------------------------------------------------------------------- | ----------------- |
 | `affiliation`                           | A comma-separated list of order tags. Untagged orders use `Shopify`                    | String            |
 | `cart_id`                               | The ID of the Shopify cart                                                             | String            |
