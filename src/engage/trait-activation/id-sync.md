@@ -10,17 +10,15 @@ On this page, you'll learn how to configure and begin using ID Sync.
 
 > success "Trait Activation setup"
 > To view supported destinations and learn more about getting started with Trait Activation, visit the [setup guide](/docs/engage/trait-activation/trait-activation-setup/).
-
-> warning ""
-> You must have Engage Foundations to use Trait Enrichment. 
+ 
 
 ## Set up ID Sync
 
 Use the following steps to set up ID Sync with Audiences or Journeys.
 
-### Use ID Sync with Audiences 
+### Set up ID Sync with Audiences 
 
-To configure ID Sync with [Audiences](/docs/engage/audiences/):
+To set up ID Sync with [Audiences](/docs/engage/audiences/):
 
 1. Navigate to **Engage** > **Audiences**.
 2. [Create a new Audience](/docs/engage/audiences/). From the **Select Destination** tab in the Audience builder, select your destination.
@@ -28,9 +26,9 @@ To configure ID Sync with [Audiences](/docs/engage/audiences/):
 - For existing Audiences, you'll find your connected destination on the Audience Overview page.
 3. In the **Event Settings** section, you'll see two options: **Default Setup** and **Customized Setup**. To use ID Sync, select [**Customized Setup**](#customized-setup). 
 
-### Use ID Sync with Journeys
+### Set up ID Sync with Journeys
 
-To configure ID Sync with [Journeys](/docs/engage/journeys/): 
+To set up ID Sync with [Journeys](/docs/engage/journeys/): 
 
 As you're creating or editing a Journey in the [builder](/docs/engage/journeys/build-journey/), you can configure how you send identifiers with ID Sync from any of the [supported destinations](/docs/engage/trait-activation/trait-activation-setup/).
 
@@ -45,7 +43,7 @@ You can customize additional event settings at any time.
 
 ### Customized setup 
 
-With Customized setup, you can choose which identifiers you want to map downstream to your Destination.
+With Customized setup, you can choose which identifiers you want to map downstream to your destination.
 
 1. Using **Customized Setup**, click **+ Add Identifier** and add the identifiers:
 - **Segment**: Choose your identifiers from Segment.
@@ -54,19 +52,6 @@ With Customized setup, you can choose which identifiers you want to map downstre
 2. Add an ID strategy. 
 - This is a strategy for a particular identifier which sends either the `last added`, `first added`, or `all` identifiers to your destination.
 3. Click **Save**, then finish building your Audience or Journey.
-
-
-<!-- move section above
-## Use ID Sync with Journeys
-
-You can also use ID Sync with [Journeys](/docs/engage/journeys/). 
-
-As you're creating or editing a Journey, you can configure how you send identifiers with ID Sync from any of the [supported destinations](/docs/engage/trait-activation/trait-activation-setup/).
-
-1. From a Journeys step, select your destination to customize event settings. 
-2. On the Connection Settings tab, select **Customized Setup**  and use the [steps above](#customized-setup) to customize which identifiers you want to map downstream to your destination. 
-
--->
 
 ## Limits and best practices
 
@@ -81,13 +66,13 @@ As you're creating or editing a Journey, you can configure how you send identifi
 {% faq %}
 {% faqitem What's the difference between Trait Enrichment and ID Sync? %}
 
-**Trait Enrichment** maps the traits data you've collected with Engage to use when syncing audiences to destinations. 
+**Trait Enrichment** maps the traits data you've collected with Engage to use when syncing Audiences and Journeys to destinations. 
 
-**ID Sync** maps the identities data gathered for a profile for use when syncing Audiences to destinations.
+**ID Sync** maps the identities data gathered for a profile for use when syncing Audiences and Journeys to destinations.
 
 {% endfaqitem %}
 
-{% faqitem How do syncs differ between audiences with ID Sync and audiences without ID Sync? %}
+{% faqitem How do syncs differ between Audiences with ID Sync and Audiences without ID Sync? %}
 
 Audiences without ID Sync aren't allowed to select any strategy, and by default will send all values of an identifier to the destination. Also, audiences without ID Sync don't send any custom identifiers that are present in your space. 
 
