@@ -120,7 +120,7 @@ For every event where there is an identifiable Shopify customer (from both the d
 
 The following traits are included with an Identify call:
 
-| **Property Name**          | **Description**                                                                                                                                           | **Property Type** |
+|  Property Name          |  Description                                                                                                                                            |  Property Type  |
 | -------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------- |
 | userId                     | Chosen user identifier, defaulting to Shopify Customer ID                                                                                                 | Double            |
 | createdAt                  | Date customer record was created                                                                                                                          | Date              |
