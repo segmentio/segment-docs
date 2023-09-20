@@ -216,23 +216,23 @@ Each item in the `products` array, or Product Viewed and Product Added events, w
 
 |  Property         |  Description                                                    |  Property Type  |
 | -------------------- | ------------------------------------------------------------------ | ----------------- |
-| `brand`              | The brand of the product (Shopify `vendor`)                        | String            |
-| `category`           | The category of the product (defaults to `all`)                    | String            |
-| `compare_at_price`   | The product price before any discount                              | String            |
-| `coupon`             | Coupon code associated with the product                            | String            |
-| `image_url`          | The URL of the first product image                                 | String            |
-| `list_id`            | The ID of the product collection (for List Views and Clicks)       | String            |
-| `list_position`      | The product position in the collection (for List Views and Clicks) | Integer           |
-| `name`               | Product name                                                       | String            |
-| `price`              | The product price                                                  | Float             |
-| `product_id`         | Shopify product ID                                                 | String            |
-| `quantity`           | The quantity of this product                                       | Integer           |
-| `product_properties` | Custom properties of purchased products                            | Array             |
-| `shopify_product_id` | Also Shopify product ID                                            | String            |
-| `shopify_variant_id` | The Shopify variant ID                                             | String            |
-| `sku`                | The product SKU                                                    | String            |
-| `url`                | The URL of the product page                                        | String            |
-| `variant`            | The product variant name                                           | String            |
+| `brand`              | The brand of the product (Shopify `vendor`).                        | String            |
+| `category`           | The category of the product (defaults to `all`).                    | String            |
+| `compare_at_price`   | The product price before any discount.                              | String            |
+| `coupon`             | Coupon code associated with the product.                            | String            |
+| `image_url`          | The URL of the first product image.                                 | String            |
+| `list_id`            | The ID of the product collection (for List Views and Clicks).       | String            |
+| `list_position`      | The product position in the collection (for List Views and Clicks). | Integer           |
+| `name`               | Product name.                                                       | String            |
+| `price`              | The product price.                                                  | Float             |
+| `product_id`         | Shopify product ID.                                                 | String            |
+| `quantity`           | The quantity of this product.                                       | Integer           |
+| `product_properties` | Custom properties of purchased products.                            | Array             |
+| `shopify_product_id` | Also Shopify product ID.                                            | String            |
+| `shopify_variant_id` | The Shopify variant ID.                                             | String            |
+| `sku`                | The product SKU.                                                    | String            |
+| `url`                | The URL of the product page.                                        | String            |
+| `variant`            | The product variant name.                                           | String            |
 
 ## Import all orders
 
