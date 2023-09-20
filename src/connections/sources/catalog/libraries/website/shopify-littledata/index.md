@@ -177,27 +177,27 @@ The list below outlines the properties included in most events. See the 'Track (
 
 |  Property                             |  Description                                                                         |  Property Type  |
 | --------------------------------------- | -------------------------------------------------------------------------------------- | ----------------- |
-| `affiliation`                           | A comma-separated list of order tags. Untagged orders use `Shopify`                    | String            |
-| `cart_id`                               | The ID of the Shopify cart                                                             | String            |
-| `checkout_id`                           | The ID of the checkout session                                                         | String            |
-| `context\['Google Analytics'].clientId` | The user's Google Analytics Client ID                                                  | String            |
-| `context.ip`                            | The user's IP address                                                                  | String            |
-| `coupon`                                | Comma-separated string of discount coupons used, if applicable                         | String            |
-| `currency`                              | The currency of the order                                                              | String            |
-| `discount`                              | The discounted amount                                                                  | Float             |
-| `email`                                 | Shopify email address (after checkout step 2), or email submitted on a storefront form | String            |
-| `lifetime_revenue_littledata`           | Lifetime revenue of the customer in Shopify                                            | String            |
-| `location_id`                           | Location ID of the Point of Sale                                                       | Integer           |
-| `order_id`                              | The ID of the order is by default the Shopify order name                               | String            |
-| `payment_gateway_littledata`            | The payment gateway used by the customer                                               | String            |
-| `payment_method`                        | The payment method chosen for checkout                                                 | String            |
-| `presentment_currency`                  | The user's local currency                                                              | String            |
-| `presentment_total`                     | The order total in local currency                                                      | String            |
-| `products`                              | A list of all the product at that step of the funnel                                   | Array             |
-| `purchase_count_littledata`             | Total purchase count for the customer                                                  | Integer           |
-| `revenue`                               | Product revenue (excluding discounts, shipping and tax) \*                             | Float             |
-| `sent_from`                             | Unique property to identify events sent by Littledata                                  | String            |
-| `shipping`                              | Shipping cost                                                                          | Float             |
+| `affiliation`                           | A comma-separated list of order tags. Untagged orders use `Shopify`.                    | String            |
+| `cart_id`                               | The ID of the Shopify cart.                                                             | String            |
+| `checkout_id`                           | The ID of the checkout session.                                                         | String            |
+| `context\['Google Analytics'].clientId` | The user's Google Analytics Client ID.                                                  | String            |
+| `context.ip`                            | The user's IP address.                                                                  | String            |
+| `coupon`                                | A comma-separated string of discount coupons used, if applicable.                         | String            |
+| `currency`                              | The currency of the order.                                                              | String            |
+| `discount`                              | The discounted amount.                                                                  | Float             |
+| `email`                                 | The Shopify email address (after checkout step 2), or email submitted on a storefront form. | String            |
+| `lifetime_revenue_littledata`           | The lifetime revenue of the customer in Shopify.                                            | String            |
+| `location_id`                           | The location ID of the Point of Sale.                                                       | Integer           |
+| `order_id`                              | The ID of the order is by default the Shopify order name.                               | String            |
+| `payment_gateway_littledata`            | The payment gateway used by the customer.                                               | String            |
+| `payment_method`                        | The payment method chosen for checkout.                                                 | String            |
+| `presentment_currency`                  | The user's local currency.                                                              | String            |
+| `presentment_total`                     | The order total in local currency.                                                      | String            |
+| `products`                              | A list of all the products at that step of the funnel.                                   | Array             |
+| `purchase_count_littledata`             | The total purchase count for the customer.                                                  | Integer           |
+| `revenue`                               | The product revenue (excluding discounts, shipping and tax) \*                             | Float             |
+| `sent_from`                             | The unique property to identify events sent by Littledata.                                  | String            |
+| `shipping`                              | The shipping cost.                                                                          | Float             |
 | `shipping_method`                       | Shipping method chosen for checkout                                                    | String            |
 | `shopify_customer_id_littledata`        | Shopify’s identifier for the customer                                                  | Integer           |
 | `source_name`                           | The source of the order (e.g. `web`, `android`, `pos`)                                 | String            |
