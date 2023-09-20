@@ -67,7 +67,7 @@ To get started with the Analytics-CSharp library:
 | `analyticsErrorHandler`     | The default is set to `null`. <br>This sets an error handler to handle errors happened in analytics.                                                                                                                                                                                                                                                   |
  | `storageProvider`           | The default is set to `DefaultStorageProvider`. <br>This sets how you want your data to be stored. `DefaultStorageProvider` is used by default which stores data to local storage. `InMemoryStorageProvider` is also provided in the library. You can also write your own storage solution by implementing `IStorageProvider` and `IStorage`. |
 | `httpClientProvider`        | The default is set to `DefaultHTTPClientProvider`. <br>This sets a http client provider for analytics use to do network activities. The default provider uses System.Net.Http for network activities.                                                                                                                                                 |
-| `flushPolicies`             | Default set to `null`. <br>This set custom flush policies to tell analytics when and how to flush. By default, it converts `flushAt` and `flushInterval` to `CountFlushPolicy` and `FrequencyFlushPolicy`. If a value is given, it overwrites `flushAt` and `flushInterval`.                                                                  |
+| `flushPolicies`             | The default is set to `null`. <br>This sets custom flush policies to tell analytics when and how to flush. By default, it converts `flushAt` and `flushInterval` to `CountFlushPolicy` and `FrequencyFlushPolicy`. If a value is given, it overwrites `flushAt` and `flushInterval`.                                                                  |
 
 ## Tracking Methods
 
@@ -326,10 +326,13 @@ analytics.Reset()
 ```
 
 
-## Controlling Upload With Flush Policies
-To more granularly control when events are uploaded you can use `FlushPolicies`. **This will override any setting on `flushAt` and `flushInterval`, but you can use `CountFlushPolicy` and `FrequencyFlushPolicy` to have the same behaviour respectively.**
+## Flush policies
+To more granularly control when events are uploaded you can use `FlushPolicies`. 
 
-A Flush Policy defines the strategy for deciding when to flush, this can be on an interval, on a certain time of day, after receiving a certain number of events or even after receiving a particular event. This gives you even more flexibility on when to send event to Segment.
+> warning ""
+> `FlushPolicies` overrides any setting on `flushAt` and `flushInterval`, but you can use `CountFlushPolicy` and `FrequencyFlushPolicy` to have the same behavior.
+
+A Flush Policy defines the strategy for deciding when to flush. This can be on an interval, on a certain time of day, after receiving a certain number of events or even after receiving a particular event. This gives you even more flexibility on when to send an event to Segment.
 
 To make use of flush policies you can set them in the configuration of the client:
 ```csharp
@@ -345,16 +348,16 @@ To make use of flush policies you can set them in the configuration of the clien
 
 That means only the first policy to reach `ShouldFlush` gets to trigger a flush at a time. In the example above either the event count gets to 5 or the timer reaches 500ms, whatever comes first will trigger a flush.
 
-We have several standard FlushPolicies:
+Segment has several standard FlushPolicies:
 - `CountFlushPolicy` triggers whenever a certain number of events is reached
 - `FrequencyFlushPolicy` triggers on an interval of milliseconds
 - `StartupFlushPolicy` triggers on client startup only
 
 ### Adding or removing policies
 
-One of the main advantages of FlushPolicies is that you can add and remove policies on the fly. This is very powerful when you want to reduce or increase the amount of flushes.
+One of the main advantages of FlushPolicies is that you can choose to add and remove policies. This is very powerful when you want to reduce or increase the amount of flushes.
 
-For example you might want to disable flushes if you detect the user has no network:
+For example, you might want to disable flushes if you detect the user has no network:
 ```csharp
     // listen to network changes
     if (noNetwork) {
@@ -369,11 +372,11 @@ For example you might want to disable flushes if you detect the user has no netw
     }
 ```
 
-###  Creating your own flush policies
+###  Create your own flush policies
 
 You can create a custom FlushPolicy special for your application needs by implementing the  `IFlushPolicy` interface. You can also extend the `FlushPolicyBase` class that already creates and handles the `shouldFlush` value reset.
 
-A `FlushPolicy` only needs to implement 2 methods:
+A `FlushPolicy` only needs to implement two of these methods:
 - `Schedule`: Executed when the flush policy is enabled and added to the client. This is a good place to start background operations, make async calls, configure things before execution
 - `UpdateState`: Gets called on every event tracked by your client
 - `Unschedule`: Called when policy should stop running any scheduled flushes
