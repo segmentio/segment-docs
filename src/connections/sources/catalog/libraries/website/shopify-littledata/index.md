@@ -214,7 +214,7 @@ The list below outlines the properties included in most events. See the 'Track (
 
 Each item in the `products` array, or Product Viewed and Product Added events, will have the following properties
 
-| **Property**         | **Description**                                                    | **Property Type** |
+|  Property         |  Description                                                    |  Property Type  |
 | -------------------- | ------------------------------------------------------------------ | ----------------- |
 | `brand`              | The brand of the product (Shopify `vendor`)                        | String            |
 | `category`           | The category of the product (defaults to `all`)                    | String            |
