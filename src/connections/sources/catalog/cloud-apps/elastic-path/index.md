@@ -30,7 +30,7 @@ You can configure how you want to associate an Elastic Path event with Segment e
 
 Elastic Path uses our stream Source component to send Segment event data. It uses a server-side (select from `track`, `identify`, `page`, `group`) method(s) to send data to Segment. These events are then available in any destination that accepts server-side events, and available in a schema in your data warehouse, so you can query using SQL.
 
-The default behavior is for Elastic Path to pass the customerId associated with the order as the userId. There are cases in which Elastic Path does not have an associated customerId e.g. in case of guest order, in which case the email address will be passed in as the anonymousId or you can configure any random id as well.
+The default behavior is for Elastic Path to pass the `customerId` associated with the order as the `userId`. There are instances in which Elastic Path lacks an associated `customerId` (e.g., in the case of a guest order). In these scenarios, the email address will be provided as `anonymousId`, or alternatively, you have the option to configure your own identifier.
 
 ## Events
 
