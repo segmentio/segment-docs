@@ -53,6 +53,12 @@ When enabled, the **Page Views** advanced setting sends the `page_view` event fr
 
 The GA4 SDK also tracks a native `page_view` event if you have the [following setting enabled](https://developers.google.com/analytics/devguides/collection/ga4/views?client_type=gtag#measure_virtual_pageviews){:target='_blank'} in your GA4 account. To avoid the native GA4 `page_view` event, disable **Page changes based on browser history events** under the advanced settings of the **Page views** section.
 
+### Disabling Page Views
+
+The **Page Views** setting in the GA4 Web destination settings is toggled on by default. This means that Segment will send a `page_view` by default when you enable GA4 Web as a destination. If you don't want to send a `page_view` by default, you can toggle the **Page Views** setting off in your destination settings. However, if you toggle the **Page Views** setting off, you will need to account for the `page_view` to happen after the `config` since session attribution sets on the first event after the config is loaded, which is usally a `page_view`.
+
+This means that `config` should fire at `analytics.page()`, and `page_view` should fire after on a `track` call (i.e. `analytics.track("Viewed Content"`). For proper tracking, the `config` must load prior to any GA4 event. For further troubleshooting, go to your DevTools console and type in “dataLayer” to view the order of events sent to Google Analytics. You can read more about [Manual Pageviews](https://developers.google.com/analytics/devguides/collection/ga4/views?client_type=gtag#manual_pageviews){:target='_blank'} in Google's documentation. 
+
 
 ### Custom Event Naming
 
