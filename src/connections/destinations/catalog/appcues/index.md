@@ -23,7 +23,8 @@ As with the JavaScript destination, you can segment and target user profile and 
 
 For example, using the server-side destination, you can direct customer profile and event data from a CRM tool into Appcues. You can then use the directed data for content targeting and user segmentation in the Appcues content editor, alongside data from Segment's `analytics.js` destination.
 
-Please note, server side implementations can only be used with server or mobile sources. Analytics.js sources will default to a device-mode connection.
+> info "Implementations can only be used with server or mobile sources"
+> Analytics.js sources will default to a device-mode connection.
 
 ## Page
 
