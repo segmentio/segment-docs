@@ -223,11 +223,11 @@ You can download a copy of your Audience by visiting the Audiences overview page
 Once Segment generates the CSV, you can download the file directly. You'll receive an email notification of the CSV completion, with a URL to the Audience overview page. 
 
 Note the following limits for the CSV downloader:
-- You can't download more than one CSV at the same time.
+- You can't download more than one CSV for the same audience at the same time.
 - You can only generate one CSV every five minutes. 
 
 > info ""
-> Generating a CSV can take a substantial amount of time for large audiences (around 30 seconds for a formatted CSV with 1 million rows). For CSVs that are expected to take over 20 seconds, Segment displays an estimated generation time. After you generate the CSV file, leave the modal window open while Segment creates the file. (If the audience recalculates between when you click Generate and when you download the file, you might want to regenerate the file. The CSV is a snapshot from when you clicked Generate, and could be outdated.)
+> Generating a CSV can take a substantial amount of time for large audiences. For CSVs that are expected to take over 20 seconds, Segment displays an estimated generation time. After you generate the CSV file, leave the modal window open while Segment creates the file. (If the audience recalculates between when you click Generate and when you download the file, you might want to regenerate the file. The CSV is a snapshot from when you clicked Generate, and could be outdated.)
 
 ## Identifier Breakdown
 
