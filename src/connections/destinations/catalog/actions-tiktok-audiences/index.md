@@ -14,13 +14,13 @@ By using Segment's TikTok Audiences destination, you can increase traffic and dr
 
 ### Note
 
-- If you created a TikTok Audiences destination instance before September 18th your instance and all subsequent new instances are considered _legacy_. Therefore, follow the documentation labeled as such. Newer instances are considered _native_.
-- Both versions offer the same set of features, the difference sits in the way to configure them. For legacy, you are required to create an audience manually whereas native will do that automatically. Additionally, manual configuration is required per action when using legacy, native will perform this configuration as well.
-- For more information about how to update from _legacy_ to _native_ reach out to [friends@segment.com](mailto:friends@segment.com).
+- If you created a TikTok Audiences destination instance before September 18th, 2023, your instance(s) and all subsequent instances are considered _legacy_ instances. To create new _legacy_ instances, see the [Create a TikTok audience (Legacy)](#create-a-tiktok-audience-legacy) documentation. Users who created their first instance after September 18, 2023 are considered to have _native_ instances. To create new _native_ instances, see the [Configure the TikTok Audiences destination (Native)](#configure-the-tiktok-audiences-destination-native) documentation.
+- Both _legacy_ and _native_ instances have the same set of features, but are configured differently. Legacy instances require you to create an audience or action manually, but native instances automatically create audiences and actions.
+- For more information about how to update from _legacy_ to _native_, reach out to [friends@segment.com](mailto:friends@segment.com).
 
 ### Prerequisites
 
-1. Before connecting to the TikTok Audiences destination, you must have a [TikTok Ads Manager](https://www.tiktok.com/business/en-US/solutions/ads-manager){:target="_blank"} account. 
+Before connecting to the TikTok Audiences destination, you must have a [TikTok Ads Manager](https://www.tiktok.com/business/en-US/solutions/ads-manager){:target="_blank"} account. 
 
 ### TikTok Audience Segments
 
@@ -29,27 +29,28 @@ You must create an audience segment in your TikTok Advertising account. You can 
 > warning ""
 > You can only send audience data from Segment to a "Partner audience" custom audience in TikTok Ads Manager. While TikTok's UI doesn't allow you to select this custom audience type, you can use this destination's **Create Audience** mapping to create "Partner audience" custom audiences in TikTok.
 
-#### create a tiktok audience (_legacy_)
+#### Create a TikTok Audience (_legacy_)
 
-to create an audience in segment: 
+To create an audience in Segment: 
 
-1. navigate to new mapping and select **create audience**. 
-2. on the add test event panel, click **load sample event**.
-3. fill in the mappings on the select mappings panel accordingly.
-4. on the send test event panel, click **test mapping**.
-5. you've created your audience. take note of the `audience_id` from the response as you will need it when you create additional mappings. 
+1. Navigate to New Mapping and select **Create Audience**. 
+2. On the Add test event panel, click **Load Sample Event**.
+3. Fill in the mappings on the Select mappings panel accordingly.
+4. On the Send test event panel, click **Test Mapping**.
+5. You've created your audience. Copy the `audience_id` from the response as you will need it to create additional mappings. 
 
-you can use the same mapping to create as many audiences as you would like. you just need to change the audience name and click **test mapping** again.
+You can use the same mapping to create as many audiences as you'd like. To create another audience, change the audience name and click **Test Mapping**.
 
-you can create a duplicate audience since tiktok doesn't restrict users from having multiple audiences with the same name. if you click **test mapping** multiple times, you will create audiences with the same name. however, each audience will have its own unique `audience_id`. 
+You can create a duplicate audience since TikTok doesn't restrict users from having multiple audiences with the same name. If you click **Test Mapping** multiple times, you will create audiences with the same name. However, each audience will have its own unique `audience_id`. 
 
-you do not need to update the status of the mapping to `enabled`.
+You do not need to update the status of the mapping to `enabled`.
 
 see tiktok's [create/delete an audience segment](https://ads.tiktok.com/marketing_api/docs?id=1739940583739393){:target="_blank"} for instructions on how to create a tiktok audience segment. 
 
 ### Connect the TikTok Audiences destination (_legacy_)
 
-**add user and remove user are considered legacy actions**
+> info ""
+> Add User and Remove User are considered legacy actions.
 
 1. From the Segment web app, navigate to **Engage > Audiences**. Ensure you are in the Engage space you plan to use with the TikTok Audiences destination. Either choose an existing Engage audience or create a new one. This is the audience you plan to send to TikTok.
 
@@ -81,17 +82,17 @@ To sync additional audiences from your Engage space, create a separate mapping i
 
 ### Configure the TikTok Audiences destination (_native_)
 
-1. From the Segment web app, navigate to **Engage > Audiences**. Ensure you are in the Engage space you plan to use with the TikTok Audiences destination. Either choose an existing Engage audience or create a new one. This is the audience you plan to send to TikTok.
+1. From the Segment web app, navigate to **Engage > Audiences**. Ensure you are in the Engage space you plan to use with the TikTok Audiences destination. Either choose an existing Engage audience or create a new one.
 
-2. Navigate to **Engage > Engage Settings** and click **Destinations**. Please ensure you are still in the correct Engage space.
+2. Navigate to **Engage > Engage Settings** and click **Destinations**. 
 
 3. Search for “TikTok Audiences” and select the destination. Click **Configure TikTok Audiences**.
 
 4. On the Select Source screen, your Engage space should already be selected as the source. Click **Confirm Source**.
 
-5. On the Destination **Settings** tab, name your destination and authenticate with TikTok Audiences using OAuth.
+5. On the **Settings** tab for the TikTok Audiences destination, name your destination and authenticate with TikTok Audiences using OAuth.
 
-6. Once authenticated, toggle “Enable Destination” on and click  **Save Changes**.
+6. Once authenticated, toggle “Enable Destination” on and click **Save Changes**.
 
 7. Navigate to the **Mappings** tab, click **New Mapping**, and select **Add to Audience**.
 
@@ -100,7 +101,10 @@ To sync additional audiences from your Engage space, create a separate mapping i
 9. Navigate back to **Engage > Audiences** and click on the audience from Step 1.
 
 10. Click **Add Destinations** and select the TikTok Audiences destination you just created. 
-    In the settings that appear in the side panel, toggle the **Send Track** option on and do **not** change the Audience Entered/Audience Exited event names. 
+    In the settings that appear in the side panel, toggle the **Send Track** option on and **Send Identify** option off. 
+    
+    *If you update the events names from the default Audience Entered/Audience Exited, please make sure to also update it in the "Add to Audience" and "Remove from Audience" mappings under step 1 (Select events to map and Send).*
+
     Provide the [**Advertiser ID**](https://ads.tiktok.com/help/article/ad-account-information-faq?lang=en){:target="_blank”} linked to the TikTok account that will receive the audience data, as well as the **ID Type** of data you'll be sending. Click **Save Settings**.
 
 The setup is complete and the audience will start syncing to TikTok. The audience will appear in your [TikTok Ads Manager](https://www.tiktok.com/business/en-US/solutions/ads-manager){:target="_blank"} account under **Assets > Audiences**. Please note that it can take 24-48 hours for users to appear in TikTok.
