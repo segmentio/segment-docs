@@ -17,7 +17,7 @@ The Segment login page can only be connected to one workspace. To use your IdP w
 
 Segment's SSO configuration is entirely self-service. Additionally, Segment has prebuilt connections with [Okta](https://www.okta.com/integrations/segment/){:target="_blank"}
 , [OneLogin](https://www.onelogin.com){:target="_blank"}, and [Azure AD](https://docs.microsoft.com/en-us/azure/active-directory/saas-apps/segment-tutorial){:target="_blank"}
- which can help you get set up faster. [Reach out to support](https://segment.com/help/contact/) if you run into any questions or issues.
+ which can help you get set up faster. [Reach out to support](https://segment.com/help/contact/){:target="_blank"} if you run into any questions or issues.
 
 To get started, go to your workspace settings and navigate to **Authentication > Connections > Add new Connection**. Follow the steps to create a SAML connection.
 
