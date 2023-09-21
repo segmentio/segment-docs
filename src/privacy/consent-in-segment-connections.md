@@ -16,8 +16,8 @@ For more information about configuring consent categories, see the [Configure Co
 
 If your sources also contain the integrations object, Segment will look at the consent object first, and then take into account the integrations object according to the table in the [Reconcile consent object and integrations object](#reconcile-consent-object-and-integrations-object-conflicts) documentation.
 
-> info “Unify users must also send the Segment Consent Preference Event to their destinations”
-> If you use Unify, see the [Consent in Unify](/docs/privacy/consent-in-unify) documentation for more information about the Segment Consent Preference event, which Segment uses to add consent preference to the Profile.
+> info “Unify users must send an additional event to add consent preferences to Profiles”
+> If you use Unify, see the [Consent in Unify](/docs/privacy/consent-in-unify) documentation for more information about the Segment Consent Preference event, which Segment uses with the consent object to add consent preference to Profiles.
 
 ## Consent object
 
