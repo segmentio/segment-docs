@@ -17,7 +17,7 @@ id: 6501a5225aa338d11164cc0f
 
 Rupt (Actions) provides the following benefits:
 
-- **Account sharing detection**. Find out exactly which accounts are being shared and how many people are sharing them..
+- **Account sharing detection**. Find out exactly which accounts are being shared and how many people are sharing them.
 - **Convert & monetize account sharers**. Prebuilt UI to convert account sharers into paying customers.
 - **Track account sharing revenue**. Track revenue from account sharing conversions.
 
