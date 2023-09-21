@@ -2,6 +2,9 @@
 title: Rupt (Actions) Destination
 hide-boilerplate: true
 hide-dossier: true
+hidden: true
+beta: true
+id: 6501a5225aa338d11164cc0f
 ---
 
 {% include content/plan-grid.md name="actions" %}
