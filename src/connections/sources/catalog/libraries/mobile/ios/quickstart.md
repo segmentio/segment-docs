@@ -29,7 +29,7 @@ When you create a Source in the Segment web app, it tells the Segment servers th
 Segment recommends you install Analytics for iOS by using either [Cocoapods](http://cocoapods.org/) or your Swift Package Manager. These allow you to create a build with specific bundled destinations, and they have a simplified installation and upgrading process.
 
 ### Install the SDK using Swift Package Manager
-Right click in the Project Manager tab and choose "Add Package Dependencies...".
+Right click in the Project Manager tab of your swift project and choose "Add Package Dependencies...".
 
 Copy the following link to the Analytics Swift package:
 ```
