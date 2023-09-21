@@ -239,7 +239,7 @@ To prevent your insert function from processing data, toggle Enable Function off
 Batch handlers are an extension of insert functions. When you define an `onBatch` handler alongside the handler functions for single events (for example, `onTrack` or `onIdentity`), you're telling Segment that the insert function can accept and handle batches of events. 
 
 > info ""
-> Batching is available for insert and destination functions only. 
+> Batching is available for destination and destination insert functions only. 
 
 ### When to use batching
 
@@ -265,7 +265,7 @@ async function onBatch(events, settings){
 ```
 
 > info ""
-> The `onBatch` handler is an optional extension. Destination insert functions must still contain single event handlers as a fallback, in cases where Segment does not receive enough events to execute the batch.
+> The `onBatch` handler is an optional extension. Destination insert functions must still contain single event handlers as a fallback, in cases where Segment doesn't receive enough events to execute the batch.
 
 The handler function receives an array of events. The events can be of any supported type and a single batch may contain more than one event type. Handler functions can also receive function settings. Here is an example of what a batch can look like:
 
@@ -340,7 +340,7 @@ async function onIdentifyBatch(events, settings) {
 
 ### Configure your batch parameters
 
-By default, Functions waits up to 10 seconds to form a batch of 20 events. You can increase the number of events included in each batch (up to 400 events per batch) by contacting [Segment support](https://segment.com/help/contact/){:target="_blank"}. Segment recommends users who wish to include fewer than 20 events per batch use destination functions without the `onBatch` handler.
+By default, Functions waits up to 10 seconds to form a batch of 20 events. You can increase the number of events included in each batch (up to 400 events per batch) by contacting [Segment support](https://segment.com/help/contact/){:target="_blank"}. Segment recommends users who wish to include fewer than 20 events per batch use destination insert functions without the `onBatch` handler.
 
 ### Test the batch handler
 
@@ -351,7 +351,7 @@ To test the batch handler:
 2. Add events as a JSON array, with one event per element.
 3. Click **Run** to preview the batch handler with the specified events.
 
-> note ""
+> info ""
 > The Sample Event option tests single events only. You must use Manual Mode to add more than one event so you can test batch handlers.
 
 The editor displays logs and request traces from the batch handler.
@@ -389,7 +389,7 @@ Standard [function error types](/docs/connections/functions/destination-function
 ]
 ```
 
-After receiving the response from the `onBatch` handler, Segment only retries **event_4** and **event_5**.
+For example, after receiving the responses above from the `onBatch` handler, Segment only retries **event_4** and **event_5**.
 
 | Error Type             | Result  |
 | ---------------------- | ------- |
