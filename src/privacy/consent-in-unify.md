@@ -10,7 +10,7 @@ related:
 > info "Consent in Unify and Twilio Engage is currently unavailable."
 > However, Segment's OneTrust consent wrappers automatically generate the Segment Consent Preference Track event, which will be required for future integrations with Unify and Twilio Engage.
 
-Segment uses Profiles in [Unify](/docs/unify/) as the source of truth of an end user's consent preference when enforcing consent in Twilio Engage. To get consent preference on the Profile, Segment requires the use of the [Segment Consent Preference event](#segment-consent-preference-event) and Identify events to route events to Unify. The Segment Consent Preference and Identify event should include the [consent object](/docs/privacy/consent-in-segment-connections/#consent-object).
+Segment uses Profiles in [Unify](/docs/unify/) as the source of truth of an end user's consent preference when enforcing consent in Twilio Engage. To get consent preference on the Profile, Segment requires the use of the [Segment Consent Preference event](#segment-consent-preference-event) and [Identify](/docs/connections/spec/Identify) events to route events to Unify. The Segment Consent Preference and Identify event should include the [consent object](/docs/privacy/consent-in-segment-connections/#consent-object).
 
 ## Segment Consent Preference event
 Every time an end user provides or updates their consent preferences, Segment requires you to generate a **Segment Consent Preference** event. If you are using [Segment's OneTrust consent wrappers](/docs/privacy/configure-consent-management/#step-2-integrating-your-cmp-with-segment), Segment automatically generates a Segment Consent Preference event. This event is required to add the end user’s consent preference on their Profile in Unify.

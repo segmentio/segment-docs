@@ -10,9 +10,9 @@ related:
 > info "Consent Management is in private beta"
 > This means that Consent Management features are in active development, and some functionality may change before it becomes generally available. [Contact Segment](https://segment.com/help/contact/){:target="_blank"} with any feedback or questions.
 
-Segment Connections users can add the [consent object](#consent-object) to their sources to stamp events with the end-user consent preferences captured by your consent management platform (CMP) and send them downstream to destinations in categories that an end user consented to share data with. Events without the consent object continue to flow to destinations without consent enforcement. 
+Segment Connections users can add the [consent object](#consent-object) to their sources to stamp events with the end user consent preferences captured by your consent management platform (CMP) and send them downstream to destinations in categories that an end user consented to share data with. Events without the consent object continue to flow to destinations without consent enforcement. 
 
-For more information about configuring the consent object, see the [Configure Consent Management](/docs/privacy/configure-consent-management) documentation.
+For more information about configuring consent categories, see the [Configure Consent Management](/docs/privacy/configure-consent-management/#step-1-create-consent-categories-in-the-segment-app) documentation.
 
 If your sources also contain the integrations object, Segment will look at the consent object first, and then take into account the integrations object according to the table in the [Reconcile consent object and integrations object](#reconcile-consent-object-and-integrations-object-conflicts) documentation.
 
@@ -21,7 +21,7 @@ If your sources also contain the integrations object, Segment will look at the c
 
 ## Consent object
 
-Segment requires every event from all of your sources to include the end-user consent preferences, captured by your CMP or your application logic, in the form of the **consent object**. The consent object is a JSON object with the following format:
+Segment requires every event from all of your sources to include the end user consent preferences, captured by your CMP or your application logic, in the form of the **consent object**. The consent object is a JSON object with the following format:
 
 ```json
 {
