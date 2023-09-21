@@ -171,7 +171,7 @@ Yes, users can be automatically de-provisioned [if you use SCIM](/docs/segment-a
 {% endfaqitem %}
 
 {% faqitem Will my users lose access to their other workspaces when I enable SSO? %}
-Segment allows users to own their own workspaces. While your IdP authentication will ensure that any non-owners must have logged in with SSO to access _your workspace_, they can still log into Segment with username and password to access their own workspaces.
+Segment allows users to own their own workspaces. While your IdP authentication will ensure that any non-owners must have logged in with SSO to access _your workspace_, they can still log into Segment with a username and password to access their own workspaces.
 {% endfaqitem %}
 
 {% faqitem Can I still invite people outside the organization? %}
