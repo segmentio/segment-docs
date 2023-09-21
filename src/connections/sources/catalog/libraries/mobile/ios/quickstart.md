@@ -119,7 +119,7 @@ Once you've added an `identify` call, you're ready to move on to tracking!
 
 ## Step 4: Track Actions
 
-The `track` method is tells Segment about the actions your users perform in your app. Every action triggers an “event”, which can also have associated properties. You can read more about `track` in the [track method](/docs/connections/sources/catalog/libraries/mobile/ios#track) reference.
+The `track` method tells Segment about the actions your users perform in your app. Every action triggers an “event”, which can also have associated properties. You can read more about `track` in the [track method](/docs/connections/sources/catalog/libraries/mobile/ios#track) reference.
 
 To get started, the Segment iOS SDK can automatically track a few important common events, such as **Application Installed**, **Application Updated** and **Application Opened**. You can enable this option during initialization by adding the following lines.
 
