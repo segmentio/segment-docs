@@ -54,13 +54,13 @@ If you are creating multiple mappings in one Braze Cohorts destination, Segment 
 
 {% include components/actions-fields.html settings="true"%}
 
-### Supplementing Audience Payloads
+### Supplementing audience payloads
 
-Event payloads sent via Computed Traits and Audiences will only contain the computed trait/audience key in question, in addition to user identities userId/anonymousId and email if present: https://segment.com/docs/engage/using-engage-data/#event-destinations. If you need supplemental fields from user profiles to map to Braze consider using an Insert Function + Engage Profile API to do so. Essentially, using the Profile API, you can pull the traits for a user from your Engage space within your insert function code, before the event hits the destination. You can then use these traits to then enrich the event payload that is sent to the destination.
+Event payloads sent using Computed Traits and Audiences will only contain the computed trait or audience key in question, in addition to the user identities `userId`, `anonymousId` and `email`. If you need supplemental fields from user profiles to map to Braze, consider using an Insert Function with the Engage Profile API. Using the Profile API, you can pull a user's traits from your Engage space within your insert function code before the event hits the destination. You can then use these traits to enrich the event payload sent to the destination.
 
-When dealing with event payloads transmitted through Computed Traits and Audiences, it's important to note that these payloads typically include only the specific computed trait or audience key in question in addition to user identities such as `userId` and `anonymousId`, as well as `email` if available, [for more information, see here](/docs/engage/using-engage-data/#event-destinations).
+When dealing with event payloads transmitted through Computed Traits and Audiences, keep in mind that these payloads typically include only the specific computed trait or audience key in question in addition to user identities such as `userId` and `anonymousId`, as well as `email` if available. View [event destinations](/docs/engage/using-engage-data/#event-destinations) for more information.
 
-If your requirements involve including additional fields from user profiles into your mappings, you can achieve this by leveraging an [Insert Function](/docs/connections/functions/insert-functions/) in conjunction with the [Engage Profile API](docs/unify/profile-api/). With the Profile API, you can retrieve the traits associated with a user from your Engage space within your insert function code, all before the event reaches the Braze Cohorts destination. 
+If you need to include additional fields from user profiles into your mappings, you can achieve this by using an [insert function](/docs/connections/functions/insert-functions/) with the [Engage Profile API](/docs/unify/profile-api/). With the Profile API, you can retrieve the traits associated with a user from your Engage space within your insert function code, all before the event reaches the Braze Cohorts destination. 
 
 ### Braze Device ID
 
