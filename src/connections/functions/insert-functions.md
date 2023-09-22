@@ -261,6 +261,7 @@ To create a batch handler, define an `onBatch` function within your destination 
 ```js
 async function onBatch(events, settings){
   // handle the batch of events
+  return events
 }
 ```
 
@@ -326,15 +327,23 @@ async function onBatch(events, settings) {
     // ...handle other event types here...
     }
   })
-  return Promise.all(promises)
+  try {
+    const results = await Promise.all(promises);
+    const batchResult = [].concat(...results); // Combine arrays into a single array
+    return batchResult;
+  } catch (error) {
+    throw new RetryError(error.message);
+  }
 }
 
 async function onTrackBatch(events, settings) {
   // handle a batch of track events
+  return events
 }
 
 async function onIdentifyBatch(events, settings) {
   // handle a batch of identify events
+  return events
 }
 ```
 
