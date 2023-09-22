@@ -32,7 +32,7 @@ To configure an email template, click **Create Template**.
   - [**HTML Editor**](/docs/engage/content/email/html-editor/) contains both a code and visual editor from a single view. This editor provides complete HTML editing access with error flagging.
 4. Design the email template, then click **Create Email Template**.
 
-> success "Engage content validation"
+> info "Engage content validation"
 > For all Engage content editors, you'll see alerts for any issues in your template, such as invalid profile traits or incorrect liquid syntax. Engage flags the template issues that require your attention before proceeding, and displays recommended steps to fix the issue.
 
 ## Test the Email template

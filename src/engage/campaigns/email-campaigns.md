@@ -50,8 +50,6 @@ Some email campaign fields, like **Sender email** and **Subject**, are required.
 > info "Editing Templates"
 > If you use a template for your email, Engage creates an editable copy of the original.  Editing the template within the Journey won’t alter the original template.
 
-> success "Engage content validation"
-> For all Engage content editors, you'll see alerts for any issues in your template, such as invalid profile traits or incorrect liquid syntax. Engage flags the template issues that require your attention before proceeding, and displays recommended steps to fix the issue.
 
 ### Send an email to all users
 
