@@ -444,8 +444,6 @@ sections:
       title: Email Campaigns
     - path: '/engage/campaigns/sms-campaigns'
       title: SMS Campaigns
-    - path: '/engage/campaigns/broadcasts'
-      title: Broadcasts
     - path: '/engage/campaigns/whatsapp-campaigns'
       title: WhatsApp Campaigns
   - section_title: Trait Activation
@@ -459,6 +457,8 @@ sections:
       title: Trait Enrichment
     - path: /engage/trait-activation/id-sync
       title: ID Sync
+  - path: '/engage/broadcasts'
+    title: Broadcasts  
   - path: '/engage/analytics'
     title: Analytics Overview
   - path: '/engage/settings'
