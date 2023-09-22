@@ -3,7 +3,12 @@ title: Analytics-CSharp (C#) Migration Guide
 strat: csharp
 ---
 
-If you’re using a different library, follow the steps below to migrate to the [Analytics-CSharp library](/docs/connections/sources/catalog/libraries/server/csharp/).  
+If you’re currently using Analytics.NET or Analytics.Xamarin to send data to Segment, please follow the steps below to migrate to the [Analytics-CSharp library](/docs/connections/sources/catalog/libraries/server/csharp/).  
+
+You can update to Analytics-CSharp in 3 easy steps
+1. Bundle Analytics-CSharp into your app (and remove your previous SDK)
+2. Change the namespaces
+3. Advanced: Run Analytics in Synchronous Mode
 
 
 ## Start the Migration
@@ -61,7 +66,8 @@ If you’re using a different library, follow the steps below to migrate to the 
 
     <br> Before:
     ```c#                  
-    Analytics.Initialize("YOUR_WRITE_KEY", new Config().SetAsync(false));
+    Analytics.Client.Page(null, "Login", new Properties(), new Options()
+    .SetAnonymousId("some-id"));
     ```
 
     The new SDK by default, generates an Anonymous ID for you if you never call `analytics.Identify`. If you've called `Identify` and want to go back to anonymous, try:
@@ -70,69 +76,3 @@ If you’re using a different library, follow the steps below to migrate to the 
     ```c#                  
     analytics.Reset();
     ```
-
-3. Change your nested properties settings. 
-
-    <br> Before:
-    ```c#                  
-    Analytics.Client.Identify("hj2kf92ds212", new Traits() {
-        { "email", "tom@example.com" },
-        { "name", "Tom Smykowski" },
-        { "address", new Dict() {
-            { "street", "123 Fake Street" },
-            { "city", "Boston" }
-        }}
-     });
-    ```
-    
-    <br> After:
-    ```c#                  
-    // compatbile with the old way
-    analytics.Identify("hj2kf92ds212", new JsonObject()
-    {
-        { "email", "tom@example.com" },
-        { "name", "Tom Smykowski" },
-        { "address", new JsonObject() {
-            { "street", "123 Fake Street" },
-            { "city", "Boston" }
-        }}
-    });
-    ```
-    
-    The new SDK internally implements a flexible JSON builder (Serialization.NET), that allows you build a complex JSON payload:
-        
-    ```c#
-    var jsonObject = new JsonObject
-    {
-        ["int"] = 1,
-        ["float"] = 1f,
-        ["long"] = 1L,
-        ["double"] = 1.0,
-        ["string"] = "1",
-        ["bool"] = true,
-        ["object"] = new JsonObject
-        {
-            ["another object"] = "obj"
-        },
-        ["array"] = new JsonArray
-        {
-            1, 1f, 1L, 1.0, "1", true, new JsonObject
-            {
-                ["object in array"] = "obj"
-            }
-        }
-    };
-    ```
-
-4. Review your Flush settings.
-     
-     <br> Before:
-    ```c#                  
-     Analytics.Client.Flush();
-    ```
-    
-    <br> After:
-    ```c#                  
-    analytics.Flush();
-    ```
-
