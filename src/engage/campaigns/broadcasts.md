@@ -122,4 +122,4 @@ Segment maintains a recipients list for broadcasts. The recipients list lets you
 
 The settings tab shows your broadcast's setup info, the recipient audience and its subscription status, as well as the broadcast's scheduled time.
 
-On the settings tab, you can also find the broadcast's campaign key, which you can use to reference the broadcast. For example, you can use the campaign key to create an audience for future targeting or to create a suppression list of recipients you don't want to receive future broadcasts. 
+On the settings tab, you can also find the broadcast's campaign key, which you can use to reference the broadcast. For example, you can use the campaign key to create an audience for future targeting or to create a suppression list of recipients you don't want to receive future broadcasts.
