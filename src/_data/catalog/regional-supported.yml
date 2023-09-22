@@ -1523,7 +1523,7 @@ sources:
       - us
   - id: 9TYqEh3nMe
     display_name: Upollo
-    hidden: true
+    hidden: false
     slug: upollo
     url: connections/sources/catalog/cloud-apps/upollo
     regions:
