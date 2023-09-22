@@ -33,7 +33,7 @@ To configure an email template, click **Create Template**.
 4. Design the email template, then click **Create Email Template**.
 
 > info "Engage content validation"
-> For all Engage content editors, you'll see alerts for any issues in your template, such as invalid profile traits or incorrect liquid syntax. Engage flags the template issues that require your attention before proceeding, and displays recommended steps to fix the issue.
+> For all Engage content editors, you'll see alerts for any issues in your template, such as invalid profile traits or incorrect liquid syntax. Engage flags the template issue(s) that require your attention before proceeding, and displays recommended steps to fix the issue(s). You must fix any issues before using your template in Engage campaigns.
 
 ## Test the Email template
 You can send test emails before you include a template in marketing campaigns.
@@ -76,7 +76,9 @@ For both fields, keep the following best practices in mind as you add profile tr
 
 - To use merge tags, you must add a `default` value inside a single quote. For example: `{{profile.traits.traits | default: 'Default'}}`
 - Only use variable tags in liquid sytax. 
-- Use a valid username for an email address in the profile trait and default value. For example: `default: 'jsmith'`.
+- Use a valid username for an email address in the profile trait and default value. For example:
+  - `default: 'jsmith'` is valid
+  - `default: 'j smith'` is invalid
 - When you send a test message, the trait must be valid for the field you're using it in. For example: 
   - If `profile.traits.first_name` is being used in the **From Sender** field, it must be a valid email username. 
   - If `profile.traits.email` is being used in the **Reply to Email** field, it must be a valid email address.
