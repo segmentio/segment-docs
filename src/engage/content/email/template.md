@@ -21,16 +21,19 @@ To configure an email template, click **Create Template**.
 2. Configure the email template.
     1. Add a template name for internal reference.
     2. Add an internal description.
-    3. Enter the sender email address.
+    3. Enter the sender email address. You can optionally include profile traits.
         - Emails can only be sent from verified domains.
     4. Enter the sender name.
-    4. Indicate if you want replies sent back to the initial sender. If not, add a "reply to" email and name.
+    4. Indicate if you want replies sent back to the initial sender. If not, add a "reply to" email and name, or include profile traits.
     5. Add email addresses to receive a blind carbon copy of your email.
     6. Add preview text and the subject line. Use [merge tags](#personalize-with-merge-tags) to personalize the email template with real-time profile traits.
 3. Select the design method to build your email template:
   - [**Drag and Drop Editor**](/docs/engage/content/email/editor/) is a drag and drop WYSIWYG tool with customizable content blocks.
   - [**HTML Editor**](/docs/engage/content/email/html-editor/) contains both a code and visual editor from a single view. This editor provides complete HTML editing access with error flagging.
 4. Design the email template, then click **Create Email Template**.
+
+> success "Engage content validation"
+> For all Engage content editors, you'll see alerts for any issues in your template, such as invalid profile traits or incorrect liquid syntax. Engage flags the template issues that require your attention before proceeding, and displays recommended steps to fix the issue.
 
 ## Test the Email template
 You can send test emails before you include a template in marketing campaigns.
@@ -48,15 +51,38 @@ You can send test emails before you include a template in marketing campaigns.
 > You can also test email templates directly from a [Send an Email step](/docs/engage/journeys/build-journey/#send-an-email) in Journeys.
 
 ## Personalize with merge tags
-Personalize email content in Twilio Engage with real-time profile traits in your email subject line, preview text, and message body.
 
+With Engage, you can personalize email content with real-time profile traits. 
+
+In your template, you can add profile traits in merge tags to the following fields:
+- Subject line
+- Preview text
+- Message body
+- [From sender](#use-profile-traits-in-the-sender-and-reply-to-fields) 
+- [Reply to email](#use-profile-traits-in-the-sender-and-reply-to-fields)
 
 As you configure the template, click **Merge Tags** and select the profile traits to include. Engage inserts the merge tags based on cursor placement.
  
 You can also add merge tags in the heading or body text as you design an email with the [Drag and Drop](/docs/engage/content/email/editor/) or [HTML](/docs/engage/content/email/html-editor/) editors. Engage supports [liquid templating](https://liquidjs.com/tags/if.html){:target="blank"} to create dynamic content in the email design editor.
 
 > info ""
-> To learn more about profile traits, visit Segment's [Computed Traits](/docs/engage/audiences/computed-traits) and [SQL Traits](/docs/engage/audiences/sql-traits/) documentation.
+> To learn more about profile traits, visit Segment's [Computed Traits](/docs/unify/traits/computed-traits) and [SQL Traits](/docs/unify/traits/sql-traits/) documentation.
+
+### Use profile traits in the sender and reply to fields
+
+Personalize your email template by adding profile traits in the **From sender** and **Reply to email** fields. 
+
+For both fields, keep the following best practices in mind as you add profile traits.
+
+- To use merge tags, you must add a `default` value inside a single quote. For example: `{{profile.traits.traits | default: 'Default'}}`
+- Only use variable tags in liquid sytax. 
+- Use a valid username for an email address in the profile trait and default value. For example: `default: 'jsmith'`.
+- When you send a test message, the trait must be valid for the field you're using it in. For example: 
+  - If `profile.traits.first_name` is being used in the **From Sender** field, it must be a valid email username. 
+  - If `profile.traits.email` is being used in the **Reply to Email** field, it must be a valid email address.
+- In the **From sender** and **Reply to email** fields, the profile trait and default value must be one of the following:
+  - A valid email address
+  - A valid username for the email address (the input field would have to end with a valid domain for the email address)
 
 ## Include unsubscribe links
 

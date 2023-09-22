@@ -34,6 +34,9 @@ Follow these steps to build an SMS template:
 
 Use the SMS Templates screen to preview and update existing SMS message templates.
 
+> success "Engage content validation"
+> For all Engage content editors, you'll see alerts for any issues in your template, such as invalid profile traits or incorrect liquid syntax. Engage flags the template issues that require your attention before proceeding, and displays recommended steps to fix the issue.
+
 ## Test your SMS template
 
 Send a test SMS message before you include it as a step in your Journey.

@@ -45,6 +45,9 @@ Follow these steps to create an SMS campaign:
 4. Enter your campaign content into the **Body** field.
 5. Add a STOP/unsubscribe line to the end of your SMS.
 
+> success "Engage content validation"
+> For all Engage content editors, you'll see alerts for any issues in your template, such as invalid profile traits or incorrect liquid syntax. Engage flags the template issues that require your attention before proceeding, and displays recommended steps to fix the issue.
+
 > warning ""
 > Unsubscribe options are required by law.  Your SMS campaign must contain “Reply STOP to unsubscribe.”
 
