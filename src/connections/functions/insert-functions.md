@@ -478,11 +478,6 @@ No, destination insert functions are currently available as cloud-mode destinati
 
 No, an insert function can only be connected to one destination.
 
-##### How do I publish a destination to the public Segment catalog?
-
-If you are a partner, looking to publish your destination and distribute your app through Segment catalog, visit the [Developer Center](https://segment.com/partners/developer-center/){:target="_blank"} and check out the Segment [partner docs](/docs/partners/).
-
-
 {% comment %}
 
 ## Using Segment's Public API
