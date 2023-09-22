@@ -16,7 +16,7 @@ Pushwoosh maintains this destination. For any issues with the destination, [cont
 - If you configured Segment to receive push tokens, you don't need to integrate the Pushwoosh SDK into your app.
 - If your Segment implementation doesn't receive push tokens, integrate the Pushwoosh SDK into your app before setting up the Pushwoosh integration.
 
-##### Segment configuraion
+##### Segment configuration
 
 1. From the Segment web app, navigate to **Connections > Destinations**, and click **Add Destination**.
 2. Search for **Pushwoosh** and select it as the destination.
