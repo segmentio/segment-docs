@@ -4,14 +4,14 @@ hidden: true
 ---
 
 
-This tutorial gets you started sending data from your website to Segment and any of our destinations, using Segment's PHP library. As soon as you're set up you can turn on new destinations with the flip of a switch!
+This tutorial gets you started sending data from your website to Segment destinations, using Segment's PHP library. As soon as you're set up you can turn on new destinations with the flip of a switch.
 
-If you want to dive deeper at any point, check out the [PHP reference](/docs/connections/sources/catalog/libraries/server/php).
+If you want to dive deeper at any point, check out the [PHP reference](/docs/connections/sources/catalog/libraries/server/php) documentation.
 
 
 ## Step 1: Create a Source in the Segment app
 
-Before you begin, you need a Workspace (which is a container that holds all of the sources and destinations which are billed together for an organization). If you already created one, great! If not, you can sign up for a free Segment account and create one.
+Before you begin, you need a Workspace (which is a container that holds all of the sources and destinations which are billed together for an organization). You can use an existing workspace or you can sign up for a free Segment account and create one.
 
 Next, create a PHP source from your Workspace:
 
@@ -37,7 +37,7 @@ require_once("/path/to/analytics-php/lib/Segment.php");
 use Segment\Segment;
 ```
 
-Now, you're ready to actually initialize the module. In our examples, we first rename this module to `Analytics` for convenience. In your initialization script, make the following call:
+Now, you're ready to actually initialize the module. First, rename this module to `Analytics` for convenience. In your initialization script, make the following call:
 
 ```php
 # Set up our Segment tracking and
@@ -54,12 +54,12 @@ You only need to call `init` once when your php file is requested. All of your f
 > note ""
 > **Note**: The default PHP consumer is the [libcurl consumer](/docs/connections/sources/catalog/libraries/server/php/#lib-curl-consumer). If this is not working well for you, or if you have a high-volume project, you might try one of Segment's other consumers like the [fork-curl consumer](/docs/connections/sources/catalog/libraries/server/php/#fork-curl-consumer).
 
-All set? Nice, the library's fully installed! We're now primed and ready to start recording our first analytics calls about our users.
+All set? Nice, the library's fully installed. You're now primed and ready to start recording your first analytics calls about your users.
 
 ## Step 3: Identify Users
 
 > note ""
-> **Good to know**: For any of the different methods described in this quickstart, you can replace the properties and traits in the code samples with variables that represent the data collected.
+> **Good to know**: For any of the methods described in this quickstart, you can replace the properties and traits in the code samples with variables that represent the data collected.
 
 The [Identify method](/docs/connections/spec/identify) is how you tell Segment who the current user is. It includes a unique User ID and any optional traits that you might know about them.
 
@@ -91,9 +91,9 @@ Segment::identify(array(
 
 With that call on the page, you're now successfully identifying every user that visits your site.
 
-If you only want to use a basic CRM set up, you can stop here. Just enable Salesforce, Intercom, or any other CRM system from your Segment workspace, and Segment starts sending all of your user data to it!
+If you only want to use a basic CRM set up, you can stop here. Just enable Salesforce, Intercom, or any other CRM system from your Segment workspace, and Segment starts sending all of your user data to it.
 
-Of course, lots of analytics tools record more than just _identities_... they record the actions each user performs too! If you're looking for a complete event tracking analytics setup, keep reading...
+Of course, lots of analytics tools record more than just _identities_... they record the actions each user performs too. If you're looking for a complete event tracking analytics setup, keep reading...
 
 
 ## Step 4: Track Actions
@@ -112,7 +112,7 @@ Segment::track(array(
 ));
 ```
 
-That tells us that the user triggered the **Signed Up** event, and chose your hypothetical `Enterprise` plan. Properties can be anything you want to record, for example:
+That tells you that the user triggered the **Signed Up** event, and chose your hypothetical `Enterprise` plan. Properties can be anything you want to record, for example:
 
 ```php
 Segment::track(array(
@@ -128,7 +128,7 @@ Segment::track(array(
 
 If you're just getting started, some of the events you should track are events that indicate the success of your site, like **Signed Up**, **Item Purchased** or **Article Bookmarked**.
 
-To get started, we recommend tracking just a few important events. You can always add more later!
+To get started, Segment recommend tracking just a few important events. You can always add more events later.
 
 Once you've added a few [`track`](/docs/connections/spec/track) calls, you're almost done.
 
@@ -141,11 +141,11 @@ Finally, call the Segment `flush()` method. This manually sends all the queued c
 Segment::flush();
 ```
 
-And presto, **you're done!** You successfully installed PHP tracking. Now you're ready to turn on any destination you fancy from our interface, margarita in hand.
+And presto, **you're done!** You successfully installed PHP tracking. Now you're ready to enable any Segment destination.
 
 ---
 
 
 ## What's Next?
 
-We just walked through the quickest way to get started with Segment using PHP. You might also want to check out our full [PHP reference](/docs/connections/sources/catalog/libraries/server/php) to see what else is possible, or read about the [Tracking API methods](/docs/connections/sources/catalog/libraries/server/http) to get a sense for the bigger picture.
+You just walked through the quickest way to get started with Segment using PHP. You might also want to check out Segment's full [PHP reference](/docs/connections/sources/catalog/libraries/server/php) to see what else is possible, or read about the [Tracking API methods](/docs/connections/sources/catalog/libraries/server/http) to get a sense for the bigger picture.
