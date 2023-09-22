@@ -247,7 +247,7 @@ Consider creating a batch handler if:
 
 - **You have a high-throughput function and want to reduce cost.** When you define a batch handler, Segment invokes the function once per *batch*, rather than once per event. As long as the function’s execution time isn’t adversely affected, the reduction in invocations should lead to a reduction in cost.
 
-- **Your destination supports batching**. When your downstream destination supports sending data downstream in batches you can define a batch handler to avoid throttling. Batching for functions is independent of batch size supported by the destination. Segment automatically handles batch formation for destinations internally.
+- **Your destination supports batching**. When your downstream destination supports sending data downstream in batches you can define a batch handler to avoid throttling. Batching for functions is independent of batch size supported by the destination. Segment automatically handles batch formation for destinations.
 
 > info ""
 > If a batched function receives too low a volume of events (under one event per second) to be worth batching, Segment may not invoke the batch handler.
