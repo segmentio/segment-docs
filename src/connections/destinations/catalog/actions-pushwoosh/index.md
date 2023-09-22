@@ -1,10 +1,9 @@
 title: Pushwoosh (Actions) Destination
-id: 64e72af1eabf77368b877a51
 ---
 
 {% include content/plan-grid.md name="actions" %}
 
-[Pushwoosh](https://pushwoosh.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners){:target="_blank"} is a customer engagement platform that allows you to create personalized messaging campaigns combining multiple channels: push notifications, in-app messages, emails, and SMS.
+[Pushwoosh](https://pushwoosh.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners){:target="_blank"} is a customer engagement platform that lets you create personalized messaging campaigns combining multiple channels, like push notifications, in-app messages, emails, and SMS.
 
 Pushwoosh maintains this destination. For any issues with the destination, [contact the Pushwoosh support team](mailto:help@pushwoosh.com){:target="_blank"}.
 
@@ -14,7 +13,7 @@ Pushwoosh maintains this destination. For any issues with the destination, [cont
 
 ##### Pushwoosh SDK integration
 
-- If you configured sending push tokens from your app to Segment, you don't need to integrate the Pushwoosh SDK into your app.
+- If you configured Segment to receive push tokens, you don't need to integrate the Pushwoosh SDK into your app.
 - If your Segment implementation doesn't receive push tokens, integrate the Pushwoosh SDK into your app before setting up the Pushwoosh integration.
 
 ##### Segment configuraion
