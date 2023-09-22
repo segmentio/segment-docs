@@ -75,6 +75,11 @@ It's possible to send details of either single or multiple products/items in a s
 - **Single product/item**: Use the "Item ID", "Item Category", "Brand", "Number of Items", and "Price" fields. 
 - **Multiple products/items**: Use the "Products" field which accepts an array of products / items.  
 
+### Specifying the total value of a purchase
+There are 2 ways to specify the total value of a purchase. This can be controlled using the "Track Purchase Value Per Product" field.  
+- **Price field**: Provide a single numeric value for the total purchase value via the "Price" field. This is the detault approach.   
+- **Calculate from Products field**: Calculate the total purchase value using the "Price" and "Number of Items" sub fields from the "Products" field. 
+
 ### Required parameters and hashing
 To match visitor events with Snapchat ads, Snap requires that one or a combination of the following parameters are sent to the Conversions API:
 - Email
