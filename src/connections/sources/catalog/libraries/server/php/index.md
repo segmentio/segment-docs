@@ -200,7 +200,7 @@ The `page` call has the following fields:
   </tr>
   <tr>
     <td>`properties` _Object, optional_</td>
-    <td>A dictionary of properties of the page. Segment automatically sends the `url`, `title`, `referrer` and `path`, but you can add your own too!</td>
+    <td>A dictionary of properties of the page. Segment automatically sends the `url`, `title`, `referrer` and `path`, but you can add your own too</td>
   </tr>
   <tr>
     <td>`anonymousId` _String, optional_</td>
@@ -404,7 +404,7 @@ Segment::init("YOUR_WRITE_KEY", array(
 
 ### Lib-Curl Consumer
 
-The [lib-curl consumer](https://github.com/segmentio/analytics-php/blob/master/lib/Segment/Consumer/LibCurl.php){:target="_blank”} is a reliable option for low-volume sources or if you want fast response times under light loads. The library runs synchronously, queuing calls and sending them in batches to Segment's servers. By default, this happens every 100 calls, or at the end of serving the page. By default, Segment ignores http responses to optimize the library's speed, but you can choose to wait for these responses by enabling debug mode.
+The [lib-curl consumer](https://github.com/segmentio/analytics-php/blob/master/lib/Consumer/LibCurl.php){:target="_blank”} is a reliable option for low-volume sources or if you want fast response times under light loads. The library runs synchronously, queuing calls and sending them in batches to Segment's servers. By default, this happens every 100 calls, or at the end of serving the page. By default, Segment ignores http responses to optimize the library's speed, but you can choose to wait for these responses by enabling debug mode.
 
 If your servers are handling more than 20 requests per second, you may want to look at the [file consumer](#file-consumer) to optimize performance.
 
@@ -424,10 +424,9 @@ Segment::init("YOUR_WRITE_KEY", array(
 ));
 ```
 
-
 ### Fork-Curl Consumer
 
-The [fork-curl consumer](https://github.com/segmentio/analytics-php/blob/master/lib/Segment/Consumer/ForkCurl.php){:target="_blank”} should work best for cases where you can't use persistent sockets, or want to ensure quick response times under light load. It works by creating an in-memory queue which buffers track and identify calls. The queue is flushed by forking an async `curl` process that sends a batch request. By default, this happens every `100` calls, or at the end of serving the page. This consumer will spawn a separate process for each request which tracks events. If  your servers are handling more than 20 requests per second, you may want to look at the [file consumer](#file-consumer).
+The [fork-curl consumer](https://github.com/segmentio/analytics-php/blob/master/lib/Consumer/ForkCurl.php){:target="_blank”} should work best for cases where you can't use persistent sockets, or want to ensure quick response times under light load. It works by creating an in-memory queue which buffers track and identify calls. The queue is flushed by forking an async `curl` process that sends a batch request. By default, this happens every `100` calls, or at the end of serving the page. This consumer will spawn a separate process for each request which tracks events. If  your servers are handling more than 20 requests per second, you may want to look at the [file consumer](#file-consumer).
 
 To initialize the consumer explicitly, use `"consumer" => "fork_curl"` as an entry in your `options` array.
 
@@ -454,7 +453,7 @@ Segment::init("YOUR_WRITE_KEY", array(
 
 ### Socket Consumer
 
-If you can't spawn other processes from your PHP scripts, you can use the [socket consumer](https://github.com/segmentio/analytics-php/blob/master/lib/Segment/Consumer/Socket.php){:target="_blank”}, which will allow you to make requests to Segment. Each time a track or identify call is made, it will initiate a socket request to Segment's servers. The socket request is about as async as you can get with PHP, where the request will write the event data and close the connection before waiting for a response. However, if your servers are dealing with more than 100s of requests per second or cannot use a persistent connection, you may want to use one of the other consumers instead.
+If you can't spawn other processes from your PHP scripts, you can use the [socket consumer](https://github.com/segmentio/analytics-php/blob/master/lib/Consumer/Socket.php){:target="_blank”}, which will allow you to make requests to Segment. Each time a track or identify call is made, it will initiate a socket request to Segment's servers. The socket request is about as async as you can get with PHP, where the request will write the event data and close the connection before waiting for a response. However, if your servers are dealing with more than 100s of requests per second or cannot use a persistent connection, you may want to use one of the other consumers instead.
 
 To initialize the consumer explicitly, use `"consumer" => "socket"` as an entry in your `options` array.
 
@@ -485,7 +484,7 @@ Segment::init("YOUR_WRITE_KEY", array(
 
 ### File Consumer
 
-The [file consumer](https://github.com/segmentio/analytics-php/blob/master/lib/Segment/Consumer/File.php){:target="_blank”} is a more performant method for making requests to Segment. Each time a track or identify call is made, it will record that call to a log file. The log file is then uploaded "out of band" by running the `file.php` file found in [the GitHub repository](https://github.com/segmentio/analytics-php/blob/master/lib/Segment/Consumer/File.php){:target="_blank”}.
+The [file consumer](https://github.com/segmentio/analytics-php/blob/master/lib/Consumer/File.php){:target="_blank”} is a more performant method for making requests to Segment. Each time a track or identify call is made, it will record that call to a log file. The log file is then uploaded "out of band" by running the `file.php` file found in [the GitHub repository](https://github.com/segmentio/analytics-php/blob/master/lib/Consumer/File.php){:target="_blank”}.
 
 To initialize this consumer explicitly, use `"consumer" => "file"` as an entry in your `options` array.
 
@@ -526,8 +525,12 @@ $ sudo service cron reload    # reload the cron daemon
 {% include content/troubleshooting-server-integration.md %}
 
 
+<!--- both links are broken :((((( 
+  
 ## 3rd-Party Libraries
 
 If you only need support for PHP5, the team at Underground Elephant has released a [3rd-party library](https://github.com/uecode/segment-io-php){:target="_blank”} based on Guzzle.
 
 If you're using Laravel 4 our friends at Catchet have written a wrapper for you! Docs and GitHub repo can be found here: https://github.com/cachethq/Laravel-Segment
+
+--->
