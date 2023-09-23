@@ -7,17 +7,23 @@ id: 6440068936c4fb9f699b0645
 ---
 
 
-The Trade Desk CRM enables advertisers to send Segment Engage Audiences to The Trade Desk as Segments using [The Trade Desk's CRM Data Platform API](https://api.thetradedesk.com/v3/portal/data/doc/DataIntegrateCRMData){:target="_blank"}.
+The [Trade Desk](https://www.thetradedesk.com/us){:target="_blank"} gives companies and their partners the power to activate data into their robust data market, making it easy to discover, create and reach valuable audiences. Our integration with the Trade Desk enables you to push first party user data from audiences created in [Twilio Engage](https://www.twilio.com/en-us/engage){:target="_blank"} to The Trade Desk platform to target brand’s first-party audiences more effectively. 
 
-By using Segment's Engage Audiences with The Trade Desk CRM Destination customers can target specific audiences with customized interactions across a variety of formats and devices.
+Our integration will allow users to connect their Engage Audiences to The Trade Desk and send PII including email and hashed email. Users will be able to configure their delivery preferences within Segment.
+
+The [Trade Desk](https://www.thetradedesk.com/us){:target="_blank"} destination can be connected to **Twilio Engage sources only**.
 
 ## Getting Started
+
+### Credentials from The Trade Desk 
+
+*Before you can activate audiences to The Trade Desk, you must contact your The Trade Desk account manager to sign the UID POC contract. The Trade Desk will then give permission, share your advertiser ID, and secret key to configure your destination.*
 
 Before connecting to The Trade Desk CRM destination, you must have a [Trade Desk Developer Portal](https://api.thetradedesk.com/v3/tokens){:target="_blank"} account and an Advertiser ID.
 
 To add the The Trade Desk CRM destination:
 
-1. Generate a long lived token on [The Trade Desk's Developer Portal](https://api.thetradedesk.com/v3/tokens){:target="_blank"}.
+1. Generate a [long lived token](https://partner.thetradedesk.com/v3/portal/api/doc/Authentication#ui-method-create) {:target="_blank"} on [The Trade Desk's Developer Portal](https://api.thetradedesk.com/v3/tokens){:target="_blank"}.
 
 2. From the Segment web app, navigate to **Engage > Audiences**. Ensure you are in the Engage space you plan to use with The Trade Desk. Either choose an existing Engage Audience or create a new one. This is the Audience you plan to send to The Trade Desk.
 
@@ -36,7 +42,7 @@ To add the The Trade Desk CRM destination:
 9. Navigate to the **Mappings** tab, click **New Mapping**, and select **Sync Audience to CRM Data Segment**.
 
 10. Under Select mappings, input the name of the Trade Desk Data Segment you want to sync to. If you do not have a Segment with that name in your Trade Desk Account then Segment will create one for you. Input the Region and PII Type and do not change any other defaults. Click **Save** and toggle to enable the mapping.
-     * **Note:** For every Engage Audience you want to send to your Trade Desk Account, a separate **S Sync Audience to CRM Data Segment** mapping must be created. You can create up to 50 mappings within an instance of the LinkedIn Audiences destination.
+     * **Note:** Please only create one mapping for every destination. 
 
 11. Navigate back to **Engage > Audiences** and click on the Audience from Step 1. 
 
