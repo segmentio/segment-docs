@@ -10,16 +10,16 @@ This page walks you through the process of setting up mobile push notifications 
 
 ## Overview
 
-You'll set up push notifications in four steps:
+You'll set up mobile push in four steps:
 
 1. [Set up analytics for mobile push](#1-set-up-analytics-for-mobile-push).
 2. [Add the Engage SDK plugin](#2-add-the-engage-sdk-plugin).
 3. [Configure push credentials](#3-configure-push-credentials).
-4. [Configure push notifications in Engage](#4-configure-push-notifications-in-engage).
+4. [Configure mobile push in Engage](#4-configure-mobile-push-in-engage).
 
 ## 1. Set up analytics for mobile push
 
-Before you can send push notifications, you'll need to set up analytics. In this step, you'll integrate Segment's mobile SDK into your app.
+Before you can send mobile pushes, you'll need to set up analytics. In this step, you'll integrate Segment's mobile SDK into your app.
 
 ### Add the Segment base SDK
 
@@ -126,7 +126,7 @@ You can add the Engage SDK plugin using either Xcode or `Package.swift`.
 
 3. Add or modify methods to `AppDelegate`:
 
-To start receiving and handling push notifications, add or modify the following methods in your `AppDelegate`:
+To start receiving and handling mobile push notifications, add or modify the following methods in your `AppDelegate`:
 
 ```swift
    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
@@ -185,7 +185,7 @@ func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive respo
     // TODO: Customize notification response handling based on the received userInfo.
     // Implement actions based on the user's response to the notification.
     // Example: Navigate to a specific screen or perform an action based on the notification.
-    
+
 }
 ```
 
@@ -244,13 +244,20 @@ During Step 5, [Upload your API Key to Twilio](https://www.twilio.com/docs/notif
 
 With your server key copied, finish steps 5 and 6 in the Twilio documentation.
 
-## 4. Configure push notifications in Engage
+## 4. Configure mobile push in Engage
 
 > success ""
 > If you've already configured SMS services for Twilio Engage, you can skip this step.
 
-To set up push notifications in Twilio Engage and complete push notifications onboarding, follow the steps in the [Create and configure Twilio SMS services documentation](/docs/engage/onboarding/#stage-3-create-and-configure-twilio-sms-services).
+Follow these steps to set up mobile push in Twilio Engage and complete mobile onboarding:
+
+1. Follow the steps in the [Create and configure Twilio SMS services documentation](/docs/engage/onboarding/#stage-3-create-and-configure-twilio-sms-services).
+2. Return to your Segment workspace and navigate to **Engage > Engage settings**.
+3. Click the pencil icon next to **Messaging services**, then click **Create new push service**.
+    - If you don't see the pencil icon, select **Create new push service**.
+4. Name the push service, select or create APN and FCM credentials, then click **Create Push Service**.
+5. Your new messaging service appears in the **Add messaging services** dropdown. Select it, then click **Save**.
 
 ## 5. Build a mobile push template
 
-Now that you've completed push notifications setup, you're ready to [build a mobile push template](/docs/engage/content/mobile-push/).
+Now that you've completed mobile push setup, you're ready to [build a mobile push template](/docs/engage/content/mobile-push/).
