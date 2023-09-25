@@ -70,6 +70,8 @@ You can also add merge tags in the heading or body text as you design an email w
 
 ### Use profile traits in the sender and reply to fields
 
+{% raw %}
+
 Personalize your email template by adding profile traits in the **From sender** and **Reply to email** fields. 
  
 For both fields, keep the following best practices in mind as you add profile traits.
@@ -84,7 +86,9 @@ For both fields, keep the following best practices in mind as you add profile tr
   - If `profile.traits.email` is being used in the **Reply to Email** field, it must be a valid email address.
 - In the **From sender** and **Reply to email** fields, the profile trait and default value must be one of the following:
   - A valid email address
-  - A valid username for the email address (the input field would have to end with a valid domain for the email address)
+  - A valid username for the email address (the input field needs to end with a valid domain for the email address)
+
+{% endraw %}
 
 ## Include unsubscribe links
 
