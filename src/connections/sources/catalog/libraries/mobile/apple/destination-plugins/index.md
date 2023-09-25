@@ -62,6 +62,12 @@ plugins:
       url: https://cdn.filepicker.io/api/file/zeGaFc7rSEerWyM7dmVQ
     mark:
       url: https://cdn.filepicker.io/api/file/A0pxB2RWTNiVs2VBYGhx
+  - name: 1Flow Mobile Plugin
+    url: connections/sources/catalog/libraries/mobile/apple/destination-plugins/1flow-swift/
+    logo:
+      url: https://cdn-devcenter.segment.com/85468e64-4f93-45a0-a30e-20886b933529.svg
+    mark:
+      url: https://cdn-devcenter.segment.com/a026bddd-e174-4f41-9e56-4eac99d5e825.svg
 ---
 Analytics Swift uses its timeline/plugin architecture to support sending data to bundled SDKs when a Cloud Mode connection is not possible. Destination Plugins are similar to traditional Device Mode integrations available in Analytics-iOS in that Segment makes calls directly to the destination tool’s API from the device. However, Destination Plugins are more customizable, giving you the ability to control and enrich your data at a much more granular level on the device itself. 
 
