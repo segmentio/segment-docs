@@ -4,6 +4,8 @@ strat: google
 hide-boilerplate: true
 hide-dossier: false
 id: 64f2434e5066280a0e7f1ab3
+hidden: true
+private: true
 versions:
   - name: "Google Tag for Campaign Manager"
     link: '/docs/connections/destinations/catalog/actions-google-analytics-4/'
