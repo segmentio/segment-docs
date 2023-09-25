@@ -19,7 +19,7 @@ When you have Segment installed and enable this destination, Segment takes care 
 ### Getting Started
 
 1. Before you connect Segment to Google Tag for Campaign Manager, ensure you have set up your Floodlight configurations in Campaign Manager.
-2. Navigate to the Segment web app, select Catalog, then click on Destinations.
+2. Navigate to the Segment web app, select Connections, then click on Destinations.
 3. Search for "Google Tag for Campaign Manager" in the Destinations Catalog and click on the destination.
 4. Choose "Configure Google Tag for Campaign Manager."
 5. Select the appropriate source that will forward data to Campaign Manager.
@@ -29,29 +29,30 @@ When you have Segment installed and enable this destination, Segment takes care 
     * Decide if you want to enable Conversion Linker which helps with first-party cookie tracking.
 7. Once done, Segment will begin forwarding the appropriate events and conversions to your Floodlight configurations.
 
----
 
-### 1. Sales Activity
+## Sales Activity
 
 Capture monetary conversion data like revenue, order quantity, and transaction ID.
 
-#### Configuration Fields:
+### Configuration Fields:
 
 - **activityGroupTagString**: Identifier for the Floodlight activity group.
 - **activityTagString**: Identifier for the Floodlight activity.
+- **enableDynamicTags**: Toggle for dynamic tags.
+- **countingMethod**: Conversion counting method (`transactions`, or `items_sold`).
 - **transactionId**: Unique transaction ID.
 - **revenue**: Total revenue of a transaction.
-- **quantity**: Quantity of items sold.
+- **quantity**: For `transactions` counting method, this is typically is set to 1, for `items_sold`, the quantity of items sold.
 - **uVariables**: Additional custom Floodlight variables.
 - **dcCustomParams**: Custom data for event snippets.
 
----
 
-### 2. Counter Activity
+
+## Counter Activity
 
 Track non-monetary conversion data such as unique users, conversions, and session length.
 
-#### Configuration Fields:
+### Configuration Fields:
 
 - **activityGroupTagString**: Identifier for the Floodlight activity group.
 - **activityTagString**: Identifier for the Floodlight activity.
