@@ -3,6 +3,7 @@ title: The Trade Desk CRM Destination
 hide-personas-partial: true
 hide-boilerplate: true
 hide-dossier: false
+beta: true
 id: 6440068936c4fb9f699b0645
 ---
 
