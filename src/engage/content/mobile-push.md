@@ -65,7 +65,7 @@ To personalize a mobile push, click **Add merge tags** in the template builder a
 Engage inserts the selected traits inside merge tags based on cursor placement in the message. This allows you to personalize each mobile push you send to recipients. You can also use [liquid templating](https://liquidjs.com/tags/if.html){:target="blank"} to create dynamic content in the template editor. 
 
 > info ""
-> To learn more about profile traits, visit Segment's [Computed Traits](/docs/engage/audiences/computed-traits/) and [SQL Traits](/docs/engage/audiences/sql-traits/) documentation.
+> To learn more about profile traits, visit Segment's [Computed Traits](/docs/unify/traits/computed-traits/) and [SQL Traits](/docs/unify/traits/sql-traits/) documentation.
 
 ## Next steps
 
