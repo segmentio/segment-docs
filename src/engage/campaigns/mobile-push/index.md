@@ -27,6 +27,9 @@ This section outlines the process for adding Segment's base SDK to your app, inc
 
 #### Kotlin
 
+> info ""
+> You must initialize your Analytics instance in the Application class, otherwise you may experience issues with customization and delivery confirmation.
+
 Follow these steps to integrate Analytics Kotlin:
 
 1. Create a source by navigating to **Connections > Sources > Add Source**.
