@@ -58,6 +58,7 @@ Follow these steps to test your mobile push:
 1. Choose a template to test:
     - For new templates, select **Test** once you've finished building a template. 
     - For existing templates, navigate to **Engage > Content > Push**, select the template you want to test, then click **Test**.
+    - Mobile push templates have a content size limit of 4KB.
 2. Choose a messaging service and add a recipient.
     - You can add recipients using an email address or user ID. 
 3. Click **Send test push**.
