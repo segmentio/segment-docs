@@ -247,13 +247,30 @@ With your server key copied, finish steps 5 and 6 in the Twilio documentation.
 
 ## 4. Configure mobile push in Engage
 
+Follow these steps to set up mobile push in Twilio Engage.
+
+### 4a. Set up Twilio credentials
+
 > success ""
-> If you've already configured SMS services for Twilio Engage, you can skip this step.
+> Follow the steps in 4a only if you're new to Twilio Engage Premier. If you've already [configured messaging services](/docs/engage/onboarding/#generate-an-api-key-and-select-your-messaging-services) as part of Twilio Engage Premier onboarding, you can skip to 4b.
 
-Follow these steps to set up mobile push in Twilio Engage and complete mobile push onboarding:
+1. In your Twilio console, select the **Account** dropdown menu, then **API keys & tokens**.
+2. On the Auth tokens & API keys page, click **Create API key**.
+3. Enter a name for the API key in the **Friendly name** field.
+4. Set the region to **United States (US1) - Default** and key type to **Main**.
+5. Click **Create API Key**.
+6. Copy and save both the **SID** and **Secret** field contents.
+7. Return to the API keys & tokens page. In the **Live credentials** section, copy the Account SID credentials.
+8. Return to your Segment workspace and navigate to **Engage > Engage settings > Channels**.  Under **SMS Service with Twilio**, click the **Get Started** button. The **Set up and validate your Twilio account** page appears.
+11. Under **Enter your Twilio API Key information**, paste the Account SID, API Key SID, and API Key Secret you copied above into their corresponding fields.
+12. Click **Verify**, then select the messaging services you want to use in your space.
+13. Click **Save Twilio Account.**
 
-1. Follow the steps in the [Create and configure Twilio SMS services documentation](/docs/engage/onboarding/#stage-3-create-and-configure-twilio-sms-services).
-2. Return to your Segment workspace and navigate to **Engage > Engage settings**.
+### 4b. Create a new push service
+
+Complete mobile push onboarding by creating a new push service:
+
+2. In your Segment workspace, navigate to **Engage > Engage settings**.
 3. Click the pencil icon next to **Messaging services**, then click **Create new push service**.
     - If you don't see the pencil icon, select **Create new push service**.
 4. Name the push service, select or create APN and FCM credentials, then click **Create Push Service**.
