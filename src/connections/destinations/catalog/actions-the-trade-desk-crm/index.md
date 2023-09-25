@@ -14,7 +14,7 @@ This integration will allow users to connect their Engage Audiences to The Trade
 
 The [Trade Desk](https://www.thetradedesk.com/us){:target="_blank"} destination can be connected to **Twilio Engage sources only**.
 
-## Getting Started
+## Getting started
 
 ### Credentials from The Trade Desk 
 
