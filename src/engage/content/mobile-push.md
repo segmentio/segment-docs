@@ -54,7 +54,7 @@ Follow these steps to test your mobile push:
     - You can add recipients using an email address or user ID. 
 3. Click **Send test push**.
 
-Segment verifies that the profile you're sending a test to has push tokens enabled, then sends the test. If the test mobile push doesn't work as expected, confirm that the profile you're sending to has enabled push tokens.
+Segment verifies that the profile you're sending a test to has a push token, then sends the test. If the test mobile push doesn't work as expected, confirm that the profile you're sending to has a push token.
 
 ## Personalize with merge tags
 
