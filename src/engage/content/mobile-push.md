@@ -3,21 +3,21 @@ title: Mobile Push Template
 plan: engage-premier
 ---
 
-Use Twilio Engage to build push notification templates to include throughout your marketing campaigns.
+Use Twilio Engage to build mobile push templates to include throughout your marketing campaigns.
 
-## Push notification template types
+## Mobile push template types
 
-You can choose between two push notification template types:
+You can choose between two mobile push template types:
 
 - **Media**, which contains media and text content
 - **Text**, which contains text content 
 
-## Build a push notification message template
+## Build a mobile push message template
 
 > info ""
-> To build push notification templates in Engage, first [configure Engage for push notifications](/docs/engage/campaigns/push-notifications/). 
+> To build mobile push templates in Engage, first [configure Engage for mobile](/docs/engage/campaigns/mobile-push/). 
 
-Follow these steps to build a push notification template:
+Follow these steps to build a mobile push template:
 
 1. Navigate to **Engage > Content** and click **Create template**.
 2. Select **Push**, then click **Configure**.
@@ -31,20 +31,20 @@ Follow these steps to build a push notification template:
 
 ### Click behaviors
 
-When you build a push notification template, you can choose between three click behaviors, which determine what happens when a user taps on the mobile push:
+When you build a mobile push template, you can choose between three click behaviors, which determine what happens when a user taps on the mobile push:
 
-| Behavior      | Description                                                                                                                                                                                                                                                                                                            |
-| ------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Open app      | Opens an app. You can specify a URL with or without merge tags to take the user to a specific screen with your app. If you don't enter a URL, this behavior will take the user to the app's home screen.                                                                                                               |
-| Open URL      | Opens the specified URL.                                                                                                                                                                                                                                                                                               |
-| Custom action | Takes any value as text input. Your app determines how to handle the value. For example, you could enter a custom action of `open_settings`, and then instruct your application to open the settings application when a user taps the notification and the notification arrives with `click behavior = open_settings`. |
+| Behavior      | Description                                                                                                                                                                                                                                                                                            |
+| ------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| Open app      | Opens an app. You can specify a URL with or without merge tags to take the user to a specific screen with your app. If you don't enter a URL, this behavior will take the user to the app's home screen.                                                                                               |
+| Open URL      | Opens the specified URL.                                                                                                                                                                                                                                                                               |
+| Custom action | Takes any value as text input. Your app determines how to handle the value. For example, you could enter a custom action of `open_settings`, and then instruct your application to open the settings application when a user taps the push and the push arrives with `click behavior = open_settings`. |
 
 ## Test your mobile push template
 
 > info "Push tokens"
-> Push tokens are unique identifiers Segment associates with each profile. For push notifications, you'll need to configure identity resolution settings for the push tokens `ios.push_token` and `android.push_token`. Using the Profile explorer, you can find a profile's push tokens by opening a profile and then selecting the Identities tab. You can only send push notifications to profiles with push tokens enabled.
+> Push tokens are unique identifiers Segment associates with each profile. For mobile push, you'll need to configure identity resolution settings for the push tokens `ios.push_token` and `android.push_token`. Using the Profile explorer, you can find a profile's push tokens by opening a profile and then selecting the Identities tab. You can only send mobile pushes to profiles with push tokens enabled.
 
-Follow these steps to test your push notification:
+Follow these steps to test your mobile push:
 
 
 1. Choose a template to test:
@@ -54,19 +54,19 @@ Follow these steps to test your push notification:
     - You can add recipients using an email address or user ID. 
 3. Click **Send test push**.
 
-Segment verifies that the the profile you're sending a test to has push tokens enabled, then sends the test. If the test push notification doesn't work as expected, confirm that the profile you're sending to has enabled push tokens.
+Segment verifies that the the profile you're sending a test to has push tokens enabled, then sends the test. If the test mobile push doesn't work as expected, confirm that the profile you're sending to has enabled push tokens.
 
 ## Personalize with merge tags
 
 Personalize mobile push content in Engage using profile traits as merge tags in your messages.
 
-To personalize a push notification, click **Add merge tags** in the template builder and select the profile traits to include in your message.
+To personalize a mobile push, click **Add merge tags** in the template builder and select the profile traits to include in your message.
 
-Engage inserts the selected traits inside merge tags based on cursor placement in the message. This allows you to personalize each push notification you send to recipients. You can also use [liquid templating](https://liquidjs.com/tags/if.html){:target="blank"} to create dynamic content in the template editor. 
+Engage inserts the selected traits inside merge tags based on cursor placement in the message. This allows you to personalize each mobile push you send to recipients. You can also use [liquid templating](https://liquidjs.com/tags/if.html){:target="blank"} to create dynamic content in the template editor. 
 
 > info ""
 > To learn more about profile traits, visit Segment's [Computed Traits](/docs/engage/audiences/computed-traits/) and [SQL Traits](/docs/engage/audiences/sql-traits/) documentation.
 
 ## Next steps
 
-Now that you've built a mobile push template, you're ready to begin [sending mobile push campaigns](/docs/engage/campaigns/push-notifications/push-campaigns/).
+Now that you've built a mobile push template, you're ready to begin [sending mobile push campaigns](/docs/engage/campaigns/mobile-push/push-campaigns/).

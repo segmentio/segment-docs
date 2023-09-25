@@ -1,5 +1,5 @@
 ---
-title: Push Notification Campaigns
+title: Mobile Push Campaigns
 plan: engage-premier
 ---
 
@@ -9,7 +9,7 @@ Some knowledge of the Journeys product will benefit you as you read through this
 
 ## How Engage campaigns work
 
-Twilio Engage uses Journeys to campaigns.  With Journeys, you add conditions and steps that trigger actions like sending an email, an SMS, or a push notification.
+Twilio Engage uses Journeys to campaigns.  With Journeys, you add conditions and steps that trigger actions like sending an email, an SMS, or a mobile push.
 
 You’ll build and then send your campaign in three stages:
 
@@ -51,9 +51,9 @@ Your mobile push campaign is now live. Users who trigger the mobile push step’
 ## Test your mobile push template
 
 > info "Push tokens"
-> Push tokens are unique identifiers Segment associates with each profile. For push notifications, you'll need to configure identity resolution settings for the push tokens `ios.push_token` and `android.push_token`. Using the Profile explorer, you can find a profile's push tokens by opening a profile and then selecting the Identities tab. You can only send push notifications to profiles with push tokens enabled.
+> Push tokens are unique identifiers Segment associates with each profile. For mobile push, you'll need to configure identity resolution settings for the push tokens `ios.push_token` and `android.push_token`. Using the Profile explorer, you can find a profile's push tokens by opening a profile and then selecting the Identities tab. You can only send mobile pushes to profiles with push tokens enabled.
 
-Follow these steps to test your push notification:
+Follow these steps to test your mobile push:
 
 1. Choose a template to test:
     - For new templates, select **Test** once you've finished building a template. 
@@ -62,4 +62,4 @@ Follow these steps to test your push notification:
     - You can add recipients using an email address or user ID. 
 3. Click **Send test push**.
 
-Segment verifies that the the profile you're sending a test to has push tokens enabled, then sends the test. If the test push notification doesn't work as expected, confirm that the profile you're sending to has enabled push tokens.
+Segment verifies that the the profile you're sending a test to has push tokens enabled, then sends the test. If the test push doesn't work as expected, confirm that the profile you're sending to has enabled push tokens.
