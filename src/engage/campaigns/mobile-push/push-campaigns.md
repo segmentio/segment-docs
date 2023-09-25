@@ -9,7 +9,7 @@ Some knowledge of the Journeys product will benefit you as you read through this
 
 ## How Engage campaigns work
 
-Twilio Engage uses Journeys to campaigns.  With Journeys, you add conditions and steps that trigger actions like sending an email, an SMS, or a mobile push.
+Twilio Engage uses Journeys to send campaigns.  With Journeys, you add conditions and steps that trigger actions like sending an email, an SMS, or a mobile push.
 
 You’ll build and then send your campaign in three stages:
 
@@ -23,7 +23,7 @@ Because Engage campaigns exist within Journeys, begin by creating a journey:
 
 1. In Engage, select **Journeys**, then click **New Journey**.
 2. Name your journey and select its entry settings.
-3. Click **Build Journey** to create the Journey.
+3. Click **Build Journey** to create the journey.
 
 ### Add a Journey condition
 
@@ -63,4 +63,4 @@ Follow these steps to test your mobile push:
     - You can add recipients using an email address or user ID. 
 3. Click **Send test push**.
 
-Segment verifies that the the profile you're sending a test to has push tokens enabled, then sends the test. If the test push doesn't work as expected, confirm that the profile you're sending to has enabled push tokens.
+Segment verifies that the profile you're sending a test to has push tokens enabled, then sends the test. If the test push doesn't work as expected, confirm that the profile you're sending to has enabled push tokens.
