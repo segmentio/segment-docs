@@ -36,7 +36,7 @@ The LiveRamp Audiences destination can be connected to **Twilio Engage sources o
 4. On the **Mappings** tab, click **Add Mapping** and choose whether your will be using S3 or SFTP to upload the files. Within the mapping, configure which fields from your payload will be included in the files.
 5. Enable the destination and configured mappings.
 6. On the **Engage > Audiences > (your audience)** page, click **Add Destination** and select the destination just created.
-7. Enable **Send Track**. Keep event names as they are.
+7. In the settings that appear in the side panel, toggle the Send Track option on and do not change the Audience Entered/Audience Exited event names. Click Save Settings
 8. File a [support case](https://docs.liveramp.com/connect/en/considerations-when-uploading-the-first-file-to-an-audience.html#creating-a-support-case){:target="_blank"} with the LiveRamp team to configure and enable ingestion.
 
 {% include components/actions-fields.html settings="false"%}
