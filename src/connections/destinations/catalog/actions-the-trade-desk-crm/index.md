@@ -54,7 +54,6 @@ To sync additional Audiences from your Engage space, create a separate mapping i
 
 {% include components/actions-fields.html settings="true"%}
 
-## Troubleshooting
 
 ### Limitations
 
@@ -63,5 +62,15 @@ To sync additional Audiences from your Engage space, create a separate mapping i
 2. Segment will do full audience syncs to The Trade Desk every 24 hours.
 
 3. The Trade Desk allows you to have multiple CRM Data Segments with the same name. If you are trying to sync to a Trade Desk Data Segment that is a duplicate, your Segment events will fail.
+
+### FAQs 
+
+1. **How does TTD handle emails that don't already exist?**
+
+The CRM endpoint maps email addresses into UID2s. If it's a valid email address, TTD will always generate a UID2 for it. However, if there are no bid requests coming in from the SSP with the specific UID2, then the ID would exist in the segment until it hits the TTL and won't be used when purchasing an impression. 
+
+2. **What PII format should I send?**
+
+We recommend transmitting personally identifiable information (PII) in its original, non-hashed format. TTD's preference is to handle the hashing of the data on their end. 
 
 
