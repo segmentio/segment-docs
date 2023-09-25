@@ -14,7 +14,7 @@ Pushwoosh maintains this destination. For any issues with the destination, [cont
 
 ## Getting started
 
-##### Pushwoosh SDK integration
+### Pushwoosh SDK integration
 
 - If you configured Segment to receive push tokens, you don't need to integrate the Pushwoosh SDK into your app.
 - If your Segment implementation doesn't receive push tokens, integrate the Pushwoosh SDK into your app before setting up the Pushwoosh integration.
