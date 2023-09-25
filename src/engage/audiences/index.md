@@ -227,7 +227,7 @@ Note the following limits for the CSV downloader:
 - You can only generate one CSV every five minutes. 
 
 > info ""
-> Generating a CSV can take a substantial amount of time for large audiences. For CSVs that are expected to take over 20 seconds, Segment displays an estimated generation time. After you generate the CSV file, leave the modal window open while Segment creates the file. (If the audience recalculates between when you click Generate and when you download the file, you might want to regenerate the file. The CSV is a snapshot from when you clicked Generate, and could be outdated.)
+> Generating a CSV can take a substantial amount of time for large audiences. After you generate the CSV file, leave the modal window open while Segment creates the file. (If the audience recalculates between when you click Generate and when you download the file, you might want to regenerate the file. The CSV is a snapshot from when you clicked Generate, and could be outdated.)
 
 ## Identifier Breakdown
 
