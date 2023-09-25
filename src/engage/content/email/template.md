@@ -71,7 +71,7 @@ You can also add merge tags in the heading or body text as you design an email w
 ### Use profile traits in the sender and reply to fields
 
 Personalize your email template by adding profile traits in the **From sender** and **Reply to email** fields. 
-
+ 
 For both fields, keep the following best practices in mind as you add profile traits.
 
 - To use merge tags, you must add a `default` value inside a single quote. For example: `{{profile.traits.traits | default: 'Default'}}`
