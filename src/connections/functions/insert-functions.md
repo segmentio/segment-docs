@@ -1,6 +1,5 @@
 ---
 title: Destination Insert Functions
-beta: true
  
 ---
 
