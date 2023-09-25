@@ -162,9 +162,18 @@ Google reserves certain event names, parameters, and user properties. Google sil
 - fields with `null` values
 - fields or events with reserved names
 - fields with a number as the key
+
+In addition, the following User Property names are [reserved](https://developers.google.com/analytics/devguides/collection/protocol/ga4/user-properties?client_type=gtag#reserved_names) and **cannot** be used in measurements:
+- `first_open_time`
+- `first_visit_time`
+- `last_deep_link_referrer`
+- `user_id`
+- `first_open_after_install`
+
  
 ### Verifying Event Meet GA4's Measurement Protocol API
 **Why are the events returning an error _Param [PARAM] has unsupported value._?**
+
 Google has some requirements/[limitations](https://developers.google.com/analytics/devguides/collection/protocol/ga4/sending-events?client_type=gtag#limitations){:target="_blank"} imposed by their [Measurement Protocol API](https://developers.google.com/analytics/devguides/collection/protocol/ga4/sending-events?client_type=gtag){:target="_blank"}. If an event contains `null`/`object`/`array` parameters, GA4 silently drops the event, so Segment does not attempt to send the event but instead returns an error of `Invalid Type` that can be found in the destination's Event Delivery tab. To verify whether an event will return this error, you can send an event to [GA4's debug endpoint](https://developers.google.com/analytics/devguides/collection/protocol/ga4/validating-events?client_type=gtag){:target="_blank"} with an API tool like [Postman](https://www.postman.com/){:target="_blank"}.
 
 ### Data takes a long time to appear in Google's reports
