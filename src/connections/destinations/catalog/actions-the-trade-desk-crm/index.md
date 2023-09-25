@@ -43,6 +43,12 @@ To sync additional Audiences from your Engage space, create a separate mapping i
 
 {% include components/actions-fields.html settings="true"%}
 
+## Public Beta instructions 
+
+* The Segment team will need to enable the feature for your Engage spaces.
+* Once you agree to join the public beta, Segment will enable all Engage spaces that are part of your Segment workspace.
+* New Engage spaces you create won't automatically be enrolled. Contact your Account Team/CSM to get these spaces enrolled.
+
 
 ### Limitations
 
