@@ -68,4 +68,4 @@ Engage inserts the selected traits inside merge tags based on cursor placement i
 
 ## Next steps
 
-Now that you've built a mobile push template, you're ready to begin [sending mobile push campaigns](/docs/engage/campaigns/mobile-push/push-campaigns/).
+Now that you've built a mobile push template, you're ready to begin [sending mobile push campaigns](/docs/engage/campaigns/mobile-push/push-campaigns/). 
