@@ -30,14 +30,14 @@ To set up ID Sync with [Audiences](/docs/engage/audiences/):
 
 To set up ID Sync with [Journeys](/docs/engage/journeys/): 
 
-As you're creating or editing a Journey in the [builder](/docs/engage/journeys/build-journey/), you can configure how you send identifiers with ID Sync from any of the [supported destinations](/docs/engage/trait-activation/trait-activation-setup/).
+As you're creating or editing a journey in the [builder](/docs/engage/journeys/build-journey/), you can configure how you send identifiers with ID Sync from any of the [supported destinations](/docs/engage/trait-activation/trait-activation-setup/).
 
-1. From a Journeys step, select the destination you're going to use with ID Sync. 
+1. From a journey step, select the destination you're going to use with ID Sync. 
 2. On the Connection Settings tab, select **Customized Setup**  and use the corresponding [steps below](#customized-setup) to customize which identifiers you want to map downstream to your destination. 
 
 ### Default setup 
 
-Default setup uses default Segment Destination behavior. To use the default settings, click **Save** and resume building your Audience or Journey. 
+Default setup uses default Segment Destination behavior. To use the default settings, click **Save** and resume building your audience or journey. 
 
 You can customize additional event settings at any time. 
 
@@ -51,7 +51,7 @@ With Customized setup, you can choose which identifiers you want to map downstre
 - *Facebook Custom Audiences* and *Google Ads Remarketing Lists* display a dropdown for you to choose available identifiers. 
 2. Add an ID strategy. 
 - This is a strategy for a particular identifier which sends either the `last added`, `first added`, or `all` identifiers to your destination.
-3. Click **Save**, then finish building your Audience or Journey.
+3. Click **Save**, then finish building your audience or journey.
 
 ## Limits and best practices
 

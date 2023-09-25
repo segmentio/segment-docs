@@ -36,14 +36,14 @@ To set up Trait Enrichment with [Audiences](/docs/engage/audiences/):
 
 To set up Trait Enrichment with [Journeys](/docs/engage/journeys/):
 
-As you're creating or editing your Journey in the [builder](/docs/engage/journeys/build-journey/), set up Trait Enrichment with any of the [supported destinations](/docs/engage/trait-activation/trait-activation-setup/).
+As you're creating or editing your journey in the [builder](/docs/engage/journeys/build-journey/), set up Trait Enrichment with any of the [supported destinations](/docs/engage/trait-activation/trait-activation-setup/).
 
-1. From a Journeys step, select the destination you're going to use with Trait Enrichment. 
+1. From a journeys step, select the destination you're going to use with Trait Enrichment. 
 2. On the Connection Settings tab, select **Customized Setup**  and use the corresponding [steps below](#customized-setup) to customize the way data is sent to your destination by creating identifier and trait mappings. 
 
 ### Default setup 
 
-Default setup uses default Segment Destination settings without Trait Enrichment. To use the default settings, select **Default Setup**, then click **Save** to resume building your Audience or Journey. 
+Default setup uses default Segment Destination settings without Trait Enrichment. To use the default settings, select **Default Setup**, then click **Save** to resume building your audience or journey. 
 
 You can customize event settings at any time. 
 
@@ -55,7 +55,7 @@ With Customized setup, you can choose which traits you want to map to your desti
 2. Select all traits you want to sync to your destination, and click **Save**. 
 - Use the **Segment** column to select traits from the Segment Spec. 
 - Use the **Destination** column to select which traits you want to map to in your destination. By default, Segment attempts to find traits with matching names.
-3. Click **Save** and finish building your Audience or Journey.
+3. Click **Save** and finish building your audience or journey.
 
 > info ""
 > Segment sends traits you select for enrichment in the traits object in Identify calls, and as properties in the properties object in Track calls.

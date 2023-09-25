@@ -40,7 +40,7 @@ Use Trait Enrichment and ID Sync to configure sync payloads that you send from J
 
 To use Trait Activation with Journeys:
 1. Navigate to the Journeys builder of a new or existing Journey. 
-2. Select [a supported](/docs/engage/trait-activation/trait-activation-setup/#set-up-a-destination) destination from a Journeys step.
+2. Select [a supported](/docs/engage/trait-activation/trait-activation-setup/#set-up-a-destination) destination from a journey step.
 3. Select **Customized Setup**, then add identifier and trait mappings to customize the way you send data to your destination. For more, visit the [Trait Enrichment](/docs/engage/trait-activation/trait-enrichment/#customized-setup/) and [ID Sync](/docs/engage/trait-activation/id-sync/#customized-setup/) setup docs.
 
 
