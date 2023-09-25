@@ -64,7 +64,7 @@ Follow these steps to integrate the React Native library:
 
 1. Create a source by navigating to **Connections > Sources > Add Source**.
 2. Search for **React Native**, then click **Add source**.
-3. Use yarn or npm to install `@segment/analytics-react-native`, `@segment/sovran-react-native` and `react-native-get-random-values`.
+3. Use yarn or npm to install `@segment/analytics-react-native`, `@segment/sovran-react-native`, and `react-native-get-random-values`.
 4. Initialize and configure the Analytics React Native client.
 
 For detailed instructions on integrating Analytics for React Native, follow the steps in the [Analytics for React Native getting started section](/docs/connections/sources/catalog/libraries/mobile/react-native#getting-started). 
