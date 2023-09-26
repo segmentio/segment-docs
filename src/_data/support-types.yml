@@ -1,0 +1,10 @@
+types:
+  - display_name: Community
+    slug: community
+    support-note: "This integration is supported by the community members who maintain it."
+  - display_name: Legacy
+    slug: legacy
+    support-note: "This integration is no longer supported by Segment."
+  - display_name: Flagship
+    slug: flagship
+    support-note: "This integration is officially supported by Segment."
