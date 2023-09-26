@@ -40,7 +40,7 @@ Generate a [long-lived token](https://partner.thetradedesk.com/v3/portal/api/doc
 
 Setup is now complete, and the audience starts syncing to The Trade Desk.
 
-For syncing additional Audiences from your Engage space, create a separate instance of The Trade Desk CRM Destination.
+To sync additional Audiences from your Engage space, create a separate instance of The Trade Desk CRM Destination.
 
 {% include components/actions-fields.html settings="true"%}
 
