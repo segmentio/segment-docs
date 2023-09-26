@@ -14,7 +14,7 @@ Use Trait Enrichment to access Segment profile traits when you sync Audiences an
 > - For Facebook Custom Audiences and Google Adwords, use [set up Trait Enrichment](#set-up-trait-enrichment). 
 > - If you're using SendGrid, Braze, or Salesforce Actions, use the [Destination Actions setup steps](#destination-actions-setup). 
 
-
+ 
 ## Set up Trait Enrichment
 
 Use the following steps to set up Trait Enrichment with Audiences or Journeys.
