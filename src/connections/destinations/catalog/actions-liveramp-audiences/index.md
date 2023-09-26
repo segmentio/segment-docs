@@ -3,6 +3,7 @@ title: LiveRamp Audiences Destination
 hide-boilerplate: true
 hide-dossier: false
 id: 644ad6c6c4a87a3290450602
+beta: true
 ---
 
 [LiveRamp](https://liveramp.com/){:target="_blank"} gives companies and their partners the power to connect, control, and activate data to transform customer experiences and generate more valuable business outcomes. Segment's integration with LiveRamp lets you push user audiences created in [Twilio Engage](https://www.twilio.com/en-us/engage){:target="_blank"} into your LiveRamp account to execute various marketing use cases.
@@ -35,7 +36,7 @@ The LiveRamp Audiences destination can be connected to **Twilio Engage sources o
 4. On the **Mappings** tab, click **Add Mapping** and choose whether your will be using S3 or SFTP to upload the files. Within the mapping, configure which fields from your payload will be included in the files.
 5. Enable the destination and configured mappings.
 6. On the **Engage > Audiences > (your audience)** page, click **Add Destination** and select the destination just created.
-7. Disable **Send Identify** and Enable **Send Track**. Keep event names as they are.
+7. In the settings that appear in the side panel, toggle the Send Track option on and do not change the Audience Entered/Audience Exited event names. Click Save Settings
 8. File a [support case](https://docs.liveramp.com/connect/en/considerations-when-uploading-the-first-file-to-an-audience.html#creating-a-support-case){:target="_blank"} with the LiveRamp team to configure and enable ingestion.
 
 {% include components/actions-fields.html settings="false"%}
@@ -44,7 +45,7 @@ The LiveRamp Audiences destination can be connected to **Twilio Engage sources o
 
 * The Segment team will need to enable the feature for your Engage spaces.
 * Once you agree to join the public beta, Segment will enable all Engage spaces that are part of your Segment workspace.
-* New Engage spaces you create won't automatically be enrolled. [Contact Segment](https://segment.com/help/contact/){:target="_blank"} to get these spaces enrolled.
+* New Engage spaces you create won't automatically be enrolled. Contact your Account Team/CSM to get these spaces enrolled.
 
 ## Limitations 
 
