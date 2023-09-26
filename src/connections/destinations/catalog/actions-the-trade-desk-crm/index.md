@@ -67,4 +67,4 @@ The CRM endpoint maps email addresses into UID2s. If it's a valid email address,
 
 3. **What PII format should I send?**
 
-Segment recommends transmitting personally identifiable information (PII) in its original, non-hashed format. TTD's preference is to handle the hashing of the data on their end.
+The Trade Desk recommends transmitting personally identifiable information (PII) in its original, non-hashed format. TTD's preference is to handle the hashing of the data on their end.
