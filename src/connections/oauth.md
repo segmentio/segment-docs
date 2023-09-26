@@ -12,12 +12,12 @@ Depending on your workspace permissions, your access to OAuth apps is limited.
 
 Segment Role | Permission
 ------------ | -----------
-Workspace Owner | You can view/create/edit **Workspace Settings>Access Management>OAuth application**.
-Workspace Member | You cannot view/create/edit **Workspace Settings > Access Management > OAuth app**.
-Source Admin | You can view/edit **Source> Settings > OAuth app**. <br> You can connect/disconnect OAuth application. <br> You can enable/disable OAuth enforcement.
-Source Read-only | You can only view **Source > Settings > OAuth app**.
-Function Admin | You can view/edit **Source Function Instance > Settings > OAuth app**. <br>You can connect/disconnect OAuth application. <br>You can enable/disable OAuth enforcement.
-Function Read-only | You can only view **Source Function Instance > Settings > OAuth application**.
+Workspace Owner | You can view, create, and edit OAuth apps.
+Workspace Member | You cannot view, create, or edit OAuth apps.
+Source Admin | You can view and edit OAuth apps. <br> You can connect and disconnect OAuth apps. <br> You can enable or disable OAuth enforcement.
+Source Read-only | You can only view OAuth apps.
+Function Admin | You can view and edit OAuth apps. <br>You can connect and disconnect OAuth apps. <br>You can enable and disable OAuth enforcement.
+Function Read-only | You can only view OAuth apps.
 
 ## Create an OAuth app
 
@@ -44,8 +44,10 @@ To create a new OAuth application:
     Public key | Upload a public key in PEM format to authenticate through the OAuth application. You can upload a second public key after you create the OAuth application. 
     Public key name | Enter a name for your public key. 
     Token expiration period | You can choose between: 1 day, 2 days, 3 days, 1 week, 2 weeks, 3 weeks, 30 days.
-    Scope | This specifies what type of access is needed for each API. For pilot, Segment offers these 2 scopes: <br><li>Tracking API <br><li><li> `tracking_api:write` <br><li>Public API <br><li><li>`public_api:read_write`
+    Scope | This specifies what type of access is needed for each API. See the list of [supported scopes](#supported-scopes).
 6. Click **Create**. 
+
+Once you create your OAuth app, you can now connect a source to your OAuth app. 
 
 ## Connect a source to OAuth
 > info ""
@@ -109,3 +111,22 @@ To remove a token:
 3. Select the **App name** with the token you want to delete. 
 4. Enter the complete token
 5. Click **Revoke token**.
+
+## Supported sources
+OAuth 2.0 currently supports these sources:
+* [HTTP Tracking API](/docs/connections/sources/catalog/libraries/server/http-api/)
+* [Node.js](/docs/connections/sources/catalog/libraries/server/node/)
+* [Python](/docs/connections/sources/catalog/libraries/server/python/)
+* [Source Functions](/docs/connections/functions/source-functions/)
+
+## Supported scopes 
+OAuth 2.0 currently supports these scopes:
+
+**Tracking API scopes**
+   * `tracking_api:write`
+
+**Source Functions scopes**
+   * `functions:write`
+
+**Public API scopes**
+   * `public_api:read_write`

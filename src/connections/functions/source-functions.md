@@ -385,6 +385,9 @@ Once configured, find the webhook URL - either on the **Overview** or **Settings
 
 Copy and paste this URL into the upstream tool or service to send data to this source.
 
+## OAuth 2.0
+You can authenticate source functins with [OAuth 2.0](/docs/connections/oauth/#supported-sources).
+
 ## Source function FAQs
 
 ##### What is the retry policy for a webhook payload?
