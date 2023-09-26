@@ -41,7 +41,7 @@ Before you can configure consent in Segment, take the following steps:
 5. Once you've finished setting up your category or categories, click **Save**.
 
 > warning "Segment recommends mapping all destinations to a category"
-> Segment assumes all destinations without a mapping do not require user consent and will receive all events containing a consent object. If a destination is mapped to multiple categories, a user must consent to all categories to for data to flow to the destination.
+> Segment assumes all destinations without a mapping do not require user consent and will receive all events containing a consent object. If a destination is mapped to multiple categories, a user must consent to all categories for data to flow to the destination.
 
 ## Step 2: Integrating your CMP with Segment
 
