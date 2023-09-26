@@ -7,17 +7,18 @@ beta: true
 id: 6440068936c4fb9f699b0645
 ---
 
-[The Trade Desk](https://www.thetradedesk.com/us){:target="_blank"} empowers companies and their partners to leverage data in their expansive data marketplace, facilitating seamless discovery, creation, and engagement with valuable audiences. Segment's integration with [The Trade Desk](https://www.thetradedesk.com/us){:target="_blank"} allows you to push first-party user data from audiences created in [Twilio Engage](https://www.twilio.com/en-us/engage){:target="_blank"} to The Trade Desk platform, enhancing targeted reach to brand's first-party audiences.
+[The Trade Desk](https://www.thetradedesk.com/us){:target="_blank"} empowers companies and their partners to leverage data in their expansive data marketplace, facilitating seamless discovery, creation, and engagement with valuable audiences. Segment's integration with The Trade Desk allows you to push first-party user data from audiences created in [Twilio Engage](https://www.twilio.com/en-us/engage){:target="_blank"} to The Trade Desk platform, enhancing targeted reach to brand's first-party audiences.
 
 This integration enables users to effortlessly link their Engage Audiences to The Trade Desk and transmit Personally Identifiable Information (PII), including email addresses and hashed emails. Users have the flexibility to configure their delivery preferences within Segment.
 
-Please note that the [Trade Desk](https://www.thetradedesk.com/us){:target="_blank"} destination can only be connected to **Twilio Engage sources**.
+> info ""
+> The Trade Desk destination can only be connected to Twilio Engage sources.
 
 ## Getting Started
 
 ### Obtaining Credentials from The Trade Desk
 
-> **Note**: 
+> info "" 
 > Before activating audiences on The Trade Desk, contact your The Trade Desk account manager to sign the UID POC contract. Following this, The Trade Desk will grant permission and share your advertiser ID and secret key for configuring your destination.
 
 Generate a [long-lived token](https://partner.thetradedesk.com/v3/portal/api/doc/Authentication#ui-method-create){:target="_blank"} on [The Trade Desk's Developer Portal](https://api.thetradedesk.com/v3/tokens){:target="_blank"}.
@@ -37,7 +38,7 @@ Generate a [long-lived token](https://partner.thetradedesk.com/v3/portal/api/doc
 9. Return to **Engage > Audiences** and select the Audience from Step 1.
 10. Click **Add Destinations** and choose The Trade Desk CRM destination you just created. In the settings that appear in the side panel, enable the **Send Track** option and **do not** alter the Audience Entered/Audience Exited event names. If you missed providing the Segment Name and Region in step 8, please complete the Audience Settings, specifically the region field, with the geographical region of the CRM data segment based on the origin of the PII. Please note that the Public Beta only supports `US`. Click **Save Settings**.
 
-Setup is now complete, and the audience will start syncing to The Trade Desk.
+Setup is now complete, and the audience starts syncing to The Trade Desk.
 
 For syncing additional Audiences from your Engage space, create a separate instance of The Trade Desk CRM Destination.
 
@@ -45,26 +46,26 @@ For syncing additional Audiences from your Engage space, create a separate insta
 
 ## Public Beta Instructions
 
-* The Segment team will need to enable the feature for your Engage spaces.
-* Once you agree to join the public beta, Segment will enable all Engage spaces that are part of your Segment workspace.
+* The Segment team needs to enable the feature for your Engage spaces.
+* Once you agree to join the public beta, Segment enables all Engage spaces that are part of your Segment workspace.
 * New Engage spaces you create won't be automatically enrolled. Contact your Account Team/CSM to get these spaces enrolled.
 
 ## Limitations
 
-* An audience must have at least 1500 unique members; otherwise, the destination will fail, and the data will not be synced.
+* An audience must have at least 1500 unique members; otherwise, the destination fails, and the data won't sync.
 * Audience sync occurs once per day.
 * Audience sync is a full sync.
 
 ## FAQs
 
-1. **How is the CRM Segment Created?**
+#### How is the CRM Segment Created?
 
-When connecting your audience from your Engage source to an enabled TTD destination, there's no need to manually create CRM Segments. Segment will automatically generate a CRM Segment in your TTD account, mirroring the name of the audience linked to the TTD instance.
+When connecting your audience from your Engage source to an enabled TTD destination, there's no need to manually create CRM Segments. Segment automatically generates a CRM Segment in your TTD account, mirroring the name of the audience linked to the TTD instance.
 
-2. **How does TTD handle emails that don't already exist?**
+#### How does TTD handle emails that don't already exist?
 
-The CRM endpoint maps email addresses into UID2s. If it's a valid email address, TTD will always generate a UID2 for it. However, if there are no bid requests coming in from the SSP with the specific UID2, then the ID would exist in the segment until it hits the TTL and won't be used when purchasing an impression.
+The CRM endpoint maps email addresses into UID2s. If it's a valid email address, TTD generates a UID2 for it. However, if there are no bid requests coming in from the SSP with the specific UID2, then the ID would exist in the segment until it hits the TTL and won't be used when purchasing an impression.
 
-3. **What PII format should I send?**
+#### What PII format should I send?
 
 The Trade Desk recommends transmitting personally identifiable information (PII) in its original, non-hashed format. TTD's preference is to handle the hashing of the data on their end.
