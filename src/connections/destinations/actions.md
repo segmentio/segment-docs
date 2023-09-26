@@ -194,7 +194,7 @@ When you send an event with an actions destination Event Tester that doesn't mat
 If no mappings are enabled to trigger on an event that has been received from the connected source, the destination will not send any events. Ensure that at least one mapping has been configured and enabled in the destination mappings for an event that you would like to reach downstream. 
 
 > info ""
-> Events without mappings enabled to handle them can show as being discarded due to "No matching mapping" in a destination's Delivery Overview.
+> Events without mappings enabled to handle them display as being discarded due to "No matching mapping" in a destination's Delivery Overview.
 
 ### Multiple mappings triggered by the same event
 
