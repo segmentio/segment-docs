@@ -424,21 +424,6 @@ sections:
       title: Understand Journeys Logic
     - path: '/engage/journeys/key-terms'
       title: Journeys Glossary
-  - section_title: Content
-    description: "Design brand-specific templates for your email and SMS campaigns."
-    section:
-    - path: '/engage/content/email/template'
-      title: Email Template
-    - path: '/engage/content/email/editor'
-      title: Drag and Drop Editor
-    - path: '/engage/content/email/html-editor'
-      title: HTML Editor
-    - path: '/engage/content/sms/template'
-      title: SMS Template
-    - path: '/engage/content/whatsapp'
-      title: WhatsApp Template
-    - path: '/engage/content/mobile-push'
-      title: Mobile Push Template
   - section_title: Campaigns
     description: "Create multi-channel campaigns to get the right message to your users."
     section:
