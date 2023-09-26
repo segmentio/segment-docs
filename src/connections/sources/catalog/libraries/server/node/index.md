@@ -1,7 +1,6 @@
 ---
 title: Analytics for Node.js
 redirect_from: '/connections/sources/catalog/libraries/server/node-js/'
-repo: analytics-next
 strat: node-js
 ---
 

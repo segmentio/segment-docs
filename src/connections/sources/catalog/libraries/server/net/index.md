@@ -1,6 +1,5 @@
 ---
 title: Analytics for .NET
-repo: analytics.NET
 id: 8HWbgPTt3k
 tags:
   - C#

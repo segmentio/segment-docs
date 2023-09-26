@@ -1,6 +1,5 @@
 ---
 title: Analytics for PHP
-repo: analytics-php
 id: TDO70If4mD
 ---
 Segment's PHP library lets you record analytics data from your PHP code. The requests hit Segment's servers, and then

@@ -2,7 +2,6 @@
 title: Analytics for Go
 sourceTitle: 'Go'
 sourceCategory: 'Server'
-repo: analytics-go
 id: yBvi77aEwr
 ---
 Our Go library lets you record analytics data from your Go code. The requests hit our servers, and then we route your data to any analytics service you enable on your destinations page.
