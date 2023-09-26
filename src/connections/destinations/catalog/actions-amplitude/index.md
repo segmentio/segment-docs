@@ -216,7 +216,15 @@ Keep the following in mind if you plan to move to Amplitude (Actions) from a cla
 You configure the Amplitude (Actions) destination through Filters and Actions. Consult the table below for information about configuring your Amplitude (Actions) destination similarly to your classic Amplitude destination.
 
 > info ""
-> Contact Segment support if you find features missing from the Amplitude (Actions) destination that were available in the classic Amplitude destination.
+> Contact Segment support if you find features missing from the Amplitude (Actions) destination that were available in the classic Amplitude destination. 
+
+### Set Once/Set Always fields
+
+Amplitude restricts the mixing of top-level user properties with $set, $setOnce, or $setAlways operations in a single request, [as outlined in Amplitude’s documentation](https://www.docs.developers.amplitude.com/analytics/apis/identify-api/#user_properties-supported-operations). 
+
+To circumvent this within Segment, users can opt to exclusively map event parameters to either the User Properties field or to one of the user property operations (Set Once and/or Set Always) available in mappings, avoiding mixing them in the same request. Specifically, if you are utilizing Set Once and/or Set Always fields, include all relevant fields in their respective mappings and do not configure mappings for User Properties in the same request.
+
+Conversely, to send top-level user properties, map only to the User Properties field and exclude mappings for Set Once and Set Always fields. 
 
 {% include components/actions-map-table.html name="amplitude" %}
 
