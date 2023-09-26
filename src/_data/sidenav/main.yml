@@ -410,6 +410,8 @@ sections:
       title: 'Build a Journey'
     - path: '/engage/journeys/step-types'
       title: 'Journey Step Types'
+    - path: '/engage/journeys/journeys-edits'
+      title: 'Journey Edits and Versioning'
     - path: '/engage/journeys/send-data'
       title: Send Data to Destinations
     - path: '/engage/journeys/journeys-analytics'
