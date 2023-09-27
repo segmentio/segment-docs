@@ -58,7 +58,7 @@ The GA4 SDK also tracks a native `page_view` event if you have the [following se
 
 Google Analytics 4 does not accept custom event names that include spaces. Segment replaces spaces in the Event Name in the Custom Event action with an underscore. As a result, you will see custom events snake cased in Google Analytics 4.
 
-Google Analytics 4 is also case sensitive. If you would like all event names to be lowercase, use the `Lowercase Event Name` setting in the Custom Event action. If this setting is disabled, Google will treat event names with different casing as distinct events. For more information, see [Google Analytics 4 Event name rules](https://support.google.com/analytics/answer/13316687?hl=en&ref_topic=13367860&sjid=2167389739796023681-NA#zippy=%2Cweb){:target="_blank"}.
+Event names are case-sensitive in GA4. This means that "my_event" and "My_Event" will be treated as two separate events. If you would like the event name to be lowercase, choose `Yes` in the dropdown for the `Lowercase Event Name` setting in your Custom Event mapping. If this setting is set to `false`, Google will treat event names with different casing as distinct events. For more information, see [Google Analytics 4 Event name rules](https://support.google.com/analytics/answer/13316687?hl=en&ref_topic=13367860&sjid=2167389739796023681-NA#zippy=%2Cweb){:target="_blank"}.
 
 ### Custom Dimensions and Metrics
 
