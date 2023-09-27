@@ -25,7 +25,7 @@ As you set up Databricks, keep the following key terms in mind.
 
 1. **Databricks Workspace URL**: The base URL for your Databricks workspace.
 2. **Target Unity Catalog**: The catalog where Segment lands your data.
-
+ 
 ## Set up Databricks with Azure
 
 Use the following eight steps to setup your Databricks destination with Azure.
