@@ -14,8 +14,8 @@ This page will help you connect the Databricks Destination with Azure.
  
 Please note the following pre-requisites for setup.
 
-1. The target Databricks workspace must be Unity Catalog enabled. Segment doesn't support the Hive megastore. Visit the Databricks guide for [enabling Unity Catalog](https://learn.microsoft.com/en-us/azure/databricks/data-governance/unity-catalog/enable-workspaces){:target="_blank"} for more info.
-2. The user completing setup needs the following permissions:
+1. Your Databricks workspace must be Unity Catalog enabled. Segment doesn't support the Hive metastore. Visit the Databricks guide for [enabling Unity Catalog](https://learn.microsoft.com/en-us/azure/databricks/data-governance/unity-catalog/enable-workspaces){:target="_blank"} for more info.
+2. You'll need the following permissions for setup:
 - **Azure**: Ability to create service principals, as well as create and manage the destination storage container and its associated role assignments.
 - **Databricks**: Admin access to the account and workspace level.
 
@@ -23,8 +23,8 @@ Please note the following pre-requisites for setup.
 
 As you set up Databricks, keep the following key terms in mind. 
 
-1. **Databricks Workspace URL**: The base URL for your Databricks workspace.
-2. **Target Unity Catalog**: The catalog where Segment lands your data.
+- **Databricks Workspace URL**: The base URL for your Databricks workspace.
+- **Target Unity Catalog**: The catalog where Segment lands your data.
  
 ## Set up Databricks with Azure
 
@@ -38,7 +38,7 @@ Check your browser's address bar when in your workspace. The workspace URL will 
 
 ### Step 2: Add the Segment Storage Destinations service principal to your Entra ID (Active Directory) 
 
-The service principal is used by Segment to access your Databricks workspace APIs as well as your ADLS Gen2 storage container. You can use either Azure PowerShell or the Azure CLI. 
+Segment uses the service principal to access your Databricks workspace APIs as well as your ADLS Gen2 storage container. You can use either Azure PowerShell or the Azure CLI. 
 
 1. **Recommended**: Azure PowerShell
     1. Log in to the Azure console with a user allowed to add new service principals.
@@ -84,15 +84,15 @@ This step allows Segment to access your workspace.
 
 ### Step 5: Enable entitlements for the service principal on the workspace 
 
-This step allows the Segment service principal to create and use a small SQL warehouse to create and update table schemas in the Unity Catalog.
+This step allows the Segment service principal to create a small SQL warehouse for creating and updating table schemas in the Unity Catalog.
 
 1. Follow the [managing workspace entitlements](https://learn.microsoft.com/en-us/azure/databricks/administration-guide/users-groups/service-principals#--manage-workspace-entitlements-for-a-service-principal){:target="_blank"} instructions for a service principal. Segment requires `Allow cluster creation` and `Databricks SQL access` entitlements.
 
 ### Step 6: Create an external location and storage credentials 
 
-This step creates the storage location where Segment lands your Delta lake and the associated credentials Segment uses to access the storage. 
+This step creates the storage location where Segment lands your delta lake and the associated credentials Segment uses to access the storage. 
 1. Follow the Databricks guide for [managing external locations and storage credentials](https://learn.microsoft.com/en-us/azure/databricks/data-governance/unity-catalog/manage-external-locations-and-credentials){:target="_blank"}. 
-- Use the storage container that you updated in step 3.
+- Use the storage container you updated in step 3.
 - For storage credentials, you can use a service principal or managed identity.
 2. Once you create the external location and storage credentials in your Databricks workspace, update the permissions to allow access to the Segment service principal. 
 - In your workspace, navigate to **Data > External Data > Storage Credientials**. Click the name of the credentials created above and go to the Permissions tab. Click **Grant**, then select the Segment service principal from the drop down. Select the following checkboxes:
