@@ -8,7 +8,7 @@ Use the Databricks destination to ingest event data from Segment into the bronze
 This page will help you connect the Databricks Destination with Azure. 
 
 ## Prerequisites
-
+ 
 Please note the following pre-requisites for setup.
 
 1. The target Databricks workspace must be Unity Catalog enabled. Segment doesn't support the Hive megastore. Visit the Databricks guide for [enabling Unity Catalog](https://learn.microsoft.com/en-us/azure/databricks/data-governance/unity-catalog/enable-workspaces){:target="_blank"} for more info.
