@@ -1,7 +1,6 @@
 ---
 title: Mobile Push Campaigns
 plan: engage-premier
-hidden: true
 ---
 
 With Twilio Engage, you can send campaigns to users who have opted in to receive your marketing materials. On this page, you’ll learn how to create and send a mobile push campaign.

@@ -437,6 +437,8 @@ sections:
       title: SMS Template
     - path: '/engage/content/whatsapp'
       title: WhatsApp Template
+    - path: '/engage/content/mobile-push'
+      title: Mobile Push Template
   - section_title: Campaigns
     description: "Create multi-channel campaigns to get the right message to your users."
     section:
@@ -450,6 +452,13 @@ sections:
       title: Broadcasts
     - path: '/engage/campaigns/whatsapp-campaigns'
       title: WhatsApp Campaigns
+    - section_title: Mobile Push
+      slug: /engage/campaigns/mobile-push
+      section:
+      - path: /engage/campaigns/mobile-push
+        title: Mobile Push Onboarding
+      - path: /engage/campaigns/mobile-push/push-campaigns
+        title: Mobile Push Campaigns
   - section_title: Trait Activation
     slug: engage/trait-activation
     section:
