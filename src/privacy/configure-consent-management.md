@@ -52,12 +52,16 @@ Once you've created consent categories in the Segment app, you need to integrate
 Segment provides a OneTrust wrapper for the following sources:
 - **Analytics.js**: Please follow the instructions from the README in the [@segment/analytics-consent-wrapper-onetrust repository](https://github.com/segmentio/analytics-next/tree/master/packages/consent/consent-wrapper-onetrust){:target="_blank"}.
 - **Kotlin**: Please follow the instructions from the README in the [@segment-integrations/analytics-kotlin-consent](https://github.com/segment-integrations/analytics-kotlin-consent/blob/main/README.md#getting-started){:target="_blank"} repository.
-- **Swift**: Please follow the instructions from the README in the [@repository](){:target="_blank"}. <!--- TODO: Replace this with the real instructions when I have them -->
+<!--- will not be released alongside the other two libraries, commenting out for now. - **Swift**: Please follow the instructions from the README in the [@repository](){:target="_blank"}.-->
 
 If you'd like to integrate with any other CMP, Segment requires you to build your own wrapper or use any mechanism provided it meets the above requirements of data and event generation.
 
+> warning "Consent Management is not backwards compatible with Segment's legacy Android library"
+> If you are using one Segment's legacy Android library, you will need to upgrade to [Kotlin](/docs/connections/sources/catalog/libraries/mobile/kotlin-android/migration/) before using Consent Management.
+
+<!--- 
 > warning "Consent Management is not backwards compatible with Segment's legacy iOS and Android libraries"
-> If you are using one of Segment's legacy mobile libraries (iOS or Android,) you will need to upgrade to [Swift](/docs/connections/sources/catalog/libraries/mobile/apple/migration/) or [Kotlin](/docs/connections/sources/catalog/libraries/mobile/kotlin-android/migration/) before using Consent Management. 
+> If you are using one of Segment's legacy mobile libraries (iOS or Android,) you will need to upgrade to [Swift](/docs/connections/sources/catalog/libraries/mobile/apple/migration/) or [Kotlin](/docs/connections/sources/catalog/libraries/mobile/kotlin-android/migration/) before using Consent Management. --->
 
 ## Edit consent categories
 
