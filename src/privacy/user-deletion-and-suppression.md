@@ -124,27 +124,8 @@ To change your data retention settings, navigate to **Privacy > Settings > Data 
 
 ### Workspace Default Archive Retention Period
 
-Select the default retention period for the workspace in this setting. This value applies to all sources in the workspace, unless overridden in the [Source-Level Archive Retention Periods](#source-level-archive-retention-periods) setting.
-
-You can select from the following Archive Retention time periods:
-
-- 7 days
-- 30 days
-- 90 days
-- 180 days
-- 365 days
-- Unlimited (**default**)
+Select the default retention period for the workspace here. This value applies to all sources in the workspace, unless overridden.
 
 ### Source-Level Archive Retention Periods
 
 Override the workspace default retention period on a per-source level.
-
-You can select from the following Archive Retention time periods:
-
-- Default (This is the default value you set in the [Workspace Default Archive Retention Period](#workspace-default-archive-retention-period))
-- 7 days
-- 30 days
-- 90 days
-- 180 days
-- 365 days
-- Unlimited
