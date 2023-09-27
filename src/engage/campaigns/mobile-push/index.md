@@ -1,7 +1,6 @@
 ---
 title: Mobile Push Onboarding
 plan: engage-premier
-hidden: true
 ---
 
 This page walks you through the process of setting up mobile push notifications using Segment, Twilio, and Firebase/Apple Developer.
