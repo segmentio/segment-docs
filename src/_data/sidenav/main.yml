@@ -235,6 +235,13 @@ sections:
         title: Data Lakes Sync History and Health
       - path: /connections/storage/data-lakes/comparison
         title: Data Lakes vs. Warehouses
+    - section_title: Databricks Delta Lake Destination
+      slug: connections/storage/databricks-delta-lake-destination
+      section: 
+      - path: /connections/storage/databricks-delta-lake/databricks-delta-lake-aws
+        title: Databricks Delta Lake Destination (AWS)
+      - path: /connections/storage/databricks-delta-lake/databricks-delta-lake-azure
+        title: Databricks Delta Lake Destination (Azure)
     - section_title: Data Warehouses
       slug: connections/storage/warehouses
       section:
