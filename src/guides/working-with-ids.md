@@ -23,7 +23,7 @@ The following table describes the purposes of these two IDs, as well as `groupId
 | Identifier    | Purpose                                                                                                                                                                                                            |
 | ------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | `anonymousId` | `anonymousId` tracks user activity in CDPs and beyond. It lets you attach an identifier to an anonymous user and helps you ensure that all data is captured before Segment identifies the user through a `userId`. |
-| `userId`      | The second piece to the puzzle of understanding your users. `userId` comes into play once Segment has identified a user, which usually occurs through a form of authentication, like a login.                      |
+| `userId`      | `userId` comes into play once Segment has identified a user, which usually occurs through a form of authentication, like a login.                      |
 | `groupId`     | `groupId` lets you capture B2B relationships between individual users and groups they may represent, serving as an identifier for these groups.                                                                    |
 
 ### Identifier generation
