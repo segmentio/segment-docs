@@ -100,6 +100,14 @@ There are several different ways to ensure that you can collect your data once, 
 
 If you're seeing errors thrown by your destinations, you might have an implementation issue. See the [Integration Error Codes list](/docs/connections/integration_error_codes/) or [contact our Success engineering team](https://segment.com/help/contact/) for help.
 
-
 > success ""
 > Have suggestions for things to add to this guide? [Drop us a line](mailto:docs-feedback@segment.com?subject=Segment%20Dev%20guide%20Suggestion)!
+
+## Segment Terraform Provider
+
+> info ""
+> Segment Terraform is currently in the pilot phase and is governed by Segment’s [First Access and Beta Preview Terms](https://www.twilio.com/en-us/legal/tos){:target="_blank"}.
+
+Segment is a [Terraform](https://www.terraform.io/){:target="_blank"} provider where you can use Terraform to manage Segment resources and automate cloud deployments and change control. The Public API powers Segment Terraform and it supports basic Connections and Tracking plans. 
+
+To get started with the Segment Terraform Provider, see the [Segment Terraform github repo](https://github.com/segmentio/terraform-provider-segment){:target="_blank"}. You can also access Segment on the [Terraform registry](https://registry.terraform.io/providers/segmentio/segment/0.0.2){:target="_blank"}.
