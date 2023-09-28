@@ -1,7 +1,6 @@
 ---
 title: Mobile Push Template
 plan: engage-premier
-hidden: true 
 ---
 
 Use Twilio Engage to build mobile push templates to include throughout your marketing campaigns.
