@@ -44,22 +44,6 @@ The automatically collected and enhanced measurement events include parameters b
 
 ## FAQ & Troubleshooting
 
-### Resolving Duplicate Page Views
-
-When enabled, the **Page Views** advanced setting sends the `page_view` event from Google's gtag.js snippet. It does not prevent sending Segment's `analytics.page()` event. If you enable this setting, once the page loads, Segment sends two `page_view` events to the GA4 SDK, one from the Segment snippet and one from the gtag.js snippet. If you see duplicate `page_view` events in your GA4 dashboard, you need to either:
-
-1. Disable the **Page Views** advanced setting (set it to *False*) so only Segment's `analytics.page()` sends to the GA4 SDK.
-2.  Edit or disable the preset **Set Configuration Fields** mapping so only the `page_view` included in the gtag.js snippet sends to the GA4 SDK.
-
-The GA4 SDK also tracks a native `page_view` event if you have the [following setting enabled](https://developers.google.com/analytics/devguides/collection/ga4/views?client_type=gtag#measure_virtual_pageviews){:target='_blank'} in your GA4 account. To avoid the native GA4 `page_view` event, disable **Page changes based on browser history events** under the advanced settings of the **Page views** section.
-
-### Disabling Page Views
-
-The **Page Views** setting in the GA4 Web destination settings is toggled on by default. This means that the default **Set Configuration Fields** mapping sends a `page_view` for you when you enable GA4 Web as a destination. If you don't want to send a `page_view` by default, you can toggle the **Page Views** setting off in your destination settings. However, if you toggle the **Page Views** setting off, you need to account for the `page_view` to happen after the `config` since session attribution sets on the first event after the config is loaded, which is usally a `page_view`.
-
-This means that `config` fires at `analytics.page()`, and `page_view` fires after on a `track` call (i.e. `analytics.track("Viewed Content"`). For proper tracking, the `config` must load prior to any GA4 event. For further troubleshooting, go to your DevTools console and type in “dataLayer” to view the order of events sent to Google Analytics. You can read more about [Manual Pageviews](https://developers.google.com/analytics/devguides/collection/ga4/views?client_type=gtag#manual_pageviews){:target='_blank'} in Google's documentation. 
-
-
 ### Custom Event Naming
 
 Google Analytics 4 does not accept custom event names that include spaces. Segment replaces spaces in the Event Name in the Custom Event action with an underscore. As a result, you will see custom events snake cased in Google Analytics 4.
@@ -88,10 +72,11 @@ Google may take [24-48 hours](https://support.google.com/analytics/answer/933379
 
 ### Data is not sent to Google
 
-Ensure that at least one mapping has been configured and enabled in the destination mappings for an event you want to send to Google Analytics. If no mappings are enabled, the destination does not send events.
+In order for data to be sent downstream to Google Analytics, check your mappings to ensure that:
+1. The **setConfigurationFields** mapping is enabled in your mappings
+2. You've added at least one other event mapping for an event you want to send to Google Analytics. 
 
-1. Disable the **Page Views** advanced setting (set it to *False*) so only Segment's `analytics.page()` sends to the GA4 SDK. Or,
-2. Edit or disable the preset **Set Configuration Fields** mapping so only the `page_view` included in the gtag.js snippet sends to the GA4 SDK.
+The **setConfigurationFields** mapping is required in order for data to be sent downstream. If no other mappings are enabled, the destination does not send events.
 
 ### Tracking UTM Parameters
 
@@ -102,4 +87,4 @@ Without any further configuration, traffic-source data for `campaign`, `campaign
 
 ### Differences between Google Analytics 4 Cloud and Google Analytics 4 Web destinations 
 
-Segment's [Google Analytics 4 Cloud](/docs/connections/destinations/catalog/actions-google-analytics-4/) server-side destination uses Google's Measurement Protocol API to send event data server to server, whereas Segment's [Google Analytics 4 Web](/docs/connections/destinations/catalog/actions-google-analytics-4-web/) device-mode destination loads the gtag.js library client-side and uses Segment's event data to map to gtag.js events directly. Each destination has its own advantages and disadvantages. Your choice between the two depends on your specific use case, technical expertise, and the platforms from which you want to track data.
+Segment's [Google Analytics 4 Cloud](/docs/connections/destinations/catalog/actions-google-analytics-4/) server-side destination uses Google's Measurement Protocol API to send event data server to server, whereas Segment's [Google Analytics 4 Web](/docs/connections/destinations/catalog/actions-google-analytics-4-web/) device-mode destination loads the gtag.js library client-side and uses Segment's event data to map to gtag.js events directly. Each destination has its own advantages and disadvantages. Your choice between the two will depend on your specific use case, technical expertise, and the platforms from which you want to track data.
