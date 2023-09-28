@@ -5,9 +5,9 @@ beta: true
 
 With the Databricks Delta Lake Destination, you can ingest event data from Segment into the bronze layer of your Databricks Delta Lake.
 
-This page will help you use the Databricks Destination to sync Segment events into your Databricks Delta Lake built on S3.
+This page will help you use the Databricks Delta Lake Destination to sync Segment events into your Databricks Delta Lake built on S3.
 
-> info "Databricks Delta Lake Destination in public beta"
+> info "Databricks Delta Lake Destination in Public Beta"
 > The Databricks Delta Lake Destination is in public beta, and Segment is actively working on this integration. [Contact Segment](https://segment.com/help/contact/){:target="_blank"} with any feedback or questions.
 
 ## Overview 
@@ -16,7 +16,7 @@ Before getting started, use the overview below to get up to familiarize yourself
 
 1. Segment writes directly to your Delta Lake in the cloud storage (S3)
 - Segment manages the creation and evolution of Delta tables.
-- Segment uses IAM role assumption to write Delta to AWS S3. 
+- Segment uses IAM role assumption to write Delta tables to AWS S3. 
 2. Segment supports both OAuth and personal access tokens (PAT) for API authentication.
 3. Segment creates and updates the table's metadeta in Unity Catalog by running queries on a small, single node Databricks SQL warehouse in your environment.
 4. If a table already exists and no new columns are introduced, Segment appends data to the table (no SQL required).
