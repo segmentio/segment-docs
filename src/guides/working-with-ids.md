@@ -12,7 +12,7 @@ This guide explains the most common Segment IDs, why Segment recommends formats 
 
 ## Understanding the standard identifiers
 
-This section explains the purpose of the three primary IDs and introduces the other two categories that may come into play as you mature your CDP implementation.
+This section explains the purpose of the three primary IDs and introduces the other two categories that may come into play as you expand your CDP implementation.
 
 ### Purpose
 
