@@ -28,11 +28,11 @@ As you set up Databricks, keep the following key terms in mind.
  
 ## Set up Databricks with Azure
 
-Use the following eight steps to setup your Databricks destination with Azure.
+Use the following eight steps to setup your Databricks Delta Lake destination with Azure.
 
 ### Step 1: Find your Databricks Workspace URL 
 
-Your Databricks Workspace URL is used by you and Segment to access your workspace API.
+You'll use the Databricks workspace URL, along with Segment, to access your workspace API.
 
 Check your browser's address bar when in your workspace. The workspace URL will look something like: `https://<workspace-deployment-name>.azuredatabricks.net`. Remove any characters after this portion and note this value for later use. 
 
@@ -108,7 +108,7 @@ This catalog is the target catalog where Segment lands your schemas/tables.
 1. Follow the Databricks guide for [creating a catalog](https://learn.microsoft.com/en-us/azure/databricks/data-governance/unity-catalog/create-catalogs){:target="_blank"}. 
 - Select the storage location you created earlier. The catalog name can be any valid catalog name (for example, "Segment"). Note this name for later use. 
 2. Select the newly-created catalog. 
-    1. Click the Permissions tab, then **Grant**. 
+    1. Click the Permissions tab, then click **Grant**. 
     2. Select the Segment service principal from the dropdown.
     3. Check `ALL PRIVILEGES`, then click **Grant**.
  
@@ -118,4 +118,4 @@ This step links a Segment source to your Databricks workspace/catalog.
 1. Navigate to `https://app.segment.com/<WORKSPACE_SLUG>/destinations/catalog/databricks-delta-lake`. 
 2. Click **Add Destination**, select a source, then click **Next**.
 3. Enter the name for your destination, then click **Create destination**.
-4. Enter the connection settings using the values noted above (leave the Service Principal fields blank).
+4. Enter the connection settings using the values noted above (leave the service principal fields blank).
