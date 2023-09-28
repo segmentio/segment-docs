@@ -3,12 +3,24 @@ title: Databricks Delta Lake Destination (AWS Setup)
 beta: true
 ---
 
-With the Databricks Destination, you can ingest event data from Segment into the bronze layer of your Databricks Delta Lake.
+With the Databricks Delta Lake Destination, you can ingest event data from Segment into the bronze layer of your Databricks Delta Lake.
 
-This page will help you use the Databricks Destination to sync Segment events into your Databricks Delta Lake built on AWS.
+This page will help you use the Databricks Destination to sync Segment events into your Databricks Delta Lake built on S3.
 
-> info "Databricks Delta Lake Destination in beta"
-> The Databricks Delta Lake Destination is in beta, and Segment is actively working on this feature. Some functionality may change before it becomes generally available. [Contact Segment](https://segment.com/help/contact/){:target="_blank"} with any feedback or questions.
+> info "Databricks Delta Lake Destination in public beta"
+> The Databricks Delta Lake Destination is in public beta, and Segment is actively working on this integration. [Contact Segment](https://segment.com/help/contact/){:target="_blank"} with any feedback or questions.
+
+## Overview 
+
+Before getting started, use the overview below to get up to familiarize yourself with Segment's Databricks Delta Lake Destination.
+
+1. Segment writes directly to your Delta Lake in the cloud storage (S3)
+- Segment manages the creation and evolution of Delta tables.
+- Segment uses IAM role assumption to write Delta to AWS S3. 
+2. Segment supports both OAuth and personal access tokens (PAT) for API authentication.
+3. Segment creates and updates the table's metadeta in Unity Catalog by running queries on a small, single node Databricks SQL warehouse in your environment.
+4. If a table already exists and no new columns are introduced, Segment appends data to the table (no SQL required).
+5. For new data types/columns, Segment reads the current schema for the table from the Unity Catalog and uses the SQL warehouse to update the schema accordingly.
 
 ## Prerequisites
 
@@ -32,9 +44,7 @@ As you set up Databricks, keep the following key terms in mind.
 - **Target Unity Catalog**: The catalog where Segment lands your data. 
 - **Workspace Admin Token** (*PAT only*): The access token you'll generate for your Databricks workspace admin.
 
-## Setup
-
-Use the following nine steps to set up your Databricks Delta Lake destination with AWS.
+## Setup for Databricks Delta Lake (S3)
 
 ### Step 1: Find your Databricks Workspace URL 
 
@@ -149,7 +159,8 @@ This catalog is the target catalog where Segment lands your schemas/tables.
 ### Step 9: Setup the Databricks Delta Lake destination in Segment
 
 This step links a Segment events source to your Databricks workspace/catalog.
-1. Navigate to `https://app.segment.com/<WORKSPACE_SLUG>/destinations/catalog/databricks-delta-lake`. 
+1. From the Segment app, navigate to **Connections > Catalog**, then click **Destinations**.
+2. Search for and select the "Databricks Delta Lake" destination.
 2. Click **Add Destination**, select a source, then click **Next**.
 3. Enter the name for your destination, then click **Create destination**.
 4. Enter connection settings for the destination.
