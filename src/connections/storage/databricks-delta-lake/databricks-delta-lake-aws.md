@@ -3,9 +3,9 @@ title: Databricks Delta Lake Destination (AWS Setup)
 beta: true
 ---
 
-Use the Databricks destination to ingest event data from Segment into the bronze layer of your Delta Lake hosted in Databricks/AWS (S3).
+With the Databricks Destination, you can ingest event data from Segment into the bronze layer of your Databricks Delta Lake.
 
-This page will help you connect the Databricks Destination with AWS (S3).
+This page will help you use the Databricks Destination to sync Segment events into your Databricks Delta Lake built on AWS.
 
 > info "Databricks Delta Lake Destination in beta"
 > The Databricks Delta Lake Destination is in beta, and Segment is actively working on this feature. Some functionality may change before it becomes generally available. [Contact Segment](https://segment.com/help/contact/){:target="_blank"} with any feedback or questions.
