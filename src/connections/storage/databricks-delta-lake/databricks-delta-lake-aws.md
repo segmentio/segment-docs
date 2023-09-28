@@ -166,3 +166,4 @@ This step links a Segment events source to your Databricks workspace/catalog.
 4. Enter connection settings for the destination.
 
 
+ 
