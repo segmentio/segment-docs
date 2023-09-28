@@ -210,7 +210,7 @@ treat that property whenever it is appears in data Segment processes.
 ![Animation of a user creating a new matcher, SIN, with the exact matching setting selected.](images/privacy-add-new-matcher.gif)
 
 
-![Screenshot of the Edit Matcher popup.](images/privacy-edit-matcher.png)
+![Screenshot of the Edit Matcher popup.](images/privacy-synonym-in-matcher.png)
 
 
 Unless the field value pattern is unique, we recommend matching on the Key. For
