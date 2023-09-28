@@ -59,7 +59,7 @@ az ad sp create --id fffa5b05-1da5-4599-8360-cc2684bcdefb
 
 ### Step 3: Update or create an ADLS Gen2 storage container 
 
-The ADLS Gen2 storage container is where Segment lands your delta lake files. 
+The ADLS Gen2 storage container is where Segment lands your Delta Lake files. 
 
 1. In the Azure console, navigate to **Storage accounts** and locate or create a new storage account to use for your Segment data.
 2. Select the account, then select **Containers**.
@@ -90,7 +90,7 @@ This step allows the Segment service principal to create a small SQL warehouse f
 
 ### Step 6: Create an external location and storage credentials 
 
-This step creates the storage location where Segment lands your delta lake and the associated credentials Segment uses to access the storage. 
+This step creates the storage location where Segment lands your Delta Lake and the associated credentials Segment uses to access the storage. 
 1. Follow the Databricks guide for [managing external locations and storage credentials](https://learn.microsoft.com/en-us/azure/databricks/data-governance/unity-catalog/manage-external-locations-and-credentials){:target="_blank"}. 
 - Use the storage container you updated in step 3.
 - For storage credentials, you can use a service principal or managed identity.

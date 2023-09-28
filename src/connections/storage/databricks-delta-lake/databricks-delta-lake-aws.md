@@ -54,7 +54,7 @@ This step allows the Segment service principal to create and use a small SQL war
 
 ### Step 4: Create an external location and storage credentials 
 
-This step creates the storage location where Segment lands your delta lake and the associated credentials Segment uses to access the storage. 
+This step creates the storage location where Segment lands your Delta Lake and the associated credentials Segment uses to access the storage. 
 1. Follow the Databricks guide for [managing external locations and storage credentials](https://docs.databricks.com/en/data-governance/unity-catalog/manage-external-locations-and-credentials.html){:target="_blank"}. This guide assumes the target S3 bucket already exists. If not, follow the [AWS guide](https://docs.aws.amazon.com/AmazonS3/latest/userguide/create-bucket-overview.html){:target="_blank"} for creating a bucket.
 2. Once the external location and storage credentials are created in your Databricks workspace, update the permissions to allow access to the Segment service principal. 
     1. In your workspace, navigate to **Data > External Data > Storage Credentials**. 
