@@ -255,3 +255,10 @@ build new custom matchers:
 - [RegExr](https://regexr.com/) - an online tool to experiment with regular expressions and test them
 - [RegexOne](https://regexone.com/) - a tutorial which takes you from regular expression basics to advanced topics
 - [Regexp Cheatsheet](https://devhints.io/regexp) - a handy cheatsheet to have nearby when you're writing regular expressions
+
+### Using Synonyms
+
+Segment's exact matching and fuzzy matching do not detect all variations in the received keys
+and for those scenarios, you can use synonyms.  For example, for the value `credit card number`, you can add `credit card no`,
+`debit card number`, `debit card no`, or similar variations in the synonyms section to classify those fields.
+![Screenshot of the Synonym used in Custom Matcher.](images/privacy-synonym-in-matcher.png)

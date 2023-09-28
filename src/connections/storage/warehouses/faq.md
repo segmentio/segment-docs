@@ -126,7 +126,7 @@ After a source is created, you can enable or disable a warehouse sync within the
 
 ## Can I be notified when warehouse syncs fail?
 
-If you enabled activity notifications for your storage destination, you'll receive notifications in the Segment app for the fifth and 20th consecutive warehouse failures.
+If you enabled activity notifications for your storage destination, you'll receive notifications in the Segment app for the fifth and 20th consecutive warehouse failures for all incoming data. Segment does not track failures on a per connection ('source<>warehouse') basis. Segment's notification structure also identifies global issues encountered when connecting to your warehouse, like bad credentials or being completely inaccessible to Segment.
 
 To sign up for warehouse sync notifications:
 1. Open the Segment app.

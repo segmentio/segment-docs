@@ -288,6 +288,18 @@ Setting | Details
 
 See the complete `AnalyticsSettings` interface [here](https://github.com/segmentio/analytics-next/blob/master/packages/node/src/app/settings.ts){:target="_blank"}.
 
+## Usage in serverless environments
+
+When calling `.track` within functions in serverless runtime environments, wrap the call in a `Promise` and `await` it to avoid having the runtime exit or freeze:
+
+```js
+await new Promise((resolve) =>
+  analytics().track({ ... }, resolve)
+)
+```
+
+See the complete documentation on [Usage in AWS Lambda](https://github.com/segmentio/analytics-next/blob/master/packages/node/README.md#usage-in-aws-lambda){:target="_blank"}, [Usage in Vercel Edge Functions](https://github.com/segmentio/analytics-next/blob/master/packages/node/README.md#usage-in-vercel-edge-functions){:target="_blank"}, and [Usage in Cloudflare Workers](https://github.com/segmentio/analytics-next/blob/master/packages/node/README.md#usage-in-cloudflare-workers){:target="_blank"}
+
 ## Graceful shutdown
 Avoid losing events after shutting down your console. Call `.closeAndFlush()` to stop collecting new events and flush all existing events. If a callback on an event call is included, this also waits for all callbacks to be called, and any of their subsequent promises to be resolved.
 
