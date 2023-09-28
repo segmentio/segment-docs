@@ -3,7 +3,7 @@ title: Working with Identifiers
 hidden: true
 ---
 
-> info "Critical Segment recommendation"
+> warning "Critical Segment recommendation"
 > Segment recommends that you use `uuid4` for `anonymousId`.
 
 As part of your Segment implementation, you’ll come across various identifiers (IDs) that Segment’s systems may process. The three most prominent identifiers you’ll encounter are `anonymousId`, `userId`, and `groupId`. 
