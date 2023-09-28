@@ -44,14 +44,6 @@ The automatically collected and enhanced measurement events include parameters b
 
 ## FAQ & Troubleshooting
 
-### Resolving Duplicate Page Views
-
-When enabled, the **Page Views** setting sends the `page_view` event from Segment triggered by the **Set Configuration Fields** mapping. It does not prevent sending the `page_view` event included Google's gtag.js snippet. If you enable this setting, once the page loads, Segment sends two `page_view` events to the GA4 SDK, one from the Segment snippet and one from the gtag.js snippet. If you see duplicate `page_view` events in your GA4 dashboard, you can either
-
-1. Disable the **Page Views** setting (set it to *False*) so only the `page_view` included in the gtag.js snippet sends to the GA4 SDK. Or,
-2. The GA4 SDK also tracks a native `page_view` event if you have the [following setting enabled](https://developers.google.com/analytics/devguides/collection/ga4/views?client_type=gtag#measure_virtual_pageviews){:target='_blank'} in your GA4 account. To avoid the native GA4 `page_view` event, disable **Page changes based on browser history events** under the advanced settings of the **Page views** section.
-
-
 ### Custom Event Naming
 
 Google Analytics 4 does not accept custom event names that include spaces. Segment replaces spaces in the Event Name in the Custom Event action with an underscore. As a result, you will see custom events snake cased in Google Analytics 4.
