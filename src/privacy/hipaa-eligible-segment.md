@@ -52,7 +52,7 @@ To configure data encryption while setting up a new destination:
 3. On the destination's overview page, click **Add destination**. 
 4. On the Select data source page, select the source you want to connect to your destination and click **Next**.
 5. On the Setup page, give your destination a name, fill in any optional settings, and select the **Have Segment encrypt sensitive data** checkbox.
-6. Open the **Fields** dropdown, select one or more fields you'd like to encrypt and click the **Generate Encryption Keys** button. <br> *If you don't see all of the fields that you want to encrypt, [change the classification of your missing data fields](/docs/privacy/portal/#change-a-recommended-classification) to Yellow in the Privacy Portal*.<br> 
+6. Open the **Fields** dropdown, select one or more fields you'd like to encrypt and click the **Generate Encryption Keys** button. You can select [Default PII matchers](/docs/privacy/portal/#default-pii-matchers), [Custom PII matchers](/docs/privacy/portal/#custom-pii-matchers), and [Synonyms](/docs/privacy/portal/#using-synonyms). <br> *If you don't see all of the fields that you want to encrypt, [change the classification of your missing data fields](/docs/privacy/portal/#change-a-recommended-classification) to Yellow in the Privacy Portal*.<br> 
 7. Securely store your private key.  <br> **Note:** Once you finish setting up the destination, you cannot retrieve the key. 
 8. Click **Create destination**.
 
