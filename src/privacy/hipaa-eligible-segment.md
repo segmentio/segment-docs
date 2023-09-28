@@ -37,7 +37,7 @@ These logs can be provided upon request. For specific requests, please reach out
 
 Segment encrypts the data in select fields [marked as yellow in the Privacy Portal](/docs/privacy/portal/#default-pii-matchers) before sending them to event stream, cloud mode destinations, further supporting HIPAA compliance in your destinations. Segment encrypts data using a RSAES OAEP SHA 256 algorithm.
 
-Data encryption does not support "fuzzy matching". You can encrypt [Default PII matchers](/docs/privacy/portal/#default-pii-matchers), [Custom PII matchers](/docs/privacy/portal/#custom-pii-matchers), and [Synonyms](/docs/privacy/portal/#using-synonyms).
+Data encryption does not support "fuzzy matching". You can encrypt [Default PII matchers](/docs/privacy/portal/#default-pii-matchers), [Custom PII matchers](/docs/privacy/portal/#custom-pii-matchers), and any [Synonyms](/docs/privacy/portal/#using-synonyms) you've created for keys.
 
 > info "Data encryption is currently in public beta"
 > Data encryption only supports event-stream, cloud-mode destinations. Only data fields in `context`, `traits`, and `property` objects can be encrypted. 
@@ -52,7 +52,7 @@ To configure data encryption while setting up a new destination:
 3. On the destination's overview page, click **Add destination**. 
 4. On the Select data source page, select the source you want to connect to your destination and click **Next**.
 5. On the Setup page, give your destination a name, fill in any optional settings, and select the **Have Segment encrypt sensitive data** checkbox.
-6. Open the **Fields** dropdown, select one or more fields you'd like to encrypt and click the **Generate Encryption Keys** button. You can select [Default PII matchers](/docs/privacy/portal/#default-pii-matchers), [Custom PII matchers](/docs/privacy/portal/#custom-pii-matchers), and [Synonyms](/docs/privacy/portal/#using-synonyms). <br> *If you don't see all of the fields that you want to encrypt, [change the classification of your missing data fields](/docs/privacy/portal/#change-a-recommended-classification) to Yellow in the Privacy Portal*.<br> 
+6. Open the **Fields** dropdown, select one or more fields you'd like to encrypt and click the **Generate Encryption Keys** button. You can select [Default PII matchers](/docs/privacy/portal/#default-pii-matchers), [Custom PII matchers](/docs/privacy/portal/#custom-pii-matchers), and any [Synonyms](/docs/privacy/portal/#using-synonyms) you've created for keys. Data encryption does not support "fuzzy matching".<br> *If you don't see all of the fields that you want to encrypt, [change the classification of your missing data fields](/docs/privacy/portal/#change-a-recommended-classification) to Yellow in the Privacy Portal*.<br> 
 7. Securely store your private key.  <br> **Note:** Once you finish setting up the destination, you cannot retrieve the key. 
 8. Click **Create destination**.
 
@@ -65,7 +65,7 @@ To configure data encryption for an existing destination:
 1. Open the [My destinations page](https://app.segment.com/goto-my-workspace/destinations){:target="_blank”} in the Segment app.
 2. Select a destination, and click the **Data Encryption** tab.
 3. On the Data Encryption page, select the **Have Segment encrypt sensitive data** checkbox.
-4. Open the **Fields** dropdown, select one or more fields you'd like to encrypt and click the **Generate Encryption Keys** button. <br> *If you don't see all of the fields that you want to encrypt, [change the classification of your missing data fields](/docs/privacy/portal/#change-a-recommended-classification) to Yellow in the Privacy Portal*.<br> 
+4. Open the **Fields** dropdown, select one or more fields you'd like to encrypt and click the **Generate Encryption Keys** button. You can select [Default PII matchers](/docs/privacy/portal/#default-pii-matchers), [Custom PII matchers](/docs/privacy/portal/#custom-pii-matchers), and any [Synonyms](/docs/privacy/portal/#using-synonyms) you've created for keys. Data encryption does not support "fuzzy matching".<br> *If you don't see all of the fields that you want to encrypt, [change the classification of your missing data fields](/docs/privacy/portal/#change-a-recommended-classification) to Yellow in the Privacy Portal*.<br> 
 5. Securely store your private key.  <br> **Note:** Once you finish setting up the destination, you cannot retrieve the key.
 6. Click **Save**.
 
@@ -90,7 +90,7 @@ After enabling encryption for a destination, you can add or remove encrypted dat
 To make changes to your selected fields:
 1. Open the [My destinations page](https://app.segment.com/goto-my-workspace/destinations){:target="_blank”} in the Segment app.
 2. Select the destination you'd like to edit your selected fields for and click **Data Encryption**.
-3. Add or remove fields. 
+3. Add or remove fields. You can select [Default PII matchers](/docs/privacy/portal/#default-pii-matchers), [Custom PII matchers](/docs/privacy/portal/#custom-pii-matchers), and any [Synonyms](/docs/privacy/portal/#using-synonyms) you've created for keys. Data encryption does not support "fuzzy matching".
   - To add fields, click the **Fields** box to open the dropdown and select the fields you'd like to add.
   - To remove fields, click the **x** icon next to the name of the field you'd like to remove. 
 4. Click **Save Changes**. 
