@@ -72,7 +72,11 @@ Google may take [24-48 hours](https://support.google.com/analytics/answer/933379
 
 ### Data is not sent to Google
 
-Ensure that the **setConfigurationFields** mapping is enabled and at least one other mapping has been configured and enabled in the destination mappings for an event you want to send to Google Analytics. If no mappings are enabled, the destination does not send events.
+In order for data to be sent downstream to Google Analytics, check your mappings to ensure that:
+1. The **setConfigurationFields** mapping is enabled in your mappings
+2. You've added at least one other event mapping for an event you want to send to Google Analytics. 
+
+The **setConfigurationFields** mapping is required in order for data to be sent downstream. If no other mappings are enabled, the destination does not send events.
 
 ### Tracking UTM Parameters
 
