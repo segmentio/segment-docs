@@ -37,6 +37,8 @@ These logs can be provided upon request. For specific requests, please reach out
 
 Segment encrypts the data in select fields [marked as yellow in the Privacy Portal](/docs/privacy/portal/#default-pii-matchers) before sending them to event stream, cloud mode destinations, further supporting HIPAA compliance in your destinations. Segment encrypts data using a RSAES OAEP SHA 256 algorithm.
 
+Data encryption does not support "fuzzy matching". You can encrypt [Default PII matchers](/docs/privacy/portal/#default-pii-matchers), [Custom PII matchers](/docs/privacy/portal/#custom-pii-matchers), and [Synonyms](/docs/privacy/portal/#using-synonyms).
+
 > info "Data encryption is currently in public beta"
 > Data encryption only supports event-stream, cloud-mode destinations. Only data fields in `context`, `traits`, and `property` objects can be encrypted. 
 >
