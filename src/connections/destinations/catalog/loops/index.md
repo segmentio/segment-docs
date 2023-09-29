@@ -7,9 +7,11 @@ hide-dossier: true
 
 {% include content/plan-grid.md name="actions" %}
 
-[Loops](https://loops.so){:target:="_blank"} is a modern email platform for SaaS, a better way to send marketing and transactional email.
+[Loops](https://loops.so?utm_source=segmentio&utm_medium=docs&utm_campaign=partners){:target:="_blank"} is a modern email platform for SaaS, a better way to send marketing and transactional email.
 
 You can use this Segment integration to create and update your Loops contacts as well as trigger email sending via events.
+
+This destination is maintained by Loops. For any issues with the destination, [contact their Support team](mailto:help@loops.so).
 
 ## Getting started
 
