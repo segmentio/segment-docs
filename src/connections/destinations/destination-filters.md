@@ -165,6 +165,17 @@ There are certain destinations to which you may not want to send the `userId`. T
 }
 ```
 
+## Filter Conditional Operators
+`contains` : checks whether the field's value includes the provided substring
+`glob matches` : case sensitive, checks whether the value matches provided string
+`is (number)` : checks whether the value is exactly the provided integer
+`is (string)` : checks whether the value is exactly the provided string
+`is false` : checks whether the value is type boolean and is `false`
+`is not (number)` : checks whether the value isn't exactly the provided integer
+`is not (string)` : checks whether the value isn't exactly the provided string
+`is not null` : checks that the existing field does not have a `null` value
+`is null` : check that the existing field has a `null` value
+`is true` : checks whether the value is type boolean and is `true`
 
 ## Important notes
 
