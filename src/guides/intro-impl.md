@@ -108,5 +108,5 @@ If you're seeing errors thrown by your destinations, you might have an implement
 > info ""
 > Segment Terraform is currently in the pilot phase and is governed by Segment’s [First Access and Beta Preview Terms](https://www.twilio.com/en-us/legal/tos){:target="_blank"}.
 
-Segment is a [Terraform](https://www.terraform.io/){:target="_blank"} provider where you can use Terraform to manage Segment resources and automate cloud deployments and change control. The Public API powers Segment Terraform. See the [Segment provider documentation](https://registry.terraform.io/providers/segmentio/segment/latest/docs){:target="_blank"} on Terraform to see what's supported.
+Segment is a [Terraform](https://www.terraform.io/){:target="_blank"} provider where you can use Terraform to manage Segment resources and automate cloud deployments and change control. The Public API powers Segment Terraform. Take a look at the [Segment provider documentation](https://registry.terraform.io/providers/segmentio/segment/latest/docs){:target="_blank"} on Terraform to see what's supported.
 
