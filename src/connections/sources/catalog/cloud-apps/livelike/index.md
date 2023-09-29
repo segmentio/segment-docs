@@ -6,12 +6,12 @@ title: LiveLike Source
 
 This integration will enable you to receive related engagement and achievements from LiveLike into your Segment warehouse, which can enable and enhance your automated marketing tacics and capabilities as well as augment your analytics and first-party data for your users. 
 
-This source is maintained by <LiveLike>. For any issues with the source, [contact their Support team](mailto:support@livelike.com).
+This source is maintained by LiveLike. For any issues with the source, [contact their Support team](mailto:support@livelike.com).
 
 ## Getting started
 
 1. From your workspace's [Sources catalog page](https://app.segment.com/goto-my-workspace/sources/catalog){:target="_blank”} click **Add Source**.
-2. Search for "<LiveLike>" in the Sources Catalog, select <LiveLike>, and click **Add Source**.
+2. Search for "LiveLike" in the Sources Catalog, select LiveLike, and click **Add Source**.
 3. On the next screen, give the Source a nickname configure any other settings.
 
    - The nickname is used as a label in the Segment app, and Segment creates a related schema name in your warehouse. The nickname can be anything, but we recommend using something that reflects the source itself and distinguishes amongst your environments (eg. LiveLike_Prod, LiveLike_Staging, LiveLike_Dev).
@@ -22,13 +22,13 @@ This source is maintained by <LiveLike>. For any issues with the source, [contac
 
 ## Stream
 
-<LiveLike> uses our stream Source component to send Segment event data. It uses a server-side `track` method(s) to send data to Segment. These events are then available in any destination that accepts server-side events, and available in a schema in your data warehouse, so you can query using SQL.
+LiveLike uses our stream Source component to send Segment event data. It uses a server-side `track` method(s) to send data to Segment. These events are then available in any destination that accepts server-side events, and available in a schema in your data warehouse, so you can query using SQL.
 
 The default behavior is for LiveLike to pass the userId associated with the event, which usually is your already-known userId, as well as a LiveLike User Profile ID as livelike_profile_id inside the Properties object within the Track event payload.
 
 ## Events
 
-The table below lists events that <LiveLike> sends to Segment. These events appear as tables in your warehouse, and as regular events in other Destinations. <LiveLike> includes the `userId` if available.
+The table below lists events that LiveLike sends to Segment. These events appear as tables in your warehouse, and as regular events in other Destinations. LiveLike includes the `userId` if available.
 
 | Event Name                 | Description                           |
 | ------------------         | ------------------------------------- |
@@ -116,4 +116,4 @@ Now that your Source is set up, you can connect it with Destinations.
 
 Log into your downstream tools and check to see that your events appear as expected, and that they contain all of the properties you expect. If your events and properties don’t appear, check the [Event Delivery](/docs/connections/event-delivery/) tool, and refer to the Destination docs for each tool for troubleshooting.
 
-If there are any issues with how the events are arriving to Segment, [contact the <LiveLike> support team](mailto:support@livelike.com).
+If there are any issues with how the events are arriving to Segment, [contact the LiveLike support team](mailto:support@livelike.com).
