@@ -33,7 +33,7 @@ You can also specify two different types of time-windows, `within` and `in betwe
 
 ### Custom Traits
 
-You can also build Audiences based on custom traits. These traits can be collected from your apps when a user completes a form or signs up using an [Identify](/docs/connections/spec/identify) call. You can view these traits in the Profile explorer, as well.
+You can also build Audiences based on custom traits. These traits can be collected from your apps when a user completes a form or signs up using an [Identify](/docs/connections/spec/identify) call. You can view these traits in the Profile explorer, as well. Custom Traits are mutable and update to the latest value seen by the user’s Identify events. If the last value for the trait was sent as `null` then the trait will no longer appear on the profile.
 
 ### Computed Traits
 
