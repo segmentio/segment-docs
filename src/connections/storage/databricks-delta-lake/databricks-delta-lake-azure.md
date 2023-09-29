@@ -7,7 +7,7 @@ With the Databricks Delta Lake Destination, you can ingest event data from Segme
 
 This page will help you use the Databricks Delta Lake Destination to sync Segment events into your Databricks Delta Lake built on Azure (ADLS Gen 2).
 
-
+ 
 > info "Databricks Delta Lake Destination in Public Beta"
 > The Databricks Delta Lake Destination is in public beta, and Segment is actively working on this integration. [Contact Segment](https://segment.com/help/contact/){:target="_blank"} with any feedback or questions.
 
@@ -56,17 +56,17 @@ Segment uses the service principal to access your Databricks workspace APIs as w
     2. Open a Cloud Shell (first button to the right of the top search bar).
     3. Once loaded, enter the following command in the shell:
 
-```
-New-AzADServicePrincipal -applicationId fffa5b05-1da5-4599-8360-cc2684bcdefb
-```
+    ```
+    New-AzADServicePrincipal -applicationId fffa5b05-1da5-4599-8360-cc2684bcdefb
+    ```
 
 2. **(Alternative option)** Azure CLI
     1. Log into the Azure CLI using the [az login command](https://learn.microsoft.com/en-us/cli/azure/authenticate-azure-cli){:target="_blank"}.
     2. Once authenticated, run the following command:
 
-```
-az ad sp create --id fffa5b05-1da5-4599-8360-cc2684bcdefb
-```
+    ```
+    az ad sp create --id fffa5b05-1da5-4599-8360-cc2684bcdefb
+    ```
 
 ### Step 3: Update or create an ADLS Gen2 storage container 
 
@@ -82,10 +82,10 @@ The ADLS Gen2 storage container is where Segment lands your Delta Lake files.
 8. Click **+ Select members**, then search for and select "Segment Storage Destinations".
 9. Click **Review + assign**.
 
-### Step 4: Add the Segment Storage Destinations service pricipal to the account/workspace 
+### Step 4: Add the Segment Storage Destinations service principal to the account/workspace 
 
 This step allows Segment to access your workspace. 
-1. Follow the Databricks [guide](https://learn.microsoft.com/en-us/azure/databricks/administration-guide/users-groups/service-principals#add-service-principals-to-your-account-using-the-account-console){:target="_blank"} for adding a service principal using the account console. 
+1. Follow the Databricks guide for [adding a service principal](https://learn.microsoft.com/en-us/azure/databricks/administration-guide/users-groups/service-principals#add-service-principals-to-your-account-using-the-account-console){:target="_blank"} using the account console. 
 - Segment recommends using "Segment Storage Destinations" for the name, though any identifier is allowed. 
 - For the **UUID** enter `fffa5b05-1da5-4599-8360-cc2684bcdefb`.
 - Segment doesn't require Account admin access.
@@ -97,7 +97,7 @@ This step allows Segment to access your workspace.
 
 This step allows the Segment service principal to create a small SQL warehouse for creating and updating table schemas in the Unity Catalog.
 
-1. Follow the [managing workspace entitlements](https://learn.microsoft.com/en-us/azure/databricks/administration-guide/users-groups/service-principals#--manage-workspace-entitlements-for-a-service-principal){:target="_blank"} instructions for a service principal. Segment requires `Allow cluster creation` and `Databricks SQL access` entitlements.
+To enable entitlements, follow the [managing workspace entitlements](https://learn.microsoft.com/en-us/azure/databricks/administration-guide/users-groups/service-principals#--manage-workspace-entitlements-for-a-service-principal){:target="_blank"} instructions for a service principal. Segment requires `Allow cluster creation` and `Databricks SQL access` entitlements.
 
 ### Step 6: Create an external location and storage credentials 
 
@@ -105,8 +105,8 @@ This step creates the storage location where Segment lands your Delta Lake and t
 1. Follow the Databricks guide for [managing external locations and storage credentials](https://learn.microsoft.com/en-us/azure/databricks/data-governance/unity-catalog/manage-external-locations-and-credentials){:target="_blank"}. 
 - Use the storage container you updated in step 3.
 - For storage credentials, you can use a service principal or managed identity.
-2. Once you create the external location and storage credentials in your Databricks workspace, update the permissions to allow access to the Segment service principal. 
-- In your workspace, navigate to **Data > External Data > Storage Credientials**. Click the name of the credentials created above and go to the Permissions tab. Click **Grant**, then select the Segment service principal from the drop down. Select the following checkboxes:
+2. Once you create the external location and storage credentials in your Databricks workspace, update the permissions to allow access to the Segment service principal. <br><br>
+In your workspace, navigate to **Data > External Data > Storage Credentials**. Click the name of the credentials created above and go to the Permissions tab. Click **Grant**, then select the Segment service principal from the drop down. Select the following checkboxes:
 - `CREATE EXTERNAL TABLE`
 - `READ FILES`
 - `WRITE FILES`
