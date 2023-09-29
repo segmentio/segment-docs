@@ -34,10 +34,10 @@ https://github.com/1Flow-Inc/segment-1flow-ios
 
 You'll then have the option to pin to a version, or specific branch, as well as which project in your workspace to add it to. Once you've made your selections, click the Add Package button.
 
-### Step 2: Initialise Segment and Add 1Fow Destination
+### Step 2: Initialize Segment and add 1Fow Destination
 
 ```
-import  Segment1Flow
+import Segment1Flow
 ...
 let config = Configuration(writeKey: "YOUR_WRITE_KEY_HERE")
 let analytics = Analytics(configuration: config)
@@ -46,7 +46,7 @@ analytics.add(plugin: OneFlowDestination())
 
 ## Android
 
-### Step 1: Install 1Flow-Segment-Tool
+### Step 1: Install Segment1Flow Package
 
 - If gradle version is 6.5 or lower, include the below repository in your project's build.gradle file:
 
