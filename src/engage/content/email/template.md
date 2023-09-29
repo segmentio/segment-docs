@@ -33,7 +33,7 @@ To configure an email template, click **Create Template**.
 4. Design the email template, then click **Create Email Template**.
 
 > info "Engage content validation"
-> For all content editors in Engage, you'll see alerts for any issues in your template, such as invalid profile traits or incorrect liquid syntax. Engage both flags template issue(s), and displays recommended next steps. You must fix any issues before using your template in Engage campaigns.
+> For all content editors in Engage, you'll see alerts for any issues in your template, such as invalid profile traits or incorrect liquid syntax. Engage both flags template issue(s), and displays recommended next steps. While you can save these templates, you must fix any issues before using them in Engage campaigns. 
 
 ## Test the Email template
 You can send test emails before you include a template in marketing campaigns.
