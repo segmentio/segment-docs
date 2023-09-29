@@ -48,45 +48,52 @@ You can send test emails before you include a template in marketing campaigns.
 5. Select **Send test email**.
 
 > success ""
+> When you send a test message, the trait must be valid for the field it's being used in. For example:
+> - If you use `profile.traits.first_name` in the **From sender** field, it must be a valid username. 
+> - If you use `profile.traits.email` in the **Reply to email** field, it must be a valid email address.
+
+> info ""
 > You can also test email templates directly from a [Send an Email step](/docs/engage/journeys/build-journey/#send-an-email) in Journeys.
 
-## Personalize with merge tags
+## Dynamic sender using merge tags
 
-With Engage, you can personalize email content with real-time profile traits. 
-
-In your template, you can add profile traits in merge tags to the following fields:
+Engage supports dynamic sending using merge tags. Personalize email content by adding real-time profile traits in merge tags to the following fields: 
 - Subject line
 - Preview text
 - Message body
-- [From sender](#use-profile-traits-in-the-sender-and-reply-to-fields) 
-- [Reply to email](#use-profile-traits-in-the-sender-and-reply-to-fields)
+- From sender
+- Reply to email
 
 As you configure the template, click **Merge Tags** and select the profile traits to include. Engage inserts the merge tags based on cursor placement.
  
+{% raw %}
+
+> success ""
+> - For all merge tags, you must add a `default` value inside a single quote. For example: `{{profile.traits.traits | default: 'Default'}}`
+> - Only use variable tags in [liquid sytax](https://liquidjs.com/tags/overview.html){:target="blank"}.
+
+The following table contains a description and some best practices for all fields in the email template. Asterisks indicate required fields.
+
+
+ 
+
+
+| Field            | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
+|------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Template Name*  | The email template name.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  |
+| Description      | A description for the template.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     |
+| From sender*    | The email address users will see in the from field of the email campaign. <br><br> For the profile trait and default value, use a valid username. For example: <br> - `default: 'jsmith'` is valid <br> - `default: 'j smith'` is invalid |
+| Sender name*    | The name users will see next to the sender email.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         |
+| Reply to email* | The email address that will receive any replies users send.  You can use different Sender and reply-to email addresses.  Email recipients will see this address if they reply to your campaign. <br><br> The profile trait and default value must be one of the following: <br> - A valid email address <br> - A valid username for the email address (the input field needs to end with a valid domain for the email address)          |
+| Reply to name*  | The name users will see next to the reply-to email address.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
+| BCC              | Email address that will receive a blind carbon copy of your email campaign.                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
+| Preview text     | A brief message that displays next to the email subject.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  |
+| Subject*        | The email subject.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
+
 You can also add merge tags in the heading or body text as you design an email with the [Drag and Drop](/docs/engage/content/email/editor/) or [HTML](/docs/engage/content/email/html-editor/) editors. Engage supports [liquid templating](https://liquidjs.com/tags/if.html){:target="blank"} to create dynamic content in the email design editor.
 
 > info ""
 > To learn more about profile traits, visit Segment's [Computed Traits](/docs/unify/traits/computed-traits) and [SQL Traits](/docs/unify/traits/sql-traits/) documentation.
-
-### Use profile traits in the sender and reply to fields
-
-{% raw %}
-
-Personalize your email template by adding profile traits in the **From sender** and **Reply to email** fields. 
- 
-For both fields, keep the following best practices in mind as you add profile traits.
-
-- To use merge tags, you must add a `default` value inside a single quote. For example: `{{profile.traits.traits | default: 'Default'}}`
-- Only use variable tags in liquid sytax. 
-- Use a valid username for an email address in the profile trait and default value. For example:
-  - `default: 'jsmith'` is valid
-  - `default: 'j smith'` is invalid
-- When you send a test message, the trait must be valid for the field you're using it in. For example: 
-  - If `profile.traits.first_name` is being used in the **From Sender** field, it must be a valid email username. 
-  - If `profile.traits.email` is being used in the **Reply to Email** field, it must be a valid email address.
-- In the **From sender** and **Reply to email** fields, the profile trait and default value must be one of the following:
-  - A valid email address
-  - A valid username for the email address (the input field needs to end with a valid domain for the email address)
 
 {% endraw %}
 

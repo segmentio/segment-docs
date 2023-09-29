@@ -35,7 +35,7 @@ Follow these steps to build an SMS template:
 Use the SMS Templates screen to preview and update existing SMS message templates.
 
 > info "Engage content validation"
-> For all content editors in Engage, you'll see alerts for any issues in your template, such as invalid profile traits or incorrect liquid syntax. Engage both flags template issue(s), and displays recommended next steps. You must fix any issues before using your template in Engage campaigns. 
+> For all content editors in Engage, you'll see alerts for any issues in your template, such as invalid profile traits or incorrect [liquid syntax](https://liquidjs.com/tags/overview.html){:target="blank"}. Engage both flags template issue(s), and displays recommended next steps. You must fix any issues before using your template in Engage campaigns. 
 
 ## Test your SMS template
 
