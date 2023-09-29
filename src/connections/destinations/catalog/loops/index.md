@@ -11,10 +11,6 @@ hide-dossier: true
 
 You can use this Segment integration to create and update your Loops contacts as well as trigger email sending via events.
 
-<!-- This include describes the requirement of A.js 2.0 or higher for Actions compatibility, and is required if your destination has a web component. -->
-
-{% include content/ajs-upgrade.md %}
-
 ## Getting started
 
 1. From the Segment web app, click **Catalog**, then click **Destinations**.
