@@ -47,6 +47,9 @@ Invite teammates to your Engage dev space and grant them access to the space. Na
 
 To learn more, visit [Connect production sources](/docs/unify/quickstart/#step-3-connect-production-sources).
 
+> info ""
+> While it is not possible to connect an object cloud source, like Zendesk, to your Engage space directly, you may consider using RETL <> Segment Connections Destination to send object cloud source data back into Segment to pipe to your Engage space.
+
 ## Step 4: Check your profile data
 
 Once the replay finishes, you can see the data replayed into Engage using the Profile explorer. Visit the [Unify Onboarding Guide](/docs/unify/quickstart/#step-4-check-your-profile-data) for more info.
