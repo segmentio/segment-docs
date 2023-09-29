@@ -30,13 +30,14 @@ The default behavior is for LiveLike to pass the userId associated with the even
 
 The table below lists events that LiveLike sends to Segment. These events appear as tables in your warehouse, and as regular events in other Destinations. LiveLike includes the `userId` if available.
 
-| Event Name                 | Description                           |
-| ------------------         | ------------------------------------- |
-| Badge Rewarded             | When a user receives a badge          |
-| Quest Task Completed       | When a user completes a Quest Task    | 
-| Reward Item Rewarded       | When a user receives a Reward Item    | 
-| User Quest Task Progressed | When a user progresses a Quest Task   | 
-| User Quest Completed       | When a user completes a Quest         | 
+| Event Name                 | Description                                               |
+| ------------------         | -------------------------------------                     |
+| Badge Rewarded             | When a user receives a badge                              |
+| Quest Task Completed       | When a user completes a Quest Task                        | 
+| Quest Reward Awarded       | When a user receives a Reward Item via a Quest Completion |
+| Reward Item Rewarded       | When a user is rewarded via a Reward Table                |
+| User Quest Task Progressed | When a user progresses a Quest Task                       | 
+| User Quest Completed       | When a user completes a Quest                             | 
 
 ## Event Properties for Badge Rewarded
 
@@ -54,7 +55,7 @@ The table below list the properties included in the events listed above.
 | `reward_item_name`       | Name of the Reward Item that's associated to the threshold to earn the Badge |
 | `reward_item_threshold`  | Threshold amount of the Reward Item that's associated to earning the Badge   |
 
-## Event Properties for Quest Task Compelted
+## Event Properties for Quest Task Completed
 
 The table below list the properties included in the events listed above.
 
@@ -68,7 +69,7 @@ The table below list the properties included in the events listed above.
 | `user_quest_id`          | ID of the specific relationship between the User and that Quest              |
 | `user_quest_task_id`     | ID of the specific relationship between the User and that Quest Task         |
 
-## Event Properties for Reward Item Rewarded
+## Event Properties for Quest Reward Awarded
 
 The table below list the properties included in the events listed above.
 
@@ -77,6 +78,19 @@ The table below list the properties included in the events listed above.
 | `livelike_profile_id`         | Profile ID of the LiveLike user                                              |
 | `quest_id`                    | ID of the Quest the user completed to earn Rewards (if applicable)           |
 | `quest_name`                  | Name of the Quest the user completed to earn Rewards (if applicable)         |
+| `reward_item_name`            | Name of the Reward Item that was rewarded                                    |
+| `reward_item_amount`          | Amount of the Reward Item that was rewarded                                  |
+| `reward_item_balance`         | The new balance of the Reward Item for the user                              |
+| `reward_item_id`              | ID of the Reward Item that was rewarded                                      |
+| `reward_item_transaction_id`  | ID of the transaction of the User being rewarded                             |
+
+## Event Properties for Reward Item Rewarded
+
+The table below list the properties included in the events listed above.
+
+| Property Name                 | Description                                                                  |
+| ---------------               | -------------------------                                                    |
+| `livelike_profile_id`         | Profile ID of the LiveLike user                                              |
 | `reward_item_name`            | Name of the Reward Item that was rewarded                                    |
 | `reward_item_amount`          | Amount of the Reward Item that was rewarded                                  |
 | `reward_item_balance`         | The new balance of the Reward Item for the user                              |
