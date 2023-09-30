@@ -57,3 +57,30 @@ If you see a CORS error, this means you're attempting to make a request to the P
 
 #### What User Role / Workspace permissions are required to generate Public API tokens?
 Only [users that have a `Workspace Owner` role](https://segment.com/docs/segment-app/iam/roles/#global-roles) can create Public API Tokens.
+
+### Troubleshooting
+#### `Update Schema Settings in Source` endpoint returns error for field `forwardingViolationsTo` and `forwardingBlockedEventsTo`
+When you don't have a source to forward violations or blocked events to, then exclude the fields `forwardingViolationsTo` or `forwardingBlockedEventsTo` entirely from the request and the setting will be disabled. 
+
+`PATCH`  endpoint : `https://api.segmentapis.com/sources/{sourceId}/settings`
+```
+{
+    "group": {
+      "allowTraitsOnViolations": false,
+      "allowUnplannedTraits": false,
+      "commonEventOnViolations": "ALLOW"
+    },
+    "identify": {
+      "allowTraitsOnViolations": true,
+      "allowUnplannedTraits": true,
+      "commonEventOnViolations": "Block"
+    },
+    "track": {
+      "allowEventOnViolations": false,
+      "allowPropertiesOnViolations": false,
+      "allowUnplannedEventProperties": false,
+      "allowUnplannedEvents": false,
+      "commonEventOnViolations": "OMIT_PROPERTIES"
+    }
+  }
+```
