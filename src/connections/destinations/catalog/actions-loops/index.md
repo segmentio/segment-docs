@@ -1,8 +1,10 @@
 ---
-# The end name should be similar to `Slack  Destination`
-title: Loops
+title: Loops (Actions) Destination
 hide-boilerplate: true
 hide-dossier: true
+beta: true
+private: true
+id: 63360a5fe290ca3fdfad4a68
 ---
 
 {% include content/plan-grid.md name="actions" %}
