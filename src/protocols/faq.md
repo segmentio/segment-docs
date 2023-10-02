@@ -124,7 +124,7 @@ Blocked events are blocked from sending to all Segment Destinations, including w
 
 ### Do blocked and discarded events count towards my MTU counts?
 
-MTUs and API calls are calculated from the same pipeline. Blocking events within the source schema or tracking plan functionality (Protocols) will exclude it from API call calculations and MTU calculations as the events are discarded before they reach our pipeline that we use for calculations..
+Blocking events within a [Source Schema](/docs/connections/sources/schema/) or [Tracking Plan](/docs/protocols/tracking-plan/create/) excludes them from API call and MTU calculations, as the events are discarded before they reach the pipeline that Segment uses for calculations.
 
 ## Protocols Transformations
 
