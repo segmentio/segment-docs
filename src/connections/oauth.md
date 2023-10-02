@@ -55,9 +55,17 @@ To connect a source to OAuth:
 4. Click **Connect OAuth app**. 
 5. Select the OAuth app you want to connect the source to. 
 6. Click **Connect**. 
-7. Select the toggle to **Enable OAuth** for the source. 
 
-To disconnect the source from OAuth, select **Disconnect**.
+To disconnect your source from OAuth, click **Disconnect**. 
+
+## Enable a source to OAuth
+Once you've connected your source to OAuth, you can enable it. To enable your source:
+
+1. Navigate to **Connections > Sources** and select your source.
+2. Go to the **Settings** tab of the source and select **OAuth app**.
+3. Turn the toggle on for **Enable OAuth**. 
+
+To disable your source from OAuth, turn the toggle off for **Enable OAuth**.
 
 ## Request the access token
 
