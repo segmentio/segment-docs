@@ -39,7 +39,14 @@ Within seconds, GitHub scans each commit in public repositories for Public API t
 
 Learn more about [GitHub's secret scanning program](https://docs.github.com/en/developers/overview/secret-scanning-partner-program){:target="_blank"}.
 
-### Frequently Asked Questions
+## OAuth 2.0
+
+> info ""
+> This feature is currently in pilot and is governed by Segment’s [First Access and Beta Preview Terms](https://www.twilio.com/en-us/legal/tos){:target="_blank"}. 
+
+You can authenticate and authorize the Public API using [OAuth 2.0](/docs/connections/oauth).
+
+### Frequently asked questions
 #### What should I do if I see a notification that my token was exposed?
 In most cases, identifying and revoking an exposed token takes seconds. Segment recommends you check the [audit trail](/docs/segment-app/iam/audit-trail/) to ensure no unauthorized actions were taken with the token.
 
