@@ -67,13 +67,14 @@ Once you've connected your source to OAuth, you can enable it. To enable your so
 
 To disable your source from OAuth, turn the toggle off for **Enable OAuth**.
 
-## Request the access token
+<!-- ## Request the access token
 
 To request the access token, run:
 
 ```
 ./gentoken.sh -k <private-key.pem> -i <key_id> -a <oauth_app_id> | jq '.access_token'
 ```
+-->
 
 ## Edit an OAuth application
 To edit an existing OAuth application: 
