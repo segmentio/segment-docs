@@ -82,15 +82,15 @@ To edit an existing OAuth application:
 2. Select the **OAuth application** tab within the **Access Management** page. 
 3. Click the application name of the OAuth application you want to edit. 
 4. On the **Overview** tab you can:
-    1. Revoke a token
-    2. Copy the Application ID and the Public key
-    3. Delete the OAuth application
+    * Revoke a token
+    * Copy the Application ID and the Public key
+    * Delete the OAuth application
 5. Select the **Settings** tab on the right window where you can: 
-    1. Edit the **Application name**
-    2. Delete a public key
-    3. Add a new public key
-    4. Change the token expiration period
-    5. Edit your scope
+    * Edit the **Application name**
+    * Delete a public key
+    * Add a new public key
+    * Change the token expiration period
+    * Edit your scope
 6. Click **Save changes**. 
 
 
