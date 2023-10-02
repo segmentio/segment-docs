@@ -6,7 +6,7 @@ hidden: true
 OAuth 2.0 is an online authorization standard that uses tokens to grant access to API resources like Segment’s tracking API. You can use OAuth 2.0 as a security requirement for connections to third-party tools. 
 
 > info ""
-> This feature is currently in pilot and is governed by Segment’s [First Access and Beta Preview Terms](https://www.twilio.com/en-us/legal/tos){:target="_blank"}.  OAuth 2.0 only supports server to Segment communication, a machine-to-machine workflow. Take a look at the [supported sources](#supported-sources) to see what sources are currently supported.
+> This feature is currently in pilot and is governed by Segment’s [First Access and Beta Preview Terms](https://www.twilio.com/en-us/legal/tos){:target="_blank"}.  OAuth 2.0 only supports server to Segment communication, a machine-to-machine workflow. Take a look at the [supported sources](#supported-sources) to see what sources Segment supports.
 
 ## Permissions 
 Depending on your workspace permissions, your access to OAuth apps is limited. 
@@ -23,11 +23,11 @@ Function Read-only | You can only view OAuth apps.
 ## Create an OAuth app
 
 > info ""
-> You must have already created workspace in Segment to use OAuth.
+> You must have already created a workspace in Segment to use OAuth.
 
 To create a new OAuth application:
 
-1. Navigate to **Settings > Workspace** settings and select the Access Management tab. 
+1. Navigate to **Settings > Workspace settings**  and select the Access Management tab. 
 2. Select the **OAuth application** tab within the **Access Management** page. 
 3. Click **Create OAuth app**.
 4. Enter the configuration settings:
@@ -38,7 +38,7 @@ To create a new OAuth application:
     Public key | Upload a public key in PEM format to authenticate through the OAuth application. You can upload a second public key after you create the OAuth application. You can create a public key by running the script: `openssl rsa -in private.pem -pubout -outform PEM -out public.pem`
     Public key name | Enter a name for your public key. 
     Token expiration period | You can choose between: 1 day, 2 days, 3 days, 1 week, 2 weeks, 3 weeks, 30 days.
-    Scope | This specifies what type of access is needed for each API. See the list of [supported scopes](#supported-scopes).
+    Scope | This specifies what type of access you need for each API. See the list of [supported scopes](#supported-scopes).
 5. Click **Create**. 
 
 Once you create your OAuth app, you can now connect a source to your OAuth app. 
@@ -79,7 +79,7 @@ To request the access token, run:
 ## Edit an OAuth application
 To edit an existing OAuth application: 
 
-1. Navigate to **Settings > Workspace** settings and select the **Access Management** tab. 
+1. Navigate to **Settings > Workspace settings** and select the **Access Management** tab. 
 2. Select the **OAuth application** tab within the **Access Management** page. 
 3. Click the application name of the OAuth application you want to edit. 
 4. On the **Overview** tab you can:
@@ -97,7 +97,7 @@ To edit an existing OAuth application:
 
 ## Delete an OAuth app
 > info ""
-> In order to delete an OAuth app, you must remove all connected sources from the app. 
+> To delete an OAuth app, you must remove all connected sources from the app. 
 
 To delete an OAuth app: 
 1. Navigate to **Settings > Workspace settings** and select the **Access Management** tab. 

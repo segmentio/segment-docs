@@ -46,7 +46,7 @@ Learn more about [GitHub's secret scanning program](https://docs.github.com/en/d
 
 You can authenticate and authorize the Public API using [OAuth 2.0](/docs/connections/oauth).
 
-### Frequently Asked Questions
+### Frequently asked questions
 #### What should I do if I see a notification that my token was exposed?
 In most cases, identifying and revoking an exposed token takes seconds. Segment recommends you check the [audit trail](/docs/segment-app/iam/audit-trail/) to ensure no unauthorized actions were taken with the token.
 
