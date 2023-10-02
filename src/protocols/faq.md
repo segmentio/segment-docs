@@ -128,7 +128,7 @@ Blocked events are blocked from sending to all Segment Destinations, including w
 
 ### Do blocked and discarded events count towards my MTU counts?
 
-Blocked events will not count towards your MTU counts as long as blocked event forwarding is disabled.
+Blocking events within a [Source Schema](/docs/connections/sources/schema/) or [Tracking Plan](/docs/protocols/tracking-plan/create/) excludes them from API call and MTU calculations, as the events are discarded before they reach the pipeline that Segment uses for calculations.
 
 ## Protocols Transformations
 
