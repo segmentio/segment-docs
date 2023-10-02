@@ -82,6 +82,11 @@ Segment's code uses built-in logic to verify if an event exists in the Tracking 
 
 Unplanned property omission is only supported for cloud-mode destinations. Unplanned properties will not be omitted when they're sent to device-mode destinations.
 
+### How to import events from the Source Schema to a Tracking Plan
+
+You can import events into the tracking from the source schema when you initially create your tracking plan. Also, you can manually add these events by clicking the the (+) next to the event in your source 
+schema page once the tracking plan has been connected.  
+
 
 ## Protocols Validation
 
