@@ -40,6 +40,10 @@ Within seconds, GitHub scans each commit in public repositories for Public API t
 Learn more about [GitHub's secret scanning program](https://docs.github.com/en/developers/overview/secret-scanning-partner-program){:target="_blank"}.
 
 ## OAuth 2.0
+
+> info ""
+> This feature is currently in pilot and is governed by Segment’s [First Access and Beta Preview Terms](https://www.twilio.com/en-us/legal/tos){:target="_blank"}. 
+
 You can authenticate and authorize the Public API using [OAuth 2.0](/docs/connections/oauth/#supported-sources).
 
 ### Frequently Asked Questions
