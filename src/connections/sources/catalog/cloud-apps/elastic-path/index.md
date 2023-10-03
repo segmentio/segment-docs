@@ -9,6 +9,9 @@ This is an [Event Cloud Source](/docs/sources/#event-cloud-sources){:target="_bl
 
 This source is maintained by Elastic Path. For any issues with the source, contact the [Elastic Path Support team](https://support.elasticpath.com/hc/en-us){:target="_blank"}.
 
+> info ""
+> The Elastic Path Source is currently in beta, which means that they are still actively developing the source. If you are interested in joining their beta program or have any feedback to help improve the Elastic Path Source and its documentation, [let the Elastic Path team know](https://support.elasticpath.com/hc/en-us).
+
 ## Getting started
 
 1. Navigate to **Connections > Catalog** and make sure you're on the **Sources** tab of the catalog.
@@ -23,6 +26,11 @@ This integration uses JSONata templates to provide flexibility to send your cust
 
 You can configure how you want to associate an Elastic Path event with Segment event for streaming data. For example, send the `Order Completed` event to Segment when the Elastic Path order event is `order.paid` or `order.authorized` or if order is fulfilled, for example, `order.fulfilled`.
 
+## Stream
+
+Elastic Path uses our stream Source component to send Segment event data. It uses a server-side (select from `track`, `identify`, `page`, `group`) method(s) to send data to Segment. These events are then available in any destination that accepts server-side events, and available in a schema in your data warehouse, so you can query using SQL.
+
+The default behavior is for Elastic Path to pass the `customerId` associated with the order as the `userId`. There are instances in which Elastic Path lacks an associated `customerId` (e.g., in the case of a guest order). In these scenarios, the email address will be provided as `anonymousId`, or alternatively, you have the option to configure your own identifier.
 
 ## Events
 
