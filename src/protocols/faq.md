@@ -82,6 +82,10 @@ Segment's code uses built-in logic to verify if an event exists in the Tracking 
 
 Unplanned property omission is only supported for cloud-mode destinations. Unplanned properties will not be omitted when they're sent to device-mode destinations.
 
+### How do I import events from a Source Schema into a Tracking Plan?
+
+When you first create your Tracking Plan, you can add events from your Source Schema by selecting the **Import events from Source** button on the Tracking Plan editor page. You can manually add these events after you've connected your Source Schema to your Tracking Plan by clicking the (+) next to the event on your Source Schema page.  
+
 
 ## Protocols Validation
 
@@ -124,7 +128,7 @@ Blocked events are blocked from sending to all Segment Destinations, including w
 
 ### Do blocked and discarded events count towards my MTU counts?
 
-Blocked events will not count towards your MTU counts as long as blocked event forwarding is disabled.
+Blocking events within a [Source Schema](/docs/connections/sources/schema/) or [Tracking Plan](/docs/protocols/tracking-plan/create/) excludes them from API call and MTU calculations, as the events are discarded before they reach the pipeline that Segment uses for calculations.
 
 ## Protocols Transformations
 

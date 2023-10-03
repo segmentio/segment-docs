@@ -55,9 +55,9 @@ Per Google's documentation, follow these rules when choosing a name for your eve
 - Do not use reserved prefixes and event names.
 - Event names must start with a letter. Use only letters, numbers, and underscores. Don't use spaces.
 
-Google Analytics 4 is also case sensitive. If you would like all event names to be lowercase, use the `Lowercase Event Name` setting in the Custom Event mapping. If this setting is disabled, Google will treat event names with different casing as distinct events. 
+Event names are case-sensitive in Google Analytics 4. If you would like all event names to be lowercase, use the **Lowercase Event Name** setting when you create a Custom Event mapping and select `Yes` from the dropdown. If this setting is disabled, Google will treat event names with different casing as distinct events. 
 
-Custom events do not appear in most standard reports; you will need to set up custom reports for meaningful analysis. 
+Keep in mind that custom events will not appear in Google's standard reports; you will need to set up custom reports for meaningful analysis. 
 
 ### Custom Dimensions and Metrics
 
