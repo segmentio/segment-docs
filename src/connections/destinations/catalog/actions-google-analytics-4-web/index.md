@@ -48,13 +48,6 @@ The automatically collected and enhanced measurement events include parameters b
 
 Google Analytics 4 has strict rules for event naming and requires you to adhere to those requirements in order to successfully send events. Segment will replace all spaces with underscores to ensure the event name adheres to Google's [event naming rules](https://support.google.com/analytics/answer/13316687?hl=en&ref_topic=13367860&sjid=2167389739796023681-NA#zippy=%2Cweb){:target="_blank"}. As a result, you will see custom events snake cased in Google Analytics 4.
 
-Per Google's documentation, follow these rules when choosing a name for your event:
-
-- Event names are case sensitive. For example, my_event and My_Event are distinct events.
-- Event names can include English and non-English words and letters.
-- Do not use reserved prefixes and event names.
-- Event names must start with a letter. Use only letters, numbers, and underscores. Don't use spaces.
-
 Event names are case-sensitive in Google Analytics 4. If you would like all event names to be lowercase, use the **Lowercase Event Name** setting when you create a Custom Event mapping and select `Yes` from the dropdown. If this setting is disabled, Google will treat event names with different casing as distinct events. 
 
 Keep in mind that custom events will not appear in Google's standard reports; you will need to set up custom reports for meaningful analysis. 
