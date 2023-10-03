@@ -1,3 +1,4 @@
+---
 title: Pushwoosh (Actions) Destination
 id: 64e72af1eabf77368b877a51
 private: true
