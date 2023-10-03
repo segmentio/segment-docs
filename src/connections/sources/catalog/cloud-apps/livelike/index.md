@@ -2,7 +2,7 @@
 title: LiveLike Source
 ---
 
-[LiveLike](https://livelike.com/) is a technology company dedicated to empowering digital experiences that enable deeper fan engagement, increased retention rates, and new monetization opportunities.
+[LiveLike](https://livelike.com/){:target="_blank"} is a technology company dedicated to empowering digital experiences that enable deeper fan engagement, increased retention rates, and new monetization opportunities.
 
 This integration will enable you to receive related engagement and achievements from LiveLike into your Segment warehouse, which can enable and enhance your automated marketing tacics and capabilities as well as augment your analytics and first-party data for your users. 
 
