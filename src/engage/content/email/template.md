@@ -58,13 +58,23 @@ You can also add merge tags in the heading or body text as you design an email w
 > info ""
 > To learn more about profile traits, visit Segment's [Computed Traits](/docs/engage/audiences/computed-traits) and [SQL Traits](/docs/engage/audiences/sql-traits/) documentation.
 
-## Include unsubscribe links
+## Include unsubscribe and manage preference links
+
+When you build an email template, you'll need to include links that your customers can access to unsubscribe and manage their email preferences. You'll find both in the **Special Links** dropdown menu of the **Insert/Edit link** window.
+
+### Unsubscribe links
 
 When you build email templates, it's your responsibility to include an unsubscribe link in your message. Add unsubscribe links to an email template from the Drag and Drop or HTML editors.
 
 When a recipient clicks on an unsubscribe link, they'll see a confirmation page and the recipient's subscription state is updated.
 
-Only send messages to subscribed users. Learn more about [User Subscriptions](/docs/engage/user-subscriptions/) in Twilio Engage.
+Learn more about [User Subscriptions](/docs/engage/user-subscriptions/) in Twilio Engage.
+
+### Manage preference links
+
+The manage preference link lets your customers opt in and out of email groups on an individual basis instead of unsubscribing from all your campaigns.
+
+For more information, see [subscription groups](/docs/engage/user-subscriptions/subscription-groups/).
 
 ## Clone an Email template
 
