@@ -24,8 +24,7 @@ Follow these steps to create an email broadcast:
     - To send a message to a pre-built audience, choose `Part of an Audience`, then select the audience.
     - To exclude users from the audience, click **Add condition** in the **And who** section. Click **And who**, then select **And not who**. Segment will exclude users from the audience you choose.
 5. Click **Preview** to estimate the audience size.
-6. Select the subscription group that you want to receive your broadcast.
-    - Segment recommends only sending broadcasts to users with a `subscribed` status. 
+6. Select the [subscription group](/docs/engage/user-subscriptions/subscription-groups/) that you want to receive your broadcast.
 7. Select **Build**, then choose either **Build a new email** or select a template.
 8. Fill out the **Email settings** fields, choose your email editor, then click **Continue**.
 9. Configure your email, then click **Continue**.
