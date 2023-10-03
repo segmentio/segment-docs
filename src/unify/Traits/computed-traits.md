@@ -154,6 +154,8 @@ The following operators are available.
 - equals one of
 - contains one of
 
+To input multiple values for operators "equals one of" and "contains one of", you can paste in a string of values that are separated by Tabs.
+
 ## Connecting your Computed Trait to a Destination
 
 Segment sends user-level computed Traits to destinations using the [Identify call](/docs/connections/spec/identify/) for user traits, or using the [Track call](/docs/connections/spec/track/) for event properties. Segment includes the trait value and property in the identify and track calls.
