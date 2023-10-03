@@ -789,7 +789,7 @@ sources:
       - us
   - id: EjYD7n6dOa
     display_name: LiveLike (Source)
-    hidden: true
+    hidden: false
     slug: livelike-source
     url: connections/sources/catalog/cloud-apps/livelike-source
     regions:
@@ -927,6 +927,16 @@ sources:
     hidden: false
     slug: nudgespot
     url: connections/sources/catalog/cloud-apps/nudgespot
+    regions:
+      - us
+    endpoints:
+      - us
+  - id: IB9M67ZWaA
+    display_name: One Creation Zero Party Data Engagement
+    hidden: true
+    slug: one-creation-zero-party-data-engagement
+    url: >-
+      connections/sources/catalog/cloud-apps/one-creation-zero-party-data-engagement
     regions:
       - us
     endpoints:
@@ -1425,6 +1435,15 @@ sources:
     hidden: false
     slug: testsource2
     url: connections/sources/catalog/cloud-apps/testsource2
+    regions:
+      - us
+    endpoints:
+      - us
+  - id: y642ZVTKTB
+    display_name: this-is-a-test
+    hidden: true
+    slug: this-is-a-test
+    url: connections/sources/catalog/cloud-apps/this-is-a-test
     regions:
       - us
     endpoints:
