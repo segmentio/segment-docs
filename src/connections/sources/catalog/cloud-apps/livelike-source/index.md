@@ -11,7 +11,7 @@ This source is maintained by LiveLike. For any issues with the source, [contact 
 
 ## Getting started
 
-1. From your workspace's [Sources catalog page](https://app.segment.com/goto-my-workspace/sources/catalog) click **Add Source**.
+1. From your workspace's [Sources catalog page](https://app.segment.com/goto-my-workspace/sources/catalog){:target="_blank"} click **Add Source**.
 2. Search for *LiveLike* in the Sources Catalog. Select **LiveLike**, and click **Add Source**.
 3. Give the Source a name and configure any other settings.
 
@@ -42,7 +42,7 @@ The table below lists events that LiveLike sends to Segment. These events appear
 
 ## Event Properties for Badge Rewarded
 
-The table below list the properties included in the events listed above.
+The table below lists the properties included in Badge Rewarded event.
 
 | Property Name            | Description                                                                  |
 | ---------------          | -------------------------                                                    |
@@ -58,7 +58,7 @@ The table below list the properties included in the events listed above.
 
 ## Event Properties for Quest Task Completed
 
-The table below list the properties included in the events listed above.
+The table below lists the properties included in the Quest Task Completed event.
 
 | Property Name            | Description                                                                  |
 | ---------------          | -------------------------                                                    |
@@ -72,7 +72,7 @@ The table below list the properties included in the events listed above.
 
 ## Event Properties for Quest Reward Awarded
 
-The table below list the properties included in the events listed above.
+The table below lists the properties included in the Quest Reward Awarded event.
 
 | Property Name                 | Description                                                                  |
 | ---------------               | -------------------------                                                    |
@@ -87,7 +87,7 @@ The table below list the properties included in the events listed above.
 
 ## Event Properties for Reward Item Rewarded
 
-The table below list the properties included in the events listed above.
+The table below lists the properties included in the Reward Item Rewarded event.
 
 | Property Name                 | Description                                                                  |
 | ---------------               | -------------------------                                                    |
@@ -100,7 +100,7 @@ The table below list the properties included in the events listed above.
 
 ## Event Properties for User Quest Task Progressed
 
-The table below list the properties included in the events listed above.
+The table below lists the properties included in the User Quest Task Progressed event.
 
 | Property Name              | Description                                                                  |
 | ---------------            | -------------------------                                                    |
@@ -116,7 +116,7 @@ The table below list the properties included in the events listed above.
 
 ## Event Properties for User Quest Completed
 
-The table below list the properties included in the events listed above.
+The table below lists the properties included in the User Quest Completed event.
 
 | Property Name            | Description                                                                  |
 | ---------------          | -------------------------                                                    |
