@@ -42,7 +42,7 @@ analytics.identify({
 When you call `identify` on analytics.js, Segment calls Klaviyo's `identify` with the `traits` object. Segment then augments the `traits` object to have `traits.$id` be the `userId` since Klaviyo takes the user ID on the `traits` object itself.
 
 > info ""
-> When you send data to Klaviyo using `analytics.js`, an initial `page` call is required. By default, this is already added in your [Segment snippet](/docs/connections/sources/catalog/libraries/website/javascript/quickstart/#step-2-copy-the-segment-snippet).
+> When you send data to Klaviyo using `analytics.js`, an initial `page` call is required. By default, this is already added in your [Segment snippet](/docs/connections/sources/catalog/libraries/website/javascript/quickstart/#step-2-copy-the-segment-snippet). In addition to the `page` call, `identify` must be called on each subdomain where you want to track users. Klaviyo sets cookies on the subdomain rather than the top level domain, making this extra `identify` call necessary for tracking.
 
 The following Segment spec'd traits map to Klaviyo [special people properties](http://www.klaviyo.com/docs){:target="_blank"}:
 
