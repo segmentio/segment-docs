@@ -118,6 +118,10 @@ Add an unsubscribe link to text:
 
 You can alternatively add a [predefined unsubscribe](#add-blank-columns-or-predefined-content-blocks) link content block.
 
+## Add a manage preference link
+
+Engage also adds a manage preference link to templates. The manage preference link lets your customers opt in and out of email groups on an individual basis instead of unsubscribing from all your campaigns. For more information, see [subscription groups](/docs/engage/user-subscriptions/subscription-groups/).
+
 ## Personalize with merge tags
 Add merge tags in the Drag and Drop Editor to personalize your message with user profile traits.
 

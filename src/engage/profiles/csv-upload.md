@@ -129,4 +129,4 @@ Please note the following limits as you upload CSV files to Twilio Engage:
 
 ## Message consent
 
-Only send messages to subscribed users. If a recipient deletes or flags an unwanted message as spam, inbox providers might start to filter your messages straight to spam folders. View more SendGrid delivery [Best Practices](https://sendgrid.com/blog/why-are-my-emails-going-to-spam/){:target="_blank"} to prevent email from going to spam.
+Segment recommends sending to subscribed users. If a recipient deletes or flags an unwanted message as spam, inbox providers might start to filter your messages straight to spam folders. View more SendGrid delivery [Best Practices](https://sendgrid.com/blog/why-are-my-emails-going-to-spam/){:target="_blank"} to prevent email from going to spam.
