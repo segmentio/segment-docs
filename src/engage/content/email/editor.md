@@ -149,6 +149,10 @@ For example, use  `{% if %}`, `{% elseif %}`, and `{% else %}` tags to call a pr
 
 To view more examples related to your use case, visit the [LiquidJS docs](https://liquidjs.com/tags/if.html){:target="blank"}.
 
+## Content validation
+
+For all content editors in Engage, you'll see alerts for any issues in your template, such as invalid profile traits or incorrect [liquid syntax](https://liquidjs.com/tags/overview.html){:target="blank"}. Engage both flags template issue(s), and displays recommended next steps. While you can save these templates, you must fix any issues before using them in Engage campaigns. 
+
 ## Save the template
 
 After you design the email, click **Create Email Template**.

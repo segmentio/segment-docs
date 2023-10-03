@@ -32,6 +32,9 @@ To configure an email template, click **Create Template**.
   - [**HTML Editor**](/docs/engage/content/email/html-editor/) contains both a code and visual editor from a single view. This editor provides complete HTML editing access with error flagging.
 4. Design the email template, then click **Create Email Template**.
 
+> info "Engage content validation"
+> For all content editors in Engage, you'll see alerts for any issues in your template, such as invalid profile traits or incorrect liquid syntax. Engage both flags template issue(s), and displays recommended next steps. While you can save these templates, you must fix any issues before using them in Engage campaigns. 
+
 ## Test the Email template
 You can send test emails before you include a template in marketing campaigns.
 
@@ -45,6 +48,11 @@ You can send test emails before you include a template in marketing campaigns.
 5. Select **Send test email**.
 
 > success ""
+> When you send a test message, the trait must be valid for the field it's being used in. For example:
+> - If you use `profile.traits.first_name` in the **From sender** field, it must be a valid username. 
+> - If you use `profile.traits.email` in the **Reply to email** field, it must be a valid email address.
+
+> info ""
 > You can also test email templates directly from a [Send an Email step](/docs/engage/journeys/build-journey/#send-an-email) in Journeys.
 
 ## Personalize with merge tags
