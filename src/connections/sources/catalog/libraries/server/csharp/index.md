@@ -27,7 +27,7 @@ These platforms support Analytics-CSharp:
 ## Getting started
 
 > info ""
-> If you'd like to migrate to Analytics-CSharp from a different library, follow the steps in the [Analytics-CSharp migration guide](/docs/connections/sources/catalog/libraries/server/csharp/migration-guide/). 
+> If you'd like to migrate to Analytics-CSharp from Analytics.NET or Analytics.Xamarin, follow the steps in the [Analytics-CSharp migration guide](/docs/connections/sources/catalog/libraries/server/csharp/migration-guide/). 
 
 To get started with the Analytics-CSharp library: 
 

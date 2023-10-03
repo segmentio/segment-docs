@@ -8,7 +8,7 @@ If you’re currently using Analytics.NET or Analytics.Xamarin to send data to S
 You can update to Analytics-CSharp in 3 easy steps
 1. Bundle Analytics-CSharp into your app (and remove your previous SDK)
 2. Change the namespaces
-3. Advanced: Run Analytics in Synchronous Mode
+3. (Optional) Use `Reset` to stay anonymous
 
 
 ## Start the Migration
@@ -46,7 +46,22 @@ You can update to Analytics-CSharp in 3 easy steps
         using Segment.Analytics.Compat;
       ```
 
-## Optional Changes
+3. (Optional) Update calls that resets anonymous ID. 
+   
+   The old SDK requires you to provide anouymous ID. In the new SDK, it generates an Anonymous ID for you if you never call `analytics.Identify`. If you've called `Identify` and want to go back to anonymous, the new SDK provides a `Reset` function to acheive that.
+
+    <br> Before:
+    ```c#                  
+    Analytics.Client.Page(null, "Login", new Properties(), new Options()
+    .SetAnonymousId("some-id"));
+    ```
+
+    <br> After:
+    ```c#                  
+    analytics.Reset();
+    ```
+
+## Optional Changes for Unit Tests
 
 1. Change your development settings if you would like to make analytics run synchronously for testing purposes. 
 
@@ -60,19 +75,4 @@ You can update to Analytics-CSharp in 3 easy steps
     var configuration = new Configuration("YOUR WRITE KEY",
         useSynchronizeDispatcher: true);
     var analytics = new Analytics(configuration);
-    ```
-
-2. Review your anonymous ID settings. 
-
-    <br> Before:
-    ```c#                  
-    Analytics.Client.Page(null, "Login", new Properties(), new Options()
-    .SetAnonymousId("some-id"));
-    ```
-
-    The new SDK by default, generates an Anonymous ID for you if you never call `analytics.Identify`. If you've called `Identify` and want to go back to anonymous, try:
-
-    <br> After:
-    ```c#                  
-    analytics.Reset();
     ```
