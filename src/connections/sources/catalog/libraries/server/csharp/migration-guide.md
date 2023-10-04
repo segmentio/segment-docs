@@ -63,7 +63,7 @@ The old SDK requires you to provide the anonymous ID. In the new SDK, it generat
 
 ## Optional Changes for Unit Tests
 
-1. Change your development settings if you would like to make analytics run synchronously for testing purposes. 
+Change your development settings if you would like to make analytics run synchronously for testing purposes. 
 
     <br> Before:
     ```c#                  
