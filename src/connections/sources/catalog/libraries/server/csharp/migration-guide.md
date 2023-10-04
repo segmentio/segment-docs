@@ -5,9 +5,9 @@ strat: csharp
 
 If you’re currently using Analytics.NET or Analytics.Xamarin to send data to Segment, please follow the steps below to migrate to the [Analytics-CSharp library](/docs/connections/sources/catalog/libraries/server/csharp/).  
 
-You can update to Analytics-CSharp in 3 easy steps
-1. Bundle Analytics-CSharp into your app (and remove your previous SDK)
-2. Change the namespaces
+You can update to Analytics-CSharp in 3 steps:
+1. Bundle Analytics-CSharp into your app and remove your previous SDK.
+2. Change the namespaces.
 3. *(Optional)* Use `Reset` to stay anonymous.
 
 
