@@ -8,7 +8,7 @@ If you’re currently using Analytics.NET or Analytics.Xamarin to send data to S
 You can update to Analytics-CSharp in 3 easy steps
 1. Bundle Analytics-CSharp into your app (and remove your previous SDK)
 2. Change the namespaces
-3. (Optional) Use `Reset` to stay anonymous
+3. *(Optional)* Use `Reset` to stay anonymous.
 
 
 ## Start the Migration
