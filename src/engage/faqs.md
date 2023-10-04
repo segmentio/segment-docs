@@ -125,3 +125,9 @@ An audience/computed trait Run or a Sync may fail on its first attempt, but Enga
 
 If your team would like to avoid receiving the notifications for transient failures, please **[reach out to support](https://segment.com/help/contact/)**, who upon request can disable transient failure notifications.
 
+## Why can't I connect the audience/computed trait to an existing destination in my workspace?
+
+Engage will not allow you to connect an audience/computed trait to a source that is already linked to a [Connections-based source](https://segment.com/docs/connections/sources/).
+
+A new instance of the destination would need to be created with the correct Engage space selected as the data source during the destination’s configuration process.
+
