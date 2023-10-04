@@ -2,7 +2,6 @@
 title: 1Flow Mobile Plugin Destination
 id: 64dd07c1fed86b6866cd93f5
 beta: true
-hidden: true
 ---
 
 [1Flow](https://1flow.ai/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners){:target="_blank"} is a leading in-app user survey and messaging platform for Mobile app and SaaS businesses.
@@ -30,14 +29,14 @@ This destination is maintained by 1Flow. For any issues with the destination, [c
 
 In the Xcode File menu, click Add Packages. You'll see a dialog where you can search for Swift packages. In the search field, enter the URL to this repo.
 
-https://github.com/1Flow-Inc/segment-1flow-ios
+- `https://github.com/1Flow-Inc/segment-1flow-ios`
 
 You'll then have the option to pin to a version, or specific branch, as well as which project in your workspace to add it to. Once you've made your selections, click the Add Package button.
 
-### Step 2: Initialise Segment and Add 1Fow Destination
+### Step 2: Initialize Segment and add 1Fow Destination
 
 ```
-import  Segment1Flow
+import Segment1Flow
 ...
 let config = Configuration(writeKey: "YOUR_WRITE_KEY_HERE")
 let analytics = Analytics(configuration: config)
@@ -46,7 +45,7 @@ analytics.add(plugin: OneFlowDestination())
 
 ## Android
 
-### Step 1: Install 1Flow-Segment-Tool
+### Step 1: Install Segment1Flow Package
 
 - If gradle version is 6.5 or lower, include the below repository in your project's build.gradle file:
 
@@ -84,8 +83,9 @@ defaultConfig {
     }
 dependencies {
         ....
+        
     implementation 'com.segment.analytics.android:analytics:4.11.3'
-    implementation "com.github.1Flow-Inc:segment-1flow-android:2023.09.16"
+    implementation "com.github.1Flow-Inc:segment-1flow-android:2023.09.26"
 }
 ```
 

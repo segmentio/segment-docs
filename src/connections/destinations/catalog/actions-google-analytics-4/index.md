@@ -162,6 +162,7 @@ Google reserves certain event names, parameters, and user properties. Google sil
 - fields with `null` values
 - fields or events with reserved names
 - fields with a number as the key
+- fields or events with a dash (-) character in the name
  
 ### Verifying Event Meet GA4's Measurement Protocol API
 **Why are the events returning an error _Param [PARAM] has unsupported value._?**

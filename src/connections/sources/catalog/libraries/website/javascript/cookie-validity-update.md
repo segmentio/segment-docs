@@ -164,13 +164,19 @@ The `storage` property accepts an array of supported storage names (`localStorag
 ```js
 analytics.load('writeKey', {
   // Global Storage Priority: Both User and Group data
-  storage: ['cookie', 'localStorage', 'memory']
+  storage: {
+    stores: ['cookie', 'localStorage', 'memory']
+  },
   // Specific Storage Priority
   user: {
-    storage: ['cookie', 'localStorage', 'memory']
+    storage: {
+      stores: ['cookie', 'localStorage', 'memory']
+    }
   },
   group: {
-    storage: ['cookie', 'localStorage', 'memory']
+    storage: {
+      stores: ['cookie', 'localStorage', 'memory']
+    }
   },
 }
 ```

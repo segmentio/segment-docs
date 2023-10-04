@@ -1,13 +1,17 @@
 ---
 title: Configure Consent Management
 hidden: true
+related:
+  - "/privacy/consent-management/"
+  - "/privacy/consent-in-segment-connections/"
+  - "/privacy/consent-in-unify/"
 ---
 > info "Consent Management is in private beta"
 > This means that Consent Management features are in active development, and some functionality may change before it becomes generally available. [Contact Segment](https://segment.com/help/contact/){:target="_blank"} with any feedback or questions.
 
-After setting up a third-party consent management platform (CMP), you can enforce the consent collected from your users by configuring consent categories in your your Segment workspace and adding the [consent object](/docs/privacy/consent-management/#consent-object) to your web libraries. 
+After setting up your consent management platform (CMP), you can enforce the consent collected from your users by adding the [consent object](/docs/privacy/consent-in-segment-connections/#consent-object) to your events. 
 
-Once you've configured consent in the Segment app, your events are routed only to the categories your end users consented to share data with.
+Once you've configured consent in the Segment app and updated your sources to contain consent preference in every event, your events are routed only to the categories your end users consented to share data with. Events without the consent preference will continue to flow to destinations without consent enforcement.
 
 ## Prerequisites
 
@@ -17,14 +21,14 @@ Once you've configured consent in the Segment app, your events are routed only t
 Before you can configure consent in Segment, take the following steps:
 - **Set up your third-party consent management tool and create consent categories**. Take note of your consent categories and the key or ID associated with each category.
 - **Know how your company uses each destination**. You need to know which destinations to map to each category. 
-- **Access to your web libraries**. After you set up consent categories in the Segment app, you need to add a wrapper to your Analytics.js snippet so that Segment can receive your end users' preferences. Segment provides a [wrapper for OneTrust](#step-2-add-the-consent-wrapper-to-analyticsjs), or if you're using a different CMP, you can create your own wrapper using the [instructions provided in the analytics-next repository](https://github.com/segmentio/analytics-next/tree/master/packages/consent/consent-tools){:target="_blank”}. 
+- **Access to your web and mobile libraries**. After you set up consent categories in the Segment app, you need to integrate your CMP and your Segment sources using a wrapper or other solution. 
+
+<!-- TODO: fix above link to mobile consent repository-->
 
 ## Step 1: Create consent categories in the Segment app
 
 > info "Limited availability of sources and destinations during private beta"
-> During private beta, you can send events from web sources to consent categories. Enforcement of consent preferences is only available for event streaming destinations, webhooks, and functions. You can map one event streaming destination, webhook, or function to multiple consent categories. All other source and destination types are not impacted by consent mappings.
->
-> Storage, RETL, and Engage destinations do not enforce consent preferences. 
+> During private beta, AWS S3, RETL, and Engage destinations do not enforce consent preferences. 
 
 1. From the [Segment homepage](https://app.segment.com/goto-my-workspace/){:target="_blank”}, select the Privacy tab and click **Consent Management**.
 2. On the Consent management page, click **Create categories**.
@@ -37,10 +41,29 @@ Before you can configure consent in Segment, take the following steps:
 5. Once you've finished setting up your category or categories, click **Save**.
 
 > warning "Segment recommends mapping all destinations to a category"
-> Segment assumes all destinations without a mapping do not require user consent and will receive all events containing a consent object. 
+> Segment assumes all destinations without a mapping do not require user consent and will receive all events containing a consent object. If a destination is mapped to multiple categories, a user must consent to all categories for data to flow to the destination.
 
-## Step 2: Add the consent wrapper to Analytics.js
-Please follow the instructions from the README in the [@segment/analytics-consent-wrapper-onetrust repository](https://github.com/segmentio/analytics-next/tree/master/packages/consent/consent-wrapper-onetrust){:target="_blank"}.
+## Step 2: Integrating your CMP with Segment
+
+Once you've created consent categories in the Segment app, you need to integrate your CMP with Segment. Segment recommends using a CMP wrapper, but you can use any solution provided it meets the following criteria:
+- Reads the end user consent preference from your CMP and includes the [consent object](/docs/privacy/consent-in-segment-connections/#consent-object) in every event
+- If using Unify and Engage, generates the [Segment Consent Preference](/docs/privacy/consent-in-unify/#segment-consent-preference-event) event every time a user provides or updates their consent preferences with their anonymousId and userId
+
+Segment provides a OneTrust wrapper for the following sources:
+- **Analytics.js**: Please follow the instructions from the README in the [@segment/analytics-consent-wrapper-onetrust repository](https://github.com/segmentio/analytics-next/tree/master/packages/consent/consent-wrapper-onetrust){:target="_blank"}.
+- **Kotlin**: Please follow the instructions from the README in the [@segment-integrations/analytics-kotlin-consent](https://github.com/segment-integrations/analytics-kotlin-consent/blob/main/README.md#getting-started){:target="_blank"} repository.
+<!--- will not be released alongside the other two libraries, commenting out for now. - **Swift**: Please follow the instructions from the README in the [@repository](){:target="_blank"}.-->
+
+If you'd like to integrate with any other CMP, Segment requires you to build your own wrapper or use any mechanism provided it meets the above requirements of data and event generation.
+
+> warning "Consent Management is not backwards compatible with Segment's legacy Android library"
+> If you are using Segment's legacy Android library, you will need to upgrade to [Kotlin](/docs/connections/sources/catalog/libraries/mobile/kotlin-android/migration/) before using Consent Management.
+
+<!--- 
+> warning "Consent Management is not backwards compatible with Segment's legacy iOS and Android libraries"
+> If you are using one of Segment's legacy mobile libraries (iOS or Android,) you will need to upgrade to [Swift](/docs/connections/sources/catalog/libraries/mobile/apple/migration/) or [Kotlin](/docs/connections/sources/catalog/libraries/mobile/kotlin-android/migration/) before using Consent Management. 
+
+--->
 
 ## Edit consent categories
 
