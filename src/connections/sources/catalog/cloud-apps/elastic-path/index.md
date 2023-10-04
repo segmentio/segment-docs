@@ -1,6 +1,6 @@
 ---
 title: Elastic Path Source
-hidden: true
+id: VETiUX9u66
 ---
 
 [Elastic Path](https://www.elasticpath.com?utm_source=segmentio&utm_medium=docs&utm_campaign=partners){:target="_blank"} is a SaaS based headless commerce platform that provides core commerce with a focus on catalog and product data management and modern merchandising capabilities so that brands can power their complex commerce experiences across multiple geographies, touchpoints, brands, and business models.
