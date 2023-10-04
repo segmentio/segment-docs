@@ -11,7 +11,7 @@ You can update to Analytics-CSharp in 3 steps:
 3. *(Optional)* Use `Reset` to stay anonymous.
 
 
-## Start the Migration
+## Migration steps
 
 1. Add the Analytics-CSharp dependency to your project. 
 
@@ -48,35 +48,31 @@ You can update to Analytics-CSharp in 3 steps:
 
 3. *(Optional)* Update calls that resets the anonymous ID. 
    
-The old SDK requires you to provide the anonymous ID. The new SDK generates an Anonymous ID for you if you never call `analytics.Identify`. If you call `Identify` and want to go back to anonymous, the new SDK provides a `Reset` function to achieve that.
+    The old SDK requires you to provide the anonymous ID. The new SDK generates an Anonymous ID for you if you never call `analytics.Identify`. If you call `Identify` and want to go back to anonymous, the new SDK provides a `Reset` function to achieve that.
 
-    <br> Before:
-    
-    ```c#                  
-    Analytics.Client.Page(null, "Login", new Properties(), new Options()
-    .SetAnonymousId("some-id"));
-    ```
+      <br> Before:
+      ```c#                  
+      Analytics.Client.Page(null, "Login", new Properties(), new Options()
+      .SetAnonymousId("some-id"));
+      ```
 
-    <br> After:
-    
-    ```c#                  
-    analytics.Reset();
-    ```
+      <br> After:
+      ```c#                  
+      analytics.Reset();
+      ```
 
-## Optional Changes for Unit Tests
+## Optional changes for unit tests
 
-Change your development settings if you would like to make analytics run synchronously for testing purposes. 
+Change your development settings if you would like to make analytics run synchronously for testing purposes.
 
-    <br> Before:
-    
-    ```c#                  
-    Analytics.Initialize("YOUR_WRITE_KEY", new Config().SetAsync(false));
-    ```
+<br> Before:
+  ```c#                  
+  Analytics.Initialize("YOUR_WRITE_KEY", new Config().SetAsync(false));
+  ```
 
-    <br> After:
-    
-    ```c#                  
-    var configuration = new Configuration("YOUR WRITE KEY",
-        useSynchronizeDispatcher: true);
-    var analytics = new Analytics(configuration);
-    ```
+<br> After:
+  ```c#                  
+  var configuration = new Configuration("YOUR WRITE KEY",
+    useSynchronizeDispatcher: true);
+  var analytics = new Analytics(configuration);
+  ```
