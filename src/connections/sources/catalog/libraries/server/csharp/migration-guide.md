@@ -46,7 +46,7 @@ You can update to Analytics-CSharp in 3 steps:
         using Segment.Analytics.Compat;
       ```
 
-3. (Optional) Update calls that resets anonymous ID. 
+3. *(Optional)* Update calls that resets the anonymous ID. 
    
    The old SDK requires you to provide anouymous ID. In the new SDK, it generates an Anonymous ID for you if you never call `analytics.Identify`. If you've called `Identify` and want to go back to anonymous, the new SDK provides a `Reset` function to acheive that.
 
