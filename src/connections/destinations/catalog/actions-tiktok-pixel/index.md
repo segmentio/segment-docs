@@ -38,7 +38,7 @@ The TikTok Pixel Destination's default behavior is to load a TikTok Pixel Javasc
 
 Toggling "on" the "Use Existing Pixel" will prevent Segment from loading a TikTok Pixel library onto the web page. Instead, Segment will attempt to detect your pre-loaded TikTok Pixel library and will use it when forwarding events to TikTok. 
 
-Care should be taken when toggling the "Use Existing Pixel" setting to "off" as doing so could result in disruption to data collection if Segment doesn't detect TikTok Pixel on the website. 
+Care should be taken when toggling the "Use Existing Pixel" setting to "on" as doing so could result in disruption to data collection if Segment doesn't detect TikTok Pixel on the website. 
 
 ### Mappings enabled by default
 
