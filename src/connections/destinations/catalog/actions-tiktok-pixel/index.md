@@ -36,7 +36,7 @@ This destination is maintained by TikTok. For any issues with the destination, [
 
 The TikTok Pixel Destination's default behavior is to load a TikTok Pixel Javascript library onto your website when the page loads. However if you already have TikTok Pixel on your website before enabling this Destination, you might prefer that Segment detects and uses your pre-existing TikTok Pixel Javascript library instead of loading a new TikTok Pixel library. 
 
-Toggling "off" the "Use Existing Pixel" will prevent Segment from loading a TikTok Pixel library onto the web page. Instead, Segment will attempt to detect your pre-loaded TikTok Pixel library and will use it when forwarding events to TikTok. 
+Toggling "on" the "Use Existing Pixel" will prevent Segment from loading a TikTok Pixel library onto the web page. Instead, Segment will attempt to detect your pre-loaded TikTok Pixel library and will use it when forwarding events to TikTok. 
 
 Care should be taken when toggling the "Use Existing Pixel" setting to "off" as doing so could result in disruption to data collection if Segment doesn't detect TikTok Pixel on the website. 
 
