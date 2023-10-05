@@ -22,6 +22,7 @@ Common use cases for destination filters include:
 
 Keep the following limitations in mind when you use destination filters:
 
+- Destination Filters aren't applied to events sent through the Event Tester
 - Segment applies destination filters one at a time in the order that they appear in your workspace.
 - You can't apply destination filters to Warehouses or S3 destinations.
 - Each filter can only apply to one source-destination pair.
@@ -31,8 +32,6 @@ Keep the following limitations in mind when you use destination filters:
 - *(For web device-mode)* Destination filters for web device-mode only supports the Analytics.js 2.0 source. You need to enable device mode destination filters for your Analytics.js source. To do this, go to your Javascript source and navigate to **Settings > Analytics.js** and turn the toggle on for **Destination Filters**.
 - *(For web device-mode)* Destination filters for device-mode only supports the Analytics.js 2.0 source.
 - *(For mobile device-mode)* Destination filters for mobile device-mode doesn't support iOS and Android libraries.
-- Destination Filters don't apply to events that send through the destination Event Tester.
-
 
 [Contact Segment](https://segment.com/help/contact/){:target="_blank"} if these limitations impact your use case.
 
