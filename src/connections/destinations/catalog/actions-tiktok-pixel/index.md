@@ -26,10 +26,20 @@ This destination is maintained by TikTok. For any issues with the destination, [
 4. Select an existing JavaScript Source to connect to TikTok Pixel.
 5. Give the Destination a name.
 6. On the Settings screen, provide the Pixel Code. This can be found in the TikTok Events Manager (TTEM).
-    - Ensure that the Use Existing Pixel field is **off** if you want Segment to load the TikTok Pixel JavaScript code onto your website.
-    - Ensure that the Use Existing Pixel field is **on** if you want Segment to detect and keep using the existing TikTok Pixel JavaScript snippet which has already been loaded on your website.
+    - Ensure that the "Use Existing Pixel" setting is **off** if you want Segment to load the TikTok Pixel JavaScript code onto your website. This is the default and recommended behavior. 
+    - Ensure that the "Use Existing Pixel" setting is **on** if you want Segment to detect a pre-existing TikTok Pixel that's already loaded to your website independently of Segment. If you enable this option and don't have TikTok Pixel loaded to your website, your data collection to Segment may be disrupted. See [the "Use Existing Pixel" setting](#use-existing-pixel-setting) for more information on how to use this setting safely.  
 7. Toggle on the Destination using the **Enable Destination** toggle.
 8. Click **Save Change**.
+
+<a id="use-existing-pixel-setting"></a>
+## The Use Existing Pixel setting
+
+> warning ""
+> Use caution when you toggle on the **Use Existing Pixel** setting; it could result in disruption to data collection if Segment doesn't detect TikTok Pixel on the website. 
+
+The TikTok Pixel destination's default behavior is to load a TikTok Pixel JavaScript library onto your website when the page loads. However, if you already have TikTok Pixel on your website before enabling this Destination, you may want Segment to detect and use your pre-existing TikTok Pixel JavaScript library instead of loading a new TikTok Pixel library. 
+
+Toggling the **Use Existing Pixel** setting on will prevent Segment from loading a TikTok Pixel library onto the web page. Instead, Segment will attempt to detect your pre-loaded TikTok Pixel library and will use it when forwarding events to TikTok. 
 
 ### Mappings enabled by default
 
