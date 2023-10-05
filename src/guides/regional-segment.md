@@ -88,3 +88,13 @@ Use Segment's custom CIDR `3.251.148.96/29` while authorizing Segment to write i
 The following integrations marked with a ![Supports EU regional endpoints](/docs/images/supported.svg){:class="inline"} (checkmark) support EU Regional endpoints.
 
 {% include content/regional-integrations-table.md %}
+
+## Source Regional support
+
+> info "Don't see regional support for a source you're using?"
+> As more of the partner Sources start to support posting data to our regional endpoint, Segment will update this list. Your contact for that tool should have a timeline for when they're hoping to support regional data ingestion. You can also visit Segment's [support page](https://segment.com/help/contact/) for any Segment-related questions.
+
+The following Sources marked with a ![Supports EU regional endpoints](/docs/images/supported.svg){:class="inline"} (checkmark) are supported in EU workspaces.
+
+{% include content/regional-sources-table.md %}
+
