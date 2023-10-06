@@ -919,6 +919,37 @@ Bundle the destinations you want loaded from [npm](https://www.npmjs.com/package
   }),
   ```
 
+## Segment Inspector
+The Segment Inspector is a Chrome web extension that enables you to debug your Segment integration on web applications instrumented with Analytics.js 2.0. Analytics.js sends data to the extension so that you can see how events change before they're sent to your destinations, and so that you can verify that the event details are correct. Analyze and confirm that API calls made from your website arrive to your Segment Source. 
+
+> info ""
+> For the Segment inspector to work, you must enable the Analytics.js 2.0 source.
+
+To add the Segment Inspector as a Chrome extension:
+1. Go to the [Chrome web store](https://chrome.google.com/webstore/category/extensions).
+2. Search for **Segment Inspector**.
+3. Click **Add to Chrome**.
+4. Click Add Extension in the pop-up window.  
+
+Once installed, use the Inspect Elements developer tool in Chrome to use the Segment Inspector. To access the Inspector, go the top menu bar of Chrome and navigate to **View > Developer > Inspect Elements** and to go the **Segment** tab. On the Segment tab, you can:
+- Filter the different calls by type
+- Search based off of the content in the calls
+- Identify users  
+
+### Components of the Segment Inspector 
+The Segment Inspector is composed of these three components:
+1. The **Diagnostics** tab 
+   - This tab shows the library versions and the list of active integrations that are running. 
+   - When you select an integration, you can see the options that passed while the integration loads. If you made any local overrides within the integration or on the page itself, they appear highlighted in the code. 
+2. The **Events** tab 
+   - This tab enables you to select an event and see the specific details of the event. You can view the time the event occurred, the status of the event (whether it sent or failed), what plugins were added, and how the context object changed. Any changes made to the payload appear highlighted. 
+   - Select the double-checked icon to see the payload at the delivery stage.
+   - Select the *fx* icon to see the payloads after plugins ran.
+   - Select the single-checked icon to see the payload as it was when the event triggered.
+3. The **Identity** tab 
+   - This tab enables you to see the information of a user if you're using the `identify` feature. You can associate the data to an individual and measure their activity across multiple sessions and devices. If you're not using the `identify` feature, the user remains anonymous. 
+
+
 ## Open source libraries
 
 Analytics.js 2.0 includes the following open source components:
