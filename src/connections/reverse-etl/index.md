@@ -96,6 +96,9 @@ To add your first destination:
 ### Step 4: Create mappings
 After you’ve added a destination, you can create mappings from your warehouse to the destination. Mappings enable you to map the data you extract from your warehouse to the fields in your destination.
 
+> info ""
+> When you add new mappings to an existing model, Segment only syncs changes that have transpired since the last sync, not the entire dataset. For a comprehensive data synchronization, Segment recommends that you first recreate the model, then establish a one-to-one mapping with the new model. This ensures that all data syncs effectively.
+
 To create a mapping:
 1. Navigate to **Conections > Destinations** and select the **Reverse ETL** tab.
 2. Select the destination that you want to create a mapping for.  

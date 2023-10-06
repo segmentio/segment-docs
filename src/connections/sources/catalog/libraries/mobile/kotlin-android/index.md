@@ -57,34 +57,30 @@ To get started with the Analytics-Kotlin mobile library:
 
     Segment recommends you to install the library with a build system like Gradle, as it simplifies the process of upgrading versions and adding integrations. The library is distributed through [Maven Central](https://central.sonatype.com/artifact/com.segment.analytics.kotlin/android/1.10.2){:target="_blank"}. Add the analytics module to your build.gradle as a dependency as shown in the code sample below, and replace `<latest_version>` with the latest version listed on Segment's [releases page.](https://github.com/segmentio/analytics-kotlin/releases){:target="_blank"}
 
-  {% codeexample %}
-  {% codeexampletab Kotlin%}
-  ```java
+    <br> Kotlin
+      ```java
       repositories {
         mavenCentral()
       }
       dependencies {
         implementation 'com.segment.analytics.kotlin:android:<latest_version>'
       }
-  ```
-  {% endcodeexampletab %}
-  {% codeexampletab Java%}
-  ```java
+      ```
+
+    <br> Java
+      ```java
       repositories {
-          maven { url 'https://jitpack.io' }
+        mavenCentral()
       }
       dependencies {
-        implementation 'com.github.segmentio.analytics-kotlin:android:+'
+        implementation 'com.segment.analytics.kotlin:android:<latest_version>'
       }
-  ```
-  {% endcodeexampletab %}
-  {% endcodeexample %}   
+      ```
 
-3. Initialize and configure the client. Segment recommends you to install the    client in your application subclass.
+3. Initialize and configure the client. Segment recommends you to install the client in your application subclass.
 
-  {% codeexample %}
-  {% codeexampletab Kotlin%}
-  ```java
+    <br> Kotlin
+      ```java
       // Add required imports
       import com.segment.analytics.kotlin.android.Analytics
       import com.segment.analytics.kotlin.core.*
@@ -97,10 +93,9 @@ To get started with the Analytics-Kotlin mobile library:
         flushAt = 3
         flushInterval = 10
       }
-  ```
-  {% endcodeexampletab %}
-  {% codeexampletab Java%}
-  ```java
+      ```
+    <br> Java
+      ```java
         AndroidAnalyticsKt.Analytics(BuildConfig.SEGMENT_WRITE_KEY,  getApplicationContext(), configuration -> {
     
         configuration.setFlushAt(1);
@@ -113,33 +108,30 @@ To get started with the Analytics-Kotlin mobile library:
 
         JavaAnalytics analyticsCompat = new JavaAnalytics(analytics);​
         });
-  ```
-  {% endcodeexampletab %}
-  {% endcodeexample %}
+      ```
 
-  > warning ""
-  > If you're on an Android platform, you must add the application context as the second parameter.
+    **Warning:** If you're on an Android platform, you must add the application context as the second parameter.
     
-  Automatically tracking lifecycle events (`Application Opened`, `Application Installed`, `Application Updated`) is optional, but Segment highly recommends you to configure these options in order to track core events. Unlike the Analytics Android SDK, the Analytics Kotlin SDK doesn't provide a singleton instance and relies on you to keep track of the instance.
+    <br>Automatically tracking lifecycle events (`Application Opened`, `Application Installed`, `Application Updated`) is optional, but Segment highly recommends you to configure these options in order to track core events. Unlike the Analytics Android SDK, the Analytics Kotlin SDK doesn't provide a singleton instance and relies on you to keep track of the instance.
 
-  <br>These are the options you can apply to configure the client:
+    <br>These are the options you can apply to configure the client:
 
-  Option Name | Description
-  ----------- | -----------
-  `writeKey` *required* | This is your Segment write key. |
-  `application` | Default set to `null`. <br> The application specific object (in the case of `Android: ApplicationContext`).
-  `apiHost` | Default set to `api.segment.io/v1`. <br> This sets a default API Host to which Segment sends events. |
-  `autoAddSegmentDestination` | Default set to `true`. <br> This automatically adds the Segment Destination plugin. You can set this to `false` if you want to manually add the Segment Destination plugin. |
-  `collectDeviceId` | Default set to `false`. <br> Set to `true` to automatically collect the device Id. <br> The [DRM API](https://source.android.com/devices/drm) generates the device ID. If the ID didn't generate previously (for example, because the app was newly installed), an empty string shows before the ID generation completes. You can overwrite the device ID with a custom ID by writing your own [`plugin`](#plugin) |
-  `defaultSettings` | Default set to `{}`. <br> The settings object used as fallback in case of network failure. |
-  `flushAt` | Default set to `20`. <br> The count of events at which Segment flushes events. |
-  `flushInterval` | Default set to `30` (seconds). <br> The interval in seconds at which Segment flushes events. |
-  `flushPolicies` | undefined | Add more granular control for when to flush |
-  `recordScreenViews` | Default set to `false`. <br> Set to `true` to automatically trigger screen events on Activity Start. |
-  `storageProvider` | Default set to `ConcreteStorageProvider`. <br> In Android, this must be set to `AndroidStorageProvider`. The `Analytics` constructors configure this automatically. |
-  `trackApplicationLifecycleEvents` | Default set to `false`. <br> Set to `true` to automatically track Lifecycle events. |
-  `trackDeepLinks` | Default set to `false`. <br> Set to `true` to automatically track opened Deep Links based on intents. |
-  `useLifecycleObserver` | Default set to `false`. <br> Set to `true` to use `LifecycleObserver` to track Application lifecycle events. |
+    Option Name | Description
+    ----------- | -----------
+    `writeKey` *required* | This is your Segment write key. |
+    `application` | Default set to `null`. <br> The application specific object (in the case of `Android: ApplicationContext`).
+    `apiHost` | Default set to `api.segment.io/v1`. <br> This sets a default API Host to which Segment sends events. |
+    `autoAddSegmentDestination` | Default set to `true`. <br> This automatically adds the Segment Destination plugin. You can set this to `false` if you want to manually add the Segment Destination plugin. |
+    `collectDeviceId` | Default set to `false`. <br> Set to `true` to automatically collect the device Id. <br> The [DRM API](https://source.android.com/devices/drm) generates the device ID. If the ID didn't generate previously (for example, because the app was newly installed), an empty string shows before the ID generation completes. You can overwrite the device ID with a custom ID by writing your own [`plugin`](#plugin) |
+    `defaultSettings` | Default set to `{}`. <br> The settings object used as fallback in case of network failure. |
+    `flushAt` | Default set to `20`. <br> The count of events at which Segment flushes events. |
+    `flushInterval` | Default set to `30` (seconds). <br> The interval in seconds at which Segment flushes events. |
+    `flushPolicies` | undefined <br> Add more granular control for when to flush |
+    `recordScreenViews` | Default set to `false`. <br> Set to `true` to automatically trigger screen events on Activity Start. |
+    `storageProvider` | Default set to `ConcreteStorageProvider`. <br> In Android, this must be set to `AndroidStorageProvider`. The `Analytics` constructors configure this automatically. |
+    `trackApplicationLifecycleEvents` | Default set to `false`. <br> Set to `true` to automatically track Lifecycle events. |
+    `trackDeepLinks` | Default set to `false`. <br> Set to `true` to automatically track opened Deep Links based on intents. |
+    `useLifecycleObserver` | Default set to `false`. <br> Set to `true` to use `LifecycleObserver` to track Application lifecycle events. |
 
 4. Add Permissions to `AndroidManifest.xml`.
 
