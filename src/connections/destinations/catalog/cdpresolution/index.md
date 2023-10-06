@@ -1,6 +1,4 @@
----
-title: CDP Resolution (Browser) Destination
----
+## title: CDP Resolution (Browser) Destination
 
 {% include content/plan-grid.md name="actions" %}
 
@@ -23,7 +21,7 @@ Setup within CDP Resolution:
 3.	Paste your Write Key into CDP Resolution's connection configuration.
 4.	Click ‘Upload Key’.
 
-To verify that the destination has been set up correctly, check the Debugger section of your Segment Source. Assuming everything is as it should be, you should start seeing resolution data populate in the `identify` events – click on the specific event you’re interested in to see CDP Resolutions traits. These traits will now be available to other Segment destinations in your account. Notice that all CDP Resolution traits are prefixed with `cdpresolution_` to ensure they don’t conflict with existing traits.
+To verify that the destination has been set up correctly, check the Debugger section of your Segment Source. Assuming everything is as it should be, you should start seeing resolution data populate in the `identify` and `group` events – click on the specific event you’re interested in to see CDP Resolutions traits. These traits will now be available to other Segment destinations in your account. Notice that all CDP Resolution traits are prefixed with `cdpresolution_` to ensure they don’t conflict with existing traits.
 
 When you make requests to CDP Resolution, CDP Resolution sends events with its own data back to your Segment source server-side using Segment's Node JS Library. If you see unexpected traffic from curl in your Debugger, that traffic represents the events that CDP Resolution sends back.
 
