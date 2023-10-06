@@ -1,35 +1,31 @@
-title: [integration_name] Destination
-(delete after reading) This template is meant for Actions-based destinations that do not have an existing Classic or non-Actions-based version. For Actions Destinations that are a new version of a classic destination, see the doc-template-update.md template.
-
-(delete after reading) In the section above, edit the title field. For example, Slack (Actions) Destination
+---
+title: CDP Resolution (Browser) Destination
+---
 
 {% include content/plan-grid.md name="actions" %}
 
-(delete after reading) Include a 1-2 sentence introduction to your company and the value it provides to customers - updating the name and hyperlink. Please leave the utm string unchanged.
+[CDP Resolution](https://cdpresolution.com?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) helps customers instantly match visitor website traffic to full profiles. It turns your anonymous web traffic into full company and buyer profiles — complete with PII and firmographics data, and much more. You can find a list of the different attributes you can collect with CDP Resolution [here](https://cdpresolution.com/theattributes?utm_source=segmentio&utm_medium=docs&utm_campaign=partners).
 
-<integration_name> provides self-serve predictive analytics for growth marketers, leveraging machine learning to automate audience insights and recommendations.
-
-(delete after reading) Update your company name and support email address.
-
-This destination is maintained by <integration_name>. For any issues with the destination, contact their Support team.
-
-(delete after reading) This include describes the requirement of A.js 2.0 or higher for Actions compatibility, and is required if your destination has a web component.
+This destination is maintained by CDP Resolution. For any issues with the destination, [contact their Support team](mailto:support@cdpresolution.com).
 
 {% include content/ajs-upgrade.md %}
 
-(delete after reading) The section below explains how to enable and configure the destination. Include any configuration steps not captured below. For example, obtaining an API key from your platform and any configuration steps required to connect to the destination.
+## Getting started
 
-Getting started
-From the Segment web app, click Catalog, then click Destinations.
-Find the Destinations Actions item in the left navigation, and click it.
-Click Configure <desintation_name>.
-Select an existing Source to connect to <destination_name> (Actions).
-(delete after reading) The line below renders a table of connection settings (if applicable), Pre-built Mappings, and available actions.
+Setup within Segment:
+1.	From the Segment web app, click **Catalog**.
+2.	Search for “CDP Resolution” in the Catalog, select it, and choose which of your sources to connect the destination to.
+3.	In your Segment Settings UI, enter your CDP Resolution API key. You can find this in the CDP Connector Setting section of your [CDP Resolution Dashboard Connection Settings](https://app.cdpresolution.com/administration/cdp-connections/segment-io-f4241?utm_source=segmentio&utm_medium=docs&utm_campaign=partners).
+
+Setup within CDP Resolution:
+1.	From your [CDP Resolution Connectors](https://app.cdpresolution.com/administration/cdp-connections?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) page click on the Segment IO connector.
+2.	Paste your CDP Resolution API key in Segment to generate your Write key.
+3.	Paste your Write Key into CDP Resolution's connection configuration.
+4.	Click ‘Upload Key’.
+
+To verify that the destination has been set up correctly, check the Debugger section of your Segment Source. Assuming everything is as it should be, you should start seeing resolution data populate in the `identify` events – click on the specific event you’re interested in to see CDP Resolutions traits. These traits will now be available to other Segment destinations in your account. Notice that all CDP Resolution traits are prefixed with `cdpresolution_` to ensure they don’t conflict with existing traits.
+
+When you make requests to CDP Resolution, CDP Resolution sends events with its own data back to your Segment source server-side using Segment's Node JS Library. If you see unexpected traffic from curl in your Debugger, that traffic represents the events that CDP Resolution sends back.
 
 {% include components/actions-fields.html %}
 
-(delete after reading) Additional Context
-
-Include additional information that you think will be useful to the user here. For information that is specific to an individual mapping, please add that as a comment so that the Segment docs team can include it in the auto-generated content for that mapping.
-
-(delete after reading) Congratulations! 🎉 You’ve finished the documentation for your Segment integration. If there’s any additional information or nuance which did not fit in the above template and that you want to share with our mutual customers, feel free to include these as a separate section for us to review. If not, you may now submit this doc to our team.
