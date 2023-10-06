@@ -72,4 +72,4 @@ If you're only issuing a single request in your function and it is slow, you mig
 
 ## Default limit number
 
-Each workspace has a default limit of 25 functions in total. Adding the different types of functions, you cannot create more than 25 functions. If you want to create more than 25, please reach out to friends@segment.com.
+Each workspace has a default limit of 25 Functions in total across Source, Insert, and Destination Functions. If you want to create more than 25, please reach out to friends@segment.com.
