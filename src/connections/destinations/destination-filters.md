@@ -22,7 +22,7 @@ Common use cases for destination filters include:
 
 Keep the following limitations in mind when you use destination filters:
 
-- Destination Filters aren't applied to events sent through the Event Tester
+- Destination Filters aren't applied to events sent through the Event Tester.
 - Segment applies destination filters one at a time in the order that they appear in your workspace.
 - You can't apply destination filters to Warehouses or S3 destinations.
 - Each filter can only apply to one source-destination pair.
