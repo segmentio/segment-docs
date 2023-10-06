@@ -116,7 +116,9 @@ Warehouses are the only supported destination for object-cloud sources.
 ## Historical data
 When a new Object/Collection is enabled, Segment automatically runs a full historical re-sync on that Object.
 
-However, for custom properties/columns, Segment only populates the custom property with data that comes in after the custom field was enabled. In order to populate the new custom field(s) for records that have previously been synced, you need to initiate a manual re-sync.
+However, for custom properties/columns, Segment only populates the custom property with data that comes in after the custom field was enabled. In order to populate the new custom field(s) for records that have previously been synced, you need to initiate a manual re-sync. 
+
+**Note** Initiating a full re-sync might have impact on your workspace's API calls + Object usage. 
 
 For Salesforce, Segment uses the `SystemModstamp`(system_modstamp) field to checkpoint collections that sync incrementally. When enabled, Segment syncs collections incrementally. When disabled, Segment syncs collections fully. If you'd like to force a collection to sync fully on the next run to bring in historical data, you can disable the `SystemModstamp` field on the collection, allow the next sync to complete and then re-enable `SystemModstamp` so the collection syncs incrementally in the coming syncs. 
 
