@@ -210,7 +210,7 @@ treat that property whenever it is appears in data Segment processes.
 ![Animation of a user creating a new matcher, SIN, with the exact matching setting selected.](images/privacy-add-new-matcher.gif)
 
 
-![Screenshot of the Edit Matcher popup.](images/privacy-edit-matcher.png)
+![Screenshot of the Edit Matcher popup.](images/privacy-synonym-in-matcher.png)
 
 
 Unless the field value pattern is unique, we recommend matching on the Key. For
@@ -255,3 +255,10 @@ build new custom matchers:
 - [RegExr](https://regexr.com/) - an online tool to experiment with regular expressions and test them
 - [RegexOne](https://regexone.com/) - a tutorial which takes you from regular expression basics to advanced topics
 - [Regexp Cheatsheet](https://devhints.io/regexp) - a handy cheatsheet to have nearby when you're writing regular expressions
+
+### Using Synonyms
+
+Segment's exact matching and fuzzy matching do not detect all variations in the received keys
+and for those scenarios, you can use synonyms.  For example, for the value `credit card number`, you can add `credit card no`,
+`debit card number`, `debit card no`, or similar variations in the synonyms section to classify those fields.
+![Screenshot of the Synonym used in Custom Matcher.](images/privacy-synonym-in-matcher.png)

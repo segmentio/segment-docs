@@ -40,6 +40,9 @@ Define the number of branches you want to create, then add an **Add a condition*
 
 A randomized split lets you experiment with and test the performance of a Journey's branches. When you create a randomized split, you add up to five Journey branches, each with a different step. Journeys then sends eligible users down one of the branches at random. Each branch receives a portion of the eligible users based on percentages that you assign to the branches.
 
+> info ""
+> If the Journey has a re-entry condition, users will join the same split branches upon re-entry.
+
 To test your messaging channels, for example, you might create a randomized split with three different branches, assigning 40% of users to an email campaign, 40% to an SMS campaign, and 20% to a control group. Once users flow through the split, you can determine the success of the email and SMS campaigns compared to each other and the control group.
 
 #### Add a randomized split
