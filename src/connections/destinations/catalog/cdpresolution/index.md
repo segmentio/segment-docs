@@ -1,4 +1,4 @@
-## title: CDP Resolution (Browser) Destination
+## CDP Resolution (Browser) Destination
 
 {% include content/plan-grid.md name="actions" %}
 
