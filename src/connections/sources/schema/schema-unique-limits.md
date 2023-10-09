@@ -31,7 +31,7 @@ Clearing events from the Source Schema only clears them from the Segment interfa
 You can archive events in order to declutter the Source Schema. This is particularly useful for Protocols customers that want to keep events “Unplanned yet acknowledged” and build a process to monitor for unplanned events. Please note, 
 Protocols is not required to use this feature. You can also filter your view by “Archived” in addition to Planned and Unplanned.
 
-If a Tracking Plan is connected, events need to be blocked or unplanned in order to archive.
+If a Tracking Plan is connected, events need to be blocked or unplanned in order to archive. If there is no Tracking Plan connected the event will need to be disabled to see the archive button.
 
 Archiving an event triggers an “Schema Event Archived” activity to the Audit Trail.
 
