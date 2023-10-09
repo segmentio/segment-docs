@@ -142,6 +142,63 @@ Destinations are the business tools or apps that Segment forwards your data to. 
   %}
 </div>
 
+## Control upload with Flush Policies
+To granularly control when Segment uploads events you can use `flushPolicies`.
+A Flush Policy defines the strategy for deciding when to flush. This can be on an interval, time of day, after receiving a certain number of events, or after receiving a particular event. This gives you more flexibility on when to send event to Segment.
+Set Flush Policies in the configuration of the client:
+```swift
+    let intervalPolicy = IntervalBasedFlushPolicy(interval: 5);
+    let countPolicy = CountBasedFlushPolicy(count: 5)
+
+    let configuration = Configuration(writeKey: myKey)
+        .trackApplicationLifecycleEvents(true)
+        .flushPolicies([intervalPolicy, countPolicy])
+        .flushInterval(1)
+```
+You can set several policies at a time. When a flush occurs, it triggers an upload of the events, then resets the logic after every flush. 
+As a result, only the first policy to reach `shouldFlush` will trigger a flush. In the example above either the event count reaches 5 or the timer reaches 5 seconds, whatever comes first will trigger a flush.
+Segment has several standard Flush Policies:
+- `CountBasedFlushPolicy` triggers when you reach a certain number of events
+- `IntervalBasedFlushPolicy` triggers on an interval of milliseconds
+
+### Adding or removing policies
+One of the main advantages of Flush Policies is that you can add and remove policies on the fly. This is very powerful when you want to reduce or increase the amount of flushes. Please see the below example on how to add and remove Flush Policies
+```swift
+        analytics?.remove(flushPolicy: countPolicy)
+        
+        let newCountPolicy = CountBasedFlushPolicy(count: 50)
+        analytics?.add(flushPolicy: newCountPolicy)
+```
+### Creating your own flush policies
+You can create a custom Flush Policy special for your application needs by implementing the  `FlushPolicy` protocol. Your policies have a `shouldFlush` method. When this returns true the client attempts to upload events.
+
+```swift
+import Foundation
+import Segment
+
+public class ScreenFlushPolicy: FlushPolicy {
+    public var analytics: Segment.Analytics?
+
+    init() { }
+    
+    public func configure(analytics: Segment.Analytics) {
+    }
+    
+    public func updateState(event: Segment.RawEvent) {
+        if (event.type == "Screen") {
+            shouldFlush()
+        }
+    }
+    
+    public func reset() {
+    }
+    
+    public func shouldFlush() -> Bool {
+        return true
+    }
+}
+```
+
 ## Tools and extensions
 
 Analytics for Swift is built with extensibility in mind. Use the tools list below to improve data collection.

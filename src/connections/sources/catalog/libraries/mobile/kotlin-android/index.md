@@ -194,6 +194,32 @@ Destinations are the business tools or apps that Segment forwards your data to. 
   %}
 </div>
 
+## Control upload with Flush Policies
+To granularly control when Segment uploads events you can use `flushPolicies`.
+A Flush Policy defines the strategy for deciding when to flush. This can be on an interval, time of day, after receiving a certain number of events, or after receiving a particular event. This gives you more flexibility on when to send event to Segment.
+Set Flush Policies in the configuration of the client:
+```kotlin
+      analytics = Analytics(myKey, applicationContext) {
+            this.collectDeviceId = true
+            this.trackApplicationLifecycleEvents = true
+            this.trackDeepLinks = true
+            this.flushPolicies = listOf(
+                CountBasedFlushPolicy(5), // Flush after 5 events
+                FrequencyFlushPolicy(5000), // Flush after 5 secs
+                StartupFlushPolicy() // Flush on startup
+            )
+        }
+```
+You can set several policies at a time. When a flush occurs, it triggers an upload of the events, then resets the logic after every flush. 
+As a result, only the first policy to reach `shouldFlush` will trigger a flush. In the example above either the event count reaches 5 or the timer reaches 5000ms, whatever comes first will trigger a flush.
+Segment includes the following Flush Policies for Kotlin:
+- `CountBasedFlushPolicy` triggers when you reach a certain number of events
+- `FrequencyFlushPolicy` triggers on an interval of milliseconds
+- `StartupFlushPolicy` Flush on startup
+
+### Creating your own flush policies
+You can create a custom Flush Policy for your application needs by implementing the  `FlushPolicy` interface. By implementing the `FlushPolicy` [interface](https://github.com/segmentio/analytics-kotlin/blob/main/core/src/main/java/com/segment/analytics/kotlin/core/platform/policies/FlushPolicy.kt), this will create the `shouldFlush` method, which will flush events when it returns `true`.
+
 ## Tools and extensions
 
 Analytics for Kotlin is built with extensibility in mind. Use the tools list below to improve data collection.
