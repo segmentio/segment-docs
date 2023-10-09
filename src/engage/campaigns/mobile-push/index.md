@@ -270,11 +270,11 @@ Follow these steps to set up mobile push in Twilio Engage.
 
 Complete mobile push onboarding by creating a new push service:
 
-2. In your Segment workspace, navigate to **Engage > Engage settings**.
-3. Click the pencil icon next to **Messaging services**, then click **Create new push service**.
+1. In your Segment workspace, navigate to **Engage > Engage settings**.
+2. Click the pencil icon next to **Messaging services**, then click **Create new push service**.
     - If you don't see the pencil icon, select **Create new push service**.
-4. Name the push service, select or create APN and FCM credentials, then click **Create Push Service**.
-5. Your new messaging service appears in the **Add messaging services** dropdown. Select it, then click **Save**.
+3. Name the push service, select or create APN and FCM credentials, then click **Create Push Service**.
+4. Your new messaging service appears in the **Add messaging services** dropdown. Select it, then click **Save**.
 
 ## 5. Build a mobile push template
 
