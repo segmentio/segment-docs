@@ -15,8 +15,8 @@ You'll set up mobile push in four stages:
 1. [Set up analytics for mobile push](#1-set-up-analytics-for-mobile-push).
 2. [Add the Engage SDK plugin for iOS](#2-add-the-engage-sdk-plugin-for-ios).
 3. [Add the Engage SDK plugin for Android](#3-add-the-engage-sdk-plugin-for-android).
-4. [Configure push credentials](#3-configure-push-credentials).
-5. [Configure mobile push in Engage](#4-configure-mobile-push-in-engage).
+4. [Configure push credentials](#4-configure-push-credentials).
+5. [Configure mobile push in Engage](#5-configure-mobile-push-in-engage).
 
 ## 1. Set up analytics for mobile push
 
