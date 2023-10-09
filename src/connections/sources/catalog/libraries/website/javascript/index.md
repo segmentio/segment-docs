@@ -920,16 +920,16 @@ Bundle the destinations you want loaded from [npm](https://www.npmjs.com/package
   ```
 
 ## Segment Inspector
-The Segment Inspector is a Chrome web extension that enables you to debug your Segment integration on web applications instrumented with Analytics.js 2.0. Analytics.js sends data to the extension so that you can see how events change before they're sent to your destinations, and so that you can verify that the event details are correct. Analyze and confirm that API calls made from your website arrive to your Segment Source. 
+The Segment Inspector is a Chrome web extension that enables you to debug your Segment integration on web applications instrumented with Analytics.js 2.0. Analytics.js sends data to the extension so that you can see how events change before they're sent to your destinations and so that you can verify that the event details are correct. The Segment Inspector also lets you analyze and confirm that API calls made from your website arrive to your Analytics.js 2.0 source. 
 
 > info ""
 > For the Segment inspector to work, you must enable the Analytics.js 2.0 source.
 
 To add the Segment Inspector as a Chrome extension:
-1. Go to the [Chrome web store](https://chrome.google.com/webstore/category/extensions).
+1. Go to the [Chrome web store](https://chrome.google.com/webstore/category/extensions){:target="_blank”}.
 2. Search for **Segment Inspector**.
 3. Click **Add to Chrome**.
-4. Click Add Extension in the pop-up window.  
+4. Click **Add Extension** in the pop-up window.  
 
 Once installed, use the Inspect Elements developer tool in Chrome to use the Segment Inspector. To access the Inspector, go the top menu bar of Chrome and navigate to **View > Developer > Inspect Elements** and to go the **Segment** tab. On the Segment tab, you can:
 - Filter the different calls by type
@@ -947,7 +947,8 @@ The Segment Inspector is composed of these three components:
    - Select the *fx* icon to see the payloads after plugins ran.
    - Select the single-checked icon to see the payload as it was when the event triggered.
 3. The **Identity** tab 
-   - This tab enables you to see the information of a user if you're using the `identify` feature. You can associate the data to an individual and measure their activity across multiple sessions and devices. If you're not using the `identify` feature, the user remains anonymous. 
+   - This tab enables you to see the information of a user if you're using the `identify` feature. You can associate the data to an individual and measure their activity across multiple sessions and devices. 
+   - If you're not using the `identify` feature, the user remains anonymous. 
 
 
 ## Open source libraries
