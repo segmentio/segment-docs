@@ -118,6 +118,10 @@ Add an unsubscribe link to text:
 
 You can alternatively add a [predefined unsubscribe](#add-blank-columns-or-predefined-content-blocks) link content block.
 
+## Add a manage preference link
+
+Engage also adds a manage preference link to templates. The manage preference link lets your customers opt in and out of email groups on an individual basis instead of unsubscribing from all your campaigns. For more information, see [subscription groups](/docs/engage/user-subscriptions/subscription-groups/).
+
 ## Personalize with merge tags
 Add merge tags in the Drag and Drop Editor to personalize your message with user profile traits.
 
@@ -144,6 +148,10 @@ For example, use  `{% if %}`, `{% elseif %}`, and `{% else %}` tags to call a pr
 
 
 To view more examples related to your use case, visit the [LiquidJS docs](https://liquidjs.com/tags/if.html){:target="blank"}.
+
+## Content validation
+
+For all content editors in Engage, you'll see alerts for any issues in your template, such as invalid profile traits or incorrect [liquid syntax](https://liquidjs.com/tags/overview.html){:target="blank"}. Engage both flags template issue(s), and displays recommended next steps. While you can save these templates, you must fix any issues before using them in Engage campaigns. 
 
 ## Save the template
 

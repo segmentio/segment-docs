@@ -172,3 +172,8 @@ You can see the current destination endpoint API success rates and final deliver
 
 > warning ""
 > If you submitted [`suppress_only` requests](https://segment.com/docs/privacy/user-deletion-and-suppression/#suppressed-users), Segment still retains historical events for those users, which can be replayed. If you do not want historical events replayed for suppressed users, submit `suppress_and_delete` requests instead.
+
+
+### IP Allowlist 
+
+{% include content/ip-allowlist.md %}

@@ -6,7 +6,7 @@ strat: ajs
 
 Custom domains allow you to proxy Analytics.js and proxy all tracking event requests through your domain.
 
-## Custom Proxy Prerequisites
+## Custom Proxy prerequisites
 
 To set up a custom domain, you need:
 
@@ -31,9 +31,9 @@ You need to set up two important parts, regardless of the CDN provider you use:
 > info ""
 > Segment only has the ability to enable the proxy setting for the Web (Analytics.js) source. Details for mobile source proxies are in the [Analytics for iOS](/docs/connections/sources/catalog/libraries/mobile/ios/#proxy-https-calls) and [Analytics for Android](/docs/connections/sources/catalog/libraries/mobile/android/#proxying-http-calls) documentation.  It is not currently possible to set up a proxy for server sources using the Segment UI.
 
-## Custom Proxy Set up
+## Custom Proxy setup
 
-There are 2 options you can choose from when you set up your custom domain proxy.
+There are two options you can choose from when you set up your custom domain proxy.
 1. [CloudFront](#custom-proxy-cloudfront)
 2. [Custom CDN or API proxy](#custom-cdn--api-proxy)
 
@@ -60,7 +60,11 @@ A Segment Customer Success team member will respond that they have enabled this 
 
 
 ## Custom CDN / API Proxy
+
 Follow these instructions after setting up a proxy such as [CloudFront](#custom-proxy-cloudfront). Choose between the [snippet instructions](#snippet-instructions) or the [npm instructions](#npm-instructions).  
+
+> info ""
+> If you've followed the instructions above to have a Segment team member enable the apiHost settings in the UI, you can skip the instructions in this section. 
 
 ### Snippet instructions
 If you're a snippet user, you need to modify the [analytics snippet](/docs/getting-started/02-simple-install/#step-1-copy-the-snippet) that's inside your `<head>`.
@@ -85,7 +89,7 @@ Proxy settings and destination requests that typically go to `https://cdn.segmen
 ```ts
 const analytics = AnalyticsBrowser.load({
   writeKey,
-  // GET https://MY-CUSTOM-CDN-PROXY.com/v1/project/<writekey>/settings --> proxies to
+  // GET https://MY-CUSTOM-CDN-PROXY.com/v1/projects/<writekey>/settings --> proxies to
   // https://cdn.segment.com/v1/projects/<writekey>/settings
 
   // GET https://MY-CUSTOM-CDN-PROXY.com/next-integrations/actions/...js  --> proxies to
@@ -172,5 +176,5 @@ To add a CNAME record to your DNS settings:
 
 Follow the instructions at [Using Analytics.js as an NPM Package](https://github.com/segmentio/analytics-next/tree/master/packages/browser#-using-as-an-npm-package), to host Analytics.js and eliminate the requirement of downloading it from the CDN file during every page load. This enables you to self-host/import the library itself.
 
-> warning "Keep in mind"
+> warning ""
 > Segment does not recommend self-hosting, as it requires that you configure integration settings individually and manually redeploy Analytics.js when there are changes to your settings. When you enable third-party libraries in device-mode, Segment loads them, which defeats the purpose of self-hosting. 

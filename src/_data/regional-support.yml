@@ -44,6 +44,7 @@ sources:
     - zendesk
     - google-ads
     - facebook-ads
+    - iterable
   endpoint:
     - intercom
     - amp
@@ -78,6 +79,7 @@ sources:
     - zendesk
     - google-ads
     - facebook-ads
+    - iterable
 destinations:
   region:
     - 2mee
