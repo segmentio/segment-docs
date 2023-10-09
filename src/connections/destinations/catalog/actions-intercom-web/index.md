@@ -49,5 +49,5 @@ If you are seeing 404 responses in your browser's network tab, you've likely enc
 - You set the wrong App ID on the Intercom Actions (Web) destination settings page.
 - You set the wrong Regional Data Hosting value on the Intercom Actions (Web) destination settings page. Intercom gates regional endpoints by plan level, so you may not have access to EU data hosting.
 
-### Intercom does not support a bulk contacts endpoint.
- Normally, implementing batching could help reduce rate limit errors in rETL but this is not supported in Intercom. 
+### Intercom does not support rETL event batching
+The Intercom (Web) Actions destination does not support the bulk contacts endpoint, and therefore is unable to support batching events in rETL.
