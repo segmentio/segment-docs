@@ -44,11 +44,13 @@ The automatically collected and enhanced measurement events include parameters b
 
 ## FAQ & Troubleshooting
 
-### Custom Event Naming
+### Custom Events
 
 For custom event naming, Google Analytics 4 does not accept custom event names that include spaces. Segment replaces spaces in the Event Name in the Custom Event action with an underscore. As a result, you will see custom events snake cased in Google Analytics 4.
 
-Event names are case-sensitive in Google Analytics 4. If you would like all event names to be lowercase, use the **Lowercase Event Name** setting when you create a Custom Event mapping and select `Yes` from the dropdown. If this setting is set to `No` (`false`), Google treats event names with different casing as distinct events. For more information, see [Google Analytics 4 Event name rules](https://support.google.com/analytics/answer/13316687?hl=en&ref_topic=13367860&sjid=2167389739796023681-NA#zippy=%2Cweb){:target="_blank"}.
+Event names are case-sensitive in Google Analytics 4. If you would like all event names to be lowercase, use the **Lowercase Event Name** setting when you create a Custom Event mapping and select `Yes` from the dropdown. If this setting is disabled, Google will treat event names with different casing as distinct events. 
+
+Keep in mind that custom events will not appear in Google's standard reports; you will need to set up custom reports for meaningful analysis. 
 
 ### Custom Dimensions and Metrics
 

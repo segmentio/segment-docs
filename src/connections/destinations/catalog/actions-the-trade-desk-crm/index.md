@@ -9,19 +9,19 @@ id: 6440068936c4fb9f699b0645
 
 [The Trade Desk](https://www.thetradedesk.com/us){:target="_blank"} empowers companies and their partners to leverage data in their expansive data marketplace, facilitating seamless discovery, creation, and engagement with valuable audiences. Segment's integration with The Trade Desk allows you to push first-party user data from audiences created in [Twilio Engage](https://www.twilio.com/en-us/engage){:target="_blank"} to The Trade Desk platform, enhancing targeted reach to brand's first-party audiences.
 
-This integration enables users to effortlessly link their Engage Audiences to The Trade Desk and transmit Personally Identifiable Information (PII), including email addresses and hashed emails. Users have the flexibility to configure their delivery preferences within Segment.
+This integration lets users link Engage audiences to The Trade Desk and transmit Personally Identifiable Information (PII), including email addresses and hashed emails. Users have the flexibility to configure their delivery preferences within Segment.
 
 > info ""
 > The Trade Desk destination can only be connected to Twilio Engage sources.
 
-## Getting Started
+## Getting started
 
-### Obtaining Credentials from The Trade Desk
+### Obtaining credentials from The Trade Desk
 
-> info "" 
-> Before activating audiences on The Trade Desk, contact your The Trade Desk account manager to sign the UID POC contract. Following this, The Trade Desk will grant permission and share your advertiser ID and secret key for configuring your destination.
+> info ""
+> Contact your The Trade Desk account manager to sign the UID POC contract before you activate audiences on The Trade Desk. Afterwards, The Trade Desk will grant permission and share your advertiser ID and secret key for configuring your destination.
 
-Generate a [long-lived token](https://partner.thetradedesk.com/v3/portal/api/doc/Authentication#ui-method-create){:target="_blank"} on [The Trade Desk's Developer Portal](https://api.thetradedesk.com/v3/tokens){:target="_blank"}.
+Before you begin, generate a [long-lived token](https://partner.thetradedesk.com/v3/portal/api/doc/Authentication#ui-method-create){:target="_blank"} on [The Trade Desk's Developer Portal](https://api.thetradedesk.com/v3/tokens){:target="_blank"}.
 
 ### Connecting The Trade Desk CRM
 
