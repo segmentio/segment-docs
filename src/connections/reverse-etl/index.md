@@ -159,7 +159,7 @@ To edit your mapping:
 3. Select the **...** three dots and click **Edit mapping**. If you want to delete your mapping, select **Delete**.
 
 ## Reverse ETL for Engage Premier Subscriptions
-Engage Premier Subscriptions users can use Reverse ETL to sync subscription data from warehouses to destinations. 
+[Engage Premier Subscriptions users](/docs/engage/user-subscriptions/) can use Reverse ETL to sync subscription data from warehouses to destinations. 
 
 To get started with using Reverse ETL for subscriptions: 
 1. Navigate to **Engage > Audiences** and select the **Profile explorer** tab. 
