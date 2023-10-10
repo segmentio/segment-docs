@@ -10,7 +10,7 @@ With this approach, you might use a request "middleware" to log a `pageview` w
 
 There are a few things to be mindful of if you want to make sure you can attribute these (anonymous) page views to the appropriate user in your client-side source (eg, for effectively joining these tables together to do down-funnel behavioral attribution). You'll want to ensure they share an `anonymousId` by respecting one if it's already there, and setting it yourself if not. To do that, you can read and modify the `ajs_anonymous_id` cookie value in the request.
 
-Be sure to pass through as many fields as you can in Segment's [page](/docs/connections/spec/page/) and [context](/docs/connections/spec/common/) spec, so that you get full functionality in any downstream tools you choose to enable. Segment recommends specifically ensuring you pass the **url, path, host, title, search, and referrer** in the message `properties` and **ip and user-agent** in the message `context` .
+Be sure to pass through as many fields as you can in Segment's [Page](/docs/connections/spec/page/) and [Common](/docs/connections/spec/common/) spec, so that you get full functionality in any downstream tools you choose to enable. Segment recommends specifically ensuring you pass the **url, path, host, title, search, and referrer** in the message `properties` and **ip and user-agent** in the message `context` .
 
 Here's an example of an express middleware function that covers all those edge cases:
 
