@@ -62,10 +62,6 @@ To get started, you'll need to connect a data warehouse. Linked Events supports 
 
 ### Schema
 
-For Linked Events, the sync destination is an internal Segment data store. To track the data you send to Segment, you can view deltas/diffs in tables within a single schema Segment creates called `_segment_reverse_etl`. 
-
-You can choose which database within your warehouse this data lives in. 
-
 Linked Events uses Reverse ETL to compute the incremental changes to your data directly within your data warehouse. The Unique Identifier column detects data changes, such as new, updated, and deleted records. 
 
 For Segment to compute data changes in your warehouse, Segment requires both read and write permissions to the warehouse schema table. At a high level, the extract process requires read permissions for the query being executed. Segment tracks changes to the query results through tables that Segment manages in a dedicated schema (for example, `_segment_reverse_etl`), which requires some write permissions.
