@@ -75,8 +75,9 @@ Google may take [24-48 hours](https://support.google.com/analytics/answer/933379
 ### Data is not sent to Google
 
 In order for data to be sent downstream to Google Analytics, check your mappings to ensure that:
-1. The **setConfigurationFields** mapping is enabled in your mappings
-2. You've added at least one other event mapping for an event you want to send to Google Analytics. 
+1. The **setConfigurationFields** mapping is enabled in your mappings.
+2. You've added at least one other event mapping for an event you want to send to Google Analytics.
+3. Your event mapping doesn't use the condition 'Event Type is Page'. The GA config command uses a Page event when your page loads, so Page calls can't be used for triggering additional events in GA4. Segment recommends using a [Track call](/docs/connections/spec/track/) for any additional events you'd like to appear in GA4 so your events can go through after the initial 'config' loads.
 
 The **setConfigurationFields** mapping is required in order for data to be sent downstream. If no other mappings are enabled, the destination does not send events.
 
