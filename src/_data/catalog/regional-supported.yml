@@ -35,6 +35,7 @@ sources:
     url: connections/sources/catalog/cloud-apps/airship
     regions:
       - us
+      - eu
     endpoints:
       - us
   - id: GNLT5OQ45P
@@ -91,6 +92,7 @@ sources:
     url: connections/sources/catalog/cloud-apps/beamer
     regions:
       - us
+      - eu
     endpoints:
       - us
   - id: 78PbvP2yv8
@@ -127,6 +129,7 @@ sources:
     url: connections/sources/catalog/cloud-apps/braze
     regions:
       - us
+      - eu
     endpoints:
       - us
   - id: nmb56PunPc
@@ -154,6 +157,7 @@ sources:
     url: connections/sources/catalog/cloud-apps/clevertap
     regions:
       - us
+      - eu
     endpoints:
       - us
   - id: B6L7qzHmhI
@@ -317,6 +321,7 @@ sources:
     url: connections/sources/catalog/cloud-apps/gwen-webhooks
     regions:
       - us
+      - eu
     endpoints:
       - us
   - id: xJSb170s6B
@@ -592,6 +597,7 @@ sources:
     url: connections/sources/catalog/cloud-apps/moengage-source
     regions:
       - us
+      - eu
     endpoints:
       - us
   - id: tmy2gJdz77
@@ -932,6 +938,7 @@ sources:
     url: connections/sources/catalog/cloud-apps/voucherify
     regions:
       - us
+      - eu
     endpoints:
       - us
   - id: 7GmYZcBQyw
