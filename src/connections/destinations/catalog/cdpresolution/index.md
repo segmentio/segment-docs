@@ -1,4 +1,9 @@
-## CDP Resolution (Browser) Destination
+---
+title: CDP Resolution (Browser) Destination
+id: 650c69e7f47d84b86c120b4c
+beta: true
+---
+
 
 {% include content/plan-grid.md name="actions" %}
 
