@@ -35,18 +35,15 @@ Before getting started with Linked Events, you'll need:
 
 The following Segment access [roles](/docs/segment-app/iam/roles/) apply to Linked Events:
 
-**Entities Admin Access**: Full CRUD (create, read, access, and delete) access to all Entities within a workspace. You can also grant or revoke user permissions.
+**Entities Admin Access**: Entities Admins have the ability to view and edit entity models and connection details.
 
-**Entities Read-only Access**: Read-only access to all Entities models and destinations in a workspace. 
+**Entities Read-only Access**: Entities Read-only users have the ability to view entity models. 
 
-For Linked Events, you need the following roles: 
-- `Workspace Owner`
-- `Entities Admin`
-- `Source Admin`
+To create models and enrich events in destinations, you need the following roles:
+- `Workspace Owner` and `Entities Admin` 
 
-To use Connections with Linked Events:
-- `Workspace Owner`
-- `Unify Read-only or Admin`
+OR:
+- `Unify and Engage Admin`
 - `Entities Admin` 
 - `Source Admin`
 
@@ -65,12 +62,16 @@ To get started, you'll need to connect a data warehouse. Linked Events supports 
 
 ### Schema
 
-For Linked Events, the sync destination is an internal Segment data store. To track the data you send to Segment, you can view deltas/diffs in tables within a single schema Segment creates called `_segment_reverse_etl`. 
+Linked Events uses Reverse ETL to compute the incremental changes to your data directly within your data warehouse. The Unique Identifier column detects data changes, such as new, updated, and deleted records. 
 
-You can choose which database within your warehouse this data lives in. 
+For Segment to compute data changes in your warehouse, Segment requires both read and write permissions to the warehouse schema table. At a high level, the extract process requires read permissions for the query being executed. Segment tracks changes to the query results through tables that Segment manages in a dedicated schema (for example, `_segment_reverse_etl`), which requires some write permissions.
+
+> warning ""
+> Only sync what you need for enrichment. There may be cost implications to having Segment query your warehouse tables.
 
 > info ""
 > Linked Events syncs data from your warehouse approximately once every hour. 
+
 
 ### Supported data warehouses
 
