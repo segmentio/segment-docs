@@ -65,16 +65,9 @@ To add your first model:
 5. Click **Preview** to see a preview of the results of your SQL query. The data from the preview is extracted from the first 10 records of your warehouse.
 6. Click **Next**.
 7. Enter your **Model Name**.
-8. Select the Schedule type for the times you want the model’s data to be extracted from your warehouse. You can choose from:
-    * **Interval**: Extractions perform based on a selected time cycle.
-    * **Day and time**: Extractions perform at specific times on selected days of the week.
-9. Select how often you want the schedule to sync in **Schedule configuration**.
-    * For an **Interval** schedule type, you can choose from: 15 minutes, 30 minutes, 1 hour, 2 hours, 4 hours, 6 hours, 8 hours, 12 hours, 1 day.
-        * 15 minutes is considered real-time for warehouse syncs
-    * For a **Day and time** schedule type, you can choose the day(s) you’d like the schedule to sync as well as the time. You can only choose to sync the extraction at the top of the hour.
-10. Click **Create Model**.
+8. Click **Create Model**.
 
-To add multiple models to your source, repeat steps 1-10 above.
+To add multiple models to your source, repeat steps 1-8 above.
 
 ### Step 3: Add a destination
 Once you’ve added a model, you need to add a destination. In Reverse ETL, destinations are the business tools or apps you use that Segment syncs the data from your warehouse to.
@@ -103,24 +96,33 @@ To create a mapping:
 1. Navigate to **Conections > Destinations** and select the **Reverse ETL** tab.
 2. Select the destination that you want to create a mapping for.  
 3. Click **Add Mapping**.
-2. Select the model to sync from.
-3. Select the **Action** you want to sync and click **Next**.
+4. Select the model to sync from.
+5. Select the **Action** you want to sync and click **Next**.
       * Actions determine the information sent to the destination. The list of Actions will be unique to each destination.
-4. In the **Select record to map and send** section, select which records to send to your destination after Segment completes extracting data based on your model. You can choose from:
+6. In the **Select record to map and send** section, select which records to send to your destination after Segment completes extracting data based on your model. You can choose from:
       * Added records
       * Updated records
       * Added or updated records
       * Deleted records
-5. Select a test record to preview the fields that you can map to your destination in the **Add test record** field.
-6. Define how to map the record columns from your model to your destination in the **Select Mappings** section.
-      * You map the fields that come from your source, to fields that the destination expects to find. Fields on the destination side depend on the type of action selected.
-      * If you're setting up a destination action, depending on the destination, some mapping fields may require data to be in the form of an object or array. See the [supported objects and arrays for mapping](#supported-object-and-arrays).
-7. Click **Create Mapping**.
-8. Select the destination you’d like to enable on the **My Destinations** page under **Reverse ETL > Destinations**.
-9. Turn the toggle on for the **Mapping Status**. Events that match the trigger condition in the mapping will be sent to the destination.
+7. Select a test record to preview the fields that you can map to your destination in the **Add test record** field.
+8. Select the Schedule type for the times you want the model’s data to be extracted from your warehouse. You can choose from:
+    * **Interval**: Extractions perform based on a selected time cycle.
+    * **Day and time**: Extractions perform at specific times on selected days of the week.
+9. Select how often you want the schedule to sync in **Schedule configuration**.
+    * For an **Interval** schedule type, you can choose from: 15 minutes, 30 minutes, 1 hour, 2 hours, 4 hours, 6 hours, 8 hours, 12 hours, 1 day.
+        * 15 minutes is considered real-time for warehouse syncs
+    * For a **Day and time** schedule type, you can choose the day(s) you’d like the schedule to sync as well as the time.
+        * You can only choose to start the **Extraction** at the top of the hour.
+        * Scheduling multiple **Extractions** to start at the same time inside the same data warehouse can cause extracion errors
+10. Define how to map the record columns from your model to your destination in the **Select Mappings** section.
+    * You map the fields that come from your source, to fields that the destination expects to find. Fields on the destination side depend on the type of action selected.
+    * If you're setting up a destination action, depending on the destination, some mapping fields may require data to be in the form of an object or array. See the [supported objects and arrays for mapping](#supported-object-and-arrays).
+11. Click **Create Mapping**.
+12. Select the destination you’d like to enable on the **My Destinations** page under **Reverse ETL > Destinations**.
+13. Turn the toggle on for the **Mapping Status**. Events that match the trigger condition in the mapping will be sent to the destination.
     * If you disable the mapping state to the destination, events that match the trigger condition in the mapping won’t be sent to the destination.
 
-To add multiple mappings from your warehouse to your destination, repeat steps 1-9 above.
+To add multiple mappings from your warehouse to your destination, repeat steps 1-13 above.
 
 ## Using Reverse ETL
 After you've followed [all four steps](/docs/connections/reverse-etl/#getting-started) and set up your source, model, destination, and mappings for Reverse ETL, your data will extract and sync to your destination(s) right away if you chose an interval schedule. If you set your data to extract at a specific day and time, the extraction will take place then.
