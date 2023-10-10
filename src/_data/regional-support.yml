@@ -45,6 +45,17 @@ sources:
     - google-ads
     - facebook-ads
     - iterable
+    - wootric
+    - voucherify
+    - moengage-source
+    - mailmodo-source
+    - gwen-webhooks
+    - customerio
+    - clevertap
+    - braze
+    - beamer
+    - airship
+    - adwords
   endpoint:
     - intercom
     - amp
