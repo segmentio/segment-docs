@@ -72,6 +72,11 @@ Segment supports object and array data types in the Tracking Plan editor. These 
 1. Create a new property row and set the Data Type to `Object` or `Array`.
 2. Click the **(+)** next to the property name to add key value pairs in the object, or objects to an array of objects.
 
+### Add Identify or Group traits
+You can define which traits you expect to see passed in Identify or Group calls like how you would add Track calls to the Tracking Plan. Navigate to the **Identify** or **Group** tab in your Tracking Plan and click the **(+)** button to add a new trait.
+
+It's best to keep traits optional because Identify and Group are often called and pass only _new or changed_ traits, because Segment's client-side libraries (analytics.js, Swift, Kotlin) cache traits in local storage. See the [Identify Best Practices](/docs/connections/spec/best-practices-identify#when-and-how-often-to-call-identify) to learn more.
+
 ### Add a label
 You can apply `key:value` labels to each event to help organize your Tracking Plan. These labels are helpful when multiple teams are managing a single Tracking Plan, or if you want to specify a priority, platform, product, or similar meta-data for each event. You can filter by label from the Tracking Plan, Schema, Data Validation and Violations Summary views.
 
@@ -173,11 +178,6 @@ To edit the common JSON schema using the Public API, you'll need to add your new
 
 ### Extend the Tracking Plan
 Some customers prefer to manage the Tracking Plan with outside tools and resources. See the [APIs and extensions](/docs/protocols/apis-and-extensions/) section to learn more.
-
-### Add Identify or Group traits
-You can define which traits you expect to see passed in Identify or Group calls like how you would add Track calls to the Tracking Plan. Navigate to the **Identify** or **Group** tab in your Tracking Plan and click the **(+)** button to add a new trait.
-
-It's best to keep traits optional because Identify and Group are often called and pass only _new or changed_ traits, because Segment's client-side libraries (analytics.js, iOS, Android) cache traits in local storage. See the [Identify Best Practices](/docs/connections/spec/best-practices-identify#when-and-how-often-to-call-identify) to learn more.
 
 ## Tracking Plan Event Versioning
 
