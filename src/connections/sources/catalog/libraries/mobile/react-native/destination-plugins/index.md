@@ -68,6 +68,12 @@ plugins:
       url: https://cdn.filepicker.io/api/file/pUF0kwpTTu0Z5POuzZXV
     mark:
       url: https://cdn.filepicker.io/api/file/0mdiroESxtRQBoR8ieBg
+  - name: Survicate
+    url: connections/sources/catalog/libraries/mobile/apple/destination-plugins/survicate-react-native/
+    logo:
+      url: https://cdn.filepicker.io/api/file/BUciQq3kSzqCn8EKMtBN
+    mark:
+      url: https://cdn.filepicker.io/api/file/0H2JyPoRT4K3CnBQcHPn
   - name: Taplytics
     url: connections/sources/catalog/libraries/mobile/react-native/destination-plugins/taplytics-react-native/
     logo:
