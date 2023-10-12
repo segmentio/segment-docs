@@ -9,7 +9,7 @@ beta: true
 
 [CDP Resolution](https://cdpresolution.com?utm_source=segmentio&utm_medium=docs&utm_campaign=partners){:target="_blank"} helps customers instantly match visitor website traffic to full profiles. It turns your anonymous web traffic into full company and buyer profiles — complete with PII and firmographics data, and much more. You can find a [list of the different attributes](https://cdpresolution.com/theattributes?utm_source=segmentio&utm_medium=docs&utm_campaign=partners){:target="_blank"} you can collect with CDP Resolution.
 
-This destination is maintained by CDP Resolution. For any issues with the destination, [contact their Support team](mailto:support@cdpresolution.com).
+This destination is maintained by CDP Resolution. For any issues with the destination, [contact the CDP Resolution support team](mailto:support@cdpresolution.com).
 
 {% include content/ajs-upgrade.md %}
 
