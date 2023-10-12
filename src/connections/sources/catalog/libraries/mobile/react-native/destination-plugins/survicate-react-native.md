@@ -79,7 +79,7 @@ In the SurvicateDestination plugin, the Identify event from Segment is transferr
 
 ***track***
 
-In the SurvicateDestination plugin, the track method from Segment is used as the invokeEvent method in Survicate. This means that when you track an event in Segment, it will be invoked in Survicate.
+In the SurvicateDestination plugin, the Track method from Segment is used as the invokeEvent method in Survicate. This means that when you track an event in Segment, it will be invoked in Survicate.
 
 #### Screen
 
