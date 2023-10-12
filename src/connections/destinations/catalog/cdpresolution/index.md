@@ -27,11 +27,6 @@ To set up the CDP Resolution destination:
 4.	Click **Upload Key**.
 
 
-Setup within CDP Resolution:
-1.	From your [CDP Resolution Connectors](https://app.cdpresolution.com/administration/cdp-connections?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) page click on the Segment IO connector.
-2.	Paste your CDP Resolution API key in Segment to generate your Write key.
-3.	Paste your Write Key into CDP Resolution's connection configuration.
-4.	Click ‘Upload Key’.
 
 To verify that the destination has been set up correctly, check the Debugger section of your Segment Source. Assuming everything is as it should be, you should start seeing resolution data populate in the `identify` and `group` events – click on the specific event you’re interested in to see CDP Resolutions traits. These traits will now be available to other Segment destinations in your account. Notice that all CDP Resolution traits are prefixed with `cdpresolution_` to ensure they don’t conflict with existing traits.
 
