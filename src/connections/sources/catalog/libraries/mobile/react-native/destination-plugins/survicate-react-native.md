@@ -44,6 +44,7 @@ allprojects {
 }
 ```
 - Add your Survicate workspace key to `AndroidManifest.xml`
+
 ```java
 <application
     android:name=".MyApp"
