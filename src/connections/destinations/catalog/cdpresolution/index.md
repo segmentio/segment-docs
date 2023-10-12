@@ -15,7 +15,7 @@ This destination is maintained by CDP Resolution. For any issues with the destin
 
 ## Getting started
 
-Setup within Segment:
+To set up the CDP Resolution destination:
 1.	From the Segment web app, click **Catalog**.
 2.	Search for “CDP Resolution” in the Catalog, select it, and choose which of your sources to connect the destination to.
 3.	In your Segment Settings UI, enter your CDP Resolution API key. You can find this in the CDP Connector Setting section of your [CDP Resolution Dashboard Connection Settings](https://app.cdpresolution.com/administration/cdp-connections/segment-io-f4241?utm_source=segmentio&utm_medium=docs&utm_campaign=partners).
