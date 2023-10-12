@@ -5,7 +5,7 @@ hidden: true
 
 # AlloyFlow Source
 
-[Alloy](https://runalloy.com/flow/) is a specialized no-code automation platform, built with e-commerce businesses in mind. It seamlessly integrates various applications, paving the way for a streamlined shopping experience and efficient operational workflows.
+[Alloy](https://runalloy.com/flow/){:target="_blank"} is a specialized no-code automation platform, built with e-commerce businesses in mind. It seamlessly integrates various applications, paving the way for a streamlined shopping experience and efficient operational workflows.
 
 Combining Alloy's automation prowess with Segment's data collection and distribution capabilities, businesses can capture and react to real-time customer activities across all digital interfaces. Whether it's a website visit, a mobile app interaction, or server-side processes, Segment simplifies data collection. With Alloy in the mix, these interactions can automatically trigger tailored workflows, connecting apps, and enhancing customer experiences.
 
