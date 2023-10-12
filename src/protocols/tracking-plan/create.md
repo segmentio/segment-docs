@@ -175,7 +175,7 @@ To edit the common JSON schema using the Public API, you'll need to add your new
 > Property or trait data type should adhere to the [data types defined by JSON schema](https://json-schema.org/understanding-json-schema/reference/type.html){:target="_blank”}. Data type names must be lower-cased as specified in JSON schema. Datetime properties should be represented as a `string` type with [`format` keyword](https://json-schema.org/understanding-json-schema/reference/string.html#format){:target="_blank”} (for example: "format": "date-time").
 
 > info "Blocking data"
-> JSON schema violation event blocking is ONLY supported in cloud-mode Destinations. See [here](https://segment.com/docs/protocols/enforce/schema-configuration/){:target="_blank”} for more information on blocking data.
+> JSON schema violation event blocking is **only** supported in cloud-mode Destinations. See [the Customize your schema controls docs](/docs/protocols/enforce/schema-configuration/) for more information on blocking data.
 
 ### Extend the Tracking Plan
 Some customers prefer to manage the Tracking Plan with outside tools and resources. See the [APIs and extensions](/docs/protocols/apis-and-extensions/) section to learn more.
