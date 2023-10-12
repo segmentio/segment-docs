@@ -21,7 +21,7 @@ yarn add @survicate/analytics-react-native-survicate @survicate/react-native-sur
 ```
 
 ### Configuring
-- Add your Survicate workspace key to `Info.plist`
+1. Add your Survicate workspace key to `Info.plist`
 ```
 	<key>Survicate</key>
 	<dict>
