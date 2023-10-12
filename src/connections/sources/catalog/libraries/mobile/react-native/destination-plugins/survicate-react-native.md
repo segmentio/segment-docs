@@ -1,5 +1,5 @@
 ---
-title: Analytics Swift Survicate Plugin
+title: React Native Survicate Plugin
 strat: react-native
 ---
 
