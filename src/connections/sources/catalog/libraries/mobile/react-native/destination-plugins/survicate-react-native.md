@@ -42,7 +42,8 @@ allprojects {
     }
 }
 ```
-- Add your Survicate workspace key to `AndroidManifest.xml`
+
+2. Add your Survicate workspace key to `AndroidManifest.xml`
 
 ```java
 <application
