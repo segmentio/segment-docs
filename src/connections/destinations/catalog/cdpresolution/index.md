@@ -16,9 +16,16 @@ This destination is maintained by CDP Resolution. For any issues with the destin
 ## Getting started
 
 To set up the CDP Resolution destination:
-1.	From the Segment web app, click **Catalog**.
-2.	Search for “CDP Resolution” in the Catalog, select it, and choose which of your sources to connect the destination to.
-3.	In your Segment Settings UI, enter your CDP Resolution API key. You can find this in the CDP Connector Setting section of your [CDP Resolution Dashboard Connection Settings](https://app.cdpresolution.com/administration/cdp-connections/segment-io-f4241?utm_source=segmentio&utm_medium=docs&utm_campaign=partners).
+1.	Navigate to **Connections > Catalog** in the Segment app and select the **Destinations** tab of the catalog. 
+2.	Search for *CDP Resolution* and select it.
+3. Choose which of your sources to connect the destination to.
+4.	In the Settings, enter your CDP Resolution API key. You can find this in the CDP Connector Setting section of your [CDP Resolution Dashboard Connection Settings](https://app.cdpresolution.com/administration/cdp-connections/segment-io-f4241?utm_source=segmentio&utm_medium=docs&utm_campaign=partners){:target="_blank"}.
+5. Go to the CDP Resolution UI. 
+5. Go to the [CDP Resolution Connectors](https://app.cdpresolution.com/administration/cdp-connections?utm_source=segmentio&utm_medium=docs&utm_campaign=partners){:target="_blank"} page and select the Segment IO connector.
+2.	Paste your CDP Resolution API key in Segment to generate your Write Key.
+3.	Paste your Write Key into CDP Resolution's connection configuration.
+4.	Click **Upload Key**.
+
 
 Setup within CDP Resolution:
 1.	From your [CDP Resolution Connectors](https://app.cdpresolution.com/administration/cdp-connections?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) page click on the Segment IO connector.
