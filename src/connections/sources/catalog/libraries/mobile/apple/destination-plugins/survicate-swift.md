@@ -35,7 +35,10 @@ import Segment
 import SurvicateDestination // <-- Add this line
 ```
 
-*Note the Survicate library itself will be installed as an additional dependency.*
+
+> info " "
+> When you add the Analytics Swift Survicate Plugin, the Survicate library is installed as an additional dependency.
+
 
 ## Using the Plugin in your App
 
