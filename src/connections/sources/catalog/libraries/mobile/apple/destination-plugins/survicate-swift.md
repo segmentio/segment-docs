@@ -58,7 +58,7 @@ In the SurvicateDestination plugin, the identify event from Segment is transferr
 
 In the SurvicateDestination plugin, the track method from Segment is used as the invokeEvent method in Survicate. This means that when you track an event in Segment, it will be invoked in Survicate.
 
-***screen***
+#### Screen
 
 Similarly, the screen method from Segment is used as the enterScreen method in Survicate. This means that when you track a screen in Segment, it will be entered in Survicate.
 
