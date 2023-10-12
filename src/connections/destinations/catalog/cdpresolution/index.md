@@ -13,6 +13,8 @@ This destination is maintained by CDP Resolution. For any issues with the destin
 
 {% include content/ajs-upgrade.md %}
 
+How this works: A visitor lands on a digital property that has the segment.io analytics.js script connected to the CDP Resolution (Browser) Destination enabled.  For each session, the anonymous ID is sent to CDP Resolution to check if our cookie is present on the browser.  This allows CDP Resolution to resolve the cookie against our graph. If found, the profile and firmographics data are sent to segment.io against a source that is configured within CDP Resolution platform.
+
 ## Getting started
 
 To set up the CDP Resolution destination:
@@ -26,7 +28,7 @@ To set up the CDP Resolution destination:
 3.	Paste your Write Key into CDP Resolution's connection configuration.
 4.	Click **Upload Key**.
 
-
+Further documentation can be found on our [documentation site](https://docs.cdpresolution.com?utm_source=segmentio&utm_medium=docs&utm_campaign=partners).
 
 To verify that the destination has been set up correctly, check the Debugger section of your Segment Source. Assuming everything is as it should be, you should start seeing resolution data populate in the `identify` and `group` events – click on the specific event you’re interested in to see CDP Resolutions traits. These traits will now be available to other Segment destinations in your account. Notice that all CDP Resolution traits are prefixed with `cdpresolution_` to ensure they don’t conflict with existing traits.
 
