@@ -8,7 +8,7 @@ strat: react-native
 
 ## Installation
 
-You need to install the `@survicate/analytics-react-native-survicate` and the `@survicate/react-native-survicate` dependency.
+You need to install the `@survicate/analytics-react-native-survicate` and the `@survicate/react-native-survicate` dependencies.
 
 Using NPM:
 ```bash
