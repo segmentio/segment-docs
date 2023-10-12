@@ -55,7 +55,7 @@ allprojects {
 
 ## Usage
 
-Follow the [instructions for adding plugins](https://github.com/segmentio/analytics-react-native#adding-plugins) on the main Analytics client:
+Follow the [instructions for adding plugins](https://github.com/segmentio/analytics-react-native#adding-plugins){:target="_blank"} on the main Analytics client:
 
 In your code where you initialize the analytics client call the `.add(plugin)` method with an `SurvicatePlugin` instance:
 
