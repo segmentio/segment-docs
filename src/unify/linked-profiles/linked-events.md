@@ -39,10 +39,8 @@ The following Segment access [roles](/docs/segment-app/iam/roles/) apply to Link
 
 **Entities Read-only Access**: Entities Read-only users have the ability to view entity models. 
 
-To create models and enrich events in destinations, you need the following roles:
-- `Workspace Owner` and `Entities Admin` 
+To create models and enrich events in destinations, you need to be a `Workspace Owner` or have the following roles: 
 
-OR:
 - `Unify and Engage Admin`
 - `Entities Admin` 
 - `Source Admin`

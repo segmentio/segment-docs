@@ -163,12 +163,6 @@ No further action is required to integrate in-app notifications, which are regis
 
 CleverTap has created a sample iOS application that integrates CleverTap using Segment. Check it out at the [GitHub repository](https://github.com/CleverTap/clevertap-segment-ios/tree/master/Example){:target="_blank"}.
 
-
-## React Native
-
-{% include content/react-dest.md %}
-
-
 ## Server-Side
 
 ### Push Tokens

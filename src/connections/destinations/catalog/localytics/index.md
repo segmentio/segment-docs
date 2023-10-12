@@ -31,12 +31,6 @@ is not yet supported.
 You must also add the Maven Localytics repo (since Localytics doesn't publish it on Maven Central). You can see an example of how to add that
 [here](https://github.com/segment-integrations/analytics-android-integration-localytics/blob/master/build.gradle#L44).
 
-### React Native set up
-
-{% include content/react-dest.md %}
-
-- - -
-
 ## Identify
 
 When you call [`identify`](/docs/connections/spec/identify/), we'll set the Localytics
