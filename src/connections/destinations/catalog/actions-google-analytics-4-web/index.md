@@ -34,16 +34,6 @@ Some parameters automatically populate prebuilt [dimensions and metrics](https:/
 
 With custom parameters, you must create [custom dimensions and metrics](https://support.google.com/analytics/answer/10075209){:target="_blank"} so you can see the parameter values in Google Analytics. 
 
-### Understanding Event Parameters 
-
-Parameters provide additional information about the ways users interact with your website. For example, when someone views a product you sell, you can include parameters that describe the product they viewed, like `product_name`, `category`, and `price`.
-
-The automatically collected and enhanced measurement events include parameters by default. Google also provides a set of required and optional parameters to include with each recommended event. Additionally, you can add more event parameters when you need them.
-
-{% include components/actions-fields.html settings="true"%}
-
-## FAQ & Troubleshooting
-
 ### Custom Events
 
 Google Analytics 4 does not accept custom event names that include spaces. Segment replaces spaces in the Event Name in the Custom Event action with an underscore. As a result, you will see custom events snake cased in Google Analytics 4.
@@ -55,6 +45,20 @@ Keep in mind that custom events will not appear in Google's standard reports; yo
 ### Custom Dimensions and Metrics
 
 With Google Analytics 4, you must create custom dimensions and metrics within the Google Analytics 4 interface to link event parameters to the corresponding custom dimensions or metrics. When creating the dimension or metric, you can either select a parameter from the list of already collected fields or enter the name of the parameter you plan to collect in the future. For more information, see [Google Analytics 4 Custom dimensions and metrics](https://support.google.com/analytics/answer/10075209?hl=en){:target="_blank"}.
+
+### Understanding Event Parameters 
+
+Parameters provide additional information about the ways users interact with your website. For example, when someone views a product you sell, you can include parameters that describe the product they viewed, like `product_name`, `category`, and `price`.
+
+The automatically collected and enhanced measurement events include parameters by default. Google also provides a set of required and optional parameters to include with each recommended event. Additionally, you can add more event parameters when you need them.
+
+### Conversion Events
+
+Some of Segment's prebuilt [Available Actions](https://segment-docs.netlify.app/docs/connections/destinations/catalog/actions-google-analytics-4-web/#available-actions) which map to Google's recommended events are automatically marked as a conversion in your Analytics dashborad. For example, when you add a "Order Completed" event, it will show up in your Analytics dashboard as "purchase" with the **Mark as conversion** toggle toggled on by default. However, for other events, such as "Add to Cart", you will need to manually toggle the **Mark as conversion** setting on in your Analytics dashboard. If you don't mark the event as a conversion, it will not show up as a conversion in your built in reports. 
+
+{% include components/actions-fields.html settings="true"%}
+
+## FAQ & Troubleshooting
 
 ### Debug Mode
 
