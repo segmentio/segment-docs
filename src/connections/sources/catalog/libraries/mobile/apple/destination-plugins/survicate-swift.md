@@ -20,7 +20,7 @@ You'll then have the option to pin to a version, or specific branch, as well as 
 
 ### Using Package.swift
 
-Open your Package.swift file and add the following do your the `dependencies` section:
+Open your Package.swift file and add the following to your the `dependencies` section:
 
 ```swift
 .package(
