@@ -29,7 +29,7 @@ yarn add @survicate/analytics-react-native-survicate @survicate/react-native-sur
 		<string>YOUR_WORKSPACE_KEY</string>
 	</dict>
 ```
-- run command `pod install` in your `ios` directory
+2. run command `pod install` in your `ios` directory
 
 ### Configuring Survicate Bindings for Android
 
