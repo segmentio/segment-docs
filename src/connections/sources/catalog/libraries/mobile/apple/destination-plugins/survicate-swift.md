@@ -48,7 +48,7 @@ Just under your Analytics-Swift library setup, call `analytics.add(plugin: ...)`
 
 Your events will now begin to flow to Survicate in device mode.
 
-### using the SurvicateDestination plugin
+### Using the SurvicateDestination plugin
 
 ***identify***
 
