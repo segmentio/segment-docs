@@ -72,13 +72,13 @@ const segmentClient = createClient({
 segmentClient.add({ plugin: new SurvicatePlugin() });
 ```
 
-### using the Survicate plugin
+### Using the Survicate plugin
 
-***identify***
+#### Identify
 
 In the SurvicateDestination plugin, the Identify event from Segment is transferred to the setUserTrait method of Survicate. This is achieved within the identify function of the SurvicateDestination class. The traits and userId from the Identify event are extracted and set as user traits in Survicate using the setUserTrait method. The traits are a dictionary where each key-value pair is set as a user trait. The userId is also set as a user trait with the key "userId".
 
-***track***
+#### Track
 
 In the SurvicateDestination plugin, the Track method from Segment is used as the invokeEvent method in Survicate. This means that when you track an event in Segment, it will be invoked in Survicate.
 
