@@ -5,7 +5,7 @@ strat: swift
 
 [Survicate](https://survicate.com/){:target="_blank"} is an all-in-one customer feedback platform that helps you collect and act on feedback from your customers. It helps you understand your customers and improve their experience with your product or service.
 
-Add Survicate device mode support to your applications via this plugin for [Analytics-Swift](https://github.com/segmentio/analytics-swift)
+Add Survicate device mode support to your applications using this plugin for [Analytics-Swift](https://github.com/segmentio/analytics-swift){:target="_blank"}.
 
 ## Adding the dependency
 
