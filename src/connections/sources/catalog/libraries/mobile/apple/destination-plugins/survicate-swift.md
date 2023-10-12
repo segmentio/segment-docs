@@ -16,7 +16,7 @@ In the Xcode `File` menu, click `Add Packages`.  You'll see a dialog where you c
 
 https://github.com/survicate/analytics-swift-survicate.git
 
-You'll then have the option to pin to a version, or specific branch, as well as which project in your workspace to add it to.  Once you've made your selections, click the `Add Package` button.  
+You'll then have the option to pin to a version or specific branch, and select which project in your workspace to add it to.  Once you've made your selections, click the `Add Package` button.  
 
 ### Using Package.swift
 
