@@ -26,6 +26,3 @@ Alloy's integration with Segment primarily supports the following calls:
 - **Track**: Captures the actions users are taking within your e-commerce platform and sends the information to Segment.
 - **Identify**: Recognizes and forwards user identities, helping Segment collate data on individual users across sessions.
 
-## Support
-
-This source is maintained by Alloy. For any inquiries or challenges related to the source, the Alloy support team is readily available.
