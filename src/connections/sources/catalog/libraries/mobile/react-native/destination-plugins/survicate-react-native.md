@@ -33,7 +33,7 @@ yarn add @survicate/analytics-react-native-survicate @survicate/react-native-sur
 
 ### Configuring Survicate Bindings for Android
 
-- Add maven repository to your project `build.gradle` located under `android` directory
+1. Add maven repository to your project `build.gradle` located under `android` directory
 ```
 allprojects {
     repositories {
