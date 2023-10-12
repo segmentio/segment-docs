@@ -11,7 +11,7 @@ Add Survicate device mode support to your applications using this plugin for [An
 
 When you add the Analytics Swift Survicate Plugin, the Survicate library is installed as an additional dependency.
 
-### via Xcode
+### Using Xcode
 In the Xcode `File` menu, click `Add Packages`.  You'll see a dialog where you can search for Swift packages.  In the search field, enter the URL to this repo.
 
 https://github.com/survicate/analytics-swift-survicate.git
