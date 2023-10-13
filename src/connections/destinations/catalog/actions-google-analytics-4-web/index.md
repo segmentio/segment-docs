@@ -32,7 +32,11 @@ After you've set up at least one event in your **Mappings** tab, you can see you
 
 Some parameters automatically populate prebuilt [dimensions and metrics](https://support.google.com/analytics/answer/9143382){:target="_blank"} in Google Analytics. For example, the parameters on the automatically collected and enhanced measurement events and the required and optional parameters you send with the recommended events both populate pre-built dimensions and metrics.
 
-With custom parameters, you must create [custom dimensions and metrics](https://support.google.com/analytics/answer/10075209){:target="_blank"} so you can see the parameter values in Google Analytics. 
+### Recommended Events
+
+Google Analytics 4 requires the use of [recommended events](https://support.google.com/analytics/answer/9267735){:target="_blank"} and properties to power certain built-in reports. Segment’s Google Analytics 4 Web destination provides prebuilt mappings to automatically map your Segment spec events to the corresponding Google Analytics 4 events and properties. If your Segment events don’t follow the Segment spec exactly, you can modify the mappings. For example, Segment maps “Order Completed” events to the Google Analytics 4 “Purchase” event by default. If your company uses “Products Purchase” to indicate a purchase, this can be mapped in the Purchase action’s Event Trigger instead.
+
+Segment recommends using the prebuilt mappings when possible; however, the Segment spec doesn’t have an equivalent event for every Google Analytics 4 recommended event. If there are other recommended events you would like to send, please use the [Custom Event action](https://segment-docs.netlify.app/docs/connections/destinations/catalog/actions-google-analytics-4-web/#custom-event). For example, to send a spend_virtual_currency event, create a mapping for Custom Event, set up your Event Trigger criteria, and input a literal string of “spend_virtual_currency” as the Event Name. You can use the Event Parameters object to add fields that are in the spend_virtual_currency event such as value and virtual_currency_name. Keep in mind that any custom parameters will need to be defined as [custom dimensions and metrics](https://segment-docs.netlify.app/docs/connections/destinations/catalog/actions-google-analytics-4-web/#custom-dimensions-and-metrics) in your GA4 workspace first. 
 
 ### Understanding Event Parameters 
 
