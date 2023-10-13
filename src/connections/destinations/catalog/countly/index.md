@@ -12,11 +12,6 @@ After you integrate the appropriate destination with your app, add the Countly d
 
 These new settings take up to an hour to propagate to existing users, but is instantaneous for new users.
 
-### React Native set up
-
-{% include content/react-dest.md %}
-
-
 ## Track
 
 Countly helps you better understand your user's behavior. To accomplish that, [`track`](/docs/connections/spec/track/) your user's actions in detail.

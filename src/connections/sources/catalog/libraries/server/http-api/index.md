@@ -37,7 +37,10 @@ Segment welcomes feedback on API responses and error messages. [Reach out to sup
 
 ## Rate Limits
 
-Segment recommends you to not exceed 100,000 requests per second with the HTTP API. For [`batch` requests](#batch), there's a limit of 500 KB per request. 
+Segment recommends you to not exceed 20,000 requests per second with the HTTP API. For [`batch` requests](#batch), there's a limit of 500 KB per request. 
+
+> warning "Engage rate limit"
+> Engage has a limit of 1,000 events per second for inbound data. Visit the [Engage Default Limits documentation](/docs/engage/product-limits/) to learn more.
 
 ## Max Request Size
 
@@ -261,13 +264,14 @@ The `alias` call has the following fields:
 
 For more details on the `alias` call and payload, check out our [Spec](/docs/connections/spec/alias/).
 
-## Historical Import
+## Historical import
 
 You can import historical data by adding the `timestamp` argument to any of your method calls. This can be helpful if you've just switched to Segment.
 
 Historical imports can only be done into destinations that can accept historical timestamped data. Most analytics tools like Mixpanel, Amplitude, and Kissmetrics can handle that type of data just fine. One common destination that does not accept historical data is Google Analytics since their API cannot accept historical data.
 
-**Note:** If you're tracking things that are happening right now, leave out the `timestamp` and Segment servers will timestamp the requests for you.
+> info ""
+> If you're tracking things that are happening right now, leave out the `timestamp` and Segment servers will timestamp the requests for you.
 
 ## Batch
 
