@@ -17,7 +17,7 @@ hide-dossier: true
 
 Hyperengage (Actions) offers several advantages:
 
-- **Seamless Data Mapping.** Hyperengage streamlines the process of syncing your user and account data. By linking your account, identify, track, and group calls with user or account data will be processed by Hyperengage, bypassing the need for manual API integrations.
+- **Seamless Data Mapping.** Hyperengage streamlines the process of syncing your user and account data. When you link your data, Hyperengage will automatically process Segment's identify, track, and group calls, eliminating the necessity for manual API integrations."
 - **Pre-configured Mapping.** We have prebuilt mappings tailored for Hyperengage with all the necessary parameters, reducing the need for manual customization.
 - **Direct Data Transfer.** Data moves straight from Segment to Hyperengage, eliminating the need for third-party intermediaries.
 - **Event Tracking and User Identification.** With Actions-based destinations, you can keep track of events and identify users and organizations in Hyperengage.
