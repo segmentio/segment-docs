@@ -54,6 +54,7 @@ The table below lists events that OneSignal sends to Segment. These events appea
 | Email Sent                    | Email successfully sent                          |
 | Email Opened                  | Email opened by recipient                                  |
 | Email Unsubscribed            | Email unsubscribed by recipient                              |
+| Email Received                | Email received by recipient                              |
 | Email Reported As Spam        | Email reported as Spam by recipient                           |
 | Email Hardbounced             | Email returned to sender due to permanent error                                |
 | Email Failed                  | Email could not deliver the email to the recipient's inbox                                     |
