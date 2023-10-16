@@ -931,7 +931,7 @@ To add the Segment Inspector as a Chrome extension:
 3. Click **Add to Chrome**.
 4. Click **Add Extension** in the pop-up window.  
 
-Once installed, use the Inspect Elements developer tool in Chrome to use the Segment Inspector. To access the Inspector, go the top menu bar of Chrome and navigate to **View > Developer > Inspect Elements** and to go the **Segment** tab. On the Segment tab, you can:
+Once installed, use the Inspect Elements developer tool in Chrome to use the Segment Inspector. To access the Inspector, go the top menu bar of Chrome and navigate to **View > Developer > Developer Tools** and to go the **Segment** tab. On the Segment tab, you can:
 - Filter the different calls by type
 - Search based off of the content in the calls
 - Identify users  
@@ -947,7 +947,7 @@ The Segment Inspector is composed of these three components:
    - Select the *fx* icon to see the payloads after plugins ran.
    - Select the single-checked icon to see the payload as it was when the event triggered.
 3. The **Identity** tab 
-   - This tab enables you to see the information of a user if you're using the `identify` feature. You can associate the data to an individual and measure their activity across multiple sessions and devices. 
+   - This tab enables you to see the information of a user if you're using the `identify` feature. You can associate the data to an individual and measure their activity across multiple sessions and devices. This tab only shows the user's traits that are on the client. 
    - If you're not using the `identify` feature, the user remains anonymous. 
 
 
