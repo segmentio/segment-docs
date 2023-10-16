@@ -52,15 +52,15 @@ The table below lists events that OneSignal sends to Segment. These events appea
 | In-App Message Clicked        | In-App Message clicked on device                 |
 | In-App Message Page Displayed | In-App Message page is displayed                 |
 | Email Sent                    | Email successfully sent                          |
-| Email Opened                  | Email opened by recipient                                  |
-| Email Unsubscribed            | Email unsubscribed by recipient                              |
-| Email Received                | Email received by recipient                              |
-| Email Reported As Spam        | Email reported as Spam by recipient                           |
-| Email Hardbounced             | Email returned to sender due to permanent error                                |
-| Email Failed                  | Email could not deliver the email to the recipient's inbox                                     |
-| SMS Sent                      | SMS sent to recipient                                        |
-| SMS Delivered                 | SMS successfully Delivered                               |
-| SMS Failed                    | SMS failed to send                                   |
+| Email Opened                  | Email opened by recipient                                   |
+| Email Unsubscribed            | Email unsubscribed by recipient                             |
+| Email Received                | Email received by recipient                                 |
+| Email Reported As Spam        | Email reported as spam by recipient                         |
+| Email Hardbounced             | Email returned to sender due to permanent error             |
+| Email Failed                  | Email could not deliver the email to the recipient's inbox  |
+| SMS Sent                      | SMS sent to recipient                                       |
+| SMS Delivered                 | SMS successfully delivered                                  |
+| SMS Failed                    | SMS failed to send                                          |
 
 ## Event Properties
 
@@ -71,7 +71,7 @@ The table below lists the properties included in the events listed above.
 | messageId         | The identifier of the discrete message             |
 | campaign_id       | The identifier of the message campaign             |
 | message_name      | The message name                                   |
-| message_title     | The message Title (not applicable for in-app events)  |
+| message_title     | The message title                                   |
 | message_contents  | The message contents                               |
 | message_type      | The type of message sent, push, in-app, email, SMS |
 | subscription_type | The channel the message was sent through           |
