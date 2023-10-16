@@ -931,7 +931,7 @@ To add the Segment Inspector as a Chrome extension:
 3. Click **Add to Chrome**.
 4. Click **Add Extension** in the pop-up window.  
 
-Once installed, use the Inspect Elements developer tool in Chrome to use the Segment Inspector. To access the Inspector, go the top menu bar of Chrome and navigate to **View > Developer > Developer Tools** and to go the **Segment** tab. On the Segment tab, you can:
+Once installed, use the Inspect Elements developer tool in Chrome to use the Segment Inspector. To access the Inspector, go to the top menu bar of Chrome and navigate to **View > Developer > Developer Tools** and go to the **Segment** tab. On the Segment tab, you can:
 - Filter the different calls by type
 - Search based off of the content in the calls
 - Identify users  
