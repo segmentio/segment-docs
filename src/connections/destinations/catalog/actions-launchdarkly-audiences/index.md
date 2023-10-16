@@ -12,8 +12,6 @@ With LaunchDarkly, you can release features that target specific groups, such as
 
 LaunchDarkly maintains this destination. For any issues with the destination, [contact the LaunchDarkly Support team](mailto:support@launchdarkly.com).
 
-{% include content/ajs-upgrade.md %}
-
 ## Getting started
 
 1. In LaunchDarkly, navigate to [Account settings](https://app.launchdarkly.com/settings/projects){:target="_blank"} and copy the client-side ID for the project and environment where you would like to create an Engage Audience synced segment.
