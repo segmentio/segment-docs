@@ -28,7 +28,7 @@ To set up the CDP Resolution destination:
 3.	Paste your Write Key into CDP Resolution's connection configuration.
 4.	Click **Upload Key**.
 
-Further documentation can be found on our [documentation site](https://docs.cdpresolution.com?utm_source=segmentio&utm_medium=docs&utm_campaign=partners).
+Further documentation can be found on the [CDP documentation site](https://docs.cdpresolution.com?utm_source=segmentio&utm_medium=docs&utm_campaign=partners){:target="_blank"}.
 
 If you have configured your CDP Resolution Destination correctly, and if you've also configured CDP Resolution to send user profile data to a Segment Source, you should start to see user profile data shown in the Segment Source debugger as identify() and group() calls.
 
