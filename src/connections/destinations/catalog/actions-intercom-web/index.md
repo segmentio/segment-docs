@@ -30,13 +30,13 @@ Intercom Web (Actions) provides the following benefits over the classic Intercom
 - **Selectively shows the Intercom chat widget.**
   
 ### Chat Widget
-The Intercom Cloud Mode (Actions) Destination does not have access to Intercom’s chat widget, but only the Intercom Web Actions Destination would have access to this.
+[The Intercom Cloud Mode (Actions)](https://segment.com/docs/connections/destinations/catalog/actions-intercom-cloud/) Destination does not have access to Intercom’s chat widget, but only the Intercom Web Actions Destination would have access to this.
 
-The difference has to do with how data gets sent to Intercom. If you are using Analytics.js source - you can use the Intercom Web Mode (Actions) destination which will send data directly to Intercom from the client-side, by loading the Intercom SDK directly onto your website. 
+The difference has to do with how data gets sent to Intercom. If you are using [Analytics.js source](https://segment.com/docs/connections/sources/catalog/libraries/website/javascript/) - you can use the Intercom Web Mode (Actions) destination which will send data directly to Intercom from the client-side, by loading the Intercom SDK directly onto your website. 
 
-Whereas, the Intercom Cloud Mode (Actions) works by first sending the data to Segment, followed by Segment forwarding the data to Intercom. This allows Segment users to send data to Intercom from sources that are incompatible with their SDK. 
+Whereas, the [Intercom Cloud Mode (Actions)](https://segment.com/docs/connections/destinations/catalog/actions-intercom-cloud/) works by first sending the data to Segment, followed by Segment forwarding the data to Intercom. This allows Segment users to send data to Intercom from sources that are incompatible with their SDK. 
 
-The Connection Modes section of our Destinations Overview docs here do a great job of breaking down the differences between the two types of connection modes that Segment offers.
+The [Connection Modes section of our Destinations Overview docs](https://segment.com/docs/connections/destinations/#connection-modes) here do a great job of breaking down the differences between the two types of connection modes that Segment offers.
 
 When you configure the Segment Intercom destination in device-mode, you will have access to the chat widget that gets loaded by the Intercom SDK without the need to load Intercom separately outside of Segment.
 
