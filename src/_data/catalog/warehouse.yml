@@ -52,9 +52,9 @@ items:
   name: catalog/warehouses/databricks-delta-lake
   description: ''
   url: connections/storage/catalog/databricks-delta-lake
-  status: PUBLIC_BETA
+  status: PRIVATE_BETA
   logo: 
-    url: 'https://assets.stickpng.com/images/62c719b5b44be1961554a6de.png'
+    url: 'https://images.ctfassets.net/h6ufgtwb6nv1/4vYEAgYz6nGLC9F64Jxeb6/fcf3ecdae5386f806ae72eb39ce07094/db.svg?w=256&q=75'
   mark: 
     url: ''
   categories: 

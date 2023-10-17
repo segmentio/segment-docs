@@ -1,6 +1,5 @@
 ---
 title: Databricks Delta Lake Destination (AWS Setup)
-beta: true
 hidden: true
 ---
 

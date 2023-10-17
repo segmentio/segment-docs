@@ -1,6 +1,5 @@
 ---
 title: Databricks Delta Lake Destination (Azure Setup)
-beta: true
 hidden: true
 ---
 
