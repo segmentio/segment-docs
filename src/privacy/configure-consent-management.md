@@ -69,7 +69,7 @@ If you'd like to integrate with any other CMP, Segment requires you to build you
 
 Customers with Analytics.js 2.0 sources can use the [Segment Inspector](/docs/connections/sources/catalog/libraries/website/javascript/#segment-inspector) to confirm that events from their source contain the [consent object](/docs/privacy/consent-in-segment-connections) and, for Unify/Engage users, the [Segment Consent Preference event](/docs/privacy/consent-in-unify/#segment-consent-preference-event) emits every time end users update their consent preferences.
 
-All users can validate their consent integration with Segment by using the [Source Debugger](/docs/connections/delivery-overview/) to confirm that events contain the [consent object](/docs/privacy/consent-in-segment-connections). Unify/Engage users should also confirm their sources emit the [Segment Consent Preference event](/docs/privacy/consent-in-unify/#segment-consent-preference-event) every time end users update their consent preferences.
+All users can validate their consent integration with Segment by using the [Source Debugger](/docs/connections/sources/debugger/) to confirm that events contain the [consent object](/docs/privacy/consent-in-segment-connections). Unify/Engage users should also confirm their sources emit the [Segment Consent Preference event](/docs/privacy/consent-in-unify/#segment-consent-preference-event) every time end users update their consent preferences.
 
 You can also confirm your events flow to destinations or are blocked from destinations according to the consent categories you created in [Step 1: Create consent categories in the Segment App](#step-1-create-consent-categories-in-the-segment-app).
 
