@@ -65,12 +65,14 @@ If you'd like to integrate with any other CMP, Segment requires you to build you
 
 --->
 
-### Validate your consent integration
+### Validate your CMP integration
 
-To validate your consent management integration was correctly set up, select one of the following options: 
+Customers with Analytics.js 2.0 sources can use the [Segment Inspector](/docs/connections/sources/catalog/libraries/website/javascript/#segment-inspector) to confirm that events from their source contain the [consent object](/docs/privacy/consent-in-segment-connections) and, for Unify/Engage users, the [Segment Consent Preference event](/docs/privacy/consent-in-unify/#segment-consent-preference-event) emits every time end users update their consent preferences.
 
-- **Analytics.js 2.0 users**: Use the [Segment Inspector](/docs/connections/sources/catalog/libraries/website/javascript/#segment-inspector) to validate that consent events contain the consent event details. 
-- **<!--Swift,-->Kotlin and Analytics.js 2.0 users**: View the events in [Delivery Overview](/docs/connections/delivery-overview/) to confirm that the events flowing to your destinations have the same format as the consent object example in the [Consent in Segment Connections](/docs/privacy/consent-in-segment-connsctions) documentation.
+All users can validate their consent integration with Segment by using the [Source Debugger](/docs/connections/delivery-overview/) to confirm that events contain the [consent object](/docs/privacy/consent-in-segment-connections). Unify/Engage users should also confirm their sources emit the [Segment Consent Preference event](/docs/privacy/consent-in-unify/#segment-consent-preference-event) every time end users update their consent preferences.
+
+You can also confirm your events flow to destinations or are blocked from destinations according to the consent categories you created in [Step 1: Create consent categories in the Segment App](#step-1-create-consent-categories-in-the-segment-app).
+
 
 ## Edit consent categories
 
