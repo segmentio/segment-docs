@@ -15,7 +15,7 @@ For server-side destination requests, CleverTap requires both the Segment `anony
 
 CleverTap maintains the server-side and mobile integrations:
 - [Android](https://github.com/CleverTap/clevertap-segment-android){:target="_blank"}
-- [iOS](https://github.com/CleverTap/clevertap-segment-ios)
+- [iOS](https://github.com/CleverTap/clevertap-segment-ios){:target="_blank"}
 
 For any issues with the server-side and mobile integrations, [contact the CleverTap Support team](https://help.clevertap.com/hc/en-us/requests/new){:target="_blank"}.
 
