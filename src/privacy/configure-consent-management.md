@@ -70,7 +70,7 @@ If you'd like to integrate with any other CMP, Segment requires you to build you
 To validate your consent management integration was correctly set up, select one of the following options: 
 
 - **Analytics.js 2.0 users**: Use the [Segment Inspector](/docs/connections/sources/catalog/libraries/website/javascript/#segment-inspector) to validate that consent events contain the consent event details. 
-- **Kotlin and Analytics.js 2.0 users**: View the events in [Delivery Overview](/docs/connections/delivery-overview/) to confirm that the events flowing to your destinations have the same format as the consent object example in the [Consent in Segment Connections](/docs/privacy/consent-in-segment-connsctions) documentation.
+- **<!--Swift,-->Kotlin and Analytics.js 2.0 users**: View the events in [Delivery Overview](/docs/connections/delivery-overview/) to confirm that the events flowing to your destinations have the same format as the consent object example in the [Consent in Segment Connections](/docs/privacy/consent-in-segment-connsctions) documentation.
 
 ## Edit consent categories
 
