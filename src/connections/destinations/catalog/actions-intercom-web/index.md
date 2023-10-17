@@ -43,7 +43,7 @@ Intercom Web (Actions) provides the following benefits over the classic Intercom
 > For Regional Data Hosting in the EU and Australia, you'll need an Intercom plan that [supports regional data hosting](https://www.intercom.com/help/en/articles/5778275-additional-details-on-intercom-regional-data-hosting){:target="_blank"}.
 
 > info ""
-> Segment does not support the creation of **Leads** for Intercom Web. We recommend using [Intercom Cloud Mode](https://segment.com/docs/connections/destinations/catalog/actions-intercom-cloud/) to support leads creation.
+> Segment doesn't support the creation of **Leads** for Intercom Web. Segment recommends using [Intercom Cloud Mode](/docs/connections/destinations/catalog/actions-intercom-cloud/) to support leads creation.
 
 {% include components/actions-fields.html settings="true"%}
 
