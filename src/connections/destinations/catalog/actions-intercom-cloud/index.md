@@ -25,7 +25,7 @@ Intercom Cloud Mode (Actions) provides the following benefits over the classic I
 - **Support for lead creation.** You can create contacts with a role of `lead`, associate them with a company, send events for them, and convert them to a `user`.
 
 ## Limitations of Intercom Cloud Mode (Actions)
-The Intercom Cloud Mode (Actions) Destination does not have access to Intercom’s chat widget, but only the Intercom Web Actions[https://segment.com/docs/connections/destinations/catalog/actions-intercom-web/] Destination would have access to this. 
+The Intercom Cloud Mode (Actions) Destination does not have access to Intercom’s chat widget, but only the [Intercom Web Actions](https://segment.com/docs/connections/destinations/catalog/actions-intercom-web/) Destination would have access to this. 
 
 ## Getting started
 
