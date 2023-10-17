@@ -1,7 +1,10 @@
 ---
 title: Databricks Delta Lake Destination (Azure Setup)
 beta: true
+hidden: true
 ---
+
+{% comment %}
 
 With the Databricks Delta Lake Destination, you can ingest event data from Segment into the bronze layer of your Databricks Delta Lake.
 
@@ -131,3 +134,5 @@ This step links a Segment source to your Databricks workspace/catalog.
 2. Click **Add Destination**, select a source, then click **Next**.
 3. Enter the name for your destination, then click **Create destination**.
 4. Enter the connection settings using the values noted above (leave the Service Principal fields blank).
+
+{% endcomment %}

@@ -1,7 +1,10 @@
 ---
 title: Databricks Delta Lake Destination (AWS Setup)
 beta: true
+hidden: true
 ---
+
+{% comment %}
 
 With the Databricks Delta Lake Destination, you can ingest event data from Segment into the bronze layer of your Databricks Delta Lake.
  
@@ -167,4 +170,4 @@ This step links a Segment events source to your Databricks workspace/catalog.
 4. Enter connection settings for the destination.
 
 
- 
+ {% endcomment %}
