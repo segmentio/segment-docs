@@ -17,21 +17,22 @@ hide-dossier: true
 
 Hyperengage (Actions) offers several advantages:
 
-- **Seamless Data Mapping.** Hyperengage streamlines the process of syncing your user and account data. When you link your data, Hyperengage will automatically process Segment's identify, track, and group calls, eliminating the necessity for manual API integrations."
-- **Pre-configured Mapping.** We have prebuilt mappings tailored for Hyperengage with all the necessary parameters, reducing the need for manual customization.
-- **Direct Data Transfer.** Data moves straight from Segment to Hyperengage, eliminating the need for third-party intermediaries.
-- **Event Tracking and User Identification.** With Actions-based destinations, you can keep track of events and identify users and organizations in Hyperengage.
+- **Seamless Data Mapping**: Hyperengage streamlines the process of syncing your user and account data. When you link your data with Segment, Hyperengage automatically processes Segment's Identify, Track, and Group calls, eliminating the need for manual API integrations.
+- **Pre-configured Mappings**: The Hyperengage (Actions) Destination has prebuilt mappings tailored for Hyperengage with all the necessary parameters, reducing the need for manual customization.
+- **Direct Data Transfer**: Data moves straight from Segment to Hyperengage, eliminating the need for third-party intermediaries.
+- **Event Tracking and User Identification**: With Segment's Actions-based destination, you can keep track of events and identify users and organizations in Hyperengage.
 
 <!-- The section below describes how to activate and set up the destination. Include any additional configuration steps not mentioned. For example, acquiring an API key from your system and any setup steps needed to establish a connection to the destination. -->
 
 ## Getting Started
 
 1. Navigate to the Segment web app and select **Catalog**, then pick **Destinations**.
-2. In the Destinations Catalog, search for "hyperengage" and choose the destination.
-3. Opt for **Configure Hyperengage**.
-4. Choose an existing Source to connect to Hyperengage (Actions).
-5. Access the [Hyperengage App](https://hyperengage.io/){:target="_blank"}, proceed to **Integration Settings**, and copy the **API Key** & **Workspace Identifier**.
-6. Paste the "API Key" & "Workspace Identifier" into the "Hyperengage (Actions)" destination settings within Segment.
+2. In the Destinations Catalog, search for "Hyperengage" and select the Hyperengage (Actions) destination.
+3. Click **Add destination**.
+4. Choose an existing Source to connect to Hyperengage (Actions) and click **Next**.
+5. Enter a name for your destination and click **Create destination**.
+6. Open the [Hyperengage App](https://hyperengage.io/){:target="_blank"}, proceed to **Integration Settings**, and copy the API Key and Workspace Identifier.
+7. Open the Segment app, navigate to your Hyperengage (Actions) destination, and paste the API Key and Workspace Identifier into the destination's settings page.
 
 <!-- The line below will render a table of connection settings (if they exist), Pre-built Mappings, and potential actions. -->
 
