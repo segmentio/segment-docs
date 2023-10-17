@@ -47,6 +47,18 @@ items:
     url: 'https://cdn.filepicker.io/api/file/Vk6iFlMvQeynbg30ZEtt'
   categories:
     - Warehouses
+- display_name: Databricks Delta Lake
+  slug: databricks-delta-lake
+  name: catalog/warehouses/databricks-delta-lake
+  description: ''
+  url: connections/storage/catalog/databricks-delta-lake
+  status: PRIVATE_BETA
+  logo: 
+    url: 'https://images.ctfassets.net/h6ufgtwb6nv1/4vYEAgYz6nGLC9F64Jxeb6/fcf3ecdae5386f806ae72eb39ce07094/db.svg?w=256&q=75'
+  mark: 
+    url: ''
+  categories: 
+    - Warehouses
 - display_name: Google Cloud Storage
   slug: google-cloud-storage
   name: catalog/warehouses/google-cloud-storage
