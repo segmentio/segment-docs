@@ -70,7 +70,7 @@ Segment uses the service principal to access your Databricks workspace APIs as w
     ```
     az ad sp create --id fffa5b05-1da5-4599-8360-cc2684bcdefb
     ```
-
+ 
 ### Step 3: Update or create an ADLS Gen2 storage container 
 
 The ADLS Gen2 storage container is where Segment lands your Delta Lake files. 
