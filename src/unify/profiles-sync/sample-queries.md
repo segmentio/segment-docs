@@ -197,5 +197,5 @@ By contrast, Segment Unify and incrementally-built Profiles Sync materialization
 
 #### What hash function is used for the external_id_hash field by Profile Sync?
 
-The value of the `external_id_hash` is a hash of the `external_id_type` and `external_id_value`, using SHA-1. This field corresponds the `primary_key` for the table. `hash ( external_id_type and external_id_value)`
+The `external_id_hash` is a hash of the `external_id_type` and `external_id_value` using SHA-1. This field corresponds to the `primary_key` for the table: `hash (external_id_type and external_id_value)`
 For example, in Big Query this is the logic, `TO_HEX(SHA1(concat(external_id_type, external_id_value))) as seg_hash`.
