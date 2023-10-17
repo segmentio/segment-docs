@@ -14,7 +14,7 @@ You can integrate CleverTap using a server-side or mobile destination (iOS or An
 For server-side destination requests, CleverTap requires both the Segment `anonymousId` and `userId` in the payload.  
 
 CleverTap maintains the server-side and mobile integrations:
-- [Android](https://github.com/CleverTap/clevertap-segment-android)
+- [Android](https://github.com/CleverTap/clevertap-segment-android){:target="_blank"}
 - [iOS](https://github.com/CleverTap/clevertap-segment-ios)
 
 For any issues with the server-side and mobile integrations, [contact the CleverTap Support team](https://help.clevertap.com/hc/en-us/requests/new){:target="_blank"}.
