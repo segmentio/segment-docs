@@ -28,6 +28,19 @@ Intercom Web (Actions) provides the following benefits over the classic Intercom
 - **Clearer mapping of data.** Actions-based destinations enable you to define the mapping between the data Segment receives from your source, and the data Segment sends to the destination.
 - **Granular control over data sent.** You can customize the conditions under which the events are sent to Intercom.
 - **Selectively shows the Intercom chat widget.**
+  
+### Chat Widget
+The Intercom Cloud Mode (Actions) Destination does not have access to Intercom’s chat widget, but only the Intercom Web Actions Destination would have access to this.
+
+The difference has to do with how data gets sent to Intercom. If you are using Analytics.js source - you can use the Intercom Web Mode (Actions) destination which will send data directly to Intercom from the client-side, by loading the Intercom SDK directly onto your website. 
+
+Whereas, the Intercom Cloud Mode (Actions) works by first sending the data to Segment, followed by Segment forwarding the data to Intercom. This allows Segment users to send data to Intercom from sources that are incompatible with their SDK. 
+
+The Connection Modes section of our Destinations Overview docs here do a great job of breaking down the differences between the two types of connection modes that Segment offers.
+
+When you configure the Segment Intercom destination in device-mode, you will have access to the chat widget that gets loaded by the Intercom SDK without the need to load Intercom separately outside of Segment.
+
+In order to have access to the "Intercom Messaging Box", you'd instead want to configure and connect the Intercom Web Mode (Actions) destination to your Analytics.js source.
 
 ## Getting started
 
