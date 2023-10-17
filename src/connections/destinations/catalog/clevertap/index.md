@@ -11,7 +11,7 @@ CleverTap supports the Identify, Track, Page (server-side only), and Screen (iOS
 
 You can integrate CleverTap using a server-side or mobile destination (iOS or Android). If you are interested in using CleverTap's push notifications or in-app notifications products, you should use the mobile destinations.
 
-All server-side destination requests require both the Segment `anonymousId` and `userId` in the payload. This is a requirement from CleverTap. 
+For server-side destination requests, CleverTap requires both the Segment `anonymousId` and `userId` in the payload.  
 
 CleverTap maintains the server-side and mobile integrations:
 - [Android](https://github.com/CleverTap/clevertap-segment-android)
