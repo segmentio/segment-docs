@@ -158,5 +158,3 @@ Username /password — This is the basic method used to authenticate database us
 ### Do you support Redshift Serverless?
 
 Segment does not currently support Serverless Redshift. While you can set up the connection in the Segment app, Segment does not have the functionality to query Redshift's SYS tables.
-
-
