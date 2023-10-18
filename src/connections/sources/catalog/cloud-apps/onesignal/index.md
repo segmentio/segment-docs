@@ -36,7 +36,7 @@ Events with no External ID present are anonymous events.
 
 ## Identifiers
 
-The events OneSignal sends to Segment will be identifiers with either `userId` or `anonymousId`.
+The events OneSignal sends to Segment are identifiers with either `userId` or `anonymousId`.
 
 OneSignal sets the Segment `userId` equal to the OneSignal External ID. If there is no OneSignal External ID for the user, OneSignal sets the Segment `anonymousId` equal to the OneSignal Subscription ID.
 
