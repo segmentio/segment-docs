@@ -88,6 +88,6 @@ The following table lists the properties included in the events from the Events 
 
 Now that your source is set up, you can connect it with Destinations.
 
-Log into your downstream tools and check to see that your events appear as expected. Ensure the events contain all of the properties you expect. If your events and properties don’t appear, check the Event Delivery tool, and refer to the Destination docs for each tool for troubleshooting.
+Log in to your downstream tools and check to see that your events appear as expected. Ensure the events contain all of the properties you expect. If your events and properties don’t appear, check the Event Delivery tool, and refer to the Destination docs for each tool for troubleshooting.
 
 If there are any issues with how the events are arriving to Segment, [contact the OneSignal Support team](mailto:support@onesignal.com).
