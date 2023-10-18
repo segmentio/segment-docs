@@ -16,7 +16,7 @@ OneSignal maintains this source. For any issues with the source, [contact the On
 3. Give the source a name, for example `OneSignal_Prod`. The name is used in the Segment interface. Click **Add source** to save your settings. 
 4. Copy the [write key](/docs/connections/find-writekey) from your Segment workspace. 
 5. Log in to the OneSignal Dashboard.
-6. Navigate to enable the integration: **Settings -> Integrations -> Segment.com** and click **Activate**.
+6. Navigate to enable the integration: **Settings > Integrations > Segment.com** and click **Activate**.
 7. Scroll down to the **Data Out** panel and enter your write key from your Segment workspace. 
 9. Select the OneSignal Events you want to export, then click **Save**. 
 
