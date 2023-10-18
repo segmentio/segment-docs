@@ -10,8 +10,6 @@ beta: true
 
 This destination is maintained by Optimizely. For any issues with the destination, [contact the Optimizely Support team](mailto:support@optimizely.com).
 
-{% include content/ajs-upgrade.md %}
-
 ## Getting started
 
 **Within your Optimizely Data Platform Account**
