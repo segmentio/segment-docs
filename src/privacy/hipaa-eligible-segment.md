@@ -21,6 +21,8 @@ Ensure your Workspace is eligible for HIPAA before you configure and send any pe
 
 With the BAA signed and Workspace confirmed as eligible, you can start building. For more information about starting a HIPAA compliant implementation, see Twilio's [Architecting for HIPAA on Twilio](https://twil.io/architecting-for-hipaa){:target="_blank"}, which outlines the shared responsibilities and requirements for building and maintaining HIPAA-compliant workflows in Segment.
 
+**Note**: Any HIPAA Eligible workspace will have an automatic logoff triggered by 15 minutes of inactivity. This is because the Segment Console can contain customer's PHI.
+
 ## HIPAA Auditing
 Segment maintains audit logs of every read and update action a user performs in the Segment app that may involve PHI/PII. 
 
