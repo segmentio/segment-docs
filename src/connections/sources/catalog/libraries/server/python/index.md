@@ -560,6 +560,35 @@ analytics.track('9742', 'Song Played', context={
 
 Be sure to see the full [reference of supported keys](/docs/connections/spec/common/#context).
 
+### OAuth 2
+
+In order to guarantee authorized communication between your server environment and Segment's Tracking API, you can enable OAuth 2 in your Segment workspace.  To support the non-interactive server environment, the OAuth workflow used is a signed client assertion JWT.  You will need a public and private key pair where the public key is uploaded to the segment dashboard and the private key is kept in your server environment to be used by this SDK. Your server will verify its identity by signing a token request and will receive a token that is used to to authorize all communication with the Segment Tracking API.
+
+You will also need to provide the OAuth Application ID and the public key's ID, both of which are provided in the Segment dashboard.  There are also options available to specify the authorization server, custom scope, maximum number of retries, or a custom HTTP client if your environment has special rules for separate segment endpoints.
+
+You should ensure that you are implementing handling for Analytics SDK errors.  Good logging will help distinguish any configuration issues.
+
+For more information, see the [Segment OAuth 2.0 documentation](/docs/connections/oauth/)
+
+```python
+import segment.analytics as analytics
+with open("private_key.pem") as f:
+    privatekey = f.read()
+
+analytics.write_key = '<YOUR WRITE KEY HERE>'
+
+analytics.oauth_client_id = 'CLIENT_ID' # OAuth application ID from segment dashboard
+analytics.oauth_client_key = privatekey # generated as a public/private key pair in PEM format from OpenSSL
+analytics.oauth_key_id = 'KEY_ID' # From segment dashboard after uploading public key
+
+def on_error(error, items):
+    print("An error occurred: ", error)
+analytics.on_error = on_error
+
+analytics.track('AUser', 'track')
+analytics.flush()
+```
+
 ### Versioning
 
 Check that you have the most recent version.
