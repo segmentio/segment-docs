@@ -1,6 +1,5 @@
 ---
 title: Databricks Delta Lake Destination (Azure Setup)
-beta: true
 hidden: true
 ---
 
@@ -10,7 +9,7 @@ With the Databricks Delta Lake Destination, you can ingest event data from Segme
 
 This page will help you use the Databricks Delta Lake Destination to sync Segment events into your Databricks Delta Lake built on Azure (ADLS Gen 2).
 
- 
+  
 > info "Databricks Delta Lake Destination in Public Beta"
 > The Databricks Delta Lake Destination is in public beta, and Segment is actively working on this integration. [Contact Segment](https://segment.com/help/contact/){:target="_blank"} with any feedback or questions.
 
@@ -70,7 +69,7 @@ Segment uses the service principal to access your Databricks workspace APIs as w
     ```
     az ad sp create --id fffa5b05-1da5-4599-8360-cc2684bcdefb
     ```
-
+ 
 ### Step 3: Update or create an ADLS Gen2 storage container 
 
 The ADLS Gen2 storage container is where Segment lands your Delta Lake files. 
