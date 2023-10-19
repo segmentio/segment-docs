@@ -27,6 +27,7 @@ To connect the Google Analytics 4 Web destination:
 4. Select the web source that will send data to Google Analytics 4 and follow the steps to name your destination. The web source chosen must use [Analytics.js 2.0](/docs/connections/sources/catalog/libraries/website/javascript/){:target='_blank'}.
 5. On the **Settings** tab, under **Basic Settings**, enter in the [Measurement ID](https://support.google.com/analytics/answer/9539598){:target='_blank'} associated with your GA4 web stream.
 6. Set up your event mappings by following the steps in the Destinations Actions documentation on [Customizing mappings](/docs/connections/destinations/actions/#customizing-mappings).
+7. Analytics.js requires an initial Page call to send data to Google Analytics 4 Web. The [Segment snippet](/docs/connections/sources/catalog/libraries/website/javascript/quickstart/#step-2-add-the-segment-snippet) includes this initial call by default.
 
 After you've set up at least one event in your **Mappings** tab, you can see your events and parameters using the Google [Realtime](https://support.google.com/analytics/answer/9271392){:target="_blank"} and [DebugView](https://support.google.com/analytics/answer/7201382){:target="_blank"} reports. These two reports show you the events users trigger on your website as they occur. The DebugView report requires additional configuration before you can use it. 
 
@@ -81,7 +82,6 @@ Google may take [24-48 hours](https://support.google.com/analytics/answer/933379
 In order for data to be sent downstream to Google Analytics, check your mappings to ensure that:
 1. The **setConfigurationFields** mapping is enabled in your mappings.
 2. You've added at least one other event mapping for an event you want to send to Google Analytics.
-3. Your event mapping doesn't use the condition 'Event Type is Page'. The GA config command uses a Page event when your page loads, so Page calls can't be used for triggering additional events in GA4. Segment recommends using a [Track call](/docs/connections/spec/track/) for any additional events you'd like to appear in GA4 so your events can go through after the initial 'config' loads.
 
 The **setConfigurationFields** mapping is required in order for data to be sent downstream. If no other mappings are enabled, the destination does not send events.
 
