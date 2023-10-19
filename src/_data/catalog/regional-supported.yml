@@ -19,15 +19,6 @@ sources:
       - us
     endpoints:
       - us
-  - id: pndBZqzhCE
-    display_name: AddShoppers Suppression
-    hidden: true
-    slug: addshoppers-suppression
-    url: connections/sources/catalog/cloud-apps/addshoppers-suppression
-    regions:
-      - us
-    endpoints:
-      - us
   - id: p1Kv6YKjE3
     display_name: Aircall
     hidden: false
@@ -44,15 +35,7 @@ sources:
     url: connections/sources/catalog/cloud-apps/airship
     regions:
       - us
-    endpoints:
-      - us
-  - id: tisa2A0jAs
-    display_name: Alloy Automation
-    hidden: true
-    slug: alloy-automation
-    url: connections/sources/catalog/cloud-apps/alloy-automation
-    regions:
-      - us
+      - eu
     endpoints:
       - us
   - id: GNLT5OQ45P
@@ -84,56 +67,11 @@ sources:
       - us
     endpoints:
       - us
-  - id: 4bgxmPX5vR
-    display_name: Analytics JS
-    hidden: true
-    slug: analytics-js
-    url: connections/sources/catalog/cloud-apps/analytics-js
-    regions:
-      - us
-    endpoints:
-      - us
-  - id: T4gvCx0YNM
-    display_name: AppICETest
-    hidden: false
-    slug: appicetest
-    url: connections/sources/catalog/cloud-apps/appicetest
-    regions:
-      - us
-    endpoints:
-      - us
   - id: dZeHygTSD4
     display_name: Apple
     hidden: false
     slug: apple
     url: connections/sources/catalog/libraries/mobile/apple
-    regions:
-      - us
-    endpoints:
-      - us
-  - id: oKDLxtGyGI
-    display_name: Appy Pie Connect
-    hidden: true
-    slug: appy-pie-connect
-    url: connections/sources/catalog/cloud-apps/appy-pie-connect
-    regions:
-      - us
-    endpoints:
-      - us
-  - id: pMeSH8K0gq
-    display_name: attacker
-    hidden: true
-    slug: attacker
-    url: connections/sources/catalog/cloud-apps/attacker
-    regions:
-      - us
-    endpoints:
-      - us
-  - id: QIlxkMhFGC
-    display_name: attacker_source
-    hidden: false
-    slug: attacker_source
-    url: connections/sources/catalog/cloud-apps/attacker_source
     regions:
       - us
     endpoints:
@@ -147,24 +85,6 @@ sources:
       - us
     endpoints:
       - us
-  - id: rFN2FajrFZ
-    display_name: b222test
-    hidden: true
-    slug: b222test
-    url: connections/sources/catalog/cloud-apps/b222test
-    regions:
-      - us
-    endpoints:
-      - us
-  - id: 2QEQGbmIJv
-    display_name: b2_testsource
-    hidden: false
-    slug: b2_testsource
-    url: connections/sources/catalog/cloud-apps/b2_testsource
-    regions:
-      - us
-    endpoints:
-      - us
   - id: ErcsNGMEwt
     display_name: Beamer
     hidden: false
@@ -172,15 +92,7 @@ sources:
     url: connections/sources/catalog/cloud-apps/beamer
     regions:
       - us
-    endpoints:
-      - us
-  - id: GphcYR7Qpy
-    display_name: Bento
-    hidden: true
-    slug: bento
-    url: connections/sources/catalog/cloud-apps/bento
-    regions:
-      - us
+      - eu
     endpoints:
       - us
   - id: 78PbvP2yv8
@@ -210,15 +122,6 @@ sources:
       - us
     endpoints:
       - us
-  - id: 5eXE7H5Qot
-    display_name: boda
-    hidden: true
-    slug: boda
-    url: connections/sources/catalog/cloud-apps/boda
-    regions:
-      - us
-    endpoints:
-      - us
   - id: L8TEm5Z8UV
     display_name: Braze
     hidden: false
@@ -226,6 +129,7 @@ sources:
     url: connections/sources/catalog/cloud-apps/braze
     regions:
       - us
+      - eu
     endpoints:
       - us
   - id: nmb56PunPc
@@ -233,15 +137,6 @@ sources:
     hidden: false
     slug: candu
     url: connections/sources/catalog/cloud-apps/candu
-    regions:
-      - us
-    endpoints:
-      - us
-  - id: biaAjeg3xT
-    display_name: CDPResolution
-    hidden: true
-    slug: cdpresolution
-    url: connections/sources/catalog/cloud-apps/cdpresolution
     regions:
       - us
     endpoints:
@@ -262,15 +157,7 @@ sources:
     url: connections/sources/catalog/cloud-apps/clevertap
     regions:
       - us
-    endpoints:
-      - us
-  - id: j66F5A8dWF
-    display_name: ClevertapX
-    hidden: true
-    slug: clevertapx
-    url: connections/sources/catalog/cloud-apps/clevertapx
-    regions:
-      - us
+      - eu
     endpoints:
       - us
   - id: B6L7qzHmhI
@@ -289,24 +176,6 @@ sources:
     hidden: false
     slug: commandbar
     url: connections/sources/catalog/cloud-apps/commandbar
-    regions:
-      - us
-    endpoints:
-      - us
-  - id: ymOV6oZKJ9
-    display_name: CSharp
-    hidden: true
-    slug: csharp
-    url: connections/sources/catalog/libraries/mobile/csharp
-    regions:
-      - us
-    endpoints:
-      - us
-  - id: jAMnIAJV6Q
-    display_name: Customer Data Cloud
-    hidden: true
-    slug: customer-data-cloud
-    url: connections/sources/catalog/cloud-apps/customer-data-cloud
     regions:
       - us
     endpoints:
@@ -338,15 +207,6 @@ sources:
       - us
     endpoints:
       - us
-  - id: slCkTrJb1S
-    display_name: Demo Source
-    hidden: false
-    slug: demo-source
-    url: connections/sources/catalog/cloud-apps/demo-source
-    regions:
-      - us
-    endpoints:
-      - us
   - id: m6FUZHH7tQ
     display_name: Drip
     hidden: false
@@ -358,27 +218,9 @@ sources:
       - us
   - id: VETiUX9u66
     display_name: Elastic Path
-    hidden: true
+    hidden: false
     slug: elastic-path
     url: connections/sources/catalog/cloud-apps/elastic-path
-    regions:
-      - us
-    endpoints:
-      - us
-  - id: PT2vYn4zUh
-    display_name: Encharge
-    hidden: true
-    slug: encharge
-    url: connections/sources/catalog/cloud-apps/encharge
-    regions:
-      - us
-    endpoints:
-      - us
-  - id: RPrXXW7nws
-    display_name: Engage Events
-    hidden: false
-    slug: engage-events
-    url: connections/sources/catalog/cloud-apps/engage-events
     regions:
       - us
     endpoints:
@@ -414,24 +256,6 @@ sources:
     endpoints:
       - us
       - eu
-  - id: CvYws1p1ZA
-    display_name: Flutter
-    hidden: true
-    slug: flutter
-    url: connections/sources/catalog/libraries/mobile/flutter
-    regions:
-      - us
-    endpoints:
-      - us
-  - id: f02zgzAWMG
-    display_name: Formsort
-    hidden: true
-    slug: formsort
-    url: connections/sources/catalog/cloud-apps/formsort
-    regions:
-      - us
-    endpoints:
-      - us
   - id: Eek5OnuA7e
     display_name: Foursquare Movement
     hidden: false
@@ -450,25 +274,7 @@ sources:
       - us
     endpoints:
       - us
-  - id: tCkZda6aKQ
-    display_name: Freshchat Source
-    hidden: true
-    slug: freshchat-source
-    url: connections/sources/catalog/cloud-apps/freshchat-source
-    regions:
-      - us
-    endpoints:
-      - us
   - id: 1drDrwuySw
-    display_name: Friendbuy
-    hidden: false
-    slug: friendbuy
-    url: connections/sources/catalog/cloud-apps/friendbuy
-    regions:
-      - us
-    endpoints:
-      - us
-  - id: LB5r6abPCB
     display_name: Friendbuy
     hidden: false
     slug: friendbuy
@@ -515,6 +321,7 @@ sources:
     url: connections/sources/catalog/cloud-apps/gwen-webhooks
     regions:
       - us
+      - eu
     endpoints:
       - us
   - id: xJSb170s6B
@@ -537,15 +344,6 @@ sources:
     endpoints:
       - us
       - eu
-  - id: HuSEomZVDH
-    display_name: HTTP Server
-    hidden: true
-    slug: http-server
-    url: connections/sources/catalog/cloud-apps/http-server
-    regions:
-      - us
-    endpoints:
-      - us
   - id: 2baks93o
     display_name: HubSpot
     hidden: false
@@ -557,24 +355,6 @@ sources:
     endpoints:
       - us
       - eu
-  - id: 4Ko9e8X8zx
-    display_name: HubSpot Workflows
-    hidden: true
-    slug: hubspot-workflows
-    url: connections/sources/catalog/cloud-apps/hubspot-workflows
-    regions:
-      - us
-    endpoints:
-      - us
-  - id: 7ha80pBFEj
-    display_name: Hubspot X
-    hidden: true
-    slug: hubspot-x
-    url: connections/sources/catalog/cloud-apps/hubspot-x
-    regions:
-      - us
-    endpoints:
-      - us
   - id: i1VLFDiFfq
     display_name: IBM Watson Assistant
     hidden: false
@@ -629,24 +409,15 @@ sources:
     url: connections/sources/catalog/cloud-apps/iterable
     regions:
       - us
+      - eu
     endpoints:
       - us
+      - eu
   - id: V6ynUvQgbc
     display_name: Java
     hidden: false
     slug: java
     url: connections/sources/catalog/libraries/server/java
-    regions:
-      - us
-      - eu
-    endpoints:
-      - us
-      - eu
-  - id: VfR29KdimB
-    display_name: jAvascript
-    hidden: false
-    slug: javascript
-    url: connections/sources/catalog/cloud-apps/javascript
     regions:
       - us
       - eu
@@ -664,31 +435,11 @@ sources:
     endpoints:
       - us
       - eu
-  - id: zZjAgSjgHi
-    display_name: jAvascript
-    hidden: false
-    slug: javascript
-    url: connections/sources/catalog/cloud-apps/javascript
-    regions:
-      - us
-      - eu
-    endpoints:
-      - us
-      - eu
   - id: V2kq0X7vYy
     display_name: Jebbit
     hidden: false
     slug: jebbit
     url: connections/sources/catalog/cloud-apps/jebbit
-    regions:
-      - us
-    endpoints:
-      - us
-  - id: wFrliG3Ffg
-    display_name: journy.io
-    hidden: true
-    slug: journy-io
-    url: connections/sources/catalog/cloud-apps/journy-io
     regions:
       - us
     endpoints:
@@ -742,15 +493,6 @@ sources:
       - us
     endpoints:
       - us
-  - id: JM48JTU88b
-    display_name: LavieTest
-    hidden: false
-    slug: lavietest
-    url: connections/sources/catalog/cloud-apps/lavietest
-    regions:
-      - us
-    endpoints:
-      - us
   - id: NRgENc89eR
     display_name: Leanplum
     hidden: false
@@ -769,38 +511,11 @@ sources:
       - us
     endpoints:
       - us
-  - id: aOKgF1tDlD
-    display_name: Listrak Dev
-    hidden: false
-    slug: listrak-dev
-    url: connections/sources/catalog/cloud-apps/listrak-dev
-    regions:
-      - us
-    endpoints:
-      - us
-  - id: IONuS10olj
-    display_name: Livelike
-    hidden: true
-    slug: livelike
-    url: connections/sources/catalog/cloud-apps/livelike
-    regions:
-      - us
-    endpoints:
-      - us
   - id: EjYD7n6dOa
     display_name: LiveLike (Source)
-    hidden: true
+    hidden: false
     slug: livelike-source
     url: connections/sources/catalog/cloud-apps/livelike-source
-    regions:
-      - us
-    endpoints:
-      - us
-  - id: kEQE5O66XH
-    display_name: Livelike Test
-    hidden: false
-    slug: livelike-test
-    url: connections/sources/catalog/cloud-apps/livelike-test
     regions:
       - us
     endpoints:
@@ -882,6 +597,7 @@ sources:
     url: connections/sources/catalog/cloud-apps/moengage-source
     regions:
       - us
+      - eu
     endpoints:
       - us
   - id: tmy2gJdz77
@@ -889,15 +605,6 @@ sources:
     hidden: false
     slug: moesif-api-analytics
     url: connections/sources/catalog/cloud-apps/moesif-api-analytics
-    regions:
-      - us
-    endpoints:
-      - us
-  - id: JetsivdT2p
-    display_name: name
-    hidden: true
-    slug: name
-    url: connections/sources/catalog/cloud-apps/name
     regions:
       - us
     endpoints:
@@ -940,15 +647,6 @@ sources:
       - us
     endpoints:
       - us
-  - id: IbYFcGd6B1
-    display_name: Partner Source Example 500
-    hidden: false
-    slug: partner-source-example-500
-    url: connections/sources/catalog/cloud-apps/partner-source-example-500
-    regions:
-      - us
-    endpoints:
-      - us
   - id: Zd5BXedXsa
     display_name: Paytronix
     hidden: false
@@ -978,15 +676,6 @@ sources:
     endpoints:
       - us
       - eu
-  - id: 5WbGSRqoLY
-    display_name: Pinwheel
-    hidden: true
-    slug: pinwheel
-    url: connections/sources/catalog/cloud-apps/pinwheel
-    regions:
-      - us
-    endpoints:
-      - us
   - id: 7XqN9rJQOG
     display_name: Pixel Tracking API
     hidden: false
@@ -998,24 +687,6 @@ sources:
     endpoints:
       - us
       - eu
-  - id: 6mJhCgRpsP
-    display_name: PJ Test Source
-    hidden: false
-    slug: pj-test-source
-    url: connections/sources/catalog/cloud-apps/pj-test-source
-    regions:
-      - us
-    endpoints:
-      - us
-  - id: CMrCOUyA2i
-    display_name: poc_test
-    hidden: true
-    slug: poc_test
-    url: connections/sources/catalog/cloud-apps/poc_test
-    regions:
-      - us
-    endpoints:
-      - us
   - id: WvlvcGEJsT
     display_name: Postgres
     hidden: true
@@ -1073,15 +744,6 @@ sources:
       - us
     endpoints:
       - us
-  - id: 6qp2MXy9jT
-    display_name: RandomMMTest
-    hidden: false
-    slug: randommmtest
-    url: connections/sources/catalog/cloud-apps/randommmtest
-    regions:
-      - us
-    endpoints:
-      - us
   - id: B0X0QmvMny
     display_name: React Native
     hidden: false
@@ -1116,15 +778,6 @@ sources:
     hidden: true
     slug: regal-io
     url: connections/sources/catalog/cloud-apps/regal-io
-    regions:
-      - us
-    endpoints:
-      - us
-  - id: d81EwdLbU4
-    display_name: Rehook
-    hidden: true
-    slug: rehook
-    url: connections/sources/catalog/cloud-apps/rehook
     regions:
       - us
     endpoints:
@@ -1173,24 +826,6 @@ sources:
     endpoints:
       - us
       - eu
-  - id: MBIRC3BQdd
-    display_name: santhosh - test segment source
-    hidden: false
-    slug: santhosh---test-segment-source
-    url: connections/sources/catalog/cloud-apps/santhosh---test-segment-source
-    regions:
-      - us
-    endpoints:
-      - us
-  - id: jSePjiuEUN
-    display_name: sdfgsdfgsdfg
-    hidden: false
-    slug: sdfgsdfgsdfg
-    url: connections/sources/catalog/cloud-apps/sdfgsdfgsdfg
-    regions:
-      - us
-    endpoints:
-      - us
   - id: xn9YEaDaNS
     display_name: Selligent Marketing Cloud
     hidden: false
@@ -1220,15 +855,6 @@ sources:
       - us
     endpoints:
       - us
-  - id: rsNCavQtg2
-    display_name: Skyvia
-    hidden: true
-    slug: skyvia
-    url: connections/sources/catalog/cloud-apps/skyvia
-    regions:
-      - us
-    endpoints:
-      - us
   - id: BQp3zGUgjV
     display_name: Snowflake
     hidden: true
@@ -1238,56 +864,11 @@ sources:
       - us
     endpoints:
       - us
-  - id: JFT2Amlz9F
-    display_name: source-test
-    hidden: false
-    slug: source-test
-    url: connections/sources/catalog/cloud-apps/source-test
-    regions:
-      - us
-    endpoints:
-      - us
-  - id: Awx90kfTFg
-    display_name: source_b2
-    hidden: false
-    slug: source_b2
-    url: connections/sources/catalog/cloud-apps/source_b2
-    regions:
-      - us
-    endpoints:
-      - us
-  - id: 5sm7ImJ0LJ
-    display_name: sourceTest
-    hidden: false
-    slug: sourcetest
-    url: connections/sources/catalog/cloud-apps/sourcetest
-    regions:
-      - us
-    endpoints:
-      - us
-  - id: 4a8HuWDG3Y
-    display_name: SRC
-    hidden: true
-    slug: src
-    url: connections/sources/catalog/cloud-apps/src
-    regions:
-      - us
-    endpoints:
-      - us
   - id: 3x07B5Dn5h
     display_name: Statsig
     hidden: false
     slug: statsig
     url: connections/sources/catalog/cloud-apps/statsig
-    regions:
-      - us
-    endpoints:
-      - us
-  - id: fO4vesv5NC
-    display_name: Stitch
-    hidden: true
-    slug: stitch
-    url: connections/sources/catalog/cloud-apps/stitch
     regions:
       - us
     endpoints:
@@ -1303,168 +884,6 @@ sources:
     endpoints:
       - us
       - eu
-  - id: QL7jLaHIfr
-    display_name: test
-    hidden: false
-    slug: test
-    url: connections/sources/catalog/cloud-apps/test
-    regions:
-      - us
-    endpoints:
-      - us
-  - id: 86ctsPjqqd
-    display_name: test
-    hidden: false
-    slug: test
-    url: connections/sources/catalog/cloud-apps/test
-    regions:
-      - us
-    endpoints:
-      - us
-  - id: AycP82ZGks
-    display_name: test
-    hidden: false
-    slug: test
-    url: connections/sources/catalog/cloud-apps/test
-    regions:
-      - us
-    endpoints:
-      - us
-  - id: 0kU8HXqDGm
-    display_name: test source
-    hidden: false
-    slug: test-source
-    url: connections/sources/catalog/cloud-apps/test-source
-    regions:
-      - us
-    endpoints:
-      - us
-  - id: 544Iy5fYSF
-    display_name: test-jina
-    hidden: false
-    slug: test-jina
-    url: connections/sources/catalog/cloud-apps/test-jina
-    regions:
-      - us
-    endpoints:
-      - us
-  - id: AnfSzNqhXH
-    display_name: test-twee
-    hidden: false
-    slug: test-twee
-    url: connections/sources/catalog/cloud-apps/test-twee
-    regions:
-      - us
-    endpoints:
-      - us
-  - id: e93cwtHdmq
-    display_name: test_c2
-    hidden: false
-    slug: test_c2
-    url: connections/sources/catalog/cloud-apps/test_c2
-    regions:
-      - us
-    endpoints:
-      - us
-  - id: n8sibignLG
-    display_name: test_niall
-    hidden: false
-    slug: test_niall
-    url: connections/sources/catalog/cloud-apps/test_niall
-    regions:
-      - us
-    endpoints:
-      - us
-  - id: s2tcX4a0Qp
-    display_name: Test_source_1
-    hidden: false
-    slug: test_source_1
-    url: connections/sources/catalog/cloud-apps/test_source_1
-    regions:
-      - us
-    endpoints:
-      - us
-  - id: u1nD2DJamN
-    display_name: Tester
-    hidden: false
-    slug: tester
-    url: connections/sources/catalog/cloud-apps/tester
-    regions:
-      - us
-    endpoints:
-      - us
-  - id: PXB5u2Ms2I
-    display_name: testing-party-yay
-    hidden: false
-    slug: testing-party-yay
-    url: connections/sources/catalog/cloud-apps/testing-party-yay
-    regions:
-      - us
-    endpoints:
-      - us
-  - id: ZhSMbQMT1r
-    display_name: TESTPixelFox2345
-    hidden: false
-    slug: testpixelfox2345
-    url: connections/sources/catalog/cloud-apps/testpixelfox2345
-    regions:
-      - us
-    endpoints:
-      - us
-  - id: LpQxxcJexw
-    display_name: TestSource
-    hidden: false
-    slug: testsource
-    url: connections/sources/catalog/cloud-apps/testsource
-    regions:
-      - us
-    endpoints:
-      - us
-  - id: QeIwSia7sQ
-    display_name: TestSource2
-    hidden: false
-    slug: testsource2
-    url: connections/sources/catalog/cloud-apps/testsource2
-    regions:
-      - us
-    endpoints:
-      - us
-  - id: vOlNDkP5qR
-    display_name: Thomas Gilbert Test
-    hidden: false
-    slug: thomas-gilbert-test
-    url: connections/sources/catalog/cloud-apps/thomas-gilbert-test
-    regions:
-      - us
-    endpoints:
-      - us
-  - id: EETZm2l5gU
-    display_name: Thomas Partner Source
-    hidden: false
-    slug: thomas-partner-source
-    url: connections/sources/catalog/cloud-apps/thomas-partner-source
-    regions:
-      - us
-    endpoints:
-      - us
-  - id: 6nGX8vnUpM
-    display_name: Thomas Source Test Portal
-    hidden: false
-    slug: thomas-source-test-portal
-    url: connections/sources/catalog/cloud-apps/thomas-source-test-portal
-    regions:
-      - us
-    endpoints:
-      - us
-  - id: StjIoJAuBT
-    display_name: Thomas Test Source
-    hidden: false
-    slug: thomas-test-source
-    url: connections/sources/catalog/cloud-apps/thomas-test-source
-    regions:
-      - us
-    endpoints:
-      - us
   - id: 43bb279b7
     display_name: Twilio
     hidden: false
@@ -1494,36 +913,9 @@ sources:
       - us
     endpoints:
       - us
-  - id: cCCwrwHZoD
-    display_name: Unlocking Attribution
-    hidden: true
-    slug: unlocking-attribution
-    url: connections/sources/catalog/cloud-apps/unlocking-attribution
-    regions:
-      - us
-    endpoints:
-      - us
-  - id: l5eaZFs2Mj
-    display_name: Unlocking Simulation
-    hidden: true
-    slug: unlocking-simulation
-    url: connections/sources/catalog/cloud-apps/unlocking-simulation
-    regions:
-      - us
-    endpoints:
-      - us
-  - id: h6tGyJ8rYY
-    display_name: Unstack
-    hidden: true
-    slug: unstack
-    url: connections/sources/catalog/cloud-apps/unstack
-    regions:
-      - us
-    endpoints:
-      - us
   - id: 9TYqEh3nMe
     display_name: Upollo
-    hidden: true
+    hidden: false
     slug: upollo
     url: connections/sources/catalog/cloud-apps/upollo
     regions:
@@ -1546,6 +938,7 @@ sources:
     url: connections/sources/catalog/cloud-apps/voucherify
     regions:
       - us
+      - eu
     endpoints:
       - us
   - id: 7GmYZcBQyw
@@ -1568,29 +961,11 @@ sources:
     endpoints:
       - us
       - eu
-  - id: bKRWdrbfpc
-    display_name: xyz1
-    hidden: false
-    slug: xyz1
-    url: connections/sources/catalog/cloud-apps/xyz1
-    regions:
-      - us
-    endpoints:
-      - us
   - id: 117eYCe9jH
     display_name: Youbora
     hidden: true
     slug: youbora
     url: connections/sources/catalog/cloud-apps/youbora
-    regions:
-      - us
-    endpoints:
-      - us
-  - id: ZlUsdHTkfU
-    display_name: zaza
-    hidden: false
-    slug: zaza
-    url: connections/sources/catalog/cloud-apps/zaza
     regions:
       - us
     endpoints:

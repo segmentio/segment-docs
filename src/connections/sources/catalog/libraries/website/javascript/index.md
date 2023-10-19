@@ -887,6 +887,70 @@ If the above routes don't work, Segment provides these workarounds to help with 
 
 * Consider tracking data using one of Segment's [server-side libraries](/docs/connections/sources/#server). By using a server-side library, you no longer have to worry about ad blockers and privacy browsers preventing Segment from loading. This option may require more code to track something like a `.page()` call, since now you have to manually pass contextual information that otherwise would've been collected automatically by Analytics.js, such as `url`, `path`, `referrer`. Note that some destinations are device-mode only.
 
+## Add destinations from npm
+
+Bundle the destinations you want loaded from [npm](https://www.npmjs.com/package/@segment/analytics-next){:target="_blank"} instead of having them loaded from a remote CDN. This enables you to have fewer network requests when adding destinations.
+
+* To add actions-based destinations from npm: 
+
+  ```js
+  import vwo from '@segment/analytics-browser-actions-vwo'
+  import braze from '@segment/analytics-browser-actions-braze'
+
+  const analytics = AnalyticsBrowser.load({
+    writeKey: '<WRITE_KEY>',
+    plugins: [vwo, braze],
+  })
+  ```
+
+  Pass in the destination plugin to the added config option called `plugins`.  A list of all action destination packages can be found [here](https://github.com/segmentio/action-destinations/blob/main/packages/destinations-manifest/package.json){:target="_blank"}.
+
+
+* To add classic destinations from npm: 
+
+  ```js
+  import { AnalyticsBrowser } from '@segment/analytics-next'
+  import GoogleAnalyticsIntegration from '@segment/analytics.js-integration-google-analytics'
+
+  // The following example assumes configuration for Google Analytics will be available in the fetched settings
+  const analytics = AnalyticsBrowser.load({
+    writeKey: '<WRITE_KEY>',
+    classicIntegrations: [ GoogleAnalyticsIntegration ]
+  }),
+  ```
+
+## Segment Inspector
+The Segment Inspector is a Chrome web extension that enables you to debug your Segment integration on web applications instrumented with Analytics.js 2.0. Analytics.js sends data to the extension so that you can see how events change before they're sent to your destinations and so that you can verify that the event details are correct. The Segment Inspector also lets you analyze and confirm that API calls made from your website arrive to your Analytics.js 2.0 source. 
+
+> info ""
+> For the Segment inspector to work, you must enable the Analytics.js 2.0 source.
+
+To add the Segment Inspector as a Chrome extension:
+1. Go to the [Chrome web store](https://chrome.google.com/webstore/category/extensions){:target="_blank”}.
+2. Search for **Segment Inspector**.
+3. Click **Add to Chrome**.
+4. Click **Add Extension** in the pop-up window.  
+
+Once installed, use the Inspect Elements developer tool in Chrome to use the Segment Inspector. To access the Inspector, go to the top menu bar of Chrome and navigate to **View > Developer > Developer Tools** and go to the **Segment** tab. On the Segment tab, you can:
+- Filter the different calls by type
+- Search based off of the content in the calls
+- Identify users  
+
+### Components of the Segment Inspector 
+The Segment Inspector is composed of these three components:
+1. The **Diagnostics** tab 
+   - This tab shows the library versions and the list of active integrations that are running. 
+   - When you select an integration, you can see the options that passed while the integration loads. If you made any local overrides within the integration or on the page itself, they appear highlighted in the code. 
+2. The **Events** tab 
+   - This tab enables you to select an event and see the specific details of the event. You can view the time the event occurred, the status of the event (whether it sent or failed), what plugins were added, and how the context object changed. Any changes made to the payload appear highlighted. 
+   - Select the double-checked icon to see the payload at the delivery stage.
+   - Select the *fx* icon to see the payloads after plugins ran.
+   - Select the single-checked icon to see the payload as it was when the event triggered.
+3. The **Identity** tab 
+   - This tab enables you to see the information of a user if you're using the `identify` feature. You can associate the data to an individual and measure their activity across multiple sessions and devices. This tab only shows the user's traits that are on the client. 
+   - If you're not using the `identify` feature, the user remains anonymous. 
+
+
 ## Open source libraries
 
 Analytics.js 2.0 includes the following open source components:

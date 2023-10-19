@@ -42,11 +42,6 @@ In addition to Segment's Amplitude documentation, Amplitude provides a [Segment 
 
 If you included Segment's JavaScript snippet on your page, then Amplitude's SDK loads on your page automatically and you can use Segment's to begin sending events right away.
 
-### React Native device mode set up
-
-{% include content/react-dest.md %}
-
-
 ## Page and Screen
 
 If you're not familiar with the Segment Specs, take a look to understand what the [Page](/docs/connections/spec/page/) and [Screen](/docs/connections/spec/screen/) methods do. By default, Segment does not send these standard calls to Amplitude. However, you can enable them with the destination settings below, which you can find under the "Optional Settings" tab.

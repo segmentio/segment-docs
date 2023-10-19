@@ -19,10 +19,6 @@ Our Flurry destination code is open sourced on GitHub. Feel free to check it out
 
 _Note: Flurry does not always display data in real time. We've seen that it can take anywhere from a few hours to a few days for certain types of data to sync with Flurry._
 
-### React Native set up
-
-{% include content/react-dest.md %}
-
 ## Screen
 
 If you're not familiar with the Segment Specs, take a look to understand what the [Screen method](/docs/connections/spec/screen/) does.
