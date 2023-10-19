@@ -258,4 +258,4 @@ If you are tracking App Clips using iOS or Swift libraries, there is a chance th
 
 ## Why am I seeing a value of -- set for the network carrier?
 
-As from iOS [16.4](https://developer.apple.com/documentation/ios-ipados-release-notes/ios-ipados-16_4-release-notes#Core-Telephony), Apple has deprecated the method to return the network carrier. As such, the iOS library can no longer return a valid value for the network carrier on devices using iOS 16.4 or later. You will likely see `--` set for the `context.network.carrier` field.
+With iOS [16.4](https://developer.apple.com/documentation/ios-ipados-release-notes/ios-ipados-16_4-release-notes#Core-Telephony){:target="_blank"}, Apple deprecated the method to return the network carrier. The iOS library can no longer return a valid value for the network carrier on devices using iOS 16.4 or later. As a result, you will likely see `--` set for the `context.network.carrier` field.
