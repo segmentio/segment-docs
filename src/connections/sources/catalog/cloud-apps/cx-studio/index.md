@@ -1,5 +1,8 @@
 ---
 title: Elastic Path CX Studio Source
+id: NC2jsEkA8Y
+beta: true
+hidden: true
 ---
 
 [Elastic Path CX Studio](https://www.elasticpath.com/products/cx-studio?utm_source=segmentio&utm_medium=docs&utm_campaign=partners){:target="_blank"} enables brands to build and deploy hosted storefronts and shoppable landing pages with dynamic personalization powered by your Segment data. All in a no-code visual editor.
@@ -16,10 +19,10 @@ This source is maintained by Elastic Path. For any issues with the source, conta
 1. Navigate to **Connections > Catalog** and make sure you're on the **Sources** tab of the catalog.
 2. Search for **Elastic Path CX Studio** in the Sources Catalog, select **Elastic Path CX Studio**, and click **Add Source**.
 3. Give the Source a name and configure any other settings.
-   - The name identifies this source within your workspace, and typically reflects the name of the application. The name can be anything, but Segment recommends that you use something that reflects the source itself and distinguishes amongst your environments (for example, `SourceName_Prod`, `SourceName_Staging`, or `SourceName_Dev`).
+   - The name identifies this source within your workspace, and typically reflects the name of the application. The name can be anything, but Segment recommends that you use something that reflects the source itself and distinguishes amongst your environments (for example, `ElasticPath_Prod`, `ElasticPath_Staging`, or `ElasticPath_Dev`).
 4. Click **Add Source** to save your settings.
-5. Copy the Write key from the Segment UI and [log in to the Elastic Path CX Studio](https://app.unstack.com/login).
-6. Navigate to Settings > Integrations > Select Segment integration, where you need to use Segment key.
+5. Copy the Write key from the Segment UI and [log in to the Elastic Path CX Studio](https://app.unstack.com/login){:target="_blank"}.
+6. Navigate to Settings > Integrations > Select Segment integration, and input the Segment write key.
 
 ## Stream
 
