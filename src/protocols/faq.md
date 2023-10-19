@@ -130,6 +130,10 @@ Blocked events are blocked from sending to all Segment Destinations, including w
 
 Blocking events within a [Source Schema](/docs/connections/sources/schema/) or [Tracking Plan](/docs/protocols/tracking-plan/create/) excludes them from API call and MTU calculations, as the events are discarded before they reach the pipeline that Segment uses for calculations.
 
+### Do warehouse connectors use the data type definitions when creating a warehouse schema?
+
+Warehouse connectors don't use data type definitions for schema creation. The [data types](/docs/connections/storage/warehouses/schema/#data-types) for columns are inferred from the first event that comes in from the source.
+
 ## Protocols Transformations
 
 ### Do transformations work with Segment replays?
