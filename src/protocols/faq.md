@@ -126,9 +126,9 @@ Blocked events are blocked from sending to all Segment Destinations, including w
 
 Blocked events will not count towards your MTU counts as long as blocked event forwarding is disabled.
 
-### Are the data type definitions utilized for warehouse schema creation?
+### Do warehouse connectors use the data type definitions when creating a warehouse schema?
 
-The data type definitions are not used by warehouse connectors for schema creation. The [data types](https://segment.com/docs/connections/storage/warehouses/schema/#data-types) for columns are inferred from the first event that comes in from the source.
+Warehouse connectors don't use data type definitions for schema creation. The [data types](/docs/connections/storage/warehouses/schema/#data-types) for columns are inferred from the first event that comes in from the source.
 
 ## Protocols Transformations
 

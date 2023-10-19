@@ -64,11 +64,11 @@ Protocols customers can also use [Transformations](/docs/protocols/transform/) t
 
 ## Can I change the data type of a column in the warehouse?
 
-Yes, data types are set up in your warehouse based on the first value that comes in from a source. However, you can request the support team to update the data type by reaching out to [support](https://app.segment.com/workspaces?contact=1). To learn more, check out [Data Types](/docs/connections/storage/warehouses/schema/#schema-evolution-and-compatibility) section.
+Yes. Data types are set up in your warehouse based on the first value that comes in from a source, but you can request the support team to update the data type by reaching out to [Segment support](https://app.segment.com/workspaces?contact=1){:target="_blank”}. To learn more, check out Segment's [Data Types](/docs/connections/storage/warehouses/schema/#schema-evolution-and-compatibility) documentation.
 
-## Can the data type definitions in Protocols be enforced on warehouse schema?
+## Can the data type definitions in Protocols be enforced in a warehouse schema?
 
-The data type definitions in Protocols are not utilized by warehouse connectors for schema creation, and has no impact on the warehouse schema. 
+The data type definitions in Protocols have no impact on the warehouse schema. 
 
 ## How do I find my source slug?
 
