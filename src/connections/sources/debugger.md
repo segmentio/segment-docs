@@ -4,6 +4,9 @@ title: Using the Source Debugger
 
 The Source Debugger is a real-time tool that helps you confirm that API calls made from your website, mobile app, or servers arrive to your Segment Source, so you can troubleshoot your Segment set up even quicker. With the Debugger, you can check that calls are sent in the expected format without having to wait for any data processing.
 
+> info ""
+> The Source Debugger's event order may not reflect how events are sent downstream or received by connected destinations. The Debugger primarily confirms incoming data and provides a basic view of its structure. For a reliable record of the data you send to Segment, it's advisable to attach a raw storage destination to your sources. 
+
 ![A screenshot of the debugger view, with a Track event selected and the pretty view opened.](images/debugger_view.png)
 
 The Debugger is separate from your workspace's data pipeline and is not an exhaustive view of all the events ever sent to your Segment workspace. The Debugger only shows a sample of the events that the Source receives in real time, with a cap of 500 events. The Debugger is a great way to test specific parts of your implementation to validate that events are being fired successfully and arriving to your Source.
