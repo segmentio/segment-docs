@@ -9,7 +9,7 @@ Events ingested by Segment have a limit of **10,000** properties per individual 
 
 ## Inbound data ingestion API rate limit
 
-Within a ten minute period, if any sources (in aggregate) send more than 12 million events (average of 20,000 events per second) without prior arrangement, Segment reserves the right to queue any additional events and process those at a rate that does not exceed 12 million events in a ten minute period.
+If any sources send more than 20,000 events per second without prior arrangement, Segment reserves the right to queue any additional events and process those at a rate that doesn't exceed this limit.
 
 > warning "Engage rate limit"
 > Engage has a limit of 1,000 events per second for inbound data. Visit the [Engage Default Limits documentation](/docs/engage/product-limits/) to learn more.
