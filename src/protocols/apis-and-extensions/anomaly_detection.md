@@ -28,7 +28,7 @@ You can send anomalous events directly from your source to a Slack channel using
 1. Create a [Slack (Actions)](/docs/connections/destinations/catalog/actions-slack/#getting-started) destination. 
 2. Once you've created your destination, select the **Mappings** tab and click **+ New Mapping**.
 3. On the Add Mapping popup, select **Post Message**.
-4. Under "Select events to map and send", create an event will the following format: <br>
+4. Under "Select events to map and send", create an event with the following format: <br>
 ![A screenshot of the Post Message setup screen in the Slack (Actions) destination.](images/slack-actions-forwarding.jpeg)
 5. Configure the rest of the Post Message settings and click **Save**.
 
