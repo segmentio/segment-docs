@@ -192,8 +192,6 @@ For example, say you want to add `subtotal` as a required property to your `Orde
 
 ![Two screenshots edited together. The first screenshot shows all the properties in an Order Completed event with none highlighted, and the second screenshot shows the subtotal property selected.](../images/breaking_change_event_versioning.png)
 
-Before Segment introduced event versioning, you would need to add the change to your Tracking Plan and any non-compliant events would generate violations, and possibly be blocked depending on your [event blocking settings](/docs/protocols/enforce/schema-configuration/).
-
 ### Create a new event version
 With event versioning, you can now create multiple versions of the event definition as shown in the example below. To create a new event version, click into the overflow menu for an event and select **Add Event Version**.
 
