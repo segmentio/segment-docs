@@ -1,0 +1,8 @@
+The following mobile, device-mode destinations do not block events:
+
+{% assign mobile-device-mode = site.data.catalog.destinations.items | where: "connection_modes.device.mobile", "true" %}
+{% for integration in mobile-device-mode %}
+<ul>
+   <li><a href="/docs/{{ integration.url }}">{{ integration.display_name }}</a></li>
+</ul>
+{% endfor %} 

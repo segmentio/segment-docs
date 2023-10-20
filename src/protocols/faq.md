@@ -124,7 +124,11 @@ That being said, there are plenty of scenarios where the reactive Schema functio
 
 ### If I enable blocking, what happens to the blocked events? Are events just blocked from specific Destinations or the entire Segment pipeline?
 
-Blocked events are blocked from sending to all Segment Destinations, including warehouses and streaming Destinations. When an Event is blocked using a Tracking Plan, it does not count towards your MTU limit. They will, however, count toward your MTU limit if you enable [blocked event forwarding](/docs/protocols/enforce/forward-blocked-events/) in your Source settings.
+If you enable blocking, all Segment Destinations, with the exception of mobile, device-mode destinations block events from sending to all downstream Destinations. When an Event is blocked using a Tracking Plan, it does not count towards your MTU limit. Blocked events will, however, count toward your MTU limit if you enable [blocked event forwarding](/docs/protocols/enforce/forward-blocked-events/) in your Source settings.
+
+If you are creating a Tracking Plan for mobile, device-mode destinations like [Firebase](/docs/connections/destinations/catalog/firebase/), 
+
+{% include content/mobile-device-mode.html %}
 
 ### Do blocked and discarded events count towards my MTU counts?
 
