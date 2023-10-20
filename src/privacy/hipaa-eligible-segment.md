@@ -109,7 +109,6 @@ To remove encryption from incoming data:
 > success ""
 > Disabling the data encryption setting does not decrypt existing data, but does prevent any future data from being encrypted.
 
-### User session timeouts
+## User session timeouts
 
-Segment will automatically log off users with access to HIPAA eligible workspaces after 15 minutes of inactivity, and they will
-need to re-authenticate.
+Segment automatically logs out all users with access to HIPAA eligible workspaces after 15 minutes of inactivity.
