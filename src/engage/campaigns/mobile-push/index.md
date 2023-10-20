@@ -13,9 +13,10 @@ This page walks you through the process of setting up mobile push notifications 
 You'll set up mobile push in four stages:
 
 1. [Set up analytics for mobile push](#1-set-up-analytics-for-mobile-push).
-2. [Add the Engage SDK plugin](#2-add-the-engage-sdk-plugin).
-3. [Configure push credentials](#3-configure-push-credentials).
-4. [Configure mobile push in Engage](#4-configure-mobile-push-in-engage).
+2. [Add the Engage SDK plugin for iOS](#2-add-the-engage-sdk-plugin-for-ios).
+3. [Add the Engage SDK plugin for Android](#3-add-the-engage-sdk-plugin-for-android).
+4. [Configure push credentials](#4-configure-push-credentials).
+5. [Configure mobile push in Engage](#5-configure-mobile-push-in-engage).
 
 ## 1. Set up analytics for mobile push
 
@@ -69,9 +70,9 @@ Follow these steps to integrate the React Native library:
 
 For detailed instructions on integrating Analytics for React Native, follow the steps in the [Analytics for React Native getting started section](/docs/connections/sources/catalog/libraries/mobile/react-native#getting-started). 
 
-## 2. Add the Engage SDK plugin
+## 2. Add the Engage SDK plugin for iOS
 
-Next, you'll add the Engage SDK plugins for both iOS and Android to your application.   
+Next, you'll add the Engage SDK plugins for both iOS and Android to your application. This section covers iOS.
 
 ### Instructions for iOS
 
@@ -192,7 +193,11 @@ func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive respo
 
 The previous steps are required. For configuration options, including subscription statuses and media handling, visit the [getting started section](https://github.com/segment-integrations/analytics-swift-engage#getting-started){:target="_blank"} of Segment's Twilio Engage Plugin documentation on GitHub.
 
-### Instructions for Android
+## 3. Add the Engage SDK plugin for Android
+
+Now, you'll add the Engage SDK plugin for Android to your application. 
+
+### 3a. Add the Engage SDK plugin dependency
 
 Now that you've integrated Analytics for Kotlin, follow these steps to add the Engage Plugin for Android:
 
@@ -223,7 +228,51 @@ Now that you've integrated Analytics for Kotlin, follow these steps to add the E
 
 The previous steps are required. For configuration options, including subscription statuses and customized actions, visit the [getting started section](https://github.com/segment-integrations/analytics-kotlin-engage#getting-started){:target="_blank"} of Segment's Twilio Engage Destination documentation on GitHub.
 
-## 3. Configure push credentials
+### 3b. Additional Android setup
+
+You'll also need to configure how your app responds to push behaviors, like tracking when a user opens a push notification.
+
+#### Track `push opened` 
+
+The following code tracks the `push opened` event.  Add it to your code when you create your intent:
+
+```kotlin
+putExtra("push_notification", true)
+customization.remoteMessage.data.forEach { (key, value) ->
+    putExtra(key, value)
+}
+```
+
+#### Handle in-app URL opening
+
+If you send a push notification that contains a URL, you might want the URL to open the app when a user opens the notification. Follow these steps to set that up:
+
+1. Add the following [web link filter](https://developer.android.com/training/app-links#web-links){:target="_blank"} to your `AndroidManifest.xml` file:
+
+```xml
+<intent-filter>
+    <action android:name="android.intent.action.VIEW" />
+    <category android:name="android.intent.category.DEFAULT" />
+    <category android:name="android.intent.category.BROWSABLE" />
+    <data
+        android:host="<yourpersonaldomain.com>"
+        android:scheme="https" />
+</intent-filter>
+```
+
+2. Next, implement an in-app browser using WebView:
+
+```kotlin
+intent?.extras?.getString("link")?.let {
+    myWebView.loadUrl(it)
+}
+```
+
+After you've set up in-app URL opening, your app will open when users tap on the push. Once the app opens, users will select either `Just once` or `Set to always open`, and the URL you chose will open as a web page in your app.
+
+For more information, view [click behaviors](/docs/engage/content/mobile-push/#click-behaviors).
+
+## 4. Configure push credentials
 
 In this step, you'll configure your iOS and Android push credentials for use with Twilio Notify and Twilio Notifications.  
 
@@ -245,11 +294,11 @@ During Step 5, [Upload your API Key to Twilio](https://www.twilio.com/docs/notif
 
 With your server key copied, finish steps 5 and 6 in the Twilio documentation.
 
-## 4. Configure mobile push in Engage
+## 5. Configure mobile push in Engage
 
 Follow these steps to set up mobile push in Twilio Engage.
 
-### 4a. Set up Twilio credentials
+### 5a. Set up Twilio credentials
 
 > success ""
 > Follow the steps in 4a only if you're new to Twilio Engage Premier. If you've already [configured messaging services](/docs/engage/onboarding/#generate-an-api-key-and-select-your-messaging-services) as part of Twilio Engage Premier onboarding, you can skip to 4b.
@@ -266,16 +315,16 @@ Follow these steps to set up mobile push in Twilio Engage.
 12. Click **Verify**, then select the messaging services you want to use in your space.
 13. Click **Save Twilio Account.**
 
-### 4b. Create a new push service
+### 5b. Create a new push service
 
 Complete mobile push onboarding by creating a new push service:
 
-2. In your Segment workspace, navigate to **Engage > Engage settings**.
-3. Click the pencil icon next to **Messaging services**, then click **Create new push service**.
+1. In your Segment workspace, navigate to **Engage > Engage settings**.
+2. Click the pencil icon next to **Messaging services**, then click **Create new push service**.
     - If you don't see the pencil icon, select **Create new push service**.
-4. Name the push service, select or create APN and FCM credentials, then click **Create Push Service**.
-5. Your new messaging service appears in the **Add messaging services** dropdown. Select it, then click **Save**.
+3. Name the push service, select or create APN and FCM credentials, then click **Create Push Service**.
+4. Your new messaging service appears in the **Add messaging services** dropdown. Select it, then click **Save**.
 
-## 5. Build a mobile push template
+## Next step: build a mobile push template
 
 Now that you've completed mobile push setup, you're ready to [build a mobile push template](/docs/engage/content/mobile-push/).

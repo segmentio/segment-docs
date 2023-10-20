@@ -85,3 +85,14 @@ The following table lists the WhatsApp campaign metrics that Engage tracks:
 | Opened      | The number of opened WhatsApp campaigns, based on users who have turned on read receipts. |
 | Undelivered | The number of undelivered WhatsApp campaigns.                                             |
 | Failed      | The number of WhatsApp campaigns that didn't send.                                        |
+
+## Push notification metrics
+
+The following table lists the push notification metrics that Engage tracks:
+
+| Metric | Description                                                             |
+| ------ | ----------------------------------------------------------------------- |
+| Queued | The number of push notifications queued for delivery, but not yet sent. |
+| Sent   | The number of push notifications that you sent.                         |
+| Opened | The number of opened push notifications.                                |
+| Failed | The number of push notifications that didn't send.                      |
