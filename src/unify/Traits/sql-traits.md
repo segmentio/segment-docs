@@ -266,5 +266,5 @@ Check that you've configured the identifier that uniquely identifies users in a 
 
 Ensure that the name given to the SQL trait is not the same name as the identifier or column name from the query. To use SQL traits to update an identifier, the identifier will need to be a column in the query of your SQL trait. The column name in the query of the SQL trait should be the one that Identity Resolution uses to generate the identifier. 
 
-### Why am I not able to see the error messages in SQL trait while the other developers can?
-To see the error messages in SQL trait, you will need to have PII Access.
+### Why can't I see error messages in SQL traits while other users can?
+To see error messages in SQL traits, you will need to have PII Access.
