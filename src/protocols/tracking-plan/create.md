@@ -13,8 +13,8 @@ When building a Tracking Plan, it's best to start with the key metrics that driv
 
 The Segment Tracking Plan feature allows you to validate your expected events against the live events that are delivered to Segment. Violations generate when an event doesn't match the spec'd event in the Tracking Plan.
 
-<!--- TBD: this doesn't really fit anywhere yet >> info ""
-> Segment can infer data types, but is unable to do so if several data types are sent for a specific category. -->
+> info ""
+> Segment can infer event data types, but is unable to do so if several data types are sent for a specific category.
 
 Tracking Plans are stored in workspaces and can be connected to one or more Sources.
 
@@ -41,6 +41,17 @@ To download a Tracking Plan:
 3. A toast pops up on the top of the page, with the message _"Your file is processing. When your file is ready it will be available to download from the Download History page."_
 4. Open the Download History page by clicking the link in the toast or clicking the **Download History** tab in the top navigation bar.
 5. Once the file status column indicates that the download was successful, click the link in the File column to download your CSV to your computer. If the file status column shows the download has failed, return to the Tracking Plan Overview page or the Tracking Plan page and try the download again.<br/> The Tracking Plan CSV name has the following format:<br/>`workspaceSlug-trackingPlanName--yyyy-mm-dd--hh-mm-utc`
+
+## Delete a Tracking Plan
+
+> info "Deleting a Tracking Plan requires Workspace Owner or Tracking Plan Admin permissions"
+> You must have Workspace Owner or Tracking Plan Admin roles to delete a Tracking Plan. For more information about roles in the Segment app, see the [Roles documentation](/docs/segment-app/iam/roles/).
+
+To delete a Tracking Plan:
+1. Open the Segment app and click **Protocols**. 
+2. On the row of the Tracking Plan you want to delete, open the contextual menu(…) and select **Delete Tracking Plan...**
+3. A toast pops up on the top of the page, with the message: <br/>
+    *"Are you sure you want to delete <<Tracking Plan Name>>? Once you delete this Tracking Plan, you will not be able to recover it..”*
 
 ## Edit a Tracking Plan
 The Tracking Plan editor is organized as a spreadsheet to help you  add new events and properties, and edit the relevant fields for each. Like a spreadsheet, you can navigate across cells in a single event with your arrow keys and press enter to edit a cell.
@@ -76,6 +87,12 @@ Segment supports object and array data types in the Tracking Plan editor. These 
 You can define which traits you expect to see passed in Identify or Group calls like how you would add Track calls to the Tracking Plan. Navigate to the **Identify** or **Group** tab in your Tracking Plan and click the **(+)** button to add a new trait.
 
 It's best to keep traits optional because Identify and Group are often called and pass only _new or changed_ traits, because Segment's client-side libraries (analytics.js, Swift, Kotlin) cache traits in local storage. See the [Identify Best Practices](/docs/connections/spec/best-practices-identify#when-and-how-often-to-call-identify) to learn more.
+
+### Remove a Source from your Tracking Plan
+
+
+
+
 
 ### Add a label
 You can apply `key:value` labels to each event to help organize your Tracking Plan. These labels are helpful when multiple teams are managing a single Tracking Plan, or if you want to specify a priority, platform, product, or similar meta-data for each event. You can filter by label from the Tracking Plan, Schema, Data Validation and Violations Summary views.
