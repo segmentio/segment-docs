@@ -2,6 +2,7 @@
 title: Analytics for React Native
 strat: react-native
 id: B0X0QmvMny
+support_type: flagship
 ---
 
 With Analytics for React Native, you can collect analytics in your React Native application and send data to any analytics or marketing tool without having to learn, test, or implement a new API every time. Analytics React Native enables you to process and track the history of a payload, while Segment controls the API and prevents unintended operations.
