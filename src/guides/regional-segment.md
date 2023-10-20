@@ -25,8 +25,9 @@ To ensure a smooth transition from a US-based Segment workspace to an EU workspa
 
 Regional Data Ingestion enables you to send data to Segment from both Device-mode and Cloud-mode sources through regionally hosted API ingest points. The regional infrastructure can fail-over across locations within a region, but never across regions.
 
-> info ""
-> [Cloud event](/docs/connections/sources/#event-cloud-sources) sources aren't supported in EU workspaces.
+### Cloud-event sources
+
+{% include content/eu-cloud-event-sources.html %}
 
 ### Client-side sources
 You can configure Segment's client-side SDKs for JavaScript, iOS, Android, and React Native sources to send data to a regional host after you've updated the Data Ingestion Region in that source's settings. Segment's EU instance only supports data ingestion from Dublin, Ireland with the `events.eu1.segmentapis.com/` endpoint.
@@ -87,3 +88,12 @@ Use Segment's custom CIDR `3.251.148.96/29` while authorizing Segment to write i
 The following integrations marked with a ![Supports EU regional endpoints](/docs/images/supported.svg){:class="inline"} (checkmark) support EU Regional endpoints.
 
 {% include content/regional-integrations-table.md %}
+
+## Source Regional support
+
+> info "Don't see regional support for a source you're using?"
+> As more of the partner Sources start to support posting data to our regional endpoint, Segment will update this list. Your contact for that tool should have a timeline for when they're hoping to support regional data ingestion. You can also visit Segment's [support page](https://segment.com/help/contact/) for any Segment-related questions.
+
+The following Sources marked with a ![Supports EU regional endpoints](/docs/images/supported.svg){:class="inline"} (checkmark) are supported in EU workspaces.
+
+{% include content/regional-sources-table.md %}

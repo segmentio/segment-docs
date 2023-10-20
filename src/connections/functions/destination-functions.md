@@ -140,7 +140,7 @@ If your function fails, you can check the error details and logs in the **Output
 Batch handlers are an extension of destination functions. When you define an `onBatch` handler alongside the handler functions for single events (for example: `onTrack` or `onIdentity`), you're telling Segment that the destination function can accept and handle batches of events.
 
 > info ""
-> Batching is available for destination functions only.
+> Batching is available for destination and destination insert functions only.
 
 ### When to use batching
 
@@ -269,7 +269,7 @@ To test the batch handler:
 2. Add events as a JSON array, with one event per element.
 3. Click **Run** to preview the batch handler with the specified events.
 
-> note ""
+> info ""
 > The Sample Event option tests single events only. You must use Manual Mode to add more than one event so you can test batch handlers.
 
 The editor displays logs and request traces from the batch handler.
@@ -306,7 +306,7 @@ Standard [function error types](/docs/connections/functions/destination-function
 ]
 ```
 
-After receiving the response from the `onBatch` handler, Segment only retries **event_4** and **event_5**.
+For example, after receiving the responses above from the `onBatch` handler, Segment only retries **event_4** and **event_5**.
 
 | Error Type             | Result  |
 | ---------------------- | ------- |
@@ -428,3 +428,7 @@ The [Event Delivery tab](/docs/connections/event-delivery/) continues to show me
 A function's use depends on the number of times it's invoked, and the amount of time it takes to execute. When you enable batching, Segment invokes your function _once per batch_ rather than once per event. The volume of events flowing through the function determines the number of batches, which determines the number of invocations.
 
 If you're sending your batch to an external service, the execution time of the function depends on the end-to-end latency of that service's batch endpoint, which may be higher than an endpoint that receives a single event.
+
+##### Which IP addresses should be allowlisted?
+
+{% include content/ip-allowlist.md %}

@@ -43,7 +43,7 @@ Follow these steps to create an email campaign:
 2. From the **Select a Step** window, click **Send an email**.
 3. In the **Send Email** window, select **Build a new email** or [Use a template](/docs/engage/content/email/template/) to choose an existing email template.
 4. Build or edit your design, then click **Save Email**.
-5. Fill out all **Send Email** fields relevant to your campaign, then click **Save**.
+5. Fill out all **Send Email** fields relevant to your campaign, select the [subscription states or groups](/docs/engage/user-subscriptions/subscription-groups/) that you want to receive your email, then click **Save**.
 
 Some email campaign fields, like **Sender email** and **Subject**, are required.  The Send Email window indicates required fields with an asterisk.  Refer to the [email campaign fields](/docs/engage/campaigns/email-campaigns/#email-campaign-fields) table for a full description of available email fields.
 

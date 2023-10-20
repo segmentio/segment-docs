@@ -8,7 +8,7 @@ id: 2baks93n
 
 Take your company's analysis to the next level by **adding Salesforce as a Source to Segment.** Segment automatically collects objects like `Accounts`, `Campaigns`, and `Tasks` and loads them into your data warehouse. 
 
-## Getting Started
+## Getting started
 > info ""
 > You can add multiple instances of this source if you have more than one Salesforce account. 
 
@@ -16,7 +16,7 @@ Take your company's analysis to the next level by **adding Salesforce as a Sourc
 
 2. Choose Salesforce.
 
-3. Give the source a name, add labels, if applicable, and select the Salesforce environment you'd like to pull data from. To use data from a Salesforce sandbox environment, select **Sandbox** from the Salesforce Environment dropdown and [contact Segment Support](https://segment.com/help/contact/). The support team will configure your source to use sandbox data.
+3. Give the source a name, add labels, if applicable, and select the Salesforce environment you'd like to pull data from. To use data from a Salesforce sandbox environment, select **Sandbox** from the Salesforce Environment dropdown and [contact Segment Support](https://segment.com/help/contact/){:target="_blank"}. The support team will configure your source to use sandbox data.
 
 4. Connect Segment to your Salesforce environment and authorize Segment to connect to it. In order for Segment to collect and sync your Salesforce data, you must enable API access for the user that you are connecting to Segment with. For more information on how to confirm or change API access for a Salesforce user, follow Salesforce's [recommended documentation](https://help.salesforce.com/articleView?id=admin_userperms.htm){:target="_blank"}.   
 
@@ -95,24 +95,34 @@ Collections are the groupings of resources Segment pulls from your source. In yo
 | `user_login`                      | object | Represents the settings that affect a user's ability to log into an organization. This object is available in API version 29.0 and later. Corresponds to [UserLogin](https://developer.salesforce.com/docs/atlas.en-us.api.meta/api/sforce_api_objects_userlogin.htm) resource in Salesforce                                                                                                    |
 | `role`                            | object | A role in your organization. Corresponds to [UserRole](https://developer.salesforce.com/docs/atlas.en-us.api.meta/api/sforce_api_objects_userrole.htm) resource in Salesforce                                                                                                                                                                                                                   |
 
-### Custom Objects
+### Custom objects
 
 Select and add custom objects from the Selective Sync page in the Salesforce source settings. 
 
-### Deleting Records
+### Deleting records
 
 Segment supports the use of soft deletes in Salesforce. If you perform a soft delete on a record in Salesforce, your next one to two warehouses syncs will change the value of `is_deleted` for the associated record to `True`.
 
 Segment does not support hard deletes in Salesforce. Use of hard deletes will result in the data remaining in the warehouse with `is_deleted` set to `False`.
 
-## Collection Properties
+## Collection properties
 
-Segment performs a one-to-one mapping of all publicly available fields (standard and custom) from Salesforce. To see the full list of the standard fields refer to the Salesforce field documentation linked in each collection above. If you've added and selected custom fields to an existing collection, [contact Segment Support](https://segment.com/help/contact/) to configure them to sync. You do not need to include the field names.
+Segment performs a one-to-one mapping of all publicly available fields (standard and custom) from Salesforce. To see the full list of the standard fields refer to the Salesforce field documentation linked in each collection above. 
 
-## Adding Destinations
+## Adding destinations
 
 Warehouses are the only supported destination for object-cloud sources.
 
+## Historical data
+When a new Object/Collection is enabled, Segment automatically runs a full historical re-sync on that Object.
+
+However, for custom properties/columns, Segment only populates the custom property with data that comes in after the custom field was enabled. In order to populate the new custom field(s) for records that have previously been synced, you need to initiate a manual re-sync.
+
+For Salesforce, Segment uses the `SystemModstamp`(system_modstamp) field to checkpoint collections that sync incrementally. When enabled, Segment syncs collections incrementally. When disabled, Segment syncs collections fully. If you'd like to force a collection to sync fully on the next run to bring in historical data, you can disable the `SystemModstamp` field on the collection, allow the next sync to complete and then re-enable `SystemModstamp` so the collection syncs incrementally in the coming syncs. 
+
+If you've added and selected custom fields to an existing collection and would not like to use `SystemModstamp` to bring in historical data, [contact Segment Support](https://segment.com/help/contact/){:target="_blank"} to configure them to sync. You do not need to include the field names.
+
+
 ## Troubleshooting
 
-If you are syncing data from a Salesforce sandbox environment and see an "Invalid credentials" error, [contact Segment Support](https://segment.com/help/contact/), who will configure your Segment source to use sandbox data. 
+If you are syncing data from a Salesforce sandbox environment and see an "Invalid credentials" error, [contact Segment Support](https://segment.com/help/contact/){:target="_blank"} to configure your Segment source to use sandbox data. 
