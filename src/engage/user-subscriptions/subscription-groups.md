@@ -54,6 +54,60 @@ Once you've created a subscription group and added subscribers to it, follow the
 1. [Build a new email template](/docs/engage/content/email/template/#build-an-email-template). The template should include both unsubscribe and manage preferences links. For more on special links, view [Add unsubscribe links](/docs/engage/content/email/editor/#add-unsubscribe-links).
 2. During email setup, select the subscription group you want to send to from the **Which subscription states should receive this message?** dropdown, then finish [setting up and publishing your campaign](/docs/engage/campaigns/email-campaigns/#create-test-and-publish-your-email-campaign).
 
+## Set subscription group status with the Identify call
+
+Segment supports subscription groups for email. You can send statuses for email subscription groups using the [Identify call](/docs/connections/spec/identify/). 
+
+To set susbcription groups with the Identify call, you'll need to include a key-value pair of `"type": "EMAIL"` and the `groups` object, like in the following sample payload:
+
+```json
+{
+  "userId": "12aBCDeFg4hIjKlM5OPq67RS8Tu",
+  "context": {
+    "messaging_subscriptions": [
+      {
+        "key": "(123) 555-5555",
+        "type": "SMS",
+        "status": "SUBSCRIBED" | "UNSUBSCRIBED" | "DID_NOT_SUBSCRIBE"
+      },
+      {
+        "key": "(123) 555-5555",
+        "type": "WhatsApp",
+        "status": "SUBSCRIBED" | "UNSUBSCRIBED" | "DID_NOT_SUBSCRIBE"
+      },
+      {
+        "key": "test@example.com",
+        "type": "EMAIL",
+        "status": "SUBSCRIBED" | "UNSUBSCRIBED" | "DID_NOT_SUBSCRIBE",
+        "groups": [
+            {
+               "name": "newsletter",
+               "status": "SUBSCRIBED" | "UNSUBSCRIBED" | "DID_NOT_SUBSCRIBE"
+            },
+            {
+               "name": "marketing updates",
+               "status": "SUBSCRIBED" | "UNSUBSCRIBED" | "DID_NOT_SUBSCRIBE"
+            }
+        ]
+      }
+    ],
+    "externalIds": [
+      {
+        "id": "(123) 555-5555",
+        "type": "phone",
+        "collection": "users",
+        "encoding": "none"
+      }
+    ],
+    "traits": {
+       "email": "test@example.com"
+    }
+  },
+  "integrations": {},
+  "traits": {}
+}
+```
+
 ## Frequently asked questions
 
 {% faq %}

@@ -55,9 +55,11 @@ Click **Format** at any time to properly indent and format your code in the HTML
 > info ""
 > When you toggle from the HTML editor to the visual editor, Engage may make minor changes to your code formatting. If Engage re-formats your code, it will not affect the email layout.
 
-### Error flagging
+### Error flagging and content validation
 
 Engage displays in-line error flags in the code editor to help you debug your code. If there are errors, you might not see content as expected in the preview screen until you've debugged your code.
+
+For all content editors in Engage, you'll see alerts for any issues in your template, such as invalid profile traits or incorrect [liquid syntax](https://liquidjs.com/tags/overview.html){:target="blank"}. Engage both flags template issue(s), and displays recommended next steps. While you can save these templates, you must fix any issues before using them in Engage campaigns. 
 
 ## Personalize with merge tags 
 Add merge tags to personalize your message with user profile traits.

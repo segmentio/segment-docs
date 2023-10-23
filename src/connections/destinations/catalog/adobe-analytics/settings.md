@@ -333,6 +333,14 @@ You must configure an eVar mapping in your Segment destination settings to send 
 An example eVar mapping in the Segment Destination settings UI should look like this:
 ![A screenshot of the Adobe Analytics settings page in Segment, with the Mappings section selected and two sample mappings under the eVars tab.](/docs/connections/destinations/catalog/adobe-analytics/images/eVar-mapping.png)
 
+You can only map properties to Adobe eVar properties. For example, you could map the following properties to Adobe: `path`, `referrer`, `search`, `signup_mode`, `title` and `url`.
+
+>![Adobe evar](https://github.com/segmentio/segment-docs/assets/82051355/999b398a-f752-47f6-8511-9b2ec866cbae)
+>![adobe mapping](https://github.com/segmentio/segment-docs/assets/82051355/c22eb82d-c9cd-4a2a-b216-b9b36569a606)
+
+
+
+
 ## Merchandising events
 
 The Merchandising Events setting allows you to set eVars and events on a per-product basis within the "products" string, and supports increment and currency events. This provides robust product string support, which you can read more about [in the Adobe Analytics Compontents guide](https://marketing.adobe.com/resources/help/en_US/sc/implement/products.html){:target="_blank”}.

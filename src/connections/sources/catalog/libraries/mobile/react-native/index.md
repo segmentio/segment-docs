@@ -721,5 +721,25 @@ import { AddToContextPlugin } from './AddToContextPlugin'
 segmentClient.add({ plugin: new AddToContextPlugin() });  
 ```
 
+### I've upgraded to React Native 2.0, but I am still getting warnings in the Google Play Store that my app is not compliant. Why is this?
+The React Native 2.0 library is compliant with Google Play Store policies. However, Segment recommends that you check to see if there are any old and inactive [tracks on the Google Play Store](https://developers.google.com/android-publisher/tracks){:target="_blank"} that are not updated to the latest build. If this is the case, we recommend updating those tracks to resolve the issue. 
+
+### Can I set inlineRequires to false in my metro.config.js file?
+Segment requires the `inlineRequires` value in your `metro.config.js` value to be set to `true`. To disable `inlineRequires` for certain modules, you can specify this by using a [blockList](https://facebook.github.io/metro/docs/configuration/#:~:text=If%20inlineRequires%20is%20an%20object){:target="_blank"}.
+
+### Can I clear user traits without calling the reset() method?
+The set method on userInfo can accept a function that receives the current state and returns a modified desired state. Using this method, you can return the current traits, delete any traits you no longer wish to track, and persist the new trait set.
+
+```js
+segmentClient.userInfo.set((currentUserInfo) => {
+  return {
+    ...currentUserInfo, 
+    traits: {
+        // All the traits except the one you want to delete
+       persistentTrait: currentUserInfo.persistentTrait
+    }
+  });
+```
+
 ## Changelog
 [View the Analytics React Native changelog on GitHub](https://github.com/segmentio/analytics-react-native/releases){:target="_blank"}.

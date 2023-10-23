@@ -106,9 +106,9 @@ If you'd like to attribute offline events with a certain user or device, the ser
 
 AppsFlyer requires the following properties for this attribution:
 
-**AppsFlyer Device ID**
+**AppsFlyer ID**
 
-Send the **AppsFlyer Device ID** with each event at `integrations.AppsFlyer.appsFlyerId`, see example below.
+Send the **AppsFlyer ID** with each event at `integrations.AppsFlyer.appsFlyerId`, see example below.
 This identifier is unique to each device and can be [retrieved using the AppsFlyer SDK](https://support.appsflyer.com/hc/en-us/articles/207034486-Server-to-Server-In-App-Events-API-HTTP-API-). It is a good idea to store this value in an external database where it may be easily accessible by a server or website environments.
 
 **Device Type**
@@ -157,7 +157,10 @@ All other `properties` will be sent to AppsFlyer as custom properties inside `ev
 Segment will automatically trigger an `Install Attributed` event if you have **trackAttributionData** enabled in your settings, and the Segment-AppsFlyer integration installed in your app. The event payload will adhere to the `Install Attributed` event specification documented [here](/docs/connections/spec/mobile/#install-attributed) and will propagate to your other downstream destinations.
 
 ### Server
-If you are tracking events server-side, AppsFlyer can still send attribution postbacks but you will need to configure this functionality in your AppsFlyer account. To enable this, navigate to your AppsFlyer app and on the sidebar of the main screen click on **Integrated Partners** and search for Segment. You will be prompted with a couple of configuration options and asked to input your Segment Write Key. Once enabled, successfully attributed app installs will begin showing up as `Install Attributed` events similar to the client side behavior documented above.
+If you track events server-side, AppsFlyer can still send attribution postbacks, but you need to configure this functionality in your AppsFlyer account. To enable this:
+1. Navigate to your AppsFlyer app and on the sidebar of the main screen select **Configuration > Partner Marketplace** and search for Segment. 
+2. Enter the configuration options and input your Segment Write Key. 
+Once enabled, successfully attributed app installs begin showing up as `Install Attributed` events similar to the client side behavior documented above.
 
 If you are sending in the attribution data yourself, for iOS be sure the following properties are sent in within the campaign object on the `Install Attributed` or `Application Opened` event so Appsflyer can correctly attribute it as an Apple Search Ad event. These values should be returned by the [Apple Search Ads API](https://searchads.apple.com/help/reporting/0028-apple-ads-attribution-api):
 
