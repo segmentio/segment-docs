@@ -45,13 +45,12 @@ To download a Tracking Plan:
 ## Delete a Tracking Plan
 
 > info "Deleting a Tracking Plan requires Workspace Owner or Tracking Plan Admin permissions"
-> You must have Workspace Owner or Tracking Plan Admin roles to delete a Tracking Plan. For more information about roles in the Segment app, see the [Roles documentation](/docs/segment-app/iam/roles/).
+> You must have Workspace Owner or Tracking Plan Admin roles to delete a Tracking Plan. For more information about roles in Segment, see the [Roles documentation](/docs/segment-app/iam/roles/).
 
 To delete a Tracking Plan:
 1. Open the Segment app and click **Protocols**. 
 2. On the row of the Tracking Plan you want to delete, open the contextual menu(…) and select **Delete Tracking Plan...**
-3. A toast pops up on the top of the page, with the message: <br/>
-    *"Are you sure you want to delete <<Tracking Plan Name>>? Once you delete this Tracking Plan, you will not be able to recover it..”*
+3. On the "Delete Tracking Plan" popup, click **Delete**. 
 
 ## Edit a Tracking Plan
 The Tracking Plan editor is organized as a spreadsheet to help you  add new events and properties, and edit the relevant fields for each. Like a spreadsheet, you can navigate across cells in a single event with your arrow keys and press enter to edit a cell.
@@ -78,7 +77,7 @@ To add a Track call property:
 2. Click into the row to add the property name and also specify the description, status, data type and permitted values when applicable.
   - You can use your keyboard arrow and enter keys to navigate across the cells, or use your mouse.
 
-### Add a track call object or array property
+### Add a Track call object or array property
 Segment supports object and array data types in the Tracking Plan editor. These complex data structures have limited use cases and should be used sparingly as some destinations aren't able to ingest the data structures. To add an object or array:
 1. Create a new property row and set the Data Type to `Object` or `Array`.
 2. Click the **(+)** next to the property name to add key value pairs in the object, or objects to an array of objects.
@@ -88,11 +87,16 @@ You can define which traits you expect to see passed in Identify or Group calls 
 
 It's best to keep traits optional because Identify and Group are often called and pass only _new or changed_ traits, because Segment's client-side libraries (analytics.js, Swift, Kotlin) cache traits in local storage. See the [Identify Best Practices](/docs/connections/spec/best-practices-identify#when-and-how-often-to-call-identify) to learn more.
 
-### Remove a Source from your Tracking Plan
+### Remove a source from your Tracking Plan
 
+> info "Removing a source from a Tracking Plan requires Workspace Owner or Tracking Plan Admin permissions"
+> You must have Workspace Owner or Tracking Plan Admin roles to remove a source from a Tracking Plan. For more information about roles in Segment, see the [Roles documentation](/docs/segment-app/iam/roles/).
 
-
-
+To remove a source from your Tracking Plan: 
+1. Click **Protocols** in the left navigation bar.
+2. Find the Tracking Plan you'd like to remove a source from, then select the source icon in the Connected Sources column.
+3. On the list of sources connected to your Tracking Plan, find the source you'd like to remove from your Tracking Plan and click **Disconnect**.
+4. Review the "Disconnect source from Tracking Plan" popup and click **Disconnect**. 
 
 ### Add a label
 You can apply `key:value` labels to each event to help organize your Tracking Plan. These labels are helpful when multiple teams are managing a single Tracking Plan, or if you want to specify a priority, platform, product, or similar meta-data for each event. You can filter by label from the Tracking Plan, Schema, Data Validation and Violations Summary views.
