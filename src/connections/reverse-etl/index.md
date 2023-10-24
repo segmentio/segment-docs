@@ -113,7 +113,7 @@ To create a mapping:
         * 15 minutes is considered real-time for warehouse syncs
     * For a **Day and time** schedule type, you can choose the day(s) you’d like the schedule to sync as well as the time.
         * You can only choose to start the **Extraction** at the top of the hour.
-        * Scheduling multiple **Extractions** to start at the same time inside the same data warehouse can cause extracion errors
+        * Scheduling multiple **Extractions** to start at the same time inside the same data warehouse can cause extraction errors
 10. Define how to map the record columns from your model to your destination in the **Select Mappings** section.
     * You map the fields that come from your source, to fields that the destination expects to find. Fields on the destination side depend on the type of action selected.
     * If you're setting up a destination action, depending on the destination, some mapping fields may require data to be in the form of an object or array. See the [supported objects and arrays for mapping](#supported-object-and-arrays).
