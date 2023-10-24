@@ -52,6 +52,9 @@ To move a source between workspaces, navigate to the source's **Settings** tab, 
 > info ""
 > The person who transfers the source must be a [workspace owner](/docs/segment-app/iam/) for both the origin and recipient workspaces, otherwise the recipient workspace won't appear in the dropdown list.
 
+> info ""
+> When a source is transferred from one workspace to another, it will include all the connected destinations with the same settings and nothing will change from the source details. The only difference is that the source will now belongs to a different workspace.
+
 ![Image of the Transfer to Workspace tab in Segment's platform](images/transfer-source.png "Transferring a source")
 
 > warning "Tracking Plans do not transfer"
