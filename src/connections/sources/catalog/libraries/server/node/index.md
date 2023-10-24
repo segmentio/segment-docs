@@ -637,13 +637,18 @@ const analytics = new Analytics({
 
 ### OAuth 2.0
 
-In order to guarantee authorized communication between your server environment and Segment's Tracking API, you can enable [OAuth 2.0](/docs/connections/oauth/) in your Segment workspace.  To support the non-interactive server environment, the OAuth workflow used is a signed client assertion JWT.  You will need a public and private key pair where the public key is uploaded to the segment dashboard and the private key is kept in your server environment to be used by this SDK. Your server will verify its identity by signing a token request and will receive a token that is used to to authorize all communication with the Segment Tracking API.
+Enable [OAuth 2.0](/docs/connections/oauth/) in your Segment workspace to guarantee authorized communication between your server environment and Segment's Tracking API. To support the non-interactive server environment, the OAuth workflow used is a signed client assertion JWT.  
 
-You will also need to provide the OAuth Application ID and the public key's ID, both of which are provided in the Segment dashboard.  There are also options available to specify the authorization server, custom scope, maximum number of retries, or a custom HTTP client if your environment has special rules for separate segment endpoints.
+You will need a public and private key pair where:
+- The public key is uploaded to the Segment dashboard. 
+- The private key is kept in your server environment to be used by this SDK. 
+Your server will verify its identity by signing a token request and will receive a token that is used to to authorize all communication with the Segment Tracking API.
 
-You should ensure that you are implementing handling for Analytics SDK errors.  Good logging will help distinguish any configuration issues.
+You'll need to provide the OAuth Application ID and the public key's ID, both of which are provided in the Segment dashboard.  There are also options available to specify the authorization server, custom scope, maximum number of retries, or a custom HTTP client if your environment has special rules for separate segment endpoints.
 
-For more information, see the [Segment OAuth 2.0 documentation](/docs/connections/oauth/)
+Be sure to implement handling for Analytics SDK errors. Good logging will help distinguish any configuration issues.
+
+For more information, see the [Segment OAuth 2.0 documentation](/docs/connections/oauth/).
 
 ```ts
 import { Analytics, OAuthSettings } from '@segment/analytics-node';
