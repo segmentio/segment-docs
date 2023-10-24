@@ -28,6 +28,21 @@ Intercom Web (Actions) provides the following benefits over the classic Intercom
 - **Clearer mapping of data.** Actions-based destinations enable you to define the mapping between the data Segment receives from your source, and the data Segment sends to the destination.
 - **Granular control over data sent.** You can customize the conditions under which the events are sent to Intercom.
 - **Selectively shows the Intercom chat widget.**
+  
+### Intercom's chat widget
+
+The [Intercom Cloud Mode (Actions)](/docs/connections/destinations/catalog/actions-intercom-cloud/) destination doesn't have access to Intercom’s chat widget. Only the [Intercom Web (Actions)](/docs/connections/destinations/catalog/actions-intercom-web/) destination has access to this.
+
+If you're using the [Analytics.js source](/docs/connections/sources/catalog/libraries/website/javascript/), use the Intercom Web Mode (Actions) destination which sends data directly to Intercom from the client-side by loading the Intercom SDK directly onto your website. 
+
+However, [Intercom Cloud Mode (Actions)](/docs/connections/destinations/catalog/actions-intercom-cloud/) sends data to Segment, after which Segment forwards the data to Intercom. This allows Segment users to send data to Intercom from sources that are incompatible with their SDK. 
+
+When you configure the Segment Intercom destination in device-mode, you'll have access to Intercom's chat widget without loading Intercom separately outside of Segment.
+
+To access the Intercom Messaging Box, you'll need to configure and connect the Intercom Web (Actions) destination to your Analytics.js source.
+
+> success ""
+> Visit the [Destination Overview docs](/docs/connections/destinations/#connection-modes) to learn the difference between cloud and device modes.
 
 ## Getting started
 
@@ -41,6 +56,9 @@ Intercom Web (Actions) provides the following benefits over the classic Intercom
 
 > info "Regional Data Hosting in the EU and Australia"
 > For Regional Data Hosting in the EU and Australia, you'll need an Intercom plan that [supports regional data hosting](https://www.intercom.com/help/en/articles/5778275-additional-details-on-intercom-regional-data-hosting){:target="_blank"}.
+
+> info ""
+> Segment doesn't support the creation of **Leads** for Intercom Web. Segment recommends using [Intercom Cloud Mode](/docs/connections/destinations/catalog/actions-intercom-cloud/) to support leads creation.
 
 {% include components/actions-fields.html settings="true"%}
 

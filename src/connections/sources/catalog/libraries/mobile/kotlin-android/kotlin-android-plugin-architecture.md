@@ -27,9 +27,8 @@ For example, if you want to add something to the context object of any event pay
 ```java
 class SomePlugin: Plugin {
     override val type = Plugin.Type.Enrichment
-    override val name = "SomePlugin"
 
-    override var lateinit analytics: Analytics
+    override lateinit var analytics: Analytics
 
     override fun execute(event: BaseEvent): BaseEvent? {
         event.putInContext("foo", "bar")
@@ -96,9 +95,8 @@ analytics.add(amplitudePlugin) // add amplitudePlugin to the analytics client
 
 val amplitudeEnrichment = object: Plugin {
     override val type = Plugin.Type.Enrichment
-    override val name = "SomePlugin"
 
-    override var lateinit analytics: Analytics
+    override lateinit var analytics: Analytics
 
     override fun execute(event: BaseEvent): BaseEvent? {
         event.putInContext("foo", "bar")
@@ -124,9 +122,8 @@ Here's an example of adding a plugin to the context object of any event payload 
 ```java
 class SomePlugin: Plugin {
     override val type = Plugin.Type.Enrichment
-    override val name = "SomePlugin"
 
-    override var lateinit analytics: Analytics
+    override lateinit var analytics: Analytics
 
     override fun execute(event: BaseEvent): BaseEvent? {
         event.putInContext("foo", "bar")

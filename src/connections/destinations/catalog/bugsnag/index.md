@@ -31,13 +31,6 @@ If you'd like to integrate with Bugsnag's iOS and/or Android SDKs, in addition t
 
 2. [iOS](https://github.com/segment-integrations/analytics-ios-integration-bugsnag)
 
-
-### React Native
-
-{% include content/react-dest.md %}
-
-- - -
-
 ## Identify
 
 Once you've correctly set up your Bugsnag integration, you should [`identify`](/docs/connections/spec/identify/) each of your users as soon as you know their identity (this typically happens after log in or sign up), so that Bugsnag can provide you with more visibility into which user is encountering which error.

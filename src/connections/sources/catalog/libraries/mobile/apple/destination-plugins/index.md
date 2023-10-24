@@ -56,6 +56,12 @@ plugins:
       url: https://cdn.filepicker.io/api/file/fb5lNYEhQoWnABOjynZ6
     mark:
       url: https://cdn.filepicker.io/api/file/kWmScDJ3SvK1QBZTChGQ
+  - name: Survicate
+    url: connections/sources/catalog/libraries/mobile/apple/destination-plugins/survicate-swift/
+    logo:
+      url: https://cdn.filepicker.io/api/file/BUciQq3kSzqCn8EKMtBN
+    mark:
+      url: https://cdn.filepicker.io/api/file/0H2JyPoRT4K3CnBQcHPn
   - name: Quantcast
     url: connections/sources/catalog/libraries/mobile/apple/destination-plugins/quantcast-swift/
     logo:

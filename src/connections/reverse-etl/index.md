@@ -21,10 +21,10 @@ There are four components to Reverse ETL: Sources, Models, Destinations, and Map
 ![Reverse ETL overview image](images/RETL_Doc_Illustration.png)
 
 Follow these 4 steps to set up Reverse ETL and learn what each component is about:
-1. [Add a Source](#step-1-add-a-source)
-2. [Add a Model](#step-2-add-a-model)
-3. [Add a Destination](#step-3-add-a-destination)
-4. [Create Mappings](#step-4-create-mappings)
+1. [Add a source](#step-1-add-a-source)
+2. [Add a model](#step-2-add-a-model)
+3. [Add a destination](#step-3-add-a-destination)
+4. [Create mappings](#step-4-create-mappings)
 
 > info ""
 > The UI navigation and interface will look different from what's presented in the docs until Reverse ETL rolls out to all users for GA.
@@ -39,7 +39,7 @@ To add your warehouse as a source:
 
 1. Navigate to **Connections > Sources** and select the **Reverse ETL** tab in the Segment app.
 2. Click **Add Reverse ETL source**.
-3. Select the source you want to add. You can choose between BigQuery, Redshift, and Snowflake.
+3. Select the source you want to add. 
 4. Follow the corresponding setup guide for your Reverse ETL source.
     * [BigQuery Reverse ETL setup guide](/docs/connections/reverse-etl/reverse-etl-source-setup-guides/bigquery-setup/)
     * [Databricks Reverse ETL setup guide](/docs/connections/reverse-etl/reverse-etl-source-setup-guides/databricks-setup/)
@@ -158,6 +158,22 @@ To edit your mapping:
 1. Navigate to **Connections > Destinations** and select the **Reverse ETL** tab.
 2. Select the destination and the mapping you want to edit.
 3. Select the **...** three dots and click **Edit mapping**. If you want to delete your mapping, select **Delete**.
+
+## Reverse ETL for Engage Premier Subscriptions
+[Engage Premier Subscriptions users](/docs/engage/user-subscriptions/) can use Reverse ETL to sync subscription data from warehouses to destinations. 
+
+To get started with using Reverse ETL for subscriptions: 
+1. Navigate to **Engage > Audiences** and select the **Profile explorer** tab. 
+2. Click **Manage subscription statuses** and select **Update subscription statuses**.
+3. Select **Sync with RETL** as the menthod to update your subscription statuses.
+4. Click **Configure**. 
+5. In the Reverse ETL catalog, select the Reverse ETL source you want to use.
+6. Set up the source. Refer to the [add a source](#step-1-add-a-source) section for more details on how to set up the source. 
+7. Add the **Segment Profiles** destination as your Reverse ETL destination. Refer to [add a destination](#step-3-add-a-destination) for more details to set up the destination.
+8. Once your destination is set, go to the **Mappings** tab of your destination and click **Add Mapping**.
+9. Select the model you want to use and then select **Send Subscriptions**. 
+10. Click **Create Mapping**.  
+11. Follow the steps in the [create mappings](#step-4-create-mappings) section to set your mappings. 
 
 
 ## Record diffing

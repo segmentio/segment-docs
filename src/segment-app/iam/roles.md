@@ -67,10 +67,10 @@ The following roles are only available to Segment Business Tier accounts.
 * **Scope:** Grants access to *all* warehouses.
 
 #### Entities Admin 
-Full CRUD (create, read, access, and delete) access to all Entities within a workspace. You can also grant or revoke user permissions.
+Full edit and view access to all entity models and connection details. 
 
 #### Entities Read-only
-Read-only access to all Entities models and destinations in a workspace. 
+Read-only access, with the ability to view entity models.
 
 ## PII Access
 

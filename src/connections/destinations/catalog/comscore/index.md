@@ -30,10 +30,6 @@ To install comScore via Segment on iOS, please follow the additional set up step
 ### Android
 To install comScore via Segment on Android, please follow the additional set up steps in the Segment-Comscore Android repository [here](https://github.com/segment-integrations/analytics-android-integration-comscore#analytics-android-integration-comscore).
 
-### React Native
-
-{% include content/react-dest.md only="ios"%}
-
 ## Page
 
 Calling `page` on web will automatically send a call to comScore's Application Tag, along with any `labels` mapped in the **Beacon Param Map** setting.
