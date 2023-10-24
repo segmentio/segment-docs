@@ -54,7 +54,7 @@ Segment invokes a separate part of the function (called a "handler") for each ev
 > info ""
 > Your function isn't invoked for an event if you've configured a [destination filter](/docs/connections/destinations/destination-filters/), and the event doesn't pass the filter.
 
-The default source code template includes handlers for all event types. You don't need to implement all of them - just use the ones you need, and skip the ones you don't.
+The default source code template includes handlers for all event types. You don't need to implement all of them - just use the ones you need, and skip the ones you don't. For event types that you want to sent through the destination, return the event in the respective event handlers.
 
 > info ""
 > Removing the handler for a specific event type results in blocking the events of that type from arriving at their destination. 
