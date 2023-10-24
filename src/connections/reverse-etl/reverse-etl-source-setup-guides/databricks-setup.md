@@ -2,9 +2,6 @@
 title: Databricks Reverse ETL Setup
 ---
 
-> info ""
-> The Databricks Reverse ETL source is in beta and Segment is actively working on this feature. Segment's [First-Access and Beta terms](https://segment.com/legal/first-access-beta-preview/) govern this feature. 
-
 Set up Databricks as your Reverse ETL source. 
 
 At a high level, when you set up Databricks for Reverse ETL, the configured user needs read permissions for any resources (databases, schemas, tables) the query needs to access. Segment keeps track of changes to your query results with a managed schema (`__SEGMENT_REVERSE_ETL`), which requires the configured user to allow write permissions for that schema.
@@ -39,7 +36,7 @@ To set up Databricks as your Reverse ETL source:
 1. Log in to your Databricks account.
 2. Navigate to **Workspaces** and select the workspace you want to use. 
 3. Select **SQL** in the main navigation. 
-4. Select **SQL Warehouses** and select the warehouse you want to use. 
+4. Select **SQL Warehouses** and select the warehouse you want to use. Note that Segment doesn't support the `Compute` connection parameters.
 5. Go to the **Connection details** tab and **keep** this page open.
 6. Open a **new** tab within your browser, go to [your Segment workspace](https://app.segment.com/workspaces). 
 7. Navigate to **Connections > Sources > Reverse ETL**.
@@ -48,9 +45,9 @@ To set up Databricks as your Reverse ETL source:
 10. Enter the configuration setting for your Databricks source based on information from step 5
     * Hostname: `adb-xxxxxxx.azuredatabricks.net`
     * Http Path: `/sql/1.0/warehouses/xxxxxxxxx`
-    * Port: `443`
+    * Port: `443`(default)
     * Token: `<your-token>`
-    * Catalog [optional]: `hive_metastore`
+    * Catalog [optional]: `hive_metastore`(default)
 11. Click **Test Connection** to see if the connection works. If the connection fails, make sure you have the right permissions and credentials, then try again.
 12. Click **Create Source** if the test connection is successful. 
 

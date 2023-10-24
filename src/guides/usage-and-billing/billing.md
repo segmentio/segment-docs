@@ -32,8 +32,11 @@ Be aware that if you notify Segment of wanting to cancel your annual plan, but c
 
 All Segment customers with a US business address may be subject to state and local sales taxes. The applicable tax law applies based on your business location address, which may be different from your billing address. Customers who purchase a taxable product or service, and are located in a jurisdiction where Segment currently charges sales tax, will see the calculated sales tax on their invoice.
 
+Segment collects Value Added Tax (VAT) and Goods and Services Tax (GST) on the services sold to its international customers located in certain foreign jurisdictions. 
 
- 
+For more information about sales tax, VAT, and GST, see the [Segment VAT/GST FAQs](/docs/assets/pdf/faq-segment-dissolution-vat.pdf).
+
+
 ## Do I qualify for a tax exemption?
 
 If you believe your organization qualifies for a sales tax exemption (for example, because of a nonprofit or government status), you can contact [tax@segment.com](mailto:tax@segment.com) with the appropriate form.
