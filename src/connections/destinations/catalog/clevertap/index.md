@@ -7,12 +7,17 @@ cmode-override: true
 
 Once the Segment library is integrated, toggle CleverTap on in your Segment destinations, and add your CleverTap Account ID and CleverTap Account Token which you can find in the CleverTap Dashboard under Settings.
 
+CleverTap supports the Identify, Track, Page (server-side only), and Screen (iOS and server-side only) methods.
+
 You can integrate CleverTap using a server-side or mobile destination (iOS or Android). If you are interested in using CleverTap's push notifications or in-app notifications products, you should use the mobile destinations.
 
-All server-side destination requests require both the Segment `anonymousId` and `userId` in the payload. This is a requirement from CleverTap. CleverTap maintains the server-side integration. For any issues with the server-side integration, [contact the CleverTap Support team](https://help.clevertap.com/hc/en-us/requests/new){:target="_blank"}.
+For server-side destination requests, CleverTap requires both the Segment `anonymousId` and `userId` in the payload.  
 
-CleverTap supports the `identify`, `track`, `page` (server-side only), and `screen` (iOS and server-side only) methods.
+CleverTap maintains the server-side and mobile integrations:
+- [Android](https://github.com/CleverTap/clevertap-segment-android){:target="_blank"}
+- [iOS](https://github.com/CleverTap/clevertap-segment-ios){:target="_blank"}
 
+For any issues with the server-side and mobile integrations, [contact the CleverTap Support team](https://help.clevertap.com/hc/en-us/requests/new){:target="_blank"}.
 
 ## Identify
 

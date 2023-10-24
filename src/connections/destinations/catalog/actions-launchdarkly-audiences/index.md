@@ -10,9 +10,7 @@ beta: true
 
 With LaunchDarkly, you can release features that target specific groups, such as beta users, and premium accounts, using segments. This destination allows you to sync Engage Audiences to LaunchDarkly segments, letting you concentrate more on deploying features and less on managing end users between platforms.
 
-LaunchDarkly maintains this destinatino. For any issues with the destination, [contact the LaunchDarkly Support team](mailto:support@launchdarkly.com).
-
-{% include content/ajs-upgrade.md %}
+LaunchDarkly maintains this destination. For any issues with the destination, [contact the LaunchDarkly Support team](mailto:support@launchdarkly.com).
 
 ## Getting started
 

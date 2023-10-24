@@ -638,6 +638,15 @@ sources:
       - us
     endpoints:
       - us
+  - id: o9OyD6xsVJ
+    display_name: OneSignal
+    hidden: false
+    slug: onesignal
+    url: connections/sources/catalog/cloud-apps/onesignal
+    regions:
+      - us
+    endpoints:
+      - us
   - id: QhEUZnE5uF
     display_name: OneTrust
     hidden: false

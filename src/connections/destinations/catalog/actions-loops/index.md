@@ -2,8 +2,6 @@
 title: Loops (Actions) Destination
 hide-boilerplate: true
 hide-dossier: true
-beta: true
-private: true
 id: 63360a5fe290ca3fdfad4a68
 ---
 

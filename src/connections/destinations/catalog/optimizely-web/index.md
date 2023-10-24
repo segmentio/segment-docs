@@ -241,7 +241,7 @@ More importantly, to send the true referrer value with the initial `page` call i
   if (window.optimizelyEffectiveReferrer) var referrer = window.optimizelyEffectiveReferrer;
 
   // If they did, override the document.referrer
-  referrer ? analytics.page({ referrer: referrer }); : analytics.page();
+  referrer ? analytics.page({ referrer: referrer }): analytics.page();
   /* MODIFIED SECTION */
 
   }}();
