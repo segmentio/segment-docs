@@ -211,7 +211,7 @@ After you start sending events, you should start seeing them in twenty minutes. 
 2. Click on the corresponding pixel.
 3. In the Overview tab, look for events where the “Connection Method” is Server.
 
-### Send Multiple External IDs
+### Send multiple External IDs
 
-Facebook allows one External ID to be sent per payload as a string or multiple to be sent per payload in an array of External ID strings: https://developers.facebook.com/docs/marketing-api/conversions-api/parameters/external-id/. You send an array of External IDs through Segment by mapping such an array to the `externalId` field when setting up your Actions mappings.
+[Facebook](https://developers.facebook.com/docs/marketing-api/conversions-api/parameters/external-id/){:target="_blank"} allows you to send one External ID per payload as a string, or multiple per payload in an array of External ID strings. Send an array of External IDs through Segment by mapping an array to the `externalId` field when setting up your Actions mappings.
 
