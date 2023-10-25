@@ -119,7 +119,7 @@ To create a mapping:
     * If you're setting up a destination action, depending on the destination, some mapping fields may require data to be in the form of an object or array. See the [supported objects and arrays for mapping](#supported-object-and-arrays).
 11. Click **Create Mapping**.
 12. Select the destination you’d like to enable on the **My Destinations** page under **Reverse ETL > Destinations**.
-13. Turn the toggle on for the **Mapping Status**. Events that match the trigger condition in the mapping will be sent to the destination.
+14. Turn the toggle on for the **Mapping Status**. Events that match the trigger condition in the mapping will be sent to the destination.
     * If you disable the mapping state to the destination, events that match the trigger condition in the mapping won’t be sent to the destination.
 
 To add multiple mappings from your warehouse to your destination, repeat steps 1-13 above.
