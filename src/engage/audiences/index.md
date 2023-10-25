@@ -20,7 +20,12 @@ You can build an Audience from existing events, traits, computed traits, or othe
 
 ### Events
 
-You can build an Audience from any events that are connected to Engage, including [Track](/docs/connections/spec/track), [Page](/docs/connections/spec/page), and [Screen](/docs/connections/spec/screen) calls. You can use the `property` button to refine the audience on specific event properties, as well. Select `and not who` to indicate users that have not performed an event. For example, you might want to look at all users that have viewed a product above a certain price point but not completed the order.
+You can build an Audience from any events that are connected to Engage, including [Track](/docs/connections/spec/track), [Page](/docs/connections/spec/page), and [Screen](/docs/connections/spec/screen) calls. You can use the `property` button to refine the audience on specific event properties, as well. 
+
+> info ""
+> The Audience builder doesn't return every property value in the Constant value or Traits drop-downs. Segment displays a portion of values from the incoming data stream. However, if you don't see the value you're looking for, you can manually enter it.
+
+Select `and not who` to indicate users that have not performed an event. For example, you might want to look at all users that have viewed a product above a certain price point but not completed the order.
 
 ![Creating an Audience of users who viewed a product without buying it](/docs/engage/images/audience_builder.png)
 
@@ -28,7 +33,7 @@ You can also specify two different types of time-windows, `within` and `in betwe
 
 ### Custom Traits
 
-You can also build Audiences based on custom traits. These traits can be collected from your apps when a user completes a form or signs up using an [Identify](/docs/connections/spec/identify) call. You can view these traits in the Profile explorer, as well.
+You can also build Audiences based on custom traits. These traits can be collected from your apps when a user completes a form or signs up using an [Identify](/docs/connections/spec/identify) call. You can view these traits in the Profile explorer, as well. Custom Traits are mutable and update to the latest value seen by the user's Identify events.
 
 ### Computed Traits
 
@@ -136,6 +141,9 @@ Real-time Compute allows you to update traits and Audiences as Segment receives 
 - **Instant Messaging:** Trigger messages in email, live chat, and push notifications instantly, to deliver immediate experiences across channels.
 - **Operational Workflows:** Supercharge your sales and support teams by responding to customer needs faster, based on the latest understanding of a user.
 
+> warning ""
+> Real-time Compute doesn't support time window conditions. Segment creates Audiences using time window conditions as batch computations. Additionally, Segment creates [Funnel Audiences](#funnel-audiences) as batch computations.
+
 To create a new Audience or Trait:
 
 1. Go to your **Computed Traits** or **Audiences** tab in Engage and select **Create**.
@@ -200,22 +208,26 @@ You can read the [full Profile API docs](/docs/unify/profile-api/) to learn more
 
 ## Download your Audience as a CSV file
 
-You can download a copy of your Audience by visiting the the Audience overview page.
-![Downloading an Audience as a CSV file](/docs/engage/images/audience_overview.png)
-Before you can download the CSV, you will need to generate it. There are three different options for formatting:
+You can download a copy of your Audience by visiting the Audiences overview page. 
 
-- **Unformatted:** Contains two columns. The first contains the user or account key and the second is a JSON object containing the external IDs. Generating this CSV is faster than the formatted option below. [Download example unformatted CSV](/docs/engage/files/audience_csv_format_a.csv)
-- **Formatted (with indexed columns for ID types with multiple values):** Contains the same first two columns as the unformatted CSV. Additional columns are added for each distinct external ID type. When a given external ID type has more than one value, for example a user with three email addresses, _additional columns with indexed headers are added_, (`email`, `email_1`, `email_2`). [Download example formatted CSV with indexed columns](/docs/engage/files/audience_csv_format_b.csv)
-- **Single Column (with one external ID type):** Contains only a single column of data with the selected external ID type. When the given external ID type has more than one value, for example a user with two email addresses, _additional rows are added._ Data in this format is hashed by default with the SHA256 hashing algorithm, but may be downloaded raw (unhashed) with appropriate permissions. This format is useful for uploading the audience to destinations like Snapchat or Braze, which may require a single column of hashed emails, for example. [Download example single column hashed CSV](/docs/engage/files/audience_csv_format_c.csv)
+1. Navigate to **Engage > Audiences**.
+2. Select the Audience you'd like to download as a CSV, then click **Download CSV**.
+3. Select the data fields that you'd like to include in your CSV as columns.
+- Your CSV will contain all users in this audience with the selected fields. You can filter by  `External ID`, `SQL trait`, `Computed Trait`, and `Custom Trait`.
+4. Click **Next**.
+5. Before you can download the CSV, you'll need to generate it. There are two different options for formatting:
+- **Formatted:** Displays external IDs and traits as distinct columns.  
+- **Unformatted:** Contains the following columns: a user/account key, a JSON object containing the external IDs (optional, if selected), and a JSON object containing the traits (optional, if selected).
+6. Click **Generate CSV**.
 
+Once Segment generates the CSV, you can download the file directly. You'll receive an email notification of the CSV completion, with a URL to the Audience overview page. 
 
-<table>
-  <tr>
-    <td>![Screenshot of the Download audience list popup in Segment, with the All external ID types and Unformatted settings selected.](/docs/engage/images/large_audience_csv.png)</td>
-    <td width="45%">Generating a CSV can take a substantial amount of time for large audiences (around 30 seconds for a formatted CSV with 1 million rows). For CSVs that are expected to take over 20 seconds, Segment displays an estimated generation time. After you generate the CSV file, leave the modal window open while Segment creates the file.
-    (If the audience recalculates between when you click Generate and when you download the file, you might want to regenerate the file. The CSV is a snapshot from when you clicked Generate, and could be outdated.)</td>
-  </tr>
-</table>
+Note the following limits for the CSV downloader:
+- You can't download more than one CSV for the same audience at the same time.
+- You can only generate one CSV every five minutes. 
+
+> info ""
+> Generating a CSV can take a substantial amount of time for large audiences. After you generate the CSV file, leave the modal window open while Segment creates the file. (If the audience recalculates between when you click Generate and when you download the file, you might want to regenerate the file. The CSV is a snapshot from when you clicked Generate, and could be outdated.)
 
 ## Identifier Breakdown
 

@@ -22,10 +22,6 @@ Segment's Mixpanel destination code is open source and available on GitHub. You 
 3. Copy your Mixpanel "API Secret" and "Token", and paste them into the Connection Settings in Segment.
 4. Enable the destination to start sending your data to Mixpanel.
 
-### Adding device-mode SDKs to React Native
-
-{% include content/react-dest.md %}
-
 ## Page
 If you're not familiar with the Segment Specs, take a look to understand what the [Page method](/docs/connections/spec/page/) does. An example call would look like:
 
@@ -366,7 +362,7 @@ analytics.identify({
 
 ### UTM Campaign Parameters
 
-Since Segment's client-side javascript library (`analytics.js`) loads `mixpanel.js` in the background, you'll get the exact same functionality of Mixpanel around UTM Campaign Parameters as you would when using Mixpanel directly.
+When used in Device Mode through a web source, Segment's client-side Javascript library, Analytics.js, loads `mixpanel.js` (Mixpanel’s direct SDK) in the background. As a result, you'll get the exact same functionality from Mixpanel around UTM Campaign Parameters as you would when using Mixpanel directly.
 
 [Read more in Mixpanel's UTM docs](https://mixpanel.com/help/questions/articles/can-i-track-google-analytics-style-utm-tags-with-mixpanel)
 
@@ -682,3 +678,7 @@ If you delete an audience or trait in Segment, it isn't deleted from Mixpanel. T
 **If a user has multiple external ids in Segment, what happens when they enter an audience or have a computed trait?**
 
 Segment sends an `identify` or a  `track` call for each external on the user's account. For example, if a user has three email addresses, and you are sending `identify` calls for your audience, Engage sends three `identify` calls to Mixpanel and adds the latest email address to the user profile as the email “address of record” on the Mixpanel user profile.
+
+**What happens if I receive a `Timestamp must be within the last 5 years` error, and my timestamp displays `1970-01-01`?**
+
+The Segment PHP Library (2.1.0) version requires a UNIX timestamp. If you send anything other than a UNIX timestamp, Segment converts this to the `1970-01-01` timestamp. If you're experiencing failed events due to this error and you have a connected PHP source, update your PHP Library version to 2.1.0. 

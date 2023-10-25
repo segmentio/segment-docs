@@ -54,3 +54,7 @@ This is a permissioning issue. To learn how to set up proper permissions, you ca
 ### EOF
 
 This error is generally a network error when Redshift closes the connection. If the problem persists on multiple runs, [contact us](https://segment.com/help/contact/).
+
+### ERROR: failed to create table: 002318 (42601): SQL compilation error: invalid column definition name "XXX" (ANSI reserved)
+
+This error indicates that a column that is attempting to sync has the same title as a reserved keyword in Snowflake. More information regarding Snowflake's reserved keywords can be found [in Snowflake's docs](https://docs.snowflake.com/en/sql-reference/reserved-keywords){:target="_blank”}.

@@ -108,30 +108,6 @@ To use the latest Braze SDK to collect IDFAs you must do the following:
    .build();
   ```
 
-### React Native device-mode set up
-
-<!-- LR, Mar2021: this should be a `react-dest` include but Braze was originally called Appboy-->
-
-To add the Braze device-mode SDK to a [React Native](/docs/connections/sources/catalog/libraries/mobile/react-native/) project using Segment's `1.5.1≤` release:
-1. Navigate to the root folder of your project, and run a `yarn add appboy` command to add the destination SDK to your project.
-2. Add an `import` statement to your project, as in the following example.
-   ```js
-   import Braze from '@segment/analytics-react-native-appboy'
-   ```
-3. In the same project file, add the destination to the `using` list in the `await` command.
-   ```js
-   await analytics.setup('YOUR_WRITE_KEY', {
-     // Add any of your Device-mode destinations. This ensures they load before continuing.
-     using: [Braze]
-     // ...
-   })
-   ```
-4. Change to your iOS development folder ( `cd ios` ) and run `pod install`.
-
-
-> note ""
-> Braze was formerly known as "Appboy", and the Braze React component still uses that name. Be sure to use the old name!
-
 ## Page
 
 If you're not familiar with the Segment Specs, take a look to understand what the [Page method](/docs/connections/spec/page/) does. An example call would look like:

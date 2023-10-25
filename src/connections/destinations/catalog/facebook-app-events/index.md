@@ -28,10 +28,6 @@ This page is about the **Facebook App Events**. For documentation on other Faceb
 3. In the destination settings, enter your Facebook App ID which can be retrieved from your [Facebook Apps dashboard](https://developers.facebook.com/apps/).
 4. Once you turn on the Facebook App Events integration in your app's Segment project, we'll start sending `track` data to Facebook's App Events endpoints.
 
-### Using Facebook App Events with React Native Device Mode
-
-{% include content/react-dest.md only="ios" %} 
-
 ## Screen
 
 If you're not familiar with the Segment Specs, take a look to understand what the [Screen method](/docs/connections/spec/screen/) does. An example call would look like:

@@ -1,9 +1,7 @@
 ---
 title: Protocols Frequently Asked Questions
+plan: protocols
 ---
-
-{% include content/plan-grid.md name="protocols" %}
-
 
 ## Protocols Notifications
 
@@ -92,7 +90,11 @@ If you are using Public API, copy the ID that starts with "tp".
 
 If you are using Config API, copy the ID that starts with "rs". 
 
-*Please be aware that depending on how you access your tracking plan will depend on the slug that is presented in the URL.*
+*Please be aware that the way you access your Tracking Plan determines the slug that is present in the URL.*
+
+### How do I import events from a Source Schema into a Tracking Plan?
+
+When you first create your Tracking Plan, you can add events from your Source Schema by selecting the **Import events from Source** button on the Tracking Plan editor page. You can manually add these events after you've connected your Source Schema to your Tracking Plan by clicking the (+) next to the event on your Source Schema page.  
 
 ## Protocols Validation
 
@@ -135,7 +137,11 @@ Blocked events are blocked from sending to all Segment Destinations, including w
 
 ### Do blocked and discarded events count towards my MTU counts?
 
-Blocked events will not count towards your MTU counts as long as blocked event forwarding is disabled.
+Blocking events within a [Source Schema](/docs/connections/sources/schema/) or [Tracking Plan](/docs/protocols/tracking-plan/create/) excludes them from API call and MTU calculations, as the events are discarded before they reach the pipeline that Segment uses for calculations.
+
+### Do warehouse connectors use the data type definitions when creating a warehouse schema?
+
+Warehouse connectors don't use data type definitions for schema creation. The [data types](/docs/connections/storage/warehouses/schema/#data-types) for columns are inferred from the first event that comes in from the source.
 
 ## Protocols Transformations
 

@@ -48,12 +48,14 @@ analytics.identify('user_123', {
 {% endcodeexample %}
 {% endcomment %}
 
+> info "If you don't see the source you're looking for in our catalog"
+> If a tool is not listed as a supported source in our [catalog](https://segment.com/catalog/){:target='_blank’}, then it is not possible to incorporate the integration out-of-the-box within a Segment workspace. However, as an alternative, you can use the [HTTP API](/docs/connections/sources/catalog/libraries/server/http-api/) source to collect data from the tool's API. You can also use [Functions](/docs/connections/functions/) to send or receive data from other tools.
 
 ## Types of sources
 
 Segment has three types of sources: 
 * [Event streams](#event-streams-sources)
-* [Cloud app objects](#cloud-app-sources)
+* [Cloud app sources](#cloud-app-sources)
 * [Reverse ETL](#reverse-etl-sources) 
 
 
@@ -74,6 +76,21 @@ Web, Mobile, and Server sources send first-party data from your digital properti
 
 ## Event streams sources 
 Event streams sources collect data from your website or app to monitor user actions. These sources include [website libraries](#website-libraries), [mobile](#mobile), and [server sources](#server). 
+
+### Source Overview
+
+When viewing the Source Overview page for an event stream source, you can view a line chart and breakdown table that reflects the volume and details of the events that Segment ingested from your source.
+
+You can use the time picker located on the Source Overview page to specify a time period (last 10 minutes, 1 hour, 24 hours, 7 days, 2 weeks, or a custom date range over the last two weeks) for which you’d like to see data.
+
+![A screenshot of the Source Overview page for an Android source.](images/source-overview.jpeg)
+
+The breakdown table displays the following details:
+* **Event type**: The Segment Spec event type (Track call vs. Identify call, for example)
+* **Event name**: The event name, provided by you or the source
+<!-- NOT SUPPORTED IN CURRENT VERSION: ADD IN ONCE THIS IS SUPPORTED* **App version**: The app/release version, provided by you or the source-->
+* **Event count**: How many of each event was successfully received by your source
+* **% Change**: Insight into how the event counts differ from the last comparable time range as a percentage
 
 ### Website libraries
 
@@ -165,8 +182,14 @@ Segment's [Pixel Tracking API](/docs/connections/sources/catalog/libraries/serve
 ## Reverse ETL sources
 Reverse ETL sources are data warehouses that enable you to use [Reverse ETL](/docs/connections/reverse-etl) to send data from your warehouse source to your destinations. 
 
-Reverse ETL supports [these sources] and Segment is actively working on adding more. If you'd like to request Segment to add a particular source, please note it on the [feedback form](https://airtable.com/shriQgvkRpBCDN955){:target="_blank"}.
+Reverse ETL supports these sources: 
+* [BigQuery](/docs/connections/reverse-etl/reverse-etl-source-setup-guides/bigquery-setup/)
+* [Databricks](/docs/connections/reverse-etl/reverse-etl-source-setup-guides/databricks-setup/)
+* [Postgres](/docs/connections/reverse-etl/reverse-etl-source-setup-guides/postgres-setup/)
+* [Redshift](/docs/connections/reverse-etl/reverse-etl-source-setup-guides/redshift-setup/)
+* [Snowflake](/docs/connections/reverse-etl/reverse-etl-source-setup-guides/snowflake-setup/)
 
+Segment is actively working on adding more sources. If you'd like to request Segment to add a particular source, please note it on the [feedback form](https://airtable.com/shriQgvkRpBCDN955){:target="_blank"}.
 
 ## Create a source
 To create a source:
@@ -182,3 +205,4 @@ To create a source:
 > - Flexibility sending data to different projects - if you want to have different warehouse schemas, analytics projects, etc, having multiple sources would create this separation
 > - More control - as your account grows with the number of destinations you enable, having separate sources allows you to have more control
 > - A source type cannot be changed once it is created. You must create a new source if you would like to use a different source type.
+

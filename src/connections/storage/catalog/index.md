@@ -28,6 +28,11 @@ layout: catalog
                   <p class="thumbnail-integration__label">Beta</p>
                 {% endif %}
               </div>
+              <div>
+                {% if warehouse.status == 'PRIVATE_BETA' %}
+                  <p class="thumbnail-integration__label">Private Beta</p>
+                {% endif %}
+              </div>
             </a>
           </div>
         {% endif %}

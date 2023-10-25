@@ -26,6 +26,12 @@ plugins:
       url: https://cdn.filepicker.io/api/file/9kBQvmLRR22d365ZqKRK
     mark:
       url: https://cdn.filepicker.io/api/file/HrjOOkkLR8WrUc1gEeeG
+  - name: Bugsnag
+    url: connections/sources/catalog/libraries/mobile/apple/destination-plugins/bugsnag-swift
+    logo:
+      url: https://cdn.filepicker.io/api/file/GoTtwMELTeWGtu44SBUh
+    mark:
+      url: https://cdn.filepicker.io/api/file/1ttsQcwwRDGHBG3XjVFT
   - name: Facebook App Events
     url: connections/sources/catalog/libraries/mobile/apple/destination-plugins/facebook-app-events-swift/
     logo:
@@ -44,24 +50,30 @@ plugins:
       url: https://cdn.filepicker.io/api/file/pUF0kwpTTu0Z5POuzZXV
     mark:
       url: https://cdn.filepicker.io/api/file/0mdiroESxtRQBoR8ieBg
-  - name: Bugsnag
-    url: connections/sources/catalog/libraries/mobile/apple/destination-plugins/bugsnag-swift
-    logo:
-      url: https://cdn.filepicker.io/api/file/GoTtwMELTeWGtu44SBUh
-    mark:
-      url: https://cdn.filepicker.io/api/file/1ttsQcwwRDGHBG3XjVFT
   - name: Optimizely Full Stack
     url: connections/sources/catalog/libraries/mobile/apple/destination-plugins/optimizely-full-stack-swift
     logo:
       url: https://cdn.filepicker.io/api/file/fb5lNYEhQoWnABOjynZ6
     mark:
       url: https://cdn.filepicker.io/api/file/kWmScDJ3SvK1QBZTChGQ
+  - name: Survicate
+    url: connections/sources/catalog/libraries/mobile/apple/destination-plugins/survicate-swift/
+    logo:
+      url: https://cdn.filepicker.io/api/file/BUciQq3kSzqCn8EKMtBN
+    mark:
+      url: https://cdn.filepicker.io/api/file/0H2JyPoRT4K3CnBQcHPn
   - name: Quantcast
     url: connections/sources/catalog/libraries/mobile/apple/destination-plugins/quantcast-swift/
     logo:
       url: https://cdn.filepicker.io/api/file/zeGaFc7rSEerWyM7dmVQ
     mark:
       url: https://cdn.filepicker.io/api/file/A0pxB2RWTNiVs2VBYGhx
+  - name: 1Flow Mobile Plugin
+    url: connections/sources/catalog/libraries/mobile/apple/destination-plugins/1flow-swift/
+    logo:
+      url: https://cdn-devcenter.segment.com/85468e64-4f93-45a0-a30e-20886b933529.svg
+    mark:
+      url: https://cdn-devcenter.segment.com/a026bddd-e174-4f41-9e56-4eac99d5e825.svg
 ---
 Analytics Swift uses its timeline/plugin architecture to support sending data to bundled SDKs when a Cloud Mode connection is not possible. Destination Plugins are similar to traditional Device Mode integrations available in Analytics-iOS in that Segment makes calls directly to the destination tool’s API from the device. However, Destination Plugins are more customizable, giving you the ability to control and enrich your data at a much more granular level on the device itself. 
 

@@ -11,7 +11,7 @@ Segment's .NET library is the best way to integrate analytics into your .NET app
 All of Segment's server-side libraries are built for high-performance, so you can use them in your web server controller code. This library uses an internal queue to make `identify` and `track` calls non-blocking and fast. It also batches messages and flushes asynchronously to our servers.
 
 > info "Analytics-CSharp (C#)"
-> With Analytics-CSharp, you can add Segment analytics to your C# based app which includes .NET. The [Analytics-CSharp library](/docs/connections/sources/catalog/libraries/server/csharp/) is currently in beta and is governed by Segment’s [First Access and Beta terms](https://www.twilio.com/legal/tos){:target="_blank"}. If you'd like to migrate to use Analytics-CSharp, see the [Analytics-CSharp migration guide](/docs/connections/sources/catalog/libraries/server/csharp/migration-guide/). 
+> With [Analytics-CSharp](/docs/connections/sources/catalog/libraries/server/csharp/), you can add Segment analytics to your C# based app which includes .NET. If you'd like to migrate to use Analytics-CSharp, see the [Analytics-CSharp migration guide](/docs/connections/sources/catalog/libraries/server/csharp/migration-guide/). 
 
 ## Getting Started
 
@@ -458,6 +458,7 @@ If you hate defaults, than you'll love how configurable the Analytics.NET is. Ch
 Analytics.Initialize("YOUR_WRITE_KEY", new Config()
     .SetAsync(true)
     .SetTimeout(TimeSpan.FromSeconds(10))
+    .SetHost("https://events.eu1.segmentapis.com")
     .SetMaxQueueSize(10000));));
 ```
 
@@ -469,6 +470,10 @@ Analytics.Initialize("YOUR_WRITE_KEY", new Config()
   <tr>
     <td>`timeout` _TimeSpan_</td>
     <td>The amount of time to wait before calling the HTTP request a timeout.</td>
+  </tr>
+  <tr>
+    <td>`host` _string_</td>
+    <td>The API host server address - can be set with the EU endpoint "https://events.eu1.segmentapis.com" instead of default server "https://api.segment.io"</td>
   </tr>
   <tr>
     <td>`maxQueueSize` _int_</td>

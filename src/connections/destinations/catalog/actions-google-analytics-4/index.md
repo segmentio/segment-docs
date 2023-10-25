@@ -94,9 +94,9 @@ Besides Engagement Time in Milliseconds, you can also generate your own `session
 
 If you choose to integrate with Google Analytics 4 client-side (either with Segment's Google Analytics 4 Web destination or outside of Segment) _and_ also use Segment's Google Analytics 4 Cloud destination to send events through the API, you will have all the reserved parameters and sessions tracking information available in Google Analytics 4 reports.
 
-When using Gtag, [Google generates a `session_id` and `session_number` when a session begins](https://support.google.com/analytics/answer/9191807?hl=en){:target='_blank'}. The `session_id` and `session_number` generated on the client can be passed as Event Parameters to stitch events sent through the API with the same session that was collected client-side. For events to stitch properly, server-side events must arrive within a 48 hour window of when the client-side events arrive.
+When using Gtag, [Google generates a `session_id` and `session_number` when a session begins](https://support.google.com/analytics/answer/9191807?hl=en){:target='_blank'}. The `session_id` and `session_number` generated on the client can be passed as Event Parameters to stitch events sent through the API with the same session that was collected client-side. Additionally, `client_id` must be the same for both client-side and server-side events in order to deduplicate user counts in GA4 (unless User-ID is used as the basis for user identification). For events to stitch properly, server-side events must arrive within a 48 hour window of when the client-side events arrive.
 
-You can check your `session_id` and `session_number` with the [Google Site Tag function](https://developers.google.com/tag-platform/gtagjs/reference){:target='_blank'} or by running this script in your JavaScript console and replacing `G-xxxxxxxxxx` with your Google Analytics 4 Measurement ID:
+You can check your `client_id`, `session_id` and `session_number` with the [Google Site Tag function](https://developers.google.com/tag-platform/gtagjs/reference){:target='_blank'} or by running this script in your JavaScript console and replacing `G-xxxxxxxxxx` with your Google Analytics 4 Measurement ID:
 
 ```java
 const sessionIdPromise =  new  Promise(resolve => {
@@ -106,9 +106,14 @@ const sessionNumPromise =  new  Promise(resolve => {
 	gtag('get', 'G-xxxxxxxxxx', 'session_number', resolve)
 });
 
-Promise.all([sessionIdPromise, sessionNumPromise]).then(function(session_data) {
+const clientIdPromise =  new  Promise(resolve => {
+	gtag('get', 'G-xxxxxxxxxx', 'client_id', resolve)
+});
+
+Promise.all([sessionIdPromise, sessionNumPromise, clientIdPromise]).then(function(session_data) {
 	console.log("session ID: "+session_data[0]);
 	console.log("session Number: "+session_data[1]);
+  console.log("client ID: "+session_data[2]);
 });
 ```
 
@@ -155,7 +160,9 @@ The Segment Google Analytics 4 Cloud destination supports sending mobile app eve
 Google reserves certain event names, parameters, and user properties. Google silently drops any events that include [these reserved names](https://developers.google.com/analytics/devguides/collection/protocol/ga4/reference?client_type=gtag#reserved_names){:target="_blank"}. Google doesn't accept events in the following conditions:
 - event or user property names have spaces in them
 - fields with `null` values
-- fields or events with reserved names 
+- fields or events with reserved names
+- fields with a number as the key
+- fields or events with a dash (-) character in the name
  
 ### Verifying Event Meet GA4's Measurement Protocol API
 **Why are the events returning an error _Param [PARAM] has unsupported value._?**
@@ -163,5 +170,13 @@ Google has some requirements/[limitations](https://developers.google.com/analyti
 
 ### Data takes a long time to appear in Google's reports
 
-Google may take [24-48 hours](https://support.google.com/analytics/answer/9333790){:target='_blank'}  to process data sent to Google Analytics. As a result, the Google Analytics user interface may not reflect the most current data. The Google Analytics [Realtime report](https://support.google.com/analytics/answer/9271392){:target="_blank"} displays activity on your site as it happens.
+Google may take [24-48 hours](https://support.google.com/analytics/answer/9333790){:target='_blank'} to process data sent to Google Analytics. As a result, the Google Analytics user interface may not reflect the most current data. The Google Analytics [Realtime report](https://support.google.com/analytics/answer/9271392){:target="_blank"} displays activity on your site as it happens.
+
+### Events with timestamps older than 72 hours are not showing on Google's end
+
+Because [Google's Measurement Protocol API](https://developers.google.com/analytics/devguides/collection/protocol/ga4/reference?client_type=gtag#payload_post_body){:target='_blank'} only accepts events that are backdated by up to 72 hours, GA4 can't accept events older than 72 hours.
+
+### Google Optimize Support
+
+The Google Analytics 4 Cloud destination does not support Google Optimize. This destination operates in cloud-mode (sending events from Segment servers to Google Analytics using the Measurement Protocol API), which prevents the required [Optimize SDK](https://support.google.com/optimize/answer/11287798?visit_id=637903946258690719-978290187&rd=1){:target="_blank"} snippet from loading on the page.
 

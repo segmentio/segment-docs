@@ -3,19 +3,16 @@ title: Marketo Source
 rewrite: true
 source-type: object
 strat: adobe
-beta: true
 id: VOXa199Bdm
 ---
 <!-- Marketo is listed as an object source, but doesn't appear in our configapi source catalog, so leave the "source-type" set here -->
 
 
-[Marketo](https://www.marketo.com/) is a leader in marketing automation. Use the Marketo source to load your campaigns, emails, leads and other collections into your data warehouse.
+[Marketo](https://www.marketo.com/){:target="_blank"} is a leader in marketing automation. Use the Marketo source to load your campaigns, emails, leads, and other collections into your data warehouse.
 
-This will allow you to write SQL to analyze your analyze your email marketing campaigns ROI, or join your email data to other data sources like web and mobile events, Salesforce, and Zendesk to tie nurture emails to re-activation rates in your app.
+This will allow you to write SQL to analyze your email marketing campaigns ROI, or join your email data to other data sources like web and mobile events, Salesforce, and Zendesk to tie nurture emails to re-activation rates in your app.
 
-{% include content/beta-note.md %}
-
-## Getting Started
+## Getting started
 
 ### Permissions
 
@@ -33,10 +30,10 @@ You will need Admin permissions to your Marketo account.
 > In Marketo's settings, the Lead Activity Type IDs field is labeled as optional, but is required to see the `lead_activities` table. Segment recommends that you complete this field to see all available data.
 
 
-### Configure your Marketo Source
+### Configure your Marketo source
 
-1. Open Marketo
-2. Go to Admin > Munchkin to find your Munchkin Account ID
+1. Open Marketo.
+2. Go to **Admin > Munchkin** to find your Munchkin Account ID.
 ![Screenshot of the Tracking Code section of Marketo's Munchkin page.](images/Image2018-04-30at5.28.54PM.png)
 3. Go to Admin > LaunchPoint
   a. If you don't already have a REST service setup, follow [these steps](http://developers.marketo.com/rest-api/custom-services/).
@@ -44,7 +41,7 @@ You will need Admin permissions to your Marketo account.
   ![Screenshot of the Details section of the LaunchPoint page.](images/Image2018-04-30at5.29.32PM.png)
   c. Paste the "Client ID" and "Client Secret" into the Segment Marketo source settings.
 
-Data should start flowing into your Warehouse in the next few hours.
+Data should start flowing into your warehouse in the next few hours.
 
 
 ## Components
@@ -56,7 +53,7 @@ The Marketo source is built with a sync component, which means Segment makes req
 
 The sync component uses an upsert API, so the data in your warehouse loaded using sync will reflect the latest state of the corresponding resource in Marketo. For example, if `first_name` goes from `Jess` to `Jessica` between syncs, on its next sync that field will be `Jessica`.
 
-The source syncs and warehouse syncs are independent processes. Source runs pull your data into the Segment Hub, and warehouse runs flush that data to your warehouse. Sources will sync with Segment every 3 hours. Depending on your Warehouses plan, Segment pushes the Source data to your warehouse on the interval associated with your billing plan.
+The source syncs and warehouse syncs are independent processes. Source runs pull your data into the Segment Hub, and warehouse runs flush that data to your warehouse. Sources will sync with Segment every three hours. Depending on your Warehouses plan, Segment pushes the Source data to your warehouse on the interval associated with your billing plan.
 
 ## Collections
 
@@ -78,7 +75,7 @@ Collections are the groupings of resources Segment pulls from your source. In yo
 | `segments`                      | object | Segments inside a given segmentation.                                       |
 
 
-## Collection Properties
+## Collection properties
 
 ### Leads
 
@@ -133,7 +130,7 @@ Collections are the groupings of resources Segment pulls from your source. In yo
 | `updated_at`    | Date Email last updated                                     |
 
 
-### Landing Pages
+### Landing pages
 
 | Property Name    | Description                                                       |
 | ---------------- | ----------------------------------------------------------------- |
@@ -172,7 +169,7 @@ Collections are the groupings of resources Segment pulls from your source. In yo
 | `updated_at`     | Date List last updated  |
 
 
-### Lead Activities
+### Lead activities
 
 | Property Name              | Description                                  |
 | -------------------------- | -------------------------------------------- |
@@ -186,7 +183,7 @@ Collections are the groupings of resources Segment pulls from your source. In yo
 | `activity_date`              | Datetime of the activity type                |
 
 
-### Lead Activity Attributes
+### Lead activity attributes
 
 | Property Name              | Description                                                                             |
 | -------------------------- | --------------------------------------------------------------------------------------- |
@@ -198,7 +195,7 @@ Collections are the groupings of resources Segment pulls from your source. In yo
 | `value`                      | value of the Attribute                                                                  |
 
 
-### Lead Activity Types
+### Lead activity types
 
 | Property Name               | Description                    |
 | --------------------------- | ------------------------------ |
@@ -209,7 +206,7 @@ Collections are the groupings of resources Segment pulls from your source. In yo
 | `primary_attribute_data_type` | Type of the primary attribute  |
 
 
-### Lead Activity Type Attributes
+### Lead activity type attributes
 
 | Property Name    | Description                                              |
 | ---------------- | -------------------------------------------------------- |
@@ -273,41 +270,37 @@ Collections are the groupings of resources Segment pulls from your source. In yo
 
 ## Adding Destinations
 
-Currently, Warehouses are the only supported destination for object-cloud sources
+Currently, Warehouses are the only supported destination for object-cloud sources.
 
 
 ## FAQs
 
-### How many API calls will the Segment source use?
+### How many API calls will the Segment source use to sync all my data?
 
-The Marketo API has different limits for the number of objects returned by different endpoints, but usually 100-300 objects per call.
+Segment doesn't provide statistics for these consumed API calls, since Segment systems only log the number of objects pulled from Marketo as throughput.
 
-At set up time, you have the option to specify a cap to the API calls that a source can consume. If no cap is specified, Segment consumes as many API calls that are available to sync the entire source.
+### Can I limit API usage on the source?
 
-Segment uses the Lead Activities bulk API to reduce the number of requests needed to sync the data; this however, also has a limit of 500MB worth of files downloaded per day.
+Yes. You can specific a daily limit to the API calls the source will consume. If you don't set a limit, Segment will, by default, consume as many API calls as are available in the limit you agreed to with Marketo to sync the entire source.
 
-If your source requires more than 10k calls or over 500MB from the bulk API to sync, Segment continues the sync the following day when a new batch of API calls are available.
+Segment also uses the `Lead` and `Activity` [Bulk Extract APIs](https://developers.marketo.com/rest-api/bulk-extract/){:target="_blank"} to reduce the number of requests needed to sync the data. For these syncs, Segment has a limit of 500 MB worth of files downloaded per day.
 
-If you have other applications that use the Marketo API, this can interfere with their ability to make requests.
+### What if my daily Marketo API quota isn't enough?
 
-### What Marketo API are you using?
+If your source needs more than 10,000 REST API calls or more than 500 MB of data to sync, Segment will continue the sync when a new batch of API calls is available.
 
-Segment uses the REST API in most situations, but also uses the Lead Activity Bulk API to reduce the number of requests needed to sync.
+Marketo's API quota applies across your subscription. If other applications share the quota, it could interfere with Segment's ability to sync the source.
 
-### Can I get other collections not default synced by the source?
+### Why can't I find the `lead_activities` table in my data warehouse? does Segment not ingest it?
 
-[Contact Support](https://segment.com/help/contact/) to request additional collections.
+You first need to enable the **Activity Type IDs (optional)** setting in the Marketo source, which must be enabled for Segment to pull the `lead_activities` collection source. Once Segment pulls the data, it will be available in your data warehouses.
 
-### Can I get other columns not default synced by the source?
-For leads and activities, Segment added  a custom fields setting where you can enter comma-separated custom fields to sync by their REST API name.
+### Can I get other collections synced by the source?
 
-By default, Segment syncs the following fields on the leads collection:
+[Contact Support](https://segment.com/help/contact/){:target="_blank"} to get additional collections added to your source.
 
-- `id`
-- `email`
-- `firstName`
-- `lastName`
-- `createdAt`
-- `updatedAt`
+### Can I get other columns synced by the source?
 
-You can find a full list of standard fields and their REST API names [here](http://developers.marketo.com/rest-api/lead-database/fields/list-of-standard-fields/). If there are other fields you're interested in, [contact support](https://segment.com/help/contact/)  for assistance.
+Yes. For `leads` and `activities`, choose **Custom Lead Fields (optional)**, which lets you enter comma-separated custom files that will be synced by Marketo's REST API name.
+
+View [Marketo's List of Standard Fields documentation](http://developers.marketo.com/rest-api/lead-database/fields/list-of-standard-fields/){:target="_blank"} for a complete list of standard fields and Marketo's REST API names. [Reach out to Segment support](https://segment.com/help/contact/){:target="_blank"} if you're interested in other fields.

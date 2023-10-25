@@ -32,7 +32,7 @@ analytics.page('Home', {
 });
 ```
 
-You must call the Page method for Google Tag Manager to load. Segment includes a call to `analytics.page` in your default Segment snippet, so if you haven't removed that, GTM will work the same as if you installed the GTM snippet directly.
+You must call the Page method for Google Tag Manager to load. Segment includes a call to `analytics.page` in your default Segment snippet, so if you want GTM to work the same as if you've installed the GTM snippet directly, you will want to keep the Page method in your snippet.
 
 ### Tracking All Pages
 When you turn on the setting to **Track All Pages** in your Optional Settings, Segment tracks events whenever you call the `page` method and sends a "Loaded a Page" event to Google Tag Manager. See the `track` section below for more info on how Segment sends events to GTM.
@@ -80,7 +80,8 @@ Segment sends it to the `dataLayer` as an object like this:
 ## Troubleshooting
 
 ### 404 Error
-If you are seeing `404` error on the JavaScript console of your page and it is attributed to Google Tag Manager, it is likely that you have yet to publish your GTM container.
+If you are seeing `404` error on the JavaScript console of your page and it is attributed to Google Tag Manager, it is likely that you have yet to publish your GTM container. If the issue still persists, please ensure that Google's preview mode is disabled and that the [environment variable](/docs/connections/destinations/catalog/google-tag-manager/#environment) is removed from your destination settings.
+
 
 ### Duplicate Events
 If you have Google Ads enabled and see duplicate events in GTM, check to see if the event is set as a conversion in Google Ads. Duplicate conversions are common when you use both Google Ads and GTM, since Segment's Adwords destination initializes the gtag script with the dataLayer itself. So, when you fire a mapped event, Segment submits the payload directly to the dataLayer.

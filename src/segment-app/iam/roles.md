@@ -29,13 +29,13 @@ The following roles are only available to Segment Business Tier accounts.
 * **Scope:** Grants access to *all* Identity settings.
 
 #### Source Read-only
-* Read access to assigned source(s), source settings, connected streaming destinations, schema, transformations, and live data in the debugger.
-* **Scope:** Grants access to either: all current and future Sources, or only specific Sources, or Sources with a specific Label (BT only).
+* Read access to assigned source(s), source settings, connected streaming destinations, schema, transformations, and live data in the debugger. Reverse ETL sources are also included.
+* **Scope:** Grants access to either: all current and future Sources, or only specific Sources, or Sources with a specific Label (BT only). 
 
 
 #### Source Admin
-* Edit access to assigned source(s), source settings, connected streaming destinations, schema, transformations, the source's [write key](/docs/connections/find-writekey/) and live data in the debugger.
-* **Scope:** Grants access to either: all current and future Sources, or only specific Sources, or Sources with a specific Label (BT only).
+* Edit access to assigned source(s), source settings, connected streaming destinations, schema, transformations, the source's [write key](/docs/connections/find-writekey/) and live data in the debugger. Reverse ETL sources are also included.
+* **Scope:** Grants access to either: all current and future Sources, or only specific Sources, or Sources with a specific Label (BT only). 
 
 #### Unify and Engage Admin
 * Edit access to Unify settings and if purchased, Engage Audiences, Traits, Journeys, Content, and settings.
@@ -66,6 +66,11 @@ The following roles are only available to Segment Business Tier accounts.
 * Read-only access warehouse destination and warehouse destination settings. *(For example, Redshift, Postgres, BigQuery)*
 * **Scope:** Grants access to *all* warehouses.
 
+#### Entities Admin 
+Full edit and view access to all entity models and connection details. 
+
+#### Entities Read-only
+Read-only access, with the ability to view entity models.
 
 ## PII Access
 

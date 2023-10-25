@@ -39,7 +39,14 @@ Within seconds, GitHub scans each commit in public repositories for Public API t
 
 Learn more about [GitHub's secret scanning program](https://docs.github.com/en/developers/overview/secret-scanning-partner-program){:target="_blank"}.
 
-### Frequently Asked Questions
+## OAuth 2.0
+
+> info ""
+> This feature is currently in pilot and is governed by Segment’s [First Access and Beta Preview Terms](https://www.twilio.com/en-us/legal/tos){:target="_blank"}. 
+
+You can authenticate and authorize the Public API using [OAuth 2.0](/docs/connections/oauth).
+
+## FAQs
 #### What should I do if I see a notification that my token was exposed?
 In most cases, identifying and revoking an exposed token takes seconds. Segment recommends you check the [audit trail](/docs/segment-app/iam/audit-trail/) to ensure no unauthorized actions were taken with the token.
 
@@ -55,3 +62,32 @@ This feature is automatically enabled for all workspaces on Team or Business tie
 #### What should I do when I see a CORS error? 
 If you see a CORS error, this means you're attempting to make a request to the Public API on the front-end. The Public API is used for server-side only. To get rid of the error, move all Public API requests to a server.
 
+#### What User Role / Workspace permissions are required to generate Public API tokens?
+Only [users that have a `Workspace Owner` role](https://segment.com/docs/segment-app/iam/roles/#global-roles) can create Public API Tokens.
+
+## Troubleshooting
+#### The `Update Schema Settings in Source` endpoint returns error for field `forwardingViolationsTo` and `forwardingBlockedEventsTo`
+When you don't have a source to forward violations or blocked events to, then exclude the fields `forwardingViolationsTo` or `forwardingBlockedEventsTo` entirely from the request and the setting will be disabled. 
+
+`PATCH`  endpoint : `https://api.segmentapis.com/sources/{sourceId}/settings`
+```
+{
+    "group": {
+      "allowTraitsOnViolations": false,
+      "allowUnplannedTraits": false,
+      "commonEventOnViolations": "ALLOW"
+    },
+    "identify": {
+      "allowTraitsOnViolations": true,
+      "allowUnplannedTraits": true,
+      "commonEventOnViolations": "Block"
+    },
+    "track": {
+      "allowEventOnViolations": false,
+      "allowPropertiesOnViolations": false,
+      "allowUnplannedEventProperties": false,
+      "allowUnplannedEvents": false,
+      "commonEventOnViolations": "OMIT_PROPERTIES"
+    }
+  }
+```

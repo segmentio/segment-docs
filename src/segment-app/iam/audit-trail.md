@@ -1,7 +1,7 @@
 ---
 title: Audit Trail
+plan: audit-trail
 ---
-{% include content/plan-grid.md name="audit-trail" %}
 
 Segment offers an in-app 90 day Audit Trail for Business Tier accounts. If you are a Workspace Owner, you view user and system activity in your workspace settings, in the "Audit Trail" tab under "Admin".
 
@@ -93,12 +93,14 @@ The Audit Trail includes information on the following activity:
 
 ## Audit forwarding
 
-You can forward events in your workspace to any of the sources you have configured in the workspace.
+You can forward events in your workspace to supported sources that you have configured in the workspace.
 
 To forward Audit Trail events:
 
 1. Navigate to **Settings > Workspace Settings > Audit Forwarding**.
-2. Select the source to which you'll forward workspace events.
+2. Select or create an [event streams source](/docs/connections/sources/#event-streams-sources) to which you'll forward workspace events.
 3. Toggle the setting to **On** and click **Save Changes**.
 
-When you forward audit events to a source, Segment passes those events through its entire processing pipeline. This ensures that tracking plans, filters, and other features work with the audit events, and also ensures you can send those events to multiple downstream destinations.
+> info "Segment recommends creating a dedicated source for audit trail events"
+> Segment recommends forwarding all events to one instance of the [HTTP API](/docs/connections/sources/catalog/libraries/server/http-api/) source.  Segment passes all forwarded events through its entire processing pipeline. This ensures that Tracking Plans, Filters, and other features work with the audit events, and also ensures you can send those events to multiple downstream destinations.
+

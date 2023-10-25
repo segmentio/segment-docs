@@ -18,6 +18,8 @@ The **Destinations** tab lists the downstream tools receiving your Engage data. 
 
 To add a Destination, select the **+ Add destination** button, or navigate to **Connections > Destinations** within your Segment workspace. To learn more about sending Engage information to Segment Destinations, view the [Using Engage Data](/docs/engage/using-engage-data/) documentation.
 
+You can delete a Destination from the Destinations tab in the Engage settings (**Engage > Engage settings > Destinations**). 
+
 ## Warehouse sources
 
 By connecting your existing warehouses to Engage, you can import customer or account data and use it to build SQL traits. The Warehouse sources tab displays the warehouses sending data to Engage.
