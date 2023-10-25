@@ -117,7 +117,8 @@ To create a mapping:
 10. Define how to map the record columns from your model to your destination in the **Select Mappings** section.
     * You map the fields that come from your source, to fields that the destination expects to find. Fields on the destination side depend on the type of action selected.
     * If you're setting up a destination action, depending on the destination, some mapping fields may require data to be in the form of an object or array. See the [supported objects and arrays for mapping](#supported-object-and-arrays).
-11. Click **Create Mapping**.
+11. *(Optional)* Send a test record to verify the mappings correctly send to your destination.
+12. Click **Create Mapping**.
 12. Select the destination you’d like to enable on the **My Destinations** page under **Reverse ETL > Destinations**.
 14. Turn the toggle on for the **Mapping Status**. Events that match the trigger condition in the mapping will be sent to the destination.
     * If you disable the mapping state to the destination, events that match the trigger condition in the mapping won’t be sent to the destination.
