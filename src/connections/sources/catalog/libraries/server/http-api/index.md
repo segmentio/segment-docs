@@ -38,7 +38,7 @@ Segment welcomes feedback on API responses and error messages. [Reach out to sup
 
 ## Rate limits
 
-Segment recommends you to not exceed 20,000 requests per second with the HTTP API. For [`batch` requests](#batch), there's a limit of 500 KB per request. 
+For each workspace, Segment recommends you to not exceed 20,000 requests per second with the HTTP API. If you exceed this, Segment reserves the right to queue any additional events and process those at a rate that doesn't exceed the limit. For [`batch` requests](#batch), there's a limit of 500 KB per request. 
 
 > warning "Engage rate limit"
 > Engage has a limit of 1,000 events per second for inbound data. Visit the [Engage Default Limits documentation](/docs/engage/product-limits/) to learn more. 
