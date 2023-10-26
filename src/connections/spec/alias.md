@@ -7,6 +7,9 @@ title: 'Spec: Alias'
 
 The `alias` method is used to merge two user identities, effectively connecting two sets of user data as one. This is an advanced method, but it is required to manage user identities successfully in some of our destinations.
 
+> info "Alias and Unify"
+> Alias call cannot be used to merge profiles in [Unify](https://segment.com/docs/unify/). For more information on how Unify merges user profiles, please check out our documentation on [Identity Resolution](https://segment.com/docs/unify/identity-resolution/). 
+
 {% include components/reference-button.html href="https://university.segment.com/introduction-to-segment/324252?reg=1&referrer=docs" icon="media/academy.svg" title="Segment University: The Segment Methods" content="Check out our high-level overview of these APIs in Segment University. (Must be logged in to access.)" %}
 
 Since this is our most advanced method we have added sections to each docs page for destinations that use it:
