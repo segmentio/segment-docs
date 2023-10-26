@@ -86,11 +86,11 @@ You can use the time picker located on the Source Overview page to specify a tim
 ![A screenshot of the Source Overview page for an Android source.](images/source-overview.jpeg)
 
 The breakdown table displays the following details:
-* **Event type**: The Segment Spec event type (Track call vs. Identify call, for example)
-* **Event name**: The event name, provided by you or the source
+* **Event type**: The Segment Spec event type (Track call vs. Identify call, for example).
+* **Event name**: The event name, provided by you or the source. You should only expect to see track calls with event names. If you see unnamed events in the breakdown table, it's because for other specs, you're either identifying users/groups or tracking what page/screen the user is on. Both of which do not have event names. 
 <!-- NOT SUPPORTED IN CURRENT VERSION: ADD IN ONCE THIS IS SUPPORTED* **App version**: The app/release version, provided by you or the source-->
-* **Event count**: How many of each event was successfully received by your source
-* **% Change**: Insight into how the event counts differ from the last comparable time range as a percentage
+* **Event count**: How many of each event was successfully received by your source.
+* **% Change**: Insight into how the event counts differ from the last comparable time range as a percentage.
 
 ### Website libraries
 
@@ -205,8 +205,3 @@ To create a source:
 > - Flexibility sending data to different projects - if you want to have different warehouse schemas, analytics projects, etc, having multiple sources would create this separation
 > - More control - as your account grows with the number of destinations you enable, having separate sources allows you to have more control
 > - A source type cannot be changed once it is created. You must create a new source if you would like to use a different source type.
-
-## FAQs
-
-### Why am I seeing unnamed events in the breakdown table?
-You should only expect to see track calls with event names. For other specs you're either identifying users/groups or tracking what page/screen the user is on. Both of which do not have event names. 
