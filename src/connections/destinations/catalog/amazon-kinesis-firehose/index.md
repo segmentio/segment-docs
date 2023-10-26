@@ -3,7 +3,7 @@ rewrite: true
 title: Amazon Kinesis Firehose Destination
 id: 59022a2270a3e552b955caa9
 ---
-[Amazon Kinesis Firehose](https://aws.amazon.com/kinesis/data-firehose/) provides way to load streaming data into AWS. It can capture, transform, and load streaming data into Amazon Kinesis Analytics, Amazon S3, Amazon Redshift, and Amazon Elasticsearch Service, enabling near real-time analytics with existing business intelligence tools and dashboards you're already using today. It's a fully managed service that automatically scales to match the throughput of your data and requires no ongoing administration. It can also batch, compress, and encrypt the data before loading it, minimizing the amount of storage used at the destination and increasing security.
+[Amazon Kinesis Firehose](https://aws.amazon.com/kinesis/data-firehose/){:target="_blank”} provides way to load streaming data into AWS. It can capture, transform, and load streaming data into Amazon Kinesis Analytics, Amazon S3, Amazon Redshift, and Amazon Elasticsearch Service, enabling near real-time analytics with existing business intelligence tools and dashboards you're already using today. It's a fully managed service that automatically scales to match the throughput of your data and requires no ongoing administration. It can also batch, compress, and encrypt the data before loading it, minimizing the amount of storage used at the destination and increasing security.
 
 ## Getting Started
 
@@ -36,7 +36,7 @@ To get started:
 
 
   3. Create an IAM role.
-	  1. Follow [these instructions](http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_create_for-user.html#roles-creatingrole-user-console) to create an IAM role to allow Segment permission to write to your Kinesis Firehose Stream.
+	  1. Follow [these instructions](http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_create_for-user.html#roles-creatingrole-user-console){:target="_blank”} to create an IAM role to allow Segment permission to write to your Kinesis Firehose Stream.
 	  2. When prompted to enter an Account ID, enter `595280932656`.
 	  3. Select the checkbox to enable **Require External ID**.
 	  4. Enter your Secret ID as the **External ID**. This can be found in Segment by navigating to your Amazon Kinesis Firehose destination in Segment, going to the Settings tab, and clicking the Secret ID setting.
