@@ -12,7 +12,7 @@ Use Trait Enrichment to access Segment profile traits when you sync Audiences an
 > info ""
 > The setup steps you'll use for Trait Enrichment depend on the type of Destination [you've connected](/docs/engage/trait-activation/trait-activation-setup/). 
 > - For Facebook Custom Audiences and Google Adwords, use [set up Trait Enrichment](#set-up-trait-enrichment). 
-> - If you're using SendGrid, Braze, or Salesforce Actions, use the [Destination Actions setup steps](#destination-actions-setup). 
+> - If you're using SendGrid, Braze, Salesforce Actions, or Salesforce Marketing Cloud, use the [Destination Actions setup steps](#destination-actions-setup). 
 
  
 ## Set up Trait Enrichment
@@ -95,7 +95,7 @@ Additionally, you can only map one trait per audience to Google as a phone numbe
 If you're using [Destination Actions](/docs/connections/destinations/actions/), use the following steps to set up Trait Enrichment.
 
 1. Navigate to **Engage > Engage settings**. 
-2. Select the Destinations tab, then click **+ Add Destination**. Search for either Braze Cloud Mode (Actions), Salesforce (Actions), or SendGrid Marketing Campaigns. 
+2. Select the Destinations tab, then click **+ Add Destination**. Search for either Braze Cloud Mode (Actions), Salesforce (Actions), Salesforce Marketing Cloud, or SendGrid Marketing Campaigns. 
 3. Enter your destination credentials.
 4. Navigate to **Engage > Audiences**, and click **+ Create**. 
 5. From the Select Destinations screen in the Audience builder, select your destination. 
