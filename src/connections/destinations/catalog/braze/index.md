@@ -78,7 +78,7 @@ To use the latest Braze SDK to collect IDFAs you must do the following:
    - Navigate to your project `Info.plist` and add a “Privacy - Tracking Usage Description”. This description appears in a popup when the application initializes in iOS 14. Applications prompt users to select if they want to allow tracking.
 4. Add Braze's `ABKIDFADelegate`. For more information on how to add this see [Braze's IDFA Collection documentation](https://www.braze.com/docs/developer_guide/platform_integration_guides/ios/initial_sdk_setup/other_sdk_customizations/#implementing-idfa-collection){:target="_blank"}
 .
-5. Follow [Segment's guide for collecting IDFA](/docs/connections/sources/catalog/libraries/mobile/ios/#idfa-collection-in-40-beta-and-later){:target="_blank"}
+5. Follow [Segment's guide for collecting IDFA](/docs/connections/sources/catalog/libraries/mobile/ios/#idfa-collection-in-40-beta-and-later)
 
 ### Android
 

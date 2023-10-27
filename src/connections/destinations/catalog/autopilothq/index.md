@@ -7,7 +7,7 @@ id: 5515e05c0a20f4e22f0fb36f
 
 This destination is maintained by Autopilot.  See [Autopilot's documentation](https://support.autopilothq.com/hc/en-us/categories/200396835-Segment){:target="_blank”} for more information.  For any issues with the destination, [contact our friends at Autopilot](https://support.autopilothq.com/hc/en-us/requests/new){:target="_blank”}.
 
-Are you instead trying to set up Autopilot as a Source to get data from Autopilot into your data warehouse or other downstream tools? See our documentation on our [Autopilot source](/docs/connections/sources/catalog/cloud-apps/autopilothq/){:target="_blank”} instead.
+Are you instead trying to set up Autopilot as a Source to get data from Autopilot into your data warehouse or other downstream tools? See our documentation on our [Autopilot source](/docs/connections/sources/catalog/cloud-apps/autopilothq/) instead.
 
 ## Getting Started
 
