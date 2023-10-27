@@ -2,7 +2,6 @@
 title: Elastic Path CX Studio Source
 id: NC2jsEkA8Y
 beta: true
-hidden: true
 ---
 
 [Elastic Path CX Studio](https://www.elasticpath.com/products/cx-studio?utm_source=segmentio&utm_medium=docs&utm_campaign=partners){:target="_blank"} enables brands to build and deploy hosted storefronts and shoppable landing pages with dynamic personalization powered by your Segment data, all in a no-code visual editor.
