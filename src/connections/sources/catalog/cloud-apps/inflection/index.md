@@ -10,7 +10,7 @@ This source is maintained by Inflection. For any issues with the source, [contac
 
 ## Getting Started
 
-1. From the [Sources catalog page](https://app.segment.com/goto-my-workspace/sources/catalog) in your workspace, click **Add Source**.
+1. From the [Sources catalog page](https://app.segment.com/goto-my-workspace/sources/catalog){:target="_blank"} in your workspace, click **Add Source**.
 2. Search for "Inflection" in the Sources Catalog, select Inflection, and click **Add Source**.
 3. On the next screen, give the Source a nickname configure any other settings.
 4. Click **Add Source** to save your settings.

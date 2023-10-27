@@ -5,9 +5,9 @@ id: xJSb170s6B
 ---
 {% include content/source-region-unsupported.md %}
 
-[HEROW](https://www.herow.io) is a contextual platform for mobile application. Built around everyday behaviors and powered by location intelligence, its one-stop solution allows apps to maximize mobile engagement with their users.
+[HEROW](https://www.herow.io){:target="_blank"} is a contextual platform for mobile application. Built around everyday behaviors and powered by location intelligence, its one-stop solution allows apps to maximize mobile engagement with their users.
 
-This is an [Enrichment Source](https://segment.com/docs/sources/#event-cloud-sources) which can not only export data into your Segment warehouse, but they can also federate the exported data into your other enabled Segment Destinations.
+This is an [Enrichment Source](/docs/sources/#event-cloud-sources) which can not only export data into your Segment warehouse, but they can also federate the exported data into your other enabled Segment Destinations.
 
 This source is maintained by HEROW. For any issues with the source, [contact the HEROW Support team](mailto:support@herow.io).
 

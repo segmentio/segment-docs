@@ -19,12 +19,12 @@ This source is maintained by Beamer. For any issues with the source, [contact th
 1. From your Segment UI's Sources page click on "Add Source".
 2. Search for "Beamer" within the Sources Catalog and confirm the Source you'd like to connect to.
 3. Give the Source a nickname and follow the set up flow to “Add Source”. The nickname will be used to designate the source in the Segment interface, and Segment will create a related schema name. The schema name is the namespace you'll be querying against in your warehouse. The nickname can be whatever you like, but we recommend sticking to something that reflects the source itself and distinguishes amongst your environments (eg. SourceName_Prod, SourceName_Staging, SourceName_Dev).
-4. Copy the Write key from the Segment UI and go to [Integrations](https://app.getbeamer.com/integrations) in your Beamer dashboard, then paste your write key in the **Integrate with Segment** section.
+4. Copy the Write key from the Segment UI and go to [Integrations](https://app.getbeamer.com/integrations){:target="_blank"} in your Beamer dashboard, then paste your write key in the **Integrate with Segment** section.
 5. Click on **Save** and that's it!
 
 ## Events
 
-Beamer uses a server-side `track` method to send all user interactions to Segment. Keep in mind Beamer will only send interactions from users that are identified with a `userId`, which must be provided by you. For more information on how to identify your users in Beamer, check out our [Developer Docs](https://www.getbeamer.com/docs) (see the `user_id` parameter).
+Beamer uses a server-side `track` method to send all user interactions to Segment. Keep in mind Beamer will only send interactions from users that are identified with a `userId`, which must be provided by you. For more information on how to identify your users in Beamer, check out our [Developer Docs](https://www.getbeamer.com/docs){:target="_blank"} (see the `user_id` parameter).
 
 Below is a table of events that Beamer sends to Segment. These events will show up as tables in your warehouse, and as regular events in your other Destinations.
 
