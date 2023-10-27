@@ -17,7 +17,7 @@ This destination is maintained by Modern Pricing. For any issues with the destin
 
 1. From the Segment web app, click **Catalog**.
 2. Search for "Modern Pricing" in the Catalog, select it, and choose which of your sources to connect the destination to.
-3. Enter the "Base64 Decoded Key" into your Segment Settings UI which you can find from your Modern Pricing [API Credentials](https://modernpricing.com/login) page. Note: You must click on the active API Key Value to view the Base64 Decoded Key.
+3. Enter the "Base64 Decoded Key" into your Segment Settings UI which you can find from your Modern Pricing [API Credentials](https://modernpricing.com/login){:target="_blank"} page. Note: You must click on the active API Key Value to view the Base64 Decoded Key.
 
 ## Page
 
