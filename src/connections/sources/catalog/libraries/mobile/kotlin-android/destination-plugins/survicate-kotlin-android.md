@@ -26,7 +26,7 @@ You can do this in 2 ways:
    </application>
    ```
 ## Adding the dependency
-Add Survicate maven:
+Define Maven repository
 ```
 allprojects {
     repositories {
@@ -35,7 +35,17 @@ allprojects {
     }
 }
 ```
-   
+
+Add dependency to your app's build.gradle file
+```
+dependencies {
+    // ...
+    implementation 'com.survicate:survicate-segment-analytics-kotlin:<latest_version>'
+}
+```
+
+You can find current version in the [plugin repository](https://github.com/Survicate/analytics-kotlin-survicate)
+
 ## Using the Plugin in your App
 In order to activate the Survicate plugin, you have to add a `SurvicateDestination` to the Analytics instance.
 
