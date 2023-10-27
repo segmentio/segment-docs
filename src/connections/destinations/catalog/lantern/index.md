@@ -15,7 +15,7 @@ This destination is maintained by Lantern. For any issues with the destination, 
 
 
 ### Automated Setup
-1. Log into your [Lantern dashboard](https://app.lantern.so).
+1. Log into your [Lantern dashboard](https://app.lantern.so){:target="_blank"}.
 2. When prompted to add a source, click the Segment logo.
 3. Pick a Segment workspace and source.
 4. Click "Allow".
@@ -24,7 +24,7 @@ This destination is maintained by Lantern. For any issues with the destination, 
 
 1. From the Segment web app, click **Catalog**.
 2. Search for "Lantern" in the Catalog, select it, and choose which of your sources to connect the destination to.
-3. Enter the "API Key" into your Segment Settings UI which you can find by contacting Lantern's support [settings page](https://app.lantern.so).
+3. Enter the "API Key" into your Segment Settings UI which you can find by contacting Lantern's support [settings page](https://app.lantern.so){:target="_blank"}.
 
 ### Next Steps
  - That's it! Lantern is already at work and will deliver your fist insights in a few hours.

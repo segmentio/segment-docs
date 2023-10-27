@@ -16,7 +16,7 @@ This destination is maintained by EPICA. For any issues with the destination, [c
 
 1. From the Segment web app, click **Catalog**.
 2. Search for "EPICA" in the Catalog, select it, and choose which of your sources to connect the destination to.
-3. Enter the "API Key" into your Segment Settings UI which you can find from your EPICA [Account settings](https://platform.epica.ai/account).
+3. Enter the "API Key" into your Segment Settings UI which you can find from your EPICA [Account settings](https://platform.epica.ai/account){:target="_blank"}.
 
 
 ## Page

@@ -61,7 +61,7 @@ If you're not familiar with the Segment Specs, take a look to understand what th
 analytics.track('Clicked Button');
 ```
 
-When you call [`track`](/docs/connections/spec/track/) or one of its helper functions ([`trackLink`](/docs/connections/sources/catalog/libraries/website/javascript/#track-link,[`trackForm`](/docs/connections/sources/catalog/libraries/website/javascript/#track-form), we will call Kissmetrics' `record` with the exact same parameters.
+When you call [`track`](/docs/connections/spec/track/) or one of its helper functions ([`trackLink`](/docs/connections/sources/catalog/libraries/website/javascript/#track-link) and [`trackForm`](/docs/connections/sources/catalog/libraries/website/javascript/#track-form),) we will call Kissmetrics' `record` with the exact same parameters.
 
 The Kissmetrics javascript library automatically tracks a bunch of events (Visited Site, Ad Campaign Hit, Search Engine Hit, Form Submit, Pageview, etc.) These will all still work when you use Kissmetrics through Segment.
 

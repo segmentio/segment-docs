@@ -80,4 +80,4 @@ analytics.group("userId123", {
 
 Group calls will be sent to [Dreamdata](https://dreamdata.io/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners){:target="_blank”} as a `group` event where it is used to join users to accounts.
 
-By default, [Dreamdata](https://dreamdata.io/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners){:target="_blank”} uses user emails and your CRM data to map user activites to accounts and attribute the value correctly. Adding Group calls using Segment will give a more precise attribution and ensure that all activities are attributed to the right account.
+By default, [Dreamdata](https://dreamdata.io/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners){:target="_blank”} uses user emails and your CRM data to map user activities to accounts and attribute the value correctly. Adding Group calls using Segment will give a more precise attribution and ensure that all activities are attributed to the right account.

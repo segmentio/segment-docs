@@ -14,7 +14,7 @@ This destination is maintained by journy.io. For any issues with the destination
 1. From the Destinations catalog page in the Segment App, click **Add Destination**.
 2. Search for "journy.io" in the Destinations Catalog, and select the "journy.io" destination.
 3. Choose which Source should send data to the "journy.io" destination.
-4. Go to the [journy.io app](https://system.journy.io), add Segment as source in the connections, choose "Manual setup" and copy the "API key".
+4. Go to the [journy.io app](https://system.journy.io){:target="_blank"}, add Segment as source in the connections, choose "Manual setup" and copy the "API key".
 5. Enter the "API Key" in the "journy.io" destination settings in Segment.
 
 

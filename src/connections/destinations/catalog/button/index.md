@@ -115,4 +115,4 @@ analytics.track('Order Completed' { someProperty: true }, {
 If you are a Business Tier customer, you can set up a [Destination Filter](/docs/connections/destinations/destination-filters/) to only send your `Deep link` and `Order` events to Button.
 
 
-Read [Button's Destination Filter documentation](https://developer.usebutton.com/docs/segment-integration-guide) to learn more.
+Read [Button's Destination Filter documentation](https://developer.usebutton.com/docs/segment-integration-guide){:target="_blank"} to learn more.

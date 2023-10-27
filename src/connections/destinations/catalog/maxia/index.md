@@ -15,12 +15,12 @@ This destination is maintained by Maxia. For any issues with the destination, [c
 
 
 
-1. Login to [Segment](https://app.segment.com/) and navigate to the Destinations catalog page.
+1. Login to [Segment](https://app.segment.com/){:target="_blank"} and navigate to the Destinations catalog page.
 2. Search for and select "Maxia" in the Destinations Catalog.
 3. Choose which Source should send data to the Maxia destination.
-4. Login to [Maxia](https://app.maxia.ai/), and create a Warehouse for your Segment Data.
+4. Login to [Maxia](https://app.maxia.ai/){:target="_blank"}, and create a Warehouse for your Segment Data.
 5. Complete an onboarding call with the Maxia team to discuss your AI model and unlock your API key.
-6. Copy the "API key" from [Maxia](https://app.maxia.ai/) and enter it in the Maxia destination settings in [Segment](https://app.segment.com/).
+6. Copy the "API key" from [Maxia](https://app.maxia.ai/){:target="_blank"} and enter it in the Maxia destination settings in [Segment](https://app.segment.com/){:target="_blank"}.
 
 
 ## Segment Data
