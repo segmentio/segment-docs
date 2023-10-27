@@ -3,7 +3,7 @@ title: Vidora Destination
 rewrite: true
 id: 5ff67d3d4b6491271c0deae0
 ---
-[Vidora](https://vidora.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners){:target="_blank”} provides a Machine Learning Platform for Marketing, AdTech, and Product teams to quickly and easily transform raw consumer data into valuable business decisions. Examples include: [next-best-action](https://www.vidora.com/general/video-building-real-time-decisioning-in-cortex-for-next-best-offer-and-next-best-action), next-best-offer, [dynamic decisioning](https://www.vidora.com/ml-in-business/dynamic-decisioning-using-real-time-machine-learning), [predictions](https://segment.com/recipes/using-predictive-purchase-behavior-to-increase-campaign-roi/), and prescriptive modeling.
+[Vidora](https://vidora.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners){:target="_blank”} provides a Machine Learning Platform for Marketing, AdTech, and Product teams to quickly and easily transform raw consumer data into valuable business decisions. Examples include: [next-best-action](https://www.vidora.com/general/video-building-real-time-decisioning-in-cortex-for-next-best-offer-and-next-best-action){:target="_blank"}, next-best-offer, [dynamic decisioning](https://www.vidora.com/ml-in-business/dynamic-decisioning-using-real-time-machine-learning){:target="_blank"}, [predictions](https://segment.com/recipes/using-predictive-purchase-behavior-to-increase-campaign-roi/){:target="_blank"}, and prescriptive modeling.
 
 This destination is maintained by Vidora. For any issues with the destination, [contact the Vidora Support team](mailto:support@vidora.com).
 
@@ -14,7 +14,7 @@ This destination is maintained by Vidora. For any issues with the destination, [
 1. From the Destinations catalog page in the Segment App, click **Add Destination**.
 2. Search for "Vidora" in the Destinations Catalog, and select the "Vidora" destination.
 3. Choose which Source should send data to the "Vidora" destination.
-4. Go to the [Vidora dashboard](https://app.vidora.com/#!/api/docs), find and copy the "API key".
+4. Go to the [Vidora dashboard](https://app.vidora.com/#!/api/docs){:target="_blank"}, find and copy the "API key".
 5. Enter the "API Key" in the "Vidora" destination settings in Segment.
 
 ## Track

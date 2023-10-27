@@ -15,7 +15,7 @@ This destination is maintained by SlicingDice. For any issues with the destinati
 
 
 1. Login into your SlicingDice's Control Panel account to create a connection between SlicingDice and Segment.
-2. Follow the [Connecting to Segment guide](https://docs.slicingdice.com/data_warehouse_module/connecting_external_tools/segment.html) available in SlicingDice documentation to create and allow this connection.
+2. Follow the [Connecting to Segment guide](https://docs.slicingdice.com/data_warehouse_module/connecting_external_tools/segment.html){:target="_blank"} available in SlicingDice documentation to create and allow this connection.
 
 
 ## Page

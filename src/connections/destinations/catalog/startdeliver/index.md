@@ -16,9 +16,9 @@ Startdeliver maintains this destination. For any issues with the destination, [c
 1. From the Destinations catalog page in the Segment App, click **Add Destination**.
 2. Search for "Startdeliver" in the Destinations Catalog, and select the "Startdeliver" destination.
 3. Choose which Source should send data to the "Startdeliver" destination.
-4. Go to the [API keys](https://app.startdeliver.com/settings/apikeys) in your Startdeliver dashboard, generate an API key, make it active and grant it "Admin" permissions.
+4. Go to the [API keys](https://app.startdeliver.com/settings/apikeys){:target="_blank"} in your Startdeliver dashboard, generate an API key, make it active and grant it "Admin" permissions.
 5. Enter the "API Key" in the "Startdeliver" destination settings in Segment.
-6. Create a User custom field you want to match a Segment event on [here](https://app.startdeliver.com/settings/fields). You will need a field's alias at the next step.
+6. Create a User custom field you want to match a Segment event on [here](https://app.startdeliver.com/settings/fields){:target="_blank"}. You will need a field's alias at the next step.
 7. Enter the "Startdeliver user custom field to match on" in the "Startdeliver" destination settings in Segment.
 
 
@@ -46,7 +46,7 @@ This event is matched with a Startdeliver user that has ID `97980cfea0067` set i
 
 Segment events will appear on Customer and User views in Startdeliver. The views will be created instantly within Startdeliver.
 
-For further information you can check [Startdeliver documentation](https://app.startdeliver.com/dev).
+For further information you can check [Startdeliver documentation](https://app.startdeliver.com/dev){:target="_blank"}.
 
 
 ## Page

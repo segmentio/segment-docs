@@ -2,7 +2,7 @@
 title: Vero Destination
 id: 54521fdc25e721e32a72ef03
 ---
-Our Vero destination code is all open-source on GitHub if you want to check it out: [JavaScript](https://github.com/segmentio/analytics.js-integrations/tree/master/integrations/vero), [Server](https://github.com/segmentio/integration-vero).
+Our Vero destination code is all open-source on GitHub if you want to check it out: [JavaScript](https://github.com/segmentio/analytics.js-integrations/tree/master/integrations/vero){:target="_blank"}, [Server](https://github.com/segmentio/integration-vero){:target="_blank"}.
 
 ## Getting Started
 
@@ -53,7 +53,7 @@ Vero supports sending [email events](/docs/connections/spec/email) to other tool
 To enable this feature,
 
 1. Log into Vero and go to Settings
-2. Then go to [Integrations](https://app.getvero.com/settings/integrations?integrations=all)
+2. Then go to [Integrations](https://app.getvero.com/settings/integrations?integrations=all){:target="_blank"}
 3. Hit 'view' next to the Segment integration
 4. Enter in your Segment write key at the bottom.
 

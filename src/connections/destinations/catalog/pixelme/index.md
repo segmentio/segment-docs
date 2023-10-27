@@ -17,7 +17,7 @@ This destination is maintained by PixelMe. For any issues with the destination, 
 
 1. From the Segment web app, click **Catalog**.
 2. Search for "PixelMe" in the Catalog, select it, and choose which of your sources to connect the destination to.
-3. Enter the "API Key" into your Segment Settings UI which you can directly copy-paste from your [PixelMe dashboard](https://app.pixelme.me).
+3. Enter the "API Key" into your Segment Settings UI which you can directly copy-paste from your [PixelMe dashboard](https://app.pixelme.me){:target="_blank"}.
 4. To find the API Key, go to Settings > Integrations
 
 ## Page

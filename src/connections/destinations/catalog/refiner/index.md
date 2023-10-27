@@ -16,7 +16,7 @@ This destination is maintained by Refiner. For any issues with the destination, 
 
 1. From the Segment web app, click **Catalog**.
 2. Search for "Refiner" in the Catalog, select it, and choose which of your sources to connect the destination to.
-3. Enter your Refiner "API Key" into the Segment Settings. You can find this key in on the [Refiner dashboard](https://app.refiner.io) settings under Integrations > Segment.
+3. Enter your Refiner "API Key" into the Segment Settings. You can find this key in on the [Refiner dashboard](https://app.refiner.io){:target="_blank"} settings under Integrations > Segment.
 
 ## Page
 

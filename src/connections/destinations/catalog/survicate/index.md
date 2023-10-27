@@ -16,7 +16,7 @@ This destination is maintained by Survicate. For any issues with the destination
 
 1. From the Segment web app, click **Catalog**.
 2. Search for "Survicate" in the Catalog, select it, and choose which of your sources to connect the destination to.
-3. Enter the "Workspace Key" into your Segment Settings UI which you can find from your [Survicate Workspace Settings](https://panel.survicate.com/).
+3. Enter the "Workspace Key" into your Segment Settings UI which you can find from your [Survicate Workspace Settings](https://panel.survicate.com/){:target="_blank"}.
 
 ## Identify
 

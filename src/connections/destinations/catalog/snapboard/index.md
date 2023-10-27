@@ -23,7 +23,7 @@ This destination is maintained by Snapboard. For any issues with the destination
 2. Search for "Snapboard" in the Catalog, select it, and choose which of your sources to connect the destination to.
 3. Enter the "API Key" into your Segment Settings UI which you can find from your Snapboard dashboard.
 
-You can obtain the API Key by [logging into Snapboard](https://snapboard.io/login), clicking on the circle icon in the top-left, and then clicking on the workspace name. Then click on the Settings menu item.
+You can obtain the API Key by [logging into Snapboard](https://snapboard.io/login){:target="_blank"}, clicking on the circle icon in the top-left, and then clicking on the workspace name. Then click on the Settings menu item.
 
 ![settings menu](images/snapboard_settings_location.png)
 

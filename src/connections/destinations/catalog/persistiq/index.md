@@ -16,7 +16,7 @@ This destination is maintained by PersistIQ. For any issues with the destination
 
 1. From the Segment web app, click **Catalog**.
 2. Search for "PersistIQ" in the Catalog, select it, and choose which of your sources to connect the destination to.
-3. Enter the "API Key" into your Segment Settings UI which you can find at the bottom of your [PersistIQ Integrations page](https://persistiq.com/app#/integrations).
+3. Enter the "API Key" into your Segment Settings UI which you can find at the bottom of your [PersistIQ Integrations page](https://persistiq.com/app#/integrations){:target="_blank"}.
 
 
 ## Identify

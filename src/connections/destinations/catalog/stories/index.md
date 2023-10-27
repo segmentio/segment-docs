@@ -16,7 +16,7 @@ This destination is maintained by Stories. For any issues with the destination, 
 
 1. From the Segment web app, click **Catalog**.
 2. Search for "Stories" in the Catalog, select it, and choose which of your sources to connect the destination to.
-3. Enter the "API Key" into your Settings UI which you can retrieve from your [Stories Account](https://app.getstories.io/settings#/api).
+3. Enter the "API Key" into your Settings UI which you can retrieve from your [Stories Account](https://app.getstories.io/settings#/api){:target="_blank"}.
 4. You can choose whether to Sync Users or not with Stories. If you enable this setting, identified users will be automatically added and/or merged with your Stories users. Read more about [Merging Users](#merging-users) below.
 
 ## Identify

@@ -16,7 +16,7 @@ This destination is maintained by Personyze. For any issues with the destination
 
 1. From the Segment web app, click **Catalog**.
 2. Search for "Personyze" in the Catalog, select it, and choose which of your sources to connect the destination to.
-3. Enter the "API Key" into your Segment Settings UI which you can find from your [Personyze dashboard](https://personyze.com/site/tracker/condition/index#cat=Account%20settings%2FMain%20settings%2FIntegrations/conditions) under Account Settings > Integrations > Segment > Get Keys
+3. Enter the "API Key" into your Segment Settings UI which you can find from your [Personyze dashboard](https://personyze.com/site/tracker/condition/index#cat=Account%20settings%2FMain%20settings%2FIntegrations/conditions){:target="_blank"} under Account Settings > Integrations > Segment > Get Keys
 4. Once you've updated the API key in Segment, data from the source you selected will be shown right away in Personyze under "Manage Visitor Profiles".
 
 

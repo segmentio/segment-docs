@@ -7,7 +7,7 @@ id: 5dca74a6907ce1604b781476
 
 This destination is maintained by Windsor. For any issues with the destination, [contact the Windsor Support team](mailto:support@windsor.io).
 
-You can find more information on Windsor on [the Windsor docs site](https://docs.windsor.io).
+You can find more information on Windsor on [the Windsor docs site](https://docs.windsor.io){:target="_blank"}.
 
 {% include content/beta-note.md %}
 
@@ -20,7 +20,7 @@ You can find more information on Windsor on [the Windsor docs site](https://docs
 1. From the Destinations catalog page in the Segment App, click **Add Destination**.
 2. Search for "Windsor" in the Destinations Catalog, and select the Windsor destination.
 3. Choose which Source should send data to the Windsor destination.
-4. Go to the [Windsor app Sources page](https://app.windsor.io/sources)
+4. Go to the [Windsor app Sources page](https://app.windsor.io/sources){:target="_blank"}
 5. Select **Segment** and click **Generate Token**. Copy the token provided.
 6. Enter the token in the Windsor destination settings in the Segment app.
 
@@ -34,7 +34,7 @@ If you aren't familiar with the Segment Spec, take a look at the [Page method do
 analytics.page()
 ```
 
-Segment sends Page calls as tracked events for each [user](https://app.windsor.io/people, and also to the Windsor [feed](https://app.windsor.io/feed). Page events are hidden on Windsor by default, but can be enabled using the **Show Hidden Events** button at the top of the feed.
+Segment sends Page calls as tracked events for each [user](https://app.windsor.io/people){:target="_blank"}, and also to the Windsor [feed](https://app.windsor.io/feed){:target="_blank"}. Page events are hidden on Windsor by default, but can be enabled using the **Show Hidden Events** button at the top of the feed.
 
 
 ## Screen
@@ -45,7 +45,7 @@ If you aren't familiar with the Segment Spec, take a look at the [Screen method 
 [[SEGAnalytics sharedAnalytics] screen:@"Home"];
 ```
 
-Segment sends Screen calls to Windsor to the tracked events for each [user](https://app.windsor.io/people), and also as events that appear in the Windsor [feed](https://app.windsor.io/feed).
+Segment sends Screen calls to Windsor to the tracked events for each [user](https://app.windsor.io/people){:target="_blank"}, and also as events that appear in the Windsor [feed](https://app.windsor.io/feed){:target="_blank"}.
 
 
 ## Identify
@@ -63,7 +63,7 @@ analytics.identify("user-123", {
 
 Windsor **requires** a **`userId`** and **`email`** for most integrations to work correctly. Additionally, if you include a value for `phone`, Windsor can track any text messages you send. The `avatar` property lets you add an image to identify users easily on Windsor.
 
-Segment sends Identify calls to Windsor to create new users and their properties. You can find all your users on the [Users Page](https://app.windsor.io/people)
+Segment sends Identify calls to Windsor to create new users and their properties. You can find all your users on the [Users Page](https://app.windsor.io/people){:target="_blank"}
 
 ### Best practices
 
@@ -83,7 +83,7 @@ If you aren't familiar with the Segment Spec,  take a look at the [Track method 
 analytics.track('Login Button Clicked')
 ```
 
-Segment sends Track calls to Windsor as tracked events for each [user](https://app.windsor.io/people), and as events that appear on the Windsor [feed](https://app.windsor.io/feed).
+Segment sends Track calls to Windsor as tracked events for each [user](https://app.windsor.io/people){:target="_blank"}, and as events that appear on the Windsor [feed](https://app.windsor.io/feed){:target="_blank"}.
 
 To get the best experience with Windsor, Segment recommends that you follow the Segment's specs for your industry or application .
 

@@ -16,7 +16,7 @@ This destination is maintained by Nat.app. For any issues with the destination, 
 1. From the Destinations catalog page in the Segment App, click "Add Destination".
 2. Search for "Nat.app" in the Destinations Catalog, and select the "Nat.app" destination.
 3. Choose which Source should send data to the "Nat.app" destination.
-4. Go to the [Nat.app settings page](https://contacts.nat.app/settings), find and copy the "API key".
+4. Go to the [Nat.app settings page](https://contacts.nat.app/settings){:target="_blank"}, find and copy the "API key".
 5. Enter the "API Key" in the "Nat.app" destination settings in Segment.
 
 ## Identify

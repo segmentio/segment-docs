@@ -14,7 +14,7 @@ This destination is maintained by ProductBird. For any issues with the destinati
 1. From the Destinations catalog page in the Segment App, click **Add Destination**.
 2. Search for "ProductBird" in the Destinations Catalog, and select the ProductBird destination.
 3. Choose which Source should send data to the ProductBird destination.
-4. Go to your [ProductBird Settings](https://app.productbird.io/settings), find and copy the "Secret API Key".
+4. Go to your [ProductBird Settings](https://app.productbird.io/settings){:target="_blank"}, find and copy the "Secret API Key".
 5. Enter the "Secret API Key" in the ProductBird destination settings in Segment.
 
 ## Identify
@@ -32,7 +32,7 @@ analytics.identify('userId123', {
 
 Use the Identify method to pass user properties into user profiles in ProductBird.
 
-Read more about [ProductBird's Special Properties](https://docs.productbird.io/docs/#special-properties) which have reserved meanings.
+Read more about [ProductBird's Special Properties](https://docs.productbird.io/docs/#special-properties){:target="_blank"} which have reserved meanings.
 
 > success "Success message."
 > If the ProductBird widget is implemented, ensure that the `userId` matches exactly with the corresponding ProductBird userID.

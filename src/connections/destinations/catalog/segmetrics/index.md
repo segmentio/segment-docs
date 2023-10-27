@@ -11,14 +11,14 @@ This destination is maintained by SegMetrics. For any issues with the destinatio
 
 
 
-1. Go to your [Integrations tab](https://app.segmetrics.io/a/integration) in SegMetrics, and click **Connect** for the Segment Integration.
-2. Go to your [Account Settings](https://app.segmetrics.io/a/account/edit) and copy your SegMetrics `Account Id` and `API Key`.
+1. Go to your [Integrations tab](https://app.segmetrics.io/a/integration){:target="_blank"} in SegMetrics, and click **Connect** for the Segment Integration.
+2. Go to your [Account Settings](https://app.segmetrics.io/a/account/edit){:target="_blank"} and copy your SegMetrics `Account Id` and `API Key`.
 3. From the Destinations catalog page in the Segment App, click **Add Destination**.
 4. Search for “SegMetrics” in the Destinations Catalog and select the SegMetrics Destination.
 5. Enter the `Account Key` and `API Key` in the SegMetrics destination settings in Segment.
 
 > info ""
-> Data is available in your dashboard depending on your [SegMetrics plan](https://segmetrics.io/pricing/).
+> Data is available in your dashboard depending on your [SegMetrics plan](https://segmetrics.io/pricing/){:target="_blank"}.
 
 ## Page
 

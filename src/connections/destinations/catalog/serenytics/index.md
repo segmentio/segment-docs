@@ -18,15 +18,15 @@ This destination is maintained by the company Serenytics. For any issues with th
 
 
 From Serenytics app using OAuth:
-1. In Serenytics, in the [datasources list](https://app.serenytics.com/studio/data_sources), click on the button `New data source` and select the tab `Web services and API` and click on `Segment`.
+1. In Serenytics, in the [datasources list](https://app.serenytics.com/studio/data_sources){:target="_blank"}, click on the button `New data source` and select the tab `Web services and API` and click on `Segment`.
 2. This will redirect you to Segment website where you choose which Segment source you want to connect to Serenytics.
 3. Once you have choosen the Segment source, you are redirected to Serenytics in a newly created datasources folder called 'Segment integration'. It contains all the Serenytics datasources where your data will be available to create dashboards.
 
 From Segment Destinations Catalog:
 1. From the Segment web app, click **Catalog**.
 2. Search for "Serenytics" in the Catalog, select it, and choose which of your sources to connect the destination to.
-3. Enter the "API Key" into your Segment Settings UI which you can find from your [Serenytics account page](https://app.serenytics.com/studio/account).
-4. In the [Serenytics datasources list](https://app.serenytics.com/studio/data_sources), when the first message from Segment is received, a new folder named 'Segment integration' will be automatically created with datasources that contain your data.
+3. Enter the "API Key" into your Segment Settings UI which you can find from your [Serenytics account page](https://app.serenytics.com/studio/account){:target="_blank"}.
+4. In the [Serenytics datasources list](https://app.serenytics.com/studio/data_sources){:target="_blank"}, when the first message from Segment is received, a new folder named 'Segment integration' will be automatically created with datasources that contain your data.
 
 
 

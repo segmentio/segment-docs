@@ -3,7 +3,7 @@ title: SIGNL4 Alerting
 rewrite: true
 id: 5fbfbfc64832c185a5fd3faf
 ---
-[SIGNL4](https://www.signl4.com) is a lightweight, app-based alerting service of operational teams supporting app push, SMS text and voice call including tracking, escalation, collaboration and duty planning.
+[SIGNL4](https://www.signl4.com){:target="_blank"} is a lightweight, app-based alerting service of operational teams supporting app push, SMS text and voice call including tracking, escalation, collaboration and duty planning.
 
 When incidents happen, SIGNL4 can alert your teams, engineers, sales, marketing or workers ‘in the field'. SIGNL4 helps to know what is going on – from anywhere and anytime.
 
@@ -20,7 +20,7 @@ This destination is maintained by Derdack SIGNL4. For any issues with the destin
 3. Choose which Source should send data to the “SIGNL4 Alerting” destination.
 4. Enter the “API Key” in the “SIGNL4 Alerting” destination settings in your Segment Workspace, this is your SIGNL4 team secret and the first part of your SIGNL4 email address.
 
-Ife you do not have SIGNL4 installed already, you can download the SIGNL4 App from the [Google Play Store](https://play.google.com/store/apps/details?id=com.derdack.signl4) or from the [Apple App Store](https://itunes.apple.com/us/app/signl4/id1100283480). Alternatively, you can get started on the [SIGNL4 web site](https://www.signl4.com/free-trial-test/). Once registered you will get an email with your SIGNL4 API information which includes your SIGNL4 team secret. This is the first part of your SIGNL4 email address (your-team-secret@mail.signl4.com).
+Ife you do not have SIGNL4 installed already, you can download the SIGNL4 App from the [Google Play Store](https://play.google.com/store/apps/details?id=com.derdack.signl4){:target="_blank"} or from the [Apple App Store](https://itunes.apple.com/us/app/signl4/id1100283480){:target="_blank"}. Alternatively, you can get started on the [SIGNL4 web site](https://www.signl4.com/free-trial-test/){:target="_blank"}. Once registered you will get an email with your SIGNL4 API information which includes your SIGNL4 team secret. This is the first part of your SIGNL4 email address (your-team-secret@mail.signl4.com).
 
 ## Page
 

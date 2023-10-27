@@ -16,7 +16,7 @@ This destination is maintained by Smartlook. For any issues with the destination
 
 1. From the Segment web app, click **Catalog**.
 2. Search for "Smartlook" in the Catalog, select it, and choose which of your sources to connect the destination to.
-3. Enter the "Project Key" into your Segment Settings UI which you can find from your [project settings](https://www.smartlook.com/app/dashboard/settings/projects) after clicking the **Tracking code** link.
+3. Enter the "Project Key" into your Segment Settings UI which you can find from your [project settings](https://www.smartlook.com/app/dashboard/settings/projects){:target="_blank"} after clicking the **Tracking code** link.
 
 
 Your changes appear in the Segment CDN in about 45 minutes, and then Analytics.js starts asynchronously loading Smartlook's recording snippet onto your page.
@@ -25,7 +25,7 @@ Your changes appear in the Segment CDN in about 45 minutes, and then Analytics.j
 ## Identify
 
 If you're not familiar with the Segment Specs, take a look to understand what the [Identify method](/docs/connections/spec/identify/) does.
-Identify calls sent to Segment will be transformed and sent to [Smartlook's](https://smartlook.github.io/docs/web/identify-visitor/) `identify` method. An example call would look like:
+Identify calls sent to Segment will be transformed and sent to [Smartlook's](https://smartlook.github.io/docs/web/identify-visitor/){:target="_blank"} `identify` method. An example call would look like:
 
 ```
 analytics.identify('userId123', {
@@ -37,7 +37,7 @@ analytics.identify('userId123', {
 ## Track
 
 If you're not familiar with the Segment Specs, take a look to understand what the [Track method](/docs/connections/spec/track/) does.
-Track calls sent to Segment will be transformed and sent to [Smartlook's](https://smartlook.github.io/docs/web/custom-events/) `track` method.
+Track calls sent to Segment will be transformed and sent to [Smartlook's](https://smartlook.github.io/docs/web/custom-events/){:target="_blank"} `track` method.
 An example call would look like:
 
 ```
