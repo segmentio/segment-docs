@@ -17,7 +17,7 @@ Collections represent the different messaging events that Leanplum sends to Segm
 This source is maintained by Leanplum. For any issues with the source, [contact Leanplum Support](mailto:support@leanplum.com).
 
 > success ""
-> **Good to know**: This page is about the Leanplum Segment source, which sends data _into_ Segment. There's also a page about the [Leanplum Segment destination](https://segment.com/docs/connections/destinations/catalog/leanplum/), which receives data from Segment!
+> **Good to know**: This page is about the Leanplum Segment source, which sends data _into_ Segment. There's also a page about the [Leanplum Segment destination](/docs/connections/destinations/catalog/leanplum/), which receives data from Segment!
 
 
 ## Getting Started
@@ -75,4 +75,4 @@ If you experience any issues with how the events arrive in Segment, [contact the
 
 ## Send data to Leanplum
 
-Segment and Leanplum work better together when connected bi-directionally. With the Leanplum Destination, you can send client-side or server-side data, as well as connect Engage; which you can then turn into precisely targeted personalized messages. Learn more at our [Leanplum Destination docs](https://segment.com/docs/connections/destinations/catalog/leanplum/).
+Segment and Leanplum work better together when connected bi-directionally. With the Leanplum Destination, you can send client-side or server-side data, as well as connect Engage; which you can then turn into precisely targeted personalized messages. Learn more at our [Leanplum Destination docs](/docs/connections/destinations/catalog/leanplum/).
