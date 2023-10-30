@@ -12,7 +12,7 @@ This source allows you to enrich user profiles with survey responses and use the
 This source is maintained by Refiner. For any issues with the source, [contact Refiner Support](mailto:contact@refiner.io).
 
 > success ""
-> **Good to know**: This page is about the Refiner Segment source, which sends data _into_ Segment. There's also a page about the [Refiner Segment destination](https://segment.com/docs/connections/destinations/catalog/refiner/), which receives data from Segment!
+> **Good to know**: This page is about the Refiner Segment source, which sends data _into_ Segment. There's also a page about the [Refiner Segment destination](/docs/connections/destinations/catalog/refiner/), which receives data from Segment!
 
 ## Getting Started
 
@@ -72,6 +72,6 @@ A `group` call issued by Refiner could look like this:
 
 Now that your Source is set up, you can connect it with Destinations.
 
-Log into your downstream tools and check to see that your events are appearing as expected, and that they contain all of the properties you expect. If your events and properties don't appear, check the [Event Delivery](https://segment.com/docs/connections/event-delivery/) tool, and refer to the Destination docs for each tool for troubleshooting.
+Log into your downstream tools and check to see that your events are appearing as expected, and that they contain all of the properties you expect. If your events and properties don't appear, check the [Event Delivery](/docs/connections/event-delivery/) tool, and refer to the Destination docs for each tool for troubleshooting.
 
 If you see any issues with how the events are arriving to Segment, [contact the Refiner support team](mailto:contact@refiner.io).

@@ -15,13 +15,13 @@ This integration is maintained by Littledata. [Contact the Littledata Support te
 ## Getting Started
 
 1. **Log in** to your Shopify Store account.
-2. Go the [Shopify app store listing](https://apps.shopify.com/segment-com-by-littledata) for ***Segment by Littledata***.
+2. Go the [Shopify app store listing](https://apps.shopify.com/segment-com-by-littledata){:target="_blank”} for ***Segment by Littledata***.
 ![Screenshot of the Segment listing in the Shopify app store.](images/Nd5L0C6.png)
 4. Click **Add app** to begin the installation process.
 5. **Sign up** for a Littledata account using an email address, Google login or Facebook login. *More team members can be added to the subscription after completing the installation process.*
-6. Add the [**Segment write key**](https://segment.com/docs/connections/find-writekey/) for the source that is going to send data in the **input field**.
+6. Add the [**Segment write key**](/docs/connections/find-writekey/) for the source that is going to send data in the **input field**.
 ![Screenshot of the Configure Segment step in the Shopify Littedata setup flow.](images/eLUh6GF.png)
-7. Choose either an **Automatic** or a **Manual** install. *Automatic installs work in most instances, but if you choose to do a manual install, just follow [this guide](https://blog.littledata.io/help/posts/segment-installation-guide/).*
+7. Choose either an **Automatic** or a **Manual** install. *Automatic installs work in most instances, but if you choose to do a manual install, just follow [this guide](https://blog.littledata.io/help/posts/segment-installation-guide/){:target="_blank”}.*
 ![Screenshot of the Add code automatically? step in the Shopify Littedata setup flow.](images/iYM76VI.png)
 9. Segment's **analytics.js** library, Littledata **tracking script** and **webhooks** will be automatically applied to the store and the installation process will then be complete.
 ![Screenshot of the Add tracking code step in the Shopify Littedata setup flow.](images/kvjNx4M.png)

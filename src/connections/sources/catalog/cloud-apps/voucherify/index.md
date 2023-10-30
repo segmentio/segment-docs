@@ -14,7 +14,7 @@ This source is maintained by Voucherify. For any issues with the source, [contac
 
 ## Getting Started
 
-1. From your workspace's [Sources catalog page](https://app.segment.com/goto-my-workspace/sources/catalog) click **Add Source**.
+1. From your workspace's [Sources catalog page](https://app.segment.com/goto-my-workspace/sources/catalog){:target="_blank”} click **Add Source**.
 2. Search for "Voucherify" in the Sources Catalog, select Voucherify, and click **Add Source**.
 3. On the next screen, give the Source a nickname configure any other settings. The nickname is used as a label in the Segment app, and Segment creates a related schema name in your warehouse. The nickname can be anything, but Segment recommends you use something that reflects the source itself and distinguishes amongst your environments.
 4. Click **Add Source** to save your settings.

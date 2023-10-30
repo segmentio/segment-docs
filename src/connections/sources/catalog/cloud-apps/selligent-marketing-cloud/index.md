@@ -14,7 +14,7 @@ This source is maintained by Selligent Marketing Cloud. For any issues with the 
 
 ## Getting Started
 
-1. From your workspace's [Sources catalog page](https://app.segment.com/goto-my-workspace/sources/catalog) click **Add Source**.
+1. From your workspace's [Sources catalog page](https://app.segment.com/goto-my-workspace/sources/catalog){:target="_blank”} click **Add Source**.
 2. Search for "Selligent Marketing Cloud" in the Sources Catalog, select click Selligent Marketing Cloud, and click **Add Source**.
 3. On the next screen, give the Source a nickname configure any other settings.
 
@@ -120,6 +120,6 @@ The table below list the properties included in the events listed above.
 
 Now that your Source is set up, you can connect it with Destinations.
 
-Log into your downstream tools and check to see that your events appear as expected, and that they contain all of the properties you expect. If your events and properties don't appear, check the [Event Delivery](https://segment.com/docs/connections/event-delivery/) tool, and refer to the Destination docs for each tool for troubleshooting.
+Log into your downstream tools and check to see that your events appear as expected, and that they contain all of the properties you expect. If your events and properties don't appear, check the [Event Delivery](/docs/connections/event-delivery/) tool, and refer to the Destination docs for each tool for troubleshooting.
 
 If there are any issues with how the events are arriving to Segment, [contact the Selligent Marketing Cloud support team](mailto:scrum-redwood@selligent.com).
