@@ -32,7 +32,7 @@ Permissions can then be assigned to users in Access Management by label, on the 
 ## Custom Labels
 
 > note ""
-> **Note**: All Segment workspaces can create up to five custom labels. Additional label types (in addition to environment labels) are available to Segment Enterprise Tier accounts.
+> **Note**: All Segment workspaces can create up to five custom labels. Additional label types (in addition to environment labels) are available to Segment Business Tier accounts.
 
 To create additional custom labels, a workspace owner can create new key types in the Labels screen. The workspace owner can customize any combination of labels to mirror how resources should be partitioned in their organization. For example, some organizations may prefer to restrict access on their Sources and Spaces by brand or product area while other organizations may find it more useful to restrict their resources by tech stack or engineering department.
 
