@@ -328,6 +328,8 @@ sections:
     title: Profile API Limits
   - path: /unify/debugger
     title: Profile Debugger
+  - path: /unify/insights
+    title: Profile Insights
   - path: /unify/unify-gdpr
     title: Unify and GDPR
   - path: /unify/faqs
