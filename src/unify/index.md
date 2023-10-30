@@ -7,9 +7,13 @@ redirect_from:
 
 Use Segment Unify, formerly known as Profiles, for a complete view of your customers.
 
-With [Identity Resolution](#identity-resolution), track every interaction across the entire user journey to create unified, real-time customer identities. View user profiles in one place through the [Profile explorer](#profile-explorer) in the Segment app. Use the [Profile API](#profile-api) to programmatically query user profiles, traits, and events.
+With [Identity Resolution](#identity-resolution), track every interaction across the entire user journey to create unified, real-time customer identities. View user profiles in one place through the [Profile explorer](#profile-explorer) in the Segment app. Use the [Profile API](#profile-api) to programmatically query user profiles, traits, and events. 
 
 You can then use this interaction data with customer engagement tools, such as Engage, to deliver personalized, omnichannel experiences.
+
+> success "" 
+> If you need to troubleshoot or learn more about your profile data, use [Profile Insights](/docs/unify/insights/) for a transparent view of your Unify profiles. 
+
 
 ## Getting started
 
@@ -56,6 +60,14 @@ Use the Profile API to help your organization:
 - Qualify leads faster.
 
 Visit Segment's [Profile API doc](/docs/unify/profile-api/) for more information.
+
+## Profile Insights
+
+Use Profile Insights to troubleshoot your event data with a transparent view of your Unify profiles. 
+
+Learn more about your events and identifiers on your profiles and answer questions such as why two profiles didn't merge, why an event wasn't resolved to a profile, why an external ID isn't present, and more.
+
+Visit the [Profile Insights](/docs/unify/insights/) doc to learn more. 
 
 ## Next steps: activate your profiles with Engage
 
