@@ -27,6 +27,8 @@ Check out Segment's [SQL Traits blog post](https://segment.com/blog/sql-traits){
 > info ""
 > To view SQL Traits in a user profile, you must have [PII access](/docs/segment-app/iam/roles/#pii-access). Without this access, Segment redacts all SQL traits in a profile.
 
+> info ""
+> Once a field has been brought in with a SQL Trait and sent to the destination, please note that changing data types for fields may not be compatible with all destinations.
 
 ### Example: cloud sources sync
 
