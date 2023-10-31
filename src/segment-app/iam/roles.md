@@ -4,6 +4,9 @@ title: Roles
 
 A role gives a user access to resources within a workspace. Roles are additive, and can combine to configure a custom policy for a Team Member or a Group. A policy is at least one role plus one resource applied to an individual user or group.
 
+> note ""
+> When a user has both User Permissions and Group Permissions, they will have the highest access given to either of those roles.
+
 ## Global Roles
 
 All Segment workspaces have the following roles, regardless of account type.
