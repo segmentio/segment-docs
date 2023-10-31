@@ -35,6 +35,15 @@ If you're editing an existing function, you can **Save** changes without changin
 
 You can also choose to **Save & Deploy** to push changes to all, or specific functions in your workspace that are already deployed. You might need additional permissions to deploy these changes.
 
+## Testing a function
+You have the option to test your functions code with either a Sample Event or by loading a default event that you can customize yourself.
+1. **Sample Event** : By clicking on "Test with custom event" you can select a sample event from any of your workspace sources to test this function.
+2. **customize the event yourself** : By clicking the text "customize the event yourself" a default event payload will load which you can modify with the desired data. Here you have the option to paste in a JSON event or even click on "Manual Mode" and type in the fields manually. If you'd like to locate a recent event from a source that's not available by following the Sample Event instruction, simply navigate to the desired Source's Debugger, click on the event you're wanting to test, copy the raw JSON payload, and paste that into your Function Editor.
+
+Once the payload you want to test is ready, click on the button labeled Run.
+> note ""
+> If you created settings in your function, then you will need to fill in those settings' values before clicking Run.
+
 ## Deploying source functions
 
 > note ""
