@@ -6,6 +6,7 @@ plan: engage-premier
 This page walks you through the process of setting up mobile push notifications using Segment, Twilio, and Firebase/Apple Developer.
 
 > info "Prerequisites"
+> Please reach out to your CSM or AE prior to trying out this feature.
 > This guide assumes familiarity with Swift and Kotlin and is intended for a developer audience. 
 
 ## Overview

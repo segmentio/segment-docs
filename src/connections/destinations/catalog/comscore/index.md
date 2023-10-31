@@ -3,9 +3,9 @@ title: comScore Destination
 id: 54521fd525e721e32a72eea1
 ---
 Segment's comScore destination code is open source and available on GitHub. Feel free to check it out:
-- [JavaScript](https://github.com/segmentio/analytics.js-integrations/tree/master/integrations/comscore)
-- [iOS](https://github.com/segment-integrations/analytics-ios-integration-comscore)
-- [Android](https://github.com/segment-integrations/analytics-android-integration-comscore)
+- [JavaScript](https://github.com/segmentio/analytics.js-integrations/tree/master/integrations/comscore){:target="_blank"}
+- [iOS](https://github.com/segment-integrations/analytics-ios-integration-comscore){:target="_blank"}
+- [Android](https://github.com/segment-integrations/analytics-android-integration-comscore){:target="_blank"}
 
 ## Getting Started
 
@@ -25,10 +25,10 @@ To get started with comScore and Segment, you'll want to first integrate your mo
 For mobile sources, you will need to enter your comScore **c2 ID** and **Publisher Secret**.
 
 ### iOS
-To install comScore via Segment on iOS, please follow the additional set up steps in the Segment-Comscore iOS repository [here](https://github.com/segment-integrations/analytics-ios-integration-comscore#analytics-ios-integration-comscore).
+To install comScore via Segment on iOS, please follow the additional set up steps in the Segment-Comscore iOS repository [here](https://github.com/segment-integrations/analytics-ios-integration-comscore#analytics-ios-integration-comscore){:target="_blank"}.
 
 ### Android
-To install comScore via Segment on Android, please follow the additional set up steps in the Segment-Comscore Android repository [here](https://github.com/segment-integrations/analytics-android-integration-comscore#analytics-android-integration-comscore).
+To install comScore via Segment on Android, please follow the additional set up steps in the Segment-Comscore Android repository [here](https://github.com/segment-integrations/analytics-android-integration-comscore#analytics-android-integration-comscore){:target="_blank"}.
 
 ## Page
 
@@ -71,7 +71,7 @@ Segment will map values to comScore's `cs_ucfr` label as outlined below:
 
 ## Video Streaming
 
-**Note**: The video tracking functionality is in beta for **mobile only**, and requires version 3.0.0 of the `Segment-comScore` SDK. If you have feedback on or questions about this beta feature, [contact us](https://segment.com/help/contact)!
+**Note**: The video tracking functionality is in beta for **mobile only**, and requires version 3.0.0 of the `Segment-comScore` SDK. If you have feedback on or questions about this beta feature, [contact us](https://segment.com/help/contact){:target="_blank"}!
 
 To get started tracking video content through Segment, make sure you are using a media player that has an API which allows you to detect the player state. Refer to our [Video Spec](/docs/connections/spec/video/) and implement video tracking as outlined there. We will map the semantic events to comScore's relevant methods.
 

@@ -3,7 +3,7 @@ rewrite: true
 title: ScopeAI Destination
 id: 5c6cb84c9d413f0001804a42
 ---
-[ScopeAI](https://www.getscopeai.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) improves communication between support and product teams by aggregating user feedback and tracking the impact of bugs or issues and feature requests.
+[ScopeAI](https://www.getscopeai.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners){:target="_blank”} improves communication between support and product teams by aggregating user feedback and tracking the impact of bugs or issues and feature requests.
 
 This destination is maintained by ScopeAI. For any issues with the destination, [contact the ScopeAI Support team](mailto:support@getscopeai.com).
 
@@ -15,7 +15,7 @@ This destination is maintained by ScopeAI. For any issues with the destination, 
 
 1. From the Segment web app, click **Catalog**.
 2. Search for "ScopeAI" in the Catalog, select it, and choose which of your sources to connect the destination to.
-3. In the Segment Settings UI under "API Key" place the Segment token that can be seen after clicking "Show Token" in the panel of the Segment integration you've  created in the [ScopeAI integrations page](https://www.getscopeai.com/integrations). If you haven't yet created a Segment integration on the ScopeAI app, follow these [instructions](http://help.getscopeai.com/integrations/integrating-with-segment) to create one.
+3. In the Segment Settings UI under "API Key" place the Segment token that can be seen after clicking "Show Token" in the panel of the Segment integration you've  created in the [ScopeAI integrations page](https://www.getscopeai.com/integrations){:target="_blank"}. If you haven't yet created a Segment integration on the ScopeAI app, follow these [instructions](http://help.getscopeai.com/integrations/integrating-with-segment){:target="_blank"} to create one.
 
 Data will only display when there are conversations imported into ScopeAI (these must be imported through separate integrations) that have a `userId` or `email` that match with the `userId` or `email` of Segment API calls.
 

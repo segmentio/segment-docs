@@ -4,7 +4,7 @@ title: Experiments by Growthhackers Destination
 redirect_from: '/connections/destinations/catalog/northstar-by-growthhackers/'
 id: 5cc205876b9a830001432515
 ---
-[Experiments by Growthhackers](http://growthhackers.com/software) provides a project management tool for growth teams, allowing companies to create and prioritize ideas, run experiments and gather data to learn upon!
+[Experiments by Growthhackers](http://growthhackers.com/software){:target="_blank"} provides a project management tool for growth teams, allowing companies to create and prioritize ideas, run experiments and gather data to learn upon!
 
 This destination is maintained by Experiments by Growthhackers. For any issues with the destination, [contact the Growthhackers Support team](mailto:tech@growthhackers.com).
 
@@ -28,4 +28,4 @@ analytics.track('Clicked Login Button')
 
 Track calls will be sent to Experiments by Growthhackers as a `track` event.
 
-Once the integration is completed, your events will always be available in your cards, all you have to do is select the ones that best help you validate your hypothesis. For further information and visual guidance of how it's going to look like, check [this article](https://www.notion.so/Integrate-Experiments-with-Segment-77843e36055d4288b1d8c85e1aa5f96e).
+Once the integration is completed, your events will always be available in your cards, all you have to do is select the ones that best help you validate your hypothesis. For further information and visual guidance of how it's going to look like, check [this article](https://www.notion.so/Integrate-Experiments-with-Segment-77843e36055d4288b1d8c85e1aa5f96e){:target="_blank"}.

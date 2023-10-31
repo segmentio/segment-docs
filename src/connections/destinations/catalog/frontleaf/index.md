@@ -27,4 +27,4 @@ analytics.page('Product', 'Shoe');
 analytics.page('Lesson');
 ```
 
-* A custom URL filter (configured for you by Frontleaf) that interprets part of the page path (and/or query parameters) as the interaction type. This option can work well for "object-verb" types of URL schemes, e.g. `/lesson/123/view` and `/lesson/456/view` both get labeled as a `/lesson/view` action (which you can then relabel in the UI). [Contact Frontleaf support](https://www.frontleaf.com/contact/) for assistance with this option.
+* A custom URL filter (configured for you by Frontleaf) that interprets part of the page path (and/or query parameters) as the interaction type. This option can work well for "object-verb" types of URL schemes, e.g. `/lesson/123/view` and `/lesson/456/view` both get labeled as a `/lesson/view` action (which you can then relabel in the UI). [Contact Frontleaf support](https://www.frontleaf.com/contact/){:target="_blank"} for assistance with this option.

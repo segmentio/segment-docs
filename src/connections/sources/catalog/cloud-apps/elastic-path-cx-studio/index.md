@@ -2,12 +2,11 @@
 title: Elastic Path CX Studio Source
 id: NC2jsEkA8Y
 beta: true
-hidden: true
 ---
 
 [Elastic Path CX Studio](https://www.elasticpath.com/products/cx-studio?utm_source=segmentio&utm_medium=docs&utm_campaign=partners){:target="_blank"} enables brands to build and deploy hosted storefronts and shoppable landing pages with dynamic personalization powered by your Segment data, all in a no-code visual editor.
 
-This is an [Event Cloud Source](/docs/sources/#event-cloud-sources){:target="_blank"} that can not only export data into your Segment warehouse but also federate the exported data into your other enabled Segment Destinations.
+This is an [Event Cloud Source](/docs/sources/#event-cloud-sources) that can not only export data into your Segment warehouse but also federate the exported data into your other enabled Segment Destinations.
 
 Elastic Path maintains this source. For any issues with the source, contact the [Elastic Path Support team](https://support.elasticpath.com/hc/en-us){:target="_blank"}.
 
@@ -157,7 +156,7 @@ The property name tables below of the different events list the properties inclu
 | `checkout_id`   | Checkout transaction ID                            |
 | `checkout_step` | Number representing a step in the checkout process |
 
-Note: CX Studio uses properties of these events from the [eCommerce Spec](/docs/connections/spec/ecommerce/v2){:target="_blank"} defined by the Segment doc.
+Note: CX Studio uses properties of these events from the [eCommerce Spec](/docs/connections/spec/ecommerce/v2) defined by the Segment doc.
 
 ## Identification
 

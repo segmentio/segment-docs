@@ -10,8 +10,8 @@ id: 5f3ada4acea48a461353d5af
 Pinterest Ads provides a way to target advertisements on Pinterest to a global audience. Segment's Pinterest Audiences integration allows Engage customers to sync audiences from Engage to Pinterest for better retargeting and higher-performing ads.
 
 For more information about advertising with Pinterest, see:
-- [Pinterest Developers](https://developers.pinterest.com/docs/widgets/getting-started/?)
-- [Pinterest for Business](https://business.pinterest.com/)
+- [Pinterest Developers](https://developers.pinterest.com/docs/widgets/getting-started/?){:target="_blank"}
+- [Pinterest for Business](https://business.pinterest.com/){:target="_blank"}
 
 ## Details
 
