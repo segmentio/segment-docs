@@ -66,6 +66,12 @@ Use-cases for account-level computed traits include:
 > info ""
 > Use SQL traits for complex calculations not supported by computed traits. For example, you would use SQL traits to calculate the number of unique users associated with an account who have logged in during the past month.
 
+### Use account-level SQL traits to associate users to the account
+
+To associate users to an account via SQL traits, we have to return both group_id and user_id in the account level SQL trait - this will fire a group call with the userId and the groupId in question, which is the method that Segment uses to add users to groups in destinations.
+
+There is a limitation on Segment end when a group (account) contains more than one user, the query will return duplicate group_ids (mapped to unique user_ids). Segment won't allow us to return duplicate group_id's in the Group(account level) SQL trait., So we can't map the users to the accounts on many-to-many situation.
+
 ### Use account-level computed and SQL traits as account-level audience conditions
 
 Once created, you can connect account-level computed and SQL traits to downstream destinations. You can also use them as conditions in account-level audiences, enabling you to build audiences based on the set of events triggered by all users associated with a given account.
