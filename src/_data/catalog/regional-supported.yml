@@ -225,6 +225,15 @@ sources:
       - us
     endpoints:
       - us
+  - id: NC2jsEkA8Y
+    display_name: Elastic Path CX Studio
+    hidden: false
+    slug: elastic-path-cx-studio
+    url: connections/sources/catalog/cloud-apps/elastic-path-cx-studio
+    regions:
+      - us
+    endpoints:
+      - us
   - id: mazatB39IS
     display_name: Facebook Ads
     hidden: false
@@ -634,15 +643,6 @@ sources:
     hidden: false
     slug: nudgespot
     url: connections/sources/catalog/cloud-apps/nudgespot
-    regions:
-      - us
-    endpoints:
-      - us
-  - id: o9OyD6xsVJ
-    display_name: OneSignal
-    hidden: false
-    slug: onesignal
-    url: connections/sources/catalog/cloud-apps/onesignal
     regions:
       - us
     endpoints:
