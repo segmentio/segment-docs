@@ -17,7 +17,9 @@ HubSpot is an all-in-one marketing tool that helps attract new leads and convert
 When you use the HubSpot Cloud Mode (Actions) destination, Segment sends your data to [HubSpot's REST API](https://developers.hubspot.com/docs/api/overview){:target="_blank"}.
 
 > warning ""
-> The **Upsert Company** action is not compatible with the Mapping Tester on the mappings page if Associate Contact is set to **Yes**. As a result, Segment recommends using the Event Tester or other tools to test and troubleshoot creating and updating companies in HubSpot. Please note, for the company to contact association to work, you are required to trigger an Upsert Contact action before triggering an Upsert Company action.
+> The **Upsert Company** action is not compatible with the Mapping Tester on the mappings page if Associate Contact is set to **Yes**. As a result, Segment recommends using the Event Tester or other tools to test and troubleshoot creating and updating companies in HubSpot. 
+>
+> Note that for the company to contact association to work, you are required to trigger an Upsert Contact action before triggering an Upsert Company action. Contacts created with batch endpoint can not be associated to a Company from the Upsert Company Action.
 
 > warning ""
 > **Behavioral Events (Legacy)** are only supported with [Hubspot Classic Destination](/docs/connections/destinations/catalog/hubspot/).
@@ -34,13 +36,10 @@ HubSpot Cloud Mode (Actions) provides the following benefits over the classic Hu
 - **Support for custom behavioral events**. Send [custom behavioral events](https://developers.hubspot.com/docs/api/analytics/events){:target="_blank"} and event properties to HubSpot.
 - **Create records in custom objects**. Use your Segment events to create records in any standard or custom object in your HubSpot account.
 
+> note ""
+> A HubSpot Enterprise Marketing Hub account is required to send Custom Behavioral Events.
 
 ## Getting started
-
-> info ""
-> Before you begin, you need to generate a Private App in HubSpot. To generate a Private App from the HubSpot dashboard, navigate to **Integrations > Private Apps**. 
->
-> Segment requires the following scopes: `business-intelligence`, `crm.objects.contacts.read`, `crm.objects.contacts.write`, `crm.schemas.contacts.read`, `crm.objects.companies.read`, `crm.objects.companies.write`, and `crm.schemas.companies.read`. For more information, see HubSpot's [Private Apps](https://developers.hubspot.com/docs/api/private-apps){:target="_blank"} article.
 
 1. From the Segment web app, navigate to **Connections > Catalog**.
 2. Search for **HubSpot Cloud Mode (Actions)** in the Destinations Catalog, and select the destination.
@@ -74,12 +73,11 @@ Segment provides prebuilt mappings for contacts and companies. If there are othe
 ### How do I send `Page` events to HubSpot?
 The [Track Page View action](/docs/connections/destinations/catalog/actions-hubspot-web/#track-page-view) is only available in [HubSpot Web (Actions) destination](/docs/connections/destinations/catalog/actions-hubspot-web/). As a workaround, with HubSpot Cloud Mode (Actions) destination, you can use the [Custom Behavioral Event](/docs/connections/destinations/catalog/actions-hubspot-cloud/#send-custom-behavioral-event) to send Page events to Hubspot. You'll need to [follow Hubspot's instructions](https://knowledge.hubspot.com/analytics-tools/create-custom-behavioral-events-with-the-code-wizard){:target="_blank"} to create a custom behavioral event for `Page Viewed` in HubSpot.
 
-
 ### Why aren't my custom behavioral events appearing in HubSpot?
 HubSpot has several limits for custom behavioral events, including a limit on the number of event properties per event. Each event can contain data for up to 50 properties. If this limit is exceeded, the request will fail. See [HubSpot documentation](https://knowledge.hubspot.com/analytics-tools/create-custom-behavioral-events#define-the-api-call){:target="_blank"} for other limits.
 
-> note ""
-> A HubSpot Enterprise Marketing Hub account is required to send Custom Behavioral Events.
+### How do I resolve a `403` error for custom behavioral events?
+`403` errors indicate that Segment is unable to send your event to HubSpot because the account connected doesn't have sufficient permissions. If you're observing `403` errors for Custom Behavioral Events, ensure that your HubSpot account is a `HubSpot Enterprise Marketing Hub` account. After upgrading your account to `Enterprise Marketing Hub`, **Reauthorize** from the **Settings** page of your destination to resolve the `403` errors.
 
 ### Why can't I set an entire object for the Other properties field?
 

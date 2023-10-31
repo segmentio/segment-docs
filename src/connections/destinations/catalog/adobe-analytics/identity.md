@@ -20,15 +20,15 @@ The Timestamp destination settings are:
 
 ## Analytics.js - Device Mode
 
-If you're using Analytics.js in device-mode, Segment "wraps" the Adobe libraries. In this configuration, Segment sends Events directly from the client using the Adobe Analytics [`Appmeasurement.js` library](https://docs.adobe.com/content/help/en/analytics/implementation/js/overview.html). For more information on choosing a connection mode see our section on [Choosing between Device-mode and Cloud-mode](/docs/connections/destinations/catalog/adobe-analytics/#choosing-between-device-mode-and-cloud-mode). In this section we will discuss how identity resolution is handled if you are using Analytics.js in device-mode.
+If you're using Analytics.js in device-mode, Segment "wraps" the Adobe libraries. In this configuration, Segment sends Events directly from the client using the Adobe Analytics [`Appmeasurement.js` library](https://docs.adobe.com/content/help/en/analytics/implementation/js/overview.html){:target="_blank”}. For more information on choosing a connection mode see our section on [Choosing between Device-mode and Cloud-mode](/docs/connections/destinations/catalog/adobe-analytics/#choosing-between-device-mode-and-cloud-mode). In this section we will discuss how identity resolution is handled if you are using Analytics.js in device-mode.
 
 You can enable **Drop Visitor ID** from the Segment app to prevent Adobe from creating a new user profile when you set `window.s.visitorID` with a custom value. However if you're only using Analytics.js to send data to Adobe, this can make it difficult to combine anonymous and identified users inside your reports.
 
 Adobe Analytics counts every "effective" visitor ID as a *unique* visitor. Unfortunately, Segment cannot to alias two effective IDs on your behalf, either implicitly or explicitly.
 
-To understand this, it's important to first understand what Adobe Analytics means by **"effective" visitor ID identifiers**. We recommend reading [the Adobe documentation on connecting users across devices](https://docs.adobe.com/content/help/en/analytics/implementation/js/xdevice-visid/xdevice-connecting.html).
+To understand this, it's important to first understand what Adobe Analytics means by **"effective" visitor ID identifiers**. We recommend reading [the Adobe documentation on connecting users across devices](https://docs.adobe.com/content/help/en/analytics/implementation/js/xdevice-visid/xdevice-connecting.html){:target="_blank”}.
 
-Analytics.js automatically generates an Adobe Analytics [`s_vi` cookie value](https://docs.adobe.com/content/help/en/core-services/interface/ec-cookies/cookies-analytics.html) which it uses as a visitor ID until you `identify` your users. If you provide your Marketing Cloud ID Service Organization ID, then Segment sets the Experience Cloud ID and uses that instead.
+Analytics.js automatically generates an Adobe Analytics [`s_vi` cookie value](https://docs.adobe.com/content/help/en/core-services/interface/ec-cookies/cookies-analytics.html){:target="_blank”} which it uses as a visitor ID until you `identify` your users. If you provide your Marketing Cloud ID Service Organization ID, then Segment sets the Experience Cloud ID and uses that instead.
 
 Once you `identify` your user, Segment sets the `visitorId` variable to your `userId`. This effectively creates a new user, which *does* have unique user implications. However, based on a thorough reading of the Adobe documentation and discussion with many customers, we believe this is the best practice because it allows you to seamlessly track logged-in users across devices.
 
@@ -47,7 +47,7 @@ If you're using the Experience Cloud ID, you should accept this and use the Segm
 > note ""
 > **Note**: If you use the destination-specific `integration` object to pass the `visitorId` in your Segment `page` or `track` events, then the `visitorId` persists on Page or Track calls that occur after an Identify call. You can use this to override the Segment setting the `visitorId` variable to your `userId` after an `identify` call.
 
-We know this is daunting territory, so don't hesitate to [contact us directly for guidance](https://segment.com/help/contact/).
+We know this is daunting territory, so don't hesitate to [contact us directly for guidance](https://segment.com/help/contact/){:target="_blank”}.
 
 
 ## No Fallbacks for VisitorId Setting - Cloud Mode Only

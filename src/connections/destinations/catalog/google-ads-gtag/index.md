@@ -92,3 +92,14 @@ To figure out if an event is flagged for conversion, follow these steps:
 ## Multiple Google Ads Accounts
 
 If you are an enterprise that uses multiple Google Ads Gtag accounts (usually managed by various third party agencies) you can override the top level default Google Conversion ID at the event level by entering it into the settings.
+
+## Remarketing Support 
+
+Google offers two primary types of remarketing: 
+
+* [Standard Remarketing](https://support.google.com/google-ads/answer/2453998){:target="_blank"} : allows advertisers to show targeted ads to users who have previously visited their website. Advertisers can create custom remarketing lists based on user behavior, such as pages viewed or specific actions taken on the website.
+* [Dynamic Remarketing](https://support.google.com/google-ads/answer/3103357){:target="_blank"} : takes personalized advertising a step further by showing users specific products or services they viewed on an advertiser's website. This type of remarketing is particularly beneficial for e-commerce businesses as it displays dynamic product ads to previous visitors, reminding them of products they showed interest in.
+
+> warning "Google Ads (Gtag) Destination does not support Dynamic Remarketing"
+> Segment's Google Ads (Gtag) Destination only supports Standard Remarketing. 
+

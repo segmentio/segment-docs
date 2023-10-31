@@ -8,29 +8,29 @@ The LTV calculation is not straightforward for e-commerce businesses, since futu
 
 This guide shows how to calculate forward-looking LTV for non-contractual businesses using SQL and Excel. This analytical approach allows you to accurately rank your highest value customers, as well as predict their future purchase sizes to help focus your marketing efforts.
 
-In this guide, we assume that you're using the tracking scheme we described in [How to implement an e-commerce tracking plan](/docs/connections/spec/ecommerce-tracking-plan/) and are storing data in a [Segment Warehouse](https://segment.com/warehouses).
+This guide assumes you're using the tracking schema described in [How to implement an e-commerce tracking plan](/docs/connections/spec/ecommerce-tracking-plan/) and are storing data in a [Segment Warehouse](https://segment.com/warehouses){:target="_blank"}.
 
 [Talk to a product specialist](https://segment.com/contact/sales) to learn how companies like Warby Parker and Crate & Barrel use a data warehouse to increase engagement and sales.
 
 ## Calculating LTV: Buy 'Til You Die
 
-In a non-contractual setting, we can't use a simple retention rate to determine when customers terminate their relationship. This is because the retention rate is a linear model that doesn't accurately predict whether a customer has ended her relationship with the company or is merely in the midst of a long hiatus between transactions.
+In a non-contractual setting, you can't use a simple retention rate to determine when customers terminate their relationship. This is because the retention rate is a linear model that doesn't accurately predict whether a customer has ended her relationship with the company or is merely in the midst of a long hiatus between transactions.
 
 The most accurate non-contractual LTV model, named "Buy Til You Die" ("BTYD"), focuses on calculating the discounted estimation of future purchases based on recency of last purchase, frequency of purchases, and average purchase value. This model uses non-linear modeling to predict whether or not a user is "alive" or "dead" given historic transactions to forecast future probability and size of purchases.
 
 Since LTV is a critical metric for e-commerce companies, it's important that this model, instead of simpler linear formula that is based on retention rates, is used for it's calculation.
 
-We'll first use SQL to build the necessary table, which will be exported as a CSV and opened in Google Sheets. Then, we'll use Solver to estimate the predictive model parameters, which ultimately calculate the future purchases of each customer. Finally, the LTV calculation is simply the net present value of each customer's future purchases. We will rank them by LTV, then find behavioral patterns across our top 10 or 50 customers to figure out how best to target or retain this cohort.
+Use SQL to build the necessary table, which will be exported as a CSV and opened in Google Sheets. Then, use Solver to estimate the predictive model parameters, which ultimately calculates the future purchases of each customer. Finally, the LTV calculation is simply the net present value of each customer's future purchases. Rank them by LTV, then find behavioral patterns across the top 10 or 50 customers to figure out how best to target or retain this cohort.
 
-**Recency, Frequency, and Average Size**
+**Recency, frequency, and average size**
 
-As a growth analyst at our fictitious on-demand artisanal toast company, Toastmates, we want to know which customers are worth more to the business than others. Most important, we'd like to understand what similarities these customers all have to help guide our marketing team in their efforts.
+As a growth analyst at the fictitious on-demand artisanal toast company, Toastmates, it's important to know which customers are worth more to the business than others. Most important, you should understand what similarities these customers all have to help guide the marketing team in their efforts.
 
-The first step in creating the BTYD model is to get historic purchasing data of at least a month. In our analysis, we'll use data from the past six months. The data must include the columns `userId` (email is cool, too, which we'll use in our example below), number of purchases within the specified time window, days since last purchase, and days since first purchase.
+The first step in creating the BTYD model is to get historic purchasing data of at least a month. In your analysis, you can use data from the past six months. The data must include the columns `userId` (email is fine too), number of purchases within the specified time window, days since last purchase, and days since first purchase.
 
-Then, we'll use [this Google Sheet](https://docs.google.com/spreadsheets/d/1GteY4X443TLaMfJWvEiC4hHVdLyHiGaA5aGgHCYkmQM/edit#gid=0), which provides all of the complex calculations for estimating the model parameters, as well as forecasting the future sales of each customer. This sheet is View Only, so be sure to copy it entirely so you can use it.
+Then, use [this Google Sheet](https://docs.google.com/spreadsheets/d/1GteY4X443TLaMfJWvEiC4hHVdLyHiGaA5aGgHCYkmQM/edit#gid=0), which provides all of the complex calculations for estimating the model parameters, as well as forecasting the future sales of each customer. This sheet is View Only, so be sure to copy it entirely so you can use it.
 
-To retrieve a table with the right columns for analysis, let's use the follow SQL query:
+To retrieve a table with the right columns for analysis, use the follow SQL query:
 
 ```sql
     with
@@ -115,27 +115,27 @@ After Solver runs, cells B1:B4 will be updated to represent the model's estimate
 
 The model requires four pieces of information about each customer's past purchasing history: her "recency" (how many "time units" her last transaction occurred), "frequency" (how many transactions she made over the specified time period), the length of time over which we have observed her purchasing behavior, and the average transaction size.
 
-In our example, we have the purchasing behavior data over the course of six months with each unit of time being a single day.
+In the example, you have the purchasing behavior data over the course of six months with each unit of time being a single day.
 
-We'll apply a both a beta-geometric and a negative binomial distribution ("BG/NBD") to these inputs and then use Excel to estimate the model parameters (an alternative would be the Pareto/NBD model). These probability distributions are used because they accurately reflect the underlying assumptions of the aggregation of realistic individual buying behavior. ([Learn more about these models](http://www.brucehardie.com/notes/021/palive_for_BGNBD.pdf)).
+You can apply a both a beta-geometric and a negative binomial distribution ("BG/NBD") to these inputs and then use Excel to estimate the model parameters (an alternative would be the Pareto/NBD model). These probability distributions are used because they accurately reflect the underlying assumptions of the aggregation of realistic individual buying behavior. ([Learn more about these models](http://www.brucehardie.com/notes/021/palive_for_BGNBD.pdf)).
 
-After estimating the model parameters, we'll predict a particular customer's conditional expected transactions by applying the same historic purchasing data to Bayes' Theorem, which describes the probability of an event based on prior knowledge of conditions related to the event.
+After estimating the model parameters, you can predict a particular customer's conditional expected transactions by applying the same historic purchasing data to Bayes' Theorem, which describes the probability of an event based on prior knowledge of conditions related to the event.
 
 **Estimating the model parameters**
 
-The top left part of the first sheet represent the parameters of the BG/NBD model that must be fitted to the historic data you paste in. These four parameters (r, alpha, a, and b) will have "starting values" of 1.0, since we'll use Excel Solver to determine their actual values.
+The top left part of the first sheet represent the parameters of the BG/NBD model that must be fitted to the historic data you paste in. These four parameters (r, alpha, a, and b) will have "starting values" of 1.0, since you'll use Excel Solver to determine their actual values.
 
 The values in columns F to J represent variables in the BG/NBD model. Column F, in particular, defines a single customer's contribution to a the overarching function, on which we'll use Solver to determine the parameters. In statistics, this function is called the likelihood function, which is a function of the parameters of a statistical model.
 
-In this particular case, this function is the log-likelihood function, which is B5, as calculated as the sum of all cells in column F. Logarithmic functions are easier to work with, since they achieve its maximum value at the same points as the function itself. With Solver, we'll find the maximum value of B5 given the parameters in B1:B4.
+In this particular case, this function is the log-likelihood function, which is B5, as calculated as the sum of all cells in column F. Logarithmic functions are easier to work with, since they achieve its maximum value at the same points as the function itself. With Solver, find the maximum value of B5 given the parameters in B1:B4.
 
-With the new parameter estimates, we can now predict a customer's future purchases.
+With the new parameter estimates, you can now predict a customer's future purchases.
 
 **Predicting a customer's future purchases**
 
-In the next sheet, we apply Bayes' Theorem to the historic purchasing information to forecast the quantity of transactions in the next period. We'll then multiply the expected quantity with the average transaction size to calculate the expected revenue for that period, which we can extrapolate as an annuity, of which we can find the present discounted value (assuming discount rate is 10%).
+In the next sheet, you can apply Bayes' Theorem to the historic purchasing information to forecast the quantity of transactions in the next period. Multiply the expected quantity with the average transaction size to calculate the expected revenue for that period, which you can extrapolate as an annuity, of which you can find the present discounted value (assuming discount rate is 10%).
 
-Central to the Bayes' Theorem formula is the Gaussian hypergeometric function, which is defined by "2F1" in column M. We evaluate the hypergeometric function as if it were a truncated series: by adding terms to the series until each term is small enough that it becomes trivial. In the spreadsheet, we sum the series to it's 50th term.
+Central to the Bayes' Theorem formula is the Gaussian hypergeometric function, which is defined by "2F1" in column M. Evaluate the hypergeometric function as if it were a truncated series: by adding terms to the series until each term is small enough that it becomes trivial. In the spreadsheet, we sum the series to it's 50th term.
 
 The rest of the variables in Bayes' Theorem is in columns I through L, which use the inputs from the customer's historic purchasing information, as well as the model parameter estimates as determined from Solver (cells B1:B4).
 
@@ -188,7 +188,7 @@ This above query for user whose `user_id` is `"46X8VF96G6"` returns the below ta
 
 At Toastmates, most of the highest forward-looking expected LTV customers share one thing in common: averaging two orders per month with an average purchase size of $20.
 
-With that in mind, we can define a behavioral cohort in our email tool, Customer.io, as well as create a trigger workflow so we can send an email offer to these customers.
+With that in mind, you can define a behavioral cohort in our email tool, Customer.io, as well as create a trigger workflow so we can send an email offer to these customers.
 
 [Learn how to use email tools to target this cohort of high value customers.](https://segment.com/docs/guides/how-to-guides/forecast-with-sql//)
 

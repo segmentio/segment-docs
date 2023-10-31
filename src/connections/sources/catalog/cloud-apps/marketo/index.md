@@ -3,19 +3,16 @@ title: Marketo Source
 rewrite: true
 source-type: object
 strat: adobe
-beta: true
 id: VOXa199Bdm
 ---
 <!-- Marketo is listed as an object source, but doesn't appear in our configapi source catalog, so leave the "source-type" set here -->
 
 
-[Marketo](https://www.marketo.com/) is a leader in marketing automation. Use the Marketo source to load your campaigns, emails, leads and other collections into your data warehouse.
+[Marketo](https://www.marketo.com/){:target="_blank"} is a leader in marketing automation. Use the Marketo source to load your campaigns, emails, leads, and other collections into your data warehouse.
 
-This will allow you to write SQL to analyze your analyze your email marketing campaigns ROI, or join your email data to other data sources like web and mobile events, Salesforce, and Zendesk to tie nurture emails to re-activation rates in your app.
+This will allow you to write SQL to analyze your email marketing campaigns ROI, or join your email data to other data sources like web and mobile events, Salesforce, and Zendesk to tie nurture emails to re-activation rates in your app.
 
-{% include content/beta-note.md %}
-
-## Getting Started
+## Getting started
 
 ### Permissions
 
@@ -33,18 +30,18 @@ You will need Admin permissions to your Marketo account.
 > In Marketo's settings, the Lead Activity Type IDs field is labeled as optional, but is required to see the `lead_activities` table. Segment recommends that you complete this field to see all available data.
 
 
-### Configure your Marketo Source
+### Configure your Marketo source
 
-1. Open Marketo
-2. Go to Admin > Munchkin to find your Munchkin Account ID
+1. Open Marketo.
+2. Go to **Admin > Munchkin** to find your Munchkin Account ID.
 ![Screenshot of the Tracking Code section of Marketo's Munchkin page.](images/Image2018-04-30at5.28.54PM.png)
 3. Go to Admin > LaunchPoint
-  a. If you don't already have a REST service setup, follow [these steps](http://developers.marketo.com/rest-api/custom-services/).
+  a. If you don't already have a REST service setup, follow [these steps](http://developers.marketo.com/rest-api/custom-services/){:target="_blank"}.
   b. Then, copy the "Client ID" and "Client Secret" parameters.
   ![Screenshot of the Details section of the LaunchPoint page.](images/Image2018-04-30at5.29.32PM.png)
   c. Paste the "Client ID" and "Client Secret" into the Segment Marketo source settings.
 
-Data should start flowing into your Warehouse in the next few hours.
+Data should start flowing into your warehouse in the next few hours.
 
 
 ## Components
@@ -56,7 +53,7 @@ The Marketo source is built with a sync component, which means Segment makes req
 
 The sync component uses an upsert API, so the data in your warehouse loaded using sync will reflect the latest state of the corresponding resource in Marketo. For example, if `first_name` goes from `Jess` to `Jessica` between syncs, on its next sync that field will be `Jessica`.
 
-The source syncs and warehouse syncs are independent processes. Source runs pull your data into the Segment Hub, and warehouse runs flush that data to your warehouse. Sources will sync with Segment every 3 hours. Depending on your Warehouses plan, Segment pushes the Source data to your warehouse on the interval associated with your billing plan.
+The source syncs and warehouse syncs are independent processes. Source runs pull your data into the Segment Hub, and warehouse runs flush that data to your warehouse. Sources will sync with Segment every three hours. Depending on your Warehouses plan, Segment pushes the Source data to your warehouse on the interval associated with your billing plan.
 
 ## Collections
 
@@ -78,7 +75,7 @@ Collections are the groupings of resources Segment pulls from your source. In yo
 | `segments`                      | object | Segments inside a given segmentation.                                       |
 
 
-## Collection Properties
+## Collection properties
 
 ### Leads
 
@@ -133,7 +130,7 @@ Collections are the groupings of resources Segment pulls from your source. In yo
 | `updated_at`    | Date Email last updated                                     |
 
 
-### Landing Pages
+### Landing pages
 
 | Property Name    | Description                                                       |
 | ---------------- | ----------------------------------------------------------------- |
@@ -172,7 +169,7 @@ Collections are the groupings of resources Segment pulls from your source. In yo
 | `updated_at`     | Date List last updated  |
 
 
-### Lead Activities
+### Lead activities
 
 | Property Name              | Description                                  |
 | -------------------------- | -------------------------------------------- |
@@ -186,7 +183,7 @@ Collections are the groupings of resources Segment pulls from your source. In yo
 | `activity_date`              | Datetime of the activity type                |
 
 
-### Lead Activity Attributes
+### Lead activity attributes
 
 | Property Name              | Description                                                                             |
 | -------------------------- | --------------------------------------------------------------------------------------- |
@@ -198,7 +195,7 @@ Collections are the groupings of resources Segment pulls from your source. In yo
 | `value`                      | value of the Attribute                                                                  |
 
 
-### Lead Activity Types
+### Lead activity types
 
 | Property Name               | Description                    |
 | --------------------------- | ------------------------------ |
@@ -209,7 +206,7 @@ Collections are the groupings of resources Segment pulls from your source. In yo
 | `primary_attribute_data_type` | Type of the primary attribute  |
 
 
-### Lead Activity Type Attributes
+### Lead activity type attributes
 
 | Property Name    | Description                                              |
 | ---------------- | -------------------------------------------------------- |
@@ -273,7 +270,7 @@ Collections are the groupings of resources Segment pulls from your source. In yo
 
 ## Adding Destinations
 
-Currently, Warehouses are the only supported destination for object-cloud sources
+Currently, Warehouses are the only supported destination for object-cloud sources.
 
 
 ## FAQs

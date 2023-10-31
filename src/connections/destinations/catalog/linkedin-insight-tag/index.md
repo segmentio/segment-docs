@@ -17,11 +17,11 @@ Here's how to get started with the LinkedIn Insight Tag!
 ### **1. Log into the LinkedIn Campaign Manager.**
 
 If you don't have a LinkedIn business account, sign up for one now.
-Once that's complete, go to the [LinkedIn Marketing Solutions page](https://business.linkedin.com/marketing-solutions/ads). From the **Advertising** dropdown menu, select **Sign in to Campaign Manager**.
+Once that's complete, go to the [LinkedIn Marketing Solutions page](https://business.linkedin.com/marketing-solutions/ads){:target="_blank"}. From the **Advertising** dropdown menu, select **Sign in to Campaign Manager**.
 
 Click the account name for which you'd like to set up website retargeting, conversion tracking, or website demographics.
 
-### **2. [Create an Ad Account](https://www.linkedin.com/ad/accounts).**
+### **2. [Create an Ad Account](https://www.linkedin.com/ad/accounts){:target="_blank"}.**
 
 ![A screenshot of the Linkedin Campaign manager accounts page.](images/w53Sm6Jpg3.png)
 

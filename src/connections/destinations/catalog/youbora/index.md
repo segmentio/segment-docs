@@ -74,9 +74,8 @@ analytics.track('Video Playback Seek Completed');
 
 ### Video Playback Buffer Started/Completed
 
-When the video content buffers during playback, use the [Video
-Playback Buffer Started](/docs/connections/spec/video/#playback-events) and [Video Playback
-Buffer Completed](/docs/connections/spec/video/#playback-events) events. Segment maps the
+When the video content buffers during playback, use the [Video Playback Buffer Started](/docs/connections/spec/video/#playback-events) and 
+[Video Playback Buffer Completed](/docs/connections/spec/video/#playback-events) events. Segment maps the
 properties from these events to the following Youbora video metadata fields:
 
 **Example**

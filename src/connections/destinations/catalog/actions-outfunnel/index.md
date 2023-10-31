@@ -9,7 +9,7 @@ hidden: false
 ---
 {% include content/plan-grid.md name="actions" %}
 
-[Outfunnel](https://outfunnel.com/product-led-sales-platform/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) is a product-led sales platform that syncs product usage insights to CRMs like Pipedrive so your salespeople can easily find product-qualified leads and close more revenue.
+[Outfunnel](https://outfunnel.com/product-led-sales-platform/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners){:target="_blank”} is a product-led sales platform that syncs product usage insights to CRMs like Pipedrive so your salespeople can easily find product-qualified leads and close more revenue.
 
 This destination is maintained by Outfunnel. For any issues with the destination, [contact their Support team](mailto:support@outfunnel.com).
 

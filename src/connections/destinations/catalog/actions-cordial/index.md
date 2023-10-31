@@ -7,7 +7,7 @@ hide-dossier: true
 
 {% include content/plan-grid.md name="actions" %}
 
-[Cordial](https://cordial.com/) is an all-in-one marketing platform that enables brands to collect, normalize, and activate real-time data from anywhere in your technology stack to create and deliver tailored messages that flex and adapt to changing customer signals.
+[Cordial](https://cordial.com/){:target="_blank”} is an all-in-one marketing platform that enables brands to collect, normalize, and activate real-time data from anywhere in your technology stack to create and deliver tailored messages that flex and adapt to changing customer signals.
 
 > info "Good to know"
 > This page is about the [Actions-framework](/docs/connections/destinations/actions/) Cordial Segment destination. There's also a page about the [non-Actions Cordial destination](/docs/connections/destinations/catalog/cordialio/). Both of these destinations receive data from Segment.

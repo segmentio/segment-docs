@@ -1,4 +1,3 @@
-{% assign sources = site.data.catalog.regional-supported.sources | where: "hidden", false%}
 {% assign destinations = site.data.catalog.destinations.items %}
 {% assign warehouses = site.data.catalog.regional-supported.warehouses %}
 
@@ -6,7 +5,6 @@
   placeholder="Search for an integration..">
 <div class="button-container" id="btnContainer">
   <a href="#" id="all" class="button button-link active">All</a>
-  <a href="#" id="source" class="button button-link">Sources</a>
   <a href="#" id="destination" class="button button-link">Destinations</a>
   <a href="#" id="warehouse" class="button button-link">Warehouses</a>
 </div>
@@ -21,24 +19,6 @@
     </tr>
   </thead>
   <tbody>
-    <tr class="settingRow source ">
-      <td colspan="4" style="font-weight: bold; background-color:fafbff;font-size: 10px; text-transform: uppercase;"
-        id="settingRow">
-        Sources</td>
-    </tr>
-    {% for source in sources %}
-    <tr class="settingRow source" id="settingRow">
-      <td><a href="/docs/{{source.url}}">{{source.display_name}}</a></td>
-      <td>{% if source.regions contains "us" %}<img class="inline" src="/docs/images/supported.svg" />{% else %}<img
-          alt="" class="inline" src="/docs/images/unsupported.svg" />{% endif %}</td>
-      <td>{% if source.regions contains "eu" and source.endpoints contains "us" %}<img class="inline"
-          src="/docs/images/supported.svg" />{% else %}<img alt="" class="inline"
-          src="/docs/images/unsupported.svg" />{% endif %}</td>
-      <td> {% if source.regions contains "eu" and source.endpoints contains "eu" %}<img class="inline"
-          src="/docs/images/supported.svg" />{% else %}<img alt="" class="inline"
-          src="/docs/images/unsupported.svg" />{% endif %}</td>
-    </tr>
-    {% endfor %}
     <tr class="settingRow destination">
       <td colspan="4" style="font-weight: bold; background-color:fafbff;font-size: 10px; text-transform: uppercase;"
         id="settingRow">

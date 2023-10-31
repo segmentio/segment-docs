@@ -4,14 +4,14 @@ rewrite: true
 strat: facebook
 id: 5661eb58e954a874ca44cc07
 ---
-[Facebook Pixel](https://developers.facebook.com/docs/facebook-pixel) lets you measure and optimize the performance of your Facebook Ads, making conversion tracking, optimization and remarketing easier than ever. The Facebook Pixel Destination is open-source. You can browse the code [on GitHub](https://github.com/segment-integrations/analytics.js-integration-facebook-pixel){:target="_blank"}.
+[Facebook Pixel](https://developers.facebook.com/docs/facebook-pixel){:target="_blank"} lets you measure and optimize the performance of your Facebook Ads, making conversion tracking, optimization and remarketing easier than ever. The Facebook Pixel Destination is open-source. You can browse the code on [GitHub](https://github.com/segment-integrations/analytics.js-integration-facebook-pixel){:target="_blank"}.
 
 > warning ""
 > Facebook deprecated the modular Ads For Websites suite, which previously comprised Facebook Custom Audiences and Facebook Conversion Tracking. Segment consolidated those two destinations into this new and improved Facebook Pixel destination.
 
 
 
-**Use Cases**
+**Use cases**
 
 * [Increase conversions by retargeting shopping cart abandoners on Facebook](https://segment.com/recipes/abandon-cart-retargeting-facebook/){:target="_blank"}
 
@@ -19,13 +19,13 @@ id: 5661eb58e954a874ca44cc07
 ## Other Facebook Destinations supported by Segment
 This page is about the **Facebook Pixel** destination. For documentation on other Facebook destinations, see the pages linked below.
 
-| **Facebook Destination**                                                                                    | Supported by Engage |
-| ----------------------------------------------------------------------------------------------------------- | ------------------- |
-| **[Facebook App Events](/docs/connections/destinations/catalog/facebook-app-events/)**                      | Yes                 |
-| **[Facebook Offline Conversions](/docs/connections/destinations/catalog/facebook-offline-conversions/)**    | Yes                 |
-| **[Facebook Pixel](/docs/connections/destinations/catalog/facebook-pixel/)**                                | No                  |
-| **[Facebook Custom Audiences](/docs/connections/destinations/catalog/personas-facebook-custom-audiences/)** | Yes                 |
-| **[Facebook Conversions API](/docs/connections/destinations/catalog/actions-facebook-conversions-api/)**    | Yes                 |
+| **Facebook Destination**                                                                                                      | Supported by Engage |
+| ----------------------------------------------------------------------------------------------------------------------------- | ------------------- |
+| **[Facebook App Events](/docs/connections/destinations/catalog/facebook-app-events/){:target="_blank"}**                      | Yes                 |
+| **[Facebook Offline Conversions](/docs/connections/destinations/catalog/facebook-offline-conversions/){:target="_blank"}**    | Yes                 |
+| **[Facebook Pixel](/docs/connections/destinations/catalog/facebook-pixel/){:target="_blank"}**                                | No                  |
+| **[Facebook Custom Audiences](/docs/connections/destinations/catalog/personas-facebook-custom-audiences/){:target="_blank"}** | Yes                 |
+| **[Facebook Conversions API](/docs/connections/destinations/catalog/actions-facebook-conversions-api/){:target="_blank"}**    | Yes                 |
 
 
 ## Getting started
@@ -233,5 +233,11 @@ Facebook's conversion reports count view-through conversions as well as click-th
 Facebook counts conversions per person, as opposed to Google Analytics which counts per browser cookie session (unless you're using [Google Analytics User-ID](/docs/connections/destinations/catalog/google-analytics/#user-id)).
 
 If someone saw or clicked on your ad on a mobile phone then later came back directly to purchase on a desktop machine, Google Analytics wouldn't know that this was the same person, but Facebook would. In that scenario, Google Analytics would count two unique visits with a conversion last attributed to a direct visit on desktop. Facebook would count one conversion with the conversion properly attributed to the last ad click/view on mobile.
+
+### Are Facebook Pixel events reflected in Facebook Ads Manager in real-time?
+
+
+Facebook Pixel events typically don't display in real-time within the Facebook Ads Manager or other reporting interfaces. While Facebook Pixel events are tracked in near real-time, there might be some delay before you see them in your reporting. Visit [Facebook's documentation](https://www.facebook.com/business/help/147965221941551){:target="_blank"} to learn more. 
+
 
 {% include content/client-side-script-unverified.md %}

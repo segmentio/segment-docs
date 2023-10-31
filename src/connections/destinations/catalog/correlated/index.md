@@ -14,7 +14,7 @@ This destination is maintained by Correlated. For any issues with the destinatio
 
 ### Connect with OAuth
 1. Log in to the Correlated application. 
-2. Go to [Correlated integrations](https://app.getcorrelated.com/integrations) and select the Segment integration.
+2. Go to [Correlated integrations](https://app.getcorrelated.com/integrations){:target="_blank"} and select the Segment integration.
 3. Click **Connect to Segment** to connect with OAuth. 
 4. Select the relevant Sources that you want to include (Correlated recommends that you include your website and application)
 
@@ -22,7 +22,7 @@ This destination is maintained by Correlated. For any issues with the destinatio
 1. From the Destinations catalog page in the Segment App, click **Add Destination**.
 2. Search for "Correlated" in the Destinations Catalog, and select the "Correlated" destination.
 3. Choose which Source should send data to the "Correlated" destination.
-4. Go to [Correlated integrations](https://app.getcorrelated.com/integrations) and click on the "Segment" integration.
+4. Go to [Correlated integrations](https://app.getcorrelated.com/integrations){:target="_blank"} and click on the "Segment" integration.
 5. Copy the "Segment API key".
 6. Enter the "Segment API Key" in the "Correlated" destination settings in Segment.
 

@@ -5,7 +5,7 @@ id: 6447ca8bfaa773a2ba0777a0
 
 {% include content/plan-grid.md name="actions" %}
 
-[Tiktok's Offline Events API](https://ads.tiktok.com/marketing_api/docs?id=1758049779688450) helps advertisers measure how TikTok ads result in offline customer actions, such as in-store purchases or offline subscriptions, purchases and more. Attributing online and offline events is an important step for advertisers to measure omni-channel results from their campaigns. 
+[Tiktok's Offline Events API](https://ads.tiktok.com/marketing_api/docs?id=1758049779688450){:target="_blank”} helps advertisers measure how TikTok ads result in offline customer actions, such as in-store purchases or offline subscriptions, purchases and more. Attributing online and offline events is an important step for advertisers to measure omni-channel results from their campaigns. 
 
 **Benefits**
 - **Measure how TikTok ads influence offline conversions.** Learn what online strategies lead to better Brick & Mortar sales, subscription sign-ups or leads. 
@@ -42,7 +42,7 @@ After setting up the Destination, four mappings will be enabled by default. You 
 {% include components/actions-fields.html %}
 
 ## Acess Token & Event Set ID
-Please refer to the [documentation](https://ads.tiktok.com/marketing_api/docs?id=1758051319816193) to obtain the **Access Token** and the **Event Set ID**.
+Please refer to the [documentation](https://ads.tiktok.com/marketing_api/docs?id=1758051319816193){:target="_blank”} to obtain the **Access Token** and the **Event Set ID**.
 
 ## PII Requirement & Validation
 TikTok Offline Events API requires at least one type of PII (email addresses and/or phone numbers) to be included in all offline conversion events. The email addresses and phone numbers will be hashed using SHA 256 from Segment before they are sent to TikTok. TikTok Offline Conversions Destination will automatically hash the provided PII, so please do not hash the PIIs before sending them to Segment. In addition, TikTok Offline Conversions Destination will validate all offline events before forwarding them to TikTok Offline Events API. TikTok Offline Conversions Destination will not send any offline events to TikTok with invalid or missing PIIs.

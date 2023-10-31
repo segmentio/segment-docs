@@ -4,7 +4,7 @@ rewrite: true
 id: 43bb279b7
 ---
 
-[Twilio](http://twilio.com) is a developer platform for communications. Software teams use Twilio APIs to add capabilities like voice, video, and messaging to their applications. This enables businesses to provide the right communications experience for their customers. Behind Twilio APIs is a Super Network, a software layer that connects and optimizes communications networks around the world. This is what allows users to reliably call and message anyone anywhere.
+[Twilio](http://twilio.com){:target="_blank”} is a developer platform for communications. Software teams use Twilio APIs to add capabilities like voice, video, and messaging to their applications. This enables businesses to provide the right communications experience for their customers. Behind Twilio APIs is a Super Network, a software layer that connects and optimizes communications networks around the world. This is what allows users to reliably call and message anyone anywhere.
 
 ## Getting Started
 
@@ -34,7 +34,7 @@ Our sync component uses an upsert API, so the data in your warehouse loaded usin
 
 The source syncs and warehouse syncs are independent processes. Source runs pull your data into the Segment Hub, and warehouse runs flush that data to your warehouse. Sources will sync with Segment every 3 hours. Depending on your Warehouses plan, we will push the Source data to your warehouse on the interval associated with your billing plan.
 
-At the moment, we don't support filtering which objects or properties get synced. If you're interested in this feature, [let us know](https://segment.com/help/contact)!
+At the moment, we don't support filtering which objects or properties get synced. If you're interested in this feature, [let us know](https://segment.com/help/contact){:target="_blank”}!
 
 
 ## Collections
@@ -44,12 +44,12 @@ Collections are the groupings of resources we pull from your source. In your war
 
 |  Collection | Type | Description |
 |  ------ | ------ | ------ |
-|  addresses | object | An [address](https://www.twilio.com/docs/api/rest/addresses) represents your or your customer's physical location within a country |
-|  calls | object | A [call](https://www.twilio.com/docs/voice/api/call) represents a connection between a telephone and Twilio |
-|  conferences | object | The [conference](https://www.twilio.com/docs/api/rest/conference) allows you to query and manage the state of individual conferences |
-|  transcriptions | object | A [transcription](https://www.twilio.com/docs/api/rest/transcription) represents a transcription of a recording |
-|  messages | object | A [message](https://www.twilio.com/docs/api/rest/message)represents an inbound or outbound message |
-|  call_feedback | object | The [call feedback](https://www.twilio.com/docs/api/rest/call-feedback) subresource provides a simple API to report the quality experienced during a phone call |
+|  addresses | object | An [address](https://www.twilio.com/docs/api/rest/addresses){:target="_blank”} represents your or your customer's physical location within a country |
+|  calls | object | A [call](https://www.twilio.com/docs/voice/api/call){:target="_blank”} represents a connection between a telephone and Twilio |
+|  conferences | object | The [conference](https://www.twilio.com/docs/api/rest/conference){:target="_blank”} allows you to query and manage the state of individual conferences |
+|  transcriptions | object | A [transcription](https://www.twilio.com/docs/api/rest/transcription){:target="_blank”} represents a transcription of a recording |
+|  messages | object | A [message](https://www.twilio.com/docs/api/rest/message){:target="_blank”} represents an inbound or outbound message |
+|  call_feedback | object | The [call feedback](https://www.twilio.com/docs/api/rest/call-feedback){:target="_blank”} subresource provides a simple API to report the quality experienced during a phone call |
 
 
 ## Collection Properties
@@ -161,4 +161,4 @@ Currently, Warehouses are the only supported destination for object-cloud source
 If you'd like to sync multiple twilio sub-accounts, just follow the steps below!
 1. Set up a source for each sub-account
 2. Disable the source right after creation to avoid syncing data from the default account
-3. [Contact us](https://segment.com/help/contact) specifying you would like to add a sub-account to a Twilio source, include a link to the Twilio source(s), and finally, do not forget to include the sub-account SID!
+3. [Contact us](https://segment.com/help/contact){:target="_blank”} specifying you would like to add a sub-account to a Twilio source, include a link to the Twilio source(s), and finally, do not forget to include the sub-account SID!

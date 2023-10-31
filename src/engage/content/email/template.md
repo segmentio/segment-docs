@@ -32,6 +32,9 @@ To configure an email template, click **Create Template**.
   - [**HTML Editor**](/docs/engage/content/email/html-editor/) contains both a code and visual editor from a single view. This editor provides complete HTML editing access with error flagging.
 4. Design the email template, then click **Create Email Template**.
 
+> info "Engage content validation"
+> For all content editors in Engage, you'll see alerts for any issues in your template, such as invalid profile traits or incorrect liquid syntax. Engage both flags template issue(s), and displays recommended next steps. While you can save these templates, you must fix any issues before using them in Engage campaigns. 
+
 ## Test the Email template
 You can send test emails before you include a template in marketing campaigns.
 
@@ -45,6 +48,11 @@ You can send test emails before you include a template in marketing campaigns.
 5. Select **Send test email**.
 
 > success ""
+> When you send a test message, the trait must be valid for the field it's being used in. For example:
+> - If you use `profile.traits.first_name` in the **From sender** field, it must be a valid username. 
+> - If you use `profile.traits.email` in the **Reply to email** field, it must be a valid email address.
+
+> info ""
 > You can also test email templates directly from a [Send an Email step](/docs/engage/journeys/build-journey/#send-an-email) in Journeys.
 
 ## Personalize with merge tags
@@ -58,13 +66,23 @@ You can also add merge tags in the heading or body text as you design an email w
 > info ""
 > To learn more about profile traits, visit Segment's [Computed Traits](/docs/engage/audiences/computed-traits) and [SQL Traits](/docs/engage/audiences/sql-traits/) documentation.
 
-## Include unsubscribe links
+## Include unsubscribe and manage preference links
+
+When you build an email template, you'll need to include links that your customers can access to unsubscribe and manage their email preferences. You'll find both in the **Special Links** dropdown menu of the **Insert/Edit link** window.
+
+### Unsubscribe links
 
 When you build email templates, it's your responsibility to include an unsubscribe link in your message. Add unsubscribe links to an email template from the Drag and Drop or HTML editors.
 
 When a recipient clicks on an unsubscribe link, they'll see a confirmation page and the recipient's subscription state is updated.
 
-Only send messages to subscribed users. Learn more about [User Subscriptions](/docs/engage/user-subscriptions/) in Twilio Engage.
+Learn more about [User Subscriptions](/docs/engage/user-subscriptions/) in Twilio Engage.
+
+### Manage preference links
+
+The manage preference link lets your customers opt in and out of email groups on an individual basis instead of unsubscribing from all your campaigns.
+
+For more information, see [subscription groups](/docs/engage/user-subscriptions/subscription-groups/).
 
 ## Clone an Email template
 

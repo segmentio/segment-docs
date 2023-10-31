@@ -6,12 +6,12 @@ beta: true
 
 [Paytronix](https://support-paytronix.force.com/help/s/article/000001348){:target="_blank”} is the leading provider of Digital Customer Engagement Solutions for restaurants, convenience stores, and retailers who seek to develop lasting relationships with their guests. For over 20 years, Paytronix has grown its Guest Engagement Platform to seamlessly incorporate individual components of digital customer engagement into a single, robust platform.
 
-This is an [Event Cloud Source](https://segment.com/docs/sources/#event-cloud-sources){:target="_blank”} which can not only export data into your Segment warehouse, but can also federate the exported data into your other enabled Segment Destinations.
+This is an [Event Cloud Source](docs/sources/#event-cloud-sources) which can not only export data into your Segment warehouse, but can also federate the exported data into your other enabled Segment Destinations.
 
-This source is maintained by Paytronix. For any issues with the source, [contact the Paytronix Support team](mailto:support@paytronix.com){:target="_blank”}.
+This source is maintained by Paytronix. For any issues with the source, [contact the Paytronix Support team](mailto:support@paytronix.com).
 
 > info ""
-> The Paytronix Source is currently in beta, which means that they are still actively developing the source. This doc was last updated on January 27, 2023. If you are interested in joining their beta program or have any feedback to help improve the Paytronix Source and its documentation, [let the Paytronix team know](mailto:support@paytronix.com){:target="blank"}.
+> The Paytronix Source is currently in beta, which means that they are still actively developing the source. This doc was last updated on January 27, 2023. If you are interested in joining their beta program or have any feedback to help improve the Paytronix Source and its documentation, [let the Paytronix team know](mailto:support@paytronix.com).
 
 ## Getting started
 
@@ -67,6 +67,6 @@ The table below list the properties included in the events listed above.
 
 Now that your Source is set up, you can connect it with Destinations.
 
-Log into your downstream tools and check to see that your events appear as expected, and that they contain all of the properties you expect. If your events and properties don’t appear, check the [Event Delivery](https://segment.com/docs/connections/event-delivery/){:target="_blank”} tool, and refer to the Destination docs for each tool for troubleshooting.
+Log into your downstream tools and check to see that your events appear as expected, and that they contain all of the properties you expect. If your events and properties don’t appear, check the [Event Delivery](/docs/connections/event-delivery/){:target="_blank”} tool, and refer to the Destination docs for each tool for troubleshooting.
 
-If there are any issues with how the events are arriving to Segment, [contact the Paytronix support team](mailto:support@paytronix.com){:target="_blank”}.
+If there are any issues with how the events are arriving to Segment, [contact the Paytronix support team](mailto:support@paytronix.com).

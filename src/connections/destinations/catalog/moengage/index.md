@@ -44,7 +44,7 @@ users it'll be instantaneous! Segment-MoEngage Integration is a bundled integrat
 ![segment_settings.png](images/segment_settings.png)
 
 ## Identify
-Use [Identify](/docs/connections/sources/catalog/libraries/mobile/android/#identify){:target="_blank"} to track user-specific attributes. This is the same as tracking [user attributes](https://help.moengage.com/hc/en-us/articles/360044285511-User-Profile){:target="_blank"} on MoEngage. MoEngage supports traits supported by Segment as well as custom traits. If you set `traits.id`, MoEngage sets that as the Unique ID for that user.
+Use [Identify](/docs/connections/sources/catalog/libraries/mobile/android/#identify) to track user-specific attributes. This is the same as tracking [user attributes](https://help.moengage.com/hc/en-us/articles/360044285511-User-Profile){:target="_blank"} on MoEngage. MoEngage supports traits supported by Segment as well as custom traits. If you set `traits.id`, MoEngage sets that as the Unique ID for that user.
 
 > info ""
 > MoEngage supports anonymous identifiers in Device-mode only. If you use the MoEngage destination in Cloud-mode, use a known user identifier.
@@ -59,7 +59,7 @@ analytics.identify('12090000-00001992', {
 ```
 
 ## Track
-Use [track](/docs/connections/sources/catalog/libraries/mobile/android/#track){:target="_blank"} to track events and user behavior in your app.
+Use [track](/docs/connections/sources/catalog/libraries/mobile/android/#track) to track events and user behavior in your app.
 
 ```javascript
 analytics.track('Article Completed', {
@@ -71,7 +71,7 @@ analytics.track('Article Completed', {
 This will send the event to MoEngage with the associated properties. Tracking events is essential and will help you create segments for engaging users.
 
 ## Reset
-If your app or website supports the ability for a user to logout and login with a new identity, then you'll need to call [reset](/docs/sources/website/analytics.js/#reset-logout){:target="_blank"} method in `analytics.js`.
+If your app or website supports the ability for a user to logout and login with a new identity, then you'll need to call [reset](/docs/sources/website/analytics.js/#reset-logout) method in `analytics.js`.
 
 ```javascript
 analytics.reset();
@@ -540,8 +540,7 @@ While updating the MoEngage settings on the Segment Dashboard, you can enable th
 ## MoEngage Web SDK Features
 For information about optional features, see the documentation below:
 
-* [Configure opt in type](https://help.moengage.com/hc/en-us/articles/210224063-Configure-Web-Push-Settings#configure-web-push-opt-in-0-6
-){:target="_blank"}
+* [Configure opt in type](https://help.moengage.com/hc/en-us/articles/210224063-Configure-Web-Push-Settings#configure-web-push-opt-in-0-6){:target="_blank"}
 * [Self-handled opt-ins](https://developers.moengage.com/hc/en-us/articles/360061219351-Configure-Self-Handled-Opt-In){:target="_blank"}
 * [SDK callbacks](https://developers.moengage.com/hc/en-us/articles/4401950701076-Opted-Out-Users){:target="_blank"}
 

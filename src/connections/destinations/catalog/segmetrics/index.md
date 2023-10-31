@@ -3,7 +3,7 @@ title: SegMetrics Destination
 rewrite: true
 id: 5ec2b3adf7d3322ea12f3c04
 ---
-[SegMetrics](https://segmetrics.io/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) is a lead and revenue attribution tool for marketers. It combines cross-platform behavioral data from the marketing tools you already use to create a holistical customer journey of your entire marketing funnel.
+[SegMetrics](https://segmetrics.io/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners){:target="_blank”} is a lead and revenue attribution tool for marketers. It combines cross-platform behavioral data from the marketing tools you already use to create a holistical customer journey of your entire marketing funnel.
 
 This destination is maintained by SegMetrics. For any issues with the destination, [contact the SegMetrics Support team](mailto:support@segmetrics.io).
 
@@ -11,14 +11,14 @@ This destination is maintained by SegMetrics. For any issues with the destinatio
 
 
 
-1. Go to your [Integrations tab](https://app.segmetrics.io/a/integration) in SegMetrics, and click **Connect** for the Segment Integration.
-2. Go to your [Account Settings](https://app.segmetrics.io/a/account/edit) and copy your SegMetrics `Account Id` and `API Key`.
+1. Go to your [Integrations tab](https://app.segmetrics.io/a/integration){:target="_blank"} in SegMetrics, and click **Connect** for the Segment Integration.
+2. Go to your [Account Settings](https://app.segmetrics.io/a/account/edit){:target="_blank"} and copy your SegMetrics `Account Id` and `API Key`.
 3. From the Destinations catalog page in the Segment App, click **Add Destination**.
 4. Search for “SegMetrics” in the Destinations Catalog and select the SegMetrics Destination.
 5. Enter the `Account Key` and `API Key` in the SegMetrics destination settings in Segment.
 
 > info ""
-> Data is available in your dashboard depending on your [SegMetrics plan](https://segmetrics.io/pricing/).
+> Data is available in your dashboard depending on your [SegMetrics plan](https://segmetrics.io/pricing/){:target="_blank"}.
 
 ## Page
 

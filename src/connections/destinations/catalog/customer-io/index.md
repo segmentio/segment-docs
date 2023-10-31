@@ -7,7 +7,7 @@ maintenance: true
 id: 54521fd525e721e32a72eea8
 actions-slug: "customer-io-actions"
 ---
-[Customer.io](https://customer.io/) helps you send automated email, push, SMS, and webhooks based on your customers' activities in your app or product. It makes conversion tracking, optimization and re-marketing easier. The `analytics.js` Customer.io Destination is open-source. You can browse the code [on GitHub](https://github.com/segmentio/analytics.js-integrations/tree/master/integrations/customerio).
+[Customer.io](https://customer.io/){:target="_blank"} helps you send automated email, push, SMS, and webhooks based on your customers' activities in your app or product. It makes conversion tracking, optimization and re-marketing easier. The `analytics.js` Customer.io Destination is open-source. You can browse the code [on GitHub](https://github.com/segmentio/analytics.js-integrations/tree/master/integrations/customerio){:target="_blank"}.
 
 > success ""
 > **Good to know**: This page is about the Customer.io Segment destination, which receives data from Segment. There's also a page about the [Customer.io Segment source](/docs/connections/sources/catalog/cloud-apps/customer-io/), which sends data _to_ Segment!
@@ -131,7 +131,7 @@ For that, you need to make the following calls:
 
 ## Application Installed
 
-[Application Installed](/docs/connections/spec/mobile/#application-installed) events will add or update a device in the person's Customer.io profile using [this](https://customer.io/docs/api/#operation/add_device) API endpoint. Note, you must pass a device token in your event payload using a `context.device.token` property. See more on Contextual properties [here](/docs/connections/spec/common/#context).
+[Application Installed](/docs/connections/spec/mobile/#application-installed) events will add or update a device in the person's Customer.io profile using [this](https://customer.io/docs/api/#operation/add_device){:target="_blank"} API endpoint. Note, you must pass a device token in your event payload using a `context.device.token` property. See more on Contextual properties [here](/docs/connections/spec/common/#context).
 
 {% comment %} api-example '{
 "action": "track",
@@ -211,7 +211,7 @@ For that, you need to make the following calls:
 ## Application Uninstalled
 
 
-[Application Uninstalled](/docs/connections/spec/mobile/#application-installed) events will remove the device from the person's Customer.io profile using [this](https://customer.io/docs/api/#operation/delete_device) API endpoint. Note, you must pass a device token in your event payload using a `context.device.token` property. See more on [Contextual properties](/docs/connections/spec/common/#context).
+[Application Uninstalled](/docs/connections/spec/mobile/#application-installed) events will remove the device from the person's Customer.io profile using [this](https://customer.io/docs/api/#operation/delete_device){:target="_blank"} API endpoint. Note, you must pass a device token in your event payload using a `context.device.token` property. See more on [Contextual properties](/docs/connections/spec/common/#context).
 
 
 {% comment %} api-example '{
@@ -263,12 +263,13 @@ To enable this feature:
 ## Best Practices
 
 ### Rate Limits
-Customer.io has limits on the data collected by their API. To ensure your events arrive in Customer.io, make sure that you're respecting the limits placed on the [Customer.io API](https://customer.io/docs/api/#tag/trackLimit). If you're using Segment's [HTTP API](/docs/connections/sources/catalog/libraries/server/http/) to send a batch of events to Customer.io at once, make sure you throttle the `import` to 100-200 requests per second.
+Customer.io has limits on the data collected by their API. To ensure your events arrive in Customer.io, make sure that you're respecting the limits placed on the [Customer.io API](https://customer.io/docs/api/#tag/trackLimit){:target="_blank"}. If you're using Segment's [HTTP API](/docs/connections/sources/catalog/libraries/server/http/) to send a batch of events to Customer.io at once, make sure you throttle the `import` to 100-200 requests per second.
 
 ## Troubleshooting
 
 ### No Events in Customer.io from the Browser
 Remember that before Segment can send events to Customer.io from client-side JavaScript, the current user must identify with their `userId`. The user's email address is only used to identify them if that is the ID on record for them in Customer.io.
+Verify that your Customer.io workspace doesn't have any filters configured, as these filters could prevent campaigns from triggering.
 
 ### Page events not associated with user
 Page events will associate to a user if the user has been previously identified in Customer.io. If you identify a user after making Page calls, the previous page events won't associate to the user in Customer.io.

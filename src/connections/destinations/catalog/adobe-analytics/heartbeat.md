@@ -3,7 +3,7 @@ title: Setting up Adobe Analytics Heartbeat
 strat: adobe
 ---
 
-Adobe Heartbeat is an Adobe Analytics add-on that allows you to collect video analytics data from [mobile applications, and JavaScript or website sources](https://marketing.adobe.com/resources/help/en_US/sc/appmeasurement/hbvideo/).
+Adobe Heartbeat is an Adobe Analytics add-on that allows you to collect video analytics data from [mobile applications, and JavaScript or website sources](https://marketing.adobe.com/resources/help/en_US/sc/appmeasurement/hbvideo/){:target="_blank”}.
 
 > info ""
 > At this time, Adobe Heartbeat is only available for events sent using [device mode](/docs/connections/destinations/#connection-modes).
@@ -24,9 +24,9 @@ Next, enable Adobe's VisitorID service in your Adobe account. You must do this t
 
 For Android:
 
-1. If you haven't done so already, go to the Adobe Mobile Services UI and follow [these steps](https://docs.adobe.com/content/help/en/mobile-services/android/getting-started-android/requirements.html#section_044C17DF82BC4FD8A3E409C456CE9A46) to download the core `adobeMobileLibrary` and configure in your Android project. Add the `ABDMobileConfig.json` to your project from the downloaded SDK.
-2. Download the latest version of the `MediaSDK.jar` file and [include it in your Android project using Adobe's documentation steps](https://docs.adobe.com/content/help/en/media-analytics/using/sdk-implement/setup/set-up-android.html).
-3. Follow the [remaining set up steps](https://docs.adobe.com/content/help/en/media-analytics/using/sdk-implement/setup/set-up-android.html) to complete the installation.
+1. If you haven't done so already, go to the Adobe Mobile Services UI and follow [these steps](https://docs.adobe.com/content/help/en/mobile-services/android/getting-started-android/requirements.html#section_044C17DF82BC4FD8A3E409C456CE9A46){:target="_blank”} to download the core `adobeMobileLibrary` and configure in your Android project. Add the `ABDMobileConfig.json` to your project from the downloaded SDK.
+2. Download the latest version of the `MediaSDK.jar` file and [include it in your Android project using Adobe's documentation steps](https://docs.adobe.com/content/help/en/media-analytics/using/sdk-implement/setup/set-up-android.html){:target="_blank”}.
+3. Follow the [remaining set up steps](https://docs.adobe.com/content/help/en/media-analytics/using/sdk-implement/setup/set-up-android.html){:target="_blank”} to complete the installation.
 
 For iOS: The Adobe Heartbeat SDK is already included with the Segment-Adobe-Analytics SDK when you add a Heartbeat Tracking Server URL. Ensure you have added the `ABDMobileConfig.json` for your iOS project from the Adobe Mobile Services UI.
 
@@ -174,7 +174,7 @@ Adobe Analytics supports many - but not all - of the [Segment Video Spec events]
   </tr>
 </table>
 
-On web, multiple video sessions can be open at once so video events must have a `session_id` property unique to the session the content belongs to. If a `session_id` is not included, Segment will send `default` as the [s:event:sid](https://experienceleague.adobe.com/docs/media-analytics/using/sdk-implement/validation/heartbeat-params.html?lang=en) and Adobe will create a new session. For more information on `session_id`, please visit [Segment's Video Spec](/docs/connections/spec/video/#playback).
+On web, multiple video sessions can be open at once so video events must have a `session_id` property unique to the session the content belongs to. If a `session_id` is not included, Segment will send `default` as the [s:event:sid](https://experienceleague.adobe.com/docs/media-analytics/using/sdk-implement/validation/heartbeat-params.html?lang=en){:target="_blank”} and Adobe will create a new session. For more information on `session_id`, please visit [Segment's Video Spec](/docs/connections/spec/video/#playback).
 
 ### Video Playback Started
 
@@ -445,7 +445,7 @@ You can send custom metadata with any video event that accepts metadata. To send
 
 ### Custom Video Metadata Formatting
 
-For custom Context Data Variables, including custom video metadata, use the following notation when mapping your Segment payload properties. The formatting for these mapings is different for iOS and Android components, so read the documentation below carefully.
+For custom Context Data Variables, including custom video metadata, use the following notation when mapping your Segment payload properties. The formatting for these mappings is different for iOS and Android components, so read the documentation below carefully.
 
 <table>
   <tr>
