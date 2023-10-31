@@ -12,7 +12,7 @@ hidden: true
 
 [Sprig (formerly UserLeap)](https://sprig.com/?&utm_source=segmentio&utm_medium=docs_actions&utm_campaign=integration){:target="_blank"} is an in-context user research platform that makes it fast and effortless for product teams to learn from their actual customers in real-time, through microsurveys, concept tests, and video questions.
 
-Sprig maintains this destination. For any issues with the destination, consult [Sprig's documentation](https://docs.sprig.com/docs/segment-web) or contact [support@sprig.com](mailto:support@sprig.com).
+Sprig maintains this destination. For any issues with the destination, consult [Sprig's documentation](https://docs.sprig.com/docs/segment-web){:target="_blank”} or contact [support@sprig.com](mailto:support@sprig.com).
 
 
 <!-- In the section below, add your destination name where indicated. If you have a classic version of the destination, ensure that its documentation is linked as well. If you don't have a classic version of the destination, remove the second and third sentences. -->

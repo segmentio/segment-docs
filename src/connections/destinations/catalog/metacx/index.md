@@ -3,7 +3,7 @@ rewrite: true
 title: MetaCX Destination
 ---
 
-[MetaCX](https://www.metacx.com) is a digital success layer that brings suppliers and buyers of SaaS together for better collaboration and outcome management, offering real-time visibility into customer success.
+[MetaCX](https://www.metacx.com){:target="_blank"} is a digital success layer that brings suppliers and buyers of SaaS together for better collaboration and outcome management, offering real-time visibility into customer success.
 
 This destination is maintained by MetaCX. For any issues with the destination, contact their [success team](mailto:support@metacx.com).
 
@@ -15,7 +15,7 @@ This destination is maintained by MetaCX. For any issues with the destination, c
 
 1. From the Segment web app, click **Catalog**.
 2. Search for "MetaCX" in the Catalog, select it, and choose which of your sources to connect the destination to.
-3. Enter the "API Key" into your Segment Settings UI which you can find from your [Segment IO connection](https://app.metacx.com/app/connections).
+3. Enter the "API Key" into your Segment Settings UI which you can find from your [Segment IO connection](https://app.metacx.com/app/connections){:target="_blank"}.
 4. If you do not already have a Segment IO connection, create one by clicking the Add Connection button at the bottom right of the page.
 
 

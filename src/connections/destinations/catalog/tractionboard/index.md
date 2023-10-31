@@ -23,8 +23,8 @@ When you identify a user, we'll pass that user's information to Tractionboard wi
 
 When you track an event, we will send that event to Tractionboard as a custom event. There are certain events that trigger special actions in Tractionboard:
 
- - `Payment Made`: This is an standard event in Segment ([Payment Made](https://help.segment.com/hc/en-us/articles/204812979-Tracking-payment-events-and-revenue#made-payment)), and it's translated to the Tractionboard payment event, that is used to get the earnings of certain user.
- - `Refund Received`: This is an standard event in Segment ([Refund Received](https://help.segment.com/hc/en-us/articles/204812979-Tracking-payment-events-and-revenue#received-refund)), and it's translated to the Tractionboard refund event, that is used to subtract this amount to the revenue.
+ - `Payment Made`: This is an standard event in Segment ([Payment Made](https://help.segment.com/hc/en-us/articles/204812979-Tracking-payment-events-and-revenue#made-payment){:target="_blank"}), and it's translated to the Tractionboard payment event, that is used to get the earnings of certain user.
+ - `Refund Received`: This is an standard event in Segment ([Refund Received](https://help.segment.com/hc/en-us/articles/204812979-Tracking-payment-events-and-revenue#received-refund){:target="_blank"}), and it's translated to the Tractionboard refund event, that is used to subtract this amount to the revenue.
  - `cancel`: This event with the userId will update the    user status to canceled, and it will count in the churn rate metric.
  - `signup`: We expect the signup event with the userId. Signup events are used to compose the UAC metric.
 

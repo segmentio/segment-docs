@@ -5,7 +5,7 @@ beta: true
 
 [Qualtrics](https://qualtrics.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners){:target="_blank"} is an Experience Management platform that allows companies to design and improve customer and employee experiences through listening, analysis, and action.
 
-This is an [Event Cloud Source](https://segment.com/docs/sources/#event-cloud-sources) which can not only export data into your Segment warehouse, but can also federate the exported data into your other enabled Segment Destinations.
+This is an [Event Cloud Source](/docs/sources/#event-cloud-sources) which can not only export data into your Segment warehouse, but can also federate the exported data into your other enabled Segment Destinations.
 
 Qualtrics maintains this source. For any issues with the source, [contact the Qualtrics Support team](mailto:support@qualtrics.com).
 
@@ -14,7 +14,7 @@ Qualtrics maintains this source. For any issues with the source, [contact the Qu
 
 ## Getting started
 
-1. From your workspace's [Sources catalog page](https://app.segment.com/goto-my-workspace/sources/catalog) click **Add Source**.
+1. From your workspace's [Sources catalog page](https://app.segment.com/goto-my-workspace/sources/catalog){:target="_blank”} click **Add Source**.
 2. Search for "Qualtrics" in the Sources Catalog, select Qualtrics, and click **Add Source**.
 3. On the next screen, give the Source a nickname configure any other settings.
    - The nickname is used as a label in the Segment app, and Segment creates a related schema name in your warehouse. The nickname can be anything, but Segment recommends using something that reflects the source itself and distinguishes amongst your environments (for example, SourceName_Prod, SourceName_Staging, or SourceName_Dev).
@@ -44,7 +44,7 @@ The Qualtrics integration allows you to define event properties within the follo
 
 Now that your Source is set up, you can connect it with Destinations.
 
-Log into your downstream tools and verify that events and properties appear the way you expect. If events and properties don’t appear as you expect them to, check the [Event Delivery](https://segment.com/docs/connections/event-delivery/) tool, and refer to the Destination docs for each tool for troubleshooting.
+Log into your downstream tools and verify that events and properties appear the way you expect. If events and properties don’t appear as you expect them to, check the [Event Delivery](/docs/connections/event-delivery/) tool, and refer to the Destination docs for each tool for troubleshooting.
 
 If there are any issues with how the events are arriving to Segment, [contact the Qualtrics support team](mailto:support@Qualtrics.com).
 

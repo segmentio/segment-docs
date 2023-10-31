@@ -14,11 +14,11 @@ This is an [Event Cloud Source](/docs/sources/#event-cloud-sources) which can ex
 This source is maintained by CleverTap. For any issues with the source, [contact their Support team](https://help.clevertap.com/hc/en-us/requests/new){:target="_blank”}.
 
 > info "This is a Beta source"
-> The CleverTap Source is in beta, which means that they are still actively developing the source. If you're interested in joining their beta program or have any feedback to help improve the CleverTap Source and its documentation, [let their team know](https://help.clevertap.com/hc/en-us/requests/new)._
+> The CleverTap Source is in beta, which means that they are still actively developing the source. If you're interested in joining their beta program or have any feedback to help improve the CleverTap Source and its documentation, [let their team know](https://help.clevertap.com/hc/en-us/requests/new){:target="_blank"}._
 
 ## Getting Started
 
-1. From your workspace's [Sources catalog page](https://app.segment.com/goto-my-workspace/sources/catalog) click **Add Source**.
+1. From your workspace's [Sources catalog page](https://app.segment.com/goto-my-workspace/sources/catalog){:target="_blank"} click **Add Source**.
 2. Search for "CleverTap" in the Sources Catalog, select CleverTap, and click **Add Source**.
 3. On the next screen, give the Source a nickname and configure any other applicable settings.
     - The nickname is used as a label in the Segment app, and Segment creates a related schema name in your warehouse. The nickname can be anything, but Segment recommends using something that reflects the source itself and distinguishes amongst your environments (like `CleverTap_Prod`, `CleverTap_Staging`, or `CleverTap_Dev`).
@@ -82,7 +82,7 @@ Now that your source is set up, you can connect it with destinations.
 
 Log into your downstream tools and check to see that your events appear as expected, and that they contain all of the properties you expect. If your events and properties don’t appear as expected, check the [Event Delivery](/docs/connections/event-delivery/) tool and refer to the docs for each destination.
 
-If there are any issues with how the events are arriving to Segment, [contact the CleverTap support team](https://help.clevertap.com/hc/en-us/requests/new).
+If there are any issues with how the events are arriving to Segment, [contact the CleverTap support team](https://help.clevertap.com/hc/en-us/requests/new){:target="_blank"}.
 
 
 ## Send Data to CleverTap

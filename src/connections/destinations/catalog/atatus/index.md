@@ -4,7 +4,7 @@ hidden: true
 id: 54c02204db31d978f14a7f6d
 ---
 
-[Atatus](https://www.atatus.com/) provides visibility into the performance of an application and its underlying infrastructure under a single dashboard. This visibility can help businesses identify and diagnose issues, and take corrective action to prevent or resolve application issues.
+[Atatus](https://www.atatus.com/){:target="_blank"} provides visibility into the performance of an application and its underlying infrastructure under a single dashboard. This visibility can help businesses identify and diagnose issues, and take corrective action to prevent or resolve application issues.
 
 ## Getting Started
 Before you start, make sure Atatus supports the source type and connection mode you’ve chosen to implement. You can learn more about [connection modes here](/docs/connections/destinations/#connection-modes).

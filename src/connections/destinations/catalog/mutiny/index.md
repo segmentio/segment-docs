@@ -3,7 +3,7 @@ rewrite: true
 title: Mutiny Destination
 id: 5c6edab8037dcf00014f8f9b
 ---
-[Mutiny](https://mutinyhq.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) allows you to personalize your website content based on customer's activity and 3rd party data. By integrating with [Segment](https://segment.com), you can easily and accurately track conversions and integrate 1st party data for personalization with Mutiny.
+[Mutiny](https://mutinyhq.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners){:target="_blank”} allows you to personalize your website content based on customer's activity and 3rd party data. By integrating with [Segment](https://segment.com){:target="_blank"}, you can easily and accurately track conversions and integrate 1st party data for personalization with Mutiny.
 
 This destination is maintained by Mutiny. For any issues with the destination, [contact the Mutiny Support team](mailto:mutinylovesyou@mutinyhq.com).
 
@@ -14,7 +14,7 @@ This destination is maintained by Mutiny. For any issues with the destination, [
 To set up Mutiny to receive Segment data:
 1. From your Segment Project's Destinations page click on "Add Destination".
 2. Search for "Mutiny" in the Catalog, select it, and choose which of your sources to connect the destination to.
-3. In the destination settings, enter your personal "API Key" into Segment's Mutiny integration settings panel UI, which you can find from your [Mutiny dashboard](https://app.mutinyhq.com/integrations/segment).
+3. In the destination settings, enter your personal "API Key" into Segment's Mutiny integration settings panel UI, which you can find from your [Mutiny dashboard](https://app.mutinyhq.com/integrations/segment){:target="_blank"}.
 
 ## Page
 

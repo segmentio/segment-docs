@@ -2,9 +2,9 @@
 title: SatisMeter Destination
 id: 54c02a5adb31d978f14a7f6f
 ---
-[Our SatisMeter destination code](https://github.com/segment-integrations/analytics.js-integration-satismeter) is all open-source on GitHub if you want to check it out.
+[Our SatisMeter destination code](https://github.com/segment-integrations/analytics.js-integration-satismeter){:target="_blank"} is all open-source on GitHub if you want to check it out.
 
-See SatisMeter in action on their [sample app](https://app.satismeter.com/sample).
+See SatisMeter in action on their [sample app](https://app.satismeter.com/sample){:target="_blank"}.
 
 After you enable SatisMeter in Segment, the SatisMeter NPS survey will be shown to your customers.
 

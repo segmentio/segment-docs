@@ -3,7 +3,7 @@ title: Mandrill Source
 id: asdf76as89
 ---
 
-[Mandrill](http://www.mandrill.com/) is a transactional email API for MailChimp users.
+[Mandrill](http://www.mandrill.com/){:target="_blank"} is a transactional email API for MailChimp users.
 
 Take your company's email analysis to the next level by **adding Mandrill as a Source to Segment.** Segment automatically  collects email events like `Sent` and `Opened` and load them into your data warehouse. 
 
@@ -30,7 +30,7 @@ Take your company's email analysis to the next level by **adding Mandrill as a S
 
 ### Streaming
 
-The Mandrill source is comprised only of a streaming component which listens in real time for inbound webhooks from [Mandrill's Webhooks](https://mandrill.zendesk.com/hc/en-us/articles/205583217-Introduction-to-Webhooks) and batches the events to be uploaded on your next warehouse flush. These events are only ever appended to your warehouse. Since Mandrill is strictly used for transactional emails triggered directly by API calls, there are no "dimensional" concepts in their data model that would require any additional components.
+The Mandrill source is comprised only of a streaming component which listens in real time for inbound webhooks from [Mandrill's Webhooks](https://mandrill.zendesk.com/hc/en-us/articles/205583217-Introduction-to-Webhooks){:target="_blank"} and batches the events to be uploaded on your next warehouse flush. These events are only ever appended to your warehouse. Since Mandrill is strictly used for transactional emails triggered directly by API calls, there are no "dimensional" concepts in their data model that would require any additional components.
 
 
 ## Collections
@@ -42,10 +42,10 @@ Collections are the groupings of resources we pull from your source. In your war
 |  ------ | ------ | ------ |
 |  Sent | Event | Message has been sent successfully |
 |  Bounced | Event | Message has hard bounced |
-|  Opened | Event | Recipient opened a message; will only occur when [open tracking](http://help.mandrill.com/entries/23298476-How-does-open-tracking-work-) is enabled. |
+|  Opened | Event | Recipient opened a message; will only occur when [open tracking](http://help.mandrill.com/entries/23298476-How-does-open-tracking-work-){:target="_blank"} is enabled. |
 |  Marked As Spam | Event | Recipient marked a message as spam |
-|  Rejected | Event | Message was [rejected](http://help.mandrill.com/entries/22880521-What-is-a-rejected-email-Rejection-Blacklist-) |
+|  Rejected | Event | Message was [rejected](http://help.mandrill.com/entries/22880521-What-is-a-rejected-email-Rejection-Blacklist-){:target="_blank"} |
 |  Delayed | Event | Message has been sent, but the receiving server has indicated mail is being delivered too quickly and Mandrill should slow down sending temporarily |
 |  Soft-Bounced | Event | Message has soft bounced |
 |  Clicked | Event | Recipient clicked a link in a message; will only occur when click tracking is enabled |
-|  Recipient Unsubscribes | Event | Recipient [unsubscribed](http://help.mandrill.com/entries/22880521-What-is-a-rejected-email-Rejection-Blacklist-) |
+|  Recipient Unsubscribes | Event | Recipient [unsubscribed](http://help.mandrill.com/entries/22880521-What-is-a-rejected-email-Rejection-Blacklist-){:target="_blank"} |
