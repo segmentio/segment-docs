@@ -49,7 +49,7 @@ Profiles Insights flags the following violations:
 
 ## Success logs
 
-Success logs provide visibility into a profile's journey from creation to the point of merging into other profiles. Segment logs successful events, such as profile merges, or adding identifiers from incoming events to profiles. 
+Success logs provide visibility into a profile's journey from creation to the point of merging into other profiles. Segment logs successful events, such as profile merges, or adding identifiers from incoming events to profiles.  
 
 Use the success logs to view:
 - Profiles that Segment has merged
