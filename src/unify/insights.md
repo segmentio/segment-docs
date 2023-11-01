@@ -3,7 +3,7 @@ title: Profile Insights
 plan: unify
 ---
 
-With Profile Insights, you can troubleshoot event data with transparent insight into your Unify profiles. View errors and violations, success logs, and an audit trail for events that flow into your profiles. You can also learn why certain issues occur, and take preventative action against future errors.
+With Profile Insights, you can troubleshoot event data with transparent insight into your [Unify profiles](/docs/unify/). View errors and violations, success logs, and an audit trail for events that flow into your profiles. You can also learn more about why certain issues occur, and take preventative action against future errors.
 
 ## Getting started
 
@@ -19,19 +19,19 @@ You can filter results by ID type, time range, specific violations, and more.
 
 ### Errors
 
-Errors occur when a message didn't resolve to a profile because there was no identifier found or the system behaved unexpectedly.
+Errors occur when a message didn't resolve to a profile because Segment didn't find an identifier or the system behaved unexpectedly.
 
-Click on an error log to view the error that occurred and next steps that Segment recommends.
+Click on an error log to view the error and next steps that Segment recommends.
 
 | Error     | Description                                   |
 |---------------|-----------------------------------------------|
-| `No matching identifiers on event`  |  The event didn't have any identifier types that matched your workspace ID resolution settings. As a result, the event didn't resolve to a profile.                          |
+| `No matching identifiers on event`  |  The event didn't have any identifier types that matched your [ID Resolution Settings](/docs/unify/identity-resolution/identity-resolution-settings). As a result, the event didn't resolve to a profile.                          |
 
 ### Violations
 
 Violations occur when incoming events do not comply with your [Identity Resolution settings](/docs/unify/identity-resolution/identity-resolution-settings). For example, when Segment drops an anonymous ID (lower priority) to resolve an event based on a matching user ID (higher priority), it results in a violation. 
 
-For any violations, Segment may drop lower priority identifiers or the identifiers that violate Identity Resolution settings. From the grid, you can click a log name to view the violation details and any next steps. 
+For any violations, Segment may drop lower priority identifiers or the identifiers that violate Identity Resolution Settings. From the grid, you can click a log name to view the violation details and next steps. 
 
 Use the **Message Payload** tab to view the raw messages for Track events and see exactly where the violation occured.
 
@@ -62,8 +62,8 @@ When you click a specific log, Segment displays merge or mapping details along w
 
 ## Audit trail
 
-The Audit trail displays all audit actions that occur in your Unify space.  
+The Audit trail displays all audit actions that occur in your Unify space. This can include, for example, a user creating an access token or modifying Unify settings.
 
-Click an audit trail log to view specific audit event details in your workspace.
+Click an audit log link to view the user who initiated the action, timestamp, and log details.
 
 
