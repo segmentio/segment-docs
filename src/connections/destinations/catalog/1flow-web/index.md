@@ -13,7 +13,7 @@ versions:
 1Flow is an easy-to-use, yet powerful in-app survey and messaging software.
 Using 1Flow, you can reach users in-the-moment while they are interacting with your website or mobile app, to collect highly contextual user insights that help you improve your product offering and customer experience.
 
-When you use the 1Flow Web (Actions) Destination, Segment loads the [1Flow SDK](https://1flow.ai/docs/install-sdk/javascript) for you. The 1Flow library enables you to track and identify user events on your website and interact with the 1Flow messenger window.
+When you use the 1Flow Web (Actions) Destination, Segment loads the [1Flow SDK](https://1flow.ai/docs/install-sdk/javascript){:target="_blank"} for you. The 1Flow library enables you to track and identify user events on your website and interact with the 1Flow messenger window.
 
 ## Benefits of 1Flow Web Mode (Actions) Destination
 
@@ -73,5 +73,5 @@ If you are seeing 404 responses in your browser's network tab, you've likely enc
 - You set the wrong App ID on the 1Flow Actions (Web) destination settings page.
 - You set the wrong Regional Data Hosting value on the 1Flow Actions (Web) destination settings page. 1Flow gates regional endpoints by plan level, so you may not have access to EU data hosting.
 
-### 1FLOW does not support rETL event batching
+### 1Flow does not support rETL event batching
 The 1Flow (Web) Actions destination does not support the bulk contacts endpoint, and therefore is unable to support batching events in rETL.
