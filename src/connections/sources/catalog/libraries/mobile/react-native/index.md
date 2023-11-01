@@ -26,14 +26,19 @@ To get started with the Analytics for React Native library:
 
     ```js
     yarn add @segment/analytics-react-native @segment/sovran-react-native react-native-get-random-values
-    # or
+    ```
+
+    ```js
     npm install --save @segment/analytics-react-native @segment/sovran-react-native react-native-get-random-values
     ```
+    
 3. If you want to use the default persistor for the Segment Analytics client, you also have to install `react-native-async-storage/async-storage.`
 
     ```js
     yarn add @react-native-async-storage/async-storage 
-    # or
+    ```
+    
+    ```js
     npm install --save @react-native-async-storage/async-storage
     ```
     
