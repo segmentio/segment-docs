@@ -295,3 +295,10 @@ Column count | The maximum number of columns a single sync will process. | 512 c
 Column name length | The maximum length of a record column. | 128 characters
 Record JSON size | The maximum size for a record when converted to JSON (some of this limit is used by Segment). | 512 KiB
 Column JSON size | The maximum size of any single column value. | 128 KiB
+
+## Reverse ETL Frequently Asked Questions
+
+{% faq %}
+{% faqitem Why sync results constantly show  "No records extracted", when "Updated records" is selected after I enabled the mapping? %}
+When "Updated Records" is selected and the values of query results (records) has not been changed after the first sync, then this situation is expected. During the first sync, reverse ETL system calculates a snapshot of all the resutls and creates records in `_segment_reverse_etl` schema. Therefore, all the rescords are considered as "Added records" instead of "Updated records" at this time. Thus, the records can only meet "Updated records" condition, when the underlying values changes after the first sync completes.{% endfaqitem %}
+{% endfaq %}
