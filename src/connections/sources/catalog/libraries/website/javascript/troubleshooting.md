@@ -173,6 +173,10 @@ Some destinations accept properties only. As a result, custom context fields you
 
 The AJS cookies being set under segment.com are first-party cookies. They are part of Segment's own implementation as well as the destination Segment uses. These cookies are not related to your implementation of Segment, and you only see them because you've visited Segment's domain using the same browser. They are sent to the writekey connected to Segment's own workspace, and are associated with the events Segment tracks when you visit segment.com.
 
+### Are you loading Prototype.js?
+
+If you are having issues with your destinations loading, there is a known issue that was reported [here](https://github.com/prototypejs/prototype/issues/338).  
+
 
 ## Known issues:
 
