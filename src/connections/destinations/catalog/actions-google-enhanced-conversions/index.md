@@ -17,6 +17,11 @@ The Google Ads Conversions destination enables you to upload offline conversions
 6. On the **Settings** tab, authenticate with Google using OAuth. Click **Connect to Google Ads Conversions**. Follow the prompts to authenticate using OAuth, with a Google account that is a member of your Google Ads account.
 7. Follow the steps in the Destinations Actions documentation on [Customizing mappings](/docs/connections/destinations/actions/#customizing-mappings).
 
+> warning "Upload Enhanced Conversion (Legacy) Action Deprecation"
+> Google plans to sunset the legacy API, so Segment will migrate your instance to the new API in the beginning of 2024. No actions is required at this time. Prior to the migration, we will reach out to communicate next steps. 
+>
+> With this change, the Upload Enhanced Conversions (Legacy) Action **will no longer be available**. Please use the "Upload Click Conversion", "Upload Call Conversion", and "Upload Conversion Adjustment" actions, which sends data to the new Google Ads API.
+
 > info ""
 > When you use the "Upload Enhanced Conversion (Legacy)" action, Segment sends data to the legacy Enhanced Conversions API. To authenticate into the legacy API and send enhancement data, Segment needs your Conversion ID and Conversion Label. 
 > 
