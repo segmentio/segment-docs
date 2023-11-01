@@ -64,11 +64,11 @@ Any value passed in `name`, will be eventName and if you have passed any event p
 
 ## Troubleshooting
 
-### Requests to Intercom return a 404 response
+### Requests to 1Flow return a 404 response
 If you are seeing 404 responses in your browser's network tab, you've likely encountered one of two issues:
 
-- You set the wrong App ID on the Intercom Actions (Web) destination settings page.
-- You set the wrong Regional Data Hosting value on the Intercom Actions (Web) destination settings page. Intercom gates regional endpoints by plan level, so you may not have access to EU data hosting.
+- You set the wrong App ID on the 1Flow Actions (Web) destination settings page.
+- You set the wrong Regional Data Hosting value on the 1Flow Actions (Web) destination settings page. 1Flow gates regional endpoints by plan level, so you may not have access to EU data hosting.
 
-### Intercom does not support rETL event batching
-The Intercom (Web) Actions destination does not support the bulk contacts endpoint, and therefore is unable to support batching events in rETL.
+### 1FLOW does not support rETL event batching
+The 1Flow (Web) Actions destination does not support the bulk contacts endpoint, and therefore is unable to support batching events in rETL.
