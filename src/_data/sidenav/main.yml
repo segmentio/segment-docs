@@ -329,7 +329,7 @@ sections:
   - path: /unify/debugger
     title: Profile Debugger
   - path: /unify/insights
-    title: Profile Insights
+    title: Profiles Insights
   - path: /unify/unify-gdpr
     title: Unify and GDPR
   - path: /unify/faqs

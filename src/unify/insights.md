@@ -1,13 +1,13 @@
 ---
-title: Profile Insights 
+title: Profiles Insights 
 plan: unify
 ---
 
-With Profile Insights, you can troubleshoot event data with transparent insight into your [Unify profiles](/docs/unify/). View errors and violations, success logs, and an audit trail for events that flow into your profiles. You can also learn more about why certain issues occur, and take preventative action against future errors.
+With Profiles Insights, you can troubleshoot event data with transparent insight into your [Unify profiles](/docs/unify/). View errors and violations, success logs, and an audit trail for events that flow into your profiles. You can also learn more about why certain issues occur, and take preventative action against future errors.
 
 ## Getting started
 
-To get started with Profile Insights, navigate to **Unify** > **Profiles insights**.
+To get started with Profiles Insights, navigate to **Unify** > **Profiles insights**.
 
 From the Profiles insights page, you can navigate to the [Errors and violations](#errors-and-violations), [Success logs](#success-logs), and [Audit trail](#audit-trail) tabs.
 
@@ -29,13 +29,13 @@ Click on an error log to view the error and next steps that Segment recommends.
 
 ### Violations
 
-Violations occur when incoming events do not comply with your [Identity Resolution settings](/docs/unify/identity-resolution/identity-resolution-settings). For example, when Segment drops an anonymous ID (lower priority) to resolve an event based on a matching user ID (higher priority), it results in a violation. 
+Violations occur when incoming events do not comply with your [Identity Resolution Settings](/docs/unify/identity-resolution/identity-resolution-settings). For example, when Segment drops an anonymous ID (lower priority) to resolve an event based on a matching user ID (higher priority), it results in a violation. 
 
 For any violations, Segment may drop lower priority identifiers or the identifiers that violate Identity Resolution Settings. From the grid, you can click a log name to view the violation details and next steps. 
 
 Use the **Message Payload** tab to view the raw messages for Track events and see exactly where the violation occured.
 
-Profile Insights flags the following violations:
+Profiles Insights flags the following violations:
 
 | Violation     | Description                                   |
 |---------------|-----------------------------------------------|
