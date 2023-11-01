@@ -235,3 +235,9 @@ The audience summary is a breakdown of the percentages of external_ids of users 
 
 > info ""
 > The Identifier Breakdown won't show custom IDs included in the Identity resolution configuration. Segment only displays external IDs in the breakdown.
+
+## FAQ
+
+**Why am I getting a different user count when using the $ on a field?**
+It is recommended and correct to use the $ when dealing with array properties. However, note that the $ causes the logical condition to be applied to each array entry independently, and instead it's more accurate to use the “equals one of” condition.
+![$ operator](https://github.com/segmentio/segment-docs/assets/68755692/7b0b6923-a4ad-4290-8aa6-bbbc7cb1ee1b)
