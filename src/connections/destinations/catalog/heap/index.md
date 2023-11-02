@@ -12,7 +12,7 @@ id: 54521fd725e721e32a72eebd
 1. From the Segment web app, click **Catalog**.
 2. Search for "Heap" in the Catalog, select it, and choose which of your sources to connect the destination to.
 3. In the destination settings, enter your Heap "App ID" into the connection settings.
-4. Remove Heap's snippet from your page if you're using Segment's client-side Analytics.js library to load Heap. With the Analytics.js library, Segment asynchronously loads Heap's JavaScript library onto your page. All native functionality of Heap, including auto-capturing of all events, are available to you.  
+4. Remove Heap's snippet from your page if you're using Segment's client-side Analytics.js library to load Heap. With the Analytics.js library, Segment asynchronously loads Heap's JavaScript library onto your page. All native functionality of Heap, including auto-capturing of all events, is available to you.  
 
 ## Identify
 
