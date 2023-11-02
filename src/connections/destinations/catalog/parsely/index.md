@@ -3,12 +3,12 @@ rewrite: true
 title: Parse.ly Destination
 id: 558c9f7b0a20f4e22f0fb3bc
 ---
-[Parse.ly](https://www.parse.ly) provides web analyses and content optimization for online publishers by partnering with them to provide clear audience insights through intuitive analytics.
+[Parse.ly](https://www.parse.ly){:target="_blank"} provides web analyses and content optimization for online publishers by partnering with them to provide clear audience insights through intuitive analytics.
 
 
 ## Getting Started
 
-{% include content/connection-modes.md %}
+
 
 1. From the Segment web app, click **Catalog**.
 2. Search for "Parsely" in the Catalog, select it, and choose which of your sources to connect the destination to.
@@ -19,13 +19,13 @@ When you enable Parse.ly from the Segment web app, your changes appear in the Se
 
 Remember to remove the Parse.ly native snippet from your page.
 
-Parsely is more useful when you implement JSON-LD metadata across your website as described [here](https://www.parse.ly/help/integration/basic).
+Parsely is more useful when you implement JSON-LD metadata across your website as described [here](https://www.parse.ly/help/integration/basic){:target="_blank"}.
 
 ## Page
 
-By default, unless you are using [Dynamic Tracking](https://www.parse.ly/help/integration/dynamic/), Parse.ly automatically tracks pageviews in the background, so you do not need to track them separately with Segment's Page method.
+By default, unless you are using [Dynamic Tracking](https://www.parse.ly/help/integration/dynamic/){:target="_blank"}, Parse.ly automatically tracks pageviews in the background, so you do not need to track them separately with Segment's Page method.
 
-If you are using dynamic tracking, you must explicitly let us know in your [integration settings](/docs/connections/destinations/catalog/parsely/#enable-dynamic-tracking). If this setting is enabled, we will disable Parse.ly's autotracking functionality and begin sending their API pageview events only in response to `analytics.page()` events.
+If you are using dynamic tracking, you must explicitly let us know in your [integration settings](#enable-dynamic-tracking). If this setting is enabled, we will disable Parse.ly's autotracking functionality and begin sending their API pageview events only in response to `analytics.page()` events.
 
 **Note:** You can only track pageviews if you are using the Parsely destination with our JavaScript Analytics.js library, and not using our server side integration with Parse.ly.
 
@@ -176,7 +176,7 @@ When a user pauses playback of a video, you should use our [Video Playback Pause
 
 ### Video Playback Interrupted
 
-When a playback of a video is interrupted, you should use our [Video Playback Interrupted](/docs/connections/spec/video/#playback-events) event. This event just takes an `assetId` and maps to Parse.ly's `reset` method (documentation [here](https://www.parse.ly/help/integration/video_v2/)).
+When a playback of a video is interrupted, you should use our [Video Playback Interrupted](/docs/connections/spec/video/#playback-events) event. This event just takes an `assetId` and maps to Parse.ly's `reset` method (documentation [here](https://www.parse.ly/help/integration/video_v2/){:target="_blank"}).
 
 **Note:** this event is only relevant for web tracking. Our server side integration does not support this event.
 
@@ -279,4 +279,4 @@ analytics.track({
 
 #### Track URL
 
-The destination does not currently support Parsely's `trackURL` method. [contact us](https://segment.com/requests/integrations/) if this is important to you.
+The destination does not currently support Parsely's `trackURL` method. [contact Segment](https://segment.com/requests/integrations/){:target="_blank"} if this is important to you.

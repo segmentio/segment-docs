@@ -28,6 +28,16 @@ When you create a Source in the Segment web app, it tells the Segment servers th
 
 Segment recommends you install Analytics for iOS by using either [Cocoapods](http://cocoapods.org/) or your Swift Package Manager. These allow you to create a build with specific bundled destinations, and they have a simplified installation and upgrading process.
 
+### Install the SDK using Swift Package Manager
+
+1. In the Project Manager tab of your Xcode project, right click and select **Add Package Dependencies**.
+2. Copy the following link to the Analytics Swift package:
+```
+https://github.com/segmentio/analytics-swift
+```
+3. Paste the link into the search field of the package dependency window, then click **Add Package**.
+
+### Install the SDK using a Podfile
 First, add the `Analytics` dependency to your `Podfile` by adding the following line:
 
 ```ruby
@@ -81,7 +91,7 @@ Some destinations do not accept data coming from the Segment servers and require
 
 Many advanced marketing automation and analytics tools offer an SDK or allow you to choose to send data server to server -- depending on the features you need. Most optimization, deep linking, error tracking, and survey tools *must* be included on the device to use their core features.
 
-In those cases, follow the additional steps to [bundle the destination tools](/docs/connections/sources/catalog/libraries/mobile/ios/#packaging-device-mode-destination-sdks).
+In those cases, follow the additional steps to [bundle the destination tools](/docs/connections/sources/catalog/libraries/mobile/ios#packaging-device-mode-destination-sdks).
 
 Now that the SDK is installed and set up, you're ready to start making calls.
 
@@ -119,7 +129,7 @@ Once you've added an `identify` call, you're ready to move on to tracking!
 
 ## Step 4: Track Actions
 
-The `track` method is tells Segment about the actions your users perform in your app. Every action triggers an “event”, which can also have associated properties. You can read more about `track` in the [track method](/docs/connections/sources/catalog/libraries/mobile/ios#track) reference.
+The `track` method tells Segment about the actions your users perform in your app. Every action triggers an “event”, which can also have associated properties. You can read more about `track` in the [track method](/docs/connections/sources/catalog/libraries/mobile/ios#track) reference.
 
 To get started, the Segment iOS SDK can automatically track a few important common events, such as **Application Installed**, **Application Updated** and **Application Opened**. You can enable this option during initialization by adding the following lines.
 

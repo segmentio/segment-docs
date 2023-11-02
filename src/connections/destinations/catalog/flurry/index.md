@@ -3,25 +3,21 @@ title: Flurry Destination
 rewrite: true
 id: 54521fd625e721e32a72eeb1
 ---
-[Flurry](https://developer.yahoo.com/flurry/docs/) provides you with the tools and resources you need to gain a deep level of understanding about your users' behavior in your apps.
+[Flurry](https://developer.yahoo.com/flurry/docs/){:target="_blank"} provides you with the tools and resources you need to gain a deep level of understanding about your users' behavior in your apps.
 
-Our Flurry destination code is open sourced on GitHub. Feel free to check it out: [iOS](https://github.com/segment-integrations/analytics-ios-integration-flurry), [Android](https://github.com/segment-integrations/analytics-android-integration-flurry).
+Our Flurry destination code is open sourced on GitHub. Feel free to check it out: [iOS](https://github.com/segment-integrations/analytics-ios-integration-flurry){:target="_blank"}, [Android](https://github.com/segment-integrations/analytics-android-integration-flurry){:target="_blank"}.
 
 ## Getting Started
 
-{% include content/connection-modes.md %}
+
 
 1. From the Segment web app, click **Catalog**.
 2. Search for "Flurry" in the Catalog, select it, and choose which of your sources to connect the destination to.
 3. In the destination settings, enter your Flurry "API Key" in Segment's Settings UI. You can retrieve this from your **Flurry Admin > Apps > API Key**. It should look like "4KKKGS3BAK4WW8WJ93DN".
-4. Follow the instructions in the GitHub repos: [iOS SDK](https://github.com/segment-integrations/analytics-ios-integration-flurry) and [Android SDK](https://github.com/segment-integrations/analytics-android-integration-flurry).
+4. Follow the instructions in the GitHub repos: [iOS SDK](https://github.com/segment-integrations/analytics-ios-integration-flurry){:target="_blank"} and [Android SDK](https://github.com/segment-integrations/analytics-android-integration-flurry){:target="_blank"}.
 5. Once the Segment library is integrated with your app, toggle Flurry on in your Segment UI.
 
 _Note: Flurry does not always display data in real time. We've seen that it can take anywhere from a few hours to a few days for certain types of data to sync with Flurry._
-
-### React Native set up
-
-{% include content/react-dest.md %}
 
 ## Screen
 

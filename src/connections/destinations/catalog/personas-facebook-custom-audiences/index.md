@@ -17,13 +17,15 @@ This allows you to run advertising campaigns in Facebook without having to manua
 ## Other Facebook Destinations Supported by Segment
 This page is about the **Facebook Custom Audiences** destination developed specifically for use with **EngagePersonas**. For documentation on other Facebook destinations, see the pages linked below.
 
-| **Facebook Destination**                                                                                    | Supported by Engage |
-| ----------------------------------------------------------------------------------------------------------- | ------------------- |
-| **[Facebook App Events](/docs/connections/destinations/catalog/facebook-app-events/)**                      | Yes                 |
-| **[Facebook Offline Conversions](/docs/connections/destinations/catalog/facebook-offline-conversions/)**    | Yes                 |
-| **[Facebook Pixel](/docs/connections/destinations/catalog/facebook-pixel/)**                                | No                  |
-| **[Facebook Custom Audiences](/docs/connections/destinations/catalog/personas-facebook-custom-audiences/)** | Yes                 |
-| **[Facebook Conversions API](/docs/connections/destinations/catalog/actions-facebook-conversions-api/)**    | Yes                 |
+| **Facebook Destination**                                                                                                      | Supported by Engage |
+| ----------------------------------------------------------------------------------------------------------------------------- | ------------------- |
+| **[Facebook App Events](/docs/connections/destinations/catalog/facebook-app-events/){:target="_blank"}**                      | Yes                 |
+| **[Facebook Offline Conversions](/docs/connections/destinations/catalog/facebook-offline-conversions/){:target="_blank"}**    | Yes                 |
+| **[Facebook Pixel](/docs/connections/destinations/catalog/facebook-pixel/){:target="_blank"}**                                | No                  |
+| **[Facebook Custom Audiences](/docs/connections/destinations/catalog/personas-facebook-custom-audiences/){:target="_blank"}** | Yes                 |
+| **[Facebook Conversions API](/docs/connections/destinations/catalog/actions-facebook-conversions-api/){:target="_blank"}**    | Yes                 |
+
+<!-- TODO: make this an include --->
 
 ## Details
 
@@ -104,10 +106,13 @@ Once created, the audience should be available in Facebook in ten minutes unless
 
 ## Additional Traits Matching
 
-> note ""
-> This feature is in Public Preview and usage is subject to the terms contained in the [First Access and Beta Preview Terms](https://segment.com/legal/first-access-beta-preview/){:target="_blank"}. For access, contact your CSM or email Segment at [friends@segment.com](mailto:friends@segment.com).
+> info ""
+> This feature is in Public Preview and usage is subject to the terms contained in the [First Access and Beta Preview Terms](https://segment.com/legal/first-access-beta-preview/){:target="_blank"}{:target="_blank"}. For access, contact your CSM or email Segment at [friends@segment.com](mailto:friends@segment.com).
 
 Previously, Segment only sent email and mobile IDs to Facebook. A new beta feature can send an expanded list of identifiers or traits to Facebook, so that Facebook can try to use these additional data points to match to their user profiles. If you have this feature enabled and implemented any of these traits in your Segment tracking, Engage can send this data to Facebook. Segment can now also sync multiple emails if the profile contains more than one. Additionally as part of this feature, Segment hashes fields before sending them downstream to Facebook, if required. (See the table below for hashing requirements.) Please note that the trait data implemented in your Segment tracking must match the naming convention and format specified in the table below, otherwise Segment can't send it to Facebook.
+
+> success ""
+> Visit Segment's [Trait Enrichment](/docs/engage/trait-activation/trait-enrichment/) to learn more.
 
 
 | **Name**        | **Trait Key formats supported**   | **Facebook Keys**  | **FB Hashing Required** | **FB Guidelines**     |

@@ -5,7 +5,7 @@ id: 5d0ac1fbc12d700001651e34
 ---
 Airship gives brands the data, channels, orchestration and services they need to deliver push notifications, emails, SMS, in-app messages, and more to the right person at the right moment — building trust, boosting engagement, driving action, and growing value.
 
-[Airship Cloud-mode Destination integration](https://docs.airship.com/partners/segment/#destination) enables users to set Airship tags, attributes, and custom events through Segment's `identify`, `track`, and `group` API calls.
+[Airship Cloud-mode Destination integration](https://docs.airship.com/partners/segment/#destination){:target="_blank”} enables users to set Airship tags, attributes, and custom events through Segment's `identify`, `track`, and `group` API calls.
 
 Segment `track` API calls are received by Airship as Custom Events. The traits of the Segments `identify` API call are interpreted as either `tags` or `attributes`. Tags are all traits that contains a boolean value (either `true` or `false`). A trait which contains a non-boolean value -- and is known to Airship -- becomes an attribute.
 
@@ -21,7 +21,7 @@ This destination is maintained by Airship. For any issues [contact the Airship S
 
 ## Getting Started
 
-{% include content/connection-modes.md %}
+
 
 Follow these steps to configure the integration
 
@@ -30,14 +30,14 @@ Follow these steps to configure the integration
 3. Find the `Airship` destination (under *SMS & Push Notifications*), click the *Airship* tile and then click the *Configure Airship* button.
 4. In the *Select Source* dialog, select a source and click *Confirm Source*.
 5. Toggle on *Airship EU Data Center* if you are implemented in Airship's European Data Center (if you are not sure which data center you are on please [contact the Airship support team](mailto:support@airship.com)).
-3. Enter the *App Key*  and Access Token that you copied when setting up the Real-Data Streaming integration in Airship. See [Airship documentation for steps to create an Access Token](https://docs.airship.com/partners/segment/#access-token).
-4. For `identify` events, first [set up a tag group within Airship](https://docs.airship.com/partners/segment/#tag-group).
-5. For `attributes`, first [predefine them in Airship](https://docs.airship.com/guides/messaging/user-guide/audience/segmentation/attributes/#add-attributes).
+3. Enter the *App Key*  and Access Token that you copied when setting up the Real-Data Streaming integration in Airship. See [Airship documentation for steps to create an Access Token](https://docs.airship.com/partners/segment/#access-token){:target="_blank”}.
+4. For `identify` events, first [set up a tag group within Airship](https://docs.airship.com/partners/segment/#tag-group){:target="_blank”}.
+5. For `attributes`, first [predefine them in Airship](https://docs.airship.com/guides/messaging/user-guide/audience/segmentation/attributes/#add-attributes){:target="_blank”}.
 
 ## Requirements
 To use the Segment Destination integration, you must implement `Named Users` in Airship. The Segment UserID must match the Named User ID in Airship. If your `named_user_id` and `UserID` do not match, Airship will not be able to associate `identify`, `track`, or `group` events to the proper user in Airship. You will not be able to issue automated messages or to attach user attributes from Segment within Airship.
 
-See [Tags and Named Users](https://docs.airship.com/guides/audience/tags-named-users/) or the [Named Users API](https://docs.airship.com/api/ua/#tag/named-users) for more information about configuring named users.
+See [Tags and Named Users](https://docs.airship.com/guides/audience/tags-named-users/){:target="_blank”} or the [Named Users API](https://docs.airship.com/api/ua/#tag/named-users){:target="_blank”} for more information about configuring named users.
 
 ## Identify
 

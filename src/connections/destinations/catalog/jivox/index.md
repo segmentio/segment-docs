@@ -2,13 +2,13 @@
 title: Jivox IQ Destination
 id: 61a0f8fdc53f13a42eac137c
 ---
-[Jivox](https://jivox.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) personalizes digital marketing and advertising. Using the power of big data and machine learning algorithms, Jivox IQ assembles thousands of creative and messaging variations in real-time to create millions of personalized conversations.
+[Jivox](https://jivox.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners){:target="_blank”} personalizes digital marketing and advertising. Using the power of big data and machine learning algorithms, Jivox IQ assembles thousands of creative and messaging variations in real-time to create millions of personalized conversations.
 
 This destination is maintained by Jivox. For any issues with the destination, [contact the Jivox Support team](mailto:support@jivox.com).
 
 ## Getting Started
 
-{% include content/connection-modes.md %} 
+ 
 
 1. Contact [Jivox IQ Support Team](mailto:support@jivox.com?subject=Need%20API%20key%20for%20Segment%20Destination%20configuration%20for%20) to get the API Key.
 2. From the Destinations catalog page in the Segment App, click **Add Destination**.

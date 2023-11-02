@@ -21,11 +21,11 @@ CODEOWNERS  @segmentio/segment-doc-team
 
 
 # Libraries owners
-/src/connections/catalog/libraries @stayseesong @markzegarelli
+/src/connections/catalog/libraries @stayseesong
 
 
 # Destinations owners
-# /src/connections/destinations  @stayseesong @markzegarelli
+# /src/connections/destinations  @stayseesong=
 
 # Stratconn
 ## Adobe
@@ -41,7 +41,7 @@ CODEOWNERS  @segmentio/segment-doc-team
 
 
 # Engage
-/src/engage/ @markzegarelli @pwseg @rchinn-segment
+/src/engage/ @pwseg @rchinn-segment
 
 # Unify
 /src/unify @rchinn-segment

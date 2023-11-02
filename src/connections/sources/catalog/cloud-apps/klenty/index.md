@@ -5,7 +5,7 @@ id: D6h3UEduNW
 ---
 {% include content/source-region-unsupported.md %}
 
-[Klenty](https://www.klenty.com/) helps sales teams to send personalized emails and automated follow-ups at scale. With Klenty, your sales team can completely automate their email outreach and focus on closing more deals.
+[Klenty](https://www.klenty.com/){:target="_blank"} helps sales teams to send personalized emails and automated follow-ups at scale. With Klenty, your sales team can completely automate their email outreach and focus on closing more deals.
 
 This source is maintained by Klenty. For any issues with the destination, [contact the Klenty Support team](mailto:support@klenty.com).
 

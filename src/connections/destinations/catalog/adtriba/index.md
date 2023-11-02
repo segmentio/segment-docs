@@ -3,7 +3,7 @@ rewrite: true
 title: Adtriba Destination
 id: 5c7550de16b530000157a2d5
 ---
-[Adtriba](https://www.adtriba.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) allows advertisers to track, control and optimize their marketing activities across all digital marketing channels through AI and user journey analysis.
+[Adtriba](https://www.adtriba.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners){:target="_blank”} allows advertisers to track, control and optimize their marketing activities across all digital marketing channels through AI and user journey analysis.
 
 This destination is maintained by Adtriba. For any issues with the destination, [contact the Adtriba Support team](mailto:support@adtriba.com).
 
@@ -12,7 +12,7 @@ This destination is maintained by Adtriba. For any issues with the destination, 
 
 ## Getting Started
 
-{% include content/connection-modes.md %}
+
 
 1. From the Segment web app, click **Catalog**.
 2. Search for "Adtriba" in the Catalog, select it, and choose which of your sources to connect the destination to.

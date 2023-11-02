@@ -5,18 +5,18 @@ id: 62274854b16140600b51d1cd
 ---
 ## Amberflo Destination
 
-[Amberflo](https://www.amberflo.io/) provides cloud based usage metering, pricing, and billing. Meter any infrastructure, platform, application, custom resource, event, or feature. Amberflo provides an end-to-end usage platform engine that serves as the system of records and single source of truth. It's platform is built on top of the metering service, Amberflo Metering Cloud. It is built on cloud platform design principles of durability, availability, scalability, and cost-effectiveness with specialized logic built-in to ensure accuracy of the metering system - that is that each record is processed once, and once only, and that duplicate records sent are automatically de-duped. Amberflo Billing Cloud is a decoupled (yet integrated) application that is built on the Metering Cloud. It allows users to create, model, and manage usage-based pricing plans with full flexibility over modern sales artifacts such as prepaid credits, rewards, promotions, and custom currency creation.
+[Amberflo](https://www.amberflo.io/){:target="_blank”} provides cloud based usage metering, pricing, and billing. Meter any infrastructure, platform, application, custom resource, event, or feature. Amberflo provides an end-to-end usage platform engine that serves as the system of records and single source of truth. It's platform is built on top of the metering service, Amberflo Metering Cloud. It is built on cloud platform design principles of durability, availability, scalability, and cost-effectiveness with specialized logic built-in to ensure accuracy of the metering system - that is that each record is processed once, and once only, and that duplicate records sent are automatically de-duped. Amberflo Billing Cloud is a decoupled (yet integrated) application that is built on the Metering Cloud. It allows users to create, model, and manage usage-based pricing plans with full flexibility over modern sales artifacts such as prepaid credits, rewards, promotions, and custom currency creation.
 
 This destination is maintained by Amberflo. For any issues with the destination, [contact the Amberflo Support team](mailto:support@amberflo.io).
 
 ## Getting Started
 
-{% include content/connection-modes.md %}
+
 
 1. From the Destinations catalog page in the Segment App, click **Add Destination**.
 2. Search for "Amberflo" in the Destinations Catalog, and select the "Amberflo" destination.
 3. Choose which Source should send data to the "Amberflo" destination.
-4. Go to the [Amberflo dashboard](https://ui.amberflo.io/settings/account/api-keys), find and copy the "API key".
+4. Go to the [Amberflo dashboard](https://ui.amberflo.io/settings/account/api-keys){:target="_blank”}, find and copy the "API key".
 5. Enter the "API Key" in the "Amberflo" destination settings in Segment.
 
 ## Supported methods
@@ -25,7 +25,7 @@ Amberflo supports the following methods, as specified in the [Segment Spec](/doc
 
 ### Page
 
-Send [Page](/docs/connections/spec/page) calls the [Amberflo Ingestion API](https://docs.amberflo.io/reference/post_ingest) to ingest as a meter with value 1. For example:
+Send [Page](/docs/connections/spec/page) calls the [Amberflo Ingestion API](https://docs.amberflo.io/reference/post_ingest){:target="_blank”} to ingest as a meter with value 1. For example:
 ```js
 analytics.page({
   userId: "some_user_id",
@@ -72,7 +72,7 @@ curl --request POST \
 
 ### Screen
 
-Send [Screen](/docs/connections/spec/screen) calls the [Amberflo Ingestion API](https://docs.amberflo.io/reference/post_ingest) to ingest as a meter with value 1. For example:
+Send [Screen](/docs/connections/spec/screen) calls the [Amberflo Ingestion API](https://docs.amberflo.io/reference/post_ingest){:target="_blank”} to ingest as a meter with value 1. For example:
 
 ```js
 analytics.screen({
@@ -109,7 +109,7 @@ curl --request POST \
 
 ### Identify
 
-Send [Identify](/docs/connections/spec/identify) calls the [Amberflo Customers API](https://docs.amberflo.io/reference/post_customers) to create a customer in Amberflo or update if the customer already exists. For example:
+Send [Identify](/docs/connections/spec/identify) calls the [Amberflo Customers API](https://docs.amberflo.io/reference/post_customers){:target="_blank”} to create a customer in Amberflo or update if the customer already exists. For example:
 
 ```js
 analytics.identify({
@@ -155,7 +155,7 @@ curl --request PUT \
 
 ### Track
 
-Send [Track](/docs/connections/spec/track) calls [Amberflo Ingestion API](https://docs.amberflo.io/reference/post_ingest) to ingest as a meter with value of `properties.value` or 1 if value is not set. For example:
+Send [Track](/docs/connections/spec/track) calls [Amberflo Ingestion API](https://docs.amberflo.io/reference/post_ingest){:target="_blank”} to ingest as a meter with value of `properties.value` or 1 if value is not set. For example:
 
 ```js
 analytics.track({

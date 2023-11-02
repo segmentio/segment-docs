@@ -3,13 +3,13 @@ rewrite: true
 title: Zendesk Chat (Zopim) Destination
 id: 54ec1baddb31d978f14aa7f9
 ---
-[Zendesk Chat](https://developer.zendesk.com/rest_api/docs/chat/introduction), (previously called Zopim) is a live chat solution that helps businesses increase sales conversion by engaging important leads on their websites. The `analytics.js` Zendesk Chat Destination is open-source. You can browse the code [on GitHub](https://github.com/segmentio/analytics.js-integrations/tree/master/integrations/zopim).
+[Zendesk Chat](https://developer.zendesk.com/rest_api/docs/chat/introduction){:target="_blank"}, (previously called Zopim) is a live chat solution that helps businesses increase sales conversion by engaging important leads on their websites. The `analytics.js` Zendesk Chat Destination is open-source. You can browse the code [on GitHub](https://github.com/segmentio/analytics.js-integrations/tree/master/integrations/zopim){:target="_blank"}.
 
-**NOTE:** Zendesk Chat currently offers [two types of widgets](https://support.zendesk.com/hc/en-us/articles/115007912068-Using-the-Chat-JavaScript-API): a standalone `Chat Widget`, which is mainly designed to provide chat related features, and a `Web Widget`, which incorporates both Zendesk Chat and Zendesk Support functionalities. At the moment, Segment only supports the `Chat Widget`. For more details refer to the "Getting Started" section below.
+**NOTE:** Zendesk Chat currently offers [two types of widgets](https://support.zendesk.com/hc/en-us/articles/115007912068-Using-the-Chat-JavaScript-API){:target="_blank"} a standalone `Chat Widget`, which is mainly designed to provide chat related features, and a `Web Widget`, which incorporates both Zendesk Chat and Zendesk Support functionalities. At the moment, Segment only supports the `Chat Widget`. For more details refer to the "Getting Started" section below.
 
 ## Getting Started
 
-{% include content/connection-modes.md %}
+
 
 1. From the Segment web app, click **Catalog**.
 2. Search for "Zopim" in the Catalog, select it, and choose which of your sources to connect the destination to. (This is the old name.)
@@ -68,4 +68,4 @@ To learn more about the live chat events you can capture with this destination, 
 
 ### I want to hide the Zendesk Chat widget on certain pages, or after a analytics.js call is made.
 
-Currently, the best way to ensure that the Zendesk Chat widget does not load on a page is to fire a small JavaScript snippet as [documented here on the legacy Zopim site](https://api.zopim.com/files/meshim/widget/controllers/liveChatAPI/Window-js.html#$zopim.livechat.window.hide). To ensure that the Zendesk Chat snippet fires after the library loads on the page, you can either wrap the snippet in an [analytics.ready()](/docs/connections/sources/catalog/libraries/website/javascript/#ready) method with any conditional logic you'd like, or place the script in the callback of any Analytics.js (`.track()`, `.identify()`, etc) call so that it hides after that call is made.
+Currently, the best way to ensure that the Zendesk Chat widget does not load on a page is to fire a small JavaScript snippet as [documented here on the legacy Zopim site](https://api.zopim.com/files/meshim/widget/controllers/liveChatAPI/Window-js.html#$zopim.livechat.window.hide){:target="_blank"}. To ensure that the Zendesk Chat snippet fires after the library loads on the page, you can either wrap the snippet in an [analytics.ready()](/docs/connections/sources/catalog/libraries/website/javascript/#ready) method with any conditional logic you'd like, or place the script in the callback of any Analytics.js (`.track()`, `.identify()`, etc) call so that it hides after that call is made.

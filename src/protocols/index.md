@@ -3,6 +3,9 @@ title: Protocols Overview
 plan: protocols
 ---
 
+> info ""
+> Protocols is **only** available for [event stream](/docs/connections/sources/#event-streams-sources) (website, mobile, and server sources) and [Engage](/docs/engage/) sources.
+
 Segment helps customers collect and integrate customer data across a wide range of tools and Destinations. To do so reliably, the data Segment receives must be clean, consistent and adhere to a well thought out tracking plan.
 
 Protocols was built to automate and scale the [data quality best practices](/docs/protocols/tracking-plan/best-practices/) developed over years of helping customers implement Segment. Investing in data quality will improve trust in your data, reduce time spent by your engineering and business teams navigating and validating data, and ultimately allow your business to grow faster.

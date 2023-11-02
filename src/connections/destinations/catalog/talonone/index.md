@@ -8,7 +8,7 @@ id: 5de7c705e7d93d5e24742a04
 > warning ""
 > Segment and Talon.One recommend you use the [Talon.One (Action) Destination](/docs/connections/destinations/catalog/actions-talon-one/) instead.
 
-Create flexible and targeted promotional & loyalty campaigns with [Talon.One](https://Talon.One/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners).
+Create flexible and targeted promotional & loyalty campaigns with [Talon.One](https://Talon.One/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners){:target="_blank"}.
 Campaigns can be created and managed by non-technical users such as marketeers. There is no need to get your development team involved. Features include coupons, discounts, loyalty programs, referral tracking, geo-fencing, and bundling.
 
 This destination is maintained by Talon.One. For any issues with the destination, [contact the Talon.One Support team](mailto:support@talon.one).
@@ -20,7 +20,7 @@ This destination is maintained by Talon.One. For any issues with the destination
 
 ## Getting Started
 
-{% include content/connection-modes.md %}
+
 
 1. From the Segment web app, click **Catalog**.
 2. Search for `Talon.One` in the Catalog, select it, and choose which of your sources to connect the destination to.

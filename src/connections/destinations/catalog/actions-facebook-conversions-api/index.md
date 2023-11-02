@@ -165,6 +165,22 @@ Segment creates a SHA-256 hash of the following fields before sending to Faceboo
 
 If you use Facebook Pixel, the Pixel library also hashes the External ID. This means External IDs will match across Facebook Pixel and Facebook Conversions API if they use the External ID for [deduplication](https://developers.facebook.com/docs/marketing-api/conversions-api/deduplicate-pixel-and-server-events/#fbp-or-external-id){:target="_blank"}.
 
+### User Data Formatting
+
+Segment applies formatting to User Data Parameters as follows:
+
+| User Data Field       | Formatting applied to field value before hashing                                                                                                                                                                             |
+|-----------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| External ID           | All whitespace is removed from string, set to lowercase.                                                                                                                                                                     |
+| Email                 | All whitespace is removed from string, set to lowercase.                                                                                                                                                                     |
+| First Name, Last Name | All whitespace is removed from string, set to lowercase.                                                                                                                                                                     |
+| Gender                | All whitespace is removed from string, set to lowercase. "male" is set to "m", "female" is set to "f".                                                                                                                       |
+| Date of Birth         | No formatting is applied.                                                                                                                                                                                                    |
+| Phone                 | All whitespace is removed from string.                                                                                                                                                                                       |
+| Zip Code              | All whitespace is removed from string.                                                                                                                                                                                       |
+| State                 | All whitespace is removed from string and the result is compared against a map object of states and their two-character ANSI abbreviation code.  Example: "Texas", "TX", or "tx" in this field will be formatted as "tx".    |
+| Country               | All whitespace is removed from string and the result is compared against a map object of countries and their two-letter ISO 3166-1 alpha-2 country code.  Example: "Germany", "germany", or "de" will be formatted as "de".  |
+
 ### User Data Parameters
 
 Segment automatically maps User Data fields to their corresponding parameters [as expected by the Conversions API](https://developers.facebook.com/docs/marketing-api/conversions-api/parameters/customer-information-parameters/){:target="_blank"} before sending to Facebook:
@@ -194,4 +210,8 @@ After you start sending events, you should start seeing them in twenty minutes. 
 1. Go to the Events Manager.
 2. Click on the corresponding pixel.
 3. In the Overview tab, look for events where the “Connection Method” is Server.
+
+### Send multiple External IDs
+
+[Facebook](https://developers.facebook.com/docs/marketing-api/conversions-api/parameters/external-id/){:target="_blank"} allows you to send one External ID per payload as a string, or multiple per payload in an array of External ID strings. Send an array of External IDs through Segment by mapping an array to the `externalId` field when setting up your Actions mappings.
 

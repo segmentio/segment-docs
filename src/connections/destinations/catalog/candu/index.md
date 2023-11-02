@@ -4,7 +4,7 @@ rewrite: true
 beta: true
 id: 5c7df2eafeed45000121a49e
 ---
-[Candu](https://www.candu.ai/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) is the first Editor for your app. Instead of overlaying an experience layer, Candu's embedded components inherit your style guide, so they look like a native part of your interface. Candu helps you build, iterate, and personalize native onboarding experiences that guide your end-users from basic to expert-level fluency.
+[Candu](https://www.candu.ai/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners){:target="_blank”} is the first Editor for your app. Instead of overlaying an experience layer, Candu's embedded components inherit your style guide, so they look like a native part of your interface. Candu helps you build, iterate, and personalize native onboarding experiences that guide your end-users from basic to expert-level fluency.
 
 This destination is maintained by Candu Labs. For any issues with the destination, [contact the Candu Support team](mailto:support@candu.ai).
 
@@ -12,11 +12,11 @@ This destination is maintained by Candu Labs. For any issues with the destinatio
 
 ## Getting Started
 
-{% include content/connection-modes.md %}
+
 
 1. From the Segment web app, click **Catalog**.
 2. Search for "Candu" in the Catalog, select it, and choose which of your sources to connect the destination to.
-3. Enter the "API Key" into your Segment Settings UI which you can find from your [Candu Settings page](https://app.candu.ai/settings/workplace).
+3. Enter the "API Key" into your Segment Settings UI which you can find from your [Candu Settings page](https://app.candu.ai/settings/workplace){:target="_blank”}.
 
 ## Page
 

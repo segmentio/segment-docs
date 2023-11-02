@@ -13,13 +13,13 @@ This destination is maintained by Ortto. For any issues with the destination, [c
 
 ## Getting Started
 
-{% include content/connection-modes.md %}
+
 
 1. From the Destinations catalog page in the Segment App, click **Add Destination**.
 2. Search for "Ortto" in the Destinations Catalog, and select the "Ortto" destination.
 3. Click **Configure Ortto** and choose which Source should send data to the "Ortto" destination.
 4. If requested, specify the Destination Name for your "Ortto" destination, and click **Save**.
-5. Complete [integrating your Ortto account with Segment](https://help.ortto.com/user/latest/data-sources/configuring-a-new-data-source/3rd-party-integrations/segment.html), which automatically configures your Ortto API keys within your "Ortto" destination in Segment.
+5. Complete [integrating your Ortto account with Segment](https://help.ortto.com/user/latest/data-sources/configuring-a-new-data-source/3rd-party-integrations/segment.html){:target="_blank"}, which automatically configures your Ortto API keys within your "Ortto" destination in Segment.
 
 
 ## Supported methods

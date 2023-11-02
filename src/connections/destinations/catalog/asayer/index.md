@@ -3,7 +3,7 @@ rewrite: true
 title: Asayer Destination
 id: 5d00754256e478000114784f
 ---
-[Asayer](https://asayer.io) is a session replay tool for engineering teams. It lets you capture the full picture of each user session on your website so you can quickly solve issues and improve your customer experience.
+[Asayer](https://asayer.io){:target="_blank"} is a session replay tool for engineering teams. It lets you capture the full picture of each user session on your website so you can quickly solve issues and improve your customer experience.
 
 This destination is maintained by Asayer. For any issues with the destination, [contact the Asayer Support team](mailto:support@asayer.io).
 
@@ -11,7 +11,7 @@ This destination is maintained by Asayer. For any issues with the destination, [
 
 ## Getting Started
 
-{% include content/connection-modes.md %}
+
 
 1. From the Segment web app, click **Catalog**.
 2. Search for "Asayer" in the Catalog, select it, and choose which of your sources to connect the destination to.
@@ -45,7 +45,7 @@ analytics.identify("userId123", {
 });
 ```
 
-**NOTE:** All traits, as well as `userId` and `anonymousId` fields must be explicitly enabled within the Asayer dashboard under [Preferences -> Custom Fields](https://app.openreplay.com/client/custom-fields) before they will successfully send.
+**NOTE:** All traits, as well as `userId` and `anonymousId` fields must be explicitly enabled within the Asayer dashboard under [Preferences -> Custom Fields](https://app.openreplay.com/client/custom-fields){:target="_blank"} before they will successfully send.
 
 ## Track
 

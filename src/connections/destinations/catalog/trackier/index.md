@@ -3,7 +3,7 @@ rewrite: true
 title: Trackier Destination
 id: 5cd62e29299eb40001acff12
 ---
-[Trackier](https://trackier.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) is customisable performance marketing software used by ad networks, agencies and advertisers to manage publisher relations.
+[Trackier](https://trackier.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners){:target="_blank”} is customisable performance marketing software used by ad networks, agencies and advertisers to manage publisher relations.
 
 This destination is maintained by Trackier. For any issues with the destination, [contact the Trackier Support team](mailto:support@trackier.com).
 
@@ -12,7 +12,7 @@ This destination is maintained by Trackier. For any issues with the destination,
 
 ## Getting Started
 
-{% include content/connection-modes.md %}
+
 
 1. From the Segment web app, click **Catalog**.
 2. Search for "Trackier" in the Catalog, select it, and choose which of your sources to connect the destination to.

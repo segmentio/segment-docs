@@ -2,8 +2,10 @@
 rewrite: true
 title: Insider Destination
 id: 5f2cf019edbedc752d668f69
+hidden: true
+hide-personas-partial: true
 ---
-[Insider](https://useinsider.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) Growth Management Platform (GMP) helps digital marketers drive growth across the funnel. Insider GMP helps marketers deliver personalized journeys across the web, mobile web, mobile apps, messaging, email, and ad channels using the unified data.
+[Insider](https://useinsider.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners){:target="_blank”} Growth Management Platform (GMP) helps digital marketers drive growth across the funnel. Insider GMP helps marketers deliver personalized journeys across the web, mobile web, mobile apps, messaging, email, and ad channels using the unified data.
 
 This destination is maintained by Insider. For any issues with the destination, [contact the Insider Support team](mailto:pst@useinsider.com).
 
@@ -14,7 +16,7 @@ This destination is maintained by Insider. For any issues with the destination, 
 1. From the Destinations catalog page in the Segment App, click **Add Destination**.
 2. Search for "Insider" in the Destinations Catalog, and select the Insider destination.
 3. Choose which Source should send data to the Insider destination.
-4. Go to the [Insider dashboard](https://inone.useinsider.com/), navigate to **Settings > Integration Settings**, then find and copy the **Segment.com API Key**.
+4. Go to the [Insider dashboard](https://inone.useinsider.com/){:target="_blank”}, navigate to **Settings > Integration Settings**, then find and copy the **Segment.com API Key**.
 5. Enter your **Partner Name** and API Key in the Insider destination settings in Segment.
 
 ## Page

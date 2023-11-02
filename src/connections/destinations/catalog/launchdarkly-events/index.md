@@ -14,12 +14,12 @@ This destination is maintained by LaunchDarkly. For any issues with the destinat
 
 ## Getting Started
 
-{% include content/connection-modes.md %}
+
 
 1. From the Destinations catalog page in the Segment App, click **Add Destination**.
 2. Search for “LaunchDarkly” in the Destinations Catalog, and select the LaunchDarkly destination.
 3. Choose which Source should send data to the LaunchDarkly destination.
-4. Go to the LaunchDarkly [Account Settings](https://app.launchdarkly.com/settings/projects), and find and copy the client-side ID from your default project.
+4. Go to the LaunchDarkly [Account Settings](https://app.launchdarkly.com/settings/projects){:target="_blank"}, and find and copy the client-side ID from your default project.
 5. Enter this ID as the **API Key** in the “LaunchDarkly” destination settings in Segment.
 
 ## Track
@@ -55,7 +55,7 @@ LaunchDarkly ingests that call as:
 > note ""
 > **Note**: The LaunchDarkly Metric must be actively recording and have a Feature Flag attached for Segment events to appear in your LaunchDarkly Project.
 
-Segment sends Track calls to LaunchDarkly as a `track` event. It appears on your [Debugger page](https://app.launchdarkly.com/default/production/debugger/goals).
+Segment sends Track calls to LaunchDarkly as a `track` event. It appears on your [Debugger page](https://app.launchdarkly.com/default/production/debugger/goals){:target="_blank"}.
 
 `track` events map to a Metric if the Segment event name exactly matches the Name of an active LaunchDarkly experiment metric.
 

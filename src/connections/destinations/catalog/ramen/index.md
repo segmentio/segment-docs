@@ -88,7 +88,7 @@ Ramen does not support passing in any attributes to `track` beyond the event nam
 ​
 ### Secure Mode
 ​
-If you want to enable Ramen [secure mode](http://docs.ramen.is/#secure-mode) for analytics.js, you can pass in the `timestamp` and `auth_hash` variables by rendering it in your server-side templates.
+If you want to enable Ramen [secure mode](http://docs.ramen.is/#secure-mode){:target="_blank"} for analytics.js, you can pass in the `timestamp` and `auth_hash` variables by rendering it in your server-side templates.
 ​
 The `timestamp` should be a Unix timestamp (epoch seconds). The `auth_hash` is a SHA256 has of several attributes. The hash is not based on the email, it is based on:
 ​

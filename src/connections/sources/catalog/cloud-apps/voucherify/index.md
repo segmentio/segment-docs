@@ -1,8 +1,8 @@
 ---
 title: Voucherify Source
-hidden: true
+id: wFC7PGNwGR
 ---
-[Voucherify](https://voucherify.io/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) is an API-first Promotion Engine for growth teams. With Voucherify, marketers can run dynamic and personalized promotions and loyalty programs without the involvement of the development team. Run CDP-powered coupons, discounts, referrals, loyalty programs, gift cards, cashback, bundles, and more.
+[Voucherify](https://voucherify.io/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners){:target="_blank”} is an API-first Promotion Engine for growth teams. With Voucherify, marketers can run dynamic and personalized promotions and loyalty programs without the involvement of the development team. Run CDP-powered coupons, discounts, referrals, loyalty programs, gift cards, cashback, bundles, and more.
 The integration is bidirectional, which means you can configure Voucherify as both the destination and source of customer data.
 
 This is an [Event Cloud Source](/docs/sources/#event-cloud-sources) which can not only export data into your Segment warehouse, but can also sync the exported data into your other enabled Segment Destinations.
@@ -14,7 +14,7 @@ This source is maintained by Voucherify. For any issues with the source, [contac
 
 ## Getting Started
 
-1. From your workspace's [Sources catalog page](https://app.segment.com/goto-my-workspace/sources/catalog) click **Add Source**.
+1. From your workspace's [Sources catalog page](https://app.segment.com/goto-my-workspace/sources/catalog){:target="_blank”} click **Add Source**.
 2. Search for "Voucherify" in the Sources Catalog, select Voucherify, and click **Add Source**.
 3. On the next screen, give the Source a nickname configure any other settings. The nickname is used as a label in the Segment app, and Segment creates a related schema name in your warehouse. The nickname can be anything, but Segment recommends you use something that reflects the source itself and distinguishes amongst your environments.
 4. Click **Add Source** to save your settings.

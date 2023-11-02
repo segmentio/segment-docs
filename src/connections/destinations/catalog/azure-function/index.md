@@ -6,7 +6,7 @@ id: 5cbf95e258453600011d6d8f
 ---
 Segment makes it easy to send your data to Azure Function (and lots of other destinations). When you track your data using Segment's open-source [libraries](/docs/connections/sources/catalog/), Segment can translate and route your data to an Azure Function in the format it expects.
 
-[Azure Function](https://azure.microsoft.com/en-us/services/functions) is a serverless compute service that enables you to run code on-demand without having to explicitly provision or manage infrastructure. Use Azure Functions to run a script or piece of code in response to a variety of events.
+[Azure Function](https://azure.microsoft.com/en-us/services/functions){:target="_blank"} is a serverless compute service that enables you to run code on-demand without having to explicitly provision or manage infrastructure. Use Azure Functions to run a script or piece of code in response to a variety of events.
 
 
 {% include content/beta-note.md %}
@@ -14,7 +14,7 @@ Segment makes it easy to send your data to Azure Function (and lots of other des
 
 # Getting Started
 
-{% include content/connection-modes.md %}
+
 
 ## Build an Azure Function to Process Segment Events
 

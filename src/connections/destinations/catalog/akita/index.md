@@ -13,7 +13,7 @@ Once you have integrated one of the Segment libraries (such as `analytics.js`) i
 
 You will need to provide your Akita API Token value. To find your API Token, sign in to your Akita account and then click on the following link:
 
-[https://app.akitaapp.com/#int/account/tracking](https://app.akitaapp.com/#int/account/tracking)
+[https://app.akitaapp.com/#int/account/tracking](https://app.akitaapp.com/#int/account/tracking){:target="_blank”}
 
 You will see your API Token under the "Segment.com Users" heading.
 

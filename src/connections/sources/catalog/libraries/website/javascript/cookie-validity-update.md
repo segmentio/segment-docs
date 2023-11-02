@@ -127,3 +127,56 @@ You can still manually track identity by calling `analytics.identify()` with the
 Analytics.js tries to detect when a page is about to be closed and saves pending events to `localStorage`. When the user navigates to another page within the same domain, Analytics.js attempts to send any events it finds in localStorage.
 
 When `disableClientPersistence` is set to `true`, Analytics.js won't store any pending events into `localStorage`.
+
+## Client-side cookie methods (get, set, clear)
+
+To access or assign a value to a cookie outside of the standard Segment methods (track/identify/page/group), you can use the following methods. To access the cookie's value, pass an empty `()` at the end of the method. To assign the value, include the string value inside those parenthesis, for example, `('123-abc')`. To clear or remove the value for a specific field, pass in an empty value of its type. For example, for string `('')`, or for object `({})`.
+
+| Field | Cookie Name | Analytics.js Method | Local Storage Method | Set Example | Clear Example |
+| ----- | ----------- | ------------------- | -------------------- | --------------- | ------------- |
+| `userId` | `ajs_user_id` | `analytics.user().id();` | `window.localStorage.ajs_user_id` | `analytics.user().id('123-abc');` | `analytics.user().id('');` |
+| `anonymousId` | `ajs_anonymous_id` | `analytics.user().anonymousId();` | `window.localStorage.ajs_anonymous_id` | `analytics.user().anonymousId('333-abc-456-dfg');` | `analytics.user().anonymousId('');` |
+| `user traits` | `ajs_user_traits` | `analytics.user().traits();` | `window.localStorage.ajs_user_traits` | `analytics.user().traits({firstName:'Jane'});` | `analytics.user().traits({});` |
+| `groupId` | `ajs_group_id` | `analytics.group().id();` | `window.localStorage.ajs_group_id` | `analytics.group().id('777-qwe-098');` | `analytics.group().id('');` |
+| `group traits` | `ajs_group_properties` | `analytics.group().traits()` | `window.localStorage.ajs_group_properties` | `analytics.group().traits({name:'Segment'})` | `analytics.group().traits({})` |
+
+## Storage Priority
+
+By default, Analytics.js uses `localStorage` as its preferred storage location, with Cookies as a fallback when `localStorage` is not available or not populated. An in-memory storage is used as a last fallback if all the previous ones are disabled.
+
+Default Storage Priority:
+
+```md
+LocalStorage -> Cookie -> InMemory
+```
+
+Some scenarios might require a switch in the storage systems priority:
+
+- Apps that move the user across different subdomains
+- Apps where the server needs control over the user data
+- User Consent
+- Availability
+
+You can configure the storage priority in the Analytics.js client using the `storage` property, either globally or only for user or group data.
+
+The `storage` property accepts an array of supported storage names (`localStorage`, `cookie`, `memory`) to be used in the priority order of the array.
+
+```js
+analytics.load('writeKey', {
+  // Global Storage Priority: Both User and Group data
+  storage: {
+    stores: ['cookie', 'localStorage', 'memory']
+  },
+  // Specific Storage Priority
+  user: {
+    storage: {
+      stores: ['cookie', 'localStorage', 'memory']
+    }
+  },
+  group: {
+    storage: {
+      stores: ['cookie', 'localStorage', 'memory']
+    }
+  },
+}
+```

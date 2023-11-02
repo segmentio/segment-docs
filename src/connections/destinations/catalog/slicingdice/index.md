@@ -3,7 +3,7 @@ rewrite: true
 title: SlicingDice Destination
 id: 5ca241b892f10000016b5696
 ---
-[SlicingDice](https://slicingdice.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) is an all-in-one data warehouse. It's a fully managed cloud data warehouse with optional built-in tools for data integration, exploration, visualization and machine learning.
+[SlicingDice](https://slicingdice.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners){:target="_blank”} is an all-in-one data warehouse. It's a fully managed cloud data warehouse with optional built-in tools for data integration, exploration, visualization and machine learning.
 
 This destination is maintained by SlicingDice. For any issues with the destination, [contact the SlicingDice Support team](mailto:support@slicingdice.com).
 
@@ -12,10 +12,10 @@ This destination is maintained by SlicingDice. For any issues with the destinati
 
 ## Getting Started
 
-{% include content/connection-modes.md %}
+
 
 1. Login into your SlicingDice's Control Panel account to create a connection between SlicingDice and Segment.
-2. Follow the [Connecting to Segment guide](https://docs.slicingdice.com/data_warehouse_module/connecting_external_tools/segment.html) available in SlicingDice documentation to create and allow this connection.
+2. Follow the [Connecting to Segment guide](https://docs.slicingdice.com/data_warehouse_module/connecting_external_tools/segment.html){:target="_blank"} available in SlicingDice documentation to create and allow this connection.
 
 
 ## Page

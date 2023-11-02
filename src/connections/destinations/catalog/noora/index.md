@@ -3,13 +3,13 @@ title: Noora Destination
 rewrite: true
 id: 5fd719e85f1569d6af775ec1
 ---
-[Noora](https://noorahq.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) is a customer product feedback management solution. It provides a centralized product feedback solution that gives you the tools to collect, aggregate and act on feedback from customers and internal teams.
+[Noora](https://noorahq.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners){:target="_blank”} is a customer product feedback management solution. It provides a centralized product feedback solution that gives you the tools to collect, aggregate and act on feedback from customers and internal teams.
 
 This destination is maintained by Noora. For any issues with the destination, [contact the Noora Support team](mailto:support@noorahq.com).
 
 ## Getting Started
 
-{% include content/connection-modes.md %}
+
 
 1. Navigate to the Contacts tab while in your Noora workspace's Admin view.
 2. Click **+** to add a Contact source and choose **Connect to Segment**.

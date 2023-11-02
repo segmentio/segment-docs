@@ -13,7 +13,7 @@ This destination is maintained by OneSignal. For any issues with the destination
 
 ## Getting Started
 
-{% include content/connection-modes.md %}
+
 
 1. Log in to the [OneSignal Dashboard](https://app.onesignal.com/){:target="_new"}
 2. Navigate to **Segment App** -> **Settings** -> **Analytics** -> **Segment.com** and click **Activate**.
@@ -22,7 +22,7 @@ This destination is maintained by OneSignal. For any issues with the destination
 
 
 > info ""
-> OneSignal maps the `userId` field to the **[External User ID](https://documentation.onesignal.com/docs/onboarding-with-onesignal#step-3-connect-user-data-to-onesignal)** field in OneSignal.
+> OneSignal maps the `userId` field to the **[External User ID](https://documentation.onesignal.com/docs/onboarding-with-onesignal#step-3-connect-user-data-to-onesignal){:target="_blank"}** field in OneSignal.
 
 
 ## Supported methods
@@ -41,7 +41,7 @@ analytics.identify('userId123', {
 });
 ```
 
-Segment sends Identify traits as [Player Data Tags](https://documentation.onesignal.com/docs/add-user-data-tags) in OneSignal.
+Segment sends Identify traits as [Player Data Tags](https://documentation.onesignal.com/docs/add-user-data-tags){:target="_blank"} in OneSignal.
 
 > warning ""
 > OneSignal doesn't accept nested objects or arrays as user properties.
@@ -74,11 +74,11 @@ Send Computed Traits and Audiences generated using [Engage](/docs/engage) to One
 
 ### Audiences
 
-Engage Audiences appear as a [segment](https://documentation.onesignal.com/docs/segmentation) in OneSignal.
+Engage Audiences appear as a [segment](https://documentation.onesignal.com/docs/segmentation){:target="_blank"} in OneSignal.
 
-Track calls from Audiences create a OneSignal [segment](https://documentation.onesignal.com/docs/segmentation) with the Audience Name.
+Track calls from Audiences create a OneSignal [segment](https://documentation.onesignal.com/docs/segmentation){:target="_blank"} with the Audience Name.
 
-Identify calls from Audiences create a OneSignal [segment](https://documentation.onesignal.com/docs/segmentation) with the Audience Name and add Data Tags on all the matching user records.
+Identify calls from Audiences create a OneSignal [segment](https://documentation.onesignal.com/docs/segmentation){:target="_blank"} with the Audience Name and add Data Tags on all the matching user records.
 
 ![""](images/audiences.jpg)
 
@@ -86,7 +86,7 @@ Audiences sends Identify and Track calls to OneSignal when a user enters or exit
 
 ### Computed Traits
 
-OneSignal stores Track and Identify calls from Engage Computed Traits as [Data Tags](https://documentation.onesignal.com/docs/add-user-data-tags) for the OneSignal User/Player's records.
+OneSignal stores Track and Identify calls from Engage Computed Traits as [Data Tags](https://documentation.onesignal.com/docs/add-user-data-tags){:target="_blank"} for the OneSignal User/Player's records.
 
 ## OneSignal Destination FAQ
 ### Managing Segment's Reserved and Custom Traits

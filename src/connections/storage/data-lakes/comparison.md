@@ -1,8 +1,7 @@
 ---
 title: Comparing Data Lakes and Warehouses
+plan: data-lakes
 ---
-{% include content/plan-grid.md name="data-lakes" %}
-
 
 As Segment builds new data storage products, each product evolves from prior products to best support the needs of customers. Segment Data Lakes is an evolution of the Warehouses product that meets the changing needs of customers.
 

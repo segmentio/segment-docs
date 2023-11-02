@@ -152,6 +152,15 @@ sections:
       title: Set Up a Custom Domain Proxy in Segment
     - path: /connections/sources/visual-tagger
       title: Visual Tagger
+    - section_title: Schema
+      slug: connections/schema
+      section: 
+      - path: /connections/sources/schema/
+        title: Schema Controls 
+      - path: /connections/sources/schema/destination-data-control
+        title: Using Schema Controls 
+      - path: /connections/sources/schema/schema-unique-limits
+        title: Schema Unique Limits   
   - section_title: Destinations
     slug: connections/destinations
     section:
@@ -178,6 +187,10 @@ sections:
       section:
       - path: /connections/reverse-etl/reverse-etl-source-setup-guides/bigquery-setup
         title: BigQuery Reverse ETL Setup
+      - path: /connections/reverse-etl/reverse-etl-source-setup-guides/databricks-setup
+        title: Databricks Reverse ETL Setup
+      - path: /connections/reverse-etl/reverse-etl-source-setup-guides/postgres-setup
+        title: Postgres Reverse ETL Setup
       - path: /connections/reverse-etl/reverse-etl-source-setup-guides/redshift-setup
         title: Redshift Reverse ETL Setup
       - path: /connections/reverse-etl/reverse-etl-source-setup-guides/snowflake-setup
@@ -309,16 +322,46 @@ sections:
       title: Sample Queries
     - path: /unify/profiles-sync/tables
       title: Tables & Materialized Views
+  - section_title: Linked Profiles 
+    slug: unify/linked-profiles
+    section: 
+    - section_title: Setup Guides
+      slug: unify/linked-profiles/setup-guides
+      section: 
+        - path: /unify/linked-profiles/setup-guides/bigquery-setup
+          title: BigQuery Setup
+        - path: /unify/linked-profiles/setup-guides/snowflake-setup
+          title: Snowflake Setup
+        - path: /unify/linked-profiles/setup-guides/redshift-setup
+          title: Redshift Setup
+    - path: /unify/linked-profiles/linked-events
+      title: Linked Events
+  - section_title: Traits
+    slug: unify/traits
+    section:
+    - section_title: Predictions
+      slug: unify/traits/predictions
+      section:
+      - path: '/unify/traits/predictions/'
+        title: Predictions
+      - path: '/unify/traits/predictions/using-predictions'
+        title: Using Predictions
+      - path: '/unify/traits/predictions/suggested-predictive-audiences'
+        title: Suggested Predictive Audiences
+    - path: '/unify/traits/computed-traits'
+      title: Computed Traits
+    - path: '/unify/traits/sql-traits'
+      title:  SQL Traits
   - path: /unify/profile-api
     title: Profile API
-  - path: /unify/profile-api-limits
-    title: Profile API Limits
   - path: /unify/debugger
     title: Profile Debugger
   - path: /unify/unify-gdpr
     title: Unify and GDPR
   - path: /unify/faqs
     title: Unify FAQs
+  - path: /unify/product-limits
+    title: Unify Limits
 
 - section_title: Engage
   section:
@@ -339,8 +382,8 @@ sections:
       title: Set User Subscriptions
     - path: /engage/user-subscriptions/subscription-states
       title: Subscription States
-    - path: /engage/user-subscriptions/engage-source
-      title: Engage Events Source
+    - path: /engage/user-subscriptions/subscription-groups
+      title: Subscription Groups
     - path: /engage/user-subscriptions/subscription-sql
       title: Subscriptions with SQL Traits
   - section_title: Profiles
@@ -357,17 +400,6 @@ sections:
       title: Account-level Audiences
     - path: '/engage/audiences/organization'
       title: Organize Audiences
-    - path: '/engage/audiences/computed-traits'
-      title: Computed Traits
-    - path: '/engage/audiences/sql-traits'
-      title:  SQL Traits
-    - section_title: Predictive Traits
-      slug: engage/audiences/predictive-traits
-      section:
-      - path: '/engage/audiences/predictive-traits/'
-        title: Predictive Traits
-      - path: '/engage/audiences/predictive-traits/using-predictive-traits'
-        title: Using Predictive Traits
 
   - section_title: Journeys
     description: "Learn how to create multi-step Journeys to tailor messages to your users."
@@ -378,6 +410,8 @@ sections:
       title: 'Build a Journey'
     - path: '/engage/journeys/step-types'
       title: 'Journey Step Types'
+    - path: '/engage/journeys/journeys-edits'
+      title: 'Journey Edits and Versioning'
     - path: '/engage/journeys/send-data'
       title: Send Data to Destinations
     - path: '/engage/journeys/journeys-analytics'
@@ -396,11 +430,15 @@ sections:
     - path: '/engage/content/email/template'
       title: Email Template
     - path: '/engage/content/email/editor'
-      title: Email Template Editor
+      title: Drag and Drop Editor
+    - path: '/engage/content/email/html-editor'
+      title: HTML Editor
     - path: '/engage/content/sms/template'
       title: SMS Template
     - path: '/engage/content/whatsapp'
       title: WhatsApp Template
+    - path: '/engage/content/mobile-push'
+      title: Mobile Push Template
   - section_title: Campaigns
     description: "Create multi-channel campaigns to get the right message to your users."
     section:
@@ -414,6 +452,24 @@ sections:
       title: Broadcasts
     - path: '/engage/campaigns/whatsapp-campaigns'
       title: WhatsApp Campaigns
+    - section_title: Mobile Push
+      slug: /engage/campaigns/mobile-push
+      section:
+      - path: /engage/campaigns/mobile-push
+        title: Mobile Push Onboarding
+      - path: /engage/campaigns/mobile-push/push-campaigns
+        title: Mobile Push Campaigns
+  - section_title: Trait Activation
+    slug: engage/trait-activation
+    section:
+    - path: /engage/trait-activation/overview
+      title: Trait Activation Overview
+    - path: /engage/trait-activation/trait-activation-setup
+      title: Trait Activation Setup
+    - path: /engage/trait-activation/trait-enrichment
+      title: Trait Enrichment
+    - path: /engage/trait-activation/id-sync
+      title: ID Sync
   - path: '/engage/analytics'
     title: Analytics Overview
   - path: '/engage/settings'

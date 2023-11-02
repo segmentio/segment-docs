@@ -3,13 +3,13 @@ title: Analytics Kotlin Mixpanel Plugin
 strat: kotlin-android
 ---
 
-[Mixpanel](https://mixpanel.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) is an event-tracking and segmentation platform for your web and mobile apps. By analyzing the actions your users perform, you can gain a better understanding to drive retention, engagement, and conversion. The client-side Mixpanel Destination code is open-source.
+[Mixpanel](https://mixpanel.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners){:target="_blank”} is an event-tracking and segmentation platform for your web and mobile apps. By analyzing the actions your users perform, you can gain a better understanding to drive retention, engagement, and conversion. The client-side Mixpanel Destination code is open-source.
 
 Segment's Mixpanel destination plugin code is open source and available on GitHub. You can view it [here.](https://github.com/segment-integrations/analytics-swift-mixpanel)
 
 ## Getting Started
 
-{% include content/connection-modes.md %}
+
 
 1. From the Segment app Destinations page click on **Add Destination**.
 2. Search for Mixpanel in the Destinations Catalog and confirm the Source to connect to.
@@ -116,7 +116,7 @@ To add people properties in Mixpanel before you know the user's unique database 
 Group calls are sent to Mixpanel if, **and only if**,
 
 1. The Group Identifier Traits setting has one or more traits saved in the destination settings for Mixpanel.
-   ![](images/mixpanel-group-id-traits.png)
+   ![Group ID Traits](/docs/connections/destinations/catalog/mixpanel/images/mixpanel-group-id-traits.png)
 2. You have created a group key of the same name in your Mixpanel [project settings](https://help.mixpanel.com/hc/en-us/articles/360025333632-Group-Analytics#implementation){:target="_blank"}.
 3. A Group trait with the same name as one of the configured Group Identifier Traits is sent with the group call.
 

@@ -3,13 +3,13 @@ rewrite: true
 title: TUNE Destination
 id: 54521fd925e721e32a72eed7
 ---
-[TUNE](https://www.tune.com/) helps attribute mobile app events to the advertisements that a customer interacted with. We take care of sending those mobile events to TUNE so that they can be reconciled with ad views. The attributed data can then be [routed](#postbacks) back into other tools that you have enabled in Segment.
+[TUNE](https://www.tune.com/){:target="_blank"} helps attribute mobile app events to the advertisements that a customer interacted with. We take care of sending those mobile events to TUNE so that they can be reconciled with ad views. The attributed data can then be [routed](#postbacks) back into other tools that you have enabled in Segment.
 
-This destination is maintained by TUNE. Their code is publicly available for [iOS](https://github.com/TuneOSS/segment-integration-ios) and [Android](https://github.com/TuneOSS/segment-integration-android). For any issues with the destination, [contact the TUNE Support team](https://help.tune.com/contact-support/).
+This destination is maintained by TUNE. Their code is publicly available for [iOS](https://github.com/TuneOSS/segment-integration-ios){:target="_blank"} and [Android](https://github.com/TuneOSS/segment-integration-android){:target="_blank"}. For any issues with the destination, [contact the TUNE Support team](https://help.tune.com/contact-support/){:target="_blank"}.
 
 ## Getting Started
 
-{% include content/connection-modes.md %}
+
 
 1.  From your Segment UI's Destinations page click on "Add Destination".
 2.  Search for "TUNE" in the Catalog, select it, and choose which of your sources to connect the destination to.

@@ -5,8 +5,10 @@ hide-personas-partial: true
 cmode-override: true
 id: 54521fd725e721e32a72eec1
 maintenance: true
-private: true
+private: false
 maintenance-content: New versions of the destination are available. See [HubSpot Cloud Mode (Actions)](/docs/connections/destinations/catalog/actions-hubspot-cloud/) and [HubSpot Web (Actions)](/docs/connections/destinations/catalog/actions-hubspot-web/) for more information.
+hidden: false
+
 ---
 [HubSpot](https://www.hubspot.com/){:target="_blank"} is an inbound marketing and sales platform that helps companies attract visitors, convert leads, and close customers. The `analytics.js` HubSpot Destination is open-source. You can browse the code [on GitHub](https://github.com/segmentio/analytics.js-integrations/tree/master/integrations/hubspot){:target="_blank"}.
 
@@ -18,7 +20,7 @@ maintenance-content: New versions of the destination are available. See [HubSpot
 
 ## Getting Started
 
-{% include content/connection-modes.md %}
+
 
 1. From the Segment web app, click **Catalog**.
 2. Search for "HubSpot" in the Catalog, select it, and choose which of your sources to connect the destination to.
@@ -59,7 +61,7 @@ analytics.identify('user1234', {
 
 HubSpot does not accept any trait keys that contain upper case letters or spaces. Segment converts any custom traits you send to lower case, and replaces spaces with an underscore.
 
-HubSpot removes from the request any traits that aren't contact fields in HubSpot. To find out which fields you can set, navigate to **Settings > Data Management > Objects > Contacts** and select **Manage contact properties** under the **Setup** tab. Example field names are `firstname`, `lastname`, `company`, and `phone`.
+HubSpot removes any traits from the request that aren't contact fields in HubSpot. To find out which fields you can set, navigate to **Settings > Data Management > Objects > Contacts** and select **Manage contact properties** under the **Setup** tab. Example field names are `firstname`, `lastname`, `company`, and `phone`.
 
 If you specify a company name (using `traits.company.name`), it appears as a *property* of the contact (you can find it in HubSpot's UI using **About [contact] > View > View All Properties**), but it does not appear as the user's company under **[contact]'s Company**.
 
@@ -197,9 +199,9 @@ HubSpot Plan: API Add-On (Any Tier)
 
 ### Sending Dates as Property Values
 
-HubSpot's API has [specific requirements](http://developers.hubspot.com/docs/faq/how-should-timestamps-be-formatted-for-hubspots-apis) regarding you to format dates before they deliver as contact properties with date types.
+HubSpot's API has [specific requirements](http://developers.hubspot.com/docs/faq/how-should-timestamps-be-formatted-for-hubspots-apis){:target="_blank"} regarding you to format dates before they deliver as contact properties with date types.
 
-To ensure proper transformation of these properties, pass them to Segment as [ISO-8601](https://en.wikipedia.org/wiki/ISO_8601) formatted strings and **not** as UNIX timestamps. Here's a JavaScript example:
+To ensure proper transformation of these properties, pass them to Segment as [ISO-8601](https://en.wikipedia.org/wiki/ISO_8601){:target="_blank"} formatted strings and **not** as UNIX timestamps. Here's a JavaScript example:
 
 ```js
 analytics.identify('userid', {
@@ -213,7 +215,7 @@ When using any of Segment's server-side sources, a connector infers `traits.life
 
 ### Loading Forms SDK
 
-Segment gives you the option to load the [HubSpot Forms SDK](https://developers.hubspot.com/docs/methods/forms/advanced_form_options) alongside their tracking library. Enable the **Load Forms SDK** setting when you your HubSpot integration.
+Segment gives you the option to load the [HubSpot Forms SDK](https://developers.hubspot.com/docs/methods/forms/advanced_form_options){:target="_blank"} alongside their tracking library. Enable the **Load Forms SDK** setting when you your HubSpot integration.
 
 > info ""
 > The Forms SDK expects to load synchronously but analytics.js loads asynchronously. To interact with the API, run code inside an [analytics.ready](/docs/connections/sources/catalog/libraries/website/javascript/#ready) callback. For example:

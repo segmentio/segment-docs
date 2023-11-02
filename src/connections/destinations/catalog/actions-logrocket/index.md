@@ -19,6 +19,6 @@ product experience. With the Segment integration, your Segment user telemetry an
 2. Find the **LogRocket** destination item in the left navigation, and click it.
 3. Click **Configure LogRocket**.
 4. Select an existing Source to connect to LogRocket.
-5. On the **Settings** tab, set your LogRocket [appID](https://app.logrocket.com/).
+5. On the **Settings** tab, set your LogRocket [appID](https://app.logrocket.com/){:target="_blank”}.
 
 {% include components/actions-fields.html %}

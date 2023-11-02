@@ -580,6 +580,46 @@ Analytics.shared().enable()
 > warning ""
 > If you disable the Segment SDK in response to user opt-out, all Segment method invocations (Track, Screen, Identify, etc) are ignored. However, this does not disable any destination SDKs that you bundled along with Segment. You should consult the vendor documentation for those destinations, and invoke the corresponding `disable` methods for each packaged SDK to ensure that any automatic data collection stops.
 
+## Context
+Context is a dictionary of extra information you can provide about a specific API call. You can add any custom data to the context dictionary that you want to have access to in the raw logs. Some keys in the context dictionary [have semantic meaning and are collected for you automatically](/docs/connections/spec/common/#context), such as information about the user’s device.
+
+The example below shows a track call where campaign data is added to context:
+
+{% codeexample %}
+{% codeexampletab Swift %}
+```swift
+Analytics.shared().track("Product Viewed", properties: nil, options: ["context": ["campaign": ["medium": "email", "name": "testCampaign", "source": "testSource"]]])
+```
+{% endcodeexampletab %}
+{% codeexampletab Objective-C %}
+```objc
+[[SEGAnalytics sharedAnalytics] track:@"Product Viewed"
+                            properties:nil
+                              options:@{ @"context": @{ @"campaign": @{ @"medium": @"email", @"name": @"testCampaign", @"source": @"testSource" }}}];
+```
+{% endcodeexampletab %}
+{% endcodeexample %}
+
+You can also override any context that Segment automatically collects. 
+
+The example below shows a track call where locale is overwritten to a specific value:
+
+{% codeexample %}
+{% codeexampletab Swift %}
+```swift
+Analytics.shared().track("Product Viewed", properties: nil, options: ["context": ["locale": "en"]])
+```
+{% endcodeexampletab %}
+{% codeexampletab Objective-C %}
+```objc
+[[SEGAnalytics sharedAnalytics] track:@"Product Viewed"
+                            properties:nil
+                              options:@{ @"context": @{ @"locale": @"en" }}];
+```
+{% endcodeexampletab %}
+{% endcodeexample %}
+
+
 
 ## Selecting Destinations
 

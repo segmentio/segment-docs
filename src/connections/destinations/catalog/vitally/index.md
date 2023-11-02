@@ -10,7 +10,7 @@ This destination is maintained by Vitally. For any issues with the destination, 
 
 ## Getting Started
 
-{% include content/connection-modes.md %}
+
 
 Enabling Vitally as a destination in Segment can be done in one click from your Vitally account. 
 
@@ -59,7 +59,7 @@ analytics.track('enabled-slack-integration', {
 })
 ```
 
-Track calls are used in Vitally to track and analyze your accounts' engagement with your product. Vitally provides out-of-the box analysis on your events, plus the ability to define your own custom metrics on top of those events, like [Success Metrics](https://docs.vitally.io/account-health-scores-and-metrics/success-metrics){:target="_blank"} and [Elements](https://docs.vitally.io/account-health-scores-and-metrics/elements).
+Track calls are used in Vitally to track and analyze your accounts' engagement with your product. Vitally provides out-of-the box analysis on your events, plus the ability to define your own custom metrics on top of those events, like [Success Metrics](https://docs.vitally.io/account-health-scores-and-metrics/success-metrics){:target="_blank"} and [Elements](https://docs.vitally.io/account-health-scores-and-metrics/elements){:target="_blank"}.
 
 
 ## Group

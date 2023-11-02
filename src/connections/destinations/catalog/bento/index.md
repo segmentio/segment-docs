@@ -3,14 +3,14 @@ title: Bento Destination
 id: 5ff25116284da6d5091e21b1
 ---
 
-[Bento](https://www.trybento.co/) allows you to create embedded onboarding solutions to support your users as they get started with your product, and beyond. Using your customer data you can tailor user experiences providing a personalized journey through your product.
+[Bento](https://www.trybento.co/){:target="_blank"} allows you to create embedded onboarding solutions to support your users as they get started with your product, and beyond. Using your customer data you can tailor user experiences providing a personalized journey through your product.
 
 This destination is maintained by Bento. For any issues with the destination, [contact the Bento Support team](mailto:support@trybento.co).
 
 
 ## Getting Started
 
-{% include content/connection-modes.md %} 
+ 
 
 1. From the Destinations catalog page in the Segment App, click **Add Destination**.
 2. Search for "Bento" in the Destinations Catalog, and select the "Bento" destination.
