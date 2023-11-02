@@ -123,6 +123,6 @@ An audience/computed trait Run or a Sync may fail on its first attempt, but Enga
 
 If your team would like to avoid receiving the notifications for transient failures, please **[reach out to support](https://segment.com/help/contact/)**, who upon request can disable transient failure notifications.
 
-## Why the user count in a journey step is greater than the entry/previous step of the journey?
+## Why is the user count in a journey step greater than the entry/previous step of the journey?
 
 Each step of a Journey is a Personas audience under the hood. The conditions 'stack' so a user has to be a member of the previous step (audience) and meet all the conditions of that current step to get added. Additionally, users cannot exit journeys once they have been added, but they can 'leave' a step (audience) if they no longer meet that step's conditions, even though they will still pass down to the next step. So, if the user no longer satisfies the entry condition will leave that step itself and user count will be reduced. And the user entered the next step will remains there until and unless the user fails for that step's condition and the count won't be reduced.
