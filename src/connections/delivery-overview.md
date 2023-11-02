@@ -5,7 +5,7 @@ title: Delivery Overview
 Delivery Overview is a visual observability tool designed to help Segment users diagnose event delivery issues for any cloud-streaming destination receiving events from cloud-streaming sources. 
 
 > info "Delivery Overview is currently in beta"
-> This means that the Delivery Overview feature is in active development, and some functionality may change before it becomes generally available. Beta users of Delivery Overview will still have access to the Event Delivery tab. During the public beta, Delivery Overview will only support event-streaming, cloud-mode destinations.
+> This means that the Delivery Overview feature is in active development, and some functionality may change before it becomes generally available. Beta users of Delivery Overview will still have access to the Event Delivery tab. During the public beta, Delivery Overview supports event-streaming, cloud-mode destinations.
 
 ## Key features
 
@@ -22,8 +22,9 @@ The pipeline view provides insights into each step your data is processed by enr
 The pipeline view shows the following steps:
 - **Successfully received**: Events that Segment ingested from your source
 - **Failed on ingest**: Events that Segment received, but were dropped due to internal data validation rules
-- **Filtered at source**: Events that were discarded due to schema settings or [Protocols](/docs/protocols/) tracking plans
-- **Filtered at destination**: Events that were discarded due to [Destination Filters](/docs/guides/filtering-data/#destination-filters), [filtering in the Integrations object](/docs/guides/filtering-data/#filtering-with-the-integrations-object), or [per source schema integration filters](/docs/guides/filtering-data/#per-source-schema-integrations-filters). [Actions destinations](/docs/connections/destinations/destination-actions/) also have a filtering capability: for example, if your action is set to only send Identify events, all other event types will be filtered out. Actions destinations with incomplete triggers or disabled mappings are filtered out at this step. <!--- Beta users of [Consent Management](/docs/privacy/consent-management/) also see events discarded due to consent preferences.--->
+- **Filtered at source**: Events that were discarded due to schema settings or [Protocols](/docs/protocols/) Tracking Plans
+- ***(Actions destinations only)*** **Mappings**: Select a [mapping](/docs/connections/destinations/actions/#customize-mappings) from the dropdown to view metrics for mapped events in the destination steps
+- **Filtered at destination**: Events that were discarded due to [Destination Filters](/docs/guides/filtering-data/#destination-filters), [filtering in the Integrations object](/docs/guides/filtering-data/#filtering-with-the-integrations-object), or [per source schema integration filters](/docs/guides/filtering-data/#per-source-schema-integrations-filters). [Actions destinations](/docs/connections/destinations/actions/) also have a filtering capability: for example, if your Action is set to only send Identify events, all other event types will be filtered out. Actions destinations with incomplete triggers or disabled mappings are filtered out at this step. <!--- Beta users of [Consent Management](/docs/privacy/consent-management/) also see events discarded due to consent preferences.--->
 - **Failed delivery**: Events that have been discarded due to errors or unmet destination requirements
 - **Successful delivery**: Events that were successfully delivered to the destination
 
