@@ -1,7 +1,6 @@
 --- 
 title: Airship (Actions) Destination 
 id: 6475c5c14f7db4914bcd512f 
-beta: true
 ---
 
 {% include content/plan-grid.md name="actions" %}

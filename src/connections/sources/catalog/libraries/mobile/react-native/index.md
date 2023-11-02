@@ -22,18 +22,25 @@ To get started with the Analytics for React Native library:
 1. Create a React Native Source in Segment.
     1. Go to **Connections > Sources > Add Source**.
     2. Search for React Native and click **Add source**.
-2. Install `@segment/analytics-react-native`, [`@segment/sovran-react-native`](https://github.com/segmentio/sovran-react-native){:target="_blank"} and [`react-native-get-random-values`](https://github.com/LinusU/react-native-get-random-values){:target="_blank"}:
+2. Install `@segment/analytics-react-native`, [`@segment/sovran-react-native`](https://github.com/segmentio/analytics-react-native/tree/master/packages/sovran){:target="_blank"} and [`react-native-get-random-values`](https://github.com/LinusU/react-native-get-random-values){:target="_blank"}. You can install in one of two ways: 
 
     ```js
     yarn add @segment/analytics-react-native @segment/sovran-react-native react-native-get-random-values
-    # or
+    ```
+    or
+   
+    ```js
     npm install --save @segment/analytics-react-native @segment/sovran-react-native react-native-get-random-values
     ```
-3. If you want to use the default persistor for the Segment Analytics client, you also have to install `react-native-async-storage/async-storage.`
+    
+3. If you want to use the default persistor for the Segment Analytics client, you also have to install `react-native-async-storage/async-storage.` You can install in one of two ways: 
 
     ```js
     yarn add @react-native-async-storage/async-storage 
-    # or
+    ```
+    or
+    
+    ```js
     npm install --save @react-native-async-storage/async-storage
     ```
     
