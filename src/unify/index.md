@@ -11,7 +11,7 @@ With [Identity Resolution](#identity-resolution), track every interaction across
 
 You can then use this interaction data with customer engagement tools, such as Engage, to deliver personalized, omnichannel experiences.
 
-> success "" 
+> success ""
 > If you need to troubleshoot or learn more about your profile data, use [Profiles Insights](/docs/unify/insights/) for a transparent view of your Unify profiles. 
 
 
