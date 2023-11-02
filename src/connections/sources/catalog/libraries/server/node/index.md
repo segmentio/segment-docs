@@ -634,8 +634,8 @@ const analytics = new Analytics({
   httpClient: new CustomClient() 
 })
 ```
-##Override Context Value
-```
+## Override context value
+```javascript
 analytics.track({
   anonymousId: '48d213bb-95c3-4f8d-af97-86b2b404dcfe',
   event: 'New Test',
