@@ -232,17 +232,18 @@ You can also use [historical backfill](/docs/unify/profiles-sync/#using-historic
 
 ### The user_traits table
 
-With the `user_traits` table, you'll see a complete user profile that combines Profiles Sync data with external data sources such as customer purchase history, product usage, and more. 
+With the `user_traits` table, you'll see all traits that belong to a profile, represented by the `canonical_segment_id`. Use this table for a complete picture of your Profiles Sync data with external data sources such as customer purchase history, product usage, and more. 
 
-The `user_traits` table contains all traits that belong to a profile represented by the `canonical_segment_id`.
 - This view is a fixed schema, and contains a row for each trait associated with the profile.
-- If new traits are added to the profile, new rows are added to the view.
+- As new traits are added to the profile, new rows are added to the table.
 
 When a merge occurs, two things happen:
-1. Segment deletes the **merge from** profile in the view, along with with all the traits that belong to it.
-2. Segment updates the **merge to** profile with the traits from the **merge to** profile.
+1. Segment deletes the **merge from** profile in the table, along with with all the traits that belong to it.
+2. Segment updates the **merge to** profile with the traits from the **merge from**, or previously deleted profile.
+- For any conflicting traits, Segment appends the most recent trait to the profile.
 
-The `user_traits` table has the following columns:
+
+This table has the following columns:
 
 | field                         | description                                                                                         |
 | ----------------------------- | --------------------------------------------------------------------------------------------------- |
@@ -257,15 +258,15 @@ The `user_traits` table has the following columns:
 
 ### The user_identifiers table
 
-The `user_identifiers` table contains all external id values that map to a profile which is represented by the `canonical_segment_id`. 
+The `user_identifiers` table contains all external ID values that map to a profile, which is represented by the `canonical_segment_id`. 
 
 With the `user_identifiers` table:
 - There's one row per identifier associated with the profile. This view has a fixed schema. 
-- As new identifiers are added to a profile, new rows are added to the view.
+- As new identifiers are added to a profile, new rows are added to the table.
 
 When a merge occurs:
 1. Segment deletes the **merge from** profile in the view, along with all associated identifiers.
-2. Segment updates the **merge to** profile with the identifiers that previously belonged to the **merge to** profile. 
+2. Segment updates the **merge to** profile with the identifiers that belonged to the **merge from**, or previously deleted profile. 
 
 This table has the following columns:
 
@@ -282,18 +283,18 @@ This table has the following columns:
 
 ### The profile_merges table
 
-The `profile_merges` table contains all mappings from a `canonical_segment_id` to a `segment_id` to a profile which is represented by the `canonical_segment_id`. 
+The `profile_merges` table contains all mappings from a `segment_id` to a profile, represented by the `canonical_segment_id`. This mapping indicates that a profile has been created within Segment.
 
-With the profile_merges table:
+With the `profile_merges` table:
 - There's one row per profile associated with the `canonical_segment_id` that represents the profile. This view is a fixed schema. 
 - When a profile is created, a new row is created with the `segment_id` and `segment_canonical_id` having the same value.
 
 
 When a merge occurs:
 1. Segment deletes the **merge from** profile, along with all Segment IDs that belong to it. 
-2. Segment updates the **merge to** profile with Segment IDs that previously belonged to the **merge to** profile. 
+2. Segment updates the **merge to** profile with Segment IDs that previously belonged to the **merge from**, or previously deleted profile. 
 
-The `profile_merges` table has the following columns:
+This table has the following columns:
 
 
 | field                         | description                                                                                         |
