@@ -1,4 +1,4 @@
-# 💥 Segment Partner Source Documentation Template
+# 💥 Segment Partner Actions Destination Documentation Template
 
 > Hi Partners 👋🏼
 >
