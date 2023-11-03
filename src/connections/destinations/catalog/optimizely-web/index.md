@@ -229,7 +229,7 @@ For example, let's say you run a redirect experiment on page `http://home.com` t
 
 Our Optimizely Web destination detects this and send the effective referrer value as a property of the subsequent Experiment Viewed. Segment also overrides the `context.page.referrer` with the effective referrer.
 
-More importantly, to send the true referrer value with the initial `page` call inside the Segment snippet, you can look up `window.optimizelyEffectiveReferrer`, and if it exists, you can pass that into your `page` call. This is how you might modify your Segment snippet to pass the extra code inside [ready()](https://segment.com/docs/connections/sources/catalog/libraries/website/javascript/#ready) so its only called after Optimizely SDK has finished loading:
+More importantly, to send the true referrer value with the initial `page` call inside the Segment snippet, you can look up `window.optimizelyEffectiveReferrer`, and if it exists, you can pass that into your `page` call. This is how you might modify your Segment snippet to pass the extra code inside [ready()](/docs/connections/sources/catalog/libraries/website/javascript/#ready) so its only called after Optimizely SDK has finished loading:
 
 ```javascript
 <script>
