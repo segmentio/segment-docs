@@ -17,22 +17,25 @@ Delivery Overview has three core features:
 You can refine these tables using the time picker and the metric toggle, located under the destination header. With the time picker, you can specify a time period (last 10 minutes, 1 hour, 24 hours, 7 days, 2 weeks, or a custom date range over the last two weeks) for which you'd like to see data. With the metric toggle, you can switch between seeing metrics represented as percentages (for example, *85% of events* or *a 133% increase in events*) or as counts (*13 events* or *an increase of 145 events*.) Delivery Overview shows percentages by default.
 
 ### Pipeline view
-The pipeline view provides insights into each step your data is processed by enroute to the destination, with an emphasis on the steps where data can be discarded due to errors or your filter preferences. Each step provides details into counts, change rates, and event details (like the associated Event Type or Event Names), and the discard steps (Failed on ingest, Filtered at source, Filtered at destination, & Failed delivery) provide you with the reasons events were dropped before reaching the destination. Discard steps also include how to control or alter that outcome, when possible. The pipeline view also shows a label between the Filtered at destination and Failed delivery steps indicating how many events are currently pending retry. Actions destinations include a __Mapping__ dropdown, which allows you to select a mapping so that you can view metrics for only the mapped events in the Filtered at destination, Failed delivery and Successful delivery steps in the pipeline view.
+The pipeline view provides insights into each step your data is processed by enroute to the destination, with an emphasis on the steps where data can be discarded due to errors or your filter preferences. Each step provides details into counts, change rates, and event details (like the associated Event Type or Event Names), and the discard steps (Failed on ingest, Filtered at source, Filtered at destination, & Failed delivery) provide you with the reasons events were dropped before reaching the destination. Discard steps also include how to control or alter that outcome, when possible. The pipeline view also shows a label between the Filtered at destination and Failed delivery steps indicating how many events are currently pending retry. 
 
 The pipeline view shows the following steps:
 
 - **Successfully received**: Events that Segment ingested from your source
 - **Failed on ingest**: Events that Segment received, but were dropped due to internal data validation rules
 - **Filtered at source**: Events that were discarded due to schema settings or [Protocols](/docs/protocols/) Tracking Plans
-- ***(Actions destinations only)*** **Mappings**: Select a [mapping](/docs/connections/destinations/actions/#customize-mappings) from the dropdown to view metrics for only the mapped events in the Filtered at destination, Failed delivery and Successful delivery steps
 - **Filtered at destination**: Events that were discarded due to [Destination Filters](/docs/guides/filtering-data/#destination-filters), [filtering in the Integrations object](/docs/guides/filtering-data/#filtering-with-the-integrations-object), or [per source schema integration filters](/docs/guides/filtering-data/#per-source-schema-integrations-filters). [Actions destinations](/docs/connections/destinations/actions/) also have a filtering capability: for example, if your Action is set to only send Identify events, all other event types will be filtered out. Actions destinations with incomplete triggers or disabled mappings are filtered out at this step. <!--- Beta users of [Consent Management](/docs/privacy/consent-management/) also see events discarded due to consent preferences.--->
 - **Failed delivery**: Events that have been discarded due to errors or unmet destination requirements
 - **Successful delivery**: Events that were successfully delivered to the destination
 
+Actions destinations also include a mapping dropdown, which allows you to select a [mapping](/docs/connections/destinations/actions/#customize-mappings) to filter the events in the Filtered at destination, Failed delivery and Successful delivery pipeline steps. The following image shows an Actions destination filtered to include only Track Page View events in the last three pipeline steps:
+
+![A screenshot of the Delivery Overview tab for an Actions destination, with the Track Page View mapping selected.](images/delivery-overview-actions-destination.jpeg)
+
 ### Breakdown table
 The breakdown table provides you with greater detail about the selected events.
 
-To open the breakdown table, select either the first step in the pipeline view (successfully received,) the last step in the pipeline view (successful delivery,) or select a discard step and then click on a discard reason. 
+To open the breakdown table, select either the first step in the pipeline view (Successfully received,) the last step in the pipeline view (Successful delivery,) or select a discard step and then click on a discard reason. 
 
 The breakdown table displays the following details:
 - **Event type**: The Segment spec event type (Track call vs. Identify call, for example)
