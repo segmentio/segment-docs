@@ -54,6 +54,6 @@ From there, click **Configure LinkedIn Insight Tag** and select the source for w
 
 Select that option and paste in the LinkedIn Data Partner ID that you copied earlier. Click **Save**, then click **Activate Destination**. Our servers build the latest CDN for that source, and the LinkedIn Insight Tag loads on the sites that use that source's Segment snippet!
 
-## Conversion Tracking
+## Conversion tracking
 
-Our LinkedIn Insight Tag destination is fairly unique in that all Segment does is load the LinkedIn scripts onto your website for you so you can call methods directly without having to add the script tags yourself. Any special conversion tracking would need to be done within your LinkedIn workspace, as you normally would if you were setting up LinkedIn without Segment. 
+Segment's LinkedIn Insight Tag destination is fairly unique in that all Segment does is load the LinkedIn scripts onto your website for you so you can call methods directly without having to add the script tags yourself. Any special conversion tracking needs to be done within your LinkedIn workspace as you normally would if you were setting up LinkedIn without Segment. 
