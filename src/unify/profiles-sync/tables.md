@@ -239,7 +239,7 @@ With the `user_traits` table, you'll see all traits that belong to a profile, re
 
 When a merge occurs, two things happen:
 1. Segment deletes the **merge from** profile in the table, along with with all the traits that belong to it.
-2. Segment updates the **merge to** profile with the traits from the **merge from**, or previously deleted profile.
+2. Segment updates the **merge to** profile with the traits from the profile deleted in step 1.
 - For any conflicting traits, Segment appends the most recent trait to the profile.
 
 
@@ -266,7 +266,7 @@ With the `user_identifiers` table:
 
 When a merge occurs:
 1. Segment deletes the **merge from** profile in the view, along with all associated identifiers.
-2. Segment updates the **merge to** profile with the identifiers that belonged to the **merge from**, or previously deleted profile. 
+2. Segment updates the **merge to** profile with the identifiers that belonged to the profile deleted in step 1. 
 
 This table has the following columns:
 
@@ -292,7 +292,7 @@ With the `profile_merges` table:
 
 When a merge occurs:
 1. Segment deletes the **merge from** profile, along with all Segment IDs that belong to it. 
-2. Segment updates the **merge to** profile with Segment IDs that previously belonged to the **merge from**, or previously deleted profile. 
+2. Segment updates the **merge to** profile with Segment IDs that previously belonged to the profile deleted in step 1. 
 
 This table has the following columns:
 
