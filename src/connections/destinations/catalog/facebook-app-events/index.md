@@ -6,7 +6,7 @@ id: 56fc7e4680412f644ff12fb9
 ---
 [Facebook App Events](https://developers.facebook.com/docs/app-events){:target="_blank"} collects required information from one of Segment's mobile SDKs ([iOS](/docs/connections/sources/catalog/libraries/mobile/ios/){:target="_blank"}, [Android](/docs/connections/sources/catalog/libraries/mobile/android/){:target="_blank"}, or [Swift](https://segment-docs.netlify.app/docs/connections/sources/catalog/libraries/mobile/apple/){:target="_blank"}) and sends it from Segment's servers to Facebook App Events servers. 
 
-The iOS device-mode connection for the Facebook App Events destination is open-source and can be viewed on [here](https://github.com/segment-integrations/analytics-ios-integration-facebook-app-events). 
+The iOS device-mode connection for the Facebook App Events destination is open-source and can be viewed on GitHub [here](https://github.com/segment-integrations/analytics-ios-integration-facebook-app-events). 
 
 Segment also has an (Analytics Swift Facebook App Events Plugin)[https://segment-docs.netlify.app/docs/connections/sources/catalog/libraries/mobile/apple/destination-plugins/facebook-app-events-swift/) for the Facebook App Events device-mode connection available. The open-source integration code can be viewed on GitHub [here](https://github.com/segment-integrations/analytics-swift-facebook-app-events){:target="_blank"}. 
 
