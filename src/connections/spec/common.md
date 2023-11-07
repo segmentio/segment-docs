@@ -287,4 +287,4 @@ If you are using the Segment server Source libraries, or passing calls directly 
 Segment calculates `timestamp` as `timestamp = receivedAt - (sentAt - originalTimeStamp)`.
 
 > info ""
-> For client-side tracking it's possible for the client to spoof the `originalTimeStamp`, which may result in a calcualted `timestamp` value set in the future.
+> For client-side tracking it's possible for the client to spoof the `originalTimeStamp`, which may result in a calculated `timestamp` value set in the future.
