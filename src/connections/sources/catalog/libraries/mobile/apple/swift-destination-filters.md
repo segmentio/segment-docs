@@ -19,7 +19,7 @@ To get started with destination filters using Swift:
     After you install the package, import the package with `import DestinationFilters_Swift` to reference the Destination Filters plugin.
 2. Add the plugin.
 ```swift
-analytics.add(DestinationFilters())
+analytics.add(plugin: DestinationFilters())
 ```
 
 Use destination filters to prevent certain data from flowing into a destination. You can conditionally filter out event properties, traits, and fields, or even filter out the event itself.
