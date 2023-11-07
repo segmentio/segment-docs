@@ -44,8 +44,8 @@ Invite teammates to your Engage dev space and grant them access to the space. Na
 1. From your Engage space, navigate to **Unify settings** and click **Profile sources**.
 2. On the screen that appears, choose one or two production sources from your Connections workspace.
    Segment recommends connecting your production website or App source as a great starting point.
-
-Note: While it is not possible to connect an object cloud source, like Zendesk, to your Engage space directly, you may consider using RETL <> Segment Connections Destination to send object cloud source data back into Segment to pipe to your Engage space. 
+> info ""
+> While it is not possible to connect an object cloud source, like Zendesk, to your Engage space directly, you may consider using RETL <> Segment Connections Destination to send object cloud source data back into Segment to pipe to your Engage space. 
 
 To learn more, visit [Connect production sources](/docs/unify/quickstart/#step-3-connect-production-sources).
 
