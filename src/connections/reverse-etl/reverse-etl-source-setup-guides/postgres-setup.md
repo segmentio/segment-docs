@@ -11,7 +11,7 @@ Segment supports the following Postgres database providers:
 - RDS
 
 > warning ""
-> Segment only supports these Postgres databases. Postgres databases from other providers aren't guaranteed to work. For questions or concerns about Segment-supported Postgres providers, [contact Segment Support](https://segment.com/help/contact){:target="_blank"}.
+> Segment only supports these Postgres database providers. Postgres databases from other providers aren't guaranteed to work. For questions or concerns about Segment-supported Postgres providers, [contact Segment Support](https://segment.com/help/contact){:target="_blank"}.
 
 ## Set up guide
 To set up Postgres with Reverse ETL:
