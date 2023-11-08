@@ -3,7 +3,7 @@ title: CustomerSuccessBox Destination
 rewrite: true
 id: 5c9ce8b88171a10001f9eefa
 ---
-[CustomerSuccessBox](https://customersuccessbox.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) is Outcome Driven Customer Success software, which helps maximize retention, drive product adoption and grow revenue for your B2B SaaS
+[CustomerSuccessBox](https://customersuccessbox.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners){:target="_blank”} is Outcome Driven Customer Success software, which helps maximize retention, drive product adoption and grow revenue for your B2B SaaS
 
 This destination is maintained by CustomerSuccessBox. For any issues with the destination, [contact the CustomerSuccessBox Support team](mailto:support@customersuccessbox.com).
 
@@ -26,7 +26,7 @@ This destination is maintained by CustomerSuccessBox. For any issues with the de
 
 Send **account_id** and **user_id** in **traits** of an identify call to set and update the traits of a unique user belonging to a unique Account.
 
-To learn more about user traits that are supported (including custom traits), check **User traits** section from [here](https://support.customersuccessbox.com/article/77-customersuccessbox-destination-on-segment-com)
+To learn more about user traits that are supported (including custom traits), check **User traits** section from [here](https://support.customersuccessbox.com/article/77-customersuccessbox-destination-on-segment-com){:target="_blank”}.
 
 If you're not familiar with the Segment Specs, take a look to understand what the [Identify method](/docs/connections/spec/identify/) does. An example call would look like:
 
@@ -44,7 +44,7 @@ Identify calls will be sent to CustomerSuccessBox as an `identify` event.
 
 Send **account_id** and **user_id** in properties of a track call to attribute the event to a unique user belonging to a unique Account.
 
-You can also pass **product_id** and **module_id** in properties of a track call to define a module and product for the event. To learn more, check **Understanding Product Usage** section [here](https://support.customersuccessbox.com/article/70-getting-started-with-customersuccessbox)
+You can also pass **product_id** and **module_id** in properties of a track call to define a module and product for the event. To learn more, check **Understanding Product Usage** section [here](https://support.customersuccessbox.com/article/70-getting-started-with-customersuccessbox){:target="_blank”}.
 
 If you're not familiar with the Segment Specs, take a look to understand what the [Track method](/docs/connections/spec/track/) does. An example call would look like:
 
@@ -63,7 +63,7 @@ Track calls will be sent to CustomerSuccessBox as a `track` event.
 
 Send **account_id** in traits of a group call to set and update the traits of a unique Account.
 
-To learn more about account traits that are supported (including custom traits), check **Account traits** section from [here](https://support.customersuccessbox.com/article/77-customersuccessbox-destination-on-segment-com)
+To learn more about account traits that are supported (including custom traits), check **Account traits** section from [here](https://support.customersuccessbox.com/article/77-customersuccessbox-destination-on-segment-com){:target="_blank”}.
 
 If you're not familiar with the Segment Specs, take a look to understand what the [Group method](/docs/connections/spec/group/) does. An example call would look like:
 

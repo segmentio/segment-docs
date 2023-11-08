@@ -8,7 +8,7 @@ id: 117eYCe9jH
 
 YOUBORA is the most advanced and holistic suite of integrated video analytics and business intelligence for broadcasters, OTTs, telcos and media companies to help you make data-driven, business, operational and technical decisions to drive performance and maximize revenue across your entire video service. The latest version of YOUBORA has been thought through from the ground up to deliver the most detailed intelligence for your service.
 
-This source is maintained by YOUBORA. For any issues with the source, [contact the YOUBORA Support team](https://nicepeopleatwork.com/contactus).
+This source is maintained by YOUBORA. For any issues with the source, [contact the YOUBORA Support team](https://nicepeopleatwork.com/contactus){:target="_blank”}.
 
 {% include content/beta-note.md %}
 
@@ -562,7 +562,7 @@ Now that your Source is set up, you can connect it with destinations.
 
 Log into your downstream tools and check to see that your events are populating and they contains all the properties you expect. If all your events and properties are not showing up, refer to the destination docs for troubleshooting.
 
-If you experience any issues with how the events arrive in Segment, [contact the YOUBORA team](https://nicepeopleatwork.com/contactus).
+If you experience any issues with how the events arrive in Segment, [contact the YOUBORA team](https://nicepeopleatwork.com/contactus){:target="_blank”}.
 
 ## User Identification
 

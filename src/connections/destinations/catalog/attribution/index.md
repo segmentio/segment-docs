@@ -3,7 +3,7 @@ title: Attribution Destination
 rewrite: true
 id: 54521fd525e721e32a72ee96
 ---
-[Attribution](http://attributionapp.com/) is an easy to use one stop dashboard for multi-touch attribution across all marketing channels. Attribution prides itself on high-fidelity and allows marketers to trace every visit, conversion or revenue dollar to the source. Marketers can easily integrate Attribution and Segment to begin measuring the effectiveness of their campaigns today.
+[Attribution](http://attributionapp.com/){:target="_blank"} is an easy to use one stop dashboard for multi-touch attribution across all marketing channels. Attribution prides itself on high-fidelity and allows marketers to trace every visit, conversion or revenue dollar to the source. Marketers can easily integrate Attribution and Segment to begin measuring the effectiveness of their campaigns today.
 
 ## Getting Started
 
@@ -11,7 +11,7 @@ id: 54521fd525e721e32a72ee96
 
 1. From the Segment web app, click **Catalog**.
 2. Search for "Attribution" in the Catalog, select it, and choose which of your sources to connect the destination to.
-3. Enter the "Project ID" into your Segment Settings UI which you can find from your [Attribution settings](https://dashboard.attributionapp.com/v1/#!/settings).
+3. Enter the "Project ID" into your Segment Settings UI which you can find from your [Attribution settings](https://dashboard.attributionapp.com/v1/#!/settings){:target="_blank"}.
 4. It will take 15 - 30 minutes for data to begin populating on your Attribution dashboard.
 
 ![gettingstarted](images/att1.png)

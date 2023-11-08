@@ -2,7 +2,7 @@
 title: SendwithUs Destination
 ---
 
-[Our SendwithUs destination code](https://github.com/segmentio/integration-sendwithus) is all open-source on GitHub if you want to check it out.
+[Our SendwithUs destination code](https://github.com/segmentio/integration-sendwithus){:target="_blank"} is all open-source on GitHub if you want to check it out.
 
 ## Identify
 

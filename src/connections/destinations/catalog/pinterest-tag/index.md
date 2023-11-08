@@ -12,7 +12,7 @@ Here's how you can get started with using the Pinterest Tag!
 
 ### **1. Log into the Pinterest business account.**
 
-In order to access the Pinterest Tag, you will need to have a Pinterest business account. If you don't yet have one, sign up for one [here](https://ads.pinterest.com/).
+In order to access the Pinterest Tag, you will need to have a Pinterest business account. If you don't yet have one, sign up for one [here](https://ads.pinterest.com/){:target="_blank"}.
 
 
 ### **2. From the Ads menu, select Conversions.**
@@ -45,7 +45,7 @@ Select that option and put in the Pinterest Tag ID that we collected earlier. Se
 
 ## Segment Event Mapping to Pinterest Event Types
 
-Segment automatically binds the following Segment events to the Pinterest [Event Types](https://developers.pinterest.com/docs/ad-tools/conversion-tag/?#eventcode):
+Segment automatically binds the following Segment events to the Pinterest [Event Types](https://developers.pinterest.com/docs/ad-tools/conversion-tag/?#eventcode){:target="_blank"}:
 
 + (Segment Spec Event => Pinterest Tag Event Type)
 + Products Searched => Search
@@ -60,7 +60,7 @@ In the Segment.com Pinterest Tag destination settings, one can define their own 
 
 ## Segment Event Mapping to Pinterest Event Data
 
-Segment automatically binds the following properties to Pinterest [Event Data](https://developers.pinterest.com/docs/ad-tools/conversion-tag/?#event-data-in-javascript):
+Segment automatically binds the following properties to Pinterest [Event Data](https://developers.pinterest.com/docs/ad-tools/conversion-tag/?#event-data-in-javascript){:target="_blank"}:
 
 + (Segment Spec Property => Pinterest Tag Event Data)
 + query => search_query
@@ -85,7 +85,7 @@ Segment supports Pinterest Enhanced Match in two scenarios:
 1. where a user is already identified when they visit your site
 2. when a user visits your site anonymously but is identified at some later point.
 
-To support Pinterest Enhanced Match in the first scenario, go to the Pinterest Tag destination settings in the Segment web app, and click **Enable Enhanced Match to on Page Load**. This attaches the hashed email address on the initial page load conversion event. For more information see the [Pinterest enhanced-match documentation here](https://help.pinterest.com/en/business/article/enhanced-match).
+To support Pinterest Enhanced Match in the first scenario, go to the Pinterest Tag destination settings in the Segment web app, and click **Enable Enhanced Match to on Page Load**. This attaches the hashed email address on the initial page load conversion event. For more information see the [Pinterest enhanced-match documentation here](https://help.pinterest.com/en/business/article/enhanced-match){:target="_blank"}.
 
 To support the second scenario, where a user visits your site anonymously, but is identified at a later point, you do not need to change any of the Pinterest destination settings. Instead, you can make an `identify()` call with the user's email address, which triggers a Pinterest `set()` method. This saves the identification parameters so they can be sent with the next event, so it's important to `set` the values as early as possible.
 

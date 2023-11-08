@@ -9,7 +9,7 @@ hidden: false
 ---
 {% include content/plan-grid.md name="actions" %}
 
-[LiveLike](https://livelike.com/) is a technology company dedicated to empowering digital experiences that enable deeper fan engagement, increased retention rates, and new monetization opportunities.
+[LiveLike](https://livelike.com/){:target="_blank”} is a technology company dedicated to empowering digital experiences that enable deeper fan engagement, increased retention rates, and new monetization opportunities.
 
 > info ""
 > The events transferred from Segment to your LiveLike application will appear under the [Actions](https://docs.livelike.com/docs/reward-actions){:target="_blank"} section.

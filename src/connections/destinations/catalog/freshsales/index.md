@@ -2,7 +2,7 @@
 title: Freshsales Destination
 id: 56fd5efd80412f644ff12fbd
 ---
-This destination is maintained by [Freshsales](https://www.freshworks.com/freshsales-crm/?utm_source=segmentio&amp;utm_medium=docs&amp;utm_campaign=partners). For any issues with the destination contact us at support@freshsales.io.
+This destination is maintained by [Freshsales](https://www.freshworks.com/freshsales-crm/?utm_source=segmentio&amp;utm_medium=docs&amp;utm_campaign=partners){:target="_blank"}. For any issues with the destination contact us at support@freshsales.io.
 
 ## Getting Started
 
@@ -65,7 +65,7 @@ All attributes that are a part of traits should correspond to the internal names
 However, we make exception to two attributes `title` and `phone` that are part of default traits. They are automatically mapped to Freshsales attributes `job_title` and `work_number` respectively.
 
 ### Custom Traits:
-As part of traits, you can send custom fields created in Freshsales by using their internal names in camel case. You can find internal names in corresponding field settings page. Also, custom fields will not be automatically created. You have to create them in Freshsales before proceeding to send data from Segment. To learn more about creating custom fields in Freshsales check this [link](https://support.freshsales.io/support/solutions/articles/214558-how-to-add-custom-fields-for-leads-contacts-accounts-and-deals).
+As part of traits, you can send custom fields created in Freshsales by using their internal names in camel case. You can find internal names in corresponding field settings page. Also, custom fields will not be automatically created. You have to create them in Freshsales before proceeding to send data from Segment. To learn more about creating custom fields in Freshsales check this [link](https://support.freshsales.io/support/solutions/articles/214558-how-to-add-custom-fields-for-leads-contacts-accounts-and-deals){:target="_blank"}.
 
 ![Custom Traits](images/szDo5891Qq.png)
 

@@ -123,3 +123,5 @@ destinations:
     override: "actions-algolia-insights"
   - original: "iterable-actions"
     override: "actions-iterable"
+  - original: "listrak-actions"
+    override: "actions-listrak"

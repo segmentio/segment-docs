@@ -19,7 +19,7 @@ versions:
 
 VWO Web Mode (Actions) provides the following benefits over the classic VWO destination:
 
-- **Support for Customer Data Platform (Data360)**. With the Web mode destination enabled, you will be able to transfer all the events and attributes into your VWO account through the [Data360 module](https://help.vwo.com/hc/en-us/articles/8679651827737-About-VWO-Data360). You can use these events and attributes to [create segments](https://help.vwo.com/hc/en-us/articles/360020418454-Using-Segmentation-in-VWO) and [metrics](https://help.vwo.com/hc/en-us/articles/8675547113625) in your VWO campaigns.
+- **Support for Customer Data Platform (Data360)**. With the Web mode destination enabled, you will be able to transfer all the events and attributes into your VWO account through the [Data360 module](https://help.vwo.com/hc/en-us/articles/8679651827737-About-VWO-Data360){:target="_blank”}. You can use these events and attributes to [create segments](https://help.vwo.com/hc/en-us/articles/360020418454-Using-Segmentation-in-VWO){:target="_blank”} and [metrics](https://help.vwo.com/hc/en-us/articles/8675547113625){:target="_blank”} in your VWO campaigns.
 
 ## Getting started
 

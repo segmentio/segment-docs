@@ -301,7 +301,7 @@ You'll do the following:
 >**Note:** This permission is granted to Amazon S3 to invoke the function _only_ if the following conditions are met:
 >
 >  -   An object-created event is detected on a specific bucket.
->  -   The bucket is owned by a specific AWS account. If a bucket owner deletes a bucket, some other AWS account can create a bucket with the same name. This condition ensures that only a specific AWS account can invoke your Lambda function. You can learn [how to find your account id here](https://www.apn-portal.com/knowledgebase/articles/FAQ/Where-Can-I-Find-My-AWS-Account-ID).
+>  -   The bucket is owned by a specific AWS account. If a bucket owner deletes a bucket, some other AWS account can create a bucket with the same name. This condition ensures that only a specific AWS account can invoke your Lambda function. You can learn [how to find your account id here](https://www.apn-portal.com/knowledgebase/articles/FAQ/Where-Can-I-Find-My-AWS-Account-ID){:target="_blank"}.
 
 2. Verify the function's access policy by running the following command:
 
@@ -313,7 +313,7 @@ Next, add configure notifications on the source bucket to request Amazon S3 to p
 
 **To configure notifications**
 
-1. Open the  [Amazon S3 console](https://console.aws.amazon.com/s3).
+1. Open the [Amazon S3 console](https://console.aws.amazon.com/s3){:target="_blank"}.
 2. Choose the source bucket.
 3. Choose  **Properties**.
    ![Select the Properties tab](images/s3_5.png)
@@ -325,7 +325,7 @@ Next, add configure notifications on the source bucket to request Amazon S3 to p
     - Set **Lambda** to **Your Lambda Function Name**.
       ![Add the name of the function you created to the Lambda field](images/s3_7.png)
 
-For more information on event configuration, see  [Enabling Event Notifications](https://docs.aws.amazon.com/AmazonS3/latest/user-guide/enable-event-notifications.html)  in the  _Amazon Simple Storage Service Console User Guide_.
+For more information on event configuration, see  [Enabling Event Notifications](https://docs.aws.amazon.com/AmazonS3/latest/user-guide/enable-event-notifications.html){:target="_blank"}  in the  _Amazon Simple Storage Service Console User Guide_.
 
 ## Test your system
 

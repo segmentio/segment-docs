@@ -3,7 +3,7 @@ title: Statsig Source
 id: 3x07B5Dn5h
 ---
 
-[Statsig](https://www.statsig.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) helps companies safely A/B test features in production before rolling them out, avoiding product debates and costly mistakes when shipping out new features. Statsig serves all your experimentation needs with a unified platform that connects what you build with the impact you deliver. Statsig powers A/B tests and experiments on any device, in any part of the application stack, at any scale. Statsig gives you a comprehensive 360° view of how your product is performing.
+[Statsig](https://www.statsig.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners){:target="_blank”} helps companies safely A/B test features in production before rolling them out, avoiding product debates and costly mistakes when shipping out new features. Statsig serves all your experimentation needs with a unified platform that connects what you build with the impact you deliver. Statsig powers A/B tests and experiments on any device, in any part of the application stack, at any scale. Statsig gives you a comprehensive 360° view of how your product is performing.
 
 The Statsig integration enables custom events and exposure events to be forwarded from Statsig to Segment without any additional work on the client — this is a pure server-to-server integration.
 
@@ -17,7 +17,7 @@ This source is maintained by Statsig. For any issues with the source, [contact t
 2. Click the Statsig tile, and then click on the blue **Add Source** button.
 3. Name the instance of this source click **Add Source**.
 4. Locate your Write Key on the Source Overview page and copy it.
-5. Log into the Statsig console and navigate to the [Integrations](https://console.statsig.com/integrations) page. Click the Segment card.
+5. Log into the Statsig console and navigate to the [Integrations](https://console.statsig.com/integrations){:target="_blank”} page. Click the Segment card.
 6. Click the **Outgoing** tab. Paste the `Write Key` captured on step #4" and click "Enable". 
 7. Now, configure how data should be mapped and which events to include. The "Event Filtering" screen allows you to select which events & event types Statsig sends to Segment. The "Map Identifiers" configuration will map Statsig identifiers to a corresponding Segment allocation of your choice. Press "Confirm" and you will see an "Integration Updated" dialogue ✅
 8. Within a few minutes, you can observe your statsig events being ingested in Segment within the "Debugger" panel as shown below.

@@ -19,7 +19,7 @@ When you send an audience to Google Ads Remarketing Lists, you can choose which 
 These audience lists can be used to serve content on Google Search, YouTube, and Gmail. You can only target users with email addresses that are associated with a Google account, and you can target users in Gmail only if they have an `@gmail.com` address.
 
 > info ""
-> You must have access to Engage as part of your Segment plan to use this destination. [Contact Segment's sales team](https://segment.com/demo/) to try this out.
+> You must have access to Engage as part of your Segment plan to use this destination. [Contact Segment's sales team](https://segment.com/demo/){:target="_blank”} to try this out.
 
 ## Details
 
@@ -45,7 +45,7 @@ Create an audience of users that signed up, purchased a product, or otherwise pe
 
 ### Similar audience
 
-You can use Engage to create a detailed profile of your most loyal customers (sometimes called a “seed audience”) and then send this list of customers to Google. In Google, you can then use Google's [Similar Audience](https://support.google.com/google-ads/answer/7151628?hl=en-AU) features to find similar users to target. For example, you might want to create a group of high-value users who have spent a certain amount of money on your product, and then use Similar Audiences to find users who might also spend that much.
+You can use Engage to create a detailed profile of your most loyal customers (sometimes called a “seed audience”) and then send this list of customers to Google. In Google, you can then use Google's [Similar Audience](https://support.google.com/google-ads/answer/7151628?hl=en-AU){:target="_blank”} features to find similar users to target. For example, you might want to create a group of high-value users who have spent a certain amount of money on your product, and then use Similar Audiences to find users who might also spend that much.
 
 > note ""
 > **Note:** A “seed audience” must have at least 100 members for Google's Similar Audience feature to function.

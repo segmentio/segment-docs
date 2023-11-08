@@ -3,7 +3,7 @@ rewrite: true
 title: Survicate Destination
 id: 5c922eae1761cd0001a71707
 ---
-[Survicate](https://survicate.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) is a complete toolkit for customer feedback. From website optimization and customer satisfaction surveys to complex customer insight processes integrated with your email campaigns.
+[Survicate](https://survicate.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners){:target="_blank”} is a complete toolkit for customer feedback. From website optimization and customer satisfaction surveys to complex customer insight processes integrated with your email campaigns.
 
 This destination is maintained by Survicate. For any issues with the destination, [contact the Survicate Support team](mailto:help@survicate.com).
 
@@ -16,7 +16,7 @@ This destination is maintained by Survicate. For any issues with the destination
 
 1. From the Segment web app, click **Catalog**.
 2. Search for "Survicate" in the Catalog, select it, and choose which of your sources to connect the destination to.
-3. Enter the "Workspace Key" into your Segment Settings UI which you can find from your [Survicate Workspace Settings](https://panel.survicate.com/).
+3. Enter the "Workspace Key" into your Segment Settings UI which you can find from your [Survicate Workspace Settings](https://panel.survicate.com/){:target="_blank"}.
 
 ## Identify
 

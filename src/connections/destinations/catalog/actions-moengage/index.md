@@ -52,7 +52,7 @@ MoEngage (Actions) provides the following benefits over the MoEngage Classic des
      Name | The name of the Moengage destination such as MoEngage prod, MoEngage test. |
      App Id | Navigate to Settings > API > General on your MoEngage dashboard to access the App ID. |
      App Key  | Navigate to Settings > API > General on your MoEngage dashboard to access the App Key. |
-     Endpoint Region | This is your MoEngage data center. [Read more](https://help.moengage.com/hc/en-us/articles/360057030512-Data-Centers-in-MoEngage). |
+     Endpoint Region | This is your MoEngage data center. [Read more](https://help.moengage.com/hc/en-us/articles/360057030512-Data-Centers-in-MoEngage){:target="_blank”}. |
 
 7. Enable the toggle option to **Enable** the destination and click **Save changes**.
 

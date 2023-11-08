@@ -5,7 +5,7 @@ beta: true
 hidden: true
 id: 5a3ab305a1e66e00017185f9
 ---
-[IBM's Universal Behavior Exchange (UBX)](https://www.ibm.com/support/knowledgecenter/en/SS9JVY/UBX/kc_welcome_UBX.html)
+[IBM's Universal Behavior Exchange (UBX)](https://www.ibm.com/support/knowledgecenter/en/SS9JVY/UBX/kc_welcome_UBX.html){:target="_blank"}
 is an API that allows users to share customer interactions, behaviors, and
 target audiences among IBM solutions and applications - including the *Watson
 Marketing Portfolio* - without the need for custom software integration. In
@@ -15,14 +15,13 @@ can send it to any destination in UBX's portfolio.
 _**NOTE:** IBM UBX is currently in beta and this doc was last
 updated on May 7, 2018. This means that there may still be some bugs for us to
 iron out and we're excited to hear your thoughts. If you are interested in
-joining or have any feedback to help us improve the IBM UBX Destination and its documentation, [let us know](https://segment.com/help/contact)!_
+joining or have any feedback to help us improve the IBM UBX Destination and its documentation, [let us know](https://segment.com/help/contact){:target="_blank"}!_
 
 ## Getting Started
 
 _**NOTE:** To enable Segment in UBX, navigate to "Endpoints" in the UBX dashboard,
 select "Register new endpoint", then select "Segment". Once you've added the
-Segment endpoint, contact [Segment
-support](https://segment.com/help/contact) with your new endpoint's "endpoint
+Segment endpoint, contact [Segment support](https://segment.com/help/contact){:target="_blank"} with your new endpoint's "endpoint
 authentication key" for help activating your new endpoint. Note that the
 endpoint in UBX will not be able to receive Segment data until you have enabled
 both the destination in the Segment UI *and* requested activation of the
@@ -36,8 +35,7 @@ endpoint from Segment's support team._
    the Segment Settings UI. You should have received an email with this URL
    shortly after setting up your UBX account. If you can't locate your URL,
    contact UBX support (the URL is also referred to as a "base URL" in
-   the [IBM UBX
-   documentation](https://developer.ibm.com/customer-engagement/docs/watson-marketing/ibm-universal-behavior-exchange-ubx/ubxapireference/)).
+   the [IBM UBX documentation](https://developer.ibm.com/customer-engagement/docs/watson-marketing/ibm-universal-behavior-exchange-ubx/ubxapireference/){:target="_blank"}).
    To locate your endpoint authentication key, navigate to the "Endpoints" tab
    in UBX, then look to the far right where you'll find three vertical dots.
    Click on them and select "Endpoint details".
@@ -51,7 +49,7 @@ endpoint from Segment's support team._
 5. Once registered, the new endpoint's status will remain "Pending" in the
    "Endpoints" tab until it has been activated. To activate an endpoint,
    include your UBX account's API URL and your endpoint authentication key in an
-   email to Segment using our [tech support form](https://segment.com/help/contact/).
+   email to Segment using our [tech support form](https://segment.com/help/contact/){:target="_blank"}.
 
     ![A screenshot of the UBX Endpoints tab showing a Segment endpoint with a status of Active.](images/endpoint-details.png)
 
