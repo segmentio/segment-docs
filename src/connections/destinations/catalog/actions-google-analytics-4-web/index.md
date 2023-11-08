@@ -85,6 +85,12 @@ In order for data to be sent downstream to Google Analytics, check your mappings
 
 The **setConfigurationFields** mapping is required in order for data to be sent downstream. If no other mappings are enabled, the destination does not send events.
 
+### Manually send `page_view` events
+
+If you prefer to the keep **Page Views** setting disabled and manually send a `page_view`, please see this Google Doc for more on [Manual Pageviews](https://developers.google.com/analytics/devguides/collection/ga4/views?client_type=gtag#manually_send_page_view_events).
+
+With Google Analytics 4 Web, you will need to configure a [Custom Event](/docs/connections/destinations/catalog/actions-google-analytics-4-web/#custom-event) mapping for manually sending `page_view` events. When mapping the events, please make sure to set the Event Name to `page_view`.
+
 ### Tracking UTM Parameters
 
 UTM Parameters are automatically tracked and sent to Google when they are present in the URL. For example, with the following URL:
