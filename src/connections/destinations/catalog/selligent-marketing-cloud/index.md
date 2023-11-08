@@ -3,12 +3,12 @@ title: Selligent Marketing Cloud Destination
 rewrite: true
 id: 5e14bf9f1729d9e6ded001f6
 ---
-[Selligent Marketing Cloud](https://www.selligent.com/?utm_source=segment&utm_medium=integrations-page&utm_campaign=partners/) is a highly integrated, AI-powered omnichannel marketing automation platform which enables ambitious B2C marketers to maximize every moment of interaction with today’s connected consumers. Delivers ultra-personalized, highly relevant customer experiences across channels and devices, providing value swiftly and at scale.
+[Selligent Marketing Cloud](https://www.selligent.com/?utm_source=segment&utm_medium=integrations-page&utm_campaign=partners/){:target="_blank"} is a highly integrated, AI-powered omnichannel marketing automation platform which enables ambitious B2C marketers to maximize every moment of interaction with today’s connected consumers. Delivers ultra-personalized, highly relevant customer experiences across channels and devices, providing value swiftly and at scale.
 
-This Destination is maintained by *Selligent Marketing Cloud*. For any issues with the Destination, please reach out to their [Support team](https://support.selligent.com)
+This Destination is maintained by *Selligent Marketing Cloud*. For any issues with the Destination, please reach out to their [Support team](https://support.selligent.com){:target="_blank"}
 
 > success ""
-> **Good to know**: This page is about the Selligent Marketing Cloud Segment destination, which receives data from Segment. There's also a page about the [Selligent Marketing Cloud Segment source](/docs/connections/sources/catalog/cloud-apps/selligent-marketing-cloud/), which sends data _to_ Segment!
+> **Good to know**: This page is about the Selligent Marketing Cloud Segment destination, which receives data from Segment. There's also a page about the [Selligent Marketing Cloud Segment source](/docs/connections/sources/catalog/cloud-apps/selligent-marketing-cloud/){:target="_blank"}, which sends data _to_ Segment!
 
 ## Getting Started
 
@@ -36,7 +36,7 @@ You can then proceed to configure your destination.
 5. *Organization* - You will find the organization name on the top-right hand corner next to the menu icon.
 ![6](images/6.png)
 6. *Allowed Events* - Add the `track` event names that you would like to allowlist or send to SMC
-7. *Events data list API name* - The default value is **segment_events**, if you have any issue regarding the property please contact the *Selligent Marketing Cloud* [Support team](https://support.selligent.com).
+7. *Events data list API name* - The default value is **segment_events**, if you have any issue regarding the property please contact the *Selligent Marketing Cloud* [Support team](https://support.selligent.com){:target="_blank"}.
 
 ## Identify
 

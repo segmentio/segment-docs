@@ -88,6 +88,6 @@ If your Segment events do not appear, they have not yet been received by Connect
 Now that everything is hooked up, you can start messaging your users! Check out the following guides at Connect:
 
 
-1. [Getting started with Connect](https://support.zendesk.com/hc/en-us/articles/360022370293-Introduction-Getting-started-with-Connect)
-2. [Understanding events in Connect](https://support.zendesk.com/hc/en-us/articles/360022178494-Understanding-Connect-events)
-3. [Create a trigger based campaign](https://support.zendesk.com/hc/en-us/articles/360022362093-Creating-a-trigger-based-campaign)
+1. [Getting started with Connect](https://support.zendesk.com/hc/en-us/articles/360022370293-Introduction-Getting-started-with-Connect){:target="_blank"}
+2. [Understanding events in Connect](https://support.zendesk.com/hc/en-us/articles/360022178494-Understanding-Connect-events){:target="_blank"}
+3. [Create a trigger based campaign](https://support.zendesk.com/hc/en-us/articles/360022362093-Creating-a-trigger-based-campaign){:target="_blank"}

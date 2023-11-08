@@ -4,7 +4,7 @@ strat: google
 hidden: true
 ---
 
-Previously, you could use Segment's Google Analytics mobile SDKs to measure and optimize user engagement with your mobile-apps. On [October 31st 2019, Google sunset the Google Analytics mobile-apps reporting](https://support.google.com/firebase/answer/9167112?hl=en) using the Google Analytics Services SDKs for both Android and iOS. This means all data collection and processing stopped for properties that received data from the Google Analytics Service SDK for mobile apps. Google deprecated Google Analytics in favor of its new [Firebase SDKs](/docs/connections/destinations/catalog/firebase/).
+Previously, you could use Segment's Google Analytics mobile SDKs to measure and optimize user engagement with your mobile-apps. On [October 31st 2019, Google sunset the Google Analytics mobile-apps reporting](https://support.google.com/firebase/answer/9167112?hl=en){:target="_blank"} using the Google Analytics Services SDKs for both Android and iOS. This means all data collection and processing stopped for properties that received data from the Google Analytics Service SDK for mobile apps. Google deprecated Google Analytics in favor of its new [Firebase SDKs](/docs/connections/destinations/catalog/firebase/).
 
 The following tutorial explains how to migrate your mobile analytics from Google Analytics to Firebase.
 
@@ -22,7 +22,7 @@ If you received this deprecation notice, your property has already been flagged 
 
 ## Getting Started with Firebase
 
-For more detailed information for each of the classes and methods in the Firebase SDK by platform visit the [Firebase Analytics SDK documentation](https://firebase.google.com/docs/reference).
+For more detailed information for each of the classes and methods in the Firebase SDK by platform visit the [Firebase Analytics SDK documentation](https://firebase.google.com/docs/reference){:target="_blank"}.
 
 #### Installing the iOS SDK
 For information on how to add the Segment-Firebase SDK and register the dependency with the Segment SDK visit [Segment's Firebase for iOS](/docs/connections/destinations/catalog/firebase/#ios) documentation.
@@ -33,11 +33,11 @@ For information on how to add the Segment-Firebase SDK and apply the Google Serv
 
 ## Comparing Google Analytics and Firebase Functionality
 
-| **Google Analytics Functionality**              | **Firebase Functionality**                                                   | **Supported?** |
-| ----------------------------------------------- | ---------------------------------------------------------------------------- | -------------- |
-| Enable/disable anonymize (obfuscate) device IP. | Enforced in Firebase.                                                        | ✅              |
-| Automatic reporting of uncaught exceptions .    | Use [Crashlytics](https://firebase.google.com/docs/crashlytics/get-started). | ✅              |
-| Report when Android Activity starts and stops.  | On Activity Resumed, we set the current screen.                              | ✅              |
+| **Google Analytics Functionality**              | **Firebase Functionality**                                                                     | **Supported?**  |
+| ----------------------------------------------- | ---------------------------------------------------------------------------------------------- | --------------- |
+| Enable/disable anonymize (obfuscate) device IP. | Enforced in Firebase.                                                                          | ✅              |
+| Automatic reporting of uncaught exceptions .    | Use [Crashlytics](https://firebase.google.com/docs/crashlytics/get-started){:target="_blank"}. | ✅              |
+| Report when Android Activity starts and stops.  | On Activity Resumed, we set the current screen.                                                | ✅              |
 
 ## Migrating Screen Calls
 
@@ -106,21 +106,21 @@ The following Segment properties are mapped to Firebase Analytics properties:
 
 
 
-> **Note**: Firebase Analytics does not support `action` or `label` in their [predefined event parameter names](https://firebase.google.com/docs/reference/cpp/group/parameter-names), and Segment's Firebase SDK does not support mapping those properties. If you want to pass those properties to Firebase  send them as a custom property.
+> **Note**: Firebase Analytics does not support `action` or `label` in their [predefined event parameter names](https://firebase.google.com/docs/reference/cpp/group/parameter-names){:target="_blank"}, and Segment's Firebase SDK does not support mapping those properties. If you want to pass those properties to Firebase  send them as a custom property.
 
 ### Custom Events and Properties
 
-Segment's Firebase Analytics SDK allows you to send custom events and properties. If you make a `track()` call but the event name is not one of the above mappings, Segment calls `logEventWithName` (iOS) or `logEvent` (Android). This allows you to pass any custom event name you want. Event names must contain 1 to 40 alphanumeric characters or underscores, per the [Firebase documentation](https://firebase.google.com/docs/reference/android/com/google/firebase/analytics/FirebaseAnalytics.Event). The Segment Firebase SDKs format custom event names to remove trailing whitespace and replace all spaces and periods with underscores.
+Segment's Firebase Analytics SDK allows you to send custom events and properties. If you make a `track()` call but the event name is not one of the above mappings, Segment calls `logEventWithName` (iOS) or `logEvent` (Android). This allows you to pass any custom event name you want. Event names must contain 1 to 40 alphanumeric characters or underscores, per the [Firebase documentation](https://firebase.google.com/docs/reference/android/com/google/firebase/analytics/FirebaseAnalytics.Event){:target="_blank"}. The Segment Firebase SDKs format custom event names to remove trailing whitespace and replace all spaces and periods with underscores.
 Firebase Analytics supports up to 500 event names, and each event can have up to 25 parameters.
 
 > note ""
-> **Note**: Firebase has a [list of reserved event names](https://firebase.google.com/docs/reference/ios/firebaseanalytics/api/reference/Classes/FIRAnalytics#/c:objc(cs)FIRAnalytics(cm)logEventWithName:parameters) which cannot be used.
+> **Note**: Firebase has a [list of reserved event names](https://firebase.google.com/docs/reference/ios/firebaseanalytics/api/reference/Classes/FIRAnalytics#/c:objc(cs)FIRAnalytics(cm)logEventWithName:parameters){:target="_blank"} which cannot be used.
 
 
 ## Recording Uncaught Exceptions
 
 Segment's Google Analytics mobile SDK supports automatic reporting of uncaught exceptions for iOS and Android platforms.
 
-Firebase supports recording of uncaught exceptions through the use of [Firebase Crashlytics](https://firebase.google.com/docs/crashlytics). Firebase Crashlytics is a lightweight, realtime crash reporter that helps you track, prioritize, and fix stability issues that erode your app quality. Crashlytics saves you troubleshooting time by intelligently grouping crashes and highlighting the circumstances that lead up to them.
+Firebase supports recording of uncaught exceptions through the use of [Firebase Crashlytics](https://firebase.google.com/docs/crashlytics){:target="_blank"}. Firebase Crashlytics is a lightweight, realtime crash reporter that helps you track, prioritize, and fix stability issues that erode your app quality. Crashlytics saves you troubleshooting time by intelligently grouping crashes and highlighting the circumstances that lead up to them.
 
-To get started with Firebase Crashlytics so you can generate comprehensive crash reports in your Firebase console follow the [set up guide outlined in the Firebase documentation](https://firebase.google.com/docs/crashlytics/get-started) for iOS or Android.
+To get started with Firebase Crashlytics so you can generate comprehensive crash reports in your Firebase console follow the [set up guide outlined in the Firebase documentation](https://firebase.google.com/docs/crashlytics/get-started){:target="_blank"} for iOS or Android.

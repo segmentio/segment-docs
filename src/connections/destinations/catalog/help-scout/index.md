@@ -4,7 +4,7 @@ rewrite: true
 hide-boilerplate: true
 id: 54521fd725e721e32a72eebf
 ---
-[Help Scout](https://www.helpscout.com/?utm_source=partner&utm_campaign=partner-integration-marketplace-listing&utm_content=segment) is a help desk software company which provides an email-based customer support platform, knowledge base tool, and an embeddable search/contact widget for customer service professionals.
+[Help Scout](https://www.helpscout.com/?utm_source=partner&utm_campaign=partner-integration-marketplace-listing&utm_content=segment){:target="_blank"} is a help desk software company which provides an email-based customer support platform, knowledge base tool, and an embeddable search/contact widget for customer service professionals.
 
 ## Getting Started
 

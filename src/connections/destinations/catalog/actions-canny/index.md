@@ -5,7 +5,7 @@ id: 6489bbade6fe3eb57c13bd6a
 
 {% include content/plan-grid.md name="actions" %}
 
-[Canny](https://canny.io?utm_source=segmentio&utm_medium=docs&utm_campaign=partners){:target="\_blank"} is a single place for all customer feedback. It saves you time managing all the feedback while keeping your customers in the loop. Let your customers post and vote on feedback from within your website or mobile app. You'll get an organized list of feedback that you can use to inform your roadmap.
+[Canny](https://canny.io?utm_source=segmentio&utm_medium=docs&utm_campaign=partners){:target="_blank"} is a single place for all customer feedback. It saves you time managing all the feedback while keeping your customers in the loop. Let your customers post and vote on feedback from within your website or mobile app. You'll get an organized list of feedback that you can use to inform your roadmap.
 
 Canny maintains this destination. For any issues with the destination, [contact the Canny Support team](mailto:segment-help@canny.io).
 
@@ -21,7 +21,7 @@ Canny (Actions) provides the following benefit over the classic Canny destinatio
 
 ## Getting started
 
-1. Go to your [Canny Admin Segment Settings](https://canny.io/redirect?to=%2Fadmin%2Fsettings%2Fsegment){:target="\_blank"}.
+1. Go to your [Canny Admin Segment Settings](https://canny.io/redirect?to=%2Fadmin%2Fsettings%2Fsegment){:target="_blank"}.
 2. Install the integration to get your API key.
 3. From the Segment web app, navigate to **Connections > Catalog**, then select the **Destinations** tab in the catalog.
 4. Search for **Canny (Actions)** and select it.

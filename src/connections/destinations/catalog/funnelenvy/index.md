@@ -3,7 +3,7 @@ title: FunnelEnvy Destination
 rewrite: true
 id: 5d3752aec1c95d00012c80aa
 ---
-[FunnelEnvy](https://www.funnelenvy.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) helps marketers optimize revenue by delivering personalized experiences and offers for every customer across their unique journey.
+[FunnelEnvy](https://www.funnelenvy.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners){:target="_blank”} helps marketers optimize revenue by delivering personalized experiences and offers for every customer across their unique journey.
 
 This destination is maintained by FunnelEnvy. For any issues with the destination, [contact the FunnelEnvy Support team](mailto:support@funnelenvy.com).
 
@@ -22,7 +22,7 @@ The FunnelEnvy snippet can be found in your settings within FunnelEnvy which is 
 
 1. From the Segment web app, click **Catalog**.
 2. Search for "FunnelEnvy" in the Catalog, select it, and choose which of your sources to connect the destination to.
-3. Head over to your [FunnelEnvy integration settings](https://backstage.funnelenvy.com/#/integrationsNew) and add "Segment Souce" as a source integration.
+3. Head over to your [FunnelEnvy integration settings](https://backstage.funnelenvy.com/#/integrationsNew){:target="_blank”} and add "Segment Souce" as a source integration.
 4. Copy the "API Key" from the Segment Source integration in FunnelEnvy into your Segment Settings UI.
 
 

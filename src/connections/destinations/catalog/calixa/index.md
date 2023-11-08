@@ -3,7 +3,7 @@ title: Calixa Destination
 rewrite: true
 id: 5df41c5d2f4a8cd2b74b5725
 ---
-[Calixa](https://www.calixa.io/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) makes it easy to manage all your customers in one place. No more jumping around from tool to tool, learning SQL, or maintaining internal tools. Calixa connects to the third party SaaS tools you use (like Stripe, Zendesk, and Intercom) so that you can see everything about your customers and take action in one place.
+[Calixa](https://www.calixa.io/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners){:target="_blank”} makes it easy to manage all your customers in one place. No more jumping around from tool to tool, learning SQL, or maintaining internal tools. Calixa connects to the third party SaaS tools you use (like Stripe, Zendesk, and Intercom) so that you can see everything about your customers and take action in one place.
 
 This destination is maintained by Calixa. For any issues with the destination, [contact the Calixa support team](mailto:team@calixa.io).
 
@@ -11,8 +11,8 @@ This destination is maintained by Calixa. For any issues with the destination, [
 
 
 
-1. Login to your [Calixa account](https://console.calixa.io/login).
-2. Go to the [Integrations page](https://console.calixa.io/integrations) and click **Add Integration**.
+1. Login to your [Calixa account](https://console.calixa.io/login){:target="_blank”}.
+2. Go to the [Integrations page](https://console.calixa.io/integrations){:target="_blank”} and click **Add Integration**.
 3. Select the Segment Integration and sign in to your Segment account to grant Calixa access.
 
 ## Track

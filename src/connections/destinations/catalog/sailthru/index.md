@@ -31,7 +31,7 @@ We will automatically handle the proper identification of user's in Sailthru usi
 
 #### Tags
 
-Sailthru provides an out of band web scraper that will automatically collect contextual information from your pages to power their [personalization engine](https://getstarted.sailthru.com/site/personalization-engine/meta-tags/). If the design of your site requires passing these tags to Sailthru manually (Single Page Apps are one example) you can manually pass them using a `keywords` property in the `page` event:
+Sailthru provides an out of band web scraper that will automatically collect contextual information from your pages to power their [personalization engine](https://getstarted.sailthru.com/site/personalization-engine/meta-tags/){:target="_blank"}. If the design of your site requires passing these tags to Sailthru manually (Single Page Apps are one example) you can manually pass them using a `keywords` property in the `page` event:
 
 ```js
 analytics.page('Page Name', {
@@ -122,7 +122,7 @@ Sailthru does not allow the `extid` to be the main lookup identifier for their P
 
 If the user and their email does not exist in Sailthru, the event will throw an error. If the user exists, the purchase will be added to their profile. Be sure to call `identify` with an `email` passed in the `traits` object prior to the `Order Completed` event. If you are sending events using one of Segment's server-side libraries and want to be sure, you can also send the email value in your `track` calls under `context.traits.email`.
 
-Once `Order Completed` is triggered, Segment will pass in `incomplete: 0` to signify that the order is now complete. Segment will map the following Sailthru [required fields](https://getstarted.sailthru.com/new-for-developers-overview/advanced-features/purchase/#Parameters_forPOST) from the [v2 Order Completed Spec](/docs/connections/spec/ecommerce/v2/#order-completed):
+Once `Order Completed` is triggered, Segment will pass in `incomplete: 0` to signify that the order is now complete. Segment will map the following Sailthru [required fields](https://getstarted.sailthru.com/new-for-developers-overview/advanced-features/purchase/#Parameters_forPOST){:target="_blank"} from the [v2 Order Completed Spec](/docs/connections/spec/ecommerce/v2/#order-completed):
 
 | Sailthru Spec | Segment Spec |
 | --- | --- |
@@ -149,7 +149,7 @@ Note that purchases cannot be edited once they are posted.
 
 ## Abandoned Cart Events
 
-In addition to `Order Completed` events, we support the concept of [Sailthru's Abandoned Carts](https://getstarted.sailthru.com/email/transactionals/abandoned-shopping-carts/) using Segment's `Product Added` and `Product Removed` events. When these events are triggered, Segment will pass in `incomplete: 1` to signify that the order is incomplete.
+In addition to `Order Completed` events, we support the concept of [Sailthru's Abandoned Carts](https://getstarted.sailthru.com/email/transactionals/abandoned-shopping-carts/){:target="_blank"} using Segment's `Product Added` and `Product Removed` events. When these events are triggered, Segment will pass in `incomplete: 1` to signify that the order is incomplete.
 
 To send transactional emails when a user abandons their cart, you must pass in a `reminder_time` and `reminder_template` on the `Product Added` and `Product Removed` events. The template passed through as `reminder_template` must match the **public name** configured in Sailthru's UI.
 
@@ -199,14 +199,14 @@ The default status for the optout value is `none` or you can select `all`, `basi
 
 `none`: Optout(none) is a way of revalidating users back from being any type of optout. This would only be used if an end user has previously opted out and would like to opt back in to be a valid user.
 
-You can read more about [Optout Levels here](https://getstarted.sailthru.com/managing-my-account/hosted-pages/user-optout-levels/).
+You can read more about [Optout Levels here](https://getstarted.sailthru.com/managing-my-account/hosted-pages/user-optout-levels/){:target="_blank"}.
 
 
 ### Adding users to a list
 To configure a default list name, Segment exposes a setting to configure this in the UI. You can also explicitly set your own `defaultListName` through the destination option on `identify`.
 
 ### Reminder Time and Template
-To configure a default reminder time and template, enter the **public name** of your template (configured in Sailthru's UI) and the time frame you will want the email to send. Some example values are 60 minutes, 24 hours, 2 weeks. Segment will handle passing in the `+` increment. To read more about how Sailthru calculates time, refer to their [time documentation](https://getstarted.sailthru.com/developers/zephyr-functions-library/time/).
+To configure a default reminder time and template, enter the **public name** of your template (configured in Sailthru's UI) and the time frame you will want the email to send. Some example values are 60 minutes, 24 hours, 2 weeks. Segment will handle passing in the `+` increment. To read more about how Sailthru calculates time, refer to their [time documentation](https://getstarted.sailthru.com/developers/zephyr-functions-library/time/){:target="_blank"}.
 
 
 ## FAQ
