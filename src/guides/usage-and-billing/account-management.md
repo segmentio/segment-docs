@@ -49,7 +49,7 @@ Though workspaces can't be merged, you can move an existing source to a single w
 
 To move a source between workspaces, navigate to the source's **Settings** tab, then click **Transfer to Workspace**. Choose the workspace you're moving the source to, then click **Transfer Source**.
 
-When a source is transferred from one workspace to another, it will include all the connected destinations with the same settings.
+When you transfer a source from one workspace to another, the new source includes all the connected destinations with the same settings.
 
 > info ""
 > The person who transfers the source must be a [workspace owner](/docs/segment-app/iam/) for both the origin and recipient workspaces, otherwise the recipient workspace won't appear in the dropdown list.
