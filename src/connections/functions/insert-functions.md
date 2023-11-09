@@ -477,6 +477,10 @@ No, destination insert functions are currently available as cloud-mode destinati
 
 No, an insert function can only be connected to one destination.
 
+##### Why am I receiving a 500 Internal Error when saving the same of the destination insert function?
+
+There is an 120-Character limit for the insert function display name.
+
 {% comment %}
 
 ## Using Segment's Public API
