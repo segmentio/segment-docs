@@ -236,4 +236,4 @@ Computed Trait CSVs are generated on demand. Before you can download the CSV, yo
 </table>
 
 > note ""
-> Account traits and Account identifiers are not possible to add to the CSV download with Account Level audiences, because every row listed is a user, and since account traits and identifiers only exist on accounts, then they would not technically exist as a user's custom trait and appear on the CSV.
+> You can't add account traits and identifiers using the CSV downloader with account level audiences. This is because every row listed in the CSV file is a user, and since account traits and identifiers only exist on accounts, they wouldn't exist as a user's custom trait and appear on the CSV.
