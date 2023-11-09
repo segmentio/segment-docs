@@ -49,7 +49,7 @@ dependencies {
 
 You can find the current version in the [plugin repository](https://github.com/Survicate/analytics-kotlin-survicate){:target="_blank"}.
 
-## Using the Plugin in your App
+## Using the plugin in your app
 In order to activate the Survicate plugin, you have to add a `SurvicateDestination` to the Analytics instance.
 
 ```kotlin
