@@ -3,19 +3,19 @@ title: Analytics Kotlin Survicate Plugin
 strat: kotlin-android
 ---
 
-[Survicate](https://survicate.com/){:target="_blank"} is an all-in-one customer feedback platform that helps you collect and act on feedback from your customers. It helps you understand your customers and improve their experience with your product or service.
+[Survicate](https://survicate.com/){:target="_blank"} is an all-in-one customer feedback platform that helps you collect and act on feedback from your customers. With Survicate, you can better understand your customers and improve their experience with your product or service.
 
-Add Survicate device mode support to your applications using this plugin for [Analytics-Kotlin](https://github.com/segmentio/analytics-kotlin){:target="_blank"}.
+Add Survicate device mode support to your applications using [this plugin](https://github.com/segmentio/analytics-kotlin){:target="_blank"} for Analytics-Kotlin.
 
 ## Getting started
 
-First you need to provide a Survicate workspace key.
+To get started, you need to provide a Survicate workspace key.
 
-You can do this in 2 ways:
+You can do this in two ways:
 
-1. Add the key in the Segment panel -> Destinations -> Your Android app destination -> Settings. You need to put the key inside the Connection Settings as a "Workspace Key".
+1. Add the key in the Segment panel. Navigate to **Connections > Destinations** and locate your Android app destination. Click **Settings**, then enter the key inside the Connection Settings as a "Workspace Key".
 
-2. Alternatively, you can add your Survicate workspace key as a metadata inside AndroidManifest
+2. Alternatively, you can add your Survicate workspace key as metadata inside AndroidManifest:
 
    ```xml
    <application
@@ -25,8 +25,11 @@ You can do this in 2 ways:
        <meta-data android:name="com.survicate.surveys.workspaceKey" android:value="YOUR_WORKSPACE_KEY"/>
    </application>
    ```
+
 ## Adding the dependency
-Define Maven repository
+
+To define the Maven repository:
+
 ```
 allprojects {
     repositories {
@@ -36,7 +39,7 @@ allprojects {
 }
 ```
 
-Add dependency to your app's build.gradle file
+Add the dependency to your app's build.gradle file:
 ```
 dependencies {
     // ...
@@ -44,7 +47,7 @@ dependencies {
 }
 ```
 
-You can find current version in the [plugin repository](https://github.com/Survicate/analytics-kotlin-survicate)
+You can find the current version in the [plugin repository](https://github.com/Survicate/analytics-kotlin-survicate){:target="_blank"}.
 
 ## Using the Plugin in your App
 In order to activate the Survicate plugin, you have to add a `SurvicateDestination` to the Analytics instance.
@@ -56,22 +59,22 @@ analytics = Analytics(segmentKey, applicationContext) {
 analytics.add(SurvicateDestination(applicationContext))
 ```
 
-Make sure to keep only one instance of the `Analytics` (e.g. initialize it inside Application's onCreate method). This is important, because the Survicate SDK underneath can only be initialized once.
+Only keep one instance of the `Analytics` (for example, initialize it inside the application's `onCreate` method). This is important because the Survicate SDK underneath can only be initialized once.
 
-Now you can use the Analytics as usual, having the events mapped to Survicate SDK as described below.
+Now you can use the Analytics, having the events mapped to the Survicate SDK as described below.
 
-_**Identify**_
+#### Identify
 
-In the SurvicateDestination plugin, the `identify` method from Segment is transferred to the `setUserTraits` method of Survicate. You can provide multiple key-value pairs. The `userId` argument of `Analytics.identify` is also set as a user trait with the key "user_id".
+In the SurvicateDestination plugin, the Identify method from Segment is transferred to the `setUserTraits` method of Survicate. You can provide multiple key-value pairs. The `userId` argument of `Analytics.identify` is also set as a user trait with the key "user_id".
 
-_**Track**_
+#### Track
 
-The `track` method from Segment is used as the `invokeEvent` method in Survicate. This means that when you track an event in Segment, it will be invoked in Survicate.
+The Track method from Segment is used as the `invokeEvent` method in Survicate. This means that when you track an event in Segment, it will be invoked in Survicate.
 
-_**Screen**_
+#### Screen
 
-Similarly, the screen method from Segment is used as the `enterScreen` method in Survicate. This means that when you track a screen in Segment, it will be entered in Survicate.
+Similarly, the Screen method from Segment is used as the `enterScreen` method in Survicate. This means that when you track a screen in Segment, it will be entered in Survicate.
 
-_**Reset**_
+#### Reset
 
-The `reset` method from Segment is used as the reset method in Survicate. This means that when you reset the Segment client, the Survicate client will also be reset.
+The Reset method from Segment is used as the reset method in Survicate. This means that when you reset the Segment client, the Survicate client is also reset.

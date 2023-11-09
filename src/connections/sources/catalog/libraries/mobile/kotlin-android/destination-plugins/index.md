@@ -145,4 +145,4 @@ To test your destination:
 Segment recommends you to test your destination implementation end-to-end. Send some sample analytics events and ensure that they reach the destination.
 
 > info ""
-> For more information about the Analytics Kotlin Plugin architecture and how it can help you customize your tracking implementation to suit your needs, refer to the [Plugin Architecture Guide.](/docs/connections/sources/catalog/libraries/mobile/kotlin-android/kotlin-android-plugin-architecture)
+> For more information about the Analytics Kotlin Plugin architecture and how it can help you customize your tracking implementation to suit your needs, refer to the [Plugin Architecture guide](/docs/connections/sources/catalog/libraries/mobile/kotlin-android/kotlin-android-plugin-architecture).
