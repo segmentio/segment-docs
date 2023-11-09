@@ -212,7 +212,7 @@ analytics.alias('1234');
 
 ### Track Links
 
-If you are tracking links with Mixpanel's [track\_links](https://mixpanel.com/help/reference/javascript-full-api-reference#mixpanel.track_links)helper you can switch that code to the Segment [trackLink helper function](https://segment.com/docs/connections/sources/catalog/libraries/website/javascript/#track-link) in [Analytics.js](https://segment.com/docs/connections/sources/catalog/libraries/website/javascript).
+If you are tracking links with Mixpanel's [track\_links](https://mixpanel.com/help/reference/javascript-full-api-reference#mixpanel.track_links) helper you can switch that code to the Segment [trackLink helper function](https://segment.com/docs/connections/sources/catalog/libraries/website/javascript/#track-link) in [Analytics.js](https://segment.com/docs/connections/sources/catalog/libraries/website/javascript).
 
 And here's an example:
 
