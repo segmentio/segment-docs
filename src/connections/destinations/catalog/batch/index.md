@@ -68,6 +68,10 @@ SEGAnalyticsConfiguration *config = [SEGAnalyticsConfiguration configurationWith
 [SEGAnalytics setupWithConfiguration:config];
 ```
 
+## Server Side
+
+Transmitting server-side data from Segment to Batch can be accomplished with the use of a [destination function](/docs/connections/functions/destination-functions/){:target="_blank"}. Follow the steps outlined [in these docs](https://help.batch.com/en/articles/2208243-how-to-connect-batch-to-segment){:target="_blank"} for a smooth integration.
+
 ## Screen
 
 When you call `screen` in your mobile app, we send a screen view to an event named `SEGMENT_SCREEN`. The screen name will be tracked as the event's label.
