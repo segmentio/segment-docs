@@ -301,7 +301,5 @@ Column JSON size | The maximum size of any single column value. | 128 KiB
 
 ## Reverse ETL Frequently Asked Questions
 
-{% faq %}
-{% faqitem Why sync results constantly show  "No records extracted", when "Updated records" is selected after I enabled the mapping? %}
-When "Updated Records" is selected and the values of query results (records) has not been changed after the first sync, this situation will be considered expected. During the first sync, reverse ETL system calculates a snapshot of all the resutls and creates records in `_segment_reverse_etl` schema. Therefore, all the rescords are considered as "Added records" instead of "Updated records" at this time. Thus, the records can only meet "Updated records" condition, when the underlying values changes after the first sync completes.{% endfaqitem %}
-{% endfaq %}
+### Why do my sync results show *No records extracted* when I select *Updated records* after I enable the mapping? 
+It's expected that when you select **Updated records** and the records do not change after the first sync. During the first sync, the reverse ETL system calculates a snapshot of all the results and creates records in the `_segment_reverse_etl` schema. All the records are considered as *Added records* instead of *Updated records* at this time. The records can only meet the *Updated records* condition when the underlying values change after the first sync completes.
