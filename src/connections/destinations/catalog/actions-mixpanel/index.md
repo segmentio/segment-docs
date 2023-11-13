@@ -135,3 +135,6 @@ If you want to confirm, you can configure the new destination to point to a diff
 
 If the Mixpanel (Actions) destination uses $group_id as the group key, ensure that the mappings handling your `track` events have the field for **Group ID** mapped to a valid value. By default, this field maps to the event variable `context.groupId`.
 
+### Why is Broadman, Oregon appearing in all user's profile location field?
+
+If you are seeing traffic from Boardman or see Segment as the browser, this is most likely because you are sending calls to Mixpanel (Actions) from the server side (our AWS servers reside in Boardman, Oregon). In order to prevent the Boardman issue, you would have to manually pass the IP information in the context object from the server.
