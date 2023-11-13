@@ -299,7 +299,7 @@ Column name length | The maximum length of a record column. | 128 characters
 Record JSON size | The maximum size for a record when converted to JSON (some of this limit is used by Segment). | 512 KiB
 Column JSON size | The maximum size of any single column value. | 128 KiB
 
-## FAQs
+### FAQs
 
-### Why do my sync results show *No records extracted* when I select *Updated records* after I enable the mapping? 
-It's expected that when you select **Updated records** and the records do not change after the first sync. During the first sync, the reverse ETL system calculates a snapshot of all the results and creates records in the `_segment_reverse_etl` schema. All the records are considered as *Added records* instead of *Updated records* at this time. The records can only meet the *Updated records* condition when the underlying values change after the first sync completes.
+#### Why do my sync results show "**No records extracted**" when I select "**Updated records**" after I enable the mapping? 
+It's expected when you select **Updated records** and the records did not change after the first sync. During the first sync, the reverse ETL system calculates a snapshot of all the results and creates records in the `_segment_reverse_etl` schema. All the records are considered as *Added records* instead of *Updated records* at this time. The records can only meet the *Updated records* condition when the underlying values change after the first sync completes.
