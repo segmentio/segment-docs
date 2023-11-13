@@ -10,7 +10,7 @@ To start sending data to Marketo, there are two things you must do. **Both of th
 ### Enter your Marketo Credentials into your Destination settings
 We'll need your Munchkin Account ID, Client Secret, and Client ID.
 
-To get your Munchkin Account ID [login to your Marketo account](https://login.marketo.com/), click Admin in the top right corner, then click Munchkin on the left side bar.
+To get your Munchkin Account ID [login to your Marketo account](https://login.marketo.com/){:target="_blank"}, click Admin in the top right corner, then click Munchkin on the left side bar.
 
 ![A screenshot of a Marketo account.](images/iL42ERv0g5X+.png)
 
@@ -60,10 +60,10 @@ Next, create a Service and get Client Secret and Client ID from that Service.
 ## Identify
 
 ### Cloud-mode
-When you call [`Identify`](/docs/connections/spec/identify/) in Cloud-mode, Segment uses [Marketo's REST API](http://developers.marketo.com/rest-api/lead-database/leads/#create_and_update) to create and update leads server-side.
+When you call [`Identify`](/docs/connections/spec/identify/) in Cloud-mode, Segment uses [Marketo's REST API](http://developers.marketo.com/rest-api/lead-database/leads/#create_and_update){:target="_blank"} to create and update leads server-side.
 
 ### Device-mode
-When you call [`Identify`](/docs/connections/spec/identify/) in Device-mode, Segment uses [Marketo's Background Form Submission](https://developers.marketo.com/blog/make-a-marketo-form-submission-in-the-background/) to create and update leads client-side.
+When you call [`Identify`](/docs/connections/spec/identify/) in Device-mode, Segment uses [Marketo's Background Form Submission](https://developers.marketo.com/blog/make-a-marketo-form-submission-in-the-background/){:target="_blank"} to create and update leads client-side.
 
 There are additional steps you must take to send `.identify()` calls in Device-mode.
 
@@ -122,7 +122,7 @@ If you'd like any other traits from your `.identify()` call to update a field in
 
 ## Track
 
-When you call [`Track`](/docs/connections/spec/track/), Segment maps the event to a pre-defined [Marketo Custom Activity](http://docs.marketo.com/display/public/DOCS/Understanding+Custom+Activities). There are two important things to note when sending `.track()` calls to Marketo:
+When you call [`Track`](/docs/connections/spec/track/), Segment maps the event to a pre-defined [Marketo Custom Activity](http://docs.marketo.com/display/public/DOCS/Understanding+Custom+Activities){:target="_blank"}. There are two important things to note when sending `.track()` calls to Marketo:
 
 1. You **must** map them to your Marketo Custom Activities in your Destination Settings. If you do not map a track call to a Custom Activity in your Destination Settings, we will not send the event to Marketo to help limit the amount of API calls made to Marketo.
 
@@ -146,7 +146,7 @@ Analytics.track(
 ![A screenshot of the Destination Settings page in Segment for the Marketo v2 Destination.](images/c2l53wGTCVP+.png)
 
 - **Segment Event Name**. Your Segment Event name.
-- **Marketo Activity ID**. When you are in [Marketo Custom Activities](http://docs.marketo.com/display/public/DOCS/Understanding+Custom+Activities), click on the Marketo Activity in the right side bar that you'd like to map your Segment Track event to. Copy and paste the ID into your Destination Settings.
+- **Marketo Activity ID**. When you are in [Marketo Custom Activities](http://docs.marketo.com/display/public/DOCS/Understanding+Custom+Activities){:target="_blank"}, click on the Marketo Activity in the right side bar that you'd like to map your Segment Track event to. Copy and paste the ID into your Destination Settings.
 ![A screenshot of the Marketo Custom Activities page.](images/cwZqHwQfs3M+.png)
 
 - **Segment Property Name**. The name of the property in your `.track()` call. This is case sensitive so make sure the name matches exactly how you are passing it in your `.track()` call.
@@ -161,7 +161,7 @@ Analytics.track(
 
 ## Page
 
-When you call [`Page`](/docs/connections/spec/page/), Segment uses [Marketo's Munchkin.js `visitWebPage` method](http://developers.marketo.com/javascript-api/lead-tracking/api-reference/#munchkin_visitwebpage). The URL is built from your `.page()` event and properties object into the form Marketo expects, so no need to worry about doing that yourself.
+When you call [`Page`](/docs/connections/spec/page/), Segment uses [Marketo's Munchkin.js `visitWebPage` method](http://developers.marketo.com/javascript-api/lead-tracking/api-reference/#munchkin_visitwebpage){:target="_blank"}. The URL is built from your `.page()` event and properties object into the form Marketo expects, so no need to worry about doing that yourself.
 
 Marketo's `visitWebPage` method requires a URL and a user agent. Any calls that are missing either of these fields will not be sent to Marketo. User agent is automatically collected Client-side but if you are sending `.page()` calls from the server, make sure to set the user agent.
 
@@ -234,7 +234,7 @@ You can do one of the following to prevent duplicate leads:
 
 To upload a list to Marketo, when you are in Lead Database, click All Leads. Then click "New", then "Import List" from the drop down. Select your CSV, then click "Next". Make sure "Email Address" and "userId" are the Marketo Fields selected then click "Next". Name your list or select a pre-existing list. Select "None" for Acquisition Program. Then Click "Import".
 
-2. Manually merge leads in Marketo. Follow [these instructions to merge](http://docs.marketo.com/display/public/DOCS/Find+and+Merge+Duplicate+People) any duplicate leads found in Marketo after enabling the destination.
+2. Manually merge leads in Marketo. Follow [these instructions to merge](http://docs.marketo.com/display/public/DOCS/Find+and+Merge+Duplicate+People){:target="_blank"} any duplicate leads found in Marketo after enabling the destination.
 3. Make sure to call identify first. This is already a recommended best practice as [part of our spec](/docs/connections/spec/identify/).
 4. Pass an email in your `.track()` and `.page()` calls.
 

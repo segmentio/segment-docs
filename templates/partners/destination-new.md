@@ -1,4 +1,4 @@
-# 💥 Segment Partner Source Documentation Template
+# 💥 Segment Partner Actions Destination Documentation Template
 
 > Hi Partners 👋🏼
 >
@@ -38,7 +38,7 @@ title: [integration_name] Destination
 
 > (delete after reading) Include a 1-2 sentence introduction to your company and the value it provides to customers - updating the name and hyperlink. Please leave the utm string unchanged.
 
-[<integration_name>](https://yourintegration.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) provides self-serve predictive analytics for growth marketers, leveraging machine learning to automate audience insights and recommendations.
+[<integration_name>](https://yourintegration.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners){:target="_blank”} provides self-serve predictive analytics for growth marketers, leveraging machine learning to automate audience insights and recommendations.
 
 > (delete after reading) Update your company name and support email address.
 

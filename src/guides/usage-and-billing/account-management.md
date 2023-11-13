@@ -36,6 +36,9 @@ You should also change your write keys for each source and remove all Segment sn
 
 Changing your workspace name or slug won't impact any sources or destinations you've already configured. If you're using [Segment's Public API](/docs/api), you'll need to change the slug in your request URLs.
 
+> error "We were unable to save your changes, please try again"
+> If you see this error message when trying to change a workspace slug, it often means the slug is already taken.
+
 ## Can I recover a source or workspace after I delete it?
 
 No. Deleted sources and workspaces cannot be recovered.
@@ -45,6 +48,8 @@ No. Deleted sources and workspaces cannot be recovered.
 Though workspaces can't be merged, you can move an existing source to a single workspace to the same effect. For example, you might move existing sources to one workspace so that you can unify all of your data across teams and gain a broader view of your customer data tracking.
 
 To move a source between workspaces, navigate to the source's **Settings** tab, then click **Transfer to Workspace**. Choose the workspace you're moving the source to, then click **Transfer Source**.
+
+When you transfer a source from one workspace to another, the new source includes all the connected destinations with the same settings.
 
 > info ""
 > The person who transfers the source must be a [workspace owner](/docs/segment-app/iam/) for both the origin and recipient workspaces, otherwise the recipient workspace won't appear in the dropdown list.

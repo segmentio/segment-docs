@@ -14,11 +14,12 @@ id: IqDTy1TpoU
 
 
 
-Analytics.js 2.0, the latest version of Segment's JavaScript source, enables you to send your data to any tool without having to learn, test, or use a new API every time.
+Analytics.js 2.0 is the newest version of Segment's most popular JavaScript library. It is backwards compatible with our original Analytics.js Classic library, so in most cases, no code changes are necessary in order to start using Analytics.js 2.0. Analytics.js 2.0 enables you to send your data to hundreds of [destination tools](/docs/connections/destinations/catalog/) without having to learn, test, or use a new API every time.
+
+Segment's Analytics.js 2.0 library is fully open-source and can be viewed on [GitHub](https://github.com/segmentio/analytics-next/){:target="_blank"}.
 
 > info ""
-> Analytics.js 2.0 is available as an [open-source project](https://github.com/segmentio/analytics-next/){:target="_blank"}.
-> <br><br> All sources created on April 5, 2022 and after, default to use Analytics.js 2.0.
+> All sources created after April 5, 2022 use Analytics.js 2.0 by default. 
 
 
 ## Benefits of Analytics.js 2.0
@@ -30,7 +31,7 @@ Analytics.js 2.0 provides two key benefits over the previous version.
 Analytics.js 2.0 reduces page load time and improves site performance. Its package size is **~70%** smaller than its predecessor, Analytics.js.
 
 > info ""
-> Many factors impact page load time, including page weight, network conditions, and hosting locations.
+> Many factors impact page load time, including network conditions, hosting locations, and page weight. Page weight for each customer integration varies based on the number of device-mode destinations that are enabled for each source. The more device-mode destinations that are enabled, the more data gets added to the library, which will impact the weight of the library.
 
 
 ### Developer experience
@@ -342,13 +343,14 @@ The Analytics.js utility methods help you change how Segment loads on your page.
 - [On (Emitter)](#emitter)
 - [Timeout](#extending-timeout)
 - [Reset (Logout)](#reset-or-log-out)
+- [Keepalive](#keepalive)
 
 ### Load
 
 > info ""
 > The `load` method is also available when you load analytics.js through the [NPM package](https://www.npmjs.com/package/@segment/analytics-next){:target="_blank"}.
 
-You can load a buffered version of analytics.js that requires you call `load` explicitly to before analytics.js initiates any network activity. This is useful if you want to, for example, wait for user consent before you fetch tracking destinations or send buffered events to Segment.
+You can load a buffered version of analytics.js that requires you to call `load` explicitly before analytics.js initiates any network activity. This is useful if you want to, for example, wait for user consent before you fetch tracking destinations or send buffered events to Segment.
 
 > warning ""
 > Call `load` one time only.
@@ -472,6 +474,9 @@ The `reset` method only clears the cookies and `localStorage` created by Segment
 
 Segment doesn't share `localStorage` across subdomains. If you use Segment tracking on multiple subdomains, you must call `analytics.reset()` for each subdomain to completely clear out the user session.
 
+### Keepalive
+
+You can utilize this in instances where an API call fires on a hard redirect, and are missed from getting captured in Segment. If you set this flag to true, it enables firing the event before the redirect. This is available for all events. You can read more about this in the [Github PR](https://github.com/segmentio/analytics-next/issues/768#issuecomment-1386100830){:target="_blank"}.
 
 
 ## Managing data flow with the Integrations object
@@ -654,16 +659,20 @@ Though middlewares function the same as plugins, it's best to use plugins as the
 ### Plugin categories
 Plugins are bound by Analytics 2.0 which handles operations such as observability, retries, and error handling. There are two different categories of plugins:
 * **Critical Plugins**: Analytics.js expects this plugin to be loaded before starting event delivery. Failure to load a critical plugin halts event delivery. Use this category sparingly, and only for plugins that are critical to your tracking.
+
+| Type          | Details                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
+| ------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `before`      | Executes before event processing begins. These are plugins that run before any other plugins run. <br><br>For example, validating events before passing them along to other plugins. A failure here could halt the event pipeline. <br><br> See the example of how Analytics.js uses the [Event Validation plugin](https://github.com/segmentio/analytics-next/blob/master/packages/browser/src/plugins/validation/index.ts){:target="_blank"} to verify that every event has the correct shape. |
+
 * **Non-critical Plugins**: Analytics.js can start event delivery before this plugin finishes loading. This means your plugin can fail to load independently from all other plugins. For example, every Analytics.js destination is a non-critical plugin. This makes it possible for Analytics.js to continue working if a partner destination fails to load, or if users have ad blockers turned on that are targeting specific destinations.
 
 > info ""
 > Non-critical plugins are only non-critical from a loading standpoint. For example, if the `before` plugin crashes, this can still halt the event delivery pipeline.
 
-Non-critical plugins run through a timeline that executes in order of insertion based on the entry type. Segment has these five entry types of non-critical plugins:
+Non-critical plugins run through a timeline that executes in order of insertion based on the entry type. Segment has these four entry types of non-critical plugins:
 
 | Type          | Details                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
 | ------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `before`      | Executes before event processing begins. These are plugins that run before any other plugins run. <br><br>For example, validating events before passing them along to other plugins. A failure here could halt the event pipeline. <br><br> See the example of how Analytics.js uses the [Event Validation plugin](https://github.com/segmentio/analytics-next/blob/master/packages/browser/src/plugins/validation/index.ts){:target="_blank"} to verify that every event has the correct shape. |
 | `enrichment`  | Executes as the first level of event processing. These plugins modify an event. <br><br> See the example of how Analytics.js uses the [Page Enrichment plugin](https://github.com/segmentio/analytics-next/blob/master/packages/browser/src/plugins/page-enrichment/index.ts){:target="_blank"} to enrich every event with page information.                                                                                                                                                     |
 | `destination` | Executes as events begin to pass off to destinations. <br><br> This doesn't modify the event outside of the specific destination, and failure doesn't halt the execution.                                                                                                                                                                                                                                                                                                                        |
 | `after`       | Executes after all event processing completes. You can use this to perform cleanup operations. <br><br>An example of this is the [Segment.io Plugin](https://github.com/segmentio/analytics-next/blob/master/packages/browser/src/plugins/segmentio/index.ts){:target="_blank"} which waits for destinations to succeed or fail so it can send it observability metrics.                                                                                                                         |
@@ -877,6 +886,70 @@ If the above routes don't work, Segment provides these workarounds to help with 
 * Create a [custom proxy](/docs/connections/sources/catalog/libraries/website/javascript/custom-proxy/). This changes the URL that Segment loads from (cdn.segment.com), as well as the outgoing requests generated when events are triggered (api.segment.io). By setting up proxies for these URLs, some ad blockers won't prevent Segment from loading, which means your events send downstream to your destinations. 
 
 * Consider tracking data using one of Segment's [server-side libraries](/docs/connections/sources/#server). By using a server-side library, you no longer have to worry about ad blockers and privacy browsers preventing Segment from loading. This option may require more code to track something like a `.page()` call, since now you have to manually pass contextual information that otherwise would've been collected automatically by Analytics.js, such as `url`, `path`, `referrer`. Note that some destinations are device-mode only.
+
+## Add destinations from npm
+
+Bundle the destinations you want loaded from [npm](https://www.npmjs.com/package/@segment/analytics-next){:target="_blank"} instead of having them loaded from a remote CDN. This enables you to have fewer network requests when adding destinations.
+
+* To add actions-based destinations from npm: 
+
+  ```js
+  import vwo from '@segment/analytics-browser-actions-vwo'
+  import braze from '@segment/analytics-browser-actions-braze'
+
+  const analytics = AnalyticsBrowser.load({
+    writeKey: '<WRITE_KEY>',
+    plugins: [vwo, braze],
+  })
+  ```
+
+  Pass in the destination plugin to the added config option called `plugins`.  A list of all action destination packages can be found [here](https://github.com/segmentio/action-destinations/blob/main/packages/destinations-manifest/package.json){:target="_blank"}.
+
+
+* To add classic destinations from npm: 
+
+  ```js
+  import { AnalyticsBrowser } from '@segment/analytics-next'
+  import GoogleAnalyticsIntegration from '@segment/analytics.js-integration-google-analytics'
+
+  // The following example assumes configuration for Google Analytics will be available in the fetched settings
+  const analytics = AnalyticsBrowser.load({
+    writeKey: '<WRITE_KEY>',
+    classicIntegrations: [ GoogleAnalyticsIntegration ]
+  }),
+  ```
+
+## Segment Inspector
+The Segment Inspector is a Chrome web extension that enables you to debug your Segment integration on web applications instrumented with Analytics.js 2.0. Analytics.js sends data to the extension so that you can see how events change before they're sent to your destinations and so that you can verify that the event details are correct. The Segment Inspector also lets you analyze and confirm that API calls made from your website arrive to your Analytics.js 2.0 source. 
+
+> info ""
+> For the Segment inspector to work, you must enable the Analytics.js 2.0 source.
+
+To add the Segment Inspector as a Chrome extension:
+1. Go to the [Chrome web store](https://chrome.google.com/webstore/category/extensions){:target="_blank”}.
+2. Search for **Segment Inspector**.
+3. Click **Add to Chrome**.
+4. Click **Add Extension** in the pop-up window.  
+
+Once installed, use the Inspect Elements developer tool in Chrome to use the Segment Inspector. To access the Inspector, go to the top menu bar of Chrome and navigate to **View > Developer > Developer Tools** and go to the **Segment** tab. On the Segment tab, you can:
+- Filter the different calls by type
+- Search based off of the content in the calls
+- Identify users  
+
+### Components of the Segment Inspector 
+The Segment Inspector is composed of these three components:
+1. The **Diagnostics** tab 
+   - This tab shows the library versions and the list of active integrations that are running. 
+   - When you select an integration, you can see the options that passed while the integration loads. If you made any local overrides within the integration or on the page itself, they appear highlighted in the code. 
+2. The **Events** tab 
+   - This tab enables you to select an event and see the specific details of the event. You can view the time the event occurred, the status of the event (whether it sent or failed), what plugins were added, and how the context object changed. Any changes made to the payload appear highlighted. 
+   - Select the double-checked icon to see the payload at the delivery stage.
+   - Select the *fx* icon to see the payloads after plugins ran.
+   - Select the single-checked icon to see the payload as it was when the event triggered.
+3. The **Identity** tab 
+   - This tab enables you to see the information of a user if you're using the `identify` feature. You can associate the data to an individual and measure their activity across multiple sessions and devices. This tab only shows the user's traits that are on the client. 
+   - If you're not using the `identify` feature, the user remains anonymous. 
+
 
 ## Open source libraries
 

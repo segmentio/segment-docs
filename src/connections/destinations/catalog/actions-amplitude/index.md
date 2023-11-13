@@ -51,12 +51,12 @@ To manually add the Log Purchases Action:
 
 ### Connection Modes for Amplitude (Actions) destination
 
-The Amplitude (actions) destination does not offer a device-mode connection mode. If you're using one of Segment's new libraries ([Analytics.js 2.0](/docs/connections/sources/catalog/libraries/website/javascript/), [Swift](https://github.com/segmentio/analytics-swift) or [Kotlin](https://github.com/segmentio/analytics-kotlin)) with the Actions-framework version of the destination, you do not need the device-mode connection.
+The Amplitude (actions) destination does not offer a device-mode connection mode. If you're using one of Segment's new libraries ([Analytics.js 2.0](/docs/connections/sources/catalog/libraries/website/javascript/), [Swift](https://github.com/segmentio/analytics-swift){:target="_blank”} or [Kotlin](https://github.com/segmentio/analytics-kotlin){:target="_blank”}) with the Actions-framework version of the destination, you do not need the device-mode connection.
 
 
 Most previous deployments of the Amplitude Segment destination used the device-mode connection to use the `session_id` tracking feature. The new Actions-framework Amplitude destination, includes session ID tracking by default. When connected to the Analytics.js 2.0 source, Segment automatically loads a plugin on your website for session tracking and enrichment as an alternative to the Amplitude SDK. This means you don't need to bundle any software to run on the user's device, or write any code. It also means that you can use more of the Segment platform features on data going to Amplitude, such as Protocols filtering and transformations, and Profiles Identity Resolution.
 
-Session tracking is available with Segment's new libraries: [Analytics.js 2.0](/docs/connections/sources/catalog/libraries/website/javascript/), [Swift](https://github.com/segmentio/analytics-swift) or [Kotlin](https://github.com/segmentio/analytics-kotlin)
+Session tracking is available with Segment's new libraries: [Analytics.js 2.0](/docs/connections/sources/catalog/libraries/website/javascript/), [Swift](https://github.com/segmentio/analytics-swift){:target="_blank”} or [Kotlin](https://github.com/segmentio/analytics-kotlin){:target="_blank”}.
 
 
 ### Device ID Mappings
@@ -72,20 +72,19 @@ The session ID Segment passes to Amplitude stores locally in a key-value pair. V
 
 ### Enable Amplitude session tracking for Swift
 
-To enable session tracking in Amplitude when using the [Segment Swift library](https://github.com/segmentio/analytics-swift):
+To enable session tracking in Amplitude when using the [Segment Swift library](https://github.com/segmentio/analytics-swift){:target="_blank”}:
 1. Enable `trackApplicationLifecycleEvents` in your configuration.
-2. Add the [Amplitude Session plugin](https://github.com/segmentio/analytics-swift/blob/main/Examples/destination_plugins/AmplitudeSession.swift
-) to your project.
-3. Initialize the plugin ([example](https://github.com/segmentio/analytics-swift/blob/main/Examples/apps/DestinationsExample/DestinationsExample/AppDelegate.swift))
+2. Add the [Amplitude Session plugin](https://github.com/segment-integrations/analytics-swift-amplitude/blob/main/Sources/SegmentAmplitude/AmplitudeSession.swift){:target="_blank”} to your project.
+3. Initialize the plugin ([example](https://github.com/segmentio/analytics-swift/blob/main/Examples/apps/DestinationsExample/DestinationsExample/AppDelegate.swift){:target="_blank”})
    ```swift
    analytics?.add(plugin: AmplitudeSession(name: "Amplitude"))
    ```
 
 ### Enable Amplitude session tracking for Kotlin
 
-To enable session tracking in Amplitude when using the [Segment Kotlin library](https://github.com/segmentio/analytics-kotlin):
+To enable session tracking in Amplitude when using the [Segment Kotlin library](https://github.com/segmentio/analytics-kotlin){:target="_blank”}:
 1. Enable `trackApplicationLifecycleEvents` in your configuration.
-2. Add the [Amplitude Session plugin](https://github.com/segmentio/analytics-kotlin/blob/main/samples/kotlin-android-app-destinations/src/main/java/com/segment/analytics/destinations/plugins/AmplitudeSession.kt) to your project.
+2. Add the [Amplitude Session plugin](https://github.com/segment-integrations/analytics-kotlin-amplitude/blob/main/lib/src/main/java/com/segment/analytics/kotlin/destinations/amplitude/AmplitudeSession.kt){:target="_blank”} to your project.
 2. Initialize the plugin
    ```kotlin
    analytics.add(AmplitudeSession())
@@ -93,8 +92,8 @@ To enable session tracking in Amplitude when using the [Segment Kotlin library](
 
 ### Enable Amplitude session tracking for iOS
 
-To enable session tracking in Amplitude when using the [Segment iOS library](https://github.com/segmentio/analytics-ios):
-1. Add the [Amplitude Session middleware](https://github.com/segment-integrations/analytics-ios-integration-amplitude/blob/amplitude-session/Pod/Classes/SEGAmplitudeSession.m) to your project.
+To enable session tracking in Amplitude when using the [Segment iOS library](https://github.com/segmentio/analytics-ios){:target="_blank”}:
+1. Add the [Amplitude Session middleware](https://github.com/segment-integrations/analytics-ios-integration-amplitude/blob/amplitude-session/Pod/Classes/SEGAmplitudeSession.m){:target="_blank”} to your project.
 2. Add the middleware & enable `trackApplicationLifecycleEvents` in your configuration:
    ```objective-c
    	NSString *const SEGMENT_WRITE_KEY = @" ... ";
@@ -106,8 +105,8 @@ To enable session tracking in Amplitude when using the [Segment iOS library](htt
 
 ### Enable Amplitude session tracking for Android
 
-To enable session tracking in Amplitude when using the [Segment Android library](https://github.com/segmentio/analytics-android):
-1. Add the [Amplitude Session middleware](https://github.com/segment-integrations/analytics-android-integration-amplitude/blob/master/src/main/java/com/segment/analytics/android/integrations/amplitude/AmplitudeSessionId.java) to your project.
+To enable session tracking in Amplitude when using the [Segment Android library](https://github.com/segmentio/analytics-android){:target="_blank”}:
+1. Add the [Amplitude Session middleware](https://github.com/segment-integrations/analytics-android-integration-amplitude/blob/master/src/main/java/com/segment/analytics/android/integrations/amplitude/AmplitudeSessionId.java){:target="_blank”} to your project.
 	```gradle
 	implementation 'com.segment.analytics.android.integrations:amplitude:3.1.0'
 	```
@@ -172,7 +171,7 @@ Property names should be `camelCase` for Android implementations, and `snake_cas
 
 If `true`, the destination sends events to Amplitude's `batch` endpoint rather than the `httpapi` endpoint. Because Amplitude's `batch` endpoint throttles traffic less restrictively than the Amplitude `httpapi` endpoint, enabling this setting can help to reduce 429 errors (throttling errors) from Amplitude.
 
-Amplitude's `batch` endpoint throttles data when the rate of events sharing the same `user_id` or `device_id` exceeds an average of 1,000/second over a 30-second period. See the Amplitude documentation for more about [429 errors and throttling in Amplitude](https://developers.amplitude.com/#429s-in-depth).
+Amplitude's `batch` endpoint throttles data when the rate of events sharing the same `user_id` or `device_id` exceeds an average of 1,000/second over a 30-second period. See the Amplitude documentation for more about [429 errors and throttling in Amplitude](https://developers.amplitude.com/#429s-in-depth){:target="_blank”}.
 {% endcapture %}
 
 
@@ -205,6 +204,9 @@ To use Amplitude's groups with Segment, you must enable the following Action set
 {% include content/ajs-upgrade.md %}
 
 Keep the following in mind if you plan to move to Amplitude (Actions) from a classic Amplitude destination.
+
+> info ""
+> In some cases, Amplitude Classic uses different default mappings than Amplitude (Actions). For example, the `Viewed Home Page` event in Amplitude Classic will be `Viewed Home` in Amplitude Actions, unless you configure it as `Viewed Home Page`. Be sure to follow the steps in the Destination Actions documentation to [customize your mappings](/docs/connections/destinations/actions/#customizing-mappings). Review how events appear in each destination, and configure the Actions' mappings properly to maintain continuity between Classic and Actions destinations.
 
 ### Amplitude (Actions) uses Amplitude's HTTP API v2
 

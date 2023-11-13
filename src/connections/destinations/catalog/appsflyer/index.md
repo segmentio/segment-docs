@@ -26,7 +26,7 @@ Segment's Appsflyer destination code is open source and available on GitHub. You
 
 #### Additional device-mode set up for iOS 14 support
 
-Segment updated the AppsFlyer iOS SDK to use version `6.0 beta` to prepare for tracking changes in iOS 14. The SDK beta version is compatible with the beta version of iOS 14 released by Apple, and supports both AppsFlyer's aggregate attribution, and Apple's `AppTrackingTransparency` framework, and more. See [the AppsFlyer blog post](https://www.appsflyer.com/blog/privacy-centric-attribution-ios14/) about AppsFlyer's new privacy-centric attribution model.
+Segment updated the AppsFlyer iOS SDK to use version `6.0 beta` to prepare for tracking changes in iOS 14. The SDK beta version is compatible with the beta version of iOS 14 released by Apple, and supports both AppsFlyer's aggregate attribution, and Apple's `AppTrackingTransparency` framework, and more. See [the AppsFlyer blog post](https://www.appsflyer.com/blog/privacy-centric-attribution-ios14/){:target="_blank"} about AppsFlyer's new privacy-centric attribution model.
 
 To use the latest AppsFlyer SDK to collect IDFAs, do the following:
 
@@ -66,7 +66,7 @@ To prevent this, you can enable the new **Fallback to send IDFV when advertising
 
 ### Server
 
-AppsFlyer offers an **augmentative** server-side [HTTP API](https://support.appsflyer.com/hc/en-us/articles/207034486-Server-to-Server-In-App-Events-API-HTTP-API-) intended for use along side the AppsFlyer mobile SDK. Use the cloud-mode destination _with_ the mobile SDK to link out-of-app events (such as website or offline purchases) with attributed users and devices.
+AppsFlyer offers an **augmentative** server-side [HTTP API](https://support.appsflyer.com/hc/en-us/articles/207034486-Server-to-Server-In-App-Events-API-HTTP-API-){:target="_blank"} intended for use along side the AppsFlyer mobile SDK. Use the cloud-mode destination _with_ the mobile SDK to link out-of-app events (such as website or offline purchases) with attributed users and devices.
 
 **Important**: The cloud-mode destination is not meant to replace the device-mode destination, and you should not use the cloud-mode destination by itself. AppsFlyer requires that you bundle the mobile SDK to correctly attribute user actions. Remember that if you pass in an `appsFlyerId` on cloud-mode calls, you cannot prevent events from sending to AppsFlyer from the Segment app.
 
@@ -106,10 +106,10 @@ If you'd like to attribute offline events with a certain user or device, the ser
 
 AppsFlyer requires the following properties for this attribution:
 
-**AppsFlyer Device ID**
+**AppsFlyer ID**
 
-Send the **AppsFlyer Device ID** with each event at `integrations.AppsFlyer.appsFlyerId`, see example below.
-This identifier is unique to each device and can be [retrieved using the AppsFlyer SDK](https://support.appsflyer.com/hc/en-us/articles/207034486-Server-to-Server-In-App-Events-API-HTTP-API-). It is a good idea to store this value in an external database where it may be easily accessible by a server or website environments.
+Send the **AppsFlyer ID** with each event at `integrations.AppsFlyer.appsFlyerId`, see example below.
+This identifier is unique to each device and can be [retrieved using the AppsFlyer SDK](https://support.appsflyer.com/hc/en-us/articles/207034486-Server-to-Server-In-App-Events-API-HTTP-API-){:target="_blank"}. It is a good idea to store this value in an external database where it may be easily accessible by a server or website environments.
 
 **Device Type**
 
@@ -157,9 +157,12 @@ All other `properties` will be sent to AppsFlyer as custom properties inside `ev
 Segment will automatically trigger an `Install Attributed` event if you have **trackAttributionData** enabled in your settings, and the Segment-AppsFlyer integration installed in your app. The event payload will adhere to the `Install Attributed` event specification documented [here](/docs/connections/spec/mobile/#install-attributed) and will propagate to your other downstream destinations.
 
 ### Server
-If you are tracking events server-side, AppsFlyer can still send attribution postbacks but you will need to configure this functionality in your AppsFlyer account. To enable this, navigate to your AppsFlyer app and on the sidebar of the main screen click on **Integrated Partners** and search for Segment. You will be prompted with a couple of configuration options and asked to input your Segment Write Key. Once enabled, successfully attributed app installs will begin showing up as `Install Attributed` events similar to the client side behavior documented above.
+If you track events server-side, AppsFlyer can still send attribution postbacks, but you need to configure this functionality in your AppsFlyer account. To enable this:
+1. Navigate to your AppsFlyer app and on the sidebar of the main screen select **Configuration > Partner Marketplace** and search for Segment. 
+2. Enter the configuration options and input your Segment Write Key. 
+Once enabled, successfully attributed app installs begin showing up as `Install Attributed` events similar to the client side behavior documented above.
 
-If you are sending in the attribution data yourself, for iOS be sure the following properties are sent in within the campaign object on the `Install Attributed` or `Application Opened` event so Appsflyer can correctly attribute it as an Apple Search Ad event. These values should be returned by the [Apple Search Ads API](https://searchads.apple.com/help/reporting/0028-apple-ads-attribution-api):
+If you are sending in the attribution data yourself, for iOS be sure the following properties are sent in within the campaign object on the `Install Attributed` or `Application Opened` event so Appsflyer can correctly attribute it as an Apple Search Ad event. These values should be returned by the [Apple Search Ads API](https://searchads.apple.com/help/reporting/0028-apple-ads-attribution-api){:target="_blank"}:
 
 ```
 "campaign": {
@@ -219,4 +222,4 @@ The destination does not automatically support out-of-the-box deeplinking (you n
 
 Therefore, you can use AppsFlyer's OneLink integration which is a single, smart, tracking link that can be used to track on both Android and iOS. OneLink tracking links can launch your app when it is already installed instead of redirecting the user to the app store.
 
-For more details, review the [AppsFlyer OneLink set up Guide](https://support.appsflyer.com/hc/en-us/articles/207032246-OneLink-Setup-Guide). More information is available in the AppsFlyer SDK Integration Guides ([iOS](https://support.appsflyer.com/hc/en-us/articles/207032066-AppsFlyer-SDK-Integration-iOS), [Android](https://support.appsflyer.com/hc/en-us/articles/207032126-AppsFlyer-SDK-Integration-Android)) and Segment's mobile FAQs ([iOS](/docs/connections/sources/catalog/libraries/mobile/ios/#faq), [Android](/docs/connections/sources/catalog/libraries/mobile/android/#faq)).
+For more details, review the [AppsFlyer OneLink set up Guide](https://support.appsflyer.com/hc/en-us/articles/207032246-OneLink-Setup-Guide){:target="_blank"}. More information is available in the AppsFlyer SDK Integration Guides ([iOS](https://support.appsflyer.com/hc/en-us/articles/207032066-AppsFlyer-SDK-Integration-iOS{:target="_blank"}), [Android](https://support.appsflyer.com/hc/en-us/articles/207032126-AppsFlyer-SDK-Integration-Android){:target="_blank"}) and Segment's mobile FAQs ([iOS](/docs/connections/sources/catalog/libraries/mobile/ios/#faq), [Android](/docs/connections/sources/catalog/libraries/mobile/android/#faq)).

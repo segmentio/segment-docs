@@ -146,7 +146,7 @@ To create an IAM role:
     ![A screenshot of the AWS IAM home summary, with the Trust relationships tab selected.](images/LambdaTrustRelationship.png)
 
 7. Copy and paste the following code into your trust relationship. You should replace `<your-source-id>` with either the Source ID of the attached Segment source (the default) or the External ID set in your AWS Lambda destination settings.
-  * `arn:aws:iam::595280932656:root` refers to Segment's AWS Account, and is what allows Segment's Destination to access the role to invoke your Lambda.
+  * `arn:aws:iam::595280932656:role/customer-lambda-prod-destination-access` refers to Segment's AWS Account, and is what allows Segment's Destination to access the role to invoke your Lambda.
 
 > note ""
 > **Note**: Source ID can be found by navigating to **Settings > API Keys** from your Segment source homepage.
@@ -158,7 +158,7 @@ To create an IAM role:
         {
           "Effect": "Allow",
           "Principal": {
-            "AWS": "arn:aws:iam::595280932656:root"
+            "AWS": "arn:aws:iam::595280932656:role/customer-lambda-prod-destination-access"
           },
           "Action": "sts:AssumeRole",
           "Condition": {
@@ -186,11 +186,11 @@ To configure your Segment Lambda destination:
 
 **What is the Log Type Setting?**
 
-This setting controls the [Log Type](https://docs.aws.amazon.com/lambda/latest/dg/API_Invoke.html#API_Invoke_RequestSyntax) for your Lambda function using Cloud Watch. Select option `Tail` if you would like to see [detailed logs](https://docs.aws.amazon.com/lambda/latest/dg/monitoring-functions.html) in Cloud Watch.
+This setting controls the [Log Type](https://docs.aws.amazon.com/lambda/latest/dg/API_Invoke.html#API_Invoke_RequestSyntax){:target="_blank”} for your Lambda function using Cloud Watch. Select option `Tail` if you would like to see [detailed logs](https://docs.aws.amazon.com/lambda/latest/dg/monitoring-functions.html){:target="_blank”} in Cloud Watch.
 
 **My Lambda <> Segment connection is timing out, what do I do?**
 
-Due to how the event delivery system, [Centrifuge](https://segment.com/blog/introducing-centrifuge/), works, your Lambda can't take more than 5 seconds to run per message. If you're consistently running into timeout issues, you should consult the [AWS Lambda docs](https://docs.aws.amazon.com/lambda/index.html#lang/en_us), as well as docs for your language of choice, for tips on optimizing performance.
+Due to how the event delivery system, [Centrifuge](https://segment.com/blog/introducing-centrifuge/){:target="_blank”}, works, your Lambda can't take more than 5 seconds to run per message. If you're consistently running into timeout issues, you should consult the [AWS Lambda docs](https://docs.aws.amazon.com/lambda/index.html#lang/en_us){:target="_blank”}, as well as docs for your language of choice, for tips on optimizing performance.
 
 **Handling Common Errors**
 You can find delivery logs in Destination > [Event Delivery](/docs/connections/event-delivery/).

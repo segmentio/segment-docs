@@ -64,11 +64,17 @@ plugins:
     mark:
       url: https://cdn.filepicker.io/api/file/0mdiroESxtRQBoR8ieBg
   - name: Optimizely Full Stack
-    url: connections/sources/catalog/libraries/mobile/kotlin-android/destination-plugins/optimizely-full-stack-kotlin-android/
+    url: connections/sources/catalog/libraries/mobile/kotlin-android/destination-plugins/optimizely-full-stack-android-kotlin/
     logo:
       url: https://cdn.filepicker.io/api/file/fb5lNYEhQoWnABOjynZ6
     mark:
       url: https://cdn.filepicker.io/api/file/kWmScDJ3SvK1QBZTChGQ
+  - name: Survicate
+    url: connections/sources/catalog/libraries/mobile/kotlin-android/destination-plugins/survicate-kotlin-android/
+    logo:
+      url: https://cdn.filepicker.io/api/file/BUciQq3kSzqCn8EKMtBN
+    mark:
+      url: https://cdn.filepicker.io/api/file/0H2JyPoRT4K3CnBQcHPn
   - name: Quantcast
     url: connections/sources/catalog/libraries/mobile/kotlin-android/destination-plugins/quantcast-kotlin-android/
     logo:
@@ -139,4 +145,4 @@ To test your destination:
 Segment recommends you to test your destination implementation end-to-end. Send some sample analytics events and ensure that they reach the destination.
 
 > info ""
-> For more information about the Analytics Kotlin Plugin architecture and how it can help you customize your tracking implementation to suit your needs, refer to the [Plugin Architecture Guide.](/docs/connections/sources/catalog/libraries/mobile/kotlin-android/kotlin-android-plugin-architecture)
+> For more information about the Analytics Kotlin Plugin architecture and how it can help you customize your tracking implementation to suit your needs, refer to the [Plugin Architecture guide](/docs/connections/sources/catalog/libraries/mobile/kotlin-android/kotlin-android-plugin-architecture).

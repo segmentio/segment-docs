@@ -12,7 +12,7 @@ Your Measurement IDs might begin with one of several different prefixes which in
 
 #### UA- prefix
 
-Your global site tag is controlled by Google Analytics. The ID is your Google Analytics Measurement ID. To find the property associated with this ID, use the [account search feature](https://support.google.com/analytics/answer/6100731) in Google Analytics. If the property does not appear, you probably do not have access to it.
+Your global site tag is controlled by Google Analytics. The ID is your Google Analytics Measurement ID. To find the property associated with this ID, use the [account search feature](https://support.google.com/analytics/answer/6100731){:target="_blank"} in Google Analytics. If the property does not appear, you probably do not have access to it.
 
 To add this number in Segment, go to the Google Analytics destination, then to **Settings > Configure ID > Measurement ID**.
 
@@ -37,5 +37,5 @@ To add this number to your Segment destination, go to the Floodlight destination
 
 #### Other prefix not listed
 
-Your global site tag is controlled by a different Google product or may be implemented incorrectly. Use the [Tag Assistant extension](https://support.google.com/tagassistant/answer/2947093) for Google Chrome to verify.
+Your global site tag is controlled by a different Google product or may be implemented incorrectly. Use the [Tag Assistant extension](https://support.google.com/tagassistant/answer/2947093){:target="_blank"} for Google Chrome to verify.
 

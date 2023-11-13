@@ -32,7 +32,7 @@ title: [integration_name] Destination
 
 > Include a 1-2 sentence introduction to your company and the value it provides to customers - updating the name and hyperlink. Please leave the utm string unchanged.
 
-[YOURINTEGRATION](https://yourintegration.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) provides self-serve predictive analytics for growth marketers, leveraging machine learning to automate audience insights and recommendations.
+[YOURINTEGRATION](https://yourintegration.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners){:target="_blank”} provides self-serve predictive analytics for growth marketers, leveraging machine learning to automate audience insights and recommendations.
 
 > Update your company name and support email address.
 
@@ -41,11 +41,7 @@ This destination is maintained by YOURINTEGRATION. For any issues with the desti
 > Update your company name (x2) and support email address.
 
 
-## Getting Started
-
-> Do not remove this line. It will auto-populate the following information for your integration:
-
-{% include content/connection-modes.md %} 
+## Getting started
 
 > Include clear, succinct steps including hyperlinks to where customers can locate their API Key in your app. If there is an expected delay for a customer to see data flow into your integration, please make that explicit.
 

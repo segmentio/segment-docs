@@ -691,7 +691,7 @@ To create an IAM role:
     {
       "Effect": "Allow",
       "Principal": {
-        "AWS": "arn:aws:iam::595280932656:root"
+        "AWS": "arn:aws:iam::595280932656:role/customer-personalize-prod-destination-access"
       },
       "Action": "sts:AssumeRole",
       "Condition": {
@@ -762,7 +762,7 @@ import of import init_personalize_api as api_helper
 api_helper.init()
 ```
 
-This `import` and function call uses some boilerplate code, packaged as a [Lambda Layer](https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html) needed to configure the Personalize API with the AWS Python SDK. This is only necessary while Personalize is in Preview. Once Personalize is GA and the API is bundled with the Python SDK, as well as other language SDKs, this supporting Layer will no longer be needed.
+This `import` and function call uses some boilerplate code, packaged as a [Lambda Layer](https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html){:target="_blank”} needed to configure the Personalize API with the AWS Python SDK. This is only necessary while Personalize is in Preview. Once Personalize is GA and the API is bundled with the Python SDK, as well as other language SDKs, this supporting Layer will no longer be needed.
 
 To install Segment's Layer:
 
@@ -829,7 +829,7 @@ You need to modify the IAM Role & Policy originally created with this Lambda to 
 
 **Wire-up Personalize Event Tracker**
 
-Another dependency in the function is the ability to call the Personalize [PutEvents API](https://docs.aws.amazon.com/personalize/latest/dg/API_UBS_PutEvents.html) endpoint as shown in the following excerpt.
+Another dependency in the function is the ability to call the Personalize [PutEvents API](https://docs.aws.amazon.com/personalize/latest/dg/API_UBS_PutEvents.html){:target="_blank”} endpoint as shown in the following excerpt.
 
 ```js
     personalize_events.put_events(
@@ -1005,8 +1005,8 @@ There are two settings relevant for track calls:
 
 **What is the Log Type Setting?**
 
-This setting controls the [Log Type](https://docs.aws.amazon.com/lambda/latest/dg/API_Invoke.html#API_Invoke_RequestSyntax) for your Lambda function using Cloud Watch. Select option `Tail` if you would like to see [detailed logs](https://docs.aws.amazon.com/lambda/latest/dg/monitoring-functions.html) in Cloud Watch.
+This setting controls the [Log Type](https://docs.aws.amazon.com/lambda/latest/dg/API_Invoke.html#API_Invoke_RequestSyntax){:target="_blank”} for your Lambda function using Cloud Watch. Select option `Tail` if you would like to see [detailed logs](https://docs.aws.amazon.com/lambda/latest/dg/monitoring-functions.html){:target="_blank”}in Cloud Watch.
 
 **My Lambda <> Segment connection is timing out, what do I do?**
 
-Due to how Segment's event delivery system, [Centrifuge](https://segment.com/blog/introducing-centrifuge/), works, your Lambda can't take more than five seconds to run per message. If you're consistently running into timeout issues, you should consult the [AWS Lambda docs](https://docs.aws.amazon.com/lambda/index.html#lang/en_us), as well as docs for your language of choice, for tips on optimizing performance.
+Due to how Segment's event delivery system, [Centrifuge](https://segment.com/blog/introducing-centrifuge/){:target="_blank”}, works, your Lambda can't take more than five seconds to run per message. If you're consistently running into timeout issues, you should consult the [AWS Lambda docs](https://docs.aws.amazon.com/lambda/index.html#lang/en_us){:target="_blank”}, as well as docs for your language of choice, for tips on optimizing performance.
