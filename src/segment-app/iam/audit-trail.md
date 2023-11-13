@@ -1,6 +1,7 @@
 ---
 title: Audit Trail
 plan: audit-trail
+hide_toc: true
 ---
 
 Workspace Owners can view user and system activity in the Audit Trail. You can filter for specific actions or actors to see who made changes to specific resources in the app. Actors can include both logged-in users as well as access tokens. 
