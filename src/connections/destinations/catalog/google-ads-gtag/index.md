@@ -78,7 +78,7 @@ To figure out if an event is flagged for conversion, follow these steps:
 5. Go to the **Settings** tab for your Gtag destination in Segment on a new webpage and choose **Click Conversions** to look at the mapped `track()` events and make sure the events are mapped to the correct **Conversion Label**.
 
 > info ""
-> The Conversion Label is unique to each conversion action and is therefore configured per mapping. You can find the Conversion Label in your Google Ads account using the instructions in the article [Google Ads conversions](https://support.google.com/tagmanager/answer/6105160?hl=en){:target="_blank"}.
+> The Conversion Label is unique to each conversion action and is therefore configured per mapping. You can find the Conversion Label in the [event snippet](https://support.google.com/google-ads/answer/7548399?hl=en#:~:text=For%20website%20conversion,currency%27%3A%20%27USD%27%0A%20%20%20%20%20%20%7D){:target="_blank"}. The event snippet should have `send_to: 'AW-123456789/AbC-D_efG-h12_34-567'`. Enter the part after the '/'.
 
       ![Edit Settings](../../images/conversion-settings.png)
 
