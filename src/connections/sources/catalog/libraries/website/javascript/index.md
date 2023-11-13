@@ -670,7 +670,7 @@ For basic use cases, [Source Middleware](#source-middleware). If you need more g
 #### Enrichment
 ```js
 analytics.addSourceMiddleware(({ payload, next }) => {
-   const event = payload.obj.context.event
+   const { event } = payload.obj.context
    if (event.type === 'track') {
       event.event.toLowerCase()
    }
@@ -681,6 +681,7 @@ analytics.addSourceMiddleware(({ payload, next }) => {
 #### Validation
 ```js
 analytics.addSourceMiddleware(({ payload, next }) => {
+  const { event } = payload.obj.context
   if (!isValid(payload.obj.context.event)) {
     throw new Error("Event will be dropped")
   }
