@@ -682,7 +682,7 @@ analytics.addSourceMiddleware(({ payload, next }) => {
 ```js
 analytics.addSourceMiddleware(({ payload, next }) => {
   const { event } = payload.obj.context
-  if (!isValid(payload.obj.context.event)) {
+  if (!isValid(event)) {
     throw new Error("Event will be dropped")
   }
   next(payload)
