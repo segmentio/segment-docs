@@ -670,7 +670,10 @@ For basic use cases, [Source Middleware](#source-middleware). If you need more g
 #### Enrichment
 ```js
 analytics.addSourceMiddleware(({ payload, next }) => {
-   payload.obj.context.hello = "hello world"
+   const event = payload.obj.context.event
+   if (event.type === 'track') {
+      event.event.toLowerCase()
+   }
    next(payload)
 });
 ```
@@ -697,7 +700,6 @@ Plugins are bound by Analytics 2.0 which handles operations such as observabilit
 
 * **Non-critical Plugins**:
   -  This plugin can throw an error on `load()`, and all other segment plugins, including destinations, will load as usual, without blocking the delivery pipeline.
-
 
 > info ""
 > Non-critical plugins are only non-critical from a loading standpoint. For example, if the `before` plugin crashes, this can still halt the event delivery pipeline.
