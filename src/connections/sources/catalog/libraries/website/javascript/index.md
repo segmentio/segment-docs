@@ -689,16 +689,15 @@ analytics.addSourceMiddleware(({ payload, next }) => {
 ### Plugin categories
 Plugins are bound by Analytics 2.0 which handles operations such as observability, retries, and error handling. There are two different categories of plugins:
 - **Critical Plugins**:
-  - Errors thrown in `load()` will block the entire event pipeline. Errors thrown in `track()`, `page()`, block those events from continuing.
-  - `addSourceMiddleware` is treated like a critical plugin.
+  - Errors thrown in `load()` will block the entire event pipeline.
 
 | Type          | Details                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
 | ------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `before`      | Executes before event processing begins. These are plugins that run before any other plugins run. <br><br>For example, validating events before passing them along to other plugins. A failure here could halt the event pipeline. <br><br> See the example of how Analytics.js uses the [Event Validation plugin](https://github.com/segmentio/analytics-next/blob/master/packages/browser/src/plugins/validation/index.ts){:target="_blank"} to verify that every event has the correct shape. |
+| `before`      | Executes before event processing begins. These are plugins that run before any other plugins run. <br><br> See the example of how Analytics.js uses the [Event Validation plugin](https://github.com/segmentio/analytics-next/blob/master/packages/browser/src/plugins/validation/index.ts){:target="_blank"} to verify that every event has the correct shape.<br><br> Source middleware added via `addSourceMiddleware` is treated as a before plugin. |
 
 * **Non-critical Plugins**:
-  - Errors thrown in calls like `load()`, `track()`, `page()`, etc are _swallowed_: the event is allowed to up the pipeline.
   -  This plugin can throw an error on `load()`, and all other segment plugins, including destinations, will load as usual, without blocking the delivery pipeline.
+
 
 > info ""
 > Non-critical plugins are only non-critical from a loading standpoint. For example, if the `before` plugin crashes, this can still halt the event delivery pipeline.
