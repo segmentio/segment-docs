@@ -27,13 +27,16 @@ Click on an error log to view the error and next steps that Segment recommends.
 |---------------|-----------------------------------------------|
 | `No matching identifiers on event`  |  The event didn't have any identifier types that matched your [ID Resolution Settings](/docs/unify/identity-resolution/identity-resolution-settings). As a result, the event didn't resolve to a profile.                          |
 
+> warning ""
+> Profile Insights won't surface errors if the event was dropped before entering Unify's [Identity Resolution](/docs/unify/identity-resolution/). Learn more about [Unify ingestion limits](/docs/unify/product-limits/#unify-ingestion-limitations).
+
 ### Violations
 
 Violations occur when incoming events don't comply with your [Identity Resolution Settings](/docs/unify/identity-resolution/identity-resolution-settings). For example, when Segment drops an anonymous ID (lower priority) to resolve an event based on a matching user ID (higher priority), it results in a violation. 
 
 For any violations, Segment may drop lower priority identifiers or the identifiers that violate your Identity Resolution Settings. From the grid, you can click a log name to view the violation details and recommended next steps. 
 
-You can use the **Message Payload** tab to view raw messages for Track events and see exactly where the violation occured.
+You can use the **Message Payload** tab to view raw messages for Track events and see exactly where the violation occurred.
 
 Profiles Insights flags the following violations:
 
@@ -57,7 +60,7 @@ Use the success logs to view:
 
 You can filter results by ID type, time range, incoming event type, and more.
 
-When you click a specific log, Segment displays merge or mapping details along with the message payload.
+When you click a specific log, Segment displays merge or mapping details along with the message payload for Track events.
 
 
 ## Audit trail
