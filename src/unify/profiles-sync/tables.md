@@ -222,7 +222,7 @@ Follow the steps below to change your schema name:
 
 ## Tables Segment materializes
 
-With Profiles Sync, you can also access to the following three materialized view tables:
+With Profiles Sync, you can access the following three materialized view tables:
 - [`user_traits`](#the-user-traits-table)
 - [`user_identifiers`](#the-user-identifiers-table)
 - [`profile_merges`](#the-profile-merges-table)
