@@ -222,7 +222,14 @@ Follow the steps below to change your schema name:
 
 ## Tables Segment materializes
 
-If you use Snowflake or BigQuery, Segment offers three materialized view tables. Visit the [selective sync](/docs/unify/profiles-sync/#using-selective-sync) setup page to enable the following materialized tables, which Segment disables by default.
+With Profiles Sync, you can also access to the following three materialized view tables:
+- [`user_traits`](#the-user-traits-table)
+- [`user_identifiers`](#the-user-identifiers-table)
+- [`profile_merges`](#the-profile-merges-table)
+
+Use these tables that Segment materializes for a more complete view of your profile.
+
+Visit the [selective sync](/docs/unify/profiles-sync/#using-selective-sync) setup page to enable the following materialized tables, which Segment disables by default.
 
 You can also use [historical backfill](/docs/unify/profiles-sync/#using-historical-backfill) with tables Segment materializes.
 
