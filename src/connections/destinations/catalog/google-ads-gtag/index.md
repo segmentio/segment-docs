@@ -77,14 +77,17 @@ To figure out if an event is flagged for conversion, follow these steps:
 
 5. Go to the **Settings** tab for your Gtag destination in Segment on a new webpage and choose **Click Conversions** to look at the mapped `track()` events and make sure the events are mapped to the correct **Conversion Label**.
 
+> info ""
+> The Conversion Label is unique to each conversion action and is therefore configured per mapping. You can find the Conversion Label in your Google Ads account using the instructions in the article [Google Ads conversions](https://support.google.com/tagmanager/answer/6105160?hl=en){:target="_blank"}.
+
       ![Edit Settings](../../images/conversion-settings.png)
 
-6. Go back to your website and trigger the event mapped to the conversion. For example, as shown in the image above, it would be `Order Completed`.
-7. Go to the Network tab in your browser and enter the **Conversion Label** linked to the event you triggered in the **Filter** field.
+7. Go back to your website and trigger the event mapped to the conversion. For example, as shown in the image above, it would be `Order Completed`.
+8. Go to the Network tab in your browser and enter the **Conversion Label** linked to the event you triggered in the **Filter** field.
 
       ![Network tab](../../images/network-tab-search.png)
 
-8. See if the value for the `ct_cookie_present` changed to `true`. If `true`, it means that Google Ads counts the event as a conversion.  
+9. See if the value for the `ct_cookie_present` changed to `true`. If `true`, it means that Google Ads counts the event as a conversion.  
 
 > info ""
 > Google Ads considers an event as a conversion when the user arrives to your website as a result of an Ad _click_. The Google SDK is responsible for checking if the user came from an Ad click and sets the parameter `ct_cookie_present` to true. Without clicking through an ad, Google Ads doesn't reflect the conversion because this information is missing in the network requests.
