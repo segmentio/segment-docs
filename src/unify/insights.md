@@ -3,13 +3,16 @@ title: Profiles Insights
 plan: unify
 ---
 
-With Profiles Insights, you can troubleshoot event data with transparent insight into your [Unify profiles](/docs/unify/). View errors and violations, success logs, and an audit trail for events that flow into your profiles. You can also learn more about why certain issues occur, and take preventative action against future errors.
+With Profiles Insights, you can troubleshoot event data with transparent insight into your [Unify profiles](/docs/unify/). View errors and violations, success logs, and an audit trail for events that flow into your profiles. You can also learn why certain issues occur, and take preventative action against future errors.
 
 ## Getting started
 
 To get started with Profiles Insights, navigate to **Unify** > **Profiles insights**.
 
-From the Profiles Insights page, you can navigate to the [Errors and violations](#errors-and-violations), [Success logs](#success-logs), and [Audit trail](#audit-trail) tabs.
+From the Profiles Insights page, you can navigate to these tabs:
+- [Errors and violations](#errors-and-violations) 
+- [Success logs](#success-logs)
+- [Audit trail](#audit-trail)
 
 ## Errors and violations
 
@@ -19,9 +22,9 @@ You can filter results by ID type, time range, specific violations, and more.
 
 ### Errors
 
-Errors occur when a message didn't resolve to a profile because Segment didn't find a matching identifier or the system behaved unexpectedly.
+Errors occur when a message didn't resolve to a profile because Segment didn't find a matching identifier or the system behaved unexpectedly. Click on an error log to view the error and next steps that Segment recommends. 
 
-Click on an error log to view the error and next steps that Segment recommends.
+Profiles Insights flags the following errors:
 
 | Error     | Description                                   |
 |---------------|-----------------------------------------------|
@@ -33,6 +36,9 @@ Click on an error log to view the error and next steps that Segment recommends.
 ### Violations
 
 Violations occur when incoming events don't comply with your [Identity Resolution Settings](/docs/unify/identity-resolution/identity-resolution-settings). For example, when Segment drops an anonymous ID (lower priority) to resolve an event based on a matching user ID (higher priority), it results in a violation. 
+
+> success ""
+> [Learn about identifier priorities](/docs/unify/identity-resolution/identity-resolution-settings/#priority) in your Identity Resolution.
 
 For any violations, Segment may drop lower priority identifiers or the identifiers that violate your Identity Resolution Settings. From the grid, you can click a log name to view the violation details and recommended next steps. 
 
