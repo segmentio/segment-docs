@@ -24,7 +24,7 @@ You can filter results by ID type, time range, specific violations, and more.
 
 Errors occur when a message didn't resolve to a profile because Segment didn't find a matching identifier or the system behaved unexpectedly. Click on an error log to view the error and next steps that Segment recommends. 
 
-Profiles Insights flags the following errors:
+Profiles Insights flags the following error:
 
 | Error     | Description                                   |
 |---------------|-----------------------------------------------|
