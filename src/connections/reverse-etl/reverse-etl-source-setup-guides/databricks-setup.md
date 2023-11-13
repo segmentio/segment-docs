@@ -47,7 +47,7 @@ To set up Databricks as your Reverse ETL source:
     * Http Path: `/sql/1.0/warehouses/xxxxxxxxx`
     * Port: `443` (default)
     * Token: `<your-token>`
-    * Catalog [optional]: `hive_metastore`(default)
+    * Catalog [optional]: `hive_metastore` (default)
 11. Click **Test Connection** to see if the connection works. If the connection fails, make sure you have the right permissions and credentials, then try again.
 12. Click **Create Source** if the test connection is successful. 
 
