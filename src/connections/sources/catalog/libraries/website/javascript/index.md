@@ -651,20 +651,54 @@ No, there is no change in behavior to Middlewares.
 #### When using Segment features (Schema filtering, integrations object, Protocols) to filter events from going to destinations (device and cloud-mode), will batching impact the filtering of events?
 No, there is no impact to how events filter.
 
-## Plugin architecture
-When you develop against Analytics 2.0, the plugins you write can augment functionality, enrich data, and control the flow and delivery of events. From modifying event payloads to changing analytics functionality, plugins help to speed up the process of getting things done.
+## Plugins and Source Middleware
 
-Though middlewares function the same as plugins, it's best to use plugins as they are easier to implement and are more testable.
+When you develop against Analytics 2.0, the plugins you write can augment functionality, enrich data, and control the flow and delivery of events. From modifying event payloads to changing analytics functionality, plugins and middleware help to speed up the process of getting things done.
 
+### What is the difference between Source Middleware and Plugins, and which should I use?
+
+Both Source Middleware and Plugins accomplish the same thing -- enrich events, block the event pipeline, etc.
+
+For basic use cases, [Source Middleware](#source-middleware). If you need more granular control of the lifecycle, you should reach for [Plugins](#plugins-for-advanced-use-cases).
+
+### Source Middleware 
+
+[Source middleware](docs/connections/sources/catalog/libraries/website/javascript/middleware/) runs before any other plugins. You can use this for enrichment, or, to block the event pipeline.
+
+#### Example usage of `addSourceMiddleware`
+
+#### Enrichment
+```js
+analytics.addSourceMiddleware(({ payload, next }) => {
+   payload.obj.context.hello = "hello world"
+   next(payload)
+});
+```
+
+#### Validation
+```js
+analytics.addSourceMiddleware(({ payload, next }) => {
+  if (!isValid(payload.obj.context.event)) {
+    throw new Error("Event will be dropped")
+  }
+  next(payload)
+});
+```
+
+### Plugins (For advanced use-cases)
 ### Plugin categories
 Plugins are bound by Analytics 2.0 which handles operations such as observability, retries, and error handling. There are two different categories of plugins:
-* **Critical Plugins**: Analytics.js expects this plugin to be loaded before starting event delivery. Failure to load a critical plugin halts event delivery. Use this category sparingly, and only for plugins that are critical to your tracking.
+- **Critical Plugins**:
+  - Errors thrown in `load()` will block the entire event pipeline. Errors thrown in `track()`, `page()`, block those events from continuing.
+  - `addSourceMiddleware` is treated like a critical plugin.
 
 | Type          | Details                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
 | ------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | `before`      | Executes before event processing begins. These are plugins that run before any other plugins run. <br><br>For example, validating events before passing them along to other plugins. A failure here could halt the event pipeline. <br><br> See the example of how Analytics.js uses the [Event Validation plugin](https://github.com/segmentio/analytics-next/blob/master/packages/browser/src/plugins/validation/index.ts){:target="_blank"} to verify that every event has the correct shape. |
 
-* **Non-critical Plugins**: Analytics.js can start event delivery before this plugin finishes loading. This means your plugin can fail to load independently from all other plugins. For example, every Analytics.js destination is a non-critical plugin. This makes it possible for Analytics.js to continue working if a partner destination fails to load, or if users have ad blockers turned on that are targeting specific destinations.
+* **Non-critical Plugins**:
+  - Errors thrown in calls like `load()`, `track()`, `page()`, etc are _swallowed_: the event is allowed to up the pipeline.
+  -  This plugin can throw an error on `load()`, and all other segment plugins, including destinations, will load as usual, without blocking the delivery pipeline.
 
 > info ""
 > Non-critical plugins are only non-critical from a loading standpoint. For example, if the `before` plugin crashes, this can still halt the event delivery pipeline.
@@ -672,11 +706,11 @@ Plugins are bound by Analytics 2.0 which handles operations such as observabilit
 Non-critical plugins run through a timeline that executes in order of insertion based on the entry type. Segment has these four entry types of non-critical plugins:
 
 | Type          | Details                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
-| ------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `enrichment`  | Executes as the first level of event processing. These plugins modify an event. <br><br> See the example of how Analytics.js uses the [Page Enrichment plugin](https://github.com/segmentio/analytics-next/blob/master/packages/browser/src/plugins/page-enrichment/index.ts){:target="_blank"} to enrich every event with page information.                                                                                                                                                     |
-| `destination` | Executes as events begin to pass off to destinations. <br><br> This doesn't modify the event outside of the specific destination, and failure doesn't halt the execution.                                                                                                                                                                                                                                                                                                                        |
-| `after`       | Executes after all event processing completes. You can use this to perform cleanup operations. <br><br>An example of this is the [Segment.io Plugin](https://github.com/segmentio/analytics-next/blob/master/packages/browser/src/plugins/segmentio/index.ts){:target="_blank"} which waits for destinations to succeed or fail so it can send it observability metrics.                                                                                                                         |
-| `utility`     | Executes once during the bootstrap, to give you an outlet to make any modifications as to how Analytics.js works internally. This allows you to augment Analytics.js functionality.                                                                                                                                                                                                                                                                                                              |
+| ------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `enrichment`  | Executes as the first level of event processing. These plugins modify an event.  |
+| `destination` | Executes as events begin to pass off to destinations. <br><br> This doesn't modify the event outside of the specific destination, and failure doesn't halt the execution. |
+| `after`       | Executes after all event processing completes. You can use this to perform cleanup operations. |
+| `utility`     | Executes once during the bootstrap, to give you an outlet to make any modifications as to how Analytics.js works internally. This allows you to augment Analytics.js functionality. |
 
 ### Example plugins
 Here's an example of a plugin that converts all track event names to lowercase before the event goes through the rest of the pipeline:
