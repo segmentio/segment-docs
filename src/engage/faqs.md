@@ -130,3 +130,6 @@ If your team would like to avoid receiving the notifications for transient failu
 
 Each step of a Journey is an Engage audience under the hood. The conditions stack, so a user must be a member of the previous step (audience) and meet all conditions to be added to subsequent steps. However, if the user no longer meets entry conditions for a particular step, they'll exit and you'll see the user count reduced. For any subsequent steps a user is still a part of, they'll remain until they no longer meet entry conditions. 
 
+## Why is my Engage space not showing over my workspace after renewing with a new plan?
+
+If the Engage plan was downgraded from any of the Engage plan to Unify/Unify+ the spaces limit is set back to zero until overridden in billing dashboard. Please contact the support team to request provision for Space access and enable the available Engage space.
