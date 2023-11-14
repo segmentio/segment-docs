@@ -38,6 +38,15 @@ sources:
       - eu
     endpoints:
       - us
+  - id: DY0B0Q2Gce
+    display_name: Alloy Flow
+    hidden: false
+    slug: alloy-flow
+    url: connections/sources/catalog/cloud-apps/alloy-flow
+    regions:
+      - us
+    endpoints:
+      - us
   - id: GNLT5OQ45P
     display_name: Amazon S3
     hidden: false
