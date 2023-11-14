@@ -8,8 +8,8 @@ title: Podscribe Destination
 
 ## Getting started
 
-1. From the Segment web app, click **Catalog**.
-2. Search for "Podscribe" in the Catalog, select it, and choose which of your sources to connect the destination to.
+1. From the Segment web app, navigate to **Connections > Catalog**.
+2. Search for "Podscribe", select it, and choose which of your sources to connect the destination to.
 
 Once you start sending data to the Podscribe's Destination it will take up to 20 minutes to appear in the Podscribe postbacks page.
 
@@ -21,9 +21,9 @@ If you're not familiar with the Segment Specs, take a look to understand what th
 analytics.page();
 ```
 
-Page calls will be sent to Podscribe as a `view` event.
+Page calls will be sent to Podscribe as a View event.
 
-Podscribe is an attribution platform, and as such, we need more context about the visitor than just a User ID. Analytics.js [automatically collects context fields](/docs/connections/spec/common/#context-fields-automatically-collected). Podscribe requires certain context fields and properties for page calls. Below is an example of a raw JSON payload that contains the minimum requirements.
+Podscribe is an attribution platform, and as such, Podscribe needs more context about the visitor than just a User ID. Analytics.js [automatically collects context fields](/docs/connections/spec/common/#context-fields-automatically-collected). Podscribe requires certain context fields and properties for Page calls. Below is an example of a raw JSON payload that contains the minimum requirements.
 
 ```js
 {
@@ -41,8 +41,11 @@ Podscribe is an attribution platform, and as such, we need more context about th
 }
 ```
 
-For page events Podscribe requires a `context` object that contains a `userAgent` and an `ip` field and a `properties` object that contains a `referrer` and a `url` field.
-As you can see in the page event's raw JSON payload above.
+For Page events Podscribe requires:
+- A `context` object that contains a `userAgent` and an `ip` field 
+- A `properties` object that contains a `referrer` and a `url` field.
+
+You'll see these in the Page event's raw JSON payload above.
 
 The `context` and `properties` object are required, along with the fields in them. If you're using Segment server-side you must send these attributes.
 
@@ -59,13 +62,16 @@ analytics.track("Order Completed", {
 });
 ```
 
-Track calls will be mapped to Podscribe events. Podscribe support the following from the Segment Spec:
+Track calls will be mapped to Podscribe events. Podscribe supports the following from the Segment Spec:
 
 - [Signed Up](/docs/connections/spec/b2b-saas/#signed-up) as `signup`
 - [Order Completed](/docs/connections/spec/ecommerce/v2/#order-completed) as `purchase`
 
-For track events Podscribe requires a `context` object that contains a `userAgent` and an `ip` Podscribe also requires a `page` object that contains a `referrer` and a `url` field.
-Analytics.js [automatically collects context fields](/docs/connections/spec/common/#context-fields-automatically-collected). Podscribe requires certain context fields for track calls. Below is an example of a raw JSON payload that contains the minimum requirements.
+For Track events, Podscribe requires:
+- A `context` object that contains a `userAgent` 
+- An `ip` Podscribe also requires a `page` object that contains a `referrer` and a `url` field
+
+Analytics.js [automatically collects context fields](/docs/connections/spec/common/#context-fields-automatically-collected). Podscribe requires certain context fields for Track calls. Below is an example of a raw JSON payload that contains the minimum requirements.
 
 ```js
 {
