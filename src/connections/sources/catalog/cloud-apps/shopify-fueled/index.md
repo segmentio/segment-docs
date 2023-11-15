@@ -1,7 +1,7 @@
 title: Shopify - Powered by Fueled
 ---
 
-[Fueled](https://fueled.io){:target="_blank"} is a 1st-party event collector, designed specifically for eCommerce. Fueled captures the first-party and zero-party events that fire on a Shopify website, and sends them to various destinations - most notably, Segment. Fueled leverages a combination of "client-side" and "server-side" event collection technologies to provide reliable, accurate event tracking. In addition to tracking website events in the browser, Fueled tracks "offline" purchase events, such as point-of-sale orders and subscription rebilling events triggered by Shopify apps like ReCharge Payments, Smartrr, Bold Subscritions, and Skio.
+[Fueled](https://fueled.io){:target="_blank"} is a 1st-party event collector, designed specifically for eCommerce. Fueled captures the first-party and zero-party events that fire on a Shopify website, and sends them to various destinations - most notably, Segment. Fueled leverages a combination of client-side and server-side event collection technologies to provide reliable, accurate event tracking. In addition to tracking website events in the browser, Fueled tracks offline purchase events, such as point-of-sale orders and subscription rebilling events triggered by Shopify apps like ReCharge Payments, Smartrr, Bold Subscriptions, and Skio.
 
 With Fueled, Shopify merchants can implement Segment event tracking in minutes — without writing any code.
 
