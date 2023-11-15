@@ -28,7 +28,7 @@ Installing Fueled's Shopify Source integration for Segment is a two-step process
 ### Enable the *Fueled Attribution Suite* in Shopify
 
 1. **Log in** to your Shopify Store account.
-2. Go the [Shopify app store listing](https://apps.shopify.com/fueled-attribution-suite){:target="_blank”} for ***Fueled Attribution Suite***.
+2. Go to the [Shopify app store listing](https://apps.shopify.com/fueled-attribution-suite){:target="_blank”} for ***Fueled Attribution Suite***.
 3. Click **Add app** to install the Fueled Attribution Suite.
 4. Within the Fueled App in the Shopify Admin UI, click into the **Plans** tab and choose the **Fueled Advanced Plan**.
 5. Once you have confirmed your Fueled Advanced Plan, go to the **Segment** tab.
