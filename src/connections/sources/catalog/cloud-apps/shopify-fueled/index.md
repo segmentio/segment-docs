@@ -11,7 +11,9 @@ This integration is maintained by[Fueled](https://fueled.io){:target="_blank"}. 
 
 ## Getting started
 
-Installing Fueled's Shopify Source integration for Segment is a 2-step process:
+Installing Fueled's Shopify Source integration for Segment is a two-step process where you need to:
+1. [Add the **Shopify - Powered by Fueled** source in Segment](#adding-the-shopify---powered-by-fueled-source-in-segment).
+2. [Enable the **Fueled Attribution Suite** in Shopify](#enable-the-fueled-attribution-suite-in-shopify). 
 
 ### Adding the "Shopify - Powered by Fueled" Source in Segment
 
