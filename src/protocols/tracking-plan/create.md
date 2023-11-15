@@ -42,7 +42,7 @@ To download a Tracking Plan:
 4. Open the Download History page by clicking the link in the toast or clicking the **Download History** tab in the top navigation bar.
 5. Once the file status column indicates that the download was successful, click the link in the File column to download your CSV to your computer. If the file status column shows the download has failed, return to the Tracking Plan Overview page or the Tracking Plan page and try the download again.<br/> The Tracking Plan CSV name has the following format:<br/>`workspaceSlug-trackingPlanName--yyyy-mm-dd--hh-mm-utc`
 
-Once you've downloaded a Tracking Plan, you can use it as a template to make changes to the Tracking Plan, which you can then [upload back to your Tracking Plan](#) to directly apply your changes. 
+Once you've downloaded a Tracking Plan, you can use it as a template to make changes to the Tracking Plan, which you can then [upload back to your Tracking Plan](#upload-a-tracking-plan) to directly apply your changes. 
 
 ## Delete a Tracking Plan
 
