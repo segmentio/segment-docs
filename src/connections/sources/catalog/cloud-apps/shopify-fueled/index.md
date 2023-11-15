@@ -73,7 +73,7 @@ Automatically tracked events are listed below:
 
 For a complete list of all event properties and how they map to specific Shopify Storefront APIs and objects, visit: [Fueled's Shopify-to-Segment Mapping Documentation](https://learn.fueled.io/integrations/destinations/segment.com/segment-event-specifications){:target="_blank”}.
 
-## Headless Shopify Integrations
+## Headless Shopify integrations
 
 Fueled can be implemented on "headless" or "composable" Shopify sites. Fueled provides out-of-the-box integrations for:
 
