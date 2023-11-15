@@ -3,7 +3,7 @@ title: Audit Trail
 plan: audit-trail
 ---
 
-The Audit Trail allows you can view user and system activity, filter activity for specific actions or actors, and export your data to an event streams source or CSV file. 
+The Audit Trail allows you to view user and system activity, filter activity for specific actions or actors, and export your data to an event streams source or CSV file. 
 
 > info "Viewing the Audit Trail requires Workspace Owner permissions"
 > You must have the Workspace Owner role to view the Audit Trail page. For more information about roles and permissions within Segment, see the [Roles documentation](/docs/segment-app/iam/roles/). 
@@ -35,19 +35,19 @@ The Audit Trail returns information about the following Segment product areas:
 - Workspace
 <!--- IG, 11/2023: Add consent to this list when this goes to public beta (q1 '24?)--->
 
-To find a list of all events surfaced in the Audit Trail, open the Audit Trail, click **Filters**, and select the **Events** dropdown. 
+To view a list of all events Segment surfaces in the Audit Trail, open the Audit Trail, click **Filters**, and select the **Events** dropdown. 
 
 <!--- IG, 11/2023: PM for CX suggested directing to the Filter part in the app for a full list of events. PAPI support for a list of all events is on the roadmap, so at some point we can probably build a list automagically instead of using the Filters workaround --->
 
 ## Filtering events
 
-The Filters dropdown allows you to refine your search results by filtering by actions or actors to see who made changes on specific resources in the app. Actors include both logged-in users and access tokens. 
+Use the Filters dropdown to refine your search results and filter by actions or actors to see who made changes on specific resources in the app. Actors include both logged-in users and access tokens. 
 
 ## Audit forwarding
 
 You can forward events in your workspace to an [event streams source](/docs/connections/sources/#event-streams-sources) to set up real-time alerts and quickly revert changes (like a user unintentionally disabling a warehouse) that could cause unwanted downstream effects.
 
-> info "Segment recommends creating a dedicated source for audit trail events"
+> info "Segment recommends creating a dedicated source for Audit Trail events"
 > Segment recommends forwarding all events to an instance of the [HTTP API](/docs/connections/sources/catalog/libraries/server/http-api/) source.  Segment passes all forwarded events through its entire processing pipeline. This ensures that Tracking Plans, Filters, and other features work with the audit events, and also ensures you can send those events to multiple downstream destinations.
 
 To forward Audit Trail events to an event streams source:
