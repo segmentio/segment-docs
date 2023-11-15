@@ -688,7 +688,7 @@ Here are some examples of using `addSourceMiddleware` for enrichment and validat
 
 ### Plugin categories
 Plugins are bound by Analytics 2.0 which handles operations such as observability, retries, and error handling. There are two different categories of plugins:
-- **Critical Plugins**:
+* **Critical Plugins**:
   - Errors thrown in `load()` will completely stop segment from initializing.
 
 | Type          | Details                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
