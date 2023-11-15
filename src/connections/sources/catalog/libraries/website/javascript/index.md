@@ -586,7 +586,7 @@ analytics.load('writekey', { disable: true })
 
 For wrapper/plugin authors: if you have an **advanced** use case where you need special access to the CDN Settings (for example, consent management), you can also pass a function. This API will wait for `cdnSettings` to be fetched. Warning: `cdnSettings` is an _unstable_ object.
 ```ts
-analytics.load('writekey', { disable: ({ cdnSettings }) => true })
+analytics.load('writekey', { disable: (cdnSettings) => true })
 ```
 
 ## Retries
