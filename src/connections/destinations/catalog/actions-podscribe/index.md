@@ -51,7 +51,7 @@ For Page events Podscribe requires:
 
 You'll see these in the Page event's raw JSON payload above.
 
-The `context` and `properties` object are required, along with the fields in them. If you're using Segment server-side you must send these attributes.
+The `context` and `properties` objects are required, along with the fields in them. If you're using Segment server-side you must send these attributes.
 
 ## Track
 
