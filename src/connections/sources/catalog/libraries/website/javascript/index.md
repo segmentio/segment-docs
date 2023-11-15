@@ -652,7 +652,6 @@ No, there is no change in behavior to Middlewares.
 No, there is no impact to how events filter.
 
 ## Plugins and source middleware
-
 When you develop against Analytics 2.0, the plugins you write can augment functionality, enrich data, and control the flow and delivery of events. From modifying event payloads to changing analytics functionality, plugins and middleware help to speed up the process of getting things done.
 
 Plugins and source middleware accomplish the same thing, but plugins are significantly more powerful (but more verbose to implement).
@@ -660,33 +659,33 @@ Plugins and source middleware accomplish the same thing, but plugins are signifi
 For basic use cases like adding event fields or dropping specific events, use [source middleware](#source-middleware). If you need more granular control of the lifecycle, or want to be able to abort the Segment initialization, you should use [plugins](#plugins-for-advanced-use-cases).
 
 ### Source Middleware 
-
 [Source middleware](/docs/connections/sources/catalog/libraries/website/javascript/middleware/) runs before any other plugins. You can use this to enrich or drop an event.
 
 #### Example usage of `addSourceMiddleware`
-#### Enrichment
-```js
-analytics.addSourceMiddleware(({ payload, next }) => {
-   const { event } = payload.obj.context
-   if (event.type === 'track') {
-      event.event.toLowerCase()
-   }
-   next(payload)
-});
-```
+Here are some examples of using `addSourceMiddleware` for enrichment and validation.
 
-#### Validation
-```js
-analytics.addSourceMiddleware(({ payload, next }) => {
-  const { event } = payload.obj.context
-  if (!isValid(event)) {
-    throw new Error("Event will be dropped")
-  }
-  next(payload)
-});
-```
+* Enrichment
+    ```js
+    analytics.addSourceMiddleware(({ payload, next }) => {
+       const { event } = payload.obj.context
+       if (event.type === 'track') {
+          event.event.toLowerCase()
+       }
+       next(payload)
+    });
+    ```
 
-### Plugins (For advanced use-cases)
+* Validation
+    ```js
+    analytics.addSourceMiddleware(({ payload, next }) => {
+      const { event } = payload.obj.context
+      if (!isValid(event)) {
+        throw new Error("Event will be dropped")
+      }
+      next(payload)
+    });
+    ```
+
 ### Plugin categories
 Plugins are bound by Analytics 2.0 which handles operations such as observability, retries, and error handling. There are two different categories of plugins:
 - **Critical Plugins**:
