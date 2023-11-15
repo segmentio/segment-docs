@@ -75,7 +75,7 @@ For a complete list of all event properties and how they map to specific Shopify
 
 ## Headless Shopify integrations
 
-Fueled can be implemented on "headless" or "composable" Shopify sites. Fueled provides out-of-the-box integrations for:
+Fueled can be implemented on *headless* or *composable* Shopify sites. Fueled provides out-of-the-box integrations for:
 
 * Pack Digital composable Shopify sites
 * Headless Shopify sites running on TakeShape.io
