@@ -5,7 +5,7 @@ id: 59022a2270a3e552b955caa9
 ---
 [Amazon Kinesis Firehose](https://aws.amazon.com/kinesis/data-firehose/){:target="_blank”} provides way to load streaming data into AWS. It can capture, transform, and load streaming data into Amazon Kinesis Analytics, Amazon S3, Amazon Redshift, and Amazon Elasticsearch Service, enabling near real-time analytics with existing business intelligence tools and dashboards you're already using today. It's a fully managed service that automatically scales to match the throughput of your data and requires no ongoing administration. It can also batch, compress, and encrypt the data before loading it, minimizing the amount of storage used at the destination and increasing security.
 
-## Getting Started
+## Getting started
 
 
 
@@ -54,7 +54,7 @@ Take a look to understand what the [Page method](/docs/connections/spec/page/) d
 ```
 
 ## Identify
-Take a look to understand what the [Identify method](/docs/connections/spec/identify/) does. An example identify call is shown below:
+Take a look to understand what the [Identify method](/docs/connections/spec/identify/) does. An example Identify call is shown below:
 ```javascript
 analytics.identify('97980cfea0085', {
   email: 'gibbons@example.com',
@@ -63,7 +63,7 @@ analytics.identify('97980cfea0085', {
 ```
 
 ## Track
-Take a look to understand what the [Track method](/docs/connections/spec/track/) does. An example identify call is shown below:
+Take a look to understand what the [Track method](/docs/connections/spec/track/) does. An example Track call is shown below:
 
 ```js
 analytics.track("User Registered", {
@@ -72,14 +72,14 @@ analytics.track("User Registered", {
 });
 ```
 
-### Event Mapping
+### Event mapping
 To begin using the Kinesis Firehose destination, you must first decide on which Segment events you would like to route to which Firehose delivery streams. This mapping then needs to be defined in your destination settings.
 
-Segment `track` events can map based on their **event name**. For example, if you have an event called `User Registered`, and you want these events to be published to a Firehose delivery stream called `new_users`, create a row in your destination settings that looks like this:
+Segment Track events can map based on their **event name**. For example, if you have an event called `User Registered`, and you want these events to be published to a Firehose delivery stream called `new_users`, create a row in your destination settings that looks like this:
 
 ![track event mapping screenshot](images/track_mapping.png)
 
-Any Segment **event type** (ie. `page`, `track`, `identify`, `screen`, etc.) can also be mapped. This enables you to publish all instances of a given Segment event type to a given stream. To do this, create a row with the event type and its corresponding delivery stream:
+Any Segment **event type** (for example, Page, Track, Identify, or Screen) can also be mapped. This enables you to publish all instances of a given Segment event type to a given stream. To do this, create a row with the event type and its corresponding delivery stream:
 
 ![page event mapping screenshot](images/page_mapping.png)
 
@@ -87,7 +87,7 @@ Events can be defined **insensitive to case** so `Page` will be equivalent to `p
 
 If you would like to route all events to a stream, use an `*` as the event name.
 
-### Data Model
+### Data model
 Let's say you've decided to publish your Segment track events named `User Registered` to your Kinesis Firehose delivery stream named `online_registrations`. If you send Segment the following `track` call:
 
 ```json
@@ -126,9 +126,9 @@ analytics.group("0e8c78ea9d9dsasahjg", {
 });
 ```
 
-## Best Practices
+## Best practices
 
-### Multiple Sources
+### Multiple sources
 If you have multiple sources using Kinesis/Firehose, you have two options:
 
 #### Attach multiple sources to your IAM role
