@@ -35,7 +35,7 @@ The Audit Trail returns information about the following Segment product areas:
 - Workspace
 <!--- IG, 11/2023: Add consent to this list when this goes to public beta (q1 '24?)--->
 
-To find a list of all events surfaced in the Audit Trail: open the Audit Trail, click **Filters**, and select the **Events** dropdown. 
+To find a list of all events surfaced in the Audit Trail, open the Audit Trail, click **Filters**, and select the **Events** dropdown. 
 
 <!--- IG, 11/2023: PM for CX suggested directing to the Filter part in the app for a full list of events. PAPI support for a list of all events is on the roadmap, so at some point we can probably build a list automagically instead of using the Filters workaround --->
 
