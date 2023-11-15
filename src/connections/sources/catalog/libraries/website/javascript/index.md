@@ -651,7 +651,7 @@ No, there is no change in behavior to Middlewares.
 #### When using Segment features (Schema filtering, integrations object, Protocols) to filter events from going to destinations (device and cloud-mode), will batching impact the filtering of events?
 No, there is no impact to how events filter.
 
-## Plugins and Source Middleware
+## Plugins and source middleware
 
 When you develop against Analytics 2.0, the plugins you write can augment functionality, enrich data, and control the flow and delivery of events. From modifying event payloads to changing analytics functionality, plugins and middleware help to speed up the process of getting things done.
 
