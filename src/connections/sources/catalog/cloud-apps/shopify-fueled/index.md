@@ -47,7 +47,7 @@ The table below lists events that Fueled's Shopify Source automatically sends to
 
 Fueled's Shopify Source also supports *custom events* captured client-side by our javascript library and sent to Segment. To learn more about sending custom events to Segment, visit this [Learning Center article](https://learn.fueled.io/apps/shopify/shopify-event-tracking/customizing-client-side-shopify-events){:target="_blank”}.
 
-### Fueled Standard Events
+### Fueled standard events
 
 Fueled's Shopify Source integration follows Segment's [eCommerce event specification](https://segment.com/docs/connections/spec/ecommerce/v2/){:target="_blank”}.
 
