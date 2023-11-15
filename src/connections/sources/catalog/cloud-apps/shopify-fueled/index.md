@@ -82,7 +82,7 @@ Contact [Fueled](mailto:support@fueled.io) for more information on these composa
 
 ## Additional Shopify App Source Integrations for Segment
 
-Fueled offers Segment Source integrations for a number of Shopify Marketplace apps. These integrations are available by contacting Fueled's customer support team at: [support@fueled.io](mailto:support@fueled.io).
+Fueled offers Segment source integrations for a number of Shopify Marketplace apps. These integrations are available by contacting Fueled's customer support team at: [support@fueled.io](mailto:support@fueled.io).
 
 Additional Segment integrations powered by Fueled include:
 
