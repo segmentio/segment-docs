@@ -1,6 +1,6 @@
 ---
 title: 1Flow Web (Actions) Destination
-id: 64dd07c1fed86b6866cd93f5
+hidden: true
 versions:
   - name: '1Flow Web (Actions) Destination'
     link: '/docs/connections/destinations/catalog/1flow-web'
