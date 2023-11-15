@@ -32,7 +32,8 @@ After you install both Segment and 1Flow's Segment Plugin for the web:
 6. Follow the step in the Destinations Actions docs to [customizing mappings](/docs/connections/destinations/action/#customizing-mappings).
  7. Enable the destination and configured mappings.
 
-
+```suggestion
+{% include components/actions-fields.html %}
 ## Supported methods
 
 ### Identify
