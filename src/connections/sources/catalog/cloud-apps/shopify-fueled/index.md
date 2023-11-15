@@ -49,7 +49,7 @@ Fueled's Shopify Source also supports *custom events* captured client-side by ou
 
 ### Fueled standard events
 
-Fueled's Shopify Source integration follows Segment's [eCommerce event specification](https://segment.com/docs/connections/spec/ecommerce/v2/){:target="_blank”}.
+Fueled's Shopify Source integration follows Segment's [eCommerce event specification](/docs/connections/spec/ecommerce/v2/).
 
 Automatically tracked events are listed below:
 
