@@ -655,11 +655,9 @@ No, there is no impact to how events filter.
 
 When you develop against Analytics 2.0, the plugins you write can augment functionality, enrich data, and control the flow and delivery of events. From modifying event payloads to changing analytics functionality, plugins and middleware help to speed up the process of getting things done.
 
-### What is the difference between Source Middleware and Plugins, and which should I use?
+Plugins and source middleware accomplish the same thing, but plugins are significantly more powerful (but more verbose to implement).
 
-Plugins and Source Middleware accomplish the same thing, but Plugins are significantly more powerful (but more verbose to implement).
-
-For basic use cases like adding event fields or dropping specific events, use [Source Middleware](#source-middleware). If you need more granular control of the lifecycle, or want to be able to abort segment initialization, you should reach for [Plugins](#plugins-for-advanced-use-cases).
+For basic use cases like adding event fields or dropping specific events, use [source middleware](#source-middleware). If you need more granular control of the lifecycle, or want to be able to abort the Segment initialization, you should use [plugins](#plugins-for-advanced-use-cases).
 
 ### Source Middleware 
 
