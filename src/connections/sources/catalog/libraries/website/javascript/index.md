@@ -577,6 +577,18 @@ For example:
 analytics.load('writekey', { highEntropyValuesClientHints: ['architecture', 'bitness', 'model', 'platformVersion', 'uaFullVersion', 'fullVersionList', 'wow64'] })
 ```
 
+#### Disabling 
+For testing or staging environments, it can be useful to disable your SDK to ensure no events get sent.
+If `disable: true` is passed, all analytics method calls will be a no-op, and no network calls will be initiated.
+```ts
+analytics.load('writekey', { disable: true })
+```
+
+For wrapper/plugin authors: if you have an **advanced** use case where you need special access to the CDN Settings (for example, consent management), you can also pass a function. This API will wait for `cdnSettings` to be fetched. Warning: `cdnSettings` is an _unstable_ object.
+```ts
+analytics.load('writekey', { disable: ({ cdnSettings }) => true })
+```
+
 ## Retries
 
 When enabled, Analytics.js automatically retries network and server errors. With persistent retries, Analytics.js can:
