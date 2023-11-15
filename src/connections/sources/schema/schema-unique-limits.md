@@ -28,15 +28,17 @@ If you hit any of the limits or would like to clear out old events or properties
 Clearing events from the Source Schema only clears them from the Segment interface. It does not impact the data sent to your destinations or warehouses. Once you clear the events, the Schema page starts to repopulate new events.
 
 #### How can I remove specific events from my Source Schema? 
-You can archive events in order to declutter the Source Schema. This is particularly useful for Protocols customers that want to keep events “Unplanned yet acknowledged” and build a process to monitor for unplanned events. Please note, 
-Protocols is not required to use this feature. You can also filter your view by “Archived” in addition to Planned and Unplanned.
-
-If a Tracking Plan is connected, events need to be blocked or unplanned in order to archive. If there is no Tracking Plan connected the event will need to be disabled to see the archive button.
+You can archive events in order to declutter the Source Schema. If your Source Schema is connected to a Tracking Plan, events need to be blocked or unplanned for you to archive them. If your Source Schema not connected to a Tracking Plan, you must disable the event to see the archive button. 
 
 Archiving an event triggers an “Schema Event Archived” activity to the Audit Trail.
 
-#### How can I clear/archive properties in my source schema?
+To view archived events, you can filter your view by “Archived”.
 
-At this time, you cannot clear or archive old event properties individually. An alternative for this is to archive the event itself, and then clear the archive. After you clear the archive, the event will re-populate in the schema with only the current properties.
+While this is particularly useful for Protocols customers that want to keep events “Unplanned yet acknowledged” and build a process to monitor for unplanned events, Protocols is not required to use this feature. 
+
+
+#### How can I remove properties from my Source Schema?
+
+At this time, you cannot clear or archive old event properties individually. An alternative to this is to archive the event itself and then clear the archive. After you clear the archive, the event will re-populate in the schema with only the current properties.
 
 
