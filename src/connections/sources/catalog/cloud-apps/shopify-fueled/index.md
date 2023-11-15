@@ -37,7 +37,7 @@ Installing Fueled's Shopify Source integration for Segment is a two-step process
 
 ## Stream
 
-Fueled's Shopify Source streams events into Segment. It uses server-side methods to send `track` , `identify` , and `page` events to Segment. These events are then available in any Segment Destination that accepts server-side events, and are available in a schema in your data warehouse, so you can query using SQL.
+Fueled's Shopify source streams events into Segment. It uses server-side methods to send `track`, `identify`, and `page` events to Segment. These events are then available in any Segment destination that accepts server-side events, and are available in a schema in your data warehouse so you can query using SQL.
 
 The default behavior is for Fueled to pass the email address of identified users as the Segment `userId` , when it's available.
 
