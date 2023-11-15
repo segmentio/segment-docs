@@ -91,7 +91,7 @@ Additional Segment integrations powered by Fueled include:
 * Gorgias customer support events (`ticket_created`, `ticket_updated`)
 * Loop Returns webhook events
 
-## Adding Destinations
+## Add destinations
 
 Now that your Shopify Source is set up, you can connect it with Destinations.
 
