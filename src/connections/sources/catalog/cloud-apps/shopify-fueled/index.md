@@ -93,7 +93,7 @@ Additional Segment integrations powered by Fueled include:
 
 ## Add destinations
 
-Now that your Shopify Source is set up, you can connect it with Destinations.
+Now that your Shopify Source is set up, you can connect it with destinations.
 
 Log into your downstream tools and check to see that your events appear as expected, and that they contain all of the properties you expect. If your events and properties don’t appear, check the [Event Delivery](/docs/connections/event-delivery/) tool, and refer to the Destination docs for each tool for troubleshooting.
 
