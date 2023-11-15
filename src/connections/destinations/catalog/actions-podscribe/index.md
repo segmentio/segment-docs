@@ -1,5 +1,7 @@
 ---
-title: Podscribe Destination
+title: Podscribe (Actions) Destination
+id: 643fdecd5675b7a6780d0d67
+beta: true
 ---
 
 [Podscribe](https://podscribe.com/){:target="\_blank”} measures the effectiveness of podcast advertising. Through integrations with podcast hosting providers, matches downloads with on-site actions, providing advertisers household-level attribution.
@@ -12,6 +14,8 @@ title: Podscribe Destination
 2. Search for "Podscribe", select it, and choose which of your sources to connect the destination to.
 
 Once you start sending data to the Podscribe's Destination it will take up to 20 minutes to appear in the Podscribe postbacks page.
+
+{% include components/actions-fields.html %}
 
 ## Page
 
