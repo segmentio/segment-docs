@@ -69,7 +69,7 @@ Automatically tracked events are listed below:
 | Product Viewed       | User viewed a product details                    |
 | Products Searched    | User searched for products                       |
 
-## Event Properties
+## Event properties
 
 For a complete list of all event properties and how they map to specific Shopify Storefront APIs and objects, visit: [Fueled's Shopify-to-Segment Mapping Documentation](https://learn.fueled.io/integrations/destinations/segment.com/segment-event-specifications){:target="_blank”}.
 
