@@ -83,7 +83,7 @@ Fueled can be implemented on *headless* or *composable* Shopify sites. Fueled pr
 
 Contact [Fueled](mailto:support@fueled.io) for more information on these composable integrations.
 
-## Additional Shopify App Source Integrations for Segment
+## Additional Shopify App source integrations for Segment
 
 Fueled offers Segment source integrations for a number of Shopify Marketplace apps. These integrations are available by contacting Fueled's customer support team at: [support@fueled.io](mailto:support@fueled.io).
 
