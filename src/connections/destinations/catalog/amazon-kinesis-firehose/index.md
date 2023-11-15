@@ -79,7 +79,7 @@ Segment Track events can map based on their **event name**. For example, if you 
 
 ![track event mapping screenshot](images/track_mapping.png)
 
-Any Segment **event type** (for example, Page, Track, Identify, and Screen) can also be mapped. This enables you to publish all instances of a given Segment event type to a given stream. To do this, create a row with the event type and its corresponding delivery stream:
+Any Segment **event type** (for example, Page, Track, Identify, or Screen) can also be mapped. This enables you to publish all instances of a given Segment event type to a given stream. To do this, create a row with the event type and its corresponding delivery stream:
 
 ![page event mapping screenshot](images/page_mapping.png)
 
