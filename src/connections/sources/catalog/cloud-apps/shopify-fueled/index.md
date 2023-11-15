@@ -18,7 +18,7 @@ Installing Fueled's Shopify Source integration for Segment is a two-step process
 ### Add the "Shopify - Powered by Fueled" source in Segment
 
 1. From your workspace's [Sources catalog page](https://app.segment.com/goto-my-workspace/sources/catalog){:target="_blank”} click **Add Source**.
-2. Find "Shopify - Powered by Fueled" in the Segment Sources Catalog, and click **Add Source**.
+2. Find *Shopify - Powered by Fueled* in the source Catalog, and click **Add Source**.
 3. Give your Shopify Source a "nickname" and click **Save**.
 4. Copy the Write key from the Segment UI.
 
