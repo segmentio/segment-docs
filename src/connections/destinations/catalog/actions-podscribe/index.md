@@ -47,7 +47,7 @@ Podscribe is an attribution platform, and as such, Podscribe needs more context 
 
 For Page events Podscribe requires:
 - A `context` object that contains a `userAgent` and an `ip` field 
-- A `properties` object that contains a `referrer` and a `url` field.
+- A `properties` object that contains a `referrer` and a `url` field
 
 You'll see these in the Page event's raw JSON payload above.
 
