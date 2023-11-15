@@ -53,7 +53,7 @@ When you call Segment's Identify method, it will be equivalent to `logUser` of 1
 - Segment's `traits` is `userDetails` in 1Flow
 
 ### Track
-If you're not familiar with the Segment Specs, take a look to understand what the [Track method](/docs/connections/spec/track/) does. An example call would look like:
+If you're not familiar with the Segment Specs, take a look to understand what the [Track method](/docs/connections/spec/track/) does. Below is an example of how a Segment Track event maps to an invocation of the 1flow SDK:
 
 ```
 
