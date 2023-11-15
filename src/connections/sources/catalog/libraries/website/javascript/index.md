@@ -661,10 +661,9 @@ For basic use cases like adding event fields or dropping specific events, use [s
 
 ### Source Middleware 
 
-[Source middleware](docs/connections/sources/catalog/libraries/website/javascript/middleware/) runs before any other plugins. You can use this to enrich or drop an event.
+[Source middleware](/docs/connections/sources/catalog/libraries/website/javascript/middleware/) runs before any other plugins. You can use this to enrich or drop an event.
 
 #### Example usage of `addSourceMiddleware`
- d
 #### Enrichment
 ```js
 analytics.addSourceMiddleware(({ payload, next }) => {
