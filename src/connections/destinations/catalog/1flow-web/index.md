@@ -14,7 +14,7 @@ versions:
 Using 1Flow, you can reach users in-the-moment while they are interacting with your website or mobile app, to collect highly contextual user insights that help you improve your product offering and customer experience.
 
 When you use the 1Flow Web (Actions) Destination, Segment loads the [1Flow SDK](https://1flow.ai/docs/install-sdk/javascript){:target="_blank"} for you. The 1Flow library enables you to track and identify user events on your website and interact with the 1Flow messenger window.
-
+{% include content/ajs-upgrade.md %}
 ## Benefits of 1Flow Web Mode (Actions) Destination
 
 After you install both Segment and 1Flow's Segment Plugin for the web:
