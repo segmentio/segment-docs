@@ -106,7 +106,7 @@ Every seven days.
 {% endfaqitem %}
 
 {% faqitem How many predictions can I have? %}
-You can have 10 active predictions.
+You get five predictions as part of Engage Foundations or Unify Plus. To purchase more predictions, reach out to your CSM.
 {% endfaqitem %}
 
 {% faqitem Are there any known Predictions limitations? %}
