@@ -45,7 +45,7 @@ The default behavior is for Fueled to pass the email address of identified users
 
 The table below lists events that Fueled's Shopify Source automatically sends to Segment. These events appear as tables in your warehouse, and as regular events in other destinations. Fueled's Shopify Source includes the `userId` (the customer's email address) if available.
 
-Fueled's Shopify Source also supports *custom events* captured client-side by our javascript library and sent to Segment. To learn more about sending custom events to Segment, visit this [Learning Center article](https://learn.fueled.io/apps/shopify/shopify-event-tracking/customizing-client-side-shopify-events){:target="_blank”}.
+Fueled's Shopify Source also supports *custom events* captured client-side by Fueled's javascript library and sent to Segment. To learn more about sending custom events to Segment, visit this [Learning Center article](https://learn.fueled.io/apps/shopify/shopify-event-tracking/customizing-client-side-shopify-events){:target="_blank”}.
 
 ### Fueled standard events
 
