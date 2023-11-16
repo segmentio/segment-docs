@@ -283,7 +283,7 @@ You just created an Apple Development iOS Push Services certificate, which you c
 3. Choose **Export**.
 4. Save your credential file as `cred.p12`; leave the password blank.
 
-You will extract your certificate key and private key from this file — you need these two keys to create a Twilio credential. First, run this command in Terminal:
+You'll extract your certificate key and private key from this file — you need these two keys to create a Twilio credential. First, run this command in Terminal:
 
 ```zsh
 openssl pkcs12 -in cred.p12 -nokeys -out cert.pem -nodes
@@ -293,7 +293,6 @@ openssl pkcs12 -in cred.p12 -nokeys -out cert.pem -nodes
 
 ```zsh
 openssl pkcs12 -in cred.p12 -nocerts -out key.pem -nodes
-
 ```
 
 `key.pem` is your private key file. Next, run this command to process this key:
@@ -307,7 +306,7 @@ You can now paste your credentials into the modal found in the Twilio Console. M
 > warning ""
 > Once you save a credential, the `CERTIFICATE` and `PRIVATE KEY` fields are hidden for security reasons.
 
-After you've pasted your credentials, click **Save**. You should see a SID appear on the new page; copy it to your clipboard, as you'll need it in the next step.
+After you've pasted your credentials, click **Save**. You should see an SID appear on the new page; copy it to your clipboard, as you'll need it in the next step.
 
 
 ### 3d. Configure your Twilio Service to use your APNS credentials 
