@@ -259,7 +259,7 @@ There are a few necessary steps that have to be taken to migrate from Segment's 
 
 6. When enabling Marketo V2, because of the way Marketo's API works, there is potential to create duplicate leads, especially when the first enabling the destination. For ways to prevent this, check out the Preventing Duplicate Leads.
 
-## Segment Sources Cannot Have Multiple Instances of Marketo V2 Destination
+## Send a single source's data to multiple Marketo V2 workspaces
 Segment doesn't support multiple instances of Marketo V2 for any source in Segment (for both Device-Mode and Cloud-Mode). If you need a single source's data sent to multiple Marketo V2 workspaces, follow the steps listed below on configuring a [Repeater destination](/docs/connections/destinations/catalog/repeater/) to route your source's data through the Repeater destination into a new source and new Marketo V2 destination instance.
 To create a Repeater destination, new source, and second Marketo V2 destination:
 1. Create and connect a new [Repeater destination](https://app.segment.com/goto-my-workspace/destinations/catalog/repeater) to your source and select the intended source.
