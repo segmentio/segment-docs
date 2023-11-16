@@ -46,6 +46,10 @@ analytics.load('writeKey', {
 > info ""
 > Chrome has a maximum limit of 400 days for cookies. If a value is set beyond that, then Chrome sets the upper limit to 400 days instead of rejecting it. Visit Chrome's [docs](https://developer.chrome.com/blog/cookie-max-age-expires/){:target="blank"} to learn more.
 
+###Device-mode Destination Cookies
+
+Our platform does not control cookie management for device mode destinations. Our primary function involves loading third-party SDKs and forwarding events to them. Consequently, the way cookies are used and managed is solely determined by each individual SDK. For example, if you have concerns about destinations setting third-party cookies, we advise consulting directly with the destination providers for  clarification. For instance, Amplitude, one of the destinations in our catalog, provides an informative article on this topic.
+
 ### User settings
 
 Analytics.js automatically persists the user's ID and traits locally. You can override how and where the user ID and traits are stored when loading Analytics.js by passing in a `user` object to the load method.
