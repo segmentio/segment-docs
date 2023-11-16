@@ -45,7 +45,7 @@ analytics.user().anonymousId();
 
 If the user's `anonymousId` is `null` (meaning not set) when you call this function, Analytics.js automatically generated and sets a new `anonymousId` for the user.
 
-Using the npm library you'll need to grab the user's current `anonymousId` with the following: 
+If you are using the npm library, the call above returns a promise for user(). As a workaround you'll need to grab the user's current `anonymousId` in the following way: 
 
 ```js
 analytics.instance?.user().anonymousId()
