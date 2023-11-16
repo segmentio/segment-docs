@@ -340,7 +340,7 @@ Follow these steps to set up mobile push in Twilio Engage.
 ### 5a. Set up Twilio credentials
 
 > success ""
-> Follow the steps in 4a only if you're new to Twilio Engage Premier. If you've already [configured messaging services](/docs/engage/onboarding/#generate-an-api-key-and-select-your-messaging-services) as part of Twilio Engage Premier onboarding, you can skip to 4b.
+> Follow the steps in 5a only if you're new to Twilio Engage Premier. If you've already [configured messaging services](/docs/engage/onboarding/#generate-an-api-key-and-select-your-messaging-services) as part of Twilio Engage Premier onboarding, you can skip to 5b.
 
 1. In your Twilio console, select the **Account** dropdown menu, then **API keys & tokens**.
 2. On the Auth tokens & API keys page, click **Create API key**.
