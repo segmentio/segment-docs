@@ -313,7 +313,7 @@ After you've pasted your credentials, click **Save**. You should see an SID appe
 
 Twilio lets you build multiple applications within a single account. To separate those applications, you need to create Service instances that hold all the data and configuration for a given application.
 
-To do so, you'll to configure your Service instance to use the Credential that contains your APNS certificate and private key. You can do that using the Services page in the Console. You’ll need to update your Service with the Twilio Push Credential SID.
+To do so, you'll need to configure your Service instance to use the Credential that contains your APNS certificate and private key. You can do that using the Services page in the Console. You’ll need to update your Service with the Twilio Push Credential SID.
 
 If you're just getting started, set up the APN credential first, then create your Service by clicking the blue plus button on the [Services Console](https://console.twilio.com/us1/develop/notify/services?frameUrl=%2Fconsole%2Fnotify%2Fservices%3Fx-target-region%3Dus1&_ga=2.170545120.1341805708.1700099403-1979911827.1631664239&_gl=1*1msrgrt*_ga*MTk3OTkxMTgyNy4xNjMxNjY0MjM5*_ga_RRP8K4M4F3*MTcwMDEwNTYwOC45Ny4xLjE3MDAxMDU2MjAuMC4wLjA.){:target="_blank"} page.
 
