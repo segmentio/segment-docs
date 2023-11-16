@@ -10,7 +10,7 @@ With Fueled, Shopify merchants can implement Segment event tracking in minutes â
 
 **Shopify merchants can try Fueled's Segment integration free for 15 days.**
 
-This integration is maintained by[Fueled](https://fueled.io){:target="_blank"}. [Contact the Fueled Support team](mailto:support@fueled.io) with any questions.
+This integration is maintained by [Fueled](https://fueled.io){:target="_blank"}. [Contact the Fueled Support team](mailto:support@fueled.io) with any questions.
 
 ## Getting started
 
