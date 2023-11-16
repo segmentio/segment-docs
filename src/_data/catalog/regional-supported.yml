@@ -873,6 +873,15 @@ sources:
       - us
     endpoints:
       - us
+  - id: 57hcOLuW6Q
+    display_name: Shopify - Powered by Fueled
+    hidden: false
+    slug: shopify---powered-by-fueled
+    url: connections/sources/catalog/cloud-apps/shopify---powered-by-fueled
+    regions:
+      - us
+    endpoints:
+      - us
   - id: BQp3zGUgjV
     display_name: Snowflake
     hidden: true
