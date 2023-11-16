@@ -48,7 +48,7 @@ analytics.load('writeKey', {
 
 ###Device-mode Destination Cookies
 
-Our platform does not control cookie management for device mode destinations. Our primary function involves loading third-party SDKs and forwarding events to them. Consequently, the way cookies are used and managed is solely determined by each individual SDK. For example, if you have concerns about destinations setting third-party cookies, we advise consulting directly with the destination providers for  clarification. For instance, Amplitude, one of the destinations in our catalog, provides an informative article on this topic.
+Our platform does not control cookie management for device mode destinations. Our primary function involves loading third-party SDKs and forwarding events to them. Consequently, the way cookies are used and managed is solely determined by each individual SDK. For example, if you have concerns about destinations setting third-party cookies, we advise consulting directly with the destination providers for  clarification. For instance, Amplitude, one of the destinations in our catalog, provides an informative [article on this topic](https://www.docs.developers.amplitude.com/guides/cookies-consent-mgmt-guide/#abstraction-layer-for-storage).
 
 ### User settings
 
