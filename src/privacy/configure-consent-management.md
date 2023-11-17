@@ -76,7 +76,7 @@ If you need to make changes to your consent categories, you can edit them on the
 3. On the Edit consent category page, you can make changes to the consent category name, ID, and the destinations connected to a category.
 4. When you've made your changes, click **Save**.
 
-> success "The Audit Trail surfaces information about changes to consent categories or mappings"
+> success ""
 > The [Audit Trail](/docs/segment-app/iam/audit-trail/) surfaces information about when a consent category is created, modified, or disabled, and when consent mappings are created or removed.
 
 ## Disable consent categories
