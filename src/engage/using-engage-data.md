@@ -120,7 +120,7 @@ Engage only sends events to the destination if the computed trait value has chan
 ```
 
 > info ""
-> **Note**: Email as an identifier is set in `traits.email` for identify calls, and `context.traits.email` for track calls. 
+> Email as an identifier is set in `traits.email` for Identify calls, and `context.traits.email` for Track calls. 
 
 ## Additional identifiers
 
