@@ -21,7 +21,7 @@ You can build an Audience from existing events, traits, computed traits, or othe
 > info ""
 > The **Include Anonymous Users** checkbox determines which external IDs need to exist on a profile for Segment to include the user in the audience:
 > **Include anonymous users unchecked**: `user_id` or `email` or `android.idfa` or `ios.idfa`
-> **Include anonymous users checked**: `user_id` or `email` or `android.idfa` or `ios.idfa` or `anonymous_id`
+> - **Include Anonymous Users selected**: `user_id`, `email`, `android.idfa`, `ios.idfa`, or `anonymous_id`
 
 ### Events
 
