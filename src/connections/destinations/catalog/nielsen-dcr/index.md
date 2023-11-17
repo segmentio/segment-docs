@@ -8,7 +8,7 @@ Nielsen-DCR is supported on mobile apps and web browsers.
 
 Digital Content Ratings (DCR) responds to the shifting, complex multi-platform, multi-device and multi-distribution landscape by providing comprehensive measurement of digital content consumption—including streaming video, static web pages and mobile apps—across all major devices and platforms.
 
-In order to get started with Nielsen-DCR and retrieve an `appid` to configure this integration, you must sign a license agreement on the [Nielsen engineering portal](https://engineeringportal.nielsen.com/docs/Main_Page).
+In order to get started with Nielsen-DCR and retrieve an `appid` to configure this integration, you must sign a license agreement on the [Nielsen engineering portal](https://engineeringportal.nielsen.com/docs/Main_Page){:target="_blank"}.
 
 There will be an NDA to sign prior to accessing the download. Nielsen requires you fill out your company info and have a Nielsen representative before getting started.
 
@@ -22,11 +22,11 @@ To get started with Nielsen-DCR and Segment, you'll want to first integrate your
 
 ### iOS
 
-To install Nielsen DCR via Segment on iOS, please follow the instructions in the Segment-Nielsen-DCR repository [README](https://github.com/segment-integrations/analytics-ios-integration-nielsen-dcr/blob/master/README.md).
+To install Nielsen DCR via Segment on iOS, please follow the instructions in the Segment-Nielsen-DCR repository [README](https://github.com/segment-integrations/analytics-ios-integration-nielsen-dcr/blob/master/README.md){:target="_blank"}.
 
 ### Android
 
-To install Nielsen DCR via Segment on Android, please follow the instructions in the Segment-Nielsen-DCR repository [README](https://github.com/segment-integrations/analytics-android-integration-nielsen-dcr/blob/master/README.md).
+To install Nielsen DCR via Segment on Android, please follow the instructions in the Segment-Nielsen-DCR repository [README](https://github.com/segment-integrations/analytics-android-integration-nielsen-dcr/blob/master/README.md){:target="_blank"}.
 
 ## Web
 
@@ -216,13 +216,13 @@ Content originator ID. This value is only required for distributors.
 
 Segment-Nielsen-DCR iOS retrieves the application name from your app's `Info.plist` application bundle name as returned by `CFBundleName` .
 
-For Android, we retrieve the name of the application package from the [PackageManager](https://developer.android.com/reference/android/content/Context.html#getPackageManager()).
+For Android, we retrieve the name of the application package from the [PackageManager](https://developer.android.com/reference/android/content/Context.html#getPackageManager()){:target="_blank"}.
 
 #### How do you determine App Version?
 
 Segment-Nielsen-DCR retrieves the application version from your app's `Info.plist` application bundle name as returned by `CFBundleVersion`.
 
-For Android, we retrieve the version of the application package from the [PackageManager](https://developer.android.com/reference/android/content/Context.html#getPackageManager()).
+For Android, we retrieve the version of the application package from the [PackageManager](https://developer.android.com/reference/android/content/Context.html#getPackageManager()){:target="_blank"}.
 
 #### What are the Nielsen-DCR `clientId` and `subbrand` values?
 

@@ -2,7 +2,7 @@
 title: Inflection Source
 id: glwy6LwOVo
 ---
-[Inflection](https://inflection.io/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) provides a B2B marketing automation platform for product-led growth companies.
+[Inflection](https://inflection.io/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners){:target="_blank”} provides a B2B marketing automation platform for product-led growth companies.
 
 This is an [Event Cloud Source](/docs/sources/#event-cloud-sources) which can not only export data into your Segment warehouse, but can also federate the exported data into your other enabled Segment Destinations.
 
@@ -10,7 +10,7 @@ This source is maintained by Inflection. For any issues with the source, [contac
 
 ## Getting Started
 
-1. From the [Sources catalog page](https://app.segment.com/goto-my-workspace/sources/catalog) in your workspace, click **Add Source**.
+1. From the [Sources catalog page](https://app.segment.com/goto-my-workspace/sources/catalog){:target="_blank"} in your workspace, click **Add Source**.
 2. Search for "Inflection" in the Sources Catalog, select Inflection, and click **Add Source**.
 3. On the next screen, give the Source a nickname configure any other settings.
 4. Click **Add Source** to save your settings.

@@ -62,6 +62,13 @@ Protocols customers can also use [Transformations](/docs/protocols/transform/) t
 
 > **Note**: Transformations are currently limited to event, property and trait name changes, and do **not** apply to historical data.
 
+## Can I change the data type of a column in the warehouse?
+
+Yes. Data types are set up in your warehouse based on the first value that comes in from a source, but you can request the support team to update the data type by reaching out to [Segment support](https://app.segment.com/workspaces?contact=1){:target="_blank”}. To learn more, check out Segment's [Data Types](/docs/connections/storage/warehouses/schema/#schema-evolution-and-compatibility) documentation.
+
+## Can the data type definitions in Protocols be enforced in a warehouse schema?
+
+The data type definitions in Protocols have no impact on the warehouse schema. 
 
 ## How do I find my source slug?
 
@@ -97,9 +104,10 @@ Segment recommends scripting any sort of additions of data you might have to war
 
 {% include content/warehouse-ip.html %}
 
-You must allowlist Segment's custom IPs `52.25.130.38/32` and `34.223.203.0/28` while authorizing Segment to write in to your Redshift or Postgres port.
+You must allowlist Segment's custom IPs `52.25.130.38/32` and `34.223.203.0/28` while authorizing Segment to write in to your warehouse port. Currently, Redshift and Postgres are the only connectors that require you to configure an IP upon setup. Segment recommends enabling IP allowlists for added security.
 
-**EU workspace regions are currently in beta.**  If you're in the EU region and participating in the public beta program, use CIDR `3.251.148.96/29`. To learn more about the public beta for EU workspace locations, contact your account manager.
+
+If you're in the EU region, use CIDR `3.251.148.96/29`. To learn more about EU workspace locations, contact your account manager.
 
 
 ## Will Segment sync my historical data?
@@ -125,7 +133,7 @@ After a source is created, you can enable or disable a warehouse sync within the
 
 ## Can I be notified when warehouse syncs fail?
 
-If you enabled activity notifications for your storage destination, you'll receive notifications in the Segment app for the fifth and 20th consecutive warehouse failures.
+If you enabled activity notifications for your storage destination, you'll receive notifications in the Segment app for the fifth and 20th consecutive warehouse failures for all incoming data. Segment does not track failures on a per connection ('source<>warehouse') basis. Segment's notification structure also identifies global issues encountered when connecting to your warehouse, like bad credentials or being completely inaccessible to Segment.
 
 To sign up for warehouse sync notifications:
 1. Open the Segment app.
@@ -170,7 +178,3 @@ To change the name of your schema without disruptions:
 11. Select the warehouse you disabled syncs for from the list of destinations.
 12. On the overview page for your source, select **Settings**.
 13. Enable the **Sync Data** toggle and click **Save Settings**.
-
-## Can I change the data type of a column in the warehouse?
-
-Yes, data types are set up in your warehouse based on the first value that comes in from a source. However, you can request the support team to update the data type by reaching out to [support](https://app.segment.com/workspaces?contact=1). To learn more, check out [Data Types](/docs/connections/storage/warehouses/schema/#schema-evolution-and-compatibility) section.

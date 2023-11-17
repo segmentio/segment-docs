@@ -4,9 +4,9 @@ rewrite: true
 id: 2baks93o
 ---
 
-[HubSpot](http://www.hubspot.com) is an all-in-one marketing tool that helps attract new leads and convert them into paying customers, with features like landing page creation and email automation.
+[HubSpot](http://www.hubspot.com){:target="_blank"} is an all-in-one marketing tool that helps attract new leads and convert them into paying customers, with features like landing page creation and email automation.
 
-Are you trying to set up HubSpot as a destination to receive data from Segment? Go here [HubSpot Destination](https://segment.com/docs/connections/destinations/catalog/hubspot/).
+Are you trying to set up HubSpot as a destination to receive data from Segment? Go here [HubSpot Destination](/docs/connections/destinations/catalog/hubspot/).
 
 ## Getting Started
 
@@ -18,7 +18,7 @@ Are you trying to set up HubSpot as a destination to receive data from Segment? 
 
    **Note**: You can add multiple instances if you have multiple HubSpot accounts. That's why we allow you to customize the source's nickname and schema name!
 
-4. Finally, connect an account with **admin API permissions** to access your HubSpot data. This account should be an active user on a Professional or Enterprise plan. Check out [HubSpot's docs on how to get your API Key](http://knowledge.hubspot.com/articles/kcs_article/integrations/how-do-i-get-my-hubspot-api-key).
+4. Finally, connect an account with **admin API permissions** to access your HubSpot data. This account should be an active user on a Professional or Enterprise plan. Check out [HubSpot's docs on how to get your API Key](http://knowledge.hubspot.com/articles/kcs_article/integrations/how-do-i-get-my-hubspot-api-key){:target="_blank"}.
 
 Voila! We'll begin syncing your HubSpot data into Segment momentarily, and it will be written to your warehouse at your next Warehouse run.
 
@@ -27,9 +27,9 @@ Voila! We'll begin syncing your HubSpot data into Segment momentarily, and it wi
 
 ### Sync
 
-The HubSpot source is built with a sync component, which means we'll make requests to their API on your behalf on a 3 hour interval to pull the latest data into Segment. In the initial sync, we'll grab all the HubSpot objects (and their corresponding properties) according to the Collections Table below. The objects will be written into a separate schema, corresponding to the source instance's schema name you designated upon creation (ie. my_source.charges).
+The HubSpot source is built with a sync component, which means Segment makes requests to their API on your behalf on a three hour interval to pull nearly all data into Segment. In the initial sync, Segment will grab all the HubSpot objects (and their corresponding properties) according to the Collections Table below. The objects will be written into a separate schema, corresponding to the source instance's schema name you designated upon creation (for example, `my_source.charges`).
 
-Our sync component uses an upsert API, so the data in your warehouse loaded using sync will reflect the latest state of the corresponding resource in HubSpot. For example, if `ticket_status` goes from `open` to `closed` between syncs, on its next sync that tickets status will be `closed`.
+Our sync component uses an upsert API, so the data in your warehouse loaded using sync will reflect the latest state of the corresponding resource in HubSpot. For example, if `deals` goes from `open` to `closed` between syncs, on its next sync that deal's status will be `closed`.
 
 The source syncs and warehouse syncs are independent processes. Source runs pull your data into the Segment Hub, and warehouse runs flush that data to your warehouse. Sources will sync with Segment every 3 hours. Depending on your Warehouses plan, we will push the Source data to your warehouse on the interval associated with your billing plan.
 
@@ -40,20 +40,20 @@ Collections are the groupings of resources we pull from your source. In your war
 
 ### Event History
 
-Due to HubSpot's [API Rate Limits](http://developers.hubspot.com/apps/api_guidelines), by default, the HubSpot source only syncs the past month of data for `email_events` and `email_subscription_event_changes`.
+Due to HubSpot's [API Rate Limits](http://developers.hubspot.com/apps/api_guidelines){:target="_blank"}, by default, the HubSpot source only syncs the past month of data for `email_events` and `email_subscription_event_changes`.
 
 
 |  Collection | Type | Description |
 |  ------ | ------ | ------ |
-|  contacts | Object | Contacts represent people in an Organization's address book. For more info, check out [HubSpot's API docs](http://developers.hubspot.com/docs/methods/contacts/get_contacts) |
+|  contacts | Object | Contacts represent people in an Organization's address book. For more info, check out [HubSpot's API docs](http://developers.hubspot.com/docs/methods/contacts/get_contacts){:target="_blank"} |
 | contact_identity_profiles | Object | Contact identity profiles represent identities of a contact.
 | contact_identities | Object | Contact identities represent communication methods for a contact's profile (email, lead, etc.).
 | form_submissions | Event | Form submissions represent input from contacts in forms created using HubSpot
 | deals | Object | Deals for HubSpot CRM.
-| contact_lists | Object | Contact lists are lists of contacts in an Organization's address book. For more info, check out [HubSpot's API docs about the resource](http://developers.hubspot.com/docs/methods/lists/get_lists) |
-| companies | Object | Companies visible to the portal in the HubSpot CRM. For more info, check out [HubSpot's API docs about the resource](http://developers.hubspot.com/docs/methods/companies/companies-overview) |
-| email_campaigns | Object | Email campaigns for marketing automation. For more info, check out [HubSpot's API docs about the resource](http://developers.hubspot.com/docs/methods/email/get_campaigns_by_id) |
-| email_events | Event | Email events based on user actions. For more info, check out [HubSpot's API docs about the resource](http://developers.hubspot.com/docs/methods/email/email_events_overview) |
+| contact_lists | Object | Contact lists are lists of contacts in an Organization's address book. For more info, check out [HubSpot's API docs about the resource](http://developers.hubspot.com/docs/methods/lists/get_lists){:target="_blank"} |
+| companies | Object | Companies visible to the portal in the HubSpot CRM. For more info, check out [HubSpot's API docs about the resource](http://developers.hubspot.com/docs/methods/companies/companies-overview){:target="_blank"} |
+| email_campaigns | Object | Email campaigns for marketing automation. For more info, check out [HubSpot's API docs about the resource](http://developers.hubspot.com/docs/methods/email/get_campaigns_by_id){:target="_blank"} |
+| email_events | Event | Email events based on user actions. For more info, check out [HubSpot's API docs about the resource](http://developers.hubspot.com/docs/methods/email/email_events_overview){:target="_blank"} |
 | email_subscriptions | Object | Email subscriptions of campaign contacts.
 | email_subscription_event_changes | Event | Email subscription event changes represent changes to a recipient's subscription that came about as a result of an email event |
 

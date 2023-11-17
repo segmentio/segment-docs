@@ -20,6 +20,12 @@ plugins:
       url: https://d3hotuclm6if1r.cloudfront.net/logos/appsflyer-default.svg
     mark:
       url: https://cdn.filepicker.io/api/file/AnJUEBvxRouLLOvIeQuK
+  - name: Branch
+    url: connections/sources/catalog/libraries/mobile/react-native/destination-plugins/branch-react-native/
+    logo:
+      url: https://cdn.filepicker.io/api/file/Svc4UAgORe668HOiiyjd
+    mark:
+      url: https://cdn.filepicker.io/api/file/MfCJKP6VRoaLMG7sMY5m
   - name: Braze
     url: connections/sources/catalog/libraries/mobile/react-native/destination-plugins/braze-react-native/
     logo:
@@ -62,6 +68,12 @@ plugins:
       url: https://cdn.filepicker.io/api/file/pUF0kwpTTu0Z5POuzZXV
     mark:
       url: https://cdn.filepicker.io/api/file/0mdiroESxtRQBoR8ieBg
+  - name: Survicate
+    url: connections/sources/catalog/libraries/mobile/apple/destination-plugins/survicate-react-native/
+    logo:
+      url: https://cdn.filepicker.io/api/file/BUciQq3kSzqCn8EKMtBN
+    mark:
+      url: https://cdn.filepicker.io/api/file/0H2JyPoRT4K3CnBQcHPn
   - name: Taplytics
     url: connections/sources/catalog/libraries/mobile/react-native/destination-plugins/taplytics-react-native/
     logo:

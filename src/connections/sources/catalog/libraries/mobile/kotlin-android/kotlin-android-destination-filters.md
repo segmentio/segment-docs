@@ -15,7 +15,7 @@ To get started with destination filters on mobile device-mode destinations using
 
 1. Download and install the dependency.
   ```java
-    implementation 'com.segment.analytics.kotlin:destination-filters-kotlin:0.1.0'
+    implementation 'com.segment.analytics.kotlin:destination-filters:0.1.1'
   ```
 
 2. Add the plugin.

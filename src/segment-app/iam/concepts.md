@@ -1,13 +1,16 @@
 ---
 title: Access Management Concepts
+plan: iam
 ---
-{% include content/plan-grid.md name="iam" %}
-
 
 ## Team Members
 
 A Segment *Team Member* is an individual with access to a workspace. A Segment user can be associated with one or more workspaces, either as an `owner` or `member` of each.
 Check out the [roles documentation](/docs/segment-app/iam/roles) for a complete list of roles.
+
+The user session for a Segment Team Member is 7 days. Team Members in a [HIPAA eligible workspace](/docs/privacy/hipaa-eligible-segment/) have a 15 minute user session across all workspaces.
+
+If you are a Team Member in a HIPAA eligible workspace and want to access a non-HIPAA eligible workspace with a 7 day user session, you can create an alias (for example `name+workspace@gmail.com`).
 
 ## User Groups
 

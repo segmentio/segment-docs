@@ -2,12 +2,16 @@
 title: Postgres Reverse ETL Setup
 ---
 
-> info ""
-> The Postgres Reverse ETL source is in beta and Segment is actively working on this feature. Segment's [First-Access and Beta terms](https://segment.com/legal/first-access-beta-preview/) govern this feature. 
-
 Set up Postgres as your Reverse ETL source.
 
 At a high level, when you set up Postgres for Reverse ETL, the configured user/role needs read permissions for any resources (databases, schemas, tables) the query needs to access. Segment keeps track of changes to your query results with a managed schema (`__SEGMENT_REVERSE_ETL`), which requires the configured user to allow write permissions for that schema.
+
+Segment supports the following Postgres database providers:
+- Heroku
+- RDS
+
+> warning ""
+> Segment only supports these Postgres database providers. Postgres databases from other providers aren't guaranteed to work. For questions or concerns about Segment-supported Postgres providers, [contact Segment Support](https://segment.com/help/contact){:target="_blank"}.
 
 ## Set up guide
 To set up Postgres with Reverse ETL:

@@ -5,7 +5,7 @@ strat: facebook
 id: mazatB39IS
 ---
 
-Facebook is one of the most efficient ways to advertise online. Take your company's analysis to the next level by adding [Facebook Ads](https://www.facebook.com/business/products/ads) as a Source to Segment.
+Facebook is one of the most efficient ways to advertise online. Take your company's analysis to the next level by adding [Facebook Ads](https://www.facebook.com/business/products/ads){:target="_blank"} as a Source to Segment.
 
 ## Getting Started
 
@@ -49,15 +49,15 @@ Collections are the groupings of resources we pull from your source. In your war
 | Collection  | Type   | Description                                                                                                                                                                                            |
 | ----------- | ------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | ad_accounts | object | An ad account is an account used to manage ads on Facebook                                                                  |
-| ad_sets     | object | An [ad set](https://developers.facebook.com/docs/marketing-api/reference/ad-campaign) is a group of ads that share the same daily or lifetime budget, schedule, bid type, bid info, and targeting data |
-| ads         | object | An [ad](https://developers.facebook.com/docs/marketing-api/reference/adgroup) object contains the data necessary to visually display an ad and associate it with a corresponding ad set.               |
-| campaigns   | object | A [campaign](https://developers.facebook.com/docs/marketing-api/reference/v13.0) is a grouping of ad sets which are organized by the same business objective.                              |
-| insights    | object | [Insights](https://developers.facebook.com/docs/marketing-api/reference/adgroup/insights/) contain performance statistics for an ad broken down by day.                                                |
+| ad_sets     | object | An [ad set](https://developers.facebook.com/docs/marketing-api/reference/ad-campaign){:target="_blank"} is a group of ads that share the same daily or lifetime budget, schedule, bid type, bid info, and targeting data |
+| ads         | object | An [ad](https://developers.facebook.com/docs/marketing-api/reference/adgroup){:target="_blank"} object contains the data necessary to visually display an ad and associate it with a corresponding ad set.               |
+| campaigns   | object | A [campaign](https://developers.facebook.com/docs/marketing-api/reference/v13.0){:target="_blank"} is a grouping of ad sets which are organized by the same business objective.                              |
+| insights    | object | [Insights](https://developers.facebook.com/docs/marketing-api/reference/adgroup/insights/){:target="_blank"} contain performance statistics for an ad broken down by day.                                                |
 
 
 ## Collection Properties
 
-Below are tables outlining the properties included in the collections listed above.
+The following tables outline the properties included in collections.
 
 ### Ad Accounts
 
@@ -123,20 +123,35 @@ Below are tables outlining the properties included in the collections listed abo
 | clicks                    | The number of clicks on your ads.                                                                                                                          |
 | date_start                | The start date for your data.                                                                                                                              |
 | date_stop                 | The end date for your data.                                                                                                                                |
-| ~~deeplink_clicks~~       | *Deprecated by Facebook.* Aliased to `click_to_app_deeplink`.                                                                                              |
-| ~~website_clicks~~        | *Deprecated by Facebook.* Aliased to `click_to_website`                                                                                                    |
 | frequency                 | The average number of times each person saw your ad.                                                                                                       |
 | impressions               | The number of times your ads were on screen.                                                                                                               |
 | inline_post_engagements   | The total number of actions that people take involving your ads.                                                                                           |
-| ~~social_clicks~~         | *Deprecated by Facebook.* The number of clicks (all) when your ad was displayed with social information.                                                   |
-| ~~social_impressions~~    | *Deprecated by Facebook.* The number of times your ads were viewed when displayed with social information.                                                 |
 | social_spend              | The total amount you've spent so far for your ads showed with social information.                                                                          |
 | spend                     | The estimated total amount of money you've spent on your campaign, ad set or ad during its schedule.                                                       |
 | unique_clicks             | The number of people who performed a click (all). This metric is estimated.                                                                                |
 | unique_impressions        | Deprecated in favor of `reach` . You can continue to query `unique_impressions` for this metric, but zero-values will now be `null`.                       |
-| ~~unique_social_clicks~~  | *Deprecated by Facebook.* The number of people who performed a click (all) on your ad when it was displayed with social information.                       |
 | reach                     | The number of people who saw your ads at least once. Reach is different from impressions, which may include multiple views of your ads by the same people. |
-| ~~call_to_action_clicks~~ | *Deprecated by Facebook.* The number of times people clicked the call-to-action button on your ad.                                                         |
+
+#### Additional Insights fields
+
+Segment supports both [Breakdowns for Insights](https://developers.facebook.com/docs/marketing-api/insights/breakdowns){:target="_blank"} and [Ads Actions Stats](https://developers.facebook.com/docs/marketing-api/reference/ads-action-stats/){:target="_blank"}. Breakdowns and Ads Action Stats are not enabled by default; [reach out to Segment support](https://segment.com/help/contact/){:target="_blank"} to enable them. 
+
+The following table lists the Ads Action Stats that Segment supports:
+
+| Field                            | Description                                                                                                                    |
+| -------------------------------- | ------------------------------------------------------------------------------------------------------------------------------ |
+| `actions`                        | The total number of actions people took that are attributed to your ads.                                                       |
+| `actions_values`                 | The total value of all conversions attributed to your ads.                                                                     |
+| `unique_actions`                 | The total number of unique actions attributed to your ads.                                                                     |
+| `video_p25_watched_actions`      | The number of times your video played at 25% of its length, including plays that skipped to this point.                        |
+| `video_p50_watched_actions`      | The number of times your video played at 50% of its length, including plays that skipped to this point.                        |
+| `video_p75_watched_actions`      | The number of times your video played at 75% of its length, including plays that skipped to this point.                        |
+| `video_p95_watched_actions`      | The number of times your video played at 95% of its length, including plays that skipped to this point.                        |
+| `video_p100_watched_actions`     | The number of times your video played at 100% of its length, including plays that skipped to this point.                       |
+| `video_30_sec_watched_actions`   | The number of times your video played for at least 30 seconds, or for nearly its total length if it's shorter than 30 seconds. |
+| `video_avg_time_watched_actions` | The average time a video played, including any time spent replaying the video for a single impression.                         |
+
+For more information, view [Meta's Insights documentation](https://developers.facebook.com/docs/marketing-api/reference/ads-insights/){:target="_blank"}.
 
 ## Adding Destinations
 

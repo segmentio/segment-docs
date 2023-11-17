@@ -4,7 +4,7 @@ id: R7eWaTLYUs
 ---
 {% include content/source-region-unsupported.md %}
 
-[Autopilot](https://autopilothq.com/) makes automating customer journeys as simple as drawing on a whiteboard. Engage at just the right time with personalized emails, in-app messages, SMS, and postcards.
+[Autopilot](https://autopilothq.com/){:target="_blank"} makes automating customer journeys as simple as drawing on a whiteboard. Engage at just the right time with personalized emails, in-app messages, SMS, and postcards.
 
 Take your company's email analysis to the next level by adding Autopilot as a Source to Segment. Segment automatically collects email events like Email Delivered and Email Opened, forwards them to your destinations, and loads them into your data warehouse.
 
@@ -16,7 +16,7 @@ This source is maintained by Autopilot. For any issues with the source, you can 
 1. From your Segment UI's Sources page click **Add Source**.
 2. Search for and select AutopilotHQ in the Sources Catalog and click **Add Source** to confirm.
 3. Give the Source a name and add any labels to help you organize and filter your sources. You can give the source any name, but Segment recommends a name that reflects the source itself, as this name autopopulates the schema name. For example, the source name  `AutopilotHQ` creates the schema `autopilothq`.
-4. Sign in to your Autopilot account and visit the [Segment destination](https://app.autopilothq.com/#settings/app-connections/segment-sync) to connect.
+4. Sign in to your Autopilot account and visit the [Segment destination](https://app.autopilothq.com/#settings/app-connections/segment-sync){:target="_blank"} to connect.
 
 ## Components
 **Stream**
@@ -120,4 +120,4 @@ If you experience any issues with how the events arrive in Segment, [contact the
 
 ## Sending data to AutopilotHQ
 
-The AutopilotHQ Source works better when you also connect AutopilotHQ as a Destination. With the AutopilotHQ Destination, you can use Segment to send Identify and Track calls to AutopilotHQ. Want to start sending website, mobile or server data TO AutopilotHQ? Head on over to our [AutopilotHQ destination](https://segment.com/docs/connections/destinations/catalog/autopilothq/).
+The AutopilotHQ Source works better when you also connect AutopilotHQ as a Destination. With the AutopilotHQ Destination, you can use Segment to send Identify and Track calls to AutopilotHQ. Want to start sending website, mobile or server data TO AutopilotHQ? Head on over to our [AutopilotHQ destination](/docs/connections/destinations/catalog/autopilothq/).

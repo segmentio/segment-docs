@@ -95,7 +95,7 @@ To use the latest Braze SDK to collect IDFAs you must do the following:
    compile 'com.appboy:appboy-segment-integration:+'
    ```
 
-    To ensure you have the most up-to-date features and bug fixes, use the latest version available on [Maven](http://search.maven.org/#search%7Cga%7C1%7Ca%3A%22appboy-segment-integration%22).
+    To ensure you have the most up-to-date features and bug fixes, use the latest version available on [Maven](http://search.maven.org/#search%7Cga%7C1%7Ca%3A%22appboy-segment-integration%22){:target="_blank"}.
 
     **Note:** The `groupId` is `com.appboy` and not `com.segment.analytics.android.integrations`.
 
@@ -107,30 +107,6 @@ To use the latest Braze SDK to collect IDFAs you must do the following:
     ...
    .build();
   ```
-
-### React Native device-mode set up
-
-<!-- LR, Mar2021: this should be a `react-dest` include but Braze was originally called Appboy-->
-
-To add the Braze device-mode SDK to a [React Native](/docs/connections/sources/catalog/libraries/mobile/react-native/) project using Segment's `1.5.1≤` release:
-1. Navigate to the root folder of your project, and run a `yarn add appboy` command to add the destination SDK to your project.
-2. Add an `import` statement to your project, as in the following example.
-   ```js
-   import Braze from '@segment/analytics-react-native-appboy'
-   ```
-3. In the same project file, add the destination to the `using` list in the `await` command.
-   ```js
-   await analytics.setup('YOUR_WRITE_KEY', {
-     // Add any of your Device-mode destinations. This ensures they load before continuing.
-     using: [Braze]
-     // ...
-   })
-   ```
-4. Change to your iOS development folder ( `cd ios` ) and run `pod install`.
-
-
-> note ""
-> Braze was formerly known as "Appboy", and the Braze React component still uses that name. Be sure to use the old name!
 
 ## Page
 
@@ -197,7 +173,7 @@ The endpoint returns:
 
 
 > info "Tip"
-> Braze is complex. If you decide to use the `braze_id`, consider [contacting Segment Success Engineering](https://segment.com/help/contact/) or a Solutions Architect to verify your Braze implementation.
+> Braze is complex. If you decide to use the `braze_id`, consider [contacting Segment Success Engineering](https://segment.com/help/contact/){:target="_blank"} or a Solutions Architect to verify your Braze implementation.
 
 Segment's special traits recognized as Braze's standard user profile fields (in parentheses) are:
 
@@ -430,9 +406,9 @@ analytics.ready(function() {
 });
 ```
 
-3. Set your GCM/FCM server API key and SenderID on the Braze dashboard. You can find more details for this [here](https://www.braze.com/docs/developer_guide/platform_integration_guides/web/initial_sdk_setup#step-4-set-your-gcmfcm-server-api-key-and-senderid-on-the-Braze-dashboard).
+3. Set your GCM/FCM server API key and SenderID on the Braze dashboard. You can find more details for this [here](https://www.braze.com/docs/developer_guide/platform_integration_guides/web/initial_sdk_setup#step-4-set-your-gcmfcm-server-api-key-and-senderid-on-the-Braze-dashboard){:target="_blank"}.
 
-4. To support push notifications on Safari, add your Website Push ID into your Segment Settings UI and Segment sends it when the Braze Web SDK initializes. To get your Website Push ID, follow the first two bullet points in [these instructions](https://www.braze.com/docs/developer_guide/platform_integration_guides/web/initial_sdk_setup#step-5-configure-safari-push).
+4. To support push notifications on Safari, add your Website Push ID into your Segment Settings UI and Segment sends it when the Braze Web SDK initializes. To get your Website Push ID, follow the first two bullet points in [these instructions](https://www.braze.com/docs/developer_guide/platform_integration_guides/web/initial_sdk_setup#step-5-configure-safari-push){:target="_blank"}.
 
 ### Soft Push Prompts
 

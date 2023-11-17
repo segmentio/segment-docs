@@ -3,7 +3,7 @@ rewrite: true
 title: Amazon Kinesis Destination
 id: 57da359580412f644ff33fb9
 ---
-[Amazon Kinesis](https://aws.amazon.com/kinesis/) enables you to build custom applications that process or analyze streaming data for specialized needs. Amazon Kinesis Streams can continuously capture and store terabytes of data per hour from hundreds of thousands of sources such as website clickstreams, financial transactions, social media feeds, IT logs, and location-tracking events.
+[Amazon Kinesis](https://aws.amazon.com/kinesis/){:target="_blank”} enables you to build custom applications that process or analyze streaming data for specialized needs. Amazon Kinesis Streams can continuously capture and store terabytes of data per hour from hundreds of thousands of sources such as website clickstreams, financial transactions, social media feeds, IT logs, and location-tracking events.
 
 
 ## Getting Started
@@ -155,7 +155,7 @@ To attach multiple sources to your IAM role:
         {
           "Effect": "Allow",
           "Principal": {
-            "AWS": "arn:aws:iam::595280932656:root"
+            "AWS": "arn:aws:iam::595280932656:role/customer-kinesis-access"
           },
           "Action": "sts:AssumeRole",
           "Condition": {
@@ -175,7 +175,7 @@ To attach multiple sources to your IAM role:
         {
           "Effect": "Allow",
           "Principal": {
-            "AWS": "arn:aws:iam::595280932656:root"
+            "AWS": "arn:aws:iam::595280932656:role/customer-kinesis-access"
           },
           "Action": "sts:AssumeRole",
           "Condition": {
@@ -228,7 +228,7 @@ If you have many sources using Kinesis that it's impractical to attach all of th
         {
           "Effect": "Allow",
           "Principal": {
-            "AWS": "arn:aws:iam::595280932656:root"
+            "AWS": "arn:aws:iam::595280932656:role/customer-kinesis-access"
           },
           "Action": "sts:AssumeRole",
           "Condition": {
