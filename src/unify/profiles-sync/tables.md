@@ -222,12 +222,10 @@ Follow the steps below to change your schema name:
 
 ## Tables Segment materializes
 
-With Profiles Sync, you can access the following three materialized view tables:
+With Profiles Sync, you can access the following three tables that Segment materializes for a more complete view of your profile:
 - [`user_traits`](#the-user_traits-table)
 - [`user_identifiers`](#the-user_identifiers-table)
 - [`profile_merges`](#the-profile_merges-table)
-
-Use these tables that Segment materializes for a more complete view of your profile.
 
 Visit the [selective sync](/docs/unify/profiles-sync/#using-selective-sync) setup page to enable the following materialized tables, which Segment disables by default.
 
@@ -294,7 +292,7 @@ The `profile_merges` table contains all mappings from a `segment_id` to a profil
 
 With the `profile_merges` table:
 - There's one row per profile associated with the `canonical_segment_id` that represents the profile. This view is a fixed schema. 
-- When a profile is created, a new row is created with the `segment_id` and `segment_canonical_id` having the same value.
+- When a profile is created, a new row is created with the `segment_id` and `canonical_segment_id` having the same value.
 
 
 When a merge occurs:
