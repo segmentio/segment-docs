@@ -91,7 +91,7 @@ It's best to keep traits optional because Identify and Group are often called an
 
 ### Upload a Tracking Plan
 
-You can make changes to a Tracking Plan by uploading a Tracking Plan CSV to replace the rules of your existing Tracking Plan. 
+You can make changes to a Tracking Plan by uploading a CSV to replace the rules of your existing Tracking Plan. 
 
 > info "Tracking Plans with imported libraries cannot be changed using the Upload a Tracking Plan method"
 > If you have a Tracking Plan with imported libraries, you must make changes to your Tracking Plan in the Segment app.
