@@ -9,7 +9,7 @@ You can send your Computed Traits and Audiences to your Segment Destinations, wh
 <!-- TODO: image here? -->
 
 > success ""
-> **Tip!** You can also use the [Profile API](/docs/unify/profile-api/) to activate Engage data programmatically.
+> You can also use the [Profile API](/docs/unify/profile-api/) to activate Engage data programmatically.
 
 ## Engage Destination types: Event vs. List
 
@@ -215,8 +215,8 @@ Engage includes logic to automatically enrich payloads going to these destinatio
 
 If you send events to a destination that requires specific enrichment Segment doesn't already include, [contact Segment](https://segment.com/help/contact/){:target="_blank"}, and we‘ll do our best to address it.
 
-> note ""
-> **Note**: Profiles with multiple identifiers (for example, `user_id` and `email`) will trigger one API call per identifier when the audience or computed trait is first synced to a destination.
+> info ""
+> Profiles with multiple identifiers (for example, `user_id` and `email`) will trigger one API call per identifier when the audience or computed trait is first synced to a destination.
 
 
 ## Multiple identifiers of the same type
@@ -273,10 +273,11 @@ When you create a new Computed Trait or Audience in Engage, you can choose to ca
 > success ""
 > **Why would I disable historical data?** You might want to disable historical data if you're sending a triggered campaign. For example, if you want to send an email confirming a purchase, you _probably_ don't want to email users who bought something months ago, but you *do* want to target current users as they make purchases (and thus enter the audience).
 
-**Note**: The Facebook Custom Audiences Website destination does not accept historical data, and so only uses data from after the moment you configure it.
+> warning ""
+> The Facebook Custom Audiences Website destination does not accept historical data, and so only uses data from after the moment you configure it.
 
 > info ""
-> Use the [Engage settings](/docs/engage/settings/#destinations-settings)){:target="_blank"} to add a destination to your Engage space.
+> Use the [Engage settings](/docs/engage/settings/#destinations-settings){:target="_blank"} to add a destination to your Engage space.
 
 ## Engage compatible Destinations: Event type
 
