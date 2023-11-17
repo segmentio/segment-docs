@@ -19,7 +19,7 @@ You can build an Audience from existing events, traits, computed traits, or othe
 ![Creating an Engage Audience from the conditions list](/docs/engage/images/audience_condition_list.png)
 
 > info ""
-> The `Include anonymous users` checkbox determines which external IDs need to exist on a profile for the user to be included in the audience:
+> The **Include Anonymous Users** checkbox determines which external IDs need to exist on a profile for Segment to include the user in the audience:
 > **Include anonymous users unchecked**: `user_id` or `email` or `android.idfa` or `ios.idfa`
 > **Include anonymous users checked**: `user_id` or `email` or `android.idfa` or `ios.idfa` or `anonymous_id`
 
