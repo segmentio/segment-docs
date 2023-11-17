@@ -9,7 +9,7 @@ You can send your Computed Traits and Audiences to your Segment Destinations, wh
 <!-- TODO: image here? -->
 
 > success ""
-> **Tip!** You can also use the [Profile API](/docs/unify/profile-api/) to activate Engage data programmatically.
+> You can also use the [Profile API](/docs/unify/profile-api/) to activate Engage data programmatically.
 
 ## Engage Destination types: Event vs. List
 
@@ -274,7 +274,11 @@ When you create a new Computed Trait or Audience in Engage, you can choose to ca
 > success ""
 > **Why would I disable historical data?** You might want to disable historical data if you're sending a triggered campaign. For example, if you want to send an email confirming a purchase, you _probably_ don't want to email users who bought something months ago, but you *do* want to target current users as they make purchases (and thus enter the audience).
 
-**Note**: The Facebook Custom Audiences Website destination does not accept historical data, and so only uses data from after the moment you configure it.
+> warning ""
+> The Facebook Custom Audiences Website destination does not accept historical data, and so only uses data from after the moment you configure it.
+
+> info ""
+> Use the [Engage settings](/docs/engage/settings/#destinations-settings){:target="_blank"} to add a destination to your Engage space.
 
 ## Engage compatible Destinations: Event type
 
