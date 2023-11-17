@@ -275,6 +275,9 @@ When you create a new Computed Trait or Audience in Engage, you can choose to ca
 
 **Note**: The Facebook Custom Audiences Website destination does not accept historical data, and so only uses data from after the moment you configure it.
 
+> info ""
+> In order to add a destination to your Engage space you'll need to add this to the [Engage settings]([https://segment.com/contact](https://segment.com/docs/engage/settings/#destinations-settings)){:target="_blank"}.
+
 ## Engage compatible Destinations: Event type
 
 Connect any Cloud-mode destination that supports Identify or Track calls to Engage as an event type destination.
