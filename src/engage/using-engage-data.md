@@ -207,7 +207,6 @@ _See [this doc](https://segment.com/docs/engage/journeys/send-data/#what-do-i-se
 }
 ```
 
-
 ## Additional identifiers
 
 Engage has a flexible identity resolution layer that allows you to build user profiles based on multiple identifiers like `user_id`, `email`, or `mobile advertisingId`. However, different destinations may require different keys, so they can do their own matching and identification. For example, Zendesk requires that you include the `name` property.
@@ -215,9 +214,11 @@ Engage includes logic to automatically enrich payloads going to these destinatio
 
 If you send events to a destination that requires specific enrichment Segment doesn't already include, [contact Segment](https://segment.com/help/contact/){:target="_blank"}, and we‘ll do our best to address it.
 
-> note ""
-> **Note**: Profiles with multiple identifiers (for example, `user_id` and `email`) will trigger one API call per identifier when the audience or computed trait is first synced to a destination.
+> info ""
+> Profiles with multiple identifiers (for example, `user_id` and `email`) will trigger one API call per identifier when the audience or computed trait is first synced to a destination.
 
+> success ""
+> Email as an identifier is set in `traits.email` for Identify calls, and `context.traits.email` for Track calls. 
 
 ## Multiple identifiers of the same type
 
