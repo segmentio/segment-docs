@@ -132,7 +132,7 @@ Additionally, configure the "App Events Fields" object with the required fields:
 * `osVersion`
 
 > info ""
-> The value for the `version` field should be **a2** for Android or **i2** for iOS, per Facebook's documentation [here](https://developers.facebook.com/docs/marketing-api/conversions-api/app-events){:target="_blank"}
+> The value for the **version** field should be `a2` for Android or `i2` for iOS, as stated in [Facebook's documentation](https://developers.facebook.com/docs/marketing-api/conversions-api/app-events){:target="_blank"}.
 
 ![the app data object](images/app_data.png)
 
