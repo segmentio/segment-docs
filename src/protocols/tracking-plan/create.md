@@ -91,18 +91,18 @@ It's best to keep traits optional because Identify and Group are often called an
 
 ### Upload a Tracking Plan
 
-You can make changes to a Tracking Plan by directly uploading a new Tracking Plan CSV to your existing Tracking Plan. Segment provides a template you can use, or you can [download your Tracking Plan](#download-a-tracking-plan) and make changes directly to that CSV file. 
+You can make changes to a Tracking Plan by uploading a Tracking Plan CSV to replace the rules of your existing Tracking Plan. 
 
 > info "Tracking Plans with imported libraries cannot be changed using the Upload a Tracking Plan method"
-> If you have a Tracking Plan with imported libraries, you must make changes directly to your Tracking Plan.
+> If you have a Tracking Plan with imported libraries, you must make changes to your Tracking Plan in the Segment app.
 
-To update a Tracking Plan using a CSV file: 
+To update a Tracking Plan by uploading a CSV file: 
 1. Click **Protocols** in the left navigation bar. 
 2. On the row of the Tracking Plan you want to edit, open the contextual menu(...) and select **View Tracking Plan**.
 3. Select **Edit Tracking Plan**.
 4. Click the **Import...** button and select **From CSV**. 
 5. Download the Tracking Plan template CSV and fill in the template CSV file with your new Tracking Plan rules, or make changes to your [downloaded Tracking Plan](#download-a-tracking-plan).
-6. Once you've filled in the provided template or made changes to your downloaded Tracking Plan, add it to the upload field and click **Upload**.
+6. Once you've filled in the provided template or made changes to your downloaded Tracking Plan, add your CSV file to the file uploader and click **Upload**.
 
 After uploading your CSV file, you are redirected to the Upload & Download History page while the upload is in progress. If the CSV upload fails due to issues with the content of your Tracking Plan, you can download the file `error_report.csv`, which provides you the error in the "Error Details" column of your CSV file. If the upload fails due to issues with the uploaded file itself (a file that is too large, has too many rows, or is not a CSV file, for example), you'll be able to view the error directly in the Reports column. 
 
