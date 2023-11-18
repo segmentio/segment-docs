@@ -42,7 +42,48 @@ To download a Tracking Plan:
 4. Open the Download History page by clicking the link in the toast or clicking the **Download History** tab in the top navigation bar.
 5. Once the file status column indicates that the download was successful, click the link in the File column to download your CSV to your computer. If the file status column shows the download has failed, return to the Tracking Plan Overview page or the Tracking Plan page and try the download again.<br/> The Tracking Plan CSV name has the following format:<br/>`workspaceSlug-trackingPlanName--yyyy-mm-dd--hh-mm-utc`
 
-Once you've downloaded a Tracking Plan, you can use it as a template to make changes to the Tracking Plan, which you can then [upload back to your Tracking Plan](#upload-a-tracking-plan) to directly apply your changes. 
+Once you've downloaded a Tracking Plan, you can [upload it](#upload-a-tracking-plan) as a template for a new Tracking Plan or use it to make changes to an existing Tracking Plan.
+
+## Upload a Tracking Plan
+
+You can create a Tracking Plan or make changes to an existing Tracking Plan by uploading a CSV that contains the rules and events you'd like to track. Segment provides a Tracking Plan template file that you can download during the import process, or you can [download an existing Tracking Plan](#download-a-tracking-plan) to use as your template.
+
+### Create a new Tracking Plan 
+To create a new Tracking Plan by uploading a CSV file: 
+1. Click **Protocols** in the left navigation bar. 
+2. Click **New Tracking Plan**.
+4. Click the **Import...** button and select **From CSV**. 
+5. Download the Tracking Plan template CSV and fill in the template file with your new Tracking Plan rules, or [download an existing Tracking Plan](#download-a-tracking-plan).
+6. Once you've filled in the provided template or made changes to your downloaded Tracking Plan, add your CSV file to the file uploader and click **Upload**.
+
+Any new Tracking Plans created by an uploaded file are reflected in the [Tracking Plan changelog](/docs/protocols/faq/#how-can-i-see-who-made-changes-to-my-tracking-plan) and [Audit Trail](docs/segment-app/iam/audit-trail/).
+
+### Update an existing Tracking Plan
+
+> info "Tracking Plans with imported libraries cannot be changed using the Upload a Tracking Plan method"
+> If you have a Tracking Plan with imported libraries, you must make changes to your Tracking Plan in the Segment app.
+
+To update a Tracking Plan by uploading a CSV file: 
+1. Click **Protocols** in the left navigation bar. 
+2. On the row of the Tracking Plan you want to edit, open the contextual menu(...) and select **View Tracking Plan**.
+3. Select **Edit Tracking Plan**.
+4. Click the **Import...** button and select **From CSV**. 
+5. Download the Tracking Plan template CSV and fill in the template file with your new Tracking Plan rules, or [download an existing Tracking Plan](#download-a-tracking-plan).
+6. Once you've filled in the provided template or made changes to your downloaded Tracking Plan, add your CSV file to the file uploader and click **Upload**.
+
+Any changes made to a Tracking Plan using an uploaded file are reflected in the [Tracking Plan changelog](/docs/protocols/faq/#how-can-i-see-who-made-changes-to-my-tracking-plan) and [Audit Trail](docs/segment-app/iam/audit-trail/).
+
+### Troubleshooting Tracking Plan uploads
+After uploading your CSV file, you are redirected to the Upload & Download History page while the upload is in progress. If the CSV upload fails due to issues with the content of your Tracking Plan, you can download the file `error_report.csv`, which provides you the error in the "Error Details" column of your CSV file. If the upload fails due to issues with the uploaded file itself (a file that is too large, has too many rows, or is not a CSV file, for example), you'll be able to view the error directly in the Reports column. 
+
+Common reasons a CSV upload may fail include: 
+- A filetype other than .csv
+- More than one file uploaded at a time
+- A file that is empty besides the header row
+- A CSV file that exceeds 100,000 rows
+- A CSV file with more than 20,000 rules
+- A CSV file with duplicate headers
+- A CSV file that is larger than 15 mb
 
 ## Delete a Tracking Plan
 
@@ -88,34 +129,6 @@ Segment supports object and array data types in the Tracking Plan editor. These 
 You can define which traits you expect to see passed in Identify or Group calls like how you would add Track calls to the Tracking Plan. Navigate to the **Identify** or **Group** tab in your Tracking Plan and click the **(+)** button to add a new trait.
 
 It's best to keep traits optional because Identify and Group are often called and pass only _new or changed_ traits, because Segment's client-side libraries (analytics.js, Swift, Kotlin) cache traits in local storage. See the [Identify Best Practices](/docs/connections/spec/best-practices-identify#when-and-how-often-to-call-identify) to learn more.
-
-### Upload a Tracking Plan
-
-You can make changes to a Tracking Plan by uploading a CSV to replace the rules of your existing Tracking Plan. 
-
-> info "Tracking Plans with imported libraries cannot be changed using the Upload a Tracking Plan method"
-> If you have a Tracking Plan with imported libraries, you must make changes to your Tracking Plan in the Segment app.
-
-To update a Tracking Plan by uploading a CSV file: 
-1. Click **Protocols** in the left navigation bar. 
-2. On the row of the Tracking Plan you want to edit, open the contextual menu(...) and select **View Tracking Plan**.
-3. Select **Edit Tracking Plan**.
-4. Click the **Import...** button and select **From CSV**. 
-5. Download the Tracking Plan template CSV and fill in the template CSV file with your new Tracking Plan rules, or make changes to your [downloaded Tracking Plan](#download-a-tracking-plan).
-6. Once you've filled in the provided template or made changes to your downloaded Tracking Plan, add your CSV file to the file uploader and click **Upload**.
-
-After uploading your CSV file, you are redirected to the Upload & Download History page while the upload is in progress. If the CSV upload fails due to issues with the content of your Tracking Plan, you can download the file `error_report.csv`, which provides you the error in the "Error Details" column of your CSV file. If the upload fails due to issues with the uploaded file itself (a file that is too large, has too many rows, or is not a CSV file, for example), you'll be able to view the error directly in the Reports column. 
-
-Common reasons a CSV upload may fail include: 
-- A filetype other than .csv
-- More than one file uploaded at a time
-- A file that is empty besides the header row
-- A CSV file that exceeds 100,000 rows
-- A CSV file with more than 20,000 rules
-- A CSV file with duplicate headers
-- A CSV file that is larger than 15 mb
-
-Any changes made to a Tracking Plan through an uploaded file are reflected in the [Tracking Plan changelog](/docs/protocols/faq/#how-can-i-see-who-made-changes-to-my-tracking-plan) and [Audit Trail](docs/segment-app/iam/audit-trail/).
 
 ### Remove a source from your Tracking Plan
 
