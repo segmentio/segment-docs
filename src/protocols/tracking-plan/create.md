@@ -81,7 +81,7 @@ Common reasons a CSV upload may fail include:
 - More than one file uploaded at a time
 - A file that is empty besides the header row
 - A CSV file that exceeds 100,000 rows
-- A CSV file with more than 20,000 rules
+- A CSV file with more than 2,000 rules
 - A CSV file with duplicate headers
 - A CSV file that is larger than 15 mb
 
