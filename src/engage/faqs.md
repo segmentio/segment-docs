@@ -125,6 +125,9 @@ An audience/computed trait Run or a Sync may fail on its first attempt, but Enga
 
 If your team would like to avoid receiving the notifications for transient failures, please **[reach out to support](https://segment.com/help/contact/)**, who upon request can disable transient failure notifications.
 
+## Why is the time condition, such as a rolling time window condition of within last N number of days, configured on a trait not working in my audience?
+
+For time conditions to work on a trait, please check that the date string of the trait is in ISO-8601 format. Further information on the date string requirement is mentioned in [document on Spec: Common Fields regarding timestamp](https://segment.com/docs/connections/spec/common/#timestamps).
 
 ## Why is the user count in a journey step greater than the entry/previous step of the journey?
 
