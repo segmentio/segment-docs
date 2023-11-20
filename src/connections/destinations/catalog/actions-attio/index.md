@@ -3,7 +3,6 @@ title: Attio (Actions) Destination
 hide-boilerplate: true
 id: 64c031541451bb784943f809
 beta: true
-hidden: true
 ---
 
 {% include content/plan-grid.md name="actions" %}
