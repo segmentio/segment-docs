@@ -703,7 +703,7 @@ Plugins are bound by Analytics 2.0 which handles operations such as observabilit
 
 Non-critical plugins run through a timeline that executes in order of insertion based on the entry type. Segment has these four entry types of non-critical plugins:
 
-| Type          | Details                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
+| Type          | Details                                                                                                                                                                                                                                                                                                                                                                                                                   
 | ------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `enrichment`  | Executes as the first level of event processing. These plugins modify an event.  |
 | `destination` | Executes as events begin to pass off to destinations. <br><br> This doesn't modify the event outside of the specific destination, and failure doesn't halt the execution. |
