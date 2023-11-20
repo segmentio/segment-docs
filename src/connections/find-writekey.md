@@ -2,22 +2,23 @@
 title: Locate your Write Key
 ---
 
-The write key is a unique identifier for each Source. It lets Segment know which Source is sending the data, and which destinations should receive that data.
+The write key is a unique identifier for each source. It lets Segment know which source is sending the data and which destinations should receive that data.
 
-To find a  write key, you first need to create a non-Cloud Source such as a website, server, or mobile source. ([Cloud-sources](/docs/connections/sources/abou![Uploading Screenshot 2023-11-13 at 10.34.20 AM.png…]()
-t-cloud-sources/) do not have write keys, as they use a token or key from your account with that service.)
+## Find the write key for a source
 
-Then, in the Source, go to "Settings', and then go to "API Keys".
+To find a write key, you first need to create an [event streams source](/docs/connections/sources/#event-streams-sources) like a website, server, or mobile source. ([Cloud-sources](/docs/connections/sources/about-cloud-sources/) do not have write keys, as they use a token or key from your account with that service.)
+
+Then, in the Source, go to **Settings** and select **API Keys**.
 
 ![Screenshot showing the Settings page of a web source, with the API Keys tab selected.](images/find_writekey.png)
 
-Now you can add the Source's write key in your app, and begin sending us data.
+Now you can add the source's write key to your app and begin sending data to Segment.
 
-### How to locate the source by Write Key
-To find the source for a write key within your workspace, first navigate to the <b>Connections</b> on the left panel of your workspace. Then on the top right of the screen and select the magnifying glass icon to search your workspace. 
-<img width="1771" alt="Screenshot 2023-11-13 at 10 41 44 AM" src="https://github.com/segmentio/segment-docs/assets/52050659/2a0d0e03-0f90-4a29-a150-44cd2f7f3ace">
+## Locate a source using your write key
 
-Type your write key into the search bar. If the write key exisits in the workspace, it will show up under the search bar with a link to the source. 
-<img width="640" alt="Screenshot 2023-11-13 at 10 43 55 AM" src="https://github.com/segmentio/segment-docs/assets/52050659/f73849dd-c66e-4ade-82ea-4266c8790711">
+To find the source given a write key within your workspace, open your workspace and select the search icon. Enter your write key into the search bar. If the write key exists in the workspace and is connected to a source, the source shows up in the list of results. 
 
-<b> Please note this function is only available to locate the write key. Using this search to find source ID or destination will not work using this process. </b>
+![Screenshot of the in-app search function, with a Javascript source named My Website in the list of search results.](images/find-source-using-write-key.png)
+
+> info "This method is only available to locate event streams sources"
+> This method cannot be used to find a destination or cloud event source.
