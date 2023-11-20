@@ -18,6 +18,11 @@ You can build an Audience from existing events, traits, computed traits, or othe
 
 ![Creating an Engage Audience from the conditions list](/docs/engage/images/audience_condition_list.png)
 
+> info ""
+> The **Include Anonymous Users** checkbox determines which external IDs need to exist on a profile for Segment to include the user in the audience:
+> - **Include Anonymous Users** not selected: `user_id`, `email`, `android.idfa`, or `ios.idfa`
+> - **Include Anonymous Users** selected: `user_id`, `email`, `android.idfa`, `ios.idfa`, or `anonymous_id`
+
 ### Events
 
 You can build an Audience from any events that are connected to Engage, including [Track](/docs/connections/spec/track), [Page](/docs/connections/spec/page), and [Screen](/docs/connections/spec/screen) calls. You can use the `property` button to refine the audience on specific event properties, as well. 
@@ -34,6 +39,9 @@ You can also specify two different types of time-windows, `within` and `in betwe
 ### Custom Traits
 
 You can also build Audiences based on custom traits. These traits can be collected from your apps when a user completes a form or signs up using an [Identify](/docs/connections/spec/identify) call. You can view these traits in the Profile explorer, as well. Custom Traits are mutable and update to the latest value seen by the user's Identify events.
+
+> info ""
+> When an audience that previously generated Identify events is deleted, the data for the audience key is still attached to profiles that entered the audience, and becomes visible in Segment as a custom trait.
 
 ### Computed Traits
 
@@ -228,6 +236,9 @@ Note the following limits for the CSV downloader:
 
 > info ""
 > Generating a CSV can take a substantial amount of time for large audiences. After you generate the CSV file, leave the modal window open while Segment creates the file. (If the audience recalculates between when you click Generate and when you download the file, you might want to regenerate the file. The CSV is a snapshot from when you clicked Generate, and could be outdated.)
+
+> warning ""
+> You can't add account traits and identifiers using the CSV downloader with account level audiences. This is because every row listed in the CSV file is a user, and since account traits and identifiers only exist on accounts, they wouldn't exist as a user's custom trait and appear on the CSV.
 
 ## Identifier Breakdown
 

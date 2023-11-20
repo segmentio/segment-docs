@@ -356,6 +356,8 @@ sections:
     title: Profile API
   - path: /unify/debugger
     title: Profile Debugger
+  - path: /unify/insights
+    title: Profiles Insights
   - path: /unify/unify-gdpr
     title: Unify and GDPR
   - path: /unify/faqs
