@@ -2,6 +2,9 @@
 title: Linked Events
 beta: true
 plan: unify
+redirect_from:
+ - '/unify/linked-profiles'
+ - '/unify/linked-profiles/setup-guides'
 ---
 
 > info "Linked Events is in private beta"

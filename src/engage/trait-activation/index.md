@@ -2,6 +2,8 @@
 title: Trait Activation Overview
 beta: true
 plan: engage-foundations
+redirect_from: 
+- 'engage/trait-activation/overview'
 ---
 
 Use Trait Activation to configure sync payloads that you send from Engage Audiences and Journeys to a Destination. Map traits from user profiles to Destinations, configure identifiers to sync, and choose a sync strategy that fits your use cases. 
