@@ -3,6 +3,7 @@ title: Unify Overview
 plan: unify
 redirect_from:
   - '/engage/profiles/'
+  - '/unify/traits/'
 ---
 
 Use Segment Unify, formerly known as Profiles, for a complete view of your customers.
