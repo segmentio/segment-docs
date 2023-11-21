@@ -6,6 +6,10 @@ sources:
     override: "roku"
   - original: "shopify-by-littledata"
     override: "shopify-littledata"
+  - original: "shopify---powered-by-fueled"
+    override: "shopify-fueled"
+  - original: "alloy-flow"
+    override: "alloyflow"
 destinations:
   - original: "vwo-cloud-mode-actions"
     override: "actions-vwo-cloud"
@@ -123,3 +127,6 @@ destinations:
     override: "actions-algolia-insights"
   - original: "iterable-actions"
     override: "actions-iterable"
+  - original: "listrak-actions"
+    override: "actions-listrak"
+

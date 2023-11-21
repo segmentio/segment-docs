@@ -21,4 +21,4 @@ Paste into your Destination page:
 
 ## Features
 
-You can see what [data fields Lytics pulls in by default](https://admin.lytics.io/#/documentation/jstag).
+You can see what [data fields Lytics pulls in by default](https://admin.lytics.io/#/documentation/jstag){:target="_blank"}.

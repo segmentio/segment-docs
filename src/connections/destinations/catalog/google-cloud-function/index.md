@@ -7,7 +7,7 @@ id: 5cbe24b1d07261000146ab55
 ---
 Segment makes it easy to send your data to Google Cloud Function (and lots of other destinations). Once you collect your data using Segment's [open source libraries](/docs/connections/sources/catalog/), Segment translates and routes your data to Google Cloud Function in a format it can use.
 
-[Google Cloud Function](https://cloud.google.com/functions) is a lightweight compute solution for developers to create single-purpose, stand-alone functions that respond to Cloud events without the need to manage a server or runtime environment.
+[Google Cloud Function](https://cloud.google.com/functions){:target="_blank"} is a lightweight compute solution for developers to create single-purpose, stand-alone functions that respond to Cloud events without the need to manage a server or runtime environment.
 
 {% include content/beta-note.md %}
 
@@ -48,4 +48,4 @@ Once you create the Google Cloud Function, you can set up a Segment destination 
 | Setting                | Description                                                                                                                                                                                                                                                           |
 | ---------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | **HTTP Trigger**       | The URL given under the `Trigger` section when you created the Google Cloud Function.                                                                                                                                                                                 |
-| **API Key** (optional) | A string to identify that a request is coming from Segment, if required by the function. <br><br>The API key is injected in the `Authorization` header as a [basic authorization header](https://en.wikipedia.org/wiki/Basic_access_authentication) without password. |
+| **API Key** (optional) | A string to identify that a request is coming from Segment, if required by the function. <br><br>The API key is injected in the `Authorization` header as a [basic authorization header](https://en.wikipedia.org/wiki/Basic_access_authentication){:target="_blank"} without password. |

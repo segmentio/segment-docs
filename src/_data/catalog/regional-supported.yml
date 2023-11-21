@@ -38,6 +38,15 @@ sources:
       - eu
     endpoints:
       - us
+  - id: DY0B0Q2Gce
+    display_name: Alloy Flow
+    hidden: false
+    slug: alloy-flow
+    url: connections/sources/catalog/cloud-apps/alloy-flow
+    regions:
+      - us
+    endpoints:
+      - us
   - id: GNLT5OQ45P
     display_name: Amazon S3
     hidden: false
@@ -221,6 +230,15 @@ sources:
     hidden: false
     slug: elastic-path
     url: connections/sources/catalog/cloud-apps/elastic-path
+    regions:
+      - us
+    endpoints:
+      - us
+  - id: NC2jsEkA8Y
+    display_name: Elastic Path CX Studio
+    hidden: false
+    slug: elastic-path-cx-studio
+    url: connections/sources/catalog/cloud-apps/elastic-path-cx-studio
     regions:
       - us
     endpoints:
@@ -638,15 +656,6 @@ sources:
       - us
     endpoints:
       - us
-  - id: o9OyD6xsVJ
-    display_name: OneSignal
-    hidden: false
-    slug: onesignal
-    url: connections/sources/catalog/cloud-apps/onesignal
-    regions:
-      - us
-    endpoints:
-      - us
   - id: QhEUZnE5uF
     display_name: OneTrust
     hidden: false
@@ -860,6 +869,15 @@ sources:
     hidden: false
     slug: shopify-littledata
     url: connections/sources/catalog/libraries/website/shopify-littledata
+    regions:
+      - us
+    endpoints:
+      - us
+  - id: 57hcOLuW6Q
+    display_name: Shopify - Powered by Fueled
+    hidden: false
+    slug: shopify---powered-by-fueled
+    url: connections/sources/catalog/cloud-apps/shopify---powered-by-fueled
     regions:
       - us
     endpoints:

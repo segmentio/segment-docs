@@ -5,7 +5,7 @@ beta: true
 hidden: true
 ---
 
-[Salesforce DMP](https://konsole.zendesk.com/hc/en-us) allows website operators
+[Salesforce DMP](https://konsole.zendesk.com/hc/en-us){:target="_blank"} allows website operators
 to create a holistic databank to organize, taxonomize and make their full range
 of audience information actionable. It allows them to model, define and manage
 audience segments to improve content delivery and advertising revenue.
@@ -13,7 +13,7 @@ audience segments to improve content delivery and advertising revenue.
 _**NOTE:** Salesforce DMP is currently in beta. This means that there may still be some bugs for
 us to iron out. If you are interested in joining or have any feedback to help
 us improve the Salesforce DMP Destination and its documentation,
-[let us know](https://segment.com/help/contact)!_
+[let us know](https://segment.com/help/contact){:target="_blank"}!_
 
 ## Getting Started
 
@@ -52,7 +52,7 @@ If you don't provide a `namespace` Segment can't pass events downstream to SFDMP
 
 6. To set up SFDMP for a server-side connection, enter your SFDMP `Server-side
    Publisher UUID`. To locate this, we recommend that you contact your SFDMP representative. Helpful documentation can be found
-   [here](https://konsole.zendesk.com/hc/en-us/articles/219493027-Mobile-HTTP-API).
+   [here](https://konsole.zendesk.com/hc/en-us/articles/219493027-Mobile-HTTP-API){:target="_blank"}.
 7. Once you've retrieved your `Server-side Publisher UUID`, follow the
    instructions in the Segment SFDMP settings to enter your `Pixel.gif Domain`,
    `Pixel.gif Site` and, optionally, your `Pixel.gif Section` in the correct

@@ -96,32 +96,34 @@ To create a mapping:
 1. Navigate to **Conections > Destinations** and select the **Reverse ETL** tab.
 2. Select the destination that you want to create a mapping for.  
 3. Click **Add Mapping**.
-2. Select the model to sync from.
-3. Select the **Action** you want to sync and click **Next**.
+4. Select the model to sync from.
+5. Select the **Action** you want to sync and click **Next**.
       * Actions determine the information sent to the destination. The list of Actions will be unique to each destination.
-4. In the **Select record to map and send** section, select which records to send to your destination after Segment completes extracting data based on your model. You can choose from:
+6. In the **Select record to map and send** section, select which records to send to your destination after Segment completes extracting data based on your model. You can choose from:
       * Added records
       * Updated records
       * Added or updated records
       * Deleted records
-5. Select a test record to preview the fields that you can map to your destination in the **Add test record** field.
-6. Select the **Schedule type** for the times you want the data to be extracted from your warehouse. You can choose from:
+7. Select a test record to preview the fields that you can map to your destination in the **Add test record** field.
+8. Select the Schedule type for the times you want the model’s data to be extracted from your warehouse. You can choose from:
     * **Interval**: Extractions perform based on a selected time cycle.
     * **Day and time**: Extractions perform at specific times on selected days of the week.
-7. Select how often you want the schedule to sync in **Schedule configuration**.
+9. Select how often you want the schedule to sync in **Schedule configuration**.
     * For an **Interval** schedule type, you can choose from: 15 minutes, 30 minutes, 1 hour, 2 hours, 4 hours, 6 hours, 8 hours, 12 hours, 1 day.
         * 15 minutes is considered real-time for warehouse syncs
-    * For a **Day and time** schedule type, you can choose the day(s) you’d like the schedule to sync as well as the time. You can only choose to sync the extraction at the top of the hour.
-8. Define how to map the record columns from your model to your destination in the **Select Mappings** section.
-      * You map the fields that come from your source, to fields that the destination expects to find. Fields on the destination side depend on the type of action selected.
-      * If you're setting up a destination action, depending on the destination, some mapping fields may require data to be in the form of an object or array. See the [supported objects and arrays for mapping](#supported-object-and-arrays).
-9. *(Optional)* Send a test record to verify the mappings correctly send to your destination. 
-9. Click **Save Mapping**.
-10. Select the destination you’d like to enable the mapping for under **Connections > Destinations > Reverse ETL**. 
-11. Turn the toggle on for the **Mapping Status**. Events that match the trigger condition in the mapping will be sent to the destination.
+    * For a **Day and time** schedule type, you can choose the day(s) you’d like the schedule to sync as well as the time.
+        * You can only choose to start the extraction at the top of the hour.
+        * Scheduling multiple extractions to start at the same time inside the same data warehouse causes extraction errors.
+10. Define how to map the record columns from your model to your destination in the **Select Mappings** section.
+    * You map the fields that come from your source, to fields that the destination expects to find. Fields on the destination side depend on the type of action selected.
+    * If you're setting up a destination action, depending on the destination, some mapping fields may require data to be in the form of an object or array. See the [supported objects and arrays for mapping](#supported-object-and-arrays).
+11. *(Optional)* Send a test record to verify the mappings correctly send to your destination.
+12. Click **Create Mapping**.
+13. Select the destination you’d like to enable on the **My Destinations** page under **Reverse ETL > Destinations**.
+14. Turn the toggle on for the **Mapping Status**. Events that match the trigger condition in the mapping will be sent to the destination.
     * If you disable the mapping state to the destination, events that match the trigger condition in the mapping won’t be sent to the destination.
 
-To add multiple mappings from your warehouse to your destination, repeat steps 1-9 above.
+To add multiple mappings from your warehouse to your destination, repeat steps 1-13 above.
 
 ## Using Reverse ETL
 After you've followed [all four steps](/docs/connections/reverse-etl/#getting-started) and set up your source, model, destination, and mappings for Reverse ETL, your data will extract and sync to your destination(s) right away if you chose an interval schedule. If you set your data to extract at a specific day and time, the extraction will take place then.
@@ -177,6 +179,9 @@ To get started with using Reverse ETL for subscriptions:
 
 ## Record diffing
 Reverse ETL computes the incremental changes to your data directly within your data warehouse. The Unique Identifier column is used to detect the data changes, such as new, updated, and deleted records.
+
+> info "Delete Records Payload"
+> The only value passed for deleted records is its unique ID which can be accessed as `__segment_id`. 
 
 In order for Segment to compute the data changes within your warehouse, Segment needs to have both read and write permissions to the warehouse schema table. At a high level, the extract process requires read permissions for the query being executed. Segment keeps track of changes to the query results through tables that Segment manages in a dedicated schema (for example, `_segment_reverse_etl`), which requires some write permissions.
 
@@ -293,3 +298,8 @@ Column count | The maximum number of columns a single sync will process. | 512 c
 Column name length | The maximum length of a record column. | 128 characters
 Record JSON size | The maximum size for a record when converted to JSON (some of this limit is used by Segment). | 512 KiB
 Column JSON size | The maximum size of any single column value. | 128 KiB
+
+## FAQs
+
+#### Why do my sync results show *No records extracted* when I select *Updated records* after I enable the mapping? 
+It's expected that when you select **Updated records** the records do not change after the first sync. During the first sync, the reverse ETL system calculates a snapshot of all the results and creates records in the `_segment_reverse_etl` schema. All the records are considered as *Added records* instead of *Updated records* at this time. The records can only meet the *Updated records* condition when the underlying values change after the first sync completes.
