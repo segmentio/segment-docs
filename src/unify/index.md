@@ -48,8 +48,9 @@ With the Profile explorer, you have a complete view of your customers.
 > info ""
 > If you're using Engage, use the Profile explorer to view audiences, traits, journey membership, and [subscription states](/docs/engage/user-subscriptions/) for email and phone numbers.
 
-## Enrich profiles with traits
-Add detail to user profiles with new traits and use them to power personalized marketing campaigns. You can add new traits to your user or account profiles in Unify using:
+## Enrich profiles with traits 
+
+With Unify Plus, you can add detail to user profiles with new traits and use them to power personalized marketing campaigns. You can add new traits to your user or account profiles using:
 
 - [**Computed Traits:**](/docs/unify/traits/computed-traits/) Use the Unify drag-and-drop interface to build per-user (B2C) or per-account (B2B) metrics on user profiles (for example, “lifetime value” or “lead score”).
 - [**SQL Traits:**](/docs/unify/traits/sql-traits/) Run custom queries on your data warehouse using the Unify SQL editor, and import the results into Segment. With SQL Traits, you can pull rich, uncaptured user data back into Segment.
