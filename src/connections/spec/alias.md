@@ -2,7 +2,7 @@
 title: 'Spec: Alias'
 ---
 
-The Alias method is used to merge two unassociated user identities, effectively connecting two sets of user data as one. This is an advanced method used to manage user identities in some of Segment's destinations. Segment usually handles aliasing automatically when you call [Identify](/docs/connections/spec/identify/) on a user, however some tools require an explicit Alias call.
+The Alias method is an advanced method used to merge two unassociated user identities, effectively connecting two sets of user data in one profile. 
 
 > info "Alias is an advanced method"
 > The Alias method allows you to explicitly change the ID of a tracked user. This should only be done when it's required for downstream destination compatibility. See the [Best Practices for Identifying Users](/docs/guides/how-to-guides/best-practices-identify/) docs for more information.
@@ -13,7 +13,7 @@ The Alias method is used to merge two unassociated user identities, effectively 
 - [Mixpanel](/docs/connections/destinations/catalog/mixpanel#alias)
 - [Vero](/docs/connections/destinations/catalog/vero#alias)
 
- TODO: ask if these are the only destinations that use it/if it is REQUIRED for any destination to use this method --->
+ TODO: do more research on if this is required anywhere anymore. --->
 
 ## Syntax
 
@@ -42,13 +42,14 @@ Here's the payload of a basic Alias call that will associate this user's existin
 }
 ```
 
-If you're instrumenting a website, the Anonymous ID is generated in the browser so you must call Alias from the client-side. If you're using a server-side session ID as the Anonymous ID, then you must Alias from the server-side.
-
 Here's the corresponding JavaScript event that would generate the above payload. If you're using Segment's JavaScript library, Segment automatically passes in the user's `anonymousId` as `previousId` for you:
 
 ```js
 analytics.alias("507f191e81");
 ```
+
+If you're instrumenting a website, the Anonymous ID is generated in the browser so you must call Alias from the client-side. If you're using a server-side session ID as the Anonymous ID, then you must Alias from the server-side.
+
 
 {% include content/syntax-note.md %}
 
