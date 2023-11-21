@@ -41,8 +41,8 @@ sources:
   - id: DY0B0Q2Gce
     display_name: Alloy Flow
     hidden: false
-    slug: alloy-flow
-    url: connections/sources/catalog/cloud-apps/alloy-flow
+    slug: alloyflow
+    url: connections/sources/catalog/cloud-apps/alloyflow
     regions:
       - us
     endpoints:
@@ -876,8 +876,8 @@ sources:
   - id: 57hcOLuW6Q
     display_name: Shopify - Powered by Fueled
     hidden: false
-    slug: shopify---powered-by-fueled
-    url: connections/sources/catalog/cloud-apps/shopify---powered-by-fueled
+    slug: shopify-fueled
+    url: connections/sources/catalog/cloud-apps/shopify-fueled
     regions:
       - us
     endpoints:
