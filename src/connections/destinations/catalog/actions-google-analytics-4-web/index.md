@@ -37,7 +37,7 @@ With custom parameters, you must create [custom dimensions and metrics](https://
 
 ### Custom Events
 
-Before you create a custom event, make sure the event you want to create isn't already collected through an [automatically collected event](https://support.google.com/analytics/answer/9234069?sjid=7831609405656395105-NA){:target="_blank"} or recommended as a [recommended event](https://support.google.com/analytics/answer/9267735?sjid=7831609405656395105-NA){:target="_blank"}. It's always better to use an existing event because these events automatically populate dimensions and metrics that are used in your reports.
+Before you create a custom event, make sure the event you want to create isn't already collected through an [automatically collected event](https://support.google.com/analytics/answer/9234069?sjid=7831609405656395105-NA){:target="_blank"} or recommended as a [recommended event](https://support.google.com/analytics/answer/9267735?sjid=7831609405656395105-NA){:target="_blank"}. Segment recommends using an existing event, because these events automatically populate dimensions and metrics that are used in your reports.
 
 Google Analytics 4 does not accept custom event names that include spaces. Segment replaces spaces in the Event Name in the Custom Event action with an underscore. As a result, you will see custom events snake cased in Google Analytics 4.
 
