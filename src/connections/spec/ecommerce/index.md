@@ -78,7 +78,7 @@ Property        | Type   | Description
 
 ## Viewed Product
 
-The second special event to record for an Ecommerce installation is 'Viewed Product'. To record that you'll use a Track call.This event fires when a visitor views a product. That view might happen on a page, screen, or preview modal.
+The second special event to record for an Ecommerce installation is 'Viewed Product'. To record that you'll use a Track call. This event fires when a visitor views a product. That view might happen on a page, screen, or preview modal.
 
 Note that the properties are required to tell individual tools, like Google Analytics, about the specific product that was viewed. You can always add your own custom properties as well.
 

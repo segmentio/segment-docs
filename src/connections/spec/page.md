@@ -4,7 +4,7 @@ redirect_from:
   - '/spec/page'
 ---
 
-The Pageall lets you record whenever a user sees a page of your website, along with any optional properties about the page. Calling Page or [Screen](/docs/connections/spec/screen/) in a Segment [source](/docs/connections/sources/) is one of the first steps to getting started with Segment.
+The Page call lets you record whenever a user sees a page of your website, along with any optional properties about the page. Calling Page or [Screen](/docs/connections/spec/screen/) in a Segment [source](/docs/connections/sources/) is one of the first steps to getting started with Segment.
 
 {% include components/reference-button.html href="https://university.segment.com/introduction-to-segment/299969?reg=1&referrer=docs" icon="media/academy.svg" title="Segment University: The Page Method" description="Check out our high-level overview of the Page method in Segment University. (Must be logged in to access.)" %}
 
