@@ -2,7 +2,7 @@
 title: 'Spec: Alias'
 ---
 
-The Alias method is used to merge two unassociated user identities, effectively connecting two sets of user data as one. This is an advanced method, but it is required to manage user identities successfully in some of Segment's destinations. Segment usually handles aliasing automatically when you call Identify on a user, however some tools require an explicit Alias call.
+The Alias method is used to merge two unassociated user identities, effectively connecting two sets of user data as one. This is an advanced method used to manage user identities in some of Segment's destinations. Segment usually handles aliasing automatically when you call [Identify](/docs/connections/spec/identify/) on a user, however some tools require an explicit Alias call.
 
 > info "Alias is an advanced method"
 > The Alias method allows you to explicitly change the ID of a tracked user. This should only be done when it's required for downstream destination compatibility. See the [Best Practices for Identifying Users](/docs/guides/how-to-guides/best-practices-identify/) docs for more information.
