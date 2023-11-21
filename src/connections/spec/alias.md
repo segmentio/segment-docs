@@ -75,7 +75,7 @@ Here's a complete example of an `alias` call:
 
 ## Previous ID
 
-The `previousId` is the existing ID you've referred to the user by. It might be an Anonymous ID assigned to that user or a User ID you previously identified them with using our [`identify`](/docs/connections/spec/identify/) call.
+The `previousId` is the existing ID you've referred to the user by. It might be an Anonymous ID assigned to that user or a User ID you previously identified them with using our [Identify](/docs/connections/spec/identify/) call.
 
 ## User ID
 
