@@ -1,5 +1,7 @@
 ---
 title: Upollo Destination
+id: 62fc4ed94dd68d0d189dc9b2
+beta: true
 ---
 
 [Upollo](https://upollo.ai?utm_source=segmentio&utm_medium=docs&utm_campaign=partners){:target="_blank"} gives unique and actionable insights that lead to conversion, retention, and expansion.
@@ -13,8 +15,9 @@ This destination is maintained by Upollo. For any issues with the destination, [
 ## Getting started
 
 1. From the [Upollo Connections screen](https://app.upollo.ai/settings/connections), in the Segment connection, click **Configure**
-2. Under **I am not a Segment workspace admin**, click **Connect**
-3. Choose which Source should send data to the Upollo destination.
+2. You will be redirected to Segment to login if you are not already
+3. Choose the workspace and source from which you want to send data to Upollo.
+4. Click "Authorize," and the destination will be created.
 
 ## Supported methods
 
