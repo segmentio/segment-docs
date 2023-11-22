@@ -47,3 +47,22 @@ If you use Protocols, the Segment app automatically adds the Segment Consent Pre
 > Segment has standardized a series of reserved event names that have special semantic meaning and maps these events to tools that support them.
 >
 > See the [Semantic Events](/docs/connections/spec/semantic/) docs for more details.
+
+## Profile-level conflicts
+
+You might encounter a profile with a consent value of `conflict` if one of your end users consents to different categories on different devices or if two distinct IDs are linked to one Unify profile.
+
+### Device conflicts
+A device conflict occurs when consent for one user ID is collected from two distinct devices. For example, if a user consented to all categories on their mobile phone, but consented only to essential categories on their desktop computer, their profile in [Unify](/docs/unify/) would have a consent value of `conflict`.
+
+Device-level conflicts do not exist on the profile directly because they are always resolved by one of two strategies: 
+
+- **Latest Wins**: Segment sets the consent preferences to the most recent consent preferences collected from a user ID.
+- **Resolve False**: Segment automatically sets consent to `false` if a consent conflict exists for a consent category.
+
+<!-- TODO: fix this---> You can select a device-level conflict resolution strategy by navigating to <xyz> and selecting **Latest Wins** or **Resolve False**. 
+
+### Profile conflicts
+A profile-level conflict occurs when two distinct IDs with different consent preferences are linked to the same Unify profile. A profile-level conflict can also occur when a userID and an anonymousID (one without a linked userID) are linked to the same profile by an external ID, like an email address or phone number, and the consent preferences of both profiles do not match. 
+
+To avoid profile conflicts, Segment recommends that you configure your profiles to avoid sharing anonymous identifiers, and limit the traits collected during anonymous browsing sessions.  
