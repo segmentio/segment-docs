@@ -219,3 +219,7 @@ After you start sending events, you should start seeing them in twenty minutes. 
 
 [Facebook](https://developers.facebook.com/docs/marketing-api/conversions-api/parameters/external-id/){:target="_blank"} allows you to send one External ID per payload as a string, or multiple per payload in an array of External ID strings. Send an array of External IDs through Segment by mapping an array to the `externalId` field when setting up your Actions mappings.
 
+### Not seeing events in Facebook
+
+Facebook releases updates to its platform regularly. Those updates will sometimes include new requirements for use of the Conversions API. Please check here: https://developers.facebook.com/docs/graph-api/changelog/version13.0 to keep up to date. A notable update pertaining to the Conversions API was v13.0, so take a look for additional requirements there and in any newer versions.
+
