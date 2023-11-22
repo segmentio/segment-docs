@@ -62,7 +62,7 @@ Device-level conflicts do not exist on the profile directly because they are alw
 
 <!-- TODO: fix this---> 
 
-You can select a device-level conflict resolution strategy by navigating to <xyz> and selecting **Latest Wins** or **Resolve False**. 
+You can select a device-level conflict resolution strategy by navigating to the `$fix_this` page and selecting **Latest Wins** or **Resolve False**. 
 
 ### Profile conflicts
 A profile-level conflict occurs when two distinct IDs with different consent preferences are linked to the same Unify profile. A profile-level conflict can also occur when a userID and an anonymousID (one without a linked userID) are linked to the same profile by an external ID, like an email address or phone number, and the consent preferences of both profiles do not match. 
