@@ -2,7 +2,7 @@
 title: 'Spec: Alias'
 ---
 
-The Alias method is an advanced method used to merge two unassociated user identities, effectively connecting two sets of user data in one profile. 
+The Alias method is an advanced method used to merge 2 unassociated user identities, effectively connecting 2 sets of user data in one profile. 
 
 > info "Alias is an advanced method"
 > The Alias method allows you to explicitly change the ID of a tracked user. This should only be done when it's required for downstream destination compatibility. See the [Best Practices for Identifying Users](/docs/guides/how-to-guides/best-practices-identify/) docs for more information.
@@ -48,7 +48,7 @@ Here's the corresponding JavaScript event that would generate the above payload.
 analytics.alias("507f191e81");
 ```
 
-If you're instrumenting a website, the Anonymous ID is generated in the browser so you must call Alias from the client-side. If you're using a server-side session ID as the Anonymous ID, then you must Alias from the server-side.
+If you're instrumenting a website, the Anonymous ID is generated in the browser so you must call Alias from the client-side. If you're using a server-side session ID as the Anonymous ID, then you must call Alias from the server-side.
 
 
 {% include content/syntax-note.md %}
