@@ -60,7 +60,9 @@ Device-level conflicts do not exist on the profile directly because they are alw
 - **Latest Wins**: Segment sets the consent preferences to the most recent consent preferences collected from a user ID.
 - **Resolve False**: Segment automatically sets consent to `false` if a consent conflict exists for a consent category.
 
-<!-- TODO: fix this---> You can select a device-level conflict resolution strategy by navigating to <xyz> and selecting **Latest Wins** or **Resolve False**. 
+<!-- TODO: fix this---> 
+
+You can select a device-level conflict resolution strategy by navigating to <xyz> and selecting **Latest Wins** or **Resolve False**. 
 
 ### Profile conflicts
 A profile-level conflict occurs when two distinct IDs with different consent preferences are linked to the same Unify profile. A profile-level conflict can also occur when a userID and an anonymousID (one without a linked userID) are linked to the same profile by an external ID, like an email address or phone number, and the consent preferences of both profiles do not match. 
