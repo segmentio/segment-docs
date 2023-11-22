@@ -38,10 +38,8 @@ Your client experience manager will then provide you with a Movable Ink endpoint
 
 ## Select events and event properties to stream to Movable Ink
 
-1. Navigate to the 'Mappings' section and create a new mapping.
-2. Choose the events to be sent:
-- Select the events you’d like to send to Movable Ink by adding or removing any event types (ex. Track, Identify, etc.) you’d like to send. 
-- Optionally, specify events using 'Add Condition' and rules based on Event Names.
+1. There is only one Action available with this destination, "Send Entire Event". To configure this Action, navigate to the 'Mappings' section of your destination.
+2. Select 'Edit Mapping' and tailor the events you wish to send by adding or removing conditions that trigger this Action.
 3. Preview the data:
 - Load a test event from the source or use a sample event for data preview.
 - Map specific fields (optional):
