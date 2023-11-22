@@ -79,11 +79,3 @@ Here's a complete example of an Alias call:
   "version": "1.1"
 }
 ```
-
-## Previous ID
-
-The `previousId` is the existing ID you've referred to the user by. It might be an Anonymous ID assigned to that user or a User ID you previously identified them with using our [Identify](/docs/connections/spec/identify/) call.
-
-## User ID
-
-The `userId` is a string that will be the user's new identity, or an existing identity that you wish to merge with the `previousId`. See the [User ID docs](/docs/connections/spec/identify#user-id) for more detail.
