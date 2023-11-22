@@ -36,7 +36,7 @@ Example:
   ALTER TABLE segment_prod.identifies ALTER COLUMN account_id TYPE VARCHAR(1024);
 ```
 > warning ""
-> Increasing the default size can impact query performance as it needs to process more data to accomodate the increased column size. See [Amazon's Redshift Documentation](https://docs.aws.amazon.com/redshift/latest/dg/c_best-practices-smallest-column-size.html) for more details.
+> Increasing the default size can impact query performance as it needs to process more data to accommodate the increased column size. See [Amazon's Redshift Documentation](https://docs.aws.amazon.com/redshift/latest/dg/c_best-practices-smallest-column-size.html) for more details.
 
 ## Blocklisted track call properties
 
