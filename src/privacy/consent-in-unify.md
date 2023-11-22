@@ -65,4 +65,4 @@ Device-level conflicts do not exist on the profile directly because they are alw
 ### Profile conflicts
 A profile-level conflict occurs when two distinct IDs with different consent preferences are linked to the same Unify profile. A profile-level conflict can also occur when a userID and an anonymousID (one without a linked userID) are linked to the same profile by an external ID, like an email address or phone number, and the consent preferences of both profiles do not match. 
 
-To avoid profile conflicts, Segment recommends that you configure your profiles to avoid sharing anonymous identifiers, and limit the traits collected during anonymous browsing sessions.  
+To avoid profile conflicts, Segment recommends that you configure your profiles to avoid sharing anonymous identifiers, and limit the traits collected during anonymous browsing sessions. 
