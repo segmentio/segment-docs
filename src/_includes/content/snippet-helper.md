@@ -98,4 +98,33 @@
 ```
 {% endcodeexampletab %}
 
+{% codeexampletab npm %}
+1. Install the analytics package
+```sh 
+# npm
+npm install @segment/analytics-next
+
+# yarn
+yarn add @segment/analytics-next
+
+# pnpm
+pnpm add @segment/analytics-next
+```
+
+2. Import and initialize analytics
+```js
+import { AnalyticsBrowser } from '@segment/analytics-next'
+
+export const analytics = AnalyticsBrowser.load({ writeKey: 'YOUR_WRITE_KEY' })
+
+// or 
+
+export const analytics = new AnalyticsBrowser()
+analytics.load({ writeKey: 'YOUR_WRITE_KEY' })
+```
+
+For more initialization patterns and general information on `@segment/analytics-next`, see the repository's [README](https://github.com/segmentio/analytics-next/tree/master/packages/browser){:target="_blank"}
+
+{% endcodeexampletab %}
+
 {% endcodeexample %}
