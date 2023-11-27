@@ -152,7 +152,7 @@ After you’ve added Enrichments, test and save your enrichments.
 > warning ""
 > At this time, when you select mappings or test events, you won’t see enrichment data. Enrichment data is only available with real events.
 
-## Frequently asked questions
+## FAQs
 
 #### What data warehouse permissions does Segment require? 
 
