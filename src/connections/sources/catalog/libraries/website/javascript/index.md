@@ -447,6 +447,11 @@ This method emits events _before_ they are processed by the Segment integration,
 > note "Note"
 > Page event properties are stored in the `options` object.
 
+Another useccase for the on method is to listen for event and then fire. For example, if a customer wants to retrieve the user or the anonymous Id right after AJS initialisation, then they can do the following:
+
+```js
+analytics.on(‘initialize’, function() { this.getAnonymousId() })
+```
 
 ### Extending timeout
 
