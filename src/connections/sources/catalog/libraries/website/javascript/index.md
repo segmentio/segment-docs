@@ -950,15 +950,24 @@ The Segment Inspector is composed of these three components:
    - This tab enables you to see the information of a user if you're using the `identify` feature. You can associate the data to an individual and measure their activity across multiple sessions and devices. This tab only shows the user's traits that are on the client. 
    - If you're not using the `identify` feature, the user remains anonymous. 
 
+## Usage in Common Frameworks & SPAs 
+Note: these examples assume analytics is installed via [npm](https://github.com/segmentio/analytics-next/tree/master/packages/browser)
 
-## Open source libraries
 
-Analytics.js 2.0 includes the following open source components:
+### Next.js
+- [with-segment-analytics](https://github.com/vercel/next.js/tree/canary/examples/with-segment-analytics){:target="_blank”}
+- [with-segment-analytics-pages-router](https://github.com/vercel/next.js/tree/canary/examples/with-segment-analytics-pages-router){:target="_blank”}
+
+### Vanilla React, Vue, etc
+See [Usage in Common Frameworks & SPAs](https://github.com/segmentio/analytics-next/tree/master/packages/browser#examples--usage-in-common-frameworks-and-spas)
+
+## External dependencies
+
+Analytics.js 2.0 includes the following open source dependencies:
 
 **uuid v2.0.0** ([https://github.com/lukeed/uuid](https://github.com/lukeed/uuid))
 Copyright Luke Edwards <[luke.edwards05@gmail.com](mailto:luke.edwards05@gmail.com)> ([lukeed.com](https://lukeed.com/))
 License: MIT License, available here: [https://github.com/lukeed/uuid/blob/master/license](https://github.com/lukeed/uuid/blob/master/license)
-
 
 
 **dset v2.0.1** ([https://github.com/lukeed/dset](https://github.com/lukeed/dset))
