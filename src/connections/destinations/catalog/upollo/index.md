@@ -14,8 +14,8 @@ This destination is maintained by Upollo. For any issues with the destination, [
 
 ## Getting started
 
-1. From the [Upollo Connections screen](https://app.upollo.ai/settings/connections), in the Segment connection, click **Configure**
-2. You will be redirected to Segment to login if you are not already
+1. From the [Upollo Connections screen](https://app.upollo.ai/settings/connections), in the Segment connection, click **Configure**.
+2. You will be redirected to Segment to login if you are not already.
 3. Choose the workspace and source from which you want to send data to Upollo.
 4. Click "Authorize," and the destination will be created.
 
