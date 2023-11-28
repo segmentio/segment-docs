@@ -154,7 +154,7 @@ INNER JOIN ps_materialize.id_graph
 
 This query works with any Trait or Audience membership, whether computed in Engage or instrumented upstream.
 
-## Frequently asked questions
+## FAQs
 
 #### Can I view Engage Audience membership and Computed Trait values in my Warehouse?
 
