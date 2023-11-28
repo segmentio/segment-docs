@@ -920,7 +920,7 @@ To minimize data loss, Segment provides a few workarounds. However, it's importa
 
 * Consider implementing the [Segment Edge SDK](https://segment.com/blog/twilio-segment-edge-sdk/), leveraging Cloudflare Workers, it facilitates first-party data collection and real-time user profiling for app personalization. It integrates Segment's library into web apps, manages user identity via HTTPOnly cookies, and employs an internal router for efficient data processing and user experience customization. This innovative approach simplifies tracking and personalization for Segment customers. More information available [here[(https://github.com/segmentio/analytics-edge/blob/main/packages/edge-sdk/README.md).
 
-* Consider using one of Segment’s [server-side libraries](/docs/connections/sources/#server). With a server-side library, concerns about tracking blockers and privacy browsers preventing Segment from loading are eliminated. This option may require additional code to track actions like a `.page()` call, as you now need to manually pass contextual information that would have been automatically collected by Analytics.js, such as `url`, `path`, `referrer`. Note that some destinations are device-mode only. device-mode only.
+* Consider using one of Segment’s [server-side libraries](/docs/connections/sources/#server). With a server-side library, concerns about tracking blockers and privacy browsers preventing Segment from loading are eliminated. This option may require additional code to track actions like a `.page()` call, as you now need to manually pass contextual information that would have been automatically collected by Analytics.js, such as `url`, `path`, `referrer`. Note that some destinations are device-mode only.
 
 ## Add destinations from npm
 
