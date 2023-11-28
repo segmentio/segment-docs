@@ -9,15 +9,15 @@ beta: true
 This destination is maintained by Upollo. For any issues with the destination, [contact Upollo's Support team](mailto:support@upollo.ai).
 
 > info ""
-> The Upollo Destination is currently in beta, which means that Upollo still actively developing the destination. If you are interested in joining the beta program or have any feedback to help improve the Upollo Destination and its documentation, [let the Upollo team know](mailto:support@upollo.ai).
+> The Upollo Destination is currently in beta, which means that Upollo is still actively developing the destination. If you are interested in joining the beta program or have any feedback to help improve the Upollo Destination and its documentation, [let the Upollo team know](mailto:support@upollo.ai).
 
 
 ## Getting started
 
-1. From the [Upollo Connections screen](https://app.upollo.ai/settings/connections), in the Segment connection, click **Configure**.
-2. You will be redirected to Segment to login if you are not already.
-3. Choose the workspace and source from which you want to send data to Upollo.
-4. Click "Authorize," and the destination will be created.
+1. From the [Upollo Connections screen](https://app.upollo.ai/settings/connections){:target="_blank"}, in the Segment connection, click **Configure**.
+2. Upollo redirects you to Segment. If you're not already logged in to Segment, log in now. 
+3. Select the workspace and source from which you want to send data to Upollo.
+4. Click **Authorize**. 
 
 ## Supported methods
 
