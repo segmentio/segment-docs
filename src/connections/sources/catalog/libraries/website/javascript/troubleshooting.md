@@ -88,7 +88,7 @@ Segment advises against circumventing tracking blockers or browser privacy setti
 
 ## Analytics.js and Destinations not tracking query string parameters on certain Safari iOS and MacOS Versions
 
-Please be aware that due to updates in certain Safari iOS and MacOSversions, our Analytics.js and Destinations tools might experience limitations in capturing query string parameters. As a result, customers may notice some events missing campaign information.
+Please be aware that due to updates in certain Safari iOS and MacOS versions, our Analytics.js and Destinations tools might experience limitations in capturing query string parameters. As a result, customers may notice some events missing campaign information.
 
 ## If Analytics.js fails to load, are callbacks not fired?
 
