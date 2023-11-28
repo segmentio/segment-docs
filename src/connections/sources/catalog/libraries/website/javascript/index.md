@@ -950,16 +950,14 @@ The Segment Inspector is composed of these three components:
    - This tab enables you to see the information of a user if you're using the `identify` feature. You can associate the data to an individual and measure their activity across multiple sessions and devices. This tab only shows the user's traits that are on the client. 
    - If you're not using the `identify` feature, the user remains anonymous. 
 
-## Usage in Common Frameworks & SPAs 
-Note: these examples assume analytics is installed via [npm](https://github.com/segmentio/analytics-next/tree/master/packages/browser)
+## Example uses 
+Here are some examples of using Analytics.js 2.0. Note that the examples assume Analytics.js 2.0 is installed through [npm](https://github.com/segmentio/analytics-next/tree/master/packages/browser).
 
-
-### Next.js
-- [with-segment-analytics](https://github.com/vercel/next.js/tree/canary/examples/with-segment-analytics){:target="_blank”}
-- [with-segment-analytics-pages-router](https://github.com/vercel/next.js/tree/canary/examples/with-segment-analytics-pages-router){:target="_blank”}
-
-### Vanilla React, Vue, etc
-See [Usage in Common Frameworks & SPAs](https://github.com/segmentio/analytics-next/tree/master/packages/browser#examples--usage-in-common-frameworks-and-spas)
+* **Next.js**
+   * [with-segment-analytics](https://github.com/vercel/next.js/tree/canary/examples/with-segment-analytics){:target="_blank”}
+   * [with-segment-analytics-pages-router](https://github.com/vercel/next.js/tree/canary/examples/with-segment-analytics-pages-router){:target="_blank”}
+* **Vanilla React, Vue**
+   * See [Usage in Common Frameworks & SPAs](https://github.com/segmentio/analytics-next/tree/master/packages/browser#examples--usage-in-common-frameworks-and-spas){:target="_blank”}
 
 ## External dependencies
 
