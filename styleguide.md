@@ -1,5 +1,30 @@
 # Style guide
 
+Rule | Description | 
+---- | ------- | 
+Title casing for article titles | Use title case for article titles and the nav. <br><br> For example, instead of `Data export options` &rarr; use `Data Export Options`. 
+Sentence casing for headings | Article headings should be in sentence case, meaning you only capitalize the first workd and any product names and proper nouns. 
+No latin abbreviations | <li> Instead of `e.g.` &rarr; use `for example` <br><li> Instead of `i.e.` &rarr; use `that is`, `for example`.
+Don't use that &rarr; use this | <li> Instead of `blacklist` &rarr; use `blocklist` <br><li>Instead of `whitelist` &rarr; use `allowlist` <br><li>Instead of `utilize(s)` &rarr; use `use(s)` <br><li> Instead of `leverage(s)` &rarr; use `use(s)` <br><li>Instead of `via` &rarr; use `through`, `using` <br><li>Instead of `drop in` &rarr; use `enter` <br><li>Instead of `&` &rarr; use `and` <br><li>Instead of `login` &rarr; use `credentials`, `account` <br><li>Instead of `setup` &rarr; use `configuration`
+Third-person | When referring to ourselves as a company, use *Segment*. Avoid the following: <li> we, we've, we're <br><li>our, ours <br><li>us <br><li>let's <br><br>When referring to a third-party, use a name. Avoid the following: <li> their
+Active voice | Write in active voice whenever possible. Instead of referring to something that will happen (`Segment will create`), rephrase it in the present tense (`Segment creates`). <br><br>Other examples: <li> `You'll see a new dialog` &rarr; `A dialog appears`
+Correct use of `might`, `may`, `can` | <li>Use `might` when something could possibly happen. For example, “Depending on your configuration, you **might** see different options.” <br><li>Use `may` to grant a user *permission* to do something. For example, "You **may** add optional notes in this section." <br><li>Use `can` to apply the ability to do something. For example, "You **can** use Personas to send data to your marketing tools."
+Styling Segment Methods | When you refer to a method *outside* of code, use: <li>Page call, Identify call <br><br>Avoid styling like inline code: <li> Page() method <br><li> `page()` <br><li> `.identify()` <br><li> `Identify` call
+Weasel Words | Avoid words that don't add substance to a sentence. <br><br> For example: `you can run virtually any type of application...` <br><br> The word **virtually** does not contribute to the meaning of the sentence. <br><br> If you're going to add an adverb or adjective to a sentence, make sure it contributes to something. 
+Projecting ease of something | Avoid trying to convey the ease with which something can be accomplished. For example: <li> `You can easily...` <br><li> `With this simple...` <br><br>It's not up to us to determine how difficult or easy someone will find a task. 
+Heading case | When adding headings, use sentence-case, not title case. For example: <li> Query the User's Event Traits &rarr; Query the user's event traits
+Contractions | Use contractions. For example, `can't`, `won't`, `haven't`
+Hyperlinks | Link to the noun or topic of the article rather than `here`. 
+Sub-bullets/sub-lists | If there are mutliple tasks within a step, break it up into a sub-list. A single task should be no longer than 3 sentences. 
+The use of `At this time`, `Currently` | Generally, don't use such words/phrases, except when the feature is half rolled out or in beta. 
+Field names in any app | **Bold** the use of field names.
+Entered text in the app | Use `code format`
+Numbers | Use digits/numerals in all cases, except at the beginning of a sentnce. <br><br> For example, instea of `There are five options to choose from.` &rarr; use `There are 5 options to choose from.`
+Screenshots | Use screenshots sparingly. Screenshots are hard to maintain and don't add much value. Confirm that they are essential to understand the feature you're documenting. <br><br>PR reviewers should monitor for screenshots and help determine if they are necessary. 
+FAQs | Use H4s for FAQs. Don't use the liquid formatting. <b><br>When naming the FAQ section, use `FAQ` instead of `Frequently Asked Questions`. 
+Using `click` or `select` | Use **click** when a user should take action on a single item. <br><br>Use **select** when the user should pick an item from a list. 
+
+
 This doc is for keeping track of [style decisions](#style-decisions), [structure decisions](#doc-structure), and [formatting gotchas](#formatting) in the Segment Docs.
 
 ## Style decisions
