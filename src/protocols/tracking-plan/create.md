@@ -48,6 +48,9 @@ Once you've downloaded a Tracking Plan, you can [upload it](#upload-a-tracking-p
 
 You can create a Tracking Plan or make changes to an existing Tracking Plan by uploading a CSV that contains the rules and events you'd like to track. Segment provides a Tracking Plan template file that you can download during the import process, or you can [download an existing Tracking Plan](#download-a-tracking-plan) to use as your template.
 
+> info "Tracking Plan CSV requirements"
+> Tracking Plan CSV files uploaded to Segment must be smaller than 15 mb and contain one header row and one or more rows of data. Tracking Plans CSVs must also have fewer than 100,000 rows and 2,000 rules. 
+
 ### Create a new Tracking Plan 
 To create a new Tracking Plan by uploading a CSV file: 
 1. Click **Protocols** in the left navigation bar. 
@@ -56,7 +59,10 @@ To create a new Tracking Plan by uploading a CSV file:
 5. Download the Tracking Plan template CSV and fill in the template file with your new Tracking Plan rules, or [download an existing Tracking Plan](#download-a-tracking-plan).
 6. Once you've filled in the provided template or made changes to your downloaded Tracking Plan, add your CSV file to the file uploader and click **Upload**.
 
-Any new Tracking Plans created by an uploaded file are reflected in the [Tracking Plan changelog](/docs/protocols/faq/#how-can-i-see-who-made-changes-to-my-tracking-plan) and [Audit Trail](docs/segment-app/iam/audit-trail/).
+After uploading your CSV file, you are redirected to the Upload & Download History page while the upload is in progress. If the CSV upload fails, you'll be able to either view the error directly in the Reports column on the Upload & Download History page or download the `error_report.csv` file that corresponds to the Tracking Plan you uploaded. 
+
+> success ""
+> Tracking Plans created by an uploaded file are reflected in the [Audit Trail](docs/segment-app/iam/audit-trail/) and [Tracking Plan changelog](/docs/protocols/faq/#how-can-i-see-who-made-changes-to-my-tracking-plan).
 
 ### Update an existing Tracking Plan
 
@@ -71,19 +77,10 @@ To update a Tracking Plan by uploading a CSV file:
 5. Download the Tracking Plan template CSV and fill in the template file with your new Tracking Plan rules, or [download an existing Tracking Plan](#download-a-tracking-plan).
 6. Once you've filled in the provided template or made changes to your downloaded Tracking Plan, add your CSV file to the file uploader and click **Upload**.
 
-Any changes made to a Tracking Plan using an uploaded file are reflected in the [Tracking Plan changelog](/docs/protocols/faq/#how-can-i-see-who-made-changes-to-my-tracking-plan) and [Audit Trail](docs/segment-app/iam/audit-trail/).
+After uploading your CSV file, you are redirected to the Upload & Download History page while the upload is in progress. If the CSV upload fails, you'll be able to either view the error directly in the Reports column on the Upload & Download History page or download the `error_report.csv` file that corresponds to the Tracking Plan you uploaded.
 
-### Troubleshooting Tracking Plan uploads
-After uploading your CSV file, you are redirected to the Upload & Download History page while the upload is in progress. If the CSV upload fails due to issues with the content of your Tracking Plan, you can download the file `error_report.csv`, which provides you the error in the "Error Details" column of your CSV file. If the upload fails due to issues with the uploaded file itself (a file that is too large, has too many rows, or is not a CSV file, for example), you'll be able to view the error directly in the Reports column. 
-
-Common reasons a CSV upload may fail include: 
-- A filetype other than .csv
-- More than one file uploaded at a time
-- A file that is empty besides the header row
-- A CSV file that exceeds 100,000 rows
-- A CSV file with more than 2,000 rules
-- A CSV file with duplicate headers
-- A CSV file that is larger than 15 mb
+> success ""
+> Any changes made to a Tracking Plan using an uploaded file are reflected in the [Audit Trail](docs/segment-app/iam/audit-trail/) and [Tracking Plan changelog](/docs/protocols/faq/#how-can-i-see-who-made-changes-to-my-tracking-plan).
 
 ## Delete a Tracking Plan
 
