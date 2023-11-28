@@ -85,8 +85,8 @@ plugins:
 Analytics React Native uses its timeline/plugin architecture to support sending data to bundled SDKs when a Cloud Mode connection is not possible. Destination Plugins are similar to traditional Device Mode integrations available in Analytics React Native 1.x in that Segment makes calls directly to the destination tool’s API from the device. However, Destination Plugins are more customizable, giving you the ability to control and enrich your data at a much more granular level on the device itself. 
 
 > info "Choosing the right destination"
-> Our device mode destination [plugins](https://segment.com/docs/connections/sources/catalog/libraries/mobile/react-native/react-native-plugin-architecture/){:target='_blank’} were built to be used with the classic/legacy destinations, not Actions. The exception to this is the Amplitude plugin. This is a session plugin meant to be used with Amplitude Actions. If a classic/legacy destinations is in maintenance mode, we will still continue to make updates pertaining to the mobile plugins, but not the server or web components.
-> If you run into any issues setting up your destination, please don't hesitate to reach out to support.
+> Segment built device mode destination [plugins](/docs/connections/sources/catalog/libraries/mobile/react-native/react-native-plugin-architecture/){:target='_blank’}  to be used with the classic/legacy destinations, not Actions destinations. The exception to this is the Amplitude plugin. The Amplitude plugin is a session plugin meant to be used with Amplitude Actions. If a classic/legacy destination is in maintenance mode, Segment continues to make updates pertaining to the mobile plugins, but not the server or web components.
+> If you run into any issues setting up your destination, reach out to support.
 
 ## Device-mode Vs. Cloud-Mode 
 Analytics React Native allows you to choose how you send data to Segment and your connected destinations from your app. There are two ways to send data:
