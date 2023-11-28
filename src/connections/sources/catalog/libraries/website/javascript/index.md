@@ -912,7 +912,7 @@ Segment does not endorse bypassing tracking blockers or browser privacy settings
 2. Ask the customer to disable the tracking blockers or adjust their privacy settings (for example, in the case of large, corporate customers).
 3. Move as many events and tracking actions as possible to a server-side library, which won't encounter the same limitations.
 
-If the above routes don’t work, Segment offers these workarounds to assist with tracking and reduce data loss. However, be aware that for client-side tracking, we cannot guarantee their effectiveness: 
+To minimize data loss, Segment provides a few workarounds. However, it's important to note that we cannot guarantee their effectiveness for client-side tracking:
 
 * Use the [bundle obfuscation](#bundle-obfuscation) feature. You can add an obfuscate property to the object in the second parameter, which obscures the URL from which your integrations and destination actions are loaded. This helps prevent words that are flagged by ad blockers to not be detected in your URL, enabling the integration to properly load.
 
