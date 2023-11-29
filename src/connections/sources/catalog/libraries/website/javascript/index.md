@@ -951,7 +951,7 @@ The Segment Inspector is composed of these three components:
    - If you're not using the `identify` feature, the user remains anonymous. 
 
 ## Example uses 
-Here are some examples of using Analytics.js 2.0. Note that the examples assume Analytics.js 2.0 is installed through [npm](https://github.com/segmentio/analytics-next/tree/master/packages/browser).
+Here are some examples of using Analytics.js 2.0. Note that the examples assume Analytics.js is installed through [npm](https://github.com/segmentio/analytics-next/tree/master/packages/browser){:target="_blank”}.
 
 * **Next.js**
    * [with-segment-analytics](https://github.com/vercel/next.js/tree/canary/examples/with-segment-analytics){:target="_blank”}
