@@ -69,4 +69,4 @@ A profile-level conflict occurs when two distinct userIDs with different consent
 To avoid profile-level conflicts, Segment recommends that you take the following steps:
 1. **Use `user_id` to identify a profile or person.** Using other identifiers, like a phone number, email, or `anonymous_id`, can result in a profile-level conflict. 
 2. **Set `user_id` as the highest priority identifier in the [Identity Resolution](/docs/unify/identity-resolution/identity-resolution-settings/#priority) settings.**
-3. **Maintain the default `reset()` behavior.** When a user explicitly logs out of your application, call `analytics.reset()` to prevent any further event activity from being associated with the logged out user and generate a new `anonymousId` for subsequent activity (until the user logs in again). 
+3. **Maintain the default `reset()` behavior.** When a user explicitly logs out of your application, call `analytics.reset()` to prevent any further event activity from being associated with the logged out user and generate a new `anonymousId` for subsequent activity (until the user logs in again).
