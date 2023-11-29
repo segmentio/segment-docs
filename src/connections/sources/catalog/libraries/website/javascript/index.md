@@ -982,18 +982,23 @@ The Segment Inspector is composed of these three components:
    - This tab enables you to see the information of a user if you're using the `identify` feature. You can associate the data to an individual and measure their activity across multiple sessions and devices. This tab only shows the user's traits that are on the client. 
    - If you're not using the `identify` feature, the user remains anonymous. 
 
+## Example uses 
+Here are some examples of using Analytics.js 2.0. Note that the examples assume Analytics.js is installed through [npm](https://github.com/segmentio/analytics-next/tree/master/packages/browser){:target="_blank”}.
 
-## Open source libraries
+* **Next.js**
+   * [with-segment-analytics](https://github.com/vercel/next.js/tree/canary/examples/with-segment-analytics){:target="_blank”}
+   * [with-segment-analytics-pages-router](https://github.com/vercel/next.js/tree/canary/examples/with-segment-analytics-pages-router){:target="_blank”}
+* **Vanilla React, Vue**
+   * See [Usage in Common Frameworks & SPAs](https://github.com/segmentio/analytics-next/tree/master/packages/browser#examples--usage-in-common-frameworks-and-spas){:target="_blank”}
 
-Analytics.js 2.0 includes the following open source components:
+## External dependencies
+
+Analytics.js 2.0 includes the following open source dependencies:
 
 **uuid v2.0.0** ([https://github.com/lukeed/uuid](https://github.com/lukeed/uuid))
 Copyright Luke Edwards <[luke.edwards05@gmail.com](mailto:luke.edwards05@gmail.com)> ([lukeed.com](https://lukeed.com/))
 License: MIT License, available here: [https://github.com/lukeed/uuid/blob/master/license](https://github.com/lukeed/uuid/blob/master/license)
 
-**component-url v0.2.1** ([https://github.com/component/url](https://github.com/component/url))
-Copyright (c) 2014 Component
-License: MIT License, available here: [https://github.com/component/url/blob/master/Readme.md](https://github.com/component/url/blob/master/Readme.md)
 
 **dset v2.0.1** ([https://github.com/lukeed/dset](https://github.com/lukeed/dset))
 Copyright (c) Luke Edwards <[luke.edwards05@gmail.com](mailto:luke.edwards05@gmail.com)> ([lukeed.com](https://lukeed.com/))
