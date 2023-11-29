@@ -48,23 +48,25 @@ If you use Protocols, the Segment app automatically adds the Segment Consent Pre
 >
 > See the [Semantic Events](/docs/connections/spec/semantic/) docs for more details.
 
-## Profile-level conflicts
-
+## Reconcile profile conflicts
 You might encounter a profile with a consent value of `conflict` if one of your end users consents to different categories on different devices or if two distinct IDs are linked to one Unify profile.
 
-### Device conflicts
-A device conflict occurs when consent for one user ID is collected from two distinct devices. For example, if a user consented to all categories on their mobile phone, but consented only to essential categories on their desktop computer, their profile in [Unify](/docs/unify/) would have a consent value of `conflict`.
+> success ""
+> Profile conflicts only impact profiles used in Engage spaces.
 
-Device-level conflicts do not exist on the profile directly because they are always resolved by one of two strategies: 
+### Device-level conflict
+A device conflict occurs when consent for one user ID is collected from two distinct devices. This conflict is automatically resolved to accept consent from the most recent interaction. 
 
-- **Latest Wins**: Segment sets the consent preferences to the most recent consent preferences collected from a user ID.
-- **Resolve False**: Segment automatically sets consent to `false` if a consent conflict exists for a consent category.
+For example, if a user first consented to advertising on their mobile phone, and then later didn't consent to advertising on their desktop computer, their consent for the `advertising` category would be set to `false`.
 
-<!-- TODO: fix this---> 
+![A diagram showing different consent being reconciled for one profile.](images/device-level-consent-conflcit.png)
 
-You can select a device-level conflict resolution strategy by navigating to the `$fix_this` page and selecting **Latest Wins** or **Resolve False**. 
+### Profile-level conflict
+A profile-level conflict occurs when two distinct userIDs with different consent preferences are merged into one Unify profile. A profile-level conflict can also occur when a userID and an anonymousID (one without a linked userID) are linked to the same profile by an external ID, like an email address or phone number, and the consent preferences of both profiles do not match. 
 
-### Profile conflicts
-A profile-level conflict occurs when two distinct IDs with different consent preferences are linked to the same Unify profile. A profile-level conflict can also occur when a userID and an anonymousID (one without a linked userID) are linked to the same profile by an external ID, like an email address or phone number, and the consent preferences of both profiles do not match. 
+![A diagram showing different users linked to one profile.](images/profile-level-consent-conflict.png)
 
-To avoid profile conflicts, Segment recommends that you configure your profiles to avoid sharing anonymous identifiers and limit the traits collected during anonymous browsing sessions. 
+To avoid profile-level conflicts, Segment recommends that you take the following steps:
+1. **Use `user_id` to identify a profile or person.** Using other identifiers, like a phone number, email, or `anonymous_id`, can result in a profile-level conflict. 
+2. **Set `user_id` as the highest priority identifier in the [Identity Resolution](/docs/unify/identity-resolution/identity-resolution-settings/#priority) settings.**
+3. **Maintain the default `reset()` behavior.** When a user explicitly logs out of your application, call `analytics.reset()` to prevent any further event activity from being associated with the logged out user and generate a new `anonymousId` for subsequent activity (until the user logs in again). 
