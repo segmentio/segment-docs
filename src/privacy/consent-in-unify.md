@@ -57,7 +57,7 @@ You might encounter a profile with a consent value of `conflict` if one of your 
 ### Device-level conflict
 A device conflict occurs when consent for one user ID is collected from two distinct devices. This conflict is automatically resolved to accept consent from the most recent interaction. 
 
-For example, if a user first consented to advertising on their mobile phone, and then later didn't consent to advertising on their desktop computer, their consent for the `advertising` category would be set to `false`.
+For example, if a user first didn't consent to advertising on their mobile phone, and then later consented to advertising on their desktop computer, their consent for the `advertising` category would be set to `true`.
 
 ![A diagram showing different consent being reconciled for one profile.](images/device-level-consent-conflcit.png)
 
