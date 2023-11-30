@@ -21,8 +21,6 @@ Below is a list of the available sources on the Segment platform.
 <div class="destinations-catalog">
   {% assign categories = site.data.catalog.source_categories.items %}
   {% assign all_categories = "Website, Mobile, Server, A/B Testing, Advertising, Analytics, Attribution, CRM, Custom, Customer Success, Email Marketing, Enrichment, Feature Flagging, Helpdesk, Learning Management System, Livechat, Marketing Automation, Ott, Payments, Performance Monitoring, Personalization, Raw Data, Referrals, SMS & Push Notifications, Surveys, Virtual Assistant" | split: ", " %}
-  {% assign other_categories =  | split: ", " %}
-
   {% for category in all_categories %}
     <div class="destinations-catalog__section markdown" id="{{ category | slugify }}">
       <h2 class="destinations-catalog__title" id="{{ category | slugify }}">
