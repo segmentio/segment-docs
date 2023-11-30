@@ -27,6 +27,6 @@ To set up your CDP Resolution Enrichment source:
 
 Further documentation can be found on the [CDP documentation site](https://docs.cdpresolution.com?utm_source=segmentio&utm_medium=docs&utm_campaign=partners){:target="_blank"}.
 
-If you have configured your CDP Resolution Source correctly, and if you've also configured CDP Resolution to send user profile data to a Segment Source, you should start to see user profile data shown in the Segment Source debugger as identify() and group() calls.
+If you configured your CDP Resolution Source correctly, and if you also configured CDP Resolution to send user profile data to a Segment Source, you should start to see user profile data shown in the Segment Source debugger as Identify and Group calls.
 
 {% include components/actions-fields.html %}
