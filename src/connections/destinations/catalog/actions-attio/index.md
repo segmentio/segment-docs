@@ -170,7 +170,7 @@ of these are incorrect. To unset an attribute, you can also pass `null` as the v
 | `date`               | YYYY-MM-DD                                                                              | `"2023-09-28"`                                              |
 | `domain`             | `{domain}.{tld}`                                                                        | `"app.attio.com"`, `"www.example.com"`                      |
 | `email`              | A valid email address                                                                   | `"person@example.com"`                                      |
-| `location`           | String with all valid address parts combined                                            | "1 Infinite Loop, Cupertino, CA, US"                        |
+| `location`           | String with all valid address parts (street address, city, state, country, and postal code) combined                                            | "1 Infinite Loop, Cupertino, CA, US"                        |
 | `number`             | Number, stored as a 64 bit float                                                        | `42.192`, `17`                                              |
 | `personal-name`      | Last name(s), First name(s) *(note the comma in the middle)*                            | `"Bloggs, Joe"`                                             |
 | `phone-number`       | [E.164 format](https://en.wikipedia.org/wiki/E.164), starting with `+...`               | `"+15558675309"`                                            |
