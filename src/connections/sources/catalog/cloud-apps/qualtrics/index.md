@@ -21,7 +21,7 @@ Qualtrics maintains this source. For any issues with the source, [contact the Qu
 4. Click **Add Source** to save your settings.
 5. Log in to your Qualtrics Account. Navigate to workflows, select a workflow to send Segment events from, and add a new Segment task.
 6. From within the Segment task, after connecting with your Segment workspace API token, select your Qualtrics source and continue to set up the task with the event, data mapping, and more.
-- Note that your workspace token will need at a minimum Source Admin permissions
+- Your workspace token will need Source Admin permissions, at a minimum.
 7. For more information on the Qualtrics Segment task, view the [Qualtrics support page](https://www.qualtrics.com/support/integrations/twilio-segment/twilio-segment-task/){:target="_blank"}.
 
 ## Stream
