@@ -53,7 +53,7 @@ You can use the following time comparison operators in your audience definition:
 - `after next` 
 
 Only ISO timestamps can be used with these operators.
-If the timestamp is not a valid ISO timestamp (for example, a trailing 'Z' is missing), it will not be processed by Real-time compute. See [Real-time compute compared to batch](docs/engage/audiences/#real-time-compute-compared-to-batch)
+If the timestamp is not a valid ISO timestamp (for example, a trailing `Z` is missing), Segment won't process the audience in real-time. Learn more about [real-time compute compared to batch](docs/engage/audiences/#real-time-compute-compared-to-batch)
 
 ### Funnel Audiences
 
