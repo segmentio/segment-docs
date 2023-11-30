@@ -16,7 +16,7 @@ How this works: A user is logged into CDP Resolution UI application.  They are p
 
 To set up your CDP Resolution Enrichment source:
 1. Navigate to **Connections > Sources** and click **Add source** in the Segment app. 
-2. Search for *CDP Resolution Enrichment* in the Sources Catalog and click **Add Source**..
+2. Search for *CDP Resolution Enrichment* in the Sources Catalog and click **Add source**.
 3. Give the Source a nickname and click **Add Source**.
    The nickname is used as a label for the source in your Segment interface, and Segment creates a related schema name. The schema name is the namespace you'll query against in a warehouse. The nickname can be anything, but Segment recommends sticking to something that reflects the source itself and distinguishes amongst your environments (for example, `cdpresolution enrichment`).
 4. Copy the **Write Key** on the Overview page.
