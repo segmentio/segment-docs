@@ -23,6 +23,9 @@ You can build an Audience from existing events, traits, computed traits, or othe
 > - **Include Anonymous Users** not selected: `user_id`, `email`, `android.idfa`, or `ios.idfa`
 > - **Include Anonymous Users** selected: `user_id`, `email`, `android.idfa`, `ios.idfa`, or `anonymous_id`
 
+> warning "Caution"
+> Editing an audience before the initial backfill is complete can create technical errors.
+
 ### Events
 
 You can build an Audience from any events that are connected to Engage, including [Track](/docs/connections/spec/track), [Page](/docs/connections/spec/page), and [Screen](/docs/connections/spec/screen) calls. You can use the `property` button to refine the audience on specific event properties, as well. 
