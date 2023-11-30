@@ -85,7 +85,7 @@ In order for data to be sent downstream to Google Analytics, check your mappings
 1. The **setConfigurationFields** mapping is enabled in your mappings.
 2. You've added at least one other event mapping for an event you want to send to Google Analytics.
 
-The **setConfigurationFields** mapping is required in order for data to be sent downstream. If no other mappings are enabled, the destination does not send events.
+The **Set Configuration Fields** mapping is required for data to be sent downstream. This is because the **Set Configuration Fields** mapping sets configuration to Measurement ID and establishes data flow using the `config` command. If no other mappings are enabled, the GA4 destination will not send events downstream. 
 
 ### Manually send `page_view` events
 
