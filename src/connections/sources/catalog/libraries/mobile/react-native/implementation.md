@@ -202,8 +202,8 @@ Analytics React Native was built to be as extensible and customizable as possibl
 - [React Native navigation](#react-native-navigation)
 - [Handle errors](#handle-errors)
 - [Report errors from plugins](#report-errors-from-plugins)
-- [Native AnonymousId](#native-anonymousid)
-- [Retrieving AnonymousId](#retrieving-anonymousid)
+- [Native anonymousId](#native-anonymousid)
+- [Retrieving the anonymousId](#retrieving-anonymousid)
 - [Configure iOS deep link tracking](#configure-ios-deep-link-tracking)
 - [Device identifiers](#device-identifiers)
 
@@ -446,13 +446,14 @@ private AnalyticsReactNativePackage analytics = new AnalyticsReactNativePackage(
   analytics.setAnonymousId("My-New-Native-Id");
   }
 ```
-### Retrieving AnonymousId
-The React Native library does not have a specific method for retrieving anonymousId. However, you can access this value by calling the following in your code:
- ```js
+### Retrieving the anonymousId
+The React Native library does not have a specific method for retrieving the anonymousId. However, you can access this value by calling the following in your code:
+
+```js
 segmentClient.userInfo.get().anonymousId
 ``` 
 
-Retrieving the anonymousId can be useful if you need to pass this value to your backend, or if you are using a web view component with our AJS library and need to link user activity.
+Retrieving the anonymousId can be useful if you need to pass this value to your backend, or if you're using a web view component with Segment's Analytics.js library and need to link user activity.
 
 ### Configure iOS deep link tracking
 > warning ""
