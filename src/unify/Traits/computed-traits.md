@@ -107,7 +107,7 @@ Account-level examples:
 
 ### Unique List
 
-Unique list computed traits will output a **list of unique values** in alphabetical order for an **event property**. This is helpful to understand the different types of products or content that a customer or users in an account have interacted with or purchased. Customers are creating traits like `unique_product_categories_viewed` and sending them to email marketing tools and accessing them through the Profiles API for in-app personalization.
+Unique list computed traits will output a **list of the 50 last received unique values** in alphabetical order for an **event property**. This is helpful to understand the different types of products or content that a customer or users in an account have interacted with or purchased. Customers are creating traits like `unique_product_categories_viewed` and sending them to email marketing tools and accessing them through the Profiles API for in-app personalization.
 
 Example use cases:
 - Unique products purchased
