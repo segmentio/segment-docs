@@ -51,5 +51,3 @@ Below is a list of the available sources on the Segment platform.
       </div>
     </div>
   {% endfor %}
-
-
