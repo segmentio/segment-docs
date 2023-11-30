@@ -44,7 +44,15 @@ You can also use computed traits in an Audience definition. For example, you can
 
 ### Time comparison
 
-You can use various time comparison operators in your Audience definition. Such operators are: before date, after date, within last, within next, before last, after next. Only ISO timestamps can be used with these operators.
+You can use the following time comparison operators in your audience definition: 
+- `before date`
+- `after date`
+- `within last`
+- `within next` 
+- `before last`
+- `after next` 
+
+Only ISO timestamps can be used with these operators.
 If the timestamp is not a valid ISO timestamp (for example, a trailing 'Z' is missing), it will not be processed by Real-time compute. See [Real-time compute compared to batch](docs/engage/audiences/#real-time-compute-compared-to-batch)
 
 ### Funnel Audiences
