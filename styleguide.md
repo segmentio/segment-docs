@@ -1,30 +1,59 @@
 # Style guide
+When contributing to the docs, please try to follow the rules in this style guide. 
 
+## Format for titles and headings
 Rule | Description | 
 ---- | ------- | 
 Title casing for article titles | Use title case for article titles and the nav. <br><br> For example, instead of `Data export options` &rarr; use `Data Export Options`. 
-Sentence casing for headings | Article headings should be in sentence case, meaning you only capitalize the first workd and any product names and proper nouns. 
+Sentence casing for headings | Article headings should be in sentence case, meaning you only capitalize the first word and any product names and proper nouns. For example: <li> Query the User's Event Traits &rarr; Query the user's event traits
+
+## Voice and point of view
+Rule | Description | 
+---- | ------- | 
+Active voice | Write in active voice whenever possible. Instead of referring to something that will happen (`Segment will create`), rephrase it in the present tense (`Segment creates`). <br><br>Other examples: <li> `You'll see a new dialog` &rarr; `A dialog appears`
+Third-person | When referring to ourselves as a company, use *Segment*. Avoid the following: <li> we, we've, we're <br><li>our, ours <br><li>us <br><li>let's <br><br>When referring to a third-party, use a name. Avoid the following: <li> their
+
+
+## Wording rules
+Rule | Description | 
+---- | ------- | 
 No latin abbreviations | <li> Instead of `e.g.` &rarr; use `for example` <br><li> Instead of `i.e.` &rarr; use `that is`, `for example`.
 Don't use that &rarr; use this | <li> Instead of `blacklist` &rarr; use `blocklist` <br><li>Instead of `whitelist` &rarr; use `allowlist` <br><li>Instead of `utilize(s)` &rarr; use `use(s)` <br><li> Instead of `leverage(s)` &rarr; use `use(s)` <br><li>Instead of `via` &rarr; use `through`, `using` <br><li>Instead of `drop in` &rarr; use `enter` <br><li>Instead of `&` &rarr; use `and` <br><li>Instead of `login` &rarr; use `credentials`, `account` <br><li>Instead of `setup` &rarr; use `configuration`
-Third-person | When referring to ourselves as a company, use *Segment*. Avoid the following: <li> we, we've, we're <br><li>our, ours <br><li>us <br><li>let's <br><br>When referring to a third-party, use a name. Avoid the following: <li> their
-Active voice | Write in active voice whenever possible. Instead of referring to something that will happen (`Segment will create`), rephrase it in the present tense (`Segment creates`). <br><br>Other examples: <li> `You'll see a new dialog` &rarr; `A dialog appears`
 Correct use of `might`, `may`, `can` | <li>Use `might` when something could possibly happen. For example, “Depending on your configuration, you **might** see different options.” <br><li>Use `may` to grant a user *permission* to do something. For example, "You **may** add optional notes in this section." <br><li>Use `can` to apply the ability to do something. For example, "You **can** use Personas to send data to your marketing tools."
-Styling Segment Methods | When you refer to a method *outside* of code, use: <li>Page call, Identify call <br><br>Avoid styling like inline code: <li> Page() method <br><li> `page()` <br><li> `.identify()` <br><li> `Identify` call
 Weasel Words | Avoid words that don't add substance to a sentence. <br><br> For example: `you can run virtually any type of application...` <br><br> The word **virtually** does not contribute to the meaning of the sentence. <br><br> If you're going to add an adverb or adjective to a sentence, make sure it contributes to something. 
-Projecting ease of something | Avoid trying to convey the ease with which something can be accomplished. For example: <li> `You can easily...` <br><li> `With this simple...` <br><br>It's not up to us to determine how difficult or easy someone will find a task. 
-Heading case | When adding headings, use sentence-case, not title case. For example: <li> Query the User's Event Traits &rarr; Query the user's event traits
 Contractions | Use contractions. For example, `can't`, `won't`, `haven't`
-Hyperlinks | Link to the noun or topic of the article rather than `here`. 
-Sub-bullets/sub-lists | If there are mutliple tasks within a step, break it up into a sub-list. A single task should be no longer than 3 sentences. 
-The use of `At this time`, `Currently` | Generally, don't use such words/phrases, except when the feature is half rolled out or in beta. 
-Field names in any app | **Bold** the use of field names.
-Entered text in the app | Use `code format`
-Numbers | Use digits/numerals in all cases, except at the beginning of a sentnce. <br><br> For example, instea of `There are five options to choose from.` &rarr; use `There are 5 options to choose from.`
-Screenshots | Use screenshots sparingly. Screenshots are hard to maintain and don't add much value. Confirm that they are essential to understand the feature you're documenting. <br><br>PR reviewers should monitor for screenshots and help determine if they are necessary. 
-FAQs | Use H4s for FAQs. Don't use the liquid formatting. <b><br>When naming the FAQ section, use `FAQ` instead of `Frequently Asked Questions`. 
 Using `click` or `select` | Use **click** when a user should take action on a single item. <br><br>Use **select** when the user should pick an item from a list. 
+The use of `At this time`, `Currently` | Generally, don't use such words/phrases, except when the feature is half rolled out or in beta. 
+Projecting ease of something | Avoid trying to convey the ease with which something can be accomplished. For example: <li> `You can easily...` <br><li> `With this simple...` <br><br>It's not up to us to determine how difficult or easy someone will find a task. 
+Styling Segment Methods | When you refer to a method *outside* of code, use: <li>Page call, Identify call <br><br>Avoid styling like inline code: <li> Page() method <br><li> `page()` <br><li> `.identify()` <br><li> `Identify` call
+`we` and `they` | Avoid using `we` and `they`. Be explicit about naming who is being referenced. Because Segment has such a large footprint of documentation around third-party integrations, it's important to be very clear about who "we" are in any given part of the doc. Instead of using "we", your should refer to our software or processes in the third person: "Segment creates..." "Segment sends..."
 
 
+
+## Formatting
+Rule | Description | 
+---- | ----------- |
+Field names in any app | **Bold** the use of field names.
+Hyperlinks | Link to the noun or topic of the article rather than `here`. 
+Numbers | Use digits/numerals in all cases, except at the beginning of a sentnce. <br><br> For example, instead of `There are five options to choose from.` &rarr; use `There are 5 options to choose from.`
+Entered text in the app | Use `code format`
+Capitalization | Capitalize Segment and Segment product names. For example, "privacy" by itself isn't capitalized, but "Segment Privacy Portal" is. Page titles and other UI text should be in lower case. <br><br>Capitalize the words "Sources", "Destinations", and "Warehouses" when referring them as product names (for example: “You can use Sources to…”) but decap them when referring to them generically (“You can connect your warehouse to…”)
+Sub-bullets/sub-lists | If there are mutliple tasks within a step, break it up into a sub-list. A single task should be no longer than 3 sentences. 
+FAQs | Use H4s for FAQs. Don't use the liquid formatting. <b><br>When naming the FAQ section, use `FAQ` instead of `Frequently Asked Questions`. 
+
+
+## Images
+Screenshots | Use screenshots sparingly. Screenshots are hard to maintain and don't add much value. Confirm that they are essential to understand the feature you're documenting. <br><br>PR reviewers should monitor for screenshots and help determine if they are necessary. 
+
+Segment Specific Terms
+
+
+
+
+
+
+
+<!---
 This doc is for keeping track of [style decisions](#style-decisions), [structure decisions](#doc-structure), and [formatting gotchas](#formatting) in the Segment Docs.
 
 ## Style decisions
@@ -178,6 +207,7 @@ To get around this, you can let the previous list item end whereever if needs to
 
 ```
 
+<!---
 Do this with great caution, and only when absolutely necessary. Because you're explicitly setting the numbers, they won't update if you add or delete a step in the auto-numbered list above.
 
 ### Mixed markdown and HTML
@@ -231,6 +261,7 @@ What Paper uses as the "caption" is actually what's specified as the "alt text",
 
 If you want to preserve this as alt-text, awesome. However, if you want to use this as a "caption", you'll have to copy and paste that text below the image. You can put it in italic format if you'd like.
 
+<!---
 ### Code-block cleanup
 
 By default, Paper uses an old style of markdown that allows you to start a code block by indenting the block. This is rendered okay on our end, but can screw up your code's indentation.
