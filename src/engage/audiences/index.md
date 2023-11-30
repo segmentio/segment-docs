@@ -50,6 +50,19 @@ You can also use computed traits in an Audience definition. For example, you can
 > info ""
 > Engage supports nested traits, but the Audience builder doesn’t support accessing objects nested in arrays. When you send arrays of objects, they are flattened into strings. As a result, the same conditions that work on strings will work on the array. Within the builder, you can only use string operations like `contains` and `does not contain` to look for individual characters or a set of characters in the flattened array.
 
+### Time comparison
+
+You can use the following time comparison operators in your audience definition: 
+- `before date`
+- `after date`
+- `within last`
+- `within next` 
+- `before last`
+- `after next` 
+
+Only ISO timestamps can be used with these operators.
+If the timestamp is not a valid ISO timestamp (for example, a trailing `Z` is missing), Segment won't process the audience in real-time. Learn more about [real-time compute compared to batch](docs/engage/audiences/#real-time-compute-compared-to-batch)
+
 ### Funnel Audiences
 
 Funnel audiences allow you to specify strict ordering between two events. This might be the case if you want an event to happen or not happen within a specific time window, as in the following example:
