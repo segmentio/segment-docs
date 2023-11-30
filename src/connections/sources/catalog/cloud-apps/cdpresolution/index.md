@@ -21,7 +21,7 @@ To set up your CDP Resolution Enrichment source:
    The nickname is used as a label for the source in your Segment interface, and Segment creates a related schema name. The schema name is the namespace you'll query against in a warehouse. The nickname can be anything, but Segment recommends sticking to something that reflects the source itself and distinguishes amongst your environments (for example, `cdpresolution enrichment`).
 4. Copy the **Write Key** on the Overview page.
 5. Go to the CDP Resolution UI. 
-6. Go to the [CDP Resolution Connectors](https://app.cdpresolution.com/administration/cdp-connections?utm_source=segmentio&utm_medium=docs&utm_campaign=partners){:target="_blank"} page and select the Segment IO connector.
+6. Go to the [CDP Resolution Connectors](https://app.cdpresolution.com/administration/cdp-connections?utm_source=segmentio&utm_medium=docs&utm_campaign=partners){:target="_blank"} page and select the *Segment IO* connector.
 7.	Paste your Write Key into CDP Resolution's Enrichment connection configuration.
 8.	Click **Upload Key**.
 
