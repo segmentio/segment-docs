@@ -176,6 +176,7 @@ The AJS cookies being set under segment.com are first-party cookies. They are pa
 ### Are you loading Prototype.js?
 
 If you are having issues with your destinations loading, there is a known issue that was reported [here](https://github.com/prototypejs/prototype/issues/338).  
+In order to prevent this from happening, you can preserve the original Array.from method, without letting prototype overriding it.
 
 
 ## Known issues:
