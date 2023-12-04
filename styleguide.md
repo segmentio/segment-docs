@@ -38,7 +38,7 @@ Capitalization | Capitalize Segment and Segment product names. For example, "pri
 `we` and `they` | Avoid using `we` and `they`. Be explicit about naming who is being referenced. Because Segment has such a large footprint of documentation around third-party integrations, it's important to be very clear about who "we" are in any given part of the doc. Instead of using "we", your should refer to our software or processes in the third person: "Segment creates..." "Segment sends..."
 Sub-bullets/sub-lists | If there are mutliple tasks within a step, break it up into a sub-list. A single task should be no longer than 3 sentences. 
 FAQs | Use H4s for FAQs. Don't use the liquid formatting. <b><br>When naming the FAQ section, use `FAQ` instead of `Frequently Asked Questions`. 
-External links | When inserting links, follow this format: `[link text](https://google.com){:target="blank"}` <br>Make sure the `{:target="blank"}` is included after the link. This ensures that the link to the external site opens up in a new tab to avoid taking users away from the docs site. 
+External links | When inserting links that aren't on the segment.com/docs subdomain, follow this format: `[link text](https://google.com){:target="blank"}` <br>Make sure the `{:target="blank"}` is included after the link. This ensures that the link to the external site opens up in a new tab to avoid taking users away from the docs site.
 Code blocks | When giving a code example that is more than a line long, use a code block. (For keyboard shortcuts, variables, and commands, use the single-backtick `code format`). Always use triple-backtick code fences to create a code block. Do not use the three-indent (three tabs/six spaces) mode, as this can conflict with nested list rendering.
 
 
@@ -54,7 +54,7 @@ Connection modes | Device-mode and Cloud-mode are always hyphenated. They should
 Rule | Description | 
 ---- | ----------- |
 Screenshots | Use screenshots sparingly. Screenshots are hard to maintain and don't add much value. Confirm that they are essential to understand the feature you're documenting. <br><br>PR reviewers should monitor for screenshots and help determine if they are necessary. <br><br> Save all images locally and don't link them to 3rd party-hosted images. To add images to a docs page, create an `images` folder for the docs path, save the image to the folder and then reference it in your markdown file. The [Google Analytics destination](/src/connections/destinations/catalog/google-analytics) is a good example.
-Image captions | Provide brief image captions that can be helpful for accessibility. Follow this format for including images with captions: `![description of image goes here](resource path of image file goes here)`
+Alt text | Provide brief alt text that can be helpful for accessibility. Follow this format for including images with alt text: `![description of image goes here](resource path of image file goes here)`
 
 ## Troubleshooting Formatting
 
