@@ -122,6 +122,10 @@ Once you've installed the Analytics-Swift library, you can start collecting data
 ## Destinations
 Destinations are the business tools or apps that Segment forwards your data to. Adding Destinations allow you to act on your data and learn more about your customers in real time.
 
+See Segment's documentation for [device-mode destinations](/docs/connections/sources/catalog/libraries/mobile/apple/destination-plugins/) for a full list of [supported device-mode plugins](/docs/connections/sources/catalog/libraries/mobile/apple/destination-plugins/#supported-device-mode-plugins).  
+
+See Segment's [cloud-mode destinations](/docs/connections/sources/catalog/libraries/mobile/apple/cloud-mode-destinations/) for a full list of available cloud-mode destinations that Swift supports. 
+
 <br>Segment offers support for two different types of Destinations, learn more about the differences between the two [here]().
 
 <div class="double">
