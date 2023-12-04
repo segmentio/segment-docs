@@ -418,11 +418,16 @@ Remember, Segment sends one event per `page` call.
 
 ### Incrementing properties
 
-To increment at the property level, tell Segment which properties you want to increment using the **Properties to increment** setting and Segment calls Mixpanel's `increment` for you when you attach a number to the property (for example, the following property needs to be incremented `analytics.track('Event Name', {
+To increment at the property level, tell Segment which properties you want to increment using the **Properties to increment** setting and Segment calls Mixpanel's `increment` for you when you attach a number to the property. For example, you need to increment the following property:
+
+```javascript
+analytics.track('Event Name', {
 feedback_day_number: 1
 }
-);`)
-and enter the propertyname: _feedback_day_number_ property name in the destination settings. The property value now increases from 1.
+);
+```
+
+Enter the `propertyname: _feedback_day_number_` in the destination settings. The property value now increases from 1.
 
 ### Reset Mixpanel Cookies
 
