@@ -11,7 +11,7 @@ Users access their Segment account with either email/password credentials, their
 
 ## Exporting a workspace's user list
 
-[Workspace Owners](/docs/segment-app/roles/#global-roles) can download a CSV list of users who have access to a specific workspace (including their roles) from the Access Management page in the Segment App.
+[Workspace Owners](/docs/segment-app/roles/#global-roles) can download a CSV list of users who have access to a specific workspace (including their roles) from the Access Management page in the Segment app.
 
 You can select a user in the table to see their [roles](/docs/segment-app/iam/roles). Check out the [Roles documentation](/docs/segment-app/iam/roles/) for more details.
 
@@ -23,17 +23,17 @@ With Twilio Unified Login, Twilio users can use their Twilio email, password, an
 
 You can access Segment from the Twilio Console using the Product Switcher. For more information, view the Twilio support article [Getting Started with the Unified Login and Product Switcher](https://support.twilio.com/hc/en-us/articles/19652187501211-Getting-Started-with-the-Unified-Login-and-Product-Switcher){:target="_blank”}.
 
-### User Settings
+### User settings
 
-Twilio Unified Login users can manage their Segment user settings, including name, email, password and 2FA settings, directly in their Twilio account. To learn more about Twilio’s user and password policies, review Twilio's [Account Management](https://support.twilio.com/hc/en-us/sections/205104908-Account-Management){:target="_blank”} documentation. 
+Twilio Unified Login users can manage their Segment user settings, including name, email, password, and 2FA settings, directly in their Twilio account. To learn more about Twilio’s user and password policies, review Twilio's [Account Management](https://support.twilio.com/hc/en-us/sections/205104908-Account-Management){:target="_blank”} documentation. 
 
 ### Segment Users and SSO/SCIM
 
-Existing Segment users can still use to user their credentials to access Segment.
+Existing Segment users can still use their credentials to access Segment.
 
 Segment continues to support [SSO](/docs/segment-app/iam/sso/) and SCIM, as users who need to access an SSO enabled workspace will be directed to authenticate through the configured Identity Provider.
 
-## Quick Links
+## Quick links
 - [Invite a team member to your workspace](/docs/segment-app/iam/membership/#invite-a-new-team-member)
 - [Create a User Group](/docs/segment-app/iam/membership/#create-a-new-user-group)
 - [Update a team member's access](/docs/segment-app/iam/membership#change-a-team-members-access)
