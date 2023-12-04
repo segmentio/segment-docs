@@ -5,6 +5,7 @@ redirect_from:
   - '/connections/sources/catalog/cloud-apps/swift/'
   - '/connections/sources/catalog/libraries/mobile/swift-ios/'
 id: dZeHygTSD4
+support_type: flagship
 tags:
   - apple
   - swift
