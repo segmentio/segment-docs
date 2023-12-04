@@ -6,6 +6,7 @@ redirect_from:
   - '/sources/website/analytics.js/'
   - '/connections/sources/catalog/libraries/website/javascript/analytics-js-2/'
 strat: ajs
+support_type: flagship
 id: IqDTy1TpoU
 ---
 
