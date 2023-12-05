@@ -12,7 +12,7 @@ analytics.page();
 {% endcodeexampletab %}
 
 {% codeexampletab Non-minified %}
-```js
+```html
 <script type="text/javascript">
 (function() {
   // Create a queue, but don't obliterate an existing one!
