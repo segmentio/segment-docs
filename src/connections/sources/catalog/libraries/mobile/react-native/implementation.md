@@ -478,14 +478,11 @@ To retrieve and pass the anonymousId:
 ```js
 const anonymousId = segmentClient.userInfo.get().anonymousId
 ```
-2. Pass this value into the querystring that opens the webview using the ```ajs_aid``` optional query string parameter noted in the above linked documentation. For example, your WebView component might look like:
-```js
-<WebView
-  ref={webViewRef}
-  source={{uri: `http://segment.com/?ajs_aid={anonymousId}`}}
-/>
+2. Pass this value into the querystring that opens the webview using the ```ajs_aid``` optional query string parameter noted in the above linked documentation. For example, the URL that opens your webview might look like:
+```text
+http://segment.com/?ajs_aid={anonymousId}
 ```
-3. When a user clicks the element that opens the webview, AJS will read that parameter and automatically set the anonymousId to whatever value is passed in, linking your events across both libraries to the same user.
+3. When a user clicks the element that opens the webview, Analytics.js will read that parameter and automatically set the anonymousId to whatever value is passed in, linking your events across both libraries to the same user.
 
 ## Changelog
 [View the Analytics React Native changelog on GitHub](https://github.com/segmentio/analytics-react-native/releases){:target="_blank"}.
