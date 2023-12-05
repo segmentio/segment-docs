@@ -3,14 +3,11 @@ title: 'CDPResolution Source'
 hidden: true
 ---
 
-
 [CDP Resolution](https://cdpresolution.com?utm_source=segmentio&utm_medium=docs&utm_campaign=partners){:target="_blank"} helps customers identify their target audience for the purpose of activation, ongoing engagement, and conversion.  You can find a [list of the different attributes](https://www.cdpresolution.com/resources/UPID?utm_source=segmentio&utm_medium=docs&utm_campaign=partners){:target="_blank"} you can collect with CDP Resolution Enrichment.
 
 This source is maintained by CDP Resolution. For any issues with the destination, [contact the CDP Resolution support team](mailto:support@cdpresolution.com).
 
-{% include content/ajs-upgrade.md %}
-
-How this works: A user is logged into CDP Resolution UI application.  They are performing a segmentation operation of identifying their total addressable market and enriching their Segment.IO workspace with data from CDP Resolution.
+How this works: A user is logged into CDP Resolution UI application.  They are performing a segmentation operation of identifying their total addressable market and enriching their Segment workspace with data from CDP Resolution.
 
 ## Getting started
 
@@ -28,5 +25,3 @@ To set up your CDP Resolution Enrichment source:
 Further documentation can be found on the [CDP documentation site](https://docs.cdpresolution.com?utm_source=segmentio&utm_medium=docs&utm_campaign=partners){:target="_blank"}.
 
 If you configured your CDP Resolution Source correctly, and if you also configured CDP Resolution to send user profile data to a Segment Source, you should start to see user profile data shown in the Segment Source debugger as Identify and Group calls.
-
-{% include components/actions-fields.html %}
