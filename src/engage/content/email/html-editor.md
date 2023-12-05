@@ -118,7 +118,7 @@ For more on email unsubscribe links, view SendGrid's [best practices](https://se
 ## Toggle between editors
 
 From the editor screen, you can click **Use HTML Editor** or **Use Visual Editor** to toggle between the two editors.
-
+ 
 The Visual Editor renders your HTML in an editable preview (similar to an email client), so you might need to accept formatting changes to your HTML to use the Visual Editor. In this case, Segment displays a confirmation modal with HTML differences.
 
 Potential HTML changes include formatting and/or the removal of unsupported scripts in your HTML. 
