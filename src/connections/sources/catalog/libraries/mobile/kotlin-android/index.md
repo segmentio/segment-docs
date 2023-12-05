@@ -4,6 +4,7 @@ strat: kotlin-android
 redirect_from:
   - '/connections/sources/catalog/cloud-apps/kotlin/'
 id: dZeHygTSD4
+support_type: flagship
 tags:
   - android
   - kotlin

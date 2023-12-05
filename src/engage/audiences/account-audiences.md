@@ -1,7 +1,7 @@
 ---
 title: Account-level Audiences
 redirect_from:
-  - "/personas/account-audiences"
+  - "/personas/audiences/account-audiences"
 plan: engage-foundations
 ---
 

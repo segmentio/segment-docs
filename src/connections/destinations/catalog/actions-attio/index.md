@@ -158,10 +158,9 @@ with both the domain and twitter handles above.
 
 ## Attribute types
 
-With the exception of location data, the Attio Action can write all other types of
-attribute to Attio. Below is an example of the format that each attribute must be; please
-note that you'll get validation failures if any of these are incorrect. To unset an
-attribute, you can also pass `null` as the value.
+The Attio Action can write all types of attribute to Attio. Below is an example of the
+format that each attribute must be; please note that you'll get validation failures if any
+of these are incorrect. To unset an attribute, you can also pass `null` as the value.
 
 | `type`               | Format                                                                                  | Example values                                              |
 |----------------------|-----------------------------------------------------------------------------------------|-------------------------------------------------------------|
@@ -171,7 +170,7 @@ attribute, you can also pass `null` as the value.
 | `date`               | YYYY-MM-DD                                                                              | `"2023-09-28"`                                              |
 | `domain`             | `{domain}.{tld}`                                                                        | `"app.attio.com"`, `"www.example.com"`                      |
 | `email`              | A valid email address                                                                   | `"person@example.com"`                                      |
-| `location`           | *unsupported*                                                                           |                                                             |
+| `location`           | String with all valid address parts (street address, city, state, country, and postal code) combined                                            | "1 Infinite Loop, Cupertino, CA, US"                        |
 | `number`             | Number, stored as a 64 bit float                                                        | `42.192`, `17`                                              |
 | `personal-name`      | Last name(s), First name(s) *(note the comma in the middle)*                            | `"Bloggs, Joe"`                                             |
 | `phone-number`       | [E.164 format](https://en.wikipedia.org/wiki/E.164), starting with `+...`               | `"+15558675309"`                                            |
