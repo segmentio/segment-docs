@@ -3,8 +3,7 @@ title: 1Flow Web Actions
 id: 656773f0bd79a3676ab2733d
 ---
 
-[1Flow](https://1flow.ai){:target="_blank"} enables user survey and messaging platform for Mobile app and SaaS businesses. 1Flow is an easy-to-use, yet powerful in-app survey and messaging software.  
-
+[1Flow](https://1flow.ai){:target="_blank"} enables user survey and messaging platform for Mobile app and SaaS businesses. 1Flow is an easy-to-use, yet powerful in-app survey and messaging software.
 Using 1Flow, you can reach users in-the-moment while they are interacting with your website or mobile app, to collect highly contextual user insights that help you improve your product offering and customer experience.
 
 The Segment 1Flow Destination allows you to get started with 1Flow and its core APIs. You can:
@@ -18,54 +17,23 @@ This destination is maintained by 1Flow. For any issues with the destination, [c
 
 ## Getting Started
 
+1. From the Segment web app, navigate to **Connections** and click **Add Destination** .
 
+2. Search for *1Flow Web (Actions)* in the catalog, select it, and select the source you want to connect to your 1Flow Web (Actions) destination.
 
-1. Navigate to **Connections** and click **Add Destination** From the Segment web app.
+3. Enter your 1Flow **PROJECT API KEY** in the 1Flow Web (Actions) destination settings page. You can find your **PROJECT API KEY**  in your 1Flow "Account settings" page.
 
-2. Search for *1Flow Web Actions* in the Catalog, select it, and choose the JavaScript source you want to connect the destination to.
-
-3. Add your1 Flow **PROJECT API KEY** to your Destination settings. You can find this **PROJECT API KEY**  in Account settings.
-
-Your changes will appear in the Segment CDN after 45 minutes, and then Analytics.js will start to asynchronously load 1Flow's tracking snippet and send data.
+Your changes appear in the Segment CDN after approximately 45 minutes, and then Analytics.js starts to asynchronously load 1Flow's tracking snippet and send data.
 
 ## Identify
 
-The 1Flow destination will automatically ingest a User ID and any values sent over your Identify spec as [traits](/docs/connections/spec/identify/#traits), as long as session capture is enabled in 1Flow.
+The 1Flow destination will automatically ingest a User ID and any values sent over your Identify spec as [traits](https://docs.1flow.ai/install-sdk/javascript#de21ec0a453d443b88ca4bc1b12dc6bf), as long as session capture is enabled in 1Flow.
 
-Identify calls that do not have a User ID value will not be sent to 1Flow.
-
-### Nested values or lists
-
-Currently, the 1Flow Identify API **does not** support ingesting values passed as nested objects or lists over your identify Spec:
-
-```js
-"traits": {
-    'name':'Jane Doe', 
-    'company':'ACME, Inc.'
-    'email':'jane.doe@gmail.com', 
-    'plan':'Premium'
-    'total_spend': 880
-}
-```
+Identify calls that do not have a User ID value are not sent to 1Flow.
 
 ## Track
 
-The 1Flow destination automatically ingests any user actions tracked over your Track spec as [events](/docs/connections/spec/track/), as long as session capture is enabled in 1Flow.
-
-### Event properties
-
-Currently, the 1Flow Events API **does not** support ingesting event properties:
-
-```js
-analytics.track("Experiment Viewed", {
-  experiment_id: "1234",
-  experiment_name: "new_upsell_UX"
-  variation_id: "1234b"
-  variation_name: "variant"
-});
-```
-
-In the example above, 1Flow only ingests the event name, `Experiment Viewed`. All of its event properties are rejected.
+The 1Flow destination automatically ingests any user actions tracked over your Track spec as [events](https://docs.1flow.ai/install-sdk/javascript#d19201d97efa4ea4b81be6a351709332), as long as session capture is enabled in 1Flow.
 
 ### Settings
 
@@ -76,4 +44,4 @@ API KEY
 
 ##### DESCRIPTION
 
-string. Your API key                             can be found in your 1Flow dashboard -> Settings -> Project Settings page.
+string. Your API key can be found in your 1Flow dashboard -> Settings -> Project Settings page.
