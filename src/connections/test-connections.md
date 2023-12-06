@@ -6,7 +6,7 @@ title: "Event Tester"
 Segment has an Event Tester that enables you to test your connections between Segment and your destination. You can access the Event Tester from your Source Debugger, or from your destination settings.   
 
 > info "Available for server-side event streaming destinations only"
-> This feature is only available for server-side integrations (also known as cloud-mode destinations). You will not be able to use this for client-side integrations (also known as device-mode destinations). To use this feature, choose a server-side integration. 
+> This feature is only available for server-side integrations (also known as cloud-mode destinations). You can't use this for client-side integrations (also known as device-mode destinations). 
 
 ## Use Cases
 
