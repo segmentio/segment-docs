@@ -1,27 +1,10 @@
 ---
 title: 1Flow Web Actions
-rewrite: true
-id: 62bf80378e3d0241ab190594
----
-## Destination Info
-
-- Accepts **Identify**, and **Track** calls
-- Refer to it as 1Flow in the **Integrations object**
-
+id: 656773f0bd79a3676ab2733d
 ---
 
-## Components
+[1Flow](https://1flow.ai){:target="_blank"} enables user survey and messaging platform for Mobile app and SaaS businesses. 1Flow is an easy-to-use, yet powerful in-app survey and messaging software.  
 
-- **Browser**
-
----
-## Connection Modes
- ## Device-mode
- - Web
-
----
-[1Flow](https://1flow.ai){:target="_blank"} enables user survey and messaging platform for Mobile app and SaaS businesses. 
-1Flow is an easy-to-use, yet powerful in-app survey and messaging software.
 Using 1Flow, you can reach users in-the-moment while they are interacting with your website or mobile app, to collect highly contextual user insights that help you improve your product offering and customer experience.
 
 The Segment 1Flow Destination allows you to get started with 1Flow and its core APIs. You can:
