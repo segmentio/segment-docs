@@ -178,3 +178,7 @@ To change the name of your schema without disruptions:
 11. Select the warehouse you disabled syncs for from the list of destinations.
 12. On the overview page for your source, select **Settings**.
 13. Enable the **Sync Data** toggle and click **Save Settings**.
+
+## Can I selectively filter data/events sent to my warehouse based on a property?
+
+At the moment, there isn't a way to selectively filter events that are sent to the warehouse. The warehouse connector works quite differently from our streaming destinations and only has the [selective sync](/docs/connections/storage/warehouses/warehouse-syncs/#warehouse-selective-sync) functionality that allows you to enable/disable specific properties or events.

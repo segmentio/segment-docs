@@ -1,6 +1,5 @@
 ---
 title: 'Alloy Flow Source'
-hidden: true
 id: DY0B0Q2Gce
 beta: true
 ---

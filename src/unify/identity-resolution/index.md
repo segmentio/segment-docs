@@ -26,9 +26,9 @@ Identity Resolution sits at the core of Segment. The Identity Graph merges the c
 4. **Maintains persistent ID** - multiple external IDs get matched to one persistent ID
 
 
-## Frequently asked questions
+## FAQs
 
-### Can I use the Profile API on the client-side?
+#### Can I use the Profile API on the client-side?
 For security reasons, Segment requires that the [Profile API](/docs/unify/profile-api/) only be used server-side. The Profile API allows you to look up data about any user given an identifier (for example, email, `anonymousId`, or `userId`) and an authorized access secret. While this enables powerful personalization workflows, it could also let your customers' data fall into the wrong hands if the access secret were exposed on the client.
 
 Instead, by creating an authenticated personalization endpoint server-side backed by the Profile API, you can serve up personalized data to your users without the risk of their information falling into the wrong hands.

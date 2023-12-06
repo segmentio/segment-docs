@@ -23,6 +23,10 @@
     background-color: lighten(color(error), 10%);
     color: white;
   }
+  &--warning {
+    background-color: lighten(color(warning), 40%);
+    color: color(warning-dark);
+  }
 
   &--none {
     background-color: white;

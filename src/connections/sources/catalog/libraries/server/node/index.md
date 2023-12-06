@@ -3,6 +3,7 @@ title: Analytics for Node.js
 redirect_from: '/connections/sources/catalog/libraries/server/node-js/'
 repo: analytics-next
 strat: node-js
+support_type: flagship
 ---
 
 Segment's Analytics Node.js library lets you record analytics data from your node code. The requests hit Segment's servers, and then Segment routes your data to any destinations you have enabled.
@@ -634,6 +635,23 @@ const analytics = new Analytics({
   httpClient: new CustomClient() 
 })
 ```
+## Override context value
+```javascript
+analytics.track({
+  anonymousId: '48d213bb-95c3-4f8d-af97-86b2b404dcfe',
+  event: 'New Test',
+  properties: {
+    revenue: 39.95,
+    shippingMethod: '2-day'
+  },
+  context: {
+    traits: {
+      "email": "test@test.com"
+    }
+  }
+});
+```
+
 
 ## Troubleshooting
 

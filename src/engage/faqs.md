@@ -1,5 +1,5 @@
 ---
-title: Engage Frequently Asked Questions
+title: Engage FAQs
 plan: engage-foundations
 redirect_from:
   - '/personas/faqs'

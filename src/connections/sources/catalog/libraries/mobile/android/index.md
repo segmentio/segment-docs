@@ -2,6 +2,7 @@
 title: 'Analytics for Android'
 strat: android
 repo: analytics-android
+support_type: legacy
 id: wXNairW5xX
 ---
   Analytics for Android makes it easier for you to send data to any tool without having to learn, test or implement a new API every time.

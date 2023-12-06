@@ -3,9 +3,9 @@ title: Bing Ads Destination
 rewrite: true
 id: 54521fd525e721e32a72ee97
 ---
- [Bing Ads](https://bingads.microsoft.com){:target="_blank"} enables Marketers to track and monitor campaigns, clicks, CTRs, spend and budget. Bing Ads lets you place cross-device product ads in front of Bing, Yahoo, and MSN customers and support imported pay-per-click ad campaigns from third-party platforms like Google AdWords. With Bing Ads you can also re-target ads to customers after they complete an action like leaving a shopping cart or viewing a product without purchasing. Learn more about all you can do with Bing Ads [here](https://advertise.bingads.microsoft.com/en-us/resources/training/what-is-bing-ads){:target="_blank"}. You can also browse the code [on GitHub](https://github.com/segment-integrations/analytics.js-integration-bing-ads){:target="_blank"}.
+ [Bing Ads](https://bingads.microsoft.com){:target="_blank"} enables marketers to track and monitor campaigns, clicks, CTRs, spend, and budget. Bing Ads lets you place cross-device product ads in front of Bing, Yahoo, and MSN customers and support imported pay-per-click ad campaigns from third-party platforms like Google AdWords. With Bing Ads you can also re-target ads to customers after they complete an action like leaving a shopping cart or viewing a product without purchasing. Learn more about all you can do with [Bing Ads](https://advertise.bingads.microsoft.com/en-us/resources/training/what-is-bing-ads){:target="_blank"}. You can also [browse the code on GitHub](https://github.com/segment-integrations/analytics.js-integration-bing-ads){:target="_blank"}.
 
-## Getting Started
+## Getting started
 
 Before you can track conversions or target audiences, you need to create a UET tag in Bing Ads and then add it to the destination settings. Follow the steps within [the Bing Ads documentation to create a UET tag](https://advertise.bingads.microsoft.com/en-us/resources/training/universal-event-tracking){:target="_blank"}.
 
@@ -16,7 +16,7 @@ Once you have created the Tag ID, you can follow the steps below:
 3. In the destination settings, enter your Tag Id
 
 > info ""
-> Bing Ads suppers one Tag ID per source. Be sure to associate conversion goals to the correct Tag ID in settings.
+> Bing Ads supports one Tag ID per source. Be sure to associate conversion goals to the correct Tag ID in settings.
 
 ## Page
 

@@ -1,5 +1,5 @@
 ---
-title: Unify Frequently Asked Questions
+title: Unify FAQs
 plan: unify
 ---
 

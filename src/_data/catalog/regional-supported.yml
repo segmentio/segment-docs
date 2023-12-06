@@ -38,6 +38,15 @@ sources:
       - eu
     endpoints:
       - us
+  - id: DY0B0Q2Gce
+    display_name: Alloy Flow
+    hidden: false
+    slug: alloyflow
+    url: connections/sources/catalog/cloud-apps/alloyflow
+    regions:
+      - us
+    endpoints:
+      - us
   - id: GNLT5OQ45P
     display_name: Amazon S3
     hidden: false
@@ -860,6 +869,15 @@ sources:
     hidden: false
     slug: shopify-littledata
     url: connections/sources/catalog/libraries/website/shopify-littledata
+    regions:
+      - us
+    endpoints:
+      - us
+  - id: 57hcOLuW6Q
+    display_name: Shopify - Powered by Fueled
+    hidden: false
+    slug: shopify-fueled
+    url: connections/sources/catalog/cloud-apps/shopify-fueled
     regions:
       - us
     endpoints:
