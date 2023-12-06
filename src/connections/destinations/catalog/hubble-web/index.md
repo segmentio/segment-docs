@@ -1,5 +1,7 @@
 ---
-title: Hubble Destination
+title: Hubble (Actions) Destination
+id: 651aac880f2c3b5a8736e0cc
+beta: true
 ---
 
 {% include content/plan-grid.md name="actions" %}
@@ -13,11 +15,9 @@ This destination is maintained by Hubble. For any issues with the destination co
 ## Getting started
 
 1. From the Segment web app, click **Catalog**, then click **Destinations**.
-2. Search for “Hubble (actions)” in the **Catalog**.
+2. Search for “Hubble (Actions)” in the **Catalog**.
 3. Choose a source you would like to connect this destination to.
 4. Find your **Hubble ID** in [Hubble App](https://app.hubble.team/home){:target="\blank"} by navigating to **Account Settings > Integrations > Segment**.
-5. Enter your **HUbble ID** into the **id** field in Segment web app.
-
-<!-- (delete after reading) The line below renders a table of connection settings (if applicable), Pre-built Mappings, and available actions. -->
+5. Enter your **Hubble ID** into the **id** field in Segment web app.
 
 {% include components/actions-fields.html %}
