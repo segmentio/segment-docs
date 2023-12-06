@@ -257,7 +257,7 @@ sections:
       - path: /connections/storage/warehouses/redshift-useful-sql
         title: Useful SQL Queries for Redshift
   - path: /connections/test-connections
-    title: Testing Connections
+    title: Event Tester
   - path: /connections/data-export-options
     title: Data Export Options
   - path: /connections/destination-data-control
