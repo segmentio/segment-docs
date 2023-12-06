@@ -11,8 +11,6 @@ id: 635ada35ce269dbe305203ff
 [LogRocket](https://www.logrocket.com/){:target="_blank"} combines session replay, error tracking, and product analytics – empowering software teams to create the ideal web and mobile
 product experience. With the Segment integration, your Segment user telemetry and events will be sent to LogRocket for enhanced analytics and filtering.
 
-{% include content/ajs-upgrade.md %}
-
 ## Getting started
 
 1. From the Segment web app, click **Catalog**, then click **Destinations**.

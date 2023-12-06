@@ -12,10 +12,6 @@ hidden: true
 
 <!-- Include a brief description of the destination here, along with a link to your website. -->
 
-<!-- This include describes the requirement of A.js 2.0 or higher for Actions compatibility, and is required if your destination has a web component. -->
-
-{% include content/ajs-upgrade.md %}
-
 <!-- In the section below, explain the value of this actions-based destination. If you don't have a classic version of the destination, remove this section. -->
 [StackAdapt](https://www.stackadapt.com){:target="_blank"} is a self-serve programmatic advertising platform for by digital marketers. Ad buyers can plan, execute and manage data-driven digital advertising campaigns across all devices, inventory, and publisher partners.
 
