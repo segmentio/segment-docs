@@ -1,6 +1,7 @@
 ---
 title: Analytics for React Native
 strat: react-native
+support_type: flagship
 id: B0X0QmvMny
 ---
 
