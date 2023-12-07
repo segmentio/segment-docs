@@ -16,8 +16,6 @@ This destination is maintained by Outfunnel. For any issues with the destination
 Outfunnel’s Segment integration is an [Actions-based Destination in cloud mode](/docs/connections/destinations/#connection-modes)
  that lets you send your frontend and backend events directly to Outfunnel.
 
-{% include content/ajs-upgrade.md %}
-
 {% include content/beta-note.md %}
 
 ## Benefits of Outfunnel

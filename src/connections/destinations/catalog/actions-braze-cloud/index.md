@@ -32,8 +32,6 @@ Braze Cloud Mode (Actions) provides the following benefit over Braze Classic:
 
 ## Migration from Braze Classic
 
-{% include content/ajs-upgrade.md %}
-
 Keep the following in mind if you plan to move to Braze (Actions) from the classic Braze destination.
 {% include components/actions-map-table.html name="braze-cloud" %}
 

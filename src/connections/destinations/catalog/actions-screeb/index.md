@@ -10,8 +10,6 @@ id: 64820d8030d09e775fbac372
 
 Screeb maintains this destination. For any issues with the destination, consult [Screeb's documentation](https://github.com/ScreebApp/developers/wiki){:target="_blank"} or [contact their support team](mailto:support@screeb.app).
 
-{% include content/ajs-upgrade.md %}
-
 ## Getting started
 
 1. From the Segment web app, click **Catalog**, then click **Destinations**.
