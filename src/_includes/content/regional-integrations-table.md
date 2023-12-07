@@ -1,5 +1,5 @@
 {% assign destinations = site.data.catalog.destinations.items %}
-{% assign warehouses = site.data.catalog.warehouse.items %}
+{% assign warehouses = site.data.catalog.warehouse.items | where: "status", "PUBLIC" %}
 
 <input class="table-search" type="text" id="filterInput" onkeyup="searchFilter()"
   placeholder="Search for an integration..">
