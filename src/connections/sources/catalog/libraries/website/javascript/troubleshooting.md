@@ -113,7 +113,7 @@ Segment correctly sets cookies with the 'SameSite' attribute with Analytics.js.
 If you see this warning, it is because you previously visited http://segment.com, and are getting the warning due to unrelated cookies. To verify that this is the issue, visit your page in Incognito Mode and confirm that the warning no longer occurs. Your users won't see this warning unless they _also_  visited http://segment.com.
 
 
-### Can I overwrite the context fields?
+## Can I overwrite the context fields?
 
 Yes.  This can be useful if some of these fields contain information you don't want to collect.
 
@@ -143,7 +143,7 @@ analytics.page("Receipt Page", {
 ```
 
 
-### What is the impact of exposing the source's write keys?
+## What is the impact of exposing the source's write keys?
 
 For the Segment script to work in the browser, you need to expose the write key in order for client-side tracking to work. Segment's library architecture requires the write key to be exposed, similar to that of other major tools like Google Analytics, Mixpanel, Kissmetrics, Hubspot, and Marketo.
 
@@ -151,7 +151,7 @@ If you see any unusual behavior associated with your write key, you can generate
 
 If you want to hide the write key, you can use Segment's [HTTP Tracking API source](/docs/connections/sources/catalog/libraries/server/http-api/) or one of the other [server-side libraries](/docs/connections/sources/catalog/#server).
 
-### Can I add context fields that do not already exist?
+## Can I add context fields that do not already exist?
 
 Yes. Similar to overwriting context, you can add context fields by passing them into the options object as the third argument of the event call. For example, the analytics.js library does not automatically collect location information. To add this into the context object, pass it into the third argument as in the example below:
 
@@ -169,10 +169,13 @@ analytics.track("Order Completed", {}, {
 
 Some destinations accept properties only. As a result, custom context fields you add may not forward to these destinations.
 
-### Why am I seeing additional cookies on my website?
+## Why am I seeing additional cookies on my website?
 
 The AJS cookies being set under segment.com are first-party cookies. They are part of Segment's own implementation as well as the destination Segment uses. These cookies are not related to your implementation of Segment, and you only see them because you've visited Segment's domain using the same browser. They are sent to the writekey connected to Segment's own workspace, and are associated with the events Segment tracks when you visit segment.com.
 
+## How is the referrer value set?
+
+The Analytics.js library sets the `context.page.referrer` value from the `window.document.referrer` [property](https://developer.mozilla.org/en-US/docs/Web/API/Document/referrer) set in the browser. If you are experiacing unexpected referrer values reaching Segment, you can check how this value is being set on your website.
 
 ## Known issues:
 
