@@ -175,7 +175,7 @@ The AJS cookies being set under segment.com are first-party cookies. They are pa
 
 ## How is the referrer value set?
 
-The Analytics.js library sets the `context.page.referrer` value from the `window.document.referrer` [property](https://developer.mozilla.org/en-US/docs/Web/API/Document/referrer) set in the browser. If you are experiacing unexpected referrer values reaching Segment, you can check how this value is being set on your website.
+The Analytics.js library sets the `context.page.referrer` value from the `window.document.referrer` [property](https://developer.mozilla.org/en-US/docs/Web/API/Document/referrer){:target="_blank"} set in the browser. If you notice unexpected referrer values reaching Segment, check how this value is being set on your website.
 
 ## Known issues:
 
