@@ -959,10 +959,9 @@ The Segment Inspector is a Chrome web extension that enables you to debug your S
 > For the Segment inspector to work, you must enable the Analytics.js 2.0 source.
 
 To add the Segment Inspector as a Chrome extension:
-1. Go to the [Chrome web store](https://chrome.google.com/webstore/category/extensions){:target="_blank”}.
-2. Search for **Segment Inspector**.
-3. Click **Add to Chrome**.
-4. Click **Add Extension** in the pop-up window.  
+1. Go to the [Segment Inspector in the Chrome web store](https://chromewebstore.google.com/detail/segment-inspector/jfcbmnpfbhhlhfclmiijpldieboendfo){:target="_blank”}.
+2. Click **Add to Chrome**.
+3. Click **Add Extension** in the pop-up window.  
 
 Once installed, use the Inspect Elements developer tool in Chrome to use the Segment Inspector. To access the Inspector, go to the top menu bar of Chrome and navigate to **View > Developer > Developer Tools** and go to the **Segment** tab. On the Segment tab, you can:
 - Filter the different calls by type
