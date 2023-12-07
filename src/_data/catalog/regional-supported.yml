@@ -54,8 +54,10 @@ sources:
     url: connections/sources/catalog/cloud-apps/amazon-s3
     regions:
       - us
+      - eu
     endpoints:
       - us
+      - eu
   - id: TNBRknbbnE
     display_name: AMP
     hidden: true
