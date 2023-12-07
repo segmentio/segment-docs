@@ -13,10 +13,6 @@ id: 62e17e6f687e4a3d32d0f875
 
 [Qualtrics](https://qualtrics.com){:target="_blank”} is an Experience Management platform that allows companies to design and improve customer and employee experiences through listening, analysis and action. Power richer Qualtrics insights or perform action based on your event data using the Qualtrics destination
 
-<!-- This include describes the requirement of A.js 2.0 or higher for Actions compatibility, and is required if your destination has a web component. -->
-
-{% include content/ajs-upgrade.md %}
-
 <!-- In the section below, explain the value of this actions-based destination. If you don't have a classic version of the destination, remove this section. -->
 
 ## Benefits of Qualtrics (Actions)

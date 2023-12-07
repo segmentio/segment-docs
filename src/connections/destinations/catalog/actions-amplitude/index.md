@@ -201,8 +201,6 @@ To use Amplitude's groups with Segment, you must enable the following Action set
 
 ## Migration from Amplitude Classic
 
-{% include content/ajs-upgrade.md %}
-
 Keep the following in mind if you plan to move to Amplitude (Actions) from a classic Amplitude destination.
 
 > info ""

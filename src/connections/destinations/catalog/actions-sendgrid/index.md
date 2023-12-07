@@ -8,8 +8,6 @@ id: 631a6f32946dd8197e9cab66
 ---
 
 
-{% include content/ajs-upgrade.md %}
-
 [SendGrid Marketing Campaigns](https://sendgrid.com/solutions/email-marketing/){:target="_blank”} provides email marketing automation for businesses. With Segment you can add contacts and lists to SendGrid Marketing Campaigns.
 
 ## Getting started

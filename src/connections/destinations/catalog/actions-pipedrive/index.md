@@ -11,8 +11,6 @@ hidden: true
 
 The Actions Pipedrive destination is an integration that allows customers to share events from Segment directly to Pipedrive. When you use Pipedrive with Segment, you don’t need to manually export and upload data to Pipedrive. Your customer data will remain up to date in real time and across all enabled integrations. Every tool you use to interact with leads and customers will land in Pipedrive, so you can always have a clear picture in front of you.
 
-{% include content/ajs-upgrade.md %}
-
 ## Benefits of Actions Pipedrive
 
 Actions Pipedrive provides the following benefits:
