@@ -206,6 +206,7 @@ Analytics React Native was built to be as extensible and customizable as possibl
 - [Retrieving the anonymousId](#retrieving-anonymousid)
 - [Configure iOS deep link tracking](#configure-ios-deep-link-tracking)
 - [Device identifiers](#device-identifiers)
+- [Using a WebView Component with React Native](#using-a-webview-component-with-react-native)
 
 ### Control upload with flush policies
 
@@ -476,6 +477,22 @@ To track deep links in iOS, add the following to your `AppDelegate.m` file:
 On Android, Segment's React Native library generates a unique ID by using the DRM API as context.device.id. Some destinations rely on this field being the Android ID, so be sure to double-check the destination’s vendor documentation. If you choose to override the default value using a plugin, make sure the identifier you choose complies with Google’s User Data Policy. For iOS the context.device.id is set the IDFV.
 
 To collect the Android Advertising ID provided by Play Services, Segment provides a [plugin](https://github.com/segmentio/analytics-react-native/tree/master/packages/plugins/plugin-advertising-id){:target="_blank"} that can be used to collect that value. This value is set to context.device.advertisingId. For iOS, this [plugin](https://github.com/segmentio/analytics-react-native/tree/master/packages/plugins/plugin-idfa){:target="_blank"} can be used to set the IDFA context.device.advertisingId property.
+
+### Using a WebView Component with React Native
+
+If you use a webView component in your app that uses Segment's [Analytics.js](/docs/connections/sources/catalog/libraries/website/javascript/){:target="_blank"} library, you can use Segment's [Querystring API](/docs/connections/sources/catalog/libraries/website/javascript/querystring/){:target="_blank"} to pass the anonymousId from your React Native app to Analytics.js to ensure activity from anonymous users can be linked across these two sources. 
+
+To retrieve and pass the anonymousId:
+
+1. Retrieve anonymousId from the React Native library using:
+```js
+const anonymousId = segmentClient.userInfo.get().anonymousId
+```
+2. Pass this value into the querystring that opens the webview using the `ajs_aid` optional query string parameter noted in the documentation above. For example, the URL that opens your webview might look like:
+```text
+http://segment.com/?ajs_aid={anonymousId}
+```
+3. When a user clicks the element that opens the webview, Analytics.js will read that parameter and automatically set the anonymousId to whatever value is passed in, linking your events across both libraries to the same user.
 
 ## Changelog
 [View the Analytics React Native changelog on GitHub](https://github.com/segmentio/analytics-react-native/releases){:target="_blank"}.

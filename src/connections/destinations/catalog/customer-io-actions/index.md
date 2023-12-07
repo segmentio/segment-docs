@@ -36,9 +36,6 @@ id: 5f7dd78fe27ce7ff2b8bfa37
 
 ## Migration from Customer.io classic
 
-{% include content/ajs-upgrade.md %}
-
-
 Keep the following in mind if you plan to move to Customer.io (Actions) from the classic Customer.io destination.
 {% include components/actions-map-table.html name="customer-io" %}
 
