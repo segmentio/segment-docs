@@ -1,5 +1,5 @@
 ---
-title: 'CDPResolution Source'
+title: CDP Resolution Source
 hidden: true
 ---
 
