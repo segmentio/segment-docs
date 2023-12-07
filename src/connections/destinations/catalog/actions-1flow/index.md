@@ -1,5 +1,5 @@
 ---
-title: 1Flow Web (Actions)
+title: 1Flow Web (Actions) Destination
 id: 656773f0bd79a3676ab2733d
 private: true
 beta: true
