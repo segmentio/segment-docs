@@ -220,11 +220,11 @@ You configure the Amplitude (Actions) destination through Filters and Actions. C
 
 ### Set Once/Set Always fields
 
-Amplitude restricts the mixing of top-level user properties with $set, $setOnce, or $setAlways operations in a single request, [as outlined in Amplitude’s documentation](https://www.docs.developers.amplitude.com/analytics/apis/identify-api/#user_properties-supported-operations). 
+Amplitude restricts the mixing of top-level user properties with `$set`, `$setOnce`, or `$setAlways` operations in a single request, [as outlined in Amplitude’s documentation](https://www.docs.developers.amplitude.com/analytics/apis/identify-api/#user_properties-supported-operations){:target="_blank"}. 
 
-To circumvent this within Segment, users can opt to exclusively map event parameters to either the User Properties field or to one of the user property operations (Set Once and/or Set Always) available in mappings, avoiding mixing them in the same request. Specifically, if you are utilizing Set Once and/or Set Always fields, include all relevant fields in their respective mappings and do not configure mappings for User Properties in the same request.
+To circumvent this within Segment, users can opt to exclusively map event parameters to either the **User Properties** field or to one of the user property operations (Set Once and/or Set Always) available in mappings. If you use the **Set Once** and/or **Set Always** fields, include all relevant fields in their respective mappings and do not configure mappings for **User Properties** in the same request.
 
-Conversely, to send top-level user properties, map only to the User Properties field and exclude mappings for Set Once and Set Always fields. 
+Conversely, to send top-level user properties, map only to the **User Properties** field and exclude mappings for the **Set Once** and **Set Always** fields. 
 
 {% include components/actions-map-table.html name="amplitude" %}
 
