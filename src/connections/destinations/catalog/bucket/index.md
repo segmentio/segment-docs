@@ -2,6 +2,9 @@
 title: Bucket Destination
 rewrite: true
 id: 5fabc0b00f88248bbce4db48
+versions:
+  - name: "Bucket Web (Actions)"
+    link: '/docs/connections/destinations/catalog/bucket-web'
 ---
 
 [Bucket](https://bucket.co/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners){:target="blank"} is feature-focused analytics. Bucket empowers software teams with a repeatable approach to shipping features that customers crave.

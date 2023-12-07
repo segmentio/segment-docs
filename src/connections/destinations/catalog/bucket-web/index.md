@@ -4,6 +4,9 @@ hidden: true
 id: 656dc9330d1863a8870bacd1
 published: true
 beta: true
+versions:
+  - name: "Bucket (Classic)"
+    link: '/docs/connections/destinations/catalog/bucket'
 ---
 
 {% include content/plan-grid.md name="actions" %}
