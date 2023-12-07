@@ -121,7 +121,7 @@ From the editor screen, you can click **Use HTML Editor** or **Use Visual Editor
  
 The Visual Editor renders your HTML in an editable preview (similar to an email client), so you might need to accept formatting changes to your HTML to use the Visual Editor. In this case, Segment displays a confirmation modal with HTML differences.
 
-Potential HTML changes may include formatting, removing attributes with potentially unsuported scripts in your HTML (for example, onclick or onblur), attribute reordering, and adding missing tags.
+Potential HTML changes may include formatting, removing attributes with potentially unsuported scripts in your HTML (for example, `onclick` or `onblur`), attribute reordering, and adding missing tags.
 
 If you don't want to accept the changes required to use the Visual Editor, you can continue editing in the HTML Editor.
 
