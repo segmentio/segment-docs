@@ -470,7 +470,7 @@ To collect the Android Advertising ID provided by Play Services, Segment provide
 
 ### Using a WebView Component with React Native
 
-If you use a webView component in your app that utilizes our [Analytics.js](https://segment.com/docs/connections/sources/catalog/libraries/website/javascript/){:target="_blank"} library, you can utilize our [Querystring API](https://segment.com/docs/connections/sources/catalog/libraries/website/javascript/querystring/){:target="_blank"} to pass the anonymousId from your React Native app to Analytics.js to ensure activity from anonymous users can be linked across these two sources. 
+If you use a webView component in your app that uses Segment's [Analytics.js](/docs/connections/sources/catalog/libraries/website/javascript/){:target="_blank"} library, you can use Segment's [Querystring API](/docs/connections/sources/catalog/libraries/website/javascript/querystring/){:target="_blank"} to pass the anonymousId from your React Native app to Analytics.js to ensure activity from anonymous users can be linked across these two sources. 
 
 To retrieve and pass the anonymousId:
 
@@ -478,7 +478,7 @@ To retrieve and pass the anonymousId:
 ```js
 const anonymousId = segmentClient.userInfo.get().anonymousId
 ```
-2. Pass this value into the querystring that opens the webview using the ```ajs_aid``` optional query string parameter noted in the above linked documentation. For example, the URL that opens your webview might look like:
+2. Pass this value into the querystring that opens the webview using the `ajs_aid` optional query string parameter noted in the documentation above. For example, the URL that opens your webview might look like:
 ```text
 http://segment.com/?ajs_aid={anonymousId}
 ```
