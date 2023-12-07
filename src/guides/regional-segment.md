@@ -83,9 +83,12 @@ Use Segment's custom CIDR `3.251.148.96/29` while authorizing Segment to write i
 ## Destination support and Regional endpoint availability
 
 > info "Don't see a regional endpoint for a tool you're using?"
-> As more of the partner tools you use (Sources and Destinations) start to support a regional endpoint, Segment will update this list. Your contact for that tool should have a timeline for when they're hoping to support regional data ingestion. You can also visit Segment's [support page](https://segment.com/help/contact/) for any Segment-related questions.
+> As more of the partner tools you use (Sources, Destinations, and Warehouses) start to support a regional endpoint, Segment will update this list. Your contact for that tool should have a timeline for when they're hoping to support regional data ingestion. You can also visit Segment's [support page](https://segment.com/help/contact/) for any Segment-related questions.
 
 The following integrations marked with a ![Supports EU regional endpoints](/docs/images/supported.svg){:class="inline"} (checkmark) support EU Regional endpoints.
+
+> warning "Integrations available in EU workspaces do not guarantee data residency"
+> Before you configure an integration, you should check directly with the integration partner to determine if they offer EU endpoints.
 
 {% include content/regional-integrations-table.md %}
 
