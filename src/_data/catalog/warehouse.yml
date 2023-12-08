@@ -12,6 +12,7 @@ items:
   - us
   regions:
   - us
+  - eu
   logo:
     url: 'https://d3hotuclm6if1r.cloudfront.net/logos/amazon-s3-default.svg'
   mark:
@@ -27,6 +28,7 @@ items:
   - us
   regions:
   - us
+  - eu
   logo:
     url: 'https://d3hotuclm6if1r.cloudfront.net/logos/amazon-s3-default.svg'
   mark:
@@ -75,6 +77,7 @@ items:
   - us
   regions:
   - us
+  - eu
   logo: 
     url: 'https://images.ctfassets.net/h6ufgtwb6nv1/4vYEAgYz6nGLC9F64Jxeb6/fcf3ecdae5386f806ae72eb39ce07094/db.svg?w=256&q=75'
   mark: 
@@ -91,6 +94,7 @@ items:
   - us
   regions:
   - us
+  - eu
   logo:
     url: 'https://cdn.filepicker.io/api/file/G6kRHZtSoaEslLkENhPC'
   mark:
@@ -158,6 +162,7 @@ items:
   - us
   regions:
   - us
+  - eu
   logo:
     url: 'https://cdn.filepicker.io/api/file/YR7dKXAiQWyYvBiVOZNX'
   mark:
