@@ -18,13 +18,14 @@
     <nav class="menu menu--compact">
       <ul class="menu__list list list--unstyle">
         {% assign categories = site.data.catalog.source_categories.items %}
-        {% assign promoted_categories = "Website, Mobile, Server, Ott" | split: ", " %}
   
-        {% for category in promoted_categories %}
-          <li class="menu-item menu-item--gray menu-item--compact {% if currentIntegration.categories contains category and activeState != true %}{% assign activeState = true %}menu-item--active{% endif %}" data-accordion data-class-active="menu-item--active">
+        {% for category in categories %}
+          {% assign integrations = site.data.catalog.sources.items | where: "categories", category.display_name %}
+  
+          <li class="menu-item menu-item--gray menu-item--compact" data-accordion data-class-active="menu-item--active">
             <button class="menu-item__link flex flex--middle flex--justify gutter gutter--small" data-ref="accordion[trigger]">
               <span class="flex__column">
-                {{ category }}
+                {{ category.display_name }}
               </span>
   
               <div class="menu-item__chevron flex__column flex__column--shrink">
@@ -33,46 +34,18 @@
             </button>
   
             <ul class="menu-item__body" data-ref="accordion[body]">
-              {% assign integrations = site.data.catalog.sources.items | where: "categories", category %}
-  
               {% for integration in integrations %}
-              {% unless integration.hidden %}
-                <li class="menu-item menu-item--compact">
-                  <a href="{{ site.baseurl }}/{{ integration.url }}/" class="menu-item__link">
-                    {{ integration.display_name }}
-                  </a>
-                </li>
-                {% endunless %}
+                {% if integration.hidden != true %}
+                  <li class="menu-item menu-item--compact">
+                    <a href="{{ site.baseurl }}/{{ integration.url }}/" class="menu-item__link">
+                      {{ integration.display_name }}
+                    </a>
+                  </li>
+                {% endif %}
               {% endfor %}
             </ul>
           </li>
         {% endfor %}
-  
-        <li class="menu-item menu-item--gray menu-item--compact {% if currentIntegration.categories contains 'Cloud-apps' and activeState != true %}{% assign activeState = true %}menu-item--active{% endif %}" data-accordion data-class-active="menu-item--active">
-          <button class="menu-item__link flex flex--middle flex--justify" data-ref="accordion[trigger]">
-            <span class="flex__column">
-              Cloud apps
-            </span>
-  
-            <div class="menu-item__chevron flex__column flex__column--shrink">
-              {% include icons/symbols/caret-down.svg %}
-            </div>
-          </button>
-  
-          <ul class="menu-item__body" data-ref="accordion[body]">
-            {% assign integrations = site.data.catalog.sources.items %}
-  
-            {% for integration in integrations %}
-              {% unless integration.categories contains promoted_categories[0] or integration.categories contains promoted_categories[1] or integration.categories contains promoted_categories[2] or integration.categories contains promoted_categories[3] or integration.hidden%}
-                <li class="menu-item menu-item--compact">
-                  <a href="{{ site.baseurl }}/{{ integration.url }}/" class="menu-item__link">
-                    {{ integration.display_name }}
-                  </a>
-                </li>
-              {% endunless %}
-            {% endfor %}
-          </ul>
-        </li>
       </ul>
     </nav>
   </div>
