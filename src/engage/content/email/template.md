@@ -99,12 +99,10 @@ After you clone a template, you can edit it from the Templates page.
 
 ## Organize with template folders
 
-<!-- Removed: Use folders to group and organize your Email, SMS/MMS, Push, and Whatsapp content templates.-->
-
-Use folders to organize your Email, SMS/MMS, Push, and Whatsapp content templates. With folders, you can group related content together to better help you manage and find your marketing resources.
+Use folders to organize your Email, SMS/MMS, Push, and Whatsapp content templates. Group related content together to better help you manage and find your marketing resources.
  
-
-Use the Templates overview page to create, update, view, and delete template folders
+From the Templates overview page you can create, update, view, and delete template folders.
+ 
 
 To create a folder:
 
@@ -113,7 +111,7 @@ To create a folder:
 3. Click **Create**, then select **Folder**.
 4. Add a folder name, then click **Create**. 
 
-Use the Templates overview page to rename, add templates, or disband your folder. Disbanding a folder returns all templates from the folder to the main template list, without deleting any of the templates.
+You can also rename, add templates, or disband your folder from the Templates overview page to. Disbanding a folder returns all templates from the folder to the main template list, without deleting any of the templates.
 
 ### Move templates to your folders
 
@@ -123,7 +121,7 @@ After you select the templates you'd like to move:
 1. Click **Actions**, and select **Move Templates**.
 2. Select the destination folder, then click **Move templates to folder**.
 
-From within your folders, you can also use the **Actions** button to remove templates or move them to a different folder. 
+Use the **Actions** button in your folder to remove templates or move them to a different location. 
 
 ## Next steps
 
