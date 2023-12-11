@@ -488,7 +488,7 @@ If you're testing in Xcode remember you must first background the app, then the 
 
 ### Distinct ID
 
-In Device-mode, when a `distinct_id` is present in the browser, it will be automatically sent to Mixpanel. While in Cloud-mode, the `distinct_id` is set to Segment's `userId` if one is present. If there is no `userId` on the payload, `anonymousId` is set instead.
+In Device-mode, when a `distinct_id` is present in the browser, it is automatically sent to Mixpanel. In Cloud-mode, the `distinct_id` is set to Segment's `userId` if one is present. If there is no `userId` on the payload, `anonymousId` is set instead.
 
 
 ### IP
