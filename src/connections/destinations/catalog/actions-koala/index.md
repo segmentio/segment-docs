@@ -11,8 +11,6 @@ Segment is the easiest way to install Koala. If you've already got Segment runni
 
 Koala maintains this destination. For any issues with the destination, [contact the Koala Support team](mailto:support@getkoala.com).
 
-{% include content/ajs-upgrade.md %}
-
 ## Getting Started
 
 1. From the Segment web app, navigate to **Connections > Catalog > Destinations**.

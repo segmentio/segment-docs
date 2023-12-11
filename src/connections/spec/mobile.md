@@ -4,7 +4,7 @@ redirect_from:
   - '/spec/mobile'
 ---
 
-One of the core components of the Segment [Spec](/docs/connections/spec/) is the [`track`](/docs/connections/spec/track) method. It records any arbitrary event that the user has triggered. For Mobile tracking, in addition to `screen` calls, you'll want to send **specific event names** that Segment recognizes semantically. That way, we can transform them correctly before sending them off to downstream destinations.
+One of the core components of the Segment [Spec](/docs/connections/spec/) is the [Track](/docs/connections/spec/track) method. It records any arbitrary event that the user has triggered. For Mobile tracking, in addition to Screen calls, you'll want to send **specific event names** that Segment recognizes semantically. That way, we can transform them correctly before sending them off to downstream destinations.
 
 By standardizing the events that comprise the core **mobile application lifecycle** and associated **mobile campaign and referral events**, Segment and our partners can, wherever possible, automatically collect and forward these events on your behalf and build downstream destinations which take full advantage of the semantic meaning associated with these events and their properties.
 

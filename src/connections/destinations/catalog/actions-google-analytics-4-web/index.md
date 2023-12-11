@@ -37,6 +37,8 @@ With custom parameters, you must create [custom dimensions and metrics](https://
 
 ### Custom Events
 
+Before you create a custom event, make sure the event you want to create isn't already collected through an [automatically collected event](https://support.google.com/analytics/answer/9234069?sjid=7831609405656395105-NA){:target="_blank"} or recommended as a [recommended event](https://support.google.com/analytics/answer/9267735?sjid=7831609405656395105-NA){:target="_blank"}. Segment recommends using an existing event, because these events automatically populate dimensions and metrics that are used in your reports.
+
 Google Analytics 4 does not accept custom event names that include spaces. Segment replaces spaces in the Event Name in the Custom Event action with an underscore. As a result, you will see custom events snake cased in Google Analytics 4.
 
 Event names are case-sensitive in Google Analytics 4. If you would like all event names to be lowercase, use the **Lowercase Event Name** setting when you create a Custom Event mapping and select `Yes` from the dropdown. If this setting is disabled, Google will treat event names with different casing as distinct events. 
@@ -80,14 +82,14 @@ Google may take [24-48 hours](https://support.google.com/analytics/answer/933379
 ### Data is not sent to Google
 
 In order for data to be sent downstream to Google Analytics, check your mappings to ensure that:
-1. The **setConfigurationFields** mapping is enabled in your mappings.
+1. The **Set Configuration Fields** mapping is enabled in your mappings.
 2. You've added at least one other event mapping for an event you want to send to Google Analytics.
 
-The **setConfigurationFields** mapping is required in order for data to be sent downstream. If no other mappings are enabled, the destination does not send events.
+The **Set Configuration Fields** mapping is required for data to be sent downstream because it sets configuration to Measurement ID and establishes data flow using the `config` command. If you have no enabled mappings other than **Set Configuration Fields**, the GA4 destination does not send events downstream. 
 
 ### Manually send `page_view` events
 
-If you prefer to the keep **Page Views** setting disabled and manually send a `page_view`, please see this Google Doc for more on [Manual Pageviews](https://developers.google.com/analytics/devguides/collection/ga4/views?client_type=gtag#manually_send_page_view_events).
+If you prefer to keep the **Page Views** setting disabled and manually send a `page_view`, please see this Google Doc for more on [Manual Pageviews](https://developers.google.com/analytics/devguides/collection/ga4/views?client_type=gtag#manually_send_page_view_events).
 
 With Google Analytics 4 Web, you will need to configure a [Custom Event](/docs/connections/destinations/catalog/actions-google-analytics-4-web/#custom-event) mapping for manually sending `page_view` events. When mapping the events, please make sure to set the Event Name to `page_view`.
 

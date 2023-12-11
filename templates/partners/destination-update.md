@@ -49,10 +49,6 @@ This destination is maintained by <integration_name>. For any issues with the de
 > success ""
 > **Good to know**: This page is about the [Actions-framework](/docs/connections/destinations/actions/) <destination_name> Segment destination. There's also a page about the [non-Actions <destination_name> destination](/docs/connections/destinations/catalog/<destination_name>/). Both of these destinations receives data from Segment.
 
-> (delete after reading) This include describes the requirement of A.js 2.0 or higher for Actions compatibility, and is required if your destination has a web component.
-
-{% include content/ajs-upgrade.md %}
-
 > (delete after reading) In the section below, explain the value of this actions-based destination over the classic version, if applicable. If you don't have a classic version of the destination, remove this section.
 
 ## Benefits of <destination_name> (Actions) vs <destination_name> Classic

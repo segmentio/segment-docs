@@ -261,7 +261,7 @@ sections:
       - path: /connections/storage/warehouses/redshift-useful-sql
         title: Useful SQL Queries for Redshift
   - path: /connections/test-connections
-    title: Testing Connections
+    title: Event Tester
   - path: /connections/data-export-options
     title: Data Export Options
   - path: /connections/destination-data-control
@@ -325,6 +325,8 @@ sections:
   - section_title: Linked Profiles 
     slug: unify/linked-profiles
     section: 
+    - path: /unify/linked-profiles/linked-events
+      title: Linked Events
     - section_title: Setup Guides
       slug: unify/linked-profiles/setup-guides
       section: 
@@ -334,8 +336,6 @@ sections:
           title: Snowflake Setup
         - path: /unify/linked-profiles/setup-guides/redshift-setup
           title: Redshift Setup
-    - path: /unify/linked-profiles/linked-events
-      title: Linked Events
   - section_title: Traits
     slug: unify/traits
     section:
@@ -356,6 +356,8 @@ sections:
     title: Profile API
   - path: /unify/debugger
     title: Profile Debugger
+  - path: /unify/insights
+    title: Profiles Insights
   - path: /unify/unify-gdpr
     title: Unify and GDPR
   - path: /unify/faqs
@@ -462,7 +464,7 @@ sections:
   - section_title: Trait Activation
     slug: engage/trait-activation
     section:
-    - path: /engage/trait-activation/overview
+    - path: /engage/trait-activation
       title: Trait Activation Overview
     - path: /engage/trait-activation/trait-activation-setup
       title: Trait Activation Setup

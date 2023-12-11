@@ -3,6 +3,7 @@ title: Analytics for Node.js
 redirect_from: '/connections/sources/catalog/libraries/server/node-js/'
 repo: analytics-next
 strat: node-js
+support_type: flagship
 ---
 
 Segment's Analytics Node.js library lets you record analytics data from your node code. The requests hit Segment's servers, and then Segment routes your data to any destinations you have enabled.
