@@ -48,7 +48,7 @@ If you are running with strict Content Security Policies active on your website,
 | script-src-elem | https://cdn.jsdelivr.net        | bootstrap         | Loads the Bucket tracking SDK from a CDN                                                                                                 |
 | connect-src     | https://tracking.bucket.co      | tracking          | Used for all tracking methods: `analytics.identify()`, `analytics.group()` and `analytics.track()`                                       |
 | connect-src     | https://livemessaging.bucket.co | live satisfaction | Server sent events from the Bucket Live Feedback service, which allows for automatically collecting feedback when a user used a feature. |
-| style-src       | 'unsafe-inline'                 | feedback UI       | The feedback UI is styled with inline script tags. Not having this directive results unstyled HTML elements.                             |
+| style-src       | 'unsafe-inline'                 | feedback UI       | The feedback UI is styled with inline styles. Not having this directive results unstyled HTML elements.                                  |
 
 As HTTP-header:
 
