@@ -44,9 +44,9 @@ Klaviyo (Actions) Destination can accept [RETL](/docs/connections/reverse-etl/) 
 
 | Action          | Added           | Updated        | Deleted         |
 | --------------  | --------------- | -------------- | --------------- | 
-| Order Completed | &#x2611;        | &#x2612;       | &#x2612;        |
-| Track Event     | &#x2611;        | &#x2612;       | &#x2612;        |
-| Upsert Profile  | &#x2611;        | &#x2611;       | &#x2612;        |
+| Order Completed | <img class="inline" src="/docs/images/supported.svg" /> | <img class="inline" src="/docs/images/unsupported.svg" />        | <img class="inline" src="/docs/images/unsupported.svg" />       |
+| Track Event     | <img class="inline" src="/docs/images/supported.svg" />         | <img class="inline" src="/docs/images/unsupported.svg" />       | <img class="inline" src="/docs/images/unsupported.svg" />        |
+| Upsert Profile  | <img class="inline" src="/docs/images/supported.svg" />         | <img class="inline" src="/docs/images/supported.svg" />        | <img class="inline" src="/docs/images/unsupported.svg" />        |
 
 In order to add users to a list, use the **Upsert Profile** Action and fill out the **List** field with the Klaviyo list to add the profile to.
 
