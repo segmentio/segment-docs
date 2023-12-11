@@ -180,6 +180,9 @@ While Engage is computing, use the Audience Explorer to see users or accounts th
 > warning ""
 > [Facebook Custom Audiences](/docs/connections/destinations/catalog/personas-facebook-custom-audiences/), [Marketo Lists](/docs/connections/destinations/catalog/marketo-static-lists/), and [Adwords Remarking Lists](/docs/connections/destinations/catalog/adwords-remarketing-lists) impose rate limits on how quickly Segment can update an Audience. Segment syncs at the highest frequency allowed by the tool, which is between one and six hours.
 
+> warning ""
+> Real-time computations connected to List destinations utilize a separate sync process that can take 12-15 hours to send changes present in the most recent computation.
+
 ### Editing Realtime Audiences and Traits
 
 Engage supports the editing of realtime Audiences and Traits, which allows you to make nuanced changes to existing Traits and Audiences in situations where cloning or building from scratch may not suit your use case.
