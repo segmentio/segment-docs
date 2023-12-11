@@ -14,7 +14,7 @@ Use any [server-side library](https://segment.com/docs/connections/sources/#ser
 
 2.  Decide which destinations need to receive the data.
 
-    **By default, data coming into Segment will be relayed to all destinations linked to a given source.** To limit data to specific destinations, the `integrations` object must be modified. With historical data, you often only want to send the data to a specific destination or into your data warehouse. For example, in [Node.js](https://segment.com/docs/connections/sources/catalog/libraries/server/node/#integrations) set the `integrations` object as follows.
+    **By default, data coming into Segment will be forwarded to all destinations linked to a given source.** To limit data to specific destinations, the `integrations` object must be modified. With historical data, you often only want to send the data to a specific destination or into your data warehouse. For example, in [Node.js](https://segment.com/docs/connections/sources/catalog/libraries/server/node/#integrations) set the `integrations` object as follows.
     ```js
     analytics.track({
         event: 'Upgraded Membership',
