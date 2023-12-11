@@ -100,8 +100,7 @@ async function onTrack(event) {
 
 To change which event type the handler listens to, you can rename it to the name of the message type. For example, if you rename this function `onIdentify`, it listens for "Identify" events instead.
 
-> info ""
-> To ensure the Destination processes an event payload modified by the Function, return the `event` object at the handler's end.
+To ensure the Destination processes an event payload modified by the function, return the `event` object at the handler's end.
 
 > info ""
 > Functions' runtime includes a `fetch()` polyfill using a `node-fetch` package. Check out the [node-fetch documentation](https://www.npmjs.com/package/node-fetch){:target="_blank"} for usage examples.
