@@ -123,7 +123,7 @@ After you select the templates you'd like to move:
 1. Click **Actions**, and select **Move Templates**.
 2. Select the destination folder, then click **Move templates to folder**.
 
-Use the **Actions** button in your folder to remove templates or move them to a different location. When you remove a template, Engage returns the template to the main templates list, without deleting it.
+Use the **Actions** button in your folder to remove templates or move them to a different location. When you remove a template, Engage returns the template to the main templates list, without deleting it. 
 
 ## Next steps
 
