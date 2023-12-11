@@ -102,7 +102,9 @@ After you clone a template, you can edit it from the Templates page.
 Use folders to organize your Email, SMS/MMS, Push, and Whatsapp content templates. Group related content together to better help you manage and find your marketing resources.
  
 From the Templates overview page you can create, update, view, and delete template folders.
- 
+
+> warning ""
+> You must have both read and write workspace permissions to create or make changes to folders.
 
 To create a folder:
 
@@ -121,7 +123,7 @@ After you select the templates you'd like to move:
 1. Click **Actions**, and select **Move Templates**.
 2. Select the destination folder, then click **Move templates to folder**.
 
-Use the **Actions** button in your folder to remove templates or move them to a different location. 
+Use the **Actions** button in your folder to remove templates or move them to a different location. When you remove a template, Engage returns the template to the main templates list, without deleting it.
 
 ## Next steps
 
