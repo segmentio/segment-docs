@@ -10,15 +10,11 @@ beta: true
 
 {% include content/plan-grid.md name="actions" %}
 
-<!-- Include a brief description of the destination here, along with a link to your website. -->
-
 [Klaviyo](https://www.klaviyo.com){:target="_blank"} is a powerful email platform focused on ecommerce that helps companies make more money. It supports segmentation based on category and event triggers like product bought, page viewed, email engagement, or amount spent.
 
 It measures opens, clicks, revenue generated, breakdown of generated revenue based on custom attributes (like campaign type or amount gained per recipient), and provides trend reports, cohort analysis, and subscriber growth
 
 Klaviyo lets you send personalized newsletters, automates triggered emails, product recommendations, welcome campaigns, order announcements, push notifications and sync your data to Facebook custom audiences.
-
-<!-- In the section below, explain the value of this actions-based destination. If you don't have a classic version of the destination, remove this section. -->
 
 ## Benefits of Klaviyo (Actions)
 
@@ -28,7 +24,6 @@ Klaviyo (Actions) provides the following benefits:
 - **More control** - Actions-based destinations enable you to define the mapping between the data Segment receives from your sources, and the data Segment sends to Klaviyo.
 - **Default property mappings** - Default mappings from the Segment like event, timestamp, and more, allow data to be mapped correctly without any setup required.
 
-<!-- The section below explains how to enable and configure the destination. Include any configuration steps not captured below. For example, obtaining an API key from your platform and any configuration steps required to connect to the destination. -->
 
 ## Getting started
 
@@ -38,15 +33,8 @@ Klaviyo (Actions) provides the following benefits:
 > info ""
 > Klaviyo requires the Private API Key to use the List API. You can find this by going to Klaviyo's UI and clicking [Account > Settings > API Keys > Create API Key](https://www.klaviyo.com/account#api-keys-tab){:target="_blank"}  to generate a Private API Key and copy it into the Segment Settings UI.
 
-<!-- The line below renders a table of connection settings (if applicable), Pre-built Mappings, and available actions. -->
 
 {% include components/actions-fields.html %}
-
-<!--
-Additional Context
-
-Include additional information that you think will be useful to the user here. For information that is specific to an individual mapping, please add that as a comment so that the Segment docs team can include it in the auto-generated content for that mapping.
--->
 
 ## Using Klaviyo with RETL 
 
