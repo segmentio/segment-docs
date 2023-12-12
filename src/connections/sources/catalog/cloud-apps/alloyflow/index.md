@@ -2,6 +2,7 @@
 title: 'Alloy Flow Source'
 id: DY0B0Q2Gce
 beta: true
+source-type: event
 ---
 
 [Alloy](https://runalloy.com/flow/){:target="_blank"} is a specialized no-code automation platform, built with e-commerce businesses in mind. It seamlessly integrates various applications, paving the way for a streamlined shopping experience and efficient operational workflows.
@@ -10,7 +11,7 @@ Combining Alloy's automation prowess with Segment's data collection and distribu
 
 Using Segment, the interaction data captured can be sent directly to marketing, product, and analytics tools. The integration with Alloy means that this data can also be utilized to drive automation, ensuring consistent and personalized user interactions across all touchpoints.
 
-This source is maintained by Alloy. For any issues with the source, [Contact the Alloy Support team](mailto:contact@runalloy.com)
+This source is maintained by Alloy. For any issues with the source, [Contact the Alloy Support team](mailto:contact@runalloy.com).
 
 ## Getting Started
 
