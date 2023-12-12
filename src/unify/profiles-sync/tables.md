@@ -220,6 +220,98 @@ If your space has the same name as a source connected to your Segment Warehouse 
 Follow the steps below to change your schema name:
 {% endcomment %}
 
+## Tables Segment materializes
+
+With Profiles Sync, you can access the following three tables that Segment materializes for a more complete view of your profile:
+- [`user_traits`](#the-user_traits-table)
+- [`user_identifiers`](#the-user_identifiers-table)
+- [`profile_merges`](#the-profile_merges-table)
+
+Visit the [selective sync](/docs/unify/profiles-sync/#using-selective-sync) setup page to enable the following materialized tables, which Segment disables by default.
+
+You can also use [historical backfill](/docs/unify/profiles-sync/#using-historical-backfill) with tables Segment materializes.
+
+> warning ""
+> For materialized view tables, you must have delete permissions for your data warehouse. 
+
+
+### The user_traits table
+
+With the `user_traits` table, you'll see all traits that belong to a profile, represented by the `canonical_segment_id`. Use this table for a complete picture of your Profiles Sync data with external data sources such as customer purchase history, product usage, and more. 
+
+- This view is a fixed schema, and contains a row for each trait associated with the profile.
+- As new traits are added to the profile, new rows are added to the table.
+
+When a merge occurs, two things happen:
+1. Segment deletes the **merge from** profile in the table, along with with all the traits that belong to it.
+2. Segment updates the **merge to** profile with the traits from the profile deleted in step 1.
+- For any conflicting traits, Segment appends the most recent trait to the profile.
+
+
+This table has the following columns:
+
+| field                         | description                                                                                         |
+| ----------------------------- | --------------------------------------------------------------------------------------------------- |
+| `canonical_segment_id`              | The fully-merged Segment ID (the profile Segment now understands any events or identifiers to map to).                                    |
+| `name`                              | The name of the trait provided by a customer's Identify payload.                              |
+| `value`                             | The value of the trait provided by the customer's Identify payload.                              |
+| `seq`                               | A sequential value derived from the timestamp. Enables ordering/sorting within a given unique trait. |
+| `received_at`                       | The timestamp when the Segment API receives the payload from the client or server.                            |
+| `uuid_ts`                           | A unique identifier of the timestamp.                           |
+| `timestamp`                         | The UTC-converted timestamp set by the Segment library.                            |
+
+
+### The user_identifiers table
+
+The `user_identifiers` table contains all external ID values that map to a profile, which is represented by the `canonical_segment_id`. 
+
+With the `user_identifiers` table:
+- There's one row per identifier associated with the profile. This view has a fixed schema. 
+- As new identifiers are added to a profile, new rows are added to the table.
+
+When a merge occurs:
+1. Segment deletes the **merge from** profile in the view, along with all associated identifiers.
+2. Segment updates the **merge to** profile with the identifiers that belonged to the profile deleted in step 1. 
+
+This table has the following columns:
+
+
+| field                         | description                                                                                         |
+| ----------------------------- | --------------------------------------------------------------------------------------------------- |
+| `canonical_segment_id`            | The fully-merged Segment ID (the profile Segment now understands any events or identifiers to map to).       |
+| `type`            | The type of external identifier sent in the incoming event, such as `user_id` or `anonymous_id`. External identifiers become the identities attached to a user profile.       |
+| `value`            | The value of the trait provided by the customer's Identify payload.        |
+| `seq`            | A sequential value derived from the timestamp. Enables ordering/sorting within a given unique trait.       |
+| `received_at`                       | The timestamp when the Segment API receives the payload from the client or server.                            |
+| `uuid_ts`                           | A unique identifier of the timestamp.                           |
+| `timestamp`                         | The UTC-converted timestamp set by the Segment library.                            |
+
+### The profile_merges table
+
+The `profile_merges` table contains all mappings from a `segment_id` to a profile, represented by the `canonical_segment_id`. This mapping indicates that a profile has been created within Segment.
+
+With the `profile_merges` table:
+- There's one row per profile associated with the `canonical_segment_id` that represents the profile. This view is a fixed schema. 
+- When a profile is created, a new row is created with the `segment_id` and `canonical_segment_id` having the same value.
+
+
+When a merge occurs:
+1. Segment deletes the **merge from** profile, along with all Segment IDs that belong to it. 
+2. Segment updates the **merge to** profile with Segment IDs that previously belonged to the profile deleted in step 1. 
+
+This table has the following columns:
+
+
+| field                         | description                                                                                         |
+| ----------------------------- | --------------------------------------------------------------------------------------------------- |
+| `canonical_segment_id`            | The fully-merged Segment ID (the profile Segment now understands any events or identifiers to map to).        |
+| `segment_id`            | The profile ID that Segment appends to an event or an identifier at the time it was first observed.       |
+| `seq`            | A sequential value derived from the timestamp. Enables ordering/sorting within a given unique trait.       |
+| `received_at`                       | The timestamp when the Segment API receives the payload from the client or server.                            |
+| `uuid_ts`                           | A unique identifier of the timestamp.                           |
+| `timestamp`                         | The UTC-converted timestamp set by the Segment library.                            |
+
+
 ## Tables you materialize
 
 > info "dbt model definitions package"

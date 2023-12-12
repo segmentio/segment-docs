@@ -15,8 +15,6 @@ id: 6447ca8bfaa773a2ba0777a0
 
 This destination is maintained by Tiktok. For any issues with the destination, [contact their Support team](mailto:segmenteng@bytedance.com).
 
-{% include content/ajs-upgrade.md %}
-
 ## Getting started
 
 Prior to setting up the **TikTok Offline Conversion Destination**, please create an Offline Event Set and generate the Access Token for it from **TikTok Events Manager**.

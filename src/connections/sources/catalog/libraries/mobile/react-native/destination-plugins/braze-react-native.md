@@ -1,6 +1,7 @@
 ---
 title: Analytics React Native Braze Plugin
 strat: react-native
+support-type: community
 ---
 
 [Braze](https://www.braze.com/), formerly Appboy, is an engagement platform that empowers growth by helping marketing teams to build customer loyalty through mobile, omni-channel customer experiences.

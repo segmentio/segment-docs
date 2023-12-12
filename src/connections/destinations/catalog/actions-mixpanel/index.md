@@ -118,8 +118,6 @@ The group id that Mixpanel will use is `12345`.
 
 ## Migration from Mixpanel Classic
 
-{% include content/ajs-upgrade.md %}
-
 Assuming you're already using Segment Cloud-mode, the Mixpanel (Actions) destination is expected to have no breaking changes when upgrading. With the exception of a few new properties added to your events in the new Actions destination, there should be no difference in the data received in Mixpanel when using either of the Mixpanel destinations.
 
 If you want to confirm, you can configure the new destination to point to a different Mixpanel project and connect it to the same source(s) as the Classic destination and manually verify before fully switching over.

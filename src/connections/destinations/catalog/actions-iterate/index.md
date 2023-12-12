@@ -15,10 +15,6 @@ id: 62fec615a42fa3dbfd208ce7
 
 Iterate maintains this destination. See [Iterate's documentation](http://help.iteratehq.com/en/articles/6515486-segment-integration){:target="_blank"} or contact [support@iteratehq.com](mailto:support@iteratehq.com) with any questions.
 
-<!-- This include describes the requirement of A.js 2.0 or higher for Actions compatibility, and is required if your destination has a web component. -->
-
-{% include content/ajs-upgrade.md %}
-
 <!-- In the section below, explain the value of this actions-based destination. If you don't have a classic version of the destination, remove this section. -->
 
 ## Benefits of Iterate (Actions)
