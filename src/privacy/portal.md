@@ -25,7 +25,7 @@ The Inbox helps you keep track of new restricted data types as they are captured
 
 Segment detects these fields by scanning data from your Web, Mobile, Server, and Cloud Event Sources to detect PII based on the [default PII matchers](#default-pii-matchers). New properties sent into Segment appear in the Inbox in realtime.
 
-When you view the Inbox for the first time, it displays every property that was sent into Segment from Web, Mobile, Server, and Cloud Event Sources for the past 7 days. ([Object Cloud Sources](/docs/connections/sources/#object-cloud-sources) and [Reverse ETL Sources](/docs/connections/sources/#reverse-etl-sources) do not appear in the Inbox at this time.)
+When you view the Inbox, it displays every property that was sent into Segment from Web, Mobile, Server, and Cloud Event Sources for the past 7 days. ([Object Cloud Sources](/docs/connections/sources/#object-cloud-sources) and [Reverse ETL Sources](/docs/connections/sources/#reverse-etl-sources) do not appear in the Inbox at this time.)
 
 You can click a row in the Inbox to learn more about a field and where it was collected. The expanded view shows:
 
