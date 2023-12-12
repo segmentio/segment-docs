@@ -1,5 +1,5 @@
 ---
-title: Analytics.js 2.0 Source
+title: Analytics.js Source
 redirect_from:
   - '/connections/sources/catalog/libraries/website/analytics.js/'
   - '/sources/website/javascript/'
@@ -10,26 +10,18 @@ support_type: flagship
 id: IqDTy1TpoU
 ---
 
+Analytics.js enables you to send your data to hundreds of [destination tools](/docs/connections/destinations/catalog/) without having to learn, test, or use a new API every time.
+
+Segment's Analytics.js library is fully open-source and can be viewed on [GitHub](https://github.com/segmentio/analytics-next/){:target="_blank"}.
 
 
+## Benefits of Analytics.js
 
-
-
-Analytics.js 2.0 is the newest version of Segment's most popular JavaScript library. It is backwards compatible with our original Analytics.js Classic library, so in most cases, no code changes are necessary in order to start using Analytics.js 2.0. Analytics.js 2.0 enables you to send your data to hundreds of [destination tools](/docs/connections/destinations/catalog/) without having to learn, test, or use a new API every time.
-
-Segment's Analytics.js 2.0 library is fully open-source and can be viewed on [GitHub](https://github.com/segmentio/analytics-next/){:target="_blank"}.
-
-> info ""
-> All sources created after April 5, 2022 use Analytics.js 2.0 by default. 
-
-
-## Benefits of Analytics.js 2.0
-
-Analytics.js 2.0 provides two key benefits over the previous version.
+Analytics.js provides two key benefits over the previous version.
 
 ### Performance
 
-Analytics.js 2.0 reduces page load time and improves site performance. Its package size is **~70%** smaller than its predecessor, Analytics.js.
+Analytics.js reduces page load time and improves site performance. Its package size is **~70%** smaller than its predecessor, the classic version of Analytics.js.
 
 > info ""
 > Many factors impact page load time, including network conditions, hosting locations, and page weight. Page weight for each customer integration varies based on the number of device-mode destinations that are enabled for each source. The more device-mode destinations that are enabled, the more data gets added to the library, which will impact the weight of the library.
@@ -37,9 +29,9 @@ Analytics.js 2.0 reduces page load time and improves site performance. Its packa
 
 ### Developer experience
 
-Analytics.js 2.0 improves developer experience by introducing new ways for developers to augment events throughout the event timeline. For example, developers can augment events either before or after an event occurs, or while the event is in-flight.
+Analytics.js improves developer experience by introducing new ways for developers to augment events throughout the event timeline. For example, developers can augment events either before or after an event occurs, or while the event is in-flight.
 
-For example, you can use Analytics.js 2.0 to build features that:
+For example, you can use Analytics.js to build features that:
 
 - Ensure you have user consent to track before an event fires
 - Enrich events with customer or page context while in-flight with middleware
@@ -48,12 +40,6 @@ For example, you can use Analytics.js 2.0 to build features that:
 ## Getting started
 
 Use the [Analytics.js QuickStart Guide](/docs/connections/sources/catalog/libraries/website/javascript/quickstart/) to learn how to add Analytics.js to your site. Once you've installed the library, read on for the detailed API reference.
-
-For information about upgrading to Analytics.js 2.0, see [Upgrade to Analytics.js 2.0](/docs/connections/sources/catalog/libraries/website/javascript/upgrade-to-ajs2).
-
-### Upgrade your existing JavaScript sources
-
-For information about upgrading your existing JavaScript sources, see [Upgrade to Analytics.js 2.0](/docs/connections/sources/catalog/libraries/website/javascript/upgrade-to-ajs2).
 
 ## Basic tracking methods
 
@@ -628,9 +614,6 @@ Analytics.js does its best to deliver the queued events before the browser close
 
 Upon receiving the `beforeunload` browser event, Analytics.js attempts to flush the queue using `fetch` requests with `keepalive` set to true. Since the max size of `keepalive` payloads is limited to 64 KB, if the queue size is bigger than 64 KB at the time the browser closes, then there is a chance of losing a subset of the queued events. Reducing the batch size or timeout will alleviate this issue, but that will be a trade-off decision.
 
-#### Is Batching supported on Analytics.js classic?
-No. Batching is only supported as part of Analytics.js 2.0.
-
 #### Can other destinations receive batched events?
 No, this batching only impacts events sent to Segment. Once the batch reaches Segment, it's split up and follows the normal path of an event.
 
@@ -953,16 +936,15 @@ Bundle the destinations you want loaded from [npm](https://www.npmjs.com/package
   ```
 
 ## Segment Inspector
-The Segment Inspector is a Chrome web extension that enables you to debug your Segment integration on web applications instrumented with Analytics.js 2.0. Analytics.js sends data to the extension so that you can see how events change before they're sent to your destinations and so that you can verify that the event details are correct. The Segment Inspector also lets you analyze and confirm that API calls made from your website arrive to your Analytics.js 2.0 source. 
+The Segment Inspector is a Chrome web extension that enables you to debug your Segment integration on web applications instrumented with Analytics.js. Analytics.js sends data to the extension so that you can see how events change before they're sent to your destinations and so that you can verify that the event details are correct. The Segment Inspector also lets you analyze and confirm that API calls made from your website arrive to your Analytics.js source. 
 
 > info ""
-> For the Segment inspector to work, you must enable the Analytics.js 2.0 source.
+> For the Segment inspector to work, you must enable the Analytics.js source.
 
 To add the Segment Inspector as a Chrome extension:
-1. Go to the [Chrome web store](https://chrome.google.com/webstore/category/extensions){:target="_blank”}.
-2. Search for **Segment Inspector**.
-3. Click **Add to Chrome**.
-4. Click **Add Extension** in the pop-up window.  
+1. Go to the [Segment Inspector in the Chrome web store](https://chromewebstore.google.com/detail/segment-inspector/jfcbmnpfbhhlhfclmiijpldieboendfo){:target="_blank”}.
+2. Click **Add to Chrome**.
+3. Click **Add Extension** in the pop-up window.  
 
 Once installed, use the Inspect Elements developer tool in Chrome to use the Segment Inspector. To access the Inspector, go to the top menu bar of Chrome and navigate to **View > Developer > Developer Tools** and go to the **Segment** tab. On the Segment tab, you can:
 - Filter the different calls by type
@@ -984,7 +966,7 @@ The Segment Inspector is composed of these three components:
    - If you're not using the `identify` feature, the user remains anonymous. 
 
 ## Example uses 
-Here are some examples of using Analytics.js 2.0. Note that the examples assume Analytics.js is installed through [npm](https://github.com/segmentio/analytics-next/tree/master/packages/browser){:target="_blank”}.
+Here are some examples of using Analytics.js. Note that the examples assume Analytics.js is installed through [npm](https://github.com/segmentio/analytics-next/tree/master/packages/browser){:target="_blank”}.
 
 * **Next.js**
    * [with-segment-analytics](https://github.com/vercel/next.js/tree/canary/examples/with-segment-analytics){:target="_blank”}
@@ -994,7 +976,7 @@ Here are some examples of using Analytics.js 2.0. Note that the examples assume 
 
 ## External dependencies
 
-Analytics.js 2.0 includes the following open source dependencies:
+Analytics.js includes the following open source dependencies:
 
 **uuid v2.0.0** ([https://github.com/lukeed/uuid](https://github.com/lukeed/uuid))
 Copyright Luke Edwards <[luke.edwards05@gmail.com](mailto:luke.edwards05@gmail.com)> ([lukeed.com](https://lukeed.com/))
