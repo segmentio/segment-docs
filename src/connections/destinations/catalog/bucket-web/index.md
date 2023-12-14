@@ -25,7 +25,7 @@ This destination is maintained by Bucket. For any issues with the destination, [
 Bucket Web (Actions) provides the following benefits over the classic Bucket destination:
 
 - **Clearer mapping of data**. Actions-based destinations enable you to define the mapping between the data Segment receives from your source, and the data Segment sends to the destination.
-- Automatically enables [Live Satisfaction](https://bucket.co/live-satisfaction) prompts in your app, giving you fully automated customer satisfaction scores and feedback on your features.
+- Automatically enables [Live Satisfaction](https://bucket.co/live-satisfaction){:target="_blank"} prompts in your app, giving you fully automated customer satisfaction scores and feedback on your features.
 
 
 ## Getting Started
