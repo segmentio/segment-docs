@@ -14,7 +14,7 @@ To create a folder:
 3. Click **Create**, then select **Folder**.
 4. Add a folder name, then click **Create**. 
 
-You can also rename, add templates, or disband your folder from the Templates overview page to. Disbanding a folder returns all templates from the folder to the main template list, without deleting any of the templates.
+You can also rename, add templates, or disband your folder from the Templates overview page. Disbanding a folder returns all templates from the folder to the main template list, without deleting any of the templates.
 
 ### Move templates to your folders
 
