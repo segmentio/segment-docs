@@ -30,7 +30,9 @@ ENV === 'production' ? writeKey = 'A' : writeKey = 'B';
 
 ## Do you see events appear in your debugger?
 
-When you reload the page, does your debugger show a new [`page`](/docs/connections/spec/page) and an [`identify`](/docs/connections/spec/identify) call? You can also check the JavaScript console in the browser and manually fire an `identify` call as such, which would show up in the debugger.
+When you reload the page, does your debugger show a new [`page`](/docs/connections/spec/page)? You can also check the JavaScript console in the browser and manually fire an event, like an Identify call, which would show up in the debugger.
+
+- You can also use [Segment's Chrome extension](/docs/connections/sources/catalog/libraries/website/javascript/#segment-inspector)to inspect events.
 
 ![Making an identify call](images/7Ymnh2S.gif)
 
@@ -39,6 +41,10 @@ If the call doesn't appear in the debugger, open up the JavaScript console and c
 ![Checking for calls in the network tab](images/d8CmIY2.png)
 
 In the above, the `p` is a [`page`](/docs/connections/spec/page) call and the `i` is an [`identify`](/docs/connections/spec/identify) call. If you don't at least see the `p`, then check if you are loading Analytics.js correctly.
+
+## Using the Segment Chrome extension to validate your implementation
+
+The [Segment Inspector](/docs/connections/sources/catalog/libraries/website/javascript/#segment-inspector) is a Chrome extension designed for debugging Segment integrations in web applications using Analytics.js. The Inspector lets you view and verify event data before it's sent to destinations. Additionally, the tool confirms that API calls from your website reach your Analytics.js source correctly.
 
 
 ## Is data being transmitted to your third-party destinations?
