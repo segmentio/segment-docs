@@ -17,7 +17,7 @@ Bucket maintains this destination. For any issues with the destination, [contact
 
 
 > warning ""
-> If you are using both the "Bucket Web (Actions)"-destination and the server side ["Bucket"-destination](/docs/connections/destinations/catalog/bucket/) on the same source, avoid duplicate event tracking by disabling the "Track Event"-mapping in "Bucket Web (Actions)".
+> If you are using both the Bucket Web (Actions) destination and the server side [Bucket destination](/docs/connections/destinations/catalog/bucket/) on the same source, avoid duplicate event tracking by disabling the "Track Event" mapping in Bucket Web (Actions).
 
 
 ## Benefits of Bucket Web (Actions) compared to Bucket Classic
