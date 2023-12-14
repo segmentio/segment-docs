@@ -31,7 +31,7 @@ Bucket Web (Actions) provides the following benefits over the classic Bucket des
 ## Getting started
 
 1. From the Destinations catalog page in the Segment App, click **Add Destination**.
-2. Search for `"Bucket Web"` in the Destinations Catalog, and select the `Bucket Web (Actions)` destination.
+2. Search for "Bucket Web" in the Destinations Catalog, and select the Bucket Web (Actions) destination.
 3. Choose which source should send data to the Bucket destination.
 4. Go to [Bucket's Settings](https://app.bucket.co){:target="blank"} and find and copy the Tracking Key on the Tracking page.
 5. Enter the Tracking Key as Tracking Key in the "Bucket Web (Actions)" destination settings in Segment.
