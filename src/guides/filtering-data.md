@@ -42,7 +42,7 @@ If you are using [multiple instances of a destination](/docs/connections/destina
 
 Note that destination flags are **case sensitive** and match the destination's name in the docs (for example, "AdLearn Open Platform", "awe.sm", or "MailChimp").
 
-While it is possible to filter data to a data warehouse, the syntax to do so is different. For more details refer to the [Warehouse FAQs](https://segment.com/docs/connections/storage/warehouses/faq/#can-i-selectively-filter-dataevents-sent-to-my-warehouse-based-on-a-property) for more details.
+The syntax to filter data to a data warehouse is different. Refer to the [Warehouse FAQs](/docs/connections/storage/warehouses/faq/#can-i-selectively-filter-dataevents-sent-to-my-warehouse-based-on-a-property) for more details.
 
 
 ## Destination filters
