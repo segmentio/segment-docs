@@ -11,7 +11,7 @@ versions:
 
 {% include content/plan-grid.md name="actions" %}
 
-[Bucket](https://bucket.co/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners){:target="blank"} is feature-focused analytics. Bucket empowers software teams with a repeatable approach to shipping features that satisfy customers.
+[Bucket](https://bucket.co/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners){:target="blank"} is a feature-focused analytics software that empowers software teams with a repeatable approach to shipping features that satisfy customers.
 
 Bucket maintains this destination. For any issues with the destination, [contact the Bucket Support team](mailto:support@bucket.co).
 
