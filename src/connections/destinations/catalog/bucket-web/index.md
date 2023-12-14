@@ -40,7 +40,7 @@ Bucket Web (Actions) provides the following benefits over the classic Bucket des
 
 ## Content security policies (CSP)
 
-If you are running with strict Content Security Policies active on your website, you will need to enable these directives in order to use this destination:
+If you are running with strict Content Security Policies active on your website, you must enable these directives in order to use this destination:
 
 | Directive       | Values                          | Module            | Reason                                                                                                                                   |
 | --------------- | ------------------------------- | ----------------- | ---------------------------------------------------------------------------------------------------------------------------------------- |
