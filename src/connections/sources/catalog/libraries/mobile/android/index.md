@@ -11,7 +11,7 @@ id: wXNairW5xX
 Analytics for Android only supports any Android device running API 14 (Android 4.0) and higher. This includes Amazon Fire devices.
 
 > info "Analytics-Kotlin"
-> The Analytics-Kotlin library is in General Availability. You can use Analytics-Kotlin for [mobile](/docs/connections/sources/catalog/libraries/mobile/kotlin-android/) or [server](/docs/connections/sources/catalog/libraries/server/kotlin) applications. If you'd like to upgrade to Analytics-Kotlin, see the [migration guide](/docs/connections/sources/catalog/libraries/mobile/kotlin-android/migration/).
+> The Analytics-Kotlin library is in General Availability. You can use Analytics-Kotlin for [mobile](/docs/connections/sources/catalog/libraries/mobile/kotlin-android/) or [server](/docs/connections/sources/catalog/libraries/server/kotlin) applications. If you'd like to upgrade to Analytics-Kotlin, see the [migration guide](/docs/connections/sources/catalog/libraries/mobile/kotlin-android/migration/). Segment's future development efforts will be concentrated on the new Analytics-Kotlin SDK, and only security updates will shipped for the Analytics-Android SDK.
 
 > success ""
 > In addition to the documentation here, you can also [read the Javadocs for all versions of Analytics-Android on Javadoc.io](https://javadoc.io/doc/com.segment.analytics.android/analytics/latest/index.html).
