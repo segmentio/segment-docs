@@ -15,7 +15,7 @@ With Analytics for iOS, you can send your data to analytics or marketing tool, w
 
 
 > info "Analytics-Swift"
-> The [Analytics-Swift](/docs/connections/sources/catalog/libraries/mobile/swift/) library is in General Availability. If you'd like to migrate to Analytics-Swift, see the [migration guide](/docs/connections/sources/catalog/libraries/mobile/swift/migration/).
+> The [Analytics-Swift](/docs/connections/sources/catalog/libraries/mobile/swift/) library is in General Availability. If you'd like to migrate to Analytics-Swift, see the [migration guide](/docs/connections/sources/catalog/libraries/mobile/swift/migration/). Segment's future development efforts will be concentrated on the new Analytics-Swift SDK, and only security updates will shipped for the Analytics-iOS SDK.
 
 ## Analytics-iOS and Unique Identifiers
 
