@@ -13,32 +13,32 @@ versions:
 
 [Bucket](https://bucket.co/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners){:target="blank"} is feature-focused analytics. Bucket empowers software teams with a repeatable approach to shipping features that satisfy customers.
 
-This destination is maintained by Bucket. For any issues with the destination, [contact the Bucket Support team](mailto:support@bucket.co).
+Bucket maintains this destination. For any issues with the destination, [contact the Bucket Support team](mailto:support@bucket.co).
 
 
 > warning ""
 > If you are using both the "Bucket Web (Actions)"-destination and the server side ["Bucket"-destination](/docs/connections/destinations/catalog/bucket/) on the same source, avoid duplicate event tracking by disabling the "Track Event"-mapping in "Bucket Web (Actions)".
 
 
-## Benefits of Bucket Web (Actions) vs Bucket Classic
+## Benefits of Bucket Web (Actions) compared to Bucket Classic
 
 Bucket Web (Actions) provides the following benefits over the classic Bucket destination:
 
-- **Clearer mapping of data**. Actions-based destinations enable you to define the mapping between the data Segment receives from your source, and the data Segment sends to the destination.
-- Automatically enables [Live Satisfaction](https://bucket.co/live-satisfaction){:target="_blank"} prompts in your app, giving you fully automated customer satisfaction scores and feedback on your features.
+- **Clearer mapping of data**. Actions-based destinations let you define the mapping between the data Segment receives from your source and the data Segment sends to the destination.
+- Automatically enables [Live Satisfaction](https://bucket.co/live-satisfaction){:target="_blank"} prompts in your app, giving you fully-automated customer satisfaction scores and feedback on your features.
 
 
-## Getting Started
+## Getting started
 
 1. From the Destinations catalog page in the Segment App, click **Add Destination**.
 2. Search for `"Bucket Web"` in the Destinations Catalog, and select the `Bucket Web (Actions)` destination.
-3. Choose which Source should send data to the Bucket destination.
-4. Go to [Bucket's Settings](https://app.bucket.co){:target="blank"} and find and copy the "Tracking Key" on the "Tracking" page.
-5. Enter the "Tracking Key" as "Tracking Key" in the "Bucket Web (Actions)" destination settings in Segment.
+3. Choose which source should send data to the Bucket destination.
+4. Go to [Bucket's Settings](https://app.bucket.co){:target="blank"} and find and copy the Tracking Key on the Tracking page.
+5. Enter the Tracking Key as Tracking Key in the "Bucket Web (Actions)" destination settings in Segment.
 
 {% include components/actions-fields.html %}
 
-## Content Security Policies (CSP)
+## Content security policies (CSP)
 
 If you are running with strict Content Security Policies active on your website, you will need to enable these directives in order to use this destination:
 
