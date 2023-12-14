@@ -15,7 +15,6 @@ versions:
 
 This destination is maintained by Bucket. For any issues with the destination, [contact the Bucket Support team](mailto:support@bucket.co).
 
-{% include content/ajs-upgrade.md %}
 
 > warning ""
 > If you are using both the "Bucket Web (Actions)"-destination and the server side ["Bucket"-destination](/docs/connections/destinations/catalog/bucket/) on the same source, avoid duplicate event tracking by disabling the "Track Event"-mapping in "Bucket Web (Actions)".
