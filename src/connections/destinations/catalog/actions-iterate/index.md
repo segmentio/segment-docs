@@ -2,24 +2,18 @@
 title: Iterate (Actions) Destination
 hide-boilerplate: true
 hide-dossier: true
-hidden: true
-private: true
+beta: true
 id: 62fec615a42fa3dbfd208ce7
 ---
 
-
 {% include content/plan-grid.md name="actions" %}
 
-<!-- Include a brief description of the destination here, along with a link to your website. -->
+
 [Iterate](https://iteratehq.com){:target="_blank"} helps you harness customer insights across your whole business with the world’s leading Customer Insights Manager. Put customer insights at the center of your business with user-friendly research tools that look and feel like your brand. With mobile, website and email surveys that are highly targeted, user-friendly, and on-brand, you can learn directly from your visitors, customers, and users.
 
 Iterate maintains this destination. See [Iterate's documentation](http://help.iteratehq.com/en/articles/6515486-segment-integration){:target="_blank"} or contact [support@iteratehq.com](mailto:support@iteratehq.com) with any questions.
 
-<!-- This include describes the requirement of A.js 2.0 or higher for Actions compatibility, and is required if your destination has a web component. -->
 
-{% include content/ajs-upgrade.md %}
-
-<!-- In the section below, explain the value of this actions-based destination. If you don't have a classic version of the destination, remove this section. -->
 
 ## Benefits of Iterate (Actions)
 
@@ -29,7 +23,7 @@ Iterate (Actions) provides the following benefits:
 - **More control** - Actions-based destinations enable you to define the mapping between the data Segment receives from your sources, and the data Segment sends to Iterate.
 - **Default property mappings** - Default mappings from the Segment like userId, userTraits, and more, allow data to be mapped correctly without any setup required.
 
-<!-- The section below explains how to enable and configure the destination. Include any configuration steps not captured below. For example, obtaining an API key from your platform and any configuration steps required to connect to the destination. -->
+
 
 ## Getting started
 
@@ -40,15 +34,8 @@ Iterate (Actions) provides the following benefits:
 5. Select an existing Source to connect to Iterate (Actions).
 6. Set your Embed API Key. See [Getting your Embed API Key](#getting-your-embed-api-key) for details.
 
-<!-- The line below renders a table of connection settings (if applicable), Pre-built Mappings, and available actions. -->
 
 {% include components/actions-fields.html %}
-
-<!--
-Additional Context
-
-Include additional information that you think will be useful to the user here. For information that is specific to an individual mapping, please add that as a comment so that the Segment docs team can include it in the auto-generated content for that mapping.
--->
 
 ## Get your Embed API Key
 

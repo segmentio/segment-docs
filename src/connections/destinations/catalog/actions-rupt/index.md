@@ -10,8 +10,6 @@ id: 6501a5225aa338d11164cc0f
 
 [Rupt](https://rupt.dev?utm_source=segment.com&utm_medium=docs&utm_campaign=partners){:target="_blank"} helps customers monitor and monetize account sharing.
 
-{% include content/ajs-upgrade.md %}
-
 ## Benefits of Rupt (Actions)
 
 Rupt (Actions) provides the following benefits:

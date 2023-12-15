@@ -42,6 +42,46 @@ To download a Tracking Plan:
 4. Open the Download History page by clicking the link in the toast or clicking the **Download History** tab in the top navigation bar.
 5. Once the file status column indicates that the download was successful, click the link in the File column to download your CSV to your computer. If the file status column shows the download has failed, return to the Tracking Plan Overview page or the Tracking Plan page and try the download again.<br/> The Tracking Plan CSV name has the following format:<br/>`workspaceSlug-trackingPlanName--yyyy-mm-dd--hh-mm-utc`
 
+Once you've downloaded a Tracking Plan, you can [upload it](#upload-a-tracking-plan) as a template for a new Tracking Plan or use it to make changes to an existing Tracking Plan.
+
+## Upload a Tracking Plan
+
+You can create a Tracking Plan or make changes to an existing Tracking Plan by uploading a CSV that contains the rules and events you'd like to track. Segment provides a Tracking Plan template file that you can download during the import process, or you can [download an existing Tracking Plan](#download-a-tracking-plan) to use as your template.
+
+> info "Tracking Plan CSV requirements"
+> Tracking Plan CSV files uploaded to Segment must be smaller than 15 mb and contain one header row and one or more rows of data. Tracking Plans CSVs must also have fewer than 100,000 rows and 2,000 rules. 
+
+### Create a new Tracking Plan 
+To create a new Tracking Plan by uploading a CSV file: 
+1. Click **Protocols** in the left navigation bar. 
+2. Click **New Tracking Plan**.
+4. Click the **Import...** button and select **From CSV**. 
+5. Download the Tracking Plan template CSV and fill in the template file with your new Tracking Plan rules, or [download an existing Tracking Plan](#download-a-tracking-plan).
+6. Once you've filled in the provided template or made changes to your downloaded Tracking Plan, add your CSV file to the file uploader and click **Upload**.
+
+After uploading your CSV file, you are redirected to the Upload & Download History page while the upload is in progress. If the CSV upload fails, you'll be able to either view the error directly in the Reports column on the Upload & Download History page or download the `error_report.csv` file that corresponds to the Tracking Plan you uploaded. 
+
+> success ""
+> Tracking Plans created by an uploaded file are reflected in the [Audit Trail](docs/segment-app/iam/audit-trail/) and [Tracking Plan changelog](/docs/protocols/faq/#how-can-i-see-who-made-changes-to-my-tracking-plan).
+
+### Update an existing Tracking Plan
+
+> info "Tracking Plans with imported libraries cannot be changed using the Upload a Tracking Plan method"
+> If you have a Tracking Plan with imported libraries, you must make changes to your Tracking Plan in the Segment app.
+
+To update a Tracking Plan by uploading a CSV file: 
+1. Click **Protocols** in the left navigation bar. 
+2. On the row of the Tracking Plan you want to edit, open the contextual menu(...) and select **View Tracking Plan**.
+3. Select **Edit Tracking Plan**.
+4. Click the **Import...** button and select **From CSV**. 
+5. Download the Tracking Plan template CSV and fill in the template file with your new Tracking Plan rules, or [download an existing Tracking Plan](#download-a-tracking-plan).
+6. Once you've filled in the provided template or made changes to your downloaded Tracking Plan, add your CSV file to the file uploader and click **Upload**.
+
+After uploading your CSV file, you are redirected to the Upload & Download History page while the upload is in progress. If the CSV upload fails, you'll be able to either view the error directly in the Reports column on the Upload & Download History page or download the `error_report.csv` file that corresponds to the Tracking Plan you uploaded.
+
+> success ""
+> Any changes made to a Tracking Plan using an uploaded file are reflected in the [Audit Trail](docs/segment-app/iam/audit-trail/) and [Tracking Plan changelog](/docs/protocols/faq/#how-can-i-see-who-made-changes-to-my-tracking-plan).
+
 ## Delete a Tracking Plan
 
 > info "Deleting a Tracking Plan requires Workspace Owner or Tracking Plan Admin permissions"

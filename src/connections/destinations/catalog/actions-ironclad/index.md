@@ -14,9 +14,6 @@ id: 63c874d328bd6bd1aa1f90a0
 
 Ironclad maintains this destination. Contact [support@ironcladhq.com](mailto:support@ironcladhq.com) with any questions.
 
-
-{% include content/ajs-upgrade.md %}
-
 ## Benefits of Ironclad Clickwrap (Actions)
 
 Ironclad (Actions) provides the following benefits:

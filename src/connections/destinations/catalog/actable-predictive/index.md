@@ -10,8 +10,6 @@ private: true
 
 [Actable Predictive](https://actable.com/predictive-suite){:target="_blank"} is a standalone marketing-specific customer prediction tool. It trains models on your customer’s behavioral data, and provides regular automated scoring of new data against those models. The scoring output is tailored to drive higher levels of customer engagement, lower levels of churn, and increased incidence of purchases.
 
-{% include content/ajs-upgrade.md %}
-
 ## Benefits of Actable Predictive (Actions)
 
 Actable Predictive (Actions) provides the following benefits:
