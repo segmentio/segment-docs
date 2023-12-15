@@ -130,3 +130,10 @@ If your team would like to avoid receiving the notifications for transient failu
 
 Each step of a Journey is an Engage audience under the hood. The conditions stack, so a user must be a member of the previous step (audience) and meet all conditions to be added to subsequent steps. However, if the user no longer meets entry conditions for a particular step, they'll exit and you'll see the user count reduced. For any subsequent steps a user is still a part of, they'll remain until they no longer meet entry conditions. 
 
+## Why were multiple audience-entered events triggered for the same user?
+
+Multiple audience events can be triggered for the user if it falls under any one of the following conditions:
+1) A merge (there is a merge on this user)
+2) [New external_id’s](/docs/engage/using-engage-data/#new-external-identifiers-added-to-a-profile) added to the profile (a new external_id that was added can trigger this).
+3) The user has [multiple emails](/docs/engage/using-engage-data/#multiple-identifiers-of-the-same-type). Personas sends one event per email for each audience or computed trait event.
+4) Anonymous audience. This is expected behavior of Personas when the 'include anonymous users' option is selected in the audience. We will send an event per every anonymousId on the user profile, when there's multiple (not your case).
