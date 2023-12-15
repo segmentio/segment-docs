@@ -289,9 +289,6 @@ You'll now create a messaging service to connect your number to Engage:
 
 Your WhatsApp messaging service is now created. 
 
-> info ""
-> After creating the messaging service, it cannot be directly removed from the space. As a workaround, you can edit the Twilio account credentials by clicking the pencil icon. Enter the account credentials (use the API key secret if you remember or create a new API key). Once you've selected the desired services, they will override the existing ones, effectively removing the ones you no longer need.
-
 ## Regional Segment
 
 You can use Engage Premier on [Segment's regional infrastructure in the EU](/docs/guides/regional-segment/). Twilio Engage ensures data residency in the EU, but the channels you connect to, may not guarantee the same level of data residency. Check directly with the providers of the channels you use for information about data residency in their applications. Native channels like email and SMS, which use Twilio, are not data resident. 
