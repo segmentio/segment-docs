@@ -78,6 +78,8 @@ You can apply Integrations filters to specific events regardless of whether the 
 
 The events filtered out of individual destinations using this method still arrive in your data warehouse(s). Warehouses do not appear in the integration filters dropdown, and you cannot prevent data from flowing to Warehouses using this feature - to do that use [Warehouse Selective Sync](#warehouse-selective-sync).
 
+Please note, at this time per-source schema integration filters are not supported for Swift, Kotlin, and React Native libraries.
+
 **Integration filters are all-or-nothing for each event.** If you require more detailed control over which events are sent to specific destinations, you can use Destination Filters to inspect the event payload, and conditionally drop the data or forward it to the destination.
 
 ## Schema event filters
@@ -98,7 +100,7 @@ In most cases, blocking an event immediately stops that event from sending to de
 
 This feature is only available if the Source is not connected to a Tracking Plan, and is only available in workspaces that are on a Business Tier plan.
 
-
+ 
 ## Protocols Tracking Plan blocking and property omission
 
 If you're using Protocols, and you're confident that your tracking plan includes exactly the events and properties you want to record, you can tell Segment to [block unplanned events or malformed JSON](/docs/protocols/enforce/schema-configuration/). When you do this, Segment discards any data coming from the Source that doesn't conform to the tracking plan.
