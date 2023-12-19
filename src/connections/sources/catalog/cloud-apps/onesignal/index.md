@@ -47,40 +47,46 @@ OneSignal doesn't send user email address or phone number details to Segment.
 
 The following table lists the events that OneSignal sends to Segment. These events appear as tables in your warehouse and as regular events in other destinations. 
 
-| Event Kind                    | Event Description                                    |
+| MessageEvent Kind             | Event Description                                    |
 | ----------------------------- | ---------------------------------------------------- |
 | Push Sent                     | Push notification successfully sent                  |
 | Push Received                 | Push notification successfully received              |
 | Push Clicked                  | Push notification touched on device                  |
-| In-App Message Displayed      | In-App Message successfully displayed on device      |
+| In-App Message Impression     | In-App Message successfully displayed on device      |
 | In-App Message Clicked        | In-App Message clicked on device                     |
 | In-App Message Page Displayed | In-App Message page is displayed                     |
 | Email Sent                    | Email successfully sent                              |
-| Email Opened                  | Email opened by recipient                            |
-| Email Unsubscribed            | Email unsubscribed by recipient                      |
 | Email Received                | Email received by recipient                          |
+| Email Opened                  | Email opened by recipient                            |
+| Email Link Clicked            | Email contained link, link clicked                   |
+| Email Unsubscribed            | Email unsubscribed by recipient                      |
 | Email Reported As Spam        | Email reported as spam by recipient                  |
-| Email Hardbounced             | Email returned to sender due to permanent error      |
-| Email Failed                  | Could not deliver the email to the recipient's inbox |
+| Email Bounced                 | Email returned to sender due to permanent error      |
+| Email Failed                  | Could not deliver the email to the recipient’s inbox |
+| Email Suppressed              | Email is suppressed for a subscription               |
 | SMS Sent                      | SMS sent to recipient                                |
-| SMS Delivered                 | SMS successfully delivered                           |
 | SMS Failed                    | SMS failed to send                                   |
+| SMS Delivered                 | SMS successfully delivered                           |
+| SMS Undelivered               | SMS undelivered for a subscription                   |
 
 ## Event properties
 
 The following table lists the properties included in the events from the Events table.
 
-| Property Name       | Description                                        |
-| ------------------- | -------------------------------------------------- |
-| `messageId`         | The identifier of the discrete message             |
-| `campaign_id`       | The identifier of the message campaign             |
-| `message_name`      | The message name                                   |
-| `message_title`     | The message title                                  |
-| `message_contents`  | The message contents                               |
-| `message_type`      | The type of message sent, push, in-app, email, SMS |
-| `subscription_type` | The channel the message was sent through           |
-| `template_id`       | The message template used                          |
-| `onesignal_id`      | The OneSignal set user identifier                  |
+| Property Name              | Description                                                                           |
+| -------------------------- | ------------------------------------------------------------------------------------- |
+| `userId`                   | The external_id associated with the message                                           |
+| `anonymousId `             | The subscription_id associated with the message (only sent if there is no externalId) |
+| `messageId`                | The identifier of the discrete message                                                |
+| `campaign_id`              | The identifier of the message campaign                                                |
+| `message_name`             | The message name                                                                      |
+| `message_title`            | The message title only for push and email                                             |
+| `message_contents`         | The message contents only for push and sms                                            |
+| `template_id`              | The message template used                                                             |
+| `subscription_id`         | The OneSignal set device/email/sms identifier                                         |
+| `subscription_device_type` | The device type that received the message                                             |
+| `language`                 | The two character language code of the device                                         |
+| `message_type`             | The type of message sent, push, in-app, email, SMS                                    |
 
 
 
