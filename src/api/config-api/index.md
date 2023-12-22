@@ -68,6 +68,9 @@ When you create an access token, you'll give it a description, a workspace, and 
 > warning "Secret Token"
 > You can not retrieve the plain-text `token` later, so you should save it in a secret manager. If you lose the `token` you can generate a new one.
 
+> info
+> New Config API tokens cannot be created in the UI as we move towards exclusively supporting the Public API. If you need to create a new Config API token, please reach out to friends@segment.com for support. 
+
 ### API Requests
 
 Now that you have an access token, you can use this token to access the rest of the Config API by setting it in the `Authorization` header of your requests, for example:
