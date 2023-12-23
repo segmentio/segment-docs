@@ -64,6 +64,9 @@ This is an advanced feature that requires extensive testing and a squeaky clean 
 
 **IMPORTANT: JSON schema violation event blocking is ONLY supported in cloud-mode Destinations. Events with invalid properties will not be blocked from sending to device-mode Destinations.**
 
+> info "Using only the Common JSON Schema to block events"
+> If a tracking plan is empty of events, but has Common JSON Schema rules, you do not need to use the standard schema controls. You would only need to use the Advanced Blocking Controls in your source. If you use the standard schema controls and omit properties or traits that do not exist, the Tracking Plan may not generate violations for the Common JSON Schema, as the entire Tracking Plan has nothing and everything will be considered unplanned. 
+
 ## Identify Calls - Unplanned Traits
 Setting this dropdown to Omit Traits will ensure that traits not defined in your Tracking Plan are removed from the identify call. For example, if you specify three traits in your Tracking Plan (`name`, `email`, `join_date`), the below identify call would have the `first_name` property omitted by Protocols.
 
