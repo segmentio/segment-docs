@@ -70,7 +70,7 @@ Use-cases for account-level computed traits include:
 
 To associate users to an account with SQL traits, you must return both the `group_id` and `user_id` in the account level SQL trait. This fires a Group call which Segment uses to add users to groups in destinations.
 
-There is a limitation on Segment end when a group (account) contains more than one user, the query will return duplicate group_ids (mapped to unique user_ids). Segment won't allow us to return duplicate group_id's in the Group(account level) SQL trait., So we can't map the users to the accounts on many-to-many situation.
+When a group (account) contains more than one user, the query returns duplicate `group_id`s (mapped to unique `user_id`s). However, Segment doesn't return duplicate `group_id`s in the account-level SQL trait. As a result, you can't map users to accounts in a many-to-many situation.
 
 ### Use account-level computed and SQL traits as account-level audience conditions
 
