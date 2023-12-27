@@ -1,5 +1,6 @@
 ---
 title: Generative Audiences
+beta: true
 
 ---
 
@@ -13,7 +14,7 @@ In this article, you'll learn how to use Generative Audiences along with some be
 ## Build an audience with Generative AI
 -->
 
-## Getting started with CustomerAI
+## Getting started with CustomerAI 
 Use these steps to get started with CustomerAI:
 <!-- ask for a demo of this process -->
 1. From your message composer, select **Launch AI Copywriter**.
@@ -51,6 +52,18 @@ Modifying an audience overwrites the existing audience conditions Segment previo
 
 ## Use cases and examples
 
+Use the following examples to help you get started with audience prompts.
+
+To build an audience with customers who haven't made a purchase in the last 30 days:
+- Enter: `Customers who haven't purchased in the last 30 days.` 
+
+To find all profiles that have recently opened an email:
+- Enter: `Profiles that recently opened an email.`
+
+To build an audience with customers who spend over $50 on an order:
+- Enter: `Customers who have orders greater than $50.`
+
+<!-- CUT
 View the table below for a few example prompts:
 
 
@@ -59,7 +72,7 @@ View the table below for a few example prompts:
 | Build an audience with customers who haven't made a purchase in the last 30 days | "Customers who haven't purchased in the last 30 days."  |
 | Build an audience with customers who spend over $50 on an order | "Customers who have orders greater than $50."   | 
 | Find all profiles that have recently opened an email. | "Profiles that recently opened an email."   |
-
+-->
 
 ## Best practices
 
