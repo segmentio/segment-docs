@@ -477,7 +477,7 @@ No, destination insert functions are currently available as cloud-mode destinati
 
 ##### Can I connect an insert function to multiple destinations?
 
-No, an insert function can only be connected to one destination.
+Yes, an insert function can be connected to multiple destinations. 
 
 {% comment %}
 
