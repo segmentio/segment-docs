@@ -656,6 +656,15 @@ sources:
       - us
     endpoints:
       - us
+  - id: o9OyD6xsVJ
+    display_name: OneSignal
+    hidden: false
+    slug: onesignal
+    url: connections/sources/catalog/cloud-apps/onesignal
+    regions:
+      - us
+    endpoints:
+      - us
   - id: QhEUZnE5uF
     display_name: OneTrust
     hidden: false
@@ -966,6 +975,15 @@ sources:
     regions:
       - us
       - eu
+    endpoints:
+      - us
+  - id: xeZMgSrtAQ
+    display_name: White Label Loyalty
+    hidden: false
+    slug: white-label-loyalty
+    url: connections/sources/catalog/cloud-apps/white-label-loyalty
+    regions:
+      - us
     endpoints:
       - us
   - id: 7GmYZcBQyw
