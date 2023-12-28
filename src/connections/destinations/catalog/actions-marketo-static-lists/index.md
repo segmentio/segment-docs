@@ -1,8 +1,7 @@
 ---
 title: Marketo Static Lists (Actions) Destination
-hide-personas-partial: true
 hide-boilerplate: true
-hide-dossier: false
+strat: adobe
 id: 65302a514ce4a2f0f14cd426
 ---
 > info "Marketo Static Lists vs Marketo Static Lists (Actions) Destinations"
