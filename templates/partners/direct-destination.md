@@ -45,8 +45,8 @@ This destination is maintained by YOURINTEGRATION. For any issues with the desti
 
 > Include clear, succinct steps including hyperlinks to where customers can locate their API Key in your app. If there is an expected delay for a customer to see data flow into your integration, please make that explicit.
 
-1. From the Destinations catalog page in the Segment App, click **Add Destination**.
-2. Search for "YOURINTEGRATION" in the Destinations Catalog, and select the "YOURINTEGRATION" destination.
+1. From your workspace's [Destination catalog page](https://app.segment.com/goto-my-workspace/destinations/catalog){:target="_blank”} search for "YOURINTEGRATION"
+2. Select "YOURINTEGRATION" and click **Add Destination**
 3. Choose which Source should send data to the "YOURINTEGRATION" destination.
 4. Go to the [YOURINTEGRATION dashboard](https://YOURINTEGRATION.com/dashboard){:target="_blank"}, find and copy the "API key".
 5. Enter the "API Key" in the "YOURINTEGRATION" destination settings in Segment.
@@ -108,6 +108,5 @@ analytics.track('Login Button Clicked')
 
 Segment sends Track calls to YOURINTEGRATION as a `track` event.
 
----
 
-> Congratulations! 🎉 You’ve finished the documentation for your Segment integration. If there’s any additional information or nuance which did not fit in the above template and that you want to share with our mutual customers, feel free to include these as a separate section for us to review. If not, you may now submit this doc to our team via your designated Slack Channel and we’ll respond with updates when  we publish it and your integration!
+> (delete after reading) Congratulations! 🎉 You’ve finished the documentation for your Segment integration. If there’s any additional information or nuance which did not fit in the above template and that you want to share with our mutual customers, feel free to include these as a separate section for us to review. If not, you may now submit this doc to our team via your designated Slack Channel and we’ll respond with updates when  we publish it and your integration!
