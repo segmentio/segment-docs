@@ -22,6 +22,8 @@ You'll first choose a Destinaton to connect to your Audience and use with Trait 
 |[SendGrid Marketing Campaigns](/docs/connections/destinations/catalog/actions-sendgrid/)   |   Event           |  1. Connect SendGrid Marketing Campaigns to your Segment space. <br> 2. Enter your SendGrid Marketing Campaigns API key into the connection settings.                      |
 |[LiveRamp](/docs/connections/destinations/catalog/actions-liveramp-audiences/)   |   Event           |  1. Set up your LiveRamp file drop. <br> 2. Connect LiveRamp Audiences to your Segment space.                       |
 |[Iterable (Actions)](/docs/connections/destinations/catalog/actions-iterable/)   |   Event           |  1. Connect Iterable (Actions) to your Segment space. <br> 2. Enter your Iterable (Actions) API key and Data Center Location into the Destination Settings.           |
+|[Yahoo Audiences (Actions)](/docs/connections/destinations/catalog/actions-yahoo-audiences/)   |   Event           |  1. Connect Yahoo Audiences to your Engage space. <br> 2. Enter your Yahoo MDM ID, Engage Space Id and provide description (optional).           |
+
 
 
 ## Resyncs 
