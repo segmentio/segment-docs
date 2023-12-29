@@ -9,7 +9,7 @@ id: 65302a3acb309a8a3d5593f2
 
 Display and Video 360 (Actions) is a rebuild of the classic destination that provides the following benefits:
 
-- **OAuth Authentication** - Simply give Segment access to send data to Google.
+- **OAuth Authentication** - Authenticate in a few easy steps using OAuth2.
 - **Simple setup** - Display and Video 360 (Actions) has a streamlined default setup process making it easier to get started in a way that "just works".
 - **More control** - Actions-based destinations enable you to define the mapping between the data Segment receives from your sources, and the data Segment sends to Google.
 - **Default property mappings** - Default mappings from the Segment like event, timestamp, and more, allow data to be mapped correctly without any setup required.
