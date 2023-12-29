@@ -110,8 +110,6 @@ To configure DoubleClick Floodlight:
 
 Create an [Audience](/docs/personas/audiences) in a new or existing Engage space. After you create the audience, you can select the Display & Video 360 (Actions) destination you created before.
 
-![Select the destination](images/dv360-1-select-destination.png)
-
 > info ""
 > **Note**: These settings are tied to a single audience. Each additional audience you send to DV360 requires you to input these values.
 
