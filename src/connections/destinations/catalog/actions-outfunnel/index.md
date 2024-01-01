@@ -3,8 +3,8 @@ title: Outfunnel Destination
 hide-boilerplate: true
 hide-dossier: true
 id: 63ff8bae963d5cb4fc79f097
-private: false
-hidden: false
+private: true
+hidden: true
 
 ---
 {% include content/plan-grid.md name="actions" %}

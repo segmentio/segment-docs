@@ -129,4 +129,6 @@ destinations:
     override: "actions-iterable"
   - original: "listrak-actions"
     override: "actions-listrak"
+  - original: "logrocket"
+    override: "actions-logrocket"
 

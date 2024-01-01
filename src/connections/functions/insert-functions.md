@@ -100,6 +100,8 @@ async function onTrack(event) {
 
 To change which event type the handler listens to, you can rename it to the name of the message type. For example, if you rename this function `onIdentify`, it listens for "Identify" events instead.
 
+To ensure the Destination processes an event payload modified by the function, return the `event` object at the handler's end.
+
 > info ""
 > Functions' runtime includes a `fetch()` polyfill using a `node-fetch` package. Check out the [node-fetch documentation](https://www.npmjs.com/package/node-fetch){:target="_blank"} for usage examples.
 
@@ -475,7 +477,7 @@ No, destination insert functions are currently available as cloud-mode destinati
 
 ##### Can I connect an insert function to multiple destinations?
 
-No, an insert function can only be connected to one destination.
+Yes, an insert function can be connected to multiple destinations. 
 
 {% comment %}
 
