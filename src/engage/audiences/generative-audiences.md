@@ -4,10 +4,10 @@ beta: true
 
 ---
 
-With Generative Audiences, part of Segment's CustomerAI, use generative AI to create Engage Audiences with natural language prompts. 
+> info "Generative Audiences is in beta"
+> Generative Audiences is in beta, and Segment is actively working on this feature. Some functionality may change before it becomes generally available. [Contact Segment](https://segment.com/help/contact/){:target="_blank"} with any feedback or questions.
 
-<!-- CUT
-Generative Audiences, part of Segment's CustomerAI, uses generative AI to create Engage Audiences with natural language prompts.  -->
+With Generative Audiences, part of Segment's CustomerAI, use generative AI to create Engage Audiences with natural language prompts. 
 
 Describe your desired audience based on events performed, profile traits, or existing audiences in your workspace. Based on your prompt, Segment builds the audience with generative AI.
 
