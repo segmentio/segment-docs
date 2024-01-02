@@ -48,10 +48,12 @@ This destination is maintained by <integration_name>. For any issues with the de
 
 ## Getting started
 
-1. From the Segment web app, click **Catalog**, then click **Destinations**.
-2. Find the Destinations Actions item in the left navigation, and click it.
-3. Click **Configure <desintation_name>**.
-4. Select an existing Source to connect to <destination_name> (Actions).
+1. From your workspace's [Destination catalog page](https://app.segment.com/goto-my-workspace/destinations/catalog){:target="_blank”} search for "<YOURINTEGRATION>"
+2. Select <YOURINTEGRATION> and click **Add Destination**
+3. Select an existing Source to connect to <YOURINTEGRATION> (Actions).
+> (delete after reading) describe steps to filling in relevant destinations settings such as the example steps below
+4. Go to the [<YOURINTEGRATION> dashboard](https://YOURINTEGRATION.com/dashboard){:target="_blank"}, find and copy the **API key**.
+5. Enter the **API Key** in the <YOURINTEGRATION> destination settings in Segment.
 
 > (delete after reading) The line below renders a table of connection settings (if applicable), Pre-built Mappings, and available actions.
 
