@@ -54,8 +54,10 @@ sources:
     url: connections/sources/catalog/cloud-apps/amazon-s3
     regions:
       - us
+      - eu
     endpoints:
       - us
+      - eu
   - id: TNBRknbbnE
     display_name: AMP
     hidden: true
@@ -975,6 +977,15 @@ sources:
     regions:
       - us
       - eu
+    endpoints:
+      - us
+  - id: xeZMgSrtAQ
+    display_name: White Label Loyalty
+    hidden: false
+    slug: white-label-loyalty
+    url: connections/sources/catalog/cloud-apps/white-label-loyalty
+    regions:
+      - us
     endpoints:
       - us
   - id: 7GmYZcBQyw

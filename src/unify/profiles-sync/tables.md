@@ -48,7 +48,6 @@ email: jane.kim@segment.com
 anonymous_id: b50e18a5-1b8d-451c
 context.url: twilio.com/education
 timestamp: June 22, 10:47:15
-email: jane.kim@segment.com
 
 // Segment generates Profile 2, with a single known ID: b50e18a5-1b8d-451c.
 ```

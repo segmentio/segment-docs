@@ -56,6 +56,7 @@ sources:
     - beamer
     - airship
     - adwords
+    - amazon-s3
   endpoint:
     - intercom
     - amp
@@ -91,6 +92,7 @@ sources:
     - google-ads
     - facebook-ads
     - iterable
+    - amazon-s3
 destinations:
   region:
     - 2mee
