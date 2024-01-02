@@ -1337,7 +1337,7 @@ items:
     isCloudEventSource: false
     slug: node-js
     url: connections/sources/catalog/libraries/server/node-js
-    hidden: true
+    hidden: false
     regions:
       - us
       - eu
