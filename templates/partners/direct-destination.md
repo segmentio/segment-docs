@@ -45,11 +45,12 @@ This destination is maintained by YOURINTEGRATION. For any issues with the desti
 
 > Include clear, succinct steps including hyperlinks to where customers can locate their API Key in your app. If there is an expected delay for a customer to see data flow into your integration, please make that explicit.
 
-1. From your workspace's [Destination catalog page](https://app.segment.com/goto-my-workspace/destinations/catalog){:target="_blank”} search for "YOURINTEGRATION"
-2. Select "YOURINTEGRATION" and click **Add Destination**
-3. Choose which Source should send data to the "YOURINTEGRATION" destination.
-4. Go to the [YOURINTEGRATION dashboard](https://YOURINTEGRATION.com/dashboard){:target="_blank"}, find and copy the "API key".
-5. Enter the "API Key" in the "YOURINTEGRATION" destination settings in Segment.
+1. From your workspace's [Destination catalog page](https://app.segment.com/goto-my-workspace/destinations/catalog){:target="_blank”} search for "<YOURINTEGRATION>"
+2. Select <YOURINTEGRATION> and click **Add Destination**
+3. Select an existing Source to connect to <YOURINTEGRATION> (Actions).
+> (delete after reading) describe steps to filling in relevant destinations settings such as the example steps below
+4. Go to the [<YOURINTEGRATION> dashboard](https://YOURINTEGRATION.com/dashboard){:target="_blank"}, find and copy the **API key**.
+5. Enter the **API Key** in the <YOURINTEGRATION> destination settings in Segment.
 
 
 > For each of the following call types (Page, Screen, Identify, Track, Group), update:
