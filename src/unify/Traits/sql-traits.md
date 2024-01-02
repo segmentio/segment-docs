@@ -268,3 +268,8 @@ Ensure that the name given to the SQL trait is not the same name as the identifi
 
 ### Why can't I see error messages in SQL traits while other users can?
 To see error messages in SQL traits, you will need to have PII Access.
+
+### What will happen to the traits values of a user who is no longer returned in the latest update for a SQL trait?
+By default, if a user previously showed up in SQL Trait results but no longer does, the SQL Trait will detect this difference and send null values for all that user’s trait values that were previously set by this SQL trait.
+
+To disable this default behaviour, the SQL Trait can be updated to become what we call "additive". For the SQL Traits with type 'Additive SQL', this default behaviour will not happen. So in that same scenario, when user was present in previous computation but is no longer present in the following one, the traits values in the SQL Trait for the user will remain. To update an SQL Trait to type ‘Additive SQL’, please reach out to friends@segment.com. 
