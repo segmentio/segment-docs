@@ -147,3 +147,8 @@ destinations:
     override: "actions-revx"
   - original: "liveramp-audiences"
     override: "actions-liveramp-audiences"
+  - original: "logrocket"
+    override: "actions-logrocket"
+  - original: "yahoo-audiences"
+    override: "actions-yahoo-audiences"
+
