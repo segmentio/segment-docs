@@ -161,3 +161,7 @@ destinations:
     override: "actions-rupt"
   - original: "upollo-web-actions"
     override: "actions-upollo"
+  - original: "logrocket"
+    override: "actions-logrocket"
+  - original: "yahoo-audiences"
+    override: "actions-yahoo-audiences"
