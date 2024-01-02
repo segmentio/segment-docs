@@ -14,21 +14,21 @@ In addition to these features, the integration provides support for [Trait Activ
 
 
 ## Getting started
-### Connect Yahoo Audiences Destination
 
-1. Create your Engage Audience
-2. Navigate to  **Engage** > **Engage Settings** > **Destinations** tab and click **Add Destination**.
+To connect your Yahoo Audiences Destination: 
+1. Create your Engage Audience.
+2. Navigate to **Engage** > **Engage Settings** > **Destinations** and click **Add Destination**.
 3. Select **Yahoo Audiences**, select your Engage space as the source, and name your destination.
 4. Configure global destination settings on the **Settings** tab:
-    - **Name**: specify destination name, for example “Yahoo Audiences Production”. This value will be only available in Segment.
-    - **MDM ID**: specify MDM ID provided by your Yahoo DSP representative.
-    - **Engage Space ID**: specify Engage Space ID. To locate Engage Space ID navigate to **Unify** > **Unify Settings** > **API Access** tab. This value will identify your customer node in Yahoo Data Taxonomy. Do not provide arbitrary values in this field, or any values other than your Engage space Id. 
-        - **NOTE:** The destination will display an error if the provided value includes any characters other than [a-zA-Z0-9] and “_” (underscore). That is to prevent passing values not supported by Yahoo.
-    - **Customer Description**: provide optional description for the integration. 
-    - Turn on **Enable Destination** toggle.
-    - Click **Save Changes** button to save the destination.
-    - This will create a new customer node in Yahoo Data Taxonomy. Customer node Id matches Engage space Id provided in the settings.
-5. Configure destination Action Mappings: Action Mappings determine the information sent from Engage to Yahoo Audiences destination. Below you will find general information on configuring the mapping, as well as specific configuration for various use-cases. 
+    - **Name**: Specify the destination name, for example “Yahoo Audiences Production”. This value will be only available in Segment.
+    - **MDM ID**: Specify the MDM ID provided by your Yahoo DSP representative.
+    - **Engage Space ID**: Specify the Engage Space ID. To locate Engage Space ID navigate to **Unify** > **Unify Settings** > **API Access**. This value identifies your customer node in Yahoo Data Taxonomy. Do not provide arbitrary values in this field, or any values other than your Engage Space ID. 
+        - **NOTE:** The destination displays an error if the provided value includes any characters other than [a-zA-Z0-9] and “_” (underscore). This is to prevent passing values not supported by Yahoo.
+    - **Customer Description**: Provide an optional description for the integration. 
+    - Turn on the **Enable Destination** toggle.
+    - Click **Save Changes** to save the destination.
+    - This creates a new customer node in the Yahoo Data Taxonomy. The Customer node ID matches the Engage Space ID provided in the settings.
+5. Configure destination Action Mappings. Action Mappings determine the information sent from Engage to Yahoo Audiences destination. Below you will find general information on configuring the mapping, as well as specific configuration for various use-cases. 
     - On the **Mapping** tab click **Add Mapping** and select **Sync to Yahoo Ads Segment**.
     - Within the mapping’s **Select events to map and send** configure whether the mapping should be triggered for all audiences connected to the destination, or for specific audiences only.
         - **NOTE:** Action mapping settings apply to all audiences that are processed by the mapping. The mapping can be configured to (1) process all audiences connected to the destination, or (2) only specific audiences. This can be helpful when enabling the GDPR flag only for specific audiences.
@@ -37,7 +37,7 @@ In addition to these features, the integration provides support for [Trait Activ
         - To apply the mapping to all audiences, modify the trigger as follows:
         ![A screenshot subscription settings for all audiences](images/yahoo-2.png)
     - Configure the mapping for **Email**, **Phone**, **Mobile Advertising Id** and **Device Type** fields. You can keep default mapping for these fields, if your data matches default mappings.
-        - **NOTE:** The destination expects mobile advertising Id to be a combination of 2 fields: advertising Id and device type. If device type field is not available in your data, the destination deduces the platform (iOS /Android) based on advertising Id value formatting. If the value is capitalized - the destination assumes that this is iOS IDFA, otherwise the destination assumes that is Android DSP Id.
+        - **NOTE:** The destination expects mobile advertising Id to be a combination of 2 fields: advertising Id and device type. If device type field is not available in your data, the destination deduces the platform (iOS /Android) based on advertising Id value formatting. If the value is capitalized - the destination assumes that this is iOS IDFA, otherwise the destination assumes that is Android DSP ID.
     - Configure whether **GDPR Flag** should be sent.
         - **NOTE:** **GDPR Flag** setting applies to the entire audience. Set this setting to TRUE if the audience is subject to GDPR regulations. If you have set **GDPR Flag** to YES, then populate **GDPR Consent Attributes** setting with the following IAB user consent attributes: “Access of Information” and “Personalization”. See more in [Yahoo DSP API documentation](https://developer.yahooinc.com/datax/guide/gdpr/faq/){:target="_blank"}. If **GDPR Flag** setting is set to YES, and **GDPR Consent Attributes** is not populated, audience sync will fail.  
     - If you’ve opted to send a **GDPR Flag**, provide **GDPR Consent Attributes**.
@@ -52,7 +52,7 @@ In addition to these features, the integration provides support for [Trait Activ
     - Do not modify the **Placeholder** setting. 
     - Click **Save Settings**.
 
-> info "* Note"
+> info ""
 > Yahoo DSP supports the following identifiers: **email**, **phone**, **iOS IDFA**, **Android Advertising Id**. Segment hashes email and phone per Yahoo DSP requirements, so you don’t have to hash email and phone. Segment formats the phone to meet E.164 requirements: removes non-digit characters and adds “+” sign. Your phone trait/identifier must include country code, as Segment does not prepend phone with country code.
 
 Once the Audience is connected to the Destination, Segment makes a request to Yahoo DSP to create an ‘audience’ (‘segment’) node in Yahoo Data Taxonomy. The node is identified by Audience ID, and named with Audience Key. After Engage has computed the audience, the Destination syncs the audience to Yahoo DSP.
@@ -63,7 +63,7 @@ Once the Audience is connected to the Destination, Segment makes a request to Ya
 
 ### Use-case 1
 
-Email, phone, IOS IDFA and Android Advertising Id are available as Engage Identifiers. 
+Email, phone, IOS IDFA and Android Advertising ID are available as Engage Identifiers. 
 
 - **Action Mappings**: 
 Keep default field mappings.
