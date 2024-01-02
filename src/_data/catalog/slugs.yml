@@ -165,3 +165,5 @@ destinations:
     override: "actions-logrocket"
   - original: "yahoo-audiences"
     override: "actions-yahoo-audiences"
+  - original: "podscribe-actions"
+    override: "actions-podscribe"
