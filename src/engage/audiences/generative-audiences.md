@@ -30,21 +30,21 @@ To create an audience with Generative Audiences:
 
 1. Navigate to **Engage > Audiences**, and click **+ New audience**.
 2. From the dropdown menu, select **Audience**.
-3. Select **Generative Audiences** as your audience type. Generative Audiences is available in all audience types except Linked Audiences.
+3. Select **Generative Audiences** as your audience type. Generative Audiences is available for all audience types except Linked Audiences.
 4. From the Build screen, click **Help me build**.
 5. Enter your prompt in the audience description box. 
-- Use a minimum of 20 characters and up to 300 characters maximum.
+- Use a minimum of 20 characters and up to 300 characters maximum. 
 6. Click **Build**. Based on your prompt, CustomerAI generates audience conditions for you to review. 
 - Segment displays a progress bar until the audience conditions are generated.
 
 > success ""
-> View some [example prompts](#use-cases-and-examples) and [best practices](#best-practices).
+> To help you write your prompt, view these [example prompts](#use-cases-and-examples) and [best practices](#best-practices).
 
 ### Modify an audience description 
 
 Once Segment generates the audience conditions, the prompt box remains open for reference. You can close this box, or modify your audience description and click **Build** again. Modifying an audience overwrites the existing audience conditions Segment previously generated. 
 
-> success ""
+> info ""
 > Once Segment generates the audience, you can also adjust or remove any conditions straight from the audience builder. 
 
 
@@ -74,7 +74,7 @@ As you use generative audiences, keep the following best practices in mind:
 
 ## Known limitations
 
-### Limited Space Schema 
+### Limited space schema 
 
 Segment's generative AI service is handled by a third party that needs to be fed context about your Engage workspace and has limitations to how many contextual parameters Segment can send it. Because of this, Segment limits the amount of data it sends to the AI service. Segment solves this limitation by including up to 100,000 of the most recently used events and traits in your Engage space.
 
@@ -88,16 +88,15 @@ At this time, Segment only supports audience description prompts in the English 
 
 Audience descriptions around not having profile traits or users who have not performed certain events are expected to have their conditions configured in the following way:
 
-- "Customers who have not purchased in the last 30 days."
+- **Prompt**: "Customers who have not purchased in the last 30 days."
+- **Expected output**: Segment generates a condition where *the event is performed at most 0 times*.
 
 ![Creating an audience where customers haven't made a purchase in the last 30 days.](/docs/engage/images/No-purchases.png)
-The expected output is for Segment to generate a condition where *the event is performed at most 0 times*.
 
-- "Customers who don't have a phone number."
+- **Prompt**: "Customers who don't have a phone number."
+- **Expected output**: Segment generates a condition where *the trait doesn't exist*.
 
 ![Creating an audience where customers don't have a phone number.](/docs/engage/images/phone-doesn't-exist.png)
-
-The expected output is to generate a condition where *the trait doesn't exist*.
 
 
 ## Error handling
@@ -108,10 +107,10 @@ Engage uses the following error messages with Generative Audiences:
 |---------------------------|---------------------------------------|
 | Something went wrong      | This error displays when one of the following occur: <br>  - Not found exception <br> - Invalid LLM output <br> - LLM error terminal <br> - Unknown exception                  |
 | Something went wrong. Try again later. | The AI service is down or the LLM returned an error. |
-| Segment had trouble creating an audience from this description. Try rewording it using these [best practices](#best-practices). | Referenced an invalid or non-existing trait, audience, or event within the workspace. You may also see this when an objective is impossible or misunderstood. |
+| Segment had trouble creating an audience from this description. Try rewording it using these [best practices](#best-practices). | The prompt referenced an invalid or non-existing trait, audience, or event within the workspace. You may also see this when an objective is impossible or misunderstood. |
 
 
-## More about Segment's Generative AI service
+## More about Segment's generative AI service
 
 #### How is my data used?
 
