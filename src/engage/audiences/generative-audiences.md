@@ -12,7 +12,7 @@ With Generative Audiences, part of Segment's CustomerAI, use generative AI to cr
 Describe your desired audience based on events performed, profile traits, or existing audiences in your workspace. Based on your prompt, Segment builds the audience with generative AI.
 
 In this article, you'll learn how to use Generative Audiences along with some best practices.
-
+ 
 
 ## Getting started with CustomerAI 
 Use these steps to get started with CustomerAI:
