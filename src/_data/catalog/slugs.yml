@@ -171,3 +171,7 @@ destinations:
     override: "actions-braze-cohorts"
   - original: "attio-actions"
     override: "actions-attio"
+  - original: "commandbar"
+    override: "actions-commandbar"
+  - original: "gainsight-px-cloud-actions"
+    override: "actions-gainsight-px-cloud"
