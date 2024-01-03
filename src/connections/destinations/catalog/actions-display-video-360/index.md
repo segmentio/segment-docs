@@ -7,6 +7,8 @@ id: 65302a3acb309a8a3d5593f2
 
 > info "Personas Display and Video 360 vs Display and Video 360 (Actions) Destinations"
 
+> info Display and Video 360 (Actions) operates using third-party cookies, its match rates are influenced by the extent to which these cookies are supported by browsers
+
 Display and Video 360 (Actions) is a rebuild of the classic destination that provides the following benefits:
 
 - **OAuth Authentication** - Authenticate in a few easy steps using OAuth2.
