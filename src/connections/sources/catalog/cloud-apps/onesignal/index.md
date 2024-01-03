@@ -86,7 +86,7 @@ The following table lists the properties included in the events from the Events 
 | `subscription_id`         | The OneSignal set device/email/sms identifier                                         |
 | `subscription_device_type` | The device type that received the message                                             |
 | `language`                 | The two character language code of the device                                         |
-| `message_type`             | The type of message sent, push, in-app, email, SMS                                    |
+| `message_type`             | The type of message sent (push, in-app, email, or SMS)                                    |
 
 
 
