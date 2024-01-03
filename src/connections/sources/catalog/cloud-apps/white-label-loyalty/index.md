@@ -1,5 +1,7 @@
 ---
 title: White Label Loyalty Source
+id: xeZMgSrtAQ
+beta: true
 ---
 
 [White Label Loyalty](https://whitelabel-loyalty.com/){:target="_blank”} is an event powered loyalty solution to drive customer retention.
@@ -12,9 +14,9 @@ This source is maintained by White Label Loyalty. For any issues with the source
 
 1. From your workspace's [Sources catalog page](https://app.segment.com/goto-my-workspace/sources/catalog){:target="_blank”} click **Add Source**.
 2. Search for "White Label Loyalty" in the Sources Catalog, select White Label Loyalty, and click **Add Source**.
-3. On the next screen, give the Source a nickname configure any other settings.
+3. On the next screen, give the Source a name configure any other settings.
 
-   - The nickname is used as a label in the Segment app, and Segment creates a related schema name in your warehouse. The nickname can be anything, but we recommend using something that reflects the source itself and distinguishes amongst your environments (eg. SourceName_Prod, SourceName_Staging, SourceName_Dev).
+   - The name is used as a label in the Segment app, and Segment creates a related schema name in your warehouse. The name can be anything, but we recommend using something that reflects the source itself and distinguishes amongst your environments (eg. WhiteLabel_Prod, WhiteLabel_Staging, WhiteLabel_Dev).
 
 4. Click **Add Source** to save your settings.
 5. Copy the Write key from the Segment UI.
@@ -31,7 +33,7 @@ The default behavior is for White Label Loyalty to pass the authIdentifier assoc
 
 ## Events
 
-White Label Loyalty will send all custom and intrinsic event types created in the White Label Loyalty Console, as per the schema provided when you set it up. White Label Loyalty will include the `userId` if available.
+White Label Loyalty will send all custom and intrinsic event types created in the White Label Loyalty Console, as per the schema provided when you set it up. White Label Loyalty will send all events reported against a user and include the `userId`.
 
 ## Adding Destinations
 
@@ -40,5 +42,3 @@ Now that your Source is set up, you can connect it with Destinations.
 Log into your downstream tools and check to see that your events appear as expected, and that they contain all of the properties you expect. If your events and properties don’t appear, check the [Event Delivery](/docs/connections/event-delivery/) tool, and refer to the Destination docs for each tool for troubleshooting.
 
 If there are any issues with how the events are arriving to Segment, [contact the White Label Loyalty support team](mailto:support@whitelabel-loyalty.com).
-
----
