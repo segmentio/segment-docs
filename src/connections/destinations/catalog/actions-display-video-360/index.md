@@ -34,6 +34,8 @@ Segment's integration with DV360 enables Segment customers to sync audiences cre
 
 ## Details
 
+> info Caution: for users detected to originate from US states with privacy restrictions, using a Google User ID to populate user lists is deprecated, and will be eventually sunset. It's recommended that bidders populate user lists with their hosted match data for these users.
+
 - **Audience appears as**: An audience list with the name of your Engage Audience on the **DV360 All Audiences** screen
 - **Destination rate limit**: None
 - **Lookback window allowed**: 30 days
