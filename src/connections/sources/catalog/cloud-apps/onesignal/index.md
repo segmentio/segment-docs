@@ -75,7 +75,7 @@ The following table lists the properties included in the events from the Events 
 
 | Property Name              | Description                                                                           |
 | -------------------------- | ------------------------------------------------------------------------------------- |
-| `userId`                   | The external_id associated with the message                                           |
+| `userId`                   | The `external_id` associated with the message                                           |
 | `anonymousId `             | The subscription_id associated with the message (only sent if there is no externalId) |
 | `messageId`                | The identifier of the discrete message                                                |
 | `campaign_id`              | The identifier of the message campaign                                                |
