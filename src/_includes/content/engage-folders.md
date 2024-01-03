@@ -16,6 +16,8 @@ To create a folder:
 
 You can also rename, add templates, or disband your folder from the Templates overview page. Disbanding a folder returns all templates from the folder to the main template list, without deleting any of the templates.
 
+<div class="premonition info"><div class="fa fa-info-circle"></div><div class="content"><p markdown=1>You can only organize templates in your folders according to template type. For example, you can't group email and SMS templates in the same folder.</p></div></div>
+
 ### Move templates to your folders
 
 From the Templates overview page, you can select individual template(s) to move to your folders. 
