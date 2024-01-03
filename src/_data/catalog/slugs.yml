@@ -167,3 +167,7 @@ destinations:
     override: "actions-yahoo-audiences"
   - original: "podscribe-actions"
     override: "actions-podscribe"
+  - original: "braze-cohorts"
+    override: "actions-braze-cohorts"
+  - original: "attio-actions"
+    override: "actions-attio"
