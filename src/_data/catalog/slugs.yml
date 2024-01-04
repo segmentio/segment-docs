@@ -189,3 +189,5 @@ destinations:
     override: "regal"
   - original: "rehook"
     override: "actions-rehook"
+  - original: "bucket-web-actions"
+    override: "bucket-web"
