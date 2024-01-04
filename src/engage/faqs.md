@@ -132,8 +132,8 @@ Each step of a Journey is an Engage audience under the hood. The conditions stac
 
 ## Why were multiple audience-entered events triggered for the same user?
 
-Multiple audience events can be triggered for the user if it falls under any one of the following conditions:
-1) A merge (there is a merge on this user)
-2) [New external_id’s](/docs/engage/using-engage-data/#new-external-identifiers-added-to-a-profile) added to the profile (a new external_id that was added can trigger this).
-3) The user has [multiple identifiers of the same type](/docs/engage/using-engage-data/#multiple-identifiers-of-the-same-type). Personas sends one event per identifier for each audience or computed trait event.
-4) Anonymous audience. This is expected behavior of Personas when the 'include anonymous users' option is selected in the audience. We will send an event per every anonymousId on the user profile, when there's multiple (not your case).
+Multiple audience events can trigger for a user if any of the following conditions occur:
+1) There is a merge on the user.
+2) An [`external_id`](/docs/engage/using-engage-data/#new-external-identifiers-added-to-a-profile) was added to the profile.
+3) The user has [multiple identifiers of the same type](/docs/engage/using-engage-data/#multiple-identifiers-of-the-same-type). Segment sends one event per identifier for each audience or computed trait event.
+4) The `include anonymous users` option is selected for an audience. Segment sends an event for every `anonymousId` on the user profile.
