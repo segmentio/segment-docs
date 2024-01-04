@@ -191,3 +191,7 @@ destinations:
     override: "actions-rehook"
   - original: "bucket-web-actions"
     override: "bucket-web"
+  - original: "movable-ink-actions"
+    override: "actions-movable-ink"
+  - original: "userpilot-web-plugin"
+    override: "userpilot"
