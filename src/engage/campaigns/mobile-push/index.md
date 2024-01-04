@@ -355,7 +355,7 @@ Follow these steps to set up mobile push in Twilio Engage.
 13. Click **Save Twilio Account.**
 
 > info ""
-> After creating the messaging service, it cannot be directly removed from the space. As a workaround, you can edit the Twilio account credentials by clicking the pencil icon. Enter the account credentials (use the API key secret if you remember or create a new API key). Once you've selected the desired services, they will override the existing ones, effectively removing the ones you no longer need.
+> After creating the messaging service, it cannot be directly removed from the space. To remove the messaging service, you have to edit the Twilio account credentials by clicking the pencil icon. Enter the account credentials (use the API key secret if you remember or create a new API key). Once you've selected the desired services, they will override the existing ones, effectively removing the ones you no longer need.
 
 ### 5b. Create a new push service
 
