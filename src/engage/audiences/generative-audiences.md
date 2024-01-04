@@ -1,11 +1,11 @@
 ---
 title: Generative Audiences
 beta: true
-
+plan: engage-foundations
 ---
 
-> info "Generative Audiences is in beta"
-> Generative Audiences is in beta, and Segment is actively working on this feature. Some functionality may change before it becomes generally available. [Contact Segment](https://segment.com/help/contact/){:target="_blank"} with any feedback or questions.
+> info "Generative Audiences is in private beta"
+> Generative Audiences is in private beta, and Segment is actively working on this feature. Some functionality may change before it becomes generally available. [Contact Segment](https://segment.com/help/contact/){:target="_blank"} with any feedback or questions.
 
 With Generative Audiences, part of Segment's CustomerAI, use generative AI to create Engage Audiences with natural language prompts. 
 
@@ -13,17 +13,6 @@ Describe your desired audience based on events performed, profile traits, or exi
 
 In this article, you'll learn how to use Generative Audiences along with some best practices.
  
-
-## Getting started with CustomerAI 
-Use these steps to get started with CustomerAI:
-<!-- ask for a demo of this process -->
-1. From your message composer, select **Launch AI Copywriter**.
-2. In the drag-and-drop editor for in-app messages, select a text block and select in the block's toolbar.
-3. Enter a product name or description in the input field.
-4. Select the output language. This can be different from your input language.
-5. Select an appoximate output length.
-6. Click **Generate Copy**.
-
 ## Create an audience with Generative Audiences 
 
 To create an audience with Generative Audiences: 
@@ -88,16 +77,17 @@ At this time, Segment only supports audience description prompts in the English 
 
 Audience descriptions around not having profile traits or users who have not performed certain events are expected to have their conditions configured in the following way:
 
-- **Prompt**: "Customers who have not purchased in the last 30 days."
-- **Expected output**: Segment generates a condition where *the event is performed at most 0 times*.
+1. **Prompt**: "Customers who have not purchased in the last 30 days."
 
 ![Creating an audience where customers haven't made a purchase in the last 30 days.](/docs/engage/images/No-purchases.png)
 
-- **Prompt**: "Customers who don't have a phone number."
-- **Expected output**: Segment generates a condition where *the trait doesn't exist*.
+- **Expected output**: Segment generates a condition where *the event is performed at most 0 times*.
+
+2. **Prompt**: "Customers who don't have a phone number."
 
 ![Creating an audience where customers don't have a phone number.](/docs/engage/images/phone-doesn't-exist.png)
 
+- **Expected output**: Segment generates a condition where *the trait doesn't exist*.
 
 ## Error handling
 
@@ -105,7 +95,7 @@ Engage uses the following error messages with Generative Audiences:
 
 | Error message        | Cause                  |
 |---------------------------|---------------------------------------|
-| Something went wrong      | This error displays when one of the following occur: <br>  - Not found exception <br> - Invalid LLM output <br> - LLM error terminal <br> - Unknown exception                  |
+| Something went wrong      | This error displays when one of the following scenarios occur: <br>  - Exception not found <br> - Invalid LLM output <br> - LLM error terminal <br> - Unknown exception                  |
 | Something went wrong. Try again later. | The AI service is down or the LLM returned an error. |
 | Segment had trouble creating an audience from this description. Try rewording it using these [best practices](#best-practices). | The prompt referenced an invalid or non-existing trait, audience, or event within the workspace. You may also see this when an objective is impossible or misunderstood. |
 
