@@ -130,3 +130,10 @@ If your team would like to avoid receiving the notifications for transient failu
 
 Each step of a Journey is an Engage audience under the hood. The conditions stack, so a user must be a member of the previous step (audience) and meet all conditions to be added to subsequent steps. However, if the user no longer meets entry conditions for a particular step, they'll exit and you'll see the user count reduced. For any subsequent steps a user is still a part of, they'll remain until they no longer meet entry conditions. 
 
+## Why were multiple audience-entered events triggered for the same user?
+
+Multiple audience events can trigger for a user if any of the following conditions occur:
+1) There is a merge on the user.
+2) An [`external_id`](/docs/engage/using-engage-data/#new-external-identifiers-added-to-a-profile) was added to the profile.
+3) The user has [multiple identifiers of the same type](/docs/engage/using-engage-data/#multiple-identifiers-of-the-same-type). Segment sends one event per identifier for each audience or computed trait event.
+4) The `include anonymous users` option is selected for an audience. Segment sends an event for every `anonymousId` on the user profile.
