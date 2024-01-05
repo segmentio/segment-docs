@@ -47,10 +47,13 @@ You can send test emails before you include a template in marketing campaigns.
 - Profiles that you send test messages to must have a userId in Segment.
 5. Select **Send test email**.
 
+{% comment %} 
 > success ""
 > When you send a test message, the trait must be valid for the field it's being used in. For example:
 > - If you use `profile.traits.first_name` in the **From sender** field, it must be a valid username. 
 > - If you use `profile.traits.email` in the **Reply to email** field, it must be a valid email address.
+
+{% endcomment %}
 
 > info ""
 > You can also test email templates directly from a [Send an Email step](/docs/engage/journeys/build-journey/#send-an-email) in Journeys.
