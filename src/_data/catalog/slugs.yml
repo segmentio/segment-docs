@@ -177,7 +177,7 @@ destinations:
     override: "actions-gainsight-px-cloud"
   - original: "loops-actions"
     override: "actions-loops"
-  - original: "lumen"
+  - original: "ortto"
     override: "autopilotapp"
   - original: "insider-audiences"
     override: "actions-insider-audiences"
