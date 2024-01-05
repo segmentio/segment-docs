@@ -195,3 +195,7 @@ destinations:
     override: "actions-movable-ink"
   - original: "userpilot-web-plugin"
     override: "userpilot"
+  - original: "inmoment-formerly-wootric"
+    override: "wootric-by-inmoment"
+  - original: "canny-actions"
+    override: "actions-canny"
