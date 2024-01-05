@@ -2,6 +2,7 @@
 title: Shopify
 redirect_from:
 id: 
+hidden: true
 ---
 
 The Shopify Source enables you to send [Shopify Web Pixel API Standard Events](https://shopify.dev/docs/api/web-pixels-api/standard-events){:target="\_blank"} from your Shopify Store to Segment. Events sent to Segment are formatted to match the [Segment Ecommerce Spec](https://segment.com/docs/connections/spec/ecommerce/v2/) as closely as possible. 
