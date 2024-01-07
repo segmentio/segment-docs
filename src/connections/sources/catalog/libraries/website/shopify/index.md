@@ -11,7 +11,7 @@ This Source is a free to use [Shopify App Extension](https://shopify.dev/docs/ap
 
 #### Overview
 
-Once installed and enabled, Segment events be sent from the user's browser to your Segment 'Shopify' Source in real time. 
+Once installed and enabled, Segment collects events from the user's browser and sends them to your Segment 'Shopify' Source in real time. 
 
 - You can control which Segment `track()` events get collected as well as how user profile details are passed to Segment.  
 - A custom JavaScript snippet is loaded in the Shopify store. This script transforms Shopify Standard Events to Segment Ecommerce Spec events. Note that Segment's Analytics.js 2.0 library will **not** load on any Shopify store page. 
