@@ -5,7 +5,7 @@ id:
 hidden: true
 ---
 
-The Shopify Source enables you to send [Shopify Web Pixel API Standard Events](https://shopify.dev/docs/api/web-pixels-api/standard-events){:target="\_blank"} from your Shopify Store to Segment. Events sent to Segment are formatted to match the [Segment Ecommerce Spec](https://segment.com/docs/connections/spec/ecommerce/v2/) as closely as possible. 
+This Shopify Source lets you send [Shopify Web Pixel API Standard Events](https://shopify.dev/docs/api/web-pixels-api/standard-events){:target="_blank"} from your Shopify Store to Segment. Events sent to Segment are formatted to match the [Segment Ecommerce Spec](/docs/connections/spec/ecommerce/v2/). 
 
 This Source is a free [Shopify App Extension](https://shopify.dev/docs/apps/app-extensions){:target="_blank"} which can be installed using your Shopify Store's Admin interface.  
 
