@@ -25,14 +25,19 @@ If you require more advanced functionality or want to collect post-purchase even
 
 ## Getting Started
 
-1. **Log in** to your Shopify Store account.
-2. Go to the [Shopify app store listing](https://apps.shopify.com/twilio-segment){:target="\_blank"} for **Twilio Segment**.
-3. Click **Add app** to begin the installation process.
-4. Add the [**Segment write key**](/docs/connections/find-writekey/) for your Segment Source, and select the Region for your Segment Workspace. 
+1. **Log in** to your Segment Workspace.
+2. Click on 'Catalog'. 
+3. Use the 'Search an Integration' search field to search for the term 'Shopify'.
+4. Select the 'Shopify' tile and complete the steps to set it up.
+5. Make a note of the [**Source write key**](/docs/connections/find-writekey/) for your Shopify Source.   
+6. **Log in** to your Shopify Store account.
+7. Go to the [Shopify app store listing](https://apps.shopify.com/twilio-segment){:target="\_blank"} for **Twilio Segment**.
+8. Click **Add app** to begin the installation process.
+9. Add the [**Segment write key**](/docs/connections/find-writekey/) for your Segment Source, and select the Region for your Segment Workspace. 
    ![Add Source writeKey and select Workspace Region.](images/settings.png)
-5. Use the checkboxes under 'Manage Events' to select which `track()` events to send to Segment. 
-6. Use the checkboxes under 'Manage user profile details' to select how user profile details should be sent to Segment. 
-6. Click the 'Turn On' button to enable start sending analytics events from your Shopify Store to Segment. 
+10. Use the checkboxes under 'Manage Events' to select which `track()` events to send to Segment. 
+11. Use the checkboxes under 'Manage user profile details' to select how user profile details should be sent to Segment. 
+12. Click the 'Turn On' button to enable start sending analytics events from your Shopify Store to Segment. 
 
 ## identifiers
 
