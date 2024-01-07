@@ -279,5 +279,5 @@ Shopify sometimes erroneously triggers duplicate `Address Info Entered`, `Shippi
 ** Why do some Address/Shipping/Contact/Payment Info Entered events contain product arrays? **
 Shopify sometimes includes product array details in the [Standard Events](https://shopify.dev/docs/api/web-pixels-api/standard-events){:target="\_blank"} which Segment uses to populate the `Address Info Entered`, `Shipping Info Entered`, `Contact Info Entered`, `Payment Info Entered` events. A decision was made to include these product details in the Segment events for completeness.  
 
-** Why are some event properties missing even though this documentation indicates that they should be present? **
-Mapping code is in place to map the majority of valuable fields from Shopify's [Standard Events](https://shopify.dev/docs/api/web-pixels-api/standard-events){:target="\_blank"} to Segment events per this document. If properties are missing it is due to the values not being provided by the Shopify standard event.   
+### Why are some event properties missing even though the documentation indicates that they should be present?
+Mapping code is in place to map the majority of valuable fields from Shopify's [Standard Events](https://shopify.dev/docs/api/web-pixels-api/standard-events){:target="_blank"} to Segment events. If properties are missing, it is due to the values not being provided by the Shopify event.   
