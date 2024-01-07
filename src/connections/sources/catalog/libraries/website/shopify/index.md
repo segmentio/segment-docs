@@ -267,8 +267,8 @@ The following user profile details will be sent to Segment as they become availa
 ** Under reporting of events **
 This Source uses client side Javascript to send data to Segment. As with any client side analytics tracking it is possible that some ad-blockers will prevent data being sent to Segment. This can lead to an under reporting of events to Segment.   
 
-** When do identify() events trigger? **
-`identify()` events will only trigger when `Checkout Started`, `Address Info Entered`, `Shipping Info Entered`, `Contact Info Entered`, `Payment Info Entered` or `Order Completed` `track()` are triggered. Ensure that the 'Send identify() calls' checkbox is enabled. 
+### When do Identify events trigger?
+To send Identify events, you must select the 'Send identify() calls' checkbox. If this setting is selected, Identify events are triggered when `Checkout Started`, `Address Info Entered`, `Shipping Info Entered`, `Contact Info Entered`, `Payment Info Entered` or `Order Completed` Track calls are triggered.
 
 ### Why aren't my Identify events triggering when expected?
 To save on API call volume, Segment only triggers an Identify event when user profile details have changed. If no change is detected, then the Identify call is not triggered.  
