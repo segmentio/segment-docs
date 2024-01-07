@@ -16,7 +16,6 @@ Once installed and enabled, Segment collects events from the user's browser and 
 - You can control which Segment `track()` events get collected as well as how user profile details are passed to Segment.  
 - A custom JavaScript snippet is loaded in the Shopify store. This script transforms Shopify Standard Events to Segment Ecommerce Spec events. Note that Segment's Analytics.js 2.0 library will **not** load on any Shopify store page. 
 - You can control which Segment Track events get collected as well as how user profile details are passed to Segment.  
-- A custom JavaScript snippet is loaded in the Shopify store. This script transforms Shopify Standard Events to Segment Ecommerce Spec events. Note that Segment's Analytics.js 2.0 library does **not** load on any Shopify store page. 
 - This is a Device Mode (client side) Integration. No data is sent server-side from Shopify to Segment.  
 - This source does not collect post-purchase events.
 - The Segment anonymousId is set to the value of the Shopify client ID. The Segment userId value is never populated. 
