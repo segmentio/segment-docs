@@ -270,8 +270,8 @@ This Source uses client side Javascript to send data to Segment. As with any cli
 ** When do identify() events trigger? **
 `identify()` events will only trigger when `Checkout Started`, `Address Info Entered`, `Shipping Info Entered`, `Contact Info Entered`, `Payment Info Entered` or `Order Completed` `track()` are triggered. Ensure that the 'Send identify() calls' checkbox is enabled. 
 
-** identify() events sometimes don't trigger when expected **
-To save on API call volume Segment will only trigger an `identify()` event when user profile details have changed. If no change is detected then the `identify()` call will not trigger. 
+### Why aren't my Identify events triggering when expected?
+To save on API call volume, Segment only triggers an Identify event when user profile details have changed. If no change is detected, then the Identify call is not triggered.  
 
 ### Why are some events duplicated and triggered multiple times?
 Shopify sometimes erroneously triggers duplicate `Address Info Entered`, `Shipping Info Entered`, `Contact Info Entered`, `Payment Info Entered` events in short succession. This is a known bug with Shopify. Segment deduplicates the majority of these duplicate events but is unable to filter all of them out. 
