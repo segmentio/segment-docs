@@ -20,7 +20,7 @@ Once installed and enabled, Segment events be sent from the user's browser to yo
 - The Segment anonmousId is set to the value of the Shopify client ID. The Segment userId value is never populated. 
 - Email address and phone number details will be sent to Segment if they are collected by Shopify.   
 
-If you require more advanced functionality or post purchase events consider using the [Shopify by Littledata](https://segment.com/docs/connections/sources/catalog/libraries/website/shopify-littledata/) Source. 'Shopify by Littledata' requires a paid subscription. 
+If you require more advanced functionality or want to collect post-purchase events, consider using the [Shopify by Littledata](/docs/connections/sources/catalog/libraries/website/shopify-littledata/) Source. Shopify by Littledata requires a paid subscription. 
 
 ## Getting Started
 
