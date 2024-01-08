@@ -3,7 +3,7 @@ title: Generative Audiences
 beta: true
 plan: engage-foundations
 ---
-
+ 
 > info "Generative Audiences is in private beta"
 > Generative Audiences is in private beta, and Segment is actively working on this feature. Some functionality may change before it becomes generally available. [Contact Segment](https://segment.com/help/contact/){:target="_blank"} with any feedback or questions.
 
@@ -59,11 +59,13 @@ As you use generative audiences, keep the following best practices in mind:
 - Try different prompts. If you don't receive what you want on the first try, rewrite your prompt. Submitting a new prompt replaces existing conditions.
 - Preview your audience to ensure you're matching with the correct profiles prior to moving on to the next step.
 
-> success ""
-> As your writing your prompt, you can view traits and events that are active in your workspace from the audience builder. In the builder, after you add a condition, click the property field for a dropdown of active and inactive traits and events in your workspace. <br>
-> You can also use the Profile explorer (**Unify** > **Profile explorer**) to view specific events and traits that are in your Segment space. <br>
->
-> Learn more about [using existing events and traits](/docs/engage/audiences/#building-an-audience) to build audiences. 
+### View events and traits in your workspace
+
+As your writing your prompt, you can view traits and events that are active in your workspace from the audience builder. After you add a condition in the builder, click the property field for a dropdown of active and inactive traits or events in your workspace. 
+
+You can also use the Profile explorer (**Unify** > **Profile explorer**) to view specific events and traits that are in your Segment space. 
+
+Learn more about [using existing events and traits](/docs/engage/audiences/#building-an-audience) to build audiences. 
 
 > warning ""
 > Due to a [limited space schema](#limited-space-schema), CustomerAI may not recognize some events or traits that are inactive in your workspace. 
@@ -101,13 +103,11 @@ Engage uses the following error messages with Generative Audiences:
 
 ### Limited space schema 
 
-Segment's generative AI service is handled by a third party that needs to be fed context about your Engage workspace and has limitations to how many contextual parameters Segment can send it. Because of this, Segment limits the amount of data it sends to the AI service. Segment solves this limitation by including up to 100,000 of the most recently used events and traits in your Engage space.
+Segment's generative AI service is handled by a third party that needs context about your Engage workspace and has limitations to how many contextual parameters Segment can send it. Because of this, Segment limits the amount of data it sends to the AI service. Segment solves this limitation by including up to 100,000 of the most recently used events and traits in your Engage space. As a result, some event properties may not be populated.
 
-Event properties may not be populated due to this.
+### Language support
 
-### Foreign language support
-
-At this time, Segment only supports audience description prompts in the English language. Foreign language support is currently unavailable and might provide undesired results. 
+At this time, Segment only supports audience description prompts in the English language. Support in other languages is currently unavailable and might provide undesired results. 
 
 
 ## More about Segment's generative AI service
