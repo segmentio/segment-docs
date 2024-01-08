@@ -311,3 +311,7 @@ Yes, you can sign up for Reverse ETL sync notifications:
 2. Go to Settings > User Preferences.
 3. In the Activity Notifications section, select 'Reverse ETL'.
 4. Enable 'Reverse ETL Sync Failed'.
+
+In case of consecutive failures, we will send notifications on every sync failure.
+
+Note: Currently, we don't send notifications for partial failures.
