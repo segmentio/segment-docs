@@ -131,4 +131,7 @@ destinations:
     override: "actions-listrak"
   - original: "logrocket"
     override: "actions-logrocket"
-
+  - original: "yahoo-audiences"
+    override: "actions-yahoo-audiences"
+  - original: "bucket-web-actions"
+    override: "bucket-web"

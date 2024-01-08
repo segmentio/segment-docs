@@ -11,7 +11,7 @@ Most IdPs offer SCIM, and it complements SAML. You can think of SAML as a way fo
 
 Before you start, remember that SSO is only available to Business Tier customers, and that only workspace owners may configure SSO connections.
 
-To set up SCIM, you must first create an SSO connection. Once you [create your SSO connection](https://segment.com/docs/segment-app/iam/sso/), log back in to Segment using SSO.
+To set up SCIM, you must first create an SSO connection. Once you [create your SSO connection](/docs/segment-app/iam/sso/), log back in to Segment using SSO.
 
 ## Configuration Instructions
 
@@ -27,7 +27,7 @@ Your IdP needs to know where to send SCIM requests. The Segment base URL is: htt
 
 The other value you need is an API key (sometimes referred to as an Authorization Header). To generate one, go to **Settings > Advanced Settings** in the Segment app, and find the **SSO Sync** section. Click **Generate SSO Token** and copy the generated token. Use this token for the API key or Authorization Header in your IdP.
 
-This page is located as part of the settings sidebar: https://app.segment.com/CUSTOMER_WORKSPACE_SLUG/settings/advanced
+You can find this page in the [settings sidebar of your Segment app](https://app.segment.com/goto-my-workspace/settings/advanced){:target="_blank”}.
 
 ![Screenshot of the Segment settings sidebar, with Advanced Settings selected.](images/asset_generate_scim_token.png)
 
@@ -35,7 +35,7 @@ This page is located as part of the settings sidebar: https://app.segment.com/CU
 
 It's important to remember that Segment has a multi-tenant user/workspace relationship, meaning that users can be part of more than one workspaces. In most cases these workspaces are all related to a single customer (for example, a single company might have individual workspaces for different brands or subsidiaries). However, some users can be members of workspaces for different Segment customers, such as with contractors or consultants.
 
-Because of this, Segment must balance the autonomy of our users with the desired level of control of a workspace owner.
+Because of this, Segment must balance the autonomy of users with the desired level of control of a Workspace Owner.
 
 ## Creating Users
 
@@ -69,7 +69,7 @@ Your IdP can create new groups in Segment using SCIM. All groups created using S
 
 ## Updating Groups
 
-Your IdP can add or remove workspace members from existing groups via SCIM. Your IdP can also update Segment group names.
+Your IdP can add or remove workspace members from existing groups using SCIM. Your IdP can also update Segment group names.
 
 ## Deleting Groups
 
@@ -87,7 +87,7 @@ For example, you might map `{firstName} {lastName}` from your IdP to `displayNam
 
 ## Okta Set up Guide
 
-1. [Complete the Okta Set up Guide for SSO](https://saml-doc.okta.com/SAML_Docs/How-to-Configure-SAML-2.0-for-Segment.html?baseAdminUrl=https://segment-admin.oktapreview.com&app=segment&instanceId=0oata15py1n3kQUo50h7)
+1. [Complete the Okta Set up Guide for SSO](https://saml-doc.okta.com/SAML_Docs/How-to-Configure-SAML-2.0-for-Segment.html?baseAdminUrl=https://segment-admin.oktapreview.com&app=segment&instanceId=0oata15py1n3kQUo50h7){:target="_blank”}
 2. Click **Provisioning**, then click **Configure API Integration** and select **Enable API Integration**.
 3. [Generate an API key](#api-key), then copy and paste this value into the **API Token** field in Okta, and click **Save**.
 
@@ -121,6 +121,6 @@ Instructions for configuring Microsoft Entra ID can be found on the Microsoft Do
 
 Instructions for configuring OneLogin can be found on the OneLogin Docs website.
 
-1. Add and configure the Segment SSO integration from within the OneLogin application
+1. Add and configure the Segment SSO integration from within the OneLogin application.
 
-2. [Complete the OneLogin Set up Guide for SCIM](https://onelogin.service-now.com/support?id=kb_article&sys_id=a7833cd7db3a30501c167e77f4961923)
+2. [Complete the OneLogin Set up Guide for SCIM](https://onelogin.service-now.com/support?id=kb_article&sys_id=a7833cd7db3a30501c167e77f4961923){:target="_blank”}.
