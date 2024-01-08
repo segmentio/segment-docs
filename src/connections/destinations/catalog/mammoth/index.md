@@ -9,8 +9,6 @@ Mammoth allows you to blend your data from Segment with other sources of data su
 
 This destination is maintained by [Mammoth](https://mammoth.io){:target="_blank"}. For any issues with Mammoth Destination, [contact the Mammoth Support team](mailto:support@mammoth.io).
 
-{% include content/beta-note.md %}
-
 
 ## Getting Started
 

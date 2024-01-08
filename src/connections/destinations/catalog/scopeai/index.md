@@ -7,8 +7,6 @@ id: 5c6cb84c9d413f0001804a42
 
 This destination is maintained by ScopeAI. For any issues with the destination, [contact the ScopeAI Support team](mailto:support@getscopeai.com).
 
-{% include content/beta-note.md %}
-
 ## Getting Started
 
 

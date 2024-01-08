@@ -7,7 +7,6 @@ id: 5c922eae1761cd0001a71707
 
 This destination is maintained by Survicate. For any issues with the destination, [contact the Survicate Support team](mailto:help@survicate.com).
 
-{% include content/beta-note.md %}
 
 
 ## Getting Started

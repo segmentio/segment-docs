@@ -7,9 +7,6 @@ Segment makes it easy to send your data to [Freshmarketer](https://www.freshmark
 
 This destination is maintained by Freshmarketer. For any issues with the destination, [contact the Freshmarketer Support team](mailto:support@freshmarketer.com).
 
-{% include content/beta-note.md %}
-
-
 ## Getting Started
 
 

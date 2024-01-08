@@ -7,9 +7,6 @@ id: 5c9ce8b88171a10001f9eefa
 
 This destination is maintained by CustomerSuccessBox. For any issues with the destination, [contact the CustomerSuccessBox Support team](mailto:support@customersuccessbox.com).
 
-{% include content/beta-note.md %}
-
-
 ## Getting Started
 
 

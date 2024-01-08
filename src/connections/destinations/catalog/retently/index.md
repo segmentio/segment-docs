@@ -7,8 +7,6 @@ id: 5eb91ce4f1eb124fa7445dce
 
 This destination is maintained by Retently. For any issues with the destination, [contact the Retently Support team](mailto:support@retently.com).
 
-{% include content/beta-note.md %}
-
 ## Getting Started
 
 
