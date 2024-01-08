@@ -93,7 +93,7 @@ Engage uses the following error messages with Generative Audiences:
 
 | Error message        | Cause                  |
 |---------------------------|---------------------------------------|
-| Something went wrong      | This error displays when one of the following scenarios occur: <br>  - Exception not found <br> - Invalid LLM output <br> - LLM error terminal <br> - Unknown exception                  |
+| Something went wrong      | An unknown exception occured.                  |
 | Something went wrong. Try again later. | The AI service is down, or the LLM returned an error. |
 | Segment had trouble creating an audience from this description. Try rewording it using these [best practices](#best-practices). | The prompt referenced an invalid or non-existing trait, audience, or event within the workspace. You may also see this when an audience description is impossible to build or misunderstood. |
 
