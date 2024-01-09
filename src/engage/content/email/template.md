@@ -66,6 +66,15 @@ As you configure the template, click **Merge Tags** and select the profile trait
  
 You can also add merge tags in the heading or body text as you design an email with the [Drag and Drop](/docs/engage/content/email/editor/) or [HTML](/docs/engage/content/email/html-editor/) editors. Engage supports [liquid templating](https://liquidjs.com/tags/if.html){:target="blank"} to create dynamic content in the email design editor.
 
+### Use liquid statements with images
+
+If you're using the [image content module](/docs/engage/content/email/editor/#add-content-modules) in the Drag and Drop Editor, you can't use liquid statements in the **Image URL** field. 
+{% raw %}
+To use liquid statements with an image, Segment recommends using an [**HTML block**](/docs/engage/content/email/editor/#add-content-modules) with the following syntax: <br>
+`<img src=“{{profile.traits.imageLink | default: '<insert your default URL here>'}}”`, where `profile.traits.imageLink` is an example profile trait representing personalized image links for each recipient. 
+
+{% endraw %}
+
 > info ""
 > To learn more about profile traits, visit Segment's [Computed Traits](/docs/engage/audiences/computed-traits) and [SQL Traits](/docs/engage/audiences/sql-traits/) documentation.
 
