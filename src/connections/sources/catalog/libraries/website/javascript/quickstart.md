@@ -25,9 +25,9 @@ When you create a source in the Segment web app, it tells the Segment servers th
 
 You can choose to install Segment to your site in 1 of 2 ways:
 
-[1. Install Segment as a NPM package](#step-2a-install-segment-as-a-npm-package)
+[a. Install Segment as a NPM package](#step-2a-install-segment-as-a-npm-package)
 
-[2. Add the Segment snippet to your app](#step-2b-add-the-segment-snippet)
+[b. Add the Segment snippet to your app](#step-2b-add-the-segment-snippet)
 
 ### Step 2a: Install Segment as a NPM package
 
