@@ -15,7 +15,7 @@ To set up SCIM, you must first create an SSO connection. Once you [create your S
 
 ## Configuration Instructions
 
-Segment officially supports [Okta](#okta-set-up-guide), [Azure AD](#azure-ad-set-up-guide), and [OneLogin](#oneLogin-set-up-guide). Each link includes specific set up instructions for that IdP. You should read the [features](#features) section of this page to understand which features of SCIM Segment supports.
+Segment officially supports [Okta](#okta-set-up-guide), [Microsoft Entra ID](#microsoft-entra-id-set-up-guide), and [OneLogin](#onelogin-set-up-guide). Each link includes specific set up instructions for that IdP. You should read the [features](#features) section of this page to understand which features of SCIM Segment supports.
 
 You may still be able to use SCIM with another Identity Provider (IdP) by adapting the following instructions.
 
@@ -109,13 +109,13 @@ For example, you might map `{firstName} {lastName}` from your IdP to `displayNam
 
 ![Screenshot of the Segment Settings page, with the Access Management and User Groups tabs selected, and the user group created in the steps above present on the page.](images/scim_edit_groups.png)
 
-## Azure AD Set up Guide
+## Microsoft Entra ID setup guide
 
-Instructions for configuring Azure AD can be found on the Microsoft Docs website.
+Instructions for configuring Microsoft Entra ID can be found on the Microsoft Docs website.
 
-1. [Complete the Azure AD Set up Guide for SSO](https://docs.microsoft.com/en-us/azure/active-directory/saas-apps/segment-tutorial){:target="_blank”}.
+1. [Complete the Microsoft Entra ID setup guide for SSO](https://learn.microsoft.com/en-us/entra/identity/saas-apps/segment-tutorial)
 
-2. [Complete the Azure AD Set up Guide for SCIM](https://docs.microsoft.com/en-us/azure/active-directory/saas-apps/segment-provisioning-tutorial){:target="_blank”}.
+2. [Complete the Microsoft Entra ID setup guide for SCIM](https://learn.microsoft.com/en-us/entra/identity/saas-apps/segment-provisioning-tutorial)
 
 ## OneLogin Set up Guide
 
