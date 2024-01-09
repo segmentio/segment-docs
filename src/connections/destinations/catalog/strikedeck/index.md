@@ -7,8 +7,6 @@ id: 5c940e99e3498f000177880c
 
 Strikedeck maintains this documentation. For any issues with the destination, [contact the Strikedeck Support team](mailto:support@strikedeck.com).
 
-{% include content/beta-note.md %}
-
 
 ## Getting Started
 

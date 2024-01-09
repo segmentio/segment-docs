@@ -164,6 +164,11 @@ If you don't supply a function for an event type, Segment throws an `EventNotSup
 
 You can read more about [error handling](#destination-insert-functions-logs-and-errors) below.
 
+## Runtime and dependencies
+
+{% include content/functions/runtime.md %}
+
+
 ## Insert Functions and Actions destinations
 
 There are a couple of behavorial nuances to consider when using Insert Functions with Actions destinations.

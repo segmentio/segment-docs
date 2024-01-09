@@ -7,8 +7,6 @@ id: 5cb607714cab700001f13480
 
 This destination is maintained by ConvertFlow. For any issues with the destination, [contact the ConvertFlow Support team](mailto:support@convertflow.com).
 
-{% include content/beta-note.md %}
-
 
 ## Getting Started
 
