@@ -150,7 +150,7 @@ If you're just getting started, some of the events you should track are events t
 
 To get started, Segment recommends that you track just a few important events. You can always add more later.
 
-Once you add a few Track calls, you successfully installed Analytics.js tracking. Now you're ready to turn on any destination you like from the Segment interface.
+After you add a few Track calls, you successfully installed Analytics.js tracking. Now you're ready to turn on any destination you like from the Segment interface.
 
 ## What's next?
 
