@@ -56,6 +56,31 @@ Follow these steps to test your mobile push:
 
 Segment verifies that the profile you're sending a test to has a push token, then sends the test. If the test mobile push doesn't work as expected, confirm that the profile you're sending to has a push token.
 
+## Advanced settings
+
+### Badge count settings
+
+Badge counts appear in the corner of an app icon on your user's device. Badge counts show the number of unread notifications. During push notification setup, you can set badge count behavior from the badge count dropdown.
+
+Choose from these badge count settings:
+
+- **Increase by**: for each new notification, the badge count increases by the number you enter. **Increase by** is the standard behavior for badge counts.
+- **Decrease by**: for each new notification, the previous badge count decreases by the number you enter. Use **Decrease by** to send notifications quietly.
+- **Set to**: replaces all previous sent notifications with the number you enter.
+
+### Action buttons
+
+Action buttons sit below a push notification and let your users take action on the push. You can use action buttons to encourage users to make a purchase, visit a website, or share content on social media, for example.
+
+Follow these steps to add an action button:
+
+1. Under **Advanced Settings**, click **+ Add action button**.
+2. Enter an action button identifier.
+3. Enter the action button text. This is the text the user will see on the action button.
+4. Choose an open action. You can choose from open app, open URL, or a custom action.
+
+You can add up to three action buttons for each push notification.
+
 ## Personalize with merge tags
 
 Personalize mobile push content in Engage using profile traits as merge tags in your messages.

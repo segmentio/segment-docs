@@ -7,8 +7,6 @@ id: 5c6ef3322a6fb40001a71bf7
 
 This destination is maintained by Dreamdata. For any issues with the destination, [contact the Dreamdata Support team](mailto:friends@dreamdata.io).
 
-{% include content/beta-note.md %}
-
 ## Getting Started
 
 

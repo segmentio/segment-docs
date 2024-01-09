@@ -7,9 +7,6 @@ id: 5d67475d07d95bd4a7937ea7
 
 This destination is maintained by Learndot. For any issues with the destination, [contact the Learndot Support team](mailto:help@learndot.com).
 
-{% include content/beta-note.md %}
-
-
 ## Getting Started
 
 

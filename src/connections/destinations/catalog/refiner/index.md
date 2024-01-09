@@ -7,8 +7,6 @@ id: 5c9a968bd217dc000108159a
 
 This destination is maintained by Refiner. For any issues with the destination, [contact the Refiner Support team](mailto:contact@refiner.io).
 
-{% include content/beta-note.md %}
-
 
 ## Getting Started
 

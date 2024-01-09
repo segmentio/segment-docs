@@ -261,7 +261,7 @@ sections:
       - path: /connections/storage/warehouses/redshift-useful-sql
         title: Useful SQL Queries for Redshift
   - path: /connections/test-connections
-    title: Testing Connections
+    title: Event Tester
   - path: /connections/data-export-options
     title: Data Export Options
   - path: /connections/destination-data-control
@@ -577,6 +577,8 @@ sections:
       title: Audit Trail
     - path: /segment-app/iam/sso
       title: Single Sign On
+    - path: /segment-app/iam/scim
+      title: System for Cross-domain Identity Management (SCIM) Configuration Guide
     - path: /segment-app/iam/mfa
       title: Multi-Factor Authentication (MFA)
   - path: /segment-app/iam/secure-password

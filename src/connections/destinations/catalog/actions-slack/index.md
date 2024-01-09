@@ -39,9 +39,6 @@ Slack (Actions) provides the following benefits over the classic Slack destinati
 
 ## Migration from the classic Slack destination
 
-{% include content/ajs-upgrade.md %}
-
-
 Follow the table below to map your existing Slack destination configuration to Slack (Actions).
 
 > warning ""

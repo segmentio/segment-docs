@@ -33,9 +33,13 @@ After you've set up at least one event in your **Mappings** tab, you can see you
 
 Some parameters automatically populate prebuilt [dimensions and metrics](https://support.google.com/analytics/answer/9143382){:target="_blank"} in Google Analytics. For example, the parameters on the automatically collected and enhanced measurement events and the required and optional parameters you send with the recommended events both populate pre-built dimensions and metrics.
 
-With custom parameters, you must create [custom dimensions and metrics](https://support.google.com/analytics/answer/10075209){:target="_blank"} so you can see the parameter values in Google Analytics. 
+### Recommended Events
 
-### Custom Events
+Google Analytics 4 requires the use of [recommended events](https://support.google.com/analytics/answer/9267735){:target="_blank"} and properties to power certain built-in reports. Segment’s Google Analytics 4 Web destination provides prebuilt mappings to automatically map your Segment spec events to the corresponding Google Analytics 4 events and properties. If your Segment events don’t follow the Segment spec exactly, you can modify the mappings. For example, Segment maps `Order Completed` events to the Google Analytics 4 `Purchase` event by default. If your company uses `Products Purchase` to indicate a purchase, you can map it in the Purchase action’s Event Trigger instead.
+
+Segment recommends using the prebuilt mappings when possible. However, the Segment spec doesn’t have an equivalent event for every Google Analytics 4 recommended event. If there are other recommended events you'd like to send, use the [Custom Event action](/docs/connections/destinations/catalog/actions-google-analytics-4-web/#custom-event). For example, to send a `spend_virtual_currency` event, create a mapping for Custom Event, set up your Event Trigger criteria, and input a literal string of `spend_virtual_currency` as the Event Name. You can use the Event Parameters object to add fields that are in the `spend_virtual_currency` event such as `value` and `virtual_currency_name`. You'll need to define custom parameteres as [custom dimensions and metrics](/docs/connections/destinations/catalog/actions-google-analytics-4-web/#custom-dimensions-and-metrics) in your GA4 workspace first. 
+
+### Custom events
 
 Before you create a custom event, make sure the event you want to create isn't already collected through an [automatically collected event](https://support.google.com/analytics/answer/9234069?sjid=7831609405656395105-NA){:target="_blank"} or recommended as a [recommended event](https://support.google.com/analytics/answer/9267735?sjid=7831609405656395105-NA){:target="_blank"}. Segment recommends using an existing event, because these events automatically populate dimensions and metrics that are used in your reports.
 
@@ -45,25 +49,25 @@ Event names are case-sensitive in Google Analytics 4. If you would like all even
 
 Keep in mind that custom events will not appear in Google's standard reports; you will need to set up custom reports for meaningful analysis. 
 
-### Custom Dimensions and Metrics
+### Custom dimensions and metrics
 
 With Google Analytics 4, you must create custom dimensions and metrics within the Google Analytics 4 interface to link event parameters to the corresponding custom dimensions or metrics. When creating the dimension or metric, you can either select a parameter from the list of already collected fields or enter the name of the parameter you plan to collect in the future. For more information, see [Google Analytics 4 Custom dimensions and metrics](https://support.google.com/analytics/answer/10075209?hl=en){:target="_blank"}.
 
-### Understanding Event Parameters 
+### Understanding event parameters 
 
 Parameters provide additional information about the ways users interact with your website. For example, when someone views a product you sell, you can include parameters that describe the product they viewed, like `product_name`, `category`, and `price`.
 
 The automatically collected and enhanced measurement events include parameters by default. Google also provides a set of required and optional parameters to include with each recommended event. Additionally, you can add more event parameters when you need them.
 
-### Conversion Events
+### Conversion events
 
 Some of Segment's prebuilt [Available Actions](https://segment-docs.netlify.app/docs/connections/destinations/catalog/actions-google-analytics-4-web/#available-actions) which map to Google's recommended events are automatically marked as a conversion in your Analytics dashboard. For example, when you add a "Order Completed" event, it will show up in your Analytics dashboard as "purchase" with the **Mark as conversion** toggle toggled on by default. However, for other events, such as "Add to Cart", you will need to manually toggle the **Mark as conversion** setting on in your Analytics dashboard. If you don't mark the event as a conversion, it will not show up as a conversion in your built-in reports. You can read more [about conversion events](https://support.google.com/analytics/answer/9267568?sjid=1275909514202748631-NA){:target="_blank"} in Google's docs. 
 
 {% include components/actions-fields.html settings="true"%}
 
-## FAQ & Troubleshooting
+## FAQ and Troubleshooting
 
-### Debug Mode
+### Debug mode
 
 The Google Analytics 4 [debug mode](https://support.google.com/analytics/answer/7201382?hl=en){:target="_blank"} is supported with the Google Analytics 4 Web destination. DebugView displays the events and user properties that Analytics collects from a user in real-time. This can be helpful in troubleshooting your implementation.
 
@@ -87,6 +91,10 @@ In order for data to be sent downstream to Google Analytics, check your mappings
 
 The **Set Configuration Fields** mapping is required for data to be sent downstream because it sets configuration to Measurement ID and establishes data flow using the `config` command. If you have no enabled mappings other than **Set Configuration Fields**, the GA4 destination does not send events downstream. 
 
+### Duplicate `page_view` events in GA4
+
+If you are sending multiple `config` commands that your Google Tag has to account for, you may see duplicate `page_view` events in your Analytics workspace. If this is the case, please refer to Google's documentation on [Ignoring duplicate instances of on-page configuration](https://support.google.com/analytics/answer/9973999?hl=en#:~:text=as%20described%20below.-,Ignore%20duplicate%20instances%20of%20on%2Dpage%20configuration,Click%20Save.,-Give%20feedback%20about){:target="_blank"}.
+
 ### Manually send `page_view` events
 
 If you prefer to keep the **Page Views** setting disabled and manually send a `page_view`, please see this Google Doc for more on [Manual Pageviews](https://developers.google.com/analytics/devguides/collection/ga4/views?client_type=gtag#manually_send_page_view_events).
@@ -103,3 +111,5 @@ Without any further configuration, traffic-source data for `campaign`, `campaign
 ### Differences between Google Analytics 4 Cloud and Google Analytics 4 Web destinations 
 
 Segment's [Google Analytics 4 Cloud](/docs/connections/destinations/catalog/actions-google-analytics-4/) server-side destination uses Google's Measurement Protocol API to send event data server to server, whereas Segment's [Google Analytics 4 Web](/docs/connections/destinations/catalog/actions-google-analytics-4-web/) device-mode destination loads the gtag.js library client-side and uses Segment's event data to map to gtag.js events directly. Each destination has its own advantages and disadvantages. Your choice between the two will depend on your specific use case, technical expertise, and the platforms from which you want to track data.
+
+
