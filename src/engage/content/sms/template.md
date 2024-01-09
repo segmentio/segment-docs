@@ -113,6 +113,8 @@ To delete an SMS template:
 2. Select the **...** icon next to template you want to delete. Click **Delete**.
 2. From the **Confirm Template Deletion** popup, click **Delete Template**.
 
+{% include content/engage-folders.md %}
+
 ## SMS best practices and limitations
 
 ### Include an SMS opt-out message
