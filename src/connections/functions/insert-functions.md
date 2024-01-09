@@ -164,7 +164,7 @@ You can read more about [error handling](#destination-insert-functions-logs-and-
 
 ## Runtime and dependencies
 
-// add the same block from source/destination functions public docs - link here: https://segment.com/docs/connections/functions/destination-functions/#runtime-and-dependencies 
+{% include content/functions/runtime.md %}
 
 
 ## Insert Functions and Actions destinations
