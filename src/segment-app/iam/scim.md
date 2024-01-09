@@ -109,13 +109,13 @@ For example, you might map `{firstName} {lastName}` from your IdP to `displayNam
 
 ![Screenshot of the Segment Settings page, with the Access Management and User Groups tabs selected, and the user group created in the steps above present on the page.](images/scim_edit_groups.png)
 
-## Microsoft Entra ID Set up Guide
+## Microsoft Entra ID setup guide
 
 Instructions for configuring Microsoft Entra ID can be found on the Microsoft Docs website.
 
-1. [Complete the Microsoft Entra ID Set up Guide for SSO](https://learn.microsoft.com/en-us/entra/identity/saas-apps/segment-tutorial)
+1. [Complete the Microsoft Entra ID setup guide for SSO](https://learn.microsoft.com/en-us/entra/identity/saas-apps/segment-tutorial)
 
-2. [Complete the Microsoft Entra ID Set up Guide for SCIM](https://learn.microsoft.com/en-us/entra/identity/saas-apps/segment-provisioning-tutorial)
+2. [Complete the Microsoft Entra ID setup guide for SCIM](https://learn.microsoft.com/en-us/entra/identity/saas-apps/segment-provisioning-tutorial)
 
 ## OneLogin Set up Guide
 
