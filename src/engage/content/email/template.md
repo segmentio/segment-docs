@@ -106,8 +106,10 @@ To clone a template, navigate to the Templates page (**Engage > Content**). You 
 2. Select **Clone**.
 3. Enter a template name.
 4. Click **Clone** to save the template.
-
+ 
 After you clone a template, you can edit it from the Templates page.
+
+{% include content/engage-folders.md %}
 
 ## Next steps
 
