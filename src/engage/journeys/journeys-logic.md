@@ -98,7 +98,7 @@ To maintain best practices and enforce your funnel, re-check or modify audience 
 
 ### Send to Destination steps
 
-Unless a Journey has an exit condition configured, Journey members permanently remain in Destination sync steps, Segment neither sends `Audience Exit` events to Destinations nor removes users from Destinations lists.
+Unless a Journey has an exit condition configured, Journey members permanently remain in Destination sync steps. Segment neither sends `Audience Exit` events to Destinations nor removes users from Destinations lists.
 Exit conditions will lead to users being removed from all Journey steps and Destinations.
 
 
