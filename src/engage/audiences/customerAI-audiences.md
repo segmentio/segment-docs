@@ -27,16 +27,15 @@ To create an audience with CustomerAI:
 - Segment displays a progress bar until the audience conditions are generated.
 
 > success ""
-> To help you write your prompt, view these [example prompts](#use-cases-and-examples) and [best practices](#best-practices).
+> To help you write your prompt, view these [example prompts](#example-prompts) and [best practices](#best-practices).
 
 ### Modify an audience description 
 
-Once Segment generates the audience conditions, the prompt box remains open for reference. You can close this box, or modify your audience description and click **Build** again. Modifying an audience overwrites the existing audience conditions Segment previously generated. 
+Once Segment generates the audience conditions, the prompt box remains open for reference. You can close this box, or modify your audience description and click **Build** again. 
 
-> info ""
-> Once Segment generates the audience, you can also edit any conditions straight from the audience builder. 
+Modifying an audience description overwrites the existing conditions previously generated. You can also edit any conditions straight from the audience builder. 
 
-## Use cases and examples
+## Example prompts
 
 Use the following examples to help you get started with audience prompts. 
 
@@ -72,16 +71,16 @@ Learn more about [using existing events and traits](/docs/engage/audiences/#buil
 
 ### Using negative conditions 
 
-Below are a few examples of how CustomerAI configures audience conditions for negative prompts. Negative conditions might include, for example, building an audience of users without a certain profile trait, or who haven't performed certain events.  
+Below are a few examples of how CustomerAI configures audience conditions for negative prompts. Negative conditions might include, for example, building an audience of users without a certain profile trait, or who haven't performed certain events.   
 
 1. **Prompt**: "Customers who have not purchased in the last 30 days."
-- **Expected output**: Segment generates a condition where *the event is performed at most 0 times*.
-![Creating an audience where customers haven't made a purchase in the last 30 days.](/docs/engage/images/No-purchases.png)
-
+- **Expected output**: Segment generates audience conditions where *the event is performed at most 0 times*.
 
 2. **Prompt**: "Customers who don't have a phone number."
-- **Expected output**: Segment generates a condition where *the trait doesn't exist*.
-![Creating an audience where customers don't have a phone number.](/docs/engage/images/phone-doesn't-exist.png)
+- **Expected output**: Segment generates audience conditions where *the trait doesn't exist*.
+
+3. **Prompt**: "Customers who haven't received an email in the last 6 months."
+- **Expected output**: Segment generates audience conditions where *the event has been performed exactly 0 times*.
 
 ## Error handling
 
