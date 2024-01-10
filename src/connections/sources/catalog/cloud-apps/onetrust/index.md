@@ -10,6 +10,9 @@ This is an Event Cloud Source which can not only export data into your Segment w
 
 This source is maintained by OneTrust. For any issues with the source, [contact their support team](mailto:support@onetrust.com){:target="_blank”}.
 
+> warning "This page is about the OneTrust source, which lets you send details about end-user consent to Segment destinations"
+> To enforce end-user consent across your destinations, use Segment's [Consent Management](/docs/privacy/consent-management/) features.
+
 ## Getting Started 
 
 1. From your workspace's [Sources catalog page](https://app.segment.com/goto-my-workspace/sources/catalog){:target="_blank"} click **Add Source**.
