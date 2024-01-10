@@ -13,7 +13,7 @@ Want to learn more? Check out the [Analytics.js reference](/docs/connections/sou
 Before you begin, you need a Workspace (which is a container that holds all of the Sources and Destinations that are billed together for an organization). You can sign up for a free Segment account and create a workspace.
 
 To create an Analytics.js source source in the Segment app: 
-1. 1. Click **Add Source**.
+1. Click **Add Source**.
 2. From the source catalog page, click **JavaScript**.
 3. Click **Add Source** again from the informational panel that appears to the right.
 4. Give the source a display name, and enter the URL the source will collect data from.
@@ -29,9 +29,9 @@ You can choose to install Segment to your site in 1 of 2 ways:
 
 [b. Add the Segment snippet to your app](#step-2b-add-the-segment-snippet)
 
-### Step 2a: Install Segment as a NPM package
+### Step 2a: Install Segment as a npm package
 
-To install Segment as an NPM package: 
+To install Segment as a npm package: 
 
 1. Install the analytics package.
 
