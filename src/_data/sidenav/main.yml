@@ -334,8 +334,13 @@ sections:
           title: Snowflake Setup
         - path: /unify/linked-profiles/setup-guides/redshift-setup
           title: Redshift Setup
+    - path: /unify/linked-profiles/data-graph
+      title: Data Graph
+    - path: /unify/linked-profiles/linked-audiences
+      title: Linked Audiences
     - path: /unify/linked-profiles/linked-events
       title: Linked Events
+   
   - section_title: Traits
     slug: unify/traits
     section:
