@@ -1,7 +1,6 @@
 ---
 title: 1Flow Web (Actions) Destination
 id: 656773f0bd79a3676ab2733d
-hidden: true
 beta: true
 ---
 
