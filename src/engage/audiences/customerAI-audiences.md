@@ -1,25 +1,25 @@
 ---
-title: Generative Audiences
+title: CustomerAI Audiences
 beta: true
 plan: engage-foundations
 ---
  
-> info "Generative Audiences is in private beta"
-> Generative Audiences is in private beta, and Segment is actively working on this feature. Some functionality may change before it becomes generally available. [Contact Segment](https://segment.com/help/contact/){:target="_blank"} with any feedback or questions.
+> info "CustomerAI audience builder is in private beta"
+> The CustomerAI audience builder is in private beta, and Segment is actively working on this feature. Some functionality may change before it becomes generally available. [Contact Segment](https://segment.com/help/contact/){:target="_blank"} with any feedback or questions.
 
-With Generative Audiences, part of Segment's CustomerAI, use generative AI to create Engage Audiences with natural language prompts. 
+With CustomerAI, use generative AI to create Engage Audiences with natural language prompts. 
 
 Describe your desired audience based on events performed, profile traits, or existing audiences in your workspace. Based on your prompt, Segment builds the audience with generative AI.
 
-In this article, you'll learn how to use Generative Audiences along with some best practices.
+In this article, you'll learn how to use CustomerAI to build audiences along with some best practices.
  
-## Create an audience with Generative Audiences 
+## Create an audience with CustomerAI
 
-To create an audience with Generative Audiences: 
+To create an audience with CustomerAI: 
 
 1. From the Segment app, navigate to **Engage > Audiences**.
 2. Click **+ New audience**, then select **Audience** from the dropdown menu.
-3. Select your audience type. Generative Audiences is available for all audience types except Linked Audiences.
+3. Select your audience type. You can use CustomerAI with all audience types except Linked Audiences.
 4. From the Build screen, click **Help me build**.
 5. Enter your audience prompt in the description box. 
 - Use a minimum of 20 characters and up to 300 characters maximum. 
@@ -40,18 +40,18 @@ Once Segment generates the audience conditions, the prompt box remains open for 
 
 Use the following examples to help you get started with audience prompts. 
 
-- To build an audience with customers who haven't made a purchase in the last 30 days enter: `Customers who haven't purchased in the last 30 days.` 
+- To build an audience with customers who haven't made a purchase in the last 30 days, enter: `Customers who haven't purchased in the last 30 days.` 
 
-- To find all profiles that have recently opened an email enter: `Profiles that recently opened an email.`
+- To find all profiles that have recently opened an email, enter: `Profiles that recently opened an email.`
 
-- To build an audience with customers who spend over $50 on an order enter: `Customers who have orders greater than $50.`
+- To build an audience with customers who spend over $50 on an order, enter: `Customers who have orders greater than $50.`
 
 > info ""
 > You'll have more accurate results if you base your audience prompts on specific events and traits that are in your Segment space.
 
 ## Best practices
 
-As you use generative audiences, keep the following best practices in mind:
+As you build audiences with CustomerAI, keep the following best practices in mind:
 
 - Avoid using any customer Personal Identifiable Information (PII) or sensitive data. Personal, confidential, or sensitive information isn't required to use CustomerAI. 
 - Write specific descriptions. CustomerAI generates more accurate conditions when you use the names of existing events and traits. 
@@ -61,9 +61,9 @@ As you use generative audiences, keep the following best practices in mind:
 
 ### View events and traits in your workspace
 
-As your writing your prompt, you can view traits and events that are active in your workspace from the audience builder. After you add a condition in the builder, click the property field for a dropdown of active and inactive traits or events in your workspace. 
+As you're writing your prompt, you can view traits and events that are active in your workspace from the audience builder. After you add a condition in the builder, click the property field to view active and inactive traits or events in your workspace. 
 
-You can also use the Profile explorer (**Unify** > **Profile explorer**) to view specific events and traits that are in your Segment space. 
+You can also use the Profile explorer (**Unify** > **Profile explorer**) to view specific events and traits associated with profiles in your Segment space. 
 
 Learn more about [using existing events and traits](/docs/engage/audiences/#building-an-audience) to build audiences. 
 
@@ -83,15 +83,9 @@ Below are a few examples of how CustomerAI configures audience conditions for ne
 - **Expected output**: Segment generates a condition where *the trait doesn't exist*.
 ![Creating an audience where customers don't have a phone number.](/docs/engage/images/phone-doesn't-exist.png)
 
-
-3. **Prompt**: "Customers who haven't received an email in the last 6 months."
-- **Expected output**: Segment generates a condition where the event `Email Delivered` has been performed exactly `0 times`.
-
-<!-- add image -->
-
 ## Error handling
 
-Engage uses the following error messages with Generative Audiences:
+Engage uses the following error messages with CustomerAI audiences:
 
 | Error message        | Cause                  |
 |---------------------------|---------------------------------------|
