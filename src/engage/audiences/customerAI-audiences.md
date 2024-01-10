@@ -73,7 +73,7 @@ Learn more about [using existing events and traits](/docs/engage/audiences/#buil
 
 Below are a few examples of how CustomerAI configures audience conditions for negative prompts. Negative conditions might include, for example, building an audience of users without a certain profile trait, or who haven't performed certain events.   
 
-1. **Prompt**: "Customers who have not purchased in the last 30 days."
+1. **Prompt**: "Customers who have not purchased in the last 30 days." 
 - **Expected output**: Segment generates audience conditions where *the event is performed at most 0 times*.
 
 2. **Prompt**: "Customers who don't have a phone number."
@@ -81,7 +81,7 @@ Below are a few examples of how CustomerAI configures audience conditions for ne
 
 3. **Prompt**: "Customers who haven't received an email in the last 6 months."
 - **Expected output**: Segment generates audience conditions where *the event has been performed exactly 0 times*.
-
+ 
 ## Error handling
 
 Engage uses the following error messages with CustomerAI audiences:
