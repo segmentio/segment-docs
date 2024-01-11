@@ -8,7 +8,7 @@ To add structure to your marketing content, you can organize templates into fold
 
 ## Organize with folders
 
-Use folders to organize your Email, SMS/MMS, Push, and Whatsapp content templates. Group related content together to better help you manage and find your marketing resources.
+Use folders to organize your Email, SMS/MMS, Push, and WhatsApp content templates. Group related content together to better help you manage and find your marketing resources.
  
 From the Templates overview page you can create, update, view, and delete template folders.
 
