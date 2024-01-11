@@ -89,3 +89,5 @@ Collections are the groupings of resources Segment pulls from your source. In yo
 If you're getting an "Invalid Credentials" error when setting up the SendGrid source, send a direct ping to the [SendGrid Marketing Campaigns API](https://sendgrid.com/docs/API_Reference/Web_API_v3/Marketing_Campaigns/campaigns.html){:target="_blank”} to test if you're using the correct credentials.
 
 Make sure you allowlist Segment IP addresses on SendGrid. [Contact Segment](https://segment.com/help/contact/){:target="_blank”} for the list of IP addresses to allowlist.
+
+When disabling your Sendgrid Source - you will need to also disable the Webhook portion of your configuration.
