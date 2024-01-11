@@ -3,8 +3,6 @@ title: Actions Pipedrive
 hide-boilerplate: true
 hide-dossier: true
 id: 5f7dd8191ad74f868ab1fc48
-private: true
-hidden: true
 ---
 
 {% include content/plan-grid.md name="actions" %}
