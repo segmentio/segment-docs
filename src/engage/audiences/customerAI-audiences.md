@@ -78,7 +78,7 @@ As you're writing your prompt, you can view traits and events that are active in
 You can also use the Profile explorer (**Unify** > **Profile explorer**) to view specific events and traits associated with profiles in your Segment space. 
 
 Learn more about [using existing events and traits](/docs/engage/audiences/) to build audiences. 
-
+ 
 > warning ""
 > Due to a [limited space schema](#limited-space-schema), CustomerAI may not recognize some events or traits that are inactive in your workspace. 
  
