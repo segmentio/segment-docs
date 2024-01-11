@@ -114,7 +114,7 @@ Keep the following in mind as you use IP pools:
 
 - If you don't select an IP pool, Segment will choose one of your SendGrid IP addresses at random.
 - If you select an IP pool during email setup but then delete the IP pool in SendGrid, emails will begin to fail after IP pool deletion. 
-- SendGrid sometimes assigns the same IP address to multiple IP pools. If you want to use different IP addresses for different Engage emails, verify within SendGrid that the pools have different IP addresses. 
+- SendGrid lets you assign the same IP address to multiple IP pools. If you want to use different IP addresses for different Engage emails, verify within SendGrid that the pools you created have different IP addresses. 
 - You can change an IP pool for an email in a live journey by [editing the journey](/docs/engage/journeys/journeys-edits/), creating a new draft, changing the email's IP pool, then publishing the new journey version.
 
 For more information, see [SendGrid's IP pools documentation](https://docs.sendgrid.com/ui/account-and-settings/ip-pools){:target="_blank"}.
