@@ -48,6 +48,19 @@ Use the following examples to help you get started with audience prompts.
 > info ""
 > You'll have more accurate results if you base your audience prompts on specific events and traits that are in your Segment space.
 
+### Using negative conditions 
+
+Below are a few examples of how CustomerAI configures audience conditions for negative prompts. Negative conditions might include, for example, building an audience of users without a certain profile trait, or who haven't performed certain events.   
+
+1. **Prompt**: "Customers who have not purchased in the last 30 days." 
+- **Expected output**: Segment generates audience conditions where *the event is performed at most 0 times*.
+
+2. **Prompt**: "Customers who don't have a phone number."
+- **Expected output**: Segment generates audience conditions where *the trait doesn't exist*.
+
+3. **Prompt**: "Customers who haven't received an email in the last 6 months."
+- **Expected output**: Segment generates audience conditions where *the event has been performed exactly 0 times*.
+
 ## Best practices
 
 As you build audiences with CustomerAI, keep the following best practices in mind:
@@ -64,23 +77,10 @@ As you're writing your prompt, you can view traits and events that are active in
 
 You can also use the Profile explorer (**Unify** > **Profile explorer**) to view specific events and traits associated with profiles in your Segment space. 
 
-Learn more about [using existing events and traits](/docs/engage/audiences/#building-an-audience) to build audiences. 
+Learn more about [using existing events and traits](/docs/engage/audiences/) to build audiences. 
 
 > warning ""
 > Due to a [limited space schema](#limited-space-schema), CustomerAI may not recognize some events or traits that are inactive in your workspace. 
-
-### Using negative conditions 
-
-Below are a few examples of how CustomerAI configures audience conditions for negative prompts. Negative conditions might include, for example, building an audience of users without a certain profile trait, or who haven't performed certain events.   
-
-1. **Prompt**: "Customers who have not purchased in the last 30 days." 
-- **Expected output**: Segment generates audience conditions where *the event is performed at most 0 times*.
-
-2. **Prompt**: "Customers who don't have a phone number."
-- **Expected output**: Segment generates audience conditions where *the trait doesn't exist*.
-
-3. **Prompt**: "Customers who haven't received an email in the last 6 months."
-- **Expected output**: Segment generates audience conditions where *the event has been performed exactly 0 times*.
  
 ## Error handling
 
@@ -94,9 +94,10 @@ Engage uses the following error messages with CustomerAI audiences:
 
 ## Known limitations
 
-### Limited space schema 
+### Limited space schema
 
-Segment's generative AI service is handled by a third party that needs context about your Engage workspace and has limitations to how many contextual parameters Segment can send it. Because of this, Segment limits the amount of data it sends to the AI service. Segment solves this limitation by including up to 100,000 of the most recently used events and traits in your Engage space. As a result, some event properties may not be populated.
+Segment's generative AI service is handled by a third party that needs context about your Engage workspace and has limitations to how many contextual parameters Segment can send it.
+Segment solves this limitation by including only the most recently used properties and values for events and traits within your Engage space. As a result, some event and traits within your workspace may not be recognized. 
 
 ### Language support
 
