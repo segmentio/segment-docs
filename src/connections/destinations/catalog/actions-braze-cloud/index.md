@@ -28,7 +28,7 @@ Braze Cloud Mode (Actions) provides the following benefit over Braze Classic:
 
 ## Batching data to Braze
 
-Data sent to Braze can be batched within Cloud Mode Actions. Batch sizes are capped at 75 events, and these batches will accumulate over a 30-second period before being flushed. Request batching is done per-action mapping. For example, Identify Calls (attributes) will be batched in a request and Track Calls (custom events) will be batched in a second request. Braze recommends enabling this feature as it will reduce the number of requests being sent from Segment to Braze reducing the risk of the destination hitting Braze rate limits and retrying requests.
+You can batch data sent to Braze within Cloud Mode Actions. Batch sizes are capped at 75 events, and these batches will accumulate over a 30-second period before being flushed. Request batching is done per-action mapping. For example, Identify calls (attributes) will be batched in a request, and Track calls (custom events) will be batched in a second request. Braze recommends enabling this feature as it reduces the number of requests being sent from Segment to Braze, reducing the risk of the destination hitting Braze rate limits and retrying requests.
 
 {% include components/actions-fields.html %}
 
