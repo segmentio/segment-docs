@@ -441,6 +441,8 @@ sections:
       title: WhatsApp Template
     - path: '/engage/content/mobile-push'
       title: Mobile Push Template
+    - path: '/engage/content/organization'
+      title: Organizing Your Templates
   - section_title: Campaigns
     description: "Create multi-channel campaigns to get the right message to your users."
     section:
