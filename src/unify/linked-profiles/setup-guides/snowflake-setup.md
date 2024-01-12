@@ -73,6 +73,9 @@ To use Linked Events, you'll need to grant access to `segment_entities_user` for
 
 These tables need to live in the same database as the one used for storing sync deltas. You can give as broad or narrow of access as you require. If you give broad access to multiple schemas, you can sort through the schemas in Segment to select the appropriate tables to create models from.
 
+> info ""
+> Segment only supports tables, materialized views, views, and external tables as data sources.
+
 > success ""
 > Visit Snowflake's docs to learn more about [schema priveleges](https://docs.snowflake.com/en/user-guide/security-access-control-privileges#schema-privileges){:target="_blank"} and [table priveleges](https://docs.snowflake.com/en/user-guide/security-access-control-privileges#table-privileges){:target="_blank"}. 
 
@@ -122,10 +125,10 @@ To confirm table permissions:
 2. Verify the role created has the correct permissions with the commands below.
 
 ```ts
-use role segment_entities;
-use <your_database>;
-show schemas;
-select * from <your_database>.<schema-name>.<table-name> limit 10
+USE ROLE segment_entities;
+USE DATABASE <your_database>;
+SHOW SCHEMAS;
+SELECT * FROM <your_database>.<schema-name>.<table-name> LIMIT 10;
 ```
 
 The output should match the permissions you've given in previous steps.
