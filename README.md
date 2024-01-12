@@ -11,10 +11,24 @@ This repository contains the documentation website code and source files for htt
 
 In this article, find information about:
 
+- Prerequisites
 - Contributing
 - A list of READMEs
 - Code of conduct
 - License agreement
+
+## Prerequisites 
+The following are a list of prerequisites you may want to consider downloading and installing to successfully contribute to the Segment docs repo:
+
+1. Download and install a source code editor like [Visual Studio Code](https://code.visualstudio.com/download). 
+1. Download and install a package manager such as [Homebrew](https://brew.sh/) to install new software.
+1. [Create an account on GitHub](https://docs.github.com/en/get-started/quickstart/creating-an-account-on-github) if you don't have one already, or sign in with your existing Github account.
+1. Add the GitHub extension to your editor (in VSC: https://marketplace.visualstudio.com/items?itemName=GitHub.vscode-pull-request-github)
+1. [Clone](https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository) the segment docs repo.
+1. Download and install the latest version of [node.js](https://nodejs.org/en/download). Consider using a version manager such as [ASDF](https://github.com/asdf-vm/asdf) or [nvm-windows](https://docs.microsoft.com/en-us/windows/dev-environment/javascript/nodejs-on-windows)
+1. Install dependencies 
+  `npm i`
+1. Install [vale](https://docs.errata.ai/vale/install) (an [ASDF plugin](https://github.com/osg/asdf-vale) is also available).
 
 ## Contributing
 
