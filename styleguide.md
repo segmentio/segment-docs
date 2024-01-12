@@ -47,7 +47,7 @@ Rule | Description |
 ---- | ----------- |
 Libraries vs SDKs | Segment Source libraries are libraries, not SDKs. The bundled destination dependencies are SDKs. <br><br>Technically, an SDK often contains a hardware component, or is closely tied to a unique developer key or development-only hardware device - for example, an PlayStation SDK includes a software license key and test hardware linked to that account, an Apple SDK includes a developer key. A library is any modularlized piece of code that can be added to or invoked by a larger project.
 Styling Segment Methods | When you refer to a method *outside* of code, use: <li>Page call, Identify call <br><br>Avoid styling like inline code: <li> Page() method <br><li> `page()` <br><li> `.identify()` <br><li> `Identify` call
-| Styling Segment events | When you refer to an event *outside* of code, format it like inline code. For example: `Product Viewed` or `Clicked Login Button`.
+Styling Segment Events | When you refer to an event *outside* of code, format it like inline code. For example: `Product Viewed` or `Clicked Login Button`.
 Connection modes | Device-mode and Cloud-mode are always hyphenated. They should be capitalized when referring to the mode in abstract (as a product name), but can be decapped when used in running text about a specific destination. <br><br>We’ve had a lot of confusion in the past due to using device-mode and client-side, and cloud-mode and server-side interchangeably when referring to our Connection Modes. There are legitimate uses of both the terms client-side and server-side when referring to things _other than_ our connection modes, so we’re moving to use **Device-mode** and **Cloud-mode** instead.
 
 
