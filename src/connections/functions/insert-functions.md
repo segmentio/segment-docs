@@ -164,6 +164,11 @@ If you don't supply a function for an event type, Segment throws an `EventNotSup
 
 You can read more about [error handling](#destination-insert-functions-logs-and-errors) below.
 
+## Runtime and dependencies
+
+{% include content/functions/runtime.md %}
+
+
 ## Insert Functions and Actions destinations
 
 There are a couple of behavorial nuances to consider when using Insert Functions with Actions destinations.
@@ -477,7 +482,7 @@ No, destination insert functions are currently available as cloud-mode destinati
 
 ##### Can I connect an insert function to multiple destinations?
 
-No, an insert function can only be connected to one destination.
+Yes, an insert function can be connected to multiple destinations. 
 
 {% comment %}
 

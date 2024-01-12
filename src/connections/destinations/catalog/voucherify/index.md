@@ -1,7 +1,6 @@
 ---
 title: Voucherify Destination
 rewrite: true
-beta: true
 id: 5e42baaecf559c535c8cbe97
 hide-personas-partial: true
 ---
@@ -9,7 +8,6 @@ hide-personas-partial: true
 
 This destination is maintained by Voucherify. For any issues with the destination, [contact the Voucherify Support team](mailto:support@voucherify.io).
 
-{% include content/beta-note.md %}
 
 ## Getting Started
 

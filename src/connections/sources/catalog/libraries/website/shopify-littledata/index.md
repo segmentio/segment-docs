@@ -7,7 +7,7 @@ id: V8ji9rWzoS
 
 <!-- LR Note: the working copy of the source catalog YML we built on showed this in the `website` source though as of Nov 18 it's labeled cloud-source -->
 
-Littledata's [Shopify to Segment connection](https://help.littledata.io/posts/segment-overview/){:target="\_blank"} uses a combination of client-side (browser) and server-side tracking to ensure 100% accurate data about your Shopify store in Segment. Littledata automatically integrates with Shopify and Shopify Plus sites to capture every customer touch point, including sales, marketing, customer and product performance data.
+Littledata's [Shopify to Segment connection](https://help.littledata.io/posts/segment-overview?utm_source=segmentio&utm_medium=docs&utm_campaign=partners){:target="\_blank"} uses a combination of client-side (browser) and server-side tracking to ensure 100% accurate data about your Shopify store in Segment. Littledata automatically integrates with Shopify and Shopify Plus sites to capture every customer touch point, including sales, marketing, customer and product performance data.
 
 Littledata is available as an independent [Shopify App](https://apps.shopify.com/segment-com-by-littledata){:target="\_blank"}.
 
@@ -46,11 +46,11 @@ Here's an architecture diagram that shows how the Littledata app mediates data f
 3. Click **Add app** to begin the installation process.
 4. **Choose a Littledata subscription** suitable for your store's volume of monthly orders.
 5. Add the [**Segment write key**](/docs/connections/find-writekey/) for the source that is going to send data in the **input field**.
-   ![Screenshot of the Configure Segment step in the Shopify Littedata setup flow.](images/eLUh6GF.png)
+   ![Add a Segment write key to Shopify.](images/eLUh6GF.png)
 6. Choose either an **Automatic**, a **Manual**, or a **Headless** install. _Automatic installs work in most instances, but if you choose to do a manual install, just follow [this guide](https://help.littledata.io/posts/segment-installation-guide/){:target="\_blank"}._
-   ![Screenshot of the Add code automatically? step in the Shopify Littedata setup flow.](images/iYM76VI.png)
-7. Segment's **Analytics.js** library, Littledata **tracking script** and **webhooks** automatically apply to the store and the installation process will then be complete.
-   ![Screenshot of the Add tracking code step in the Shopify Littedata setup flow.](images/kvjNx4M.png)
+   ![Screenshot of the Shopify installation type.](images/iYM76VI.png)
+7. Segment's **Analytics.js** library, Littledata **tracking script** and **webhooks** will be automatically applied to the store and the installation process will then be complete.
+   ![Screenshot of adding AnalyticsJS to Shopify](images/kvjNx4M.png)
 
 ## Event schema
 
@@ -78,7 +78,7 @@ Below is a table of events that **Shopify by Littledata** sends to Segment throu
 
 You can _opt out_ of device-mode pageviews or events by setting `disableClientSideEvents: true` or `disablePageviews: true` in the `LittledataLayer` settings.
 
-The source also respects [GDPR-compliant cookie](https://blog.littledata.io/2021/06/18/shopify-cookie-banner-gdpr-compliance/){:target="_blank"} consent through Shopify's cookie banner, or popular consent management platforms such as [OneTrust](https://help.littledata.io/help/integrating-onetrust-with-shopify/){:target="_blank"} and [TrustArc](https://help.littledata.io/posts/integrating-trustarc-with-shopify/){:target="_blank"}.
+The source also respects [GDPR-compliant cookie](https://blog.littledata.io/2021/06/18/shopify-cookie-banner-gdpr-compliance/){:target="\_blank"} consent through Shopify's cookie banner, or popular consent management platforms such as [OneTrust](https://help.littledata.io/help/integrating-onetrust-with-shopify/){:target="\_blank"} and [TrustArc](https://help.littledata.io/posts/integrating-trustarc-with-shopify/){:target="\_blank"}.
 
 ## Cloud-mode events
 
@@ -120,28 +120,28 @@ For every event where there is an identifiable Shopify customer (from both the d
 
 The following traits are included with an Identify call:
 
-|  Property Name          |  Description                                                                                                                                            |  Property Type  |
-| -------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------- |
-| userId                     | The chosen user identifier. This defaults to the Shopify Customer ID.                                                                                                 | Double            |
-| createdAt                  | The date the customer record was created.                                                                                                                          | Date              |
-| customerLifetimeValue      | The total spend of the customer on the Shopify store.                                                                                                              | Double            |
-| default_address.street     | The customer's default street address.                                                                                                                     | String            |
-| default.address.postalCode | The customer's ZIP or postal code.                                                                                                                            | String            |
-| default_address.state      | The customer's state address.                                                                                                                              | String            |
-| default_address.country    | The customer's country.                                                                                                                                    | String            |
-| description                | The customer's notes.                                                                                                                                            | String            |
-| email                      | The customer's email address.                                                                                                                                  | String            |
-| email_consent_state        | If the user has consented to email marketing (mapping to [EmailMarketingState](https://shopify.dev/docs/api/customer/unstable/enums/EmailMarketingState){:target="_blank"}) | String, Null      |
-| email_opt_in_level         | Level of user's opt in email marketing (mapping to [MarketingOptInLevel](https://shopify.dev/docs/api/customer/unstable/enums/MarketingOptInLevel){:target="_blank"})       | String, Null      |
-| firstName                  | The customer's first name.                                                                                                                                     | String            |
-| lastName                   | The customer's last name.                                                                                                                                      | String            |
-| phone                      | The customer's phone number.                                                                                                                                   | String            |
-| purchaseCount              | The number of orders by the customer.                                                                                                                         | Integer           |
-| sms_consent_state          | If the user has consented to SMS marketing (mapping to [SmsMarketingState](https://shopify.dev/docs/api/customer/unstable/enums/SmsMarketingState){:target="_blank"})       | String, Null      |
-| sms_opt_in_level           | The level of the user's opt in to SMS marketing (mapping to [MarketingOptInLevel](https://shopify.dev/docs/api/customer/unstable/enums/MarketingOptInLevel){:target="_blank"})      | String, Null      |
-| state                      | The Shopify customer state - enabled, disabled, invited to create an account or customer declined.                                                             | String            |
-| tags                       | The custom tags applied to the customer.                                                                                                                       | String            |
-| verified_email             | Whether the customer has verified their email.                                                                                                             | Boolean           |
+| Property Name              | Description                                                                                                                                                                     | Property Type |
+| -------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------- |
+| userId                     | The chosen user identifier. This defaults to the Shopify Customer ID.                                                                                                           | Double        |
+| createdAt                  | The date the customer record was created.                                                                                                                                       | Date          |
+| customerLifetimeValue      | The total spend of the customer on the Shopify store.                                                                                                                           | Double        |
+| default_address.street     | The customer's default street address.                                                                                                                                          | String        |
+| default.address.postalCode | The customer's ZIP or postal code.                                                                                                                                              | String        |
+| default_address.state      | The customer's state address.                                                                                                                                                   | String        |
+| default_address.country    | The customer's country.                                                                                                                                                         | String        |
+| description                | The customer's notes.                                                                                                                                                           | String        |
+| email                      | The customer's email address.                                                                                                                                                   | String        |
+| email_consent_state        | If the user has consented to email marketing (mapping to [EmailMarketingState](https://shopify.dev/docs/api/customer/unstable/enums/EmailMarketingState){:target="\_blank"})    | String, Null  |
+| email_opt_in_level         | Level of user's opt in email marketing (mapping to [MarketingOptInLevel](https://shopify.dev/docs/api/customer/unstable/enums/MarketingOptInLevel){:target="\_blank"})          | String, Null  |
+| firstName                  | The customer's first name.                                                                                                                                                      | String        |
+| lastName                   | The customer's last name.                                                                                                                                                       | String        |
+| phone                      | The customer's phone number.                                                                                                                                                    | String        |
+| purchaseCount              | The number of orders by the customer.                                                                                                                                           | Integer       |
+| sms_consent_state          | If the user has consented to SMS marketing (mapping to [SmsMarketingState](https://shopify.dev/docs/api/customer/unstable/enums/SmsMarketingState){:target="\_blank"})          | String, Null  |
+| sms_opt_in_level           | The level of the user's opt in to SMS marketing (mapping to [MarketingOptInLevel](https://shopify.dev/docs/api/customer/unstable/enums/MarketingOptInLevel){:target="\_blank"}) | String, Null  |
+| state                      | The Shopify customer state - enabled, disabled, invited to create an account or customer declined.                                                                              | String        |
+| tags                       | The custom tags applied to the customer.                                                                                                                                        | String        |
+| verified_email             | Whether the customer has verified their email.                                                                                                                                  | Boolean       |
 
 ## Support for Google Analytics destination
 
@@ -175,38 +175,38 @@ Additional subscription lifecycle events through Littledata's [ReCharge connecti
 
 The list below outlines the properties included in most events. See the 'Track (eCommerce)' tab of the [event schema](https://docs.google.com/spreadsheets/d/1aljowRhMU9_7uGXmcipbP1Y14S4cOSdXGQA2Vx7BHko/edit){:target="\_blank"} for exactly which properties are sent with which events.
 
-|  Property                             |  Description                                                                         |  Property Type  |
-| --------------------------------------- | -------------------------------------------------------------------------------------- | ----------------- |
-| `affiliation`                           | A comma-separated list of order tags. Untagged orders use `Shopify`.                    | String            |
-| `cart_id`                               | The ID of the Shopify cart.                                                             | String            |
-| `checkout_id`                           | The ID of the checkout session.                                                         | String            |
-| `context\['Google Analytics'].clientId` | The user's Google Analytics Client ID.                                                  | String            |
-| `context.ip`                            | The user's IP address.                                                                  | String            |
-| `coupon`                                | A comma-separated string of discount coupons used, if applicable.                         | String            |
-| `currency`                              | The currency of the order.                                                              | String            |
-| `discount`                              | The discounted amount.                                                                  | Float             |
-| `email`                                 | The Shopify email address (after checkout step 2), or email submitted on a storefront form. | String            |
-| `lifetime_revenue_littledata`           | The lifetime revenue of the customer in Shopify.                                            | String            |
-| `location_id`                           | The location ID of the Point of Sale.                                                       | Integer           |
-| `order_id`                              | The ID of the order is by default the Shopify order name.                               | String            |
-| `payment_gateway_littledata`            | The payment gateway used by the customer.                                               | String            |
-| `payment_method`                        | The payment method chosen for checkout.                                                 | String            |
-| `presentment_currency`                  | The user's local currency.                                                              | String            |
-| `presentment_total`                     | The order total in local currency.                                                      | String            |
-| `products`                              | A list of all the products at that step of the funnel.                                   | Array             |
-| `purchase_count_littledata`             | The total purchase count for the customer.                                                  | Integer           |
-| `revenue`                               | The product revenue (excluding discounts, shipping and tax) \*                             | Float             |
-| `sent_from`                             | The unique property to identify events sent by Littledata.                                  | String            |
-| `shipping`                              | The shipping cost.                                                                          | Float             |
-| `shipping_method`                       | The shipping method chosen for checkout.                                                    | String            |
-| `shopify_customer_id_littledata`        | Shopify’s identifier for the customer.                                                  | Integer           |
-| `source_name`                           | The source of the order (e.g. `web`, `android`, `pos`).                                 | String            |
-| `step`                                  | The checkout step.                                                                          | Integer           |
-| `subscription_revenue`                  | The revenue associated with a Subscription Event.                                       | Float             |
-| `subtotal`                              | The total after discounts but before taxes and shipping.                                    | Float             |
-| `tax`                                   | The amount of tax on the order.                                                         | Float             |
-| `total`                                 | The total value of the order.                                                               | Float             |
-| `userId`                                | Chosen user identifier, defaulting to Shopify Customer ID                              | String            |
+| Property                                | Description                                                                                    | Property Type |
+| --------------------------------------- | ---------------------------------------------------------------------------------------------- | ------------- |
+| `affiliation`                           | A comma-separated list of order tags. Untagged orders use `Shopify`.                           | String        |
+| `cart_id`                               | The ID of the Shopify cart.                                                                    | String        |
+| `checkout_id`                           | The ID of the checkout session.                                                                | String        |
+| `context\['Google Analytics'].clientId` | The user's Google Analytics Client ID.                                                         | String        |
+| `context.ip`                            | The user's IP address.                                                                         | String        |
+| `coupon`                                | A comma-separated string of discount coupons used, if applicable.                              | String        |
+| `currency`                              | The currency of the order.                                                                     | String        |
+| `discount`                              | The discounted amount.                                                                         | Float         |
+| `email`                                 | The Shopify email address (after checkout step 2), or email submitted on a storefront form.    | String        |
+| `lifetime_revenue_littledata`           | The lifetime revenue of the customer in Shopify.                                               | String        |
+| `location_id`                           | The location ID of the Point of Sale.                                                          | Integer       |
+| `order_id`                              | The ID of the order is by default the Shopify order name.                                      | String        |
+| `payment_gateway_littledata`            | The payment gateway used by the customer.                                                      | String        |
+| `payment_method`                        | The payment method chosen for checkout.                                                        | String        |
+| `presentment_currency`                  | The user's local currency.                                                                     | String        |
+| `presentment_total`                     | The order total in local currency.                                                             | String        |
+| `products`                              | A list of all the products at that step of the funnel.                                         | Array         |
+| `purchase_count_littledata`             | The total purchase count for the customer.                                                     | Integer       |
+| `revenue`                               | The product revenue (excluding discounts, shipping and tax) \*                                 | Float         |
+| `sent_from`                             | The unique property to identify events sent by Littledata.                                     | String        |
+| `shipping`                              | The shipping cost.                                                                             | Float         |
+| `shipping_method`                       | The shipping method chosen for checkout.                                                       | String        |
+| `shopify_customer_id_littledata`        | Shopify’s identifier for the customer.                                                         | Integer       |
+| `source_name`                           | The source of the order (e.g. `web`, `android`, `pos`).                                        | String        |
+| `step`                                  | The checkout [step number](https://help.littledata.io/posts/shopify-checkout-funnel-updates/). | Integer       |
+| `subscription_revenue`                  | The revenue associated with a [Subscription Event](#subscription-events).                      | Float         |
+| `subtotal`                              | The total after discounts but before taxes and shipping.                                       | Float         |
+| `tax`                                   | The amount of tax on the order.                                                                | Float         |
+| `total`                                 | The total value of the order.                                                                  | Float         |
+| `userId`                                | Chosen user identifier, defaulting to Shopify Customer ID                                      | String        |
 
 > note "" \*`revenue` is available only with the Order Completed event, and only if the store opts in through the Littledata application. Revenue is a reserved property in many Segment destinations. Opting in overrides the `total` property sent to Google Analytics.
 
@@ -214,25 +214,25 @@ The list below outlines the properties included in most events. See the 'Track (
 
 Each item in the `products` array, or Product Viewed and Product Added events, will have the following properties
 
-|  Property         |  Description                                                    |  Property Type  |
-| -------------------- | ------------------------------------------------------------------ | ----------------- |
-| `brand`              | The brand of the product (Shopify `vendor`).                        | String            |
-| `category`           | The category of the product (defaults to `all`).                    | String            |
-| `compare_at_price`   | The product price before any discount.                              | String            |
-| `coupon`             | Coupon code associated with the product.                            | String            |
-| `image_url`          | The URL of the first product image.                                 | String            |
-| `list_id`            | The ID of the product collection (for List Views and Clicks).       | String            |
-| `list_position`      | The product position in the collection (for List Views and Clicks). | Integer           |
-| `name`               | Product name.                                                       | String            |
-| `price`              | The product price.                                                  | Float             |
-| `product_id`         | Shopify product ID.                                                 | String            |
-| `quantity`           | The quantity of this product.                                       | Integer           |
-| `product_properties` | Custom properties of purchased products.                            | Array             |
-| `shopify_product_id` | Also Shopify product ID.                                            | String            |
-| `shopify_variant_id` | The Shopify variant ID.                                             | String            |
-| `sku`                | The product SKU.                                                    | String            |
-| `url`                | The URL of the product page.                                        | String            |
-| `variant`            | The product variant name.                                           | String            |
+| Property             | Description                                                         | Property Type |
+| -------------------- | ------------------------------------------------------------------- | ------------- |
+| `brand`              | The brand of the product (Shopify `vendor`).                        | String        |
+| `category`           | The category of the product (defaults to `all`).                    | String        |
+| `compare_at_price`   | The product price before any discount.                              | String        |
+| `coupon`             | Coupon code associated with the product.                            | String        |
+| `image_url`          | The URL of the first product image.                                 | String        |
+| `list_id`            | The ID of the product collection (for List Views and Clicks).       | String        |
+| `list_position`      | The product position in the collection (for List Views and Clicks). | Integer       |
+| `name`               | Product name.                                                       | String        |
+| `price`              | The product price.                                                  | Float         |
+| `product_id`         | Shopify product ID.                                                 | String        |
+| `quantity`           | The quantity of this product.                                       | Integer       |
+| `product_properties` | Custom properties of purchased products.                            | Array         |
+| `shopify_product_id` | Also Shopify product ID.                                            | String        |
+| `shopify_variant_id` | The Shopify variant ID.                                             | String        |
+| `sku`                | The product SKU.                                                    | String        |
+| `url`                | The URL of the product page.                                        | String        |
+| `variant`            | The product variant name.                                           | String        |
 
 ## Import all orders
 
