@@ -41,7 +41,7 @@ In the following example, Segment is configured to create or update Person entit
 
 ## Associating Entities with other Entities
 
-Entities such as the **Deal** Entity can be configured to be associated with other Entities in Pipedrive. In the example **Deal** mapping below the following will happen: 
+Entities such as the **Deal** Entity can be configured to be associated with other Entities in Pipedrive. In the example with the **Deal** mapping below the following will happen: 
 1. A **Person** Entity with an email address matching **properties.email** will be associated with the **Deal** Entity being created or updated. 
 2. An **Organization** Entity with an ID matching **properties.org_id** will be assocated with the **Deal** Entity being created or updated.  
 
