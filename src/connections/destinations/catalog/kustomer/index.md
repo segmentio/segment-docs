@@ -1,6 +1,7 @@
 ---
 title: Kustomer Destination
 rewrite: true
+hide-personas-partial: true
 id: 5c73feeb9947e900010a60ac
 ---
 [Kustomer](https://www.kustomer.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) is the next-generation customer management platform for the people-first enterprise. It enables support teams to get a holistic view of the customers they are engaging with, resulting in meaningful interactions between businesses and customers.
@@ -79,6 +80,6 @@ analytics.track("Registered", {
 
 Track calls will sent as a `tracking event` to Kustomer on the timeline of the customer who was tracked. If the `kustomer_session_id` is included, it will cluster this tracking event into a single "session" on the customer's timeline. If no `kustomer_session_id` is supplied, we will automatically generate session IDs based on time between tracking events. (Read why Segment doesn't have session tracking [here](https://segment.com/blog/facts-vs-stories-why-segment-has-no-sessions-api/)).
 
-[**ALERT:** ENGAGE SECTION IS NOT ACCURATE FOR THIS DESTINATION]
 
-This integration is maintained by Kustomer and they only accept standard properties (name, email, phone, etc.), not custom properties (e.g. my_computed_trait_name). Since, any Audience/Computed Trait created in Engage and sent to Kustomer would automatically be considered a custom property, Engage technically does not function properly with Kustomer.
+## Engage Limitation
+Kustomer destination only accepts standard properties (name, email, phone, etc.) and do not support custom properties. Any Audience/Computed Trait created in Engage will be considered a customer property by Kustomer destination, and is not supported.
