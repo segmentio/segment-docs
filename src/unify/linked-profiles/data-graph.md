@@ -6,7 +6,6 @@ hidden: true
 
 With Linked Profiles, you can build a Data Graph that defines relationships between any data set in the warehouse and the Segment Profiles you send with Profiles Sync. 
 
-
 Define relationships between data from your warehouse to give marketers access to data to target, personalize, and analyze customer experiences.
 
 > success ""
@@ -16,9 +15,9 @@ Define relationships between data from your warehouse to give marketers access t
 
 To use the Data Graph, you'll need the following:
 - A Unify and Engage Foundations or Premier plan.
-- Workspace owner or Unify Read-only/Admin and Entities Admin permissions.
 - A Snowflake Data Warehouse. 
 - [Profiles Sync](/docs/unify/profiles-sync/) set up with ready to use [data models and tables](/docs/unify/profiles-sync/tables/) in your warehouse.
+- An [Actions-based Destination](/docs/connections/destinations/actions/#available-actions-based-destinations)
 - A Braze, Customer.io, or Iterable Destination. <!-- are we supporting all destination actions here? -->
 
 
@@ -30,13 +29,14 @@ To use the Data Graph, you'll need the following:
 
 ## Step 1: Set up your data warehouse
 
-Before setting up the Data Graph, you'll need to set up your data warehouse. Use the setup guides below to get started:
+Before setting up the Data Graph, you'll need to set up your data warehouse. Use the [Snowflake Setup](/docs/unify/linked-profiles/setup-guides/snowflake-setup/) guide to get started.
 
-- [Snowflake Setup](/docs/unify/linked-profiles/setup-guides/snowflake-setup/)
+<!-- Not yet available for Data Graph as of 1/16/24
 - [Redshift Setup]((/docs/unify/linked-profiles/setup-guides/redshift-setup/))
 - [BigQuery Setup]((/docs/unify/linked-profiles/setup-guides/bigquery-setup/))
+--> 
 
-Linked Profiles uses [Segment's Reverse ETL](#) infrastructure to pull data from your warehouse. 
+Linked Profiles uses [Segment's Reverse ETL](/docs/connections/reverse-etl/) infrastructure to pull data from your warehouse. 
 
 To track what data has been sent to Segment on previous syncs, Segment stores delta/diffs in tables within a single schema called `_segment_reverse_etl` within your data warehouse. 
 
@@ -83,10 +83,15 @@ Use the parameters, defintions, and examples below to help you define entities.
 
 #### Profile 
 
-The profile is a special class of entity. The profile is always defined at the top of the Data Graph, and there can only be one profile for a Data Graph. The profile entity corresponds to the Profiles Sync tables and models. The parameters are:
+The profile is a special class of entity. The profile is always defined at the top of the Data Graph, and there can only be one profile for a Data Graph. The profile entity corresponds to the Profiles Sync tables and models. 
 
-- `profile_folder`: This is the folder or schema location for the profile tables. 
-- `materialization`: Identify the type of materialization (`dbt`,`segment`,`none`). 
+The parameters are:
+
+| Parameters     | Definition                                                           |
+| ----------- | --------------------------------------------------------------------- |
+| `profile_folder`      | This is the folder or schema location for the profile tables.     |
+| `materialization`     | Identify the type of materialization (`dbt`,`segment`,`none`). |
+
 
 ```python
 #define a profile entity
@@ -100,13 +105,17 @@ profile {
 
 #### Entity
 
-An entity is a stateful representation of a business object. The entity corresponds to a table in the warehouse that represents that entity. The parameters are:
+An entity is a stateful representation of a business object. The entity corresponds to a table in the warehouse that represents that entity. 
 
-- `entity`: A unique slug for the entity, which is immutable and treated as a delete if you make changes. The slug must be in all lowercase, and supports dashes or underscores (for example, `account-entity` or `account_entity`).
-- `name`: A unique label which will display across the app.
-- `table_ref`: Define the table reference. In order to specify a connection to your table in snowflake, a fully qualified table reference is required `[database name].[schema name].[table name]`.
-- `primary_key`: This is the unique identifier for the given table and should be a column with unique values per row.
-- (Optional) `enrichment_enabled = true`: Indicate if you plan to also reference the entity table for [Linked Events](/docs/unify/linked-profiles/linked-events/). 
+
+| Parameters     | Definition                                                           |
+| ----------- | --------------------------------------------------------------------- |
+| `entity`      | A unique slug for the entity, which is immutable and treated as a delete if you make changes. The slug must be in all lowercase, and supports dashes or underscores (for example, `account-entity` or `account_entity`).    |
+| `name`        | A unique label which will display across the app.                           |
+| `table_ref`   | Define the table reference. In order to specify a connection to your table in snowflake, a fully qualified table reference is required `[database name].[schema name].[table name]`. |
+| `primary_key` | This is the unique identifier for the given table and should be a column with unique values per row. |
+| (Optional) `enrichment_enabled = true      | Indicate if you plan to also reference the entity table for [Linked Events](/docs/unify/linked-profiles/linked-events/).                         |
+
 
 
 ```python
@@ -128,9 +137,16 @@ Use the following relationship, parameters, and examples to help you relate enti
 
 #### Relate Entity to Profile
 
+| Parameters     | Definition                                                           |
+| ----------- | --------------------------------------------------------------------- |
+| `relationship`      | A unique slug for the relationship, which is immutable and treated as a delete if you make changes. The slug must be in all lowercase and will support dashes or underscores (for example, `user-account` or `user_account`).   |
+| `name`        | This should be a unique label that displays throughout your Segment space.                          |
+| ``related_entity`   | Reference your already defined entity. |
+
+<!-- remove
 - `relationship`: A unique slug for the relationship, which is immutable and treated as a delete if you make changes. The slug must be in all lowercase and will support dashes or underscores (for example, `user-account` or `user_account`).
 - `name`: This should be a unique label that displays throughout your Segment space.
-- `related_entity`: Reference your already defined entity.
+- `related_entity`: Reference your already defined entity. -->
 
 A profile can be related to an entity in two ways:
 1. With an `external_id`: Define the external ID that will be used to join the profile with your entity.
@@ -174,11 +190,20 @@ data_graph {
 
 #### Relate between entities
 
+| Parameters     | Definition                                                           |
+| ----------- | --------------------------------------------------------------------- |
+| `relationship`      | A unique slug for the relationship, which is immutable and treated as a delete if you make changes. The slug must be in all lowercase and will support dashes or underscores (for example, `user-account` or `user_account`).   |
+| `name`        | This should be a unique label that displays throughout your Segment space.                          |
+| `related_entity`   | Reference your already defined entity. |
+| `join_on`         |    Define relationships between two entity tables `[lefty entity name].[column name] = [right entity name].[column name]`. Note that the entity name is a reference to the alias provided in the config and doesn't need to be the fully qualified table name. |
+
+<!-- remove
 - `relationship`: A unique slug for the relationship, which is immutable and treated as a delete if you make changes. The slug must be in all lowercase and will support dashes or underscores (for example, `user-account` or `user_account`).
 - `name`: A unique label that displays athroughout your Segment space.
 - `related_entity`: Reference the slug of your already defined entity.
 - `join_on`: Define relationships between two entity tables `[lefty entity name].[column name] = [right entity name].[column name]`. 
      - Note that the entity name is a reference to the alias provided in the config and doesn't need to be the fully qualified table name. 
+-->
 
 ```py
 data_graph { 
@@ -199,13 +224,16 @@ data_graph {
 ```
 
 If you're relating entities with a junction table:
+
 - `Junction_table`: Define relationships between two entities tables joined by a junction table.
      - `table_ref`: Define the table reference to the join table. In order to specify a connection to your table in Snowflake, a fully qualified table reference is required `[database name].[schema name].[table name]`
      - `primary_key`: The unique identifier on the join table and should be a column with unique values per row.
      - `left_join_on`: Define relationship between the two entity tables `[left entity name].[column name] = [junction table column name]`.
      - `right_join_on`: Define relationship between the two entity tables `[junction table column name] = [right entity name].[column name]`.
-     - Note that schema.table is implied within the junction table column name and doesn't need to be provided. 
-     - Attributes from a junction table are not referenceable with the Audience Builder. If you'd like to reference an additional column on the junction table for filtering, you must first define it as an entity and explicitly define a relationship name. 
+
+Note that schema.table is implied within the junction table column name and doesn't need to be provided. 
+
+Attributes from a junction table are not referenceable with the Audience Builder. If you'd like to reference an additional column on the junction table for filtering, you must first define it as an entity and explicitly define a relationship name. 
 
 ```py
 #relating entities with junction table
@@ -233,7 +261,7 @@ data_graph {
 
 ```
 
-![An example of a data graph](images/data-graph-example.png)
+![An example of a data graph](/docs/unify/images/data-graph-example.png)
 
 ```py
 data_graph {
@@ -296,6 +324,21 @@ data_graph {
 ## Validate your Data Graph
 
 Validate your Data Graph using the config builder and preview, then click **Save**.
+
+## Editing your Data Graph
+
+To edit your Data Graph:
+
+1. Navigate to **Unify > Data Graph**.
+2. Select the **Builder** tab and click **Edit Data Graph**.
+
+You can edit your Data Graph at any time. However, some types of edits may impact existing Linked Audiences and Linked Events. These include:
+
+- Adding a new relationship before an existing relationship
+- Replacing existing relationships with new relationships
+- Deleting existing entities or relationships
+
+If you make one of these edits, recreate your existing Linked Audiences and/or remove the entity from your existing Linked Events mappings.
 
 ## Next steps 
 
