@@ -5,7 +5,9 @@ title: Linked Audiences
 
 With Linked Audiences, you can use the relational data you've defined in your Data Graph to build audiences and send them to your downstream destinations. 
 
-From the relationships you've defined between a profile and entities, you can filter on profile traits, entity attributes, and associated events to create audiences.
+From the relationships you've defined between profiles and entities in your warehouse, you can filter on profile traits, entity attributes, and associated events to create hyper-segmented audiences.
+
+<!-- Use profile traits and entity properties from your warehouse to define the audience -->
 
 > success ""
 > Before you build Linked Audiences, be sure you've defined entities in your [Data Graph](/docs/unify/linked-profiles/data-graph/). 
@@ -21,10 +23,10 @@ To help you get started with Linked Audiences, keep the following guidelines in 
     - `Purchases`
     - `Carts` 
 - You can create entity relationships up to four levels in depth. For example, you can build an entity condition that queries for relationships between `Profiles`, `Accounts`, `Credit Cards`, and finally `Transactions`. 
-- Along the way, identify column values that you might also want to filter your entities by to further refine your audiences. 
+- To further refine your audience, identify column values that you might also want to filter your entities by. 
 
-## Use Cases
-
+## Use cases
+ 
 Below are some example use cases to help you learn more about Linked Audiences.
 
 ### Build an audience of cat owners
@@ -65,53 +67,75 @@ In the Data Graph, `Accounts`, `Credit Cards`, and `Transactions` are defined as
 - `Accounts` and `Credit Cards`
 - `Accounts` and `Subscriptions`
 
-In the warehouse, `credit_cards.name` is a column in the `credit_cards` table, and `transactions.count` is a column in the `transactions` table. Marketers can create hyper-targeted user segmentations by filtering by column values or attributes, such as "Owly Card" and integers. 
+In the warehouse: 
+- `credit_cards.name` is a column in the `credit_cards` table
+- `transactions.count` is a column in the `transactions` table
+
+Marketers can create hyper-targeted user segmentations by filtering by column values or attributes, such as "Owly Card" and integers. 
 
 
-## Build a Linked Audience
+## Step 1: Build a Linked Audience
 
 Use the Audience overview page to build or maintain a Linked Audiences.
 
 1. Navigate to **Engage > Audiences**
 2. Click **+ New audience**, then select **Audience**.
 3. On the Select Type screen, select **Linked audience**, then click **Next**.
-4. Click the **associated with entity** field to add your entity. 
-- To view your entities, navigate to **Unify > Data Graph > Entities**. 
-5. Enter an entity to associate your audience with, then finish building your Linked Audience. Once you're done, click **Next**.
-6. Enter an Audience name and description, then click **Create Audience**.
+4. Build your Linked Audience with profiles that have a specific entity, profile trait, or are part of an audience. Select from **associated with an entity**, **where profile trait**, or **part of an audience**, and add your conditions.
+<!-- (don't think we need to spell each option out like this. Opting for simplified version above.)
+Select from:
+- **associated with an entity**
+    1. Click the **associated with entity** field to add your entity. 
+    - To view your entities, navigate to **Unify > Data Graph > Entities**. 
+    2. Enter an entity to associate your audience with, then finish building your Linked Audience.
+- **where profile trait** 
+- **part of an audience**
+-->
+5. Preview your audience, then click **Next**.
+6. Enter an audience name and description, then click **Create Audience**.
 
 > warning ""
 > At this time, Linked Audiences can't be edited or deleted. Create a new audience to update conditions. To disable an audience, navigate to **Engage > Audiences > Settings** and toggle the **Enabled** button off.
 
 
-## Activate your Linked Audience
+## Step 2: Activate your Linked Audience
 
 Use the Audience overview page to build or maintain Linked Audiences.
 
-> info ""
-> The following steps apply to non-preset destinations. If you're using Braze, Iterable, or Customer io, use [these setup steps](#). <!-- What's the flow here? -->
 
-### Step 1: Add an actions destination
+> info ""
+> Note that [Braze](/docs/connections/destinations/catalog/braze-cloud-mode-actions/#available-presets), [Iterable](/docs/connections/destinations/catalog/actions-iterable/#available-presets), and [Customer.io](/docs/connections/destinations/catalog/customer-io-actions/#available-presets) all have preset mappings.
+
+### Step 2a: Add an actions destination
 
 To activate your Linked Audience, you'll first need to add an actions destination.
 
-From the Add destination window, select your actions destination and click **Next**.
+From the Add destination window, select your destination and click **Next**.
 
-### Step 2: Select event
+### Step 2b: Select event <!-- these are called event emitters -->
 After adding an actions destination, select what type of event you want to send to the destination. Events update the destination about changes to your entity or audiences. 
 
 You can send events:
-- When an [entity on a profile changes](#entity-update)
-- Based on profile [audience membership updates](#audience-update)
+- When an entity on a profile changes:
+    - [Entity Added](#entity-added)
+    - [Entity Removed](#entity-removed)
+- Based on profile audience membership updates:
+    - [Audience Entered](#audience-entered)
+    - [Audience Entered and Exited](#audience-entered-and-exited)
+    - [Audience Exited](#audience-exited)
 
 > info ""
-> Note that you can't send events before you identify people. Ensure you're making the profile(s) known in the destination before you send events. You can do this by sending an `Audience Membership Changed` event first, or by creating a standard Identify event in Connections.
+> Note that you can't send events before you identify people. Ensure you're making the profile(s) known in the destination before you send events. You can do this by sending an `Audience Membership Changed` event first, or by creating an Identify event in Connections.
+
+<!--
 
 #### Entity update
 
 Select to send an event when any of the following updates occur to an entity on a profile:
 
-1. Entity added
+-->
+
+#### Entity Added
 
 Send an action to a destination when an entity associated with a profile matches the audience condition. Use these actions to orchestrate campaigns in other tools. 
 
@@ -120,7 +144,7 @@ Example use cases:
 - Notify a traveler when a flight associated with their profile is delayed.
 - Notify a customer when a product associated with their profile's wishlist is back in stock.
 
-2. Entity removed
+#### Entity Removed
 
 Send an event to a destination when an entity assoacited with the profile no longer matches the audience condition. Use these events to orchestrate campaigns in other tools. 
 
@@ -128,11 +152,13 @@ Example use cases:
 - Send a confirmation to a customer when a credit card associated with their profile has been paid off.
 - Send a confirmation to the primary doctor when each of their associated patients completes their annual check up.
 
+<!-- 
+
 #### Audience update
 
 Select to send an event based on the following profile audience membership updates:
-
-1. Audience Entered
+-->
+#### Audience Entered 
 
 Send a Track event to a destination when a profile matches the audience condition. Use these events to orchestrate campaigns in other tools.
 
@@ -141,15 +167,15 @@ Example use cases:
 - Send a congratulatory email when a travel qualifies for premium status.
 - Send a discount to all customers with a particular product on their wishlist.
 
-<!-- removed? 
-#### Audience membership changed
+<!-- renamed from Audience membership changed? -->
+#### Audience entered and exited
 
 Send an Identify event when a profile enters or exits the audience.
 
 Example use case:
 - Update a user profile in a destination with the most recent audience membership.
--->
-2. Audience exited
+
+#### Audience Exited
 
 Send a Track event to a destination when a profile no longer matches the audience condition. Use these events to orchestrate campaigns in other tools.
 
@@ -158,14 +184,8 @@ Example use cases:
 - Send an email to credit card owners to confirm that their credit cards have been paid in full.
 - Send a confirmation to a patient when they have completed all their pre-screening forms.
 
-#### Audience entered and exited
 
-Send events when a profile enters and exits the audience.
-
-<!-- add use cases here -->
-
-
-### Step 3: Select an action
+### Step 2c: Select an action
 
 Next, you'll select the destination action to call when the event happens.
 
@@ -173,21 +193,21 @@ Segement displays available actions based on the destination action you've conne
 
 Visit the [destination actions docs](/docs/connections/destinations/actions/) learn more about destination actions, and view available actions for your destination.
 
-### Step 4: Configure the event
+### Step 2d: Configure the event
 
-Finally, you'll configure your event and select additional entity context you want to send to the destination. 
+Finally, you'll configure your event and select additional properties to include in the event. 
 
 To configure your event:
 
-1. Selecting additional properties to include in each event. 
+1. Select additional properties to include in each event. 
 - As you're configuring your event, you can view a preview of the enriched event based on your property selections. 
-2. Next, map your event from your audience to your destination.
+2. Map your event from your audience to your destination.
 - You can preview what the event will look like in your destination.
-3. Click **Save** to save your changes, or **Save and enable** to save the configuration and enable the events. 
+3. After configuring, click **Save**. 
 
 After saving, you'll be redirected to a destination sidesheet where you can view all configured events and their corresponding actions.
 
-## Confirm the payload in your destination
+## Step 3: Confirm the payload in your destination
 
 Linked Audiences will send events to your destination after Segment computes the audience. 
 
