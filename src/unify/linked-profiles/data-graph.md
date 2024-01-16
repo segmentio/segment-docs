@@ -21,10 +21,10 @@ To use the Data Graph, you'll need the following:
 
 
 > info ""
-> Linked Profiles follows Zero Copy principles. This means that Segment doesn't copy entities to store in Segment. Segment stores and processes all data in the U.S. 
+> Linked Profiles follows Zero Copy principles, and doesn't copy entities to store in Segment. Segment stores and processes all data in the United States. 
 
 > warning ""
-> Don't send any personal health information (PHI) with the Data Graph.
+> Don't send any personal health information with the Data Graph.
 
 ## Step 1: Set up your data warehouse
 
@@ -37,9 +37,7 @@ Before setting up the Data Graph, you'll need to set up your data warehouse. Use
 
 Linked Profiles uses [Segment's Reverse ETL](/docs/connections/reverse-etl/) infrastructure to pull data from your warehouse. 
 
-To track what data has been sent to Segment on previous syncs, Segment stores delta/diffs in tables within a single schema called `_segment_reverse_etl` within your data warehouse. 
-
-You can choose which database/project within your warehouse this data lives in. 
+To track what data has been sent to Segment on previous syncs, Segment stores delta/diffs in tables within a single schema called `_segment_reverse_etl` in your data warehouse. You can choose which database/project in your warehouse this data lives in. 
 
 
 ## Step 2: Connect your warehouse to the Data Graph
@@ -50,7 +48,7 @@ You can choose which database/project within your warehouse this data lives in.
 To connect your warehouse to the data graph:
 
 1. In your Segment workspace, navigate to **Unify**, and select **Data Graph**.
-- This should be the Unify space with Profiles Sync already set up.
+- This should be a Unify space with Profiles Sync already set up.
 2. Click **Connect warehouse**.
 3. Select your warehouse type.
 4. Enter your warehouse credentials. 
@@ -78,7 +76,7 @@ While you can delete relationships or entities from the Data Graph, these relati
 Use the parameters, defintions, and examples below to help you define entities.
 
 > warning ""
-> Snowflake schemas are case sensitive. You'll need to use the uppercase schema, table, and column names if that's how you have it in Snowflake. 
+> Snowflake schemas are case sensitive. You'll need to use the uppercase schema, table, and column names if that's how you have them in Snowflake. 
 
 #### Profile 
 
@@ -110,10 +108,10 @@ An entity is a stateful representation of a business object. The entity correspo
 | Parameters     | Definition                                                           |
 | ----------- | --------------------------------------------------------------------- |
 | `entity`      | A unique slug for the entity, which is immutable and treated as a delete if you make changes. The slug must be in all lowercase, and supports dashes or underscores (for example, `account-entity` or `account_entity`).    |
-| `name`        | A unique label which will display across the app.                           |
-| `table_ref`   | Define the table reference. In order to specify a connection to your table in snowflake, a fully qualified table reference is required `[database name].[schema name].[table name]`. |
-| `primary_key` | This is the unique identifier for the given table and should be a column with unique values per row. |
-| (Optional) `enrichment_enabled = true      | Indicate if you plan to also reference the entity table for [Linked Events](/docs/unify/linked-profiles/linked-events/).                         |
+| `name`        | A unique label which will display across Segment.                           |
+| `table_ref`   | Define the table reference. In order to specify a connection to your table in Snowflake, a fully qualified table reference is required: `[database name].[schema name].[table name]`. |
+| `primary_key` | The unique identifier for the given table. Should be a column with unique values per row. |
+| (Optional) `enrichment_enabled = true`      | Indicate if you plan to also reference the entity table for [Linked Events](/docs/unify/linked-profiles/linked-events/).                         |
 
 
 
@@ -132,15 +130,15 @@ entity "account" {
 Use the following relationship, parameters, and examples to help you relate entities.
 
 > warning ""
-> Snowflake schemas are case sensitive, so you'll need to reflect the uppercase schema, table, and column names based on how you have it in Snowflake.
+> Snowflake schemas are case sensitive, so you'll need to reflect the uppercase schema, table, and column names based on how you have them in Snowflake.
 
 #### Relate Entity to Profile
 
 | Parameters     | Definition                                                           |
 | ----------- | --------------------------------------------------------------------- |
 | `relationship`      | A unique slug for the relationship, which is immutable and treated as a delete if you make changes. The slug must be in all lowercase and will support dashes or underscores (for example, `user-account` or `user_account`).   |
-| `name`        | This should be a unique label that displays throughout your Segment space.                          |
-| ``related_entity`   | Reference your already defined entity. |
+| `name`        | A unique label that displays throughout your Segment space.                          |
+| `related_entity`   | Reference your already defined entity. |
 
 
 A profile can be related to an entity in two ways:
@@ -214,12 +212,12 @@ data_graph {
 If you're relating entities with a junction table:
 
 - `Junction_table`: Define relationships between two entities tables joined by a junction table.
-     - `table_ref`: Define the table reference to the join table. In order to specify a connection to your table in Snowflake, a fully qualified table reference is required `[database name].[schema name].[table name]`
+     - `table_ref`: Define the table reference to the join table. In order to specify a connection to your table in Snowflake, a fully qualified table reference is required: `[database name].[schema name].[table name]`.
      - `primary_key`: The unique identifier on the join table and should be a column with unique values per row.
-     - `left_join_on`: Define relationship between the two entity tables `[left entity name].[column name] = [junction table column name]`.
-     - `right_join_on`: Define relationship between the two entity tables `[junction table column name] = [right entity name].[column name]`.
+     - `left_join_on`: Define relationship between the two entity tables: `[left entity name].[column name] = [junction table column name]`.
+     - `right_join_on`: Define relationship between the two entity tables: `[junction table column name] = [right entity name].[column name]`.
 
-Note that schema.table is implied within the junction table column name and doesn't need to be provided. 
+Note that `schema.table` is implied within the junction table column name and doesn't need to be provided. 
 
 Attributes from a junction table are not referenceable with the Audience Builder. If you'd like to reference an additional column on the junction table for filtering, you must first define it as an entity and explicitly define a relationship name. 
 
