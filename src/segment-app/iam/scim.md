@@ -15,7 +15,7 @@ To set up SCIM, you must first create an SSO connection. Once you [create your S
 
 ## Configuration Instructions
 
-Segment officially supports [Okta](#okta-set-up-guide), [Microsoft Entra ID](#microsoft-entra-id-set-up-guide), and [OneLogin](#onelogin-set-up-guide). Each link includes specific set up instructions for that IdP. You should read the [features](#features) section of this page to understand which features of SCIM Segment supports.
+Segment officially supports [Okta](#okta-setup-guide), [Microsoft Entra ID](#microsoft-entra-id-setup-guide), and [OneLogin](#onelogin-setup-guide). Each link includes specific setup instructions for that IdP. You should read the [features](#features) section of this page to understand which features of SCIM Segment supports.
 
 You may still be able to use SCIM with another Identity Provider (IdP) by adapting the following instructions.
 
@@ -77,7 +77,7 @@ Your IdP can use SCIM to delete groups from your Segment workspace. Deleting a g
 
 ## Attribute Mapping
 
-When you integrate Segment SCIM and your IdP you might need to map attributes for users. The only attributes that Segment SCIM supports are `userName` and `displayName`. You should leave any existing mapping for the `email` SAML attribute, which you might have set up during your initial SSO set up. This mapping supports SAML authentication, and is separate from setting up SCIM, but may be within the same page depending on your IdP.
+When you integrate Segment SCIM and your IdP you might need to map attributes for users. The only attributes that Segment SCIM supports are `userName` and `displayName`. You should leave any existing mapping for the `email` SAML attribute, which you might have set up during your initial SSO setup. This mapping supports SAML authentication, and is separate from setting up SCIM, but may be within the same page depending on your IdP.
 
 You'll need to map an email (IdP) to `userName` (Segment). Depending on your IdP this attribute might be called `email` or `mail`. If your IdP uses emails for usernames, you can map `userName` (IdP) to `userName` (Segment).
 
@@ -85,9 +85,9 @@ If your IdP supports the `displayName` attribute, you can map it directly to the
 
 For example, you might map `{firstName} {lastName}` from your IdP to `displayName` in Segment. If your IdP doesn't support this, you can map `firstName` (IdP) to `displayName` (Segment).
 
-## Okta Set up Guide
+## Okta Setup Guide
 
-1. [Complete the Okta Set up Guide for SSO](https://saml-doc.okta.com/SAML_Docs/How-to-Configure-SAML-2.0-for-Segment.html?baseAdminUrl=https://segment-admin.oktapreview.com&app=segment&instanceId=0oata15py1n3kQUo50h7){:target="_blank”}
+1. [Complete the Okta setup guide for SSO](https://saml-doc.okta.com/SAML_Docs/How-to-Configure-SAML-2.0-for-Segment.html?baseAdminUrl=https://segment-admin.oktapreview.com&app=segment&instanceId=0oata15py1n3kQUo50h7){:target="_blank”}
 2. Click **Provisioning**, then click **Configure API Integration** and select **Enable API Integration**.
 3. [Generate an API key](#api-key), then copy and paste this value into the **API Token** field in Okta, and click **Save**.
 
@@ -109,18 +109,18 @@ For example, you might map `{firstName} {lastName}` from your IdP to `displayNam
 
 ![Screenshot of the Segment Settings page, with the Access Management and User Groups tabs selected, and the user group created in the steps above present on the page.](images/scim_edit_groups.png)
 
-## Microsoft Entra ID Set Up guide
+## Microsoft Entra ID Setup Guide
 
 Instructions for configuring Microsoft Entra ID can be found on the Microsoft Docs website.
 
-1. [Complete the Microsoft Entra ID setup guide for SSO](https://learn.microsoft.com/en-us/entra/identity/saas-apps/segment-tutorial)
+1. [Complete the Microsoft Entra ID setup guide for SSO](https://learn.microsoft.com/en-us/entra/identity/saas-apps/segment-tutorial){:target="_blank”}
 
-2. [Complete the Microsoft Entra ID setup guide for SCIM](https://learn.microsoft.com/en-us/entra/identity/saas-apps/segment-provisioning-tutorial)
+2. [Complete the Microsoft Entra ID setup guide for SCIM](https://learn.microsoft.com/en-us/entra/identity/saas-apps/segment-provisioning-tutorial){:target="_blank”}
 
-## OneLogin Set up Guide
+## OneLogin Setup Guide
 
 Instructions for configuring OneLogin can be found on the OneLogin Docs website.
 
 1. Add and configure the Segment SSO integration from within the OneLogin application.
 
-2. [Complete the OneLogin Set up Guide for SCIM](https://onelogin.service-now.com/support?id=kb_article&sys_id=a7833cd7db3a30501c167e77f4961923){:target="_blank”}.
+2. [Complete the OneLogin setup Guide for SCIM](https://onelogin.service-now.com/support?id=kb_article&sys_id=a7833cd7db3a30501c167e77f4961923){:target="_blank”}
