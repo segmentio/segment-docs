@@ -13,25 +13,3 @@ Using Linked Profiles, you only need to define the relationships between data se
 
 > success ""
 > To get started with Linked Profiles, you'll need to connect your data warehouse. Visit the [Snowflake](/docs/unify/linked-profiles/setup-guides/snowflake-setup/), [Redshift](/docs/unify/linked-profiles/setup-guides/redshift-setup/), or [BigQuery](/docs/unify/linked-profiles/setup-guides/BigQuery-setup/) setup guides to learn more.
-
-<!-- Remove -
-## Data Graph
-
-[Build a Data Graph](#) to define the relationships between data sets in your warehouse and the Profiles Segment sends with Profiles Sync. You can then use the relational data defined in the Data Graph to build audiences and send them to downstream destinations. 
-
-## Linked Events
-
-[Use Linked Events](#) to enrich event streams from a warehouse destination and send those enriched events to all supported destinations.
-
-
-## Linked Audiences
-
-With [Linked Audiences](#), you can enable marketers to build Segmented audiences based off of any data set that you've mapped to the data graph.
-
-
-
-## Linked Journeys and Content
-
--->
-
-
