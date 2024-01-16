@@ -17,8 +17,7 @@ To use the Data Graph, you'll need the following:
 - A Unify and Engage Foundations or Premier plan.
 - A Snowflake Data Warehouse. 
 - [Profiles Sync](/docs/unify/profiles-sync/) set up with ready to use [data models and tables](/docs/unify/profiles-sync/tables/) in your warehouse.
-- An [Actions-based Destination](/docs/connections/destinations/actions/#available-actions-based-destinations)
-- A Braze, Customer.io, or Iterable Destination. <!-- are we supporting all destination actions here? -->
+- An [Actions-based Destination](/docs/connections/destinations/actions/#available-actions-based-destinations).
 
 
 > info ""
@@ -143,10 +142,6 @@ Use the following relationship, parameters, and examples to help you relate enti
 | `name`        | This should be a unique label that displays throughout your Segment space.                          |
 | ``related_entity`   | Reference your already defined entity. |
 
-<!-- remove
-- `relationship`: A unique slug for the relationship, which is immutable and treated as a delete if you make changes. The slug must be in all lowercase and will support dashes or underscores (for example, `user-account` or `user_account`).
-- `name`: This should be a unique label that displays throughout your Segment space.
-- `related_entity`: Reference your already defined entity. -->
 
 A profile can be related to an entity in two ways:
 1. With an `external_id`: Define the external ID that will be used to join the profile with your entity.
@@ -197,13 +192,6 @@ data_graph {
 | `related_entity`   | Reference your already defined entity. |
 | `join_on`         |    Define relationships between two entity tables `[lefty entity name].[column name] = [right entity name].[column name]`. Note that the entity name is a reference to the alias provided in the config and doesn't need to be the fully qualified table name. |
 
-<!-- remove
-- `relationship`: A unique slug for the relationship, which is immutable and treated as a delete if you make changes. The slug must be in all lowercase and will support dashes or underscores (for example, `user-account` or `user_account`).
-- `name`: A unique label that displays athroughout your Segment space.
-- `related_entity`: Reference the slug of your already defined entity.
-- `join_on`: Define relationships between two entity tables `[lefty entity name].[column name] = [right entity name].[column name]`. 
-     - Note that the entity name is a reference to the alias provided in the config and doesn't need to be the fully qualified table name. 
--->
 
 ```py
 data_graph { 
@@ -325,7 +313,7 @@ data_graph {
 
 Validate your Data Graph using the config builder and preview, then click **Save**.
 
-## Editing your Data Graph
+## Edit your Data Graph
 
 To edit your Data Graph:
 
