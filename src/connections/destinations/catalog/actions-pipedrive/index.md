@@ -36,12 +36,12 @@ Segment uses the **Match value** field value as a key when creating or updating 
 **Match field** fields are dynamic and will populate with data from your Pipedrive account. 
 ![Match value and and fields can be used to specify how Segment should update Pipedrive Entities](images/match_field.png)
 
-In the following example, Segment is configured to create or update Person entities using the email field. 
-![Using email to upsert to the Person Entity](images/match_field.png)
+In the following example, Segment is configured to create or update Person Entities using the email field. 
+![Using email to upsert to the Person Entity](images/email_match_field.png)
 
 ## Associating Entities with other Entities
 
-Entities such as the **Deal** Entity can be configured to be associated with other Entities in Pipedrive. In the example **Deal** mapping below the following will happen: 
+Entities such as the **Deal** Entity can be configured to be associated with other Entities in Pipedrive. In the example with the **Deal** mapping below the following will happen: 
 1. A **Person** Entity with an email address matching **properties.email** will be associated with the **Deal** Entity being created or updated. 
 2. An **Organization** Entity with an ID matching **properties.org_id** will be assocated with the **Deal** Entity being created or updated.  
 
