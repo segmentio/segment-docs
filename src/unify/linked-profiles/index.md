@@ -5,7 +5,6 @@ title: Linked Profiles Overview
 
 Use Linked Profiles to expand your model beyond the profile to the entire universe of business data. With Linked Profiles, you can build a [Data Graph](/docs/unify/linked-profiles/data-graph/) that defines relationships between any data set in the warehouse and the Segment Profiles you send with Profiles Sync. 
 
-
 You can then enrich your event streams with [Linked Events](/docs/unify/linked-profiles/linked-events/) and build audiences off of any data set you've mapped to the data graph with [Linked Audiences](/docs/unify/linked-profiles/linked-audiences/).
 
 
