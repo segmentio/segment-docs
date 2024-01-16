@@ -7,8 +7,6 @@ With Linked Audiences, you can use the relational data you've defined in your Da
 
 From the relationships you've defined between profiles and entities in your warehouse, you can filter on profile traits, entity attributes, and associated events to create hyper-segmented audiences.
 
-<!-- Use profile traits and entity properties from your warehouse to define the audience -->
-
 > success ""
 > Before you build Linked Audiences, be sure you've defined entities in your [Data Graph](/docs/unify/linked-profiles/data-graph/). 
 
@@ -82,15 +80,6 @@ Use the Audience overview page to build or maintain a Linked Audiences.
 2. Click **+ New audience**, then select **Audience**.
 3. On the Select Type screen, select **Linked audience**, then click **Next**.
 4. Build your Linked Audience with profiles that have a specific entity, profile trait, or are part of an audience. Select from **associated with an entity**, **where profile trait**, or **part of an audience**, and add your conditions.
-<!-- (don't think we need to spell each option out like this. Opting for simplified version above.)
-Select from:
-- **associated with an entity**
-    1. Click the **associated with entity** field to add your entity. 
-    - To view your entities, navigate to **Unify > Data Graph > Entities**. 
-    2. Enter an entity to associate your audience with, then finish building your Linked Audience.
-- **where profile trait** 
-- **part of an audience**
--->
 5. Preview your audience, then click **Next**.
 6. Enter an audience name and description, then click **Create Audience**.
 
@@ -112,7 +101,7 @@ To activate your Linked Audience, you'll first need to add an actions destinatio
 
 From the Add destination window, select your destination and click **Next**.
 
-### Step 2b: Select event <!-- these are called event emitters -->
+### Step 2b: Select event 
 After adding an actions destination, select what type of event you want to send to the destination. Events update the destination about changes to your entity or audiences. 
 
 You can send events:
@@ -126,14 +115,6 @@ You can send events:
 
 > info ""
 > Note that you can't send events before you identify people. Ensure you're making the profile(s) known in the destination before you send events. You can do this by sending an `Audience Membership Changed` event first, or by creating an Identify event in Connections.
-
-<!--
-
-#### Entity update
-
-Select to send an event when any of the following updates occur to an entity on a profile:
-
--->
 
 #### Entity Added
 
@@ -152,12 +133,6 @@ Example use cases:
 - Send a confirmation to a customer when a credit card associated with their profile has been paid off.
 - Send a confirmation to the primary doctor when each of their associated patients completes their annual check up.
 
-<!-- 
-
-#### Audience update
-
-Select to send an event based on the following profile audience membership updates:
--->
 #### Audience Entered 
 
 Send a Track event to a destination when a profile matches the audience condition. Use these events to orchestrate campaigns in other tools.
@@ -167,7 +142,6 @@ Example use cases:
 - Send a congratulatory email when a travel qualifies for premium status.
 - Send a discount to all customers with a particular product on their wishlist.
 
-<!-- renamed from Audience membership changed? -->
 #### Audience entered and exited
 
 Send an Identify event when a profile enters or exits the audience.
