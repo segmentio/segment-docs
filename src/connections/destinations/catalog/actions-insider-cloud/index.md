@@ -12,8 +12,6 @@ versions:
 
 This destination is maintained by Insider. For any issues with the destination, contact the [Insider Support team.](mailto:insiderhelp@useinsider.com){:target="_blank”}
 
-{% include content/ajs-upgrade.md %}
-
 ## Benefits of Insider (Actions) vs Insider Classic
 
 Insider (Actions) provides the following benefits over the classic Insider destination:

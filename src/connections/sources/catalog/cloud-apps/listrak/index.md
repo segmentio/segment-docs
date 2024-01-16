@@ -73,7 +73,7 @@ Property Name | Description
 `list_id` | An ID used to identify a list.
 `list_name` | A name used to identify a list.
 `order_total` | The order total associated with the conversion.
-`unsubscribe_type` | The method by which the contact was removed from the list. See the [Unsubscribed Contacts Report Help Article](https://help.listrak.com/en/articles/1550570-unsubscribed-contacts-report#unsubscribe-method-definitions).
+`unsubscribe_type` | The method by which the contact was removed from the list. See the [Unsubscribed Contacts Report Help Article](https://help.listrak.com/en/articles/1550570-unsubscribed-contacts-report#unsubscribe-method-definitions){:target="_blank"}.
 `context.ip` | The opening computer’s public IP address.
 `context.traits.email` | The intended recipient’s email address.
 `context.user_agent` | The opening browser’s user agent.

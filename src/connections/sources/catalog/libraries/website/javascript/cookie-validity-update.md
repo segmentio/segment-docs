@@ -132,13 +132,56 @@ When `disableClientPersistence` is set to `true`, Analytics.js won't store any p
 
 To access or assign a value to a cookie outside of the standard Segment methods (track/identify/page/group), you can use the following methods. To access the cookie's value, pass an empty `()` at the end of the method. To assign the value, include the string value inside those parenthesis, for example, `('123-abc')`. To clear or remove the value for a specific field, pass in an empty value of its type. For example, for string `('')`, or for object `({})`.
 
-| Field | Cookie Name | Analytics.js Method | Local Storage Method | Set Example | Clear Example |
-| ----- | ----------- | ------------------- | -------------------- | --------------- | ------------- |
-| `userId` | `ajs_user_id` | `analytics.user().id();` | `window.localStorage.ajs_user_id` | `analytics.user().id('123-abc');` | `analytics.user().id('');` |
-| `anonymousId` | `ajs_anonymous_id` | `analytics.user().anonymousId();` | `window.localStorage.ajs_anonymous_id` | `analytics.user().anonymousId('333-abc-456-dfg');` | `analytics.user().anonymousId('');` |
-| `user traits` | `ajs_user_traits` | `analytics.user().traits();` | `window.localStorage.ajs_user_traits` | `analytics.user().traits({firstName:'Jane'});` | `analytics.user().traits({});` |
-| `groupId` | `ajs_group_id` | `analytics.group().id();` | `window.localStorage.ajs_group_id` | `analytics.group().id('777-qwe-098');` | `analytics.group().id('');` |
-| `group traits` | `ajs_group_properties` | `analytics.group().traits()` | `window.localStorage.ajs_group_properties` | `analytics.group().traits({name:'Segment'})` | `analytics.group().traits({})` |
+<table class="horizontal-scroll">
+  <tr style="background-color: #fafbff; font-size: 10px;">
+    <th>FIELD</th>
+    <th>COOKIE NAME</th>
+    <th>ANALYTICS.JS METHOD</th>
+    <th>LOCAL STORAGE METHOD</th>
+    <th>SET EXAMPLE</th>
+    <th>CLEAR EXAMPLE</th>
+  </tr>
+  <tr>
+    <td>`userId`</td>
+    <td>`ajs_user_id`</td>
+    <td>`analytics.user().id();`</td>
+    <td>`window.localStorage.ajs_user_id`</td>
+    <td>`analytics.user().id('123-abc');`</td>
+    <td>`analytics.user().id('');` </td>
+  </tr>
+ <tr>
+    <td>`anonymousId`</td>
+    <td>`ajs_anonymous_id`</td>
+    <td>`analytics.user().anonymousId();`</td>
+    <td>`window.localStorage.ajs_anonymous_id`</td>
+    <td>`analytics.user().anonymousId('333-abc-456-dfg');`</td>
+    <td>`analytics.user().anonymousId('');`</td>
+  </tr>
+  <tr>
+    <td>`user traits`</td>
+    <td>`ajs_user_traits`</td>
+    <td>`analytics.user().traits();`</td>
+    <td>`window.localStorage.ajs_user_traits`</td>
+    <td>`analytics.user().traits({firstName:'Jane'});`</td>
+    <td>`analytics.user().traits({});`</td> 
+  </tr>
+  <tr>
+    <td>`groupId`</td>
+    <td>`ajs_group_id`</td>
+    <td>`analytics.group().id();`</td>
+    <td>`window.localStorage.ajs_group_id`</td>
+    <td>`analytics.group().id('777-qwe-098');`</td>
+    <td>`analytics.group().id('');`</td>
+  </tr>
+  <tr>
+    <td>`group traits`</td>
+    <td>`ajs_group_properties`</td>
+    <td>`analytics.group().traits()`</td>
+    <td>`window.localStorage.ajs_group_properties`</td>
+    <td>`analytics.group().traits({name:'Segment'})`</td>
+    <td>`analytics.group().traits({})`</td>
+  </tr>
+</table>
 
 ## Storage Priority
 
@@ -164,13 +207,19 @@ The `storage` property accepts an array of supported storage names (`localStorag
 ```js
 analytics.load('writeKey', {
   // Global Storage Priority: Both User and Group data
-  storage: ['cookie', 'localStorage', 'memory']
+  storage: {
+    stores: ['cookie', 'localStorage', 'memory']
+  },
   // Specific Storage Priority
   user: {
-    storage: ['cookie', 'localStorage', 'memory']
+    storage: {
+      stores: ['cookie', 'localStorage', 'memory']
+    }
   },
   group: {
-    storage: ['cookie', 'localStorage', 'memory']
+    storage: {
+      stores: ['cookie', 'localStorage', 'memory']
+    }
   },
 }
 ```

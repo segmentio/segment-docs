@@ -4,11 +4,11 @@ redirect_from:
   - '/spec/screen'
 ---
 
-The `screen` call lets you record whenever a user sees a screen, the mobile equivalent of `page`, in your mobile app, along with any properties about the screen. Calling `page` or [`screen`](/docs/connections/spec/screen/) in one of Segment's [sources](/docs/connections/sources/) is one of the first steps to getting started with Segment.
+The Screen call lets you record whenever a user sees a screen, the mobile equivalent of Page, in your mobile app, along with any properties about the screen. Calling Page or [Screen](/docs/connections/spec/screen/) in one of Segment's [sources](/docs/connections/sources/) is one of the first steps to getting started with Segment.
 
 {% include components/reference-button.html href="https://university.segment.com/introduction-to-segment/299973?reg=1&referrer=docs" icon="media/academy.svg" title="Segment University: The Screen Method" description="Check out our high-level overview of the Screen method in Segment University. (Must be logged in to access.)" %}
 
-Here's the payload of a typical `screen` call, with most [common fields](/docs/connections/spec/common/) removed:
+Here's the payload of a typical Screen call, with most [common fields](/docs/connections/spec/common/) removed:
 
 ```json
 {
@@ -28,7 +28,7 @@ And here's the corresponding Objective-C event that would generate the above pay
 ```
 {% include content/syntax-note.md %}
 
-Beyond the common fields, the `screen` call takes the following fields:
+Beyond the common fields, the Screen call takes the following fields:
 
 <table>
   {% include content/spec-table-header.md %}
@@ -38,7 +38,7 @@ Beyond the common fields, the `screen` call takes the following fields:
 
 ## Example
 
-Here's a complete example of a `screen` call:
+Here's a complete example of a Screen call:
 
 ```json
 {

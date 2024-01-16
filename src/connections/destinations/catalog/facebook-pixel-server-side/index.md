@@ -25,12 +25,12 @@ hide-dossier: true
 
 This page is about the **Facebook Conversions API** destination. For documentation on other Facebook destinations, including Facebook Pixel, see the pages linked below.
 
-| **Facebook Destination**                                                                                    | Supported by Engage |
-| ----------------------------------------------------------------------------------------------------------- | ------------------- |
-| **[Facebook App Events](/docs/connections/destinations/catalog/facebook-app-events/)**                      | Yes                 |
-| **[Facebook Custom Audiences](/docs/connections/destinations/catalog/personas-facebook-custom-audiences/)** | Yes                 |
-| **[Facebook Offline Conversions](/docs/connections/destinations/catalog/facebook-offline-conversions/)**    | Yes                 |
-| **[Facebook Pixel](/docs/connections/destinations/catalog/facebook-pixel/)**                                | No                  |
+| **Facebook Destination**                                                                                                      | Supported by Engage |
+| ----------------------------------------------------------------------------------------------------------------------------- | ------------------- |
+| **[Facebook App Events](/docs/connections/destinations/catalog/facebook-app-events/){:target="_blank"}**                      | Yes                 |
+| **[Facebook Custom Audiences](/docs/connections/destinations/catalog/personas-facebook-custom-audiences/){:target="_blank"}** | Yes                 |
+| **[Facebook Offline Conversions](/docs/connections/destinations/catalog/facebook-offline-conversions/){:target="_blank"}**    | Yes                 |
+| **[Facebook Pixel](/docs/connections/destinations/catalog/facebook-pixel/){:target="_blank"}**                                | No                  |
 
 ## Getting started
 
@@ -96,7 +96,7 @@ Use this approach if you want to separate tracking events completed on a user's 
 
 For this option to work best, the same `external_id` needs to be passed from the browser and the server. To achieve this, go to your Facebook Pixel destination settings in Segment and enable the **Enable Advanced Matching** and **Use User ID or Anonymous ID as External ID** settings. By default the Facebook Conversions API destination uses the `userId` (or `anonymousId` if not present) to set the `external_id`, so when you set up Facebook Pixel to use the same settings, Facebook can then match the users.
 
-You can also send [user traits in the context object of the track events](#default-mappings-to-facebook-properties)to increase the match rate for events from a server source. Collect other fields from the browser, like `userAgent`, `ip` address, and [Facebook's parameters (fbp, fbc)](https://developers.facebook.com/docs/marketing-api/conversions-api/parameters/fbp-and-fbc){:target="_blank"}, pass them to the server, and manually add them to the events.
+You can also send [user traits in the context object of the track events](#default-mappings-to-facebook-properties) to increase the match rate for events from a server source. Collect other fields from the browser, like `userAgent`, `ip` address, and [Facebook's parameters (fbp, fbc)](https://developers.facebook.com/docs/marketing-api/conversions-api/parameters/fbp-and-fbc){:target="_blank"}, pass them to the server, and manually add them to the events.
 
 #### Deduplication considerations
 
@@ -127,7 +127,7 @@ For more information about Track calls, see the [Track method](/docs/connections
 
 Beginning February 15th, 2021, Facebook requires the `action_source` server event parameter for all events sent to the Conversions API. This parameter is used to specify where the conversions occurred. If `action_source` is set to 'website' then the `client_user_agent` and the `event_source_url` parameters are also required. Events sent to the Conversions API after February 15th that do not meet the requirements may not be available for optimization, targeting, or measurement.
 
-| Server Event Parameter | Requirement                                  | Implementation                 p                                                                             |
+| Server Event Parameter | Requirement                                  | Implementation                                                                                               |
 | ---------------------- | -------------------------------------------- | ------------------------------------------------------------------------------------------------------------ |
 | `action_source`        | Always required                              | It is set automatically but it can be set manually.                                                          |
 | `client_user_agent`    | Only required if `action_source` = "website" | It must be set manually if using a server library. It is set automatically if using the Segment web library. |

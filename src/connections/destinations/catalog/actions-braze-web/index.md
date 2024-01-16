@@ -165,8 +165,6 @@ For more details on this snippet, see Braze's documentation [here](https://www.b
 
 ## Migration from Braze Classic
 
-{% include content/ajs-upgrade.md %}
-
 Keep the following in mind if you plan to move to Braze (Actions) from the classic Braze destination.
 {% include components/actions-map-table.html name="braze-web" %}
 

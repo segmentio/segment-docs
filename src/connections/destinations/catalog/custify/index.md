@@ -3,11 +3,9 @@ title: Custify Destination
 rewrite: true
 id: 5cf78a8db6bcdf00017208cd
 ---
-[Custify](https://www.custify.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners)'s Customer Success Platform is designed for B2B SaaS businesses and enables them to reduce their churn and increase customer lifetime value.
+[Custify](https://www.custify.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners){:target="_blank"}'s Customer Success Platform is designed for B2B SaaS businesses and enables them to reduce their churn and increase customer lifetime value.
 
 This destination is maintained by Custify. For any issues with the destination, [contact the Custify Support team](mailto:contact@custify.com).
-
-{% include content/beta-note.md %}
 
 ## Getting Started
 
@@ -15,7 +13,7 @@ This destination is maintained by Custify. For any issues with the destination, 
 
 1. From the Segment web app, click **Catalog**.
 2. Search for "Custify" in the Catalog, select it, and choose which of your sources to connect the destination to.
-3. Enter the "API Key" into your Segment Settings UI which you can find from your [Custify Developer area](https://app.custify.com/settings/developer/api-key).
+3. Enter the "API Key" into your Segment Settings UI which you can find from your [Custify Developer area](https://app.custify.com/settings/developer/api-key){:target="_blank"}.
 
 ## Identify
 

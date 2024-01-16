@@ -1,12 +1,10 @@
-{% assign sources = site.data.catalog.sources.items | where: "hidden", "false" %}
 {% assign destinations = site.data.catalog.destinations.items %}
-{% assign warehouses = site.data.catalog.regional-supported.warehouses %}
+{% assign warehouses = site.data.catalog.warehouse.items | where: "status", "PUBLIC" %}
 
 <input class="table-search" type="text" id="filterInput" onkeyup="searchFilter()"
   placeholder="Search for an integration..">
 <div class="button-container" id="btnContainer">
   <a href="#" id="all" class="button button-link active">All</a>
-  <a href="#" id="source" class="button button-link">Sources</a>
   <a href="#" id="destination" class="button button-link">Destinations</a>
   <a href="#" id="warehouse" class="button button-link">Warehouses</a>
 </div>
@@ -17,28 +15,9 @@
       <th>Integration</th>
       <th>US Workspace</th>
       <th>EU workspace w/ US Endpoint</th>
-      <th>EU workspace w/ EU Endpoint</th>
     </tr>
   </thead>
   <tbody>
-    <tr class="settingRow source ">
-      <td colspan="4" style="font-weight: bold; background-color:fafbff;font-size: 10px; text-transform: uppercase;"
-        id="settingRow">
-        Sources</td>
-    </tr>
-    {% for source in sources %}
-    <tr class="settingRow source" id="settingRow">
-      <td><a href="/docs/{{source.url}}">{{source.display_name}}</a></td>
-      <td>{% if source.regions contains "us" %}<img class="inline" src="/docs/images/supported.svg" />{% else %}<img
-          alt="" class="inline" src="/docs/images/unsupported.svg" />{% endif %}</td>
-      <td>{% if source.regions contains "eu" and source.endpoints contains "us" %}<img class="inline"
-          src="/docs/images/supported.svg" />{% else %}<img alt="" class="inline"
-          src="/docs/images/unsupported.svg" />{% endif %}</td>
-      <td> {% if source.regions contains "eu" and source.endpoints contains "eu" %}<img class="inline"
-          src="/docs/images/supported.svg" />{% else %}<img alt="" class="inline"
-          src="/docs/images/unsupported.svg" />{% endif %}</td>
-    </tr>
-    {% endfor %}
     <tr class="settingRow destination">
       <td colspan="4" style="font-weight: bold; background-color:fafbff;font-size: 10px; text-transform: uppercase;"
         id="settingRow">
@@ -51,9 +30,6 @@
           src="/docs/images/supported.svg" />{% else %}<img alt="" class="inline"
           src="/docs/images/unsupported.svg" />{% endif %}</td>
       <td>{% if destination.regions contains "eu-west-1" and destination.endpoints contains "US" %}<img class="inline"
-          src="/docs/images/supported.svg" />{% else %}<img alt="" class="inline"
-          src="/docs/images/unsupported.svg" />{% endif %}</td>
-      <td> {% if destination.regions contains "eu-west-1" and destination.endpoints contains "EU" %}<img class="inline"
           src="/docs/images/supported.svg" />{% else %}<img alt="" class="inline"
           src="/docs/images/unsupported.svg" />{% endif %}</td>
     </tr>
@@ -69,9 +45,6 @@
       <td>{% if warehouse.regions contains "us" %}<img class="inline" src="/docs/images/supported.svg" />{% else %}<img
           alt="" class="inline" src="/docs/images/unsupported.svg" />{% endif %}</td>
       <td>{% if warehouse.regions contains "eu" and warehouse.endpoints contains "us" %}<img class="inline"
-          src="/docs/images/supported.svg" />{% else %}<img alt="" class="inline"
-          src="/docs/images/unsupported.svg" />{% endif %}</td>
-      <td> {% if warehouse.regions contains "eu" and warehouse.endpoints contains "eu" %}<img class="inline"
           src="/docs/images/supported.svg" />{% else %}<img alt="" class="inline"
           src="/docs/images/unsupported.svg" />{% endif %}</td>
     </tr>

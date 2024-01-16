@@ -1,0 +1,10 @@
+types:
+  - display_name: Community
+    slug: community
+    support-note: "Segment originally developed but no longer manages or updates community libraries. These libraries are available on GitHub under the MIT License for the open-source community."
+  - display_name: Legacy
+    slug: legacy
+    support-note: "Legacy libraries function reliably and send data as intended but receive no new feature support other than security and privacy updates."
+  - display_name: Flagship
+    slug: flagship
+    support-note: "Flagship libraries offer the most up-to-date functionality on Segment’s most popular platforms. Segment actively maintains flagship libraries, which benefit from new feature releases and ongoing development and support."

@@ -4,8 +4,8 @@ id: 54521fd925e721e32a72eed0
 ---
 Our Localytics mobile destination code is open sourced on GitHub. Feel free to
 check it out:
-[iOS](https://github.com/segment-integrations/analytics-ios-integration-localytics),
-[Android](https://github.com/segment-integrations/analytics-android-integration-localytics).
+[iOS](https://github.com/segment-integrations/analytics-ios-integration-localytics){:target="_blank"},
+[Android](https://github.com/segment-integrations/analytics-android-integration-localytics){:target="_blank"}.
 
 ## Getting Started
 
@@ -20,7 +20,7 @@ you can include a `localytics.xml` file in your Android project's `res/values`
 folder to define your settings. Note that any settings entered in the Segment UI
 will override the equivalent values defined in your `localytics.xml` file. You
 can read more about the `localytics.xml` file in [Localytics's documentation
-here](https://docs.localytics.com/dev/android.html#include-localytics-xml-file).
+here](https://docs.localytics.com/dev/android.html#include-localytics-xml-file){:target="_blank"}.
 
 Including a settings xml file in conjunction with a Segment-Localytics iOS SDK
 is not yet supported.
@@ -29,13 +29,7 @@ is not yet supported.
 [iOS](/docs/connections/sources/catalog/libraries/mobile/ios/)/[Android](/docs/connections/sources/catalog/libraries/mobile/android/) or [React Native](/docs/connections/sources/catalog/libraries/mobile/react-native/)), with the Localytics SDKs [bundled](/docs/connections/spec/mobile-packaging-sdks/) in order to send data to Localytics.
 
 You must also add the Maven Localytics repo (since Localytics doesn't publish it on Maven Central). You can see an example of how to add that
-[here](https://github.com/segment-integrations/analytics-android-integration-localytics/blob/master/build.gradle#L44).
-
-### React Native set up
-
-{% include content/react-dest.md %}
-
-- - -
+[here](https://github.com/segment-integrations/analytics-android-integration-localytics/blob/master/build.gradle#L44){:target="_blank"}.
 
 ## Identify
 
@@ -59,7 +53,7 @@ Push notifications on Android require a bit of extra work to setup.
   more information about bundled integrations in our [Android documentation](/docs/connections/sources/catalog/libraries/mobile/android/#about-mobile-connection-modes).
 
 * Follow Localytics' documentation to [set up the permission in your
-  AndroidManifest.xml](http://docs.localytics.com/dev/android.html#modify-androidmanifest-push-android).
+  AndroidManifest.xml](http://docs.localytics.com/dev/android.html#modify-androidmanifest-push-android){:target="_blank"}.
   Specifically, the **AndroidManifest** changes regarding the `GcmReceiver`,
   `GcmListenerService`, `InstanceIDListenerServer`, and `PushTrackingActivity`
   classes.

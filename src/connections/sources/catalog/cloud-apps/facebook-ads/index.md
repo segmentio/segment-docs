@@ -5,7 +5,7 @@ strat: facebook
 id: mazatB39IS
 ---
 
-Facebook is one of the most efficient ways to advertise online. Take your company's analysis to the next level by adding [Facebook Ads](https://www.facebook.com/business/products/ads) as a Source to Segment.
+Facebook is one of the most efficient ways to advertise online. Take your company's analysis to the next level by adding [Facebook Ads](https://www.facebook.com/business/products/ads){:target="_blank"} as a Source to Segment.
 
 ## Getting Started
 
@@ -49,10 +49,10 @@ Collections are the groupings of resources we pull from your source. In your war
 | Collection  | Type   | Description                                                                                                                                                                                            |
 | ----------- | ------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | ad_accounts | object | An ad account is an account used to manage ads on Facebook                                                                  |
-| ad_sets     | object | An [ad set](https://developers.facebook.com/docs/marketing-api/reference/ad-campaign) is a group of ads that share the same daily or lifetime budget, schedule, bid type, bid info, and targeting data |
-| ads         | object | An [ad](https://developers.facebook.com/docs/marketing-api/reference/adgroup) object contains the data necessary to visually display an ad and associate it with a corresponding ad set.               |
-| campaigns   | object | A [campaign](https://developers.facebook.com/docs/marketing-api/reference/v13.0) is a grouping of ad sets which are organized by the same business objective.                              |
-| insights    | object | [Insights](https://developers.facebook.com/docs/marketing-api/reference/adgroup/insights/) contain performance statistics for an ad broken down by day.                                                |
+| ad_sets     | object | An [ad set](https://developers.facebook.com/docs/marketing-api/reference/ad-campaign){:target="_blank"} is a group of ads that share the same daily or lifetime budget, schedule, bid type, bid info, and targeting data |
+| ads         | object | An [ad](https://developers.facebook.com/docs/marketing-api/reference/adgroup){:target="_blank"} object contains the data necessary to visually display an ad and associate it with a corresponding ad set.               |
+| campaigns   | object | A [campaign](https://developers.facebook.com/docs/marketing-api/reference/v13.0){:target="_blank"} is a grouping of ad sets which are organized by the same business objective.                              |
+| insights    | object | [Insights](https://developers.facebook.com/docs/marketing-api/reference/adgroup/insights/){:target="_blank"} contain performance statistics for an ad broken down by day.                                                |
 
 
 ## Collection Properties

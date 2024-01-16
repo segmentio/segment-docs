@@ -37,7 +37,7 @@ The Snapchat Conversions API destination provides the following benefits:
 ## FAQ and Troubleshooting
 
 ### Invalid token error
-If you're experiencing 400 Bad Requests errors related to an invalid token, follow [these instructions](https://segment.com/docs/connections/destinations/catalog/actions-snap-conversions/#getting-started) to reauthorize your account: 
+If you're experiencing 400 Bad Requests errors related to an invalid token, follow [these instructions](/docs/connections/destinations/catalog/actions-snap-conversions/#getting-started) to reauthorize your account: 
 - On the **Settings** tab, authenticate with Snap using OAuth. 
 - Click **Connect to Snapchat Conversions API**. 
 - Follow the prompts to authenticate using OAuth with a Snapchat login. Use a Snapchat login that is a member of the Snapchat Ads account you want to connect.
@@ -69,6 +69,14 @@ If you want to send a Snap Event Type that Segment doesn’t have a prebuilt map
 3. Input a literal string of “START_TRIAL” as the Event Type.
 
 The Snapchat Conversions API only supports sending Event Types that are in the [predefined `event_type` list](https://marketingapi.snapchat.com/docs/conversion.html#conversion-parameters){:target="_blank"}. This includes custom events. You must use `CUSTOM_EVENT_1`, `CUSTOM_EVENT_2`, `CUSTOM_EVENT_3`, `CUSTOM_EVENT_4`, or `CUSTOM_EVENT_5` as the Event Type. Events sent with an invalid event type will fail with an `Unrecognized event type` error. 
+
+### Single or multiple products or items
+It's possible to send details of either single or multiple products/items in a single conversion event. 
+- **Single product/item**: Use the "Item ID", "Item Category" and "Brand" fields. 
+- **Multiple products/items**: Use the "Products" field which accepts an array of products / items. 
+
+### Specifying the total value of a purchase
+The "Price" field should be used when specifying the total value of a purchase, and should contain a numeric value only. e.g. 99.5. 
 
 ### Required parameters and hashing
 To match visitor events with Snapchat ads, Snap requires that one or a combination of the following parameters are sent to the Conversions API:

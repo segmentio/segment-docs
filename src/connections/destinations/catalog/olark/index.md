@@ -5,7 +5,7 @@ id: 54521fd925e721e32a72eedc
 ## Getting Started
 
 When you enable Olark in the Segment web app, your changes appear in the Segment CDN in about 45 minutes, and then Analytics.js starts asynchronously loading Olark's `loader0.js` onto your page. This means you should remove Olark's snippet from your page.
-+ Olark's chat box will appear on your page, as configured in your [Olark account](http://www.olark.com/?r=qhl4tltg), and you can start chatting with visitors.
++ Olark's chat box will appear on your page, as configured in your [Olark account](http://www.olark.com/?r=qhl4tltg){:target="_blank"}, and you can start chatting with visitors.
 
 Olark is only supported in device mode (on the client).
 
@@ -26,7 +26,7 @@ When you call [`identify`](/docs/connections/spec/identify/) on `analytics.js`, 
 * We call `api.visitor.updatePhoneNumber` with `traits.phone` if you send it.
 * We call `api.visitor.updateCustomFields` with `traits`.
 
-More documentation on the Olark API can be found [in Olark's docs](https://www.olark.com/documentation?r=qhl4tltg).
+More documentation on the Olark API can be found [in Olark's docs](https://www.olark.com/documentation?r=qhl4tltg){:target="_blank"}.
 
 ## Track
 
@@ -38,7 +38,7 @@ When you call [`track`](/docs/connections/spec/track/) or one of its helpers on 
 
 ### Customizing the chat box
 
-All the settings you can change [from your Olark settings pages](https://www.olark.com/help/customize), like targeted chat and your chat box design, still work exactly the same when Olark is enabled using Segment.
+All the settings you can change [from your Olark settings pages](https://www.olark.com/help/customize){:target="_blank"}, like targeted chat and your chat box design, still work exactly the same when Olark is enabled using Segment.
 
 ### Olark JavaScript API
 

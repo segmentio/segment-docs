@@ -7,8 +7,6 @@ id: 5d10e0d0d3831900017af2cd
 
 This destination is maintained by FunnelFox. For any issues with the destination, [contact the FunnelFox Support team](mailto:support@funnelfox.com).
 
-{% include content/beta-note.md %}
-
 
 ## Getting Started
 
@@ -16,7 +14,7 @@ This destination is maintained by FunnelFox. For any issues with the destination
 
 1. From the Segment web app, click **Catalog**.
 2. Search for "FunnelFox" in the Catalog, select it, and choose which of your sources to connect the destination to.
-3. Enter the "API Key" into your Segment Settings UI which you can find on your personal [FunnelFox Homepage](https://app.funnelfox.com/#/home) under Data Sources > Websites.
+3. Enter the "API Key" into your Segment Settings UI which you can find on your personal [FunnelFox Homepage](https://app.funnelfox.com/#/home){:target="_blank"} under Data Sources > Websites.
 
 
 ## Page

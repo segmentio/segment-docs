@@ -4,7 +4,7 @@ rewrite: true
 redirect_from: '/connections/destinations/catalog/sailthru/'
 id: 5ee1302124d817af4c8341a2
 ---
-[Sailthru's](https://www.sailthru.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) cross-channel marketing platform helps brands deliver personalized experiences to each and every consumer across email, web, and mobile, driving higher revenue, improving customer lifetime value, and reducing churn.
+[Sailthru's](https://www.sailthru.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners){:target="_blank”} cross-channel marketing platform helps brands deliver personalized experiences to each and every consumer across email, web, and mobile, driving higher revenue, improving customer lifetime value, and reducing churn.
 
 Sailthru maintains this destination. For any issues with the destination, [contact the Sailthru Support team](mailto:support@sailthru.com).
 

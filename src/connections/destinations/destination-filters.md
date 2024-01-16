@@ -22,6 +22,7 @@ Common use cases for destination filters include:
 
 Keep the following limitations in mind when you use destination filters:
 
+- Destination Filters aren't applied to events sent through the Event Tester.
 - Segment applies destination filters one at a time in the order that they appear in your workspace.
 - You can't apply destination filters to Warehouses or S3 destinations.
 - Each filter can only apply to one source-destination pair.
@@ -31,8 +32,6 @@ Keep the following limitations in mind when you use destination filters:
 - *(For web device-mode)* Destination filters for web device-mode only supports the Analytics.js 2.0 source. You need to enable device mode destination filters for your Analytics.js source. To do this, go to your Javascript source and navigate to **Settings > Analytics.js** and turn the toggle on for **Destination Filters**.
 - *(For web device-mode)* Destination filters for device-mode only supports the Analytics.js 2.0 source.
 - *(For mobile device-mode)* Destination filters for mobile device-mode doesn't support iOS and Android libraries.
-- Destination Filters don't apply to events that send through the destination Event Tester.
-
 
 [Contact Segment](https://segment.com/help/contact/){:target="_blank"} if these limitations impact your use case.
 
@@ -230,7 +229,6 @@ Use the destination filter tester during setup to verify that you're filtering o
 
 Destination Filters can't target properties or traits with spaces in the field name. As an alternative, use [Insert Functions](/docs/connections/functions/insert-functions/), which let you write code to take care of such filtering.
 
-
 #### Can I use destination filters to drop events unsupported by a destination?
 
 The check for unsupported events types happens before any destination filter checks. As a result, Destination Filters can't prevent unsupported event type errors. To filter these events, use the [Integrations Object](/docs/guides/filtering-data/#filtering-with-the-integrations-object).
@@ -240,3 +238,7 @@ The check for unsupported events types happens before any destination filter che
 Destination filters only filter events sent after filter setup. If you just added a destination filter but still see some events going through, you're likely seeing retries from failed events that occurred before you set up the filter.
 
 When Segment sends an event to a destination but encounters a timeout error, it attempts to send the event again. As a result, if you add a destination filter while Segment is trying to send a failed event, these retries could filter through, since they reflect events that occurred before filter setup.
+
+#### How do destination filters handle Protocols Transformations?
+
+When you enable a destination-specific Transformation, Segment processes your events with a destination filter. Segment processes source-level Transformations before the events reach the destination filter.

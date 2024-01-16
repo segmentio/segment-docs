@@ -36,7 +36,7 @@ Mixpanel (Actions) provides the following benefits over the classic Mixpanel des
 
 ### Connection Modes for Mixpanel (Actions) destination
 
-The Mixpanel (Actions) destination does not offer a device-mode connection mode. If you're using one of Segment's new libraries ([Analytics.js 2.0](/docs/connections/sources/catalog/libraries/website/javascript/), [Swift](https://github.com/segmentio/analytics-swift) or [Kotlin](https://github.com/segmentio/analytics-kotlin)) with the Actions-framework version of the destination, you do not need the device-mode connection.
+The Mixpanel (Actions) destination does not offer a device-mode connection mode. If you're using one of Segment's new libraries ([Analytics.js 2.0](/docs/connections/sources/catalog/libraries/website/javascript/), [Swift](https://github.com/segmentio/analytics-swift){:target="_blank”} or [Kotlin](https://github.com/segmentio/analytics-kotlin){:target="_blank”}) with the Actions-framework version of the destination, you do not need the device-mode connection.
 
 {% capture track_purchase_details %}
 
@@ -118,8 +118,6 @@ The group id that Mixpanel will use is `12345`.
 
 ## Migration from Mixpanel Classic
 
-{% include content/ajs-upgrade.md %}
-
 Assuming you're already using Segment Cloud-mode, the Mixpanel (Actions) destination is expected to have no breaking changes when upgrading. With the exception of a few new properties added to your events in the new Actions destination, there should be no difference in the data received in Mixpanel when using either of the Mixpanel destinations.
 
 If you want to confirm, you can configure the new destination to point to a different Mixpanel project and connect it to the same source(s) as the Classic destination and manually verify before fully switching over.
@@ -133,5 +131,5 @@ If you want to confirm, you can configure the new destination to point to a diff
 
 ### Track events are not attributed to Mixpanel Groups
 
-Ensure that the mapping(s) handling your `track` events have the field for **Group ID** mapped to a valid value. By default, this field is mapped to the event variable `context.groupId`.
+If the Mixpanel (Actions) destination uses $group_id as the group key, ensure that the mappings handling your `track` events have the field for **Group ID** mapped to a valid value. By default, this field maps to the event variable `context.groupId`.
 

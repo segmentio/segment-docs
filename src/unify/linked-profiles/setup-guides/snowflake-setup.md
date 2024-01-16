@@ -38,18 +38,18 @@ Enter and run the code below to create a virtual warehouse. Linked Events needs 
    
 ## Create a new role 
 
-Enter and run the code below to create specific roles for Linked Events. All Snowflake access is specified through roles, which are then assigned to the user you’ll create later.
+Enter and run the code below to create specific roles for Linked Profiles. All Snowflake access is specified through roles, which are then assigned to the user you’ll create later.
 
    ```ts
    -- create role
-   GRANT ROLE segment_entities;
+   CREATE ROLE segment_entities;
 
    -- warehouse access
    GRANT USAGE ON WAREHOUSE segment_entities TO ROLE segment_entities;
 
    -- database access
-   GRANT USAGE ON DATABASE segment_entities TO ROLE segment_entities;
-   GRANT CREATE SCHEMA ON DATABASE segment_entities TO ROLE segment_entities;
+   GRANT USAGE ON DATABASE <database-name> TO ROLE segment_entities;
+   GRANT CREATE SCHEMA ON DATABASE <database-name> TO ROLE segment_entities;
    ```
 
 ## Create a new user 

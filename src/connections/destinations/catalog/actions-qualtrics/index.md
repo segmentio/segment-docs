@@ -11,11 +11,7 @@ id: 62e17e6f687e4a3d32d0f875
 
 <!-- Include a brief description of the destination here, along with a link to your website. -->
 
-[Qualtrics](https://qualtrics.com) is an Experience Management platform that allows companies to design and improve customer and employee experiences through listening, analysis and action. Power richer Qualtrics insights or perform action based on your event data using the Qualtrics destination
-
-<!-- This include describes the requirement of A.js 2.0 or higher for Actions compatibility, and is required if your destination has a web component. -->
-
-{% include content/ajs-upgrade.md %}
+[Qualtrics](https://qualtrics.com){:target="_blank”} is an Experience Management platform that allows companies to design and improve customer and employee experiences through listening, analysis and action. Power richer Qualtrics insights or perform action based on your event data using the Qualtrics destination
 
 <!-- In the section below, explain the value of this actions-based destination. If you don't have a classic version of the destination, remove this section. -->
 
@@ -34,7 +30,7 @@ Qualtrics (Actions) provides the following benefits:
 2. Find the Destinations Actions item in the left navigation, and click it.
 3. Click **Configure Qualtrics**.
 4. Select an existing Source to connect to Qualtrics (Actions).
-5. To authenticate, enter your API key & Datacenter ID. To locate your API key & Datacenter ID, follow in the instructions found [here](https://api.qualtrics.com/ZG9jOjg3NjYzNQ-finding-your-qualtrics-i-ds)
+5. To authenticate, enter your API key & Datacenter ID. To locate your API key & Datacenter ID, follow in the instructions found [here](https://api.qualtrics.com/ZG9jOjg3NjYzNQ-finding-your-qualtrics-i-ds){:target="_blank”}.
 
 <!-- The line below renders a table of connection settings (if applicable), Pre-built Mappings, and available actions. -->
 

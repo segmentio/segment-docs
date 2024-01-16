@@ -4,6 +4,9 @@ title: Roles
 
 A role gives a user access to resources within a workspace. Roles are additive, and can combine to configure a custom policy for a Team Member or a Group. A policy is at least one role plus one resource applied to an individual user or group.
 
+> info ""
+> When a user has both User Permissions and Group Permissions, they will have the highest access given to either of those roles.
+
 ## Global Roles
 
 All Segment workspaces have the following roles, regardless of account type.
@@ -67,10 +70,10 @@ The following roles are only available to Segment Business Tier accounts.
 * **Scope:** Grants access to *all* warehouses.
 
 #### Entities Admin 
-Full CRUD (create, read, access, and delete) access to all Entities within a workspace. You can also grant or revoke user permissions.
+Full edit and view access to all entity models and connection details. 
 
 #### Entities Read-only
-Read-only access to all Entities models and destinations in a workspace. 
+Read-only access, with the ability to view entity models.
 
 ## PII Access
 
