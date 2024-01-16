@@ -109,7 +109,7 @@ For example, you might map `{firstName} {lastName}` from your IdP to `displayNam
 
 ![Screenshot of the Segment Settings page, with the Access Management and User Groups tabs selected, and the user group created in the steps above present on the page.](images/scim_edit_groups.png)
 
-## Microsoft Entra ID setup guide
+## Microsoft Entra ID Set Up guide
 
 Instructions for configuring Microsoft Entra ID can be found on the Microsoft Docs website.
 
