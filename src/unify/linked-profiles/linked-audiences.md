@@ -70,7 +70,7 @@ In the warehouse:
 - `credit_cards.name` is a column in the `credit_cards` table
 - `transactions.count` is a column in the `transactions` table
 
-Marketers can create hyper-targeted user segmentations by filtering by column values or attributes, such as "Owly Card" and integers. 
+Marketers can create hyper-targeted user segmentations filtering by column values or attributes, such as "Owly Card" and integers. 
 
 
 ## Step 1: Build a Linked Audience
@@ -92,9 +92,8 @@ Use the Audience overview page to build or maintain a Linked Audiences.
 
 Use the Audience overview page to build or maintain Linked Audiences.
 
-
 > info ""
-> Note that [Braze](/docs/connections/destinations/catalog/braze-cloud-mode-actions/#available-presets), [Iterable](/docs/connections/destinations/catalog/actions-iterable/#available-presets), and [Customer.io](/docs/connections/destinations/catalog/customer-io-actions/#available-presets) all have preset mappings.
+> Note that [Braze](/docs/connections/destinations/catalog/braze-cloud-mode-actions/#available-presets), [Iterable](/docs/connections/destinations/catalog/actions-iterable/#available-presets), and [Customer.io](/docs/connections/destinations/catalog/customer-io-actions/#available-presets) all have preset mappings with many of the following steps already configured.
 
 ### Step 2a: Add an actions destination
 
@@ -117,24 +116,28 @@ You can send events:
 > info ""
 > Note that you can't send events before you identify people. Ensure you're making the profile(s) known in the destination before you send events. You can do this by sending an `Audience Membership Changed` event first, or by creating an Identify event in Connections.
 
-#### Entity Added
+#### Entity added
 
-Send an action to a destination when an entity associated with a profile matches the audience condition. Use these actions to orchestrate campaigns in other tools. 
+Send an action to a destination when an entity associated with a profile matches the audience condition. Select your entity from the **Select entity** dropdown menu.
+
+Use this action to orchestrate campaigns in other tools. 
 
 Example use cases:
 - Send a reminder to a customer when a credit card associated with their profile has an outstanding balance.
 - Notify a traveler when a flight associated with their profile is delayed.
 - Notify a customer when a product associated with their profile's wishlist is back in stock.
 
-#### Entity Removed
+#### Entity removed
 
-Send an event to a destination when an entity assoacited with the profile no longer matches the audience condition. Use these events to orchestrate campaigns in other tools. 
+Send an event to a destination when an entity assoacited with the profile no longer matches the audience condition. Select your entity from the **Select entity** dropdown menu.
+
+Use this action to orchestrate campaigns in other tools. 
 
 Example use cases:
 - Send a confirmation to a customer when a credit card associated with their profile has been paid off.
 - Send a confirmation to the primary doctor when each of their associated patients completes their annual check up.
 
-#### Audience Entered 
+#### Audience entered 
 
 Send a Track event to a destination when a profile matches the audience condition. Use these events to orchestrate campaigns in other tools.
 
@@ -150,7 +153,7 @@ Send an Identify event when a profile enters or exits the audience.
 Example use case:
 - Update a user profile in a destination with the most recent audience membership.
 
-#### Audience Exited
+#### Audience exited
 
 Send a Track event to a destination when a profile no longer matches the audience condition. Use these events to orchestrate campaigns in other tools.
 
@@ -178,9 +181,9 @@ To configure your event:
 - As you're configuring your event, you can view a preview of the enriched event based on your property selections. 
 2. Map your event from your audience to your destination.
 - You can preview what the event will look like in your destination.
-3. After configuring, click **Save**. 
+3. After configuring, click **Save** or **Save and enable** to enable your Linked Audience. 
 
-After saving, you'll be redirected to a destination sidesheet where you can view all configured events and their corresponding actions.
+After saving, you'll be redirected to a destination sidesheet where you can view all events and their corresponding actions.
 
 ## Step 3: Confirm the payload in your destination
 
