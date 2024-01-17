@@ -1,6 +1,6 @@
 ---
 title: Linked Profiles Overview
-
+plan: unify
 ---
 
 Use Linked Profiles to expand your model beyond the profile to the entire universe of business data. With Linked Profiles, you can build a [Data Graph](/docs/unify/linked-profiles/data-graph/) that defines relationships between any data set in the warehouse and the Segment Profiles you send with Profiles Sync. 

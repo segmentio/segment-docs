@@ -1,6 +1,7 @@
 ---
 title: Linked Audiences
-
+plan: unify
+beta: true
 ---
 
 With Linked Audiences, you can use the relational data you've defined in your Data Graph to build audiences and send them to your downstream destinations. 
@@ -16,11 +17,11 @@ From the relationships you've defined between profiles and entities in your ware
 To help you get started with Linked Audiences, keep the following guidelines in mind. 
 
 - It may be helpful to first identify an entity that is directly associated with your users, such as `Accounts`, `Households`, or `Organizations`.
-- From there you can define relationships between this entity with any of the other entities that may be directly associated with it, such as how `Accounts` can have the following:
+- From there you can define relationships between this entity with any of the other entities that may associated with it, such as how `Accounts` can have the following:
     - `Subscriptions` 
     - `Purchases`
     - `Carts` 
-- You can create entity relationships up to four levels in depth. For example, you can build an entity condition that queries for relationships between `Profiles`, `Accounts`, `Credit Cards`, and finally `Transactions`. 
+- You can create entity relationships up to four levels in depth. For example, you can build an entity condition that queries for relationships between `Profiles`, `Accounts`, `Credit Cards`, and `Transactions`. 
 - To further refine your audience, identify column values that you might also want to filter your entities by. 
 
 ## Use cases
@@ -76,7 +77,7 @@ Marketers can create hyper-targeted user segmentations by filtering by column va
 
 Use the Audience overview page to build or maintain a Linked Audiences.
 
-1. Navigate to **Engage > Audiences**
+1. Navigate to **Engage > Audiences**.
 2. Click **+ New audience**, then select **Audience**.
 3. On the Select Type screen, select **Linked audience**, then click **Next**.
 4. Build your Linked Audience with profiles that have a specific entity, profile trait, or are part of an audience. Select from **associated with an entity**, **where profile trait**, or **part of an audience**, and add your conditions.

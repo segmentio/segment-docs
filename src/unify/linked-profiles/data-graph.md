@@ -1,7 +1,7 @@
 ---
 title: Data Graph
-hidden: true
-
+plan: unify
+beta: true
 ---
 
 With Linked Profiles, you can build a Data Graph that defines relationships between any data set in the warehouse and the Segment Profiles you send with Profiles Sync. 
