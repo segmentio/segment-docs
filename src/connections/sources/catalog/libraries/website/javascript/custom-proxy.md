@@ -172,22 +172,23 @@ To add a CNAME record to your DNS settings:
 4. Run `curl` on your domain to check if the proxy is working correctly.
 
 
-## Self-Hosting Analytics.js 
-Sometimes, users want to host as much as Segment on their own infrastructure as possible, for control or to minimize network calls.
+## Self-Hosting Analytics.js, settings, and destinations
+To reduce or eliminate fetching assets from Segment's CDN, you can bundle analytics.js with your own code.
+
 
 Some things you can do:
 1. Use [Analytics.js as an npm package](https://github.com/segmentio/analytics-next/tree/master/packages/browser#-using-as-an-npm-package).
 
-2. Use [npm to bundle your destinations ](https://segment.com/docs/connections/sources/catalog/libraries/website/javascript/#add-destinations-from-npm) with your own code instead of fetching them from the CDN.
+2. Use [npm to bundle your destinations ](https://segment.com/docs/connections/sources/catalog/libraries/website/javascript/#add-destinations-from-npm) with your own code instead of fetching them from the CDN (advanced optimization -- this is generally not neccessary).
 
 
-3. Hardcode your settings instead of fetching from the CDN (Not recommended; this bypasses the Segment GUI completely).
+3. Hardcode your settings instead of fetching from the CDN (not recommended -- bypass the Segment souce configuration GUI completely).
 ```ts
 // npm-only
 export const analytics = new AnalyticsBrowser()
 analytics.load({
    ...
-   cdnSettings: 'Paste object from https://cdn.segment.com/v1/projects/<YOUR_WRITE_KEY>/settings'
+   cdnSettings: {...} // object from https://cdn.segment.com/v1/projects/<YOUR_WRITE_KEY>/settings'
  })
 ```
 
