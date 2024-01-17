@@ -44,6 +44,19 @@ sources:
     - zendesk
     - google-ads
     - facebook-ads
+    - iterable
+    - wootric
+    - voucherify
+    - moengage-source
+    - mailmodo-source
+    - gwen-webhooks
+    - customerio
+    - clevertap
+    - braze
+    - beamer
+    - airship
+    - adwords
+    - amazon-s3
   endpoint:
     - intercom
     - amp
@@ -78,6 +91,8 @@ sources:
     - zendesk
     - google-ads
     - facebook-ads
+    - iterable
+    - amazon-s3
 destinations:
   region:
     - 2mee

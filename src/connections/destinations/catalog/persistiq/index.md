@@ -3,11 +3,9 @@ rewrite: true
 title: PersistIQ Destination
 id: 5c75e3ca088b680001eb30fa
 ---
-[PersistIQ](https://www.persistiq.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) is the easiest sales engagement software to use. Sales teams use PersistIQ to connect with more prospects using targeted emails, calls, and tasks.
+[PersistIQ](https://www.persistiq.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners){:target="_blank”} is the easiest sales engagement software to use. Sales teams use PersistIQ to connect with more prospects using targeted emails, calls, and tasks.
 
 This destination is maintained by PersistIQ. For any issues with the destination, [contact the PersistIQ Support team](mailto:support@persistiq.com).
-
-{% include content/beta-note.md %}
 
 
 ## Getting Started
@@ -16,7 +14,7 @@ This destination is maintained by PersistIQ. For any issues with the destination
 
 1. From the Segment web app, click **Catalog**.
 2. Search for "PersistIQ" in the Catalog, select it, and choose which of your sources to connect the destination to.
-3. Enter the "API Key" into your Segment Settings UI which you can find at the bottom of your [PersistIQ Integrations page](https://persistiq.com/app#/integrations).
+3. Enter the "API Key" into your Segment Settings UI which you can find at the bottom of your [PersistIQ Integrations page](https://persistiq.com/app#/integrations){:target="_blank"}.
 
 
 ## Identify

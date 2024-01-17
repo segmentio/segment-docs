@@ -40,7 +40,7 @@
 </table>
 
 {% else %}
-<em>No settings available. The destination may not be publicly visble.</em>
+<em>No settings available. The destination may not be publicly visible.</em>
 
 
 {% endif %}
@@ -82,7 +82,22 @@
 
 ## Available Actions
 
-Build your own Mappings! Combine supported [triggers](/docs/connections/destinations/actions/#components-of-a-destination-action) with the following {{currentIntegration.display_name | remove: " (Actions)"}}-supported actions:
+<!-- IG 10/2023 - The customer success engineers wanted to add this note due to some breaking changes. Originally made in PR #5387 -->
+
+{% if currentIntegration.id == '63ed446fe60a1b56c5e6f130' %}
+  <div class="premonition warning">
+    <div class="fa fa-check-square"></div>
+    <div class="content">
+      <p class="header">Required fields may have changed</p>
+      <p markdown=1>
+        View the [Google Analytics documentation](https://developers.google.com/analytics/devguides/collection/ga4/reference/events?client_type=gtag#purchase){:target="_blank"} for the most up-to-date list of required fields.
+      </p>
+    </div>
+  </div>
+
+{% endif %}
+
+Build your own Mappings. Combine supported [triggers](/docs/connections/destinations/actions/#components-of-a-destination-action) with the following {{currentIntegration.display_name | remove: " (Actions)"}}-supported actions:
 
 <div class="premonition info">
   <div class="fa fa-info-circle"></div>

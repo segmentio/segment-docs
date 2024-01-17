@@ -3,13 +3,13 @@ title: 'Anomaly Detection'
 plan: protocols
 ---
 
-If you're using Protocols, you might want to get notifications when an anomaly in event volumes or [Protocols violation](/docs/protocols/validate/forward-violations/) counts occurs. This document clarifies what we mean by anomaly detection, gives examples of anomalies that might be relevant to your business, and provides some example solutions of how to monitor and alert on anomalies using some standard tools available today.
+If you're using Protocols, you might want to get notifications when an anomaly in event volumes or [Protocols violation](/docs/protocols/validate/forward-violations/) counts occurs. This document clarifies what Segment means by anomaly detection, gives examples of anomalies that might be relevant to your business, and provides some example solutions of how to monitor and alert on anomalies using some standard tools available today.
 
 ## What is anomaly detection?
 
-Anomaly detection means finding out when your data collection is broken, missing, or incorrect. This covers a huge range of functionality!
+Anomaly detection means finding out when your data collection is broken, missing, or incorrect.
 
-When you first start using Protocols, you might focus on fixing data quality issues for a limited set of business critical events. After those first issues are resolved, you might get notifications if new issues occur or if old issues reoccur, so you can avoid manually monitoring data quality. New issues often occur when a new app version is released, and for many companies, that's weekly!
+When you first start using Protocols, you might focus on fixing data quality issues for a limited set of business critical events. After those first issues are resolved, you might get notifications if new issues occur or if old issues reoccur, so you can avoid manually monitoring data quality. New issues often occur when a new app version is released, and for many companies, that's weekly.
 
 The issues you care about for anomaly detection are different for each business. An anomaly for one company could be completely normal for another company. For example, an B2B company would expect a steep drop-off of traffic and event volume on weekends, while a media or entertainment company would expect to see a rise in activity in the evenings and on weekends for their different locales.
 
@@ -22,21 +22,29 @@ Other types of issues you can monitor for include:
 
 ## Anomaly Detection solutions
 
-There are several easy ways to set up anomaly detection using the destination partner tools you probably already use. Many of these solutions come from our Segment customers using Protocols. They use these solutions to help manage data quality, and get notified when relevant anomalies are detected.
+There are several easy ways to set up anomaly detection using the destination partner tools you probably already use. Many of these solutions come from Segment customers using Protocols. They use these solutions to help manage data quality and get notified when relevant anomalies are detected.
 
-Regardless of the solution you choose, we recommend that you create a new Segment source to collect all violations and Segment workspace activity. To do this, create a new HTTP source in your workspace, and assign a name that you can easily understand (for example, `Protocols Audit Source`).
+You can send anomalous events directly from your source to a Slack channel using the Slack (Actions) destination. To get started:
+1. Create a [Slack (Actions)](/docs/connections/destinations/catalog/actions-slack/#getting-started) destination. 
+2. Once you've created your destination, select the **Mappings** tab and click **+ New Mapping**.
+3. On the Add Mapping popup, select **Post Message**.
+4. Under "Select events to map and send", create an event with the following format: <br>
+![A screenshot of the Post Message setup screen in the Slack (Actions) destination.](images/slack-actions-forwarding.jpeg)
+5. Configure the rest of the Post Message settings and click **Save**.
 
-Next, set up [Violation forwarding](/docs/protocols/validate/forward-violations/) for each Tracking Plan connected to the Source. Once connected, your sources will look like:
+If you're not using the Slack (Actions) destination to forward violations, Segment recommends that you create a new Segment source to collect all violations and Segment workspace activity. To do this, create a new HTTP source in your workspace, and assign a name that you can easily understand (for example, `Protocols Audit Source`).
+
+Next, set up [Violation forwarding](/docs/protocols/validate/forward-violations/) for each Tracking Plan connected to the Source. Once connected, your sources will look like the following diagram:
 
 ![Diagram showing how violations and production events are routed to their respective destinations.](images/protocols_meta_source_setup.png)
 
 **Note: When you enable violation forwarding, it counts as 1 MTU toward your monthly MTU limit. If you are on an API plan, all forwarded violations count against your API limit. Violations might also generate costs in downstream destinations and data warehouses.**
 
-Once violation forwarding is enabled, you can build a custom anomaly detection solution that works for your business. The examples we cover here include:
+Once violation forwarding is enabled, you can build a custom anomaly detection solution that works for your business. The examples Segment covers here include:
 
 1. [Forward violations to a Slack channel](#forward-violations-to-a-slack-channel)
 2. [Create violation and event count Anomaly Detection dashboards in a BI tool](#create-customized-anomaly-detection-dashboards-in-a-bi-tool)
-3. [Use a tool like Lantern to automate anomaly detection](#use-a-tool-like-lantern-to-automate-anomaly-detection)
+
 
 ### Forward violations to a Slack Channel
 After you've enabled [Violation Forwarding](/docs/protocols/validate/forward-violations/), [enable the Slack destination](/docs/connections/destinations/catalog/slack/#getting-started) for your Protocols Audit Source. In the destination's settings, add an Incoming Webhook URL for the Slack channel you want to push notifications to. Next, add the `Violation Generated` event to the [Event Templates settings](/docs/connections/destinations/catalog/slack/#event-templates).
@@ -52,7 +60,7 @@ When you're done, it'll look like the screenshot below.
 
 
 ### Create customized Anomaly Detection dashboards in a BI tool
-Custom dashboards are a great way to focus your teams around the metrics and events that matter most to your business. With a few simple queries you can build a dashboard to share with teams, so everyone can understand how well they're doing against your data quality objectives. Here's an example dashboard that combines [forwarded Violations](/docs/protocols/validate/forward-violations/) with production event data to track data quality. See below for detailed SQL queries!
+Custom dashboards are a great way to focus your teams around the metrics and events that matter most to your business. With a few simple queries you can build a dashboard to share with teams, so everyone can understand how well they're doing against your data quality objectives. Here's an example dashboard that combines [forwarded Violations](/docs/protocols/validate/forward-violations/) with production event data to track data quality. See below for detailed SQL queries.
 
 ![Graphic with five bar charts created with sample data, showing different comparisons of violations across events and sources.](images/anomaly_detection_dashboard.png)
 
@@ -90,7 +98,7 @@ total_violations as (
 ```
 
 **Ratio of High priority events to violation counts:**
-This query produces a table showing all violations and event counts by day for a single event sent to Segment. A bar chart from this data can show when violations increase or decrease disproportionately to event volume for the single event. We recommend selecting a few events that are important for your business (for example, `Order Completed`, `Video Viewed`, `User Signed Up`) and creating a separate query and chart for each event.
+This query produces a table showing all violations and event counts by day for a single event sent to Segment. A bar chart from this data can show when violations increase or decrease disproportionately to event volume for the single event. Segment recommends selecting a few events that are important for your business (for example, `Order Completed`, `Video Viewed`, `User Signed Up`) and creating a separate query and chart for each event.
 
 ```sql
 with
@@ -122,7 +130,7 @@ distinct_track_event_violations as (
 
 **Source-level distinct and total violation count (Last 7 days):**
 
-This query produces a table that lists all sources connected to a Tracking Plan. For each source, the table shows distinct violations and total violations seen in the source. This table is similar to the [violations summary](/docs/protocols/validate/forward-violations/) view in the Segment app!
+This query produces a table that lists all sources connected to a Tracking Plan. For each source, the table shows distinct violations and total violations seen in the source. This table is similar to the [violations summary](/docs/protocols/validate/forward-violations/) view in the Segment app.
 
 ```sql
       select  source_name,
@@ -145,9 +153,3 @@ This query produces a table listing the top 10 events with the most violations. 
     order by  total_violations desc
        limit  10
 ```
-
-### Use a tool like Lantern to automate anomaly detection
-
-Enable the Lantern destination for any source to start automatically generating Slack notifications when an anomaly occurs. Lantern works best for sources containing `page` and `track` events, for which it will flag volume anomalies reflecting a change in behavior of some user segment.
-
-[Learn more about Lantern here](/docs/connections/destinations/catalog/lantern/)

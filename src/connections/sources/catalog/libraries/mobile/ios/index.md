@@ -2,6 +2,7 @@
 title: Analytics for iOS
 strat: ios
 repo: analytics-ios
+support_type: legacy
 id: UBrsG9RVzw
 ---
 With Analytics for iOS, you can send your data to analytics or marketing tool, without needing to learn, test, or implement a new API with each update or addition.
@@ -14,7 +15,7 @@ With Analytics for iOS, you can send your data to analytics or marketing tool, w
 
 
 > info "Analytics-Swift"
-> The [Analytics-Swift](/docs/connections/sources/catalog/libraries/mobile/swift/) library is in General Availability. If you'd like to migrate to Analytics-Swift, see the [migration guide](/docs/connections/sources/catalog/libraries/mobile/swift/migration/).
+> The [Analytics-Swift](/docs/connections/sources/catalog/libraries/mobile/swift/) library is in General Availability. If you'd like to migrate to Analytics-Swift, see the [migration guide](/docs/connections/sources/catalog/libraries/mobile/swift/migration/). Segment's future development efforts concentrate on the new Analytics-Kotlin SDK, and will only ship security updates for the Analytics-Android SDK.
 
 ## Analytics-iOS and Unique Identifiers
 

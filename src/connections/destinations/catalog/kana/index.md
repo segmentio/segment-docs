@@ -92,4 +92,4 @@ These rules can be created on the [Segment Integration page](https://dashboard.u
 >  All events will be sent from your source to Kana and stored there - no matter whether these will be used to record feature usage or not. Events which could not map to features are exposed within Kana. Any rules created afterwards will retroactively apply to these events, meaning events will reprocess against these new rules in an attempt to map them to features. If there are events you do not want to send to Kana (as they will never be used to record feature usage) then it's recommended that you [filter these events from sending](/docs/guides/filtering-data/).
 
 
-[See more on how to setup rules in the Kana dashboard](https://kana-1.gitbook.io/kana-docs).
+[See more on how to setup rules in the Kana dashboard](https://kana-1.gitbook.io/kana-docs){:target="_blank"}.

@@ -4,9 +4,9 @@ id: tmy2gJdz77
 ---
 {% include content/source-region-unsupported.md %}
 
-[Moesif API Analytics](https://www.moesif.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) helps you drive API adoption, usage, and retention. With Moesif, track your customer journey from initial ad click to first API call while identifying at-risk customers struggling to integrate with your APIs.
+[Moesif API Analytics](https://www.moesif.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners){:target="_blank”} helps you drive API adoption, usage, and retention. With Moesif, track your customer journey from initial ad click to first API call while identifying at-risk customers struggling to integrate with your APIs.
 
-The [Moesif SDKs and API gateway plugins](https://www.moesif.com/implementation?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) are open-source and support REST, GraphQL, and other APIs.
+The [Moesif SDKs and API gateway plugins](https://www.moesif.com/implementation?utm_source=segmentio&utm_medium=docs&utm_campaign=partners){:target="_blank”} are open-source and support REST, GraphQL, and other APIs.
 
 This source is maintained by Moesif. For any issues with the source, [contact the Moesif team](mailto:support@moesif.com).
 
@@ -16,7 +16,7 @@ This source is maintained by Moesif. For any issues with the source, [contact th
 2. Select Moesif API Analytics within the Source Catalog and confirm adding the source.
 3. Give the Source a nickname and follow the set up flow to "Add Source".
 3. Copy the Write Key from the added source. You'll need this later in Moesif.
-4. Log into your [Moesif account](https://www.moesif.com/wrap/), go to the _Settings_ menu and click _Extensions_.
+4. Log into your [Moesif account](https://www.moesif.com/wrap/){:target="_blank"}, go to the _Settings_ menu and click _Extensions_.
 5. Select the Segment Extension within the extensions gallery and add your write key under _Add Partner Key_.
 
 ## Identify Message

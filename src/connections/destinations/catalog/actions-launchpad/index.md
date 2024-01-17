@@ -14,9 +14,6 @@ id: 63e42aa0ed203bc54eaabbee
 Launchpad maintains this destination. For any issues with the destination, [contact the Launchpad Support team](mailto:support@launchpad.pm).
 
 
-{% include content/ajs-upgrade.md %}
-
-
 ## Getting started
 
 1. From the Segment web app, navigate to **Connections > Catalog** and click **Destinations**.

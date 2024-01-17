@@ -25,7 +25,7 @@ The Inbox helps you keep track of new restricted data types as they are captured
 
 Segment detects these fields by scanning data from your Web, Mobile, Server, and Cloud Event Sources to detect PII based on the [default PII matchers](#default-pii-matchers). New properties sent into Segment appear in the Inbox in realtime.
 
-When you view the Inbox for the first time, it displays every property that was sent into Segment from Web, Mobile, Server, and Cloud Event Sources dating back to August 9, 2019. ([Object Cloud Sources](/docs/connections/sources/#object-cloud-sources) and [Reverse ETL Sources](/docs/connections/sources/#reverse-etl-sources) do not appear in the Inbox at this time.)
+When you view the Inbox, it displays every property that was sent into Segment from Web, Mobile, Server, and Cloud Event Sources for the past 7 days. ([Object Cloud Sources](/docs/connections/sources/#object-cloud-sources) and [Reverse ETL Sources](/docs/connections/sources/#reverse-etl-sources) do not appear in the Inbox at this time.)
 
 You can click a row in the Inbox to learn more about a field and where it was collected. The expanded view shows:
 
@@ -210,7 +210,7 @@ treat that property whenever it is appears in data Segment processes.
 ![Animation of a user creating a new matcher, SIN, with the exact matching setting selected.](images/privacy-add-new-matcher.gif)
 
 
-![Screenshot of the Edit Matcher popup.](images/privacy-edit-matcher.png)
+![Screenshot of the Edit Matcher popup.](images/privacy-synonym-in-matcher.png)
 
 
 Unless the field value pattern is unique, we recommend matching on the Key. For
@@ -255,3 +255,10 @@ build new custom matchers:
 - [RegExr](https://regexr.com/) - an online tool to experiment with regular expressions and test them
 - [RegexOne](https://regexone.com/) - a tutorial which takes you from regular expression basics to advanced topics
 - [Regexp Cheatsheet](https://devhints.io/regexp) - a handy cheatsheet to have nearby when you're writing regular expressions
+
+### Using Synonyms
+
+Segment's exact matching and fuzzy matching do not detect all variations in the received keys
+and for those scenarios, you can use synonyms.  For example, for the value `credit card number`, you can add `credit card no`,
+`debit card number`, `debit card no`, or similar variations in the synonyms section to classify those fields.
+![Screenshot of the Synonym used in Custom Matcher.](images/privacy-synonym-in-matcher.png)

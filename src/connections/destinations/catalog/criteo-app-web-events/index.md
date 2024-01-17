@@ -15,7 +15,7 @@ Currently this destination supports events originating from Mobile or Web source
 
 To get started with Criteo Events and Segment, you'll need:
 
-1. An existing account with [Criteo](http://www.criteo.com/).
+1. An existing account with [Criteo](http://www.criteo.com/){:target="_blank"}.
 2. A data source integrated with either one of our mobile SDK's ([iOS](/docs/connections/sources/catalog/libraries/mobile/ios/) or [Android](/docs/connections/sources/catalog/libraries/mobile/android/)) or JavaScript library ([Analytics.js](/docs/connections/sources/catalog/libraries/website/javascript/))
 
 

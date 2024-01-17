@@ -20,7 +20,7 @@ This source is maintained by IBM. If you have any issues with the source, see th
 
 1. Click **Copy** to copy the Segment write key to the clipboard.
 
-1. In the Watson Assistant user interface, open the Segment integration settings. (For more information about adding the Segment integration to your assistant, see [Sending events to Segment](https://cloud.ibm.com/docs/watson-assistant?topic=watson-assistant-build-custom-extension).)
+1. In the Watson Assistant user interface, open the Segment integration settings. (For more information about adding the Segment integration to your assistant, see [Sending events to Segment](https://cloud.ibm.com/docs/watson-assistant?topic=watson-assistant-build-custom-extension){:target="_blank"}.)
 
 1. In the **Connect** step, paste the write key into the **Segment key** field.
 

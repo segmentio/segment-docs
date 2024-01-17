@@ -3,6 +3,7 @@ title: Analytics for Node.js
 redirect_from: '/connections/sources/catalog/libraries/server/node-js/'
 repo: analytics-next
 strat: node-js
+support_type: flagship
 ---
 
 Segment's Analytics Node.js library lets you record analytics data from your node code. The requests hit Segment's servers, and then Segment routes your data to any destinations you have enabled.
@@ -268,7 +269,7 @@ const analytics = new Analytics({
     host: 'https://api.segment.io',
     path: '/v1/batch',
     maxRetries: 3,
-    maxEventsInBatch: 15,
+    flushAt: 15,
     flushInterval: 10000,
     // ... and more!
   })
@@ -280,13 +281,25 @@ Setting | Details
 `host` _string_ | The base URL of the API. The default is: "https://api.segment.io"
 `path` _string_ | The API path route. The default is: "/v1/batch"
 `maxRetries` _number_ | The number of times to retry flushing a batch. The default is: `3`
-`maxEventsInBatch` _number_ | The number of messages to enqueue before flushing. The default is: `15`
+`flushAt` _number_ | The number of messages to enqueue before flushing. The default is: `15`
 `flushInterval` _number_ | The number of milliseconds to wait before flushing the queue automatically. The default is: `10000`
 `httpRequestTimeout` _number_ | The maximum number of milliseconds to wait for an http request. The default is: `10000`
 `disable` _boolean_ | Disable the analytics library for testing. The default is: `false`
 `httpClient` _HTTPClient or HTTPClientFn_ | A custom HTTP Client implementation to support alternate libraries or proxies. Defaults to global fetch or node-fetch for older versions of node. See the [Overriding the default HTTP Client](#override-the-default-http-client) section for more details.
 
 See the complete `AnalyticsSettings` interface [here](https://github.com/segmentio/analytics-next/blob/master/packages/node/src/app/settings.ts){:target="_blank"}.
+
+## Usage in serverless environments
+
+When calling `.track` within functions in serverless runtime environments, wrap the call in a `Promise` and `await` it to avoid having the runtime exit or freeze:
+
+```js
+await new Promise((resolve) =>
+  analytics().track({ ... }, resolve)
+)
+```
+
+See the complete documentation on [Usage in AWS Lambda](https://github.com/segmentio/analytics-next/blob/master/packages/node/README.md#usage-in-aws-lambda){:target="_blank"}, [Usage in Vercel Edge Functions](https://github.com/segmentio/analytics-next/blob/master/packages/node/README.md#usage-in-vercel-edge-functions){:target="_blank"}, and [Usage in Cloudflare Workers](https://github.com/segmentio/analytics-next/blob/master/packages/node/README.md#usage-in-cloudflare-workers){:target="_blank"}
 
 ## Graceful shutdown
 Avoid losing events after shutting down your console. Call `.closeAndFlush()` to stop collecting new events and flush all existing events. If a callback on an event call is included, this also waits for all callbacks to be called, and any of their subsequent promises to be resolved.
@@ -521,17 +534,17 @@ Every method you call **doesn't** result in a HTTP request, but is queued in mem
 
 By default, Segment's library will flush:
 
-  - Every 15 messages (controlled by `settings.maxEventsInBatch`).
+  - Every 15 messages (controlled by `settings.flushAt`).
   - If 10 seconds has passed since the last flush (controlled by `settings.flushInterval`)
 
 There is a maximum of `500KB` per batch request and `32KB` per call.
 
-If you don't want to batch messages, you can turn batching off by setting the `maxEventsInBatch` setting to `1`, like so:
+If you don't want to batch messages, you can turn batching off by setting the `flushAt` setting to `1`, like so:
 
 ```javascript
 const analytics = new Analytics({
   ...
-  maxEventsInBatch: 1
+  flushAt: 1
 });
 ```
 
@@ -622,6 +635,23 @@ const analytics = new Analytics({
   httpClient: new CustomClient() 
 })
 ```
+## Override context value
+```javascript
+analytics.track({
+  anonymousId: '48d213bb-95c3-4f8d-af97-86b2b404dcfe',
+  event: 'New Test',
+  properties: {
+    revenue: 39.95,
+    shippingMethod: '2-day'
+  },
+  context: {
+    traits: {
+      "email": "test@test.com"
+    }
+  }
+});
+```
+
 
 ## Troubleshooting
 

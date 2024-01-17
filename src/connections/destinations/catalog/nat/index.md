@@ -3,11 +3,9 @@ title: Nat Destination
 rewrite: true
 id: 5ebff2ce1c6481e9795533f9
 ---
-[Nat.app](https://nat.app?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) is a CRM tool for founders and sales people that makes it easy to stay in touch with users and find product market fit.
+[Nat.app](https://nat.app?utm_source=segmentio&utm_medium=docs&utm_campaign=partners){:target="_blank”} is a CRM tool for founders and sales people that makes it easy to stay in touch with users and find product market fit.
 
 This destination is maintained by Nat.app. For any issues with the destination, [contact the Nat team](mailto:segment@nat.app).
-
-{% include content/beta-note.md %}
 
 ## Getting Started
 
@@ -16,7 +14,7 @@ This destination is maintained by Nat.app. For any issues with the destination, 
 1. From the Destinations catalog page in the Segment App, click "Add Destination".
 2. Search for "Nat.app" in the Destinations Catalog, and select the "Nat.app" destination.
 3. Choose which Source should send data to the "Nat.app" destination.
-4. Go to the [Nat.app settings page](https://contacts.nat.app/settings), find and copy the "API key".
+4. Go to the [Nat.app settings page](https://contacts.nat.app/settings){:target="_blank"}, find and copy the "API key".
 5. Enter the "API Key" in the "Nat.app" destination settings in Segment.
 
 ## Identify

@@ -2,10 +2,11 @@
 rewrite: true
 title: Movable Ink Destination
 id: 5a611c86c0ff800001f6c431
+hidden: true
 ---
-[Movable Ink](https://movableink.com/) lets email marketers deliver jaw-dropping customer experiences. Our cloud-based software activates any data to generate intelligent content at the moment of open.
+[Movable Ink](https://movableink.com/){:target="_blank"} lets email marketers deliver jaw-dropping customer experiences. Our cloud-based software activates any data to generate intelligent content at the moment of open.
 
-This destination is maintained by [Movable Ink](https://movableink.com/). If you have any issues, contact Movable Ink at support@movableink.com.
+This destination is maintained by [Movable Ink](https://movableink.com/){:target="_blank"}. If you have any issues, contact Movable Ink at support@movableink.com.
 
 {% include content/beta-note.md %}
 

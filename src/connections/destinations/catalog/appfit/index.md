@@ -13,8 +13,6 @@ When you connect AppFit to your Segment account, you get a top level dashboard f
 
 This destination is maintained by AppFit. For any issues with the destination, [contact their Support team](mailto:support@appfit.io).
 
-{% include content/ajs-upgrade.md %}
-
 ## Getting started
 
 1. From the Segment web app, click **Catalog**, then click **Destinations**.

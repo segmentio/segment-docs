@@ -3,7 +3,7 @@ title: Delighted Destination
 rewrite: true
 id: 58915ccf80412f644ff6295b
 ---
-[Delighted](https://delighted.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) is the modern customer feedback solution used by the world's most coveted brands to deliver stellar experiences to their customers.
+[Delighted](https://delighted.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners){:target="_blank”} is the modern customer feedback solution used by the world's most coveted brands to deliver stellar experiences to their customers.
 
 This destination is maintained by Delighted. For any issues with the destination, [contact the Delighted Support team](mailto:hello@delighted.com)
 
@@ -48,7 +48,7 @@ This also enables you to define the "Sample Rate" and an optional "Delay" for th
 
 ![trigger-delighted-surveys-segment](images/e3ed84b8608df907bcf753f52c17249d.png)
 
-**NOTE**: Delighted has built in protections for over surveying called *Survey Throttling*. This will ensure the same person won't be surveyed more than once per month ([adjustable in your Delighted account settings](https://delighted.com/account/edit_min_survey_interval)). *Survey Throttling* provides you peace of mind so that you can use frequent `track` calls like purchase or contact events.
+**NOTE**: Delighted has built in protections for over surveying called *Survey Throttling*. This will ensure the same person won't be surveyed more than once per month ([adjustable in your Delighted account settings](https://delighted.com/account/edit_min_survey_interval){:target="_blank”}). *Survey Throttling* provides you peace of mind so that you can use frequent `track` calls like purchase or contact events.
 
 ## Sending data from Delighted back to Segment (optional)
 

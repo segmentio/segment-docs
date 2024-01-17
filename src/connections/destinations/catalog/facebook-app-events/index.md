@@ -4,19 +4,23 @@ rewrite: true
 strat: facebook
 id: 56fc7e4680412f644ff12fb9
 ---
-[Facebook App Events](https://developers.facebook.com/docs/app-events) collects required information from one of Segment's mobile SDKs ([iOS](/docs/connections/sources/catalog/libraries/mobile/ios/) or [Android](/docs/connections/sources/catalog/libraries/mobile/android/)) and sends it from Segment's servers to Facebook App Events servers. This *server-to-server* connection will not work with our server-side libraries. The Facebook App Events Destination is open-source. You can browse the code on GitHub for [iOS](https://github.com/segment-integrations/analytics-ios-integration-facebook-app-events).
+[Facebook App Events](https://developers.facebook.com/docs/app-events){:target="_blank"} collects required information from one of Segment's mobile SDKs ([iOS](/docs/connections/sources/catalog/libraries/mobile/ios/){:target="_blank"}, [Android](/docs/connections/sources/catalog/libraries/mobile/android/){:target="_blank"}, or [Swift](/docs/connections/sources/catalog/libraries/mobile/apple/){:target="_blank"}) and sends it from Segment's servers to Facebook App Events servers. 
+
+The iOS device-mode connection for the Facebook App Events destination is open source and [available on GitHub](https://github.com/segment-integrations/analytics-ios-integration-facebook-app-events){:target="_blank"}. 
+
+Segment also has an [Analytics Swift Facebook App Events Plugin](/docs/connections/sources/catalog/libraries/mobile/apple/destination-plugins/facebook-app-events-swift/) for the Facebook App Events device-mode connection available. You can view the [open-source integration code on GitHub](https://github.com/segment-integrations/analytics-swift-facebook-app-events){:target="_blank"}. 
 
 
 ## Other Facebook Destinations Supported by Segment
 This page is about the **Facebook App Events**. For documentation on other Facebook destinations, see the pages linked below.
 
-| **Facebook Destination**                                                                                    | Supported by Engage |
-| ----------------------------------------------------------------------------------------------------------- | ------------------- |
-| **[Facebook App Events](/docs/connections/destinations/catalog/facebook-app-events/)**                      | Yes                 |
-| **[Facebook Offline Conversions](/docs/connections/destinations/catalog/facebook-offline-conversions/)**    | Yes                 |
-| **[Facebook Pixel](/docs/connections/destinations/catalog/facebook-pixel/)**                                | No                  |
-| **[Facebook Custom Audiences](/docs/connections/destinations/catalog/personas-facebook-custom-audiences/)** | Yes                 |
-| **[Facebook Conversions API](/docs/connections/destinations/catalog/actions-facebook-conversions-api/)**    | Yes                 |
+| **Facebook Destination**                                                                                                      | Supported by Engage |
+| ----------------------------------------------------------------------------------------------------------------------------- | ------------------- |
+| **[Facebook App Events](/docs/connections/destinations/catalog/facebook-app-events/){:target="_blank"}**                      | Yes                 |
+| **[Facebook Offline Conversions](/docs/connections/destinations/catalog/facebook-offline-conversions/){:target="_blank"}**    | Yes                 |
+| **[Facebook Pixel](/docs/connections/destinations/catalog/facebook-pixel/){:target="_blank"}**                                | No                  |
+| **[Facebook Custom Audiences](/docs/connections/destinations/catalog/personas-facebook-custom-audiences/){:target="_blank"}** | Yes                 |
+| **[Facebook Conversions API](/docs/connections/destinations/catalog/actions-facebook-conversions-api/){:target="_blank"}**    | Yes                 |
 
 
 ## Getting Started
@@ -25,12 +29,8 @@ This page is about the **Facebook App Events**. For documentation on other Faceb
 
 1. From the Segment web app, click **Catalog**.
 2. Search for "Facebook App Events" in the Catalog, select it, and choose which of your sources to connect the destination to.
-3. In the destination settings, enter your Facebook App ID which can be retrieved from your [Facebook Apps dashboard](https://developers.facebook.com/apps/).
+3. In the destination settings, enter your Facebook App ID which can be retrieved from your [Facebook Apps dashboard](https://developers.facebook.com/apps/){:target="_blank"}.
 4. Once you turn on the Facebook App Events integration in your app's Segment project, we'll start sending `track` data to Facebook's App Events endpoints.
-
-### Using Facebook App Events with React Native Device Mode
-
-{% include content/react-dest.md only="ios" %} 
 
 ## Screen
 
@@ -227,7 +227,7 @@ Facebook returns a 4xx error due to lack of required parameters if the `device.a
 ## Other Features
 
 ### Facebook Login and Facebook Dialogs
-The integration does not automatically support Facebook Login and Facebook Dialogs out of the box (you'd need to write code here regardless!). To use these features you'll need to set up [Facebook's app delegate hooks](https://developers.facebook.com/docs/ios/getting-started#delegate) by accessing [the Facebook SDK directly](/docs/connections/sources/catalog/libraries/mobile/ios/#faq).
+The integration does not automatically support Facebook Login and Facebook Dialogs out of the box (you'd need to write code here regardless!). To use these features you'll need to set up [Facebook's app delegate hooks](https://developers.facebook.com/docs/ios/getting-started#delegate){:target="_blank"} by accessing [the Facebook SDK directly](/docs/connections/sources/catalog/libraries/mobile/ios/#faq).
 
 ### Packaged Integration
 
@@ -236,7 +236,7 @@ In addition to the integration available for both iOS and Android, there is a cl
 
 ### Pre-defined Events and Parameters
 
-The integration currently only supports the `FBSDKAppEventNameActivatedApp` pre-defined event (via the `activateApp` handler). All other events are forwarded as [custom events](https://developers.facebook.com/docs/app-events/getting-started-app-events-ios). If other pre-defined events are important to you, [contact us](https://segment.com/help/contact/).
+The integration currently only supports the `FBSDKAppEventNameActivatedApp` pre-defined event (via the `activateApp` handler). All other events are forwarded as [custom events](https://developers.facebook.com/docs/app-events/getting-started-app-events-ios){:target="_blank"}. If other pre-defined events are important to you, [contact us](https://segment.com/help/contact/){:target="_blank"}.
 
 ## Troubleshooting
 
@@ -249,7 +249,7 @@ Similarly, on Android, you'll need to include the Play Services Ads library as [
 Once you've added these, you will start to see the `context.device.advertisingId` populate and the `context.device.adTrackingEnabled` flag set to `true` unless the user has ad tracking limited or is using a mobile ad blocker.
 
 > note ""
-> While the network is deprecated, the relevant iOS [framework](https://developer.apple.com/reference/iad) is not.
+> While the network is deprecated, the relevant iOS [framework](https://developer.apple.com/reference/iad){:target="_blank"} is not.
 
 Facebook requires that payloads include the following:
 - `context.device.id`

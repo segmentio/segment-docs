@@ -6,16 +6,14 @@ id: 624dddd054ced46facfdb9c0
 
 {% include content/plan-grid.md name="actions" %}
 
-[LaunchDarkly](https://launchdarkly.com) is a feature management platform that empowers development teams to safely deliver, control, and measure their software through feature flags.
+[LaunchDarkly](https://launchdarkly.com){:target="_blank”} is a feature management platform that empowers development teams to safely deliver, control, and measure their software through feature flags.
 
 With LaunchDarkly, you can run experiments on any feature flag. This destination allows you to connect existing Segment events to LaunchDarkly custom metrics for use in LaunchDarkly experiments.
 
 > success ""
 > **Good to know**: This page is about the [Actions-framework](/docs/connections/destinations/actions/) LaunchDarkly Segment destination. There's also a page about the [non-Actions LaunchDarkly destination](/docs/connections/destinations/catalog/launchdarkly-events/). Both of these destinations receives data from Segment.
 
-<!-- This include describes the requirement of A.js 2.0 or higher for Actions compatibility, and is required if your destination has a web component. -->
 
-{% include content/ajs-upgrade.md %}
 
 <!-- In the section below, explain the value of this actions-based destination over the classic version, if applicable. If you don't have a classic version of the destination, remove this section. -->
 
@@ -31,7 +29,7 @@ LaunchDarkly (Actions) provides the following benefits over the classic LaunchDa
 ## Getting started
 
 To get started with LaunchDarkly (Actions):
-1. In LaunchDarkly, navigate to [Account settings](https://app.launchdarkly.com/settings/projects) and copy the client-side ID for the project and environment that you would like to connect to Segment.
+1. In LaunchDarkly, navigate to [Account settings](https://app.launchdarkly.com/settings/projects){:target="_blank”} and copy the client-side ID for the project and environment that you would like to connect to Segment.
 2. From the Segment web app, click **Catalog**, then click **Destinations**.
 3. Search for **LaunchDarkly (Actions)** and select it.
 4. Click **Configure LaunchDarkly**.

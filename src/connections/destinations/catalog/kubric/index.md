@@ -2,7 +2,7 @@
 title: Kubric Destination
 rewrite: true
 ---
-[Kubric](https://kubric.io/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) allows you to create personalised creatives for your users and deliver them using emails, push-notifications, Facebook & various other channels.
+[Kubric](https://kubric.io/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners){:target="_blank”} allows you to create personalised creatives for your users and deliver them using emails, push-notifications, Facebook & various other channels.
 
 This destination is maintained by Kubric. For any issues with the destination, [contact the Kubric Support team](mailto:tom@kubric.io).
 
@@ -15,7 +15,7 @@ This destination is maintained by Kubric. For any issues with the destination, [
 
 1. From the Segment web app, click **Catalog**.
 2. Search for "Kubric" in the Catalog, select it, and choose which of your sources to connect the destination to.
-3. Enter the "API Key" into your Segment Settings UI which you can find from your [Kubric dashboard](https://app.kubric.io/profile).
+3. Enter the "API Key" into your Segment Settings UI which you can find from your [Kubric dashboard](https://app.kubric.io/profile){:target="_blank”}.
 
 
 ## Page

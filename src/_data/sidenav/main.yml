@@ -261,7 +261,7 @@ sections:
       - path: /connections/storage/warehouses/redshift-useful-sql
         title: Useful SQL Queries for Redshift
   - path: /connections/test-connections
-    title: Testing Connections
+    title: Event Tester
   - path: /connections/data-export-options
     title: Data Export Options
   - path: /connections/destination-data-control
@@ -342,7 +342,6 @@ sections:
       title: Linked Audiences
     - path: /unify/linked-profiles/linked-events
       title: Linked Events
-   
   - section_title: Traits
     slug: unify/traits
     section:
@@ -363,6 +362,8 @@ sections:
     title: Profile API
   - path: /unify/debugger
     title: Profile Debugger
+  - path: /unify/insights
+    title: Profiles Insights
   - path: /unify/unify-gdpr
     title: Unify and GDPR
   - path: /unify/faqs
@@ -417,6 +418,8 @@ sections:
       title: 'Build a Journey'
     - path: '/engage/journeys/step-types'
       title: 'Journey Step Types'
+    - path: '/engage/journeys/journeys-edits'
+      title: 'Journey Edits and Versioning'
     - path: '/engage/journeys/send-data'
       title: Send Data to Destinations
     - path: '/engage/journeys/journeys-analytics'
@@ -442,6 +445,10 @@ sections:
       title: SMS Template
     - path: '/engage/content/whatsapp'
       title: WhatsApp Template
+    - path: '/engage/content/mobile-push'
+      title: Mobile Push Template
+    - path: '/engage/content/organization'
+      title: Organizing Your Templates
   - section_title: Campaigns
     description: "Create multi-channel campaigns to get the right message to your users."
     section:
@@ -455,10 +462,17 @@ sections:
       title: Broadcasts
     - path: '/engage/campaigns/whatsapp-campaigns'
       title: WhatsApp Campaigns
+    - section_title: Mobile Push
+      slug: /engage/campaigns/mobile-push
+      section:
+      - path: /engage/campaigns/mobile-push
+        title: Mobile Push Onboarding
+      - path: /engage/campaigns/mobile-push/push-campaigns
+        title: Mobile Push Campaigns
   - section_title: Trait Activation
     slug: engage/trait-activation
     section:
-    - path: /engage/trait-activation/overview
+    - path: /engage/trait-activation
       title: Trait Activation Overview
     - path: /engage/trait-activation/trait-activation-setup
       title: Trait Activation Setup
@@ -571,6 +585,8 @@ sections:
       title: Audit Trail
     - path: /segment-app/iam/sso
       title: Single Sign On
+    - path: /segment-app/iam/scim
+      title: System for Cross-domain Identity Management (SCIM) Configuration Guide
     - path: /segment-app/iam/mfa
       title: Multi-Factor Authentication (MFA)
   - path: /segment-app/iam/secure-password

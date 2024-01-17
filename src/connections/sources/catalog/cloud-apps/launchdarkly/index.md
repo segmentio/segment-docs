@@ -4,7 +4,7 @@ id: cODRw1GgIP
 ---
 {% include content/source-region-unsupported.md %}
 
-[LaunchDarkly](https://launchdarkly.com) is a feature management platform that empowers development teams to safely deliver and control software through feature flags.
+[LaunchDarkly](https://launchdarkly.com){:target="_blank"} is a feature management platform that empowers development teams to safely deliver and control software through feature flags.
 
 This source is maintained by LaunchDarkly. For any issues with the source, [contact the LaunchDarkly Support team](mailto:support@launchdarkly.com).
 
