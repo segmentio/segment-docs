@@ -179,7 +179,7 @@ To reduce or eliminate fetching assets from Segment's CDN, you can bundle analyt
 Some things you can do:
 1. Use [Analytics.js as an npm package](https://github.com/segmentio/analytics-next/tree/master/packages/browser#-using-as-an-npm-package).
 
-2. Use [npm to bundle your destinations ](https://segment.com/docs/connections/sources/catalog/libraries/website/javascript/#add-destinations-from-npm) with your own code instead of fetching them from the CDN (advanced optimization -- this is generally not neccessary).
+2. Use [npm to bundle your destinations ](https://segment.com/docs/connections/sources/catalog/libraries/website/javascript/#add-destinations-from-npm) with your own code instead of fetching them from the CDN (advanced optimization -- this is generally not necessary).
 
 
 3. Hardcode your settings instead of fetching from the CDN (not recommended -- bypass the Segment souce configuration GUI completely).
