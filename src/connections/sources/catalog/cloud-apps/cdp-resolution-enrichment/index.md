@@ -1,5 +1,7 @@
 ---
-title: CDP Resolution Source
+title: CDP Resolution Enrichment Source
+id: HoFsjsDOW2
+beta: true
 hidden: true
 ---
 
@@ -7,7 +9,7 @@ hidden: true
 
 This source is maintained by CDP Resolution. For any issues with the destination, [contact the CDP Resolution support team](mailto:support@cdpresolution.com).
 
-How this works: A user is logged into CDP Resolution UI application.  They are performing a segmentation operation of identifying their total addressable market and enriching their Segment workspace with data from CDP Resolution.
+Here's how it works: When a user logs into the CDP Resolution UI application, they engage in a segmentation operation to identify their total addressable market. Concurrently, they enhance their Segment workspace by incorporating data sourced from CDP Resolution.
 
 ## Getting started
 
@@ -24,4 +26,6 @@ To set up your CDP Resolution Enrichment source:
 
 Further documentation can be found on the [CDP documentation site](https://docs.cdpresolution.com?utm_source=segmentio&utm_medium=docs&utm_campaign=partners){:target="_blank"}.
 
-If you configured your CDP Resolution Source correctly, and if you also configured CDP Resolution to send user profile data to a Segment Source, you should start to see user profile data shown in the Segment Source debugger as Identify and Group calls.
+## Events 
+
+If you've correctly set up your CDP Resolution Source and configured CDP Resolution to transmit user profile data to a Segment source, user profile data will begin to populate in the Segment Source debugger as Identify and Group calls.
