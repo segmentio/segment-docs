@@ -324,9 +324,9 @@ sections:
       title: Tables & Materialized Views
   - section_title: Linked Profiles 
     slug: unify/linked-profiles
-    section: 
+    section:
     - path: /unify/linked-profiles
-    - title: Linked Profiles Overview
+      title: Linked Profiles Overview 
     - section_title: Setup Guides
       slug: unify/linked-profiles/setup-guides
       section: 
@@ -342,6 +342,7 @@ sections:
       title: Linked Audiences
     - path: /unify/linked-profiles/linked-events
       title: Linked Events
+ 
   - section_title: Traits
     slug: unify/traits
     section:
