@@ -325,6 +325,8 @@ sections:
   - section_title: Linked Profiles 
     slug: unify/linked-profiles
     section: 
+    - path: /unify/linked-profiles
+    - title: Linked Profiles Overview
     - section_title: Setup Guides
       slug: unify/linked-profiles/setup-guides
       section: 
