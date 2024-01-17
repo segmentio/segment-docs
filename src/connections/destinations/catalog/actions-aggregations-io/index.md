@@ -6,7 +6,7 @@ beta: true
 
 {% include content/plan-grid.md name="actions" %}
 
-[Aggregations.io](https://aggregations.io/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners){:target="_blank”} enables you to utilize your existing analytics events & pipeline for real-time monitoring & alerting.
+[Aggregations.io](https://aggregations.io/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners){:target="_blank”} enables you to use your existing analytics events and pipeline for real-time monitoring and alerting.
 
 This destination is maintained by Aggregations.io. For any issues with the destination, [contact their Support team](mailto:help@aggregations.io).
 
