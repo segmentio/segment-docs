@@ -16,6 +16,6 @@ This destination is maintained by Aggregations.io. For any issues with the desti
 2. Find the Destinations Actions item in the left navigation, and click it.
 3. Click **Configure Aggregations.io (Actions)**.
 4. Select an existing Source to connect to Aggregations.io (Actions).
-5. In the destination settings, enter your Aggregations.io API Key & Ingest Id. Your ingestion on the Aggregations.io dashboard should be set up using `Array of JSON Objects` and the API Key requires `Write` permission.  For more information, see the [Aggregation.io Docs](https://aggregations.io/docs/ingesting-data/create-an-ingest){:target="_blank"}.
+5. In the destination settings, enter your Aggregations.io API Key and Ingest ID. Your ingestion on the Aggregations.io dashboard should be set up using `Array of JSON Objects` and the API Key requires `Write` permission.  For more information, see the [Aggregation.io docs](https://aggregations.io/docs/ingesting-data/create-an-ingest){:target="_blank"}.
 
 {% include components/actions-fields.html %}
