@@ -76,7 +76,7 @@ While you can delete relationships or entities from the Data Graph, these relati
 Use the parameters, defintions, and examples below to help you define entities.
 
 > warning ""
-> Snowflake schemas are case sensitive. You'll need to use the uppercase schema, table, and column names if that's how you have them in Snowflake. 
+> Snowflake schemas are case sensitive, so you'll need to reflect the schema, table, and column names based on how you case them in Snowflake.
 
 #### Profile 
 
@@ -130,7 +130,7 @@ entity "account" {
 Use the following relationship, parameters, and examples to help you relate entities.
 
 > warning ""
-> Snowflake schemas are case sensitive, so you'll need to reflect the uppercase schema, table, and column names based on how you have them in Snowflake.
+> Snowflake schemas are case sensitive, so you'll need to reflect the schema, table, and column names based on how you case them in Snowflake.
 
 #### Relate Entity to Profile
 
@@ -316,7 +316,7 @@ Validate your Data Graph using the config builder and preview, then click **Save
 To edit your Data Graph:
 
 1. Navigate to **Unify > Data Graph**.
-2. Select the **Builder** tab and click **Edit Data Graph**.
+2. Select the **Builder** tab, and click **Edit Data Graph**.
 
 You can edit your Data Graph at any time. However, some types of edits may impact existing Linked Audiences and Linked Events. These include:
 
