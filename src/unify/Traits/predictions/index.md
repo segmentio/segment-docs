@@ -99,6 +99,10 @@ Segment would then build the prediction from this criteria and create specific p
 
 Predicted LTV has strict data requirements. Segment can only make predictions for customers that have purchased two or more times. Segment also requires a year of purchase data to perform LTV calculations.
 
+> info "Prediction is failing with error "We weren't able to create this prediction because your requested prediction event is not being tracked anymore. Please choose a different prediction event and try again.""
+> Predictions are computed based on the available data and the conditions specified for the trait. A gap in tracking events for seven continuous days could potentially affect the computation of the prediction.
+Nevertheless, once data tracking resumes and there is enough data, the prediction should be recomputed.
+
 ## Use cases
 
 For use cases and information on how Segment builds prediction, read [Using Predictions](/docs/unify/traits/predictions/using-predictions/).
