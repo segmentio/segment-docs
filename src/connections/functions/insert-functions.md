@@ -58,7 +58,6 @@ The default source code template includes handlers for all event types. You don'
 
 > info ""
 > Removing the handler for a specific event type results in blocking the events of that type from arriving at their destination. In case an event type should remain as it is,
-> but you'd still need to parte it dowstream, you may merely add  a 'return event', inside the event type handler statement.
 
 Insert functions can define handlers for each message type in the [Segment spec](/docs/connections/spec/):
 
