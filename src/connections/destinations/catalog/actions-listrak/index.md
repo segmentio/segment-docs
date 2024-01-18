@@ -45,7 +45,7 @@ To sync an Engage audience with your Listrak (Actions) destination:
 12. Click **Add Condition** and add this condition: **Event Property** `audience_key` is `my_audience` (where `my_audience` is the Audience Key found on the Audience settings page).
 13. Under **Select mappings**, enter the list ID and map the email address if `context.traits.email` is not desired.
 14. Under **Select mappings**, in the section for mapping the `Profile Field Values`, enter the profile field ID for the `Enter Key Name` textbox on the right and `on` in the textbox for its value to the left. Click **Save**.
-15. Repeat steps 9 through 13 using `Audience Exited` instead of `Audience Entered` in step 11 and `off` instead of `on` in step 13.
+15. Repeat steps 9 through 14 using `Audience Exited` instead of `Audience Entered` in step 11 and `off` instead of `on` in step 14.
 16. **Enable** both mappings.
 17. Go to the **Settings** tab for the destination and **Enable** the destination. Click **Save Changes**.
 18. Select the Engage space and navigate to **Engage > Audiences**. Select the source audience to send to the Listrak destination.
@@ -53,7 +53,7 @@ To sync an Engage audience with your Listrak (Actions) destination:
 20. In the settings that appear on the right-hand side, toggle the **Send Track** option on and disable **Send Identify**.
 21. Click **Save**.
 22. To filter email sends in Listrak using the new audience profile field, see the [help article](https://help.listrak.com/en/articles/3951597-introduction-to-building-filter-2-0-segments){:target="_blank”}.
-23. If you want to sync another audience, repeat steps 1 through 20.
+23. Repeat steps 1 through 21, if you want to sync another audience.
 
 {% include components/actions-fields.html %}
 
