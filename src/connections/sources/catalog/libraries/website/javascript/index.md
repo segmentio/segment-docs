@@ -906,21 +906,21 @@ You can set the `debug` cookie to `analytics.js` to log debug messages from Anal
 
 ## Tracking Blockers and Browser Privacy Settings
 
-Segment does not endorse bypassing tracking blockers or browser privacy settings for client-side tracking. Your users have control over what gets loaded on their pages, as they can use plugins or browser settings to block third-party scripts, including Segment. As some data loss in client-side tracking is expected, Segment recommends you choose from the following routes:
+Segment does not endorse bypassing tracking blockers or browser privacy settings for client-side tracking. Your users have control over what gets loaded on their pages and can use plugins or browser settings to block third-party scripts, including Segment. To minimize client-side data loss, Segment recommends you choose from the following routes:
 
 1. Respect the user's decision to implement tracking blockers or use privacy settings, knowing that, unfortunately, some data will be lost.
 2. Ask the customer to disable the tracking blockers or adjust their privacy settings (for example, in the case of large, corporate customers).
 3. Move as many events and tracking actions as possible to a server-side library, which won't encounter the same limitations.
 
-To minimize data loss, Segment provides a few workarounds. However, it's important to note that we cannot guarantee their effectiveness for client-side tracking:
+To minimize client-side data loss, Segment provides a few workarounds. However, it's important to note that Segment cannot guarantee their effectiveness.
 
 * Use the [bundle obfuscation](#bundle-obfuscation) feature. You can add an obfuscate property to the object in the second parameter, which obscures the URL from which your integrations and destination actions are loaded. This helps prevent words that are flagged by ad blockers to not be detected in your URL, enabling the integration to properly load.
 
-* Create a [custom proxy](/docs/connections/sources/catalog/libraries/website/javascript/custom-proxy/). This changes the URL that Segment loads from (cdn.segment.com), as well as the outgoing requests generated when events are triggered (api.segment.io).
+* Create a [custom proxy](/docs/connections/sources/catalog/libraries/website/javascript/custom-proxy/). This changes the URL that Segment loads from (cdn.segment.com) and the outgoing requests generated when events are triggered (api.segment.io).
 
-* Consider implementing the [Segment Edge SDK](https://segment.com/blog/twilio-segment-edge-sdk/), leveraging Cloudflare Workers, it facilitates first-party data collection and real-time user profiling for app personalization. It integrates Segment's library into web apps, manages user identity via HTTPOnly cookies, and employs an internal router for efficient data processing and user experience customization. This innovative approach simplifies tracking and personalization for Segment customers. More information available [here[(https://github.com/segmentio/analytics-edge/blob/main/packages/edge-sdk/README.md).
+* Consider implementing the [Segment Edge SDK](https://segment.com/blog/twilio-segment-edge-sdk/){:target="_blank”}. The Segment Edge SDK leverages Cloudflare Workers to facilitate first-party data collection and real-time user profiling for app personalization. It integrates Segment's library into web apps, manages user identity via HttpOnly cookies, and employs an internal router for efficient data processing and user experience customization. This innovative approach simplifies tracking and personalization for Segment customers. More information is available in the [Edge SDK README](https://github.com/segmentio/analytics-edge/blob/main/packages/edge-sdk/README.md){:target="_blank”}.
 
-* Consider using one of Segment’s [server-side libraries](/docs/connections/sources/#server). With a server-side library, concerns about tracking blockers and privacy browsers preventing Segment from loading are eliminated. This option may require additional code to track actions like a `.page()` call, as you now need to manually pass contextual information that would have been automatically collected by Analytics.js, such as `url`, `path`, `referrer`. Note that some destinations are device-mode only.
+* Consider using one of Segment’s [server-side libraries](/docs/connections/sources/#server). Using a server-side library eliminates concerns about tracking blockers and privacy browsers that can prevent Segment from loading. This option may require additional code to track actions like a Page call, as you now need to manually pass contextual information that would have been automatically collected by Analytics.js, like `url`, `path`, and `referrer`. Note that some destinations are device-mode only.
 
 ## Add destinations from npm
 
