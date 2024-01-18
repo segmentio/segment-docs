@@ -172,7 +172,8 @@ To add a CNAME record to your DNS settings:
 4. Run `curl` on your domain to check if the proxy is working correctly.
 
 
-## Self-Hosting Analytics.js, settings, and destinations
+## Self Hosting Analytics.js
+
 To reduce fetching assets from Segment's CDN, you can bundle Analytics.js with your own code.
 
 
