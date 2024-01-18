@@ -135,7 +135,7 @@ Previously, Segment only sent email and mobile IDs to Facebook. A new beta featu
 
 ### Not seeing an audience in Facebook
 
-Make sure you authorized Facebook and selected the correct account ID.
+If syncs to the destination are failing, this might be due to an authorization error. Whoever created the destination account needs to accept the TOS. The account manager then needs to log in to their Facebook account, navigate to **Audiences > Search Audience** and click **Accept Terms**.
 
 ### Audience size smaller than expected
 

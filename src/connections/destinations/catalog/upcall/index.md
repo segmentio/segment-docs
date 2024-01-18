@@ -8,8 +8,6 @@ id: 5c6ce090721aa60001ad878f
 This destination is maintained by Upcall. For any issues with the destination, [contact the Upcall Support team](mailto:success@upcall.com).
 
 
-{% include content/beta-note.md %}
-
 
 ## Getting Started
 

@@ -3,8 +3,8 @@ title: Outfunnel Destination
 hide-boilerplate: true
 hide-dossier: true
 id: 63ff8bae963d5cb4fc79f097
-private: false
-hidden: false
+private: true
+hidden: true
 
 ---
 {% include content/plan-grid.md name="actions" %}
@@ -15,8 +15,6 @@ This destination is maintained by Outfunnel. For any issues with the destination
 
 Outfunnel’s Segment integration is an [Actions-based Destination in cloud mode](/docs/connections/destinations/#connection-modes)
  that lets you send your frontend and backend events directly to Outfunnel.
-
-{% include content/ajs-upgrade.md %}
 
 {% include content/beta-note.md %}
 

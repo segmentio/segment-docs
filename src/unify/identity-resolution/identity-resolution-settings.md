@@ -9,7 +9,7 @@ redirect_from:
 
 
 
-> note ""
+> info ""
 > The steps in this guide pertain to spaces created before September 27th, 2020. For spaces created after September 27th, 2020, please refer to the onboarding guide [here](/docs/unify/identity-resolution/identity-resolution-onboarding/).
 
 ## Configure Identity Graph rules

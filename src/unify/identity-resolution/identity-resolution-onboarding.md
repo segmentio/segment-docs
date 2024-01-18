@@ -5,16 +5,15 @@ redirect_from:
   - "/personas/identity-resolution/identity-resolution-onboarding"
 ---
 
-> note ""
-> **NOTE:** The steps in this guide pertain to spaces created after **October 5th, 2020**. For spaces created before **October 5th, 2020**, please refer to [Identity Resolution Settings](/docs/unify/identity-resolution/identity-resolution-settings).
+> info ""
+> The steps in this guide pertain to spaces created after **October 5th, 2020**. For spaces created before **October 5th, 2020**, please refer to [Identity Resolution Settings](/docs/unify/identity-resolution/identity-resolution-settings).
 
-> note ""
-> **NOTE:** Workspace owners, administrators, and users with the Identity Admin role can edit Identity Resolution Settings.
+> success ""
+> Workspace owners, administrators, and users with the Identity Admin role can edit Identity Resolution Settings.
 
 Segment creates and merges user profiles based on a space's Identity Resolution configuration. Segment searches for identifiers such as `userId`, `anonymousId`, and `email` on incoming events and matches them to existing profiles or creates new profiles. These identifiers display in the Identities tab of a User Profile in the Profile explorer.
 
-> success ""
-> Navigate to **Unify > Profile explorer** to view identities attached to a profile, along with custom traits, event history, and more.
+Navigate to **Unify > Profile explorer** to view identities attached to a profile, along with custom traits, event history, and more.
 
 ![Identities tab of a profile in the Profile explorer](images/jane_doe_new_identities.png)
 

@@ -7,8 +7,6 @@ id: 5ca77adcc7781c00018a459b
 
 This destination is maintained by Xtremepush. For any issues with the destination, [contact the Xtremepush Support team](mailto:support@xtremepush.com).
 
-{% include content/beta-note.md %}
-
 
 
 ## Getting Started

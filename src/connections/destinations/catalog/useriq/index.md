@@ -7,7 +7,6 @@ id: 5c742629088b680001eb30bb
 
 This destination is maintained by UserIQ. For any issues with the destination, [contact the UserIQ Support team](mailto:support@useriq.com).
 
-{% include content/beta-note.md %}
 
 ## Getting Started
 

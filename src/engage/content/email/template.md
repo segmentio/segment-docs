@@ -47,10 +47,13 @@ You can send test emails before you include a template in marketing campaigns.
 - Profiles that you send test messages to must have a userId in Segment.
 5. Select **Send test email**.
 
+{% comment %} 
 > success ""
 > When you send a test message, the trait must be valid for the field it's being used in. For example:
 > - If you use `profile.traits.first_name` in the **From sender** field, it must be a valid username. 
 > - If you use `profile.traits.email` in the **Reply to email** field, it must be a valid email address.
+
+{% endcomment %}
 
 > info ""
 > You can also test email templates directly from a [Send an Email step](/docs/engage/journeys/build-journey/#send-an-email) in Journeys.
@@ -62,6 +65,15 @@ Personalize email content in Twilio Engage with real-time profile traits in your
 As you configure the template, click **Merge Tags** and select the profile traits to include. Engage inserts the merge tags based on cursor placement.
  
 You can also add merge tags in the heading or body text as you design an email with the [Drag and Drop](/docs/engage/content/email/editor/) or [HTML](/docs/engage/content/email/html-editor/) editors. Engage supports [liquid templating](https://liquidjs.com/tags/if.html){:target="blank"} to create dynamic content in the email design editor.
+
+### Use liquid statements with an image URL
+
+If you're using the [image content module](/docs/engage/content/email/editor/#add-content-modules) in the Drag and Drop Editor, you can't use liquid statements in the **Image URL** field. 
+{% raw %}
+To use liquid statements with an image, Segment recommends using an [**HTML block**](/docs/engage/content/email/editor/#add-content-modules) with the following syntax: <br>
+`<img src=“{{profile.traits.imageLink | default: '<insert your default URL here>'}}”`, where `profile.traits.imageLink` is an example profile trait representing personalized image links for each recipient. 
+
+{% endraw %}
 
 > info ""
 > To learn more about profile traits, visit Segment's [Computed Traits](/docs/engage/audiences/computed-traits) and [SQL Traits](/docs/engage/audiences/sql-traits/) documentation.
@@ -84,21 +96,9 @@ The manage preference link lets your customers opt in and out of email groups on
 
 For more information, see [subscription groups](/docs/engage/user-subscriptions/subscription-groups/).
 
-## Clone an Email template
-
-You can clone existing Email templates to edit and use in your message campaigns.
-
-To clone a template, navigate to the Templates page (**Engage > Content**). You can also clone from the Overview page of an individual template.
-
-1. Click the **...** icon.
-2. Select **Clone**.
-3. Enter a template name.
-4. Click **Clone** to save the template.
-
-After you clone a template, you can edit it from the Templates page.
-
 ## Next steps
 
 - View some [email deliverability tips and tricks](https://docs.sendgrid.com/ui/sending-email/deliverability){:target="blank"} from SendGrid.
 
 - You can also use the Templates screen in Engage to [build SMS templates](/docs/engage/content/sms/template/).
+ 

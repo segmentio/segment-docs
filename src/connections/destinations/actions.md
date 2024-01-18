@@ -9,9 +9,6 @@ You can also choose which event types, event names, or event property values tri
 
 Each Actions-framework Destination you see in the Segment catalog represents a feature or capability of the destination which can consume data from your Segment source. The Action clearly lists which data from the events it requires, and which data is optional. For example, Amplitude requires that you always send a  `LogEvent` , or Slack always requires a `PostMessage`.  Each Action also includes a default mapping which you can modify.
 
-{% include content/ajs-upgrade.md %}
-
-
 ## Benefits of Destination Actions
 
 - **Easier setup**: Users see fewer initial settings which can decrease the time spent configuring the destination.
@@ -68,9 +65,6 @@ To set up a new Actions-framework destination for the first time:
 > Events send downstream in the order in which they appear in the mappings UI. There is no mechanism through which you can control the order of events that send to the downstream destinations outside of that. 
 
 ## Migrate a classic destination to an actions-based destination
-
-{% include content/ajs-upgrade.md %}
-
 
 Moving from a classic destination to an actions-based destination is a manual process. Segment recommends that you follow the procedure below:
 

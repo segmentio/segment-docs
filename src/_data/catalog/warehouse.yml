@@ -8,6 +8,11 @@ items:
     to yours, where you can then perform custom analysis on them.
   url: connections/storage/catalog/amazon-s3
   status: PUBLIC
+  endpoints:
+  - us
+  regions:
+  - us
+  - eu
   logo:
     url: 'https://d3hotuclm6if1r.cloudfront.net/logos/amazon-s3-default.svg'
   mark:
@@ -19,6 +24,11 @@ items:
     The AWS S3 destination provides a more secure way to store data in your AWS S3 buckets.
   url: connections/storage/catalog/aws-s3
   status: PUBLIC
+  endpoints:
+  - us
+  regions:
+  - us
+  - eu
   logo:
     url: 'https://d3hotuclm6if1r.cloudfront.net/logos/amazon-s3-default.svg'
   mark:
@@ -29,6 +39,11 @@ items:
   description: ''
   url: connections/storage/catalog/azuresqldw
   status: PUBLIC
+  endpoints:
+  - us
+  regions:
+  - us
+  - eu
   logo:
     url: 'https://cdn.filepicker.io/api/file/VKbuWjNjQPKOnOWijFe4'
   mark:
@@ -41,6 +56,11 @@ items:
   description: ''
   url: connections/storage/catalog/bigquery
   status: PUBLIC
+  endpoints:
+  - us
+  regions:
+  - us
+  - eu
   logo:
     url: 'https://cdn.filepicker.io/api/file/bDzeRa75SZc6FfgfoUK6'
   mark:
@@ -53,6 +73,11 @@ items:
   description: ''
   url: connections/storage/catalog/databricks-delta-lake
   status: PRIVATE_BETA
+  endpoints:
+  - us
+  regions:
+  - us
+  - eu
   logo: 
     url: 'https://images.ctfassets.net/h6ufgtwb6nv1/4vYEAgYz6nGLC9F64Jxeb6/fcf3ecdae5386f806ae72eb39ce07094/db.svg?w=256&q=75'
   mark: 
@@ -65,6 +90,11 @@ items:
   description: ''
   url: connections/storage/catalog/google-cloud-storage
   status: PUBLIC_BETA
+  endpoints:
+  - us
+  regions:
+  - us
+  - eu
   logo:
     url: 'https://cdn.filepicker.io/api/file/G6kRHZtSoaEslLkENhPC'
   mark:
@@ -77,6 +107,11 @@ items:
   description: ''
   url: connections/storage/catalog/db2
   status: PUBLIC
+  endpoints:
+  - us
+  regions:
+  - us
+  - eu
   logo:
     url: 'https://image.ibb.co/i4rS3K/IBM_Db2_logotype_pos_RGB.jpg'
   mark:
@@ -89,6 +124,11 @@ items:
   description: ''
   url: connections/storage/catalog/postgres
   status: PUBLIC
+  endpoints:
+  - us
+  regions:
+  - us
+  - eu
   logo:
     url: 'https://d3hotuclm6if1r.cloudfront.net/logos/postgres-default.svg'
   mark:
@@ -101,6 +141,11 @@ items:
   description: ''
   url: connections/storage/catalog/redshift
   status: PUBLIC
+  endpoints:
+  - us
+  regions:
+  - us
+  - eu
   logo:
     url: 'https://d3hotuclm6if1r.cloudfront.net/logos/redshift-default.svg'
   mark:
@@ -113,6 +158,11 @@ items:
   description: ''
   url: connections/storage/catalog/data-lakes
   status: PUBLIC
+  endpoints:
+  - us
+  regions:
+  - us
+  - eu
   logo:
     url: 'https://cdn.filepicker.io/api/file/YR7dKXAiQWyYvBiVOZNX'
   mark:
@@ -125,6 +175,11 @@ items:
   description: ''
   url: connections/storage/catalog/snowflake
   status: PUBLIC
+  endpoints:
+  - us
+  regions:
+  - us
+  - eu
   logo:
     url: 'https://cdn.filepicker.io/api/file/JrQWOYvMRRCVvSHp4HL0'
   mark:
