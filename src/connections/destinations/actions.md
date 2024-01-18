@@ -197,10 +197,10 @@ If no mappings are enabled to trigger on an event that has been received from th
 When the same event triggers multiple mappings, a request will be generated for each mapping that's configured to trigger on an event. For example, for the *Subscription Updated* event, if two mappings are enabled and both have conditions defined to trigger on the *Subscription Updated* event, the two requests will be generated and sent to the destination for each *Subscription Updated* event. 
 
 ### Oauth "access token expired" message showed in Segment UI
-Access Tokens that were generated from initial authorisation, e.g. when customer connects a destination via oauth, are always short-lived. Commonly, the token remains valid for 30 minutes to 1 hour.When Segment system receives 401 error responses from the destination afterwards, Segment will automatically make another request to the destion for a new token and retry the event which recived 401 error response. Therefore, when customers review the error response samples in our UI, the actual issue isn't always caused by the expired token. In addition, Segment has three event flows when events are received: 
+Access Tokens that were generated from initial authorization, e.g. when customer connects a destination via Oauth, are always short-lived. Commonly, the token remains valid for 30 minutes to 1 hour.When Segment system receives 401 error responses from the destination afterwards, Segment will automatically make another request to the destion for a new token and retry the event which recived 401 error response. Therefore, when a 401 error response is received, the actual issue isn't always caused by the expired token. There are three event flows when events are received and sent to a destination: 
 
 1. through source 
 2. through event tester 
 3. through actions tester in mapping screen
 
-The underlying systems for these flows have their own copy of the token, which can expire at different points in time. At the moment, we can't automatically refresh the tokens stored for the testers, thus, it is often expected that our customers need to manually re-authorize the destiantion again when they are sending events via our testers.
+The underlying systems for these flows have their own copy of the token, which can expire at different points in time.
