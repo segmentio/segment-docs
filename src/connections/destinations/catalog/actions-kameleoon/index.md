@@ -27,8 +27,8 @@ Kameleoon (Actions) provides the following benefits over the classic Kameleoon d
 
 ## Getting started
 
-1. From the Segment web app, click **Catalog**, then click **Destinations**.
-2. Find the Destinations Actions item in the left navigation, and click it.
+1. From the Segment web app, on the navigation menu, click **Connections**, then click **Catalog**.
+2. On the **Catalog** page, use the search bar (at the top right corner) and search for "Kameleoon (Actions)". Click on the Destination named "Kameleoon (Actions).
 3. Click **Add destination**.
 4. Select the Source you want to connect to Kameleoon (Actions) and click **Confirm Source**.
 5. On the **Basic Settings** side panel, complete the required fields:
