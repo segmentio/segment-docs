@@ -44,7 +44,7 @@ To sync an Engage audience with your Listrak (Actions) destination:
 11. Click **Add Condition** and add this condition: **Event Name** is `Audience Entered`.
 12. Click **Add Condition** and add this condition: **Event Property** `audience_key` is `my_audience` (where `my_audience` is the Audience Key found on the Audience settings page).
 13. Under **Select mappings**, enter the list ID and map the email address if `context.traits.email` is not desired.
-14. Still under **Select mappings**, in the section for mapping the `Profile Field Values`, enter the profile field ID for the `Enter Key Name` textbox on the right and `on` in the textbox for its value to the left. Click **Save**.
+14. Under **Select mappings**, in the section for mapping the `Profile Field Values`, enter the profile field ID for the `Enter Key Name` textbox on the right and `on` in the textbox for its value to the left. Click **Save**.
 15. Repeat steps 9 through 13 using `Audience Exited` instead of `Audience Entered` in step 11 and `off` instead of `on` in step 13.
 16. **Enable** both mappings.
 17. Go to the **Settings** tab for the destination and **Enable** the destination. Click **Save Changes**.
