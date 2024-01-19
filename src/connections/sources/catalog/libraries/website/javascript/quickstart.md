@@ -25,11 +25,34 @@ When you create a source in the Segment web app, it tells the Segment servers th
 
 You can choose to install Segment to your site in 1 of 2 ways:
 
-[a. Install Segment as a NPM package](#step-2a-install-segment-as-a-npm-package)
+[a. Add the Segment snippet to your app](#step-2a-add-the-segment-snippet)
 
-[b. Add the Segment snippet to your app](#step-2b-add-the-segment-snippet)
 
-### Step 2a: Install Segment as a npm package
+[b. Install Segment as a NPM package](#step-2b-install-segment-as-a-npm-package)
+
+### Step 2a: Add the Segment Snippet
+
+To add the Segment snippet to your app: 
+
+Paste the snippet into the `<head>` tag of your site to install Segment.
+
+  {% include content/snippet-helper.md %}
+
+Replace `YOUR_WRITE_KEY` in the snippet you pasted with your Segment project's **Write Key**. [Find the write key](/docs/connections/find-writekey/) in your project set up guide or in the source's settings.
+
+> info ""
+> When you use Analytics.js in device-mode, the source's Write Key is public, because it runs in a user's browser and can be accessed using the browser's developer tools. If this is not acceptable to your organization, you can explore [other Segment Sources](/docs/connections/sources/catalog/) which collect data from a server-based installation, and which are not accessible to the user.
+
+That snippet loads Analytics.js onto the page _asynchronously_, so it won't affect your page load speed. Once the snippet is running on your site, you can turn on destinations from the destinations page in your workspace and they start loading on your site automatically.
+
+Note that you should remove other native third-party destination code that you might have on your site. For example, if you're using Segment to send data to Google Analytics, make sure you remove the Google Analytics snippet from your site source code to prevent sending the data twice.
+
+> info ""
+> If you only want the most basic Google Analytics setup, there's no need to continue with the setup. Just toggle on Google Analytics in the Segment interface.
+
+A lot of analytics and marketing tools need to record who each user is on your site. If you want to use any tool that deals with the identity of your users, read on about the Identify method.
+
+### Step 2b: Install Segment as a npm package
 
 To install Segment as a npm package: 
 
@@ -60,28 +83,6 @@ To install Segment as a npm package:
     ```
 
 For more initialization patterns and general information on `@segment/analytics-next`, see the repository's [README](https://github.com/segmentio/analytics-next/tree/master/packages/browser){:target="_blank"}.
-
-### Step 2b: Add the Segment Snippet
-
-To add the Segment snippet to your app: 
-
-Paste the snippet into the `<head>` tag of your site to install Segment.
-
-  {% include content/snippet-helper.md %}
-
-Replace `YOUR_WRITE_KEY` in the snippet you pasted with your Segment project's **Write Key**. [Find the write key](/docs/connections/find-writekey/) in your project set up guide or in the source's settings.
-
-> info ""
-> When you use Analytics.js in device-mode, the source's Write Key is public, because it runs in a user's browser and can be accessed using the browser's developer tools. If this is not acceptable to your organization, you can explore [other Segment Sources](/docs/connections/sources/catalog/) which collect data from a server-based installation, and which are not accessible to the user.
-
-That snippet loads Analytics.js onto the page _asynchronously_, so it won't affect your page load speed. Once the snippet is running on your site, you can turn on destinations from the destinations page in your workspace and they start loading on your site automatically.
-
-Note that you should remove other native third-party destination code that you might have on your site. For example, if you're using Segment to send data to Google Analytics, make sure you remove the Google Analytics snippet from your site source code to prevent sending the data twice.
-
-> info ""
-> If you only want the most basic Google Analytics setup, there's no need to continue with the setup. Just toggle on Google Analytics in the Segment interface.
-
-A lot of analytics and marketing tools need to record who each user is on your site. If you want to use any tool that deals with the identity of your users, read on about the Identify method.
 
 ## Step 3: Identify users
 
