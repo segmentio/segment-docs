@@ -45,7 +45,7 @@ To improve the query performance of the Delta Lake, Segment recommends creating 
 > success ""
 > Segment recommends manually starting your SQL warehouse in advance. If the SQL warehouse isn't running, Segment attempts to start the SQL warehouse to validate the connection when you hit the **Test Connection** button during setup.
 
-
+ 
 ## Set up Databricks for Profiles Sync
 
 1. From your Segment app, navigate to **Unify > Profiles Sync**.
