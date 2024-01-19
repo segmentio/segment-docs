@@ -9,7 +9,7 @@ With the Databricks Delta Lake Destination, you can ingest event data from Segme
 
 This page will help you get started with syncing Segment events into your Databricks Delta Lake Destination.
 
-
+ 
 ## Getting started
 
 Before getting started with the Databricks Destination, note the following prerequisites.
