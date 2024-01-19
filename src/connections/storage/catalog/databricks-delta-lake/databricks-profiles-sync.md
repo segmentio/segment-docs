@@ -33,7 +33,7 @@ The service principal needs the following setup:
 
 
 
-#### Size and performance 
+#### Warehouse size and performance 
 
 A SQL warehouse is required for compute. Segment recommends the following size:
   - **Size**: small
@@ -42,7 +42,7 @@ A SQL warehouse is required for compute. Segment recommends the following size:
 
 - To improve the query performance of the Delta Lake, Segment recommends creating compact jobs per table using OPTIMIZE following [Databricks recommendations](https://docs.databricks.com/en/delta/optimize.html#){:target="_blank"}.
 
-- If the SQL warehouse isn't running, Segment attempts to start the SQL warehouse to validate the connection when you hit the **Test Connection** button during setup. For a better experience, Segment recommends manually starting the warehouse in advance.
+- Segment recommends manually starting your SQL warehouse in advance. If the SQL warehouse isn't running, Segment attempts to start the SQL warehouse to validate the connection when you hit the **Test Connection** button during setup.
 
 
 ## Set up Databricks for Profiles Sync
