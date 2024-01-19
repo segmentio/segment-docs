@@ -72,7 +72,24 @@ items:
   name: catalog/warehouses/databricks-delta-lake
   description: ''
   url: connections/storage/catalog/databricks-delta-lake
-  status: PRIVATE_BETA
+  status: PUBLIC
+  endpoints:
+  - us
+  regions:
+  - us
+  - eu
+  logo: 
+    url: 'https://images.ctfassets.net/h6ufgtwb6nv1/4vYEAgYz6nGLC9F64Jxeb6/fcf3ecdae5386f806ae72eb39ce07094/db.svg?w=256&q=75'
+  mark: 
+    url: ''
+  categories: 
+    - Warehouses
+- display_name: Databricks Profiles Sync
+  slug: databricks-profiles-sync
+  name: catalog/warehouses/databricks-delta-lake/databricks-profiles-sync
+  description: ''
+  url: connections/storage/catalog/databricks-delta-lake/databricks-profiles-sync
+  status: PUBLIC
   endpoints:
   - us
   regions:
