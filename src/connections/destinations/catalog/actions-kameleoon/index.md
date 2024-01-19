@@ -45,16 +45,10 @@ The integration requires that you use the same system of identifiers for both to
 
 ## Migration from the classic Kameleoon destination
 
-To migrate from the classic Kameleoon destination, follow these steps:
-1.**Visitor Identification:**
-   - Include the `kameleoonVisitorCode` in your Segment events for accurate visitor tracking. To know more, we recommend reading [the dedicated documentation page](https://help.kameleoon.com/).
-
-3. **Mapping, Filters, and Testing:**
-   - Define Mapping and Filters in the destination configuration page.
-   - Test events to ensure accurate goal creation and conversion tracking.
-
-4. **Activation:**
-   - Activate the Kameleoon (Actions) destination when everything is ready and tested.
-   - Deactivate the classic Kameleoon destination.
-
+To migrate from the classic Kameleoon destination:
+1. Include the `kameleoonVisitorCode` in your Segment events for accurate visitor tracking. To know more, see [the dedicated documentation page](https://help.kameleoon.com/){:target="_blank”}.
+2. Define mapping and filters on the destination configuration page.
+3. Test events to ensure accurate goal creation and conversion tracking.
+4. Activate the Kameleoon (Actions) destination when everything is ready and tested.
+5. Deactivate the classic Kameleoon destination.
 ---
