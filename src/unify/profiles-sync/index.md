@@ -31,6 +31,7 @@ The following table shows the supported Profiles Sync warehouse Destinations and
 | [BigQuery](/docs/connections/storage/catalog/bigquery/)                   | 1. Create a project and enable BigQuery. <br> 2. Create a service account for Segment.                                                                           |
 | [Azure](/docs/connections/storage/catalog/azuresqldw/)                    | 1. Sign up for an Azure subscription. <br> 2. Provision a dedicated SQL pool.                                                                                     |
 | [Postgres](/docs/connections/storage/catalog/postgres/)                   | 1. Follow the steps in the [Postgres getting started](/docs/connections/storage/catalog/postgres/) section.                                                      |
+| [Databricks Profiles Sync](/docs/connections/storage/catalog/databricks-delta-lake/databricks-profiles-sync/)                   | 1. Follow the steps in the [Databricks Profiles Sync](/docs/connections/storage/catalog/databricks-delta-lake/databricks-profiles-sync/) section.                                                      |
 
 Once you’ve finished the required steps for your chosen warehouse, you’re ready to connect your warehouse to Segment. Because you’ll next enter credentials from the warehouse you just created, **leave the warehouse tab open to streamline setup.**
 
