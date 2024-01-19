@@ -40,9 +40,10 @@ A SQL warehouse is required for compute. Segment recommends the following size:
   - **Type** Serverless otherwise Pro
   - **Clusters**: Minimum of 2 - Maximum of 6
 
-- To improve the query performance of the Delta Lake, Segment recommends creating compact jobs per table using OPTIMIZE following [Databricks recommendations](https://docs.databricks.com/en/delta/optimize.html#){:target="_blank"}.
+To improve the query performance of the Delta Lake, Segment recommends creating compact jobs per table using OPTIMIZE following [Databricks recommendations](https://docs.databricks.com/en/delta/optimize.html#){:target="_blank"}.
 
-- Segment recommends manually starting your SQL warehouse in advance. If the SQL warehouse isn't running, Segment attempts to start the SQL warehouse to validate the connection when you hit the **Test Connection** button during setup.
+> success ""
+> Segment recommends manually starting your SQL warehouse in advance. If the SQL warehouse isn't running, Segment attempts to start the SQL warehouse to validate the connection when you hit the **Test Connection** button during setup.
 
 
 ## Set up Databricks for Profiles Sync
