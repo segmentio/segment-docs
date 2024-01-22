@@ -17,7 +17,7 @@ Before you begin, prepare for setup with these tips:
 - To connect your warehouse to Segment, you must have read and write permissions with the warehouse Destination you choose.
 - During Step 2, you’ll copy credentials between Segment and your warehouse Destination. To streamline setup, open your Segment workspace in one browser tab and open another with your warehouse account.
 - Make sure to copy any IP addresses Segment asks you to allowlist in your warehouse Destination.
-
+ 
 ### Step 1: Create a warehouse
 
 You’ll first choose the Destination warehouse to which Segment will sync profiles. Profiles Sync supports the Snowflake, Redshift, BigQuery, Azure, and Postgres warehouse Destinations. Your initial setup will depend on the warehouse you choose.
