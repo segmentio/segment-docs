@@ -28,6 +28,7 @@ To install the Segment-Localytics integration, simply add this line to your grad
 implementation 'com.segment.analytics.kotlin.destinations:localytics:<latest_version>'
 ```
 
+
 Or the following for Kotlin DSL
 
 ```
