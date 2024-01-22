@@ -95,6 +95,8 @@ The **Set Configuration Fields** mapping is required for data to be sent downstr
 
 If you are sending multiple `config` commands that your Google Tag has to account for, you may see duplicate `page_view` events in your Analytics workspace. If this is the case, please refer to Google's documentation on [Ignoring duplicate instances of on-page configuration](https://support.google.com/analytics/answer/9973999?hl=en#:~:text=as%20described%20below.-,Ignore%20duplicate%20instances%20of%20on%2Dpage%20configuration,Click%20Save.,-Give%20feedback%20about){:target="_blank"}.
 
+If you are manually sending `page_view` events, make sure enhanced measurement is configured correctly to avoid double counting pageviews on history state changes. Typically, this means disabling **Page changes based on browser history events** under the advanced settings of the **pageviews** section. More in Google's documentation on [Manual Pageviews](https://developers.google.com/analytics/devguides/collection/ga4/views?client_type=gtag#manual_pageviews){:target="_blank"}.
+
 ### Manually send `page_view` events
 
 If you prefer to keep the **Page Views** setting disabled and manually send a `page_view`, please see this Google Doc for more on [Manual Pageviews](https://developers.google.com/analytics/devguides/collection/ga4/views?client_type=gtag#manually_send_page_view_events).
