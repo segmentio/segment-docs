@@ -316,8 +316,13 @@ sections:
     section:
     - path: /unify/profiles-sync/overview
       title: Profiles Sync Overview
-    - path: /unify/profiles-sync
-      title: Setup
+    - section_title: Profiles Sync Setup
+      slug: unify/profiles-sync/profiles-sync-setup
+      section:
+      - path: /unify/profiles-sync/profiles-sync-setup
+        title: Setup
+      - path: /unify/profiles-sync/profiles-sync-setup/databricks-profiles-sync
+        title: Databricks for Profiles Sync
     - path: /unify/profiles-sync/sample-queries
       title: Sample Queries
     - path: /unify/profiles-sync/tables

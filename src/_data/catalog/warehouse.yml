@@ -67,28 +67,11 @@ items:
     url: 'https://cdn.filepicker.io/api/file/Vk6iFlMvQeynbg30ZEtt'
   categories:
     - Warehouses
-- display_name: Databricks Delta Lake
-  slug: databricks-delta-lake
-  name: catalog/warehouses/databricks-delta-lake
+- display_name: Databricks Destination
+  slug: databricks-destination
+  name: catalog/warehouses/databricks
   description: ''
-  url: connections/storage/catalog/databricks-delta-lake
-  status: PUBLIC
-  endpoints:
-  - us
-  regions:
-  - us
-  - eu
-  logo: 
-    url: 'https://images.ctfassets.net/h6ufgtwb6nv1/4vYEAgYz6nGLC9F64Jxeb6/fcf3ecdae5386f806ae72eb39ce07094/db.svg?w=256&q=75'
-  mark: 
-    url: ''
-  categories: 
-    - Warehouses
-- display_name: Databricks Profiles Sync
-  slug: databricks-profiles-sync
-  name: catalog/warehouses/databricks-delta-lake/databricks-profiles-sync
-  description: ''
-  url: connections/storage/catalog/databricks-delta-lake/databricks-profiles-sync
+  url: connections/storage/catalog/databricks
   status: PUBLIC
   endpoints:
   - us
