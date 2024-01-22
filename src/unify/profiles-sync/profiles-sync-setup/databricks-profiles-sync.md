@@ -1,9 +1,9 @@
 ---
-title: Databricks Profiles Sync
+title: Databricks for Profiles Sync
 plan: unify
 ---
 
-With Databricks Profiles Sync, you can use [Profiles Sync](/docs/unify/profiles-sync/overview/) to sync Segment profiles into your Databricks Lakehouse.
+With Databricks for Profiles Sync, you can use [Profiles Sync](/docs/unify/profiles-sync/overview/) to sync Segment profiles into your Databricks Lakehouse.
 
 
 ## Getting started
@@ -61,9 +61,9 @@ Use the five steps below to connect your Databricks warehouse.
 > warning ""
 > To configure your warehouse, you'll need read and write permissions.
 
-### Step 1: Name your destination
+### Step 1: Name your schema
 
-Add a name to help you identify your warehouse in Segment. You can change this name at any time by navigating to the destination settings (**Connections > Destinations > Settings**) page.
+Pick a name to help you identify this space in the warehouse, or use the default name provided. You can't change this name once the warehouse is connected.
 
 ### Step 2: Enter the Databricks compute resources URL
 
