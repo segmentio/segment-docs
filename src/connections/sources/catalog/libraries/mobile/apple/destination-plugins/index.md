@@ -8,6 +8,12 @@ plugins:
       url: https://cdn.filepicker.io/api/file/IefXQy6fRR27ZG1NvZgW
     mark:
       url: https://cdn.filepicker.io/api/file/lqTYxhVyT5WFDFdLS598
+  - name: Adobe Analytics
+    url: connections/sources/catalog/libraries/mobile/apple/destination-plugins/adobe-swift/
+    logo:
+      url: https://d3hotuclm6if1r.cloudfront.net/logos/omniture-default.svg
+    mark:
+      url: https://cdn.filepicker.io/api/file/E42OZ7ThRpuXrvIlMnul
   - name: Amplitude
     url: connections/sources/catalog/libraries/mobile/apple/destination-plugins/amplitude-swift/
     logo:
@@ -44,12 +50,30 @@ plugins:
       url: https://cdn.filepicker.io/api/file/W6teayYkRmKgb8SMqxIn
     mark:
       url: https://cdn.filepicker.io/api/file/ztKtaLBUT7GUZKius5sa
+  - name: Localytics
+    url: connections/sources/catalog/libraries/mobile/apple/destination-plugins/localytics-swift/
+    logo:
+      url: https://d3hotuclm6if1r.cloudfront.net/logos/localytics-default.svg
+    mark:
+      url: https://cdn.filepicker.io/api/file/pzZ27V3PS6Oc0KsWMBmv
   - name: Mixpanel
     url: connections/sources/catalog/libraries/mobile/apple/destination-plugins/mixpanel-swift/
     logo:
       url: https://cdn.filepicker.io/api/file/pUF0kwpTTu0Z5POuzZXV
     mark:
       url: https://cdn.filepicker.io/api/file/0mdiroESxtRQBoR8ieBg
+  - name: Nielsen-DCR
+    url: connections/sources/catalog/libraries/mobile/apple/destination-plugins/nielsen-dcr-swift/
+    logo:
+      url: https://cdn.filepicker.io/api/file/yzGpbGW0T28PvM1s96BW
+    mark:
+      url: https://cdn.filepicker.io/api/file/Az5dYYXJSWzG0xeV0XUg
+  - name: Nielsen-DTVR
+    url: connections/sources/catalog/libraries/mobile/apple/destination-plugins/nielsen-dtvr-swift/
+    logo:
+      url: https://cdn.filepicker.io/api/file/yzGpbGW0T28PvM1s96BW
+    mark:
+      url: https://cdn.filepicker.io/api/file/Az5dYYXJSWzG0xeV0XUg
   - name: Optimizely Full Stack
     url: connections/sources/catalog/libraries/mobile/apple/destination-plugins/optimizely-full-stack-swift
     logo:
