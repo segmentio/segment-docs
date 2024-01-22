@@ -1,13 +1,16 @@
 ---
-title: Databricks Delta Lake Destination 
+title: Databricks Destination 
 public: true
 
 ---
+{% include content/warehouse-ip.html %}
 
+With the Databricks Destination, you can ingest event data directly from Segment into your Databricks Lakehouse.
 
-With the Databricks Delta Lake Destination, you can ingest event data from Segment into the bronze layer of your Databricks Delta Lake.
+This page will help you get started with syncing Segment events into your Databricks Destination.
 
-This page will help you get started with syncing Segment events into your Databricks Delta Lake Destination.
+> success ""
+> Segment has certified the destination for Databricks on AWS and Databricks on Azure.
 
  
 ## Getting started
