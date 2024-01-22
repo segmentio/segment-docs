@@ -31,7 +31,7 @@ Kameleoon (Actions) provides the following benefits over the classic Kameleoon d
 4. Select the Source you want to connect to Kameleoon (Actions) and click **Confirm Source**.
 5. On the **Basic Settings** side panel, complete the required fields:
      - **Name**: Enter a name to help you identify this destination in Segment
-     - **API Key**: Paste your Kameleoon API key. To generate an API Key, see [Kameleoon's documentation](https://help.kameleoon.com/){:target="_blank”}.
+     - **API Key**: Paste your Kameleoon API key. To generate an API Key, see [Kameleoon's documentation](https://help.kameleoon.com/setting-up-segment-destination-actions/#Kameleoon_setup){:target="_blank”}.
      - **Sitecode**: Paste your Kameleoon project sitecode. You can find it in the [project dashboard](https://help.kameleoon.com/question/how-do-i-find-my-site-id/){:target="_blank”}.
 6. Enable the destination by clicking the **Enable Destination** toggle switch.
 7. Click **Save Changes**.
@@ -40,13 +40,13 @@ Kameleoon (Actions) provides the following benefits over the classic Kameleoon d
 {% include components/actions-fields.html %}
 
 
-The integration requires that you use the same system of identifiers for both tools. While Segment uses the userId, Kameleoon uses the kameleoonVisitorCode. In order to identify which visitor triggered the forwarded Segment events, you must include the kameleoonVisitorCode inside your Segment events. To know more, see [Kameleoon's documentation page](https://help.kameleoon.com/){:target="_blank”}.
+The integration requires that you use the same system of identifiers for both tools. While Segment uses the userId, Kameleoon uses the kameleoonVisitorCode. In order to identify which visitor triggered the forwarded Segment events, you must include the kameleoonVisitorCode inside your Segment events. To know more, see [Kameleoon's documentation page](https://help.kameleoon.com/setting-up-segment-destination-actions/#Matching_an_Segmentio_user_with_a_Kameleoon_visitor){:target="_blank”}.
 
 
 ## Migration from the classic Kameleoon destination
 
 To migrate from the classic Kameleoon destination:
-1. Include the `kameleoonVisitorCode` in your Segment events for accurate visitor tracking. To know more, see [the dedicated documentation page](https://help.kameleoon.com/){:target="_blank”}.
+1. Include the `kameleoonVisitorCode` in your Segment events for accurate visitor tracking. To know more, see [the dedicated documentation page](https://help.kameleoon.com/setting-up-segment-destination-actions/#Matching_an_Segmentio_user_with_a_Kameleoon_visitor){:target="_blank”}.
 2. Define mapping and filters on the destination configuration page.
 3. Test events to ensure accurate goal creation and conversion tracking.
 4. Activate the Kameleoon (Actions) destination when everything is ready and tested.
