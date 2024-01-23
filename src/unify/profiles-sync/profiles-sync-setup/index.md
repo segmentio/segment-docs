@@ -1,6 +1,8 @@
 ---
 title: Profiles Sync Setup
 plan: unify
+redirect_from:
+  - '/unify/profiles-sync/'
 ---
 
 On this page, you’ll learn how to set up Profiles Sync, enable historical backfill, and adjust settings for warehouses that you’ve connected to Profiles Sync.
