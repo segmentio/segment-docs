@@ -18,18 +18,23 @@ The Google Ads Conversions destination enables you to upload offline conversions
 7. Follow the steps in the Destinations Actions documentation on [Customizing mappings](/docs/connections/destinations/actions/#customizing-mappings).
 
 > warning "Upload Enhanced Conversion (Legacy) Action Deprecation"
-> Google plans to sunset the legacy API, leading to the discontinuation of the Upload Enhanced Conversions (Legacy) Action. We encourage users to transition to the "Upload Click Conversion," "Upload Call Conversion," and "Upload Conversion Adjustment" actions, all designed to send data through the new Google Ads API.
-
->New subscriptions using the sunsetting Upload Enhanced Conversion (Legacy) Action are **no longer possible**, but existing subscriptions will remain functional. However, we strongly recommend migrating to the Upload Conversion Adjust action. Follow the steps here to migrate your Upload Enhanced Conversion (Legacy) Action Subscriptions. 
+> Google plans to sunset the legacy API, leading to the discontinuation of the Upload Enhanced Conversions (Legacy) Action. New subscriptions using the sunsetting Upload Enhanced Conversion (Legacy) Action are **no longer possible**, but existing subscriptions will remain functional. 
+>
+> Segment recommends users to transition to the "Upload Click Conversion," "Upload Call Conversion," and "Upload Conversion Adjustment" actions, to send data through the new Google Ads API. 
+>
+> [Use these steps](#migrate-your-upload-enhanced-conversion-legacy-action) to migrate your Upload Enhanced Conversion (Legacy) Action subscriptions. 
 
 {% include components/actions-fields.html settings="true"%}
 
-## Migrate from Upload Enhanced Conversion (Legacy) Action to the Upload Conversion Adjustment Action 
-1. Ensure your Conversion ID and Customer ID settings are filled out
+## Migrate your Upload Enhanced Conversion (Legacy) Action
+
+To migrate from Upload Enhanced Conversion (Legacy) Action to the Upload Conversion Adjustment Action: 
+
+1. Fill out your Conversion ID and Customer ID settings.
 2. Fill out the required fields for the Upload Conversion Adjustment Action: 
 - Conversion Action ID
 - Adjustment Type
-3. Replicate as many fields from your original mapping as possible using the table below for reference. Look at the [Upload Conversion Adjustment Action](https://segment.com/docs/connections/destinations/catalog/actions-google-enhanced-conversions/#upload-conversion-adjustment) for more details about each field. 
+3. Replicate as many fields from your original mapping as possible using the table below for reference. Look at the [Upload Conversion Adjustment Action](/docs/connections/destinations/catalog/actions-google-enhanced-conversions/#upload-conversion-adjustment) for more details about each field. 
 
 | Upload Enhanced Conversion (Legacy)| Upload Conversion Adjustment | Default Mapping                      |
 |------------------------|----------------------------|--------------------------------------|
@@ -63,7 +68,7 @@ The Google Ads Conversions destination enables you to upload offline conversions
 
 Conversion ID and Customer ID are global settings because it’s an account-level ID that’s the same for all conversion actions in your Google Ads account.
 
-The Conversion Action ID is unique to each conversion action and is  configured per mapping. The Conversion Action ID can only be found in the browser URL of your given conversion action under the `ctId` parameter. For example, if the URL is `https://ads.google.com/aw/conversions/detail?ocid=00000000&ctId=576882000`, your Conversion Action ID is `576882000`.
+The Conversion Action ID is unique to each conversion action and is configured per mapping. The Conversion Action ID can only be found in the browser URL of your given conversion action under the `ctId` parameter. For example, if the URL is `https://ads.google.com/aw/conversions/detail?ocid=00000000&ctId=576882000`, your Conversion Action ID is `576882000`.
 
 ### Enhanced conversions
 
