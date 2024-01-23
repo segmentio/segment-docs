@@ -291,6 +291,8 @@ reset();
 {% endcodeexampletab %}
 {% endcodeexample %}
 
+{% include content/reset-mobile.md %}
+
 ### Flush
 By default, the analytics client sends queued events to the API every 30 seconds or when 20 events accumulate, whichever occurs first. This also occurs whenever the app resumes if the user has closed the app with some events unsent. These values can be modified by the `flushAt` and `flushInterval` config options. You can also trigger a flush event manually.
 
