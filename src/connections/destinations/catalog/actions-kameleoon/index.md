@@ -6,10 +6,10 @@ title: Kameleoon (Actions) Destination
 
 [Kameleoon](https://www.kameleoon.com/en?utm_source=segmentio&utm_medium=docs&utm_campaign=partners){:target="_blank”} is a versatile optimization, experimentation, and personalization platform. It is used to enhance website and mobile app experiences while enabling experimentation.
 
-This destination is maintained by Kameleoon. For any issues with the destination, [contact their Support team](mailto:support@kameleoon.com).
+This destination is maintained by Kameleoon. For any issues with the destination, [contact the Kameleoon Support team](mailto:support@kameleoon.com).
 
 > success ""
-> This page is about the [Actions-framework](/docs/connections/destinations/actions/) Kameleoon Segment destination. There's also a page about the [non-Actions Kameleoon destination](/docs/connections/destinations/catalog/kameleoon/). Both of these destinations receives data from Segment.
+> This page is about the [Actions-framework](/docs/connections/destinations/actions/) Kameleoon Segment destination. There's also a page about the [non-Actions Kameleoon destination](/docs/connections/destinations/catalog/kameleoon/). Both of these destinations receive data from Segment.
 
 
 {% include content/ajs-upgrade.md %}
@@ -31,7 +31,7 @@ Kameleoon (Actions) provides the following benefits over the classic Kameleoon d
 4. Select the Source you want to connect to Kameleoon (Actions) and click **Confirm Source**.
 5. On the **Basic Settings** side panel, complete the required fields:
      - **Name**: Enter a name to help you identify this destination in Segment
-     - **API Key**: Paste your Kameleoon API key. To generate an API Key, see [Kameleoon's documentation](https://help.kameleoon.com/setting-up-segment-destination-actions/#Kameleoon_setup){:target="_blank”}.
+     - **API Key**: Paste your Kameleoon API key. To generate an API Key, see [Kameleoon's documentation on generating an API key](https://help.kameleoon.com/setting-up-segment-destination-actions/#Kameleoon_setup){:target="_blank”}.
      - **Sitecode**: Paste your Kameleoon project sitecode. You can find it in the [project dashboard](https://help.kameleoon.com/question/how-do-i-find-my-site-id/){:target="_blank”}.
 6. Enable the destination by clicking the **Enable Destination** toggle switch.
 7. Click **Save Changes**.
@@ -40,13 +40,13 @@ Kameleoon (Actions) provides the following benefits over the classic Kameleoon d
 {% include components/actions-fields.html %}
 
 
-The integration requires that you use the same system of identifiers for both tools. While Segment uses the userId, Kameleoon uses the kameleoonVisitorCode. In order to identify which visitor triggered the forwarded Segment events, you must include the kameleoonVisitorCode inside your Segment events. To know more, see [Kameleoon's documentation page](https://help.kameleoon.com/setting-up-segment-destination-actions/#Matching_an_Segmentio_user_with_a_Kameleoon_visitor){:target="_blank”}.
+The integration requires that you use the same system of identifiers for both tools. While Segment uses the userId, Kameleoon uses the kameleoonVisitorCode. In order to identify which visitor triggered the forwarded Segment events, you must include the kameleoonVisitorCode inside your Segment events. To know more, see [Kameleoon's documentation on matching a Segment user with a Kameleoon visitor](https://help.kameleoon.com/setting-up-segment-destination-actions/#Matching_an_Segmentio_user_with_a_Kameleoon_visitor){:target="_blank”}.
 
 
 ## Migration from the classic Kameleoon destination
 
 To migrate from the classic Kameleoon destination:
-1. Include the `kameleoonVisitorCode` in your Segment events for accurate visitor tracking. To know more, see [the dedicated documentation page](https://help.kameleoon.com/setting-up-segment-destination-actions/#Matching_an_Segmentio_user_with_a_Kameleoon_visitor){:target="_blank”}.
+1. Include the `kameleoonVisitorCode` in your Segment events for accurate visitor tracking. To know more, see [Kameleoon's documentation on matching a Segment user with a Kameleoon visitor](https://help.kameleoon.com/setting-up-segment-destination-actions/#Matching_an_Segmentio_user_with_a_Kameleoon_visitor){:target="_blank”}.
 2. Define mapping and filters on the destination configuration page.
 3. Test events to ensure accurate goal creation and conversion tracking.
 4. Activate the Kameleoon (Actions) destination when everything is ready and tested.
