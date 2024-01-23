@@ -12,10 +12,7 @@ In order to get started with Nielsen-DTVR and retrieve an `appid` to configure t
 There will be an NDA to sign prior to accessing the download. Nielsen requires you fill out your company info and have a Nielsen representative before getting started.
 
 You must also go through the pre-certification process as outlined here with your Nielsen representative before shipping this implementation to production. The Nielsen-DTVR destination in the Segment dashboard is in private beta. You will need to talk to your Segment customer service representative to get started.
-
-
-> success ""
-> This plugin simply adds session data for Nielsen-DTVR, and events are sent via Cloud Mode.
+ata for Nielsen-DTVR, and events are sent via Cloud Mode.
 
 ### Adding the dependency
 
@@ -58,4 +55,4 @@ analytics.add(plugin: NielsenDTVRDestination())
 ```
 
 
-Your events will now be given Nielsen-DTVR session data and start flowing to Nielsen-DTVR via Cloud Mode.
+Your events will now be given Nielsen-DTVR session data and start flowing to Nielsen-DTVR via Device Mode.

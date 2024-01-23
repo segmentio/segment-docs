@@ -3,12 +3,20 @@ title: Analytics Swift Localytics Plugin
 id: 54521fd925e721e32a72eed0
 ---
 
+Our Analytics-Swift Localytics Destination Plugin is open sourced on GitHub. Feel free to
+[check it out here](https://github.com/segment-integrations/analytics-swift-localytics).
+
 ## Getting Started
 
 The Analytics-Swift Localytics Session Plugin provides session tracking support to your applications via this plugin for [Analytics-Swift](https://github.com/segmentio/analytics-swift)
 
-> success ""
-> This plugin simply adds session data for Localytics, and events are sent via Cloud Mode.
+# Getting Started
+
+1.  From the Segment Destinations page click **Add Destination**.
+2.  Search for `Localytics` and select it in the results that appear.
+3.  Choose which Source to connect `Localytics` to.
+4.  Add your `Localytics` App Key to the Destination setting.
+
 
 ## Adding the dependency
 
@@ -51,3 +59,19 @@ let analytics = Analytics(configuration: Configuration(writeKey: "<YOUR WRITE KE
 analytics.add(plugin: LocalyticsDestination())
 ```
 Your events will now be given Localytics session data and start flowing to Localytics via Cloud Mode.
+
+
+## Identify
+
+When you call [`identify`](/docs/connections/spec/identify/), we'll set the Localytics
+customer Id, and set any special Localytics traits you provide, such as `name`,
+or `email`, and any custom traits as well.
+
+## Track
+
+Whenever you call [`track`](/docs/connections/spec/track/), we'll log an event with
+Localytics. [`track`](/docs/connections/spec/track/) takes the name of the event and any
+optional properties you want to associate with the event.
+
+- - -
+

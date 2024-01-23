@@ -14,9 +14,6 @@ There will be an NDA to sign prior to accessing the download. Nielsen requires y
 
 You must also go through a pre-certification process with your Nielsen representative before shipping this implementation to production.
 
-> success ""
-> This plugin simply adds session data for Nielsen-DCR, and events are sent via Cloud Mode.
-
 ## Adding the dependency
 
 ### via Xcode
@@ -55,4 +52,4 @@ let analytics = Analytics(configuration: Configuration(writeKey: "<YOUR WRITE KE
                     .trackApplicationLifecycleEvents(true))
 analytics.add(plugin: NielsenDCRDestination())
 ```
-Your events will now be given Nielsen-DCR session data and start flowing to Nielsen-DCR via Cloud Mode.
+Your events will now be given Nielsen-DCR session data and start flowing to Nielsen-DCR via Device Mode.
