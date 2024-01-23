@@ -16,6 +16,8 @@ The object means that you are successfully loading Analytics.js onto your websit
 
 ![Returning analytics object error](images/CFsktto.gif)
 
+Segment also provides a Chrome web extension, [Segment Inspector](/docs/connections/sources/catalog/libraries/website/javascript/#segment-inspector), which you can use to validate that you're successfully loading Analytics.js.
+
 Solution: [Follow the Analytics.js Quickstart Guide](/docs/connections/sources/catalog/libraries/website/javascript/quickstart/)
 
 ## Are you loading two instances of Analytics.js?
@@ -80,15 +82,26 @@ The JavaScript console reveals all requests, outbound and inbound, to your brows
 - **Safari**: `COMMAND+OPTION+I` (Mac) or `CTRL+ALT+I` (Windows) and then click on the **Console** tab.
 - **IE**: `F12` and then click on the **Console** tab.
 
+Alternatively, Segment provides the [Segment Inspector](/docs/connections/sources/catalog/libraries/website/javascript/#segment-inspector), a Chrome web extension designed to enable debugging of your Segment integration in web applications that are instrumented with Analytics.js.
+
 ## Is there a size limit on requests?
 
 Yes, 32KB per event message. Events with a payload larger than 32KB are accepted by Analytics.js, with the browser returning a `200` response from the Segment servers, but the event will be silently dropped once it enters Segment's pipeline. 
+
+## Analytics.js failing to load due to Ad Blockers or Browser Privacy Settings
+
+Segment advises against circumventing tracking blockers or browser privacy settings for client-side tracking. The user has ultimate control as to what gets loaded on the page. Segment acknowledges that this can result in some data loss in client-side tracking and suggests [workarounds](/docs/connections/sources/catalog/libraries/website/javascript/#ad-blocking) to address this issue.
+
+## Analytics.js and Destinations not tracking query string parameters on certain Safari iOS and MacOS Versions
+
+Due to updates in certain Safari iOS and MacOS versions, Segment's Analytics.js and Destinations tools might experience limitations in capturing query string parameters. As a result, you may notice some events missing campaign information.
 
 ## If Analytics.js fails to load, are callbacks not fired?
 
 In the event that Analytics.js does not load, callbacks passed into your API calls do not fire. This is as designed, because the purpose of callbacks are to provide an estimate that the event was delivered and if the library never loads, the events won't be delivered.
 
 ## Why do I see a network request to `/m`?
+
 In May 2018, Segment released a change to Analytics.js that collects client-side performance metrics in Analytics.js. This includes metrics like:
 
 - When client side integrations are initialized and when they fail
@@ -99,6 +112,7 @@ Segment added these metrics to proactively identify and resolve issues with indi
 There should be no noticeable impact to your data flow. You may notice Analytics.js make an extra network request in the network tab to carry the metrics data to Segment's servers. This should be very infrequent since the data is sampled and batched every 30 seconds, and should not have any impact of website performance.
 
 ## How are properties with `null` and `undefined` values treated?
+
 Segment uses the [`JSON.stringify()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON/stringify){:target="blank"} method under the hood. Property values set to `null` or `undefined` are treated in accordance with the expected behaviour for the standard method:
 
 ```js
