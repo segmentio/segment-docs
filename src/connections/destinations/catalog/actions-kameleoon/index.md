@@ -2,6 +2,7 @@
 title: Kameleoon (Actions) Destination
 private: true
 beta: true
+id: 652ea51a327a62b351aa12c0
 ---
 
 {% include content/plan-grid.md name="actions" %}
@@ -12,9 +13,6 @@ This destination is maintained by Kameleoon. For any issues with the destination
 
 > success ""
 > This page is about the [Actions-framework](/docs/connections/destinations/actions/) Kameleoon Segment destination. There's also a page about the [non-Actions Kameleoon destination](/docs/connections/destinations/catalog/kameleoon/). Both of these destinations receive data from Segment.
-
-
-{% include content/ajs-upgrade.md %}
 
 
 ## Benefits of Kameleoon (Actions) vs Kameleoon Classic
@@ -53,4 +51,4 @@ To migrate from the classic Kameleoon destination:
 3. Test events to ensure accurate goal creation and conversion tracking.
 4. Activate the Kameleoon (Actions) destination when everything is ready and tested.
 5. Deactivate the classic Kameleoon destination.
----
+
