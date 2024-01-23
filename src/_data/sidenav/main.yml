@@ -400,8 +400,8 @@ sections:
       title: Audiences Overview
     - path: '/engage/audiences/account-audiences'
       title: Account-level Audiences
-    - path: '/engage/audiences/customerAI-audiences'
-      title: CustomerAI Audiences
+    - path: '/engage/audiences/generative-audiences'
+      title: Generative Audiences
     - path: '/engage/audiences/organization'
       title: Organize Audiences
 

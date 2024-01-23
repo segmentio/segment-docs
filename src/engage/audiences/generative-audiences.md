@@ -1,25 +1,25 @@
 ---
-title: CustomerAI Audiences
+title: Generative Audiences
 beta: true
 plan: engage-foundations
 ---
  
-> info "CustomerAI audience builder is in private beta"
-> The CustomerAI audience builder is in private beta, and Segment is actively working on this feature. Some functionality may change before it becomes generally available. [Contact Segment](https://segment.com/help/contact/){:target="_blank"} with any feedback or questions.
+> info "Generative Audiences is in private beta"
+> Generative Audiences is in private beta, and Segment is actively working on this feature. Some functionality may change before it becomes generally available. [Contact Segment](https://segment.com/help/contact/){:target="_blank"} with any feedback or questions.
 
-With CustomerAI, use generative AI to create Engage Audiences with natural language prompts. 
+With Generative Audiences, part of Segment's CustomerAI, use generative AI to create Engage Audiences with natural language prompts. 
 
 Describe your desired audience based on events performed, profile traits, or existing audiences in your workspace. Based on your prompt, Segment builds the audience with generative AI.
 
-In this article, you'll learn how to use CustomerAI to build audiences along with some best practices.
+In this article, you'll learn how to use Generative Audiences along with some best practices.
  
-## Create an audience with CustomerAI
+## Create an audience with Generative Audiences
 
-To create an audience with CustomerAI: 
+To create an audience with Generative Audiences: 
 
 1. From the Segment app, navigate to **Engage > Audiences**.
 2. Click **+ New audience**, then select **Audience** from the dropdown menu.
-3. Select your audience type. You can use CustomerAI with all audience types except Linked Audiences.
+3. Select your audience type. Generative Audiences is available for all audience types except Linked Audiences.
 4. From the Build screen, click **Help me build**.
 5. Enter your audience prompt in the description box. 
 - Use a minimum of 20 characters and up to 300 characters maximum. 
@@ -63,7 +63,7 @@ Below are a few examples of how CustomerAI configures audience conditions for ne
 
 ## Best practices
 
-As you build audiences with CustomerAI, keep the following best practices in mind:
+As you use Generative Audiences, keep the following best practices in mind:
 
 - Avoid using any customer Personal Identifiable Information (PII) or sensitive data. Personal, confidential, or sensitive information isn't required to use CustomerAI. 
 - Write specific descriptions. CustomerAI generates more accurate conditions when you use the names of existing events and traits. 
@@ -84,7 +84,7 @@ Learn more about [using existing events and traits](/docs/engage/audiences/) to 
  
 ## Error handling
 
-Engage uses the following error messages with CustomerAI audiences:
+Engage uses the following error messages with Generative Audiences:
 
 | Error message        | Cause                  |
 |---------------------------|---------------------------------------|
