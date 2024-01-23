@@ -157,4 +157,4 @@ To test your destination:
 3. Complete the `TODO` sections in the sample code with the appropriate information for your destination.
 4. Commit your changes.
 
-Segment recommends you to test your destination implementation end-to-end. Send some sample analytics events and ensure that they reach the destination.
+Segment recommends that you test your destination implementation end-to-end. Send some sample analytics events and ensure that they reach the destination.
