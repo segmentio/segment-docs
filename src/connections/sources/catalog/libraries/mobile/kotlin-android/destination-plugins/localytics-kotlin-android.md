@@ -3,7 +3,7 @@ title: Analytics Kotlin Localytics Plugin
 id: 54521fd925e721e32a72eed0
 ---
 Our Analytics-Kotlin Localytics Destination Plugin is open sourced on GitHub. Feel free to
-[check it out:](https://github.com/segment-integrations/analytics-kotlin-localytics){:target="_blank"}.
+[check it out here](https://github.com/segment-integrations/analytics-kotlin-localytics).
 
 ## Getting Started
 
