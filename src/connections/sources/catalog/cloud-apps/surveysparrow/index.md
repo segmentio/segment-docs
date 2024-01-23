@@ -38,11 +38,13 @@ The table below list the properties included in the events listed above.
 
 | Property Name   | Description               |
 | --------------- | ------------------------- |
-| `survey`        | Survey details from which the response came         |
-| `answers`       |  Responses of the Survey                            |
-| `channel`       | Share channel which is used to trigger the Survey   |
-| `expressions`   | Expressions value of the Survey                     |
-| `variables`     | Variables value of the Survey                       |
+| `event`         | Type of the event          |
+| `survey`        | Will hold all the properties data  including surveys, answers,channel,expressions,variables        |
+| `survey`        | Meta details about the survey          |
+| `contact`       | Contact which has created the response         |
+| `expressions`   | Computed expressions data of the survey         |
+| `variables`     | Computed variables data of the survey         |
+| `answers`       | contains answer details of the entire survey         |
 
 ## Adding Destinations
 
