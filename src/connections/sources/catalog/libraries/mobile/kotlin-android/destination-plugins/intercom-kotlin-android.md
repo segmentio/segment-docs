@@ -20,8 +20,6 @@ This means you should remove Intercom's snippet from your page.
 
 ## Adding the dependency
 
-## Adding the dependency
-
 To install the Segment-Intercom integration, simply add this line to your gradle file:
 
 ```
