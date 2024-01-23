@@ -90,19 +90,22 @@ Use the Audience overview page to build or maintain a Linked Audiences.
 
 ## Step 2: Activate your Linked Audience
 
-Use the Audience overview page to build or maintain Linked Audiences.
+You can use your Linked Audience to activate any [actions-based destination](/docs/connections/destinations/actions/#available-actions-based-destinations). The steps below provide instructions on how to add a destination to your Linked Audience(s), and send an event that best matches your use case.
 
 > info ""
-> Note that [Braze](/docs/connections/destinations/catalog/braze-cloud-mode-actions/#available-presets), [Iterable](/docs/connections/destinations/catalog/actions-iterable/#available-presets), and [Customer.io](/docs/connections/destinations/catalog/customer-io-actions/#available-presets) all have preset mappings with many of the following steps already configured.
+> Segment has preset mappings for [Braze](/docs/connections/destinations/catalog/braze-cloud-mode-actions/#available-presets), [Iterable](/docs/connections/destinations/catalog/actions-iterable/#available-presets), and [Customer.io](/docs/connections/destinations/catalog/customer-io-actions/#available-presets) with many of the following steps already configured.
 
-### Step 2a: Add an actions destination
+> warning ""
+> Some action destinations have limitations on nested objects, and the depth of the `_entity_context` property.
 
-To activate your Linked Audience, you'll first need to add an actions destination.
+### Step 2a: Add an action destination
+
+To activate your Linked Audience, you'll first need to add an action destination.
 
 From the Add destination window, select your destination and click **Next**.
 
 ### Step 2b: Select event 
-After adding an actions destination, select what type of event you want to send to the destination. Events update the destination about changes to your entity or audiences. 
+After adding an actions destination, select what type of event you want to send to the destination. Events update the destination about changes to your entity or audiences. You can then use these actions to orchestrate campaigns in other tools.
 
 You can send events:
 - When an entity on a profile changes:
@@ -110,7 +113,7 @@ You can send events:
     - [Entity Removed](#entity-removed)
 - Based on profile audience membership updates:
     - [Audience Entered](#audience-entered)
-    - [Audience Entered and Exited](#audience-entered-and-exited)
+    - [Audience Membership Changed](#audience-membership-changed)
     - [Audience Exited](#audience-exited)
 
 > info ""
@@ -118,9 +121,7 @@ You can send events:
 
 #### Entity added
 
-Send an action to a destination when an entity associated with a profile matches the audience condition. Select your entity from the **Select entity** dropdown menu.
-
-Use this action to orchestrate campaigns in other tools. 
+Send a Track event when an entity matching the audience conditions is added. Select your entity from the **Select entity** dropdown menu.
 
 Example use cases:
 - Send a reminder to a customer when a credit card associated with their profile has an outstanding balance.
@@ -129,9 +130,7 @@ Example use cases:
 
 #### Entity removed
 
-Send an event to a destination when an entity assoacited with the profile no longer matches the audience condition. Select your entity from the **Select entity** dropdown menu.
-
-Use this action to orchestrate campaigns in other tools. 
+Send a Track event when an entity is removed because it no longer matches the audience conditions. Select your entity from the **Select entity** dropdown menu.
 
 Example use cases:
 - Send a confirmation to a customer when a credit card associated with their profile has been paid off.
@@ -139,35 +138,35 @@ Example use cases:
 
 #### Audience entered 
 
-Send a Track event to a destination when a profile matches the audience condition. Use these events to orchestrate campaigns in other tools.
+Send an event when a profile enters the audience.
 
 Example use cases:
 
 - Send a congratulatory email when a travel qualifies for premium status.
 - Send a discount to all customers with a particular product on their wishlist.
 
-#### Audience entered and exited
-
-Send an Identify event when a profile enters or exits the audience.
-
-Example use case:
-- Update a user profile in a destination with the most recent audience membership.
-
 #### Audience exited
 
-Send a Track event to a destination when a profile no longer matches the audience condition. Use these events to orchestrate campaigns in other tools.
+Send an event when the profile exits the audience. 
 
 Example use cases:
 
 - Send an email to credit card owners to confirm that their credit cards have been paid in full.
 - Send a confirmation to a patient when they have completed all their pre-screening forms.
 
+#### Audience Membership Changed
+
+Send events when a profile enters and exits the audience.
+
+Example use case:
+- Update a user profile in a destination with the most recent audience membership.
+
 
 ### Step 2c: Select an action
 
 Next, you'll select the destination action to call when the event happens.
 
-Segement displays available actions based on the destination action you've connected with your Linked Audience. 
+Segment displays available actions based on the destination action you've connected with your Linked Audience. 
 
 Visit the [destination actions docs](/docs/connections/destinations/actions/) learn more about destination actions, and view available actions for your destination.
 
@@ -181,7 +180,7 @@ To configure your event:
 - As you're configuring your event, you can view a preview of the enriched event based on your property selections. 
 2. Map your event from your audience to your destination.
 - You can preview what the event will look like in your destination.
-3. After configuring, click **Save** or **Save and enable** to enable your Linked Audience. 
+3. After configuring, click **Save** to enable your Linked Audience. 
 
 After saving, you'll be redirected to a destination sidesheet where you can view all events and their corresponding actions.
 

@@ -132,6 +132,7 @@ Use the following relationship, parameters, and examples to help you relate enti
 > warning ""
 > Snowflake schemas are case sensitive, so you'll need to reflect the schema, table, and column names based on how you case them in Snowflake.
 
+
 #### Relate Entity to Profile
 
 | Parameters     | Definition                                                           |
