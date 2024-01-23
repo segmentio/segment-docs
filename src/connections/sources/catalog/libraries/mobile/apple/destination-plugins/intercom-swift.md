@@ -10,13 +10,8 @@ id: 54521fd725e721e32a72eec6
 2.  Search for "Intercom" and select it in the results that appear.
 3.  Choose which Source to connect Intercom to.
 4.  Authorize your Intercom account in Segment and select the Intercom Account to sync with Segment.
-
-    You can choose which account to sync from the drop down menu in the top right. If you are using [server-side sources](/docs/connections/sources#server), Segment starts passing data through once you activate the Destination. For other libraries  continue reading below.
 5. [Find your "App ID" in the Intercom UI](https://docs.intercom.com/faqs-and-troubleshooting/getting-set-up/where-can-i-find-my-app-id){:target="_blank"} or by navigating to the Gear Menu and clicking on "App Settings" followed by "API Keys". It should look something like `9iefb489`.
 
-Your changes appear in the Segment CDN in about 45 minutes, and then Analytics.js starts asynchronously loading Intercom's `library.js` onto your page.
-
-This means you should remove Intercom's snippet from your page.
 
 ## Adding the dependency
 

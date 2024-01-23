@@ -7,6 +7,12 @@ Our Analytics-Kotlin Localytics Destination Plugin is open sourced on GitHub. Fe
 
 ## Getting Started
 
+1.  From the Segment Destinations page click **Add Destination**.
+2.  Search for `Localytics` and select it in the results that appear.
+3.  Choose which Source to connect `Localytics` to.
+4.  Add your `Localytics` App Key to the Destination setting.
+
+
 Once the Segment library is integrated with your site or app, toggle Localytics
 on in your Segment destinations, and add your application's **App Key** which
 you can find in your Localytics app settings. These new settings will take up to
@@ -76,7 +82,7 @@ Just under your Analytics-Kotlin library setup, call `analytics.add(plugin = ...
     analytics.add(plugin = LocalyticsDestination())
 ```
 
-Your events will now begin to flow to Localytics in device mode.
+Your events will now begin to flow to Localytics in Device Mode.
 
 
 ## Identify
