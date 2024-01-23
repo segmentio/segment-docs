@@ -1,5 +1,7 @@
 ---
 title: Kameleoon (Actions) Destination
+private: true
+beta: true
 ---
 
 {% include content/plan-grid.md name="actions" %}
