@@ -16,7 +16,7 @@ The object means that you are successfully loading Analytics.js onto your websit
 
 ![Returning analytics object error](images/CFsktto.gif)
 
-Segment also provides a Chrome web extension, [Segment Inspector](https://segment.com/docs/connections/sources/catalog/libraries/website/javascript/#segment-inspector), which you can use to validate that you're successfully loading Analytics.js.
+Segment also provides a Chrome web extension, [Segment Inspector](/docs/connections/sources/catalog/libraries/website/javascript/#segment-inspector), which you can use to validate that you're successfully loading Analytics.js.
 
 Solution: [Follow the Analytics.js Quickstart Guide](/docs/connections/sources/catalog/libraries/website/javascript/quickstart/)
 
@@ -84,7 +84,7 @@ Yes, 32KB per event message. Events with a payload larger than 32KB are accepted
 
 ## Analytics.js failing to load due to Ad Blockers or Browser Privacy Settings
 
-Segment advises against circumventing tracking blockers or browser privacy settings for client-side tracking. The user has ultimate control as to what gets loaded on the page. Segment acknowledges that this can result in some data loss in client-side tracking and suggests [workarounds](https://segment.com/docs/connections/sources/catalog/libraries/website/javascript/#ad-blocking) to address this issue.
+Segment advises against circumventing tracking blockers or browser privacy settings for client-side tracking. The user has ultimate control as to what gets loaded on the page. Segment acknowledges that this can result in some data loss in client-side tracking and suggests [workarounds](/docs/connections/sources/catalog/libraries/website/javascript/#ad-blocking) to address this issue.
 
 ## Analytics.js and Destinations not tracking query string parameters on certain Safari iOS and MacOS Versions
 
