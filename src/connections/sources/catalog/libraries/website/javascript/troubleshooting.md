@@ -16,7 +16,7 @@ The object means that you are successfully loading Analytics.js onto your websit
 
 ![Returning analytics object error](images/CFsktto.gif)
 
-Segment also provides a Chrome web extension, [Segment Inspector](https://segment.com/docs/connections/sources/catalog/libraries/website/javascript/#segment-inspector), that allows you to easily validate that you are successfully loading Analytics.js.
+Segment also provides a Chrome web extension, [Segment Inspector](https://segment.com/docs/connections/sources/catalog/libraries/website/javascript/#segment-inspector), which you can use to validate that you're successfully loading Analytics.js.
 
 Solution: [Follow the Analytics.js Quickstart Guide](/docs/connections/sources/catalog/libraries/website/javascript/quickstart/)
 
@@ -76,7 +76,7 @@ The JavaScript console reveals all requests, outbound and inbound, to your brows
 - **Safari**: `COMMAND+OPTION+I` (Mac) or `CTRL+ALT+I` (Windows) and then click on the **Console** tab.
 - **IE**: `F12` and then click on the **Console** tab.
 
-Alternatively, Segment provides the [Segment Inspector](https://segment.com/docs/connections/sources/catalog/libraries/website/javascript/#segment-inspector), a Chrome web extension designed to enable debugging of your Segment integration in web applications that are instrumented with Analytics.js.
+Alternatively, Segment provides the [Segment Inspector](/docs/connections/sources/catalog/libraries/website/javascript/#segment-inspector), a Chrome web extension designed to enable debugging of your Segment integration in web applications that are instrumented with Analytics.js.
 
 ## Is there a size limit on requests?
 
@@ -88,7 +88,7 @@ Segment advises against circumventing tracking blockers or browser privacy setti
 
 ## Analytics.js and Destinations not tracking query string parameters on certain Safari iOS and MacOS Versions
 
-Please be aware that due to updates in certain Safari iOS and MacOS versions, our Analytics.js and Destinations tools might experience limitations in capturing query string parameters. As a result, customers may notice some events missing campaign information.
+Due to updates in certain Safari iOS and MacOS versions, Segment's Analytics.js and Destinations tools might experience limitations in capturing query string parameters. As a result, you may notice some events missing campaign information.
 
 ## If Analytics.js fails to load, are callbacks not fired?
 
