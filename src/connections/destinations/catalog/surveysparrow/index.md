@@ -12,7 +12,7 @@ This destination is maintained by SurveySparrow. For any issues with the destina
 2. Select SurveySparrow and click **Add Destination**
 3. Select an existing Source to connect to SurveySparrow (Actions).
 4. Log in to your [SurveySparrow](https://app.surveysparrow.com/) account, then navigate to **Settings > Apps and Integrations > Create a Custom app**.
-5. Fill in the details for custom app and choose **Select all** under Scope. Later, you can remove the scopes which are not required.
+5. Fill in the details for the custom app and choose **Select all** under Scope. Later, you can remove any scopes that are not required.
 6. Click **Save** and copy the **Access Token**.
 7. Enter the **Access Token** in the SurveySparrow destination settings in Segment.
 
