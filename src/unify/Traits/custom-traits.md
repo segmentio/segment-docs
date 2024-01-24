@@ -43,7 +43,7 @@ Custom traits are mutable and update to the latest value seen by the user's Iden
 When an audience that previously generated Identify events is deleted, the data for the audience key is still attached to profiles that entered the audience and becomes visible in Segment as a custom trait. 
 
 Use the Profile explorer (**Unify > Profile explorer**) to view custom traits attached to a profile.
-
+ 
 
 ## Reserved custom traits
 
