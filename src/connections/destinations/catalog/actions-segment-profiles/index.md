@@ -17,7 +17,7 @@ To use this destination, you must have an active Segment Profile space. If you h
 
 ### Connect and configure the Segment Profiles destination
 
-1. From the Segment web app, navigate to **Reverse ETL > Destinations**.
+1. From the Segment web app, navigate to **Connections > Sources and select the Reverse ETL tab in the Segment app**.
 2. Click **Add Destination**.
 3. Select the Segment Profiles destination, click **Next**, and select the warehouse source that will send data to the Segment Profiles destination. If you have not set up a warehouse source, follow the steps in the Reverse ETL documentation on [Getting started](/docs/reverse-etl/#getting-started).
 4. On the **Settings** tab, name your destination, select an endpoint region, and click **Save Changes**. It is recommended to configure and enable all mappings before enabling the Segment Profiles destination.
