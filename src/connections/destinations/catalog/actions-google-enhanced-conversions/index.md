@@ -81,7 +81,7 @@ Conversions tracked by other means, such as importing goals from Google Analytic
 
 ### Enhanced conversions for leads
 
-[Enhanced conversions for leads](https://developers.google.com/google-ads/api/docs/conversions/upload-identifiers){:target="_blank"} allows you to use hashed, first-party user-provided data from your website lead forms for offline lead measurement. When you upload your leads, the provided hashed information is used to attribute back to the Google Ad campaign. In order to send enhanced conversions for leads, you can use the "Upload Click Conversion" action. Instead of sending GCLID, send an email address or phone number of the user for Segment to hash and send to Google Ads. 
+[Enhanced conversions for leads](https://developers.google.com/google-ads/api/docs/conversions/upload-identifiers){:target="_blank"} allows you to use hashed, first-party user-provided data from your website lead forms for offline lead measurement. When you upload your leads, the provided hashed information is used to attribute back to the Google Ad campaign. In order to send enhanced conversions for leads, you can use the "Upload Click Conversion" action. If possible please inlcude both GCLID and send an email address and/or phone number of the user for Segment to hash and send to Google Ads. 
 
 ### Refreshing access tokens
 
