@@ -22,7 +22,7 @@ This source is maintained by SurveySparrow. For any issues with the source, [con
 
 SurveySparrow uses our stream Source component to send Segment event data. It uses a server-side (`track`) method to send data to Segment. These events are then available in any destination that accepts server-side events, and available in a schema in your data warehouse, so you can query using SQL.
 
-The default behavior is for SurveySparrow to pass the hash value of email and mobile number of respondent as the anonymousId. There are cases in which SurveySparrow does not have an associated email or mobile number, in which case a random hash will be passed in as the anonymousId.
+The default behavior is for SurveySparrow to pass the hash value of the email address and mobile number of the respondent as the `anonymousId`. There are cases in which SurveySparrow does not have an associated email address or mobile number, in which case a random hash will be passed in as the `anonymousId`.
 
 ## Events
 
