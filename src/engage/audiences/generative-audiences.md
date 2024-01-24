@@ -88,7 +88,7 @@ Engage uses the following error messages with Generative Audiences:
 
 | Error message        | Cause                  |
 |---------------------------|---------------------------------------|
-| Something went wrong      | An unknown exception occured.                  |
+| Something went wrong      | An unknown exception occurred.                  |
 | Something went wrong. Try again later. | The AI service is down, or the LLM returned an error. |
 | Segment had trouble creating an audience from this description. Try rewording it using these [best practices](#best-practices). | The prompt referenced an invalid or non-existing trait, audience, or event within the workspace. You may also see this when an audience description is impossible to build or misunderstood. |
 
@@ -112,6 +112,6 @@ In order to generate the audience based on your description, Segment sends your 
 
 Behind the scenes, Segment instructs GPT to generate an audience based on the user inputted audience description and contextual information such as traits and events performed in your workspace.
 
-GPT is OpenAI's state of the art natural language generation tool powered by artificial intelligence. It can perform a variety of natural language tasks like text generation, completion, and classification. CustomerAI uses the service to help generate audiences and inspire segmentation.
+GPT is OpenAI's state-of-the-art natural language generation tool powered by artificial intelligence. It can perform a variety of natural language tasks like text generation, completion, and classification. CustomerAI uses the service to help generate audiences and inspire segmentation.
 
 Per OpenAI's policy, data sent to OpenAI's API with Segment isn't used to train or improve their models and will be deleted after 30 days. Any content generated using GPT is your intellectual property. Segment won't assert any claims of copyright ownership on such content and makes no warranty of any kind with respect to any AI generated content. 
