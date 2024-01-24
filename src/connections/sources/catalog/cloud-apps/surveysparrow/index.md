@@ -34,7 +34,7 @@ The table below lists events that SurveySparrow sends to Segment. These events a
 
 ## Event Properties
 
-The table below list the properties included in the events listed above.
+The table below lists the properties included in the events listed above.
 
 | Property Name   | Description               |
 | --------------- | ------------------------- |
