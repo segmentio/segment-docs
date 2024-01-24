@@ -4,6 +4,9 @@ title: 'Spec: Alias'
 
 The Alias method is an advanced method used to merge 2 unassociated user identities, effectively connecting 2 sets of user data in one profile. 
 
+> info "Alias and Unify"
+> Alias calls can't be used to merge profiles in [Unify](/docs/unify/). For more information on how Unify merges user profiles, view the [Identity Resolution documentation](https://segment.com/docs/unify/identity-resolution/). 
+
 > info "Alias is an advanced method"
 > The Alias method allows you to explicitly change the ID of a tracked user. This should only be done when it's required for downstream destination compatibility. See the [Best Practices for Identifying Users](/docs/guides/how-to-guides/best-practices-identify/) docs for more information.
 
