@@ -350,6 +350,8 @@ sections:
         title: Suggested Predictive Audiences
     - path: '/unify/traits/computed-traits'
       title: Computed Traits
+    - path: '/unify/traits/custom-traits'
+      title: Custom Traits
     - path: '/unify/traits/sql-traits'
       title:  SQL Traits
   - path: /unify/profile-api
