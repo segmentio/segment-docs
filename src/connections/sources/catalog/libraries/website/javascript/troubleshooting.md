@@ -181,9 +181,9 @@ The AJS cookies being set under segment.com are first-party cookies. They are pa
 
 ## Will Google Chrome's third-party cookie changes impact Segment Analytics.js?
 
-No, Analytics.js isn't affected by this change. This is because Analytics.js functions as a first-party cookie. Unlike third-party cookies, which are set by external services and blocked by the [new Chrome update](https://developers.google.com/privacy-sandbox/3pcd){:target="_blank"}, Analytics.js is integrated directly into the user's website or application. It sets cookies through the user's own bundled code, thus ensuring its status as a first-party cookie and guaranteeing its operational effectiveness despite Chrome's new policy.
+No, Analytics.js isn't affected by this change. This is because Analytics.js only creates first-party cookies. Unlike third-party cookies, which are set by external services and blocked by the [new Chrome update](https://developers.google.com/privacy-sandbox/3pcd){:target="_blank"}.
 
-Regarding cookies set by [device-mode destinations](/docs/connections/destinations/#connection-modes), it's important to note, that Segment's primary function is to load third-party SDKs and forward events to them. As a result, the usage and management of cookies are entirely at the discretion of each individual SDK. For instance, if you have concerns about destinations setting third-party cookies, it's best to consult directly with the destination providers for detailed information. For example, Amplitude, one of the destinations in the Segment catalog, offers an informative [article on this topic](https://www.docs.developers.amplitude.com/guides/cookies-consent-mgmt-guide/#frequently-asked-questions){:target="_blank"}.
+Regarding cookies set by [device-mode destinations](/docs/connections/destinations/#connection-modes), it's important to note that Segment's primary function is to load third-party SDKs and forward events to them. As a result, the usage and management of cookies are entirely at the discretion of each individual SDK. For instance, if you have concerns about destinations setting third-party cookies, it's best to consult directly with the destination providers for detailed information. For example, Amplitude, one of the destinations in the Segment catalog, offers [more information on this topic](https://www.docs.developers.amplitude.com/guides/cookies-consent-mgmt-guide/#frequently-asked-questions){:target="_blank"}.
 
 ## How is the referrer value set?
 
@@ -191,4 +191,4 @@ The Analytics.js library sets the `context.page.referrer` value from the `window
 
 ## Known issues:
 
-[Review and contribute to these on GitHub](https://github.com/segmentio/analytics.js/issues)
+[Review and contribute to these on GitHub](https://github.com/segmentio/analytics.js/issues).
