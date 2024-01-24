@@ -78,7 +78,7 @@ analytics.track("Registered", {
 });
 ```
 
-Track calls send as a `tracking event` to Kustomer on the timeline of the customer who was tracked. If the `kustomer_session_id` is included, it clusters this tracking event into a single "session" on the customer's timeline. If no `kustomer_session_id` is supplied, Segment automatically generates session IDs based on time between tracking events. See why [Segment doesn't have session tracking](https://segment.com/blog/facts-vs-stories-why-segment-has-no-sessions-api/).
+Track calls send as a `tracking event` to Kustomer on the timeline of the customer who was tracked. If the `kustomer_session_id` is included, it clusters this tracking event into a single "session" on the customer's timeline. If no `kustomer_session_id` is supplied, Segment automatically generates session IDs based on time between tracking events. See why [Segment doesn't have session tracking](https://segment.com/blog/facts-vs-stories-why-segment-has-no-sessions-api/){:target="_blank”}.
 
 
 ## Engage limitation
