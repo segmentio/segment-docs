@@ -10,7 +10,7 @@ This source is maintained by SurveySparrow. For any issues with the source, [con
 
 1. From your workspace's [Sources catalog page](https://app.segment.com/goto-my-workspace/sources/catalog){:target="_blank"} click **Add Source**.
 2. Search for "SurveySparrow" in the Sources Catalog, select SurveySparrow, and click **Add Source**.
-3. On the next screen, give the Source a name configure any other settings.
+3. On the next screen, give the Source a name, then configure any other settings.
 
    - The name is used as a label in the Segment app, and Segment creates a related schema name in your warehouse. The name can be anything, but we recommend using something that reflects the source itself and distinguishes amongst your environments (eg. SourceName_Prod, SourceName_Staging, SourceName_Dev).
 
