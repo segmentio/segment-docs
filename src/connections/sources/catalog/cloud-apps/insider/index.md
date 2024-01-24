@@ -3,7 +3,7 @@ title: Insider Source
 id: pNvQ9udVMy
 ---
 
-[Insider](https://useinsider.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) Growth Management Platform (GMP) helps digital marketers drive growth across the funnel. Insider GMP helps marketers deliver personalized journeys across the web, mobile web, mobile apps, messaging, email, and ad channels using the unified data.
+[Insider](https://useinsider.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners){:target="_blank”} Growth Management Platform (GMP) helps digital marketers drive growth across the funnel. Insider GMP helps marketers deliver personalized journeys across the web, mobile web, mobile apps, messaging, email, and ad channels using the unified data.
 
 Take your company’s marketing analysis to the next level by adding Insider as a Source to Segment. Insider will automatically collect cross-channel messaging channel events like `Email Clicked`, `App Push Opened` and `SMS Clicked`, forward them to your destinations and load them into your data warehouse.
 
@@ -11,7 +11,7 @@ This source is maintained by Insider. For any issues with the source,[contact In
 
 ## Getting Started
 
-1. From the [Source catalog page](https://app.segment.com/goto-my-workspace/sources/catalog) click **Add Source**.
+1. From the [Source catalog page](https://app.segment.com/goto-my-workspace/sources/catalog){:target="_blank"} click **Add Source**.
 2. Search for **Insider** in the Sources Catalog, select click Insider, and click **Add Source**.
 3. On the next screen, give the Source a name and add any labels to help you organize and filter your sources. You can give the source any name, but Segment recommends a name that reflects the source itself, as this name auto-populates the schema name. For example, the source name `Insider` creates the schema `insider`.
 4. Click **Add Source** to save your settings.
@@ -134,6 +134,6 @@ Insider can send any _default or custom user attributes_ as traits defined by us
 
 Now that your Source is set up, you can connect it with Destinations.
 
-Log into your downstream tools and check to see that your events appear as expected, and that they contain all of the properties you expect. If your events and properties don’t appear, check the [Event Delivery](https://segment.com/docs/connections/event-delivery/) tool, and refer to the Destination docs for each tool for troubleshooting.
+Log into your downstream tools and check to see that your events appear as expected, and that they contain all of the properties you expect. If your events and properties don’t appear, check the [Event Delivery](/docs/connections/event-delivery/) tool, and refer to the Destination docs for each tool for troubleshooting.
 
 If there are any issues with how the events are arriving to Segment, [contact the Insider support team](mailto:pst@useinsider.com).

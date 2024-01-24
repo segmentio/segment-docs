@@ -4,13 +4,13 @@ redirect_from:
   - '/spec/page'
 ---
 
-The `page` call lets you record whenever a user sees a page of your website, along with any optional properties about the page. Calling `page` or [`screen`](/docs/connections/spec/screen/) in a Segment [source](/docs/connections/sources/) is one of the first steps to getting started with Segment.
+The Page call lets you record whenever a user sees a page of your website, along with any optional properties about the page. Calling Page or [Screen](/docs/connections/spec/screen/) in a Segment [source](/docs/connections/sources/) is one of the first steps to getting started with Segment.
 
 {% include components/reference-button.html href="https://university.segment.com/introduction-to-segment/299969?reg=1&referrer=docs" icon="media/academy.svg" title="Segment University: The Page Method" description="Check out our high-level overview of the Page method in Segment University. (Must be logged in to access.)" %}
 
-**Note: In `analytics.js` a `page` call is included in the snippet by default** just after `analytics.load`. Many destinations require this page event to be fired at least once per page load for proper initialization. You may add an optional `name` or `properties` to the default call, or call it multiple times per page load if you have a single-page application.
+**Note: In `analytics.js` a Page call is included in the snippet by default** just after `analytics.load`. Many destinations require this page event to be fired at least once per page load for proper initialization. You may add an optional `name` or `properties` to the default call, or call it multiple times per page load if you have a single-page application.
 
-Here's the payload of a typical `page` call with most [common fields](/docs/connections/spec/common/) removed:
+Here's the payload of a typical Page call with most [common fields](/docs/connections/spec/common/) removed:
 
 ```json
 {
@@ -30,7 +30,7 @@ analytics.page("Retail Page","Home");
 ```
 {% include content/syntax-note.md %}
 
-Beyond the common fields, the `page` call takes the following fields:
+Beyond the common fields, the Page call takes the following fields:
 
 <table>
   {% include content/spec-table-header.md %}
@@ -42,7 +42,7 @@ Beyond the common fields, the `page` call takes the following fields:
 
 ## Example
 
-Here's a complete example of a `page` call:
+Here's a complete example of a Page call:
 
 ```json
 {

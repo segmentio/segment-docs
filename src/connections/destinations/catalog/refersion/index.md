@@ -3,11 +3,9 @@ rewrite: true
 title: Refersion Destination
 id: 5cacbf88fa2aed000104edcc
 ---
-[Refersion](https://refersion.com/?utm_source=segment&utm_medium=partner) is a fully-loaded affiliate and influencer marketing platform that you can launch in minutes; they handle the heavy lifting so you can focus on building partnerships with your affiliates. By connecting Refersion with Segment you will easily be able to create new affiliate accounts.
+[Refersion](https://refersion.com/?utm_source=segment&utm_medium=partner){:target="_blank"} is a fully-loaded affiliate and influencer marketing platform that you can launch in minutes; they handle the heavy lifting so you can focus on building partnerships with your affiliates. By connecting Refersion with Segment you will easily be able to create new affiliate accounts.
 
 This destination is maintained by Refersion. For any issues with the destination, [contact the Refersion Support team](mailto:helpme@refersion.com).
-
-{% include content/beta-note.md %}
 
 ## Getting Started
 
@@ -24,7 +22,7 @@ You have two options to connect - either automatically within your Refersion das
 
 1. From the Segment web app, click **Catalog**.
 2. Search for "Refersion" in the Catalog, select it, and choose which of your sources to connect the destination to.
-3. Once connected, you will be asked to input an API key - which can be found in your [Refersion dashboard](https://www.refersion.com/base/settings/integrations/api) - which is formatted as `publickey.secretkey`. You will need to click "Show" to obtain the "Secret Key" portion.
+3. Once connected, you will be asked to input an API key - which can be found in your [Refersion dashboard](https://www.refersion.com/base/settings/integrations/api){:target="_blank"} - which is formatted as `publickey.secretkey`. You will need to click "Show" to obtain the "Secret Key" portion.
 
 ## Identify
 

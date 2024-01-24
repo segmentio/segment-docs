@@ -6,6 +6,7 @@ plan: engage-premier
 This page walks you through the process of setting up mobile push notifications using Segment, Twilio, and Firebase/Apple Developer.
 
 > info "Prerequisites"
+> Please reach out to your CSM or AE prior to trying out this feature.
 > This guide assumes familiarity with Swift and Kotlin and is intended for a developer audience. 
 
 ## Overview
@@ -14,8 +15,9 @@ You'll set up mobile push in four stages:
 
 1. [Set up analytics for mobile push](#1-set-up-analytics-for-mobile-push).
 2. [Add the Engage SDK plugin](#2-add-the-engage-sdk-plugin).
-3. [Configure push credentials](#3-configure-push-credentials).
-4. [Configure mobile push in Engage](#4-configure-mobile-push-in-engage).
+3. [Configure iOS push notifications](#3-configure-ios-push-notifications).
+4. [Configure Android push notifications](#4-configure-android-push-notifications).
+5. [Configure mobile push in Engage](#5-configure-mobile-push-in-engage).
 
 ## 1. Set up analytics for mobile push
 
@@ -223,15 +225,99 @@ Now that you've integrated Analytics for Kotlin, follow these steps to add the E
 
 The previous steps are required. For configuration options, including subscription statuses and customized actions, visit the [getting started section](https://github.com/segment-integrations/analytics-kotlin-engage#getting-started){:target="_blank"} of Segment's Twilio Engage Destination documentation on GitHub.
 
-## 3. Configure push credentials
+Next, you'll configure your iOS and Android push credentials for use with Twilio Notify and Twilio Notifications.  
 
-In this step, you'll configure your iOS and Android push credentials for use with Twilio Notify and Twilio Notifications.  
+## 3. Configure iOS push notifications
 
-### Configure iOS push notifications
+### 3a. Set up an App ID
 
-Follow the steps in Twilio's [How to Configure iOS Push Notifications documentation](https://www.twilio.com/docs/notify/configure-ios-push-notifications){:target="_blank"}.
+Before you begin, log into your [Apple development account](https://developer.apple.com/account){:target="_blank"} and click on **Identifiers** under the **Certificates, Identifiers & Profiles** section. This will show a list of identifiers, including App IDs.
 
-### Configure Android push notifications 
+#### Option 1: Use an existing App ID
+
+1. If your App ID is already on this list, click on it; a list of capabilities will pop up.
+2. Check the **Push Notifications** option.
+3. Ignore the **Configure** button for now. Click **Save**.
+
+#### Option 2: Create a new App ID
+
+1. If your App ID isn’t on this list, click the **+** symbol to add a new App ID.
+2. Choose **App IDs** and click the **Continue** button.
+3. Give your app a description.
+4. Enter an Explicit Bundle ID that matches the bundle identifier (such as `com.twilio.notify.NotifyQuickstart`) of your app in Xcode.
+5. Under **Capabilities**, check **Push Notifications**.
+6. Click **Continue**.
+7. Click **Register** to confirm and create your new App ID.
+
+### 3b. Create a certificate
+
+Next, you’ll create a push notification certificate, which lets your app receive notifications. You can either make a development certificate or a production certificate. This guide explains how to make a development certificate. Segment recommends that you use Xcode managed certificates.
+
+#### Option 1: Use an Xcode managed certificate
+
+1. In your Xcode project, go to the **General** pane of the target for your iOS application.
+2. In the **Signing** section, check **Automatically manage signing**.
+3. If you are using the Quickstart app and see a provisioning error message, you may need to rename the bundle ID to a unique identifier. To do so, [give your bundle a new name](https://developer.apple.com/account/resources/certificates/list){:target="_blank"}, then enter your new identifier in the **Identity** section of the General pane.
+4. Go to the **Capabilities** tab and make sure that Push Notifications are enabled.
+5. Verify that you successfully created your certificates:
+- Sign in to the Apple developer portal and click on  **Certificates, IDs & Profile**. In the **Certificates** section, select **Development** or **Production**, depending on the type of certificate you want to verify.
+- Alternatively, go to **Applications > Utilities > Keychain Access** and select **Certificates**. Search for `iPhone`, and verify that your certificate has a disclosure triangle, which indicates that your private key exists in the keychain.
+
+#### Option 2: Manually create a certificate
+
+Segment recommends that you use Xcode managed certificates for your application. If you prefer to create your certificate manually, follow these steps:
+
+1. Add a certificate on the [Apple Developer Portal](https://developer.apple.com/account/resources/certificates/add){:target="_blank"}.
+2. Under **Services**, select **Apple Push Notification service SSL (Sandbox & Production)**, then click **Continue**.
+3. In the text box, select the App ID you previously created, then click **Continue**.
+4. You're prompted to create a Certificate Signing Request (CSR) and given instructions on how to do it. Create one.
+5. Once you've created a CSR, click **Continue**.
+6. Upload the CSR, then click **Generate** to generate your certificate.
+
+You just created an Apple Development iOS Push Services certificate, which you can now download and double-click to add to your Mac’s keychain.
+
+### 3c. Create a credential for Twilio
+
+1. On your Mac, go to **Applications > Utilities > Keychain Access**, then select **My Certificates**.
+2. Right-click your new certificate. It should be labeled **Apple Development iOS Push Services**.
+3. Choose **Export**.
+4. Save your credential file as `cred.p12`; leave the password blank.
+
+You'll extract your certificate key and private key from this file — you need these two keys to create a Twilio credential. First, run this command in Terminal:
+
+```zsh
+openssl pkcs12 -in cred.p12 -nokeys -out cert.pem -nodes
+```
+
+`cert.pem` is your certificate key file. Next, run the following command in the terminal:
+
+```zsh
+openssl pkcs12 -in cred.p12 -nocerts -out key.pem -nodes
+```
+
+`key.pem` is your private key file. Next, run this command to process this key:
+
+```zsh
+openssl rsa -in key.pem -out key.pem
+```
+
+You can now paste your credentials into the modal found in the Twilio Console. Make sure that you strip anything **outside** of the `-----BEGIN CERTIFICATE-----` and `-----END CERTIFICATE-----` boundaries and outside of the `-----BEGIN RSA PRIVATE KEY-----` and `-----END RSA PRIVATE KEY-----` boundaries before pasting your credentials. Check the **Sandbox** button if you made a development certificate. Sandbox is synonymous with development mode.
+
+> warning ""
+> Once you save a credential, the `CERTIFICATE` and `PRIVATE KEY` fields are hidden for security reasons.
+
+After you've pasted your credentials, click **Save**. You should see an SID appear on the new page; copy it to your clipboard, as you'll need it in the next step.
+
+
+### 3d. Configure your Twilio Service to use your APNS credentials 
+
+Twilio lets you build multiple applications within a single account. To separate those applications, you need to create Service instances that hold all the data and configuration for a given application.
+
+To do so, you'll need to configure your Service instance to use the Credential that contains your APNS certificate and private key. You can do that using the Services page in the Console. You’ll need to update your Service with the Twilio Push Credential SID.
+
+If you're just getting started, set up the APN credential first, then create your Service by clicking the blue plus button on the [Services Console](https://console.twilio.com/us1/develop/notify/services?frameUrl=%2Fconsole%2Fnotify%2Fservices%3Fx-target-region%3Dus1&_ga=2.170545120.1341805708.1700099403-1979911827.1631664239&_gl=1*1msrgrt*_ga*MTk3OTkxMTgyNy4xNjMxNjY0MjM5*_ga_RRP8K4M4F3*MTcwMDEwNTYwOC45Ny4xLjE3MDAxMDU2MjAuMC4wLjA.){:target="_blank"} page.
+
+## 4. Configure Android push notifications 
 
 Follow the steps in Twilio's [Configuring Android Push Notifications](https://www.twilio.com/docs/notify/configure-android-push-notifications){:target="_blank"}.
 
@@ -245,14 +331,14 @@ During Step 5, [Upload your API Key to Twilio](https://www.twilio.com/docs/notif
 
 With your server key copied, finish steps 5 and 6 in the Twilio documentation.
 
-## 4. Configure mobile push in Engage
+## 5. Configure mobile push in Engage
 
 Follow these steps to set up mobile push in Twilio Engage.
 
-### 4a. Set up Twilio credentials
+### 5a. Set up Twilio credentials
 
 > success ""
-> Follow the steps in 4a only if you're new to Twilio Engage Premier. If you've already [configured messaging services](/docs/engage/onboarding/#generate-an-api-key-and-select-your-messaging-services) as part of Twilio Engage Premier onboarding, you can skip to 4b.
+> Follow the steps in 5a only if you're new to Twilio Engage Premier. If you've already [configured messaging services](/docs/engage/onboarding/#generate-an-api-key-and-select-your-messaging-services) as part of Twilio Engage Premier onboarding, you can skip to 5b.
 
 1. In your Twilio console, select the **Account** dropdown menu, then **API keys & tokens**.
 2. On the Auth tokens & API keys page, click **Create API key**.
@@ -266,7 +352,10 @@ Follow these steps to set up mobile push in Twilio Engage.
 12. Click **Verify**, then select the messaging services you want to use in your space.
 13. Click **Save Twilio Account.**
 
-### 4b. Create a new push service
+> info "Removing messaging services"
+> To remove a messaging service, navigate to Engage > Engage settings > Channels and click the pencil icon under **Twilio messaging service**. Enter the account credentials by either using the API key secret or creating a new API key. Once you've selected the desired services, they will override the existing ones, effectively removing the ones you no longer need.
+
+### 5b. Create a new push service
 
 Complete mobile push onboarding by creating a new push service:
 
@@ -276,6 +365,6 @@ Complete mobile push onboarding by creating a new push service:
 4. Name the push service, select or create APN and FCM credentials, then click **Create Push Service**.
 5. Your new messaging service appears in the **Add messaging services** dropdown. Select it, then click **Save**.
 
-## 5. Build a mobile push template
+## Build a mobile push template
 
 Now that you've completed mobile push setup, you're ready to [build a mobile push template](/docs/engage/content/mobile-push/).

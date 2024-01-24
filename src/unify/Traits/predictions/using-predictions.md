@@ -70,49 +70,47 @@ Predictions may not be as beneficial in the following situations:
 - **When you sell limited but highly-priced items**, like enterprise software, complex medical machines, and so on; this also applies if you're in the B2B sector.
 - **When you don't yet have enough data**; your model could produce errors if, for example, your target is too new and lacks sufficient data. Waiting a month could allow Segment to gather more predictive data.
 
-## Frequently asked questions
+## FAQs
 
-{% faq %}
-{% faqitem What type of machine learning model do you use? %}
+#### What type of machine learning model do you use? 
+
 Segment uses a binary classification model that uses decision trees.
-{% endfaqitem %}
 
-{% faqitem What level of confidence can I have in my predictions? %}
+#### What level of confidence can I have in my predictions? 
+
 Once Segment creates your prediction, you can check the model statistics page, where Segments shows you how the model was created. Segment also maintains automated systems that monitor model performance and will alert you if your model is not predictive.
-{% endfaqitem %}
 
-{% faqitem How long do predictions take to create?  %}
+#### How long do predictions take to create? 
+
 Trait creation depends on the amount of data, but Segment expects predictions to be completed in around 24 hours. For larger customers, however, this could take 48 hours. Predictions shows a status of `In Progress` while computing; Segment updates this status when customers are scored.
-{% endfaqitem %}
 
-{% faqitem What are AUC, log loss, and lift quality? %}
+#### What are AUC, log loss, and lift quality? 
+
 These data science statistics measure the effectiveness of Segment's predictions when tested against historical data. For more information, refer to [ROC Curve and AUC](https://developers.google.com/machine-learning/crash-course/classification/roc-and-auc){:target="_blank"}, [The Lift Curve in Machine Learning](https://howtolearnmachinelearning.com/articles/the-lift-curve-in-machine-learning/){:target="_blank"}, and [Intuition behind log-loss score](https://towardsdatascience.com/intuition-behind-log-loss-score-4e0c9979680a){:target="_blank"}.
-{% endfaqitem %}
 
-{% faqitem What is the Prediction Quality Score? %}
+#### What is the Prediction Quality Score? 
+
 The Prediction Quality Score factors AUC, log loss, and lift quality to determine whether Segment recommends using the prediction. A model can have a score of Poor, Fair, Good, or Excellent.
-{% endfaqitem %}
 
-{% faqitem How do you store trait values? %}
+#### How do you store trait values? 
+
 The created trait value represents the user's percentile cohort. This value refreshes every seven days. If you see `0.85` on a user's profile, this means the user is in the 85th percentile, or the top 15% for the prediction.
-{% endfaqitem %}
 
-{% faqitem How frequently do you re-train the model? %}
+#### How frequently do you re-train the model? 
+
 Segment rebuilds the machine learning model every 30 days.
-{% endfaqitem %}
 
-{% faqitem How frequently do you update trait values? %}
+#### How frequently do you update trait values? 
+
 Every seven days.
-{% endfaqitem %}
 
-{% faqitem How many predictions can I have? %}
-You can have 10 active predictions.
-{% endfaqitem %}
+#### How many predictions can I have? 
 
-{% faqitem Are there any known Predictions limitations? %}
+You get five predictions as part of Engage Foundations or Unify Plus. To purchase more predictions, reach out to your CSM.
+
+#### Are there any known Predictions limitations? 
+
 Yes. Keep the following in mind when you work with Predictions:
 
 - **Predictions made for more than 100 million users will fail.** Segment recommends making predictions only for non-anonymous users, or, as an alternative, use the Starting Cohort to narrow down the audience for which you want to make a prediction.
 - **Predictions may not work as intended if you track more than a thousand unique events in your workspace.** If this applies to your use case, [contact Segment Support](https://segment.com/help/contact/){:target="_blank"} for help with removing unused events, which will allow you to create predictions.
-{% endfaqitem %}
-{% endfaq %}

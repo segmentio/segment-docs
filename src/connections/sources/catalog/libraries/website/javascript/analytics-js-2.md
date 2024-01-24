@@ -65,9 +65,6 @@ Analytics.js 2.0 includes the following open source components:
 Copyright Luke Edwards <[luke.edwards05@gmail.com](mailto:luke.edwards05@gmail.com)> ([lukeed.com](https://lukeed.com/))
 License: MIT License, available here: [https://github.com/lukeed/uuid/blob/master/license](https://github.com/lukeed/uuid/blob/master/license)
 
-**component-url v0.2.1** ([https://github.com/component/url](https://github.com/component/url))
-Copyright (c) 2014 Component
-License: MIT License, available here: [https://github.com/component/url/blob/master/Readme.md](https://github.com/component/url/blob/master/Readme.md)
 
 **dset v2.0.1** ([https://github.com/lukeed/dset](https://github.com/lukeed/dset))
 Copyright (c) Luke Edwards <[luke.edwards05@gmail.com](mailto:luke.edwards05@gmail.com)> ([lukeed.com](https://lukeed.com/))

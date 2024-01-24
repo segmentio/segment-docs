@@ -23,7 +23,7 @@ Your changes appear in the Segment CDN in about 45 minutes, and then Analytics.j
 
 ## Identify
 
-If you're not familiar with the Segment Specs, take a look to understand what the [identify method](/docs/connections/spec/identify/) does. Identify calls sent to Segment will be transformed and sent to [FullStory's](https://help.fullstory.com/hc/en-us/articles/360020828113) `FS.identify` method.
+If you're not familiar with the Segment Specs, take a look to understand what the [identify method](/docs/connections/spec/identify/) does. Identify calls sent to Segment will be transformed and sent to [FullStory's](https://help.fullstory.com/hc/en-us/articles/360020828113){:target="_blank"} `FS.identify` method.
 
 An example call which does not include a `userId` will send FullStory the value of the `anonymousId` and would look like:
 
@@ -48,7 +48,7 @@ analytics.identify("userId123", {
 
 ### Specifying display name and email
 
-Both `email` and `displayName` are special traits that will be passed to FullStory to be used in their interface as explained in [FullStory's docs](https://help.fullstory.com/hc/en-us/articles/360020828113). These traits are optional.
+Both `email` and `displayName` are special traits that will be passed to FullStory to be used in their interface as explained in [FullStory's docs](https://help.fullstory.com/hc/en-us/articles/360020828113){:target="_blank"}. These traits are optional.
 
 ```
 analytics.identify("userId123", {

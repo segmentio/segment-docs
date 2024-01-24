@@ -1,6 +1,6 @@
 ---
 rewrite: true
-title: HubSpot Destination
+title: HubSpot (Classic) Destination
 hide-personas-partial: true
 cmode-override: true
 id: 54521fd725e721e32a72eec1
@@ -199,9 +199,9 @@ HubSpot Plan: API Add-On (Any Tier)
 
 ### Sending Dates as Property Values
 
-HubSpot's API has [specific requirements](http://developers.hubspot.com/docs/faq/how-should-timestamps-be-formatted-for-hubspots-apis) regarding you to format dates before they deliver as contact properties with date types.
+HubSpot's API has [specific requirements](http://developers.hubspot.com/docs/faq/how-should-timestamps-be-formatted-for-hubspots-apis){:target="_blank"} regarding you to format dates before they deliver as contact properties with date types.
 
-To ensure proper transformation of these properties, pass them to Segment as [ISO-8601](https://en.wikipedia.org/wiki/ISO_8601) formatted strings and **not** as UNIX timestamps. Here's a JavaScript example:
+To ensure proper transformation of these properties, pass them to Segment as [ISO-8601](https://en.wikipedia.org/wiki/ISO_8601){:target="_blank"} formatted strings and **not** as UNIX timestamps. Here's a JavaScript example:
 
 ```js
 analytics.identify('userid', {
@@ -215,7 +215,7 @@ When using any of Segment's server-side sources, a connector infers `traits.life
 
 ### Loading Forms SDK
 
-Segment gives you the option to load the [HubSpot Forms SDK](https://developers.hubspot.com/docs/methods/forms/advanced_form_options) alongside their tracking library. Enable the **Load Forms SDK** setting when you your HubSpot integration.
+Segment gives you the option to load the [HubSpot Forms SDK](https://developers.hubspot.com/docs/methods/forms/advanced_form_options){:target="_blank"} alongside their tracking library. Enable the **Load Forms SDK** setting when you your HubSpot integration.
 
 > info ""
 > The Forms SDK expects to load synchronously but analytics.js loads asynchronously. To interact with the API, run code inside an [analytics.ready](/docs/connections/sources/catalog/libraries/website/javascript/#ready) callback. For example:

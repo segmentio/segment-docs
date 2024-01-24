@@ -3,9 +3,9 @@ title: Worthy Destination
 rewrite: true
 ---​
 
-[Worthy.ai](https://worthy.ai) helps advertisers improve their marketing efficiency through using predictive analytics and signal testing.
+[Worthy.ai](https://worthy.ai){:target="_blank"} helps advertisers improve their marketing efficiency through using predictive analytics and signal testing.
 
-[Worthy.ai](https://worthy.ai) maintains this documentation. For any issues with the destination, [contact Worthy support](mailto:engineering@worthy.ai).
+[Worthy.ai](https://worthy.ai){:target="_blank"} maintains this documentation. For any issues with the destination, [contact Worthy support](mailto:engineering@worthy.ai).
 
 ## Getting started
 

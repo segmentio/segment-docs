@@ -11,8 +11,6 @@ beta: true
 
 This destination is maintained by CDP Resolution. For any issues with the destination, [contact the CDP Resolution support team](mailto:support@cdpresolution.com).
 
-{% include content/ajs-upgrade.md %}
-
 How this works: A visitor lands on a digital property that has the segment.io analytics.js script connected to the CDP Resolution (Browser) Destination enabled.  For each session, the anonymous ID is sent to CDP Resolution to check if our cookie is present on the browser.  This allows CDP Resolution to resolve the cookie against our graph. If found, the profile and firmographics data are sent to segment.io against a source that is configured within CDP Resolution platform.
 
 ## Getting started

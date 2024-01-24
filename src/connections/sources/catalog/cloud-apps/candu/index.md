@@ -6,14 +6,14 @@ id: nmb56PunPc
 ---
 {% include content/source-region-unsupported.md %}
 
-[Candu](https://candu.ai/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) is the first UI editor for enterprise applications that allows you to drag and drop your own UI components to build product experiences — no coding required.
+[Candu](https://candu.ai/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners){:target="_blank”} is the first UI editor for enterprise applications that allows you to drag and drop your own UI components to build product experiences — no coding required.
  
 Candu's Source integration automatically returns user interaction data to Segment, where you can join it with production data. This allows you to understand how a user's interactions with Candu content drive downstream behaviors, such as feature adoption and renewal. 
 
 This source is maintained by Candu. For any issues with the source, [contact the Candu support team](mailto:support@candu.ai).
 
 > success ""
-> **Good to know**: This page is about the Candu Segment source, which sends data _into_ Segment. There's also a page about the [Candu Segment destination](https://segment.com/docs/connections/destinations/catalog/candu/), which receives data from Segment!
+> **Good to know**: This page is about the Candu Segment source, which sends data _into_ Segment. There's also a page about the [Candu Segment destination](/docs/connections/destinations/catalog/candu/), which receives data from Segment!
 
 
 ## Getting Started
@@ -62,6 +62,6 @@ The tables below list the properties included in the events listed above.
 
 ## Adding Destinations
 
-The Candu Source works best when you also connect Candu as a Destination. With the [Candu Destination](https://segment.com/docs/connections/destinations/catalog/candu/), you can use Segment to send Candu user and event data, which you can use to personalize product experiences for different users. 
+The Candu Source works best when you also connect Candu as a Destination. With the [Candu Destination](/docs/connections/destinations/catalog/candu/), you can use Segment to send Candu user and event data, which you can use to personalize product experiences for different users. 
 
 If you experience issues with how Candu events arrive to Segment, [contact the Candu support team](mailto:support@candu.ai).

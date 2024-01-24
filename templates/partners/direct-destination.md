@@ -32,7 +32,7 @@ title: [integration_name] Destination
 
 > Include a 1-2 sentence introduction to your company and the value it provides to customers - updating the name and hyperlink. Please leave the utm string unchanged.
 
-[YOURINTEGRATION](https://yourintegration.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) provides self-serve predictive analytics for growth marketers, leveraging machine learning to automate audience insights and recommendations.
+[YOURINTEGRATION](https://yourintegration.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners){:target="_blank”} provides self-serve predictive analytics for growth marketers, leveraging machine learning to automate audience insights and recommendations.
 
 > Update your company name and support email address.
 
@@ -45,11 +45,12 @@ This destination is maintained by YOURINTEGRATION. For any issues with the desti
 
 > Include clear, succinct steps including hyperlinks to where customers can locate their API Key in your app. If there is an expected delay for a customer to see data flow into your integration, please make that explicit.
 
-1. From the Destinations catalog page in the Segment App, click **Add Destination**.
-2. Search for "YOURINTEGRATION" in the Destinations Catalog, and select the "YOURINTEGRATION" destination.
-3. Choose which Source should send data to the "YOURINTEGRATION" destination.
-4. Go to the [YOURINTEGRATION dashboard](https://YOURINTEGRATION.com/dashboard){:target="_blank"}, find and copy the "API key".
-5. Enter the "API Key" in the "YOURINTEGRATION" destination settings in Segment.
+1. From your workspace's [Destination catalog page](https://app.segment.com/goto-my-workspace/destinations/catalog){:target="_blank”} search for "<YOURINTEGRATION>"
+2. Select <YOURINTEGRATION> and click **Add Destination**
+3. Select an existing Source to connect to <YOURINTEGRATION> (Actions).
+> (delete after reading) describe steps to filling in relevant destinations settings such as the example steps below
+4. Go to the [<YOURINTEGRATION> dashboard](https://YOURINTEGRATION.com/dashboard){:target="_blank"}, find and copy the **API key**.
+5. Enter the **API Key** in the <YOURINTEGRATION> destination settings in Segment.
 
 
 > For each of the following call types (Page, Screen, Identify, Track, Group), update:
@@ -108,6 +109,5 @@ analytics.track('Login Button Clicked')
 
 Segment sends Track calls to YOURINTEGRATION as a `track` event.
 
----
 
-> Congratulations! 🎉 You’ve finished the documentation for your Segment integration. If there’s any additional information or nuance which did not fit in the above template and that you want to share with our mutual customers, feel free to include these as a separate section for us to review. If not, you may now submit this doc to our team via your designated Slack Channel and we’ll respond with updates when  we publish it and your integration!
+> (delete after reading) Congratulations! 🎉 You’ve finished the documentation for your Segment integration. If there’s any additional information or nuance which did not fit in the above template and that you want to share with our mutual customers, feel free to include these as a separate section for us to review. If not, you may now submit this doc to our team via your designated Slack Channel and we’ll respond with updates when  we publish it and your integration!

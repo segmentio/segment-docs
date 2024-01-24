@@ -4,6 +4,7 @@ strat: kotlin-android
 redirect_from:
   - '/connections/sources/catalog/cloud-apps/kotlin/'
 id: dZeHygTSD4
+support_type: flagship
 tags:
   - android
   - kotlin
@@ -121,6 +122,7 @@ To get started with the Analytics-Kotlin mobile library:
     `writeKey` *required* | This is your Segment write key. |
     `application` | Default set to `null`. <br> The application specific object (in the case of `Android: ApplicationContext`).
     `apiHost` | Default set to `api.segment.io/v1`. <br> This sets a default API Host to which Segment sends events. |
+    `cdnHost` | Default set to `cdn-settings.segment.com/v1`. <br> This sets a default CDN Host from which Segment retrieves settings. |
     `autoAddSegmentDestination` | Default set to `true`. <br> This automatically adds the Segment Destination plugin. You can set this to `false` if you want to manually add the Segment Destination plugin. |
     `collectDeviceId` | Default set to `false`. <br> Set to `true` to automatically collect the device Id. <br> The [DRM API](https://source.android.com/devices/drm) generates the device ID. If the ID didn't generate previously (for example, because the app was newly installed), an empty string shows before the ID generation completes. You can overwrite the device ID with a custom ID by writing your own [`plugin`](#plugin) |
     `defaultSettings` | Default set to `{}`. <br> The settings object used as fallback in case of network failure. |

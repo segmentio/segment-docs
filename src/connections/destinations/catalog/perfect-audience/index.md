@@ -3,9 +3,11 @@ rewrite: true
 title: Perfect Audience Destination
 id: 54521fda25e721e32a72eee5
 ---
-[Perfect audience](http://www.perfectaudience.com/) is a retargeting platform that lets marketers bring back lost web visitors through Facebook ads and banner ads in the web.
+[Perfect audience](http://www.perfectaudience.com/){:target="_blank"} is a retargeting platform that lets marketers bring back lost web visitors through Facebook ads and banner ads in the web.
 
-If you notice any gaps, out-dated information or simply want to leave some feedback to help us improve our documentation, [let us know](https://segment.com/help/contact)!
+If you notice any gaps, out-dated information or simply want to leave some feedback to help us improve our documentation, [let Segment know](https://segment.com/help/contact){:target="_blank"}.
+
+<!-- TODO: take out "let us/let Segment know" links--->
 
 ## Getting Started
 

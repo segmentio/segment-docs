@@ -2,13 +2,13 @@
 title: Snapchat Audience Destination
 id: 5f289f7639d45a397a1fb880
 ---
-The [Snapchat Ads](https://forbusiness.snapchat.com/advertising/targeting) product provides a way to target advertisements to a global audience and drive meaningful results.
+The [Snapchat Ads](https://forbusiness.snapchat.com/advertising/targeting){:target="_blank"} product provides a way to target advertisements to a global audience and drive meaningful results.
 
 Segment's integration with Snapchat Ad's Snap Audience Match (SAM) enables Segment customers to sync audiences created in Engage with Snapchat Advertising
 
 For more information about advertising with Snapchat:
-- [SAM Audiences](https://businesshelp.snapchat.com/s/article/create-sam-audience?language=en_US)
-- [Snap Audience Match](https://developers.snapchat.com/api/docs/#create-an-audience-segment) (for developers)
+- [SAM Audiences](https://businesshelp.snapchat.com/s/article/create-sam-audience?language=en_US){:target="_blank"}
+- [Snap Audience Match](https://developers.snapchat.com/api/docs/#create-an-audience-segment){:target="_blank"} (for developers)
 
 ## Details
 
@@ -41,7 +41,7 @@ The Snapchat Audiences destination syncs audience data from Engage to Snapchat A
    4. Click the destination and confirm the identifier: `Email`, `Phone`, or `Mobile ID`. Click **Save**.
 
       - Segment sends hashed `email` or `idfa` values to Snapchat so that they can match those identifiers against Snapchat users.
-      - Segment also supports `phoneNumber` if it is present on the user's profile. Please make sure you pass phone numbers in a format that Snapchat supports. Read more in Snapchat's documentation regarding [Normalizing and Hashing](https://developers.snapchat.com/api/docs/#normalizing-hashing).
+      - Segment also supports `phoneNumber` if it is present on the user's profile. Please make sure you pass phone numbers in a format that Snapchat supports. Read more in Snapchat's documentation regarding [Normalizing and Hashing](https://developers.snapchat.com/api/docs/#normalizing-hashing){:target="_blank"}.
 
          **NOTE**: [Protocols](/docs/protocols) customers can use [Transformations](/docs/protocols/transform/) to change `phoneNumber` values to meet Snapchat's requirements.
 
@@ -55,7 +55,7 @@ The initial synchronization of audience data may take several hours, depending o
 
 Verify the following:
 - You're collecting user phone numbers when users are added to the Engage Audience, and that you have configured the destination to send `Phone`.
-- You're collecting phone numbers in a format that Snapchat supports. For more information, see Snapchat's documentation regarding [Normalizing and Hashing](https://developers.snapchat.com/api/docs/#normalizing-hashing).
+- You're collecting phone numbers in a format that Snapchat supports. For more information, see Snapchat's documentation regarding [Normalizing and Hashing](https://developers.snapchat.com/api/docs/#normalizing-hashing){:target="_blank"}.
 
 ### Why can't I select our Ads Account during the destination setup?
 

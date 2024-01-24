@@ -3,12 +3,9 @@ title: Kitemetrics Destination
 rewrite: true
 id: 5ca6a9bcc7781c00018a4580
 ---
-[Kitemetrics](https://kitemetrics.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) provides keyword level attribution for Apple Search Ads and associates them with In-App Purchases.  Kitemetrics allows you to use automation to easily manage and optimize Apple Search Ads campaigns and bids.
+[Kitemetrics](https://kitemetrics.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners){:target="_blank”} provides keyword level attribution for Apple Search Ads and associates them with In-App Purchases.  Kitemetrics allows you to use automation to easily manage and optimize Apple Search Ads campaigns and bids.
 
 This destination is maintained by Kitemetrics. For any issues with the destination, [contact the Kitemetrics Support team](mailto:support@kitemetrics.com).
-
-{% include content/beta-note.md %}
-
 
 ## Getting Started
 
@@ -17,7 +14,7 @@ This destination is maintained by Kitemetrics. For any issues with the destinati
 
 1. From the Segment web app, click **Catalog**.
 2. Search for "Kitemetrics" in the Catalog, select it, and choose which of your sources to connect the destination to.
-3. Enter the "API Key" into your Segment Settings UI which you can find from your [Kitemetrics Account Settings -> Applications page](https://cloud.kitemetrics.com/applications).
+3. Enter the "API Key" into your Segment Settings UI which you can find from your [Kitemetrics Account Settings -> Applications page](https://cloud.kitemetrics.com/applications){:target="_blank”}.
 4. Once data is flowing from your source to the Kitemetrics destination, you will need to refresh your browser to view the latest data in your Kitemetrics analytics or keywords dashboard.
 
 
@@ -25,7 +22,7 @@ This destination is maintained by Kitemetrics. For any issues with the destinati
 
 If you're not familiar with the Segment Specs, take a look to understand what the [Track method](/docs/connections/spec/track/) does.
 
-In order to track Apple Search Ads attribution events you will need to include the [Analytics-iAds-Attribution](https://github.com/segmentio/analytics-ios-iads-attribution) middleware library in your iOS source application.
+In order to track Apple Search Ads attribution events you will need to include the [Analytics-iAds-Attribution](https://github.com/segmentio/analytics-ios-iads-attribution){:target="_blank”} middleware library in your iOS source application.
 
 If you are using Cocoa Pods, ensure the following two lines are included:
 

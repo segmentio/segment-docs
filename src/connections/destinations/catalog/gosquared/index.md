@@ -20,20 +20,20 @@ When you enter your GoSquared site token into Segment, website tracking will aut
 
 ## Mobile and Server-Side Tracking
 
-To track data using Segment's mobile and server-side sources, you will need to enter a GoSquared API Key, which can be created in your [GoSquared account](https://www.gosquared.com/settings/api). The API Key must have "Write Tracking" access. All functionality is supported by mobile and server-side tracking.
+To track data using Segment's mobile and server-side sources, you will need to enter a GoSquared API Key, which can be created in your [GoSquared account](https://www.gosquared.com/settings/api){:target="_blank"}. The API Key must have "Write Tracking" access. All functionality is supported by mobile and server-side tracking.
 
 - - -
 
 ## Page
 
-When you call [`page`](/docs/connections/spec/page/), we call GoSquared's [`track`](https://www.gosquared.com/docs/tracking/api/js#pageviews) to track a pageview. By default the Segment JavaScript snippet includes a call to [`page`](/docs/connections/spec/page/) so you don't need to add it manually.
+When you call [`page`](/docs/connections/spec/page/), we call GoSquared's [`track`](https://www.gosquared.com/docs/tracking/api/js#pageviews){:target="_blank"} to track a pageview. By default the Segment JavaScript snippet includes a call to [`page`](/docs/connections/spec/page/) so you don't need to add it manually.
 
 Page calls will be tracked from any Segment library, but GoSquared's real-time analytics will be most accurate using front-end website tracking.
 
 
 ## Identify
 
-When you call [`identify`](/docs/connections/spec/identify/), we call GoSquared's [`identify`](https://www.gosquared.com/docs/tracking/api/js#identify). Once identified with a `userId`, that person (along with historical browsing information from before they were identified) will be visible and queryable in [GoSquared People Analytics](https://www.gosquared.com/software/people).
+When you call [`identify`](/docs/connections/spec/identify/), we call GoSquared's [`identify`](https://www.gosquared.com/docs/tracking/api/js#identify){:target="_blank"}. Once identified with a `userId`, that person (along with historical browsing information from before they were identified) will be visible and queryable in [GoSquared People Analytics](https://www.gosquared.com/software/people){:target="_blank"}.
 
 GoSquared expects a slightly different set of traits from us, so we start by transforming the traits to match their format.
 
@@ -45,11 +45,11 @@ GoSquared expects a slightly different set of traits from us, so we start by tra
 | `title`     | `company_position` |
 | `industry`  | `company_industry` |
 
-GoSquared recognises certain traits as "special" and requires all other traits to be sent under a namespace of `custom`. The Segment code handles all of this, sending recognised [special properties](https://www.gosquared.com/docs/tracking/api/js#properties) and custom properties in the correct places.
+GoSquared recognises certain traits as "special" and requires all other traits to be sent under a namespace of `custom`. The Segment code handles all of this, sending recognised [special properties](https://www.gosquared.com/docs/tracking/api/js#properties){:target="_blank"} and custom properties in the correct places.
 
 ## Track
 
-When you call [`track`](/docs/connections/spec/track/), we call GoSquared's [`event`](https://www.gosquared.com/docs/tracking/api/js#events) with the same arguments.
+When you call [`track`](/docs/connections/spec/track/), we call GoSquared's [`event`](https://www.gosquared.com/docs/tracking/api/js#events){:target="_blank"} with the same arguments.
 
 
 ## Screen
@@ -62,4 +62,4 @@ GoSquared converts the [`group`](/docs/connections/spec/group/) method into an i
 
 ## Ecommerce
 
-GoSquared supports our [Ecommerce tracking API](/docs/connections/spec/ecommerce/v2/#order-completed), so the `Order Completed` event will be tracked as a [GoSquared Transaction](https://www.gosquared.com/docs/tracking/api/js#transactions).
+GoSquared supports our [Ecommerce tracking API](/docs/connections/spec/ecommerce/v2/#order-completed), so the `Order Completed` event will be tracked as a [GoSquared Transaction](https://www.gosquared.com/docs/tracking/api/js#transactions){:target="_blank"}.

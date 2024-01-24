@@ -6,7 +6,7 @@ This destination is maintained by Salesmachine.
 
 ## Getting Started
 
-In order to push segment data to Salesmachine.io, you need to provide Salesmachine.io api_token and api_secret. This tokens are available on the [administration panel](https://my.salesmachine.io/app/api/edit).
+In order to push segment data to Salesmachine.io, you need to provide Salesmachine.io api_token and api_secret. This tokens are available on the [administration panel](https://my.salesmachine.io/app/api/edit){:target="_blank"}.
 
 Salemachine.io supports the `identify`, `track`, `page`, `group` and `alias` methods.
 

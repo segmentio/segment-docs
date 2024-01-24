@@ -3,11 +3,10 @@ rewrite: true
 title: UserIQ Destination
 id: 5c742629088b680001eb30bb
 ---
-[UserIQ](http://useriq.com) empowers companies to deliver what each user needs to be successful in every moment, starting with adoption. Our platform collects user engagement data from your product and allows you to communicate to your users when they are most engaged: within the product itself.
+[UserIQ](http://useriq.com){:target="_blank"} empowers companies to deliver what each user needs to be successful in every moment, starting with adoption. Our platform collects user engagement data from your product and allows you to communicate to your users when they are most engaged: within the product itself.
 
 This destination is maintained by UserIQ. For any issues with the destination, [contact the UserIQ Support team](mailto:support@useriq.com).
 
-{% include content/beta-note.md %}
 
 ## Getting Started
 
@@ -15,7 +14,7 @@ This destination is maintained by UserIQ. For any issues with the destination, [
 
 1. From the Segment web app, click **Catalog**.
 2. Search for "UserIQ" in the Catalog, select it, and choose which of your sources to connect the destination to.
-3. Enter the "API Key" into your Segment Settings UI which you can find from your [UserIQ dashboard](https://app.useriq.com/) [Site Settings -> API Key].
+3. Enter the "API Key" into your Segment Settings UI which you can find from your [UserIQ dashboard](https://app.useriq.com/){:target="_blank"} [Site Settings -> API Key].
 
 ## Page
 

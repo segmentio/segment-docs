@@ -12,7 +12,7 @@ This source is maintained by Mailmodo. For any issues with the source, [contact 
 ## Getting Started
 
 #### Step 1: Add a new Mailmodo Source to Segment
-1. From your workspace’s [Sources catalog page](https://app.segment.com/goto-my-workspace/sources/catalog) click **Add Source**.
+1. From your workspace’s [Sources catalog page](https://app.segment.com/goto-my-workspace/sources/catalog){:target="_blank"} click **Add Source**.
 2. Search for “Mailmodo” in the Sources Catalog, select Mailmodo, and click **Add Source**.
 3. On the next screen, give the Source a nickname and configure any other settings. The nickname is used as a label in the Segment app, and Segment creates a related schema name in your warehouse. The nickname can be anything, but we recommend using something that reflects the source itself and distinguishes it amongst your environments (for example, Mailmodo_Campaigns).
   The nickname is used as a label in the Segment app, and Segment creates a related schema name in your warehouse. The nickname can be anything, but we recommend using something that reflects the source itself and distinguishes it amongst your environments (e.g. Mailmodo_Campaigns).
@@ -78,4 +78,4 @@ This table lists event-specific properties Mailmodo sends to Segment:
 The Mailmodo Source only works when you connect Mailmodo as a Destination. With the Mailmodo Destination, you can use Segment to send identify and track calls to Mailmodo and create target audiences you can reach with interactive emails. 
 
 
-Want to start sending data to Mailmodo? Learn how by reading the [Mailmodo Destination docs](https://support.mailmodo.com/en/support/solutions/articles/84000351518).
+Want to start sending data to Mailmodo? Learn how by reading the [Mailmodo Destination docs](https://support.mailmodo.com/en/support/solutions/articles/84000351518){:target="_blank"}.

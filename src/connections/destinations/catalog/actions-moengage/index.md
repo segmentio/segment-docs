@@ -18,10 +18,6 @@ id: 620feaa207e70f6c6a765ff7
 > info ""
 > This page is about the [Actions-framework](/docs/connections/destinations/actions/) MoEngage Segment destination. There's also a page about the [non-Actions MoEngage Destination](/docs/connections/destinations/catalog/moengage/). Both of these destinations receives data from Segment.
 
-<!-- This include describes the requirement of A.js 2.0 or higher for Actions compatibility, and is required if your destination has a web component. -->
-
-{% include content/ajs-upgrade.md %}
-
 <!-- In the section below, explain the value of this actions-based destination over the classic version, if applicable. If you don't have a classic version of the destination, remove this section. -->
 
 This destination is maintained by MoEngage. For any issues with the destination, [contact the MoEngage Support team](mailto:support@moengage.com).
@@ -52,7 +48,7 @@ MoEngage (Actions) provides the following benefits over the MoEngage Classic des
      Name | The name of the Moengage destination such as MoEngage prod, MoEngage test. |
      App Id | Navigate to Settings > API > General on your MoEngage dashboard to access the App ID. |
      App Key  | Navigate to Settings > API > General on your MoEngage dashboard to access the App Key. |
-     Endpoint Region | This is your MoEngage data center. [Read more](https://help.moengage.com/hc/en-us/articles/360057030512-Data-Centers-in-MoEngage). |
+     Endpoint Region | This is your MoEngage data center. [Read more](https://help.moengage.com/hc/en-us/articles/360057030512-Data-Centers-in-MoEngage){:target="_blank”}. |
 
 7. Enable the toggle option to **Enable** the destination and click **Save changes**.
 
@@ -83,8 +79,8 @@ If successful, the data starts flowing into your MoEngage account in 3-5 minutes
 
 <!-- If applicable, add information regarding the migration from a classic destination to an Actions-based version below -->
 
+<!-- IG, 12/23 - The only content under this header was the "upgrade to A.js 2.0!" note, which I removed because all sources were automatically upgraded in 2/2023. Because there's nothing else under this header, I'll hide it for now.
+
 ## Migration from the classic MoEngage destination
 
-<!-- Include any pertinent information here. -->
-
-{% include content/ajs-upgrade.md %}
+Include any pertinent information here. -->

@@ -42,7 +42,7 @@ Below is an example of the `identify()` call Looker will send to Segment for the
 
 **Rename fields**
 
-If you don't like the formatting of field names as they appear in Segment, you can use [Table Calculations](https://docs.looker.com/exploring-data/using-table-calculations) to create a new
+If you don't like the formatting of field names as they appear in Segment, you can use [Table Calculations](https://docs.looker.com/exploring-data/using-table-calculations){:target="_blank"} to create a new
 version of the field with the desired name. Then you can hide the original field from the table visualization.
 
 ### Send Looks to your Segment Destinations

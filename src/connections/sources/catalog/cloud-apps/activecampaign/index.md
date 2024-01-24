@@ -4,7 +4,7 @@ id: XE0vf1bTDh
 ---
 {% include content/source-region-unsupported.md %}
 
-Active Campaign is an email marketing & marketing automation solution for small businesses. [Visit Website](http://www.activecampaign.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners)
+Active Campaign is an email marketing & marketing automation solution for small businesses. [Visit Website](http://www.activecampaign.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners){:target="_blank"}
 
 Take your company's email analysis to the next level by **adding ActiveCampaign as a Source to Segment.** Segment automatically  collects email events like `Email Delivered` and `Email Opened`, forward them to your destinations, and load them into your data warehouse. 
 

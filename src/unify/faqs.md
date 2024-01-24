@@ -1,5 +1,5 @@
 ---
-title: Unify Frequently Asked Questions
+title: Unify FAQs
 plan: unify
 ---
 
@@ -53,4 +53,7 @@ No. As the Identity Graph uses ExternalIDs, they remain for the lifetime of the 
 
 ### Can I delete specific events from a user profile in Unify? 
 No. Alternatively, you may delete the entire user profile from Segment using a [GDPR deletion request](/docs/privacy/user-deletion-and-suppression/).
+
+### How does profile creation affect MTUs, particularly where a profile isn't merged with the parent profile due to exceeding the merge limit?
+Segment determines the Monthly Tracked Users (MTUs) count by the number of unique user IDs and anonymous IDs processed, regardless of how you manage these profiles in Unify and Engage. This count is taken as events are sent to Segment, before they reach Unify and Engage. Therefore, the creation of new profiles or the merging of profiles in Unify doesn't affect the MTU count. The MTU count only increases when you send new unique user or anonymous IDs to Segment.
  
