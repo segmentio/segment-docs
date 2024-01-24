@@ -78,8 +78,8 @@ analytics.track("Registered", {
 });
 ```
 
-Track calls will sent as a `tracking event` to Kustomer on the timeline of the customer who was tracked. If the `kustomer_session_id` is included, it will cluster this tracking event into a single "session" on the customer's timeline. If no `kustomer_session_id` is supplied, we will automatically generate session IDs based on time between tracking events. (Read why Segment doesn't have session tracking [here](https://segment.com/blog/facts-vs-stories-why-segment-has-no-sessions-api/)).
+Track calls send as a `tracking event` to Kustomer on the timeline of the customer who was tracked. If the `kustomer_session_id` is included, it clusters this tracking event into a single "session" on the customer's timeline. If no `kustomer_session_id` is supplied, Segment automatically generates session IDs based on time between tracking events. See why [Segment doesn't have session tracking](https://segment.com/blog/facts-vs-stories-why-segment-has-no-sessions-api/).
 
 
-## Engage Limitation
-Kustomer destination only accepts standard properties (name, email, phone, etc.) and do not support custom properties. Any Audience/Computed Trait created in Engage will be considered a customer property by Kustomer destination, and is not supported.
+## Engage limitation
+The Kustomer destination only accepts standard properties such as name, email, and phone. It doesn't support custom properties. Any Audience or Computed Trait created in Engage is considered a customer property by Kustomer destination and isn't supported.
