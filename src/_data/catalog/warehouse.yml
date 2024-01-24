@@ -10,6 +10,7 @@ items:
   status: PUBLIC
   endpoints:
   - us
+  - eu
   regions:
   - us
   - eu
@@ -26,6 +27,7 @@ items:
   status: PUBLIC
   endpoints:
   - us
+  - eu
   regions:
   - us
   - eu
@@ -41,6 +43,7 @@ items:
   status: PUBLIC
   endpoints:
   - us
+  - eu
   regions:
   - us
   - eu
@@ -58,6 +61,7 @@ items:
   status: PUBLIC
   endpoints:
   - us
+  - eu
   regions:
   - us
   - eu
@@ -75,6 +79,7 @@ items:
   status: PRIVATE_BETA
   endpoints:
   - us
+  - eu
   regions:
   - us
   - eu
@@ -92,6 +97,7 @@ items:
   status: PUBLIC_BETA
   endpoints:
   - us
+  - eu
   regions:
   - us
   - eu
@@ -109,6 +115,7 @@ items:
   status: PUBLIC
   endpoints:
   - us
+  - eu
   regions:
   - us
   - eu
@@ -126,6 +133,7 @@ items:
   status: PUBLIC
   endpoints:
   - us
+  - eu
   regions:
   - us
   - eu
@@ -143,6 +151,7 @@ items:
   status: PUBLIC
   endpoints:
   - us
+  - eu
   regions:
   - us
   - eu
@@ -160,6 +169,7 @@ items:
   status: PUBLIC
   endpoints:
   - us
+  - eu
   regions:
   - us
   - eu
@@ -177,6 +187,7 @@ items:
   status: PUBLIC
   endpoints:
   - us
+  - eu
   regions:
   - us
   - eu
