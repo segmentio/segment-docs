@@ -20,7 +20,7 @@ To create an audience with Generative Audiences:
 1. From the Segment app, navigate to **Engage > Audiences**.
 2. Click **+ New audience**, then select **Audience** from the dropdown menu.
 3. Select your audience type. Generative Audiences is available for all audience types except Linked Audiences.
-4. From the Build screen, click **Help me build**.
+4. From the Build screen, click **Build with AI**.
 5. Enter your audience prompt in the description box. 
 - Use a minimum of 20 characters and up to 300 characters maximum. 
 6. Click **Build**. Based on your prompt, CustomerAI generates audience conditions for your review. 
@@ -31,7 +31,7 @@ To create an audience with Generative Audiences:
 
 ### Modify an audience description 
 
-Once Segment generates the audience conditions, the prompt box remains open for reference. You can close this box, or modify your audience description and click **Build** again. 
+Once Segment generates the audience conditions, the prompt box remains open for reference. You can close this box, or modify your audience description and click **Build with AI** again. 
 
 Modifying an audience description overwrites the existing conditions previously generated. You can also edit any conditions straight from the audience builder. 
 
