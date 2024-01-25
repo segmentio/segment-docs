@@ -49,7 +49,8 @@ Use the Profile explorer (**Unify > Profile explorer**) to view custom traits at
 
 Segment has reserved some custom traits that have semantic meanings for users, and will handle them in special ways. For example, Segment always expects `email` to be a string of the user's email address. Segment sends this on to destinations like _Mailchimp_ that require an email address for their tracking.
 
-You should **only use reserved custom traits for their intended meaning**.
+> warning ""
+> Only use reserved custom traits for their intended meaning.
 
 Reserved custom traits Segment has standardized:
 
@@ -74,6 +75,6 @@ Reserved custom traits Segment has standardized:
 | `website`     | String   | Website of a user       |
 
 
-To learn more about using an Identify call to tie custom traits to profiles, [visit Segment's Spec docs](/docs/connections/spec/identify/).
+To learn more about using an Identify call to tie custom traits to profiles, [visit Segment's Identify documentation](/docs/connections/spec/identify/).
 
 

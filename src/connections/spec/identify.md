@@ -139,7 +139,8 @@ Segment recommends using database IDs instead of simple email addresses or usern
 
 Segment has reserved some custom traits that have semantic meanings for users, and will handle them in special ways. For example, Segment always expects `email` to be a string of the user's email address. Segment sends this on to destinations like _Mailchimp_ that require an email address for their tracking.
 
-You should **only use reserved traits for their intended meaning**.
+> warning ""
+> Only use reserved traits for their intended meaning.
 
 Reserved custom traits Segment has standardized:
 
