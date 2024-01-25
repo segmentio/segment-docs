@@ -26,7 +26,7 @@ Follow these steps to send a test event:
 
 1. From the **Send to destinations** window, select **+ Add destination**.
 2. Choose the Destination that you want to connect.
-3. In the Destination pane, select **Event tester**. (This is only available for [Event Destinations][https://segment.com/docs/engage/using-engage-data/#engage-destination-types-event-vs-list].)
+3. In the Destination pane, select **Event tester**. This is only available for [Event Destinations](/docs/engage/using-engage-data/#engage-destination-types-event-vs-list).
 4. From the **Event Type** drop-down, select the event you want to test. Segment generates a test user ID.
 5. Select **Send Event**, then view the test event results in the **Event lifecycle** section.
 
