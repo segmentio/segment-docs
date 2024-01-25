@@ -124,9 +124,9 @@ After you complete the set up process, allow up to 24 hours for Google to create
 Extra information from the API (settings, connection modes, etc.) are automatically pulled in here.
 {% include content/sync-frequency-note.md %}
 
-## Migrate from Personas Google Dispay & Video 360 Destination 
+## Migrate from Personas Google Display & Video 360 Destination 
 
-Segment will copy all of your existing Personas Dispay & Video 360 Destination configurations to Display and Video 360 (Actions). Once the migration is completed , you will be notified by email. 
+Segment will copy all of your existing Personas Display & Video 360 Destination configurations to Display and Video 360 (Actions). Once the migration is completed , you will be notified by email. 
 
 
 The sole mandatory action involves **re-authenticating** for each migrated Personans Display & Video 360 Destination. While you may already possess OAuth credentials, it is essential to undergo reauthentication. This step is necessary to seamlessly integrate new audiences or implement updates to existing ones.
