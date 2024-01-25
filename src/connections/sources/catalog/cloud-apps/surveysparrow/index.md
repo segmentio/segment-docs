@@ -1,4 +1,8 @@
+---
 title: SurveySparrow Source
+id: di2sOHoscX
+hidden: true
+beta: true
 ---
 [SurveySparrow](https://surveysparrow.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners){:target="_blank"} is an end-to-end omnichannel experience management platform that bundles Customer Experience and Employee Experience tools such as NPS, Offline, Chat, Classic, and 360 Surveys which are mobile-first, highly engaging, and user-friendly. 
 
