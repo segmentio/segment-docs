@@ -171,7 +171,7 @@ You can read more about [error handling](#destination-insert-functions-logs-and-
 
 ## Insert Functions and Actions destinations
 
-There are a couple of behavorial nuances to consider when using Insert Functions with Actions destinations.
+There are a couple of behavioral nuances to consider when using Insert Functions with Actions destinations.
 
 Insert Functions block Actions destinations from triggering multiple mapping subscriptions for a single payload. If you have a single payload coming through the pipeline that you expect to trigger multiple mapping subscriptions in your configuration, it will work as expected without an Insert Function enabled. With an Insert Function enabled, however, when a payload that is meant to trigger multiple mappings subscriptions is seen, no mappings subscriptions will fire. If you have an Insert Function enabled for a destination, make sure that you configure your payloads so that they only trigger a single mapping subscription.
 
