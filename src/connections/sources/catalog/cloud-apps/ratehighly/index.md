@@ -37,14 +37,14 @@ The table below lists events that RateHighly sends to Segment. These events appe
 | ------------------ | -------------------------------------- |
 | User Created       | User was detected by RateHighly        |
 | Deemed Happy       | User is qualified to review your app   | 
-| Messaged in-app    | User was asked to review in-app        |
-| Gave rating        | User gave a score in-app               | 
-| Skipped rating     | User closed the modal without scoring  | 
-| Gave review        | User shared a review on G2 or Capterra |
-| Gave feedback      | User wrote internal feedback           |
-| Sent email         | User received a review request email   | 
+| Messaged In-App    | User was asked to review in-app        |
+| Gave Rating        | User gave a score in-app               | 
+| Skipped Rating     | User closed the modal without scoring  | 
+| Gave Review        | User shared a review on G2 or Capterra |
+| Gave Feedback      | User wrote internal feedback           |
+| Sent Email         | User received a review request email   | 
 | Unsubscribed       | User clicked an unsubscribe link       | 
-| Review completed   | User completed the review sequence     | 
+| Review Completed   | User completed the review sequence     | 
 
 ## Event Properties
 
