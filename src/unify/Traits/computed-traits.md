@@ -186,7 +186,7 @@ Segment then processes your Trait edits. While the edit task runs, the trait rem
 
 
 > warning ""
-> It is not possible to edit a trait to convert it from real-time to batch, or vice-versa. If the computation type needs to be changed, you will need to recreate the trait with the appropiate conditions.
+> It is not possible to edit a trait to convert it from real-time to batch, or vice-versa. If the computation type needs to be changed, you will need to recreate the trait with the appropriate conditions.
 
 ## Accessing your Computed Traits using the Profiles API
 
