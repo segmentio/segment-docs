@@ -530,37 +530,13 @@ analytics.write_key = 'YOUR_WRITE_KEY'
 
 ## Google App Engine
 
-Google App Engine my not resolve project dependencies. If this is the case add the following to your project alongside analytics-python:
+Google App Engine may not resolve project dependencies. If this is the case add the following to your project alongside analytics-python:
 - [requests](https://github.com/kennethreitz/requests){:target="_blank"}
 - python-dateutil](https://github.com/paxan/python-dateutil){:target="_blank"}
 
 If you're having issues with threads outliving your request, check [Background threads and synchronous mode](#background-threads-and-synchronous-mode)
 
-## Troubleshooting
-
-### Request size limits
-
-{% include content/tracking-api-limit.md %}
-
-
-{% include content/troubleshooting-intro.md %}
-{% include content/troubleshooting-server-debugger.md %}
-{% include content/troubleshooting-server-integration.md %}
-
-### Override context value
-
-In some cases, you will want to manually pass in `ip` or `userAgent` values. Since Segment does not automatically send these, you can pass these through the `context` object as follows:
-
-```python
-analytics.track('9742', 'Song Played', context={
-  'ip': 1234,
-  'userAgent': 'Mozilla/5.0 (Linux; U; Android 4.1.1; en-gb; Build/KLP) AppleWebKit/534.30 (KHTML, like Gecko) Version/4.0 Safari/534.30'
-})
-```
-
-Be sure to see the full [reference of supported keys](/docs/connections/spec/common/#context).
-
-### OAuth 2.0
+## OAuth 2.0
 
 Enable [OAuth 2.0](/docs/connections/oauth/) in your Segment workspace to guarantee authorized communication between your server environment and Segment's Tracking API. To support the non-interactive server environment, the OAuth workflow used is a signed client assertion JWT.  
 
@@ -593,6 +569,30 @@ analytics.on_error = on_error
 analytics.track('AUser', 'track')
 analytics.flush()
 ```
+
+## Troubleshooting
+
+### Request size limits
+
+{% include content/tracking-api-limit.md %}
+
+
+{% include content/troubleshooting-intro.md %}
+{% include content/troubleshooting-server-debugger.md %}
+{% include content/troubleshooting-server-integration.md %}
+
+### Override context value
+
+In some cases, you will want to manually pass in `ip` or `userAgent` values. Since Segment does not automatically send these, you can pass these through the `context` object as follows:
+
+```python
+analytics.track('9742', 'Song Played', context={
+  'ip': 1234,
+  'userAgent': 'Mozilla/5.0 (Linux; U; Android 4.1.1; en-gb; Build/KLP) AppleWebKit/534.30 (KHTML, like Gecko) Version/4.0 Safari/534.30'
+})
+```
+
+Be sure to see the full [reference of supported keys](/docs/connections/spec/common/#context).
 
 ### Versioning
 
