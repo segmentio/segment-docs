@@ -635,7 +635,7 @@ const analytics = new Analytics({
 })
 ```
 
-### OAuth 2.0
+## OAuth 2.0
 
 Enable [OAuth 2.0](/docs/connections/oauth/) in your Segment workspace to guarantee authorized communication between your server environment and Segment's Tracking API. To support the non-interactive server environment, the OAuth workflow used is a signed client assertion JWT.  
 
