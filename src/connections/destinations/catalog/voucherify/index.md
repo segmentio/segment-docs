@@ -1,23 +1,21 @@
 ---
 title: Voucherify Destination
 rewrite: true
-beta: true
 id: 5e42baaecf559c535c8cbe97
 hide-personas-partial: true
 ---
-[Voucherify](https://voucherify.io?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) helps developers integrate digital promotions across any marketing channel or customer touchpoint - eventually giving full control over campaigns back to the marketing team.
+[Voucherify](https://voucherify.io?utm_source=segmentio&utm_medium=docs&utm_campaign=partners){:target="_blank”} helps developers integrate digital promotions across any marketing channel or customer touchpoint - eventually giving full control over campaigns back to the marketing team.
 
 This destination is maintained by Voucherify. For any issues with the destination, [contact the Voucherify Support team](mailto:support@voucherify.io).
 
-{% include content/beta-note.md %}
 
 ## Getting Started
 
-{% include content/connection-modes.md %}
+
 
 1. From the Segment web app, click **Catalog**.
 2. Search for "Voucherify" in the Catalog, select it, and choose which of your sources to connect the destination to.
-3. Enter the "API Key" and "API Token" into your Segment Settings UI which you can find from your [Voucherify dashboard](https://voucherify.io/dashboard).
+3. Enter the "API Key" and "API Token" into your Segment Settings UI which you can find from your [Voucherify dashboard](https://voucherify.io/dashboard){:target="_blank"}.
 
 #### Getting API Key and API Token
 On the Voucherify Dashboard page:

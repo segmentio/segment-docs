@@ -2,20 +2,40 @@
 title: 'Spec: Alias'
 ---
 
-> note "Alias is an advanced method"
-> The Alias method allows you to explicitly change the ID of a tracked user, however this should only be done when it's required for downstream destination compatibility. See our [Best Practices for Identifying Users](/docs/guides/how-to-guides/best-practices-identify/) for more information.
+The Alias method is an advanced method used to merge 2 unassociated user identities, effectively connecting 2 sets of user data in one profile. 
 
-The `alias` method is used to merge two user identities, effectively connecting two sets of user data as one. This is an advanced method, but it is required to manage user identities successfully in some of our destinations.
+> info "Alias and Unify"
+> Alias calls can't be used to merge profiles in [Unify](/docs/unify/). For more information on how Unify merges user profiles, view the [Identity Resolution documentation](https://segment.com/docs/unify/identity-resolution/). 
 
-{% include components/reference-button.html href="https://university.segment.com/introduction-to-segment/324252?reg=1&referrer=docs" icon="media/academy.svg" title="Segment University: The Segment Methods" content="Check out our high-level overview of these APIs in Segment University. (Must be logged in to access.)" %}
+> info "Alias is an advanced method"
+> The Alias method allows you to explicitly change the ID of a tracked user. This should only be done when it's required for downstream destination compatibility. See the [Best Practices for Identifying Users](/docs/guides/how-to-guides/best-practices-identify/) docs for more information.
 
-Since this is our most advanced method we have added sections to each docs page for destinations that use it:
+<!-- Since this is Segment's most advanced method, there are sections on each docs page for destinations that use it:
 
 - [Kissmetrics](/docs/connections/destinations/catalog/kissmetrics#alias)
 - [Mixpanel](/docs/connections/destinations/catalog/mixpanel#alias)
 - [Vero](/docs/connections/destinations/catalog/vero#alias)
 
-Here's the payload of a basic `alias` call that will associate this user's existing `id` (email address) with a new one (a database ID), with most [common fields](/docs/connections/spec/common/) removed:
+ TODO: do more research on if this is required anywhere anymore. --->
+
+## Syntax
+
+The Alias call has the following fields:
+
+| Field        |          | Type     | Description                                                                                                                                     |
+| ------------ | -------- | -------- | ----------------------------------------------------------------------------------------------------------------------------------------------- |
+| `userId`     |          | String   | The `userId` is a string that will be the user's new identity, or an existing identity that you wish to merge with the `previousId`. See the [User ID docs](/docs/connections/spec/identify#user-id) for more detail.                                                                                            |
+| `previousId` | optional | String   | The `previousId` is the existing ID you've referred to the user by. It might be an Anonymous ID assigned to that user or a User ID you previously identified them with using Segment's [Identify](/docs/connections/spec/identify/) call.                                          |
+| `options`    | optional | Object   | A dictionary of options. For example, [enable or disable specific destinations](#managing-data-flow-with-the-integrations-object) for the call. |
+| `callback`   | optional | Function | A function that is executed after a timeout of 300 ms, giving the browser time to make outbound requests first.                                 |
+
+The Alias method follows the format below:
+
+```js
+analytics.alias(userId, [previousId], [options], [callback]);
+```
+
+Here's the payload of a basic Alias call that will associate this user's existing `id` (email address) with a new one (a database ID), with most [common fields](/docs/connections/spec/common/) removed:
 
 ```js
 {
@@ -25,26 +45,19 @@ Here's the payload of a basic `alias` call that will associate this user's exist
 }
 ```
 
-If you're instrumenting a website, then the Anonymous ID is generated in the browser so you must call `alias` from the client-side. If you're using a server-side session ID as the Anonymous ID, then you must alias from the server-side.
-
 Here's the corresponding JavaScript event that would generate the above payload. If you're using Segment's JavaScript library, Segment automatically passes in the user's `anonymousId` as `previousId` for you:
 
 ```js
 analytics.alias("507f191e81");
 ```
+
+If you're instrumenting a website, the Anonymous ID is generated in the browser so you must call Alias from the client-side. If you're using a server-side session ID as the Anonymous ID, then you must call Alias from the server-side.
+
+
 {% include content/syntax-note.md %}
 
-Beyond the common fields, the `alias` call takes the following fields:
-
-<table>
-  {% include content/spec-table-header.md %}
-  {% include content/spec-field-previous-id.md %}
-  {% include content/spec-field-user-id.md %}
-</table>
-
-
 ## Examples
-Here's a complete example of an `alias` call:
+Here's a complete example of an Alias call:
 
 ```js
 {
@@ -69,11 +82,3 @@ Here's a complete example of an `alias` call:
   "version": "1.1"
 }
 ```
-
-## Previous ID
-
-The `previousId` is the existing ID you've referred to the user by. It might be an Anonymous ID assigned to that user or a User ID you previously identified them with using our [`identify`](/docs/connections/spec/identify/) call.
-
-## User ID
-
-The `userId` is a string that will be the user's new identity, or an existing identity that you wish to merge with the `previousId`. See the [User ID docs](/docs/connections/spec/identify#user-id) for more detail.

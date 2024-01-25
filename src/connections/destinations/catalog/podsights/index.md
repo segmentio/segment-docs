@@ -3,21 +3,19 @@ rewrite: true
 title: Podsights Destination
 id: 5d25eddde3ff660001b3adda
 ---
-[Podsights](https://podsights.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) measures the effectiveness of podcast advertising. Through integrations with podcast hosting providers, matches downloads with on-site actions, providing advertisers household-level attribution.
+[Podsights](https://podsights.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners){:target="_blank”} measures the effectiveness of podcast advertising. Through integrations with podcast hosting providers, matches downloads with on-site actions, providing advertisers household-level attribution.
 
 This destination is maintained by Podsights. For any issues with the destination, [contact the Podsights Support team](mailto:hello@podights.com).
-
-{% include content/beta-note.md %}
 
 
 ## Getting Started
 
-{% include content/connection-modes.md %}
+
 
 
 1. From the Segment web app, click **Catalog**.
 2. Search for "Podsights" in the Catalog, select it, and choose which of your sources to connect the destination to.
-3. Visit your [Podsights dashboard](https://analytics.podsights.com) and navigate to Manage > Pixels. Copy your Pixel ID which will be your Segment "API Key".
+3. Visit your [Podsights dashboard](https://analytics.podsights.com){:target="_blank"} and navigate to Manage > Pixels. Copy your Pixel ID which will be your Segment "API Key".
 4. Drop the Pixel ID in the "API Key" field in your Segment Settings UI.
 
 

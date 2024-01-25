@@ -1,17 +1,13 @@
 ---
 title: Destination Actions
+plan: dest-actions
 ---
-
-{% include content/plan-grid.md name="dest-actions" %}
 
 The Destination Actions framework improves on classic destinations by enabling you to see and control how Segment sends the event data it receives from your sources, to actions-based destinations. Each Action in a destination lists the event data it requires, and the event data that is optional.
 
 You can also choose which event types, event names, or event property values trigger an Action. These Triggers and mappings make it possible to send different versions of the Action, depending on the context from which it is triggered.
 
 Each Actions-framework Destination you see in the Segment catalog represents a feature or capability of the destination which can consume data from your Segment source. The Action clearly lists which data from the events it requires, and which data is optional. For example, Amplitude requires that you always send a  `LogEvent` , or Slack always requires a `PostMessage`.  Each Action also includes a default mapping which you can modify.
-
-{% include content/ajs-upgrade.md %}
-
 
 ## Benefits of Destination Actions
 
@@ -70,9 +66,6 @@ To set up a new Actions-framework destination for the first time:
 
 ## Migrate a classic destination to an actions-based destination
 
-{% include content/ajs-upgrade.md %}
-
-
 Moving from a classic destination to an actions-based destination is a manual process. Segment recommends that you follow the procedure below:
 
 1. Create the actions-based destination with your development or test source.
@@ -119,11 +112,13 @@ If necessary, click **New Mapping** to create a new, blank action.
 1. In the edit panel, define the [conditions](#conditions) under which the action should run.
 2. Test those conditions to make sure that they correctly match an expected event.
     This step looks for events that match the criteria in the [debugger queue](/docs/connections/sources/debugger/), so you might need to Trigger some events with the expected criteria to test your conditions. You can skip the test step if needed, and re-try it at any time.
-3. Next, set up the data mapping from the Segment format to the destination tool format.
-4. Test the mapping with data from a sample event.
+3. Select data models to [enrich your events](/docs/unify/linked-profiles/linked-events/) with.
+4. Set up the data mapping from the Segment format to the destination tool format.
+- You can click the Source field, then select the **Enrichments** tab to view and select Enrichments to use.
+5. Test the mapping with data from a sample event.
     The edit panel shows you the mapping output in the format for the destination tool. You can change your mapping as needed and re-test.
-5. When you're satisfied with the mapping, click **Save**. Segment returns you to the Mappings table.
-6. In the Mappings table **Status** column, verify that the **Enabled** toggle is on for the mapping you just customized.
+6. When you're satisfied with the mapping, click **Save**. Segment returns you to the Mappings table.
+7. In the Mappings table **Status** column, verify that the **Enabled** toggle is on for the mapping you just customized.
 
 
 > info ""
@@ -174,6 +169,9 @@ You can combine criteria in a single group using **ALL** or **ANY**.  Use an ANY
 > info "Unsupported Special Characters"
 > Mappings do not support the use of double quotes " or a tilde ~ in the trigger fields.
 
+> info "Limitations"
+> Mapping fields don't support dot notation. For example, properties.amount.cost or properties_amount.cost aren't supported.
+
 > info "Destination Filters"
 > Destination filters are compatible with Destination Actions. Consider a Destination Filter when:
 > - You need to remove properties from the data sent to the destination
@@ -181,11 +179,18 @@ You can combine criteria in a single group using **ALL** or **ANY**.  Use an ANY
 >
 > If your use case does not match these criteria, you might benefit from using Mapping-level Triggers to match only certain events.
 
-## FAQ & Troubleshooting
+## FAQ and troubleshooting
 
 ### Validation error when using the Event Tester
 
 When you send an event with an actions destination Event Tester that doesn't match the trigger of any configured and enabled mappings, you'll see an error message that states, *You may not have any subscriptions that match this event.* To resolve the error, create a mapping with a trigger to handle the event being tested, or update the test event's payload to match the trigger of any existing mappings. 
+
+### Data not sending downstream
+
+If no mappings are enabled to trigger on an event that has been received from the connected source, the destination will not send any events. Ensure that at least one mapping has been configured and enabled in the destination mappings for an event that you would like to reach downstream. 
+
+> info ""
+> Events without mappings enabled to handle them display as being discarded due to "No matching mapping" in a destination's Delivery Overview.
 
 ### Multiple mappings triggered by the same event
 

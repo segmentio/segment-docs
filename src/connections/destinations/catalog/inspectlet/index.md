@@ -3,11 +3,11 @@ title: Inspectlet Destination
 rewrite: true
 id: 54521fd725e721e32a72eec3
 ---
-[Inspectlet](https://www.inspectlet.com/) lets you analyze user behavior instantly with Eye Tracking Heatmaps, Screen Capture (record and playback actual visitor sessions), and User-Interaction Analytics. The Inspectlet Destination is open-source. You can browse the code on [GitHub](https://github.com/segment-integrations/analytics.js-integration-inspectlet).
+[Inspectlet](https://www.inspectlet.com/){:target="_blank"} lets you analyze user behavior instantly with Eye Tracking Heatmaps, Screen Capture (record and playback actual visitor sessions), and User-Interaction Analytics. The Inspectlet Destination is open-source. You can browse the code on [GitHub](https://github.com/segment-integrations/analytics.js-integration-inspectlet){:target="_blank"}.
 
 ## Getting Started
 
- {% include content/connection-modes.md %}
+ 
 
   1. From the Segment web app, click **Catalog**.
   2. Search for "Inspectlet" in the Catalog, select it, and choose which of your sources to connect the destination to.

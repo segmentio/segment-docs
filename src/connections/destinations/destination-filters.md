@@ -22,6 +22,7 @@ Common use cases for destination filters include:
 
 Keep the following limitations in mind when you use destination filters:
 
+- Destination Filters aren't applied to events sent through the Event Tester.
 - Segment applies destination filters one at a time in the order that they appear in your workspace.
 - You can't apply destination filters to Warehouses or S3 destinations.
 - Each filter can only apply to one source-destination pair.
@@ -33,7 +34,6 @@ Keep the following limitations in mind when you use destination filters:
 - *(For mobile device-mode)* Destination filters for mobile device-mode is currenlty not supported.
 - Destination Filters don't apply to events that send through the destination Event Tester.
 - Destination Filters within the UI and [FQL]([url](https://segment.com/docs/api/public-api/fql/)) do not currently support matching on event fields containing '.$' or '.$.', which references fields with an array type. 
-
 
 [Contact Segment](https://segment.com/help/contact/){:target="_blank"} if these limitations impact your use case.
 
@@ -48,6 +48,9 @@ To create a destination filter:
 6. Click **Next Step**.
 7. Name your filter and click the toggle to enable it.
 8. Click **Save**.
+
+> info "Enable destination filters for Analytics.js sources"
+> If you are currently using Analytics.js as your source and want to apply filters to device-mode destinations, you need to enable device mode destination filters for your Analytics.js source. To do this, go to your Javascript source, navigate to Settings > Analytics.js, and turn on the toggle for **Destination Filters**. This will ensure the filters are effectively applied to device-mode destinations.
 
 ## Destination filters API
 
@@ -84,6 +87,11 @@ Property-level allowlisting is available with Segment's API. Using destination f
 
 
 ![PII management example](images/destination-filters/pii_example.png)
+
+> info "Healthcare and Life Sciences (HLS) customers can encrypt data flowing into their destinations"
+> HLS customers with a HIPAA eligible workspace can encrypt data in fields marked as Yellow in the Privacy Portal before they flow into an event stream, cloud mode destination.
+>
+> To learn more about data encryption, see the [HIPAA Eligible Segment documentation](/docs/privacy/hipaa-eligible-segment/#data-encryption).
 
 ### Control event volume
 
@@ -125,7 +133,7 @@ Use the [Public API](https://docs.segmentapis.com/tag/Destination-Filters/){:tar
     "destinationId": "<DESTIANTION_ID>",
     "title": "Don't send event if userId is null",
     "description": "Drop event if there is no userId on the request",
-    "if": "length( userId ) < 1 or typeof( userId ) != 'string'",
+    "if": "length( userId ) < 1",
     "actions": [
       {
         "type": "DROP"
@@ -218,3 +226,21 @@ You must have write access to save and edit filters. Read permission access only
 #### How can I test my filter?
 
 Use the destination filter tester during setup to verify that you're filtering out the right events. Filtered events show up on the schema page but aren't counted in event deliverability graphs.
+
+#### Can I filter on properties/traits that have spaces in the name (for example, `properties.test event field`)? 
+
+Destination Filters can't target properties or traits with spaces in the field name. As an alternative, use [Insert Functions](/docs/connections/functions/insert-functions/), which let you write code to take care of such filtering.
+
+#### Can I use destination filters to drop events unsupported by a destination?
+
+The check for unsupported events types happens before any destination filter checks. As a result, Destination Filters can't prevent unsupported event type errors. To filter these events, use the [Integrations Object](/docs/guides/filtering-data/#filtering-with-the-integrations-object).
+
+#### Why do I see events sent through after I just added a destination filter?
+
+Destination filters only filter events sent after filter setup. If you just added a destination filter but still see some events going through, you're likely seeing retries from failed events that occurred before you set up the filter.
+
+When Segment sends an event to a destination but encounters a timeout error, it attempts to send the event again. As a result, if you add a destination filter while Segment is trying to send a failed event, these retries could filter through, since they reflect events that occurred before filter setup.
+
+#### How do destination filters handle Protocols Transformations?
+
+When you enable a destination-specific Transformation, Segment processes your events with a destination filter. Segment processes source-level Transformations before the events reach the destination filter.

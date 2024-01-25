@@ -8,7 +8,9 @@ sections:
     title: Conceptual model
   - path: /partners/sources
     title: Build a Source
-  - section_title: Build a Destination
+  - path: /partners/direct-destination
+    title: Build a Direct Destination
+  - section_title: Build an Actions Destination
     slug: partners/subscriptions
     section:
     - path: /partners/destinations
@@ -17,8 +19,8 @@ sections:
       title: Build a Destination
     - path: /partners/destinations/testing
       title: Test a Destination
-    - path: /partners/destinations/get-access
-      title: Get Access
+    # - path: /partners/destinations/get-access
+    #   title: Get Access
     - path: /partners/destinations/authentication
       title: Authentication
   # - path: /partners/plugins

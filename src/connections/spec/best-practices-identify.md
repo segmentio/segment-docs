@@ -8,47 +8,47 @@ The most important calls you make with Segment are the [identify](/docs/getting-
 
 ## Identifying users
 
-The `identify` call specifies a customer identity that you can reference across the customer's lifetime. There are instances where you want to record information about a user that isn't already known to you. An example of this might be, a user that visits your site and doesn't register, but they do give you their email address through a newsletter email sign-up form. In this instance, you would record that email address as a trait, and for the identifier (ID), you would use anonymous ID. 
+The Identify call specifies a customer identity that you can reference across the customer's lifetime. There are instances where you want to record information about a user that isn't already known to you. An example of this might be, a user that visits your site and doesn't register, but they do give you their email address through a newsletter email sign-up form. In this instance, you would record that email address as a trait, and for the identifier (ID), you would use anonymous ID. 
 
 When you make an [identify](/docs/connections/spec/identify) call using Segment's Analytics.js library, Segment saves the `userId` to the browser cookie, and writes all the user traits in `localStorage`. If you're using one of the Segment mobile libraries, the `userId` and traits are stored in the device's memory. This makes it possible to append the user's data to all subsequent [page calls](/docs/connections/sources/catalog/libraries/website/javascript#page) or [track calls](/docs/connections/sources/catalog/libraries/website/javascript#track) for the user, so you can properly attribute those actions.
 
 If a user returns to your site after the [cookie expires](#id-expiration-and-overwriting), Analytics.js looks for an old ID in the user's `localStorage`, and if one is found, sets it as the user's ID again in a new cookie. If the user clears their cookies *and* `localStorage`, all of the IDs are removed and the user gets a completely new `anonymousId` when they next visit the page.
 
-Whenever possible, follow the `identify` call with a `track` event that records what caused the user to be identified.
+Whenever possible, follow the Identify call with a Track event that records what caused the user to be identified.
 
 ## AnonymousId generation
 
 If you're using Segment's browser or mobile libraries, the Segment SDK generates and sets a UUID as `anonymousID` at the user's first visit to your site. That `anonymousId` is saved in the user's cookie, as well as localStorage, and will stick with that user until the cache is cleared or a `reset` call is triggered. 
 
-You can use the `anonymousId` to link events performed by the user as they navigate around your website. When you track the `anonymousId`, you can attribute activities over multiple days to the same user by collecting all of the activities with that ID. If a user chooses to register for your site, or log in to your app, you can `identify` them, and still include their `anonymousId` in the event payload along with the new `userId`.
+You can use the `anonymousId` to link events performed by the user as they navigate around your website. When you track the `anonymousId`, you can attribute activities over multiple days to the same user by collecting all of the activities with that ID. If a user chooses to register for your site, or log in to your app, you can Identify them, and still include their `anonymousId` in the event payload along with the new `userId`.
 
 If you use Segment's server libraries, you must generate an `anonymousId` manually. It can be any pseudo-unique identifier, for example, you might use a `sessionId` from a backend server.
 
 
 ## Best options for userIds
 
-Segment recommends that you use a unique user identifier (UUID) that won't change for your `userId`. A `userId` should be a robust, static, unique identifier that you recognize a user by in your own database systems. Because these IDs are consistent across a customer's lifetime, you should include a `userId` in `identify` calls as often as you can. If you don't have a userId, you need to include an anonymousId in your `identify` call in order to record identifying information about your user.
+Segment recommends that you use a unique user identifier (UUID) that won't change for your `userId`. A `userId` should be a robust, static, unique identifier that you recognize a user by in your own database systems. Because these IDs are consistent across a customer's lifetime, you should include a `userId` in Identify calls as often as you can. If you don't have a userId, you need to include an anonymousId in your Identify call in order to record identifying information about your user.
 
 Ideally, the `userId` could be a database ID. For example, if you're using MongoDB it might be a row identifier and look something like `507f191e810c19729de860ea`. These can also be [UUID](https://en.wikipedia.org/wiki/Universally_unique_identifier)s that you generate somewhere in your application. You can also use identifiers that you get from other tools - such as Shopify or Braze - however this approach can lead to extra complexity in your systems.
 
 Segment does **not** recommend using simple email addresses or usernames as a User ID, as these can change over time. Segment recommends that you use static IDs instead, so the IDs *never* change. When you use a static ID, you can still recognize the user in your analytics tools, even if the user changes their email address. And even better, you can link your analytics data with your own internal database.
 
 > success ""
-> **Tip!** Even though Segment doesn't recommend using an email address or a username as a User ID, you can still send that identifying information in your `identify` call as [traits](/docs/connections/spec/identify#traits).
+> **Tip!** Even though Segment doesn't recommend using an email address or a username as a User ID, you can still send that identifying information in your Identify call as [traits](/docs/connections/spec/identify#traits).
 
 ## When to call Identify
 
-You should make an `identify` call in the following situations:
+You should make an Identify call in the following situations:
 
 - When the user provides any identifying information (such as a newsletter sign-up with email and name)
 - When first you create a user (and so it is assigned a `userId`)
 - When a user changes information in their profile
 - When a user logs in
-- Optionally, when you call `identify` upon loading any pages that are accessible by a logged in user
+- *(Optional)* Upon loading any pages that are accessible by a logged in user
 
 ## Soft User Registration
 
-An anonymous user visits the site for the very first time. The home page has the analytics.js tracking snippet loaded in its header. When the page loads, this sets off the default `page` call to Segment. The Segment SDK generates and sets `anonymousId`.
+An anonymous user visits the site for the very first time. The home page has the analytics.js tracking snippet loaded in its header. When the page loads, this sets off the default Page call to Segment. The Segment SDK generates and sets `anonymousId`.
 
 ```js
 analytics.page({
@@ -95,13 +95,13 @@ You can see in this full page event, the `anonymousId` is populated, and the `us
   "sentAt": "2020-04-23T22:38:48.55Z",
   "timestamp": "2020-04-23T22:38:48.55Z",
   "type": "page",
-  "UserId": null
+  "userId": null
 }
 ```
 
 <!---[Full Page Payload](https://user-images.githubusercontent.com/78389005/214352920-cd7ac161-8e54-4de0-a522-35e6ed8a6e03.png)--->
 
-The user signs up for an email newsletter and fills out the form giving you their first and last name, as well as their email address. At this point, you will fire off an `identify` call. You won't yet assign them a user ID in this example, but you can still grab these traits about them.
+The user signs up for an email newsletter and fills out the form giving you their first and last name, as well as their email address. At this point, you will fire off an Identify call. You won't yet assign them a user ID in this example, but you can still grab these traits about them.
 
 ```js
 analytics.identify({
@@ -113,7 +113,7 @@ analytics.identify({
 
 <!---[Fire Identify Call](https://user-images.githubusercontent.com/78389005/214353033-e90b6e7f-f593-416e-9f13-44848fab595a.png)--->
 
-You'll notice the `identify` call contains no `userId`. These traits will be associated to the `anonymousId` that is available in the user's cookie and `localStorage`. 
+You'll notice the Identify call contains no `userId`. These traits will be associated to the `anonymousId` that is available in the user's cookie and `localStorage`. 
 
 ```js
 {
@@ -153,7 +153,7 @@ You'll notice the `identify` call contains no `userId`. These traits will be ass
     "last_name": "Visitor"
   },
   "type": "page",
-  "UserId": null
+  "userId": null
 }
 ```
 
@@ -162,7 +162,7 @@ You'll notice the `identify` call contains no `userId`. These traits will be ass
 
 ## Full User Registration 
 
-An anonymous visitor registers for an account and becomes a known user. The account creation process allows you to assign a `userId` from your production database and capture additional traits. For this example, the `userId` that is assigned is "123abc". This is when you'll want to fire an `identify` call with this user's newly assigned `userId` and additional traits.
+An anonymous visitor registers for an account and becomes a known user. The account creation process allows you to assign a `userId` from your production database and capture additional traits. For this example, the `userId` that is assigned is "123abc". This is when you'll want to fire an Identify call with this user's newly assigned `userId` and additional traits.
 
 ```js
 analytics.identify(`123abc`,{
@@ -179,7 +179,7 @@ analytics.identify(`123abc`,{
 
 <!---[Identify Call with UserId](https://user-images.githubusercontent.com/78389005/214355367-a24d55ce-4963-4da0-a67d-a8b1811ef0d0.png)--->
 
-After you fire the `identify` call with the `userId`, you'll notice that the payload now has both a `userId` *and* an `anonymousId` attributed to the user.
+After you fire the Identify call with the `userId`, you'll notice that the payload now has both a `userId` *and* an `anonymousId` attributed to the user.
 
 ```js
 {
@@ -224,7 +224,7 @@ After you fire the `identify` call with the `userId`, you'll notice that the pay
   }  
   },
   "type": "page",
-  "UserId": null
+  "userId": "123abc"
 }
 ```
 
@@ -238,11 +238,11 @@ The illustration below shows a timeline with a user's interactions on a website,
 
 <!--https://www.figma.com/file/Gc53MamYsKZBg3IUduunc5/identity-best-practices?node-id=1%3A3 -->
 
-When the user first visits a page, Analytics.js automatically assigns the user an `anonymousId` and saves it to the user's `localStorage`. As the user interacts with the site, for example clicking around to different pages, Analytics.js includes this `anonymousId` and some [contextual information](/docs/connections/spec/common#context) with each `page` and `track` call. The contextual information might be the user's [IP address, browser, and more](/docs/connections/spec/common#context-fields-automatically-collected).
+When the user first visits a page, Analytics.js automatically assigns the user an `anonymousId` and saves it to the user's `localStorage`. As the user interacts with the site, for example clicking around to different pages, Analytics.js includes this `anonymousId` and some [contextual information](/docs/connections/spec/common#context) with each Page and Track call. The contextual information might be the user's [IP address, browser, and more](/docs/connections/spec/common#context-fields-automatically-collected).
 
 When a user signs up to create an account on the website, the `.identify("userId")` and `.track(“Signed Up”)` events fire, in that order. You pull the `userId` unique to the user from your systems, and send it to the Segment library so you can label that user's later events with their ID. The later Track call (“Signed Up”) contains both the `userId` *and* the automatically-collected `anonymousId` for the user, and any other information you capture about them -  such as their first name, last name, and email address.
 
-The example below shows an `identify` call including user traits. It uses a database ID (`97980cfea0067`) as the `userId`.
+The example below shows an Identify call including user traits. It uses a database ID (`97980cfea0067`) as the `userId`.
 
 ```js
 analytics.identify("97980cfea0067", {
@@ -252,7 +252,7 @@ analytics.identify("97980cfea0067", {
 });
 ```
 
-For a `track` call, information about this event is stored either in the `context` field or in the event [properties](/docs/connections/spec/track#properties). The example below shows a `track` call including properties that tell you about the user.
+For a Track call, information about this event is stored either in the `context` field or in the event [properties](/docs/connections/spec/track#properties). The example below shows a Track call including properties that tell you about the user.
 
 ```js
 analytics.track("Signed Up", {
@@ -331,9 +331,9 @@ analytics.user().anonymousId()
 ![At Login](https://user-images.githubusercontent.com/78389005/214199506-e0251c90-c702-4760-a4a7-5bcd9e5a13f8.png)
 --->
 
-If you're identifying on the server, then you will want to pass the user ID from the server to the client using an `identify` call with the `anonymousId`. That will allow the `userId` to be aliased with the existing `anonymousId` and stored in the cookie in localStorage. With that, all previous anonymous activity and all subsequent activity is associated to the newly generated `userId`, as well as existing `anonymousId`s. 
+If you're identifying on the server, then you will want to pass the user ID from the server to the client using an Identify call with the `anonymousId`. That will allow the `userId` to be aliased with the existing `anonymousId` and stored in the cookie in localStorage. With that, all previous anonymous activity and all subsequent activity is associated to the newly generated `userId`, as well as existing `anonymousId`s. 
 
-There are some advantages to sending details about your users directly from your server once the user registers. Server library [Identify calls](/docs/connections/spec/identify) are invisible to the end user, making them more secure, and much more reliable. Or, if you want to send user data that is sensitive or which you don't want to expose to the client, then you can make an `identify` call from the server with all the traits you know about the user. More about [collecting data on the client or server](/docs/guides/how-to-guides/collect-on-client-or-server/#not-stored-in-your-database) in Segment's documentation. 
+There are some advantages to sending details about your users directly from your server once the user registers. Server library [Identify calls](/docs/connections/spec/identify) are invisible to the end user, making them more secure, and much more reliable. Or, if you want to send user data that is sensitive or which you don't want to expose to the client, then you can make an Identify call from the server with all the traits you know about the user. More about [collecting data on the client or server](/docs/guides/how-to-guides/collect-on-client-or-server/#not-stored-in-your-database) in Segment's documentation. 
 
 
 ### Aliasing from a server library

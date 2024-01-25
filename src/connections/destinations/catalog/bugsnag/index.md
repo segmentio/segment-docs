@@ -3,18 +3,18 @@ title: Bugsnag Destination
 rewrite: true
 id: 54521fd525e721e32a72ee9b
 ---
-[Bugsnag](https://docs.bugsnag.com/api/data-access/) helps you detect and diagnose crashes in your application. Depending on the data you provide, Bugsnag can filter errors based on user name, user email, timeline, release stages, paying user status, and more.
+[Bugsnag](https://docs.bugsnag.com/api/data-access/){:target="_blank"} helps you detect and diagnose crashes in your application. Depending on the data you provide, Bugsnag can filter errors based on user name, user email, timeline, release stages, paying user status, and more.
 
 At the moment, we support the following integrations:
 
-Web | [Analytics.js SDK 2.1.0](https://github.com/segment-integrations/analytics.js-integration-bugsnag)
-Android | [Android SDK 2.0.0](https://github.com/segment-integrations/analytics-android-integration-bugsnag)
-iOS | [iOS SDK 1.0.3](https://github.com/segment-integrations/analytics-ios-integration-bugsnag)
+Web | [Analytics.js SDK 2.1.0](https://github.com/segment-integrations/analytics.js-integration-bugsnag){:target="_blank"}
+Android | [Android SDK 2.0.0](https://github.com/segment-integrations/analytics-android-integration-bugsnag){:target="_blank"}
+iOS | [iOS SDK 1.0.3](https://github.com/segment-integrations/analytics-ios-integration-bugsnag){:target="_blank"}
 
 
 ## Getting Started
 
-{% include content/connection-modes.md %}
+
 
 ### Web
 
@@ -27,16 +27,9 @@ iOS | [iOS SDK 1.0.3](https://github.com/segment-integrations/analytics-ios-inte
 
 If you'd like to integrate with Bugsnag's iOS and/or Android SDKs, in addition to completing steps 1-3 in the previous section, you will also need to complete the install steps outlined below:
 
-1. [Android](https://github.com/segment-integrations/analytics-android-integration-bugsnag)
+1. [Android](https://github.com/segment-integrations/analytics-android-integration-bugsnag){:target="_blank"}
 
-2. [iOS](https://github.com/segment-integrations/analytics-ios-integration-bugsnag)
-
-
-### React Native
-
-{% include content/react-dest.md %}
-
-- - -
+2. [iOS](https://github.com/segment-integrations/analytics-ios-integration-bugsnag){:target="_blank"}
 
 ## Identify
 
@@ -56,4 +49,4 @@ Bugsnag will show you the `userId` and `traits` in the Users tab of each error.
 
 ## Error Reporting
 
-In addition to sending Bugsnag user-specific information, you can send handled exceptions and diagnostic data to your Bugsnag dashboard using Bugsnag's native methods. Documentation on these methods is available [on their website](https://docs.bugsnag.com/platforms/browsers/#reporting-handled-exceptions).
+In addition to sending Bugsnag user-specific information, you can send handled exceptions and diagnostic data to your Bugsnag dashboard using Bugsnag's native methods. Documentation on these methods is available [on their website](https://docs.bugsnag.com/platforms/browsers/#reporting-handled-exceptions){:target="_blank"}.

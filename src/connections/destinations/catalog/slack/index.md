@@ -4,15 +4,15 @@ title: Slack Destination
 maintenance: true
 id: 56748689e954a874ca44ccfb
 ---
-[Slack](https://slack.com/) is a team collaboration tool where work flows. It's where the people you need, the information you share, and the tools you use come together to get things done.
+[Slack](https://slack.com/){:target="_blank"} is a team collaboration tool where work flows. It's where the people you need, the information you share, and the tools you use come together to get things done.
 
 ## Getting Started
 
-{% include content/connection-modes.md %}
+
 
 1. From the Segment web app, click **Catalog**.
 2. Search for "Slack" in the Catalog, select it, and choose which of your sources to connect the destination to.
-3. In your Slack custom integration settings, create a new [Incoming Webhook](https://my.slack.com/services/new/incoming-webhook/) URL by selecting a Slack channel associated with your account.
+3. In your Slack custom integration settings, create a new [Incoming Webhook](https://my.slack.com/services/new/incoming-webhook/){:target="_blank"} URL by selecting a Slack channel associated with your account.
 4. Enter this in your Segment UI settings under 'Incoming Webhook URL'. The Slack channel you selected will be the default channel which will receive events.
 
 ## Identify
@@ -29,7 +29,7 @@ analytics.identify('userId123', {
 By default, your `identify` calls will not be sent through to Slack unless you have whitelisted a `trait` and the `identify` call contains that `trait`. If you allowlist multiple `traits` in the Segment app's destination settings under "Whitelisted Traits", then the `identify` call must contain all of them in order to be sent into your Slack. Following the code example above, we can allowlist the trait names of `name` and `email`.
 
 ### Identify Template
-Once you've saved your whitelisted traits, you can now use them alongside [Handlebars expressions](https://handlebarsjs.com/guide/expressions.html#expressions) syntax within a template. Make sure you reference the spec for the [Identify method](/docs/connections/spec/identify/) and [common object](/docs/connections/spec/common/). `Identify` events that contain the whitelisted `traits` will appear as a Slack message with the following default template:
+Once you've saved your whitelisted traits, you can now use them alongside [Handlebars expressions](https://handlebarsjs.com/guide/expressions.html#expressions){:target="_blank"} syntax within a template. Make sure you reference the spec for the [Identify method](/docs/connections/spec/identify/) and [common object](/docs/connections/spec/common/). `Identify` events that contain the whitelisted `traits` will appear as a Slack message with the following default template:
 ```
 {% raw %}
 Identified user {{name}}. \n\{{traits}}
@@ -75,7 +75,7 @@ If you would like to have specific events be sent to a particular channel (#chan
 
 
 ### Event Templates
-Event templates also use [Handlebars expressions](https://handlebarsjs.com/guide/expressions.html) syntax. Make sure you reference the spec for the [Track method](/docs/connections/spec/track/) and [common object](/docs/connections/spec/common/). `Track` events will trigger a Slack message with the following default template:
+Event templates also use [Handlebars expressions](https://handlebarsjs.com/guide/expressions.html){:target="_blank"} syntax. Make sure you reference the spec for the [Track method](/docs/connections/spec/track/) and [common object](/docs/connections/spec/common/). `Track` events will trigger a Slack message with the following default template:
 
 ```
 {% raw %}
@@ -121,7 +121,7 @@ In addition to exact event names, you can also enter regex patterns for channels
 /[a-zA-Z]+ing$/g
 ```
 
-More information on regex can be found [here](http://www.zytrax.com/tech/web/regex.htm).
+More information on regex can be found [here](http://www.zytrax.com/tech/web/regex.htm){:target="_blank"}.
 
 
 ## Troubleshooting

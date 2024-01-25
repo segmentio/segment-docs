@@ -41,7 +41,7 @@ The most interesting ones are:
 
 **Save all images locally! No linking to third-party hosted images!** Images are published to our CDN from the build step, and this means they won't go missing if the hosting service dujour goes out of business.
 
-There are no _enforced_ naming conventions at this time. Files that start with an underscore are ignored by Jekyll. Anything you see with `asset` was dowloaded by a script to migrate it out of Contents.io.
+There are no _enforced_ naming conventions at this time. Files that start with an underscore are ignored by Jekyll. Anything you see with `asset` was downloaded by a script to migrate it out of Contents.io.
 
 In general, it's a good practice to name images with a description that helps you (& other docs maintainers) figure out where they should go within a page, or within a larger folder of images.
 
@@ -101,7 +101,7 @@ Front matter variables have unique functions, including the following:
 - `hide-personas-partial`: defaults to false. When true, hides the section of content from `destination-footer.md` that talks about being able to receive personas data.
 - `integration_type`: This is set in the `_config.yml` on three paths to add a noun (Source, Destination, or Warehouse) to the end of the title, and the end of the title tag in the html layout. It also controls the layout and icon for some of these.
 - `source-type`: These are only used to supplement when a Cloud App in the sources path doesn't appear in the Config API list, and needs its type explicitly set. It runs some logic in the `cloud-app-note.md` to explain which cloud-apps are object vs event sources.
-
+- `private`: Used to indicate that a destination is not publicly available (Private Beta or Pilot status), and is not available in the public catalog. When `private: true`, the build pulls integration metadata from `src/_data/catalog/destinations_private.yml`. To update the list of private destinations, use the `make private_destination` command, and enter the integration's ID when prompted.
 #### Utility front matter
 - `published`: defaults to true. Set this to "false" to prevent Jekyll from rendering an HTML page for this file. Good for when you're working on something in the repo but aren't ready to release it yet, and don't want to use a Draft PR.
 - `hidden`: omits the file from the `sitemap.xml`, adds a `<meta name="robots" content="noindex" />` to the top of the generated HTML file, and drops it from the convenience script for regenerating the nav.

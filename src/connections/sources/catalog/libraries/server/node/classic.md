@@ -5,8 +5,8 @@ strat: node-js
 hidden: false
 ---
 
-> info "Upgrade to the new version of Analytics Node.js"
-> There's a new version of Analytics Node.js. [Upgrade](/docs/connections/sources/catalog/libraries/server/node/migration/) to the latest version. See the updated [Analytics Node.js docs](/docs/connections/sources/catalog/libraries/server/node) to learn more.
+> info "Upgrade to the latest Analytics Node.js package"
+> This is the doc for the legacy npm package (`analytics-node`). Segment will deprecate this version of Node on December 31, 2023.[Upgrade to the latest package](/docs/connections/sources/catalog/libraries/server/node/migration/) (`@segment/analytics-node`). See the updated [Analytics Node.js docs](/docs/connections/sources/catalog/libraries/server/node) to learn more.
 
 Segment's Node.js library lets you record analytics data from your node code. The requests hit Segment's servers, and then Segment routes your data to any destinations you have enabled.
 

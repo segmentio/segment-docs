@@ -10,7 +10,7 @@ To start sending data to Marketo, there are two things you must do. **Both of th
 ### Enter your Marketo Credentials into your Destination settings
 We'll need your Munchkin Account ID, Client Secret, and Client ID.
 
-To get your Munchkin Account ID [login to your Marketo account](https://login.marketo.com/), click Admin in the top right corner, then click Munchkin on the left side bar.
+To get your Munchkin Account ID [login to your Marketo account](https://login.marketo.com/){:target="_blank"}, click Admin in the top right corner, then click Munchkin on the left side bar.
 
 ![A screenshot of a Marketo account.](images/iL42ERv0g5X+.png)
 
@@ -60,10 +60,10 @@ Next, create a Service and get Client Secret and Client ID from that Service.
 ## Identify
 
 ### Cloud-mode
-When you call [`Identify`](/docs/connections/spec/identify/) in Cloud-mode, Segment uses [Marketo's REST API](http://developers.marketo.com/rest-api/lead-database/leads/#create_and_update) to create and update leads server-side.
+When you call [`Identify`](/docs/connections/spec/identify/) in Cloud-mode, Segment uses [Marketo's REST API](http://developers.marketo.com/rest-api/lead-database/leads/#create_and_update){:target="_blank"} to create and update leads server-side.
 
 ### Device-mode
-When you call [`Identify`](/docs/connections/spec/identify/) in Device-mode, Segment uses [Marketo's Background Form Submission](https://developers.marketo.com/blog/make-a-marketo-form-submission-in-the-background/) to create and update leads client-side.
+When you call [`Identify`](/docs/connections/spec/identify/) in Device-mode, Segment uses [Marketo's Background Form Submission](https://developers.marketo.com/blog/make-a-marketo-form-submission-in-the-background/){:target="_blank"} to create and update leads client-side.
 
 There are additional steps you must take to send `.identify()` calls in Device-mode.
 
@@ -122,7 +122,7 @@ If you'd like any other traits from your `.identify()` call to update a field in
 
 ## Track
 
-When you call [`Track`](/docs/connections/spec/track/), Segment maps the event to a pre-defined [Marketo Custom Activity](http://docs.marketo.com/display/public/DOCS/Understanding+Custom+Activities). There are two important things to note when sending `.track()` calls to Marketo:
+When you call [`Track`](/docs/connections/spec/track/), Segment maps the event to a pre-defined [Marketo Custom Activity](http://docs.marketo.com/display/public/DOCS/Understanding+Custom+Activities){:target="_blank"}. There are two important things to note when sending `.track()` calls to Marketo:
 
 1. You **must** map them to your Marketo Custom Activities in your Destination Settings. If you do not map a track call to a Custom Activity in your Destination Settings, we will not send the event to Marketo to help limit the amount of API calls made to Marketo.
 
@@ -146,7 +146,7 @@ Analytics.track(
 ![A screenshot of the Destination Settings page in Segment for the Marketo v2 Destination.](images/c2l53wGTCVP+.png)
 
 - **Segment Event Name**. Your Segment Event name.
-- **Marketo Activity ID**. When you are in [Marketo Custom Activities](http://docs.marketo.com/display/public/DOCS/Understanding+Custom+Activities), click on the Marketo Activity in the right side bar that you'd like to map your Segment Track event to. Copy and paste the ID into your Destination Settings.
+- **Marketo Activity ID**. When you are in [Marketo Custom Activities](http://docs.marketo.com/display/public/DOCS/Understanding+Custom+Activities){:target="_blank"}, click on the Marketo Activity in the right side bar that you'd like to map your Segment Track event to. Copy and paste the ID into your Destination Settings.
 ![A screenshot of the Marketo Custom Activities page.](images/cwZqHwQfs3M+.png)
 
 - **Segment Property Name**. The name of the property in your `.track()` call. This is case sensitive so make sure the name matches exactly how you are passing it in your `.track()` call.
@@ -161,7 +161,7 @@ Analytics.track(
 
 ## Page
 
-When you call [`Page`](/docs/connections/spec/page/), Segment uses [Marketo's Munchkin.js `visitWebPage` method](http://developers.marketo.com/javascript-api/lead-tracking/api-reference/#munchkin_visitwebpage). The URL is built from your `.page()` event and properties object into the form Marketo expects, so no need to worry about doing that yourself.
+When you call [`Page`](/docs/connections/spec/page/), Segment uses [Marketo's Munchkin.js `visitWebPage` method](http://developers.marketo.com/javascript-api/lead-tracking/api-reference/#munchkin_visitwebpage){:target="_blank"}. The URL is built from your `.page()` event and properties object into the form Marketo expects, so no need to worry about doing that yourself.
 
 Marketo's `visitWebPage` method requires a URL and a user agent. Any calls that are missing either of these fields will not be sent to Marketo. User agent is automatically collected Client-side but if you are sending `.page()` calls from the server, make sure to set the user agent.
 
@@ -207,7 +207,7 @@ We do our best to limit the amount of API calls that we are making to Marketo bu
         firstName: 'Alex'
       },
       integrations: {
-        'Marketo': false,
+        'Marketo V2': false,
         'Google Analytics': true
       }
     })
@@ -234,7 +234,7 @@ You can do one of the following to prevent duplicate leads:
 
 To upload a list to Marketo, when you are in Lead Database, click All Leads. Then click "New", then "Import List" from the drop down. Select your CSV, then click "Next". Make sure "Email Address" and "userId" are the Marketo Fields selected then click "Next". Name your list or select a pre-existing list. Select "None" for Acquisition Program. Then Click "Import".
 
-2. Manually merge leads in Marketo. Follow [these instructions to merge](http://docs.marketo.com/display/public/DOCS/Find+and+Merge+Duplicate+People) any duplicate leads found in Marketo after enabling the destination.
+2. Manually merge leads in Marketo. Follow [these instructions to merge](http://docs.marketo.com/display/public/DOCS/Find+and+Merge+Duplicate+People){:target="_blank"} any duplicate leads found in Marketo after enabling the destination.
 3. Make sure to call identify first. This is already a recommended best practice as [part of our spec](/docs/connections/spec/identify/).
 4. Pass an email in your `.track()` and `.page()` calls.
 
@@ -258,3 +258,17 @@ There are a few necessary steps that have to be taken to migrate from Segment's 
    ![A screenshot of the Marketo Custom Activities field.](images/cg6YhDEPWXv+.png)
 
 6. When enabling Marketo V2, because of the way Marketo's API works, there is potential to create duplicate leads, especially when the first enabling the destination. For ways to prevent this, check out the Preventing Duplicate Leads.
+
+## Send a single source's data to multiple Marketo V2 workspaces
+
+Segment doesn't support multiple instances of Marketo V2 for any source in Segment (for both Device-Mode and Cloud-Mode). If you need a single source's data sent to multiple Marketo V2 workspaces, follow the instructions on configuring a [Repeater destination](/docs/connections/destinations/catalog/repeater/) to route your source's data through the Repeater destination into a new source and new Marketo V2 destination instance.
+To create a Repeater destination, new source, and second Marketo V2 destination:
+
+1. Create and connect a new [Repeater destination](https://app.segment.com/goto-my-workspace/destinations/catalog/repeater) to your source and select the intended source.
+2. Click **Add destination**, name the destination, and select Fill in settings manually.
+4. Create a new source, then navigate to **Settings > API Keys** and copy the **Write Key** value.
+- From the Repeater destination's **Settings** page, you'll find **Write Keys** in the **Connection Settings**. This is where your second source's write key from step 4 will go.
+5. Navigate back to your Repeater destination and paste in the source's `writeKey` into the write key setting.
+6. Add a Marketo V2 destination to your new source with the desired configuration settings.
+7. Enable the Repeater destination, new source, new Marketo V2 destination.
+8. You'll begin seeing data transmitted from your originating source to the Repeater Destination (Event Delivery), then to the new source (Debugger), and finally to the Marketo V2 destination (Event Delivery).

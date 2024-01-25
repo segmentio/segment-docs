@@ -3,7 +3,7 @@ rewrite: true
 title: PixelMe Destination
 hidden: true
 ---
-[PixelMe](https://pixelme.me/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) Smart Attribution works by gathering all your traffic from any source and attributing it instantly using UTMs. Combined with our event tracking, you can easily see which traffic is causing which conversions on your website.
+[PixelMe](https://pixelme.me/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners){:target="_blank”} Smart Attribution works by gathering all your traffic from any source and attributing it instantly using UTMs. Combined with our event tracking, you can easily see which traffic is causing which conversions on your website.
 
 This destination is maintained by PixelMe. For any issues with the destination, [contact the PixelMe team](mailto:team@pixelme.me).
 
@@ -13,11 +13,11 @@ This destination is maintained by PixelMe. For any issues with the destination, 
 
 ## Getting Started
 
-{% include content/connection-modes.md %}
+
 
 1. From the Segment web app, click **Catalog**.
 2. Search for "PixelMe" in the Catalog, select it, and choose which of your sources to connect the destination to.
-3. Enter the "API Key" into your Segment Settings UI which you can directly copy-paste from your [PixelMe dashboard](https://app.pixelme.me).
+3. Enter the "API Key" into your Segment Settings UI which you can directly copy-paste from your [PixelMe dashboard](https://app.pixelme.me){:target="_blank"}.
 4. To find the API Key, go to Settings > Integrations
 
 ## Page

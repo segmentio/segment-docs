@@ -87,7 +87,7 @@ analytics.identify('YOUR_USERS_ID', {
 When you call `identify`, Segment checks to see if this Lead exists based on the `email` trait. If it does, Segment updates the Lead with the traits you've passed in your `identify` call, otherwise Segment creates a Salesforce Lead.
 
 > warning ""
-> If you're planning to update custom fields in Salesforce with Segment, you need to make sure you create the custom Lead Field inside Salesforce *prior* to sending the data. The [Salesforce API for Leads](https://developer.salesforce.com/docs/atlas.en-us.api.meta/api/sforce_api_objects_lead.htm) requires `lastName` and `company`. If either of this fields are not present in a server-side request Segment appends the string `'n/a'` to each of those fields even if you have provided those fields in a previous request.
+> If you're planning to update custom fields in Salesforce with Segment, you need to make sure you create the custom Lead Field inside Salesforce *prior* to sending the data. The [Salesforce API for Leads](https://developer.salesforce.com/docs/atlas.en-us.api.meta/api/sforce_api_objects_lead.htm){:target="_blank"} requires `lastName` and `company`. If either of this fields are not present in a server-side request Segment appends the string `'n/a'` to each of those fields even if you have provided those fields in a previous request.
 
 For example, if you want to collect a custom trait in Segment called `testProp`, you can create a Field Label called `testProp` which will generate an API Name as `testProp__c`. Segment appends the `__c` to any custom traits so you don't need to worry about that. Make sure to stay consistent with your casing. If you create custom fields in camelCase, make sure you send `traits` to Segment in camelCase. If you are creating custom fields in SFDC as `snake_case`, then be sure to send your `traits` in the same format.
 
@@ -123,7 +123,7 @@ analytics.group('813', {
    }
 });
 ```
-The above call will be sent like the following, in accordance with [Salesforce's API specs](https://developer.salesforce.com/docs/atlas.en-us.api.meta/api/sforce_api_objects_account.htm):
+The above call will be sent like the following, in accordance with [Salesforce's API specs](https://developer.salesforce.com/docs/atlas.en-us.api.meta/api/sforce_api_objects_account.htm){:target="_blank"}:
 
 ```js
 {
@@ -161,7 +161,7 @@ In order to send custom traits, you must do the same steps as you had done for t
 
 ## Trait Validation
 
-Salesforce has documented strict validations on their semantic traits. Segment trims those traits if they go over the limit. Refer to their docs for [Account Objects](https://developer.salesforce.com/docs/atlas.en-us.200.0.api.meta/api/sforce_api_objects_account.htm#topic-title) and [Lead Objects](https://developer.salesforce.com/docs/atlas.en-us.200.0.api.meta/api/sforce_api_objects_lead.htm) to make sure you are sending the trait values under these limits if you do not want to see them trimmed off.
+Salesforce has documented strict validations on their semantic traits. Segment trims those traits if they go over the limit. Refer to their docs for [Account Objects](https://developer.salesforce.com/docs/atlas.en-us.200.0.api.meta/api/sforce_api_objects_account.htm#topic-title){:target="_blank"} and [Lead Objects](https://developer.salesforce.com/docs/atlas.en-us.200.0.api.meta/api/sforce_api_objects_lead.htm){:target="_blank"} to make sure you are sending the trait values under these limits if you do not want to see them trimmed off.
 
 ## Custom Actions
 If you need to manually configure how your Segment events interact with Salesforce resources, you can do so using the [Actions](#actions) setting. This setting allows you to trigger standard CRUD operation (Create, Read, Update/Upsert, Delete) on your internal SFDC resources in response to your Segment events. You can configure as many of these actions as you would like. Each action must be associated with either a specific `track` event or **all** `identify` events. Actions can be further configured to map event properties to SFDC fields. Here's an example action configuration that will create a new Case in Salesforce in response to an **Issue Submitted** `track` event:
@@ -186,7 +186,7 @@ To enable an integration with a Salesforce Sandbox instance:
 
 ### API Call Limits
 
-Salesforce limits both the concurrent amount of requests and the total amount of daily requests Segment can make to their API on your behalf. Check [these limits](https://developer.salesforce.com/docs/atlas.en-us.salesforce_app_limits_cheatsheet.meta/salesforce_app_limits_cheatsheet/salesforce_app_limits_platform_api.htm). They vary per edition and your number of bought user licenses.
+Salesforce limits both the concurrent amount of requests and the total amount of daily requests Segment can make to their API on your behalf. Check [these limits](https://developer.salesforce.com/docs/atlas.en-us.salesforce_app_limits_cheatsheet.meta/salesforce_app_limits_cheatsheet/salesforce_app_limits_platform_api.htm){:target="_blank"}. They vary per edition and your number of bought user licenses.
 
 Segment makes two API requests per `identify`. The first request is a SQL query to determine whether this object already exists. The second is to either update or create that object.
 

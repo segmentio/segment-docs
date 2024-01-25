@@ -3,20 +3,18 @@ title: ConvertFlow Destination
 rewrite: true
 id: 5cb607714cab700001f13480
 ---
-[ConvertFlow](https://www.convertflow.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) is the all-in-one platform for converting your website visitors. From one builder, you can create, personalize and launch dynamic website content, forms, popups, sticky bars, surveys, quizzes and landing pages, without coding.
+[ConvertFlow](https://www.convertflow.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners){:target="_blank”} is the all-in-one platform for converting your website visitors. From one builder, you can create, personalize and launch dynamic website content, forms, popups, sticky bars, surveys, quizzes and landing pages, without coding.
 
 This destination is maintained by ConvertFlow. For any issues with the destination, [contact the ConvertFlow Support team](mailto:support@convertflow.com).
-
-{% include content/beta-note.md %}
 
 
 ## Getting Started
 
-{% include content/connection-modes.md %}
+
 
 1. From the Segment web app, click **Catalog**.
 2. Search for "ConvertFlow" in the Catalog, select it, and choose which of your sources to connect the destination to.
-3. Paste in your ConvertFlow website's ID into your Segment Settings UI, which you can find by heading into your [ConvertFlow account](https://app.convertflow.com/), selecting a website and copying the website ID from the website dashboard's URL. This will enable the ConvertFlow website's tracking snippet as a Destination for your selected Segment source. Your ConvertFlow website campaigns can then be fully managed from the ConvertFlow dashboard.
+3. Paste in your ConvertFlow website's ID into your Segment Settings UI, which you can find by heading into your [ConvertFlow account](https://app.convertflow.com/){:target="_blank”}, selecting a website and copying the website ID from the website dashboard's URL. This will enable the ConvertFlow website's tracking snippet as a Destination for your selected Segment source. Your ConvertFlow website campaigns can then be fully managed from the ConvertFlow dashboard.
 
 ## Identify
 

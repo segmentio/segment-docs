@@ -3,11 +3,11 @@ rewrite: true
 title: Apptimize Destination
 id: 5537d3e80a20f4e22f0fb385
 ---
-[Apptimize](https://apptimize.com/) empowers product teams to efficiently run A/B tests, rollout and manage new features, and deliver personalized user experiences. Our Apptimize destination code is open-source. You can browse the code on GitHub for [iOS](https://github.com/Apptimize/analytics-ios-integration-apptimize) and [Android](https://github.com/Apptimize/analytics-android-integration-apptimize).
+[Apptimize](https://apptimize.com/){:target="_blank"} empowers product teams to efficiently run A/B tests, rollout and manage new features, and deliver personalized user experiences. Our Apptimize destination code is open-source. You can browse the code on GitHub for [iOS](https://github.com/Apptimize/analytics-ios-integration-apptimize){:target="_blank"} and [Android](https://github.com/Apptimize/analytics-android-integration-apptimize){:target="_blank"}.
 
 ## Getting Started
 
-{% include content/connection-modes.md %}
+
 
  1. From the Segment web app, click **Catalog**.
  2. Search for "Apptimize" in the Catalog, select it, and choose which of your sources to connect the destination to.
@@ -60,7 +60,7 @@ Set the plist property `ApptimizeAppKey` to the corresponding app key for the ap
 
 #### Android
 
-Use the [Apptimize.setup](https://sdk.apptimize.com/android/javadocs/javadoc-2.12.10/com/apptimize/Apptimize.html#setup(android.content.Context,%20java.lang.String) API to initialize Apptimize with the app key.
+Use the [Apptimize.setup](https://sdk.apptimize.com/android/javadocs/javadoc-2.12.10/com/apptimize/Apptimize.html#setup(android.content.Context,%20java.lang.String){:target="_blank"} API to initialize Apptimize with the app key.
 
 It is important to note that if the app keys in the plist/code and the Segment dashboard do not match, the SDK will use the app key from the plist/code as it finishes initialization first. While it is safe to initialize Apptimize multiple times in the app, to avoid confusion, be very careful that the app key is the same in both the places.
 

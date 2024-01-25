@@ -5,7 +5,7 @@ id: p1Kv6YKjE3
 ---
 {% include content/source-region-unsupported.md %}
 
-Connect [Aircall](https://aircall.io) with Segment to bring Aircall events and phone call data to your data warehouse. Improve your knowledge of customer touchpoints by using call activity.
+Connect [Aircall](https://aircall.io){:target="_blank"} with Segment to bring Aircall events and phone call data to your data warehouse. Improve your knowledge of customer touchpoints by using call activity.
 
 This source is maintained by Aircall. For any issues with the source, [contact the Aircall Support team](mailto:support@aircall.io).
 
@@ -15,7 +15,7 @@ This source is maintained by Aircall. For any issues with the source, [contact t
 
 Before you start, make sure that you have admin rights in both Aircall and Segment.
 
-To begin, [login](https://dashboard-v2.aircall.io/login) to your Aircall account.
+To begin, [login](https://dashboard-v2.aircall.io/login){:target="_blank"} to your Aircall account.
 
 From your Aircall **Dashboard**, select **Integrations** on the left sidebar menu.
 * Select **Segment**
@@ -63,7 +63,7 @@ If the integration is successful, you will see a message that says "Authenticati
 
 
 ## **Step 3: Select Aircall events to send to Segment**
-- There are up to [26 Aircall events](https://developer.aircall.io/api-references/#events) that can be pushed to Segment. As such, you will see a list of 26 possible events pre-populated for you as the default setting is for all and every Aircall event to be pushed to Segment.
+- There are up to [26 Aircall events](https://developer.aircall.io/api-references/#events){:target="_blank"} that can be pushed to Segment. As such, you will see a list of 26 possible events pre-populated for you as the default setting is for all and every Aircall event to be pushed to Segment.
 
 - **If there are events that you do not want to be sent to Segment**, delete the default value(s) shown in the list of 26 events (or write "null") if you determine that certain events should not be a source for Segment.
 ![Screenshot of the Segment menu in Aircall with Segment event names entered in all of the event fields.](images/qgbkbvA.png)

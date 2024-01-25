@@ -3,11 +3,11 @@ rewrite: true
 title: AdRoll Destination
 id: 54521fd525e721e32a72ee8e
 ---
-[AdRoll](https://adroll.com/) is a retargeting network that allows you to show ads to visitors who've landed on your site while browsing the web. The AdRoll Destination is open-source. You can browse the code on [GitHub](https://github.com/segment-integrations/analytics.js-integration-adroll).
+[AdRoll](https://adroll.com/){:target="_blank”} is a retargeting network that allows you to show ads to visitors who've landed on your site while browsing the web. The AdRoll Destination is open-source. You can browse the code on [GitHub](https://github.com/segment-integrations/analytics.js-integration-adroll){:target="_blank”}.
 
 ## Getting Started
 
-{% include content/connection-modes.md %}
+
 
 1. From the Segment web app, click **Catalog**.
 2. Search for "Adroll" in the Catalog, select it, and choose which of your sources to connect the destination to.
@@ -62,7 +62,7 @@ When you include an event property labeled `price` it will be tracked to AdRoll 
 
 ### Currency
 
-When you send `Order Completed` event with `properties.currency`, we will send that as `adroll_currency`. AdRoll supports [these currency codes](https://help.adroll.com/hc/en-us/articles/213429827-Currency-Codes).
+When you send `Order Completed` event with `properties.currency`, we will send that as `adroll_currency`. AdRoll supports [these currency codes](https://help.adroll.com/hc/en-us/articles/213429827-Currency-Codes){:target="_blank”}.
 
 ### Order ID
 

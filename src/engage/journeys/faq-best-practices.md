@@ -30,14 +30,6 @@ Unlike lists associated with Engage Audiences, users who are added to a journey 
 
 Save your Journey in a draft state so that you can review before you publish it. Once you publish a Journey, you cannot edit select portions of a Journey and Journeys sends data to destinations.
 
-### Make a copy to edit published Journeys
-
-Once you publish a Journey, you cannot add, delete, or edit the steps within the Journey. You can edit the Journey name, description, and destinations.
-
-To edit the steps within a published Journey, make a copy of the Journey you wish to edit, make adjustments, delete the original Journey, and then publish the revised Journey.
-
-When you do this, the key used for syncing to destinations will be different from the copied Journey. Make sure you change the reference key used in the downstream destinations accordingly.
-
 ### Know how to incorporate historical data
 
 Aside from the entry condition, all Journey step conditions are triggered by future events and existing trait memberships. Event-based conditions only evaluate events that occur *after* the Journey is published.
@@ -73,33 +65,37 @@ Follow these best practices to test your journeys:
 - For early version journeys, scaffold Send to Destination steps without connecting to your production advertising or messaging destinations.
 - Verify individual users' progress through the Journey in the Profile explorer view.
 
-## Frequently asked questions
+## FAQs
 
-### How often do Journeys run?
+#### How often do Journeys run?
 
 Journeys run in real-time, like real-time Audiences in Engage. This means that users will progress through Journeys as Segment receives new events.
 
-### Can a user re-enter a Journey?
+#### Can a user re-enter a Journey?
 
 Yes. Users must first exit a Journey, however, before entering it again. To learn more about Journey re-entry, read the [Journey re-entry section](/docs/engage/journeys/build-journey/#journey-re-entry) of the [Build a Journey](/docs/engage/journeys/build-journey/) page.
 
-### What destinations does Journeys support?
+#### What destinations does Journeys support?
 
 Journeys supports all Engage destinations, including Destination Functions. Read more in Send data to destinations.
 
-### What are the reporting capabilities of Journeys?
+#### What are the reporting capabilities of Journeys?
 
 When building a Journey, if you check **Use historical data**, you can see the estimated number of users in the initial cohort.
 
 Once published, Journeys displays the number of users are in each step of the Journey at any given time.
 
-### How are users sent to downstream destinations?
+#### How are users sent to downstream destinations?
 
 The data type you send to a destination depends on whether the destination is an Event Destination or a List Destination.
 
-### Which roles can access Journeys?
+#### Which roles can access Journeys?
 For Engage customers, users with either the Engage User or Engage Admin roles can create, edit, and delete journeys. Users with the Engage Read-only role are restricted to view-only access.
 
-### Why am I seeing duplicate entry or exit events?
+#### Why am I seeing duplicate entry or exit events?
 
 Journeys triggers audience or trait-related events for each email `external_id` on a profile. If a profile has two email addresses, you'll see two Audience Entered and two Audience Exited events for each Journey step. Journeys sends both email addresses to downstream destinations.
+
+#### How quickly do user profiles move through Journeys?
+
+It may take up to five minutes for a user profile to enter each step of a Journey, including the entry condition. For Journey steps that reference a batch audience or SQL trait, Journeys processes user profiles at the same rate as the audience or trait computation. Visit the Engage docs to [learn more about compute times](/docs/engage/audiences/#understanding-compute-times).

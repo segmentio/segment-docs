@@ -4,14 +4,14 @@ rewrite: true
 hide-personas-partial: true
 id: 5d433ab511dfe7000134faca
 ---
-[Criteo Offline Conversions](https://www.criteo.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) enables offline event tracking so marketers can run Omnichannel Campaigns by leveraging deterministic matching of SKU-level offline sales data with online user profiles.  Criteo can predict which store the shopper prefers to visit and deliver personalized recommendations for products that entice them to visit and purchase.
+[Criteo Offline Conversions](https://www.criteo.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners){:target="_blank”} enables offline event tracking so marketers can run Omnichannel Campaigns by leveraging deterministic matching of SKU-level offline sales data with online user profiles.  Criteo can predict which store the shopper prefers to visit and deliver personalized recommendations for products that entice them to visit and purchase.
 
 The Criteo Offline Conversions Destination and this document are maintained by Criteo. For any issues with the destination, [let the Criteo team know](mailto:support@criteo.com)!
 
 
 ## Getting Started
 
-{% include content/connection-modes.md %}
+
 
 1. From the Segment web app, click **Catalog**.
 2. Search for "Criteo Offline Conversions" in the Catalog, select it, and choose which of your sources to connect the destination to.

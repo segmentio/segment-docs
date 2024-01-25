@@ -30,16 +30,19 @@ You can use the `integrations` JSON object as part of your Segment payloads to c
   "integrations": {
     "All": true,
     "Mixpanel": false,
-    "Salesforce": false
+    "Salesforce": false,
+    "My Destination Function (My Workspace)": true
   }
 }
 ```
 
-By *default*, the `integrations` object is set to `'All': true`. You do not need to include this flag in the object to use this behavior, but if you'll be using the integrations object frequently to control destination filtering, you might want to do this to make it explicit for later readers. Change this to `'All': false` to prevent both Segment and any downstream destinations from receiving data. If you set `'Segment.io': false` in the integrations object, Analytics.js 2.0 drops the event before it reaches your Source Debugger. You can also add destinations to the object by key, and provide a `true` or `false` value to allow or disallow data to flow to them on an individual basis. The Destination Info box at the top of each destination page lets you know how to refer to each destination in the Integrations object. 
+By *default*, the `integrations` object is set to `'All': true`. You do not need to include this flag in the object to use this behavior, but if you'll be using the integrations object frequently to control destination filtering, you might want to do this to make it explicit for later readers. Change this to `'All': false` to prevent any downstream destinations from receiving data, not including data warehouses. If you set `'Segment.io': false` in the integrations object, Analytics.js 2.0 drops the event before it reaches your Source Debugger. You can also add destinations to the object by key, and provide a `true` or `false` value to allow or disallow data to flow to them on an individual basis. The Destination Info box at the top of each destination page lets you know how to refer to each destination in the Integrations object. 
 
 If you are using [multiple instances of a destination](/docs/connections/destinations/add-destination/#connecting-one-source-to-multiple-instances-of-a-destination), any settings you set in the integrations object are applied to all instances of the destination. You cannot specify an instance of a destination to apply Integrations object settings to. 
 
 Note that destination flags are **case sensitive** and match the destination's name in the docs (for example, "AdLearn Open Platform", "awe.sm", or "MailChimp").
+
+The syntax to filter data to a data warehouse is different. Refer to the [Warehouse FAQs](/docs/connections/storage/warehouses/faq/#can-i-selectively-filter-dataevents-sent-to-my-warehouse-based-on-a-property) for more details.
 
 
 ## Destination filters
@@ -79,7 +82,7 @@ The events filtered out of individual destinations using this method still arriv
 
 ## Schema event filters
 
-You can use Schema Event Filters to discard and permanently remove Page, Screen and Track events from event-based sources, preventing them from reaching any destinations or warehouses. Use this if you know that you'll never want to access this data again. This functionality is similar to filtering with the Integrations object, however it can be changed from within the Segment app without touching any code.
+You can use Schema Event Filters to discard and permanently remove Page, Screen and Track events from event-based sources, preventing them from reaching any destinations or warehouses, as well as omit identify traits and group properties. Use this if you know that you'll never want to access this data again. This functionality is similar to filtering with the Integrations object, however it can be changed from within the Segment app without touching any code.
 
 When you enable these filters, Segment stops forwarding the data to all of your Cloud- and device-mode destinations, including warehouses, and your data is no longer stored in Segment's warehouses for later replay.
 
@@ -106,6 +109,10 @@ If you have Protocols in your workspace, **and** have a tracking plan associated
 
 ![Schema Configuration section of a source's Settings page](images/protocols-unplanned.png)
 
+
+## Destination Insert Function
+
+A customizable way to filter or alter data going from a source to a cloud-mode destination is to use [Insert Functions](/docs/connections/functions/insert-functions/)). This feature gives you the ability to receive data from your Segment source, write custom code to alter or block it, and then pass that altered payload to a downstream cloud-mode destination.
 
 ## Warehouse Selective Sync
 

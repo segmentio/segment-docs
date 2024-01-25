@@ -11,17 +11,12 @@ Segment recommends that you make an Identify call:
 - After a user first registers
 - After a user logs in
 - When a user updates their info (for example, they change or add a new address)
-- Upon loading any pages that are accessible by a logged in user (optional)
 
-The first three examples are pretty self-explanatory, but many might ask: why you would call identify on every page load if we're storing the `userId` in the cookie/local storage?
+The first three examples are pretty self-explanatory, but many might ask: why you would call identify on every page load if you're storing the `userId` in the cookie/local storage?
 
-Let's imagine this scenario:
+Calling Identify in one of Segment's [libraries](/docs/connections/sources/) is one of the first steps to getting started with Segment. Refer to library-specific documentation for more details.
 
-I log into your app. Identify is called. For whatever reason, I close the browser and don't return until later. There's no way of knowing where I will reenter your app from. I could start my session from anywhere. And because there are many tools out there that require an initial identify call for certain features (e.g. Intercom chat widget) it's important to tell your end tools who the user is when they first start their session.
-
-Calling `identify` in one of our [libraries](/docs/connections/sources/) is one of the first steps to getting started with Segment. Refer to library-specific documentation for more details.
-
-Here's the payload of a typical `identify` call with most [common fields](/docs/connections/spec/common/) removed:
+Here's the payload of a typical Identify call with most [common fields](/docs/connections/spec/common/) removed:
 
 ```json
 {
@@ -48,7 +43,7 @@ analytics.identify("97980cfea0067", {
 ```
 {% include content/syntax-note.md %}
 
-Beyond the common fields, an `identify` call has the following fields:
+Beyond the common fields, an Identify call has the following fields:
 
 <table>
   {% include content/spec-table-header.md %}
@@ -59,7 +54,7 @@ Beyond the common fields, an `identify` call has the following fields:
 
 ## Example
 
-Here's a complete example of an `identify` call:
+Here's a complete example of an Identify call:
 
 ```json
 {
@@ -104,7 +99,7 @@ Use the following interactive code pen to see what your Identify calls would loo
 
 ## Identities
 
-The `identify` call specifies a customer identity that you can reference across the customer's whole lifetime. **Every `identify` call must have a [User ID](/docs/connections/spec/identify#user-id) or an [Anonymous ID](/docs/connections/spec/identify#anonymous-id)**, depending on how much you know about the user in question.
+The Identify call specifies a customer identity that you can reference across the customer's whole lifetime. **Every Identify call must have a [User ID](/docs/connections/spec/identify#user-id) or an [Anonymous ID](/docs/connections/spec/identify#anonymous-id)**, depending on how much you know about the user in question.
 
 ### Anonymous ID
 
@@ -112,7 +107,7 @@ There are certain cases where you don't actually know who the user is according 
 
 In these cases, you should use an Anonymous ID.
 
-The Anonymous ID can be any pseudo-unique identifier. For example, on your servers you can use a session id. If you don't have any readily available identifier, you can always generate a new random one—we recommend [UUIDs](http://en.wikipedia.org/wiki/Universally_unique_identifier){:target="_blank"}.
+The Anonymous ID can be any pseudo-unique identifier. For example, on your servers you can use a session id. If you don't have any readily available identifier, you can always generate a new random one—Segment recommends [UUIDs](http://en.wikipedia.org/wiki/Universally_unique_identifier){:target="_blank"}.
 
 **Note:** Segment's [browser and mobile libraries](/docs/connections/sources/) **automatically** use Anonymous IDs to keep track of users as they navigate around your website or app, so you don't need to worry about them when using those libraries.
 
@@ -126,7 +121,7 @@ analytics.identify({
 
 ### User ID
 
-User IDs are a more permanent and robust identifier, like a database ID. Since these IDs are consistent across a customer's lifetime, `identify` calls should include a User ID as often as possible.
+User IDs are a more permanent and robust identifier, like a database ID. Since these IDs are consistent across a customer's lifetime, Identify calls should include a User ID as often as possible.
 
 A User ID is usually the unique identifier that you recognize a user by in your own database. For example, if you're using MongoDB it might look something like `507f191e810c19729de860ea`.
 
@@ -136,9 +131,9 @@ Segment recommends using database IDs instead of simple email addresses or usern
 
 ## Traits
 
-Traits are pieces of information you know about a user that are included in an `identify` call. These could be demographics like `age` or `gender`, account-specific like `plan`, or even things like whether a user has seen a particular A/B test variation. Up to you!
+Traits are pieces of information you know about a user that are included in an Identify call. These could be demographics like `age` or `gender`, account-specific like `plan`, or even things like whether a user has seen a particular A/B test variation.
 
-Segment has reserved some traits that have semantic meanings for users, and we handle them in special ways. For example, Segment always expects `email` to be a string of the user's email address. We'll send this on to destinations like _Mailchimp_ that require an email address for their tracking.
+Segment has reserved some traits that have semantic meanings for users, and will handle them in special ways. For example, Segment always expects `email` to be a string of the user's email address. Segment sends this on to destinations like _Mailchimp_ that require an email address for their tracking.
 
 You should **only use reserved traits for their intended meaning**.
 

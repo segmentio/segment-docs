@@ -3,15 +3,15 @@ title: Indicative Destination
 rewrite: true
 id: 54521fd725e721e32a72eec4
 ---
-[Indicative](https://app.indicative.com/?utm_source=segment&utm_medium=partners&utm_campaign=setupguide#/login/register) is a behavioral analytics platform designed to help Marketing and Product teams optimize user engagement, conversion, and retention.
+[Indicative](https://app.indicative.com/?utm_source=segment&utm_medium=partners&utm_campaign=setupguide#/login/register){:target="_blank"} is a behavioral analytics platform designed to help Marketing and Product teams optimize user engagement, conversion, and retention.
 
 ## Getting Started
 
-{% include content/connection-modes.md %}
 
-1. [Create an Indicative account](https://app.indicative.com/?utm_source=segment&utm_medium=partners&utm_campaign=setupguide#/login/register).
 
-2. To integrate Segment as a data source go to **Settings > Integrations > [Segment](https://app.indicative.com/?utm_source=segment&utm_medium=partners&utm_campaign=setupguide#/onboarding/segment)**
+1. [Create an Indicative account](https://app.indicative.com/?utm_source=segment&utm_medium=partners&utm_campaign=setupguide#/login/register){:target="_blank"}.
+
+2. To integrate Segment as a data source go to **Settings > Integrations > [Segment](https://app.indicative.com/?utm_source=segment&utm_medium=partners&utm_campaign=setupguide#/onboarding/segment){:target="_blank"}**
 
 3. Click **Enable with Segment** under One-click Setup.
 
@@ -19,7 +19,7 @@ id: 54521fd725e721e32a72eec4
 
 5. To connect multiple sources to this project, simply repeat steps 2 - 4.
 
-You're all set! Walkthrough the [Interactive Demo](https://app.indicative.com/?utm_source=segment&utm_medium=partners&utm_campaign=setupguide#/onboard/dashboard) to get ramped up quickly and easily!
+You're all set! Walkthrough the [Interactive Demo](https://app.indicative.com/?utm_source=segment&utm_medium=partners&utm_campaign=setupguide#/onboard/dashboard){:target="_blank"} to get ramped up quickly and easily!
 
 For additional information, contact `support@indicative.com`.
 
@@ -87,4 +87,4 @@ analytics.screen({
 
 ### Property values have maximum length of 255 characters
 
-Indicative's [documentation](https://support.indicative.com/hc/en-us/articles/360004147512-REST-API-Guide) states that the values in the properties must not exceed 255 characters. Segment will still accept the call, but any values that exceed 255 characters will be trimmed (meaning only the first 255 characters will be sent to Indicative).
+Indicative's [documentation](https://support.indicative.com/hc/en-us/articles/360004147512-REST-API-Guide){:target="_blank"} states that the values in the properties must not exceed 255 characters. Segment will still accept the call, but any values that exceed 255 characters will be trimmed (meaning only the first 255 characters will be sent to Indicative).

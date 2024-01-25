@@ -3,20 +3,18 @@ title: Outfunnel Destination
 hide-boilerplate: true
 hide-dossier: true
 id: 63ff8bae963d5cb4fc79f097
-private: false
-hidden: false
+private: true
+hidden: true
 
 ---
 {% include content/plan-grid.md name="actions" %}
 
-[Outfunnel](https://outfunnel.com/product-led-sales-platform/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) is a product-led sales platform that syncs product usage insights to CRMs like Pipedrive so your salespeople can easily find product-qualified leads and close more revenue.
+[Outfunnel](https://outfunnel.com/product-led-sales-platform/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners){:target="_blank”} is a product-led sales platform that syncs product usage insights to CRMs like Pipedrive so your salespeople can easily find product-qualified leads and close more revenue.
 
 This destination is maintained by Outfunnel. For any issues with the destination, [contact their Support team](mailto:support@outfunnel.com).
 
 Outfunnel’s Segment integration is an [Actions-based Destination in cloud mode](/docs/connections/destinations/#connection-modes)
  that lets you send your frontend and backend events directly to Outfunnel.
-
-{% include content/ajs-upgrade.md %}
 
 {% include content/beta-note.md %}
 

@@ -2,11 +2,16 @@
 title: 'Pinterest Audiences Destination'
 id: 5f3ada4acea48a461353d5af
 ---
+> warning "Migration of Pinterest Marketing API from v4 to v5"
+> Pinterest has upgraded their Marketing API from v4 to v5 and are sunsetting their v4 API on **June 30, 2023**. To keep your account up-to-date and keep data flowing into Pinterest without interruption, please manually re-authenticate each instance of the Pinterest Audiences destination in your Segment workspace before June 30. This is the only required step for Segment customers sending data to Pinterest through the Pinterest Audiences destination. You can read more about the Pinterest v4 end of life in [Pinterest’s documentation](https://developers.pinterest.com/docs/getting-started/migration/){:target="_blank"}.
+
+
+
 Pinterest Ads provides a way to target advertisements on Pinterest to a global audience. Segment's Pinterest Audiences integration allows Engage customers to sync audiences from Engage to Pinterest for better retargeting and higher-performing ads.
 
 For more information about advertising with Pinterest, see:
-- [Pinterest Developers](https://developers.pinterest.com/docs/widgets/getting-started/?)
-- [Pinterest for Business](https://business.pinterest.com/)
+- [Pinterest Developers](https://developers.pinterest.com/docs/widgets/getting-started/?){:target="_blank"}
+- [Pinterest for Business](https://business.pinterest.com/){:target="_blank"}
 
 ## Details
 

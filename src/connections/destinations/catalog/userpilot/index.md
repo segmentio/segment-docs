@@ -7,12 +7,10 @@ id: 5ca9d0c1b7119500014381d3
 
 This destination is maintained by Userpilot. For any issues with the destination, [contact the Userpilot Support team](mailto:support@userpilot.io).
 
-{% include content/beta-note.md %}
-
 
 ## Getting Started
 
-{% include content/connection-modes.md %}
+
 
 1. From the Segment web app, click **Catalog**.
 2. Search for *Userpilot Web Plugin* in the Catalog, select it, and choose the source you want to connect the destination to.

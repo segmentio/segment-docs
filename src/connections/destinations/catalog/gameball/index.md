@@ -3,18 +3,18 @@ title: Gameball Destination
 hide-cmodes: true
 id: 5df6778be7d93d3a5b742b1a
 ---
-[Gameball](https://gameball.co/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) is a gamified loyalty platform, offering growth, retention, and referral-management programs; and providing self-serve predictive analytics for growth marketers using machine learning to automate audience insights and recommendations.
+[Gameball](https://gameball.co/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners){:target="_blank”} is a gamified loyalty platform, offering growth, retention, and referral-management programs; and providing self-serve predictive analytics for growth marketers using machine learning to automate audience insights and recommendations.
 
 This destination is maintained by Gameball. For any issues with the destination, [contact Gameball support](mailto:support@gmabell.co).
 
 
 ## Getting Started
 
-{% include content/connection-modes.md %}
+
 
 1. From the Segment app Destinations page click "Gameball".
 2. Search for "Gameball" in the Destinations Catalog and confirm the Source you'd like to connect to.
-3. Copy and paste in your ["API Key"](https://help.gameball.co/en/articles/3467114-how-can-you-get-your-account-integration-details-api-key-transaction-key) from your [Account Integration](https://app.gameball.co/settings) page into your Segment Settings UI.
+3. Copy and paste in your ["API Key"](https://help.gameball.co/en/articles/3467114-how-can-you-get-your-account-integration-details-api-key-transaction-key){:target="_blank"} from your [Account Integration](https://app.gameball.co/settings){:target="_blank"} page into your Segment Settings UI.
 
 
 Segment's `track` and `identify` events can only update the following properties in Gameball:
@@ -50,7 +50,7 @@ If you're not familiar with the Segment Specs, take a look to understand what th
 analytics.track('View Product')
 ```
 
-Set up your [custom `track` events in Gameball](https://help.gameball.co/en/articles/3467130-manage-your-players-events) before you send them from Segment to Gameball.
+Set up your [custom `track` events in Gameball](https://help.gameball.co/en/articles/3467130-manage-your-players-events){:target="_blank"} before you send them from Segment to Gameball.
 
 All `track` events _must_ contain a `userID` property.
 

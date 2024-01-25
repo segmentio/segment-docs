@@ -70,12 +70,15 @@ To figure out if an event is flagged for conversion, follow these steps:
       ```
 
 2. Verify that the [Google Conversion ID](/docs/connections/destinations/catalog/google-ads-gtag/#google-conversion-id) in your Segment workspace is correct.
-3. Find your ad online and click on it. This will redirect you to your website.
+3. Find your ad online and click it. This will redirect you to your website.
 4. Open the Network tab in your browser and make sure the **Preserve log** checkbox is checked and **All** is selected. Keep this Network tab and webpage open.
 
       ![Network tab](../../images/network-tab.png)
 
 5. Go to the **Settings** tab for your Gtag destination in Segment on a new webpage and choose **Click Conversions** to look at the mapped `track()` events and make sure the events are mapped to the correct **Conversion Label**.
+
+> info ""
+> The conversion label is unique to each conversion action and is configured per mapping. You can find the conversion label in the [event snippet](https://support.google.com/google-ads/answer/7548399?hl=en#:~:text=For%20website%20conversion,currency%27%3A%20%27USD%27%0A%20%20%20%20%20%20%7D){:target="_blank"}. The event snippet should have `send_to: 'AW-123456789/AbC-D_efG-h12_34-567'`. The conversion label is the part after the '/'.
 
       ![Edit Settings](../../images/conversion-settings.png)
 
@@ -86,6 +89,20 @@ To figure out if an event is flagged for conversion, follow these steps:
 
 8. See if the value for the `ct_cookie_present` changed to `true`. If `true`, it means that Google Ads counts the event as a conversion.  
 
+> info ""
+> Google Ads considers an event as a conversion when the user arrives to your website as a result of an Ad _click_. The Google SDK is responsible for checking if the user came from an Ad click and sets the parameter `ct_cookie_present` to true. Without clicking through an ad, Google Ads doesn't reflect the conversion because this information is missing in the network requests.
+
 ## Multiple Google Ads Accounts
 
 If you are an enterprise that uses multiple Google Ads Gtag accounts (usually managed by various third party agencies) you can override the top level default Google Conversion ID at the event level by entering it into the settings.
+
+## Remarketing Support 
+
+Google offers two primary types of remarketing: 
+
+* [Standard Remarketing](https://support.google.com/google-ads/answer/2453998){:target="_blank"} : allows advertisers to show targeted ads to users who have previously visited their website. Advertisers can create custom remarketing lists based on user behavior, such as pages viewed or specific actions taken on the website.
+* [Dynamic Remarketing](https://support.google.com/google-ads/answer/3103357){:target="_blank"} : takes personalized advertising a step further by showing users specific products or services they viewed on an advertiser's website. This type of remarketing is particularly beneficial for e-commerce businesses as it displays dynamic product ads to previous visitors, reminding them of products they showed interest in.
+
+> warning "Google Ads (Gtag) Destination does not support Dynamic Remarketing"
+> Segment's Google Ads (Gtag) Destination only supports Standard Remarketing. 
+

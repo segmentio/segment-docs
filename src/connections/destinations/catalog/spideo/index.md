@@ -3,13 +3,13 @@ title: Spideo Destination
 id: 6279326f707f2f9bc4882b84
 ---
 
-[Spideo](https://spideo.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) is the leading company in video and cultural content recommendation.
+[Spideo](https://spideo.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners){:target="_blank”} is the leading company in video and cultural content recommendation.
 
 This destination is maintained by Spideo. For any issues with the destination, [contact the Spideo Support team](mailto:support@spideo.tv).
 
 ## Getting Started
 
-{% include content/connection-modes.md %} 
+ 
 
 1. From the Destinations catalog page in the Segment App, click **Add Destination**.
 2. Search for "Spideo" in the Destinations Catalog, and select the "Spideo" destination.

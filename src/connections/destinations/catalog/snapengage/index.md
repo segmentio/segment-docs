@@ -3,11 +3,11 @@ rewrite: true
 title: SnapEngage Destination
 id: 54521fdb25e721e32a72eef6
 ---
-SnapEngage is an enterprise chat software for businesses. It allows you to capture more leads, drive conversions, reduce response times, and increase customer satisfaction. Our SnapEngage destination code is open source - you can check it out [here](https://github.com/segment-integrations/analytics.js-integration-snapengage).
+SnapEngage is an enterprise chat software for businesses. It allows you to capture more leads, drive conversions, reduce response times, and increase customer satisfaction. Our SnapEngage destination code is open source - you can check it out [here](https://github.com/segment-integrations/analytics.js-integration-snapengage){:target="_blank"}.
 
 ## Getting Started
 
-{% include content/connection-modes.md %}
+
 
 1. From the Segment web app, click **Catalog**.
 

@@ -1,21 +1,17 @@
 ---
 title: 'Proof Experiences Destination'
-beta: true
 rewrite: true
 redirect_from: '/connections/destinations/catalog/proof/'
 id: 5c4ba7167eed0c0001977f25
 ---
-[Proof Experiences](https://useproof.com/experiences?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) helps B2B SaaS businesses increase new trials and demos by creating delightfully personalized experiences for their visitors and customers.
+[Proof Experiences](https://useproof.com/experiences?utm_source=segmentio&utm_medium=docs&utm_campaign=partners){:target="_blank”} helps B2B SaaS businesses increase new trials and demos by creating delightfully personalized experiences for their visitors and customers.
 
 This destination is maintained by Proof. For any issues with the destination, [contact the Proof Experiences Support team](mailto:help@useproof.com).
 
 
-{% include content/beta-note.md %}
-
-
 ## Getting Started
 
-{% include content/connection-modes.md %}
+
 
 1. From the Segment web app, click **Catalog**.
 2. Search for "Proof Experiences" in the Catalog, select it, and choose which of your sources to connect the destination to.

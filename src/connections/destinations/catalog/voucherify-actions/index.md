@@ -1,8 +1,9 @@
 ---
 title: Voucherify (Actions) Destination
-private: true
-hidden: true
+private: false
+hidden: false
 id: 63f529a8af3478b5a5363c53
+
 ---
 {% include content/plan-grid.md name="actions" %}
 
@@ -21,7 +22,7 @@ The Voucherify (Actions) destination is bidirectional, which means you can confi
 3. Select Voucherify (Actions) and then **Configure Voucherify (Actions)**.
 4. Select an existing Source to connect to Voucherify (Actions).
 5. Enter the **API Key** and **API Token** into your Segment Settings UI, which you can find from your [Voucherify dashboard](https://voucherify.io/dashboard){:target="_blank"}.
-6. Enter **Custom URL**. Check your API region in Voucherify dashboard -> Project settings -> API endpoint. Then use one of [API Endpoints](https://docs.voucherify.io/docs/api-endpoints) and replace the **API** word with `segmentio` For example, if your default URL is: https://us1.api.voucherify.io, then use: https://us1.segmentio.voucherify.io. It also works for dedicated URLs.
+6. Enter **Custom URL**. Check your API region in Voucherify dashboard -> Project settings -> API endpoint. Then use one of [API Endpoints](https://docs.voucherify.io/docs/api-endpoints){:target="_blank"} and replace the **API** word with `segmentio` For example, if your default URL is: https://us1.api.voucherify.io, then use: https://us1.segmentio.voucherify.io. It also works for dedicated URLs.
 7. Select **Quick Setup** to start with pre-populated subscriptions, or **Customized Setup** to configure each action from scratch. 
 8. Click **Configure Actions**.
 

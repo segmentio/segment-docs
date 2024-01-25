@@ -16,7 +16,7 @@ When you create a function, write code for it, and save it, the function appears
 Only [Functions admins](#functions-permissions) can create or edit functions.
 
 1. From your workspace, go to the Catalog and click the [Functions tab](https://app.segment.com/goto-my-workspace/functions/catalog){:target="_blank"}.
-2. Click **New Function**.
+2. Click **Create function**.
 3. Select the type of function you want to build, and click **Build**.
 
    When you click **Build**, a code editor appears. Different template code is available depending on which type of function you created.
@@ -34,6 +34,19 @@ If you are a **Workspace Owner** or **Functions Admin**, you can manage your fun
 If you're editing an existing function, you can **Save** changes without changing the behavior of existing instances of the function.
 
 You can also choose to **Save & Deploy** to push changes to all, or specific functions in your workspace that are already deployed. You might need additional permissions to deploy these changes.
+
+## Testing a function
+You have the option to test your functions code with either a sample event or by loading a default event that you can customize yourself.
+* **Sample event**: When you click **Test with custom event** you can select a sample event from any of your workspace sources to test this function.
+* **Customize the event yourself**: When you click **customize the event yourself** a default event payload loads which you can modify with the desired data. You have the option to paste in a JSON event or click **Manual Mode** and type in the fields manually. If you'd like to locate a recent event from a source that's not available by following the sample event instruction: 
+     1. Navigate to the source debugger.
+     2. Click the event you want to test and copy the raw JSON payload.
+     3. Paste the raw JSON payload into your Function Editor.
+
+Once the payload you want to test is ready, click **Run**.
+
+> info ""
+> If you create settings in your function, then you need to fill in the setting values before clicking **Run**.
 
 ## Deploying source functions
 

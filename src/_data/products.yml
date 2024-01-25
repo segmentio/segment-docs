@@ -37,6 +37,15 @@ items:
   #   engage-foundations: false
   #   engage-plus: false
 
+- product_display_name: Unify Plus
+  slug: unify-plus
+  plan-note: "Unify Plus requires a business tier account and is included with Engage"
+  addon: true
+  plans: 
+    free: false
+    team: false
+    business: true
+
 - product_display_name: Protocols
   slug: protocols
   plan-note: "Protocols is available as an add-on for Business plans only."
@@ -92,6 +101,7 @@ items:
     add-on: false
 - product_display_name: Audit Trail
   slug: audit-trail
+  plan-note: "Audit Trail is only available in Business plan workspaces."
   plans:
     free: false
     team: false
@@ -154,3 +164,12 @@ items:
     team: true
     business: true
     add-on: false
+
+- product_display_name: HIPAA Eligible Segment
+  slug: hipaa-eligible
+  plan-note: "HIPAA eligible workspaces require a Business Assosciate Addendum."
+  plans:
+    free: false
+    team: false
+    business: true
+    addon: true

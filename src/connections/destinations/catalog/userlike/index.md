@@ -3,11 +3,11 @@ rewrite: true
 title: Userlike Destination
 ---
 
-[Userlike](https://www.userlike.com/en/) is B2C live chat software optimized for website and messenger support - it enables real-time analysis, so you can see web visitors and actions taken. Our Userlike destination code is open source and is viewable [here](https://github.com/segment-integrations/analytics.js-integration-userlike).
+[Userlike](https://www.userlike.com/en/){:target="_blank"} is B2C live chat software optimized for website and messenger support - it enables real-time analysis, so you can see web visitors and actions taken. Our Userlike destination code is open source and is viewable [here](https://github.com/segment-integrations/analytics.js-integration-userlike){:target="_blank"}.
 
 ## Getting Started
 
-{% include content/connection-modes.md %}
+
 
 1. From the Segment web app, click **Catalog**.
 2. Search for "Userlike" in the Catalog, select it, and choose which of your sources to connect the destination to. - keep in mind, that the Userlike destination is only compatible with our JavaScript source.

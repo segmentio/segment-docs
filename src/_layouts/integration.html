@@ -48,6 +48,7 @@ layout: default
                 <h1 id="{{ page.title | slugify }}">
                   {{ page.title }}
                 </h1>
+                {% include content/support-grid.md %}
               {%- endif -%}
 
               {%- if page.excerpt -%}
@@ -116,7 +117,6 @@ layout: default
               {% include sidebar/related-content.html items=page.related %}
             {% endif %}
 
-            {% include sidebar/related-categories.html %}
 
             {% unless page.hide-feedback %}
               {% include_cached sidebar/feedback.html %}

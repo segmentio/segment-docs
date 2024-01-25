@@ -8,7 +8,7 @@ id: 62260e5dbc37b83046a847be
 This destination is maintained by Inflection. For any issues with the destination, [contact the Inflection Support team](mailto:support@inflection.io).
 
 ## Getting Started
-{% include content/connection-modes.md %}
+
 
 1. From the Destinations catalog page in the Segment App, select **Inflection**.
 2. Choose the Source from which events have to be sent to Inflection destination.
@@ -20,24 +20,6 @@ This destination is maintained by Inflection. For any issues with the destinatio
 ## Supported methods
 
 Inflection supports the following methods, as specified in the [Segment Spec](/docs/connections/spec).
-
-### Page
-
-Send [Page](/docs/connections/spec/page) calls to be added to *Product Activity* on Inflection App. For example:
-
-```js
-analytics.page()
-```
-
-
-### Screen
-
-Send [Screen](/docs/connections/spec/screen) calls to be added to *Product Activity* on Inflection App. For example:
-
-```obj-c
-[[SEGAnalytics sharedAnalytics] screen:@"Home"];
-```
-
 
 ### Identify
 
@@ -58,4 +40,18 @@ Send [Track](/docs/connections/spec/track) calls to be added to *Product Activit
 
 ```js
 analytics.track('Login Button Clicked')
+```
+
+### Group
+
+Send [Group](/docs/connections/spec/group) calls to tie a user to an org. There are two IDs that are relevant in a group call: the userId, which belongs and refers to the user, and the groupId, which belongs and refers to the specific group.  A user can belong to multiple groups, each associated with a different groupId, but the user will have only one userId linked to each of these different groups.
+
+```js
+ analytics.group("0e8c78ea9d97a7b8185e8632", {
+name: "Initech",
+industry: "Technology",
+employees: 329,
+plan: "enterprise",
+"total billed": 830
+});
 ```

@@ -4,9 +4,16 @@ plan: engage-premier
 ---
 Use the CSV Uploader to add or update user profiles and set subscription states.
 
-When you upload a CSV file, Twilio Engage adds new users and updates existing user profiles. Each CSV row corresponds to a user profile and columns to an identifier in your [identity resolution configuration](/docs/unify/identity-resolution/identity-resolution-settings/).
+When you upload a CSV file, Engage adds new profiles and updates existing user profiles. Each CSV row corresponds to a user profile and columns to an identifier in your [identity resolution configuration](/docs/unify/identity-resolution/identity-resolution-settings/).
 
 You can also [set subscription states](#set-user-subscriptions) for each email and phone number that you upload in the CSV. Subscription states help you track which email addresses and numbers you have permission to market to.
+
+> warning ""
+> Uploading a CSV creates new profiles and updates existing profiles. These profile updates may lead to users entering existing audiences or message campaigns.
+
+> info ""
+> Using the CSV Uploader to upload user profiles to Engage will **not** increase your MTUs count. [Learn more](/docs/guides/usage-and-billing/mtus-and-throughput/#mtus-and-engage) about MTUs and Engage.
+
 
 ## Upload a CSV file
 
@@ -122,4 +129,4 @@ Please note the following limits as you upload CSV files to Twilio Engage:
 
 ## Message consent
 
-Only send messages to subscribed users. If a recipient deletes or flags an unwanted message as spam, inbox providers might start to filter your messages straight to spam folders. View more SendGrid delivery [Best Practices](https://sendgrid.com/blog/why-are-my-emails-going-to-spam/){:target="_blank"} to prevent email from going to spam.
+Segment recommends sending to subscribed users. If a recipient deletes or flags an unwanted message as spam, inbox providers might start to filter your messages straight to spam folders. View more SendGrid delivery [Best Practices](https://sendgrid.com/blog/why-are-my-emails-going-to-spam/){:target="_blank"} to prevent email from going to spam.
