@@ -69,6 +69,6 @@ When the user enters the step:
 
 ### List destination
 
-The destination receives a list of users who qualify for the associated journey step. Unlike lists associated with Engage Audiences, users who are added to a journey list cannot be subsequently removed. See [best practices](/docs/engage/journeys/faq-best-practices#suppress-targeting-with-journey-lists) for techniques to suppress targeting with journey lists. List destinations do not have access to the Event Tester.
+The destination receives a list of users who qualify for the associated journey step. Unlike lists associated with Engage Audiences, users who are added to a journey list cannot be subsequently removed. See [best practices](/docs/engage/journeys/faq-best-practices#suppress-targeting-with-journey-lists) for techniques to suppress targeting with journey lists. List destinations do not have access to the Event tester.
 
 For more information, see [Using Engage Data](/docs/engage/using-engage-data/).
