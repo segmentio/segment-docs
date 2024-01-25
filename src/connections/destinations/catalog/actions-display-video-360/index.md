@@ -14,7 +14,6 @@ Display and Video 360 (Actions) is a rebuild of the classic destination that pro
 - **OAuth Authentication** - Authenticate in a few easy steps using OAuth2.
 - **Simple setup** - Display and Video 360 (Actions) has a streamlined default setup process making it easier to get started in a way that "just works".
 - **More control** - Actions-based destinations enable you to define the mapping between the data Segment receives from your sources, and the data Segment sends to Google.
-- **Default property mappings** - Default mappings from the Segment like event, timestamp, and more, allow data to be mapped correctly without any setup required.
 
 
 Google's [Display & Video (DV360)](https://marketingplatform.google.com/about/display-video-360/){:target="_blank"} service is an end-to-end campaign management tool that enables enterprise customers to plan, measure, and run display and video advertisements.
@@ -132,6 +131,16 @@ After you complete the set up process, allow up to 24 hours for Google to create
 
 Extra information from the API (settings, connection modes, etc.) are automatically pulled in here.
 {% include content/sync-frequency-note.md %}
+
+## Migrate from Personas Google Dispay & Video 360 Destination 
+
+Segment will copy all of your existing Personas Dispay & Video 360 Destination configurations to Display and Video 360 (Actions). Once the migration is completed , you will be notified by email. 
+
+
+The sole mandatory action involves **re-authenticating** for each migrated Personans Display & Video 360 Destination. While you may already possess OAuth credentials, it is essential to undergo reauthentication. This step is necessary to seamlessly integrate new audiences or implement updates to existing ones.
+
+<img width="799" alt="image" src="https://github.com/segmentio/segment-docs/assets/89420099/37022665-a39e-4696-a23a-97bcafd9cecf">
+
 
 ## FAQ
 ### What is Segment's relationship with Google DV360 and is the data that Segment sends considered to be First or Third party?
