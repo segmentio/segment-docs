@@ -18,7 +18,7 @@ You can build an Audience from existing events, traits, computed traits, or othe
 
 ![Creating an Engage Audience from the conditions list](/docs/engage/images/audience_condition_list.png)
 
-There's also the option to _Include Anonymous Users_, which are profiles that only have anonymousIds. When this option is not selected, users who have a userId, email address, android.idfa, or ios.idfa are considered known users and thus included in the audience by default. The option to select _Include Anonymous Users_ is only available upon the initial creation of the audience and cannot be changed by an edit post-creation.
+There's also the option to **Include Anonymous Users**, which are profiles that only have `anonymousIds`. When this option is not selected, users who have a `userId`, `email address`, `android.idfa`, or `ios.idfa` are considered known users and included in the audience by default. The option to select **Include Anonymous Users** is only available upon the initial creation of the audience and can't be changed post-creation.
 
 ### Events
 
