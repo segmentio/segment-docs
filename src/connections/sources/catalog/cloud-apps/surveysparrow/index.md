@@ -16,7 +16,7 @@ This source is maintained by SurveySparrow. For any issues with the source, [con
 2. Search for "SurveySparrow" in the Sources Catalog, select SurveySparrow, and click **Add Source**.
 3. On the next screen, give the Source a name, then configure any other settings.
 
-   - The name is used as a label in the Segment app, and Segment creates a related schema name in your warehouse. The name can be anything, but we recommend using something that reflects the source itself and distinguishes amongst your environments (eg. SourceName_Prod, SourceName_Staging, SourceName_Dev).
+   - The name is used as a label in the Segment app, and Segment creates a related schema name in your warehouse. The name can be anything, but we recommend using something that reflects the source itself and distinguishes amongst your environments (eg. SurveySparrow_Prod, SurveySparrow_Staging, SurveySparrow_Dev).
 
 4. Click **Add Source** to save your settings.
 5. Copy the Write key from the Segment UI.
