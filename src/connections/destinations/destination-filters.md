@@ -44,7 +44,7 @@ To create a destination filter:
 4. Configure the rules for your filter.
 5. *(Optional)* Click **Load Sample Event** to see if the event passes through your filter.
 6. Click **Next Step**.
-7. Name your filter and click the toggle to enable it.
+7. Name your filter (max. 64 length) and click the toggle to enable it.
 8. Click **Save**.
 
 > info "Enable destination filters for Analytics.js sources"
@@ -87,7 +87,7 @@ Property-level allowlisting is available with Segment's API. Using destination f
 ![PII management example](images/destination-filters/pii_example.png)
 
 > info "Healthcare and Life Sciences (HLS) customers can encrypt data flowing into their destinations"
-> HLS customers with a HIPAA eligible workspace can encrypt data in fields marked as Yellow in the Privacy Portal before they flow into an event stream, cloud mode destination.
+> HLS customers with a HIPAA eligible workspace can encrypt data in fields marked as Yellow in the Privacy Portal before they flow into an event stream, cloud-mode destination.
 >
 > To learn more about data encryption, see the [HIPAA Eligible Segment documentation](/docs/privacy/hipaa-eligible-segment/#data-encryption).
 
@@ -164,6 +164,17 @@ There are certain destinations to which you may not want to send the `userId`. T
 }
 ```
 
+## Filter conditional operators
+* `contains`: checks whether the field's value includes the provided substring
+* `glob matches`: case sensitive, checks whether the value matches provided string
+* `is (number)`: checks whether the value is exactly the provided integer
+* `is (string)`: checks whether the value is exactly the provided string
+* `is false`: checks whether the value is type boolean and is `false`
+* `is not (number)`: checks whether the value isn't exactly the provided integer
+* `is not (string)`: checks whether the value isn't exactly the provided string
+* `is not null`: checks that the existing field does not have a `null` value
+* `is null`: check that the existing field has a `null` value
+* `is true`: checks whether the value is type boolean and is `true`
 
 ## Important notes
 

@@ -90,6 +90,8 @@ Use this when you need to disable an event immediately, but may need more time t
 
 If the Source is not connected to a tracking plan, you'll find event filter toggles next to the Integration filters in the source's schema tab. When an event is set to block, the entire event is blocked. This means no destinations receive it, including data warehouses.
 
+When you block an event using Schema filters, it won't be considered in the MTU count unless blocked event forwarding is enabled.
+
 ![Event filter toggles](images/schema-event-filters.png)
 
 When an event is blocked, the name of the event or property appears on your Schema page with a counter which shows how many times it has been blocked. By default, data from blocked events and properties is not recoverable. You can always re-enable the event to continue sending it to downstream destinations.

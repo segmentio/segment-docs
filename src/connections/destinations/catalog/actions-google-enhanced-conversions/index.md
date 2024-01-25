@@ -18,29 +18,57 @@ The Google Ads Conversions destination enables you to upload offline conversions
 7. Follow the steps in the Destinations Actions documentation on [Customizing mappings](/docs/connections/destinations/actions/#customizing-mappings).
 
 > warning "Upload Enhanced Conversion (Legacy) Action Deprecation"
-> Google plans to sunset the legacy API, so Segment will migrate your instance to the new API in the beginning of 2024. No action is required at this time, and Segment will reach out to communicate next steps prior to the migration. 
+> Google plans to sunset the legacy API, leading to the discontinuation of the Upload Enhanced Conversions (Legacy) Action. New subscriptions using the sunsetting Upload Enhanced Conversion (Legacy) Action are **no longer possible**, but existing subscriptions will remain functional. 
 >
-> With this change, the Upload Enhanced Conversions (Legacy) Action **will no longer be available**. Please use the "Upload Click Conversion", "Upload Call Conversion", and "Upload Conversion Adjustment" actions, which sends data to the new Google Ads API.
-
-> info ""
-> When you use the "Upload Enhanced Conversion (Legacy)" action, Segment sends data to the legacy Enhanced Conversions API. To authenticate into the legacy API and send enhancement data, Segment needs your Conversion ID and Conversion Label. 
-> 
-> The Conversion ID is a global setting because it's an account-level ID that's the same for all conversion actions in your Google Ads account. 
-> 
-> The Conversion Label is unique to each conversion action and is therefore configured per mapping. Find the Conversion ID and Conversion Label in your Google Ads account using the instructions in the article [Google Ads conversions](https://support.google.com/tagmanager/answer/6105160?hl=en){:target="_blank"}.
-
-> info ""
-> When you use the "Upload Click Conversion", "Upload Call Conversion", and "Upload Conversion Adjustment" actions, Segment sends data to the new Google Ads API. 
-> 
-> To authenticate into the Google Ads API, Segment needs your Customer ID and Conversion Action ID. The Customer ID is a global setting because it's an account-level ID that's the same for all conversion actions in your Google Ads account. The Conversion Action ID is unique to each conversion action and is  configured per mapping. The Conversion Action ID can only be found in the browser URL of your given conversion action under the `ctId` parameter. For example, if the URL is `https://ads.google.com/aw/conversions/detail?ocid=00000000&ctId=576882000`, your Conversion Action ID is `576882000`.
-
-
-> info ""
-> Conversion ID, Conversion Label, Customer ID, and Conversion Action ID should always be different values.
+> Segment recommends users to transition to the "Upload Click Conversion," "Upload Call Conversion," and "Upload Conversion Adjustment" actions, to send data through the new Google Ads API. 
+>
+> [Use these steps](#migrate-your-upload-enhanced-conversion-legacy-action) to migrate your Upload Enhanced Conversion (Legacy) Action subscriptions. 
 
 {% include components/actions-fields.html settings="true"%}
 
+## Migrate your Upload Enhanced Conversion (Legacy) Action
+
+To migrate from Upload Enhanced Conversion (Legacy) Action to the Upload Conversion Adjustment Action: 
+
+1. Fill out your Conversion ID and Customer ID settings.
+2. Fill out the required fields for the Upload Conversion Adjustment Action: 
+- Conversion Action ID
+- Adjustment Type
+3. Replicate as many fields from your original mapping as possible using the table below for reference. Look at the [Upload Conversion Adjustment Action](/docs/connections/destinations/catalog/actions-google-enhanced-conversions/#upload-conversion-adjustment) for more details about each field. 
+
+| Upload Enhanced Conversion (Legacy)| Upload Conversion Adjustment | Default Mapping                      |
+|------------------------|----------------------------|--------------------------------------|
+| conversion_label       | NOT AVAILABLE          | `$.properties.conversion_label`        |
+| email                  |  email_address             | `$.properties.email or $.traits.email or $.context.traits.email` |
+| transaction_id         | order_id                    | `$.properties.orderId`                 |
+| user_agent             | user_agent                  | `$.context.userAgent`                 |
+| conversion_time        | conversion_timestamp      | `$.timestamp `                        |
+| value                  | NOT AVAILABLE              |` $.properties.total `                  |
+| currency_code          | NOT AVAILABLE              | `$.properties.currency   `             |
+| is_app_incrementality  | NOT AVAILABLE              |` false   `                           |
+| pcc_game               | NOT AVAILABLE              | `false `                             |
+| phone_number           | phone_number                | `$.properties.phone or $.traits.phone` |
+| first_name             | first_name                  | `$.properties.firstName or $.traits.firstName` |
+| last_name              | last_name                   | `$.properties.lastName or $.traits.lastName` |
+| street_address         | street_address              | `$.properties.address.street or $.traits.address.street` |
+| city                   | city                       | `$.properties.address.city or ​​$.traits.address.city` |
+| region                 | state                      | `$.properties.address.state or $.traits.address.state` |
+| post_code              | postal_code                 | `$.properties.address.postalCode or $.traits.address.postalCode` |
+| country                | country                     | `$.properties.address.country or $.traits.address.countr`y |
+| | gclid                  | Default Not Available        | 
+| | adjustment_timestamp   | Default Not Available        | 
+| | restatement_value      | Default Not Available        | 
+| | restatement_currency_code | Default Not Available     |
+
+
+
 ## FAQ and troubleshooting
+
+### Conversion ID, Customer ID, and Conversion Action ID should always be different values
+
+Conversion ID and Customer ID are global settings because it’s an account-level ID that’s the same for all conversion actions in your Google Ads account.
+
+The Conversion Action ID is unique to each conversion action and is configured per mapping. The Conversion Action ID can only be found in the browser URL of your given conversion action under the `ctId` parameter. For example, if the URL is `https://ads.google.com/aw/conversions/detail?ocid=00000000&ctId=576882000`, your Conversion Action ID is `576882000`.
 
 ### Enhanced conversions
 
@@ -61,6 +89,3 @@ When you use OAuth to authenticate into the Google Ads Conversions destination, 
 
 Because of the duplicate API requests, you may see a warning in Google for unprocessed conversions due to incorrect or missing OAuth credentials. This warning is expected and does not indicate data loss. Google has confirmed that conversions are being processed, and OAuth retry behavior will not cause any issues for your web conversions. Whenever possible, Segment caches access tokens to reduce the total number of requests made to Google Ads Conversions.
 
-### Sending app conversions for incrementality studies (legacy enhanced conversions API only)
-
-The legacy Enhanced Conversions API does not offer standard reporting for app conversions. As such, Google requires that you set up a new web conversion action specifically for the purposes of app incrementality studies. To send app conversions in your incrementality study, use the "Upload Enhanced Conversion (Legacy)" action. Be sure to input the Conversion Label associated with your incrementality study **and** set the App Conversion for Incrementality Study field to `true`. You should create separate web conversion actions in Google Ads for each app event you want to send data for.
