@@ -19,29 +19,4 @@ This destination is maintained by SurveySparrow. For any issues with the destina
 6. Click **Save** and copy the **Access Token**.
 7. Enter the **Access Token** in the SurveySparrow destination settings in Segment.
 
-## Action destination for Survey trigger event
-
-| Property Name          | Type          | Description                           |
-| ------------- |:-------------:| :-----                                      |
-| `email`         | string        | Email of the contact to be created          |
-| `phone`         | string        | Phone number of the contact to be created   |
-| `share_type`    | string        | Share channel type (SMS, Email, Whatsapp    |
-| `channel_id`    | integer       | Share Channel Id created in survey sparrow  |
-| `survey_id`     | integer       | ID of the survey created                    |
-| `variables`     | object        | Can hold extra payload if necessary         |
-
-
-## Action destination for Contact creation event
-
-| Property Name    | Type          | Description                    |
-| ------------- |:-------------:| :-----                         |
-| `full_name`     | string        | Full Name of contact           |
-| `phone`         | string        | Phone number of the contact    |
-| `mobile`        | string        | Mobile number of the contact   |
-| `email         | string        | Email of contact               |
-| `job_title`     | string        | Job Title of the contact       |
-| `contact_type`  | string        | Type of contact [contact,employee] |
-
-
-
 {% include components/actions-fields.html %}
