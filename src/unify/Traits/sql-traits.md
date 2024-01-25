@@ -268,4 +268,4 @@ Ensure that the name given to the SQL trait is not the same name as the identifi
 
 ### Are there any errors in the browser's Network or Console tab?
 
-When experiencing any issues saving the SQL Trait query or when Previewing the results of the SQL Trait query, open up the browser's Console and Network tabs to see if any errors occur upon clicking the Save/Preview buttons. If you find any errors, please copy the errors by expanding the error, take screenshots of the error, and share these details when creating a support ticket.
+If you experience issues saving the SQL Trait query or previewing the results of the SQL Trait query, open the browser's Console and Network tabs to see if any errors occurred upon clicking the Save/Preview buttons. If you find any errors, please expand the error and take a screenshot of it. You can then share these details when creating a support ticket.
