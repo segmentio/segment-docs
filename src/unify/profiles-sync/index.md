@@ -18,7 +18,7 @@ Before you begin, prepare for setup with these tips:
 - During Step 2, you’ll copy credentials between Segment and your warehouse Destination. To streamline setup, open your Segment workspace in one browser tab and open another with your warehouse account.
 - Make sure to copy any IP addresses Segment asks you to allowlist in your warehouse Destination.
 
-### Step 1: Create a warehouse
+### Step 1: Select a warehouse 
 
 You’ll first choose the Destination warehouse to which Segment will sync profiles. Profiles Sync supports the Snowflake, Redshift, BigQuery, Azure, and Postgres warehouse Destinations. Your initial setup will depend on the warehouse you choose.
 
@@ -57,25 +57,65 @@ The following Segment access [roles](/docs/segment-app/iam/roles/) apply to Prof
 
 ### Step 2: Connect the warehouse and enable Profiles Sync
 
-With your warehouse configured, you can now connect it to Segment.
+After selecting your warehouse, you can connect it to Segment.
 
 During this step, you’ll copy credentials from the warehouse you just set up and enter them into the Segment app. The specific credentials you’ll enter depend on the warehouse you chose during Step 1.
 
 Segment may also display IP addresses you’ll need to allowlist in your warehouse. Make sure to copy the IP addresses and enter them into your warehouse account.
 
-Follow these steps to connect your warehouse:
+To connect your warehouse:
 
-1. In your Segment workspace, navigate to **Unify > Profiles Sync**.
-2. Select **Add warehouse**, choose the warehouse you just set up, then select **Next**.
-3. Segment shows an IP address to allowlist.  Copy it to your warehouse Destination.
-4. Segment prompts you to enter specific warehouse credentials. Enter them, then select **Test Connection**.
+1. Configure your database. 
+- Be sure to log in with a user who has read and write permissions so that Segment can write to your database.
+- Segment shows an IP address to allowlist.  Copy it to your warehouse Destination.
+2. Enter a schema name to help you identify this space in the warehouse, or use the default name provided. 
+- The schema name can't be changed once the warehouse is connected.
+4. Enter your warehouse credentials, then select **Test Connection**.
 5. If the connection test succeeds, Segment enables the **Next** button. Select it.
   * If the connection test fails, verify that you’ve correctly entered the warehouse credentials, then try again.
-6. Set up a **Sync Schedule**, and select **Next**.
-7. From the [Set Selective Sync](#using-selective-sync) page, select the tables and columns you'd like to sync and click **Next**. Segment displays the Profiles Sync overview page.
-7. Select **Request sync to be enabled**.
 
-Segment staff then receives and enables live sync for your account.
+
+### Step 3: Set Selective Sync
+
+Set up Selective Sync to control the exact tables and columns that Segment will sync to your connected data warehouse.
+
+> info ""
+> Data will be backfilled to your warehouse based on the last two months of history.
+
+You can sync the following tables:
+
+**Profile raw tables** 
+- `external_id_mapping_updates`
+- `id_graph_updates`
+- `profile_traits_updates`
+
+**Profile materialized tables**
+- `user_identifier`
+- `user_traits`
+- `profile_merges`
+
+> info ""
+> Materialized view tables are disabled by default. If you'd like to use tables that Segment materializes, you can enable them with Selective Sync. Alternitively, you can use Segment's [open-source dbt models](https://github.com/segmentio/profiles-sync-dbt){:target="_blank"}, or materialize views with your own tools.
+
+**Event type tables**
+- `Identify`
+- `Page`
+- `Group`
+- `Screen`
+- `Alias`
+- `Track`
+
+**Track event tables**
+
+To view and select individual track tables, don’t sync track tables during the initial setup. Edit your sync settings after enabling Profiles Sync and waiting for the first sync to complete.
+
+| Type                                                   | Tables                                                                                                                                                 |
+| ------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Profile raw tables | - `external_id_mapping_updates` <br> - `id_graph_updates` <br> - `profile_traits_updates` |
+| Profile materialized tables | - `user_identifier` <br> - `user_traits` <br> - `profile_merges`                      |
+| Event type tables          |  - `Identify` <br> - `Page` <br> - `Group` <br> - `Screen` <br> - `Alias` <br> - `Track`                     |
+| Track event tables         |   To view and select individual track tables, don't sync track tables during the initial setup. Edit your sync settings after enabling Profiles Sync and waiting for the first sync to complete.                   |
+
 
 #### Using Selective Sync
 
@@ -120,7 +160,16 @@ Reach out to [Segment support](https://app.segment.com/workspaces?contact=1){:ta
 > success ""
 > While historical backfill is running, you can start building [materialized views](/docs/unify/profiles-sync/tables/#tables-you-materialize) and running [sample queries](/docs/unify/profiles-sync/sample-queries).   
 
-### Step 3: Materialize key views using a SQL automation tool
+<!-- TO DO: add a section below about materialized tables vs dbt script.
+
+-->
+
+### Optional: Materialize key views using a SQL automation tool
+
+This option allows you to materialize views on your own, or use Segment's open source dbt models. 
+
+> success ""
+> You can alternatively use tables that Segment materializes and syncs to your data warehouse. [Learn more](/docs/unify/profiles-sync/tables/#tables-segment-materializes) about the tables Segment materializes.
 
 To start seeing unified profiles in your warehouse and build attribution models, you'll need to materialize the tables that Profiles Sync lands into three key views:
 
