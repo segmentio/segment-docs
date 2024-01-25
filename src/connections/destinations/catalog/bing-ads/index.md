@@ -3,27 +3,27 @@ title: Bing Ads Destination
 rewrite: true
 id: 54521fd525e721e32a72ee97
 ---
- [Bing Ads](https://bingads.microsoft.com) enables Marketers to track and monitor campaigns, clicks, CTRs, spend and budget. Bing Ads lets you place cross-device product ads in front of Bing, Yahoo, and MSN customers and support imported pay-per-click ad campaigns from third-party platforms like Google AdWords. With Bing Ads you can also retarget ads to customers after they complete an action like leaving a shopping cart or viewing a product without purchasing. Learn more about all you can do with Bing Ads [here](https://advertise.bingads.microsoft.com/en-us/resources/training/what-is-bing-ads). You can also browse the code [on GitHub](https://github.com/segment-integrations/analytics.js-integration-bing-ads).
+ [Bing Ads](https://bingads.microsoft.com) enables Marketers to track and monitor campaigns, clicks, CTRs, spend and budget. Bing Ads lets you place cross-device product ads in front of Bing, Yahoo, and MSN customers and support imported pay-per-click ad campaigns from third-party platforms like Google AdWords. With Bing Ads you can also retarget ads to customers after they complete an action like leaving a shopping cart or viewing a product without purchasing. To learn more, see [Bing Ads](https://advertise.bingads.microsoft.com/en-us/resources/training/what-is-bing-ads). You can also browse the code [on GitHub](https://github.com/segment-integrations/analytics.js-integration-bing-ads).
 
 ## Getting Started
 
 {% include content/connection-modes.md %}
 
-Before you can track conversions or target audiences, you need to create a UET tag in Bing Ads and then add it to the destination settings. Follow the steps within [the Bing Ads documentation to create a UET tag](https://advertise.bingads.microsoft.com/en-us/resources/training/universal-event-tracking).
+Before you can track conversions or target audiences, create a UET tag in Bing Ads and then add it to the destination settings. Follow the steps within [the Bing Ads documentation to create a UET tag](https://advertise.bingads.microsoft.com/en-us/resources/training/universal-event-tracking).
 
-Once you have created the Tag ID, you can follow the steps below:
+After you have created the Tag ID, follow the steps below:
 
 1. From the Segment web app, click **Catalog**.
-2. Search for "Bing Ads" in the Catalog, select it, and choose which of your sources to connect the destination to. Note the source must be sending events using our JavaScript library Analytics.js.
-3. In the destination settings, enter your Tag Id
+2. Search for "Bing Ads" in the Catalog, select it, and choose your sources to connect to the destination. Note that the source must be sending events using our JavaScript library Analytics.js.
+3. In the destination settings, enter your Tag Id.
 
-Your changes appear in the Segment CDN in about 45 minutes, and then Analytics.js starts asynchronously loading Bing Ads' snippet on your page and sending data.
+Your changes will appear in the Segment CDN in about 45 minutes, and then Analytics.js starts asynchronously loading Bing Ads snippets on your page and sending data.
 
 _**Note:** You'll only be able to include one Tag ID per source so make sure to associate the conversion goals to the correct Tag ID that is included in your settings._
 
 ## Page
 
-If you're not familiar with the Segment Specs, take a look to understand what the [Page method](/docs/connections/spec/page/) does. An example call would look like:
+If you're not familiar with the Segment Specs, take a look to understand what the [Page method](/docs/connections/spec/page/) does. An example call looks like:
 
 ```javascript
 // name and properties are optional
@@ -36,7 +36,7 @@ Page events will be sent to Bing Ads as a `Page Load` event where name and prope
 
 If you're not familiar with the Segment Specs, take a look to understand what the [Track method](/docs/connections/spec/track/) does.
 
-In order for us to map your track events to a Conversion Goal, you'll first need to create the goal on your Bing Ads account:
+For Segment to map your track events to a Conversion Goal, first create the goal on your Bing Ads account:
 
 1. Click the **Campaigns** tab, and then on the left pane, click **Conversion Tracking**.
 2. Under **Conversion Tracking**, click **Conversion Goals**.
@@ -47,13 +47,12 @@ In order for us to map your track events to a Conversion Goal, you'll first need
 
 <!-- Pete's Suggested change to outdated Doc text -->
 
-How to Set Up Custom Events:
+## Setting up Custom Events:
 
 **Step 1: Add the UET Tag Tracking Code to Your Website**
 
 1. Copy the UET tag from Microsoft Advertising.
 2. Paste the tag into the head or body section of your website's code.
-3. For detailed instructions on how to add the tag using a tag manager or website platform, check out the article.
 
 **Step 2: Create a Conversion Goal or Remarketing List**
 
@@ -79,14 +78,6 @@ Associate the UET tag with the remarketing list.
 
 1. Add the code for the custom event to the UET tag tracking code.
 2. Follow the instructions provided to set up the event tag on your website.
-
-<!-- End of Pete's suggested update text -->
-
-<!-- Remove the below outdated image to one I have screenshot -->
-![creating a goal in Bing Ads](images/creating-a-goal-new.png) - Remove
-![Updated Screenshot creating goal in Bing Ads](https://user-images.githubusercontent.com/113425933/223753744-c7687a79-9737-4560-a7aa-9a2fc83bf6b4.png)- Add ^^
-
-
 
 Only the event name is required - other properties are optional. An example track call is shown below:
 
