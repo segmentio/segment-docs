@@ -3,18 +3,10 @@ title: Display and Video 360 (Actions) Destination
 strat: google
 hide-settings: true
 id: 65302a3acb309a8a3d5593f2
+https://github.com/segmentio/segment-docs/blob/d4623aadec6f118fb5aa7ca846a9e6214c0d1129/src/connections/destinations/catalog/personas-display-video-360/index.md
 ---
 
-> info "Personas Display and Video 360 vs Display and Video 360 (Actions) Destinations"
-
 > info Display and Video 360 (Actions) operates using third-party cookies, its match rates are influenced by the extent to which these cookies are supported by browsers
-
-Display and Video 360 (Actions) is a rebuild of the classic destination that provides the following benefits:
-
-- **OAuth Authentication** - Authenticate in a few easy steps using OAuth2.
-- **Simple setup** - Display and Video 360 (Actions) has a streamlined default setup process making it easier to get started in a way that "just works".
-- **More control** - Actions-based destinations enable you to define the mapping between the data Segment receives from your sources, and the data Segment sends to Google.
-
 
 Google's [Display & Video (DV360)](https://marketingplatform.google.com/about/display-video-360/){:target="_blank"} service is an end-to-end campaign management tool that enables enterprise customers to plan, measure, and run display and video advertisements.
 
