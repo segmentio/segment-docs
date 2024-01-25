@@ -308,7 +308,7 @@ It's expected that when you select **Updated records** the records do not change
 Yes, you can sign up for Reverse ETL sync notifications.
 
 To receive Reverse ETL sync notifications: 
-1. Go to Settings > User Preferences.
+1. Navigate to **Settings > User Preferences**.
 2. Select **Reverse ETL** In the **Activity Notifications** section.
 3. Enable the toggle for **Reverse ETL Sync Failed**.
 
