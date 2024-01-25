@@ -44,7 +44,7 @@ To create a destination filter:
 4. Configure the rules for your filter.
 5. *(Optional)* Click **Load Sample Event** to see if the event passes through your filter.
 6. Click **Next Step**.
-7. Name your filter and click the toggle to enable it.
+7. Name your filter (max. 64 length) and click the toggle to enable it.
 8. Click **Save**.
 
 > info "Enable destination filters for Analytics.js sources"
