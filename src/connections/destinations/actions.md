@@ -89,7 +89,7 @@ From the edit screen you can change the action's name and mapping, and toggle it
 
 ![Screenshot of the Mappings table with several enabled mappings](images/actions-list.png)
 
-Once an Action is created, it's disabled by default, to ensure that it's only used once fully configured. To begin sending data through an Action, enable it on the Actions page by flipping the toggle so that it appears blue.
+Once an Action is created, it's disabled by default, to ensure that it's only used after being fully configured. To begin sending data through an Action, enable it on the Actions page by selecting the toggle so that it appears blue.
 
 ## Disable a destination action
 If you find that you need to stop an action from running, but don't want to delete it completely, you can click the action to select it, then click the toggle next to the action's name to disable it. This takes effect within minutes, and disables the action until you reenable it.
