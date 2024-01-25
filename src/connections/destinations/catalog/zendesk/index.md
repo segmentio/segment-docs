@@ -28,7 +28,7 @@ analytics.identify("97980cfea0067", {
 });
 ```
 
-When you call `identify`, Segment inserts or updates a user record in Zendesk and uses the user email in `traits.email` to match user records in Zendesk. If there are multiple users matching the email, then no updates are submitted. Note that you must provide a trait for either `name` or `first_name` and `last_name` in order for the `identify` call to send to Zendesk. If you provide a `name`, Segment parses this into the `first_name` and `last_name` fields.
+When you call `identify`, Segment inserts or updates a user record in Zendesk and uses the user email in `traits.email` to match user records in Zendesk. If there are multiple users matching the email, then no updates are submitted. Note that you must provide a trait for either `name` or `first_name` and `last_name` in order for the `identify` call to send to Zendesk. If you provide a `name`, Segment parses this into the `first_name` and `last_name` fields. If you provide `name`, but are missing the `last_name` field, this will still send successfully to Zendesk.
 
 Here's an example:
 
