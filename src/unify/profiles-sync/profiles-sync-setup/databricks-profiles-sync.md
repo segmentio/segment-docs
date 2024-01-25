@@ -4,7 +4,7 @@ plan: unify
 ---
 
 With Databricks for Profiles Sync, you can use [Profiles Sync](/docs/unify/profiles-sync/overview/) to sync Segment profiles into your Databricks Lakehouse.
-
+ 
 
 ## Getting started
 
