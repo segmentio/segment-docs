@@ -6,7 +6,7 @@ Segment's web source (Analytics.js), and native client-side libraries (iOS, Andr
     <div class="fa fa-info-circle"></div>
     <div class="content">
       <p class="header">Healthcare and Life Sciences (HLS) customers can encrypt data flowing into their destinations</p>
-      <p> HLS customers with a HIPAA eligible workspace can encrypt data in fields marked as Yellow in the Privacy Portal before they flow into an event stream, cloud mode destination.
+      <p> HLS customers with a HIPAA eligible workspace can encrypt data in fields marked as Yellow in the Privacy Portal before they flow into an event stream, cloud-mode destination.
       <br>To learn more about data encryption, see the <a href="/docs/privacy/hipaa-eligible-segment/#data-encryption">HIPAA Eligible Segment documentation</a></p>
     </div>
   </div>
