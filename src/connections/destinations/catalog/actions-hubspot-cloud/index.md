@@ -98,3 +98,6 @@ Follow the steps mentioned [here](https://knowledge.hubspot.com/integrations/con
 ### How does disconnecting and uninstalling affect a user's data and HubSpot account?
 Segment immediately stops sending data to HubSpot after you disconnect and uninstall a HubSpot account.
 
+### What causes a 409 Conflict error?
+Generally a 409 Conflict error is due to having more than one mapping triggered on the same call, such as a custom behavioral event and an Upsert Contact set for track events.  
+
