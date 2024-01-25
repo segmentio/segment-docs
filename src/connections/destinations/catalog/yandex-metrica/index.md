@@ -3,9 +3,9 @@ rewrite: true
 title: Yandex.Metrica Destination
 id: 54521fdc25e721e32a72ef07
 ---
-[Yandex.Metrica](https://metrica.yandex.com/about?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) enables customizable report analytics so marketers can toggle between attribution models, segment and compare audiences based on custom details like OS, number of visits, and ad blocker usage. It also supports session replay, heat maps, form analytics so marketers can review user movements such as mouseclicks, form fill ins, and keystrokes. Finally, it supports custom events tracking and purchase funnels, and automates eCommerce reports to calculate metrics like cost per order and total costs.
+[Yandex.Metrica](https://metrica.yandex.com/about?utm_source=segmentio&utm_medium=docs&utm_campaign=partners){:target="_blank”} enables customizable report analytics so marketers can toggle between attribution models, segment and compare audiences based on custom details like OS, number of visits, and ad blocker usage. It also supports session replay, heat maps, form analytics so marketers can review user movements such as mouseclicks, form fill ins, and keystrokes. Finally, it supports custom events tracking and purchase funnels, and automates eCommerce reports to calculate metrics like cost per order and total costs.
 
-Our Yandex.Metrica destination code is open sourced on GitHub. Feel free to check it out here for [JavaScript](https://github.com/segment-integrations/analytics.js-integration-yandex-metrica).
+Our Yandex.Metrica destination code is open sourced on GitHub. Feel free to check it out here for [JavaScript](https://github.com/segment-integrations/analytics.js-integration-yandex-metrica){:target="_blank"}.
 
 ## Getting Started
 

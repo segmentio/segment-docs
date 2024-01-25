@@ -62,7 +62,7 @@ With Customized setup, you can choose which identifiers you want to map downstre
 - You can only select a maximum of three identifiers with an `All` strategy.
 
 
-## Frequently asked questions
+## FAQs
 
 #### What's the difference between Trait Enrichment and ID Sync?
 

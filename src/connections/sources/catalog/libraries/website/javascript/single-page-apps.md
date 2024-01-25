@@ -7,7 +7,7 @@ While Single Page Apps (SPAs) are great for many reasons, they do require some e
 
 By default, the Segment analytics.js library doesn’t generate or store the referrer value. Instead, the referrer value you see in the payload is the value returned by `document.referrer` directly from the browser, and the URL value is the canonical URL on the page.
 
-When a user navigates between pages on an SPA website, there won’t be a referrer because there is no concept of a new page since it’s all a single page load. This means that the referrer will always be the same as they were on the first page call where someone was directed to your site since the page doesn't reload. However, in order to circumvent this, you can manually set the referrer and URL in your Segment calls by updating the context object.
+When a user navigates between pages on an SPA website, there won’t be a referrer because there is no concept of a new page since it’s all a single page load. This means that the referrer will always be the same as it was on the first page call where someone was first directed to your site. However, in order to circumvent this, you can manually set the referrer and URL in your Segment calls by updating the context object.
 
 For example, a Page call with the referrer and URL manually set looks like this:
 

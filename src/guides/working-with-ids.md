@@ -4,7 +4,7 @@ hidden: true
 ---
 
 > warning "Critical Segment recommendation"
-> Segment recommends that you use `uuid4` for `anonymousId`.
+> Segment recommends that you use `uuid4` for `anonymousId`, `userId`, and `groupId`.
 
 As part of your Segment implementation, you’ll come across various identifiers (IDs) that Segment’s systems may process. The three most prominent identifiers you’ll encounter are `anonymousId`, `userId`, and `groupId`. 
 
@@ -44,7 +44,7 @@ Here's how Segment generates the IDs you just learned about:
 
 ## Segment's guidance on identifier formats
 
-As you work with identifiers, **Segment recommends that you use `uuidv4` for `anonymousId`**. The following table lists the criteria that Segment recommends your identifiers satisfy, as well as why Segment recommends `uuidv4`:
+As you work with identifiers, **Segment recommends that you use `uuidv4` for `anonymousId`, `userId`, and `groupId`**. The following table lists the criteria that Segment recommends your identifiers satisfy, as well as why Segment recommends `uuidv4`:
 
 | Trait                  | Reasoning                                                                                                                                                                                                                               |
 | ---------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |

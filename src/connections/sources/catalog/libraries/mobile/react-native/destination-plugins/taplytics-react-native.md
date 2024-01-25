@@ -1,6 +1,7 @@
 ---
 title: Analytics React Native Taplytics Plugin
 strat: react-native
+support_type: community
 ---
 
 
