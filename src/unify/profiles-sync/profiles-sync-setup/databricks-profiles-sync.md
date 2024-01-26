@@ -74,9 +74,7 @@ Next, add SQL warehouse details about your compute resource.
 
 Segment uses the service principal to access your Databricks workspace and associated APIs.
 
-#### Service principal client ID
-
-Follow the [Databricks guide for adding a service principal to your account](https://docs.databricks.com/en/administration-guide/users-groups/service-principals.html#manage-service-principals-in-your-account){:target="_blank"}. This name can be anything, but Segment recommends something that identifies the purpose (for example, "Segment Profiles Sync").  Segment doesn't require `Account admin` or `Marketplace admin` roles.
+**Service principal client ID**: Follow the [Databricks guide for adding a service principal to your account](https://docs.databricks.com/en/administration-guide/users-groups/service-principals.html#manage-service-principals-in-your-account){:target="_blank"}. This name can be anything, but Segment recommends something that identifies the purpose (for example, "Segment Profiles Sync").  Segment doesn't require `Account admin` or `Marketplace admin` roles.
 
 The service principal needs the following setup:
   - [Catalog level priveleges](https://docs.databricks.com/en/data-governance/unity-catalog/manage-privileges/privileges.html#general-unity-catalog-privilege-types){:target="_blank"} which include:
@@ -89,9 +87,8 @@ The service principal needs the following setup:
   - Databricks [SQL access entitlement](https://docs.databricks.com/en/administration-guide/users-groups/service-principals.html#manage-workspace-entitlements-for-a-service-principal){:target="_blank"} at the workspace level.
   - [CAN USE permissions](https://docs.databricks.com/en/security/auth-authz/access-control/sql-endpoint-acl.html#sql-warehouse-permissions){:target="_blank"} on the SQL warehouse that will be used for the sync.
 
-#### Client secret
 
-Follow the [Databricks instructions to generate an OAuth secret](https://docs.databricks.com/en/dev-tools/authentication-oauth.html#step-2-create-an-oauth-secret-for-a-service-principal){:target="_blank"}.
+**Client secret**: Follow the [Databricks instructions to generate an OAuth secret](https://docs.databricks.com/en/dev-tools/authentication-oauth.html#step-2-create-an-oauth-secret-for-a-service-principal){:target="_blank"}.
 
 
 Once you've configured your warehouse, test the connection and click **Next**.
