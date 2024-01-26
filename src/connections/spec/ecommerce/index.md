@@ -7,13 +7,13 @@ This guide maps out the standard data Segment expects to see from ecommerce comp
 
 ## V2
 
-Segment now supports a fully **backwards compatible** V2 of our Ecommerce Spec. You can still use V1 but we recommend upgrading to V2 as it includes many more spec'd ecommerce events!
+Segment now supports a fully **backwards compatible** V2 of the Ecommerce Spec. You can still use V1, but Segment recommends upgrading to V2 as it includes many more spec'd ecommerce events.
 
-Refer to our V2 docs [here](/docs/connections/spec/ecommerce/v2/).
+For more information about the V2 spec, refer to the [Ecommerce V2 docs](/docs/connections/spec/ecommerce/v2/).
 
 ## V1 Overview
 
-One of the core components of the Segment [Spec](/docs/connections/spec/) is the [`track`](/docs/connections/spec/track) method. It records any arbitrary event that the user has triggered. For Ecommerce tracking, you will be sending **specific event names** that we recognize semantically. That way we can transform them before sending them off to each different tool.
+One of the core components of the Segment [Spec](/docs/connections/spec/) is the [Track](/docs/connections/spec/track) method. It records any arbitrary event that the user has triggered. For Ecommerce tracking, you will be sending **specific event names** that Segment recognizes semantically. That way the Segment app can transform them before sending them off to each different tool.
 
 The `properties` listed in the sections below are **required** for some destinations to function. You can always add your own custom properties (product color, size, etc.) in addition to the required ones.
 
@@ -78,7 +78,7 @@ Property        | Type   | Description
 
 ## Viewed Product
 
-The second special event to record for an Ecommerce installation is 'Viewed Product'. To record that you'll use a `track` call.This event fires when a visitor views a product. That view might happen on a page, screen, or preview modal.
+The second special event to record for an Ecommerce installation is 'Viewed Product'. To record that you'll use a Track call. This event fires when a visitor views a product. That view might happen on a page, screen, or preview modal.
 
 Note that the properties are required to tell individual tools, like Google Analytics, about the specific product that was viewed. You can always add your own custom properties as well.
 
@@ -211,7 +211,7 @@ Property   | Type   | Description
 
 ## Completing an Order
 
-The final step is to record a `Order Completed` event when people complete your checkout process. It's the most important event to record, since you'll use it for A/B tests, sales dashboards, conversion pixels and pretty much everything you can think of!
+The final step is to record a `Order Completed` event when people complete your checkout process. It's the most important event to record, since you'll use it for A/B tests, sales dashboards, conversion pixels and pretty much everything you can think of.
 
 Be sure to **include all items in the cart as event properties**, with the same properties from the previous calls, like so:
 
@@ -281,4 +281,4 @@ Be sure to **include all items in the cart as event properties**, with the same 
 
 ## Google Analytics Enhanced Ecommerce
 
-If you're using Google Analytics enhanced ecommerce there are some special events you might also want to add. Details in [our GA docs](/docs/connections/destinations/catalog/google-analytics/#enabling-enhanced-e-commerce-tracking).
+If you're using Google Analytics enhanced ecommerce, there are some special events you might also want to add. Details are in Segment's [Google Analytics docs](/docs/connections/destinations/catalog/google-analytics/#enabling-enhanced-e-commerce-tracking).

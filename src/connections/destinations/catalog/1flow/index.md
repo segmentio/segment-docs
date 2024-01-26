@@ -5,7 +5,7 @@ redirect_from:
   - '/connections/destinations/catalog/1flow-analytics'
 ---
 
-[1Flow](https://1flow.app/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) is a leading in-app user survey and messaging platform for Mobile app and SaaS businesses.
+[1Flow](https://1flow.app/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners){:target="_blank”} is a leading in-app user survey and messaging platform for Mobile app and SaaS businesses.
 
 Using 1Flow, you can reach users _in-the-moment_ while they are interacting with your website or application, to collect highly contextual user insights that help you improve your product offering and customer experience.
 
@@ -16,7 +16,7 @@ This destination is maintained by 1Flow. For any issues with the destination, [c
 1. From the Destinations catalog page in the Segment App, click **Add Destination**.
 2. Search for **1Flow** in the Destinations Catalog, and select the **1Flow** destination.
 3. Choose which Source should send data to the 1Flow destination.
-4. Go to the [1Flow dashboard](https://dashboard.1flow.app/){:target="\_blank"} and find the **API Key** in Project Settings.
+4. Go to the [1Flow dashboard](https://dashboard.1flow.app/){:target="_blank"} and find the **API Key** in Project Settings.
 5. Enter the **API Key** in the 1Flow destination settings in Segment.
 
 ## Supported methods

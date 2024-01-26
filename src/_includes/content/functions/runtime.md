@@ -1,4 +1,4 @@
-Beginning April 30, 2023, Functions is migrating from Node.js 14.x to Node.js 16.x. You're not required to take any further action.
+As of April 30, 2023, Functions migrated from Node.js 14.x to Node.js 16.x. This change automatically takes effect as you update and deploy an existing function. All new functions use Node.js 16.x. Segment recommends you to check your function post-deployment to ensure everything's working. 
 
 <div class="premonition success"><div class="fa fa-check-square"></div><div class="content"><p class="header">Node.js 18.x: </p><p markdown=1>Starting June 30, 2023, you can [contact Segment](https://segment.com/help/contact/){:target="_blank"} to migrate to Node.js 18.x.</p></div></div>
 
@@ -24,6 +24,7 @@ The following dependencies are installed in the function environment by default.
 - [`jsonwebtoken v8.5.1`](https://www.npmjs.com/package/jsonwebtoken){:target="_blank"} exposed as `jsonwebtoken`
 - [`libphonenumber-js`](https://www.npmjs.com/package/libphonenumber-js){:target="_blank"} exposed as `libphonenumberjslib.libphonenumberjs`
 - [`lodash v4.17.19`](https://www.npmjs.com/package/lodash){:target="_blank"} exposed as `_`
+- [`mailchimp marketing`](https://www.npmjs.com/package/@mailchimp/mailchimp_marketing){:target="_blank"} exposed as `mailchimplib.mailchimp`
 - [`mailjet`](https://www.npmjs.com/package/node-mailjet){:target="_blank"} exposed as `const mailJet = nodemailjet.nodemailjet;`
 - [`moment-timezone v0.5.31`](https://www.npmjs.com/package/moment-timezone/v/0.5.31){:target="_blank"} exposed as `moment`
 - [`node-fetch v2.6.0`](https://www.npmjs.com/package/node-fetch){:target="_blank"} exposed as `fetch`

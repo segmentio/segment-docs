@@ -27,12 +27,14 @@ Segment automatically promotes the following traits and IDs in track and identif
 | android.idfa       | context.device.advertisingId when context.device.type = 'android' AND context.device.adTrackingEnabled = true |
 | android.push_token | context.device.token when context.device.type = 'android'                                                     |
 | anonymous_id       | anonymousId                                                                                                   |
-| cross_domain_id    | cross_domain_id when XID has been enabled for the workspace                                                   |
 | ga_client_id       | context.integrations['Google Analytics'].clientId when explicitly captured by users                           |
 | group_id           | groupId                                                                                                       |
 | ios.id             | context.device.id when context.device.type = 'ios'                                                            |
 | ios.idfa           | context.device.advertisingId when context.device.type = 'ios'     |
 | ios.push_token     | context.device.token when context.device.type = 'ios'                                                         |
+
+> note ""
+> The Google clientID(ga_clientid) is a unique value created for each browser-device pair and will exist for 2 years if the cookie is not cleared. The analytics.reset() call should be triggered from Segment end when the user logs off. This call will clear the cookies and local Storage created by Segment. It doesn’t clear data from other integrated tools. So on the next login, the user will be assigned with a new unique anonymous_id, but the same ga_clientid will remain if this cookie is not cleared. Hence, the profiles with different anonymous_id but with same ga_clientid will get merged.
 
 ## Custom externalIDs
 

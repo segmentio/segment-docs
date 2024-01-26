@@ -10,7 +10,7 @@ Segment Webhooks submit real-time user data to your own HTTP endpoints. A Webhoo
 
 ## Getting Started
 
-{% include content/connection-modes.md %}
+
 
 1. From the Segment web app, click **Catalog**.
 2. Search for "Webhooks" in the Catalog, select it, and choose which of your sources to connect the destination to.
@@ -20,7 +20,7 @@ Segment Webhooks submit real-time user data to your own HTTP endpoints. A Webhoo
 6. Once enabled, Segment sends data to the configured webhook
 
 > info ""
-> **Note:** With each call, Segment sends receive a [`context`](/docs/connections/spec/common/#context) object that provides information about the user's device, IP address, etc. As you start experimenting, test the Webhooks destination with [RequestBin.com](https://requestbin.com/) and [ultrahook](http://www.ultrahook.com) to see requests as they come through.
+> **Note:** With each call, Segment sends receive a [`context`](/docs/connections/spec/common/#context) object that provides information about the user's device, IP address, etc. As you start experimenting, test the Webhooks destination with [RequestBin.com](https://requestbin.com/){:target="_blank"} and [ultrahook](http://www.ultrahook.com){:target="_blank"} to see requests as they come through.
 
 ## Webhooks timeouts
 

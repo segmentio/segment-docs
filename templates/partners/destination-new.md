@@ -1,4 +1,4 @@
-# 💥 Segment Partner Source Documentation Template
+# 💥 Segment Partner Actions Destination Documentation Template
 
 > Hi Partners 👋🏼
 >
@@ -14,11 +14,11 @@
 >
 > The below template intends to provide a standardized structure. To submit your documentation, complete the following steps:
 >
-> 1. Clone the `segment-docs` repo locally
+> 1. Fork and clone the `segment-docs` repo locally
 > 2. Create a new branch (e.g., partner-name/destination)
 > 3. Create an `index.md` file in the following path `src/connections/destinations/catalog/{destination-slug}/index.md
 > 4. Copy the template below into your `index.md` file, and edit it to be in line with how your integration operates
-> 5. Add, commit, and push your code to the `segment-docs` repo and submit a pull request
+> 5. Add, commit, and push your code, then submit a pull request to the `segment-docs` repo
 >
 > If a section does not apply to your integration, feel free to remove. Please don’t create separate sections unless absolutely necessary. In most cases, creating a H3 (###) sub-heading under an existing section is the best option!
 >
@@ -27,8 +27,7 @@
 ## Template begins here...
 
 ---
-title: <integration_name> Destination
-id: <integration_id>
+title: [integration_name] Destination
 ---
 
 > (delete after reading) This template is meant for Actions-based destinations that do not have an existing Classic or non-Actions-based version. For Actions Destinations that are a new version of a classic destination, see the doc-template-update.md template.
@@ -39,24 +38,22 @@ id: <integration_id>
 
 > (delete after reading) Include a 1-2 sentence introduction to your company and the value it provides to customers - updating the name and hyperlink. Please leave the utm string unchanged.
 
-[<integration_name>](https://yourintegration.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) provides self-serve predictive analytics for growth marketers, leveraging machine learning to automate audience insights and recommendations.
+[<integration_name>](https://yourintegration.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners){:target="_blank”} provides self-serve predictive analytics for growth marketers, leveraging machine learning to automate audience insights and recommendations.
 
 > (delete after reading) Update your company name and support email address.
 
 This destination is maintained by <integration_name>. For any issues with the destination, [contact their Support team](mailto:support@<integration_name>.com).
 
-> (delete after reading) This include describes the requirement of A.js 2.0 or higher for Actions compatibility, and is required if your destination has a web component.
-
-{% include content/ajs-upgrade.md %}
-
 > (delete after reading) The section below explains how to enable and configure the destination. Include any configuration steps not captured below. For example, obtaining an API key from your platform and any configuration steps required to connect to the destination.
 
 ## Getting started
 
-1. From the Segment web app, click **Catalog**, then click **Destinations**.
-2. Find the Destinations Actions item in the left navigation, and click it.
-3. Click **Configure <desintation_name>**.
-4. Select an existing Source to connect to <destination_name> (Actions).
+1. From your workspace's [Destination catalog page](https://app.segment.com/goto-my-workspace/destinations/catalog){:target="_blank”} search for "<YOURINTEGRATION>"
+2. Select <YOURINTEGRATION> and click **Add Destination**
+3. Select an existing Source to connect to <YOURINTEGRATION> (Actions).
+> (delete after reading) describe steps to filling in relevant destinations settings such as the example steps below
+4. Go to the [<YOURINTEGRATION> dashboard](https://YOURINTEGRATION.com/dashboard){:target="_blank"}, find and copy the **API key**.
+5. Enter the **API Key** in the <YOURINTEGRATION> destination settings in Segment.
 
 > (delete after reading) The line below renders a table of connection settings (if applicable), Pre-built Mappings, and available actions.
 
@@ -67,7 +64,5 @@ This destination is maintained by <integration_name>. For any issues with the de
 >
 > Include additional information that you think will be useful to the user here. For information that is specific to an individual mapping, please add that as a comment so that the Segment docs team can include it in the auto-generated content for that mapping.
 
-
----
 
 > (delete after reading) Congratulations! 🎉 You’ve finished the documentation for your Segment integration. If there’s any additional information or nuance which did not fit in the above template and that you want to share with our mutual customers, feel free to include these as a separate section for us to review. If not, you may now submit this doc to our team.

@@ -15,7 +15,7 @@ Segment supports two type of data-lakes:
 > note "Lake Formation"
 > You can also set up your Segment Data Lakes using [Lake Formation](/docs/connections/storage/data-lakes/lake-formation/), a fully managed service built on top of the AWS Glue Data Catalog.
 
-## Set up Segment Data Lakes
+## Set up Segment Data Lakes (AWS)
 
 To set up Segment Data Lakes, create your AWS resources, enable the Segment Data Lakes destination in the Segment app, and verify that your Segment data is synced to S3 and Glue.
 

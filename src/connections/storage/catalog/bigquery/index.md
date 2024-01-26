@@ -4,6 +4,7 @@ rewrite: true
 redirect_from:
   - '/connections/warehouses/catalog/bigquery/'
 ---
+{% include content/warehouse-ip.html %}
 
 Segment's [BigQuery](https://cloud.google.com/bigquery/){:target="_blank"} connector makes it easy
 to load web, mobile, and third-party source data like Salesforce, Zendesk, and

@@ -30,7 +30,7 @@ Calls are now visible in Castle dashboards in real-time.
 
 	- With Xcode:
 
-      In the Xcode **File** menu, click **Add Packages**. In the resulting dialog dialog where you can search for Swift packages. In the search field, enter the URL to this repository: `https://github.com/castle/analytics-ios-integration-castle`
+      In the Xcode **File** menu, click **Add Packages**. In the resulting dialog where you can search for Swift packages, enter the following repository URL: `https://github.com/castle/analytics-ios-integration-castle`
 
 
       You can optionally pin the package to a specific branch or version, and select the project in your workspace to which you'll add the package. When you're done, click **Add Package**. 
@@ -53,7 +53,8 @@ Calls are now visible in Castle dashboards in real-time.
     let castleDestination = CastleDestination(userJwt: "<USER_JWT>")
     analytics.add(plugin: castleDestination)
   ```
-  
+
+
 ### Android
 
 1. You can add the Castle Segment dependency two ways:
@@ -76,7 +77,7 @@ Calls are now visible in Castle dashboards in real-time.
     analytics = Analytics("<YOUR WRITE KEY>", applicationContext)
     analytics.add(plugin = CastleDestination(userJwt = "<USER_JWT>"))
   ```
-  
+
 
 ## Page
 

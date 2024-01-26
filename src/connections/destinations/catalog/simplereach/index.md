@@ -3,11 +3,11 @@ rewrite: true
 title: SimpleReach Destination
 id: 55d3c70e0a20f4e22f0fb3eb
 ---
-SimpleReach helps brands, agencies, and publishers increase the impact of their content marketing. The SimpleReach Destination is open-source. You can browse the code [on GitHub](https://github.com/segment-integrations/analytics.js-integration-simplereach).
+SimpleReach helps brands, agencies, and publishers increase the impact of their content marketing. The SimpleReach Destination is open-source. You can browse the code [on GitHub](https://github.com/segment-integrations/analytics.js-integration-simplereach){:target="_blank"}.
 
 ## Getting Started
 
-{% include content/connection-modes.md %}
+
 
 1.  From your Segment UI's Destinations page click on "Add Destination".
 2.  Search for "SimpleReach" in the Catalog, select it, and choose which of your sources to connect the destination to.

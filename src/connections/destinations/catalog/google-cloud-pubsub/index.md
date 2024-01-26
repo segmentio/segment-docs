@@ -7,9 +7,9 @@ When you enable Google Cloud Pub/Sub in the Segment app, Segment starts sending 
 
 ## Authentication
 
-In order for Segment to publish events to a Pub/Sub topic on your behalf, you must grant Segment's [Google Cloud Service Account](https://cloud.google.com/iam/docs/understanding-service-accounts) publish access to your chosen topic. Follow these steps to enable this:
+In order for Segment to publish events to a Pub/Sub topic on your behalf, you must grant Segment's [Google Cloud Service Account](https://cloud.google.com/iam/docs/understanding-service-accounts) {:target="_blank"} publish access to your chosen topic. Follow these steps to enable this:
 
-1. In your Google Cloud Console, [navigate to your Pub/Sub topic list](https://console.cloud.google.com/cloudpubsub/topicList).
+1. In your Google Cloud Console, [navigate to your Pub/Sub topic list](https://console.cloud.google.com/cloudpubsub/topicList){:target="_blank"}.
 2. Select one or more topics using the checkboxes to the left of each topic name. **Permissions** options appear at the right of the page once you make a selection.
 3. In the **Add Members** input field, copy/paste Segment's Service Account email: `pubsub@segment-integrations.iam.gserviceaccount.com`.
 4. Click the **Select a Role** drop-down menu and choose **Pub/Sub Publisher**.
@@ -40,8 +40,8 @@ To route _all_ events to a topic, use an `*` as the event name.
 
 ## Data Model
 
-The structure of a Pub/Sub message uses [the PubsubMessage structure](https://cloud.google.com/pubsub/docs/reference/rest/v1/PubsubMessage).
+The structure of a Pub/Sub message uses [the PubsubMessage structure](https://cloud.google.com/pubsub/docs/reference/rest/v1/PubsubMessage){:target="_blank"}.
 
 The Segment destination publishes the entire Segment event payload as a Base64 encoded string, and sets it as the value of the `data` parameter in the Pub/Sub message payload. Segment sets the `publishTime` to be the `timestamp` of the Segment event.
 
-Segment does not currently use the optional `attributes` parameter. If you use this functionality, [contact us](https://segment.com/help/contact).
+Segment does not currently use the optional `attributes` parameter. If you use this functionality, [contact us](https://segment.com/help/contact){:target="_blank"}.

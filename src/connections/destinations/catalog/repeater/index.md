@@ -29,3 +29,9 @@ Repeater sends all events it receives to the sources you specified, identified b
 ## Replays with a Repeater
 
 Replays can affect your MTU count when using a Repeater destination. Notify your team before initiating a Replay if you’re using a Repeater destination. There are edge cases where the repeater would count towards MTUs, specifically when replaying historical data from the source connected to feed data into that Repeater destination. This is because userIds/anonymousIds would not have been seen by the source the Repeater sends data to. The API plans count by events sent through the pipeline; the repeater resends an event through the entire pipeline [Source → Repeater → Source → Destinations] so one event is sent through twice, and would increase the throughput count.
+
+## Repeater FAQ
+
+##### What is the `context.repeatChain` field that I can see on my repeated events?
+
+The `context.repeatChain` array that you will see on repeated events holds two values. The first value is the MD5-hashed write key where the event originated. The second value is the MD5-hashed write key that the event was sent to through the Repeater. This behavior lets Segment verify that the event isn't sent to a pipeline that will result in an infinite loop.

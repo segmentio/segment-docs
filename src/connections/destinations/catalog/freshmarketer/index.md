@@ -3,16 +3,13 @@ title: Freshmarketer Destination
 rewrite: true
 id: 5c823fb8af6c8c00015636b6
 ---
-Segment makes it easy to send your data to [Freshmarketer](https://www.freshmarketer.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) (and lots of other destinations). Once you collect your data using Segment's [open source libraries](/docs/connections/sources/catalog/), Segment translates and routes your data to Freshmarketer in the format it can use.
+Segment makes it easy to send your data to [Freshmarketer](https://www.freshmarketer.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners){:target="_blank”} (and lots of other destinations). Once you collect your data using Segment's [open source libraries](/docs/connections/sources/catalog/), Segment translates and routes your data to Freshmarketer in the format it can use.
 
 This destination is maintained by Freshmarketer. For any issues with the destination, [contact the Freshmarketer Support team](mailto:support@freshmarketer.com).
 
-{% include content/beta-note.md %}
-
-
 ## Getting Started
 
-{% include content/connection-modes.md %}
+
 
 1. From your Segment UI's Destinations page click **Add Destination**.
 2. Search for "Freshmarketer" in the Destinations Catalog and confirm the Source you'd like to connect to.

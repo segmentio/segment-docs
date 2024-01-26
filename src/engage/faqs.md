@@ -1,5 +1,5 @@
 ---
-title: Engage Frequently Asked Questions
+title: Engage FAQs
 plan: engage-foundations
 redirect_from:
   - '/personas/faqs'
@@ -12,7 +12,9 @@ You can add, remove, and modify audiences only by using the Engage in-app audien
 
 However, you can programmatically query the Profile API to determine if a user belongs to a particular audience because Engage creates a trait with the same name as your audience. For example, to determine if the user with an email address of `bob@example.com` is a member of your `high_value_users` audience, you could query the following profile API URL:
 
-`https://profiles.segment.com/v1/namespaces/<namespace_id>/collections/users/profiles/email:bob@segment.com/traits?include=high_value_users`
+```
+https://profiles.segment.com/v1/namespaces/<namespace_id>/collections/users/profiles/email:bob@segment.com/traits?include=high_value_users
+```
 
 The following response indicates that Bob is indeed a high-value user:
 
@@ -29,9 +31,14 @@ The following response indicates that Bob is indeed a high-value user:
 
 For more information on profile queries, visit the [Profile API documentation](/docs/unify/profile-api).
 
+## Can I modify audience keys?
+
+You can't change the audience key after it's created. To change the key, you need to re-create the audience.
+ 
+
 ## Can I reuse audience keys?
 
-Avoid using the same audience key twice, even if you've deleted the key's original audience. Downstream tools and Destinations might have trouble distinguishing between different audiences that at any point shared the same key.
+Avoid using the same audience key twice, even if you've deleted the key's original audience. Downstream tools and destinations might have trouble distinguishing between different audiences that once shared the same key. This may create mismatch in audience size between Segment and the destination because the destination may count users of the old audience, resulting in a larger audience size.
 
 ## How do historical lookback windows work?
 
@@ -117,3 +124,16 @@ Yes, Engage supports the ability to send an audience or computed trait to two or
 An audience/computed trait Run or a Sync may fail on its first attempt, but Engage will retry up to 5 times before considering it a hard failure and display on that audience/compute trait's Overview page. As long as the runs/syncs within the specific Audience's Overview page say they are successful, then these can be safely ignored.  The Audit Trail logic, however, is configured in the way that it simply notifies about every task failure, even if it then later succeeds.
 
 If your team would like to avoid receiving the notifications for transient failures, please **[reach out to support](https://segment.com/help/contact/)**, who upon request can disable transient failure notifications.
+
+
+## Why is the user count in a journey step greater than the entry/previous step of the journey?
+
+Each step of a Journey is an Engage audience under the hood. The conditions stack, so a user must be a member of the previous step (audience) and meet all conditions to be added to subsequent steps. However, if the user no longer meets entry conditions for a particular step, they'll exit and you'll see the user count reduced. For any subsequent steps a user is still a part of, they'll remain until they no longer meet entry conditions. 
+
+## Why were multiple audience-entered events triggered for the same user?
+
+Multiple audience events can trigger for a user if any of the following conditions occur:
+1) There is a merge on the user.
+2) An [`external_id`](/docs/engage/using-engage-data/#new-external-identifiers-added-to-a-profile) was added to the profile.
+3) The user has [multiple identifiers of the same type](/docs/engage/using-engage-data/#multiple-identifiers-of-the-same-type). Segment sends one event per identifier for each audience or computed trait event.
+4) The `include anonymous users` option is selected for an audience. Segment sends an event for every `anonymousId` on the user profile.

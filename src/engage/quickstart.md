@@ -10,6 +10,9 @@ This guide walks you through the set up process for a simple Engage space, which
 > success ""
 > The first four steps in this guide also apply to Unify set up. To learn more, visit the [Unify Onboarding Guide](/docs/unify/quickstart).
 
+> info "Regional Segment"
+> Engage Foundations is available on Segment's regional infrastructure. For more information, see the article [Regional Segment](/docs/guides/regional-segment/).
+
 ## Engage configuration requirements
 > info ""
 > Engage requires both [Connections](/docs/connections/) and [Unify](/docs/unify/).
@@ -38,7 +41,7 @@ Invite teammates to your Engage dev space and grant them access to the space. Na
 
 ## Step 3: Connect production sources
 
-1. From your Engage space, go to your space Settings and click **Sources**.
+1. From your Engage space, navigate to **Unify settings** and click **Profile sources**.
 2. On the screen that appears, choose one or two production sources from your Connections workspace.
    Segment recommends connecting your production website or App source as a great starting point.
 

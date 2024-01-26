@@ -395,6 +395,10 @@ Segment::init("YOUR_WRITE_KEY", array(
     <td>`error_handler` _Function, optional_</td>
     <td>A handler which will be called on errors to aid in debugging, `function ($code, $message) {}`</td>
   </tr>
+  <tr>
+    <td>`host` _String, optional_</td>
+    <td>To explicitly set which regional host to use. Defaults to `api.segment.io`.</td>
+  </tr>  
 </table>
 
 ### Lib-Curl Consumer

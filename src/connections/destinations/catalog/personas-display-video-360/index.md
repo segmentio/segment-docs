@@ -4,7 +4,7 @@ strat: google
 hide-settings: true
 id: 5d4dd5b989eda01a09b5cdb1
 ---
-Google's [Display & Video (DV360)](https://marketingplatform.google.com/about/display-video-360/) service is an end-to-end campaign management tool that enables enterprise customers to plan, measure, and run display and video advertisements.
+Google's [Display & Video (DV360)](https://marketingplatform.google.com/about/display-video-360/){:target="_blank"} service is an end-to-end campaign management tool that enables enterprise customers to plan, measure, and run display and video advertisements.
 
 > info ""
 > **Note**: You can connect to a Google Ad Manager account. For more information, see [4. Create an audience and finish DV360 configuration](#4-create-an-audience-and-finish-dv360-configuration) below.
@@ -212,7 +212,7 @@ When you select the destination, you're prompted to complete the destination set
 | Setting                        | Description                                                                                                                                                               |
 | ------------------------------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | User Role Granted              | The permission you requested from Google. Either `Advertiser`, `Partner`, or `Publisher`. **Note:** Select `Publisher` only if you plan to connect to Google Ad Manager.  |
-| Account ID                     | The ID of your DV360 or Ad Manager account.                                                                                                                               |
+| Account ID                     | The ID of your DV360 or Ad Manager account. For help finding your Account ID, see [Display & Video 360 Help](https://support.google.com/displayvideo/answer/3423704?hl=en#zippy=){:target="_blank"}.                                                                                                                     |
 
 On Step 3: Review & Create, **deselect** the Historical Backfill option to ensure that audience sizes between Engage and DV360 align more closely.
 
@@ -241,7 +241,7 @@ When you complete the connection between Segment and DV360, it can take from 24 
 
 ### What identifiers are needed to enable this integration?
 
-Google's [documentation](https://developers.google.com/authorized-buyers/rtb/downloads/cookie-bulk-upload-proto) provides information about the accepted identifiers for this integration.
+Google's [documentation](https://developers.google.com/authorized-buyers/rtb/downloads/cookie-bulk-upload-proto){:target="_blank"} provides information about the accepted identifiers for this integration.
 
 
 - To use DV360 with web traffic, you must collect `anonymous_id` through the client-side `analytics.js` Source.

@@ -8,7 +8,7 @@ id: 54521fd925e721e32a72eed1
 > The Lucky Orange Destination supports [Lucky Orange Classic](https://classic.luckyorange.com/){:target="_blank"} only. Support for the new [Lucky Orange](https://www.luckyorange.com/){:target="_blank"} is not available at this time.
 
 
-[Lucky Orange](https://www.luckyorange.com/) lets you quickly see who is on your site and interact with them in many ways. With Lucky Orange, you can chat with visitors on your site, actually watch their mouse move around the screen and click in real time, play them back as recording, generate beautiful heat maps of clicks, mouse movements (eye tracking), and scroll depth, create quick insightful polls, and more. You can browse the code [on GitHub](https://github.com/segment-integrations/analytics.js-integration-lucky-orange).
+[Lucky Orange](https://www.luckyorange.com/){:target="_blank"} lets you quickly see who is on your site and interact with them in many ways. With Lucky Orange, you can chat with visitors on your site, actually watch their mouse move around the screen and click in real time, play them back as recording, generate beautiful heat maps of clicks, mouse movements (eye tracking), and scroll depth, create quick insightful polls, and more. You can browse the code [on GitHub](https://github.com/segment-integrations/analytics.js-integration-lucky-orange){:target="_blank"}.
 
 ## Getting Started
 

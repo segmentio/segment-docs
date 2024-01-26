@@ -1,0 +1,577 @@
+  0721-catalog                                         8ed8d95af [origin/0721-catalog: gone] Catalog update for July 21
+  0726-catalog                                         26a3faf04 [origin/0726-catalog: gone] Catalog update
+  0728-catalog                                         8a883a46f [origin/0728-catalog: gone] catalog update
+  10-13-catalog                                        ff669a327 [origin/10-13-catalog: gone] catalog update
+  10-18-catalog                                        5815d5a8f [origin/10-18-catalog: gone] Update the catalog
+  10-20-catalog                                        9c497dcae [origin/10-20-catalog: gone] Catalog update 10-20
+  11-10-catalog                                        d3d55840f [origin/11-10-catalog: gone] Catalog update
+  11-11-fixes                                          738fe9cf8 [origin/11-11-fixes: gone] Re-adding these
+  11-15-catalog                                        4f4545412 [origin/11-15-catalog: gone] Catalog update
+  11-17-catalog                                        66bb3b069 [origin/11-17-catalog: gone] Fix conflicts
+  11-29_catalog                                        cc670f9c8 [origin/11-29_catalog: gone] Catalog update
+  12-1-catalog                                         0e1012eb7 [origin/12-1-catalog: gone] Catalog update
+  12-6-catalog                                         a4a6208e9 [origin/12-6-catalog: gone] Catalog update
+  12-8_catalog                                         112e87586 Catalog updates
+  1860-link-fixes                                      defca251a fix links
+  20221213-catalog                                     f279bea1b [origin/20221213-catalog] Segment destination to public beta
+  20221215_catalog                                     7f3f3460b [origin/20221215_catalog] fix Salesforce Marketing Cloud Actions slug
+  20230103-catalog                                     61a0a6728 [origin/20230103-catalog] Private destinations update
+  20230105_catalog                                     f09f61d26 [origin/20230105_catalog] Catalog Update
+  20230110_catalog                                     e46536137 [origin/20230110_catalog] catalog update
+  20230112_catalog                                     5e631bf12 [origin/20230112_catalog] Catalog update
+  20230113-vale-updates                                73ef336ab [origin/20230113-vale-updates] Update vale rules
+  202301170-catalog                                    080986d69 [origin/202301170-catalog] catalog update
+  20230119-catalog                                     942744204 [origin/20230119-catalog] Catalog update for Jan 19
+  20230124-catalog                                     2b05240d6 [origin/20230124-catalog: ahead 4] Merge branch 'develop' of github.com:segmentio/segment-docs into 20230124-catalog
+  20230126                                             07b65af74 [origin/20230126] Catalog update Jan 26
+  20230131_catalog                                     5e3f00a01 [origin/20230131_catalog] Catalog update 01-31-2023
+  20230202-catalog                                     069d9798b [origin/20230202-catalog] catalog update
+  20230209-catalog                                     df44c33ab [origin/20230209-catalog] catalog
+  20230214_catalog                                     7e9d25b10 [origin/20230214_catalog] catalog update
+  20230216-catalog                                     9cd9a548b [origin/20230216-catalog] catalog update
+  20230221-catalog                                     e0946fe9f [origin/20230221-catalog] catalog
+  20230223-catalog                                     012ada305 [origin/20230223-catalog: ahead 2] conflicts
+  20230228-catalog                                     7572d8c6e [origin/20230228-catalog] catalog update
+  20230302-catalog                                     af1305315 [origin/20230302-catalog] Catalog update
+  20230307-catalog                                     dc02b6a19 [origin/20230307-catalog] catalog update
+  20230314-catalog                                     a86b3b739 [origin/20230314-catalog] Catalog update
+  20230316-catalog                                     4c337cb6d [origin/20230316-catalog] Catalog update
+  20230323-catalog                                     dbd848077 [origin/20230323-catalog] Catalog update
+  20230327-catalog                                     7f99b1797 [origin/20230327-catalog: ahead 24] Merge branch 'develop' of github.com:segmentio/segment-docs into 20230327-catalog
+  20230328-fixes                                       2de568124 [origin/20230328-fixes] fix redirect
+  20230404-catalog                                     da1ebbcd1 [origin/20230404-catalog] Update catalog
+  20230406-catalog                                     6f840028d [origin/20230406-catalog] catalog update
+  20230411-catalog                                     25e9988fc [origin/20230411-catalog] catalog update
+  20230413-catalog                                     a33d99e90 [origin/20230413-catalog] catalog update
+  20230418-catalog                                     9692a98f0 [origin/20230418-catalog] Catalog update
+  20230420-catalog                                     9e0f0c2e4 [origin/20230420-catalog] merge conflict resolutions
+  20230425-catalog                                     a5952683f [origin/20230425-catalog] catalog update
+  20230427-catalog                                     a3ea91960 [origin/20230427-catalog] catalog update
+  20230509-catalog                                     f63e002a8 [origin/20230509-catalog] catalog update
+  20230621-one-off                                     7c87f77fa [origin/20230621-one-off] re-add iterable actions private metadata
+  20231321-catalog                                     2d655615d [origin/20231321-catalog] catalog update
+  2279-fix                                             bb3572583 [origin/2279-fix: gone] fixes 2279
+  2303-clevertap-override                              81c1930b1 [origin/2303-clevertap-override: gone] Update CleverTap connection modes
+  2658-gtm-update                                      cfbc28f98 [origin/2658-gtm-update: gone] Clarify to remove GTM snippet
+  2659-google-analytics                                ae0f9feea [origin/2659-google-analytics: gone] Update partial refund requirements
+  2765_mixpanel-update                                 48beb3c8f [origin/2765_mixpanel-update: gone] Added requested section to Mixpanel Identify
+  2839-tracking-plan-template                          c1f3e48a4 [origin/2839-tracking-plan-template: gone] Updated Tracking Plan link
+  2865-streams-updates                                 50c3e5752 [origin/2865-streams-updates: gone] Fixed sentence and format errors
+  2906-ga-snippet                                      954ee093a [origin/2906-ga-snippet: gone] Updated example page call to include category
+  2922-intercom                                        85797ca22 [origin/2922-intercom: gone] Fix Intercom connection modes
+  2951_helpscout-custom-properties                     b74a6883b [origin/2951_helpscout-custom-properties: gone] Noted that Help Scout cannot receive custom properties
+  2961_ga4-update                                      7cccc74e8 [origin/2961_ga4-update: gone] Add information about GA4 custom event naming
+  2979_update-python-package                           cbda14543 [origin/2979_update-python-package: gone] Updated Python package name
+  3-18-hotfix                                          da583d72a [origin/3-18-hotfix: gone] Merge branch 'develop' into 3-18-hotfix
+  3018_event-filters                                   74ed21039 [origin/3018_event-filters: gone] Updated content to reflect impact of Tracking Plans
+  3215-moengage                                        f931a0bea [origin/3215-moengage: gone] Add note about MoEngage anonymous id support
+  3236-pendo                                           600e9c1fe [origin/3236-pendo: gone] Add clarity to the use of webhooks for Cloud-mode
+  3261-factorsai                                       5507e80c4 [origin/3261-factorsai: gone] Did it the right way this time
+  3294-python-regional-host                            a9ab1199e [origin/3294-python-regional-host: gone] So. Many. Vale edits.
+  3328-amp-settings                                    96e1d5684 [origin/3328-amp-settings: gone] Re-add dropped word
+  3435-warehouse-integrations-object                   534346292 [origin/3435-warehouse-integrations-object: gone] Mention integrations object in Warehouse FAQ
+  3492-intercom-update                                 c26f69166 [origin/3492-intercom-update: gone] Update Intercom destination docs
+  3499-fix-anchor                                      cccdec2f1 [origin/3499-fix-anchor: gone] Fix an anchor link
+  3570-missing-comma                                   42cdf2b30 [origin/3570-missing-comma: gone] Add missing comma to code example
+  3571-regional-endpoint                               ef5050e3c [origin/3571-regional-endpoint: gone] Update the EU endpoint for server-side sources
+  3575-remove-SLA-from-title                           c99308d29 [origin/3575-remove-SLA-from-title: gone] Remove 'SLA' from title and nav to remove confusion
+  3614-broken-gh-link                                  7dc631a1b [origin/3614-broken-gh-link: gone] Remove link to closed repository
+  3617-amazon-s3-source                                aa8c5c2c9 [origin/3617-amazon-s3-source: gone] Update Lambda command to resolve error
+  3641-mutiny                                          0b22857ce [origin/3641-mutiny: gone] Add information about events Mutiny sends to Segment
+  3646-eloqua                                          488c02ce1 [origin/3646-eloqua: gone] Specify display name and not DB name
+  3669-python-fix                                      b6ba54b32 [origin/3669-python-fix: gone] Update Analytics import statement to avoid error
+  3727-actions-template                                bdae2d4b0 [origin/3727-actions-template: gone] Updated Actions template for actions that don't have a defaeult trigger
+  3744-add-image                                       11cc59afd [origin/3744-add-image: gone] Added image to better illustrate the configuration of a Person Account
+  3769-amazon-s3-update                                4826e0454 [origin/3769-amazon-s3-update: gone] Update nodejs version and remove out-of-date images
+  3789-source-types                                    834144263 [origin/3789-source-types: gone] Update src/connections/sources/index.md
+  3791_typewriter-update                               38b0b5568 Add link to blog post [netlify-build]
+  3805-move-workspace                                  7106f208c [origin/3805-move-workspace: gone] Add note that Tracking Plans do not transfer to a new workspace
+  3833-update-spec                                     7226beaef [origin/3833-update-spec: gone] Add required event field in example Track payload
+  3848-snowflake-destination-images                    b0469f68f [origin/3848-snowflake-destination-images: gone] Remove images from doc, vale edits
+  3861-remove-private-repo-link                        42c2d1869 [origin/3861-remove-private-repo-link: gone] Remove link to private repository
+  3999_floodlight                                      96648a089 [origin/3999_floodlight] Add clarification about where dc_rdid is used
+  4-7_catalog                                          1fd6db868 [origin/4-7_catalog: gone] Catalog update
+  4018-reword                                          543fe9c10 [origin/4018-reword] Update language
+  4138-glossary-update                                 90ad11202 [origin/4138-glossary-update] Fix incomplete definition in the Glossary
+  4336-google-ads-classic                              7b28c5125 [origin/4336-google-ads-classic] Update verbiage, address vale concerns
+  4448-regional-plan-grid                              4d73067d5 [origin/4448-regional-plan-grid] Add BT only note to regional
+  4481-ajs-single-page                                 cde618ec0 [origin/4481-ajs-single-page] edits
+  4586-talon-one                                       229af5ee0 [origin/4586-talon-one] Add note about Talon.One rate limit
+  4595-marketo                                         7ca8f9336 [origin/4595-marketo] Add note about Marketo's Lead Activity Type IDs field
+  4724-helpscout                                       736326514 [origin/4724-helpscout] Add note that Help Scout OAuth supports one destination per user
+  5-16_link_fixes                                      fbe1bec9d [origin/5-16_link_fixes: gone] broken link fixes
+  5-17_catalog                                         a5ad0bcf1 [origin/5-17_catalog: gone] made catalog
+  5-2_link-fixes                                       79e18e2b0 [origin/5-2_link-fixes: gone] Fixed some broken URLs
+  6-23-catalog-update                                  1df113d80 [origin/6-23-catalog-update: gone] Catalog updates for June 23
+  6-28-catalog                                         338e14e9f [origin/6-28-catalog: gone] Catalog update
+  7-14-catalog                                         668face97 [origin/7-14-catalog: gone] Merge branch 'develop' into 7-14-catalog
+  7-6_typo                                             4edc56719 [origin/7-6_typo: gone] Fix typo
+  8-25-catalog                                         713065c7d [origin/8-25-catalog: gone] Catalog update
+  8-30_catalog                                         03517cb9d [origin/8-30_catalog: gone] catalog update
+  8-9-catalog                                          cc000de78 [origin/8-9-catalog: gone] Refresh
+  9-21-catalog                                         abe02e5d3 [origin/9-21-catalog: gone] Catalog update
+  9-22-catalog                                         4217779af [origin/9-22-catalog: gone] Hide the number of actions
+  9-8_catalog                                          6b6118596 [origin/9-8_catalog: gone] catalog update
+  Braze-dest-links                                     5ea904b41 [origin/Braze-dest-links: gone] fix braze maintenance links
+  CSV-and-subscription-updates                         abaed7822 [origin/CSV-and-subscription-updates] update image
+  CleverTap/develop                                    2962e5358 Edits and connected metadata
+  ClientSuccess_updates                                a3484c447 [origin/ClientSuccess_updates: gone] updates requested from partner
+  DOC-131_Algolia                                      226ab5075 init
+  DOC-136_ajs-next                                     a9fa1934d [origin/DOC-136_ajs-next: gone] DOC-136 copy edit and go live
+  DOC-140_release-note                                 8d5a23c61 ajs changelog template
+  DOC-158_remove-drift-dest                            53802f36b Merge pull request #1516 from segmentio/link_fixes
+  DOC-161_int-collection                               00765fb80 doc-161 test
+  DOC-167-journeys                                     182207f08 [origin/DOC-167-journeys] DOC-167 fix code
+  DOC-170_danger                                       ea316240a [origin/DOC-170_danger: gone] [netlify-ignore]
+  DOC-190_QI-feedback                                  8c48dfb27 [origin/DOC-190_QI-feedback: gone] Merge branch 'master' into DOC-190_QI-feedback
+  DOC-200_Update-Journeys                              8efe99695 DOC-200 update use cases
+  DOC-206_part-2                                       78e455026 [origin/DOC-206_part-2: gone] ignore this file
+  DOC-223_ext-link                                     2c7af6c00 Merge pull request #1682 from segmentio/crisp-docs
+  DOC-230_CSP-update                                   86506978b Merge pull request #1718 from segmentio/DOC-227
+  DOC-259_timestamp-update                             595c2cf33 [origin/DOC-259_timestamp-update: gone] Updated description of the way Segment calculates timestamps
+  DOC-279_xcode-update                                 032eb6a88 Merge pull request #1765 from segmentio/personas_typo
+  DOC-284_update-actions-doc                           54dbf65fd Merge pull request #1781 from segmentio/aug-4_bulk_fixes
+  DOC-288                                              ac4860608 update catalog [netlify-ignore]
+  DOC-29_CODEOWNER-cleanup                             a8dff51d8 start paring
+  DOC-302_criteo-conn-modes                            a5dec67ed [origin/DOC-302_criteo-conn-modes: gone] Add note about Criteo connection modes with Analytics.js
+  DOC-309_hubspot-api-request                          960a41827 [origin/DOC-309_hubspot-api-request: gone] Add clarity to HubSpot API limit
+  DOC-31_release-notes                                 d92a04406 [origin/DOC-31_release-notes: gone] DOC-31 init
+  DOC-31_release-notes-proto                           e5821887a [origin/DOC-31_release-notes-proto: gone] Merge branch 'master' into DOC-31_release-notes-proto
+  DOC-324_souce-type                                   89976e907 [origin/DOC-324_souce-type: gone] Add cloud source type to metadata
+  DOC-342                                              cbfb8f8e9 [origin/DOC-342: gone] Conn mode override and cleanup
+  DOC-342_clevertap-con-modes                          14d5f8a59 Merge pull request #2024 from segmentio/repo-sync
+  DOC-348_page-screen                                  7904aa760 DOC-348 split page and screen
+  DOC-358_amp-actions-update                           df95facb0 Merge pull request #2103 from segmentio/juliaparksegment-patch-1
+  DOC-3_release-notes-gh                               e5a13035a Merge pull request #1183 from segmentio/DOC-4_netlify-improvements
+  DOC-400_adjust-mappings                              676118aeb [origin/DOC-400_adjust-mappings: gone] Added mappings for Adjust Cloud-mode
+  DOC-404_facebook-capi-actions                        9bbd831f2 [origin/DOC-404_facebook-capi-actions: gone] remove year
+  DOC-436_expose-fql-doc                               cea490912 [origin/DOC-436_expose-fql-doc: gone] Linking to FQL from Destination Filters doc
+  DOC-440_remove-property                              466a2c65e [origin/DOC-440_remove-property: gone] Removed a property that does not exist in the Intercom source
+  DOC-446_hash-details                                 33868ef6c [origin/DOC-446_hash-details: gone] Added a note about property hashing
+  DOC-447_fix-urls                                     99a626c50 [origin/DOC-447_fix-urls: gone] Fix URLs in Regional Segment support table
+  DOC-455-facebook-app-events                          19ddd2c51 [origin/DOC-455-facebook-app-events: gone] Added clarity to Facebook App Events context.device.type accepted values
+  DOC-456-tiktok                                       df5491a56 [origin/DOC-456-tiktok: gone] add better description
+  DOC-462_super-properties                             0beb05a0b [origin/DOC-462_super-properties: gone] Add a note about super properties in Mixpanel
+  DOC-468_hubspot                                      7e5ea6005 [origin/DOC-468_hubspot: gone] Add 'name' to traits list for Group call
+  DOC-497_tile-redirects                               f27cad6de [origin/DOC-497_tile-redirects: gone] Added redirects and related destinations
+  DOC-499_Salesforce-group                             d97ba7d98 [origin/DOC-499_Salesforce-group: gone] Remove section about actions
+  DOC-500_zendesk-update                               a0dc4ede2 [origin/DOC-500_zendesk-update: gone] Added note about Zendesk API limit
+  DOC-501_AppsFlyer-update                             dc34e10d1 [origin/DOC-501_AppsFlyer-update: gone] Remove personas section drom AppsFlyer destination
+  DOC-505_fix-url                                      40d130229 [origin/DOC-505_fix-url: gone] Fix broken URl
+  DOC-507-drip-override                                1d402de7d [origin/DOC-507-drip-override: gone] Override the Drip destination connection modes
+  DOC-510                                              c2f8866b1 [origin/DOC-510: gone] Added Action Source table
+  DOC-513-Clevertap_alias                              4c3c1243e [origin/DOC-513-Clevertap_alias: gone] Add section for supported Alias call.
+  DOC-514_moengage                                     08436ab37 [origin/DOC-514_moengage: gone] Hide Personas partial
+  DOC-520_clevertap-cmode                              6c58d72e1 [origin/DOC-520_clevertap-cmode: gone] Remove Cloud-web from CleverTap's connection modes
+  DOC-526_actions-map-limits                           2264bdec5 [origin/DOC-526_actions-map-limits: gone] Added verbiage to describe the maximum number of mappings
+  DOC-530_integration-object                           4481e6379 [origin/DOC-530_integration-object: gone] Updated the way that the integrations object handles All: false
+  DOC-531_server-source                                2e4c5faf3 [origin/DOC-531_server-source: gone] Add instructions for host param to server-side sources
+  DOC-540_ibm-watson-source                            6c7f4991e updates
+  DOC-540_watson                                       2da2bdc9e [origin/DOC-540_watson: gone] merge master and make catalog
+  DOC-542-ajs-links                                    84122b291 [origin/DOC-542-ajs-links: gone] vale edits
+  DOC-544_integration-object                           fedb60305 [origin/DOC-544_integration-object: gone] Update integration object use depending on connection mode
+  DOC-549-mixpanel                                     62b050b26 [origin/DOC-549-mixpanel: gone] Updates and Vale edits
+  DOC-555-debugger                                     b7a94e5ad Merge pull request #3245 from segmentio/repo-sync
+  DOC-566-payload-size                                 7f788695d [origin/DOC-566-payload-size: gone] Specified that A.js messages over 32kb result in a 500 error
+  DOC-570                                              8a26bcd4e [origin/DOC-570: gone] update accepted word list
+  DOC-574_zlib                                         903c1647c [origin/DOC-574_zlib: gone] Update how zlib must be referenced in functions docs
+  DOC-577_warehouse-redirect                           da21fa475 [origin/DOC-577_warehouse-redirect: gone] Add redirect to temp fix broken link from app
+  DOC-579_TP-library-updates                           b6ffe1f04 [origin/DOC-579_TP-library-updates: gone] Tracking Plane dupe details
+  DOC-602_LD-actions                                   c3134757e [origin/DOC-602_LD-actions: gone] Add a note that explains why Segment does not map Identify to LaunchDarkly (Actions)
+  DOC-607_hipaa                                        c8c24a367 [origin/DOC-607_hipaa: gone] Merge branch 'develop' into DOC-607_hipaa
+  DOC-608_woopra                                       054cd46de [origin/DOC-608_woopra: gone] Update Woopra Connection modes
+  DOC-610-zendesk                                      f9c14feb0 [origin/DOC-610-zendesk: gone] Added a note about using  in Zendesk.
+  DOC-611_facebook                                     1421eae4b [origin/DOC-611_facebook] Describe Segment -> Facebook user data mapping
+  DOC-612_tax-updates                                  d71c227ce [origin/DOC-612_tax-updates] Add information about tax ID format validation
+  DOC-617_computed-trait-limits                        5a6869504 [origin/DOC-617_computed-trait-limits: behind 1] Add information about Event Property Limits on Computed Traits
+  DOC-623_delay-initialization                         6664783de [origin/DOC-623_delay-initialization: gone] Add content to explain the a.js delay loadfeature
+  DOC-630_pub-api-dest-region                          525e2f6d4 Don't nuke the whole file if 404 (#3949)
+  DOC-632_engage-limit-updates                         6948fb3d0 [origin/DOC-632_engage-limit-updates: behind 84] Add new product limits for Engage
+  DOC-635                                              f1e1043c7 [origin/DOC-635] fixed RETL icon fill
+  DOC-641_stripe_update                                721cae2a7 [origin/DOC-641_stripe_update] Fix tax_rates collection [netlify-build]
+  DOC-648                                              864c84bcb [origin/DOC-648] conflict resolve
+  DOC-65_Algolia-crawl                                 0d1f0b067 [origin/DOC-65_Algolia-crawl: gone] Merge branch 'master' into DOC-65_Algolia-crawl
+  DOC-677                                              224dccf24 [origin/DOC-677] Add note about availability of Public API SDKs
+  DOC-699_tax-update                                   78f74c579 [origin/DOC-699_tax-update] Remove content on specific tax areas
+  DOC-6_Personas-DV360                                 bc109749f [origin/DOC-6_Personas-DV360: gone] DOC-6 small fix
+  DOC-70_algolia                                       8ff6e2211 [origin/DOC-70_algolia: gone] [netlify-ignore]
+  DOC-711_bing-ads                                     fd4064d57 [origin/DOC-711_bing-ads] Updated doc with link to MS content
+  ENTCX-668_DOC-613                                    47fbe3a7f [origin/ENTCX-668_DOC-613] Add detail about audit forwarding
+  Friendbuy-destination                                960566406 [origin/Friendbuy-destination: gone] add snippet to pull API data
+  GDPR-update                                          f9130f88e [origin/GDPR-update: gone] typo
+  Gladly-fix                                           f7d4332d6 [origin/Gladly-fix: gone] Fixed broken table
+  Moengage-engage-update                               ce152388c [origin/Moengage-engage-update: gone] Typo
+  PINT-1842                                            b53d3f9fe [origin/PINT-1842] Remove duplicate info [netlify-build]
+  RN-redesign                                          d603b6672 [origin/RN-redesign] merge master and clean up [netlify-build]
+  VitalyStakhov/develop                                ec88c0aab Update index.md
+  Wisepops/develop                                     01f25c055 [origin/Wisepops/develop: gone] Fix private destination yaml
+  actable-predictive                                   44ba21a6d [origin/actable-predictive] Add ID and private metadata
+  action-dest-field-mapping                            7daba3f2c [origin/action-dest-field-mapping: gone] Pull actions data by ID, with slug fallback
+  actions-catalog-stuff                                92779582c [origin/actions-catalog-stuff: gone] Add actions destinations to category compare
+  actions-conditional-ajs2-banner                      fba9698fd init
+  actions-default-trigger                              0b8374cb7 [origin/actions-default-trigger: gone] capitalize trigger elsewhere
+  actions-dests-migration                              9a19f2177 updated main article and amplitude migration table
+  actions-livelike-cloud                               36f5e0744 merge develop
+  actions-moengage                                     a60c3c99a [origin/actions-moengage: gone] Add private metadata
+  add-SegmentRETL-docs                                 d5dba52cd [origin/add-SegmentRETL-docs] Set to private
+  add-beta-status                                      3a53df3d8 [origin/add-beta-status: gone] Add beta status to destination info
+  add-commandbar-docs                                  02b0bfec7 [origin/add-commandbar-docs: behind 1] Edits and private beta actions info
+  add-doc-actions-webhooks                             60ebcc042 [origin/add-doc-actions-webhooks: gone] Add metadata
+  add-dossier-to-actions                               05820392f [origin/add-dossier-to-actions: gone] Enabled destination metadata block for Actions destinations
+  add-github-token-scanning                            595706ceb [origin/add-github-token-scanning: behind 2] Small edits
+  add-logrocket-documentation                          7c06e1fca [origin/add-logrocket-documentation: gone] fix private metadata
+  add-required-to-action-fields                        2f213eac5 [origin/add-required-to-action-fields: gone] Add required indicator to actions fields
+  add-schema-to-nav                                    61f2641d0 [origin/add-schema-to-nav: gone] Add Schema Controls to main nav
+  add-space-to-meta-title                              e5e577bb7 [origin/add-space-to-meta-title: gone] Reformat og:title
+  airship-doc-sync                                     ae2d7eda9 edits for grammar and style
+  ajs-cookie                                           e1f26998b init
+  ajs-npm                                              a789526c7 [origin/ajs-npm: gone] Add the NPM option to A.js quickstart
+  algolia                                              c49846beb update config
+  algolia-docsearch                                    63ac48d7c meh
+  algolia-insights-update-docs                         a7ca0d43f [origin/algolia-insights-update-docs] Edits
+  algolia-upgrade                                      6728f73a0 search works again
+  algolia_query_sugs                                   03bd39c76 Merge pull request #1462 from segmentio/make-catalog-lantern-beta
+  amberflo                                             6b33f853b [origin/amberflo: gone] edits
+  analytics-swift-updates                              078e8a6fd update slug overrides
+  azure-doc-changes                                    cf32ba1c4 [origin/azure-doc-changes: gone] Apply suggestions from code review
+  beta-list                                            34901360c [origin/beta-list: gone] Built tooling to spit out a CSV of beta sources and destinations
+  blend-ai/actions-destination                         6bcecf229 Add metadata
+  blueshift-dest-docs                                  47c738ac9 [origin/blueshift-dest-docs] Stub out article
+  bobbyatsegment-patch-1                               6b64e7275 [origin/bobbyatsegment-patch-1: ahead 2, behind 1742] Move data into a table to improve readability
+  bobbyatsegment-patch-2                               98abba610 [origin/bobbyatsegment-patch-2: ahead 2, behind 1399] Add plan grid to Public API page
+  braze-maintenance                                    179220045 [origin/braze-maintenance: gone] Added line break
+  braze-related-dests                                  629d59aa6 [origin/braze-related-dests: gone] Add additional version to Braze Cloud (Actions)
+  broken-link-fixes                                    f1d8fe055 fix some links
+  broken-links-10-5                                    2339ece61 Fix some URLs
+  build-performance-improvement                        828ba425b [origin/build-performance-improvement] Removed mobile menu
+  build-time-improvements                              991b5241f [origin/build-time-improvements] Update redirects file
+  canny/canny-functions                                93f82418a [origin/canny/canny-functions: ahead 65] Merge branch 'develop' into canny/canny-functions
+  catalog                                              aee339f9f catalog update
+  catalog-8-18                                         6ba8aca73 [origin/catalog-8-18: gone] catalog update
+  catalog-fix                                          312df295e Merge pull request #1517 from segmentio/kdaswani-patch-2
+  catalog-set-visible                                  ffd81ab64 Init
+  catalog-slug-overrides                               da0b5a2b1 [origin/catalog-slug-overrides: gone] Added yaml file for integration slug overrides
+  catalog-update-3-2                                   9162cf342 [origin/catalog-update-3-2: gone] updated the catalog
+  catalog_4-12                                         16ec05bf7 [origin/catalog_4-12: gone] catalog update
+  catalog_9-6                                          e31750100 [origin/catalog_9-6: gone] catalog update
+  changeZendeskDocs                                    5888b3dd7 [origin/changeZendeskDocs] Clarify setup instructions
+  cleanup-aisle-6                                      22bef5220 [origin/cleanup-aisle-6] don't publish unneeded utils
+  cleanup-old-integration-data                         872cfb62f [origin/cleanup-old-integration-data] remove old capi integrations metadata
+  cliff-docs                                           bd4352e15 [origin/cliff-docs: gone] Cliff Destination Documentation
+  cloud-object-regional                                ccb28fd03 [origin/cloud-object-regional: gone] Cloud Object sources are available in the EU
+  codeowners-update                                    ce42eeab7 [origin/codeowners-update: gone] Merge branch 'develop' into codeowners-update
+  common-spec-updates                                  74dbf5e82 [origin/common-spec-updates: gone] Common Spec cleanup
+  config-api-redirect                                  7775917c8 [origin/config-api-redirect: gone] Add redirect to Config API
+  connection-mode-calc-fix                             7001ae8bf [origin/connection-mode-calc-fix] Use supported platforms instead of components to calculate
+  connection-modes-verify                              db815c732 [origin/connection-modes-verify: gone] Update index.md
+  consent-manager-url-fix                              1f4bb1320 [origin/consent-manager-url-fix: gone] Fix Consent Manager URL
+  criteo-audiences-fix                                 0b1ba3553 [origin/criteo-audiences-fix: gone] Publish Criteo Audiences destination docs
+  criteo-forks/develop                                 d474a42cf update word accept list
+  crossingminds                                        85722c780 [origin/crossingminds: gone] Add frontmatter
+  csv-upload-plan-change                               e18e1fb30 [origin/csv-upload-plan-change: gone] Engage CSV Upload is available on Engage Premier plans
+  customer-io_edits                                    3b9cd6b04 edits from customer.io
+  data-lakes-azure-regional                            d729b1c3d [origin/data-lakes-azure-regional: gone] Add Data Lakes (Azure) to the regional table
+  data-res-fix-batch-1                                 6462cb2f8 fix code block indents
+  datarangers-destination                              3daabccb8 [origin/datarangers-destination: gone] Apply suggestions from code review
+  daveo237-patch-1                                     78332860d [origin/daveo237-patch-1: gone] Edits, remove image
+  dc-floodlight-updates                                19d38d3b0 [origin/dc-floodlight-updates: gone] Small edits
+  deepl-api                                            b09471bd8 Updates about title translation
+  dependabot-february                                  d955453c1 update algolia
+  dependabot-security                                  32c2e3ccb Merge pull request #2667 from segmentio/repo-sync
+  dependabot-updates                                   4d0b748b7 Merge pull request #2360 from segmentio/journeys_backfill_fixes
+  dependabot/bundler/nokogiri-1.13.10                  2c7b8f3c8 [origin/dependabot/bundler/nokogiri-1.13.10] Bump nokogiri from 1.13.9 to 1.13.10
+  dependabot/bundler/nokogiri-1.13.9                   d45d6b396 [origin/dependabot/bundler/nokogiri-1.13.9: gone] Bump nokogiri from 1.13.6 to 1.13.9
+  dependabot/npm_and_yarn/json5-1.0.2                  5773d77f3 [origin/dependabot/npm_and_yarn/json5-1.0.2] Bump json5 from 1.0.1 to 1.0.2
+  dependabot/npm_and_yarn/json5-and-babel-loader-2.2.3 ddbd0d102 [origin/dependabot/npm_and_yarn/json5-and-babel-loader-2.2.3] Bump json5 and babel-loader
+  dependabot/npm_and_yarn/loader-utils-1.4.1           0ac6af160 [origin/dependabot/npm_and_yarn/loader-utils-1.4.1: gone] Bump loader-utils from 1.4.0 to 1.4.1
+  dependabot/npm_and_yarn/minimatch-3.1.2              67499c5c5 [origin/dependabot/npm_and_yarn/minimatch-3.1.2: gone] Merge branch 'develop' into dependabot/npm_and_yarn/minimatch-3.1.2
+  dependabot/npm_and_yarn/minimist-1.2.7               479ffe924 [origin/dependabot/npm_and_yarn/minimist-1.2.7: gone] Bump minimist from 1.2.5 to 1.2.7
+  dependabot/npm_and_yarn/qs-and-browser-sync-6.11.0   815c4f2ee [origin/dependabot/npm_and_yarn/qs-and-browser-sync-6.11.0] Bump qs and browser-sync
+  deploy-fix                                           990e3e841 Merge pull request #3546 from segmentio/repo-sync
+  deploy-metronome-actions                             e0d7be888 [origin/deploy-metronome-actions: gone] Deploy Metronome (Actions)
+  deprecation-flag                                     40ff640d4 [origin/deprecation-flag] add support for a deprecated: true flag
+  dest-actions-stage                                   0ded12f44 [origin/dest-actions-stage: gone] catalog update
+  dest-ownership                                       3665c1d4e [origin/dest-ownership] display ownership of destinations
+  destination-function-code-fix                        649bfe2a3 [origin/destination-function-code-fix: gone] Fixed Destination Function code sample
+  destination-slug-updates                             a6ccb1131 [origin/destination-slug-updates: gone] j
+  destination/RegalVoice                               101a2e560 [origin/destination/RegalVoice: gone] light grammar and active voice pas [DOC-7]
+  destination/courier                                  f7dff8b9c [origin/destination/courier: gone] last message edit
+  destination/kevel                                    08b99f736 [origin/destination/kevel: gone] Kevel Destination Docs
+  dev-696-create-submit-docs                           d6a8961d1 [origin/dev-696-create-submit-docs] remove mistake new file
+  dev-768-add-cloud-mode-docs                          7534f4b71 [origin/dev-768-add-cloud-mode-docs] Add ID and private metadata
+  dev-center-2                                         b2d40e5a6 [origin/dev-center-2] No longer in Dev preview
+  develop                                              8a237a092 [origin/develop] Merge pull request #5026 from segmentio/thomas/airship
+  dl_ga_updates                                        ed9e76e0d [origin/dl_ga_updates: gone] Merge branch 'master' into dl_ga_updates
+  doc-86-functions-batching                            2dda50943 [origin/doc-86-functions-batching: gone] DOC-86 cleanup and Chris O comments
+  doc-template-updates                                 094e9ff0d Merge branch 'master' into develop
+  doc_search                                           71a4d6b95 [origin/doc_search: gone] Merge branch 'doc_search' of github.com:segmentio/segment-docs into doc_search
+  docs/toplyne                                         79a52c1a4 modify docs as per review comments
+  dossier-feedback                                     87bef83f9 Vespucci docs (#1590)
+  doubleclick-floodlight-connection-modes              2769af71a [origin/doubleclick-floodlight-connection-modes: gone] Update connection mode overrides
+  dummy-form-test                                      443db0258 [origin/dummy-form-test: behind 42] Update styling for all
+  emarsys_v_1_2                                        7bfbfb5a7 set private
+  empty-alt-tag-vale                                   d1ac37d3d [origin/empty-alt-tag-vale: gone] Add vale rule to check for empty image alt tags
+  engage-destination-list                              790396f96 [origin/engage-destination-list] Recalc connection modes and build list
+  engage-regional-updates                              7d902d32a [origin/engage-regional-updates] Add verbiage about regional availablitly for Engage
+  engage-search-update                                 998e954cb don't show engage results in main search
+  event-limit-update                                   d6e80958a Merge pull request #4245 from segmentio/20230216-catalog
+  event-limits                                         8a16dfa18 [origin/event-limits] updates
+  external-link-test                                   fa37cc31e Regal Voice Destination docs (#1137)
+  external-linkcheck-ignore-file                       0e26209a1 [origin/external-linkcheck-ignore-file: gone] fixes
+  fb-capi-actions-updates                              9dada4a67 [origin/fb-capi-actions-updates: gone] add to strat
+  fb-custom-audiences-cleanup                          093eb129c [origin/fb-custom-audiences-cleanup: gone] Update requested from CSullivan
+  fb/june-docs                                         922bf187d [origin/fb/june-docs] merge develop
+  feature/SC-2668                                      209846a7d [origin/feature/SC-2668] Edits and metadata
+  fix-catalog-script                                   7e23b779a [origin/fix-catalog-script: gone] fix catalog script
+  fix-destination-overrides                            e20b5e384 [origin/fix-destination-overrides: gone] Destination overrides should work on id
+  fix-headings                                         aa3dc0423 [origin/fix-headings: gone] Restore category headings to destinations catalog
+  fix-papi-nav                                         fc68db1d7 [origin/fix-papi-nav] Fix Public API IA
+  fix-profiles-breadcrumb                              11a87868c [origin/fix-profiles-breadcrumb: gone] Fix Profiles Overview breadcrumb
+  fix-regional-table                                   2549577cc [origin/fix-regional-table: gone] regen list of destinations
+  fix-sidenav                                          409391d88 [origin/fix-sidenav] Remove duplicate side nav item
+  fix-strat-title                                      672eae775 [origin/fix-strat-title: gone] Fix link as well
+  focus-visible-test                                   c83741486 [origin/focus-visible-test: behind 41] Updated `focus-visible` text color to match hover state
+  friendbuy-browser-destination                        e380bfed4 testing external link
+  friendbuy-cloud-destination                          b2d6a2772 Merge branch 'develop' into friendbuy-cloud-destination
+  friendbuy-deploy                                     4648a18df [origin/friendbuy-deploy: gone] update catalog
+  friendbuy-required-fields                            a802be3d5 Add required fields indicator to include
+  ga4-dest-doc-updates                                 b16e89a95 [origin/ga4-dest-doc-updates: gone] add mappings from api
+  ga4-mobile                                           e05ecd4be [origin/ga4-mobile] Grammar and style updates
+  ga4-rec-events                                       c4056f2b1 [origin/ga4-rec-events: gone] remove 'we'
+  ga_metadata                                          15db941b0 [origin/ga_metadata: gone] Added Google Analytics destination metadata
+  gdpr-updates                                         f2b252e1c first pass
+  gec-troubleshooting                                  56323caa1 [origin/gec-troubleshooting: gone] style edits
+  gec-updates                                          d3b33acc5 [origin/gec-updates: gone] fix typo
+  google-ads-classic-warning                           c424c4475 [origin/google-ads-classic-warning] final edits
+  graphjson                                            79aa032b2 [origin/graphjson: gone] updates
+  gtag-destination                                     bca862ef8 Merge pull request #1140 from segmentio/broken-nav-link-fix
+  heap-intengration-docs                               70d68a0c9 [origin/heap-intengration-docs: gone] Re-add version link
+  hide-actions                                         faf30fc94 [origin/hide-actions: gone] Add ability to hide individual actions
+  hide-ga4-plans                                       7700321d5 [origin/hide-ga4-plans: gone] unpublish this
+  hide-hidden-sources                                  b509489e1 [origin/hide-hidden-sources: gone] Sources marked as 'hidden' should not appear in nav
+  hide-mixpanel-cohorts                                0808aafc9 [origin/hide-mixpanel-cohorts: gone] Hide a source
+  hide-new-gec-actions                                 47718aea3 [origin/hide-new-gec-actions: gone] Hide new actions for Google Enhanced Conversions
+  hide-test-sources-regional                           9715f390f [origin/hide-test-sources-regional] merge develop
+  hide-twilio-event-stream                             f39f7945e [origin/hide-twilio-event-stream: gone] Hidden sources should be hidden
+  http-batch-size-limit                                0993f9047 [origin/http-batch-size-limit: gone] Add information about HTTP API batch request size limits
+  hubspot-private-app-auth                             d4f0e6224 [origin/hubspot-private-app-auth: gone] Formatting and edits
+  hubspot-regional                                     3fd21e0f3 [origin/hubspot-regional: gone] Document support for Hubspot destination with  EU endpoints
+  improve-cmodes-tables                                b519d732a [origin/improve-cmodes-tables: gone] heading edit
+  inflection/source                                    5fb30ef46 catalog update
+  insertcoin/gwen                                      ab7f15bc2 [origin/insertcoin/gwen: behind 1] Edits
+  insider/cloud-mode-actions                           94209fdb9 [origin/insider/cloud-mode-actions] merge develop resolve conflicts
+  intercom-update                                      80eb5b19a [origin/intercom-update] update intercom collection fields
+  internal-link-fixes                                  d14b99838 [origin/internal-link-fixes: gone] Fix some links
+  internal-search-improve                              595432706 [origin/internal-search-improve: gone] add highlight
+  isabella-dummy-form-test                             825a66ba4 [origin/isabella-dummy-form-test] Use prism.js
+  isabella-dux-days-glossary                           605879ed8 [origin/isabella-dux-days-glossary: behind 3] alphabetize
+  issue-fixes-4-13                                     2c3ebc36e [origin/issue-fixes-4-13: gone] hide PerimeterX destination
+  iterate-actions-documentation                        84e24b582 Set id and added private metadata
+  jake/iterable-actions-docs                           e7f4361e3 Merge branch 'jake/iterable-actions-docs' of ssh://github.com/KakeJopulsky/segment-docs into jake/iterable-actions-docs
+  jbwyme/develop                                       a1d330aa1 small style updates
+  jekyll-cache                                         5a18fff2c [origin/jekyll-cache: gone] test
+  jenskene-patch-1                                     fee3e9bbb [origin/jenskene-patch-1: ahead 2, behind 166] Quick edit
+  jfoskin-patch-2                                      b36caba2a [origin/jfoskin-patch-2] IPv6 not supported
+  jfoskin-patch-4                                      2372169f8 [origin/jfoskin-patch-4: ahead 2, behind 347] Update to add note
+  kdaswani-patch-1                                     872d0f829 [origin/kdaswani-patch-1: gone] Remove from strat for cleanliness
+  kdaswani-patch-2                                     80647a626 [origin/kdaswani-patch-2: gone] copy edits
+  kiara/add-google-sheets-docs                         d3da599bf [origin/kiara/add-google-sheets-docs: gone] Wording update
+  kiara/hubspot-docs                                   0d245516c [origin/kiara/hubspot-docs: gone] Add private metadata
+  kiara/snap-conversions-api-docs                      a447404f0 [origin/kiara/snap-conversions-api-docs: gone] Vale updates and edits
+  kiara/strat-section-cleanup                          92230c929 [origin/kiara/strat-section-cleanup: gone] Fix yaml formatting
+  kkilfoyle/develop                                    1e9f5882a Added metadata
+  launchnotes-embed                                    841d2b41f add embed
+  ld-actions                                           3ba1b6d22 [origin/ld-actions: gone] catalog update
+  liggysmalls-patch-1                                  bb07e639c [origin/liggysmalls-patch-1: gone] Formatting
+  lightbox                                             71347247e [origin/lightbox] init
+  link-fixes-3-28                                      70bae5935 [origin/link-fixes-3-28: gone] Fix broken external links
+  link-fixes-6-7                                       f1fbd4e35 [origin/link-fixes-6-7: gone] Fixed broken links
+  link-fixes-9-16                                      5a3f880ea [origin/link-fixes-9-16: gone] tack on a typo fix
+  link-fixes_7-5                                       4e6dfc14f [origin/link-fixes_7-5: gone] Fixed broken URLs
+  linkcheck-update                                     8839c4080 Kevel destinations.yml update (#1509)
+  littledata-docs-update                               926523aa1 Vale edits
+  littlefoot                                           a26db5fe9 Merge pull request #1712 from segmentio/hide-integrations-object
+  livelike-screen-method                               aa8bfd3dd [origin/livelike-screen-method] Push screen method into supportedMethods
+  local-link-check                                     b9d60dc26 [origin/local-link-check: gone] fix file output, enable cron
+  logo-updates                                         c2e851bbd [origin/logo-updates: gone] Revert color changes
+  lucky-orange-update                                  a69169532 [origin/lucky-orange-update: gone] Add note about Lucky Orange supported versions
+  lumen_docs                                           10594e0b6 [origin/lumen_docs] Merge branch 'develop' into lumen_docs
+  main_fix_fql_references                              a5841306c [origin/main_fix_fql_references: gone] Fix redirect
+  maintainence-mode-dest                               5d5f68651 [origin/maintainence-mode-dest] Add maintenance notes, unhide public beta dests, update strat nav
+  maintenance-mode-url-fix                             f0fc8e5eb [origin/maintenance-mode-url-fix] Add override for actions slug
+  marketo-strat                                        f36a7d8b4 [origin/marketo-strat: gone] Merge branch 'master' into marketo-strat
+  maryam/add-tiktok-docs                               fd000e459 [origin/maryam/add-tiktok-docs] Add private metadata
+  master                                               74d9da11a [origin/master: behind 1] new logo
+  may-12-catalog                                       c044d53dc [origin/may-12-catalog: gone] Catalog update
+  mcoughlin-metronome                                  b3efc1257 vale pass
+  metronome-deploy                                     6a1b7034b [origin/metronome-deploy: ahead 1] PB docs
+  mixpanel-actions-deploy                              06f4f26b7 [origin/mixpanel-actions-deploy: gone] Mixpanel (Actions) to public Beta
+  mixpanel-actions-update                              20197b9f5 Fix action includes
+  mixpanel-cohorts-redirect                            c4bde1b2e [origin/mixpanel-cohorts-redirect: gone] Add this redirect due to partner portal weirdness
+  mixpanel-updates                                     b2fc4b034 [origin/mixpanel-updates: gone] Cross link FullStory destinations
+  mobile-migration                                     815fe318b [origin/mobile-migration] Merge branch 'master' into mobile-migration
+  moengage_destination_documentation_update            e84956fbd [origin/moengage_destination_documentation_update: gone] Merge branch 'master' into moengage_destination_documentation_update
+  nate/fullstory-destination-actions-doc-updates       a5956de0b [origin/nate/fullstory-destination-actions-doc-updates: gone] Quick edits
+  natero_docs_update                                   74356e7ec [origin/natero_docs_update: gone] catalog update
+  nav-update                                           a204cb721 [origin/nav-update: gone] Add Profiles Space Setup page to nav
+  netlify-redirects                                    34c5691e6 [origin/netlify-redirects] Comment out for now
+  new-actions                                          b27f03cf6 [origin/new-actions: gone] Talon.One and Close destinations are live
+  new-dest-ga-prep                                     11b55011d [origin/new-dest-ga-prep] note formatting for readability in GEC
+  niall/customer-io-slug                               6164a2292 [origin/niall/customer-io-slug] add correct actions slug
+  niall/deprecate_dc1                                  f65436ae3 [origin/niall/deprecate_dc1: gone] Vale updates and single-source note
+  niall/mixpanel_cohorts_source                        cf3875863 [origin/niall/mixpanel_cohorts_source: gone] rewrite and change file location
+  nielst-amplitude-log-purchases                       b36a9911b [origin/nielst-amplitude-log-purchases: gone] Update heading
+  obj-cloud-source-regional                            1ea887c15 [origin/obj-cloud-source-regional] private destination metadata update
+  object-cloud-regional                                478030bc6 [origin/object-cloud-regional: gone] Remove region not supported box
+  outfunnel/develop                                    2ea0f0235 [origin/outfunnel/develop] Add metadata
+  papi-availability-update                             971184278 [origin/papi-availability-update] Update PAPI availability to Team and BT only
+  papi-ga                                              ca967ad0b [origin/papi-ga: gone] typo
+  papi-migration-doc                                   7194dc49b [origin/papi-migration-doc] First draft
+  pardot-beta                                          c325b6cb6 [origin/pardot-beta: gone] fix destination dossier for private destinations
+  pardot-setup                                         394b8d3b8 [origin/pardot-setup: gone] Fix actions rendering
+  partner-dest-notice                                  14d5f8a59 Merge pull request #2024 from segmentio/repo-sync
+  partner-stream-updates                               0e068bbb9 [origin/partner-stream-updates: gone] Vale edits of partner streams doc
+  partner-templates                                    033de3604 [origin/partner-templates] Add partner docs templates to non-build folder
+  patch-1                                              a2225e9fb style updates
+  pipedrive/develop                                    f967858ac [origin/pipedrive/develop: gone] Remove hardcoded action details [netlify-build]
+  plan-grid                                            351a63e31 [origin/plan-grid: gone] hoverhelp -> popover
+  playerzero-web                                       50b060eb4 [origin/playerzero-web: behind 1] Insert actions block
+  playerzero-web-metadata                              b4133919e [origin/playerzero-web-metadata] Playerzero Web Metadata
+  postgres-rds-update                                  88695ee88 [origin/postgres-rds-update: gone] Editing pass [DOC-504]
+  pr/2258                                              32d67b56e test adding an external link
+  pr/3539                                              21ca80091 [origin/pr/3539: gone] remove escape character
+  pr/3925                                              137a6dec6 [github-desktop-a13m/patch-1] Replace appspot.com references in Pendo setup
+  pricing-image                                        36ae3b398 [origin/pricing-image: gone] Add description
+  private-beta-docs-support                            a98b5c5b1 [origin/private-beta-docs-support: gone] snap conversions API
+  private-dest-improvements                            f5cc495fc in progress
+  private-dest-script-updates                          39527cf81 [origin/private-dest-script-updates] Don't nuke the whole file if 404
+  private-destination-cleanup                          b6f5b2e8e [origin/private-destination-cleanup: gone] Enable update existing without add
+  private-metadata-fix                                 1a99d568f [origin/private-metadata-fix] Automate making Private -> Public destinations visible on site
+  programmatic-betas                                   d70574e52 [origin/programmatic-betas: gone] hide dossier from personas dests
+  purge_test_sources                                   73ecf5e5e [origin/purge_test_sources] remove and filter demo sources
+  qualtrics-destination-docs                           afa17b061 Set id and added private metadata
+  quick-info-update                                    f18839016 quick info and catalog
+  rajul/update-GA4Docs                                 2dcafaa03 [origin/rajul/update-GA4Docs] Update strat nav
+  regional-api                                         cef383473 [origin/regional-api] Regional destination data comes from the Public API
+  regional-api-2                                       66d73a394 Update destination regions from API
+  regional-clarification                               080e8e361 [origin/regional-clarification: gone] Added clarity around what each icon means
+  regional-config-snippet                              47b857f76 [origin/regional-config-snippet: gone] Make regional config URLs a snippet
+  regional-segment-utils-page                          6b7be82f4 [origin/regional-segment-utils-page: gone] Add additional details to public regional availability
+  regional-updates                                     1d81265b9 [origin/regional-updates: gone] Airship and Moengage (Actions) support EU endpoints
+  release-notes-live                                   7c57cc728 [origin/release-notes-live: gone] clean up
+  remove-old-adwords-link                              725433da5 [origin/remove-old-adwords-link: gone] Remove an old link to Google's documentation
+  remove-seg                                           6b4ac2b47 [origin/remove-seg: gone] ran make catalog
+  repo-sync                                            7e111dc35 [origin/repo-sync: behind 3] Merge pull request #695 from segmentio/repo-sync
+  retentive                                            ef1cce20c [origin/retentive: gone] hide and add frontmatter
+  revert-11-8                                          46caafaa3 [origin/revert-11-8: gone] undo bad merge from earlier
+  revert-logrocket                                     8d5716378 Revert "add logrocket documentation (#3778)"
+  rip-subscription                                     9a07d48f1 [origin/rip-subscription: gone] Subscriptions -> Mappings
+  role-description-update                              ca4a6b98e [origin/role-description-update: gone] Update Profiles and Engage Read-only description
+  rspective/develop                                    e1fba1316 [origin/rspective/develop: behind 1] format
+  sabil-io/develop                                     13f0339fb Add ID
+  salesforce-classic-eol                               6f51f228b [origin/salesforce-classic-eol] edits
+  salesforce-deprecation-update                        17d2a1695 [origin/salesforce-deprecation-update] update Salesforce deprecation date
+  saleswings-destination-actions-docs                  15febffc9 [origin/saleswings-destination-actions-docs] Metadata and clean up
+  sanitize-integration-metadata                        41e76b9e7 [origin/sanitize-integration-metadata: ahead 2] conflict
+  sarahrudy-patch-2                                    d9d645f35 [origin/sarahrudy-patch-2: ahead 2, behind 492] Vale updates
+  sarahrudy-patch-5                                    c2faa4f41 [origin/sarahrudy-patch-5] Update index.md
+  sarahrudy-patch-6                                    440a1abfd [origin/sarahrudy-patch-6: ahead 4, behind 1216] Update src/connections/sources/index.md
+* sass-migration                                       33e0ed2ae [origin/sass-migration] Ran sass migrator to replace slashes
+  scaffold-sfmc-actions                                17e05c4b2 [origin/scaffold-sfmc-actions: gone] Updated private metadata script for cleanliness in output
+  scraping                                             fa2c7e5ed Merge branch 'master' into develop
+  script_cleanup                                       9686423df document scripts
+  search-experience-improvement                        7eff89883 Rename pageview -> page in private destination script
+  search-redesign                                      6b24dd686 Merge pull request #4350 from segmentio/sarahrudy-patch-6
+  segmentJason-minor-improvements-1                    f9251f7ad [origin/segmentJason-minor-improvements-1: gone] update allow lists to not flag 'Marketo' and 'csv'
+  sendgrid-marketing-dest                              c01316f34 Merge pull request #3655 from segmentio/repo-sync
+  sf-selective-sync                                    a92dc1d1d [origin/sf-selective-sync: gone] Update src/connections/sources/catalog/cloud-apps/salesforce/index.md
+  sfmc-crosslink                                       c4c0f2cd6 [origin/sfmc-crosslink] Add link to SFMC Actions
+  show-action-tables                                   464498755 [origin/show-action-tables: gone] Show action fields tables by default
+  snap-capi-unhide                                     299a1dadf [origin/snap-capi-unhide: gone] merge conflicts
+  sneha-groundswell                                    fea761c73 [origin/sneha-groundswell: gone] catalog and edits
+  sneha-mailmodo                                       394923ca5 [origin/sneha-mailmodo: gone] copyedits
+  sprig-actions                                        789a325c3 [origin/sprig-actions: gone] apply new template, hide until released
+  sprig-web                                            02c6cf385 [origin/sprig-web: gone] Make Sprig Web (Actions) documentation visbile
+  sprig_redirect                                       86d49d251 [origin/sprig_redirect: gone] redirect sprig actions
+  sso-domain-clarification                             8c642d749 [origin/sso-domain-clarification: gone] Make more clear
+  startDeliverDocs                                     b18b5a7ce [origin/startDeliverDocs: gone] style updates [netlify-ignore]
+  stitch-jose/develop                                  935e5b930 [origin/stitch-jose/develop] fix conflicts
+  supported-region-sources                             d6a36a387 [origin/supported-region-sources: gone] copy edits
+  swift-redesign                                       8b9998168 [origin/swift-redesign] Merge branch 'swift-redesign' of github.com:segmentio/segment-docs into swift-redesign
+  table-scrolling                                      610b2671d Merge branch 'master' into develop
+  tax-pdf-update                                       e68358159 [origin/tax-pdf-update] Update VAT/GST FAQ
+  test-identify                                        1bb0748b1 Merge pull request #1530 from segmentio/rename-quick-info
+  thomas/1flow                                         921ffd309 [origin/thomas/1flow: gone] Add docs for new 1Flow Analytics destination
+  thomas/1flow-name-change                             b095fbc42 [origin/thomas/1flow-name-change: gone] Add redirect
+  thomas/aampe                                         c934b386d [origin/thomas/aampe: gone] Add 'Aampe' to accept list
+  thomas/airship-source                                55eb1029b [origin/thomas/airship-source: gone] merge master
+  thomas/akita                                         838f6bfde [origin/thomas/akita: gone] Rewrite note for clarity
+  thomas/atatus                                        1ca644b88 [origin/thomas/atatus: gone] Fix spacing
+  thomas/attentive-mobile                              e746a356f [origin/thomas/attentive-mobile: gone] Edits and cleanup
+  thomas/bento                                         68732796a [origin/thomas/bento: gone] Edits
+  thomas/blitzllama                                    85b5f9511 [origin/thomas/blitzllama: gone] Add Blitzllama to accept list
+  thomas/bluedot                                       6949c6827 [origin/thomas/bluedot: gone] Remove instance of our
+  thomas/braze-source                                  adf6c950d [origin/thomas/braze-source: ahead 4, behind 1806] Remove extra spaces
+  thomas/breyta-crm                                    539737ee8 [origin/thomas/breyta-crm: gone] Updated catalog, added id
+  thomas/bucket-updates                                492158cf5 [origin/thomas/bucket-updates: gone] Update catalog and fix script
+  thomas/commandbar                                    830e85895 [origin/thomas/commandbar: gone] Markdown tables
+  thomas/correlated                                    6f4872d8a [origin/thomas/correlated: gone] Edits and cleanup
+  thomas/foursquare-source                             eae15cf35 [origin/thomas/foursquare-source] Add redirect and clean up tables
+  thomas/freshsales-suite                              56db738de [origin/thomas/freshsales-suite: gone] Update src/connections/destinations/catalog/freshsales-suite-crm/index.md
+  thomas/gladly                                        2624b9562 [origin/thomas/gladly: gone] Markdown tables
+  thomas/insider-source                                a512e7aff [origin/thomas/insider-source: gone] edits
+  thomas/iterable-source-update                        7608ab2f5 [origin/thomas/iterable-source-update: gone] markdown table and more edits.
+  thomas/jebbit                                        4489a566b [origin/thomas/jebbit: gone] merge conflict
+  thomas/jivox-documentation                           b5763fd30 [origin/thomas/jivox-documentation: gone] catalog and cleanup
+  thomas/kable                                         e6a478560 [origin/thomas/kable: gone] Add Kable to vocab
+  thomas/kana                                          74365426c [origin/thomas/kana: gone] edits
+  thomas/liveintent-destination                        cc35a44b8 [origin/thomas/liveintent-destination: gone] hide cmodes in the dest footer
+  thomas/matcha                                        b9b81935e [origin/thomas/matcha: gone] edits
+  thomas/ninetailed                                    664fe662c [origin/thomas/ninetailed: gone] Vale edits
+  thomas/regal                                         606530193 [origin/thomas/regal: gone] Update URL for regalio source
+  thomas/rokt                                          b7c8eeaa5 [origin/thomas/rokt: gone] Add Rokt to accept.txt
+  thomas/selligent-destination                         1c8835418 [origin/thomas/selligent-destination: gone] Vale updates
+  thomas/skalin                                        aa2446b42 [origin/thomas/skalin: gone] Update index.md
+  thomas/spideo                                        e54456497 [origin/thomas/spideo: gone] Vale edits
+  thomas/statsig-source                                a7646d450 [origin/thomas/statsig-source: gone] delete image source files
+  thomas/tv-squared                                    c6dd741e9 [origin/thomas/tv-squared] cleanup
+  thomas/update_datarangers                            6302459b5 [origin/thomas/update_datarangers: gone] local links should be relative
+  thomas/wisepops                                      1fb7621b8 [origin/thomas/wisepops] Make Wisepops public
+  thomas/workramp-source                               688b201df [origin/thomas/workramp-source: gone] Vale updates and markdown tables
+  tiktok/actions-tiktok-offline-conversions            d33568a19 metadata
+  update-FullStory-casing                              066eb36d0 waiting for PP update
+  update-castle-docs-include-mobile-destinations       1979176f7 Update formatting and syntax
+  update-catalog-3-24                                  aea146287 [origin/update-catalog-3-24: gone] Catalog updates for new integrations
+  update-code-highlihg-color                           082036c4a [origin/update-code-highlihg-color] make selection hilighting for code more accessible
+  update-eu-endpoints                                  ebf4f82af Merge branch 'develop' of github.com:segmentio/segment-docs into develop
+  update-footer-engage                                 7ae398813 [origin/update-footer-engage: gone] Update footer to inlcude Engage link
+  update-fullstory-cloud-mode-destination-docs         290dec0c9 small update, add info box
+  update-heading-link                                  0673b30f4 add content about contacting support
+  update-personas-list                                 2fb7fc32c [origin/update-personas-list: gone] Vale edits
+  update-python-endpoint                               95a6ffc3e [origin/update-python-endpoint: gone] Python source supports EU endpioints
+  update-readmes                                       8d0a9f54b [origin/update-readmes: gone] add bit about external linking
+  update-ripe-docs                                     c02001aea Remove alias documentation
+  update-source-schema-export-page                     87f3f6531 [origin/update-source-schema-export-page: gone] Updates
+  update_dossier_component_links                       d780eb011 [origin/update_dossier_component_links: gone] Display links for partner owned components
+  update_frontmatter_id                                bfa9212b7 [origin/update_frontmatter_id: gone] doc fix
+  url-fixes                                            d7d0054ef [origin/url-fixes: gone] pulled from updated catalog
+  usermaven/develop                                    fcc5325e9 [origin/usermaven/develop] Add id and metadata
+  vale-action                                          f3566ec53 [origin/vale-action: gone] only annotate modified lines
+  vale-fixes                                           84244b1e5 [origin/vale-fixes] Update Application Crashed event information
+  vale-headings-update                                 a32096c3f [origin/vale-headings-update: gone] merge conflict resolve
+  vale-javascript                                      7432c6335 [origin/vale-javascript: gone] Merge branch 'master' into vale-javascript
+  vale-updates                                         d28da0982 [origin/vale-updates: gone] some Vale rule updates
+  vale-updates-june                                    f3b24b2be [origin/vale-updates-june: gone] Update Vale rules
+  vanand17-patch-10                                    df07f3300 [origin/vanand17-patch-10: ahead 4, behind 1027] Edits and image update
+  vanand17-patch-3                                     3c4acaf9b [origin/vanand17-patch-3: ahead 2, behind 83] Formatting
+  version-data                                         48e6f97c0 init libraries
+  vespucci-docs                                        6a7929b17 [origin/vespucci-docs: gone] restore catalog from master
+  voyage-action-destination-docs                       83e576a69 merge develop and hide doc
+  vwo-cloud                                            48486c485 Add ID and metadata
+  vwo-cloud-update                                     9da576268 formatting fix for code sample
+  vwo-web                                              0fad1c4a4 metadata cleanup
+  warehouse-doc-updates                                44635f74e [origin/warehouse-doc-updates: gone] Merge branch 'develop' into warehouse-doc-updates
+  warehouse-updates                                    277aed2e7 [origin/warehouse-updates: behind 2] Created note include and added to warehouses / faq
+  wenxi/update-kotlin-migration-guide                  c98334d3c [origin/wenxi/update-kotlin-migration-guide: gone] Merge branch 'wenxi/update-kotlin-migration-guide' of github.com:segmentio/segment-docs into wenxi/update-kotlin-migration-guide
+  whatsapp-ga                                          34d9fa6c0 Merge pull request #4822 from segmentio/bcaudillo-patch-4
+  zendesk-docs                                         dea8bda31 [origin/zendesk-docs: gone] verbiage [netlify-ignore]

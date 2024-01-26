@@ -18,7 +18,7 @@ June maintains this destination. For any issues with the destination, [contact t
 
 ## Getting started
 
-{% include content/connection-modes.md %}
+
 
 1. Go to the [June settings page](https://app.june.so/redirect-to-my-workspace/settings){:target="_blank"} and click **Add your first source**. To add more instances of the June Destination, click on the Segment integration card and click on **Create new key** and copy the key.
 2. From the Segment web app, navigate to **Connections > Catalog**, and select the **Destinations** tab in the catalog.
@@ -42,8 +42,6 @@ This action sets or updates the properties of specific groups. Use this when you
 
 {% include components/actions-fields.html content1=group_identify_user_details section1="group" %}
 ## Migration from June Classic
-
-{% include content/ajs-upgrade.md %}
 
 If you're already using Segment cloud-mode, you're not expected to have breaking changes when upgrading to the June (Actions) destination. With the exception of a few new properties added to your events in the new Actions destination, there's no difference in the data received in June when using either of the June destinations.
 

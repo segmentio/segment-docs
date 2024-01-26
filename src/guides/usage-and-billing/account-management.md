@@ -20,15 +20,24 @@ Some of Segment's previous plans, including the legacy API plan, limited integra
 
 No. Deleting your account only stops you from accessing workspaces through your login. The workspace is where the subscription is managed, and it will not be deleted. Data will still flow into Segment and your Destinations, and you will still be charged if you delete your account but don't delete your workspace.
 
+##How do I delete my account?
+
+To delete your account, go to the [User Settings](https://app.segment.com/settings/user){:target="_blank"} menu, and click **Delete Account** at the bottom of the page.
+
+Once the account is deleted you will not have access to workspaces associated with your account that are attached to the email address you signed up with.
+
 ## How do I delete my workspace entirely?
 
-To delete your workspace, go to your [Workspace Settings](https://app.segment.com/goto-my-workspace/settings/basic), click the **General** tab, then click **Delete Workspace**.
+To delete your workspace, go to your [Workspace Settings](https://app.segment.com/goto-my-workspace/settings/basic){:target="_blank"}, click the **General** tab, then click **Delete Workspace**.
 
 You should also change your write keys for each source and remove all Segment snippets from your codebase.
 
 ## What happens if I change my workspace name or slug?
 
 Changing your workspace name or slug won't impact any sources or destinations you've already configured. If you're using [Segment's Public API](/docs/api), you'll need to change the slug in your request URLs.
+
+> error "We were unable to save your changes, please try again"
+> If you see this error message when trying to change a workspace slug, it often means the slug is already taken.
 
 ## Can I recover a source or workspace after I delete it?
 
@@ -39,6 +48,8 @@ No. Deleted sources and workspaces cannot be recovered.
 Though workspaces can't be merged, you can move an existing source to a single workspace to the same effect. For example, you might move existing sources to one workspace so that you can unify all of your data across teams and gain a broader view of your customer data tracking.
 
 To move a source between workspaces, navigate to the source's **Settings** tab, then click **Transfer to Workspace**. Choose the workspace you're moving the source to, then click **Transfer Source**.
+
+When you transfer a source from one workspace to another, the connected destinations aren't transferred. You must manually reconnect these destinations and settings.
 
 > info ""
 > The person who transfers the source must be a [workspace owner](/docs/segment-app/iam/) for both the origin and recipient workspaces, otherwise the recipient workspace won't appear in the dropdown list.
