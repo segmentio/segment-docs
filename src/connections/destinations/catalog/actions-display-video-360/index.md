@@ -7,7 +7,8 @@ beta: true
 https://github.com/segmentio/segment-docs/blob/d4623aadec6f118fb5aa7ca846a9e6214c0d1129/src/connections/destinations/catalog/personas-display-video-360/index.md
 ---
 
-> info Display and Video 360 (Actions) operates using third-party cookies, its match rates are influenced by the extent to which these cookies are supported by browsers
+> info ""
+> Display and Video 360 (Actions) operates using third-party cookies, and its match rates are influenced by the extent to which these cookies are supported by browsers.
 
 Google's [Display & Video (DV360)](https://marketingplatform.google.com/about/display-video-360/){:target="_blank"} service is an end-to-end campaign management tool that enables enterprise customers to plan, measure, and run display and video advertisements. 
 
