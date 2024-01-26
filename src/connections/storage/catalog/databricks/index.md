@@ -21,15 +21,15 @@ Before getting started with the Databricks Destination, note the following prere
 - Segment creates [managed tables](https://docs.databricks.com/en/data-governance/unity-catalog/create-tables.html#managed-tables){:target="_blank"} in the Unity catalog. The service account needs access to create schemas on the catalog and can delete, drop, or vacuum tables.
 - Segment supports only [OAuth (M2M)](https://docs.databricks.com/en/dev-tools/auth/oauth-m2m.html){:target="_blank"}  for authentication.
 
-#### Warehouse size
+### Warehouse size
 
-A SQL warehouse is required for compute. Segment recommends the following size:
+A SQL warehouse is required for compute. Segment recommends a warehouse with the following characteristics:
   - **Size**: small
   - **Type** Serverless otherwise Pro
   - **Clusters**: Minimum of 2 - Maximum of 6
 
 > success ""
-> Segment recommends manually starting your SQL warehouse in advance. If the SQL warehouse isn't running, Segment attempts to start the SQL warehouse to validate the connection and may experience a timeout when you hit the **Test Connection** button during setup.
+> Segment recommends manually starting your SQL warehouse before setting up your Databricks destination. If the SQL warehouse isn't running, Segment attempts to start the SQL warehouse to validate the connection and may experience a timeout when you hit the **Test Connection** button during setup.
  
 ## Set up Databricks in Segment
 
@@ -43,7 +43,7 @@ Use the following steps to set up Databricks in Segment:
 
 ## Connect your Databricks warehouse
 
-Use the five steps below to connect your Databricks warehouse. 
+Use the five steps below to connect to your Databricks warehouse. 
 
 > warning ""
 > You'll need read and write warehouse permissions for Segment to write to your database.
@@ -64,7 +64,7 @@ Check your browser's address bar when inside the workspace. The workspace URL sh
 This catalog is the target catalog where Segment lands your schemas and tables. 
 1. Follow the [Databricks guide for creating a catalog](https://docs.databricks.com/en/data-governance/unity-catalog/create-catalogs.html#create-a-catalog){:target="_blank"}. Be sure to select the storage location created earlier. You can use any valid catalog name (for example, "Segment"). Note this name for later use. 
 2. Select the catalog you've just created. 
-    1. Select the Permissions tab, then click **Grant** 
+    1. Select the Permissions tab, then click **Grant**. 
     2. Select the Segment service principal from the dropdown, and check `ALL PRIVILEGES`.
     3. Click **Grant**.
 

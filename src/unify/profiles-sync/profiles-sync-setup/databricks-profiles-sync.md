@@ -14,9 +14,9 @@ Before getting started with Databricks Profiles Sync, note the following prerequ
 - Segment creates [managed tables](https://docs.databricks.com/en/data-governance/unity-catalog/create-tables.html#managed-tables){:target="_blank"} in the Unity catalog. 
 - Segment supports only [OAuth (M2M)](https://docs.databricks.com/en/dev-tools/auth/oauth-m2m.html){:target="_blank"}  for authentication.
 
-#### Warehouse size and performance 
+### Warehouse size and performance 
 
-A SQL warehouse is required for compute. Segment recommends the following size:
+A SQL warehouse is required for compute. Segment recommends a warehouse with the the following characteristics:
   - **Size**: small
   - **Type** Serverless otherwise Pro
   - **Clusters**: Minimum of 2 - Maximum of 6
@@ -26,7 +26,7 @@ A SQL warehouse is required for compute. Segment recommends the following size:
 > To improve the query performance of the Delta Lake, Segment recommends creating compact jobs per table using OPTIMIZE following [Databricks recommendations](https://docs.databricks.com/en/delta/optimize.html#){:target="_blank"}. 
 
 > info ""
-> Segment recommends manually starting your SQL warehouse in advance. If the SQL warehouse isn't running, Segment attempts to start the SQL warehouse to validate the connection and may experience a timeout when you hit the **Test Connection** button during setup.
+> Segment recommends manually starting your SQL warehouse before setting up your Databricks destination. If the SQL warehouse isn't running, Segment attempts to start the SQL warehouse to validate the connection and may experience a timeout when you hit the **Test Connection** button during setup.
 
  
 ## Set up Databricks for Profiles Sync
@@ -39,7 +39,7 @@ A SQL warehouse is required for compute. Segment recommends the following size:
 
 ## Connect your Databricks warehouse
 
-Use the five steps below to connect your Databricks warehouse. 
+Use the five steps below to connect to your Databricks warehouse. 
 
 > warning ""
 > To configure your warehouse, you'll need read and write permissions.
