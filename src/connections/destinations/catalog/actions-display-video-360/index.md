@@ -18,7 +18,7 @@ Google's [Display & Video (DV360)](https://marketingplatform.google.com/about/di
 Segment's integration with DV360 enables Segment customers to sync audiences created in Engage with DV360 to enable centralized audience management and improved retargeting.
 
 > warning ""
-> **Important**: You must meet certain implementation criteria to use the DV360 integration:
+> You must meet certain implementation criteria to use the DV360 integration:
 > - For web traffic, you must have a client-side `analytics.js` source.
 > - For mobile app traffic, you must have a mobile source.
 
