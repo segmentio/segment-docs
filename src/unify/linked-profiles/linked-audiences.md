@@ -31,7 +31,7 @@ Below are some example use cases to help you learn more about Linked Audiences.
 ### Build an audience of cat owners
 
 Build an audience with `Households` and `Pets` where:
-- `pets.type` equals "cat".
+- `pets.type` equals "cat"
 
 In the Data Graph, `Households` and `Pets` are defined as entities and are represented as separate tables in your data warehouse. 
 
