@@ -5,6 +5,7 @@ related:
   - "/privacy/consent-management/"
   - "/privacy/configure-consent-management/"
   - "/privacy/consent-in-segment-connections/"
+redirect_from: "/privacy/consent-in-unify/"
 ---
 
 > info "Consent in Unify and Twilio Engage is currently unavailable."

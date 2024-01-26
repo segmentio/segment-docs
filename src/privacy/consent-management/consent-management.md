@@ -14,7 +14,7 @@ When an end user visits your web or mobile app, they set **consent preferences**
 
 Segment integrates with your commercial third-party or bespoke consent management platform (CMP) that captures an end user's consent preferences and enforces those preferences by only routing events to the categories consented to by an end user.
 
-![Diagram outlining information flowing from an end user to Segment destinations](/docs/privacy/images/consent-overview.png)
+![Diagram outlining information flowing from an end user to Segment destinations](/images/consent-overview.png)
 
 After a user sets their consent preferences on your web or mobile app, Segment requires you to add the [consent object](/docs/privacy/consent-in-segment-connections/#consent-object) to all events. If you are using OneTrust, Segment provides a wrapper for your web and mobile libraries that can add the consent object to your events. If you are using another CMP, you are required to add the consent object to your events by either creating your own wrapper or using another mechanism. For more information, see the [Configure Consent Management documentation](/docs/privacy/configure-consent-management/#step-2-integrating-your-cmp-with-segment).
 
