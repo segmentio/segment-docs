@@ -8,10 +8,10 @@ https://github.com/segmentio/segment-docs/blob/d4623aadec6f118fb5aa7ca846a9e6214
 
 > info Display and Video 360 (Actions) operates using third-party cookies, its match rates are influenced by the extent to which these cookies are supported by browsers
 
-Google's [Display & Video (DV360)](https://marketingplatform.google.com/about/display-video-360/){:target="_blank"} service is an end-to-end campaign management tool that enables enterprise customers to plan, measure, and run display and video advertisements.
+Google's [Display & Video (DV360)](https://marketingplatform.google.com/about/display-video-360/){:target="_blank"} service is an end-to-end campaign management tool that enables enterprise customers to plan, measure, and run display and video advertisements. 
 
 > info ""
-> **Note**: You can connect to a Google Ad Manager account. For more information, see [4. Create an audience and finish DV360 configuration](#4-create-an-audience-and-finish-dv360-configuration) below.
+> **Note**: You can connect to a Google Ad Manager account. For more information, see [4. Create an audience and finish DV360 configuration](#4-create-an-audience-and-finish-dv360-configuration) below. When filling out the `User-Role Granted` selected `Publisher` if you place to connect to Google Ad Manager.
 
 Segment's integration with DV360 enables Segment customers to sync audiences created in Engage with DV360 to enable centralized audience management and improved retargeting.
 
