@@ -3,6 +3,7 @@ title: Display and Video 360 (Actions) Destination
 strat: google
 hide-settings: true
 id: 65302a3acb309a8a3d5593f2
+beta: true
 https://github.com/segmentio/segment-docs/blob/d4623aadec6f118fb5aa7ca846a9e6214c0d1129/src/connections/destinations/catalog/personas-display-video-360/index.md
 ---
 
@@ -128,8 +129,9 @@ Extra information from the API (settings, connection modes, etc.) are automatica
 
 Segment will copy all of your existing Personas Display & Video 360 Destination configurations to Display and Video 360 (Actions). Once the migration is completed , you will be notified by email. 
 
-
 The sole mandatory action involves **re-authenticating** for each migrated Personans Display & Video 360 Destination. While you may already possess OAuth credentials, it is essential to undergo reauthentication. This step is necessary to seamlessly integrate new audiences or implement updates to existing ones.
+
+We are disabling all existing Personas Display and Video 360 destinations. You can still access your existing configuration, but please refrain from enabling the destination, as it is set to be deprecated. You will no longer be able to create new instances of Personas Display and Video 360.
 
 <img width="799" alt="image" src="https://github.com/segmentio/segment-docs/assets/89420099/37022665-a39e-4696-a23a-97bcafd9cecf">
 
