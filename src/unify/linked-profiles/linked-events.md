@@ -92,7 +92,7 @@ Each Unify space has one Data Graph. The current version is v0.0.6 but this may 
 
 > warning ""
 > Deleting and/or editing entities and relationships to the Data Graph may lead to errors if these entities or relationships are referenced in existing Linked Audiences and Linked Events. Segment recommends creating a new Linked Audience or Linked Event. <br><br> Please note that while you can delete relationships or entities from the Data Graph, these relationships will still show up in the Linked Audience Builder and Linked Events.
-
+ 
 ### Defining entities 
 
 > warning ""
