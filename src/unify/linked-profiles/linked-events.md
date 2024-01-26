@@ -81,19 +81,45 @@ The table below shows the data warehouses Linked Events supports. View the Segme
 | [BigQuery](/docs/unify/linked-profiles/setup-guides/bigquery-setup/)           | 1. Add your credentials to the database that has tables with the entities you want to enrich your event with. <br> 2. Test your connection. | 
 | [Redshift](/docs/unify/linked-profiles/setup-guides/redshift-setup/)           | 1. Select the Redshift cluster you want to connect. <br> 2. [Configure](/docs/connections/storage/catalog/redshift/#networking) the correct network and security settings. |
 
-## Step 2: Add entities
 
-After you connect your warehouse, use the Data graph overview page (**Unify > Data graph**) to view entities Segment has synced from your data warehouse, add a new entity, and view data warehouse settings. 
+## Step 2: Build your Data Graph
 
-To add a new entity:
-1. Click **Add entity**.
-2. Select the table(s) from your warehouse that you'll use as an entity. 
-3. For each table you select, choose a primary key from the drop-down menu.
-- The primary key uniquely identifies rows in your table.
-4. Click **Add entities**.
+The [Data Graph](/unify/linked-profiles/data-graph/) is a semantic layer that represents a subset of relevant business data that you'll use to enrich events in downstream tools. Use the configuration language spec below to add models to build out your Data Graph.
 
-> success ""
-> If you don't see data you need, or have recently updated your warehouse, click **Refresh** to update the schema and tables list. 
+### Deleting and editing entities and/or relationships from your Data Graph
+
+Each Unify space has one Data Graph. The current version is v0.0.6 but this may change in the future as Segment accepts feedback about the process.
+
+> warning ""
+> Deleting and/or editing entities and relationships to the Data Graph may lead to errors if these entities or relationships are referenced in existing Linked Audiences and Linked Events. Segment recommends creating a new Linked Audience or Linked Event. <br><br> Please note that while you can delete relationships or entities from the Data Graph, these relationships will still show up in the Linked Audience Builder and Linked Events.
+
+### Defining entities 
+
+> warning ""
+> Snowflake schemas are case sensitive, so you'll need to reflect the schema, table, and column names based on how you case them in Snowflake.
+
+An entity is a stateful representation of a business object. The entity corresponds to a table in the warehouse that represents that entity. 
+
+
+| Parameters     | Definition                                                           |
+| ----------- | --------------------------------------------------------------------- |
+| `entity`      | A unique slug for the entity, which is immutable and treated as a delete if you make changes. The slug must be in all lowercase, and supports dashes or underscores (for example, `account-entity` or `account_entity`).    |
+| `name`        | A unique label which will display across Segment.                           |
+| `table_ref`   | Define the table reference. In order to specify a connection to your table in Snowflake, a fully qualified table reference is required: `[database name].[schema name].[table name]`. |
+| `primary_key` | The unique identifier for the given table. Should be a column with unique values per row. |
+| (Optional) `enrichment_enabled = true`      | Indicate if you plan to also reference the entity table for [Linked Events](/docs/unify/linked-profiles/linked-events/).                         |
+
+
+
+```python
+# Define an entity and optionally indicate if the entity will be referenced for Linked Events (event enrichment)
+
+entity "account" {
+     table_ref = "cust.account"
+     primary_key = "id"
+     enrichment_enabled = true
+}
+```
 
 
 ## Step 3: Add a Destination
