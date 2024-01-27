@@ -13,7 +13,7 @@ https://github.com/segmentio/segment-docs/blob/d4623aadec6f118fb5aa7ca846a9e6214
 Google's [Display & Video (DV360)](https://marketingplatform.google.com/about/display-video-360/){:target="_blank"} service is an end-to-end campaign management tool that enables enterprise customers to plan, measure, and run display and video advertisements. 
 
 > info ""
-> **Note**: You can connect to a Google Ad Manager account. For more information, see [4. Create an audience and finish DV360 configuration](#4-create-an-audience-and-finish-dv360-configuration) below. When filling out the `User-Role Granted` selected `Publisher` if you place to connect to Google Ad Manager.
+> You can connect to a Google Ad Manager account. For more information, see [4. Create an audience and finish DV360 configuration](#4-create-an-audience-and-finish-dv360-configuration) below. Set **User-Role Granted** to `Publisher` if you plan to connect to Google Ad Manager.
 
 Segment's integration with DV360 enables Segment customers to sync audiences created in Engage with DV360 for centralized audience management and improved retargeting.
 
