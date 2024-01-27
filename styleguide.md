@@ -32,7 +32,7 @@ Rule | Description |
 ---- | ----------- |
 Field names in any app | **Bold** the use of field names.
 Hyperlinks | Link to the noun or topic of the article rather than `here`. 
-Numbers | Use digits/numerals in all cases, except at the beginning of a sentnce. <br><br> For example, instead of `There are five options to choose from.` &rarr; use `There are 5 options to choose from.`
+Numbers | Use digits/numerals in all cases, except at the beginning of a sentence. <br><br> For example, instead of `There are five options to choose from.` &rarr; use `There are 5 options to choose from.`
 Entered text in the app | Use `code format`
 Capitalization | Capitalize Segment and Segment product names. For example, "privacy" by itself isn't capitalized, but "Segment Privacy Portal" is. Page titles and other UI text should be in lower case. <br><br>Capitalize the words "Sources", "Destinations", and "Warehouses" when referring them as product names (for example: “You can use Sources to…”) but decap them when referring to them generically (“You can connect your warehouse to…”)
 `we` and `they` | Avoid using `we` and `they`. Be explicit about naming who is being referenced. Because Segment has such a large footprint of documentation around third-party integrations, it's important to be very clear about who "we" are in any given part of the doc. Instead of using "we", your should refer to our software or processes in the third person: "Segment creates..." "Segment sends..."
@@ -49,6 +49,7 @@ Libraries vs SDKs | Segment Source libraries are libraries, not SDKs. The bundle
 Styling Segment Methods | When you refer to a method *outside* of code, use: <li>Page call, Identify call <br><br>Avoid styling like inline code: <li> Page() method <br><li> `page()` <br><li> `.identify()` <br><li> `Identify` call
 Styling Segment Events | When you refer to an event *outside* of code, format it like inline code. For example: `Product Viewed` or `Clicked Login Button`.
 Connection modes | Device-mode and Cloud-mode are always hyphenated. They should be capitalized when referring to the mode in abstract (as a product name), but can be decapped when used in running text about a specific destination. <br><br>We’ve had a lot of confusion in the past due to using device-mode and client-side, and cloud-mode and server-side interchangeably when referring to our Connection Modes. There are legitimate uses of both the terms client-side and server-side when referring to things _other than_ our connection modes, so we’re moving to use **Device-mode** and **Cloud-mode** instead.
+Sources and destinations | When you refer broadly to sources or destinations, don't capitalize source/destination. For example, "_A source is a website, server library, mobile SDK, or cloud application..._" <br><br>If you're referring to the full name of a source or destination, like Slack (Actions) Destination or Facebook Ads Source, for example, capitalize source/destination.
 
 
 ## Images
@@ -65,7 +66,7 @@ We have some fairly complex CSS, and lists with lots of "stuff" in them. Normall
 
 On top of this, some of the Premonition callouts we use, for some reason, break list ordering. So you can't add an "info" box inside a running list. (Boooo.)
 
-To get around this, you can let the previous list item end whereever if needs to, then create an entire new ordered list with specific HTML to allow you to override the start number.
+To get around this, you can let the previous list item end wherever if needs to, then create an entire new ordered list with specific HTML to allow you to override the start number.
 
 ```html
 <ol style="counter-reset: none;">
