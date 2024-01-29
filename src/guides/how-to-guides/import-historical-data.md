@@ -9,7 +9,7 @@ When transitioning over to Segment, customers commonly want to import historical
 ## Method 1: Using a Custom Solution
 
 ### General Instructions
-Use any [server-side library](https://segment.com/docs/connections/sources/#server), which sends requests in batches to improve performance. Once you have data to import, follow the steps below:
+Use any [server-side library](/docs/connections/sources/#server), which sends requests in batches to improve performance. Once you have data to import, follow the steps below:
 
 1.  Export or collect the data to be imported.
 
@@ -28,9 +28,9 @@ Use any [server-side library](https://segment.com/docs/connections/sources/#ser
 
 3.  Once you've done that, you'll need to write an application or worker to send the data to Segment.
 
-    You will need to cycle through each set of data and map it to a Segment server-side library method or build an array matching the [HTTP Import API format](https://segment.com/docs/connections/sources/catalog/libraries/server/http/#import).
+    You will need to cycle through each set of data and map it to a Segment server-side library method or build an array matching the [HTTP Import API format](/docs/connections/sources/catalog/libraries/server/http/#import).
 
-    **Tip**: We recommend using a Segment library for this process, as they will set contextual message fields like `message_id` (used for deduping) and `sent_at` (used for correctly client clock skew) that our API will use to ensure correct behavior upon ingestion. 
+    **Tip**: Segment recommends using a Segment library for this process, as they set contextual message fields like `message_id` (used for deduping) and `sent_at` (used for correctly client clock skew) that Segment's API uses to correct behavior upon ingestion. 
 
     **Tip**: The server-side libraries will automatically batch requests to optimize for performance and prevent linear request volume. This batching behavior is modifiable, and some of the underlying libraries implement a configurable max queue size that may discard messages if you enqueue requests much faster than the client can flush them. We recommend overriding the max queue size parameter for the library to a high value you're comfortable you can remain under in your batch job.
 
@@ -47,10 +47,10 @@ Additionally, one of Segment's Software Engineers developed a React App with mor
 [MarketLytics](http://marketlytics.com/){:target="_blank"} has documented their experience using the alpha prototype importer and offer some [helpful visuals and tips](http://marketlytics.com/blog/import-historic-data-to-segment){:target="_blank"}.
 
 ### Alternative solution
-If a server-side library doesn't meet your needs, you can use the Segment [bulk import HTTP API](https://segment.com/docs/connections/sources/catalog/libraries/server/http/#import) directly.
+If a server-side library doesn't meet your needs, you can use the Segment [bulk import HTTP API](/docs/connections/sources/catalog/libraries/server/http/#import) directly.
 
-**Note:** When the historical data were initially exported by Segment, we recommend removing all the original `sent_at`, `message_id`, and `project_id` fields from the archived message before forwarding them to Segment.
+**Note:** When you use the HTTP API to export historical data to upload to Segment, remove all the original `sent_at`, `message_id`, and `project_id` fields from the archived message before forwarding them back to Segment.
 
 ## Method 2: Using Reverse ETL
 
-Please refer to the [Reverse ETL guide](https://segment.com/docs/connections/reverse-etl/){:target="_blank"} for more details.
+Please refer to the [Reverse ETL guide](/docs/connections/reverse-etl/){:target="_blank"} for more details.
