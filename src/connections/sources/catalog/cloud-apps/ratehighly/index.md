@@ -46,7 +46,7 @@ The table below lists events that RateHighly sends to Segment. These events appe
 | Unsubscribed       | User clicked an unsubscribe link       | 
 | Review Completed   | User completed the review sequence     | 
 
-## Event Properties
+## Event properties
 
 The table below list the properties included in the events listed above.
 
@@ -58,7 +58,7 @@ The table below list the properties included in the events listed above.
 | `score`           | User rating               |
 | `predicted_score` | User predicted score      |
 
-## Adding Destinations
+## Adding destinations
 
 Now that your Source is set up, you can connect it with Destinations.
 
