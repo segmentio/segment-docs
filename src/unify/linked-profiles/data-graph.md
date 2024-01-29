@@ -4,9 +4,9 @@ plan: unify
 beta: true
 ---
 
-With Linked Profiles, you can build a Data Graph that defines relationships between any data set in the warehouse and the Segment Profiles you send with Profiles Sync. 
+With Linked Profiles, you can build a Data Graph that defines relationships between any entity data set in the warehouse and the Segment Profiles you send with Profiles Sync. 
 
-Define relationships between data from your warehouse to give marketers access to data to target, personalize, and analyze customer experiences.
+Make this relational data accessible to marketers and business stakeholders to empower them with the data they need to create targeted and personalized customer engagements.
 
 > success ""
 > Segment's Data Graph powers [Linked Events](/docs/unify/linked-profiles/linked-events/) and [Linked Audiences](/docs/unify/linked-profiles/linked-audiences/).
@@ -14,11 +14,8 @@ Define relationships between data from your warehouse to give marketers access t
 ## Prerequisites
 
 To use the Data Graph, you'll need the following:
-- A Unify and Engage Foundations or Premier plan.
 - A Snowflake Data Warehouse. 
-- [Profiles Sync](/docs/unify/profiles-sync/) set up with ready to use [data models and tables](/docs/unify/profiles-sync/tables/) in your warehouse.
 - An [Actions-based Destination](/docs/connections/destinations/actions/#available-actions-based-destinations).
-
 
 > info ""
 > Linked Profiles follows Zero Copy principles, and doesn't copy entities to store in Segment. Segment stores and processes all data in the United States. 
@@ -42,6 +39,9 @@ To track what data has been sent to Segment on previous syncs, Segment stores de
 
 ## Step 2: Connect your warehouse to the Data Graph
 
+> warning "Segment user permissions"
+> You must have Workspace Owner or Unify Read-only/Admin and Entities Admin permissions to set up Linked Profiles.
+
 > success ""
 > Before getting started with the Data Graph, be sure to [set up your Snowflake permissions](/unify/linked-profiles/setup-guides/snowflake-setup/). 
 
@@ -54,8 +54,6 @@ To connect your warehouse to the Data Graph:
 4. Enter your warehouse credentials. 
 5. Test your connection, then click **Save**.
 
-Depending on the size of your warehouse, it may take anywhere from a few minutes to an hour for Segment to sync your warehouse metadata to cache before you're able to set up your Data Graph. 
-
 ## Step 3: Build your Data Graph
 
 The Data Graph is a semantic layer that represents a subset of relevant business data that you'll use for audience targeting and personalization in downstream tools. 
@@ -67,7 +65,7 @@ Use the configuration language spec below to add models to build your Data Graph
 > info ""
 > Each Unify space has one Data Graph. The current version is v0.0.6.
 
-Segment recommends creating a new Linked Audience or Linked Event. Deleting and/or editing entities in the Data Graph may lead to errors if you reference these entities or relationships in existing Linked Audiences and Linked Events. 
+Segment recommends creating a new Linked Audience or Linked Event. Deleting entities and relationships are not yet supported. Editing entities and relationships in the Data Graph may lead to errors if these entities or relationships are referenced in existing Linked Audiences and Linked Events. 
 
 While you can delete relationships or entities from the Data Graph, these relationships and entities will still display in the Linked Audience builder and Linked Events.
 
@@ -80,7 +78,7 @@ Use the parameters, defintions, and examples below to help you define entities.
 
 #### Profile 
 
-The profile is a special class of entity. The profile is always defined at the top of the Data Graph, and there can only be one profile for a Data Graph. The profile entity corresponds to the Profiles Sync tables and models. 
+The profile is a special class of entity. The profile is always defined at the top of the Data Graph, and there can only be one profile for a Data Graph. The profile entity corresponds to the Profiles Sync tables and models, such as profile traits. 
 
 The parameters are:
 
@@ -118,8 +116,9 @@ An entity is a stateful representation of a business object. The entity correspo
 ```python
 # Define an entity and optionally indicate if the entity will be referenced for Linked Events (event enrichment)
 
-entity "account" {
-     table_ref = "cust.account"
+entity "account-entity" {
+     name = "account"
+     table_ref = "PRODUCTION.CUST.ACCOUNT"
      primary_key = "id"
      enrichment_enabled = true
 }
@@ -132,7 +131,7 @@ Use the following relationship, parameters, and examples to help you relate enti
 > warning ""
 > Snowflake schemas are case sensitive, so you'll need to reflect the schema, table, and column names based on how you case them in Snowflake.
 
-
+<!--Bookmark -->
 #### Relate Entity to Profile
 
 | Parameters     | Definition                                                           |
@@ -144,7 +143,14 @@ Use the following relationship, parameters, and examples to help you relate enti
 
 A profile can be related to an entity in two ways:
 1. With an `external_id`: Define the external ID that will be used to join the profile with your entity.
-     - `type`: Identify the external ID type (`email`, `phone`, `user id`). This corresponds to the `external_id_type` column in your `external_id_mapping` table.
+     - `type`: Identify the external ID type (`email`, `phone`, `user id`). This corresponds to the `external_id_type` column in your `external_id_mapping` table. For example:
+     ```python
+     relationship "user-carts" {
+          name = "Shopping Carts"
+          related_entity = "cart-entity"
+          join_on = "ACCOUNT.ID = CART.ACCOUNT.ID"
+     }
+     ```
      - `join_key`: This is the column on the entity table that you are matching to the external identifier.
 2. With a `trait`: Define a profile trait that will be used to join the profile with your entity.
      - `name`: The trait name that corresponds to a column name in your `profile_traits_updates` table.
@@ -209,6 +215,8 @@ data_graph {
 
 ```
 
+#### relating entities with a junction table
+
 If you're relating entities with a junction table:
 
 - `Junction_table`: Define relationships between two entities tables joined by a junction table.
@@ -219,7 +227,8 @@ If you're relating entities with a junction table:
 
 Note that `schema.table` is implied within the junction table column name and doesn't need to be provided. 
 
-Attributes from a junction table are not referenceable with the Audience Builder. If you'd like to reference an additional column on the junction table for filtering, you must first define it as an entity and explicitly define a relationship name. 
+> warning ""
+> Attributes from a junction table are not referenceable with the Audience Builder. If you'd like to reference an additional column on the junction table for filtering, you must first define it as an entity and explicitly define a relationship name. 
 
 ```py
 #relating entities with junction table
@@ -230,14 +239,15 @@ data_graph {
           #define profile
                ...
                #relate products to carts
-               relationship "Products" {
-                    related_entity = "product"
+               relationship "products" {
+                    name = "Purchased Products"
+                    related_entity = "product-entity"
                     junction_table {
                          primary_key = "id"
-                         table_ref = "customer.cart_product"
-                         left_join_on = "cart.id = cart_id"
+                         table_ref = "PRODUCTION.CUSTOM.CART_PRODUCT"
+                         left_join_on = "CART.ID = CART_ID"
                          #schema.table is implied within the cart_id key
-                         right_join_on = "product_id = product.sku"
+                         right_join_on = "PRODUCT_ID = PRODUCT.SKU"
                     }
 
                }
@@ -259,27 +269,30 @@ data_graph {
           materialization = "none"
 
           #relate profile to accounts
-          relationship "Accounts" {
-               related_entity = "account"
+          relationship "user-accounts" {
+               name = "Premium Accounts"
+               related_entity = "account-entity"
                external_id {
                     type = "email"
                     join_key = "email_id"
                }
                
                #relate account to carts
-               relationship "Carts" { 
-                    related_entity = "cart"
-                    join_on = "account.id = cart.account_id"
+               relationship "user-carts" { 
+                    name = "Shopping Carts"
+                    related_entity = "cart-entity"
+                    join_on = "ACCOUNT.ID = CART.ACCOUNT_ID"
 
                     #relate products to carts
-                    relationship "Products" { 
-                         related_entity = "product"
+                    relationship "products" { 
+                         name = "Purchased Products"
+                         related_entity = "product-entity"
                          junction_table {
-				   primary_key = "id"
-                              table_ref = "customer.cart_product"
-                              left_join_on = "cart.id = cart_id"
+				          primary_key = "id"
+                              table_ref = "PRODUCTION.CUSTOMER.CART_PRODUCT"
+                              left_join_on = "CART.ID = CART_ID"
                               #schema.table is implied within the cart_id key
-                              right_join_on = "product_id = product.sku"
+                              right_join_on = "PRODUCT_ID = PRODUCT.SKU"
                          }
                     }
                }
@@ -287,20 +300,23 @@ data_graph {
      }
 
      #define account, product, and cart entities
-     entity "account" {
-          table_ref = "cust.account"
+     entity "account-entity" {
+          name = "account"
+          table_ref = "PRODUCTION.CUST.ACCOUNT"
           primary_key = "id"
           enrichment_enabled = true
      }
 
-     entity "product" {
-          table_ref = "prod.product_skus"
+     entity "product-entity" {
+          name = "product"
+          table_ref = "PRODUCTION.PROD.PRODUCT_SKUS"
           primary_key = "sku"
           enrichment_enabled = true
      }
 
-     entity "cart" {
-          table_ref = "cust.cart"
+     entity "cart-entity" {
+          name = "cart"
+          table_ref = "PRODUCTION.CUST.CART"
           primary_key = "id"
      }
 }
