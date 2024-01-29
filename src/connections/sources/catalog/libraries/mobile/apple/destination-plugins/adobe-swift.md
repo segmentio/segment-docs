@@ -54,7 +54,7 @@ Open your Package.swift file and add the following to the `dependencies` section
 
 ## Using the Plugin in your App
 
-Open the file where you setup and configure the Analytics-Swift library.  Add this plugin to the list of imports.
+Open the file where you set up and configured the Analytics-Swift library.  Add this plugin to the list of imports.
 
 ```
 import Segment

@@ -48,7 +48,7 @@ Open your Package.swift file and add the following to the `dependencies` section
 
 ## Using the plugin in your app
 
-Open the file where you setup and configure the Analytics-Swift library.  Add this plugin to the list of imports.
+Open the file where you set up and configured the Analytics-Swift library.  Add this plugin to the list of imports.
 
 ```
 import Segment
@@ -151,7 +151,7 @@ analytics.track(name: "Product Purchased", properties: OrderCompletedProperties(
 When you make a Track call from any of the server-side libraries or mobile sources in cloud-mode (for example, without the beta Segment mobile Intercom SDK installed), you must include either the `userId` or `email` of a user already recorded in Intercom.
 
 
-### Revenue and currency
+### Revenue and currency properties
 If you send `properties.revenue` and `properties.currency` to Intercom, Segment formats those properties according to [Intercom's Monetary Amount](https://developers.intercom.com/intercom-api-reference/reference/submit-a-data-event#metadata-object){:target="_blank"} and sends them to Segment as:
 
 ```js
@@ -216,7 +216,7 @@ When you call Group from any of any server-side libraries or mobile sources in c
 > Intercom supports NSString, NSNumber or NSNull type values on iOS.
 
 ## Reset
-When `reset` is called The bundled mobile SDK `reset` method un-registers a user in Intercom. When users want to log out of your app and you call Segment's `reset` method, Segment calls:
+The bundled mobile SDK `reset` method un-registers a user in Intercom. When users want to log out of your app and you call Segment's `reset` method, Segment calls:
 
 ```swift
   Intercom.logout()
