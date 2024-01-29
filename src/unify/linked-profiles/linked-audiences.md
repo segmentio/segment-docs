@@ -6,7 +6,7 @@ beta: true
 
 With Linked Audiences, you can use the relational data you've defined in your Data Graph to build audiences and send them to your downstream destinations. 
 
-From the relationships you've defined between profiles and entities in your warehouse, you can filter on profile traits, entity attributes, and associated events to create hyper-segmented audiences.
+From the relationships you've defined between the profiles and entities in your warehouse, you can filter on an entity, profile trait, and audience membership conditions to create hyper-segmented audiences.
 
 > success ""
 > Before you build Linked Audiences, be sure you've defined entities in your [Data Graph](/docs/unify/linked-profiles/data-graph/). 
@@ -14,24 +14,24 @@ From the relationships you've defined between profiles and entities in your ware
 
 ## Getting started
 
-To help you get started with Linked Audiences, keep the following guidelines in mind. 
+To help you get started with Linked Audiences, consider the following best practices: 
 
-- It may be helpful to first identify an entity that is directly associated with your users, such as `Accounts`, `Households`, or `Organizations`.
-- From there you can define relationships between this entity with any of the other entities that may associated with it, such as how `Accounts` can have the following:
-    - `Subscriptions` 
-    - `Purchases`
-    - `Carts` 
-- You can create entity relationships up to four levels in depth. For example, you can build an entity condition that queries for relationships between `Profiles`, `Accounts`, `Credit Cards`, and `Transactions`. 
-- To further refine your audience, identify column values that you might also want to filter your entities by. 
+1. It may be helpful to first identify an entity that is directly associated with your users, such as `Accounts`, `Households`, or `Organizations`.
+2. From there you can define relationships between this entity with any of the other entities that may associated with it, such as how `Accounts` can have the following: `Subscriptions`, `Purchases`, or `Carts`. 
+3. You can create entity relationships up to six levels in depth. For example, an entity condition that queries for relationships between `Profiles`, `Accounts`, `Credit Cards`, and `Transactions` has four levels of depth. 
+4. To further refine your audience, identify column values that you might also want to filter your entities by, or configure profile trait and audience membership conditions. 
 
 ## Use cases
  
 Below are some example use cases to help you learn more about Linked Audiences.
 
-### Build an audience of cat owners
+### Build an audience of cat owners who are also a part of the platinum membership tier
 
 Build an audience with `Households` and `Pets` where:
 - `pets.type` equals "cat"
+
+And where:
+- `profile.audience_membership` = "Platinum membership tier"
 
 In the Data Graph, `Households` and `Pets` are defined as entities and are represented as separate tables in your data warehouse. 
 
@@ -41,18 +41,24 @@ Relationships are defined between:
 
 In the warehouse, `pets.type` is a column in the `pets` table. By filtering against the `pets.type` column for the "cat" value, marketers can return a list of users that have a cat. 
 
+Furthermore, filtering the audience against `profile.audience_membership` for "Platinum membership tier" will allow marketers to further refine their audience to only include users who are also a part of the platinum membership tier audience.
 
-### Build an audience of users with premium subscriptions
+### Build an audience of users with premium subscriptions who are located in Canada
 
 Build an audience with `Accounts` and `Subscriptions`, where the following are true:
 - `subscription.status` equals "active"
 - `subscription.tier` equals "premium"
+
+And where:
+- `profile.country` = "Canada"
 
 In the Data Graph, `Accounts` and `Subscriptions` are defined as entities. Relationships are defined between:
 - `Profiles` and `Accounts`
 - `Accounts` and `Subscriptions` 
 
 In the warehouse, `subscription.status` is a column in the `subscriptions` table. Marketers can refine their audience by filtering against the `subscription.status` and `subscription.tier` columns to return a list of users that have an active subscription to their premium offering.
+
+Furthermore, filtering the audience against `profile.country` for "Canada" will allow marketers to further refine their audience to only include users who are located in Canada.
 
 
 ### Build an audience of credit card holders with a certain number of transactions
@@ -80,12 +86,12 @@ Use the Audience overview page to build or maintain a Linked Audiences.
 1. Navigate to **Engage > Audiences**.
 2. Click **+ New audience**, then select **Audience**.
 3. On the Select Type screen, select **Linked audience**, then click **Next**.
-4. Build your Linked Audience with profiles that have a specific entity, profile trait, or are part of an audience. Select from **associated with an entity**, **where profile trait**, or **part of an audience**, and add your conditions.
+4. Build your Linked Audience with profiles by selecting **associated with an entity**, **where profile trait**, or **part of an audience** conditions.
 5. Preview your audience, then click **Next**.
 6. Enter an audience name and description, then click **Create Audience**.
 
 > warning ""
-> At this time, Linked Audiences can't be edited or deleted. Create a new audience to update conditions. To disable an audience, navigate to **Engage > Audiences > Settings** and toggle the **Enabled** button off.
+> At this time, Linked Audiences can't be edited or deleted. Create a new audience to update conditions. To disable an audience, navigate to the **Settings** tab of an audience and toggle the **Enabled** button off.
 
 
 ## Step 2: Activate your Linked Audience
