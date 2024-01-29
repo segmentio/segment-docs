@@ -71,7 +71,7 @@ let analytics = Analytics(configuration: Configuration(writeKey: "<YOUR WRITE KE
                     .trackApplicationLifecycleEvents(true))
 analytics.add(plugin: LocalyticsDestination())
 ```
-Your events will now be given Localytics session data and start flowing to Localytics via device-mode.
+Your events now have Localytics session data and start flowing to Localytics in device-mode.
 
 ## Identify
 
