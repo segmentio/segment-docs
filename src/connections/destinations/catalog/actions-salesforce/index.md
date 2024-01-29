@@ -163,3 +163,16 @@ For bulk `update`, if a record in a batch is missing a Bulk Update Record ID, Se
 For "Bulk Update Record ID", see [Salesforce’s help documentation](https://help.salesforce.com/s/articleView?id=000385008&type=1){:target="_blank"}.
 For "Bulk Upsert External ID", see[Salesforce’s help documentation](https://help.salesforce.com/s/articleView?id=000383278&type=1){:target="_blank"}.
 
+### How to identify and recitfy Salesforce (Actions) destination's event delivery issue, when it is caused by expired Oauth token?
+
+You often see an "INVALID_SESSION_ID" error message in a **400 Bad Request** sample response in our UI, where the message is expected and it doesn't affect the actual event delivery. However, there are also occasions that it is the actual error message and the event delivery is impacted. 
+
+The reason is that each email address can only be used to authenticate 4 Salesforce (Actions) destinations at the same time, which is related to Segment's current implemented OAuth 2.0 flow. See [Salesforce’s help documentation](hhttps://help.salesforce.com/s/articleView?id=sf.remoteaccess_request_manage.htm&type=5){:target="_blank"} for more details. 
+
+To resolve the issue, please consider spliting the destinations with multiple email addresses. 
+
+For reference, you will find the below screeshot in a **400 Bad Request** response without any additional error message. In which case, your destination is potentially impacted by the limit. 
+![incorrect 400 bad request example](images/image3.png)
+
+
+
