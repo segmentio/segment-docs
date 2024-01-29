@@ -7,8 +7,6 @@ id: 5c785483f45dbc00017f0731
 
 This destination is maintained by Cruncher. For any issues with the destination, [contact the Cruncher Support team](mailto:support@cruncherlabs.com).
 
-{% include content/beta-note.md %}
-
 
 ## Getting Started
 

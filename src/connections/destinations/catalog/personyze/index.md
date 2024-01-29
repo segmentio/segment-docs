@@ -7,8 +7,6 @@ id: 5c6de64f037dcf00014f8f84
 
 This destination is maintained by Personyze. For any issues with the destination, [contact the Personyze Support team](mailto:info@personyze.com).
 
-{% include content/beta-note.md %}
-
 
 ## Getting Started
 

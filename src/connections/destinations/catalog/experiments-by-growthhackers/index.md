@@ -8,8 +8,6 @@ id: 5cc205876b9a830001432515
 
 This destination is maintained by Experiments by Growthhackers. For any issues with the destination, [contact the Growthhackers Support team](mailto:tech@growthhackers.com).
 
-{% include content/beta-note.md %}
-
 ## Getting Started
 
 

@@ -41,12 +41,6 @@ The LiveRamp Audiences destination can be connected to **Twilio Engage sources o
 
 {% include components/actions-fields.html settings="false"%}
 
-## Public Beta instructions 
-
-* The Segment team will need to enable the feature for your Engage spaces.
-* Once you agree to join the public beta, Segment will enable all Engage spaces that are part of your Segment workspace.
-* New Engage spaces you create won't automatically be enrolled. Contact your Account Team/CSM to get these spaces enrolled.
-
 ## Limitations 
 
 * Audience must have at least 25 unique members, otherwise the destination will fail and the data will not be synced.

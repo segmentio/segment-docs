@@ -23,7 +23,7 @@ Amplitude (Actions) provides the following benefits over the classic Amplitude d
 - **Clearer mapping of data**. Actions-based destinations enable you to define the mapping between the data Segment receives from your source, and the data Segment sends to the destination.
 - **Support for Amplitude's HTTP API v2**. Amplitude (Actions) is built on the latest version of [Amplitude's HTTP API](https://developers.amplitude.com/docs/http-api-v2){:target="_blank"}.
 - **Revenue is a top-level property**. Amplitude (Actions) elevates `revenue` to a top-level property in requests sent to Amplitude. This enables inclusion of this data in Amplitude features like customer LTV reports.
-- **Session tracking in cloud-mode**. Amplitude (Actions) supports sending session details from cloud-mode sources.
+- **Tracking in cloud-mode**. Amplitude (Actions) supports sending  details from cloud-mode sources.
 
 ## Getting started
 
@@ -56,7 +56,7 @@ The Amplitude (actions) destination does not offer a device-mode connection mode
 
 Most previous deployments of the Amplitude Segment destination used the device-mode connection to use the `session_id` tracking feature. The new Actions-framework Amplitude destination, includes session ID tracking by default. When connected to the Analytics.js 2.0 source, Segment automatically loads a plugin on your website for session tracking and enrichment as an alternative to the Amplitude SDK. This means you don't need to bundle any software to run on the user's device, or write any code. It also means that you can use more of the Segment platform features on data going to Amplitude, such as Protocols filtering and transformations, and Profiles Identity Resolution.
 
-Session tracking is available with Segment's new libraries: [Analytics.js 2.0](/docs/connections/sources/catalog/libraries/website/javascript/), [Swift](https://github.com/segmentio/analytics-swift){:target="_blank”} or [Kotlin](https://github.com/segmentio/analytics-kotlin){:target="_blank”}.
+Session tracking is available with Segment's new libraries: [Analytics.js 2.0](/docs/connections/sources/catalog/libraries/website/javascript/), [Swift](https://github.com/segmentio/analytics-swift){:target="_blank”} or [Kotlin](https://github.com/segmentio/analytics-kotlin){:target="_blank”}. 
 
 
 ### Device ID Mappings
@@ -68,7 +68,7 @@ By default, Segment maps the Segment property `context.device.id` to the Amplitu
 
 JavaScript sources automatically enable session tracking.
 
-The session ID Segment passes to Amplitude stores locally in a key-value pair. View the value associated with the `analytics_session_id`key to access the session ID.
+The session ID Segment passes to Amplitude stores locally in a key-value pair. View the value associated with the `analytics_session_id`key to access the session ID. The session ID is set to timeout every 30 minutes by default. 
 
 ### Enable Amplitude session tracking for Swift
 

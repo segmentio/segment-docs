@@ -7,8 +7,6 @@ id: 5c75e3ca088b680001eb30fa
 
 This destination is maintained by PersistIQ. For any issues with the destination, [contact the PersistIQ Support team](mailto:support@persistiq.com).
 
-{% include content/beta-note.md %}
-
 
 ## Getting Started
 

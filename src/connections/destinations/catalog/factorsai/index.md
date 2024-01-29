@@ -9,8 +9,6 @@ hide-components: true
 
 This destination is maintained by FactorsAI. For any issues with the destination, [contact the FactorsAI Support team](mailto:support@factors.ai).
 
-{% include content/beta-note.md %}
-
 ## Getting Started
 
 1. From the Segment web app, click **Catalog**.

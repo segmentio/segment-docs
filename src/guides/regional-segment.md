@@ -50,8 +50,14 @@ All Segment client-side SDKs read this setting and update themselves automatical
 
 ### Server-side and project sources
 When you send data from a server-side or project source, you can use the `host` configuration parameter to send data to the desired region:
-1. Oregon (Default) — `api.segment.io/v1`
-2. Dublin — `events.eu1.segmentapis.com/`
+1. Oregon (Default) — `https://events.segmentapis.com/v1`
+2. Dublin — `https://events.eu1.segmentapis.com/`
+
+Here is an example of how to set the host:
+
+```json
+Analytics.Initialize("<YOUR WRITEKEY HERE>", new Config().SetHost("https://events.eu1.segmentapis.com (https://events.eu1.segmentapis.com/)"));
+```
 
 ## Create a new workspace with a different region
 
@@ -83,9 +89,12 @@ Use Segment's custom CIDR `3.251.148.96/29` while authorizing Segment to write i
 ## Destination support and Regional endpoint availability
 
 > info "Don't see a regional endpoint for a tool you're using?"
-> As more of the partner tools you use (Sources and Destinations) start to support a regional endpoint, Segment will update this list. Your contact for that tool should have a timeline for when they're hoping to support regional data ingestion. You can also visit Segment's [support page](https://segment.com/help/contact/) for any Segment-related questions.
+> As more of the partner tools you use (Sources, Destinations, and Warehouses) start to support a regional endpoint, Segment will update this list. Your contact for that tool should have a timeline for when they're hoping to support regional data ingestion. You can also visit Segment's [support page](https://segment.com/help/contact/){:target="_blank"} for any Segment-related questions.
 
 The following integrations marked with a ![Supports EU regional endpoints](/docs/images/supported.svg){:class="inline"} (checkmark) support EU Regional endpoints.
+
+> warning "Integrations available in EU workspaces do not guarantee data residency"
+> Before you configure an integration, you should check directly with the integration partner to determine if they offer EU endpoints.
 
 {% include content/regional-integrations-table.md %}
 
