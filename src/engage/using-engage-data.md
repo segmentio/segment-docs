@@ -121,7 +121,7 @@ Engage only sends events to the destination if the computed trait value has chan
 ```
 
 ### Journeys generated events
-The data type you send to a destination depends on whether the destination is an Event destination, or a List destination. See the [Journeys documentation](/docs/engage/journeys/send-data/#:~:text=a%20List%20destination.-,Event%20destination,%22traits%22%3A%20%7B%0A%20%20%20%20%22j_o_first_purchase__opened_email_dje83h%22%3A%20%22true%22%0A%20%20%7D%0A%7D,-List%20destination) on how Journeys Identity and Track event payloads are formatted when sending to Event destinations.
+The data type you send to a destination depends on whether the destination is an event destination or a list destination. For more information, read the [Journeys documentation](/docs/engage/journeys/send-data/#:~:text=a%20List%20destination.-,Event%20destination,%22traits%22%3A%20%7B%0A%20%20%20%20%22j_o_first_purchase__opened_email_dje83h%22%3A%20%22true%22%0A%20%20%7D%0A%7D,-List%20destination) on how Journeys Identity and Track event payloads get formatted when sending to Event destinations.
 
 
 ## Additional identifiers
