@@ -36,7 +36,7 @@ You will need Admin permissions to your Marketo account.
 2. Go to **Admin > Munchkin** to find your Munchkin Account ID.
 ![Screenshot of the Tracking Code section of Marketo's Munchkin page.](images/Image2018-04-30at5.28.54PM.png)
 3. Go to Admin > LaunchPoint
-  a. If you don't already have a REST service setup, follow [these steps](http://developers.marketo.com/rest-api/custom-services/).
+  a. If you don't already have a REST service setup, follow [these steps](http://developers.marketo.com/rest-api/custom-services/){:target="_blank"}.
   b. Then, copy the "Client ID" and "Client Secret" parameters.
   ![Screenshot of the Details section of the LaunchPoint page.](images/Image2018-04-30at5.29.32PM.png)
   c. Paste the "Client ID" and "Client Secret" into the Segment Marketo source settings.

@@ -2,6 +2,7 @@
 title: Analytics for .NET
 repo: analytics.NET
 id: 8HWbgPTt3k
+support_type: legacy
 tags:
   - C#
   - C-sharp

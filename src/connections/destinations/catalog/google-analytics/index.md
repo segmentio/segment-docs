@@ -20,17 +20,17 @@ id: 54521fd725e721e32a72eebb
 
 If your Google Measurement ID starts with a G, you're using G-Codes from Google Analytics 4, and should consider using [Segment's Google Analytics 4 destination](/docs/connections/destinations/catalog/actions-google-analytics-4/).
 
-Although GA4 is now the default when you create a new property, you can still [create a Universal Analytics property](https://support.google.com/analytics/answer/10269537). You can use a UA property with [Segment's Google Universal Analytics destination](/docs/connections/destinations/catalog/google-analytics/).
+Although GA4 is now the default when you create a new property, you can still [create a Universal Analytics property](https://support.google.com/analytics/answer/10269537){:target="_blank"}. You can use a UA property with [Segment's Google Universal Analytics destination](/docs/connections/destinations/catalog/google-analytics/).
 
 Different Measurement IDs begin with different prefixes, which indicate which Google destination you should use.
 
 | Prefix | Google Account type       | Segment Settings    |
 | ------ | -------------------------- | ----------------- |
-| UA     | Your global site tag is controlled by Google Universal Analytics. The ID is your Google Universal Analytics Measurement ID. To find the property associated with this ID, use the [account search feature](https://support.google.com/analytics/answer/6100731) in Google Universal Analytics. If the property doesn't appear, you probably don't have access to it. | [Google Universal Analytics](/docs/connections/destinations/catalog/google-analytics/): Tracking ID           |
+| UA     | Your global site tag is controlled by Google Universal Analytics. The ID is your Google Universal Analytics Measurement ID. To find the property associated with this ID, use the [account search feature](https://support.google.com/analytics/answer/6100731){:target="_blank"} in Google Universal Analytics. If the property doesn't appear, you probably don't have access to it. | [Google Universal Analytics](/docs/connections/destinations/catalog/google-analytics/): Tracking ID           |
 | G      | Your global site tag is controlled by Google Analytics 4 (GA4). The ID is your Google Analytics Measurement ID.       | [Google Analytics 4](/docs/connections/destinations/catalog/actions-google-analytics-4/): Measurement ID |
 | AW     | Your global site tag is controlled by Google Ads. The numeric string following the AW prefix is your Google Ads Conversion ID.        | [Google Ads](/docs/connections/destinations/catalog/google-ads-gtag/): Google Conversion ID                  |
 | DC     | Your global site tag is controlled by a Floodlight tag. The numeric string following DC is your Advertiser ID.       | [Floodlight](/docs/connections/destinations/catalog/doubleclick-floodlight/): DoubleClick Advertiser ID      |
-| other  | Your global site tag is controlled by a different Google product or may be implemented incorrectly. Use the [Tag Assistant extension](https://support.google.com/tagassistant/answer/2947093) for Google Chrome to verify.      | n/a      |
+| other  | Your global site tag is controlled by a different Google product or may be implemented incorrectly. Use the [Tag Assistant extension](https://support.google.com/tagassistant/answer/2947093){:target="_blank"} for Google Chrome to verify.      | n/a      |
 
 
 
@@ -48,7 +48,7 @@ When you enable the Google Universal Analytics destination in Segment:
 - Google Universal Analytics starts automatically collecting data on your site. It takes several hours for Google to process this data and add it to your reports, but you should still see events appear in the Google Universal Analytics real-time events dashboard.
 
 > info "Classic tracking deprecated"
-> These docs cover Google Analytics Universal features, since the [Classic tracking method has been depreciated](http://analytics.blogspot.com/2014/04/universal-analytics-out-of-beta-into.html).
+> These docs cover Google Analytics Universal features, since the [Classic tracking method has been depreciated](http://analytics.blogspot.com/2014/04/universal-analytics-out-of-beta-into.html){:target="_blank"}.
 
 
 ## Page and Screen
@@ -59,7 +59,7 @@ The resulting `page` event name in Google Universal Analytics corresponds to the
 
 When you send Page events from a server library you must include a `url` property, or else Google Universal Analytics silently rejects the Page event.
 
-If you send a [`screen`](/docs/connections/spec/screen) call using a server library, you must pass in an [application name](https://developers.google.com/analytics/devguides/collection/analyticsjs/field-reference#appName) using Segment's `context.app.name` object, or Google rejects your event.
+If you send a [`screen`](/docs/connections/spec/screen) call using a server library, you must pass in an [application name](https://developers.google.com/analytics/devguides/collection/analyticsjs/field-reference#appName){:target="_blank"} using Segment's `context.app.name` object, or Google rejects your event.
 
 
 ### Virtual Pageviews
@@ -84,14 +84,14 @@ In some cases, for example if you're tracking search queries, you might want to 
 
 ## Identify
 
-It is against Google's terms of service to pass Personally Identifiable Information (PII) to the Google Universal Analytics reporting interface. For that reason Segment never passes anything from an [Identify call](/docs/connections/spec/identify/) to Google unless you specifically tell it to. You can read about Google's best practices for avoiding this [here](https://support.google.com/analytics/answer/6366371?hl=en).
+It is against Google's terms of service to pass Personally Identifiable Information (PII) to the Google Universal Analytics reporting interface. For that reason Segment never passes anything from an [Identify call](/docs/connections/spec/identify/) to Google unless you specifically tell it to. You can read about Google's best practices for avoiding this [here](https://support.google.com/analytics/answer/6366371?hl=en){:target="_blank"}.
 
 
 ### User ID
 
-[Google Universal Analytics Universal tracking method](https://support.google.com/analytics/answer/3123663) allows you to set a user ID for your identified visitors.
+[Google Universal Analytics Universal tracking method](https://support.google.com/analytics/answer/3123663){:target="_blank"} allows you to set a user ID for your identified visitors.
 
-To use this feature you must [set up User-ID in your Google Universal Analytics property](https://support.google.com/analytics/answer/3123666) and create a User-ID view.
+To use this feature you must [set up User-ID in your Google Universal Analytics property](https://support.google.com/analytics/answer/3123666){:target="_blank"} and create a User-ID view.
 
 To pass the `id` from your [Identify calls](/docs/connections/spec/identify) to Google Universal Analytics, go to the Google Universal Analytics destination settings in the Segment App, navigate to the Advanced Options section, and enable the **Send User-ID to GA** setting.
 
@@ -114,7 +114,7 @@ If you are passing an **email**, **phone number**, **full name** or other PII as
 Google Universal Analytics has multiple scopes for each custom dimensions: hit (synonymous with events), session, user, product (which requires that enhanced ecommerce be enabled). Segment's device-mode [Analytics.js library](/docs/connections/sources/catalog/libraries/website/javascript/) supports all of them.
 
 #### Setting up Custom Dimensions
-First, [configure the Custom Dimensions](https://support.google.com/analytics/answer/2709829?hl=en) from your Google Universal Analytics admin page.
+First, [configure the Custom Dimensions](https://support.google.com/analytics/answer/2709829?hl=en){:target="_blank"} from your Google Universal Analytics admin page.
 
 Once you finish this set up in Google Universal Analytics, you can map traits and properties to your custom dimensions. Go to the Google Universal Analytics destination settings in the Segment App and locate the **Custom Dimensions** setting. This is where you will enter your mapping. You can only map each trait or property to one Custom Dimension at a time.
 
@@ -232,7 +232,7 @@ For **Event Value** you can name the event property `value` or `revenue`. Segmen
 
 ### Non-interaction Events
 
-Google Universal Analytics allows you to tag some events as ["non-interaction" events](https://support.google.com/analytics/answer/1033068#NonInteractionEvents). To create an event with the `nonInteraction` flag, pass Segment an event property labeled `nonInteraction` with the value of `1`. You can also set all events to be non-interactive by default in the Advanced Options.
+Google Universal Analytics allows you to tag some events as ["non-interaction" events](https://support.google.com/analytics/answer/1033068#NonInteractionEvents){:target="_blank"}. To create an event with the `nonInteraction` flag, pass Segment an event property labeled `nonInteraction` with the value of `1`. You can also set all events to be non-interactive by default in the Advanced Options.
 
 Here's an example:
 
@@ -364,8 +364,8 @@ For client-side integrations we use Google Universal Analytics' `ProductAction` 
 <!-- commenting out until we can confirm that these aren't useful. the pages are still up, if all mobile needs to use firebase this seems weird to include here -->
 <!-- - [Android](https://developers.google.com/android/reference/com/google/android/gms/analytics/ecommerce/ProductAction)-->
 <!-- - [iOS](https://developers.google.com/analytics/devguides/collection/ios/v3/reference/interface_g_a_i_ecommerce_product_action) -->
-- [Analytics.js - Enhanced E-Commerce](https://developers.google.com/analytics/devguides/collection/analyticsjs/enhanced-ecommerce)
-- [Analytics.js - E-Commerce](https://developers.google.com/analytics/devguides/collection/analyticsjs/ecommerce)
+- [Analytics.js - Enhanced E-Commerce](https://developers.google.com/analytics/devguides/collection/analyticsjs/enhanced-ecommerce){:target="_blank"}
+- [Analytics.js - E-Commerce](https://developers.google.com/analytics/devguides/collection/analyticsjs/ecommerce){:target="_blank"}
 
 ### Measuring Promotions
 
@@ -393,8 +393,8 @@ For client-side integrations, we use Google Universal Analytics' Promotions clas
 <!-- same note as above re mobile -->
 <!-- - [Android](https://developers.google.com/android/reference/com/google/android/gms/analytics/ecommerce/Promotion)-->
 <!-- - [iOS](https://developers.google.com/analytics/devguides/collection/ios/v3/reference/interface_g_a_i_ecommerce_promotion)-->
-- [Analytics.js - Enhanced E-Commerce](https://developers.google.com/analytics/devguides/collection/analyticsjs/enhanced-ecommerce)
-- [Analytics.js - E-Commerce](https://developers.google.com/analytics/devguides/collection/analyticsjs/ecommerce)
+- [Analytics.js - Enhanced E-Commerce](https://developers.google.com/analytics/devguides/collection/analyticsjs/enhanced-ecommerce){:target="_blank"}
+- [Analytics.js - E-Commerce](https://developers.google.com/analytics/devguides/collection/analyticsjs/ecommerce){:target="_blank"}
 
 ### Coupons
 
@@ -549,7 +549,7 @@ To use server-side Google Universal Analytics, there are three options with Segm
 > info " "
 > When you add `Google Universal Analytics` to the `integrations` object, the Google Universal Analytics event appears in the Segment debugger as `Google Analytics`.
 
-Universal Analytics (analytics.js) uses the [`clientId`](https://developers.google.com/analytics/devguides/collection/analyticsjs/cookie-usage#analyticsjs) to keep track of unique visitors.
+Universal Analytics (analytics.js) uses the [`clientId`](https://developers.google.com/analytics/devguides/collection/analyticsjs/cookie-usage#analyticsjs){:target="_blank"} to keep track of unique visitors.
 
 
 *A Google Analytics Universal cookie will look like this:*
@@ -633,7 +633,7 @@ Your UTM params need to be passed in the `context` object in `context.campaign`.
 
 ### Measurement Protocol Parameters
 
-Google Universal Analytics uses a reserved set of [Measurement Protocol Parameters](https://developers.google.com/analytics/devguides/collection/protocol/v1/parameters) which are automatically collected by the device-mode Google Universal Analytics tracker.
+Google Universal Analytics uses a reserved set of [Measurement Protocol Parameters](https://developers.google.com/analytics/devguides/collection/protocol/v1/parameters){:target="_blank"} which are automatically collected by the device-mode Google Universal Analytics tracker.
 
 To include Measurement Protocol Parameters when sending server-side events to Google Universal Analytics:
 
@@ -705,7 +705,7 @@ If you need to set a specific domain name keep reading :)
 
 ### Multiple Trackers
 
-Although Segment does not support loading multiple trackers through the destinations settings page (you will probably run into Google Universal Analytics's [rate limits](https://developers.google.com/analytics/devguides/collection/ios/v3/limits-quotas?hl=en)), you can load a 2nd tracker on the page manually.
+Although Segment does not support loading multiple trackers through the destinations settings page (you will probably run into Google Universal Analytics's [rate limits](https://developers.google.com/analytics/devguides/collection/ios/v3/limits-quotas?hl=en){:target="_blank"}), you can load a 2nd tracker on the page manually.
 
 Here's how you'd initialize the second tracker and send a pageview to the second tracker Google Universal Analytics property:
 
@@ -734,7 +734,7 @@ analytics.on('track', function(event, properties, options){
 });
 ```
 
-**Important**: Keep in mind you will need to do all the data translation/properties mapping inside this `.on()` function before you send the event to Google Universal Analytics like you see in the [destination code](https://github.com/segment-integrations/analytics.js-integration-google-analytics/blob/master/lib/index.js#L161-L207).
+**Important**: Keep in mind you will need to do all the data translation/properties mapping inside this `.on()` function before you send the event to Google Universal Analytics like you see in the [destination code](https://github.com/segment-integrations/analytics.js-integration-google-analytics/blob/master/lib/index.js#L161-L207){:target="_blank"}.
 
 To do this server side, you can create a separate [source](/docs/connections/sources/) in Segment, and within this source enter your GA credentials for the second tracker.
 
@@ -754,7 +754,7 @@ If you need to test on `localhost`, but don't need to track between multiple sub
 
 If you only want the cookie to persist on a single sub-domain, enter that sub-domain in the **Cookie Domain Name** field, like this: `swingline.example.com`. In this case visitors to `conclusions.example.com` or `example.com` will not be tracked.
 
-For more information on Google Universal Analytics cookies and domains name see [Google's docs on the subject](https://developers.google.com/analytics/devguides/collection/analyticsjs/domains).
+For more information on Google Universal Analytics cookies and domains name see [Google's docs on the subject](https://developers.google.com/analytics/devguides/collection/analyticsjs/domains){:target="_blank"}.
 
 
 ### Cross-Domain Tracking
@@ -790,7 +790,7 @@ analytics.ready(function () {
 
 To make things easy Segment enables `allowLinker` by default so all you need to do is run these two functions with any domains you want to track across to in the second call above.
 
-You'll have to send the `clientId` as described in the [Google Universal Analytics Domain Guide](https://developers.google.com/analytics/devguides/collection/analyticsjs/cross-domain) to get this setup.
+You'll have to send the `clientId` as described in the [Google Universal Analytics Domain Guide](https://developers.google.com/analytics/devguides/collection/analyticsjs/cross-domain){:target="_blank"} to get this setup.
 
 
 ### Site Search
@@ -808,7 +808,7 @@ In order to populate the Site Search report in Google Universal Analytics there 
 
 ### Webmaster Tools
 
-When you use Segment to load Google Universal Analytics, the script loads the Google Universal Analytics script. If you use [Google Universal Analytics as the verification option](https://support.google.com/webmasters/answer/1120006?hl=en) in Google Webmaster Tools, you'll need to switch to the [Meta tags verification option](https://support.google.com/webmasters/answer/79812?hl=en) instead. This will require you to find the `<meta name=google-site-verification" ..>`  tag in Webmaster Tools and place it in your master HTML template.
+When you use Segment to load Google Universal Analytics, the script loads the Google Universal Analytics script. If you use [Google Universal Analytics as the verification option](https://support.google.com/webmasters/answer/1120006?hl=en){:target="_blank"} in Google Webmaster Tools, you'll need to switch to the [Meta tags verification option](https://support.google.com/webmasters/answer/79812?hl=en){:target="_blank"} instead. This will require you to find the `<meta name=google-site-verification" ..>`  tag in Webmaster Tools and place it in your master HTML template.
 
 
 ### Cannonical Urls
@@ -820,12 +820,12 @@ Segment tracks the canonical URL and automatically sends it to Google Universal 
 > info ""
 > You can only use this feature in device-mode.
 
-To integrate with the Google Universal Analytics [Optimize plugin](https://support.google.com/360suite/optimize/answer/6262084#optimize-ga-plugin), insert your Optimize **Container ID** in your destination settings. Segment adds the plugin when Analytics.js next initializes the Google Universal Analytics snippet.
+To integrate with the Google Universal Analytics [Optimize plugin](https://support.google.com/360suite/optimize/answer/6262084#optimize-ga-plugin){:target="_blank"}, insert your Optimize **Container ID** in your destination settings. Segment adds the plugin when Analytics.js next initializes the Google Universal Analytics snippet.
 
 > warning ""
 > Make sure your Container ID is spelled correctly and that your Optimize container is ENABLED in Google. If you don't enable this, your Google Universal Analytics destination silently errors out every time you make a call.
 
-Google recommends that you deploy [page hiding](https://support.google.com/360suite/optimize/answer/6262084#page-hiding) to prevent the page from flashing or flickering when an A/B test loads. You must add this code manually, since it needs to load synchronously. Note that you must include the Optimize container ID in the page hiding snippet too.
+Google recommends that you deploy [page hiding](https://support.google.com/360suite/optimize/answer/6262084#page-hiding){:target="_blank"} to prevent the page from flashing or flickering when an A/B test loads. You must add this code manually, since it needs to load synchronously. Note that you must include the Optimize container ID in the page hiding snippet too.
 
 ### User Deletion
 

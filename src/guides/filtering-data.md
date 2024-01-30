@@ -36,11 +36,13 @@ You can use the `integrations` JSON object as part of your Segment payloads to c
 }
 ```
 
-By *default*, the `integrations` object is set to `'All': true`. You do not need to include this flag in the object to use this behavior, but if you'll be using the integrations object frequently to control destination filtering, you might want to do this to make it explicit for later readers. Change this to `'All': false` to prevent both Segment and any downstream destinations from receiving data. If you set `'Segment.io': false` in the integrations object, Analytics.js 2.0 drops the event before it reaches your Source Debugger. You can also add destinations to the object by key, and provide a `true` or `false` value to allow or disallow data to flow to them on an individual basis. The Destination Info box at the top of each destination page lets you know how to refer to each destination in the Integrations object. 
+By *default*, the `integrations` object is set to `'All': true`. You do not need to include this flag in the object to use this behavior, but if you'll be using the integrations object frequently to control destination filtering, you might want to do this to make it explicit for later readers. Change this to `'All': false` to prevent any downstream destinations from receiving data, not including data warehouses. If you set `'Segment.io': false` in the integrations object, Analytics.js 2.0 drops the event before it reaches your Source Debugger. You can also add destinations to the object by key, and provide a `true` or `false` value to allow or disallow data to flow to them on an individual basis. The Destination Info box at the top of each destination page lets you know how to refer to each destination in the Integrations object. 
 
 If you are using [multiple instances of a destination](/docs/connections/destinations/add-destination/#connecting-one-source-to-multiple-instances-of-a-destination), any settings you set in the integrations object are applied to all instances of the destination. You cannot specify an instance of a destination to apply Integrations object settings to. 
 
 Note that destination flags are **case sensitive** and match the destination's name in the docs (for example, "AdLearn Open Platform", "awe.sm", or "MailChimp").
+
+The syntax to filter data to a data warehouse is different. Refer to the [Warehouse FAQs](/docs/connections/storage/warehouses/faq/#can-i-selectively-filter-dataevents-sent-to-my-warehouse-based-on-a-property) for more details.
 
 
 ## Destination filters
@@ -87,6 +89,8 @@ When you enable these filters, Segment stops forwarding the data to all of your 
 Use this when you need to disable an event immediately, but may need more time to remove it from your code, or when you want to temporarily disable an event for testing. In addition to blocking track calls, you can block all page and screen calls, as well as omit identify traits and group properties.
 
 If the Source is not connected to a tracking plan, you'll find event filter toggles next to the Integration filters in the source's schema tab. When an event is set to block, the entire event is blocked. This means no destinations receive it, including data warehouses.
+
+When you block an event using Schema filters, it won't be considered in the MTU count unless blocked event forwarding is enabled.
 
 ![Event filter toggles](images/schema-event-filters.png)
 

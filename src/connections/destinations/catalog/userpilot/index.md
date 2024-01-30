@@ -7,8 +7,6 @@ id: 5ca9d0c1b7119500014381d3
 
 This destination is maintained by Userpilot. For any issues with the destination, [contact the Userpilot Support team](mailto:support@userpilot.io).
 
-{% include content/beta-note.md %}
-
 
 ## Getting Started
 

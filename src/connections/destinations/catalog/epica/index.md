@@ -3,11 +3,9 @@ title: EPICA Destination
 rewrite: true
 id: 5c6dca8369c83b0001d6b868
 ---
-[EPICA](https://www.epica.ai?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) is the world's first Prediction-as-a-Service platform. Powered by AI, EPICA captures, processes and analyses online data sources to accurately predict customer behavior. EPICA provides predictive analytics for growth marketers, using machine learning to automate audience insights and recommendations.
+[EPICA](https://www.epica.ai?utm_source=segmentio&utm_medium=docs&utm_campaign=partners){:target="_blank”} is the world's first Prediction-as-a-Service platform. Powered by AI, EPICA captures, processes and analyses online data sources to accurately predict customer behavior. EPICA provides predictive analytics for growth marketers, using machine learning to automate audience insights and recommendations.
 
 This destination is maintained by EPICA. For any issues with the destination, [contact the Epica Support team](mailto:support@epica.ai).
-
-{% include content/beta-note.md %}
 
 
 ## Getting Started
@@ -16,7 +14,7 @@ This destination is maintained by EPICA. For any issues with the destination, [c
 
 1. From the Segment web app, click **Catalog**.
 2. Search for "EPICA" in the Catalog, select it, and choose which of your sources to connect the destination to.
-3. Enter the "API Key" into your Segment Settings UI which you can find from your EPICA [Account settings](https://platform.epica.ai/account).
+3. Enter the "API Key" into your Segment Settings UI which you can find from your EPICA [Account settings](https://platform.epica.ai/account){:target="_blank"}.
 
 
 ## Page
@@ -68,7 +66,7 @@ analytics.track('Clicked Login Button', {
 })
 ```
 
-Track calls will be sent to EPICA as a `track` event and can be seen populated in the `Data Platform > Personas` section of EPICA [admin panel](https://platform.epica.ai/personas), which includes unified profiles across a single customer journey.
+Track calls will be sent to EPICA as a `track` event and can be seen populated in the `Data Platform > Personas` section of EPICA [admin panel](https://platform.epica.ai/personas){:target="_blank”}, which includes unified profiles across a single customer journey.
 
 There are two types of Personas:
 

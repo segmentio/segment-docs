@@ -14,7 +14,7 @@ id: 54521fd625e721e32a72eeb9
 
 1. From the Segment web app, click **Catalog**.
 2. Search for "Google Tag Manager" in the Catalog, select it, and choose which of your sources to connect the destination to.
-3. In your Segment UI's destination settings, enter your Container ID (note: it should start with "GTM-"). You can find this in the Admin section of your [GTM dashboard](https://tagmanager.google.com/#/admin/).
+3. In your Segment UI's destination settings, enter your Container ID (note: it should start with "GTM-"). You can find this in the Admin section of your [GTM dashboard](https://tagmanager.google.com/#/admin/){:target="_blank"}.
 4. GTM loads on any pages where your Segment snippet is initialized and `analytics.page` is called in client-side JavaScript. Once you've turned on GTM through Segment, you can use Segment `track` events to populate the GTM `dataLayer`, and remove the GTML snippet from your page.
 
 **Notes**
@@ -86,7 +86,7 @@ If you are seeing `404` error on the JavaScript console of your page and it is a
 ### Duplicate Events
 If you have Google Ads enabled and see duplicate events in GTM, check to see if the event is set as a conversion in Google Ads. Duplicate conversions are common when you use both Google Ads and GTM, since Segment's Adwords destination initializes the gtag script with the dataLayer itself. So, when you fire a mapped event, Segment submits the payload directly to the dataLayer.
 
-Google recommends using [transactionIds](https://support.google.com/google-ads/answer/6386790){:target="_blank" to prevent this duplication. 
+Google recommends using [transactionIds](https://support.google.com/google-ads/answer/6386790){:target="_blank"} to prevent this duplication. 
 
 
 ## Appendices

@@ -4,7 +4,7 @@ strat: google
 cmode-override: true
 id: 57ab9dfc80412f644ff2004c
 ---
-The [DoubleClick Floodlight](https://support.google.com/searchads/answer/7298761?hl=en) destination allows you to make calls directly to Floodlight based on your mapped events. All you have to do is enter your **DoubleClick Advertiser ID** in the Doubleclick Floodlight destinations settings in the Segment App, then map the Segment `track` events to their corresponding Floodlight tags.
+The [DoubleClick Floodlight](https://support.google.com/searchads/answer/7298761?hl=en){:target="_blank"} destination allows you to make calls directly to Floodlight based on your mapped events. All you have to do is enter your **DoubleClick Advertiser ID** in the Doubleclick Floodlight destinations settings in the Segment App, then map the Segment `track` events to their corresponding Floodlight tags.
 
 This destination _requires_ that you send device-specific information such as the `IDFA` or the `advertisingId`. The best way to send events to Doubleclick Floodlight from mobile devices is using [one of the Segment mobile libraries](/docs/connections/sources/catalog/#mobile), because they collect this information automatically. If you use [one of the Segment server source libraries](/docs/connections/sources/catalog/#server) instead, you must manually include the required `advertisingId`.  You can also send data from [Analytics.js](/docs/connections/sources/catalog/libraries/website/javascript/) and Segment makes direct HTTP requests to Doubleclick Floodlight from your browser.
 
@@ -85,7 +85,7 @@ See the [Analytics.js documentation](/docs/connections/sources/catalog/libraries
 
 ## Setting up Custom Variables
 
-There are two things you need to do in order to send custom track properties as custom Floodlight variables. Refer to Google's [Custom Floodlight Variables](https://support.google.com/campaignmanager/answer/2823222?hl=en) documentation.
+There are two things you need to do in order to send custom track properties as custom Floodlight variables. Refer to Google's [Custom Floodlight Variables](https://support.google.com/campaignmanager/answer/2823222?hl=en){:target="_blank"} documentation.
 
 Custom Floodlight variables use the keys u1=, u2=, and so on, and can take any values that you choose to pass to them. You can include custom Floodlight variables in any of your Floodlight activity tags and report on their values in Report Builder.
 

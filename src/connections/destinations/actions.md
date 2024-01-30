@@ -9,9 +9,6 @@ You can also choose which event types, event names, or event property values tri
 
 Each Actions-framework Destination you see in the Segment catalog represents a feature or capability of the destination which can consume data from your Segment source. The Action clearly lists which data from the events it requires, and which data is optional. For example, Amplitude requires that you always send a  `LogEvent` , or Slack always requires a `PostMessage`.  Each Action also includes a default mapping which you can modify.
 
-{% include content/ajs-upgrade.md %}
-
-
 ## Benefits of Destination Actions
 
 - **Easier setup**: Users see fewer initial settings which can decrease the time spent configuring the destination.
@@ -69,9 +66,6 @@ To set up a new Actions-framework destination for the first time:
 
 ## Migrate a classic destination to an actions-based destination
 
-{% include content/ajs-upgrade.md %}
-
-
 Moving from a classic destination to an actions-based destination is a manual process. Segment recommends that you follow the procedure below:
 
 1. Create the actions-based destination with your development or test source.
@@ -87,6 +81,8 @@ You can add or remove, disable and re-enable, and rename individual actions from
 From the edit screen you can change the action's name and mapping, and toggle it on or off. See [Customizing mappings](#customize-mappings) for more information.
 
 ![Screenshot of the Mappings table with several enabled mappings](images/actions-list.png)
+
+When an Action is created, it's disabled by default, to ensure that it's only used after being fully configured. To begin sending data through an Action, enable it on the Actions page by selecting the toggle so that it appears blue.
 
 ## Disable a destination action
 If you find that you need to stop an action from running, but don't want to delete it completely, you can click the action to select it, then click the toggle next to the action's name to disable it. This takes effect within minutes, and disables the action until you reenable it.

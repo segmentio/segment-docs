@@ -9,13 +9,13 @@ CommandBar gives your users a searchable index of your app's features and conten
 This source is maintained by CommandBar. For any issues with the source, contact the [CommandBar Support team](mailto:support@commandbar.com).
 
 ## Getting Started
-1. From your workspace's [Sources catalog page](https://app.segment.com/goto-my-workspace/sources/catalog) search for “CommandBar” and click **Add Source**.
+1. From your workspace's [Sources catalog page](https://app.segment.com/goto-my-workspace/sources/catalog){:target="_blank"} search for “CommandBar” and click **Add Source**.
 2. On the next screen, give the Source a nickname configure any other settings. The nickname will be used to designate the source in the Segment interface, and Segment will create a related schema name. The schema name is the namespace you’ll be querying against in your warehouse.
-3. Copy the Write Key from the Segment UI. If you are not sure where to find your write key, visit [Segment's help document](https://segment.com/docs/connections/find-writekey/).
-4. Log in to your [CommandBar account](https://app.commandbar.com/login), and navigate to the [Segment integration page](https://app.commandbar.com/integrations/segment).
+3. Copy the Write Key from the Segment UI. If you are not sure where to find your write key, visit [Segment's help document](/docs/connections/find-writekey/).
+4. Log in to your [CommandBar account](https://app.commandbar.com/login){:target="_blank"}, and navigate to the [Segment integration page](https://app.commandbar.com/integrations/segment){:target="_blank"}.
 5. Paste your Segment Write Key into the text box.
 6. Click “Connect”.
-7. [Optional] Send a test event from the [CommandBar Segment integration page](https://app.commandbar.com/integrations/segment), and check your Segment Source Debugger to ensure the integration is properly configured.
+7. [Optional] Send a test event from the [CommandBar Segment integration page](https://app.commandbar.com/integrations/segment){:target="_blank"}, and check your Segment Source Debugger to ensure the integration is properly configured.
 
 ## Events
 
@@ -27,7 +27,7 @@ Below is a table of events that CommanBar can send to Segment. These events will
 | Identify              | N/A                    | CommandBar booted                                                                                                                                               |
 | Opened                | `opened`               | CommandBar opened                                                                                                                                               |
 | Closed                | `closed`               | CommandBar closed. When the bar is closed with input text, it triggers both a `closed` event and a `dead end` event. Executions do not trigger `closed` events. |
-| Abandoned Search      | `abandoned_search`     | A [dead end](https://www.commandbar.com/docs/other/analytics#dead end-definition)                                                                               |
+| Abandoned Search      | `abandoned_search`     | A [dead end](https://www.commandbar.com/docs/other/analytics#deadend-definition){:target="_blank"}                                                                               |
 | Command Suggestion    | `command_suggestion`   | Command suggested                                                                                                                                               |
 | Command Execution     | `command_execution`    | Command executed                                                                                                                                                |
 | No Results For Query  | `no_results_for_query` | User's search returned no results                                                                                                                               |

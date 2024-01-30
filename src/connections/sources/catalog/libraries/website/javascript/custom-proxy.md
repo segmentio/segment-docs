@@ -69,13 +69,13 @@ Follow these instructions after setting up a proxy such as [CloudFront](#custom-
 ### Snippet instructions
 If you're a snippet user, you need to modify the [analytics snippet](/docs/getting-started/02-simple-install/#step-1-copy-the-snippet) that's inside your `<head>`.
 
-To proxy settings and destination requests that typically go to `https://cdn.segment.com`, replace:
+To proxy CDN settings and destination requests that typically go to `https://cdn.segment.com`, replace:
 ```diff
 - t.src="https://cdn.segment.com/analytics.js/v1/" + key + "/analytics.min.js"
 + t.src="https://MY-CUSTOM-CDN-PROXY.com/analytics.js/v1/" + key + "/analytics.min.js"
 ```
 
-To proxy tracking calls that typically go to `api.segment.io/v1`, replace:
+To proxy API tracking calls that typically go to `api.segment.io/v1`, replace:
 ```diff
 - analytics.load("<MY_WRITE_KEY>")
 + analytics.load("<MY_WRITE_KEY>", { integrations: { "Segment.io": { apiHost: "MY-CUSTOM-API-PROXY.com/v1" }}})
