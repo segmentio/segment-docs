@@ -41,8 +41,7 @@ Learn more about [GitHub's secret scanning program](https://docs.github.com/en/d
 
 ## OAuth 2.0
 
-> info ""
-> This feature is currently in pilot and is governed by Segment’s [First Access and Beta Preview Terms](https://www.twilio.com/en-us/legal/tos){:target="_blank"}. 
+You can authenticate and authorize the Public API using [OAuth 2.0](/docs/connections/oauth).
 
 ## FAQs
 #### What should I do if I see a notification that my token was exposed?

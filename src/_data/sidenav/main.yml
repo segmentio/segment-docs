@@ -260,6 +260,8 @@ sections:
         title: Speeding Up Redshift Queries
       - path: /connections/storage/warehouses/redshift-useful-sql
         title: Useful SQL Queries for Redshift
+  - path: /connections/regional-segment
+    title: Regional Segment
   - path: /connections/test-connections
     title: Event Tester
   - path: /connections/data-export-options
@@ -276,18 +278,8 @@ sections:
     title: Integration Error Codes
   - path: /connections/rate-limits
     title: Rate Limits
-  - path: /connections/regional-segment
-    title: Regional Segment
-# - section_title: Reverse ETL
-#   section:
-#   - path: /reverse-etl
-#     title: Reverse ETL Overview
-#   - path: /reverse-etl/bigquery-setup
-#     title: BigQuery Reverse ETL Setup
-#   - path: /reverse-etl/redshift-setup
-#     title: Redshift Reverse ETL Setup
-#   - path: /reverse-etl/snowflake-setup
-#     title: Snowflake Reverse ETL Setup
+  - path: /connections/oauth
+    title: OAuth 2.0
 - section_title: Unify
   section:
   - path: /unify

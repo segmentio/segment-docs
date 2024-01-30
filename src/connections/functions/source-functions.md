@@ -389,8 +389,7 @@ Copy and paste this URL into the upstream tool or service to send data to this s
 
 ## OAuth 2.0
 
-> info ""
-> OAuth 2.0 is currently in pilot and is governed by Segment’s [First Access and Beta Preview Terms](https://www.twilio.com/en-us/legal/tos){:target="_blank"}. 
+You can authenticate source functions with [OAuth 2.0](/docs/connections/oauth).
 
 ## Source function FAQs
 
