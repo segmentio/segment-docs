@@ -4,7 +4,6 @@ strat: google
 hide-settings: true
 id: 65302a3acb309a8a3d5593f2
 beta: true
-https://github.com/segmentio/segment-docs/blob/d4623aadec6f118fb5aa7ca846a9e6214c0d1129/src/connections/destinations/catalog/personas-display-video-360/index.md
 ---
 
 > info ""
@@ -113,14 +112,14 @@ To configure DoubleClick Floodlight:
 > info ""
 > These settings are tied to a single audience. Each additional audience you send to DV360 requires you to input these values.
 
-When you select the destination, you're prompted to complete the destination settings:
+When you select the destination, you're prompted to enter the destination settings:
 
 | Setting                        | Description                                                                                                                                                               |
 | ------------------------------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | Account Type                   | The type of DV360 account used to sync. Either `Advertiser`, `Partner`, or `Publisher`. **Note:** Select `Publisher` only if you plan to connect to Google Ad Manager.    |
 | Advertiser ID                  | The ID of your DV360 Advertiser account. Can be found in your Google Account under **Advertiser Settings > Basic Details > Advertiser ID**.                                                                                                                                       |
 
-Also toggle on the Send Track setting. 
+You'll also need to toggle on the Send Track setting. 
 
 
 After you complete the set up process, allow up to 24 hours for Google to create the new audience list. Once the list is created, Segment can begin to sync users to that list. Google may require additional time to process the initial audience additions. The entire first sync to DV360 may require 24-48 hours to complete. As a result, the first few audience syncs after you create the audience may fail.
