@@ -12,7 +12,7 @@ With Linked Profiles, you can build a Data Graph that defines relationships betw
 Make this relational data accessible to marketers and business stakeholders to empower them with the data they need to create targeted and personalized customer engagements.
 
 > success ""
-> Segment's Data Graph powers [Linked Events](/docs/unify/linked-profiles/linked-events/) and [Linked Audiences](/docs/unify/linked-profiles/linked-audiences/).
+> Segment's Data Graph powers [Linked Events](/docs/unify/linked-profiles/linked-events/) and [Linked Audiences](/docs/engage/audiences/linked-audiences/).
 
 ## Prerequisites
 
@@ -62,7 +62,10 @@ To connect your warehouse to the Data Graph:
 
 The Data Graph is a semantic layer that represents a subset of relevant business data that you'll use for audience targeting and personalization in downstream tools. 
 
-Use the configuration language spec below to add models to build your Data Graph. The Data Graph currently supports 6 layers of depth, including the Profile entity.
+Use the configuration language spec below to add models to build your Data Graph. The Data Graph currently supports 4 layers of depth, including the Profile entity.
+
+> info "Using the Data Graph with Linked Events"
+If you're using 
 
 ### Define entities
 
@@ -345,5 +348,5 @@ If you make one of these edits, recreate your existing Linked Audiences and/or r
 
 ## Next steps 
 
-After you've set up your Data Graph, get started with [Linked Audiences](/docs/unify/linked-profiles/linked-audiences/) and [Linked Events](/docs/unify/linked-profiles/linked-events/).
+After you've set up your Data Graph, get started with [Linked Audiences](/docs/engage/audiences/linked-audiences/) and [Linked Events](/docs/unify/linked-profiles/linked-events/).
 

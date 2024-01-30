@@ -1,7 +1,9 @@
 ---
 title: Linked Audiences
-plan: unify
+plan: engage-foundations
 beta: true
+redirect_from: 
+    - '/unify/linked-profiles/linked-audiences'
 ---
 
 > info "Linked Audiences is in private beta"

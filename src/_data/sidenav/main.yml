@@ -338,8 +338,6 @@ sections:
           title: Redshift Setup
     - path: /unify/linked-profiles/data-graph
       title: Data Graph
-    - path: /unify/linked-profiles/linked-audiences
-      title: Linked Audiences
     - path: /unify/linked-profiles/linked-events
       title: Linked Events
  
@@ -407,6 +405,8 @@ sections:
       title: Audiences Overview
     - path: '/engage/audiences/account-audiences'
       title: Account-level Audiences
+    - path: /engage/audiences/linked-audiences
+      title: Linked Audiences
     - path: '/engage/audiences/organization'
       title: Organize Audiences
 
