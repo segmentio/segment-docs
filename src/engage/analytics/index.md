@@ -41,7 +41,7 @@ The following table lists the email campaign metrics that Engage tracks:
 | ------------------ | -------------------------------------------------------------------------------------------------- |
 | Sent               | The number of emails campaigns that you sent.                                                      |
 | Delivered          | The number of emails campaigns that were accepted by the receiving inbox server.                   |
-| Opened             | The number of times that your email campaigns were opened.                                         |
+| True Opened        | The number of times that your email campaigns were opened, not including machine opens.            |
 | Clicked            | The number of times that recipients clicked within your email campaigns.                           |
 | Converted          | The number of conversions that took place after campaign publication; based on delivered messages. |
 | Click-to-Open Rate | The number of clicks compared to the number of opens for a campaign.                               |
@@ -51,6 +51,13 @@ The following table lists the email campaign metrics that Engage tracks:
 
 SendGrid powers Engage's email campaign event analytics. For more details on email metrics, view SendGrid's [Marketing Campaigns Statistics Overview](https://docs.sendgrid.com/ui/analytics-and-reporting/marketing-campaigns-stats-overview){:target="_blank"}.
 
+### Understanding machine opens
+
+Machine opens occur when an email client automatically opens an email, giving the impression that a user opened your email even if they haven’t.
+
+Segment tracks machine opens and subtracts them from the total number of opened emails. Segment displays this number in the **True Opened** tile, which gives a more reliable count of how many real users opened your campaign.
+
+Hover over the **True Opened** tile for any campaign to see a full comparison of machine opens and true opens.
 
 ## SMS metrics
 

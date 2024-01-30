@@ -3,7 +3,7 @@ title: Drip Destination
 id: 54521fd525e721e32a72eeaa
 cmode-override: true
 ---
-The Drip destination code is all open-source on GitHub if you want to check it out: [JavaScript](https://github.com/segment-integrations/analytics.js-integration-drip),(iOS and Android work using the server destination).
+The Drip destination code is all open-source on GitHub if you want to check it out: [JavaScript](https://github.com/segment-integrations/analytics.js-integration-drip){:target="_blank"},(iOS and Android work using the server destination).
 
 ## Getting Started
 

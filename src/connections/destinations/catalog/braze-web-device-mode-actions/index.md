@@ -34,8 +34,6 @@ Braze Web Mode (Actions) provides the following benefits over Braze Classic:
 
 {% include components/actions-fields.html settings="true"%}
 
-{% include components/actions-fields.html%}
-
 ## Other features
 
 Braze Web Mode (Actions) can use the following features of Braze.
@@ -169,8 +167,6 @@ For more details on this snippet, see Braze's documentation [here](https://www.b
 
 
 ## Migration from Braze Classic
-
-{% include content/ajs-upgrade.md %}
 
 Keep the following in mind if you plan to move to Braze (Actions) from the classic Braze destination.
 {% include components/actions-map-table.html name="braze-web" %}

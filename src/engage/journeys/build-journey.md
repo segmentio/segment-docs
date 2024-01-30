@@ -24,6 +24,9 @@ For more information, see [Setting up your Sources](/docs/engage/quickstart/#ste
 4. Segment displays the entry condition on the Journey Builder canvas. It may take up to two minutes for Segment to estimate the number of users in the journey.
 5. Click **+** to add the next step and view available step types.
 
+> info ""
+> Segment recommends that your entry condition's time window be shorter than or equal to any [exit settings](#journey-exits-and-re-entry) you have. This prevents users from repeating your journey an excessive amount of times. 
+
 ### Using historical data for the entry step
 
 If you select the **Use historical data** option, Segment queries all historical data to generate a list of users who enter the Journey upon publication. If you don't select **Use historical data**, only users who satisfy the entry condition *after* you publish enter the Journey.
@@ -90,7 +93,7 @@ Follow these steps to resume entry to a paused Journey:
 1. Select the **Journeys** tab within your Engage space.
 2. Select the **More Options** icon next to the Journey you want to resume.
 3. From the dropdown menu, select **Resume Entry**.
-4. A modal window appears. Select **Resume Entry** again to confirm.
+4. A modal window appears. Select **Resume Entry** again to confirm. After the confirmation, editing locks until the Journey Resume process completes.
 
 ### Cloning a Journey
 

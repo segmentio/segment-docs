@@ -3,16 +3,14 @@ rewrite: true
 title: Strikedeck Destination
 id: 5c940e99e3498f000177880c
 ---
-[Strikedeck](https://strikedeck.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) is a Customer Success platform which actively manages customer relationships to reduce churn, increase existing revenue and influence new sales. Strikedeck includes  Customer Engagement Analytics, Health Scorecard, Notifications, Recommendations & Actions.
+[Strikedeck](https://strikedeck.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners){:target="_blank”} is a Customer Success platform which actively manages customer relationships to reduce churn, increase existing revenue and influence new sales. Strikedeck includes  Customer Engagement Analytics, Health Scorecard, Notifications, Recommendations & Actions.
 
 Strikedeck maintains this documentation. For any issues with the destination, [contact the Strikedeck Support team](mailto:support@strikedeck.com).
-
-{% include content/beta-note.md %}
 
 
 ## Getting Started
 
-{% include content/connection-modes.md %}
+
 
 1. From the Segment web app, click **Catalog**.
 2. Search for "Strikedeck" in the Catalog, select it, and choose which of your sources to connect the destination to.

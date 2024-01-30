@@ -1,9 +1,7 @@
 ---
 title: Forward Violations
+plan: protocols
 ---
-
-{% include content/plan-grid.md name="protocols" %}
-
 
 You can forward Violations (data that does not conform to your Protocols tracking plan) to a Segment Source to enable custom notifications, dashboards and further analysis in any Segment destination that accepts cloud-mode data. 
 

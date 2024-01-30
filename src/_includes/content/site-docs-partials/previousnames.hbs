@@ -1,6 +1,0 @@
-<h2>Adding {{ integration.name }} to the integrations object</h2>
-
-To add {{ integration.name }} to the <code>integrations</code> JSON object (for example, <a href="https://segment.com/docs/guides/general/filtering-data/#filtering-with-the-integrations-object">to filter data from a specific source</a>), use one of the {{ integration.previousNames.length }} valid names for this integration:
-{{#each integration.previousNames}}
-        <li><code>{{this}}</code></li>
-    {{/each}}

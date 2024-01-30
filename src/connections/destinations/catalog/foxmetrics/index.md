@@ -3,11 +3,11 @@ title: FoxMetrics Destination
 rewrite: true
 id: 54521fd625e721e32a72eeb2
 ---
-[FoxMetrics](https://www.foxmetrics.com/) is a personalization platform that allows users to collect & analyze customer actions through computers, mobile, and web applications. The `analytics.js` FoxMetrics destination is open-source. You can browse the code [on GitHub](https://github.com/segment-integrations/analytics.js-integration-foxmetrics).
+[FoxMetrics](https://www.foxmetrics.com/){:target="_blank"} is a personalization platform that allows users to collect & analyze customer actions through computers, mobile, and web applications. The `analytics.js` FoxMetrics destination is open-source. You can browse the code [on GitHub](https://github.com/segment-integrations/analytics.js-integration-foxmetrics){:target="_blank"}.
 
 ## Getting Started
 
-{% include content/connection-modes.md %}
+
 
 1. From the Segment web app, click **Catalog**.
 2. Search for "FoxMetrics" in the Catalog, select it, and choose which of your sources to connect the destination to.

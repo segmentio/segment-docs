@@ -16,6 +16,8 @@ The object means that you are successfully loading Analytics.js onto your websit
 
 ![Returning analytics object error](images/CFsktto.gif)
 
+Segment also provides a Chrome web extension, [Segment Inspector](/docs/connections/sources/catalog/libraries/website/javascript/#segment-inspector), which you can use to validate that you're successfully loading Analytics.js.
+
 Solution: [Follow the Analytics.js Quickstart Guide](/docs/connections/sources/catalog/libraries/website/javascript/quickstart/)
 
 ## Are you loading two instances of Analytics.js?
@@ -30,7 +32,9 @@ ENV === 'production' ? writeKey = 'A' : writeKey = 'B';
 
 ## Do you see events appear in your debugger?
 
-When you reload the page, does your debugger show a new [`page`](/docs/connections/spec/page) and an [`identify`](/docs/connections/spec/identify) call? You can also check the JavaScript console in the browser and manually fire an `identify` call as such, which would show up in the debugger.
+When you reload the page, does your debugger show a new [`page`](/docs/connections/spec/page)? You can also check the JavaScript console in the browser and manually fire an event, like an Identify call, which would show up in the debugger.
+
+- You can also use [Segment's Chrome extension](/docs/connections/sources/catalog/libraries/website/javascript/#segment-inspector)to inspect events.
 
 ![Making an identify call](images/7Ymnh2S.gif)
 
@@ -39,6 +43,10 @@ If the call doesn't appear in the debugger, open up the JavaScript console and c
 ![Checking for calls in the network tab](images/d8CmIY2.png)
 
 In the above, the `p` is a [`page`](/docs/connections/spec/page) call and the `i` is an [`identify`](/docs/connections/spec/identify) call. If you don't at least see the `p`, then check if you are loading Analytics.js correctly.
+
+## Using the Segment Chrome extension to validate your implementation
+
+The [Segment Inspector](/docs/connections/sources/catalog/libraries/website/javascript/#segment-inspector) is a Chrome extension designed for debugging Segment integrations in web applications using Analytics.js. The Inspector lets you view and verify event data before it's sent to destinations. Additionally, the tool confirms that API calls from your website reach your Analytics.js source correctly.
 
 
 ## Is data being transmitted to your third-party destinations?
@@ -74,15 +82,26 @@ The JavaScript console reveals all requests, outbound and inbound, to your brows
 - **Safari**: `COMMAND+OPTION+I` (Mac) or `CTRL+ALT+I` (Windows) and then click on the **Console** tab.
 - **IE**: `F12` and then click on the **Console** tab.
 
+Alternatively, Segment provides the [Segment Inspector](/docs/connections/sources/catalog/libraries/website/javascript/#segment-inspector), a Chrome web extension designed to enable debugging of your Segment integration in web applications that are instrumented with Analytics.js.
+
 ## Is there a size limit on requests?
 
 Yes, 32KB per event message. Events with a payload larger than 32KB are accepted by Analytics.js, with the browser returning a `200` response from the Segment servers, but the event will be silently dropped once it enters Segment's pipeline. 
+
+## Analytics.js failing to load due to Ad Blockers or Browser Privacy Settings
+
+Segment advises against circumventing tracking blockers or browser privacy settings for client-side tracking. The user has ultimate control as to what gets loaded on the page. Segment acknowledges that this can result in some data loss in client-side tracking and suggests [workarounds](/docs/connections/sources/catalog/libraries/website/javascript/#ad-blocking) to address this issue.
+
+## Analytics.js and Destinations not tracking query string parameters on certain Safari iOS and MacOS Versions
+
+Due to updates in certain Safari iOS and MacOS versions, Segment's Analytics.js and Destinations tools might experience limitations in capturing query string parameters. As a result, you may notice some events missing campaign information.
 
 ## If Analytics.js fails to load, are callbacks not fired?
 
 In the event that Analytics.js does not load, callbacks passed into your API calls do not fire. This is as designed, because the purpose of callbacks are to provide an estimate that the event was delivered and if the library never loads, the events won't be delivered.
 
 ## Why do I see a network request to `/m`?
+
 In May 2018, Segment released a change to Analytics.js that collects client-side performance metrics in Analytics.js. This includes metrics like:
 
 - When client side integrations are initialized and when they fail
@@ -93,6 +112,7 @@ Segment added these metrics to proactively identify and resolve issues with indi
 There should be no noticeable impact to your data flow. You may notice Analytics.js make an extra network request in the network tab to carry the metrics data to Segment's servers. This should be very infrequent since the data is sampled and batched every 30 seconds, and should not have any impact of website performance.
 
 ## How are properties with `null` and `undefined` values treated?
+
 Segment uses the [`JSON.stringify()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON/stringify){:target="blank"} method under the hood. Property values set to `null` or `undefined` are treated in accordance with the expected behaviour for the standard method:
 
 ```js
@@ -113,7 +133,7 @@ Segment correctly sets cookies with the 'SameSite' attribute with Analytics.js.
 If you see this warning, it is because you previously visited http://segment.com, and are getting the warning due to unrelated cookies. To verify that this is the issue, visit your page in Incognito Mode and confirm that the warning no longer occurs. Your users won't see this warning unless they _also_  visited http://segment.com.
 
 
-### Can I overwrite the context fields?
+## Can I overwrite the context fields?
 
 Yes.  This can be useful if some of these fields contain information you don't want to collect.
 
@@ -143,7 +163,7 @@ analytics.page("Receipt Page", {
 ```
 
 
-### What is the impact of exposing the source's write keys?
+## What is the impact of exposing the source's write keys?
 
 For the Segment script to work in the browser, you need to expose the write key in order for client-side tracking to work. Segment's library architecture requires the write key to be exposed, similar to that of other major tools like Google Analytics, Mixpanel, Kissmetrics, Hubspot, and Marketo.
 
@@ -151,7 +171,7 @@ If you see any unusual behavior associated with your write key, you can generate
 
 If you want to hide the write key, you can use Segment's [HTTP Tracking API source](/docs/connections/sources/catalog/libraries/server/http-api/) or one of the other [server-side libraries](/docs/connections/sources/catalog/#server).
 
-### Can I add context fields that do not already exist?
+## Can I add context fields that do not already exist?
 
 Yes. Similar to overwriting context, you can add context fields by passing them into the options object as the third argument of the event call. For example, the analytics.js library does not automatically collect location information. To add this into the context object, pass it into the third argument as in the example below:
 
@@ -169,11 +189,20 @@ analytics.track("Order Completed", {}, {
 
 Some destinations accept properties only. As a result, custom context fields you add may not forward to these destinations.
 
-### Why am I seeing additional cookies on my website?
+## Why am I seeing additional cookies on my website?
 
 The AJS cookies being set under segment.com are first-party cookies. They are part of Segment's own implementation as well as the destination Segment uses. These cookies are not related to your implementation of Segment, and you only see them because you've visited Segment's domain using the same browser. They are sent to the writekey connected to Segment's own workspace, and are associated with the events Segment tracks when you visit segment.com.
 
+## Will Google Chrome's third-party cookie changes impact Segment Analytics.js?
+
+No, Analytics.js isn't affected by this change. This is because Analytics.js only creates first-party cookies. Unlike third-party cookies, which are set by external services and blocked by the [new Chrome update](https://developers.google.com/privacy-sandbox/3pcd){:target="_blank"}.
+
+Regarding cookies set by [device-mode destinations](/docs/connections/destinations/#connection-modes), it's important to note that Segment's primary function is to load third-party SDKs and forward events to them. As a result, the usage and management of cookies are entirely at the discretion of each individual SDK. For instance, if you have concerns about destinations setting third-party cookies, it's best to consult directly with the destination providers for detailed information. For example, Amplitude, one of the destinations in the Segment catalog, offers [more information on this topic](https://www.docs.developers.amplitude.com/guides/cookies-consent-mgmt-guide/#frequently-asked-questions){:target="_blank"}.
+
+## How is the referrer value set?
+
+The Analytics.js library sets the `context.page.referrer` value from the `window.document.referrer` [property](https://developer.mozilla.org/en-US/docs/Web/API/Document/referrer){:target="_blank"} set in the browser. If you notice unexpected referrer values reaching Segment, check how this value is being set on your website.
 
 ## Known issues:
 
-[Review and contribute to these on GitHub](https://github.com/segmentio/analytics.js/issues)
+[Review and contribute to these on GitHub](https://github.com/segmentio/analytics.js/issues).

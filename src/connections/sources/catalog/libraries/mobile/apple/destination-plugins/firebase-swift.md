@@ -12,9 +12,11 @@ Firebase’s destination plugin code is open source and available on GitHub. You
 > the Firebase library itself will be installed as an additional dependency.
 
 ### through Xcode
-In the Xcode `File` menu, click `Add Packages`.  You'll see a dialog where you can search for Swift packages.  In the search field, enter the URL to this repository.
+In the Xcode `File` menu, click `Add Packages`.  You'll see a dialog where you can search for Swift packages.  In the search field, enter the URL to this repository:
 
-https://github.com/segment-integrations/analytics-swift-firebase{:target="_blank"}
+```
+https://github.com/segment-integrations/analytics-swift-firebase
+```
 
 You'll then have the option to pin to a version, or specific branch, as well as which project in your workspace to add it to.  Once you've made your selections, click the `Add Package` button.  
 

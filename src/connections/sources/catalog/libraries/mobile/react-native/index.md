@@ -1,6 +1,7 @@
 ---
 title: Analytics for React Native
 strat: react-native
+support_type: flagship
 id: B0X0QmvMny
 ---
 
@@ -9,7 +10,7 @@ With Analytics for React Native, you can collect analytics in your React Native 
 All of Segment's libraries are open-source, and you can view Analytics for React Native on GitHub. For more information, see the [Analytics React Native GitHub repository](https://github.com/segmentio/analytics-react-native){:target="_blank"}.
 
 > info "Using Analytics for React Native Classic?"
-> Segment no longer supports Analytics React Native versions [1.5.1 and older](/docs/connections/sources/cataog/libraries/mobile/react-native/classic). Use the [implementation guide](/docs/connections/sources/catalog/libraries/mobile/react-native/implementation/) to upgrade to the latest version. 
+> As of May 15, 2023, Segment ended support for [Analytics React Native Classic](/docs/connections/sources/catalog/libraries/mobile/react-native/classic), which includes versions 1.5.1 and older. Use the [implementation guide](/docs/connections/sources/catalog/libraries/mobile/react-native/implementation/) to upgrade to the latest version.
 
 > warning ""
 > `@segment/analytics-react-native` is compatible with Expo's [Custom Dev Client](https://docs.expo.dev/development/getting-started/){:target="_blank"} and [EAS builds](https://docs.expo.dev/build/introduction/){:target="_blank"} without any additional configuration. Destination Plugins that require native modules may require custom [Expo Config Plugins](https://docs.expo.dev/guides/config-plugins/){:target="_blank"}.
@@ -22,18 +23,25 @@ To get started with the Analytics for React Native library:
 1. Create a React Native Source in Segment.
     1. Go to **Connections > Sources > Add Source**.
     2. Search for React Native and click **Add source**.
-2. Install `@segment/analytics-react-native`, [`@segment/sovran-react-native`](https://github.com/segmentio/sovran-react-native){:target="_blank"} and [`react-native-get-random-values`](https://github.com/LinusU/react-native-get-random-values){:target="_blank"}:
+2. Install `@segment/analytics-react-native`, [`@segment/sovran-react-native`](https://github.com/segmentio/analytics-react-native/tree/master/packages/sovran){:target="_blank"} and [`react-native-get-random-values`](https://github.com/LinusU/react-native-get-random-values){:target="_blank"}. You can install in one of two ways: 
 
     ```js
     yarn add @segment/analytics-react-native @segment/sovran-react-native react-native-get-random-values
-    # or
+    ```
+    or
+   
+    ```js
     npm install --save @segment/analytics-react-native @segment/sovran-react-native react-native-get-random-values
     ```
-3. If you want to use the default persistor for the Segment Analytics client, you also have to install `react-native-async-storage/async-storage.`
+    
+3. If you want to use the default persistor for the Segment Analytics client, you also have to install `react-native-async-storage/async-storage.` You can install in one of two ways: 
 
     ```js
     yarn add @react-native-async-storage/async-storage 
-    # or
+    ```
+    or
+    
+    ```js
     npm install --save @react-native-async-storage/async-storage
     ```
     
@@ -282,6 +290,8 @@ reset();
 ```
 {% endcodeexampletab %}
 {% endcodeexample %}
+
+{% include content/reset-mobile.md %}
 
 ### Flush
 By default, the analytics client sends queued events to the API every 30 seconds or when 20 events accumulate, whichever occurs first. This also occurs whenever the app resumes if the user has closed the app with some events unsent. These values can be modified by the `flushAt` and `flushInterval` config options. You can also trigger a flush event manually.
@@ -692,5 +702,54 @@ import {
     }
   }
 ```
+### How do I add to the context Object?
+Like with the integrations object above, you'll need to use a plugin to access and modify the context object. For example, if you'd like to add `context.groupId` to every Track call, you should create a plugin like this:
+```js
+//in AddToContextPlugin.js
+import {
+  Plugin,
+  PluginType,
+  SegmentEvent,
+} from '@segment/analytics-react-native';
+
+export class AddToContextPlugin extends Plugin {
+  // Note that `type` is set as a class property
+  // If you do not set a type your plugin will be a `utility` plugin (see Plugin Types above)
+  type = PluginType.enrichment;
+
+ async execute(event: SegmentEvent) {
+    if (event.type == EventType.TrackEvent) {
+      event.context['groupId'] = 'test - 6/8'
+      }
+      return event;
+    }
+}
+ // in App.js
+
+import { AddToContextPlugin } from './AddToContextPlugin'
+
+segmentClient.add({ plugin: new AddToContextPlugin() });  
+```
+
+### I've upgraded to React Native 2.0, but I am still getting warnings in the Google Play Store that my app is not compliant. Why is this?
+The React Native 2.0 library is compliant with Google Play Store policies. However, Segment recommends that you check to see if there are any old and inactive [tracks on the Google Play Store](https://developers.google.com/android-publisher/tracks){:target="_blank"} that are not updated to the latest build. If this is the case, we recommend updating those tracks to resolve the issue. 
+
+### Can I set inlineRequires to false in my metro.config.js file?
+Segment requires the `inlineRequires` value in your `metro.config.js` value to be set to `true`. To disable `inlineRequires` for certain modules, you can specify this by using a [blockList](https://facebook.github.io/metro/docs/configuration/#:~:text=If%20inlineRequires%20is%20an%20object){:target="_blank"}.
+
+### Can I clear user traits without calling the reset() method?
+The set method on userInfo can accept a function that receives the current state and returns a modified desired state. Using this method, you can return the current traits, delete any traits you no longer wish to track, and persist the new trait set.
+
+```js
+segmentClient.userInfo.set((currentUserInfo) => {
+  return {
+    ...currentUserInfo, 
+    traits: {
+        // All the traits except the one you want to delete
+       persistentTrait: currentUserInfo.persistentTrait
+    }
+  });
+```
+
 ## Changelog
 [View the Analytics React Native changelog on GitHub](https://github.com/segmentio/analytics-react-native/releases){:target="_blank"}.

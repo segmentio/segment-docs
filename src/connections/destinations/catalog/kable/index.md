@@ -12,7 +12,7 @@ This Segment destination is maintained by Kable. For any questions or issues, pl
 
 ## Getting Started
 
-{% include content/connection-modes.md %} 
+ 
 
 1. From the Segment web app, click **Catalog** then **Destinations**. 
 2. Search for **Kable** in the Destinations Catalog, and select **Kable**.

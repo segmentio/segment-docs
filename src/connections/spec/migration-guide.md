@@ -37,7 +37,7 @@ The following changes affect only the `options` or `context` object. The standar
 
 ## Alias
 
-The following changes only affect the `alias` method.
+The following changes only affect the Alias method.
 
 * `from` is now `previousId`
 * `to` is now `userId`
