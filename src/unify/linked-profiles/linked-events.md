@@ -108,17 +108,18 @@ An entity is a stateful representation of a business object. The entity correspo
 | ----------- | --------------------------------------------------------------------- |
 | `entity`      | A unique slug for the entity, which is immutable and treated as a delete if you make changes. The slug must be in all lowercase, and supports dashes or underscores (for example, `account-entity` or `account_entity`).    |
 | `name`        | A unique label which will display across Segment.                           |
-| `table_ref`   | Define the table reference. In order to specify a connection to your table in Snowflake, a fully qualified table reference is required: `[database name].[schema name].[table name]`. |
+| `table_ref`   | Defines the table reference. In order to specify a connection to your table in Snowflake, a fully qualified table reference is required: `[database name].[schema name].[table name]`. |
 | `primary_key` | The unique identifier for the given table. Should be a column with unique values per row. |
-| (Optional) `enrichment_enabled = true`      | Indicate if you plan to also reference the entity table for [Linked Events](/docs/unify/linked-profiles/linked-events/).                         |
+| (Optional) `enrichment_enabled = true`      | Indicates if you plan to also reference the entity table for [Linked Events](/docs/unify/linked-profiles/linked-events/).                         |
 
 
 
 ```python
 # Define an entity and optionally indicate if the entity will be referenced for Linked Events (event enrichment)
 
-entity "account" {
-     table_ref = "cust.account"
+entity "account-entity" {
+     name = "account"
+     table_ref = "CUST.ACCOUNT"
      primary_key = "id"
      enrichment_enabled = true
 }
