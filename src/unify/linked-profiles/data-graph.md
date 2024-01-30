@@ -17,7 +17,7 @@ Make this relational data accessible to marketers and business stakeholders to e
 ## Prerequisites
 
 To use the Data Graph, you'll need the following:
-- A Snowflake Data Warehouse. 
+- A Snowflake data warehouse. 
 - An [actions-based destination](/docs/connections/destinations/actions/#available-actions-based-destinations).
 
 > info ""
@@ -101,7 +101,7 @@ An entity is a stateful representation of a business object. The entity correspo
 | Parameters     | Definition                                                           |
 | ----------- | --------------------------------------------------------------------- |
 | `entity`      | A unique slug for the entity, which is immutable and treated as a delete if you make changes. The slug must be in all lowercase, and supports dashes or underscores (for example, `account-entity` or `account_entity`).    |
-| `name`        | A unique label which will display across Segment.                           |
+| `name`        | A unique label which displays across Segment.                           |
 | `table_ref`   | Define the table reference. In order to specify a connection to your table in Snowflake, a fully qualified table reference is required: `[database name].[schema name].[table name]`. |
 | `primary_key` | The unique identifier for the given table. Should be a column with unique values per row. |
 | (Optional) `enrichment_enabled = true`      | Indicate if you plan to also reference the entity table for [Linked Events](/docs/unify/linked-profiles/linked-events/).                         |
