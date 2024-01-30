@@ -12,6 +12,9 @@ Use Linked Events to enrich real-time event streams with entities from your data
 
 On this page, you'll learn how to get started with Linked Events.
 
+> info "Linked Events warehouse support"
+> Linked Events supports Snowflake, BigQuery, and Redshift.
+
 ## Use cases
 
 With Linked Events, you can:
@@ -156,7 +159,7 @@ Use enrichments to select the entity you wish to send to your downstream destina
 
 In the Mappings tab, locate the **Select Mappings** section where you can enrich source properties from the entities you've selected in the previous step.
 
-1. Select the propery field that you'd like to enrich, then select the **Enrichments** tab. 
+1. Select the property field that you'd like to enrich, then select the **Enrichments** tab. 
 2. Select the entity you want to send to your destination. 
 - You’ll have access to all rows/columns in your data warehouse associated with the property you've selected in the previous step.
 3. Add the key name on the right side, which is what Segment sends to your destination. 

@@ -4,6 +4,9 @@ plan: unify
 beta: true
 ---
 
+> info "Segment's Data Graph is in private beta"
+> The Data Graph is in private beta, and Segment is actively working on this feature. Some functionality may change before it becomes generally available. [Contact Segment](https://segment.com/help/contact/){:target="_blank"} with any feedback or questions.
+
 With Linked Profiles, you can build a Data Graph that defines relationships between any entity data set in the warehouse and the Segment Profiles you send with Profiles Sync. 
 
 Make this relational data accessible to marketers and business stakeholders to empower them with the data they need to create targeted and personalized customer engagements.
@@ -15,10 +18,10 @@ Make this relational data accessible to marketers and business stakeholders to e
 
 To use the Data Graph, you'll need the following:
 - A Snowflake Data Warehouse. 
-- An [Actions-based Destination](/docs/connections/destinations/actions/#available-actions-based-destinations).
+- An [actions-based destination](/docs/connections/destinations/actions/#available-actions-based-destinations).
 
 > info ""
-> Linked Profiles follows Zero Copy principles, and doesn't copy entities to store in Segment. Segment stores and processes all data in the United States. 
+> Linked Profiles follows zero-copy principles, and doesn't copy entities to store in Segment. Segment stores and processes all data in the United States. 
 
 > warning ""
 > Don't send any personal health information with the Data Graph.
@@ -47,10 +50,11 @@ To track what data has been sent to Segment on previous syncs, Segment stores de
 
 To connect your warehouse to the Data Graph:
 
-1. In your Segment workspace, navigate to **Unify**, and select **Data Graph**.
+1. Navigate to **Unify > Data Graph**.
 - This should be a Unify space with Profiles Sync already set up.
 2. Click **Connect warehouse**.
 3. Select your warehouse type.
+- Note that Linked Audiences only supports Snowflake.
 4. Enter your warehouse credentials. 
 5. Test your connection, then click **Save**.
 
@@ -58,20 +62,11 @@ To connect your warehouse to the Data Graph:
 
 The Data Graph is a semantic layer that represents a subset of relevant business data that you'll use for audience targeting and personalization in downstream tools. 
 
-Use the configuration language spec below to add models to build your Data Graph.
-
-### Delete and edit entities and/or relationships from your Data Graph
-
-> info ""
-> Each Unify space has one Data Graph. The current version is v0.0.6.
-
-Segment recommends creating a new Linked Audience or Linked Event. Deleting entities and relationships are not yet supported. Editing entities and relationships in the Data Graph may lead to errors if these entities or relationships are referenced in existing Linked Audiences and Linked Events. 
-
-While you can delete relationships or entities from the Data Graph, these relationships and entities will still display in the Linked Audience builder and Linked Events.
+Use the configuration language spec below to add models to build your Data Graph. The Data Graph currently supports 6 layers of depth, including the Profile entity.
 
 ### Define entities
 
-Use the parameters, defintions, and examples below to help you define entities.
+Use the parameters, definitions, and examples below to help you define entities.
 
 > warning ""
 > Snowflake schemas are case sensitive, so you'll need to reflect the schema, table, and column names based on how you case them in Snowflake.
@@ -131,7 +126,6 @@ Use the following relationship, parameters, and examples to help you relate enti
 > warning ""
 > Snowflake schemas are case sensitive, so you'll need to reflect the schema, table, and column names based on how you case them in Snowflake.
 
-<!--Bookmark -->
 #### Relate Entity to Profile
 
 | Parameters     | Definition                                                           |
@@ -194,7 +188,7 @@ data_graph {
 | `relationship`      | A unique slug for the relationship, which is immutable and treated as a delete if you make changes. The slug must be in all lowercase and will support dashes or underscores (for example, `user-account` or `user_account`).   |
 | `name`        | This should be a unique label that displays throughout your Segment space.                          |
 | `related_entity`   | Reference your already defined entity. |
-| `join_on`         |    Define relationships between two entity tables `[lefty entity name].[column name] = [right entity name].[column name]`. Note that the entity name is a reference to the alias provided in the config and doesn't need to be the fully qualified table name. |
+| `join_on`         |    Defines relationships between two entity tables `[lefty entity name].[column name] = [right entity name].[column name]`. Note that the entity name is a reference to the alias provided in the config and doesn't need to be the fully qualified table name. |
 
 
 ```py
@@ -215,15 +209,17 @@ data_graph {
 
 ```
 
-#### relating entities with a junction table
+#### Relating entities with a junction table
 
-If you're relating entities with a junction table:
+If you're relating entities with a junction table:    
 
-- `Junction_table`: Define relationships between two entities tables joined by a junction table.
-     - `table_ref`: Define the table reference to the join table. In order to specify a connection to your table in Snowflake, a fully qualified table reference is required: `[database name].[schema name].[table name]`.
-     - `primary_key`: The unique identifier on the join table and should be a column with unique values per row.
-     - `left_join_on`: Define relationship between the two entity tables: `[left entity name].[column name] = [junction table column name]`.
-     - `right_join_on`: Define relationship between the two entity tables: `[junction table column name] = [right entity name].[column name]`.
+| Parameters     | Definition                                                           |
+| ----------- | --------------------------------------------------------------------- |
+| `Junction_table`      | Define the table reference to the join table. In order to specify a connection to your table in Snowflake, a fully qualified table reference is required: `[database name].[schema name].[table name]`.  |
+| `table_ref`      | Define the table reference to the join table. In order to specify a connection to your table in Snowflake, a fully qualified table reference is required: `[database name].[schema name].[table name]`.  |
+| `primary_key`    | The unique identifier on the join table and should be a column with unique values per row. |
+| `left_join_on`   | Define relationship between the two entity tables: `[left entity name].[column name] = [junction table column name]`. |
+| `right_join_on`  | Define relationship between the two entity tables: `[junction table column name] = [right entity name].[column name]`. |
 
 Note that `schema.table` is implied within the junction table column name and doesn't need to be provided. 
 
@@ -244,7 +240,7 @@ data_graph {
                     related_entity = "product-entity"
                     junction_table {
                          primary_key = "id"
-                         table_ref = "PRODUCTION.CUSTOM.CART_PRODUCT"
+                         table_ref = "PRODUCTION.CUSTOMER.CART_PRODUCT"
                          left_join_on = "CART.ID = CART_ID"
                          #schema.table is implied within the cart_id key
                          right_join_on = "PRODUCT_ID = PRODUCT.SKU"
@@ -253,9 +249,9 @@ data_graph {
                }
           }
      }         
-}
 
 ```
+## Data Graph Example 
 
 ![An example of a data graph](/docs/unify/images/data-graph-example.png)
 
@@ -333,6 +329,11 @@ To edit your Data Graph:
 
 1. Navigate to **Unify > Data Graph**.
 2. Select the **Builder** tab, and click **Edit Data Graph**.
+
+Segment recommends creating a new Linked Audience or Linked Event. Deleting entities and relationships are not yet supported. Editing entities and relationships in the Data Graph may lead to errors if these entities or relationships are referenced in existing Linked Audiences and Linked Events. 
+
+> info ""
+> While you can edit entities and relationships in the Data Graph, these relationships and entities will still display in the Linked Audience Builder and Linked Events.
 
 You can edit your Data Graph at any time. However, some types of edits may impact existing Linked Audiences and Linked Events. These include:
 

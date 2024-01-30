@@ -7,9 +7,13 @@ beta: true
 > info "Linked Profiles is in private beta"
 > Linked Profiles (Data Graph, Linked Events, and Linked Audiences) is in private beta, and Segment is actively working on this feature. Some functionality may change before it becomes generally available. [Contact Segment](https://segment.com/help/contact/){:target="_blank"} with any feedback or questions.
 
+
 On this page, you'll learn how to connect your Snowflake data warehouse to Segment.
 
 Be sure to log in with a user that has read and write permissions so that Segment can write to your database. 
+
+> info ""
+> Both Linked Events and Linked Profiles support Snowflake. 
 
 
 ## Getting started 
@@ -108,7 +112,7 @@ GRANT SELECT ON TABLE <schema-name>.<table_name> TO ROLE segment_entities;
 
 ### Reverse ETL table permissions
 
-If you've ever run Segment's Reverse ETL in your database, you'll need to add the following [table permissions](https://docs.snowflake.com/en/user-guide/security-access-control-privileges#table-privileges){:target="_blank"}:
+If you've ever run Segment's [Reverse ETL](/docs/connections/reverse-etl/) in your database, you'll need to add the following [table permissions](https://docs.snowflake.com/en/user-guide/security-access-control-privileges#table-privileges){:target="_blank"}:
 
 ```sql
 GRANT USAGE ON SCHEMA __segment_reverse_etl TO ROLE segment_entities;
