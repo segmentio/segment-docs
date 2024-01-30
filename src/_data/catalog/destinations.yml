@@ -22969,6 +22969,217 @@ items:
     label: Digioh Account Email
   actions: []
   presets: []
+- id: 65302a3acb309a8a3d5593f2
+  display_name: Display and Video 360 (Actions)
+  name: Display and Video 360 (Actions)
+  slug: display-and-video-360-actions
+  hidden: false
+  endpoints:
+  - US
+  regions:
+  - us-west-2
+  - eu-west-1
+  url: connections/destinations/catalog/display-and-video-360-actions
+  previous_names:
+  - Display and Video 360 (Actions)
+  website: http://www.segment.com
+  status: PUBLIC_BETA
+  categories: []
+  logo:
+    url: https://cdn-devcenter.segment.com/60ac526b-8825-440f-963e-d2610b4aa33d.svg
+  mark:
+    url: https://cdn-devcenter.segment.com/32cd0b20-9505-4e55-a637-bb199faf9fd0.svg
+  methods:
+    track: true
+    identify: false
+    group: true
+    alias: true
+    screen: false
+    page: true
+  platforms:
+    browser: true
+    mobile: false
+    server: true
+    warehouse: false
+    cloudAppObject: false
+  components: []
+  browserUnbundlingSupported: false
+  browserUnbundlingPublic: false
+  replay: false
+  connection_modes:
+    device:
+      web: false
+      mobile: false
+      server: false
+    cloud:
+      web: true
+      mobile: false
+      server: true
+  settings: []
+  actions:
+  - id: hGT581ZSWcPaYKqNhA6fbS
+    name: Remove from Audience
+    slug: removeFromAudience
+    description: Remove users from an audience
+    platform: CLOUD
+    hidden: false
+    defaultTrigger: event = "Audience Exited"
+    fields:
+    - id: hCyMEPBCPbVsUzGRDDJ7xk
+      sortOrder: 0
+      fieldKey: enable_batching
+      label: Enable Batching
+      type: BOOLEAN
+      description: Enable batching of requests to the TikTok Audiences.
+      placeholder: ''
+      defaultValue: true
+      required: true
+      multiple: false
+      choices: null
+      dynamic: false
+      allowNull: false
+    - id: 2N782iumGcpfE2HVEQHLkM
+      sortOrder: 1
+      fieldKey: external_audience_id
+      label: External Audience ID
+      type: STRING
+      description: The Audience ID in Google's DB.
+      placeholder: ''
+      defaultValue:
+        '@path': $.context.personas.external_audience_id
+      required: true
+      multiple: false
+      choices: null
+      dynamic: false
+      allowNull: false
+    - id: m2VJNsdNFDCKVYrUwHKW1t
+      sortOrder: 2
+      fieldKey: mobile_advertising_id
+      label: Mobile Advertising ID
+      type: STRING
+      description: Mobile Advertising ID. Android Advertising ID or iOS IDFA.
+      placeholder: ''
+      defaultValue:
+        '@path': $.context.device.advertisingId
+      required: false
+      multiple: false
+      choices: null
+      dynamic: false
+      allowNull: false
+    - id: pp1XYKbUFkYmMoLqedXvEs
+      sortOrder: 3
+      fieldKey: google_gid
+      label: Google GID
+      type: STRING
+      description: >-
+        Google GID - ID is deprecated in some areas and will eventually sunset. 
+        ID is included for those who were on the legacy destination.
+      placeholder: ''
+      defaultValue:
+        '@path': $.context.DV360.google_gid
+      required: false
+      multiple: false
+      choices: null
+      dynamic: false
+      allowNull: false
+    - id: a4AjWGjMhKvXToNHb23Z4S
+      sortOrder: 4
+      fieldKey: partner_provided_id
+      label: Partner Provided ID
+      type: STRING
+      description: >-
+        Partner Provided ID - Equivalent to the Segment Anonymous ID.  Segment
+        Audience must include Anonymous Ids to match effectively.
+      placeholder: ''
+      defaultValue:
+        '@path': $.anonymousId
+      required: false
+      multiple: false
+      choices: null
+      dynamic: false
+      allowNull: false
+  - id: tzNSV9enehm7o5uHhFqQEq
+    name: Add to Audience
+    slug: addToAudience
+    description: Add a user to a Display & Video 360 audience.
+    platform: CLOUD
+    hidden: false
+    defaultTrigger: event = "Audience Entered"
+    fields:
+    - id: 2SYBFKi8jy4yhz4eyReADi
+      sortOrder: 0
+      fieldKey: enable_batching
+      label: Enable Batching
+      type: BOOLEAN
+      description: Enable batching of requests to the TikTok Audiences.
+      placeholder: ''
+      defaultValue: true
+      required: true
+      multiple: false
+      choices: null
+      dynamic: false
+      allowNull: false
+    - id: egBwzEnngSDBacAje3w7ZX
+      sortOrder: 1
+      fieldKey: external_audience_id
+      label: External Audience ID
+      type: STRING
+      description: The Audience ID in Google's DB.
+      placeholder: ''
+      defaultValue:
+        '@path': $.context.personas.external_audience_id
+      required: true
+      multiple: false
+      choices: null
+      dynamic: false
+      allowNull: false
+    - id: kPkRNgkwjzNGASH51HrAHu
+      sortOrder: 2
+      fieldKey: mobile_advertising_id
+      label: Mobile Advertising ID
+      type: STRING
+      description: Mobile Advertising ID. Android Advertising ID or iOS IDFA.
+      placeholder: ''
+      defaultValue:
+        '@path': $.context.device.advertisingId
+      required: false
+      multiple: false
+      choices: null
+      dynamic: false
+      allowNull: false
+    - id: uWW5GmaxexAhsb5bKzT9ok
+      sortOrder: 3
+      fieldKey: google_gid
+      label: Google GID
+      type: STRING
+      description: >-
+        Google GID - ID is deprecated in some areas and will eventually sunset. 
+        ID is included for those who were on the legacy destination.
+      placeholder: ''
+      defaultValue:
+        '@path': $.context.DV360.google_gid
+      required: false
+      multiple: false
+      choices: null
+      dynamic: false
+      allowNull: false
+    - id: pKMsrv33reNLx4NB3k2zbB
+      sortOrder: 4
+      fieldKey: partner_provided_id
+      label: Partner Provided ID
+      type: STRING
+      description: >-
+        Partner Provided ID - Equivalent to the Segment Anonymous ID.  Segment
+        Audience must include Anonymous Ids to match effectively.
+      placeholder: ''
+      defaultValue:
+        '@path': $.anonymousId
+      required: false
+      multiple: false
+      choices: null
+      dynamic: false
+      allowNull: false
+  presets: []
 - id: 57ab9dfc80412f644ff2004c
   display_name: DoubleClick Floodlight
   name: DoubleClick Floodlight
