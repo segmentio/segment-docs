@@ -76,7 +76,7 @@ Build an audience with `Accounts`, `Credit Cards`, and `Transactions` where the 
 In the Data Graph, `Accounts`, `Credit Cards`, and `Transactions` are defined as entities. Relationships are defined between:
 - `Profiles` and `Accounts`
 - `Accounts` and `Credit Cards`
-- `Accounts` and `Subscriptions`
+- `Credit Cards` and `Transactions`
 
 In the warehouse: 
 - `credit_cards.name` is a column in the `credit_cards` table
@@ -95,6 +95,8 @@ Use the Audience overview page to build or maintain a Linked Audiences.
 4. Build your Linked Audience with profiles by selecting **associated with an entity**, **where profile trait**, or **part of an audience** conditions.
 5. Preview your audience, then click **Next**.
 6. Enter an audience name and description, then click **Create Audience**.
+
+After creating the audience, you'll be redirected to the Overview page. By default, the audience is disabled. You'll need to manually enable the audience for the audience to compute.
 
 > warning ""
 > Linked Audiences can't be edited or deleted. Create a new audience to update conditions. To disable an audience, navigate to the **Settings** tab of an audience and toggle the **Enabled** button off.
