@@ -773,6 +773,15 @@ sources:
       - us
     endpoints:
       - us
+  - id: P1kUrzj9pv
+    display_name: RateHighly
+    hidden: true
+    slug: ratehighly
+    url: connections/sources/catalog/cloud-apps/ratehighly
+    regions:
+      - us
+    endpoints:
+      - us
   - id: B0X0QmvMny
     display_name: React Native
     hidden: false
@@ -922,6 +931,15 @@ sources:
     endpoints:
       - us
       - eu
+  - id: di2sOHoscX
+    display_name: SurveySparrow
+    hidden: true
+    slug: surveysparrow
+    url: connections/sources/catalog/cloud-apps/surveysparrow
+    regions:
+      - us
+    endpoints:
+      - us
   - id: 43bb279b7
     display_name: Twilio
     hidden: false
