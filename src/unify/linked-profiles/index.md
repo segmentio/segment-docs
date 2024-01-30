@@ -3,12 +3,17 @@ title: Linked Profiles Overview
 plan: unify
 ---
 
-Use Linked Profiles to expand your model beyond the profile to the entire universe of business data. With Linked Profiles, you can build a [Data Graph](/docs/unify/linked-profiles/data-graph/) that defines relationships between any data set in the warehouse and the Segment Profiles you send with Profiles Sync. 
+Use Linked Profiles to expand your model beyond the profile to the entire universe of business data. Linked Profiles offers a suite of products which includes the [Data Graph](/docs/unify/linked-profiles/data-graph/), [Linked Events](/docs/unify/linked-profiles/linked-events/), and [Linked Audiences](/docs/unify/linked-profiles/linked-audiences/). 
 
-You can then enrich your event streams with [Linked Events](/docs/unify/linked-profiles/linked-events/) and build audiences off of any data set you've mapped to the data graph with [Linked Audiences](/docs/unify/linked-profiles/linked-audiences/).
+Build a [Data Graph](/docs/unify/linked-profiles/data-graph/) that defines relationships between any data set in the warehouse and the Segment Profiles you send with Profiles Sync. 
+
+You can then enrich your event streams with [Linked Events](/docs/unify/linked-profiles/linked-events/) and build advanced audiences and segmentation off of any data set you've mapped to the Data Graph with [Linked Audiences](/docs/unify/linked-profiles/linked-audiences/).
 
 
-Using Linked Profiles, you only need to define the relationships between data sets once in order to give marketers access to all the data you need to target, personalize, and analyze customer experiences. 
+Using Linked Profiles, you only need to define the relationships between data sets once in order to make this data accessible to marketers and business stakeholders to build targeted and personalized customer engagements.
 
 > success ""
-> To get started with Linked Profiles, you'll need to connect your data warehouse. Visit the [Snowflake](/docs/unify/linked-profiles/setup-guides/snowflake-setup/), [Redshift](/docs/unify/linked-profiles/setup-guides/redshift-setup/), or [BigQuery](/docs/unify/linked-profiles/setup-guides/BigQuery-setup/) setup guides to learn more.
+> To get started with Linked Profiles, you'll need to connect your data warehouse. 
+> - [Snowflake](/docs/unify/linked-profiles/setup-guides/snowflake-setup/) is supported by both Linked Events and Linked Audiences.
+> - [Redshift](/docs/unify/linked-profiles/setup-guides/redshift-setup/) and [BigQuery](/docs/unify/linked-profiles/setup-guides/BigQuery-setup/)  are currently supported for Linked Events.
+
