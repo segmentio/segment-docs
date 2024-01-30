@@ -493,6 +493,6 @@ When you first create an audience, Engage sends an Identify call for every user 
 **AWS S3 destination connection error “Multiple instance of AWS S3 are not allowed for this source"
 **
 
-Before inspecting the AWS S3 configurations (i.e.: IAM role and trust policy), it’s worth checking if you already have an S3 destination connected to the source in question. Segment only supports one AWS S3 destination per source.
+You might encounter this error if you already have a S3 destination connected to the source in question. Segment only supports one AWS S3 destination per source.
 
 {% include content/destination-footer.md %}
