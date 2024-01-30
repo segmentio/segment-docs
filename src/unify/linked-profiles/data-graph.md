@@ -80,7 +80,7 @@ The parameters are:
 | Parameters     | Definition                                                           |
 | ----------- | --------------------------------------------------------------------- |
 | `profile_folder`      | This is the folder or schema location for the profile tables.     |
-| `materialization`     | Identify the type of materialization (`dbt`,`segment`,`none`). |
+| `materialization`     | Identifies the type of materialization (`dbt`,`segment`,`none`). |
 
 
 ```python
@@ -101,10 +101,10 @@ An entity is a stateful representation of a business object. The entity correspo
 | Parameters     | Definition                                                           |
 | ----------- | --------------------------------------------------------------------- |
 | `entity`      | A unique slug for the entity, which is immutable and treated as a delete if you make changes. The slug must be in all lowercase, and supports dashes or underscores (for example, `account-entity` or `account_entity`).    |
-| `name`        | A unique label which displays across Segment.                           |
-| `table_ref`   | Define the table reference. In order to specify a connection to your table in Snowflake, a fully qualified table reference is required: `[database name].[schema name].[table name]`. |
+| `name`        | A unique label that displays throughout your Segment space.                           |
+| `table_ref`   | Defines the table reference. In order to specify a connection to your table in Snowflake, a fully qualified table reference is required: `[database name].[schema name].[table name]`. |
 | `primary_key` | The unique identifier for the given table. Should be a column with unique values per row. |
-| (Optional) `enrichment_enabled = true`      | Indicate if you plan to also reference the entity table for [Linked Events](/docs/unify/linked-profiles/linked-events/).                         |
+| (Optional) `enrichment_enabled = true`      | Indicates if you plan to also reference the entity table for [Linked Events](/docs/unify/linked-profiles/linked-events/).                         |
 
 
 
@@ -132,7 +132,7 @@ Use the following relationship, parameters, and examples to help you relate enti
 | ----------- | --------------------------------------------------------------------- |
 | `relationship`      | A unique slug for the relationship, which is immutable and treated as a delete if you make changes. The slug must be in all lowercase and will support dashes or underscores (for example, `user-account` or `user_account`).   |
 | `name`        | A unique label that displays throughout your Segment space.                          |
-| `related_entity`   | Reference your already defined entity. |
+| `related_entity`   | References your already defined entity. |
 
 
 A profile can be related to an entity in two ways:
@@ -149,7 +149,7 @@ A profile can be related to an entity in two ways:
 2. With a `trait`: Define a profile trait that will be used to join the profile with your entity.
      - `name`: The trait name that corresponds to a column name in your `profile_traits_updates` table.
      - `join_key`: This is the column on the entity table that you are matching to the trait.
-     
+      
 
 ```python
 data_graph { 
@@ -186,8 +186,8 @@ data_graph {
 | Parameters     | Definition                                                           |
 | ----------- | --------------------------------------------------------------------- |
 | `relationship`      | A unique slug for the relationship, which is immutable and treated as a delete if you make changes. The slug must be in all lowercase and will support dashes or underscores (for example, `user-account` or `user_account`).   |
-| `name`        | This should be a unique label that displays throughout your Segment space.                          |
-| `related_entity`   | Reference your already defined entity. |
+| `name`        | A unique label that displays throughout your Segment space.                          |
+| `related_entity`   | References your already defined entity. |
 | `join_on`         |    Defines relationships between two entity tables `[lefty entity name].[column name] = [right entity name].[column name]`. Note that the entity name is a reference to the alias provided in the config and doesn't need to be the fully qualified table name. |
 
 
@@ -215,11 +215,11 @@ If you're relating entities with a junction table:
 
 | Parameters     | Definition                                                           |
 | ----------- | --------------------------------------------------------------------- |
-| `Junction_table`      | Define the table reference to the join table. In order to specify a connection to your table in Snowflake, a fully qualified table reference is required: `[database name].[schema name].[table name]`.  |
-| `table_ref`      | Define the table reference to the join table. In order to specify a connection to your table in Snowflake, a fully qualified table reference is required: `[database name].[schema name].[table name]`.  |
+| `Junction_table`      | Defines the table reference to the join table. In order to specify a connection to your table in Snowflake, a fully qualified table reference is required: `[database name].[schema name].[table name]`.  |
+| `table_ref`      | Defines the table reference to the join table. In order to specify a connection to your table in Snowflake, a fully qualified table reference is required: `[database name].[schema name].[table name]`.  |
 | `primary_key`    | The unique identifier on the join table and should be a column with unique values per row. |
-| `left_join_on`   | Define relationship between the two entity tables: `[left entity name].[column name] = [junction table column name]`. |
-| `right_join_on`  | Define relationship between the two entity tables: `[junction table column name] = [right entity name].[column name]`. |
+| `left_join_on`   | Defines the relationship between the two entity tables: `[left entity name].[column name] = [junction table column name]`. |
+| `right_join_on`  | Defines the relationship between the two entity tables: `[junction table column name] = [right entity name].[column name]`. |
 
 Note that `schema.table` is implied within the junction table column name and doesn't need to be provided. 
 
