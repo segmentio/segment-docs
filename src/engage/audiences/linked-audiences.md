@@ -9,12 +9,15 @@ redirect_from:
 > info "Linked Audiences is in private beta"
 > Linked Audiences is in private beta, and Segment is actively working on this feature. Some functionality may change before it becomes generally available. [Contact Segment](https://segment.com/help/contact/){:target="_blank"} with any feedback or questions.
 
-With Linked Audiences, you can use the relational data you've defined in your Data Graph to build audiences and send them to your downstream destinations. 
+With Linked Audiences, you can use the relational data you've defined in your Data Graph to build audiences and send them to your downstream [actions-based destination](/docs/connections/destinations/actions/#available-actions-based-destinations).
 
 From the relationships you've defined between the profiles and entities in your warehouse, you can filter on an entity, profile trait, and audience membership conditions to create hyper-segmented audiences.
 
 > info "Linked Audiences warehouse support"
-> At this time, Linked Audiences only supports Snowflake. 
+> At this time, Linked Audiences only supports [Snowflake](/docs/unify/linked-profiles/setup-guides/snowflake-setup/). 
+
+> info "Linked Audiences permissions requirements"
+> You must have Workspace Owner or Unify Read-Admin, Entities Admin, and Source Admin permissions to set up Linked Audiences Activation.
 
 > success ""
 > Before you build Linked Audiences, be sure you've defined entities in your [Data Graph](/docs/unify/linked-profiles/data-graph/). 
@@ -24,84 +27,52 @@ From the relationships you've defined between the profiles and entities in your 
 
 To help you get started with Linked Audiences, consider the following best practices: 
 
-1. It may be helpful to first identify an entity that is directly associated with your users, such as `Accounts`, `Households`, or `Organizations`.
-2. From there you can define relationships between this entity with any of the other entities that may be associated with it, such as how `Accounts` can have the following: `Subscriptions`, `Purchases`, or `Carts`. 
-3. You can create entity relationships up to six levels in depth. For example, an entity condition that queries for relationships between `Profiles`, `Accounts`, `Credit Cards`, and `Transactions` has four levels of depth. 
-4. To further refine your audience, identify column values that you might also want to filter your entities by, or configure profile trait and audience membership conditions. 
-
-## Use cases
- 
-Below are some example use cases to help you learn more about Linked Audiences.
-
-### Build an audience of cat owners who are also a part of the platinum membership tier
-
-Build an audience with `Households` and `Pets` where:
-- `pets.type` = "cat"
-
-And where:
-- `profile.audience_membership` = "Platinum membership tier"
-
-In the Data Graph, `Households` and `Pets` are defined as entities and are represented as separate tables in your data warehouse. 
-
-Relationships are defined between:
- - `Profiles` and `Households` 
- - `Households` and `Pets` 
-
-In the warehouse, `pets.type` is a column in the `pets` table. By filtering against the `pets.type` column for the "cat" value, marketers can return a list of users that have a cat. 
-
-Furthermore, filtering the audience against `profile.audience_membership` for "Platinum membership tier" will allow marketers to further refine their audience to only include users who are also a part of the platinum membership tier audience.
-
-### Build an audience of users with premium subscriptions who are located in Canada
-
-Build an audience with `Accounts` and `Subscriptions`, where the following are true:
-- `subscription.status` = "active"
-- `subscription.tier` = "premium"
-
-And where:
-- `profile.country` = "Canada"
-
-In the Data Graph, `Accounts` and `Subscriptions` are defined as entities. Relationships are defined between:
-- `Profiles` and `Accounts`
-- `Accounts` and `Subscriptions` 
-
-In the warehouse, `subscription.status` is a column in the `subscriptions` table. Marketers can refine their audience by filtering against the `subscription.status` and `subscription.tier` columns to return a list of users that have an active subscription to their premium offering.
-
-Furthermore, filtering the audience against `profile.country` for "Canada" will allow marketers to further refine their audience to only include users who are located in Canada.
-
-
-### Build an audience of credit card holders with a certain number of transactions
-
-Build an audience with `Accounts`, `Credit Cards`, and `Transactions` where the following are true: 
-- `credit_cards.name` equals "Owly Card" 
-- `transactions.count` is greater than five
-
-In the Data Graph, `Accounts`, `Credit Cards`, and `Transactions` are defined as entities. Relationships are defined between:
-- `Profiles` and `Accounts`
-- `Accounts` and `Credit Cards`
-- `Credit Cards` and `Transactions`
-
-In the warehouse: 
-- `credit_cards.name` is a column in the `credit_cards` table
-- `transactions.count` is a column in the `transactions` table
-
-Marketers can create hyper-targeted user segmentations filtering by column values or attributes, such as "Owly Card" and integers. 
-
+- It may be helpful to first identify an entity that is directly associated with your users, such as `Accounts`, `Households`, or `Organizations`.
+- From there you can define relationships between this entity with any of the other entities that may be associated with it, such as how `Accounts` can have the following: `Subscriptions`, `Purchases`, or `Carts`. 
+- You can create entity relationships up to four levels in depth. For example, an entity condition that queries for relationships between `Profiles`, `Accounts`, `Credit Cards`, and `Transactions` has four levels of depth. 
+- To further refine your audience, identify column values that you might want to filter your entities by, or configure profile traits and audience membership conditions. 
 
 ## Step 1: Build a Linked Audience
 
-Use the Audience overview page to build or maintain a Linked Audiences.
+You can build a Linked Audience from profiles associated with an entity, trait, or existing Audience.
+
+![Choose your audience conditions](/docs/engage/images/conditions.png)
 
 1. Navigate to **Engage > Audiences**.
 2. Click **+ New audience**, then select **Audience**.
 3. On the Select Type screen, select **Linked audience**, then click **Next**.
-4. Build your Linked Audience with profiles by selecting **associated with an entity**, **where profile trait**, or **part of an audience** conditions.
+4. Select one of the following conditions to build your audience from:
+- **associated with an entity**: creates a condition that filters profiles associated with an entity.
+- **where profile trait**: creates a condition that filters profiles with a specific trait.
+- **part of an audience**: creates a condition that filters profiles that are part of an existing audience.
 5. Preview your audience, then click **Next**.
 6. Enter an audience name and description, then click **Create Audience**.
 
 After creating the audience, you'll be redirected to the Overview page. By default, the audience is disabled. You'll need to manually enable the audience for the audience to compute.
 
 > warning ""
-> Linked Audiences can't be edited or deleted. Create a new audience to update conditions. To disable an audience, navigate to the **Settings** tab of an audience and toggle the **Enabled** button off.
+> Edits and deletes are not currently supported for Linked Audiences. Segment recommends recreating your existing Linked Audience. To disable an audience, navigate to the **Settings** tab of an audience and toggle the **Enabled** button off.
+
+#### Custom Traits
+
+You can build Linked Audiences based on custom traits. These traits can be collected from your apps when a user completes a form or signs up using an [Identify](/docs/connections/spec/identify) call. You can view these traits in the Profile explorer, as well. Custom Traits are mutable and update to the latest value seen by the user's Identify events.
+
+> info ""
+> When a Linked Audience that previously generated Identify events is deleted, the data for the audience key is still attached to profiles that entered the audience, and becomes visible in Segment as a custom trait.
+
+
+#### Compute statuses
+
+Engage displays the following compute statuses for Linked Audiences.
+
+
+| Computation status        | Description                           |
+|---------------------------|---------------------------------------|
+| Computing                 | Engage is computing the Linked Audience.           |
+| Live                      | The Linked Audience is live. Users will enter in real-time as they meet entry criteria.        |
+| Disabled                  | The Linked Audience is disabled.                   |
+| Failed                    | The computation was cancelled or failed to compute. Please contact [Segment support](https://segment.com/help/contact/){:target="_blank"}.            |
+
 
 
 ## Step 2: Activate your Linked Audience
@@ -154,7 +125,7 @@ Example use cases:
 
 #### Audience entered 
 
-Send an event when a profile enters the audience.
+Send a Track event when a profile enters the audience.
 
 Example use cases:
 
@@ -163,7 +134,7 @@ Example use cases:
 
 #### Audience exited
 
-Send an event when the profile exits the audience. 
+Send a Track event when the profile exits the audience. 
 
 Example use cases:
 
@@ -172,7 +143,7 @@ Example use cases:
 
 #### Audience Membership Changed
 
-Send events when a profile enters and exits the audience.
+Send an Identify event when a profile enters and exits the audience.
 
 Example use case:
 - Update a user profile in a destination with the most recent audience membership.
@@ -180,7 +151,7 @@ Example use case:
 
 ### Step 2c: Select an action
 
-Select the destination action to call when the event happens.
+Select the destination action to call when the event happens. Make sure the action you selected is relevant to the type of event you previously selected. For example, if you selected **Audience Membership Changed**, be sure your action is also an Identify event.
 
 Segment displays available actions based on the destination action you've connected with your Linked Audience. 
 
@@ -195,7 +166,6 @@ To configure your event:
 1. Select additional properties to include in each event. 
 - As you're configuring your event, you can view a preview of the enriched event based on your property selections. 
 2. Map your event from your audience to your destination.
-- You can preview what the event will look like in your destination.
 - [Braze](/docs/connections/destinations/catalog/braze-cloud-mode-actions/#available-presets), [Iterable](/docs/connections/destinations/catalog/actions-iterable/#available-presets), and [Customer.io](/docs/connections/destinations/catalog/customer-io-actions/#available-presets) are pre-set destinations, so you won't need to map your audience to your destination.
 3. Select if you'd like to [send events for current profiles and entities in the audience](#send-events-for-current-profiles-and-entities-in-the-audience).
 - This is only available for the **entity added**, **audience entered**, and **audience membership changed** event types.
@@ -203,8 +173,6 @@ To configure your event:
 
 
 #### Send events for current profiles and entities in the audience
-
-Select if you'd like to sync existing profiles and entities in the audience with the **Send events for current profiles and entities in audience** checkbox.
 
 This box is unchecked by default. If you leave this box unchecked, Segment only sends events for new profiles and entities that match the audience conditions.
 
@@ -219,4 +187,58 @@ To confirm your destination is receiving events, Segment recommends that you log
 - Search for the `UserID` or `Event Name` (for example, `Entity Added`)
 
 
+## Use cases
+ 
+Below are some example use cases to help you learn more about Linked Audiences.
 
+### Build an audience of cat owners who are also a part of the platinum membership tier
+
+Build an audience with `Households` and `Pets` where:
+- `pets.type` = "cat"
+
+And where:
+- The user is a member of the "Platinum membership tier" audience
+
+In the Data Graph, `Households` and `Pets` are defined as entities and are represented as separate tables in your data warehouse. 
+
+Relationships are defined between:
+ - `Profiles` and `Households` 
+ - `Households` and `Pets` 
+
+In the warehouse, `pets.type` is a column in the `pets` table. By filtering against the `pets.type` column for the "cat" value, marketers can return a list of users that have a cat. 
+
+Furthermore, adding the audience membership condition will allow marketers to further refine their audience to only include users who are also a part of the platinum membership tier audience.
+
+### Build an audience of users with premium subscriptions who are located in Canada
+
+Build an audience with `Accounts` and `Subscriptions`, where the following are true:
+- `subscription.status` = "active"
+- `subscription.tier` = "premium"
+
+And where the user is from Canada.
+
+In the Data Graph, `Accounts` and `Subscriptions` are defined as entities. Relationships are defined between:
+- `Profiles` and `Accounts`
+- `Accounts` and `Subscriptions` 
+
+In the warehouse, `subscription.status` is a column in the `subscriptions` table. Marketers can refine their audience by filtering against the `subscription.status` and `subscription.tier` columns to return a list of users that have an active subscription to their premium offering.
+
+Furthermore, adding the profile condition will allow marketers to further refine their audience to only include users who are located in Canada.
+
+
+### Build an audience of credit card holders with a certain number of transactions
+
+Build an audience with `Accounts`, `Credit Cards`, and `Transactions` where the following are true: 
+- `credit_cards.name` equals "Owly Card" 
+- `transactions.count` is greater than five
+
+In the Data Graph, `Accounts`, `Credit Cards`, and `Transactions` are defined as entities. Relationships are defined between:
+- `Profiles` and `Accounts`
+- `Accounts` and `Credit Cards`
+- `Credit Cards` and `Transactions`
+
+In the warehouse: 
+- `credit_cards.name` is a column in the `credit_cards` table
+- `transactions.count` is a column in the `transactions` table
+
+Marketers can create hyper-targeted user segmentations filtering by column values or attributes, such as "Owly Card" and integers. 

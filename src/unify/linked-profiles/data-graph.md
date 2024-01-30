@@ -17,8 +17,8 @@ Make this relational data accessible to marketers and business stakeholders to e
 ## Prerequisites
 
 To use the Data Graph, you'll need the following:
-- A Snowflake data warehouse. 
-- An [actions-based destination](/docs/connections/destinations/actions/#available-actions-based-destinations).
+- A supported data warehouse. 
+- [Profiles Sync](/docs/unify/profiles-sync/) set up with ready-to-use [data models and tables](/docs/unify/profiles-sync/tables/) in your warehouse.
 
 > info ""
 > Linked Profiles follows zero-copy principles, and doesn't copy entities to store in Segment. Segment stores and processes all data in the United States. 
@@ -28,7 +28,9 @@ To use the Data Graph, you'll need the following:
 
 ## Step 1: Set up your data warehouse
 
-Before setting up the Data Graph, you'll need to set up your data warehouse. Use the [Snowflake Setup](/docs/unify/linked-profiles/setup-guides/snowflake-setup/) guide to get started.
+> info "data warehouse support"
+> - [Snowflake](/docs/unify/linked-profiles/setup-guides/snowflake-setup/) is supported by both Linked Events and Linked Audiences.
+> - [Redshift](/docs/unify/linked-profiles/setup-guides/redshift-setup/) and [BigQuery](/docs/unify/linked-profiles/setup-guides/BigQuery-setup/)  are currently supported for Linked Events.
 
 <!-- Not yet available for Data Graph as of 1/16/24
 - [Redshift Setup]((/docs/unify/linked-profiles/setup-guides/redshift-setup/))
@@ -46,7 +48,7 @@ To track what data has been sent to Segment on previous syncs, Segment stores de
 > You must have Workspace Owner or Unify Read-only/Admin and Entities Admin permissions to set up Linked Profiles.
 
 > success ""
-> Before getting started with the Data Graph, be sure to [set up your Snowflake permissions](/unify/linked-profiles/setup-guides/snowflake-setup/). 
+> Before getting started with the Data Graph, be sure to set up your warehouse permissions. 
 
 To connect your warehouse to the Data Graph:
 
@@ -60,6 +62,9 @@ To connect your warehouse to the Data Graph:
 
 ## Step 3: Build your Data Graph
 
+> warning ""
+> Warehouse schemas are case sensitive, so you'll need to reflect the schema, table, and column names based on how you case them in the warehouse.
+
 The Data Graph is a semantic layer that represents a subset of relevant business data that you'll use for audience targeting and personalization in downstream tools. 
 
 Use the configuration language spec below to add models to build your Data Graph. The Data Graph currently supports 4 layers of depth, including the Profile entity.
@@ -71,8 +76,6 @@ If you're using
 
 Use the parameters, definitions, and examples below to help you define entities.
 
-> warning ""
-> Snowflake schemas are case sensitive, so you'll need to reflect the schema, table, and column names based on how you case them in Snowflake.
 
 #### Profile 
 
@@ -85,9 +88,10 @@ The parameters are:
 | `profile_folder`      | This is the folder or schema location for the profile tables.     |
 | `materialization`     | Identifies the type of materialization (`dbt`,`segment`,`none`). |
 
+Example:
 
 ```python
-#define a profile entity
+# Define a profile entity
 
 profile {
      profile_folder = "segment"
@@ -109,7 +113,7 @@ An entity is a stateful representation of a business object. The entity correspo
 | `primary_key` | The unique identifier for the given table. Should be a column with unique values per row. |
 | (Optional) `enrichment_enabled = true`      | Indicates if you plan to also reference the entity table for [Linked Events](/docs/unify/linked-profiles/linked-events/).                         |
 
-
+Example:
 
 ```python
 # Define an entity and optionally indicate if the entity will be referenced for Linked Events (event enrichment)
@@ -126,8 +130,6 @@ entity "account-entity" {
 
 Use the following relationship, parameters, and examples to help you relate entities.
 
-> warning ""
-> Snowflake schemas are case sensitive, so you'll need to reflect the schema, table, and column names based on how you case them in Snowflake.
 
 #### Relate Entity to Profile
 
@@ -140,19 +142,8 @@ Use the following relationship, parameters, and examples to help you relate enti
 
 A profile can be related to an entity in two ways:
 1. With an `external_id`: Define the external ID that will be used to join the profile with your entity.
-     - `type`: Identify the external ID type (`email`, `phone`, `user id`). This corresponds to the `external_id_type` column in your `external_id_mapping` table. For example:
-     ```python
-     relationship "user-carts" {
-          name = "Shopping Carts"
-          related_entity = "cart-entity"
-          join_on = "ACCOUNT.ID = CART.ACCOUNT.ID"
-     }
-     ```
-     - `join_key`: This is the column on the entity table that you are matching to the external identifier.
-2. With a `trait`: Define a profile trait that will be used to join the profile with your entity.
-     - `name`: The trait name that corresponds to a column name in your `profile_traits_updates` table.
-     - `join_key`: This is the column on the entity table that you are matching to the trait.
-      
+     - `type`: Identify the external ID type (`email`, `phone`, `user id`). This corresponds to the `external_id_type` column in your `external_id_mapping` table. 
+Example:
 
 ```python
 data_graph { 
@@ -161,7 +152,7 @@ data_graph {
      profile {
           #define profile
 
-          # Option 1: relate profile to account with an `external_id`
+          #Option 1: Relate account to profile with an external ID
           relationship "user-accounts" {
                name = "Premium Accounts"
                related_entity = "account-entity"
@@ -169,9 +160,23 @@ data_graph {
                     type = "email"
                     join_key = "email_id"
                }
-          }
+```
+     - `join_key`: This is the column on the entity table that you are matching to the external identifier.
 
-          # Option 2: relate profile to account with a `trait`
+2. With a `trait`: Define a profile trait that will be used to join the profile with your entity.
+     - `name`: The trait name that corresponds to a column name in your `profile_traits_updates` table.
+     - `join_key`: This is the column on the entity table that you are matching to the trait.
+      
+Example:
+```python
+
+data_graph { 
+     #define entities
+
+     profile {
+          #define profile
+
+          #Option 2: relate account to profile with a trait`
           relationship: "user-accounts" {
                name = "Premium Accounts"
                related_entity = "account-entity"
@@ -193,6 +198,7 @@ data_graph {
 | `related_entity`   | References your already defined entity. |
 | `join_on`         |    Defines relationships between two entity tables `[lefty entity name].[column name] = [right entity name].[column name]`. Note that the entity name is a reference to the alias provided in the config and doesn't need to be the fully qualified table name. |
 
+Example:
 
 ```py
 data_graph { 
@@ -218,9 +224,9 @@ If you're relating entities with a junction table:
 
 | Parameters     | Definition                                                           |
 | ----------- | --------------------------------------------------------------------- |
-| `Junction_table`      | Defines the table reference to the join table. In order to specify a connection to your table in Snowflake, a fully qualified table reference is required: `[database name].[schema name].[table name]`.  |
+| `junction_table`      | Defines the table reference to the join table. In order to specify a connection to your table in Snowflake, a fully qualified table reference is required: `[database name].[schema name].[table name]`.  |
 | `table_ref`      | Defines the table reference to the join table. In order to specify a connection to your table in Snowflake, a fully qualified table reference is required: `[database name].[schema name].[table name]`.  |
-| `primary_key`    | The unique identifier on the join table and should be a column with unique values per row. |
+| `primary_key`    | The unique identifier on the join table, and should be a column with unique values per row. |
 | `left_join_on`   | Defines the relationship between the two entity tables: `[left entity name].[column name] = [junction table column name]`. |
 | `right_join_on`  | Defines the relationship between the two entity tables: `[junction table column name] = [right entity name].[column name]`. |
 
@@ -229,15 +235,16 @@ Note that `schema.table` is implied within the junction table column name and do
 > warning ""
 > Attributes from a junction table are not referenceable with the Audience Builder. If you'd like to reference an additional column on the junction table for filtering, you must first define it as an entity and explicitly define a relationship name. 
 
+Example:
+
 ```py
-#relating entities with junction table
 
 data_graph { 
      #define entities
      profile {
           #define profile
                ...
-               #relate products to carts
+               #relate products to carts with a junction table
                relationship "products" {
                     name = "Purchased Products"
                     related_entity = "product-entity"
@@ -256,7 +263,7 @@ data_graph {
 ```
 ## Data Graph Example 
 
-![An example of a data graph](/docs/unify/images/data-graph-example.png)
+![An example of a Data Graph](/docs/unify/images/data-graph-example.png)
 
 ```py
 data_graph {
@@ -267,7 +274,7 @@ data_graph {
           profile_folder = "segment"
           materialization = "none"
 
-          #relate profile to accounts
+          #relate accounts to profiles with an external ID
           relationship "user-accounts" {
                name = "Premium Accounts"
                related_entity = "account-entity"
@@ -276,13 +283,13 @@ data_graph {
                     join_key = "email_id"
                }
                
-               #relate account to carts
+               #relate carts to account
                relationship "user-carts" { 
                     name = "Shopping Carts"
                     related_entity = "cart-entity"
                     join_on = "ACCOUNT.ID = CART.ACCOUNT_ID"
 
-                    #relate products to carts
+                    #relate carts to products with a junction table
                     relationship "products" { 
                          name = "Purchased Products"
                          related_entity = "product-entity"
@@ -333,18 +340,11 @@ To edit your Data Graph:
 1. Navigate to **Unify > Data Graph**.
 2. Select the **Builder** tab, and click **Edit Data Graph**.
 
-Segment recommends creating a new Linked Audience or Linked Event. Deleting entities and relationships are not yet supported. Editing entities and relationships in the Data Graph may lead to errors if these entities or relationships are referenced in existing Linked Audiences and Linked Events. 
+Deleting entities and relationships are not yet supported. 
 
 > info ""
-> While you can edit entities and relationships in the Data Graph, these relationships and entities will still display in the Linked Audience Builder and Linked Events.
+> While you can edit entities and relationships in the Data Graph, this may lead to errors in downstream services referencing these entities and relationships. Segment recommends you recreate your existing Linked Audience and/or remove the entity from your existing Linked Events mappings.
 
-You can edit your Data Graph at any time. However, some types of edits may impact existing Linked Audiences and Linked Events. These include:
-
-- Adding a new relationship before an existing relationship
-- Replacing existing relationships with new relationships
-- Deleting existing entities or relationships
-
-If you make one of these edits, recreate your existing Linked Audiences and/or remove the entity from your existing Linked Events mappings.
 
 ## Next steps 
 
