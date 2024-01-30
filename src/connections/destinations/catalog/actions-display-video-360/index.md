@@ -67,7 +67,7 @@ Segment users must add this tag to their web properties. The tag performs severa
 
 The DV360 Destination syncs audience data between Segment and Google Display & Video 360. For more information about enabling the DV360 Destination, [view the setup instructions below](#set-up) below.
 
-## Setup
+## Set up the DV360 Destination
 
 Configuring this integration requires action by both you in your Segment workspace, and Google in your Google Marketing Platform account. As a result, the time required to finish configuration and setup can vary.
 
@@ -87,7 +87,7 @@ To configure DoubleClick Floodlight:
 2. Connect your JavaScript website source to the DoubleClick Floodlight destination, and configure the following settings:
    1. **Get DoubleClickID**: `On`
    2. **Google Network Id**: `segment`
-   3. Your [Segment Write Key](/docs/connections/find-writekey/). You can retrieve your write key from the Settings tab in the source.
+   3. Your [Segment write key](/docs/connections/find-writekey/). You can retrieve your write key from the Settings tab in the source.
    4. **DoubleClick Advertiser ID**
       - If you use DoubleClick Floodlight for DV360 only, enter `DV360`.
       - If you use DoubleClick Floodlight for other use cases in addition to DV360, enter the Advertiser ID from your Doubleclick Floodlight account.
