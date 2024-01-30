@@ -192,10 +192,11 @@ To configure your event:
 - As you're configuring your event, you can view a preview of the enriched event based on your property selections. 
 2. Map your event from your audience to your destination.
 - You can preview what the event will look like in your destination.
+- [Braze](/docs/connections/destinations/catalog/braze-cloud-mode-actions/#available-presets), [Iterable](/docs/connections/destinations/catalog/actions-iterable/#available-presets), and [Customer.io](/docs/connections/destinations/catalog/customer-io-actions/#available-presets) are pre-set destinations, so you won't need to map your audience to your destination.
 3. Select if you'd like to [send events for current profiles and entities in the audience](#send-events-for-current-profiles-and-entities-in-the-audience).
+- This is only available for the **entity added**, **audience entered**, and **audience membership changed** event types.
 4. After configuring, click **Save** to enable your Linked Audience. 
 
-After saving, you'll be redirected to a destination sidesheet where you can view all events and their corresponding actions.
 
 #### Send events for current profiles and entities in the audience
 
