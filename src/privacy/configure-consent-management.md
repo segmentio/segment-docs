@@ -1,13 +1,11 @@
 ---
 title: Configure Consent Management
-hidden: true
 related:
   - "/privacy/consent-management/"
   - "/privacy/consent-in-segment-connections/"
   - "/privacy/consent-in-unify/"
-redirect_from: "/privacy/configure-consent-management/"
 ---
-> info "Consent Management is in private beta"
+> info "Consent Management is in public beta"
 > This means that Consent Management features are in active development, and some functionality may change before it becomes generally available. [Contact Segment](https://segment.com/help/contact/){:target="_blank"} with any feedback or questions.
 
 After setting up your consent management platform (CMP), you can enforce the consent collected from your users by adding the [consent object](/docs/privacy/consent-in-segment-connections/#consent-object) to your events. 
@@ -53,7 +51,7 @@ Segment provides a OneTrust wrapper for the following sources:
 - **Analytics.js**: Please follow the instructions from the README in the [@segment/analytics-consent-wrapper-onetrust](https://github.com/segmentio/analytics-next/tree/master/packages/consent/consent-wrapper-onetrust){:target="_blank"} repository.
 - **Kotlin**: Please follow the instructions from the README in the [@segment-integrations/analytics-kotlin-consent](https://github.com/segment-integrations/analytics-kotlin-consent/blob/main/README.md#getting-started){:target="_blank"} repository.
 - **Swift**: Please follow the instructions from the README in the [@segment-integrations/analytics-swift-consent](https://github.com/segment-integrations/analytics-swift-consent#segment-consent-management){:target="_blank"} repository.
-- **React Native**: Please follow the instructions from the README in the [](){:target="_blank"} repository.
+<!---- **React Native**: Please follow the instructions from the README in the [](){:target="_blank"} repository.--->
 
 If you'd like to integrate with any other CMP, Segment requires you to build your own wrapper or use any mechanism provided it meets the above requirements of data and event generation.
 
