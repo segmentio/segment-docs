@@ -55,7 +55,7 @@ With Segment's APIs, you can manage user subscriptions programmatically on a rea
 
 ### Choosing between the Identify call and the Public API
 
-To update Engage user subscriptions with Segment's APIs, first choose between [the Identify call](/docs/connections/spec/identify/), for non-critical subscription updates, or the [Public API](https://api.segmentapis.com/docs/spaces/#replace-messaging-subscriptions-in-spaces){:target="_blank"}, for critical updates that require immediate confirmation, like unsubscribes.
+To update Engage user subscriptions with Segment's APIs, first choose between [the Identify call](/docs/connections/spec/identify/), for non-critical subscription updates, or the [Public API](https://docs.segmentapis.com/tag/Spaces#operation/replaceMessagingSubscriptionsInSpaces){:target="_blank"}, for critical updates that require immediate confirmation, like unsubscribes.
 
 When you use the Identify call, Segment replies with a standard HTTP `200 OK` status response code if it successfully received the request. Because the Identify call updates user traits asynchronously, though, the `200 OK` code indicates that Segment has received, but not yet processed, the request. As a result, use the Identify call for non-critical subscription updates, like form signups on your website or adding a subscription from within the user's notification center.
 

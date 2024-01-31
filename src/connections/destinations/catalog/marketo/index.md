@@ -15,7 +15,7 @@ Our client-side and server-side destinations each require **different** credenti
 
 ## Page and Track
 
-For [`Page`](/docs/connections/spec/page/) or [`Track`](/docs/connections/spec/track/) methods, Segment uses [Marketo's Munchkin.js `visitWebPage` method](http://developers.marketo.com/javascript-api/lead-tracking/api-reference/#munchkin_visitwebpage). The URL is built from the Segment event and properties object into the form Marketo expects, so no need to worry about doing that yourself.
+For [`Page`](/docs/connections/spec/page/) or [`Track`](/docs/connections/spec/track/) methods, Segment uses [Marketo's Munchkin.js `visitWebPage` method](http://developers.marketo.com/javascript-api/lead-tracking/api-reference/#munchkin_visitwebpage){:target="_blank"}. The URL is built from the Segment event and properties object into the form Marketo expects, so no need to worry about doing that yourself.
 
 To associate Track events to a particular Lead in Marketo from a server side library, you will need to pass the Munchkin.js cookie with your track calls.
 
@@ -23,7 +23,7 @@ To associate Track events to a particular Lead in Marketo from a server side lib
 
 ### Client-side
 
-When you call [`identify`](/docs/connections/spec/identify/) on Analytics.js, we call Marketo's [`associateLead`](http://developers.marketo.com/documentation/websites/lead-tracking-munchkin-js/). Marketo **requires an email address** for this function, so if  the `traits` object you include in [`identify`](/docs/connections/spec/identify/) doesn't have an email, the request won't go through. Marketo's client-side library, [Munchkin](http://developers.marketo.com/documentation/websites/lead-tracking-munchkin-js/), **requires your API private key** for authentication along with your email, so make sure that you have provided it in your Segment settings. We will not change the casing of traits on client-side identify calls.
+When you call [`identify`](/docs/connections/spec/identify/) on Analytics.js, we call Marketo's [`associateLead`](http://developers.marketo.com/documentation/websites/lead-tracking-munchkin-js/){:target="_blank"}. Marketo **requires an email address** for this function, so if  the `traits` object you include in [`identify`](/docs/connections/spec/identify/) doesn't have an email, the request won't go through. Marketo's client-side library, [Munchkin](http://developers.marketo.com/documentation/websites/lead-tracking-munchkin-js/){:target="_blank"}, **requires your API private key** for authentication along with your email, so make sure that you have provided it in your Segment settings. We will not change the casing of traits on client-side identify calls.
 
 ```javascript
 analytics.identify('1234', {
@@ -114,10 +114,10 @@ Analytics.track(
 )
 ```
 
-For more information about syncronising your Marketo leads, [visit their documentation](http://developers.marketo.com/documentation/soap/synclead/).
+For more information about syncronising your Marketo leads, [visit their documentation](http://developers.marketo.com/documentation/soap/synclead/){:target="_blank"}.
 
 ### Custom Fields
 
-To create a custom field in Marketo, follow Marketo's [documentation for creating a custom field](http://docs.marketo.com/display/public/DOCS/Create+a+Custom+Field+in+Marketo). Be sure that the **API Name** is `PascalCase`'d, as our destination will account for Marketo's Pascal trait standards.
+To create a custom field in Marketo, follow Marketo's [documentation for creating a custom field](http://docs.marketo.com/display/public/DOCS/Create+a+Custom+Field+in+Marketo){:target="_blank"}. Be sure that the **API Name** is `PascalCase`'d, as our destination will account for Marketo's Pascal trait standards.
 
 For instance, if you configure `SomeTrait` in the **API Name** field (the **Name** value does not matter), you can pass in this field as `someTrait`, and we will convert this to `SomeTrait` when sending into Marketo. Note that if you configured **API Name** to be `someTrait`, and passed it in as `someTrait` in your call, this would fail to send.

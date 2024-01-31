@@ -3,7 +3,7 @@ rewrite: true
 title: Qualaroo Destination
 id: 54521fda25e721e32a72eee8
 ---
-[Qualaroo](https://qualaroo.com/home) is a user testing tool that lets you add a survey to any page on your site, so you can get targeted user feedback as the user is performing a task. The `analytics.js` Qualaroo Destination is open-source. You can browse the code [on GitHub](https://github.com/segment-integrations/analytics.js-integration-qualaroo).
+[Qualaroo](https://qualaroo.com/home){:target="_blank"} is a user testing tool that lets you add a survey to any page on your site, so you can get targeted user feedback as the user is performing a task. The `analytics.js` Qualaroo Destination is open-source. You can browse the code [on GitHub](https://github.com/segment-integrations/analytics.js-integration-qualaroo){:target="_blank"}.
 
 ## Getting Started
 
@@ -38,7 +38,7 @@ When you call `identify` we call `_kiq.push(['identify', userId]);` with the `us
 
 ## Track
 
-**Note:** The use of [a custom property to trigger a survey](https://help.qualaroo.com/hc/en-us/articles/201441516) made available by utilizing a Segment Track call is currently not supported due to some code changes. The below section will *not* trigger a survey at this time.
+**Note:** The use of [a custom property to trigger a survey](https://help.qualaroo.com/hc/en-us/articles/201441516){:target="_blank"} made available by utilizing a Segment Track call is currently not supported due to some code changes. The below section will *not* trigger a survey at this time.
 
 If you're not familiar with the Segment Specs, take a look to understand what the [Track method](/docs/connections/spec/track/) does. An example call would look like:
 
@@ -55,4 +55,4 @@ _**NOTE:** Qualaroo will only receive traits from Tracks calls and Identify call
 
 ## Sending Data from Qualaroo
 
-Qualaroo makes it easy for you to get the data you collect from surveys back into Segment and off to all your other Segment destinations. Check out their awesome article about [Sending Qualaroo data into Segment](http://help.qualaroo.com/hc/en-us/articles/205436425) to get setup.
+Qualaroo makes it easy for you to get the data you collect from surveys back into Segment and off to all your other Segment destinations. Check out their awesome article about [Sending Qualaroo data into Segment](http://help.qualaroo.com/hc/en-us/articles/205436425){:target="_blank"} to get setup.

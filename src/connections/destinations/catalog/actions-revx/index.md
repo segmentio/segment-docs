@@ -1,6 +1,7 @@
 ---
 title: RevX Cloud (Actions) Destination
 id: 6464ef424ac5c5f47f5f3968
+beta: true
 ---
 
 {% include content/plan-grid.md name="actions" %}

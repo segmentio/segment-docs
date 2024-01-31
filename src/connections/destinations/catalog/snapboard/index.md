@@ -1,18 +1,15 @@
 ---
 title: Snapboard Destination
 rewrite: true
-beta: true
 id: 5e586181995f166e239fd271
 ---
-[Snapboard](https://snapboard.io/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) allows customers to build dashboards and internal tools without code. Snapboard pulls in your data from the apps you use (Segment, Stripe, etc) and displays them as a spreadsheet in Snapboard (which you can filter, sort, group, etc).
+[Snapboard](https://snapboard.io/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners){:target="_blank”} allows customers to build dashboards and internal tools without code. Snapboard pulls in your data from the apps you use (Segment, Stripe, etc) and displays them as a spreadsheet in Snapboard (which you can filter, sort, group, etc).
 
 
 You can then create any tool you want by hooking up the data to the cards/components (inputs, sliders, tables, charts, forms, todos, calendars, gallery, etc).
 
 
 This destination is maintained by Snapboard. For any issues with the destination, [contact the Snapboard Support team](mailto:calum@snapboard.io).
-
-{% include content/beta-note.md %}
 
 ## Getting Started
 
@@ -23,7 +20,7 @@ This destination is maintained by Snapboard. For any issues with the destination
 2. Search for "Snapboard" in the Catalog, select it, and choose which of your sources to connect the destination to.
 3. Enter the "API Key" into your Segment Settings UI which you can find from your Snapboard dashboard.
 
-You can obtain the API Key by [logging into Snapboard](https://snapboard.io/login), clicking on the circle icon in the top-left, and then clicking on the workspace name. Then click on the Settings menu item.
+You can obtain the API Key by [logging into Snapboard](https://snapboard.io/login){:target="_blank"}, clicking on the circle icon in the top-left, and then clicking on the workspace name. Then click on the Settings menu item.
 
 ![settings menu](images/snapboard_settings_location.png)
 

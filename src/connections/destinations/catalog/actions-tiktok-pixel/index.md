@@ -16,8 +16,6 @@ Use data collected from TikTok Pixel to:
 
 This destination is maintained by TikTok. For any issues with the destination, [contact TikTok's Support team](mailto:segmenteng@bytedance.com).
 
-{% include content/ajs-upgrade.md %}
-
 ## Getting started
 
 1. From the Segment web app, click **Catalog**, then click **Destinations**.

@@ -16,7 +16,7 @@ Segment's Amplitude destination code is open source and available on GitHub. You
 In addition to Segment's Amplitude documentation, Amplitude provides a [Segment integration guide](https://docs.developers.amplitude.com/data/sources/segment/){:target="_blank"}, as well.
 
 > note ""
-> To delete users based on GDPR regulations, you must include a secret key in the **Secret Key** setting of every Amplitude destination. You can find your Secret Key on the [General Settings](https://help.amplitude.com/hc/en-us/articles/235649848-Settings#general) of your Amplitude project.
+> To delete users based on GDPR regulations, you must include a secret key in the **Secret Key** setting of every Amplitude destination. You can find your Secret Key on the [General Settings](https://help.amplitude.com/hc/en-us/articles/235649848-Settings#general){:target="_blank"}  of your Amplitude project.
 
 
 
@@ -85,7 +85,7 @@ If you use Analytics.js (in either [device- or cloud-mode](/docs/connections/des
 
 Before you choose a setting, read about the Amplitude event type volume considerations.
 
-When you use the **Track Named Pages** or **Track Categorized Pages** settings, Segment sends a Page or Screen call that includes the name or category. This option stores the page and screen name as a top-level event type. However, Amplitude [limits the number of distinct event types per project](https://help.amplitude.com/hc/en-us/articles/115002923888-Limits#h_8d90ca72-bf91-4161-88b2-01b5448b0859). Each unique Page and Screen name, Page and Screen category, and Track event counts towards the event type limit. Anything past the instrumentation limit is not visualized in Amplitude.
+When you use the **Track Named Pages** or **Track Categorized Pages** settings, Segment sends a Page or Screen call that includes the name or category. This option stores the page and screen name as a top-level event type. However, Amplitude [limits the number of distinct event types per project](https://help.amplitude.com/hc/en-us/articles/115002923888-Limits#h_8d90ca72-bf91-4161-88b2-01b5448b0859){:target="_blank"}. Each unique Page and Screen name, Page and Screen category, and Track event counts towards the event type limit. Anything past the instrumentation limit is not visualized in Amplitude.
 
 When you use the **Track All Pages** setting, Segment sends a `Loaded a Page` event type to Amplitude. When you use the generic event name, it is applied to all Page and Screen calls, so you don't hit the event type limit in your project in Amplitude. The page or screen name is still available as an attribute of the `Loaded a Page` event, and you can query it as an event property. The `Loaded a Page` event is counted as one event type, and Amplitude does not place any limits on the number of unique event property values in Amplitude.
 
@@ -504,7 +504,7 @@ analytics.alias({
 
 ### sessionId
 
-[Segment doesn't have a concept for a session](https://segment.com/blog/facts-vs-stories-why-segment-has-no-sessions-api/).
+[Segment doesn't have a concept for a session](https://segment.com/blog/facts-vs-stories-why-segment-has-no-sessions-api/){:target="_blank"}.
 
 Device-mode calls to Amplitude include session information because Segment bundles Amplitude's SDK. To set up the same `sessionId` for cloud-mode calls to Amplitude, you must explicitly set the [`session_id`](https://developers.amplitude.com/docs/http-api-v2#optional-keyst){:target="_blank"} as an integration-specific option, as in the example below.
 

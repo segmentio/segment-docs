@@ -1,19 +1,17 @@
 ---
 rewrite: true
 title: Talon.One Destination
-beta: true
 id: 5de7c705e7d93d5e24742a04
 ---
 
 > warning ""
 > Segment and Talon.One recommend you use the [Talon.One (Action) Destination](/docs/connections/destinations/catalog/actions-talon-one/) instead.
 
-Create flexible and targeted promotional & loyalty campaigns with [Talon.One](https://Talon.One/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners).
+Create flexible and targeted promotional & loyalty campaigns with [Talon.One](https://Talon.One/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners){:target="_blank"}.
 Campaigns can be created and managed by non-technical users such as marketeers. There is no need to get your development team involved. Features include coupons, discounts, loyalty programs, referral tracking, geo-fencing, and bundling.
 
 This destination is maintained by Talon.One. For any issues with the destination, [contact the Talon.One Support team](mailto:support@talon.one).
 
-{% include content/beta-note.md %}
 
 > warning ""
 > Data collection that affects promotions should be collected using a Segment **server-side** implementation. Client-side implementations exposes you to risks of fraud. (e.g. a user changing a custom trait relating to their profile using JS modification tools, which triggers them to receive a higher discount than they are entitled to) For more information  [read this](/docs/guides/how-to-guides/collect-on-client-or-server/).

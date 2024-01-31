@@ -3,7 +3,7 @@ title: Zendesk Source
 id: 3hbak7a9
 ---
 
-[Zendesk](https://www.zendesk.com/) is a customer service platform for enterprises, which provides a customer support platform that allows quicker and easier interaction between businesses and customers.
+[Zendesk](https://www.zendesk.com/){:target="_blank”} is a customer service platform for enterprises, which provides a customer support platform that allows quicker and easier interaction between businesses and customers.
 
 
 ## Getting Started
@@ -28,7 +28,7 @@ id: 3hbak7a9
 
 ### Rate Limits
 
-The Zendesk source uses both Zendesk's [Core API](https://developer.zendesk.com/api-reference/){:target="_blank"} and [Incremental Exports API](https://developer.zendesk.com/rest_api/docs/core/incremental_export){:target="_blank"}. The source's requests to the Incremental API don't count towards your Zendesk account's rate limits, but requests to the Core API do. By default, Segment caps requests to Zendesk's Core API to a rate of 200 requests per minute to avoid triggering [Zendesk's Rate Limits](https://developer.zendesk.com/api-reference/ticketing/account-configuration/usage_limits/){:target="_blank"}. If you'd like to increase or decrease the request rate for your source, [please reach out](https://segment.com/help/contact/). Support for this in the UI is in the works.
+The Zendesk source uses both Zendesk's [Core API](https://developer.zendesk.com/api-reference/){:target="_blank"} and [Incremental Exports API](https://developer.zendesk.com/rest_api/docs/core/incremental_export){:target="_blank"}. The source's requests to the Incremental API don't count towards your Zendesk account's rate limits, but requests to the Core API do. By default, Segment caps requests to Zendesk's Core API to a rate of 200 requests per minute to avoid triggering [Zendesk's Rate Limits](https://developer.zendesk.com/api-reference/ticketing/account-configuration/usage_limits/){:target="_blank"}. If you'd like to increase or decrease the request rate for your source, [please reach out to Segment support](https://segment.com/help/contact/){:target="_blank”}. Support for this in the UI is in the works.
 
 ## Components
 
@@ -40,7 +40,7 @@ The sync component uses an upsert API, so the data in your warehouse loaded usin
 
 The source syncs and warehouse syncs are independent processes. Source runs pull your data into the Segment Hub, and warehouse runs flush that data to your warehouse. Sources sync with Segment every three hours. Depending on your Warehouses plan, Segment pushes the Source data to your warehouse on the interval associated with your billing plan.
 
-At the moment, Segment doesn't support filtering which objects or properties get synced. If you're interested in this feature, [please reach out](https://segment.com/help/contact/).
+At the moment, Segment doesn't support filtering which objects or properties get synced. If you're interested in this feature, [please reach out to Segment support](https://segment.com/help/contact/){:target="_blank”}.
 
 ## Collections
 
@@ -56,10 +56,10 @@ Collections are the groupings of resources Segment pulls from your source.
 |  [activities](#activities) | object | The activity stream is a per agent event stream. It will give access to the most recent events that relate to the agent polling the API. |
 |  [attachments](#activities) | object | This API is for attachments in tickets and forum posts in the Web portal. |
 |  [organizations](#organizations) | object | Just as agents can be segmented into groups in Zendesk, your customers (end-users) can be segmented into organizations. |
-|  [ticket_events](#ticket_events) | events | Returns a stream of changes that occurred on tickets. Each event is tied to an update on a ticket and contains all the fields that were updated in that change. **Note**: Segment pulls one year of ticket events to start by default. If you need more, reach out to [Segment support](https://segment.com/help/contact/). Support can do a run to pull further back in history. |
+|  [ticket_events](#ticket_events) | events | Returns a stream of changes that occurred on tickets. Each event is tied to an update on a ticket and contains all the fields that were updated in that change. **Note**: Segment pulls one year of ticket events to start by default. If you need more, reach out to [Segment support](https://segment.com/help/contact/){:target="_blank”}. Support can do a run to pull further back in history. |
 |  [ticket_metrics](#ticket_metrics) | object | All kinds of aggregate metrics about a ticket |
 |  [satisfaction_ratings](#satisfaction_ratings) | object | If you have enabled satisfaction ratings for your account, this end point allows you to quickly retrieve all ratings. |
-|  [ticket_comments](#ticket_comments) | object | Ticket comments represent the conversation between requesters, collaborators, and agents. It includes the full body of each comment, public and private. **Note**: This collection is not included by default. To request it, [contact Segment support](https://segment.com/help/contact/). |
+|  [ticket_comments](#ticket_comments) | object | Ticket comments represent the conversation between requesters, collaborators, and agents. It includes the full body of each comment, public and private. **Note**: This collection is not included by default. To request it, [contact Segment support](https://segment.com/help/contact/){:target="_blank”}. |
 |  [ticket_forms](#ticket_forms) | object | Ticket forms allow an admin to define a subset of ticket fields for display to both agents and end users. **Note**: This feature requires a Zendesk Enterprise account. Segment fully syncs all available records in each sync run. |
 |  [ticket_skips](#ticket_skips) | object | A skip is a record of when an agent skips over a ticket without responding to the end user. **Note**: Segment fully syncs all available records in this collection during each sync run. |
 |  [organization_memberships](#organization_memberships) | object | An organization_membership links a user to an organization. Organizations can have many users. Users can be in many organizations if the account supports multiple organizations. **Note**: Segment fully syncs all available records in this collection during each sync run. |

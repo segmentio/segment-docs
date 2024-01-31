@@ -37,7 +37,7 @@ The Snapchat Conversions API destination provides the following benefits:
 ## FAQ and Troubleshooting
 
 ### Invalid token error
-If you're experiencing 400 Bad Requests errors related to an invalid token, follow [these instructions](https://segment.com/docs/connections/destinations/catalog/actions-snap-conversions/#getting-started) to reauthorize your account: 
+If you're experiencing 400 Bad Requests errors related to an invalid token, follow [these instructions](/docs/connections/destinations/catalog/actions-snap-conversions/#getting-started) to reauthorize your account: 
 - On the **Settings** tab, authenticate with Snap using OAuth. 
 - Click **Connect to Snapchat Conversions API**. 
 - Follow the prompts to authenticate using OAuth with a Snapchat login. Use a Snapchat login that is a member of the Snapchat Ads account you want to connect.

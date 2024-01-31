@@ -162,24 +162,27 @@ To get started with Node.js:
 4. Run `npx typewriter init` to use the Typewriter quickstart wizard that generates a [`typewriter.yml`](#configuration-reference) configuration, along with your first Typewriter client. When you run the command, it creates a `typewriter.yml` file in your repo. For more information on the format of this file, see the [Typewriter Configuration Reference](#configuration-reference). The command also adds a new Typewriter client in `./analytics` (or whichever path you configured). You can import this client into your project, like so:
 
     ```ts
-    // Import your auto-generated Typewriter client.
-    import typewriter from './analytics'
-
     // Initialize analytics-node, per the analytics-node guide above.
     import { Analytics } from '@segment/analytics-node'
 
-    export const analytics = new Analytics({ writeKey: 'YOUR_WRITE_KEY' })
+    const analytics = new Analytics({ writeKey: '<MY_WRITE_KEY>' })
 
-    // Pass in your analytics-node instance to Typewriter.
-    typewriter.setTypewriterOptions({
-      analytics: analytics
+    app.post('/login', (req, res) => {
+       analytics.identify({
+          userId: req.body.userId,
+          previousId: req.body.previousId
+      })
+      res.sendStatus(200)
     })
-
-    // Issue your first Typewriter track call!
-    typewriter.orderCompleted({
-      orderID: 'ck-f306fe0e-cc21-445a-9caa-08245a9aa52c',
-      total:   39.99
-    })
+    
+    app.post('/cart', (req, res) => {
+      analytics.track({
+        userId: req.body.userId,
+        event: 'Add to cart',
+        properties: { productId: '123456' }
+      })
+       res.sendStatus(201)
+    });
     ```
 
 > info ""

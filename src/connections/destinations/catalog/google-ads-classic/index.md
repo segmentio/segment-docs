@@ -84,7 +84,7 @@ Segment recommends using the `trackLink` or `trackForm` helpers to delay the pag
 
 ### Legacy Migration
 
-The server-to-server integration with Google Ads (Classic) integrates with the [App Conversion Tracking and Remarketing API](https://developers.google.com/app-conversion-tracking/api/) which is responsible for receiving and processing in-app conversion events. Google recently released an entirely new version of this API that is slated to completely replace the [legacy API](https://developers.google.com/app-conversion-tracking/api/legacy/android-conversion-tracking-server) in the near future. If you are an existing user of this integration and are migrating to this new version, there are three important changes to be aware of:
+The server-to-server integration with Google Ads (Classic) integrates with the [App Conversion Tracking and Remarketing API](https://developers.google.com/app-conversion-tracking/api/){:target="_blank"} which is responsible for receiving and processing in-app conversion events. Google recently released an entirely new version of this API that is slated to completely replace the [legacy API](https://developers.google.com/app-conversion-tracking/api/legacy/android-conversion-tracking-server){:target="_blank"} in the near future. If you are an existing user of this integration and are migrating to this new version, there are three important changes to be aware of:
 
 1) App Event Mappings
 
@@ -106,7 +106,7 @@ To authorize Segment to track conversion events using the Google Ads (Classic) A
 
 #### Generate a Link ID in your Google Ads (Classic) Account
 
-Authorization between an Google Ads (Classic) account and a third-party-application is done using the use of a Link Id. This process is detailed [here](https://support.google.com/adwords/answer/7365001).
+Authorization between an Google Ads (Classic) account and a third-party-application is done using the use of a Link Id. This process is detailed [here](https://support.google.com/adwords/answer/7365001){:target="_blank"}.
 
 > warning ""
 > During this process, you are required to enter a Provider ID. Segment's Provider ID is: `7552494388`.
@@ -216,4 +216,4 @@ The following properties are optional, if you'd like to see more, [contact Segme
 | `currency_code` | `properties.currency` |
 
 
-Here's Google documentation for the endpoint Segment connects to [for iOS apps](https://developers.google.com/app-conversion-tracking/ios/conversion-tracking-server#reporting_in-app_conversions_from_an_analytics_server) and [for Android Apps](https://developers.google.com/app-conversion-tracking/android/conversion-tracking-server#in-app_conversions). It can take 24-48 hours for conversions to show up in the conversions dashboard.
+Here's Google documentation for the endpoint Segment connects to [for iOS apps](https://developers.google.com/app-conversion-tracking/ios/conversion-tracking-server#reporting_in-app_conversions_from_an_analytics_server){:target="_blank"} and [for Android Apps](https://developers.google.com/app-conversion-tracking/android/conversion-tracking-server#in-app_conversions){:target="_blank"}. It can take 24-48 hours for conversions to show up in the conversions dashboard.

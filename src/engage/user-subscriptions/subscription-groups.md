@@ -108,37 +108,34 @@ To set susbcription groups with the Identify call, you'll need to include a key-
 }
 ```
 
-## Frequently asked questions
+## FAQs
 
-{% faq %}
-{% faqitem How many subscription groups can I have? %}
+#### How many subscription groups can I have? 
+
 Your Engage space includes up to 25 subscription groups.
-{% endfaqitem %}
 
-{% faqitem Can I use subscription groups with templates I've already built? %}
+#### Can I use subscription groups with templates I've already built? 
+
 No. Templates you've previously created aren't compatible with subscription groups. To use subscription groups, you'll need to create new templates that include new unsubscribe and manage preference links.
-{% endfaqitem %}
 
-{% faqitem What happens if I delete a subscription group? %}
+#### What happens if I delete a subscription group?
+
 If you delete a subscription group, Engage will still maintain the preferences of the group's end users. 
-{% endfaqitem %}
 
-{% faqitem What subscription group events does the Engage Channels Source send? %}
+#### What subscription group events does the Engage Channels Source send? 
+
 The [Engage Events Source](/docs/connections/sources/catalog/cloud-apps/engage-events/) tracks four subscription group events: `Email Unsubscribed`, `Email Group Unsubscribed`, `Channel Subscription Updated`, and `Group Subscription Updated`.
 
-{% endfaqitem %}
-
-{% faqitem How can users opt back in if they've unsubscribed from all groups? %}
+#### How can users opt back in if they've unsubscribed from all groups? 
 If a user unsubscribes from all of your subscription groups, they'll need to re-subscribe by explicitly opting back in to each group.
-{% endfaqitem %}
 
-{% faqitem Do subscription preference links work in test emails? %}
+#### Do subscription preference links work in test emails? 
+
 Yes. Test emails include fully functional unsubscribe and subscription preference links. If a test email recipient unsubscribes using a test email, Segment updates that user's subscription state. <br><br>
 
 Test emails temporarily override an email subscription state. This means that an unsubscribed email address can receive a test email but won't receive regular email campaigns from which they've unsubscribed.
-{% endfaqitem %}
 
-{% faqitem Should I follow any conventions when naming a subscription group? %}
+#### Should I follow any conventions when naming a subscription group? 
 
 Yes. Keep the following table in mind when you name a subscription group:
 
@@ -151,6 +148,3 @@ Yes. Keep the following table in mind when you name a subscription group:
 | Spaces in Group Names                         | Spaces aren't allowed at the beginning and/or end of the Group name |
 | Unsupported characters for Group Names        | `!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?`                               |
 | Unsupported accent characters for Group Names | `á, é, í, ó, ú, à, è, ì, ò, ù, ë, ï, ã`                             |
-{% endfaqitem %}
-
-{% endfaq %}

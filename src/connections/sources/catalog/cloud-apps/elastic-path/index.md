@@ -5,12 +5,12 @@ id: VETiUX9u66
 
 [Elastic Path](https://www.elasticpath.com?utm_source=segmentio&utm_medium=docs&utm_campaign=partners){:target="_blank"} is a SaaS based headless commerce platform that provides core commerce with a focus on catalog and product data management and modern merchandising capabilities so that brands can power their complex commerce experiences across multiple geographies, touchpoints, brands, and business models.
 
-This is an [Event Cloud Source](/docs/sources/#event-cloud-sources){:target="_blank"} which can not only export data into your Segment warehouse, but can also federate the exported data into your other enabled Segment Destinations.
+This is an [Event Cloud Source](/docs/sources/#event-cloud-sources) which can not only export data into your Segment warehouse, but can also federate the exported data into your other enabled Segment Destinations.
 
 This source is maintained by Elastic Path. For any issues with the source, contact the [Elastic Path Support team](https://support.elasticpath.com/hc/en-us){:target="_blank"}.
 
 > info ""
-> The Elastic Path Source is currently in beta, which means that they are still actively developing the source. If you are interested in joining their beta program or have any feedback to help improve the Elastic Path Source and its documentation, [let the Elastic Path team know](https://support.elasticpath.com/hc/en-us).
+> The Elastic Path Source is currently in beta, which means that they are still actively developing the source. If you are interested in joining their beta program or have any feedback to help improve the Elastic Path Source and its documentation, [let the Elastic Path team know](https://support.elasticpath.com/hc/en-us){:target="_blank"}.
 
 ## Getting started
 
@@ -96,7 +96,7 @@ The following payload contains the properties for the following events:
 | `properties.products.$.price`           | The product unit price.                                                     |
 | `properties.products.$.quantity`        | The quantity of a product.                                                  |
 
-Note: Elastic path uses properties of these events from the [eCommerce Spec](/docs/connections/spec/ecommerce/v2){:target="_blank"} defined by the Segment doc. Add more properties as per this documentation based on your business requirement.
+Note: Elastic path uses properties of these events from the [eCommerce Spec](/docs/connections/spec/ecommerce/v2) defined by the Segment doc. Add more properties as per this documentation based on your business requirement.
 
 ## Add destinations
 

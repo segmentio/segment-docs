@@ -3,12 +3,9 @@ title: Learndot Destination
 rewrite: true
 id: 5d67475d07d95bd4a7937ea7
 ---
-[Learndot](https://www.learndot.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) is a product focussed customer education platform that enables companies to rapidly produce and distribute engaging training content.
+[Learndot](https://www.learndot.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners){:target="_blank”} is a product focussed customer education platform that enables companies to rapidly produce and distribute engaging training content.
 
 This destination is maintained by Learndot. For any issues with the destination, [contact the Learndot Support team](mailto:help@learndot.com).
-
-{% include content/beta-note.md %}
-
 
 ## Getting Started
 
@@ -16,7 +13,7 @@ This destination is maintained by Learndot. For any issues with the destination,
 
 1. From the Segment web app, click **Catalog**.
 2. Search for "Learndot" in the Catalog, select it, and choose which of your sources to connect the destination to.
-3. Enter the "API Key" into your Segment Settings UI which you can find from your [Learndot admin](https://admin.learndotx.com/settings).
+3. Enter the "API Key" into your Segment Settings UI which you can find from your [Learndot admin](https://admin.learndotx.com/settings){:target="_blank"}.
 
 
 ## Identify

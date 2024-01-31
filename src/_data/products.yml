@@ -101,7 +101,7 @@ items:
     add-on: false
 - product_display_name: Audit Trail
   slug: audit-trail
-  plan-note: "Audit Trail is available as an add-on for customers with the Business plan."
+  plan-note: "Audit Trail is only available in Business plan workspaces."
   plans:
     free: false
     team: false

@@ -3,9 +3,9 @@ rewrite: true
 title: Amazon EventBridge Destination
 id: 5d1994fb320116000112aa12
 ---
-[Amazon EventBridge](https://aws.amazon.com/eventbridge/) is the easiest way to onboard your Segment data into the AWS ecosystem.
+[Amazon EventBridge](https://aws.amazon.com/eventbridge/){:target="_blank”} is the easiest way to onboard your Segment data into the AWS ecosystem.
 
-In addition to already supported destinations like Kinesis, S3, and Redshift, you can use EventBridge to selectively route streaming data into Amazon SQS, SNS, and any service supported by [AWS CloudWatch Events](https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/WhatIsCloudWatchEvents.html).
+In addition to already supported destinations like Kinesis, S3, and Redshift, you can use EventBridge to selectively route streaming data into Amazon SQS, SNS, and any service supported by [AWS CloudWatch Events](https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/WhatIsCloudWatchEvents.html){:target="_blank”}.
 
 
 ## Getting Started
@@ -14,7 +14,7 @@ In addition to already supported destinations like Kinesis, S3, and Redshift, yo
 
   1. Provide Segment your AWS Account ID and the region you'd like us to configure the Segment Partner Event Source in. Ensure you've provided the same region in Segment where you'd like to configure your Event Bus.
   2. Once you send an event through with the destination enabled, we'll create a Partner Event Source in Amazon EventBridge, which you can activate in the AWS Console.
-  3. Use the [AWS Console](http://console.aws.amazon.com/events/) to configure rules and destinations for the events in your Segment Partner Event Source.
+  3. Use the [AWS Console](http://console.aws.amazon.com/events/){:target="_blank”} to configure rules and destinations for the events in your Segment Partner Event Source.
 
 The Event Source will be denoted by your Segment Source ID, which you can find in your Source Settings page under API Keys.
 

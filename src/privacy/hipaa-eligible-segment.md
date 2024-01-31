@@ -39,8 +39,8 @@ Segment encrypts the data in select fields [marked as yellow in the Privacy Port
 
 Data encryption does not support "fuzzy matching". You can encrypt [Default PII matchers](/docs/privacy/portal/#default-pii-matchers), [Custom PII matchers](/docs/privacy/portal/#custom-pii-matchers), and any [Synonyms](/docs/privacy/portal/#using-synonyms) you've created for keys.
 
-> info "Data encryption is currently in public beta"
-> Data encryption only supports event-stream, cloud-mode destinations. Only data fields in `context`, `traits`, and `property` objects can be encrypted. 
+> info "Data encryption only supports event-stream, cloud-mode destinations"
+> Only data fields in `context`, `traits`, and `property` objects can be encrypted. 
 >
 > After Segment encrypts the data, the encrypted data value is always a `string`. Any downstream validation that looks for `integer` or `boolean` data types will fail for encrypted values.
 
@@ -107,4 +107,8 @@ To remove encryption from incoming data:
 4. On the **Turn off data encryption?** popup, click **Confirm**.
 
 > success ""
-> Disabling the data encryption setting does not decrypt existing data, but does prevent any future data from being encrypted. 
+> Disabling the data encryption setting does not decrypt existing data, but does prevent any future data from being encrypted.
+
+## User session timeouts
+
+Segment automatically logs out all users with access to HIPAA eligible workspaces after 15 minutes of inactivity.
