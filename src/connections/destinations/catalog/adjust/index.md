@@ -5,12 +5,12 @@ id: 56f6ce7280412f644ff12fb2
 ---
 [Adjust](https://adjust.com){:target="_blank"} is the mobile attribution provider of choice for hundreds of organizations across the globe. They unify all your marketing activities into one powerful platform, giving you the insights you need to scale your business. The Adjust Destination is open-source. You can browse the code on GitHub for [iOS](https://github.com/segment-integrations/analytics-ios-integration-adjust){:target="_blank"} and [Android](https://github.com/segment-integrations/analytics-android-integration-adjust){:target="_blank"}.
 
-If you notice any gaps, out-dated information, or want to leave feedback to help improve Segment's documentation, [let us know](https://segment.com/help/contact).
+If you notice any gaps, out-dated information, or want to leave feedback to help improve Segment's documentation, [let us know](https://segment.com/help/contact){:target="_blank”}.
 
 
 ## Getting started
 
-{% include content/connection-modes.md %}
+
 
 1. From the Segment web app, click **Catalog**.
 2. Search for "Adjust" in the Catalog, select it, and choose which of your sources to connect the destination to.
@@ -108,10 +108,6 @@ analytics = new Analytics.Builder(this, "write_key")
 ```
 
 After you build and release to the App Store, Segment automatically starts translating and sending your data to Adjust.
-
-### React Native
-
-{% include content/react-dest.md %}
 
 ### Server
 
@@ -237,7 +233,7 @@ If you're using Adjust's iOS SDK, it will automatically takes care of duplicate 
 
 ### In-app purchase receipts
 
-The destination does not currently support in-app purchase receipts. If this is important to you, [reach out to support](https://segment.com/help/contact/).
+The destination does not currently support in-app purchase receipts. If this is important to you, [reach out to support](https://segment.com/help/contact/){:target="_blank”}.
 
 ### Push notifications
 

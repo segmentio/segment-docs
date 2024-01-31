@@ -2,10 +2,11 @@
 title: SalesWings (Actions) Destinaton
 hide-boilerplate: true
 hide-dossier: true
-private: true
+private: false
 id: 63d17a1e6ab3e62212278cd0
----
+hidden: false
 
+---
 {% include content/plan-grid.md name="actions" %}
 
 [SalesWings](https://www.saleswingsapp.com/){:target="_blank"} is a lead scoring platform that offers a user-friendly, no-code solution to identify your leads' true interests. The SalesWings Destination enables using the data collected in Segment to identify, tag and prioritize your leads in SalesWings for your Marketing and Sales teams.

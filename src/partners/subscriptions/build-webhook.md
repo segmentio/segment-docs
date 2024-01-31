@@ -51,7 +51,7 @@ See the [headers](#headers) section for more details.
 #### Custom Settings
 All subscriptions have an API key setting by default, which Segment will send in the Authorization Header. To add more custom settings, go to the `Settings Builder` page under `App Info`.
 
-![](/docs/partners/images/developer_center_settings_builder.png)
+![Screenshot of the Settings Builder page.](/docs/partners/images/developer_center_settings_builder.png)
 
 Any custom settings you add will be sent in the custom header `X-Segment-Settings` (See the [headers](#headers) section for more details.)
 
@@ -159,7 +159,7 @@ When testing your integration, proceed through two separate flows:
 
 Test your code directly from the Developer Center UI. Use the `Send Test Event` button and review the test event to make sure your function works as expected.
 
-![](/docs/partners/images/developer_center_customcode_test.png)
+![Screenshot of the Build tab in the Developer Center, with a View Output button selected in the test event panel.](/docs/partners/images/developer_center_customcode_test.png)
 
 In the debugger panel, check the two outputs. The **Callback Return** and the **Log Output**.
 
@@ -168,7 +168,7 @@ In the debugger panel, check the two outputs. The **Callback Return** and the **
 
 When your code is working with one event you can test it with a suite of more Segment events. Click `Save and Next: Test`, fill in an `API Key` and click `Test`. You will see the results of additional types of Segment data.
 
-![](/docs/partners/images/developer_center_test_suite.png)
+![Screenshot of the Test tab in the Developer Center, which shows the results for each Segment Spec method.](/docs/partners/images/developer_center_test_suite.png)
 
 ### The User Flow
 
@@ -184,7 +184,7 @@ Now you can use the JavaScript SDK in a browser to generate real analytics event
 
 Finally you should verify the data in your service.
 
-![](/docs/partners/images/test-destination.gif)
+![Animation showing someone configure a custom app, enable the app, and test three events.](/docs/partners/images/test-destination.gif)
 
 ## Next Steps
 

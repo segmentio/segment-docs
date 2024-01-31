@@ -4,7 +4,7 @@ id: FOkpxVzfJJ
 ---
 {% include content/source-region-unsupported.md %}
 
-Vero is an email marketing tool that lets you set up automated emails to your users that get sent after they've completed certain actions. [Visit Website](http://getvero.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners)
+Vero is an email marketing tool that lets you set up automated emails to your users that get sent after they've completed certain actions. [Visit Website](http://getvero.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners){:target="_blank”}
 
 Take your company's email analysis to the next level by **adding Vero as a Source to Segment.** Segment automatically  collects email events like `Email Delivered` and `Email Opened`, forward them to your destinations, and load them into your data warehouse. 
 
@@ -22,7 +22,7 @@ If you have previously enabled sending email events using the Vero destination d
 
 4. The next page ("Overview") will surface your **Segment write key for Vero.** Copy this write key. 
 
-5. To finish the setup, you'll have to go into your Vero account and enter this Segment write key in their integrations settings. Find the right place in Vero by clicking [Integrations](https://app.getvero.com/settings/integrations?integrations=all) > Segment.
+5. To finish the setup, you'll have to go into your Vero account and enter this Segment write key in their integrations settings. Find the right place in Vero by clicking [Integrations](https://app.getvero.com/settings/integrations?integrations=all){:target="_blank”} > Segment.
 
 6. Click **Save**.
 

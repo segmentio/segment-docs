@@ -3,9 +3,9 @@ tile: Boomtrain Destination
 beta: true
 ---
 
-Boomtrain is a predictive intelligence platform for marketers that uses machine learning to drive increased clicks, engagement and revenue through customer communications. [Visit Website](http://boomtrain.com).
+Boomtrain is a predictive intelligence platform for marketers that uses machine learning to drive increased clicks, engagement and revenue through customer communications. [Visit Website](http://boomtrain.com){:target="_blank"}.
 
-The Boomtrain destination with Segment supports the `identify`, `track` and `page` methods.  Our JavaScript destination code is open sourced on GitHub. [Feel free to check it out](https://github.com/boomtrain/segmentio_integration).
+The Boomtrain destination with Segment supports the `identify`, `track` and `page` methods.  Our JavaScript destination code is open sourced on GitHub. [Feel free to check it out](https://github.com/boomtrain/segmentio_integration){:target="_blank"}.
 
 ## Getting Started
 
@@ -23,7 +23,7 @@ When you enable Boomtrain in the Segment web app, your changes appear in the Seg
 
 ## Identify
 
-When you call [`identify`](/docs/connections/spec/identify/) on analytics.js, we call `person.set` on the Boomtrain JavaScript Library with the `traits` object. A `userId` must be specified.  For additional details about the Boomtrain `person.set` methods see [this article](https://boomtrain.readme.io/docs/set) on the Boomtrain Developer Documentation.
+When you call [`identify`](/docs/connections/spec/identify/) on analytics.js, we call `person.set` on the Boomtrain JavaScript Library with the `traits` object. A `userId` must be specified.  For additional details about the Boomtrain `person.set` methods see [this article](https://boomtrain.readme.io/docs/set){:target="_blank"} on the Boomtrain Developer Documentation.
 
 ## Track
 
@@ -37,4 +37,4 @@ Segment lets you change these settings on the destination settings, without havi
 The App ID for your app can be taken from the destination guide provided by Boomtrain to your company.  For additional information about your App ID or destination details, contact your Boomtrain CSM or [support@boomtrain.com](mailto:support@boomtrain.com).
 
 
-If you have any questions, or suggestions on we can improve this documentation, feel free to [contact us](http://boomtrain.com/contact/).
+If you have any questions, or suggestions on we can improve this documentation, feel free to [contact us](http://boomtrain.com/contact/){:target="_blank"}.

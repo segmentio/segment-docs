@@ -26,11 +26,23 @@ Follow these steps to send a test event:
 
 1. From the **Send to destinations** window, select **+ Add destination**.
 2. Choose the Destination that you want to connect.
-3. In the Destination pane, select **Event tester**.
-4. From the **Event Type** dropdown, select the event you want to test. Segment generates a test user ID.
+3. In the Destination pane, select **Event tester**. This is only available for [Event Destinations](/docs/engage/using-engage-data/#engage-destination-types-event-vs-list).
+4. From the **Event Type** drop-down, select the event you want to test. Segment generates a test user ID.
 5. Select **Send Event**, then view the test event results in the **Event lifecycle** section.
 
 If your Destination successfully handled the event, Segment displays a `200 OK` HTTP status code along with the full response. If an error occurred, Segment displays any available details in the Event lifecyle section.
+
+## Use Trait Activation with Journeys
+
+Use Trait Enrichment and ID Sync to configure sync payloads that you send from Journeys to your destination.
+-  With [Trait Enrichment](/docs/engage/trait-activation/trait-enrichment/), use custom, SQL, computed, and predictive traits to enrich the data you map to your destinations. 
+- Use [ID Sync](/docs/engage/trait-activation/id-sync/) to select identifiers and a sync strategy for the data you send to your destination.
+
+To use Trait Activation with Journeys:
+1. Navigate to the Journeys builder of a new or existing Journey. 
+2. Select [a supported](/docs/engage/trait-activation/trait-activation-setup/#set-up-a-destination) destination from a journey step.
+3. Select **Customized Setup**, then add identifier and trait mappings to customize the way you send data to your destination. For more, visit the [Trait Enrichment](/docs/engage/trait-activation/trait-enrichment/#customized-setup/) and [ID Sync](/docs/engage/trait-activation/id-sync/#customized-setup/) setup docs.
+
 
 ## What do I send to destinations?
 
@@ -39,7 +51,7 @@ The data type you send to a destination depends on whether the destination is an
 ### Event destination
 
 The format in which the destination receives updates depends on the call type.
-
+ 
 #### Track calls
 
 When the user enters the step:
@@ -69,6 +81,6 @@ When the user enters the step:
 
 ### List destination
 
-The destination receives a list of users who qualify for the associated journey step. Unlike lists associated with Engage Audiences, users who are added to a journey list cannot be subsequently removed. See [best practices](/docs/engage/journeys/faq-best-practices#suppress-targeting-with-journey-lists) for techniques to suppress targeting with journey lists.
+The destination receives a list of users who qualify for the associated journey step. Unlike lists associated with Engage Audiences, users who are added to a journey list cannot be subsequently removed. See [best practices](/docs/engage/journeys/faq-best-practices#suppress-targeting-with-journey-lists) for techniques to suppress targeting with journey lists. List destinations do not have access to the Event tester.
 
 For more information, see [Using Engage Data](/docs/engage/using-engage-data/).

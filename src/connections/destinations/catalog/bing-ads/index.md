@@ -3,9 +3,10 @@ title: Bing Ads Destination
 rewrite: true
 id: 54521fd525e721e32a72ee97
 ---
- [Bing Ads](https://bingads.microsoft.com) enables Marketers to track and monitor campaigns, clicks, CTRs, spend and budget. Bing Ads lets you place cross-device product ads in front of Bing, Yahoo, and MSN customers and support imported pay-per-click ad campaigns from third-party platforms like Google AdWords. With Bing Ads you can also retarget ads to customers after they complete an action like leaving a shopping cart or viewing a product without purchasing. To learn more, see [Bing Ads](https://advertise.bingads.microsoft.com/en-us/resources/training/what-is-bing-ads). You can also browse the code [on GitHub](https://github.com/segment-integrations/analytics.js-integration-bing-ads).
 
-## Getting Started
+[Bing Ads](https://bingads.microsoft.com) enables Marketers to track and monitor campaigns, clicks, CTRs, spend and budget. Bing Ads lets you place cross-device product ads in front of Bing, Yahoo, and MSN customers and support imported pay-per-click ad campaigns from third-party platforms like Google AdWords. With Bing Ads you can also retarget ads to customers after they complete an action like leaving a shopping cart or viewing a product without purchasing. To learn more, see [Bing Ads](https://advertise.bingads.microsoft.com/en-us/resources/training/what-is-bing-ads). You can also browse the code [on GitHub](https://github.com/segment-integrations/analytics.js-integration-bing-ads).
+
+## Getting started
 
 {% include content/connection-modes.md %}
 
@@ -45,8 +46,6 @@ For Segment to map your track events to a Conversion Goal, first create the goal
 5. Choose the `Event` type of conversion and click **Next**.
 6. Fill in the appropriate values. Make sure to add the Segment event name as the **label** field and to associate the goal to the correct Tag (**UET Tag**) that is set up in your Segment source.
 
-<!-- Pete's Suggested change to outdated Doc text -->
-
 ## Setting up Custom Events:
 
 **Step 1: Add the UET Tag Tracking Code to Your Website**
@@ -78,6 +77,10 @@ Associate the UET tag with the remarketing list.
 
 1. Add the code for the custom event to the UET tag tracking code.
 2. Follow the instructions provided to set up the event tag on your website.
+=======
+For Segment to map your track events to a Conversion Goal, create the goal in your Bing Ads account:
+
+For information about tracking custom events, see Microsoft's article [How to track custom events with UET](https://help.ads.microsoft.com/#apex/ads/en/56684/2-500){:target="_blank"}
 
 Only the event name is required - other properties are optional. An example track call is shown below:
 
@@ -90,13 +93,13 @@ analytics.track('Order Completed', {
 });
 ```
 
-**Label**: Event Name (`'Order Completed'` in this case)
+| Property | Description                                   |
+| -------- | --------------------------------------------- |
+| Label    | Event Name (`'Order Completed'` in this case) |
+| Value    | `revenue` property                            |
+| Category | `category` property                           |
+| Action   | Always set to `track`                         |
 
-**Value**: `revenue` property
-
-**Category**: `category` property
-
-**Action**: always sent with value of `track`
 
 ## Troubleshooting
 

@@ -17,12 +17,12 @@ Segment placed the Classic destination framework in maintenance mode. Sprig enco
 
 ## Getting Started with Classic
 
-{% include content/connection-modes.md %}
+
 
 1. In the Segment web app, navigate to **Catalog > Destinations**.
 2. Type *Sprig* in the **Filter Destinations** field.
 3. Click **Sprig**, then click **Configure Sprig**.
 4. Select an existing JavaScript website source to connect to Sprig and click **Next**.
 5. Enter a **Destination name**, select **Classic**, and click **Save**.
-6. Type in the Environment ID and click Save Changes. You your Environment ID can be found in [Connect > JavaScript](https://app.sprig.com/connect){:target="_blank". For for information, click [here](https://docs.sprig.com/docs/products-and-environments#environments){:target="_blank"}.
+6. Type in the Environment ID and click Save Changes. You your Environment ID can be found in [Connect > JavaScript](https://app.sprig.com/connect){:target="_blank"}. For for information, click [here](https://docs.sprig.com/docs/products-and-environments#environments){:target="_blank"}.
 7. Select **Enable Destinations** and click **Save Changes**.

@@ -46,6 +46,9 @@ Segment needs a Talon.One-generated API key to be able to send data to your Talo
 1. Select an expiry date and click **Create API Key**.
 1. Copy it for later use.
 
+> info "Talon.One API Rate Limit"
+> Talon.One limits integrations with Segment to 60 requests per second for any given client, regardless of the endpoint. To increase this limit, contact Talon.One.
+
 ### Adding a Talon.One destination
 
 To start sending data to Talon.One from Segment, create a Talon.One

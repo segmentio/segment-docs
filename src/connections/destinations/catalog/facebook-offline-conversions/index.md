@@ -4,7 +4,7 @@ rewrite: true
 strat: facebook
 id: 58ae54dc70a3e552b95415f6
 ---
-[Facebook Offline Conversions](https://www.facebook.com/business/help/1782327938668950?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) enables offline event tracking, so marketers can run campaigns, upload transaction data, and compare in-store transactions.
+[Facebook Offline Conversions](https://www.facebook.com/business/help/1782327938668950?utm_source=segmentio&utm_medium=docs&utm_campaign=partners){:target="_blank”} enables offline event tracking, so marketers can run campaigns, upload transaction data, and compare in-store transactions.
 
 > info "Customer Information Parameters Requirements"
 > As of Facebook Marketing API v13.0+, Facebook began enforcing new requirements for customer information parameters (match keys). To ensure your events don't throw an error, Segment recommends that you review [Facebook’s new requirements](https://developers.facebook.com/docs/graph-api/changelog/version13.0#conversions-api){:target="_blank"}.
@@ -12,18 +12,18 @@ id: 58ae54dc70a3e552b95415f6
 ## Other Facebook Destinations Supported by Segment
 This page is about the **Facebook Offline Conversions**. For documentation on other Facebook destinations, see the pages linked below.
 
-| **Facebook Destination**                                                                                    | Supported by Engage |
-| ----------------------------------------------------------------------------------------------------------- | --------------------- |
-| **[Facebook App Events](/docs/connections/destinations/catalog/facebook-app-events/)**                      | Yes                   |
-| **[Facebook Offline Conversions](/docs/connections/destinations/catalog/facebook-offline-conversions/)**    | Yes                   |
-| **[Facebook Pixel](/docs/connections/destinations/catalog/facebook-pixel/)**                                | No                    |
-| **[Facebook Custom Audiences](/docs/connections/destinations/catalog/personas-facebook-custom-audiences/)** | Yes                   |
-| **[Facebook Conversions API](/docs/connections/destinations/catalog/actions-facebook-conversions-api/)**    | Yes                   |
+| **Facebook Destination**                                                                                                      | Supported by Engage |
+| ----------------------------------------------------------------------------------------------------------------------------- | --------------------- |
+| **[Facebook App Events](/docs/connections/destinations/catalog/facebook-app-events/){:target="_blank"}**                      | Yes                   |
+| **[Facebook Offline Conversions](/docs/connections/destinations/catalog/facebook-offline-conversions/){:target="_blank"}**    | Yes                   |
+| **[Facebook Pixel](/docs/connections/destinations/catalog/facebook-pixel/){:target="_blank"}**                                | No                    |
+| **[Facebook Custom Audiences](/docs/connections/destinations/catalog/personas-facebook-custom-audiences/){:target="_blank"}** | Yes                   |
+| **[Facebook Conversions API](/docs/connections/destinations/catalog/actions-facebook-conversions-api/){:target="_blank"}**    | Yes                   |
 
 
 ## Getting Started
 
-{% include content/connection-modes.md %}
+
 
 1. From the Segment web app, click **Catalog**.
 
@@ -31,15 +31,15 @@ This page is about the **Facebook Offline Conversions**. For documentation on ot
 
 3. Authorize Segment to send data on your behalf by connecting through OAuth:
 
-![](images/8acf724eb5cf484f29f4dd278ccbd118.png)
+![A screenshot of the Facebook Offline Conversions page in the Segment app.](images/8acf724eb5cf484f29f4dd278ccbd118.png)
 
-By doing so, we will ask for `ads_management` and `public_profile` access scopes which will allow Segment to have proper permissions to send offline events to your Event Sets. You can read more about Facebook's [access and authentication](https://developers.facebook.com/docs/marketing-api/access) if you would like to know exactly what these scopes allow.
+By doing so, we will ask for `ads_management` and `public_profile` access scopes which will allow Segment to have proper permissions to send offline events to your Event Sets. You can read more about Facebook's [access and authentication](https://developers.facebook.com/docs/marketing-api/access){:target="_blank”} if you would like to know exactly what these scopes allow.
 
 **IMPORTANT**: Note that the Segment user that is OAuthing **MUST** have admin access in your company's Facebook Business Manager account. Otherwise, the authorization will fail.
 
 Once you complete the OAuth flow, you should be connected.
 
-![](images/24d08a8543ebba566cc2b694108239eb.png)
+![A screenshot of the Connection Settings page in Segment, showing that the Facebook OfflineConversions app is connected and authorized.](images/24d08a8543ebba566cc2b694108239eb.png)
 
 _Note_: Once we retrieve your access token, they should not expire. However, if for whatever reason you are not seeing conversions come through you should check your destination settings and you should reauthorize.
 
@@ -47,7 +47,7 @@ _Note_: Once we retrieve your access token, they should not expire. However, if 
 
 You can find Facebook Offline Event Set ID by going to your **Offline Events** page in your Facebook **Business Manager** account and clicking the desired Offline Event Set here:
 
-![](images/wSeG1P9SSI.gif)
+![An animation showing the process of finding your Facebook Offline Event Set ID, as outlined in the above paragraph.](images/wSeG1P9SSI.gif)
 
 ## Track
 
@@ -68,15 +68,15 @@ There are 3 places you can map your Segment `track` events:
 
 1) Map `track` events to Facebook's `CompleteRegistration` conversions:
 
-![](images/32b565e6457f9c2949af26f4c859afc9.png)
+![A screenshot of the settings tab for the Facebook Offline Conversions destination, with a Signed Up event mapped to a Facebook Offline Event Set.](images/32b565e6457f9c2949af26f4c859afc9.png)
 
 2) Map `track` events to Facebook's `Lead` conversions:
 
-![](images/1a188c55dd892543e2b8b6602459130f.png)
+![A screenshot of the settings tab for the Facebook Offline Conversions destination, with a Lead Generated event mapped to a Facebook Offline Event Set.](images/1a188c55dd892543e2b8b6602459130f.png)
 
 3) Map all other custom or ecommerce `track` events to any Event Set ID:
 
-![](images/86f8c50165a726e8168d652c8052c2a0.png)
+![A screenshot of the settings tab for the Facebook Offline Conversions destination, with a Lead Generated event mapped to a Facebook Offline Event Set.](images/86f8c50165a726e8168d652c8052c2a0.png)
 
 The following table shows how we map Segment's [semantic ecommerce](/docs/connections/spec/ecommerce/v2) or custom event names to Facebook's semantic conversion event names:
 
@@ -273,7 +273,7 @@ analytics.track({
 
 We will use SHA256 to hash all `match_keys` that include personally identifiable data in compliance with Facebook's privacy requirements.
 
-Keep in mind that Facebook's furthest possible attribution window is 28 days. It is recommended that you send your server side `track` conversions within 62 days of the offline conversion occuring.
+Keep in mind that Facebook's furthest possible attribution window is 28 days. It is recommended that you send your server side `track` conversions within 62 days of the offline conversion occurring.
 
 ## Limited Data Use
 

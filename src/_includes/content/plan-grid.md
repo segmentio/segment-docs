@@ -48,6 +48,6 @@
 {% else %}
 <p style="font-size:12px">{{productData.product_display_name}} is available for the listed account plans only.
 {% endif %}
-<br>See the <a href="https://segment.com/pricing">available plans</a>, or <a href="https://segment.com/help/contact/">contact us</a>.</p></div>
+<br>See the <a href="https://segment.com/pricing">available plans</a>, or <a href="https://segment.com/help/contact/">contact Support</a>.</p></div>
 </div>
 {% endif %}

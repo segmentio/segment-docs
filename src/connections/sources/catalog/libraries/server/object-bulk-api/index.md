@@ -124,7 +124,7 @@ Possible HTTP responses include:
 
 ### Keep Alive
 
-`Keep Alive` is used to extend you sessions lifetime if there are long gaps between API calls. The default session timeout is 10 minutes.
+`Keep Alive` is used to extend your sessions lifetime if there are long gaps between API calls. The default session timeout is 10 minutes.
 
 Example `Keep Alive` request:
 

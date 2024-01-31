@@ -30,7 +30,7 @@ Apps represent a unit of functionality that Segment users can add to their works
 - Within Destinations, we have Streaming Destinations, Batch Destinations, and Warehouse Destinations, all of which receive different data, using different processes, at different intervals and with varying degrees of control and flexibility.
 - On the Sources side, integrations are categorized based on whether they send Objects or Events, whether they are "Push" or "Pull," and whether they are built and hosted by Segment or by Partners.
 
-![](images/product-model.svg)
+![Diagram showing how events are processed in Segment.](images/product-model.svg)
 
 These smaller pieces that support the source and destination model are called "Components".
 
@@ -47,8 +47,9 @@ Plugins are the basis for [Device-mode Destinations](/docs/connections/destinati
 Client SDK Plugins are used to augment Subscriptions and Streams by shipping code to the End User's Device using Segment's SDKs:
 
 - [analytics.js](/docs/connections/sources/catalog/libraries/website/javascript/)
-- [analytics-ios](/docs/connections/sources/catalog/libraries/mobile/ios/#packaging-device-mode-destination-sdks)
-- [analytics-android](/docs/connections/sources/catalog/libraries/mobile/android/#sending-data-to-destinations)
+- [Swift](/docs/connections/sources/catalog/libraries/mobile/apple/destination-plugins/)
+- [Kotlin](/docs/connections/sources/catalog/libraries/mobile/kotlin-android/destination-plugins)
+- [React Native](/docs/connections/sources/catalog/libraries/mobile/react-native/destination-plugins/)
 
 These SDKs serve as microcosms of the Segment runtime — they enable the dynamic orchestration of event collection, cleaning/transformation, and delivery.
 
@@ -60,7 +61,13 @@ Web plugins are loaded into [analytics.js](/docs/connections/sources/catalog/lib
 
 ### Mobile Plugins
 
-Mobile plugins are loaded into [analytics-ios](/docs/connections/sources/catalog/libraries/mobile/ios/#packaging-device-mode-destination-sdks) or [analytics-android](/docs/connections/sources/catalog/libraries/mobile/android/#sending-data-to-destinations)).
+Mobile plugins are loaded into:
+- [Swift](/docs/connections/sources/catalog/libraries/mobile/apple/destination-plugins/)
+- [Kotlin](/docs/connections/sources/catalog/libraries/mobile/kotlin-android/destination-plugins)
+- [React Native](/docs/connections/sources/catalog/libraries/mobile/react-native/destination-plugins/)
+
+> note ""
+> **Note:** The [Swift](/docs/connections/sources/catalog/libraries/mobile/apple/destination-plugins/), [Kotlin](/docs/connections/sources/catalog/libraries/mobile/kotlin-android/destination-plugins) and [React Native](/docs/connections/sources/catalog/libraries/mobile/react-native/destination-plugins/) libraries were all built with the plugin architecture in mind. This makes adding custom destinations far simpler than the older mobile libraries.  
 
 ## Streams
 

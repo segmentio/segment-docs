@@ -21,7 +21,7 @@ id: cQ8NOxeApJ
 
 2. Choose Google Ads and click `Connect`.
 
-   ![](images/connect.png)
+   ![Screenshot of the Google Ads source in the Segment app.](images/connect.png)
 
 3. Click `Authenticate Google Ads` and go through the authentication flow.
 
@@ -29,7 +29,7 @@ id: cQ8NOxeApJ
 
 5. Choose a schema name. This will be the namespace you will be querying against in your warehouse. Segment recommends that you choose a name that reflects the source itself, like `google_ads`, or `google_ads_usa`.
 
-   ![](images/schema.png)
+   ![Screenshot of the second step of the Google Ads setup flow in the Segment app.](images/schema.png)
 
 
 ### Permissions
@@ -42,7 +42,7 @@ By default, the primary Google Ads account connected to your Google account sync
 ### I'm getting an Internal Server Error!
 
 If you're getting the error pictured below, try disabling any ad block extensions in your browser and attempting again. 
-![](images/connection_failed.png)
+![Screenshot of an Internal Server Error message in the Segment app.](images/connection_failed.png)
 
 
 ## Sync Component

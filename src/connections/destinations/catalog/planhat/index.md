@@ -4,7 +4,7 @@ id: 55bbefd70a20f4e22f0fb3e5
 ---
 ## Getting Started
 
-Getting data from Segment to Planhat's [Customer Success Tool](http://www.planhat.com/) is easy.
+Getting data from Segment to Planhat's [Customer Success Tool](http://www.planhat.com/){:target="_blank"} is easy.
 
 Once the Segment library is integrated with your product, toggle Planhat on in your Segment destinations, and add your Planhat API Key which you can generate in Planhat under App Settings > API Access.
 

@@ -8,7 +8,7 @@ One of the first questions we get when our customers start querying all of their
 
 Each SaaS tool you use has its own way of identifying users with a unique primary key. And, you will find each of these different IDs across different collections of tables in your database. So, when you want to start matching Joe Smith who entered a ticket in Zendesk and also clicked through a campaign in Mailchimp, it starts to get tricky.
 
-![](images/funnel_qpY6bhaY.png)
+![A graphic with a header (Production Database) and six tiles with the name of a source and the unique primary key that source assigns to a user.](images/funnel_qpY6bhaY.png)
 
 For example, Stripe keeps track of users with a `customer_id`, Segment requires a`user_id`, and Marketo uses `email` to uniquely identify each person.
 

@@ -3,7 +3,7 @@ title: Batch Destination
 beta: true
 id: 596d11f870a3e552b957e6d9
 ---
-The Batch.com integration code is open sourced on GitHub. Feel free to check it out: [iOS](https://github.com/BatchLabs/ios-segment-integration), [Android](https://github.com/BatchLabs/android-segment-integration).
+The Batch.com integration code is open sourced on GitHub. Feel free to check it out: [iOS](https://github.com/BatchLabs/ios-segment-integration){:target="_blank"}, [Android](https://github.com/BatchLabs/android-segment-integration){:target="_blank"}.
 
 ## Getting Started
 
@@ -67,6 +67,10 @@ SEGAnalyticsConfiguration *config = [SEGAnalyticsConfiguration configurationWith
 [config use:[SEGBatchIntegrationFactory instance]];
 [SEGAnalytics setupWithConfiguration:config];
 ```
+
+## Server Side
+
+You can transmit server-side data from Segment to Batch with a [destination function](/docs/connections/functions/destination-functions/). Follow the steps outlined [in Batch's documentation](https://help.batch.com/en/articles/2208243-how-to-connect-batch-to-segment){:target="_blank"} for a smooth integration.
 
 ## Screen
 

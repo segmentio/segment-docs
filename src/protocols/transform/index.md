@@ -1,9 +1,8 @@
 ---
 title: Use Transformations to fix bad data
 redirect_from: '/protocols/transformations/'
+plan: protocols
 ---
-
-{% include content/plan-grid.md name="protocols" %}
 
 ## What is a Transformation?
 
@@ -55,7 +54,7 @@ To create a Transformation, navigate to the Transformations tab in Protocols and
 
 To create a Transformation, you first need to select which type of transformation you want to create. For each transformation type, Segment displays a description, use cases, and example payload. Current transformation types available in your Segment workspace include:
 
-**Rename track event:** Rename track event name at the source or per destination
+**Rename track event:** Rename track event name at the source or per destination. The events listed in the event names dropdown menu correspond to the events listed on the [source schema view](/docs/getting-started/implementation-guide/#event-anatomy-and-naming-standards).
 ![rename track event](../images/event-rename-example.png)
 
 **Edit track event properties:** Rename multiple properties and/or change property data structure at the source or per destination
@@ -95,9 +94,26 @@ Depending on the type of transformation you selected, you will need to enter the
 After you select the scope, use the search box to choose the event to transform. You can **only** select a single track event, identify or group call. If you are renaming the event, simply enter the new name in the provided text field.
 
 * **Rename properties or traits:**
-If you rename properties or traits within a selected event, click **+ Add Property**. The dropdown that appears contains the properties or traits sent with the selected event. Segment supports JSON Path notation to select nested objects up to four levels deep. For example, `order.id` selects the `id` property in the `order` object. Segment does not support `.$.` notation to select a property from an array of objects.
+To rename properties or traits within a selected event, click **+ Add Property**. The dropdown that appears contains the properties or traits sent with the selected event. Segment supports JSON Path notation to select nested objects up to four levels deep. For example, `order.id` selects the `id` property in the `order` object. Segment does not support `.$.` notation to select a property from an array of objects. For example, the following event, which generates `products.$.product_id`, is unsupported.
+
+```js
+analytics.track('Example', {
+  products: [{
+      product_id: "123"
+  }],
+})
+```
+
+In this scenario, we do not support the transformation of product_id. 
 
 After selecting a property/trait, select JSON Path or Simple String to change the property/trait. Simple string will change the name in-line, while JSON path allows you to move the property/trait in or out of an object.
+
+> info ""
+> When you see properties that have the escape character `\` in them - this escape character `\` is added to differentiate between a property name that has a . in it, and a nested field, like so:
+> ```
+> ingredients.salad → "ingredients": { "salad": "yum" }
+> ingredients\.salad → "ingredients.salad": "yum"
+> ```
 
 ### Step 3: Name the transformation and enable it
 
@@ -118,9 +134,9 @@ Here's a list of Segment Transformations with some use case examples.
 - **Property Transformations**
   - **Assigning static values:** If you want to create a new property and set a static value, use [Segment's Public API](https://docs.segmentapis.com/tag/Transformations){:target="_blank"} to create `new_property: static_value`. Segment currently supports setting static values for top-level fields, as well as fields within the `context` or `properties` object with `propertyValueTransformations`. However, Segment doesn't support changing fields outside the properties or traits object with `propertyRenames`. You can use `propertyValueTransformations` on a single object to assign the same value to different fields or on multiple objects to assign a static value to the same field across objects.
   - **Casing functions:** Use [Segment's Public API](https://docs.segmentapis.com/tag/Transformations){:target="_blank"} to transform property value casing to `lowercase`, `uppercase`, `snakecase`, `kebabcase`, or `titlecase`. When transforming data with casing functions, use the [`fqlDefinedProperties`](https://docs.segmentapis.com/tag/Transformations#operation/createTransformation!ct=application/vnd.segment.v1+json&path=fqlDefinedProperties&t=request){:target="_blank"} array to define the FQL you want to use and the new or existing `propertyName` you'd like to transform.
-    - **Static and dynamic value casing:** Use casing functions to transform property values to create uniform tracking data. For example, you can convert `united states` to `USA` to keep your downstream data consistent. <br/>You can transform these properties using static casing functions: <br/>
+    - **Static and dynamic value casing:** Use casing functions to transform property values to create uniform tracking data. For example, you can convert `usa` to `USA` to keep your downstream data consistent. <br/>You can transform these properties using static casing functions: <br/>
     ```
-    fqlDefinedProperties": [{"fql": "uppercasecase("United States)", "propertyName": "properties.propertyValue1"}]
+    fqlDefinedProperties": [{"fql": "uppercase("United States)", "propertyName": "properties.propertyValue1"}]
     ``` 
     or dynamic casing functions:
     ```
