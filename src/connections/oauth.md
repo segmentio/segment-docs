@@ -1,6 +1,6 @@
 ---
 title: OAuth 2.0
-hidden: false
+hidden: true
 ---
 
 OAuth 2.0 is an online authorization standard that uses tokens to grant access to API resources like Segment’s tracking API. You can use OAuth 2.0 as a security requirement for connections to third-party tools. 
