@@ -50,7 +50,7 @@ To create models and enrich events in destinations, you need to be a `Workspace 
 
 ## Step 1: Set up your data warehouse and permissions
 
-> info "data warehouse support"
+> info "Data warehouse support"
 > Snowflake, Redshift, and BigQuery are currently supported for Linked Events.
 
 > info ""
