@@ -85,11 +85,7 @@ Google may take [24-48 hours](https://support.google.com/analytics/answer/933379
 
 ### Data is not sent to Google
 
-In order for data to be sent downstream to Google Analytics, check your mappings to ensure that:
-1. The **Set Configuration Fields** mapping is enabled in your mappings.
-2. You've added at least one other event mapping for an event you want to send to Google Analytics.
-
-The **Set Configuration Fields** mapping is required for data to be sent downstream because it sets configuration to Measurement ID and establishes data flow using the `config` command. If you have no enabled mappings other than **Set Configuration Fields**, the GA4 destination does not send events downstream. 
+In order for data to be sent downstream to Google Analytics, check your mappings to ensure that the **Set Configuration Fields** mapping is enabled in your mappings and the **Page Views** setting is toggled on. The **Set Configuration Fields** mapping is required for data to be sent downstream because it sets configuration to Measurement ID and establishes data flow using the `config` command. 
 
 ### Duplicate `page_view` events in GA4
 
