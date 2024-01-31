@@ -538,6 +538,9 @@ If you're having issues with threads outliving your request, check [Background t
 
 ## OAuth 2.0
 
+> info ""
+> OAuth 2.0 is currently in private beta and is governed by Segment’s [First Access and Beta Preview Terms](https://www.twilio.com/en-us/legal/tos){:target="_blank"}.
+
 Enable [OAuth 2.0](/docs/connections/oauth/) in your Segment workspace to guarantee authorized communication between your server environment and Segment's Tracking API. To support the non-interactive server environment, the OAuth workflow used is a signed client assertion JWT.  
 
 You will need a public and private key pair where:
