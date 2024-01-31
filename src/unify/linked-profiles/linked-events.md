@@ -5,7 +5,7 @@ plan: unify
 ---
 
 > info "Linked Events is in private beta"
-> Linked Events is in private beta, and Segment is actively working on this feature. Some functionality may change before it becomes generally available. [Contact Segment](https://segment.com/help/contact/){:target="_blank"} with any feedback or questions.
+> Linked Events is in private beta, and Segment is actively working on this feature. Some functionality may change before it becomes generally available. 
  
 
 Use Linked Events to enrich real-time event streams with entities from your data warehouse to your destinations. Insert additional event context for downstream applications for richer data about each event. 
@@ -29,7 +29,7 @@ Before getting started with Linked Events, you'll need:
 
 1. [BigQuery](/docs/unify/linked-profiles/setup-guides/bigquery-setup/), [Snowflake](/docs/unify/linked-profiles/setup-guides/snowflake-setup/), or [Redshift](/docs/unify/linked-profiles/setup-guides/redshift-setup/) data warehouse credentials with **write** access.
 2. Access to Unify in your workspace. 
-3. Access to the Destination you'll be using with Linked Events so that you can validate your data. 
+3. Access to the actions-based destination you'll be using with Linked Events so that you can validate your data. 
 
 > info ""
 > Segment stores and processes all data in the United States.
@@ -53,11 +53,11 @@ To create models and enrich events in destinations, you need to be a `Workspace 
 > info ""
 > Linked Events uses Segment's [Reverse ETL](/docs/connections/reverse-etl/) infrastructure for pulling in data from your warehouse. 
 
-To get started, you'll need to connect a data warehouse. Linked Events supports [BigQuery](/docs/unify/linked-profiles/setup-guides/bigquery/), [Snowflake](/docs/unify/linked-profiles/setup-guides/snowflake/), and [Redshift](/docs/unify/linked-profiles/setup-guides/redshift-setup/).
+To get started, you'll need to connect a data warehouse. Linked Events supports [BigQuery](/docs/unify/linked-profiles/setup-guides/bigquery-setup/), [Snowflake](/docs/unify/linked-profiles/setup-guides/snowflake-setup/), and [Redshift](/docs/unify/linked-profiles/setup-guides/redshift-setup/).
 
 1. Navigate to **Unify > Data graph** and click **Add warehouse**. 
 2. Select a warehouse to connect from the [supported data warehouses](#supported-data-warehouses). 
-3. [Connect your warehouse](#connect-your-warehouse).  
+3. Connect your warehouse.  
 3. Click **Test Connection** to be sure your warehouse is connected.
 4. After a successful test, click **Save**.  
 
@@ -80,14 +80,14 @@ The table below shows the data warehouses Linked Events supports. View the Segme
 
 | Data Warehouse              |      Steps         |
 |------------------------|-------------------------|
-| [Snowflake](docs/unify/linked-profiles/setup-guides/snowflake-setup/)              | 1. Configure your snowflake database. <br> 2. Enter your credentials. <br> 3. Test the Connection. <br> 4. Click **Save**. |
+| [Snowflake](/docs/unify/linked-profiles/setup-guides/snowflake-setup/)              | 1. Configure your snowflake database. <br> 2. Enter your credentials. <br> 3. Test the Connection. <br> 4. Click **Save**. |
 | [BigQuery](/docs/unify/linked-profiles/setup-guides/bigquery-setup/)           | 1. Add your credentials to the database that has tables with the entities you want to enrich your event with. <br> 2. Test your connection. | 
 | [Redshift](/docs/unify/linked-profiles/setup-guides/redshift-setup/)           | 1. Select the Redshift cluster you want to connect. <br> 2. [Configure](/docs/connections/storage/catalog/redshift/#networking) the correct network and security settings. |
 
 
 ## Step 2: Build your Data Graph
 
-The [Data Graph](/unify/linked-profiles/data-graph/) is a semantic layer that represents a subset of relevant business data that you'll use to enrich events in downstream tools. Use the configuration language spec below to add models to build out your Data Graph.
+The [Data Graph](/docs/unify/linked-profiles/data-graph/) is a semantic layer that represents a subset of relevant business data that you'll use to enrich events in downstream tools. Use the configuration language spec below to add models to build out your Data Graph.
 
 Each Unify space has one Data Graph. The current version is v0.0.6 but this may change in the future as Segment accepts feedback about the process.
 

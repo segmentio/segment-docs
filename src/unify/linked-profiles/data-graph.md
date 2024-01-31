@@ -5,14 +5,15 @@ beta: true
 ---
 
 > info "Segment's Data Graph is in private beta"
-> The Data Graph is in private beta, and Segment is actively working on this feature. Some functionality may change before it becomes generally available. [Contact Segment](https://segment.com/help/contact/){:target="_blank"} with any feedback or questions.
+> The Data Graph is in private beta, and Segment is actively working on this feature. Some functionality may change before it becomes generally available. 
 
 With Linked Profiles, you can build a Data Graph that defines relationships between any entity data set in the warehouse and the Segment Profiles you send with Profiles Sync. 
 
 Make this relational data accessible to marketers and business stakeholders to empower them with the data they need to create targeted and personalized customer engagements.
 
-> success ""
+> info ""
 > Segment's Data Graph powers [Linked Events](/docs/unify/linked-profiles/linked-events/) and [Linked Audiences](/docs/engage/audiences/linked-audiences/).
+
 
 ## Prerequisites
 
@@ -69,8 +70,6 @@ The Data Graph is a semantic layer that represents a subset of relevant business
 
 Use the configuration language spec below to add models to build your Data Graph. The Data Graph currently supports 4 layers of depth, including the Profile entity.
 
-> info "Using the Data Graph with Linked Events"
-If you're using 
 
 ### Define entities
 
@@ -86,7 +85,7 @@ The parameters are:
 | Parameters     | Definition                                                           |
 | ----------- | --------------------------------------------------------------------- |
 | `profile_folder`      | This is the folder or schema location for the profile tables.     |
-| `materialization`     | Identifies the type of materialization (`dbt`,`segment`,`none`). |
+| `materialization`     | Identifies the type of materialization (`none`). |
 
 Example:
 
@@ -118,11 +117,18 @@ Example:
 ```python
 # Define an entity and optionally indicate if the entity will be referenced for Linked Events (event enrichment)
 
+data_graph { 
+# Entities are nested under the data_graph
 entity "account-entity" {
      name = "account"
      table_ref = "PRODUCTION.CUST.ACCOUNT"
      primary_key = "id"
      enrichment_enabled = true
+}
+
+profile {
+# Relationships are nested under the profile
+}
 }
 ```
 
@@ -141,9 +147,11 @@ Use the following relationship, parameters, and examples to help you relate enti
 
 
 A profile can be related to an entity in two ways:
-1. With an `external_id`: Define the external ID that will be used to join the profile with your entity.
+- With an `external_id`: Define the external ID that will be used to join the profile with your entity.
      - `type`: Identify the external ID type (`email`, `phone`, `user id`). This corresponds to the `external_id_type` column in your `external_id_mapping` table. 
-Example:
+     - `join_key`: This is the column on the entity table that you are matching to the external identifier.   
+
+Example: 
 
 ```python
 data_graph { 
@@ -160,10 +168,9 @@ data_graph {
                     type = "email"
                     join_key = "email_id"
                }
+          }
 ```
-     - `join_key`: This is the column on the entity table that you are matching to the external identifier.
-
-2. With a `trait`: Define a profile trait that will be used to join the profile with your entity.
+- With a `trait`: Define a profile trait that will be used to join the profile with your entity.
      - `name`: The trait name that corresponds to a column name in your `profile_traits_updates` table.
      - `join_key`: This is the column on the entity table that you are matching to the trait.
       
