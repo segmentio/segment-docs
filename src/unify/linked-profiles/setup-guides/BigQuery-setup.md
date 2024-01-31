@@ -5,9 +5,15 @@ plan: unify
 ---
 
 > info "Linked Events is in private beta"
-> Linked Events is in private beta, and Segment is actively working on this feature. Some functionality may change before it becomes generally available. [Contact Segment](https://segment.com/help/contact/){:target="_blank"} with any feedback or questions.
+> Linked Events is in private beta, and Segment is actively working on this feature. Some functionality may change before it becomes generally available. 
+
+> info ""
+> At this time, you can only use BigQuery with Linked Events. 
 
 On this page, you'll learn how to connect your BigQuery data warehouse to Segment. 
+
+
+## Set up BigQuery
 
 > warning ""
 > You need to be an account admin to set up the Segment BigQuery connector as well as write permissions for the `__segment_reverse_etl` dataset. 
