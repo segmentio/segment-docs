@@ -85,7 +85,7 @@ You can access Selective Sync in two ways:
 - From the Set Selective Sync page as you connect your warehouse to Profiles Sync.
 - From the Profiles Sync settings (**Profiles Sync** > **Settings** > **Selective sync**).
 
-You'll see a list of event type tables, event tables, and properties available to sync. Select the tables and properties that you'd like to sync, and be sure the ones you'd like to prevent from syncing aren't selected.
+You'll see a list of event type tables, event tables, and [tables Segment materializes](/docs/unify/profiles-sync/tables/#tables-segment-materializes) available to sync. Select the tables and properties that you'd like to sync, and be sure the ones you'd like to prevent from syncing aren't selected. 
 
 Regardless of schema size, only the first 5,000 collections and 5,000 properties per collection can be managed using your Segment space. To edit Selective Sync settings for any collection which exceeds this limit, [contact Segment support](https://app.segment.com/workspaces?contact=1){:target="blank"}.
 
@@ -110,13 +110,12 @@ Profiles Sync sends profiles to your warehouse on an hourly basis, beginning aft
 
 When Segment runs historical backfills:
 
-- The `id_graph_updates` and `external_id_mapping_updates` tables sync your entire historical data to your warehouse.
+- The `id_graph_updates`, `external_id_mapping_updates`, and `profile_traits_updates` tables sync your entire historical data to your warehouse.
 - Profiles Sync gathers the last two months of all events, including those from the `identities`, `page`, `screens`, and `tracks` tables, and syncs them to your warehouse.
 
 Segment lands the data on an internal staging location, then removes the backfill banner. Segment then syncs the backfill data to your warehouse.
 
 Reach out to [Segment support](https://app.segment.com/workspaces?contact=1){:target="blank"} if your use case exceeds the scope of the initial setup backfill.
-
 
 > success ""
 > While historical backfill is running, you can start building [materialized views](/docs/unify/profiles-sync/tables/#tables-you-materialize) and running [sample queries](/docs/unify/profiles-sync/sample-queries).   
@@ -183,9 +182,7 @@ In the **Connection settings** tab, you can verify your synced warehouse’s cre
 If you have write access, you can verify that your warehouse is successfully connected to Segment by entering your password and then selecting **Test Connection**.
 
 > info "Changing your synced warehouse"
-> If you’d like to change the warehouse connected to Profiles Sync, [reach out to Segment support](https://segment.com/help/contact/).
-
-<!-- Verify that this doesn't need to be changed -->
+> If you’d like to change the warehouse connected to Profiles Sync, [reach out to Segment support](https://segment.com/help/contact/){:target="blank"}.
 
 #### Sync schedule
 

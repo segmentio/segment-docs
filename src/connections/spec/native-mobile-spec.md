@@ -34,7 +34,7 @@ This feature is opted out by default. You have to opt in to collect these events
 
 ### What happens if I'm already tracking these events? Will they be double counted?
 
-Yes, they will be double counted, but that's only if you opt into this feature. You can either remove your own tracking code for these events or not opt into auto collectionat all.
+Yes, they will be double counted, but that's only if you opt into this feature. You can either remove your own tracking code for these events or not opt into auto collection at all.
 
 ### Do I still benefit from this new SDK if I opt out of automatic tracking?
 

@@ -8,8 +8,6 @@ redirect_from: '/connections/destinations/catalog/actions-ripe/'
 
 The Ripe Destination is an [Actions-based Destination in device mode](/docs/connections/destinations/#connection-modes) that loads and configures Ripe’s SDK script for you. If you’re already using Segment’s Analytics.js for identifying and tracking your users, either directly or through Segment source integrations that you’ve installed, you can configure Segment to send this data directly to Ripe.
 
-{% include content/ajs-upgrade.md %}
-
 ## Getting started
 
 > info ""

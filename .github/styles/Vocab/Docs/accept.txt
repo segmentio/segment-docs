@@ -35,6 +35,7 @@ aws
 background(?:ed|ing)
 Bento
 Bing
+Blackbaud
 Blitzllama
 blocklist
 Bluedot

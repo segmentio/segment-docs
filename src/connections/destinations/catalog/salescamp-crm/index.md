@@ -5,9 +5,9 @@ id: 5d835f71811b923a6883c2eb
 ---
 ## Salescamp CRM Destination
 
-Now it's easy to send customer data to [Salescamp](https://www.salescamp.app/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) from Segment. Once you've tracked your data through Segment's open source libraries Segment will translate and route your data into Salescamp in a format they understand.
+Now it's easy to send customer data to [Salescamp](https://www.salescamp.app/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners){:target="_blank”} from Segment. Once you've tracked your data through Segment's open source libraries Segment will translate and route your data into Salescamp in a format they understand.
 
-This destination is maintained by [Salescamp](https://www.salescamp.app/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners). Feel free to contact us at [hello@salescamp.app](mailto:hello@salescamp.app) for any help.
+This destination is maintained by [Salescamp](https://www.salescamp.app/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners){:target="_blank"}. Feel free to contact us at [hello@salescamp.app](mailto:hello@salescamp.app) for any help.
 
 ## Getting Started
 Segment's Salescamp destination allows you to identify leads without using rest APIs.
@@ -16,7 +16,7 @@ Segment's Salescamp destination allows you to identify leads without using rest 
 
 1. From the Segment web app, click **Catalog**.
 2. Search for "Salescamp" in the Catalog, select it, and choose which of your sources to connect the destination to.
-3. Enter the "API Key" into your Segment Settings UI which you can find from your [Salescamp's dashboard](https://dashboard.salescamp.app/settings/integrations).
+3. Enter the "API Key" into your Segment Settings UI which you can find from your [Salescamp's dashboard](https://dashboard.salescamp.app/settings/integrations){:target="_blank"}.
 
 
 

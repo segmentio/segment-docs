@@ -39,13 +39,13 @@ Cloud mode: |
   *Cloud mode libraries* run on a server and are completely invisible to end users. You can find the full list of server-side languages Segment supports [in the Sources catalog](/docs/connections/sources/catalog/#server). These libraries can be used to track a user in realtime as they use your app, but are also able to run batches of calls to update many end users at once. Cloud-mode libraries do not maintain "state" which means every API call you make must include every detail you want to see inside of Segment.
 
 Computed trait: |
-  [Computed traits](/docs/personas/computed-traits/) are per-user, or per-account [traits](#traits) that you create or “compute” in [Personas](/docs/personas/). When you build a Computed Trait, Personas adds it to relevant user profiles.
+  [Computed traits](/docs/unify/traits/computed-traits/) are per-user or per-account [traits](#traits) that you create or “compute” in Segment. When you build a computed trait, Segment adds it to relevant user profiles.
 
 Custom trait: |
-  [Custom Traits](/docs/engage/audiences/#custom-traits) are user or account properties collected from all the events you send to Personas.  For example, you can add any properties that you send as a part of your track calls or identify calls (`email`, `first_name`, `last_name`) as custom traits. You can then view them in the profile explorer, and use them in your audiences, computed traits and SQL traits.
+  [Custom traits](/docs/engage/audiences/#custom-traits) are user or account traits collected from the Identify calls you send to Segment.  For example, you can add any trait that you send as a part of your Identify calls (`email`, `first_name`, `last_name`) as custom traits. You can then view them in the Profile explorer, and use them in your audiences, computed traits, and SQL traits.
 
 Debugger: |
-  This is the place in the app where you can see your events flowing through Segment
+  This is the place in the app where you can see your events flowing through Segment.
 
 Destination: |
   A destination is a target for Segment to forward data to, and represents a tool or storage destination.
@@ -67,7 +67,7 @@ Event: |
   An event can refer to either an action by a user, or something a user does which triggers a [track call](/docs/connections/spec/track/). Events have a name (for example "Product viewed") and properties (for example the product name, price, and category), and take place in a single moment in time. (This is in contrast to "[objects](#object)" which persist over a period of time, and which have properties that might change.)
 
 Identify: |
-  a call that gathers information about who the user is.
+  A call that gathers information about who the user is.
 
 JSON: |
   JSON, or JavaScript Object Notation, is a convenient format for storing structured data.
@@ -96,7 +96,7 @@ Page: |
   The Segment API call records that a user "viewed a page". It's recorded by calling `analytics.page()`. You can optionally pass in a `name` and a `category`.
 
 Postgres: |
-  An open-source [SQL](#sql) server
+  An open-source [SQL](#sql) server.
 
 Redshift: |
   An analytics data warehouse from Amazon Web Services. Made for loading in tons of event data, and then analyzing it with complex queries. It's designed to be fast and cheap.

@@ -3,9 +3,9 @@ title: Impact Partnership Cloud Destination
 rewrite: true
 id: 5ed96e0b97e7ba0c0346cc04
 ---
-[Impact Partnership Cloud](https://impact.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) lets you expand your program and scale every type of partnership by managing the partnership lifecycle - from discovery, contracting and payments through tracking and optimization.
+[Impact Partnership Cloud](https://impact.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners){:target="_blank”} lets you expand your program and scale every type of partnership by managing the partnership lifecycle - from discovery, contracting and payments through tracking and optimization.
 
-This destination is maintained by Impact. For any issues with the destination, contact the [Impact Partnership Cloud team](https://impact.com/contact/) or check out [Impact Partnership Cloud's documentation](https://app.impact.com/secure/agency/support/customer-support-portal-flow.ihtml?execution=e3s1).
+This destination is maintained by Impact. For any issues with the destination, contact the [Impact Partnership Cloud team](https://impact.com/contact/){:target="_blank”} or check out [Impact Partnership Cloud's documentation](https://integrations.impact.com/impact-brand/docs/integrate-with-segment){:target="_blank”}.
 
 ## Getting Started
 
@@ -14,7 +14,7 @@ This destination is maintained by Impact. For any issues with the destination, c
 1. From the Destinations catalog page in the Segment App, click **Add Destination**.
 2. Search for "Impact Partnership Cloud" in the Destinations Catalog, and select the Impact Partnership Cloud destination.
 3. Choose which Source should send data to the Impact Partnership Cloud destination.
-4. Go to the [Impact Partnership Cloud Settings](https://app.impact.com), find and copy the "Account SID", "Auth Token", and "Campaign ID".
+4. Go to the [Impact Partnership Cloud Settings](https://app.impact.com){:target="_blank"}, find and copy the "Account SID", "Auth Token", and "Campaign ID".
 5. Back in the Impact Partnership Cloud destination settings in Segment, enter the "Account SID", "Auth Token", and "Campaign ID".
 
 ## Page
@@ -30,7 +30,7 @@ Segment sends Page calls to Impact Partnership Cloud as a `Clicks` event, if the
 > success ""
 > **Tip!** To accurately track and attribute actions, send a Page call with every page load.
 
-Read [Impact Partnership Cloud's documentation](https://impact-helpdesk.freshdesk.com/en/support/solutions/articles/48001173251) to learn more about how Page properties are mapped.
+Read [Impact Partnership Cloud's documentation](https://impact-helpdesk.freshdesk.com/en/support/solutions/articles/48001173251){:target="_blank"} to learn more about how Page properties are mapped.
 
 ## Screen
 
@@ -99,4 +99,4 @@ Segment sends Track calls to Impact Partnership Cloud as a `Conversion` or `Page
 
 `Page Load` events appear as `Clicks` on Impact Partnership Cloud's Dashboard if they fit the definition of a unique click.
 
-Read [Impact Partnership Cloud's documentation](https://impact-helpdesk.freshdesk.com/en/support/solutions/articles/48001173251) to learn more about how Track properties are mapped.
+Read [Impact Partnership Cloud's documentation](https://impact-helpdesk.freshdesk.com/en/support/solutions/articles/48001173251){:target="_blank"} to learn more about how Track properties are mapped.

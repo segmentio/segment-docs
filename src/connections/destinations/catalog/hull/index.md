@@ -79,7 +79,7 @@ The following traits will be stored as first level fields on the User object
 - picture
 - username
 
-All other attributes from the `identify` call will be stored as [custom traits](http://www.hull.io/docs/references/hull_js/#traits) on Hull.
+All other attributes from the `identify` call will be stored as [custom traits](http://www.hull.io/docs/references/hull_js/#traits){:target="_blank"} on Hull.
 
 ## Track
 

@@ -56,7 +56,7 @@ serve: package
 	@docker run -p 4000:80 segment-docs:latest
 
 catalog:
-	@node scripts/catalog_papi.js
+	@node scripts/catalog/index.js
 
 # make the list of beta connections
 .PHONY: beta
@@ -163,7 +163,7 @@ docker-build:
 
 .PHONY: private-destination
 private_destination:
-	@node scripts/private-destination.js
+	@node scripts/catalog/addPrivateDestination.js
 #.PHONY: docs
 #docs: node_modules
 #	$(BIN)/webpack --mode=production

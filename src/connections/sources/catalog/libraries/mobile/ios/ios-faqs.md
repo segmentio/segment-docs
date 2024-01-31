@@ -255,3 +255,7 @@ As of [Version 4.1.0](https://github.com/segmentio/analytics-ios/releases/tag/4.
 ## AppClip tracking support
 
 If you are tracking App Clips using iOS or Swift libraries, there is a chance that you may encounter zeros in your device ID. Segment recommends that you set your own device ID in this instance to avoid running into this issue.
+
+## Why am I seeing a value of -- set for the network carrier?
+
+With iOS [16.4](https://developer.apple.com/documentation/ios-ipados-release-notes/ios-ipados-16_4-release-notes#Core-Telephony){:target="_blank"}, Apple deprecated the method to return the network carrier. The iOS library can no longer return a valid value for the network carrier on devices using iOS 16.4 or later. As a result, you will likely see `--` set for the `context.network.carrier` field.

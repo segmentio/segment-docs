@@ -3,7 +3,7 @@ title: Kissmetrics Destination
 rewrite: true
 id: 54521fd725e721e32a72eec7
 ---
-[Kissmetrics](https://www.kissmetrics.io/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) is a behavioral email and analytics platform. It pulls cross-platform behavior reports so marketers can analyze key audience growth segments. It also provides an overview of custom populations, population change and growth, so marketers can analyze populations from customers who have completed actions or events.
+[Kissmetrics](https://www.kissmetrics.io/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners){:target="_blank”} is a behavioral email and analytics platform. It pulls cross-platform behavior reports so marketers can analyze key audience growth segments. It also provides an overview of custom populations, population change and growth, so marketers can analyze populations from customers who have completed actions or events.
 
 ## Getting Started
 
@@ -16,7 +16,7 @@ To enable Kissmetrics in Segment:
 3. In the destination settings, enter your Kissmetrics "API Key".
 4. If you are using Kissmetrics using Segment's client-side analytics.js library, Segment asynchronously loads Kissmetrics JavaScript library onto the page. (This means you should remove Kissmetrics's snippet from your page.)
 
-Your Kissmetrics source starts automatically collecting "Visited Site" events and [other automatically tracked events](https://support.kissmetrics.io/docs/javascript-settings).
+Your Kissmetrics source starts automatically collecting "Visited Site" events and [other automatically tracked events](https://support.kissmetrics.io/docs/javascript-settings){:target="_blank”}.
 
 ## Page
 
@@ -61,7 +61,7 @@ If you're not familiar with the Segment Specs, take a look to understand what th
 analytics.track('Clicked Button');
 ```
 
-When you call [`track`](/docs/connections/spec/track/) or one of its helper functions ([`trackLink`](/docs/connections/sources/catalog/libraries/website/javascript/#track-link,[`trackForm`](/docs/connections/sources/catalog/libraries/website/javascript/#track-form), we will call Kissmetrics' `record` with the exact same parameters.
+When you call [`track`](/docs/connections/spec/track/) or one of its helper functions ([`trackLink`](/docs/connections/sources/catalog/libraries/website/javascript/#track-link) and [`trackForm`](/docs/connections/sources/catalog/libraries/website/javascript/#track-form),) we will call Kissmetrics' `record` with the exact same parameters.
 
 The Kissmetrics javascript library automatically tracks a bunch of events (Visited Site, Ad Campaign Hit, Search Engine Hit, Form Submit, Pageview, etc.) These will all still work when you use Kissmetrics through Segment.
 
@@ -106,7 +106,7 @@ Kissmetrics automatically aliases anonymous visitors the first time you call [`i
 
 We will automatically call [`alias`](/docs/connections/spec/alias/) for you the first time you [`identify`](/docs/connections/spec/identify/) users from our iOS SDK. That way it works exactly like web browser tracking - you don't have to manually [`alias`](/docs/connections/spec/alias/) new users.
 
-You can read more about how Kissmetrics recommends using [`alias`](/docs/connections/spec/alias/) [in their docs](https://support.kissmetrics.io/docs/understanding-identities).
+You can read more about how Kissmetrics recommends using [`alias`](/docs/connections/spec/alias/) [in their docs](https://support.kissmetrics.io/docs/understanding-identities){:target="_blank”}.
 
 
 
@@ -206,4 +206,4 @@ In order to enable this feature,
 
 ### E-Commerce
 
-If you are using our ecommerce api, we will forward that data along to Kissmetrics following the [Kissmetrics Ecommerce Essentials Guide](https://support.kissmetrics.io/docs/e-commerce-javascript-code-examples).
+If you are using our ecommerce api, we will forward that data along to Kissmetrics following the [Kissmetrics Ecommerce Essentials Guide](https://support.kissmetrics.io/docs/e-commerce-javascript-code-examples){:target="_blank”}.

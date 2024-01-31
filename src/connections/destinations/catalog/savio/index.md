@@ -3,7 +3,7 @@ rewrite: true
 title: Savio Destination
 id: 5c6ddad405424a0001ecff86
 ---
-[Savio](https://savio.io/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) enables B2B SaaS teams to centrally manage customer feedback so they can make better product decisions.
+[Savio](https://savio.io/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners){:target="_blank”} enables B2B SaaS teams to centrally manage customer feedback so they can make better product decisions.
 
 This destination is maintained by Savio. For any issues with the destination, [contact the Savio Support team](mailto:support@savio.io).
 
@@ -13,7 +13,7 @@ This destination is maintained by Savio. For any issues with the destination, [c
 
 1. From the Segment web app, click **Catalog**.
 2. Search for "Savio" in the Catalog, select it, and choose which of your sources to connect the destination to.
-3. Enter the "API Key" into your Segment Settings UI which you can find from your [Savio dashboard](https://www.savio.io/app/accounts/integration-settings).
+3. Enter the "API Key" into your Segment Settings UI which you can find from your [Savio dashboard](https://www.savio.io/app/accounts/integration-settings){:target="_blank"}.
 
 
 ## Identify

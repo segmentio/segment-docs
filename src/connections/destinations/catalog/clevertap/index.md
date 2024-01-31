@@ -7,12 +7,17 @@ cmode-override: true
 
 Once the Segment library is integrated, toggle CleverTap on in your Segment destinations, and add your CleverTap Account ID and CleverTap Account Token which you can find in the CleverTap Dashboard under Settings.
 
+CleverTap supports the Identify, Track, Page (server-side only), and Screen (iOS and server-side only) methods.
+
 You can integrate CleverTap using a server-side or mobile destination (iOS or Android). If you are interested in using CleverTap's push notifications or in-app notifications products, you should use the mobile destinations.
 
-All server-side destination requests require both the Segment `anonymousId` and `userId` in the payload. This is a requirement from CleverTap. CleverTap maintains the server-side integration. For any issues with the server-side integration, [contact the CleverTap Support team](https://help.clevertap.com/hc/en-us/requests/new){:target="_blank"}.
+For server-side destination requests, CleverTap requires both the Segment `anonymousId` and `userId` in the payload.  
 
-CleverTap supports the `identify`, `track`, `page` (server-side only), and `screen` (iOS and server-side only) methods.
+CleverTap maintains the server-side and mobile integrations:
+- [Android](https://github.com/CleverTap/clevertap-segment-android){:target="_blank"}
+- [iOS](https://github.com/CleverTap/clevertap-segment-ios){:target="_blank"}
 
+For any issues with the server-side and mobile integrations, [contact the CleverTap Support team](https://help.clevertap.com/hc/en-us/requests/new){:target="_blank"}.
 
 ## Identify
 
@@ -163,12 +168,6 @@ No further action is required to integrate in-app notifications, which are regis
 
 CleverTap has created a sample iOS application that integrates CleverTap using Segment. Check it out at the [GitHub repository](https://github.com/CleverTap/clevertap-segment-ios/tree/master/Example){:target="_blank"}.
 
-
-## React Native
-
-{% include content/react-dest.md %}
-
-
 ## Server-Side
 
 ### Push Tokens
@@ -176,3 +175,10 @@ CleverTap has created a sample iOS application that integrates CleverTap using S
 If you chose not to bundle the CleverTap Mobile SDK, then you will have to implement your own Push Message processors (and you won't have access to CleverTap's In-App feature).
 
 If you decide to implement your own Push Message processors, then you can pass push tokens to CleverTap using the server-side destination. You can do this by sending it inside context.device.token.
+
+
+## Troubleshooting
+
+### Verbose Logging
+
+When using Web Device-mode, you can enable verbose logging of all communication with CleverTap servers by setting the `theWZRK_D` variable in `sessionStorage`. In the developer console of your browser, enter `sessionStorage['WZRK_D'] = '';`, you'll see error messages and warnings logged. See the [CleverTap Web Quickstart Guide](https://developer.clevertap.com/docs/web-quickstart-guide#debugging){:target="_blank"} for more details.

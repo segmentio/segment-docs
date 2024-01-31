@@ -156,7 +156,7 @@ In the debugger panel, check the two outputs. The **Request from Segment** and t
 * **Request from Segment** - What Segment posted to your endpoint
 * **Response from destination** - How your server responded
 
-### The user flow
+### The User Flow
 
 The ultimate goal is for Partners like yourself to create and publish high quality Destinations in [the Segment Catalog](https://segment.com/catalog/). Your Segment account doubles as a sandbox account to test your destination while you are still in a private "building" state.
 
@@ -169,3 +169,9 @@ Next you can click the "Event Tester" tab to send data to your destination. Here
 Now you can use the JavaScript SDK in a browser to generate real analytics events.
 
 Finally you should verify the data in your service.
+
+### Write documentation
+
+Documentation is integral to enabling Segment's users to self-serve and onboard with your integration. Segment's documentation team will work with you during this part of the process to ensure your documentation matches the Segment style and is as instructive as possible. 
+
+To create your documentation, follow the instructions outlined [in this template](https://github.com/segmentio/segment-docs/blob/develop/templates/partners/direct-destination.md){:target="_blank"}

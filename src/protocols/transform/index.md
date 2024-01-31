@@ -1,9 +1,8 @@
 ---
 title: Use Transformations to fix bad data
 redirect_from: '/protocols/transformations/'
+plan: protocols
 ---
-
-{% include content/plan-grid.md name="protocols" %}
 
 ## What is a Transformation?
 

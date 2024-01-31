@@ -35,9 +35,6 @@ Learn more about [destination functions](/docs/connections/functions/destination
 #### Destination insert functions
 Destination insert functions help you enrich your data with code before you send it to downstream destinations.  
 
-> info "Destination Insert Functions in Public Beta"
-> Destination Insert Functions is in Public Beta, and Segment is actively working on this feature. Some functionality may change before it becomes generally available. [Contact Segment](https://segment.com/help/contact/){:target="_blank"} with any feedback or questions.
-
 Use cases: 
 - Implement custom logic and enrich data with third party sources 
 - Transform outgoing data with advanced filtration and computation

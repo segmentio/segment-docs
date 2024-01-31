@@ -1,9 +1,8 @@
 ---
 title: Segment Data Lakes Overview
 redirect_from: '/connections/destinations/catalog/data-lakes/'
+plan: data-lakes
 ---
-
-{% include content/plan-grid.md name="data-lakes" %}
 
 > warning "Segment Data Lakes (Azure) deletion policies"
 > Data deletion is not supported by Segment Data Lakes (Azure), as customers retain data in systems that they manage.

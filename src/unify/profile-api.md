@@ -273,7 +273,7 @@ https://profiles.segment.com/v1/spaces/<space_id>/
 Retrieve a single profile's traits within a collection using an `external_id`. For example, two different sources can set a different `first_name` for a user. The traits endpoint will resolve properties from multiple sources into a canonical source using the last updated precedence order.
 
 ```
-GET /v1/spaces/<space_id>/collections/users/profiles/<external_id>/traits
+GET /v1/spaces/<space_id>/collections/users/profiles/<id_type:external_id>/traits
 ```
 
 ##### Query parameters
