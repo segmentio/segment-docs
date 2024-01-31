@@ -23,11 +23,11 @@ With Linked Events, you can:
 - **Sync enriched data**. Add a loyalty ID to event payloads before sending it downstream to destinations such as Amplitude, Mixpanel, and more.
 - **Reduce load times**. Enrich page view events with products and subscriptions connected to that view, and send that to Google Analytics 4 to lighten the front end and reduce page loading time.
 
-## Requirements
+## Prerequisites
 
-Before getting started with Linked Events, you'll need:
+To use Linked Events, you'll need the following:
 
-1. [BigQuery](/docs/unify/linked-profiles/setup-guides/bigquery-setup/), [Snowflake](/docs/unify/linked-profiles/setup-guides/snowflake-setup/), or [Redshift](/docs/unify/linked-profiles/setup-guides/redshift-setup/) data warehouse credentials with **write** access.
+1. A supported data warehouse.
 2. Access to Unify in your workspace. 
 3. Access to the actions-based destination you'll be using with Linked Events so that you can validate your data. 
 
@@ -44,16 +44,24 @@ The following Segment access [roles](/docs/segment-app/iam/roles/) apply to Link
 
 To create models and enrich events in destinations, you need to be a `Workspace Owner` or have the following roles: 
 
-- `Unify and Engage Admin`
+- `Unify Admin`
 - `Entities Admin` 
 - `Source Admin`
 
-## Step 1: Connect a data warehouse
+## Step 1: Set up your data warehouse and permissions
+
+> info "data warehouse support"
+> Snowflake, Redshift, and BigQuery are currently supported for Linked Events.
 
 > info ""
 > Linked Events uses Segment's [Reverse ETL](/docs/connections/reverse-etl/) infrastructure for pulling in data from your warehouse. 
 
-To get started, you'll need to connect a data warehouse. Linked Events supports [BigQuery](/docs/unify/linked-profiles/setup-guides/bigquery-setup/), [Snowflake](/docs/unify/linked-profiles/setup-guides/snowflake-setup/), and [Redshift](/docs/unify/linked-profiles/setup-guides/redshift-setup/).
+To get started, you'll need to set up your data warehouse and provide the correct access detailed in the set up steps below. Linked Events supports [BigQuery](/docs/unify/linked-profiles/setup-guides/bigquery-setup/), [Snowflake](/docs/unify/linked-profiles/setup-guides/snowflake-setup/), and [Redshift](/docs/unify/linked-profiles/setup-guides/redshift-setup/). 
+
+## Step 2: Connect your warehouse to the Data Graph
+
+> success ""
+> Before getting started with the Data Graph, be sure to set up your warehouse permissions.
 
 1. Navigate to **Unify > Data graph** and click **Add warehouse**. 
 2. Select a warehouse to connect from the [supported data warehouses](#supported-data-warehouses). 
@@ -85,7 +93,7 @@ The table below shows the data warehouses Linked Events supports. View the Segme
 | [Redshift](/docs/unify/linked-profiles/setup-guides/redshift-setup/)           | 1. Select the Redshift cluster you want to connect. <br> 2. [Configure](/docs/connections/storage/catalog/redshift/#networking) the correct network and security settings. |
 
 
-## Step 2: Build your Data Graph
+## Step 3: Build your Data Graph
 
 The [Data Graph](/docs/unify/linked-profiles/data-graph/) is a semantic layer that represents a subset of relevant business data that you'll use to enrich events in downstream tools. Use the configuration language spec below to add models to build out your Data Graph.
 
@@ -124,7 +132,7 @@ entity "account-entity" {
 ```
 
 
-## Step 3: Add an actions-based destination
+## Step 4: Add an actions-based destination
 
 To use Linked Events, you'll need to add an action destination to send enriched events to. Navigate to **Connections > Destinations**. Select an existing action destination, or click **+ Add destination** to add a new action destination.  
 
@@ -132,7 +140,7 @@ To use Linked Events, you'll need to add an action destination to send enriched 
 > For Linked Events, Segment supports [Destination Actions](/docs/connections/destinations/actions/).
 
 
-## Step 4: Enrich events with entities
+## Step 5: Enrich events with entities
 With Linked Events, you can select entities and properties from your data warehouse, then add enrichments to map properties to your connected destination.
 
 To enrich events with entities:
