@@ -7,7 +7,6 @@ id: 5fa3ce52d18ccdfb384b13f7
 
 Startdeliver maintains this destination. For any issues with the destination, [contact their support team](mailto:support@startdeliver.com).
 
-{% include content/beta-note.md %}
 
 ## Getting Started
 

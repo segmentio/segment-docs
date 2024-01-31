@@ -7,8 +7,6 @@ id: 5d25eddde3ff660001b3adda
 
 This destination is maintained by Podsights. For any issues with the destination, [contact the Podsights Support team](mailto:hello@podights.com).
 
-{% include content/beta-note.md %}
-
 
 ## Getting Started
 

@@ -8,9 +8,6 @@ id: 5d73347d0bbdf3a5abebca15
 
 This destination is maintained by Hawkei. For any issues with the destination, [contact the Hawkei Support team](mailto:support@hawkei.io).
 
-{% include content/beta-note.md %}
-
-
 ## Getting Started
 
 

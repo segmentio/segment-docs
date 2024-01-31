@@ -7,7 +7,6 @@ id: 5c6f5f0b037dcf00014f8fb0
 
 This destination is maintained by TrafficGuard.
 
-{% include content/beta-note.md %}
 
 
 ## Getting Started

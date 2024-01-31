@@ -7,7 +7,6 @@ id: 5d00754256e478000114784f
 
 This destination is maintained by Asayer. For any issues with the destination, [contact the Asayer Support team](mailto:support@asayer.io).
 
-{% include content/beta-note.md %}
 
 ## Getting Started
 

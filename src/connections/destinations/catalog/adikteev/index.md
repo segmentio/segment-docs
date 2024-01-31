@@ -5,8 +5,6 @@ id: 5c75564f1d2f34000116ef78
 ---
 This destination is maintained by Adikteev. For any issues with the destination, [contact the Adikteev support team](mailto:contact@adikteev.com).
 
-{% include content/beta-note.md %}
-
 
 ## Getting Started
 

@@ -7,8 +7,6 @@ id: 5d10e0d0d3831900017af2cd
 
 This destination is maintained by FunnelFox. For any issues with the destination, [contact the FunnelFox Support team](mailto:support@funnelfox.com).
 
-{% include content/beta-note.md %}
-
 
 ## Getting Started
 

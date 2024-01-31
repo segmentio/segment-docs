@@ -7,8 +7,6 @@ id: 5cf78a8db6bcdf00017208cd
 
 This destination is maintained by Custify. For any issues with the destination, [contact the Custify Support team](mailto:contact@custify.com).
 
-{% include content/beta-note.md %}
-
 ## Getting Started
 
 

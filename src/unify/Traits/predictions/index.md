@@ -30,11 +30,20 @@ Follow these steps to access Predictions:
 
 Once your Workspace is enabled for Predictions, follow these steps to build a prediction:
 
-3. In the Trait Builder, select **Predictions**, choose the Trait you want to create, then click **Next**.
-    - Choose **Custom Predictive Goal**, **Likelihood to Purchase**, **Predicted Lifetime Value**, or **Likelihood to Churn**.
-4. (For custom Predictive Goals) Add a condition(s) and event to predict, then select **Calculate**. If you're satisfied with the available data, select **Next**.
-5. (Optional) Connect a Destination, then select **Next**.
-6. Add a name and description for the Trait, then select **Create Trait**.
+1. In the Trait Builder, select **Predictions**, choose the Trait you want to create, then click **Next**.
+2. Select **Custom Predictive Goal**, **Likelihood to Purchase**, **Predicted Lifetime Value**, or **Likelihood to Churn**.
+4. (For custom Predictive Goals) Add a condition(s) and event(s) to predict. 
+5. Select a time period for the prediction. 
+6. (Optional) In **Include all events**, uncheck any events you don't want Segment to factor into the prediction.
+7. Click **Calculate**. If you're satisfied with the available data, click **Next**.
+5. (Optional) Connect a Destination, then click **Next**.
+6. Add a name and description for the Trait, then click **Create Trait**.
+
+Keep the following in mind when you build a prediction:
+
+- Segment lets you predict the likelihood of a customer performing multiple events. 
+- You can choose a time period of 15, 30, 60, 90, or 120 days. 
+- You have granular control over the events Segment factors into the predictive model. By default, Segment's model makes predictions on all events sent to Engage. Segment lets you exclude events you don't want included by unselecting **Include all events**, then filtering out any events you want excluded from the model.
 
 In the next section, you'll learn more about the four available predictions.
 
