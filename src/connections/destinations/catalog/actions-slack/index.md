@@ -30,6 +30,7 @@ Slack (Actions) provides the following benefits over the classic Slack destinati
 3. Click **Configure Actions Slack**.
 4. Select an existing Source to connect to Slack (Actions).
 5. Click Customized Setup to start from a blank mapping.
+6. In your Slack workspace, create a new [Incoming Webhook URL]([url](https://my.slack.com/services/new/incoming-webhook/)) and select the Slack channel associated with your account that you'd like to send messages to. The Slack channel you selected will be the default channel which will receive message events. Paste the Incoming Webhook URL you created into each of your Slack Destination's Actions under the field labeled `Webhook URL*`.
 
 ## Important differences from the classic Slack destination
 
