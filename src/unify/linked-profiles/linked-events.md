@@ -8,7 +8,7 @@ redirect_from:
 ---
 
 > info "Linked Events is in private beta"
-> Linked Events is in private beta, and Segment is actively working on this feature. Some functionality may change before it becomes generally available. [Contact Segment](https://segment.com/help/contact/){:target="_blank"} with any feedback or questions.
+> Linked Events is in private beta, and Segment is actively working on this feature. Some functionality may change before it becomes generally available. 
  
 
 Use Linked Events to enrich real-time event streams with entities from your data warehouse to your destinations. Insert additional event context for downstream applications for richer data about each event. 
