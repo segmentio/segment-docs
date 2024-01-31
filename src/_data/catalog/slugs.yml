@@ -203,3 +203,5 @@ destinations:
     override: "cdpresolution"
   - original: "innovid"
     override: "tv-squared"
+  - original: "aggregations-io-actions"
+    override: "actions-aggregations-io"

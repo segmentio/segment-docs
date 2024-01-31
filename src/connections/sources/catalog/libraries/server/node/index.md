@@ -653,6 +653,46 @@ analytics.track({
 ```
 
 
+## OAuth 2.0
+
+> info ""
+> OAuth 2.0 is currently in private beta and is governed by Segment’s [First Access and Beta Preview Terms](https://www.twilio.com/en-us/legal/tos){:target="_blank"}.
+
+Enable [OAuth 2.0](/docs/connections/oauth/) in your Segment workspace to guarantee authorized communication between your server environment and Segment's Tracking API. To support the non-interactive server environment, the OAuth workflow used is a signed client assertion JWT.  
+
+You will need a public and private key pair where:
+- The public key is uploaded to the Segment dashboard. 
+- The private key is kept in your server environment to be used by this SDK. 
+
+Your server will verify its identity by signing a token request and will receive a token that is used to to authorize all communication with the Segment Tracking API.
+
+You'll need to provide the OAuth Application ID and the public key's ID, both of which are provided in the Segment dashboard.  There are also options available to specify the authorization server, custom scope, maximum number of retries, or a custom HTTP client if your environment has special rules for separate Segment endpoints.
+
+Be sure to implement handling for Analytics SDK errors. Good logging helps distinguish any configuration issues.
+
+For more information, see the [Segment OAuth 2.0 documentation](/docs/connections/oauth/).
+
+```ts
+import { Analytics, OAuthSettings } from '@segment/analytics-node';
+import { readFileSync } from 'fs'
+
+const privateKey = readFileSync('private.pem', 'utf8')
+
+const settings: OAuthSettings = {
+  clientId: '<CLIENT_ID_FROM_DASHBOARD>',
+  clientKey: privateKey,
+  keyId: '<PUB_KEY_ID_FROM_DASHBOARD>',
+}
+
+const analytics = new Analytics({
+  writeKey: '<MY_WRITE_KEY>',
+  oauthSettings: settings,
+})
+
+analytics.on('error', (err) => { console.error(err) })
+
+analytics.track({ userId: 'foo', event: 'bar' })
+```
 ## Troubleshooting
 
 {% include content/troubleshooting-intro.md %}

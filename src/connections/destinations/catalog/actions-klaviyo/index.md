@@ -1,8 +1,5 @@
 ---
 title: Klaviyo (Actions) Destination
-hide-boilerplate: true
-hide-dossier: true
-hidden: true
 id: 650bdf1a62fb34ef0a8058e1
 beta: true
 ---
