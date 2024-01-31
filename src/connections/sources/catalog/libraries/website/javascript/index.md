@@ -14,6 +14,9 @@ Analytics.js enables you to send your data to hundreds of [destination tools](/d
 
 Segment's Analytics.js library is fully open-source and can be viewed on [GitHub](https://github.com/segmentio/analytics-next/){:target="_blank"}.
 
+## Getting started
+
+Use the [Analytics.js QuickStart Guide](/docs/connections/sources/catalog/libraries/website/javascript/quickstart/) to learn how to add Analytics.js to your site. Once you've installed the library, read on for the detailed API reference.
 
 ## Benefits of Analytics.js
 
@@ -26,7 +29,6 @@ Analytics.js reduces page load time and improves site performance. Its package s
 > info ""
 > Many factors impact page load time, including network conditions, hosting locations, and page weight. Page weight for each customer integration varies based on the number of device-mode destinations that are enabled for each source. The more device-mode destinations that are enabled, the more data gets added to the library, which will impact the weight of the library.
 
-
 ### Developer experience
 
 Analytics.js improves developer experience by introducing new ways for developers to augment events throughout the event timeline. For example, developers can augment events either before or after an event occurs, or while the event is in-flight.
@@ -36,10 +38,6 @@ For example, you can use Analytics.js to build features that:
 - Ensure you have user consent to track before an event fires
 - Enrich events with customer or page context while in-flight with middleware
 - Check an event for errors after the event is sent to Segment
-
-## Getting started
-
-Use the [Analytics.js QuickStart Guide](/docs/connections/sources/catalog/libraries/website/javascript/quickstart/) to learn how to add Analytics.js to your site. Once you've installed the library, read on for the detailed API reference.
 
 ## Basic tracking methods
 
