@@ -278,8 +278,6 @@ sections:
     title: Integration Error Codes
   - path: /connections/rate-limits
     title: Rate Limits
-  - path: /connections/oauth
-    title: OAuth 2.0
 - section_title: Unify
   section:
   - path: /unify
