@@ -93,9 +93,9 @@ The table below shows the data warehouses Linked Events supports. View the Segme
 | [Redshift](/docs/unify/linked-profiles/setup-guides/redshift-setup/)           | 1. Select the Redshift cluster you want to connect. <br> 2. [Configure](/docs/connections/storage/catalog/redshift/#networking) the correct network and security settings. |
 
 
-## Step 3: Build your Data Graph
-
-The [Data Graph](/docs/unify/linked-profiles/data-graph/) is a semantic layer that represents a subset of relevant business data that you'll use to enrich events in downstream tools. Use the configuration language spec below to add models to build out your Data Graph.
+## Step 3: Build your Data Graph 
+ 
+The Data Graph is a semantic layer that represents a subset of relevant business data that you'll use to enrich events in downstream tools. Use the configuration language spec below to add models to build out your Data Graph.
 
 Each Unify space has one Data Graph. The current version is v0.0.6 but this may change in the future as Segment accepts feedback about the process.
 
@@ -199,7 +199,7 @@ For Linked Events, Segment supports all actions-based destinations.
 
 Test events don't send Linked Events. You'll only see test events that come from the source debugger, which is ahead of the event enrichment.
 
- #### Can I view my Linked Events Audit Trail? 
+#### Can I view my Linked Events Audit Trail? 
 
 Linked Events uses the existing Audit Trail in your Segment workspace. To view your Audit Trail, navigate to **Settings > Admin > Audit Trail**.
 
