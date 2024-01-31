@@ -1,7 +1,12 @@
 ---
 title: Linked Profiles Overview
 plan: unify
+beta: true
+hidden: true
 ---
+
+> info "Linked Profiles is in private beta"
+> Linked Profiles is in private beta, and Segment is actively working on this feature. Some functionality may change before it becomes generally available. 
 
 Use Linked Profiles to expand your model beyond the profile to the entire universe of business data. Linked Profiles offers a suite of products which includes the [Data Graph](/docs/unify/linked-profiles/data-graph/), [Linked Events](/docs/unify/linked-profiles/linked-events/), and [Linked Audiences](/docs/engage/audiences/linked-audiences/). 
 

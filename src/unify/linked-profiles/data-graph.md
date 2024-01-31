@@ -2,6 +2,7 @@
 title: Data Graph
 plan: unify
 beta: true
+hidden: true
 ---
 
 > info "Segment's Data Graph is in private beta"
