@@ -25,8 +25,8 @@ Before you can configure consent in Segment, take the following steps:
 
 ## Step 1: Create consent categories in the Segment app
 
-> info "Limited availability of sources and destinations during private beta"
-> During private beta, AWS S3, RETL, and Engage destinations do not enforce consent preferences. 
+> info "Limited availability of destinations"
+> AWS S3, RETL, and Engage destinations do not enforce consent preferences. 
 
 1. From the [Segment homepage](https://app.segment.com/goto-my-workspace/){:target="_blank”}, select the Privacy tab and click **Consent Management**.
 2. On the Consent management page, click **Create categories**.
