@@ -4,18 +4,16 @@ rewrite: true
 id: 54521fd525e721e32a72ee97
 ---
 
-[Bing Ads](https://bingads.microsoft.com) enables Marketers to track and monitor campaigns, clicks, CTRs, spend and budget. Bing Ads lets you place cross-device product ads in front of Bing, Yahoo, and MSN customers and support imported pay-per-click ad campaigns from third-party platforms like Google AdWords. With Bing Ads you can also retarget ads to customers after they complete an action like leaving a shopping cart or viewing a product without purchasing. To learn more, see [Bing Ads](https://advertise.bingads.microsoft.com/en-us/resources/training/what-is-bing-ads). You can also browse the code [on GitHub](https://github.com/segment-integrations/analytics.js-integration-bing-ads).
+[Bing Ads](https://bingads.microsoft.com){:target="_blank"} enables Marketers to track and monitor campaigns, clicks, CTRs, spend and budget. Bing Ads lets you place cross-device product ads in front of Bing, Yahoo, and MSN customers and support imported pay-per-click ad campaigns from third-party platforms like Google AdWords. With Bing Ads you can also retarget ads to customers after they complete an action like leaving a shopping cart or viewing a product without purchasing. To learn more, see [Bing Ads](https://advertise.bingads.microsoft.com/en-us/resources/training/what-is-bing-ads){:target="_blank"}. You can also browse the code [on GitHub](https://github.com/segment-integrations/analytics.js-integration-bing-ads){:target="_blank"}.
 
 ## Getting started
 
-{% include content/connection-modes.md %}
-
-Before you can track conversions or target audiences, create a UET tag in Bing Ads and then add it to the destination settings. Follow the steps within [the Bing Ads documentation to create a UET tag](https://advertise.bingads.microsoft.com/en-us/resources/training/universal-event-tracking).
+Before you can track conversions or target audiences, create a UET tag in Bing Ads and then add it to the destination settings. Follow the steps within [the Bing Ads documentation to create a UET tag](https://advertise.bingads.microsoft.com/en-us/resources/training/universal-event-tracking){:target="_blank"}.
 
 After you have created the Tag ID, follow the steps below:
 
 1. From the Segment web app, click **Catalog**.
-2. Search for "Bing Ads" in the Catalog, select it, and choose your sources to connect to the destination. Note that the source must be sending events using our JavaScript library Analytics.js.
+2. Search for "Bing Ads" in the Catalog, select it, and choose which of your sources to connect to the destination. Note that the source must be sending events using Segment's JavaScript library Analytics.js.
 3. In the destination settings, enter your Tag Id.
 
 Your changes will appear in the Segment CDN in about 45 minutes, and then Analytics.js starts asynchronously loading Bing Ads snippets on your page and sending data.
@@ -48,12 +46,12 @@ For Segment to map your track events to a Conversion Goal, first create the goal
 
 ## Setting up Custom Events:
 
-**Step 1: Add the UET Tag Tracking Code to Your Website**
+### Step 1: Add the UET Tag Tracking Code to Your Website
 
 1. Copy the UET tag from Microsoft Advertising.
 2. Paste the tag into the head or body section of your website's code.
 
-**Step 2: Create a Conversion Goal or Remarketing List**
+### Step 2: Create a Conversion Goal or Remarketing List
 
 Creating a conversion goal for a custom event:
 
@@ -73,11 +71,11 @@ Choose the parameters to report when logging custom events.
 Set the membership duration.
 Associate the UET tag with the remarketing list.
 
-**Step 3: Modify the UET Tag Tracking Code in Your Website**
+### Step 3: Modify the UET Tag Tracking Code in Your Website
 
 1. Add the code for the custom event to the UET tag tracking code.
 2. Follow the instructions provided to set up the event tag on your website.
-=======
+
 For Segment to map your track events to a Conversion Goal, create the goal in your Bing Ads account:
 
 For information about tracking custom events, see Microsoft's article [How to track custom events with UET](https://help.ads.microsoft.com/#apex/ads/en/56684/2-500){:target="_blank"}
