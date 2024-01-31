@@ -29,7 +29,7 @@ To use the Data Graph, you'll need the following:
 
 ## Step 1: Set up your data warehouse
 
-> info "data warehouse support"
+> info "Data warehouse support"
 > - [Snowflake](/docs/unify/linked-profiles/setup-guides/snowflake-setup/) is supported by both Linked Events and Linked Audiences.
 > - [Redshift](/docs/unify/linked-profiles/setup-guides/redshift-setup/) and [BigQuery](/docs/unify/linked-profiles/setup-guides/BigQuery-setup/)  are currently supported for Linked Events.
 
