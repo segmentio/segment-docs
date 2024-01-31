@@ -53,6 +53,9 @@ When you send data from a server-side or project source, you can use the `host` 
 1. Oregon (Default) — `https://events.segmentapis.com/v1`
 2. Dublin — `https://events.eu1.segmentapis.com/`
 
+> success ""
+> If you are using the Segment EU endpoint with an Analytics-C# source, you must manually append `v1` to the URL. For instance, `events.eu1. segmentapis.com/v1`.
+
 Here is an example of how to set the host:
 
 ```json
