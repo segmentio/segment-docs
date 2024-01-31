@@ -260,6 +260,8 @@ sections:
         title: Speeding Up Redshift Queries
       - path: /connections/storage/warehouses/redshift-useful-sql
         title: Useful SQL Queries for Redshift
+  - path: /connections/regional-segment
+    title: Regional Segment
   - path: /connections/test-connections
     title: Event Tester
   - path: /connections/data-export-options
@@ -276,18 +278,6 @@ sections:
     title: Integration Error Codes
   - path: /connections/rate-limits
     title: Rate Limits
-  - path: /connections/regional-segment
-    title: Regional Segment
-# - section_title: Reverse ETL
-#   section:
-#   - path: /reverse-etl
-#     title: Reverse ETL Overview
-#   - path: /reverse-etl/bigquery-setup
-#     title: BigQuery Reverse ETL Setup
-#   - path: /reverse-etl/redshift-setup
-#     title: Redshift Reverse ETL Setup
-#   - path: /reverse-etl/snowflake-setup
-#     title: Snowflake Reverse ETL Setup
 - section_title: Unify
   section:
   - path: /unify
@@ -324,9 +314,9 @@ sections:
       title: Tables & Materialized Views
   - section_title: Linked Profiles 
     slug: unify/linked-profiles
-    section: 
-    - path: /unify/linked-profiles/linked-events
-      title: Linked Events
+    section:
+    - path: /unify/linked-profiles
+      title: Linked Profiles Overview 
     - section_title: Setup Guides
       slug: unify/linked-profiles/setup-guides
       section: 
@@ -336,6 +326,11 @@ sections:
           title: Snowflake Setup
         - path: /unify/linked-profiles/setup-guides/redshift-setup
           title: Redshift Setup
+    - path: /unify/linked-profiles/data-graph
+      title: Data Graph
+    - path: /unify/linked-profiles/linked-events
+      title: Linked Events
+ 
   - section_title: Traits
     slug: unify/traits
     section:
@@ -402,6 +397,8 @@ sections:
       title: Account-level Audiences
     - path: '/engage/audiences/generative-audiences'
       title: Generative Audiences
+    - path: '/engage/audiences/linked-audiences'
+      title: Linked Audiences
     - path: '/engage/audiences/organization'
       title: Organize Audiences
 
