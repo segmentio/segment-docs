@@ -7,7 +7,7 @@ redirect_from:
 ---
 
 > info "Linked Audiences is in private beta"
-> Linked Audiences is in private beta, and Segment is actively working on this feature. Some functionality may change before it becomes generally available. [Contact Segment](https://segment.com/help/contact/){:target="_blank"} with any feedback or questions.
+> Linked Audiences is in private beta, and Segment is actively working on this feature. Some functionality may change before it becomes generally available. 
 
 With Linked Audiences, you can use the relational data you've defined in your Data Graph to build audiences and send them to your downstream [actions-based destination](/docs/connections/destinations/actions/#available-actions-based-destinations).
 
@@ -69,7 +69,7 @@ Engage displays the following compute statuses for Linked Audiences.
 | Computation status        | Description                           |
 |---------------------------|---------------------------------------|
 | Computing                 | Engage is computing the Linked Audience.           |
-| Live                      | The Linked Audience is live. Users will enter in real-time as they meet entry criteria.        |
+| Live                      | Users will enter the audience as it's computed on the scheduled hourly cadence.        |
 | Disabled                  | The Linked Audience is disabled.                   |
 | Failed                    | The computation was cancelled or failed to compute. Please contact [Segment support](https://segment.com/help/contact/){:target="_blank"}.            |
 
@@ -108,7 +108,7 @@ You can send events:
 
 #### Entity added
 
-Send a Track event when an entity matching the audience conditions is added. Select your entity from the **Select entity** dropdown menu.
+Send a Track event when the lowest entity branch matches the audience condition.
 
 Example use cases:
 - Send a reminder to a customer when a credit card associated with their profile has an outstanding balance.
@@ -193,7 +193,7 @@ Below are some example use cases to help you learn more about Linked Audiences.
 
 ### Build an audience of cat owners who are also a part of the platinum membership tier
 
-Build an audience with `Households` and `Pets` where:
+Build an audience with `Households` and `Pets` where the following conditions are true:
 - `pets.type` = "cat"
 
 And where:
@@ -211,7 +211,7 @@ Furthermore, adding the audience membership condition will allow marketers to fu
 
 ### Build an audience of users with premium subscriptions who are located in Canada
 
-Build an audience with `Accounts` and `Subscriptions`, where the following are true:
+Build an audience with `Accounts` and `Subscriptions`, where the following conditions are true:
 - `subscription.status` = "active"
 - `subscription.tier` = "premium"
 
@@ -228,7 +228,7 @@ Furthermore, adding the profile condition will allow marketers to further refine
 
 ### Build an audience of credit card holders with a certain number of transactions
 
-Build an audience with `Accounts`, `Credit Cards`, and `Transactions` where the following are true: 
+Build an audience with `Accounts`, `Credit Cards`, and `Transactions` where the following conditions are true: 
 - `credit_cards.name` equals "Owly Card" 
 - `transactions.count` is greater than five
 

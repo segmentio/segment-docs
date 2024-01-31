@@ -89,12 +89,10 @@ The table below shows the data warehouses Linked Events supports. View the Segme
 
 The [Data Graph](/unify/linked-profiles/data-graph/) is a semantic layer that represents a subset of relevant business data that you'll use to enrich events in downstream tools. Use the configuration language spec below to add models to build out your Data Graph.
 
-### Deleting and editing entities and/or relationships from your Data Graph
-
 Each Unify space has one Data Graph. The current version is v0.0.6 but this may change in the future as Segment accepts feedback about the process.
 
 > warning ""
-> Deleting and/or editing entities and relationships to the Data Graph may lead to errors if these entities or relationships are referenced in existing Linked Audiences and Linked Events. Segment recommends creating a new Linked Audience or Linked Event. <br><br> Please note that while you can delete relationships or entities from the Data Graph, these relationships will still show up in the Linked Audience Builder and Linked Events.
+> Deleting entities and relationships are not yet supported.
  
 ### Defining entities 
 
@@ -115,7 +113,7 @@ An entity is a stateful representation of a business object. The entity correspo
 
 
 ```python
-# Define an entity and optionally indicate if the entity will be referenced for Linked Events (event enrichment)
+# Define an entity and indicate if the entity will be referenced for Linked Events (enrichment_enabled=true)
 
 entity "account-entity" {
      name = "account"
@@ -126,9 +124,9 @@ entity "account-entity" {
 ```
 
 
-## Step 3: Add a Destination
+## Step 3: Add an actions-based destination
 
-To use Linked Events, you'll need to add a destination to send enriched events to. Navigate to **Connections > Destinations**. Select an existing destination, or click **+ Add destination** to add a new destination.  
+To use Linked Events, you'll need to add an action destination to send enriched events to. Navigate to **Connections > Destinations**. Select an existing action destination, or click **+ Add destination** to add a new action destination.  
 
 > info ""
 > For Linked Events, Segment supports [Destination Actions](/docs/connections/destinations/actions/).
@@ -168,13 +166,9 @@ In the Mappings tab, locate the **Select Mappings** section where you can enrich
 > warning ""
 > At this time, Linked Events doesn't support a preview of enriched payloads.
 
-### Test and save your Enrichments
+### Save your Enrichments
 
-After you’ve added Enrichments, test and save your enrichments.
-
-1. Test the mapping with data from a sample event.
-- The edit panel shows you the mapping output in the format for the destination tool. You can change your mapping as needed and re-test.
-2. When you're satisfied with the mapping, click **Save**. Segment returns you to the Mappings table.
+When you're satisfied with the mappings, click **Save**. Segment returns you to the Mappings table.
 
 > warning ""
 > At this time, when you select mappings or test events, you won’t see enrichment data. Enrichment data is only available with real events.
@@ -189,9 +183,9 @@ To use Linked Events, be sure that you have proper permissions for the Data Ware
 
 Segment currently syncs once every hour.
 
-#### Which Action Destinations does Linked Events support? 
+#### Which Destinations does Linked Events support? 
 
-For Linked Events, Segment supports all Actions Destinations. 
+For Linked Events, Segment supports all actions-based destinations. 
 
 #### Why aren't test events working? 
 
