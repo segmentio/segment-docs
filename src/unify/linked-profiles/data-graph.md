@@ -147,9 +147,10 @@ Use the following relationship, parameters, and examples to help you relate enti
 
 
 A profile can be related to an entity in two ways:
-- With an `external_id`: Define the external ID that will be used to join the profile with your entity.
-     - `type`: Identify the external ID type (`email`, `phone`, `user id`). This corresponds to the `external_id_type` column in your `external_id_mapping` table. 
-     - `join_key`: This is the column on the entity table that you are matching to the external identifier.   
+
+**1. With an `external_id`**: Define the external ID that will be used to join the profile with your entity.
+- `type`: Identify the external ID type (`email`, `phone`, `user id`). This corresponds to the `external_id_type` column in your `external_id_mapping` table. 
+- `join_key`: This is the column on the entity table that you are matching to the external identifier.   
 
 Example: 
 
@@ -170,11 +171,11 @@ data_graph {
                }
           }
 ```
-- With a `trait`: Define a profile trait that will be used to join the profile with your entity.
-     - `name`: The trait name that corresponds to a column name in your `profile_traits_updates` table.
-     - `join_key`: This is the column on the entity table that you are matching to the trait.
+**2. With a `trait`**: Define a profile trait that will be used to join the profile with your entity.
+- `name`: The trait name that corresponds to a column name in your `profile_traits_updates` table.
+- `join_key`: This is the column on the entity table that you are matching to the trait.
       
-Example:
+Example: 
 ```python
 
 data_graph { 
