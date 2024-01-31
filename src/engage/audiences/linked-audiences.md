@@ -4,6 +4,7 @@ plan: engage-foundations
 beta: true
 redirect_from: 
     - '/unify/linked-profiles/linked-audiences'
+hidden: true
 ---
 
 > info "Linked Audiences is in private beta"
