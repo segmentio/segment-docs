@@ -71,6 +71,9 @@ There are additional steps you must take to send `.identify()` calls in Device-m
 2. Input the associated **Marketo Form ID** and **Marketo Form URL** in your Marketo V2 Destination settings. This information can be found in Form Actions > Embed Code in the Marketo Design Studio:
 ![A screenshot of the Embed Code popup in Marketo.](images/form-info.png)
 
+> info ""
+> **Marketo Form ID** and **Marketo Form URL** are **required** fields in order for the Marketo SDK to initialize on your site. If these fields are left blank, the SDK will not initialize and data will not be sent downstream. 
+
 ### Traits
 Regardless of connection mode, we'll map the following spec'd Segment traits to Marketo's standard fields:
 
