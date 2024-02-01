@@ -35,7 +35,7 @@ Follow these steps to configure Live Plugins:
 // Import the live plugin
 import AnalyticsLive
 // Instantiate Analytics
-// Add live plugin to Analytics
+// Add LivePlugins to Analytics
 analytics.add(plugin: LivePlugins(null))
 ```
 {% endcodeexampletab %}
@@ -45,7 +45,7 @@ analytics.add(plugin: LivePlugins(null))
 // Import the live plugin
 import com.segment.analytics.plugins.livePlugin
 // Instantiate analytics
-// Add live plugin to Analytics
+// Add LivePluginsto Analytics
 analytics.add(LivePlugins())
 ```
 {% endcodeexampletab %}
