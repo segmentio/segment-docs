@@ -8,7 +8,7 @@ Live plugins are JavaScript code snippets published to your Segment workspace an
 On this page, you'll learn how to set up live plugins and how to create your own live plugins. You'll also see example live plugins that address common use cases.
 
 > info "Live Plugins is in pilot"
-> Live Plugins is currently in Pilot and available to select Business Tier Customers only. To enable this feature for your workspace, please contact your CSM.
+> Live Plugins is currently in Pilot and available to select Business Tier Customers only. To enable this feature for your workspace, contact your CSM.
 
 ## Live Plugins overview
 
