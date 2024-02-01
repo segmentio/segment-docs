@@ -87,7 +87,7 @@ Run this command to install the Segment CLI:
 $ brew install segment-integrations/formulae/segmentcli
 ```
 
-#### 2. Authenticate witih Segment
+#### 2. Authenticate with Segment
 
 Next, you'll authenticate with Segment to give the CLI access to your workspace:
 
