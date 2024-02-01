@@ -239,7 +239,7 @@ class DownSampleLivePlugin extends LivePlugin {
    counter = 0
     // The execute function is called for every event.
    execute(event) {
-      // Check if the event count is divisible by 10 (that is, every 10th event).
+      // Check if the event count is divisible by 10 (that is, every tenth event).
        if (counter++ % 10 == 0) {
          return event
        } else {
@@ -277,7 +277,7 @@ class DownSampleLivePlugin extends LivePlugin {
 
    // The execute function is called for every event.
    execute(event) {
-      // Check if the event count is divisible by 3 (that is, every 3rd event).
+      // Check if the event count is divisible by 3 (that is, every third event).
       if (this.counter++ % 3 === 0) {
          return event; // Keep this event.
       } else {
