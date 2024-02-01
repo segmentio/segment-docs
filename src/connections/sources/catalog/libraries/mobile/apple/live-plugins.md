@@ -342,7 +342,7 @@ The following callback functions are designed for specific event types and let y
 | Callback          | Description                                                                                   |
 | ----------------- | --------------------------------------------------------------------------------------------- |
 | `track(event)`    | Called for a tracking event. Must return the event to keep it or return `null` to drop it.    |
-| `identify(event)` | Called for an identified event. Must return the event to keep it or return `null` to drop it. |
+| `identify(event)` | Called for an identify event. Must return the event to keep it or return `null` to drop it. |
 | `screen(event)`   | Called for a screen event. Must return the event to keep it or return `null` to drop it.      |
 | `group(event)`    | Called for a group event. Must return the event to keep it or return `null` to drop it.       |
 | `alias(event)`    | Called for an alias event. Must return the event to keep it or return `null` to drop it.      |
