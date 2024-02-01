@@ -22,7 +22,7 @@ To use live plugins, you first need to set up your mobile app with a one-time co
 
 ### One-time configuration
 
-Follow these steps to configure Live Plugins:
+To configure live plugins:
 
 1. Include the [Analytics Live for Swift plugin](https://github.com/segment-integrations/analytics-swift-live){:target="_blank"}
  and [Analytics Live for Kotlin plugin](https://github.com/segment-integrations/analytics-kotlin-live){:target="_blank"}
