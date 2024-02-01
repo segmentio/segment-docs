@@ -85,7 +85,11 @@ Google may take [24-48 hours](https://support.google.com/analytics/answer/933379
 
 ### Data is not sent to Google
 
-In order for data to be sent downstream to Google Analytics, check your mappings to ensure that the **Set Configuration Fields** mapping is enabled in your mappings and the **Page Views** setting is toggled on. The **Set Configuration Fields** mapping is required for data to be sent downstream because it sets configuration to Measurement ID and establishes data flow using the `config` command. 
+In order for data to be sent downstream to Google Analytics, all of the following conditions must be met:
+
+1. Check that the **Set Configuration Fields** mapping is configured and enabled in your mappings. The **Set Configuration Fields** mapping is required for data to be sent downstream because it sets configuration to Measurement ID and establishes data flow using the `config` command.
+2. Check that the **Page Views** setting is toggled on. When the **Page Views** setting is toggled on, a `page_view` will be sent to Google Analytics 4 Web. If you are manually sending `page_view` events instead, see below for additional settings needed in your Analytics workspace. 
+3. Ensure that you are calling `analytics.page()` on page load. Analytics.js requires an initial Page call to send data to Google Analytics 4 Web. The Segment snippet includes this initial call by default.
 
 ### Duplicate `page_view` events in GA4
 
