@@ -42,6 +42,8 @@ Unify resolves identity for any other externalIDs that you bind to users - such 
 
 As long as you've configured custom externalIDs, such as `phone`, in your Space's Identity Resolution rules, you can include it with the `context.externalIds` array, the `properties` object, or the `context.traits` object.  
 
+When creating custom externalIds that are sent from sources which may send fields with different casing, such as snake_case or camelCase, both snake_case and camelCase are recognized by Engage as the same field and will be applied to the configured identifier as such. For example, for the custom externalId `user_name`, events that send either `user_name` or `userName` will be recognized as an identifier, but if `username` with neither casing is seen, then the value of `username` will not be applied as that identifier, but it will instead be added as a trait on the profile.
+
 As seen in the example below, you can send custom `externalIds` in the `context` object of any call to Segment's API.
 
 The four fields below (id, type, collection, encoding) are all required:
