@@ -151,7 +151,7 @@ Here's how you can add the `UserIdLivePlugin` to your Analytics instance:
 analytics.add(new UserIdLivePlugin(LivePluginType.enrichment, "adobe"));
 ```
 
-### 3. Using `LivePluginType` enums
+### 3. Use the `LivePluginType` enums
 
 To control when your custom live plugin runs during event processing, you can use `LivePluginType` enums, which define different timing options for your live plugin. Here are the available types:
 
