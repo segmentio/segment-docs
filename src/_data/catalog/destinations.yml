@@ -63501,6 +63501,56 @@ items:
     label: API Key
   actions: []
   presets: []
+- id: 5d4dd5b989eda01a09b5cdb1
+  display_name: Personas Display & Video 360
+  name: Personas Display & Video 360
+  slug: personas-display-video-360
+  hidden: false
+  endpoints:
+  - US
+  regions:
+  - us-west-2
+  - eu-west-1
+  url: connections/destinations/catalog/personas-display-video-360
+  previous_names:
+  - Personas Display & Video 360
+  website: https://marketingplatform.google.com/about/display-video-360/
+  status: PUBLIC
+  categories:
+  - Advertising
+  logo:
+    url: https://cdn.filepicker.io/api/file/a58jMNgR3qpJKhYQAntc
+  mark:
+    url: https://cdn.filepicker.io/api/file/HfloKy76TXaz749XE4IG
+  methods:
+    track: false
+    identify: false
+    group: false
+    alias: false
+    screen: false
+    page: false
+  platforms:
+    browser: true
+    mobile: true
+    server: false
+    warehouse: false
+    cloudAppObject: false
+  components: []
+  browserUnbundlingSupported: false
+  browserUnbundlingPublic: true
+  replay: false
+  connection_modes:
+    device:
+      web: false
+      mobile: false
+      server: false
+    cloud:
+      web: true
+      mobile: true
+      server: false
+  settings: []
+  actions: []
+  presets: []
 - id: 5a4d24dcc5836400017188f6
   display_name: Personas Facebook Custom Audiences
   name: Personas Facebook Custom Audiences
