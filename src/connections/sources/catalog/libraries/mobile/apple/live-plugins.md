@@ -303,7 +303,7 @@ analytics.add(new DownSampleLivePlugin(LivePluginType.enrichment, null));
 
 ## Live Plugins API
 
-Live plugins follow an interface that lets you intercept Segment events and modify their data. This interface includes several functions that you can implement for custom behavior:
+Live plugins follow an interface that let you intercept Segment events and modify their data. This interface includes several functions that you can implement for custom behavior:
 
 ```js
 // Interface for Live Plugins:
