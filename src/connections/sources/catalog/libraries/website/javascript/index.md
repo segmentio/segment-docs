@@ -921,6 +921,17 @@ To minimize client-side data loss, Segment provides a few workarounds. However, 
 
 * Consider using one of Segment’s [server-side libraries](/docs/connections/sources/#server). Using a server-side library eliminates concerns about tracking blockers and privacy browsers that can prevent Segment from loading. This option may require additional code to track actions like a Page call, as you now need to manually pass contextual information that would have been automatically collected by Analytics.js, like `url`, `path`, and `referrer`. Note that some destinations are device-mode only.
 
+## Installing the library under a custom global namespace
+
+When you load Analytics.js through snippet code, by default, the SDK installs on `window.analytics` global variable. If this causes a conflict with another library on your page, you can change the global variable used by Analytics.js if you use snippet version 5.2.1 or later.
+
+Change the global variable in the beginning of your snippet code as shown below. In this case, Analytics.js uses `window.custom_key` to load instead of `window.analytics`.
+
+```diff
+  - !function(){var i="analytics", ...
+  + !function(){var i="custom_key", ...
+```
+
 ## Add destinations from npm
 
 Bundle the destinations you want loaded from [npm](https://www.npmjs.com/package/@segment/analytics-next){:target="_blank"} instead of having them loaded from a remote CDN. This enables you to have fewer network requests when adding destinations.
