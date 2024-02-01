@@ -10,7 +10,7 @@ On this page, you'll learn how to set up live plugins and how to create your own
 > info "Live Plugins is in pilot"
 > Live Plugins is currently in Pilot and available to select Business Tier Customers only. To enable this feature for your workspace, contact your CSM.
 
-## Live Plugins overview
+## Live plugins overview
 
 You can use JavaScript live plugins with Analytics-Swift and Analytics-Kotlin to filter and modify data remotely. As a result, you can filter and modify analytics events without having to deploy updates to the app store for each change, ensuring data quality and consistency for all your mobile users.
 
