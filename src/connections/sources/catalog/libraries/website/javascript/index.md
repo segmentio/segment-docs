@@ -923,9 +923,9 @@ To minimize client-side data loss, Segment provides a few workarounds. However, 
 
 ## Installing the library under a custom global namespace
 
-When loading Analytics.js through snippet code, the SDK gets installed on `window.analytics` global variable by default. However, if that causes a conflict with another library on your page, the global variable used by Analytics.js can be changed assuming you are using snippet version 5.2.1 or later.
+When you load Analytics.js through snippet code, by default, the SDK installs on `window.analytics` global variable. If this causes a conflict with another library on your page, you can change the global variable used by Analytics.js if you use snippet version 5.2.1 or later.
 
-Simply make this one change in the begining of your snippet code as shown below. In this case, Analytics.js will use `window.custom_key` to load instead of `window.analytics`.
+Change the global variable in the beginning of your snippet code as shown below. In this case, Analytics.js uses `window.custom_key` to load instead of `window.analytics`.
 
 ```diff
   - !function(){var i="analytics", ...
