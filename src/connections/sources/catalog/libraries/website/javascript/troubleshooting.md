@@ -212,8 +212,6 @@ If you are using a nonce-based security policy that allows JavaScript to be down
 
 Your CSP may also require whitelisting approved domains, in which case you'll want to allow the following endpoints: 
 - `api.segment.io`
-- `api.segment.com`
-- `track.segment.com`
 - `cdn.segment.com`
 
 You will also need to modify the Segment script with your `nonce` tag, which should match the value specified in your Content Security Policy.
