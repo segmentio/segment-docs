@@ -1,5 +1,6 @@
 ---
 title: Analytics for AMP
+support_type: community
 redirect_from: '/connections/sources/catalog/libraries/server/amp/'
 ---
 
@@ -38,6 +39,23 @@ Within your `<body>` tags, include the following Segment analytics snippet:
 </body>
   ```
 Replace `WRITE_KEY` with the write key you obtain from the AMP Source you've set up within the Segment UI.
+
+For sources in [EU workspaces](/docs/guides/regional-segment/), use the following snippet:
+
+  ```html
+<amp-analytics type="segment">
+    <script type="application/json">
+    {
+      "vars": {
+        "writeKey": "<SOURCE_WRITE_KEY>"
+      },
+      "requests": {
+        "host": "https://events.eu1.segmentapis.com/v1/pixel"
+      }
+    }
+    </script>
+</amp-analytics>
+  ```
 
 By default, the snippet will automatically fire a page event which you can read more about [here](/docs/connections/sources/catalog/libraries/mobile/amp/#page).
 

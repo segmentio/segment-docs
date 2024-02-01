@@ -1,9 +1,7 @@
 ---
 title: Protocols Frequently Asked Questions
+plan: protocols
 ---
-
-{% include content/plan-grid.md name="protocols" %}
-
 
 ## Protocols Notifications
 
@@ -13,18 +11,20 @@ You can subscribe to a variety of Protocols specific alerts through the workspac
 
 ### How can I get notified when someone makes a change to my tracking plan?
 
-You can forward notifications from Protocols to a new Segment Source, which can then send them to notification tools such as Slack webhook.
+You can forward notifications from Protocols to a new Segment source, which can then send them to notification tools such as Slack webhook. 
 
 You can also forward these Protocols alerts to any (cloud-mode) Segment destination that accepts Track calls, including data warehouses. Most customers record these activity feed events to a data warehouse for analysis.
 
 ### How do I get notified when new violations are generated? Can I create custom violation notifications?
 
-You can enable [violation event forwarding](/docs/protocols/validate/forward-violations/) to start delivering violations as Track calls to a Segment Source. From there, you can forward the events to any Segment destination that accepts Track calls.
+You can enable [violation event forwarding](/docs/protocols/validate/forward-violations/) to start delivering violations as Track calls to a Segment source. From there, you can forward the events to any Segment destination that accepts Track calls. 
+
+You can also use the Slack Actions destination to set event triggers for context fields, meaning events with violations are sent as Track calls directly from the source.
 
 
 ## Protocols Tracking Plan
 
-### How do I add Page and Screen events to my tracking plan?
+### How do I add Page and Screen events to my Tracking Plan?
 
 To consolidate the views in the Schema tab, Segment automatically converts `page` and `screen` calls into `Page Viewed` and `Screen Viewed` events that appear in the Schema Events view. Segment recommends adding a `Page Viewed` or `Screen Viewed` event to your Tracking Plan with any properties you want to validate against. At this time, to validate that a specific named page/screen (`analytics.page('Homepage') | analytics.screen('Home')`) has a specific set of required properties, you will need to use the [JSON Schema](/docs/protocols/tracking-plan/create/#edit-underlying-json-schema).
 
@@ -38,7 +38,7 @@ The Tracking Plan to Source relationship is a one-to-many relationship. This mea
 
 ### Can I duplicate a Tracking Plan in the Segment UI?
 
-You can duplicate Tracking Plans in the Segment web app by following the [instructions to copy a tracking plan](/docs/protocols/tracking-plan/create/#copy-a-tracking-plan). You can also use the [Tracking Plan API](/docs/protocols/apis-and-extensions/) to copy the underlying JSON schema from one Tracking Plan to another.
+You can duplicate Tracking Plans in the Segment web app by following the [instructions to copy a tracking plan](/docs/protocols/tracking-plan/create/#copy-a-tracking-plan). You can also use the [Public API](/docs/protocols/apis-and-extensions/) to copy the underlying JSON schema from one Tracking Plan to another.
 
 ### How do I handle versioning with mobile apps?
 
@@ -59,6 +59,33 @@ You can search in a Tracking Plan to find a specific event, and then copy the UR
 ### Can I create a master Tracking Plan that supersedes all other Tracking Plans?
 
 Yes. [Tracking Plan Libraries](/docs/protocols/tracking-plan/libraries/) makes it easy to create groups of events or properties that can be easily imported into multiple Tracking plans.
+
+### Can I copy a Tracking Plan into a library?
+
+No. Unfortunately it's not yet possible to automatically transfer events from a Tracking Plan to Libraries. To import events into a new event library, import them directly from a source.
+
+### Can I transfer a Tracking Plan between production and staging environments?
+
+Yes. Using the [Public API](/docs/protocols/apis-and-extensions/), you can copy the underlying JSON schema from a Tracking Plan in one Workspace to a Tracking Plan in another Workspace. 
+
+If you [discarded events](/docs/protocols/enforce/schema-configuration) as a part of your original Tracking Plan, you must connect to the same Source and configure identical Schema Controls in your other Workspace so that blocked events behave as expected.
+
+### Can I connect a Source to more than one Tracking Plan?
+
+Unfortunately, Sources cannot be connected to more than one Tracking Plan. If you were able to connect more than one Tracking Plan to a Source, it could create conflict if events overlapped. 
+
+### How do Tracking Plans work?
+
+Segment's code uses built-in logic to verify if an event exists in the Tracking Plan. If an event does not exist, it will follow the configuration the [Schema Configuration settings](/docs/protocols/enforce/schema-configuration/) for each source connected to the Tracking Plan.
+
+### Why are my unplanned properties still getting sent to my destinations even though I've set the dropdown to "Omit Properties"?
+
+Unplanned property omission is only supported for cloud-mode destinations. Unplanned properties will not be omitted when they're sent to device-mode destinations.
+
+### How do I import events from a Source Schema into a Tracking Plan?
+
+When you first create your Tracking Plan, you can add events from your Source Schema by selecting the **Import events from Source** button on the Tracking Plan editor page. You can manually add these events after you've connected your Source Schema to your Tracking Plan by clicking the (+) next to the event on your Source Schema page.  
+
 
 ## Protocols Validation
 
@@ -101,7 +128,11 @@ Blocked events are blocked from sending to all Segment Destinations, including w
 
 ### Do blocked and discarded events count towards my MTU counts?
 
-Blocked events will not count towards your MTU counts as long as blocked event forwarding is disabled.
+Blocking events within a [Source Schema](/docs/connections/sources/schema/) or [Tracking Plan](/docs/protocols/tracking-plan/create/) excludes them from API call and MTU calculations, as the events are discarded before they reach the pipeline that Segment uses for calculations.
+
+### Do warehouse connectors use the data type definitions when creating a warehouse schema?
+
+Warehouse connectors don't use data type definitions for schema creation. The [data types](/docs/connections/storage/warehouses/schema/#data-types) for columns are inferred from the first event that comes in from the source.
 
 ## Protocols Transformations
 
@@ -125,9 +156,13 @@ Only workspace admins are allowed to create transformations.
 
 All users with Protocols admin or read-only permissions can view transformations.
 
-### Why can't we support transformations for device-mode destinations?
+### Why can't Segment support transformations for device-mode destinations?
 
 Transformations introduce advanced logic that at scale may impact performance of client-side libraries. If you are interested in testing new functionality which supports device-mode destination transformations in analytics.js, contact your account rep.
+
+### Are Destination Filters applied before or after my Protocols Transformations?
+
+That depends. If you are working with source-level Transformations, the Protocols conversion will come first. If you are dealing with a destination scoped transformation (which is set to only impact data going to a specific destination), Destination Filters will be applied prior to Protocols Transformations.
 
 ### Why do I need Protocols to use transformations?
 

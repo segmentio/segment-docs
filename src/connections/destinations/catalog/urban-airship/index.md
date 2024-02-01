@@ -2,7 +2,7 @@
 hidden: true
 title: UrbanAirship Destination
 ---
-The Urban Airship destination code is open sourced on GitHub. Feel free to check it out: [Android](https://github.com/urbanairship/android-segment-integration), [iOS](https://github.com/urbanairship/ios-segment-integration)
+The Urban Airship destination code is open sourced on GitHub. Feel free to check it out: [Android](https://github.com/urbanairship/android-segment-integration){:target="_blank"}, [iOS](https://github.com/urbanairship/ios-segment-integration){:target="_blank"}
 
 
 ## Screen
@@ -11,7 +11,7 @@ Screen calls will generate Urban Airship screen tracking events. These events ar
 
 ## Identify
 
-When you `identify` a user, Urban Airship will use the `userId` to set the [Named User](http://docs.urbanairship.com/api/ua.html#named-users). Named Users allow you to associate multiple devices to a single user or profile that may be associated with more than one device, e.g., an end-user's Android phone and tablet. A device can have only one Named User, and a single Named User should not be associated with more than 20 devices.
+When you `identify` a user, Urban Airship will use the `userId` to set the [Named User](http://docs.urbanairship.com/api/ua.html#named-users){:target="_blank"}. Named Users allow you to associate multiple devices to a single user or profile that may be associated with more than one device, e.g., an end-user's Android phone and tablet. A device can have only one Named User, and a single Named User should not be associated with more than 20 devices.
 
 ## Track
 

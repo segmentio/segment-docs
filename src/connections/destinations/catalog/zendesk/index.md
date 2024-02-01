@@ -3,20 +3,17 @@ rewrite: true
 title: Zendesk Destination
 id: 54521fdc25e721e32a72ef06
 ---
-[Zendesk](https://www.zendesk.com/support/documentation/) is a premier, cloud-based customer service application. It was designed with one purpose in mind: to improve communication between a company and its customers. Their products allow businesses to be more reliable, flexible, and scalable. They help improve communication and make sense of massive amounts of data. Above all, they work together to build the best experience for your customers.
+[Zendesk](https://www.zendesk.com/support/documentation/){:target="_blank"} is a premier, cloud-based customer service application. It was designed with one purpose in mind: to improve communication between a company and its customers. Their products allow businesses to be more reliable, flexible, and scalable. They help improve communication and make sense of massive amounts of data. Above all, they work together to build the best experience for your customers.
 
 
 ## Getting Started
 
-{% include content/connection-modes.md %}
+
 
 
 1. From the Segment web app, click **Catalog**.
 2. Search for "Zendesk" in the Catalog, select it, and choose which of your sources to connect the destination to.
-3. There are two ways to authenticate your Zendesk account with Segment:
-   * Use the standard email and password you use to Sign In to your Zendesk account. In the Zendesk settings, add your email in the **Email** setting and your password in the **Password** setting.
-   * Use Zendesk OAuth with a unique token. Get the corresponding token from your Zendesk account: **Settings > Channels > API** and under the Settings Tab choose the corresponding token from the "Active API Tokens" list. In the Zendesk settings, add your `email/token` in the **Email** setting (for example, `peter@intech.com/token` - use the actual word token in your email address) and add the actual token in the **Password** setting.
-4. Add your Zendesk subdomain in the **Subdomain** setting (not including `.zendesk.com`).
+3. Enter your Zendesk domain (not including `.zendesk.com`) and click **Connect**. The Zendesk OAuth login opens in a new tab. Sign in with your Zendesk credentials to authenticate and allow the Segment integration.
 
 ## Identify
 
@@ -31,7 +28,7 @@ analytics.identify("97980cfea0067", {
 });
 ```
 
-When you call `identify`, Segment inserts or updates a user record in Zendesk and uses the user email in `traits.email` to match user records in Zendesk. If there are multiple users matching the email, then no updates are submitted. Note that you must provide a trait for either `name` or `first_name` and `last_name` in order for the `identify` call to send to Zendesk. If you provide a `name`, Segment parses this into the `first_name` and `last_name` fields.
+When you call `identify`, Segment inserts or updates a user record in Zendesk and uses the user email in `traits.email` to match user records in Zendesk. If there are multiple users matching the email, then no updates are submitted. Note that you must provide a trait for either `name` or `first_name` and `last_name` in order for the `identify` call to send to Zendesk. If you provide a `name`, Segment parses this into the `first_name` and `last_name` fields. If you provide `name`, but are missing the `last_name` field, this will still send successfully to Zendesk.
 
 Here's an example:
 
@@ -170,17 +167,6 @@ analytics.group("0e8c78ea9d97a7b8185e8632", {
 When you call `group` Segment inserts or update an organization in Zendesk and uses the `groupId` you include in the call to match organization records in Zendesk. If there are multiple organizations matching the name, then no updates are submitted.
 
 Here's an example:
-
-{% comment %} api-example '{
-  "action": "group",
-  "groupId": "908172409",
-  "userId": "6789",
-  "traits": {
-    "name": "LA Lakers",
-    "url": "https://lakers.com",
-    "deleted": false
-  }
-}'}}} {% endcomment %}
 
 ```js
 {

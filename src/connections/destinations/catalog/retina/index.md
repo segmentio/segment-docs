@@ -5,7 +5,7 @@ id: 5f287bfa332cce0b1ed18331
 ---
 # Retina AI Segment Destination
 
-[Retina AI](https://retina.ai/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) is a customer intelligence partner that provides accurate **customer-level lifetime value** metrics at or before their first transaction. You can use this to improve targeting, ad relevance, conversion rates, and customer loyalty.
+[Retina AI](https://retina.ai/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners){:target="_blank”} is a customer intelligence partner that provides accurate **customer-level lifetime value** metrics at or before their first transaction. You can use this to improve targeting, ad relevance, conversion rates, and customer loyalty.
 
 Retina AI maintains this destination. For any issues with the destination, contact the [Retina AI Support Team](mailto:info@retina.ai).
 
@@ -15,7 +15,7 @@ Retina AI maintains this destination. For any issues with the destination, conta
 
 ## Getting Started
 
-{% include content/connection-modes.md %}
+
 
 To integrate Retina AI with Segment as a **Destination**:
 1. From your Segment UI's Destinations page click on “Add Destination”.

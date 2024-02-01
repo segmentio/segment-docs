@@ -4,7 +4,7 @@ redirect_from:
   - '/spec/mobile'
 ---
 
-One of the core components of the Segment [Spec](/docs/connections/spec/) is the [`track`](/docs/connections/spec/track) method. It records any arbitrary event that the user has triggered. For Mobile tracking, in addition to `screen` calls, you'll want to send **specific event names** that Segment recognizes semantically. That way, we can transform them correctly before sending them off to downstream destinations.
+One of the core components of the Segment [Spec](/docs/connections/spec/) is the [Track](/docs/connections/spec/track) method. It records any arbitrary event that the user has triggered. For Mobile tracking, in addition to Screen calls, you'll want to send **specific event names** that Segment recognizes semantically. That way, we can transform them correctly before sending them off to downstream destinations.
 
 By standardizing the events that comprise the core **mobile application lifecycle** and associated **mobile campaign and referral events**, Segment and our partners can, wherever possible, automatically collect and forward these events on your behalf and build downstream destinations which take full advantage of the semantic meaning associated with these events and their properties.
 
@@ -20,39 +20,21 @@ These events pair nicely with Segment's [ecommerce spec](/docs/connections/spec/
 
 The Segment Native Mobile Spec includes the following semantic events:
 
-**Application Lifecycle Events**
-- [Overview of events](#overview-of-events)
-- [Lifecycle events](#lifecycle-events)
-  - [Application Installed](#application-installed)
-  - [Application Opened](#application-opened)
-  - [Application Backgrounded](#application-backgrounded)
-  - [Application Updated](#application-updated)
-  - [Application Uninstalled](#application-uninstalled)
-  - [Application Crashed](#application-crashed)
-- [Campaign events](#campaign-events)
-  - [Install Attributed](#install-attributed)
-  - [Push Notification Received](#push-notification-received)
-  - [Push Notification Tapped](#push-notification-tapped)
-  - [Push Notification Bounced](#push-notification-bounced)
-  - [Deep Link Opened](#deep-link-opened)
-  - [Deep Link Clicked](#deep-link-clicked)
+[**Application Lifecycle Events**](#lifecycle-events)
+- [Application Installed](#application-installed)
+- [Application Opened](#application-opened)
+- [Application Backgrounded](#application-backgrounded)
+- [Application Updated](#application-updated)
+- [Application Uninstalled](#application-uninstalled)
+- [Application Crashed](#application-crashed)
 
-**Campaign Events**
-- [Overview of events](#overview-of-events)
-- [Lifecycle events](#lifecycle-events)
-  - [Application Installed](#application-installed)
-  - [Application Opened](#application-opened)
-  - [Application Backgrounded](#application-backgrounded)
-  - [Application Updated](#application-updated)
-  - [Application Uninstalled](#application-uninstalled)
-  - [Application Crashed](#application-crashed)
-- [Campaign events](#campaign-events)
-  - [Install Attributed](#install-attributed)
-  - [Push Notification Received](#push-notification-received)
-  - [Push Notification Tapped](#push-notification-tapped)
-  - [Push Notification Bounced](#push-notification-bounced)
-  - [Deep Link Opened](#deep-link-opened)
-  - [Deep Link Clicked](#deep-link-clicked)
+[**Campaign Events**](#campaign-events)
+- [Install Attributed](#install-attributed)
+- [Push Notification Received](#push-notification-received)
+- [Push Notification Tapped](#push-notification-tapped)
+- [Push Notification Bounced](#push-notification-bounced)
+- [Deep Link Opened](#deep-link-opened)
+- [Deep Link Clicked](#deep-link-clicked)
 
 
 Segment recommends using the above event names if you're going to be integrating the events yourself. This will ensure that they can be mapped effectively in downstream tools.
@@ -180,7 +162,7 @@ Fire this event when a user uninstalls the application. Some destination partner
 
 ### Application Crashed
 
-You can send this event when you receive a crash notification from your app, but is not meant to supplant traditional crash reporting tools. By tracking crashes as an analytics event with device and user information, you can analyze the which types of users are impacted by crashes and how those crashes, in turn, affect their engagement. You may also want to target those customers with tailored communications in other channels if they've encountered several crashes.
+You can send this event when you receive a crash notification from your app, but it is not meant to supplant traditional crash reporting tools. By tracking crashes as an analytics event with device and user information, you can analyze the which types of users are impacted by crashes and how those crashes, in turn, affect their engagement. You may also want to target those customers with tailored communications in other channels if they've encountered several crashes. Segment does not collect this event. To capture the event, use a destination that collects this data and route that event back to Segment through a webhook or some other callback.
 
 {% comment %} api-example '{ "userId": "019mr8mf4r", "type": "track", "event": "Application Crashed", "properties": {}}'}}} {% endcomment %}
 
@@ -195,7 +177,9 @@ You can send this event when you receive a crash notification from your app, but
 
 ## Campaign events
 
-As the walls between apps become increasingly lowered, capturing information about the content and campaigns that drive users to engage with your app is critical to building more targeted, relevant, personalized experiences for your users.
+As the walls between apps become increasingly lowered, capturing information about the content and campaigns that drive users to engage with your app is critical to building more targeted, relevant, personalized experiences for your users. 
+
+Segment does not collect any campaign events automatically unless configured to do so. 
 
 ### Install Attributed
 

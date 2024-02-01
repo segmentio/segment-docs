@@ -8,13 +8,13 @@ Welcome! This page is a high-level introduction to the Segment Platform, includi
 
 Segment is a Customer Data Platform (CDP), which means that it provide a service that simplifies collecting and using data from the users of your digital properties (websites, apps, etc). With Segment, you can collect, transform, send, and archive your [first-party customer data](https://segment.com/books/customer-data/first-party-data/). Segment simplifies the process of collecting data and hooking up new tools, allowing you to spend more time using your data, and less time trying to collect it.
 
-You can also enrich the customer data you collect by connecting data from your other tools, and then aggregate it to monitor performance, inform decision-making processes, and create uniquely customized user experiences. You can also use Profiles, Segment's identity resolution tool, to unify data from individual users to gain a wholistic understanding of their actions.
+You can also enrich the customer data you collect by connecting data from your other tools, and then aggregate it to monitor performance, inform decision-making processes, and create uniquely customized user experiences. You can also use Unify, Segment's identity resolution tool, to unify data from individual users to gain a wholistic understanding of their actions.
 
 {% include components/reference-button.html
   href="https://university.segment.com/introduction-to-segment/299955?reg=1&referrer=docs"
   icon="media/academy.svg"
   title="Segment University: How Segment Works"
-  description="Check out how to get started with Segment in Segment University! (Must be logged in to access.)" 
+  description="Check out how to get started with Segment in Segment University! (Must be logged in to access.)"
 %}
 
 ## What does it do?

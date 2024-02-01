@@ -25,7 +25,7 @@ Yes! You can use the Segment library with Maven, or any other custom build syste
 
 ## How big is the Segment SDK?
 
-The core Segment SDK is extremely lightweight! It contains just under 1k methods, the JAR weighs in at 123kb and the dex size is 113kb.
+The core Segment SDK is extremely lightweight. It contains just under 1k methods, the JAR weighs in at 123KB and the dex size is 113KB.
 
 ## How can I swap out debugging and production keys?
 
@@ -128,6 +128,9 @@ analytics.getContext().putDeviceToken(registrationId);
 
 Yes! You can use Segment's browserify'd [analytics-node](https://github.com/segmentio/analytics-node) package just like any other client-side JavaScript library.
 
+## Are there any limitations for using Segment with Huawei?
+
+No, there hasn't been any instances that show there are limitations when Segment tracks Huawei devices.
 
 ## Does LifecycleObserver (above version 2.6.0) work with Segment?
 

@@ -8,7 +8,7 @@ Segment _strongly_ encourages you to follow [the Spec](/docs/connections/spec/) 
 
 ## What is the Spec?
 
-Segment recommends that you follow [the Spec](/docs/connections/spec/), which gives general guidance about which methods to use when. You might read about "semantic spec", which simply means `page` calls should be about the page you're viewing, and `track` calls should be about events or activities you want to track.
+Segment recommends that you follow [the Spec](/docs/connections/spec/), which gives general guidance about which methods to use when. You might read about "semantic spec", which simply means Page calls should be about the page you're viewing, and Track calls should be about events or activities you want to track.
 
 The Spec outlines the specific data you should collect with each type of call. Each call type represents and is intended to collect specific information about a user or their activities. This means that your choice of method can imply things about the data you intend to collect.
 
@@ -16,9 +16,9 @@ For example, the properties for `page()` and `screen()` calls are intended to de
 
 ## Simplifying implementation
 
-As we mentioned above, you _could_ build a full Segment implementation using only `track` events, and this is probably a bad idea. To do this, you would need to include page-related data in every `track` call, which means adding all of the information that `page` calls automatically include, except now manually as event properties. As you might imagine, this gets unwieldy fast!
+As we mentioned above, you _could_ build a full Segment implementation using only Track events, and this is probably a bad idea. To do this, you would need to include page-related data in every Track call, which means adding all of the information that Page calls automatically include, except now manually as event properties. As you might imagine, this gets unwieldy fast!
 
-It's better to pair a `page` and a `track` call together (making one of each call), especially if you have a complex tracking implementation. When you use the semantic methods you reduce the amount of information and other properties required in a single call.
+It's better to pair a Page and a Track call together (making one of each call), especially if you have a complex tracking implementation. When you use the semantic methods you reduce the amount of information and other properties required in a single call.
 
 ## Ensuring destination compatibility
 

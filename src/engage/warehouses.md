@@ -129,6 +129,12 @@ Similar to track calls in Connections, Engage track calls appear in your warehou
 | ------- | ---------------------- | ---------------------- |
 | u123    | 450.00                 | total_revenue_180_days |
 
+## Users table
+
+The users table is an aggregate view based on the `user_id` field. This means that anonymous profiles with just an `anonymous_id` identifier aren't included in this view. You can still view identify calls for anonymous audiences and computed traits in the `identifies` table. 
+
+The users table is synced as soon as the warehouse is connected as a destination in Engage, if you've previously created Engage computations. As a result, the table might contain data from computations not directly connected to the warehouse.
+
 ## Sync frequency
 
 Although Engage can compute audiences and traits in real-time, these calculations are subject to the sync schedule allowed by your warehouses plan, which is usually hourly. You can check the warehouse sync history to see details about past and upcoming syncs. When you look at the sync schedule, sources with the `engage_` prefix sync data from Engage.
@@ -140,15 +146,10 @@ Although Engage can compute audiences and traits in real-time, these calculation
 
 Yes. You can use [Warehouses Selective Sync](/docs/connections/storage/warehouses/faq/#can-i-control-what-data-is-sent-to-my-warehouse) to manage which traits, audiences, and tables get synced from Engage.
 
-### Why are some users missing from the `users` table?
-
-The users table is an aggregate view based on the `user_id` field. This means that anonymous profiles with just an `anonymous_id` identifier aren't included in this view. You can still view identify calls for anonymous audiences and computed traits in the `identifies` table.
-
-### Can I sync the identities table to my warehouse?
-
-Not yet. We're working on this feature, and if you're interested, let your CSM know or [contact Segment](https://segment.com/help/contact/){:target="_blank"}.
-
 ### Why are there multiple schemas prefixed with `engage_` in my warehouse when I only have one space?
 
-Segment currently can only connect a source to one instance of each destination, for example, one source cannot send to two different Amplitude instances. To get around this restriction, Engage creates multiple sources to send events to the destinations connected to your space.
+Segment can only connect a source to one instance of each destination. For example, one source cannot send to two different Amplitude instances. As a workaround, Engage creates multiple sources to send events to the destinations connected to your space.
+
 For example, if you have three webhook destinations in your space, Engage creates three different sources to send events to them. This creates three different warehouse schemas, and is usually the reason you have more schemas than spaces.
+
+This approach doesn't apply to messaging destinations, however. Messaging destinations connected from journeys and broadcasts don't generate multiple background sources. 

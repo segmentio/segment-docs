@@ -4,7 +4,7 @@ rewrite: true
 id: b3346ddd
 ---
 
-[Intercom](http://intercom.com) is a customer platform with a suite of products for live chat, marketing, feedback, and support. With Intercom you will be able to send targeted messages to the right people at the right time, manage conversations with leads and customers at scale and create, organize, and publish articles to help people get answers to their questions and get started with your app.
+[Intercom](http://intercom.com){:target="_blank"} is a customer platform with a suite of products for live chat, marketing, feedback, and support. With Intercom you will be able to send targeted messages to the right people at the right time, manage conversations with leads and customers at scale and create, organize, and publish articles to help people get answers to their questions and get started with your app.
 
 Take your company's email analysis to the next level by **adding Intercom as a Source to Segment.** Segment automatically  collects objects like `Users` and `Conversations` and load them into your data warehouse. 
 
@@ -16,47 +16,48 @@ Take your company's email analysis to the next level by **adding Intercom as a S
 2. Choose Intercom and press **connect**.
 
 3. OAuth into Intercom
-![](images/intercom_source_qnsoxh.png)
+![Screenshot of the Connect to Intercom screen in the Intercom setup flow.](images/intercom_source_qnsoxh.png)
 
-4. We will verify all the required permissions
-![](images/image_1_Intercom.png)
+1. Segment verifies the required permissions
+![Screenshot of the Permissions Verified screen in the Intercom setup flow.](images/image_1_Intercom.png)
 
-5. Configure the name for the Intercom schema in your warehouse
-![](images/image_2_Intercom.png)
+1. Configure the name for the Intercom schema in your warehouse
+![Screenshot of the SQL Schema Name screen in the Intercom setup flow.](images/image_2_Intercom.png)
 
-6. Add a warehouse or connect Intercom to an already existing warehouse in your workspace
-![](images/image_3_Intercom.png)
+1. Add a warehouse or connect Intercom to an already existing warehouse in your workspace
+![Screenshot of the Add Warehouse screen in the Intercom setup flow.](images/image_3_Intercom.png)
 
-Voila! We'll begin syncing your Intercom data into Segment momentarily, and it will be written to your warehouse at your next Warehouse run.
+Segment begins to sync your Intercom data into Segment, and writes it to your warehouse at your next Warehouse run.
+
+
 
 ## Components
 
 ### Sync
 
-Our Intercom source has a sync component, which means we'll make requests to [their API](https://developers.intercom.io/docs/) on your behalf on a 3 hour interval to pull the latest data into Segment. In the initial sync, we'll grab all the Intercom objects (and their corresponding properties) according to the collections table below. The objects will be written into a designated schema corresponding to the source instance's schema name you designated upon creation. For example, if you went with `intercom_prod`, the `users` collection will be accessible at `intercom_prod.users` in SQL.
+The Intercom source has a sync component, which means Segment make requests to [their API](https://developers.intercom.io/docs/){:target="_blank"} on your behalf on a 3 hour interval to pull all historical data into Segment. In the initial sync, Segment grabs all the Intercom objects (and their corresponding properties) according to the collections table below. The objects will be written into a designated schema corresponding to the source instance's schema name you designated upon creation. For example, if you went with `intercom_prod`, the `users` collection will be accessible at `intercom_prod.users` in SQL.
 
-Our sync component uses an upsert API, so the data in your warehouse loaded using sync will reflect the latest state of the corresponding resource in Intercom.  For example, if the `users.last_seen_ip` will be the latest value upon each sync.
+The sync component uses an upsert API, so the data in your warehouse loaded using sync will reflect the latest state of the corresponding resource in Intercom.  For example, if the `users.last_seen_ip` will be the latest value upon each sync.
 
-The source syncs and warehouse syncs are independent processes. Source runs pull your data into the Segment Hub, and warehouse runs flush that data to your warehouse. Sources will sync with Segment every 3 hours. Depending on your Warehouses plan, we will push the Source data to your warehouse on the interval associated with your billing plan.
+The source syncs and warehouse syncs are independent processes. Source runs pull your data into the Segment Hub, and warehouse runs flush that data to your warehouse. Sources will sync with Segment every 3 hours. Depending on your Warehouses plan, Segment pushes the Source data to your warehouse on the interval associated with your billing plan.
 
-At the moment, we don't support filtering which objects or properties get synced. If you're interested in this feature, [let us know](https://segment.com/help/contact/)!
 
 ## Collections
 
-Collections are the groupings of resources we pull from your source. In your warehouse, each collection gets its own table.
+Collections are the groupings of resources Segment pulls from your source. In your warehouse, each collection gets its own table.
 
 
 | Collection           | Type   | Description                                                                                                                                                                                                                                                                                                                                 |
 | -------------------- | ------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `users`              | Object | The Users resource is the primary way of interacting with Intercom. You can create, update and delete your users, and add custom attributes describing them. Users can be viewed individually or as a list, and can queried using tags or segments. For more info, check out the [Intercom docs](https://developers.intercom.io/docs/users) |
-| `companies`          | Object | Companies allow you to represent commercial organizations using your product. For more info, check out the [Intercom docs](https://developers.intercom.io/docs/companies)                                                                                                                                                                   |
-| `contacts`           | Object | Leads (previously known as Contacts) are useful for representing logged-out users of your application For more info, check out the [Intercom docs](https://developers.intercom.io/docs/leads)                                                                                                                                               |
-| `segments`           | Object | A segment is a group of your users defined by rules that you set For more info, check out the [Intercom docs](https://developers.intercom.io/docs/segments)                                                                                                                                                                                 |
-| `tags`               | Object | A tag allows you to label your users and companies and list them using that tag. For more info, check out the [Intercom docs](https://developers.intercom.io/docs/tags)                                                                                                                                                                     |
-| `conversations`      | Object | Conversation are how you can communicate with users in Intercom. For more info, check out the [Intercom docs](https://developers.intercom.io/docs/conversations)                                                                                                                                                                            |
-| `admins`             | Object | Admins are how you can view your teams and team members. For more info, check out the [Intercom docs](https://developers.intercom.io/docs/admin-model#section-admin-object)                                                                                                                                                                 |
-| `social_profiles`    | Object | Social data about the user For more info, check out the [Intercom docs](https://developers.intercom.io/docs/user-model#section-social-profile-object)                                                                                                                                                                                       |
-| `conversation_parts` | Object | A conversation part describes an element of the conversation. For more info, check out the [Intercom docs](https://developers.intercom.io/docs/conversation-part-model#section-conversation-part-object)                                                                                                                                    |
+| `users`              | Object | The Users resource is the primary way of interacting with Intercom. You can create, update and delete your users, and add custom attributes describing them. Users can be viewed individually or as a list, and can queried using tags or segments. For more info, check out the [Intercom docs](https://developers.intercom.io/docs/users){:target="_blank"} |
+| `companies`          | Object | Companies allow you to represent commercial organizations using your product. For more info, check out the [Intercom docs](https://developers.intercom.io/docs/companies){:target="_blank"}                                                                                                                                                                   |
+| `contacts`           | Object | Leads (previously known as Contacts) are useful for representing logged-out users of your application For more info, check out the [Intercom docs](https://developers.intercom.io/docs/leads){:target="_blank"}                                                                                                                                               |
+| `segments`           | Object | A segment is a group of your users defined by rules that you set For more info, check out the [Intercom docs](https://developers.intercom.io/docs/segments){:target="_blank"}                                                                                                                                                                                 |
+| `tags`               | Object | A tag allows you to label your users and companies and list them using that tag. For more info, check out the [Intercom docs](https://developers.intercom.io/docs/tags){:target="_blank"}                                                                                                                                                                     |
+| `conversations`      | Object | Conversation are how you can communicate with users in Intercom. For more info, check out the [Intercom docs](https://developers.intercom.io/docs/conversations){:target="_blank"}                                                                                                                                                                            |
+| `admins`             | Object | Admins are how you can view your teams and team members. For more info, check out the [Intercom docs](https://developers.intercom.io/docs/admin-model#section-admin-object){:target="_blank"}                                                                                                                                                                 |
+| `social_profiles`    | Object | Social data about the user For more info, check out the [Intercom docs](https://developers.intercom.io/docs/user-model#section-social-profile-object){:target="_blank"}                                                                                                                                                                                       |
+| `conversation_parts` | Object | A conversation part describes an element of the conversation. For more info, check out the [Intercom docs](https://developers.intercom.io/docs/conversation-part-model#section-conversation-part-object){:target="_blank"}                                                                                                                                    |
 
 ## Collection Properties
 
@@ -102,9 +103,6 @@ Collections are the groupings of resources we pull from your source. In your war
 | monthly_spend     | How much revenue the company generates for your business  |
 | user_count        | The number of users in the company                        |
 | plan              | The name of the plan you have associated with the company |
-| size              | The number of employees in the company                    |
-| website           | The URL for the company website                           |
-| industry          | The industry that the company operates in                 |
 
 ## Contacts
 
@@ -152,7 +150,6 @@ Collections are the groupings of resources we pull from your source. In your war
 | created_at    | The time the conversation was created                                                                                     |
 | updated_at    | The last time the conversation was updated                                                                                |
 | message       | The message that started the conversation rendered for presentation                                                       |
-| user          | The user the conversation concerns                                                                                        |
 | assignee      | The admin the conversation is currently assigned to. Note `nobody_admin` indicates the conversation is assigned to Nobody |
 | open          | Indicates whether a conversation is open (true) or closed (false)                                                         |
 | read          | Indicates whether a conversation has been read                                                                            |
@@ -162,21 +159,22 @@ Collections are the groupings of resources we pull from your source. In your war
 
 ## Admins
 
-| Property Name | Description                                                      |
-| ------------- | ---------------------------------------------------------------- |
-| id            | The id of the admin or team                                      |
-| name          | The name of the admin or team                                    |
-| email         | The email address of the admin. This attribute is null for teams |
+| Property Name | Description                                                       |
+| ------------- | ----------------------------------------------------------------- |
+| id            | The id of the admin or team                                       |
+| name          | The name of the admin or team                                     |
+| email         | The email address of the admin. This attribute is null for teams. |
+| type          | A string that represents the object's type. Has the value `Admin` |
 
 
 ## Social Profiles
 
-| Property Name | Description                                       |
-| ------------- | ------------------------------------------------- |
-| id            | Optional. User ID on the service                  |
-| name          | The name of the service (e.g., twitter, facebook) |
-| url           | The user homepage on the service                  |
-| username      | User name or handle on the service                |
+| Property Name | Description                                               |
+| ------------- | --------------------------------------------------------- |
+| id            | Optional. User ID on the service                          |
+| name          | The name of the service  (for example, twitter, facebook) |
+| url           | The user homepage on the service                          |
+| username      | User name or handle on the service                        |
 
 
 ## Conversation Parts

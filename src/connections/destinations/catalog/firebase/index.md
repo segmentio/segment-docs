@@ -77,16 +77,16 @@ Analytics analytics = new Analytics.Builder(context, writeKey)
   ...
   .build();
 ```
-Firebase periodically updates the Android configuration requirements for loading their SDK in your app. To check if your Android configuration is compatible with for your version of Firebase, check [Google's Firebase release notes](https://firebase.google.com/support/release-notes/android).
+Firebase periodically updates the Android configuration requirements for loading their SDK in your app. To check if your Android configuration is compatible with for your version of Firebase, check [Google's Firebase release notes](https://firebase.google.com/support/release-notes/android){:target="_blank"}.
 
-You can also check the [Segment-Firebase changelog](https://github.com/segment-integrations/analytics-android-integration-firebase/blob/master/CHANGELOG.md) to find the version of the Firebase SDK that Segment requires in each of the Segment-Firebase SDK version.  For example, Segment-Firebase 1.3.1 includes Firebase Core 17.0.1 as a dependency.
+You can also check the [Segment-Firebase changelog](https://github.com/segment-integrations/analytics-android-integration-firebase/blob/master/CHANGELOG.md){:target="_blank"} to find the version of the Firebase SDK that Segment requires in each of the Segment-Firebase SDK version.  For example, Segment-Firebase 1.3.1 includes Firebase Core 17.0.1 as a dependency.
 
-By default, Segment bundles only `Firebase/Core` which is [Firebase's mobile analytics offering](https://firebase.google.com/docs/analytics/). You can see the other available [Firebase dependencies and features in the Firebase documentation](https://firebase.google.com/docs/android/setup).
+By default, Segment bundles only `Firebase/Core` which is [Firebase's mobile analytics offering](https://firebase.google.com/docs/analytics/){:target="_blank"}. You can see the other available [Firebase dependencies and features in the Firebase documentation](https://firebase.google.com/docs/android/setup){:target="_blank"}.
 </li></ol>
 
 ## Getting Started on iOS
 
-1. Register your app in the [Firebase console](https://console.firebase.google.com/) and add the `GoogleService-Info.plist` to the root of your Xcode project.
+1. Register your app in the [Firebase console](https://console.firebase.google.com/){:target="_blank"} and add the `GoogleService-Info.plist` to the root of your Xcode project.
 
 2. Add the following dependency to your Podfile:
    ```
@@ -104,7 +104,7 @@ By default, Segment bundles only `Firebase/Core` which is [Firebase's mobile ana
    [config use:[SEGFirebaseIntegrationFactory instance]];
    ```
 
-By default, Segment only bundles `Firebase/Core` which is [Firebase's Analytics offering](https://firebase.google.com/docs/analytics/). You can see the other available [Firebase pods and features here](https://firebase.google.com/docs/ios/setup).
+By default, Segment only bundles `Firebase/Core` which is [Firebase's Analytics offering](https://firebase.google.com/docs/analytics/){:target="_blank"}. You can see the other available [Firebase pods and features here](https://firebase.google.com/docs/ios/setup){:target="_blank"}.
 
 ## Setting up Firebase with Analytics-React-Native
 
@@ -126,9 +126,9 @@ When you call `identify` Segment will map to the corresponding Firebase Analytic
 
 You can use these traits to create audiences and views to analyze your users' behavior.
 
-**Note**: Google prohibits sending PII to Firebase unless ["robust notice" is given to your app users](https://firebase.google.com/policies/analytics/). For iOS apps, some Analytics features, such as audiences and campaign attribution, and some user properties, such as Age and Interests, require the [AdSupport framework](https://developer.apple.com/reference/adsupport) to be enabled.
+**Note**: Google prohibits sending PII to Firebase unless ["robust notice" is given to your app users](https://firebase.google.com/policies/analytics/){:target="_blank"}. For iOS apps, some Analytics features, such as audiences and campaign attribution, and some user properties, such as Age and Interests, require the [AdSupport framework](https://developer.apple.com/reference/adsupport){:target="_blank"} to be enabled.
 
-Learn more about [Firebase's reporting dashboard here](https://support.google.com/firebase/answer/6317517?hl=en&ref_topic=6317489).
+Learn more about [Firebase's reporting dashboard here](https://support.google.com/firebase/answer/6317517?hl=en&ref_topic=6317489){:target="_blank"}.
 
 **Firebase has strict requirements for User Property names; they must:**
 
@@ -146,11 +146,11 @@ You are limited to 25 unique user properties per Firebase Console.
 - Replaces spaces with underscores
 - Trims property names to 40 characters (Android only)
 
-Firebase automatically collects [these user properties](https://support.google.com/firebase/answer/6317486).
+Firebase automatically collects [these user properties](https://support.google.com/firebase/answer/6317486){:target="_blank"}.
 
 ## Track
 
-When you call `track` Segment will log the event with Firebase. Firebase automatically tracks [the events listed here](https://support.google.com/firebase/answer/6317485) and it will still do so when bundling with Segment.
+When you call `track` Segment will log the event with Firebase. Firebase automatically tracks [the events listed here](https://support.google.com/firebase/answer/6317485){:target="_blank"} and it will still do so when bundling with Segment.
 
 Firebase has a limit of 500 distinctly named events so it pays off to be [intentional in what you track](/docs/protocols/tracking-plan/best-practices/).
 
@@ -229,7 +229,7 @@ Google Analytics for Firebase iOS does NOT support the case of manual-only scree
 
 #### **Firebase Dynamic Linking** (iOS only)
 
-Firebase Dynamic Links are smart URLs that can change behavior dynamically depending on the platform where the user clicks them. Use them in web, email, social media, referral and physical promotions to increase user acquisition, retention and lifetime value. Key features include ability to survive app installs, controlling user experience depending on what platform they access the link on and knowing which content and campaigns are working using tracking in the Firebase console. [Check out Firebase's Docs here](https://firebase.google.com/docs/dynamic-links/).
+Firebase Dynamic Links are smart URLs that can change behavior dynamically depending on the platform where the user clicks them. Use them in web, email, social media, referral and physical promotions to increase user acquisition, retention and lifetime value. Key features include ability to survive app installs, controlling user experience depending on what platform they access the link on and knowing which content and campaigns are working using tracking in the Firebase console. [Check out Firebase's Docs here](https://firebase.google.com/docs/dynamic-links/){:target="_blank"}.
 
 To use Firebase Dynamic Links, add the below to your podfile.
 
@@ -237,7 +237,7 @@ To use Firebase Dynamic Links, add the below to your podfile.
 pod 'Firebase/DynamicLinks'
 ```
 
-Then, enter the deep link URL scheme in your Segment Firebase destination settings. [Here's a sample app delegate that shows how to implement the Dynamic Linking Logic](https://github.com/firebase/quickstart-ios/blob/master/dynamiclinks/DynamicLinksExample/AppDelegate.m#L41-L135).
+Then, enter the deep link URL scheme in your Segment Firebase destination settings. [Here's a sample app delegate that shows how to implement the Dynamic Linking Logic](https://github.com/firebase/quickstart-ios/blob/master/dynamiclinks/DynamicLinksExample/AppDelegate.m#L41-L135){:target="_blank"}.
 
 ### **Conversion Tracking and Adwords Conversions**
 
@@ -245,7 +245,7 @@ Firebase is Google's recommended method for reporting conversions to Adwords. To
 
 ### Troubleshooting
 
-Firebase has great logging. If you are having any issues, you can enable debug mode as outlined [here](https://firebase.google.com/docs/analytics/debugview).
+Firebase has great logging. If you are having any issues, you can enable debug mode as outlined [here](https://firebase.google.com/docs/analytics/debugview){:target="_blank"}.
 
 ### Changes from iOS v1 to v2 Beta
 
@@ -256,7 +256,7 @@ We have been working hard bringing our Firebase iOS beta integration up to date 
 - Fixes a crash when passing a non NSString value through `traits` on `Identify`.
 - Fixes Mapping to Firebase `logEvent` and Firebase reserved Params and Constants.
 
-The last point is important, as the mappings are different in this new version and will change which events you seen in your Firebase dash. We suggest you make this upgrade, as this new naming convention coincides with Firebase's semantic [Constants and Params](https://firebase.google.com/docs/reference/ios/firebaseanalytics/api/reference/Constants#/).
+The last point is important, as the mappings are different in this new version and will change which events you seen in your Firebase dash. We suggest you make this upgrade, as this new naming convention coincides with Firebase's semantic [Constants and Params](https://firebase.google.com/docs/reference/ios/firebaseanalytics/api/reference/Constants#/){:target="_blank"}.
 
 Even more exciting is that this new iOS SDK will have parity with the new Segment-Firebase Android SDK.
 
@@ -264,4 +264,4 @@ As a current user of Segment-Firebase iOS, you will be able to pull in the lates
 
 For details on the new mapping, you can check out our documentation [here](/docs/connections/destinations/catalog/firebase/#event-mappings).
 
-Let us know if you have any questions. We recommend upgrading as soon as possible, and [let us know](https://segment.com/help/contact/) if you have any feedback about both the Firebase iOS and Android betas.
+Let us know if you have any questions. We recommend upgrading as soon as possible, and [let us know](https://segment.com/help/contact/){:target="_blank"} if you have any feedback about both the Firebase iOS and Android betas.

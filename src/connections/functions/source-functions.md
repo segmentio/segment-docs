@@ -297,6 +297,10 @@ You can test your code directly from the editor in two ways: either by receiving
 
 The advantage of testing your source function with webhooks is that all incoming data is real, so you can test behavior while closely mimicking the production conditions.
 
+Note that Segment has updated the webhook URL to `api.segmentapis.com/functions`. To use webhooks with your function:
+- You must [generate a public API token](https://docs.segmentapis.com/tag/Getting-Started/#section/Get-an-API-token){:target="_blank"}.
+- For POST calls, you'll need to use this API token in the header.
+
 ### Testing source functions with a webhook
 
 You can use webhooks to test the source function either by sending requests manually (using any HTTP client such as cURL or Insomnia) or by pasting the webhook into an external server that supports webhooks (such as Slack).
@@ -354,6 +358,8 @@ async function onRequest(request, settings) {
 - **Invalid Settings**: A configuration error prevented Segment from executing your code. If this error persists for more than an hour, [contact Segment Support](https://segment.com/help/contact/){:target="_blank"}.
 - **Message Rejected**: Your code threw `InvalidEventPayload` or `ValidationError` due to invalid input.
 - **Unsupported Event Type**: Your code doesn't implement a specific event type (for example, `onTrack()`) or threw an `EventNotSupported` error.
+- **[StatusCode: 429, TooManyRequestsException: Rate Exceeded]([url](/docs/connections/integration_error_codes/#:~:text=errors.awaiting%2Dretry,events%20in%20burst.))**: Rate limit exceeded. These events will be retried when the rate becomes available.
+- **[failed calling Tracking API: the message is too large and over the maximum 32KB limit]([url](/docs/connections/sources/catalog/libraries/server/http-api/#:~:text=Payload%20is%20too%20large%3A%20The%20HTTP%20API%20can%20handle%20API%20requests%20that%20are%2032KB%20or%20smaller.%20The%20batch%20API%20endpoint%20accepts%20a%20maximum%20of%20500KB%20per%20request%2C%20with%20a%20limit%20of%2032KB%20per%20event%20in%20the%20batch.%20If%20these%20limits%20are%20exceeded%2C%20Segment%20returns%20a%20400%20Bad%20Request%20error.))**: Segment's Tracking API can only handle API requests that are 32KB or smaller. Reduce the size of the request for Segment to accept the event.
 - **Retry**: Your code threw `RetryError` indicating that the function should be retried.
 
 Segment only attempts to run your source function again if a **Retry** error occurs.
@@ -381,11 +387,22 @@ Once configured, find the webhook URL - either on the **Overview** or **Settings
 
 Copy and paste this URL into the upstream tool or service to send data to this source.
 
+## OAuth 2.0
+
+> info ""
+> OAuth 2.0 is currently in private beta and is governed by Segment’s [First Access and Beta Preview Terms](https://www.twilio.com/en-us/legal/tos){:target="_blank"}.
+
 ## Source function FAQs
 
 ##### What is the retry policy for a webhook payload?
 
 Segment retries invocations that throw RetryError or Timeout errors up to six times. After six attempts, the request is dropped.
+The initial wait time for the retried event is a random value between one and three minutes.
+Wait time increases exponentially after every retry attempt. The maximum wait time between attempts can reach 20 minutes.
+
+##### I configured RetryError in a function, but it doesn't appear in my source function error log.
+
+Retry errors only appear in the source function error logs if the event has exhausted all six retry attempts and, as a result, has been dropped.
 
 ##### What is the maximum payload size for the incoming webhook?
 
@@ -402,4 +419,8 @@ Segment alphabetizes payload fields that come in to **deployed** source function
 #### Does the source function allow `GET` requests?
 
 `GET` requests are not supported with a source function. Source functions can only receive data through `POST` requests.
+
+#### Can I use a Source Function in place of adding a Tracking Pixel to my code?
+
+No. Tracking Pixels operate client-side only and need to be loaded onto your website directly. Source Functions operate server-side only, and aren't able to capture or implement client-side tracking code. If the tool you're hoping to integrate is server-side, then you can use a Source Function to connect it to Segment.
  

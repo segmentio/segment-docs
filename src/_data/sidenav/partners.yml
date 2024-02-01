@@ -3,25 +3,33 @@ sections:
 - section_title: Partners
   section:
   - path: /partners
-    title: Partners program overview
+    title: Overview
   - path: /partners/conceptual-model
     title: Conceptual model
-  - section_title: Building a subscription
+  - path: /partners/sources
+    title: Build a Source
+  - path: /partners/direct-destination
+    title: Build a Direct Destination
+  - section_title: Build an Actions Destination
     slug: partners/subscriptions
     section:
-    - path: /partners/subscriptions
-      title: Subscription overview
-    - path: /partners/subscriptions/build-functions
-      title: Building a Subscription Function
-    - path: /partners/subscriptions/build-webhook
-      title: Building a Subscription Webhook
-  - path: /partners/plugins
-    title: Building a Plugin
-  - path: /partners/streams
-    title: Building a Stream
-  - path: /partners/checklist
-    title: Public beta checklist
-  - path: /partners/enable-with-segment
-    title: Enable with OAuth
+    - path: /partners/destinations
+      title: Destination Overview
+    - path: /partners/destinations/build
+      title: Build a Destination
+    - path: /partners/destinations/testing
+      title: Test a Destination
+    # - path: /partners/destinations/get-access
+    #   title: Get Access
+    - path: /partners/destinations/authentication
+      title: Authentication
+  # - path: /partners/plugins
+  #   title: Building a Plugin
+  # - path: /partners/streams
+  #   title: Building a Stream
+  # - path: /partners/checklist
+  #   title: Public beta checklist
+  # - path: /partners/enable-with-segment
+  #   title: Enable with OAuth
   - path: /partners/faqs
     title: Partners FAQs

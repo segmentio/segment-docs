@@ -1,0 +1,65 @@
+items: 
+- name: Destinations
+  url: https://github.com/segmentio/analytics-swift/tree/main/Examples/apps/DestinationsExample
+  categories: 
+  - app
+- name: Mac
+  url: https://github.com/segmentio/analytics-swift/tree/main/Examples/apps/MacExample
+  categories: 
+  - app
+- name: Objective C
+  url: https://github.com/segmentio/analytics-swift/tree/main/Examples/apps/ObjCExample
+  categories: 
+  - app
+- name: Segment Extensions
+  url: https://github.com/segmentio/analytics-swift/tree/main/Examples/apps/SegmentExtensionsExample
+  categories: 
+  - app
+- name: SwiftUI
+  url: https://github.com/segmentio/analytics-swift/tree/main/Examples/apps/SwiftUIExample
+  categories: 
+  - app
+- name: WidgetKit
+  url: https://github.com/segmentio/analytics-swift/tree/main/Examples/apps/SegmentweatherWidgetExample
+  categories: 
+  - app
+- name: watchOS
+  url: https://github.com/segmentio/analytics-swift/tree/main/Examples/apps/watchOSExample
+  categories: 
+  - app
+- name: Cellular Carrier Plugin
+  url: https://github.com/segmentio/analytics-swift/blob/main/Examples/other_plugins/CellularCarrier.swift
+  categories: 
+  - plugin
+- name: Consent Tracking Plugin
+  url: https://github.com/segmentio/analytics-swift/blob/main/Examples/other_plugins/ConsentTracking.swift
+  categories: 
+  - plugin
+- name: Console Logger Plugin
+  url: https://github.com/segmentio/analytics-swift/blob/main/Examples/other_plugins/ConsoleLogger.swift
+  categories: 
+  - plugin
+- name: IDFA Collection Plugin
+  url: https://github.com/segmentio/analytics-swift/blob/main/Examples/other_plugins/IDFACollection.swift
+  categories: 
+  - plugin
+- name: Inject Traits Plugin
+  url: https://github.com/segmentio/analytics-swift/blob/main/Examples/other_plugins/InjectTraits.swift
+  categories: 
+  - plugin
+- name: Notification Tracking Plugin
+  url: https://github.com/segmentio/analytics-swift/blob/main/Examples/other_plugins/NotificationTracking.swift
+  categories: 
+  - plugin
+- name: UIKit Screen Tracking Plugin
+  url: https://github.com/segmentio/analytics-swift/blob/main/Examples/other_plugins/UIKitScreenTracking.swift
+  categories: 
+  - plugin
+- name: Custom Screen Tracking Plugin
+  url: https://github.com/segmentio/analytics-swift/blob/main/Examples/tasks/CustomScreenTracking.swift
+  categories: 
+  - plugin
+- name: Multi-instance Analytics Extension
+  url: https://github.com/segmentio/analytics-swift/blob/main/Examples/tasks/MultiInstance.swift
+  categories: 
+  - plugin

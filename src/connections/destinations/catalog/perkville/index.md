@@ -3,7 +3,7 @@ title: Perkville Destination
 rewrite: true
 id: 60de4ee01f55f299594f38ed
 ---
-[Perkville](https://www.perkville.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) is a customer reward and referral platform - similar to airline mile programs - that integrates with e-commerce, point of sale, membership and scheduling systems to provide a seamless experience that drives referrals and loyalty.
+[Perkville](https://www.perkville.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners){:target="_blank”} is a customer reward and referral platform - similar to airline mile programs - that integrates with e-commerce, point of sale, membership and scheduling systems to provide a seamless experience that drives referrals and loyalty.
 
 This destination is maintained by Perkville. For any issues with the destination, [contact the Perkville Support team](mailto:support@perkville.com).
 
@@ -12,7 +12,7 @@ The Perkville Destination is in beta, which means that they are still actively d
 
 ## Getting Started
 
-{% include content/connection-modes.md %}
+
 
 1. From the Destinations catalog page in the Segment App, click **Add Destination**.
 2. Search for "Perkville" in the Destinations Catalog, and select the "Perkville" destination.

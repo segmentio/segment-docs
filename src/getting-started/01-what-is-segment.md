@@ -7,7 +7,7 @@ In a nutshell, the Segment libraries ([Sources](/docs/connections/sources/catalo
 
 ## Overview
 
-![](images/subwaymap-2.png)
+![Diagram showing that data is routed from your sources, through Segment, and downstream to your destinations.](images/subwaymap-2.png)
 
 [Segment Spec methods](/docs/connections/spec/) are how you collect interaction data from your interfaces, and the [Sources](/docs/connections/sources/) are what you package with your interfaces to collect and route the data.
 
@@ -71,7 +71,7 @@ Segment maintains a catalog of destinations where you can send your data.
 
 <!--TODO: big list o' destinations image (programmatically update?) should go here-->
 
-![](images/dests_grid.png)
+![""](images/dests_grid.png)
 
 
 <div class="double">

@@ -4,6 +4,7 @@ rewrite: true
 redirect_from:
   - '/connections/warehouses/catalog/redshift/'
 ---
+{% include content/warehouse-ip.html %}
 
 This guide explains the process to provision a Redshift cluster and allow the Segment warehouse connector to write to it.
 
@@ -86,7 +87,7 @@ Redshift clusters are created in a VPC subnet. To configure:
 
 4. Click the Security group in the list to access its settings.
 
-5. On the Inbound tab, add or edit a rule to enable Segment to write to your Redshift port from `52.25.130.38/32`. ![inbound](images/redshift05.png)
+5. On the Inbound tab, add rules to enable Segment to write to your Redshift port from `34.223.203.0/28` and `52.25.130.38/32`. ![inbound](images/redshift05.png)
 
 6. On the Outbound tab, ensure Redshift can make outbound requests to the Segment S3 bucket. The default behavior is to allow all outbound traffic, but security groups can limit outbound behavior. ![outbound](images/redshift06.png)
 
@@ -146,3 +147,13 @@ You can also unload data to a s3 bucket and then load the data into another Reds
 ### Can I use an SSH tunnel to connect to my Redshift instance?
 
 Segment does not currently support SSH tunneling to Redshift. You can usually allow Segment's ETL to write to Redshift without leaving the cluster available to other connections by using IP level restrictions.
+
+### Do you support Redshift Serverless?
+
+Segment does not currently support Serverless Redshift. While you can set up the connection in the Segment app, Segment does not have the functionality to query Redshift's SYS tables.
+
+### How can I change the host for an existing Redshift destination?
+
+Segment recommends that you first disable the sync for the warehouse, check that the syncs that are in progress have stopped/finished, and then update the host. Once you've updated the host, you can then re-enable the sync.
+
+The Segment connector picks up where the last completed sync left off, and does not sync any historical data with the new host. The historical data that occurred when you were updating the host needs to be backfilled to your new connection using the [Replay Feature](/docs/guides/what-is-replay/). Replays are currently only available for Business Tier customers. [Contact Segment Support](https://segment.com/contact){:target="_blank”} and Segment's Success Engineers will be able to assist you with a Replay.

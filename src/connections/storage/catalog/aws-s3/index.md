@@ -15,16 +15,15 @@ Functionally, the two destinations (Amazon S3 and AWS S3 with IAM Role Support) 
 
 The AWS S3 destination puts the raw logs of the data Segment receives into your S3 bucket, encrypted, no matter what region the bucket is in.
 
-> info ""
-> Segment copies data into your bucket every hour around the :40 minute mark. You may see multiple files over a period of time depending on the amount of data Segment copies.
+AWS S3 works differently than most destinations. Using a destinations selector like the [integrations object](/docs/connections/spec/common/#integrations) does not affect events with AWS S3.
 
-Keep in mind that AWS S3 works differently than most other destinations. Using a destinations selector like the [integrations object](/docs/connections/spec/common/#integrations) does not affect events with AWS S3.
+The Segment Tracking API processes data from your sources and collects the Events in batches. Segment then uploads the batches to a secure Segment S3 bucket, from which they're securely copied to your own S3 bucket in small bursts. Individual files won't exceed 100 MB in size.
 
-The diagram below illustrates how the S3 destination works.
+{% comment %}
 
-The Segment Tracking API processes data from your sources, and collects the Events in batches. When these batches reach a 100 MB, or once per hour, a Segment initiates a process which uploads them to a secure Segment S3 bucket, from which they are securely copied to your own S3 bucket.
+![Diagram showing how data is transferred from Segment Tracking API to a customer's AWS S3 bucket.](images/s3processdiagram.png)
 
-![](images/s3processdiagram.png)
+{% endcomment %}
 
 ## Create a new destination
 
@@ -298,7 +297,7 @@ resource "aws_iam_role_policy_attachment" "segment_aws_s3_role_kms_policy_attach
 
 To finish configuration, enable the AWS S3 Destination with IAM Role Support destination in your workspace.
 
-1. Add the **AWS S3** destination from the Storage Destinations tab of the catalog. This document is about the **AWS S3** destination. For information about the **Amazon S3** destination, which does not include IAM Role support, see the documentation [here](/docs/connections/storage/catalog/amazon-s3/).
+1. Add the **AWS S3** destination from the Storage Destinations tab of the catalog. This document is about the **AWS S3** destination. For information about the **Amazon S3** destination, which does not include IAM Role support, see the [Amazon S3 documentation](/docs/connections/storage/catalog/amazon-s3/).
     ![AWS S3](images/aws-s3-tile.png)
 2. Select the data source you'll connect to the destination.
 3. Provide a unique name for the destination.
@@ -488,5 +487,11 @@ You can send computed traits and audiences generated using [Engage](/docs/engage
 For user-property destinations, Segment sends an [identify](/docs/connections/spec/identify/) call to the destination for each user added and removed. The property name is the snake_cased version of the audience name, with a true/false value to indicate membership. For example, when a user first completes an order in the last 30 days, Engage sends an Identify call with the property `order_completed_last_30days: true`. When the user no longer satisfies this condition (for example, it's been more than 30 days since their last order), Engage sets that value to `false`.
 
 When you first create an audience, Engage sends an Identify call for every user in that audience. Later audience syncs send updates for users whose membership has changed since the last sync.
+
+## FAQ
+
+### AWS S3 destination connection error “Multiple instance of AWS S3 are not allowed for this source"
+
+You might encounter this error if you already have a S3 destination connected to the source in question. Segment only supports one AWS S3 destination per source.
 
 {% include content/destination-footer.md %}
