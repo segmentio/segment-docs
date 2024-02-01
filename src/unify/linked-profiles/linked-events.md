@@ -50,9 +50,6 @@ To create models and enrich events in destinations, you need to be a `Workspace 
 
 ## Step 1: Set up your data warehouse and permissions
 
-> info "Data warehouse support"
-> Snowflake, Redshift, and BigQuery are currently supported for Linked Events.
-
 > info ""
 > Linked Events uses Segment's [Reverse ETL](/docs/connections/reverse-etl/) infrastructure for pulling in data from your warehouse. 
 
