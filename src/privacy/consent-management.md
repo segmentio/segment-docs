@@ -1,13 +1,11 @@
 ---
 title: Consent Management Overview
-hidden: true
-hide_toc: true
 related:
   - "/privacy/configure-consent-management/"
   - "/privacy/consent-in-segment-connections/"
   - "/privacy/consent-in-unify/"
 ---
-> info "Consent Management is in private beta"
+> info "Consent Management is in public beta"
 > This means that Consent Management features are in active development, and some functionality may change before it becomes generally available. [Contact Segment](https://segment.com/help/contact/){:target="_blank"} with any feedback or questions.
 
 When an end user visits your web or mobile app, they set **consent preferences**, or make decisions about the types of data they want you to collect, use, and share. These consent preferences are typically presented as a set list of categories that describe how your company intends to use that data. Some common categories include personalization, advertising, and site performance.

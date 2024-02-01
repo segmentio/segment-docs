@@ -7,7 +7,7 @@ redirect_from:
   - '/connections/destinations/catalog/vendor-slack'
 versions:
   - name: Slack (Classic)
-    link: /docs/connections/destinations/slack
+    link: /docs/connections/destinations/catalog/slack/
 ---
 {% include content/plan-grid.md name="actions" %}
 

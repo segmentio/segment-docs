@@ -15,6 +15,9 @@ Make this relational data accessible to marketers and business stakeholders to e
 > info ""
 > Segment's Data Graph powers [Linked Events](/docs/unify/linked-profiles/linked-events/) and [Linked Audiences](/docs/engage/audiences/linked-audiences/).
 
+> success ""
+> To help you get started with the Data Graph, [view this short setup demo](https://drive.google.com/file/d/1oZNvs0raYaxK6tds3OEF0Ri3NGVCoXys/view?pli=1){:target="_blank"}.
+
 
 ## Prerequisites
 
@@ -33,11 +36,6 @@ To use the Data Graph, you'll need the following:
 > info "Data warehouse support"
 > - [Snowflake](/docs/unify/linked-profiles/setup-guides/snowflake-setup/) is supported by both Linked Events and Linked Audiences.
 > - [Redshift](/docs/unify/linked-profiles/setup-guides/redshift-setup/) and [BigQuery](/docs/unify/linked-profiles/setup-guides/BigQuery-setup/)  are currently supported for Linked Events.
-
-<!-- Not yet available for Data Graph as of 1/16/24
-- [Redshift Setup]((/docs/unify/linked-profiles/setup-guides/redshift-setup/))
-- [BigQuery Setup]((/docs/unify/linked-profiles/setup-guides/bigquery-setup/))
---> 
 
 Linked Profiles uses [Segment's Reverse ETL](/docs/connections/reverse-etl/) infrastructure to pull data from your warehouse. 
 

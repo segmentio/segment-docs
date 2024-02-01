@@ -44,12 +44,8 @@ Hi,
 
 This is {person} from {company}. I would like to configure a proxy for the following source(s):
 
-* Source URL with Source ID
-* Source URL with Source ID
-```
-
-- **Source URL**: link to the source in your Segment workspace (for example, `https://app.segment.com/<your_slug>/sources/<source>/overview`)
-- **Source ID**: navigate to **API Keys** on the left-hand side of the source **Settings** and provide the Source ID
+**Source URL**: link to the source in your Segment workspace (for example: https://app.segment.com/<your_slug>/sources/<source>/overview)
+**Source ID**: navigate to **API Keys** on the left-hand side of the source **Settings** and provide the Source ID 
 
 Double-check the Source URL and the Source ID.
 
@@ -67,7 +63,7 @@ Follow these instructions after setting up a proxy such as [CloudFront](#custom-
 > If you've followed the instructions above to have a Segment team member enable the apiHost settings in the UI, you can skip the instructions in this section. 
 
 ### Snippet instructions
-If you're a snippet user, you need to modify the [analytics snippet](/docs/getting-started/02-simple-install/#step-1-copy-the-snippet) that's inside your `<head>`.
+If you're a snippet user, modify the [analytics snippet](/docs/getting-started/02-simple-install/#step-1-copy-the-snippet) located inside the `<head>` of your website:
 
 To proxy CDN settings and destination requests that typically go to `https://cdn.segment.com`, replace:
 ```diff
@@ -82,9 +78,9 @@ To proxy API tracking calls that typically go to `api.segment.io/v1`, replace:
 ```
 
 ### npm instructions
-See the [`npm` library-users instructions](https://www.npmjs.com/package/@segment/analytics-next){:target="_blank"} for more information.
+If you're using the [npm library](https://www.npmjs.com/package/@segment/analytics-next){:target="_blank"}, make the following changes directly in your code:
 
-Proxy settings and destination requests that typically go to `https://cdn.segment.com` through a custom proxy.
+To proxy settings and destination requests that typically go to `https://cdn.segment.com` through a custom proxy:
 
 ```ts
 const analytics = AnalyticsBrowser.load({
@@ -98,7 +94,7 @@ const analytics = AnalyticsBrowser.load({
  })
 ```
 
-Proxy tracking calls that typically go to `api.segment.io/v1` by configuring `integrations['Segment.io'].apiHost`.
+To proxy tracking calls that typically go to `api.segment.io/v1`, configure the `integrations['Segment.io'].apiHost`:
 ```ts
 const analytics = AnalyticsBrowser.load(
     {
@@ -177,4 +173,5 @@ To add a CNAME record to your DNS settings:
 Follow the instructions at [Using Analytics.js as an NPM Package](https://github.com/segmentio/analytics-next/tree/master/packages/browser#-using-as-an-npm-package), to host Analytics.js and eliminate the requirement of downloading it from the CDN file during every page load. This enables you to self-host/import the library itself.
 
 > warning ""
-> Segment does not recommend self-hosting, as it requires that you configure integration settings individually and manually redeploy Analytics.js when there are changes to your settings. When you enable third-party libraries in device-mode, Segment loads them, which defeats the purpose of self-hosting. 
+> Segment does not recommend self-hosting, as it requires that you configure integration settings individually and manually redeploy Analytics.js when there are changes to your settings. Self-hosting your own Analytics.js instead of using the CDN means that you lose the automatic downstream updates to your analytics when you make changes. Self-hosting means that you must configure the settings for each integration directly and redeploy your Analytics.js any time you make changes to your settings. When you enable third-party libraries in device-mode, Segment loads them for you, which defeats the purpose of self-hosting.
+

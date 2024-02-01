@@ -30,7 +30,7 @@ Regional Data Ingestion enables you to send data to Segment from both Device-mod
 {% include content/eu-cloud-event-sources.html %}
 
 ### Client-side sources
-You can configure Segment's client-side SDKs for JavaScript, iOS, Android, and React Native sources to send data to a regional host after you've updated the Data Ingestion Region in that source's settings. Segment's EU instance only supports data ingestion from Dublin, Ireland with the `events.eu1.segmentapis.com/` endpoint.
+You can configure Segment's client-side SDKs for JavaScript, iOS, Android, and React Native sources to send data to a regional host after you've updated the Data Ingestion Region in that source's settings. Segment's EU instance only supports data ingestion from Dublin, Ireland with the `events.eu1.segmentapis.com/` endpoint. If you are using the Segment EU endpoint with an Analytics-C# source, you must manually append `v1` to the URL. For instance, `events.eu1.segmentapis.com/v1`.
 
 > info ""
 > For workspaces that use the EU West Data Processing region, the Dublin Ingestion region is preselected for all sources.
@@ -52,6 +52,9 @@ All Segment client-side SDKs read this setting and update themselves automatical
 When you send data from a server-side or project source, you can use the `host` configuration parameter to send data to the desired region:
 1. Oregon (Default) — `https://events.segmentapis.com/v1`
 2. Dublin — `https://events.eu1.segmentapis.com/`
+
+> success ""
+> If you are using the Segment EU endpoint with an Analytics-C# source, you must manually append `v1` to the URL. For instance, `events.eu1.segmentapis.com/v1`.
 
 Here is an example of how to set the host:
 
