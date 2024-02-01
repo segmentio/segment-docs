@@ -114,7 +114,7 @@ You've now successfully attached your live plugin(s) to your mobile source. The 
 
 Follow the steps in this section to create your own live plugin.
 
-### 1. Subclass `LivePlugin`
+### 1. Subclass the `LivePlugin` class
 
 To create your own live plugin, you'll start by subclassing the `LivePlugin` class and overloading one (or more) of the event-related functions.
 
