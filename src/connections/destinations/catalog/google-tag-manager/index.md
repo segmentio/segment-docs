@@ -18,7 +18,7 @@ id: 54521fd625e721e32a72eeb9
 4. GTM loads on any pages where your Segment snippet is initialized and `analytics.page` is called in client-side JavaScript. Once you've turned on GTM through Segment, you can use Segment `track` events to populate the GTM `dataLayer`, and remove the GTML snippet from your page.
 
 > info ""
-> Segment recommends that you load GTM through Segment rather than loading Segment inside of GTM. When you load Segment through GTM, it will limit our ability to help troubleshoot should you experience any technical issues. 
+> Segment recommends that you load GTM through Segment rather than loading Segment inside of GTM. When you load Segment through GTM, it limits Segment's ability to help troubleshoot.
 
 ## Page
 If you're not familiar with the Segment Specs, take a look to understand what the [Page method](/docs/connections/spec/page/) does. An example call would look like:
