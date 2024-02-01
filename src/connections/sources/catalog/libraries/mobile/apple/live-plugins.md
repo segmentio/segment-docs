@@ -16,11 +16,9 @@ You can use JavaScript live plugins with Analytics-Swift and Analytics-Kotlin to
 
 Because live plugins let you modify event data before it leaves a mobile device, you can use the same function to modify data meant for all your cloud-mode and device-mode destinations. 
 
-## Live plugin setup
+## Setup
 
 To use live plugins, you first need to set up your mobile app with a one-time configuration.
-
-### One-time configuration
 
 To configure live plugins:
 
@@ -57,7 +55,7 @@ After you've completed setup, you can deploy your apps to the Apple App Store an
 
 This section walks you through a sample live plugin implementation. 
 
-### Write a live plugin in JavaScript
+### 1. Write a live plugin in JavaScript
 
 Copy and save the following file, which anonymizes events by removing user IDs and device IDs:
 
@@ -75,11 +73,11 @@ class PrivacyLivePlugin extends LivePlugin {
 
 Note the name of your saved file. You'll need it in the next step.
 
-### Deploy the plugin with the Live Plugin CLI
+### 2. Deploy the plugin with the Live Plugin CLI
 
 With your plugin saved, you'll next deploy the plugin with Segment's Live Plugin CLI. Follow these steps:
 
-#### 1. Install the CLI with Homebrew
+#### Install the CLI with Homebrew
 
 Run this command to install the Segment CLI:
 
@@ -87,7 +85,7 @@ Run this command to install the Segment CLI:
 $ brew install segment-integrations/formulae/segmentcli
 ```
 
-#### 2. Authenticate with Segment
+#### Authenticate with Segment
 
 Next, you'll authenticate with Segment to give the CLI access to your workspace:
 
