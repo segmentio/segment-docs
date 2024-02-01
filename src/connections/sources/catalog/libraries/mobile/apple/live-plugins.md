@@ -1,6 +1,6 @@
 ---
 title: Live Plugins
-hidden: true
+strat: swift
 ---
 
 Live plugins are JavaScript code snippets published to your Segment workspace and then downloaded directly to the mobile devices of end users. Live plugins let you perform real-time modifications to events before they leave the mobile device.
