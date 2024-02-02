@@ -32,7 +32,6 @@ When setting up Schema Configuration, note that Segment prioritizes blocking con
 ![A screenshot of the Advanced Blocking Controls table, which contains two columns: call type and common JSON schema violations.](../images/advanced-blocking-controls.png)
 
 > info "Using only the Common JSON Schema to block events"
-> info "Using only the Common JSON Schema to block events"
 > If your Tracking Plan only has Common JSON Schema rules, you only need to use the Advanced Blocking Controls for your source. 
 >
 > If you use the Standard Schema Controls and omit properties or traits that do not exist, the Tracking Plan might not generate violations for the Common JSON Schema, as the entire Tracking Plan has nothing and everything is considered to be "unplanned". 
