@@ -52,7 +52,7 @@ You can also use this page to [enable destination insert functions](#enable-the-
 Segment invokes a separate part of the function (called a "handler") for each event type that you send to your destination insert function.
 
 > info ""
-> If you’ve configured a [destination filter](/docs/connections/destinations/destination-filters/), and the event doesn’t pass the filter, then your function isn’t invoked for that event as destination filters are applied before the insert functions.
+> If you’ve configured a [destination filter](/docs/connections/destinations/destination-filters/), and the event doesn’t pass the filter, then your function isn’t invoked for that event as destination filters are applied before insert functions.
 
 The default source code template includes handlers for all event types. You don't need to implement all of them - just use the ones you need, and skip the ones you don't.
 
@@ -485,13 +485,13 @@ No, destination insert functions are currently available as cloud-mode destinati
 
 Yes, an insert function can be connected to multiple destinations. 
 
-##### Can I configure destination filters and have destination insert function in the same connection?
+##### Can I have destination filters and a destination insert function in the same connection?
 
-Yes, there is no limitation on having destination filters and destination insert functions in the same connection. 
+Yes, you can have both destination filters and destination insert functions in the same connection. 
 
-##### Are the insert functions invoked before or after the destination filters are applied?
+##### Are insert functions invoked before or after destination filters are applied?
 
-The destinations filters are applied prior to the invocation of the insert functions in the Segment data pipeline. 
+Segment's data pipeline applies destination filters before invoking insert functions. 
 
 {% comment %}
 
