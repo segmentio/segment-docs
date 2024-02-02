@@ -4,10 +4,17 @@ redirect_from: '/connections/warehouses/'
 plan: warehouses
 ---
 
-## What's a Warehouse?
-
 {% include content/whats-a-warehouse.md %}
 
+{% include content/how-a-sync-works.md %}
+
+Segment supports the following warehouses:
+
+{% include content/warehouses-catalog.md %}
+
+<div data-headings-anchors id="warehouse-schemas"></div>
+> info "Looking for the Warehouse Schemas docs?"
+>  They've moved! Check them out [here](schema/).
 
 When selecting and building a data warehouse, consider three questions:
 
@@ -16,14 +23,6 @@ When selecting and building a data warehouse, consider three questions:
 3.  How will the data be used?
 
 Relational databases are great when you know and predefine the information collected and how it will be linked. This is usually the type of database used in the world of user analytics. For instance, a users table might be populated with the columns `name`, `email_address`, or `plan_name`.
-
-Examples of data warehouses include Amazon Redshift, Google BigQuery, and Postgres.
-
-{% include content/how-a-sync-works.md %}
-
-<div data-headings-anchors id="warehouse-schemas"></div>
-> info "Looking for the Warehouse Schemas docs?"
->  They've moved! Check them out [here](schema/).
 
 {% include components/reference-button.html href="https://segment.com/academy/intro/when-to-use-sql-for-analysis/?referrer=docs" icon="media/academy.svg" title="Analytics Academy: When to use SQL for analysis" description="When your existing analytics tools can't answer your questions, it's time to level-up and use SQL for analysis." %}
 
