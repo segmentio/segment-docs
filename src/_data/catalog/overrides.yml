@@ -77,6 +77,17 @@ items:
       web: false
       mobile: true
       server: true
+- slug: singular
+  id: 5c768ec31413290001ebdd2e
+  connection_modes:
+    device:
+      web: false
+      mobile: true
+      server: false
+    cloud:
+      web: false
+      mobile: true
+      server: false
 - slug: intercom
   id: 54521fd725e721e32a72eec6
   connection_modes:
@@ -418,14 +429,3 @@ items:
     description: A list of rich link property keys.
     required: true
     label: Rich Link Properties
-- slug: singular
-  id: 5c768ec31413290001ebdd2e
-  connection_modes:
-    device:
-      web: false
-      mobile: true
-      server: false
-    cloud:
-      web: false
-      mobile: true
-      server: false

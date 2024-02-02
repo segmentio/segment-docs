@@ -52,10 +52,6 @@ Before reading the specific instructions for iOS or Android below, make sure you
      .build();
    ```
 
-### React Native
-
-{% include content/react-dest.md %}
-
 ## Page
 
 If you're not familiar with the Segment Specs, take a look to understand what the [Page method](/docs/connections/spec/page/) does. An example call would look like:

@@ -17,11 +17,11 @@ Here's how to get started with the LinkedIn Insight Tag!
 ### **1. Log into the LinkedIn Campaign Manager.**
 
 If you don't have a LinkedIn business account, sign up for one now.
-Once that's complete, go to the [LinkedIn Marketing Solutions page](https://business.linkedin.com/marketing-solutions/ads). From the **Advertising** dropdown menu, select **Sign in to Campaign Manager**.
+Once that's complete, go to the [LinkedIn Marketing Solutions page](https://business.linkedin.com/marketing-solutions/ads){:target="_blank"}. From the **Advertising** dropdown menu, select **Sign in to Campaign Manager**.
 
 Click the account name for which you'd like to set up website retargeting, conversion tracking, or website demographics.
 
-### **2. [Create an Ad Account](https://www.linkedin.com/ad/accounts).**
+### **2. [Create an Ad Account](https://www.linkedin.com/ad/accounts){:target="_blank"}.**
 
 ![A screenshot of the Linkedin Campaign manager accounts page.](images/w53Sm6Jpg3.png)
 
@@ -53,3 +53,7 @@ From there, click **Configure LinkedIn Insight Tag** and select the source for w
 ![A screenshot of the Settings page for the LinkedIn Insight Tag destination.](images/Nmad4zYvWy.png)
 
 Select that option and paste in the LinkedIn Data Partner ID that you copied earlier. Click **Save**, then click **Activate Destination**. Our servers build the latest CDN for that source, and the LinkedIn Insight Tag loads on the sites that use that source's Segment snippet!
+
+## Conversion tracking
+
+Segment's LinkedIn Insight Tag destination is fairly unique in that all Segment does is load the LinkedIn scripts onto your website for you so you can call methods directly without having to add the script tags yourself. Any special conversion tracking needs to be done within your LinkedIn workspace as you normally would if you were setting up LinkedIn without Segment. 

@@ -12,7 +12,7 @@ This source is maintained by Mixpanel. For any issues with the source, contact t
 
 ## Getting Started
 
-1. From your workspace's [Sources catalog page](https://app.segment.com/goto-my-workspace/sources/catalog) click **Add Source**.
+1. From your workspace's [Sources catalog page](https://app.segment.com/goto-my-workspace/sources/catalog){:target="_blank"} click **Add Source**.
 2. Search for **Mixpanel Cohorts** in the Sources Catalog and click **Add Source**.
 3. On the next screen, give the Source a nickname and configure any other settings.
 4. From the new Source's Overview page, copy the Segment WriteKey

@@ -3,9 +3,9 @@ rewrite: true
 title: Trustpilot Destination
 id: 5c6e52858392d6000101d4c1
 ---
-[Trustpilot](https://www.trustpilot.com/) is an open and independent review platform. On Trustpilot, people can share and discover reviews of businesses, and businesses can gain insights and showcase their service and products performance through reviews.
+[Trustpilot](https://www.trustpilot.com/){:target="_blank"} is an open and independent review platform. On Trustpilot, people can share and discover reviews of businesses, and businesses can gain insights and showcase their service and products performance through reviews.
 
-This destination is maintained by Trustpilot. For any issues with the destination, [contact the Trustpilot Support team](https://support.trustpilot.com/hc/en-us/articles/215949867-Contact-Trustpilot-s-Support-Team).
+This destination is maintained by Trustpilot. For any issues with the destination, [contact the Trustpilot Support team](https://support.trustpilot.com/hc/en-us/articles/215949867-Contact-Trustpilot-s-Support-Team){:target="_blank"}.
 
 ## Getting Started
 
@@ -13,7 +13,7 @@ This destination is maintained by Trustpilot. For any issues with the destinatio
 
 1. From the Segment web app, click **Catalog**.
 2. Search for "Trustpilot" in the Catalog, select it, and choose which of your sources to connect the destination to.
-3. Enter the "Integration Key" into your Segment Settings UI as "API Key" which you can find on [Trustpilot integrations page](https://businessapp.b2b.trustpilot.com/#/ecommerce/segment).
+3. Enter the "Integration Key" into your Segment Settings UI as "API Key" which you can find on [Trustpilot integrations page](https://businessapp.b2b.trustpilot.com/#/ecommerce/segment){:target="_blank"}.
 
 
 ## Track

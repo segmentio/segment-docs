@@ -3,9 +3,9 @@ rewrite: true
 title: Pendo Destination
 id: 575ef2fc80412f644ff139be
 ---
-[Pendo](http://www.pendo.io/) is a product cloud that helps product teams deliver software users love. With Pendo, product teams can understand product usage, collect feedback, measure NPS, onboard users, and announce new features in app—all without requiring engineering resources.
+[Pendo](http://www.pendo.io/){:target="_blank"} is a product cloud that helps product teams deliver software users love. With Pendo, product teams can understand product usage, collect feedback, measure NPS, onboard users, and announce new features in app—all without requiring engineering resources.
 
-Pendo maintains this destination. For any issues with the destination, [contact the Pendo Support team](https://help.pendo.io/).
+Pendo maintains this destination. For any issues with the destination, [contact the Pendo Support team](https://help.pendo.io/){:target="_blank"}.
 
 ## Getting Started
 
@@ -13,7 +13,7 @@ Pendo maintains this destination. For any issues with the destination, [contact 
 
 1. From the Segment web app, click **Catalog**.
 2. Search for "Pendo" in the Catalog, select it, and choose which of your sources to connect the destination to.
-3. In the destination settings, enter your Pendo API Key which you can find in the Pendo UI under [Site Settings](https://app.pendo.io/admin) > Basic Information > API Key.
+3. In the destination settings, enter your Pendo API Key which you can find in the Pendo UI under [Site Settings](https://app.pendo.io/admin){:target="_blank"} > Basic Information > API Key.
 
 Your changes appear in the Segment CDN in about 45 minutes, and then Analytics.js starts asynchronously loading Pendo's snippet on your page and sending data.
 
@@ -29,8 +29,8 @@ To add the Pendo destination using Cloud-mode, use the [Webhooks](/docs/connecti
 1. From the Segment web app, click **Catalog**.
 2. Search for **Webhooks** in the Catalog, select it, and choose which of your JavaScript sources to connect the destination to.
 3. Webhook URL configuration will vary based on which Pendo environment you use and your API key:
-  * For US customers, add the following as your Webhook URL: `https://segment.us.pendo.io/data/segmentio/YOUR_PENDO_API_KEY` and replace `YOUR_PENDO_API_KEY` with your actual Pendo API Key, which you can find in the Pendo UI under [Site Settings](https://app.pendo.io/admin) > Basic Information > API Key.
-  * For EU customers, add the following as your Webhook URL: `https://segment.eu.pendo.io/data/segmentio/YOUR_PENDO_API_KEY` and teplace `YOUR_PENDO_API_KEY` with your actual Pendo API Key, which you can find in the Pendo UI under [Site Settings](https://app.eu.pendo.io/admin) > Basic Information > API Key.
+  * For US customers, add the following as your Webhook URL: `https://segment.us.pendo.io/data/segmentio/YOUR_PENDO_API_KEY` and replace `YOUR_PENDO_API_KEY` with your actual Pendo API Key, which you can find in the Pendo UI under [Site Settings](https://app.pendo.io/admin){:target="_blank"} > Basic Information > API Key.
+  * For EU customers, add the following as your Webhook URL: `https://segment.eu.pendo.io/data/segmentio/YOUR_PENDO_API_KEY` and teplace `YOUR_PENDO_API_KEY` with your actual Pendo API Key, which you can find in the Pendo UI under [Site Settings](https://app.eu.pendo.io/admin){:target="_blank"} > Basic Information > API Key.
 4. Headers are not required in Webhook configuration. Once you're done adding in your URL, save changes.
 5. Using the `track` method requires a setting enabled on your Pendo subscription (cloud-mode only). Contact Pendo to enable this feature flag for your account.
 

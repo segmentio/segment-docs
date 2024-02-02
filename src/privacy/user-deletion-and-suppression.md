@@ -50,8 +50,8 @@ Segment deletes messages with this `userId` from connected raw data Destinations
 
 Segment forwards these deletion requests to a [growing list of supported partners](/docs/privacy/faq/#which-destinations-can-i-send-deletion-requests-to).
 
-Note that Segment has a 30-day SLA for submitted deletion requests. Additionally, Segment's deletion manager can only accommodate 100,000 users within a 30-day period and cannot guarantee a 30-day SLA if there are more than 100,000 deletion requests submitted within those 30 days. [Contact Support](https://segment.com/help/contact/){:target="_blank"} if you need to process more than 100,000 users within a 30 day period.
-
+Note that Segment has a 30-day SLA for submitted deletion requests. Additionally, Segment's deletion manager can only accommodate 100,000 users within a 30-day period and cannot guarantee a 30-day SLA if there are more than 100,000 deletion requests submitted within those 30 days. You can delete up to 5000 `userId`s per call via Public API. [Contact Support](https://segment.com/help/contact/){:target="_blank"} if you need to process more than 100,000 users within a 30 day period.
+ 
 **Segment cannot guarantee that data is deleted from your Destinations.**
 
 Segment forwards deletion requests to [supported Destinations](/docs/privacy/faq/#which-destinations-can-i-send-deletion-requests-to) (such as Braze, Intercom, and Amplitude) but you should confirm that each partner fulfills the request.
@@ -124,8 +124,27 @@ To change your data retention settings, navigate to **Privacy > Settings > Data 
 
 ### Workspace Default Archive Retention Period
 
-Select the default retention period for the workspace here. This value applies to all sources in the workspace, unless overridden.
+Select the default retention period for the workspace in this setting. This value applies to all sources in the workspace, unless overridden in the [Source-Level Archive Retention Periods](#source-level-archive-retention-periods) setting.
+
+You can select from the following Archive Retention time periods:
+
+- 7 days
+- 30 days
+- 90 days
+- 180 days
+- 365 days
+- Unlimited (**default**)
 
 ### Source-Level Archive Retention Periods
 
 Override the workspace default retention period on a per-source level.
+
+You can select from the following Archive Retention time periods:
+
+- Default (This is the default value you set in the [Workspace Default Archive Retention Period](#workspace-default-archive-retention-period))
+- 7 days
+- 30 days
+- 90 days
+- 180 days
+- 365 days
+- Unlimited

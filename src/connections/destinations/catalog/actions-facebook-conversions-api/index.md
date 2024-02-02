@@ -131,7 +131,11 @@ Additionally, configure the "App Events Fields" object with the required fields:
 * `version`
 * `osVersion`
 
+> info ""
+> The value for the **version** field should be `a2` for Android or `i2` for iOS, as stated in [Facebook's documentation](https://developers.facebook.com/docs/marketing-api/conversions-api/app-events){:target="_blank"}.
+
 ![the app data object](images/app_data.png)
+
 #### Match rate considerations
 
 If you use Facebook Conversions API as a stand-alone without certain data fields collected from the browser, the match rate might not be as high as if you included them. You can increase the match rate for events from a server source by including User Data, such as Zip Code, Country and State.
@@ -210,4 +214,8 @@ After you start sending events, you should start seeing them in twenty minutes. 
 1. Go to the Events Manager.
 2. Click on the corresponding pixel.
 3. In the Overview tab, look for events where the “Connection Method” is Server.
+
+### Send multiple External IDs
+
+[Facebook](https://developers.facebook.com/docs/marketing-api/conversions-api/parameters/external-id/){:target="_blank"} allows you to send one External ID per payload as a string, or multiple per payload in an array of External ID strings. Send an array of External IDs through Segment by mapping an array to the `externalId` field when setting up your Actions mappings.
 

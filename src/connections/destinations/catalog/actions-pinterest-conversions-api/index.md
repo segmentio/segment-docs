@@ -38,9 +38,9 @@ To connect the Pinterest Conversions API Destination:
 4. Select the source that will send data to Pinterest Conversions API and follow the steps to name your destination.
 5. On the **Basic Settings** page, configure the following fields:
    - Destination Name
-   - [Ad Account ID](https://developers.pinterest.com/docs/conversions/conversions/#Find%20your%20%2Cad_account_id#Find%20your%20%2Cad_account_id#Find%20your%20%2Cad_account_id)
-   - [Conversions Token]((https://developers.pinterest.com/docs/conversions/conversions/#Get%20the%20conversion%20token))
-6. Navigate to the **Mappings** tab, there are already Prebuilt mapping like `Checkout,Search,Add to Cart` defined with prescribed parameter . All required ,recommended and optional fields are listed [here](https://developers.pinterest.com/docs/conversions/best/#Authenticating%20for%20the%20Conversion%20Tracking%20endpoint#The%20%2Cuser_data%2C%20and%20%2Ccustom_data%2C%20objects#Required%2C%20recommended%2C%20and%20optional%20fields#Required%2C%20recommended%2C%20and%20optional%20fields)
+   - [Ad Account ID](https://developers.pinterest.com/docs/conversions/conversions/#Find%20your%20%2Cad_account_id#Find%20your%20%2Cad_account_id#Find%20your%20%2Cad_account_id){:target="_blank”}
+   - [Conversions Token](https://developers.pinterest.com/docs/conversions/conversions/#Get%20the%20conversion%20token){:target="_blank”}
+6. Navigate to the **Mappings** tab, there are already Prebuilt mapping like `Checkout,Search,Add to Cart` defined with prescribed parameter . All required ,recommended and optional fields are listed [here](https://developers.pinterest.com/docs/conversions/best/#Authenticating%20for%20the%20Conversion%20Tracking%20endpoint#The%20%2Cuser_data%2C%20and%20%2Ccustom_data%2C%20objects#Required%2C%20recommended%2C%20and%20optional%20fields#Required%2C%20recommended%2C%20and%20optional%20fields){:target="_blank”}
 7. If you want to create **New Mapping**, and select **Report Conversions Event** ,configure and enable it.
 8. Follow the steps in the Destinations Actions documentation on [Customizing mappings](/docs/connections/destinations/actions/#customize-mappings).
 9. Enable the destination using the **Enable Destination** toggle switch and click **Save Changes**.
@@ -72,7 +72,7 @@ Conversion Events must meet the following requirements to be considered for dedu
 3. The duplicate events arrived within 24 hours of the time of receipt of the first unique event.
 
 > info ""
-> Segment offers a client-side destination specifically designed for the Pinterest Tag. You can find detailed documentation and further information on how to implement this integration by following this [link](https://segment.com/catalog/integrations/pinterest-tag/).
+> Segment offers a client-side destination specifically designed for the Pinterest Tag. You can find detailed documentation and further information on how to implement this integration by following this [link](https://segment.com/catalog/integrations/pinterest-tag/){:target="_blank”}.
 
 ## Limited Data Processing
 Starting from Jan 1, 2023, Pinterest introduced the Limited Data Processing flag as per California Consumer Privacy Act (CCPA). With this flag set Pinterest will allow advertisers  to comply with CCPA.
@@ -152,5 +152,5 @@ Pinterest requires the `action_source` server event parameter for all events sen
 After you start sending events, you should start seeing them in dashboard. You can confirm that Pinterest received them:
 
 1. Go to the Events Overview.
-2. Click on the Event History to see all the events sent to pinterest conversions.
+2. Click on the Event History to see all the events sent to Pinterest conversions.
 

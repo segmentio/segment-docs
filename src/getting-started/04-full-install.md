@@ -63,7 +63,7 @@ When you make an Identify call as part of a profile update, you only need to sen
 
 ## Traits in Identify calls
 
-These are called [traits](/docs/connections/spec/identify/#traits)for Identify calls, and [properties](/docs/connections/spec/track/#properties) for all other methods.
+These are called [traits](/docs/connections/spec/identify/#traits) for Identify calls, and [properties](/docs/connections/spec/track/#properties) for all other methods.
 
 **The most important trait to pass as part of the Identify call is userId**, which uniquely identifies a user across all applications.
 
