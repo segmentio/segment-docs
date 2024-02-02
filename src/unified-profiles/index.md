@@ -6,9 +6,6 @@ Unified Profiles, available with Twilio's Agent Copilot product, provides your F
 
 Unified Profiles integrates with Segment to connect your Flex contact center to customer data in [Salesforce Cloud](/docs/connections/sources/catalog/cloud-apps/salesforce/#salesforce-source) or a [data warehouse](/docs/connections/storage/warehouses/).
 
-<!-- todo: build out data warehouse catalog the dw page. keep similar format to source/dest/storage catalogs--->
-
-
 For more information, see Twilio's Agent Copilot documentation. 
 
 ## 
