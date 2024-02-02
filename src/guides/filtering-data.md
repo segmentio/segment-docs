@@ -89,7 +89,7 @@ integrations: {
   }
 }
 ```
-For the same event you have Appsflyer turned off using the per source schema integrations filter, this filter won't override the above object with a false value, and events still send downstream. In this scenario, [destination filters](#destination-filters) can be used to drop the event before sends downstream. 
+For the same event you have Appsflyer turned off using the per source schema integrations filter, this filter won't override the above object with a false value, and events still send downstream. In this scenario, you can use [destination filters](#destination-filters) to drop the event before it sends downstream. 
 
 ## Schema event filters
 
