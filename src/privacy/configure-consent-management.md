@@ -5,8 +5,6 @@ related:
   - "/privacy/consent-in-segment-connections/"
   - "/privacy/consent-in-unify/"
 ---
-> info "Consent Management is in public beta"
-> This means that Consent Management features are in active development, and some functionality may change before it becomes generally available. [Contact Segment](https://segment.com/help/contact/){:target="_blank"} with any feedback or questions.
 
 After setting up your consent management platform (CMP), you can enforce the consent collected from your users by adding the [consent object](/docs/privacy/consent-in-segment-connections/#consent-object) to your events. 
 

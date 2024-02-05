@@ -5,9 +5,6 @@ related:
   - "/privacy/configure-consent-management/"
 ---
 
-> info "Consent Management is in public beta"
-> This means that Consent Management features are in active development, and some functionality may change before it becomes generally available. [Contact Segment](https://segment.com/help/contact/){:target="_blank"} with any feedback or questions.
-
 Segment Connections users can add the [consent object](#consent-object) to their sources to stamp events with the end user consent preferences captured by your consent management platform (CMP) and send them downstream to destinations in categories that an end user consented to share data with. Events without the consent object continue to flow to destinations without consent enforcement. 
 
 For more information about configuring consent categories, see the [Configure Consent Management](/docs/privacy/configure-consent-management/#step-1-create-consent-categories-in-the-segment-app) documentation.
