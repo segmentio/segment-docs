@@ -187,7 +187,7 @@ The coalesce function takes a primary value and uses it if it is available. If t
 > Self-service users can add a maximum of two conditions per Trigger.
 
 
-The following type filters and operators are available to help you build conditions:
+Mapping fields are **case-sensitive**. The following type filters and operators are available to help you build conditions:
 
 - **Event type** (`is`/`is not`). This allows you to filter by the [event types in the Segment Spec](/docs/connections/spec).
 - **Event name** (`is`, `is not`, `contains`, `does not contain`, `starts with`, `ends with`). Use these filters to find events that match a specific name, regardless of the event type.
