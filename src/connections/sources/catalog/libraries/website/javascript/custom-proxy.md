@@ -177,7 +177,7 @@ To bundle Analytics.js with your own code, you can:
 
 * [Use npm to install your destinations](/docs/connections/sources/catalog/libraries/website/javascript/#add-destinations-from-npm).
 
-* Hardcode your settings instead of fetching from the CDN (Segment doesn't recommend this as it completely bypasses the Segment source GUI)
+* Hardcode your settings instead of fetching from the CDN (Segment doesn't recommend this as it completely bypasses the Segment source GUI).
 ```ts
 // npm-only
 export const analytics = new AnalyticsBrowser()
