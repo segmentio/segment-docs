@@ -84,6 +84,7 @@ Set up Selective Sync to control the exact tables and columns that Segment will 
 
 You can sync the following tables:
 
+<!-- Removing this in favor of table below
 **Profile raw tables** 
 - `external_id_mapping_updates`
 - `id_graph_updates`
@@ -108,6 +109,7 @@ You can sync the following tables:
 **Track event tables**
 
 To view and select individual track tables, don’t sync track tables during the initial setup. Edit your sync settings after enabling Profiles Sync and waiting for the first sync to complete.
+-->
 
 | Type                                                   | Tables                                                                                                                                                 |
 | ------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -166,7 +168,9 @@ Reach out to [Segment support](https://app.segment.com/workspaces?contact=1){:ta
 
 ### Optional: Materialize key views using a SQL automation tool
 
-This option allows you to materialize views on your own, or use Segment's open source dbt models. 
+During setup, you can optionally materialize views on your own, or use Segment's open source dbt models. 
+
+Use this option for additonal data transformation, or if you want to join Segment profile data with external data before materialization.
 
 > success ""
 > You can alternatively use tables that Segment materializes and syncs to your data warehouse. [Learn more](/docs/unify/profiles-sync/tables/#tables-segment-materializes) about the tables Segment materializes.
