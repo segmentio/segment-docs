@@ -44,12 +44,8 @@ Hi,
 
 This is {person} from {company}. I would like to configure a proxy for the following source(s):
 
-* Source URL with Source ID
-* Source URL with Source ID
-```
-
-- **Source URL**: link to the source in your Segment workspace (for example, `https://app.segment.com/<your_slug>/sources/<source>/overview`)
-- **Source ID**: navigate to **API Keys** on the left-hand side of the source **Settings** and provide the Source ID
+**Source URL**: link to the source in your Segment workspace (for example: https://app.segment.com/<your_slug>/sources/<source>/overview)
+**Source ID**: navigate to **API Keys** on the left-hand side of the source **Settings** and provide the Source ID 
 
 Double-check the Source URL and the Source ID.
 
@@ -67,7 +63,7 @@ Follow these instructions after setting up a proxy such as [CloudFront](#custom-
 > If you've followed the instructions above to have a Segment team member enable the apiHost settings in the UI, you can skip the instructions in this section. 
 
 ### Snippet instructions
-If you're a snippet user, you need to modify the [analytics snippet](/docs/getting-started/02-simple-install/#step-1-copy-the-snippet) that's inside your `<head>`.
+If you're a snippet user, modify the [analytics snippet](/docs/getting-started/02-simple-install/#step-1-copy-the-snippet) located inside the `<head>` of your website:
 
 To proxy CDN settings and destination requests that typically go to `https://cdn.segment.com`, replace:
 ```diff
@@ -82,9 +78,9 @@ To proxy API tracking calls that typically go to `api.segment.io/v1`, replace:
 ```
 
 ### npm instructions
-See the [`npm` library-users instructions](https://www.npmjs.com/package/@segment/analytics-next){:target="_blank"} for more information.
+If you're using the [npm library](https://www.npmjs.com/package/@segment/analytics-next){:target="_blank"}, make the following changes directly in your code:
 
-Proxy settings and destination requests that typically go to `https://cdn.segment.com` through a custom proxy.
+To proxy settings and destination requests that typically go to `https://cdn.segment.com` through a custom proxy:
 
 ```ts
 const analytics = AnalyticsBrowser.load({
@@ -98,7 +94,7 @@ const analytics = AnalyticsBrowser.load({
  })
 ```
 
-Proxy tracking calls that typically go to `api.segment.io/v1` by configuring `integrations['Segment.io'].apiHost`.
+To proxy tracking calls that typically go to `api.segment.io/v1`, configure the `integrations['Segment.io'].apiHost`:
 ```ts
 const analytics = AnalyticsBrowser.load(
     {
@@ -190,4 +186,3 @@ analytics.load({
    cdnSettings: {...} // object from https://cdn.segment.com/v1/projects/<YOUR_WRITE_KEY>/settings'
  })
 ```
-

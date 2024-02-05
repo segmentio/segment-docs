@@ -257,6 +257,7 @@ analytics.reset()
 {% endcodeexampletab %}
 {% endcodeexample %}
 
+{% include content/reset-mobile.md %}
 
 ### OpenURL
 While Analytics Kotlin will automatically track deep links that open your app when the `trackDeepLinks` Configuration property is set to `true`. There are some situations when the app is already open that could cause a deep link open event to be missed.

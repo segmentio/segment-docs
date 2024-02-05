@@ -59,7 +59,9 @@ These features are fairly advanced, but you can learn more about them by [reques
 
 The **Workspace Settings** tab shows more information about your workspace, including your team settings, GDPR requests, and so on. You might not have access to edit these settings!
 
-The **User Preferences** tab shows your individual account settings, including Notification settings.
+The **User Preferences** tab shows your individual account settings, including Notification settings. 
+
+The **Activity Notifications** feature in Notification settings provides alerts for specific workspace activities when enabled. These alerts keep you updated on actions taken by other workspace users, excluding activities you initiate. This ensures you're only alerted to actions you're not directly involved in.
 
 The **Usage** tab shows how many API calls or [Monthly Tracked Users (MTUs)](/docs/guides/usage-and-billing/mtus-and-throughput/#how-does-segment-calculate-mtus) your workspace has used this month - which can be important for keeping an eye on your Segment bill.
 
