@@ -64,7 +64,19 @@ Protocols customers can also use [Transformations](/docs/protocols/transform/) t
 
 ## Can I change the data type of a column in the warehouse?
 
-Yes. Data types are set up in your warehouse based on the first value that comes in from a source, but you can request the support team to update the data type by reaching out to [Segment support](https://app.segment.com/workspaces?contact=1){:target="_blank”}. To learn more, check out Segment's [Data Types](/docs/connections/storage/warehouses/schema/#schema-evolution-and-compatibility) documentation.
+Yes, the data type can be changed, and you can always reach out to [Segment support](https://app.segment.com/workspaces?contact=1){:target="_blank”} for assistances.
+
+For context, Segment uses ["unified" data types](/docs/connections/storage/warehouses/schema/#schema-evolution-and-compatibility){:target="_blank”} to create the all coresponding data types in cusostomer's data warehouse destinations based on the first value that comes in from a source. As an example, Segment support team can generally help in the below scenarios:
+- Changing data type from `timestamp` to `varchar` 
+- Changing data type from `integer` to `float`
+- Changing data type from `boolean` to `varchar`
+
+And, the team normally can't update the data type in the below scenarios, where you need to manually change the data type:
+- Expanding `varchar(256)` to `varchar(2048)`
+- Updating `integer` to `bigint`
+- Updating `float` to `float8`
+- The credentials configured for syncing data doesn't have sufficient permissions
+
 
 ## Can the data type definitions in Protocols be enforced in a warehouse schema?
 
