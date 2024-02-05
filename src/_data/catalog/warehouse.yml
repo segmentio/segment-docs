@@ -67,8 +67,8 @@ items:
     url: 'https://cdn.filepicker.io/api/file/Vk6iFlMvQeynbg30ZEtt'
   categories:
     - Warehouses
-- display_name: Databricks Destination
-  slug: databricks-destination
+- display_name: Databricks 
+  slug: databricks
   name: catalog/warehouses/databricks
   description: ''
   url: connections/storage/catalog/databricks
