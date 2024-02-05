@@ -59,6 +59,7 @@ This query computes whether a user has an open ticket:
     where t.status in ('pending','open','hold','new')
 ```
 
+{% include content/trait-types.md %}
 
 ## Configure SQL Traits
 
