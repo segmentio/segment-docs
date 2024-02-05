@@ -175,9 +175,9 @@ To reduce fetching assets from Segment's CDN, you can bundle Analytics.js with y
 To bundle Analytics.js with your own code, you can: 
 * [Use Analytics.js as an npm package](https://github.com/segmentio/analytics-next/tree/master/packages/browser#-using-as-an-npm-package){:target="_blank"}.
 
-* [Use npm to bundle your destinations ](/docs/connections/sources/catalog/libraries/website/javascript/#add-destinations-from-npm) with your own code instead of fetching them from the CDN.
+* [Use npm to bundle your destinations](/docs/connections/sources/catalog/libraries/website/javascript/#add-destinations-from-npm) with your own code instead of fetching them from the CDN.
 
-* Hardcode your settings instead of fetching from the CDN (not recommended -- bypass the Segment souce configuration GUI completely).
+* Hardcode your settings instead of fetching from the CDN (**not recommended** -- bypass the Segment souce configuration GUI completely).
 ```ts
 // npm-only
 export const analytics = new AnalyticsBrowser()
