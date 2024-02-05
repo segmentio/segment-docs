@@ -173,7 +173,7 @@ To add a CNAME record to your DNS settings:
 To reduce fetching assets from Segment's CDN, you can bundle Analytics.js with your own code.
 
 To bundle Analytics.js with your own code, you can: 
-* [Use Analytics.js as an npm package](https://github.com/segmentio/analytics-next/tree/master/packages/browser#-using-as-an-npm-package){:target="_blank"}.
+* [Use Analytics.js as an npm package](/docs/connections/sources/catalog/libraries/website/javascript/quickstart/#step-2b-install-segment-as-a-npm-package).
 
 * [Use npm to bundle your destinations](/docs/connections/sources/catalog/libraries/website/javascript/#add-destinations-from-npm) with your own code instead of fetching them from the CDN.
 
