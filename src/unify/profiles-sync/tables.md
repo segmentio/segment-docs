@@ -8,7 +8,7 @@ Through Profiles Sync, Segment provides data sets and models that can help you e
 Using a practical example of how Segment connects and then merges anonymous profiles, this page explains the tables that Segment lands, as well as the tables you materialize as part of Profiles Sync.
 
 ## Case study: anonymous site visits lead to profile merge
-
+ 
 To help illustrate the possible entries and values populated into Profiles Sync tables, view the event tabs below and consider the following scenario.
 
 Suppose the following four events lead to the creation of two separate profiles:
@@ -355,10 +355,16 @@ This table has the following columns:
 To do: add some info here about when customers might want to materialize tables themselves 
 
 -->
-## Tables you materialize
+## Tables you materialize 
 
-> info "dbt model definitions package"
-> To get started with your table materializations, try Segment's [open-source dbt models](https://github.com/segmentio/profiles-sync-dbt){:target="_blank"}, or materialize views with your own tools.
+You can materialize the following tables with your own tools, or using Segment's [open-source dbt models](https://github.com/segmentio/profiles-sync-dbt){:target="_blank"}:
+
+- [`id_graph`](#the-idgraph-table)
+- [`external_id_mapping`](#the-externalidmapping-table)
+- [`profile_traits`](#the-profiletraits-table)
+
+> success ""
+> You can alternatively use tables that Segment materializes and syncs to your data warehouse. [Learn more](/docs/unify/profiles-sync/tables/#tables-segment-materializes) about the tables Segment materializes.
 
 > warning ""
 > Please note that dbt models are in beta and need modifications to run efficiently on BigQuery, Synapse, and Postgres warehouses. Segment is actively working on this feature.
