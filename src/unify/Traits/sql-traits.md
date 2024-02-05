@@ -70,7 +70,7 @@ To use SQL Traits, you need the following:
 - a user account with access to Unify in that workspace
 
 ### Step 1. Set up a warehouse source
-
+ 
 Segment supports Redshift, Postgres, Snowflake, Azure SQL, and BigQuery as data warehouse sources for SQL Traits. Note that the BigQuery setup process _requires_ a service user.
 
 > info "Safeguard your data"
