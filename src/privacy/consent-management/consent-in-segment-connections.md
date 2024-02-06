@@ -3,6 +3,7 @@ title: Consent in Segment Connections
 related:
   - "/privacy/consent-management/"
   - "/privacy/configure-consent-management/"
+redirect_from: "/privacy/consent-in-segment-connections"
 ---
 
 Segment Connections users can add the [consent object](#consent-object) to their sources to stamp events with the end user consent preferences captured by your consent management platform (CMP) and send them downstream to destinations in categories that an end user consented to share data with. Events without the consent object continue to flow to destinations without consent enforcement. 

@@ -3,7 +3,7 @@ title: Configure Consent Management
 related:
   - "/privacy/consent-management/"
   - "/privacy/consent-in-segment-connections/"
-  - "/privacy/consent-in-unify/"
+redirect_from: "/privacy/configure-consent-management"
 ---
 
 After setting up your consent management platform (CMP), you can enforce the consent collected from your users by adding the [consent object](/docs/privacy/consent-in-segment-connections/#consent-object) to your events. 
