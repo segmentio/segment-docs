@@ -11,6 +11,24 @@ Destinations are the business tools or apps that Segment forwards your data to. 
 
 Segment has [Sources](/docs/connections/sources/) and [Destinations](/docs/connections/destinations/). Sources send data _into_ Segment, while Destinations receive data _from_ Segment.
 
+## Destination connection types
+Segment has three destination connection types:
+* [Event streams](#event-streams-destinations)
+* [Storage](#storage-destinations)
+* [Reverse ETL](#reverse-etl-destinations)
+
+### Event streams destinations
+Event streams destinations are all destinations that aren't storage or Reverse ETL destinations. Adding these destinations allow you to act on your data and learn more about your customers in real time. These include [Destination Actions](/docs/connections/destinations/actions/). 
+
+### Storage destinations
+Storage destinations enable you to store your raw Segment data. This enables data analysts and data scientists to work with the raw data to derive deeper and more customized insights to support your organization. Learn more from the [storage overview page](/docs/connections/storage/).
+
+### Reverse ETL destinations
+[Reverse ETL](/docs/connections/reverse-etl) destinations are the business tools or apps you use that Segment syncs the data from your warehouse to. 
+
+If your destination is not listed in the Reverse ETL catalog, use the [Segment Connections destination](/docs/connections/destinations/catalog/actions-segment/) to send data from your Reverse ETL warehouse to other destinations listed in the [catalog](/docs/connections/destinations/catalog/). The Segment Connections destination enables you to mold data extracted from your warehouse in [Segment Spec](docs/connections/spec/) API calls that are then processed by [Segment’s HTTP Tracking API](/docs/connections/sources/catalog/libraries/server/http-api/). The Segment HTTP Tracking API lets you record analytics data. The requests hit Segment’s servers, and then Segment routes your data to any destination you want. Get started with the [Segment Connections destination](/docs/connections/destinations/catalog/actions-segment/). 	
+ 
+
 ## Method compatibility
 
 Not all destinations can accept data from specific method types. To know if a destination can accept data from specific method types, look for the *Quick Info* box at the top of the destination's documentation page, or check out the [Destinations Methods comparison chart](/docs/connections/destinations/methods-compare/).
@@ -154,3 +172,8 @@ You can see the current destination endpoint API success rates and final deliver
 
 > warning ""
 > If you submitted [`suppress_only` requests](https://segment.com/docs/privacy/user-deletion-and-suppression/#suppressed-users), Segment still retains historical events for those users, which can be replayed. If you do not want historical events replayed for suppressed users, submit `suppress_and_delete` requests instead.
+
+
+### IP Allowlist 
+
+{% include content/ip-allowlist.md %}

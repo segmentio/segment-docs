@@ -6,16 +6,16 @@ rewrite: true
 
 <!--May 2021: hiding this and adding a redirect to destinations catalog. -->
 
-[Drift](http://www.drift.com/segment/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) is the world's first and only conversational marketing platform. Instead of traditional marketing and sales platforms that rely on forms and follow ups, Drift connects your business with the best leads in real-time.
+[Drift](http://www.drift.com/segment/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners){:target="_blank”} is the world's first and only conversational marketing platform. Instead of traditional marketing and sales platforms that rely on forms and follow ups, Drift connects your business with the best leads in real-time.
 
-The `analytics.js` device-mode destination is open-source. You can browse the code [on GitHub](https://github.com/segment-integrations/analytics.js-integration-drift).
+The `analytics.js` device-mode destination is open-source. You can browse the code [on GitHub](https://github.com/segment-integrations/analytics.js-integration-drift){:target="_blank”}.
 
-The cloud-mode destination is maintained by Drift. For any issues with the destination, [contact the Drift support team](https://www.drift.com/help/).
+The cloud-mode destination is maintained by Drift. For any issues with the destination, [contact the Drift support team](https://www.drift.com/help/){:target="_blank"}.
 
 
 ## Getting Started
 
-{% include content/connection-modes.md %}
+
 
   1. From the Segment web app, click **Catalog**.
   2. Search for "Drift" in the Catalog, select it, and choose which of your sources to connect the destination to.
@@ -54,7 +54,7 @@ If you do not pass a `userId`, we will try to fill it in with the `id` or `usern
 
 Keep in mind, we _strongly_ suggest to ensure that the `email` field is passed in the `identify` call.
 
-Integrations options passed to `identify` event will be passed to drift identify as third argument. This can be leveraged for [signed identifies](https://devdocs.drift.com/docs/securing-drift-on-your-site-using-signed-identities).
+Integrations options passed to `identify` event will be passed to drift identify as third argument. This can be leveraged for [signed identifies](https://devdocs.drift.com/docs/securing-drift-on-your-site-using-signed-identities){:target="_blank”}.
 
 ```javascript
 analytics.identify('ksc2303', {

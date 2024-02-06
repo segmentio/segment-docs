@@ -46,7 +46,7 @@
     "ajv": "^6.10.2",
     "algoliasearch": "^4.10.5",
     "ansi-regex": "^6.0.1",
-    "browser-sync": "^2.27.11",
+    "browser-sync": "^2.29.1",
     "check-links": "^1.1.8",
     "clipboard": "^2.0.8",
     "diff": "^5.0.0",

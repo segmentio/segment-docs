@@ -7,7 +7,7 @@ redirect_from:
 ---
 {% include content/source-region-unsupported.md %}
 
-[Foursquare's Movement SDK](https://location.foursquare.com/products/movement-sdk/) provides real-time event triggering based upon your users' location in the physical world, allowing you to harness FourSquare's powerful geotargeting capabilities to send those events to other services using Segment.
+[Foursquare's Movement SDK](https://location.foursquare.com/products/movement-sdk/){:target="_blank"} provides real-time event triggering based upon your users' location in the physical world, allowing you to harness FourSquare's powerful geotargeting capabilities to send those events to other services using Segment.
 
 This destination is maintained by Foursquare. For any issues with the destination, [contact the Foursquare Developer Support team](mailto:developers@foursquare.com).
 
@@ -19,7 +19,7 @@ This destination is maintained by Foursquare. For any issues with the destinatio
 1. From the Segment web app, click **Catalog**.
 2. Search for "Foursquare Movement" in the Catalog, select it, and choose which of your sources to connect the it to.
 3. Once you save Foursquare Movement as a source, copy your "Write Key".
-4. Go to your [Foursquare Developer Console](https://foursquare.com/developers/apps/) and create a new Segment integration in your Foursquare app's Movement SDK console. There you can enter the Segment "Write Key" into the Segment Integration Configuration screen.
+4. Go to your [Foursquare Developer Console](https://foursquare.com/developers/apps/){:target="_blank"} and create a new Segment integration in your Foursquare app's Movement SDK console. There you can enter the Segment "Write Key" into the Segment Integration Configuration screen.
 
 ## Events
 

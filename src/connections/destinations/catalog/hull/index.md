@@ -1,9 +1,11 @@
 ---
 title: Hull Destination
 id: 5728ed9c80412f644ff132d9
+hidden: true
+deprecated: true
+hide-dossier: true
 ---
-> warning "Hull Deprecation"
-> Hull was deprecated on December 31, 2022 and the Segment Hull destination is no longer operational. For more information, see [Hull documentation](https://www.hull.io/faq/){:target="_blank"}.
+
 
 Hull is the one place to collect, transform, enrich, filter, search and segment customer data in all your tools.
 
@@ -77,7 +79,7 @@ The following traits will be stored as first level fields on the User object
 - picture
 - username
 
-All other attributes from the `identify` call will be stored as [custom traits](http://www.hull.io/docs/references/hull_js/#traits) on Hull.
+All other attributes from the `identify` call will be stored as [custom traits](http://www.hull.io/docs/references/hull_js/#traits){:target="_blank"} on Hull.
 
 ## Track
 

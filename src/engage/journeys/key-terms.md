@@ -39,6 +39,8 @@ Keep the following terms in mind as you begin to explore Journeys.
 | ------------------------ | --------------------------------------------------------------------------------------------------------------------------------- |
 | Draft Journey            | A Journey which is not yet computing nor sending data to destinations. <br /><br />For more information, see [Draft Journeys](#draft-journeys). |
 | Published (live) Journey | A Journey that is computing and sending data to destinations. <br /><br />For more information, see [Published Journeys](#published-journeys).                  |
+| Archived Journey         | A Journey that has been archived. <br /><br />For more information, see [Archive a Journey](/docs/engage/journeys/build-journey/#archive-a-journey).                  |
+| Failed (live) Journey    | A Journey that has been published, but failed during the live computations due to an unforeseen error. <br /><br />Contact [Segment Support](https://segment.com/help/contact/) to learn more. |
 
 ## Steps with Audiences
 
@@ -55,3 +57,9 @@ Keep the following terms in mind as you begin to explore Journeys.
 | Delay               | No audience. Segment appends the wait duration as a condition to the following step's audience.                    |
 | T/F split           | The split's resulting conditions contain two mutually exclusive audiences.  The split node itself has no audience. |
 | Multi-branch splits | The split's resulting conditions contain audiences.  The split node itself has no audience.                        |
+
+## Analytics
+
+| Metric              | Definition                                                                                                                                   |
+| ------------------- | -------------------------------------------------------------------------------------------------------------------------------------------- |
+| Entry               | When a user enters a Journey for the first time or re-enters a Journey after exiting; excludes users who re-enter a Journey without exiting. |

@@ -9,7 +9,7 @@ When you enable the PerimeterX destination in the Segment app, your changes appe
 
 ## Getting Started
 
-1. Configure your [Policy and Application within PerimeterX](https://dash.readme.io/project/pxconsole/v1.0/docs/segment).
+1. Configure your [Policy and Application within PerimeterX](https://dash.readme.io/project/pxconsole/v1.0/docs/segment){:target="_blank"}.
 2. Copy your Application ID and paste into your Segment PerimeterX settings
 
 ## Identify
@@ -23,6 +23,6 @@ To map an identify trait in PerimeterX:
 1. Create the custom parameter in PerimeterX. Click **Admin > Applications** then choose your application.
 2. Under **Custom parameters** click **Add**.
 3. Choose a Parameter (1-10) and a display name:
-![](images/cmA_dv62kgp.png)
+![A screenshot of the Custom parameters page in PerimiterX.](images/cmA_dv62kgp.png)
 4. In your Segment PerimeterX Destination settings, enter the name of the `identify` trait to map to the custom parameter you created. Then enter the number of the custom parameter (1-10).
-![](images/cnKeeTBLune.png)
+![A screenshot of the Custom Parameters section in the Segment settings.](images/cnKeeTBLune.png)
