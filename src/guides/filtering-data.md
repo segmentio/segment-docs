@@ -80,6 +80,17 @@ The events filtered out of individual destinations using this method still arriv
 
 **Integration filters are all-or-nothing for each event.** If you require more detailed control over which events are sent to specific destinations, you can use Destination Filters to inspect the event payload, and conditionally drop the data or forward it to the destination.
 
+**Integration filters won't override an existing value in the integrations object.** If the integration object already has a value for the integration, the per source schema integration filters will not override this. For example, if you're sending events to Appsflyer with the `appsflyerId` passed into the integration object:
+
+```javascript
+integrations: {
+  Appsflyer: {
+    appsflyerId: 'xxxxxx'
+  }
+}
+```
+For the same event you have Appsflyer turned off using the per source schema integrations filter, this filter won't override the above object with a false value, and events still send downstream. In this scenario, you can use [destination filters](#destination-filters) to drop the event before it sends downstream. 
+
 ## Schema event filters
 
 You can use Schema Event Filters to discard and permanently remove Page, Screen and Track events from event-based sources, preventing them from reaching any destinations or warehouses, as well as omit identify traits and group properties. Use this if you know that you'll never want to access this data again. This functionality is similar to filtering with the Integrations object, however it can be changed from within the Segment app without touching any code.

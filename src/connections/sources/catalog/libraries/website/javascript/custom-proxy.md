@@ -168,10 +168,21 @@ To add a CNAME record to your DNS settings:
 4. Run `curl` on your domain to check if the proxy is working correctly.
 
 
-## Self Hosting Analytics.js
+## Self-hosting Analytics.js
 
-Follow the instructions at [Using Analytics.js as an NPM Package](https://github.com/segmentio/analytics-next/tree/master/packages/browser#-using-as-an-npm-package), to host Analytics.js and eliminate the requirement of downloading it from the CDN file during every page load. This enables you to self-host/import the library itself.
+To reduce fetching assets from Segment's CDN, you can bundle Analytics.js with your own code.
 
-> warning ""
-> Segment does not recommend self-hosting, as it requires that you configure integration settings individually and manually redeploy Analytics.js when there are changes to your settings. Self-hosting your own Analytics.js instead of using the CDN means that you lose the automatic downstream updates to your analytics when you make changes. Self-hosting means that you must configure the settings for each integration directly and redeploy your Analytics.js any time you make changes to your settings. When you enable third-party libraries in device-mode, Segment loads them for you, which defeats the purpose of self-hosting.
+To bundle Analytics.js with your own code, you can: 
+* [Use Analytics.js as an npm package](/docs/connections/sources/catalog/libraries/website/javascript/quickstart/#step-2b-install-segment-as-a-npm-package).
 
+* [Use npm to install your destinations](/docs/connections/sources/catalog/libraries/website/javascript/#add-destinations-from-npm).
+
+* Hardcode your settings instead of fetching from the CDN (Segment doesn't recommend this as it completely bypasses the Segment source GUI).
+```ts
+// npm-only
+export const analytics = new AnalyticsBrowser()
+analytics.load({
+   ...
+   cdnSettings: {...} // object from https://cdn.segment.com/v1/projects/<YOUR_WRITE_KEY>/settings'
+ })
+```
