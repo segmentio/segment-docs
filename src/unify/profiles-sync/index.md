@@ -140,7 +140,7 @@ Reach out to [Segment support](https://app.segment.com/workspaces?contact=1){:ta
 
 During setup, you can optionally materialize views on your own, or use Segment's open source dbt models. 
 
-Use this option for additonal data transformation, or if you want to join Segment profile data with external data before materialization.
+You might use this option if, for example, you want to transform additional data or join Segment profile data with external data before materialization. 
  
 > success ""
 > You can alternatively use tables that Segment materializes and syncs to your data warehouse. [Learn more](/docs/unify/profiles-sync/tables/#tables-segment-materializes) about the tables Segment materializes.
