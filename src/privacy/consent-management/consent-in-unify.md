@@ -3,8 +3,8 @@ title: Consent in Unify
 hidden: true
 related:
   - "/privacy/consent-management/"
-  - "/privacy/configure-consent-management/"
-  - "/privacy/consent-in-segment-connections/"
+  - "/privacy/consent-management/configure-consent-management/"
+  - "/privacy/consent-management/consent-in-segment-connections/"
 ---
 
 > info "Consent in Unify and Twilio Engage is currently unavailable."

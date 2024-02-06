@@ -2,7 +2,7 @@
 title: Configure Consent Management
 related:
   - "/privacy/consent-management/"
-  - "/privacy/consent-in-segment-connections/"
+  - "/privacy/consent-management/consent-in-segment-connections/"
 redirect_from: "/privacy/configure-consent-management"
 ---
 
