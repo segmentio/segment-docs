@@ -36,7 +36,7 @@ You should also change your write keys for each source and remove all Segment sn
 
 To change the email address with which you use Segment, go to [User Settings](https://app.segment.com/settings/user){:target="_blank"}, make changes to your email id under **Email** and click **Update Profile**. 
 
-You should authenticate and also verify your new email address for the change to take effect. Note that Workspace Owners cannot make this change for other members. 
+You should authenticate and also verify your new email address for the change to take effect. Note that Workspace Owners cannot make this change for other users. 
 
 ## What happens if I change my workspace name or slug?
 
