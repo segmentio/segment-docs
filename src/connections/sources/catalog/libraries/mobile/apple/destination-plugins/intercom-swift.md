@@ -193,7 +193,7 @@ analytics.group(groupId: "group123", traits: MyTraits(
         plan: "premium"))
 ```
 
-Segment supports Intercom companies in all sources. Users can be put into multiple groups, which associate them to multiple companies in Intercom.
+Segment supports Intercom `company` values sent from all source types. Users can be put into multiple groups, which associate them to multiple companies in Intercom.
 
 When you call Group from any of any server-side libraries or mobile sources in cloud-mode (without Segment's mobile Intercom SDK installed), you must include either the `userId` or `email` of an existing user in Intercom.
 

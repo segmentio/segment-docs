@@ -199,21 +199,6 @@ The Segment-Nielsen-DCR integration has logic to check for `type` in case of a p
 
 #### Integration specific options
 
-Example for Android:
-
-```java
-Map<String, Object> nielsenOptions = new LinkedHashMap<>();
-nielsenOptions.put("pipmode", "c3 value");
-nielsenOptions.put("adLoadType", "c4 value");
-nielsenOptions.put("channelName", "c6 value");
-nielsenOptions.put("mediaUrl", "c6 value");
-nielsenOptions.put("hasAds", "true");
-nielsenOptions.put("crossId1", "cross id1 value");
-nielsenOptions.put("crossId2", "cross id2 value");
-
-Analytics.with(context).track("Video Playback Started", new Properties(), new Options().setIntegrationOptions("nielsen-dcr", nielsenOptions));
-
-```
 
 #### Pipmode
 
@@ -234,6 +219,22 @@ Standard episode ID.
 #### Cross Id 2
 
 Content originator ID. This value is only required for distributors.
+
+Example for Android:
+
+```java
+Map<String, Object> nielsenOptions = new LinkedHashMap<>();
+nielsenOptions.put("pipmode", "c3 value");
+nielsenOptions.put("adLoadType", "c4 value");
+nielsenOptions.put("channelName", "c6 value");
+nielsenOptions.put("mediaUrl", "c6 value");
+nielsenOptions.put("hasAds", "true");
+nielsenOptions.put("crossId1", "cross id1 value");
+nielsenOptions.put("crossId2", "cross id2 value");
+
+Analytics.with(context).track("Video Playback Started", new Properties(), new Options().setIntegrationOptions("nielsen-dcr", nielsenOptions));
+
+```
 
 ## FAQ
 
