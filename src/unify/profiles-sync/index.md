@@ -84,33 +84,6 @@ Set up Selective Sync to control the exact tables and columns that Segment will 
 
 You can sync the following tables:
 
-<!-- Removing this in favor of table below
-**Profile raw tables** 
-- `external_id_mapping_updates`
-- `id_graph_updates`
-- `profile_traits_updates`
-
-**Profile materialized tables**
-- `user_identifier`
-- `user_traits`
-- `profile_merges`
-
-> info ""
-> Materialized view tables are disabled by default. If you'd like to use tables that Segment materializes, you can enable them with Selective Sync. Alternitively, you can use Segment's [open-source dbt models](https://github.com/segmentio/profiles-sync-dbt){:target="_blank"}, or materialize views with your own tools.
-
-**Event type tables**
-- `Identify`
-- `Page`
-- `Group`
-- `Screen`
-- `Alias`
-- `Track`
-
-**Track event tables**
-
-To view and select individual track tables, don’t sync track tables during the initial setup. Edit your sync settings after enabling Profiles Sync and waiting for the first sync to complete.
--->
-
 | Type                                                   | Tables                                                                                                                                                 |
 | ------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Profile raw tables | - `external_id_mapping_updates` <br> - `id_graph_updates` <br> - `profile_traits_updates` |
@@ -162,16 +135,13 @@ Reach out to [Segment support](https://app.segment.com/workspaces?contact=1){:ta
 > success ""
 > While historical backfill is running, you can start building [materialized views](/docs/unify/profiles-sync/tables/#tables-you-materialize) and running [sample queries](/docs/unify/profiles-sync/sample-queries).   
 
-<!-- TO DO: add a section below about materialized tables vs dbt script.
 
--->
-
-### Optional: Materialize key views using a SQL automation tool
+### Step 4 (Optional): Materialize key views using a SQL automation tool
 
 During setup, you can optionally materialize views on your own, or use Segment's open source dbt models. 
 
 Use this option for additonal data transformation, or if you want to join Segment profile data with external data before materialization.
-
+ 
 > success ""
 > You can alternatively use tables that Segment materializes and syncs to your data warehouse. [Learn more](/docs/unify/profiles-sync/tables/#tables-segment-materializes) about the tables Segment materializes.
 

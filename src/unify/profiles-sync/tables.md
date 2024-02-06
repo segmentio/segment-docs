@@ -356,7 +356,7 @@ To do: add some info here about when customers might want to materialize tables 
 
 -->
 ## Tables you materialize 
-
+ 
 You can materialize the following tables with your own tools, or using Segment's [open-source dbt models](https://github.com/segmentio/profiles-sync-dbt){:target="_blank"}:
 
 - [`id_graph`](#the-idgraph-table)
