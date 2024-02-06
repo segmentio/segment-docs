@@ -140,8 +140,8 @@ To access or assign a value to a cookie outside of the standard Segment methods 
   <tr style="background-color: #fafbff; font-size: 10px;">
     <th>FIELD</th>
     <th>COOKIE NAME</th>
-    <th>ANALYTICS.JS METHOD</th>
-    <th>LOCAL STORAGE METHOD</th>
+    <th>ANALYTICS.JS GET METHOD</th>
+    <th>LOCAL STORAGE GET METHOD</th>
     <th>SET EXAMPLE</th>
     <th>CLEAR EXAMPLE</th>
   </tr>
@@ -186,6 +186,12 @@ To access or assign a value to a cookie outside of the standard Segment methods 
     <td>`analytics.group().traits({})`</td>
   </tr>
 </table>
+
+To retrieve a specific user trait using the analytics.js get method, you can access the trait by invoking `analytics.user().traits().firstName`. This will return the firstName trait of the user.
+
+Similarly, to retrieve a specific group trait, you can use the method `analytics.group().traits().companyName`. This will return the companyName trait of the group.
+
+When accessing specific traits stored in the browser's localStorage, you'll need to utilize the [JSON.parse()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON/parse) method due to the fact that the stored data is typically in string format.
 
 ## Storage Priority
 
