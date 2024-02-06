@@ -15,7 +15,7 @@ This allows you to run advertising campaigns in Facebook without having to manua
 
 
 ## Other Facebook Destinations Supported by Segment
-This page is about the **Facebook Custom Audiences** destination developed specifically for use with [Engage](/docs/engage/). This destination is not supported by other sources. For documentation on other Facebook destinations, see the pages linked below.
+This page is about the **Facebook Custom Audiences** destination developed specifically for use with [Engage](/docs/engage/). No other sources support this destination. For documentation on other Facebook destinations, see the pages linked below.
 
 | **Facebook Destination**                                                                                    | Supported by Engage |
 | ----------------------------------------------------------------------------------------------------------- | ------------------- |
