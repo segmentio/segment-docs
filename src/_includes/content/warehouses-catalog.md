@@ -3,7 +3,7 @@
     <div class="flex flex--wrap waffle waffle--xlarge">
       {% assign warehouses = site.data.catalog.warehouse.items | sort: "display_name" %}
       {% for warehouse in warehouses %}
-        {% if warehouse.categories contains "Warehouses" and warehouse.slug != "databricks-destination" and warehouse.slug != "data-lakes" and warehouse.slug != "google-cloud-storage" %}
+        {% if warehouse.categories contains "Warehouses" and warehouse.slug != "databricks" and warehouse.slug != "data-lakes" and warehouse.slug != "google-cloud-storage" %}
           <div class="flex__column flex__column--6">
             <a class="thumbnail-integration flex flex--middle" href="{{ site.baseurl }}/{{ warehouse.url }}/">
               <div class="thumbnail-integration__content">
