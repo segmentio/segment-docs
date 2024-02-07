@@ -7,7 +7,7 @@ These destinations support [Reverse ETL](/docs/connections/reverse-etl/). If you
 
 <div class="destinations-catalog">
       <div class="flex flex--wrap waffle waffle--xlarge">
-        {% assign destinations = site.data.catalog.destinations.items%}
+        {% assign destinations = site.data.catalog.destinations.items %}
         {% for destination in destinations %}
         {% unless destination.hidden %}
             {% if destination.status contains "PUBLIC" or destination.status contains "BETA" %}
