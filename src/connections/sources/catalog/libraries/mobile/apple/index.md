@@ -41,6 +41,9 @@ For the first time ever, developers can filter and transform their users’ even
 Learn more about [Destination Filters](https://github.com/segmentio/DestinationFilters-swift) on Mobile, and [Edge Functions](https://github.com/segmentio/EdgeFn-Swift) on Mobile. 
 
 ## Getting started
+> info "Multiple Instances"
+> Multiple Instances are supported as part of the Analytics-Swift mobile library. However, each instance must have a unique writeKey defined, or malformed JSON may be sent to our API resulting in 400 errors.
+
 To get started with the Analytics-Swift mobile library:
 
 1. Create a Source in Segment.
