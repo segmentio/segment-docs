@@ -140,7 +140,7 @@ GRANT SELECT ON FUTURE TABLES IN SCHEMA identifier($schema) TO ROLE identifier($
 
 ### (If applicable) Add Snowflake table permissions 
 Run the following SQL if you run into an error on the Segment app indicating that the user doesn't have sufficient priveleges on an existing `_segment_reverse_etl` schema.
-
+ 
 If Segment Reverse ETL has ever run in the database you are configuring as the Segment connection database, a Segment-managed schema is already created and you need to provide the new Segment user access to the existing schema. 
 
 > warning ""
