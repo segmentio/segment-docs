@@ -10,7 +10,7 @@ With the Databricks Destination, you can ingest event data directly from Segment
 This page will help you get started with syncing Segment events into your Databricks Lakehouse.
 
 > success ""
-> Segment has certified the destination for Databricks on AWS and Databricks on Azure.
+> Segment has certified the destination for Databricks on AWS, Azure, and GCP.
 
  
 ## Getting started
@@ -20,6 +20,9 @@ Before getting started with the Databricks Destination, note the following prere
 - The target Databricks workspace must be Unity Catalog enabled. Segment doesn't support the Hive metastore. Visit the Databricks guide [enabling the Unity Catalog](https://docs.databricks.com/en/data-governance/unity-catalog/enable-workspaces.html){:target="_blank"} for more information. 
 - Segment creates [managed tables](https://docs.databricks.com/en/data-governance/unity-catalog/create-tables.html#managed-tables){:target="_blank"} in the Unity catalog. The service account needs access to create schemas on the catalog and can delete, drop, or vacuum tables.
 - Segment supports only [OAuth (M2M)](https://docs.databricks.com/en/dev-tools/auth/oauth-m2m.html){:target="_blank"}  for authentication.
+
+> success ""
+> Segment recommends that you enable Warehouse Selective Sync. This feature enables customization of collections and properties sent to the warehouse. By syncing only relevant and required data, it reduces sync duration and compute costs, optimizing efficiency compared to syncing everything. Learn more about [Warehouse Selective Sync](/docs/connections/storage/warehouses/warehouse-syncs/#warehouse-selective-sync).
 
 ### Warehouse size
 
