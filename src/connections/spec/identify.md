@@ -135,6 +135,8 @@ Traits are pieces of information you know about a user that are included in an I
 
 Segment has reserved some traits that have semantic meanings for users, and will handle them in special ways. For example, Segment always expects `email` to be a string of the user's email address. Segment sends this on to destinations like _Mailchimp_ that require an email address for their tracking.
 
+The “Select Object” option will send the entire object from the event; whereas, the “Edit Object” option allows you to map each individual property.  
+
 You should **only use reserved traits for their intended meaning**.
 
 Reserved traits Segment has standardized:
