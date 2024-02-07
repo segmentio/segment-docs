@@ -1,17 +1,17 @@
 ---
 # The end name should be similar to `Slack  Destination`
-title: avo destination
-hide-boilerplate: true
-hide-dossier: true
+title: Avo
+beta: true,
+hidden: true,
 ---
+
+[Avo](https://avo.app) destination automatically extracts event schemas from all "track" product events from the connected source and sends it to the Avo Inspector. [Avo Inspector](https://www.avo.app/docs/inspector/start-using-inspector) compares the received events against your Avo tracking plan and surfaces any issues and discrepencies in your event tracking.
 
 <!-- This template is meant for Actions-based destinations that do not have an existing Classic or non-Actions-based version. For Actions Destinations that are a new version of a classic destination, see the doc-template-update.md template. -->
 
 {% include content/plan-grid.md name="actions" %}
 
 <!-- Include a brief description of the destination here, along with a link to your website. -->
-
-[Avo](https://www.avo.app/) destination automatically extracts event schemas from all "track" product events from the connected source and sends it to the Avo Inspector. [Avo Inspector](https://www.avo.app/docs/inspector/start-using-inspector) compares the received events against your Avo tracking plan and surfaces any issues and discrepencies in your event tracking.
 
 <!-- This include describes the requirement of A.js 2.0 or higher for Actions compatibility, and is required if your destination has a web component. -->
 
