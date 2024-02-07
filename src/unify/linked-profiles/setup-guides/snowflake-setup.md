@@ -10,7 +10,7 @@ beta: true
 
 On this page, you'll learn how to connect your Snowflake data warehouse to Segment.
 
-Within Snowflake, log in with a user that has admin priveleges to provide Segment Linked Profiles with the necessary permissions below.
+Log in to Snowflake with a user that has admin privileges to provide Segment Linked Profiles with the necessary permissions below.
 
 > info ""
 > Both Linked Events and Linked Profiles support Snowflake. 
@@ -24,8 +24,8 @@ Segment requires the following settings to connect to your Snowflake warehouse.
 
 - **Account ID**: The Snowflake account ID that uniquely identifies your organization account.
 - **Database Name**: The only database that Segment requires write access to in order to create tables for internal bookkeeping. This database is referred to as `segment_connection_db` in the script below.
-- **Warehouse**: The warehouse in your Snowflake account that you wish to use for Segment to run the SQL queries. This warehouse is referred to as `segment_connection_warehouse` in the script below.
-- **Username**: The Snowflake user that will be used by Segment to run SQL in your warehouse. This user is referred to as `segment_connection_username` in the script below.
+- **Warehouse**: The warehouse in your Snowflake account that you want to use for Segment to run the SQL queries. This warehouse is referred to as `segment_connection_warehouse` in the script below.
+- **Username**: The Snowflake user that Segment uses to run SQL in your warehouse. This user is referred to as `segment_connection_username` in the script below.
 - **Password**: The password of the user above. This password is referred to as `segment_connection_password` in the script below.
 
 ## Set up Snowflake credentials
@@ -83,7 +83,7 @@ GRANT USAGE ON WAREHOUSE identifier($segment_connection_warehouse) TO ROLE ident
 -- Grant role to the user
 GRANT ROLE identifier($segment_connection_role) TO USER identifier($segment_connection_username);
 
--- Create and Grant access to Segment internal DB used for bookkeeping. This is the only DB that Segment requires write access to. This is also the DB you will use in the "Database Name" config while setting up the connection in the Segment app. 
+-- Create and Grant access to a Segment internal DB used for bookkeeping. This is the only DB that Segment requires write access to. This is also the DB you will use in the "Database Name" config while setting up the connection in the Segment app. 
 CREATE DATABASE IF NOT EXISTS identifier($segment_connection_db);
 GRANT USAGE ON DATABASE identifier($segment_connection_db) TO ROLE identifier($segment_connection_role);
 GRANT USAGE ON ALL SCHEMAS IN DATABASE identifier($segment_connection_db) TO ROLE identifier($segment_connection_role);
@@ -117,7 +117,7 @@ GRANT SELECT ON FUTURE MATERIALIZED VIEWS IN DATABASE identifier($linked_read_on
 
 ### (Optional) Snowflake schema access
 
-[Snowflake schema access](https://docs.snowflake.com/en/user-guide/security-access-control-privileges#table-privileges): If you want to restrict access to specific schemas or tables, then run the following commands: 
+[Snowflake schema access](https://docs.snowflake.com/en/user-guide/security-access-control-privileges#table-privileges){:target="_blank”}: If you want to restrict access to specific schemas or tables, run the following commands: 
 
 ```ts
 -- [Optional] Further restrict access to only specific schemas and tables 
@@ -139,7 +139,7 @@ GRANT SELECT ON FUTURE TABLES IN SCHEMA identifier($schema) TO ROLE identifier($
 ```
 
 ### (If applicable) Add Snowflake table permissions 
-Run the following SQL if you run into an error on the Segment app indicating that the user doesn't have sufficient priveleges on an existing `_segment_reverse_etl` schema.
+Run the following SQL if you run into an error on the Segment app indicating that the user doesn't have sufficient privileges on an existing `_segment_reverse_etl` schema.
  
 If Segment Reverse ETL has ever run in the database you are configuring as the Segment connection database, a Segment-managed schema is already created and you need to provide the new Segment user access to the existing schema. 
 
@@ -164,7 +164,7 @@ GRANT SELECT,INSERT,UPDATE,DELETE ON ALL TABLES IN SCHEMA identifier($retl_schem
 
 ### Confirm permissions 
 
-To verify you have set up the right permissions for a specific table, log in with the username and password you created for `SEGMENT_CONNECTION_USERNAME` and run the following command to verify the role you created has the correct permissions. This command should succeed and you should be able to view the respective table.
+To verify you have set up the right permissions for a specific table, log in with the username and password you created for `SEGMENT_CONNECTION_USERNAME` and run the following command to verify the role you created has the correct permissions. If this command succeeds, you should be able to view the respective table.
 
 ```ts
 set segment_connection_role='SEGMENT_LINKED_ROLE';
