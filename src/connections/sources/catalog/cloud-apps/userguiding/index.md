@@ -13,8 +13,8 @@ This source is maintained by UserGuiding. For any issues with the source, [conta
 ## Getting started
 
 1. From your workspace's [Sources catalog page](https://app.segment.com/goto-my-workspace/sources/catalog){:target="_blank”} click **Add Source**.
-2. Search for "UserGuiding" in the Sources Catalog, select UserGuiding, and click **Add Source**.
-3. On the next screen, give the Source a name configure any other settings.
+2. Search for *UserGuiding* in the Sources Catalog, select UserGuiding, and click **Add Source**.
+3. Give the Source a name configure any other settings.
 
    - The name is used as a label in the Segment app, and Segment creates a related schema name in your warehouse. The name can be anything, but we recommend using something that reflects the source itself and distinguishes amongst your environments (eg. UserGuiding_Prod, UserGuiding_Staging, UserGuiding_Dev).
 
@@ -50,9 +50,9 @@ The table below lists events that UserGuiding sends to Segment. These events app
 | Survey Question Answer                   | It means a survey question was answered by a user                                                                                                      |
 
 
-## Event Properties
+## Event properties
 
-The table below list the properties included in the events listed above.
+The table below lists the properties included in the events listed above.
 
 | Property Name          | Description                                                       |
 | ---------------------- | ----------------------------------------------------------------- |
@@ -81,14 +81,14 @@ The table below list the properties included in the events listed above.
 | `choices`              | Choices in a survey question                                      | str |
 | `feedback`             | Feedback left in survey question answer                           | str |
 
-## Adding Destinations
+## Adding destinations
 
-Now that your Source is set up, you can connect it to Destinations.
+Once your source is set up, you can connect it to destinations.
 
-Log into your downstream tools and check to see that your events appear as expected, and that they contain all of the properties you expect. If your events and properties don’t appear, check the [Event Delivery](/docs/connections/event-delivery/) tool, and refer to the Destination docs for each tool for troubleshooting.
+Log in to your downstream tools and check to see that your events appear as expected, and that they contain all of the properties you expect. If your events and properties don’t appear, check the [Event Delivery](/docs/connections/event-delivery/) tool, and refer to the destination docs for each tool for troubleshooting.
 
 If there are any issues with how the events are arriving to Segment, [contact the UserGuiding support team](mailto:assist@userguiding.com).
 
-## Regional Data
+## Regional data
 
-If you want to use the [Regional Segment](https://segment.com/docs/guides/regional-segment/) feature to store your data in EU regional data centers. Use the radio button in the Userguiding as a Source section in Integrations Page to select the Data Residency.
+If you want to use [Regional Segment](/docs/guides/regional-segment/) to store your data in EU regional data centers, use the radio button in the Userguiding as a Source section in Integrations Page to select the Data Residency.
