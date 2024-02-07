@@ -50,6 +50,12 @@ plugins:
       url: https://cdn.filepicker.io/api/file/W6teayYkRmKgb8SMqxIn
     mark:
       url: https://cdn.filepicker.io/api/file/ztKtaLBUT7GUZKius5sa
+  # - name: Intercom
+  #   url: connections/sources/catalog/libraries/mobile/apple//destination-plugins/intercom-swift/
+  #   logo:
+  #     url: https://cdn.filepicker.io/api/file/PLYt4sbQsa4vXGtq0oxe
+  #   mark:
+  #     url: https://cdn.filepicker.io/api/file/TPPTdCreS9SO46zTF0ax
   - name: Localytics
     url: connections/sources/catalog/libraries/mobile/apple/destination-plugins/localytics-swift/
     logo:
