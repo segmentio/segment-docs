@@ -14,7 +14,7 @@ Log in to Snowflake with a user that has admin privileges to provide Segment Lin
 
 > info ""
 > Both Linked Events and Linked Profiles support Snowflake. 
-
+ 
 
 ## Required connection settings within Segment
 
