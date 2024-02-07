@@ -1,8 +1,7 @@
 ---
 # The end name should be similar to `Slack  Destination`
 title: Avo
-beta: true,
-hidden: true,
+beta: true
 ---
 
 [Avo](https://avo.app) destination automatically extracts event schemas from all "track" product events from the connected source and sends it to the Avo Inspector. [Avo Inspector](https://www.avo.app/docs/inspector/start-using-inspector) compares the received events against your Avo tracking plan and surfaces any issues and discrepencies in your event tracking.
