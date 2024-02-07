@@ -193,10 +193,32 @@ Some destinations accept properties only. As a result, custom context fields you
 
 The AJS cookies being set under segment.com are first-party cookies. They are part of Segment's own implementation as well as the destination Segment uses. These cookies are not related to your implementation of Segment, and you only see them because you've visited Segment's domain using the same browser. They are sent to the writekey connected to Segment's own workspace, and are associated with the events Segment tracks when you visit segment.com.
 
+## Will Google Chrome's third-party cookie changes impact Segment Analytics.js?
+
+No, Analytics.js isn't affected by this change. This is because Analytics.js only creates first-party cookies. Unlike third-party cookies, which are set by external services and blocked by the [new Chrome update](https://developers.google.com/privacy-sandbox/3pcd){:target="_blank"}.
+
+Regarding cookies set by [device-mode destinations](/docs/connections/destinations/#connection-modes), it's important to note that Segment's primary function is to load third-party SDKs and forward events to them. As a result, the usage and management of cookies are entirely at the discretion of each individual SDK. For instance, if you have concerns about destinations setting third-party cookies, it's best to consult directly with the destination providers for detailed information. For example, Amplitude, one of the destinations in the Segment catalog, offers [more information on this topic](https://www.docs.developers.amplitude.com/guides/cookies-consent-mgmt-guide/#frequently-asked-questions){:target="_blank"}.
+
 ## How is the referrer value set?
 
 The Analytics.js library sets the `context.page.referrer` value from the `window.document.referrer` [property](https://developer.mozilla.org/en-US/docs/Web/API/Document/referrer){:target="_blank"} set in the browser. If you notice unexpected referrer values reaching Segment, check how this value is being set on your website.
 
+## Does Segment support using strict Content Security Policy (CSP) on the page?
+
+If you're using a security policy that allows JavaScript downloads from specific locations using nonces, then you'll need to update the CSP to include all Segment domains. In addition to allowing the main `analytics.min.js` script, you should also allow the following paths in your CSP:
+- `https://cdn.segment.com/v1/projects/<WRITE_KEY>/settings`
+- `https://cdn.segment.com/analytics-next/bundles/*`
+- `https://cdn.segment.com/next-integrations/integrations/*`
+
+Your CSP may also require allowlisting approved domains, in which case you'll want to allow the following endpoints: 
+- `api.segment.io`
+- `cdn.segment.com`
+
+You'll also need to modify the Segment script with your `nonce` tag, which should match the value specified in your Content Security Policy.
+
+> info ""
+> Since Segment interacts with several integrations, support surrounding Content Security Policy issues is limited.
+
 ## Known issues:
 
-[Review and contribute to these on GitHub](https://github.com/segmentio/analytics.js/issues)
+[Review and contribute to these on GitHub](https://github.com/segmentio/analytics.js/issues).

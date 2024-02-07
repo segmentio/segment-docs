@@ -4,128 +4,148 @@ plan: unify
 beta: true
 ---
 
-> info "Linked Events is in private beta"
-> Linked Events is in private beta, and Segment is actively working on this feature. Some functionality may change before it becomes generally available. [Contact Segment](https://segment.com/help/contact/){:target="_blank"} with any feedback or questions.
+> info "Linked Profiles is in private beta"
+> Linked Profiles (Data Graph, Linked Events, and Linked Audiences) is in private beta, and Segment is actively working on this feature. Some functionality may change before it becomes generally available. 
+
 
 On this page, you'll learn how to connect your Snowflake data warehouse to Segment.
 
 Be sure to log in with a user that has read and write permissions so that Segment can write to your database. 
 
+> info ""
+> Both Linked Events and Linked Profiles support Snowflake. 
+
 
 ## Getting started 
 
-To get started with Snowflake:
+Use the following steps to set up Snowflake for Linked Profiles.
 
-1. Log in to your Snowflake account.
-2. Navigate to *Worksheets*.
+### Set up Snowflake Credentials and create internal Segment DB
 
-Segment recommends you use the `ACCOUNTADMIN` role to execute the commands below.
+Run the SQL below to provide Segment Linked Profiles with the necessary permissions and roles to access the databases, tables, and schemas. These steps involve:
+- Creating a new role and user for Segment Linked Profiles.
+- Granting read-only access to specific databases and schemas that you want to use for Linked Profiles.
+- Granting write access to an internal database that Segment requires for bookkeeping purposes.
+- [Optional] Creating a new warehouse if it does not exist yet. You can skip this step if a warehouse already exists.
+- [Optional] As a best practice, Segment recommends that restrict access to specific databases and schemas.
+- Running the script below to configure the Warehouse permissions.
 
-## Create a new warehouse
+```ts 
+-- ********** SET UP THE FOLLOWING WAREHOUSE PERMISSIONS **********
+-- Edit the following variables
+SET segment_linked_username='SEGMENT_LINKED_USER';
+SET segment_linked_password='my-safe-password';
+SET segment_linked_default_warehouse='SEGMENT_LINKED_WH';
+SET segment_linked_default_role='SEGMENT_LINKED_ROLE';
 
-> info ""
-> This step is optional, and you can use an existing Snowflake warehouse if you'd like. 
+-- Use the same DB that has Profiles Sync configured. This DB is also used for Segment's internal bookkeeping. Note: Use this DB in the connection settings on the Segment app.
+SET segment_internal_database = 'SEGMENT_INTERNAL_DB';
 
-Enter and run the code below to create a virtual warehouse. Linked Events needs to execute queries on your Snowflake account, which requires a Virtual Warehouse to handle the compute. 
+-- Use for each DB you want Linked Profiles to access
+SET segment_linked_database='MARKETING_DB';
 
-   ```sql
-   CREATE WAREHOUSE segment_entities
-    WITH WAREHOUSE_SIZE = 'XSMALL'
-      WAREHOUSE_TYPE = 'STANDARD'
-      AUTO_SUSPEND = 600 -- 5 minutes
-      AUTO_RESUME = TRUE;
-   ```
-   
-## Create a new role 
 
-Enter and run the code below to create specific roles for Linked Profiles. All Snowflake access is specified through roles, which are then assigned to the user you’ll create later.
+-- ********** [OPTIONAL] UNCOMMENT THE CODE BELOW IF YOU NEED TO CREATE A NEW WAREHOUSE **********
+-- CREATE WAREHOUSE IF NOT EXISTS identifier($segment_linked_default_warehouse)
+-- WITH WAREHOUSE_SIZE = 'XSMALL'
+--   WAREHOUSE_TYPE = 'STANDARD'
+--   AUTO_SUSPEND = 600 -- 5 minutes
+--   AUTO_RESUME = TRUE;
 
-   ```ts
-   -- create role
-   CREATE ROLE segment_entities;
 
-   -- warehouse access
-   GRANT USAGE ON WAREHOUSE segment_entities TO ROLE segment_entities;
+-- ********** RUN THE COMMANDS BELOW TO FINISH SETTING UP THE WAREHOUSE PERMISSIONS **********
 
-   -- database access
-   GRANT USAGE ON DATABASE <database-name> TO ROLE segment_entities;
-   GRANT CREATE SCHEMA ON DATABASE <database-name> TO ROLE segment_entities;
-   ```
+-- Use admin role for setting grants
+USE ROLE ACCOUNTADMIN;
 
-## Create a new user 
+-- Create a role for Segment Linked Profiles
+CREATE ROLE IF NOT EXISTS identifier($segment_linked_default_role)
+COMMENT = 'Used for Segment Linked Profiles';
 
-Enter and run the code below to create the username and password combination that will be used to execute queries. Make sure to enter your password where it says `<my_strong_password>`.
+-- Create a user for Segment Linked Profiles
+CREATE USER IF NOT EXISTS identifier($segment_linked_username)
+MUST_CHANGE_PASSWORD = FALSE
+DEFAULT_ROLE = $segment_linked_default_role
+PASSWORD=$segment_linked_password
+COMMENT='Segment Linked Profiles User';
 
-   ```sql
-   -- create user
-   CREATE USER segment_entities_user
-    MUST_CHANGE_PASSWORD = FALSE
-    DEFAULT_ROLE = segment_entities
-    PASSWORD = 'my_strong_password'; -- Do not use this password
+-- Grant permission to the role to use the warehouse
+GRANT USAGE ON WAREHOUSE identifier($segment_linked_default_warehouse) TO ROLE identifier($segment_linked_default_role);
 
-   -- role access
-   GRANT ROLE segment_entities TO USER segment_entities_user;
-   ```
+-- Grant role to the user
+GRANT ROLE identifier($segment_linked_default_role) TO USER identifier($segment_linked_username);
 
-## Grant access to tables
+-- Grant access to Segment internal DB used for bookkeeping. This is the same DB that contains the Profiles Sync schema.
+GRANT USAGE ON DATABASE identifier($segment_internal_database) TO ROLE identifier($segment_linked_default_role);
+GRANT USAGE ON ALL SCHEMAS IN DATABASE identifier($segment_internal_database) TO ROLE identifier($segment_linked_default_role);
+GRANT CREATE SCHEMA ON DATABASE  identifier($segment_internal_database) TO ROLE identifier($segment_linked_default_role);
+GRANT SELECT ON ALL TABLES IN DATABASE identifier($segment_internal_database) TO ROLE identifier($segment_linked_default_role);
+GRANT SELECT ON FUTURE TABLES IN DATABASE identifier($segment_internal_database) TO ROLE identifier($segment_linked_default_role);
+GRANT SELECT ON ALL VIEWS IN DATABASE identifier($segment_internal_database) TO ROLE identifier($segment_linked_default_role);
+GRANT SELECT ON FUTURE VIEWS IN DATABASE identifier($segment_internal_database) TO ROLE identifier($segment_linked_default_role);
+GRANT SELECT ON ALL EXTERNAL TABLES IN DATABASE identifier($segment_internal_database) TO ROLE identifier($segment_linked_default_role);
+GRANT SELECT ON FUTURE EXTERNAL TABLES IN DATABASE identifier($segment_internal_database) TO ROLE identifier($segment_linked_default_role);
+GRANT SELECT ON ALL MATERIALIZED VIEWS IN DATABASE identifier($segment_internal_database) TO ROLE identifier($segment_linked_default_role);
+GRANT SELECT ON FUTURE MATERIALIZED VIEWS IN DATABASE identifier($segment_internal_database) TO ROLE identifier($segment_linked_default_role);
 
-To use Linked Events, you'll need to grant access to `segment_entities_user` for the schemas and tables you'd like to read from to perform enrichments. 
+-- Grant read-only access to all DBs
+GRANT USAGE ON DATABASE identifier($segment_linked_database) TO ROLE identifier($segment_linked_default_role);
+GRANT USAGE ON ALL SCHEMAS IN DATABASE identifier($segment_linked_database) TO ROLE identifier($segment_linked_default_role);
+GRANT SELECT ON ALL TABLES IN DATABASE identifier($segment_linked_database) TO ROLE identifier($segment_linked_default_role);
+GRANT SELECT ON FUTURE TABLES IN DATABASE identifier($segment_linked_database) TO ROLE identifier($segment_linked_default_role);
+GRANT SELECT ON ALL VIEWS IN DATABASE identifier($segment_linked_database) TO ROLE identifier($segment_linked_default_role);
+GRANT SELECT ON FUTURE VIEWS IN DATABASE identifier($segment_linked_database) TO ROLE identifier($segment_linked_default_role);
+GRANT SELECT ON ALL EXTERNAL TABLES IN DATABASE identifier($segment_linked_database) TO ROLE identifier($segment_linked_default_role);
+GRANT SELECT ON FUTURE EXTERNAL TABLES IN DATABASE identifier($segment_linked_database) TO ROLE identifier($segment_linked_default_role);
+GRANT SELECT ON ALL MATERIALIZED VIEWS IN DATABASE identifier($segment_linked_database) TO ROLE identifier($segment_linked_default_role);
+GRANT SELECT ON FUTURE MATERIALIZED VIEWS IN DATABASE identifier($segment_linked_database) TO ROLE identifier($segment_linked_default_role);
+```
 
-These tables need to live in the same database as the one used for storing sync deltas. You can give as broad or narrow of access as you require. If you give broad access to multiple schemas, you can sort through the schemas in Segment to select the appropriate tables to create models from.
 
-> success ""
-> Visit Snowflake's docs to learn more about [schema priveleges](https://docs.snowflake.com/en/user-guide/security-access-control-privileges#schema-privileges){:target="_blank"} and [table priveleges](https://docs.snowflake.com/en/user-guide/security-access-control-privileges#table-privileges){:target="_blank"}. 
-
-### Schema access
-
-Run the following command to give access to specific schemas you want to use for enrichment.
+(Optional) [Snowflake Schema Access](https://docs.snowflake.com/en/user-guide/security-access-control-privileges#table-privileges): If you want to restrict access to specific schemas or tables, then run the following command: 
 
 ```ts
--- view specific schemas in database
-GRANT USAGE ON SCHEMA <schema-name-1> TO ROLE segment_entities;
-GRANT USAGE ON SCHEMA <schema-name-2> TO ROLE segment_entities;
+-- [Optional] Further restrict access to only specific schemas and tables 
+SET db='MY_DB';
+SET schema='MY_DB.MY_SCHEMA_NAME';
 
--- query data from all tables in a schema
-GRANT SELECT ON ALL TABLES IN SCHEMA <schema-name-1> TO ROLE segment_entities;
-GRANT SELECT ON ALL TABLES IN SCHEMA <schema-name-2> TO ROLE segment_entities;
+-- View specific schemas in database
+GRANT USAGE ON DATABASE identifier($db) TO ROLE identifier($segment_linked_default_role);
 
--- query data from future tables in a schema
-GRANT SELECT ON FUTURE TABLES IN SCHEMA <schema-name-1> TO ROLE segment_entities;
-GRANT SELECT ON FUTURE TABLES IN SCHEMA <schema-name-2> TO ROLE segment_entities;
+GRANT USAGE ON SCHEMA identifier($schema) TO ROLE identifier($segment_linked_default_role);
+
+GRANT SELECT ON ALL TABLES IN SCHEMA identifier($schema) TO ROLE identifier($segment_linked_default_role);
+
+GRANT SELECT ON FUTURE TABLES IN SCHEMA identifier($schema) TO ROLE identifier($segment_linked_default_role);
 ```
 
-### Table access
+### (If applicable) Add table permissions if Reverse ETL has ever run in your database
 
-If you'd like to restrict access to specific tables, use the following command:
+If Reverse ETL has ever run in the database you are configuring as the Segment Internal DB, a Segment-managed schema is created and a new user is added. Add the Snowflake table permissions by running the following command.
 
 ```ts
--- query data from a specific table in a schema 
-GRANT SELECT ON TABLE <schema-name>.<table_name> TO ROLE segment_entities;
+-- If you want to use an existing database that already has Segment Reverse ETL schemas, you’ll need to run some additional steps below to grant the role access to the existing schemas.
+
+SET retl_schema = concat($segment_internal_database,'.__segment_reverse_etl');
+
+GRANT USAGE ON SCHEMA identifier($retl_schema) TO ROLE identifier($segment_linked_default_role);
+
+GRANT CREATE TABLE ON SCHEMA identifier($retl_schema) TO ROLE identifier($segment_linked_default_role);
+
+GRANT SELECT,INSERT,UPDATE,DELETE ON ALL TABLES IN SCHEMA identifier($retl_schema) TO ROLE identifier($segment_linked_default_role);
 ```
 
-### RETL table permissions
+### Confirm permissions 
 
-If you've ever run Reverse ETL in your database, you'll need to add the following [table permissions](https://docs.snowflake.com/en/user-guide/security-access-control-privileges#table-privileges){:target="_blank"}:
-
-```sql
-GRANT USAGE ON SCHEMA __segment_reverse_etl TO ROLE segment_entities;
-
-GRANT CREATE TABLE ON SCHEMA __segment_reverse_etl TO ROLE segment_entities;
-
-GRANT SELECT, INSERT, UPDATE, DELETE ON ALL TABLES IN SCHEMA __segment_reverse_etl TO ROLE segment_entities;
-```
-
-### Confirm table permissions
-
-To confirm table permissions:
-1. Log in as the user you've created (`segment_entities_user`).
-2. Verify the role created has the correct permissions with the commands below.
+To verify you have set up the right permissions for a specific table, log in with the username and password you created for `SEGMENT_LINKED_USER` and run the following command to verify the role you created has the correct permissions. This command should succeed and you should be able to view the respective table.
 
 ```ts
-use role segment_entities;
-use <your_database>;
-show schemas;
-select * from <your_database>.<schema-name>.<table-name> limit 10
-```
+set segment_linked_default_role='SEGMENT_LINKED_ROLE';
+set segment_linked_database='YOUR_DB';
+set table_name = 'YOUR_DB.SCHEMA.TABLE';
 
-The output should match the permissions you've given in previous steps.
+USE ROLE identifier($segment_linked_default_role);
+USE DATABASE identifier($segment_linked_database) ;
+SHOW SCHEMAS;
+SELECT * FROM identifier($table) LIMIT 10;
+```

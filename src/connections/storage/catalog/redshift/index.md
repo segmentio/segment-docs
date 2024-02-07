@@ -148,6 +148,12 @@ You can also unload data to a s3 bucket and then load the data into another Reds
 
 Segment does not currently support SSH tunneling to Redshift. You can usually allow Segment's ETL to write to Redshift without leaving the cluster available to other connections by using IP level restrictions.
 
+Segment supports several layers of Redshift's security model:
+
+ - **Security groups**: Security groups control the incoming and outgoing traffic to a resource. You can think of this like a pinhole in a firewall that only allows traffic from Segment's IP address. Security groups are a fundamental building block of AWS security.
+- **SSL**:  This secures data in transit and allows Segment to validate that the warehouse at the other end is actually a warehouse owned by AWS. This is especially important if your Redshift warehouse is not located in the `us-west-2` region.
+- **Username and password**: This is the basic method used to authenticate database users and apply varying levels of permissions - for example, who can create tables, who can delete data, who can see which tables.
+
 ### Do you support Redshift Serverless?
 
 Segment does not currently support Serverless Redshift. While you can set up the connection in the Segment app, Segment does not have the functionality to query Redshift's SYS tables.

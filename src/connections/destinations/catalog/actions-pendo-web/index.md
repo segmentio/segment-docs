@@ -1,7 +1,6 @@
 ---
 title: Pendo Web (Actions) Destination
 id: 6501a4325a8a629197cdd691
-hidden: true
 beta: true
 hide-boilerplate: true
 hide-dossier: true

@@ -14,8 +14,6 @@ Segment's Appsflyer destination code is open source and available on GitHub. You
 
 ## Getting Started
 
-
-
   1. From the Segment web app, click **Catalog**.
   2. Search for "AppsFlyer" in the Catalog, select it, and choose which of your sources to connect the destination to.
   3. In the destination settings, enter your `AppsFlyer Dev Key`, which can be retrieved from the App Settings section of your AppsFlyer account.
@@ -153,6 +151,12 @@ All other `properties` will be sent to AppsFlyer as custom properties inside `ev
 
 > info ""
 > Be sure to calibrate/update the time window in AppsFlyer's dashboard to see your events!
+
+### Send in-app events to Appsflyer v3 Endpoint
+
+When transmitting data serverside to Appsflyer, you have the option to enhance security by enabling the transmission of in-app events to [Appsflyer's v3 endpoint](https://dev.appsflyer.com/hc/reference/s2s-events-api3-post){:target="_blank"}, which authenticates requests using a more secure [S2S token](https://support.appsflyer.com/hc/en-us/articles/360004562377-Managing-API-and-Server-to-server-S2S-tokens){:target="_blank"}.
+
+To activate this feature, simply input your S2S token in the destination settings and toggle the "Use API v3" switch to the enabled position. 
 
 ## Install Attributed
 

@@ -23,7 +23,7 @@ Analytics-Swift provides several key benefits including improvements in stabilit
 
 Analytics-Swift offers improved performance when compared to Analytics iOS. For a more detailed overview, you can reference the [blog post](https://segment.com/blog/sdk-performance-improvements/). 
 
-- Faster event processing and deliver
+- Faster event processing and delivery
 - Significantly lower CPU usage
 - Small memory & disk usage footprint
 

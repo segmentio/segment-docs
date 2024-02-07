@@ -32,54 +32,54 @@ UserGuiding sends user identifiers in the `user_id` attribute in the event paylo
 
 The table below lists events that UserGuiding sends to Segment. These events appear as tables in your warehouse, and as regular events in other Destinations. UserGuiding includes the `userId` if available.
 
-| UserGuiding Event Name                                             | Description                                                                                                                                            |
-| ------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| Guide Started           | It means that a user previews the first step of a Guide |
-| Guide Completed         | It means that the user has completed all steps of a Guide  | 
-| Hotspot Interacted         | It means that the user interacted with a Hotspot group and saw a Hotspot as content. (remember, Hotspot groups can have multiple Hotspots as contents)    | 
-| Checklist Item Trigger | It means that the user triggers a Checklist Guide        | 
-| Checklist Item Url Click        | It means that the user clicks a URL item on a Checklist      | 
-| Checklist Completed | It means that the user completed a Checklist | 
-| Resource Center Guide Trigger | It means that the user triggered a Resource Center Guide | 
-| Resource Center Checklist Guide Trigger | It means that a Guide in a Checklist put in a Resource Center as a module is triggered by a user | 
-| Resource Center Checklist Item Url Click | It means that a URL item in a Checklist put in a Resource Center as a module is clicked by a user | 
-| Resource Center External URL Click | It means that a user clicks an external URL in a Resource Center | 
-| Resource Center Article Link Click | It means that a user clicks a search article in a Resource Center | 
-| Resource Center Survey Trigger | It means that a user has triggered a survey in a Resource Center | 
-| Survey Shown | It means a survey was shown to a user | 
-| Survey Question Answer | It means a survey question was answered by a user | 
+| UserGuiding Event Name                   | Description                                                                                                                                            |
+| ---------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| Guide Started                            | It means that a user previews the first step of a Guide                                                                                                |
+| Guide Completed                          | It means that the user has completed all steps of a Guide                                                                                              |
+| Hotspot Interacted                       | It means that the user interacted with a Hotspot group and saw a Hotspot as content. (remember, Hotspot groups can have multiple Hotspots as contents) |
+| Checklist Item Trigger                   | It means that the user triggers a Checklist Guide                                                                                                      |
+| Checklist Item Url Click                 | It means that the user clicks a URL item on a Checklist                                                                                                |
+| Checklist Completed                      | It means that the user completed a Checklist                                                                                                           |
+| Resource Center Guide Trigger            | It means that the user triggered a Resource Center Guide                                                                                               |
+| Resource Center Checklist Guide Trigger  | It means that a Guide in a Checklist put in a Resource Center as a module is triggered by a user                                                       |
+| Resource Center Checklist Item Url Click | It means that a URL item in a Checklist put in a Resource Center as a module is clicked by a user                                                      |
+| Resource Center External URL Click       | It means that a user clicks an external URL in a Resource Center                                                                                       |
+| Resource Center Article Link Click       | It means that a user clicks a search article in a Resource Center                                                                                      |
+| Resource Center Survey Trigger           | It means that a user has triggered a survey in a Resource Center                                                                                       |
+| Survey Shown                             | It means a survey was shown to a user                                                                                                                  |
+| Survey Question Answer                   | It means a survey question was answered by a user                                                                                                      |
 
 
 ## Event Properties
 
 The table below list the properties included in the events listed above.
 
-| Property Name   | Description               |
-| --------------- | ------------------------- |
-| `user_id`         | User identifier          | str |
-| `guide_id`         |  ID of the guide         | int |
-| `guide_name`        | Name of the guide          | str |
-| `page_url`      | URL of the page the material was interacted at | str |
-| `hotspot_group_id`        | Group ID of the hotspot           | int |
-| `hotspot_group_name` | Group name of the hotspot | str |
-| `hotspot_id` | ID of the hotspot | int |
-| `hotspot_title` | Title of the hotspot| str |
-| `checklist_name`          | Name of the checklist | str |
-| `checklist_id`          | ID of the checklist | int |
-| `checklist_item_url`          | Item URL of the checklist | str |
-| `resource_center_name`          | Name of the resource center| str |
-| `resource_center_id`          | ID of the resource center | int |
-| `external_url`          | External URL of resource center url click event | str |
-| `article_link`          | Link to the article in resource center where click event happened | str |
-| `survey_id`          | ID of the survey | int |
-| `survey_name`          | Name of the survey | str |
-| `question_id`          | ID of the question in a survey | str |
-| `question_name`          | Name of the question | str |
-| `score`          | Score in a survey question answer | int |
-| `survey_question`          | Question text of a survey | str |
-| `emoji_score`          | Emoji score in a survey question answer | str |
-| `choices`          | Choices in a survey question | str |
-| `feedback`          | Feedback left in survey question answer | str |
+| Property Name          | Description                                                       |
+| ---------------------- | ----------------------------------------------------------------- |
+| `user_id`              | User identifier                                                   | str |
+| `guide_id`             | ID of the guide                                                   | int |
+| `guide_name`           | Name of the guide                                                 | str |
+| `page_url`             | URL of the page the material was interacted at                    | str |
+| `hotspot_group_id`     | Group ID of the hotspot                                           | int |
+| `hotspot_group_name`   | Group name of the hotspot                                         | str |
+| `hotspot_id`           | ID of the hotspot                                                 | int |
+| `hotspot_title`        | Title of the hotspot                                              | str |
+| `checklist_name`       | Name of the checklist                                             | str |
+| `checklist_id`         | ID of the checklist                                               | int |
+| `checklist_item_url`   | Item URL of the checklist                                         | str |
+| `resource_center_name` | Name of the resource center                                       | str |
+| `resource_center_id`   | ID of the resource center                                         | int |
+| `external_url`         | External URL of resource center url click event                   | str |
+| `article_link`         | Link to the article in resource center where click event happened | str |
+| `survey_id`            | ID of the survey                                                  | int |
+| `survey_name`          | Name of the survey                                                | str |
+| `question_id`          | ID of the question in a survey                                    | str |
+| `question_name`        | Name of the question                                              | str |
+| `score`                | Score in a survey question answer                                 | int |
+| `survey_question`      | Question text of a survey                                         | str |
+| `emoji_score`          | Emoji score in a survey question answer                           | str |
+| `choices`              | Choices in a survey question                                      | str |
+| `feedback`             | Feedback left in survey question answer                           | str |
 
 ## Adding Destinations
 

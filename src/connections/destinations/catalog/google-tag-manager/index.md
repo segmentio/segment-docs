@@ -17,10 +17,8 @@ id: 54521fd625e721e32a72eeb9
 3. In your Segment UI's destination settings, enter your Container ID (note: it should start with "GTM-"). You can find this in the Admin section of your [GTM dashboard](https://tagmanager.google.com/#/admin/){:target="_blank"}.
 4. GTM loads on any pages where your Segment snippet is initialized and `analytics.page` is called in client-side JavaScript. Once you've turned on GTM through Segment, you can use Segment `track` events to populate the GTM `dataLayer`, and remove the GTML snippet from your page.
 
-**Notes**
-* Segment recommends that you load GTM through Segment rather than loading Segment inside of GTM.
-* Be sure to "publish" your GTM container in GTM before trying to load it through Segment, otherwise your container URL will return a 404 error.
-
+> info ""
+> Segment recommends that you load GTM through Segment rather than loading Segment inside of GTM. When you load Segment through GTM, it limits Segment's ability to help troubleshoot.
 
 ## Page
 If you're not familiar with the Segment Specs, take a look to understand what the [Page method](/docs/connections/spec/page/) does. An example call would look like:
