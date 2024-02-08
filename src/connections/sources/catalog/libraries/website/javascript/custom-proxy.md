@@ -46,6 +46,8 @@ This is {person} from {company}. I would like to configure a proxy for the follo
 
 **Source URL**: link to the source in your Segment workspace (for example: https://app.segment.com/<your_slug>/sources/<source>/overview)
 **Source ID**: navigate to **API Keys** on the left-hand side of the source **Settings** and provide the Source ID 
+```
+
 
 Double-check the Source URL and the Source ID.
 
@@ -66,12 +68,14 @@ Follow these instructions after setting up a proxy such as [CloudFront](#custom-
 If you're a snippet user, modify the [analytics snippet](/docs/getting-started/02-simple-install/#step-1-copy-the-snippet) located inside the `<head>` of your website:
 
 To proxy CDN settings and destination requests that typically go to `https://cdn.segment.com`, replace:
+
 ```diff
 - t.src="https://cdn.segment.com/analytics.js/v1/" + key + "/analytics.min.js"
 + t.src="https://MY-CUSTOM-CDN-PROXY.com/analytics.js/v1/" + key + "/analytics.min.js"
 ```
 
 To proxy API tracking calls that typically go to `api.segment.io/v1`, replace:
+
 ```diff
 - analytics.load("<MY_WRITE_KEY>")
 + analytics.load("<MY_WRITE_KEY>", { integrations: { "Segment.io": { apiHost: "MY-CUSTOM-API-PROXY.com/v1" }}})
