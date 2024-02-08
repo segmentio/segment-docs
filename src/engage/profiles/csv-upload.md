@@ -67,7 +67,6 @@ You can use these characters in your CSV file:
 ```àáâäǎæãåāçćčċďðḍèéêëěẽēėęğġgg͟hħḥh̤ìíîïǐĩīıįķk͟hłļľl̥ṁm̐òóôöǒœøõōřṛr̥ɽßşșśšṣs̤s̱sțťþṭt̤ʈùúûüǔũūűůŵýŷÿźžżẓz̤ÀÁ
 ÄǍÆÃÅĀÇĆČĊĎÐḌÈÉÊËĚẼĒĖĘĞĠGG͟HĦḤH̤ÌÍÎÏǏĨĪIĮĶK͟HŁĻĽL̥ṀM̐ÒÓÔÖǑŒØÕŌŘṚR̥ɌSẞŚŠŞȘṢS̤S̱ȚŤÞṬT̤ƮÙÚÛÜǓŨŪŰŮŴÝŶŸŹŽŻẒZ```
 
-
 ## View Update History
 
 Use the Update History page to view CSV file uploads in your workspace over the last 30 days.
@@ -76,19 +75,6 @@ To view the Update History page:
 
 1. Navigate to **Unify > Profile explorer** or **Engage > Audiences > Profile explorer**.
 2. Click **View update history**.
-
-Select links to view CSV files and any associated [error reports](#error-reports). View the status of the file upload and the custom trait name added to user profiles in the CSV upload.
-
-### Error reports
-
-Use error reports to fix invalid rows and quickly re-upload data.
-
-From the Update History page:
-
-1. Select the link in the **Report** column to download an error report CSV. All rows not present in the error report were processed successfully.
-2. Correct data in the invalid rows.
-3. Remove any extra columns such as `row_number`, `error_message`, and `error_code`.
-3. Click **Update subscription statuses**, and select **Upload a CSV** to re-upload the file.
 
 ### Validation errors
 
