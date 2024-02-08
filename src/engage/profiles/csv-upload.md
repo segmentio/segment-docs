@@ -42,7 +42,7 @@ A few guidelines to keep in mind as you fill out your CSV:
 - Enter phone numbers in your CSV in a format that's consistent with your Segment space. For example, if existing profiles in your workspace are in E.164 format `+15555550123`, enter numbers in your CSV using the same format `+##########`.
 - The template won't include duplicate custom traits, traits with trailing, leading, or multiple consecutive spaces between characters, or [unallowed characters](#allowed-csv-file-characters).
 - Custom traits column headers are case-sensitive. For example, `first Name`, `FIRST Name`, and `First Name` would all be different traits in the template.
-- Trailing, leading or multiple consecutive spaces between characters are not allowed.
+- Trailing, leading, or multiple consecutive spaces between characters are not allowed.
 - Make sure you've added an identifier column or `anonymous_id` in your identity resolution configuration.
 
 
