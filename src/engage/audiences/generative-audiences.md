@@ -91,7 +91,8 @@ Engage uses the following error messages with Generative Audiences:
 | Something went wrong      | An unknown exception occurred.                  |
 | Something went wrong. Try again later. | The AI service is down, or the LLM returned an error. |
 | Segment had trouble creating an audience from this description. Try rewording it using these [best practices](#best-practices). | The prompt referenced an invalid or non-existing trait, audience, or event within the workspace. You may also see this when an audience description is impossible to build or misunderstood. |
-
+| Your plan only supports a compute history of `##` days. | The prompt is asking the audience to include a look back window greater than your workspace's [event look back limit](/docs/unify/product-limits/#audiences-and-computed-traits). Reword your prompt to include a look back window of less than the limit.|
+ 
 ## Known limitations
 
 ### Limited space schema
