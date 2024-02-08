@@ -1,7 +1,6 @@
 ---
 title: UserGuiding Source
 id: VShGHAfvlr
-hidden: true
 beta: true
 ---
 
