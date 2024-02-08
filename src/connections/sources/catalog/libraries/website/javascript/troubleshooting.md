@@ -203,6 +203,22 @@ Regarding cookies set by [device-mode destinations](/docs/connections/destinatio
 
 The Analytics.js library sets the `context.page.referrer` value from the `window.document.referrer` [property](https://developer.mozilla.org/en-US/docs/Web/API/Document/referrer){:target="_blank"} set in the browser. If you notice unexpected referrer values reaching Segment, check how this value is being set on your website.
 
+## Does Segment support using strict Content Security Policy (CSP) on the page?
+
+If you're using a security policy that allows JavaScript downloads from specific locations using nonces, then you'll need to update the CSP to include all Segment domains. In addition to allowing the main `analytics.min.js` script, you should also allow the following paths in your CSP:
+- `https://cdn.segment.com/v1/projects/<WRITE_KEY>/settings`
+- `https://cdn.segment.com/analytics-next/bundles/*`
+- `https://cdn.segment.com/next-integrations/integrations/*`
+
+Your CSP may also require allowlisting approved domains, in which case you'll want to allow the following endpoints: 
+- `api.segment.io`
+- `cdn.segment.com`
+
+You'll also need to modify the Segment script with your `nonce` tag, which should match the value specified in your Content Security Policy.
+
+> info ""
+> Since Segment interacts with several integrations, support surrounding Content Security Policy issues is limited.
+
 ## Known issues:
 
 [Review and contribute to these on GitHub](https://github.com/segmentio/analytics.js/issues).

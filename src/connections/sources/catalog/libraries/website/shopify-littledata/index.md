@@ -52,9 +52,6 @@ Here's an architecture diagram that shows how the Littledata app mediates data f
 7. Segment's **Analytics.js** library, Littledata **tracking script** and **webhooks** will be automatically applied to the store and the installation process will then be complete.
    ![Screenshot of adding AnalyticsJS to Shopify](images/kvjNx4M.png)
 
-## Event schema
-
-This source has a full [tracking plan and event schema](https://docs.google.com/spreadsheets/d/1aljowRhMU9_7uGXmcipbP1Y14S4cOSdXGQA2Vx7BHko/edit){:target="\_blank"} in Google Sheets, which is ready to [upload into Protocols](/docs/protocols/apis-and-extensions/#google-sheets-tracking-plan-uploader).
 
 ## Device-mode events
 

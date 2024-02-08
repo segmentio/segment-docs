@@ -13,7 +13,7 @@ versions:
 
 [Google Analytics 4](https://support.google.com/analytics/answer/10089681){:target="_blank"} is Google's new Analytics property, which you can use for both websites and applications. Google Analytics 4 has machine learning at its core to help surface insights and give you a more complete understanding of your customers across devices and platforms. 
 
-When you have Segment installed, you can use your existing tracking implementation to fulfill your data collection needs with Google Analytics 4. When you enable the Google Analytics 4 Web destination, Segment loads the [gtag.js library](https://support.google.com/analytics/answer/9310895?hl=en#zippy=%2Cin-this-article){:target="_blank"} for you. Remove the native gtag.js script from your page to avoid duplicate data.
+When you have Segment installed, you can use your existing tracking implementation to fulfill your data collection needs with Google Analytics 4. When you enable the Google Analytics 4 Web destination, Segment loads the [gtag.js library](https://support.google.com/analytics/answer/9310895?hl=en#zippy=%2Cin-this-article){:target="_blank"} for you. To avoid duplicate data, remove the native gtag.js script from your page.
 
 ## Getting started
 
@@ -33,11 +33,11 @@ After you've set up at least one event in your **Mappings** tab, you can see you
 
 Some parameters automatically populate prebuilt [dimensions and metrics](https://support.google.com/analytics/answer/9143382){:target="_blank"} in Google Analytics. For example, the parameters on the automatically collected and enhanced measurement events and the required and optional parameters you send with the recommended events both populate pre-built dimensions and metrics.
 
-### Recommended Events
+### Recommended events
 
 Google Analytics 4 requires the use of [recommended events](https://support.google.com/analytics/answer/9267735){:target="_blank"} and properties to power certain built-in reports. Segment’s Google Analytics 4 Web destination provides prebuilt mappings to automatically map your Segment spec events to the corresponding Google Analytics 4 events and properties. If your Segment events don’t follow the Segment spec exactly, you can modify the mappings. For example, Segment maps `Order Completed` events to the Google Analytics 4 `Purchase` event by default. If your company uses `Products Purchase` to indicate a purchase, you can map it in the Purchase action’s Event Trigger instead.
 
-Segment recommends using the prebuilt mappings when possible. However, the Segment spec doesn’t have an equivalent event for every Google Analytics 4 recommended event. If there are other recommended events you'd like to send, use the [Custom Event action](/docs/connections/destinations/catalog/actions-google-analytics-4-web/#custom-event). For example, to send a `spend_virtual_currency` event, create a mapping for Custom Event, set up your Event Trigger criteria, and input a literal string of `spend_virtual_currency` as the Event Name. You can use the Event Parameters object to add fields that are in the `spend_virtual_currency` event such as `value` and `virtual_currency_name`. You'll need to define custom parameteres as [custom dimensions and metrics](/docs/connections/destinations/catalog/actions-google-analytics-4-web/#custom-dimensions-and-metrics) in your GA4 workspace first. 
+Segment recommends using the prebuilt mappings when possible. However, the Segment spec doesn’t have an equivalent event for every Google Analytics 4 recommended event. If there are other recommended events you'd like to send, use the [Custom Event action](/docs/connections/destinations/catalog/actions-google-analytics-4-web/#custom-event). For example, to send a `spend_virtual_currency` event, create a mapping for Custom Event, set up your Event Trigger criteria, and input a literal string of `spend_virtual_currency` as the Event Name. You can use the Event Parameters object to add fields that are in the `spend_virtual_currency` event such as `value` and `virtual_currency_name`. Remember to define custom parameters as [custom dimensions and metrics](/docs/connections/destinations/catalog/actions-google-analytics-4-web/#custom-dimensions-and-metrics) in your GA4 workspace first.
 
 ### Custom events
 
@@ -65,7 +65,7 @@ Some of Segment's prebuilt [Available Actions](https://segment-docs.netlify.app/
 
 {% include components/actions-fields.html settings="true"%}
 
-## FAQ and Troubleshooting
+## FAQ and troubleshooting
 
 ### Debug mode
 
@@ -85,11 +85,11 @@ Google may take [24-48 hours](https://support.google.com/analytics/answer/933379
 
 ### Data is not sent to Google
 
-In order for data to be sent downstream to Google Analytics, check your mappings to ensure that:
-1. The **Set Configuration Fields** mapping is enabled in your mappings.
-2. You've added at least one other event mapping for an event you want to send to Google Analytics.
+For data to be sent downstream to Google Analytics, all of the following conditions must be met:
 
-The **Set Configuration Fields** mapping is required for data to be sent downstream because it sets configuration to Measurement ID and establishes data flow using the `config` command. If you have no enabled mappings other than **Set Configuration Fields**, the GA4 destination does not send events downstream. 
+1. The **Set Configuration Fields** mapping must be configured and enabled in your mappings. This mapping is required for data to be sent downstream because it sets configuration to Measurement ID and establishes data flow using the `config` command.
+2. The **Page Views** setting must be toggled on. When the **Page Views** setting is toggled on, a `page_view` event will be sent to Google Analytics 4 Web. If you're manually sending `page_view` events instead, see below for additional settings needed in your Analytics workspace. 
+3. Ensure that you're calling `analytics.page()` on page load. Analytics.js requires an initial Page call to send data to Google Analytics 4 Web. The Segment snippet includes this initial call by default.
 
 ### Duplicate `page_view` events in GA4
 
