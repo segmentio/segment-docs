@@ -532,7 +532,7 @@ analytics.write_key = 'YOUR_WRITE_KEY'
 
 Google App Engine may not resolve project dependencies. If this is the case add the following to your project alongside analytics-python:
 - [requests](https://github.com/kennethreitz/requests){:target="_blank"}
-- python-dateutil](https://github.com/paxan/python-dateutil){:target="_blank"}
+- [python-dateutil](https://github.com/paxan/python-dateutil){:target="_blank"}
 
 If you're having issues with threads outliving your request, check [Background threads and synchronous mode](#background-threads-and-synchronous-mode)
 

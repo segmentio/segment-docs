@@ -55,7 +55,7 @@ A blank subscription status in the CSV doesn't overwrite current **email** or **
 
 Every time you upload a file, you have the option to add a custom trait to user profiles in the CSV. Use custom traits to help you [create audiences](/docs/engage/audiences/#building-an-audience) or send messages to a specific group of users. You can also add an existing custom trait name from your Segment workspace to the list of users in the CSV file.
 
-Custom traits display in the Custom Traits tab of a user profile in the Profile explorer.
+[Custom traits](/docs/unify/traits/custom-traits/) display in the Custom Traits tab of a user profile in the Profile explorer. 
 
 ## View Update History
 

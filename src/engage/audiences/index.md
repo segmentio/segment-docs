@@ -36,9 +36,9 @@ Select `and not who` to indicate users that have not performed an event. For exa
 
 You can also specify two different types of time-windows, `within` and `in between`. The `within` property lets you specify an event that occurred in the last `x` number of days, while `in between` lets you specify events that occurred over a rolling time window in the past. A common use case is to look at all customers that were active 30 to 90 days ago, but have not completed an action in the last 30 days.
 
-### Custom Traits
+### Custom Traits 
 
-You can also build Audiences based on custom traits. These traits can be collected from your apps when a user completes a form or signs up using an [Identify](/docs/connections/spec/identify) call. You can view these traits in the Profile explorer, as well. Custom Traits are mutable and update to the latest value seen by the user's Identify events.
+You can also build Audiences based on [custom traits](/docs/unify/traits/custom-traits/). These traits can be collected from your apps when a user completes a form or signs up using an [Identify](/docs/connections/spec/identify) call. You can view these traits in the Profile explorer, as well. Custom Traits are mutable and update to the latest value seen by the user's Identify events. 
 
 > info ""
 > When an audience that previously generated Identify events is deleted, the data for the audience key is still attached to profiles that entered the audience, and becomes visible in Segment as a custom trait.
