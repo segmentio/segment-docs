@@ -31,7 +31,7 @@ This destination is maintained by StackAdapt. For any issues with the destinatio
 1. From the Segment web app, click **Catalog**, then click **Destinations**.
 2. Search for "StackAdapt" in the search bar, then click on the Destination "StackAdapt".
 3. Click **Add Destination**.
-4. Select an existing JavaScript Source to connect to TikTok Pixel.
+4. Select an existing Source to connect to the StackAdapt destination.
 5. Give the Destination a name.
 6. On the Settings screen, provide your StackAdapt Universal Pixel ID. This can be found on the Pixels page in StackAdapt as described above.
 7. Toggle on the Destination using the **Enable Destination** toggle.
