@@ -14,14 +14,20 @@ If you see no credentials listed under the Channels tab, it means you've not yet
 
 ## Destinations settings
 
-The **Destinations** tab lists the downstream tools receiving your Engage data. Selecting a Destination from the list gives you a detailed view of the Audiences, Computed Traits, and Journeys that Segment sends to the Destination.
+The **Destinations** tab lists the downstream tools receiving your Engage data. Selecting a destination from the list gives you a detailed view of the audiences, computed traits, and journeys that Segment sends to the destination.
 
-To add a Destination, select the **+ Add destination** button, or navigate to **Connections > Destinations** within your Segment workspace. To learn more about sending Engage information to Segment Destinations, view the [Using Engage Data](/docs/engage/using-engage-data/) documentation.
+To add a destination, select the **+ Add destination** button, or navigate to **Connections > Destinations** within your Segment workspace. To learn more about sending Engage information to Segment destinations, view the [Using Engage Data](/docs/engage/using-engage-data/) documentation.
 
-You can delete a Destination from the Destinations tab in the Engage settings (**Engage > Engage settings > Destinations**). 
+You can delete a destination from the Destinations tab in the Engage settings (**Engage > Engage settings > Destinations**). 
 
 ## Warehouse sources
 
 By connecting your existing warehouses to Engage, you can import customer or account data and use it to build SQL traits. The Warehouse sources tab displays the warehouses sending data to Engage.
 
 To add a new data warehouse, select the **+ Add warehouse source** button. For more information on working with your imported warehouse data in Engage, read the [Engage SQL traits](/docs/engage/audiences/sql-traits/) guide.
+
+## Engage Events source
+
+The Engage Events source lets you sync subscription states, messaging events, and marketing analytics to downstream destinations. To find your Engage Events source in your Segment workspace, navigate to **Connections > Sources** and select **Engage Events**.
+
+For more information, view the [Engage Events Source documentation](/docs/connections/sources/catalog/cloud-apps/engage-events/).

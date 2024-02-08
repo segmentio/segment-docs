@@ -8,32 +8,31 @@ Once you enable Adobe Analytics (formerly known as Omniture or Sitecatalyst) in 
 
 The following documentation provides detailed explanation of how both destination the Device-mode and Cloud-mode components work. For FAQs about Device- vs Cloud-mode tracking, unique users, identifiers, and more, see the Best Practices page!
 
-
 ## Planning for Adobe Analytics
 
-Adobe Analytics uses a slightly different approach to tracking than Segment, and it's important to understand the difference so you can effectively set up your account. Segment uses a user-action data model, which uses different types of calls to track different activities of a user on a website or app. Adobe Analytics uses page views as the basic unit of activity, and variables like custom traffic variables (also called 'props'), eVars, list variables, and hierarchy variables to add details that allow more nuanced analysis.
+Adobe Analytics uses a slightly different approach to tracking than Segment, and it's important to understand the difference so you can effectively set up your integration. Segment uses a user-action data model, which uses different types of calls to track different activities of a user on a website or app. Adobe Analytics uses page views as the basic unit of activity, and variables like custom traffic variables (also called 'props'), eVars, list variables, and hierarchy variables to add details for more nuanced analysis.
 
-For example, a `Welcome Dialog Dismissed` event in Segment (where the action is "dismissed") with properties that contain the user ID (`user123`) and the dialog name `welcome-dialog`, could be modeled in Adobe Analytics as a pageView with variables that represent the dialog name, visitorID, and the event name mapping the user action ("dismissed") to an eVar.
+For example, if one of your end users dismissed a welcome dialog in your app, Segment would generate a `Welcome Dialog Dismissed` event with properties that contain the user ID (`user123`) and the dialog name (`welcome-dialog`), while Adobe Analytics would model the same action as a pageView with variables that represent the dialog name, visitorID, and the event name, and an eVar ("dismissed").
 
-Both Segment and Adobe Analytics have recommended standard data for tracking events. Segment has [the Spec](/docs/connections/spec/), and Adobe uses predefined events. Segment automatically maps incoming event data and some product level properties to Adobe's predefined events, when the event data is in the correct Segment Ecommerce Spec format. Video calls using the format described in this document are also automatically mapped. If you're using the Mobile SDKs, mobile lifecycle events are also automatically mapped. If you will be creating Page and Track events that are outside the scope of the Ecommerce spec, you'll need to map those to your Segment destinations settings UI.
+Both Segment and Adobe Analytics have recommended standard data for tracking events. Segment has [the Spec](/docs/connections/spec/), and Adobe uses predefined events. Segment automatically maps incoming event data and some product level properties to Adobe's predefined events, when the event data is in the correct Segment Ecommerce Spec](/docs/connections/spec/ecommerce/v2/) format. Video calls using the format described in this document are also automatically mapped. If you're using the Mobile SDKs, mobile lifecycle events are also automatically mapped. If you need to create Page and Track events that are outside the scope of the Ecommerce Spec, you need to map those in your Segment destinations settings UI.
 
-We strongly recommend that you create a tracking plan for both your Segment and Adobe Analytics events before you send any events or properties to Adobe. This will help you map your Segment events to Adobe `events`, and Segment properties to Adobe variables. If you decide to set up Adobe Analytics for mobile, you'll have to do this mapping in both the Segment settings, and the Adobe Mobile Services dashboard - so it's good to keep your options open!
+Segment strongly recommends that you create a Tracking Plan for both your Segment and Adobe Analytics events before you send any events or properties to Adobe. This helps you map your Segment events to Adobe `events` and Segment properties to Adobe variables. If you decide to set up Adobe Analytics for mobile, you must set up this mapping in both the Segment settings and the Adobe Mobile Services dashboard, so it's good to stay consistent.
 
 ## Setting Up the Adobe Analytics SDK
 
-Before you start sending data from your Swift application to Adobe Analytics, you must first finish the following set up steps:
+Before you start sending data from your Kotlin application to Adobe Analytics, complete the following setup steps:
 
-- First, enable the Segment-Adobe Analytics destination from in your Segment workspace.
-- From your Adobe Mobile Services dashboard, check and customize the settings on the "Manage App Settings" tab.
-- Download these settings as the `ADBMobileConfig.json` file by clicking the **Config JSON** link at the bottom of the same tab. 
-- Finally, follow the instructions below for each mobile environment to bundle Segment's Adobe Analytics SDK in your project.
+1. Enable the Segment-Adobe Analytics destination in your Segment workspace.
+2. From your Adobe Mobile Services dashboard, check and customize the settings on the "Manage App Settings" tab.
+3. Download these settings as the `ADBMobileConfig.json` file by clicking the **Config JSON** link at the bottom of the same tab. Follow the instructions in Adobe's [Core implementation and lifestyle](https://github.com/Adobe-Marketing-Cloud/mobile-services/blob/master/docs/android/getting-started/dev-qs.md){:target="_blank”} documentation. 
+4. Follow the instructions below for each mobile environment to add the Adobe Analytics dependency to your project.
 
 > success ""
 > **Tip**: Mobile implementations use the `ADBMobileConfig.json` file to store the settings that you would otherwise enter in the Adobe Analytics destination settings in the Segment app. You can change these settings from the Manage App Settings tab in your Adobe Mobile Services dashboard, and can download the file from that same tab. This file includes the Report Suite ID, Timestamp Option, Tracking Server Secure URL, Tracking Server URL, and Use Secure URL for Server-side settings.
 
 
 ## Adding the dependency
-To install the Segment-Adobe-Analytics integration, simply add this line to your gradle file:
+To install the Segment-Adobe Analytics integration, add this line to your gradle file:
 
 ```
 implementation 'com.segment.analytics.kotlin.destinations:adobe-analytics:<latest_version>'
@@ -48,7 +47,7 @@ implementation("com.segment.analytics.kotlin.destinations:adobe-analytics:<lates
 
 ## Using the Plugin in your App
 
-Open the file where you setup and configure the Analytics-Kotlin library.  Add this plugin to the list of imports.
+Open the file where you set up and configured the Analytics-Kotlin library.  Add this plugin to the list of imports.
 
 ```
 import com.segment.analytics.kotlin.destinations.adobeanalytics.AdobeAnalyticsDestination
@@ -64,12 +63,12 @@ Just under your Analytics-Kotlin library setup, call `analytics.add(plugin = ...
     analytics.add(plugin = AdobeAnalyticsDestination(adobeAppID = "<WRITE YOUR ENVIRONMENT-FILE-ID>"))
 ```
 
-Your events will now begin to flow to Adobe-Analytics in device mode.
+Your events will now begin to flow to Adobe Analytics in device-mode.
 
 
-## Sending Data to Adobe analytics
+## Sending data to Adobe Analytics
 
-Segment strongly recommends that you create a tracking plan for both your Segment and Adobe Analytics events _before_ you send any events or properties to Adobe. This helps you map your Segment events to Adobe `events`, and Segment properties to Adobe `eVars` or `props`, since you'll have to do this in both the Segment settings UI and your Adobe Mobile Services dashboard.
+Segment strongly recommends that you create a tracking plan for both your Segment and Adobe Analytics events _before_ you send any events or properties to Adobe. This helps you map your Segment events to Adobe `events` and Segment properties to Adobe `eVars` or `props`, since you'll have to do this in both the Segment settings UI and your Adobe Mobile Services dashboard.
 
 ## Sending Events
 
@@ -82,70 +81,34 @@ Here's an example of how you might map Segment events to Adobe Analytics events 
 
 <!--todo: rewrite this so that it doesn't rely on the screenshots to explain how to map events in Segment-->
 
-![A screenshot of the Adobe Analytics settings page in Segment, with the Mappings section selected.](images/eventsV2.png)
+![A screenshot of the Adobe Analytics settings page in Segment, with the Mappings section selected.](../images/eventsV2.png)
 
 Here's an example of how you would implement the same mapping in Adobe's Mobile Services Dashboard:
 
-![A screenshot of the Custom Metrics tab in Adobe's Mobile Services Dashboard, with one custom metric, Clicked a Button, defined.](images/map-event-adobe.png)
+![A screenshot of the Custom Metrics tab in Adobe's Mobile Services Dashboard, with one custom metric, Clicked a Button, defined.](../images/map-event-adobe.png)
 
 ## Sending Custom Properties
 
 You can use the `Context Data Variables` settings to map Segment `properties` to any context data variable defined in your Adobe Analytics Mobile Services dashboard. This includes both Adobe `props` and `eVars`. You can see a list of the Adobe variable types in your Adobe Mobile Services dashboard.
 
-![A screenshot of the Adobe Analytics settings page in Segment, with the Mappings section selected.](images/map-property-segment.png)
+![A screenshot of the Adobe Analytics settings page in Segment, with the Mappings section selected.](../images/map-property-segment.png)
 
 Here's an example of how you would implement the same mapping in Adobe's Mobile Services Dashboard:
 
-![A screenshot of the Custom Variables tab in Adobe's Mobile Services Dashboard, with one custom variable, Color, defined.](images/map-property-adobe.png)
+![A screenshot of the Custom Variables tab in Adobe's Mobile Services Dashboard, with one custom variable, Color, defined.](../images/map-property-adobe.png)
 
 
-<table>
-  <tr>
-    <td>**Segment Payload Field**</td>
-    <td>**iOS Mapping Notation**</td>
-    <td>**Android Mapping Notation**</td>
-  </tr>
-  <tr>
-    <td>`anonymousId`</td>
-    <td>`anonymousId`</td>
-    <td>`.anonymousId`</td>
-  </tr>
-  <tr>
-    <td>`messageId`</td>
-    <td>`messageId`</td>
-    <td>`.messageId`</td>
-  </tr>
-  <tr>
-    <td>`event`<br>`.track()` calls only</td>
-    <td>`event`</td>
-    <td>`.event`</td>
-  </tr>
-  <tr>
-    <td>`name`<br>`screen()` calls only</td>
-    <td>`name`</td>
-    <td>`.name`</td>
-  </tr>
-  <tr>
-    <td>`context.traits.key`</td>
-    <td>`traits.key`</td>
-    <td>`.context.traits.key`</td>
-  </tr>
-  <tr>
-    <td>`context.key`</td>
-    <td>`key`</td>
-    <td>`.context.key`</td>
-  </tr>
-  <tr>
-    <td>`context.arrayKey.key`<br>ie. `context.device.id`</td>
-    <td>`arrayKey.key`<br>ie. `device.id`</td>
-    <td>`.context.arrayKey.key`</td>
-  </tr>
-  <tr>
-    <td>`properties.key`</td>
-    <td>`key`</td>
-    <td>`key`</td>
-  </tr>
-</table>
+| Segment Payload Field                                       | iOS Mapping Notation                                  | Android Mapping Notation | 
+| ----------------------------------------------------------- | ----------------------------------------------------- | ------------------------ |
+| `anonymousId`                                               | `anonymousId`                                         | `.anonymousId`           |
+| `messageId`                                                 | `messageId`                                           | `.messageId`             |
+| `event`<br> Track calls only                                | `event`                                               | `.event`                 |
+| `name`<br> Screen calls only                                | `name`                                                | `.name`                  |
+| `context.traits.key`                                        | `traits.key`                                          | `.context.traits.key`    |
+| `context.key`                                               | `key`                                                 |  `.context.key`          |
+| `context.arrayKey.key`<br> for example: `context.device.id` | `arrayKey.key`<br> for example: `device.id`           | `.context.arrayKey.key`  |
+| `properties.key`                                            | `key`                                                 | `.key`                   |
+
 
 ## Adobe Lifecycle events
 
@@ -155,67 +118,41 @@ Segment implements Adobe Lifecycle Events automatically - you don't have to enab
 
 When you make an Identify call, Segment sets the Adobe `visitorId` to the value of the user's Segment `userId`. The snippets below show what Segment does with this information.
 
-{% codeexample %}
-{% codeexampletab Identify on Android %}
 
 ```java
 Config.setUserIdentifier("123");
 ```
-{% endcodeexampletab %}
-{% endcodeexample %}
 
 ## Screen
 
-When you call `screen`, Segment sends an Adobe `trackState` event, and passes the screen name and any properties you mapped to Adobe, as context data values.
+When you call Screen, Segment sends an Adobe `trackState` event, and passes the screen name and any properties you mapped to Adobe as context data values.
 
-The snippets below show what Segment does with this information.
+For example: 
 
-{% codeexample %}
-{% codeexampletab Screen on Android %}
 ```java
 Analytics.trackState("Home Screen", <properties mapped in contextData>);
 ```
-{% endcodeexampletab %}
-{% endcodeexample %}
-
 
 ## Track
 
-When you call `track`, Segment sends an Adobe `trackAction` event, and passes your event name and any properties you mapped to Adobe, as context data values.
-The snippets below show what Segment does with this information.
+When you call Track, Segment sends an Adobe `trackAction` event, and passes your event name and any properties you mapped to Adobe as context data values.
 
-{% codeexample %}
-{% codeexampletab Track on Android %}
+Fore example: 
 
 ```java
 Analytics.trackEvent("Clicked A Button", <properties mapped in contextData>);
 ``````
-{% endcodeexampletab %}
-{% endcodeexample %}
-
 
 ## Reset
 
-Calling `reset` sets the user's `visitorId` to  `null`. `null` is Adobe's default `visitorId` value until you explicitly set it (by calling `identify`). The snippets below show what Segment does in the background.
-
-{% codeexample %}
-{% codeexampletab Reset on Android %}
+For exmple: 
 ```java
 Config.setUserIdentifier(null);
 ```
-{% endcodeexampletab %}
-{% endcodeexample %}
-
-
 
 ## Flush
 
-Calling `flush` immediately sends all locally queued events to Adobe. 
-
-{% codeexample %}
-{% codeexampletab Flush on Android %}
 ```java
 Analytics.sendQueuedHits();
 ```
-{% endcodeexampletab %}
-{% endcodeexample %}
+

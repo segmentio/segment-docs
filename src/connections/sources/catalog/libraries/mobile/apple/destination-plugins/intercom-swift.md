@@ -1,18 +1,18 @@
 ---
-title: Analytics Swift Intercom Plugin
+title: Intercom Destination
 id: 54521fd725e721e32a72eec6
 ---
-[Intercom](https://www.intercom.com/){:target="_blank"} makes customer messaging apps for sales, marketing, and support, connected on one platform. The Intercom Destination Plugin is open-source.You can browse the Swift code for [iOS](https://github.com/segment-integrations/analytics-swift-intercom){:target="_blank"} on GitHub.
+[Intercom](https://www.intercom.com/){:target="_blank"} makes customer messaging apps for sales, marketing, and support, connected on one platform. The Intercom Destination Plugin is open-source. You can browse the Swift code for [iOS](https://github.com/segment-integrations/analytics-swift-intercom){:target="_blank"} on GitHub.
 
 ## Getting Started
 
 1.  From the Segment Destinations page click **Add Destination**.
 2.  Search for "Intercom" and select it in the results that appear.
-3.  Choose which Source to connect Intercom to.
+3.  Select a source to connect to your Intercom destination.
 4.  Authorize your Intercom account in Segment and select the Intercom Account to sync with Segment.
 
     You can choose which account to sync from the drop down menu in the top right. If you are using [server-side sources](/docs/connections/sources#server), Segment starts passing data through once you activate the Destination. For other libraries  continue reading below.
-5. [Find your "App ID" in the Intercom UI](https://docs.intercom.com/faqs-and-troubleshooting/getting-set-up/where-can-i-find-my-app-id){:target="_blank"} or by navigating to the Gear Menu and clicking on "App Settings" followed by "API Keys". It should look something like `9iefb489`.
+5. [Find your "App ID" in the Intercom UI](https://docs.intercom.com/faqs-and-troubleshooting/getting-set-up/where-can-i-find-my-app-id){:target="_blank"} or by navigating to the Gear Menu and selecting App Settings > API Keys. It should look something like `9iefb489`.
 
 Your changes appear in the Segment CDN in about 45 minutes, and then Analytics.js starts asynchronously loading Intercom's `library.js` onto your page.
 
@@ -22,16 +22,18 @@ This means you should remove Intercom's snippet from your page.
 
 ***Note:** the Intercom library itself will be installed as an additional dependency.*
 
-### via Xcode
+### Using Xcode
 In the Xcode `File` menu, click `Add Packages`.  You'll see a dialog where you can search for Swift packages.  In the search field, enter the URL to this repo.
 
+```
 https://github.com/segment-integrations/analytics-swift-intercom
+```
 
-You'll then have the option to pin to a version, or specific branch, as well as which project in your workspace to add it to.  Once you've made your selections, click the `Add Package` button.  
+You then have the option to pin to a version or specific branch and select which project in your workspace to add the package to.  Once you've made your selections, click the **Add Package** button.
 
-### via Package.swift
+### Using Package.swift
 
-Open your Package.swift file and add the following do your the `dependencies` section:
+Open your Package.swift file and add the following to the `dependencies` section:
 
 ```
 .package(
@@ -41,12 +43,12 @@ Open your Package.swift file and add the following do your the `dependencies` se
         ),
 ```
 
-*Note the Intercom library itself will be installed as an additional dependency.*
+**Note:** the Intercom library itself will be installed as an additional dependency.*
 
 
-## Using the Plugin in your App
+## Using the plugin in your app
 
-Open the file where you setup and configure the Analytics-Swift library.  Add this plugin to the list of imports.
+Open the file where you set up and configured the Analytics-Swift library.  Add this plugin to the list of imports.
 
 ```
 import Segment
@@ -62,11 +64,11 @@ let analytics = Analytics(configuration: Configuration(writeKey: "<YOUR WRITE KE
 analytics.add(plugin: IntercomDestination())
 ```
 
-Your events will now begin to flow to Intercom in device mode.
+Your events will now start to flow to Intercom in device0mode.
 
 ## Identify
 
-If you're not familiar with the Segment Specs, take a look to understand what the [Identify method](/docs/connections/spec/identify/) does. An example call would look like:
+If you're not familiar with the Segment Spec, take a look to understand what the [Identify method](/docs/connections/spec/identify/) does. An example call would look like:
 
 ```swift
 struct MyTraits: Codable {
@@ -86,20 +88,16 @@ analytics.identify(userId: "a user's id", MyTraits(
   createdAt: "Mon Mar 26 2018 17:44:51 GMT+0000 (UTC)"
 ))
 ```
-
-When you call Identify, Segment creates or updates the user in Intercom using their [Users API](https://developers.intercom.com/reference#users){:target="_blank"}. Segment does not currently support creation of leads.
+When you call Identify, Segment creates or updates the user in Intercom using their [Contacts API](https://developers.intercom.com/docs/references/rest-api/api.intercom.io/Contacts/contact/){:target="_blank"}. Segment does not currently support creating [leads](https://developers.intercom.com/docs/references/rest-api/api.intercom.io/Contacts/MergeContact)
 
 > info ""
-> Intercom associates Track events with known users. An Identify call with a `userId` is required before Track events are associated properly. Segment's bundled mobile SDKs also require that `identify` be called prior to `track`, but accepts setting an unknown user in Intercom using the `anonymousId`.
+> Intercom associates Track events with known users. An Identify call with a `userId` is required before Track events are associated properly. Segment's bundled mobile SDKs also require that Identify be called prior to Track, but accepts setting an unknown user in Intercom using the `anonymousId`.
 
-Keep reading for more information about the Identify call depending on the source type you send it from.
-
-- Passing `traits.company` creates a new Intercom Company if the `company_id` does not match a known company. See the [Intercom contact model documentation](https://developers.intercom.com/intercom-api-reference/reference/the-contact-model){:target="_blank"} for more details.
-- Trait values must be no longer than 255 characters
+- Passing `traits.company` creates a new Intercom Company if the `company_id` does not match an existing `company_id`. See the [Intercom contact model documentation](https://developers.intercom.com/intercom-api-reference/reference/the-contact-model){:target="_blank"} for more details.
 
 Intercom supports both logged-in or logged-out users. You must register your users with Intercom before you can talk to them or see what they do in your app. This means that Identify must be called before Track.
 
-Intercom allows users to choose to track only known or only unknown users, as well as both. Segment supports the ability to track both by checking for logged in users (determined by the `userId`) and falling back to setting the user as "Unidentified" when this is not present.
+Intercom allows you to track only known or only unknown users, or all users regardless of identification status. Segment supports the ability to track all users regardless of identification status by checking for logged in users (determined by the `userId`) and falling back to setting the user as "Unidentified" when this is not present.
 
 Intercom knows when your app is backgrounded and comes alive again, so you won't need to re-register your users.
 
@@ -118,7 +116,7 @@ Segment maps the following Intercom standard attributes on Identify.
 | remaining `traits`                        | `customAttributes`       | Custom attributes for this user.     |
 
 > info ""
-> Intercom supports values of type NSString, NSNumber or NSNull on iOS.
+> Intercom supports NSString, NSNumber or NSNull type values on iOS.
 
 #### Collect Context
 
@@ -128,7 +126,7 @@ The fields collected from the [context object](/docs/connections/spec/common/) a
 
 ## Track
 
-If you're not familiar with the Segment Specs, take a look to understand what the [Track method](/docs/connections/spec/track/) does. An example call would look like:
+If you're not familiar with the Segment Spec, take a look to understand what the [Track method](/docs/connections/spec/track/) does. An example call would look like:
 
 ```swift
 struct OrderCompletedProperties: Codable {
@@ -150,11 +148,11 @@ analytics.track(name: "Product Purchased", properties: OrderCompletedProperties(
 > info ""
 > Because Intercom only associates Track events with known users, an Identify call with a `userId` is required before Track events are associated properly.
 
-When you make a Track call from any of the server-side libraries or mobile sources in `cloud-mode` (for example, without the beta Segment mobile Intercom SDK installed), you must include either the `userId` or `email` of an existing user in Intercom.
+When you make a Track call from any of the server-side libraries or mobile sources in cloud-mode (for example, without the beta Segment mobile Intercom SDK installed), you must include either the `userId` or `email` of a user already recorded in Intercom.
 
 
-### Revenue and currency
-If you send `properties.revenue` and `properties.currency`, Segment formats that according to [Intercom's Monetary Amount](https://developers.intercom.com/intercom-api-reference/reference/submit-a-data-event#metadata-object){:target="_blank"} and send it as:
+### Revenue and currency properties
+If you send `properties.revenue` and `properties.currency` to Intercom, Segment formats those properties according to [Intercom's Monetary Amount](https://developers.intercom.com/intercom-api-reference/reference/submit-a-data-event#metadata-object){:target="_blank"} and sends them to Segment as:
 
 ```js
 price: {
@@ -163,20 +161,22 @@ price: {
 }
 ```
 
-The bundled mobile integrations also check `properties.total` if `properties.revenue` is not present, and assign the total value as the amount value.
+If `properties.revenue` is not present, the bundled mobile integrations check `properties.total` and assign the total value as the `properties.revenue` or amount value.
 
 ### Limited Properties
-Intercom can only store [five event properties](http://docs.intercom.io/Intercom-for-user-analysis/Tracking-User-Events-in-Intercom#metadata-support){:target="_blank"} per event. That means if you send an event to Segment with more than five properties, Intercom only shows the first five properties.
+Intercom can only store [5 event properties](http://docs.intercom.io/Intercom-for-user-analysis/Tracking-User-Events-in-Intercom#metadata-support){:target="_blank"} per event. If you send an event to Segment with more than 5 properties, Intercom only shows the first 5 properties.
 
 ### Limited Events
 
 Intercom only allows a total of 120 unique _active_ event names. If you're sending Segment more than 120 unique event names, Intercom only accepts the first 120 events that their servers see, and the rest throw an error.
 
-In Intercom, an "Active" event is an event that hasn't been archived. If you archive an event, it makes it inactive and removes it from your 120 active events. If you need to bring your account back under the 120 event limit, archive some events from in the Intercom UI by navigating to **Settings > (workspace name) data > Events**, then click on the event to archive.
+In Intercom, an "Active" event is an event that hasn't been archived. Intercom only allows a total of 120 unique _active_ event names. If you're sending Segment more than 120 unique event names, Intercom only accepts the first 120 events that their servers encounter. Any additional unique event names will result in an error. 
+
+If you need to bring your account back under the 120 event limit, archive some events from in the Intercom UI by navigating to **Settings > (workspace name) data > Events**, then click on the event to archive. 
 
 ## Group
 
-If you're not familiar with the Segment Specs, take a look to understand what the [Group method](/docs/connections/spec/group/) does. An example call would look like:
+If you're not familiar with the Segment Spec, take a look to understand what the [Group method](/docs/connections/spec/group/) does. An example call would look like:
 
 ```swift
 struct MyTraits: Codable {
@@ -193,12 +193,12 @@ analytics.group(groupId: "group123", traits: MyTraits(
         plan: "premium"))
 ```
 
-Segment supports Intercom companies in all sources. Users can be put into multiple groups, which associate them to multiple companies in Intercom.
+Segment supports Intercom `company` values sent from all source types. Users can be put into multiple groups, which associate them to multiple companies in Intercom.
 
 When you call Group from any of any server-side libraries or mobile sources in cloud-mode (without Segment's mobile Intercom SDK installed), you must include either the `userId` or `email` of an existing user in Intercom.
 
 > info ""
-> In order for the Company Sessions Count to update within Intercom, the company must first be recorded in an `identify` call.
+> In order for the Company Sessions Count to update within Intercom, the company must first be recorded in an Identify call.
 
 
 | Segment Parameter      | Intercom Parameter            | Description                                   |
@@ -213,12 +213,10 @@ When you call Group from any of any server-side libraries or mobile sources in c
 
 
 > info ""
-> Intercom supports values of type `NSString`, `NSNumber` or `NSNull` on iOS.
+> Intercom supports NSString, NSNumber or NSNull type values on iOS.
 
 ## Reset
-When `reset` is called The bundled mobile SDK `reset` method un-registers a user in Intercom. When users want to log out of your app and you call Segment's `reset` method, Segment calls:
-
-On iOS:
+The bundled mobile SDK `reset` method un-registers a user in Intercom. When users want to log out of your app and you call Segment's `reset` method, Segment calls:
 
 ```swift
   Intercom.logout()
@@ -228,6 +226,6 @@ On iOS:
 
 ### Arrays and Objects
 
-Intercom doesn't support custom arrays or objects. This means that if you want to send a certain user `trait` or event `property` to Intercom, you must send them at the top level.
+Intercom doesn't support custom arrays or objects. If you want to send a certain user `trait` or event `property` to Intercom, you must send them at the top level instead of in an array or object.
 
-This limitation does not apply, however, for mapping `company` objects on [Identify calls](/docs/connections/spec/identify/). Segment continues to handle that in the same way as before. This is only applicable for any custom traits or properties.
+This limitation doThis limitation does not apply if you are mapping custom traits or properties to `company` objects on [Identify calls](/docs/connections/spec/identify/). es not apply, however, for mapping `company` objects on [Identify calls](/docs/connections/spec/identify/). Segment continues to handle that in the same way as before. This is only applicable for any custom traits or properties.

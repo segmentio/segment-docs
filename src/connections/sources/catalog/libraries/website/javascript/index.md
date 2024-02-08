@@ -14,6 +14,9 @@ Analytics.js enables you to send your data to hundreds of [destination tools](/d
 
 Segment's Analytics.js library is fully open-source and can be viewed on [GitHub](https://github.com/segmentio/analytics-next/){:target="_blank"}.
 
+## Getting started
+
+Use the [Analytics.js QuickStart Guide](/docs/connections/sources/catalog/libraries/website/javascript/quickstart/) to learn how to add Analytics.js to your site. Once you've installed the library, read on for the detailed API reference.
 
 ## Benefits of Analytics.js
 
@@ -26,7 +29,6 @@ Analytics.js reduces page load time and improves site performance. Its package s
 > info ""
 > Many factors impact page load time, including network conditions, hosting locations, and page weight. Page weight for each customer integration varies based on the number of device-mode destinations that are enabled for each source. The more device-mode destinations that are enabled, the more data gets added to the library, which will impact the weight of the library.
 
-
 ### Developer experience
 
 Analytics.js improves developer experience by introducing new ways for developers to augment events throughout the event timeline. For example, developers can augment events either before or after an event occurs, or while the event is in-flight.
@@ -36,10 +38,6 @@ For example, you can use Analytics.js to build features that:
 - Ensure you have user consent to track before an event fires
 - Enrich events with customer or page context while in-flight with middleware
 - Check an event for errors after the event is sent to Segment
-
-## Getting started
-
-Use the [Analytics.js QuickStart Guide](/docs/connections/sources/catalog/libraries/website/javascript/quickstart/) to learn how to add Analytics.js to your site. Once you've installed the library, read on for the detailed API reference.
 
 ## Basic tracking methods
 
@@ -829,6 +827,9 @@ To track activity on your subdomains, include the Segment Analytics.js snippet o
 
 Because Segment tracks across subdomains, you can either use the same Segment source, or use separate sources for each subdomain. What you decide depends on your team's goals for tracking each subdomain.
 
+> info ""
+> Segment doesn't offer tracking across top-level domains out of the box. If you want to track across top-level domains, you can utilize Segment's [Querystring API](/docs/connections/sources/catalog/libraries/website/javascript/querystring/){:target="_blank"} to pass the anonymousId from Website A to Website B in the query string. When a user moves from Website A to Website B with the anonymousId in the query string, Analytics.js reads that value and sets the anonymousId to it, rather than generating a new one.  
+
 ## UTM Tracking
 
 UTM parameters are only used when linking to your site from outside your domain. When a visitor arrives using a link containing UTM parameters, Segment's analytics.js library will parse the URL query string and add the information to the event payload. For more information about UTM tracking, see the [Tracking Customers Across Channels and Devices](/docs/guides/how-to-guides/cross-channel-tracking/) documentation.
@@ -920,6 +921,17 @@ To minimize client-side data loss, Segment provides a few workarounds. However, 
 * Consider implementing the [Segment Edge SDK](https://segment.com/blog/twilio-segment-edge-sdk/){:target="_blank”}. The Segment Edge SDK leverages Cloudflare Workers to facilitate first-party data collection and real-time user profiling for app personalization. It integrates Segment's library into web apps, manages user identity via HttpOnly cookies, and employs an internal router for efficient data processing and user experience customization. This innovative approach simplifies tracking and personalization for Segment customers. More information is available in the [Edge SDK README](https://github.com/segmentio/analytics-edge/blob/main/packages/edge-sdk/README.md){:target="_blank”}.
 
 * Consider using one of Segment’s [server-side libraries](/docs/connections/sources/#server). Using a server-side library eliminates concerns about tracking blockers and privacy browsers that can prevent Segment from loading. This option may require additional code to track actions like a Page call, as you now need to manually pass contextual information that would have been automatically collected by Analytics.js, like `url`, `path`, and `referrer`. Note that some destinations are device-mode only.
+
+## Installing the library under a custom global namespace
+
+When you load Analytics.js through snippet code, by default, the SDK installs on `window.analytics` global variable. If this causes a conflict with another library on your page, you can change the global variable used by Analytics.js if you use snippet version 5.2.1 or later.
+
+Change the global variable in the beginning of your snippet code as shown below. In this case, Analytics.js uses `window.custom_key` to load instead of `window.analytics`.
+
+```diff
+  - !function(){var i="analytics", ...
+  + !function(){var i="custom_key", ...
+```
 
 ## Add destinations from npm
 
