@@ -209,3 +209,5 @@ destinations:
     override: "actions-fullstory-cloud"
   - original: "klayvio-actions"
     override: "actions-klayvio"
+  - original: "app-fit"
+    override: "actions-app-fit"
