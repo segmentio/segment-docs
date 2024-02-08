@@ -14,18 +14,13 @@ You can also [set subscription states](#set-user-subscriptions) for each email a
 > info ""
 > Using the CSV Uploader to upload user profiles to Engage will **not** increase your MTUs count. [Learn more](/docs/guides/usage-and-billing/mtus-and-throughput/#mtus-and-engage) about MTUs and Engage.
 
-<!-- ## Update Subscriptions with a CSV
-## Use Profiles and Tratis with a CSV
-
-
---> 
-
 ## Upload a CSV file
 
-Use the **Upload CSV** page to upload a CSV file in your Segment space:
-1. Navigate to **Unify > Profile explorer** or **Engage > Audiences > Profile explorer**.
-2. Click **Manage subscription statuses**, then select **Update subscription statuses**.
-3. Select **Upload a CSV**, then click **Configure**.
+Follow these steps to add subscribers with a CSV file upload
+
+1. Navigate to **Engage > Engage settings > Subscriptions**. 
+2. Click **Add global subscribers**.
+3. On the **Update subscription statuses** page, click **Upload a CSV**.
 
 ### 1. Download your CSV template
 
@@ -129,7 +124,7 @@ Please note the following limits as you upload CSV files to Twilio Engage:
 - CSV files can't contain extraneous column headers.
 - Upload CSV files with up to 1 million rows (plus one header row).
 - You can only upload one file at a time.
-- The CSV file size can't exceed 15 MB.
+- The CSV file size can't exceed 100 MB.
 - If you upload the same email or phone number with different subscription states in a single CSV file, Engage doesn't guarantee the subscription status result.
 
 ## Message consent
