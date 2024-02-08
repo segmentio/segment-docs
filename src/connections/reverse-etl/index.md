@@ -142,6 +142,15 @@ To check the status of your extractions:
     * The load results - how many successful records were synced as well as how many records were updated, deleted, or are new.
 5. If your sync failed, click the failed reason to get more details on the error and view sample payloads to help troubleshoot the issue.
 
+#### Email alerts
+You can opt in to receive email alerts regarding any notifications for Reverse ETL. 
+
+To subscribe to email alerts: 
+1. Navigate to **Settings > User Preferences**. 
+2. Select **Reverse ETL** in the **Activity Notifications** section.
+3. Click the toggle for **Reverse ETL Sync Failed** to receive notifications when your Reverse ETL sync fails. 
+
+
 #### Replays
 You can choose to replay syncs. To replay a specific sync, contact [friends@segment.com](mailto:friends@segment.com). Keep in mind that triggering a replay resyncs all records for a given sync.
 
