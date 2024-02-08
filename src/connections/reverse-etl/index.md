@@ -143,7 +143,7 @@ To check the status of your extractions:
 5. If your sync failed, click the failed reason to get more details on the error and view sample payloads to help troubleshoot the issue.
 
 #### Email alerts
-You can opt in to receive email alerts regarding any notifications for Reverse ETL. 
+You can opt in to receive email alerts regarding notifications for Reverse ETL. 
 
 To subscribe to email alerts: 
 1. Navigate to **Settings > User Preferences**. 
