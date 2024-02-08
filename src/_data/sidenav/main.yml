@@ -381,11 +381,13 @@ sections:
       title: Subscription Groups
     - path: /engage/user-subscriptions/subscription-sql
       title: Subscriptions with SQL Traits
+    - path: /engage/user-subscriptions/csv-upload
+      title: Update Subscriptions with a CSV
   - section_title: Profiles
     description: "See how to create audiences based on data."
     section:
     - path: '/engage/profiles/csv-upload'
-      title: CSV Uploader
+      title: Use Profiles and Traits with a CSV
   - section_title: Audiences
     description: "See how to create audiences based on data."
     section:
