@@ -1,8 +1,8 @@
 ---
-title: Update Audiences with a CSV
+title: Update Subscriptions with a CSV
 plan: engage-premier
 ---
-Use the CSV Uploader to add or update user profiles and set subscription states.
+Use the CSV Uploader to add or update user subscription states.
 
 When you upload a CSV file, Engage adds new profiles and updates existing user profiles. Each CSV row corresponds to a user profile and columns to an identifier in your [identity resolution configuration](/docs/unify/identity-resolution/identity-resolution-settings/).
 
@@ -14,6 +14,11 @@ You can also [set subscription states](#set-user-subscriptions) for each email a
 > info ""
 > Using the CSV Uploader to upload user profiles to Engage will **not** increase your MTUs count. [Learn more](/docs/guides/usage-and-billing/mtus-and-throughput/#mtus-and-engage) about MTUs and Engage.
 
+<!-- ## Update Subscriptions with a CSV
+## Use Profiles and Tratis with a CSV
+
+
+--> 
 
 ## Upload a CSV file
 
