@@ -69,7 +69,7 @@ You can control which Track and Page events to send to Segment in the 'Manage ev
       
 ## Page context data
 
-The fields below are automatically sent to Segment with every `track()`, `page()` and `idetify()` event. For `page()` events these fields are also included in the `properties` object.
+The fields below are automatically sent to Segment with every Track, Page and Identify event. For Page events, these fields are also included in the `properties` object.
 
 | Field                                   | Description                                                                                    | Type          |
 | --------------------------------------- | ---------------------------------------------------------------------------------------------- | ------------- |
