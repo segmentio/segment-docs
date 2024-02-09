@@ -51,7 +51,7 @@ plugins:
     mark:
       url: https://cdn.filepicker.io/api/file/ztKtaLBUT7GUZKius5sa
   # - name: Intercom
-  #   url: connections/sources/catalog/libraries/mobile/apple//destination-plugins/intercom-swift/
+  #   url: connections/sources/catalog/libraries/mobile/apple/destination-plugins/intercom-swift/
   #   logo:
   #     url: https://cdn.filepicker.io/api/file/PLYt4sbQsa4vXGtq0oxe
   #   mark:
