@@ -1,7 +1,8 @@
 ---
-# The end name should be similar to `Slack  Destination`
-title: Avo
+title: Avo Destination
+id: 65c2465d0d7d550aa8e7e5c6
 beta: true
+hidden: true
 ---
 
 With [Avo](https://avo.app) Inspector, data quality is no longer a dream, it’s a workflow.
