@@ -1,19 +1,89 @@
 ---
-title: Unified Profiles Overview
+title: Unified Profiles in Flex
 hidden: true
 ---
 
 Unified Profiles, available with Twilio's Agent Copilot product, provides your Flex agents with real-time customer data from multiple enterprise systems within Flex. Agents can view each customer's details and a historical timeline that shows a customer's previous activities, enabling agents to provide personalized support based on a customer's history.
 
-Unified Profiles integrates with Segment to connect your Flex contact center to customer data in [Salesforce Cloud](/docs/connections/sources/catalog/cloud-apps/salesforce/#salesforce-source), a [data warehouse](/docs/connections/storage/warehouses/), or an.
+To try out Agent Copilot, which includes Unified Profiles for Flex, request access from the [CustomerAI for Contact Center](https://console.twilio.com/us1/develop/flex/customerai/overview){:target="_blank"} page in your Flex Console. Agent Copilot is currently in beta and access is limited. After you sign up, a Twilio Flex team member will contact you by email. If you are selected to participate in the beta program, the Twilio Flex team will work with you on the next steps to set up Agent Copilot and Unified Profiles. 
 
-For more information, see Twilio's [Agent Copilot](add a link here!) documentation. 
+For more information about Unified Profiles, see the [Agent Copilot](add a link here!) documentation.
 
-## Entitlements and limitations
+> info "Unified Profiles is in public beta"
+> This means that Unified Profiles features are in active development, and some functionality may change before it becomes generally available. [Contact Segment](https://segment.com/help/contact/){:target="_blank"} with any feedback or questions. <!--- or contact Flex instead?--->
 
-Segment for Flex workspaces created during the Flex Unify setup process have the following entitlements and limitations:
+Users without an existing Segment workspace can configure a [Segment for Flex](#configure-a-segment-for-flex-workspace) workspace, which provides tailored access to Segment. Users with an existing Segment workspace can [connect their existing workspace](#connect-an-existing-workspace) to Flex using a Unify space.
 
-### Sources
+## Create a Segment for Flex workspace
+
+Flex users without an existing Segment workspace can create a Segment for Flex workspace, which provides tailored access to Segment. 
+
+### Prerequisites
+
+Before creating a Segment for Flex workspace, you must have requested access from the [CustomerAI for Contact Center](https://console.twilio.com/us1/develop/flex/customerai/overview){:target="_blank"} page in your Flex Console and been accepted into the Agent Copilot beta program.
+
+### Step 1: Select your data sources
+
+1. From your Flex account, select **Flex Unify**. 
+3. On the Flex Unify overview screen, click **Create Unify space in Segment**.
+4. In Segment for Flex, select one of the data sources and click **Next**.
+5. On the Getting started with Segment page, 
+
+
+<!--Set up data source
+Options:
+SFC & DW
+DW
+Other
+Click Next.
+Info modal explaining how it works, click Continue.
+Getting started with Segment screen
+Add connections
+Salesforce
+Click button under Connect [Connection Name]
+Log in to service
+Return to Segment
+Data Warehouse
+Click Connect data warehouse.
+Select a data warehouse
+Give your data warehouse a name
+Authenticate your data warehouse with a user that has read and write permissions
+Create a model
+Create a mapping-->
+
+### Step 2: Add identifiers and traits
+After you've selected which data sources you'd like to integrate customer data from, you can select _identifiers_, or unique pieces of data that allow you to link information about an individual customer across different programs and services, and _traits_, which are pieces of information you know about a particular customer. 
+
+1. On the Add identifiers and traits page, click **Add identifier**. 
+2. Select one or more of Segment's 11 default identifiers and click **Add identifiers**.
+3. Review the identifiers you've selected. If you need to make changes to the priority order the identifiers appear in, click **Edit Priority**. To make changes to an identifier, select the menu icon in the row the identifier appears in, and click either **Edit** or **Delete**. <!---menu icon??--->
+4. When you're satisfied with your identifiers, click **Add computed traits**.
+5. Select up to two traits and click **Save**. <br> _Segment recommends selecting **Total inbounds**, or the number of inbound attempts that resulted in a customer engagement, and **Frequent inbound channel**, which identifies the most frequently used communication channel._
+6. **(Optional)**: Set up predictive traits by selecting the Set up predictive traits dropdown and clicking **Complete setup** next to one or both traits. For more information about predictive traits, see Segment's [Predictions documentation](/docs/unify/Traits/predictions/).
+
+> warning "Predictive traits require event data in your sources"
+> Before you can configure predictive traits, you must have data flowing into your connected source. Once data is flowing into your source, it can take up to 48 hours for predictive traits to be ready." <!---rewrite disclaimer about timing. it's jank rn--->
+
+### Step 3: Check configuration
+The final step in the Segment for Flex setup process is to check your configuration. After this check succeeds, you can return to Flex to complete the Unified Profiles setup process.
+
+To check your configuration: 
+1. Click **Enable Sources and Test Connections**. Segment automatically checks your sources and connections. 
+  <br>If you correctly configured the sources and connections you set up in steps 1 and 2, Segment marks this step as complete.
+2. To return to Flex and complete the Unified Profiles setup process, click **[Return to Flex](https://console.twilio.com/us1/develop/flex/){:target="_blank"}**. 
+
+#### Additional troubleshooting tools
+If the Enable Sources and Test Connections check indicates there are problems with your sources and connections, you can use the advanced troubleshooting and testing tools linked under the Additional Troubleshooting Tools section to debug any issues with your configuration. 
+
+- [Event Debugger](/docs/connections/sources/debugger/): With the Debugger, you can check that calls are sent in the expected format without having to wait for any data processing. 
+- [Profile Explorer](/docs/unify/#profile-explorer): Use the Profile Explorer to view all user data, including event history, traits, and identifiers. 
+- [Advanced Segment](https://app.segment.com/goto-my-workspace/overview){:target="_blank"}: Use the Advanced Segment option to view your full Segment workspace. Segment recommends working with the assistance of Professional Services when accessing Advanced Segment.
+
+### Segment for Flex entitlements and limitations
+
+Segment for Flex workspaces created during the Unified Profiles setup process have the following entitlements and limitations:
+
+#### Sources
 
 In addition to 1 source for Flex events that is auto-created during setup, you can create an additional 5 sources.
 
@@ -22,12 +92,11 @@ These sources are limited to the following types:
   - [Storage (RETL)](/docs/connections/reverse-etl/#step-1-add-a-source)
   - [Mobile](/docs/connections/sources/catalog/#mobile) 
   - [Javascript](/docs/connections/sources/catalog/libraries/website/javascript/)
-  - [Twilio Event Streams](/docs/connections/sources/catalog/cloud-apps/twilio/) <!---- this is an obj cloud source and not event streams, am I missing something??--->
-  - Server 
-    - [HTTP](/docs/connections/sources/catalog/libraries/server/http-api/)
-    - [Java](/docs/connections/sources/catalog/libraries/server/java/)
+  - [Twilio Event Streams](/docs/connections/sources/catalog/cloud-apps/twilio/) <!---- this is an obj cloud source and not event streams, am I missing something??---> 
+  - [HTTP](/docs/connections/sources/catalog/libraries/server/http-api/)
+  - [Java](/docs/connections/sources/catalog/libraries/server/java/)
 
-### Destinations
+#### Destinations
 
 With a Segment for Flex workspace, you can create up to 3 destinations.
 
@@ -39,10 +108,68 @@ These destinations are limited to the following types:
 - [Segment Connections](/docs/connections/destinations/catalog/actions-segment/)
 
 
-### Entitlements
+#### Entitlements
 
 Your Segment for Flex workspace has the following entitlements:
 
 - 2 [Unify Spaces](/docs/unify/quickstart/)
 - 2 [computed traits](/docs/unify/Traits/computed-traits/)
 - 2 [predictive traits](/docs/unify/traits/predictions/)
+
+
+## Connect an existing workspace
+
+If you already have a Segment workspace, you can use a [Unify space](/docs/unify/quickstart/) to connect your customer data to Flex. 
+
+> info "Limited to Business Tier customers with a Unify Plus entitlement"
+> Access to Unified Profiles in Flex is limited to Segment customers on the Business Tier plan with a Unify Plus entitlement. 
+>
+>  
+> To upgrade to the Business Tier plan, contact your account executive or [request a demo](https://segment.com/demo/){:target="_blank"} from Segment's sales team. 
+
+#### Prerequisites
+
+Before configuring Unified Profiles, please note the following account information is required: 
+- Workplace slug
+- Unify Space ID (_if you have an existing Unify space you'd like to connect to Unified Profiles_)
+- Profile API token (_if you have an existing Unify space you'd like to connect to Unified Profiles_)
+<!--- may take this out. seems silly to note as a prereq if you haven't created it yet- Flex source write key (which you configure during the setup process)--->
+
+<!---Notes/prerequisites
+Note that the following account information is required:
+Workspace slug
+Space ID
+Profile API token
+Flex source write key (must be a server source(?) can this be an existing source or is this a source that you have to set up during the Unified Profiles setup process?)
+
+Note that you can create a new Unify space/data sources, but you can also use existing ones
+Step 1: Reach out to friends@ or similar to start the kickoff process
+Step 2: Set up a Unify Space
+Can be an existing Unify Space. If it is, proceed directly to step 3
+If it needs to be a new space:
+Create a dev space
+Verify that profiles are created as expected
+Create prod space (can copy over settings)
+Step 3: Create a Profile API key for your Unify space
+Unify > Unify Settings
+Select API access
+Select +Generate Token button
+Enter a name for your Profile API token and enter the password for your Segment account, then click Generate token (does Segment recommend a naming convention, like “Unified Profiles Profile API key”?) Copy token, click checkbox confirming you’ve written down your token, then click Done.
+Step 4: Connect data sources to your Unify space
+Configure one of the Following arrangements:
+Salesforce source + dwh destination
+Step 1:
+Step 2: etc.
+Dwh source
+Step 1
+Step 2: etc.
+Connect your data warehouse to your Unify Space
+Enable mapping and verify that profiles populate as expected
+Step 5: Create a Server source for Flex (THIS COULD BE SIMPLIFIED/REMOVED BEFORE DOCS ARE REQUIRED)
+Step 6: Add Configuration Context
+Step 7: Creating Computed and Predictive Traits
+Note that the preceding step must be completed in Flex and a user must complete an interaction before this step can be completed
+Can link to/copy existing docs to set up a few traits. The PS Guide also has some great screenshots of sample traits.
+Troubleshooting
+Source Debugger
+--->
