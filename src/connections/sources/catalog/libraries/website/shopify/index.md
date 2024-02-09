@@ -208,9 +208,13 @@ The properties below are included with `Cart Viewed` `track()` events. `products
 | `subtotal`                              | The price at checkout before duties, shipping, and taxes                                       | Number        |
 | `currency`                              | The three-letter code that represents the currency, for example 'USD'                          | String        |
 
-## Checkout and purchase track() event properties
+## Checkout and purchase Track event properties
 
-The properties below are included with `Checkout Started`, `Address Info Entered`, `Shipping Info Entered`, `Contact Info Entered`, `Payment Info Entered` and `Order Completed` `track()` events. `products.$.` indicates an array named 'products'. Note: If a property is missing it is due to Shopify not providing the value, or due to a `null` or empty value being provided.  
+The properties below are included with `Checkout Started`, `Address Info Entered`, `Shipping Info Entered`, `Contact Info Entered`, `Payment Info Entered` and `Order Completed` Track events. `products.$.` indicates an array named 'products'. 
+
+> info "Missing properties?"
+> Your Segment events may be missing one of the following properties if Shopify provides `null` or an empty value for a property.
+
 
 | Property                                | Description                                                                                    | Type          |
 | --------------------------------------- | ---------------------------------------------------------------------------------------------- | ------------- |
