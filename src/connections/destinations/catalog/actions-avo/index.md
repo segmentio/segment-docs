@@ -5,9 +5,9 @@ beta: true
 hidden: true
 ---
 
-With [Avo](https://avo.app) Inspector, data quality is no longer a dream, it’s a workflow.
+With [Avo](https://avo.app){:target="_blank”} Inspector, data quality is no longer a dream, it’s a workflow.
 
-[Inspector](https://www.avo.app/data-observability) lets you find, triage, fix, and prevent data quality issues in your product analytics. Launch Inspector to discover all your data quality issues and systematically work towards better data, one resolved issue at a time.
+[Inspector](https://www.avo.app/data-observability){:target="_blank”} lets you find, triage, fix, and prevent data quality issues in your product analytics. Launch Inspector to discover all your data quality issues and systematically work towards better data, one resolved issue at a time.
 
 The Avo Inspector destination automatically extracts event schemas from your product events, sending only the signatures from the connected Segment sources to the Inspector API. **Avo Inspector receives no PII data from your source**.
 
