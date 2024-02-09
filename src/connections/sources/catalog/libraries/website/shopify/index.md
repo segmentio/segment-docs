@@ -126,9 +126,13 @@ The properties below are included with `Product Viewed` Track events.
 | `price`                                 | The decimal money amount (price) for the product                                               | Number        |
 | `sku`                                   | The SKU (stock keeping unit) associated with the variant                                       | String        |
 
-## Product Added and Product Removed track() event properties
+## Product Added and Product Removed Track event properties
 
-The properties below are included with `Product Added` and `Product Removed` `track()` events. Note: If a property is missing it is due to Shopify not providing the value, or due to a `null` or empty value being provided.  
+The properties below are included with `Product Added` and `Product Removed` Track events. 
+
+> info "Missing properties?"
+> Your Segment events may be missing one of the following properties if Shopify provides `null` or an empty value for a property.
+
 
 | Property                                | Description                                                                                    | Type          |
 | --------------------------------------- | ---------------------------------------------------------------------------------------------- | ------------- |
