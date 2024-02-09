@@ -14,7 +14,7 @@ Once you've installed the Analytics React Native library, you can start collecti
 
 The [Identify](/docs/connections/spec/identify/) method lets you tie a user to their actions and record traits about them. This includes a unique user ID and any optional traits you know about them like their email, name, or address. The traits option can include any information you want to tie to the user. When using any of the [reserved user traits](/docs/connections/spec/identify/#traits), be sure the information reflects the name of the trait. For example, `email` should always be a string of the user's email address.
 
-You may wish to send updates for anonymous users who have not yet signed up for your app, to do this pass `null` for the userId. Please see the example below.
+To send updates for anonymous users who haven't yet signed up for your app, pass `null` for the `userId` like in the example below. 
 
 {% codeexample %}
 {% codeexampletab Method signature %}
