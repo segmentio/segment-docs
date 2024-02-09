@@ -91,9 +91,13 @@ The fields below are automatically sent to Segment with every Track, Page and Id
 | `context.campaign.term`                 | `utm_term` QueryString value                                                                     | String        |
 | `context.campaign.content`              | `utm_content` QueryString value                                                                  | String        |
 
-## Page Viewed / page() event properties
+## Page Viewed / Page event properties
 
-The properties below are included with `page()` events. Note: If a property is missing it is due to Shopify not providing the value, or due to a `null` or empty value being provided.  
+The properties below are included with Page events. 
+
+> info "Missing properties?"
+> Your Segment events may be missing one of the following properties if Shopify provides `null` or an empty value for a property.
+
 
 | Field                                   | Description                                                                                    | Type          |
 | --------------------------------------- | ---------------------------------------------------------------------------------------------- | ------------- |
