@@ -63,11 +63,6 @@ This track call is translated into a event signature that is sent to the inspect
 
 {% include components/actions-fields.html %}
 
-<!--
-Additional Context
-
-Include additional information that you think will be useful to the user here. For information that is specific to an individual mapping, please add that as a comment so that the Segment docs team can include it in the auto-generated content for that mapping.
--->
 
 ## Destination Settings
 
