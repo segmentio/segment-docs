@@ -44,7 +44,7 @@ If you require more advanced functionality or want to collect post-purchase even
 - **userId** - The Segment `userId` field does not populate. You cannot configure the userId to be populated with any value from Shopify. 
 - **email and phone** - `traits.email` and `traits.phone` are collected using Identify events (unless explicitly disabled in the 'Manage user profile details' section of the Shopify App User Interface). 
 
-## track() and page() events sent to Segment
+## Track and Page events sent to Segment
 
 See the [Shopify Standard Events](https://shopify.dev/docs/api/web-pixels-api/standard-events){:target="_blank"} documentation for more information about when events are triggered. 
 
