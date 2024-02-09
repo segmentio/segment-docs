@@ -2,7 +2,7 @@
 title: Consent in Segment Connections
 related:
   - "/privacy/consent-management/"
-  - "/privacy/configure-consent-management/"
+  - "/privacy/consent-management/configure-consent-management/"
 redirect_from: "/privacy/consent-in-segment-connections"
 ---
 
