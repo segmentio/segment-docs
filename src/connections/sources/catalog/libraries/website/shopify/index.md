@@ -186,9 +186,13 @@ The properties below are included with `Products Searched` `track()` events. `pr
 | `products.$.sku`                        | The SKU (stock keeping unit) associated with the variant                                       | String        |
 | `query`                                 | The search query that was executed                                                             | String        |
 
-## Cart Viewed track() event properties
+## Cart Viewed Track event properties
 
-The properties below are included with `Cart Viewed` `track()` events. `products.$.` indicates an array named 'products'. Note: If a property is missing it is due to Shopify not providing the value, or due to a `null` or empty value being provided.  
+The properties below are included with `Cart Viewed` Track events. `products.$.` indicates an array named 'products'. 
+
+> info "Missing properties?"
+> Your Segment events may be missing one of the following properties if Shopify provides `null` or an empty value for a property.
+
 
 | Property                                | Description                                                                                    | Type          |
 | --------------------------------------- | ---------------------------------------------------------------------------------------------- | ------------- |
