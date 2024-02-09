@@ -50,7 +50,7 @@ See the [Shopify Standard Events](https://shopify.dev/docs/api/web-pixels-api/st
 
 | Segment Event Name      | Shopify Standard Event Name         | Event trigger                                                       | 
 | ----------------------- | ----------------------------------- | ------------------------------------------------------------------- |
-| `Page Viewed`           | `page_viewed`                       | A user has visited a page. Send as a Segment `page()` event         |
+| `Page Viewed`           | `page_viewed`                       | A user has visited a page. Sent as a Segment Page event          |
 | `Products Searched`     | `search_submitted`                  | A user has performed a search on the Shopify storefront             |
 | `Product List Viewed`   | `collection_viewed`                 | A user has visited a product collection index page                  |
 | `Product Viewed`        | `product_viewed`                    | A user has visited a product details page                           |
