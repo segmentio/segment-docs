@@ -58,7 +58,7 @@ See the [Shopify Standard Events](https://shopify.dev/docs/api/web-pixels-api/st
 | `Product Removed`       | `product_removed_from_cart`         | A user has removed a product from their cart                        |
 | `Cart Viewed`           | `cart_viewed`                       | A user has visited the cart page                                    |
 | `Checkout Started`      | `checkout_started`                  | A user has started the checkout process                             |
-| `Shipping Info Entered` | `checkout_shipping_info_submitted`  | A user has choosen a shipping rate                                  |
+| `Shipping Info Entered` | `checkout_shipping_info_submitted`  | A user has chosen a shipping rate                                  |
 | `Address Info Entered`  | `checkout_address_info_submitted`   | A user has submitted their mailing address                          |
 | `Contact Info Entered`  | `checkout_contact_info_submitted`   | A user has submitted a checkout form                                |
 | `Payment Info Entered`  | `payment_info_submitted`            | A user has submitted their payment information                      |
