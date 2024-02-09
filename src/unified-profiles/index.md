@@ -3,7 +3,7 @@ title: Unified Profiles in Flex
 hidden: true
 ---
 
-Unified Profiles, available with Twilio's Agent Copilot product, provides your Flex agents with real-time customer data from multiple enterprise systems within Flex. Agents can view each customer's details and a historical timeline that shows a customer's previous activities, enabling agents to provide personalized support based on a customer's history.
+Unified Profiles in Flex, available with Twilio's [Agent Copilot](add a link here!), provides your Flex agents with real-time customer data from multiple enterprise systems within Flex. Agents can view each customer's details and a historical timeline that shows a customer's previous activities, enabling agents to provide personalized support based on a customer's history.
 
 To try out Agent Copilot, which includes Unified Profiles for Flex, request access from the [CustomerAI for Contact Center](https://console.twilio.com/us1/develop/flex/customerai/overview){:target="_blank"} page in your Flex Console. Agent Copilot is currently in beta and access is limited. After you sign up, a Twilio Flex team member will contact you by email. If you are selected to participate in the beta program, the Twilio Flex team will work with you on the next steps to set up Agent Copilot and Unified Profiles. 
 
@@ -62,7 +62,7 @@ After you've selected which data sources you'd like to integrate customer data f
 6. **(Optional)**: Set up predictive traits by selecting the Set up predictive traits dropdown and clicking **Complete setup** next to one or both traits. For more information about predictive traits, see Segment's [Predictions documentation](/docs/unify/Traits/predictions/).
 
 > warning "Predictive traits require event data in your sources"
-> Before you can configure predictive traits, you must have data flowing into your connected source. Once data is flowing into your source, it can take up to 48 hours for predictive traits to be ready." <!---rewrite disclaimer about timing. it's jank rn--->
+> Before you can configure predictive traits, you must have data flowing into your connected source. Once data is flowing into your source, it can take up to 48 hours for predictive traits to be ready. <!---rewrite disclaimer about timing. it's jank rn--->
 
 ### Step 3: Check configuration
 The final step in the Segment for Flex setup process is to check your configuration. After this check succeeds, you can return to Flex to complete the Unified Profiles setup process.
