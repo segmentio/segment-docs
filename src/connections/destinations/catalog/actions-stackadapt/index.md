@@ -3,6 +3,8 @@ title: StackAdapt (Actions) Destination
 hide-boilerplate: true
 hide-dossier: true
 beta: true
+id: 61d8859be4f795335d5c677c
+hidden: true
 ---
 
 {% include content/plan-grid.md name="actions" %}
@@ -11,14 +13,13 @@ By setting up StackAdapt as a Segment destination, your Segment events will be f
 
 This destination is maintained by StackAdapt. For any issues with the destination, please [submit a ticket to StackAdapt's support team](https://support.stackadapt.com/hc/en-us/requests/new?ticket_form_id=360006572593){:target="_blank"}.
 
-{% include content/ajs-upgrade.md %}
 
 ## Getting started
 
-### Getting Your StackAdapt Universal Pixel ID
+### Getting your StackAdapt Universal Pixel ID
 
 1. Log in to your StackAdapt account and navigate to the Pixels page.
-2. Above the list of pixels, click the "Install StackAdapt Pixel" link.
+2. Above the list of pixels, click **Install StackAdapt Pixel**.
 
     ![Image showing location of link to install Pixel](images/install-pixel-link.png)
 
@@ -28,16 +29,16 @@ This destination is maintained by StackAdapt. For any issues with the destinatio
 
 ### Setting up the StackAdapt destination in Segment
 
-1. From the Segment web app, click **Catalog**, then click **Destinations**.
-2. Search for "StackAdapt" in the search bar, then click on the Destination "StackAdapt".
+1. From the Segment web app, navigate to **Connections > Catalog > Destinations**.
+2. Search for and select the "StackAdapt" destination.
 3. Click **Add Destination**.
-4. Select an existing Source to connect to the StackAdapt destination.
-5. Give the Destination a name.
+4. Select an existing source to connect to the StackAdapt destination.
+5. Give the destination a name.
 6. On the Settings screen, provide your StackAdapt Universal Pixel ID. This can be found on the Pixels page in StackAdapt as described above.
-7. Toggle on the Destination using the **Enable Destination** toggle.
+7. Toggle on the destination using the **Enable Destination** toggle.
 8. Click **Save Change**.
 
-### StackAdapt Pixel Setup
+### StackAdapt Pixel setup
 
 Segment events that are forwarded to StackAdapt can be used to track ad conversions, and to generate retargeting and lookalike audiences. Please review the StackAdapt documentation for the general setup of these if you are not already familiar:
 
@@ -51,7 +52,7 @@ Setup of conversion events, retargeting audiences, and lookalike audiences that 
 2. There is no need to install the StackAdapt pixel on your website as instructed in the "Installation" step, since Segment will forward events to StackAdapt that would normally be tracked by the StackAdapt pixel.
 3. If you choose to set up event rules, you will need to ensure that you use the event keys supported by the the StackAdapt destination as described below.
 
-### Event Rules
+### Event rules
 
 The StackAdapt Segment destination sends an `action` event key which by default is mapped to the Segment event name. Creating rules on this `action` key should be sufficient for most simple event rule use cases. For example, if you fire a Segment event when a user fills out a registration form on your website and want to track this as a conversion event in StackAdapt, you can create a rule in StackAdapt that matches the `action` key with the Segment event name.
 
@@ -59,7 +60,7 @@ A Segment event fired with the code `analytics.track("User Registered")` can be 
 
 ![Image showing event rule in StackAdapt the matches a User Registered event](images/user-registered-event-rule.png)
 
-#### Ecommerce Events
+#### Ecommerce events
 
 The StackAdapt destination also supports forwarding ecommerce fields for the purpose of creating event rules that match ecommerce events, with default mappings to properties specified in the [Segment V2 Ecommerce Event Spec](/docs/connections/spec/ecommerce/v2/) as described in the below table:
 
@@ -73,7 +74,7 @@ The StackAdapt destination also supports forwarding ecommerce fields for the pur
 | `price`                          | `product_price`      |
 | `quantity`                       | `product_quantity`   |
 
-For events that can involve multiple products, such as checkout events, we forward a JSON array of product objects with a `products` key and fields that map by default to following Segment product array fields:
+For events that can involve multiple products, such as checkout events, StackAdapt forwards a JSON array of product objects with a `products` key and fields that map by default to following Segment product array fields:
 
 | Segment Ecommerce Event Property | StackAdapt Product Object Key |
 |----------------------------------|-------------------------------|
@@ -105,12 +106,12 @@ analytics.track("Order Completed", {
 });
 ```
 
-### URL Rules
+### URL rules
 
 If you are using URL rules, these will be matched whenever Segment sends an event to StackAdapt with a `url` matching the URL rule. This should be accomplished by the page event Segment automatically fires when a page is viewed, so setup of URL rules should be identical to setting up URL rules with the StackAdapt pixel.
 
 {% include components/actions-fields.html %}
 
-## Data and Privacy
+## Data and privacy
 
 Review [StackAdapt's Data Processing Agreement](https://www.stackadapt.com/data-processing-agreement){:target="_blank"} to learn more about StackAdapt's privacy and data terms.
