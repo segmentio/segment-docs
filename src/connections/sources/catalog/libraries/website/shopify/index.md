@@ -38,7 +38,7 @@ If you require more advanced functionality or want to collect post-purchase even
 11. Use the checkboxes under 'Manage user profile details' to select how user profile details should be sent to Segment. 
 12. Click the 'Turn On' button to enable start sending analytics events from your Shopify Store to Segment. 
 
-## identifiers
+## Identifiers
 
 - **anonymousId** - The Segment `anonymousId` field will be populated with the Shopify client ID. The Shopify client ID is a 'client-side ID of the customer, provided by Shopify'. It is not currently possible to configure the Segment anonymousId to be populated with any other value. 
 - **userId** - The Segment `userId` field will not be populated. It is not currently possible to configure the userId to be populated with any value from Shopify. 
