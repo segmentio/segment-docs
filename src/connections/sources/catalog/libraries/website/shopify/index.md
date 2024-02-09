@@ -238,9 +238,9 @@ The properties below are included with `Checkout Started`, `Address Info Entered
 ## Sending user profile details to Segment
 
 User profile details can be sent to Segment in 3 ways: 
-1. As `traits` in `identify()` events.
-2. As `properties` in `track()` events. 
-3. As `traits` in `track()` events, included in the `context.traits` object. 
+1. As `traits` in Identify events.
+2. As `properties` in Track events. 
+3. As `traits` in Track events, included in the `context.traits` object.
 
 User profile details are only sent to Segment when the following track events are triggered by Shopify: 
 `Checkout Started`, `Address Info Entered`, `Shipping Info Entered`, `Contact Info Entered`, `Payment Info Entered` and `Order Completed`.
