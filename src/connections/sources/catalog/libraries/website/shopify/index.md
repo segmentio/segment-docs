@@ -46,7 +46,7 @@ If you require more advanced functionality or want to collect post-purchase even
 
 ## track() and page() events sent to Segment
 
-See the [Shopify Standard Events](https://shopify.dev/docs/api/web-pixels-api/standard-events){:target="\_blank"} documentation for more information regarding when events are triggered. 
+See the [Shopify Standard Events](https://shopify.dev/docs/api/web-pixels-api/standard-events){:target="_blank"} documentation for more information about when events are triggered. 
 
 | Segment Event Name      | Shopify Standard Event Name         | Event trigger                                                       | 
 | ----------------------- | ----------------------------------- | ------------------------------------------------------------------- |
