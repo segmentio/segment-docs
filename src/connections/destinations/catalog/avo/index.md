@@ -3,24 +3,18 @@ title: Avo Destination
 id: 65c2465d0d7d550aa8e7e5c6
 beta: true
 hidden: true
+redirect_from: "/connections/destinations/catalog/actions-avo/"
 ---
 
-With [Avo](https://avo.app){:target="_blank”} Inspector, data quality is no longer a dream, it’s a workflow.
+With [Avo](https://avo.app){:target="\_blank”} Inspector, data quality is no longer a dream, it’s a workflow.
 
-[Inspector](https://www.avo.app/data-observability){:target="_blank”} lets you find, triage, fix, and prevent data quality issues in your product analytics. Launch Inspector to discover all your data quality issues and systematically work towards better data, one resolved issue at a time.
+[Inspector](https://www.avo.app/data-observability){:target="\_blank”} lets you find, triage, fix, and prevent data quality issues in your product analytics. Launch Inspector to discover all your data quality issues and systematically work towards better data, one resolved issue at a time.
 
 The Avo Inspector destination automatically extracts event schemas from your product events, sending only the signatures from the connected Segment sources to the Inspector API. **Avo Inspector receives no PII data from your source**.
 
 ![Select a source](images/issues-dashboard.png)
 
-
 {% include content/plan-grid.md name="actions" %}
-
-<!-- Include a brief description of the destination here, along with a link to your website. -->
-
-<!-- This include describes the requirement of A.js 2.0 or higher for Actions compatibility, and is required if your destination has a web component. -->
-
-<!-- The section below explains how to enable and configure the destination. Include any configuration steps not captured below. For example, obtaining an API key from your platform and any configuration steps required to connect to the destination. →
 
 ### Track events
 
@@ -36,7 +30,7 @@ analytics.track("Login", {
 });
 ```
 
-This track call is translated into a event signature that is sent to the inspector API
+This track call is translated into a event signature that is sent to the Inspector API
 
 ```js
 {
@@ -49,9 +43,6 @@ This track call is translated into a event signature that is sent to the inspect
 }
 ```
 
-
-
-
 ## Getting started
 
 1. From the Segment web app, click **Catalog**, then click **Destinations**.
@@ -63,13 +54,14 @@ This track call is translated into a event signature that is sent to the inspect
 
 {% include components/actions-fields.html %}
 
-
 ## Destination Settings
 
 1. Copy the **API Key** from Avo into the field `API Key` in settings.
 
 2. Select an environment you'd like the data to go to within Avo. It should reflect from what environment the source is receiving data from. (**Production** / **Development** / **Staging**)
 3. **(Optional):** If you have an event property describing the app release version of your source you can provide it under App Version. By default the destination attempts to extract your app release version from `{context.app.version}` which defaults to `unversioned` if that does not exist. Having accurate app release versions in Avo Inspector will help you identify which releases an issue is impacting, and monitor for regressions in future releases after you’ve resolved the issue.
+
+![Select a source](images/avo-destination.png)
 
 ## Getting Avo API key
 
