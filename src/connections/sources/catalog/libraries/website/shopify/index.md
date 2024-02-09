@@ -248,7 +248,7 @@ User profile details are only sent to Segment when the following track events ar
 You can control how user profile details are sent to Segment via the 'Manage user profile details' section in the Shopify App User Interface.  
 ![Screenshot of the Manage user profile details settings section.](images/manage_user_profile_details.png)
 
-The following user profile details will be sent to Segment as they become available in the user checkout journey.  
+The following user profile details are sent to Segment as they become available in the user checkout journey.  
 
 | User profile trait / property name | Description                                                         | 
 | ---------------------------------- | ------------------------------------------------------------------- |
