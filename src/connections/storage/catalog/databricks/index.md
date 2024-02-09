@@ -10,7 +10,7 @@ With the Databricks Destination, you can ingest event data directly from Segment
 This page will help you get started with syncing Segment events into your Databricks Lakehouse.
 
 > success ""
-> Segment has certified the destination for Databricks on AWS, Azure, and GCP.
+> Segment has certified the destination for Databricks on AWS and Azure.
 
  
 ## Getting started
