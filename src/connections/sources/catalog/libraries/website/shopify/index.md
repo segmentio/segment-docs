@@ -64,7 +64,7 @@ See the [Shopify Standard Events](https://shopify.dev/docs/api/web-pixels-api/st
 | `Payment Info Entered`  | `payment_info_submitted`            | A user has submitted their payment information                      |
 | `Order Completed`       | `checkout_completed`                | A user has completed a purchase                                     |
 
-You can control which `track()` and `page()` events to send to Segment via the 'Manage events' section in the Shopify App User Interface.
+You can control which Track and Page events to send to Segment in the 'Manage events' section of the Shopify App User Interface.
 ![Screenshot of the Manage events settings section.](images/manage_events.png)
       
 ## Page context data
