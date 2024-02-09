@@ -245,7 +245,7 @@ User profile details can be sent to Segment in 3 ways:
 User profile details are only sent to Segment when the following track events are triggered by Shopify: 
 `Checkout Started`, `Address Info Entered`, `Shipping Info Entered`, `Contact Info Entered`, `Payment Info Entered` and `Order Completed`.
 
-You can control how user profile details are sent to Segment via the 'Manage user profile details' section in the Shopify App User Interface.  
+You can control how user profile details are sent to Segment on the 'Manage user profile details' section of the Shopify App User Interface.
 ![Screenshot of the Manage user profile details settings section.](images/manage_user_profile_details.png)
 
 The following user profile details are sent to Segment as they become available in the user checkout journey.  
