@@ -81,7 +81,7 @@ The fields below are automatically sent to Segment with every `track()`, `page()
 
 ## UTM data
 
-The fields below are automatically sent to Segment with every `track()`, `page()` and `idetify()` if present in the QueryString of the page url.
+The fields below are automatically sent to Segment with every Track, Page and Identify call, if present in the QueryString of the page url.
 
 | Field                                   | Description                                                                                      | Type          |
 | --------------------------------------- | ------------------------------------------------------------------------------------------------ | ------------- |
