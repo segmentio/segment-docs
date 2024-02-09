@@ -40,9 +40,9 @@ If you require more advanced functionality or want to collect post-purchase even
 
 ## Identifiers
 
-- **anonymousId** - The Segment `anonymousId` field will be populated with the Shopify client ID. The Shopify client ID is a 'client-side ID of the customer, provided by Shopify'. It is not currently possible to configure the Segment anonymousId to be populated with any other value. 
-- **userId** - The Segment `userId` field will not be populated. It is not currently possible to configure the userId to be populated with any value from Shopify. 
-- **email and phone** - `traits.email` and `traits.phone` will be collected via `identify()` events (unless explicity disabled via the 'Manage user profile details' section in the Shopify App User Interface). 
+- **anonymousId** - The Segment `anonymousId` field are populated with the Shopify client ID. The Shopify client ID is a 'client-side ID of the customer, provided by Shopify'. You cannot configure the Segment anonymousId to be populated with any other value. 
+- **userId** - The Segment `userId` field does not populate. You cannot configure the userId to be populated with any value from Shopify. 
+- **email and phone** - `traits.email` and `traits.phone` are collected using Identify events (unless explicitly disabled in the 'Manage user profile details' section of the Shopify App User Interface). 
 
 ## track() and page() events sent to Segment
 
