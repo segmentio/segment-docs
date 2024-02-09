@@ -53,13 +53,13 @@ To manually add the Log Purchases Action:
 
 The Amplitude (Actions) destination does not offer a device-mode connection mode. Most previous deployments of the Amplitude Segment destination required the device-mode connection to use the `session_id` tracking feature. However, the Amplitude (Actions) destination now includes session ID tracking by default when you use Segment's ([Analytics.js 2.0](/docs/connections/sources/catalog/libraries/website/javascript/){:target="_blank”} libaray.
 
-If you're using Segment's [Swift](https://github.com/segmentio/analytics-swift){:target="_blank”}, [Kotlin](https://github.com/segmentio/analytics-kotlin){:target="_blank”}, or [React Native](https://segment-docs.netlify.app/docs/connections/sources/catalog/libraries/mobile/react-native/){:target="_blank”} library, you will need to include the [desitnation plugin](https://segment-docs.netlify.app/docs/connections/sources/catalog/libraries/mobile/react-native/destination-plugins/amplitude-react-native/) to enable session tracking. 
-
 ### Track sessions
 
 Session tracking is available with Segment's new libraries: [Analytics.js 2.0](/docs/connections/sources/catalog/libraries/website/javascript/), [Swift](https://github.com/segmentio/analytics-swift){:target="_blank”} or [Kotlin](https://github.com/segmentio/analytics-kotlin){:target="_blank”}. 
 
 When connected to the Analytics.js 2.0 source, Segment automatically loads a plugin on your website for session tracking and enrichment as an alternative to the Amplitude SDK. This means you don't need to bundle any software to run on the user's device, or write any code. It also means that you can use more of the Segment platform features for data going to Amplitude, such as Protocols filtering and transformations, and Profiles Identity Resolution.
+
+If you're using one of Segment's [Swift](https://github.com/segmentio/analytics-swift){:target="_blank”}, [Kotlin](https://github.com/segmentio/analytics-kotlin){:target="_blank”}, or [React Native](https://segment-docs.netlify.app/docs/connections/sources/catalog/libraries/mobile/react-native/){:target="_blank”} libraries, you will need to include the [desitnation plugin](https://segment-docs.netlify.app/docs/connections/sources/catalog/libraries/mobile/react-native/destination-plugins/amplitude-react-native/) to enable session tracking. 
 
 You can read more about Amplitude's [tracking sessions](https://help.amplitude.com/hc/en-us/articles/115002323627-Track-sessions){:target="_blank”} feature in Amplitude's documentation. 
 
