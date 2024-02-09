@@ -103,9 +103,13 @@ The properties below are included with `page()` events. Note: If a property is m
 | `title`                                 | The title of the current page                                                                  | String        |
 | `referrer`                              | URI of the page that linked to the current page                                                | String        |
 
-## Product Viewed track() event properties
+## Product Viewed Track event properties
 
-The properties below are included with `Product Viewed` `track()` events. Note: If a property is missing it is due to Shopify not providing the value, or due to a `null` or empty value being provided.  
+The properties below are included with `Product Viewed` Track events. 
+
+> info "Missing properties?"
+> Your Segment events may be missing one of the following properties if Shopify provides `null` or an empty value for a property.
+
 
 | Property                                | Description                                                                                    | Type          |
 | --------------------------------------- | ---------------------------------------------------------------------------------------------- | ------------- |
