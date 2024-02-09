@@ -13,7 +13,6 @@ The Avo Inspector destination automatically extracts event schemas from your pro
 
 ![Select a source](images/issues-dashboard.png)
 
-<!-- This template is meant for Actions-based destinations that do not have an existing Classic or non-Actions-based version. For Actions Destinations that are a new version of a classic destination, see the doc-template-update.md template. -->
 
 {% include content/plan-grid.md name="actions" %}
 
