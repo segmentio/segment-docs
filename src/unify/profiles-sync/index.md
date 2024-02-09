@@ -7,7 +7,7 @@ On this page, you’ll learn how to set up Profiles Sync, enable historical back
 
 ## Initial Profiles Sync setup
 
-> info "Identity Resolution Setup"
+> info "Identity Resolution setup"
 > To use Profiles Sync, you must first set up [Identity Resolution](/docs/unify/identity-resolution/).
 
 To set up Profiles Sync, you’ll first create a warehouse, then connect the warehouse within the Segment app.
@@ -15,14 +15,14 @@ To set up Profiles Sync, you’ll first create a warehouse, then connect the war
 Before you begin, prepare for setup with these tips:
 
 - To connect your warehouse to Segment, you must have read and write permissions with the warehouse Destination you choose.
-- During Step 2, you’ll copy credentials between Segment and your warehouse Destination. To streamline setup, open your Segment workspace in one browser tab and open another with your warehouse account.
+- During step 2, you’ll copy credentials between Segment and your warehouse Destination. To streamline setup, open your Segment workspace in one browser tab and open another with your warehouse account.
 - Make sure to copy any IP addresses Segment asks you to allowlist in your warehouse Destination.
 
 ### Step 1: Select a warehouse 
 
 You’ll first choose the Destination warehouse to which Segment will sync profiles. Profiles Sync supports the Snowflake, Redshift, BigQuery, Azure, and Postgres warehouse Destinations. Your initial setup will depend on the warehouse you choose.
 
-The following table shows the supported Profiles Sync warehouse Destinations and the corresponding required steps for each. Select a warehouse, view its Segment documentation, then carry out the warehouse’s required steps before moving to Step 2 of Profiles Sync setup:
+The following table shows the supported Profiles Sync warehouse Destinations and the corresponding required steps for each. Select a warehouse, view its Segment documentation, then carry out the warehouse’s required steps before moving to step 2 of Profiles Sync setup:
 
 | Warehouse Destination                                                     | Required steps                                                                                                                                                   |
 | ------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -59,7 +59,7 @@ The following Segment access [roles](/docs/segment-app/iam/roles/) apply to Prof
 
 After selecting your warehouse, you can connect it to Segment.
 
-During this step, you’ll copy credentials from the warehouse you just set up and enter them into the Segment app. The specific credentials you’ll enter depend on the warehouse you chose during Step 1.
+During this step, you’ll copy credentials from the warehouse you just set up and enter them into the Segment app. The specific credentials you’ll enter depend on the warehouse you chose during step 1.
 
 Segment may also display IP addresses you’ll need to allowlist in your warehouse. Make sure to copy the IP addresses and enter them into your warehouse account.
 
@@ -143,7 +143,7 @@ During setup, you can optionally materialize views on your own, or use Segment's
 You might use this option if, for example, you want to transform additional data or join Segment profile data with external data before materialization. 
  
 > success ""
-> You can alternatively use tables that Segment materializes and syncs to your data warehouse. [Learn more](/docs/unify/profiles-sync/tables/#tables-segment-materializes) about the tables Segment materializes.
+> You can alternatively use [tables that Segment materializes](/docs/unify/profiles-sync/tables/#tables-segment-materializes) and syncs to your data warehouse. 
 
 To start seeing unified profiles in your warehouse and build attribution models, you'll need to materialize the tables that Profiles Sync lands into three key views:
 
