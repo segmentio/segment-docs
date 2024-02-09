@@ -8,7 +8,7 @@ Through Profiles Sync, Segment provides data sets and models that can help you e
 Using a practical example of how Segment connects and then merges anonymous profiles, this page explains the tables that Segment lands, as well as the tables you materialize as part of Profiles Sync.
 
 ## Case study: anonymous site visits lead to profile merge
- 
+  
 To help illustrate the possible entries and values populated into Profiles Sync tables, view the event tabs below and consider the following scenario.
 
 Suppose the following four events lead to the creation of two separate profiles:
