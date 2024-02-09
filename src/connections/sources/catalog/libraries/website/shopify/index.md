@@ -166,9 +166,13 @@ The properties below are included with `Product List Viewed` `track()` events. `
 | `products.$.price`                      | The decimal money amount (price) for the product                                               | Number        |
 | `products.$.sku`                        | The SKU (stock keeping unit) associated with the variant                                       | String        |
 
-## Products Searched track() event properties
+## Products Searched Track event properties
 
-The properties below are included with `Products Searched` `track()` events. `products.$.` indicates an array named 'products'. Note: If a property is missing it is due to Shopify not providing the value, or due to a `null` or empty value being provided.  
+The properties below are included with `Products Searched` Track events. `products.$.` indicates an array named 'products'. 
+
+> info "Missing properties?"
+> Your Segment events may be missing one of the following properties if Shopify provides `null` or an empty value for a property.
+
 
 | Property                                | Description                                                                                    | Type          |
 | --------------------------------------- | ---------------------------------------------------------------------------------------------- | ------------- |
