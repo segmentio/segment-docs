@@ -12,7 +12,6 @@ With [Avo](https://avo.app){:target="\_blank”} Inspector, data quality is no l
 
 The Avo Inspector destination automatically extracts event schemas from your product events, sending only the signatures from the connected Segment sources to the Inspector API. **Avo Inspector receives no PII data from your source**.
 
-![Select a source](images/issues-dashboard.png)
 
 {% include content/plan-grid.md name="actions" %}
 
