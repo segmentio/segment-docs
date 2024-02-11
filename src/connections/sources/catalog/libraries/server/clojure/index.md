@@ -3,12 +3,12 @@ title: Analytics for Clojure
 sourceTitle: 'Clojure'
 sourceCategory: 'Server'
 shortName: 'clojure'
-support_type: community
+support_type: maintenance
 id: B6L7qzHmhI
 ---
-The clojure library lets you record analytics data from your clojure code. The requests hit our servers, and then we route your data to any analytics service you enable on your destinations page.
+The clojure library lets you record analytics data from your clojure code. The requests hit Segment servers, and then Segment routes your data to any analytics service you enable on your destinations page.
 
-The library is open-source and was contributed by the very awesome [CircleCI](https://circleci.com/), thanks! You can [check it out on GitHub](https://github.com/circleci/analytics-clj). The clojure library is a wrapper around our [Java library](https://github.com/segmentio/analytics-java).
+The library is open-source and was contributed by [CircleCI](https://circleci.com/){:target="_blank"}. You can [check it out on GitHub](https://github.com/circleci/analytics-clj){:target="_blank"}. The clojure library is a wrapper around Segment's [Java library](https://github.com/segmentio/analytics-java){:target="_blank"}.
 
 The clojure library (like our other server side libraries) is built for high-performance, so you can use them in your web server controller code. This library uses an internal queue to make calls non-blocking and fast. It also batches messages and flushes asynchronously to our servers.
 

@@ -4,8 +4,9 @@ sourceTitle: 'Go'
 sourceCategory: 'Server'
 repo: analytics-go
 id: yBvi77aEwr
+support_type: maintenance
 ---
-Our Go library lets you record analytics data from your Go code. The requests hit our servers, and then we route your data to any analytics service you enable on your destinations page.
+Segment's Go library lets you record analytics data from your Go code. The requests hit Segment servers, and then Segment routes your data to any analytics service you enable on your destinations page.
 
 This library is open-source, so you can [check it out on GitHub](https://github.com/segmentio/analytics-go).
 
