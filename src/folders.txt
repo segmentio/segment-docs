@@ -298,7 +298,6 @@ connections/destinations/catalog/whale-watch
 connections/destinations/catalog/selligent
 connections/destinations/catalog/crazy-egg
 connections/destinations/catalog/asayer
-connections/destinations/catalog/avo
 connections/destinations/catalog/experiments-by-growthhackers
 connections/destinations/catalog/pinterest-tag
 connections/destinations/catalog/pinterest-tag/images
