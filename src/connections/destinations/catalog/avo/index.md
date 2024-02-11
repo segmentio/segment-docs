@@ -16,6 +16,8 @@ The Avo Inspector destination automatically extracts event schemas from your pro
 
 {% include content/plan-grid.md name="actions" %}
 
+## Supported methods
+
 ### Track events
 
 The Avo destination supports Track events.
