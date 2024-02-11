@@ -48,7 +48,8 @@ This Track call is translated into a event signature that is sent to Avo's Inspe
 1. From the Segment web app, click **Catalog**, then click **Destinations**.
 2. Find the Destinations Actions item in the left navigation, and click it.
 3. Select Avo from the list of destinations, then click **Add destination**.
-4. Select a source to connect to **Avo** (Actions).
+4. Select a source to connect to Avo (Actions) and click **Next**. 
+5. Enter a name for your Avo (Actions) destination and click **Create destination**. 
 
 <!-- The line below renders a table of connection settings (if applicable), Pre-built Mappings, and available actions. -->
 
