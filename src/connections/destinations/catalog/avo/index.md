@@ -57,24 +57,20 @@ This Track call is translated into a event signature that is sent to Avo's Inspe
 
 {% include components/actions-fields.html %}
 
-## Destination Settings
+## Getting Avo API key
+Before connecting the segment source to Avo, you will need an API key for your source.
 
+1. Create your Avo workspace at avo.app (If you don’t have one already).
+2. From the Avo workspace sidebar, select **Sources**.
+3. Select an existing source or create a new one. (We recommend naming your Avo sources the same as your Segment sources, for example "Web", "iOS", "Android")
+   ![Select a source](images/select-source.png)
+4. Click the **Inspector Setup** tab in the Avo source
+5. Copy the API Key
+   ![Copy API key](images/api-key.png)
+
+## Destination settings
 1. Copy the **API Key** from Avo into the field `API Key` in settings.
-
 2. Select an environment you'd like the data to go to within Avo. It should reflect from what environment the source is receiving data from. (**Production** / **Development** / **Staging**)
 3. **(Optional):** If you have an event property describing the app release version of your source you can provide it under App Version. By default the destination attempts to extract your app release version from `{context.app.version}` which defaults to `unversioned` if that does not exist. Having accurate app release versions in Avo Inspector will help you identify which releases an issue is impacting, and monitor for regressions in future releases after you’ve resolved the issue.
 
 ![Select a source](images/avo-destination.png)
-
-## Getting Avo API key
-
-Before connecting the segment source to Avo, you will need an api key for your source.
-
-1. Create your Avo workspace at avo.app (If you don’t have one already)
-
-2. From the Avo workspace sidebar, select **Sources**.
-3. Select an existing source or create a new one. (We recommend naming your Avo sources the same as your Segment sources, for example "Web", "IOS", "Android")
-   ![Select a source](images/select-source.png)
-4. Press the **Inspector Setup** tab inside the Avo source
-5. Copy the API Key
-   ![Copy API key](images/api-key.png)
