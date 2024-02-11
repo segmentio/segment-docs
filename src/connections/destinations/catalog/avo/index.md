@@ -30,7 +30,7 @@ analytics.track("Login", {
 });
 ```
 
-This track call is translated into a event signature that is sent to the Inspector API
+This Track call is translated into a event signature that is sent to Avo's Inspector API. 
 
 ```js
 {
