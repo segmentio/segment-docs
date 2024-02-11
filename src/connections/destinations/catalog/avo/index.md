@@ -22,7 +22,7 @@ The Avo Inspector destination automatically extracts event schemas from your pro
 
 The Avo destination supports Track events.
 
-Example of track call:
+Example of Track call:
 
 ```js
 analytics.track("Login", {
