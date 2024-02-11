@@ -18,7 +18,7 @@ The Avo Inspector destination automatically extracts event schemas from your pro
 
 ### Track events
 
-Currently the Integration only receives `Track` events.
+The Avo destination supports Track events.
 
 Example of track call:
 
