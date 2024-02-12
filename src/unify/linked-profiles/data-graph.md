@@ -83,7 +83,7 @@ The parameters are:
 
 | Parameters     | Definition                                                           |
 | ----------- | --------------------------------------------------------------------- |
-| `profile_folder`      | This is the folder or schema location for the profile tables.     |
+| `profile_folder`      | This is the fully qualified path of the folder or schema location for the profile tables.     |
 | `materialization`     | Identifies the type of materialization (`none`). |
 
 Example:
@@ -92,7 +92,7 @@ Example:
 # Define a profile entity
 
 profile {
-     profile_folder = "segment"
+     profile_folder = "PRODUCTION.segment"
      materialization = "none"
     
 }
@@ -278,7 +278,7 @@ data_graph {
 
      #define a profile entity
      profile {
-          profile_folder = "segment"
+          profile_folder = "PRODUCTION.segment"
           materialization = "none"
 
           #relate accounts to profiles with an external ID

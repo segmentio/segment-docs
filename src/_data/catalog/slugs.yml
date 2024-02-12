@@ -205,3 +205,7 @@ destinations:
     override: "tv-squared"
   - original: "aggregations-io-actions"
     override: "actions-aggregations-io"
+  - original: "fullstory-cloud-mode-actions"
+    override: "actions-fullstory-cloud"
+  - original: "klayvio-actions"
+    override: "actions-klayvio"
