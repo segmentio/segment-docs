@@ -67,14 +67,82 @@ Once you've connected your source to OAuth, you can enable it. To enable your so
 
 To disable your source from OAuth, turn the toggle off for **Enable OAuth**.
 
-<!-- ## Request the access token
+## Obtain the access token
+You can obtain an access token once you create an OAuth application and enable a source to OAuth.  
 
-To request the access token, run:
+Access tokens are only valid within a region. The supported regional authorization servers are: 
+* Oregon - https://oauth2.segment.io 
+* Dublin - https://oauth2.eu1.segmentapis.com
 
-```
-./gentoken.sh -k <private-key.pem> -i <key_id> -a <oauth_app_id> | jq '.access_token'
-```
--->
+To obtain the access token:
+
+1. Create a JWT token with the header and payload as below:
+
+    Header
+    ```
+    {
+        "alg":"RS256", 
+        "typ":"JWT", 
+        "kid":"<<KID>>"
+    }
+    ```
+
+    Payload
+    ```
+    {
+        "iss":"<<ISS>>",
+        "sub":"<<SUB>>",
+        "aud":"<<AUD>>", 
+        "iat":"<<IAT>>",
+        "exp":"<<EXP>>",
+        "jti":"<<JTI>>"
+    }
+    ```
+
+    Field | Description 
+    ------------ | -------------
+    KID | The key ID of the public key in the OAuth application.
+    ISS | The identifier of the JWT issuer.
+    SUB | The OAuth application ID. 
+    IAT | The epoch time in seconds when the token was issued. 
+    EXP | The expiry time in seconds. This is expected to be valid only for a short duration under a minute. 
+    JTI | The unique identifer for the token. 
+
+2. Send a form-url-encoded POST request to the regional authorization server with the following parameters:
+    
+    ```
+    grant_type=client_credentials
+    client_assertion_type=urn:ietf:params:oauth:client-assertion-type:jwt-bearer
+    client_assertion=<<JWT>>
+    scope=<<SCOPE>>
+    ```
+
+    Field | Description
+    ----- | ------------
+    JWT | The signed JWT token string from Step 1.
+    SCOPE | Scopes for which token is requested. See [supported scopes](#supported-scopes).
+
+3. Include the access token in the Authorization header as a Bearer token. For example:
+
+    ```
+    Authorization: Bearer <access token>
+    ```
+
+   Below is an example cURL request: 
+
+   ```
+   curl --location 'https://api.segment.io/v1/track' \
+    --header 'Content-Type: application/json' \
+    --header 'Authorization: Bearer <access token>' \
+    --data-raw '{
+        "event": "happy-path-a3ef8a6f-0482-4694-bc4d-4afba03a0eab",
+        "email": "test@example.org",
+        "messageId": "58524f3a-3b76-4eac-aa97-d88bccdf4f77",
+        "userId": "123",
+        "writeKey": "DmBXIN4JnwqBnTqXccTF0wBnLXNQmFtk"
+    }
+    ```
+
 
 ## Edit an OAuth application
 To edit an existing OAuth application: 
