@@ -827,6 +827,9 @@ To track activity on your subdomains, include the Segment Analytics.js snippet o
 
 Because Segment tracks across subdomains, you can either use the same Segment source, or use separate sources for each subdomain. What you decide depends on your team's goals for tracking each subdomain.
 
+> info ""
+> Segment doesn't offer tracking across top-level domains out of the box. If you want to track across top-level domains, you can utilize Segment's [Querystring API](/docs/connections/sources/catalog/libraries/website/javascript/querystring/){:target="_blank"} to pass the anonymousId from Website A to Website B in the query string. When a user moves from Website A to Website B with the anonymousId in the query string, Analytics.js reads that value and sets the anonymousId to it, rather than generating a new one.  
+
 ## UTM Tracking
 
 UTM parameters are only used when linking to your site from outside your domain. When a visitor arrives using a link containing UTM parameters, Segment's analytics.js library will parse the URL query string and add the information to the event payload. For more information about UTM tracking, see the [Tracking Customers Across Channels and Devices](/docs/guides/how-to-guides/cross-channel-tracking/) documentation.

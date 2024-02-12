@@ -8,6 +8,9 @@ hidden: true
 > info "Linked Profiles is in private beta"
 > Linked Profiles is in private beta, and Segment is actively working on this feature. Some functionality may change before it becomes generally available. 
 
+> warning ""
+> Linked Profiles currently only supports workspaces in the United States.
+
 Use Linked Profiles to expand your model beyond the profile to the entire universe of business data. Linked Profiles offers a suite of products which includes the [Data Graph](/docs/unify/linked-profiles/data-graph/), [Linked Events](/docs/unify/linked-profiles/linked-events/), and [Linked Audiences](/docs/engage/audiences/linked-audiences/). 
 
 Build a [Data Graph](/docs/unify/linked-profiles/data-graph/) that defines relationships between any data set in the warehouse and the Segment Profiles you send with Profiles Sync. 
