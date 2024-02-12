@@ -73,7 +73,7 @@ SELECT * FROM salesforce_unified_profiles.accounts
   Click **Create Mapping**. On the Select mappings screen, map event fields from your data source to the pre-filled values that Segment expects to receive. Clicking into an event field lets you search your destination's record fields. When you've finished mapping all of the event fields, click **Create mapping.**
   </li>
   <li value="11" markdown=1>
-  After the Add connections tile is marked as complete, click **Add identifiers and traits** and begin [Step 3: Add identifiers and traits](#step-3-add-identifiers-and-traits). 
+  After Segment marks the "Add connections" tile as complete, click **Add identifiers and traits** and begin [Step 3: Add identifiers and traits](#step-3-add-identifiers-and-traits). 
   </li>
 </ol>
 
@@ -104,32 +104,13 @@ SELECT * FROM unified_profiles.accounts
   Click **Create Mapping**. On the Select mappings screen, map event fields from your data source to the pre-filled values that Segment expects to receive. Clicking into an event field lets you search your destination's record fields. When you've finished mapping all of the event fields, click **Create mapping.**
   </li>
   <li value="9" markdown=1>
-  After the Add connections tile is marked as complete, click **Add identifiers and traits** and begin [Step 3: Add identifiers and traits](#step-3-add-identifiers-and-traits). 
+  After Segment marks the "Add connections" tile as complete, click **Add identifiers and traits** and begin [Step 3: Add identifiers and traits](#step-3-add-identifiers-and-traits). 
   </li>
 </ol>
 
 #### Website or mobile app
 
 I don't know what this flow looks like and probably need access to a demo environment with this option selected to click through the setup screens (or have someone explain it to me)
-
-<!--Set up data source
-Options:
-SFC & DW
-DW
-Other
-Click Next.
-Info modal explaining how it works, click Continue.
-Getting started with Segment screen
-Add connections
-Salesforce
-Click button under Connect [Connection Name]
-Log in to service
-Return to Segment
-Data Warehouse
-Click Connect data warehouse.
-Select a data warehouse
-Give your data warehouse a name
-Authenticate your data warehouse with a user that has read and write permissions-->
 
 ### Step 3: Add identifiers and traits
 After you've selected which data sources you'd like to integrate customer data from, you can select _identifiers_, or unique pieces of data that allow you to link information about an individual customer across different programs and services, and _traits_, which are pieces of information you know about a particular customer. 
