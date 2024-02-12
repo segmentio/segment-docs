@@ -11,6 +11,10 @@ Segment has native [sources](/docs/connections/sources/) for most use cases (lik
 
 ### Authentication
 
+Choose between [basic authentication](#basic-authentication) and [OAuth](#oauth) to authenticate headers. 
+
+#### Basic authentication
+
 Authenticate to the Tracking API by sending your project's **Write Key** along with a request.
 Authentication uses HTTP Basic Auth, which involves a `username:password` that is base64 encoded and prepended with the string `Basic`.
 
@@ -18,6 +22,33 @@ In practice that means taking a Segment source **Write Key**,`'abc123'`, as the 
 
 > info ""
 > Include a colon before encoding. While encoding the write key without a colon might work due to backward compatibility, this won't always be the case.  
+
+#### OAuth
+[Obtain the access token](/docs/connections/oauth/) from the Authorization Server specific to the region. 
+
+Include the access token in the Authorization header as a Bearer token to the resource server. For example:
+
+  ```
+  Authorization: Bearer <access token>
+  ```
+
+
+For example, to use the access token in the HTTP API Source, use `access_token` in the header and `write_key` in the payload. An example cURL request looks like: 
+
+```
+  curl --location 'https://api.segment.io/v1/track' \
+  --header 'Content-Type: application/json' \
+  --header 'Authorization: Bearer <access token>' \
+  --data-raw '{
+      "event": "happy-path-a3ef8a6f-0482-4694-bc4d-4afba03a0eab",
+      "email": "test@example.org",
+      "messageId": "58524f3a-3b76-4eac-aa97-d88bccdf4f77",
+      "userId": "123",
+      "writeKey": "DmBXIN4JnwqBnTqXccTF0wBnLXNQmFtk"
+  }
+```
+
+You can reuse the access token until the expiry period specified on the OAuth application. 
 
 ### Content-Type
 

@@ -71,8 +71,8 @@ To disable your source from OAuth, turn the toggle off for **Enable OAuth**.
 You can obtain an access token once you create an OAuth application and enable a source to OAuth.  
 
 Access tokens are only valid within a region. The supported regional authorization servers are: 
-* Oregon - https://oauth2.segment.io 
-* Dublin - https://oauth2.eu1.segmentapis.com
+* Oregon - `https://oauth2.segment.io`
+* Dublin - `https://oauth2.eu1.segmentapis.com`
 
 To obtain the access token:
 
@@ -108,7 +108,7 @@ To obtain the access token:
     EXP | The expiry time in seconds. This is expected to be valid only for a short duration under a minute. 
     JTI | The unique identifer for the token. 
 
-2. Send a form-url-encoded POST request to the regional authorization server with the following parameters:
+2. Send a form-url-encoded `POST` request to the regional authorization server with the following parameters:
     
     ```
     grant_type=client_credentials
@@ -122,27 +122,7 @@ To obtain the access token:
     JWT | The signed JWT token string from Step 1.
     SCOPE | Scopes for which token is requested. See [supported scopes](#supported-scopes).
 
-3. Include the access token in the Authorization header as a Bearer token. For example:
-
-    ```
-    Authorization: Bearer <access token>
-    ```
-
-   Below is an example cURL request: 
-
-   ```
-   curl --location 'https://api.segment.io/v1/track' \
-    --header 'Content-Type: application/json' \
-    --header 'Authorization: Bearer <access token>' \
-    --data-raw '{
-        "event": "happy-path-a3ef8a6f-0482-4694-bc4d-4afba03a0eab",
-        "email": "test@example.org",
-        "messageId": "58524f3a-3b76-4eac-aa97-d88bccdf4f77",
-        "userId": "123",
-        "writeKey": "DmBXIN4JnwqBnTqXccTF0wBnLXNQmFtk"
-    }
-    ```
-
+To use the access token, see an example of how to use the access token in the [HTTP API source](). 
 
 ## Edit an OAuth application
 To edit an existing OAuth application: 
