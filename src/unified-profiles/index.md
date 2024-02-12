@@ -24,11 +24,93 @@ Before creating a Segment for Flex workspace, you must have requested access fro
 
 ### Step 1: Select your data sources
 
-1. From your Flex account, select **Flex Unify**. 
-3. On the Flex Unify overview screen, click **Create Unify space in Segment**.
-4. In Segment for Flex, select one of the data sources and click **Next**.
-5. On the Getting started with Segment page, 
+<!--- remaining work for this section:
+- rewrite warning callout
+- 
+--->
 
+1. From your Flex account, select **Unify**. 
+2. On the Flex Unify overview screen, click **Create Unify space in Segment**.
+3. In Segment for Flex, select a data source to get started and click **Next**.
+4. Review the popup that explains how the data source that connects to Segment, and click **Continue**.
+
+> warning "WIP: Add a header here"
+> Once you've selected your data source and proceeded to the next step in the setup process, you can't return and make a different selection. You can select additional sources in a later step.
+
+### Step 2: Add connections
+
+Once you've selected where your customer data is stored, you must set up the connections between your data sources and Segment. 
+
+You can set up one of the following options: 
+- [Salesforce and data warehouse](#salesforce-and-data-warehouse)
+- [A data warehouse only](#data-warehouse-only)
+- [A website or mobile app source](#website-or-mobile-app)
+
+#### Salesforce and data warehouse
+
+<!--- remaining questions for this section:
+- what permissions does the Salesforce user need to have??
+--->
+
+1. On the *Getting started with Segment* page, click **Connect Salesforce**. 
+2. You are redirected to the Salesforce login screen. Sign in to Salesforce with a user that has XYZ permissions. 
+3. On the *Getting started with Segment* page, click **Connect data warehouse**. 
+4. Select your data warehouse from the list of available warehouses, and click **Next**.
+5. Give your destination a name and enter your account credentials for a user that has read and write permissions. Click **Save**. 
+6. Once you've given your destination a name and entered your credentials, click **Next**.
+7. On the *Getting started with Segment* page, click **Define Model**.
+8. Create a SQL query that defines your model. Once you've created a model, Segment uses your model to map data to your Reverse ETL destinations. <br> Segment recommends a model with the following format: 
+
+``` sql
+SELECT * FROM salesforce_unified_profiles.accounts
+```
+
+<ol style="counter-reset: none;">
+  <li value="9" markdown=1>
+  Select a column to act as your unique identifier and click **Preview** to return 10 records from your warehouse. When you've verified that your records return as expected, click **Next**.
+  </li>
+  <li value="10" markdown=1>
+  Click **Create Mapping**. On the Select mappings screen, map event fields from your data source to the pre-filled values that Segment expects to receive. Clicking into an event field lets you search your destination's record fields. When you've finished mapping all of the event fields, click **Create mapping.**
+  </li>
+  <li value="11" markdown=1>
+  After the Add connections tile is marked as complete, click **Add identifiers and traits** and begin [Step 3: Add identifiers and traits](#step-3-add-identifiers-and-traits). 
+  </li>
+</ol>
+
+
+
+#### Data warehouse only
+
+<!--- remaining questions for this section:
+- what does the SQL query for the model look like?
+--->
+
+1. On the *Getting started with Segment* page, click **Connect data warehouse**. 
+2. Select your data warehouse from the list of available warehouses, and click **Next**.
+3. Give your destination a name and enter your account credentials for a user that has read and write permissions. Click **Save**. 
+4. Once you've given your destination a name and entered your credentials, click **Next**.
+5. On the *Getting started with Segment* page, click **Define Model**.
+6. Create a SQL query that defines your model. Once you've created a model, Segment uses your model to map data to your Reverse ETL destinations. <br> Segment recommends a model with the following format: 
+
+``` sql
+SELECT * FROM unified_profiles.accounts
+```
+
+<ol style="counter-reset: none;">
+  <li value="7" markdown=1>
+  Select a column to act as your unique identifier and click **Preview** to return 10 records from your warehouse. When you've verified that your records return as expected, click **Next**.
+  </li>
+  <li value="8" markdown=1>
+  Click **Create Mapping**. On the Select mappings screen, map event fields from your data source to the pre-filled values that Segment expects to receive. Clicking into an event field lets you search your destination's record fields. When you've finished mapping all of the event fields, click **Create mapping.**
+  </li>
+  <li value="9" markdown=1>
+  After the Add connections tile is marked as complete, click **Add identifiers and traits** and begin [Step 3: Add identifiers and traits](#step-3-add-identifiers-and-traits). 
+  </li>
+</ol>
+
+#### Website or mobile app
+
+I don't know what this flow looks like and probably need access to a demo environment with this option selected to click through the setup screens (or have someone explain it to me)
 
 <!--Set up data source
 Options:
@@ -47,11 +129,9 @@ Data Warehouse
 Click Connect data warehouse.
 Select a data warehouse
 Give your data warehouse a name
-Authenticate your data warehouse with a user that has read and write permissions
-Create a model
-Create a mapping-->
+Authenticate your data warehouse with a user that has read and write permissions-->
 
-### Step 2: Add identifiers and traits
+### Step 3: Add identifiers and traits
 After you've selected which data sources you'd like to integrate customer data from, you can select _identifiers_, or unique pieces of data that allow you to link information about an individual customer across different programs and services, and _traits_, which are pieces of information you know about a particular customer. 
 
 1. On the Add identifiers and traits page, click **Add identifier**. 
@@ -59,12 +139,12 @@ After you've selected which data sources you'd like to integrate customer data f
 3. Review the identifiers you've selected. If you need to make changes to the priority order the identifiers appear in, click **Edit Priority**. To make changes to an identifier, select the menu icon in the row the identifier appears in, and click either **Edit** or **Delete**. <!---menu icon??--->
 4. When you're satisfied with your identifiers, click **Add computed traits**.
 5. Select up to two traits and click **Save**. <br> _Segment recommends selecting **Total inbounds**, or the number of inbound attempts that resulted in a customer engagement, and **Frequent inbound channel**, which identifies the most frequently used communication channel._
-6. **(Optional)**: Set up predictive traits by selecting the Set up predictive traits dropdown and clicking **Complete setup** next to one or both traits. For more information about predictive traits, see Segment's [Predictions documentation](/docs/unify/Traits/predictions/).
+6. **(Optional)**: Set up predictive traits by selecting the **Set up predictive traits** dropdown and clicking **Complete setup** next to one or both traits. For more information about predictive traits, see Segment's [Predictions documentation](/docs/unify/Traits/predictions/).
 
 > warning "Predictive traits require event data in your sources"
 > Before you can configure predictive traits, you must have data flowing into your connected source. Once data is flowing into your source, it can take up to 48 hours for predictive traits to be ready. <!---rewrite disclaimer about timing. it's jank rn--->
 
-### Step 3: Check configuration
+### Step 4: Check configuration
 The final step in the Segment for Flex setup process is to check your configuration. After this check succeeds, you can return to Flex to complete the Unified Profiles setup process.
 
 To check your configuration: 
