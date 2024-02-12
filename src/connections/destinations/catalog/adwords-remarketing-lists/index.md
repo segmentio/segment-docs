@@ -127,6 +127,10 @@ If a user has more than one email address or IDFA on their account as `external_
 
 Make sure that this destination was created in [Engage](/docs/engage/) as it requires additional event data not available in standard destinations.
 
+### Invalid user list ID error in Event Delivery
+
+When you first connect the destination into an audience, a call to the destination will be triggered to create the audience downstream. Once that succeeds and the audience is created, the destination API returns an ID for that audience to Segment. Later on, for subsequent updates to the audience in the destination (adding/removing users), Segment uses this ID to send the request to it. This error usually means that the audience ID Engage is using no longer exist in the destination. To sort this issue, you will need to either recreate the audience or create a *new instance* of the destination and link it to the audience. Removing and re-adding the same instace of the destination will not work.
+
 ## FAQs
 
 #### What Google Ads campaigns does Engage support?
