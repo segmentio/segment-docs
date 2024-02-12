@@ -3,7 +3,7 @@ title: Analytics for Clojure
 sourceTitle: 'Clojure'
 sourceCategory: 'Server'
 shortName: 'clojure'
-support_type: maintenance
+support_type: community
 id: B6L7qzHmhI
 ---
 The clojure library lets you record analytics data from your clojure code. The requests hit Segment servers, and then Segment routes your data to any analytics service you enable on your destinations page.

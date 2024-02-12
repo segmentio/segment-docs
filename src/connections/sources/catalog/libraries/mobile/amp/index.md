@@ -1,6 +1,6 @@
 ---
 title: Analytics for AMP
-support_type: maintenance
+support_type: community
 redirect_from: '/connections/sources/catalog/libraries/server/amp/'
 ---
 
