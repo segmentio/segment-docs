@@ -61,7 +61,7 @@ Before connecting the segment source to Avo, you will need an API key for your s
 
 1. Create your Avo workspace at avo.app (If you don’t have one already).
 2. From the Avo workspace sidebar, select **Sources**.
-3. Select an existing source or create a new one. (We recommend naming your Avo sources the same as your Segment sources, for example "Web", "iOS", "Android")
+3. Select an existing source or create a new one. (Avo recommends naming your Avo sources the same as your Segment sources, for example "Web", "iOS", "Android")
    ![Select a source](images/select-source.png)
 4. Click the **Inspector Setup** tab in the Avo source
 5. Copy the API Key
