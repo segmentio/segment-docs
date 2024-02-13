@@ -210,14 +210,28 @@ Other libraries only collect `context.library`, any other context variables must
 
 - userAgentData is only collected if the [Client Hints API](https://developer.mozilla.org/en-US/docs/Web/API/User-Agent_Client_Hints_API){:target="_blank"} is available on the browser.
 
-To pass the context variables which are not automatically collected by Segment's libraries, you must manually include them in the event payload. The following code shows how to pass `groupId` as the context field of Analytics.js's `.track()` event:
+To pass the context variables which are not automatically collected by Segment's libraries, you must manually include them in the event payload. 
+
+The following code shows how to pass a context object with custom fields in a Analytics.js's `.track()` event:
+
+```js
+analytics.track("Report Submitted", {
+    property1: 'string',
+    property2: false,
+  },
+  {
+    context: {device:'value', OS:'value', lat:'value', long:'value'}
+  }
+  );
+```
+
+The following code shows how to pass `groupId` as the context field of Analytics.js's `.track()` event:
 
 ```js
 analytics.track("Report Submitted", {},
     {"groupId": "1234"}
 );
 ```
-
 
 ## Integrations
 
