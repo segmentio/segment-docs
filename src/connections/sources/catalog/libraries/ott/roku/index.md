@@ -2,7 +2,7 @@
 title: Analytics for Roku
 sourceTitle: 'Roku'
 id: BbupS2SB0b
-support_type: maintenance
+support_type: community
 ---
 The Segment Roku SDK makes it easy to send data to Segment from any Roku enabled device. This library is open-source, so you can [check it out on GitHub](https://github.com/segmentio/analytics-roku).
 
