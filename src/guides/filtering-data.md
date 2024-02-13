@@ -99,7 +99,6 @@ When an event is blocked, the name of the event or property appears on your Sche
 In most cases, blocking an event immediately stops that event from sending to destinations. In rare cases, it can take **up to 6 hours** for an event to completely stop arriving in all Destinations.
 
 This feature is only available if the Source is not connected to a Tracking Plan, and is only available in workspaces that are on a Business Tier plan.
-
  
 ## Protocols Tracking Plan blocking and property omission
 
