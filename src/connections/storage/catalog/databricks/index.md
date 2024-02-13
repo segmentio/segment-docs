@@ -78,10 +78,10 @@ Next, add SQL warehouse details about your compute resource.
 - **Port**: The port number of your SQL warehouse.
 
 
-### Step 5: Add the service principal client ID and client secret
+### Step 5: Add the service principal client ID and OAuth secret
 
 > warning ""
-> Be sure to note the principal ID and the client secret Databricks generates, as you'll need to enter them in this step.
+> Be sure to note the principal ID and the OAuth secret Databricks generates, as you'll need to enter them in this step.
 
 Segment uses the service principal to access your Databricks workspace and associated APIs.
 1. Follow the [Databricks guide for adding a service principal to your account](https://docs.databricks.com/en/administration-guide/users-groups/service-principals.html#manage-service-principals-in-your-account){:target="_blank"}. This name can be anything, but Segment recommends something that identifies the purpose (for example, "Segment Storage Destinations"). Note the principal application ID that Databricks generates to use in this step. Segment doesn't require Account admin or Marketplace admin roles.
