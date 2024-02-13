@@ -129,7 +129,7 @@ Make sure that this destination was created in [Engage](/docs/engage/) as it req
 
 ### Invalid user list ID error in Event Delivery
 
-When you first connect the destination into an audience, a call to the destination will be triggered to create the audience downstream. Once that succeeds and the audience is created, the destination API returns an ID for that audience to Segment. Later on, for subsequent updates to the audience in the destination (adding/removing users), Segment uses this ID to send the request to it. This error usually means that the audience ID Engage is using no longer exist in the destination. To sort this issue, you will need to either recreate the audience or create a *new instance* of the destination and link it to the audience. Removing and re-adding the same instace of the destination will not work.
+When you first connect a destination to an audience, Segment triggers a call to the destination to create the audience downstream. Once Segment creates the audience, the destination API returns an audience ID. For subsequent updates to the audience in the destination (adding or removing users), Segment uses this ID to send requests to the destination. The invalid user list ID error usually means that the audience ID no longer exists in the destination. To resolve this, you'll need to either recreate the audience or create a *new instance* of the destination and link it to the audience. Removing and re-adding the same instance of the destination will not work.
 
 ## FAQs
 
