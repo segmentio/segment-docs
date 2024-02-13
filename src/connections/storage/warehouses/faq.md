@@ -64,18 +64,18 @@ Protocols customers can also use [Transformations](/docs/protocols/transform/) t
 
 ## Can I change the data type of a column in the warehouse?
 
-Yes, the data type can be changed, and you can always reach out to [Segment support](https://app.segment.com/workspaces?contact=1){:target="_blank”} for assistances.
+Yes. Data types are initially set up in your warehouse based on the first value that comes in from a source, but you can request data type changes by reaching out to [Segment support](https://app.segment.com/workspaces?contact=1){:target="_blank”} for assistance.
 
-For context, Segment uses ["unified" data types](/docs/connections/storage/warehouses/schema/#schema-evolution-and-compatibility){:target="_blank”} to create the all coresponding data types in cusostomer's data warehouse destinations based on the first value that comes in from a source. As an example, Segment support team can generally help in the below scenarios:
+Keep in mind that Segment only uses [general data types](/docs/connections/storage/warehouses/schema/#schema-evolution-and-compatibility){:target="_blank”} when loading data in your warehouse. Therefore, some of the common scenarios are:
 - Changing data type from `timestamp` to `varchar` 
 - Changing data type from `integer` to `float`
 - Changing data type from `boolean` to `varchar`
 
-And, the team normally can't update the data type in the below scenarios, where you need to manually change the data type:
-- Expanding `varchar(256)` to `varchar(2048)`
-- Updating `integer` to `bigint`
-- Updating `float` to `float8`
-- The credentials configured for syncing data doesn't have sufficient permissions
+More granular changes (such as the examples below) wouldn’t normally be handled by the Support team, thus they often need to be made within the warehouse itself:
+- Expanding data type `varchar(256)` to `varchar(2048)`
+- Updating data type `integer` to `bigint`
+- Updating data type `float` to `float8`
+
 
 
 ## Can the data type definitions in Protocols be enforced in a warehouse schema?
