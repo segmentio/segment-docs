@@ -3,8 +3,9 @@ title: Analytics for Ruby
 sourceTitle: 'Ruby'
 sourceCategory: 'Server'
 id: aACTBqIbWT
+support_type: maintenance
 ---
-Our Ruby library lets you record analytics data from your ruby code. The requests hit our servers, and then we route your data to any analytics service you enable on your destinations page.
+Segment's Ruby library lets you record analytics data from your ruby code. The requests hit Segment servers, and then Segment routes your data to any analytics service you enable on your destinations page.
 
 This library is open-source, so you can [check it out on GitHub](https://github.com/segmentio/analytics-ruby).
 

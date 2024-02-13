@@ -121,7 +121,6 @@ Please note the following limits as you upload CSV files to Twilio Engage:
 - You can only upload .csv files.
 - Files can't be empty and must have at least one header and one row.
 - You can't have multiple columns with the same header.
-- CSV files can't contain extraneous column headers.
 - Upload CSV files with up to 1 million rows (plus one header row).
 - You can only upload one file at a time.
 - The CSV file size can't exceed 100 MB.
