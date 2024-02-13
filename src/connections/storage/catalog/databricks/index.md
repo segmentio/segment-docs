@@ -26,7 +26,7 @@ Before getting started with the Databricks Destination, note the following prere
 
 ### Warehouse size
 
-A SQL warehouse is required for compute. Segment recommends a warehouse with the following characteristics:
+A [SQL warehouse is required](https://docs.databricks.com/en/compute/sql-warehouse/warehouse-behavior.html#sizing-a-serverless-sql-warehouse){:target="_blank"} for compute. Segment recommends a warehouse with the following characteristics:
   - **Size**: small
   - **Type** Serverless otherwise Pro
   - **Clusters**: Minimum of 2 - Maximum of 6
