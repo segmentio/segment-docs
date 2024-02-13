@@ -11,6 +11,8 @@ With Predictions, you can identify users with, for example, a high propensity to
 
 Segment saves predictions to user profiles, letting you build Audiences, trigger Journeys, and send data to downstream destinations.
 
+For more details on AI usage and data, see [Predictions Nutrition Label](/docs/unify/traits/predictions/predictions-nutrition-label/).
+
 On this page, you'll learn how to build a prediction.
 
 ## Access and build a prediction
