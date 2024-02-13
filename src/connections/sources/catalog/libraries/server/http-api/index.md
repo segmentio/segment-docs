@@ -11,7 +11,7 @@ Segment has native [sources](/docs/connections/sources/) for most use cases (lik
 
 ### Authentication
 
-Choose between [basic authentication](#basic-authentication) and [OAuth](#oauth) to authenticate headers. 
+Choose between [basic authentication](#basic-authentication) and [OAuth](#oauth) to authenticate requests. 
 
 #### Basic authentication
 
@@ -26,7 +26,7 @@ In practice that means taking a Segment source **Write Key**,`'abc123'`, as the 
 #### OAuth
 [Obtain the access token](/docs/connections/oauth/) from the Authorization Server specific to the region. 
 
-Include the access token in the Authorization header as a Bearer token to the resource server. For example:
+Include the access token in the Authorization header as a Bearer token along with your project's write key in the payload of the request. For example, Authorization with Bearer token looks like:
 
   ```
   Authorization: Bearer <access token>
