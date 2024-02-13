@@ -133,3 +133,6 @@ If you want to confirm, you can configure the new destination to point to a diff
 
 If the Mixpanel (Actions) destination uses $group_id as the group key, ensure that the mappings handling your `track` events have the field for **Group ID** mapped to a valid value. By default, this field maps to the event variable `context.groupId`.
 
+### Failed events due to timestamp
+
+If your integration is correct and you are still seeing failed events, please review and verify that you are sending all date properties as UTC time format, due to Mixpanel timestamp format requirements. 
