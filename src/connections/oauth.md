@@ -122,7 +122,7 @@ To obtain the access token:
     JWT | The signed JWT token string from Step 1.
     SCOPE | Scopes for which token is requested. See [supported scopes](#supported-scopes).
 
-To use the access token, see an example of how to use the access token in the [HTTP API source](). 
+To use the access token, see an example of how to use the access token in the [HTTP API source](/docs/connections/sources/catalog/libraries/server/http-api/#oauth). 
 
 ## Edit an OAuth application
 To edit an existing OAuth application: 
