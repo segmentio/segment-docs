@@ -3,6 +3,8 @@ title: AppFit (Actions) Destination
 id: 64b67be0d0dd66094c162ca7
 private: true
 hidden: true
+redirect_from:
+  - "/connections/destinations/catalog/actions-app-fit" 
 ---
 
 {% include content/plan-grid.md name="actions" %}
