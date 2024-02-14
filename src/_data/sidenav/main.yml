@@ -339,8 +339,8 @@ sections:
         title: Using Predictions
       - path: '/unify/traits/predictions/suggested-predictive-audiences'
         title: Suggested Predictive Audiences
-      - path: '/unify/traits/predictions/predictions-nutrition-label'
-        title: Predictions Nutrition Label
+      - path: '/unify/traits/predictions/predictions-nutrition-facts'
+        title: Predictions Nutrition Facts Label
     - path: '/unify/traits/computed-traits'
       title: Computed Traits
     - path: '/unify/traits/custom-traits'
