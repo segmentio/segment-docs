@@ -77,6 +77,16 @@ Sources pages check if the source is a cloud-app, then include information about
 
 Content with in each `.md` file is markdown. For information about styling, and available extensions, see `_src/utils/formatguide.md` or the live version [here](https://segment.com/docs/utils/formatguide).
 
+## Building a Preview
+
+Netlify allows you to build a preview environment on any PR you create in Github. This is helpful when you want to send out a review, and the formatting and design are important to those reviewers. 
+
+To build a preview site, add `netlify-build` to a commit message on your PR. Here's an example of what the preview build will look like: 
+
+https://github.com/segmentio/segment-docs/pull/6051#issuecomment-1942723573 
+
+You can rebuild the preview by adding a new commit with  `netlify-build` in the commit message. 
+
 ### Front matter
 
 Repository Markdown files often contain front matter metadata, which you'll find at the top of the file. These front matter variables instruct Jekyll how to build and render the page as HTML.
