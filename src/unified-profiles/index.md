@@ -12,7 +12,7 @@ For more information about Unified Profiles, see the [Agent Copilot](https://www
 > info "Public Beta"
 > Unified Profiles in Flex is currently available as a limited Public Beta product and the information contained in this document is subject to change. This means that some features are not yet implemented and others may be changed before the product is declared as Generally Available. Public Beta products are not covered by a Twilio SLA.
 
-Users without an existing Segment workspace can configure a [Segment for Flex](#configure-a-segment-for-flex-workspace) workspace, which provides limited access to Segment. Users with an existing Segment workspace can use a Unify space to [connect their existing workspace to Flex](#connect-an-existing-workspace).
+Users without an existing Segment workspace can configure a [Segment for Flex](#configure-a-segment-for-flex-workspace) workspace, which provides limited access to Segment. Users with an existing Segment workspace can [connect their existing workspace to Flex](#connect-an-existing-workspace).
 
 ## Create a Segment for Flex workspace
 
@@ -274,14 +274,22 @@ After linking your customer data to Flex using a Unify space, you can set up [Co
 > warning "Complete an interaction in Flex before creating computed traits in Segment"
 > Before you can create computed traits in Segment, you must confirm your customer identifier settings and then complete a customer interaction in Flex. 
 
-#### Computed Traits
-[Computed Traits](/docs/unify/traits/computed-traits) allow you to quickly create user or account-level calculations that Segment keeps up-to-date over time. These computations are based on the events and event properties that you are sending through Segment. 
+#### Computed traits
+[Computed traits](/docs/unify/traits/computed-traits) allow you to quickly create user or account-level calculations that Segment keeps up-to-date over time. These computations are based on the events and event properties that you are sending through Segment. 
 
-Segment recommends that you configure the following Computed Traits for Unified Profiles:
-- [Total Outbounds](#total-outbounds)
-- [Frequent Inbound Channel](#frequent-inbound-channel)
+Segment recommends that you configure the following computed traits for Unified Profiles:
+- [Total inbounds](#total-inbounds): Number of inbound attempts resulting in customer engagement
+- [Frequent inbound channel](#frequent-inbound-channel): Identifies the user's most frequently used channel of communication
 
-##### Total Outbounds
+Other computed traits that might be helpful include:
+- [Total outbounds](#total-outbounds): Number of outbound attempts resulting in customer engagement
+- [Last known service agent](#last-known-service-agent): Identifies the last agent to allow connecting to the same agent
+- [Last interaction duration](#last-interaction-duration): The duration (in seconds) of the customer's last interaction with agent(s)
+- [Common request](#): Most frequent topic of inbound or outbound engagement
+- [Sentiment in last interaction](#sentiment-in-last-interaction): Gen-AI inferred sentiment in last interaction
+- [Last interaction topic](#last-interaction-topic): Topic of the last interaction 
+
+#### Total inbounds
 1. Navigate to the Unify space you linked to Flex and click **Traits**. 
 2. Click **Create computed trait**. 
 3. Select **Event counter** and click **Next**. 
@@ -289,13 +297,13 @@ Segment recommends that you configure the following Computed Traits for Unified 
 5. Add the following conditions:
   - **Event property**: direction
   - **Operator**: equals
-  - **Value**: Outbound
+  - **Value**: Inbound
 6. Verify that your trait contains at least one member by clicking the **Preview Trait** button. 
 7. When you've verified that your trait contains at least one member, click **Next**.
 8. On the Select Destinations page, don't add a destination. Instead, click **Next**. 
 9. Enter a name for your trait and click **Create Trait**. 
 
-##### Frequent Inbound Channel
+##### Frequent inbound channel
 1. Navigate to the Unify space you linked to Flex and click **Traits**. 
 2. Click **Create computed trait**. 
 3. Select **Most frequent** and click **Next**. 
@@ -310,21 +318,81 @@ Segment recommends that you configure the following Computed Traits for Unified 
 8. On the Select Destinations page, don't add a destination. Instead, click **Next**. 
 9. Enter a name for your trait and click **Create Trait**. 
 
-<!---Other Computed Traits that may be helpful include:
-- Total Inbounds 
-- Last Known Service Agent
-- Last Interaction Duration
-- Common Request
-- Sentiment in Last Interaction
-- Last Interaction Topic
---->
+##### Total outbounds
+1. Navigate to the Unify space you linked to Flex and click **Traits**. 
+2. Click **Create computed trait**. 
+3. Select **Event counter** and click **Next**. 
+4. Select the "Flex - Engagement Completed" event.
+5. Add the following conditions:
+  - **Event property**: direction
+  - **Operator**: equals
+  - **Value**: Outbound
+6. Verify that your trait contains at least one member by clicking the **Preview Trait** button. 
+7. When you've verified that your trait contains at least one member, click **Next**.
+8. On the Select Destinations page, don't add a destination. Instead, click **Next**. 
+9. Enter a name for your trait and click **Create Trait**. 
+
+##### Last known service agent
+1. Navigate to the Unify space you linked to Flex and click **Traits**. 
+2. Click **Create computed trait**. 
+3. Select **Last** and click **Next**. 
+4. Select the "Flex - Engagement Completed" event.
+6. Add an event property "lastKnownAgentWorkerSid" with a value "Text".
+6. Verify that your trait contains at least one member by clicking the **Preview Trait** button. 
+7. When you've verified that your trait contains at least one member, click **Next**.
+8. On the Select Destinations page, don't add a destination. Instead, click **Next**. 
+9. Enter a name for your trait and click **Create Trait**.
+
+##### Last interaction duration
+1. Navigate to the Unify space you linked to Flex and click **Traits**. 
+2. Click **Create computed trait**. 
+3. Select **Last** and click **Next**. 
+4. Select the "Flex - Engagement Completed" event.
+6. Add an event property "duration" with a value "Number(100)".
+6. Verify that your trait contains at least one member by clicking the **Preview Trait** button. 
+7. When you've verified that your trait contains at least one member, click **Next**.
+8. On the Select Destinations page, don't add a destination. Instead, click **Next**. 
+9. Enter a name for your trait and click **Create Trait**. 
+
+##### Common request
+1. Navigate to the Unify space you linked to Flex and click **Traits**. 
+2. Click **Create computed trait**. 
+3. Select **Most frequent** and click **Next**. 
+4. Select the "Flex - Wrap Up Completed" event.
+5. Add an additional event property "topic" with a value "Text".
+6. Add a minimum frequency of "2".
+6. Verify that your trait contains at least one member by clicking the **Preview Trait** button. 
+7. When you've verified that your trait contains at least one member, click **Next**.
+8. On the Select Destinations page, don't add a destination. Instead, click **Next**. 
+9. Enter a name for your trait and click **Create Trait**.
+
+##### Sentiment in last interaction
+1. Navigate to the Unify space you linked to Flex and click **Traits**. 
+3. Select **Last** and click **Next**. 
+4. Select the "Flex - Wrap Up Completed" event.
+5. Add an additional event property "sentiment" with a value "Text".
+6. Add a minimum frequency of "2".
+6. Verify that your trait contains at least one member by clicking the **Preview Trait** button. 
+7. When you've verified that your trait contains at least one member, click **Next**.
+8. On the Select Destinations page, don't add a destination. Instead, click **Next**. 
+9. Enter a name for your trait and click **Create Trait**.
+
+##### Last interaction topic
+1. Navigate to the Unify space you linked to Flex and click **Traits**.
+3. Select **Last** and click **Next**. 
+4. Select the "Flex - Wrap Up Completed" event.
+5. Add an event property "topic" with a value "Text".
+6. Verify that your trait contains at least one member by clicking the **Preview Trait** button. 
+7. When you've verified that your trait contains at least one member, click **Next**.
+8. On the Select Destinations page, don't add a destination. Instead, click **Next**. 
+9. Enter a name for your trait and click **Create Trait**.
 
 ### Predictions
 [Predictions](/docs/unify/traits/predictions/), Segment’s artificial intelligence and machine learning feature, let you predict the likelihood that users will perform any event tracked in Segment. With Predictions, you can identify users with, for example, a high propensity to purchase, refer a friend, or use a promo code. Predictions also lets you predict a user’s lifetime value (LTV).
 
 Segment recommends that you select the following Predictions for Unified Profiles: 
-- Likelihood to churn
-- Lifetime value
+- [Likelihood to churn](/docs/unify/traits/predictions/#likelihood-to-churn)
+- [Predicted Lifetime value](/docs/unify/traits/predictions/#predicted-lifetime-value)
 
 #### Likelihood to churn
 1. Navigate to the Unify space you linked to Flex and click **Traits**. 
