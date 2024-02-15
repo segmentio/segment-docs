@@ -85,7 +85,7 @@ To build a preview site, add `netlify-build` to a commit message on your PR. Her
 
 https://github.com/segmentio/segment-docs/pull/6051#issuecomment-1942723573 
 
-You can rebuild the preview by adding a new commit with  `netlify-build` in the commit message. 
+You can rebuild the preview by adding a new commit with  `[netlify-build]` in the commit message. 
 
 ### Front matter
 
