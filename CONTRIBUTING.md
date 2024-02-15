@@ -79,7 +79,7 @@ Content with in each `.md` file is markdown. For information about styling, and 
 
 ## Building a Preview
 
-Netlify allows you to build a preview environment on any PR you create in Github. This is helpful when you want to send out a review, and the formatting and design are important to those reviewers. 
+Netlify allows you to build a preview environment on any PR you create in GitHub. This is helpful when you want to send out a review, and the formatting and design are important to those reviewers. 
 
 To build a preview site, add `netlify-build` to a commit message on your PR. Here's an example of what the preview build will look like: 
 
