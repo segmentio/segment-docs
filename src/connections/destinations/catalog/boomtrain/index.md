@@ -1,5 +1,5 @@
 ---
-tile: Boomtrain Destination
+title: Boomtrain Destination
 beta: true
 ---
 
