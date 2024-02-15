@@ -3,9 +3,9 @@ title: Segment Query Language Reference
 plan: engage-foundations
 ---
 
-Segment's Query Language lets you define audience segments and computed traits. With clear syntax and practical functionality, the language simplifies the process of defining conditions and computations, helping you extract valuable insights from customer data. 
+Segment's query language lets you define audience segments and computed traits. With clear syntax and practical functionality, the language simplifies the process of defining conditions and computations, helping you extract valuable insights from customer data. 
 
-This reference provides a comprehensive overview of the Segment Query Language.
+This reference provides a comprehensive overview of the Segment query language.
 
 ## Overview
 
@@ -25,7 +25,7 @@ Follow these syntax rules when you create definitions:
 - Expressions are composed of chained functions, starting with an extractor and ending with a result.
 - `.` serves as the delimiter when chaining functions.
 - Audience definitions must return a boolean result (for example, a comparator), while computed trait definitions must return a scalar.
-- Functions have well-defined return types that determine the permissible functions in the call-chain.
+- Functions have well-defined return types that determine the permissible functions in the call chain.
 - When you use junctions, `AND` holds precedence over `OR`, but parentheses offer control over expression combination.
 - Each definition allows a maximum of 50 primary expressions.
 
@@ -34,7 +34,7 @@ Follow these syntax rules when you create definitions:
 The language supports the following syntactic sugar adjustments:
 
 - The language automatically wraps a 'literal' extractor function around string or number inputs wherever a scalar expression expects them.
-- You can invoke boolean comparator functions `eq`, `neq`, `gt`, `gte`, `lt`, and `lte` by omitting the period and parenthesis and replacing the function name with the equivalent symbols `=`, `!=`, `>`, `>=`, `<`, and `<=`. Regardless of the syntactic sugar, the comparison still dictates the operations allowed in the call-chain.
+- You can invoke the boolean comparator functions `eq`, `neq`, `gt`, `gte`, `lt`, and `lte` by omitting the period and parenthesis and replacing the function name with the equivalent symbols `=`, `!=`, `>`, `>=`, `<`, and `<=`. Regardless of the syntactic sugar, the comparison still dictates the operations allowed in the call-chain.
 
 ### Definition type
 
@@ -48,38 +48,38 @@ The following tables list the query languages's available functions.
 
 ### Extractors
 
-| `event`       |                                                                       |
-| ----------- | --------------------------------------------------------------------- |
-| Syntax      | `event({s: String})` <br> s - name of event to build an extractor for |
-| Return Type | `VectorExtractor`                                                     |
-| Example     | `event('Shoes Bought')`                                               |
+| `event`     |                                                                               |
+| ----------- | ----------------------------------------------------------------------------- |
+| Syntax      | `event({s: String})` <br> s - the name of the event to build an extractor for |
+| Return Type | `VectorExtractor`                                                             |
+| Example     | `event('Shoes Bought')`                                                       |
 
-| `trait`       |                                                                                                     |
+| `trait`     |                                                                                                     |
 | ----------- | --------------------------------------------------------------------------------------------------- |
-| Syntax      | `trait({s: String})` <br> s - name of the trait to reference                                        |
+| Syntax      | `trait({s: String})` <br> s - the name of the the trait to reference                                |
 | Return Type | `ScalarExtractor`                                                                                   |
 | Description | Similar to the event operator, the trait operator is used to specify profile trait filter criteria. |
 | Example     | `trait('total_spend')`                                                                              |
 
-| `property`  |                                                                                                                                                                                                                        |
-| ----------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Syntax      | `property({s: String})` <br> s - name of property to build an extractor for  <br> In the context of funnel audiences, a parent prefix can be added to reference the parent event. <br> `property(parent: {s: String})` |
-| Return Type | `ScalarExtractor`                                                                                                                                                                                                      |
-| Notes       | Only valid within a `where` function or a Reducer                                                                                                                                                                      |
-| Example     | `property('total')`                                                                                                                                                                                                    |
+| `property`  |                                                                                                                                                                                                                               |
+| ----------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Syntax      | `property({s: String})` <br> s - the name of the property to build an extractor for  <br> In the context of funnel audiences, you can add a parent prefix to reference the parent event. <br> `property(parent: {s: String})` |
+| Return Type | `ScalarExtractor`                                                                                                                                                                                                             |
+| Notes       | Only valid within a `where` function or a Reducer.                                                                                                                                                                            |
+| Example     | `property('total')`                                                                                                                                                                                                           |
 
-| `context`   |                                                                           |
-| ----------- | ------------------------------------------------------------------------- |
-| Syntax      | `context({s: String})` <br> s - name of context to build an extractor for |
-| Return Type | `ScalarExtractor`                                                         |
-| Notes       | Only valid within a `where` function or a Reducer                         |
-| Example     | `context('page.url')`                                                     |
+| `context`   |                                                                                   |
+| ----------- | --------------------------------------------------------------------------------- |
+| Syntax      | `context({s: String})` <br> s - the name of the context to build an extractor for |
+| Return Type | `ScalarExtractor`                                                                 |
+| Notes       | Only valid within a `where` function or a Reducer                                 |
+| Example     | `context('page.url')`                                                             |
 
-| `literal`                        |                                                                                                                                                                                                                                             |
-| -------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Syntax                           | `literal({a: Any})`  <br> a - the value to treat as a literal expression                                                                                                                                                                    |
-| Operations allowed in call-chain | None allowed - typically used within another function, like a comparison (with syntactic sugar, this would appear on the right side of the comparison). The outer function or comparison dictates the operations allowed in the call-chain. |
-| Example                          | `literal(100)` <br>                                                                                                                                                                                                                         |
+| `literal`                        |                                                                                                                                                                                                                                            |
+| -------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| Syntax                           | `literal({a: Any})`  <br> a - the value to treat as a literal expression                                                                                                                                                                   |
+| Operations allowed in call-chain | None allowed; typically used within another function, like a comparison (with syntactic sugar, this would appear on the right side of the comparison). The outer function or comparison dictates the operations allowed in the call-chain. |
+| Example                          | `literal(100)` <br>                                                                                                                                                                                                                        |
 
 
 
