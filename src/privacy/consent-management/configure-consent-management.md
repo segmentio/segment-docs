@@ -58,7 +58,7 @@ If you'd like to integrate with any other CMP, Segment requires you to build you
 
 ### Validate your CMP integration
 
-Customers with Analytics.js 2.0 sources can use the [Segment Inspector](/docs/connections/sources/catalog/libraries/website/javascript/#segment-inspector) to confirm that events from their source contain the [consent object](/docs/privacy/consent-management/consent-in-segment-connections). Unify and Engage users can also verify that the [Segment Consent Preference Updated event](/docs/privacy/consent-management/consent-in-unify/#segment-consent-preference-event) emits every time end users update their consent preferences.
+Customers with Analytics.js 2.0 sources can use the [Segment Inspector](/docs/connections/sources/catalog/libraries/website/javascript/#segment-inspector) to confirm that events from their source contain the [consent object](/docs/privacy/consent-management/consent-in-segment-connections). Unify and Engage users can also verify that the [Segment Consent Preference Updated event](/docs/privacy/consent-management/consent-in-unify/#segment-consent-preference-updated-event) emits every time end users update their consent preferences.
 
 All users can validate that events contain the consent object and that the Segment Consent Preference Updated event is present using Segment's [Source Debugger](/docs/connections/sources/debugger/). 
 
