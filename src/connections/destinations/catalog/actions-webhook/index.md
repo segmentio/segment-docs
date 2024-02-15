@@ -27,3 +27,23 @@ Segment's Webhooks (Actions) destination uses internet protocol and HTTP callbac
 ## Batch size limits
 
 In Webhook Actions mapping, the default value of batch size is `1000`. You can change this value, but there's a maximum batch size limit of `4000`. 
+
+### Authentication
+
+If you want to authenticate the requests being sent to your webhook endpoint, you can input a `sharedSecret` in the advanced option settings. If you provide this, Segment signs your requests using the shared secret and the body of the request, and add that as the ​`X-Signature`​ header. Segment calculates a SHA1 digest using the shared secret and the JSON-stringified body of the request.
+
+An example of how one might authenticate the requests would be:
+
+```javascript
+ var signature = req.headers['x-signature'];
+ var digest = crypto
+     .createHmac('sha1', settings.sharedSecret)
+     .update(new Buffer(JSON.stringify(req.body),'utf-8'))
+     .digest('hex');
+
+if (signature === digest) {
+
+ // do cool stuff
+
+}
+```
