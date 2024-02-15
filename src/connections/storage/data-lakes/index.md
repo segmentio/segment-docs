@@ -179,7 +179,7 @@ Segment doesn't support User deletions in Data Lakes, but supports [user suppres
 
 
 ### How does Data Lakes handle schema evolution?
-As the data schema evolves and new columns are added, Segment Data Lakes will detect any new columns. New columns will be appended to the end of the table in the Glue Data Catalog.
+As the data schema evolves, both Segment Data Lakes (AWS) and Segment Data Lakes (Azure) can detect new columns and add them to Glue Data Catalog or Azure Data Lake Storage (ADLS). However, Segment can't update existing data types. To update Segment-created data types, please reach out to [AWS Support](https://aws.amazon.com/contact-us/){:target="_blank"} or [Azure Support](https://support.microsoft.com/en-us/topic/contact-microsoft-azure-support-2315e669-8b1f-493b-5fb1-d88a8736ffe4){:target="_blank"}. 
 
 
 ### How does Data Lakes work with Protocols?
