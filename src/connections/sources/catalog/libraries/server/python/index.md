@@ -1,6 +1,7 @@
 ---
 title: Analytics for Python
 id: XRksQPCr7X
+support_type: maintenance
 ---
 Segment's Python library lets you record analytics data from your Python code. The requests hit Segment's servers, and then Segment routes your data to any analytics service you enable on your destinations page.
 
