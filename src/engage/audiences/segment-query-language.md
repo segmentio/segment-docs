@@ -48,36 +48,36 @@ The following tables list the query languages's available functions.
 
 ### Extractors
 
-| `event`     |                                                                               |
-| ----------- | ----------------------------------------------------------------------------- |
-| Syntax      | `event({s: String})` <br> s - the name of the event to build an extractor for |
-| Return Type | `VectorExtractor`                                                             |
-| Example     | `event('Shoes Bought')`                                                       |
+| `event`     |                                                                                 |
+| ----------- | ------------------------------------------------------------------------------- |
+| Syntax      | `event({s: String})` <br> `s` - the name of the event to build an extractor for |
+| Return Type | `VectorExtractor`                                                               |
+| Example     | `event('Shoes Bought')`                                                         |
 
 | `trait`     |                                                                                                     |
 | ----------- | --------------------------------------------------------------------------------------------------- |
-| Syntax      | `trait({s: String})` <br> s - the name of the the trait to reference                                |
+| Syntax      | `trait({s: String})` <br> `s` - the name of the the trait to reference                              |
 | Return Type | `ScalarExtractor`                                                                                   |
 | Description | Similar to the event operator, the trait operator is used to specify profile trait filter criteria. |
 | Example     | `trait('total_spend')`                                                                              |
 
-| `property`  |                                                                                                                                                                                                                               |
-| ----------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Syntax      | `property({s: String})` <br> s - the name of the property to build an extractor for  <br> In the context of funnel audiences, you can add a parent prefix to reference the parent event. <br> `property(parent: {s: String})` |
-| Return Type | `ScalarExtractor`                                                                                                                                                                                                             |
-| Notes       | Only valid within a `where` function or a Reducer.                                                                                                                                                                            |
-| Example     | `property('total')`                                                                                                                                                                                                           |
+| `property`  |                                                                                                                                                                                                                                 |
+| ----------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Syntax      | `property({s: String})` <br> `s` - the name of the property to build an extractor for  <br> In the context of funnel audiences, you can add a parent prefix to reference the parent event. <br> `property(parent: {s: String})` |
+| Return Type | `ScalarExtractor`                                                                                                                                                                                                               |
+| Notes       | Only valid within a `where` function or a Reducer.                                                                                                                                                                              |
+| Example     | `property('total')`                                                                                                                                                                                                             |
 
-| `context`   |                                                                                   |
-| ----------- | --------------------------------------------------------------------------------- |
-| Syntax      | `context({s: String})` <br> s - the name of the context to build an extractor for |
-| Return Type | `ScalarExtractor`                                                                 |
-| Notes       | Only valid within a `where` function or a Reducer                                 |
-| Example     | `context('page.url')`                                                             |
+| `context`   |                                                                                     |
+| ----------- | ----------------------------------------------------------------------------------- |
+| Syntax      | `context({s: String})` <br> `s` - the name of the context to build an extractor for |
+| Return Type | `ScalarExtractor`                                                                   |
+| Notes       | Only valid within a `where` function or a Reducer.                                  |
+| Example     | `context('page.url')`                                                               |
 
 | `literal`                        |                                                                                                                                                                                                                                            |
 | -------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| Syntax                           | `literal({a: Any})`  <br> a - the value to treat as a literal expression                                                                                                                                                                   |
+| Syntax                           | `literal({a: Any})`  <br> `a` - the value to treat as a literal expression                                                                                                                                                                 |
 | Operations allowed in call-chain | None allowed; typically used within another function, like a comparison (with syntactic sugar, this would appear on the right side of the comparison). The outer function or comparison dictates the operations allowed in the call-chain. |
 | Example                          | `literal(100)` <br>                                                                                                                                                                                                                        |
 
@@ -85,111 +85,111 @@ The following tables list the query languages's available functions.
 
 ### Filters
 
-| `where`     |                                                                                      |
-| ----------- | ------------------------------------------------------------------------------------ |
-| Syntax      | `where({e: Comparator})`<br>e - a subexpression terminating in a boolean Comparator  |
-| Return Type | `StreamFilter`                                                                       |
-| Description | Filters the stream to only items where a property satisfies a particular condition   |
-| Notes       | The parameter is a sub-expression, something that terminates in a boolean Comparator |
-| Example     | `where({property('price_usd') > 100})`                                               |
+| `where`     |                                                                                       |
+| ----------- | ------------------------------------------------------------------------------------- |
+| Syntax      | `where({e: Comparator})`<br>`e` - a subexpression terminating in a boolean Comparator |
+| Return Type | `StreamFilter`                                                                        |
+| Description | Filters the stream to only items where a property satisfies a particular condition.   |
+| Notes       | The parameter is a sub-expression, something that terminates in a boolean Comparator. |
+| Example     | `where({property('price_usd') > 100})`                                                |
 
-| `sources`   |                                                                                    |
-| ----------- | ---------------------------------------------------------------------------------- |
-| Syntax      | `sources({exclude: {a: Array}})`<br>a - an array of source ids to exclude          |
-| Return Type | `StreamFilter`                                                                     |
-| Description | Filters the stream to only items whose source id does not match the exclusion list |
-| Example     | `sources({exclude: ['QgRHeujRJBM9j18yChyC', '/;hSBZDqGDPvXCKHbikPm']})`            |
+| `sources`   |                                                                                       |
+| ----------- | ------------------------------------------------------------------------------------- |
+| Syntax      | `sources({exclude: {a: Array}})`<br>`a` - an array of source `ids` to exclude         |
+| Return Type | `StreamFilter`                                                                        |
+| Description | Filters the stream to only items whose source `id` does not match the exclusion list. |
+| Example     | `sources({exclude: ['QgRHeujRJBM9j18yChyC', '/;hSBZDqGDPvXCKHbikPm']})`               |
 
-| `within`    |                                                                                                                                                                                                                                       |
-| ----------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Syntax      | `within({d: Integer} {u: TimeUnit})`<br>d - duration value<br>u - hour (s) day (s)<br>In the context of funnel audiences, a parent prefix can be added to reference the parent event.<br>`within(parent: {d: Integer} {u: TimeUnit})` |
-| Return Type | `WindowedFilter`                                                                                                                                                                                                                      |
-| Description | Provides time windowing so that events are only looked at over a specified number of hours or days into the past. Can be prefixed to direct evaluation to be relative to a different event's timestamp.                               |
-| Example     | `within(7 days)`                                                                                                                                                                                                                      |
+| `within`    |                                                                                                                                                                                                                                        |
+| ----------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Syntax      | `within({d: Integer} {u: TimeUnit})`<br>`d` - duration value<br>u - hour (s) day (s)<br>In the context of funnel audiences, you can add a parent prefix to reference the parent event.<br>`within(parent: {d: Integer} {u: TimeUnit})` |
+| Return Type | `WindowedFilter`                                                                                                                                                                                                                       |
+| Description | Provides time windowing so that events are only looked at over a specified number of hours or days into the past. You can add a prefix to direct the evaluation to be relative to the timestamp of a different event.                  |
+| Example     | `within(7 days)`                                                                                                                                                                                                                       |
 
-| `between`   |                                                                                                                                                            |
-| ----------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Syntax      | `between({s: Integer} {su: TimeUnit}, {e: Integer} {eu: TimeUnit})`<br>s - start value<br>su - hour (s) day (s)<br>e - end value<br>eu - hour (s)  day (s) |
-| Return Type | `WindowedFilter`                                                                                                                                           |
-| Description | Can be prefixed to direct evaluation to be relative to a different event's timestamp.                                                                      |
-| Example     | `between(7 days, 10 days)`                                                                                                                                 |
+| `between`   |                                                                                                                                                                |
+| ----------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Syntax      | `between({s: Integer} {su: TimeUnit}, {e: Integer} {eu: TimeUnit})`<br>`s` - start value<br>su - hour (s) day (s)<br>`e` - end value<br>eu - hour (s)  day (s) |
+| Return Type | `WindowedFilter`                                                                                                                                               |
+| Description | You can add a prefix to direct the evaluation to be relative to the timestamp of a different event.                                                            |
+| Example     | `between(7 days, 10 days)`                                                                                                                                     |
 
 
 ### Reducers
 
-| `count`     |                                                                 |
+| `count`     |                                                                  |
+| ----------- | ---------------------------------------------------------------- |
+| Syntax      | `count()`                                                        |
+| Return Type | `Scalar`                                                         |
+| Description | Counts the number of entries in a stream and returns the result. |
+| Example     | `count()`                                                        |
+
+| `sum`       |                                                             |
+| ----------- | ----------------------------------------------------------- |
+| Syntax      | `sum({s: EventPropertyExtractor})`<br>`s` - property to sum |
+| Return Type | `Scalar`                                                    |
+| Example     | `sum(property('spend'))`                                    |
+
+| `avg`       |                                                                 |
 | ----------- | --------------------------------------------------------------- |
-| Syntax      | `count()`                                                       |
+| Syntax      | `avg({s: EventPropertyExtractor})`<br>`s` - property to average |
 | Return Type | `Scalar`                                                        |
-| Description | Counts the number of entries in a stream and returns the result |
-| Example     | `count()`                                                       |
-
-| `sum`       |                                                           |
-| ----------- | --------------------------------------------------------- |
-| Syntax      | `sum({s: EventPropertyExtractor})`<br>s - property to sum |
-| Return Type | `Scalar`                                                  |
-| Example     | `sum(property('spend'))`                                  |
-
-| `avg`       |                                                               |
-| ----------- | ------------------------------------------------------------- |
-| Syntax      | `avg({s: EventPropertyExtractor})`<br>s - property to average |
-| Return Type | `Scalar`                                                      |
-| Example     | `avg(property('spend'))`                                      |
+| Example     | `avg(property('spend'))`                                        |
 
 | `max`       |                                                                                |
 | ----------- | ------------------------------------------------------------------------------ |
-| Syntax      | `max({s: EventPropertyExtractor})`<br>s - property to get the maximum value of |
+| Syntax      | `max({s: EventPropertyExtractor})`<br>`s` - property to get the maximum value of |
 | Return Type | `Scalar`                                                                       |
 | Example     | `max(property('spend'))`                                                       |
 
 | `min`       |                                                                                |
 | ----------- | ------------------------------------------------------------------------------ |
-| Syntax      | `min({s: EventPropertyExtractor})`<br>s - property to get the minimum value of |
+| Syntax      | `min({s: EventPropertyExtractor})`<br>`s` - property to get the minimum value of |
 | Return Type | `Scalar`                                                                       |
 | Example     | `min(property('spend'))`                                                       |
 
-| `mode`      |                                                                                                                                            |
-| ----------- | ------------------------------------------------------------------------------------------------------------------------------------------ |
-| Syntax      | `mode({s: EventPropertyExtractor}, {d: Integer})`<br>s - the property to find the most frequent value of<br>d - minimum frequency expected |
-| Return Type | `Scalar`                                                                                                                                   |
-| Description | Find the most frequent value for a given property name                                                                                     |
-| Example     | `mode(property('spend'), 2)`                                                                                                               |
+| `mode`      |                                                                                                                                                |
+| ----------- | ---------------------------------------------------------------------------------------------------------------------------------------------- |
+| Syntax      | `mode({s: EventPropertyExtractor}, {d: Integer})`<br>`s` - the property to find the most frequent value of<br>`d` - minimum frequency expected |
+| Return Type | `Scalar`                                                                                                                                       |
+| Description | Find the most frequent value for a given property name.                                                                                        |
+| Example     | `mode(property('spend'), 2)`                                                                                                                   |
 
-| `first`     |                                                                                                 |
+| `first`     |                                                                                                  |
+| ----------- | ------------------------------------------------------------------------------------------------ |
+| Syntax      | `first({s: EventPropertyExtractor})`<br>`s` - the property to find the first value of            |
+| Return Type | `Scalar`                                                                                         |
+| Description | Find the first value for the given property name within the stream of filterable data extracted. |
+| Example     | `first(property('spend'))`                                                                       |
+
+| `last`      |                                                                                                 |
 | ----------- | ----------------------------------------------------------------------------------------------- |
-| Syntax      | `first({s: EventPropertyExtractor})`<br>s - the property to find the first value of             |
+| Syntax      | `last({s: EventPropertyExtractor})`<br>`s` - the property to find the last value of             |
 | Return Type | `Scalar`                                                                                        |
-| Description | Find the first value for the given property name within the stream of filterable data extracted |
-| Example     | `first(property('spend'))`                                                                      |
+| Description | Find the last value for the given property name within the stream of filterable data extracted. |
+| Example     | `last(property('spend'))`                                                                       |
 
-| `last`      |                                                                                                |
-| ----------- | ---------------------------------------------------------------------------------------------- |
-| Syntax      | `last({s: EventPropertyExtractor})`<br>s - the property to find the last value of              |
-| Return Type | `Scalar`                                                                                       |
-| Description | Find the last value for the given property name within the stream of filterable data extracted |
-| Example     | `last(property('spend'))`                                                                      |
-
-| `unique`    |                                                                                   |
-| ----------- | --------------------------------------------------------------------------------- |
-| Syntax      | `unique({s: EventPropertyExtractor})`<br>s - property to get the unique values of |
-| Return Type | `ListScalar`                                                                      |
-| Description | Generate a unique list of values for the given property name.                     |
-| Example     | `unique(property('spend'))`                                                       |
+| `unique`    |                                                                                     |
+| ----------- | ----------------------------------------------------------------------------------- |
+| Syntax      | `unique({s: EventPropertyExtractor})`<br>`s` - property to get the unique values of |
+| Return Type | `ListScalar`                                                                        |
+| Description | Generate a unique list of values for the given property name.                       |
+| Example     | `unique(property('spend'))`                                                         |
 
 
 ### Comparisons
 
-| `eq`        |                                                        |
-| ----------- | ------------------------------------------------------ |
-| Syntax      | `eq({v: Scalar})`<br>v - value to compare for equality |
-| Return Type | `Comparator`                                           |
-| Example     | `eq(500)`<br>Syntactic Sugar: `== 500`                 |
+| `eq`        |                                                          |
+| ----------- | -------------------------------------------------------- |
+| Syntax      | `eq({v: Scalar})`<br>`v` - value to compare for equality |
+| Return Type | `Comparator`                                             |
+| Example     | `eq(500)`<br>Syntactic Sugar: `== 500`                   |
 
-| `neq`       |                                                           |
-| ----------- | --------------------------------------------------------- |
-| Syntax      | `neq({v: Scalar})`<br>v - value to compare for inequality |
-| Return Type | `Comparator`                                              |
-| Example     | `neq(500)`<br>Syntactic Sugar: `!= 500`                   |
+| `neq`       |                                                             |
+| ----------- | ----------------------------------------------------------- |
+| Syntax      | `neq({v: Scalar})`<br>`v` - value to compare for inequality |
+| Return Type | `Comparator`                                                |
+| Example     | `neq(500)`<br>Syntactic Sugar: `!= 500`                     |
 
 | `is_null`   |              |
 | ----------- | ------------ |
@@ -197,24 +197,24 @@ The following tables list the query languages's available functions.
 | Return Type | `Comparator` |
 | Example     | `is_null()`  |
 
-| `is_set`    |                                                                                                |
-| ----------- | ---------------------------------------------------------------------------------------------- |
-| Syntax      | `is_set()`                                                                                     |
-| Return Type | `Comparator`                                                                                   |
-| Description | Returns true when a value is set, meaning not null. Equivalent to `NOT (expression).is_null()` |
-| Example     | `is_set()`                                                                                     |
+| `is_set`    |                                                                                                 |
+| ----------- | ----------------------------------------------------------------------------------------------- |
+| Syntax      | `is_set()`                                                                                      |
+| Return Type | `Comparator`                                                                                    |
+| Description | Returns true when a value is set, meaning not null. Equivalent to `NOT (expression).is_null()`. |
+| Example     | `is_set()`                                                                                      |
 
-| `gt`        |                                           |
-| ----------- | ----------------------------------------- |
-| Syntax      | `gt({n: Scalar})`<br>n - value to compare |
-| Return Type | `Comparator`                              |
-| Example     | `gt(500)`<br>Syntactic Sugar: `> 500`     |
+| `gt`        |                                             |
+| ----------- | ------------------------------------------- |
+| Syntax      | `gt({n: Scalar})`<br>`n` - value to compare |
+| Return Type | `Comparator`                                |
+| Example     | `gt(500)`<br>Syntactic Sugar: `> 500`       |
 
-| `gte`       |                                            |
-| ----------- | ------------------------------------------ |
-| Syntax      | `gte({n: Scalar})`<br>n - value to compare |
-| Return Type | `Comparator`                               |
-| Example     | `gte(500)`<br>Syntactic Sugar: `>= 500`    |
+| `gte`       |                                              |
+| ----------- | -------------------------------------------- |
+| Syntax      | `gte({n: Scalar})`<br>`n` - value to compare |
+| Return Type | `Comparator`                                 |
+| Example     | `gte(500)`<br>Syntactic Sugar: `>= 500`      |
 
 | `lt`        |                                           |
 | ----------- | ----------------------------------------- |
@@ -222,90 +222,90 @@ The following tables list the query languages's available functions.
 | Return Type | `Comparator`                              |
 | Example     | `lt(500)`<br>Syntactic Sugar: `< 500`     |
 
-| `lte`       |                                            |
-| ----------- | ------------------------------------------ |
-| Syntax      | `lte({n: Scalar})`<br>n - value to compare |
-| Return Type | `Comparator`                               |
-| Example     | `lte(500)`<br>Syntactic Sugar: `<= 500`    |
+| `lte`       |                                              |
+| ----------- | -------------------------------------------- |
+| Syntax      | `lte({n: Scalar})`<br>`n` - value to compare |
+| Return Type | `Comparator`                                 |
+| Example     | `lte(500)`<br>Syntactic Sugar: `<= 500`      |
 
-| `contains`  |                                                                          |
-| ----------- | ------------------------------------------------------------------------ |
-| Syntax      | `contains({s: String})`<br>s - string to search for in containing string |
-| Return Type | `Comparator`                                                             |
-| Example     | `contains('shoes')`                                                      |
+| `contains`  |                                                                            |
+| ----------- | -------------------------------------------------------------------------- |
+| Syntax      | `contains({s: String})`<br>`s` - string to search for in containing string |
+| Return Type | `Comparator`                                                               |
+| Example     | `contains('shoes')`                                                        |
 
 | `omits`     |                                                                                                                                 |
 | ----------- | ------------------------------------------------------------------------------------------------------------------------------- |
-| Syntax      | `omits({s: String})`<br>s - string to search for a lack of in containing string                                                 |
+| Syntax      | `omits({s: String})`<br>`s` - string to search for if missing in a containing string                                            |
 | Return Type | `Comparator`                                                                                                                    |
-| Description | Evaluates to true when a substring is NOT present in a containing string, equivalent to `NOT (expression).contains(<argument>)` |
+| Description | Evaluates to true when a substring isn't present in a containing string, equivalent to `NOT (expression).contains(<argument>)`. |
 | Example     | `omits('shoes')`                                                                                                                |
 
-| `starts_with` |                                                                                      |
-| ------------- | ------------------------------------------------------------------------------------ |
-| Syntax        | `starts_with({s: String})`<br>s - string to search for at start of containing string |
-| Return Type   | `Comparator`                                                                         |
-| Example       | `starts_with('total')`                                                               |
+| `starts_with` |                                                                                        |
+| ------------- | -------------------------------------------------------------------------------------- |
+| Syntax        | `starts_with({s: String})`<br>`s` - string to search for at start of containing string |
+| Return Type   | `Comparator`                                                                           |
+| Example       | `starts_with('total')`                                                                 |
 
-| `ends_with` |                                                                                  |
-| ----------- | -------------------------------------------------------------------------------- |
-| Syntax      | `ends_with({s: String})`<br>s - string to search for at end of containing string |
-| Return Type | `Comparator`                                                                     |
-| Example     | `ends_with('total')`                                                             |
+| `ends_with` |                                                                                    |
+| ----------- | ---------------------------------------------------------------------------------- |
+| Syntax      | `ends_with({s: String})`<br>`s` - string to search for at end of containing string |
+| Return Type | `Comparator`                                                                       |
+| Example     | `ends_with('total')`                                                               |
 
-| `contains_one` |                                                                                           |
-| -------------- | ----------------------------------------------------------------------------------------- |
-| Syntax         | `contains_one({a: Array})`<br>a - array of possible values                                |
-| Return Type    | `Comparator`                                                                              |
-| Description    | Matches when the value contains one of the elements of the parameter array as a substring |
-| Example        | `contains_one(['shoes','shirts'])`                                                        |
+| `contains_one` |                                                                                            |
+| -------------- | ------------------------------------------------------------------------------------------ |
+| Syntax         | `contains_one({a: Array})`<br>`a` - array of possible values                               |
+| Return Type    | `Comparator`                                                                               |
+| Description    | Matches when the value contains one of the elements of the parameter array as a substring. |
+| Example        | `contains_one(['shoes','shirts'])`                                                         |
 
-| `one_of`    |                                                                                   |
-| ----------- | --------------------------------------------------------------------------------- |
-| Syntax      | `one_of({a: Array})`<br>a - array of possible values                              |
-| Return Type | `Comparator`                                                                      |
-| Description | Matches when the value exactly matches one of the values from the parameter array |
-| Example     | `one_of(['shoes','shirts'])`                                                      |
+| `one_of`    |                                                                                    |
+| ----------- | ---------------------------------------------------------------------------------- |
+| Syntax      | `one_of({a: Array})`<br>`a` - array of possible values                             |
+| Return Type | `Comparator`                                                                       |
+| Description | Matches when the value exactly matches one of the values from the parameter array. |
+| Example     | `one_of(['shoes','shirts'])`                                                       |
 
-| `before_date` |                                                         |
-| ------------- | ------------------------------------------------------- |
-| Syntax        | `before_date({t: Timestamp})`<br>t - ISO 8601 timestamp |
-| Return Type   | `Comparator`                                            |
-| Example       | `before_date('2023-12-07T18:50:00Z')`                   |
+| `before_date` |                                                           |
+| ------------- | --------------------------------------------------------- |
+| Syntax        | `before_date({t: Timestamp})`<br>`t` - ISO 8601 timestamp |
+| Return Type   | `Comparator`                                              |
+| Example       | `before_date('2023-12-07T18:50:00Z')`                     |
 
-| `after_date` |                                                        |
-| ------------ | ------------------------------------------------------ |
-| Syntax       | `after_date({t: Timestamp})`<br>t - ISO 8601 timestamp |
-| Return Type  | `Comparator`                                           |
-| Example      | `after_date('2023-12-07T18:50:00Z')`                   |
+| `after_date` |                                                          |
+| ------------ | -------------------------------------------------------- |
+| Syntax       | `after_date({t: Timestamp})`<br>`t` - ISO 8601 timestamp |
+| Return Type  | `Comparator`                                             |
+| Example      | `after_date('2023-12-07T18:50:00Z')`                     |
 
-| `within_last` |                                                                                                                                                                                           |
-| ------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Syntax        | `within_last({d: Integer} {u: TimeUnit})`<br>d - duration value<br>u - hour(s) day(s)                                                                                                     |
-| Return Type   | `Comparator`                                                                                                                                                                              |
-| Description   | Represents the date range between today and the past d days - inclusive Where today represents the current date at the time we determine audience membership or are calculating the trait |
-| Example       | `within_last(7 days)`                                                                                                                                                                     |
+| `within_last` |                                                                                                                                                                                        |
+| ------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Syntax        | `within_last({d: Integer} {u: TimeUnit})`<br>`d` - duration value<br>u - hour(s) day(s)                                                                                                |
+| Return Type   | `Comparator`                                                                                                                                                                           |
+| Description   | Represents the date range between today and the past `d` days - inclusive where today represents the current date at the time we determine audience membership or calculate the trait. |
+| Example       | `within_last(7 days)`                                                                                                                                                                  |
 
-| `within_next` |                                                                                                                                                                                           |
-| ------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Syntax        | `within_next({d: Integer} {u: TimeUnit})`<br>d - duration value<br>u - hour(s) day(s)                                                                                                     |
-| Return Type   | `Comparator`                                                                                                                                                                              |
-| Description   | Represents the date range between today and the next d days - inclusive Where today represents the current date at the time we determine audience membership or are calculating the trait |
-| Example       | `within_next(7 days)`                                                                                                                                                                     |
+| `within_next` |                                                                                                                                                                                        |
+| ------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Syntax        | `within_next({d: Integer} {u: TimeUnit})`<br>`d` - duration value<br>`u` - hour(s) day(s)                                                                                              |
+| Return Type   | `Comparator`                                                                                                                                                                           |
+| Description   | Represents the date range between today and the next `d` days - inclusive where today represents the current date at the time we determine audience membership or calculate the trait. |
+| Example       | `within_next(7 days)`                                                                                                                                                                  |
 
-| `before_last` |                                                                                                                                                                                                                |
-| ------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Syntax        | `before_last({d: Integer} {u: TimeUnit})`<br>d - duration value<br>u - hour(s) day(s)                                                                                                                          |
-| Return Type   | `Comparator`                                                                                                                                                                                                   |
-| Description   | Represents the date range between today - d days and any past date prior to that - inclusive Where today represents the current date at the time we determine audience membership or are calculating the trait |
-| Example       | `before_last(7 days)`                                                                                                                                                                                          |
+| `before_last` |                                                                                                                                                                                                            |
+| ------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Syntax        | `before_last({d: Integer} {u: TimeUnit})`<br>d - duration value<br>u - hour(s) day(s)                                                                                                                      |
+| Return Type   | `Comparator`                                                                                                                                                                                               |
+| Description   | Represents the date range between today - `d` days and any past date prior to that - inclusive where today represents the current date at the time we determine audience membership or calculate the trait. |
+| Example       | `before_last(7 days)`                                                                                                                                                                                      |
 
-| `after_next` |                                                                                                                                                                                                    |
-| ------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Syntax       | `after_next({d: Integer} {u: TimeUnit})`<br>d - duration value<br>u - hour(s)  day(s)                                                                                                              |
-| Return Type  | `Comparator`                                                                                                                                                                                       |
-| Description  | Represents the date range between today + d days and any future date - inclusive Where today represents the current date at the time we determine audience membership or are calculating the trait |
-| Example      | `after_next(7 days)`                                                                                                                                                                               |
+| `after_next` |                                                                                                                                                                                                |
+| ------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Syntax       | `after_next({d: Integer} {u: TimeUnit})`<br>`d` - duration value<br>u - hour(s)  day(s)                                                                                                          |
+| Return Type  | `Comparator`                                                                                                                                                                                   |
+| Description  | Represents the date range between today + `d` days and any future date - inclusive where today represents the current date at the time we determine audience membership or calculate the trait. |
+| Example      | `after_next(7 days)`                                                                                                                                                                           |
 
 
 ### Junctions
