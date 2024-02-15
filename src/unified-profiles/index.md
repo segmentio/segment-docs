@@ -25,7 +25,7 @@ Before creating a Segment for Flex workspace, you must have requested access fro
 ### Step 1: Select your data sources
 
 > warning "Data sources "
-> Once you've selected your data source and proceeded to the next step, you can't return to this page and make a different selection. You can add additional data sources after setting up your Segment for Flex workspace. For more information about sources in a Segment for Flex workspace, see the [Sources](#sources) documentation.
+> After you've selected your data source and proceeded to the next step, you can't return to this page and make a different selection. You can add additional data sources after setting up your Segment for Flex workspace. For more information about sources in a Segment for Flex workspace, see the [Sources](#sources) documentation.
 
 1. From your Flex account, select **Unify**. 
 2. On the Flex Unify overview screen, click **Create Unify space in Segment**.
@@ -34,7 +34,7 @@ Before creating a Segment for Flex workspace, you must have requested access fro
 
 ### Step 2: Add connections
 
-Once you've selected where your customer data is stored, you must set up the connections between your data sources and Segment. 
+After you've selected where your customer data is stored, you must set up the connections between your data sources and Segment. 
 
 You can set up one of the following options: 
 - [Salesforce and a data warehouse](#salesforce-and-a-data-warehouse)
@@ -52,7 +52,7 @@ You can add additional data sources after completing the setup process. <br><br>
 5. Give your destination a name and enter the account credentials for a user that has read and write permissions. Click **Save**. 
 6. Once you've given your destination a name and entered your credentials, click **Next**.
 7. On the *Getting started with Segment* page, click **Define Model**.
-8. Create a SQL query that defines your model. Once you've created a model, Segment uses your model to map data to your Reverse ETL destinations. <br> Segment recommends a model with the following format: 
+8. Create a SQL query that defines your model. After you've created a model, Segment uses your model to map data to your Reverse ETL destinations. <br> Segment recommends a model with the following format: 
 
 ``` sql
 SELECT * FROM salesforce_unified_profiles.accounts
@@ -77,9 +77,9 @@ SELECT * FROM salesforce_unified_profiles.accounts
 1. On the *Getting started with Segment* page, click **Connect data warehouse**. 
 2. Select your data warehouse from the list of available warehouses, and click **Next**.
 3. Give your destination a name and enter the account credentials for a user that has read and write permissions. Click **Save**. 
-4. Once you've given your destination a name and entered your credentials, click **Next**.
+4. After you've given your destination a name and entered your credentials, click **Next**.
 5. On the *Getting started with Segment* page, click **Define Model**.
-6. Create a SQL query that defines your model. Once you've created a model, Segment uses your model to map data to your Reverse ETL destinations. <br> Segment recommends a model with the following format: 
+6. Create a SQL query that defines your model. After you've created a model, Segment uses your model to map data to your Reverse ETL destinations. <br> Segment recommends a model with the following format: 
 
 ``` sql
 SELECT * FROM unified_profiles.accounts
@@ -112,7 +112,7 @@ After you've selected which data sources you'd like to integrate customer data f
 6. **(Optional)**: Set up predictive traits by selecting the **Set up predictive traits** dropdown and clicking **Complete setup** next to one or both traits. For more information about predictive traits, see Segment's [Predictions documentation](/docs/unify/Traits/predictions/).
 
 > warning "Predictions require event data in your sources"
-> Before you can configure predictions, you must have data flowing into your connected source. Once data is flowing into your source, it can take up to 48 hours for predictions to be ready.
+> Before you can configure predictions, you must have data flowing into your connected source. After data is flowing into your source, it can take up to 48 hours for predictions to be ready.
 
 ### Step 4: Check configuration
 The final step in the Segment for Flex setup process is to check your configuration. After this check succeeds, you can return to Flex to complete the Unified Profiles setup process.
@@ -203,7 +203,7 @@ To create a Unify space:
 9. Copy your Profile API token to a safe location and click the "I have written down this access token" checkbox, then click **Done**. 
 
 ### Step 2: Connect your data to Unify
-Once you've created a Unify space, you must also connect a Salesforce CRM source and a data warehouse to your Unify Space to link that data to Unified Profiles. 
+After you've created a Unify space, you must also connect a Salesforce CRM source and a data warehouse to your Unify Space to link that data to Unified Profiles. 
 
 #### Set up Salesforce
 1. From the [catalog page in your workspace](https://app.segment.com/goto-my-workspace/sources/catalog/salesforce){:target="_blank"}, select the Salesforce source and click **Add Source**. 
@@ -228,7 +228,7 @@ Once you've created a Unify space, you must also connect a Salesforce CRM source
 3. Click **Test Connection**. If Segment can successfully connect to your warehouse, click **Add Source**.
 4. On the Models page, click **Add Model**.
 5. Select SQL Editor and click **Next**.
-6. Create a SQL query that defines your model. Once you've created a model, Segment uses your model to map data to your Reverse ETL destinations. <br> Segment recommends a model with the following format: 
+6. Create a SQL query that defines your model. After you've created a model, Segment uses your model to map data to your Reverse ETL destinations. <br> Segment recommends a model with the following format: 
 
 ``` sql
 SELECT * FROM salesforce.accounts
