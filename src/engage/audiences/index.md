@@ -36,9 +36,9 @@ Select `and not who` to indicate users that have not performed an event. For exa
 
 You can also specify two different types of time-windows, `within` and `in between`. The `within` property lets you specify an event that occurred in the last `x` number of days, while `in between` lets you specify events that occurred over a rolling time window in the past. A common use case is to look at all customers that were active 30 to 90 days ago, but have not completed an action in the last 30 days.
 
-### Custom Traits
+### Custom Traits 
 
-You can also build Audiences based on custom traits. These traits can be collected from your apps when a user completes a form or signs up using an [Identify](/docs/connections/spec/identify) call. You can view these traits in the Profile explorer, as well. Custom Traits are mutable and update to the latest value seen by the user's Identify events.
+You can also build Audiences based on [custom traits](/docs/unify/traits/custom-traits/). These traits can be collected from your apps when a user completes a form or signs up using an [Identify](/docs/connections/spec/identify) call. You can view these traits in the Profile explorer, as well. Custom Traits are mutable and update to the latest value seen by the user's Identify events. 
 
 > info ""
 > When an audience that previously generated Identify events is deleted, the data for the audience key is still attached to profiles that entered the audience, and becomes visible in Segment as a custom trait.
@@ -60,8 +60,8 @@ You can use the following time comparison operators in your audience definition:
 - `before last`
 - `after next` 
 
-Only ISO timestamps can be used with these operators.
-If the timestamp is not a valid ISO timestamp (for example, a trailing `Z` is missing), Segment won't process the audience in real-time. Learn more about [real-time compute compared to batch](docs/engage/audiences/#real-time-compute-compared-to-batch)
+Only ISO timestamps can be used with these operators. Additionally, these time comparison operators exclusively apply to custom traits.
+If the timestamp is not a valid ISO timestamp (for example, a trailing `Z` is missing), Segment won't process the audience in real-time. Learn more about [real-time compute compared to batch](#real-time-compute-compared-to-batch).
 
 ### Funnel Audiences
 
@@ -180,6 +180,9 @@ While Engage is computing, use the Audience Explorer to see users or accounts th
 > warning ""
 > [Facebook Custom Audiences](/docs/connections/destinations/catalog/personas-facebook-custom-audiences/), [Marketo Lists](/docs/connections/destinations/catalog/marketo-static-lists/), and [Adwords Remarking Lists](/docs/connections/destinations/catalog/adwords-remarketing-lists) impose rate limits on how quickly Segment can update an Audience. Segment syncs at the highest frequency allowed by the tool, which is between one and six hours.
 
+> warning ""
+> Real-time computations connected to List destinations use a separate sync process that can take 12-15 hours to send changes present in the most recent computation.
+
 ### Editing Realtime Audiences and Traits
 
 Engage supports the editing of realtime Audiences and Traits, which allows you to make nuanced changes to existing Traits and Audiences in situations where cloning or building from scratch may not suit your use case.
@@ -259,3 +262,10 @@ The audience summary is a breakdown of the percentages of external_ids of users 
 
 > info ""
 > The Identifier Breakdown won't show custom IDs included in the Identity resolution configuration. Segment only displays external IDs in the breakdown.
+
+## FAQ
+
+### Why do I get a different user count when I use `$` on a field?**
+Segment recommends using the `$` operator when you deal with array properties. However, the `$` causes logical conditions to apply independently to each array entry independently. As a result, you'll get more accurate results by using the `equals one of` condition:
+
+![$ operator](https://github.com/segmentio/segment-docs/assets/68755692/7b0b6923-a4ad-4290-8aa6-bbbc7cb1ee1b)

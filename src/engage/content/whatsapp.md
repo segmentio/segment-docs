@@ -62,7 +62,7 @@ If a merge tag doesn't apply to a subscriber, Engage will use the content you en
 
 > info ""
 > To learn more about profile traits, visit Segment's [Computed Traits](/docs/engage/audiences/computed-traits/) and [SQL Traits](/docs/engage/audiences/sql-traits/) documentation.
-
+ 
 
 ## Template approvals
 
@@ -70,7 +70,6 @@ Meta must first review and approve your WhatsApp template before you can use it 
 
 For more on the template approval process, view [recommendations and best practices for creating WhatsApp Message Templates](https://support.twilio.com/hc/en-us/articles/360039737753-Recommendations-and-best-practices-for-creating-WhatsApp-Message-Templates){:target="_blank"}.
 
-{% include content/engage-folders.md %}
 
 ## Next steps
 

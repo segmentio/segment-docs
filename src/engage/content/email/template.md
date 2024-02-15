@@ -96,23 +96,9 @@ The manage preference link lets your customers opt in and out of email groups on
 
 For more information, see [subscription groups](/docs/engage/user-subscriptions/subscription-groups/).
 
-## Clone an Email template
-
-You can clone existing Email templates to edit and use in your message campaigns.
-
-To clone a template, navigate to the Templates page (**Engage > Content**). You can also clone from the Overview page of an individual template.
-
-1. Click the **...** icon.
-2. Select **Clone**.
-3. Enter a template name.
-4. Click **Clone** to save the template.
- 
-After you clone a template, you can edit it from the Templates page.
-
-{% include content/engage-folders.md %}
-
 ## Next steps
 
 - View some [email deliverability tips and tricks](https://docs.sendgrid.com/ui/sending-email/deliverability){:target="blank"} from SendGrid.
 
 - You can also use the Templates screen in Engage to [build SMS templates](/docs/engage/content/sms/template/).
+ 

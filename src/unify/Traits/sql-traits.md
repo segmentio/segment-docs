@@ -27,6 +27,8 @@ Check out Segment's [SQL Traits blog post](https://segment.com/blog/sql-traits){
 > info ""
 > To view SQL Traits in a user profile, you must have [PII access](/docs/segment-app/iam/roles/#pii-access). Without this access, Segment redacts all SQL traits in a profile.
 
+> info ""
+> Note that after you bring in data with SQL Traits, changing data types for fields may not be compatible with all destinations.
 
 ### Example: cloud sources sync
 
@@ -59,6 +61,7 @@ This query computes whether a user has an open ticket:
     where t.status in ('pending','open','hold','new')
 ```
 
+{% include content/trait-types.md %}
 
 ## Configure SQL Traits
 
@@ -69,7 +72,7 @@ To use SQL Traits, you need the following:
 - a user account with access to Unify in that workspace
 
 ### Step 1. Set up a warehouse source
-
+ 
 Segment supports Redshift, Postgres, Snowflake, Azure SQL, and BigQuery as data warehouse sources for SQL Traits. Note that the BigQuery setup process _requires_ a service user.
 
 > info "Safeguard your data"
@@ -266,5 +269,10 @@ Check that you've configured the identifier that uniquely identifies users in a 
 
 Ensure that the name given to the SQL trait is not the same name as the identifier or column name from the query. To use SQL traits to update an identifier, the identifier will need to be a column in the query of your SQL trait. The column name in the query of the SQL trait should be the one that Identity Resolution uses to generate the identifier. 
 
+### Are there any errors in the browser's Network or Console tab?
+
+If you experience issues saving the SQL Trait query or previewing the results of the SQL Trait query, open the browser's Console and Network tabs to see if any errors occurred upon clicking the Save/Preview buttons. If you find any errors, please expand the error and take a screenshot of it. You can then share these details when creating a support ticket.
+
 ### Why can't I see error messages in SQL traits while other users can?
 To see error messages in SQL traits, you will need to have PII Access.
+

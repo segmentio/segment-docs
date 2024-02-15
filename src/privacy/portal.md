@@ -18,97 +18,6 @@ When you use Segment as the single point of collection for your customer data, y
 
 Privacy Portal features are available to all Segment workspaces, however only workspace owners can access the Privacy Portal.
 
-
-## Privacy Inbox
-
-The Inbox helps you keep track of new restricted data types as they are captured, quickly classify them, and build a data Inventory.
-
-Segment detects these fields by scanning data from your Web, Mobile, Server, and Cloud Event Sources to detect PII based on the [default PII matchers](#default-pii-matchers). New properties sent into Segment appear in the Inbox in realtime.
-
-When you view the Inbox, it displays every property that was sent into Segment from Web, Mobile, Server, and Cloud Event Sources for the past 7 days. ([Object Cloud Sources](/docs/connections/sources/#object-cloud-sources) and [Reverse ETL Sources](/docs/connections/sources/#reverse-etl-sources) do not appear in the Inbox at this time.)
-
-You can click a row in the Inbox to learn more about a field and where it was collected. The expanded view shows:
-
-- which events contain the field
-- which sources are sending the field
-- which matcher (and what type of matcher) detected the field
-- an example code snippet containing a payload that the field appears in
-
-
-![Animation of a user selecting a row in the Privacy Portal and clicking on the expanded view.](images/privacy-inbox.gif)
-
-
-To streamline the classification process, Segment pre-classifies the data in the
-Privacy Portal Inbox as **Red** (likely highly restricted data), **Yellow**
-(likely moderately restricted data), and **Green** (likely least restricted
-data). These colors indicate how restricted the data is for your business. You
-can also send and block data from flowing based on its color classification and
-how restricted it is.
-
-Segment makes recommendations about how a field should be classified using
-built-in PII matcher [detection](#privacy-detection), however, you can always
-update the classification in the Inbox based on your company's requirements.
-
-### Change a recommended classification
-
-You can update the classifications to suit your needs by clicking on the color
-dropdown menu to change. For example, you might manually change a field that
-does not contain personal information in your implementation from a "Yellow"
-classification to "Green."
-
-![Animation of a user selecting the color dropdown menu and changing the phone field from a Yellow field to a Green field.](images/privacy-inbox-change-color.gif)
-
-
-When you're satisfied that the fields have been classified appropriately, you
-can click `Add to Inventory` to officially apply the classification to the
-field. This moves the field into your [Data Inventory](#privacy-inventory),
-which is a central repository of all of the properties _you_ classified as Red,
-Yellow, and Green. Any time you send this field from a Web, Mobile, Server, or
-Cloud Event Source — whether from another Source or event type — the Privacy
-Portal automatically classifies it and adds it to the Inventory.
-
-Keep in mind that if you have any Privacy Controls configured to control how you route Red data into Segment,
-the classifications you create in the Inbox are forwarded on to those Controls.
-
-For example, if you have a Privacy Control set up to block **Red** data from your Android source, any new fields you classify in the Inbox as **Red** will be blocked from entering Segment from your Android source.
-
-## Privacy Inventory
-
-The Inventory is a central repository of all of the properties _you_ classified as Red, Yellow, and Green. Where the [Inbox](#privacy-inbox) shows new, unclassified data with Segment's _recommended_ classifications, the Inventory only contains data that you explicitly applied Classifications to.
-
-**The Inventory is intended to be a Single Source of Truth so you can answer common regulatory questions about the data you're sending through Segment, for example:**
-
-- What data am I sending into Segment, and how frequently?
-- How restricted is the data I'm sending through Segment?
-- Where is the data coming from, on a property-by-property level?
-- Where am I sending this data?
-- Who within my organization has access to each property within Segment?
-
-Once you've classified the fields as Red, Yellow, and Green in the Inbox, the classified fields appear in the Inventory. You can use the filter at the top left to filter down to specific categories of data (for example, Red data, data from a production environment, data from specific sources).
-
-![Animation of a user filtering the data inventory to only show red fields in their production environment that came from Clearbrain.](images/privacy-inventory-filtering.gif)
-
-Click into a field (for example, `ip`) in the Inventory to open the Inventory
-details. The details sheet displays how many times a specific field has been
-sent from each Source it comes from. You can click the Events tab to see which
-events contained the event, along with the Sources which sent the event. The
-data in the side sheet updates in realtime, and includes a limited historical
-view.
-
-You can click **Connected Destinations** to see which Destinations are
-connected to the Source that contains the field. The Access tab displays a list
-of who within your organization has access to this field.
-
-
-![Screenshot of the product_id Inventory details page in the Privacy Portal.](images/privacy-inventory-overview.png)
-
-
-Finally, workspace owners can use the **Download CSV** button to export a CSV of
-their data Inventory to share with their Data Protection Officer (DPO), Chief
-Information Security Officer (CISO), legal teams, and more! Note that the CSV
-download button includes _all_ data from your Inventory, and ignores any filters
-you applied in the UI.
-
 ## Privacy Detection
 
 The Detection page in the Privacy Portal is where you can find out more about
@@ -197,7 +106,7 @@ treat that property whenever it is appears in data Segment processes.
 **To create a Custom Matcher:**
 
 1. Click **Add a Custom Matcher**.
-2. Enter the **Symbol Name** (for example the property name, like "Social Insurance Number"). Segment matches against the **Symbol Name**, as well as the other context you provide in the next steps.
+2. Enter the **Matcher Name** (for example the property name, like "Social Insurance Number"). Segment matches against the **Matcher Name**, as well as the other context you provide in the next steps.
 3. Set the default classification:
    - **Red** for highly restricted
    - **Yellow** for moderately restricted
@@ -261,4 +170,101 @@ build new custom matchers:
 Segment's exact matching and fuzzy matching do not detect all variations in the received keys
 and for those scenarios, you can use synonyms.  For example, for the value `credit card number`, you can add `credit card no`,
 `debit card number`, `debit card no`, or similar variations in the synonyms section to classify those fields.
-![Screenshot of the Synonym used in Custom Matcher.](images/privacy-synonym-in-matcher.png)
+![Screenshot of the Synonym used in Custom Matcher.](images/synonym-in-matcher.png)
+
+## Privacy Inbox
+
+The Inbox helps you keep track of new restricted data types as they are captured, quickly classify them, and build a data Inventory.
+
+Segment detects these fields by scanning data from your Web, Mobile, Server, and Cloud Event Sources to detect PII based on the [default PII matchers](#default-pii-matchers). New properties sent into Segment appear in the Inbox in realtime.
+
+When you view the Inbox, it displays every property that was sent into Segment from Web, Mobile, Server, and Cloud Event Sources for the past 7 days. ([Object Cloud Sources](/docs/connections/sources/#object-cloud-sources) and [Reverse ETL Sources](/docs/connections/sources/#reverse-etl-sources) do not appear in the Inbox at this time.)
+
+You can click a row in the Inbox to learn more about a field and where it was collected. The expanded view shows:
+
+- which events contain the field
+- which sources are sending the field
+- which matcher (and what type of matcher) detected the field
+- an example code snippet containing a payload that the field appears in
+
+![Animation of a user selecting a row in the Privacy Portal and clicking on the expanded view.](images/privacy-inbox.gif)
+
+To streamline the classification process, Segment pre-classifies the data in the
+Privacy Portal Inbox as **Red** (likely highly restricted data), **Yellow**
+(likely moderately restricted data), and **Green** (likely least restricted
+data). These colors indicate how restricted the data is for your business. You
+can also send and block data from flowing based on its color classification and
+how restricted it is.
+
+Segment makes recommendations about how a field should be classified using
+built-in PII matcher [detection](#privacy-detection), however, you can always
+update the classification in the Inbox based on your company's requirements.
+
+### Change a recommended classification
+
+You can update the classifications to suit your needs by clicking on the color
+dropdown menu to change. For example, you might manually change a field that
+does not contain personal information in your implementation from a "Yellow"
+classification to "Green."
+
+![Animation of a user selecting the color dropdown menu and changing the phone field from a Yellow field to a Green field.](images/privacy-inbox-change-color.gif)
+
+When you're satisfied that the fields have been classified appropriately, you
+can click `Add to Inventory` to officially apply the classification to the
+field. This moves the field into your [Data Inventory](#privacy-inventory),
+which is a central repository of all of the properties _you_ classified as Red,
+Yellow, and Green. Any time you send this field from a Web, Mobile, Server, or
+Cloud Event Source — whether from another Source or event type — the Privacy
+Portal automatically classifies it and adds it to the Inventory.
+
+### Understanding Classification types:
+
+**Red Classification**:
+Fields that are classified as 'Red' are masked for users that do not have PII Access enabled. These fields are also blocked if you have set Standard Controls under Privacy > Settings section.
+
+Keep in mind that if you have set Standard Controls to block fields from any of your sources, any new classifications you create in the Inbox will start to take affect immediately. For example, if you have a Privacy Control set up to block **Red** data from your Android source, any new fields you classify in the Inbox as **Red** will be blocked from entering Segment from your Android source.
+
+**Yellow Classification**:
+Fields that are classified as 'Yellow' are masked for users that do not have PII Access enabled. 
+
+**Green Classification**:
+Classifying a field as 'Green' does not have any impact on the behavior of masking of fields within the Segment App, it is only available for the housekeeping purposes.
+
+Once a field has been classified as "Yellow" or "Red", marking it "Green" will not make it visible for users that don't have PII access. 
+
+## Privacy Inventory
+
+The Inventory is a central repository of all of the properties _you_ classified as Red, Yellow, and Green. Where the [Inbox](#privacy-inbox) shows new, unclassified data with Segment's _recommended_ classifications, the Inventory only contains data that you explicitly applied Classifications to.
+
+**The Inventory is intended to be a Single Source of Truth so you can answer common regulatory questions about the data you're sending through Segment, for example:**
+
+- What data am I sending into Segment, and how frequently?
+- How restricted is the data I'm sending through Segment?
+- Where is the data coming from, on a property-by-property level?
+- Where am I sending this data?
+- Who within my organization has access to each property within Segment?
+
+Once you've classified the fields as Red, Yellow, and Green in the Inbox, the classified fields appear in the Inventory. You can use the filter at the top left to filter down to specific categories of data (for example, Red data, data from a production environment, data from specific sources).
+
+![Animation of a user filtering the data inventory to only show red fields in their production environment that came from Clearbrain.](images/privacy-inventory-filtering.gif)
+
+Click into a field (for example, `ip`) in the Inventory to open the Inventory
+details. The details sheet displays how many times a specific field has been
+sent from each Source it comes from. You can click the Events tab to see which
+events contained the event, along with the Sources which sent the event. The
+data in the side sheet updates in realtime, and includes a limited historical
+view.
+
+You can click **Connected Destinations** to see which Destinations are
+connected to the Source that contains the field. The Access tab displays a list
+of who within your organization has access to this field.
+
+
+![Screenshot of the product_id Inventory details page in the Privacy Portal.](images/privacy-inventory-overview.png)
+
+
+Finally, workspace owners can use the **Download CSV** button to export a CSV of
+their data Inventory to share with their Data Protection Officer (DPO), Chief
+Information Security Officer (CISO), legal teams, and more! Note that the CSV
+download button includes _all_ data from your Inventory, and ignores any filters
+you applied in the UI.

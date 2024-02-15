@@ -23,7 +23,7 @@ Analytics-Swift provides several key benefits including improvements in stabilit
 
 Analytics-Swift offers improved performance when compared to Analytics iOS. For a more detailed overview, you can reference the [blog post](https://segment.com/blog/sdk-performance-improvements/). 
 
-- Faster event processing and deliver
+- Faster event processing and delivery
 - Significantly lower CPU usage
 - Small memory & disk usage footprint
 
@@ -41,6 +41,9 @@ For the first time ever, developers can filter and transform their users’ even
 Learn more about [Destination Filters](https://github.com/segmentio/DestinationFilters-swift) on Mobile, and [Edge Functions](https://github.com/segmentio/EdgeFn-Swift) on Mobile. 
 
 ## Getting started
+> info "Multiple Instances"
+> Multiple Instances are supported as part of the Analytics-Swift mobile library. However, each instance must have a unique writeKey defined, or malformed JSON may be sent to our API resulting in 400 errors.
+
 To get started with the Analytics-Swift mobile library:
 
 1. Create a Source in Segment.

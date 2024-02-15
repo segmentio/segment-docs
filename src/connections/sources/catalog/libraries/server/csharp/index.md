@@ -1,6 +1,7 @@
 ---
 title: Analytics-CSharp (C#)
 strat: csharp
+support_type: maintenance
 id: 
 redirect_from:
    - '/connections/sources/catalog/libraries/mobile/unity'
