@@ -12,7 +12,7 @@ For more information about Unified Profiles, see the [Agent Copilot](https://www
 > info "Public Beta"
 > Unified Profiles in Flex is currently available as a limited Public Beta product and the information contained in this document is subject to change. This means that some features are not yet implemented and others may be changed before the product is declared as Generally Available. Public Beta products are not covered by a Twilio SLA.
 
-Users without an existing Segment workspace can configure a [Segment for Flex](#configure-a-segment-for-flex-workspace) workspace, which provides limited access to Segment. Users with an existing Segment workspace can [connect their existing workspace to Flex](#connect-an-existing-workspace).
+Users without an existing Segment workspace can configure a [Segment for Flex](#create-a-segment-for-flex-workspace) workspace, which provides limited access to Segment. Users with an existing Segment workspace can [connect their existing workspace to Flex](#connect-an-existing-workspace).
 
 ## Create a Segment for Flex workspace
 
@@ -45,14 +45,15 @@ You can add additional data sources after completing the setup process. <br><br>
 
 #### Salesforce and a data warehouse
 
-1. On the *Getting started with Segment* page, click **Connect Salesforce**. 
+1. On the Getting started with Segment page, click **Connect Salesforce**. 
 2. You are redirected to the Salesforce login screen. Sign in to Salesforce with a user that has XYZ permissions. 
-3. On the *Getting started with Segment* page, click **Connect data warehouse**. 
+3. On the Getting started with Segment page, click **Connect data warehouse**. 
 4. Select your data warehouse from the list of available warehouses, and click **Next**.
 5. Give your destination a name and enter the account credentials for a user that has read and write permissions. Click **Save**. 
-6. Once you've given your destination a name and entered your credentials, click **Next**.
-7. On the *Getting started with Segment* page, click **Define Model**.
+6. After you've given your destination a name and entered your credentials, click **Next**.
+7. On the Getting started with Segment page, click **Define Model**.
 8. Create a SQL query that defines your model. After you've created a model, Segment uses your model to map data to your Reverse ETL destinations. <br> Segment recommends a model with the following format: 
+
 
 ``` sql
 SELECT * FROM salesforce_unified_profiles.accounts
@@ -74,7 +75,7 @@ SELECT * FROM salesforce_unified_profiles.accounts
 
 #### Data warehouse only
 
-1. On the *Getting started with Segment* page, click **Connect data warehouse**. 
+1. On the Getting started with Segment page, click **Connect data warehouse**. 
 2. Select your data warehouse from the list of available warehouses, and click **Next**.
 3. Give your destination a name and enter the account credentials for a user that has read and write permissions. Click **Save**. 
 4. After you've given your destination a name and entered your credentials, click **Next**.
