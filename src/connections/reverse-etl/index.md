@@ -145,6 +145,14 @@ To check the status of your extractions:
 #### Replays
 You can choose to replay syncs. To replay a specific sync, contact [friends@segment.com](mailto:friends@segment.com). Keep in mind that triggering a replay resyncs all records for a given sync.
 
+#### Email alerts
+You can opt in to receive email alerts regarding notifications for Reverse ETL. 
+
+To subscribe to email alerts: 
+1. Navigate to **Settings > User Preferences**. 
+2. Select **Reverse ETL** in the **Activity Notifications** section.
+3. Click the toggle for **Reverse ETL Sync Failed** to receive notifications when your Reverse ETL sync fails. 
+
 ### Edit your model
 
 To edit your model:

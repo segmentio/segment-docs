@@ -1,6 +1,8 @@
 ---
 title: Profiles Sync Setup
 plan: unify
+redirect_from:
+  - '/unify/profiles-sync/'
 ---
 
 On this page, you’ll learn how to set up Profiles Sync, enable historical backfill, and adjust settings for warehouses that you’ve connected to Profiles Sync.
@@ -17,7 +19,7 @@ Before you begin, prepare for setup with these tips:
 - To connect your warehouse to Segment, you must have read and write permissions with the warehouse Destination you choose.
 - During Step 2, you’ll copy credentials between Segment and your warehouse Destination. To streamline setup, open your Segment workspace in one browser tab and open another with your warehouse account.
 - Make sure to copy any IP addresses Segment asks you to allowlist in your warehouse Destination.
-
+ 
 ### Step 1: Create a warehouse
 
 You’ll first choose the Destination warehouse to which Segment will sync profiles. Profiles Sync supports the Snowflake, Redshift, BigQuery, Azure, and Postgres warehouse Destinations. Your initial setup will depend on the warehouse you choose.
@@ -31,6 +33,7 @@ The following table shows the supported Profiles Sync warehouse Destinations and
 | [BigQuery](/docs/connections/storage/catalog/bigquery/)                   | 1. Create a project and enable BigQuery. <br> 2. Create a service account for Segment.                                                                           |
 | [Azure](/docs/connections/storage/catalog/azuresqldw/)                    | 1. Sign up for an Azure subscription. <br> 2. Provision a dedicated SQL pool.                                                                                     |
 | [Postgres](/docs/connections/storage/catalog/postgres/)                   | 1. Follow the steps in the [Postgres getting started](/docs/connections/storage/catalog/postgres/) section.                                                      |
+| [Databricks](/docs/unify/profiles-sync/profiles-sync-setup/databricks-profiles-sync/)                   | 1. Follow the steps in the [Databricks for Profiles Sync](/docs/unify/profiles-sync/profiles-sync-setup/databricks-profiles-sync/) guide.                                                      |
 
 Once you’ve finished the required steps for your chosen warehouse, you’re ready to connect your warehouse to Segment. Because you’ll next enter credentials from the warehouse you just created, **leave the warehouse tab open to streamline setup.**
 

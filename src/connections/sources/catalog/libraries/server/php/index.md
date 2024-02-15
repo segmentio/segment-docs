@@ -2,8 +2,9 @@
 title: Analytics for PHP
 repo: analytics-php
 id: TDO70If4mD
+support_type: maintenance
 ---
-Our PHP library lets you record analytics data from your PHP code. The requests hit our servers, and then we route your data to any analytics service you enable on your destinations page.
+Segment's PHP library lets you record analytics data from your PHP code. The requests hit Segment servers, and then Segment routes your data to any analytics service you enable on your destinations page.
 
 This library is open-source, so you can [check it out on GitHub](https://github.com/segmentio/analytics-php).
 
