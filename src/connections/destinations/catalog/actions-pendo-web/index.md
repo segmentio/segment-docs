@@ -11,6 +11,8 @@ hide-dossier: true
 
 [Pendo](http://www.pendo.io/){:target="_blank"} combines powerful software usage analytics with in-app guidance and user feedback capabilities, enabling even non-technical teams to deliver better product experiences to their customers or employees.
 
+Pendo maintains this destination. For issues with the Pendo Web (Actions) destination, please reach out to [Pendo's support team](https://support.pendo.io/hc/en-us/articles/360034163971-Get-help-with-Pendo-from-Technical-Support){:target="_blank"}.
+
 > success ""
 > **Good to know**: This page is about the [Actions-framework](/docs/connections/destinations/actions/) Pendo Web (Actions) Segment destination. There's also a page about the [non-Actions Pendo destination](/docs/connections/destinations/catalog/pendo/). Both of these destinations receives data from Segment.
 
