@@ -2,7 +2,6 @@
 title: Avo Destination
 id: 65c2465d0d7d550aa8e7e5c6
 beta: true
-hidden: true
 redirect_from: "/connections/destinations/catalog/actions-avo/"
 ---
 
@@ -52,7 +51,6 @@ This Track call is translated into a event signature that is sent to Avo's Inspe
 4. Select a source to connect to Avo (Actions) and click **Next**. 
 5. Enter a name for your Avo (Actions) destination and click **Create destination**. 
 
-<!-- The line below renders a table of connection settings (if applicable), Pre-built Mappings, and available actions. -->
 
 {% include components/actions-fields.html %}
 
