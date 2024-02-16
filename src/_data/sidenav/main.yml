@@ -406,6 +406,8 @@ sections:
       title: Generative Audiences
     - path: '/engage/audiences/organization'
       title: Organize Audiences
+    - path: '/engage/audiences/query-language'
+      title: Segment Query Language
 
   - section_title: Journeys
     description: "Learn how to create multi-step Journeys to tailor messages to your users."

@@ -7,6 +7,9 @@ Segment's query language lets you define audience segments and computed traits. 
 
 This reference provides a comprehensive overview of the Segment query language.
 
+> info "Segment's query language private beta"
+> Segment's query language is in private beta, and Segment is actively working on this feature. Some functionality may change before it becomes generally available.
+
 ## Overview
 
 Audience definitions specify the criteria for identifying users or accounts as members of a particular audience, while computed trait definitions outline the logic for aggregating or calculating values stored as traits on user or account level profiles.
