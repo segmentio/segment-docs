@@ -152,3 +152,19 @@ Your Segment for Flex workspace has the following entitlements:
 - 2 [Unify Spaces](/docs/unify/quickstart/)
 - 2 [computed traits](/docs/unify/Traits/computed-traits/)
 - 2 [predictions](/docs/unify/traits/predictions/)
+
+<div class="double">
+  {% include components/reference-button.html
+    href="/docs/unified-profiles/"
+    icon="unified-profiles.svg"
+    title="Unified Profiles Overview"
+    description="Unified Profiles in Flex, available with Twilio's Agent Copilot, provides your Flex agents with real-time customer data from multiple enterprise systems."
+  %}
+
+  {% include components/reference-button.html
+    href="/docs/unified-profiles/connect-a-workspace"
+    icon="api.svg"
+    title="Connect an Existing Workspace to Flex"
+    description="Users with an existing Segment workspace can connect their existing workspace to Flex."
+  %}
+</div>

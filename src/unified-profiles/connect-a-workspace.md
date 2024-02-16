@@ -246,14 +246,14 @@ For more information about the Profile explorer, see the [Profile explorer](/doc
 <div class="double">
   {% include components/reference-button.html
     href="/docs/unified-profiles/"
-    icon="connections.svg"
+    icon="unified-profiles.svg"
     title="Unified Profiles Overview"
-    description="Want to see general information about Unified Profiles?"
+    description="Unified Profiles in Flex, available with Twilio's Agent Copilot, provides your Flex agents with real-time customer data from multiple enterprise systems."
   %}
 
   {% include components/reference-button.html
-    href="/docs/unified-profiles/create-a-segment-for-flex-workspace"
-    icon="getting-started.svg"
+    href="/docs/unified-profiles/segment-for-flex"
+    icon="flex.svg"
     title="Segment for Flex"
     description="Users without an existing Segment workspace can configure a Segment for Flex workspace, which provides limited access to Segment."
   %}
