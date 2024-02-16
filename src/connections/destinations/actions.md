@@ -247,12 +247,12 @@ If no mappings are enabled to trigger on an event that has been received from th
 
 When the same event triggers multiple mappings, a request will be generated for each mapping that's configured to trigger on an event. For example, for the *Subscription Updated* event, if two mappings are enabled and both have conditions defined to trigger on the *Subscription Updated* event, the two requests will be generated and sent to the destination for each *Subscription Updated* event. 
 
-### Oauth "access token expired" message showed in Segment UI
-Access Tokens that were generated from initial authorization, e.g. when you connect a destination via Oauth, are always short-lived. Commonly, the token remains valid for 30 minutes to 1 hour. When Segment’s systems receive 401 error responses from the destination after a token has expired, Segment will automatically make another request to the destination for a new token and will then retry the event. Therefore, 401 responses are sometimes expected and do not indicate an event failure. There are three event flows when events are received and sent to a destination:
+### Oauth "access token expired" message shown in Segment UI
+Access Tokens that were generated from initial authorization, for example, when you connect a destination via Oauth, are always short-lived. Commonly, the token remains valid for 30 minutes to 1 hour. When Segment receives 401 error responses from the destination after a token has expired, it will automatically make another request to the destination for a new token and will then retry the event. Therefore, 401 responses are sometimes expected and do not indicate an event failure. There are three event flows when events are received and sent to a destination:
 
-1. through source 
-2. through event tester 
-3. through actions tester in mapping screen
+- through source 
+- through event tester 
+- through actions tester in mapping screen
 
 The underlying systems for these flows have their own copy of the token, which can expire at different points in time.
-Threfore, if you see a 401 error in a sample response, it is likely that you’ll also see another request was made after it, to ask the downstream destination for a new token, and then one more request was made to actually send the data in your payload to the downstream destination.
+Threfore, if you see a 401 error in a sample response, it is likely that you’ll also see another request was made after it, to ask the downstream destination for a new token. Then one more request was made to actually send the data in your payload to the downstream destination.
