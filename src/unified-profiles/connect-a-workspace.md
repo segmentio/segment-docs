@@ -6,7 +6,7 @@ hidden: true
 If you already have a Segment workspace, you can use a new or pre-existing [Segment Unify space](/docs/unify/quickstart/) to connect your customer data to Unified Profiles in Flex. 
 
 > warning "Unified Profiles in Flex has limited source and destination support"
-> The connections supported by Unified Profiles are limited to the following:
+> Unified Profiles supports the following connections:
 >
 > **Sources**: Salesforce, RETL sources (Postgres, Snowflake, Redshift, BigQuery)
 >
@@ -242,3 +242,19 @@ For more information about the Source debugger, see the [Source debugger](/docs/
 Use the Profile explorer to view all user data, including their event history, traits, and identifiers. With the Profile explorer, you have a complete view of your customers.
 
 For more information about the Profile explorer, see the [Profile explorer](/docs/unify/#profile-explorer) documentation.
+
+<div class="double">
+  {% include components/reference-button.html
+    href="/docs/unified-profiles/"
+    icon="connections.svg"
+    title="Unified Profiles Overview"
+    description="Want to see general information about Unified Profiles?"
+  %}
+
+  {% include components/reference-button.html
+    href="/docs/unified-profiles/create-a-segment-for-flex-workspace"
+    icon="getting-started.svg"
+    title="Segment for Flex"
+    description="Users without an existing Segment workspace can configure a Segment for Flex workspace, which provides limited access to Segment."
+  %}
+</div>
