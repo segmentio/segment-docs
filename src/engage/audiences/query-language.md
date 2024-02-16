@@ -7,7 +7,7 @@ Segment's query language lets you define audience segments and computed traits. 
 
 This reference provides a comprehensive overview of the Segment query language.
 
-> info "Segment's query language private beta"
+> info "Segment's query language in private beta"
 > Segment's query language is in private beta, and Segment is actively working on this feature. Some functionality may change before it becomes generally available.
 
 ## Overview
