@@ -23,7 +23,7 @@ You can build an Audience from existing events, traits, computed traits, or othe
 > - **Include Anonymous Users** not selected: `user_id`, `email`, `android.idfa`, or `ios.idfa`
 > - **Include Anonymous Users** selected: `user_id`, `email`, `android.idfa`, `ios.idfa`, or `anonymous_id`
 
-> warning "Caution"
+> warning ""
 > Editing an audience before the initial backfill is complete can create technical errors.
 
 ### Events
