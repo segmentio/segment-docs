@@ -5,12 +5,12 @@ beta: true
 redirect_from: "/connections/destinations/catalog/actions-avo/"
 ---
 
-With [Avo](https://avo.app){:target="\_blank”} Inspector, data quality is no longer a dream, it’s a workflow.
+**Avo lets you find, fix, and prevent data quality issues upstream.** World class data and product teams at companies like Fender, IKEA, Wolt use Avo to guarantee event data quality upstream, so they can focus on building great user experiences. With Avo you get reliable data with less effort, by moving from reactive damage control to proactive data management and addressing your data quality issues at the source, where the data is created.
 
-[Inspector](https://www.avo.app/data-observability){:target="\_blank”} lets you find, triage, fix, and prevent data quality issues in your product analytics. Launch Inspector to discover all your data quality issues and systematically work towards better data, one resolved issue at a time.
+With [Avo](https://avo.app){:target="\_blank”} Inspector, data quality is no longer a dream, it’s a workflow.
+[Inspector](https://www.avo.app/data-observability){:target="\_blank”} lets you find, triage, fix, and prevent data quality issues in your event based data. Launch Inspector to discover all your data quality issues and systematically work towards better data, one resolved issue at a time.
 
 The Avo Inspector destination automatically extracts event schemas from your product events, sending only the signatures from the connected Segment sources to the Inspector API. **Avo Inspector receives no PII data from your source**.
-
 
 {% include content/plan-grid.md name="actions" %}
 
@@ -18,7 +18,7 @@ The Avo Inspector destination automatically extracts event schemas from your pro
 
 ### Track events
 
-The Avo destination supports Track events.
+The Avo destination supports `Track` events.
 
 Example of Track call:
 
@@ -30,7 +30,7 @@ analytics.track("Login", {
 });
 ```
 
-This Track call is translated into a event signature that is sent to Avo's Inspector API. 
+This Track call is translated into an event signature that is sent to Avo's Inspector API.
 
 ```js
 {
@@ -47,15 +47,15 @@ This Track call is translated into a event signature that is sent to Avo's Inspe
 
 1. From the Segment web app, click **Catalog**, then click **Destinations**.
 2. Find the Destinations Actions item in the left navigation, and click it.
-3. Select Avo from the list of destinations, then click **Add destination**.
-4. Select a source to connect to Avo (Actions) and click **Next**. 
-5. Enter a name for your Avo (Actions) destination and click **Create destination**. 
+3. Select [Avo](https://app.segment.com/goto-my-workspace/destinations/catalog/actions-avo) from the list of destinations, then click **Add destination**.
+4. Select a source to connect to Avo (Actions) and click **Next**.
+5. Enter a name for your Avo (Actions) destination and click **Create destination**.
 
+## Configure Avo Setup
 
-{% include components/actions-fields.html %}
+### Getting Avo API key
 
-## Getting Avo API key
-Before connecting the segment source to Avo, you will need an API key for your source.
+Before connecting the Segment source to Avo, you will need an API key for your source.
 
 1. Create your Avo workspace at avo.app (If you don’t have one already).
 2. From the Avo workspace sidebar, select **Sources**.
@@ -65,9 +65,11 @@ Before connecting the segment source to Avo, you will need an API key for your s
 5. Copy the API Key
    ![Copy API key](images/api-key.png)
 
-## Destination settings
+### Configure Destination
+
 1. Copy the **API Key** from Avo into the field `API Key` in settings.
 2. Select an environment you'd like the data to go to within Avo. It should reflect from what environment the source is receiving data from. (**Production** / **Development** / **Staging**)
-3. **(Optional):** If you have an event property describing the app release version of your source you can provide it under App Version. By default the destination attempts to extract your app release version from `{context.app.version}` which defaults to `unversioned` if that does not exist. Having accurate app release versions in Avo Inspector will help you identify which releases an issue is impacting, and monitor for regressions in future releases after you’ve resolved the issue.
+3. **App Version Property (Optional):** If you have an event property describing the app release version of your source you can provide it under App Version. For most mobile sources, we will automatically fetch the app version from segment context. Having accurate app release versions in Avo Inspector will help you identify which releases an issue is impacting, and monitor for regressions in future releases after you’ve resolved the issue.
+   ![Select a source](images/avo-destination.png)
 
-![Select a source](images/avo-destination.png)
+{% include components/actions-fields.html %}
