@@ -279,57 +279,57 @@ The following tables list the query languages's available functions.
 | Return Type  | `Comparator`                                             |
 | Example      | `after_date('2023-12-07T18:50:00Z')`                     |
 
-| `within_last` |                                                                                                                                                                                        |
-| ------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Syntax        | `within_last({d: Integer} {u: TimeUnit})`<br>`d` - duration value<br>u - hour(s) day(s)                                                                                                |
-| Return Type   | `Comparator`                                                                                                                                                                           |
-| Description   | Represents the date range between today and the past `d` days - inclusive where today represents the current date at the time we determine audience membership or calculate the trait. |
-| Example       | `within_last(7 days)`                                                                                                                                                                  |
+| `within_last` |                                                                                                                                                                                               |
+| ------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Syntax        | `within_last({d: Integer} {u: TimeUnit})`<br>`d` - duration value<br>u - hour(s) day(s)                                                                                                       |
+| Return Type   | `Comparator`                                                                                                                                                                                  |
+| Description   | Represents the date range between today and the past `d` days - inclusive where today represents the current date at the time Segment determines audience membership or calculates the trait. |
+| Example       | `within_last(7 days)`                                                                                                                                                                         |
 
-| `within_next` |                                                                                                                                                                                        |
-| ------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Syntax        | `within_next({d: Integer} {u: TimeUnit})`<br>`d` - duration value<br>`u` - hour(s) day(s)                                                                                              |
-| Return Type   | `Comparator`                                                                                                                                                                           |
-| Description   | Represents the date range between today and the next `d` days - inclusive where today represents the current date at the time we determine audience membership or calculate the trait. |
-| Example       | `within_next(7 days)`                                                                                                                                                                  |
+| `within_next` |                                                                                                                                                                                               |
+| ------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Syntax        | `within_next({d: Integer} {u: TimeUnit})`<br>`d` - duration value<br>`u` - hour(s) day(s)                                                                                                     |
+| Return Type   | `Comparator`                                                                                                                                                                                  |
+| Description   | Represents the date range between today and the next `d` days - inclusive where today represents the current date at the time Segment determines audience membership or calculates the trait. |
+| Example       | `within_next(7 days)`                                                                                                                                                                         |
 
-| `before_last` |                                                                                                                                                                                                            |
-| ------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Syntax        | `before_last({d: Integer} {u: TimeUnit})`<br>d - duration value<br>u - hour(s) day(s)                                                                                                                      |
-| Return Type   | `Comparator`                                                                                                                                                                                               |
-| Description   | Represents the date range between today - `d` days and any past date prior to that - inclusive where today represents the current date at the time we determine audience membership or calculate the trait. |
-| Example       | `before_last(7 days)`                                                                                                                                                                                      |
+| `before_last` |                                                                                                                                                                                                                    |
+| ------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| Syntax        | `before_last({d: Integer} {u: TimeUnit})`<br>`d` - duration value<br>u - hour(s) day(s)                                                                                                                            |
+| Return Type   | `Comparator`                                                                                                                                                                                                       |
+| Description   | Represents the date range between today - `d` days and any past date prior to that - inclusive where today represents the current date at the time Segment determines audience membership or calculates the trait. |
+| Example       | `before_last(7 days)`                                                                                                                                                                                              |
 
-| `after_next` |                                                                                                                                                                                                |
-| ------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Syntax       | `after_next({d: Integer} {u: TimeUnit})`<br>`d` - duration value<br>u - hour(s)  day(s)                                                                                                          |
-| Return Type  | `Comparator`                                                                                                                                                                                   |
-| Description  | Represents the date range between today + `d` days and any future date - inclusive where today represents the current date at the time we determine audience membership or calculate the trait. |
-| Example      | `after_next(7 days)`                                                                                                                                                                           |
+| `after_next` |                                                                                                                                                                                                        |
+| ------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| Syntax       | `after_next({d: Integer} {u: TimeUnit})`<br>`d` - duration value<br>u - hour(s)  day(s)                                                                                                                |
+| Return Type  | `Comparator`                                                                                                                                                                                           |
+| Description  | Represents the date range between today + `d` days and any future date - inclusive where today represents the current date at the time Segment determines audience membership or calculates the trait. |
+| Example      | `after_next(7 days)`                                                                                                                                                                                   |
 
 
 ### Junctions
 
-| `AND`       |                                                   |
+| `AND`       |                                                      |
+| ----------- | ---------------------------------------------------- |
+| Syntax      | `{Comparator} AND {Comparator}`                      |
+| Base Type   | `Junction`                                           |
+| Return Type | `Comparator`                                         |
+| Description | True only if both subexpressions evaluate to `true`. |
+
+| `OR`        |                                                   |
 | ----------- | ------------------------------------------------- |
-| Syntax      | `{Comparator} AND {Comparator}`                   |
+| Syntax      | `{Comparator} OR {Comparator}`                    |
 | Base Type   | `Junction`                                        |
 | Return Type | `Comparator`                                      |
-| Description | True only if both subexpressions evaluate to true |
+| Description | True if either subexpression evaluates to `true`. |
 
-| `OR`        |                                                |
-| ----------- | ---------------------------------------------- |
-| Syntax      | `{Comparator} OR {Comparator}`                 |
-| Base Type   | `Junction`                                     |
-| Return Type | `Comparator`                                   |
-| Description | True if either subexpression evaluates to true |
-
-| `NOT`       |                                                   |
-| ----------- | ------------------------------------------------- |
-| Syntax      | `NOT ({Comparator})`                              |
-| Base Type   | `Junction`                                        |
-| Return Type | `Comparator`                                      |
-| Description | True only if the subexpression evaluates to false |
+| `NOT`       |                                                      |
+| ----------- | ---------------------------------------------------- |
+| Syntax      | `NOT ({Comparator})`                                 |
+| Base Type   | `Junction`                                           |
+| Return Type | `Comparator`                                         |
+| Description | True only if the subexpression evaluates to `false`. |
 
 | `ANY`       |                                                                                                                                                                                      |
 | ----------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
@@ -352,27 +352,28 @@ The following tables list the query languages's available functions.
 |-------------|------------------------|
 | Operations  | None included          |
 
-| `VectorExtractor` (extends `Extractor`, `StreamFilter`) |                                                                                                                                                              |
-| ------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| Base Type                                               | `Extractor`, `StreamFilter`                                                                                                                                  |
-| Operations allowed in call-chain                        | `where`, `sources`, `within`, `between`, `count`, `sum`, `avg`, `max`, `min`, `mode`, `first`, `last`, `unique` (inherited from `StreamFilter`)              |
-| Notes                                                   | `VectorExtractor`s represent extractions of data sets, which will need to be filtered and reduced to a scalar. Adds `isVector` property to entire expression |
+| `VectorExtractor` (extends `Extractor`, `StreamFilter`) |                                                                                                                                                          |
+| ------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Base Type                                               | `Extractor`, `StreamFilter`                                                                                                                              |
+| Operations allowed in call-chain                        | `where`, `sources`, `within`, `between`, `count`, `sum`, `avg`, `max`, `min`, `mode`, `first`, `last`, `unique` (inherited from `StreamFilter`)          |
+| Notes                                                   | A `VectorExtractor` represents extractions of data sets that need to be filtered and reduced to a scalar. Adds `isVector` property to entire expression. |
+
 
 | `ScalarExtractor` (extends `Extractor`, `Scalar`) |                                                                                                                                                                                                                                          |
 | ------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Base Type                                         | `Extractor`, `Scalar`                                                                                                                                                                                                                    |
 | Operations allowed in call-chain                  | `eq`, `neq`, `is_null`, `is_set`, `gt`, `gte`, `lt`, `lte`, `contains`, `omits`, `starts_with`, `ends_with`, `contains_one`, `one_of`, `before_date`, `after_date`, `within_last`, `before_last`, `after_next` (inherited from `Scalar`) |
-| Notes                                             | `ScalarExtractor`s represent extractions of a single data element, such as a field value or a trait value.                                                                                                                               |
+| Notes                                             | A `ScalarExtractor` represents extractions of a single data element, like a field value or a trait value.                                                                                                                                |
 
-| `EventPropertyExtractor` (extends `Extractor`) |                                                     |
-| ---------------------------------------------- | --------------------------------------------------- |
-| Base Type                                      | `Extractor`, `Scalar`                               |
-| Operations allowed in call-chain               | None                                                |
-| Notes                                          | Used to refer to properties for comparison purposes |
+| `EventPropertyExtractor` (extends `Extractor`) |                                                      |
+| ---------------------------------------------- | ---------------------------------------------------- |
+| Base Type                                      | `Extractor`, `Scalar`                                |
+| Operations allowed in call-chain               | None                                                 |
+| Notes                                          | Used to refer to properties for comparison purposes. |
 
 | `Filter`                         |               |
 | -------------------------------- | ------------- |
-| Operations allowed in call-chain | None Included |
+| Operations allowed in call-chain | None included |
 
 | `StreamFilter` (extends `Filter`) |                                                                                                                 |
 | --------------------------------- | --------------------------------------------------------------------------------------------------------------- |
@@ -395,12 +396,12 @@ The following tables list the query languages's available functions.
 | `Comparator`                     |                                                                                    |
 | -------------------------------- | ---------------------------------------------------------------------------------- |
 | Base Type                        | `Comparator`                                                                       |
-| Operations allowed in call-chain | None allowed - once an expression is terminated with a Comparator, it is completed |
+| Operations allowed in call-chain | None allowed; once an expression is terminated with a Comparator, it is completed. |
 
 | `Junction` |                                                     |
 | ---------- | --------------------------------------------------- |
 | Base Type  | `Junction`                                          |
-| Notes      | Preserves any set properties set by sub expressions |
+| Notes      | Preserves any set properties set by subexpressions. |
 
 ## Examples
 
@@ -408,14 +409,14 @@ The following tables list the query languages's available functions.
 
 Suppose you wanted to collect all users who performed the `Shoes Bought` event at least once within the last seven days, where the purchase price was greater than or equal to 100.
 
-Another way to consider this example would be:
+Another way to think of this scenario would be:
 
-- Collect all users who performed the `Shoes Bought` event 
-- Filter down to only consider events with a price greater than or equal to 100
-- Filter for events that occurred within the last seven days
-- Only include users who have one or more of the previous events
+- Collect all users who performed the `Shoes Bought` event. 
+- Filter down to only consider events with a price greater than or equal to 100.
+- Filter for events that occurred within the last seven days.
+- Only include users who have one or more of the previous events.
 
-Here's how you could do that in the language:
+Here's how you could do that in Segment's query language:
 
 ```sql
 event(‘Shoes Bought’).where( property(‘price’) >= 100 ).within(7 days).count() >= 1
@@ -425,9 +426,9 @@ event(‘Shoes Bought’).where( property(‘price’) >= 100 ).within(7 days).c
 
 This example collects:
 
-- All users who performed the `Shoes Bought` event at least once within the last 30 days
-- Where the price was greater than or equal to the average spend
-- The user then performed the `Shoes Returned` event at least once, five days after the `Shoes Bought` event
+- all users who performed the `Shoes Bought` event at least once within the last 30 days
+- where the price was greater than or equal to the average spend
+- The user then performed the `Shoes Returned` event at least once, five days after the `Shoes Bought` event.
 
 ```sql
 event(‘Shoes Bought’).where( 
@@ -473,13 +474,13 @@ ANY event(‘Shoes Bought’).count() >= 1
 
 Suppose you wanted to calculate the average spend based on all `Shoes Bought` events performed within the last 30 days for each user.
 
-Another way to consider this example would be:
+Another way to think of this would be:
 
 - Find all `Shoes Bought` events.
 - Filter down to only consider events that occurred within the last 30 days.
 - For these events, calculate the average spend for each user.
 
-Here's how you could do that in the language:
+Here's how you could do that in Segment's query language:
 
 ```sql
 event(‘Shoes Bought’).within(30 days).avg(property(‘spend’))
@@ -495,7 +496,7 @@ event(‘Shoes Bought’).where( property(‘price’) > 100 AND property(“bra
 
 #### Calculate first seen spend
 
-This example calculates the first seen spend value for each user, based on all `Shoes Bought` events performed within the last 30 days:
+This example calculates the first-seen spend value for each user, based on all `Shoes Bought` events performed within the last 30 days:
 
 ```sql
 event(“Shoes Bought”).within(30 days).first(property(“spend”))
