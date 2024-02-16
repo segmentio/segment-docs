@@ -1,6 +1,6 @@
 ---
 title: Segment Query Language Reference
-plan: engage-foundations
+plan: papi
 ---
 
 Segment's query language lets you define audience segments and computed traits. With clear syntax and practical functionality, the language simplifies the process of defining conditions and computations, helping you extract valuable insights from customer data. 
