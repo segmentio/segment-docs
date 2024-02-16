@@ -404,6 +404,8 @@ sections:
       title: Account-level Audiences
     - path: '/engage/audiences/generative-audiences'
       title: Generative Audiences
+    - path: '/engage/audiences/generative-audiences-nutrition-facts'
+      title: Generative Audiences Nutrition Facts Label
     - path: '/engage/audiences/organization'
       title: Organize Audiences
 
