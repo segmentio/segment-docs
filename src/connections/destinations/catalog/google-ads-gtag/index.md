@@ -28,6 +28,10 @@ You can use this destination to map your `.page()` calls to **Page Load Conversi
 5. On the destination Settings tab, enter the **Conversion ID** from your Google Ads (Gtag) account. 
 6. Select the 'Click Conversion' setting. Enter the name of the event as it appears in the [`track`](/docs/connections/spec/track) call and map it to your Google Ads (Gtag) conversion label.
 
+> info ""
+> Consent Mode: Segment is currently building Consent Mode functionally for all affected Google destinations. We expect this functionally to be available by March 1, 2024.
+
+
 ## Page
 
 If you want to map all your unnamed `.page()` calls to a default Page Load Conversion, you can enter the Conversion ID in **Settings > Default Page Conversion**. However, if you created specific Page Load Conversions in Google Ads that you'd like to map your named `.page()` calls in Segment, you can map the events in **Settings > Page Load Conversions**.
