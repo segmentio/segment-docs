@@ -431,7 +431,7 @@ This example collects:
 
 - all users who performed the `Shoes Bought` event at least once within the last 30 days
 - where the price was greater than or equal to the average spend
-- The user then performed the `Shoes Returned` event at least once, five days after the `Shoes Bought` event.
+- and the user performed the `Shoes Returned` event at least once, five days after the `Shoes Bought` event
 
 ```sql
 event(‘Shoes Bought’).where( 
