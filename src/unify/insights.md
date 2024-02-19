@@ -18,7 +18,11 @@ From the Profiles Insights page, you can navigate to these tabs:
 
 Use the errors and violations tab to view and help you troubleshoot any errors or violations that have occurred in your space.
 
-You can filter results by ID type, time range, specific violations, and more.
+You can filter results by ID type, time range, specific violations, and more. 
+
+To filter by External ID type, entering an External ID value in the search bar is required.
+<img width="873" alt="image" src="https://github.com/segmentio/segment-docs/assets/100810716/1ab5671b-3c6e-4ce2-a261-18e95d0b4c33">
+
 
 ### Errors
 
