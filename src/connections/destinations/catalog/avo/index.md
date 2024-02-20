@@ -18,7 +18,7 @@ The Avo Inspector destination automatically extracts event schemas from your pro
 
 ### Track events
 
-The Avo destination supports `Track` events.
+The Avo destination supports Track events.
 
 Example of Track call:
 
@@ -47,7 +47,7 @@ This Track call is translated into an event signature that is sent to Avo's Insp
 
 1. From the Segment web app, click **Catalog**, then click **Destinations**.
 2. Find the Destinations Actions item in the left navigation, and click it.
-3. Select [Avo](https://app.segment.com/goto-my-workspace/destinations/catalog/actions-avo) from the list of destinations, then click **Add destination**.
+3. Select [Avo](https://app.segment.com/goto-my-workspace/destinations/catalog/actions-avo){:target="\_blank”} from the list of destinations, then click **Add destination**.
 4. Select a source to connect to Avo (Actions) and click **Next**.
 5. Enter a name for your Avo (Actions) destination and click **Create destination**.
 
@@ -74,15 +74,15 @@ You can copy the API key from your source in Avo. The API key allows Avo to map 
 #### Environment
 
 Environment describes which app environment the source is sent from, `Development | Staging | Production`.
-Avo only generates issues for events in the `Production` environment, but you can see the event shapes for staging and development environments to make sure they are implemented correctly.
+Avo only generates issues for events in your `Production` environment, but you can see the event shapes for staging and development environments to make sure they are implemented correctly.
 
 #### App Version Property
 
-App Version Property is an optional **(but recommended!)** field. Having accurate app release versions in Avo Inspector allows you to see how events change across releases. This will help you identify which releases an issue is impacting, and monitor for regressions in future releases after an issue has been resolved.
+App Version Property is an optional **(but recommended!)** field. Having accurate app release versions in Avo Inspector allows you to see how events change across releases. This helps you identify which releases an issue is impacting, and monitor for regressions in future releases after an issue has been resolved.
 
-Without app versions, the inspector has no way of differentiating between old and new releases, and might surface irrelevant issues based on old releases. [Learn more about how Inspector uses releases](https://www.avo.app/docs/inspector/inspector-issues-view#release-and-source-breakdown)
+Without app versions, the inspector has no way of differentiating between old and new releases, and might surface irrelevant issues based on old releases. Learn more about how Inspector uses releases in [Avo's documentation](https://www.avo.app/docs/inspector/inspector-issues-view#release-and-source-breakdown){:target="\_blank”}.
 
-For most mobile sources, we will automatically fetch the app version from Segment Context. If you have an event property describing the app release version of your source (“E.g “app_version”) you can provide it under App Version.
+For most mobile sources, Avo automatically fetches the app version from Segment Context. If you have an event property describing the app release version of your source (“E.g “app_version”) you can provide it under App Version.
 
 If you are unsure of whether this applies to your source, or if you don’t know which event property to use, you can proceed with setting up the source and add this information later.
 
