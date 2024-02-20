@@ -67,9 +67,25 @@ Before connecting the Segment source to Avo, you will need an API key for your s
 
 ### Configure Destination
 
-1. Copy the **API Key** from Avo into the field `API Key` in settings.
-2. Select an environment you'd like the data to go to within Avo. It should reflect from what environment the source is receiving data from. (**Production** / **Development** / **Staging**)
-3. **App Version Property (Optional):** If you have an event property describing the app release version of your source you can provide it under App Version. For most mobile sources, we will automatically fetch the app version from segment context. Having accurate app release versions in Avo Inspector will help you identify which releases an issue is impacting, and monitor for regressions in future releases after you’ve resolved the issue.
-   ![Select a source](images/avo-destination.png)
+#### Avo Inspector API Key
+
+You can copy the API key from your source in Avo. The API key allows Avo to map the events from your Segment source to the Avo source, to accurately compare your source’s event schemas to your Tracking Plan in Avo.
+
+#### Environment
+
+Environment describes which app environment the source is sent from, `Development | Staging | Production`.
+Avo only generates issues for events in the `Production` environment, but you can see the event shapes for staging and development environments to make sure they are implemented correctly.
+
+#### App Version Property
+
+App Version Property is an optional **(but recommended!)** field. Having accurate app release versions in Avo Inspector allows you to see how events change across releases. This will help you identify which releases an issue is impacting, and monitor for regressions in future releases after an issue has been resolved.
+
+Without app versions, the inspector has no way of differentiating between old and new releases, and might surface irrelevant issues based on old releases. [Learn more about how Inspector uses releases](https://www.avo.app/docs/inspector/inspector-issues-view#release-and-source-breakdown)
+
+For most mobile sources, we will automatically fetch the app version from Segment Context. If you have an event property describing the app release version of your source (“E.g “app_version”) you can provide it under App Version.
+
+If you are unsure of whether this applies to your source, or if you don’t know which event property to use, you can proceed with setting up the source and add this information later.
+
+![Select a source](images/avo-destination.png)
 
 {% include components/actions-fields.html %}
