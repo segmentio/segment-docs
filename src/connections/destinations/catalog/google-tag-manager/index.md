@@ -17,8 +17,8 @@ id: 54521fd625e721e32a72eeb9
 3. In your Segment UI's destination settings, enter your Container ID (note: it should start with "GTM-"). You can find this in the Admin section of your [GTM dashboard](https://tagmanager.google.com/#/admin/){:target="_blank"}.
 4. GTM loads on any pages where your Segment snippet is initialized and `analytics.page` is called in client-side JavaScript. Once you've turned on GTM through Segment, you can use Segment `track` events to populate the GTM `dataLayer`, and remove the GTML snippet from your page.
 
-> info ""
-> Consent Mode: Segment is currently building Consent Mode functionality for all affected Google destinations. However, for GTM, please note that consent mode settings need to be managed directly [within your GTM account](https://support.google.com/tagmanager/answer/10718549?hl=en#tag-settings). Therefore, there's no direct update from Segment for the GTM destination regarding consent mode, as it is managed within GTM tags themselves.
+> info "Consent Mode"
+> Segment is currently building Consent Mode for all affected Google destinations. This will be available before March 6, 2024. For Google Tag Manager, please note that consent mode settings need to be managed directly [within your GTM account](https://support.google.com/tagmanager/answer/10718549?hl=en#tag-settings){:target="_blank"}. There's no direct update from Segment for the GTM destination regarding consent mode, as it's managed within GTM tags themselves.
 
 > info ""
 > Segment recommends that you load GTM through Segment rather than loading Segment inside of GTM. When you load Segment through GTM, it limits Segment's ability to help troubleshoot.
