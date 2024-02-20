@@ -614,6 +614,8 @@ sections:
         title: Public API
       - path: /api/public-api/fql
         title: Destination Filter Query Language
+      - path: '/api/public-api/query-language'
+        title: Segment Query Language
   - section_title: Config API
     slug: api/config-api
     section:
