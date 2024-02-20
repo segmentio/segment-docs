@@ -19,6 +19,12 @@ You can select a user in the table to see their [roles](/docs/segment-app/iam/ro
 
 With Twilio Unified Login, Twilio users can use their Twilio email, password, and authentication settings to access several Twilio products, including Segment. Once you link your Segment account to your Twilio credentials, you can access Segment directly from the Twilio console using the [Twilio Product Switcher](#twilio-product-switcher).
 
+### Twilio Sign up
+
+Segment sign ups and invitations that are re-directed to Twilio's sign up page adheres to [Twilio's minimum password requirements and 2FA](https://help.twilio.com/articles/115012261968). The intention is to provide a single experience for users to access various Twilio products, including Twilio Messaging, SendGrid, and Segment. You can also use other providers, such as Google sign up. To learn more, review Twilio's [Account Management](https://support.twilio.com/hc/en-us/sections/205104908-Account-Management?_gl=1*1xa50pg*_ga*OTUyMjQ4OTU5LjE2NjM2ODQzMDE.*_ga_3JKYB4GBBY*MTcwNzc2ODE1OC4xNDkuMS4xNzA3NzY4MjUzLjAuMC4w) documentation.
+
+Any existing Segment user will adhere to existing password requirements and 2FA settings at the Workspace level.
+
 ### Twilio Product Switcher
 
 You can access Segment from the Twilio Console using the Product Switcher. For more information, view the Twilio support article [Getting Started with the Unified Login and Product Switcher](https://support.twilio.com/hc/en-us/articles/19652187501211-Getting-Started-with-the-Unified-Login-and-Product-Switcher){:target="_blank”}.
