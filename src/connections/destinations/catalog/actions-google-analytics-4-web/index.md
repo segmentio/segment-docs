@@ -15,6 +15,10 @@ versions:
 
 When you have Segment installed, you can use your existing tracking implementation to fulfill your data collection needs with Google Analytics 4. When you enable the Google Analytics 4 Web destination, Segment loads the [gtag.js library](https://support.google.com/analytics/answer/9310895?hl=en#zippy=%2Cin-this-article){:target="_blank"} for you. To avoid duplicate data, remove the native gtag.js script from your page.
 
+> info "Consent Mode"
+> Segment is currently building Consent Mode for all affected Google destinations. This will be available before March 6, 2024.
+
+
 ## Getting started
 
 Before you connect Segment to Google Analytics 4, configure a Google Analytics 4 property in your Analytics account. For more information, see Google's article [Set up Analytics for a website and/or app](https://support.google.com/analytics/answer/9304153){:target='_blank'}.
