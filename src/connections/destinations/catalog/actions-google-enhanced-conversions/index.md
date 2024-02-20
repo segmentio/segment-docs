@@ -17,8 +17,8 @@ The Google Ads Conversions destination enables you to upload offline conversions
 6. On the **Settings** tab, authenticate with Google using OAuth. Click **Connect to Google Ads Conversions**. Follow the prompts to authenticate using OAuth, with a Google account that is a member of your Google Ads account.
 7. Follow the steps in the Destinations Actions documentation on [Customizing mappings](/docs/connections/destinations/actions/#customizing-mappings).
 
-> info ""
-> Consent Mode: Segment is currently building Consent Mode functionally for all affected Google destinations. We expect this functionally to be available by March 1, 2024.
+> info "Consent Mode"
+> Segment is currently building Consent Mode for all affected Google destinations. This will be available before March 6, 2024.
 
 > warning "Upload Enhanced Conversion (Legacy) Action Deprecation"
 > Google plans to sunset the legacy API, leading to the discontinuation of the Upload Enhanced Conversions (Legacy) Action. New subscriptions using the sunsetting Upload Enhanced Conversion (Legacy) Action are **no longer possible**, but existing subscriptions will remain functional. 
