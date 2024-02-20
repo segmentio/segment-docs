@@ -28,8 +28,8 @@ You can use this destination to map your `.page()` calls to **Page Load Conversi
 5. On the destination Settings tab, enter the **Conversion ID** from your Google Ads (Gtag) account. 
 6. Select the 'Click Conversion' setting. Enter the name of the event as it appears in the [`track`](/docs/connections/spec/track) call and map it to your Google Ads (Gtag) conversion label.
 
-> info ""
-> Consent Mode: Segment is currently building Consent Mode functionally for all affected Google destinations. We expect this functionally to be available by March 1, 2024.
+> info "Consent Mode"
+> Segment is currently building Consent Mode for all affected Google destinations. This will be available before March 6, 2024.
 
 
 ## Page
