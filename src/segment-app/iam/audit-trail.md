@@ -21,6 +21,7 @@ The Audit Trail returns information about the following Segment product areas:
 - Warehouses
 - Destinations
 - Storage
+- Consent Management
 - Tracking Plans
 - Destination Filters
 - Transformations
@@ -33,7 +34,6 @@ The Audit Trail returns information about the following Segment product areas:
 - Journeys
 - Broadcasts 
 - Workspace
-<!--- IG, 11/2023: Add consent to this list when this goes to public beta (q1 '24?)--->
 
 To view a list of all events Segment surfaces in the Audit Trail, open the Audit Trail, click **Filters**, and select the **Events** dropdown. 
 
