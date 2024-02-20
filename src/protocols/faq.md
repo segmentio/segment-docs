@@ -167,3 +167,7 @@ That depends. If you are working with source-level Transformations, the Protocol
 ### Why do I need Protocols to use transformations?
 
 Transformations are but one tool among many to help you improve data quality. Segment highly recommends that all customers interested in improving data quality start with a well defined Tracking Plan. The Tracking Plan serves as a roadmap for how you want to collect data. Without a clear roadmap, it's nearly impossible to build alignment around how transformations should be used to improve data quality, leading to more data quality issues than it solves.
+
+### Are transformations applied when using the Event Tester?
+
+Transformations are not applied to events sent through the [Event Tester](https://segment.com/docs/connections/test-connections/). The Event Tester operates independently from the Segment pipeline, focusing solely on testing specific connections to a destination. For a transformation to take effect, the event must be processed through the Segment pipeline.
