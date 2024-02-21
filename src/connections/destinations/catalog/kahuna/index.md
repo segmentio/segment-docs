@@ -69,9 +69,9 @@ SEGAnalyticsConfiguration *config = [SEGAnalyticsConfiguration configurationWith
 
 To use the Push Notifications and In-App functionality provided by Kahuna, follow the steps in the Kahuna SDK destination guide:
 
-- For **iOS**, follow the steps in [Enable Personalized Push](https://app.usekahuna.com/tap/docs/Content/Integration/IOS/iOS_Push.htm) in the iOS Get Started section.
+- For **iOS**, follow the steps in [Enable Personalized Push](https://app.usekahuna.com/tap/docs/Content/Integration/IOS/iOS_Push.htm){:target="_blank"} in the iOS Get Started section.
 
-- For **Android**, follow the steps in [Enable Personalized Push](https://app.usekahuna.com/tap/docs/Content/Integration/Android/Android_Push.htm) in the Android Get Started section.
+- For **Android**, follow the steps in [Enable Personalized Push](https://app.usekahuna.com/tap/docs/Content/Integration/Android/Android_Push.htm){:target="_blank"} in the Android Get Started section.
 
 ## Reset
 

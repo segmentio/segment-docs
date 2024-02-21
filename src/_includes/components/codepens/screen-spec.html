@@ -1,0 +1,76 @@
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/9000.0.1/prism.min.js" integrity="sha512-UOoJElONeUNzQbbKQbjldDf9MwOHqxNz49NNJJ1d90yp+X9edsHyJoAs6O4K19CZGaIdjI5ohK+O2y5lBTW6uQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script type="text/javascript">
+  function showMessage(){
+      var name = document.getElementById("name").value;
+      var variation = document.getElementById("variation").value;
+      var ts = Date.now()
+      var date = new Date(ts) 
+      var now = date.toISOString()
+      var received = ts + 233
+      var received_ts = new Date(received)
+      var received_iso = received_ts.toISOString()
+      var output = 
+`{
+  "anonymousId": "3a12eab0-bca7-11e4-8dfc-aa07a5b093db",
+  "channel": "mobile",
+  "context": {
+    "ip": "8.8.8.8"
+  },
+  "integrations": {
+    "All": true,
+    "Mixpanel": false,
+    "Salesforce": false
+  },
+  "messageId": "022bb90c-bbac-11e4-8dfc-aa07a5b093db",
+  "name": "Dropdown selected",
+  "properties": {
+    "variation": "${variation}"
+  },
+  "receivedAt": "${received_iso}",
+  "sentAt": "${now}",
+  "timestamp": "${now}",
+  "type": "screen",
+  "userId": "97980cfea0067",
+  "version": "1.1"
+  }`
+    output_container.innerHTML = output
+    Prism.highlightElement(output_container)
+  }
+</script>
+<script>
+  function showOutput() {
+    var show = document.getElementById("output-code");
+    if (show.style.display === "block") {
+      show.style.display = "none";
+    } else {
+      show.style.display = "block";
+    }
+  }
+</script>
+
+<div class="sample-code-container">
+<div class="form">
+  <h4> Sample Screen </h4>
+  <!-- <label for="name">Name:</label>
+  <input type="text" id="name"><br> -->
+  <div class="sample-form">
+  <label for="variation">Variation:</label>
+
+
+  <!-- <input type="text" id="variation"><br> -->
+  <select name="variation" id="variation">
+    <option value="blue">Blue</option>
+    <option value="green">Green</option>
+    <option value="red">Red</option>
+  </select>
+  <input type="submit" class="button button-hollow"  id="submit" onclick="showMessage(); showOutput()" value="See a sample Screen call">
+</div>
+</div>
+
+<div class="output">
+<h4>Sample Screen Call</h4>
+<pre class="language-javascript"><code class="language-javascript" id="output_container">
+Sample output goes here!
+</code></pre>
+</div>
+</div>

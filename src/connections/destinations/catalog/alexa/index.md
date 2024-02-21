@@ -3,12 +3,12 @@ rewrite: true
 title: Alexa Destination
 id: 54521fd525e721e32a72ee90
 ---
-[Alexa](https://www.alexa.com/) helps improve your website's SEO and conduct competitive analysis. They help your business get better marketing results. The Alexa Destination is open-source. You can browse the code [on GitHub](https://github.com/segment-integrations/analytics.js-integration-alexa).
+[Alexa](https://www.alexa.com/){:target="_blank”} helps improve your website's SEO and conduct competitive analysis. They help your business get better marketing results. The Alexa Destination is open-source. You can browse the code [on GitHub](https://github.com/segment-integrations/analytics.js-integration-alexa){:target="_blank”}.
 
 
 ## Getting Started
 
-{% include content/connection-modes.md %}
+
 
 1. From the Segment web app, click **Catalog**.
 2. Search for "Alexa" in the Catalog, select it, and choose which of your sources to connect the destination to.

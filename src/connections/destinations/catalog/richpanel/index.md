@@ -3,21 +3,19 @@ title: Richpanel Destination
 rewrite: true
 id: 5ddd4f68758f3b16e86a6332
 ---
-[Richpanel](https://richpanel.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) is the helpdesk software built for Ecommerce teams to support customers at scale in a fun, easy, collaborative way.
+[Richpanel](https://richpanel.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners){:target="_blank”} is the helpdesk software built for Ecommerce teams to support customers at scale in a fun, easy, collaborative way.
 
 This destination is maintained by Richpanel. For any issues with the destination, [contact the Richpanel Support team](mailto:support@richpanel.com).
 
-{% include content/beta-note.md %}
-
 ## Getting Started
 
-{% include content/connection-modes.md %}
+
 
 1. From the Segment web app, click **Catalog**.
 2. Search for "Richpanel" in the Catalog, select it, and choose which of your sources to connect the destination to.
 3. If this is the first time setting up Richpanel as a destination, you'll need to install the Segment App in your Richpanel Account.
 4. In your Richpanel account, go to Data Sources > Integrations and install the Segment Connector.
-5. Enter the "API Key" into your Segment Settings UI which you can find from your [Richpanel data sources](https://app.richpanel.com/connectors/my/list).
+5. Enter the "API Key" into your Segment Settings UI which you can find from your [Richpanel data sources](https://app.richpanel.com/connectors/my/list){:target="_blank"}.
 
 **NOTE**: Richpanel accepts anonymous users, or Visitors, but they will not appear in the Richpanel Customer Section UI unless the customer is first identified using an `identify` call or customer activity through Richpanel Channels, thereby becoming a Customer.
 
@@ -59,7 +57,7 @@ analytics.page('Pricing', {
 
 Page calls are sent as a tracking event to Richpanel on the timeline of the customer who was tracked. If the `richpanel_session_id` is included, it clusters this tracking event into a single “session” on the customer's timeline.
 
-If no `richpanel_session_id` is supplied, Richpanel will automatically generate sessionIDs based on time between tracking events. (Read why [Segment doesn't have session tracking](https://segment.com/blog/facts-vs-stories-why-segment-has-no-sessions-api/) for more details). `page` calls can only update `email` traits, not create them.
+If no `richpanel_session_id` is supplied, Richpanel will automatically generate sessionIDs based on time between tracking events. (Read why [Segment doesn't have session tracking](https://segment.com/blog/facts-vs-stories-why-segment-has-no-sessions-api/){:target="_blank"} for more details). `page` calls can only update `email` traits, not create them.
 
 ## Track
 

@@ -9,7 +9,7 @@ id: 54521fd925e721e32a72eed3
 
 ## Getting started
 
-{% include content/connection-modes.md %}
+
 
 1. From the Segment web app, navigate to **Connections > Catalog** and go to the **Destinations** tab of the catalog.
 2. Search for *Mailchimp*, select it, and click **Configure Mailchimp**.
@@ -90,7 +90,7 @@ Once Mailchimp has processed the new subscriber you'll see it show up in your li
 
 ### Recording userId
 
-To record a Segment `userId` in Mailchimp, you must pass the userID as a trait on your `identify()` calls. Segment doesn't automatically map the userID to any Mailchimp properties.
+To record a Segment `userId` in Mailchimp, pass the user ID as a trait on your `identify()` calls. Don't pass the `userId` as a trait ID because the  `trait.id` is a reserved trait. Instead, pass the `userId` in a trait name with the corresponding merge field in Mailchimp. Segment doesn't automatically map the user ID to a Mailchimp property.
 
 ### Overriding List ID (Also now referred to as Audience ID)
 

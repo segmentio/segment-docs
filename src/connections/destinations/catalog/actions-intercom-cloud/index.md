@@ -24,6 +24,9 @@ Intercom Cloud Mode (Actions) provides the following benefits over the classic I
 - **Granular control over data sent.** You can customize the conditions under which the events are sent to Intercom.
 - **Support for lead creation.** You can create contacts with a role of `lead`, associate them with a company, send events for them, and convert them to a `user`.
 
+## Limitations of Intercom Cloud Mode (Actions)
+
+The Intercom Cloud Mode (Actions) destination doesn't have access to Intercom’s chat widget. Implement the [Intercom Web Actions](/docs/connections/destinations/catalog/actions-intercom-web/) destination if you need access to Intercom's chat widget. 
 
 ## Getting started
 
@@ -31,7 +34,7 @@ Intercom Cloud Mode (Actions) provides the following benefits over the classic I
 2. Search for **Intercom Cloud Mode (Actions)** in the Destinations Catalog, and select the destination.
 3. Click **Configure Intercom Cloud Mode (Actions)**.
 4. Select the source that will send data to Intercom Cloud Mode (Actions) and follow the steps to name your destination.
-5. On the **Settings** tab, authenticate with Intercom using OAuth.
+5. On the **Settings** tab, authenticate with Intercom using OAuth. If you have multiple Intercom workspaces, choose one workspace that you'll connect to Segment.
 6. Follow the steps in the Destinations Actions documentation on [Customizing mappings](/docs/connections/destinations/actions/#customize-mappings).
 7. Enable the destination and configured mappings.
 

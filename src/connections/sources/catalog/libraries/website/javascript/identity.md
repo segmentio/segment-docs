@@ -37,7 +37,7 @@ You can override the default-generated anonymousID in code using the methods des
 
 ### Retrieve the Anonymous ID
 
-You can get the user's current `anonymousId` using either of the following calls:
+You can get the user's current `anonymousId` using the following call:
 
 ```js
 analytics.user().anonymousId();
@@ -45,6 +45,11 @@ analytics.user().anonymousId();
 
 If the user's `anonymousId` is `null` (meaning not set) when you call this function, Analytics.js automatically generated and sets a new `anonymousId` for the user.
 
+If you are using the npm library, the previous call returns a promise for `user()`. As a workaround, you'll need to grab the user's current `anonymousId` in the following way: 
+
+```js
+analytics.instance?.user().anonymousId()
+```
 
 ### Refreshing the Anonymous ID
 
@@ -139,7 +144,7 @@ Consider this Identify event:
 
 ```js
 analytics.identify('12091906-01011992', {
-    plan_id: 'Paid, Tier 2'
+    plan_id: 'Paid, Tier 2',
     email: 'grace@usnavy.gov'
 });
 ```
@@ -176,7 +181,7 @@ analytics.user().traits({});
 analytics.group().traits({});
 ```
 
-## User and Group Information
+## Using analytics.user() and analytics.group() 
 
 You can use the `user` or `group` method as soon as the Analytics.js library loads, to return information about the currently identified user or group. This information is retrieved from the user's cookie.
 

@@ -6,7 +6,7 @@ beta: true
 hidden: true
 published: false
 ---
-[Adobe Target](https://www.adobe.com/marketing-cloud/target.html) removes the
+[Adobe Target](https://www.adobe.com/marketing-cloud/target.html){:target="_blank”} removes the
 coding and set up hassles of A/B testing to help you quickly discover which
 offers, experiences and messages truly engage your visitors.
 
@@ -17,7 +17,7 @@ Destination and its documentation, [let us know](https://segment.com/help/contac
 
 ## Getting Started
 
-{% include content/connection-modes.md %}
+
 
 1. Download the `at.js` file from Adobe and include it in the `head` of your
    website above the Segment snippet. Because Adobe Target is an A/B testing
@@ -127,7 +127,7 @@ page flicker in conjunction with Segment would be to create a global mbox. Adobe
 will automatically set the HTML body style opacity to 0, which keeps the page
 content hidden while allowing the browser to still execute page load. After a
 response from Target is received, `at.js` resets the HTML body opacity to 1. You
-can read more about preventing page flicker in Adobe's [documentation here](https://marketing.adobe.com/resources/help/en_US/target/ov2/c_target-atjs-faq.html).
+can read more about preventing page flicker in Adobe's [documentation here](https://marketing.adobe.com/resources/help/en_US/target/ov2/c_target-atjs-faq.html){:target="_blank”}.
 
 ### Console Errors
 
@@ -155,4 +155,4 @@ window.targetGlobalSettings = {
 These errors are not typically related to `at.js` functionality, but are fairly
 common, most frequently resulting from defining actions with no corresponding
 HTML elements on your page. You can read more about these errors in Adobe's
-[documentation here](https://marketing.adobe.com/resources/help/en_US/target/ov2/c_target-atjs-faq.html).
+[documentation here](https://marketing.adobe.com/resources/help/en_US/target/ov2/c_target-atjs-faq.html){:target="_blank”}.

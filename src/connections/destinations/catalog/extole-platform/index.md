@@ -14,9 +14,9 @@ This destination is maintained by Extole. For any issues with the destination, [
 
 ## Getting Started
 
-{% include content/connection-modes.md %}
 
-1. Go to your [Extole Tech Center](https://my.extole.com/tech-center#access-token) page and generate an API Key. Copy that key. If you encounter any problems, check this [Extole Help Page on access tokens](https://success.extole.com/hc/en-us/articles/360001616668-Generating-Long-Lived-Access-Tokens).
+
+1. Go to your [Extole Tech Center](https://my.extole.com/tech-center#access-token){:target="_blank"} page and generate an API Key. Copy that key. If you encounter any problems, check this [Extole Help Page on access tokens](https://success.extole.com/hc/en-us/articles/360001616668-Generating-Long-Lived-Access-Tokens){:target="_blank"}.
 2. From the Segment Destinations page, click **Add Destination**.
 3. Search for "Extole Platform" in the Destinations Catalog, and select it.
 4. Confirm which Source to connect to Extole.
@@ -106,7 +106,7 @@ If you do not use the event names `registration` and `conversion` in your implem
 To make consumer data deletion requests more seamless, Extole handles deletion requests.
 
 Example of expected `delete` request body:
-```json=
+```json
 {
     "userId": "056tf9eqw24"
 }

@@ -6,7 +6,7 @@ id: 5cbf95e258453600011d6d8f
 ---
 Segment makes it easy to send your data to Azure Function (and lots of other destinations). When you track your data using Segment's open-source [libraries](/docs/connections/sources/catalog/), Segment can translate and route your data to an Azure Function in the format it expects.
 
-[Azure Function](https://azure.microsoft.com/en-us/services/functions) is a serverless compute service that enables you to run code on-demand without having to explicitly provision or manage infrastructure. Use Azure Functions to run a script or piece of code in response to a variety of events.
+[Azure Function](https://azure.microsoft.com/en-us/services/functions){:target="_blank"} is a serverless compute service that enables you to run code on-demand without having to explicitly provision or manage infrastructure. Use Azure Functions to run a script or piece of code in response to a variety of events.
 
 
 {% include content/beta-note.md %}
@@ -14,7 +14,7 @@ Segment makes it easy to send your data to Azure Function (and lots of other des
 
 # Getting Started
 
-{% include content/connection-modes.md %}
+
 
 ## Build an Azure Function to Process Segment Events
 
@@ -24,42 +24,42 @@ To process events from Segment, first create a Azure Function that can handle yo
 
 
 1. Go to https://portal.azure.com, and click **Functions App**.
-   ![](images/azure1.png)
+   ![A screenshot of the Azure services dashboard.](images/azure1.png)
 
 2. Click **+Add** to create your Function App.
-   ![](images/azure2.png)
+   ![A screenshot of the Function Apps dashboard.](images/azure2.png)
 
 3. Enter a name for your app in the **App name** field, and configure any other fields as needed own flavor.
 4. Click **Create**. Azure creates your new function app.
-   ![](images/azure3.png)
+   ![A screenshot of the Function App settings page.](images/azure3.png)
 
 #### Create a new Azure function
 
 
 1. Click the new function app's name. (You might need to click the **Refresh** button if the new function doesn't appear.)
-   ![](images/azure4.png)
+   ![A screenshot of the Function App dashboard.](images/azure4.png)
 
 2. On the left pane, click **Functions**.
-   ![](images/azure5.png)
+   ![A screenshot of the function dashboard.](images/azure5.png)
 
 3. In the main frame, click **New function**.
-   ![](images/azure6.png)
+   ![A screenshot of the function panel. ](images/azure6.png)
 
 
 4. Choose **HTTP trigger**.
-   ![](images/azure7.png)
+   ![A screenshot of the new function setup page.](images/azure7.png)
 
 5. Enter a name for your function, and choose `Function` for the **Authorization level** field.
-   ![](images/azure8.png)
+   ![A screenshot of the HTTP trigger setup panel, with a name entered in the Name field and Function chosen as the Authorization level.](images/azure8.png)
 6. Click `Create`.
 
 11. Set up your function code.
 12. In the created function screen, click on `</> Get function URL`.
-    ![](images/azure9.png)
+    ![A screenshot of the function panel.](images/azure9.png)
 
 13. In the **Key** field, choose `default (Function key)`.
 14. Click **Copy** to the right of the URL. You'll use this URL to tell Segment where to connect to use this Azure Function.
-   ![](images/azure10.png)
+   ![A screenshot of the Get function URL popup.](images/azure10.png)
 
 ## Configure Azure Function Destination
 

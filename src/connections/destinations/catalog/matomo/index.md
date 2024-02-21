@@ -4,15 +4,18 @@ rewrite: true
 redirect_from: '/connections/destinations/catalog/piwik/'
 id: 54521fda25e721e32a72eee7
 ---
-[Matomo](https://matomo.org/), formerly Piwik, is the leading open source web analytics platform that gives you valuable insights into your website's visitors, your marketing campaigns and much more, so you can optimize your strategy and online experience of your visitors.
+[Matomo](https://matomo.org/){:target="_blank"}, formerly Piwik, is the leading open source web analytics platform that gives you valuable insights into your website's visitors, your marketing campaigns and much more, so you can optimize your strategy and online experience of your visitors. 
+
+Segment’s Matomo destination code is open-source and can be viewed on GitHub:
+- [Javascript](https://github.com/segmentio/analytics.js-integrations/blob/master/integrations/piwik/lib/index.js){:target="_blank"}
 
 ## Getting Started
 
-{% include content/connection-modes.md %}
+
 
 1. From the Segment web app, click **Catalog**.
 2. Search for "Matomo" in the Catalog, select it, and choose which of your sources to connect the destination to. Note the source must be sending events using our JavaScript library Analytics.js.
-3. In the destination settings, enter your Site Id. You can find your Site ID in your Matomo snippet.
+3. In the destination settings, enter your Site ID. You can find your Site ID in your Matomo snippet.
 4. In the destination settings, enter your Server URL. You can find your Server URL in your snippet, we will append /matomo.php to the URL automatically.
   5. When you enable Matomo in your Segment settings, Segment's CDN is updated within 45 minutes. Once that happens, Segment asynchronously loads `matomo.js` on your page whenever it is loaded. This means you should remove Matomo's snippet from your page.
 
@@ -90,7 +93,7 @@ For **Event Value** you can name the event property `value` or `revenue`. We'll 
 
 ## Best Pratices
 
-Matomo allows you to set [custom variables](http://matomo.org/docs/custom-variables/) with your pageviews and events. With Segment, you can set page-scoped custom variables with any `track` call you make with analytics.js.
+Matomo allows you to set [custom variables](http://matomo.org/docs/custom-variables/){:target="_blank"} with your pageviews and events. With Segment, you can set page-scoped custom variables with any `track` call you make with analytics.js.
 
 Since these custom variables must be mapped to an index you define, which can change from call to call, the only way we can support these custom variables with full flexibility is to allow you to pass your map in the `context.Matomo.customVars` dictionary of each call.
 

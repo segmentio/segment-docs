@@ -31,7 +31,34 @@ sources:
     - swift-ios
     - twilio-event-streams-beta
     - xamarin
+    - intercom
+    - mailchimp
+    - marketo
+    - salesforce-marketing-cloud
+    - salesforce
+    - stripe
+    - twilio
+    - hubspot
+    - sendgrid
+    - mandrill
+    - zendesk
+    - google-ads
+    - facebook-ads
+    - iterable
+    - wootric
+    - voucherify
+    - moengage-source
+    - mailmodo-source
+    - gwen-webhooks
+    - customerio
+    - clevertap
+    - braze
+    - beamer
+    - airship
+    - adwords
+    - amazon-s3
   endpoint:
+    - intercom
     - amp
     - android
     - clojure
@@ -52,6 +79,20 @@ sources:
     - roku
     - ruby
     - xamarin
+    - mailchimp
+    - marketo
+    - salesforce-marketing-cloud
+    - salesforce
+    - stripe
+    - twilio
+    - hubspot
+    - sendgrid
+    - mandrill
+    - zendesk
+    - google-ads
+    - facebook-ads
+    - iterable
+    - amazon-s3
 destinations:
   region:
     - 2mee

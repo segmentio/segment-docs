@@ -24,7 +24,7 @@ Toastmates is currently running these two campaigns:
 
 Each of these campaigns used a combination of channels. Here is a table with the channels and corresponding UTM parameters so when we build the SQL query, we can make sure all of the traffic sources are accounted for.
 
-![](images/asset_WwwTDt1y.png)
+![Screenshot of two tables, one for the National Toast Day campaign and one for the A Toast to Your Friend campaign. Each table has columns for utm_campaign, utm_medium, and utm_source.](images/asset_WwwTDt1y.png)
 
 We'll use SQL below to measure the performance of each campaign and what that means for future marketing activities.
 
@@ -86,7 +86,7 @@ Feel free to copy and paste the below query for your analysis so long as you rep
 
 Here are the first four rows of the resulting table:
 
-![](images/asset_F8fdbUBk.jpg)
+![Screenshot of a table, with columns for user_id, store_visited, product_viewed, order_completed, and campaign. Four customer records are included.](images/asset_F8fdbUBk.jpg)
 
 Then, we can use tweak the query above into the one below to perform some simple `COUNT` and `SUM` on the previous table to get conversion metrics as well as total revenue derived from the campaign.
 
@@ -144,7 +144,7 @@ Then, we can use tweak the query above into the one below to perform some simple
 
 Here is the resulting table:
 
-![](images/asset_wiAeFR79.png)
+![A table with campaign, store_visits, product_views, orders_completed, and total_revenue columns.](images/asset_wiAeFR79.png)
 
 This analysis not only gives us a great snapshot of the conversion points along each campaign's funnel, but also shows that we've generated $3,100.37 from the National Toast Day campaign and $3,824.68 from the Toast Your Friend campaign. Also we can see that the quality of the traffic from the National Toast Day is higher, but we've had more total traffic from Toast Your Friend, which makes sense since it's an ongoing campaign.
 
@@ -171,7 +171,7 @@ Campaign ROI = (Profit Attributed to Campaign – Campaign Cost) / Campaign Cost
 
 Here is a spreadsheet to illustrate the ROI calculation for both campaigns:
 
-![](images/asset_BMZJWW6A.png)
+![Spreadsheet with campaign, type of cost, cost, revenue, and ROI information for both campaigns. The toast-your-friend campaign has a ROI of 27.49%, while the national-toast-day has a ROI of 24.01%.](images/asset_BMZJWW6A.png)
 
 Though ROI numbers are one success metric, it's an important benchmark for comparing performance when launching new campaigns or comparing against past campaigns.
 
@@ -240,7 +240,7 @@ You can copy the below into your favorite editor, as long as you change out the 
 
 The resulting table:
 
-![](images/asset_Umn2E6DH.png)
+![Table with utm_medium, store_visits, product_views, orders_completed, and total_revenue columns. The different types of utm_mediums are paid-social, organic-social, display, news, and email.](images/asset_Umn2E6DH.png)
 
 Since the National Toast Day campaign is relatively new, the majority of the traffic is from the email and an article ("news"). But we can see that the social channels have a lower conversion from store visits to product views. Email has the best overall conversion to revenue, which may be attributed to the recipients already familiar with the Toastmates brand or having previously had a stellar end-to-end shopping experience.
 

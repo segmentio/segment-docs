@@ -47,7 +47,7 @@ As an example, you might end up with a list like this:
 - Link Clicked
 - Article Completed
 - Campaign Opened
-- From Initiated
+- Form Initiated
 - Form Submitted
 - User Signed Up
 

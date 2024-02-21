@@ -5,7 +5,7 @@ beta: true
 hidden: true
 ---
 
-[Salesforce DMP](https://konsole.zendesk.com/hc/en-us) allows website operators
+[Salesforce DMP](https://konsole.zendesk.com/hc/en-us){:target="_blank"} allows website operators
 to create a holistic databank to organize, taxonomize and make their full range
 of audience information actionable. It allows them to model, define and manage
 audience segments to improve content delivery and advertising revenue.
@@ -13,11 +13,11 @@ audience segments to improve content delivery and advertising revenue.
 _**NOTE:** Salesforce DMP is currently in beta. This means that there may still be some bugs for
 us to iron out. If you are interested in joining or have any feedback to help
 us improve the Salesforce DMP Destination and its documentation,
-[let us know](https://segment.com/help/contact)!_
+[let us know](https://segment.com/help/contact){:target="_blank"}!_
 
 ## Getting Started
 
-{% include content/connection-modes.md %}
+
 
 Next, configure the Destination in the Segment web app:
 
@@ -36,7 +36,7 @@ Next, configure the Destination in the Segment web app:
 4. In the **Sites** tab, locate the site you want to use as the SFDMP destination.
    If you haven't created any sites yet, click **Create Site** and go through the options to create a new site.
 
-   ![](images/salesforce-dmp-setup1.png)
+   ![A screenshot of the Manage tab in Salesforce DMP, with the Sites item selected.](images/salesforce-dmp-setup1.png)
 
 5. In the dropdown, find the site tag for the site you want to use. The string you need is under "Config" and will look something like `r0u08k4tz`.
 6. Go back to the Segment App, and navigate to the Salesforce DMP destination you're setting up. Locate the ConfigID setting, and paste the value you found in that field.
@@ -52,7 +52,7 @@ If you don't provide a `namespace` Segment can't pass events downstream to SFDMP
 
 6. To set up SFDMP for a server-side connection, enter your SFDMP `Server-side
    Publisher UUID`. To locate this, we recommend that you contact your SFDMP representative. Helpful documentation can be found
-   [here](https://konsole.zendesk.com/hc/en-us/articles/219493027-Mobile-HTTP-API).
+   [here](https://konsole.zendesk.com/hc/en-us/articles/219493027-Mobile-HTTP-API){:target="_blank"}.
 7. Once you've retrieved your `Server-side Publisher UUID`, follow the
    instructions in the Segment SFDMP settings to enter your `Pixel.gif Domain`,
    `Pixel.gif Site` and, optionally, your `Pixel.gif Section` in the correct

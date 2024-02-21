@@ -3,16 +3,16 @@ title: June Destination
 rewrite: true
 id: 5f0c84d048d8688a7049c172
 ---
-[June](https://june.so/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) is instant product analytics. June automatically generates graphs of the metrics you should track - just connect your Segment account.
+[June](https://june.so/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners){:target="_blank”} is instant product analytics. June automatically generates graphs of the metrics you should track - just connect your Segment account.
 
 This destination is maintained by June. For any issues with the destination, [contact the June Support team](mailto:ferruccio@june.so).
 
 
 ## Getting Started
 
-{% include content/connection-modes.md %}
 
-1. Go to the [June settings page](https://app.june.so/redirect-to-my-workspace/settings), click **Add your first source**. To add more instances of the June Destination, click on the Segment integration card and **Add more sources**.
+
+1. Go to the [June settings page](https://app.june.so/redirect-to-my-workspace/settings){:target="_blank"}, click **Add your first source**. To add more instances of the June Destination, click on the Segment integration card and **Add more sources**.
 2. The Segment App opens in a new window. Log in to authenticate the connection from June.
 3. Select the Workspace and Source to connect with June.
 
@@ -59,4 +59,4 @@ If you aren't familiar with the Segment Spec, take a look at the [Page method do
 analytics.page('Home')
 ```
 
-Segment sends Page calls to June as a `pageview` event. View `pageviews` in the [June Activity tab](https://app.june.so/redirect-to-my-workspace/pages).
+Segment sends Page calls to June as a `pageview` event. View `pageviews` in the [June Activity tab](https://app.june.so/redirect-to-my-workspace/pages){:target="_blank"}.
