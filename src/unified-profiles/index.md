@@ -8,11 +8,9 @@ Unified Profiles in Flex, available with Twilio's [Agent Copilot](https://www.tw
 > info "Public Beta"
 > Unified Profiles is currently available as a limited Public Beta product and the information contained in this document is subject to change. This means that some features are not yet implemented and others may be changed before the product is declared as Generally Available. Public Beta products are not covered by a Twilio SLA.
 
-To try out Agent Copilot, which includes Unified Profiles, request access from the [CustomerAI for Contact Center](https://console.twilio.com/us1/develop/flex/customerai/overview){:target="_blank"} page in your Flex Console. After you sign up, a Twilio Flex team member will contact you by email. If you are selected to participate in the beta program, the Twilio Flex team will work with you on the next steps to set up Unified Profiles. 
+To try out Agent Copilot, which includes Unified Profiles, request access from the [CustomerAI for Contact Center](https://console.twilio.com/us1/develop/flex/customerai/overview){:target="_blank"} page in your Flex Console. After you sign up, a Twilio Flex team member will contact you by email. If you are selected to participate in the beta program, the Twilio Flex team will work with you on the next steps to set up Unified Profiles. See the [Agent Copilot AI Nutrition Facts](https://www.twilio.com/docs/flex/admin-guide/setup/copilot/nutritionfacts){:target="_blank"} for information about the third-party machine learning tools involved in Unified Profiles.
 
 For more information about Unified Profiles, see the [Customer AI](https://www.twilio.com/docs/flex/customer-ai){:target="_blank"} documentation.
-
-See the [Agent Copilot AI Nutrition Facts](https://www.twilio.com/docs/flex/admin-guide/setup/copilot/nutritionfacts){:target="_blank"} for information about the third-party machine learning tools involved in Unified Profiles.
 
 <div class="double">
   {% include components/reference-button.html
