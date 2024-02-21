@@ -5,7 +5,7 @@ redirect_from:
   - "/personas/quickstart"
 ---
 
-This guide walks you through the set up process for a simple Engage space, which you can use if your Segment implementation is simple. If your implementation is complex, you can use this to demonstrate and test Engage before working on a more complex configuration.
+This guide walks you through the set up process for a simplified Engage space. If your implementation is complex, use this to demonstrate and test Engage before working on a more complex configuration.
 
 > success ""
 > The first four steps in this guide also apply to Unify set up. To learn more, visit the [Unify Onboarding Guide](/docs/unify/quickstart).
@@ -17,16 +17,16 @@ This guide walks you through the set up process for a simple Engage space, which
 > info ""
 > Engage requires both [Connections](/docs/connections/) and [Unify](/docs/unify/).
 
-To configure and use Engage, you need the following:
+The following are prerequisites to configuring and using Engage:
 
-1. **A Segment account and Workspace.**
-2. **Events flowing into Connections** from your digital properties where most of your valuable user behavior occurs.
-3. **Identity Admin access.** You must have edit access to identity resolution rules.
-4. **Engage Administrator access.** You must be either be a workspace admin, or a workspace user with Engage admin access to set up audiences and computed traits. You can check your permissions by navigating to [Access Management](https://app.segment.com/goto-my-workspace/settings/access-management){:target="_blank"} in your workspace settings. See the [Segment Access Management documentation](/docs/segment-app/iam/) for more details.
+- **A Segment account and Workspace.**
+- **Events flowing into Connections** from your digital properties where most of your valuable user behavior occurs.
+- **Profiles identity admin access.** You must have edit access to identity resolution rules.
+- **Engage Administrator access.** You must be either be a workspace admin, or a workspace user with Engage admin access to set up audiences and computed traits. You can check your permissions by navigating to [Access Management](https://app.segment.com/goto-my-workspace/settings/access-management){:target="_blank"} in your workspace settings. See [Segment Access Management](/docs/segment-app/iam/) for more details.
 
 ## Step 1: Create a new Developer space
 
-When you first start working with Engage, you should start by creating a "Developer" Engage space. This is your experimental and test environment while you learn more about how Engage works.
+When you first start working with Engage, start by creating a "Developer" Engage space. This is your experimental and test environment while you learn more about how Engage works.
 
 <!-- TODO: I can't see this in any of the spaces I'm an admin in
 To create a Engage space:
@@ -41,10 +41,11 @@ Invite teammates to your Engage dev space and grant them access to the space. Na
 
 ## Step 3: Connect production sources
 
-1. From your Engage space, navigate to **Unify settings** and click **Profile sources**.
-2. On the screen that appears, choose one or two production sources from your Connections workspace.
-
-   _Segment recommends connecting your production website or App source as a great starting point._
+1. On the left sidebar navigate to **Profiles** > **Profiles Settings** > **Sources** > **+ Add Source**.
+2. Choose one or two production sources from your Connections workspace.
+   
+Segment recommends connecting your production website or App source as a great starting point.
+_The flag **Replay data** is enabled by default, **Replay data : Enable this option to replay the last month of data into Profiles for every selected source below.** When left enabled, 30 days of historical data will be replayed from the source._
 
 3. The **Replay data** flag is enabled by default, **Replay data : Enable this option to replay last month of data into Profiles for every selected source below.** When left enabled, 30 days of historical data will be replayed from the source. You can disable this option by toggling it - this prevents the replaying historical data from the source. If you need more historical data available from this source, fill out the form below for each replay and contact Segment Support at friends@segment.com or [create a ticket]([url](https://app.segment.com/goto-my-workspace/home?period=last-24-hours&v2=enabled&help=create-ticket)):
 ```
