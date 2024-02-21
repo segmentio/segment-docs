@@ -21,35 +21,22 @@ Some destination plugins may not support all platform functionality. Refer to in
 ## Getting started
 To install Analytics-Flutter:
 
-1. Manually add this package to your `pubspec.yaml` file: 
+1. Add the core package as a dependency.
 
-    ```yml
-    dependencies: 
-        flutter: 
-            sdk: flutter 
+	```bash
+	flutter pub add segment_analytics
+	```
 
-        # Main package
-        analytics: 
-            git: 
-                url: https://github.com/segmentio/analytics_flutter
-                ref: main
-                path: packages/core
-    ```
 2. *(Optional)* Add any plugin that you need.
 
-    ```yml
-      # Plugins
-    analytics_plugin_firebase:
-        git: 
-            url: https://github.com/segmentio/analytics_flutter
-            ref: main
-            path: packages/plugins/plugin_firebase
+    ```bash
+    flutter pub add segment_analytics_plugin_firebase
     ```
 
 3. Import the library in your Dart code.
 
     ```dart
-    import 'package:analytics/client.dart';
+    import 'package:segment_analytics/client.dart';
     ```
 
 4. Add permissions to `AndroidManifest.xml`. Add the line below between the `` tags.
@@ -290,12 +277,12 @@ You can pass `autoAddSegmentDestination = false` in the options when setting up 
 You can add a plugin at any time through the Add method.
 
 ```dart
-import 'package:analytics/client.dart';
-import 'package:analytics/event.dart';
-import 'package:analytics/state.dart';
-import 'package:analytics_plugin_advertising_id/plugin_advertising_id.dart';
-import 'package:analytics_plugin_idfa/plugin_idfa.dart';
-import 'package:analytics_plugin_firebase/plugin_firebase.dart'
+import 'package:segment_analytics/client.dart';
+import 'package:segment_analytics/event.dart';
+import 'package:segment_analytics/state.dart';
+import 'package:segment_analytics_plugin_advertising_id/plugin_advertising_id.dart';
+import 'package:segment_analytics_plugin_idfa/plugin_idfa.dart';
+import 'package:segment_analytics_plugin_firebase/plugin_firebase.dart'
     show FirebaseDestination;
 
 const writeKey = 'SEGMENT_API_KEY';
@@ -333,10 +320,10 @@ You can them customize the functionality by overriding different methods on the 
 ```dart
 import 'dart:convert';
 
-import 'package:analytics/analytics.dart';
-import 'package:analytics/event.dart';
-import 'package:analytics/plugin.dart';
-import 'package:analytics/logger.dart';
+import 'package:segment_analytics/analytics.dart';
+import 'package:segment_analytics/event.dart';
+import 'package:segment_analytics/plugin.dart';
+import 'package:segment_analytics/logger.dart';
 
 class EventLogger extends DestinationPlugin {
   var logKind = LogFilterKind.debug;
@@ -381,8 +368,8 @@ A flush policy defines the strategy for deciding when to flush. This can be on a
 To make use of flush policies, you can set them in the configuration of the client:
 
 ```dart
-import 'package:analytics/flush_policies/count_flush_policy.dart';
-import 'package:analytics/flush_policies/timer_flush_policy.dart';
+import 'package:segment_analytics/flush_policies/count_flush_policy.dart';
+import 'package:segment_analytics/flush_policies/timer_flush_policy.dart';
 
 final analytics = createClient(Configuration(/*...*/, flushPolicies: [
   CountFlushPolicy(10),
@@ -427,8 +414,8 @@ A `FlushPolicy` can optionally implement:
 The `FlushPolicy` should have a `shouldFlush` boolean value. When this is set to true, the client attempts to upload events. Each policy should reset this value to `false` according to its own logic, although it's pretty common to do it inside the `reset` method.
 
 ```dart
-import 'package:analytics/event.dart';
-import 'package:analytics/flush_policies/flush_policy.dart';
+import 'package:segment_analytics/event.dart';
+import 'package:segment_analytics/flush_policies/flush_policy.dart';
 
 class FlushOnScreenEventsPolicy extends FlushPolicy {
 
@@ -454,7 +441,7 @@ class FlushOnScreenEventsPolicy extends FlushPolicy {
 By default, any logging is done through the standard Flutter logging mechanism. To customize logging, you can build your own logger, which must implement the `LogTarget` mixin. For example:
 
 ```dart
-import 'package:analytics/logger.dart';
+import 'package:segment_analytics/logger.dart';
 
 void customDebugLog(String msg) {
   // ...
@@ -498,7 +485,7 @@ The error handler configuration receives a function which gets called whenever a
 You can use this error handling to trigger different behaviors in the client when a problem occurs. For example if the client gets rate limited, you could use the error handler to swap flush policies to be less aggressive.
 
 ```dart
-import 'package:analytics/errors.dart';
+import 'package:segment_analytics/errors.dart';
 
 //...
 
@@ -526,7 +513,7 @@ final analytics = createClient(Configuration(writeKey),
 Plugins can also report errors to the handler by using the [`.error`](https://github.com/segmentio/analytics_flutter/blob/main/packages/core/lib/analytics.dart#L52){:target="_blank"} function of the analytics client. Segment recommends you to use the `PluginError` for consistency, and to attach the `innerError` with the actual exception that was hit.
 
 ```dart
-import 'package:analytics/errors.dart';
+import 'package:segment_analytics/errors.dart';
 
 //...
 
