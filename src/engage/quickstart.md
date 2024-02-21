@@ -40,8 +40,10 @@ Invite teammates to your Engage dev space and grant them access to the space. Na
 
 1. From your Engage space, go to your space Settings and click **Sources**.
 2. On the screen that appears, choose one or two production sources from your Connections workspace.
+
    _Segment recommends connecting your production website or App source as a great starting point._
-3. The flag **Replay data** is enabled by default, **Replay data : Enable this option to replay last month of data into Profiles for every selected source below.** When left enabled, 30 days of historical data will be replayed from the source. You can disable this option by toggling it - this will prevent the replay of any historical data from the source. If your team would like more historical data available from this source, fill out the form below for each replay and please contact Segment Support via friends@segment.com or [create a ticket]([url](https://app.segment.com/goto-my-workspace/home?period=last-24-hours&v2=enabled&help=create-ticket)):
+
+3. The **Replay data** flag is enabled by default, **Replay data : Enable this option to replay last month of data into Profiles for every selected source below.** When left enabled, 30 days of historical data will be replayed from the source. You can disable this option by toggling it - this prevents the replaying historical data from the source. If you need more historical data available from this source, fill out the form below for each replay and contact Segment Support at friends@segment.com or [create a ticket]([url](https://app.segment.com/goto-my-workspace/home?period=last-24-hours&v2=enabled&help=create-ticket)):
 ```
 Segment Source Details:
 - Name: source-name
@@ -49,9 +51,9 @@ Segment Source Details:
 
 Details for replay:
 - Destination: Name of destination you want to replay to or link to Profiles space
-- Start time: (Please use the following UTC format) 2020-11-21T05:10:00Z UTC
-- End time: (Please use the following UTC format) 2023-01-21T10:10:00Z UTC
-- All the events or only a subset of event names? Please provide event names and/or method calls (page/identify/track/group) if only a subset of events is needed.
+- Start time: (Use the following UTC format) 2020-11-21T05:10:00Z UTC
+- End time: (Use the following UTC format) 2023-01-21T10:10:00Z UTC
+- All the events or only a subset of event names? Provide event names and/or method calls (page/identify/track/group) if only a subset of events is needed.
 ```
 _How much data can I replay from my source into Engage?_ : Your workspace's "computations history" limit is defined in the contract and can be found in the [workspace settings]([url](https://app.segment.com/goto-my-workspace/settings/usage?metric=mtu&period=current)).
 
@@ -59,7 +61,7 @@ To learn more, visit [Connect production sources](/docs/profiles/quickstart/#ste
 
 ## Step 4: Check your profile data
 
-Once the replay finishes, you can see the data replayed into Engage using the Profile Explorer. Visit the [Profiles Onboarding Guide](/docs/profiles/quickstart/#step-4-check-your-profile-data) for more info.
+After the replay finishes, you can see the data replayed into Engage using the Profile Explorer. Visit the [Profiles Onboarding Guide](/docs/profiles/quickstart/#step-4-check-your-profile-data) for more info.
 
 ## Step 5: Create an Audience
 
@@ -81,12 +83,11 @@ To build your own audience:
 4. Configure the settings for your condition. These vary by type, so explore the different options.
 5. Optionally, add more conditions until you're satisfied that the audience will only contain the users you want to target.
 
-Once you build your audience, click **Preview Results** to see the total number of users who meet the audience criteria, for example all users who signed up within the last seven days.
-
+After you build your audience, click **Preview Results** to see the total number of users who meet the audience criteria, for example all users who signed up within the last seven days.
 
 ## Step 6:  Connect the Audience to a Destination
 
-Once you create your test audience, click **Select Destinations**. Engage guides you through configuration steps to set up a destination for your audience. If you don't already have destinations configured for the Engage space, the you are prompted to select one or more. Finally, enter a name for the audience.
+After you create your test audience, click **Select Destinations**. Engage guides you through configuration steps to set up a destination for your audience. If you don't already have destinations configured for the Engage space, the you are prompted to select one or more. Finally, enter a name for the audience.
 
 The larger the audience you're creating, the longer it takes Engage to successfully compute the Audience. The Audience page shows a status that indicates if the audience is still being calculated. When the total number of users appears in the Audience overview, as in the example screenshot below, the audience has successfully finished computing, and Engage then sends the audience to the destination you selected.
 
@@ -102,4 +103,4 @@ The UIs for the destination tools you send the audience data to are different, s
 
 ## Step 8: Create your production space
 
-Once you validate that your full audience is arriving in your destination, you're ready to create a Production space. Segment recommends that you repeat the same steps outlined above, focusing on your production use cases and data sources.
+After you validate that your full audience is arriving in your destination, you're ready to create a Production space. Segment recommends that you repeat the same steps outlined above, focusing on your production use cases and data sources.
