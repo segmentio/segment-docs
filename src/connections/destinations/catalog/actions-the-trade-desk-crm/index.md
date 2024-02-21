@@ -5,6 +5,7 @@ hide-boilerplate: true
 hide-dossier: false
 beta: true
 id: 6440068936c4fb9f699b0645
+redirect_from: "/connections/destinations/catalog/the-trade-desk-crm/"
 ---
 
 [The Trade Desk](https://www.thetradedesk.com/us){:target="_blank"} empowers companies and their partners to leverage data in their expansive data marketplace, facilitating seamless discovery, creation, and engagement with valuable audiences. Segment's integration with The Trade Desk allows you to push first-party user data from audiences created in [Twilio Engage](https://www.twilio.com/en-us/engage){:target="_blank"} to The Trade Desk platform, enhancing targeted reach to brand's first-party audiences.
@@ -30,7 +31,7 @@ Before you begin, generate a [long-lived token](https://partner.thetradedesk.com
 3. Search for **The Trade Desk CRM** and select the destination.
 4. Click on **Configure The Trade Desk CRM**.
 5. On the **Select Source** screen, your Engage space should already be selected as the source. Click on **Confirm Source**.
-6. Once authenticated, enter your Authentication Token and Advertiser ID from your [The Trade Desk's CRM Data Platform API](https://api.thetradedesk.com/v3/portal/data/doc/DataIntegrateCRMData){:target="_blank"} account. Enable the destination by toggling **Enable Destination** and click **Save Changes**.
+6. After authenticating, enter your Authentication Token and Advertiser ID from your [The Trade Desk's CRM Data Platform API](https://api.thetradedesk.com/v3/portal/data/doc/DataIntegrateCRMData){:target="_blank"} account. Enable the destination by toggling **Enable Destination** and click **Save Changes**.
 7. Navigate to the **Mappings** tab, click **New Mapping**, and choose **Sync Audience to CRM Data Segment**.
 8. In the **Select mappings** section, input the PII Type and maintain other defaults. Click **Save** and toggle to enable the mapping.
    - **Create only one mapping for every instance.**
@@ -47,7 +48,7 @@ To sync additional Audiences from your Engage space, create a separate instance 
 ## Public Beta Instructions
 
 * The Segment team needs to enable the feature for your Engage spaces.
-* Once you agree to join the public beta, Segment enables all Engage spaces that are part of your Segment workspace.
+* After you agree to join the public beta, Segment enables all Engage spaces that are part of your Segment workspace.
 * New Engage spaces you create won't be automatically enrolled. Contact your Account Team/CSM to get these spaces enrolled.
 
 ## Limitations
@@ -69,4 +70,3 @@ The CRM endpoint maps email addresses into UID2s. If it's a valid email address,
 #### What PII format should I send?
 
 The Trade Desk recommends transmitting personally identifiable information (PII) in its original, non-hashed format. TTD's preference is to handle the hashing of any PII, like emails, on their end. However, if your data already contains any hashed emails, please ensure you are normalizing and hashing the emails by designating the PII type as `Hashed Email`, in line with TTD's [PII Normalization and Hash Encoding](https://api.thetradedesk.com/v3/portal/data/doc/DataPiiNormalization){:target="_blank”} documentation.
-
