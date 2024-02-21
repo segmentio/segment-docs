@@ -47,8 +47,8 @@ When you enable the Google Universal Analytics destination in Segment:
 
 - Google Universal Analytics starts automatically collecting data on your site. It takes several hours for Google to process this data and add it to your reports, but you should still see events appear in the Google Universal Analytics real-time events dashboard.
 
-> info ""
-> Consent Mode: Segment is currently building Consent Mode functionally for all affected Google destinations. However, Google Analytics will not be updated due to planned deprecation by Google. Segment recommends [migrating to Google Analytics 4](https://segment.com/docs/connections/destinations/catalog/actions-google-analytics-4/#migrating-from-universal-analytics-to-google-analytics-4) as soon as possible.
+> info "Consent Mode"
+> Segment is currently building Consent Mode for all affected Google destinations. Google Analytics, however, won't be updated due to planned deprecation by Google. Segment recommends you to [migrate to Google Analytics 4](/docs/connections/destinations/catalog/actions-google-analytics-4/#migrating-from-universal-analytics-to-google-analytics-4) as soon as possible.
 
 > info "Classic tracking deprecated"
 > These docs cover Google Analytics Universal features, since the [Classic tracking method has been depreciated](http://analytics.blogspot.com/2014/04/universal-analytics-out-of-beta-into.html){:target="_blank"}.
