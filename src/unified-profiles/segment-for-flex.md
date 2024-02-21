@@ -2,7 +2,7 @@
 title: Create a Segment for Flex Workspace
 hidden: true
 ---
-Unified Profiles users without an existing Segment workspace can create a Segment for Flex workspace, which provides limited access to Segment. 
+Flex users without an existing Segment workspace can create a _Segment for Flex_ workspace, which provides limited access to Segment. 
 
 For entitlements and limitations associated with a Segment for Flex workspace, see the [Entitlements and limitations](#segment-for-flex-entitlements-and-limitations) documentation. 
 
@@ -29,7 +29,7 @@ You can set up one of the following options:
 - [A data warehouse only](#data-warehouse-only)
 - [A website or mobile app source](#website-or-mobile-app)
 
-You can add additional data sources after completing the setup process. <br><br>
+You can add additional data sources after completing the setup process. <br>
 
 ### Salesforce and a data warehouse
 
@@ -86,14 +86,33 @@ SELECT * FROM unified_profiles.accounts
 
 ### Website or mobile app
 
-***I don't know what this flow looks like and probably need access to a demo environment with this option selected to click through the setup screens (or have someone explain it to me)***
+Connect to either a website or mobile app to complete this step.
+
+#### Website
+1. On the Getting started with Segment page, under the Connect your website section, click **Connect Source**.
+2. Enter a name for your website in the Website Name field, copy the URL of your website into the Website URL field, and click **Create Source**. 
+3. Copy the Segment snippet and paste it into the header of your website. For more information about the Segment snippet, click "What is this?" or view the [Add the Segment Snippet docs](/docs/connections/sources/catalog/libraries/website/javascript/quickstart/#step-2a-add-the-segment-snippet).
+4. After you've pasted the snippet in the header of your website, click **Next**.
+5. On the Test screen, select either **Skip this step** or navigate to your website, view a few pages, then return to Segment and click **Test Connection**. If Segment detects page views on your site, the Page indicator with a check mark appears. When you've verified that your snippet is successfully installed, click **Done**.
+6. After Segment marks the "Add connections" tile as complete, click **Add identifiers and traits** and begin [Step 3: Add identifiers and traits](#step-3-add-identifiers-and-traits).
+
+#### Mobile app
+
+> warning "You can connect to either an iOS app or an Android app during this step"
+> If you need to connect additional mobile app sources to your workspace, you can do so after completing the setup process. 
+
+1. On the Getting started with Segment page, under the Connect your mobile apps section, click **Connect Source** and select your preferred operating system. 
+2. Enter a name for your source and click **Create Source**. 
+3. Add the Analytics dependency to your app by following the provided instructions. When you've added the dependency to your app, click **Next**. 
+4. On the "Let's test out your connection" page, select either **Skip this step** or navigate to your app, view a few screens, then return to Segment and click **Test connection**. If Segment detects screen views on your site, the Page indicator with a check mark appears. When you've verified that your snippet is successfully installed, click **Done**.
+5. After Segment marks the "Add connections" tile as complete, click **Add identifiers and traits** and begin [Step 3: Add identifiers and traits](#step-3-add-identifiers-and-traits).
 
 ## Step 3: Add identifiers and traits
 After you've selected which data sources you'd like to integrate customer data from, you can select _identifiers_, or unique pieces of data that allow you to link information about an individual customer across different programs and services, and _traits_, which are pieces of information you know about a particular customer. 
 
 1. On the Add identifiers and traits page, click **Add identifier**. 
 2. Select one or more of Segment's 11 default identifiers and click **Add identifiers**.
-3. Review the identifiers you've selected. If you need to make changes to the priority order of your identifiers, click **Edit Priority**. To make changes to an identifier, select the menu icon in the row the identifier appears in, and click **Edit** or **Delete**.
+3. Review the identifiers you've selected. To make changes to an identifier, select the menu icon in the row the identifier appears in, and click **Edit** or **Delete**.
 4. When you're satisfied with your identifiers, click **Add computed traits**.
 5. Select up to two traits and click **Save**. <br> _Segment recommends selecting **Total inbounds**, or the number of inbound attempts that resulted in a customer engagement, and **Frequent inbound channel**, which identifies the most frequently used communication channel._
 6. **(Optional)**: Set up predictive traits by selecting the **Set up predictive traits** dropdown and clicking **Complete setup** next to one or both traits. For more information about predictive traits, see Segment's [Predictions documentation](/docs/unify/Traits/predictions/).
@@ -127,7 +146,8 @@ In addition to 1 source for Flex events that is auto-created during setup, you c
 These sources are limited to the following types:
   - [Salesforce CRM](/docs/connections/sources/catalog/cloud-apps/salesforce/)
   - [Storage (RETL)](/docs/connections/reverse-etl/#step-1-add-a-source)
-  - [Mobile](/docs/connections/sources/catalog/#mobile) 
+  - [Swift](/docs/connections/sources/catalog/libraries/mobile/apple/)
+  - [Kotlin](/docs/connections/sources/catalog/libraries/mobile/kotlin-android/) 
   - [Javascript](/docs/connections/sources/catalog/libraries/website/javascript/)
   - [Twilio Event Streams](/docs/connections/sources/catalog/cloud-apps/twilio/)
   - [HTTP](/docs/connections/sources/catalog/libraries/server/http-api/)

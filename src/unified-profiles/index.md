@@ -12,18 +12,20 @@ To try out Agent Copilot, which includes Unified Profiles, request access from t
 
 For more information about Unified Profiles, see the [Customer AI](https://www.twilio.com/docs/flex/customer-ai){:target="_blank"} documentation.
 
+See the [Agent Copilot AI Nutrition Facts](https://www.twilio.com/docs/flex/admin-guide/setup/copilot/nutritionfacts){:target="_blank"} for information about the third-party machine learning tools involved in Unified Profiles.
+
 <div class="double">
   {% include components/reference-button.html
     href="/docs/unified-profiles/segment-for-flex"
     icon="flex.svg"
     title="Segment for Flex"
-    description="Users without an existing Segment workspace can configure a Segment for Flex workspace, which provides limited access to Segment."
+    description="Flex customers without an existing Segment workspace can configure a Segment for Flex workspace, which provides limited access to Segment."
   %}
 
   {% include components/reference-button.html
     href="/docs/unified-profiles/connect-a-workspace"
     icon="api.svg"
     title="Connect an Existing Workspace to Flex"
-    description="Users with an existing Segment workspace can connect their existing workspace to Flex."
+    description="Flex customers with an existing Segment workspace can connect their workspace to Flex."
   %}
 </div>
