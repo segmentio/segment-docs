@@ -2,9 +2,9 @@
 title: The Segment Web App
 ---
 
-When you first log in, you go to your workspace. (If you're a member of several workspaces, you get to choose which one to go to.) Workspaces organize sets of sources and destinations
+When you first log in, you go to your workspace. (If you're a member of several workspaces, you get to choose which one to go to.) Workspaces organize sets of sources and destinations into one central location.
 
-{% include components/reference-button.html href="https://university.segment.com/introduction-to-segment/299965?reg=1&referrer=docs" icon="media/academy.svg" title="Segment University: Segment App Overview" description="Want a video tour of the Segment workpsace? Head over to Segment University! (Must be logged in to access.)" %}
+{% include components/reference-button.html href="https://university.segment.com/introduction-to-segment/299965?reg=1&referrer=docs" icon="media/academy.svg" title="Segment University: Segment App Overview" description="Want a video tour of the Segment workspace? Head over to Segment University! (Must be logged in to access.)" %}
 
 ### What's a Workspace?
 
@@ -57,7 +57,7 @@ These features are fairly advanced, but you can learn more about them by [reques
 
 ## Segment Settings
 
-The **Workspace Settings** tab shows more information about your workspace, including your team settings, GDPR requests, and so on. You might not have access to edit these settings!
+The **Workspace Settings** tab shows more information about your workspace, including your team settings, GDPR requests, and so on. You might not have access to edit these settings.
 
 The **User Preferences** tab shows your individual account settings, including Notification settings. 
 
