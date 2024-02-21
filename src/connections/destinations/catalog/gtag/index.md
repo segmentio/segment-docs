@@ -6,7 +6,7 @@ strat: google
 ---
 
 > note ""
-> The Gtag Destination is in a closed Early Access Preview. To join the preview, contact [Segment Support](https://segment.com/help/contact/) or your CSM. The use is governed by [(1) Segment First Access](https://segment.com/legal/first-access-beta-preview/){:target="_blank"} and Beta Terms and Conditions and [(2) Segment Acceptable Use Policy](https://segment.com/legal/acceptable-use-policy/){:target='_blank'}.
+> The Gtag Destination is in a closed Early Access Preview. To join the preview, contact [Segment Support](https://segment.com/help/contact/){:target="_blank"} or your CSM. The use is governed by [(1) Segment First Access](https://segment.com/legal/first-access-beta-preview/){:target="_blank"} and Beta Terms and Conditions and [(2) Segment Acceptable Use Policy](https://segment.com/legal/acceptable-use-policy/){:target='_blank'}.
 
 
 ## Getting started
@@ -49,12 +49,12 @@ Pass UTM parameters in the `context` object in `context.campaign`. For Google An
 
 ## Identify
 
-Google's terms of service forbid passing Personally Identifiable Information (PII) to your Google Analytics reporting interface. For that reason Segment does not pass data from an [Identify](/docs/connections/spec/identify) call to Google unless you specifically request it. You can read about Google's best practices for avoiding this [here](https://support.google.com/analytics/answer/6366371?hl=en).
+Google's terms of service forbid passing Personally Identifiable Information (PII) to your Google Analytics reporting interface. For that reason Segment does not pass data from an [Identify](/docs/connections/spec/identify) call to Google unless you specifically request it. You can read about Google's best practices for avoiding this [here](https://support.google.com/analytics/answer/6366371?hl=en){:target="_blank"}.
 
 ### User ID
-Google Analytics Universal tracking method allows you to set a user ID for your identified visitors. [Read more here](https://support.google.com/analytics/answer/3123663).
+Google Analytics Universal tracking method allows you to set a user ID for your identified visitors. [Read more here](https://support.google.com/analytics/answer/3123663){:target="_blank"}.
 
-To use this feature you must enable User-ID in your Google Analytics property and create a User-ID view, [read more here](https://support.google.com/analytics/answer/3123666).
+To use this feature you must enable User-ID in your Google Analytics property and create a User-ID view, [read more here](https://support.google.com/analytics/answer/3123666){:target="_blank"}.
 
 To pass the `id` from your [Identify calls](/docs/connections/spec/identify) to the Gtag destination, go to **Other Settings** and set **Send User-ID to GA** to "on" to enable this setting.
 
@@ -87,7 +87,7 @@ Segment's device-mode Analytics.js library supports them all.
 
 To configure a custom dimension:
 
-1. Configure the Custom Dimensions in your Google Analytics admin page. For more information about creating custom dimensions in Google Analytics, see the Google support article [here](https://support.google.com/analytics/answer/2709829?hl=en).
+1. Configure the Custom Dimensions in your Google Analytics admin page. For more information about creating custom dimensions in Google Analytics, see the Google support article [here](https://support.google.com/analytics/answer/2709829?hl=en){:target="_blank"}.
 2. After you've enabled Google Analytics in Segment, you can map traits and properties to your custom dimensions.
 3. From your Segment Workspace, open the destinations catalog and select the Gtag destination, then Settings. Locate Custom Dimensions and declare the mapping.
 
@@ -95,11 +95,11 @@ To configure a custom dimension:
 
     In Segment:
 
-    ![](images/segment-dimension.png)
+    ![A screenshot of the Segment Custom Dimensions page, with Gender mapped to dimension 1 and User Type mapped to dimension 2.](images/segment-dimension.png)
 
     In Google:
 
-    ![](images/ga-dimension.png)
+    ![A screenshot of the Google Custom Dimensions page, with Gender mapped to index 1 and User Type mapped to dimension 2.](images/ga-dimension.png)
 
 
 > note ""
@@ -206,7 +206,7 @@ For all events that include product details you must pass either `name` or `prod
 
 To take full advantage of all the features of Enhanced Ecommerce, you'll want to take advantage of some specific events. The biggest differentiator between ecommerce and Enhanced Ecommerce is support for checkout steps. To take advantage of tracking your checkout funnel and measuring metrics like cart abandonment, you'll first need to configure your checkout funnel in the Google Analytics admin interface, giving readable labels to the numeric checkout steps:
 
-![](images/ga-checkout-steps.png)
+![A screenshot of the Google Enhanced Ecommerce setup flow, showing that Ecommerce is enabled and showing the four configured Ecommerce checkout-funnel steps.](images/ga-checkout-steps.png)
 
 
 Then you'll instrument your checkout flow with `Viewed Checkout Step` and `Completed Checkout Step` events for each step of the funnel you configured in the Google Analytics admin interface, passing the step number and step-specific options through as a property of those events:
@@ -268,8 +268,8 @@ You can have any number of steps in the checkout funnel as you'd like. The 4 ste
 
 For client-side integrations, to use the ability to track Checkout Steps and Options, Segment uses Google Analytics' ProductAction class. You can read Google's developer docs for information on specific methods:
 
-- [Analytics.js - Enhanced Ecommerce](https://developers.google.com/analytics/devguides/collection/gtagjs/enhanced-ecommerce)
-- [Analytics.js - Ecommerce](https://developers.google.com/analytics/devguides/collection/gtagjs/ecommerce)
+- [Analytics.js - Enhanced Ecommerce](https://developers.google.com/analytics/devguides/collection/gtagjs/enhanced-ecommerce){:target="_blank"}
+- [Analytics.js - Ecommerce](https://developers.google.com/analytics/devguides/collection/gtagjs/ecommerce){:target="_blank"}
 
 ### Measuring promotions
 
@@ -423,7 +423,7 @@ Since remarketing loads through Segment, Google Analytics cannot validate that t
 
 ### Multiple trackers
 
-Although Segment does not support loading multiple trackers of the same type (for example, multiple web measurement IDs) through the destinations settings page (you will probably run into Google Analytics's [rate limits](https://developers.google.com/analytics/devguides/collection/ios/v3/limits-quotas?hl=en)), you can load a 2nd tracker on the page manually.
+Although Segment does not support loading multiple trackers of the same type (for example, multiple web measurement IDs) through the destinations settings page (you will probably run into Google Analytics's [rate limits](https://developers.google.com/analytics/devguides/collection/ios/v3/limits-quotas?hl=en){:target="_blank"}), you can load a 2nd tracker on the page manually.
 
 Here's how you'd initialize configure the second tracker:
 
@@ -434,7 +434,7 @@ analytics.ready(function(){
 ```
 
 > note ""
-> **Important**: Keep in mind you will need to do the data translation/properties mapping inside this `.on()` function before you send the event to Google Analytics. See the [destination code](https://github.com/segment-integrations/analytics.js-integration-google-analytics/blob/master/lib/index.js#L161-L207) for more information.
+> **Important**: Keep in mind you will need to do the data translation/properties mapping inside this `.on()` function before you send the event to Google Analytics. See the [destination code](https://github.com/segment-integrations/analytics.js-integration-google-analytics/blob/master/lib/index.js#L161-L207){:target="_blank"} for more information.
 
 To do this server side, you can create a separate [source](/docs/connections/sources/) in Segment, and within this source enter your Google Analytics credentials for the second tracker.
 
@@ -450,7 +450,7 @@ If you need to test on `localhost`, but don't need to track between multiple sub
 
 If you want the cookie to persist on a single sub-domain, enter that sub-domain in the **Cookie Domain Name** field, like this: `swingline.initech.com`. In this case visitors to `conclusions.initech.com` or `initech.com` will not be tracked.
 
-For more information see Google's [cookie and user identification](https://developers.google.com/analytics/devguides/collection/gtagjs/cookies-user-id) guide.
+For more information see Google's [cookie and user identification](https://developers.google.com/analytics/devguides/collection/gtagjs/cookies-user-id){:target="_blank"} guide.
 
 ### Cross-domain tracking
 
@@ -481,7 +481,7 @@ analytics.ready(function () {
   });
 });
 ```
-For more advanced cross-domain implementations Segment recommends you follow the Google's guide to [Measure activity across domains](https://developers.google.com/analytics/devguides/collection/gtagjs/cross-domain).
+For more advanced cross-domain implementations Segment recommends you follow the Google's guide to [Measure activity across domains](https://developers.google.com/analytics/devguides/collection/gtagjs/cross-domain){:target="_blank"}.
 
 ### Site search
 
@@ -490,12 +490,12 @@ To populate the Site Search report in Google Analytics, complete the following s
 1. When someone searches on your site, you must add the search term they used to the URL query, like this: `domain.com?s=coconuts`. The key ("s" in this case) can be any letter or string of letters.
 2. In your Segment source destinations catalog open the Gtag settings, scroll down to the Page Call settings and make sure to check the box for **Include Query String**.
 3. Inside Google Analytics, go to the **Admin** section, then click **View Settings** for the view you want to add Site Search to. Turn on **Site search Tracking** and enter the string from #1 into the Query parameter field. In this example it'd look like this:
-![](images/ga-search-query.png)
+![A screenshot of Google Analytics' Site Search Settings, with site search tracking enabled and the Query parameter field displaying a parameter, s.](images/ga-search-query.png)
 
 
 ### Webmaster tools
 
-When you use Segment to load Gtag, the Segment script loads the gtag.js script. If you use [Google Analytics as the verification option](https://support.google.com/webmasters/answer/9008080?hl=en) in Google Webmaster Tools, you'll need to switch to the [Meta tags verification option](https://support.google.com/webmasters/answer/79812?hl=en) instead. This will require you to find the `<meta name=google-site-verification" ..>` tag in Webmaster Tools and place it in your master HTML template.
+When you use Segment to load Gtag, the Segment script loads the gtag.js script. If you use [Google Analytics as the verification option](https://support.google.com/webmasters/answer/9008080?hl=en){:target="_blank"} in Google Webmaster Tools, you'll need to switch to the [Meta tags verification option](https://support.google.com/webmasters/answer/79812?hl=en){:target="_blank"} instead. This will require you to find the `<meta name=google-site-verification" ..>` tag in Webmaster Tools and place it in your master HTML template.
 
 ### Cannonical urls
 
@@ -503,9 +503,9 @@ Segment handles tracking the canonical URL to Google Analytics for you automatic
 
 ### Optimize
 
-If you'd like to integrate with Google Analytics' [Optimize plugin](https://support.google.com/360suite/optimize/answer/6262084#optimize-ga-plugin), insert your **Optimize Container ID** in the destination settings and Segment will require the plugin when Google Analytics initializes.
+If you'd like to integrate with Google Analytics' [Optimize plugin](https://support.google.com/360suite/optimize/answer/6262084#optimize-ga-plugin){:target="_blank"}, insert your **Optimize Container ID** in the destination settings and Segment will require the plugin when Google Analytics initializes.
 
-You may want to deploy Google's [anti-flickering snippet](https://support.google.com/optimize/answer/7100284) to prevent the page from flashing / flickering when the A/B test loads, as recommended by Google. You must add this code manually, since it needs to load synchronously.
+You may want to deploy Google's [anti-flickering snippet](https://support.google.com/optimize/answer/7100284){:target="_blank"} to prevent the page from flashing / flickering when the A/B test loads, as recommended by Google. You must add this code manually, since it needs to load synchronously.
 
 > note ""
 > Include the Optimize container ID in this snippet.

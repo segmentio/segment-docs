@@ -3,17 +3,17 @@ title: Markettailor destination
 rewrite: true
 id: 6096714984bdd26c427c9250
 ---
-[Markettailor](https://www.markettailor.io/), helps B2B marketers create personalized websites without code, leveraging company data, audience insights, and recommendations.
+[Markettailor](https://www.markettailor.io/){:target="_blank"}, helps B2B marketers create personalized websites without code, leveraging company data, audience insights, and recommendations.
 
 Markettailor maintains this destination. For any issues with the destination, contact the Markettailor Support team.
 
 ## Getting Started
-{% include content/connection-modes.md %}
+
 
 1. From the destinations catalog page in the Segment App, click **Add destination**.
 2. Search for “Markettailor” in the destinations Catalog, and select the Markettailor destination.
 3. Choose which Source should send data to the Markettailor destination.
-4. Go to the [Markettailor Integrations page](https://app.markettailor.io/integrations), find the Segment integration, click **Authorize**, and copy the API key.
+4. Go to the [Markettailor Integrations page](https://app.markettailor.io/integrations){:target="_blank"}, find the Segment integration, click **Authorize**, and copy the API key.
 5. Enter the API Key in the Markettailor destination settings in Segment.
 
 ## Supported methods

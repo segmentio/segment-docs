@@ -8,17 +8,20 @@ redirect_from:
 This guide walks you through the set up process for a simple Engage space, which you can use if your Segment implementation is simple. If your implementation is complex, you can use this to demonstrate and test Engage before working on a more complex configuration.
 
 > success ""
-> The first four steps in this guide also apply to Profiles set up. To learn more, visit the [Profiles Onboarding Guide](/docs/profiles/quickstart).
+> The first four steps in this guide also apply to Unify set up. To learn more, visit the [Unify Onboarding Guide](/docs/unify/quickstart).
+
+> info "Regional Segment"
+> Engage Foundations is available on Segment's regional infrastructure. For more information, see the article [Regional Segment](/docs/guides/regional-segment/).
 
 ## Engage configuration requirements
 > info ""
-> Engage requires both [Connections](/docs/connections/) and [Profiles](/docs/profiles/).
+> Engage requires both [Connections](/docs/connections/) and [Unify](/docs/unify/).
 
 To configure and use Engage, you need the following:
 
 1. **A Segment account and Workspace.**
 2. **Events flowing into Connections** from your digital properties where most of your valuable user behavior occurs.
-3. **Profiles identity admin access.** You must have edit access to identity resolution rules.
+3. **Identity Admin access.** You must have edit access to identity resolution rules.
 4. **Engage Administrator access.** You must be either be a workspace admin, or a workspace user with Engage admin access to set up audiences and computed traits. You can check your permissions by navigating to [Access Management](https://app.segment.com/goto-my-workspace/settings/access-management){:target="_blank"} in your workspace settings. See the [Segment Access Management documentation](/docs/segment-app/iam/) for more details.
 
 ## Step 1: Create a new Developer space
@@ -38,7 +41,7 @@ Invite teammates to your Engage dev space and grant them access to the space. Na
 
 ## Step 3: Connect production sources
 
-1. From your Engage space, go to your space Settings and click **Sources**.
+1. From your Engage space, navigate to **Unify settings** and click **Profile sources**.
 2. On the screen that appears, choose one or two production sources from your Connections workspace.
 
    _Segment recommends connecting your production website or App source as a great starting point._
@@ -57,7 +60,7 @@ Details for replay:
 ```
 _How much data can I replay from my source into Engage?_ : Your workspace's "computations history" limit is defined in the contract and can be found in the [workspace settings]([url](https://app.segment.com/goto-my-workspace/settings/usage?metric=mtu&period=current)).
 
-To learn more, visit [Connect production sources](/docs/profiles/quickstart/#step-3-connect-production-sources).
+To learn more, visit [Connect production sources](/docs/unify/quickstart/#step-3-connect-production-sources).
 
 ## Step 4: Check your profile data
 
@@ -65,11 +68,9 @@ After the replay finishes, you can see the data replayed into Engage using the P
 
 ## Step 5: Create an Audience
 
-You can build an audience using any of the source data that flows into your Engage space. To further verify your data, in this step create an Audience that you are familiar with, and that you already have a rough idea of the size of. For example, you might know the number of new website user sign-ups in the last seven days, if you've connected your production website source to Engage.
+You can build an audience using any source data that flows into your Engage space.
 
-The Audience Builder UI prompts you to filter your users using on specific behaviors that they performed. The audience in the example below is all the users who have performed the event `User Signed Up` at least one time within the last 7 days:
-
-![Example audience with users who have performed the User Signed Up event](images/pers-qs-config_audience.png)
+In this step, use the Audience Builder UI to create an Audience using properties you're familiar with. For example, you might know the number of new website user signups in the last seven days, if you've connected your production website source to Engage.
 
 To build your own audience:
 1. Navigate to your Engage space.
@@ -91,9 +92,7 @@ After you create your test audience, click **Select Destinations**. Engage guide
 
 The larger the audience you're creating, the longer it takes Engage to successfully compute the Audience. The Audience page shows a status that indicates if the audience is still being calculated. When the total number of users appears in the Audience overview, as in the example screenshot below, the audience has successfully finished computing, and Engage then sends the audience to the destination you selected.
 
-
 ![Connect the audience to a destination](images/pers-qs-audience_dests.png)
-
 
 ## Step 7: Validate that your audience is appearing in your destination
 

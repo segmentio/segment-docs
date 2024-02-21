@@ -2,8 +2,9 @@
 title: Analytics for PHP
 repo: analytics-php
 id: TDO70If4mD
+support_type: maintenance
 ---
-Our PHP library lets you record analytics data from your PHP code. The requests hit our servers, and then we route your data to any analytics service you enable on your destinations page.
+Segment's PHP library lets you record analytics data from your PHP code. The requests hit Segment servers, and then Segment routes your data to any analytics service you enable on your destinations page.
 
 This library is open-source, so you can [check it out on GitHub](https://github.com/segmentio/analytics-php).
 
@@ -395,6 +396,10 @@ Segment::init("YOUR_WRITE_KEY", array(
     <td>`error_handler` _Function, optional_</td>
     <td>A handler which will be called on errors to aid in debugging, `function ($code, $message) {}`</td>
   </tr>
+  <tr>
+    <td>`host` _String, optional_</td>
+    <td>To explicitly set which regional host to use. Defaults to `api.segment.io`.</td>
+  </tr>  
 </table>
 
 ### Lib-Curl Consumer

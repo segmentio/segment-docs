@@ -2,19 +2,21 @@
 title: HeadsUp AI Destination
 rewrite: true
 id: 60900f0a60033befef038889
+hidden: true
+private: true
 ---
-[HeadsUp AI](https://headsup.ai?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) allows customers to build metrics on top of their existing Segment analytics to better understand customer behavior and gauge health scores.
+[HeadsUp AI](https://headsup.ai?utm_source=segmentio&utm_medium=docs&utm_campaign=partners){:target="_blank”} allows customers to build metrics on top of their existing Segment analytics to better understand customer behavior and gauge health scores.
 
 This destination is maintained by HeadsUp. For any issues with the destination, [contact the HeadsUp AI Support team](mailto:administration@headsup.ai).
 
 ## Getting Started
 
-{% include content/connection-modes.md %}
+
 
 1. From the Destinations catalog page in the Segment App, click **Add Destination**.
 2. Search for "HeadsUp AI" in the Destinations Catalog, and select the HeadsUp AI Destination.
 3. Choose which Source should send data to the HeadsUp AI destination.
-4. Go to the [HeadsUp Onboarding](https://app.headsup.ai/welcome) page, find and copy the "Segment API key".
+4. Go to the [HeadsUp Onboarding](https://app.headsup.ai/welcome){:target="_blank”} page, find and copy the "Segment API key".
 5. Back in the Segment App, go back to the the HeadsUp AI Destination settings, and enter the "API Key".
 
 ## Identify

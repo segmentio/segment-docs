@@ -5,7 +5,7 @@ id: W3065KyMWF
 ---
 {% include content/source-region-unsupported.md %}
 
-Chatlio is a live chat tool that allows you to talk to your customers through your existing Slack service. Chatlio provides built in support for sending [chat related events](https://segment.com/docs/connections/spec/live-chat/) to Segment to give you a full picture of activity on your site including live chat. Visit [Chatlio for more info](https://chatlio.com/).
+Chatlio is a live chat tool that allows you to talk to your customers through your existing Slack service. Chatlio provides built in support for sending [chat related events](/docs/connections/spec/live-chat/) to Segment to give you a full picture of activity on your site including live chat. Visit [Chatlio for more info](https://chatlio.com/){:target="_blank"}.
 
 ## Getting Started
 
@@ -13,7 +13,7 @@ Chatlio is a live chat tool that allows you to talk to your customers through yo
 2. Choose Chatlio.
 3. Give the Source a name. The name will be used to identify this source within your workspace. You can name it however you'd like, but we recommend sticking to something that reflects the Source itself, like Chatlio.
 4. The next page "Overview" will surface your Segment write key for Chatlio. Copy this write key.
-5. To finish the setup, you'll have to go into your [Chatlio dashboard](https://chatlio.com/app/#/login) and enter the Segment write key in the settings towards the bottom of the page.
+5. To finish the setup, you'll have to go into your [Chatlio dashboard](https://chatlio.com/app/#/login){:target="_blank"} and enter the Segment write key in the settings towards the bottom of the page.
 6. Now when you go back to Segment, click into your Chatlio Source and you'll be able to add other downstream Destinations where you want to see live chat events.
 
 That's it! As you engage with your users, events will now be sent to your destinations and automatically loaded into any warehouses you have enabled.

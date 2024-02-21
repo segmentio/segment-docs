@@ -1,6 +1,6 @@
 ---
 title: User Subscription States
-plan: engage-foundations
+plan: engage-premier
 ---
 
 Customer profiles in your Segment audiences contain **contact vectors**. A contact vector is a piece of unique, specific contact information associated with a customer, like the customer's email address or phone number.
@@ -22,9 +22,6 @@ The following table displays the four subscription states:
 | `did-not-subscribe`      | A user gave you their contact information but made no decision about receiving marketing campaigns.         | A user provided their email address or phone number in an online transaction, but didn't sign up to receive your weekly newsletter. |
 | No subscription status | A user did not give you their contact information and made no decision about receiving marketing campaigns. | Segment collected an email or phone number through identity resolution. No user actively provided the email or phone number.               |
 
-> warning "Sending Permissions"
-> You can only send Engage campaigns to contacts with a subscribed user state.
-
 ## Understanding subscription states
 
 You can gain insight into your audience profiles by learning how and why each subscription state is associated with a user’s profile.  Below, you’ll find the four states described in detail, along with common scenarios that produce those states.
@@ -38,8 +35,6 @@ Subscribed users have intentionally requested to receive your marketing material
 - A user who opted in to receive marketing campaigns during online checkout
 - A user who signed up for your marketing campaigns on your website’s signup form
 - A user who signed up for marketing campaigns at an in-person event, like a conference
-
-**You may only send Engage campaigns to subscribed users. User subscriptions help you understand a user's preference to receive or not receive your marketing content.**
 
 It's your responsibility to ensure that Segment correctly reflects your users' subscription choices. Failure to do so may put you in violation of legislation like [CAN-SPAM](https://www.ftc.gov/business-guidance/resources/can-spam-act-compliance-guide-business){:target="_blank"}, [TCPA](https://www.twilio.com/docs/glossary/what-is-telephone-consumer-protection-act-tcpa){:target="_blank"}, or [GDPR](https://gdpr-info.eu/){:target="_blank"}.
 
@@ -84,6 +79,14 @@ You can set subscription states by either CSV file upload or, programmatically, 
 Uploading contacts with a CSV file works best for initial batches of contacts you’d like to bring into Engage. Syncing programmatically with the Public API is best suited for real-time and ongoing subscription maintenance, like when a user signs up for a form on your site or unsubscribes from your marketing campaigns within their notification center or account settings.
 
 To learn more about both options, reference the Engage documentation on using the [CSV uploader](/docs/engage/profiles/csv-upload/) and setting user subscriptions.
+
+### Sync subscription statuses with SQL
+
+Use SQL to import user subscription states from your data warehouse back to Engage. When you sync with SQL, you can query user subscription data at automated intervals. Pull subscription statuses for each contact vector and use your data warehouse as a single source of truth for subscription data.
+
+This option is especially useful if you don't have the ability to set subscription states with CSVs or Segment's Public API.
+
+View [Subscriptions with SQL Traits](/docs/engage/user-subscriptions/subscription-sql/) for more information.
 
 ### Troubleshooting subscription states
 

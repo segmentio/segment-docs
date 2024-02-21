@@ -3,11 +3,11 @@ rewrite: true
 title: Ambassador Destination
 id: 573a3dfb80412f644ff13679
 ---
-[Ambassador](https://www.getambassador.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) empowers companies to easily create, track & manage custom incentives that drive referrals and evangelize their users. 
+[Ambassador](https://www.getambassador.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners){:target="_blank”} empowers companies to easily create, track & manage custom incentives that drive referrals and evangelize their users. 
 
 ## Getting Started
 
-{% include content/connection-modes.md %}
+
 
 1. From the Segment web app, click **Catalog**.
 2. Search for "Ambassador" in the Catalog, select it, and choose which of your sources to connect the destination to.

@@ -1,7 +1,7 @@
 ---
 title: Account-level Audiences
 redirect_from:
-  - "/personas/account-audiences"
+  - "/personas/audiences/account-audiences"
 plan: engage-foundations
 ---
 
@@ -24,7 +24,7 @@ You can use account-level audiences to accomplish the following use cases:
 ## Enable account-level audiences
 
 1. Contact [friends@segment.com](mailto:friends@segment.com) and provide your workspace ID to have account-level audiences enabled for your workspace. Navigate to **Settings > Workspace Settings > General Settings** to view your workspace ID.
-2. Ensure that `group_id` is configured as an identifier in Engage Identity Resolution settings. For more information, see [Identity Resolution Settings](/docs/profiles/identity-resolution/identity-resolution-settings/).
+2. Ensure that `group_id` is configured as an identifier in Engage Identity Resolution settings. For more information, see [Identity Resolution Settings](/docs/unify/identity-resolution/identity-resolution-settings/).
 3. Instrument [group](/docs/connections/spec/group/) calls to send account information to Segment.
 
 ## Account-level audience conditions
@@ -39,7 +39,10 @@ A single account-level audience can incorporate any combination of the following
 - Account-level custom traits (set through a [group](/docs/connections/spec/group) call)
 
 
-To access account-level audience conditions, select Accounts in the dropdown.
+To access account-level audience conditions:
+1. Navigate to **Engage > Audiences**, and click **Create**.
+2. Select **Accounts** from the **Select Type** screen.
+3. From the **Configure** screen, select **Accounts** in the dropdown.
 
 ![Use this control to access account level audience conditions](/docs/engage/images/new-audience-type.png)
 
@@ -62,6 +65,12 @@ Use-cases for account-level computed traits include:
 
 > info ""
 > Use SQL traits for complex calculations not supported by computed traits. For example, you would use SQL traits to calculate the number of unique users associated with an account who have logged in during the past month.
+
+### Use account-level SQL traits to associate users to an account
+
+To associate users to an account with SQL traits, you must return both the `group_id` and `user_id` in the account level SQL trait. This fires a Group call which Segment uses to add users to groups in destinations.
+
+When a group (account) contains more than one user, the query returns duplicate `group_id`s (mapped to unique `user_id`s). However, Segment doesn't return duplicate `group_id`s in the account-level SQL trait. As a result, you can't map users to accounts in a many-to-many situation.
 
 ### Use account-level computed and SQL traits as account-level audience conditions
 
@@ -87,7 +96,7 @@ When you connect an account-level audience or trait to a destination, you select
 
 ## Use account-level traits in user-level audiences
 
-Account-level audiences make it possible to target all users associated with accounts that match your audience criteria. However, you may need to target a subset of users based on the traits of their associated accounts.
+Account-level audiences let you target all users associated with accounts that match your audience criteria. However, you may need to target a subset of users based on the traits of their associated accounts.
 
 Account-level traits are not available in the user-level audience builder. However, account-level audience membership is available in user-level audiences through the “Part of an audience” condition. This enables you to use account-level audiences as a “passthrough” for account-level traits.
 
@@ -101,8 +110,8 @@ For example, you may wish to create an audience which selects all admin-level us
 
 ## Known limitations of account-level audiences
 
-- Unlike user-level audiences, which are [computed in real time](/docs/engage/audiences#realtime-compute-vs-batch), account-level audiences are computed on a batched basis. Segment computes account-level audiences roughly every hour, but it's important to note that compute times can fluctuate based on the load on the system.
-- Account-level audiences do not respect the `context.groupId` property on track calls. If users are associated with multiple accounts (through multiple group calls), the entire collection of a user's events is considered when evaluating user-level event conditions (not just those events which are tagged with a matching `groupId`). This can lead to unexpected results where a user's events triggered in the context of one account lead to another account incorrectly matching an account-level audience.
+- Unlike user-level audiences, which are [computed in real time](/docs/engage/audiences#realtime-compute-vs-batch), account-level audiences are computed on a batched basis. Segment computes account-level audiences roughly every eight hours, but compute times can fluctuate based on system load.
+- Account-level audiences don't respect the `context.groupId` property on Track calls. If users are associated with multiple accounts (through multiple group calls), the entire collection of a user's events is considered when evaluating user-level event conditions (not just those events which are tagged with a matching `groupId`). This can lead to unexpected results where a user's events triggered in the context of one account lead to another account incorrectly matching an account-level audience.
 - The identity breakdown report (displayed in the audience builder for user-level audiences) is not available for account-level audiences.
 
-If you find that these limitations impede your ability to use account-level audiences, contact [friends@segment.com](mailto:friends@segment.com) with details about your use-case.
+If you find that these limitations impede your ability to use account-level audiences, contact [friends@segment.com](mailto:friends@segment.com) with details about your use case.
