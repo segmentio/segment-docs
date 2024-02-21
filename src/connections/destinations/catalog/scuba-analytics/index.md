@@ -8,11 +8,9 @@ id: 5d098d7fd748d200010cd081
 
 This destination is maintained by Scuba Analytics. For any issues with the destination, [contact the Scuba Analytics Support team](mailto:support@interana.com).
 
-{% include content/beta-note.md %}
-
 ## Getting Started
 
-{% include content/connection-modes.md %}
+
 
 To set up the Scuba Analytics Integration, first you will need:
 The root URL for your destination cloud storage directory

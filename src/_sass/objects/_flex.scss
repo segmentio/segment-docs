@@ -1,3 +1,5 @@
+@use "sass:math";
+
 .flex {
   $this: &;
 
@@ -29,8 +31,8 @@
 
     @for $i from 1 through $flex-columns {
       &--#{$i} {
-        flex-basis: percentage($i / $flex-columns);
-        max-width: percentage($i / $flex-columns);
+        flex-basis: percentage(math.div($i, $flex-columns));
+        max-width: percentage(math.div($i, $flex-columns));
       }
     }
 
@@ -42,8 +44,8 @@
       @include breakpoint($breakpoint up) {
         @for $i from 1 through $flex-columns {
           &--#{$i}\@#{$breakpoint} {
-            flex-basis: percentage($i / $flex-columns);
-            max-width: percentage($i / $flex-columns);
+            flex-basis: percentage(math.div($i, $flex-columns));
+            max-width: percentage(math.div($i, $flex-columns));
           }
         }
       }

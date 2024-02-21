@@ -3,12 +3,12 @@ rewrite: true
 title: Zendesk Destination
 id: 54521fdc25e721e32a72ef06
 ---
-[Zendesk](https://www.zendesk.com/support/documentation/) is a premier, cloud-based customer service application. It was designed with one purpose in mind: to improve communication between a company and its customers. Their products allow businesses to be more reliable, flexible, and scalable. They help improve communication and make sense of massive amounts of data. Above all, they work together to build the best experience for your customers.
+[Zendesk](https://www.zendesk.com/support/documentation/){:target="_blank"} is a premier, cloud-based customer service application. It was designed with one purpose in mind: to improve communication between a company and its customers. Their products allow businesses to be more reliable, flexible, and scalable. They help improve communication and make sense of massive amounts of data. Above all, they work together to build the best experience for your customers.
 
 
 ## Getting Started
 
-{% include content/connection-modes.md %}
+
 
 
 1. From the Segment web app, click **Catalog**.
@@ -28,7 +28,7 @@ analytics.identify("97980cfea0067", {
 });
 ```
 
-When you call `identify`, Segment inserts or updates a user record in Zendesk and uses the user email in `traits.email` to match user records in Zendesk. If there are multiple users matching the email, then no updates are submitted. Note that you must provide a trait for either `name` or `first_name` and `last_name` in order for the `identify` call to send to Zendesk. If you provide a `name`, Segment parses this into the `first_name` and `last_name` fields.
+When you call `identify`, Segment inserts or updates a user record in Zendesk and uses the user email in `traits.email` to match user records in Zendesk. If there are multiple users matching the email, then no updates are submitted. Note that you must provide a trait for either `name` or `first_name` and `last_name` in order for the `identify` call to send to Zendesk. If you provide a `name`, Segment parses this into the `first_name` and `last_name` fields. If you provide `name`, but are missing the `last_name` field, this will still send successfully to Zendesk.
 
 Here's an example:
 

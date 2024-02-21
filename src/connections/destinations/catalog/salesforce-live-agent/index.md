@@ -7,11 +7,11 @@ published: false
 ---
 
 > info ""
-> This destination is in Private Beta, and not publicly available. For more information, contact [Segment Support](https://segment.com/help/contact/).
+> This destination is in Private Beta, and not publicly available. For more information, contact [Segment Support](https://segment.com/help/contact/){:target="_blank"}.
 
 ## Getting Started
 
-To get started, follow Salesforce's [instructions](https://help.salesforce.com/articleView?id=live_agent_create_deployments.htm&type=5) to create a live agent deployment. If you have already done this, navigate to the "deployment code" of the Live Agent deployment you would like to have Segment integrate with. It will look something like this:
+To get started, follow Salesforce's [instructions](https://help.salesforce.com/articleView?id=live_agent_create_deployments.htm&type=5){:target="_blank"} to create a live agent deployment. If you have already done this, navigate to the "deployment code" of the Live Agent deployment you would like to have Segment integrate with. It will look something like this:
 
 ```html
 <script type='text/javascript' src='https://c.la3-c1cs-phx.salesforceliveagent.com/content/g/js/42.0/deployment.js'></script>
@@ -34,7 +34,7 @@ In short, **our integration cannot proactively initialize the Live Agent SDK on 
 ## Initialization
 In order to begin using the Salesforce Live Agent using Segment, follow these implementation guidelines.
 
-1. On any page where you are not collecting user information, but do want to interact with the Salesforce Live Agent API (to achieve some of the functionality outlined [here](https://developer.salesforce.com/docs/atlas.en-us.live_agent_dev.meta/live_agent_dev/live_agent_chat_buttons_API.htm) for example), you must implement all the Live Agent SDK functionality natively **except** the actual loading of their `deployment.js` JavaScript library (the first line of the sample deployment code shown earlier). This will always be handled by Segment anywhere you are loading our JavaScript SDK.
+1. On any page where you are not collecting user information, but do want to interact with the Salesforce Live Agent API (to achieve some of the functionality outlined [here](https://developer.salesforce.com/docs/atlas.en-us.live_agent_dev.meta/live_agent_dev/live_agent_chat_buttons_API.htm){:target="_blank"} for example), you must implement all the Live Agent SDK functionality natively **except** the actual loading of their `deployment.js` JavaScript library (the first line of the sample deployment code shown earlier). This will always be handled by Segment anywhere you are loading our JavaScript SDK.
 2. On any page where you *are* collecting user information (using some kind of pre-chat form for example) that you would like to pass to Salesforce and/or your chat agent after the user completes the form, you must ensure you **do not** call `liveagent.init` natively **anywhere on the page** and ensure that you do invoke a properly formatted Identify event, Group event (this is optional), and finally a Live Chat Conversation Started event **in that order**.
 
 ## Identify

@@ -1,23 +1,20 @@
 ---
 title: CrowdPower Destination
 rewrite: true
-beta: true
 id: 5e59dad99437ab152550ce1f
 ---
-[CrowdPower](https://crowdpower.io/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) is a growth marketing platform that enables businesses to track key customer actions and deliver automated tailored communications to drive sales and increase engagement.
+[CrowdPower](https://crowdpower.io/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners){:target="_blank”} is a growth marketing platform that enables businesses to track key customer actions and deliver automated tailored communications to drive sales and increase engagement.
 
 This destination is maintained by CrowdPower. For any issues with the destination, [contact the CrowdPower Support team](mailto:support@crowdpower.io).
-
-{% include content/beta-note.md %}
 
 
 ## Getting Started
 
-{% include content/connection-modes.md %}
+
 
 1. From the Segment web app, click **Catalog**.
 2. Search for "CrowdPower" in the Catalog, select it, and choose which of your sources to connect the destination to.
-3. Enter the API Key into your Segment Settings UI which you can find from your [CrowdPower Project Settings](https://app.crowdpower.io).
+3. Enter the API Key into your Segment Settings UI which you can find from your [CrowdPower Project Settings](https://app.crowdpower.io){:target="_blank"}.
 4. To find your CrowdPower API Key, go to the CrowdPower Console and click **Settings** in the sidebar menu. Use your CrowdPower project's Public Key as the API key for Segment.
 
 ## Identify

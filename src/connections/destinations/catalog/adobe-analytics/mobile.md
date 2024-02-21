@@ -14,7 +14,7 @@ Before you start sending data from your mobile application to Adobe Analytics, y
 
 - First, enable the Segment-Adobe Analytics destination from in your Segment workspace.
 - From your Adobe Mobile Services dashboard, check and customize the settings on the "Manage App Settings" tab.
-- Download these settings as the `ADBMobileConfig.json` file by clicking the **Config JSON** link at the bottom of the same tab. Follow the instructions in Adobe's documentation [here for iOS](https://marketing.adobe.com/resources/help/en_US/mobile/ios/dev_qs.html) and [here for Android](https://marketing.adobe.com/resources/help/en_US/mobile/android/dev_qs.html).
+- Download these settings as the `ADBMobileConfig.json` file by clicking the **Config JSON** link at the bottom of the same tab. Follow the instructions in Adobe's documentation [here for iOS](https://marketing.adobe.com/resources/help/en_US/mobile/ios/dev_qs.html){:target="_blank”} and [here for Android](https://marketing.adobe.com/resources/help/en_US/mobile/android/dev_qs.html){:target="_blank”}.
 - Finally, follow the instructions below for each mobile environment to bundle Segment's Adobe Analytics SDK in your project.
 
 > success ""
@@ -48,7 +48,7 @@ analytics = new Analytics.Builder(this, "write_key")
 <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 ```
 
-You can see the [Android SDK changelog](https://github.com/segment-integrations/analytics-android-integration-adobe-analytics/blob/master/CHANGELOG.md) in the open-source repository for information about specific versions of the Android Adobe Analytics SDK.
+You can see the [Android SDK changelog](https://github.com/segment-integrations/analytics-android-integration-adobe-analytics/blob/master/CHANGELOG.md){:target="_blank”} in the open-source repository for information about specific versions of the Android Adobe Analytics SDK.
 
 #### For iOS
 
@@ -56,7 +56,7 @@ You can see the [Android SDK changelog](https://github.com/segment-integrations/
 pod 'Segment-Adobe-Analytics'
 ```
 
-You can see the [iOS SDK changelog](https://github.com/segment-integrations/analytics-ios-integration-adobe-analytics/blob/master/Changelog.md) in the open-source repository for information about specific versions of the iOS Adobe Analytics SDK.
+You can see the [iOS SDK changelog](https://github.com/segment-integrations/analytics-ios-integration-adobe-analytics/blob/master/Changelog.md){:target="_blank”} in the open-source repository for information about specific versions of the iOS Adobe Analytics SDK.
 
 ## Sending Data to Adobe analytics
 
@@ -71,21 +71,23 @@ You can map Segment events in your `Events V2` settings to any event variable yo
 
 Here's an example of how you might map Segment events to Adobe Analytics events connected in device mode:
 
-![](/docs/connections/destinations/catalog/adobe-analytics/images/eventsV2.png)
+<!--todo: rewrite this so that it doesn't rely on the screenshots to explain how to map events in Segment-->
+
+![A screenshot of the Adobe Analytics settings page in Segment, with the Mappings section selected.](images/eventsV2.png)
 
 Here's an example of how you would implement the same mapping in Adobe's Mobile Services Dashboard:
 
-![](/docs/connections/destinations/catalog/adobe-analytics/images/map-event-adobe.png)
+![A screenshot of the Custom Metrics tab in Adobe's Mobile Services Dashboard, with one custom metric, Clicked a Button, defined.](images/map-event-adobe.png)
 
 ## Sending Custom Properties
 
 You can use the `Context Data Variables` settings to map Segment `properties` to any context data variable defined in your Adobe Analytics Mobile Services dashboard. This includes both Adobe `props` and `eVars`. You can see a list of the Adobe variable types in your Adobe Mobile Services dashboard.
 
-![](/docs/connections/destinations/catalog/adobe-analytics/images/map-property-segment.png)
+![A screenshot of the Adobe Analytics settings page in Segment, with the Mappings section selected.](images/map-property-segment.png)
 
 Here's an example of how you would implement the same mapping in Adobe's Mobile Services Dashboard:
 
-![](/docs/connections/destinations/catalog/adobe-analytics/images/map-property-adobe.png)
+![A screenshot of the Custom Variables tab in Adobe's Mobile Services Dashboard, with one custom variable, Color, defined.](images/map-property-adobe.png)
 
 
 <table>
@@ -138,7 +140,7 @@ Here's an example of how you would implement the same mapping in Adobe's Mobile 
 
 ## Adobe Lifecycle events
 
-Segment implements Adobe Lifecycle Events automatically - you don't have to enable any additional settings! Lifecycle events gather important information such as app launches, crashes, session length, and more. See the [list of all Adobe lifecycle metrics and dimensions](https://marketing.adobe.com/resources/help/en_US/mobile/android/metrics.html) to learn more.
+Segment implements Adobe Lifecycle Events automatically - you don't have to enable any additional settings! Lifecycle events gather important information such as app launches, crashes, session length, and more. See the [list of all Adobe lifecycle metrics and dimensions](https://marketing.adobe.com/resources/help/en_US/mobile/android/metrics.html){:target="_blank”} to learn more.
 
 ## Identify on Mobile
 

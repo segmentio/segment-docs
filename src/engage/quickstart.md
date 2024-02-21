@@ -8,11 +8,14 @@ redirect_from:
 This guide walks you through the set up process for a simplified Engage space. If your implementation is complex, use this to demonstrate and test Engage before working on a more complex configuration.
 
 > success ""
-> The first four steps in this guide also apply to Profiles set up. To learn more, visit the [Profiles Onboarding Guide](/docs/profiles/quickstart).
+> The first four steps in this guide also apply to Unify set up. To learn more, visit the [Unify Onboarding Guide](/docs/unify/quickstart).
+
+> info "Regional Segment"
+> Engage Foundations is available on Segment's regional infrastructure. For more information, see the article [Regional Segment](/docs/guides/regional-segment/).
 
 ## Engage configuration requirements
 > info ""
-> Engage requires both [Connections](/docs/connections/) and [Profiles](/docs/profiles/).
+> Engage requires both [Connections](/docs/connections/) and [Unify](/docs/unify/).
 
 The following are prerequisites to configuring and using Engage:
 
@@ -44,7 +47,21 @@ Invite teammates to your Engage dev space and grant them access to the space. Na
 Segment recommends connecting your production website or App source as a great starting point.
 _The flag **Replay data** is enabled by default, **Replay data : Enable this option to replay the last month of data into Profiles for every selected source below.** When left enabled, 30 days of historical data will be replayed from the source._
 
-To learn more, visit [Connect production sources](/docs/profiles/quickstart/#step-3-connect-production-sources).
+3. The **Replay data** flag is enabled by default, **Replay data : Enable this option to replay last month of data into Profiles for every selected source below.** When left enabled, 30 days of historical data will be replayed from the source. You can disable this option by toggling it - this prevents the replaying historical data from the source. If you need more historical data available from this source, fill out the form below for each replay and contact Segment Support at friends@segment.com or [create a ticket]([url](https://app.segment.com/goto-my-workspace/home?period=last-24-hours&v2=enabled&help=create-ticket)):
+```
+Segment Source Details:
+- Name: source-name
+- SourceId: XXXXX or Link to Source
+
+Details for replay:
+- Destination: Name of destination you want to replay to or link to Profiles space
+- Start time: (Use the following UTC format) 2020-11-21T05:10:00Z UTC
+- End time: (Use the following UTC format) 2023-01-21T10:10:00Z UTC
+- All the events or only a subset of event names? Provide event names and/or method calls (page/identify/track/group) if only a subset of events is needed.
+```
+_How much data can I replay from my source into Engage?_ : Your workspace's "computations history" limit is defined in the contract and can be found in the [workspace settings]([url](https://app.segment.com/goto-my-workspace/settings/usage?metric=mtu&period=current)).
+
+To learn more, visit [Connect production sources](/docs/unify/quickstart/#step-3-connect-production-sources).
 
 ## Step 4: Check your profile data
 
@@ -52,11 +69,9 @@ After the replay finishes, you can see the data replayed into Engage using the P
 
 ## Step 5: Create an Audience
 
-You can build an audience using any of the source data that flows into your Engage space. To further verify your data, in this step create an Audience that you are familiar with, and that you already have a rough idea of the size of. For example, you might know the number of new website user sign-ups in the last seven days, if you've connected your production website source to Engage.
+You can build an audience using any source data that flows into your Engage space.
 
-The Audience Builder UI prompts you to filter your users using on specific behaviors that they performed. The audience in the example below is all the users who have performed the event `User Signed Up` at least one time within the last 7 days:
-
-![Example audience with users who have performed the User Signed Up event](images/pers-qs-config_audience.png)
+In this step, use the Audience Builder UI to create an Audience using properties you're familiar with. For example, you might know the number of new website user signups in the last seven days, if you've connected your production website source to Engage.
 
 To build your own audience:
 1. Navigate to your Engage space.
@@ -72,16 +87,13 @@ To build your own audience:
 
 After you build your audience, click **Preview Results** to see the total number of users who meet the audience criteria, for example all users who signed up within the last seven days.
 
-
 ## Step 6:  Connect the Audience to a Destination
 
 After you create your test audience, click **Select Destinations**. Engage guides you through configuration steps to set up a destination for your audience. If you don't already have destinations configured for the Engage space, the you are prompted to select one or more. Finally, enter a name for the audience.
 
 The larger the audience you're creating, the longer it takes Engage to successfully compute the Audience. The Audience page shows a status that indicates if the audience is still being calculated. When the total number of users appears in the Audience overview, as in the example screenshot below, the audience has successfully finished computing, and Engage then sends the audience to the destination you selected.
 
-
 ![Connect the audience to a destination](images/pers-qs-audience_dests.png)
-
 
 ## Step 7: Validate that your audience is appearing in your destination
 

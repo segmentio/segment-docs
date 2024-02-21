@@ -98,7 +98,8 @@ To maintain best practices and enforce your funnel, re-check or modify audience 
 
 ### Send to Destination steps
 
-Because Journey members permanently remain in Destination sync steps, Segment neither sends `Audience Exit` events to Destinations nor removes users from Destinations lists.  As a result, users cannot re-enter or loop within Journeys.
+Unless a Journey has an exit condition configured, Journey members permanently remain in Destination sync steps. Segment neither sends `Audience Exit` events to Destinations nor removes users from Destinations lists.
+Exit conditions will lead to users being removed from all Journey steps and Destinations.
 
 
 ## FAQs
@@ -113,7 +114,7 @@ Yes. To allow users to re-enter Journeys that they've exited, [enable re-entry](
 
 ### What happens to traits and audiences when I delete a Journey?
 
-Deleting a Journey removes its underlying audiences from profile views in the Profiles Explorer.  However, the Journey's True/False traits remain in the user's last recorded state.
+Deleting a Journey removes its underlying audiences from profile views in the Profile explorer. However, the Journey's True/False traits remain in the user's last recorded state.
 
 > info "Note"
 > Cloning a Journey generates new, unique traits and sync keys.  Deleting the original Journey won't impact any cloned Journeys.

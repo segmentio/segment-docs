@@ -3,16 +3,13 @@ title: Freshmarketer Destination
 rewrite: true
 id: 5c823fb8af6c8c00015636b6
 ---
-Segment makes it easy to send your data to [Freshmarketer](https://www.freshmarketer.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) (and lots of other destinations). Once you collect your data using Segment's [open source libraries](/docs/connections/sources/catalog/), Segment translates and routes your data to Freshmarketer in the format it can use.
+Segment makes it easy to send your data to [Freshmarketer](https://www.freshmarketer.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners){:target="_blank”} (and lots of other destinations). Once you collect your data using Segment's [open source libraries](/docs/connections/sources/catalog/), Segment translates and routes your data to Freshmarketer in the format it can use.
 
 This destination is maintained by Freshmarketer. For any issues with the destination, [contact the Freshmarketer Support team](mailto:support@freshmarketer.com).
 
-{% include content/beta-note.md %}
-
-
 ## Getting Started
 
-{% include content/connection-modes.md %}
+
 
 1. From your Segment UI's Destinations page click **Add Destination**.
 2. Search for "Freshmarketer" in the Destinations Catalog and confirm the Source you'd like to connect to.
@@ -57,7 +54,7 @@ You can find default list of field names in Settings - > Custom fields for field
 
 All attributes that are a part of traits should correspond to the field Label of those fields in Freshmarketer. Attributes that are not mapped with their corresponding fields are ignored.
 
-![](images/contact-fields.png)
+![A screenshot of the Contact fields page in Freshmarketer, with an Edit Field sidebar.](images/contact-fields.png)
 
 ### Custom Traits
 
@@ -65,4 +62,4 @@ As part of traits, you can a Field Label to send custom fields created in Freshm
 
 Below is the Custom Field created in Freshmarketer product(Settings > Contact fields). You can drag and drop a field to create a new one.
 
-![](images/custom-fields.png)
+![A screenshot of the Contact fields page in Freshmarketer, with an Edit Field sidebar showing a custom field.](images/custom-fields.png)

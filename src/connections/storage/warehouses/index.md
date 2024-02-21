@@ -1,9 +1,8 @@
 ---
 title: Data Warehouses
 redirect_from: '/connections/warehouses/'
+plan: warehouses
 ---
-
-{% include content/plan-grid.md name="warehouses" %}
 
 ## What's a Warehouse?
 
