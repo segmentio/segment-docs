@@ -14,7 +14,7 @@ By using Segment's TikTok Audiences destination, you can increase traffic and dr
 
 ### Notes
 
-- If you created a TikTok Audiences destination instance before September 25th, 2023, your instance(s) and all subsequent instances are considered _legacy_ instances. To create a new _legacy_ instance, see the [Create a TikTok audience (Legacy)](#create-a-tiktok-audience-legacy) documentation. Users who created their first instance after September 25, 2023 are considered to have _native_ instances. To create a new _native_ instance, see the [Configure the TikTok Audiences destination (Native)](#configure-the-tiktok-audiences-destination-native) documentation.
+- If you created a TikTok Audiences destination instance before September 25th, 2023, your instance(s) and all subsequent instances are considered _legacy_ instances. To create a new _legacy_ instance, see the [Create a TikTok audience (Legacy)](#create-a-tiktok-audience-legacy) documentation. Users who created their first instance after September 25, 2023 are considered to have _native_ instances. To create a new _native_ instance, see the [Configure the TikTok Audiences destination](#configure-the-tiktok-audiences-destination) documentation.
 - Both _legacy_ and _native_ instances have the same set of features, but are configured differently. Legacy instances require you to create an audience or action manually, but native instances automatically create audiences and actions.
 - If you update the events names from the default Audience Entered/Audience Exited, please make sure to also update it in the "Add to Audience" and "Remove from Audience" mappings.
 - For more information about how to update from _legacy_ to _native_, reach out to [friends@segment.com](mailto:friends@segment.com).
