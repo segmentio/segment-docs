@@ -221,5 +221,5 @@ After you start sending events, you should start seeing them in twenty minutes. 
 
 ### Not seeing events in Facebook
 
-Facebook releases updates to its platform regularly. Those updates will sometimes include new requirements for use of the Conversions API. Please check here: https://developers.facebook.com/docs/graph-api/changelog/version13.0 to keep up to date. A notable update pertaining to the Conversions API was v13.0, so take a look for additional requirements there and in any newer versions.
+Facebook releases updates to its platform regularly. Those updates can include new requirements for use of the Conversions API. Check Facebook's [Graph API Changelog](https://developers.facebook.com/docs/graph-api/changelog){:target="_blank”}  to keep up to date with the current requirements. 
 
