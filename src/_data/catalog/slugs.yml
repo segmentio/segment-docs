@@ -213,3 +213,5 @@ destinations:
     override: "actions-google-analytics-4"
   - original: "app-fit"
     override: "actions-app-fit"
+  - original: "the-trade-desk-crm"
+    override: "actions-the-trade-desk-crm"
