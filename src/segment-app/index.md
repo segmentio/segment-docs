@@ -21,7 +21,7 @@ The first thing you see is a graph of the sources and destinations you have conn
 
 The graph on this overview page includes lines which can show you which sources send data to which destinations. If this is the first time you're looking at your workspace and you haven't set it up yet, it won't look quite like this.
 
-In the left navigation bar, you see the main parts of the Segment application: [Sources](/docs/connections/sources/), [Destinations](/docs/connections/destinations/), [Privacy](/docs/privacy/), and [Engage](/docs/engage/) and [Protocols](/docs/protocols/), if your subscription includes them.
+In the left navigation bar, you see the main parts of the Segment application: [Sources](/docs/connections/sources/), [Destinations](/docs/connections/destinations/), [Privacy](/docs/privacy/), [Engage](/docs/engage/), and [Protocols](/docs/protocols/), if your subscription includes them.
 
 You can also find the Catalog in the left navigation, which lists the sources you can collect data from, and the destinations you can send data to.
 
@@ -51,7 +51,7 @@ The Catalog is always growing, so check out the "New and Noteworthy" section fro
 
 ## Engage and Protocols
 
-If you have Engage or Protocols enabled in your workspace, you'll see sections for those too. Engage helps you use your Segment data to build audiences and better understand your users and Protocols helps you structure and maintain the format of the data you send through Segment.
+If you have Engage or Protocols enabled in your workspace, you'll see sections for those too. Engage helps you use your Segment data to build audiences and better understand your users, and Protocols helps you structure and maintain the format of the data you send through Segment.
 
 These features are fairly advanced, but you can learn more about them by [requesting a demo](https://segment.com/contact/sales/), or reading more in the [Engage documentation](/docs/engage/), and the [Protocols documentation](/docs/protocols/).
 
@@ -73,7 +73,7 @@ Issues on the Health tab are sorted by Sources, Destinations, Warehouses, and ag
 
 ![Screenshot of the Integration Health page in the Segment app.](images/health.png)
 
-If errors are present, they're sorted by type and include information about how long ago they were last seen and how many times they've occurred. You can click the wrench icon on an individual error line to view the Event Delivery tool and see the erroring payload and response. You can also disable, or delete the erroring integration from this menu.
+If errors are present, they're sorted by type and include information about how long ago they were last seen and how many times they've occurred. You can click the wrench icon on an individual error line to view the Event Delivery tool and see the erroring payload and response. You can also disable or delete the erroring integration from this menu.
 
 ## Privacy Portal
 
