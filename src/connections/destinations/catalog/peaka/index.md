@@ -1,8 +1,10 @@
 ---
 title: Peaka Destination
+id: 651ea97b7982672f1d66b93c
+beta: true
 ---
 
-[Peaka](https://peaka.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners){:target="\_blank”} is a Zero-ETL platform that connects to any source. Ingest high-volume event and streaming data. Replace batch with real-time access.
+[Peaka](https://peaka.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners){:target="_blank”} is a Zero-ETL platform that connects to any source. Ingest high-volume event and streaming data. Replace batch with real-time access.
 
 By integrating Peaka with their Segment workspace, users can designate Peaka as one of their destinations. This means that events such as pages, screens, tracks,
 and more will be sent directly to Peaka's Segment data catalog. With this integration, Peaka users can begin querying their product events.
@@ -11,10 +13,10 @@ This destination is maintained by Peaka. For any issues with the destination, [c
 
 ## Getting started
 
-1. From your workspace's [Destination catalog page](https://app.segment.com/goto-my-workspace/destinations/catalog){:target="\_blank”} search for **Peaka**
+1. From your workspace's [Destination catalog page](https://app.segment.com/goto-my-workspace/destinations/catalog){:target="_blank”} search for **Peaka**
 2. Select **Peaka** and click **Add Destination**
 3. Choose which Source should send data to the **Peaka** destination.
-4. Go to the [Peaka](https://peaka.studio/){:target="\_blank"}, create your Segment Catalog and copy the **API key**.
+4. Go to the [Peaka](https://peaka.studio/){:target="_blank"}, create your Segment Catalog and copy the **API key**.
 5. Follow the steps in **Peaka** [Documentation](https://www.peaka.com/docs/integrations/segment/) on how to create your Segment Catalog and obtain your **API key**
 6. Enter the **API Key** in the **Peaka** destination settings in Segment.
 
