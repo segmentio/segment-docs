@@ -8,10 +8,6 @@ Use ID Sync to select identifiers and a sync strategy when you send Audience or 
 
 On this page, you'll learn how to configure and begin using ID Sync.
 
-> success "Trait Activation setup"
-> To view supported destinations and learn more about getting started with Trait Activation, visit the [setup guide](/docs/engage/trait-activation/trait-activation-setup/).
- 
-
 ## Set up ID Sync
 
 Use the following steps to set up ID Sync with Audiences or Journeys.
@@ -28,9 +24,7 @@ To set up ID Sync with [Audiences](/docs/engage/audiences/):
 
 ### Set up ID Sync with Journeys
 
-To set up ID Sync with [Journeys](/docs/engage/journeys/): 
-
-As you're creating or editing a journey in the [builder](/docs/engage/journeys/build-journey/), you can configure how you send identifiers with ID Sync from any of the [supported destinations](/docs/engage/trait-activation/trait-activation-setup/).
+You can configure ID Sync with Journeys as you're creating or editing your journey in the [builder](/docs/engage/journeys/build-journey/).
 
 1. From a journey step, select the destination you're going to use with ID Sync. 
 2. On the Connection Settings tab, select **Customized Setup**  and use the corresponding [steps below](#customized-setup) to customize which identifiers you want to map downstream to your destination. 
