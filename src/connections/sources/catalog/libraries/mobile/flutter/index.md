@@ -4,9 +4,12 @@ hidden: false
 ---
 
 > info ""
-> The Analytics-Flutter library is currently in public beta and is governed by Segment's [First Access and Beta Preview Terms](https://www.twilio.com/en-us/legal/tos){:target="_blank"}. For more information, see the [Analytics-Flutter GitHub repository](https://github.com/segmentio/analytics_flutter){:target="_blank"}. 
+> The Analytics-Flutter library is currently in public beta and is governed by Segment's [First Access and Beta Preview Terms](https://www.twilio.com/en-us/legal/tos){:target="_blank"}. For more information, see the [Analytics-Flutter GitHub repository](https://github.com/segmentio/analytics_flutter){:target="_blank"}.
 
-Analytics-Flutter enables you to seamlessly add Segment analytics to your Flutter1 app.
+> warning "Updated package for pilot users"
+> If you've been using Analytics-Flutter since the pilot phase, see [Upgrading from pilot](#upgrading-from-pilot) to use the updated version of Analytics-Flutter. 
+
+Analytics-Flutter enables you to seamlessly add Segment analytics to your Flutter app.
 
 ### Supported platforms
 Analytics-Flutter supports these platforms:
@@ -88,6 +91,25 @@ These are the options you can apply to configure the client:
 | `appStateStream`| null | Set this to override the stream of application foreground or background events. |
 | `requestFactory`| true      | Set this to override the factory to generate HTTP requests. Type: [RequestFactory](https://github.com/segmentio/analytics_flutter/blob/master/packages/core/lib/state.dart#L546){:target="_blank"}.|
 
+### Upgrading from pilot
+If you've been using Analytics-Flutter since the pilot phase, follow these steps to use the upgraded version of Analytics-Flutter as Segment renamed the package of the library from `analytics` to `segment_analytics`. 
+
+1. Remove the `analytics` package and use `segment_analytics` in your `pubspec.yaml` file. 
+
+    ```diff
+	-   analytics:
+	-     git:
+	-       url: https://github.com/segmentio/analytics_flutter
+	-       ref: main
+	-       path: packages/core
+	+   segment_analytics: ^1.0.1
+	```
+2. Change the imports from `package:analytics` to `package:segment_analytics` in your dart files. 
+
+    ```diff
+	- import 'package:analytics/client.dart';
+	+ import 'package:segment_analytics/client.dart';
+	```
 
 ## Tracking methods
 Once you’ve installed the Analytics-Flutter library, you can start collecting data through Segment’s tracking methods:
@@ -181,7 +203,7 @@ analytics.group("some-company", groupTraits: GroupTraits(
 {% endcodeexample %}
 
 ## Utility methods
-The Analytics-Flutter utility methods help you work with plugins fro the analytics timeline. They include:
+The Analytics-Flutter utility methods help you work with plugins from the analytics timeline. They include:
 * [Alias](#alias)
 * [Reset](#reset)
 * [Flush](#flush)
@@ -253,7 +275,7 @@ If you don't do this, the old client instance still exists and retains the timer
 
 ## Automatic screen tracking
 
-To set up automatic screen tracking, you need to add the analytics navigator observer to your app's navigator observers. For example, if you're using the `MaterialApp` class, add the following:
+Automatic screen tracking enables you to track navigation globally, as sending a `screen()` event with each navigation action gets tiresome quickly. To set up automatic screen tracking, you need to add the analytics navigator observer to your app's navigator observers. For example, if you're using the `MaterialApp` class, add the following:
 
 ```dart
 return MaterialApp(navigatorObservers: [
