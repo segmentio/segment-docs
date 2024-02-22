@@ -30,7 +30,7 @@ To consolidate the views in the Schema tab, Segment automatically converts `page
 
 ### How can I see who made changes to my Tracking Plan?
 
-Each Tracking Plan includes a Changelog, which shows which changes were made by which users. To view it, open a Tracking Plan, click the **...** button (also known as the dot-dot-dot, or ellipses menu) next to the Edit Tracking Plan button, and click **View Changelog**. In the Changelog, Consent Management users also see when the Segment Consent Preference Updated event was added to their workspace. 
+Each Tracking Plan includes a Changelog, which shows which changes were made by which users. To view it, open a Tracking Plan, click the **...** button (also known as the dot-dot-dot, or ellipses menu) next to the Edit Tracking Plan button, and click **View Changelog**. In the Changelog, Consent Management users also see when the Segment Consent Preference Updated event was added to their Tracking Plan through the creation of at least one consent category. 
 
 ### How many Sources can I connect to a Tracking Plan?
 
