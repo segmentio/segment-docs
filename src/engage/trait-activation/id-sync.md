@@ -46,7 +46,7 @@ With Customized setup, you can choose which identifiers you want to map downstre
 2. Add an ID strategy. 
 - This is a strategy for a particular identifier which sends either the `last added`, `first added`, or `all` identifiers to your destination.
 3. Click **Save**, then finish building your audience or journey.
-
+ 
 ## Limits and best practices
 
 - Segment recommends using ID Sync with new audiences. 
