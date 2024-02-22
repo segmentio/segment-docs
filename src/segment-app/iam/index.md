@@ -17,13 +17,13 @@ You can select a user in the table to see their [roles](/docs/segment-app/iam/ro
 
 ## Twilio Unified Login
 
-With Twilio Unified Login, Twilio users can use their Twilio email, password, and authentication settings to access several Twilio products, including Twilio Messaging, SendGrid, and Segment. Once you link your Segment account to your Twilio credentials, you can access Segment directly from the Twilio console using the [Twilio Product Switcher](#twilio-product-switcher).
+With Twilio Unified Login, Twilio users can use their Twilio email, password, and authentication settings to access several Twilio products, including Twilio Messaging, SendGrid, and Segment. You can also use Sign up With Google to create your Twilio account. Once you link your Segment account to your Twilio credentials, you can access Segment directly from the Twilio console using the [Twilio Product Switcher](#twilio-product-switcher).
 
-### Twilio Sign up
+### Twilio Sign Up
 
-Segment invitations and sign ups that are redirected to Twilio's sign up page must adhere to Twilio's [minimum password and 2FA requirements](https://help.twilio.com/articles/115012261968){:target="_blank”}. You can also use Sign up With Google to create your Twilio account. To learn more, view Twilio's [Account Management](https://support.twilio.com/hc/en-us/sections/205104908-Account-Management?_gl=1*1xa50pg*_ga*OTUyMjQ4OTU5LjE2NjM2ODQzMDE.*_ga_3JKYB4GBBY*MTcwNzc2ODE1OC4xNDkuMS4xNzA3NzY4MjUzLjAuMC4w){:target="_blank”} documentation.
+Segment invitations and sign ups that are redirected to Twilio's sign up page must adhere to Twilio's [minimum password and 2FA requirements](https://help.twilio.com/articles/115012261968){:target="_blank”}. To learn more, view Twilio's [Account Management](https://support.twilio.com/hc/en-us/sections/205104908-Account-Management?_gl=1*1xa50pg*_ga*OTUyMjQ4OTU5LjE2NjM2ODQzMDE.*_ga_3JKYB4GBBY*MTcwNzc2ODE1OC4xNDkuMS4xNzA3NzY4MjUzLjAuMC4w){:target="_blank”} documentation.
 
-Any existing Segment user must adhere to existing password requirements and 2FA settings and set at the Workspace level.
+Any existing Segment user must adhere to existing password requirements and 2FA settings set at the Workspace level.
 
 ### Twilio Product Switcher
 
