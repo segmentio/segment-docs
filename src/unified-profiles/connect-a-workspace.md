@@ -91,15 +91,15 @@ Create a Segment Profiles destination to add a mapping to your Reverse ETL sourc
 
 ## Step 3: Confirm your customer identifier settings
 
-***This is a black box for me - how much of this will be the same from the PS guide?***
+To connect your Unify space to Flex, you'll need to reach out to the [Twilio Professional Services](https://www.twilio.com/en-us/professional-services){:target="_blank"} team. 
 
-Before proceeding to Flex to confirm your customer identifier settings, note the following information from your Segment workspace: 
+Before reaching out to your Professional Services, note the following information about your Segment workspace:
 
 - **Workspace ID**: Located in the [General Settings section](https://app.segment.com/goto-my-workspace/settings/basic){:target="_blank"} of your Segment workspace
 - **Workspace slug**: Located in the [General Settings section](https://app.segment.com/goto-my-workspace/settings/basic){:target="_blank"} of your Segment workspace
 - **Unify space slug**: Located in the address bar between `/spaces/` and `/explorer/`. For example: `app.segment.com/workspace-slug/unify/spaces/unify-space-slug/explorer`
 - **Unify space ID**: Located in the API access settings for your Unify space (**Unify > Unify settings > API access**)
-- **Profile API access token**: The access token you created in [Step 1: Set up your Unify Space](#step-1-set-up-your-unify-space)
+- **Profile API access token**: Either the access token you created in [Step 1: Set up your Unify Space](#step-1-set-up-your-unify-space), or for existing Unify spaces, a [new token](/docs/unify/profile-api/#configure-access)
 
 ## Step 4: Create Computed Traits and Predictions
 
