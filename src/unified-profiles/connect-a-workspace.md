@@ -93,7 +93,7 @@ Create a Segment Profiles destination to add a mapping to your Reverse ETL sourc
 
 To connect your Unify space to Flex, you'll need to reach out to the [Twilio Professional Services](https://www.twilio.com/en-us/professional-services){:target="_blank"} team. 
 
-Before reaching out to your Professional Services, note the following information about your Segment workspace:
+Before reaching out to Professional Services, note the following information about your Segment workspace:
 
 - **Workspace ID**: Located in the [General Settings section](https://app.segment.com/goto-my-workspace/settings/basic){:target="_blank"} of your Segment workspace
 - **Workspace slug**: Located in the [General Settings section](https://app.segment.com/goto-my-workspace/settings/basic){:target="_blank"} of your Segment workspace
@@ -103,7 +103,7 @@ Before reaching out to your Professional Services, note the following informatio
 
 ## Step 4: Create Computed Traits and Predictions
 
-After linking your customer data to Flex using a Unify space, you can set up [Computed Traits](#computed-traits) and [Predictions](#predictions) to better understand your users. 
+After linking your customer data to Flex through a Unify space, you can set up [Computed Traits](#computed-traits) and [Predictions](#predictions) to better understand your users. 
 
 > warning "Complete an interaction in Flex before creating computed traits in Segment"
 > Before you can create computed traits in Segment, you must confirm your customer identifier settings and then complete a customer interaction in Flex. 
