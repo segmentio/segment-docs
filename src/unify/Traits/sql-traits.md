@@ -181,6 +181,30 @@ For each row (user or account) in the query result, Engage sends an identify or 
     }
 ```
 
+### Dynamic SQL Trait Updates and Query Modifications
+
+SQL Traits offer dynamic functionality that ensures updates for traits with changed values are automatically sent. This feature extends to modifications made to SQL Trait queries. When you add new traits to your SQL Trait query, Engage processes these additions and sends the updates without necessitating a full Resync. This approach guarantees that only pertinent updates are relayed to the destination.
+
+Consider an initial SQL Trait configuration as follows:
+
+`SELECT user_id, example_trait FROM test.users;`
+
+Suppose the query is revised to incorporate a new trait, `emotio`n, resulting in the following update:
+
+`SELECT user_id, example_trait, 'happy' AS emotion FROM test.users;`
+
+With this modification, the newly introduced `emotion` trait will be computed for each user identified by `user_id` in the `test.users` table. The next compute cycle will then dispatch this information to the connected destination through an Identify event, as illustrated below:
+
+```sql
+{
+  "traits": {
+    "emotion": "happy"
+  }
+}
+```
+
+Should the value of an existing trait, such as `example_trait`, change, it will be included in the Identify event alongside the newly added `emotion` trait. Conversely, if the value of `example_trait` remains unchanged, only the new `emotion` trait will be forwarded. This selective transmission ensures that destinations receive only the most current and relevant trait updates.
+
 ## FAQs
 
 ### Is there a limit to the result set that can be queried and imported?
