@@ -59,71 +59,35 @@ Here's an example Identify call payload with traits in the `traits object`:
 
 ```json
 {
-  "anonymousId": "507f191e810c19729de860ea",
-  "channel": "browser",
-  "context": {
-    "ip": "8.8.8.8",
-    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_9_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/40.0.2214.115 Safari/537.36"
-  },
-  "integrations": {
-    "All": false,
-    "Mixpanel": true,
-    "Salesforce": true
-  },
-  "messageId": "022bb90c-bbac-11e4-8dfc-aa07a5b093db",
-  "receivedAt": "2015-02-23T22:28:55.387Z",
-  "sentAt": "2015-02-23T22:28:55.111Z",
-  "timestamp": "2015-02-23T22:28:55.111Z",
-  "traits": {
-    "name": "John Smith",
-    "email": "example@example.com",
-    "plan": "premium",
-    "logins": 5,
-    "address": {
-      "street": "6th St",
-      "city": "San Francisco",
-      "state": "CA",
-      "postalCode": "94103",
-      "country": "USA"
-    }
-  },
+  "messageId": "segment-test-message-uozjhr",
+  "timestamp": "2024-02-22T22:11:15.595Z",
   "type": "identify",
-  "userId": "97980cfea0067",
-  "version": "1.1"
+  "email": "test@example.org",
+  "projectId": "5kXbpcJxms8WWaEdQUkRWc",
+  "traits": {
+    "trait1": 1,
+    "trait2": "test",
+    "trait3": true
+  },
+  "userId": "test-user-cq8idf"
 }
 ```
 And here's an example Track call payload with traits in the `properties object`:
 
 ```json
 {
-  "anonymousId": "23adfd82-aa0f-45a7-a756-24f2a7a4c895",
-  "context": {
-    "library": {
-      "name": "analytics.js",
-      "version": "2.11.1"
-    },
-    "page": {
-      "path": "/academy/",
-      "referrer": "",
-      "search": "",
-      "title": "Analytics Academy",
-      "url": "https://segment.com/academy/"
-    },
-    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/46.0.2490.86 Safari/537.36",
-    "ip": "108.0.78.21"
-  },
-  "event": "Course Clicked",
-  "integrations": {},
-  "messageId": "ajs-f8ca1e4de5024d9430b3928bd8ac6b96",
-  "properties": {
-    "title": "Intro to Analytics"
-  },
-  "receivedAt": "2015-12-12T19:11:01.266Z",
-  "sentAt": "2015-12-12T19:11:01.169Z",
-  "timestamp": "2015-12-12T19:11:01.249Z",
+  "messageId": "segment-test-message",
+  "timestamp": "2024-02-22T22:10:13.640Z",
   "type": "track",
-  "userId": "AiUGstSDIg",
-  "originalTimestamp": "2015-12-12T19:11:01.152Z"
+  "email": "test@example.org",
+  "projectId": "5kXbpcJxms8WWaEdQUkRWc",
+  "properties": {
+    "property1": 1,
+    "property2": "test",
+    "property3": true
+  },
+  "userId": "test-user-1tgg9e",
+  "event": "Segment Test Event Name"
 }
 ```
 
@@ -187,18 +151,7 @@ After you add traits, configure how your selected traits will map to your Destin
 - To update a trait field mapping, click on a field, and in the dropdown search bar enter `traits.` followed by your trait. For example, `traits.email`. Then, click **Use as an event variable**.
 4. Click **Save** and navigate back to Engage to finish building your Audience. 
 
-For Track events, Segment sends traits you select for enrichment in the `properties object` in a Track call. 
-- For example: `properties.trait_1`, `properties.trait_2`
-
-For Identify events, Segment sends traits you select for enrichment in the `traits object` in Identify calls. 
-- For example: `traits.trait_1`, `traits.trait_2`
-
-<!-- hold on this for now
-When a sample event from **Load Test Event from Source** is available, the dropdowns under the mappings will include traits configured previously.
-
-![Load a test event from your source](/docs/engage/images/test-event-from-source.png)
-
--->
+Segment sends traits you select for enrichment in the traits object in Identify calls (`traits.trait_1`, `traits.trait_2`), and as properties in the properties object in Track calls (`properties.trait_1`, `properties.trait_2`).
 
 ## Best practices
 
