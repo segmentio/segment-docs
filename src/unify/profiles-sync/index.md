@@ -86,10 +86,10 @@ You can sync the following tables:
 
 | Type                                                   | Tables                                                                                                                                                 |
 | ------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Profile raw tables | - `external_id_mapping_updates` <br> - `id_graph_updates` <br> - `profile_traits_updates` |
-| Profile materialized tables | - `user_identifier` <br> - `user_traits` <br> - `profile_merges`                      |
-| Event type tables          |  - `Identify` <br> - `Page` <br> - `Group` <br> - `Screen` <br> - `Alias` <br> - `Track`                     |
-| Track event tables         |   To view and select individual track tables, don't sync track tables during the initial setup. Edit your sync settings after enabling Profiles Sync and waiting for the first sync to complete.                   |
+| [Profile raw tables](/docs/unify/profiles-sync/tables/#profile-raw-tables) | - `external_id_mapping_updates` <br> - `id_graph_updates` <br> - `profile_traits_updates` |
+| [Profile materialized tables](/docs/unify/profiles-sync/tables/#tables-segment-materializes) | - `user_identifier` <br> - `user_traits` <br> - `profile_merges`                      |
+| [Event type tables](/docs/unify/profiles-sync/tables/#event-type-tables)          |  - `Identify` <br> - `Page` <br> - `Group` <br> - `Screen` <br> - `Alias` <br> - `Track`                     |
+| [Track event tables](/docs/unify/profiles-sync/tables/#track-event-tables)         |   To view and select individual track tables, don't sync track tables during the initial setup. Edit your sync settings after enabling Profiles Sync and waiting for the first sync to complete.                   |
 
 
 #### Using Selective Sync
