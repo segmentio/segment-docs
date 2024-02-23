@@ -27,6 +27,8 @@ Follow these steps to access Predictions:
 
 1. Navigate to **Engage > Audiences > Computed traits** or **Unify > Traits**. Select **Create computed trait**.
 2. Select **Request Access** to access Predictions.
+   
+**Note:** After requesting prediction access, it may take up to a day to receive the necessary permissions.
 
 ### Build a prediction
 
