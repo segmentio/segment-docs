@@ -125,6 +125,8 @@ To add a Destination:
 
 Segment increases deliverability to destinations in two ways: [retries](#retries) and [replays](/docs/guides/what-is-replay/). Retries happen automatically for all customers, while replays are available on request for [Business](https://segment.com/pricing/) customers.
 
+**Note:** Segment's data flow is primarily unidirectional, from Segment to integrated destinations. It does not inherently support a bidirectional flow where events, once delivered and processed by a destination, are sent back to Segment.
+
 ### Retries
 
 #### Retries in Segment's client libraries
