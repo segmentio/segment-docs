@@ -92,7 +92,7 @@ And here's an example Track call payload with properties in the `properties` obj
 ```
 
 
-### Destination requirements 
+## Destination requirements 
 
 The following are a list of destination-specific requirements for using Trait Enrichment. 
  
@@ -148,10 +148,10 @@ After you add traits, configure how your selected traits will map to your Destin
 2. Click **+ New Mapping**. 
 - All actions in an actions-based destination can receive traits you configure with Trait Activation.
 3. Locate the  **Select mappings** section to confirm the default field mappings match the traits in your custom setup. 
-- To update a trait field mapping, click on a field, and in the dropdown search bar enter `traits.` followed by your trait. For example, `traits.email`. Then, click **Use as an event variable**.
+- To update a trait field mapping for Identify calls, click on a field, and in the dropdown search bar enter `traits.` followed by your trait (for example, `traits.trait_1`). Segment sends traits you select for enrichment in the `traits` object.
+- To update a trait field mapping for Track calls, click on a field, and in the dropdown search bar enter `properties.` followed by your trait (for example, `properties.trait_1`). Segment sends traits you select for enrichment as properties in the `properties` object.
+- Click **Use as an event variable** to add your trait.
 4. Click **Save** and navigate back to Engage to finish building your Audience. 
-
-Segment sends traits you select for enrichment in the `traits` object in Identify calls (`traits.trait_1`, `traits.trait_2`), and as properties in the `properties` object in Track calls (`properties.trait_1`, `properties.trait_2`).
 
 ## Best practices
 
