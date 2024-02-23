@@ -152,7 +152,7 @@ After you add traits, configure how your selected traits will map to your Destin
 - To update a trait field mapping for Track calls, click on a field, and in the dropdown search bar enter `properties.` followed by your trait (for example, `properties.trait_1`). Segment sends traits you select for enrichment as properties in the `properties` object.
 - Click **Use as an event variable** to add your trait.
 4. Click **Save** and navigate back to Engage to finish building your Audience. 
-
+ 
 ## Best practices
 
 For best results with Trait Enrichment, Segment recommends:
