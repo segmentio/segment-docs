@@ -98,18 +98,3 @@ analytics.alias("507f191e81");
 ```
 
 You can see **Alias** event data in your Peaka Catalog under **aliases** table.
-
-<!-- @import "[TOC]" {cmd="toc" depthFrom=1 depthTo=6 orderedList=false} -->
-
-<!-- code_chunk_output -->
-
-- [Getting started](#getting-started)
-- [Supported methods](#supported-methods)
-  - [Page](#page)
-  - [Screen](#screen)
-  - [Identify](#identify)
-  - [Track](#track)
-  - [Group](#group)
-  - [Alias](#alias)
-
-<!-- /code_chunk_output -->
