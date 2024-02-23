@@ -148,7 +148,7 @@ After you add traits, configure how your selected traits will map to your Destin
 2. Click **+ New Mapping**. 
 - All actions in an actions-based destination can receive traits you configure with Trait Activation.
 3. Locate the  **Select mappings** section to confirm the default field mappings match the traits in your custom setup. 
-- To update a trait field mapping for Identify calls, click on a field, and in the dropdown search bar enter `traits.` followed by your trait (for example, `traits.trait_1`). Segment sends traits you select for enrichment in the `traits` object.
+- To update a trait field mapping for Identify calls, click on a field, and in the dropdown search bar enter `traits.` followed by your trait (for example, `traits.trait_1`). Segment sends traits you select for enrichment as traits in the `traits` object.
 - To update a trait field mapping for Track calls, click on a field, and in the dropdown search bar enter `properties.` followed by your trait (for example, `properties.trait_1`). Segment sends traits you select for enrichment as properties in the `properties` object.
 - Click **Use as an event variable** to add your trait.
 4. Click **Save** and navigate back to Engage to finish building your Audience. 
