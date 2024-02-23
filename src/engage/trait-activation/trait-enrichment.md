@@ -13,7 +13,7 @@ Use the following steps to set up Trait Enrichment with Audiences or Journeys.
 
 > info ""
 > The setup steps you'll use for Trait Enrichment depend on the type of Destination [you've connected](/docs/engage/trait-activation/trait-activation-setup/). 
-> - For Facebook Custom Audiences and Google Adwords, use [set up Trait Enrichment](https://docs/engage/trait-activation/trait-enrichment/#destination-requirements). 
+> - For Facebook Custom Audiences and Google Adwords, [use these destination requirements](#destination-requirements). 
 > - If you're using Destination Actions, such as Salesforce Marketing Cloud, Braze Actions, or Salesforce Actions, use the [Destination Actions setup steps](#destination-actions-setup).
 
 
@@ -52,10 +52,10 @@ With Customized setup, you can choose which traits you want to map to your desti
 3. Click **Save** and finish building your audience or journey.
 
 
-Segment sends traits you select for enrichment in the traits object in Identify calls (`traits.trait_1`, `traits.trait_2`), and as properties in the properties object in Track calls (`properties.trait_1`, `properties.trait_2`).
+Segment sends traits you select for enrichment in the `traits` object in Identify calls (`traits.trait_1`, `traits.trait_2`), and as properties in the `properties` object in Track calls (`properties.trait_1`, `properties.trait_2`).
 
 
-Here's an example Identify call payload with traits in the `traits object`:
+Here's an example Identify call payload with traits in the `traits` object:
 
 ```json
 {
@@ -72,7 +72,7 @@ Here's an example Identify call payload with traits in the `traits object`:
   "userId": "test-user-cq8idf"
 }
 ```
-And here's an example Track call payload with traits in the `properties object`:
+And here's an example Track call payload with properties in the `properties` object:
 
 ```json
 {
@@ -151,7 +151,7 @@ After you add traits, configure how your selected traits will map to your Destin
 - To update a trait field mapping, click on a field, and in the dropdown search bar enter `traits.` followed by your trait. For example, `traits.email`. Then, click **Use as an event variable**.
 4. Click **Save** and navigate back to Engage to finish building your Audience. 
 
-Segment sends traits you select for enrichment in the traits object in Identify calls (`traits.trait_1`, `traits.trait_2`), and as properties in the properties object in Track calls (`properties.trait_1`, `properties.trait_2`).
+Segment sends traits you select for enrichment in the `traits` object in Identify calls (`traits.trait_1`, `traits.trait_2`), and as properties in the `properties` object in Track calls (`properties.trait_1`, `properties.trait_2`).
 
 ## Best practices
 
