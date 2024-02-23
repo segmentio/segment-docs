@@ -351,10 +351,6 @@ This table has the following columns:
 | `timestamp`                         | The UTC-converted timestamp set by the Segment library.                            |
 
 
-<!--
-To do: add some info here about when customers might want to materialize tables themselves 
-
--->
 ## Tables you materialize 
  
 You can materialize the following tables with your own tools, or using Segment's [open-source dbt models](https://github.com/segmentio/profiles-sync-dbt){:target="_blank"}:
@@ -362,6 +358,8 @@ You can materialize the following tables with your own tools, or using Segment's
 - [`id_graph`](#the-idgraph-table)
 - [`external_id_mapping`](#the-externalidmapping-table)
 - [`profile_traits`](#the-profiletraits-table)
+
+You might want to materialize your own tables if, for example, you want to transform additional data or join Segment profile data with external data before materialization.
 
 > success ""
 > You can alternatively use tables that Segment materializes and syncs to your data warehouse. [Learn more](/docs/unify/profiles-sync/tables/#tables-segment-materializes) about the tables Segment materializes.

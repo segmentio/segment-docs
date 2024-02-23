@@ -16,13 +16,13 @@ Before you begin, prepare for setup with these tips:
 
 - To connect your warehouse to Segment, you must have read and write permissions with the warehouse Destination you choose.
 - During step 2, you’ll copy credentials between Segment and your warehouse Destination. To streamline setup, open your Segment workspace in one browser tab and open another with your warehouse account.
-- Make sure to copy any IP addresses Segment asks you to allowlist in your warehouse Destination.
+- Make sure to copy any IP addresses Segment asks you to allowlist in your warehouse destination.
 
 ### Step 1: Select a warehouse 
 
-You’ll first choose the Destination warehouse to which Segment will sync profiles. Profiles Sync supports the Snowflake, Redshift, BigQuery, Azure, and Postgres warehouse Destinations. Your initial setup will depend on the warehouse you choose.
+You’ll first choose the destination warehouse to which Segment will sync profiles. Profiles Sync supports the Snowflake, Redshift, BigQuery, Azure, and Postgres warehouse Destinations. Your initial setup will depend on the warehouse you choose.
 
-The following table shows the supported Profiles Sync warehouse Destinations and the corresponding required steps for each. Select a warehouse, view its Segment documentation, then carry out the warehouse’s required steps before moving to step 2 of Profiles Sync setup:
+The following table shows the supported Profiles Sync warehouse destinations and the corresponding required steps for each. Select a warehouse, view its Segment documentation, then carry out the warehouse’s required steps before moving to step 2 of Profiles Sync setup:
 
 | Warehouse Destination                                                     | Required steps                                                                                                                                                   |
 | ------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -67,7 +67,7 @@ To connect your warehouse:
 
 1. Configure your database. 
 - Be sure to log in with a user who has read and write permissions so that Segment can write to your database.
-- Segment shows an IP address to allowlist.  Copy it to your warehouse Destination.
+- Segment shows an IP address to allowlist.  Copy it to your warehouse destination.
 2. Enter a schema name to help you identify this space in the warehouse, or use the default name provided. 
 - The schema name can't be changed once the warehouse is connected.
 4. Enter your warehouse credentials, then select **Test Connection**.
@@ -75,7 +75,7 @@ To connect your warehouse:
   * If the connection test fails, verify that you’ve correctly entered the warehouse credentials, then try again.
 
 
-### Step 3: Set Selective Sync
+### Step 3: Set up Selective Sync
 
 Set up Selective Sync to control the exact tables and columns that Segment will sync to your connected data warehouse.
 
@@ -140,7 +140,7 @@ Reach out to [Segment support](https://app.segment.com/workspaces?contact=1){:ta
 
 During setup, you can optionally materialize views on your own, or use Segment's open source dbt models. 
 
-You might use this option if, for example, you want to transform additional data or join Segment profile data with external data before materialization. 
+You might want to materialize your own tables if, for example, you want to transform additional data or join Segment profile data with external data before materialization. 
  
 > success ""
 > You can alternatively use [tables that Segment materializes](/docs/unify/profiles-sync/tables/#tables-segment-materializes) and syncs to your data warehouse. 
