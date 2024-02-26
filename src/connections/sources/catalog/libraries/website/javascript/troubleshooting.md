@@ -197,7 +197,7 @@ The AJS cookies being set under segment.com are first-party cookies. They are pa
 
 If you are having issues with your destinations loading, there is a [known issue that was reported](https://github.com/prototypejs/prototype/issues/338){:target="_blank"}.  
 
-In order to prevent this from happening, you can preserve the original Array.from method, without letting the prototype override it.
+In order to prevent the issues, you can preserve the original `array.from` method without letting the prototype override it.
 
 ## Will Google Chrome's third-party cookie changes impact Segment Analytics.js?
 
