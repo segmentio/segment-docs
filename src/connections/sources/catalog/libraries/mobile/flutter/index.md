@@ -71,7 +71,7 @@ These are the options you can apply to configure the client:
 | `cdnHost`            | cdn-settings.segment.com/v1 | Used to specify the regional Segment settings endpoint. |
 | `errorHandler`             | null      | Custom error handler. By default, this logs errors to the standard flutter logger. |
 | `trackApplicationLifecycleEvents`  | false     | Set this to `true` to enable automatic tracking for [app lifecycle events](/docs/connections/spec/mobile/#lifecycle-events) which include, application installed, opened, updated, backgrounded. |
-| `trackDeeplinks`           | false     | Set this to `true` to enable automatic tracking for when the user opens the app through a deep link. **Note**: When you send this flag, the SDK plugin_appsflyer ignores [onAppOpenAttribution](https://github.com/AppsFlyerSDK/appsflyer-flutter-plugin/blob/master/doc/Guides.md#Unified-deep-linking){:target="_blank"} |
+| `trackDeeplinks`           | false     | Set this to `true` to enable automatic tracking for when the user opens the app through a deep link. **Note**: When you send this flag, the SDK plugin_appsflyer ignores [onAppOpenAttribution](https://github.com/AppsFlyerSDK/appsflyer-flutter-plugin/blob/master/doc/Guides.md#Unified-deep-linking){:target="_blank"}. |
 | `autoAddSegmentDestination`| true      | Set this to `false` to skip adding the `SegmentDestination` plugin. |
 | `defaultIntegrationSettings`| null | Plugin settings that are used if the request to get the settings from Segment fails. |
 | `maxBatchSize`| true      | The maximum number of events you can send to the API at once is 100. |
@@ -146,7 +146,7 @@ See how to set up [automatic screen tracking](#automatic-screen-tracking).
 
 
 ### Identify
-The [Identify](/docs/connections/spec/identify/) method lets you tie a user to their actions and record traits about them. This includes a unique user ID and any optional traits you know about them like their email, name, address. The traits option can include any information you might want to tie to the user, but when using any of the [reserved user traits](/docs/connections/spec/identify/#traits), you should make sure to only use them for their intended meaning. All reserved traits are strongly typed by the ```UserTraits``` class. When you use traits not listsed as a reserved user trait, these go under the ```custom``` property.  
+The [Identify](/docs/connections/spec/identify/) method lets you tie a user to their actions and record traits about them. This includes a unique user ID and any optional traits you know about them like their email, name, address. The traits option can include any information you might want to tie to the user, but when using any of the [reserved user traits](/docs/connections/spec/identify/#traits), you should make sure to only use them for their intended meaning. All reserved traits are strongly typed by the `UserTraits` class. When you use traits not listed as a reserved user trait, these go under the `custom` property.  
 
 {% codeexample %}
 {% codeexampletab Method signature %}
@@ -169,7 +169,7 @@ analytics.identify(userId: "testUserId", userTraits: UserTraits(
 
 ### Group
 
-The [Group](/docs/connections/spec/group/) method is how you associate an individual user with a group — whether it's a company, organization, account, project, team. This includes a unique group ID and any optional group traits you know about them like the company name, industry, the number of employees. The traits option can include any information you might want to tie to the group, but when using any of the [reserved group traits](/docs/connections/spec/group/#traits), you should make sure to only use them for their intended meaning. All reserved traits are strongly typed by the ```GroupTraits``` class. When you use traits not listsed as a reserved user trait, these go under the ```custom``` property.
+The [Group](/docs/connections/spec/group/) method is how you associate an individual user with a group — whether it's a company, organization, account, project, team. This includes a unique group ID and any optional group traits you know about them like the company name, industry, the number of employees. The traits option can include any information you might want to tie to the group, but when using any of the [reserved group traits](/docs/connections/spec/group/#traits), you should make sure to only use them for their intended meaning. All reserved traits are strongly typed by the ```GroupTraits``` class. When you use traits not listed as a reserved user trait, these go under the `custom` property.
 
 {% codeexample %}
 {% codeexampletab Method signature %}
@@ -337,7 +337,7 @@ Plugins are implemented by extending one of the provided plugin classes. The ava
 
 Any plugin must be an extension of one of these classes.
 
-You can them customize the functionality by overriding different methods on the base class. For example, here is a `Logger` plugin:
+You can then customize the functionality by overriding different methods on the base class. For example, here is a `Logger` plugin:
 
 ```dart
 import 'dart:convert';
@@ -502,7 +502,7 @@ LogFactory.logger = CustomLogger();
 
 You can handle analytics client errors through the `errorHandler` option.
 
-The error handler configuration receives a function which gets called whenever an error happens on the analytics client. It receives an Exception, that extends one of the errors from [errors.dart](packages/core/lib/errors.dart).
+The error handler configuration receives a function which gets called whenever an error happens on the analytics client. It receives an Exception, that extends one of the errors from [errors.dart](https://github.com/segmentio/analytics_flutter/blob/main/packages/core/lib/errors.dart){:target="_blank"}.
 
 You can use this error handling to trigger different behaviors in the client when a problem occurs. For example if the client gets rate limited, you could use the error handler to swap flush policies to be less aggressive.
 
