@@ -4,50 +4,50 @@ id: 651ea97b7982672f1d66b93c
 beta: true
 ---
 
-[Peaka](https://peaka.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners){:target="_blank”} is a Zero-ETL platform that connects to any source. Ingest high-volume event and streaming data. Replace batch with real-time access.
+[Peaka](https://peaka.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners){:target="_blank”} is a Zero-ETL platform that connects to any source. With Peak you can ingest high-volume event and streaming data, and replace batch with real-time access.
 
 By integrating Peaka with their Segment workspace, users can designate Peaka as one of their destinations. This means that events such as pages, screens, tracks,
-and more will be sent directly to Peaka's Segment data catalog. With this integration, Peaka users can begin querying their product events.
+and more send directly to Peaka's Segment data catalog. With this integration, Peaka users can begin querying their product events.
 
-This destination is maintained by Peaka. For any issues with the destination, [contact the Peaka Support team](mailto:info@peaka.com).
+Peaka maintains this destination. For any issues with the destination, [contact the Peaka Support team](mailto:info@peaka.com).
 
 ## Getting started
 
 1. From your workspace's [Destination catalog page](https://app.segment.com/goto-my-workspace/destinations/catalog){:target="_blank”} search for **Peaka**
-2. Select **Peaka** and click **Add Destination**
-3. Choose which Source should send data to the **Peaka** destination.
-4. Go to the [Peaka](https://peaka.studio/){:target="_blank"}, create your Segment Catalog and copy the **API key**.
-5. Follow the steps in **Peaka** [Documentation](https://www.peaka.com/docs/integrations/segment/) on how to create your Segment Catalog and obtain your **API key**
-6. Enter the **API Key** in the **Peaka** destination settings in Segment.
+2. Select **Peaka** and click **Add destination**.
+3. Choose which source should send data to the Peaka destination.
+4. Log in to [Peaka](https://peaka.studio/){:target="_blank"}.
+5. Follow the steps in the [Peaka documentation](https://www.peaka.com/docs/integrations/segment/){:target="_blank"} to create your Segment catalog and obtain your **API key**.
+6. Enter the **API Key** in the **Peaka** destination settings in the Segment UI.
 
 ## Supported methods
 
-**Peaka** supports the following methods, as specified in the [Segment Spec](/docs/connections/spec).
+Peaka supports the following methods, as specified in the [Segment Spec](/docs/connections/spec).
 
 ### Page
 
-Segment sends [Page](/docs/connections/spec/page) calls to **Peaka**. For example:
+Segment sends [Page](/docs/connections/spec/page) calls to Peaka. For example:
 
 ```js
 analytics.page("Retail Page", "Home");
 ```
 
-You can see **Page** event data in your Peaka Catalog under **pages** table.
+You can see Page event data in your Peaka Catalog under the pages table.
 
 ### Screen
 
-Segment sends [Screen](/docs/connections/spec/screen) calls to **Peaka**. For example:
+Segment sends [Screen](/docs/connections/spec/screen) calls to Peaka. For example:
 
 ```obj-c
 [[SEGAnalytics sharedAnalytics] screen:@"Home"
                             properties:@{ @"Feed Type": @"private" }];
 ```
 
-You can see **Screen** event data in your Peaka Catalog under **screens** table.
+You can see Screen event data in your Peaka Catalog under the screens table.
 
 ### Identify
 
-Segment sends [Identify](/docs/connections/spec/identify) calls to **Peaka**. For example:
+Segment sends [Identify](/docs/connections/spec/identify) calls to Peaka. For example:
 
 ```js
 analytics.identify("97980cfea0067", {
@@ -58,11 +58,11 @@ analytics.identify("97980cfea0067", {
 });
 ```
 
-You can see **Identify** event data in your Peaka Catalog under **identifies** table.
+You can see Identify event data in your Peaka Catalog under the identifies table.
 
 ### Track
 
-Segment sends[Track](/docs/connections/spec/track) calls to **Peaka**. For example:
+Segment sends[Track](/docs/connections/spec/track) calls to Peaka. For example:
 
 ```js
 analytics.track("User Registered", {
@@ -71,11 +71,11 @@ analytics.track("User Registered", {
 });
 ```
 
-You can see **Track** event data in your Peaka Catalog under **tracks** table.
+You can see Track event data in your Peaka Catalog under the tracks table.
 
 ### Group
 
-Segment sends [Group](/docs/connections/spec/group) calls to **Peaka**. For example:
+Segment sends [Group](/docs/connections/spec/group) calls to Peaka. For example:
 
 ```js
 analytics.group("0e8c78ea9d97a7b8185e8632", {
@@ -87,14 +87,14 @@ analytics.group("0e8c78ea9d97a7b8185e8632", {
 });
 ```
 
-You can see **Group** event data in your Peaka Catalog under **groups** table.
+You can see Group event data in your Peaka Catalog under the groups table.
 
 ### Alias
 
-Segment sends [Group](/docs/connections/spec/alias) calls to **Peaka**. For example:
+Segment sends [Group](/docs/connections/spec/alias) calls to Peaka. For example:
 
 ```js
 analytics.alias("507f191e81");
 ```
 
-You can see **Alias** event data in your Peaka Catalog under **aliases** table.
+You can see Alias event data in your Peaka Catalog under the aliases table.
