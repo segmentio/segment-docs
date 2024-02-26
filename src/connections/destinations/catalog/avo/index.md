@@ -1,7 +1,6 @@
 ---
 title: Avo Destination
 id: 65c2465d0d7d550aa8e7e5c6
-beta: true
 redirect_from: "/connections/destinations/catalog/actions-avo/"
 ---
 
