@@ -355,3 +355,9 @@ This is usually caused by the page redirecting or reloading before the tracking 
 This is usually only an issue in [Mixpanel](/docs/connections/destinations/catalog/mixpanel#alias), since it's the only destination that requires a call to [alias](/docs/connections/spec/alias) in the browser to link anonymous browsing history to a new identified user.
 
 Remember that for destinations that require aliasing, you must make the [Alias call](/docs/connections/spec/alias) before you make the [Identify call](/docs/connections/spec/identify) for that user. Even if you make an [Identify call](/docs/connections/spec/identify) from a server library, it can't happen before the client-side [alias](/docs/connections/spec/alias).
+
+### Can userIds be updated?
+
+Unfortunately there is no way to change an existing userId within Segment. Historical data with the previous userId will remain the same, the new userId will not replace the previous userId in Segment event call logs. For downstream destination's you'll want to consult their docs on user profile behaviors when using a new userId.
+ 
+Also, changing userId's is incredibly hard to do as that is one of the most fundamental bit of analytics. Certain downstream analytics tools actually do not let you change the userId at all once set. Others do, but the process will be different for each tool.
