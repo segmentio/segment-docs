@@ -31,7 +31,7 @@ Keep the following terms in mind as you begin to explore Journeys.
 | Multi-branch split   | A step in which you define any number of conditions. Each condition represents a separate branch leading away from the step. Users travel down the branch of the condition they meet. <br /> <br /> Journeys does not enforce mutual exclusivity in branch conditions . For more information, see [Best Practices](#). |
 | Send to destinations | A step in which you can send track or identify calls to Event destinations, or a list of users to a List destination.                                                                                                                                                                                                  |
 | Step name            | The name of the step that displays in the Journey builder and overview.                                                                                                                                                                                                                                             |
-| Key                  | Name of the Send to Destination step used to identify the step users are on when Journeys sends information to the destination. For Track events, the property name uses this key. For Identify events, the trait name uses this key. <br /><br />For more information, see [Send data to Destinations](#).                   |
+| Key                  | Name of the Send to Destination step used to identify the step users are on when Journeys sends information to the destination. For Track events, the property name uses this key. For Identify events, the trait name uses this key. <br /><br />For more information, see [Send data to Destinations](/docs/engage/journeys/send-data/).                   |
 
 ## Statuses
 
@@ -39,6 +39,8 @@ Keep the following terms in mind as you begin to explore Journeys.
 | ------------------------ | --------------------------------------------------------------------------------------------------------------------------------- |
 | Draft Journey            | A Journey which is not yet computing nor sending data to destinations. <br /><br />For more information, see [Draft Journeys](#draft-journeys). |
 | Published (live) Journey | A Journey that is computing and sending data to destinations. <br /><br />For more information, see [Published Journeys](#published-journeys).                  |
+| Archived Journey         | A Journey that has been archived. <br /><br />For more information, see [Archive a Journey](/docs/engage/journeys/build-journey/#archive-a-journey).                  |
+| Failed (live) Journey    | A Journey that has been published, but failed during the live computations due to an unforeseen error. <br /><br />Contact [Segment Support](https://segment.com/help/contact/) to learn more. |
 
 ## Steps with Audiences
 

@@ -125,7 +125,7 @@ For best results with Trait Enrichment, Segment recommends:
 - Using Trait Enrichment with new audiences.
 - Using smaller audiences for real-time use cases, as data delivery is slower for large audiences. 
 
-## Frequently asked questions
+## FAQs
 
 #### What's the difference between Trait Enrichment and ID Sync? 
 

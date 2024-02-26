@@ -145,6 +145,14 @@ To check the status of your extractions:
 #### Replays
 You can choose to replay syncs. To replay a specific sync, contact [friends@segment.com](mailto:friends@segment.com). Keep in mind that triggering a replay resyncs all records for a given sync.
 
+#### Email alerts
+You can opt in to receive email alerts regarding notifications for Reverse ETL. 
+
+To subscribe to email alerts: 
+1. Navigate to **Settings > User Preferences**. 
+2. Select **Reverse ETL** in the **Activity Notifications** section.
+3. Click the toggle for **Reverse ETL Sync Failed** to receive notifications when your Reverse ETL sync fails. 
+
 ### Edit your model
 
 To edit your model:
@@ -298,3 +306,18 @@ Column count | The maximum number of columns a single sync will process. | 512 c
 Column name length | The maximum length of a record column. | 128 characters
 Record JSON size | The maximum size for a record when converted to JSON (some of this limit is used by Segment). | 512 KiB
 Column JSON size | The maximum size of any single column value. | 128 KiB
+
+## FAQs
+
+#### Why do my sync results show *No records extracted* when I select *Updated records* after I enable the mapping? 
+It's expected that when you select **Updated records** the records do not change after the first sync. During the first sync, the reverse ETL system calculates a snapshot of all the results and creates records in the `_segment_reverse_etl` schema. All the records are considered as *Added records* instead of *Updated records* at this time. The records can only meet the *Updated records* condition when the underlying values change after the first sync completes.
+
+#### Can I be notified when Reverse ETL syncs fail?
+Yes, you can sign up for Reverse ETL sync notifications.
+
+To receive Reverse ETL sync notifications: 
+1. Navigate to **Settings > User Preferences**.
+2. Select **Reverse ETL** In the **Activity Notifications** section.
+3. Enable the toggle for **Reverse ETL Sync Failed**.
+
+In case of consecutive failures, Segment sends notifications for every sync failure. Segment doesn't send notifications for partial failures.

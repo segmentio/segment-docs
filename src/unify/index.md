@@ -3,13 +3,18 @@ title: Unify Overview
 plan: unify
 redirect_from:
   - '/engage/profiles/'
+  - '/unify/traits/'
 ---
 
 Use Segment Unify, formerly known as Profiles, for a complete view of your customers.
 
-With [Identity Resolution](#identity-resolution), track every interaction across the entire user journey to create unified, real-time customer identities. View user profiles in one place through the [Profile explorer](#profile-explorer) in the Segment app. Use the [Profile API](#profile-api) to programmatically query user profiles, traits, and events.
+With [Identity Resolution](#identity-resolution), track every interaction across the entire user journey to create unified, real-time customer identities. View user profiles in one place through the [Profile explorer](#profile-explorer) in the Segment app. Use the [Profile API](#profile-api) to programmatically query user profiles, traits, and events. 
 
 You can then use this interaction data with customer engagement tools, such as Engage, to deliver personalized, omnichannel experiences.
+
+> success ""
+> If you need to troubleshoot or learn about your profile data, use [Profiles Insights](/docs/unify/insights/) for a transparent view of your Unify profiles. 
+
 
 ## Getting started
 
@@ -44,8 +49,9 @@ With the Profile explorer, you have a complete view of your customers.
 > info ""
 > If you're using Engage, use the Profile explorer to view audiences, traits, journey membership, and [subscription states](/docs/engage/user-subscriptions/) for email and phone numbers.
 
-## Enrich profiles with traits
-Add detail to user profiles with new traits and use them to power personalized marketing campaigns. You can add new traits to your user or account profiles in Unify using:
+## Enrich profiles with traits 
+
+With Unify Plus, you can add detail to user profiles with new traits and use them to power personalized marketing campaigns. Add new traits to your user or account profiles using:
 
 - [**Computed Traits:**](/docs/unify/traits/computed-traits/) Use the Unify drag-and-drop interface to build per-user (B2C) or per-account (B2B) metrics on user profiles (for example, “lifetime value” or “lead score”).
 - [**SQL Traits:**](/docs/unify/traits/sql-traits/) Run custom queries on your data warehouse using the Unify SQL editor, and import the results into Segment. With SQL Traits, you can pull rich, uncaptured user data back into Segment.
@@ -63,6 +69,14 @@ Use the Profile API to help your organization:
 - Qualify leads faster.
 
 Visit Segment's [Profile API doc](/docs/unify/profile-api/) for more information.
+
+## Profiles Insights
+
+Use Profiles Insights to troubleshoot your event data with a transparent view of your Unify profiles. 
+
+Learn about your events and identifiers on your profiles and answer questions such as why two profiles didn't merge, why an event wasn't resolved to a profile, or why an external ID isn't present.
+
+Visit the [Profiles Insights](/docs/unify/insights/) doc to learn more. 
 
 ## Next steps: activate your profiles with Engage
 

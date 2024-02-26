@@ -7,8 +7,6 @@ id: 5c8bcba020ab84000148897c
 
 This destination is maintained by EMMA. For any issues with the destination, [contact the EMMA Support team](mailto:support@emma.io).
 
-{% include content/beta-note.md %}
-
 ## Getting Started
 
 

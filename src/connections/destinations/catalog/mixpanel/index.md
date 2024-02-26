@@ -418,7 +418,16 @@ Remember, Segment sends one event per `page` call.
 
 ### Incrementing properties
 
-To increment at the property level, tell Segment which properties you want to increment using the **Properties to increment** setting and Segment calls Mixpanel's `increment` for you when you attach a number to the property (for example, `'items purchased': 5`)
+To increment at the property level, tell Segment which properties you want to increment using the **Properties to increment** setting and Segment calls Mixpanel's `increment` for you when you attach a number to the property. For example, you need to increment the following property:
+
+```javascript
+analytics.track('Event Name', {
+feedback_day_number: 1
+}
+);
+```
+
+Enter the `propertyname: _feedback_day_number_` in the destination settings. The property value now increases from 1.
 
 ### Reset Mixpanel Cookies
 
@@ -480,6 +489,12 @@ If you're testing in Xcode remember you must first background the app, then the 
 3. Make sure you disable the default filter in the Mixpanel People Explore tab.
 
 ## Appendices
+
+
+### Distinct ID
+
+In Device-mode, when a `distinct_id` is present in the browser, it is automatically sent to Mixpanel. In Cloud-mode, the `distinct_id` is set to Segment's `userId` if one is present. If there is no `userId` on the payload, `anonymousId` is set instead.
+
 
 ### IP
 

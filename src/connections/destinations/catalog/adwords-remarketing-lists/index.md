@@ -9,6 +9,9 @@ id: 5a6b50f1c900fa00011858fd
 
 The Google Ads Remarketing Lists destination is one of Segment's most popular Engage List destinations. It has a variety of use cases related to exclusion, acquisition (using Similar Audience), remarketing, and more.
 
+> info "Consent Mode"
+> Segment is currently building Consent Mode for all affected Google destinations. This will be available before March 6, 2024.
+
 This destination can send audiences created in [Engage](/docs/engage/) to Google Ads as a [Customer List](https://support.google.com/google-ads/answer/6276125){:target="_blank"}. Once you set this destination up, Segment sends an initial user list of users to the [Google Ads API](https://developers.google.com/google-ads/api/docs/remarketing/overview){:target="_blank"}. As users move in and out of the audience, Segment automatically updates the list in Google every hour. This allows you to run advertising campaigns without having manually update the list of users to target in your Google Ads campaigns.
 
 
@@ -126,6 +129,10 @@ If a user has more than one email address or IDFA on their account as `external_
 ### Invalid Settings error in Event Delivery
 
 Make sure that this destination was created in [Engage](/docs/engage/) as it requires additional event data not available in standard destinations.
+
+### Invalid user list ID error in Event Delivery
+
+When you first connect a destination to an audience, Segment triggers a call to the destination to create the audience downstream. Once Segment creates the audience, the destination API returns an audience ID. For subsequent updates to the audience in the destination (adding or removing users), Segment uses this ID to send requests to the destination. The invalid user list ID error usually means that the audience ID no longer exists in the destination. To resolve this, you'll need to either recreate the audience or create a *new instance* of the destination and link it to the audience. Removing and re-adding the same instance of the destination will not work.
 
 ## FAQs
 

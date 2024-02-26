@@ -28,6 +28,10 @@ You can use this destination to map your `.page()` calls to **Page Load Conversi
 5. On the destination Settings tab, enter the **Conversion ID** from your Google Ads (Gtag) account. 
 6. Select the 'Click Conversion' setting. Enter the name of the event as it appears in the [`track`](/docs/connections/spec/track) call and map it to your Google Ads (Gtag) conversion label.
 
+> info "Consent Mode"
+> Segment is currently building Consent Mode for all affected Google destinations. This will be available before March 6, 2024.
+
+
 ## Page
 
 If you want to map all your unnamed `.page()` calls to a default Page Load Conversion, you can enter the Conversion ID in **Settings > Default Page Conversion**. However, if you created specific Page Load Conversions in Google Ads that you'd like to map your named `.page()` calls in Segment, you can map the events in **Settings > Page Load Conversions**.
@@ -76,6 +80,9 @@ To figure out if an event is flagged for conversion, follow these steps:
       ![Network tab](../../images/network-tab.png)
 
 5. Go to the **Settings** tab for your Gtag destination in Segment on a new webpage and choose **Click Conversions** to look at the mapped `track()` events and make sure the events are mapped to the correct **Conversion Label**.
+
+> info ""
+> The conversion label is unique to each conversion action and is configured per mapping. You can find the conversion label in the [event snippet](https://support.google.com/google-ads/answer/7548399?hl=en#:~:text=For%20website%20conversion,currency%27%3A%20%27USD%27%0A%20%20%20%20%20%20%7D){:target="_blank"}. The event snippet should have `send_to: 'AW-123456789/AbC-D_efG-h12_34-567'`. The conversion label is the part after the '/'.
 
       ![Edit Settings](../../images/conversion-settings.png)
 

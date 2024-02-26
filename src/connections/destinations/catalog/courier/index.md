@@ -8,8 +8,6 @@ id: 5e4b07ed88472cc19ea4f8d0
 
 This destination is maintained by Courier. For any issues with the destination, [contact the Courier support team](mailto:support@courier.com).
 
-{% include content/beta-note.md %}
-
 ## Getting Started
 
 1. From the Destinations catalog page in the Segment App, click **Add Destination**.

@@ -52,12 +52,12 @@ You can also use this page to [enable destination insert functions](#enable-the-
 Segment invokes a separate part of the function (called a "handler") for each event type that you send to your destination insert function.
 
 > info ""
-> Your function isn't invoked for an event if you've configured a [destination filter](/docs/connections/destinations/destination-filters/), and the event doesn't pass the filter.
+> If you’ve configured a [destination filter](/docs/connections/destinations/destination-filters/), and the event doesn’t pass the filter, then your function isn’t invoked for that event as destination filters are applied before insert functions.
 
 The default source code template includes handlers for all event types. You don't need to implement all of them - just use the ones you need, and skip the ones you don't.
 
 > info ""
-> Removing the handler for a specific event type results in blocking the events of that type from arriving at their destination. 
+> Removing the handler for a specific event type results in blocking the events of that type from arriving at their destination. To keep an event type as is but still send it downstream, add a `return event` inside the event type handler statement.
 
 Insert functions can define handlers for each message type in the [Segment spec](/docs/connections/spec/):
 
@@ -99,6 +99,8 @@ async function onTrack(event) {
 ```
 
 To change which event type the handler listens to, you can rename it to the name of the message type. For example, if you rename this function `onIdentify`, it listens for "Identify" events instead.
+
+To ensure the Destination processes an event payload modified by the function, return the `event` object at the handler's end.
 
 > info ""
 > Functions' runtime includes a `fetch()` polyfill using a `node-fetch` package. Check out the [node-fetch documentation](https://www.npmjs.com/package/node-fetch){:target="_blank"} for usage examples.
@@ -162,9 +164,14 @@ If you don't supply a function for an event type, Segment throws an `EventNotSup
 
 You can read more about [error handling](#destination-insert-functions-logs-and-errors) below.
 
+## Runtime and dependencies
+
+{% include content/functions/runtime.md %}
+
+
 ## Insert Functions and Actions destinations
 
-There are a couple of behavorial nuances to consider when using Insert Functions with Actions destinations.
+There are a couple of behavioral nuances to consider when using Insert Functions with Actions destinations.
 
 Insert Functions block Actions destinations from triggering multiple mapping subscriptions for a single payload. If you have a single payload coming through the pipeline that you expect to trigger multiple mapping subscriptions in your configuration, it will work as expected without an Insert Function enabled. With an Insert Function enabled, however, when a payload that is meant to trigger multiple mappings subscriptions is seen, no mappings subscriptions will fire. If you have an Insert Function enabled for a destination, make sure that you configure your payloads so that they only trigger a single mapping subscription.
 
@@ -469,13 +476,22 @@ Yes, Segment retries invocations that throw RetryError or Timeout errors (tempor
 
 No, Segment can't guarantee the order in which the events are delivered to an endpoint.
 
+
 ##### Can I create a device-mode destination?
 
 No, destination insert functions are currently available as cloud-mode destinations only. Segment is in the early phases of exploration and discovery for supporting customer "web plugins" for custom device-mode destinations and other use cases, but this is unsupported today.
 
 ##### Can I connect an insert function to multiple destinations?
 
-No, an insert function can only be connected to one destination.
+Yes, an insert function can be connected to multiple destinations. 
+
+##### Can I have destination filters and a destination insert function in the same connection?
+
+Yes, you can have both destination filters and destination insert functions in the same connection. 
+
+##### Are insert functions invoked before or after destination filters are applied?
+
+Segment's data pipeline applies destination filters before invoking insert functions. 
 
 {% comment %}
 

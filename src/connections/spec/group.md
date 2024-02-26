@@ -2,17 +2,17 @@
 title: 'Spec: Group'
 ---
 
-The `group` API call is how you associate an individual user with a group, such as a company, organization, account, project, or team.
+The Group API call is how you associate an individual user with a group, such as a company, organization, account, project, or team.
 
-The `group` call enables you to identify what account or organization your users are part of. There are two IDs that are relevant in a `group` call: the `userId`, which belongs and refers to the user, and the `groupId`, which belongs and refers to the specific group. A user can be in more than one group which would mean different `groupId`s, but the user will only have one `userId` that is associated to each of the different groups. Keep in mind that not all platforms support multiple groups for a single user. 
+The Group call enables you to identify what account or organization your users are part of. There are two IDs that are relevant in a Group call: the `userId`, which belongs and refers to the user, and the `groupId`, which belongs and refers to the specific group. A user can be in more than one group which would mean different `groupId`s, but the user will only have one `userId` that is associated to each of the different groups. Keep in mind that not all platforms support multiple groups for a single user. 
 
 {% include components/reference-button.html href="https://university.segment.com/introduction-to-segment/324252?reg=1&referrer=docs" icon="media/academy.svg" title="Segment University: The Segment Methods" description="Check out our high-level overview of these APIs in Segment University. (Must be logged in to access.)" %}
 
 In addition to the `groupId`, which is how you'd identify the specific group or company, the group method receives traits that are specific to the group, like industry or number of employees for example, that belong to that specific account. Like the traits of an identify call, you can update these when you call the same trait with a different value.
 
-When using the `group` call, it's helpful if you have accounts with multiple users.
+When using the Group call, it's helpful if you have accounts with multiple users.
 
-Here's the payload of a typical `group` call, with most [common fields](/docs/connections/spec/common/) removed:
+Here's the payload of a typical Group call, with most [common fields](/docs/connections/spec/common/) removed:
 
 ```json
 {
@@ -41,7 +41,7 @@ analytics.group("0e8c78ea9d97a7b8185e8632", {
 ```
 {% include content/syntax-note.md %}
 
-Beyond the common fields, the `group` call takes the following fields:
+Beyond the common fields, the Group call takes the following fields:
 
 <table>
   {% include content/spec-table-header.md %}
@@ -52,7 +52,7 @@ Beyond the common fields, the `group` call takes the following fields:
 
 ## Example
 
-Here's a complete example of a `group` call:
+Here's a complete example of a Group call:
 
 ```js
 {
@@ -102,7 +102,7 @@ A Group ID is the unique identifier which you recognize a group by in your own d
 
 ## Traits
 
-Traits are pieces of information you know about a group that are passed along with the `group` call, like `employees` or `website`.
+Traits are pieces of information you know about a group that are passed along with the Group call, like `employees` or `website`.
 
 Segment has reserved some traits that have semantic meanings for groups, and handles them in special ways. You should **only use reserved traits for their intended meaning**.
 

@@ -7,8 +7,6 @@ Only [mabl](https://mabl.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=
 
 This destination is maintained by mabl. For any issues with the destination, [contact the Mabl  Support team](mailto:support@mabl.com).
 
-{% include content/beta-note.md %}
-
 
 ## Getting Started
 

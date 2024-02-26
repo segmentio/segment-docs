@@ -7,8 +7,6 @@ id: 5ca241b892f10000016b5696
 
 This destination is maintained by SlicingDice. For any issues with the destination, [contact the SlicingDice Support team](mailto:support@slicingdice.com).
 
-{% include content/beta-note.md %}
-
 
 ## Getting Started
 

@@ -1,6 +1,6 @@
 ---
 rewrite: true
-title: HubSpot Destination
+title: HubSpot (Classic) Destination
 hide-personas-partial: true
 cmode-override: true
 id: 54521fd725e721e32a72eec1

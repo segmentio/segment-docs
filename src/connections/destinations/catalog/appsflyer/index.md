@@ -14,8 +14,6 @@ Segment's Appsflyer destination code is open source and available on GitHub. You
 
 ## Getting Started
 
-
-
   1. From the Segment web app, click **Catalog**.
   2. Search for "AppsFlyer" in the Catalog, select it, and choose which of your sources to connect the destination to.
   3. In the destination settings, enter your `AppsFlyer Dev Key`, which can be retrieved from the App Settings section of your AppsFlyer account.
@@ -139,9 +137,12 @@ analytics.track({
 ```
 > Check your specific [server-side library docs](/docs/connections/sources/#server) for specifics on how to format the method properly.
 
+> info ""
+> See the **Can Omit AppsFlyerId** and **Fallback to send IDFV when advertisingId key not present (Server-Side Only)** settings descriptions for details on excluding the previous fields in server-side events.
+
 Finally, the server-side component will look for the following `properties` and handle them specially:
 
-- `ip` (this should be the `ip` of your customer--this is not collected by Segment's libraries out-of-the-box)
+- `ip` (this should be the `ip` of your customer--this is not collected by Segment's libraries out-of-the-box. Pass this into the payload under context so that AppsFlyer can properly attribute it.)
 - `timestamp` (refer to AppsFlyer's docs on [how they process timestamps](https://support.appsflyer.com/hc/en-us/articles/207034486-Server-to-Server-In-App-Events-API-HTTP-API-){:target="blank"}. Since the libraries generate a [timestamp](/docs/connections/spec/common/#timestamps), Segment always sets this value)
 - `currency` (defaults to `"USD"`)
 - `revenue` (For `Order Completed` events, precedence is given to `total`, falling back to `properties.revenue`)
@@ -150,6 +151,12 @@ All other `properties` will be sent to AppsFlyer as custom properties inside `ev
 
 > info ""
 > Be sure to calibrate/update the time window in AppsFlyer's dashboard to see your events!
+
+### Send in-app events to Appsflyer v3 Endpoint
+
+When transmitting data serverside to Appsflyer, you have the option to enhance security by enabling the transmission of in-app events to [Appsflyer's v3 endpoint](https://dev.appsflyer.com/hc/reference/s2s-events-api3-post){:target="_blank"}, which authenticates requests using a more secure [S2S token](https://support.appsflyer.com/hc/en-us/articles/360004562377-Managing-API-and-Server-to-server-S2S-tokens){:target="_blank"}.
+
+To activate this feature, simply input your S2S token in the destination settings and toggle the "Use API v3" switch to the enabled position. 
 
 ## Install Attributed
 
