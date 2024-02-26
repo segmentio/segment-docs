@@ -6,4 +6,4 @@ Twilio’s [AI Nutrition Facts](https://nutrition-facts.ai/){:target="_blank"} p
 
 {% include content/predictions-nutrition-facts.html %}
 
-![The Predictions Nutrition Facts](<../../../images/label-customer-ai-predictions .png>)
+<!---[The Predictions Nutrition Facts](<../../../images/label-customer-ai-predictions .png>)--->
