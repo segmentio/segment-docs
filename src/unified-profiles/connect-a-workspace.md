@@ -89,11 +89,11 @@ Create a Segment Profiles destination to add a mapping to your Reverse ETL sourc
 7. When you've finished mapping all relevant event fields and verified that your test record contains all of the relevant user information, click **Save Mapping.**
 8. You're returned to the Mappings page for your Segment Profiles destination. Under the Mapping status column, enable the mapping you created in the previous step.
 
-## Step 3: Confirm your customer identifier settings
+## Step 3: Connect Flex to your Unify space
 
-To connect your Unify space to Flex, you'll need to reach out to the [Twilio Professional Services](https://www.twilio.com/en-us/professional-services){:target="_blank"} team. 
+To connect your Unify space to Flex, follow the [Connect an existing Segment Unify space](https://www.twilio.com/docs/flex/admin-guide/setup/unified-profiles/setup/unify-space){:target="_blank"} instructions in the Flex documentation.  
 
-Before reaching out to Professional Services, note the following information about your Segment workspace and Unify space:
+Before leaving Segment, note the following information about your Segment workspace and Unify space:
 
 - **Workspace ID**: Located in the [General Settings section](https://app.segment.com/goto-my-workspace/settings/basic){:target="_blank"} of your Segment workspace
 - **Workspace slug**: Located in the [General Settings section](https://app.segment.com/goto-my-workspace/settings/basic){:target="_blank"} of your Segment workspace
@@ -103,10 +103,10 @@ Before reaching out to Professional Services, note the following information abo
 
 ## Step 4: Create Computed Traits and Predictions
 
-After linking your customer data to Flex through a Unify space, you can set up [Computed Traits](#computed-traits) and [Predictions](#predictions) to better understand your users. 
+After linking your customer data to Flex through a Unify space, you can set up [computed traits](#computed-traits) and [Predictions](#predictions) to better understand your users. 
 
 > warning "Complete an interaction in Flex before creating computed traits in Segment"
-> Before you can create computed traits in Segment, you must confirm your customer identifier settings and then complete a customer interaction in Flex. 
+> Before you can create computed traits in Segment, you must connect your Unify space to Flex and then complete a customer interaction in Flex. 
 
 ### Computed traits
 [Computed traits](/docs/unify/traits/computed-traits) allow you to quickly create user or account-level calculations that Segment keeps up-to-date over time. These computations are based on the events and event properties that you are sending through Segment. 
@@ -248,13 +248,13 @@ For more information about the Profile explorer, see the [Profile explorer](/doc
     href="/docs/unified-profiles/"
     icon="unified-profiles.svg"
     title="Unified Profiles Overview"
-    description="Unified Profiles in Flex, available with Twilio's Agent Copilot, provides your Flex agents with real-time customer data from multiple enterprise systems."
+    description="Unified Profiles in Flex provides your Flex agents with real-time customer data from multiple enterprise systems."
   %}
 
   {% include components/reference-button.html
     href="/docs/unified-profiles/segment-for-flex"
     icon="flex.svg"
     title="Segment for Flex"
-    description="Users without an existing Segment workspace can configure a Segment for Flex workspace, which provides limited access to Segment."
+    description="Flex customers without an existing Segment workspace that includes a Unify space can obtain a Segment for Flex workspace and configure a Unify space. A Segment for Flex workspace provides limited access to Segment."
   %}
 </div>
