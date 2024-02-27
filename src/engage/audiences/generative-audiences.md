@@ -11,6 +11,8 @@ With Generative Audiences, part of Segment's CustomerAI, use generative AI to cr
 
 Describe your desired audience based on events performed, profile traits, or existing audiences in your workspace. Based on your prompt, Segment builds the audience with generative AI.
 
+For more details on AI usage and data, see [Generative Audiences Nutrition Facts Label](/docs/engage/audiences/generative-audiences-nutrition-facts/).
+
 In this article, you'll learn how to use Generative Audiences along with some best practices.
  
 ## Create an audience with Generative Audiences

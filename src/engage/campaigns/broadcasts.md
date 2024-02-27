@@ -36,6 +36,9 @@ Follow these steps to create an email broadcast:
 > info ""
 > Segment recommends sending email broadcasts to users with a `subscribed` status. However, if you need to send an email broadcast to someone who hasn't subscribed, you can configure an email to [send to all users](/docs/engage/campaigns/email-campaigns/#send-an-email-to-all-users/).
 
+> info "Blind carbon copy"
+> Broadcasts doesn't support BCC (blind carbon copy). If your use case requires BCC, [contact Segment](https://segment.com/help/contact/){:target="_blank"}.
+
 ## Create and send an SMS broadcast
 
 Follow these steps to create an email broadcast:

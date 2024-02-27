@@ -91,7 +91,7 @@ GRANT CREATE SCHEMA ON DATABASE  identifier($segment_connection_db) TO ROLE iden
 
 ### Grant access to other databases 
 
-Next, give the Segment user **read-only** access to all the other databases you want to use for Linked Profiles. 
+Next, give the Segment user **read-only** access to all the other databases you want to use for Linked Profiles. You must grant access to the Profiles Sync database.
 
 Run the SQL query below for **each** database you want to use for Linked Profiles:
 
@@ -128,12 +128,15 @@ SET segment_connection_role='SEGMENT_LINKED_ROLE';
 
 -- View specific schemas in database
 GRANT USAGE ON DATABASE identifier($db) TO ROLE identifier($segment_connection_role);
-
 GRANT USAGE ON SCHEMA identifier($schema) TO ROLE identifier($segment_connection_role);
-
 GRANT SELECT ON ALL TABLES IN SCHEMA identifier($schema) TO ROLE identifier($segment_connection_role);
-
 GRANT SELECT ON FUTURE TABLES IN SCHEMA identifier($schema) TO ROLE identifier($segment_connection_role);
+GRANT SELECT ON ALL VIEWS IN SCHEMA identifier($linked_read_only_database) TO ROLE identifier($segment_connection_role);
+GRANT SELECT ON FUTURE VIEWS IN SCHEMA identifier($linked_read_only_database) TO ROLE identifier($segment_connection_role);
+GRANT SELECT ON ALL EXTERNAL TABLES IN SCHEMA identifier($linked_read_only_database) TO ROLE identifier($segment_connection_role);
+GRANT SELECT ON FUTURE EXTERNAL TABLES IN SCHEMA identifier($linked_read_only_database) TO ROLE identifier($segment_connection_role);
+GRANT SELECT ON ALL MATERIALIZED VIEWS IN SCHEMA identifier($linked_read_only_database) TO ROLE identifier($segment_connection_role);
+GRANT SELECT ON FUTURE MATERIALIZED VIEWS IN SCHEMA identifier($linked_read_only_database) TO ROLE identifier($segment_connection_role);
 
 
 ```

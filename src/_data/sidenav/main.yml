@@ -306,8 +306,13 @@ sections:
     section:
     - path: /unify/profiles-sync/overview
       title: Profiles Sync Overview
-    - path: /unify/profiles-sync
-      title: Setup
+    - section_title: Profiles Sync Setup
+      slug: unify/profiles-sync/profiles-sync-setup
+      section:
+      - path: /unify/profiles-sync/profiles-sync-setup
+        title: Setup
+      - path: /unify/profiles-sync/profiles-sync-setup/databricks-profiles-sync
+        title: Databricks for Profiles Sync
     - path: /unify/profiles-sync/sample-queries
       title: Sample Queries
     - path: /unify/profiles-sync/tables
@@ -339,6 +344,8 @@ sections:
         title: Using Predictions
       - path: '/unify/traits/predictions/suggested-predictive-audiences'
         title: Suggested Predictive Audiences
+      - path: '/unify/traits/predictions/predictions-nutrition-facts'
+        title: Predictions Nutrition Facts Label
     - path: '/unify/traits/computed-traits'
       title: Computed Traits
     - path: '/unify/traits/custom-traits'
@@ -397,6 +404,8 @@ sections:
       title: Account-level Audiences
     - path: '/engage/audiences/generative-audiences'
       title: Generative Audiences
+    - path: '/engage/audiences/generative-audiences-nutrition-facts'
+      title: Generative Audiences Nutrition Facts Label
     - path: '/engage/audiences/organization'
       title: Organize Audiences
 
@@ -503,6 +512,18 @@ sections:
       title: Complying With GDPR
     - path: /privacy/user-deletion-and-suppression
       title: User Deletion and Suppression
+  - section_title: Consent Management
+    slug: privacy/consent-management
+    expanded: true
+    section:
+    - path: /privacy/consent-management
+      title: Consent Management Overview
+    - path: /privacy/consent-management/consent-in-segment-connections
+      title: Consent in Segment Connections
+    - path: /privacy/consent-management/configure-consent-management
+      title: Configure Consent Management
+    - path: /privacy/consent-management/consent-in-unify/
+      title: Consent in Unify
   - path: /privacy/account-deletion
     title: Account & Data Deletion
   - path: /privacy/hipaa-eligible-segment
@@ -597,6 +618,8 @@ sections:
         title: Public API
       - path: /api/public-api/fql
         title: Destination Filter Query Language
+      - path: '/api/public-api/query-language'
+        title: Segment Query Language
   - section_title: Config API
     slug: api/config-api
     section:

@@ -134,7 +134,7 @@ entity "account-entity" {
 To use Linked Events, you'll need to add an action destination to send enriched events to. Navigate to **Connections > Destinations**. Select an existing action destination, or click **+ Add destination** to add a new action destination.  
 
 > info ""
-> For Linked Events, Segment supports [Destination Actions](/docs/connections/destinations/actions/).
+> For Linked Events, Segment supports [Destination Actions](/docs/connections/destinations/actions/) in cloud-mode only.
 
 
 ## Step 5: Enrich events with entities
@@ -190,7 +190,7 @@ Segment currently syncs once every hour.
 
 #### Which Destinations does Linked Events support? 
 
-For Linked Events, Segment supports all actions-based destinations. 
+For Linked Events, Segment supports all actions-based destinations in cloud-mode. 
 
 #### Why aren't test events working? 
 
