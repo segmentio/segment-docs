@@ -356,8 +356,8 @@ This is usually only an issue in [Mixpanel](/docs/connections/destinations/cata
 
 Remember that for destinations that require aliasing, you must make the [Alias call](/docs/connections/spec/alias) before you make the [Identify call](/docs/connections/spec/identify) for that user. Even if you make an [Identify call](/docs/connections/spec/identify) from a server library, it can't happen before the client-side [alias](/docs/connections/spec/alias).
 
-### Can userIds be updated?
+#### Can you update a userId?
 
-Unfortunately there is no way to change an existing userId within Segment. Historical data with the previous userId will remain the same, the new userId will not replace the previous userId in Segment event call logs. For downstream destination's you'll want to consult their docs on user profile behaviors when using a new userId.
+Unfortunately, there is no way to change an existing `userId` within Segment. Historical data with an existing `userId` remains the same, and a new `userId` will not replace the existing `userId` in Segment event call logs. For downstream destinations, consult the corresponding docs about user profile behaviors when using a new `userId`.
  
-Also, changing userId's is incredibly hard to do as that is one of the most fundamental bit of analytics. Certain downstream analytics tools actually do not let you change the userId at all once set. Others do, but the process will be different for each tool.
+Changing a `userId` is incredibly hard to do, as that is a fundamental part of analytics. While some downstream analytics tools let you change a `userId` once set, others don't and the process will be different for each tool.
