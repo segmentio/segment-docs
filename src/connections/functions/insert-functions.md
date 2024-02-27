@@ -164,6 +164,27 @@ If you don't supply a function for an event type, Segment throws an `EventNotSup
 
 You can read more about [error handling](#destination-insert-functions-logs-and-errors) below.
 
+## Required Event Fields for .ensure() method
+
+If an incoming payload meets the `.ensure()` specifications for a particular destination then it will be sent through the Insert Function, otherwise it will not. The required event fields are the following: 
+
+```
+"supportedEventTypes": {
+            "track": {}
+        },
+        "requiredSettings": {},
+        "requiredEventFields": {
+            "context.device.type": {},
+            "context.app.version": {},
+            "context.os.version": {}
+        },
+        "supportedChannels": [
+            "server"
+        ]
+```
+> info ""
+> These are only the required fields for Classic destination types.
+
 ## Runtime and dependencies
 
 {% include content/functions/runtime.md %}
