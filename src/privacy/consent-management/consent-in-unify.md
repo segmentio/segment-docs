@@ -1,5 +1,6 @@
 ---
 title: Consent in Unify
+plan: consent-management
 related:
   - "/privacy/consent-management/"
   - "/privacy/consent-management/configure-consent-management/"

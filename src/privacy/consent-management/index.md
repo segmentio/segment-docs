@@ -1,12 +1,10 @@
 ---
 title: Consent Management Overview
+plan: consent-management
 related:
   - "/privacy/consent-management/configure-consent-management/"
   - "/privacy/consent-management/consent-in-segment-connections/"
 ---
-
-(Add: a tag for 'Available for BT customers' as seen on many of our other pages placed just under the title: https://segment.com/docs/protocols/ - This product is availble for all business customers and not an add-on)
-
 
 When an end user visits your web or mobile app, they set **consent preferences**, or make decisions about the types of data they want you to collect, use, and share. These consent preferences are typically presented as a set list of categories that describe how your company intends to use that data. Some common categories include personalization, advertising, and site performance.
 

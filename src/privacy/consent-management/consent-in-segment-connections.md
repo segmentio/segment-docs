@@ -1,5 +1,6 @@
 ---
 title: Consent in Segment Connections
+plan: consent-management
 related:
   - "/privacy/consent-management/"
   - "/privacy/consent-management/configure-consent-management/"
