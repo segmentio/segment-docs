@@ -14,19 +14,19 @@ If you already have a Segment workspace, you can use a new or pre-existing [Segm
 
 ## Prerequisites
 
-- You must have requested access from the [CustomerAI for Contact Center](https://console.twilio.com/us1/develop/flex/customerai/overview){:target="_blank"} page in your Flex Console and been accepted into the Agent Copilot beta program.
+- You must have requested access from the [CustomerAI](https://console.twilio.com/us1/develop/flex/customerai/overview){:target="_blank"} page in your Flex Console and been accepted into the Agent Copilot and Unified Profiles beta program.
 - Your Segment workspace must be on the Business Tier plan with a Unify Plus entitlement. To upgrade to the Business Tier plan, communicate with your sales contact or [request a demo](https://segment.com/demo/){:target="_blank"} from Segment's sales team.
 
 ## Step 1: Set up your Unify space
 
 > success ""
-> This section is about setting up a new Unify space to link to Twilio Flex. If you have an existing Unify space you'd like to use, proceed directly to [Step 2: Connect your sources to Unify](#step-2-connect-your-data-to-unify).
+> This section is about setting up a new Segment Unify space to link to Twilio Flex. If you have an existing Segment Unify space you'd like to use, proceed directly to [Step 2: Connect your data to Unify](#step-2-connect-your-data-to-unify).
 
 Segment recommends creating a development or sandbox space, verifying that your profiles appear as you would expect, and then creating a production space.
 
 To create a Unify space:
 
-1. Navigate to Unify and click **Create Space**. 
+1. In Segment, navigate to Unify and click **Create Space**. 
 2. Enter a name for your space, select **Dev space**, then click **Create space**.
 3. Set identity rules for your space by clicking **Set identity rules**.
 4. Connect a source to your Unify space by clicking **Connect sources**.
@@ -37,7 +37,7 @@ To create a Unify space:
 9. Copy your Profile API token to a safe location and click the "I have written down this access token" checkbox, then click **Done**. 
 
 ## Step 2: Connect your data to Unify
-After you've created a Unify space, you must also connect a Salesforce CRM source and a data warehouse to your Unify Space to link your customers' data to Unified Profiles. 
+After you've created a Unify space, you must also connect a Salesforce CRM source and a data warehouse to your Unify space to link your customers' data to Unified Profiles. 
 
 ### Set up Salesforce
 1. From the [catalog page in your workspace](https://app.segment.com/goto-my-workspace/sources/catalog/salesforce){:target="_blank"}, select the Salesforce source and click **Add Source**. 
@@ -50,7 +50,7 @@ After you've created a Unify space, you must also connect a Salesforce CRM sourc
 ### Connect a data warehouse
 1. From the [catalog page in your workspace](https://app.segment.com/goto-my-workspace/destinations/catalog?category=Storage){:target="_blank"}, search for and select a BigQuery, Postgres, Redshift, or Snowflake destination.
 2. On the Choose Data Source page, select the Salesforce source you set up in the previous step and click **Next**. 
-3. Give for your data warehouse destination a name and enter the credentials for a user with read and write access to your database. Click **Connect**. 
+3. Give your data warehouse destination a name and enter the credentials for a user with read and write access to your database. Click **Connect**. 
 4. Review the information on the Next Steps screen and click **Done**.
 
 > info ""
@@ -93,7 +93,7 @@ Create a Segment Profiles destination to add a mapping to your Reverse ETL sourc
 
 To connect your Unify space to Flex, you'll need to reach out to the [Twilio Professional Services](https://www.twilio.com/en-us/professional-services){:target="_blank"} team. 
 
-Before reaching out to Professional Services, note the following information about your Segment workspace:
+Before reaching out to Professional Services, note the following information about your Segment workspace and Unify space:
 
 - **Workspace ID**: Located in the [General Settings section](https://app.segment.com/goto-my-workspace/settings/basic){:target="_blank"} of your Segment workspace
 - **Workspace slug**: Located in the [General Settings section](https://app.segment.com/goto-my-workspace/settings/basic){:target="_blank"} of your Segment workspace
@@ -119,7 +119,7 @@ Other computed traits that might be helpful include:
 - [Total outbounds](#total-outbounds): Number of outbound attempts resulting in customer engagement
 - [Last known service agent](#last-known-service-agent): Identifies the last agent to allow connecting to the same agent
 - [Last interaction duration](#last-interaction-duration): The duration (in seconds) of the customer's last interaction with agent(s)
-- [Common request](#): Most frequent topic of inbound or outbound engagement
+- [Common request](#common-request): Most frequent topic of inbound or outbound engagement
 - [Sentiment in last interaction](#sentiment-in-last-interaction): Gen-AI inferred sentiment in last interaction
 - [Last interaction topic](#last-interaction-topic): Topic of the last interaction 
 
@@ -228,7 +228,7 @@ Segment recommends that you select the following Predictions for Unified Profile
 - [Likelihood to churn](/docs/unify/traits/predictions/#likelihood-to-churn)
 - [Predicted Lifetime value](/docs/unify/traits/predictions/#predicted-lifetime-value)
 
-For more information about Predictions, see the [Predictions FAQ](/docs/unify/traits/predictions/using-predictions/#faqs)
+For more information about Predictions, see the [Predictions FAQ](/docs/unify/traits/predictions/using-predictions/#faqs) and [Predictions Nutrition Label](/docs/unify/traits/predictions/predictions-nutrition-facts/).
 
 ## Troubleshooting
 You can use the following tools to debug issues you may encounter while configuring your Segment resources for Unified Profiles.
