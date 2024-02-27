@@ -22,9 +22,9 @@ maintenance-content: This destination should only be used for Mobile connections
 
 #### Kotlin
 
-To find implemtantion details for our Kotlin Intercom destiantion plugin, please review our documentation [here](/docs/connections/sources/catalog/libraries/mobile/kotlin-android/destination-plugins/intercom-kotlin-android/).
+To find implementation details for our Kotlin Intercom Destination Plugin, please review our documentation [here](/docs/connections/sources/catalog/libraries/mobile/kotlin-android/destination-plugins/intercom-kotlin-android/).
 
 #### Swift
 
-To find implemtantion details for our Swift Intercom destiantion plugin, please review our documentation [here](/docs/connections/sources/catalog/libraries/mobile/apple/destination-plugins/intercom-swift/).
+To find implementation details for our Swift Intercom Destination Plugin, please review our documentation [here](/docs/connections/sources/catalog/libraries/mobile/apple/destination-plugins/intercom-swift/).
 
