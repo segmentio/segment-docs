@@ -2,13 +2,13 @@
 title: Create a Segment for Flex Workspace
 hidden: true
 ---
-Flex users without an existing Segment workspace can create a _Segment for Flex_ workspace, which provides limited access to Segment. 
+Flex users without an existing Segment workspace that includes a Unify space can create a _Segment for Flex_ workspace, which provides limited access to Segment. 
 
 For entitlements and limitations associated with a Segment for Flex workspace, see the [Entitlements and limitations](#segment-for-flex-entitlements-and-limitations) documentation. 
 
 ## Prerequisites
 
-Before creating a Segment for Flex workspace, you must have requested access from the [CustomerAI for Contact Center](https://console.twilio.com/us1/develop/flex/customerai/overview){:target="_blank"} page in your Flex Console and been accepted into the Agent Copilot beta program.
+Before creating a Segment for Flex workspace, you must have requested access from the [CustomerAI](https://console.twilio.com/us1/develop/flex/customerai/overview){:target="_blank"} page in your Flex Console and been accepted into the Agent Copilot and Unified Profiles beta program.
 
 ## Step 1: Select your data sources
 
@@ -18,7 +18,7 @@ Before creating a Segment for Flex workspace, you must have requested access fro
 1. From your Flex account, select **Unify**. 
 2. On the Flex Unify overview screen, click **Create Unify space in Segment**.
 3. In Segment for Flex, select a data source to get started and click **Next**.
-4. Review the popup that explains how the data source that connects to Segment, and click **Continue**.
+4. Review the popup that explains how the data source connects to Segment, and click **Continue**.
 
 ## Step 2: Add connections
 
@@ -34,7 +34,7 @@ You can add additional data sources after completing the setup process. <br>
 ### Salesforce and a data warehouse
 
 1. On the Getting started with Segment page, click **Connect Salesforce**. 
-2. You are redirected to the Salesforce login screen. Sign in to Salesforce with a user that has XYZ permissions. 
+2. You are redirected to the Salesforce login screen. Sign in to Salesforce with a user that has _View all Records_ permissions. 
 3. On the Getting started with Segment page, click **Connect data warehouse**. 
 4. Select your data warehouse from the list of available warehouses, and click **Next**.
 5. Give your destination a name and enter the account credentials for a user that has read and write permissions. Click **Save**. 
@@ -145,7 +145,10 @@ In addition to 1 source for Flex events that is auto-created during setup, you c
 
 These sources are limited to the following types:
   - [Salesforce CRM](/docs/connections/sources/catalog/cloud-apps/salesforce/)
-  - [Storage (RETL)](/docs/connections/reverse-etl/#step-1-add-a-source)
+  - [BigQuery (Reverse ETL)](/docs/connections/reverse-etl/reverse-etl-source-setup-guides/bigquery-setup/)
+  - [Postgres (Reverse ETL)](docs/connections/reverse-etl/reverse-etl-source-setup-guides/postgres-setup/)
+  - [Redshift (Reverse ETL)](/docs/connections/reverse-etl/reverse-etl-source-setup-guides/redshift-setup/)
+  - [Snowflake (Reverse ETL)](/docs/connections/reverse-etl/reverse-etl-source-setup-guides/snowflake-setup/)
   - [Swift](/docs/connections/sources/catalog/libraries/mobile/apple/)
   - [Kotlin](/docs/connections/sources/catalog/libraries/mobile/kotlin-android/) 
   - [Javascript](/docs/connections/sources/catalog/libraries/website/javascript/)
@@ -185,6 +188,6 @@ Your Segment for Flex workspace has the following entitlements:
     href="/docs/unified-profiles/connect-a-workspace"
     icon="api.svg"
     title="Connect an Existing Workspace to Flex"
-    description="Users with an existing Segment workspace can connect their existing workspace to Flex."
+    description="Flex customers without an existing Segment workspace that includes a Unify space can obtain a Segment for Flex workspace and configure a Unify space. A Segment for Flex workspace provides limited access to Segment."
   %}
 </div>
