@@ -4,6 +4,7 @@
   font-size: 14px;
   color: color(gray-700);
   white-space: nowrap;
+  text-transform: capitalize;
 
   @include breakpoint(medium up)  {
     padding-left: 0;
