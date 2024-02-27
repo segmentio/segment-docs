@@ -2,7 +2,7 @@
 title: Create a Segment for Flex Workspace
 hidden: true
 ---
-Flex users without an existing Segment workspace that includes a Unify space can create a _Segment for Flex_ workspace, which provides limited access to Segment. 
+Flex users without an existing Segment workspace that includes a Unify space can create a Segment for Flex workspace and a Unify space. The Segment for Flex workspace provides limited access to Segment.
 
 For entitlements and limitations associated with a Segment for Flex workspace, see the [Entitlements and limitations](#segment-for-flex-entitlements-and-limitations) documentation. 
 
@@ -15,10 +15,8 @@ Before creating a Segment for Flex workspace, you must have requested access fro
 > warning "Unable to change data source selection after this step"
 > After you've selected your data source and proceeded to the next step, you can't return to this page and make a different selection. You can add additional data sources after setting up your Segment for Flex workspace. For more information about sources in a Segment for Flex workspace, see the [Sources](#sources) documentation.
 
-1. From your Flex account, select **Unify**. 
-2. On the Flex Unify overview screen, click **Create Unify space in Segment**.
-3. In Segment for Flex, select a data source to get started and click **Next**.
-4. Review the popup that explains how the data source connects to Segment, and click **Continue**.
+1. In Segment for Flex, select a data source to get started and click **Next**.
+2. Review the popup that explains how the data source connects to Segment, and click **Continue**.
 
 ## Step 2: Add connections
 
@@ -125,7 +123,7 @@ The final step in the Segment for Flex setup process is to check your configurat
 
 To check your configuration: 
 1. Click **Enable Sources and Test Connections**. Segment automatically checks your sources and connections. 
-  <br>If you correctly configured the sources and connections you set up in steps 1 and 2, Segment marks this step as complete.
+  <br>If you correctly configured your sources and connections, Segment marks this step as complete.
 2. To return to Flex and complete the Unified Profiles setup process, click **[Return to Flex](https://console.twilio.com/us1/develop/flex/){:target="_blank"}**. 
 
 ### Additional troubleshooting tools
@@ -172,16 +170,16 @@ These destinations are limited to the following types:
 
 Your Segment for Flex workspace has the following entitlements:
 
-- 2 [Unify Spaces](/docs/unify/quickstart/)
-- 2 [computed traits](/docs/unify/Traits/computed-traits/)
-- 2 [predictions](/docs/unify/traits/predictions/)
+- 2 [Unify spaces](/docs/unify/quickstart/)
+- 2 [Computed traits](/docs/unify/Traits/computed-traits/)
+- 2 [Predictions](/docs/unify/traits/predictions/)
 
 <div class="double">
   {% include components/reference-button.html
     href="/docs/unified-profiles/"
     icon="unified-profiles.svg"
     title="Unified Profiles Overview"
-    description="Unified Profiles in Flex, available with Twilio's Agent Copilot, provides your Flex agents with real-time customer data from multiple enterprise systems."
+    description="Unified Profiles in Flex provides your Flex agents with real-time customer data from multiple enterprise systems."
   %}
 
   {% include components/reference-button.html
