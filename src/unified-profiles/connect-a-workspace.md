@@ -127,7 +127,7 @@ Other computed traits that might be helpful include:
 1. Navigate to the Unify space you linked to Flex and click **Traits**. 
 2. Click **Create computed trait**. 
 3. Select **Event counter** and click **Next**. 
-4. Select the "Flex - Engagement Completed" event.
+4. Select the "Flex - Engagement Initiated" event.
 5. Add the following conditions:
   - **Event property**: direction
   - **Operator**: equals
@@ -141,7 +141,7 @@ Other computed traits that might be helpful include:
 1. Navigate to the Unify space you linked to Flex and click **Traits**. 
 2. Click **Create computed trait**. 
 3. Select **Most frequent** and click **Next**. 
-4. Select the "Flex - Engagement Completed" event.
+4. Select the "Flex - Engagement Initiated" event.
 5. Add the following conditions:
   - **Event property**: direction
   - **Operator**: equals
@@ -170,7 +170,7 @@ Other computed traits that might be helpful include:
 1. Navigate to the Unify space you linked to Flex and click **Traits**. 
 2. Click **Create computed trait**. 
 3. Select **Last** and click **Next**. 
-4. Select the "Flex - Engagement Completed" event.
+4. Select the "Flex - Engagement Initiated" event.
 6. Add an event property "lastKnownAgentWorkerSid" with a value "Text".
 6. Verify that your trait contains at least one member by clicking the **Preview Trait** button. 
 7. When you've verified that your trait contains at least one member, click **Next**.
@@ -181,13 +181,14 @@ Other computed traits that might be helpful include:
 1. Navigate to the Unify space you linked to Flex and click **Traits**. 
 2. Click **Create computed trait**. 
 3. Select **Last** and click **Next**. 
-4. Select the "Flex - Engagement Completed" event.
+4. Select the "Flex - Engagement Initiated" event.
 6. Add an event property "duration" with a value "Number(100)".
 6. Verify that your trait contains at least one member by clicking the **Preview Trait** button. 
 7. When you've verified that your trait contains at least one member, click **Next**.
 8. On the Select Destinations page, don't add a destination. Instead, click **Next**. 
 9. Enter a name for your trait and click **Create Trait**. 
 
+<!--- As of 2/28/24 - this trait is not supported for Q1 release
 #### Common request
 1. Navigate to the Unify space you linked to Flex and click **Traits**. 
 2. Click **Create computed trait**. 
@@ -199,11 +200,12 @@ Other computed traits that might be helpful include:
 7. When you've verified that your trait contains at least one member, click **Next**.
 8. On the Select Destinations page, don't add a destination. Instead, click **Next**. 
 9. Enter a name for your trait and click **Create Trait**.
+--->
 
 #### Sentiment in last interaction
 1. Navigate to the Unify space you linked to Flex and click **Traits**. 
 3. Select **Last** and click **Next**. 
-4. Select the "Flex - Wrap Up Completed" event.
+4. Select the "Flex - Engagement Completed" event.
 5. Add an additional event property "sentiment" with a value "Text".
 6. Add a minimum frequency of "2".
 6. Verify that your trait contains at least one member by clicking the **Preview Trait** button. 
@@ -211,6 +213,7 @@ Other computed traits that might be helpful include:
 8. On the Select Destinations page, don't add a destination. Instead, click **Next**. 
 9. Enter a name for your trait and click **Create Trait**.
 
+<!--- As of 2/28/24 - this trait is not supported for Q1 release
 #### Last interaction topic
 1. Navigate to the Unify space you linked to Flex and click **Traits**.
 3. Select **Last** and click **Next**. 
@@ -220,9 +223,10 @@ Other computed traits that might be helpful include:
 7. When you've verified that your trait contains at least one member, click **Next**.
 8. On the Select Destinations page, don't add a destination. Instead, click **Next**. 
 9. Enter a name for your trait and click **Create Trait**.
+--->
 
 ### Predictions
-[Predictions](/docs/unify/traits/predictions/), Segment’s artificial intelligence and machine learning feature, let you predict the likelihood that users will perform any event tracked in Segment. With Predictions, you can identify users with, for example, a high propensity to purchase, refer a friend, or use a promo code. Predictions also lets you predict a user’s lifetime value (LTV).
+[Predictions](/docs/unify/traits/predictions/), Segment’s artificial intelligence and machine learning feature, lets you predict the likelihood that users will perform any event tracked in Segment. With Predictions, you can identify users with, for example, a high propensity to purchase, refer a friend, or use a promo code. Predictions also lets you predict a user’s lifetime value (LTV).
 
 Segment recommends that you select the following Predictions for Unified Profiles: 
 - [Likelihood to churn](/docs/unify/traits/predictions/#likelihood-to-churn)
