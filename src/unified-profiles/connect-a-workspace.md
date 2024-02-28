@@ -20,9 +20,9 @@ If you already have a Segment workspace, you can use a new or pre-existing [Segm
 ## Step 1: Set up your Unify space
 
 > success ""
-> This section is about setting up a new Segment Unify space to link to Twilio Flex. If you have an existing Segment Unify space you'd like to use, proceed directly to [Step 2: Connect your data to Unify](#step-2-connect-your-data-to-unify).
+> This section is about setting up a new Segment Unify space to link to Twilio Flex. If you have an existing Segment Unify space you'd like to use, proceed directly to [Step 2: Connect your data to Unify](#step-2-connect-your-data-to-unify). If your Unify space includes a Salesforce source, RETL source, and a Segment Profiles destination already configured, proceed directly to [Step 3: Connect Flex to your Unify space](#step-3-connect-flex-to-your-unify-space).
 
-Segment recommends creating a development or sandbox space, verifying that your profiles appear as you would expect, and then creating a production space.
+Segment recommends creating a development or sandbox Unify space, verifying that your profiles appear as you would expect, and then creating a production Unify space.
 
 To create a Unify space:
 
@@ -37,7 +37,10 @@ To create a Unify space:
 9. Copy your Profile API token to a safe location and click the "I have written down this access token" checkbox, then click **Done**. 
 
 ## Step 2: Connect your data to Unify
-After you've created a Unify space, you must also connect a Salesforce CRM source and a data warehouse to your Unify space to link your customers' data to Unified Profiles. 
+After you've created a Unify space, you must also connect a Salesforce CRM source, a data warehouse, and a Segment Profiles destination to your Unify space to link your customers' data to Unified Profiles. 
+
+> success ""
+> This section is about setting up a Salesforce source, RETL source, and a Segment Profiles destination to link to your Unify space. If you have an existing Segment Unify space with these connections that you'd like to use, proceed directly to [Step 3: Connect Flex to your Unify space](#step-3-connect-flex-to-your-unify-space).
 
 ### Set up Salesforce
 1. From the [catalog page in your workspace](https://app.segment.com/goto-my-workspace/sources/catalog/salesforce){:target="_blank"}, select the Salesforce source and click **Add Source**. 
@@ -45,7 +48,7 @@ After you've created a Unify space, you must also connect a Salesforce CRM sourc
 3. You are redirected to the Salesforce login page. Sign in with a username and password of a user that has _View all Permissions_ access. 
 4. You are redirected to the Permissions Verified page in Segment. Click **Next**.
 5. On the SQL Schema name page, review the schema name and SQL query used to create the schema, then click **Next**. 
-6. You've connected Salesforce. Click the **Do it later** button and continue to [Connect a data warehouse destination](#connect-a-data-warehouse-destination).
+6. You've connected Salesforce. Click the **Do it later** button and continue to [Connect a data warehouse ](#connect-a-data-warehouse).
 
 ### Connect a data warehouse
 1. From the [catalog page in your workspace](https://app.segment.com/goto-my-workspace/destinations/catalog?category=Storage){:target="_blank"}, search for and select a BigQuery, Postgres, Redshift, or Snowflake destination.
@@ -57,6 +60,10 @@ After you've created a Unify space, you must also connect a Salesforce CRM sourc
 > Segment's initial sync with your data warehouse might take up to 24 hours to complete.
 
 ### Add a Reverse ETL source
+Reverse ETL (Extract, Transform, Load) sources extract object and event data from a data warehouse using a query you provide and sync the data to your third party destinations. For example, with Reverse ETL, you can sync records from Snowflake, a data warehouse, to Flex, a digital engagement center solution. Reverse ETL supports customer profile data, subscriptions, product tables, shopping cart tables, and more.
+
+Unified Profiles supports Postgres, Snowflake, Redshift, and BigQuery Reverse ETL sources.
+
 1. In the [Reverse ETL section of the Sources catalog](https://app.segment.com/goto-my-workspace/sources/catalog?category=Reverse%20ETL){:target="_blank"}, select the warehouse you previously connected to Salesforce and click **Add Source**.
 2. Give your source a name and enter the credentials for a user with read and write access to your database.
 3. Click **Test Connection**. If Segment can successfully connect to your warehouse, click **Add Source**.
@@ -89,7 +96,7 @@ Create a Segment Profiles destination to add a mapping to your Reverse ETL sourc
 7. When you've finished mapping all relevant event fields and verified that your test record contains all of the relevant user information, click **Save Mapping.**
 8. You're returned to the Mappings page for your Segment Profiles destination. Under the Mapping status column, enable the mapping you created in the previous step.
 
-## Step 3: Connect Flex to your Unify space
+## Step 3: Connect your Unify space to Flex
 
 To connect your Unify space to Flex, follow the [Connect an existing Segment Unify space](https://www.twilio.com/docs/flex/admin-guide/setup/unified-profiles/setup/unify-space){:target="_blank"} instructions in the Flex documentation.  
 
@@ -111,6 +118,19 @@ After linking your customer data to Flex through a Unify space, you can set up [
 ### Computed traits
 [Computed traits](/docs/unify/traits/computed-traits) allow you to quickly create user or account-level calculations that Segment keeps up-to-date over time. These computations are based on the events and event properties that you are sending through Segment. 
 
+To create a computed trait:
+1. Navigate to the Unify space you linked to Flex and click **Traits**. 
+2. Click **Create computed trait**. 
+3. Select the type of event you'd like to create and click **Next**. 
+4. Select an event to be the base of your computed trait.
+5. Add conditions and an optionally, an event property.
+  - **Conditions**: These restrict the messages considered when calculating the final value of a computed trait. For more information, see the [Conditions](/docs/unify/traits/computed-traits/#conditions) documentation.
+  - **Event properties**: These refine the computed traits to include only the specified properties. 
+6. Verify that your trait contains at least one member by clicking the **Preview Trait** button. 
+7. When you've verified that your trait contains at least one member, click **Next**.
+8. On the Select Destinations page, don't add a destination. Instead, click **Next**. 
+9. Enter a name for your trait and click **Create Trait**. 
+
 Segment recommends that you configure the following computed traits for Unified Profiles:
 - [Total inbounds](#total-inbounds): Number of inbound attempts resulting in customer engagement
 - [Frequent inbound channel](#frequent-inbound-channel): Identifies the user's most frequently used channel of communication
@@ -118,77 +138,49 @@ Segment recommends that you configure the following computed traits for Unified 
 Other computed traits that might be helpful include:
 - [Total outbounds](#total-outbounds): Number of outbound attempts resulting in customer engagement
 - [Last known service agent](#last-known-service-agent): Identifies the last agent to allow connecting to the same agent
-- [Last interaction duration](#last-interaction-duration): The duration (in seconds) of the customer's last interaction with agent(s)
-- [Common request](#common-request): Most frequent topic of inbound or outbound engagement
-- [Sentiment in last interaction](#sentiment-in-last-interaction): Gen-AI inferred sentiment in last interaction
-- [Last interaction topic](#last-interaction-topic): Topic of the last interaction 
+- [Last interaction duration](#last-interaction-duration): The duration (in seconds) of the customer's last interaction with an agent
+- [Sentiment in last interaction](#sentiment-in-last-interaction): AI-inferred sentiment in last interaction
 
 #### Total inbounds
-1. Navigate to the Unify space you linked to Flex and click **Traits**. 
-2. Click **Create computed trait**. 
-3. Select **Event counter** and click **Next**. 
-4. Select the "Flex - Engagement Initiated" event.
-5. Add the following conditions:
+Create an Event counter trait based on the "Flex - Engagement Initiated" event and add the following:
   - **Event property**: direction
   - **Operator**: equals
-  - **Value**: Inbound
-6. Verify that your trait contains at least one member by clicking the **Preview Trait** button. 
-7. When you've verified that your trait contains at least one member, click **Next**.
-8. On the Select Destinations page, don't add a destination. Instead, click **Next**. 
-9. Enter a name for your trait and click **Create Trait**. 
+  - **Value**: Inbound 
 
 #### Frequent inbound channel
-1. Navigate to the Unify space you linked to Flex and click **Traits**. 
-2. Click **Create computed trait**. 
-3. Select **Most frequent** and click **Next**. 
-4. Select the "Flex - Engagement Initiated" event.
-5. Add the following conditions:
+Create a Most frequent trait based on the "Flex - Engagement Initiated" event and add the following:
   - **Event property**: direction
   - **Operator**: equals
-  - **Value**: Inbound
-6. Add an additional event property "channelType" with a value "Text".
-6. Verify that your trait contains at least one member by clicking the **Preview Trait** button. 
-7. When you've verified that your trait contains at least one member, click **Next**.
-8. On the Select Destinations page, don't add a destination. Instead, click **Next**. 
-9. Enter a name for your trait and click **Create Trait**. 
+  - **Value**: Inbound 
+
+Add the following event property:
+  - **Event property**: channelType
+  - **Value**: Text
+
+And add a Minimum frequency of 2. 
 
 #### Total outbounds
-1. Navigate to the Unify space you linked to Flex and click **Traits**. 
-2. Click **Create computed trait**. 
-3. Select **Event counter** and click **Next**. 
-4. Select the "Flex - Engagement Completed" event.
-5. Add the following conditions:
+Create an Event counter trait based on the "Flex - Engagement Initiated" event and add the following:
   - **Event property**: direction
   - **Operator**: equals
   - **Value**: Outbound
-6. Verify that your trait contains at least one member by clicking the **Preview Trait** button. 
-7. When you've verified that your trait contains at least one member, click **Next**.
-8. On the Select Destinations page, don't add a destination. Instead, click **Next**. 
-9. Enter a name for your trait and click **Create Trait**. 
 
 #### Last known service agent
-1. Navigate to the Unify space you linked to Flex and click **Traits**. 
-2. Click **Create computed trait**. 
-3. Select **Last** and click **Next**. 
-4. Select the "Flex - Engagement Initiated" event.
-6. Add an event property "lastKnownAgentWorkerSid" with a value "Text".
-6. Verify that your trait contains at least one member by clicking the **Preview Trait** button. 
-7. When you've verified that your trait contains at least one member, click **Next**.
-8. On the Select Destinations page, don't add a destination. Instead, click **Next**. 
-9. Enter a name for your trait and click **Create Trait**.
+Create a Last trait based on the "Flex - Engagement Initiated" event and add the following:
+  - **Event property**: lastKnownAgentWorkerSid
+  - **Value**: Text
 
 #### Last interaction duration
-1. Navigate to the Unify space you linked to Flex and click **Traits**. 
-2. Click **Create computed trait**. 
-3. Select **Last** and click **Next**. 
-4. Select the "Flex - Engagement Initiated" event.
-6. Add an event property "duration" with a value "Number(100)".
-6. Verify that your trait contains at least one member by clicking the **Preview Trait** button. 
-7. When you've verified that your trait contains at least one member, click **Next**.
-8. On the Select Destinations page, don't add a destination. Instead, click **Next**. 
-9. Enter a name for your trait and click **Create Trait**. 
+Create a Last trait based on the "Flex - Engagement Initiated" event and add the following:
+  - **Event property**: duration
+  - **Value**: Number(100)
 
-<!--- As of 2/28/24 - this trait is not supported for Q1 release
+##### Sentiment in last interaction
+Create a Last trait based on the "Flex - Engagement Completed" event and add the following:
+  - **Event property**: sentiment
+  - **Value**: Text
+
+<!--- As of 2/28/24 - these traits are not supported for Q1 release
 #### Common request
 1. Navigate to the Unify space you linked to Flex and click **Traits**. 
 2. Click **Create computed trait**. 
@@ -200,20 +192,7 @@ Other computed traits that might be helpful include:
 7. When you've verified that your trait contains at least one member, click **Next**.
 8. On the Select Destinations page, don't add a destination. Instead, click **Next**. 
 9. Enter a name for your trait and click **Create Trait**.
---->
 
-#### Sentiment in last interaction
-1. Navigate to the Unify space you linked to Flex and click **Traits**. 
-3. Select **Last** and click **Next**. 
-4. Select the "Flex - Engagement Completed" event.
-5. Add an additional event property "sentiment" with a value "Text".
-6. Add a minimum frequency of "2".
-6. Verify that your trait contains at least one member by clicking the **Preview Trait** button. 
-7. When you've verified that your trait contains at least one member, click **Next**.
-8. On the Select Destinations page, don't add a destination. Instead, click **Next**. 
-9. Enter a name for your trait and click **Create Trait**.
-
-<!--- As of 2/28/24 - this trait is not supported for Q1 release
 #### Last interaction topic
 1. Navigate to the Unify space you linked to Flex and click **Traits**.
 3. Select **Last** and click **Next**. 
