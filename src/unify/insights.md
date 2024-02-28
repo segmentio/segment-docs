@@ -22,7 +22,7 @@ You can filter results by ID type, time range, specific violations, and more.
 
 To filter by `external_id`, you must enter an `external_id` value in the search bar.
 
-![An example of filtering by the external_id](/docs/unify/images/external_id.png)
+![An example of filtering by external_id](/docs/unify/images/external_id.png)
 
 
 ### Errors
