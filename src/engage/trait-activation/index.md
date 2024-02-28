@@ -26,7 +26,7 @@ Select your Destination, view its Segment documentation, then follow the corresp
 |Destination            |  Type         |  
 | [Facebook Custom Audiences](/docs/connections/destinations/catalog/personas-facebook-custom-audiences/) | List |
 | [Google Ads Remarketing Lists](/docs/connections/destinations/catalog/adwords-remarketing-lists/#overview) | List | 
-| Trait Activation also supports all cloud-mode [actions-based destinations](/docs/connections/destinations/actions/#available-actions-based-destinations). |         | 
+| Trait Activation also supports all cloud-mode [Destination Actions](/docs/connections/destinations/actions/#available-actions-based-destinations). |         | 
 
 ### Resyncs 
 

@@ -131,7 +131,7 @@ If you're using [Destination Actions](/docs/connections/destinations/actions/), 
 3. Enter your destination credentials.
 4. Navigate to **Engage > Audiences**, and click **+ Create**. 
 5. From the Select Destinations screen in the Audience builder, select your destination. 
-6. Confirm that "Send Track" or "Send Identify" is toggled on. 
+6. Confirm that **Send Track** or **Send Identify** is toggled on. 
 - Trait Enrichment supports Track and Identify calls. Follow the corresponding destination instructions to determine which event you'll need.
 7. Select **Customized Setup**.
 8. Select **Add Trait**. Then, select the traits you want to sync and click **Save**.
@@ -146,7 +146,7 @@ After you add traits, configure how your selected traits will map to your Destin
 1. Navigate to **Connections > Destinations** and select your destination.
 1. From the Destination overview screen, select the **Mappings** tab. 
 2. Click **+ New Mapping**. 
-- All actions in an actions-based destination can receive traits you configure with Trait Activation.
+- All actions in Destination Actions can receive traits you configure with Trait Activation.
 3. Locate the  **Select mappings** section to confirm the default field mappings match the traits in your custom setup. 
 - To update a trait field mapping for Identify calls, click on a field, and in the dropdown search bar enter `traits.` followed by your trait (for example, `traits.trait_1`). Segment sends traits you select for enrichment as traits in the `traits` object.
 - To update a trait field mapping for Track calls, click on a field, and in the dropdown search bar enter `properties.` followed by your trait (for example, `properties.trait_1`). Segment sends traits you select for enrichment as properties in the `properties` object.
