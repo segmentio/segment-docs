@@ -20,7 +20,7 @@ If you already have a Segment workspace, you can use a new or pre-existing [Segm
 ## Step 1: Set up your Unify space
 
 > success ""
-> This section is about setting up a new Segment Unify space to link to Twilio Flex. If you have an existing Segment Unify space you'd like to use, proceed directly to [Step 2: Connect your data to Unify](#step-2-connect-your-data-to-unify). If your Unify space includes a Salesforce source, RETL source, and a Segment Profiles destination already configured, proceed directly to [Step 3: Connect Flex to your Unify space](#step-3-connect-flex-to-your-unify-space).
+> This section is about setting up a new Segment Unify space to link to Twilio Flex. If you have an existing Segment Unify space you'd like to use, proceed directly to [Step 2: Connect your data to Unify](#step-2-connect-your-data-to-unify). If your existing Unify space includes a Salesforce source, RETL source, and a Segment Profiles destination, proceed directly to [Step 3: Connect Flex to your Unify space](#step-3-connect-flex-to-your-unify-space).
 
 Segment recommends creating a development or sandbox Unify space, verifying that your profiles appear as you would expect, and then creating a production Unify space.
 
