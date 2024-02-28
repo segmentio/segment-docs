@@ -10,7 +10,7 @@ hidden: true
 > info "Linked Audiences is in private beta"
 > Linked Audiences is in private beta, and Segment is actively working on this feature. Some functionality may change before it becomes generally available. 
 
-With Linked Audiences, you can use the relational data you've defined in your Data Graph to build audiences and send them to your downstream [actions-based destination](/docs/connections/destinations/actions/#available-actions-based-destinations).
+With Linked Audiences, you can use the relational data you've defined in your Data Graph to build audiences and send them to your downstream [actions-based destination](/docs/connections/destinations/actions/#available-actions-based-destinations) in cloud-mode.
 
 From the relationships you've defined between the profiles and entities in your warehouse, you can filter on an entity, profile trait, and audience membership conditions to create hyper-segmented audiences.
 
@@ -129,7 +129,7 @@ In the warehouse, `subscriptions.tier` is a column in the `Subscriptions` table,
 
 ## Step 2: Activate your Linked Audience
 
-You can use your Linked Audience to activate any [actions-based destination](/docs/connections/destinations/actions/#available-actions-based-destinations). The steps below provide instructions on how to add a destination to your Linked Audience(s), and send an event that best matches your use case.
+You can use your Linked Audience to activate any [actions-based destination](/docs/connections/destinations/actions/#available-actions-based-destinations) in cloud-mode. The steps below provide instructions on how to add a destination to your Linked Audience(s), and send an event that best matches your use case.
 
 > info ""
 > Segment has preset mappings for [Braze](/docs/connections/destinations/catalog/braze-cloud-mode-actions/#available-presets), [Iterable](/docs/connections/destinations/catalog/actions-iterable/#available-presets), and [Customer.io](/docs/connections/destinations/catalog/customer-io-actions/#available-presets) with many of the following steps already configured.
@@ -137,9 +137,9 @@ You can use your Linked Audience to activate any [actions-based destination](/do
 > warning ""
 > Some action destinations have limitations on nested objects, and the depth of the `_entity_context` property.
 
-### Step 2a: Add an action destination
+### Step 2a: Add an action destination (cloud-mode only)
 
-To activate your Linked Audience, you first need to add an action destination.
+To activate your Linked Audience, you first need to add an actions-based destination.
 
 From the Add destination window, select your destination and click **Next**.
 

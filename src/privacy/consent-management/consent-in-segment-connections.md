@@ -1,21 +1,21 @@
 ---
 title: Consent in Segment Connections
+plan: consent-management
 related:
   - "/privacy/consent-management/"
-  - "/privacy/configure-consent-management/"
+  - "/privacy/consent-management/configure-consent-management/"
+  - "/privacy/consent-management/consent-in-unify/"
+redirect_from: "/privacy/consent-in-segment-connections"
 ---
-
-> info "Consent Management is in public beta"
-> This means that Consent Management features are in active development, and some functionality may change before it becomes generally available. [Contact Segment](https://segment.com/help/contact/){:target="_blank"} with any feedback or questions.
 
 Segment Connections users can add the [consent object](#consent-object) to their sources to stamp events with the end user consent preferences captured by your consent management platform (CMP) and send them downstream to destinations in categories that an end user consented to share data with. Events without the consent object continue to flow to destinations without consent enforcement. 
 
-For more information about configuring consent categories, see the [Configure Consent Management](/docs/privacy/configure-consent-management/#step-1-create-consent-categories-in-the-segment-app) documentation.
+For more information about configuring consent categories, see the [Configure Consent Management](/docs/privacy/consent-management/configure-consent-management/#step-1-create-consent-categories-in-the-segment-app) documentation.
 
 If your sources also contain the integrations object, Segment will look at the consent object first, and then take into account the integrations object according to the table in the [Reconcile consent object and integrations object](#reconcile-consent-object-and-integrations-object-conflicts) documentation.
 
 > info "Unify users must send an additional event to add consent preferences to Profiles"
-> If you use Unify, see the [Consent in Unify](/docs/privacy/consent-in-unify) documentation for more information about the Segment Consent Preference event, which Segment uses with the consent object to add consent preference to Profiles.
+> If you use Unify, see the [Consent in Unify](/docs/privacy/consent-management/consent-in-unify) documentation for more information about the Segment Consent Preference Updated event, which Segment uses with the consent object to add consent preference to Profiles.
 
 ## Consent object
 
