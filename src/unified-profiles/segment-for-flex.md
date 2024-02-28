@@ -144,7 +144,7 @@ In addition to 1 source for Flex events that is auto-created during setup, you c
 These sources are limited to the following types:
   - [Salesforce CRM](/docs/connections/sources/catalog/cloud-apps/salesforce/){:target="_blank"}
   - [BigQuery (Reverse ETL)](/docs/connections/reverse-etl/reverse-etl-source-setup-guides/bigquery-setup/){:target="_blank"}
-  - [Postgres (Reverse ETL)](docs/connections/reverse-etl/reverse-etl-source-setup-guides/postgres-setup/){:target="_blank"}
+  - [Postgres (Reverse ETL)](/docs/connections/reverse-etl/reverse-etl-source-setup-guides/postgres-setup/){:target="_blank"}
   - [Redshift (Reverse ETL)](/docs/connections/reverse-etl/reverse-etl-source-setup-guides/redshift-setup/){:target="_blank"}
   - [Snowflake (Reverse ETL)](/docs/connections/reverse-etl/reverse-etl-source-setup-guides/snowflake-setup/){:target="_blank"}
   - [Swift](/docs/connections/sources/catalog/libraries/mobile/apple/){:target="_blank"}

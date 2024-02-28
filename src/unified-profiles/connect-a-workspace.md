@@ -3,7 +3,7 @@ title: Connect an Existing Segment Workspace
 hidden: true
 ---
 
-If you already have a Segment workspace, you can use a new or pre-existing [Segment Unify space](/docs/unify/quickstart/) to connect your customer data to Unified Profiles in Flex. 
+If you already have a Segment workspace, you can use a new or pre-existing [Segment Unify space](/docs/unify/quickstart/){:target="_blank"} to connect your customer data to Unified Profiles in Flex. 
 
 > warning "Unified Profiles in Flex has limited source and destination support"
 > Unified Profiles supports the following connections:
@@ -20,7 +20,7 @@ If you already have a Segment workspace, you can use a new or pre-existing [Segm
 ## Step 1: Set up your Unify space
 
 > success ""
-> This section is about setting up a new Segment Unify space to link to Twilio Flex. If you have an existing Segment Unify space you'd like to use, proceed directly to [Step 2: Connect your data to Unify](#step-2-connect-your-data-to-unify). If your existing Unify space includes a Salesforce source, RETL source, and a Segment Profiles destination, proceed directly to [Step 3: Connect Flex to your Unify space](#step-3-connect-flex-to-your-unify-space).
+> This section is about setting up a new Segment Unify space to link to Twilio Flex. If you have an existing Segment Unify space you'd like to use, proceed directly to [Step 2: Connect your data to Unify](#step-2-connect-your-data-to-unify). If your existing Unify space includes a Salesforce source, RETL source, and a Segment Profiles destination, proceed directly to [Step 3: Connect your Unify space to Flex](#step-3-connect-your-unify-space-to-flex).
 
 Segment recommends creating a development or sandbox Unify space, verifying that your profiles appear as you would expect, and then creating a production Unify space.
 
@@ -40,7 +40,7 @@ To create a Unify space:
 After you've created a Unify space, you must also connect a Salesforce CRM source, a data warehouse, and a Segment Profiles destination to your Unify space to link your customers' data to Unified Profiles. 
 
 > success ""
-> This section is about setting up a Salesforce source, RETL source, and a Segment Profiles destination to link to your Unify space. If you have an existing Segment Unify space with these connections that you'd like to use, proceed directly to [Step 3: Connect Flex to your Unify space](#step-3-connect-flex-to-your-unify-space).
+> This section is about setting up a Salesforce source, RETL source, and a Segment Profiles destination to link to your Unify space. If you have an existing Segment Unify space with these connections that you'd like to use, proceed directly to [Step 3: Connect your Unify space to Flex](#step-3-connect-your-unify-space-to-flex).
 
 ### Set up Salesforce
 1. From the [catalog page in your workspace](https://app.segment.com/goto-my-workspace/sources/catalog/salesforce){:target="_blank"}, select the Salesforce source and click **Add Source**. 
@@ -106,7 +106,7 @@ Before leaving Segment, note the following information about your Segment worksp
 - **Workspace slug**: Located in the [General Settings section](https://app.segment.com/goto-my-workspace/settings/basic){:target="_blank"} of your Segment workspace
 - **Unify space slug**: Located in the address bar between `/spaces/` and `/explorer/`. For example: `app.segment.com/workspace-slug/unify/spaces/unify-space-slug/explorer`
 - **Unify space ID**: Located in the API access settings for your Unify space (**Unify > Unify settings > API access**)
-- **Profile API access token**: Either the access token you created in [Step 1: Set up your Unify Space](#step-1-set-up-your-unify-space){:target="_blank"}, or for existing Unify spaces, a [new token](/docs/unify/profile-api/#configure-access){:target="_blank"}
+- **Profile API access token**: Either the access token you created in [Step 1: Set up your Unify Space](#step-1-set-up-your-unify-space), or for existing Unify spaces, a [new token](/docs/unify/profile-api/#configure-access){:target="_blank"}
 
 ## Step 4: Create Computed Traits and Predictions
 
