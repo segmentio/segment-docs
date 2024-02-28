@@ -9,7 +9,7 @@ hidden: false
 > warning "Updated package for pilot users"
 > If you've been using Analytics-Flutter since the pilot phase, see [Upgrading from pilot](#upgrading-from-pilot) to use the updated version of Analytics-Flutter. 
 
-Analytics-Flutter enables you to seamlessly add Segment analytics to your Flutter app.
+Analytics-Flutter lets you add Segment analytics to your Flutter app.
 
 ### Supported platforms
 Analytics-Flutter supports these platforms:
@@ -383,7 +383,7 @@ You can use these plugins to meet your tracking needs:
   
 ## Controlling upload with flush policies
 
-You can use `FlushPolicies` to more granurily control when events upload.
+You can use `FlushPolicies` to more granularly control when events upload.
 
 A flush policy defines the strategy for deciding when to flush. This can be on an interval, on a certain time of day, after receiving a certain number of events, or even after receiving a particular event. This gives you more flexibility on when to send events to Segment.
 
@@ -426,14 +426,14 @@ if (isConnected) {
 
 You can create a custom `FlushPolicy` for your application needs by implementing the  `FlushPolicy` interface. You can also extend the `FlushPolicyBase` class that already creates and handles the `shouldFlush` value reset.
 
-A `FlushPolicy` only needs to implement 1 method:
+A `FlushPolicy` only needs to implement one method:
 - `onEvent(RawEvent event)`: Gets called on every event tracked by your client.
 
 A `FlushPolicy` can optionally implement:
 - `reset()`: Calls after a flush is triggered either by your policy, by another policy, or manually.
 - `start()`: Executes when the flush policy is enabled and added to the client. This is a good place to start background operations, make async calls, and configure things before execution.
 
-The `FlushPolicy` should have a `shouldFlush` boolean value. When this is set to true, the client attempts to upload events. Each policy should reset this value to `false` according to its own logic, although it's pretty common to do it inside the `reset` method.
+The `FlushPolicy` should have a `shouldFlush` boolean value. When this is set to `true`, the client attempts to upload events. Each policy should reset this value to `false` according to its own logic, although it's pretty common to do it inside the `reset` method.
 
 ```dart
 import 'package:segment_analytics/event.dart';
@@ -502,9 +502,9 @@ LogFactory.logger = CustomLogger();
 
 You can handle analytics client errors through the `errorHandler` option.
 
-The error handler configuration receives a function which gets called whenever an error happens on the analytics client. It receives an Exception, that extends one of the errors from [errors.dart](https://github.com/segmentio/analytics_flutter/blob/main/packages/core/lib/errors.dart){:target="_blank"}.
+The error handler configuration receives a function which gets called whenever an error happens on the analytics client. It receives an Exception that extends one of the errors from [errors.dart](https://github.com/segmentio/analytics_flutter/blob/main/packages/core/lib/errors.dart){:target="_blank"}.
 
-You can use this error handling to trigger different behaviors in the client when a problem occurs. For example if the client gets rate limited, you could use the error handler to swap flush policies to be less aggressive.
+You can use this error handling to trigger different behaviors in the client when a problem occurs. For example, if the client gets rate limited, you could use the error handler to swap flush policies to be less aggressive.
 
 ```dart
 import 'package:segment_analytics/errors.dart';
