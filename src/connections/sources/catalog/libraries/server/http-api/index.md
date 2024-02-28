@@ -100,7 +100,7 @@ POST https://api.segment.io/v1/identify
     "ip": "24.5.68.47"
   },
   "timestamp": "2012-12-02T00:30:08.276Z",
-  "writeKey": "123xyz"
+  "writeKey": "YOUR_WRITE_KEY"
 }
 ```
 This call is identifying the user by their unique User ID (the one you know them by in your database) and labeling them with `email`, `name`, and `industry` traits.
@@ -141,7 +141,7 @@ POST https://api.segment.io/v1/track
     "ip": "24.5.68.47"
   },
   "timestamp": "2012-12-02T00:30:12.984Z",
-  "writeKey": "123xyz"
+  "writeKey": "YOUR_WRITE_KEY"
 }
 ```
 
@@ -175,7 +175,7 @@ POST https://api.segment.io/v1/page
   "userId": "019mr8mf4r",
   "name": "Tracking HTTP API",
   "timestamp": "2012-12-02T00:31:29.738Z",
-  "writeKey": "123xyz"
+  "writeKey": "YOUR_WRITE_KEY"
 }
 ```
 The `page` call has the following fields:
@@ -208,7 +208,7 @@ POST https://api.segment.io/v1/screen
   "userId": "019mr8mf4r",
   "name": "Tracking HTTP API",
   "timestamp": "2012-12-02T00:31:29.738Z",
-  "writeKey": "123xyz"
+  "writeKey": "YOUR_WRITE_KEY"
 }
 ```
 
@@ -248,7 +248,7 @@ POST https://api.segment.io/v1/group
     "employees": 420
   },
   "timestamp": "2012-12-02T00:31:38.208Z",
-  "writeKey": "123xyz"
+  "writeKey": "YOUR_WRITE_KEY"
 }
 ```
 The `group` call has the following fields:
@@ -282,7 +282,7 @@ POST https://api.segment.io/v1/alias
   "previousId": "39239-239239-239239-23923",
   "userId": "019mr8mf4r",
   "timestamp": "2012-12-02T00:31:29.738Z",
-  "writeKey": "123xyz"
+  "writeKey": "YOUR_WRITE_KEY"
 }
 ```
 The `alias` call has the following fields:
@@ -365,7 +365,7 @@ POST https://api.segment.io/v1/batch
       "timestamp": "2015-2-02T00:30:12.984Z"
     }
   ],
-  "writeKey": "123xyz",
+  "writeKey": "YOUR_WRITE_KEY",
   "context": {
     "device": {
       "type": "phone",
@@ -424,7 +424,7 @@ POST https://api.segment.io/v1/identify
     "Kissmetrics": true,
     "Google Analytics": false
   },
-  "writeKey": "123xyz"
+  "writeKey": "YOUR_WRITE_KEY"
 }
 ```
 
