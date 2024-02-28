@@ -15,7 +15,7 @@ Choose between [writeKey authentication](#writeKey-authentication) and [OAuth](#
 
 #### writeKey authentication
 Authenticate to the Tracking API by sending your project's **Write Key** along with a request.
-The authentication writeKey should be snet as part of the body of the request. This will be encrypted over https.
+The authentication writeKey should be sent as part of the body of the request. This will be encrypted over https.
 
 #### OAuth
 [Obtain the access token](/docs/connections/oauth/) from the Authorization Server specific to the region. 
