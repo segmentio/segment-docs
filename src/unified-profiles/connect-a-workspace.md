@@ -106,7 +106,7 @@ Before leaving Segment, note the following information about your Segment worksp
 - **Workspace slug**: Located in the [General Settings section](https://app.segment.com/goto-my-workspace/settings/basic){:target="_blank"} of your Segment workspace
 - **Unify space slug**: Located in the address bar between `/spaces/` and `/explorer/`. For example: `app.segment.com/workspace-slug/unify/spaces/unify-space-slug/explorer`
 - **Unify space ID**: Located in the API access settings for your Unify space (**Unify > Unify settings > API access**)
-- **Profile API access token**: Either the access token you created in [Step 1: Set up your Unify Space](#step-1-set-up-your-unify-space), or for existing Unify spaces, a [new token](/docs/unify/profile-api/#configure-access)
+- **Profile API access token**: Either the access token you created in [Step 1: Set up your Unify Space](#step-1-set-up-your-unify-space){:target="_blank"}, or for existing Unify spaces, a [new token](/docs/unify/profile-api/#configure-access){:target="_blank"}
 
 ## Step 4: Create Computed Traits and Predictions
 
@@ -116,7 +116,7 @@ After linking your customer data to Flex through a Unify space, you can set up [
 > Before you can create computed traits in Segment, you must connect your Unify space to Flex and then complete a customer interaction in Flex. 
 
 ### Computed traits
-[Computed traits](/docs/unify/traits/computed-traits) allow you to quickly create user or account-level calculations that Segment keeps up-to-date over time. These computations are based on the events and event properties that you are sending through Segment. 
+[Computed traits](/docs/unify/traits/computed-traits){:target="_blank"} allow you to quickly create user or account-level calculations that Segment keeps up-to-date over time. These computations are based on the events and event properties that you are sending through Segment. 
 
 To create a computed trait:
 1. Navigate to the Unify space you linked to Flex and click **Traits**. 
@@ -124,7 +124,7 @@ To create a computed trait:
 3. Select the type of event you'd like to create and click **Next**. 
 4. Select an event to be the base of your computed trait.
 5. Add conditions and an optionally, an event property.
-  - **Conditions**: These restrict the messages considered when calculating the final value of a computed trait. For more information, see the [Conditions](/docs/unify/traits/computed-traits/#conditions) documentation.
+  - **Conditions**: These restrict the messages considered when calculating the final value of a computed trait. For more information, see the [Conditions](/docs/unify/traits/computed-traits/#conditions){:target="_blank"} documentation.
   - **Event properties**: These refine the computed traits to include only the specified properties. 
 6. Verify that your trait contains at least one member by clicking the **Preview Trait** button. 
 7. When you've verified that your trait contains at least one member, click **Next**.
@@ -205,13 +205,13 @@ Create a Last trait based on the "Flex - Engagement Completed" event and add the
 --->
 
 ### Predictions
-[Predictions](/docs/unify/traits/predictions/), Segment’s artificial intelligence and machine learning feature, lets you predict the likelihood that users will perform any event tracked in Segment. With Predictions, you can identify users with, for example, a high propensity to purchase, refer a friend, or use a promo code. Predictions also lets you predict a user’s lifetime value (LTV).
+[Predictions](/docs/unify/traits/predictions/){:target="_blank"}, Segment’s artificial intelligence and machine learning feature, lets you predict the likelihood that users will perform any event tracked in Segment. With Predictions, you can identify users with, for example, a high propensity to purchase, refer a friend, or use a promo code. Predictions also lets you predict a user’s lifetime value (LTV).
 
 Segment recommends that you select the following Predictions for Unified Profiles: 
-- [Likelihood to churn](/docs/unify/traits/predictions/#likelihood-to-churn)
-- [Predicted Lifetime value](/docs/unify/traits/predictions/#predicted-lifetime-value)
+- [Likelihood to churn](/docs/unify/traits/predictions/#likelihood-to-churn){:target="_blank"}
+- [Predicted Lifetime value](/docs/unify/traits/predictions/#predicted-lifetime-value){:target="_blank"}
 
-For more information about Predictions, see the [Predictions FAQ](/docs/unify/traits/predictions/using-predictions/#faqs) and [Predictions Nutrition Label](/docs/unify/traits/predictions/predictions-nutrition-facts/).
+For more information about Predictions, see the [Predictions FAQ](/docs/unify/traits/predictions/using-predictions/#faqs){:target="_blank"} and [Predictions Nutrition Label](/docs/unify/traits/predictions/predictions-nutrition-facts/){:target="_blank"}.
 
 ## Troubleshooting
 You can use the following tools to debug issues you may encounter while configuring your Segment resources for Unified Profiles.
@@ -219,12 +219,12 @@ You can use the following tools to debug issues you may encounter while configur
 ### Source debugger
 The Source debugger is a real-time tool that helps you confirm that API calls made from your website, mobile app, or servers arrive to your Segment source, so you can troubleshoot your Segment connections. With the debugger, you can check that calls are sent in the expected format without having to wait for any data processing.
 
-For more information about the Source debugger, see the [Source debugger](/docs/connections/sources/debugger) documentation. 
+For more information about the Source debugger, see the [Source debugger](/docs/connections/sources/debugger){:target="_blank"} documentation. 
 
 ### Profile explorer
 Use the Profile explorer to view all user data, including their event history, traits, and identifiers. With the Profile explorer, you have a complete view of your customers.
 
-For more information about the Profile explorer, see the [Profile explorer](/docs/unify/#profile-explorer) documentation.
+For more information about the Profile explorer, see the [Profile explorer](/docs/unify/#profile-explorer){:target="_blank"} documentation.
 
 <div class="double">
   {% include components/reference-button.html

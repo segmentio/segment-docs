@@ -89,7 +89,7 @@ Connect to either a website or mobile app to complete this step.
 #### Website
 1. On the Getting started with Segment page, under the Connect your website section, click **Connect Source**.
 2. Enter a name for your website in the Website Name field, copy the URL of your website into the Website URL field, and click **Create Source**. 
-3. Copy the Segment snippet and paste it into the header of your website. For more information about the Segment snippet, click "What is this?" or view the [Add the Segment Snippet docs](/docs/connections/sources/catalog/libraries/website/javascript/quickstart/#step-2a-add-the-segment-snippet).
+3. Copy the Segment snippet and paste it into the header of your website. For more information about the Segment snippet, click "What is this?" or view the [Add the Segment Snippet docs](/docs/connections/sources/catalog/libraries/website/javascript/quickstart/#step-2a-add-the-segment-snippet){:target="_blank"}.
 4. After you've pasted the snippet in the header of your website, click **Next**.
 5. On the Test screen, select either **Skip this step** or navigate to your website, view a few pages, then return to Segment and click **Test Connection**. If Segment detects page views on your site, the Page indicator with a check mark appears. When you've verified that your snippet is successfully installed, click **Done**.
 6. After Segment marks the "Add connections" tile as complete, click **Add identifiers and traits** and begin [Step 3: Add identifiers and traits](#step-3-add-identifiers-and-traits).
@@ -113,7 +113,7 @@ After you've selected which data sources you'd like to integrate customer data f
 3. Review the identifiers you've selected. To make changes to an identifier, select the menu icon in the row the identifier appears in, and click **Edit** or **Delete**.
 4. When you're satisfied with your identifiers, click **Add computed traits**.
 5. Select up to two traits and click **Save**. <br> _Segment recommends selecting **Total inbounds**, or the number of inbound attempts that resulted in a customer engagement, and **Frequent inbound channel**, which identifies the most frequently used communication channel._
-6. **(Optional)**: Set up predictive traits by selecting the **Set up predictive traits** dropdown and clicking **Complete setup** next to one or both traits. For more information about predictive traits, see Segment's [Predictions documentation](/docs/unify/Traits/predictions/).
+6. **(Optional)**: Set up predictive traits by selecting the **Set up predictive traits** dropdown and clicking **Complete setup** next to one or both traits. For more information about predictive traits, see Segment's [Predictions documentation](/docs/unify/Traits/predictions/){:target="_blank"}.
 
 > warning "Predictions require event data in your sources"
 > Before you can configure predictions, you must have data flowing into your connected source. After data is flowing into your source, it can take up to 48 hours for predictions to be ready.
@@ -129,8 +129,8 @@ To check your configuration:
 ### Additional troubleshooting tools
 If the Enable Sources and Test Connections check indicates there are problems with your sources and connections, you can use the advanced troubleshooting and testing tools linked under the Additional Troubleshooting Tools section to debug any issues with your configuration. 
 
-- [Event Debugger](/docs/connections/sources/debugger/): With the Debugger, you can check that calls are sent in the expected format without having to wait for any data processing. 
-- [Profile Explorer](/docs/unify/#profile-explorer): Use the Profile Explorer to view all user data, including event history, traits, and identifiers. 
+- [Event Debugger](/docs/connections/sources/debugger/){:target="_blank"}: With the Debugger, you can check that calls are sent in the expected format without having to wait for any data processing. 
+- [Profile Explorer](/docs/unify/#profile-explorer){:target="_blank"}: Use the Profile Explorer to view all user data, including event history, traits, and identifiers. 
 - [Advanced Segment](https://app.segment.com/goto-my-workspace/overview){:target="_blank"}: Use the Advanced Segment option to view your full Segment workspace. Segment recommends working with the assistance of Professional Services when accessing Advanced Segment.
 
 ## Segment for Flex entitlements and limitations
@@ -142,37 +142,37 @@ Segment for Flex workspaces created during the Unified Profiles setup process ha
 In addition to 1 source for Flex events that is auto-created during setup, you can create an additional 5 sources.
 
 These sources are limited to the following types:
-  - [Salesforce CRM](/docs/connections/sources/catalog/cloud-apps/salesforce/)
-  - [BigQuery (Reverse ETL)](/docs/connections/reverse-etl/reverse-etl-source-setup-guides/bigquery-setup/)
-  - [Postgres (Reverse ETL)](docs/connections/reverse-etl/reverse-etl-source-setup-guides/postgres-setup/)
-  - [Redshift (Reverse ETL)](/docs/connections/reverse-etl/reverse-etl-source-setup-guides/redshift-setup/)
-  - [Snowflake (Reverse ETL)](/docs/connections/reverse-etl/reverse-etl-source-setup-guides/snowflake-setup/)
-  - [Swift](/docs/connections/sources/catalog/libraries/mobile/apple/)
-  - [Kotlin](/docs/connections/sources/catalog/libraries/mobile/kotlin-android/) 
-  - [Javascript](/docs/connections/sources/catalog/libraries/website/javascript/)
-  - [Twilio Event Streams](/docs/connections/sources/catalog/cloud-apps/twilio/)
-  - [HTTP](/docs/connections/sources/catalog/libraries/server/http-api/)
-  - [Java](/docs/connections/sources/catalog/libraries/server/java/)
+  - [Salesforce CRM](/docs/connections/sources/catalog/cloud-apps/salesforce/){:target="_blank"}
+  - [BigQuery (Reverse ETL)](/docs/connections/reverse-etl/reverse-etl-source-setup-guides/bigquery-setup/){:target="_blank"}
+  - [Postgres (Reverse ETL)](docs/connections/reverse-etl/reverse-etl-source-setup-guides/postgres-setup/){:target="_blank"}
+  - [Redshift (Reverse ETL)](/docs/connections/reverse-etl/reverse-etl-source-setup-guides/redshift-setup/){:target="_blank"}
+  - [Snowflake (Reverse ETL)](/docs/connections/reverse-etl/reverse-etl-source-setup-guides/snowflake-setup/){:target="_blank"}
+  - [Swift](/docs/connections/sources/catalog/libraries/mobile/apple/){:target="_blank"}
+  - [Kotlin](/docs/connections/sources/catalog/libraries/mobile/kotlin-android/){:target="_blank"}
+  - [Javascript](/docs/connections/sources/catalog/libraries/website/javascript/){:target="_blank"}
+  - [Twilio Event Streams](/docs/connections/sources/catalog/cloud-apps/twilio/){:target="_blank"}
+  - [HTTP](/docs/connections/sources/catalog/libraries/server/http-api/){:target="_blank"}
+  - [Java](/docs/connections/sources/catalog/libraries/server/java/){:target="_blank"}
 
 ### Destinations
 
 With a Segment for Flex workspace, you can create up to 3 destinations.
 
 These destinations are limited to the following types:
-- [Storage connections](/docs/connections/storage/catalog/)
-- [Analytics destinations](/docs/connections/destinations/catalog/#analytics)
-- [Event streams](/docs/connections/destinations/#event-streams-destinations)
-- [Segment Profiles destination](/docs/connections/destinations/catalog/actions-segment-profiles/)
-- [Segment Connections destination](/docs/connections/destinations/catalog/actions-segment/)
+- [Storage connections](/docs/connections/storage/catalog/){:target="_blank"}
+- [Analytics destinations](/docs/connections/destinations/catalog/#analytics){:target="_blank"}
+- [Event streams](/docs/connections/destinations/#event-streams-destinations){:target="_blank"}
+- [Segment Profiles destination](/docs/connections/destinations/catalog/actions-segment-profiles/){:target="_blank"}
+- [Segment Connections destination](/docs/connections/destinations/catalog/actions-segment/){:target="_blank"}
 
 
 ### Entitlements
 
 Your Segment for Flex workspace has the following entitlements:
 
-- 2 [Unify spaces](/docs/unify/quickstart/)
-- 2 [Computed traits](/docs/unify/Traits/computed-traits/)
-- 2 [Predictions](/docs/unify/traits/predictions/)
+- 2 [Unify spaces](/docs/unify/quickstart/){:target="_blank"}
+- 2 [Computed traits](/docs/unify/Traits/computed-traits/){:target="_blank"}
+- 2 [Predictions](/docs/unify/traits/predictions/){:target="_blank"}
 
 <div class="double">
   {% include components/reference-button.html
