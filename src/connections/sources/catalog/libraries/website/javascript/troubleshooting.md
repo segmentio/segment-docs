@@ -193,6 +193,12 @@ Some destinations accept properties only. As a result, custom context fields you
 
 The AJS cookies being set under segment.com are first-party cookies. They are part of Segment's own implementation as well as the destination Segment uses. These cookies are not related to your implementation of Segment, and you only see them because you've visited Segment's domain using the same browser. They are sent to the writekey connected to Segment's own workspace, and are associated with the events Segment tracks when you visit segment.com.
 
+### Loading with Prototype.js
+
+If you're having issues with your destinations loading with Protoype.js, there is a [known issue that was reported](https://github.com/prototypejs/prototype/issues/338){:target="_blank"} regarding this.  
+
+In order to prevent the issues, you can preserve the original `Array.from` method without letting the prototype override it.
+
 ## Will Google Chrome's third-party cookie changes impact Segment Analytics.js?
 
 No, Analytics.js isn't affected by this change. This is because Analytics.js only creates first-party cookies. Unlike third-party cookies, which are set by external services and blocked by the [new Chrome update](https://developers.google.com/privacy-sandbox/3pcd){:target="_blank"}.

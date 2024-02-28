@@ -173,3 +173,12 @@ items:
     team: false
     business: true
     addon: true
+
+- product_display_name: Consent Management
+  slug: consent-management
+  plan-note: "Consent Management is available to customers on the Business Tier Plan"
+  plans:
+    free: false
+    team: false
+    business: true
+    addon: false
