@@ -77,7 +77,7 @@ Yes. Users must first exit a Journey, however, before entering it again. To lear
 
 #### What destinations does Journeys support?
 
-Journeys supports all Engage destinations, including Destination Functions. Read more in Send data to destinations.
+Journeys supports all Engage destinations, including Destination Functions. Read more in [Send data to destinations](/docs/engage/journeys/send-data/) .
 
 #### What are the reporting capabilities of Journeys?
 
