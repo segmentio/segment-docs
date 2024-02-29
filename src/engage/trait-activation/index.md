@@ -19,7 +19,7 @@ To get started with Trait Activation, you'll need to set up the destination that
 
 ### Set up your destination
 
-Select your Destination, view its Segment documentation, then follow the corresponding required setup steps. 
+Select your destination, view its Segment documentation, then follow the corresponding required setup steps. 
 
 
 |-----------------------|---------------|

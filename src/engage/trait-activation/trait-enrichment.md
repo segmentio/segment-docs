@@ -136,9 +136,9 @@ If you're using [Destination Actions](/docs/connections/destinations/actions/), 
 7. Select **Customized Setup**.
 8. Select **Add Trait**. Then, select the traits you want to sync and click **Save**.
 
-### Configure mappings in your Destination
+### Configure mappings in your destination
 
-After you add traits, configure how your selected traits will map to your Destination.
+After you add traits, configure how your selected traits will map to your destination.
 
 > success ""
 > Keep your Engage Audience open in a separate tab, as you'll need to return. 
