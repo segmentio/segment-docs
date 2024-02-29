@@ -299,17 +299,26 @@ The advantage of testing your source function with webhooks is that all incoming
 
 Note that Segment has updated the webhook URL to `api.segmentapis.com/functions`. To use webhooks with your function:
 - You must [generate a public API token](https://docs.segmentapis.com/tag/Getting-Started/#section/Get-an-API-token){:target="_blank"}.
-- For POST calls, you'll need to use this API token in the header.
+  - Navigate here to [create a Public API Token]([url](https://app.segment.com/goto-my-workspace/settings/access-management/tokens)), or follow these steps : In your Segment Workspace, navigate to Settings → Workspace settings → Access Management tab → Token tab. On the right, click the `+ Create Token` button. Create a description for the token and assign access. Click `Create` and make sure to save the access token before clicking `Done`.
+- For POST calls, you'll need to use this Public API token in the Authorization Header, as `Bearer Token : public_api_token`
 
 ### Testing source functions with a webhook
 
-You can use webhooks to test the source function either by sending requests manually (using any HTTP client such as cURL or Insomnia) or by pasting the webhook into an external server that supports webhooks (such as Slack).
+You can use webhooks to test the source function either by sending requests manually (using any HTTP client such as cURL, Postman, or Insomnia) or by pasting the webhook into an external server that supports webhooks (such as Slack). 
+_A common Segment use case is to connect a Segment [Webhooks destination](https://segment.com/docs/connections/destinations/catalog/webhooks/) or [Webhook Actions destination](https://segment.com/docs/connections/destinations/catalog/actions-webhook/) to a test source, where the Webhook URL/endpoint that is used corresponds to the provided source function's endpoint, then you can trigger test events to send directly to that source which would be routed through your Webhook destination and continue on to the source function  : Source → Webhook destination → Source Function._
 
-From the source function editor, copy the webhook URL from the "Auto-fill via Webhook" dialog. To trigger the source function, send the request using the `POST` method, with the `Content-Type` header set to `application/json` or `application/x-www-form-urlencoded`.
+From the source function editor, copy the provided webhook URL (endpoint) from the "Auto-fill via Webhook" dialog. 
+_**Note** : When a new source is created that utilizes a source function, the new source's endpoint (webhook URL) will differ from the URL that is provided in the source function's test environment._
+
+In order to test the source function, you must (1) send a `POST` request to the source function's provided endpoint (webhook URL), (2) include an event `body`, and (3) the request must include these Headers : 
+- `Content-Type : application/json` or  `Content-Type : application/x-www-form-urlencoded`
+- `Authorization : Bearer _your_public_api_token_`
 
 ### Testing source functions manually
 
 You can also manually construct the headers and body of an HTTPS request right inside the editor and test with this data without using webhooks.
+The `Content-Type` Header is required when testing the function : 
+- `Content-Type : application/json` or  `Content-Type : application/x-www-form-urlencoded`
 
 ![Test HTTPS Request](images/test-manual.png){:width="500"}
 
