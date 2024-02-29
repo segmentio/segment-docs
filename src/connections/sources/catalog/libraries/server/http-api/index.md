@@ -24,7 +24,7 @@ The authentication writeKey should be sent as part of the body of the request. T
       "event": "happy-path-a3ef8a6f-0482-4694-bc4d-4afba03a0eab",
       "email": "test@example.org",
       "userId": "123",
-      "writeKey": "sx1dTUoxt8oErcWt1S1H23IZnr9SSRhy"
+      "writeKey": "DmBXIN4JnwqBnTqXccTF0wBnLXNQmFtk"
   }'
 ```
 
