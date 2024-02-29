@@ -3,7 +3,7 @@ title: Subscription Groups
 plan: engage-premier
 ---
 
-Subscription groups let your users choose the emails they want to recieve from you. This page introduces subscription groups and explains how you can use them with [Engage email campaigns](/docs/engage/campaigns/email-campaigns/).
+Subscription groups let your users choose the emails they want to receive from you. This page introduces subscription groups and explains how you can use them with [Engage email campaigns](/docs/engage/campaigns/email-campaigns/).
 
 ## About subscription groups
 
