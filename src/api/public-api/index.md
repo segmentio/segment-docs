@@ -89,3 +89,5 @@ When you don't have a source to forward violations or blocked events to, then ex
     }
   }
 ```
+#### What is the difference between a destination instance id and a destination's meta id?
+The destination’s meta id, returned by the delivery metrics endpoint, responds with the integration ID. The destination’s instance id is specific to a single destination within a customer’s workspace
