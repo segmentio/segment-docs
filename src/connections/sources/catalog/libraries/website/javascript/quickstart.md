@@ -33,7 +33,7 @@ You can choose to install Segment to your site in 1 of 2 ways:
 ### Step 2a: Add the Segment Snippet
 
 > info ""
-> You can always find the latest version of the Segment snippet in the Source Overview tab of your AJS source.
+> You can find the latest version of the Segment snippet in the **Overview** tab of your Javascript source.
 
 To add the Segment snippet to your app: 
 
