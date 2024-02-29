@@ -128,6 +128,9 @@ That being said, there are plenty of scenarios where the reactive Schema functio
 
 Blocked events are blocked from sending to all Segment Destinations, including warehouses and streaming Destinations. When an Event is blocked using a Tracking Plan, it does not count towards your MTU limit. They will, however, count toward your MTU limit if you enable [blocked event forwarding](/docs/protocols/enforce/forward-blocked-events/) in your Source settings.
 
+### I've omitted unplanned properties/traits from using my schema controls. Why am I seeing these properties/traits in the payload when violations are triggered?
+If you define a property/trait within your tracking plan and select the option to omit unplanned properties/traits within your [schema controls](https://segment.com/docs/protocols/enforce/schema-configuration) this option only applies to the property/trait name. If you have defined a key as an enumeration (enum) with a predetermined list of values, the schema control settings will not evaluate the values within this list. To address properties or traits that are omitted due to violations, adjustments must be made within the JSON Schema Violations settings.
+
 ### Do blocked and discarded events count towards my MTU counts?
 
 Blocking events within a [Source Schema](/docs/connections/sources/schema/) or [Tracking Plan](/docs/protocols/tracking-plan/create/) excludes them from API call and MTU calculations, as the events are discarded before they reach the pipeline that Segment uses for calculations.
