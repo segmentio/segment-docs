@@ -2,13 +2,13 @@
 title: 'Spec: Track'
 ---
 
-The `track` API call is how you record any actions your users perform, along with any properties that describe the action.
+The Track API call is how you record any actions your users perform, along with any properties that describe the action.
 
 {% include components/reference-button.html href="https://university.segment.com/introduction-to-segment/299975?reg=1&referrer=docs" icon="media/academy.svg" title="Segment University: The Track Method" description="Check out our high-level overview of the Track method in Segment University. (Must be logged in to access.)" %}
 
-Each action is known as an event. Each event has a name, like **User Registered**, and properties. For example, a **User Registered** event might have properties like `plan` or `accountType`. Calling `track` in one of our [sources](/docs/connections/sources/) is one of the first steps to getting started with Segment.
+Each action is known as an event. Each event has a name, like **User Registered**, and properties. For example, a **User Registered** event might have properties like `plan` or `accountType`. Calling Track in one of our [sources](/docs/connections/sources/) is one of the first steps to getting started with Segment.
 
-Here's the payload of a typical `track` call with most [common fields](/docs/connections/spec/common/) removed:
+Here's the payload of a typical Track call with most [common fields](/docs/connections/spec/common/) removed:
 
 ```json
 {
@@ -31,7 +31,7 @@ analytics.track("User Registered", {
 ```
 {% include content/syntax-note.md %}
 
-Beyond the common fields, the `track` call has the following fields:
+Beyond the common fields, the Track call has the following fields:
 
 <table>
   {% include content/spec-table-header.md %}
@@ -41,7 +41,7 @@ Beyond the common fields, the `track` call has the following fields:
 
 ## Example
 
-Here's a complete example of a `track` call:
+Here's a complete example of a Track call:
 
 ```json
 {
@@ -88,7 +88,7 @@ Use the following interactive code pen to see what your Track calls would look l
 
 ## Event
 
-Every `track` call records a single user action. Segment calls these "events", and recommend that you make your event names human-readable, so that everyone on your team (even you, after all that caffeine) can know what they mean instantly.
+Every Track call records a single user action. Segment calls these "events", and recommend that you make your event names human-readable, so that everyone on your team (even you, after all that caffeine) can know what they mean instantly.
 
 Don't use nondescript names like **Event 12** or **TMDropd**. Instead, use unique but recognizable names like **Video Recorded** and **Order Completed**.
 

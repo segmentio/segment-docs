@@ -62,6 +62,25 @@ Protocols customers can also use [Transformations](/docs/protocols/transform/) t
 
 > **Note**: Transformations are currently limited to event, property and trait name changes, and do **not** apply to historical data.
 
+## Can I change the data type of a column in the warehouse?
+
+Yes. Data types are initially set up in your warehouse based on the first value that comes in from a source, but you can request data type changes by reaching out to [Segment support](https://app.segment.com/workspaces?contact=1){:target="_blank”} for assistance.
+
+Keep in mind that Segment only uses [general data types](/docs/connections/storage/warehouses/schema/#schema-evolution-and-compatibility){:target="_blank”} when loading data in your warehouse. Therefore, some of the common scenarios are:
+- Changing data type from `timestamp` to `varchar` 
+- Changing data type from `integer` to `float`
+- Changing data type from `boolean` to `varchar`
+
+More granular changes (such as the examples below) wouldn’t normally be handled by the Support team, thus they often need to be made within the warehouse itself:
+- Expanding data type `varchar(256)` to `varchar(2048)`
+- Updating data type `integer` to `bigint`
+- Updating data type `float` to `float8`
+
+
+
+## Can the data type definitions in Protocols be enforced in a warehouse schema?
+
+The data type definitions in Protocols have no impact on the warehouse schema. 
 
 ## How do I find my source slug?
 
@@ -126,7 +145,7 @@ After a source is created, you can enable or disable a warehouse sync within the
 
 ## Can I be notified when warehouse syncs fail?
 
-If you enabled activity notifications for your storage destination, you'll receive notifications in the Segment app for the fifth and 20th consecutive warehouse failures.
+If you enabled activity notifications for your storage destination, you'll receive notifications in the Segment app for the fifth and 20th consecutive warehouse failures for all incoming data. Segment does not track failures on a per connection ('source<>warehouse') basis. Segment's notification structure also identifies global issues encountered when connecting to your warehouse, like bad credentials or being completely inaccessible to Segment.
 
 To sign up for warehouse sync notifications:
 1. Open the Segment app.
@@ -172,6 +191,6 @@ To change the name of your schema without disruptions:
 12. On the overview page for your source, select **Settings**.
 13. Enable the **Sync Data** toggle and click **Save Settings**.
 
-## Can I change the data type of a column in the warehouse?
+## Can I selectively filter data/events sent to my warehouse based on a property?
 
-Yes, data types are set up in your warehouse based on the first value that comes in from a source. However, you can request the support team to update the data type by reaching out to [support](https://app.segment.com/workspaces?contact=1). To learn more, check out [Data Types](/docs/connections/storage/warehouses/schema/#schema-evolution-and-compatibility) section.
+At the moment, there isn't a way to selectively filter events that are sent to the warehouse. The warehouse connector works quite differently from our streaming destinations and only has the [selective sync](/docs/connections/storage/warehouses/warehouse-syncs/#warehouse-selective-sync) functionality that allows you to enable/disable specific properties or events.

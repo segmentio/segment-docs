@@ -1,7 +1,6 @@
 ---
 title: Journeys Edits & Versioning
 plan: engage-foundations
-hidden: true
 ---
 
 With Journeys edits and versioning, you can make changes to live journeys.
@@ -14,7 +13,8 @@ Keep the following in mind when you edit a journey:
 - You can only have one live journey version at any time. When you publish a draft journey version, Segment prompts you to pause or archive the previous version of the journey (if it isn’t archived already). If you pause the previous version, it begins to drain any users left in the version while you paused it.
 - If the previous version is in a paused, draining state, users can continue flowing through it until you archive it, or if users successfully exit that version through its exit settings.
 - If you enable version exclusion when you edit a live journey, users in previous versions of the journey won't enter the latest version.
-- Segment preserves destination sync keys in the Segment backend for destination steps that remain the same between versions. You don't need to update these keys in your downstream destinations when creating a new journey version that has the same destination step as a previous version. In the destination step UI, however, the destination sync key will be different between versions.
+- Segment preserves destination sync keys in Segment for destination steps that remain the same between versions. You don’t need to update these keys in your downstream destinations when creating a new journey version that has the same destination step as a previous version. 
+- Segment displays a destination key on destination steps where a downstream destination is using a previous version key. Segment also preserves keys between versions even if you create a new draft version from a previously archived version.
 - You can create up to 25 versions of a journey. Segment keeps previous journey versions in a journey container, which you can access from the Journeys list page.
 
 ## Edit a journey

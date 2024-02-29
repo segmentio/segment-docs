@@ -16,14 +16,14 @@ Friendbuy is a referral marketing and campaign optimization platform.
 
 This destination allows you to:
 
-- Map your Page calls to enable [Widget Management](http://developers.friendbuy.com/#widget-management)
-- Map your Identify calls to enable [Customer Tracking](http://developers.friendbuy.com/#customer-tracking)
-- Map your Track calls to enable [Order Tracking](http://developers.friendbuy.com/#order-tracking) and [Product Tracking](http://developers.friendbuy.com/#product-tracking)
+- Map your Page calls to enable [Widget Management](http://developers.friendbuy.com/#widget-management){:target="_blank"}
+- Map your Identify calls to enable [Customer Tracking](http://developers.friendbuy.com/#customer-tracking){:target="_blank"}
+- Map your Track calls to enable [Order Tracking](http://developers.friendbuy.com/#order-tracking){:target="_blank"} and [Product Tracking](http://developers.friendbuy.com/#product-tracking){:target="_blank"}
 
 
 ## Page
 
-To load specific widgets on different web pages, you can configure your settings to map your _named_ Page call(s) to specific Friendbuy Widget(s). You can also configure a several optional [advanced widget configurations](http://developers.friendbuy.com/#widget-options) such as **auto delay** and **custom parameters**.
+To load specific widgets on different web pages, you can configure your settings to map your _named_ Page call(s) to specific Friendbuy Widget(s). You can also configure a several optional [advanced widget configurations](http://developers.friendbuy.com/#widget-options){:target="_blank"} such as **auto delay** and **custom parameters**.
 
 
 Friendbuy has two Widgets you can map to your Page calls:
@@ -88,7 +88,7 @@ analytics.identify('2', {
 
 This Destination accepts `Order Completed` events as described in the Segment [ecommerce spec](/docs/connections/spec/ecommerce/v2/#order-completed).
 
-Friendbuy has a concept of [Order Tracking](http://developers.friendbuy.com/#order-tracking) and [Product Tracking](http://developers.friendbuy.com/#product-tracking) where the former describes how to send data about the top level order whereas the latter documents instructions on sending data about each of the product within that order.
+Friendbuy has a concept of [Order Tracking](http://developers.friendbuy.com/#order-tracking){:target="_blank"} and [Product Tracking](http://developers.friendbuy.com/#product-tracking){:target="_blank"} where the former describes how to send data about the top level order whereas the latter documents instructions on sending data about each of the product within that order.
 
 When you send order details, Segment makes the following translation:
 

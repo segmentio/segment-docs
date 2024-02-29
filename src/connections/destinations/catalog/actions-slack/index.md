@@ -7,7 +7,7 @@ redirect_from:
   - '/connections/destinations/catalog/vendor-slack'
 versions:
   - name: Slack (Classic)
-    link: /docs/connections/destinations/slack
+    link: /docs/connections/destinations/catalog/slack/
 ---
 {% include content/plan-grid.md name="actions" %}
 
@@ -30,17 +30,15 @@ Slack (Actions) provides the following benefits over the classic Slack destinati
 3. Click **Configure Actions Slack**.
 4. Select an existing Source to connect to Slack (Actions).
 5. Click Customized Setup to start from a blank mapping.
+6. In your Slack workspace, create a new [Incoming Webhook URL](https://my.slack.com/services/new/incoming-webhook/){:target="_blank"} and select the Slack channel associated with your account that you'd like to send messages to. The Slack channel you select will be the default channel that receives message events. Paste the Incoming Webhook URL you created into each of your Slack Destination's Actions under the field labeled `Webhook URL*`.
 
 ## Important differences from the classic Slack destination
 
-- The classic Slack destination formats messages using the handlebars syntax. Slack (Actions) follows [Slack's  formatting syntax](https://api.slack.com/reference/surfaces/formatting){:target="_blank"}.
+- The classic Slack destination formats messages using the handlebars syntax. Slack (Actions) follows [Slack's formatting syntax](https://api.slack.com/reference/surfaces/formatting){:target="_blank"}.
 
 {% include components/actions-fields.html %}
 
 ## Migration from the classic Slack destination
-
-{% include content/ajs-upgrade.md %}
-
 
 Follow the table below to map your existing Slack destination configuration to Slack (Actions).
 

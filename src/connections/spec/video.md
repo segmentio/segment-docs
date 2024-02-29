@@ -43,7 +43,7 @@ All playback events share the same event properties that describe information ab
 | `ad_enabled`  | Boolean         | `false` if the user has adblock or any other ad blockers, otherwise `true`  if they can view your video ads.    |
 | `quality`     | String          | The quality of the video, for example, `highres`, `hd1080`, or `480p`.    |
 | `method`      | String          | **For Video Playback Interrupted events only**, you can send this property denoting how the playback was interrupted (such as `browser redirect`, `device lock`, or `call`). |
-| `livestream`  | Boolean         | If the playback will be a livetream, send `true`, otherwise `false`.    |  
+| `livestream`  | Boolean         | If the playback will be a livestream, send `true`, otherwise `false`.    |  
 
 ### Playback events
 Below is the full list of Video Playback Events.
@@ -547,7 +547,7 @@ All content events share the same event properties that describe information abo
 | `total_length`   | Integer   | The total duration of the content/asset in seconds. This should exclude the duration of any ads included in the playback of this asset. For livestream playback, send `null`.   |
 | `channel`        | String    | The channel in which the video content is playing, such as `espn` or `my blog`.   |
 | `full_episode`   | Boolean   | `true` if content is a full episode and `false` otherwise.   |
-| `livestream`     | Boolean   | If the playback is a livestream, check the documentation for relevant destinations for details on how to correctly pass the playhead position.   |
+| `livestream`     | Boolean   | If the playback is a livetream, send `true`, otherwise `false`.   |
 | `airdate`        | ISO 8601 Date String | An [ISO 8601 Date String](https://en.wikipedia.org/wiki/ISO_8601){:target="_blank"} representing the original air date or published date.  |
 | `bitrate`        | Integer   | The current `kbps`.  |
 | `framerate`      | Float     | The average `fps`.  |

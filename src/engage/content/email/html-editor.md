@@ -3,7 +3,7 @@ title: HTML Editor
 beta: true
 ---
 
-Use the HTML Editor to design your email template with both code and visual editing capabilities. Build your email template with code, copy and paste existing code, or use the visual editor for a code free design experience. 
+Use the HTML Editor to design your email template with both code and visual editing capabilities. Build your email template with code, copy and paste existing code, or use the Visual Editor for a code free design experience. 
 
 On this page, you'll learn how to use the HTML Editor to build personalized email templates for your Engage campaigns.
 
@@ -15,54 +15,55 @@ You can navigate to the HTML Editor in two ways:
 
 From the **Select Editor** screen, select **HTML Editor** and click **Build Email**.
 
-From the editor screen, click **Use HTML Editor** or **Use Visual Editor** to toggle between the two editors. 
  
-## Visual editor 
+## Visual Editor 
 
-Use the visual editor for a no-code option to design your email. With the visual editor, you can:
+Use the Visual Editor for a no-code option to design your email. With the Visual Editor, you can:
 - Add or modify headings and text
 - Modify text color, size, and style
 - [Insert an image](#insert-an-image) 
 - Add [merge tags](#personalize-with-merge-tags) and links
 - Add emojis
 
-Engage updates any changes you make in the visual editor to the HTML editor in real-time.
+Engage updates any changes you make in the Visual Editor to the HTML Editor in real-time.
 
 ### Insert an image
 
-To insert an image from the visual editor:
-1. Select the image icon in the visual editor toolbar.
+To insert an image from the Visual Editor:
+1. Select the image icon in the Visual Editor toolbar.
 2. Add the image URL source and alternative text. 
 3. Edit the image width and height.
-  - You can also click and drag the corners of the image to resize it in the visual editor. 
+  - You can also click and drag the corners of the image to resize it in the Visual Editor. 
 4. Click **Save**.
 
 
 ### Preview for desktop or mobile display
 
-To preview your email template, click the preview icon in the visual editor toolbar.
+To preview your email template, click the preview icon in the Visual Editor toolbar.
 
 From the preview screen, you can toggle between desktop or mobile to view the email in both displays.  
 
-## HTML editor
+## HTML Editor
 
-Use the HTML editor to maintain your email template with code. Copy and paste existing code or build a new template in the editor. 
+Use the HTML Editor to maintain your email template with code. Copy and paste existing code or build a new template in the editor. 
 
 Engage displays any changes you make in a preview screen to the right of your code. You can preview your email in both desktop and mobile display.
 
-Click **Format** at any time to properly indent and format your code in the HTML editor. 
+Click **Format** at any time to properly indent and format your code in the HTML Editor. 
 
 > info ""
-> When you toggle from the HTML editor to the visual editor, Engage may make minor changes to your code formatting. If Engage re-formats your code, it will not affect the email layout.
+> When you toggle from the HTML Editor to the Visual Editor, Engage may make minor changes to your code formatting. If Engage re-formats your code, it will not affect the email layout.
 
-### Error flagging
+### Error flagging and content validation
 
 Engage displays in-line error flags in the code editor to help you debug your code. If there are errors, you might not see content as expected in the preview screen until you've debugged your code.
+
+For all content editors in Engage, you'll see alerts for any issues in your template, such as invalid profile traits or incorrect [liquid syntax](https://liquidjs.com/tags/overview.html){:target="blank"}. Engage both flags template issue(s), and displays recommended next steps. While you can save these templates, you must fix any issues before using them in Engage campaigns. 
 
 ## Personalize with merge tags 
 Add merge tags to personalize your message with user profile traits.
 
-1. From the text toolbar in the visual editor, click the **Merge Tags** drop-down menu.
+1. From the text toolbar in the Visual Editor, click the **Merge Tags** drop-down menu.
 2. Select profile traits to add to the merge tags.
 3. Based on cursor placement, Engage adds merge tags to your template.
 
@@ -91,7 +92,7 @@ For example, use  `{% if %}`, `{% elseif %}`, and `{% else %}` tags to call a pr
 If you use liquid templating, be sure to [test your email](/docs/engage/content/email/template/#test-the-email-template/) to make sure that everything renders properly. 
 
 > success ""
-> While both the HTML and visual editor support liquid templating, Segment recommends using the HTML editor to write liquid templating.
+> While both the HTML and Visual Editor support liquid templating, Segment recommends using the HTML Editor to write liquid templating.
 
 > warning ""
 > Engage doesn't support liquid template syntax that produces partial blocks of HTML. 
@@ -101,11 +102,11 @@ To view more examples related to your use case, visit the [LiquidJS docs](https:
 ## Add unsubscribe links 
 It's always best practice to include an unsubscribe link in the emails you build. Engage adds an unsubscribe link to email templates, which you can edit at any time. 
 
-You can add unsubscribe links from the visual or HTML editor. 
+You can add unsubscribe links from the visual or HTML Editor. 
 
-From the visual editor: 
+From the Visual Editor: 
 
-1. Select the link icon in the [visual editor](#visual-editor) toolbar. 
+1. Select the link icon in the [Visual Editor](#visual-editor) toolbar. 
 2. Enter `[unsubscribe]` in the URL field. 
 3. Enter the link attributes and text. 
 4. Click **Save**.
@@ -113,6 +114,20 @@ From the visual editor:
 To add a link from the code editor, use `<a href = "[unsubscribe]"> </a>` in your HTML. 
 
 For more on email unsubscribe links, view SendGrid's [best practices](https://sendgrid.com/blog/managing-your-marketing-email-unsubscribes/){:target="blank"}.
+
+## Toggle between editors
+
+From the editor screen, you can click **Use HTML Editor** or **Use Visual Editor** to toggle between the two editors.
+ 
+The Visual Editor renders your HTML in an editable preview (similar to an email client), so you might need to accept formatting changes to your HTML to use the Visual Editor. In this case, Segment displays a confirmation modal with HTML differences.
+
+Potential HTML changes include formatting, removing attributes with potentially unsuported scripts in your HTML (for example, `onclick` or `onblur`), attribute reordering, and adding missing tags.
+
+If you don't want to accept the changes required to use the Visual Editor, you can continue editing in the HTML Editor.
+
+### Formatting your HTML
+
+In the HTML Editor, you can use the **Format** button to properly indent and format your code. Note that the Format button may not implement all changes necessary to use the Visual Editor.
 
 
 ## Save the template

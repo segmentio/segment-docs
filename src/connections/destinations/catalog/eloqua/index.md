@@ -18,9 +18,7 @@ When you enable Eloqua in your Segment integrations page, Segment automatically 
 
 ## Page
 
-Client-side page-view tracking is achieved using an integration with the [Eloqua
-Asynchronous Visitor Tracking
-Script](https://docs.oracle.com/cloud/latest/marketingcs_gs/OMCAA/pdf/AsynchronousVisitorTrackingScripts.pdf).
+Client-side page-view tracking is achieved using an integration with the [Eloqua Asynchronous Visitor Tracking Script](https://docs.oracle.com/cloud/latest/marketingcs_gs/OMCAA/pdf/AsynchronousVisitorTrackingScripts.pdf){:target="_blank"}.
 
 Page tracking with Eloqua is, by default, achieved with a third party cookie.
 This cookie is generated upon successful completion of an Eloqua form. Once a
@@ -88,10 +86,8 @@ Eloqua destination in the Segment UI.
 ## Mapping custom traits to Eloqua Accounts and Contacts
 
 First, configure the custom Account fields or custom Contact fields in your
-Eloqua dashboard. Read how to set those up for [Contacts
-here](https://docs.oracle.com/cloud/latest/marketingcs_gs/OMCAA/Help/ContactFields/Tasks/CreatingContactFields.htm)
-and for [Accounts
-here](https://docs.oracle.com/cloud/latest/marketingcs_gs/OMCAA/Help/AccountFields/Tasks/CreatingAccountFields.htm).
+Eloqua dashboard. Read how to set those up for [Contacts here](https://docs.oracle.com/cloud/latest/marketingcs_gs/OMCAA/Help/ContactFields/Tasks/CreatingContactFields.htm){:target="_blank"}
+and for [Accounts here](https://docs.oracle.com/cloud/latest/marketingcs_gs/OMCAA/Help/AccountFields/Tasks/CreatingAccountFields.htm){:target="_blank"}.
 
 Once you are set up in Eloqua, you are ready to map custom traits to your
 Contacts and Accounts. Next, provide a mapping in your destination settings
@@ -109,8 +105,7 @@ incompatible data types, Eloqua will return an error for the entire request.
 
 ## Track
 
-Segment `track` events trigger the creation of [Eloqua Custom
-Object](http://docs.oracle.com/cloud/latest/marketingcs_gs/OMCAA/Help/CustomObjects/CustomObjects.htm)
+Segment `track` events trigger the creation of [Eloqua Custom Object](http://docs.oracle.com/cloud/latest/marketingcs_gs/OMCAA/Help/CustomObjects/CustomObjects.htm){:target="_blank"}
 records and associate them with a specific Contact.
 
 To get started, provide a mapping in your destination settings

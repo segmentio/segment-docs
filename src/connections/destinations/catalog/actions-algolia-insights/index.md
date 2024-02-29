@@ -13,7 +13,7 @@ With the [Algolia Insights (Actions)](https://www.algolia.com/products/analytics
 - Personalization
 - Algolia Recommend
 
-This destination is maintained by [Algolia](https://www.algolia.com/). For any issues with the destination, [contact the Algolia team](mailto:hey@algolia.com).
+This destination is maintained by [Algolia](https://www.algolia.com/){:target="_blank”}. For any issues with the destination, [contact the Algolia team](mailto:hey@algolia.com).
 
 ## Getting Started
 
@@ -44,7 +44,7 @@ index.search('query', {
 })
 ``` 
 
-Once this is enabled you will be able to send properties like queryId in your segment events. You can read more about how to send Algolia-related data to Segment from [the documentation at Algolia](https://www.algolia.com/doc/guides/sending-events/implementing/connectors/segment/).
+Once this is enabled you will be able to send properties like queryId in your segment events. You can read more about how to send Algolia-related data to Segment from [the documentation at Algolia](https://www.algolia.com/doc/guides/sending-events/implementing/connectors/segment/){:target="_blank”}.
 
 ## Mapping Events
 

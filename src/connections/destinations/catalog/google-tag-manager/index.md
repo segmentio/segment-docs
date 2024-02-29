@@ -14,13 +14,14 @@ id: 54521fd625e721e32a72eeb9
 
 1. From the Segment web app, click **Catalog**.
 2. Search for "Google Tag Manager" in the Catalog, select it, and choose which of your sources to connect the destination to.
-3. In your Segment UI's destination settings, enter your Container ID (note: it should start with "GTM-"). You can find this in the Admin section of your [GTM dashboard](https://tagmanager.google.com/#/admin/).
+3. In your Segment UI's destination settings, enter your Container ID (note: it should start with "GTM-"). You can find this in the Admin section of your [GTM dashboard](https://tagmanager.google.com/#/admin/){:target="_blank"}.
 4. GTM loads on any pages where your Segment snippet is initialized and `analytics.page` is called in client-side JavaScript. Once you've turned on GTM through Segment, you can use Segment `track` events to populate the GTM `dataLayer`, and remove the GTML snippet from your page.
 
-**Notes**
-* Segment recommends that you load GTM through Segment rather than loading Segment inside of GTM.
-* Be sure to "publish" your GTM container in GTM before trying to load it through Segment, otherwise your container URL will return a 404 error.
+> info "Consent Mode"
+> Segment is currently building Consent Mode for all affected Google destinations. This will be available before March 6, 2024. For Google Tag Manager, please note that consent mode settings need to be managed directly [within your GTM account](https://support.google.com/tagmanager/answer/10718549?hl=en#tag-settings){:target="_blank"}. There's no direct update from Segment for the GTM destination regarding consent mode, as it's managed within GTM tags themselves.
 
+> info ""
+> Segment recommends that you load GTM through Segment rather than loading Segment inside of GTM. When you load Segment through GTM, it limits Segment's ability to help troubleshoot.
 
 ## Page
 If you're not familiar with the Segment Specs, take a look to understand what the [Page method](/docs/connections/spec/page/) does. An example call would look like:
@@ -86,7 +87,7 @@ If you are seeing `404` error on the JavaScript console of your page and it is a
 ### Duplicate Events
 If you have Google Ads enabled and see duplicate events in GTM, check to see if the event is set as a conversion in Google Ads. Duplicate conversions are common when you use both Google Ads and GTM, since Segment's Adwords destination initializes the gtag script with the dataLayer itself. So, when you fire a mapped event, Segment submits the payload directly to the dataLayer.
 
-Google recommends using [transactionIds](https://support.google.com/google-ads/answer/6386790){:target="_blank" to prevent this duplication. 
+Google recommends using [transactionIds](https://support.google.com/google-ads/answer/6386790){:target="_blank"} to prevent this duplication. 
 
 
 ## Appendices

@@ -34,7 +34,7 @@ The following table shows a high-level checklist of tasks you’ll need to compl
 | -------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Segment  | 1. Verify Engage identifiers in your Segment workspace. <br> 2. Add any missing identifiers.                                                                                                                                                                                                                                                                                      |
 | SendGrid | 1. Create a SendGrid account. <br> 2. Upgrade your account to a Pro plan. <br> 3. Configure an IP. <br> 4. Create a SendGrid subuser. <br> 5. Authenticate your domain. <br> 6. Enable subscription tracking. <br> 7. Enable an event webhook. <br> 8. Generate API credentials, then copy them into Engage settings. <br> 9. Warm up your IP. <br> 10. Contact SendGrid support. |
-| Twilio   | 1. Create a Twilio account. <br> 2. Purchase phone number(s). <br> 3. If necessary, register phone number(s). <br> 4. Create a messaging service. <br> 5. Generate an API key, then copy it into the Engage settings. <br> 6. Configure an event webhook.                                                                                                                         |
+| Twilio   | 1. Create a Twilio account. <br> 2. Purchase phone number(s). <br> 3. If necessary, register phone number(s). <br> 4. Create a messaging service. <br> 5. Generate an API key, then copy it into the Engage settings.                                                                                                                      |
 | WhatsApp | 1. Register a Twilio number with WhatsApp. <br> 2. Connect your Facebook account. <br> 2. Create the WhatsApp messaging service.                                                                                                                                                                                                                                                 |
 
 
@@ -197,39 +197,7 @@ Once you've completed IP warmup, your SendGrid account will be fully configured 
 
 ## Stage 3: Create and configure Twilio SMS services
 
-To add the ability to send SMS campaigns in Engage, you’ll now create a Twilio account, generate an API key, set up a phone number and messaging service, and configure event webhooks.
-
-### Create a Twilio account and generate an API key
-
-> info "Copying Twilio Credentials"
-> This step generates an Account SID, API key SID, and API key secret that you’ll later add to Segment. Make sure you’re ready to copy and save both before proceeding.
-
-Start by creating your Twilio account and getting an API key for Engage:
-
-1. Visit the [Twilio website](https://www.twilio.com/try-twilio){:target="_blank"} and sign up for a **paid account**. Trial accounts generate sending errors.
-2. In your Twilio console, select the **Account** dropdown menu, then **API keys & tokens**.
-3. On the Auth tokens & API keys page, click **Create API key**.
-4. Enter a name for the API key in the **Friendly name** field.
-5. Set the region to **United States (US1) - Default** and key type to **Main**.
-6. Click **Create API Key**.
-7. Copy and save both the **SID** and **Secret** field contents.
-
-
-    ![Copying the Twilio API key](images/apikeys.png "Copying the Twilio API key")
-
-8. Return to the API keys & tokens page. In the **Live credentials** section, copy the Account SID credentials.
-
-    ![Copying the Twilio Account SID key](images/twilioaccountsid.png "Copying the Twilio API key")
-
-9. Switch to the browser tab with your Segment workspace.
-10. Navigate to **Engage > Engage settings > Channels**.  Under **SMS Service with Twilio**, click the **Get Started** button. The **Set up and validate your Twilio account** page appears.
-11. Under **Enter your Twilio API Key information** (shown below), paste the Account SID, API Key SID, and API Key Secret you copied above into their corresponding fields.
-12. Click **Verify**, then click **Save Twilio Account.**
-
-  ![Entering Twilio API key into Engage](images/engageapifields.png "Entering Twilio API key into Engage")
-
-> info ""
-> If you’re unable to verify your Account SID, SID, or API Key secret, you may have copied an extra space at the end of one or the other. Verify that you’ve not added any extra characters or spaces, then try to verify again.
+To add the ability to send SMS campaigns in Engage, you’ll now create a Twilio account, set up a phone number and messaging service, and generate an API key.
 
 ### Set up a Twilio Messaging Service
 
@@ -238,28 +206,50 @@ Start by creating your Twilio account and getting an API key for Engage:
 
 Once you've identified the type of phone number you'll use with Twilio Engage, follow these steps to create a Twilio Messaging Service:
 
-1. [Purchase a phone number](https://support.twilio.com/hc/en-us/articles/223135247-How-to-Search-for-and-Buy-a-Twilio-Phone-Number-from-Console){:target="_blank"} within your Twilio Console. If necessary, [register the number](https://support.twilio.com/hc/en-us/articles/1260801864489-How-do-I-register-to-use-A2P-10DLC-messaging-){:target="_blank"}.
-2. In the Twilio Console side menu, navigate to **Messaging > Services**.
-3. On the Messaging Services page, click **Create Messaging Service**.
-4. Enter a name for your Messaging Service.
-5. Under the Messaging use dropdown, select **Market my services**.
-6. From the **Sender Pool** tab, click **Add Senders**, then select the phone number you purchased in Step 1. Click **Step 3: Set up Integration**. Leave this tab open.
+1. Visit the [Twilio website](https://www.twilio.com/try-twilio){:target="_blank"} and sign up for a **paid account**. Trial accounts generate sending errors.
+2. [Purchase a phone number](https://support.twilio.com/hc/en-us/articles/223135247-How-to-Search-for-and-Buy-a-Twilio-Phone-Number-from-Console){:target="_blank"} within your Twilio Console. If necessary, [register the number](https://support.twilio.com/hc/en-us/articles/1260801864489-How-do-I-register-to-use-A2P-10DLC-messaging-){:target="_blank"}.
+3. In the Twilio Console side menu, navigate to **Messaging > Services**.
+4. On the Messaging Services page, click **Create Messaging Service**.
+5. Enter a name for your Messaging Service.
+6. Under the Messaging use dropdown, select **Market my services**.
+7. From the **Sender Pool** tab, click **Add Senders**, then select the phone number you purchased in Step 1. Click **Step 3: Set up Integration**. Leave this tab open.
+8. Verify that the dropdown next to the **Request URL** field is set to **HTTP Post**.
+9. (If applicable:) Click **Step 4: Add compliance info**. Finish compliance setup, then click **Complete Messaging Service Setup**.
 
-To finish setting up your Messaging Service, you’ll now [configure an event webhook](https://www.twilio.com/docs/usage/webhooks/sms-webhooks){:target="_blank"}:
+### Generate an API key, and select your messaging service(s)
 
-1. Switch to the browser tab or window with your Engage workspace.
-2. Navigate to **Engage > Engage settings > Channels**.  Under **SMS Service with Twilio**, click the **Get Started** button.
-3. The **Set up and validate your Twilio account** overlay appears (pictured below). Click the **Copy webhook URL** button. Your computer copies the URL to your clipboard.
+> info "Copying Twilio Credentials"
+> This step generates an Account SID, API key SID, and API key secret that you’ll later add to Segment. Make sure you’re ready to copy and save both before proceeding.
 
-    ![Engage webhook URL](images/engagewebhook.png "Engage webhook URL")
+Start by creating your Twilio account and getting an API key for Engage:
 
-4. Return to the Twilio Messaging Service setup tab. On the Integration page, select the **Send a webhook** radio button.
-5. Paste the URL you copied in Step 3 into the **Request URL** field (pictured below).
+1. In your Twilio console, select the **Account** dropdown menu, then **API keys & tokens**.
+2. On the Auth tokens & API keys page, click **Create API key**.
+3. Enter a name for the API key in the **Friendly name** field.
+4. Set the region to **United States (US1) - Default** and key type to **Main**.
+5. Click **Create API Key**.
+6. Copy and save both the **SID** and **Secret** field contents.
 
-    ![Twilio webhook field](images/requesturl.png "Twilio webhook field")
+    ![Copying the Twilio API key](images/apikeys.png "Copying the Twilio API key")
 
-6. Verify that the dropdown next to the **Request URL** field is set to **HTTP Post**.
-7. (If applicable:) Click **Step 4: Add compliance info**. Finish compliance setup, then click **Complete Messaging Service Setup**.
+7. Return to the API keys & tokens page. In the **Live credentials** section, copy the Account SID credentials.
+
+    ![Copying the Twilio Account SID key](images/twilioaccountsid.png "Copying the Twilio API key")
+
+8. Switch to the browser tab with your Segment workspace.
+9. Navigate to **Engage > Engage settings > Channels**.  Under **SMS Service with Twilio**, click the **Get Started** button. The **Set up and validate your Twilio account** page appears.
+10. Under **Enter your Twilio API Key information** (shown below), paste the Account SID, API Key SID, and API Key Secret you copied above into their corresponding fields.
+
+    ![Entering Twilio API key into Engage](images/engageapifields.png "Entering Twilio API key into Engage")
+
+11. Click **Verify**, then select the messaging services you want to use in your space.
+
+    ![Selecting messaging services in Engage setup](images/messaging_service.png "Selecting messaging services in Engage setup")
+
+12. Click **Save Twilio Account.**
+
+> info ""
+> If you’re unable to verify your Account SID, SID, or API Key secret, you may have copied an extra space at the end of one or the other. Verify that you’ve not added any extra characters or spaces, then try to verify again.
 
 ## Stage 4: Create and configure Twilio WhatsApp services
 

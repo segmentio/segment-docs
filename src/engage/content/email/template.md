@@ -32,6 +32,9 @@ To configure an email template, click **Create Template**.
   - [**HTML Editor**](/docs/engage/content/email/html-editor/) contains both a code and visual editor from a single view. This editor provides complete HTML editing access with error flagging.
 4. Design the email template, then click **Create Email Template**.
 
+> info "Engage content validation"
+> For all content editors in Engage, you'll see alerts for any issues in your template, such as invalid profile traits or incorrect liquid syntax. Engage both flags template issue(s), and displays recommended next steps. While you can save these templates, you must fix any issues before using them in Engage campaigns. 
+
 ## Test the Email template
 You can send test emails before you include a template in marketing campaigns.
 
@@ -44,7 +47,15 @@ You can send test emails before you include a template in marketing campaigns.
 - Profiles that you send test messages to must have a userId in Segment.
 5. Select **Send test email**.
 
+{% comment %} 
 > success ""
+> When you send a test message, the trait must be valid for the field it's being used in. For example:
+> - If you use `profile.traits.first_name` in the **From sender** field, it must be a valid username. 
+> - If you use `profile.traits.email` in the **Reply to email** field, it must be a valid email address.
+
+{% endcomment %}
+
+> info ""
 > You can also test email templates directly from a [Send an Email step](/docs/engage/journeys/build-journey/#send-an-email) in Journeys.
 
 ## Personalize with merge tags
@@ -55,32 +66,39 @@ As you configure the template, click **Merge Tags** and select the profile trait
  
 You can also add merge tags in the heading or body text as you design an email with the [Drag and Drop](/docs/engage/content/email/editor/) or [HTML](/docs/engage/content/email/html-editor/) editors. Engage supports [liquid templating](https://liquidjs.com/tags/if.html){:target="blank"} to create dynamic content in the email design editor.
 
+### Use liquid statements with an image URL
+
+If you're using the [image content module](/docs/engage/content/email/editor/#add-content-modules) in the Drag and Drop Editor, you can't use liquid statements in the **Image URL** field. 
+{% raw %}
+To use liquid statements with an image, Segment recommends using an [**HTML block**](/docs/engage/content/email/editor/#add-content-modules) with the following syntax: <br>
+`<img src=“{{profile.traits.imageLink | default: '<insert your default URL here>'}}”`, where `profile.traits.imageLink` is an example profile trait representing personalized image links for each recipient. 
+
+{% endraw %}
+
 > info ""
 > To learn more about profile traits, visit Segment's [Computed Traits](/docs/engage/audiences/computed-traits) and [SQL Traits](/docs/engage/audiences/sql-traits/) documentation.
 
-## Include unsubscribe links
+## Include unsubscribe and manage preference links
+
+When you build an email template, you'll need to include links that your customers can access to unsubscribe and manage their email preferences. You'll find both in the **Special Links** dropdown menu of the **Insert/Edit link** window.
+
+### Unsubscribe links
 
 When you build email templates, it's your responsibility to include an unsubscribe link in your message. Add unsubscribe links to an email template from the Drag and Drop or HTML editors.
 
 When a recipient clicks on an unsubscribe link, they'll see a confirmation page and the recipient's subscription state is updated.
 
-Only send messages to subscribed users. Learn more about [User Subscriptions](/docs/engage/user-subscriptions/) in Twilio Engage.
+Learn more about [User Subscriptions](/docs/engage/user-subscriptions/) in Twilio Engage.
 
-## Clone an Email template
+### Manage preference links
 
-You can clone existing Email templates to edit and use in your message campaigns.
+The manage preference link lets your customers opt in and out of email groups on an individual basis instead of unsubscribing from all your campaigns.
 
-To clone a template, navigate to the Templates page (**Engage > Content**). You can also clone from the Overview page of an individual template.
-
-1. Click the **...** icon.
-2. Select **Clone**.
-3. Enter a template name.
-4. Click **Clone** to save the template.
-
-After you clone a template, you can edit it from the Templates page.
+For more information, see [subscription groups](/docs/engage/user-subscriptions/subscription-groups/).
 
 ## Next steps
 
 - View some [email deliverability tips and tricks](https://docs.sendgrid.com/ui/sending-email/deliverability){:target="blank"} from SendGrid.
 
 - You can also use the Templates screen in Engage to [build SMS templates](/docs/engage/content/sms/template/).
+ 

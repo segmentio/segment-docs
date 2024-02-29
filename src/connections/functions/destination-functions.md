@@ -140,7 +140,7 @@ If your function fails, you can check the error details and logs in the **Output
 Batch handlers are an extension of destination functions. When you define an `onBatch` handler alongside the handler functions for single events (for example: `onTrack` or `onIdentity`), you're telling Segment that the destination function can accept and handle batches of events.
 
 > info ""
-> Batching is available for destination functions only.
+> Batching is available for destination and destination insert functions only.
 
 ### When to use batching
 
@@ -269,7 +269,7 @@ To test the batch handler:
 2. Add events as a JSON array, with one event per element.
 3. Click **Run** to preview the batch handler with the specified events.
 
-> note ""
+> info ""
 > The Sample Event option tests single events only. You must use Manual Mode to add more than one event so you can test batch handlers.
 
 The editor displays logs and request traces from the batch handler.
@@ -306,7 +306,7 @@ Standard [function error types](/docs/connections/functions/destination-function
 ]
 ```
 
-After receiving the response from the `onBatch` handler, Segment only retries **event_4** and **event_5**.
+For example, after receiving the responses above from the `onBatch` handler, Segment only retries **event_4** and **event_5**.
 
 | Error Type             | Result  |
 | ---------------------- | ------- |

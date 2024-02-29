@@ -27,9 +27,8 @@ For example, if you want to add something to the context object of any event pay
 ```java
 class SomePlugin: Plugin {
     override val type = Plugin.Type.Enrichment
-    override val name = "SomePlugin"
 
-    override var lateinit analytics: Analytics
+    override lateinit var analytics: Analytics
 
     override fun execute(event: BaseEvent): BaseEvent? {
         event.putInContext("foo", "bar")
@@ -96,9 +95,8 @@ analytics.add(amplitudePlugin) // add amplitudePlugin to the analytics client
 
 val amplitudeEnrichment = object: Plugin {
     override val type = Plugin.Type.Enrichment
-    override val name = "SomePlugin"
 
-    override var lateinit analytics: Analytics
+    override lateinit var analytics: Analytics
 
     override fun execute(event: BaseEvent): BaseEvent? {
         event.putInContext("foo", "bar")
@@ -124,9 +122,8 @@ Here's an example of adding a plugin to the context object of any event payload 
 ```java
 class SomePlugin: Plugin {
     override val type = Plugin.Type.Enrichment
-    override val name = "SomePlugin"
 
-    override var lateinit analytics: Analytics
+    override lateinit var analytics: Analytics
 
     override fun execute(event: BaseEvent): BaseEvent? {
         event.putInContext("foo", "bar")
@@ -160,4 +157,4 @@ To test your destination:
 3. Complete the `TODO` sections in the sample code with the appropriate information for your destination.
 4. Commit your changes.
 
-Segment recommends you to test your destination implementation end-to-end. Send some sample analytics events and ensure that they reach the destination.
+Segment recommends that you test your destination implementation end-to-end. Send some sample analytics events and ensure that they reach the destination.

@@ -9,7 +9,7 @@ This source is maintained by Friendbuy. For any issues with the source, [contact
 
 ## Getting Started
 
-1. From your workspace's [Sources catalog page](https://app.segment.com/goto-my-workspace/sources/catalog) click **Add Source**.
+1. From your workspace's [Sources catalog page](https://app.segment.com/goto-my-workspace/sources/catalog){:target="_blank"} click **Add Source**.
 2. Search for "Friendbuy" in the Sources Catalog, select Friendbuy, and click **Add Source**.
 3. On the next screen, give the Source a nickname configure any other settings.
 
@@ -266,6 +266,6 @@ The tables below lists the properties included in each loyalty event.
 
 Now that your Friendbuy Source is set up, you can connect it to Destinations.
 
-Log into your downstream tools and check to see that your events appear as expected, and that they contain all of the properties you expect. If your events and properties don’t appear, check the [Event Delivery](https://segment.com/docs/connections/event-delivery/) tool, and refer to the Destination docs for each tool for troubleshooting.
+Log into your downstream tools and check to see that your events appear as expected, and that they contain all of the properties you expect. If your events and properties don’t appear, check the [Event Delivery](/docs/connections/event-delivery/) tool, and refer to the Destination docs for each tool for troubleshooting.
 
 If there are any issues with how the events are arriving to Segment, [contact the Friendbuy support team](mailto:support@friendbuy.com).

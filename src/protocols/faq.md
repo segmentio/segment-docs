@@ -24,13 +24,16 @@ You can also use the Slack Actions destination to set event triggers for context
 
 ## Protocols Tracking Plan
 
+### What is the Segment Consent Preference Updated event, and who added it to my Tracking Plans?
+[Consent Management](/docs/privacy/consent-management) users see the [Segment Consent Preference Updated](/docs/privacy/consent-management/consent-in-unify/#segment-consent-preference-updated-event) event automatically added to all existing Tracking Plans after they create their first consent category, or when they create a new Tracking Plan after configuring Consent Management. Segment recommends that you do not remove this event.
+
 ### How do I add Page and Screen events to my Tracking Plan?
 
 To consolidate the views in the Schema tab, Segment automatically converts `page` and `screen` calls into `Page Viewed` and `Screen Viewed` events that appear in the Schema Events view. Segment recommends adding a `Page Viewed` or `Screen Viewed` event to your Tracking Plan with any properties you want to validate against. At this time, to validate that a specific named page/screen (`analytics.page('Homepage') | analytics.screen('Home')`) has a specific set of required properties, you will need to use the [JSON Schema](/docs/protocols/tracking-plan/create/#edit-underlying-json-schema).
 
 ### How can I see who made changes to my Tracking Plan?
 
-Each Tracking Plan includes a Changelog, which shows which changes were made by which users. To view it, open a Tracking Plan, click the **...** button (also known as the dot-dot-dot, or ellipses menu) next to the Edit Tracking Plan button, and click **View Changelog**.
+Each Tracking Plan includes a Changelog, which shows which changes were made by which users. To view it, open a Tracking Plan, click the **...** button (also known as the dot-dot-dot, or ellipses menu) next to the Edit Tracking Plan button, and click **View Changelog**. 
 
 ### How many Sources can I connect to a Tracking Plan?
 
@@ -86,7 +89,6 @@ Unplanned property omission is only supported for cloud-mode destinations. Unpla
 
 When you initially create your Tracking Plan, you can import events into it from a Source Schema. Manually add these events by clicking the the (+) next to the event in your Source Schema page after connecting your Tracking Plan. .  
 
-
 ## Protocols Validation
 
 ### What is the difference between Violations Emails and the Violations page in the Segment UI?
@@ -128,7 +130,11 @@ Blocked events are blocked from sending to all Segment Destinations, including w
 
 ### Do blocked and discarded events count towards my MTU counts?
 
-Blocked events will not count towards your MTU counts as long as blocked event forwarding is disabled.
+Blocking events within a [Source Schema](/docs/connections/sources/schema/) or [Tracking Plan](/docs/protocols/tracking-plan/create/) excludes them from API call and MTU calculations, as the events are discarded before they reach the pipeline that Segment uses for calculations.
+
+### Do warehouse connectors use the data type definitions when creating a warehouse schema?
+
+Warehouse connectors don't use data type definitions for schema creation. The [data types](/docs/connections/storage/warehouses/schema/#data-types) for columns are inferred from the first event that comes in from the source.
 
 ## Protocols Transformations
 
