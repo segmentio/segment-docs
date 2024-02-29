@@ -108,6 +108,10 @@ Every seven days.
 
 You get five predictions as part of Engage Foundations or Unify Plus. To purchase more predictions, reach out to your CSM.
 
+#### Is Predictions HIPAA-compliant?
+
+No, Predictions isn't HIPAA-compliant. Avoid using Predictions for health and life science applications.
+
 #### Are there any known Predictions limitations? 
 
 Yes. Keep the following in mind when you work with Predictions:
