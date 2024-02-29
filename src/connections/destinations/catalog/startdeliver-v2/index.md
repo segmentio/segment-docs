@@ -8,34 +8,33 @@ beta: true
 Startdeliver maintains this destination. For any issues with the destination, [contact their support team](mailto:support@startdeliver.com).
 
 
-## Getting Started
+## Getting started
 
  
 
 1. From the Destinations catalog page in the Segment App, click **Add Destination**.
-2. Search for "Startdeliver" in the Destinations Catalog, and select the "Startdeliver" destination.
-3. Choose which Source should send data to the "Startdeliver" destination.
-4. Go to the [API keys](https://app.startdeliver.com/settings/apikeys){:target="_blank"} in your Startdeliver dashboard, generate an API key, make it active and grant it "Admin" permissions.
-5. Enter the "API Key" in the "Startdeliver" destination settings in Segment.
-6. Create a User custom field you want to match a Segment event on [here](https://app.startdeliver.com/settings/fields){:target="_blank"}. You will need a field's alias at the next step.
-7. Enter the "Startdeliver user custom field to match on" in the "Startdeliver" destination settings in Segment.
-
+2. Search for **Startdeliver** in the Destinations Catalog, and select the **Startdeliver** destination.
+3. Choose which source should send data to the Startdeliver destination.
+4. Go to the [API keys](https://app.startdeliver.com/settings/apikeys){:target="_blank"} in your Startdeliver dashboard, generate an API key, make it active and grant it admin permissions.
+5. Enter the API Key in the Startdeliver destination settings in Segment.
+6. Create a User custom field you want to match a Segment event on [in your settings](https://app.startdeliver.com/settings/fields){:target="_blank"}. You will need a field's alias during the next step.
+7. Enter the Startdeliver user custom field to match on in the Startdeliver destination settings in Segment.
 
 You have to [identify](/docs/connections/spec/identify/) your user with a proper `userId` so that Startdeliver can match your Segments events with correct Startdeliver users.
 
-Startdeliver attaches any matched events to existing users. If no matched users are found, Startdeliver creates a new user. Startdeliver uses a custom field you specified at the 7th step of the "Getting Started" section to match a user.
+Startdeliver attaches any matched events to existing users. If no matched users are found, Startdeliver creates a new user. Startdeliver uses a custom field you specified during the seventh step of the Getting Started section to match a user.
 
 For example, you have a user in Startdeliver and you want to attach your Segment events to that user.
 
-To do this, create a User custom field. For instance, it could be `externalId`. Now you should update your Startdeliver user with a proper value, for example, `97980cfea0067` (this is your user's ID). Don't forget to set this custom field in 7th step of the "Getting Started" section.
+To do this, create a User custom field, like `externalId`. Now you should update your Startdeliver user with a proper value, for example, `97980cfea0067` (this is your user's ID). Don't forget to set this custom field in 7th step of the "Getting Started" section.
 
-Now when this user goes to your app, you should [identify](/docs/connections/spec/identify/) them:
+When this user goes to your app, you should [identify](/docs/connections/spec/identify/) them:
 
 ```js
 analytics.identify('97980cfea0067')
 ```
 
-After this, you can send either `Page` or `Track` events:
+After this, you can send either Page or Track events:
 
 ```js
 analytics.track('Login Button Clicked')
@@ -45,7 +44,7 @@ This event is matched with a Startdeliver user that has ID `97980cfea0067` set i
 
 Segment events will appear on Customer and User views in Startdeliver. The views will be created instantly within Startdeliver.
 
-For further information you can check [Startdeliver documentation](https://app.startdeliver.com/dev/app/Segment){:target="_blank"}.
+For more information, view the [Startdeliver documentation](https://app.startdeliver.com/dev/app/Segment){:target="_blank"}.
 
 
 ## Page
@@ -81,18 +80,18 @@ Segment sends Track calls to Startdeliver as a `track` event.
 
 ## Identify & Group
 
-To enable parsing of Identify and Group events in Startdeliver you have to enable it in the [Segment app configuration in your Startdeliver-account](https://app.startdeliver.com/settings/app/segment).
+To enable parsing of Identify and Group events in Startdeliver, you have to enable it in the [Segment app configuration in your Startdeliver-account](https://app.startdeliver.com/settings/app/segment){:target="_blank"}.
 
-In order for us to properly manage Identify and Group events you are also required to configure the Matching and Mapping variables in Startdeliver settings in order to choose which fields should map to a User or a Customer respectively when these events are received. If a User or a Customer is found based on these parameters it will be updated or otherwise created in Startdeliver.
+For Startdeliver to manage Identify and Group events, you must configure the Matching and Mapping variables in Startdeliver settings in order to choose which fields should map to a User or a Customer respectively when these events are received. If a User or a Customer is found based on these parameters it will be updated or otherwise created in Startdeliver.
 
-The configuration is cached for 10 minutes so any changes made in the configuration will take up to 10 minutes to update.
+The configuration is cached for 10 minutes, so any changes made in the configuration will take up to 10 minutes to update.
 
-`startdeliverMatchingField` Should contain an object with a Field alias that you wish to match your User towards in Startdeliver, as well as a target format type.
+`startdeliverMatchingField` should contain an object with a Field alias that you want to match your User towards in Startdeliver, as well as a target format type.
 `externalMatchingField` should be the field name from which the value will be matched towards the field above.
 
-The same thing goes for `startdeliverCustomerField` and `externalCustomerField` if you have any Customer data that you wish to use to connect the user to a customer, as well as update or create a customer in Startdeliver.
+This also applies to `startdeliverCustomerField` and `externalCustomerField` if you have any Customer data that you want to use to connect the user to a customer, as well as update or create a customer in Startdeliver.
 
-`userMappnig` and `customerMapping` contains any field values that you wish to append to your User or Customer respectively. This array of objects should contain a Target field-alias, source-field alias as well as a Target-type.
+`userMapping` and `customerMapping` contains any field values that you want to append to your User or Customer respectively. This array of objects should contain a Target field-alias, source-field alias as well as a Target-type.
 
 ```js
 {
