@@ -278,7 +278,7 @@ sources:
       - eu
   - id: CvYws1p1ZA
     display_name: Flutter
-    hidden: true
+    hidden: false
     slug: flutter
     url: connections/sources/catalog/libraries/mobile/flutter
     regions:
@@ -893,15 +893,6 @@ sources:
     endpoints:
       - us
       - eu
-  - id: pL0LSh5JRA
-    display_name: Shopify
-    hidden: true
-    slug: shopify
-    url: connections/sources/catalog/libraries/website/shopify
-    regions:
-      - us
-    endpoints:
-      - us
   - id: V8ji9rWzoS
     display_name: Shopify (by Littledata)
     hidden: false
