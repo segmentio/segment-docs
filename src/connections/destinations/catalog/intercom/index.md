@@ -26,5 +26,5 @@ To find implementation details for Segment's Kotlin Intercom Destination Plugin,
 
 #### Swift
 
-To find implementation details for our Swift Intercom Destination Plugin, please review our documentation [here](/docs/connections/sources/catalog/libraries/mobile/apple/destination-plugins/intercom-swift/).
+To find implementation details for Segment's Swift Intercom Destination Plugin, please review the [Intercom plugin documentation](/docs/connections/sources/catalog/libraries/mobile/apple/destination-plugins/intercom-swift/).
 
