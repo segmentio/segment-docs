@@ -18,7 +18,12 @@ From the Profiles Insights page, you can navigate to these tabs:
 
 Use the errors and violations tab to view and help you troubleshoot any errors or violations that have occurred in your space.
 
-You can filter results by ID type, time range, specific violations, and more.
+You can filter results by ID type, time range, specific violations, and more. 
+
+To filter by `external_id`, you must enter an `external_id` value in the search bar.
+
+![An example of filtering by external_id](/docs/unify/images/external_id.png)
+
 
 ### Errors
 
