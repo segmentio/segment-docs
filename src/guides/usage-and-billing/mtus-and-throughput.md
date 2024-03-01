@@ -9,6 +9,11 @@ Segment detects that the user across two of the touch points is the same user ba
 
 With Engage, this user falls into one audience, has one computed trait, and falls into one Journeys step, accounting for three compute credits total. Compute credits are not tied to an individual user, so multiple people could fall into these buckets, still accounting for a single compute credit for each trait/audience/journey step. 
 
+Personas compute credits are for the lifetime of your contract, and active computed traits and audiences contribute to this limit in the following way:
+- Each active Computed Trait uses 1 credit
+- Each active Audience uses 1 credit
+- Every two steps of a published Journey count as 1 compute credit
+
 Finally, the example sends some user events to a destination function, which is charged according to function execution time.
 
 ## What is an MTU?
