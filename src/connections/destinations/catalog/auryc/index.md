@@ -7,7 +7,6 @@ id: 5cae592103251a0001c2820a
 
 This source is maintained by Auryc. For any issues with the destination, [contact the Auryc Support team](mailto:segment@auryc.com).
 
-{% include content/beta-note.md %}
 
 It also means that, for the time being, there is a longer delay for us to deploy it to your analytics.js after you enable; expect about 24 hours for it to render on your site.
 

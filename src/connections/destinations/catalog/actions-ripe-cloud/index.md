@@ -7,8 +7,6 @@ id: 63cade592992cf7052ce2e3e
 
 The Ripe Segment integration is an [Actions-based Destination in cloud mode](/docs/connections/destinations/#connection-modes) that lets you send your backend events directly to Ripe.
 
-{% include content/ajs-upgrade.md %}
-
 ## Getting started
 
 > info ""

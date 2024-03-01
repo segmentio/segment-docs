@@ -7,8 +7,6 @@ id: 5ebff2ce1c6481e9795533f9
 
 This destination is maintained by Nat.app. For any issues with the destination, [contact the Nat team](mailto:segment@nat.app).
 
-{% include content/beta-note.md %}
-
 ## Getting Started
 
 

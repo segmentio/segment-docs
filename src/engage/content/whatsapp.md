@@ -62,13 +62,14 @@ If a merge tag doesn't apply to a subscriber, Engage will use the content you en
 
 > info ""
 > To learn more about profile traits, visit Segment's [Computed Traits](/docs/engage/audiences/computed-traits/) and [SQL Traits](/docs/engage/audiences/sql-traits/) documentation.
-
+ 
 
 ## Template approvals
 
 Meta must first review and approve your WhatsApp template before you can use it in a campaign. Meta approves most templates in under an hour, but some approvals can take up to 48 hours. Keep this time frame in mind if you plan to send time-sensitive campaigns. 
 
 For more on the template approval process, view [recommendations and best practices for creating WhatsApp Message Templates](https://support.twilio.com/hc/en-us/articles/360039737753-Recommendations-and-best-practices-for-creating-WhatsApp-Message-Templates){:target="_blank"}.
+
 
 ## Next steps
 

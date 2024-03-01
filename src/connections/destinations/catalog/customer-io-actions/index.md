@@ -36,9 +36,6 @@ id: 5f7dd78fe27ce7ff2b8bfa37
 
 ## Migration from Customer.io classic
 
-{% include content/ajs-upgrade.md %}
-
-
 Keep the following in mind if you plan to move to Customer.io (Actions) from the classic Customer.io destination.
 {% include components/actions-map-table.html name="customer-io" %}
 
@@ -53,3 +50,6 @@ Customer.io makes an exception for the `created_at` trait, converting ISO-8601 t
 ## Device token collection
 
 Segment does not automatically collect push notification tokens. These parameters are required by Customer.io, requiring logic to be implemented to collect these values. As an example, you can use [this plugin](https://github.com/segmentio/analytics-react-native/tree/master/packages/plugins/plugin-device-token){:target="_blank"} to collect the Firebase Cloud Messaging device token for React Native. 
+
+## In-App Messaging
+The Customer.io Actions destination is built and maintained by Segment's partner Customer.io, and does not currently support [in-app messaging](https://customer.io/docs/journeys/in-app-getting-started/#javascript-snippet). Segment recommends reaching out to them to express your interest in using in-app messaging with the Segment integration.

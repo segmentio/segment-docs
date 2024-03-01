@@ -4,7 +4,11 @@ rewrite: true
 strat: facebook
 id: 56fc7e4680412f644ff12fb9
 ---
-[Facebook App Events](https://developers.facebook.com/docs/app-events){:target="_blank"} collects required information from one of Segment's mobile SDKs ([iOS](/docs/connections/sources/catalog/libraries/mobile/ios/){:target="_blank"} or [Android](/docs/connections/sources/catalog/libraries/mobile/android/){:target="_blank"}) and sends it from Segment's servers to Facebook App Events servers. This *server-to-server* connection will not work with our server-side libraries. The Facebook App Events Destination is open-source. You can browse the code on GitHub for [iOS](https://github.com/segment-integrations/analytics-ios-integration-facebook-app-events){:target="_blank"}.
+[Facebook App Events](https://developers.facebook.com/docs/app-events){:target="_blank"} collects required information from one of Segment's mobile SDKs ([iOS](/docs/connections/sources/catalog/libraries/mobile/ios/){:target="_blank"}, [Android](/docs/connections/sources/catalog/libraries/mobile/android/){:target="_blank"}, or [Swift](/docs/connections/sources/catalog/libraries/mobile/apple/){:target="_blank"}) and sends it from Segment's servers to Facebook App Events servers. 
+
+The iOS device-mode connection for the Facebook App Events destination is open source and [available on GitHub](https://github.com/segment-integrations/analytics-ios-integration-facebook-app-events){:target="_blank"}. 
+
+Segment also has an [Analytics Swift Facebook App Events Plugin](/docs/connections/sources/catalog/libraries/mobile/apple/destination-plugins/facebook-app-events-swift/) for the Facebook App Events device-mode connection available. You can view the [open-source integration code on GitHub](https://github.com/segment-integrations/analytics-swift-facebook-app-events){:target="_blank"}. 
 
 
 ## Other Facebook Destinations Supported by Segment

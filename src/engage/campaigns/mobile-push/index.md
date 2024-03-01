@@ -317,8 +317,6 @@ To do so, you'll need to configure your Service instance to use the Credential t
 
 If you're just getting started, set up the APN credential first, then create your Service by clicking the blue plus button on the [Services Console](https://console.twilio.com/us1/develop/notify/services?frameUrl=%2Fconsole%2Fnotify%2Fservices%3Fx-target-region%3Dus1&_ga=2.170545120.1341805708.1700099403-1979911827.1631664239&_gl=1*1msrgrt*_ga*MTk3OTkxMTgyNy4xNjMxNjY0MjM5*_ga_RRP8K4M4F3*MTcwMDEwNTYwOC45Ny4xLjE3MDAxMDU2MjAuMC4wLjA.){:target="_blank"} page.
 
-For more information, view Twilio's [How to Configure iOS Push Notifications documentation](https://www.twilio.com/docs/notify/configure-ios-push-notifications){:target="_blank"}.
-
 ## 4. Configure Android push notifications 
 
 Follow the steps in Twilio's [Configuring Android Push Notifications](https://www.twilio.com/docs/notify/configure-android-push-notifications){:target="_blank"}.
@@ -353,6 +351,9 @@ Follow these steps to set up mobile push in Twilio Engage.
 11. Under **Enter your Twilio API Key information**, paste the Account SID, API Key SID, and API Key Secret you copied above into their corresponding fields.
 12. Click **Verify**, then select the messaging services you want to use in your space.
 13. Click **Save Twilio Account.**
+
+> info "Removing messaging services"
+> To remove a messaging service, navigate to Engage > Engage settings > Channels and click the pencil icon under **Twilio messaging service**. Enter the account credentials by either using the API key secret or creating a new API key. Once you've selected the desired services, they will override the existing ones, effectively removing the ones you no longer need.
 
 ### 5b. Create a new push service
 

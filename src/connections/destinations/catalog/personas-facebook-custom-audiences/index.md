@@ -15,7 +15,7 @@ This allows you to run advertising campaigns in Facebook without having to manua
 
 
 ## Other Facebook Destinations Supported by Segment
-This page is about the **Facebook Custom Audiences** destination developed specifically for use with **EngagePersonas**. For documentation on other Facebook destinations, see the pages linked below.
+This page is about the **Facebook Custom Audiences** destination developed specifically for use with [Engage](/docs/engage/). No other sources support this destination. For documentation on other Facebook destinations, see the pages linked below.
 
 | **Facebook Destination**                                                                                                      | Supported by Engage |
 | ----------------------------------------------------------------------------------------------------------------------------- | ------------------- |
@@ -135,7 +135,7 @@ Previously, Segment only sent email and mobile IDs to Facebook. A new beta featu
 
 ### Not seeing an audience in Facebook
 
-Make sure you authorized Facebook and selected the correct account ID.
+If syncs to the destination are failing, this might be due to an authorization error. Whoever created the destination account needs to accept the TOS. The account manager then needs to log in to their Facebook account, navigate to **Audiences > Search Audience** and click **Accept Terms**.
 
 ### Audience size smaller than expected
 

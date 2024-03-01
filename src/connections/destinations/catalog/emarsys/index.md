@@ -7,8 +7,6 @@ id: 5a8e1add366cd2000115dfe7
 
 This destination is maintained by Emarsys. For any issues with the destination, [contact the Emarsys Support team](mailto:help@support.emarsys.com).
 
-{% include content/beta-note.md %}
-
 ## Getting Started
 
 

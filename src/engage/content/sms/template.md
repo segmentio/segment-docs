@@ -120,7 +120,7 @@ To delete an SMS template:
 When you build an SMS, include an opt-out message in the body of your text that informs recipients they can unsubscribe from a message channel.
 
 When an SMS recipient replies "Stop" to an SMS, they'll receive an opt-out confirmation, and Engage updates their phone number subscription status. Visit the [User Subscription States](/docs/engage/user-subscriptions/subscription-states/) documentation to learn more about user subscriptions in Engage.
-
+ 
 ### SMS character limit
 
 Note that there's a 1,600 character count limit for SMS messages.
