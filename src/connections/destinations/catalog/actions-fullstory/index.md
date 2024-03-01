@@ -15,7 +15,7 @@ versions:
 
 [FullStory](https://www.fullstory.com/){:target="_blank"} lets product and support teams easily understand everything about the customer experience. The Segment integration for FullStory helps accurately identify your customers within the FullStory dashboard.
 
-FullStory’s device mode Segment integration allows you to enrich FullStory data by sending user properties, page properties, and custom events from your website so that you can apply it to your analysis throughout FullStory. For example, you could build a funnel to analyze drop-off of users who engaged with a certain marketing campaign.
+FullStory's device mode Segment integration auto-captures high-fidelity user sessions and allows you to enrich FullStory data by sending user properties, page properties, and custom events from your website so  you can apply it to your analysis throughout FullStory. For example, you could build a funnel to analyze drop-off of users who engaged with a certain marketing campaign.
 
 ## Benefits of FullStory Device Mode (Actions) vs FullStory Classic
 
