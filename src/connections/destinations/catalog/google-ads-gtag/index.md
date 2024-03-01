@@ -30,7 +30,7 @@ You can use this destination to map your `.page()` calls to **Page Load Conversi
 
 
 ## Consent mode
-[Consent mode](https://support.google.com/analytics/answer/9976101?hl=en){:target="_blank"} is a feature provided by Google in the context of its products, particularly the Gtag library and Google Analytics. As of March 6, 2024, Google announced that consent mode must be functioning for European Economic Area (EEA) users, otherwise data from EEA users won't process. 
+[Consent mode](https://support.google.com/analytics/answer/9976101?hl=en){:target="_blank"} is a feature provided by Google in the context of its products, particularly the Gtag library and Google Analytics. As of March 6, 2024, Google announced that consent mode must function for European Economic Area (EEA) users, otherwise data from EEA users won't process. 
 
 Consent mode in the Gtag library and Google Analytics is designed to help website owners comply with privacy regulations, such as the General Data Protection Regulation (GDPR) in the European Union. It allows website owners to adjust how these tools use and collect data based on user consent.
 
@@ -38,36 +38,38 @@ With consent mode, you can configure your website to dynamically adjust the trac
 
 Consent mode may involve updates to your sources outside of Segment, such as incorporating a consent management system for consent functionality.
 
+### Set up consent mode
+
 To enable consent mode for your Google Ads (Gtag) destination, you can choose from 2 implementation options. 
 
 * **Option 1:**
     1. Set the consent defaults by implementing the `ready()` method to set consent defaults.
 
-      ```
-      analytics.ready(function() {
-        window.gtag('consent', 'default', {
-          'ad_storage': 'granted',
-          'ad_user_data': 'granted',
-          'ad_personalization': 'granted',
-          'analytics_storage': 'granted'
-        });
-      });
-      ```
+          ```
+          analytics.ready(function() {
+            window.gtag('consent', 'default', {
+              'ad_storage': 'granted',
+              'ad_user_data': 'granted',
+              'ad_personalization': 'granted',
+              'analytics_storage': 'granted'
+            });
+          });
+          ```
 
     2. Use your Consent Management Platform to prompt the visitor. Ask the visitor to grant or deny consent for the applicable types (for example, analytics, advertising).
 
     3. Pass the information to Gtag.js by calling `gtag` inside the Segment `ready`() method. 
 
-      ```
-      analytics.ready(function() {
-        window.gtag('consent', 'update', {
-          'ad_storage': 'denied',
-          'ad_user_data': 'granted',
-          'ad_personalization': 'denied',
-          'analytics_storage': 'granted'
-        });
-      });
-      ```
+          ```
+          analytics.ready(function() {
+            window.gtag('consent', 'update', {
+              'ad_storage': 'denied',
+              'ad_user_data': 'granted',
+              'ad_personalization': 'denied',
+              'analytics_storage': 'granted'
+            });
+          });
+          ```
 
 * **Option 2:** Create an instance of the Google Analytics 4 Web destination, which loads a gtag with consent preferences. If you're already using Google Analytics 4 Web on the same page, you just need to configure the consent mode settings once. There's no need to create another instance of GA4 Web. 
 

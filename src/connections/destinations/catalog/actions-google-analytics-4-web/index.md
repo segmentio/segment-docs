@@ -65,7 +65,7 @@ The automatically collected and enhanced measurement events include parameters b
 Some of Segment's prebuilt [Available Actions](/docs/connections/destinations/catalog/actions-google-analytics-4-web/#available-actions) which map to Google's recommended events are automatically marked as a conversion in your Analytics dashboard. For example, when you add a "Order Completed" event, it will show up in your Analytics dashboard as "purchase" with the **Mark as conversion** toggle toggled on by default. However, for other events, such as "Add to Cart", you will need to manually toggle the **Mark as conversion** setting on in your Analytics dashboard. If you don't mark the event as a conversion, it will not show up as a conversion in your built-in reports. You can read more [about conversion events](https://support.google.com/analytics/answer/9267568?sjid=1275909514202748631-NA){:target="_blank"} in Google's docs. 
 
 ## Consent mode 
-[Consent mode](https://support.google.com/analytics/answer/9976101?hl=en){:target="_blank"} is a feature provided by Google in the context of its products, particularly the Gtag library and Google Analytics. As of March 6, 2024, Google announced that consent mode must be functioning for European Economic Area (EEA) users, otherwise data from EEA users won't process. 
+[Consent mode](https://support.google.com/analytics/answer/9976101?hl=en){:target="_blank"} is a feature provided by Google in the context of its products, particularly the Gtag library and Google Analytics. As of March 6, 2024, Google announced that consent mode must function for European Economic Area (EEA) users, otherwise data from EEA users won't process. 
 
 Consent mode in the Gtag library and Google Analytics is designed to help website owners comply with privacy regulations, such as the General Data Protection Regulation (GDPR) in the European Union. It allows website owners to adjust how these tools use and collect data based on user consent.
 
@@ -75,33 +75,54 @@ Consent mode may involve updates to your sources outside of Segment, such as inc
 
 See [set up consent mode on websites](https://developers.google.com/tag-platform/security/guides/consent?consentmode=advanced#update_consent_state){:target="_blank"} for more information. 
 
+### Set up consent mode
+
 To enable consent mode for your Google Analytics 4 Web destination: 
 1. Navigate to **Connections > Destinations** and select your Google Analytics 4 Web** destination. 
 2. Go to the **Settings** tab of the destination.
 3. Click the toggle on for **Enable Consent Mode**. 
 4. Set the following fields with these values:
 
-    Field | Values 
+    Field | Value
     ----- | ------
     Default Ad Storage Consent State | Granted
     Default Analytics Storage Consent State | Granted
     Ad User Data Consent State | Granted
     Wait Time to Update Consent State | 0
 
-5. [Set the consent defaults](https://developers.google.com/tag-platform/security/guides/consent?consentmode=advanced#update_consent_state){:target="_blank"} as soon as the page loads.
-6. Use your consent management platform to prompt the visitor. Ask the visitor to grant or deny consent for the applicable types.
-7. Pass the udpated state as properties in the `page()` event after the next page load if you decide to change the consent defaults. For example,
+5. Use your consent management platform to prompt the visitor. Ask the visitor to grant or deny consent for the applicable types.
+6. Pass the updated state as properties in the `page()` event after the next page load if you decide to change the consent defaults. For example,
 
-  ```
-   analytics.page('Consent Update', {
-      'Ads Storage Consent State': 'false',
-      'Analytics Storage Consent State': 'false'
-   });
-   ```
-8. As soon as the page loads and the set configuration fires to the Google Analytics SDK, Segment issues a consent mode update command. Map the properties you defined to collect consent state changes to the Set Configurations Fields mapping. You have these 2 options to choose from:
+    ```
+    analytics.page('Consent Update', {
+        'Ads Storage Consent State': 'false',
+        'Analytics Storage Consent State': 'false'
+    });
+    ```
+7. As soon as the page loads and the set configuration fires to the Google Analytics SDK, Segment issues a consent mode update command. Map the properties you defined to collect consent state changes to the Set Configurations Fields mapping. You can choose to do this from these 2 options:
 
-  * **Option 1:** Manually select `Granted` or `Denied` from the dropdown menu for Advanced consent mode settings, and type in `granted` or `denied` for basic consent mode settings. 
-  * **Option 2:** Create an event variable to directly grab the value from the payload. Ensure it translates to `granted` or `denied`. You can use an insert function to translate to `granted` or `denied`. Use the replace function if it's a string.
+      * **Option 1:** 
+        1. Navigate to **Connections > Destinations** and select your Google Analytics 4 Web destination. 
+        2. Go to the **mappings** tab of the destination. 
+        3. Select the mapping you want to edit.'
+        4. Under the **Select mappings** section, select `Granted` for these fields:
+            * Ads Storage Consent State
+            * Analytics Storage Consent State
+            * Ad User Data Consent State
+            * Ad Personalization Consent State
+            You can manually select `Granted` or `Denied` from the dropdown menu for Advanced consent mode settings, and type in `granted` or `denied` for basic consent mode settings. 
+  
+      * **Option 2:** 
+        Create an event variable to directly grab the value from the payload. To do this: 
+
+        1. Navigate to **Connections > Destinations** and select your Google Analytics 4 Web destination. 
+        2. Go to the **mappings** tab of the destination. 
+        3. Select the mapping you want to edit.'
+        4. Under the **Select mappings** section, create an event variable to directly grab the value from the payload. Ensure it translates to `granted` or `denied`. You can use an insert function to translate to `granted` or `denied`. Use the replace function if it's a string. Do this for these fields:
+            * Ads Storage Consent State
+            * Analytics Storage Consent State
+            * Ad User Data Consent State
+            * Ad Personalization Consent State
 
 When these properties are available, they send to the `update` command. 
 

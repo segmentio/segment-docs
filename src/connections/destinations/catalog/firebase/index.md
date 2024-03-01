@@ -107,7 +107,7 @@ By default, Segment bundles only `Firebase/Core` which is [Firebase's mobile ana
 By default, Segment only bundles `Firebase/Core` which is [Firebase's Analytics offering](https://firebase.google.com/docs/analytics/){:target="_blank"}. You can see the other available [Firebase pods and features here](https://firebase.google.com/docs/ios/setup){:target="_blank"}.
 
 ## Consent mode
-[Consent mode](https://support.google.com/analytics/answer/9976101?hl=en){:target="_blank"} is a feature provided by Google in the context of its products, particularly the Gtag library and Google Analytics. As of March 6, 2024, Google announced that consent mode must be functioning for European Economic Area (EEA) users, otherwise data from EEA users won't process. 
+[Consent mode](https://support.google.com/analytics/answer/9976101?hl=en){:target="_blank"} is a feature provided by Google in the context of its products, particularly the Gtag library and Google Analytics. As of March 6, 2024, Google announced that consent mode must function for European Economic Area (EEA) users, otherwise data from EEA users won't process. 
 
 Consent mode in the Gtag library and Google Analytics is designed to help website owners comply with privacy regulations, such as the General Data Protection Regulation (GDPR) in the European Union. It allows website owners to adjust how these tools use and collect data based on user consent.
 
@@ -115,7 +115,7 @@ With consent mode, you can configure your website to dynamically adjust the trac
 
 Consent mode may involve updates to your sources outside of Segment, such as incorporating a consent management system for consent functionality.
 
-To set up consent mode for Google Ads Classic:
+To set up consent mode for Google Firebase:
 1. Update your app's SDK to a version that supports consent mode v2. 
   * Android apps must use F[irebase Android Analytics SDK version 21.5.0 or later](https://firebase.google.com/support/release-notes/android#analytics_v21-5-0){:target="_blank"}.
   * iOS apps must use [Firebase Apple SDK version 10.17.0 or later](https://firebase.google.com/support/release-notes/ios#analytics){:target="_blank"}.

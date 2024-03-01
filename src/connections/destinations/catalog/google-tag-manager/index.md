@@ -22,7 +22,7 @@ id: 54521fd625e721e32a72eeb9
 
 
 ## Consent mode
-[Consent mode](https://support.google.com/analytics/answer/9976101?hl=en){:target="_blank"} is a feature provided by Google in the context of its products, particularly the Gtag library and Google Analytics. As of March 6, 2024, Google announced that consent mode must be functioning for European Economic Area (EEA) users, otherwise data from EEA users won't process. 
+[Consent mode](https://support.google.com/analytics/answer/9976101?hl=en){:target="_blank"} is a feature provided by Google in the context of its products, particularly the Gtag library and Google Analytics. As of March 6, 2024, Google announced that consent mode must function for European Economic Area (EEA) users, otherwise data from EEA users won't process. 
 
 For Google Tag Manager, consent mode settings need to be managed directly [within your GTM account](https://support.google.com/tagmanager/answer/10718549?hl=en#tag-settings){:target="_blank"}. There's no direct update from Segment for the GTM destination regarding consent mode, as it's managed within GTM tags themselves.
 

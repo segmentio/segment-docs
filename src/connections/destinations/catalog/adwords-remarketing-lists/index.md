@@ -104,7 +104,7 @@ In Google Ads, go to **Tools & Settings** > **Shared Library** > **Audience mana
 > **Note**: Google Ads can take 24+ hours to fully process initial audience uploads before they can be used for a campaign. If the audience is still processing, the list status appears as “Populating”.
 
 ## Consent mode
-[Consent mode](https://support.google.com/analytics/answer/9976101?hl=en){:target="_blank"} is a feature provided by Google in the context of its products, particularly the Gtag library and Google Analytics. As of March 6, 2024, Google announced that consent mode must be functioning for European Economic Area (EEA) users, otherwise data from EEA users won't process. 
+[Consent mode](https://support.google.com/analytics/answer/9976101?hl=en){:target="_blank"} is a feature provided by Google in the context of its products, particularly the Gtag library and Google Analytics. As of March 6, 2024, Google announced that consent mode must function for European Economic Area (EEA) users, otherwise data from EEA users won't process. 
 
 Consent mode in the Gtag library and Google Analytics is designed to help website owners comply with privacy regulations, such as the General Data Protection Regulation (GDPR) in the European Union. It allows website owners to adjust how these tools use and collect data based on user consent.
 
@@ -112,8 +112,10 @@ With consent mode, you can configure your website to dynamically adjust the trac
 
 Consent mode may involve updates to your sources outside of Segment, such as incorporating a consent management system for consent functionality.
 
+### Set up consent mode
+
 To enable consent mode for Google Adwords Remarketing Lists destination:
-1. Navigate to **Connections > Destinations** and select your Google Ads Remarketing Lists** destination. 
+1. Navigate to **Connections > Destinations** and select your Google Ads Remarketing Lists destination. 
 2. Go to the **Settings** tab of the destination.
 3. Under the **Connection Settings** section, select **Ad Personalization**.
 4. Select `GRANTED` in the dropdown and click **Save**. 
