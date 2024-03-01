@@ -17,7 +17,7 @@ To set up Profiles Sync, you’ll first create a warehouse, then connect the war
 Before you begin, prepare for setup with these tips:
 
 - To connect your warehouse to Segment, you must have read and write permissions with the warehouse Destination you choose.
-- During step 2, you’ll copy credentials between Segment and your warehouse Destination. To streamline setup, open your Segment workspace in one browser tab and open another with your warehouse account.
+- During step 2, you’ll copy credentials between Segment and your warehouse destination. To streamline setup, open your Segment workspace in one browser tab and open another with your warehouse account.
 - Make sure to copy any IP addresses Segment asks you to allowlist in your warehouse destination.
 
 ### Step 1: Select a warehouse 
@@ -125,7 +125,7 @@ Profiles Sync sends profiles to your warehouse on an hourly basis, beginning aft
 
 When Segment runs historical backfills:
 
-- Profile raw and Profile materialized tables sync your entire historical data to your warehouse.
+- Profile raw and materialized tables sync your entire historical data to your warehouse.
 - Profiles Sync gathers the last two months of all events for Event type and Track event tables and syncs them to your warehouse.
 
 Segment lands the data on an internal staging location, then removes the backfill banner. Segment then syncs the backfill data to your warehouse.
@@ -177,7 +177,7 @@ In the Syncs table, you’ll find reports on individual syncs. Segment lists you
 
 | DATA TYPE   | DEFINITION                                                                                                                                                                                  |
 | ----------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Sync status | - `Success`, which indicates that all rows synced correctly; <br> - `Partial success`, indicating that some rows synced correctly <br> - `Failed`, indicating that no rows synced correctly |
+| Sync status | - `Success`, which indicates that all rows synced correctly <br> - `Partial success`, indicating that some rows synced correctly <br> - `Failed`, indicating that no rows synced correctly |
 | Duration    | Length of sync time, in minutes                                                                                                                                                             |
 | Start time  | The date and time when the sync began                                                                                                                                                       |
 | Synced rows | The number of rows synced to the warehouse                                                                                                                                                  |
