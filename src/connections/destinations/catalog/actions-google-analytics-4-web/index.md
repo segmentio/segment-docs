@@ -100,7 +100,7 @@ To enable consent mode for your Google Analytics 4 Web destination:
    ```
 8. As soon as the page loads and the set configuration fires to the Google Analytics SDK, Segment issues a consent mode update command. Map the properties you defined to collect consent state changes to the Set Configurations Fields mapping. You have these 2 options to choose from:
 
-  * **Option 1:** Manuallyt select `Granted` or `Denied` from the dropdown menu for Advanced consent mode settings, and type in `granted` or `denied` for basic consent mode settings. 
+  * **Option 1:** Manually select `Granted` or `Denied` from the dropdown menu for Advanced consent mode settings, and type in `granted` or `denied` for basic consent mode settings. 
   * **Option 2:** Create an event variable to directly grab the value from the payload. Ensure it translates to `granted` or `denied`. You can use an insert function to translate to `granted` or `denied`. Use the replace function if it's a string.
 
 When these properties are available, they send to the `update` command. 
