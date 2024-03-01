@@ -3,7 +3,7 @@ title: Review and Resolve Event Violations
 plan: protocols
 ---
 
-Upon connecting your Tracking Plan to a Source, you will be able to view violations grouped by event. To view violations, click on the Violations button located on the Schema tab in a Source. A filter can be applied to only show events with violations within the past 24 hrs, 7 days and 30 days.
+Upon connecting your Tracking Plan to a Source, you will be able to view violations grouped by event. To view violations, click on the Violations button located on the Schema tab in a Source. A filter can be applied to only show events with violations within the past hour, 24 hours, and 7 days.
 
 
 ![Screenshot of the Violations page, with two Track events that have violations.](../images/violations_summary.png)
@@ -15,7 +15,7 @@ To view detailed violations for an event, click on the specific event. Specific 
 - Invalid property value data types
 - Property values that do not pass applied conditional filtering
 
-In the event detail violations view, a filter can be applied to only show violations in the past 24 hrs, 7 days and 30 days.
+In the event detail violations view, a filter can be applied to only show violations in the past hour, 24 hours, and 7 days.
 
 
 ![Screenshot of the Checkout Started Violations page, with two unique violations, a count for each violation, and the time that the violation was last seen.](../images/violations_detail.png)

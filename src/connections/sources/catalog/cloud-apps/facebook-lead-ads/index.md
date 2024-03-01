@@ -16,13 +16,15 @@ Segment lets you make the most of your leads by automatically sending them to yo
 
 ## Getting Started
 
-1. Set up a Facebook Lead Ad campaign if you haven't already. Instructions on how to do so are [here](https://www.facebook.com/business/help/1462876307360828){:target="_blank"}.
-2. Search for "Facebook Lead Ads" within the Sources Catalog and confirm by clicking "Connect"
-3. Give the source a name. The name is a label used in the Segment interface, and Segment creates a related schema name which you query against in your warehouse. The nickname can be whatever you like, but we recommend sticking to something that reflects the source itself, like Facebook Lead Ads or Facebook Lead Ads Prod. 
-4. Click Create And Continue then Connect to OAuth into Facebook.
-5. Select which accounts you would like to sync (you may change this selection later).
-6. Verify that your leads are now flowing into Segment. You can quickly test this connection by sending a test lead to Segment with Facebook's [Lead Ad testing tool](https://developers.facebook.com/tools/lead-ads-testing){:target="_blank"}.
-7. Click on the Debugger to see a live stream of data coming in from Facebook. You should see your leads come in as Identify calls.
+1. [Set up a Facebook Lead Ad campaign](https://www.facebook.com/business/help/1462876307360828){:target="_blank"} if you don't have one already. 
+2. [Connect Facebook Lead Ad with Segment](https://www.facebook.com/business/help/908902042493104?id=735435806665862){:target="_blank"}. Search for *Segment.com* in the CRM provider search box. 
+3. Go to the Segment UI and navigate to **Connections > Catalog** and search for *Facebook Lead Ads*. 
+4. Select the Facebook Lead Ads source and click **Add Source**. 
+5. Give the source a name. The name is a label used in the Segment interface, and Segment creates a related schema name which you query against in your warehouse. The nickname can be whatever you like, but Segment recommends sticking to something that reflects the source itself, like Facebook Lead Ads or Facebook Lead Ads Prod. 
+6. Click **Authenticate**.
+7. Select which accounts you would like to sync (you may change this selection later).
+8. Verify that your leads are flowing into Segment. You can quickly test this connection by sending a test lead to Segment with Facebook's [Lead Ad testing tool](https://developers.facebook.com/tools/lead-ads-testing){:target="_blank"}.
+9. Click on the Debugger to see a live stream of data coming in from Facebook. You should see your leads come in as Identify calls.
 
 ### Permissions
 **Setup**

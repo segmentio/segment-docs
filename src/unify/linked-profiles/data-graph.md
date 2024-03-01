@@ -31,11 +31,11 @@ To use the Data Graph, you'll need the following:
 > warning ""
 > Don't send any personal health information with the Data Graph.
 
-## Step 1: Set up your data warehouse
+## Step 1: Set up required permissions in your data warehouse
 
-> info "Data warehouse support"
-> - [Snowflake](/docs/unify/linked-profiles/setup-guides/snowflake-setup/) is supported by both Linked Events and Linked Audiences.
-> - [Redshift](/docs/unify/linked-profiles/setup-guides/redshift-setup/) and [BigQuery](/docs/unify/linked-profiles/setup-guides/BigQuery-setup/)  are currently supported for Linked Events.
+To get started, you'll need to navigate to the appropriate guide below to set up the required permissions in your data warehouse: 
+- [Snowflake](/docs/unify/linked-profiles/setup-guides/snowflake-setup/) is supported by both Linked Events and Linked Audiences.
+- [Redshift](/docs/unify/linked-profiles/setup-guides/redshift-setup/) and [BigQuery](/docs/unify/linked-profiles/setup-guides/BigQuery-setup/) are currently supported for Linked Events. 
 
 Linked Profiles uses [Segment's Reverse ETL](/docs/connections/reverse-etl/) infrastructure to pull data from your warehouse. 
 
