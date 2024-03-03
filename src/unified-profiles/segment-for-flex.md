@@ -38,12 +38,7 @@ You can add additional data sources after completing the setup process. <br>
 5. Give your destination a name and enter the account credentials for a user that has read and write permissions. Click **Save**. 
 6. After you've given your destination a name and entered your credentials, click **Next**.
 7. On the Getting started with Segment page, click **Define Model**.
-8. Create a SQL query that defines your model. After you've created a model, Segment uses your model to map data to your Reverse ETL destinations. <br> Segment recommends a model with the following format: 
-
-``` sql
-SELECT * FROM salesforce_flex_unify.accounts
-```
-
+8. [Create a SQL query that defines your model](/docs/unified-profiles/create-sql-traits){:target="_blank"}. After you've created a model, Segment uses your model to map data to your Reverse ETL destinations. 
 <ol style="counter-reset: none;">
   <li value="9" markdown=1>
   Click **Preview** to return 10 records from your warehouse. When you've verified that your records return as expected, click **Next**.
@@ -64,12 +59,7 @@ SELECT * FROM salesforce_flex_unify.accounts
 3. Give your destination a name and enter the account credentials for a user that has read and write permissions. Click **Save**. 
 4. After you've given your destination a name and entered your credentials, click **Next**.
 5. On the *Getting started with Segment* page, click **Define Model**.
-6. Create a SQL query that defines your model. After you've created a model, Segment uses your model to map data to your Reverse ETL destinations. <br> Segment recommends a model with the following format: 
-
-``` sql
-SELECT * FROM flex_unify.accounts
-```
-
+6. [Create a SQL query that defines your model](/docs/unified-profiles/create-sql-traits){:target="_blank"} After you've created a model, Segment uses your model to map data to your Reverse ETL destinations.
 <ol style="counter-reset: none;">
   <li value="7" markdown=1>
   Click **Preview** to return 10 records from your warehouse. When you've verified that your records return as expected, click **Next**.
