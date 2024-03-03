@@ -24,7 +24,9 @@ If you already have a Segment workspace, you can use a new or pre-existing [Segm
 
 Segment recommends creating a development or sandbox Unify space, verifying that your profiles appear as you would expect, and then creating a production Unify space.
 
-To create a Unify space:
+In order to create a Segment Unify space, your Segment workspace must be on the Business Tier plan with a Unify Plus entitlement. To upgrade to the Business Tier plan, communicate with your sales contact or [request a demo](https://segment.com/demo/){:target="_blank"} from Segment's sales team.
+
+To create a Segment Unify space:
 
 1. In Segment, navigate to Unify and click **Create Space**. 
 2. Enter a name for your space, select **Dev space**, then click **Create space**.
