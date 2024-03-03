@@ -41,7 +41,7 @@ You can add additional data sources after completing the setup process. <br>
 8. Create a SQL query that defines your model. After you've created a model, Segment uses your model to map data to your Reverse ETL destinations. <br> Segment recommends a model with the following format: 
 
 ``` sql
-SELECT * FROM salesforce_unified_profiles.accounts
+SELECT * FROM salesforce_flex_unify.accounts
 ```
 
 <ol style="counter-reset: none;">
