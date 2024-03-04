@@ -10,6 +10,8 @@ sources:
     override: "shopify-fueled"
   - original: "alloy-flow"
     override: "alloyflow"
+  - original: "mixpanel-cohorts"
+    override: "mixpanel-cohorts-source"  
 destinations:
   - original: "vwo-cloud-mode-actions"
     override: "actions-vwo-cloud"
