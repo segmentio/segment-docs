@@ -1,5 +1,5 @@
 ---
-title: 'Mixpanel Cohorts Source'
+title: Mixpanel Cohorts Source
 id: RxxzG3Dyva
 ---
 {% include content/source-region-unsupported.md %}
