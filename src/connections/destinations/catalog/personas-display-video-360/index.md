@@ -10,7 +10,7 @@ id: 5d4dd5b989eda01a09b5cdb1
 > 
 > Settings and configurations will be migrated automatically, but you must take additional action to ensure the destination is properly functioning. For more information, see [Migrate from Personas Google Display & Video 360 Destination ](/docs/connections/destinations/catalog/actions-display-video-360/#migrate-from-personas-google-display-&-video-360-destination)
 > 
-> We are disabling all existing Personas Display and Video 360 destinations. You can still access your existing configuration, but please refrain from enabling the destination, as it is set to be deprecated. You will no longer be able to create new instances of Personas Display and Video 360. Please check out [Display and Video (Actions)](/docs/connections/destinations/catalog/actions-display-video-360/) to set up a new instance of Google Display and Video 360. 
+> Segment is disabling all existing Personas Display and Video 360 destinations. You can still access your existing configuration, but please refrain from enabling the destination, as it is set to be deprecated. You will no longer be able to create new instances of Personas Display and Video 360. Please check out [Display and Video (Actions)](/docs/connections/destinations/catalog/actions-display-video-360/) to set up a new instance of Google Display and Video 360. 
 >
 > For questions or issues contact [friends@segment.com](mailto:friends@segment.com).
 
@@ -29,6 +29,9 @@ Segment's integration with DV360 enables Segment customers to sync audiences cre
 
 > info ""
 > **Note**: Since the release of `analytics-ios` version 4, Segment no longer collects IDFA automatically. To collect and pass IDFA to your DV360 integration, follow the steps for Ad Tracking and IDFA in the [Analytics-iOS mobile source](/docs/connections/sources/catalog/libraries/mobile/ios#ad-tracking-and-idfa) documentation.
+
+> info "Consent mode"
+> Google is enforcing consent starting March 6, 2024 for European Economic Area (EEA) users. Learn more about [consent mode](/docs/connections/destinations/catalog/personas-display-video-360/#consent-mode) and how to set it up. 
 
 ## Details
  {% comment %}

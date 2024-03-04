@@ -15,6 +15,9 @@ The [Google global site tag (gtag.js)](https://support.google.com/google-ads/ans
 > info ""
 > If you're sending [enhancement data to Google Ads](/docs/connections/destinations/catalog/actions-google-enhanced-conversions/) in parallel with Gtag, you must include the same Order ID (Transaction ID) on both sets of data. This is required to properly deduplicate conversions between Gtag conversions and enhanced conversions. To send Order ID (Transaction ID) to Gtag, include `order_id` as a property on your web events. 
 
+> info "Consent mode"
+> Google is enforcing consent starting March 6, 2024 for European Economic Area (EEA) users. Learn more about [consent mode](/docs/connections/destinations/catalog/google-ads-gtag/#consent-mode) and how to set it up. 
+
 ## Getting Started
 
 You can use this destination to map your `.page()` calls to **Page Load Conversions** or `.track()` calls to **Click Conversions**. Currently this is only supported on the browser.

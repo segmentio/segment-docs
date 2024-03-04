@@ -9,8 +9,10 @@ id: 54521fd625e721e32a72eeb9
 > info ""
 > The Google Tag Manager destination is for web only. The destination isn't compatible with iOS or other mobile sources. For mobile tracking, Segment recommends using the [Firebase Destination](/docs/connections/destinations/catalog/firebase/). 
 
-## Getting Started
+> info "Consent mode"
+> Google is enforcing consent starting March 6, 2024 for European Economic Area (EEA) users. Learn more about [consent mode](/docs/connections/destinations/catalog/google-tag-manager/#consent-mode) and how to set it up. 
 
+## Getting Started
 
 1. From the Segment web app, click **Catalog**.
 2. Search for "Google Tag Manager" in the Catalog, select it, and choose which of your sources to connect the destination to.

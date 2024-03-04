@@ -14,6 +14,9 @@ Segment's Firebase destination code is open source and available on GitHub. You 
 - [Kotlin](https://github.com/segment-integrations/analytics-kotlin-firebase){:target="_blank"}
 - [Swift](https://github.com/segment-integrations/analytics-swift-firebase){:target="_blank"} 
 
+> info "Consent mode"
+> Google is enforcing consent starting March 6, 2024 for European Economic Area (EEA) users. Learn more about [consent mode](/docs/connections/destinations/catalog/firebase/#consent-mode) and how to set it up. 
+
 ## Getting Started on Android
 
 To start sending data to Firebase Analytics from your Android project, you'll need to follow a few simple steps:

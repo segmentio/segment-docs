@@ -20,6 +20,9 @@ These audience lists can be used to serve content on Google Search, YouTube, and
 > info ""
 > You must have access to Engage as part of your Segment plan to use this destination. [Contact Segment's sales team](https://segment.com/demo/){:target="_blank”} to try this out.
 
+> info "Consent mode"
+> Google is enforcing consent starting March 6, 2024 for European Economic Area (EEA) users. Learn more about [consent mode](/docs/connections/destinations/catalog/adwords-remarketing-lists/#consent-mode) and how to set it up. 
+
 ## Details
 
 - **Supports Engage**: Yes
