@@ -64,7 +64,7 @@ Use the Update History page to view CSV file uploads in your workspace over the 
 To view the Update History page:
 
 1. Navigate to **Unify > Profile explorer** or **Engage > Engage settings > Subscriptions**.
-2. From the **Subscription groups** table, click the three dots icon, then click **View update history**.
+2. From the **Subscriptions** section, click **View update history**.
 3. From the **Upload history** table, click the file name link to download the [error reports](#error-reports).
 
 View the status of the file upload and the custom trait name added to user profiles in the CSV upload. The error report only shows rows that Segment couldn't successfully process.  
