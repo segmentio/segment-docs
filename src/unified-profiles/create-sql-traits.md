@@ -1,8 +1,8 @@
 ---
-title: RETL Scripts For Importing Salesforce Objects Into Unified Profiles
+title: RETL Scripts For Importing Salesforce Objects Into Unified Profiles in Flex
 hidden: true
 ---
-Unified Profiles users can convert Salesforce objects with US phone number patterns (typically (555) 231-7654) into Segment Unify profiles with E.164 phone number formats (+15552317654) to support Unified Profiles lookup.
+Unified Profiles in Flex users can convert Salesforce objects with US phone number patterns (typically (555) 231-7654) into Segment Unify profiles with E.164 phone number formats (+15552317654) to support Unified Profiles lookup.
 
 Segment created three sample queries for Unified Profiles users to import common Salesforce objects: 
 - [Accounts](#accounts)
@@ -16,9 +16,11 @@ To selectively import columns, replace the `a*`, `c*`, or `l*` with a list of fi
 
 ## Accounts
 
-To import Salesforce Accounts into Unified Profiles as Segment Unify profiles, create a RETL mapping with the following format. 
+To import Salesforce Accounts into Unified Profiles as Segment Unify profiles, create a RETL mapping with the following format.
 
-Replace `<database_name.account_table>` with your database name and account table, `PHONE` with the name of the column in your warehouse that contains phone numbers, and `BILLING_COUNTRY` with the name of the column in your warehouse that contains the account's country. 
+Replace `<database_name.account_table>` with your database name and account table, `PHONE` with the name of the column in your warehouse that contains phone numbers, and `BILLING_COUNTRY` with the name of the column in your warehouse that contains the account's country.  In this example query, the `PHONE` column is the primary contact phone number and what you import as the Profile’s 'phone' trait.
+
+The other phone fields for Salesforce Accounts are PersonHomePhone, PersonMobilePhone, & PersonOtherPhone, and could be substituted for `PHONE` in this query. **You can only import one phone number field as the identifier used for lookups in Flex.** 
 
 ``` sql
 SELECT 
@@ -37,16 +39,16 @@ WHERE
     AND a.BILLING_COUNTRY IS NOT NULL;
 ```
 
-Salesforce objects have several phone number-related fields. In this example query, the “PHONE” column is the primary contact phone number and what you import as the Profile’s 'phone' trait. The other phone fields for Salesforce Accounts are PersonHomePhone, PersonMobilePhone, & PersonOtherPhone, and could be substituted for "PHONE" in this query.
-
-After running this query, ‘phone’ can be used as an identifier used for lookups in Unified Profiles.  
+After running this query, you can use ‘phone’ for lookups in Unified Profiles.  
 
 
 ## Contacts
 
 To import Salesforce Contacts into Unified Profiles as Segment Unify profiles, create a RETL mapping with the following format. 
 
-Replace `<database_name.contact_table>` with your database name and account table, `PHONE` with the name of the column in your warehouse that contains phone numbers, and `BILLING_COUNTRY` with the name of the column in your warehouse that contains the contact's country.
+Replace `<database_name.contact_table>` with your database name and account table, `PHONE` with the name of the column in your warehouse that contains phone numbers, and `BILLING_COUNTRY` with the name of the column in your warehouse that contains the contact's country. 
+
+Salesforce objects have several phone number-related fields. In this example query, the `PHONE` column is the primary contact phone number and what you import as the Profile’s 'phone' trait. The other phone fields for Salesforce Contacts are HomePhone, MobilePhone, & OtherPhone, and could be substituted for `PHONE` in this query. **You can only import one phone number field as the identifier used for lookups in Flex.** 
 
 ``` sql
 SELECT 
@@ -65,15 +67,15 @@ WHERE
     AND c.BILLING_COUNTRY IS NOT NULL;
 ```
 
-Salesforce objects have several phone number-related fields. In this example query, the “PHONE” column is the primary contact phone number and what you import as the Profile’s 'phone' trait. The other phone fields for Salesforce Contacts are HomePhone, MobilePhone, & OtherPhone, and could be substituted for "PHONE" in this query.
-
-After running this query, ‘phone’ can be used as an identifier used for lookups in Unified Profiles.   
+After running this query, you can use ‘phone’ for lookups in Unified Profiles.    
 
 ## Leads
 
 To import Salesforce Leads into Unified Profiles as Segment Unify profiles, create a RETL mapping with the following format. 
 
 Replace `<database_name.lead_table>` with your database name and lead table, `PHONE` with the name of the column in your warehouse that contains phone numbers, and `BILLING_COUNTRY` with the name of the column in your warehouse that contains the lead's country. 
+
+Salesforce objects have several phone number-related fields. In this example query, the `PHONE` column is the primary contact phone number and what you import as the Profile’s 'phone' trait. The other phone fields for Salesforce Leads are HomePhone, MobilePhone, & OtherPhone, and could be substituted for `PHONE` in this query. **You can only import one phone number field as the identifier used for lookups in Flex.** 
 
 ``` sql
 SELECT 
@@ -92,9 +94,7 @@ WHERE
     AND l.BILLING_COUNTRY IS NOT NULL;
 ```
 
-Salesforce objects have several phone number-related fields. In this example query, the “PHONE” column is the primary contact phone number and what you import as the Profile’s 'phone' trait. The other phone fields for Salesforce Leads are HomePhone, MobilePhone, & OtherPhone, and could be substituted for "PHONE" in this query.
-
-After running this query, ‘phone’ can be used as an identifier used for lookups in Unified Profiles.
+After running this query, you can use ‘phone’ for lookups in Unified Profiles.  
 
 ## Troubleshooting
 If these queries don't return phone numbers in E.164 format, examine your existing data and change the REGEX patterns as appropriate.
