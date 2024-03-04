@@ -3,16 +3,15 @@ rewrite: true
 title: TrafficGuard Destination
 id: 5c6f5f0b037dcf00014f8fb0
 ---
-[TrafficGuard](https://trafficguard.ai/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) detects, mitigates, and reports on ad fraud before it hits digital advertising budgets. Three formidable layers of protection block both general invalid traffic (GIVT) and sophisticated invalid traffic (SIVT) to ensure that digital advertising results in legitimate advertising engagement.
+[TrafficGuard](https://trafficguard.ai/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners){:target="_blank”} detects, mitigates, and reports on ad fraud before it hits digital advertising budgets. Three formidable layers of protection block both general invalid traffic (GIVT) and sophisticated invalid traffic (SIVT) to ensure that digital advertising results in legitimate advertising engagement.
 
 This destination is maintained by TrafficGuard.
 
-{% include content/beta-note.md %}
 
 
 ## Getting Started
 
-{% include content/connection-modes.md %}
+
 
 1. From the Segment web app, click **Catalog**.
 2. Search for "TrafficGuard" in the Catalog, select it, and choose which of your sources to connect the destination to.

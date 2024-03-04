@@ -8,6 +8,9 @@ Use Subscriptions with SQL Traits to connect to your data warehouse and query us
 
 On this page, you'll learn how to use SQL to sync subscription data from your warehouse to Engage.
 
+> warning ""
+> Updating subscription statuses with SQL creates new profiles and updates existing profiles. These profile updates may lead to users entering existing audiences or message campaigns. 
+
 ## Getting started
 
 To use Subscriptions with SQL Traits, you need the following:

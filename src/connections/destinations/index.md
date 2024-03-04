@@ -125,6 +125,8 @@ To add a Destination:
 
 Segment increases deliverability to destinations in two ways: [retries](#retries) and [replays](/docs/guides/what-is-replay/). Retries happen automatically for all customers, while replays are available on request for [Business](https://segment.com/pricing/) customers.
 
+**Note:** Segment's data flow is primarily unidirectional, from Segment to integrated destinations. Segment does not inherently support a bidirectional flow where events, once delivered and processed by a destination, are sent back to Segment.
+
 ### Retries
 
 #### Retries in Segment's client libraries
@@ -172,3 +174,8 @@ You can see the current destination endpoint API success rates and final deliver
 
 > warning ""
 > If you submitted [`suppress_only` requests](https://segment.com/docs/privacy/user-deletion-and-suppression/#suppressed-users), Segment still retains historical events for those users, which can be replayed. If you do not want historical events replayed for suppressed users, submit `suppress_and_delete` requests instead.
+
+
+### IP Allowlist 
+
+{% include content/ip-allowlist.md %}

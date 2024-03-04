@@ -3,15 +3,15 @@ title: Kubit Destination
 rewrite: true
 id: 5d02baa1e63a2e0001117fb2
 ---
-[Kubit](https://kubit.ai) is an analytics tool which makes deep data discovery and insights accessible for everyone. Kubit Smart Analytics help product people get clear, fast answers about user engagement and retention. When you send your events through Segment, you benefit from Kubit's AI-powered behavioral analytics, diagnostics, and collaborative workspaces.
+[Kubit](https://kubit.ai){:target="_blank"} is an analytics tool which makes deep data discovery and insights accessible for everyone. Kubit Smart Analytics help product people get clear, fast answers about user engagement and retention. When you send your events through Segment, you benefit from Kubit's AI-powered behavioral analytics, diagnostics, and collaborative workspaces.
 
 This destination is maintained by Kubit. For any issues with the destination, [contact the Kubit Support team](mailto:support@kubit.ai).
 
 ## Getting Started
 
-{% include content/connection-modes.md %}
 
-1. On Kubit's [Welcome Page](https://segment.kubit.ai/segment), click on “**Connect to Segment**”.
+
+1. On Kubit's [Welcome Page](https://segment.kubit.ai/segment){:target="_blank"}, click on “**Connect to Segment**”.
    ![A screenshot of the Kubit Segment Configuration page.](images/oauth.png)
 2. In Segment, select the Source to connect to the Kubit destination.
 3. Click **Allow**.

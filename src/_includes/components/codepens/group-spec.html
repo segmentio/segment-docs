@@ -1,53 +1,145 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/9000.0.1/prism.min.js"
   integrity="sha512-UOoJElONeUNzQbbKQbjldDf9MwOHqxNz49NNJJ1d90yp+X9edsHyJoAs6O4K19CZGaIdjI5ohK+O2y5lBTW6uQ=="
   crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-<script type="text/javascript">
-  function showMessage() {
-    var name = document.getElementById("name").value;
-    var industry = document.getElementById("industry").value;
-    var employees = document.getElementById("employees").value;
-    var plan = document.getElementById("plan").value;
-    var totalBilled = document.getElementById("totalBilled").value;
-    var user_agent = window.navigator.userAgent
-    var ts = Date.now()
-    var date = new Date(ts)
-    var now = date.toISOString()
-    var received = ts + 233
-    var received_ts = new Date(received)
-    var received_iso = received_ts.toISOString()
+  <script type="text/javascript">
+    function showMessage() {
+      var name = document.getElementById("name").value;
+      var industry = document.getElementById("industry").value;
+      var employees = document.getElementById("employees").value;
+      var plan = document.getElementById("plan").value;
+      var totalBilled = document.getElementById("totalBilled").value;
+      var user_agent = window.navigator.userAgent;
+      var ts = Date.now();
+      var date = new Date(ts);
+      var now = date.toISOString();
+      var received = ts + 233;
+      var received_ts = new Date(received);
+      var received_iso = received_ts.toISOString();
+    
+      var errors = [];
+
+      // Regular expression check name field is not empty
+      var nameRegex = /.+/;
+      if (!nameRegex.test(name)) {
+        const nameError = document.getElementById("name-error");
+        nameError.style.display = "block";
+        const nameField = document.getElementById("name");
+        nameField.style.outline = "2px solid red";
+        errors.push("Name is invalid");
+      } else {
+        const nameError = document.getElementById("name-error")
+        nameError.style.display = "none";
+        const nameField = document.getElementById("name")
+        nameField.style.outline = "";
+    }
+
+      // Regular expression check for industry name
+      var industryRegex = /^[A-Za-z-]+$/;
+      if (!industryRegex.test(industry)) {
+        const industryError = document.getElementById("industry-error");
+        industryError.style.display = "block";
+        const industryField = document.getElementById("industry");
+        industryField.style.outline = "2px solid red";
+        errors.push("Industry is invalid");
+      } else {
+        const industryError = document.getElementById("industry-error")
+        industryError.style.display = "none";
+        const industryField = document.getElementById("industry")
+        industryField.style.outline = "";
+    }
+
+      // Add regular expression check for number of employees
+      var employeesRegex = /^[0-9]+$/;
+      if (!employeesRegex.test(employees)) {
+        const employeesError = document.getElementById("employees-error");
+        employeesError.style.display = "block";
+        const employeesField = document.getElementById("employees");
+        employeesField.style.outline = "2px solid red";
+        errors.push("Employees is invalid");
+      } else {
+        const employeesError = document.getElementById("employees-error");
+        employeesError.style.display = "none";
+        const employeesField = document.getElementById("employees");
+        employeesField.style.outline = "";
+    }
+
+      // Add regular expression check to make sure plan field is not empty
+      var planRegex = /.+/;
+      if (!planRegex.test(plan)) {
+        planError = document.getElementById("plan-error");
+        planError.style.display = "block";
+        plan = document.getElementById("plan");
+        plan.style.outline = "2px solid red";
+        errors.push("Plan is invalid");
+      } else {
+        const planError = document.getElementById("plan-error");
+        planError.style.display = "none";
+        const plan = document.getElementById("plan");
+        plan.style.outline = "";
+    }    
+
+      // Add regular expression check for total billed
+      var billedRegex = /^[0-9]+$/;
+      if (!billedRegex.test(totalBilled)) {
+        billedError = document.getElementById("billed-error");
+        billedError.style.display = "block";
+        totalBilled = document.getElementById("totalBilled");
+        totalBilled.style.outline = "2px solid red";
+        errors.push("Total Billed is invalid");
+      } else {
+        const billedError = document.getElementById("billed-error");
+        billedError.style.display = "none";
+        const totalBilled = document.getElementById("totalBilled");
+        totalBilled.style.outline = "";
+    }
+    
+    if (errors.length > 0) {
+    // Display all the errors and highlight the respective fields
+    const errorDiv = document.getElementById("errors");
+    errorDiv.innerHTML = "";
+    errors.forEach(function(error) {
+      errorDiv.innerHTML += "<p>" + error + "</p>";
+    });
+    return false;
+  }
+
     var output = `{
-  "anonymousId": "507f191e810c19729de860ea",
-  "channel": "browser",
-  "context": {
-    "ip": "8.8.8.8",
-    "userAgent": "${user_agent}"
-  },
-  "integrations": {
-    "All": true,
-    "Mixpanel": false,
-    "Salesforce": false
-  },
-  "messageId": "022bb90c-bbac-11e4-8dfc-aa07a5b093db",
-  "receivedAt": "${received_iso}",
-  "sentAt": "${now}",
-  "timestamp": "${now}",
-  "traits": {
-    "name": "${name}",
-    "industry": "${industry}",
-    "employees": ${employees},
-    "plan": "${plan}",
-    "total billed": ${totalBilled}
-  },
-  "type": "group",
-  "userId": "97980cfea0067",
-  "groupId": "0e8c78ea9d97a7b8185e8632",
-  "version": "1.1"
-}`
-    output_container.innerHTML = output
-    Prism.highlightElement(output_container)
+        "anonymousId": "507f191e810c19729de860ea",
+        "channel": "browser",
+        "context": {
+          "ip": "8.8.8.8",
+          "userAgent": "${user_agent}"
+        },
+        "integrations": {
+          "All": true,
+          "Mixpanel": false,
+          "Salesforce": false
+        },
+        "messageId": "022bb90c-bbac-11e4-8dfc-aa07a5b093db",
+        "receivedAt": "${received_iso}",
+        "sentAt": "${now}",
+        "timestamp": "${now}",
+        "traits": {
+          "name": "${name}",
+          "industry": "${industry}",
+          "employees": ${employees},
+          "plan": "${plan}",
+          "total billed": ${totalBilled}
+        },
+        "type": "group",
+        "userId": "97980cfea0067",
+        "groupId": "0e8c78ea9d97a7b8185e8632",
+        "version": "1.1"
+      }`;
+    
+    var output_container = document.getElementById("output_container");
+      output_container.innerHTML = output;
+      Prism.highlightElement(output_container);
+      return true;
   }
 
 </script>
+    
 <script>
   function showOutput() {
     var show = document.getElementById("output-code");
@@ -65,15 +157,20 @@
     <h3> Sample Group call</h3>
     <div class="sample-form">
       <label for="name">Name:</label>
-      <input type="text" id="name">
-      <label for="industry">Title:</label>
-      <input type="text" id="industry">
+      <input type="text" id="name" value="Twilio" required>
+      <span class="error-message" id="name-error">This field is required.</span>
+      <label for="industry">Industry:</label>
+      <input type="text" id="industry" value="Software">
+      <span class="error-message" id="industry-error">Please enter a valid industry name, using only letters and hyphens.</span>
       <label for="employees">Employees:</label>
-      <input type="text" id="employees">
+      <input type="text" id="employees" value="20000">
+      <span class="error-message" id="employees-error">Please enter a valid number of employees.</span>
       <label for="plan">Plan:</label>
-      <input type="text" id="plan">
+      <input type="text" id="plan" value="Premium">
+      <span class="error-message" id="plan-error">This field is required.</span>
       <label for="totalBilled">Total Billed:</label>
-      <input type="text" id="totalBilled">
+      <input type="text" id="totalBilled" value="34000000">
+      <span class="error-message" id="billed-error">Please enter only numbers in the Total Billed field.</span>
       <input type="submit" class="button button-hollow" id="submit" onclick="showMessage(); showOutput()"
         value="See a sample group call">
     </div>

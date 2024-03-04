@@ -3,18 +3,18 @@ rewrite: true
 title: Stormly Destination
 id: 5f38f398c30a8412cb23b628
 ---
-With [Stormly](https://www.stormly.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners), you can access the insights which interest you the most. The Stormly interface guides you through several questions to help define personalization options, then provides insights into behavioral patterns, forecasts, and other information you want to know about your users.
+With [Stormly](https://www.stormly.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners){:target="_blank"}, you can access the insights which interest you the most. The Stormly interface guides you through several questions to help define personalization options, then provides insights into behavioral patterns, forecasts, and other information you want to know about your users.
 
 This destination is maintained by Stormly. For any issues with the destination, [contact their support team](mailto:support@stormly.com).
 
 ## Getting Started
 
-{% include content/connection-modes.md %}
+
 
 1. From the Destinations catalog page in the Segment App, click **Add Destination**.
 2. Search for "Stormly" in the Destinations Catalog, and select the Stormly destination.
 3. Choose which Source should send data to the Stormly destination.
-4. Go to the [Stormly projects](https://www.stormly.com/projects) page, click **Set-Up Data** and under "Use tracking code from:" choose **Segment.com**. Copy the API key that appears.
+4. Go to the [Stormly projects](https://www.stormly.com/projects){:target="_blank"} page, click **Set-Up Data** and under "Use tracking code from:" choose **Segment.com**. Copy the API key that appears.
 5. Enter the API Key you copied from the Stormly projects page in the Stormly destination settings in the Segment app.
 
 > info ""

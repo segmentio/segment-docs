@@ -9,7 +9,7 @@ id: 54521fd925e721e32a72eed3
 
 ## Getting started
 
-{% include content/connection-modes.md %}
+
 
 1. From the Segment web app, navigate to **Connections > Catalog** and go to the **Destinations** tab of the catalog.
 2. Search for *Mailchimp*, select it, and click **Configure Mailchimp**.

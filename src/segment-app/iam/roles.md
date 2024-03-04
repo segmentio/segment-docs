@@ -4,6 +4,9 @@ title: Roles
 
 A role gives a user access to resources within a workspace. Roles are additive, and can combine to configure a custom policy for a Team Member or a Group. A policy is at least one role plus one resource applied to an individual user or group.
 
+> info ""
+> When a user has both User Permissions and Group Permissions, they will have the highest access given to either of those roles.
+
 ## Global Roles
 
 All Segment workspaces have the following roles, regardless of account type.
@@ -29,13 +32,13 @@ The following roles are only available to Segment Business Tier accounts.
 * **Scope:** Grants access to *all* Identity settings.
 
 #### Source Read-only
-* Read access to assigned source(s), source settings, connected streaming destinations, schema, transformations, and live data in the debugger.
-* **Scope:** Grants access to either: all current and future Sources, or only specific Sources, or Sources with a specific Label (BT only).
+* Read access to assigned source(s), source settings, connected streaming destinations, schema, transformations, and live data in the debugger. Reverse ETL sources are also included.
+* **Scope:** Grants access to either: all current and future Sources, or only specific Sources, or Sources with a specific Label (BT only). 
 
 
 #### Source Admin
-* Edit access to assigned source(s), source settings, connected streaming destinations, schema, transformations, the source's [write key](/docs/connections/find-writekey/) and live data in the debugger.
-* **Scope:** Grants access to either: all current and future Sources, or only specific Sources, or Sources with a specific Label (BT only).
+* Edit access to assigned source(s), source settings, connected streaming destinations, schema, transformations, the source's [write key](/docs/connections/find-writekey/) and live data in the debugger. Reverse ETL sources are also included.
+* **Scope:** Grants access to either: all current and future Sources, or only specific Sources, or Sources with a specific Label (BT only). 
 
 #### Unify and Engage Admin
 * Edit access to Unify settings and if purchased, Engage Audiences, Traits, Journeys, Content, and settings.
@@ -66,6 +69,11 @@ The following roles are only available to Segment Business Tier accounts.
 * Read-only access warehouse destination and warehouse destination settings. *(For example, Redshift, Postgres, BigQuery)*
 * **Scope:** Grants access to *all* warehouses.
 
+#### Entities Admin 
+Full edit and view access to all entity models and connection details. 
+
+#### Entities Read-only
+Read-only access, with the ability to view entity models.
 
 ## PII Access
 
@@ -78,7 +86,7 @@ Workspace Owners can grant specific individuals or groups access to PII from the
 
 Engage destinations aren't included in the Engage roles by default. Users with Engage roles (including the Engage Admin) need additional permissions for each Engage space they work with to manage that Engage space's destinations.
 
-Grant these users `Source Admin` on the source named `Engage (space name)` to grant them access to the Engage destinations for that Engage space.
+Grant these users `Unify and Engage Admin` on the selected Engage space and `Source Admin` on the source named `Engage (space name)` to grant them access to the Engage destinations for that Engage space.
 
 ## Roles for connecting resources
 
@@ -96,4 +104,4 @@ To **create or edit** transformations you must have either `Source Admin` for al
 
 ## Roles for Privacy Portal
 
-To **view, create or edit** PII related configurations in Privacy Portal, you need to have the `Workspace Owner` role.
+The Privacy Portal is only accessible by `Workspace owners`. To **view, create or edit** any section of the Privacy Portal, you need to have the `Workspace Owner` role.

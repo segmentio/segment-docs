@@ -6,7 +6,7 @@ hidden: true
 ---
 {% include content/plan-grid.md name="actions" %}
 
-[Braze](https://www.braze.com/), formerly Appboy, is an engagement platform that empowers growth by helping marketing teams to build customer loyalty through mobile, omni-channel customer experiences.
+[Braze](https://www.braze.com/){:target="_blank”}, formerly Appboy, is an engagement platform that empowers growth by helping marketing teams to build customer loyalty through mobile, omni-channel customer experiences.
 
 > success ""
 > **Good to know**: This page is about the [Actions-framework](/docs/connections/destinations/actions/) Braze Segment destination. There's also a page about the [non-Actions Braze destination](/docs/connections/destinations/catalog/braze/). Both of these destinations receives data _from_ Segment. There's also the [Braze source](/docs/connections/sources/catalog/cloud-apps/braze//), which sends data _to_ Segment!
@@ -26,13 +26,14 @@ Braze Cloud Mode (Actions) provides the following benefit over Braze Classic:
    - **App ID**: The app identifier used to reference specific Apps in requests made to the Braze API. Created under Developer Console in the Braze Dashboard.
    - **REST Endpoint**: Your Braze REST Endpoint. For more information, see [API Overview](https://www.braze.com/docs/api/basics/){:target="_blank"} in the Braze documentation.
 
+## Batching data to Braze
+
+You can batch data sent to Braze within Cloud Mode Actions. Batch sizes are capped at 75 events, and these batches will accumulate over a 30-second period before being flushed. Request batching is done per-action mapping. For example, Identify calls (attributes) will be batched in a request, and Track calls (custom events) will be batched in a second request. Braze recommends enabling this feature as it reduces the number of requests being sent from Segment to Braze, reducing the risk of the destination hitting Braze rate limits and retrying requests.
 
 {% include components/actions-fields.html %}
 
 
 ## Migration from Braze Classic
-
-{% include content/ajs-upgrade.md %}
 
 Keep the following in mind if you plan to move to Braze (Actions) from the classic Braze destination.
 {% include components/actions-map-table.html name="braze-cloud" %}

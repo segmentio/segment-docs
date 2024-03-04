@@ -3,13 +3,13 @@ rewrite: true
 title: ActiveCampaign Destination
 id: 55d66bb5ebe537b09c977fa3
 ---
-[ActiveCampaign](https://www.activecampaign.com) is an integrated email marketing, marketing automation, and small business CRM. It allows you to send beautiful newsletters, set up behavioral based automations, and benefit from sales automation.
+[ActiveCampaign](https://www.activecampaign.com){:target="_blank”} is an integrated email marketing, marketing automation, and small business CRM. It allows you to send beautiful newsletters, set up behavioral based automations, and benefit from sales automation.
 
-This destination is maintained by ActiveCampaign. For any issues with the destination, [contact the ActiveCampaign support team](https://www.activecampaign.com/contact/).
+This destination is maintained by ActiveCampaign. For any issues with the destination, [contact the ActiveCampaign support team](https://www.activecampaign.com/contact/){:target="_blank”}.
 
 ## Getting Started
 
-{% include content/connection-modes.md %}
+
 
 1.  From your Segment UI's Destinations page click on "Add Destination".
 2.  Search for "Active Campaign" in the Catalog, select it, and choose which of your sources to connect the destination to.

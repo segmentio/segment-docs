@@ -21,8 +21,6 @@ Before you begin development, consider the following points:
 
 2. Spec out the integration. If you want some guidance, you can use this [template](https://docs.google.com/document/d/1dIJxYge9N700U9Nhawapy25WMD8pUuey72S5qo3uejA/edit#heading=h.92w309fjzhti){:target="_blank"}, which will prompt you to think about the connection mode of the destination, the method of authentication, the settings, and the Actions and default Field Mappings that you want to build.
 
-3. Join the Segment Partners Slack workspace.
-
 ### Build your integration
 
 1. You don't need to access a Segment dev environment to build an integration. You’ll test it locally on your machine. Destinations are written in TypeScript. For more information about TypeScript, see TypeScript's [documentation](https://www.typescriptlang.org/docs/){:target="_blank}.
@@ -38,7 +36,7 @@ Before you begin development, consider the following points:
    - For cloud-mode destinations, follow these instructions: [Test Cloud Destinations](/docs/partners/destinations/testing).
    - If you are building a device-mode destination, see the [Test Browser Destinations](#).
 
-4. When you have questions, ask in the Segment Partners Slack workspace.
+4. When you have questions, reach out to partner-support@segment.com.
 
 For more information, see [Build a Destination](/docs/partners/destinations/build).
 

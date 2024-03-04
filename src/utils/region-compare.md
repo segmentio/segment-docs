@@ -1,6 +1,7 @@
 ---
 title: Manual vs Automatic Region Metadata Comparison
 hidden: true
+published: false
 ---
 
 <style>

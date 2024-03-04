@@ -169,7 +169,15 @@ When you make requests to the Profile API, use the Access Token as the basic aut
 curl https://profiles.segment.com/v1/spaces/<space_id>/collections/users/profiles
   -u $SEGMENT_ACCESS_TOKEN:
 ```
+If you're using a Segment Function or Node.js you can format your header object to include authentication, like so:
 
+```
+headers: {
+          'Content-Type': 'application/json',
+          Authorization:
+            `Basic ${btoa('<access_token>' + ':')}`,
+        }
+```
 
 ### Errors
 
@@ -265,7 +273,7 @@ https://profiles.segment.com/v1/spaces/<space_id>/
 Retrieve a single profile's traits within a collection using an `external_id`. For example, two different sources can set a different `first_name` for a user. The traits endpoint will resolve properties from multiple sources into a canonical source using the last updated precedence order.
 
 ```
-GET /v1/spaces/<space_id>/collections/users/profiles/<external_id>/traits
+GET /v1/spaces/<space_id>/collections/users/profiles/<id_type:external_id>/traits
 ```
 
 ##### Query parameters

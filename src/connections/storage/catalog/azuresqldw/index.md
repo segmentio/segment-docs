@@ -4,6 +4,8 @@ rewrite: true
 redirect_from:
   - '/connections/warehouses/catalog/azuresqldw/'
 ---
+{% include content/warehouse-ip.html %}
+
 
 Azure's [Azure Synapse Analytics](https://azure.microsoft.com/en-us/services/synapse-analytics/){:target="_blank"}, previously known as Azure SQL Data Warehouse, is a limitless analytics service that brings together enterprise data warehousing and Big Data analytics.
 

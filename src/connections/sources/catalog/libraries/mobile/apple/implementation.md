@@ -205,6 +205,7 @@ The Analytics Swift utility methods help you work with [plugins](#plugin-archite
 - [Add](#add)
 - [Find](#find)
 - [Remove](#remove)
+- [Reset](#reset)
 
 There's also the [Flush](#flush) method to help you manage the current queue of events.
 
@@ -276,6 +277,25 @@ analytics.flush()
 {% endcodeexampletab %}
 {% endcodeexample %}
 
+### Reset
+The `reset` method clears the SDK’s internal stores for the current user and group. This is useful for apps where users log in and out with different identities on the same device over time.
+
+{% codeexample %}
+{% codeexampletab Method signature %}
+```swift
+public func reset()
+```
+{% endcodeexampletab %}
+
+{% codeexampletab Example use %}
+```swift
+analytics.reset()
+```
+{% endcodeexampletab %}
+{% endcodeexample %}
+
+{% include content/reset-mobile.md %}
+
 ### OpenURL
 
 Since there a various deep linking scenarios you may want to account for, the `analytics.openURL(...)` method was added so you can track deep links in any situation. Where and how you implement the method will depend on your app lifecycle setup (for example UIApplicationDelegate vs. UISceneDelegate or UIKit vs. SwiftUI). The snippets below outline what your implementation might look like in a few different scenarios. 
@@ -331,7 +351,7 @@ var body: some Scene {
     }
 }
 ```
-
+If you call this method with a valid URL parameter, a Segment `Deep Link Opened` track event triggers. 
 
 ## Changelog
 [View the Analytics Swift changelog on GitHub](https://github.com/segmentio/analytics-swift/releases){:target="_blank"}.   -->

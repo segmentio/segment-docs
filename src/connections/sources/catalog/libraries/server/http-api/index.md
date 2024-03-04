@@ -11,12 +11,60 @@ Segment has native [sources](/docs/connections/sources/) for most use cases (lik
 
 ### Authentication
 
+Choose between [writeKey authentication](#writeKey-authentication), [basic authentication](#basic-authentication) and [OAuth](#oauth) to authenticate requests. 
+
+#### writeKey authentication
 Authenticate to the Tracking API by sending your project's **Write Key** along with a request.
-Authentication uses HTTP Basic Auth, which involves a `username:password` that is base64 encoded and prepended with the string `Basic`.
+The authentication writeKey should be sent as part of the body of the request. This will be encrypted over https.
+
+```
+  curl --location 'https://api.segment.io/v1/track' \
+  --header 'Content-Type: application/json' \
+  --data-raw '{
+      "event": "happy-path-a3ef8a6f-0482-4694-bc4d-4afba03a0eab",
+      "email": "test@example.org",
+      "userId": "123",
+      "writeKey": "DmBXIN4JnwqBnTqXccTF0wBnLXNQmFtk"
+  }'
+```
+
+> info ""
+> For this auth type, you do not need to set any authentication header. 
+
+#### Basic authentication
+Basic authentication uses HTTP Basic Auth, which involves a `username:password` that is base64 encoded and prepended with the string `Basic`.
 
 In practice that means taking a Segment source **Write Key**,`'abc123'`, as the username, adding a colon, and then the password field is left empty. After base64 encoding `'abc123:'` becomes `'YWJjMTIzOg=='`; and this is passed in the authorization header like so: `'Authorization: Basic YWJjMTIzOg=='`.
 
-**Note:** Encoding the write key without a colon may work due to backward compatibility, but this may not always be the case, so it's important to include the colon before encoding.
+> info ""
+> Include a colon before encoding. While encoding the write key without a colon might work due to backward compatibility, this won't always be the case.  
+
+#### OAuth
+[Obtain the access token](/docs/connections/oauth/) from the Authorization Server specific to the region. 
+
+Include the access token in the Authorization header as a Bearer token along with your project's write key in the payload of the request. For example, Authorization with Bearer token looks like:
+
+  ```
+  Authorization: Bearer <access token>
+  ```
+
+
+For example, to use the access token in the HTTP API Source, use `access_token` in the header and `write_key` in the payload. An example cURL request looks like: 
+
+```
+  curl --location 'https://api.segment.io/v1/track' \
+  --header 'Content-Type: application/json' \
+  --header 'Authorization: Bearer <access token>' \
+  --data-raw '{
+      "event": "happy-path-a3ef8a6f-0482-4694-bc4d-4afba03a0eab",
+      "email": "test@example.org",
+      "messageId": "58524f3a-3b76-4eac-aa97-d88bccdf4f77",
+      "userId": "123",
+      "writeKey": "DmBXIN4JnwqBnTqXccTF0wBnLXNQmFtk"
+  }
+```
+
+You can reuse the access token until the expiry period specified on the OAuth application. 
 
 ### Content-Type
 
@@ -35,11 +83,16 @@ Common reasons events are not accepted by Segment include:
 
 Segment welcomes feedback on API responses and error messages. [Reach out to support](https://segment.com/help/contact/){:target="_blank"} with any requests or suggestions you may have.
 
-## Rate Limits
+## Rate limits
 
-The HTTP API has no hard rate limit. However, Segment recommends not exceeding 500 requests per second, including large groups of events sent with a single [`batch` request](#batch).
+For each workspace, Segment recommends you to not exceed 1,000 requests per second with the HTTP API. If you exceed this, Segment reserves the right to queue any additional events and process those at a rate that doesn't exceed the limit. To request a higher limit, contact [Segment](mailto:friends@segment.com).
 
-## Max Request Size
+For [`batch` requests](#batch), there's a limit of 500 KB per request. 
+
+> warning "Engage rate limit"
+> Engage has a limit of 1,000 events per second for inbound data. Visit the [Engage Default Limits documentation](/docs/engage/product-limits/) to learn more. 
+
+## Max request size
 
 There is a maximum of `32KB` per normal API request.  The `batch` API endpoint accepts a maximum of `500KB` per request, with a limit of `32KB` per event in the batch.  If you are sending data from a server source, Segment's API responds with `400 Bad Request` if these limits are exceeded.
 
@@ -68,7 +121,8 @@ POST https://api.segment.io/v1/identify
   "context": {
     "ip": "24.5.68.47"
   },
-  "timestamp": "2012-12-02T00:30:08.276Z"
+  "timestamp": "2012-12-02T00:30:08.276Z",
+  "writeKey": "YOUR_WRITE_KEY"
 }
 ```
 This call is identifying the user by their unique User ID (the one you know them by in your database) and labeling them with `email`, `name`, and `industry` traits.
@@ -108,7 +162,8 @@ POST https://api.segment.io/v1/track
   "context": {
     "ip": "24.5.68.47"
   },
-  "timestamp": "2012-12-02T00:30:12.984Z"
+  "timestamp": "2012-12-02T00:30:12.984Z",
+  "writeKey": "YOUR_WRITE_KEY"
 }
 ```
 
@@ -141,7 +196,8 @@ POST https://api.segment.io/v1/page
 {
   "userId": "019mr8mf4r",
   "name": "Tracking HTTP API",
-  "timestamp": "2012-12-02T00:31:29.738Z"
+  "timestamp": "2012-12-02T00:31:29.738Z",
+  "writeKey": "YOUR_WRITE_KEY"
 }
 ```
 The `page` call has the following fields:
@@ -173,7 +229,8 @@ POST https://api.segment.io/v1/screen
 {
   "userId": "019mr8mf4r",
   "name": "Tracking HTTP API",
-  "timestamp": "2012-12-02T00:31:29.738Z"
+  "timestamp": "2012-12-02T00:31:29.738Z",
+  "writeKey": "YOUR_WRITE_KEY"
 }
 ```
 
@@ -212,7 +269,8 @@ POST https://api.segment.io/v1/group
     "industry": "Technology",
     "employees": 420
   },
-  "timestamp": "2012-12-02T00:31:38.208Z"
+  "timestamp": "2012-12-02T00:31:38.208Z",
+  "writeKey": "YOUR_WRITE_KEY"
 }
 ```
 The `group` call has the following fields:
@@ -245,7 +303,8 @@ POST https://api.segment.io/v1/alias
 {
   "previousId": "39239-239239-239239-23923",
   "userId": "019mr8mf4r",
-  "timestamp": "2012-12-02T00:31:29.738Z"
+  "timestamp": "2012-12-02T00:31:29.738Z",
+  "writeKey": "YOUR_WRITE_KEY"
 }
 ```
 The `alias` call has the following fields:
@@ -261,13 +320,14 @@ The `alias` call has the following fields:
 
 For more details on the `alias` call and payload, check out our [Spec](/docs/connections/spec/alias/).
 
-## Historical Import
+## Historical import
 
 You can import historical data by adding the `timestamp` argument to any of your method calls. This can be helpful if you've just switched to Segment.
 
 Historical imports can only be done into destinations that can accept historical timestamped data. Most analytics tools like Mixpanel, Amplitude, and Kissmetrics can handle that type of data just fine. One common destination that does not accept historical data is Google Analytics since their API cannot accept historical data.
 
-**Note:** If you're tracking things that are happening right now, leave out the `timestamp` and Segment servers will timestamp the requests for you.
+> info ""
+> If you're tracking things that are happening right now, leave out the `timestamp` and Segment servers will timestamp the requests for you.
 
 ## Batch
 
@@ -327,6 +387,7 @@ POST https://api.segment.io/v1/batch
       "timestamp": "2015-2-02T00:30:12.984Z"
     }
   ],
+  "writeKey": "YOUR_WRITE_KEY",
   "context": {
     "device": {
       "type": "phone",
@@ -384,7 +445,8 @@ POST https://api.segment.io/v1/identify
     "Mixpanel": true,
     "Kissmetrics": true,
     "Google Analytics": false
-  }
+  },
+  "writeKey": "YOUR_WRITE_KEY"
 }
 ```
 
