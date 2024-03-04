@@ -24,35 +24,6 @@ The Google Ads Conversions destination enables you to upload offline conversions
 >
 > [Use these steps](#migrate-your-upload-enhanced-conversion-legacy-action) to migrate your Upload Enhanced Conversion (Legacy) Action subscriptions. 
 
-## Consent mode
-[Consent mode](https://support.google.com/analytics/answer/9976101?hl=en){:target="_blank"} is a feature provided by Google in the context of its products, particularly the Gtag library and Google Analytics. As of March 6, 2024, Google announced that consent mode must function for European Economic Area (EEA) users, otherwise data from EEA users won't process. 
-
-Consent mode in the Gtag library and Google Analytics is designed to help website owners comply with privacy regulations, such as the General Data Protection Regulation (GDPR) in the European Union. It allows website owners to adjust how these tools use and collect data based on user consent.
-
-With consent mode, you can configure your website to dynamically adjust the tracking behavior of the Gtag library and Google Analytics based on the user's consent status. If a user provides consent to data processing, both the Gtag library and Google Analytics can collect and use that data for analysis. If a user doesn't provide consent, both tools limit data collection to essential functions, helping businesses respect user privacy preferences.
-
-Consent mode may involve updates to your sources outside of Segment, such as incorporating a consent management system for consent functionality.
-
-### Set up consent mode
-
-To enable consent mode for your Google Ads Conversions destination, you must update the **Ad User Data Consent State** and **Ad Personalization Consent State** for all of your Upload Call Conversion and Upload Click Conversion actions. You can do this in 1 of 2 ways: 
-
-* **Option 1:** 
-    1. Navigate to **Connections > Destinations** and select your Google Ads Conversion destination. 
-    2. Go to the **Mappings** tab of the destination.
-    3. Select the mapping you want to edit. 
-    4. In the **Select mappings** section, select `GRANTED` from the dropdown menu for **Ad User Data Consent State** and **Ad Personalization Consent State**.
-
-* **Option 2:** 
-    1. Navigate to **Connections > Destinations** and select your Google Ads Conversion destination. 
-    2. Go to the **Mappings** tab of the destination.
-    3. Select the mapping you want to edit. 
-    4. In the **Select mappings** section, for **Ad User Data Consent State** and **Ad Personalization Consent State**, select the **Event Variables** tab and create an event variable to directly grab the value from the payload. Ensure it translates to `GRANTED`, `DENIED`, or `UNSPECIFIED`. You can use an insert function to translate to `GRANTED`, `DENIED`, or `UNSPECIFIED` if your consent values are booleans. You can use the replace function if it's a string.
-
-If you send `DENIED` for any of the two consent states, it results in an error and the data won't send to Google. For more information, see [FAQ about the EU user consent policy for Customer Match upload partners](https://support.google.com/google-ads/answer/14310715?hl=en){:target="_blank"}. 
-
-If you have any questions setting up consent mode, reach out to [friends@segment.com](mailto:friends@segment.com).
-
 {% include components/actions-fields.html settings="true"%}
 
 ## Migrate your Upload Enhanced Conversion (Legacy) Action
@@ -89,6 +60,35 @@ To migrate from Upload Enhanced Conversion (Legacy) Action to the Upload Convers
 | | restatement_value      | Default Not Available        | 
 | | restatement_currency_code | Default Not Available     |
 
+
+## Consent mode
+[Consent mode](https://support.google.com/analytics/answer/9976101?hl=en){:target="_blank"} is a feature provided by Google in the context of its products, particularly the Gtag library and Google Analytics. As of March 6, 2024, Google announced that consent mode must function for European Economic Area (EEA) users, otherwise data from EEA users won't process. 
+
+Consent mode in the Gtag library and Google Analytics is designed to help website owners comply with privacy regulations, such as the General Data Protection Regulation (GDPR) in the European Union. It allows website owners to adjust how these tools use and collect data based on user consent.
+
+With consent mode, you can configure your website to dynamically adjust the tracking behavior of the Gtag library and Google Analytics based on the user's consent status. If a user provides consent to data processing, both the Gtag library and Google Analytics can collect and use that data for analysis. If a user doesn't provide consent, both tools limit data collection to essential functions, helping businesses respect user privacy preferences.
+
+Consent mode may involve updates to your sources outside of Segment, such as incorporating a consent management system for consent functionality.
+
+### Set up consent mode
+
+To enable consent mode for your Google Ads Conversions destination, you must update the **Ad User Data Consent State** and **Ad Personalization Consent State** for all of your Upload Call Conversion and Upload Click Conversion actions. You can do this in 1 of 2 ways: 
+
+* **Option 1:** 
+    1. Navigate to **Connections > Destinations** and select your Google Ads Conversion destination. 
+    2. Go to the **Mappings** tab of the destination.
+    3. Select the mapping you want to edit. 
+    4. In the **Select mappings** section, select `GRANTED` from the dropdown menu for **Ad User Data Consent State** and **Ad Personalization Consent State**.
+
+* **Option 2:** 
+    1. Navigate to **Connections > Destinations** and select your Google Ads Conversion destination. 
+    2. Go to the **Mappings** tab of the destination.
+    3. Select the mapping you want to edit. 
+    4. In the **Select mappings** section, for **Ad User Data Consent State** and **Ad Personalization Consent State**, select the **Event Variables** tab and create an event variable to directly grab the value from the payload. Ensure it translates to `GRANTED`, `DENIED`, or `UNSPECIFIED`. You can use an insert function to translate to `GRANTED`, `DENIED`, or `UNSPECIFIED` if your consent values are booleans. You can use the replace function if it's a string.
+
+If you send `DENIED` for any of the two consent states, it results in an error and the data won't send to Google. For more information, see [FAQ about the EU user consent policy for Customer Match upload partners](https://support.google.com/google-ads/answer/14310715?hl=en){:target="_blank"}. 
+
+If you have any questions setting up consent mode, reach out to [friends@segment.com](mailto:friends@segment.com).
 
 
 ## FAQ and troubleshooting

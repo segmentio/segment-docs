@@ -20,14 +20,6 @@ id: 54521fd625e721e32a72eeb9
 > info ""
 > Segment recommends that you load GTM through Segment rather than loading Segment inside of GTM. When you load Segment through GTM, it limits Segment's ability to help troubleshoot.
 
-
-## Consent mode
-[Consent mode](https://support.google.com/analytics/answer/9976101?hl=en){:target="_blank"} is a feature provided by Google in the context of its products, particularly the Gtag library and Google Analytics. As of March 6, 2024, Google announced that consent mode must function for European Economic Area (EEA) users, otherwise data from EEA users won't process. 
-
-For Google Tag Manager, consent mode settings need to be managed directly [within your GTM account](https://support.google.com/tagmanager/answer/10718549?hl=en#tag-settings){:target="_blank"}. There's no direct update from Segment for the GTM destination regarding consent mode, as it's managed within GTM tags themselves.
-
-Segment recommeds you to install a consent management platform that uses the current [consent-tools wrapper](https://github.com/segmentio/analytics-next/tree/master/packages/consent/consent-tools){:target="_blank"} that's outside of Google Tag Manager such as [One Trust](https://tanelytics.com/integrate-onetrust-with-google-tag-manager/){:target="_blank"}.
-
 ## Page
 If you're not familiar with the Segment Specs, take a look to understand what the [Page method](/docs/connections/spec/page/) does. An example call would look like:
 
@@ -102,3 +94,10 @@ By default Segment pushes the `anonymousId` and `userId`(if exists) into the `da
 
 ### Environments
 If you're using an 'environment' variable for `gtm_preview` in your tag's query string, you can set that string in the **Environment** of your Optional Settings. IMPORTANT: Make sure the string includes the `gtm_auth` variable. For example, your string should look like: `env-xx&gtm_auth=xxxxx`.
+
+### Consent mode
+[Consent mode](https://support.google.com/analytics/answer/9976101?hl=en){:target="_blank"} is a feature provided by Google in the context of its products, particularly the Gtag library and Google Analytics. As of March 6, 2024, Google announced that consent mode must function for European Economic Area (EEA) users, otherwise data from EEA users won't process. 
+
+For Google Tag Manager, consent mode settings need to be managed directly [within your GTM account](https://support.google.com/tagmanager/answer/10718549?hl=en#tag-settings){:target="_blank"}. There's no direct update from Segment for the GTM destination regarding consent mode, as it's managed within GTM tags themselves.
+
+Segment recommeds you to install a consent management platform that uses the current [consent-tools wrapper](https://github.com/segmentio/analytics-next/tree/master/packages/consent/consent-tools){:target="_blank"} that's outside of Google Tag Manager such as [One Trust](https://tanelytics.com/integrate-onetrust-with-google-tag-manager/){:target="_blank"}.

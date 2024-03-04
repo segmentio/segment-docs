@@ -40,6 +40,9 @@ To add the Google Analytics 4 Cloud destination:
 5. On the **Settings** tab, enter in the [Measurement ID](https://support.google.com/analytics/answer/9539598){:target='_blank'} for web streams or the [Firebase App ID](https://developers.google.com/analytics/devguides/collection/protocol/ga4/reference?client_type=firebase#payload_query_parameters){:target='_blank'} for mobile streams. Next, enter in the API Secret associated with your GA4 stream and click **Save**. To create a new API Secret, navigate in the Google Analytics UI to Admin > Data Streams > choose your stream > Measurement Protocol > Create.
 6. Follow the steps in the Destinations Actions documentation on [Customizing mappings](/docs/connections/destinations/actions/#customizing-mappings).
 
+
+{% include components/actions-fields.html %}
+
 ## Consent mode
 [Consent mode](https://support.google.com/analytics/answer/9976101?hl=en){:target="_blank"} is a feature provided by Google in the context of its products, particularly the Gtag library and Google Analytics. As of March 6, 2024, Google announced that consent mode must function for European Economic Area (EEA) users, otherwise data from EEA users won't process. 
 
@@ -74,9 +77,6 @@ To enable consent mode for your Google Analytics 4 Cloud destination, you must u
 
 
 If you have any questions setting up consent mode, reach out to [friends@segment.com](mailto:friends@segment.com).
-
-
-{% include components/actions-fields.html %}
 
 ## Universal Analytics and Google Analytics 4
 

@@ -35,7 +35,8 @@ With consent mode, you can configure your website to dynamically adjust the trac
 
 Consent mode may involve updates to your sources outside of Segment, such as incorporating a consent management system for consent functionality.
 
-To set up consent mode for Google Ads Classic:
+### Consent mode for mobile and server apps
+To set up consent mode for Google Ads Classic mobile and server apps:
 1. Update your app's SDK to a version that supports consent mode v2. 
   * Android apps must use F[irebase Android Analytics SDK version 21.5.0 or later](https://firebase.google.com/support/release-notes/android#analytics_v21-5-0){:target="_blank"}.
   * iOS apps must use [Firebase Apple SDK version 10.17.0 or later](https://firebase.google.com/support/release-notes/ios#analytics){:target="_blank"}.
@@ -46,6 +47,14 @@ To set up consent mode for Google Ads Classic:
 3. If you already set up consent mode for your app, upgrade it to consent mode v2.
   * Android: [Upgrade to consent mode v2 for Android apps](https://developers.google.com/tag-platform/security/guides/app-consent?platform=android&consentmode=advanced#upgrade-consent-v2){:target="_blank"} 
   * iOS: [Upgrade to consent mode v2 for iOS apps](https://developers.google.com/tag-platform/security/guides/app-consent?platform=ios&consentmode=advanced#upgrade-consent-v2){:target="_blank"} 
+
+### Consent mode for web
+To set up consent mode for Google Ads Classic Web, choose from these options: 
+* If you don't have a consent banner: [Set up a consent banner](https://support.google.com/tagmanager/answer/9976101){:target="_blank"} on your website. If you choose a banner provided by a Google-certified partner, make sure you enable consent mode in the banner settings. Learn how to [set up a consent banner](https://support.google.com/tagmanager/answer/9976101#cmp1){:target="_blank"}.
+* If you have a consent banner but don't use consent mode: If you use a Google-certified consent management platform (CMP), enable consent mode in your banner settings. Learn more about [Google-certified consent management platforms](https://cmppartnerprogram.withgoogle.com/){:target="_blank"}.
+* If you maintain your own consent banner but don't use consent mode: Implement consent mode for your website. Learn how to [implement consent mode for a website with your own consent solution](https://developers.google.com/tag-platform/security/guides/consent){:target="_blank"}.
+* If you use a Google-certified consent management platform (CMP), your CMP provider automatically updates to the newest version of consent mode. Learn more about [Google-certified consent management platforms](https://cmppartnerprogram.withgoogle.com/){:target="_blank"}.
+* If you maintain your own consent banner, [upgrade to consent mode v2](https://developers.google.com/tag-platform/security/guides/consent#upgrade-consent-v2){:target="_blank"} to collect ad measurement and ads personalization consent signals.
 
 ## Web
 

@@ -71,7 +71,7 @@ To enable consent mode for your Google Ads (Gtag) destination, you can choose fr
           });
           ```
 
-* **Option 2:** Create an instance of the Google Analytics 4 Web destination, which loads a gtag with consent preferences. If you're already using Google Analytics 4 Web on the same page, you just need to configure the consent mode settings once. There's no need to create another instance of GA4 Web. 
+* **Option 2:** Create an instance of the [Google Analytics 4 Web destination](/docs/connections/destinations/catalog/actions-google-analytics-4-web/), to set up [consent in your GA4 Web destination](/docs/connections/destinations/catalog/actions-google-analytics-4-web/#consent-mode), which loads a gtag with consent preferences. If you're already using Google Analytics 4 Web on the same page, you just need to configure the consent mode settings once. There's no need to create another instance of GA4 Web. 
 
 If you have any questions setting up consent mode, reach out to [friends@segment.com](mailto:friends@segment.com).
 

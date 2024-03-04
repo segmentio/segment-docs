@@ -88,7 +88,7 @@ To enable consent mode for your Google Analytics 4 Web destination:
     Default Ad Storage Consent State | Granted
     Default Analytics Storage Consent State | Granted
     Ad User Data Consent State | Granted
-    Wait Time to Update Consent State | 0
+    Ad Personalization Consent State | Granted
 
 5. Use your consent management platform to prompt the visitor. Ask the visitor to grant or deny consent for the applicable types.
 6. Pass the updated state as properties in the `page()` event after the next page load if you decide to change the consent defaults. For example,
@@ -99,26 +99,17 @@ To enable consent mode for your Google Analytics 4 Web destination:
         'Analytics Storage Consent State': 'false'
     });
     ```
-7. As soon as the page loads and the set configuration fires to the Google Analytics SDK, Segment issues a consent mode update command. Map the properties you defined to collect consent state changes to the Set Configurations Fields mapping. You can choose to do this from these 2 options:
-
-      * **Option 1:** 
+7. As soon as the page loads and the set configuration fires to the Google Analytics SDK, Segment issues a consent mode update command. Map the properties you defined to collect consent state changes to the Set Configurations Fields mapping. You can choose to do this from 1 of 2 options in steps 4 and 5. 
         1. Navigate to **Connections > Destinations** and select your Google Analytics 4 Web destination. 
         2. Go to the **mappings** tab of the destination. 
         3. Select the mapping you want to edit.'
-        4. Under the **Select mappings** section, select `Granted` for these fields:
+        4. *(Option 1)* Under the **Select mappings** section, select `Granted` for these fields:
             * Ads Storage Consent State
             * Analytics Storage Consent State
             * Ad User Data Consent State
             * Ad Personalization Consent State
-            You can manually select `Granted` or `Denied` from the dropdown menu for Advanced consent mode settings, and type in `granted` or `denied` for basic consent mode settings. 
-  
-      * **Option 2:** 
-        Create an event variable to directly grab the value from the payload. To do this: 
-
-        1. Navigate to **Connections > Destinations** and select your Google Analytics 4 Web destination. 
-        2. Go to the **mappings** tab of the destination. 
-        3. Select the mapping you want to edit.'
-        4. Under the **Select mappings** section, create an event variable to directly grab the value from the payload. Ensure it translates to `granted` or `denied`. You can use an insert function to translate to `granted` or `denied`. Use the replace function if it's a string. Do this for these fields:
+            You can manually select `Granted` or `Denied` from the dropdown menu for Advanced consent mode settings, and type in `granted` or `denied` for basic consent mode settings.
+        5. *(Option 2)* Under the **Select mappings** section, create an event variable to directly grab the value from the payload (for example, `properties.adStorageConsentState`). Ensure it translates to `granted` or `denied`. You can use an insert function to translate to `granted` or `denied`. Use the replace function if it's a string. Do this for these fields:
             * Ads Storage Consent State
             * Analytics Storage Consent State
             * Ad User Data Consent State
