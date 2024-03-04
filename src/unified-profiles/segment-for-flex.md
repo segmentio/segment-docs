@@ -176,6 +176,6 @@ Your Segment for Flex workspace has the following entitlements:
     href="/docs/unified-profiles/connect-a-workspace"
     icon="api.svg"
     title="Connect an Existing Workspace to Flex"
-    description="Flex customers without an existing Segment workspace that includes a Unify space can obtain a Segment for Flex workspace and configure a Unify space. A Segment for Flex workspace provides limited access to Segment."
+    description="Flex customers with an existing Segment workspace that has a Unify space can connect their Unify space to Flex."
   %}
 </div>

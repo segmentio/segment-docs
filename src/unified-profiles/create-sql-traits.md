@@ -11,6 +11,9 @@ Segment created three sample queries for Unified Profiles users to import common
 
 To create a query that selects a different field, replace the `a`, `c`, or `l` with a list of fields to selectively import. 
 
+> success ""
+> Segment creates a default database table (`segment_flex_unify`) during the [Segment for Flex](/docs/unified-profiles/segment-for-flex/){:target="_blank”} setup process.  
+
 ## Accounts
 
 To import Salesforce Accounts into Unified Profiles as Segment Unify profiles, create a RETL mapping with the following format. 
