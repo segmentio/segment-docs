@@ -87,7 +87,7 @@ You can use the time picker located on the Source Overview page to specify a tim
 
 The breakdown table displays the following details:
 * **Event type**: The Segment Spec event type (Track call vs. Identify call, for example).
-* **Event name**: The event name, provided by you or the source. You should only expect to see track calls with event names. If you see unnamed events in the breakdown table, it's because for other specs, you're either identifying users/groups or tracking what page/screen the user is on. Both of which do not have event names. The exception to this is if you have provided a name in the Page call. Named page calls will also show up in this section with the name of the Page as the event name. 
+* **Event name**: The event name, provided by you or the source. You should only expect to see track calls with event names. If you see unnamed events in the breakdown table, it's because for other specs, you're either identifying users/groups or tracking what page/screen the user is on. Both of which do not have event names. The exception to this is if you provide a name in the Page call. Named Page calls also show up in this section with the name of the Page as the event name. 
 <!-- NOT SUPPORTED IN CURRENT VERSION: ADD IN ONCE THIS IS SUPPORTED* **App version**: The app/release version, provided by you or the source-->
 * **Event count**: How many of each event was successfully received by your source.
 * **% Change**: Insight into how the event counts differ from the last comparable time range as a percentage.
