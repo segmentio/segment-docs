@@ -9,10 +9,10 @@ beta: true
 > info ""
 > Display and Video 360 (Actions) operates using third-party cookies, and its match rates are influenced by the extent to which these cookies are supported by browsers.
 
-Google's [Display & Video (DV360)](https://marketingplatform.google.com/about/display-video-360/){:target="_blank"} service is an end-to-end campaign management tool that enables enterprise customers to plan, measure, and run display and video advertisements. 
+Google's [Display & Video (DV360)](https://marketingplatform.google.com/about/display-video-360/){:target="_blank"} service is an end-to-end campaign management tool that enables enterprise customers to plan, measure, and run display and video advertisements.
 
 > info ""
-> You can connect to a Google Ad Manager account. For more information, see [4. Create an audience and finish DV360 configuration](#4-create-an-audience-and-finish-dv360-configuration) below. Set **User-Role Granted** to `Publisher` if you plan to connect to Google Ad Manager.
+> You can connect to a Google Ad Manager account. For more information, see [4. Create an audience and finish DV360 configuration](#create-an-audience-and-finish-dv360-configuration) below. Set **User-Role Granted** to `Publisher` if you plan to connect to Google Ad Manager.
 
 Segment's integration with DV360 enables Segment customers to sync audiences created in Engage with DV360 for centralized audience management and improved retargeting.
 
@@ -97,10 +97,10 @@ To configure DoubleClick Floodlight:
 1. From your Segment workspace, navigate to **Engage > Engage Settings > Destinations > Add Destination**, then search for **Display and Video 360 (Actions)**.
 2. Authenticate using OAuth.
 3. Switch the toggle to enable the destination.
-4. Navigate to the **Mappings** tab, click **Add Mapping** and select **Add to Audience**. 
-5. Click **Save** and make sure to enable the mapping. 
-6. On the **Mappings** tab, click **Add Mapping** and select **Remove from Audience**. 
-7. Click **Save** and make sure you enable the mapping. 
+4. Navigate to the **Mappings** tab, click **Add Mapping** and select **Add to Audience**.
+5. Click **Save** and make sure to enable the mapping.
+6. On the **Mappings** tab, click **Add Mapping** and select **Remove from Audience**.
+7. Click **Save** and make sure you enable the mapping.
 
 > info ""
 > The destination does not have configurable settings until you create an audience, described [here](#create-an-audience-and-finish-dv360-configuration).
@@ -119,16 +119,16 @@ When you select the destination, you're prompted to enter the destination settin
 | Account Type                   | The type of DV360 account used to sync. Either `Advertiser`, `Partner`, or `Publisher`. **Note:** Select `Publisher` only if you plan to connect to Google Ad Manager.    |
 | Advertiser ID                  | The ID of your DV360 Advertiser account. Can be found in your Google Account under **Advertiser Settings > Basic Details > Advertiser ID**.                                                                                                                                       |
 
-You'll also need to toggle on the Send Track setting. 
+You'll also need to toggle on the Send Track setting.
 
 
 After you complete the set up process, allow up to 24 hours for Google to create the new audience list. Once the list is created, Segment can begin to sync users to that list. Google may require additional time to process the initial audience additions. The entire first sync to DV360 may require 24-48 hours to complete. As a result, the first few audience syncs after you create the audience may fail.
 
 {% include content/sync-frequency-note.md %}
 
-## Migrate from Personas Google Display & Video 360 Destination 
+## Migrate from Personas Google Display & Video 360 Destination
 
-Segment will copy all of your existing Personas Display & Video 360 Destination configurations to Display and Video 360 (Actions). Once the migration is completed , you will be notified by email. 
+Segment will copy all of your existing Personas Display & Video 360 Destination configurations to Display and Video 360 (Actions). Once the migration is completed , you will be notified by email.
 
 The sole mandatory action involves **re-authenticating** for each migrated Personans Display & Video 360 Destination. While you may already possess OAuth credentials, it is essential to undergo reauthentication. This step is necessary to seamlessly integrate new audiences or implement updates to existing ones.
 
