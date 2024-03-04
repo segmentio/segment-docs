@@ -12,7 +12,7 @@ Use the following steps to set up Trait Enrichment with Audiences or Journeys.
 
 
 > info ""
-> The setup steps you'll use for Trait Enrichment depend on the type of Destination [you've connected](/docs/engage/trait-activation/trait-activation-setup/). 
+> The setup steps you'll use for Trait Enrichment depend on the type of destination [you've connected](/docs/engage/trait-activation/trait-activation-setup/). 
 > - For Facebook Custom Audiences and Google Adwords, [use these destination requirements](#destination-requirements). 
 > - If you're using Destination Actions, such as Salesforce Marketing Cloud, Braze Actions, or Salesforce Actions, use the [Destination Actions setup steps](#destination-actions-setup).
 
