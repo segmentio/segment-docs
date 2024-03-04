@@ -105,11 +105,10 @@ To configure SSO for multiple workspaces, your admin must configure access to ea
 > warning ""
 > **Warning**: This domain has already been claimed.
 
-Once your admin has configured separate apps for each workspace in your IdP, the end-users can log in to the IdP and click on the relevant app for the workspace you are trying to access. This is also referred to as IdP-initiated SSO.
+Once your admin has configured separate apps for each workspace in your IdP, the end-users can log in to the IdP and click on the relevant app for the workspace you are trying to access. This is also referred to as IdP-initiated SSO. 
 
-Two limitations do exist when multiple workspaces are configured to SSO access:
-- Users will only be able to log in to the domain-verified workspace on Segment’s login page.
-- Users must switch workspaces using IdP-initiated SSO, as they are unable to switch directly using the Segment UI.
+> info "Swithcing between Segment workspaces"
+> Becasue a user, who logged in via SSO, is only signed in for one Segment workspace, the user needs to sign in again to access another workspace.
 
 ## Okta setup
 
