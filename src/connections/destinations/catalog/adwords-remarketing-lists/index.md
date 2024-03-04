@@ -122,7 +122,7 @@ To enable consent mode for Google Adwords Remarketing Lists destination:
 5. Under the **Connection Settings** section, select **Ad User Data**. 
 6. Select `GRANTED` in the dropdown and click **Save**. 
 
-The consent fields apply universally to all audiences linked to the instance. The consent fields are intended for application across all audiences. If it's not intended for all audiences, you should create a new instance of the destination and associated non-consent audiences with the new instance. 
+The consent fields apply universally to all audiences linked to the instance. The consent fields are intended for application across all audiences. If it's not intended for all audiences, you should create a new instance of the destination and associated non-consent audiences with the new instance. For more information, see [FAQ about the EU user consent policy for Customer Match upload partners](https://support.google.com/google-ads/answer/14310715?hl=en){:target="_blank"}. 
 
 If you have any questions setting up consent mode, reach out to [friends@segment.com](mailto:friends@segment.com).
 

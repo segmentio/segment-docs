@@ -49,7 +49,7 @@ To enable consent mode for your Google Ads Conversions destination, you must upd
     3. Select the mapping you want to edit. 
     4. In the **Select mappings** section, for **Ad User Data Consent State** and **Ad Personalization Consent State**, select the **Event Variables** tab and create an event variable to directly grab the value from the payload. Ensure it translates to `GRANTED`, `DENIED`, or `UNSPECIFIED`. You can use an insert function to translate to `GRANTED`, `DENIED`, or `UNSPECIFIED` if your consent values are booleans. You can use the replace function if it's a string.
 
-If you send `DENIED` for any of the two consent states, it results in an error and the data won't send to Google.
+If you send `DENIED` for any of the two consent states, it results in an error and the data won't send to Google. For more information, see [FAQ about the EU user consent policy for Customer Match upload partners](https://support.google.com/google-ads/answer/14310715?hl=en){:target="_blank"}. 
 
 If you have any questions setting up consent mode, reach out to [friends@segment.com](mailto:friends@segment.com).
 
