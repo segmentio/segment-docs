@@ -1,8 +1,8 @@
 ---
-title: RETL Scripts For Importing Salesforce Objects Into Unified Profiles in Flex
+title: RETL Queries for Importing Salesforce Objects Into Unified Profiles in Flex
 hidden: true
 ---
-Unified Profiles in Flex users can convert Salesforce objects with US phone number patterns (typically (555) 231-7654) into Segment Unify profiles with E.164 phone number formats (+15552317654) to support Unified Profiles lookup.
+You can use the following SQL queries to convert Salesforce objects with US phone number patterns (typically (555) 231-7654) into Segment Unify profiles with E.164 phone number formats (+15552317654). Unified Profiles in Flex requires phone numbers used for profile lookups to be in E.164 format.
 
 Segment created three sample queries for Unified Profiles users to import common Salesforce objects: 
 - [Accounts](#accounts)
