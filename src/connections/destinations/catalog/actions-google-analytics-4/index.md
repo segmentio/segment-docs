@@ -72,7 +72,6 @@ To enable consent mode for your Google Analytics 4 Cloud destination, you must u
 	5. Select the **Event Variables** tab and create an event variable to directly grab the value from the payload. Ensure it translates to `GRANTED` or `DENIED`. You can use an insert function to translate to `GRANTED`or `DENIED` if your consent values are booleans. You can use the replace function if it's a string.
 	6. Repeat step 5 for **Ad Personalization Consent State**. 
 
-If you send `DENIED` for any of the two consent states, it results in an error and the data won't send to Google.
 
 If you have any questions setting up consent mode, reach out to [friends@segment.com](mailto:friends@segment.com).
 
