@@ -111,3 +111,9 @@ When debugging, it's helpful to see when issues start, stop, and trend over time
 #### Latency
 
 How P95 latency has trended over the time period you selected.
+
+#### Email Alerts
+
+You can opt in to receive email alerts regarding failed events/syncs by going to your workspaace Settings > User Preferences > Activity Notifications > Destiantions. Then you can select the option to be alerted by Email and/or In-app. 
+
+
