@@ -49,7 +49,7 @@ Segment currently supports the ability to [create multiple versions of an event]
 
 ### How do I handle null property values?
 
-In the Tracking Plan editor, click on the data type dropdown for a given property and toggle "Allow Null Values". Enabling null values means both the specified data type and `null` will be accepted as values for that property.
+In the Tracking Plan editor, click on the data type dropdown for a given property and toggle "Allow Null Values". Enabling null values means only `null` values will be accepted for that property.
 
 ### Can I group specific events in a Tracking Plan?
 
