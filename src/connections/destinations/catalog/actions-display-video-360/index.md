@@ -12,7 +12,7 @@ beta: true
 Google's [Display & Video (DV360)](https://marketingplatform.google.com/about/display-video-360/){:target="_blank"} service is an end-to-end campaign management tool that enables enterprise customers to plan, measure, and run display and video advertisements. 
 
 > info ""
-> You can connect to a Google Ad Manager account. For more information, see [4. Create an audience and finish DV360 configuration](#4-create-an-audience-and-finish-dv360-configuration) below. Set **User-Role Granted** to `Publisher` if you plan to connect to Google Ad Manager.
+> You can connect to a Google Ad Manager account. For more information, see [Create an audience and finish DV360 configuration](#create-an-audience-and-finish-dv360-configuration) below. Set **User-Role Granted** to `Publisher` if you plan to connect to Google Ad Manager.
 
 Segment's integration with DV360 enables Segment customers to sync audiences created in Engage with DV360 for centralized audience management and improved retargeting.
 
@@ -98,7 +98,7 @@ To configure DoubleClick Floodlight:
 ### Enable and configure the DV360 Destination
 
 1. From your Segment workspace, navigate to **Engage > Engage Settings > Destinations > Add Destination**, then search for **Display and Video 360 (Actions)**.
-2. Authenticate using OAuth.
+2. Authenticate using OAuth. Segment asks for permissions to see, edit, create and delete your Audience Partner account data.
 3. Switch the toggle to enable the destination.
 4. Navigate to the **Mappings** tab, click **Add Mapping** and select **Add to Audience**. 
 5. Click **Save** and make sure to enable the mapping. 
