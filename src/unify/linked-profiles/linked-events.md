@@ -190,7 +190,7 @@ Segment currently syncs once every hour.
 
 #### Which Destinations does Linked Events support? 
 
-For Linked Events, Segment supports all actions-based destinations in cloud-mode. 
+For Linked Events, Segment supports all actions-based destinations in cloud-mode. Device-mode destinations are not supported.
 
 #### Why aren't test events working? 
 
