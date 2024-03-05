@@ -44,7 +44,7 @@ CODEOWNERS  @segmentio/segment-doc-team
 /src/engage/ @pwseg 
 
 # Unify
-/src/unify 
+/src/unify @pwseg 
 
 # Protocols owners
 /src/protocols @forstisabella
