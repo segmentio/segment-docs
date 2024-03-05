@@ -14,8 +14,8 @@ id: 54521fd525e721e32a72ee92
 With Segment, you can use your events to fire a Google Ads conversion pixel from your website **in client-side JavaScript.**
 You can also trigger Google Ads (Classic) conversion from your mobile app using the **Server to Server** destination, so you don't need to include the SDK in your app. The server to server connection requires mobile device specific details to forward the events to Google Ads (Classic). Google Ads (Classic) **does not work with any server-side libraries**. Make sure when you're setting up your Google Ads (Classic) conversions that you choose the appropriate tracking method.
 
-> info "Consent Mode"
-> Segment is currently building Consent Mode for all affected Google destinations. This will be available before March 6, 2024.
+> info "Consent mode"
+> Google is enforcing consent starting March 6, 2024 for European Economic Area (EEA) users. Learn more about [consent mode](/docs/connections/destinations/catalog/google-ads-classic/#consent-mode) and how to set it up.
 
 ### Configure the Google Ads (Classic) destination
 
@@ -25,6 +25,36 @@ You can also trigger Google Ads (Classic) conversion from your mobile app using 
 4. Provide a meaningful name to this instance of the destination.
 5. On the destination Settings tab, enter the **Conversion ID** from your Google Ads (Classic) account. 
 6. Select the Event Mappings setting. Enter the name of the event as it appears in the [`track`](/docs/connections/spec/track) call and map it to your Google Ads (Classic) conversion's `google_conversion_label`.
+
+## Consent mode
+[Consent mode](https://support.google.com/analytics/answer/9976101?hl=en){:target="_blank"} is a feature provided by Google in the context of its products, particularly the Gtag library and Google Analytics. As of March 6, 2024, Google announced that consent mode must function for European Economic Area (EEA) users, otherwise data from EEA users won't process. 
+
+Consent mode in the Gtag library and Google Analytics is designed to help website owners comply with privacy regulations, such as the General Data Protection Regulation (GDPR) in the European Union. It allows website owners to adjust how these tools use and collect data based on user consent.
+
+With consent mode, you can configure your website to dynamically adjust the tracking behavior of the Gtag library and Google Analytics based on the user's consent status. If a user provides consent to data processing, both the Gtag library and Google Analytics can collect and use that data for analysis. If a user doesn't provide consent, both tools limit data collection to essential functions, helping businesses respect user privacy preferences.
+
+Consent mode may involve updates to your sources outside of Segment, such as incorporating a consent management system for consent functionality.
+
+### Consent mode for mobile and server apps
+To set up consent mode for Google Ads Classic mobile and server apps:
+1. Update your app's SDK to a version that supports consent mode v2. 
+  * Android apps must use [Firebase Android Analytics SDK version 21.5.0 or later](https://firebase.google.com/support/release-notes/android#analytics_v21-5-0){:target="_blank"}.
+  * iOS apps must use [Firebase Apple SDK version 10.17.0 or later](https://firebase.google.com/support/release-notes/ios#analytics){:target="_blank"}.
+
+2. Set up consent mode for your app if you haven't already set it up.
+  * Android: [Set up consent mode for Android apps](https://developers.google.com/tag-platform/security/guides/app-consent?platform=android&consentmode=advanced){:target="_blank"}
+  * iOS: [Set up consent mode for iOS apps](https://developers.google.com/tag-platform/security/guides/app-consent?platform=ios&consentmode=advanced){:target="_blank"} 
+3. If you already set up consent mode for your app, upgrade it to consent mode v2.
+  * Android: [Upgrade to consent mode v2 for Android apps](https://developers.google.com/tag-platform/security/guides/app-consent?platform=android&consentmode=advanced#upgrade-consent-v2){:target="_blank"} 
+  * iOS: [Upgrade to consent mode v2 for iOS apps](https://developers.google.com/tag-platform/security/guides/app-consent?platform=ios&consentmode=advanced#upgrade-consent-v2){:target="_blank"} 
+
+### Consent mode for web
+To set up consent mode for Google Ads Classic Web, choose from these options: 
+* If you don't have a consent banner: [Set up a consent banner](https://support.google.com/tagmanager/answer/9976101){:target="_blank"} on your website. If you choose a banner provided by a Google-certified partner, make sure you enable consent mode in the banner settings. Learn how to [set up a consent banner](https://support.google.com/tagmanager/answer/9976101#cmp1){:target="_blank"}.
+* If you have a consent banner but don't use consent mode: If you use a Google-certified consent management platform (CMP), enable consent mode in your banner settings. Learn more about [Google-certified consent management platforms](https://cmppartnerprogram.withgoogle.com/){:target="_blank"}.
+* If you maintain your own consent banner but don't use consent mode: Implement consent mode for your website. Learn how to [implement consent mode for a website with your own consent solution](https://developers.google.com/tag-platform/security/guides/consent){:target="_blank"}.
+* If you use a Google-certified consent management platform (CMP), your CMP provider automatically updates to the newest version of consent mode. Learn more about [Google-certified consent management platforms](https://cmppartnerprogram.withgoogle.com/){:target="_blank"}.
+* If you maintain your own consent banner, [upgrade to consent mode v2](https://developers.google.com/tag-platform/security/guides/consent#upgrade-consent-v2){:target="_blank"} to collect ad measurement and ads personalization consent signals.
 
 ## Web
 
