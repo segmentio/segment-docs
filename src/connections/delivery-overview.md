@@ -33,7 +33,7 @@ Actions destinations also include a mapping dropdown, which allows you to select
 ![A screenshot of the Delivery Overview tab for an Actions destination, with the Track Page View mapping selected.](images/delivery-overview-actions-destination.jpeg)
 
 ### Breakdown table
-The breakdown table provides you with greater detail about the selected events.
+The breakdown table provides you greater detail about the selected events.
 
 To open the breakdown table, select either the first step in the pipeline view (Successfully received,) the last step in the pipeline view (Successful delivery,) or select a discard step and then click on a discard reason. 
 
@@ -52,7 +52,7 @@ The discard table provides you with greater detail about the events that failed 
 To open the discard table, click on one of the discard steps. If you click on a row in the discard table, you can see the breakdown table for the discarded events.
 
 The discard table displays the following details:
-- **Discard reason**: Any relevant error code, message, or description associated with the event's failure. When possible, Delivery Overview will link to any troubleshooting information you can use to get your events up and running again. Clicking on a discard reason brings you to the [breakdown table](#breakdown-table,) where you can see more detail about discarded events.
+- **Discard reason**: Any relevant error code, message, or description associated with the event's failure. When possible, Delivery Overview links to any troubleshooting information you can use to get your events up and running again. Clicking on a discard reason brings you to the [breakdown table](#breakdown-table,) where you can see more detail about discarded events. For more troubleshooting information associated with Discard Reasons, see the [Troubleshooting](#troubleshooting) documentation. 
 - **Details & Samples**: View up to ten samples over the selected time range. Examine the error message and reason for the error or discard and inspect the payloads involved with the attempted transaction (*not available for inspection at all steps*)
 - **Event count**: How many of each event were discarded in this pipeline step
 - **% Change**: Insight into how the event counts differ from the last comparable time range as a percentage<sup>1</sup>
@@ -92,3 +92,18 @@ During the Delivery Overview beta, you can use the Event Delivery alerting featu
 ## Why is the Delivery Overview page only available for cloud-mode destinations? 
 Similar to Segment's [Event Delivery](/docs/connections/event-delivery/) feature, the Delivery Overview page is only available for server-side integrations (also known as cloud-mode destinations). You won't be able to use the Delivery Overview page for client side integrations (also known as device-mode destinations) because device-mode data is sent directly to the destination tool's API. In order to report on deliverability, data must be sent to destinations using a server-side connection. 
 
+## Troubleshooting
+
+The Delivery Overview pipeline steps Failed on Ingest, Filtered at Source, Filtered at Destination, and Failed Delivery display a [discard table](#discard-table) with information about why your events might have failed to reach their destination.
+
+This table provides a list of all possible discard reasons available at each pipeline step. 
+
+### Failed on Ingest
+
+| Discard Reason    | Error code           | What happened?                                                                                 | Next steps                             |
+| ----------------- | -------------------- | ---------------------------------------------------------------------------------------------- | -------------------------------------- |
+| Empty batch result| `empty_batch_result` | No messages found in batch. After processing messages within batch, no messages were returned. | Reach out to friends@segment.com for assistance |
+| Project not found | `project_not_found`  | No project found for the provided writeKey                                                     | Provide a valid [write key](/docs/connections/find-writekey/) |
+| Source disabled   | `source_disabled`    | Source is not enabled                                                                          | Check basic source settings             |
+| Batch is empty    | `empty_batch`        | Batch request contained no messages                                                            | [Don't send empty batches](/docs/connections/sources/catalog/libraries/server/http-api/#batch) |
+| Multi user error  | `multi_user_error`   | One or more messages within a batch had an error. Some messages in the batch were published, while others were not | Review [individual payloads for each error](/docs/connections/sources/catalog/libraries/server/http-api/#errors) | 
