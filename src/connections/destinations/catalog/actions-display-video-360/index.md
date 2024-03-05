@@ -24,6 +24,9 @@ Segment's integration with DV360 enables Segment customers to sync audiences cre
 > info ""
 > Since the release of `analytics-ios` version 4, Segment no longer collects IDFA automatically. To collect and pass IDFA to your DV360 integration, follow the steps for Ad Tracking and IDFA in the [Analytics-iOS mobile source](/docs/connections/sources/catalog/libraries/mobile/ios#ad-tracking-and-idfa) documentation.
 
+> info "Consent mode"
+> Google is enforcing consent starting March 6, 2024 for European Economic Area (EEA) users. Learn more about [consent mode](/docs/connections/destinations/catalog/actions-display-video-360/#consent-mode) and how to set it up.
+
 ## Details
 
 > info ""
@@ -136,6 +139,15 @@ Segment is disabling all existing Personas Display and Video 360 destinations. Y
 
 <img width="799" alt="image" src="https://github.com/segmentio/segment-docs/assets/89420099/37022665-a39e-4696-a23a-97bcafd9cecf">
 
+
+## Consent mode
+[Consent mode](https://support.google.com/analytics/answer/9976101?hl=en){:target="_blank"} is a feature provided by Google in the context of its products, particularly the Gtag library and Google Analytics. As of March 6, 2024, Google announced that consent mode must function for European Economic Area (EEA) users, otherwise data from EEA users won't process. 
+
+Consent mode in the Gtag library and Google Analytics is designed to help website owners comply with privacy regulations, such as the General Data Protection Regulation (GDPR) in the European Union. It allows website owners to adjust how these tools use and collect data based on user consent.
+
+With consent mode, you can configure your website to dynamically adjust the tracking behavior of the Gtag library and Google Analytics based on the user's consent status. If a user provides consent to data processing, both the Gtag library and Google Analytics can collect and use that data for analysis. If a user doesn't provide consent, both tools limit data collection to essential functions, helping businesses respect user privacy preferences.
+
+Segment automatically sends consent as `TRUE` for this destination.  Segment uses the [bulk-uploader workflow](https://developers.google.com/authorized-buyers/rtb/bulk-uploader#workflow){:target="_blank"} which requires consented data. Ensure all audiences and journeys are connected to consented audiences.  
 
 ## FAQ
 ### What is Segment's relationship with Google DV360 and is the data that Segment sends considered to be First or Third party?
