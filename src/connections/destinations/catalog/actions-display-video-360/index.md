@@ -95,7 +95,7 @@ To configure DoubleClick Floodlight:
 ### Enable and configure the DV360 Destination
 
 1. From your Segment workspace, navigate to **Engage > Engage Settings > Destinations > Add Destination**, then search for **Display and Video 360 (Actions)**.
-2. Authenticate using OAuth.
+2. Authenticate using OAuth. We will ask for permissions to see, edit, create and delete your Audience Partner account data.
 3. Switch the toggle to enable the destination.
 4. Navigate to the **Mappings** tab, click **Add Mapping** and select **Add to Audience**. 
 5. Click **Save** and make sure to enable the mapping. 
