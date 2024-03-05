@@ -170,4 +170,4 @@ Transformations are but one tool among many to help you improve data quality. Se
 
 ### Are transformations applied when using the Event Tester?
 
-Transformations are not applied to events sent through the [Event Tester](https://segment.com/docs/connections/test-connections/). The Event Tester operates independently from the Segment pipeline, focusing solely on testing specific connections to a destination. For a transformation to take effect, the event must be processed through the Segment pipeline.
+Transformations are not applied to events sent through the [Event Tester](/docs/connections/test-connections/). The Event Tester operates independently from the Segment pipeline, focusing solely on testing specific connections to a destination. For a transformation to take effect, the event must be processed through the Segment pipeline.
