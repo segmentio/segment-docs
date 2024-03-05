@@ -305,4 +305,4 @@ Column JSON size | The maximum size of any single column value. | 128 KiB
 It's expected that when you select **Updated records** the records do not change after the first sync. During the first sync, the reverse ETL system calculates a snapshot of all the results and creates records in the `_segment_reverse_etl` schema. All the records are considered as *Added records* instead of *Updated records* at this time. The records can only meet the *Updated records* condition when the underlying values change after the first sync completes.
 
 #### Does Segment use Transport Layer Security (TLS) for the connection between Snowflake and Segment?
-Segment uses the official [gosnowflake library](https://pkg.go.dev/github.com/snowflakedb/gosnowflake#pkg-variables) for connecting with the Snowflake, which internally uses TLS for the HTTP transport.
+Segment uses the [gosnowflake library](https://pkg.go.dev/github.com/snowflakedb/gosnowflake#pkg-variables){:target="_blank"} to connect with Snowflake, which internally uses TLS for the HTTP transport.
