@@ -28,11 +28,13 @@ To create a source volume alert:
   - **In-app**: Select this to receive notifications in the Segment app. To view your notifications, select the bell next to your user icon in the Segment app. 
 5. Click **Save**.
 
-To make changes to a source alert that you created, select the icon in the Actions column for the alert and click **Edit**. 
+To make changes to a source volume alert that you created, select the icon in the Actions column for the alert and click **Edit**. 
+
+To delete a source volume alert that you created, select the icon in the Actions column for the alert and click **Delete**. 
 
 ## Successful delivery rate alerts
 
-You can create an alert that notifies you when the volume of events successfully received by your destination in the last 24 hours falls below a percentage you set. For example, if you set a percentage of 99%, you would be notified if you source had a successful delivery rate of 98% or below. 
+You can create an alert that notifies you when the volume of events successfully received by your destination in the last 24 hours falls below a percentage you set. For example, if you set a percentage of 99%, you would be notified if you destination had a successful delivery rate of 98% or below. 
 
 To receive a successful delivery rate alert in a Slack channel, you must create a Slack webhook first. For more information about Slack webhooks, see the [Sending messages using incoming webhooks](https://api.slack.com/messaging/webhooks){:target="_blank”} documentation.
 
@@ -46,6 +48,6 @@ To create a successful delivery rate alert:
   - **In-app**: Select this to receive notifications in the Segment app. To view your notifications, select the bell next to your user icon in the Segment app. 
 5. Click **Save**.
 
-To make changes to a source alert that you created, select the icon in the Actions column for the alert and click **Edit**. 
+To make changes to a successful delivery rate alert that you created, select the icon in the Actions column for the alert and click **Edit**. 
 
 To delete a successful delivery rate alert that you created, select the icon in the Actions column for the alert and click **Delete**. 
