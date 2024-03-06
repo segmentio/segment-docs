@@ -110,6 +110,8 @@ Once your admin has configured separate apps for each workspace in your IdP, the
 > info "Swithcing between Segment workspaces"
 > Becasue a user, who logged in via SSO, is only signed in for one Segment workspace, the user needs to sign in again to access another workspace.
 
+In this case, when the end-users visit [Segment login page](https://app.segment.com/login){:target="_blank"} to sign in via SSO, the users will only be redirected to one workspace which is also linked with the verified domain(s) because the login page only supports [Segment-initiated SSO](/docs/segment-app/iam/sso/#enabling-segment-initiated-login).
+
 ## Okta setup
 
 The Okta/Segment SAML integration supports the following features:
