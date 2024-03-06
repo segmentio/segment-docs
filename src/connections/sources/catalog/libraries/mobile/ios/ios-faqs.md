@@ -29,7 +29,7 @@ If you choose not to use a dependency manager, you must manually keep files up-t
 
 
 ## Can I initiate multiple `writeKey`s for a single iOS project?
-No, we don't support sending events to multiple `writeKey`s for a single iOS project post-initialization. You can conditionally set the `writeKey` based on an environment variable. For example:
+No, Segment doesn't support sending events to multiple `writeKey`s for a single iOS project post-initialization. You can conditionally set the `writeKey` based on an environment variable. For example:
 ```objc
 let writeKey
 ENV == 'production' ? (writeKey = 'A') : (writeKey = 'B')
