@@ -19,8 +19,8 @@ Segment's Webhooks (Actions) destination uses internet protocol and HTTP callbac
 3. Click **Configure Webhooks (Actions)**.
 4. Select the source that will send data to Webhooks (Actions) and follow the steps to name your destination.
 5. If you require authentication, add in a shared secret on the **Settings** > **Advanced Settings** tab. If you provide a shared secret, Segment will sign requests with an HMAC in the "X-Signature" request header. The HMAC is a hex-encoded SHA1 hash generated using the shared secret and the request body.
-6. Follow the steps in the Destinations Actions documentation on [Customizing mappings](/docs/connections/destinations/actions/#customize-mappings). You can create up to 5 mappings, each of which can send to a different webhook URL.
-7. Enable the destination and configured mappings.
+6. To add an endpoint, [create a custom mapping](/docs/connections/destinations/actions/#customize-mappings) and add your webhook URL to the URL field. You can create up to 5 mappings, each of which can send to a different webhook URL. If you'd like to see webhooks in action before developing your endpoint, you can use a tool like [Svix Play](https://www.svix.com/play/) to get a URL and examine the payloads.
+8. Enable the destination and configured mappings.
 
 {% include components/actions-fields.html settings="true"%}
 
