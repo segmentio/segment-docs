@@ -307,6 +307,13 @@ Column name length | The maximum length of a record column. | 128 characters
 Record JSON size | The maximum size for a record when converted to JSON (some of this limit is used by Segment). | 512 KiB
 Column JSON size | The maximum size of any single column value. | 128 KiB
 
+### Data Model limits
+
+We execute model queries inside a [common table expression](https://cloud.google.com/bigquery/docs/reference/standard-sql/query-syntax#cte_rules), there are some constraints to consider when working with CTEs.
+
+1. Session variables can not be used as CTEs do not support certain operations, including `SET`.
+2. We can only bind the results from one single subquery. If there are multiple semi-colons `;` in the customer query, they'll be treated as several subqueries, which will result in a syntax error.
+
 ## FAQs
 
 #### Why do my sync results show *No records extracted* when I select *Updated records* after I enable the mapping? 
