@@ -38,9 +38,10 @@ To add your warehouse as a source:
 > You need to be a user that has both read and write access to the warehouse.
 
 1. Navigate to **Connections > Sources** and select the **Reverse ETL** tab in the Segment app.
-2. Click **Add Reverse ETL source**.
+2. Click **+ Add Reverse ETL source**.
 3. Select the source you want to add. 
 4. Follow the corresponding setup guide for your Reverse ETL source.
+    * [Azure Reverse ETL setup guide](/docs/connections/reverse-etl/reverse-etl-source-setup-guides/azure-setup/)
     * [BigQuery Reverse ETL setup guide](/docs/connections/reverse-etl/reverse-etl-source-setup-guides/bigquery-setup/)
     * [Databricks Reverse ETL setup guide](/docs/connections/reverse-etl/reverse-etl-source-setup-guides/databricks-setup/)
     * [Postgres Reverse ETL setup guide](/docs/connections/reverse-etl/reverse-etl-source-setup-guides/postgres-setup/)
@@ -49,7 +50,7 @@ To add your warehouse as a source:
 5. Add the account information for your source.  
     * For Snowflake users: Learn more about the Snowflake Account ID [here](https://docs.snowflake.com/en/user-guide/admin-account-identifier.html){:target="_blank"}.
 5. Click **Test Connection** to test to see if the connection works.
-6. Click **Create Source** if the test connection is successful.
+6. Click **Add source** if the test connection is successful.
 
 After you add your data warehouse as a source, you can [add a model](#step-2-add-a-model) to your source.
 
