@@ -133,7 +133,7 @@ Blocked events are blocked from sending to all Segment Destinations, including w
 [Segment's Schema Controls]( https://segment.com/docs/connections/sources/schema/destination-data-control/) provide three options to omit properties/traits. Ensure you've chosen the one that aligns with your requirements:
 
 1. **Standard Schema Controls/"Unplanned Properties/Traits"**: Selecting these options means Segment checks the names of incoming properties/traits against your Tracking Plan.
-2. **Standard Schema Controls/"JSON Schema Violations"**: With this optin, Segment not only checks the names but also evaluates the values of properties/traits. This is useful if you've specified a pattern or a list of acceptable values in the [JSON schema](https://segment.com/docs/protocols/tracking-plan/create/#edit-underlying-json-schema) for each Track event listed in the Tracking Plan.
+2. **Standard Schema Controls/"JSON Schema Violations"**: With this option, Segment not only checks the names but also evaluates the values of properties/traits. This is useful if you've specified a pattern or a list of acceptable values in the [JSON schema](https://segment.com/docs/protocols/tracking-plan/create/#edit-underlying-json-schema) for each Track event listed in the Tracking Plan.
 3. **Advanced Blocking Controls/"Common JSON Schema Violations"**: This option allows Segment to evaluate incoming events thoroughly, including event names, context field names and values, and the names and values of properties/traits, against the [Common JSON schema](https://segment.com/docs/protocols/tracking-plan/create/#common-json-schema) in your Tracking Plan.
 
 ### Do blocked and discarded events count towards my MTU counts?
