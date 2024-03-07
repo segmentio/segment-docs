@@ -28,7 +28,7 @@ To set up the Segment BigQuery connector:
 20. Click **Test Connection** to test to see if the connection works. If the connection fails, make sure you have the right permissions and credentials and try again.
 6. Click **Add source** if the test connection is successful.
 
-Once you've added BigQuery as a source, you can [add a model](/docs/connections/reverse-etl#step-2-add-a-model).
+After you've added BigQuery as a source, you can [add a model](/docs/connections/reverse-etl#step-2-add-a-model).
 
 ## Constructing your own role or policy
 When you construct your own role or policy, Segment needs the following permissions:

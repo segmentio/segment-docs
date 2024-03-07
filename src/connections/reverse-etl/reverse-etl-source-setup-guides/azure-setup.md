@@ -22,7 +22,7 @@ Make sure the user you use to connect to Segment has permissions to use that war
     CREATE USER SegmentReverseETLUser FOR LOGIN SegmentReverseETLLogin;
     ```
 
-* To grant access to the user to read data from all schemas  in the database, run: 
+* To grant access to the user to read data from all schemas in the database, run: 
 
     ```
     EXEC sp_addrolemember 'db_datareader', 'SegmentReverseETLUser';
@@ -70,5 +70,5 @@ To set up Azure as your Reverse ETL source:
 9. Click **Test Connection** to see if the connection works. If the connection fails, make sure you have the right permissions and credentials, then try again.
 10. Click **Add source** if the test connection is successful. 
 
-Once you've successfully added your Azure source, [add a model](/docs/connections/reverse-etl/#step-2-add-a-model) and follow the rest of the steps in the Reverse ETL setup guide. 
+After you've successfully added your Azure source, [add a model](/docs/connections/reverse-etl/#step-2-add-a-model) and follow the rest of the steps in the Reverse ETL setup guide. 
 
