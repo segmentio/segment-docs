@@ -143,7 +143,7 @@ Deprecated (Column name, Collection) pairs | (ForeignKeyAssetId, CustomBrandAsse
 
 
 ### Added fields
-Salesforce version 58 has between 350 to 550 newly added collections and between 800 to 1000 new columns. To see which collections and fields you can access in Salesforce version 58, refer to the [API: New and Changed Items](https://help.salesforce.com/s/articleView?id=release-notes.rn_api_nc.htm&release=244&type=5){:target="_blank"}.
+Salesforce version 58 has between 350 to 550 newly added collections and between 800 to 1000 new columns. To see which collections and fields you can access in Salesforce version 58, refer to the [Salesforce documentation](https://help.salesforce.com/s/articleView?id=release-notes.rn_api_nc.htm&release=244&type=5){:target="_blank"}.
 
 
 ## Troubleshooting
