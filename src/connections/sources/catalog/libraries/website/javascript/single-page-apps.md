@@ -5,7 +5,10 @@ strat: ajs
 
 While Single Page Apps (SPAs) are great for many reasons, they do require some extra consideration in order to set up client-side tracking than with a traditional webpage.
 
-By default, the Segment analytics.js library doesn’t generate or store the referrer value. Instead, the referrer value you see in the payload is the value returned by `document.referrer` directly from the browser, and the URL value is the canonical URL on the page.
+By default, the Segment analytics.js library doesn’t generate or store the referrer value. Instead, the referrer value you see in the payload is the value returned by `document.referrer` directly from the browser, and the URL value is the canonical URL on the page. Segment uses the canonical URL so you have accuracy in page tracking and to align with SEO best practices. 
+
+> info "Note"
+>  Ajs will only use the canonical value when it's available, if you prefer that Ajs captures the current URL then removing the canonical value will help.
 
 When a user navigates between pages on an SPA website, there won’t be a referrer because there is no concept of a new page since it’s all a single page load. This means that the referrer will always be the same as it was on the first page call where someone was first directed to your site. However, in order to circumvent this, you can manually set the referrer and URL in your Segment calls by updating the context object.
 
