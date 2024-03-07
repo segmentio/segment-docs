@@ -39,7 +39,7 @@ You can create an alert that notifies you when the volume of events successfully
 To receive a successful delivery rate alert in a Slack channel, you must first create a Slack webhook. For more information about Slack webhooks, see the [Sending messages using incoming webhooks](https://api.slack.com/messaging/webhooks){:target="_blank”} documentation.
 
 To create a successful delivery rate alert: 
-1. Navigate to the [cloud-mode destinations](/docs/connections/destinations/#event-streams-destinations) you'd like to configure alerts for. 
+1. Navigate to the [cloud-mode destinations](/docs/connections/destinations/#:~:text=Cloud%2Dmode%3A%20The%20sources%20send%20data%20directly%20to%20the%20Segment%20servers%2C%20which%20then%20translate%20it%20for%20each%20connected%20downstream%20destination%2C%20and%20send%20it%20on.) you'd like to configure alerts for. 
 2. Select the Alerts tab and click **Create alert**. 
 3. On the Create alert sidesheet, enter a percentage. You will receive events if your successful delivery rate falls below this percentage. 
 4. Select one or more channels you'd like to receive alerts in. 
