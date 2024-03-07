@@ -488,4 +488,10 @@ For user-property destinations, Segment sends an [identify](/docs/connections/sp
 
 When you first create an audience, Engage sends an Identify call for every user in that audience. Later audience syncs send updates for users whose membership has changed since the last sync.
 
+## FAQ
+
+### AWS S3 destination connection error “Multiple instance of AWS S3 are not allowed for this source"
+
+You might encounter this error if you already have a S3 destination connected to the source in question. Segment only supports one AWS S3 destination per source.
+
 {% include content/destination-footer.md %}

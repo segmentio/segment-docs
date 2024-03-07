@@ -145,6 +145,14 @@ To check the status of your extractions:
 #### Replays
 You can choose to replay syncs. To replay a specific sync, contact [friends@segment.com](mailto:friends@segment.com). Keep in mind that triggering a replay resyncs all records for a given sync.
 
+#### Email alerts
+You can opt in to receive email alerts regarding notifications for Reverse ETL. 
+
+To subscribe to email alerts: 
+1. Navigate to **Settings > User Preferences**. 
+2. Select **Reverse ETL** in the **Activity Notifications** section.
+3. Click the toggle for **Reverse ETL Sync Failed** to receive notifications when your Reverse ETL sync fails. 
+
 ### Edit your model
 
 To edit your model:
@@ -306,3 +314,13 @@ It's expected that when you select **Updated records** the records do not change
 
 #### Does Segment use Transport Layer Security (TLS) for the connection between Snowflake and Segment?
 Segment uses the [gosnowflake library](https://pkg.go.dev/github.com/snowflakedb/gosnowflake#pkg-variables){:target="_blank"} to connect with Snowflake, which internally uses TLS for the HTTP transport.
+
+#### Can I be notified when Reverse ETL syncs fail?
+Yes, you can sign up for Reverse ETL sync notifications.
+
+To receive Reverse ETL sync notifications: 
+1. Navigate to **Settings > User Preferences**.
+2. Select **Reverse ETL** In the **Activity Notifications** section.
+3. Enable the toggle for **Reverse ETL Sync Failed**.
+
+In case of consecutive failures, Segment sends notifications for every sync failure. Segment doesn't send notifications for partial failures.

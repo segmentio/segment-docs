@@ -18,13 +18,19 @@ The Segment Tracking Plan feature allows you to validate your expected events ag
 
 Tracking Plans are stored in workspaces and can be connected to one or more Sources.
 
+> info "Segment Consent Preference Updated Event"
+> After setting up a consent category, users of Consent Management see a Segment Consent Preference Updated Event added to all existing Tracking Plans. 
+
 ## Create a Tracking Plan
 
 To create a new Tracking Plan:
 1. Contact your Segment account team to enable the Protocols features in your workspace.
 2. Once enabled, click **Protocols** in the left bar navigation.
 3. Click **New Tracking Plan**.
-4. Add events, properties, traits and filters in the Tracking Plan editor. <br> You'll see an option to import events and traits to your Tracking Plan that your source received in the last 24 hours, 7 days or 30 days. This option is great if you want to get started with your current events. 
+4. Add events, properties, traits and filters in the Tracking Plan editor. <br> You'll see an option to import events and traits to your Tracking Plan that your source received in the last 24 hours, 7 days or 30 days. This option is great if you want to get started with your current events.
+
+> info "Consent Management users see the Segment Consent Preference Updated event on new Tracking Plans"
+> If you are a Consent Management user and have created at least one consent category, Segment automatically adds the [Segment Consent Preference Updated event](/docs/privacy/consent-management/consent-in-unify/#segment-consent-preference-updated-event) to all new Tracking Plans. 
 
 ## Copy a Tracking Plan
 
@@ -62,7 +68,7 @@ To create a new Tracking Plan by uploading a CSV file:
 After uploading your CSV file, you are redirected to the Upload & Download History page while the upload is in progress. If the CSV upload fails, you'll be able to either view the error directly in the Reports column on the Upload & Download History page or download the `error_report.csv` file that corresponds to the Tracking Plan you uploaded. 
 
 > success ""
-> Tracking Plans created by an uploaded file are reflected in the [Audit Trail](docs/segment-app/iam/audit-trail/) and [Tracking Plan changelog](/docs/protocols/faq/#how-can-i-see-who-made-changes-to-my-tracking-plan).
+> Tracking Plans created by an uploaded file are reflected in the [Audit Trail](docs/segment-app/iam/audit-trail/) and [Tracking Plan changelog](/docs/protocols/faq/#how-can-i-see-who-made-changes-to-my-tracking-plan). If you are a Consent Management user and have created at least one consent category, Segment automatically adds the [Segment Consent Preference Updated event](/docs/privacy/consent-management/consent-in-unify/#segment-consent-preference-updated-event) to all new Tracking Plans. 
 
 ### Update an existing Tracking Plan
 
@@ -100,7 +106,7 @@ The Tracking Plan editor is organized as a spreadsheet to help you  add new even
 | Name             | Specify the name of your event or property.                                                                                                                                                                                                                                    |
 | Description      | Enter a description for your event or property. These descriptions are helpful for both engineers instrumenting Segment and consumers of the data.                                                                                                                             |
 | Status           | Specify whether a property is required or optional. You can't require a Track call because Segment is unable to verify when a Track call should be fired.                                                                                                            |
-| Data Type        | Specify the data type of the property. Data type options include `any, array, object, boolean, integer, number, string, Date time`. Note: Date time is required to be in ISO-8601 format                                                                                       |
+| Data Type        | Specify the data type of the property. Data type options include `any, array, object, boolean, integer, number, string, null, Date time`. Note: Date time is required to be in ISO-8601 format                                                                                       |
 | Permitted Values | Enter simple regular expressions to validate property values. This works when a property data type is set to `string`. For example, you can add pipe delimited strings to the regex column to generate violations when a property value does not match fall, winter or spring. |
 
 > info ""

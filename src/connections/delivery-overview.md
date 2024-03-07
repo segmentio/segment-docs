@@ -24,7 +24,7 @@ The pipeline view shows the following steps:
 - **Successfully received**: Events that Segment ingested from your source
 - **Failed on ingest**: Events that Segment received, but were dropped due to internal data validation rules
 - **Filtered at source**: Events that were discarded due to schema settings or [Protocols](/docs/protocols/) Tracking Plans
-- **Filtered at destination**: Events that were discarded due to [Destination Filters](/docs/guides/filtering-data/#destination-filters), [filtering in the Integrations object](/docs/guides/filtering-data/#filtering-with-the-integrations-object), or [per source schema integration filters](/docs/guides/filtering-data/#per-source-schema-integrations-filters). [Actions destinations](/docs/connections/destinations/actions/) also have a filtering capability: for example, if your Action is set to only send Identify events, all other event types will be filtered out. Actions destinations with incomplete triggers or disabled mappings are filtered out at this step. <!--- Beta users of [Consent Management](/docs/privacy/consent-management/) also see events discarded due to consent preferences.--->
+- **Filtered at destination**: Events that were discarded due to [Destination Filters](/docs/guides/filtering-data/#destination-filters), [filtering in the Integrations object](/docs/guides/filtering-data/#filtering-with-the-integrations-object), or [per source schema integration filters](/docs/guides/filtering-data/#per-source-schema-integrations-filters). [Actions destinations](/docs/connections/destinations/actions/) also have a filtering capability: for example, if your Action is set to only send Identify events, all other event types will be filtered out. Actions destinations with incomplete triggers or disabled mappings are filtered out at this step. [Consent Management](/docs/privacy/consent-management/) users also see events discarded due to consent preferences.
 - **Failed delivery**: Events that have been discarded due to errors or unmet destination requirements
 - **Successful delivery**: Events that were successfully delivered to the destination
 
@@ -87,7 +87,12 @@ With Source Debugger or Event Delivery, you can only verify that events are succ
 With Delivery Overview, you can verify that your source receives your events, that any filters and tracking plans work as expected, and that events successfully make it to your destination. Any errors or unexpected behavior can be identified using the pipeline view, leading to quicker resolution. 
 
 ## How can I configure alerts?
-During the Delivery Overview beta, you can use the Event Delivery alerting features (Delivery Alerts) by selecting the **Alerts** tab in the destination header.
+During the Delivery Overview beta, you can use the Event Delivery alerting features (Delivery Alerts) by selecting the **Alerts** tab in the destination header. 
+
+Once you enable alerts, if the successful delivery rate of all events is less than the threshold percentage in the last 24 hours, you'll be notified through in-app notification and/or workspace email. 
+
+Please note that this is dependent on your [notication settings](/docs/segment-app/#segment-settings). For example, if the threshold is set to 99%, then you'll be notified each time less than 100% of events fail. 
+
 
 ## Why is the Delivery Overview page only available for cloud-mode destinations? 
 Similar to Segment's [Event Delivery](/docs/connections/event-delivery/) feature, the Delivery Overview page is only available for server-side integrations (also known as cloud-mode destinations). You won't be able to use the Delivery Overview page for client side integrations (also known as device-mode destinations) because device-mode data is sent directly to the destination tool's API. In order to report on deliverability, data must be sent to destinations using a server-side connection. 

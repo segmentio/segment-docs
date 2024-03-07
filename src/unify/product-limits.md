@@ -59,6 +59,7 @@ Visit Segment's [pricing page](https://segment.com/pricing/){:target="_blank"} t
 
 
 ## Profile API
+These limits are set per each Unify/Engage Space.
 
 | Name                    | limit                   | Details                                                                                                                                                             |
 | ----------------------- | ----------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------- |

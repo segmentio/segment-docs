@@ -75,12 +75,77 @@ Moving from a classic destination to an actions-based destination is a manual pr
 5. Verify that data is flowing from the development or test source to the partner tool.
 6. Repeat the steps above with your production source.
 
+### Migrate your destination filters from the classic destination to the actions destination
+
+> warning ""
+> You can only migrate your destination filters using the Public API if you're on the business tier plan. This functionality isn't available in the Segment app. 
+
+To migrate your destination filters to your actions destination from the classic destination: 
+1. Send a request to the Public API endpoint. 
+     - Use [List Filters from Destination](https://docs.segmentapis.com/tag/Destination-Filters#operation/listFiltersFromDestination){:target="_blank"} . The `destinationId` can be found in the URL while viewing the destination in your Segment workspace.
+2. Grab the response and parse through the `data.filters` object. Each object returned inside the `data.filters` object is an individual filter associated with the specified destination.
+4. Send individual `POST` requests to the Public API endpoint.
+     - Use [Create Filter for Destination](https://docs.segmentapis.com/tag/Destination-Filters/#operation/createFilterForDestination){:target="_blank"} , for each of the filters from step 2. 
+     - Specify the Actions `destinationId`, found in the URL when viewing that destination. The body of the request is the individual filters from step 2.
+6. If the bodies of those requests don't already include the field `"enabled": true`, make sure to enable each of those filters after you create them.
+
+### Migrate to an actions-based destination using Destination Filters
+For a more comprehensive migration from a classic destination to an actions-based destination, follow the steps outlined below. This implementation strategy is only available for customers on a Segment Business Tier plan with access to [Destination Filters](/docs/connections/destinations/destination-filters/). By adding additional line of defense with Destination Filters, you remove the possibility of duplicate events or dropped events and ensure that events sent before/after a specified `received_at` timestamp are sent to each destination.
+
+This migration strategy involves configuring a destination filter on both the Classic destination and the Actions destination. Configure the classic destination filter to block events by the `received_at` field with a certain value, and the Actions destination to drop events until the `received_at` timestamp field reaches that same value. Destination Filters within the UI have a limitation where they cannot access any top-level fields, but this is not a limitation for [Destination Filters](https://docs.segmentapis.com/tag/Destination-Filters/){:target="_blank”} created by the [Public API](https://segment.com/docs/api/public-api/){:target="_blank”} using [FQL](https://segment.com/docs/api/public-api/fql/){:target="_blank”}. Because the `received_at` is a top-level field in the payload, you'll need to create a destination filter with the Public API and submit the request with that FQL information described below.
+
+By combining these Filters, Segment sends events through the Classic integration up until a specified time and then blocks events after that time. Then the Actions integration blocks events until that specified time, and only allows events beginning at that specified time.
+
+The following code samples show you how you can create filters for your destinations using the [Create Filter for Destination](https://docs.segmentapis.com/tag/Destination-Filters#operation/createFilterForDestination){:target="_blank”} Public API operation.
+
+#### Classic destination
+_Endpoint_: `POST` `https://api.segmentapis.com/destination/classic_destination_id_from_url/filters`
+``` 
+// JSON BODY : 
+{
+  "sourceId": "add_source_id_here",
+  "destinationId": "classic_destination_id_from_url",
+  "title": "drop event after (timestamp) received_at > value April 4, 2023 19:55pm",
+  "description": "drop event after (timestamp) received_at > value April 4, 2023 19:55pm",
+  "if": "(received_at >= '2023-04-21T19:55:00.933Z')",
+  "actions": [
+    {
+      "type":"DROP"
+    }
+  ],
+  "enabled": true
+}
+```
+
+#### Actions destination
+_Endpoint_: `POST` `https://api.segmentapis.com/destination/actions_destination_id_from_url/filters`
+```
+// JSON BODY :
+{
+  "sourceId": "add_source_id_here",
+  "destinationId": "actions_destination_id_from_url",
+  "title": "drop event before (timestamp) received_at < value April 4, 2023 19:55pm",
+  "description": "drop event before (timestamp) received_at < value April 4, 2023 19:55pm",
+  "if": "(received_at < '2023-04-21T19:55:00.933Z')",
+  "actions": [
+    {
+      "type":"DROP"
+    }
+  ],
+  "enabled": true
+}
+```
+
+After configuring the Destination Filter on both the Classic and Actions destination, see each destination's Filters tab and enable the filters. After completing the migration, you can disable the Classic destination on the Settings page, and remove each of the filters from both destinations.
+
 ## Edit a destination action
 You can add or remove, disable and re-enable, and rename individual actions from the Actions tab on the destination's information page in the Segment app. Click an individual action to edit it.
 
 From the edit screen you can change the action's name and mapping, and toggle it on or off. See [Customizing mappings](#customize-mappings) for more information.
 
 ![Screenshot of the Mappings table with several enabled mappings](images/actions-list.png)
+
+When an Action is created, it's disabled by default, to ensure that it's only used after being fully configured. To begin sending data through an Action, enable it on the Actions page by selecting the toggle so that it appears blue.
 
 ## Disable a destination action
 If you find that you need to stop an action from running, but don't want to delete it completely, you can click the action to select it, then click the toggle next to the action's name to disable it. This takes effect within minutes, and disables the action until you reenable it.
@@ -136,7 +201,7 @@ The coalesce function takes a primary value and uses it if it is available. If t
 > Self-service users can add a maximum of two conditions per Trigger.
 
 
-The following type filters and operators are available to help you build conditions:
+Mapping fields are case-sensitive. The following type filters and operators are available to help you build conditions:
 
 - **Event type** (`is`/`is not`). This allows you to filter by the [event types in the Segment Spec](/docs/connections/spec).
 - **Event name** (`is`, `is not`, `contains`, `does not contain`, `starts with`, `ends with`). Use these filters to find events that match a specific name, regardless of the event type.
@@ -195,3 +260,13 @@ If no mappings are enabled to trigger on an event that has been received from th
 ### Multiple mappings triggered by the same event
 
 When the same event triggers multiple mappings, a request will be generated for each mapping that's configured to trigger on an event. For example, for the *Subscription Updated* event, if two mappings are enabled and both have conditions defined to trigger on the *Subscription Updated* event, the two requests will be generated and sent to the destination for each *Subscription Updated* event. 
+
+### Oauth "access token expired" message shown in Segment UI
+Access Tokens that were generated from initial authorization, for example, when you connect a destination via Oauth, are always short-lived. Commonly, the token remains valid for 30 minutes to 1 hour. When Segment receives 401 error responses from the destination after a token has expired, it will automatically make another request to the destination for a new token and will then retry the event. Therefore, 401 responses are sometimes expected and do not indicate an event failure. There are three event flows when events are received and sent to a destination:
+
+- through source 
+- through event tester 
+- through actions tester in mapping screen
+
+The underlying systems for these flows have their own copy of the token, which can expire at different points in time.
+Threfore, if you see a 401 error in a sample response, it is likely that you’ll also see another request was made after it, to ask the downstream destination for a new token. Then one more request was made to actually send the data in your payload to the downstream destination.

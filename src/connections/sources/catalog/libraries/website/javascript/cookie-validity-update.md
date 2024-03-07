@@ -46,6 +46,10 @@ analytics.load('writeKey', {
 > info ""
 > Chrome has a maximum limit of 400 days for cookies. If a value is set beyond that, then Chrome sets the upper limit to 400 days instead of rejecting it. Visit Chrome's [docs](https://developer.chrome.com/blog/cookie-max-age-expires/){:target="blank"} to learn more.
 
+### Device-mode destination cookies
+
+Segment doesn't control cookie management for device-mode destinations. As a result, the way cookies are used and managed is solely determined by each individual SDK. For example, if you have concerns about destinations setting third-party cookies, Segment recommends that you consult directly with the destination providers for clarification. For instance, Amplitude, one of the destinations in the Segment catalog, provides an informative [article on this topic](https://www.docs.developers.amplitude.com/guides/cookies-consent-mgmt-guide/#abstraction-layer-for-storage){:target="blank"}.
+
 ### User settings
 
 Analytics.js automatically persists the user's ID and traits locally. You can override how and where the user ID and traits are stored when loading Analytics.js by passing in a `user` object to the load method.
@@ -136,8 +140,8 @@ To access or assign a value to a cookie outside of the standard Segment methods 
   <tr style="background-color: #fafbff; font-size: 10px;">
     <th>FIELD</th>
     <th>COOKIE NAME</th>
-    <th>ANALYTICS.JS METHOD</th>
-    <th>LOCAL STORAGE METHOD</th>
+    <th>ANALYTICS.JS GET METHOD</th>
+    <th>LOCAL STORAGE GET METHOD</th>
     <th>SET EXAMPLE</th>
     <th>CLEAR EXAMPLE</th>
   </tr>
@@ -182,6 +186,12 @@ To access or assign a value to a cookie outside of the standard Segment methods 
     <td>`analytics.group().traits({})`</td>
   </tr>
 </table>
+
+To retrieve a specific user trait using the Analytics.js Get method, you can access the trait by invoking `analytics.user().traits().firstName`. This returns the firstName trait of the user.
+
+To retrieve a specific group trait, you can use the method `analytics.group().traits().companyName`. This returns the companyName trait of the group.
+
+When you access specific traits stored in the browser's localStorage, you need to utilize the [JSON.parse()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON/parse){:target="_blank"} method because the stored data is typically in string format.
 
 ## Storage Priority
 

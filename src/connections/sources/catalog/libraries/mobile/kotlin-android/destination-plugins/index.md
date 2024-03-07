@@ -9,6 +9,12 @@ plugins:
       url: https://cdn.filepicker.io/api/file/IefXQy6fRR27ZG1NvZgW
     mark:
       url: https://cdn.filepicker.io/api/file/lqTYxhVyT5WFDFdLS598
+  - name: Adobe Analytics
+    url: connections/sources/catalog/libraries/mobile/kotlin-android/destination-plugins/adobe-kotlin-android/
+    logo:
+      url: https://d3hotuclm6if1r.cloudfront.net/logos/omniture-default.svg
+    mark:
+      url: https://cdn.filepicker.io/api/file/E42OZ7ThRpuXrvIlMnul
   - name: Amplitude
     url: connections/sources/catalog/libraries/mobile/kotlin-android/destination-plugins/amplitude-kotlin-android/
     logo:
@@ -57,12 +63,36 @@ plugins:
       url: https://d3hotuclm6if1r.cloudfront.net/logos/flurry-default.svg
     mark:
       url: https://cdn.filepicker.io/api/file/yxc3XuGQA2btML7kyWJg
+  - name: Intercom
+    url: connections/sources/catalog/libraries/mobile/kotlin-android/destination-plugins/intercom-kotlin-android/
+    logo:
+      url: https://cdn.filepicker.io/api/file/PLYt4sbQsa4vXGtq0oxe
+    mark:
+      url: https://cdn.filepicker.io/api/file/TPPTdCreS9SO46zTF0ax  
+  - name: Localytics
+    url: connections/sources/catalog/libraries/mobile/kotlin-android/destination-plugins/localytics-kotlin-android/
+    logo:
+      url: https://d3hotuclm6if1r.cloudfront.net/logos/localytics-default.svg
+    mark:
+      url: https://cdn.filepicker.io/api/file/pzZ27V3PS6Oc0KsWMBmv
   - name: Mixpanel
     url: connections/sources/catalog/libraries/mobile/kotlin-android/destination-plugins/mixpanel-kotlin-android/
     logo:
       url: https://cdn.filepicker.io/api/file/pUF0kwpTTu0Z5POuzZXV
     mark:
       url: https://cdn.filepicker.io/api/file/0mdiroESxtRQBoR8ieBg
+  - name: Nielsen-DCR
+    url: connections/sources/catalog/libraries/mobile/kotlin-android/destination-plugins/nielsen-dcr-kotlin-android/
+    logo:
+      url: https://cdn.filepicker.io/api/file/yzGpbGW0T28PvM1s96BW
+    mark:
+      url: https://cdn.filepicker.io/api/file/Az5dYYXJSWzG0xeV0XUg
+  - name: Nielsen-DTVR
+    url: connections/sources/catalog/libraries/mobile/kotlin-android/destination-plugins/nielsen-dtvr-kotlin-android/
+    logo:
+      url: https://cdn.filepicker.io/api/file/yzGpbGW0T28PvM1s96BW
+    mark:
+      url: https://cdn.filepicker.io/api/file/Az5dYYXJSWzG0xeV0XUg
   - name: Optimizely Full Stack
     url: connections/sources/catalog/libraries/mobile/kotlin-android/destination-plugins/optimizely-full-stack-android-kotlin/
     logo:
@@ -146,7 +176,7 @@ To test your destination:
 3. Complete the `TODO` sections in the sample code with the appropriate information for your destination.
 4. Commit your changes.
 
-Segment recommends you to test your destination implementation end-to-end. Send some sample analytics events and ensure that they reach the destination.
+Segment recommends that you test your destination implementation end-to-end. Send some sample analytics events and ensure that they reach the destination.
 
 > info ""
 > For more information about the Analytics Kotlin Plugin architecture and how it can help you customize your tracking implementation to suit your needs, refer to the [Plugin Architecture guide](/docs/connections/sources/catalog/libraries/mobile/kotlin-android/kotlin-android-plugin-architecture).

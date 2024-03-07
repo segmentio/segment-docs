@@ -10,6 +10,7 @@ items:
   status: PUBLIC
   endpoints:
   - us
+  - eu
   regions:
   - us
   - eu
@@ -26,6 +27,7 @@ items:
   status: PUBLIC
   endpoints:
   - us
+  - eu
   regions:
   - us
   - eu
@@ -41,6 +43,7 @@ items:
   status: PUBLIC
   endpoints:
   - us
+  - eu
   regions:
   - us
   - eu
@@ -58,6 +61,7 @@ items:
   status: PUBLIC
   endpoints:
   - us
+  - eu
   regions:
   - us
   - eu
@@ -67,14 +71,15 @@ items:
     url: 'https://cdn.filepicker.io/api/file/Vk6iFlMvQeynbg30ZEtt'
   categories:
     - Warehouses
-- display_name: Databricks Delta Lake
-  slug: databricks-delta-lake
-  name: catalog/warehouses/databricks-delta-lake
+- display_name: Databricks 
+  slug: databricks
+  name: catalog/warehouses/databricks
   description: ''
-  url: connections/storage/catalog/databricks-delta-lake
-  status: PRIVATE_BETA
+  url: connections/storage/catalog/databricks
+  status: PUBLIC
   endpoints:
   - us
+  - eu
   regions:
   - us
   - eu
@@ -92,6 +97,7 @@ items:
   status: PUBLIC_BETA
   endpoints:
   - us
+  - eu
   regions:
   - us
   - eu
@@ -109,6 +115,7 @@ items:
   status: PUBLIC
   endpoints:
   - us
+  - eu
   regions:
   - us
   - eu
@@ -126,6 +133,7 @@ items:
   status: PUBLIC
   endpoints:
   - us
+  - eu
   regions:
   - us
   - eu
@@ -143,6 +151,7 @@ items:
   status: PUBLIC
   endpoints:
   - us
+  - eu
   regions:
   - us
   - eu
@@ -160,6 +169,7 @@ items:
   status: PUBLIC
   endpoints:
   - us
+  - eu
   regions:
   - us
   - eu
@@ -177,6 +187,7 @@ items:
   status: PUBLIC
   endpoints:
   - us
+  - eu
   regions:
   - us
   - eu
