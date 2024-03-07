@@ -22,7 +22,7 @@ To create a source volume alert:
 1. Open your workspace and navigate to the [event streaming source](/docs/connections/sources/#event-streams-sources) you'd like to configure alerts for. 
 2. Select the Alerts tab and click **Create alert**. 
 3. On the Create alert sidesheet, enter a percentage of source volume change that you'd like to be notified for. 
-4. Select one or more channels you'd like to receive alerts in. 
+4. Select one or more of the following alert channels:
   - **Email**: Select this to receive notifications at the provided email address. 
   - **Slack**: Select this to send alerts to one or more channels in your workspace. 
   - **In-app**: Select this to receive notifications in the Segment app. To view your notifications, select the bell next to your user icon in the Segment app. 
@@ -42,7 +42,7 @@ To create a successful delivery rate alert:
 1. Navigate to the [cloud-mode destinations](/docs/connections/destinations/#:~:text=Cloud%2Dmode%3A%20The%20sources%20send%20data%20directly%20to%20the%20Segment%20servers%2C%20which%20then%20translate%20it%20for%20each%20connected%20downstream%20destination%2C%20and%20send%20it%20on.) you'd like to configure alerts for. 
 2. Select the Alerts tab and click **Create alert**. 
 3. On the Create alert sidesheet, enter a percentage. You will receive events if your successful delivery rate falls below this percentage. 
-4. Select one or more channels you'd like to receive alerts in. 
+4. Select one of the following alert channels:
   - **Email**: Select this to receive notifications at either the email address associated with your account or another email address that you enter into this field. 
   - **Slack**: Select this and enter a Slack webhook URL and channel name to send alerts to a channel in your Slack workspace.
   - **In-app**: Select this to receive notifications in the Segment app. To view your notifications, select the bell next to your user icon in the Segment app. 
