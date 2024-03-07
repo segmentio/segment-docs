@@ -128,8 +128,13 @@ That being said, there are plenty of scenarios where the reactive Schema functio
 
 Blocked events are blocked from sending to all Segment Destinations, including warehouses and streaming Destinations. When an Event is blocked using a Tracking Plan, it does not count towards your MTU limit. They will, however, count toward your MTU limit if you enable [blocked event forwarding](/docs/protocols/enforce/forward-blocked-events/) in your Source settings.
 
-### I've omitted unplanned properties/traits from using my schema controls. Why am I seeing these properties/traits in the payload when violations are triggered?
-If you define a property/trait within your tracking plan and select the option to omit unplanned properties/traits within your [schema controls](https://segment.com/docs/protocols/enforce/schema-configuration) this option only applies to the property/trait name. If you have defined a key as an enumeration (enum) with a predetermined list of values, the schema control settings will not evaluate the values within this list. To address properties or traits that are omitted due to violations, adjustments must be made within the JSON Schema Violations settings.
+### Why am I seeing unplanned properties/traits in the payload when violations are triggered, despite using schema controls to omit them?
+
+[Segment's Schema Controls]( https://segment.com/docs/connections/sources/schema/destination-data-control/) provide three options to omit properties/traits. Ensure you've chosen the one that aligns with your requirements:
+
+1. **Standard Schema Controls/"Unplanned Properties/Traits"**: Selecting these options means Segment checks the names of incoming properties/traits against your Tracking Plan.
+2. **Standard Schema Controls/"JSON Schema Violations"**: With this optin, Segment not only checks the names but also evaluates the values of properties/traits. This is useful if you've specified a pattern or a list of acceptable values in the [JSON schema](https://segment.com/docs/protocols/tracking-plan/create/#edit-underlying-json-schema) for each Track event listed in the Tracking Plan.
+3. **Advanced Blocking Controls/"Common JSON Schema Violations"**: This option allows Segment to evaluate incoming events thoroughly, including event names, context field names and values, and the names and values of properties/traits, against the [Common JSON schema](https://segment.com/docs/protocols/tracking-plan/create/#common-json-schema) in your Tracking Plan.
 
 ### Do blocked and discarded events count towards my MTU counts?
 
