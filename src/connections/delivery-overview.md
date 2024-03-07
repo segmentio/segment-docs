@@ -163,10 +163,12 @@ This table provides a list of all possible discard reasons available at each pip
 | Unplanned | `unplanned` | Event blocked due to unplanned event blocking; Source schema settings configured to block events not defined in connected Tracking Plan | Check source Configurations:<br> Settings > Schema Configurations > to allow unplanned events <br> **OR:** <br> Add the new event in the connected Tracking Plan to ensure it's recognized as a planned event | 
 | Unplanned and schema violation | `unplanned_and_schema_violation` | Source schema settings configured to block events not defined in connected Tracking Plan and event violated the connected Tracking Plan JSON schema | Check source Configurations:<br> Settings > Schema Configurations > to allow unplanned events <br> **OR:** <br> Add the new event in the connected Tracking Plan to ensure it's recognized as a planned event |
 
+### Reverse ETL
+
 | Discard Reason    | Error code           | What happened?                                                                                 | Next steps                             |
 | ----------------- | -------------------- | ---------------------------------------------------------------------------------------------- | -------------------------------------- |
 | Duplicate record deleted | `ErrRecordDuplicate` | Duplicate records have been found for the Unique Identifier configured | Change the Unique Identifier column that has unique values per record or construct a query that returns distinct records for the Unique Identifier configured. | 
 | Record with NULL unique ID configured | `ErrRecordNullUniqueID` | While extracting the records, the Unique Identifier column was found to have a null value. | Make sure to select a Not null column to use as the unique identifier or construct a query that returns not null values for the Unique Identifier configured. | 
 | Value for IdentifierColumn is required | `ErrRecordMissingID` | IdentifierColumn is a required field | Select a column to use as the unique identifier for each row and input the column name in the UI | 
 | Value for IdentifierColumn must be text | `ErrRecordInvalidID` | The value returned for the Unique Identifier column is other than text | Construct a SQL query to cast the Identifier column to values in text and select the casted column as the Unique Identifier column. If possible, select an Identifier column that is a text data type. | 
-| 
+| Workspace reached the Reverse ETL usage limit | `ErrSegmentNoEntitlement` | Indicates that the workspace reached the limit of their workspace billing plan | Upgrade your workspace plan | 
