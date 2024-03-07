@@ -130,6 +130,8 @@ Blocked events are blocked from sending to all Segment Destinations, including w
 
 ### Why am I seeing unplanned properties/traits in the payload when violations are triggered, despite using schema controls to omit them?
 
+If you're seeing unplanned properties/traits in your payload despite using Schema Controls, you might want to select a new degree of blocking controls. 
+
 Segment's [Schema Controls](docs/connections/sources/schema/destination-data-control/) provide three options to omit properties/traits. Select the one that aligns with your requirements:
 
 1. **Standard Schema Controls/"Unplanned Properties/Traits"**: Segment checks the names of incoming properties/traits against your Tracking Plan.
