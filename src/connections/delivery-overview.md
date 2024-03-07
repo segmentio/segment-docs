@@ -100,7 +100,7 @@ This table provides a list of all possible discard reasons available at each pip
 
 ### Failed on Ingest
 
-| Discard Reason    | Error code           | What happened?                                                                                 | Next steps                             |
+| Discard Reason    | Error Code      | What happened?          | Next steps                             |
 | ----------------- | -------------------- | ---------------------------------------------------------------------------------------------- | -------------------------------------- |
 | Empty batch result| `empty_batch_result` | No messages found in batch. After processing messages within batch, no messages were returned. | Reach out to friends@segment.com for assistance |
 | Project not found | `project_not_found`  | No project found for the provided writeKey                                                     | Provide a valid [write key](/docs/connections/find-writekey/) |
@@ -151,3 +151,22 @@ This table provides a list of all possible discard reasons available at each pip
 | Function is not deployed | `BAD_DEPLOY` | The function is not deployed | [Re-deploy the function](/docs/connections/functions/source-functions/#:~:text=Save%20and%20deploy,update%20existing%20functions) and then reach out to friends@segment.com for assistance if issue persists | 
 | Unexpected DeployType. Supported is aws::lambda | `BAD_DEPLOY` | The function is not deployed properly | [Re-deploy the function](/docs/connections/functions/source-functions/#:~:text=Save%20and%20deploy,update%20existing%20functions) and then reach out to friends@segment.com for assistance if issue persists |  
 | Invalid deploy ID, missing lambda ARN | `BAD_DEPLOY` | The function is not deployed properly | [Re-deploy the function](/docs/connections/functions/source-functions/#:~:text=Save%20and%20deploy,update%20existing%20functions) and then reach out to friends@segment.com for assistance if issue persists |  
+
+
+### Filtered at source
+
+| Discard Reason    | Error code           | What happened?                                                                                 | Next steps                             |
+| ----------------- | -------------------- | ---------------------------------------------------------------------------------------------- | -------------------------------------- |
+| Common schema violation | `common_schema_violation` | Event violated the [Common JSON Schema of your Tracking Plan](https://segment.com/docs/protocols/tracking-plan/create/#common-json-schema) | Check event payload against the connected Tracking Plan Common JSON schema. If the event is passing the correct Information, then update the Tracking Plan Common JSON schema with the new information. <br> **OR:** <br> Update the source Configurations settings to allow events that violate the connected Tracking Plan Common JSON schema: <br> Source > Settings >  Schema Configurations > Advanced Blocking Controls (update option(s) to “Allow”) |
+| Event setting | `event_setting` | Source configured to discard events of this type | Check [source schema filers](https://segment.com/docs/guides/filtering-data/#per-source-schema-integrations-filters) by navigating to Source > Schema |
+| Schema violation | `schema_violation` | Source schema settings configured to block events that violate the connected Tracking Plan JSON schema | Check event payload against the connected Tracking Plan JSON schema. If the event is passing the correct Information, then update the Tracking Plan JSON Schema with the new information. <br> **OR:** <br> Update the source Configurations settings to allow events that violate the connected Tracking Plan JSON schema: <br> Source > Settings >  Schema Configurations > JSON Schema Violations (update option(s) to “Allow”) |
+| Unplanned | `unplanned` | Event blocked due to unplanned event blocking; Source schema settings configured to block events not defined in connected Tracking Plan | Check source Configurations:<br> Settings > Schema Configurations > to allow unplanned events <br> **OR:** <br> Add the new event in the connected Tracking Plan to ensure it's recognized as a planned event | 
+| Unplanned and schema violation | `unplanned_and_schema_violation` | Source schema settings configured to block events not defined in connected Tracking Plan and event violated the connected Tracking Plan JSON schema | Check source Configurations:<br> Settings > Schema Configurations > to allow unplanned events <br> **OR:** <br> Add the new event in the connected Tracking Plan to ensure it's recognized as a planned event |
+
+| Discard Reason    | Error code           | What happened?                                                                                 | Next steps                             |
+| ----------------- | -------------------- | ---------------------------------------------------------------------------------------------- | -------------------------------------- |
+| Duplicate record deleted | `ErrRecordDuplicate` | Duplicate records have been found for the Unique Identifier configured | Change the Unique Identifier column that has unique values per record or construct a query that returns distinct records for the Unique Identifier configured. | 
+| Record with NULL unique ID configured | `ErrRecordNullUniqueID` | While extracting the records, the Unique Identifier column was found to have a null value. | Make sure to select a Not null column to use as the unique identifier or construct a query that returns not null values for the Unique Identifier configured. | 
+| Value for IdentifierColumn is required | `ErrRecordMissingID` | IdentifierColumn is a required field | Select a column to use as the unique identifier for each row and input the column name in the UI | 
+| Value for IdentifierColumn must be text | `ErrRecordInvalidID` | The value returned for the Unique Identifier column is other than text | Construct a SQL query to cast the Identifier column to values in text and select the casted column as the Unique Identifier column. If possible, select an Identifier column that is a text data type. | 
+| 
