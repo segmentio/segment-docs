@@ -139,7 +139,7 @@ On March 25, 2024, Segment will upgrade the Salesforce source integration from v
 Change | Fields
 ---- | ------------
 Collections deprecated | `AssistantRecommendationShare`, `AssistantRecommendation` 
-Deprecated (Column name, Collection) pairs | (ForeignKeyAssetId, CustomBrandAsset), (UserPermissionsMobileUser, User), (OptionsRequireHttps, Site), (UniqueKey, LoginEvent), (OptionsExternalHttps, Domain) 
+Deprecated (Column name, Collection) pairs | (`ForeignKeyAssetId, CustomBrandAsset`), (`UserPermissionsMobileUser, User`), (`OptionsRequireHttps, Site`), (`UniqueKey, LoginEvent`), (`OptionsExternalHttps, Domain`) 
 
 
 ### Added fields
