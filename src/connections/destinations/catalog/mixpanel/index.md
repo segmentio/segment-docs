@@ -496,6 +496,14 @@ If you're testing in Xcode remember you must first background the app, then the 
 In Device-mode, when a `distinct_id` is present in the browser, it is automatically sent to Mixpanel. In Cloud-mode, the `distinct_id` is set to Segment's `userId` if one is present. If there is no `userId` on the payload, `anonymousId` is set instead.
 
 
+### Insert ID
+
+`$insert_id` is only available for cloud events. For the Mixpanel (Legacy) destination, Segment generates `$insert_id` from the messageId, event name and Mixpanel namespace constant using the [uuidv5](https://developer.hashicorp.com/terraform/language/functions/uuidv5) function:
+```javascript
+const insertId = uuidv5(`${messageId}:${projectId}:${eventName}`, MIXPANEL_NAMESPACE)
+```
+
+
 ### IP
 
 If an `ip` property is passed to Mixpanel, the value will be interpreted as the IP address of the request and therefore automatically parsed into Mixpanel geolocation properties (City, Country, Region). After that IP address has been parsed, they will throw out the IP address and only hold onto those resulting geolocation properties. As such, if you want to display an IP address as a property within the Mixpanel UI or within raw data, you will simply want to slightly modify the naming convention for that property.
