@@ -108,7 +108,7 @@ With these being optional:
 
 *   **utm\_term**: this is the parameter suggested for paid search to identify keywords for your ad. If you're using Google Adwords and have enabled "autotagging", then you don't need to worry about this. Otherwise, you can manually pass the keywords from your search terms through this parameter so that you can see which keywords convert the most. Note that this parameter is reserved explicitly for search. (Examples: "toast", "butter", "jam")
 
-If you'd like UTM parameters to persist in subsequent calls, you will need to manually add those fields in the context.campaign object of your event call. For example:
+If you'd like UTM parameters to persist in subsequent calls, you'll need to manually add those fields in the `context.campaign` object of your event call. For example:
 
 ```js
 analytics.page("97980cfea0067", {}, {  campaign: {
@@ -121,7 +121,7 @@ analytics.page("97980cfea0067", {}, {  campaign: {
 });
 ```
 
-You could also store the values in cookies and/or localStorage and use [Analytics.js Middleware](https://segment.com/docs/connections/sources/catalog/libraries/website/javascript/middleware/){:target="_blank"} to enrich the payload for subsequent calls.
+You can also store the values in cookies and/or localStorage and use [Analytics.js Middleware](/docs/connections/sources/catalog/libraries/website/javascript/middleware/){:target="_blank"} to enrich the payload for subsequent calls.
 
 [Learn more about the semantics with each UTM parameter.](https://docs.google.com/file/d/0By71e2L6SonANjViYWUyOTktOGQ2Ny00NWJmLThlY2MtMDU3MzJhNWU0MDg1/edit?hl=en){:target="_blank"} _The key isn't to stick with the definitions that closely, but to be consistent within your own analytics system._
 
