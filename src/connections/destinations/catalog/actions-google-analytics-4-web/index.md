@@ -169,8 +169,16 @@ UTM Parameters are automatically tracked and sent to Google when they are presen
 
 Without any further configuration, traffic-source data for `campaign`, `campaign_id`, `content`, `medium`, and `source` will populate in GA4. This can be observed on Google's side by triggering a `Page` call with UTM parameters present in the URL and navigating to the **Realtime overview** report in GA4 to see the resulting `page_view` event under the _Event count by Event name_ card. 
 
+### Aquisition and Attribution in GA4
+
+It's important to note that _Acquisition_ and _Attribution_ are two different things in GA4. _Acquisition_ is on the _User_ and _Session_ level, _Attribution_ is on the _Event_ level and determined by your [Reporting Identity](https://support.google.com/analytics/answer/10976610?hl=en&sjid=5444376178412928264-NA){:target="_blank"} as well as your [Attribution Settings](https://support.google.com/analytics/answer/10597962?hl=en&sjid=5444376178412928264-NA#zippy=%2Cin-this-article){:target="_blank"}, which are settings that are configured in your GA4 workspace outside of Segment. 
+ 
+_Session source_ acquisition comes from [UTM parameters](https://segment-docs.netlify.app/docs/connections/destinations/catalog/actions-google-analytics-4-web/#tracking-utm-parameters){:target="_blank"}. _Attribution_ pertains to the conversion event that happened at the _Event_ level. That attribution is determined by your settings and the model that you choose. 
+ 
+The `page_view` event is crucial for proper session attribution because attribution gets set on the first event after the config is loaded, which is usually a `page_view`.
+ 
+More information available in Google's documentation on [Attribution and Attribution modeling](https://support.google.com/analytics/answer/10596866?hl=en&sjid=7960067026404308955-NA#zippy=%2Cin-this-article){:target="_blank"} and [Campaigns and Traffic sources](https://support.google.com/analytics/answer/11242841?hl=en&ref_topic=11151952&sjid=3843592966402957977-NA#zippy=%2Cin-this-article){:target="_blank"}. 
+
 ### Differences between Google Analytics 4 Cloud and Google Analytics 4 Web destinations 
 
 Segment's [Google Analytics 4 Cloud](/docs/connections/destinations/catalog/actions-google-analytics-4/) server-side destination uses Google's Measurement Protocol API to send event data server to server, whereas Segment's [Google Analytics 4 Web](/docs/connections/destinations/catalog/actions-google-analytics-4-web/) device-mode destination loads the gtag.js library client-side and uses Segment's event data to map to gtag.js events directly. Each destination has its own advantages and disadvantages. Your choice between the two will depend on your specific use case, technical expertise, and the platforms from which you want to track data.
-
-
