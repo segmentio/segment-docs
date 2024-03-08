@@ -4,11 +4,12 @@ hide-cmodes: true
 hide-personas-partial: true
 cmode-override: true
 id: 54521fd725e721e32a72eec6
-private: true
+private: false
 maintenance: true
 maintenance-content: This destination should only be used for Mobile connections. New versions of the destination are available for browser and server connections. See [Intercom Cloud Mode (Actions)](/docs/connections/destinations/catalog/actions-intercom-cloud/) and [Intercom Web (Actions)](/docs/connections/destinations/catalog/actions-intercom-web/) for more information.
----
+hidden: false
 
+---
 ## Getting Started
 
 1.  From the Segment Destinations page click **Add Destination**.

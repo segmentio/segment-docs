@@ -1,7 +1,6 @@
 ---
 title: 'Bucket Web (Actions) Destination'
 id: 656dc9330d1863a8870bacd1
-beta: true
 versions:
   - name: "Bucket (Classic)"
     link: '/docs/connections/destinations/catalog/bucket'

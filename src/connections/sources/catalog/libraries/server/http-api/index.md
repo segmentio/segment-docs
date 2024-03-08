@@ -85,7 +85,9 @@ Segment welcomes feedback on API responses and error messages. [Reach out to sup
 
 ## Rate limits
 
-For each workspace, Segment recommends you to not exceed 1,000 requests per second with the HTTP API. If you exceed this, Segment reserves the right to queue any additional events and process those at a rate that doesn't exceed the limit. To request a higher limit, contact [Segment](mailto:friends@segment.com).
+For each workspace, Segment recommends you to not exceed 1,000 requests per second with the HTTP API. If you exceed this, Segment reserves the right to queue any additional events and process those at a rate that doesn't exceed the limit. Requests that exceed acceptable limits may be rejected with HTTP Status Code 429. When Segment rejects the requests, the response header contains `Retry-After` and `X-RateLimit-Reset` headers, which contains the number of seconds after which you can retry the request.
+
+To request a higher limit, contact [Segment](mailto:friends@segment.com).
 
 For [`batch` requests](#batch), there's a limit of 500 KB per request. 
 
