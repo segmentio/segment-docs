@@ -173,7 +173,7 @@ This table provides a list of all possible discard reasons available at each pip
 | Value for IdentifierColumn must be text | `ErrRecordInvalidID` | The value returned for the Unique Identifier column is other than text | Construct a SQL query to cast the Identifier column to values in text and select the casted column as the Unique Identifier column. If possible, select an Identifier column that is a text data type. | 
 | Workspace reached the Reverse ETL usage limit | `ErrSegmentNoEntitlement` | Indicates that the [workspace reached the limit](https://segment.com/docs/connections/reverse-etl/#usage-limits) of their workspace billing plan | Upgrade your workspace plan | 
 
-## Filtered at Destination
+### Filtered at destination
 
 | Discard Reason    | Error code           | What happened?                                                                                 | Next steps                             |
 | ----------------- | -------------------- | ---------------------------------------------------------------------------------------------- | -------------------------------------- |
@@ -186,5 +186,29 @@ This table provides a list of all possible discard reasons available at each pip
 | Message rejected | `MESSAGE_REJECTED` | [Missing one or more fields required by the filter](https://segment.com/docs/connections/integration_error_codes/#:~:text=errors.discarded.MESSAGE_REJECTED,for%20more%20details.) | Check the Response from Destination tab for more information about why the downstream API rejected the request |
 | Functions lock out | `FUNCTIONS_LOCK_OUT` | Function wasn't executed because the user is locked out of functions | Due to Functions usage that's [past the user's paid limit](https://segment.com/docs/connections/functions/usage/). Reach out to friends@segment.com for more assistance. |
 | Internal error | `INTERNAL` | Catch-all for internal problems - bugs, unexpected errors, or others. | Reach out to friends@segment.com for assistance. |
-| No enabled destinations | `NO_ENABLED_DESTINATIONS` | | | Reach out to friends@segment.com for assistance. |
+| Actions without mappings or Actions without triggers | `NO_MATCHING_MAPPING` | The Destination is an Actions Destination and no mapping or trigger is configured for this event |
+| Filtered at mapping | `FILTERED_AT_MAPPING` | The destination is an Actions Destination and the event did not match the [currently selected mapping](https://segment.com/docs/connections/destinations/actions/#components-of-a-destination-action). 
+| Failed data encryption | `FAILED_DATA_ENCRYPTION` | Data encryption failed | Reach out to friends@segment.com for assistance. |
+| Unsupported/Invalid request | `bad_request` | The request received is either malformed or the Function has thrown an unknown exception | Review your payload to ensure that it aligns with Segment's expectations |
+| Invalid settings | `invalid_settings` | Function internal settings are invalid | Fix the function settings or reach out to support for more details |
+| Invalid event | `message_rejected` | Function has thrown an exception like InvalidEventPayload or ValidationError | Fix the payload with valid data as needed by the function | 
+| Unsupported content type | `unsupported_event_type` | EventNotSupported or missing event handler | Add the missing event handler in the function code | 
+| Failed to process the request | `internal` | Failed to process the request. Internal error | Reach out to friends@segment.com for assistance | 
+| Lambda api temp error - Too Many Requests | `too_many_requests` | Incoming event traffic rate exceeds the expected rate | Reach out to friends@segment.com for assistance | 
+| Function timeout | `gateway_timeout` | Function timed out | Check the function code or reach out to friends@segment.com for increasing the timeout and more details |
+| FunctionRetryError | `retry` | Retry error from function code | Segment will retry the function | 
+| Payload is missing fields that are required for partner's API | `PAYLOAD VALIDATION FAILED` | There are either custom validations inside the action-destinations or mapping validations | MISSING REMEDY |
+| Authentication with partner failed | `INVALID AUTHENTICATION` | Either the API Key or OAuth Token is invalid |  MISSING REMEDY | 
+| Currency in payload is invalid | `INVALID_CURRENCY_CODE` | Currency does not match ISO 4217 format | MISSING REMEDY |
+| Transient error | `RETRYABLE ERROR` | Encompasses a variety of internal errors | MISSING REMEDY |
+| Issue refreshing Access Token | `REFRESH TOKEN EXPIRED` | Possible OAuth permissions error | MISSING REMEDY |
+| Filtered by consent | `FILTERED_BY_END_USER_CONSENT` | The message was dropped due to Consent Manager settings chosen by the user | Reach out to friends@segment.com for assistance |
+
+### Failed delivery
+| Discard Reason    | Error code           | What happened?                                                                                 | Next steps                             |
+| ----------------- | -------------------- | ---------------------------------------------------------------------------------------------- | -------------------------------------- |
+| Invalid settings | `INVALID_SETTINGS` | Event is missing some required settings as configured for that integration per event type | One or more settings was incorrectly configured in Segment. Please review your Segment settings and make any necessary updates |
+| 429 | `429` | Too many requests sent within a given time | There is no action needed as these events will be retried. However, if you’re seeing that events are eventually failing due to a volume that is too high, please contact the downstream tool to see if they can raise the set rate limit for your account. If the destination in Segment allows batching, you can often enable that feature to reduce the total number of requests. |
+| Erefused | `EREFUSED` | Server ran successfully but could not connect to database | There was a temporary problem connecting to the downstream partner's API. This event will be retried. No action is necessary. Segment is unable to establish a connection with the partner’s server. This could mean your Segment configurations contain some invalid settings or that the integration is no longer operational. If your configurations are valid, consider disabling this integration or contact the integration partner to address this issue. |
+| Unsupported event type | `UNSUPPORTED_EVENT_TYPE` | Destination doesn't support the event type | The downstream destination doesn’t support the event type you’re attempting to send. |
 | 
