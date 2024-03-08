@@ -1,6 +1,7 @@
 ---
 title: Mixpanel Cohorts Source
 id: RxxzG3Dyva
+redirect_from: /docs/connections/sources/catalog/cloud-apps/mixpanel-cohorts/
 ---
 {% include content/source-region-unsupported.md %}
 
