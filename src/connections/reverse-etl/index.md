@@ -145,6 +145,15 @@ To check the status of your extractions:
 #### Replays
 You can choose to replay syncs. To replay a specific sync, contact [friends@segment.com](mailto:friends@segment.com). Keep in mind that triggering a replay resyncs all records for a given sync.
 
+#### Reset syncs
+You can reset your sync by 
+
+To reset a sync:
+1. Select the three dots next to **Sync now**.
+2. Select **Reset sync**. 
+3. Select the checkbox that you understand what happens when a sync is reset.
+4. Click **Reset sync**.
+
 #### Email alerts
 You can opt in to receive email alerts regarding notifications for Reverse ETL. 
 
