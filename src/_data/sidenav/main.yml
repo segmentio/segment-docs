@@ -476,8 +476,6 @@ sections:
     section:
     - path: /engage/trait-activation
       title: Trait Activation Overview
-    - path: /engage/trait-activation/trait-activation-setup
-      title: Trait Activation Setup
     - path: /engage/trait-activation/trait-enrichment
       title: Trait Enrichment
     - path: /engage/trait-activation/id-sync

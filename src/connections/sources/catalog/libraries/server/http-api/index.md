@@ -11,12 +11,28 @@ Segment has native [sources](/docs/connections/sources/) for most use cases (lik
 
 ### Authentication
 
-Choose between [basic authentication](#basic-authentication) and [OAuth](#oauth) to authenticate requests. 
+Choose between [writeKey authentication](#writeKey-authentication), [basic authentication](#basic-authentication) and [OAuth](#oauth) to authenticate requests. 
+
+#### writeKey authentication
+Authenticate to the Tracking API by sending your project's **Write Key** along with a request.
+The authentication writeKey should be sent as part of the body of the request. This will be encrypted over https.
+
+```
+  curl --location 'https://api.segment.io/v1/track' \
+  --header 'Content-Type: application/json' \
+  --data-raw '{
+      "event": "happy-path-a3ef8a6f-0482-4694-bc4d-4afba03a0eab",
+      "email": "test@example.org",
+      "userId": "123",
+      "writeKey": "DmBXIN4JnwqBnTqXccTF0wBnLXNQmFtk"
+  }'
+```
+
+> info ""
+> For this auth type, you do not need to set any authentication header. 
 
 #### Basic authentication
-
-Authenticate to the Tracking API by sending your project's **Write Key** along with a request.
-Authentication uses HTTP Basic Auth, which involves a `username:password` that is base64 encoded and prepended with the string `Basic`.
+Basic authentication uses HTTP Basic Auth, which involves a `username:password` that is base64 encoded and prepended with the string `Basic`.
 
 In practice that means taking a Segment source **Write Key**,`'abc123'`, as the username, adding a colon, and then the password field is left empty. After base64 encoding `'abc123:'` becomes `'YWJjMTIzOg=='`; and this is passed in the authorization header like so: `'Authorization: Basic YWJjMTIzOg=='`.
 
@@ -69,7 +85,9 @@ Segment welcomes feedback on API responses and error messages. [Reach out to sup
 
 ## Rate limits
 
-For each workspace, Segment recommends you to not exceed 1,000 requests per second with the HTTP API. If you exceed this, Segment reserves the right to queue any additional events and process those at a rate that doesn't exceed the limit. To request a higher limit, contact [Segment](mailto:friends@segment.com).
+For each workspace, Segment recommends you to not exceed 1,000 requests per second with the HTTP API. If you exceed this, Segment reserves the right to queue any additional events and process those at a rate that doesn't exceed the limit. Requests that exceed acceptable limits may be rejected with HTTP Status Code 429. When Segment rejects the requests, the response header contains `Retry-After` and `X-RateLimit-Reset` headers, which contains the number of seconds after which you can retry the request.
+
+To request a higher limit, contact [Segment](mailto:friends@segment.com).
 
 For [`batch` requests](#batch), there's a limit of 500 KB per request. 
 
@@ -105,7 +123,8 @@ POST https://api.segment.io/v1/identify
   "context": {
     "ip": "24.5.68.47"
   },
-  "timestamp": "2012-12-02T00:30:08.276Z"
+  "timestamp": "2012-12-02T00:30:08.276Z",
+  "writeKey": "YOUR_WRITE_KEY"
 }
 ```
 This call is identifying the user by their unique User ID (the one you know them by in your database) and labeling them with `email`, `name`, and `industry` traits.
@@ -145,7 +164,8 @@ POST https://api.segment.io/v1/track
   "context": {
     "ip": "24.5.68.47"
   },
-  "timestamp": "2012-12-02T00:30:12.984Z"
+  "timestamp": "2012-12-02T00:30:12.984Z",
+  "writeKey": "YOUR_WRITE_KEY"
 }
 ```
 
@@ -178,7 +198,8 @@ POST https://api.segment.io/v1/page
 {
   "userId": "019mr8mf4r",
   "name": "Tracking HTTP API",
-  "timestamp": "2012-12-02T00:31:29.738Z"
+  "timestamp": "2012-12-02T00:31:29.738Z",
+  "writeKey": "YOUR_WRITE_KEY"
 }
 ```
 The `page` call has the following fields:
@@ -210,7 +231,8 @@ POST https://api.segment.io/v1/screen
 {
   "userId": "019mr8mf4r",
   "name": "Tracking HTTP API",
-  "timestamp": "2012-12-02T00:31:29.738Z"
+  "timestamp": "2012-12-02T00:31:29.738Z",
+  "writeKey": "YOUR_WRITE_KEY"
 }
 ```
 
@@ -249,7 +271,8 @@ POST https://api.segment.io/v1/group
     "industry": "Technology",
     "employees": 420
   },
-  "timestamp": "2012-12-02T00:31:38.208Z"
+  "timestamp": "2012-12-02T00:31:38.208Z",
+  "writeKey": "YOUR_WRITE_KEY"
 }
 ```
 The `group` call has the following fields:
@@ -282,7 +305,8 @@ POST https://api.segment.io/v1/alias
 {
   "previousId": "39239-239239-239239-23923",
   "userId": "019mr8mf4r",
-  "timestamp": "2012-12-02T00:31:29.738Z"
+  "timestamp": "2012-12-02T00:31:29.738Z",
+  "writeKey": "YOUR_WRITE_KEY"
 }
 ```
 The `alias` call has the following fields:
@@ -365,6 +389,7 @@ POST https://api.segment.io/v1/batch
       "timestamp": "2015-2-02T00:30:12.984Z"
     }
   ],
+  "writeKey": "YOUR_WRITE_KEY",
   "context": {
     "device": {
       "type": "phone",
@@ -422,7 +447,8 @@ POST https://api.segment.io/v1/identify
     "Mixpanel": true,
     "Kissmetrics": true,
     "Google Analytics": false
-  }
+  },
+  "writeKey": "YOUR_WRITE_KEY"
 }
 ```
 

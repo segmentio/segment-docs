@@ -68,9 +68,9 @@ Here is a sample Identify call (with [analytics.js](/docs/connections/sources/ca
 
 ```js
 analytics.identify({
-  name: 'Kanye West',
-  email: 'kanye@iamawesome.com',
-  login: 'kanyew',
+  name: 'Jane Doe',
+  email: 'janedoe@iamawesome.com',
+  login: 'janedoe',
   type: 'user',
   created: '2016-11-07T16:40:52.238Z',
 });

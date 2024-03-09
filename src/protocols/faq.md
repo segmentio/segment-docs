@@ -49,7 +49,7 @@ Segment currently supports the ability to [create multiple versions of an event]
 
 ### How do I handle null property values?
 
-In the Tracking Plan editor, click on the data type dropdown for a given property and toggle "Allow Null Values". Enabling null values means both the specified data type and `null` will be accepted as values for that property.
+In the Tracking Plan editor, click on the data type dropdown for a given property and toggle "Allow Null Values". Enabling null values means only `null` values will be accepted for that property.
 
 ### Can I group specific events in a Tracking Plan?
 
@@ -85,10 +85,9 @@ Segment's code uses built-in logic to verify if an event exists in the Tracking 
 
 Unplanned property omission is only supported for cloud-mode destinations. Unplanned properties will not be omitted when they're sent to device-mode destinations.
 
-### How do I import events from a Source Schema into a Tracking Plan?
+### Can I import events from my Source Schema into a Tracking Plan?
 
-When you first create your Tracking Plan, you can add events from your Source Schema by selecting the **Import events from Source** button on the Tracking Plan editor page. You can manually add these events after you've connected your Source Schema to your Tracking Plan by clicking the (+) next to the event on your Source Schema page.  
-
+When you initially create your Tracking Plan, you can import events into it from a Source Schema. Manually add these events by clicking the the (+) next to the event in your Source Schema page after connecting your Tracking Plan. .  
 
 ## Protocols Validation
 
@@ -128,6 +127,16 @@ That being said, there are plenty of scenarios where the reactive Schema functio
 ### If I enable blocking, what happens to the blocked events? Are events just blocked from specific Destinations or the entire Segment pipeline?
 
 Blocked events are blocked from sending to all Segment Destinations, including warehouses and streaming Destinations. When an Event is blocked using a Tracking Plan, it does not count towards your MTU limit. They will, however, count toward your MTU limit if you enable [blocked event forwarding](/docs/protocols/enforce/forward-blocked-events/) in your Source settings.
+
+### Why am I seeing unplanned properties/traits in the payload when violations are triggered, despite using schema controls to omit them?
+
+If you're seeing unplanned properties/traits in your payload despite using Schema Controls, you might want to select a new degree of blocking controls. 
+
+Segment's [Schema Controls](docs/connections/sources/schema/destination-data-control/) provide three options to omit properties/traits. Select the one that aligns with your requirements:
+
+1. **Standard Schema Controls/"Unplanned Properties/Traits"**: Segment checks the names of incoming properties/traits against your Tracking Plan.
+2. **Standard Schema Controls/"JSON Schema Violations"**: Segment checks the names and evaluates the values of properties/traits. This is useful if you've specified a pattern or a list of acceptable values in the [JSON schema](/docs/protocols/tracking-plan/create/#edit-underlying-json-schema) for each Track event listed in the Tracking Plan.
+3. **Advanced Blocking Controls/"Common JSON Schema Violations"**: Segment evaluates incoming events thoroughly, including event names, context field names and values, and the names and values of properties/traits, against the [Common JSON schema](/docs/protocols/tracking-plan/create/#common-json-schema) in your Tracking Plan.
 
 ### Do blocked and discarded events count towards my MTU counts?
 
@@ -170,3 +179,7 @@ That depends. If you are working with source-level Transformations, the Protocol
 ### Why do I need Protocols to use transformations?
 
 Transformations are but one tool among many to help you improve data quality. Segment highly recommends that all customers interested in improving data quality start with a well defined Tracking Plan. The Tracking Plan serves as a roadmap for how you want to collect data. Without a clear roadmap, it's nearly impossible to build alignment around how transformations should be used to improve data quality, leading to more data quality issues than it solves.
+
+### Are transformations applied when using the Event Tester?
+
+Transformations are not applied to events sent through the [Event Tester](/docs/connections/test-connections/). The Event Tester operates independently from the Segment pipeline, focusing solely on testing specific connections to a destination. For a transformation to take effect, the event must be processed through the Segment pipeline.

@@ -1,6 +1,21 @@
-As of April 30, 2023, Functions migrated from Node.js 14.x to Node.js 16.x. This change automatically takes effect as you update and deploy an existing function. All new functions use Node.js 16.x. Segment recommends you to check your function post-deployment to ensure everything's working. 
+On March 26, 2024, Segment is upgrading the Functions runtime environment to Node.js v18, which is the current long-term support (LTS) release.
 
-<div class="premonition success"><div class="fa fa-check-square"></div><div class="content"><p class="header">Node.js 18.x: </p><p markdown=1>Starting June 30, 2023, you can [contact Segment](https://segment.com/help/contact/){:target="_blank"} to migrate to Node.js 18.x.</p></div></div>
+This upgrade keeps your runtime current with industry standards. Based on the [AWS Lambda](https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html){:target="_blank"} and [Node.js](https://nodejs.org/en/about/previous-releases){:target="_blank"} support schedule, Node.js v16 is no longer in *Maintenance LTS*. Production applications should only use releases of Node.js that are in *Active LTS* or *Maintenance LTS*.
+
+All new functions will use Node.js v18 starting March 26, 2024.
+
+For existing functions, this change automatically occurs as you update and deploy an existing function. Segment recommends that you check your function post-deployment to ensure everything's working. Your function may face issues due to the change in sytax between different Node.js versions and dependency compatibility.
+
+<div class="premonition warning"><div class="fa fa-check-square"></div><div class="content"><p class="header">Limited time opt-out option </p><p markdown=1>
+If you need more time to prepare, you can opt out of the update before March 19, 2024. <br><br> Note that if you opt out: <br>
+- The existing functions will continue working on Node.js v16. <br>
+- You won't be able to create new functions after July 15, 2024. <br>
+- You won't be able to update existing functions after August 15, 2024. <br>
+- You won't receive future bug fixes, enhancements, and dependency updates to the functions runtime. <br><br>
+[Contact Segment](https://segment.com/help/contact/){:target="_blank"} to opt-out or with any questions. </p></div></div>
+
+
+<div class="premonition success"><div class="fa fa-check-square"></div><div class="content"><p class="header">Node.js 18 </p><p markdown=1>Segment strongly recommends updating to Node.js v18 to benefit from future runtime updates, the latest security, and performance improvements.</p></div></div>
 
 Functions do not currently support importing dependencies, but you can [contact Segment Support](https://segment.com/help/contact/){:target="_blank"} to request that one be added.
 
