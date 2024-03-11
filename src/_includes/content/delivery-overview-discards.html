@@ -1,6 +1,6 @@
 <style type="text/css">
   samp {
-    font-size: .75vw;
+    font-size: .78em;
   }
 </style>
 <input class="table-search" type="text" id="filterInput" onkeyup="searchFilter()"
@@ -32,14 +32,296 @@
       <td>Empty batch result</td>
       <td><samp>empty_batch_result</samp></td>
       <td>No messages found for batch result. After processing messages within batch, no messages returned</td>
-      <td>Reach out to friends@segment.com for assistance </td>
+      <td>Reach out to <a href="mailto:friends@segment.com">Segment support</a> for assistance </td>
     </tr>
     <tr class="settingRow failed-ingest" id="settingRow">
-      <td>Consent Categories field must be booleans for "Segment Consent Preference Updated" event</td>
-      <td><samp>consent_categorypreferences_ fields_should_be_bool</samp></td>
-      <td>No messages found for batch result. After processing messages within batch, no messages returned</td>
-      <td>Reach out to friends@segment.com for assistance </td>
+      <td>Project not found</td>
+      <td><samp>project_not_found</samp></td>
+      <td>No project found for writeKey</td>
+      <td>Provide a valid write key. <br>For more information, see the <a href="https://segment.com/docs/connections/find-writekey/">Locate Your Write Key </a>documentation </td>
     </tr>
+    <tr class="settingRow failed-ingest" id="settingRow">
+      <td>Source disabled</td>
+      <td><samp>source_disabled</samp></td>
+      <td>Source is not enabled</td>
+      <td>Check source basic settings</td>
+    </tr>
+    <tr class="settingRow failed-ingest" id="settingRow">
+      <td>Batch is empty</td>
+      <td><samp>empty_batch</samp></td>
+      <td>Batch request contained no settings</td>
+      <td>Don't send empty batches. <br>For more information, see the <a href="https://segment.com/docs/connections/sources/catalog/libraries/server/http-api/#batch">HTTP API Batch</a> documentation</td>
+    </tr>
+    <tr class="settingRow failed-ingest" id="settingRow">
+      <td>Multi user error</td>
+      <td><samp>multi_user_error</samp></td>
+      <td>One or more messages within a batch had an error. Some messages in the batch were published, while others were not</td>
+      <td>Review individual payloads for each error. <br>For more information, see the <a href="https://segment.com/docs/connections/sources/catalog/libraries/server/http-api/#errors">HTTP API Errors</a> documentation</td>
+    </tr>
+    <tr class="settingRow failed-ingest" id="settingRow">
+      <td>No userID or anonymousID</td>
+      <td><samp>no_user_anon_id</samp></td>
+      <td>UserID or AnonymousID was not provided</td>
+      <td>Check event payload, check client instrumentation. <br> For more information, see the <a href="https://segment.com/docs/getting-started/04-full-install/#anatomy-of-a-segment-message:~:text=Anatomy%20of%20a,for%20maximum%20flexibility">Anatomy of a Segment message</a> documentation</td>
+    </tr>
+    <tr class="settingRow failed-ingest" id="settingRow">
+      <td>Event not defined</td>
+      <td><samp>event_not_defined</samp></td>
+      <td>Track event did not have event name</td>
+      <td>Check event payload, check client instrumentation. <br> For more information, see the <a href="https://segment.com/docs/connections/spec/track/#:~:text=Beyond%20the%20common,for%20more%20details">Spec: Track</a> documentation</td>
+    </tr>
+    <tr class="settingRow failed-ingest" id="settingRow">
+      <td>Track event not a string</td>
+      <td><samp>event_not_string</samp></td>
+      <td>Track event name is not a string</td>
+      <td>Check event payload, check client instrumentation. <br> For more information, see the <a href="https://segment.com/docs/connections/spec/track/#:~:text=Beyond%20the%20common,for%20more%20details">Spec: Track</a> documentation</td>
+    </tr>
+    <tr class="settingRow failed-ingest" id="settingRow">
+      <td>Properties must be an object</td>
+      <td><samp>properties_not_object</samp></td>
+      <td>Properties field was not an object type</td>
+      <td>Check event payload, check client instrumentation. <br> For more information, see the <a href="https://segment.com/docs/connections/spec/track/#:~:text=Beyond%20the%20common,reserved%20property%20names.">Spec: Track</a> documentation</td>
+    </tr>
+    <tr class="settingRow failed-ingest" id="settingRow">
+      <td>Traits must be an object</td>
+      <td><samp>traits_not_object</samp></td>
+      <td>Traits field was not an object type</td>
+      <td>Check event payload, check client instrumentation. <br> For more information, see the <a href="https://segment.com/docs/connections/spec/track/#:~:text=Beyond%20the%20common,reserved%20property%20names.">Spec: Track</a> documentation</td>
+    </tr>
+    <tr class="settingRow failed-ingest" id="settingRow">
+      <td>Name must be non-empty string</td>
+      <td><samp>name_not_string</samp></td>
+      <td>For Page or Screen calls, name field was an empty string or not a string</td>
+      <td>Check event payload, check client instrumentation. <br> For more information, see the <a href="https://segment.com/docs/connections/spec/page/#:~:text=Beyond%20the%20common,through%20your%20funnel.">Spec: Page</a> documentation</td>
+    </tr>
+    <tr class="settingRow failed-ingest" id="settingRow">
+      <td>Category must be non-empty string</td>
+      <td><samp>category_not_string</samp></td>
+      <td>For Page or Screen calls, category field was an empty string or not a string</td>
+      <td>Check event payload, check client instrumentation<br> For more information, see the <a href="https://segment.com/docs/connections/spec/page/#:~:text=Beyond%20the%20common,through%20your%20funnel.">Spec: Page</a> documentation</td>
+    </tr>
+    <tr class="settingRow failed-ingest" id="settingRow">
+      <td>Identifier (anonymousId and/or userId) is required on all payloads</td>
+      <td><samp>id_required</samp></td>
+      <td>All payloads coming into Segment require a userId and/or an anonymousId</td>
+      <td>Ensure all payloads have a userId or anonymousId. <br> For more information, see the <a href="https://segment.com/docs/getting-started/04-full-install/#anatomy-of-a-segment-message:~:text=Anatomy%20of%20a,for%20maximum%20flexibility">Anatomy of a Segment message</a> documentation</td>
+    </tr>
+    <tr class="settingRow failed-ingest" id="settingRow">
+      <td>Consent Categories field must exist on "Segment Consent Preference Updated" event</td>
+      <td><samp>consent_categorypreferences_<br>should_exist</samp></td>
+      <td>User passed a consent change event without a categories object</td>
+      <td>Check event payload, check client instrumentation</td>
+    </tr>
+    <tr class="settingRow failed-ingest" id="settingRow">
+      <td>Consent Categories field must be an object for "Segment Consent Preference Updated" event</td>
+      <td><samp>consent_categorypreferences_<br>fields_should_be_object</samp></td>
+      <td>User passed a consent change event with a categories field in the wrong format</td>
+      <td>Check event payload, check client instrumentation</td>
+    </tr> 
+    <tr class="settingRow failed-ingest" id="settingRow">
+      <td>Consent Categories field must be booleans for "Segment Consent Preference Updated" event</td>
+      <td><samp>consent_categorypreferences_<br>fields_should_be_bool</samp></td>
+      <td>User passed a consent change event with the categories in the wrong format</td>
+      <td>Check event payload, check client instrumentation</td>
+    </tr> 
+    <tr class="settingRow failed-ingest" id="settingRow">
+      <td>Device advertisingId should be a string for "Segment Consent Preference Updated" event</td>
+      <td><samp>device_advertisingid<br>_should_be_string</samp></td>
+      <td>User passed a consent change event with the advertisingId in the wrong format </td>
+      <td>Check event payload, check client instrumentation</td>
+    </tr>
+    <tr class="settingRow failed-ingest" id="settingRow">
+      <td>anonymousId must be set for "Segment Consent Prefernce Updated" event</td>
+      <td><samp>consent_needs_<br>anonymous_id_set</samp></td>
+      <td>User passed a consent change event without an anonymousId set</td>
+      <td>Check event payload, check client instrumentation</td>
+    </tr>
+    <tr class="settingRow failed-ingest" id="settingRow">
+      <td>anonymousId required for "Segment Consent Prefernce Updated" event</td>
+      <td><samp>anonymous_id_invalid</samp></td>
+      <td>User passed a consent change event with an invalid anonymousId</td>
+      <td>Check event payload, check client instrumentation</td>
+    </tr>      
+    <tr class="settingRow failed-ingest" id="settingRow">
+      <td>Failed to decode payload to webhook format</td>
+      <td><samp>bad_request</samp></td>
+      <td>The payload could have an incorrect content type, body, etc.</td>
+      <td>Fix the payload and include any missing details. The payload could have an incorrect type, body, etc. <br> For more information, see the <a href="https://segment.com/docs/connections/functions/source-functions/#error-types">Source Functions</a> documentation </td>
+    </tr>
+    <tr class="settingRow failed-ingest" id="settingRow">
+      <td>Failed to read write key from url</td>
+      <td><samp>unknown_source</samp></td>
+      <td>Failed to find source with [write_key]</td>
+      <td>Verify and use the appropriate function webhook URL. <br> For more information, see the <a href="https://segment.com/docs/connections/functions/source-functions/#:~:text=Once%20configured%2C%20find%20the%20webhook%20URL%20%2D%20either%20on%20the%20Overview%20or%20Settings%20%E2%86%92%20Endpoint%20page.">Source Functions</a> documentation</td>
+    </tr>
+    <tr class="settingRow failed-ingest" id="settingRow">
+      <td>Failed to find source from write key</td>
+      <td><samp>unknown_source</samp></td>
+      <td>Failed to find source with [write_key]</td>
+      <td>Verify and use the appropriate function webhook URL. <br> For more information, see the <a href="https://segment.com/docs/connections/functions/source-functions/#:~:text=Once%20configured%2C%20find%20the%20webhook%20URL%20%2D%20either%20on%20the%20Overview%20or%20Settings%20%E2%86%92%20Endpoint%20page.">Source Functions</a> documentation</td>
+    </tr>
+    <tr class="settingRow failed-ingest" id="settingRow">
+      <td>The source has missing write key</td>
+      <td><samp>unknown_source</samp></td>
+      <td>Failed to find source with [write_key]</td>
+      <td>Verify and use the appropriate function webhook URL. <br> For more information, see the <a href="https://segment.com/docs/connections/functions/source-functions/#:~:text=Once%20configured%2C%20find%20the%20webhook%20URL%20%2D%20either%20on%20the%20Overview%20or%20Settings%20%E2%86%92%20Endpoint%20page.">Source Functions</a> documentation</td>
+    </tr>
+    <tr class="settingRow failed-ingest" id="settingRow">
+      <td>Failed to decode internal settings of the source</td>
+      <td><samp>invalid_settings</samp></td>
+      <td>Function internal settings are invalid</td>
+      <td>Fix the function settings or reach out to <a href="mailto:friends@segment.com">Segment support</a> for more details</td>
+    </tr>
+    <tr class="settingRow failed-ingest" id="settingRow">
+      <td>Failed to decrypt internal settings of the source</td>
+      <td><samp>invalid_settings</samp></td>
+      <td>Function internal settings are invalid</td>
+      <td>Fix the function settings or reach out to <a href="mailto:friends@segment.com">Segment support</a> for more details</td>
+    </tr>
+    <tr class="settingRow failed-ingest" id="settingRow">
+      <td>Failed to parse content-type</td>
+      <td><samp> BAD_REQUEST</samp></td>
+      <td>The payload could have an incorrect content type</td>
+      <td>Fix the payload and include any missing details. The Content-Type Header you provided is incorrect. <br>Please ensure you're using 'application/json' or 'application/x-www-form-urlencoded' as your Content-Type Header value. <br> For more information, see the <a href="https://segment.com/docs/connections/functions/source-functions/#:~:text=Bad%20Request%3A%20is%20any%20error%20thrown%20by%20your%20code%20not%20covered%20by%20the%20other%20errors.">Source Functions</a> documentation </td>
+    </tr>
+    <tr class="settingRow failed-ingest" id="settingRow">
+      <td>Failed to parse request body</td>
+      <td><samp> BAD_REQUEST</samp></td>
+      <td>The payload could have an incorrect body</td>
+      <td>Fix the payload body to ensure it's proper JSON.<br> For more information, see the <a href="https://segment.com/docs/connections/functions/source-functions/#:~:text=Bad%20Request%3A%20is%20any%20error%20thrown%20by%20your%20code%20not%20covered%20by%20the%20other%20errors.">Source Functions</a> documentation </td>
+    </tr>
+    <tr class="settingRow failed-ingest" id="settingRow">
+      <td>Unsupported content-type</td>
+      <td><samp> BAD_REQUEST</samp></td>
+      <td>Unsupported content type. Acceptable content types are 'application/json' or 'application/x-www-form-urlencoded' as your Content-Type Header value.</td>
+      <td>Fix the payload and include any missing details. The Content-Type Header you provided is incorrect. <br>Please ensure you're using 'application/json' or 'application/x-www-form-urlencoded' as your Content-Type Header value. <br> For more information, see the <a href="https://segment.com/docs/connections/functions/source-functions/#:~:text=Bad%20Request%3A%20is%20any%20error%20thrown%20by%20your%20code%20not%20covered%20by%20the%20other%20errors.">Source Functions</a> documentation </td>
+    </tr>
+    <tr class="settingRow failed-ingest" id="settingRow">
+      <td>Source/project is disabled</td>
+      <td><samp>source_disabled</samp></td>
+      <td>The source/project instance is disabled</td>
+      <td>Enable the source/project instance. <br> For more information, see the <a href="https://segment.com/docs/connections/functions/source-functions/#:~:text=You%20also%20need%20additional%20Source%20Admin%20permissions%20to%20enable%20source%20functions%2C%20connect%20destination%20functions%20to%20a%20source%2C%20or%20to%20deploy%20changes%20to%20existing%20functions.">Source Functions</a> documentation</td>
+    </tr>
+    <tr class="settingRow failed-ingest" id="settingRow">
+      <td>Source/project is disabled</td>
+      <td><samp>SOURCE_DISABLED</samp></td>
+      <td>The source/project instance is disabled</td>
+      <td>Enable the source/project instance. <br> For more information, see the <a href="https://segment.com/docs/connections/functions/source-functions/#:~:text=You%20also%20need%20additional%20Source%20Admin%20permissions%20to%20enable%20source%20functions%2C%20connect%20destination%20functions%20to%20a%20source%2C%20or%20to%20deploy%20changes%20to%20existing%20functions.">Source Functions</a> documentation</td>
+    </tr>
+    <tr class="settingRow failed-ingest" id="settingRow">
+      <td>Workspace is locked out</td>
+      <td><samp>locked_workspace</samp></td>
+      <td>The workspace is disabled/locked</td>
+      <td>Reach out to <a href="mailto:friends@segment.com">Segment support</a> for more details </td>
+    </tr>
+    <tr class="settingRow failed-ingest" id="settingRow">
+      <td>Function is not deployed</td>
+      <td><samp>internal</samp></td>
+      <td>The function is not deployed properly</td>
+      <td>Re-deploy the function or reach out to <a href="mailto:friends@segment.com">Segment support</a> if issue persists</td>
+    </tr>
+    <tr class="settingRow failed-ingest" id="settingRow">
+      <td>Unexpected DeployType. Supported is aws::lambda</td>
+      <td><samp>internal</samp></td>
+      <td>The function is not deployed properly</td>
+      <td>Re-deploy the function or reach out to <a href="mailto:friends@segment.com">Segment support</a> if issue persists</td>
+    </tr>
+    <tr class="settingRow failed-ingest" id="settingRow">
+      <td>Invalid deploy ID, missing lambda ARN</td>
+      <td><samp>internal</samp></td>
+      <td>The function is not deployed properly</td>
+      <td>Re-deploy the function or reach out to <a href="mailto:friends@segment.com">Segment support</a> if issue persists</td>
+    </tr>
+    <tr class="settingRow failed-ingest" id="settingRow">
+      <td>Failed to call tracking API</td>
+      <td><samp>TRACKING_API_FAILED</samp></td>
+      <td>Failed to call tracking API</td>
+      <td>Check the payload or reach out to <a href="mailto:friends@segment.com">Segment support</a> if issue persists</td>
+    </tr>
+    <tr class="settingRow failed-ingest" id="settingRow">
+      <td>Failed to call set API - Client Closed</td>
+      <td><samp>SET_API_FAILED</samp></td>
+      <td>Failed to call set API</td>
+      <td>Check the payload or reach out to <a href="mailto:friends@segment.com">Segment support</a> for more details</td>
+    </tr>
+    <tr class="settingRow failed-ingest" id="settingRow">
+      <td>Failed to call set API - Others</td>
+      <td><samp>SET_API_FAILED</samp></td>
+      <td>Failed to call set API</td>
+      <td>Check the payload or reach out to <a href="mailto:friends@segment.com">Segment support</a> for more details</td>
+    </tr>
+    <tr class="settingRow failed-ingest" id="settingRow">
+      <td>Failed to encode into lambda input format (envelope)</td>
+      <td><samp>lambda_err</samp></td>
+      <td>Internal encoding error</td>
+      <td>Reach out to <a href="mailto:friends@segment.com">Segment support</a> for more details</td>
+    </tr>
+    <tr class="settingRow failed-ingest" id="settingRow">
+      <td>Failed to create lambda client</td>
+      <td><samp>lambda_err</samp></td>
+      <td>Unexpected lambda error</td>
+      <td>Reach out to <a href="mailto:friends@segment.com">Segment support</a> for more details</td>
+    </tr>
+    <tr class="settingRow failed-ingest" id="settingRow">
+      <td>Lambda API permanent error</td>
+      <td><samp>lambda_err</samp></td>
+      <td>Unexpected lambda error</td>
+      <td>Reach out to <a href="mailto:friends@segment.com">Segment support</a> for more details</td>
+    </tr>
+    <tr class="settingRow failed-ingest" id="settingRow">
+      <td>Lambda API temporary error</td>
+      <td><samp>lambda_err</samp></td>
+      <td>Unexpected lambda error</td>
+      <td>Reach out to <a href="mailto:friends@segment.com">Segment support</a> for more details</td>
+    </tr>
+    <tr class="settingRow failed-ingest" id="settingRow">
+      <td>Lambda API temp error - Too Many Requests</td>
+      <td><samp>too_many_requests</samp></td>
+      <td>Incoming event traffic rate exceeds the expected rate</td>
+      <td>Reach out to <a href="mailto:friends@segment.com">Segment support</a> for more details. <br> For additional information, see the <a href="https://segment.com/docs/connections/rate-limits/">Rate Limits</a> documentation</td>
+    </tr>
+    <tr class="settingRow failed-ingest" id="settingRow">
+      <td>Function timeout</td>
+      <td><samp>FUNCTION_TIMEOUT</samp></td>
+      <td>Function timed out</td>
+      <td>Optimize the function code. <br> For more information, see the <a href="https://segment.com/docs/connections/functions/usage/">Functions Usage</a> documentation</td>
+    </tr>
+    <tr class="settingRow failed-ingest" id="settingRow">
+      <td>Function RetryError</td>
+      <td><samp>RETRY_ERROR</samp></td>
+      <td>Retry error from function code. Retry attempt will be done</td>
+      <td>Function will be retried. Segment's systems have a retry mechanism where an event will be retried 6 times over a four-hour period with exponential backoff. <br> For more information, see the <a href="https://segment.com/docs/connections/functions/source-functions/#:~:text=Retry%3A%20Your%20code,Retry%20error%20occurs.">Source Functions</a> documentation</td>
+    </tr>
+    <tr class="settingRow failed-ingest" id="settingRow">
+      <td>Function Error</td>
+      <td><samp>INVOKE_ERROR</samp></td>
+      <td>Failed to execute function</td>
+      <td>Check the function code for syntax and config issues or reach out to <a href="mailto:friends@segment.com">Segment support</a> if issue persists.</td>
+    </tr>
+    <tr class="settingRow failed-ingest" id="settingRow">
+      <td>Failed to decode function output</td>
+      <td><samp>internal</samp></td>
+      <td>Internal error</td>
+      <td>Reach out to <a href="mailto:friends@segment.com">Segment support</a> for more details </td>
+    </tr>
+    <tr class="settingRow failed-ingest" id="settingRow">
+      <td>Failed is not deployed</td>
+      <td><samp>BAD_DEPLOY</samp></td>
+      <td>The function is not deployed properly</td>
+      <td>Reach out to <a href="mailto:friends@segment.com">Segment support</a> for more details. <br>For additional information, see the <a href="https://segment.com/docs/connections/functions/source-functions/#:~:text=Save%20and%20deploy,update%20existing%20functions.">Source Functions</a> documentation.</td>
+    </tr>
+    <tr class="settingRow failed-ingest" id="settingRow">
+      <td>Unexpected DeployType. Supported is aws::lambda</td>
+      <td><samp>BAD_DEPLOY</samp></td>
+      <td>The function is not deployed properly</td>
+      <td>Reach out to <a href="mailto:friends@segment.com">Segment support</a> for more details. <br>For additional information, see the <a href="https://segment.com/docs/connections/functions/source-functions/#:~:text=Save%20and%20deploy,update%20existing%20functions.">Source Functions</a> documentation.</td>
+    </tr>
+    <tr class="settingRow failed-ingest" id="settingRow">
+      <td>Invalid deploy ID, missing lambda ARN</td>
+      <td><samp>BAD_DEPLOY</samp></td>
+      <td>The function is not deployed properly</td>
+      <td>Reach out to <a href="mailto:friends@segment.com">Segment support</a> for more details. <br>For additional information, see the <a href="https://segment.com/docs/connections/functions/source-functions/#:~:text=Save%20and%20deploy,update%20existing%20functions.">Source Functions</a> documentation.</td>
+    </tr>             
     <tr class="settingRow filtered-source">
       <td colspan="4" style="font-weight: bold; background-color:fafbff;font-size: 10px; text-transform: uppercase;"
         id="settingRow">
@@ -49,7 +331,31 @@
       <td>Common schema violation</td>
       <td><samp>common_schema_violation</samp></td>
       <td>Event violated common JSON schema of Tracking Plan</td>
-      <td> Check event payload against the connected Tracking Plan Common JSON Schema </td>
+      <td> Check event payload against the connected Tracking Plan Common JSON Schema. For more information, see the <a href="/docs/protocols/tracking-plan/create/#common-json-schema">Common JSON schema</a> documentation</td>
+    </tr>
+    <tr class="settingRow filtered-source" id="settingRow">
+      <td>Event setting</td>
+      <td><samp>event_setting</samp></td>
+      <td>Source configured to discard events of this type</td>
+      <td> Check source schema filters:<br>Source > Schema</td>
+    </tr>
+    <tr class="settingRow filtered-source" id="settingRow">
+      <td>Schema violation</td>
+      <td><samp>schema_violation</samp></td>
+      <td>Source schema settings configured to block events that violate the connected Tracking Plan JSON schema. </td>
+      <td>Check event payload against the connected Tracking Plan Common JSON Schema. For more information, see the <a href="/docs/protocols/enforce/schema-configuration/">Customize your schema controls</a> documentation</td>
+    </tr>
+    <tr class="settingRow filtered-source" id="settingRow">
+      <td>Unplanned</td>
+      <td><samp>unplanned</samp></td>
+      <td>Event blocked due to unplanned event blocking; Source schema settings configured to block events not defined in connected Tracking Plan</td>
+      <td>Check source Configurations:<br>Settings > Schema Configurations > to allow unplanned events.<br>OR:<br>Add the new event in the connected Tracking Plan to ensure it's recognized as a planned event.</td>
+    </tr>
+    <tr class="settingRow filtered-source" id="settingRow">
+      <td>Unplanned and schema violation</td>
+      <td><samp>unplanned_and_schema_violation</samp></td>
+      <td>Source schema settings configured to block events not defined in connected Tracking Plan and event violated the connected Tracking Plan JSON schema</td>
+      <td>Check source Configurations:<br>Settings > Schema Configurations > to allow unplanned events.<br>OR:<br>Add the new event in the connected Tracking Plan to ensure it's recognized as a planned event.</td>
     </tr>
     <tr class="settingRow filtered-destination">
       <td colspan="4" style="font-weight: bold; background-color:fafbff;font-size: 10px; text-transform: uppercase;"
