@@ -145,7 +145,7 @@ To check the status of your extractions:
 5. If your sync failed, click the failed reason to get more details on the error and view sample payloads to help troubleshoot the issue.
 
 #### Reset syncs
-If you make edits to your model and/or mapping, you can reset your syncs so that your data is synced from the beginning.  
+You can reset your syncs so that your data is synced from the beginning. This means that Segment resyncs your entire dataset for the model.
 
 To reset a sync:
 1. Select the three dots next to **Sync now**.
