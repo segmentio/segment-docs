@@ -91,7 +91,7 @@ During the Delivery Overview beta, you can use the Event Delivery alerting featu
 
 Once you enable alerts, if the successful delivery rate of all events is less than the threshold percentage in the last 24 hours, you'll be notified through in-app notification and/or workspace email. 
 
-Please note that this is dependent on your [notication settings](/docs/segment-app/#segment-settings). For example, if the threshold is set to 99%, then you'll be notified each time less than 100% of events fail. 
+Please note that this is dependent on your [notification settings](/docs/segment-app/#segment-settings). For example, if the threshold is set to 99%, then you'll be notified each time less than 100% of events fail. 
 
 
 ## Why is the Delivery Overview page only available for cloud-mode destinations? 
@@ -104,3 +104,4 @@ The Delivery Overview pipeline steps Failed on Ingest, Filtered at Source, Filte
 This table provides a list of all possible discard reasons available at each pipeline step. 
 
 {% include content/delivery-overview-discards.html %}
+{% include content/retl-discards.md %}
