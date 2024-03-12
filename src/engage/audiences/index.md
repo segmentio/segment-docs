@@ -85,7 +85,6 @@ If you have a B2B business, you might want to build an Audience of accounts. You
 See [Account-level Audiences](/docs/engage/audiences/account-audiences) for more information.
 
 
-
 ## Send Audiences to Destinations
 With the help of Sources and Destinations in Segment's catalog, you can create and send Audiences and computed traits to third-party services.
 
@@ -94,23 +93,49 @@ Segment's Connections pipeline first collects and sends events from your Source 
 > info ""
 > Because Engage only sends Audiences and computed traits to Destinations, it doesn't replace a standard event pipeline. Connect a Source directly to a Destination if you want the Destination to receive all events that Segment gathers.
 
-### Connect your Audience to a Destination
+### Connect your audience to a destination
 
 > warning "Audience Keys"
 > Avoid using the same Audience key twice, even if you've deleted the original Audience.
 
-Once you've previewed your Audience, you can choose to connect it to a Destination or keep the Audience in Segment and export it as a CSV file download.
+Once you've previewed your Audience, you can choose to connect it to a destination or keep the Audience in Segment and export it as a CSV file download.
 
-If you already have Destinations set up in Segment, you can import the configuration from one of your existing sources to Engage. You can only connect one Destination configuration per Destination type.
+If you already have destinations set up in Segment, you can import the configuration from one of your existing sources to Engage. You can only connect one destination configuration per destination type.
 
-When you create an Audience, Segment starts syncing your Audience to the Destinations you selected. Audiences are either sent to Destinations as a boolean user-property or a user-list, depending on what the Destination supports. Read more about [supported Destinations](/docs/engage/using-engage-data/#compatible-engage-destinations) in the Engage documentation.
+When you create an audience, Segment starts syncing your audience to the destinations you selected. Audiences either send to destinations as a boolean user-property or a user-list, depending on what the destination supports. Read more about [supported destinations](/docs/engage/using-engage-data/#compatible-engage-destinations) in the Engage documentation.
 
-For account-level audiences, you can send either a [Group](/docs/connections/spec/group) call and/or [Identify](/docs/connections/spec/identify) call. Group calls will send one event per account, whereas Identify calls will send an Identify call for each user in the account. This means that even if a user hasn't performed an event, Segment will still set the account-level computed trait on that user.
+For account-level audiences, you can send either a [Group](/docs/connections/spec/group) call and/or a [Identify](/docs/connections/spec/identify) call. Group calls send one event per account, whereas Identify calls send an Identify call for each user in the account. This means that even if a user hasn't performed an event, Segment still sets the account-level computed trait on that user.
 
 Because most marketing tools are still based at the user level, it is often important to map this account-level trait onto each user within an account. See [Account-level Audiences](/docs/engage/audiences/account-audiences) for more information.
 
 > info ""
-> When you connect a new Destination to an existing Audience, Engage will backfill historical data for that Audience to the new Destination.
+> When you connect a new destination to an existing Audience, Engage backfills historical data for that Audience to the new destination.
+
+In order to connect your audience to a destination, follow these steps:
+1. [Add destination to your Engage space](#step-1-add-a-destination-to-your-engage-space)
+2. [Create an audience and add a destination](#step-2-create-an-audience-and-add-a-destination)
+
+#### Step 1: Add a destination to your Engage space
+In order to connect your audience to a destination, you must first connect your destination to your Engage space. To add a destination to your Engage space:
+1. Navigate to **Engage > Engage settings** and select the **Destinations** tab. 
+2. Click **+ Add destination**. 
+3. Search for the destination in the catalog you want to connect to and select it. 
+4. Click **Add destination**.
+5. Select the source you want to connect to and click **Confirm Source**.
+6. Add the configuration details for the destination. 
+7. Select the toggle to enable the destination. 
+
+#### Step 2: Create an audience and add a destination
+After you've added a destination to your Engage space, you can create an audience and add a destination to it. To create an audience and add a destination:
+1. Navigate to **Engage > Audiences**.
+2. Click **+ New audience** and choose **Audience**.
+3. Select the **Audience Type** and click **Next**. 
+4. Configure and preview your audience. 
+5. Click the toggle to enable your audience.
+6. Connect destinations to your audience by clicking **+ Add Destination**. 
+7. Select the destination you want to add. 
+8. Toggle on the traits you want to send in the **Connection settings** section. 
+9. Click **Add destination**.
 
 ## Understanding compute times
 
