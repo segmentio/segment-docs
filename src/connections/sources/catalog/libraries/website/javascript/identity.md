@@ -225,3 +225,6 @@ You can pass a value for `options.context.ip` to prevent the Segment systems fro
 ```
 
 You must add this override to _every_ Track call to explicitly override IP collection. If you reset this trait in the context object, Segment defaults to the normal IP collection behavior.
+
+> info "IPv6"
+> Segment doesn't support collecting IPv6 addresses.
