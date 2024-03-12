@@ -90,9 +90,6 @@ To add your first destination:
 ### Step 4: Create mappings
 After you’ve added a destination, you can create mappings from your warehouse to the destination. Mappings enable you to map the data you extract from your warehouse to the fields in your destination.
 
-> info ""
-> When you add new mappings to an existing model, Segment only syncs changes that have transpired since the last sync, not the entire dataset. For a comprehensive data synchronization, Segment recommends that you first recreate the model, then establish a one-to-one mapping with the new model. This ensures that all data syncs effectively.
-
 To create a mapping:
 1. Navigate to **Conections > Destinations** and select the **Reverse ETL** tab.
 2. Select the destination that you want to create a mapping for.  
@@ -152,7 +149,12 @@ You can opt in to receive email alerts regarding notifications for Reverse ETL.
 To subscribe to email alerts: 
 1. Navigate to **Settings > User Preferences**. 
 2. Select **Reverse ETL** in the **Activity Notifications** section.
-3. Click the toggle for **Reverse ETL Sync Failed** to receive notifications when your Reverse ETL sync fails. 
+3. Click the toggle on for the notifications you want to receive. You can choose from:
+
+    Notification | Details
+    ------ | -------
+    Reverse ETL Sync Failed | Set toggle on to receive notification when your Reverse ETL sync fails. 
+    Reverse ETL Sync Partial Success | Set toggle on to receive notification when your Reverse ETL sync is partially successful. 
 
 ### Edit your model
 
