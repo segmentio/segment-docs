@@ -2,7 +2,7 @@
 title: Add or Update Profiles and Traits with a CSV
 plan: unify
 ---
-You can use the Profiles CSV Uploader to add or update user profiles and traits. This page contains guidelines for your CSV upload and explains how to upload a CSV file.
+You can use the Profiles CSV Uploader to add or update user profiles and traits. This page contains guidelines for your CSV upload and explains how to upload a CSV file to Unify.
 
 ## CSV file upload guidelines
 
