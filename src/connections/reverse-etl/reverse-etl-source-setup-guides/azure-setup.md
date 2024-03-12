@@ -12,42 +12,47 @@ At a high level, when you set up Azure dedicated SQL pools for Reverse ETL, the 
 ## Required permissions
 Make sure the user you use to connect to Segment has permissions to use that warehouse. You can follow the process below to set up a new user with sufficient permissions for Segment’s use.
 
-> info ""
-> Execute all commands in the database where your data resides, except the first `CREATE LOGIN` command, which you need to execute in the master database.
-
-* To create a login and user for Segment, run:
+* To create a login in your master database, run:
     
     ```
-    CREATE LOGIN SegmentReverseETLLogin WITH PASSWORD = 'Str0ng_password'; -- password of your choice
-    CREATE USER SegmentReverseETLUser FOR LOGIN SegmentReverseETLLogin;
+    CREATE LOGIN <login name of your choice> WITH PASSWORD = 'Str0ng_password'; -- password of your choice
+    ```
+ 
+> info ""
+> Execute the commands below in the database where your data resides. 
+
+* To create a user for Segment, run: 
+
+    ```
+    CREATE USER <user name of your choice> FOR LOGIN <login name of your choice>;
     ```
 
 * To grant access to the user to read data from all schemas in the database, run: 
 
     ```
-    EXEC sp_addrolemember 'db_datareader', 'SegmentReverseETLUser';
+    EXEC sp_addrolemember 'db_datareader', '<user name of your choice>';
     ```
 
 * To grant Segment access to read from certain schemas, run: 
 
     ```
-    CREATE ROLE SegmentReadRole;
-    GRANT SELECT ON SCHEMA::[schema_name] TO SegmentReadRole;
-    EXEC sp_addrolemember 'SegmentReadRole', 'SegmentReverseETLUser';
+    CREATE ROLE <role name of your choice>;
+    GRANT SELECT ON SCHEMA::[schema_name] TO <role name of your choice>;
+    EXEC sp_addrolemember '<role name of your choice>', '<user name of your choice>';
     ```
 
 * To grant Segment access to create a schema to keep track of the running syncs, run:
 
     ```
-    GRANT CREATE SCHEMA TO SegmentReverseETLUser;
+    GRANT CREATE SCHEMA TO <user name of your choice>;
     ```
 
 * If you want to create the schema yourself and then give Segment access to it, run:
 
     ```
     CREATE SCHEMA  __segment_reverse_etl;
-    GRANT CONTROL ON SCHEMA::__segment_reverse_etl TO SegmentReverseETLUser;
-    GRANT CREATE TABLE ON DATABASE::[database_name] TO SegmentReverseETLUser;
+    GRANT CONTROL ON SCHEMA::__segment_reverse_etl TO <user name of your choice>;
+    GRANT CREATE TABLE ON DATABASE::[database_name] TO <user name of your choice>;
     ```
 
 ## Set up guide
