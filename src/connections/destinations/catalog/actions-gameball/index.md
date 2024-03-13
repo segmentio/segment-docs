@@ -9,7 +9,7 @@ beta: true
 
 [Gameball](https://www.gameball.co){:target="_blank”} is an all-in-one customer loyalty marketing platform that empowers brands to create personalized retention campaigns, helping them grow and monetize their customer base using cutting-edge gamification strategies. Using Gameball, you can increase customer lifetime value and secure unmatched conversion rates - capturing untapped opportunities.
 
-This destination is maintained by Gameball. For any issues with the destination, [contact the Gameball Support team.](mailto:support@gameball.co)
+This destination is maintained by Gameball. For any issues with the destination, [contact the Gameball Support team.](mailto:support@gameball.co).
 
 ## Benefits of Gameball (Actions) vs Gameball Classic
 Gameball (Actions) provides the following benefits over the classic Gameball destination:
