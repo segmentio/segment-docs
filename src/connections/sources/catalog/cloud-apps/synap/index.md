@@ -14,7 +14,7 @@ This source is maintained by Synap. For any issues with the source, contact Syna
 
 2. Search for and choose Synap.
 
-3. Copy the Write key from the Segment UI
+3. Copy the Write key from the Segment UI.
 
 4. Login to your Synap portal as an admin, and go to `/portal-dashboard/settings/integrations`. To navigate to this page via the UI, first click on the 'gears' icon near the bottom left hand side of the screen, then look for the Integrations menu item
 
