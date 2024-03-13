@@ -10,7 +10,7 @@ This source is maintained by Synap. For any issues with the source, contact Syna
 
 ## Getting started
 
-1. From your workspace's `/sources` page, click `Add source`.
+1. From your workspace's Sources page, click **Add source**.
 
 2. Search for and choose Synap.
 
