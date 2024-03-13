@@ -72,13 +72,13 @@ Synap sends an identify() message to Segment which consists of the userId and th
 
 Page calls will show the page path and unique URL
 
-| Property | Example                                         | Description                              |
-| -------- | ----------------------------------------------- | ---------------------------------------- |
-| name     | Springfield Portal                              | The name of the page                     |
-| path     | /quiz/a/abc123                                  | The relative path to the page            |
-| search   | ?mode=test                                      | Any query string parameters from the URL |
-| title    | Springfield Summer Exam                         | The title of the page                    |
-| url      | https://portal.synap.ac/quiz/a/abc123?mode=test | The full URL of the page                 |
+| Property | Example                                      | Description                              |
+| -------- | -------------------------------------------- | ---------------------------------------- |
+| name     | Springfield Portal                           | The name of the page                     |
+| path     | /quiz/a/abc123                               | The relative path to the page            |
+| search   | ?mode=test                                   | Any query string parameters from the URL |
+| title    | Springfield Summer Exam                      | The title of the page                    |
+| url      | your-portal.synap.ac/quiz/a/abc123?mode=test | The full URL of the page                 |
 
 ## Adding Destinations
 
