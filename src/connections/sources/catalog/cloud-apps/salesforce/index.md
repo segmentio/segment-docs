@@ -8,6 +8,9 @@ id: 2baks93n
 
 Take your company's analysis to the next level by **adding Salesforce as a Source to Segment.** Segment automatically collects objects like `Accounts`, `Campaigns`, and `Tasks` and loads them into your data warehouse. 
 
+> info "Salesforce version upgrade to 58.0"
+> Segment's Salesforce source is currently running on version 39.0. On March 25, 2024, the Salesforce source will upgrade to use Salesforce's API version 58.0. See the [version upgrade changes](#version-upgrade-changes) to learn more.
+
 ## Getting started
 > info ""
 > You can add multiple instances of this source if you have more than one Salesforce account. 
@@ -124,6 +127,23 @@ However, for custom properties/columns, Segment only populates the custom proper
 For Salesforce, Segment uses the `SystemModstamp`(system_modstamp) field to checkpoint collections that sync incrementally. When enabled, Segment syncs collections incrementally. When disabled, Segment syncs collections fully. If you'd like to force a collection to sync fully on the next run to bring in historical data, you can disable the `SystemModstamp` field on the collection, allow the next sync to complete and then re-enable `SystemModstamp` so the collection syncs incrementally in the coming syncs. 
 
 If you've added and selected custom fields to an existing collection and would not like to use `SystemModstamp` to bring in historical data, [contact Segment Support](https://segment.com/help/contact/){:target="_blank"} to configure them to sync. You do not need to include the field names.
+
+## Version upgrade changes
+On March 25, 2024, Segment will upgrade the Salesforce source integration from version 39.0 to Salesforce's API version 58.0. With the upgrade, there are [deleted fields](#deleted-fields) and [added fields](#added-fields). 
+
+> info ""
+> All new Salesforce sources created on or after March 25, 2024 will use version 58.0. 
+
+### Deleted fields
+
+Change | Fields
+---- | ------------
+Collections deprecated | `AssistantRecommendationShare`, `AssistantRecommendation` 
+Columns deprecated from the collections (Column name, Collection) | (`ForeignKeyAssetId, CustomBrandAsset`), (`UserPermissionsMobileUser, User`), (`OptionsRequireHttps, Site`), (`UniqueKey, LoginEvent`), (`OptionsExternalHttps, Domain`) 
+
+
+### Added fields
+Salesforce version 58 has between 350 to 550 newly added collections and between 800 to 1000 new columns. To see which collections and fields you can access in Salesforce version 58, refer to the [Salesforce documentation](https://help.salesforce.com/s/articleView?id=release-notes.rn_api_nc.htm&release=244&type=5){:target="_blank"}.
 
 
 ## Troubleshooting

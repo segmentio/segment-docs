@@ -360,6 +360,8 @@ sections:
     title: Profile Debugger
   - path: /unify/insights
     title: Profiles Insights
+  - path: /unify/csv-upload
+    title: CSV Upload
   - path: /unify/unify-gdpr
     title: Unify and GDPR
   - path: /unify/faqs
