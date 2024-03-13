@@ -101,16 +101,10 @@ Enter your domain and click "Add Domain." When you click verify, you're given tw
 ## Configuring SSO to access multiple workspaces
 To configure SSO for multiple workspaces, your admin must configure access to each workspace as a separate app in your identity provider. You are unable to use verified domain(s) across multiple workspaces and will encounter the following error if you add a domain that is already verified in another workspace:
 
-
 > warning ""
 > **Warning**: This domain has already been claimed.
 
 Once your admin has configured separate apps for each workspace in your IdP, the end-users can log in to the IdP and click on the relevant app for the workspace you are trying to access. This is also referred to as IdP-initiated SSO. 
-
-> info "Swithcing between Segment workspaces"
-> Becasue a user, who logged in via SSO, is only signed in for one Segment workspace, the user needs to sign in again to access another workspace.
-
-In this case, when the end-users visit [Segment login page](https://app.segment.com/login){:target="_blank"} to sign in via SSO, the users will only be redirected to one workspace which is also linked with the verified domain(s) because the login page only supports [Segment-initiated SSO](/docs/segment-app/iam/sso/#enabling-segment-initiated-login).
 
 ## Okta setup
 
@@ -179,7 +173,10 @@ Segment allows users to own their own workspaces. While your IdP authentication 
 Workspace owners can invite additional owners with any domain using the traditional invite mechanism. If the workspace is configured to require SSO, and the user is not on your IdP, you can add an Exemption under **Workspace Settings > Authentication > Advanced Settings**.
 {% endfaqitem %}
 
-{% faqitem How do I configure SSO to access multiple workspaces? %}
-To use SSO for multiple workspaces, your admin must configure access to each workspace as a separate app in your identity provider.
+{% faqitem What happens after I configured SSO to access multiple workspaces? %}
+After SSO is configued to access multiple workspaces, you will have slightly different signin experience in the below scenarios
+1. When you are switching between workspaces, and you have already logged in via SSO, you will need to sign in again before accessing other workspaces.
+2. When you visit [Segment login page](https://app.segment.com/login){:target="_blank"} to sign in via SSO, you will only be redirected to one workspace which is also linked with the verified domain(s). It is because you are actually using the [Segment-initiated SSO](/docs/segment-app/iam/sso/#enabling-segment-initiated-login) in this scenario.
+
 {% endfaqitem %}
 {% endfaq %}
