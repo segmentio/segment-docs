@@ -24,7 +24,7 @@ This source is maintained by Synap. For any issues with the source, contact Syna
 
 Synap uses our stream Source component to send Segment event data. It uses a server-side Identify, Track, Page and Group methods to send data to Segment. These events are then available in any destination that accepts server-side events, and available in a schema in your data warehouse that you can query using SQL.
 
-Synap identifies users based on their Synap User ID, which will be sent as the userId in Segment events.
+Synap identifies users based on their Synap User ID, which is sent as the userId in Segment events.
 
 ## Events
 The table below lists events that Synap sends to Segment. These events appear as tables in your warehouse, and as regular events in other destinations. Synap includes the userId, if available.
