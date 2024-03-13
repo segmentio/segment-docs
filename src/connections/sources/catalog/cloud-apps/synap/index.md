@@ -45,6 +45,6 @@ The table below lists events that Synap sends to Segment. These events appear as
 
 Now that your source is set up, you can connect it to destinations.
 
-Log into your downstream tools and check to see that your events appear as expected, and that they contain all of the properties you expect. If your events and properties don’t appear, check the Event Delivery tool, and refer to the Destination docs for each tool for troubleshooting.
+Log into your downstream tools and check to see that your events appear as expected, and that they contain all of the properties you expect. If your events and properties don’t appear, check the Event Delivery tool, and refer to the destination docs for each tool for troubleshooting.
 
 If there are any issues with how the events are arriving to Segment, contact the Synap support team.
