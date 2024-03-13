@@ -6,7 +6,7 @@ beta: true
 
 [Synap](https://synap.ac){:target="_blank”} is an online exam platform specialising in the delivery of high stakes exams, assessments and online learning. Synap is used by a wide range of companies and educational institutions to deliver high quality, robust assessments.
 
-This source is maintained by Synap. For any issues with the source, contact Synap via the live chat widget available on your portal, or get in touch with your account manager. Synap also provides more detailed documentation with specific guides and best-practices [here](https://academy.synap.ac/doc/integrations/segment){:target="_blank”}.
+This source is maintained by Synap. For any issues with the source, contact Synap via the live chat widget available on your portal, or get in touch with your account manager. Synap also provides more [detailed documentation](https://academy.synap.ac/doc/integrations/segment){:target="_blank”}  with specific guides and best-practices.
 
 ## Getting started
 
@@ -22,11 +22,12 @@ This source is maintained by Synap. For any issues with the source, contact Syna
 
 ## Stream
 
-Synap uses our stream Source component to send Segment event data. It uses a server-side Identify, Track, Page and Group methods to send data to Segment. These events are then available in any destination that accepts server-side events, and available in a schema in your data warehouse that you can query using SQL.
+Synap uses our stream Source component to send Segment event data. On the client-side, it uses Segment's Identify and Page events. On the server-side it also uses Identify as well as Track events. These events are then available in any destination that accepts client or server-side events, and available in a schema in your data warehouse that you can query using SQL.
 
 Synap identifies users based on their Synap User ID, which is sent as the userId in Segment events.
 
 ## Events
+
 The table below lists events that Synap sends to Segment. These events appear as tables in your warehouse, and as regular events in other destinations. Synap includes the userId, if available.
 
 | Event Name             | Description                                                       |
@@ -41,10 +42,48 @@ The table below lists events that Synap sends to Segment. These events appear as
 | User Logged In         | User explicitly logged in to Synap                                |
 | User Session Restored  | User opened Synap after a period of in activity                   |
 
+To find the list of properties associated with the events, please refer to the [Synap Segment Documentation](https://academy.synap.ac/doc/integrations/segment){:target="_blank”}. Some of our events, notably those related to Test and Question submission, have relatively large payloads and you may wish to review the [Synap Test and Question Analytics Schemas](https://academy.synap.ac/doc/integrations/segment/test-and-question-analytics){:target="_blank"}
+
+## Identify
+
+Synap sends an identify() message to Segment which consists of the userId and the user traits.
+
+| Field   | Type   | Description                                                                                               |
+| ------- | ------ | --------------------------------------------------------------------------------------------------------- |
+| userId  | string | Unique identifier for the user in Synap                                                                   |
+| context | object | User [context](https://segment.com/docs/connections/spec/common/#context)                                 |
+| traits  | object | Custom [traits](https://segment.com/docs/connections/spec/common/#traits) of the user (See Traits Object) |
+
+### Identify Traits
+
+| Name                   | Type                                | Description                                                             |
+| ---------------------- | ----------------------------------- | ----------------------------------------------------------------------- |
+| createdAt              | date                                | The date this user's account was created                                |
+| email                  | string                              | The user's email address                                                |
+| emailVerified          | boolean                             | Whether or not the user has verified their email address                |
+| firstName              | string                              | The user's first name                                                   |
+| lastName               | string                              | The user's last name                                                    |
+| marketingEmailsConsent | "removed", "pending" or "confirmed" | Enumeration representing the user's consent to receive marketing emails |
+| name                   | string                              | The user's full name                                                    |
+| profilePicture         | string                              | a URL pointing to the user's profile picture, if provided               |
+
+
+## Page
+
+Page calls will show the page path and unique URL
+
+| Property | Example                                         | Description                              |
+| -------- | ----------------------------------------------- | ---------------------------------------- |
+| name     | Springfield Portal                              | The name of the page                     |
+| path     | /quiz/a/abc123                                  | The relative path to the page            |
+| search   | ?mode=test                                      | Any query string parameters from the URL |
+| title    | Springfield Summer Exam                         | The title of the page                    |
+| url      | https://portal.synap.ac/quiz/a/abc123?mode=test | The full URL of the page                 |
+
 ## Adding Destinations
 
 Now that your source is set up, you can connect it to destinations.
 
 Log into your downstream tools and check to see that your events appear as expected, and that they contain all of the properties you expect. If your events and properties don’t appear, check the Event Delivery tool, and refer to the destination docs for each tool for troubleshooting.
 
-If there are any issues with how the events are arriving to Segment, contact the Synap support team.
+If there are any issues with how the events are arriving to Segment, contact the Synap support team via the live chat widget which is available to all Admin users of your portal.
