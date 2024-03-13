@@ -4,7 +4,7 @@ id: OyAdFUfMz9
 beta: true
 ---
 
-[Synap](https://synap.ac){:target="\_blank”} is an online exam platform specialising in the delivery of high stakes exams, assessments and online learning. Synap is used by a wide range of companies and educational institutions to deliver high quality, robust assessments.
+[Synap](https://synap.ac){:target="_blank”} is an online exam platform specialising in the delivery of high stakes exams, assessments and online learning. Synap is used by a wide range of companies and educational institutions to deliver high quality, robust assessments.
 
 This source is maintained by Synap. For any issues with the source, contact Synap via the live chat widget available on your portal, or get in touch with your account manager. Synap also provides more detailed documentation with specific guides and best-practices [here](https://academy.synap.ac/doc/integrations/segment){:target="\_blank”}.
 
