@@ -12,7 +12,7 @@ This source is maintained by Synap. For any issues with the source, contact Syna
 
 1. From your workspace's Sources page, click **Add source**.
 
-2. Search for and choose Synap.
+2. Search for and select Synap.
 
 3. Copy the Write key from the Segment UI.
 
