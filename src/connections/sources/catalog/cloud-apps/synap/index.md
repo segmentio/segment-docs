@@ -27,7 +27,7 @@ Synap uses our stream Source component to send Segment event data. It uses a ser
 Synap identifies users based on their Synap User ID, which will be sent as the userId in Segment events.
 
 ## Events
-The table below lists events that Synap sends to Segment. These events appear as tables in your warehouse, and as regular events in other Destinations. Synap includes the userId if available.
+The table below lists events that Synap sends to Segment. These events appear as tables in your warehouse, and as regular events in other destinations. Synap includes the userId, if available.
 
 | Event Name             | Description                                                       |
 | ---------------------- | ----------------------------------------------------------------- |
