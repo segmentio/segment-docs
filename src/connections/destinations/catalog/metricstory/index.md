@@ -37,5 +37,6 @@ Segment sends Identify calls to MetricStory as an identify event.
 ### Track
 Send Track calls to ADD WHAT Track CALLS ARE USED FOR HERE. For example:
 
+```js
 analytics.track('Login Button Clicked')
 Segment sends Track calls to MetricStory as a track event.
