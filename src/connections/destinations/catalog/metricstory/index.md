@@ -22,6 +22,7 @@ MetricStory supports the following methods, as specified in the [Segment Spec](/
 ### Page
 Send Page calls to ADD WHAT PAGE CALLS ARE USED FOR HERE. For example:
 
+```js
 analytics.page()
 Segment sends Page calls to MetricStory as a pageview.
 
