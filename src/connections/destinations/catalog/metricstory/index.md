@@ -3,7 +3,6 @@ title: MetricStory Destination
 id: 65e8b496eec9c40dbccbf749
 beta: true
 ---
-Include a 1-2 sentence introduction to your company and the value it provides to customers - updating the name and hyperlink. Please leave the utm string unchanged.
 
 [MetricStory](https://www.metricstory.ai){:target="_blank”} lets you run AI on your product analytics. Create and generate charts and analyze data in minutes.
 
