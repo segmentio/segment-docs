@@ -8,7 +8,7 @@ beta: true
 
 This destination is maintained by MetricStoryAI. For any issues with the destination, contact the [MetricStory support team](support@metricstory.a).
 
-Getting started
+## Getting started
 1. From the Destination catalog page in the Segment app, search for MetricStory
 2. Select and click Add Destination
 3. Select an existing Source to connect to.
