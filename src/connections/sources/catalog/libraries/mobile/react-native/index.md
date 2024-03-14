@@ -751,5 +751,9 @@ segmentClient.userInfo.set((currentUserInfo) => {
   });
 ```
 
+### If I use a proxy, what Segment endpoint should I send to?
+If you proxy your events through the `proxy` config option, you must forward the batched events to the following Segment endpoint `https://api.segment.io/v1/b`. The `https://api.segment.io/v1/batch` endpoint is reserved for events arriving from server side sending, and proxying to that endpoint for your mobile events may result in unexpected behavior.
+
+
 ## Changelog
 [View the Analytics React Native changelog on GitHub](https://github.com/segmentio/analytics-react-native/releases){:target="_blank"}.
