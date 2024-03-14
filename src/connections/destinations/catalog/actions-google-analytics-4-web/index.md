@@ -150,6 +150,8 @@ For data to be sent downstream to Google Analytics, all of the following conditi
 2. The **Page Views** setting must be toggled on. When the **Page Views** setting is toggled on, a `page_view` event will be sent to Google Analytics 4 Web. If you're manually sending `page_view` events instead, see below for additional settings needed in your Analytics workspace. 
 3. Ensure that you're calling `analytics.page()` on page load. Analytics.js requires an initial Page call to send data to Google Analytics 4 Web. The Segment snippet includes this initial call by default.
 
+In addition to the steps above, ensure that you have a mapping configured for each event you want to send to GA4. To add a new mapping, click on the **+ New Mapping** button in the top right-hand side of the destination mappings page and choose the event you want to send to GA4. For more information on which event mapping to choose, refer to Segment's [Recommended Events](/docs/connections/destinations/catalog/actions-google-analytics-4-web/#recommended-events) or [Custom Events](/docs/connections/destinations/catalog/actions-google-analytics-4-web/#custom-events) documentation. 
+
 ### Duplicate `page_view` events in GA4
 
 If you are sending multiple `config` commands that your Google Tag has to account for, you may see duplicate `page_view` events in your Analytics workspace. If this is the case, please refer to Google's documentation on [Ignoring duplicate instances of on-page configuration](https://support.google.com/analytics/answer/9973999?hl=en#:~:text=as%20described%20below.-,Ignore%20duplicate%20instances%20of%20on%2Dpage%20configuration,Click%20Save.,-Give%20feedback%20about){:target="_blank"}.
