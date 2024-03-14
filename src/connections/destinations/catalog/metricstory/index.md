@@ -19,7 +19,7 @@ This destination is maintained by MetricStoryAI. For any issues with the destina
 ## Supported methods
 MetricStory supports the following methods, as specified in the [Segment Spec](/docs/connections/spec).
 
-Page
+### Page
 Send Page calls to ADD WHAT PAGE CALLS ARE USED FOR HERE. For example:
 
 analytics.page()
