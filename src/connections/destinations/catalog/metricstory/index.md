@@ -17,7 +17,7 @@ This destination is maintained by MetricStoryAI. For any issues with the destina
 6. Enter the API key in the destination settings in Segment
 
 Supported methods
-MetricStory supports the following methods, as specified in the Segment Spec.
+MetricStory supports the following methods, as specified in the [Segment Spec](/docs/connections/spec).
 
 Page
 Send Page calls to ADD WHAT PAGE CALLS ARE USED FOR HERE. For example:
