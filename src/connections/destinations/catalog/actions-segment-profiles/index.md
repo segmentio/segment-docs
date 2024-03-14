@@ -9,6 +9,9 @@ The Segment Profiles destination allows you to send your warehouse data back to 
 > success "Source compatibility"
 > This destination supports connections from Reverse ETL warehouse sources, and is not compatible with other source types.
 
+> warning ""
+> The [Send Subscriptions](/docs/connections/destinations/catalog/actions-segment-profiles/#send-subscriptions) action is only supported with [Twilio Engage Premier](/docs/engage/onboarding/), and requires [subscription tracking](/docs/engage/onboarding/#enable-subscription-tracking) to be enabled in both SendGrid and Engage.
+
 ## Getting started
 
 ### Create a Profile space
