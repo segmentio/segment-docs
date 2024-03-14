@@ -16,7 +16,7 @@ This destination is maintained by MetricStoryAI. For any issues with the destina
 5. Copy your API key
 6. Enter the API key in the destination settings in Segment
 
-Supported methods
+## Supported methods
 MetricStory supports the following methods, as specified in the [Segment Spec](/docs/connections/spec).
 
 Page
