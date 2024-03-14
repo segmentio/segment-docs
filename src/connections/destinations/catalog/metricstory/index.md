@@ -28,6 +28,7 @@ Segment sends Page calls to MetricStory as a pageview.
 Identify
 Send Identify calls to ADD WHAT IDENTIFY CALLS ARE USED FOR HERE. For example:
 
+```js
 analytics.identify('userId123', {
   email: 'john.doe@example.com'
 });
