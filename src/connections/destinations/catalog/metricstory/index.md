@@ -26,7 +26,7 @@ Send Page calls to ADD WHAT PAGE CALLS ARE USED FOR HERE. For example:
 analytics.page()
 Segment sends Page calls to MetricStory as a pageview.
 
-Identify
+### Identify
 Send Identify calls to ADD WHAT IDENTIFY CALLS ARE USED FOR HERE. For example:
 
 ```js
