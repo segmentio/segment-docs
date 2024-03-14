@@ -33,7 +33,7 @@ analytics.identify('userId123', {
 });
 Segment sends Identify calls to MetricStory as an identify event.
 
-Track
+### Track
 Send Track calls to ADD WHAT Track CALLS ARE USED FOR HERE. For example:
 
 analytics.track('Login Button Clicked')
