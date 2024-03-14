@@ -96,6 +96,15 @@ sources:
       - us
     endpoints:
       - us
+  - id: xNpohElkX2
+    display_name: Azure
+    hidden: true
+    slug: azure
+    url: connections/sources/catalog/cloud-apps/azure
+    regions:
+      - us
+    endpoints:
+      - us
   - id: ErcsNGMEwt
     display_name: Beamer
     hidden: false
