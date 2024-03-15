@@ -8,15 +8,15 @@
     text-wrap: balance;
   }
 </style>
+
 <input class="table-search" type="text" id="filterInput" onkeyup="searchFilter()"
   placeholder="Search for an error code..">
-<div class="button-container" id="btnContainer">
+  <a id="reset-button" class="button button-fill" onclick="resetSearch()">Show all</a>
   <a href="#" id="all" class="button button-link active">All</a>
   <a href="#" id="failed-ingest" class="button button-link">Failed on Ingest</a>
   <a href="#" id="filtered-source" class="button button-link">Filtered at Source</a>
   <a href="#" id="filtered-destination" class="button button-link">Filtered at Destination</a>
   <a href="#" id="failed-delivery" class="button button-link">Failed Delivery</a>
-</div>
 
 <table id="settingsTable">
   <thead>
@@ -600,4 +600,11 @@
     }
   }
 
+</script>
+
+<script>
+  function resetSearch() {
+      document.getElementById("filterInput").value = '';
+      searchFilter();
+  }
 </script>
