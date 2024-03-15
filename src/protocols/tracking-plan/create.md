@@ -128,6 +128,10 @@ Segment supports object and array data types in the Tracking Plan editor. These 
 1. Create a new property row and set the Data Type to `Object` or `Array`.
 2. Click the **(+)** next to the property name to add key value pairs in the object, or objects to an array of objects.
 
+> info ""
+> When creating array properties, add the `items` nested property to ensure that the items nested property, 
+> denoted by the name of the array property with a `.$` suffix is marked as planned in the source schema. 
+
 ### Add Identify or Group traits
 You can define which traits you expect to see passed in Identify or Group calls like how you would add Track calls to the Tracking Plan. Navigate to the **Identify** or **Group** tab in your Tracking Plan and click the **(+)** button to add a new trait.
 
