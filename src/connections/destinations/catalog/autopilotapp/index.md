@@ -8,6 +8,8 @@ id: 613ef845b8784e858199fe2d
 
 Once you connect Segment to Ortto (the Ortto product), you can use Ortto's powerful [campaign](https://help.ortto.com/user/latest/campaigns/){:target="_blank"} features on your Segment customer data.
 
+Users will require workspace owner permissions in order to add Ortto as a destination.
+
 This destination is maintained by Ortto. For any issues with the destination, [contact the Ortto Support team](mailto:help@ortto.com).
 
 
