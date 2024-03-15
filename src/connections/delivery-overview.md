@@ -49,10 +49,10 @@ The breakdown table displays the following details:
 ### Discard table
 The discard table provides you with greater detail about the events that failed to deliver or were filtered out of your sources and destinations. 
 
-To open the discard table, click on one of the discard steps. If you click on a row in the discard table, you can see the breakdown table for the discarded events.
+To open the discard table, click on one of the discard steps. If you click on a row in the discard table, you can see the breakdown table for the discarded events. 
 
 The discard table displays the following details:
-- **Discard reason**: Any relevant error code, message, or description associated with the event's failure. When possible, Delivery Overview links to any troubleshooting information you can use to get your events up and running again. Clicking on a discard reason brings you to the [breakdown table](#breakdown-table,) where you can see more detail about discarded events. For more troubleshooting information associated with Discard Reasons, see the [Troubleshooting](#troubleshooting) documentation. 
+- **Discard reason**: Any relevant error code, message, or description associated with the event's failure. When possible, Delivery Overview links to any troubleshooting information you can use to get your events up and running again. Clicking on a discard reason brings you to the [breakdown table](#breakdown-table,) where you can see more detail about discarded events. For more context about discard reasons, see the [Troubleshooting](#troubleshooting) documentation.
 - **Details & Samples**: View up to ten samples over the selected time range. Examine the error message and reason for the error or discard and inspect the payloads involved with the attempted transaction (*not available for inspection at all steps*)
 - **Event count**: How many of each event were discarded in this pipeline step
 - **% Change**: Insight into how the event counts differ from the last comparable time range as a percentage<sup>1</sup>
