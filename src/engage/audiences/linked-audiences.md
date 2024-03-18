@@ -95,8 +95,8 @@ Engage displays the following compute statuses for Linked Audiences.
 
 | Computation status        | Description                           |
 |---------------------------|---------------------------------------|
-| Computing                 | Engage is computing the Linked Audience based on your configured [compute schedule](#set-a-compute-schedule).           |
-| Live                      | The latest compute based on the configured compute schedule was successful.      |
+| Computing                 | Engage is computing the Linked Audience based on the hourly [compute schedule](#set-a-compute-schedule).           |
+| Live                      | The latest compute was successful.      |
 | Disabled                  | The Linked Audience is disabled.                   |
 | Failed                    | The computation was canceled or failed to compute. Contact [Segment support](https://segment.com/help/contact/){:target="_blank"}.            |
 
