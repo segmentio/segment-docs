@@ -54,7 +54,7 @@ Synap sends an identify() message to Segment which consists of the userId and th
 | context | object | User [context](https://segment.com/docs/connections/spec/common/#context)                                 |
 | traits  | object | Custom [traits](https://segment.com/docs/connections/spec/common/#traits) of the user (See Traits Object) |
 
-### Identify Traits
+### Identify traits
 
 | Name                   | Type                                | Description                                                             |
 | ---------------------- | ----------------------------------- | ----------------------------------------------------------------------- |
