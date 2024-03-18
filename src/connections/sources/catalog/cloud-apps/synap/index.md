@@ -48,11 +48,11 @@ To find the list of properties associated with the events, please refer to the [
 
 Synap sends an identify() message to Segment which consists of the userId and the user traits.
 
-| Field   | Type   | Description                                                                                               |
-| ------- | ------ | --------------------------------------------------------------------------------------------------------- |
-| userId  | string | Unique identifier for the user in Synap                                                                   |
-| context | object | User [context](https://segment.com/docs/connections/spec/common/#context)                                 |
-| traits  | object | Custom [traits](https://segment.com/docs/connections/spec/common/#traits) of the user (See Traits Object) |
+| Field   | Type   | Description                                                                           |
+| ------- | ------ | ------------------------------------------------------------------------------------- |
+| userId  | string | Unique identifier for the user in Synap                                               |
+| context | object | User [context](https://segment.com/docs/connections/spec/common/#context)             |
+| traits  | object | Custom [traits](https://segment.com/docs/connections/spec/common/#traits) of the user |
 
 ### Identify traits
 
@@ -72,13 +72,13 @@ Synap sends an identify() message to Segment which consists of the userId and th
 
 Page calls include the page path and unique URL.
 
-| Property | Example                                      | Description                              |
-| -------- | -------------------------------------------- | ---------------------------------------- |
-| name     | Springfield Portal                           | The name of the page                     |
-| path     | /quiz/a/abc123                               | The relative path to the page            |
-| search   | ?mode=test                                   | Any query string parameters from the URL |
-| title    | Springfield Summer Exam                      | The title of the page                    |
-| url      | your-portal.synap.ac/quiz/a/abc123?mode=test | The full URL of the page                 |
+| Name   | Type   | Description                              |
+| ------ | ------ | ---------------------------------------- |
+| name   | string | The name of the page                     |
+| path   | string | The relative path to the page            |
+| search | string | Any query string parameters from the URL |
+| title  | string | The title of the page                    |
+| url    | string | The full URL of the page                 |
 
 ## Adding destinations
 
