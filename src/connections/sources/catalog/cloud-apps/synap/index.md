@@ -70,7 +70,7 @@ Synap sends an identify() message to Segment which consists of the userId and th
 
 ## Page
 
-Page calls will show the page path and unique URL
+Page calls include the page path and unique URL.
 
 | Property | Example                                      | Description                              |
 | -------- | -------------------------------------------- | ---------------------------------------- |
