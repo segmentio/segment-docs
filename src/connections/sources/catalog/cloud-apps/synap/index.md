@@ -42,7 +42,7 @@ The table below lists events that Synap sends to Segment. These events appear as
 | User Logged In         | User explicitly logged in to Synap                                |
 | User Session Restored  | User opened Synap after a period of in activity                   |
 
-To find the list of properties associated with the events, please refer to the [Synap Segment Documentation](https://academy.synap.ac/doc/integrations/segment){:target="_blank”}. Some of our events, notably those related to Test and Question submission, have relatively large payloads and you may wish to review the [Synap Test and Question Analytics Schemas](https://academy.synap.ac/doc/integrations/segment/test-and-question-analytics){:target="_blank"}
+To find the list of properties associated with the events, please refer to the [Synap Segment Documentation](https://academy.synap.ac/doc/integrations/segment){:target="_blank”}. Some of the events, notably those related to Test and Question submission, have relatively large payloads. You might want to review the [Synap Test and Question Analytics Schemas](https://academy.synap.ac/doc/integrations/segment/test-and-question-analytics){:target="_blank"} before tracking these events. 
 
 ## Identify
 
