@@ -80,7 +80,7 @@ Page calls will show the page path and unique URL
 | title    | Springfield Summer Exam                      | The title of the page                    |
 | url      | your-portal.synap.ac/quiz/a/abc123?mode=test | The full URL of the page                 |
 
-## Adding Destinations
+## Adding destinations
 
 Now that your source is set up, you can connect it to destinations.
 
