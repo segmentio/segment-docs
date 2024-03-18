@@ -160,7 +160,7 @@ Analytics for Swift is built with extensibility in mind. Use the tools list belo
 - [Code samples](/docs/connections/sources/catalog/libraries/mobile/swift/swift-samples)
 
 ## Proxying events
-If you proxy your events through the `apiHost` config option, you must forward the batched events to the following Segment endpoint `https://api.segment.io/v1/b`. The `https://api.segment.io/v1/batch` endpoint is reserved for events arriving from server side sending, and proxying to that endpoint for your mobile events may result in unexpected behavior.
+If you proxy your events through the `apiHost` config option, you must forward the batched events to `https://api.segment.io/v1/b`. The `https://api.segment.io/v1/batch` endpoint is reserved for events arriving from server-side sending, and proxying to that endpoint for your mobile events may result in unexpected behavior.
 
 > warning ""
 > If you are using the Analytics iOS (Classic) SDK, you can find [the documentation here](/docs/connections/sources/catalog/libraries/mobile/ios). Many of the features available in the Analytics-Swift SDK are not available in the Analytics iOS (Classic) SDK. 
