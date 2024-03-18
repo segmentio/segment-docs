@@ -22,7 +22,7 @@ This source is maintained by Synap. For any issues with the source, contact Syna
 
 ## Stream
 
-Synap uses our stream Source component to send Segment event data. On the client-side, it uses Segment's Identify and Page events. On the server-side it also uses Identify as well as Track events. These events are then available in any destination that accepts client or server-side events, and available in a schema in your data warehouse that you can query using SQL.
+Synap uses their stream Source component to send Segment event data. On the client-side, this source uses Segment's Identify and Page events. On the server-side, it uses Identify and Track events. These events are then available in any Segment destination that accepts client or server-side events and available in a schema in your data warehouse that you can query using SQL.
 
 Synap identifies users based on their Synap User ID, which is sent as the userId in Segment events.
 
