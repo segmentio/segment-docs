@@ -6,7 +6,7 @@ Delivery Overview is a visual observability tool designed to help Segment users 
 
 > info "Delivery Overview for Actions destinations is currently in beta"
 > This means that Segment is actively developing Delivery Overview features for Action destinations, and some functionality may change before Delivery Overview for Action destinations becomes generally available. 
->
+> 
 > Delivery Overview is generally available for streaming connections (cloud-streaming sources and cloud-streaming destinations).
 > All users of Delivery Overview have access to the Event Delivery tab, and can configure delivery alerts for their destinations.
 
