@@ -584,16 +584,16 @@
 
 <script>
   function searchFilter() {
-    var input, filter, table, tr, td, i, txtValue;
+    var input, filter, table, tr, samp, i, txtValue;
 
     input = document.getElementById("filterInput");
     filter = input.value.toUpperCase();
     table = document.getElementById("settingsTable");
     tr = document.getElementsByClassName("settingRow");
     for (i = 0; i < tr.length; i++) {
-      td = tr[i].getElementsByTagName("td")[0];
-      if (td) {
-        txtValue = td.textContent || td.innerText;
+      samp = tr[i].getElementsByTagName("samp")[0];
+      if (samp) {
+        txtValue = samp.textContent || samp.innerText;
         if (txtValue.toUpperCase().indexOf(filter) > -1) {
           tr[i].style.display = "";
         } else {
