@@ -498,7 +498,7 @@ In Device-mode, when a `distinct_id` is present in the browser, it is automatica
 
 ### Insert ID
 
-`$insert_id` is only available for cloud events. For the Mixpanel (Legacy) destination, Segment generates `$insert_id` from the messageId, event name and Mixpanel namespace constant using the [uuidv5](https://developer.hashicorp.com/terraform/language/functions/uuidv5) function:
+`$insert_id` is only available for cloud events. For the Mixpanel (Legacy) destination, Segment generates `$insert_id` from the messageId, event name, and Mixpanel namespace constant using the [uuidv5](https://developer.hashicorp.com/terraform/language/functions/uuidv5) function:
 ```javascript
 const insertId = uuidv5(`${messageId}:${projectId}:${eventName}`, MIXPANEL_NAMESPACE)
 ```
