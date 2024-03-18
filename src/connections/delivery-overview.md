@@ -33,7 +33,7 @@ Actions destinations also include a mapping dropdown, which allows you to select
 ![A screenshot of the Delivery Overview tab for an Actions destination, with the Track Page View mapping selected.](images/delivery-overview-actions-destination.jpeg)
 
 ### Breakdown table
-The breakdown table provides you greater detail about the selected events.
+The breakdown table provides you with greater detail about the selected events.
 
 To open the breakdown table, select either the first step in the pipeline view (Successfully received,) the last step in the pipeline view (Successful delivery,) or select a discard step and then click on a discard reason. 
 
