@@ -99,7 +99,7 @@ Similar to Segment's [Event Delivery](/docs/connections/event-delivery/) feature
 
 ## Troubleshooting
 
-The Delivery Overview pipeline steps Failed on Ingest, Filtered at Source, Filtered at Destination, and Failed Delivery display a [discard table](#discard-table) with information about why your events might have failed to reach their destination.
+The Delivery Overview pipeline steps Failed on Ingest, Filtered at Source, Filtered at Destination, and Failed Delivery display a [discard table](#discard-table) with information about why your events failed or were discarded.
 
 This table provides a list of all possible discard reasons available at each pipeline step. 
 
