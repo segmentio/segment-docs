@@ -24,11 +24,11 @@ With Regulations, you can issue a single request to delete and suppress data abo
 
 The following regulation types are available:
 
- - SUPPRESS_ONLY
- - UNSUPPRESS
- - SUPPRESS_WITH_DELETE
- - DELETE_INTERNAL
- - DELETE_ONLY
+ - **SUPPRESS_ONLY**: Suppress new data without deleting existing data
+ - **UNSUPPRESS:** Stop an ongoing suppression
+ - **SUPPRESS_WITH_DELETE:** Suppress new data and delete existing data
+ - **DELETE_INTERNAL:** Delete data from Segment internals only
+ - **DELETE_ONLY:** Delete existing data without suppressing any new data
 
 ## Suppression Support and the Right to Revoke Consent
 
