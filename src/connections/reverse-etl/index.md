@@ -38,9 +38,10 @@ To add your warehouse as a source:
 > You need to be a user that has both read and write access to the warehouse.
 
 1. Navigate to **Connections > Sources** and select the **Reverse ETL** tab in the Segment app.
-2. Click **Add Reverse ETL source**.
+2. Click **+ Add Reverse ETL source**.
 3. Select the source you want to add. 
 4. Follow the corresponding setup guide for your Reverse ETL source.
+    * [Azure Reverse ETL setup guide](/docs/connections/reverse-etl/reverse-etl-source-setup-guides/azure-setup/)
     * [BigQuery Reverse ETL setup guide](/docs/connections/reverse-etl/reverse-etl-source-setup-guides/bigquery-setup/)
     * [Databricks Reverse ETL setup guide](/docs/connections/reverse-etl/reverse-etl-source-setup-guides/databricks-setup/)
     * [Postgres Reverse ETL setup guide](/docs/connections/reverse-etl/reverse-etl-source-setup-guides/postgres-setup/)
@@ -49,7 +50,7 @@ To add your warehouse as a source:
 5. Add the account information for your source.  
     * For Snowflake users: Learn more about the Snowflake Account ID [here](https://docs.snowflake.com/en/user-guide/admin-account-identifier.html){:target="_blank"}.
 5. Click **Test Connection** to test to see if the connection works.
-6. Click **Create Source** if the test connection is successful.
+6. Click **Add source** if the test connection is successful.
 
 After you add your data warehouse as a source, you can [add a model](#step-2-add-a-model) to your source.
 
@@ -88,9 +89,6 @@ To add your first destination:
 
 ### Step 4: Create mappings
 After you’ve added a destination, you can create mappings from your warehouse to the destination. Mappings enable you to map the data you extract from your warehouse to the fields in your destination.
-
-> info ""
-> When you add new mappings to an existing model, Segment only syncs changes that have transpired since the last sync, not the entire dataset. For a comprehensive data synchronization, Segment recommends that you first recreate the model, then establish a one-to-one mapping with the new model. This ensures that all data syncs effectively.
 
 To create a mapping:
 1. Navigate to **Conections > Destinations** and select the **Reverse ETL** tab.
@@ -162,7 +160,12 @@ You can opt in to receive email alerts regarding notifications for Reverse ETL.
 To subscribe to email alerts: 
 1. Navigate to **Settings > User Preferences**. 
 2. Select **Reverse ETL** in the **Activity Notifications** section.
-3. Click the toggle for **Reverse ETL Sync Failed** to receive notifications when your Reverse ETL sync fails. 
+3. Click the toggle on for the notifications you want to receive. You can choose from:
+
+    Notification | Details
+    ------ | -------
+    Reverse ETL Sync Failed | Set toggle on to receive notification when your Reverse ETL sync fails. 
+    Reverse ETL Sync Partial Success | Set toggle on to receive notification when your Reverse ETL sync is partially successful. 
 
 ### Edit your model
 

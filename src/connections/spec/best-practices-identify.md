@@ -91,7 +91,7 @@ You can see in this full page event, the `anonymousId` is populated, and the `us
       "title": "Home Page",
       "url": "https://somesite.com"
     },
-  "recievedAt": "2020-04-23T22:38:48.55Z",
+  "receivedAt": "2020-04-23T22:38:48.55Z",
   "sentAt": "2020-04-23T22:38:48.55Z",
   "timestamp": "2020-04-23T22:38:48.55Z",
   "type": "page",
@@ -144,7 +144,7 @@ You'll notice the Identify call contains no `userId`. These traits will be assoc
       "title": "Home Page",
       "url": "https://somesite.com"
     },
-  "recievedAt": "2020-04-23T22:38:48.55Z",
+  "receivedAt": "2020-04-23T22:38:48.55Z",
   "sentAt": "2020-04-23T22:38:48.55Z",
   "timestamp": "2020-04-23T22:38:48.55Z",
   "traits"{
@@ -210,7 +210,7 @@ After you fire the Identify call with the `userId`, you'll notice that the paylo
       "title": "Home Page",
       "url": "https://somesite.com"
     },
-  "recievedAt": "2020-04-23T22:38:48.55Z",
+  "receivedAt": "2020-04-23T22:38:48.55Z",
   "sentAt": "2020-04-23T22:38:48.55Z",
   "timestamp": "2020-04-23T22:38:48.55Z",
   "traits"{

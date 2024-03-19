@@ -16,7 +16,7 @@ versions:
 When you have Segment installed, you can use your existing tracking implementation to fulfill your data collection needs with Google Analytics 4. When you enable the Google Analytics 4 Web destination, Segment loads the [gtag.js library](https://support.google.com/analytics/answer/9310895?hl=en#zippy=%2Cin-this-article){:target="_blank"} for you. To avoid duplicate data, remove the native gtag.js script from your page.
 
 > info "Consent mode"
-> Google is enforcing consent starting March 6, 2024 for European Economic Area (EEA) users. Learn more about [consent mode](/docs/connections/destinations/catalog/actions-google-analytics-4-web/#consent-mode) and how to set it up. 
+> Google enforced consent on March 6, 2024 for European Economic Area (EEA) users. Learn more about [consent mode](/docs/connections/destinations/catalog/actions-google-analytics-4-web/#consent-mode) and how to set it up. 
 
 ## Getting started
 
@@ -149,6 +149,8 @@ For data to be sent downstream to Google Analytics, all of the following conditi
 1. The **Set Configuration Fields** mapping must be configured and enabled in your mappings. This mapping is required for data to be sent downstream because it sets configuration to Measurement ID and establishes data flow using the `config` command.
 2. The **Page Views** setting must be toggled on. When the **Page Views** setting is toggled on, a `page_view` event will be sent to Google Analytics 4 Web. If you're manually sending `page_view` events instead, see below for additional settings needed in your Analytics workspace. 
 3. Ensure that you're calling `analytics.page()` on page load. Analytics.js requires an initial Page call to send data to Google Analytics 4 Web. The Segment snippet includes this initial call by default.
+
+In addition to the steps above, ensure that you have a mapping configured for each event you want to send to GA4. To add a new mapping, click on the **+ New Mapping** button in the top right-hand side of the destination mappings page and choose the event you want to send to GA4. For more information on which event mapping to choose, refer to Segment's [Recommended Events](/docs/connections/destinations/catalog/actions-google-analytics-4-web/#recommended-events) or [Custom Events](/docs/connections/destinations/catalog/actions-google-analytics-4-web/#custom-events) documentation. 
 
 ### Duplicate `page_view` events in GA4
 
