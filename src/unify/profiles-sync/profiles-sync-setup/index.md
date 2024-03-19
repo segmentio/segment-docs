@@ -93,8 +93,6 @@ You can sync the following tables:
 | [Profile materialized tables](/docs/unify/profiles-sync/tables/#tables-segment-materializes) | - `user_identifier` <br> - `user_traits` <br> - `profile_merges`                      |
 | [Event type tables](/docs/unify/profiles-sync/tables/#event-type-tables)          |  - `Identify` <br> - `Page` <br> - `Group` <br> - `Screen` <br> - `Alias` <br> - `Track`                     |
 | [Track event tables](/docs/unify/profiles-sync/tables/#track-event-tables)         |   To view and select individual track tables, don't sync track tables during the initial setup. Edit your sync settings after enabling Profiles Sync and waiting for the first sync to complete.                   |
-
-
 #### Using Selective Sync
 
 Use Selective Sync to manage the data you send to your warehouses by choosing which tables and columns (also known as properties) to sync. Syncing fewer tables and properties will lead to faster and more frequent syncs, faster queries, and using less disk space.
