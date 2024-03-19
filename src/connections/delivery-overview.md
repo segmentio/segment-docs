@@ -78,7 +78,7 @@ To view the Delivery Overview page:
 To use Delivery Overview: 
 
 1. Navigate to the destination you'd like to review, and select **Delivery Overview** from the destination header.
-2. On the **Delivery Overview** tab, select a time period from the time picker. <br/> ___Optional___: *Turn the metric toggle off if you'd like to see the quantity of events as counts instead of percentages. Delivery Overview shows percentages by default.*
+2. On the **Delivery Overview** tab, select a time period from the time picker. The time picker reflects data in the user's local time. <br/> ___Optional___: *Turn the metric toggle off if you'd like to see the quantity of events as counts instead of percentages. Delivery Overview shows percentages by default.*
 3. Select a success or discard step to view additional context about the events that passed through that step.
 
 ## How does Delivery Overview differ from other Segment monitoring and observability products?

@@ -19,7 +19,7 @@ When you have Segment installed, you can use your existing tracking implementati
 > Google Analytics 4 doesn't officially support a pure server-to-server integration. However, Segment monitors the capabilities of the Measurement Protocol API and updates the cloud integration accordingly to achieve a reasonable level of reporting for mutual customers. For full functionality, please see the [Google Analytics 4 Web destination](/docs/connections/destinations/catalog/actions-google-analytics-4-web/).
 
 > info "Consent mode"
-> Google is enforcing consent starting March 6, 2024 for European Economic Area (EEA) users. Learn more about [consent mode](/docs/connections/destinations/catalog/actions-google-analytics-4/#consent-mode) and how to set it up. 
+> Google enforced consent on March 6, 2024 for European Economic Area (EEA) users. Learn more about [consent mode](/docs/connections/destinations/catalog/actions-google-analytics-4/#consent-mode) and how to set it up. 
 
 ## Benefits of Google Analytics 4 Cloud
 

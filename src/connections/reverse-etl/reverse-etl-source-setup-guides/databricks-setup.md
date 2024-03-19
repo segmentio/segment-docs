@@ -39,7 +39,7 @@ To set up Databricks as your Reverse ETL source:
 4. Select **SQL Warehouses** and select the warehouse you want to use. Note that Segment doesn't support the `Compute` connection parameters.
 5. Go to the **Connection details** tab and **keep** this page open.
 6. Open [your Segment workspace](https://app.segment.com/workspaces){:target="_blank”}. 
-7. Navigate to **Connections > Sources > Reverse ETL**.
+7. Navigate to **Connections > Sources** and select the **Reverse ETL** tab.
 8. Click **+ Add Reverse ETL source**. 
 9. Select **Databricks** and click **Add Source**. 
 10. Enter the configuration setting for your Databricks source based on information from step 5
@@ -49,7 +49,7 @@ To set up Databricks as your Reverse ETL source:
     * Token: `<your-token>`
     * Catalog [optional]: `hive_metastore` (default)
 11. Click **Test Connection** to see if the connection works. If the connection fails, make sure you have the right permissions and credentials, then try again.
-12. Click **Create Source** if the test connection is successful. 
+12. Click **Add source** if the test connection is successful. 
 
 > info ""
 > To generate a token, follow the steps listed in the [Databricks docs](https://docs.databricks.com/dev-tools/auth.html#pat){:target="_blank"}. Segment recommends you create a token with no expiration date by leaving the lifetime field empty when creating it. If you already have a token with an expiration date, be sure to keep track of the date and renew it on time.   
