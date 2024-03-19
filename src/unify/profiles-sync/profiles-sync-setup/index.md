@@ -22,18 +22,17 @@ Before you begin, prepare for setup with these tips:
 
 ### Step 1: Select a warehouse 
 
-You’ll first choose the destination warehouse to which Segment will sync profiles. Profiles Sync supports the Snowflake, Redshift, BigQuery, Azure, Postgres, and Databricks  warehouse Destinations. Your initial setup will depend on the warehouse you choose.
+You’ll first choose the destination warehouse to which Segment will sync profiles. Profiles Sync supports the Snowflake, Redshift, BigQuery, Azure, Postgres, and Databricks warehouse Destinations. Your initial setup will depend on the warehouse you choose.
 
 The following table shows the supported Profiles Sync warehouse destinations and the corresponding required steps for each. Select a warehouse, view its Segment documentation, then carry out the warehouse’s required steps before moving to step 2 of Profiles Sync setup:
 
 | Warehouse Destination                                                     | Required steps                                                                                                                                                   |
 | ------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [Snowflake](/docs/connections/storage/catalog/snowflake/#getting-started) | 1. Create virtual warehouse. <br> 2. Create a database. <br> 3. Create role for Segment. <br> 4. Create user for Segment. <br> 5. Test the user and credentials. |
-| [Redshift](/docs/connections/storage/catalog/redshift/#getting-started)   | 1. Choose an instance. <br> 2. Provision a new Redshift cluster.                                                                                                 |
-| [BigQuery](/docs/connections/storage/catalog/bigquery/)                   | 1. Create a project and enable BigQuery. <br> 2. Create a service account for Segment.                                                                           |
-| [Azure](/docs/connections/storage/catalog/azuresqldw/)                    | 1. Sign up for an Azure subscription. <br> 2. Provision a dedicated SQL pool.                                                                                     |
-| [Postgres](/docs/connections/storage/catalog/postgres/)                   | 1. Follow the steps in the [Postgres getting started](/docs/connections/storage/catalog/postgres/) section.                                                      |
-| [Databricks](/docs/unify/profiles-sync/profiles-sync-setup/databricks-profiles-sync/)                   | 1. Follow the steps in the [Databricks for Profiles Sync](/docs/unify/profiles-sync/profiles-sync-setup/databricks-profiles-sync/) guide.                                                      |
+| [Snowflake](/docs/connections/storage/catalog/snowflake/#getting-started) | Follow the steps in [Snowflake Getting Started](/connections/storage/catalog/snowflake/#getting-started) |
+| [Redshift](/docs/connections/storage/catalog/redshift/#getting-started)   | Follow the steps in [Redshift Getting Started](/connections/storage/catalog/redshift/#getting-started) |
+| [BigQuery](/docs/connections/storage/catalog/bigquery/) |                  | Follow the steps in [Azure Synapse Analytics Getting Started](/connections/storage/catalog/azuresqldw/#getting-started)  |
+| [Postgres](/docs/connections/storage/catalog/postgres/)                   | Follow the steps in the [Postgres getting started](/docs/connections/storage/catalog/postgres/) section.                                                      |
+| [Databricks](/docs/unify/profiles-sync/profiles-sync-setup/databricks-profiles-sync/)                   | Follow the steps in the [Databricks for Profiles Sync](/docs/unify/profiles-sync/profiles-sync-setup/databricks-profiles-sync/) guide.                                                      |
 
 Once you’ve finished the required steps for your chosen warehouse, you’re ready to connect your warehouse to Segment. Because you’ll next enter credentials from the warehouse you just created, **leave the warehouse tab open to streamline setup.**
 
