@@ -957,6 +957,15 @@ sources:
       - us
     endpoints:
       - us
+  - id: OyAdFUfMz9
+    display_name: Synap
+    hidden: false
+    slug: synap
+    url: connections/sources/catalog/cloud-apps/synap
+    regions:
+      - us
+    endpoints:
+      - us
   - id: 43bb279b7
     display_name: Twilio
     hidden: false
