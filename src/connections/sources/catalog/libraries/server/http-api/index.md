@@ -320,7 +320,7 @@ The Alias call has the following fields:
   {% include content/spec-field-user-id.md %}
 </table>
 
-For more details on the Alias call and payload, check out the [Segment Spec](/docs/connections/spec/alias/).
+For more details on the Alias call and payload, see the [Segment Spec](/docs/connections/spec/alias/).
 
 ## Historical import
 
@@ -476,6 +476,6 @@ When sending a HTTP call from a user's device, you can collect the IP address by
 
 1. Double check that you've set up the library correctly.
 
-2. Make sure that you're calling a Segment API method once the library is successfully installed—[Identify](#identify), [Track](#track), and so on.
+2. Make sure that you're calling a Segment API method after the library is successfully installed—[Identify](#identify), [Track](#track), and so on.
 
 {% include content/troubleshooting-server-integration.md %}
