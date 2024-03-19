@@ -26,15 +26,16 @@ You’ll first choose the destination warehouse to which Segment will sync profi
 
 The following table shows the supported Profiles Sync warehouse destinations and the corresponding required steps for each. Select a warehouse, view its Segment documentation, then carry out the warehouse’s required steps before moving to step 2 of Profiles Sync setup:
 
-| Warehouse Destination                                                     | Required steps                                                                                                                                                   |
-| ------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Warehouse Destination      | Required steps    
+| -------------- | ----------- |
 | [Snowflake](/docs/connections/storage/catalog/snowflake/#getting-started) | Follow the steps in [Snowflake Getting Started](/connections/storage/catalog/snowflake/#getting-started) |
 | [Redshift](/docs/connections/storage/catalog/redshift/#getting-started)   | Follow the steps in [Redshift Getting Started](/connections/storage/catalog/redshift/#getting-started) |
-| [BigQuery](/docs/connections/storage/catalog/bigquery/) |                  | Follow the steps in [Azure Synapse Analytics Getting Started](/connections/storage/catalog/azuresqldw/#getting-started)  |
-| [Postgres](/docs/connections/storage/catalog/postgres/)                   | Follow the steps in the [Postgres getting started](/docs/connections/storage/catalog/postgres/) section.                                                      |
-| [Databricks](/docs/unify/profiles-sync/profiles-sync-setup/databricks-profiles-sync/)                   | Follow the steps in the [Databricks for Profiles Sync](/docs/unify/profiles-sync/profiles-sync-setup/databricks-profiles-sync/) guide.                                                      |
+| [BigQuery](/docs/connections/storage/catalog/bigquery/) |                  
+| [Azure](/docs/connections/storage/catalog/azuresqldw/)                    | Follow the steps in [Azure Synapse Analytics Getting Started](/connections/storage/catalog/azuresqldw/#getting-started)  |
+| [Postgres](/docs/connections/storage/catalog/postgres/)                   | Follow the steps in [Postgres getting started](/docs/connections/storage/catalog/postgres/).                                                      |
+| [Databricks](/docs/unify/profiles-sync/profiles-sync-setup/databricks-profiles-sync/)                   | Follow the steps in the [Databricks for Profiles Sync](/docs/unify/profiles-sync/profiles-sync-setup/databricks-profiles-sync/) guide.                  |
 
-Once you’ve finished the required steps for your chosen warehouse, you’re ready to connect your warehouse to Segment. Because you’ll next enter credentials from the warehouse you just created, **leave the warehouse tab open to streamline setup.**
+After you’ve finished the required steps for your chosen warehouse, you’re ready to connect your warehouse to Segment. Because you’ll next enter credentials from the warehouse you just created, **leave the warehouse tab open to streamline setup.**
 
 #### Profiles Sync permissions
 
@@ -71,7 +72,7 @@ To connect your warehouse:
 - Be sure to log in with a user who has read and write permissions so that Segment can write to your database.
 - Segment shows an IP address to allowlist.  Copy it to your warehouse destination.
 2. Enter a schema name to help you identify this space in the warehouse, or use the default name provided. 
-- The schema name can't be changed once the warehouse is connected.
+- The schema name can't be changed after the warehouse is connected.
 4. Enter your warehouse credentials, then select **Test Connection**.
 5. If the connection test succeeds, Segment enables the **Next** button. Select it.
   * If the connection test fails, verify that you’ve correctly entered the warehouse credentials, then try again.
