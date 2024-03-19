@@ -98,7 +98,7 @@ sources:
       - us
   - id: xNpohElkX2
     display_name: Azure
-    hidden: true
+    hidden: false
     slug: azure
     url: connections/sources/catalog/cloud-apps/azure
     regions:
@@ -953,6 +953,15 @@ sources:
     hidden: true
     slug: surveysparrow
     url: connections/sources/catalog/cloud-apps/surveysparrow
+    regions:
+      - us
+    endpoints:
+      - us
+  - id: OyAdFUfMz9
+    display_name: Synap
+    hidden: false
+    slug: synap
+    url: connections/sources/catalog/cloud-apps/synap
     regions:
       - us
     endpoints:
