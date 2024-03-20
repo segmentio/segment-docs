@@ -22,7 +22,7 @@ You can enforce consent stored in warehouse data using one of the following meth
 ### Step 1: Create consent categories in the Segment app
 
 > info "Limited availability of destinations"
-> AWS S3, RETL, and Engage destinations do not enforce consent preferences. 
+> AWS S3 and Engage destinations do not enforce consent preferences. 
 
 1. From the [Segment homepage](https://app.segment.com/goto-my-workspace/){:target="_blank”}, select the Privacy tab and click **Consent Management**.
 2. On the Consent management page, click **Create categories**.
