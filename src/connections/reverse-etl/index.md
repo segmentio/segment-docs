@@ -38,9 +38,10 @@ To add your warehouse as a source:
 > You need to be a user that has both read and write access to the warehouse.
 
 1. Navigate to **Connections > Sources** and select the **Reverse ETL** tab in the Segment app.
-2. Click **Add Reverse ETL source**.
+2. Click **+ Add Reverse ETL source**.
 3. Select the source you want to add. 
 4. Follow the corresponding setup guide for your Reverse ETL source.
+    * [Azure Reverse ETL setup guide](/docs/connections/reverse-etl/reverse-etl-source-setup-guides/azure-setup/)
     * [BigQuery Reverse ETL setup guide](/docs/connections/reverse-etl/reverse-etl-source-setup-guides/bigquery-setup/)
     * [Databricks Reverse ETL setup guide](/docs/connections/reverse-etl/reverse-etl-source-setup-guides/databricks-setup/)
     * [Postgres Reverse ETL setup guide](/docs/connections/reverse-etl/reverse-etl-source-setup-guides/postgres-setup/)
@@ -49,7 +50,7 @@ To add your warehouse as a source:
 5. Add the account information for your source.  
     * For Snowflake users: Learn more about the Snowflake Account ID [here](https://docs.snowflake.com/en/user-guide/admin-account-identifier.html){:target="_blank"}.
 5. Click **Test Connection** to test to see if the connection works.
-6. Click **Create Source** if the test connection is successful.
+6. Click **Add source** if the test connection is successful.
 
 After you add your data warehouse as a source, you can [add a model](#step-2-add-a-model) to your source.
 
@@ -88,9 +89,6 @@ To add your first destination:
 
 ### Step 4: Create mappings
 After you’ve added a destination, you can create mappings from your warehouse to the destination. Mappings enable you to map the data you extract from your warehouse to the fields in your destination.
-
-> info ""
-> When you add new mappings to an existing model, Segment only syncs changes that have transpired since the last sync, not the entire dataset. For a comprehensive data synchronization, Segment recommends that you first recreate the model, then establish a one-to-one mapping with the new model. This ensures that all data syncs effectively.
 
 To create a mapping:
 1. Navigate to **Conections > Destinations** and select the **Reverse ETL** tab.
@@ -151,7 +149,12 @@ You can opt in to receive email alerts regarding notifications for Reverse ETL.
 To subscribe to email alerts: 
 1. Navigate to **Settings > User Preferences**. 
 2. Select **Reverse ETL** in the **Activity Notifications** section.
-3. Click the toggle for **Reverse ETL Sync Failed** to receive notifications when your Reverse ETL sync fails. 
+3. Click the toggle on for the notifications you want to receive. You can choose from:
+
+    Notification | Details
+    ------ | -------
+    Reverse ETL Sync Failed | Set toggle on to receive notification when your Reverse ETL sync fails. 
+    Reverse ETL Sync Partial Success | Set toggle on to receive notification when your Reverse ETL sync is partially successful. 
 
 ### Edit your model
 
@@ -312,6 +315,9 @@ Column JSON size | The maximum size of any single column value. | 128 KiB
 #### Why do my sync results show *No records extracted* when I select *Updated records* after I enable the mapping? 
 It's expected that when you select **Updated records** the records do not change after the first sync. During the first sync, the reverse ETL system calculates a snapshot of all the results and creates records in the `_segment_reverse_etl` schema. All the records are considered as *Added records* instead of *Updated records* at this time. The records can only meet the *Updated records* condition when the underlying values change after the first sync completes.
 
+#### Does Segment use Transport Layer Security (TLS) for the connection between Snowflake and Segment?
+Segment uses the [gosnowflake library](https://pkg.go.dev/github.com/snowflakedb/gosnowflake#pkg-variables){:target="_blank"} to connect with Snowflake, which internally uses TLS for the HTTP transport.
+
 #### Can I be notified when Reverse ETL syncs fail?
 Yes, you can sign up for Reverse ETL sync notifications.
 
@@ -321,3 +327,6 @@ To receive Reverse ETL sync notifications:
 3. Enable the toggle for **Reverse ETL Sync Failed**.
 
 In case of consecutive failures, Segment sends notifications for every sync failure. Segment doesn't send notifications for partial failures.
+
+#### Can I have multiple queries in the Query Builder?
+No. In Reverse ETL, Segment executes queries in a [common table expression](https://cloud.google.com/bigquery/docs/reference/standard-sql/query-syntax#with_clause){:target="_blank”}, which can only bind the results from **one single** subquery. If there are multiple semicolons `;` in the query, they'll be treated as several subqueries (even if the second part is only an inline comment) and cause syntax errors.

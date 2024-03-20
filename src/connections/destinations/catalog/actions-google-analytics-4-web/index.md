@@ -15,9 +15,8 @@ versions:
 
 When you have Segment installed, you can use your existing tracking implementation to fulfill your data collection needs with Google Analytics 4. When you enable the Google Analytics 4 Web destination, Segment loads the [gtag.js library](https://support.google.com/analytics/answer/9310895?hl=en#zippy=%2Cin-this-article){:target="_blank"} for you. To avoid duplicate data, remove the native gtag.js script from your page.
 
-> info "Consent Mode"
-> Segment is currently building Consent Mode for all affected Google destinations. This will be available before March 6, 2024.
-
+> info "Consent mode"
+> Google enforced consent on March 6, 2024 for European Economic Area (EEA) users. Learn more about [consent mode](/docs/connections/destinations/catalog/actions-google-analytics-4-web/#consent-mode) and how to set it up. 
 
 ## Getting started
 
@@ -65,7 +64,63 @@ The automatically collected and enhanced measurement events include parameters b
 
 ### Conversion events
 
-Some of Segment's prebuilt [Available Actions](https://segment-docs.netlify.app/docs/connections/destinations/catalog/actions-google-analytics-4-web/#available-actions) which map to Google's recommended events are automatically marked as a conversion in your Analytics dashboard. For example, when you add a "Order Completed" event, it will show up in your Analytics dashboard as "purchase" with the **Mark as conversion** toggle toggled on by default. However, for other events, such as "Add to Cart", you will need to manually toggle the **Mark as conversion** setting on in your Analytics dashboard. If you don't mark the event as a conversion, it will not show up as a conversion in your built-in reports. You can read more [about conversion events](https://support.google.com/analytics/answer/9267568?sjid=1275909514202748631-NA){:target="_blank"} in Google's docs. 
+Some of Segment's prebuilt [Available Actions](/docs/connections/destinations/catalog/actions-google-analytics-4-web/#available-actions) which map to Google's recommended events are automatically marked as a conversion in your Analytics dashboard. For example, when you add a "Order Completed" event, it will show up in your Analytics dashboard as "purchase" with the **Mark as conversion** toggle toggled on by default. However, for other events, such as "Add to Cart", you will need to manually toggle the **Mark as conversion** setting on in your Analytics dashboard. If you don't mark the event as a conversion, it will not show up as a conversion in your built-in reports. You can read more [about conversion events](https://support.google.com/analytics/answer/9267568?sjid=1275909514202748631-NA){:target="_blank"} in Google's docs. 
+
+## Consent mode 
+[Consent mode](https://support.google.com/analytics/answer/9976101?hl=en){:target="_blank"} is a feature provided by Google in the context of its products, particularly the Gtag library and Google Analytics. As of March 6, 2024, Google announced that consent mode must function for European Economic Area (EEA) users, otherwise data from EEA users won't process. 
+
+Consent mode in the Gtag library and Google Analytics is designed to help website owners comply with privacy regulations, such as the General Data Protection Regulation (GDPR) in the European Union. It allows website owners to adjust how these tools use and collect data based on user consent.
+
+With consent mode, you can configure your website to dynamically adjust the tracking behavior of the Gtag library and Google Analytics based on the user's consent status. If a user provides consent to data processing, both the Gtag library and Google Analytics can collect and use that data for analysis. If a user doesn't provide consent, both tools limit data collection to essential functions, helping businesses respect user privacy preferences. 
+
+Consent mode may involve updates to your sources outside of Segment, such as incorporating a consent management system for consent functionality.
+
+See [set up consent mode on websites](https://developers.google.com/tag-platform/security/guides/consent?consentmode=advanced#update_consent_state){:target="_blank"} for more information. 
+
+### Set up consent mode
+
+To enable consent mode for your Google Analytics 4 Web destination: 
+1. Navigate to **Connections > Destinations** and select your Google Analytics 4 Web** destination. 
+2. Go to the **Settings** tab of the destination.
+3. Click the toggle on for **Enable Consent Mode**. 
+4. Set the following fields with these values:
+
+    Field | Value
+    ----- | ------
+    Default Ad Storage Consent State | Granted
+    Default Analytics Storage Consent State | Granted
+    Ad User Data Consent State | Granted
+    Ad Personalization Consent State | Granted
+
+5. Use your consent management platform to prompt the visitor. Ask the visitor to grant or deny consent for the applicable types.
+6. Pass the updated state as properties in the `page()` event after the next page load if you decide to change the consent defaults. For example,
+
+    ```
+    analytics.page('Consent Update', {
+        'Ads Storage Consent State': 'false',
+        'Analytics Storage Consent State': 'false'
+    });
+    ```
+7. As soon as the page loads and the set configuration fires to the Google Analytics SDK, Segment issues a consent mode update command. Map the properties you defined to collect consent state changes to the Set Configurations Fields mapping. You can choose to do this from 1 of 2 options in steps 4 and 5. 
+        1. Navigate to **Connections > Destinations** and select your Google Analytics 4 Web destination. 
+        2. Go to the **mappings** tab of the destination. 
+        3. Select the mapping you want to edit.'
+        4. *(Option 1)* Under the **Select mappings** section, select `Granted` for these fields:
+            * Ads Storage Consent State
+            * Analytics Storage Consent State
+            * Ad User Data Consent State
+            * Ad Personalization Consent State
+            You can manually select `Granted` or `Denied` from the dropdown menu for Advanced consent mode settings, and type in `granted` or `denied` for basic consent mode settings.
+        5. *(Option 2)* Under the **Select mappings** section, create an event variable to directly grab the value from the payload (for example, `properties.adStorageConsentState`). Ensure it translates to `granted` or `denied`. You can use an insert function to translate to `granted` or `denied`. Use the replace function if it's a string. Do this for these fields:
+            * Ads Storage Consent State
+            * Analytics Storage Consent State
+            * Ad User Data Consent State
+            * Ad Personalization Consent State
+
+When these properties are available, they send to the `update` command. 
+
+If you have any questions setting up consent mode, reach out to [friends@segment.com](mailto:friends@segment.com).
+
 
 {% include components/actions-fields.html settings="true"%}
 
@@ -94,6 +149,8 @@ For data to be sent downstream to Google Analytics, all of the following conditi
 1. The **Set Configuration Fields** mapping must be configured and enabled in your mappings. This mapping is required for data to be sent downstream because it sets configuration to Measurement ID and establishes data flow using the `config` command.
 2. The **Page Views** setting must be toggled on. When the **Page Views** setting is toggled on, a `page_view` event will be sent to Google Analytics 4 Web. If you're manually sending `page_view` events instead, see below for additional settings needed in your Analytics workspace. 
 3. Ensure that you're calling `analytics.page()` on page load. Analytics.js requires an initial Page call to send data to Google Analytics 4 Web. The Segment snippet includes this initial call by default.
+
+In addition to the steps above, ensure that you have a mapping configured for each event you want to send to GA4. To add a new mapping, click on the **+ New Mapping** button in the top right-hand side of the destination mappings page and choose the event you want to send to GA4. For more information on which event mapping to choose, refer to Segment's [Recommended Events](/docs/connections/destinations/catalog/actions-google-analytics-4-web/#recommended-events) or [Custom Events](/docs/connections/destinations/catalog/actions-google-analytics-4-web/#custom-events) documentation. 
 
 ### Duplicate `page_view` events in GA4
 

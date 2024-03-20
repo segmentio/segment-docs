@@ -9,11 +9,7 @@ id: 5a6b50f1c900fa00011858fd
 
 The Google Ads Remarketing Lists destination is one of Segment's most popular Engage List destinations. It has a variety of use cases related to exclusion, acquisition (using Similar Audience), remarketing, and more.
 
-> info "Consent Mode"
-> Segment is currently building Consent Mode for all affected Google destinations. This will be available before March 6, 2024.
-
 This destination can send audiences created in [Engage](/docs/engage/) to Google Ads as a [Customer List](https://support.google.com/google-ads/answer/6276125){:target="_blank"}. Once you set this destination up, Segment sends an initial user list of users to the [Google Ads API](https://developers.google.com/google-ads/api/docs/remarketing/overview){:target="_blank"}. As users move in and out of the audience, Segment automatically updates the list in Google every hour. This allows you to run advertising campaigns without having manually update the list of users to target in your Google Ads campaigns.
-
 
 You can send either an email address or mobile device ID (IDFA) from Engage to Google as custom matchers. You can set an email address on the user profile by including `email` as a trait on an [`identify` call](/docs/connections/spec/identify/), as a property on a [`track` call](/docs/connections/spec/track/), or as an [external id](/docs/unify/identity-resolution/externalids/) for the user. If you use Segment’s mobile SDKs to collect events from a mobile app, the user’s IDFA is automatically captured. If you don't use Segment’s mobile SDKs, you can set the user’s IDFA by setting it within `context.device.advertisingId`. You are also required to collect `context.device.type` and `context.device.adTrackingEnabled` on the event payload. Additionally, ensure `android.idfa` and `ios.idfa` are enabled as identifiers in your [Identity Resolution settings](/docs/unify/identity-resolution/identity-resolution-settings/) in Engage.
 
@@ -23,6 +19,9 @@ These audience lists can be used to serve content on Google Search, YouTube, and
 
 > info ""
 > You must have access to Engage as part of your Segment plan to use this destination. [Contact Segment's sales team](https://segment.com/demo/){:target="_blank”} to try this out.
+
+> info "Consent mode"
+> Google enforced consent on March 6, 2024 for European Economic Area (EEA) users. Learn more about [consent mode](/docs/connections/destinations/catalog/adwords-remarketing-lists/#consent-mode) and how to set it up. 
 
 ## Details
 
@@ -106,6 +105,29 @@ In Google Ads, go to **Tools & Settings** > **Shared Library** > **Audience mana
 
 > info ""
 > **Note**: Google Ads can take 24+ hours to fully process initial audience uploads before they can be used for a campaign. If the audience is still processing, the list status appears as “Populating”.
+
+## Consent mode
+[Consent mode](https://support.google.com/analytics/answer/9976101?hl=en){:target="_blank"} is a feature provided by Google in the context of its products, particularly the Gtag library and Google Analytics. As of March 6, 2024, Google announced that consent mode must function for European Economic Area (EEA) users, otherwise data from EEA users won't process. 
+
+Consent mode in the Gtag library and Google Analytics is designed to help website owners comply with privacy regulations, such as the General Data Protection Regulation (GDPR) in the European Union. It allows website owners to adjust how these tools use and collect data based on user consent.
+
+With consent mode, you can configure your website to dynamically adjust the tracking behavior of the Gtag library and Google Analytics based on the user's consent status. If a user provides consent to data processing, both the Gtag library and Google Analytics can collect and use that data for analysis. If a user doesn't provide consent, both tools limit data collection to essential functions, helping businesses respect user privacy preferences.
+
+Consent mode may involve updates to your sources outside of Segment, such as incorporating a consent management system for consent functionality.
+
+### Set up consent mode
+
+To enable consent mode for Google Adwords Remarketing Lists destination:
+1. Navigate to **Connections > Destinations** and select your Google Ads Remarketing Lists destination. 
+2. Go to the **Settings** tab of the destination.
+3. Under the **Connection Settings** section, select **Ad Personalization**.
+4. Select `GRANTED` in the dropdown and click **Save**. 
+5. Under the **Connection Settings** section, select **Ad User Data**. 
+6. Select `GRANTED` in the dropdown and click **Save**. 
+
+The consent fields apply universally to all audiences linked to the instance. The consent fields are intended for application across all audiences. If it's not intended for all audiences, you should create a new instance of the destination and associated non-consent audiences with the new instance. For more information, see [FAQ about the EU user consent policy for Customer Match upload partners](https://support.google.com/google-ads/answer/14310715?hl=en){:target="_blank"}. 
+
+If you have any questions setting up consent mode, reach out to [friends@segment.com](mailto:friends@segment.com).
 
 ## Troubleshooting
 

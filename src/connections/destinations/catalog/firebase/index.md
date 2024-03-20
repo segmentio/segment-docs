@@ -14,6 +14,9 @@ Segment's Firebase destination code is open source and available on GitHub. You 
 - [Kotlin](https://github.com/segment-integrations/analytics-kotlin-firebase){:target="_blank"}
 - [Swift](https://github.com/segment-integrations/analytics-swift-firebase){:target="_blank"} 
 
+> info "Consent mode"
+> Google enforced consent on March 6, 2024 for European Economic Area (EEA) users. Learn more about [consent mode](/docs/connections/destinations/catalog/firebase/#consent-mode) and how to set it up. 
+
 ## Getting Started on Android
 
 To start sending data to Firebase Analytics from your Android project, you'll need to follow a few simple steps:
@@ -105,6 +108,27 @@ By default, Segment bundles only `Firebase/Core` which is [Firebase's mobile ana
    ```
 
 By default, Segment only bundles `Firebase/Core` which is [Firebase's Analytics offering](https://firebase.google.com/docs/analytics/){:target="_blank"}. You can see the other available [Firebase pods and features here](https://firebase.google.com/docs/ios/setup){:target="_blank"}.
+
+## Consent mode
+[Consent mode](https://support.google.com/analytics/answer/9976101?hl=en){:target="_blank"} is a feature provided by Google in the context of its products, particularly the Gtag library and Google Analytics. As of March 6, 2024, Google announced that consent mode must function for European Economic Area (EEA) users, otherwise data from EEA users won't process. 
+
+Consent mode in the Gtag library and Google Analytics is designed to help website owners comply with privacy regulations, such as the General Data Protection Regulation (GDPR) in the European Union. It allows website owners to adjust how these tools use and collect data based on user consent.
+
+With consent mode, you can configure your website to dynamically adjust the tracking behavior of the Gtag library and Google Analytics based on the user's consent status. If a user provides consent to data processing, both the Gtag library and Google Analytics can collect and use that data for analysis. If a user doesn't provide consent, both tools limit data collection to essential functions, helping businesses respect user privacy preferences.
+
+Consent mode may involve updates to your sources outside of Segment, such as incorporating a consent management system for consent functionality.
+
+To set up consent mode for Google Firebase:
+1. Update your app's SDK to a version that supports consent mode v2. 
+  * Android apps must use F[irebase Android Analytics SDK version 21.5.0 or later](https://firebase.google.com/support/release-notes/android#analytics_v21-5-0){:target="_blank"}.
+  * iOS apps must use [Firebase Apple SDK version 10.17.0 or later](https://firebase.google.com/support/release-notes/ios#analytics){:target="_blank"}.
+
+2. Set up consent mode for your app if you haven't already set it up.
+  * Android: [Set up consent mode for Android apps](https://developers.google.com/tag-platform/security/guides/app-consent?platform=android&consentmode=advanced){:target="_blank"}
+  * iOS: [Set up consent mode for iOS apps](https://developers.google.com/tag-platform/security/guides/app-consent?platform=ios&consentmode=advanced){:target="_blank"} 
+3. If you already set up consent mode for your app, upgrade it to consent mode v2.
+  * Android: [Upgrade to consent mode v2 for Android apps](https://developers.google.com/tag-platform/security/guides/app-consent?platform=android&consentmode=advanced#upgrade-consent-v2){:target="_blank"} 
+  * iOS: [Upgrade to consent mode v2 for iOS apps](https://developers.google.com/tag-platform/security/guides/app-consent?platform=ios&consentmode=advanced#upgrade-consent-v2){:target="_blank"} 
 
 ## Setting up Firebase with Analytics-React-Native
 

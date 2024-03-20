@@ -96,6 +96,15 @@ sources:
       - us
     endpoints:
       - us
+  - id: xNpohElkX2
+    display_name: Azure
+    hidden: false
+    slug: azure
+    url: connections/sources/catalog/cloud-apps/azure
+    regions:
+      - us
+    endpoints:
+      - us
   - id: ErcsNGMEwt
     display_name: Beamer
     hidden: false
@@ -612,11 +621,10 @@ sources:
   - id: RxxzG3Dyva
     display_name: Mixpanel Cohorts
     hidden: false
-    slug: mixpanel-cohorts
-    url: connections/sources/catalog/cloud-apps/mixpanel-cohorts
+    slug: mixpanel-cohorts-source
+    url: connections/sources/catalog/cloud-apps/mixpanel-cohorts-source
     regions:
       - us
-      - eu
     endpoints:
       - us
   - id: kpDbTUR9oD
@@ -945,6 +953,15 @@ sources:
     hidden: true
     slug: surveysparrow
     url: connections/sources/catalog/cloud-apps/surveysparrow
+    regions:
+      - us
+    endpoints:
+      - us
+  - id: OyAdFUfMz9
+    display_name: Synap
+    hidden: false
+    slug: synap
+    url: connections/sources/catalog/cloud-apps/synap
     regions:
       - us
     endpoints:
