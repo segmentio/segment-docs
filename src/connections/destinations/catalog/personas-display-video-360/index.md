@@ -4,6 +4,17 @@ strat: google
 hide-settings: true
 id: 5d4dd5b989eda01a09b5cdb1
 ---
+
+> warning "Deprecation Notice"
+> Due to Google retiring certain APIs on March 6, 2024, Segment is deprecating this destination. In February 2024, Segment will create an instance of the [Display and Video (Actions)](/docs/connections/destinations/catalog/actions-display-video-360/) destination for each version of the Personas  Google  Display and Video 360 classic destination in your workspace. 
+> 
+> Settings and configurations will be migrated automatically, but you must take additional action to ensure the destination is properly functioning. For more information, see [Migrate from Personas Google Display & Video 360 Destination ](/docs/connections/destinations/catalog/actions-display-video-360/#migrate-from-personas-google-display-&-video-360-destination)
+> 
+> Segment is disabling all existing Personas Display and Video 360 destinations. You can still access your existing configuration, but please refrain from enabling the destination, as it is set to be deprecated. You will no longer be able to create new instances of Personas Display and Video 360. Please check out [Display and Video (Actions)](/docs/connections/destinations/catalog/actions-display-video-360/) to set up a new instance of Google Display and Video 360. 
+>
+> For questions or issues contact [friends@segment.com](mailto:friends@segment.com).
+
+
 Google's [Display & Video (DV360)](https://marketingplatform.google.com/about/display-video-360/){:target="_blank"} service is an end-to-end campaign management tool that enables enterprise customers to plan, measure, and run display and video advertisements.
 
 > info ""
@@ -18,6 +29,9 @@ Segment's integration with DV360 enables Segment customers to sync audiences cre
 
 > info ""
 > **Note**: Since the release of `analytics-ios` version 4, Segment no longer collects IDFA automatically. To collect and pass IDFA to your DV360 integration, follow the steps for Ad Tracking and IDFA in the [Analytics-iOS mobile source](/docs/connections/sources/catalog/libraries/mobile/ios#ad-tracking-and-idfa) documentation.
+
+> info "Consent mode"
+> Google enforced consent on March 6, 2024 for European Economic Area (EEA) users. Learn more about [consent mode](/docs/connections/destinations/catalog/personas-display-video-360/#consent-mode) and how to set it up. 
 
 ## Details
  {% comment %}
@@ -227,6 +241,15 @@ After you complete the set up process, allow up to 24 hours for Google to create
 
 Extra information from the API (settings, connection modes, etc.) are automatically pulled in here.
 {% include content/sync-frequency-note.md %}
+
+## Consent mode
+[Consent mode](https://support.google.com/analytics/answer/9976101?hl=en){:target="_blank"} is a feature provided by Google in the context of its products, particularly the Gtag library and Google Analytics. As of March 6, 2024, Google announced that consent mode must function for European Economic Area (EEA) users, otherwise data from EEA users won't process. 
+
+Consent mode in the Gtag library and Google Analytics is designed to help website owners comply with privacy regulations, such as the General Data Protection Regulation (GDPR) in the European Union. It allows website owners to adjust how these tools use and collect data based on user consent.
+
+With consent mode, you can configure your website to dynamically adjust the tracking behavior of the Gtag library and Google Analytics based on the user's consent status. If a user provides consent to data processing, both the Gtag library and Google Analytics can collect and use that data for analysis. If a user doesn't provide consent, both tools limit data collection to essential functions, helping businesses respect user privacy preferences.
+
+Segment automatically sends consent as `TRUE` for this destination.  Segment uses the [bulk-uploader workflow](https://developers.google.com/authorized-buyers/rtb/bulk-uploader#workflow){:target="_blank"} which requires consented data. Ensure all audiences and journeys are connected to consented audiences.  
 
 ## FAQ
 ### What is Segment's relationship with Google DV360 and is the data that Segment sends considered to be First or Third party?

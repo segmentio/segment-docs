@@ -7,8 +7,6 @@ id: 5ddd4f68758f3b16e86a6332
 
 This destination is maintained by Richpanel. For any issues with the destination, [contact the Richpanel Support team](mailto:support@richpanel.com).
 
-{% include content/beta-note.md %}
-
 ## Getting Started
 
 

@@ -7,7 +7,6 @@ id: 5c8ad1622b2a130001a7664a
 
 This destination is maintained by Tamber. For any issues with the destination, [contact the Tambler Support team](mailto:support@tamber.com).
 
-{% include content/beta-note.md %}
 
 ## Getting Started
 

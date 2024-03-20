@@ -7,8 +7,6 @@ id: 5c6db002edda600001b2af8b
 
 This destination is maintained by Blendo. For any issues with the destination, [contact the Blendo Support team](mailto:help@blendo.co).
 
-{% include content/beta-note.md %}
-
 ## Getting Started
 
 

@@ -11,7 +11,6 @@ This destination is maintained by Beamer. For any issues with the destination, [
 > success ""
 > **Good to know**: This page is about the Beamer Segment destination, which receives data from Segment. There's also a page about the [Beamer Segment source](/docs/connections/sources/catalog/cloud-apps/beamer/), which sends data _to_ Segment!
 
-{% include content/beta-note.md %}
 
 
 ## Getting Started

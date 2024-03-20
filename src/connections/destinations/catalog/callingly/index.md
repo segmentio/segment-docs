@@ -7,8 +7,6 @@ id: 5c953ce33407d0000104d495
 
 This destination is maintained by Callingly. For any issues with the destination, [contact the Callingly Support team](mailto:support@callingly.com).
 
-{% include content/beta-note.md %}
-
 
 ## Getting Started
 

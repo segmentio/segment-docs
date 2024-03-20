@@ -14,6 +14,9 @@ id: 54521fd525e721e32a72ee92
 With Segment, you can use your events to fire a Google Ads conversion pixel from your website **in client-side JavaScript.**
 You can also trigger Google Ads (Classic) conversion from your mobile app using the **Server to Server** destination, so you don't need to include the SDK in your app. The server to server connection requires mobile device specific details to forward the events to Google Ads (Classic). Google Ads (Classic) **does not work with any server-side libraries**. Make sure when you're setting up your Google Ads (Classic) conversions that you choose the appropriate tracking method.
 
+> info "Consent mode"
+> Google enforced consent on March 6, 2024 for European Economic Area (EEA) users. Google Ads Classic won’t be updated to support Consent Mode due to its use of a Google legacy tag that, while still functional, is not actively maintained by Google and lacks support for privacy-durable solutions like consent management. Segment recommends that you migrate to the [Google Ads (Gtag) destination](/docs/connections/destinations/catalog/google-adwords-new/) for web tracking and to the [Google Firebase destination](/docs/connections/destinations/catalog/firebase/) for mobile tracking as soon as possible.
+
 ### Configure the Google Ads (Classic) destination
 
 1. From the Segment Destinations Catalog find and select Google Ads (Classic).

@@ -96,7 +96,7 @@ Use this approach if you want to separate tracking events completed on a user's 
 
 For this option to work best, the same `external_id` needs to be passed from the browser and the server. To achieve this, go to your Facebook Pixel destination settings in Segment and enable the **Enable Advanced Matching** and **Use User ID or Anonymous ID as External ID** settings. By default the Facebook Conversions API destination uses the `userId` (or `anonymousId` if not present) to set the `external_id`, so when you set up Facebook Pixel to use the same settings, Facebook can then match the users.
 
-You can also send [user traits in the context object of the track events](#default-mappings-to-facebook-properties)to increase the match rate for events from a server source. Collect other fields from the browser, like `userAgent`, `ip` address, and [Facebook's parameters (fbp, fbc)](https://developers.facebook.com/docs/marketing-api/conversions-api/parameters/fbp-and-fbc){:target="_blank"}, pass them to the server, and manually add them to the events.
+You can also send [user traits in the context object of the track events](#default-mappings-to-facebook-properties) to increase the match rate for events from a server source. Collect other fields from the browser, like `userAgent`, `ip` address, and [Facebook's parameters (fbp, fbc)](https://developers.facebook.com/docs/marketing-api/conversions-api/parameters/fbp-and-fbc){:target="_blank"}, pass them to the server, and manually add them to the events.
 
 #### Deduplication considerations
 

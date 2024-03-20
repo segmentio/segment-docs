@@ -18,8 +18,6 @@ This destination is maintained by Ambee. For any issues with the
 destination, contact Ambee's [Support
 Team](https://support.getambee.com/portal/en/home){:target="_blank"}.
 
-{% include content/ajs-upgrade.md %}
-
 ## Getting started
 
 

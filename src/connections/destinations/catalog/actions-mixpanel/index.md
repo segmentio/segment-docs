@@ -118,8 +118,6 @@ The group id that Mixpanel will use is `12345`.
 
 ## Migration from Mixpanel Classic
 
-{% include content/ajs-upgrade.md %}
-
 Assuming you're already using Segment Cloud-mode, the Mixpanel (Actions) destination is expected to have no breaking changes when upgrading. With the exception of a few new properties added to your events in the new Actions destination, there should be no difference in the data received in Mixpanel when using either of the Mixpanel destinations.
 
 If you want to confirm, you can configure the new destination to point to a different Mixpanel project and connect it to the same source(s) as the Classic destination and manually verify before fully switching over.
@@ -134,4 +132,9 @@ If you want to confirm, you can configure the new destination to point to a diff
 ### Track events are not attributed to Mixpanel Groups
 
 If the Mixpanel (Actions) destination uses $group_id as the group key, ensure that the mappings handling your `track` events have the field for **Group ID** mapped to a valid value. By default, this field maps to the event variable `context.groupId`.
+
+To send Track events with a custom Group Key, include the key as a property of Track events. For example:
+```js
+analytics.track('Example Event', { custom_group_key : 'group1' });
+```
 

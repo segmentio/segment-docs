@@ -82,3 +82,6 @@ When you successfully package a plugin in device-mode, you will no longer see th
 
 ## What is the instanceId set in context?
 The instanceId was introduced in [V 1.10.1](https://github.com/segmentio/analytics-kotlin/releases/tag/1.10.1){:target="_blank"} and correlates events to a particular instance of the client in a scenario when you might have multiple instances on a single app.
+
+## If I use a proxy, what Segment endpoint should I send to?
+If you proxy your events through the `apiHost` config option, you must forward the batched events to `https://api.segment.io/v1/b`. The `https://api.segment.io/v1/batch` endpoint is reserved for events arriving from server side sending, and proxying to that endpoint for your mobile events may result in unexpected behavior.
