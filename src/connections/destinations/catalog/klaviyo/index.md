@@ -42,7 +42,7 @@ analytics.identify({
 When you call `identify` on analytics.js, Segment calls Klaviyo's `identify` with the `traits` object. Segment then augments the `traits` object to have `traits.$id` be the `userId` since Klaviyo takes the user ID on the `traits` object itself.
 
 > info ""
-> When you send data to Klaviyo using `analytics.js`, an initial `page` call is required. By default, this is already added in your [Segment snippet](/docs/connections/sources/catalog/libraries/website/javascript/quickstart/#step-2-copy-the-segment-snippet).
+> When you send data to Klaviyo using `analytics.js`, an initial Page call is required. By default, this is already added in your [Segment snippet](/docs/connections/sources/catalog/libraries/website/javascript/quickstart/#step-2-copy-the-segment-snippet). In addition to the Page call, you must make an Identify call on each subdomain where you want to track users. Klaviyo sets cookies on the subdomain rather than the top-level domain, making this extra Identify call necessary for tracking.
 
 The following Segment spec'd traits map to Klaviyo [special people properties](http://www.klaviyo.com/docs){:target="_blank"}:
 
@@ -149,7 +149,7 @@ If you include `properties.revenue` in a track event, Segment maps it to Klaviyo
 
 ### Server-side Track
 
-When you call make a Track call from one of Segment's mobile or server-side libraries, Segment keys the user with the `userId` and also provides the Klaviyo `$email` `customer_property` if your `userId` is an email, or you provide `email` as one of your event `properties`.
+When you make a Track call from one of Segment's mobile or server-side libraries, Segment keys the user with the `userId` and also provides the Klaviyo `$email` `customer_property` if your `userId` is an email, or you provide `email` as one of your event `properties`.
 
 Segment also maps the following Segment spec'd properties to Klaviyo's [special people properties](https://developers.klaviyo.com/en/docs/javascript_api#identify-people){:target="_blank"}:.
 
@@ -231,6 +231,6 @@ For user-property destinations, Segment sends an [Identify](/docs/connections/sp
 > warning ""
 > For the Klaviyo Destination, avoid using a `list_id` in the Engage Destinations settings.
 
-When you first create an audience, Engage sends an Identify call for every user in that audience. Later audience syncs send updates for users whose membership has changed since the last sync. These syncs allow you to create Klaviyo segments from properties Engage sends to Klaviyo as long as the property's value is `true`. Memberships update continuously as user profiles fall in and out of the eligibility criteria for the Engage audience.
+When you first create an audience, Engage sends an Identify call for every user in that audience. Audience syncs send updates for users whose membership has changed since the last sync. These syncs allow you to create Klaviyo segments from properties Engage sends to Klaviyo as long as the property's value is `true`. Memberships update continuously as user profiles fall in and out of the eligibility criteria for the Engage audience. Klaviyo segments aren't automatically created and need to be configured by your team in order to see those audience segments. You can build Klaviyo segments based on the trait key that corresponds to the audience or computed trait which is being included in those user's events sent to Klaviyo.
 
 If Segment detects a `list_id` in the Klaviyo Destination settings, however, it adds users to the Klaviyo list without removing them when they no longer qualify for list membership. As a result, Segment recommends leaving the `list_id` field empty when you set up the Klaviyo Destination. 

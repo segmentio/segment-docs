@@ -1,8 +1,6 @@
 ---
 title: Listrak (Actions) Destination
 id: 64b6a221baf168a989be641a
-private: true
-hidden: true
 ---
 
 {% include content/plan-grid.md name="actions" %}
@@ -19,10 +17,10 @@ Listrak maintains this destination. For any issues with the destination, [contac
 To add the Listrak Actions destination: 
 
 1. Set up the [Listrak Source](/docs/connections/sources/catalog/cloud-apps/listrak/) first before connecting to the Listrak Actions Destination. Note the API client ID and client secret after creating the integration in Listrak.
-2. From your Segment workspace, go to **Connections > Catalog** and click **Destinations**.
-3. Search for **Listrak (Actions)** in the Destinations Catalog and select the destination.
+2. From your Segment workspace, go to **Connections > Catalog** and select the **Destinations** tab.
+3. Search for **Listrak (Actions)** in the Catalog and select the destination.
 4. Click **Add destination**.
-5. Select an existing Source to connect to Listrak (Actions). If you are connecting the destination to an Engage Audience, select the Engage space. Click **Confirm Source**.
+5. On the **Select data source** step, select your desired source. The source should not be a Listrak source. If you want to sync an Engage Audience, select the Engage space as the source. Click **Confirm Source**.
 6. On the **Settings** tab, name your destination. For example, `Listrak`.
 7. In the same section of the **Settings** tab, enter your Listrak API client ID and client secret.
 8. Click **Save Changes**.
@@ -44,17 +42,18 @@ To sync an Engage audience with your Listrak (Actions) destination:
 9. In the **Mappings** tab, click **New Mapping** and select **Update Email Contact Profile Fields**.
 10. Under **Select events to map and send**, select **Track** for the **Event Type**.  
 11. Click **Add Condition** and add this condition: **Event Name** is `Audience Entered`.
-12. Under **Select mappings**, enter the list ID and map the email address if `context.traits.email` is not desired.
-13. Still under **Select mappings**, in the section for mapping the `Profile Field Values`, enter the profile field ID for the `Enter Key Name` textbox on the right and `on` in the textbox for its value to the left.
-14. Repeat steps 9 through 13 using `Audience Exited` instead of `Audience Entered` in step 11 and `off` instead of `on` in step 13.
-15. **Enable** both mappings.
-16. Go to the **Settings** tab and **Enable** the destination.
-17. Select the Engage space and navigate to **Engage > Audiences**. Select the source audience to send to the Listrak destination.
-18. Click **Add Destination** and select the Listrak Audience destination. 
-19. In the settings that appear on the right-hand side, toggle the **Send Track** option on and disable **Send Identify**.
-20. Click **Save**.
-21. To filter email sends in Listrak using the new audience profile field, see this [help article](https://help.listrak.com/en/articles/3951597-introduction-to-building-filter-2-0-segments){:target="_blank”}.
-22. If you want to sync another audience, repeat steps 1 through 20.
+12. Click **Add Condition** and add this condition: **Event Property** `audience_key` is `my_audience` (where `my_audience` is the Audience Key found on the Audience settings page).
+13. Under **Select mappings**, enter the list ID and map the email address if `context.traits.email` is not desired.
+14. Under **Select mappings**, in the section for mapping the `Profile Field Values`, enter the profile field ID for the `Enter Key Name` textbox on the right and `on` in the textbox for its value to the left. Click **Save**.
+15. Repeat steps 9 through 14 using `Audience Exited` instead of `Audience Entered` in step 11 and `off` instead of `on` in step 14.
+16. **Enable** both mappings.
+17. Go to the **Settings** tab for the destination and **Enable** the destination. Click **Save Changes**.
+18. Select the Engage space and navigate to **Engage > Audiences**. Select the source audience to send to the Listrak destination.
+19. Click **Add Destination** and select the Listrak Audience destination. 
+20. In the settings that appear on the right-hand side, toggle the **Send Track** option on and disable **Send Identify**.
+21. Click **Save**.
+22. To filter email sends in Listrak using the new audience profile field, see the [help article](https://help.listrak.com/en/articles/3951597-introduction-to-building-filter-2-0-segments){:target="_blank”}.
+23. Repeat steps 1 through 21, if you want to sync another audience.
 
 {% include components/actions-fields.html %}
 

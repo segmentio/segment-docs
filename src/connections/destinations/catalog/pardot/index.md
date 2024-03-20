@@ -38,7 +38,7 @@ To connect to the Pardot API, Segment requires that you authenticate your accoun
 
 There are currently two active versions of the Pardot platform, version 3 and version 4. The major change in version 4 is the new ability to create multiple prospects in Pardot with the same email address.
 
-Previously, this was not possible. Email was used by Pardot as a distinct identifier. In version 4 however, in order to update an *existing* prospect, you must provide either the Pardot ID for a given user OR the Salesforce FID. If one of these values is not provided in a request, Pardot will create a new prospect. More information is available on their [website](http://developer.pardot.com/kb/api-version-4/).
+Previously, this was not possible. Email was used by Pardot as a distinct identifier. In version 4 however, in order to update an *existing* prospect, you must provide either the Pardot ID for a given user OR the Salesforce FID. If one of these values is not provided in a request, Pardot will create a new prospect. More information is available on their [website](http://developer.pardot.com/kb/api-version-4/){:target="_blank"}.
 
 The Segment Pardot destination provides two different options to support this new functionality. Read on to learn more.
 
@@ -61,7 +61,7 @@ analytics.identify('YOUR_DATABASE_USER_ID', {
 });
 ```
 
-Find other accepted traits in [Pardot's Prospect field reference](https://developer.pardot.com/kb/object-field-references/#prospect).
+Find other accepted traits in [Pardot's Prospect field reference](https://developer.pardot.com/kb/object-field-references/#prospect){:target="_blank"}.
 
 You can provide custom fields, but they won't be updated or visible until you create them in the Pardot user interface by going to **Admin > Configure Fields > Prospect Fields**.
 
@@ -120,7 +120,7 @@ If possible, we recommend you explore bulk updating all existing users to ensure
 
 ### Client Side
 
-On the client-side browser Segment loads Pardot's JavaScript snippet to enable [anonymous visitor tracking](http://www.pardot.com/products/marketing-automation/benefits/website-visitor-id-and-anonymous-visitor-tracking/).
+On the client-side browser Segment loads Pardot's JavaScript snippet to enable [anonymous visitor tracking](http://www.pardot.com/products/marketing-automation/benefits/website-visitor-id-and-anonymous-visitor-tracking/){:target="_blank"}.
 
 ### Troubleshooting
 

@@ -6,7 +6,9 @@ strat: ajs
 
 Custom domains allow you to proxy Analytics.js and proxy all tracking event requests through your domain.
 
-## Custom Proxy Prerequisites
+You cannot use custom proxy setup for Analytics.js CDN or Tracking API with device-mode destinations because it requires the destination's native scripts are loaded onto the client, and the requests are sent directly to the destination. 
+
+## Custom Proxy prerequisites
 
 To set up a custom domain, you need:
 
@@ -31,9 +33,9 @@ You need to set up two important parts, regardless of the CDN provider you use:
 > info ""
 > Segment only has the ability to enable the proxy setting for the Web (Analytics.js) source. Details for mobile source proxies are in the [Analytics for iOS](/docs/connections/sources/catalog/libraries/mobile/ios/#proxy-https-calls) and [Analytics for Android](/docs/connections/sources/catalog/libraries/mobile/android/#proxying-http-calls) documentation.  It is not currently possible to set up a proxy for server sources using the Segment UI.
 
-## Custom Proxy Set up
+## Custom Proxy setup
 
-There are 2 options you can choose from when you set up your custom domain proxy.
+There are two options you can choose from when you set up your custom domain proxy.
 1. [CloudFront](#custom-proxy-cloudfront)
 2. [Custom CDN or API proxy](#custom-cdn--api-proxy)
 
@@ -44,12 +46,10 @@ Hi,
 
 This is {person} from {company}. I would like to configure a proxy for the following source(s):
 
-* Source URL with Source ID
-* Source URL with Source ID
+**Source URL**: link to the source in your Segment workspace (for example: https://app.segment.com/<your_slug>/sources/<source>/overview)
+**Source ID**: navigate to **API Keys** on the left-hand side of the source **Settings** and provide the Source ID 
 ```
 
-- **Source URL**: link to the source in your Segment workspace (for example, `https://app.segment.com/<your_slug>/sources/<source>/overview`)
-- **Source ID**: navigate to **API Keys** on the left-hand side of the source **Settings** and provide the Source ID
 
 Double-check the Source URL and the Source ID.
 
@@ -60,32 +60,38 @@ A Segment Customer Success team member will respond that they have enabled this 
 
 
 ## Custom CDN / API Proxy
+
 Follow these instructions after setting up a proxy such as [CloudFront](#custom-proxy-cloudfront). Choose between the [snippet instructions](#snippet-instructions) or the [npm instructions](#npm-instructions).  
 
-### Snippet instructions
-If you're a snippet user, you need to modify the [analytics snippet](/docs/getting-started/02-simple-install/#step-1-copy-the-snippet) that's inside your `<head>`.
+> info ""
+> If you've followed the instructions above to have a Segment team member enable the apiHost settings in the UI, you can skip the instructions in this section. 
 
-To proxy settings and destination requests that typically go to `https://cdn.segment.com`, replace:
+### Snippet instructions
+If you're a snippet user, modify the [analytics snippet](/docs/getting-started/02-simple-install/#step-1-copy-the-snippet) located inside the `<head>` of your website:
+
+To proxy CDN settings and destination requests that typically go to `https://cdn.segment.com`, replace:
+
 ```diff
 - t.src="https://cdn.segment.com/analytics.js/v1/" + key + "/analytics.min.js"
-+ t.src="https://MY-CUSTOM-CDN-PROXY.com" + key + "/analytics.min.js"
++ t.src="https://MY-CUSTOM-CDN-PROXY.com/analytics.js/v1/" + key + "/analytics.min.js"
 ```
 
-To proxy tracking calls that typically go to `api.segment.io/v1`, replace:
+To proxy API tracking calls that typically go to `api.segment.io/v1`, replace:
+
 ```diff
 - analytics.load("<MY_WRITE_KEY>")
 + analytics.load("<MY_WRITE_KEY>", { integrations: { "Segment.io": { apiHost: "MY-CUSTOM-API-PROXY.com/v1" }}})
 ```
 
 ### npm instructions
-See the [`npm` library-users instructions](https://www.npmjs.com/package/@segment/analytics-next){:target="_blank"} for more information.
+If you're using the [npm library](https://www.npmjs.com/package/@segment/analytics-next){:target="_blank"}, make the following changes directly in your code:
 
-Proxy settings and destination requests that typically go to `https://cdn.segment.com` through a custom proxy.
+To proxy settings and destination requests that typically go to `https://cdn.segment.com` through a custom proxy:
 
 ```ts
 const analytics = AnalyticsBrowser.load({
   writeKey,
-  // GET https://MY-CUSTOM-CDN-PROXY.com/v1/project/<writekey>/settings --> proxies to
+  // GET https://MY-CUSTOM-CDN-PROXY.com/v1/projects/<writekey>/settings --> proxies to
   // https://cdn.segment.com/v1/projects/<writekey>/settings
 
   // GET https://MY-CUSTOM-CDN-PROXY.com/next-integrations/actions/...js  --> proxies to
@@ -94,7 +100,7 @@ const analytics = AnalyticsBrowser.load({
  })
 ```
 
-Proxy tracking calls that typically go to `api.segment.io/v1` by configuring `integrations['Segment.io'].apiHost`.
+To proxy tracking calls that typically go to `api.segment.io/v1`, configure the `integrations['Segment.io'].apiHost`:
 ```ts
 const analytics = AnalyticsBrowser.load(
     {
@@ -168,9 +174,21 @@ To add a CNAME record to your DNS settings:
 4. Run `curl` on your domain to check if the proxy is working correctly.
 
 
-## Self Hosting Analytics.js
+## Self-hosting Analytics.js
 
-Follow the instructions at [Using Analytics.js as an NPM Package](https://github.com/segmentio/analytics-next/tree/master/packages/browser#-using-as-an-npm-package), to host Analytics.js and eliminate the requirement of downloading it from the CDN file during every page load. This enables you to self-host/import the library itself.
+To reduce fetching assets from Segment's CDN, you can bundle Analytics.js with your own code.
 
-> warning "Keep in mind"
-> Segment does not recommend self-hosting, as it requires that you configure integration settings individually and manually redeploy Analytics.js when there are changes to your settings. When you enable third-party libraries in device-mode, Segment loads them, which defeats the purpose of self-hosting. 
+To bundle Analytics.js with your own code, you can: 
+* [Use Analytics.js as an npm package](/docs/connections/sources/catalog/libraries/website/javascript/quickstart/#step-2b-install-segment-as-a-npm-package).
+
+* [Use npm to install your destinations](/docs/connections/sources/catalog/libraries/website/javascript#add-destinations-from-npm).
+
+* Hardcode your settings instead of fetching from the CDN (Segment doesn't recommend this as it completely bypasses the Segment source GUI).
+```ts
+// npm-only
+export const analytics = new AnalyticsBrowser()
+analytics.load({
+   ...
+   cdnSettings: {...} // object from https://cdn.segment.com/v1/projects/<YOUR_WRITE_KEY>/settings'
+ })
+```

@@ -3,7 +3,7 @@ title: Leanplum Destination
 rewrite: true
 id: 54521fd925e721e32a72eece
 ---
-[Leanplum](https://www.leanplum.com/) helps mobile teams orchestrate multi-channel campaigns — from messaging to the in-app experience — all from a single mobile marketing platform.
+[Leanplum](https://www.leanplum.com/){:target="_blank"} helps mobile teams orchestrate multi-channel campaigns — from messaging to the in-app experience — all from a single mobile marketing platform.
 
 > success ""
 > **Good to know**: This page is about the Leanplum Segment destination, which receives data from Segment. There's also a page about the [Leanplum Segment source](/docs/connections/sources/catalog/cloud-apps/leanplum/), which sends data _to_ Segment!
@@ -32,7 +32,7 @@ CocoaPods is the dependency manager we use for Objective-C projects. If you alre
 
     `sudo gem install cocoapods`
 
-    For issues with installing CocoaPods, refer [here](https://cocoapods.org/)
+    For issues with installing CocoaPods, refer [here](https://cocoapods.org/){:target="_blank"}
 
 2. Add a podfile. In your terminal, navigate to your app's directory. Add a podfile to your app by running the following command:
 
@@ -66,7 +66,7 @@ CocoaPods is the dependency manager we use for Objective-C projects. If you alre
 
     Make sure to place your Segment Write Key within the code. This block of code also calls for Leanplum start.
 
-For addition documentation you can also check [Leanplum docs](https://support.leanplum.com/hc/en-us/articles/213146343-App-Setup-How-to-integrate-Segment-Leanplum-iOS-).
+For addition documentation you can also check [Leanplum docs](https://support.leanplum.com/hc/en-us/articles/213146343-App-Setup-How-to-integrate-Segment-Leanplum-iOS-){:target="_blank"}.
 
 ### Android
 
@@ -99,7 +99,7 @@ For addition documentation you can also check [Leanplum docs](https://support.le
     <uses-permission android:name="android.permission.INTERNET"/>
     ```
 
-    If you want to use the advanced features of Leanplum, also add the additional permissions, as described [here](https://www.leanplum.com/docs#/setup/android).
+    If you want to use the advanced features of Leanplum, also add the additional permissions, as described [here](https://www.leanplum.com/docs#/setup/android){:target="_blank"}.
 
 4. Add the following lines to your Application or Controller:
 
@@ -125,7 +125,7 @@ For addition documentation you can also check [Leanplum docs](https://support.le
         });
     ```
 
-That's it! Now you can use the Segment SDK and also the [advanced features](https://www.leanplum.com/docs#/docs) of the Leanplum SDK.
+That's it! Now you can use the Segment SDK and also the [advanced features](https://www.leanplum.com/docs#/docs){:target="_blank"} of the Leanplum SDK.
 
 
 ## Page
@@ -192,7 +192,7 @@ As every analytics provider deals with push notifications and in-app messaging d
 7. Configure your app to use push notifications in your app delegate's `applicationDidFinishLaunching` method (you may choose any combination of formats.
 
 
-You are now ready to send push notifications from your Leanplum UI! If you need some code snippets, [check out the Leanplum docs here](https://www.leanplum.com/docs/ios/messaging#push-notifications).
+You are now ready to send push notifications from your Leanplum UI! If you need some code snippets, [check out the Leanplum docs here](https://www.leanplum.com/docs/ios/messaging#push-notifications){:target="_blank"}.
 
 #### Android
 
@@ -232,8 +232,8 @@ You are now ready to send push notifications from your Leanplum UI! If you need 
   ```
 
 We've put together two example projects for sending push notifications through GCM and Firebase for you to check out:
- - [LP-Segment-GCM-Example](https://github.com/Leanplum/Leanplum-Android-Samples/tree/master/SegmentExample)
- - [LP-Segment-Firebase-Example](https://github.com/Leanplum/Leanplum-Android-Samples/tree/master/SegmentExample_Firebase)
+ - [LP-Segment-GCM-Example](https://github.com/Leanplum/Leanplum-Android-Samples/tree/master/SegmentExample){:target="_blank"}
+ - [LP-Segment-Firebase-Example](https://github.com/Leanplum/Leanplum-Android-Samples/tree/master/SegmentExample_Firebase){:target="_blank"}
 
 
 ### A/B Testing
@@ -263,9 +263,9 @@ As with push notifications, A/B testing variables are dealt with in different wa
       myShip.moveWithSpeed(shootSpeed?.floatValue())
     }
   ```
-For more information about A/B Testing Variables on iOS in Leanplum, [see their docs](https://www.leanplum.com/docs/ios/variables).
+For more information about A/B Testing Variables on iOS in Leanplum, [see their docs](https://www.leanplum.com/docs/ios/variables){:target="_blank"}.
 
-2. If you want to define any other type of data, Boolean, String, Color, Assets, Dictionary, or Array, take a look at [the Leanplum docs here](https://www.leanplum.com/docs/ios/variables#modeling-structured-data)
+2. If you want to define any other type of data, Boolean, String, Color, Assets, Dictionary, or Array, take a look at [the Leanplum docs here](https://www.leanplum.com/docs/ios/variables#modeling-structured-data){:target="_blank"}
 
 
 #### Android
@@ -286,4 +286,4 @@ For more information about A/B Testing Variables on iOS in Leanplum, [see their 
     });
   ```
 
-For more information about A/B Testing Variables on Android in Leanplum, [see their docs](https://www.leanplum.com/docs#/docs/android).
+For more information about A/B Testing Variables on Android in Leanplum, [see their docs](https://www.leanplum.com/docs#/docs/android){:target="_blank"}.

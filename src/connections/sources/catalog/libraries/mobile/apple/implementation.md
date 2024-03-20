@@ -205,6 +205,7 @@ The Analytics Swift utility methods help you work with [plugins](#plugin-archite
 - [Add](#add)
 - [Find](#find)
 - [Remove](#remove)
+- [Reset](#reset)
 
 There's also the [Flush](#flush) method to help you manage the current queue of events.
 
@@ -275,6 +276,25 @@ analytics.flush()
 ```
 {% endcodeexampletab %}
 {% endcodeexample %}
+
+### Reset
+The `reset` method clears the SDK’s internal stores for the current user and group. This is useful for apps where users log in and out with different identities on the same device over time.
+
+{% codeexample %}
+{% codeexampletab Method signature %}
+```swift
+public func reset()
+```
+{% endcodeexampletab %}
+
+{% codeexampletab Example use %}
+```swift
+analytics.reset()
+```
+{% endcodeexampletab %}
+{% endcodeexample %}
+
+{% include content/reset-mobile.md %}
 
 ### OpenURL
 

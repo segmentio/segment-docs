@@ -1,4 +1,4 @@
-# 💥 Segment Partner Source Documentation Template
+# 💥 Segment Partner Actions Destination Documentation Template
 
 > Hi Partners 👋🏼
 >
@@ -38,7 +38,7 @@ title: [integration_name] Destination
 
 > (delete after reading) Include a 1-2 sentence introduction to your company and the value it provides to customers - updating the name and hyperlink. Please leave the utm string unchanged.
 
-[<integration_name>](https://yourintegration.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) provides self-serve predictive analytics for growth marketers, leveraging machine learning to automate audience insights and recommendations.
+[<integration_name>](https://yourintegration.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners){:target="_blank”} provides self-serve predictive analytics for growth marketers, leveraging machine learning to automate audience insights and recommendations.
 
 > (delete after reading) Update your company name and support email address.
 
@@ -48,10 +48,6 @@ This destination is maintained by <integration_name>. For any issues with the de
 
 > success ""
 > **Good to know**: This page is about the [Actions-framework](/docs/connections/destinations/actions/) <destination_name> Segment destination. There's also a page about the [non-Actions <destination_name> destination](/docs/connections/destinations/catalog/<destination_name>/). Both of these destinations receives data from Segment.
-
-> (delete after reading) This include describes the requirement of A.js 2.0 or higher for Actions compatibility, and is required if your destination has a web component.
-
-{% include content/ajs-upgrade.md %}
 
 > (delete after reading) In the section below, explain the value of this actions-based destination over the classic version, if applicable. If you don't have a classic version of the destination, remove this section.
 
@@ -66,10 +62,12 @@ This destination is maintained by <integration_name>. For any issues with the de
 
 ## Getting started
 
-1. From the Segment web app, click **Catalog**, then click **Destinations**.
-2. Find the Destinations Actions item in the left navigation, and click it.
-3. Click **Configure <desintation_name>**.
-4. Select an existing Source to connect to <destination_name> (Actions).
+1. From your workspace's [Destination catalog page](https://app.segment.com/goto-my-workspace/destinations/catalog){:target="_blank”} search for "<YOURINTEGRATION>"
+2. Select <YOURINTEGRATION> and click **Add Destination**
+3. Select an existing Source to connect to <YOURINTEGRATION> (Actions).
+> (delete after reading) describe steps to filling in relevant destinations settings such as the example steps below
+4. Go to the [<YOURINTEGRATION> dashboard](https://YOURINTEGRATION.com/dashboard){:target="_blank"}, find and copy the **API key**.
+5. Enter the **API Key** in the <YOURINTEGRATION> destination settings in Segment.
 
 > (delete after reading) The line below renders a table of connection settings (if applicable), Pre-built Mappings, and available actions.
 
@@ -85,7 +83,5 @@ This destination is maintained by <integration_name>. For any issues with the de
 ## Migration from the classic <destination_name> destination
 
 > (delete after reading) If applicable, add information regarding the migration from a classic destination to an Actions-based version below.
-
----
 
 > (delete after reading) Congratulations! 🎉 You’ve finished the documentation for your Segment integration. If there’s any additional information or nuance which did not fit in the above template and that you want to share with our mutual customers, feel free to include these as a separate section for us to review. If not, you may now submit this doc to our team.

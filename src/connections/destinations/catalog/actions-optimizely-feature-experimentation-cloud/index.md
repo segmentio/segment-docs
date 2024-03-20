@@ -4,8 +4,9 @@ id: 641d5acea88fa531b9068608
 hide-personas-partial: true
 hide-boilerplate: false
 hide-dossier: true
-hidden: true
 ---
+
+{% include content/plan-grid.md name="actions" %}
 
 [Optimizely Feature Experimentation](https://www.optimizely.com/products/experiment/feature-experimentation/){:target="_blank"} is a feature flagging and experimentation platform for websites, mobile apps, chatbots, APIs, smart devices and anything else with a network connection.
 
@@ -55,6 +56,6 @@ Segment also handles the following mapping:
 `revenue` values should be passed as a Segment `property`. The value should be an integer and represent the value in cents, so, for example, $1 should be represented by `100`.
 
 ## GDPR Support
-Segment supports deleting/suppressing users in Optimizely Feature Experimentation (Actions) using the [Segment app](/docs/privacy/user-deletion-and-suppression/). Before deleting/suppressing a user, create a [Personal Access Token](https://developers.optimizely.com/x/authentication/personal-token/) in Optimizely and provide it as the value of the Personal Access Token setting.
+Segment supports deleting/suppressing users in Optimizely Feature Experimentation (Actions) using the [Segment app](/docs/privacy/user-deletion-and-suppression/). Before deleting/suppressing a user, create a [Personal Access Token](https://developers.optimizely.com/x/authentication/personal-token/){:target="_blank”} in Optimizely and provide it as the value of the Personal Access Token setting.
 
 {% include components/actions-fields.html settings="true"%}

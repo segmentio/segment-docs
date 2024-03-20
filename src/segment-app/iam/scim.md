@@ -1,8 +1,7 @@
 ---
 title: "System for Cross-domain Identity Management (SCIM) Configuration Guide"
+plan: sso
 ---
-
-{% include content/plan-grid.md name="sso" %}
 
 The SCIM specification is designed to make managing user identities in cloud-based applications like Segment easier. SCIM allows your Identity Provider (IdP) to manage users and groups within your Segment workspace.
 
@@ -12,11 +11,11 @@ Most IdPs offer SCIM, and it complements SAML. You can think of SAML as a way fo
 
 Before you start, remember that SSO is only available to Business Tier customers, and that only workspace owners may configure SSO connections.
 
-To set up SCIM, you must first create an SSO connection. Once you [create your SSO connection](https://segment.com/docs/segment-app/iam/sso/), log back in to Segment using SSO.
+To set up SCIM, you must first create an SSO connection. Once you [create your SSO connection](/docs/segment-app/iam/sso/), log back in to Segment using SSO.
 
 ## Configuration Instructions
 
-Segment officially supports [Okta](#okta-set-up-guide), [Azure AD](#azure-ad-set-up-guide), and [OneLogin](#oneLogin-set-up-guide). Each link includes specific set up instructions for that IdP. You should read the [features](#features) section of this page to understand which features of SCIM Segment supports.
+Segment officially supports [Okta](#okta-setup-guide), [Microsoft Entra ID](#microsoft-entra-id-setup-guide), and [OneLogin](#onelogin-setup-guide). Each link includes specific setup instructions for that IdP. You should read the [features](#features) section of this page to understand which features of SCIM Segment supports.
 
 You may still be able to use SCIM with another Identity Provider (IdP) by adapting the following instructions.
 
@@ -28,7 +27,7 @@ Your IdP needs to know where to send SCIM requests. The Segment base URL is: htt
 
 The other value you need is an API key (sometimes referred to as an Authorization Header). To generate one, go to **Settings > Advanced Settings** in the Segment app, and find the **SSO Sync** section. Click **Generate SSO Token** and copy the generated token. Use this token for the API key or Authorization Header in your IdP.
 
-This page is located as part of the settings sidebar: https://app.segment.com/CUSTOMER_WORKSPACE_SLUG/settings/advanced
+You can find this page in the [settings sidebar of your Segment app](https://app.segment.com/goto-my-workspace/settings/advanced){:target="_blank”}.
 
 ![Screenshot of the Segment settings sidebar, with Advanced Settings selected.](images/asset_generate_scim_token.png)
 
@@ -36,7 +35,7 @@ This page is located as part of the settings sidebar: https://app.segment.com/CU
 
 It's important to remember that Segment has a multi-tenant user/workspace relationship, meaning that users can be part of more than one workspaces. In most cases these workspaces are all related to a single customer (for example, a single company might have individual workspaces for different brands or subsidiaries). However, some users can be members of workspaces for different Segment customers, such as with contractors or consultants.
 
-Because of this, Segment must balance the autonomy of our users with the desired level of control of a workspace owner.
+Because of this, Segment must balance the autonomy of users with the desired level of control of a Workspace Owner.
 
 ## Creating Users
 
@@ -70,7 +69,7 @@ Your IdP can create new groups in Segment using SCIM. All groups created using S
 
 ## Updating Groups
 
-Your IdP can add or remove workspace members from existing groups via SCIM. Your IdP can also update Segment group names.
+Your IdP can add or remove workspace members from existing groups using SCIM. Your IdP can also update Segment group names.
 
 ## Deleting Groups
 
@@ -78,7 +77,7 @@ Your IdP can use SCIM to delete groups from your Segment workspace. Deleting a g
 
 ## Attribute Mapping
 
-When you integrate Segment SCIM and your IdP you might need to map attributes for users. The only attributes that Segment SCIM supports are `userName` and `displayName`. You should leave any existing mapping for the `email` SAML attribute, which you might have set up during your initial SSO set up. This mapping supports SAML authentication, and is separate from setting up SCIM, but may be within the same page depending on your IdP.
+When you integrate Segment SCIM and your IdP you might need to map attributes for users. The only attributes that Segment SCIM supports are `userName` and `displayName`. You should leave any existing mapping for the `email` SAML attribute, which you might have set up during your initial SSO setup. This mapping supports SAML authentication, and is separate from setting up SCIM, but may be within the same page depending on your IdP.
 
 You'll need to map an email (IdP) to `userName` (Segment). Depending on your IdP this attribute might be called `email` or `mail`. If your IdP uses emails for usernames, you can map `userName` (IdP) to `userName` (Segment).
 
@@ -86,9 +85,9 @@ If your IdP supports the `displayName` attribute, you can map it directly to the
 
 For example, you might map `{firstName} {lastName}` from your IdP to `displayName` in Segment. If your IdP doesn't support this, you can map `firstName` (IdP) to `displayName` (Segment).
 
-## Okta Set up Guide
+## Okta Setup Guide
 
-1. [Complete the Okta Set up Guide for SSO](https://saml-doc.okta.com/SAML_Docs/How-to-Configure-SAML-2.0-for-Segment.html?baseAdminUrl=https://segment-admin.oktapreview.com&app=segment&instanceId=0oata15py1n3kQUo50h7)
+1. [Complete the Okta setup guide for SSO](https://saml-doc.okta.com/SAML_Docs/How-to-Configure-SAML-2.0-for-Segment.html?baseAdminUrl=https://segment-admin.oktapreview.com&app=segment&instanceId=0oata15py1n3kQUo50h7){:target="_blank”}
 2. Click **Provisioning**, then click **Configure API Integration** and select **Enable API Integration**.
 3. [Generate an API key](#api-key), then copy and paste this value into the **API Token** field in Okta, and click **Save**.
 
@@ -110,18 +109,18 @@ For example, you might map `{firstName} {lastName}` from your IdP to `displayNam
 
 ![Screenshot of the Segment Settings page, with the Access Management and User Groups tabs selected, and the user group created in the steps above present on the page.](images/scim_edit_groups.png)
 
-## Azure AD Set up Guide
+## Microsoft Entra ID Setup Guide
 
-Instructions for configuring Azure AD can be found on the Microsoft Docs website.
+Instructions for configuring Microsoft Entra ID can be found on the Microsoft Docs website.
 
-1. [Complete the Azure AD Set up Guide for SSO](https://docs.microsoft.com/en-us/azure/active-directory/saas-apps/segment-tutorial)
+1. [Complete the Microsoft Entra ID setup guide for SSO](https://learn.microsoft.com/en-us/entra/identity/saas-apps/segment-tutorial){:target="_blank”}
 
-2. [Complete the Azure AD Set up Guide for SCIM](https://docs.microsoft.com/en-us/azure/active-directory/saas-apps/segment-provisioning-tutorial)
+2. [Complete the Microsoft Entra ID setup guide for SCIM](https://learn.microsoft.com/en-us/entra/identity/saas-apps/segment-provisioning-tutorial){:target="_blank”}
 
-## OneLogin Set up Guide
+## OneLogin Setup Guide
 
 Instructions for configuring OneLogin can be found on the OneLogin Docs website.
 
-1. Add and configure the Segment SSO integration from within the OneLogin application
+1. Add and configure the Segment SSO integration from within the OneLogin application.
 
-2. [Complete the OneLogin Set up Guide for SCIM](https://onelogin.service-now.com/support?id=kb_article&sys_id=a7833cd7db3a30501c167e77f4961923)
+2. [Complete the OneLogin setup Guide for SCIM](https://onelogin.service-now.com/support?id=kb_article&sys_id=a7833cd7db3a30501c167e77f4961923){:target="_blank”}
