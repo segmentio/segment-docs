@@ -164,7 +164,7 @@ You can filter the Tracking Plan events by keyword or by label. The applied filt
 Protocols Tracking Plans use [JSON Schemas](https://json-schema.org/){:target="_blank”} to validate Segment event payloads. To support a broader range of validation use-cases, Segment lets you to edit your underlying JSON schema.
 
 > warning ""
-> Editing a JSON schema requires technical expertise. The [JSON schema documentation](https://json-schema.org/understanding-json-schema/index.html){:target="_blank”} and [JSON schema validator](https://www.jsonschemavalidator.net/){:target="_blank”} are helpful resources you can use.
+> Editing a JSON schema requires technical expertise. The [JSON schema documentation](https://json-schema.org/understanding-json-schema){:target="_blank”} and [JSON schema validator](https://www.jsonschemavalidator.net/){:target="_blank”} are helpful resources you can use.
 
 You can edit the JSON schema for each Track event listed in the Tracking Plan, and a common JSON schema definition that applies across all events.
 
