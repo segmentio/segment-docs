@@ -839,7 +839,7 @@ To enable user deletion for Google Universal Analytics:
 2. Authenticate your Google Universal Analytics account using OAuth.
 
 > info ""
-> **NOTE:** Segment supports user deletion for Google Universal Analytics in Universal Analytics and not Classic Analytics. You can send user deletion requests using a `userId` through the Privacy Tool. This means you must  have the User-Id feature enabled in your Google Universal Analytics Property within the your Google Universal Analytics dashboard and have Segment sending your Property `userIds` by enabling the setting **Send User-ID to GA**.
+> **NOTE:** Segment supports user deletion for Google Universal Analytics in Universal Analytics and not Classic Analytics. You can send user deletion requests using a `userId` through the Privacy Tool. This means you must  have the User-Id feature enabled in your Google Universal Analytics Property within your Google Universal Analytics dashboard and have Segment sending your Property `userIds` by enabling the setting **Send User-ID to GA**.
 
 
 
