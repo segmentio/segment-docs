@@ -101,6 +101,15 @@ For example, you might set up a single Segment source to send data both to separ
 
 You can also connect multiple instances of a destination to help you smoothly migrate from one configuration to another. By sending each version the same data, you can check and validate the new configuration without interrupting use of the old one.
 
+However, there are a few considerations:
+
+Some destinations do not support having multiple instances connected to the same source. In that case, the option to add a second instance of that destination does not appear.
+
+Mobile sources, and the legacy Project source, can connect to multiple instances of destinations that operate only in cloud-mode. Mobile and Project sources cannot connect to multiple instances of destinations that operate in both cloud-mode and device-mode.
+
+Multi-instance support is not available for most hybrid Actions destinations, and will not support Web Mode Actions destinations.
+
+Segment does not currently support connecting a single source to multiple instances of a data lakes destination.
 
 > success ""
 > If your organization is on a Segment Business tier plan, you can use [Replay](/docs/guides/what-is-replay/) to send historical data to new instances of a destination.
