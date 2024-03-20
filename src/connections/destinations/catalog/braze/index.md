@@ -353,7 +353,7 @@ The `inAppMessages` parameter will be an array of [`appboy.ab.InAppMessage`](htt
     // When you get the push token
     String receivedToken;
 
-    appboyPushToken = recievedToken;
+    appboyPushToken = receivedToken;
     if (appboyInitialized) {
       Appboy.getInstance(getContext()).registerAppboyPushMessages(appboyPushToken);
     }

@@ -89,7 +89,7 @@ After you build your audience, click **Preview Results** to see the total number
 
 ## Step 6:  Connect the Audience to a Destination
 
-After you create your test audience, click **Select Destinations**. Engage guides you through configuration steps to set up a destination for your audience. If you don't already have destinations configured for the Engage space, the you are prompted to select one or more. Finally, enter a name for the audience.
+After you create your test audience, click **Select Destinations**. Engage guides you through configuration steps to set up a destination for your audience. If you don't already have destinations configured for the Engage space, you are prompted to select one or more. Finally, enter a name for the audience.
 
 The larger the audience you're creating, the longer it takes Engage to successfully compute the Audience. The Audience page shows a status that indicates if the audience is still being calculated. When the total number of users appears in the Audience overview, as in the example screenshot below, the audience has successfully finished computing, and Engage then sends the audience to the destination you selected.
 

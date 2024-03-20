@@ -10,7 +10,7 @@ id: 54521fd625e721e32a72eeb9
 > The Google Tag Manager destination is for web only. The destination isn't compatible with iOS or other mobile sources. For mobile tracking, Segment recommends using the [Firebase Destination](/docs/connections/destinations/catalog/firebase/). 
 
 > info "Consent mode"
-> Google is enforcing consent starting March 6, 2024 for European Economic Area (EEA) users. Learn more about [consent mode](/docs/connections/destinations/catalog/google-tag-manager/#consent-mode) and how to set it up. 
+> Google enforced consent on March 6, 2024 for European Economic Area (EEA) users. Learn more about [consent mode](/docs/connections/destinations/catalog/google-tag-manager/#consent-mode) and how to set it up. 
 
 ## Getting Started
 
@@ -102,4 +102,4 @@ If you're using an 'environment' variable for `gtm_preview` in your tag's query 
 
 For Google Tag Manager, consent mode settings need to be managed directly [within your GTM account](https://support.google.com/tagmanager/answer/10718549?hl=en#tag-settings){:target="_blank"}. There's no direct update from Segment for the GTM destination regarding consent mode, as it's managed within GTM tags themselves.
 
-Segment recommeds you to install a consent management platform that uses the current [consent-tools wrapper](https://github.com/segmentio/analytics-next/tree/master/packages/consent/consent-tools){:target="_blank"} that's outside of Google Tag Manager such as [One Trust](https://tanelytics.com/integrate-onetrust-with-google-tag-manager/){:target="_blank"}.
+Segment recommends you install a consent management platform that uses the current [consent-tools wrapper](https://github.com/segmentio/analytics-next/tree/master/packages/consent/consent-tools){:target="_blank"} that's outside of Google Tag Manager like [OneTrust](https://tanelytics.com/integrate-onetrust-with-google-tag-manager/){:target="_blank"}.

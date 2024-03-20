@@ -221,7 +221,7 @@ actions:
       description: Set to true to use the Braze API in "Update Only" mode.
       default: false
   - action: Track Purchase
-    blurb: Track Purchase sends Braze a Track Purchase call when the destination recieves any event named `Order Completed`.
+    blurb: Track Purchase sends Braze a Track Purchase call when the destination receives any event named `Order Completed`.
     fields:
     - name: Time
       description: The timestamp of when the event occured.

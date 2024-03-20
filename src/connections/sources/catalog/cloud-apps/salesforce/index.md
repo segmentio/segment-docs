@@ -129,6 +129,7 @@ For Salesforce, Segment uses the `SystemModstamp`(system_modstamp) field to chec
 If you've added and selected custom fields to an existing collection and would not like to use `SystemModstamp` to bring in historical data, [contact Segment Support](https://segment.com/help/contact/){:target="_blank"} to configure them to sync. You do not need to include the field names.
 
 ## Version upgrade changes
+
 On March 25, 2024, Segment upgraded the Salesforce source integration from version 39.0 to Salesforce's latest API version 58.0. With the upgrade, there are [deleted fields](#deleted-fields) and [added fields](#added-fields). 
 
 > info ""
@@ -139,7 +140,7 @@ On March 25, 2024, Segment upgraded the Salesforce source integration from versi
 Change | Fields
 ---- | ------------
 Collections deprecated | `AssistantRecommendationShare`, `AssistantRecommendation` 
-Deprecated (Column name, Collection) pairs | (`ForeignKeyAssetId, CustomBrandAsset`), (`UserPermissionsMobileUser, User`), (`OptionsRequireHttps, Site`), (`UniqueKey, LoginEvent`), (`OptionsExternalHttps, Domain`) 
+Columns deprecated from the collections (Column name, Collection) | (`ForeignKeyAssetId, CustomBrandAsset`), (`UserPermissionsMobileUser, User`), (`OptionsRequireHttps, Site`), (`UniqueKey, LoginEvent`), (`OptionsExternalHttps, Domain`) 
 
 
 ### Added fields
