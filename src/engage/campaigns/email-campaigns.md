@@ -50,6 +50,7 @@ Some email campaign fields, like **Sender email** and **Subject**, are required.
 > info "Editing Templates"
 > If you use a template for your email, Engage creates an editable copy of the original.  Editing the template within the Journey won’t alter the original template.
 
+
 ### Send an email to all users
 
 As you create your email campaign, you can set an email to send to all users regardless of their [subscription state](/docs/engage/user-subscriptions/#the-four-subscription-states). This may be useful, for example, when you need to send a marketing transactional email to a user who hasn't subscribed to your marketing emails.
