@@ -9,7 +9,7 @@ With SSO, you have centralized control over your users' ability to authenticate 
 
 You can configure as many IdP connections to your workspace as needed to support IdP-initiated authentication. This allows seamless migration from one system to a new one, if, for example, your organization switches IdP vendors or switches from GSuite to a dedicated SAML IdP like Okta or OneLogin.
 
-To enable SSO-based login from the Segment login page (app.segment.com/login), you must first verify that you own the domain, and connect it to your organization's Segment account. Once you have done that, SSO users from your domain can use the Segment login page to access your default Segment workspace.
+To enable SSO-based login from the Segment login page (app.segment.com/login), you must first verify that you own the domain, and connect it to your organization's Segment account. After you have done that, SSO users from your domain can use the Segment login page to access your default Segment workspace.
 
 The Segment login page can only be connected to one workspace. To use your IdP with multiple workspaces, you will have to initiate login to the other workspaces from the IdP instead of through the login portal.
 
@@ -51,7 +51,7 @@ Your provider will ask you for a few things from Segment, which Segment provides
 
 - No `RelayState` is required. This is also sometimes called `Target`.
 
-Once you create the application in your IdP, you can come back to Segment and click "Next".
+After you create the application in your IdP, you can come back to Segment and click "Next".
 
 ## Configure Segment to Talk to Your IdP.
 
@@ -83,7 +83,7 @@ These options are off by default, but configurable on the "Advanced Settings" pa
 
 To configure GSuite for use with Segment, go to your workspace settings and choose the "Connections" tab under "Authentication" and click "Add New Connection." Follow the steps to create a "Google Apps For Work" connection.
 
-You simply enter your domain (or, if you've verified it already, choose it from the dropdown) and then click the resulting link to authorize the connection.
+Enter your domain (or, if you've verified it already, choose it from the dropdown) and then click the resulting link to authorize the connection.
 
 ## Enabling Segment-initiated login
 
@@ -93,7 +93,7 @@ In order to enable this, you'll need to verify your domain with Segment. To do t
 
 ![Screenshot of the Domains page under the Authentication section of the Workspace Settings.](images/asset_MSaDZk2f.png)
 
-Enter your domain and click "Add Domain." When you click verify, you're given two options to verify your domain, either using a meta tag to add to your `/index.html` at the root, or a DNS text record that you can add through your DNS provider. Once you do so and click verify, you're ready to go.
+Enter your domain and click "Add Domain." When you click verify, you're given two options to verify your domain, either using a meta tag to add to your `/index.html` at the root, or a DNS text record that you can add through your DNS provider. After you do so and click verify, you can move to the next step.
 
 > note ""
 > Domain tokens expire 14 days after they are verified.
@@ -104,7 +104,7 @@ To configure SSO for multiple workspaces, your admin must configure access to ea
 > warning ""
 > **Warning**: This domain has already been claimed.
 
-Once your admin has configured separate apps for each workspace in your IdP, the end-users can log in to the IdP and click on the relevant app for the workspace you are trying to access. This is also referred to as IdP-initiated SSO. 
+After your administrator configures separate apps for each workspace in your IdP, the end-users can log in to the IdP and click on the relevant app for the workspace you are trying to access. This is also referred to as IdP-initiated SSO. 
 
 ## Okta setup
 
@@ -153,7 +153,6 @@ You've now completed setup.  For SP-initiated SSO, follow these steps:
 
 1. Go to `https://app.segment.com`.
 2. Enter your email, select **Single Sign-On**, then click **Log In**.
-
 
 ## SSO Frequently Asked Questions
 
