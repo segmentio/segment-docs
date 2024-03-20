@@ -16,7 +16,7 @@ With Linked Audiences, you can use the relational data you've defined in your Da
 > warning "Linked Audiences permissions requirements"
 > To set up Linked Audiences Activation, you must have Workspace Owner or Unify Read-Admin, Entities Admin, and Source Admin permissions.
 
-To learn more about linked audiences use cases,  see the [linked audiences use cases](/engage/audiences/linked-audiences-use-cases/) topic.
+To learn more about Linked Audiences use cases,  see the [Linked Audiences Use Cases](/engage/audiences/linked-audiences-use-cases/) topic.
 
 ## Getting started
 
@@ -39,7 +39,7 @@ You can build a Linked Audience from profiles associated with an entity, trait, 
 4. Select the [conditions](#conditions) to build your audience.
 5. Preview your audience, then click **Next**.
 - Within the preview, you can see a count of users that meet the audience criteria as well as a sample list of users.
-6. Enter an audience name and description, then set a [compute schedule](#set-a-compute-schedule).
+6. Enter an audience name and description.
 7. Click **Save**.
 
 After creating the audience, you'll be redirected to the Overview page. By default, the audience is disabled. Segment recommends that you take the following actions:
@@ -95,7 +95,7 @@ Engage displays the following compute statuses for Linked Audiences.
 
 | Computation status        | Description                           |
 |---------------------------|---------------------------------------|
-| Computing                 | Engage is computing the Linked Audience based on the hourly [compute schedule](#set-a-compute-schedule).           |
+| Computing                 | Engage is computing the Linked Audience based on the compute schedule.           |
 | Live                      | The latest compute was successful.      |
 | Disabled                  | The Linked Audience is disabled.                   |
 | Failed                    | The computation was canceled or failed to compute. Contact [Segment support](https://segment.com/help/contact/){:target="_blank"}.            |
