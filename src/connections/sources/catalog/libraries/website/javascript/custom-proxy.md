@@ -6,6 +6,8 @@ strat: ajs
 
 Custom domains allow you to proxy Analytics.js and proxy all tracking event requests through your domain.
 
+You cannot use custom proxy setup for Analytics.js CDN or Tracking API with device-mode destinations because it requires the destination's native scripts are loaded onto the client, and the requests are sent directly to the destination. 
+
 ## Custom Proxy prerequisites
 
 To set up a custom domain, you need:

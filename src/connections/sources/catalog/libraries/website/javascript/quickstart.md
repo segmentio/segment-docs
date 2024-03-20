@@ -32,6 +32,9 @@ You can choose to install Segment to your site in 1 of 2 ways:
 
 ### Step 2a: Add the Segment Snippet
 
+> info ""
+> You can find the latest version of the Segment snippet in the **Overview** tab of your Javascript source.
+
 To add the Segment snippet to your app: 
 
 Paste the snippet into the `<head>` tag of your site to install Segment.

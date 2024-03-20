@@ -16,7 +16,7 @@ The object means that you are successfully loading Analytics.js onto your websit
 
 ![Returning analytics object error](images/CFsktto.gif)
 
-Segment also provides a Chrome web extension, [Segment Inspector](/docs/connections/sources/catalog/libraries/website/javascript/#segment-inspector), which you can use to validate that you're successfully loading Analytics.js.
+Segment also provides a Chrome web extension, [Segment Inspector](/docs/connections/sources/catalog/libraries/website/javascript/index.html#segment-inspector), which you can use to validate that you're successfully loading Analytics.js.
 
 Solution: [Follow the Analytics.js Quickstart Guide](/docs/connections/sources/catalog/libraries/website/javascript/quickstart/)
 
@@ -34,7 +34,7 @@ ENV === 'production' ? writeKey = 'A' : writeKey = 'B';
 
 When you reload the page, does your debugger show a new [`page`](/docs/connections/spec/page)? You can also check the JavaScript console in the browser and manually fire an event, like an Identify call, which would show up in the debugger.
 
-- You can also use [Segment's Chrome extension](/docs/connections/sources/catalog/libraries/website/javascript/#segment-inspector)to inspect events.
+- You can also use [Segment's Chrome extension](/docs/connections/sources/catalog/libraries/website/javascript/index.html#segment-inspector)to inspect events.
 
 ![Making an identify call](images/7Ymnh2S.gif)
 
@@ -46,7 +46,7 @@ In the above, the `p` is a [`page`](/docs/connections/spec/page) call and the `i
 
 ## Using the Segment Chrome extension to validate your implementation
 
-The [Segment Inspector](/docs/connections/sources/catalog/libraries/website/javascript/#segment-inspector) is a Chrome extension designed for debugging Segment integrations in web applications using Analytics.js. The Inspector lets you view and verify event data before it's sent to destinations. Additionally, the tool confirms that API calls from your website reach your Analytics.js source correctly.
+The [Segment Inspector](/docs/connections/sources/catalog/libraries/website/javascript/index.html#segment-inspector) is a Chrome extension designed for debugging Segment integrations in web applications using Analytics.js. The Inspector lets you view and verify event data before it's sent to destinations. Additionally, the tool confirms that API calls from your website reach your Analytics.js source correctly.
 
 
 ## Is data being transmitted to your third-party destinations?
@@ -82,7 +82,7 @@ The JavaScript console reveals all requests, outbound and inbound, to your brows
 - **Safari**: `COMMAND+OPTION+I` (Mac) or `CTRL+ALT+I` (Windows) and then click on the **Console** tab.
 - **IE**: `F12` and then click on the **Console** tab.
 
-Alternatively, Segment provides the [Segment Inspector](/docs/connections/sources/catalog/libraries/website/javascript/#segment-inspector), a Chrome web extension designed to enable debugging of your Segment integration in web applications that are instrumented with Analytics.js.
+Alternatively, Segment provides the [Segment Inspector](/docs/connections/sources/catalog/libraries/website/javascript/index.html#segment-inspector), a Chrome web extension designed to enable debugging of your Segment integration in web applications that are instrumented with Analytics.js.
 
 ## Is there a size limit on requests?
 
@@ -90,7 +90,7 @@ Yes, 32KB per event message. Events with a payload larger than 32KB are accepted
 
 ## Analytics.js failing to load due to Ad Blockers or Browser Privacy Settings
 
-Segment advises against circumventing tracking blockers or browser privacy settings for client-side tracking. The user has ultimate control as to what gets loaded on the page. Segment acknowledges that this can result in some data loss in client-side tracking and suggests [workarounds](/docs/connections/sources/catalog/libraries/website/javascript/#ad-blocking) to address this issue.
+Segment advises against circumventing tracking blockers or browser privacy settings for client-side tracking. The user has ultimate control as to what gets loaded on the page. Segment acknowledges that this can result in some data loss in client-side tracking and suggests [workarounds](/docs/connections/sources/catalog/libraries/website/javascript/index.html#tracking-blockers-and-browser-privacy-settings) to address this issue.
 
 ## Analytics.js and Destinations not tracking query string parameters on certain Safari iOS and MacOS Versions
 
@@ -192,6 +192,12 @@ Some destinations accept properties only. As a result, custom context fields you
 ## Why am I seeing additional cookies on my website?
 
 The AJS cookies being set under segment.com are first-party cookies. They are part of Segment's own implementation as well as the destination Segment uses. These cookies are not related to your implementation of Segment, and you only see them because you've visited Segment's domain using the same browser. They are sent to the writekey connected to Segment's own workspace, and are associated with the events Segment tracks when you visit segment.com.
+
+### Loading with Prototype.js
+
+If you're having issues with your destinations loading with Protoype.js, there is a [known issue that was reported](https://github.com/prototypejs/prototype/issues/338){:target="_blank"} regarding this.  
+
+In order to prevent the issues, you can preserve the original `Array.from` method without letting the prototype override it.
 
 ## Will Google Chrome's third-party cookie changes impact Segment Analytics.js?
 

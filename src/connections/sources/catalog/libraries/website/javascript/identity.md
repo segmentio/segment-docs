@@ -218,10 +218,14 @@ analytics.ready(function() {
 
 Segment automatically collects the user's IP address for device-based (iOS, Android, Analytics.js and Xamarin) events.
 
-You can pass a value for `options.context.ip` to prevent the Segment systems from recording the IP address for the request, as in the example below.
+> info "IPv6"
+> At the moment, Segment doesn't support automatically collecting IPv6 addresses.
+
+You can manually set the IP by passing a value for `options.context.ip` to prevent the Segment systems from recording the IP address for the request, as in the example below.
 
 ```js
   analytics.track("Order Completed", {}, { context: { ip: "0.0.0.0" }});
 ```
 
 You must add this override to _every_ Track call to explicitly override IP collection. If you reset this trait in the context object, Segment defaults to the normal IP collection behavior.
+

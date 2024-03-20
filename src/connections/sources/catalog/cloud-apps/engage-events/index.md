@@ -87,7 +87,7 @@ SendGrid powers Engage email delivery. For more information, view [SendGrid's Ev
 
 | Event                        | Definition                                            |
 | ---------------------------- | ----------------------------------------------------- |
-| WhatsApp Message Queued      | The WhatsApp message creation requested was recieved. |
+| WhatsApp Message Queued      | The WhatsApp message creation requested was received. |
 | WhatsApp Message Accepted    | The WhatsApp message creation request was accepted.   |
 | WhatsApp Message Sending     | The WhatsApp message is being sent.                   |
 | WhatsApp Message Sent        | The WhatsApp message was successfully sent.           |
