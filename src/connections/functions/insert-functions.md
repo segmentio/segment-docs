@@ -476,6 +476,12 @@ Yes, Segment retries invocations that throw RetryError or Timeout errors (tempor
 
 No, Segment can't guarantee the order in which the events are delivered to an endpoint.
 
+##### Do I Need to specify an endpoint for my Insert function?
+
+No, specifying an endpoint is not always required for insert functions. If your function is designed to transform or filter data internally—such as adding new properties to events or filtering based on existing properties—you won't need to specify an external endpoint.
+
+However, if your function aims to enrich event data by fetching additional information from an external service, then you must specify the endpoint. This would be the URL of the external service's API where the enriched or captured data is sent.
+
 
 ##### Can I create a device-mode destination?
 
