@@ -121,3 +121,7 @@ When you use OAuth to authenticate into the Google Ads Conversions destination, 
 
 Because of the duplicate API requests, you may see a warning in Google for unprocessed conversions due to incorrect or missing OAuth credentials. This warning is expected and does not indicate data loss. Google has confirmed that conversions are being processed, and OAuth retry behavior will not cause any issues for your web conversions. Whenever possible, Segment caches access tokens to reduce the total number of requests made to Google Ads Conversions.
 
+### `The required field was not present., at conversions[0].gclid` Error
+
+Events going to Google for this integration require a `GCLID` field, an `email`, or a `phone_number`. If one of those identifiers isn't being sent properly, then you may see the `The required field was not present., at conversions[0].gclid` error. To fix this, please double check that at least one of those fields is being passed to Google on each payload.
+
