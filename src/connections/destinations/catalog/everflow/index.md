@@ -43,7 +43,7 @@ If you aren't familiar with the Segment Spec, take a look at the [Track method d
 ```
 
 > warning "Map your events"
-> To track the event, go to the Everflow Segment destination settings, and in the Segment event name field, enter the Advertiser ID from your [Offer's Revenue & Payout card](https://helpdesk.everflow.io/en/articles/3673712-offer-revenue-payout){:target="_blank"}.
+> To track the event, go to the Everflow Segment destination settings, and in the Segment event name field, enter the Advertiser ID from your [Offer's Revenue & Payout card](https://helpdesk.everflow.io/en/articles/6125868-offer-revenue-payout){:target="_blank"}.
 
 ### TransactionId
 The TransactionId (`context.referrer.id`) and `context.referrer.type` are **required** fields. Read more about how to pass the TransactionId in [Everflow's TransactionId Documentation](https://developers.everflow.io/docs/everflow-sdk/click_tracking/){:target="_blank"}
