@@ -21,6 +21,8 @@ To get started with destination filters using Swift:
 ```swift
 analytics.add(plugin: DestinationFilters())
 ```
+3. Enable Destination Filters toggle in Segment workspace: navigate to the iOS source, click Settings and select Advanced. 
+
 
 Use destination filters to prevent certain data from flowing into a destination. You can conditionally filter out event properties, traits, and fields, or even filter out the event itself.
 
