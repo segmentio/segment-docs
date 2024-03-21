@@ -273,6 +273,6 @@ Segment recommends using the `$` operator when you deal with array properties. H
 
 ![$ operator](https://github.com/segmentio/segment-docs/assets/68755692/7b0b6923-a4ad-4290-8aa6-bbbc7cb1ee1b)
 
-### How do I populate multiple items off a list for a 'equals one of' condition? **
+### How do I populate multiple items off a list for an `equals one of` condition? **
 The audience builder accepts CSV and TSV lists.
 
