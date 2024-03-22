@@ -96,6 +96,15 @@ sources:
       - us
     endpoints:
       - us
+  - id: xNpohElkX2
+    display_name: Azure
+    hidden: true
+    slug: azure
+    url: connections/sources/catalog/cloud-apps/azure
+    regions:
+      - us
+    endpoints:
+      - us
   - id: ErcsNGMEwt
     display_name: Beamer
     hidden: false
@@ -944,6 +953,15 @@ sources:
     hidden: true
     slug: surveysparrow
     url: connections/sources/catalog/cloud-apps/surveysparrow
+    regions:
+      - us
+    endpoints:
+      - us
+  - id: OyAdFUfMz9
+    display_name: Synap
+    hidden: true
+    slug: synap
+    url: connections/sources/catalog/cloud-apps/synap
     regions:
       - us
     endpoints:
