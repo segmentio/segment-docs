@@ -5,6 +5,10 @@
   # about the available build targets (develop, develop-inc, build)
   command = "jekyll algolia && yarn build"
 
+[[context.production.plugins]]
+  # Run the gainsight index script after a successful production deploy
+  package = "/netlify-plugins/gainsight"
+
 [context.deploy-preview]
   # For deploy previews, use the testing Jekyll environment, the develop build target calls
   command = "yarn develop"
