@@ -15,7 +15,6 @@ You can then use this interaction data with customer engagement tools, such as E
 > success ""
 > If you need to troubleshoot or learn about your profile data, use [Profiles Insights](/docs/unify/insights/) for a transparent view of your Unify profiles. 
 
-
 ## Getting started
 
 > info ""
@@ -80,12 +79,11 @@ Visit the [Profiles Insights](/docs/unify/insights/) doc to learn more.
 
 ## Profiles Sync
 
-Profiles Sync connects identity-resolved customer profiles to a data warehouse of your choice.
+Use Profiles Sync to connect identity-resolved customer profiles to a data warehouse of your choice.
 
 With a continual flow of synced profiles, teams can enrich and use these data sets as the basis for new audiences and models. Profiles Sync addresses a number of use cases, with applications for identity graph monitoring, attribution analysis, machine learning, and more.
 
 Visit the [Profiles Sync Setup](/unify/profiles-sync/profiles-sync-setup/) doc to learn more.
-
 
 ## Next steps: activate your profiles with Engage
 
