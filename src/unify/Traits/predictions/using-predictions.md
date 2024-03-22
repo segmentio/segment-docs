@@ -108,6 +108,10 @@ Every seven days.
 
 You get five predictions as part of Engage Foundations or Unify Plus. To purchase more predictions, reach out to your CSM.
 
+#### Can I update Predictive Traits and Predictive Audiences?
+
+To modify Predictive Traits, you'll need to recreate them as they cannot be directly updated. However, Predictive Audiences can be edited to reflect new criteria or objectives.
+
 #### Is Predictions HIPAA-compliant?
 
 No, Predictions isn't HIPAA-compliant. Avoid using Predictions for health and life science applications.
