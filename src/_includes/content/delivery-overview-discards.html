@@ -61,13 +61,13 @@
       <td>Check the event payload and client instrumentation. <br><br>For more information, see the <a href="/docs/connections/sources/catalog/libraries/server/http-api/#batch">HTTP API Batch</a> documentation</td>
     </tr>
     <tr class="settingRow failed-ingest" id="settingRow">
-      <td>Multi user error</td>
+      <td>Multiple message errors</td>
       <td><samp>multi_user_error</samp></td>
       <td>One or more messages within the batch had an error. Only messages without errors were published</td>
       <td>Review individual payloads for each error. <br><br>For more information, see the <a href="/docs/connections/sources/catalog/libraries/server/http-api/#errors">HTTP API Errors</a> documentation</td>
     </tr>
     <tr class="settingRow failed-ingest" id="settingRow">
-      <td>No userID or anonymousID</td>
+      <td>No identifier</td>
       <td><samp>no_user_anon_id</samp></td>
       <td>The userID or anonymousID was not provided</td>
       <td>Check the event payload and client instrumentation. <br><br> For more information, see the <a href="/docs/getting-started/04-full-install/#anatomy-of-a-segment-message:~:text=Anatomy%20of%20a,for%20maximum%20flexibility">Anatomy of a Segment message</a> documentation</td>
@@ -81,7 +81,7 @@
     <tr class="settingRow failed-ingest" id="settingRow">
       <td>Track event not a string</td>
       <td><samp>event_not_string</samp></td>
-      <td>Track event name is not a string</td>
+      <td>The Track event name must be a string</td>
       <td>Check the event payload and client instrumentation. <br><br> For more information, see the <a href="/docs/connections/spec/track/#:~:text=Beyond%20the%20common,for%20more%20details">Spec: Track</a> documentation</td>
     </tr>
     <tr class="settingRow failed-ingest" id="settingRow">
@@ -91,19 +91,19 @@
       <td>Check the event payload and client instrumentation. <br><br> For more information, see the <a href="/docs/connections/spec/track/#:~:text=Beyond%20the%20common,reserved%20property%20names.">Spec: Track</a> documentation</td>
     </tr>
     <tr class="settingRow failed-ingest" id="settingRow">
-      <td>Traits must be an object</td>
+      <td>Traits field not an object type</td>
       <td><samp>traits_not_object</samp></td>
       <td>The traits field must be an object type</td>
       <td>Check the event payload and client instrumentation. <br><br> For more information, see the <a href="/docs/connections/spec/track/#:~:text=Beyond%20the%20common,reserved%20property%20names.">Spec: Track</a> documentation</td>
     </tr>
     <tr class="settingRow failed-ingest" id="settingRow">
-      <td>Name must be non-empty string</td>
+      <td>Name field not a string</td>
       <td><samp>name_not_string</samp></td>
       <td>For Page or Screen calls, name field was an empty string or not a string</td>
       <td>Check the event payload and client instrumentation. <br><br> For more information, see the <a href="/docs/connections/spec/page/#:~:text=Beyond%20the%20common,through%20your%20funnel.">Spec: Page</a> documentation</td>
     </tr>
     <tr class="settingRow failed-ingest" id="settingRow">
-      <td>Category field must be a string</td>
+      <td>Category field not a string</td>
       <td><samp>category_not_string</samp></td>
       <td>For Page or Screen calls, category field was an empty string or not a string</td>
       <td>Check the event payload and client instrumentation. <br><br> For more information, see the <a href="/docs/connections/spec/page/#:~:text=Beyond%20the%20common,through%20your%20funnel.">Spec: Page</a> documentation</td>
@@ -117,8 +117,20 @@
     <tr class="settingRow failed-ingest" id="settingRow">
       <td>Identifier not a string</td>
       <td><samp>id_not_string</samp></td>
-      <td>The userID or anonymousId was an empty string or not a string</td>
+      <td>The userId or anonymousId was an empty string or not a string</td>
       <td>Check the event payload and client instrumentation. <br><br> For more information, see the <a href="/docs/getting-started/04-full-install/#anatomy-of-a-segment-message:~:text=Anatomy%20of%20a,for%20maximum%20flexibility">Anatomy of a Segment message</a> documentation</td>
+    </tr>
+    <tr class="settingRow failed-ingest" id="settingRow">
+      <td>Event type is not valid</td>
+      <td><samp>invalid_type</samp></td>
+      <td>The event type must be one of the following: Track, Page, Screen, Identify, Alias, or Group</td>
+      <td>Check the event payload and client instrumentation. </td>
+    </tr>
+    <tr class="settingRow failed-ingest" id="settingRow">
+      <td>Missing event type</td>
+      <td><samp>missing_type</samp></td>
+      <td>An event type is required for all payloads</td>
+      <td>Check the event payload and client instrumentation. </td>
     </tr>
     <tr class="settingRow failed-ingest" id="settingRow">
       <td>Consent categoryPreference object does not exist</td>
@@ -159,19 +171,19 @@
     <tr class="settingRow failed-ingest" id="settingRow">
       <td>Could not read write key from url</td>
       <td><samp>unknown_source</samp></td>
-      <td>Failed to find source with [write_key]</td>
+      <td>Failed to find source with <code>write_key</code></td>
       <td>Verify and use the appropriate function webhook URL. <br><br> For more information, see the <a href="/docs/connections/functions/source-functions/#:~:text=Once%20configured%2C%20find%20the%20webhook%20URL%20%2D%20either%20on%20the%20Overview%20or%20Settings%20%E2%86%92%20Endpoint%20page.">Source Functions</a> documentation</td>
     </tr>
     <tr class="settingRow failed-ingest" id="settingRow">
       <td>Could not find source from write key</td>
       <td><samp>unknown_source</samp></td>
-      <td>Failed to find source with [write_key]</td>
+      <td>Failed to find source with <code>write_key</code></td>
       <td>Verify and use the appropriate function webhook URL. <br><br> For more information, see the <a href="/docs/connections/functions/source-functions/#:~:text=Once%20configured%2C%20find%20the%20webhook%20URL%20%2D%20either%20on%20the%20Overview%20or%20Settings%20%E2%86%92%20Endpoint%20page.">Source Functions</a> documentation</td>
     </tr>
     <tr class="settingRow failed-ingest" id="settingRow">
       <td>Source missing write key</td>
       <td><samp>unknown_source</samp></td>
-      <td>Failed to find source with [write_key]</td>
+      <td>Failed to find source with <code>write_key</code></td>
       <td>Verify and use the appropriate function webhook URL. <br><br> For more information, see the <a href="/docs/connections/functions/source-functions/#:~:text=Once%20configured%2C%20find%20the%20webhook%20URL%20%2D%20either%20on%20the%20Overview%20or%20Settings%20%E2%86%92%20Endpoint%20page.">Source Functions</a> documentation</td>
     </tr>
     <tr class="settingRow failed-ingest" id="settingRow">
@@ -324,34 +336,34 @@
         Filtered at Source: Events that were discarded due to schema settings or <a href="/docs/protocols"> Protocols</a> Tracking Plans</td>
     </tr>
     <tr class="settingRow filtered-source" id="settingRow">
-      <td>Common schema violation</td>
+      <td>Tracking Plan violation</td>
       <td><samp>common_schema_violation</samp></td>
-      <td>Event violated common JSON schema of Tracking Plan</td>
-      <td> Check event payload against the connected Tracking Plan Common JSON Schema. If the event passes the correct information, then update the tracking plan common JSON schema with the new information. <br>or:<br>Update the source configurations settings to allow events that violate the connected Tracking Plan JSON schema:<br>Source > Settings > Schema Configurations > Advanced Blocking Controls <br><br> For more information, see the <a href="/docs/protocols/tracking-plan/create/#common-json-schema">Common JSON schema</a> documentation</td>
+      <td>The event violated the common JSON schema of Tracking Plan</td>
+      <td>Check event payload against the connected Tracking Plan Common JSON Schema. If the event passes the correct information, then update the Tracking Plan JSON schema with the new information. <br>or:<br>Update the source configurations settings to allow events that violate the connected Tracking Plan JSON schema:<br>Source > Settings > Schema Configurations > Advanced Blocking Controls <br><br> For more information, see the <a href="/docs/protocols/tracking-plan/create/#common-json-schema">Common JSON schema</a> documentation</td>
     </tr>
     <tr class="settingRow filtered-source" id="settingRow">
       <td>Event discard setting</td>
       <td><samp>event_setting</samp></td>
       <td>The Source is configured to discard events of this type</td>
-      <td> Check source schema filters. <br><br> For more information, see the <a href="/docs/guides/filtering-data/#per-source-schema-integrations-filters"> Source Schema Integrations Filters</a> documentation</td>
+      <td>If you don't want these kinds of events discarded, check source schema filters. <br><br> For more information, see the <a href="/docs/guides/filtering-data/#per-source-schema-integrations-filters"> Source Schema Integrations Filters</a> documentation</td>
     </tr>
     <tr class="settingRow filtered-source" id="settingRow">
       <td>Schema violation</td>
       <td><samp>schema_violation</samp></td>
       <td>Source schema is configured to block events that violate the connected Tracking Plan JSON schema. </td>
-      <td> Check event payload against the connected Tracking Plan Common JSON Schema. If the event passes the correct information, then update the tracking plan common JSON schema with the new information. <br>or:<br>Update the source configurations settings to allow events that violate the connected Tracking Plan JSON schema:<br>Source > Settings > Schema Configurations > Advanced Blocking Controls <br><br> For more information, see the <a href="/docs/protocols/tracking-plan/enforce/schema-configuration/">Customize your schema controls</a> documentation</td>
+      <td>To fix the violation, check the event payload against the connected tracking plan JSON schema. If the event is passing the correct information, then update the JSON schema with the new information.<br><br> For more information, see the <a href="/docs/protocols/tracking-plan/enforce/schema-configuration/">Customize your schema controls</a> documentation</td>
     </tr>
     <tr class="settingRow filtered-source" id="settingRow">
       <td>Unplanned event</td>
       <td><samp>unplanned</samp></td>
       <td>Source schema configured to block events not defined in the connected Tracking Plan</td>
-      <td>Check source Configurations:<br>Settings > Schema Configurations > to allow unplanned events.<br>OR:<br>Add the new event in the connected tracking plan so it's recognized as a planned event. For more information, see the <a href="/docs/protocols/tracking-plan/enforce/schema-configuration/">Customize your schema controls</a> documentation</td>
+      <td>To allow unplanned events, check the source configurations:<br>Settings > Schema Configurations > to allow unplanned events.<br>To make this event a planned event, add it to the connected Tracking Plan. For more information, see the <a href="/docs/protocols/tracking-plan/enforce/schema-configuration/">Customize your schema controls</a> documentation</td>
     </tr>
     <tr class="settingRow filtered-source" id="settingRow">
       <td>Unplanned and schema violation</td>
       <td><samp>unplanned_and_<br>schema_violation</samp></td>
       <td>Source schema configured to block events not defined in the connected tracking plan. The event also violated the connected tracking plan JSON schema</td>
-      <td>Update the source schema configurations to allow unplanned events<br>OR:<br>Add the new event in the connected tracking plan so it's recognized as a planned event.</td>
+      <td>To allow unplanned events, update the source schema configurations. To make this a planned event, add it to the connected Tracking Plan</td>
     </tr>
     <tr class="settingRow filtered-destination">
       <td colspan="4" style="font-weight: bold; background-color:fafbff;font-size: 10px; text-transform: uppercase;"
@@ -373,7 +385,7 @@
     <tr class="settingRow filtered-destination" id="settingRow">
       <td>Unkown integration</td>
       <td><samp>UNKNOWN_INTEGRATION</samp></td>
-      <td>Destination not registered in the integrations info</td>
+      <td>The destination is not registered</td>
       <td>Check the event payloads integrations object to ensure all listed destinations are valid. Refer to the destination's documentation for acceptable names. <br><br> For more information, see the <a href="/docs/guides/filtering-data/#filtering-with-the-integrations-object:~:text=Filtering%20with%20the,sm%E2%80%9D%2C%20or%20%E2%80%9CMailChimp%E2%80%9D)">Filtering with the integrations object</a> documentation</td>
     </tr>
     <tr class="settingRow filtered-destination" id="settingRow">
@@ -386,13 +398,13 @@
       <td>Unsupported event type</td>
       <td><samp>UNSUPPORTED_EVENT_TYPE</samp></td>
       <td>The destination does not support this event type</td>
-      <td>For more information about the events your destination can consume, see the <a href="/docs/guides/filtering-data/#filtering-with-the-integrations-object:~:text=Filtering%20with%20the,sm%E2%80%9D%2C%20or%20%E2%80%9CMailChimp%E2%80%9D)">Filtering with the integrations object</a> documentation</td>
+      <td>Check the event type being sent to the destination. <br><br> For more information, see the <a href="/docs/connections/destinations/methods-compare/">Destination methods comparison</a> documentation</td>
     </tr>
     <tr class="settingRow filtered-destination" id="settingRow">
       <td>Invalid settings</td>
       <td><samp>INVALID_SETTINGS</samp></td>
       <td>The event type is missing one or more required settings</td>
-      <td>Check your integration type. <br><br>For more information, see the <a href="/docs/connections/destinations/add-destination/#:~:text=Destination%20settings,certain%20destination%20features.">Destination settings</a> documentation</td>
+      <td>Check your integration settings. <br><br>For more information, see the <a href="/docs/connections/destinations/add-destination/#:~:text=Destination%20settings,certain%20destination%20features.">Destination settings</a> documentation</td>
     </tr>
     <tr class="settingRow filtered-destination" id="settingRow">
       <td>Functions lock out</td>
@@ -413,6 +425,12 @@
       <td>Your event does not meet any trigger cases for your Actions mappings. Please add a mapping with a trigger that accepts this event. <br><br>For more information, see the <a href="/docs/connections/destinations/actions/#available-actions-based-destinations:~:text=Validation%20error%20when,to%20reach%20downstream.">Actions destination FAQ</a></td>
     </tr>
     <tr class="settingRow filtered-destination" id="settingRow">
+      <td>No enabled destinations</td>
+      <td><samp>NO_ENABLED_DESTINATIONS</samp></td>
+      <td>The source is not connected to an enabled destination</td>
+      <td>Check that the destination is enabled</td>
+    </tr>
+    <tr class="settingRow filtered-destination" id="settingRow">
       <td>Filtered at mapping</td>
       <td><samp>FILTERED_AT_MAPPING</samp></td>
       <td>The event was filtered because it did not match the <a href="/docs/connections/destinations/actions/#components-of-a-destination-action">Actions destination mapping</a></td>
@@ -421,8 +439,14 @@
     <tr class="settingRow filtered-destination" id="settingRow">
       <td>Failed data encryption</td>
       <td><samp>FAILED_DATA_ENCRYPTION</samp></td>
-      <td>Message delivery failed due to data encryption; either there was an issue encrypting data or failed to deliver data with encrypted values</td>
-      <td>Check if the destination can accept encrypted data in the fields being encrypted</td>
+      <td>There was either a problem encrypting the data, or with delivering data with encrypted values</td>
+      <td>Check if the destination accepts encrypted data in the fields being encrypted</td>
+    </tr>
+    <tr class="settingRow filtered-destination" id="settingRow">
+      <td>Events filtered by insert function</td>
+      <td><samp>DROP_EVENT</samp></td>
+      <td>The event was intentionally discarded due to a destination function</td>
+      <td>Check the destination function code to verify that expected outcome. <br><br>For more information, see the <a href="/docs/connections/functions/destination-functions/">Destination Functions</a>documentation</td>
     </tr>
     <tr class="settingRow filtered-destination" id="settingRow">
       <td>Invalid request</td>
@@ -443,10 +467,10 @@
       <td>Fix the payload to contain the data needed by the function</td>
     </tr>
     <tr class="settingRow filtered-destination" id="settingRow">
-      <td>Unsupported content-type</td>
+      <td>Unsupported event type</td>
       <td><samp>unsupported_event_type</samp></td>
-      <td>EventNotSupported or Missing event handler</td>
-      <td>Add the missing handler to the function code</td>
+      <td>The function does not support this event type</td>
+      <td>Add the missing event handler to the function code</td>
     </tr>
     <tr class="settingRow filtered-destination" id="settingRow">
       <td>Failed to process request</td>
@@ -499,7 +523,7 @@
       <td>Erefused</td>
       <td><samp>EREFUSED</samp></td>
       <td>There was a temporary problem connecting to the destination's API</td>
-      <td>This event will be retried automatically. <br> If the event eventually fails, your Segment configuration settings may contain some invalid settings, or the integration may not be operational. <br> If your configurations are valid, consider disabling this integration or conact the intagration partner. <br><br> For more information, see the <a href="/docs/connections/integration_error_codes/#:~:text=errors.awaiting%2Dretry.ENOTFOUND,to%20address%20this%20issue.">Integration Error Codes</a> documentation</td>
+      <td>This event will be retried automatically. <br> If the event eventually fails, your Segment configuration settings may contain some invalid settings, or the integration may not be operational. <br> If your configurations are valid, consider disabling this integration or contact the intagration partner. <br><br> For more information, see the <a href="/docs/connections/integration_error_codes/#:~:text=errors.awaiting%2Dretry.ENOTFOUND,to%20address%20this%20issue.">Integration Error Codes</a> documentation</td>
     </tr>
     <tr class="settingRow failed-delivery" id="settingRow">
       <td>Unsupported event type</td>
@@ -571,13 +595,31 @@
       <td>401</td>
       <td><samp>401</samp></td>
       <td>The request could not be completed because the authentication credentials are either invalid or expired </td>
-      <td>Re-authenticate your account with the partner and update your authentication settings in Segment. <br><br>For more information, see the <a href="/docs/connections/integration_error_codes/#:~:text=errors.discarded.401,settings%20in%20Segment.">Integration Error Codes</a> documentation</td>
+      <td>Re-authenticate your account with the destination and update your authentication settings in Segment. <br><br>For more information, see the <a href="/docs/connections/integration_error_codes/#:~:text=errors.discarded.401,settings%20in%20Segment.">Integration Error Codes</a> documentation</td>
     </tr>
     <tr class="settingRow failed-delivery" id="settingRow">
       <td>Econnreset</td>
       <td><samp>ECONNRESET</samp></td>
       <td>Segment could not establish a connection to the partner server </td>
       <td>Your Segment configurations might contain some invalid settings or the integration may no longer be operational. If your configurations are valid, disable this integration or contact the integration partner.<br><br>For more information, see the <a href="/docs/connections/integration_error_codes/#:~:text=errors.awaiting%2Dretry.ENOTFOUND,to%20address%20this%20issue.">Integration Error Codes</a> documentation</td>
+    </tr>
+    <tr class="settingRow failed-delivery" id="settingRow">
+      <td>Event expired</td>
+      <td><samp>expires</samp></td>
+      <td>The event exceeded Segment's maximum retry period</td>
+      <td></td>
+    </tr>
+    <tr class="settingRow failed-delivery" id="settingRow">
+      <td>Resource locked</td>
+      <td><samp>RESOURCE_LOCKED</samp></td>
+      <td>The destination does not support concurrent requests to certain API endpoints </td>
+      <td>If this error continues, send fewer overlapping events to this destination</td>
+    </tr>
+    <tr class="settingRow failed-delivery" id="settingRow">
+      <td>Event throttled</td>
+      <td><samp>throttles</samp></td>
+      <td></td>
+      <td><br><br>For more information, see the <a href="/docs/connections/rate-limits/#outbound-downstream-destination-rate-limits">Outbound downstream desitnation rate limits</a> documentation</td>
     </tr>
   </tbody>
 </table>
