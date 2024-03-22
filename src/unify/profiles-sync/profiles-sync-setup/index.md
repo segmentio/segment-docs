@@ -33,7 +33,7 @@ The following table shows the supported Profiles Sync warehouse destinations and
 | [BigQuery](/docs/connections/storage/catalog/bigquery/) |                  
 | [Azure](/docs/connections/storage/catalog/azuresqldw/)                    | Follow the steps in [Azure Synapse Analytics Getting Started](/connections/storage/catalog/azuresqldw/#getting-started)  |
 | [Postgres](/docs/connections/storage/catalog/postgres/)                   | Follow the steps in [Postgres getting started](/docs/connections/storage/catalog/postgres/).                                                      |
-| [Databricks](/docs/unify/profiles-sync/profiles-sync-setup/databricks-profiles-sync/)                   | Follow the steps in the [Databricks for Profiles Sync](/docs/unify/profiles-sync/profiles-sync-setup/databricks-profiles-sync/) guide.                  |
+| [Databricks](/docs/unify/profiles-sync/profiles-sync-setup/databricks-profiles-sync/)  | Follow the steps in the [Databricks for Profiles Sync](/docs/unify/profiles-sync/profiles-sync-setup/databricks-profiles-sync/) guide.                  |
 
 After you’ve finished the required steps for your chosen warehouse, you’re ready to connect your warehouse to Segment. Because you’ll next enter credentials from the warehouse you just created, **leave the warehouse tab open to streamline setup.**
 
@@ -93,6 +93,7 @@ You can sync the following tables:
 | [Profile materialized tables](/docs/unify/profiles-sync/tables/#tables-segment-materializes) | - `user_identifier` <br> - `user_traits` <br> - `profile_merges`     | Complete |
 | [Event type tables](/docs/unify/profiles-sync/tables/#event-type-tables)          |  - `Identify` <br> - `Page` <br> - `Group` <br> - `Screen` <br> - `Alias` <br> - `Track`     | 2 months |
 | [Track event tables](/docs/unify/profiles-sync/tables/#track-event-tables)         |   To view and select individual track tables, don't sync track tables during the initial setup. Edit your sync settings after enabling Profiles Sync and waiting for the first sync to complete.                   | 2 months |
+
 #### Using Selective Sync
 
 Use Selective Sync to manage the data you send to your warehouses by choosing which tables and columns (also known as properties) to sync. Syncing fewer tables and properties will lead to faster and more frequent syncs, faster queries, and using less disk space.
@@ -110,7 +111,7 @@ Regardless of schema size, only the first 5,000 collections and 5,000 properties
 
 #### When to use Selective Sync
 
-Use Selective Sync when you'd like to prevent specific tables and properties from syncing to your warehouse. Segment stops syncing from disabled tables or properties, but will not delete any historical data from your warehouse.
+Use Selective Sync when you want to prevent specific tables and properties from syncing to your warehouse. Segment stops syncing from disabled tables or properties, but will not delete any historical data from your warehouse.
 
 If you choose to re-enable a table or property to sync again, only new data generated will sync to your warehouse. Segment doesn't backfill data that was omitted with Selective Sync.
 
@@ -136,9 +137,12 @@ Reach out to [Segment support](https://app.segment.com/workspaces?contact=1){:ta
 
 ### Step 4 (Optional): Materialize key views using a SQL automation tool
 
-During setup, you can optionally materialize views on your own, or use Segment's open source dbt models. 
+During setup, you have the option of setting up materialized key views in one of two ways:
 
-You might want to materialize your own tables if, for example, you want to transform additional data or join Segment profile data with external data before materialization. 
+1. You can choose to materialize views on your own by selecting 
+2. You can choose to use Segment's open source dbt models by selecting . 
+
+You may want to materialize your own tables if, for example, you want to transform additional data or join Segment profile data with external data before materialization. 
  
 > success ""
 > You can alternatively use [tables that Segment materializes](/docs/unify/profiles-sync/tables/#tables-segment-materializes) and syncs to your data warehouse. 
