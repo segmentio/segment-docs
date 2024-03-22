@@ -139,10 +139,10 @@ Reach out to [Segment support](https://app.segment.com/workspaces?contact=1){:ta
 
 During setup, you have the option of setting up materialized key views in one of two ways:
 
-1. You can choose to materialize views on your own by selecting 
-2. You can choose to use Segment's open source dbt models by selecting . 
+1. You can choose to materialize views on your own by using `profiles raw tables`. 
+You may want to materialize your own tables if, for example, you want to transform additional data or join Segment profile data with external data before materialization.
 
-You may want to materialize your own tables if, for example, you want to transform additional data or join Segment profile data with external data before materialization. 
+2. You can choose to use Segment's open source dbt models by using `profiles materialized` tables.
  
 > success ""
 > You can alternatively use [tables that Segment materializes](/docs/unify/profiles-sync/tables/#tables-segment-materializes) and syncs to your data warehouse. 
@@ -153,14 +153,14 @@ To start seeing unified profiles in your warehouse and build attribution models,
   * `external_id_mapping`: the current-state mapping between each external identifier you’ve observed and its corresponding, fully-merged `canonical_segment_id`
   * `profile_traits`: the last seen value for all custom traits, computed traits, SQL traits, audiences, and journeys associated with a profile in a single row
 
-Please visit [Tables you materialize](/docs/unify/profiles-sync/tables/#tables-you-materialize) for more on how to materialize these views either on your own, or with [Segment's open source dbt models](https://github.com/segmentio/profiles-sync-dbt){:target="blank"}.
+See [Tables you materialize](/docs/unify/profiles-sync/tables/#tables-you-materialize) for more on how to materialize these views either on your own, or with [Segment's open source dbt models](https://github.com/segmentio/profiles-sync-dbt){:target="blank"}.
 
 > warning ""
-> Please note that dbt models are in beta and need modifications to run efficiently on BigQuery, Synapse, and Postgres warehouses. Segment is actively working on this feature.
+> Note that dbt models are in beta and need modifications to run efficiently on BigQuery, Synapse, and Postgres warehouses. Segment is actively working on this feature.
 
 ## Profiles Sync limits
 
-As you use Profiles Sync, please keep the following limits in mind:
+As you use Profiles Sync, keep the following limits in mind:
 
 - For event tables, Segment can only backfill up to 2,000 tables for each workspace.
 - Segment can only initiate backfills after a successful sync with > 0 rows.
