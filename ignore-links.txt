@@ -71,3 +71,10 @@ https://segment.com/docs/connections/sources/catalog/cloud-apps/snowflake/
 https://segment.com/docs/connections/destinations/catalog/adobe-target-cloud-mode/
 https://segment.com/docs/connections/destinations/catalog/adobe-target-web/
 https://segment.com/docs/connections/destinations/catalog/google-ads-remarketing-lists/
+https://compose.aampe.com/configure/integrations
+https://everboarding.trybento.co/data
+https://app.getcorrelated.com/integrations
+https://app.launchdarkly.com/default/production/debugger/goals
+https://www.app.metricstory.ai/account/apikeys
+https://app.unstack.com/login
+https://github.com/fubotv/segment-analytics-android/pull/1
