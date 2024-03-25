@@ -4,7 +4,7 @@ plan: engage-foundations
 beta: true
 redirect_from: 
     - '/unify/linked-profiles/linked-audiences'
-hidden: false
+hidden: true
 ---
 info "Linked Audiences is in public beta"
 > Linked Audiences is in public beta, and Segment is actively working on this feature. Some functionality may change before it becomes generally available.
