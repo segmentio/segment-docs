@@ -18,7 +18,7 @@ You can create an alert that notifies you when the volume of events received by 
 
 To receive a source volume alert in a Slack channel, you must first create a Slack webhook. For more information about Slack webhooks, see the [Sending messages using incoming webhooks](https://api.slack.com/messaging/webhooks){:target="_blank”} documentation.
 
-![A screenshot of the Source Volume alert creation sidesheet.](images/alerting-source-alert.png)
+<img src="images/alerting-source-alert.png" alt="A screenshot of the Source Volume alert creation sidesheet." width="470px" height="540px">
 
 To create a source volume alert: 
 1. In your workspace, navigate to Connections, select Sources, and select the Event streams tab. 
