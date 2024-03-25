@@ -230,3 +230,9 @@ The destination does not automatically support out-of-the-box deeplinking (you n
 Therefore, you can use AppsFlyer's OneLink integration which is a single, smart, tracking link that can be used to track on both Android and iOS. OneLink tracking links can launch your app when it is already installed instead of redirecting the user to the app store.
 
 For more details, review the [AppsFlyer OneLink set up Guide](https://support.appsflyer.com/hc/en-us/articles/207032246-OneLink-Setup-Guide){:target="_blank"}. More information is available in the AppsFlyer SDK Integration Guides ([iOS](https://support.appsflyer.com/hc/en-us/articles/207032066-AppsFlyer-SDK-Integration-iOS{:target="_blank"}), [Android](https://support.appsflyer.com/hc/en-us/articles/207032126-AppsFlyer-SDK-Integration-Android){:target="_blank"}) and Segment's mobile FAQs ([iOS](/docs/connections/sources/catalog/libraries/mobile/ios/#faq), [Android](/docs/connections/sources/catalog/libraries/mobile/android/#faq)).
+
+## FAQ
+
+### Q: Is there a way to utilize my AppsFlyer attribution data to send to destinations like GA4 and Salesforce?
+
+If you would like your AppsFlyer data sent to a destination, you may consider our [Source Functions](/docs/connections/functions/source-functions/). This would let you build out a source where you could take in incoming data through a Webhook and then formulate Track/Identify/Page/etc. calls to be sent to your connected destinations.
