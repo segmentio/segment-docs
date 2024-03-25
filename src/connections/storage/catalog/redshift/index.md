@@ -126,11 +126,10 @@ It's often the case that customers want to combine 1st-party transactional and o
 
 If you're interested in importing data into a Redshift cluster, it's important that you follow these [guidelines](/docs/connections/storage/warehouses/faq/).
 
-Additionally, there a number of tools which provide syncing services between databases (mySQL, SQL Server, Oracle, PostgreSQL). Here is a list of some we've seen used by customers.
+Additionally, there a number of tools which provide syncing services between databases (mySQL, SQL Server, Oracle, PostgreSQL). Here is a list of some that Segment customers use.
 
 - [SymmetricDS (Open Source)](http://www.symmetricds.org/?__hstc=222691652.f2c5ed50a3a9703ac3be5283918044ad.1436399176206.1437192161002.1437244552315.24&__hssc=222691652.12.1437244552315&__hsfp=2203243415)
 - [FlyData](https://www.flydata.com/products/?__hstc=222691652.f2c5ed50a3a9703ac3be5283918044ad.1436399176206.1437192161002.1437244552315.24&__hssc=222691652.12.1437244552315&__hsfp=2203243415)
-- [Attunity](http://www.attunity.com/solutions/cloud/amazon-redshift?__hstc=222691652.f2c5ed50a3a9703ac3be5283918044ad.1436399176206.1437192161002.1437244552315.24&__hssc=222691652.12.1437244552315&__hsfp=2203243415)
 - [Informatica](http://www.informaticacloud.com/infrastructure/synchronize-web-data-amazon-redshift?__hstc=222691652.f2c5ed50a3a9703ac3be5283918044ad.1436399176206.1437192161002.1437244552315.24&__hssc=222691652.12.1437244552315&__hsfp=2203243415)
 
 You can also unload data to a s3 bucket and then load the data into another Redshift instance manually.
