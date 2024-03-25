@@ -7,7 +7,7 @@ redirect_from:
 hidden: false
 ---
 
-# Linked Audience Use cases 
+# Linked Audience Use Cases 
 
 Below are some example use cases to help you learn more about Linked Audiences.
 
