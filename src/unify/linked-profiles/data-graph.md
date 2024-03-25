@@ -18,11 +18,11 @@ Make this relational data accessible to marketers and business stakeholders to e
 > success ""
 > To help you get started with the Data Graph, [view this short setup demo](https://drive.google.com/file/d/1oZNvs0raYaxK6tds3OEF0Ri3NGVCoXys/view?pli=1){:target="_blank"}.
 
-## Breaking Changes 
+## Breaking changes 
 
 A breaking change occurs when deleting an entity or relationship that is being referenced by a data consumer. Note that an entity or relationship slug is immutable and treated as a delete if you make changes. Data consumers affected by breaking changes will fail on the next run. 
 
-### Potential Breaking Change 
+### Potential breaking change 
 
 Editing the Data Graph may lead to errors with data consumers. If there’s a breaking change, the data consumer will fail on the next run. Unaffected data consumers will continue to work. 
 
