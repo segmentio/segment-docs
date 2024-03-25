@@ -77,6 +77,6 @@ In each Event Mapping, there is a “Send To” parameter. Indicate “True” i
 
 Yes. In the Set Configuration Mapping, click Show All Fields and scroll to Send Page Views. Your selection will override what is set within the Settings. This is helpful if you are updating the user_id or user_properties for all events on the page where you want to call the config command but do not want to send a page_view.
 
-### Differences between Google Analytics 4 Cloud and Google Analytics 4 Web destinations 
+## Differences between the Google Analytics 4 Cloud and Google Analytics 4 Web destinations 
 
 Segment's [Google Analytics 4 Cloud](/docs/connections/destinations/catalog/actions-google-analytics-4/) server-side destination uses Google's Measurement Protocol API to send event data server to server, whereas Segment's [Google Analytics 4 Web](/docs/connections/destinations/catalog/actions-google-analytics-4-web/) device-mode destination loads the gtag.js library client-side and uses Segment's event data to map to gtag.js events directly. Each destination has its own advantages and disadvantages. Your choice between the two depends on your specific use case, technical expertise, and the platforms from which you want to track data.
