@@ -47,3 +47,6 @@ Keep the following in mind if you plan to move to Braze (Actions) from the class
 
 ### Missing required fields
 Braze requires one of either `external_id`, `user_alias`, or `braze_id` to be present in all events sent. If events are failing to send, please check your event mappings to make sure these fields are resolving to valid values.
+
+### Missing events
+When an event is sent under an alias, the event might seems to be missing when the alias cannot be found in Braze. This could be due to incorrect search for the alias in Braze. To search for alias in Braze, the search should be in the format "Alias Label:Alias Name". For example, if "Alias Label" field is set as email and "Alias Name" field is set as email address e.g. "test@email.com", search for the alias in Braze should be "email:test@email.com".
