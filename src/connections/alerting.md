@@ -6,7 +6,7 @@ beta: true
 Connections Alerting allows Segment users to receive in-app, email, and Slack notifications related to the performance and throughput of an event-streaming connection. 
 
 > info "Connections Alerting is in beta"
-> The Connections Alerting feature is in active development, and some functionality may change before it becomes generally available. During the beta, Connections Alerting supports event-streaming connections: [event streaming sources](/docs/connections/sources/#event-streams-sources) and [cloud-mode destinations](/docs/connections/destinations/#event-streams-destinations).
+> The Connections Alerting feature is in active development, and some functionality may change before it becomes generally available. During the beta, Connections Alerting supports event-streaming connections: [event streaming sources](/docs/connections/sources/#event-streams-sources) and [cloud-mode destinations](/docs/connections/destinations/#:~:text=Cloud%2Dmode%3A%20The%20sources%20send%20data%20directly%20to%20the%20Segment%20servers%2C%20which%20then%20translate%20it%20for%20each%20connected%20downstream%20destination%2C%20and%20send%20it%20on.).
 
 To access Connections Alerting, select an event-streaming connection (like a web library source or cloud mode destination) and click the **Alerts** tab. 
 
@@ -17,6 +17,8 @@ On the Alerts tab, you can create alerts and view all active alerts for this con
 You can create an alert that notifies you when the volume of events received by your source in the last 24 hours changes beyond a percentage you set. For example, if you set a change percentage of 4%, Segment notifies you when your source ingests less than 96% or more than 104% of the typical event volume. 
 
 To receive a source volume alert in a Slack channel, you must first create a Slack webhook. For more information about Slack webhooks, see the [Sending messages using incoming webhooks](https://api.slack.com/messaging/webhooks){:target="_blank”} documentation.
+
+![A screenshot of the Source Volume alert creation sidesheet.](images/alerting-source-alert.png)
 
 To create a source volume alert: 
 1. In your workspace, navigate to Connections, select Sources, and select the Event streams tab. 
