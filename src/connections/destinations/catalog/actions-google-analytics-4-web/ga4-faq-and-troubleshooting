@@ -39,13 +39,13 @@ For event data to be sent downstream to Google Analytics:
  > note "If you toggled Page Views in your Settings to “On”, the page_view event automatically sends when the Set Configuration Mapping is triggered"
  > If you need to override this setting for your particular use case, see [Can I override my send_page_view selection that I declared in Settings?](#can-i-override-my-send_page_view-selection-that-i-declared-in-settings)
 
-All in all, the Set Configuration Mapping is a crucial part of your GA4 Web setup. It provides the “handshake” between your site and the gtag library. If no events are not sending to your GA4 instance, then use one of the Debugging Tools to check the sequence of GA4 events
+If no events are flowing to your GA4 instance, use one of the Debugging Tools to check the sequence of GA4 events.
 
 ## Duplicate `page_view` events in GA4
 
 If you are sending multiple `gtag(‘config’)` commands called from Set Configuration mapping on one page before a new DOM has loaded, and you have defined `send_page_view: true` with each ‘Config’ event, you may see duplicate `page_view` events sent to your GA4 measurement id. . If this is the case, please refer to Google's documentation on [Ignoring duplicate instances of on-page configuration](https://support.google.com/analytics/answer/9973999?hl=en#:~:text=as%20described%20below.-,Ignore%20duplicate%20instances%20of%20on%2Dpage%20configuration,Click%20Save.,-Give%20feedback%20about){:target="_blank"}. 
 
-Note: If your site is a Single Page Application (SPA), you may want to leave this toggle ‘off’ in the Google Tag Admin since a new DOM would not be called on each new page path. If that is the case, and you have multiple Set Configuration mappings, utilize the new field Send Page Views field mapping to override the `send_page_view` parameter that is set in your Settings. This selection will take precedence over what is defined in the Segment Settings. Leaving the selection undefined will always fallback to what is selected in the Segment Settings.
+If your site is a Single Page Application (SPA), you may want to leave the **Ignore duplicate instances of on-page configuration** toggle disabled in the Google Tag Admin as a new DOM is not called on each new page path. If you have a SPA, disabled the **Ignore duplicate instances of on-page configuration** toggle, and have multiple Set Configuration mappings, use Segment's new **Send Page Views** field mapping to override the `send_page_view` parameter in your Settings. This selection takes precedence over what is defined in the Segment Settings. If you leave the selection for your destination undefined, it will fall back to what you selected in the Segment Settings.
 
 If you enabled Enhanced Measurement, you might see additional `page_view` events. This happens when you enable the **Page changes based on browser history events** feature in the Advanced settings section of the **pageviews** settings. To avoid double counting page views on history state changes, disable the **Page changes based on browser history events** feature. See Google's [Manual pageviews](https://developers.google.com/analytics/devguides/collection/ga4/views?client_type=gtag#manual_pageviews){:target="_blank"} documentation for more information.
 
@@ -62,7 +62,9 @@ You can now override the send_page_view value defined in the Segment Settings fo
 Segment automatically tracks UTM parameters when they are present in the URL and sends them to Google. For example, with the following URL, Segment would send `email_variation1&utm_medium=email&utm_source=email_promo&utm_campaign=summer_sale&utm_id=abcd` to Google:
 `https://www.example.com/?utm_content=email_variation1&utm_medium=email&utm_source=email_promo&utm_campaign=summer_sale&utm_id=abcd`
 
-By default, if the UTM values are found in the `page_location` parameter, GA4 will automatically map the campaign parameters to their appropriate value. There is no additional configuration required, unless you want to override what GA4 defines. This is true for both Event mappings and the Set Configuration mapping. If you modify the output of the `page_location` and the UTM parameters are not included, this could result in erroneous acquisition and attribution mapping. Furthermore, you can observe by triggering a `Page` call with UTM parameters present in the URL and navigating to the **Realtime overview** report in GA4 to see the resulting `page_view` event under the _Event count by Event name_ card - the Acquisition card in Realtime reflects First User acquisition and may not reflect the parameters of the event if this was a second session event
+By default, if the UTM values are found in the `page_location` parameter, GA4 automatically maps the campaign parameters to their appropriate value. There is no additional configuration required, unless you want to override what GA4 defines. This is true for both Event mappings and the Set Configuration mapping. If you modify the output of the `page_location` and the UTM parameters are not included, this might result in erroneous acquisition and attribution mapping. 
+
+To observe this feature, trigger a `Page` call with UTM parameters present in the URL and navigate to the **Realtime overview** report in GA4 to see the resulting `page_view` event under the _Event count by Event name_ card. The Acquisition card in the Realtime overview report reflects First User acquisition, but may not reflect the parameters of the event if this was a second session event. 
 
 ## Pass Custom Event parameters to all events and Custom Item parameters to all recommended Ecommerce events
 
@@ -76,7 +78,7 @@ In each Event Mapping, there is a “Send To” parameter. Set this to “True�
 
 ## Can I override my send_page_view selection that I declared in the Settings?
 
-Yes. In the Set Configuration Mapping, click Show All Fields and scroll to Send Page Views. Your selection will override what is set within the Settings. This is helpful if you are updating the user_id or user_properties for all events on the page where you want to call the config command but do not want to send a page_view.
+Yes. In the Set Configuration Mapping, click Show All Fields and scroll to Send Page Views. Your selection overrides what is set within the Settings. This is helpful if you are updating the user_id or user_properties for all events on the page where you want to call the config command but do not want to send a page_view.
 
 ## Differences between the Google Analytics 4 Cloud and Google Analytics 4 Web destinations 
 
