@@ -1,46 +1,47 @@
 ---
 title: Google Analytics 4 FAQ and Troubleshooting
 strat: google
-
 ---
-## Google Analytics 4 FAQ and troubleshooting
 
-### Debug mode
+## Debug mode
 
-The Google Analytics 4 [debug mode](https://support.google.com/analytics/answer/7201382?hl=en){:target="_blank"} is supported with the Google Analytics 4 Web destination. DebugView displays the events and user properties that Analytics collects from a user in real-time. This can be helpful in troubleshooting your implementation.
+The Google Analytics 4 debug mode, [DebugView](https://support.google.com/analytics/answer/7201382?hl=en){:target="_blank"} is supported with the Google Analytics 4 Web destination. DebugView displays the events and user properties that Analytics collects from a user in real-time. This can be helpful when troubleshooting your implementation.
 
-### Send events from both the browser and the server 
+## Send events from both the browser and the server 
 
 With Google Analytics 4 Web, events are sent from the browser (client-side) to GA4. If you use Segment’s [Google Analytics 4 Cloud destination](/docs/connections/destinations/catalog/actions-google-analytics-4/#benefits-of-google-analytics-4-cloud) to send events through the Measurement Protocol API and want to tie data between client-side and server-side, you need to pass the same Client ID from the browser and the server for GA4 to merge events around a distinct user, and if you want the server-side event to be tied to the client-side session, you must pass the session_id in the server side event.
 
 The client_id and the session_id are both cookies stored in the user browser. You can use [Google gtag get commands](https://developers.google.com/tag-platform/gtagjs/reference#get){:target=”_blank”} or other cookie methods to parse these values from the _ga cookie and _ga_measurementId cookie:
-If your _ga cookie is GA1.1.1783165678.1701112990 then 1783165678.1701112990 is your client_id
-If your _ga_M12454XDR cookie is GS1.1.1710342977.347.1.1710343074.0.0.0 then 1710342977 is you session_id
+- If your _ga cookie is GA1.1.1783165678.1701112990 then 1783165678.1701112990 is your client_id
+- If your _ga_M12454XDR cookie is GS1.1.1710342977.347.1.1710343074.0.0.0 then 1710342977 is your session_id
 
-It is not required to send a session number for server-side hits. Session metrics will come from the client-side data after the server-side event data is stitched to the client-side session.
+You are not required to send a session number for server-side hits. Session metrics come from the client-side data after GA4 stitches server-side event data to the client-side session.
 
-A hybrid GA4 application is an advanced implementation and it is advised to enable GA4 Web destination first, then incorporate GA4 Cloud destination to augment your client-side tracking. It is also recommended you have deep knowledge of GA4 session-stitching, troubleshooting, and known caveats of GA4 Measurement Protocol prior to implementing.
+> success ""
+> Segment recommends that you enable the GA4 Web destination first then incorporate GA4 Cloud destination to augment your client-side tracking, as a hybrid GA4 application is an advanced implementation. Segment also recommends that you have deep knowledge of GA4 session-stitching, troubleshooting, and known caveats of the GA4 Measurement Protocol prior to implementing the Google Analytics 4 destination.
 
-### Additional (unmapped) events are sent to GA4
+## Additional (unmapped) events are sent to GA4
 
-Google Analytics 4 collects events triggered by basic interactions with your site. For more information, see [Google Analytics 4 Automatically Collected events](https://support.google.com/analytics/answer/9234069?hl=en){:target="_blank"}
+Google Analytics 4 collects events triggered by basic interactions with your site. For more information about which interactions are automatically collected, see [Google Analytics 4 Automatically Collected events](https://support.google.com/analytics/answer/9234069?hl=en){:target="_blank"}.
 
-### Data takes a long time to appear in Google's reports
+## Data takes a long time to appear in Google's reports
 
-Google may take [24-48 hours](https://support.google.com/analytics/answer/9333790){:target="_blank"} to process data sent to Google Analytics. As a result, the Google Analytics user interface may not reflect the most current data. The Google Analytics [Realtime report](https://support.google.com/analytics/answer/9271392){:target="_blank"} displays activity on your site as it happens; however, events seen in Realtime Reports do not always equate to how the data is processed in the standard reports. Typically we see this when a Custom Definition is not defined in the GA4 Admin panel.
+Google may take [24-48 hours](https://support.google.com/analytics/answer/9333790){:target="_blank"} to process data sent to Google Analytics. As a result, the Google Analytics user interface may not reflect the most current data. The Google Analytics [Realtime report](https://support.google.com/analytics/answer/9271392){:target="_blank"} displays activity on your site as it happens; however, events seen in Realtime reports do not always equate to how the data is processed in the standard reports. This disconnect between events seen in Realtime reports and Standard reports happens when a Custom Definition is not defined in the GA4 Admin panel.
 
-### Data is not sent to Google
+## Data is not sent to Google
 
 For event data to be sent downstream to Google Analytics:
 
-1. The **Set Configuration Fields** mapping must be configured and enabled in your mappings. This mapping is required for data to be sent downstream because it sets configuration to the GA4 Measurement ID indicated in the Settings and establishes data flow using the `config` command.
+1. Configure and enable the  **Set Configuration Fields** mapping. This mapping is required for data to be sent downstream because it sets configuration to the GA4 Measurement ID indicated in the Settings and establishes data flow using the `config` command.
+2. Confirm you call `analytics.page()` on page load. Analytics.js requires an initial Page call to send data to Google Analytics 4 Web. _The Segment snippet includes this initial call by default._
+3. Send data with an event: typically this is a `page_view` as your first event. 
 
-2. Ensure that you're calling `analytics.page()` on page load. Analytics.js requires an initial Page call to send data to Google Analytics 4 Web. The Segment snippet includes this initial call by default.
-3. Send data with an event, typically this is a page_view as your first event. Note: If you toggled “On” Page Views in your Settings, then the page_view event will automatically send when Set Configuration Mapping is triggered. If you need to override this setting for your particular use case, read {{link to this section: ### Can I override my send_page_view selection that I declared in the Settings?}}
+ > note "If you toggled Page Views in your Settings to “On”, the page_view event automatically sends when the Set Configuration Mapping is triggered"
+ > If you need to override this setting for your particular use case, see [Can I override my send_page_view selection that I declared in Settings?](#can-i-override-my-send_page_view-selection-that-i-declared-in-settings)
 
 All in all, the Set Configuration Mapping is a crucial part of your GA4 Web setup. It provides the “handshake” between your site and the gtag library. If no events are not sending to your GA4 instance, then use one of the Debugging Tools to check the sequence of GA4 events
 
-### Duplicate `page_view` events in GA4
+## Duplicate `page_view` events in GA4
 
 If you are sending multiple `gtag(‘config’)` commands called from Set Configuration mapping on one page before a new DOM has loaded, and you have defined `send_page_view: true` with each ‘Config’ event, you may see duplicate `page_view` events sent to your GA4 measurement id. . If this is the case, please refer to Google's documentation on [Ignoring duplicate instances of on-page configuration](https://support.google.com/analytics/answer/9973999?hl=en#:~:text=as%20described%20below.-,Ignore%20duplicate%20instances%20of%20on%2Dpage%20configuration,Click%20Save.,-Give%20feedback%20about){:target="_blank"}. 
 
