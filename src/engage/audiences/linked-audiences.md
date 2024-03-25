@@ -29,7 +29,7 @@ To help you get started with Linked Audiences, consider the following best pract
 
 ## Step 1: Build a Linked Audience
 
-You can build a Linked Audience from profiles associated with an entity, trait, event, or existing audience.
+You can build a Linked Audience from profiles associated with an entity, trait, event, or existing audience. You can also filter on profile traits and event history, and filter on warehouse entities mapped to the Data Graph.
 
 ![Choose your audience conditions](/docs/engage/images/conditions.png)
 
