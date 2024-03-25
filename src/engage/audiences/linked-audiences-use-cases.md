@@ -2,6 +2,7 @@
 title: Linked Audiences Use Cases
 plan: engage-foundations
 beta: true
+hidden: true
 redirect_from: 
     - '/unify/linked-profiles/linked-audiences-use-cases'
 hidden: false
