@@ -51,14 +51,16 @@ The Kafka Destination can send data to Topics on self hosted Kafka Clusters, or 
 
 Data will be sent to Kafka in JSON format only. Avro, Protobuf and other formats are not yet supported. 
 
-### Which authentication formats are supported?
+### Which authentication mechanisms are supported?
+
+The Authentication Mechanism is controlled with the **Authentication Mechanism** Setting field. 
 
 The following SASL based authentication mechanisms are supported: **Plain**, **SCRAM-SHA-256**, **SCRAM-SHA-512** and **AWS**. 
 **Client Certificate** auth is also supported. 
 
 ### How is Partitioning controlled?
 
-The **Send** Action provides allows for multiple ways to specify which an event should be sent to. 
+The **Send** Action provides multiple ways to specify which Partition an event should be sent to. 
 
 1) The **Partition** field: Use this field to specify the name of the Partition to send the event to. 
 2) The **Default Partition** field: Use this field to specify a default Partition. This will be used when value is provided in the **Partition** field.
