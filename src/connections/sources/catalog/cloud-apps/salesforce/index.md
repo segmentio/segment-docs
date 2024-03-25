@@ -9,7 +9,7 @@ id: 2baks93n
 Take your company's analysis to the next level by **adding Salesforce as a Source to Segment.** Segment automatically collects objects like `Accounts`, `Campaigns`, and `Tasks` and loads them into your data warehouse. 
 
 > info "Salesforce version upgrade to 58.0"
-> Segment's Salesforce source is currently running on version 39.0. On March 25, 2024, the Salesforce source will upgrade to use Salesforce's latest API version 58.0. See the [version upgrade changes](#version-upgrade-changes) to learn more.
+> On March 25, 2024, the Salesforce source upgraded to use Salesforce's API version 58.0. See the [version upgrade changes](#version-upgrade-changes) to learn more.
 
 ## Getting started
 > info ""
@@ -129,17 +129,18 @@ For Salesforce, Segment uses the `SystemModstamp`(system_modstamp) field to chec
 If you've added and selected custom fields to an existing collection and would not like to use `SystemModstamp` to bring in historical data, [contact Segment Support](https://segment.com/help/contact/){:target="_blank"} to configure them to sync. You do not need to include the field names.
 
 ## Version upgrade changes
-On March 25, 2024, Segment will upgrade the Salesforce source integration from version 39.0 to Salesforce's latest API version 58.0. With the upgrade, there are [deleted fields](#deleted-fields) and [added fields](#added-fields). 
+
+On March 25, 2024, Segment upgraded the Salesforce source integration from version 39.0 to Salesforce's API version 58.0. With the upgrade, there are [deleted fields](#deleted-fields) and [added fields](#added-fields). 
 
 > info ""
-> All new Salesforce sources created on or after March 25, 2024 will use version 58.0. 
+> All new Salesforce sources created on or after March 25, 2024 use version 58.0. 
 
 ### Deleted fields
 
 Change | Fields
 ---- | ------------
 Collections deprecated | `AssistantRecommendationShare`, `AssistantRecommendation` 
-Deprecated (Column name, Collection) pairs | (`ForeignKeyAssetId, CustomBrandAsset`), (`UserPermissionsMobileUser, User`), (`OptionsRequireHttps, Site`), (`UniqueKey, LoginEvent`), (`OptionsExternalHttps, Domain`) 
+Columns deprecated from the collections (Column name, Collection) | (`ForeignKeyAssetId, CustomBrandAsset`), (`UserPermissionsMobileUser, User`), (`OptionsRequireHttps, Site`), (`UniqueKey, LoginEvent`), (`OptionsExternalHttps, Domain`) 
 
 
 ### Added fields

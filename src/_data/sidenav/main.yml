@@ -185,6 +185,8 @@ sections:
     - section_title: Reverse ETL Source Setup Guides
       slug: connections/reverse-etl/reverse-etl-source-setup-guides
       section:
+      - path: /connections/reverse-etl/reverse-etl-source-setup-guides/azure-setup
+        title: Azure Reverse ETL Setup
       - path: /connections/reverse-etl/reverse-etl-source-setup-guides/bigquery-setup
         title: BigQuery Reverse ETL Setup
       - path: /connections/reverse-etl/reverse-etl-source-setup-guides/databricks-setup
@@ -360,6 +362,8 @@ sections:
     title: Profile Debugger
   - path: /unify/insights
     title: Profiles Insights
+  - path: /unify/csv-upload
+    title: CSV Upload
   - path: /unify/unify-gdpr
     title: Unify and GDPR
   - path: /unify/faqs
