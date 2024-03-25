@@ -114,7 +114,7 @@ To activate your Linked Audience, first add an action destination.
 From Add destination, select your destination and click **Next**.
 
 ### Step 2b: Select event
-After adding an actions-based destination, select what type of event you want to send to the destination. Events update the destination about changes to your entity or audiences. You can then use these actions to orchestrate campaigns in other tools.
+After adding a  destination to your audience, configure the data you would like to send to the destination. First, select a type of event you want to send to the destination. Events update destinations about changes to your entity or audiences and contain data that can be used in the downstream destination. 
 
 You can send events:
 - When an entity on a profile changes:
