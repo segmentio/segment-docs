@@ -9,7 +9,7 @@ id: 2baks93n
 Take your company's analysis to the next level by **adding Salesforce as a Source to Segment.** Segment automatically collects objects like `Accounts`, `Campaigns`, and `Tasks` and loads them into your data warehouse. 
 
 > info "Salesforce version upgrade to 58.0"
-> On March 25, 2024, the Salesforce source upgraded to use Salesforce's latest API version 58.0. See the [version upgrade changes](#version-upgrade-changes) to learn more.
+> On March 25, 2024, the Salesforce source upgraded to use Salesforce's API version 58.0. See the [version upgrade changes](#version-upgrade-changes) to learn more.
 
 ## Getting started
 > info ""
@@ -130,7 +130,7 @@ If you've added and selected custom fields to an existing collection and would n
 
 ## Version upgrade changes
 
-On March 25, 2024, Segment upgraded the Salesforce source integration from version 39.0 to Salesforce's latest API version 58.0. With the upgrade, there are [deleted fields](#deleted-fields) and [added fields](#added-fields). 
+On March 25, 2024, Segment upgraded the Salesforce source integration from version 39.0 to Salesforce's API version 58.0. With the upgrade, there are [deleted fields](#deleted-fields) and [added fields](#added-fields). 
 
 > info ""
 > All new Salesforce sources created on or after March 25, 2024 use version 58.0. 
