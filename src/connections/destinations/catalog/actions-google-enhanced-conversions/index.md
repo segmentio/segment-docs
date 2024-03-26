@@ -121,9 +121,9 @@ When you use OAuth to authenticate into the Google Ads Conversions destination, 
 
 Because of the duplicate API requests, you may see a warning in Google for unprocessed conversions due to incorrect or missing OAuth credentials. This warning is expected and does not indicate data loss. Google has confirmed that conversions are being processed, and OAuth retry behavior will not cause any issues for your web conversions. Whenever possible, Segment caches access tokens to reduce the total number of requests made to Google Ads Conversions.
 
-### Resolving an invalid_conversion_action_type Error
+### Resolving an invalid_conversion_action_type error
 
-This error indicates that the conversion action specified in the upload request has not been set up for conversion uploads, as outlined in [Google Ads](https://developers.google.com/google-ads/api/reference/rpc/v15/ConversionUploadErrorEnum.ConversionUploadError#invalid_conversion_action_type).
+This error indicates that the conversion action specified in the upload request has not been set up for conversion uploads, as outlined in [Google's Ads documentation](https://developers.google.com/google-ads/api/reference/rpc/v15/ConversionUploadErrorEnum.ConversionUploadError#invalid_conversion_action_type){:target="_blank”}.
 
 To resolve this, ensure that the ConversionActionType value in Google Ads is correctly configured.
 
