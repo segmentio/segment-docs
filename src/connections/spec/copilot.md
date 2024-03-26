@@ -26,7 +26,7 @@ This table lists the events that you can track from any conversation:
 | Conversation Ended   | When a conversation is completed                                                                        | `conversationId`, `message_count`                 |
 | Tool Invoked         | When the model or user invokes a capability or tool                                                     | `conversationId`, `messageId`, `type`, `action`   |
 | Media Generated      | When the model generates an image/video/audio                                                           | `conversationId`, `messageId`, `type`, `sub_type` |
-| Component Loaded     | When a new custom (non-text/voice) component is shown to user                                           | `conversationId`, `messageId`, `type`             |
+| Component Loaded     | When a new custom (non-text/voice) component is shown to a user                                         | `conversationId`, `messageId`, `type`             |
 | Feedback Submitted   | When a user rates a conversation or message                                                             | `conversationId`, `messageId`, `rating`           |
 | Identify             | When a new user is identified anonymously or known                                                      | `userId` and/or `anonymousId`                     |
 | Standard Track Calls | For all events sent to Segment based on user actions taken, like `items purchased`, `support requested` | `conversationId`, `messageId`, `...`              |
@@ -148,7 +148,7 @@ Here's an example of a Conversation Ended call:
 
 ### Tool Invoked
 
-The Tool Invoked event should be sent when the copilot or user uses a customer capability or tool, like making a call to an external API.
+The Tool Invoked event should be sent when the copilot or user uses a custom capability or tool, like making a call to an external API.
 
 This event supports the following semantic properties:
 
