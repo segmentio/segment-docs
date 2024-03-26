@@ -8,8 +8,6 @@ redirect_from:
 hidden: false
 ---
 
-# Linked Audience Use Cases 
-
 Below are some example use cases to help you learn more about Linked Audiences.
 
 ## Use case 1: Build an audience of users who have a credit card with an outstanding balance
