@@ -128,6 +128,9 @@ Segment supports object and array data types in the Tracking Plan editor. These 
 1. Create a new property row and set the Data Type to `Object` or `Array`.
 2. Click the **(+)** next to the property name to add key value pairs in the object, or objects to an array of objects.
 
+> info ""
+> When creating array properties in your Tracking Plan, add the `items` nested property, denoted by the name of the array property with a `.$` suffix, to ensure that the nested property is marked as planned in the Source Schema. 
+
 ### Add Identify or Group traits
 You can define which traits you expect to see passed in Identify or Group calls like how you would add Track calls to the Tracking Plan. Navigate to the **Identify** or **Group** tab in your Tracking Plan and click the **(+)** button to add a new trait.
 
@@ -161,7 +164,7 @@ You can filter the Tracking Plan events by keyword or by label. The applied filt
 Protocols Tracking Plans use [JSON Schemas](https://json-schema.org/){:target="_blank”} to validate Segment event payloads. To support a broader range of validation use-cases, Segment lets you to edit your underlying JSON schema.
 
 > warning ""
-> Editing a JSON schema requires technical expertise. The [JSON schema documentation](https://json-schema.org/understanding-json-schema/index.html){:target="_blank”} and [JSON schema validator](https://www.jsonschemavalidator.net/){:target="_blank”} are helpful resources you can use.
+> Editing a JSON schema requires technical expertise. The [JSON schema documentation](https://json-schema.org/understanding-json-schema){:target="_blank”} and [JSON schema validator](https://www.jsonschemavalidator.net/){:target="_blank”} are helpful resources you can use.
 
 You can edit the JSON schema for each Track event listed in the Tracking Plan, and a common JSON schema definition that applies across all events.
 

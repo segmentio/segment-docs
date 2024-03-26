@@ -25,6 +25,10 @@ The Schema shows "Page Viewed" for all Page calls under the **Track** tab.
 
 The Source Schema UI changes slightly depending on whether you have a [Protocols Tracking Plan](https://segment.com/docs/protocols/tracking-plan/create/){:target='_blank’} connected to the source. If you have a Tracking Plan connected to your source, the UI displays a **Planned** column that will indicate if the event is planned or unplanned. This allows you to quickly identify unplanned events and take action to align your schema with your Tracking Plan. If there is no Tracking Plan connected to the source, the UI will display a toggle next to each event where, if you're a Business Tier customer, you can simply block or allow that event at the source level.  
 
+> info ""
+> Array properties are represented with an additional nested property representing the array's items. The nested property is the property's name with a `.$` suffix.
+> If an array property in the connected Tracking Plan does not include the `items` nested property, nested properties might be marked as unplanned in the Source Schema.
+
 ## Event filters
 
 If you no longer want to track a specific event, you can either remove it from your code or, if you're on the Business plan and don't have a Tracking Plan connected, you can block track calls from the Segment UI. To do so, click on the Schema tab in a Source and toggle the event to enable or block an event.

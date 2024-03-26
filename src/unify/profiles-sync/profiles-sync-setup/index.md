@@ -9,7 +9,7 @@ On this page, you’ll learn how to set up Profiles Sync, enable historical back
 
 ## Initial Profiles Sync setup
 
-> info "Identity Resolution Setup"
+> info "Identity Resolution setup"
 > To use Profiles Sync, you must first set up [Identity Resolution](/docs/unify/identity-resolution/).
 
 To set up Profiles Sync, you’ll first create a warehouse, then connect the warehouse within the Segment app.
@@ -17,25 +17,25 @@ To set up Profiles Sync, you’ll first create a warehouse, then connect the war
 Before you begin, prepare for setup with these tips:
 
 - To connect your warehouse to Segment, you must have read and write permissions with the warehouse Destination you choose.
-- During Step 2, you’ll copy credentials between Segment and your warehouse Destination. To streamline setup, open your Segment workspace in one browser tab and open another with your warehouse account.
-- Make sure to copy any IP addresses Segment asks you to allowlist in your warehouse Destination.
- 
-### Step 1: Create a warehouse
+- During step 2, you’ll copy credentials between Segment and your warehouse destination. To streamline setup, open your Segment workspace in one browser tab and open another with your warehouse account.
+- Make sure to copy any IP addresses Segment asks you to allowlist in your warehouse destination.
 
-You’ll first choose the Destination warehouse to which Segment will sync profiles. Profiles Sync supports the Snowflake, Redshift, BigQuery, Azure, and Postgres warehouse Destinations. Your initial setup will depend on the warehouse you choose.
+### Step 1: Select a warehouse 
 
-The following table shows the supported Profiles Sync warehouse Destinations and the corresponding required steps for each. Select a warehouse, view its Segment documentation, then carry out the warehouse’s required steps before moving to Step 2 of Profiles Sync setup:
+You’ll first choose the destination warehouse to which Segment will sync profiles. Profiles Sync supports the Snowflake, Redshift, BigQuery, Azure, Postgres, and Databricks warehouse Destinations. Your initial setup will depend on the warehouse you choose.
 
-| Warehouse Destination                                                     | Required steps                                                                                                                                                   |
-| ------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [Snowflake](/docs/connections/storage/catalog/snowflake/#getting-started) | 1. Create virtual warehouse. <br> 2. Create a database. <br> 3. Create role for Segment. <br> 4. Create user for Segment. <br> 5. Test the user and credentials. |
-| [Redshift](/docs/connections/storage/catalog/redshift/#getting-started)   | 1. Choose an instance. <br> 2. Provision a new Redshift cluster.                                                                                                 |
-| [BigQuery](/docs/connections/storage/catalog/bigquery/)                   | 1. Create a project and enable BigQuery. <br> 2. Create a service account for Segment.                                                                           |
-| [Azure](/docs/connections/storage/catalog/azuresqldw/)                    | 1. Sign up for an Azure subscription. <br> 2. Provision a dedicated SQL pool.                                                                                     |
-| [Postgres](/docs/connections/storage/catalog/postgres/)                   | 1. Follow the steps in the [Postgres getting started](/docs/connections/storage/catalog/postgres/) section.                                                      |
-| [Databricks](/docs/unify/profiles-sync/profiles-sync-setup/databricks-profiles-sync/)                   | 1. Follow the steps in the [Databricks for Profiles Sync](/docs/unify/profiles-sync/profiles-sync-setup/databricks-profiles-sync/) guide.                                                      |
+The following table shows the supported Profiles Sync warehouse destinations and the corresponding required steps for each. Select a warehouse, view its Segment documentation, then carry out the warehouse’s required steps before moving to step 2 of Profiles Sync setup:
 
-Once you’ve finished the required steps for your chosen warehouse, you’re ready to connect your warehouse to Segment. Because you’ll next enter credentials from the warehouse you just created, **leave the warehouse tab open to streamline setup.**
+| Warehouse Destination      | Required steps    
+| -------------- | ----------- |
+| [Snowflake](/docs/connections/storage/catalog/snowflake/#getting-started) | Follow the steps in [Snowflake Getting Started](docs/connections/storage/catalog/snowflake/#getting-started). |
+| [Redshift](/docs/connections/storage/catalog/redshift/#getting-started)   | Follow the steps in [Redshift Getting Started](docs/connections/storage/catalog/redshift/#getting-started). |
+| [BigQuery](/docs/connections/storage/catalog/bigquery/) |                  Follow the steps in [BigQuery Getting Started](/docs/connections/storage/catalog/bigquery/#getting-started).
+| [Azure](/docs/connections/storage/catalog/azuresqldw/)                    | Follow the steps in [Azure Synapse Analytics Getting Started](docs/connections/storage/catalog/azuresqldw/#getting-started).  |
+| [Postgres](/docs/connections/storage/catalog/postgres/)                   | Follow the steps in [Postgres Getting Started](/docs/connections/storage/catalog/postgres/).                                                      |
+| [Databricks](/docs/unify/profiles-sync/profiles-sync-setup/databricks-profiles-sync/)  | Follow the steps in the [Databricks Getting Started](/docs/unify/profiles-sync/profiles-sync-setup/databricks-profiles-sync/#getting-started)).                   |
+
+After you’ve finished the required steps for your chosen warehouse, you’re ready to connect your warehouse to Segment. Because you’ll next enter credentials from the warehouse you just created, **leave the warehouse tab open to streamline setup.**
 
 #### Profiles Sync permissions
 
@@ -60,25 +60,39 @@ The following Segment access [roles](/docs/segment-app/iam/roles/) apply to Prof
 
 ### Step 2: Connect the warehouse and enable Profiles Sync
 
-With your warehouse configured, you can now connect it to Segment.
+After selecting your warehouse, you can connect it to Segment.
 
-During this step, you’ll copy credentials from the warehouse you just set up and enter them into the Segment app. The specific credentials you’ll enter depend on the warehouse you chose during Step 1.
+During this step, you’ll copy credentials from the warehouse you just set up and enter them into the Segment app. The specific credentials you’ll enter depend on the warehouse you chose during step 1.
 
 Segment may also display IP addresses you’ll need to allowlist in your warehouse. Make sure to copy the IP addresses and enter them into your warehouse account.
 
-Follow these steps to connect your warehouse:
+To connect your warehouse:
 
-1. In your Segment workspace, navigate to **Unify > Profiles Sync**.
-2. Select **Add warehouse**, choose the warehouse you just set up, then select **Next**.
-3. Segment shows an IP address to allowlist.  Copy it to your warehouse Destination.
-4. Segment prompts you to enter specific warehouse credentials. Enter them, then select **Test Connection**.
+1. Configure your database. 
+- Be sure to log in with a user who has read and write permissions so that Segment can write to your database.
+- Segment shows an IP address to allowlist.  Copy it to your warehouse destination.
+2. Enter a schema name to help you identify this space in the warehouse, or use the default name provided. 
+- The schema name can't be changed after the warehouse is connected.
+4. Enter your warehouse credentials, then select **Test Connection**.
 5. If the connection test succeeds, Segment enables the **Next** button. Select it.
   * If the connection test fails, verify that you’ve correctly entered the warehouse credentials, then try again.
-6. Set up a **Sync Schedule**, and select **Next**.
-7. From the [Set Selective Sync](#using-selective-sync) page, select the tables and columns you'd like to sync and click **Next**. Segment displays the Profiles Sync overview page.
-7. Select **Request sync to be enabled**.
 
-Segment staff then receives and enables live sync for your account.
+
+### Step 3: Set up Selective Sync
+
+Set up Selective Sync to control the exact tables and columns that Segment will sync to your connected data warehouse.
+
+> info ""
+> Data will be backfilled to your warehouse based on the last two months of history.
+
+You can sync the following tables:
+
+| Type                                                   | Tables                 | Backfill |
+| ------------------------------------------------------------------------- | ---------------------------------------------------- | --------------- |
+| [Profile raw tables](/docs/unify/profiles-sync/tables/#profile-raw-tables) | - `external_id_mapping_updates` <br> - `id_graph_updates` <br> - `profile_traits_updates` | Complete |
+| [Profile materialized tables](/docs/unify/profiles-sync/tables/#tables-segment-materializes) | - `user_identifier` <br> - `user_traits` <br> - `profile_merges`     | Complete |
+| [Event type tables](/docs/unify/profiles-sync/tables/#event-type-tables)          |  - `Identify` <br> - `Page` <br> - `Group` <br> - `Screen` <br> - `Alias` <br> - `Track`     | 2 months |
+| [Track event tables](/docs/unify/profiles-sync/tables/#track-event-tables)         |   To view and select individual track tables, don't sync track tables during the initial setup. Edit your sync settings after enabling Profiles Sync and waiting for the first sync to complete.                   | 2 months |
 
 #### Using Selective Sync
 
@@ -92,15 +106,12 @@ You'll see a list of event type tables, event tables, and [tables Segment materi
 
 Regardless of schema size, only the first 5,000 collections and 5,000 properties per collection can be managed using your Segment space. To edit Selective Sync settings for any collection which exceeds this limit, [contact Segment support](https://app.segment.com/workspaces?contact=1){:target="blank"}.
 
-> warning ""
-> Profiles Sync will always sync the External ID Mapping and ID Graph Updates tables. These tables can't be disabled with Selective Sync.
-
 > info ""
 > You must be a workspace owner to change Selective Sync settings.
 
 #### When to use Selective Sync
 
-By default, Segment syncs all tables and properties to your warehouse. Use Selective Sync when you'd like to prevent specific tables and properties from syncing to your warehouse. Segment stops syncing from disabled tables or properties, but will not delete any historical data from your warehouse.
+Use Selective Sync when you want to prevent specific tables and properties from syncing to your warehouse. Segment stops syncing from disabled tables or properties, but will not delete any historical data from your warehouse.
 
 If you choose to re-enable a table or property to sync again, only new data generated will sync to your warehouse. Segment doesn't backfill data that was omitted with Selective Sync.
 
@@ -113,8 +124,8 @@ Profiles Sync sends profiles to your warehouse on an hourly basis, beginning aft
 
 When Segment runs historical backfills:
 
-- The `id_graph_updates`, `external_id_mapping_updates`, and `profile_traits_updates` tables sync your entire historical data to your warehouse.
-- Profiles Sync gathers the last two months of all events, including those from the `identities`, `page`, `screens`, and `tracks` tables, and syncs them to your warehouse.
+- Profile raw and materialized tables sync your entire historical data to your warehouse.
+- Profiles Sync gathers the last two months of all events for Event type and Track event tables and syncs them to your warehouse.
 
 Segment lands the data on an internal staging location, then removes the backfill banner. Segment then syncs the backfill data to your warehouse.
 
@@ -123,7 +134,18 @@ Reach out to [Segment support](https://app.segment.com/workspaces?contact=1){:ta
 > success ""
 > While historical backfill is running, you can start building [materialized views](/docs/unify/profiles-sync/tables/#tables-you-materialize) and running [sample queries](/docs/unify/profiles-sync/sample-queries).   
 
-### Step 3: Materialize key views using a SQL automation tool
+
+### Step 4 (Optional): Materialize key views using a SQL automation tool
+
+During setup, you have the option of setting up materialized key views in one of two ways:
+
+1. You can choose to materialize views on your own by using `profiles raw tables`. 
+You may want to materialize your own tables if, for example, you want to transform additional data or join Segment profile data with external data before materialization.
+
+2. You can choose to use Segment's open source dbt models by using `profiles materialized` tables.
+ 
+> success ""
+> You can alternatively use [tables that Segment materializes](/docs/unify/profiles-sync/tables/#tables-segment-materializes) and syncs to your data warehouse. 
 
 To start seeing unified profiles in your warehouse and build attribution models, you'll need to materialize the tables that Profiles Sync lands into three key views:
 
@@ -131,14 +153,14 @@ To start seeing unified profiles in your warehouse and build attribution models,
   * `external_id_mapping`: the current-state mapping between each external identifier you’ve observed and its corresponding, fully-merged `canonical_segment_id`
   * `profile_traits`: the last seen value for all custom traits, computed traits, SQL traits, audiences, and journeys associated with a profile in a single row
 
-Please visit [Tables you materialize](/docs/unify/profiles-sync/tables/#tables-you-materialize) for more on how to materialize these views either on your own, or with [Segment's open source dbt models](https://github.com/segmentio/profiles-sync-dbt){:target="blank"}.
+See [Tables you materialize](/docs/unify/profiles-sync/tables/#tables-you-materialize) for more on how to materialize these views either on your own, or with [Segment's open source dbt models](https://github.com/segmentio/profiles-sync-dbt){:target="blank"}.
 
 > warning ""
-> Please note that dbt models are in beta and need modifications to run efficiently on BigQuery, Synapse, and Postgres warehouses. Segment is actively working on this feature.
+> Note that dbt models are in beta and need modifications to run efficiently on BigQuery, Synapse, and Postgres warehouses. Segment is actively working on this feature.
 
 ## Profiles Sync limits
 
-As you use Profiles Sync, please keep the following limits in mind:
+As you use Profiles Sync, keep the following limits in mind:
 
 - For event tables, Segment can only backfill up to 2,000 tables for each workspace.
 - Segment can only initiate backfills after a successful sync with > 0 rows.
@@ -157,7 +179,7 @@ In the Syncs table, you’ll find reports on individual syncs. Segment lists you
 
 | DATA TYPE   | DEFINITION                                                                                                                                                                                  |
 | ----------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Sync status | - `Success`, which indicates that all rows synced correctly; <br> - `Partial success`, indicating that some rows synced correctly <br> - `Failed`, indicating that no rows synced correctly |
+| Sync status | - `Success`, which indicates that all rows synced correctly <br> - `Partial success`, indicating that some rows synced correctly <br> - `Failed`, indicating that no rows synced correctly |
 | Duration    | Length of sync time, in minutes                                                                                                                                                             |
 | Start time  | The date and time when the sync began                                                                                                                                                       |
 | Synced rows | The number of rows synced to the warehouse                                                                                                                                                  |

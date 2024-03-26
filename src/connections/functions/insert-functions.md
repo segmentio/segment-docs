@@ -61,9 +61,6 @@ The default source code template includes handlers for all event types. You don'
 
 Insert functions can define handlers for each message type in the [Segment spec](/docs/connections/spec/):
 
-> info "onBatch handler"
-> At this time, Destination Insert Functions do not support the onBatch handler. 
-
 - `onIdentify`
 - `onTrack`
 - `onPage`
@@ -71,6 +68,7 @@ Insert functions can define handlers for each message type in the [Segment spec]
 - `onGroup`
 - `onAlias`
 - `onDelete`
+- `onBatch`
 
 Each of the functions above accepts two arguments:
 
@@ -475,6 +473,12 @@ Yes, Segment retries invocations that throw RetryError or Timeout errors (tempor
 ##### Are events guaranteed to send data in order?
 
 No, Segment can't guarantee the order in which the events are delivered to an endpoint.
+
+##### Do I Need to specify an endpoint for my Insert function?
+
+No, specifying an endpoint is not always required for insert functions. If your function is designed to transform or filter data internally—such as adding new properties to events or filtering based on existing properties—you won't need to specify an external endpoint.
+
+However, if your function aims to enrich event data by fetching additional information from an external service, then you must specify the endpoint. This would be the URL of the external service's API where the enriched or captured data is sent.
 
 
 ##### Can I create a device-mode destination?
