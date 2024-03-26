@@ -18,15 +18,6 @@ With Linked Audiences, you can use the relational data you've defined in your Da
 
 To learn more about Linked Audiences use cases,  see the [Linked Audiences Use Cases](/engage/audiences/linked-audiences-use-cases/) topic.
 
-## Getting started
-
-To help you get started with Linked Audiences, consider the following best practices: 
-
-- It may be helpful to first identify an entity that is directly associated with your users, such as `Accounts`, `Households`, or `Organizations`.
-- From there you can define relationships between this entity with any of the other entities that may be associated with it, such as how `Accounts` can have the following: `Subscriptions`, `Purchases`, or `Carts`. 
-- You can create entity relationships up to four levels in depth. For example, an entity condition that queries for relationships between `Profiles`, `Accounts`, `Credit Cards`, and `Transactions` has four levels of depth. 
-- To further refine your audience, identify column values that you might want to filter your entities by, or configure profile traits and audience membership conditions. 
-
 ## Step 1: Build a Linked Audience
 
 Linked Audiences allows you to filter based on properties such as profile traits, relational data mapped to the Data Graph, events, and existing audience membership. 
@@ -49,7 +40,7 @@ After creating the audience, you'll be redirected to the Overview page. By defau
 
 This triggers a compute for the audience (where the audience conditions run on your data warehouse) and sends events downstream.
 
-#### Event Conditions
+#### Event conditions
 
 As you're building your Linked Audience, you can choose from the following event conditions:
 
@@ -75,7 +66,7 @@ To delete an audience:
 2. From the Overview page, select the three dots icon.
 3. Select **Delete audience**.
 
-Note: this action can't be undone. After you delete an audience, the audience will stop computing and data is no longer sent to your downstream destinations.
+Note: deleting an audience can't be undone. After you delete an audience, the audience will stop computing and data is no longer sent to your downstream destinations.
 
 #### Compute statuses
 Engage displays the following compute statuses for Linked Audiences.
@@ -89,7 +80,12 @@ Engage displays the following compute statuses for Linked Audiences.
 
 ## Step 2: Activate your Linked Audience
 
-You can use your Linked Audience to activate any [actions-based destination](/docs/connections/destinations/actions/#available-actions-based-destinations). The steps below provide instructions on how to add a destination to your Linked Audience(s), and send an event that best matches your use case.
+You can use your Linked Audience to activate any [actions-based destination](/docs/connections/destinations/actions/#available-actions-based-destinations). The steps below provide instructions on how to add a destination to your Linked Audiences, and send an event that best matches your use case. To activate an event, do the following:
+
+-  Add an action destination
+-  Add an event
+-  Select a destination action
+-  Configure the event
 
 > warning ""
 > Some action destinations have limitations on nested objects, and the depth of the `_entity_context` property.
@@ -98,10 +94,9 @@ You can use your Linked Audience to activate any [actions-based destination](/do
 
 To activate your Linked Audience, first [add an action destination](/connections/destinations/actions/) in Connections.
 
-From Add destination, select your destination and click **Next**.
-
 ### Step 2b: Add an event
-After adding a  destination to your audience, configure the data you would like to send to the destination. First, select a type of event you want to send to the destination. Events update destinations about changes to your entity or audiences and contain data that can be used in the downstream destination. 
+
+After adding a  destination to your audience, configure the data you want to send to the destination. First, select a type of event you want to send to the destination. Events update destinations about changes to your entity or audiences and contain data that can be used in the downstream destination.
 
 You can send events:
 - When an entity on a profile changes:
@@ -158,7 +153,7 @@ Send an Identify event when a profile's audience membership changes.
 Example:
 - Update a user profile in a destination with the most recent audience membership.
 
-### Step 2c: Select an action
+### Step 2c: Select a destination action
 
 Select the destination action to call when the event happens. Ensure the action you selected is relevant to the type of event you previously selected. For example, if you selected **Audience membership changed**, ensure your action is also an Identify event.
 
@@ -171,7 +166,7 @@ See [destination actions](/docs/connections/destinations/actions/) to learn more
 
 ### Step 2d: Configure the event
 
-Once you select an action, Segment will attempt to automatically configure the data fields that will be sent to the destination. You can review and adjust these settings before enabling this event. 
+After you select an action, Segment attempts to automatically configure the data fields that will be sent to the destination. You can review and adjust these settings before enabling this event. 
 - Enrich event (optional)
 - Map event 
 - Test event (optional)
@@ -189,7 +184,7 @@ You can optionally send a test event to your destination by clicking **Send test
 
 #### Send events for current profiles and entities in the audience checkbox
 
-By default, Segment will  only send events for new profiles and entities that match the audience conditions. This means that when the event is created, it will not send events for profiles and entities that currently meet the audience criteria.
+By default, Segment only sends events for new profiles and entities that match the audience conditions. This means that when the event is created, it will not send events for profiles and entities that currently meet the audience criteria.
 If you want to send events for profiles and entities that currently meet the audience criteria, check this box. This is only available for the **entity added**, **audience entered**, and **audience membership changed** event types.
 
 ## Step 3: Confirm the payload in your destination
