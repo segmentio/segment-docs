@@ -20,13 +20,18 @@ This destination is maintained by Branch. For any issues with the destination, [
 
 ## Getting Started
 
-
-
   1. From the Segment web app, click **Catalog**.
   2. Search for "Branch Metrics" in the Catalog, select it, and choose which of your sources to connect the destination to.
   3. On Branch side you will need to [sign up for a free Branch account](http://branch.io/signup?bmp=segment){:target="_blank"} and follow the steps on their Dashboard to complete set up.
   4. Copy your `Branch Key` from the Settings page of your [Branch dashboard](https://dashboard.branch.io/#/settings){:target="_blank"}.
   5. Paste the Branch Key in the destination settings and click **Save**.
+
+
+### Identifiers for app events
+
+Identifiers are required for events to be imported to Branch. You must include:
+- `context.device.advertisingId` and `context.os.name` and `context.os.version`, or
+- `context.device.id` and `context.os.name` and `context.os.version`
 
 
 ## Identify
