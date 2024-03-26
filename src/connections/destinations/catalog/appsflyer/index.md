@@ -132,7 +132,7 @@ To activate this feature, simply input your S2S token in the destination setting
 
 ### Send User Consent Preferences Server-side
 
-To transmit user consent data serverside, simply incorporate the consent preferences into the `integrations.AppsFlyer.consent_data`` object. This can be done in either TCF or manual format, as outlined in [the AppsFlyer documentation](https://dev.appsflyer.com/hc/reference/s2s-events-api3-post){:target="_blank”}.
+To transmit user consent data server-side, incorporate the consent preferences into the `integrations.AppsFlyer.consent_data` object. This can be done in either TCF or manual format, as outlined in [the AppsFlyer Send Event documentation](https://dev.appsflyer.com/hc/reference/s2s-events-api3-post){:target="_blank”}.
 
 ```js
 // node.js library example with tcf 
@@ -188,31 +188,31 @@ analytics.track({
 
 ## Identify
 
-If you're not familiar with the Segment Specs, take a look to understand what the [Identify method](/docs/connections/spec/identify/) does. An example iOS call would look like:
+If you're not familiar with the Segment Spec, take a look to understand what the [Identify method](/docs/connections/spec/identify/) does. An example iOS call would look like:
 
 ```swift
 [[SEGAnalytics sharedAnalytics] identify:@"12091906-01011992"
                                 traits:@{ @"email": @"john.doe@example.com" }];
 ```
 
-When you call `.identify()`, Segment uses AppsFlyer's `setCustomerUserID` to send the `userId` that was passed in.
+When you call Identify, Segment uses AppsFlyer's `setCustomerUserID` to send the `userId` that was passed in.
 
-**Note:** `identify` calls are not supported using AppsFlyer's HTTP API at the moment. You can only send `.identify` calls if you have the AppsFlyer SDK bundled.
+**Note:** Identify calls are not supported using AppsFlyer's HTTP API at the moment. You can only send `.identify` calls if you have the AppsFlyer SDK bundled.
 
 ## Track
 
-If you're not familiar with the Segment Specs, take a look to understand what the [Track method](/docs/connections/spec/track/) does. An example iOS call would look like:
+If you're not familiar with the Segment Spec, take a look to understand what the [Track method](/docs/connections/spec/track/) does. An example iOS call would look like:
 
 ```swift
 [[SEGAnalytics sharedAnalytics] track:@"Article Completed"
                            properties:@{ @"title": @"How to Create a Tracking Plan", @"course": @"Intro to Analytics" }];
 ```
 
-When you call `track`, Segment translates it automatically and sends the event to AppsFlyer.
+When you call Track, Segment translates it automatically and sends the event to AppsFlyer.
 
-Segment includes all the event properties as callback parameters on the AppsFlyer event, and automatically translate `properties.revenue` to the appropriate AppsFlyer purchase event properties based on the spec'd properties.
+Segment includes all the event properties as callback parameters on the AppsFlyer event, and automatically translates `properties.revenue` to the appropriate AppsFlyer purchase event properties based on the spec'd properties.
 
-Finally, Segment uses AppsFlyer's `transactionId` deduplication when you send an `orderId` (see the [e-commerce spec](/docs/connections/spec/ecommerce/v2/)).
+Segment uses AppsFlyer's `transactionId` deduplication when you send an `orderId` (see Segment's [e-commerce spec](/docs/connections/spec/ecommerce/v2/) for more details).
 
 ## Install Attributed
 
