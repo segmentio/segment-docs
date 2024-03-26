@@ -2,6 +2,7 @@
 title: Snowflake Setup
 plan: unify
 beta: true
+hidden: true
 ---
 
 > info "Linked Profiles is in private beta"
