@@ -47,10 +47,10 @@ As you're building your Linked Audience, you can choose from the following event
 
 | Event Conditions     | Description                           |
 |---------------------------|---------------------------------------|
-| Associated with an entity   | Creates a condition that filters profiles associated with entity relationships defined in the [Data Graph](/docs/unify/linked-profiles/data-graph/). With this condition, you can traverse the full nested entity relationship and filter your audience on entity column values.       |
+| Associated with an entity   | Creates a condition that filters profiles associated with entity relationships defined in the [Data Graph](/docs/unify/linked-profiles/data-graph/). With this condition, you can traverse the full nested entity relationship and filter your audience on entity column values. Note: you can only create nested entity conditions up to four levels in depth. For example, an entity condition that queries for relationships between Profiles, Accounts, Credit Cards, and Transactions has four levels of depth.       |
 | Where profile trait     | Creates a condition that filters profiles with a specific trait. |
 | Part of an audience     | Creates a condition that filters profiles that are part of an existing linked or classic audience. |
-| Performed event         | Creates a condition that filters profiles on their event history. |
+| Performed event         | Creates a condition that filters profiles on their event history. Users can also filter on event property values.|
 
 #### Edit an audience
 To edit an audience:
