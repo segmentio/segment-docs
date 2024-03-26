@@ -2,7 +2,7 @@
 title: Kafka Destination
 beta: true
 hidden: true
-id: 
+id: 65dde5755698cb0dab09b489
 ---
 
 {% include content/plan-grid.md name="actions" %}
