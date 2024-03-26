@@ -28,12 +28,12 @@ The following table shows the supported Profiles Sync warehouse destinations and
 
 | Warehouse Destination      | Required steps    
 | -------------- | ----------- |
-| [Snowflake](/docs/connections/storage/catalog/snowflake/#getting-started) | Follow the steps in [Snowflake Getting Started](/connections/storage/catalog/snowflake/#getting-started) |
-| [Redshift](/docs/connections/storage/catalog/redshift/#getting-started)   | Follow the steps in [Redshift Getting Started](/connections/storage/catalog/redshift/#getting-started) |
-| [BigQuery](/docs/connections/storage/catalog/bigquery/) |                  
-| [Azure](/docs/connections/storage/catalog/azuresqldw/)                    | Follow the steps in [Azure Synapse Analytics Getting Started](/connections/storage/catalog/azuresqldw/#getting-started)  |
-| [Postgres](/docs/connections/storage/catalog/postgres/)                   | Follow the steps in [Postgres getting started](/docs/connections/storage/catalog/postgres/).                                                      |
-| [Databricks](/docs/unify/profiles-sync/profiles-sync-setup/databricks-profiles-sync/)  | Follow the steps in the [Databricks for Profiles Sync](/docs/unify/profiles-sync/profiles-sync-setup/databricks-profiles-sync/) guide.                  |
+| [Snowflake](/docs/connections/storage/catalog/snowflake/#getting-started) | Follow the steps in [Snowflake Getting Started](docs/connections/storage/catalog/snowflake/#getting-started). |
+| [Redshift](/docs/connections/storage/catalog/redshift/#getting-started)   | Follow the steps in [Redshift Getting Started](docs/connections/storage/catalog/redshift/#getting-started). |
+| [BigQuery](/docs/connections/storage/catalog/bigquery/) |                  Follow the steps in [BigQuery Getting Started](/docs/connections/storage/catalog/bigquery/#getting-started).
+| [Azure](/docs/connections/storage/catalog/azuresqldw/)                    | Follow the steps in [Azure Synapse Analytics Getting Started](docs/connections/storage/catalog/azuresqldw/#getting-started).  |
+| [Postgres](/docs/connections/storage/catalog/postgres/)                   | Follow the steps in [Postgres Getting Started](/docs/connections/storage/catalog/postgres/).                                                      |
+| [Databricks](/docs/unify/profiles-sync/profiles-sync-setup/databricks-profiles-sync/)  | Follow the steps in the [Databricks Getting Started](/docs/unify/profiles-sync/profiles-sync-setup/databricks-profiles-sync/#getting-started)).                   |
 
 After you’ve finished the required steps for your chosen warehouse, you’re ready to connect your warehouse to Segment. Because you’ll next enter credentials from the warehouse you just created, **leave the warehouse tab open to streamline setup.**
 
