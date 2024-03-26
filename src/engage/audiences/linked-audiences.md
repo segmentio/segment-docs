@@ -6,7 +6,7 @@ redirect_from:
     - '/unify/linked-profiles/linked-audiences'
 hidden: true
 ---
-info "Linked Audiences is in public beta"
+> info "Linked Audiences is in public beta"
 > Linked Audiences is in public beta, and Segment is actively working on this feature. Some functionality may change before it becomes generally available.
 
 With Linked Audiences, you can use the relational data you've defined in your Data Graph to build audiences and send them to any downstream [actions-based destinations](/docs/connections/destinations/actions/#available-actions-based-destinations).
