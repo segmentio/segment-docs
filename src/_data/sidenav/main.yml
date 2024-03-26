@@ -114,6 +114,8 @@ sections:
       title: 'Spec: Identify'
     - path: /connections/spec/alias
       title: 'Spec: Alias'
+    - path: /connections/spec/copilot
+      title: 'Spec: AI Copilot'
     - path: /connections/spec/common
       title: 'Spec: Common Fields'
     - path: /connections/spec/mobile

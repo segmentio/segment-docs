@@ -217,3 +217,5 @@ destinations:
     override: "actions-app-fit"
   - original: "the-trade-desk-crm"
     override: "actions-the-trade-desk-crm"
+  - original: "absmartly-actions"
+    override: "actions-absmartly"
