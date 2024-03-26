@@ -1,43 +1,44 @@
 ---
 title: Kafka Destination
+beta: true
+hidden: true
+id: 
 ---
 
 {% include content/plan-grid.md name="actions" %}
 
 [Kafka](https://kafka.apache.org/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners){:target="_blank”} provides a highly scalable and fault-tolerant messaging system that enables real-time data processing and stream processing at scale. When integrated with Segment, Kafka serves as a powerful backbone for managing and processing event data collected by Segment, allowing businesses to efficiently ingest, route, and analyze data across various applications and systems in real time.
 
-This destination is maintained by Segment. 
+This destination is maintained by Segment. For any issues with the destination, [contact the Segment Support team](mailto:friends@segment.com).
 
 ## Getting started
 
 ### Create the Kafka Destination
 
-1. From your workspace's [Destination catalog page](https://app.segment.com/goto-my-workspace/destinations/catalog){:target="_blank”} search for "Kafka"
-2. Select the "Kafka" tile and click **Add Destination**
+1. From your workspace's [Destination catalog page](https://app.segment.com/goto-my-workspace/destinations/catalog){:target="_blank”} search for "Kafka".
+2. Select the "Kafka" tile and click **Add Destination**.
 3. Select an existing Source to connect to Kafka.
-4. Give your Kafka Destination a name.
+4. Enter a name for your Kafka destination.
 
 ### Configure the Kafka Destination
 
-Authentication and Encryption settings for Kafka depend on the way your cluster is configured. You may need the assistance of someone technical to provide values for the following configuration Settings:  
+The way you've configured your Kafka Cluster informs the authentication and encryption settings you'll need to apply to the Segment Kafka Destination. You may need the assistance of someone technical to provide values for the following Settings: 
 
-5. On the Settings tab, provide values for the **Client ID**, **Brokers** and **Authentication Mechanism** Setting fields. 
-6. Populate fields for your selected **Authentication Mechanism**:  
-   For **Plain** or **SCRAM-SHA-256 / 512**: provide values for **Username** and **Password** fields.
-   For **AWS**: Provide values for **AWS Access Key ID** and **AWS Secret Key** fields, and optionally for the **AWS Authorization Identity** field. 
-   For **Client Certificate** you will need to provide values for the **SSL Client Key** and **SSL Client Certificate** Settings fields. 
-7. Optionally populate the **SSL Certificate Authority** field. 
-8. Save your changes before proceeding to the next step. 
+5. On the Settings tab, enter values into the **Client ID**, **Brokers** and **Authentication Mechanism** setting fields.
+6. Populate fields based on the value you selected from the **Authentication Mechanism** field:  
+- **Plain** or **SCRAM-SHA-256 / 512** authentication: provide values for **Username** and **Password** fields.
+- **AWS** authentication: provide values for **AWS Access Key ID** and **AWS Secret Key** fields, and optionally for the **AWS Authorization Identity** field. 
+- **Client Certificate** authentication: provide values for the **SSL Client Key** and **SSL Client Certificate** fields.
+7. Populate the **SSL Certificate Authority** field, if necessary. 
+8. Save your changes and proceed to Configure the Send Action. 
 
 ### Configure the "Send" Action
 
-9. Click to the Mappings tab and add a new **Send** Mapping. 
-10. Select a Topic to send data to. This field should auto-populate based on the credentials provided in the Settings tab. 
+9. Select the Mappings tab and add a new **Send** mapping. 
+10. Select a Topic to send data to. This field should auto-populate based on the credentials you provided in the Settings tab. 
 11. Map your payload using the **Payload** field. 
-12. Optionally specify Partitioning preferences, Headers and Message Key values. 
-13. Save and enable the Action, then navigate back to the Destination's Settings tab and enable and save the Destination. 
-
-The Destination should now be configured to send data to your Kafka cluster.  
+12. _(Optional)_: Specify partitioning preferences, Headers and Message Key values. 
+13. Save and enable the Action, then navigate back to the Kafka destination's Settings tab to enable and save the Destination. 
 
 {% include components/actions-fields.html %}
 
@@ -45,26 +46,31 @@ The Destination should now be configured to send data to your Kafka cluster.
 
 ### Which Kafka Platforms are supported?
 
-The Kafka Destination can send data to Topics on self hosted Kafka Clusters, or to Clusters hosted on Managed Service platforms such as **Confluent Cloud** and **Aiven**.
+The Kafka Destination can send data to Topics on self-hosted Kafka Clusters, or to Clusters hosted on Managed Service platforms like **Confluent Cloud** and **Aiven**
 
 ### Which data formats are supported?
 
-Data will be sent to Kafka in JSON format only. Avro, Protobuf and other formats are not yet supported. 
+Segment sends data to Kafka in JSON format only. Segment does not yet support other formats, like Avro or Protobuf. 
 
 ### Which authentication mechanisms are supported?
 
 The Authentication Mechanism is controlled with the **Authentication Mechanism** Setting field. 
 
-The following SASL based authentication mechanisms are supported: **Plain**, **SCRAM-SHA-256**, **SCRAM-SHA-512** and **AWS**. 
-**Client Certificate** auth is also supported. 
+Segment supports the following SASL-based authentication methods: 
+- Plain 
+- SCRAM-SHA-256
+- SCRAM-SHA-512
+- AWS 
 
-### How is Partitioning controlled?
+Segment also supports **Client Certificate** authentication. 
+
+### How is partitioning controlled?
 
 The **Send** Action provides multiple ways to specify which Partition an event should be sent to. 
 
-1) The **Partition** field: Use this field to specify the name of the Partition to send the event to. 
-2) The **Default Partition** field: Use this field to specify a default Partition. This will be used when value is provided in the **Partition** field.
-3) The **Message Key** field: A hash of the field's value will be used to determine which Partition to send the event to. If no value is provided in the **Message Key** field a round robin algorithm is used.
+- **Partition**: Use this field to specify the name of the Partition Segment should send events to. 
+- **Default Partition**: Use this field to specify a default Partition. Segment uses this when you don't provide a value in the **Partition** field.
+- **Message Key**: Segment uses a hash of this field's value to determine which Partition should receive an event. If you don't provide a Message Key, Segment uses a round robin algorithm to select the partition to send the event to. 
 
 ### What is the "SSL - Reject Unauthorized Certificate Authority" field for?
 
