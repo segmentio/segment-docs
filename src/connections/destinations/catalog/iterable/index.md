@@ -226,3 +226,9 @@ When you delete an audience or trait in Segment it is not deleted from Iterable.
 #### If a user has multiple email addresses as external ids in Segment, what happens when they enter an audience or have a computed trait?
 
 Segment sends an `identify` or `track` call for each email address on the user's account. For example, if a user has three email addresses, this creates three separate users in Iterable.
+
+### Are you able to update a user's email through Iterable?
+
+Updating a user's email in Iterable is currently not possible via Segment. You will have to call updateEmail outside of Segment if you want to be able to do so: Updating a user's email address cannot be achieved with the standard Segment identify call alone. It requires sending an Update Email Request directly to the Iterable API from outside the Segment platform.
+
+The API request outlined [here](https://api.iterable.com/api/docs#users_updateEmail). This needs to be followed in order to ensure Iterable has the correct email address for any users who have updated their email address. A workaround to update an email in Iterable from Segment would be to hit that API endpoint using a destination function.
