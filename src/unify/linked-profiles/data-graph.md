@@ -354,6 +354,8 @@ To edit your Data Graph:
 1. Navigate to **Unify > Data Graph**.
 2. Select the **Builder** tab, and click **Edit Data Graph**.
 
+A data consumer refers to a Segment feature referencing entities and relationships from the Data Graph.
+
 ## Next steps 
 
 After you've set up your Data Graph, get started with [Linked Audiences](/docs/engage/audiences/linked-audiences/) and [Linked Events](/docs/unify/linked-profiles/linked-events/).
