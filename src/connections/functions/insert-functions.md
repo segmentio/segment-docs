@@ -61,9 +61,6 @@ The default source code template includes handlers for all event types. You don'
 
 Insert functions can define handlers for each message type in the [Segment spec](/docs/connections/spec/):
 
-> info "onBatch handler"
-> At this time, Destination Insert Functions do not support the onBatch handler. 
-
 - `onIdentify`
 - `onTrack`
 - `onPage`
@@ -71,6 +68,7 @@ Insert functions can define handlers for each message type in the [Segment spec]
 - `onGroup`
 - `onAlias`
 - `onDelete`
+- `onBatch`
 
 Each of the functions above accepts two arguments:
 

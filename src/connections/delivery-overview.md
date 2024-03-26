@@ -49,10 +49,10 @@ The breakdown table displays the following details:
 ### Discard table
 The discard table provides you with greater detail about the events that failed to deliver or were filtered out of your sources and destinations. 
 
-To open the discard table, click on one of the discard steps. If you click on a row in the discard table, you can see the breakdown table for the discarded events.
+To open the discard table, click on one of the discard steps. If you click on a row in the discard table, you can see the breakdown table for the discarded events. 
 
 The discard table displays the following details:
-- **Discard reason**: Any relevant error code, message, or description associated with the event's failure. When possible, Delivery Overview will link to any troubleshooting information you can use to get your events up and running again. Clicking on a discard reason brings you to the [breakdown table](#breakdown-table,) where you can see more detail about discarded events.
+- **Discard reason**: Any relevant error code, message, or description associated with the event's failure. When possible, Delivery Overview links to any troubleshooting information you can use to get your events up and running again. Clicking on a discard reason brings you to the [breakdown table](#breakdown-table,) where you can see more detail about discarded events. For more context about discard reasons, see the [Troubleshooting](#troubleshooting) documentation.
 - **Details & Samples**: View up to ten samples over the selected time range. Examine the error message and reason for the error or discard and inspect the payloads involved with the attempted transaction (*not available for inspection at all steps*)
 - **Event count**: How many of each event were discarded in this pipeline step
 - **% Change**: Insight into how the event counts differ from the last comparable time range as a percentage<sup>1</sup>
@@ -89,11 +89,19 @@ With Delivery Overview, you can verify that your source receives your events, th
 ## How can I configure alerts?
 During the Delivery Overview beta, you can use the Event Delivery alerting features (Delivery Alerts) by selecting the **Alerts** tab in the destination header. 
 
-Once you enable alerts, if the successful delivery rate of all events is less than the threshold percentage in the last 24 hours, you'll be notified through in-app notification and/or workspace email. 
+After you enable alerts, if the successful delivery rate of all events is less than the threshold percentage in the last 24 hours, you'll be notified through in-app notification and/or workspace email. 
 
-Please note that this is dependent on your [notication settings](/docs/segment-app/#segment-settings). For example, if the threshold is set to 99%, then you'll be notified each time less than 100% of events fail. 
+Note that this is dependent on your [notification settings](/docs/segment-app/#segment-settings). For example, if the threshold is set to 99%, then you'll be notified each time less than 100% of events fail. 
 
 
 ## Why is the Delivery Overview page only available for cloud-mode destinations? 
 Similar to Segment's [Event Delivery](/docs/connections/event-delivery/) feature, the Delivery Overview page is only available for server-side integrations (also known as cloud-mode destinations). You won't be able to use the Delivery Overview page for client side integrations (also known as device-mode destinations) because device-mode data is sent directly to the destination tool's API. In order to report on deliverability, data must be sent to destinations using a server-side connection. 
 
+## Troubleshooting
+
+The Delivery Overview pipeline steps Failed on Ingest, Filtered at Source, Filtered at Destination, and Failed Delivery display a [discard table](#discard-table) with information about why your events failed or were discarded.
+
+This table provides a list of all possible discard reasons available at each pipeline step. 
+
+{% include content/delivery-overview-discards.html %}
+<!--- not in the product yet{% include content/retl-discards.md %}--->
