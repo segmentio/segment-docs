@@ -46,7 +46,7 @@ The way you've configured your Kafka Cluster informs the authentication and encr
 
 ### Which Kafka Platforms are supported?
 
-The Kafka Destination can send data to Topics on self-hosted Kafka Clusters, or to Clusters hosted on Managed Service platforms like **Confluent Cloud** and **Aiven**
+The Kafka Destination can send data to Topics on self-hosted Kafka Clusters, or to Clusters hosted on Managed Service platforms like **Confluent Cloud** and **Aiven**.
 
 ### Which data formats are supported?
 
