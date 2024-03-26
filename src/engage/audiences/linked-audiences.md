@@ -29,7 +29,8 @@ Linked Audiences allows you to filter based on properties such as profile traits
 3. On the Select type screen, select **Linked audience**, then click **Next**.
 4. Select the [conditions](#conditions) to build your audience.
 5. Preview your audience, then click **Next**.
-- Within the preview, you can see a count of users that meet the audience criteria as well as a sample list of users.
+
+Within the preview, you can see a count of users that meet the audience criteria as well as a sample list of users.
 6. Enter an audience name and description.
 7. Click **Save**.
 
