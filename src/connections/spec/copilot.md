@@ -2,7 +2,7 @@
 title: 'Spec: AI Copilot'
 ---
 
-This page is a guide for developers who want to track interactions with AI copilots using Segment. It explains what data to send to Segment, letting you understand customer interactions with with AI copilots.
+This page is a guide for developers who want to track interactions with AI copilots using Segment. It explains what data to send to Segment, letting you understand customer interactions with AI copilots.
 
 ## Overview
 
@@ -100,7 +100,7 @@ Here's an example of a Message Sent call:
 
 ### Message Received
 
-The Message Received event should be sent when the copilot gives a non-customer response (either text or voice) to something the user asked. 
+The Message Received event should be sent when the copilot gives a non-custom response (either text or voice) to something the user asked. 
 
 This event supports the following semantic properties:
 
