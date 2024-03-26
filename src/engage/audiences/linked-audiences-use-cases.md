@@ -22,7 +22,7 @@ In the Data Graph, `Account` and `Credit Card` are defined as entities and repre
 
 Relationships are defined between:
 - `Profile` and `Account`
-- `Account` and `Credit Card`
+- `Account` and `Credit Card` 
 
 In the warehouse, `credit_card.balance` is a column in the `Credit Card` table. By filtering against the `credit_card.balance` column for the "Outstanding" value, marketers can return a list of users that have a credit card with an outstanding balance.
 
