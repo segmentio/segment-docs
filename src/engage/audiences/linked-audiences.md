@@ -43,14 +43,40 @@ This triggers a compute for the audience (where the audience conditions run on y
 
 #### Event conditions
 
-As you're building your Linked Audience, you can choose from the following event conditions:
+As you're building your Linked Audience, you can choose from the following  conditions:
 
-| Event Conditions     | Description                           |
+| Conditions     | Description                           |
 |---------------------------|---------------------------------------|
 | Associated with an entity   | Creates a condition that filters profiles associated with entity relationships defined in the [Data Graph](/docs/unify/linked-profiles/data-graph/). With this condition, you can traverse the full nested entity relationship and filter your audience on entity column values. Note: you can only create nested entity conditions up to four levels in depth. For example, an entity condition that queries for relationships between Profiles, Accounts, Credit Cards, and Transactions has four levels of depth.       |
 | Where profile trait     | Creates a condition that filters profiles with a specific trait. |
 | Part of an audience     | Creates a condition that filters profiles that are part of an existing linked or classic audience. |
 | Performed event         | Creates a condition that filters profiles on their event history. Users can also filter on event property values.|
+
+#### Error States
+
+As you’re building or maintaining your audience, you may encounter an error or warning message about possible impacts to your audience. Below are some common reasons errors occur, along with suggested troubleshooting steps.
+
+| Failure | External message | Workflow implication |
+|---|---|---|
+| Parse error | An unknown error occurred. Execution will retry. If the problem persists, please contact Segment support. | Terminate and execute next run |
+| Graph missing entity | Entity missing from Data Graph: <entity> | Terminate and execute next run |
+| Graph missing column for entity | Entity column missing from Data Graph for Entity <entity> and Column: <column> | Terminate and execute next run |
+| No columns exist for entity | No columns exist for entity in Data Graph: <entity> | Terminate and execute next run |
+| Missing join key between entities | Join key missing from Data Graph for relation: <relationship> | Terminate and execute next run |
+| Join key is wrong type | Relationship key should be a string: <relationship> | Terminate and execute next run |
+| Entity relationship not in Data Graph (we know the entity) | Entity relationship not in Data Graph for entity <entity> | Terminate and execute next run |
+| Entity relationship not in Data Graph (we know the relationship slug) | Entity relationship not in Data Graph for relationship: <relationship slug> | Terminate and execute next run |
+| Entity relationship not in Data Graph (we know the entity and relationship slug) | Entity relationship not in Data Graph for entity: <entity> and relationship: <relationship slug> | Terminate and execute next run |
+| Query fails for unknown internal error | An unexpected error occurred. Execution will retry. If the problem persists, please contact Segment support. | Retry |
+| Update model fails | An unexpected error occurred. Execution will retry. If the problem persists, please contact Segment support. | Retry |
+| Kick off rETL job | An unexpected error occurred. Execution will retry. If the problem persists, please contact Segment support. | Retry |
+| Warehouse errors | Pass through warehouse errors | Terminate and execute next run |
+| SQL Compilation execution | Examples: extract phase failed: An unexpected Snowflake error occurred trying to execute your model query: 000904 (42000): SQL compilation error: error line 30 at position 61 invalid identifier 'EV.PROPERTIES'  extract phase failed: An unexpected Snowflake error occurred trying to execute your model query: 000904 (42000): SQL compilation error: error line 23 at position 19 invalid identifier 'UPDATES.TRAITS' |  |
+| Duplicate records for ID | Examples: extract phase failed: Duplicate records have been detected. This could be because the model query returned multiple records for the same ID column (MATCHID), or the Segment records table itself has duplicate records. |  |
+| Check results | An unknown error occurred. Execution will retry. If the problem persists, please contact Segment support. | Retry |
+| Extract results | Execution is paused due to an identified operational issue. | Pause for manual intervention |
+| Process results | Execution is paused due to an identified operational issue. | Set retl_results_processed = true on success  Set retl_results_processed = false on failure  Set lock  Abort other execution attempts  Page Compute |
+| Load results | Execution is paused due to an identified operational issue. |  |
 
 #### Edit an audience
 To edit an audience:
