@@ -6,7 +6,7 @@ beta: true
 
 The LinkedIn Conversions API (CAPI) is a conversion tracking tool that creates a direct connection between marketing data from an advertiser’s server and LinkedIn. This integration enables advertisers to measure the performance of their LinkedIn marketing campaigns no matter where the conversion happens and use this data to power campaign optimization. The Conversions API can help strengthen performance and decrease cost per action with more complete attribution, improved reliability, and optimized delivery.
 
-This destination is maintained by Segment. For 
+This destination is maintained by Segment. For any issues with the destination, [contact the Segment Support team](mailto:friends@segment.com).
 
 ## Getting started
 
@@ -16,7 +16,7 @@ This destination is maintained by Segment. For
 4. Select the source that you want to connect to the LinkedIn Conversions API and click **Next**.
 5. Enter a name for your destination and click **Create destination**. 
 6. On the Settings tab, click Connect to `[destination-name]` and follow the prompts to authenticate with LinkedIn using OAuth. 
-6. Enable the destination and click **Save Changes**.
+7. Enable the destination and click **Save Changes**.
 
 ### Set up a mapping to Stream Conversion Events
 
