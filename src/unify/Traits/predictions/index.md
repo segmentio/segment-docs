@@ -5,7 +5,7 @@ redirect_from:
   - "/engage/audiences/predictive-traits"
 ---
 
-Predictions, Segment's artificial intelligence and machine learning feature, lets you predict the likelihood that users will perform any event tracked in Segment. 
+Predictions, Segment's artificial intelligence and machine learning feature, lets you predict the likelihood that users will perform any event tracked in Segment.
 
 With Predictions, you can identify users with, for example, a high propensity to purchase, refer a friend, or use a promo code. Predictions also lets you predict a user's lifetime value (LTV).
 
@@ -98,10 +98,6 @@ Segment would then build the prediction from this criteria and create specific p
 #### Data requirements
 
 Predicted LTV has strict data requirements. Segment can only make predictions for customers that have purchased two or more times. Segment also requires a year of purchase data to perform LTV calculations.
-
-> info "Prediction is failing with error "We weren't able to create this prediction because your requested prediction event is not being tracked anymore. Please choose a different prediction event and try again.""
-> Predictions are computed based on the available data and the conditions specified for the trait. A gap in tracking events for seven continuous days could potentially affect the computation of the prediction.
-Nevertheless, once data tracking resumes and there is enough data, the prediction should be recomputed.
 
 ## Use cases
 
