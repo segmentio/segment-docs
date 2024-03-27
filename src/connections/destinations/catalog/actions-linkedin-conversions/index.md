@@ -1,5 +1,5 @@
 ---
-title: LinkedIn Conversions API
+title: LinkedIn Conversions API Destination
 id: 652e765dbea0a2319209d193
 beta: true
 ---
