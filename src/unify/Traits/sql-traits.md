@@ -275,3 +275,8 @@ If you experience issues saving the SQL Trait query or previewing the results of
 ### Why can't I see error messages in SQL traits while other users can?
 To see error messages in SQL traits, you will need to have PII Access.
 
+### If I edit the SQL Trait query, when will that edit apply those changes?
+The SQL Trait edit will apply to its next scheduled computational run. If the edit was made too closely to its next scheduled run, then its changes will be applied to the subsequent scheduled run, at which point you'll see those updates reflected on its user's profiles.
+
+### If I request a resync for my SQL Trait, when will that resync run?
+The SQL Trait resync will apply to its next scheduled computational run. If the resync was made too closely to its next scheduled run, then its changes will be applied to the subsequent scheduled run, at which point you'll see those updates reflected on its user's profiles.
