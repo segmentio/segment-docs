@@ -127,3 +127,9 @@ This error indicates that the conversion action specified in the upload request 
 
 To resolve this, ensure that the ConversionActionType value in Google Ads is correctly configured.
 
+### Resolving the conversion_date_time that precedes the click error
+
+This error indicates that the conversionDateTime is incorrect in your event, as outlined in [Google's Ads documentation](https://developers.google.com/google-ads/api/rest/reference/rest/v14/Customer#:~:text=CONVERSION_PRECEDES_,correct%20and%20try%20again){:target="_blank”}.
+
+To resolve this issue, ensure that the conversionDateTime in the event payload is accurate and verify that the requirements for uploading click conversions, as outlined in [Google's documentation]([https://developers.google.com/google-ads/api/rest/reference/rest/v14/Customer#:~:text=CONVERSION_PRECEDES_,correct%20and%20try%20again](https://developers.google.com/google-ads/api/docs/conversions/upload-clicks?hl=en#upload_clickconversion)){:target="_blank”}., are met.
+
