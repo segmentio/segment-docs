@@ -98,3 +98,7 @@ Follow the steps mentioned [here](https://knowledge.hubspot.com/integrations/con
 ### How does disconnecting and uninstalling affect a user's data and HubSpot account?
 Segment immediately stops sending data to HubSpot after you disconnect and uninstall a HubSpot account.
 
+### Understanding HubSpot's `date` and dateTime` custom property types
+If you plan on sending a _date_ value to your mapped HubSpot custom properties, make sure the correct `date` or `dateTime` property type was selected for the field in HubSpot as explained on [HubSpot's API Docs](https://developers.hubspot.com/docs/api/crm/crm-custom-objects#properties), otherwise the event may fail due to an "**Invalid Date Error**."
+
+Both HubSpot's _date_ property types each accept ISO 8601 formatted values, but only the `dateTime` property type will successully accept values that include the time data.
