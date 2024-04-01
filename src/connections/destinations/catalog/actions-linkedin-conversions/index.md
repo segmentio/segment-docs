@@ -20,7 +20,7 @@ This destination is maintained by Segment. For any issues with the destination, 
 
 ### Set up a mapping to Stream Conversion Events
 
-You must create 1 mapping for every conversion rule. After you create a conversion rule, you cannot update the connected LinkedIn Ad account.  
+Follow the steps in the Destination Actions documentation on [Customizing mappings](/docs/connections/destinations/actions/#customize-mappings). You must create 1 mapping for every conversion rule. After you create a conversion rule, you cannot update the connected LinkedIn Ad account.  
 
 1. On the Mappings tab, click on **+ New Mapping** and Select **Stream Conversion Event**. 
 2. Select the events you'd like to map and send to your LinkedIn Conversions API destination.
