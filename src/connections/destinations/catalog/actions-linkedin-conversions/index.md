@@ -24,7 +24,7 @@ Follow the steps in the Destination Actions documentation on [Customizing mappin
 
 1. On the Mappings tab, click on **+ New Mapping** and Select **Stream Conversion Event**. 
 2. Select the events you'd like to map and send to your LinkedIn Conversions API destination.
-3. Create a Conversion Rule or enter the link to an existing rule. _If you chose to create a new conversion rule, Segment creates the conversion rule as soon as you click **Save**._  
+3. Create a conversion rule or enter the link to an existing rule. _If you chose to create a new conversion rule, Segment creates the conversion rule as soon as you click **Save**._  
 4. Configure the mappings to map event fields and user attributes from your source to the Conversion API. 
 5. Click **Save**. 
 
