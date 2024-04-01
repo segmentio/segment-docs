@@ -25,7 +25,7 @@ Run `pod install` after the installation to autolink the Firebase SDK.
 See [React Native Firebase](https://rnfirebase.io) and [React Native Firebase Analytics](https://rnfirebase.io/analytics/usage) for more details of Firebase packages.
 
 > info "Installation"
-> You will need to follow the [install guide]https://rnfirebase.io/#configure-firebase-with-android-credentials for Android and IOS. This includes adding the `GoogleService-Info.plist` and the `google-services.json` file.
+> You will need to follow the install guide for [Android](https://rnfirebase.io/analytics/usage/installation/android) and [iOS](https://rnfirebase.io/analytics/usage/installation/ios). This includes adding the `GoogleService-Info.plist` and the `google-services.json` file.
 
 
 ## Using the Plugin in your App
