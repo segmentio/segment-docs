@@ -20,21 +20,15 @@ This destination is maintained by Segment. For any issues with the destination, 
 
 ### Set up a mapping to Stream Conversion Events
 
+You must create 1 mapping for every conversion rule. After you create a conversion rule, you cannot update the connected LinkedIn Ad account.  
+
 1. On the Mappings tab, click on **+ New Mapping** and Select **Stream Conversion Event**. 
 2. Select the events you'd like to map and send to your LinkedIn Conversions API destination.
-3. Create A Conversion Rule or enter a link to an existing rule.
+3. Create a Conversion Rule or enter the link to an existing rule. _If you chose to create a new conversion rule, Segment creates the conversion rule as soon as you click **Save**._  
+4. Configure the mappings to map event fields and user attributes from your source to the Conversion API. 
+5. Click **Save**. 
 
-> warning "Ad account link cannot be updated"
-> After you provide a link to your LinkedIn Ad account in this step, you cannot update the Ad account without creating a new LinkedIn Conversions API destination.
-
-<ol style="counter-reset: none;">
-  <li value="4" markdown=1>
-  Configure the mappings to map event fields and user attributes from your source to the Conversion API. 
-  </li>
-  <li value="5" markdown=1>
-  Click **Save**. 
-  </li>
-</ol> 
+After you've created a Stream Conversion Event mapping, Segment displays the connected rule for each mapping on the Mappings tab. To update the conversion rule you created, select the menu icon for the mapping you'd like to update and click **Edit Mapping**. After making changes to your conversion rule, click **Save** to save your changes. After you save your changes, Segment updates the conversion rule in LinkedIn. 
 
 {% include components/actions-fields.html %}
 
