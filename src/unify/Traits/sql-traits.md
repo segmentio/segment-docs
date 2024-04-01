@@ -6,8 +6,8 @@ redirect_from:
   - '/engage/audiences/sql-traits'
 ---
 
-> info ""
-> Beginning August 18, 2023, new Unify Plus users can access SQL Traits in Unify. 
+> info "SQL Traits End of Sale"
+> SQL Traits entered End of Sale as of March 31, 2024. Existing Segment customers will continue to have access to SQL Traits, but Segment will no longer offer SQL Traits to new customers. Segment recommends using [Reverse ETL](/docs/connections/reverse-etl/) to sync your data into Segment. 
  
  
 Use SQL Traits to import user or account traits from your data warehouse back into Unify or Engage to build audiences or to enhance data that you send to other Destinations.
