@@ -76,8 +76,8 @@
 <table>
 <thead>
   <tr>
-    <th>Device-mode</th>
-    <th>Cloud-mode</th>
+    <th>Device-modex</th>
+    <th>Cloud-modex</th>
   </tr>
 </thead>
 <tbody>
@@ -98,5 +98,14 @@
 </div>
 {% endunless %}
 {% endif %}
+{% if destinationInfo.partnerOwned == true %}
+<div>
+  <h6>Partner Owned</h6>
+  <ul class="components-list">
+    <li>This integration is partner owned. Please reach out to the partner's support for any issues.</li>
+  </ul>
+</div>
+{% endif %}
+{{contacts}}
 </div>
 {% endif %}
