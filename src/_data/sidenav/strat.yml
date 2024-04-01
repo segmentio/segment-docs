@@ -199,8 +199,6 @@ sections:
     title: Typewriter for Kotlin
   - path: /connections/sources/catalog/libraries/mobile/kotlin-android/kotlin-android-destination-filters
     title: Destination Filters for Kotlin
-  - path: /connections/sources/catalog/libraries/mobile/kotlin-android/kotlin-android-faq
-    title: FAQs
 
 - slug: swift
   section_title: Analytics-Swift Documentation
