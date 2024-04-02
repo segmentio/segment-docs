@@ -166,5 +166,5 @@ If you proxy your events through the `apiHost` config option, you must forward t
 > If you are using the Analytics iOS (Classic) SDK, you can find [the documentation here](/docs/connections/sources/catalog/libraries/mobile/ios). Many of the features available in the Analytics-Swift SDK are not available in the Analytics iOS (Classic) SDK.
 
 ## Timestamps in Swift
-Due to changes made in our Swift library that increase the efficiency of the library, when the `sentAt` timestamp is added to an event payload has changed. This can impact the value of the `timestamp` field calculated by Segment if users are operating in an offline mode. More details on this change can be seen in our [timestamp documentation](https://segment.com/docs/connections/spec/common/#sentat){:target="_blank"}.
+Due to efficiency updates made to Segment's Swift library, Segment now adds the `sentAt` timestamp to an event when the batch is complete and initially tried to the Segment API. This can impact the value of the `timestamp` field calculated by Segment if users are operating in an offline mode. More details on this change can be seen in Segment's [timestamp documentation](/docs/connections/spec/common/#sentat).
 
