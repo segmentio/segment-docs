@@ -9,8 +9,7 @@ Sync your Twilio Segment customer data to Optimizely Data Platform (ODP) for rea
 
 After you set up your Optimizely Data Platform destination, Segment syncs your customer data to ODP in near real-time.
 
-Prerequisites
--------------
+## Prerequisites
 
 *   Twilio Segment account
 *   ODP or [ODP Lite](https://support.optimizely.com/hc/en-us/articles/8359093735309-Welcome-to-ODP-Lite) account
