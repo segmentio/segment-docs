@@ -60,3 +60,4 @@ If you want to map an event that is not listed:
 
 The event data sends from Twilio Segment to ODP starting after you enable the mapping in the destination. It does not retroactively send events that occurred prior to configuring the integration and enabling the mappings.
 
+{% include components/actions-fields.html %}
