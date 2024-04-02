@@ -9,14 +9,14 @@ hidden: true
 > info "Linked Audiences is in public beta"
 > Linked Audiences is in public beta, and Segment is actively working on this feature. Some functionality may change before it becomes generally available.
 
-With Linked Audiences, you can use the relational data you've defined in your Data Graph to build audiences and send them to any downstream [actions-based destinations](/docs/connections/destinations/actions/#available-actions-based-destinations).
+With Linked Audiences, you can use the relational data you've defined in your [Data Graph](docs/unify/linked-profiles/data-graph/) to build audiences and send them to any downstream [actions-based destinations](/docs/connections/destinations/actions/#available-actions-based-destinations).
 
 > info "Linked Audiences warehouse support"
 >Linked Audiences supports [Snowflake](/docs/unify/linked-profiles/setup-guides/snowflake-setup/).
 > warning "Linked Audiences permissions requirements"
 > To set up Linked Audiences Activation, you must have Workspace Owner or Unify Read-Admin, Entities Admin, and Source Admin permissions.
 
-To learn more about Linked Audiences use cases,  see the [Linked Audiences Use Cases](/docs/engage/audiences/linked-audiences-use-cases/) topic.
+To learn more about Linked Audiences use cases, see the [Linked Audiences Use Cases](/docs/engage/audiences/linked-audiences-use-cases/) topic.
 
 ## Step 1: Build a Linked Audience
 
@@ -41,9 +41,9 @@ After creating the audience, you'll be redirected to the Overview page. By defau
 
 This triggers a compute for the audience (where the audience conditions run on your data warehouse) and sends events downstream.
 
-#### Event conditions
+#### Audience conditions
 
-As you're building your Linked Audience, you can choose from the following  conditions:
+As you're building your Linked Audience, you can choose from the following conditions:
 
 | Conditions     | Description                           |
 |---------------------------|---------------------------------------|
