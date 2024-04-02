@@ -31,7 +31,7 @@ After you set up your Optimizely Data Platform destination, Segment syncs your c
 
 ## Configure event mappings
 
-After you enable the integration, you must map the events that you want Twilio Segment to send to ODP.
+After you enable the Optimizely Data Platform destination, you must map the events that you want Twilio Segment to send to ODP.
 
 In Twilio Segment, on the **Mappings** tab of the Optimizely Data Platform destination, there is a list of pre-built mappings that you can enable or disable. For example, if you enable the **Email Opened** mapping, each email opened event syncs from Twilio Segment to ODP going forward.
 
