@@ -20,7 +20,7 @@ To learn more about Linked Audiences use cases,  see the [Linked Audiences Use C
 
 ## Step 1: Build a Linked Audience
 
-Linked Audiences allows you to filter based on properties such as profile traits, relational data mapped to the Data Graph, events, and existing audience membership. 
+Linked Audiences allows you to filter audience targeting logic based on properties such as profile traits, relational data mapped to the Data Graph, events, and existing audience membership. 
 
 ![Choose your audience conditions](/docs/engage/images/conditions.png)
 
