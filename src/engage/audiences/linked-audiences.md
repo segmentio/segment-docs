@@ -16,7 +16,7 @@ With Linked Audiences, you can use the relational data you've defined in your Da
 > warning "Linked Audiences permissions requirements"
 > To set up Linked Audiences Activation, you must have Workspace Owner or Unify Read-Admin, Entities Admin, and Source Admin permissions.
 
-To learn more about Linked Audiences use cases,  see the [Linked Audiences Use Cases](/engage/audiences/linked-audiences-use-cases/) topic.
+To learn more about Linked Audiences use cases,  see the [Linked Audiences Use Cases](/docs/engage/audiences/linked-audiences-use-cases/) topic.
 
 ## Step 1: Build a Linked Audience
 
