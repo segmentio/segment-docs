@@ -275,3 +275,6 @@ If you experience issues saving the SQL Trait query or previewing the results of
 ### Why can't I see error messages in SQL traits while other users can?
 To see error messages in SQL traits, you will need to have PII Access.
 
+### SQL Trait Updates and Query Modifications
+
+SQL Traits generate events when changes are detected between runs. For example, if you adjust the query to include a new column, SQL Traits will produce events for all users who have acquired the new trait.
