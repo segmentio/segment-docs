@@ -14,8 +14,7 @@ After you set up your Optimizely Data Platform destination, Segment syncs your c
 *   Twilio Segment account
 *   ODP or [ODP Lite](https://support.optimizely.com/hc/en-us/articles/8359093735309-Welcome-to-ODP-Lite) account
 
-Enable the integration
-----------------------
+## Enable the integration
 
 1.  In ODP, go to the **App Directory**.
 2.  Select the **Twilio Segment** app.
