@@ -4,7 +4,7 @@ redirect_from: '/protocols/typewriter/'
 ---
 
 > warning ""
-> Typewriter for analytics.js and analytics-node will receive no new features and only critical maintenance updates from Segment. Typewriter for other libraries and SDKs are not actively maintained by Segment. Typewriter is available on [Github](https://github.com/segmentio/typewriter/) under the MIT license for the open-source community to fork and contribute.
+> Typewriter for analytics.js and analytics-node will receive no new features and only critical maintenance updates from Segment. Typewriter for other libraries and SDKs are not actively maintained by Segment. Typewriter is available on [Github](https://github.com/segmentio/typewriter/){:target="_blank”} under the MIT license for the open-source community to fork and contribute.
 
 [Typewriter](https://github.com/segmentio/typewriter) is a tool for generating strongly-typed Segment analytics libraries based on your pre-defined [Tracking Plan](/docs/protocols/tracking-plan) spec.
 
