@@ -16,18 +16,19 @@ After you set up your Optimizely Data Platform destination, Segment syncs your c
 
 ## Enable the integration
 
-1.  In ODP, go to the **App Directory**.
+1.  In ODP, open the App Directory.
 2.  Select the **Twilio Segment** app.
 3.  Click **Install App**.
-4.  On the **Settings** tab, click **Generate** and copy the token that displays.
-5.  In Twilio Segment, go to **Connections > Destinations**.
+4.  On the Settings tab, click **Generate** and copy the displayed token.
+5.  Open the Segment app and navigate to the [Destination catalog page](https://app.segment.com/goto-my-workspace/destinations/catalog){:target="_blank”}.
 6.  Search for and select **Optimizely Data Platform**.
-7.  Complete the following fields on the **Settings** tab:
-	- **Name** – Enter a name for the destination, like _Optimizely Data Platform_.
-	- **Api Key** – Paste your ODP API token from step 4.
-	- **Region** – Select your region.
-	- **Enable Destination** – Toggle to **On**.
-8.	Click **Save Changes**.
+7.  Click **Add destination** and select a source to connect to the Optimizely Data Platform destination.
+8. Enter a name for your destination and click **Create destination**.
+9. On the destination's Settings tab, enter the following information:
+	- **Api Key** – Paste your ODP API token from step 4
+	- **Region** – Select your region
+	- **Enable Destination** – Toggle to **On**
+10.	Click **Save Changes**.
 
 ## Configure event mappings
 
