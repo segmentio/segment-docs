@@ -84,7 +84,7 @@ When you successfully package a plugin in device-mode, you will no longer see th
 The instanceId was introduced in [V 1.10.1](https://github.com/segmentio/analytics-kotlin/releases/tag/1.10.1){:target="_blank"} and correlates events to a particular instance of the client in a scenario when you might have multiple instances on a single app.
 
 ## How should I configure my proxy URL?
-To proxy events to Segment's API, you can confiuge your proxy URL via the `requestFactory` setting:
+To proxy events to Segment's API, you can configure your proxy URL via the `requestFactory` setting:
 ```
 Analytics(BuildConfig.SEGMENT_WRITE_KEY, androidContext()) {
     trackApplicationLifecycleEvents = true
@@ -104,4 +104,4 @@ Analytics(BuildConfig.SEGMENT_WRITE_KEY, androidContext()) {
 }
 ```
 
-If you proxy your events through the `apiHost` config option, you must forward the batched events to `https://api.segment.io/v1/b`. The `https://api.segment.io/v1/batch` endpoint is reserved for events arriving from server side sending, and proxying to that endpoint for your mobile events may result in unexpected behavior.
+When proxying your events, you must forward the batched events to `https://api.segment.io/v1/b`. The `https://api.segment.io/v1/batch` endpoint is reserved for events arriving from server side sending, and proxying to that endpoint for your mobile events may result in unexpected behavior.
