@@ -11,8 +11,8 @@ After you set up your Optimizely Data Platform destination, Segment syncs your c
 
 ## Prerequisites
 
-*   Twilio Segment account
-*   ODP or [ODP Lite](https://support.optimizely.com/hc/en-us/articles/8359093735309-Welcome-to-ODP-Lite) account
+- Twilio Segment workspace
+- ODP or [ODP Lite](https://support.optimizely.com/hc/en-us/articles/8359093735309-Welcome-to-ODP-Lite){:target="_blank”} account
 
 ## Enable the integration
 
