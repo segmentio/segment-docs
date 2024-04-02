@@ -1,7 +1,6 @@
 ---
 title: ABsmartly (Actions) Destination
 id: 64f703d1f6e9aa0a283ae3e2
-beta: true
 ---
 
 {% include content/plan-grid.md name="actions" %}
