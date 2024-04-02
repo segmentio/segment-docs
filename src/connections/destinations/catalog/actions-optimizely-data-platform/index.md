@@ -1,5 +1,8 @@
 ---
 title: Optimizely Data Platform Destination
+beta: true
+hidden: true
+id: 6512d7f86bdccc3829fc4ac3
 ---
 
 Sync your Twilio Segment customer data to Optimizely Data Platform (ODP) for real-time segmentation, reporting, and to enrich customer profiles in ODP.
