@@ -4,7 +4,7 @@ hidden: true
 ---
 
 > warning ""
-> Typewriter v7 is not actively maintained by Segment. Typewriter is available on [Github](https://github.com/segmentio/typewriter/tree/v7.4.1) under the MIT license for the open-source community to fork and contribute.
+> Segment does not actively maintain Typewriter v7. Typewriter is available on [Github](https://github.com/segmentio/typewriter/tree/v7.4.1){:target="_blank”} under the MIT license for the open-source community to fork and contribute.
 
 ## Prerequisites
 
