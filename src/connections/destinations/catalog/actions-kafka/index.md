@@ -101,4 +101,4 @@ The **Send** Action provides multiple ways to specify which Partition an event s
 
 ### What is the "SSL - Reject Unauthorized Certificate Authority" field for?
 
-This field specifies if Segment should reject server connections when a certificate is notsigned by a trusted Certificate Authority (CA). This can be useful for testing purposes or when using a self-signed certificate. 
+This field specifies if Segment should reject server connections when a certificate is not signed by a trusted Certificate Authority (CA). This can be useful for testing purposes or when using a self-signed certificate. 
