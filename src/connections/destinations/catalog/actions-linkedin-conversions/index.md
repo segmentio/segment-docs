@@ -28,7 +28,7 @@ Follow the steps in the Destination Actions documentation on [Customizing mappin
 4. Configure the mappings to map event fields and user attributes from your source to the Conversion API. 
 5. Click **Save**. 
 
-After you've created a Stream Conversion Event mapping, Segment displays the connected rule for each mapping on the Mappings tab. To update the conversion rule you created, select the menu icon for the mapping you'd like to update and click **Edit Mapping**. After making changes to your conversion rule, click **Save** to save your changes. After you save your changes, Segment updates the conversion rule in LinkedIn. 
+After you've created a Stream Conversion Event mapping, Segment displays the connected rule for each mapping on the Mappings tab. To update the conversion rule you created, select the menu icon for the mapping you'd like to update and click **Edit Mapping**. Scroll to section 3, Create a Conversion Rule, and select **Edit your configuration**. After making changes to your conversion rule, click **Save** to save your changes. You can make changes to all fields except for the Ad account field. After you save your changes, Segment updates the conversion rule in LinkedIn. 
 
 {% include components/actions-fields.html %}
 
