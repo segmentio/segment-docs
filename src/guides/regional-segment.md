@@ -30,10 +30,14 @@ Regional Data Ingestion enables you to send data to Segment from both Device-mod
 {% include content/eu-cloud-event-sources.html %}
 
 ### Client-side sources
-You can configure Segment's client-side SDKs for JavaScript, iOS, Android, and React Native sources to send data to a regional host after you've updated the Data Ingestion Region in that source's settings. Segment's EU instance only supports data ingestion from Dublin, Ireland with the `in.eu2.segmentapis.com` endpoint. If you are using the Segment EU endpoint with an Analytics-C# source, you must manually append `v1` to the URL. For instance, `in.eu2.segmentapis.com`.
+You can configure Segment's client-side SDKs for JavaScript, iOS, Android, and React Native sources to send data to a regional host after you've updated the Data Ingestion Region in that source's settings. 
 
-> info ""
-> For workspaces that use the EU West Data Processing region, the Dublin Ingestion region is preselected for all sources.
+    - If you have a US workspace and but want to use the ap-southeast-1 (Singapore) endpoint, use the edge proxy endpoint: in.ap1.segmentapis.com
+    - If you have a US workspace and but want to use the ap-southeast-2 (Sydney) endpoint, use the edge proxy endpoint: in.au1.segmentapis.com
+    - If you are using the Segment EU endpoint with an Analytics-C# source, you must manually append `v1` to the URL. For instance, `in.eu2.segmentapis.com/v1`.
+    - If you're in the *US West* data processing region, you can select from: Dublin, Singapore, Oregon, and Sydney.
+    - If you're in the *EU West* data processing region, Segment's EU instance only supports data ingestion from Dublin with the `in.eu2.segmentapis.com` endpoint.
+    - For workspaces that use the EU West Data Processing region, the Dublin Ingestion region is preselected for all sources.
 
 To set your Data Ingestion Region:
 
@@ -41,8 +45,6 @@ To set your Data Ingestion Region:
 2. Select the **Settings** tab.
 3. Click **Regional Settings**.
 4. Choose your **Data Ingestion Region**.
-    - If you're in the *US West* data processing region, you can select from: Dublin, Singapore, Oregon, and Sydney.
-    - If you're in the *EU West* data processing region, Segment's EU instance only supports data ingestion from Dublin with the `in.eu2.segmentapis.com` endpoint.
 
 All regions are configured on a **per-source** basis. You'll need to configure the region for each source separately if you don't want to use the default region.
 
