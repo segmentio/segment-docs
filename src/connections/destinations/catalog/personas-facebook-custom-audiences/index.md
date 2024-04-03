@@ -143,6 +143,10 @@ Segment sends lists of users with identifiers that Facebook supports to Facebook
 
 For example, many B2B SaaS businesses have users that sign up for their products with a work email address, like `jane.doe@segment.com`. However, most Facebook users sign up for Facebook with a personal email only, like `janedoe@gmail.com`. If you only provide the work email address, and no other identifiers, then Facebook can't match your user to the Jane Doe Facebook profile. This is the case for all identifiers - Facebook must have the identifier somewhere in a user's profile, or else they can't match on it.
 
+### Why are all of my audiences connected to Facebook failing with an 'Internal Error' message?
+
+Most likely, this is due to your Facebook needing to be reauthorized, sometimes due to a password change. Please reauthorize the Facebook destination connection. If the error persists, please contact Segment Support.
+
 Please note, emails must be in a plain text format. Facebook also provides these guidelines for the emails that you send to them: trim leading, trail whitespace, and convert all characters to lowercase.
 
 ### Do you support LTV audiences?
