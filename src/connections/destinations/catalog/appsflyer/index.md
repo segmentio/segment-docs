@@ -233,6 +233,6 @@ For more details, review the [AppsFlyer OneLink set up Guide](https://support.ap
 
 ## FAQ
 
-### Q: Is there a way to utilize my AppsFlyer attribution data to send to destinations like GA4 and Salesforce?
+### Is there a way to utilize my AppsFlyer attribution data to send to destinations like GA4 and Salesforce?
 
 If you would like your AppsFlyer data sent to a destination, you may consider our [Source Functions](/docs/connections/functions/source-functions/). This would let you build out a source where you could take in incoming data through a Webhook and then formulate Track/Identify/Page/etc. calls to be sent to your connected destinations.
