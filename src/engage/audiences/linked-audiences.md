@@ -64,18 +64,17 @@ As you’re building or maintaining your audience, you may encounter an error or
 | No columns exist for entity | No columns exist for entity in Data Graph: <entity> | Terminate and execute next run |
 | Missing join key between entities | Join key missing from Data Graph for relation: <relationship> | Terminate and execute next run |
 | Join key is wrong type | Relationship key should be a string: <relationship> | Terminate and execute next run |
-| Entity relationship not in Data Graph (we know the entity) | Entity relationship not in Data Graph for entity <entity> | Terminate and execute next run |
-| Entity relationship not in Data Graph (we know the relationship slug) | Entity relationship not in Data Graph for relationship: <relationship slug> | Terminate and execute next run |
-| Entity relationship not in Data Graph (we know the entity and relationship slug) | Entity relationship not in Data Graph for entity: <entity> and relationship: <relationship slug> | Terminate and execute next run |
+| Entity relationship not in Data Graph | Entity relationship not in Data Graph for entity <entity> | Terminate and execute next run |
+| Entity relationship not in Data Graph | Entity relationship not in Data Graph for relationship: <relationship slug> | Terminate and execute next run |
+| Entity relationship not in Data Graph | Entity relationship not in Data Graph for entity: <entity> and relationship: <relationship slug> | Terminate and execute next run |
 | Query fails for unknown internal error | An unexpected error occurred. Execution will retry. If the problem persists, please contact Segment support. | Retry |
 | Update model fails | An unexpected error occurred. Execution will retry. If the problem persists, please contact Segment support. | Retry |
 | Kick off rETL job | An unexpected error occurred. Execution will retry. If the problem persists, please contact Segment support. | Retry |
 | Warehouse errors | Pass through warehouse errors | Terminate and execute next run |
-| SQL Compilation execution | Examples: extract phase failed: An unexpected Snowflake error occurred trying to execute your model query: 000904 (42000): SQL compilation error: error line 30 at position 61 invalid identifier 'EV.PROPERTIES'  extract phase failed: An unexpected Snowflake error occurred trying to execute your model query: 000904 (42000): SQL compilation error: error line 23 at position 19 invalid identifier 'UPDATES.TRAITS' |  |
+| SQL Compilation execution | Examples: extract phase failed: An unexpected Snowflake error occurred trying to execute your model query: 000904 (42000): SQL compilation error: error line 30 at position 61 invalid identifier '<XX.PROPERTIES>'  extract phase failed: An unexpected Snowflake error occurred trying to execute your model query: 000904 (42000): SQL compilation error: error line 23 at position 19 invalid identifier '<XX.TRAITS>' |  |
 | Duplicate records for ID | Examples: extract phase failed: Duplicate records have been detected. This could be because the model query returned multiple records for the same ID column (MATCHID), or the Segment records table itself has duplicate records. |  |
-| Check results | An unknown error occurred. Execution will retry. If the problem persists, please contact Segment support. | Retry |
-| Extract results | Execution is paused due to an identified operational issue. | Pause for manual intervention |
-| Process results | Execution is paused due to an identified operational issue. | Set retl_results_processed = true on success  Set retl_results_processed = false on failure  Set lock  Abort other execution attempts  Page Compute |
+| Check results | An unexpected error occurred attempting to execute this model query. | Retry |
+| Process results | Execution is paused due to an identified operational issue. | Pause for manual intervention  |
 | Load results | Execution is paused due to an identified operational issue. |  |
 
 #### Edit an audience
