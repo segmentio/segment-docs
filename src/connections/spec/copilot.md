@@ -18,18 +18,18 @@ In this section, you'll find the tracked semantic events that serve as a startin
 
 This table lists the events that you can track from any conversation:
 
-| Event                | Definition                                                                                              | Fields                                            |
-| -------------------- | ------------------------------------------------------------------------------------------------------- | ------------------------------------------------- |
-| Conversation Started | When a new conversation begins                                                                          | `conversationId`                                  |
-| Message Sent         | When the first message is added to a thread by user                                                     | `conversationId`, `messageId`, `message_body`     |
-| Message Received     | Non-custom response (text/voice) to user prompt by copilot                                              | `conversationId`, `messageId`, `message_body`     |
-| Conversation Ended   | When a conversation is completed                                                                        | `conversationId`, `message_count`                 |
-| Tool Invoked         | When the model or user invokes a capability or tool                                                     | `conversationId`, `messageId`, `type`, `action`   |
-| Media Generated      | When the model generates an image/video/audio                                                           | `conversationId`, `messageId`, `type`, `sub_type` |
-| Component Loaded     | When a new custom (non-text/voice) component is shown to a user                                         | `conversationId`, `messageId`, `type`             |
-| Feedback Submitted   | When a user rates a conversation or message                                                             | `conversationId`, `messageId`, `rating`           |
-| Identify             | When a new user is identified anonymously or known                                                      | `userId` and/or `anonymousId`                     |
-| Standard Track Calls | For all events sent to Segment based on user actions taken, like `items purchased`, `support requested` | `conversationId`, `messageId`, `...`              |
+| Event                | Definition                                                                                              | Fields                                                                          |
+| -------------------- | ------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- |
+| Conversation Started | When a new conversation begins                                                                          | `conversationId`                                                                |
+| Message Sent         | When the first message is added to a thread by user                                                     | `conversationId`, `messageId`, `message_body`, `role` (default is `"customer"`) |
+| Message Received     | Non-custom response (text/voice) to user prompt by copilot                                              | `conversationId`, `messageId`, `message_body`, `role` (default is `"agent"`)    |
+| Conversation Ended   | When a conversation is completed                                                                        | `conversationId`, `message_count`                                               |
+| Tool Invoked         | When the model or user invokes a capability or tool                                                     | `conversationId`, `messageId`, `type`, `action`                                 |
+| Media Generated      | When the model generates an image/video/audio                                                           | `conversationId`, `messageId`, `type`, `sub_type`                               |
+| Component Loaded     | When a new custom (non-text/voice) component is shown to a user                                         | `conversationId`, `messageId`, `type`                                           |
+| Feedback Submitted   | When a user rates a conversation or message                                                             | `conversationId`, `messageId`, `rating`                                         |
+| Identify             | When a new user is identified anonymously or known                                                      | `userId` and/or `anonymousId`                                                   |
+| Standard Track Calls | For all events sent to Segment based on user actions taken, like `items purchased`, `support requested` | `conversationId`, `messageId`, `...`                                            |
 
 ### Live chat events
 
@@ -73,15 +73,17 @@ Here's an example of a Conversation Started call:
 
 ### Message Sent
 
-The Message Sent event should be sent when a user adds a new message to a thread. 
+The Message Sent event should be sent when a user adds a new message to a thread. The default for `role` is `"customer"`.
 
 This event supports the following semantic properties:
 
-| Property         | Type   | Description                           |
-| ---------------- | ------ | ------------------------------------- |
-| `conversationId` | string | The conversation's unique identifier. |
-| `messageId`      | string | The message's unique identifier.      |
-| `message_body`   | string | The message's content.                |
+| Property         | Type   | Description                                    |
+| ---------------- | ------ | ---------------------------------------------- |
+| `conversationId` | string | The conversation's unique identifier.          |
+| `messageId`      | string | The message's unique identifier.               |
+| `message_body`   | string | The message's content.                         |
+| `role`           | string | The message's sender; default is `"customer"`. |
+
 
 Here's an example of a Message Sent call:
 
@@ -93,7 +95,8 @@ Here's an example of a Message Sent call:
   "properties": {
     "conversationId": "1238041hdou",
     "messageId": "msg123",
-    "message_body": "What's the best stock in the Nasdaq right now?"
+    "message_body": "What's the best stock in the Nasdaq right now?",
+  "role": "customer"
   }
 }
 ```
@@ -102,13 +105,17 @@ Here's an example of a Message Sent call:
 
 The Message Received event should be sent when the copilot gives a non-custom response (either text or voice) to something the user asked. 
 
+The default for `role` is `"agent"`. You can extend `role` to different agent type, like `ai_agent`, `human_agent`, `task_automation_agent`, and so on.
+
 This event supports the following semantic properties:
 
-| Property         | Type   | Description                           |
-| ---------------- | ------ | ------------------------------------- |
-| `conversationId` | string | The conversation's unique identifier. |
-| `messageId`      | string | The message's unique identifier.      |
-| `message_body`   | string | The received message's content.       |
+| Property         | Type   | Description                                 |
+| ---------------- | ------ | ------------------------------------------- |
+| `conversationId` | string | The conversation's unique identifier.       |
+| `messageId`      | string | The message's unique identifier.            |
+| `message_body`   | string | The received message's content.             |
+| `role`           | string | The message's sender; default is `"agent"`. |
+
 
 ```json
 {
@@ -119,7 +126,8 @@ This event supports the following semantic properties:
     "conversationId": "1238041hdou",
     "messageId": "msg124",
     "message_body": "Thank you for reaching out. How can I assist you today?"
-  }
+  },
+  "role": "agent"
 }
 ```
 
@@ -146,18 +154,20 @@ Here's an example of a Conversation Ended call:
 }
 ```
 
-### Tool Invoked
+### Action Invoked
 
-The Tool Invoked event should be sent when the copilot or user uses a custom capability or tool, like making a call to an external API.
+The Action nvoked event should be sent when the copilot or user uses a custom capability or tool, like making a call to an external API.
 
 This event supports the following semantic properties:
 
-| Property         | Type   | Description                              |
-| ---------------- | ------ | ---------------------------------------- |
-| `conversationId` | string | The conversation's unique identifier.    |
-| `messageId`      | string | The message's unique identifier.         |
-| `type`           | string | The type of tool invoked.                |
-| `action`         | String | The specific action taken with the tool. |
+| Property         | Type   | Description                                    |
+| ---------------- | ------ | ---------------------------------------------- |
+| `conversationId` | string | The conversation's unique identifier.          |
+| `messageId`      | string | The message's unique identifier.               |
+| `type`           | string | The type of action invoked.                    |
+| `action`         | String | The specific action taken with the tool.       |
+| `role`           | string | The message's sender; default is `"customer"`. |
+
 
 Here's an example of a Tool Invoked call:
 
@@ -165,12 +175,13 @@ Here's an example of a Tool Invoked call:
 {
   "userId": "123",
   "action": "track",
-  "event": "Tool Invoked",
+  "event": "Action Invoked",
   "properties": {
     "conversationId": "1238041hdou",
     "messageId": "msg125",
     "type": "Inventory Request",
-    "action": "check stock level"
+    "action": "check stock level",
+  "role": "customer"
   }
 }
 ```
@@ -187,6 +198,8 @@ This event supports the following semantic properties:
 | `messageId`      | string | The message's unique identifier.                        |
 | `type`           | string | The type of media generated (like `"image"`, `"video"`) |
 | `sub_type`       | String | Media data type (like `"gif"`, `"mp4"`, `"wav"`)        |
+| `role`           | string | The message's sender; default is `"agent"`.             |
+
 
 Here's an example of a Media Generated call:
 
@@ -198,8 +211,9 @@ Here's an example of a Media Generated call:
   "properties": {
     "conversationId": "1238041hdou",
     "messageId": "msg126",
+    "role": "agent",
     "type": "image",
-  "sub_type": "gif"
+    "sub_type": "gif"
   }
 }
 ```
