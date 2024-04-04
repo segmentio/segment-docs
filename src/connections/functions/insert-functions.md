@@ -371,50 +371,40 @@ The editor displays logs and request traces from the batch handler.
 
 The [Public API](/docs/api/public-api) Functions/Preview endpoint also supports testing batch handlers. The payload must be a batch of events as a JSON array.
 
+### Handling filtering in a batch
+Events in a batch can be filtered out using custom logic. The filtered events will be surfaced in the [Event Delivery](/docs/connections/event-delivery/) page with reason as `Filtered at insert function`
+
+```js
+async function onBatch(events, settings) {
+  let response = [];
+  try {
+    for (const event of events) {
+      // some business logic to filter event. Here filtering out all the events with name `drop`
+      if (event.properties.name === 'drop') {
+        continue;
+      }
+
+      // some enrichments if needed
+      event.properties.message = "Enriched from insert function";
+
+      // Enriched events are pushed to response
+      response.push(event);
+    }
+  } catch (error) {
+    console.log(error)
+    throw new RetryError('Failed function', error);
+  }
+
+  // return a subset of transformed event
+  return response;
+}
+```
+
 
 ### Handling batching errors
 
-Standard [function error types](/docs/connections/functions/destination-functions/#destination-functions-error-types) apply to batch handlers. Segment attempts to retry the batch in the case of Timeout or Retry errors. For all other error types, Segment discards the batch. It's also possible to report a partial failure by returning status of each event in the batch. Segment retries only the failed events in a batch until those events are successful or until they result in a permanent error.
+Standard [function error types](/docs/connections/functions/destination-functions/#destination-functions-error-types) apply to batch handlers. Segment attempts to retry the batch in the case of Timeout or Retry errors. For all other error types, Segment discards the batch.
 
-```json
-[
-	{
-		"status": 200
-	},
-	{
-		"status": 400,
-		"errormessage": "Bad Request"
-	},
-	{
-		"status": 200
-	},
-	{
-		"status": 500,
-		"errormessage": "Error processing request"
-	},
-	{
-		"status": 500,
-		"errormessage": "Error processing request"
-	},
-	{
-		"status": 200
-	},
-]
-```
-
-For example, after receiving the responses above from the `onBatch` handler, Segment only retries **event_4** and **event_5**.
-
-| Error Type             | Result  |
-| ---------------------- | ------- |
-| Bad Request            | Discard |
-| Invalid Settings       | Discard |
-| Message Rejected       | Discard |
-| RetryError             | Retry   |
-| Timeout                | Retry   |
-| Unsupported Event Type | Discard |
-
-
-{% comment %}
 
 ## Destination insert functions logs and errors
 
