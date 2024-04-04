@@ -108,7 +108,7 @@ Every seven days.
 
 You get five predictions as part of Engage Foundations or Unify Plus. To purchase more predictions, reach out to your CSM.
 
-Predictive Audiences contribute to the Engage limit of 100 audiences. Regardless of whether an audience is manually crafted or generated via predictive modeling, each one is counted as a single audience within this limit.
+Predictive Audiences contribute to the Engage limit of 100 audiences. Whether you create the audience manually or with predictive modeling, the audience counts towards the 100-audience limit.
 
 #### Is Predictions HIPAA-compliant?
 
