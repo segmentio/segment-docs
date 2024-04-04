@@ -51,7 +51,7 @@ To set up Databricks as your Reverse ETL source:
     * Http Path: `/sql/1.0/warehouses/xxxxxxxxx`
     * Port: `443` (default)
     * Service principal client ID: `<your client ID>`
-    * OAuth secret: `<OAuth secret to be used during connection>`
+    * OAuth secret: `<OAuth secret used during connection>`
     * Catalog [optional]: `<if not specify, Segment will use the default catalog>`
 11. Click **Test Connection** to see if the connection works. If the connection fails, make sure you have the right permissions and credentials, then try again.
 12. Click **Add source** if the test connection is successful. 
