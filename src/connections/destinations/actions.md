@@ -195,7 +195,7 @@ The coalesce function takes a primary value and uses it if it is available. If t
 
 ### Replace function
 
-The replace function allows you to replace a string, integer, or boolean with a new value. 
+The replace function allows you to replace a string, integer, or boolean with a new value. You have the option to replace up to two values within a single field.
 
 ### Conditions
 
