@@ -209,7 +209,7 @@ You can define a schedule for refreshing the linked data from your data warehous
 
 To use entities with Linked Events, you'll need to set the `enrichment_enabled` flag to `true`. Here's the sample code:
 
-```
+```python
 # Define an entity and indicate if the entity will be referenced for Linked Events (enrichment_enabled=true)
 
 entity "account-entity" {
