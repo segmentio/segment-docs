@@ -405,6 +405,7 @@ async function onBatch(events, settings) {
 
 Standard [function error types](/docs/connections/functions/destination-functions/#destination-functions-error-types) apply to batch handlers. Segment attempts to retry the batch in the case of Timeout or Retry errors. For all other error types, Segment discards the batch.
 
+{% comment %}
 
 ## Destination insert functions logs and errors
 
