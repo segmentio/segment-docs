@@ -7,7 +7,7 @@ Set up Databricks as your Reverse ETL source.
 At a high level, when you set up Databricks for Reverse ETL, the configured service-principal needs read permissions for any resources (databases, schemas, tables) the query needs to access. Segment keeps track of changes to your query results with a managed schema (`__SEGMENT_REVERSE_ETL`), which requires the configured service-principal to allow write permissions for that schema.
 
 > info ""
-> Segment supports only OAuth (M2M) authentication. To generate client ID and Secret, follow the steps listed in the [Databricks docs: OAuth machine-to-machine (M2M) authentication](https://docs.databricks.com/en/dev-tools/auth/oauth-m2m.html){:target="_blank"}.
+> Segment supports only OAuth (M2M) authentication. To generate a client ID and Secret, follow the steps listed in Databricks' [OAuth machine-to-machine (M2M) authentication](https://docs.databricks.com/en/dev-tools/auth/oauth-m2m.html){:target="_blank"} documentation.
 
 
 ## Required permissions
