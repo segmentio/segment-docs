@@ -20,4 +20,4 @@ Sources provide the data that Unify uses to perform Identity Resolution. You can
 
 ## API access
 
-The API access tab is where you can find the space ID value of the Engage space, and also generate an access token to connect to the [Profile API](https://segment.com/docs/unify/profile-api/). Each Engage space created in your workspace will have its own unique space ID value.
+The API access tab is where you can find the space ID value of the Engage space and generate an access token to connect to the [Profile API](/docs/unify/profile-api/). Each Engage space created in your workspace will have its own unique space ID value.
