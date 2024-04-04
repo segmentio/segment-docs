@@ -24,7 +24,7 @@ This table lists the events that you can track from any conversation:
 | Message Sent         | When the first message is added to a thread by user                                                     | `conversationId`, `messageId`, `message_body`, `role` (default is `"customer"`) |
 | Message Received     | Non-custom response (text/voice) to user prompt by copilot                                              | `conversationId`, `messageId`, `message_body`, `role` (default is `"agent"`)    |
 | Conversation Ended   | When a conversation is completed                                                                        | `conversationId`, `message_count`                                               |
-| Tool Invoked         | When the model or user invokes a capability or tool                                                     | `conversationId`, `messageId`, `type`, `action`                                 |
+| Action Invoked       | When the model or user invokes a capability or tool                                                     | `conversationId`, `messageId`, `type`, `action`                                 |
 | Media Generated      | When the model generates an image/video/audio                                                           | `conversationId`, `messageId`, `type`, `sub_type`                               |
 | Component Loaded     | When a new custom (non-text/voice) component is shown to a user                                         | `conversationId`, `messageId`, `type`                                           |
 | Feedback Submitted   | When a user rates a conversation or message                                                             | `conversationId`, `messageId`, `rating`                                         |
@@ -39,7 +39,7 @@ Segment can also track the following live chat events:
 - Message Sent
 - Message Received
 - Custom Component Loaded
-- Tool Invoked
+- Action Invoked
 - Media Generated
 - Conversation Ended
 
@@ -169,7 +169,7 @@ This event supports the following semantic properties:
 | `role`           | string | The message's sender; default is `"customer"`. |
 
 
-Here's an example of a Tool Invoked call:
+Here's an example of an Action Invoked call:
 
 ```json
 {
