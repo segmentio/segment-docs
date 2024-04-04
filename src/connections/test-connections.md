@@ -63,3 +63,7 @@ If you experience an error, [let Segment know](mailto:friends@segment.com) and t
 #### Is this feature available for Data Lakes?
 
 The Event Tester is not available for Data Lakes.
+
+#### Do Destination Filters or Destination Insert Functions affect events sent from the Event Tester?
+
+No——events sent from the Event Tester will bypass all Destinations Filters and Destination Insert Functions.
