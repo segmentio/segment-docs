@@ -58,6 +58,6 @@ To set up Databricks as your Reverse ETL source:
 
 > warning ""
 > Segment previously supported token-based authentication, but now uses OAuth (M2M) authentication at the recommendation of Databricks.
-> If you set up your source in the past using a token, it will still be supported; however, for new source or for updating the connection settings of an existing source, we will only support [OAuth machine-to-machine (M2M) authentication](https://docs.databricks.com/en/dev-tools/auth/oauth-m2m.html){:target="_blank"}.
+> If you previously set up your source using token-based authentication, Segment will continue to support it. If you want to create a new source or update the connection settings of an existing source, Segment only supports [OAuth machine-to-machine (M2M) authentication](https://docs.databricks.com/en/dev-tools/auth/oauth-m2m.html){:target="_blank"}.
 
 Once you've succesfully added your Databricks source, [add a model](/docs/connections/reverse-etl/#step-2-add-a-model) and follow the rest of the steps in the Reverse ETL setup guide. 
