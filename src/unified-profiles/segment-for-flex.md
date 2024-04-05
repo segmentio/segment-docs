@@ -123,6 +123,34 @@ If the Enable Sources and Test Connections check indicates there are problems wi
 - [Profile Explorer](/docs/unify/#profile-explorer){:target="_blank"}: Use the Profile Explorer to view all user data, including event history, traits, and identifiers. 
 - [Advanced Segment](https://app.segment.com/goto-my-workspace/overview){:target="_blank"}: Use the Advanced Segment option to view your full Segment workspace. Segment recommends working with the assistance of Professional Services when accessing Advanced Segment.
 
+## (Optional) Add additional sources and destinations to your workspace
+
+After you complete the guided setup of your Segment for Flex workspace, you can use [Advanced Segment](https://app.segment.com/goto-my-workspace/overview){:target="_blank"} to add an additional 5 sources and 3 destinations to your workspace. 
+
+See the [Segment for Flex entitlements and limitations documentation](#segment-for-flex-entitlements-and-limitations) documentation for more information about the sources and destinations supported by Segment for Flex workspaces.
+
+### Add a source to your workspace
+
+> info "Eligible sources"
+> For more information about the kinds of destinations you can add to your workspace, see the [Sources](#sources) documentation.  
+
+To add a source to your Segment for Flex workspace:
+1. Open your Segment for Flex workspace in [Advanced Segment](https://app.segment.com/goto-my-workspace/overview){:target="_blank"} mode. 
+2. On the Your Segment Overview page, find the sources column and click **+ Add More**.
+3. Select the source you'd like to add to your workspace, and click **Next**.
+4. Follow the setup flow, and click **Done** to complete setting up your source.
+
+### Add a destination to your 
+
+> info "Eligible destinations"
+> For more information about the kinds of destinations you can add to your workspace, see the [Destinations](#destinations) documentation.  
+
+To add a destination to your Segment for Flex workspace:
+1. Open your Segment for Flex workspace in [Advanced Segment](https://app.segment.com/goto-my-workspace/overview){:target="_blank"} mode. 
+2. On the Your Segment Overview page, find the destinations column and click **Add Destination** if you haven't created any additional destinations, or **+ Add More** if you've already created an additional destination.
+3. Select the destination you'd like to add to your workspace, and click **Next**.
+4. Follow the setup flow, and click **Done** to complete setting up your source. 
+
 ## Segment for Flex entitlements and limitations
 
 Segment for Flex workspaces created during the Unified Profiles setup process have the following entitlements and limitations:
