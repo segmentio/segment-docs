@@ -1,7 +1,6 @@
 ---
 title: Optimizely Data Platform Destination
 beta: true
-hidden: true
 id: 6512d7f86bdccc3829fc4ac3
 ---
 
