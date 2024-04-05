@@ -13,7 +13,7 @@ Before creating a Segment for Flex workspace, you must have requested access fro
 ## Step 1: Select your data sources
 
 > warning "Unable to change data source selection after this step"
-> After you've selected your data source and proceeded to the next step, you can't return to this page and make a different selection. You can add additional data sources after setting up your Segment for Flex workspace. For more information about sources in a Segment for Flex workspace, see the [Sources](#sources) documentation.
+> After you've selected your data source and proceeded to the next step, you can't return to this page and make a different selection. You can add additional data sources after setting up your Segment for Flex workspace. For more information about adding additional data sources after completing the Segment for Flex guided setup, see the optional [Add additional sources and destinations to your workspace](#optional-add-additional-sources-and-destinations-to-your-workspace) documentation.
 
 1. In Segment for Flex, select a data source to get started and click **Next**.
 2. Review the popup that explains how the data source connects to Segment, and click **Continue**.
