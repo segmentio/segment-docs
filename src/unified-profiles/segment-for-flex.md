@@ -125,14 +125,14 @@ If the Enable Sources and Test Connections check indicates there are problems wi
 
 ## (Optional) Add additional sources and destinations to your workspace
 
-After you complete the guided setup of your Segment for Flex workspace, you can use [Advanced Segment](https://app.segment.com/goto-my-workspace/overview){:target="_blank"} to add an additional 5 sources and 3 destinations to your workspace. 
+After you complete the Segment for Flex guided setup, you can use [Advanced Segment](https://app.segment.com/goto-my-workspace/overview){:target="_blank"} to connect your workspace to additional *sources*, or websites, server libraries, mobile SDKs, or cloud applications that can send data into Segment, and *destinations*, or apps and business tools that receive forwarded data from Segment.   
 
 See the [Segment for Flex entitlements and limitations documentation](#segment-for-flex-entitlements-and-limitations) documentation for more information about the sources and destinations supported by Segment for Flex workspaces.
 
 ### Add a source to your workspace
 
 > info "Eligible sources"
-> For more information about the kinds of destinations you can add to your workspace, see the [Sources](#sources) documentation.  
+> You can add up to 5 sources to your Segment for Flex workspace. For more information about the kinds of sources you can add to your workspace, see the [Sources](#sources) documentation.  
 
 To add a source to your Segment for Flex workspace:
 1. Open your Segment for Flex workspace in [Advanced Segment](https://app.segment.com/goto-my-workspace/overview){:target="_blank"} mode. 
@@ -140,10 +140,10 @@ To add a source to your Segment for Flex workspace:
 3. Select the source you'd like to add to your workspace, and click **Next**.
 4. Follow the setup flow, and click **Done** to complete setting up your source.
 
-### Add a destination to your 
+### Add a destination to your workspace
 
 > info "Eligible destinations"
-> For more information about the kinds of destinations you can add to your workspace, see the [Destinations](#destinations) documentation.  
+> You can add up to 3 destinations to your Segment for Flex workspace. For more information about the kinds of destinations you can add to your workspace, see the [Destinations](#destinations) documentation.  
 
 To add a destination to your Segment for Flex workspace:
 1. Open your Segment for Flex workspace in [Advanced Segment](https://app.segment.com/goto-my-workspace/overview){:target="_blank"} mode. 
