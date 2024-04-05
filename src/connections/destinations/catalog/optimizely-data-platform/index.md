@@ -45,7 +45,7 @@ If you want to map an event that is not listed:
 5. Select the event type and, optionally, the event action. For example, if you are configuring a custom event to track button clicks, select _button_ for the event type and _click_ for the event action.
 
 > info "Required fields"
-> In ODP, each event requires an ID, timestamp, and event type. The event action is optional. See ODP's [Events](https://docs.developers.optimizely.com/optimizely-data-platform/docs/thebasics-events) documentation for more details.
+> In ODP, each event requires an ID, timestamp, and event type. The event action is optional. See ODP's [Events](https://docs.developers.optimizely.com/optimizely-data-platform/docs/thebasics-events){:target="_blank”} documentation for more details.
 
 <ol style="counter-reset: none;">
   <li value="6" markdown=1>
