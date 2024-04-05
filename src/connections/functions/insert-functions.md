@@ -488,6 +488,10 @@ Yes, you can have both destination filters and destination insert functions in t
 
 Segment's data pipeline applies destination filters before invoking insert functions. 
 
+##### What destination types support Insert Functions?
+
+Only cloud-mode [Event destinations](/docs/engage/using-engage-data/#engage-destination-types-event-vs-list) support destination Insert Functions. [List destinations](/docs/engage/using-engage-data/#list-destinations) are not compatible. 
+
 {% comment %}
 
 ## Using Segment's Public API
