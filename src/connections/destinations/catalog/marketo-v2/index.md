@@ -71,6 +71,9 @@ There are additional steps you must take to send `.identify()` calls in Device-m
 2. Input the associated **Marketo Form ID** and **Marketo Form URL** in your Marketo V2 Destination settings. This information can be found in Form Actions > Embed Code in the Marketo Design Studio:
 ![A screenshot of the Embed Code popup in Marketo.](images/form-info.png)
 
+> info ""
+> **Marketo Form ID** and **Marketo Form URL** are **required** fields for the Marketo SDK to initialize on your site. If these fields are left blank, the SDK will not initialize and data will not be sent downstream. 
+
 ### Traits
 Regardless of connection mode, we'll map the following spec'd Segment traits to Marketo's standard fields:
 
@@ -258,3 +261,17 @@ There are a few necessary steps that have to be taken to migrate from Segment's 
    ![A screenshot of the Marketo Custom Activities field.](images/cg6YhDEPWXv+.png)
 
 6. When enabling Marketo V2, because of the way Marketo's API works, there is potential to create duplicate leads, especially when the first enabling the destination. For ways to prevent this, check out the Preventing Duplicate Leads.
+
+## Send a single source's data to multiple Marketo V2 workspaces
+
+Segment doesn't support multiple instances of Marketo V2 for any source in Segment (for both Device-Mode and Cloud-Mode). If you need a single source's data sent to multiple Marketo V2 workspaces, follow the instructions on configuring a [Repeater destination](/docs/connections/destinations/catalog/repeater/) to route your source's data through the Repeater destination into a new source and new Marketo V2 destination instance.
+To create a Repeater destination, new source, and second Marketo V2 destination:
+
+1. Create and connect a new [Repeater destination](https://app.segment.com/goto-my-workspace/destinations/catalog/repeater) to your source and select the intended source.
+2. Click **Add destination**, name the destination, and select Fill in settings manually.
+4. Create a new source, then navigate to **Settings > API Keys** and copy the **Write Key** value.
+- From the Repeater destination's **Settings** page, you'll find **Write Keys** in the **Connection Settings**. This is where your second source's write key from step 4 will go.
+5. Navigate back to your Repeater destination and paste in the source's `writeKey` into the write key setting.
+6. Add a Marketo V2 destination to your new source with the desired configuration settings.
+7. Enable the Repeater destination, new source, new Marketo V2 destination.
+8. You'll begin seeing data transmitted from your originating source to the Repeater Destination (Event Delivery), then to the new source (Debugger), and finally to the Marketo V2 destination (Event Delivery).

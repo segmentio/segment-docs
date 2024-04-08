@@ -5,6 +5,8 @@ cmode-override: true
 hide-personas-partial: true
 id: 54521fd825e721e32a72eec8
 ---
+
+
 [Klaviyo](https://www.klaviyo.com){:target="_blank"} is a powerful email platform focused on ecommerce that helps companies make more money. It supports segmentation based on category and event triggers like product bought, page viewed, email engagement, or amount spent.
 
 It measures opens, clicks, revenue generated, breakdown of generated revenue based on custom attributes (like campaign type or amount gained per recipient), and provides trend reports, cohort analysis, and subscriber growth
@@ -12,6 +14,10 @@ It measures opens, clicks, revenue generated, breakdown of generated revenue bas
 Klaviyo lets you send personalized newsletters, automates triggered emails, product recommendations, welcome campaigns, order announcements, push notifications and sync your data to Facebook custom audiences.
 
 To configure Klaviyo as an Event Source to get data into your warehouse or other downstream tools, see the [Klaviyo Source](/docs/connections/sources/catalog/cloud-apps/klaviyo/) documentation.
+
+> info
+> Klaviyo is deprecating the endpoints used by this destination in June 2024. Segment will not update this destination with the new endpoint. Instead, we recommend customers switch to the new Klaviyo Actions destination, which already uses the new endpoints.
+
 
 ## Getting started
 
@@ -231,6 +237,6 @@ For user-property destinations, Segment sends an [Identify](/docs/connections/sp
 > warning ""
 > For the Klaviyo Destination, avoid using a `list_id` in the Engage Destinations settings.
 
-When you first create an audience, Engage sends an Identify call for every user in that audience. Later audience syncs send updates for users whose membership has changed since the last sync. These syncs allow you to create Klaviyo segments from properties Engage sends to Klaviyo as long as the property's value is `true`. Memberships update continuously as user profiles fall in and out of the eligibility criteria for the Engage audience.
+When you first create an audience, Engage sends an Identify call for every user in that audience. Audience syncs send updates for users whose membership has changed since the last sync. These syncs allow you to create Klaviyo segments from properties Engage sends to Klaviyo as long as the property's value is `true`. Memberships update continuously as user profiles fall in and out of the eligibility criteria for the Engage audience. Klaviyo segments aren't automatically created and need to be configured by your team in order to see those audience segments. You can build Klaviyo segments based on the trait key that corresponds to the audience or computed trait which is being included in those user's events sent to Klaviyo.
 
 If Segment detects a `list_id` in the Klaviyo Destination settings, however, it adds users to the Klaviyo list without removing them when they no longer qualify for list membership. As a result, Segment recommends leaving the `list_id` field empty when you set up the Klaviyo Destination. 

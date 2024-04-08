@@ -221,3 +221,9 @@ a need for streaming data into BigQuery, [contact Segment support](https://segme
 ### I see duplicates in my tables.
 
 This behavior is expected. Segment only de-duplicates data in your views. Refer to the [schema section](#schema) for more details.
+
+### Why does some of my older BigQuery data expire? 
+
+If you notice that you are missing older BigQuery data, it might be due to a [dataset's default table expiration](https://cloud.google.com/bigquery/docs/updating-datasets#partition-expiration){:target="_blank”} in BigQuery. The default table expiration sets a standard expiration on all partitioned tables that are created. 
+
+You can safely change the default table expiration to ‘Never’, which removes these expirations from the tables/dataset and changes the dataset's default table expiration. Segment can then run a backfill for you and send all of your historical data to your warehouse.

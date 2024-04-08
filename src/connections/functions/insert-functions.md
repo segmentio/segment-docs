@@ -52,17 +52,14 @@ You can also use this page to [enable destination insert functions](#enable-the-
 Segment invokes a separate part of the function (called a "handler") for each event type that you send to your destination insert function.
 
 > info ""
-> Your function isn't invoked for an event if you've configured a [destination filter](/docs/connections/destinations/destination-filters/), and the event doesn't pass the filter.
+> If you’ve configured a [destination filter](/docs/connections/destinations/destination-filters/), and the event doesn’t pass the filter, then your function isn’t invoked for that event as destination filters are applied before insert functions.
 
 The default source code template includes handlers for all event types. You don't need to implement all of them - just use the ones you need, and skip the ones you don't.
 
 > info ""
-> Removing the handler for a specific event type results in blocking the events of that type from arriving at their destination. 
+> Removing the handler for a specific event type results in blocking the events of that type from arriving at their destination. To keep an event type as is but still send it downstream, add a `return event` inside the event type handler statement.
 
 Insert functions can define handlers for each message type in the [Segment spec](/docs/connections/spec/):
-
-> info "onBatch handler"
-> At this time, Destination Insert Functions do not support the onBatch handler. 
 
 - `onIdentify`
 - `onTrack`
@@ -71,6 +68,7 @@ Insert functions can define handlers for each message type in the [Segment spec]
 - `onGroup`
 - `onAlias`
 - `onDelete`
+- `onBatch`
 
 Each of the functions above accepts two arguments:
 
@@ -99,6 +97,8 @@ async function onTrack(event) {
 ```
 
 To change which event type the handler listens to, you can rename it to the name of the message type. For example, if you rename this function `onIdentify`, it listens for "Identify" events instead.
+
+To ensure the Destination processes an event payload modified by the function, return the `event` object at the handler's end.
 
 > info ""
 > Functions' runtime includes a `fetch()` polyfill using a `node-fetch` package. Check out the [node-fetch documentation](https://www.npmjs.com/package/node-fetch){:target="_blank"} for usage examples.
@@ -162,9 +162,14 @@ If you don't supply a function for an event type, Segment throws an `EventNotSup
 
 You can read more about [error handling](#destination-insert-functions-logs-and-errors) below.
 
+## Runtime and dependencies
+
+{% include content/functions/runtime.md %}
+
+
 ## Insert Functions and Actions destinations
 
-There are a couple of behavorial nuances to consider when using Insert Functions with Actions destinations.
+There are a couple of behavioral nuances to consider when using Insert Functions with Actions destinations.
 
 Insert Functions block Actions destinations from triggering multiple mapping subscriptions for a single payload. If you have a single payload coming through the pipeline that you expect to trigger multiple mapping subscriptions in your configuration, it will work as expected without an Insert Function enabled. With an Insert Function enabled, however, when a payload that is meant to trigger multiple mappings subscriptions is seen, no mappings subscriptions will fire. If you have an Insert Function enabled for a destination, make sure that you configure your payloads so that they only trigger a single mapping subscription.
 
@@ -366,48 +371,39 @@ The editor displays logs and request traces from the batch handler.
 
 The [Public API](/docs/api/public-api) Functions/Preview endpoint also supports testing batch handlers. The payload must be a batch of events as a JSON array.
 
+### Handling filtering in a batch
+Events in a batch can be filtered out using custom logic. The filtered events will be surfaced in the [Event Delivery](/docs/connections/event-delivery/) page with reason as `Filtered at insert function`
+
+```js
+async function onBatch(events, settings) {
+  let response = [];
+  try {
+    for (const event of events) {
+      // some business logic to filter event. Here filtering out all the events with name `drop`
+      if (event.properties.name === 'drop') {
+        continue;
+      }
+
+      // some enrichments if needed
+      event.properties.message = "Enriched from insert function";
+
+      // Enriched events are pushed to response
+      response.push(event);
+    }
+  } catch (error) {
+    console.log(error)
+    throw new RetryError('Failed function', error);
+  }
+
+  // return a subset of transformed event
+  return response;
+}
+```
+
 
 ### Handling batching errors
 
-Standard [function error types](/docs/connections/functions/destination-functions/#destination-functions-error-types) apply to batch handlers. Segment attempts to retry the batch in the case of Timeout or Retry errors. For all other error types, Segment discards the batch. It's also possible to report a partial failure by returning status of each event in the batch. Segment retries only the failed events in a batch until those events are successful or until they result in a permanent error.
-
-```json
-[
-	{
-		"status": 200
-	},
-	{
-		"status": 400,
-		"errormessage": "Bad Request"
-	},
-	{
-		"status": 200
-	},
-	{
-		"status": 500,
-		"errormessage": "Error processing request"
-	},
-	{
-		"status": 500,
-		"errormessage": "Error processing request"
-	},
-	{
-		"status": 200
-	},
-]
-```
-
-For example, after receiving the responses above from the `onBatch` handler, Segment only retries **event_4** and **event_5**.
-
-| Error Type             | Result  |
-| ---------------------- | ------- |
-| Bad Request            | Discard |
-| Invalid Settings       | Discard |
-| Message Rejected       | Discard |
-| RetryError             | Retry   |
-| Timeout                | Retry   |
-| Unsupported Event Type | Discard |
-
+Standard [function error types](/docs/connections/functions/destination-functions/#destination-functions-error-types) apply to batch handlers. Segment attempts to retry the batch in the case of Timeout or Retry errors. For all other error types, Segment discards the batch.
 
 {% comment %}
 
@@ -469,13 +465,28 @@ Yes, Segment retries invocations that throw RetryError or Timeout errors (tempor
 
 No, Segment can't guarantee the order in which the events are delivered to an endpoint.
 
+##### Do I Need to specify an endpoint for my Insert function?
+
+No, specifying an endpoint is not always required for insert functions. If your function is designed to transform or filter data internally—such as adding new properties to events or filtering based on existing properties—you won't need to specify an external endpoint.
+
+However, if your function aims to enrich event data by fetching additional information from an external service, then you must specify the endpoint. This would be the URL of the external service's API where the enriched or captured data is sent.
+
+
 ##### Can I create a device-mode destination?
 
 No, destination insert functions are currently available as cloud-mode destinations only. Segment is in the early phases of exploration and discovery for supporting customer "web plugins" for custom device-mode destinations and other use cases, but this is unsupported today.
 
 ##### Can I connect an insert function to multiple destinations?
 
-No, an insert function can only be connected to one destination.
+Yes, an insert function can be connected to multiple destinations. 
+
+##### Can I have destination filters and a destination insert function in the same connection?
+
+Yes, you can have both destination filters and destination insert functions in the same connection. 
+
+##### Are insert functions invoked before or after destination filters are applied?
+
+Segment's data pipeline applies destination filters before invoking insert functions. 
 
 {% comment %}
 

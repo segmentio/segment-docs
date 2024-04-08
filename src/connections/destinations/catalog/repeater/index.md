@@ -26,6 +26,14 @@ You can do this for as many sources as you need.
 
 Repeater sends all events it receives to the sources you specified, identified by the write key(s) you added.
 
+## Replays with a Repeater destination
+
+Running a Replay on a Repeater destination might count toward your MTUs, especially if you are replaying historical data from the source that flows data into your Repeater destination. 
+
+Because the API plans count by events sent through the pipeline and the Repeater destination resends an event through the entire pipeline, one event might flow through your source twice which increases the throughput count.
+
+Segment recommends that you notify your team before initiating a Replay if you’re using a Repeater destination. 
+
 ## Repeater FAQ
 
 ##### What is the `context.repeatChain` field that I can see on my repeated events?

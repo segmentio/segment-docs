@@ -7,9 +7,6 @@ id: 5ca6a9bcc7781c00018a4580
 
 This destination is maintained by Kitemetrics. For any issues with the destination, [contact the Kitemetrics Support team](mailto:support@kitemetrics.com).
 
-{% include content/beta-note.md %}
-
-
 ## Getting Started
 
 

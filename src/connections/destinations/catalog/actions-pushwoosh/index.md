@@ -10,8 +10,6 @@ beta: true
 
 Pushwoosh maintains this destination. For any issues with the destination, [contact the Pushwoosh support team](mailto:help@pushwoosh.com){:target="_blank"}.
 
-{% include content/ajs-upgrade.md %}
-
 ## Getting started
 
 ### Pushwoosh SDK integration

@@ -7,8 +7,6 @@ id: 602c595c1cdf37acb79bb5d5
 
 Crossing Minds maintains this destination. For any issues with the destination, [contact the Crossing Minds Support team](mailto:support@crossingminds.com).
 
-{% include content/beta-note.md %}
-
 
 ## Getting Started
 

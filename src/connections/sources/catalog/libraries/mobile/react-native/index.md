@@ -1,6 +1,7 @@
 ---
 title: Analytics for React Native
 strat: react-native
+support_type: flagship
 id: B0X0QmvMny
 ---
 
@@ -289,6 +290,8 @@ reset();
 ```
 {% endcodeexampletab %}
 {% endcodeexample %}
+
+{% include content/reset-mobile.md %}
 
 ### Flush
 By default, the analytics client sends queued events to the API every 30 seconds or when 20 events accumulate, whichever occurs first. This also occurs whenever the app resumes if the user has closed the app with some events unsent. These values can be modified by the `flushAt` and `flushInterval` config options. You can also trigger a flush event manually.
@@ -747,6 +750,10 @@ segmentClient.userInfo.set((currentUserInfo) => {
     }
   });
 ```
+
+### If I use a proxy, what Segment endpoint should I send to?
+If you proxy your events through the `proxy` config option, you must forward the batched events to `https://api.segment.io/v1/b`. The `https://api.segment.io/v1/batch` endpoint is reserved for events arriving from server side sending, and proxying to that endpoint for your mobile events may result in unexpected behavior.
+
 
 ## Changelog
 [View the Analytics React Native changelog on GitHub](https://github.com/segmentio/analytics-react-native/releases){:target="_blank"}.

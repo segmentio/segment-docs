@@ -9,8 +9,6 @@ When incidents happen, SIGNL4 can alert your teams, engineers, sales, marketing 
 
 This destination is maintained by Derdack SIGNL4. For any issues with the destination, [contact their support team](mailto:success@signl4.com).
 
-{% include content/beta-note.md %}
-
 ## Getting Started
 
  

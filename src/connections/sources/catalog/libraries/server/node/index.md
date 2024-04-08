@@ -3,6 +3,7 @@ title: Analytics for Node.js
 redirect_from: '/connections/sources/catalog/libraries/server/node-js/'
 repo: analytics-next
 strat: node-js
+support_type: flagship
 ---
 
 Segment's Analytics Node.js library lets you record analytics data from your node code. The requests hit Segment's servers, and then Segment routes your data to any destinations you have enabled.
@@ -14,7 +15,7 @@ All of Segment's server-side libraries are built for high-performance, so you ca
 ## Getting Started
 
 > warning ""
-> Make sure you're using a version of Node that's 14 or higher. 
+> Make sure you're using a version of Node that's 16 or higher. 
 
 1. Run the relevant command to add Segment's Node library module to your `package.json`.
 
@@ -268,7 +269,7 @@ const analytics = new Analytics({
     host: 'https://api.segment.io',
     path: '/v1/batch',
     maxRetries: 3,
-    maxEventsInBatch: 15,
+    flushAt: 15,
     flushInterval: 10000,
     // ... and more!
   })
@@ -280,7 +281,7 @@ Setting | Details
 `host` _string_ | The base URL of the API. The default is: "https://api.segment.io"
 `path` _string_ | The API path route. The default is: "/v1/batch"
 `maxRetries` _number_ | The number of times to retry flushing a batch. The default is: `3`
-`maxEventsInBatch` _number_ | The number of messages to enqueue before flushing. The default is: `15`
+`flushAt` _number_ | The number of messages to enqueue before flushing. The default is: `15`
 `flushInterval` _number_ | The number of milliseconds to wait before flushing the queue automatically. The default is: `10000`
 `httpRequestTimeout` _number_ | The maximum number of milliseconds to wait for an http request. The default is: `10000`
 `disable` _boolean_ | Disable the analytics library for testing. The default is: `false`
@@ -533,17 +534,17 @@ Every method you call **doesn't** result in a HTTP request, but is queued in mem
 
 By default, Segment's library will flush:
 
-  - Every 15 messages (controlled by `settings.maxEventsInBatch`).
+  - Every 15 messages (controlled by `settings.flushAt`).
   - If 10 seconds has passed since the last flush (controlled by `settings.flushInterval`)
 
 There is a maximum of `500KB` per batch request and `32KB` per call.
 
-If you don't want to batch messages, you can turn batching off by setting the `maxEventsInBatch` setting to `1`, like so:
+If you don't want to batch messages, you can turn batching off by setting the `flushAt` setting to `1`, like so:
 
 ```javascript
 const analytics = new Analytics({
   ...
-  maxEventsInBatch: 1
+  flushAt: 1
 });
 ```
 
@@ -652,6 +653,46 @@ analytics.track({
 ```
 
 
+## OAuth 2.0
+
+> info ""
+> OAuth 2.0 is currently in private beta and is governed by Segment’s [First Access and Beta Preview Terms](https://www.twilio.com/en-us/legal/tos){:target="_blank"}.
+
+Enable [OAuth 2.0](/docs/connections/oauth/) in your Segment workspace to guarantee authorized communication between your server environment and Segment's Tracking API. To support the non-interactive server environment, the OAuth workflow used is a signed client assertion JWT.  
+
+You will need a public and private key pair where:
+- The public key is uploaded to the Segment dashboard. 
+- The private key is kept in your server environment to be used by this SDK. 
+
+Your server will verify its identity by signing a token request and will receive a token that is used to to authorize all communication with the Segment Tracking API.
+
+You'll need to provide the OAuth Application ID and the public key's ID, both of which are provided in the Segment dashboard.  There are also options available to specify the authorization server, custom scope, maximum number of retries, or a custom HTTP client if your environment has special rules for separate Segment endpoints.
+
+Be sure to implement handling for Analytics SDK errors. Good logging helps distinguish any configuration issues.
+
+For more information, see the [Segment OAuth 2.0 documentation](/docs/connections/oauth/).
+
+```ts
+import { Analytics, OAuthSettings } from '@segment/analytics-node';
+import { readFileSync } from 'fs'
+
+const privateKey = readFileSync('private.pem', 'utf8')
+
+const settings: OAuthSettings = {
+  clientId: '<CLIENT_ID_FROM_DASHBOARD>',
+  clientKey: privateKey,
+  keyId: '<PUB_KEY_ID_FROM_DASHBOARD>',
+}
+
+const analytics = new Analytics({
+  writeKey: '<MY_WRITE_KEY>',
+  oauthSettings: settings,
+})
+
+analytics.on('error', (err) => { console.error(err) })
+
+analytics.track({ userId: 'foo', event: 'bar' })
+```
 ## Troubleshooting
 
 {% include content/troubleshooting-intro.md %}

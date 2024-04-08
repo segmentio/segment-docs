@@ -3,20 +3,18 @@ rewrite: true
 title: Mammoth Destination
 id: 5cd3f02701645a0001cf49a0
 ---
-[Mammoth](https://mammoth.io/integrations/segment/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners){:target="_blank”} provides self-serve analytics for analysts, businesses, and developers who can use Mammoth's data warehousing, data discovery & data preparation abilities to arrive at insights.
+[Mammoth](https://mammoth.io/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners){:target="_blank”} provides self-serve analytics for analysts, businesses, and developers who can use Mammoth's data warehousing, data discovery & data preparation abilities to arrive at insights.
 
 Mammoth allows you to blend your data from Segment with other sources of data such as databases and files. Using Mammoth, you can build multiple data pipelines, which are constructed by applying transforms through a no coding interface. Mammoth also allows for the visual discovery of the data and easy exports to databases such as MySQL, Elasticsearch, and PostgreSQL.
 
 This destination is maintained by [Mammoth](https://mammoth.io){:target="_blank"}. For any issues with Mammoth Destination, [contact the Mammoth Support team](mailto:support@mammoth.io).
-
-{% include content/beta-note.md %}
 
 
 ## Getting Started
 
 
 
-There are three steps to get started using Mammoth with Segment. First, [register for an account with Mammoth](https://mammoth.io/register/choose/starter){:target="_blank"}.
+There are three steps to get started using Mammoth with Segment. First, [register for an demo with Mammoth](https://mammoth.io/book-a-demo/){:target="_blank"}.
 
 1. Create a webhook dataset in Mammoth, and copy the API key.
 2. Connect Segment to Mammoth.

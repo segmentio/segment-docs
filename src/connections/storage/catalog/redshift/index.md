@@ -126,11 +126,10 @@ It's often the case that customers want to combine 1st-party transactional and o
 
 If you're interested in importing data into a Redshift cluster, it's important that you follow these [guidelines](/docs/connections/storage/warehouses/faq/).
 
-Additionally, there a number of tools which provide syncing services between databases (mySQL, SQL Server, Oracle, PostgreSQL). Here is a list of some we've seen used by customers.
+Additionally, there a number of tools which provide syncing services between databases (mySQL, SQL Server, Oracle, PostgreSQL). Here is a list of some that Segment customers use.
 
 - [SymmetricDS (Open Source)](http://www.symmetricds.org/?__hstc=222691652.f2c5ed50a3a9703ac3be5283918044ad.1436399176206.1437192161002.1437244552315.24&__hssc=222691652.12.1437244552315&__hsfp=2203243415)
 - [FlyData](https://www.flydata.com/products/?__hstc=222691652.f2c5ed50a3a9703ac3be5283918044ad.1436399176206.1437192161002.1437244552315.24&__hssc=222691652.12.1437244552315&__hsfp=2203243415)
-- [Attunity](http://www.attunity.com/solutions/cloud/amazon-redshift?__hstc=222691652.f2c5ed50a3a9703ac3be5283918044ad.1436399176206.1437192161002.1437244552315.24&__hssc=222691652.12.1437244552315&__hsfp=2203243415)
 - [Informatica](http://www.informaticacloud.com/infrastructure/synchronize-web-data-amazon-redshift?__hstc=222691652.f2c5ed50a3a9703ac3be5283918044ad.1436399176206.1437192161002.1437244552315.24&__hssc=222691652.12.1437244552315&__hsfp=2203243415)
 
 You can also unload data to a s3 bucket and then load the data into another Redshift instance manually.
@@ -147,6 +146,12 @@ You can also unload data to a s3 bucket and then load the data into another Reds
 ### Can I use an SSH tunnel to connect to my Redshift instance?
 
 Segment does not currently support SSH tunneling to Redshift. You can usually allow Segment's ETL to write to Redshift without leaving the cluster available to other connections by using IP level restrictions.
+
+Segment supports several layers of Redshift's security model:
+
+ - **Security groups**: Security groups control the incoming and outgoing traffic to a resource. You can think of this like a pinhole in a firewall that only allows traffic from Segment's IP address. Security groups are a fundamental building block of AWS security.
+- **SSL**:  This secures data in transit and allows Segment to validate that the warehouse at the other end is actually a warehouse owned by AWS. This is especially important if your Redshift warehouse is not located in the `us-west-2` region.
+- **Username and password**: This is the basic method used to authenticate database users and apply varying levels of permissions - for example, who can create tables, who can delete data, who can see which tables.
 
 ### Do you support Redshift Serverless?
 

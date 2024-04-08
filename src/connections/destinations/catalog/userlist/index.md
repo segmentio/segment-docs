@@ -7,7 +7,6 @@ id: 5c75396a02254a0001da2a55
 
 This destination is maintained by Userlist. For any issues with the destination, [contact the Userlist Support team](mailto:support@userlist.com).
 
-{% include content/beta-note.md %}
 
 ## Getting Started
 

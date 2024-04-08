@@ -1,7 +1,6 @@
 ---
 rewrite: true
 title: Talon.One Destination
-beta: true
 id: 5de7c705e7d93d5e24742a04
 ---
 
@@ -13,7 +12,6 @@ Campaigns can be created and managed by non-technical users such as marketeers. 
 
 This destination is maintained by Talon.One. For any issues with the destination, [contact the Talon.One Support team](mailto:support@talon.one).
 
-{% include content/beta-note.md %}
 
 > warning ""
 > Data collection that affects promotions should be collected using a Segment **server-side** implementation. Client-side implementations exposes you to risks of fraud. (e.g. a user changing a custom trait relating to their profile using JS modification tools, which triggers them to receive a higher discount than they are entitled to) For more information  [read this](/docs/guides/how-to-guides/collect-on-client-or-server/).

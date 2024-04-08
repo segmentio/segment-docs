@@ -14,8 +14,6 @@ Segment's Appsflyer destination code is open source and available on GitHub. You
 
 ## Getting Started
 
-
-
   1. From the Segment web app, click **Catalog**.
   2. Search for "AppsFlyer" in the Catalog, select it, and choose which of your sources to connect the destination to.
   3. In the destination settings, enter your `AppsFlyer Dev Key`, which can be retrieved from the App Settings section of your AppsFlyer account.
@@ -64,7 +62,7 @@ To prevent this, you can enable the new **Fallback to send IDFV when advertising
 
 {% include content/react2-dest.md %}
 
-### Server
+## Server
 
 AppsFlyer offers an **augmentative** server-side [HTTP API](https://support.appsflyer.com/hc/en-us/articles/207034486-Server-to-Server-In-App-Events-API-HTTP-API-){:target="_blank"} intended for use along side the AppsFlyer mobile SDK. Use the cloud-mode destination _with_ the mobile SDK to link out-of-app events (such as website or offline purchases) with attributed users and devices.
 
@@ -72,35 +70,7 @@ AppsFlyer offers an **augmentative** server-side [HTTP API](https://support.apps
 
 If you want to use AppsFlyer server-side only, contact your AppsFlyer representative, as this is an Enterprise Customer Feature.
 
-## Identify
-
-If you're not familiar with the Segment Specs, take a look to understand what the [Identify method](/docs/connections/spec/identify/) does. An example iOS call would look like:
-
-```swift
-[[SEGAnalytics sharedAnalytics] identify:@"12091906-01011992"
-                                traits:@{ @"email": @"john.doe@example.com" }];
-```
-
-When you call `.identify()`, Segment uses AppsFlyer's `setCustomerUserID` to send the `userId` that was passed in.
-
-**Note:** `identify` calls are not supported using AppsFlyer's HTTP API at the moment. You can only send `.identify` calls if you have the AppsFlyer SDK bundled.
-
-## Track
-
-If you're not familiar with the Segment Specs, take a look to understand what the [Track method](/docs/connections/spec/track/) does. An example iOS call would look like:
-
-```swift
-[[SEGAnalytics sharedAnalytics] track:@"Article Completed"
-                           properties:@{ @"title": @"How to Create a Tracking Plan", @"course": @"Intro to Analytics" }];
-```
-
-When you call `track`, Segment translates it automatically and sends the event to AppsFlyer.
-
-Segment includes all the event properties as callback parameters on the AppsFlyer event, and automatically translate `properties.revenue` to the appropriate AppsFlyer purchase event properties based on the spec'd properties.
-
-Finally, Segment uses AppsFlyer's `transactionId` deduplication when you send an `orderId` (see the [e-commerce spec](/docs/connections/spec/ecommerce/v2/)).
-
-### Server
+### Configuring Server-side Delivery 
 
 If you'd like to attribute offline events with a certain user or device, the server-side destination may be employed.
 
@@ -139,9 +109,12 @@ analytics.track({
 ```
 > Check your specific [server-side library docs](/docs/connections/sources/#server) for specifics on how to format the method properly.
 
+> info ""
+> See the **Can Omit AppsFlyerId** and **Fallback to send IDFV when advertisingId key not present (Server-Side Only)** settings descriptions for details on excluding the previous fields in server-side events.
+
 Finally, the server-side component will look for the following `properties` and handle them specially:
 
-- `ip` (this should be the `ip` of your customer--this is not collected by Segment's libraries out-of-the-box)
+- `ip` (this should be the `ip` of your customer--this is not collected by Segment's libraries out-of-the-box. Pass this into the payload under context so that AppsFlyer can properly attribute it.)
 - `timestamp` (refer to AppsFlyer's docs on [how they process timestamps](https://support.appsflyer.com/hc/en-us/articles/207034486-Server-to-Server-In-App-Events-API-HTTP-API-){:target="blank"}. Since the libraries generate a [timestamp](/docs/connections/spec/common/#timestamps), Segment always sets this value)
 - `currency` (defaults to `"USD"`)
 - `revenue` (For `Order Completed` events, precedence is given to `total`, falling back to `properties.revenue`)
@@ -150,6 +123,96 @@ All other `properties` will be sent to AppsFlyer as custom properties inside `ev
 
 > info ""
 > Be sure to calibrate/update the time window in AppsFlyer's dashboard to see your events!
+
+### Send in-app events to Appsflyer v3 Endpoint
+
+When transmitting data serverside to Appsflyer, you have the option to enhance security by enabling the transmission of in-app events to [Appsflyer's v3 endpoint](https://dev.appsflyer.com/hc/reference/s2s-events-api3-post){:target="_blank"}, which authenticates requests using a more secure [S2S token](https://support.appsflyer.com/hc/en-us/articles/360004562377-Managing-API-and-Server-to-server-S2S-tokens){:target="_blank"}.
+
+To activate this feature, simply input your S2S token in the destination settings and toggle the "Use API v3" switch to the enabled position. 
+
+### Send User Consent Preferences Server-side
+
+To transmit user consent data server-side, incorporate the consent preferences into the `integrations.AppsFlyer.consent_data` object. This can be done in either TCF or manual format, as outlined in [the AppsFlyer Send Event documentation](https://dev.appsflyer.com/hc/reference/s2s-events-api3-post){:target="_blank”}.
+
+```js
+// node.js library example with tcf 
+analytics.track({
+  event: 'Membership Upgraded',
+  userId: '97234974',
+  context: {
+    device: {
+      type: 'ios',
+      advertisingId: '159358'
+    }
+  },
+  integrations: {
+    AppsFlyer: {
+      appsFlyerId: '1415211453000-6513894'
+    }, 
+    consent_data: {
+      tcf: {
+        tcstring: "string",
+        cmp_sdk_version: 1,
+        cmp_sdk_id: 1,
+        gdpr_applies: 0,
+        policy_version: 1
+    }
+  }
+  }
+});
+
+// node.js library example with manual consent 
+analytics.track({
+  event: 'Membership Upgraded',
+  userId: '97234974',
+  context: {
+    device: {
+      type: 'ios',
+      advertisingId: '159358'
+    }
+  },
+  integrations: {
+    AppsFlyer: {
+      appsFlyerId: '1415211453000-6513894'
+    }, 
+    consent_data: {
+      manual: {
+        ad_personalization_enabled: 'true',
+        ad_user_data_enabled: 'true',
+        gdpr_applies: 'true'
+      }
+  }
+  }
+});
+```
+
+## Identify
+
+If you're not familiar with the Segment Spec, take a look to understand what the [Identify method](/docs/connections/spec/identify/) does. An example iOS call would look like:
+
+```swift
+[[SEGAnalytics sharedAnalytics] identify:@"12091906-01011992"
+                                traits:@{ @"email": @"john.doe@example.com" }];
+```
+
+When you call Identify, Segment uses AppsFlyer's `setCustomerUserID` to send the `userId` that was passed in.
+
+**Note:** Identify calls are not supported using AppsFlyer's HTTP API at the moment. You can only send `.identify` calls if you have the AppsFlyer SDK bundled.
+
+## Track
+
+If you're not familiar with the Segment Spec, take a look to understand what the [Track method](/docs/connections/spec/track/) does. An example iOS call would look like:
+
+```swift
+[[SEGAnalytics sharedAnalytics] track:@"Article Completed"
+                           properties:@{ @"title": @"How to Create a Tracking Plan", @"course": @"Intro to Analytics" }];
+```
+
+When you call Track, Segment translates it automatically and sends the event to AppsFlyer.
+
+Segment includes all the event properties as callback parameters on the AppsFlyer event, and automatically translates `properties.revenue` to the appropriate AppsFlyer purchase event properties based on the spec'd properties.
+
+Segment uses AppsFlyer's `transactionId` deduplication when you send an `orderId` (see Segment's [e-commerce spec](/docs/connections/spec/ecommerce/v2/) for more details).
 
 ## Install Attributed
 
