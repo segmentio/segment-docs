@@ -529,4 +529,4 @@ $ sudo service cron reload    # reload the cron daemon
 
 If you only need support for PHP5, the team at Underground Elephant has released a [3rd-party library](https://github.com/uecode/segment-io-php) based on Guzzle.
 
-Alt Three Segment is a Segment bridge for Laravel and the GitHub repo can be found here: ALTTHREE/SEGMENT
+Alt Three Segment is a Segment bridge for Laravel. The GitHub repo can be found here: [AltThree/Segment](https://github.com/AltThree/Segment){:target="_blank”}. 
