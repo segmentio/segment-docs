@@ -113,7 +113,7 @@ To enable consent mode for your Google Analytics 4 Web destination:
             * Ad User Data Consent State
             * Ad Personalization Consent State
             You can manually select `Granted` or `Denied` from the dropdown menu for Advanced consent mode settings, and type in `granted` or `denied` for basic consent mode settings.
-        5. *(Option 2)* Under the **Select mappings** section, create an event variable to directly grab the value from the payload (for example, `properties.adStorageConsentState`). Ensure it translates to `granted` or `denied`. You can use an insert function to translate to `granted` or `denied`. Use the replace function if it's a string. Do this for these fields:
+        5. *(Option 2)* Under the **Select mappings** section, create an event variable to directly grab the value from the payload (for example, `properties.adStorageConsentState`). Ensure it translates to `granted` or `denied`. You can use an insert or [replace function](/docs/connections/destinations/actions/#replace-function) to translate other values to `granted` or `denied`. Do this for these fields:
             * Ads Storage Consent State
             * Analytics Storage Consent State
             * Ad User Data Consent State

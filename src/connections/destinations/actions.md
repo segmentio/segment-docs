@@ -193,7 +193,9 @@ If necessary, click **New Mapping** to create a new, blank action.
 
 The coalesce function takes a primary value and uses it if it is available. If the value isn't available, the function uses the fallback value instead. 
 
+### Replace function
 
+The replace function allows you to replace a string, integer, or boolean with a new value. You have the option to replace up to two values within a single field.
 
 ### Conditions
 
