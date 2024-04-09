@@ -14,7 +14,7 @@ Marketo Static Lists (Actions) is a rebuild of the classic destination that prov
 
 ## Overview
 
-The Marketo Static Lists (Actions) destination lets you sync audiences created using [Engage](/docs/engage) into Marketo as a **List**. Once you create the audience, Segment sends that list of users to Marketo, and keeps it up to date as users enter and exit the audience specification.
+The Marketo Static Lists (Actions) destination lets you sync users into Marketo as a **List**.
 
 This allows you to run email campaigns in Marketo without having to manually find and upload a refreshed csv of users. This documentation explains how to set up Marketo in Segment, and what to expect in your Marketo UI.
 
@@ -22,30 +22,20 @@ This allows you to run email campaigns in Marketo without having to manually fin
 ## Details
 
 - **Supports Engage**: Yes
+- **Supports RETL**: Yes
 - **Engage Destination type**: List
 - **Must create audience_name field before Engage can update those values?**: No. You don't need to create the _list_ in Marketo, however you do need to create the folder Segment will create the list in.
 - **Audience appears as**: A list in the folder you created, in the Marketo Lead Database under Group Lists.
 - **Destination rate limit**: 100 calls per 20 seconds, which is shared among all third-party API services
 - **Lookback window allowed**: Yes
-- **Identifiers required**: Email
-- **Identifiers accepted**: Email
 - **Client or Server-Side Connection**: Server-side
 
-
-## How it works
-
-Every time you create an audience in Engage and connect it to Marketo Static Lists, Segment does the following:
-
-1. Creates a list with the same name as the Engage audience in the folder designated for Engage.
-2. Adds any users to that list who both fit the audience definition and have an email address.
-3. If a user has multiple email addresses on their identity graph, each email address becomes a unique entry on the list.
-4. After the audience is configured, Segment checks which users still fit the audience definition, and adds or removes users from the audience.
 {% include content/sync-frequency-note.md %}
 
 ## Configuring Marketo Static Lists
 
 > success "Good to know:"
-> To set up Marketo to receive Engage data, you need Marketo administrator access. If you don't have that access, work with the administrator for your organization.
+> To set up Marketo, you need Marketo administrator access. If you don't have that access, work with the administrator for your organization.
 
 ### Step 1: Create an API-Only Marketo user
 
@@ -60,14 +50,13 @@ In this step, you'll create an API-Only Marketo user with both Access API and Le
    ![A screenshot of the Marketo Invite New User page, with the roles Marketo Static List and API only selected.](images/marketosl-perms.png)
 
 
-### Step 2: Create a Marketo Launchpoint Service for Engage
+### Step 2: Create a Marketo Launchpoint Service
 
 1. Go to **Admin** → **Integration**→ **LaunchPoint** → **New**
 2. Create a new service. In the Service field, select `Custom`, and in the **API Only User** field, select the user you created in step 1.
 3. Write down the **Client Id** and **Client Secret** for this service, as you will need it in Step 4.
 
 ![A screenshot of the New Service popup in Marketo.](images/marketosl-newservice.png)
-
 
 
 ### Step 3: Create a Marketo Lead Database folder and get your Marketo Endpoint
@@ -82,7 +71,7 @@ In this step, you'll create an API-Only Marketo user with both Access API and Le
 > warning "Warning:"
 > Do not create a list in the folder for the audience. Segment creates the list for you!
 
-### Step 4: Set up the Marketo Static Lists (Actions) destination in Engage
+### Using Marketo Static Lists (Actions) destination with Engage
 
 1. From your Segment workspace, go to **Engage → Engage Settings → Destinations→ Add Destination** and then Search for Marketo Static Lists (Actions).
 2. In the destination settings, enter the **Client Id**, **Client Secret**, **Endpoint** and **Folder Name** from the LaunchPoint service and folder you created in Steps 2 and 3. For **Endpoint**, note the Endpoint from Step 3.
@@ -91,14 +80,21 @@ In this step, you'll create an API-Only Marketo user with both Access API and Le
 6. Click **Save** and make sure to enable the mapping. 
 7. On the **Mappings** tab, click **Add Mapping** and select **Remove from List**. 
 8. Click **Save** and make sure you enable the mapping. 
+9. Navigate to the Engage Audiences tab and create a new audience.
+10. Give your audience a name, some event and trait criteria, then click **Preview**.
+11. Select Marketo Static Lists as a destination for the Audience.
+12. In the settings that appear in the side panel, toggle the **Send Track** option on, and don't change the **Audience Entered/Audience Exited** event names.
+13. Click **Save Settings**.
 
-### Step 5: Create Engage audiences and add Marketo Static Lists as a destination
+### Using Marketo Static Lists (Actions) destination with RETL
 
-1. Navigate to the Engage Audiences tab and create a new audience.
-2. Give your audience a name, some event and trait criteria, then click **Preview**.
-3. Select Marketo Static Lists as a destination for the Audience.
-4. In the settings that appear in the side panel, toggle the **Send Track** option on, and don't change the **Audience Entered/Audience Exited** event names.
-12. Click **Save Settings**.
+1. Navigate to your data warehouse and add Marketo Static Lists (Actions) as a destination.
+2. From your model, click **Add Mapping** and select your Marketo Marketo Static Lists (Actions) destination and the **Add to List** Action.
+3. If you already have a list created in Marketo, fill in the List ID field. If you want Segment to create a list in Marketo, fill in the List name field. 
+4. Finish setting up the rest of the action.
+5. Click **Save Mapping**.
+
+When you save the mapping, a list will be created in Marketo. You can update the list the mapping syncs to at any time. 
 
 > info ""
 > Only users with an email address appear in the list in Marketo. Users with multiple email addresses as external ids appear in the list once for each email address.
