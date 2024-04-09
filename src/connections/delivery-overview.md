@@ -4,8 +4,11 @@ title: Delivery Overview
 
 Delivery Overview is a visual observability tool designed to help Segment users diagnose event delivery issues for any cloud-streaming destination receiving events from cloud-streaming sources. 
 
-> info "Delivery Overview is currently in beta"
-> This means that the Delivery Overview feature is in active development, and some functionality may change before it becomes generally available. Beta users of Delivery Overview will still have access to the Event Delivery tab. During the public beta, Delivery Overview supports event-streaming, cloud-mode destinations.
+> info "Delivery Overview for Action destinations, RETL and Engage Audience Syncs currently in development"
+> This means that Segment is actively developing Delivery Overview features for Action destinations, RETL destinations, Storage destinations, and Engage Audience syncs. Some functionality may change before Delivery Overview for these integrations becomes generally available. 
+> 
+> Delivery Overview is generally available for streaming connections (cloud-streaming sources and cloud-streaming destinations).
+> All users of Delivery Overview have access to the Event Delivery tab, and can configure delivery alerts for their destinations.
 
 ## Key features
 
@@ -24,7 +27,7 @@ The pipeline view shows the following steps:
 - **Successfully received**: Events that Segment ingested from your source
 - **Failed on ingest**: Events that Segment received, but were dropped due to internal data validation rules
 - **Filtered at source**: Events that were discarded due to schema settings or [Protocols](/docs/protocols/) Tracking Plans
-- **Filtered at destination**: Events that were discarded due to [Destination Filters](/docs/guides/filtering-data/#destination-filters), [filtering in the Integrations object](/docs/guides/filtering-data/#filtering-with-the-integrations-object), or [per source schema integration filters](/docs/guides/filtering-data/#per-source-schema-integrations-filters). [Actions destinations](/docs/connections/destinations/actions/) also have a filtering capability: for example, if your Action is set to only send Identify events, all other event types will be filtered out. Actions destinations with incomplete triggers or disabled mappings are filtered out at this step. [Consent Management](/docs/privacy/consent-management/) users also see events discarded due to consent preferences.
+- **Filtered at destination**: Events that were discarded due to [Destination Filters](/docs/guides/filtering-data/#destination-filters), [filtering in the Integrations object](/docs/guides/filtering-data/#filtering-with-the-integrations-object), [Destination Insert functions](/docs/connections/functions/insert-functions/), or [per source schema integration filters](/docs/guides/filtering-data/#per-source-schema-integrations-filters). [Actions destinations](/docs/connections/destinations/actions/) also have a filtering capability: for example, if your Action is set to only send Identify events, all other event types will be filtered out. Actions destinations with incomplete triggers or disabled mappings are filtered out at this step. [Consent Management](/docs/privacy/consent-management/) users also see events discarded due to consent preferences.
 - **Failed delivery**: Events that have been discarded due to errors or unmet destination requirements
 - **Successful delivery**: Events that were successfully delivered to the destination
 
@@ -52,6 +55,7 @@ The discard table provides you with greater detail about the events that failed 
 To open the discard table, click on one of the discard steps. If you click on a row in the discard table, you can see the breakdown table for the discarded events. 
 
 The discard table displays the following details:
+
 - **Discard reason**: Any relevant error code, message, or description associated with the event's failure. When possible, Delivery Overview links to any troubleshooting information you can use to get your events up and running again. Clicking on a discard reason brings you to the [breakdown table](#breakdown-table,) where you can see more detail about discarded events. For more context about discard reasons, see the [Troubleshooting](#troubleshooting) documentation.
 - **Details & Samples**: View up to ten samples over the selected time range. Examine the error message and reason for the error or discard and inspect the payloads involved with the attempted transaction (*not available for inspection at all steps*)
 - **Event count**: How many of each event were discarded in this pipeline step
