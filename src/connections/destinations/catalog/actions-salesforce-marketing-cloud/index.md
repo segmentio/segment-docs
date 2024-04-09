@@ -75,7 +75,7 @@ The batch feature is only compatible with the "Send Contact to Data Extension" a
 
 ### Data Extensions & API Events
 
-To use the SFMC Journey Builder to send marketing campaigns to your users, you need to have data about those users in SFMC. The most common way to send data to SFMC is to send Segment data to an SFMC data extension. Data extensions are tables that contain your data. When you send a contact or event to a data extension, it appear will appear as a "row" in your data extension. Any metadata about the particular contact or event are considered attributes and will appear as a "column" in your data extension. 
+To use the SFMC Journey Builder to send marketing campaigns to your users, you need to have data about those users in SFMC. The most common way to send data to SFMC is to send Segment data to an SFMC data extension. Data extensions are tables that contain your data. When you send a contact or event to a data extension, it will appear as a "row" in your data extension. Any metadata about the particular contact or event are considered attributes and will appear as a "column" in your data extension.
 
 Data extensions and attributes must be created **before** sending data. You can create a data extension in your SFMC account by navigating to **Audience Builder > Contact Builder > Data Extensions > Create**. Segment recommends creating a single data extension to store all contact data, and individual data extensions for each event type you plan to send. Once a data extension is created, you can add attributes for any traits or properties you plan to send. You must include at least one Primary Key attribute that will be used to uniquely identify each row.
 

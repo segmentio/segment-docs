@@ -210,6 +210,8 @@ Other libraries only collect `context.library`, any other context variables must
 
 - userAgentData is only collected if the [Client Hints API](https://developer.mozilla.org/en-US/docs/Web/API/User-Agent_Client_Hints_API){:target="_blank"} is available on the browser.
 
+- Segment doesn't collect or append to the context of subsequent calls in the new mobile libraries (Swift, Kotlin, and React Native). 
+
 To pass the context variables which are not automatically collected by Segment's libraries, you must manually include them in the event payload. The following code shows how to pass `groupId` as the context field of Analytics.js's `.track()` event:
 
 ```js
@@ -217,6 +219,11 @@ analytics.track("Report Submitted", {},
     {"groupId": "1234"}
 );
 ```
+
+To add fields to the context object in the new mobile libraries, you must utilize a custom plugin. Documentation for creating plugins for each library can be found here:
+- [React Native](/docs/connections/sources/catalog/libraries/mobile/react-native/#plugin-architecture)
+- [Swift](/docs/connections/sources/catalog/libraries/mobile/apple/swift-plugin-architecture/)
+- [Kotlin](/docs/connections/sources/catalog/libraries/mobile/kotlin-android/kotlin-android-plugin-architecture/)
 
 
 ## Integrations
@@ -268,6 +275,9 @@ The `originalTimestamp` tells you when call was invoked on the client device or 
 The `sentAt` timestamp specifies the clock time for the client's device when the network request was made to the Segment API. For libraries and systems that send batched requests, there can be a long gap between a datapoint's `timestamp` and `sentAt`. Combined with `receivedAt`, Segment uses `sentAt` to correct the original `timestamp` in situations where a user's device clock cannot be trusted (mobile phones and browsers). The `sentAt` and `receivedAt` timestamps are assumed to occur at the same time (maximum a few hundred milliseconds), and therefore the difference is the user's device clock skew, which can be applied back to correct the `timestamp`.
 
 **Note:** The `sentAt` timestamp is not useful for any analysis since it's tainted by user's clock skew.
+
+> warning "Segment now adds `sentAt` to a payload when the batch is complete and initially tried to the Segment API for the Swift, Kotlin, and C# mobile libraries"
+> This update changes the value of the Segment-calculated `timestamp` to align closer with the `receivedAt` value rather than the `originalTimestamp` value. For most users who are online when events are sent, this does not significantly impact their data. However, if your application utilizes an offline mode where events are queued up for any period of time, the `timestamp` value for those users now more closely reflects when Segment received the events rather than the time they occurred on the users' devices. 
 
 
 ### receivedAt

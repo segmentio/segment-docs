@@ -18,6 +18,9 @@ When you have Segment installed, you can use your existing tracking implementati
 > warning ""
 > Google Analytics 4 doesn't officially support a pure server-to-server integration. However, Segment monitors the capabilities of the Measurement Protocol API and updates the cloud integration accordingly to achieve a reasonable level of reporting for mutual customers. For full functionality, please see the [Google Analytics 4 Web destination](/docs/connections/destinations/catalog/actions-google-analytics-4-web/).
 
+> info "Consent mode"
+> Google enforced consent on March 6, 2024 for European Economic Area (EEA) users. Learn more about [consent mode](/docs/connections/destinations/catalog/actions-google-analytics-4/#consent-mode) and how to set it up. 
+
 ## Benefits of Google Analytics 4 Cloud
 
 The Google Analytics 4 Cloud destination provides the following benefits:
@@ -40,7 +43,43 @@ To add the Google Analytics 4 Cloud destination:
 5. On the **Settings** tab, enter in the [Measurement ID](https://support.google.com/analytics/answer/9539598){:target='_blank'} for web streams or the [Firebase App ID](https://developers.google.com/analytics/devguides/collection/protocol/ga4/reference?client_type=firebase#payload_query_parameters){:target='_blank'} for mobile streams. Next, enter in the API Secret associated with your GA4 stream and click **Save**. To create a new API Secret, navigate in the Google Analytics UI to Admin > Data Streams > choose your stream > Measurement Protocol > Create.
 6. Follow the steps in the Destinations Actions documentation on [Customizing mappings](/docs/connections/destinations/actions/#customizing-mappings).
 
+
 {% include components/actions-fields.html %}
+
+## Consent mode
+[Consent mode](https://support.google.com/analytics/answer/9976101?hl=en){:target="_blank"} is a feature provided by Google in the context of its products, particularly the Gtag library and Google Analytics. As of March 6, 2024, Google announced that consent mode must function for European Economic Area (EEA) users, otherwise data from EEA users won't process. 
+
+Consent mode in the Gtag library and Google Analytics is designed to help website owners comply with privacy regulations, such as the General Data Protection Regulation (GDPR) in the European Union. It allows website owners to adjust how these tools use and collect data based on user consent.
+
+With consent mode, you can configure your website to dynamically adjust the tracking behavior of the Gtag library and Google Analytics based on the user's consent status. If a user provides consent to data processing, both the Gtag library and Google Analytics can collect and use that data for analysis. If a user doesn't provide consent, both tools limit data collection to essential functions, helping businesses respect user privacy preferences.
+
+Consent mode may involve updates to your sources outside of Segment, such as incorporating a consent management system for consent functionality.
+
+### Set up consent mode
+To enable consent mode for your Google Analytics 4 Cloud destination, you must update the **Ad User Data Consent State** and **Ad Personalization Consent State** for all mappings you want to send with consent. Consent mode supports all actions with Google Analytics 4 Cloud. You can choose from 2 options to enable consent mode for your Google Analytics 4 Cloud destination. 
+
+* **Option 1** 
+	
+	To enable consent mode for Google Analytics 4 Cloud destination:
+	1. Navigate to **Connections > Destinations** and select your Google Analytics 4 Cloud destination. 
+	2. Go to the **Mappings** tab of the destination.
+	3. Select the mapping you want to edit. 
+	4. Under the **Select mappings** section, find **Ad User Data Consent State**.
+	5. Select `GRANTED` in the dropdown that corresponds to **Ad User Data Consent State**. 
+	6. Select `GRANTED` in the dropdown that corresponds to **Ad Personalization Consent State**. 
+
+* **Option 2** 
+
+	Create an event variable to directly grab the value from the payload. To do this: 
+	1. Navigate to **Connections > Destinations** and select your Google Analytics 4 Cloud destination. 
+	2. Go to the **Mappings** tab of the destination.
+	3. Select the mapping you want to edit. 
+	4. Under the **Select mappings** section, find **Ad User Data Consent State**.
+	5. Select the **Event Variables** tab and create an event variable to directly grab the value from the payload. Ensure it translates to `GRANTED` or `DENIED`. You can use an insert or [replace function](/docs/connections/destinations/actions/#replace-function) to translate other values to `GRANTED`or `DENIED`. 
+	6. Repeat step 5 for **Ad Personalization Consent State**. 
+
+
+If you have any questions setting up consent mode, reach out to [friends@segment.com](mailto:friends@segment.com).
 
 ## Universal Analytics and Google Analytics 4
 

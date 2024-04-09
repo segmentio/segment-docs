@@ -106,7 +106,7 @@ The Tracking Plan editor is organized as a spreadsheet to help you  add new even
 | Name             | Specify the name of your event or property.                                                                                                                                                                                                                                    |
 | Description      | Enter a description for your event or property. These descriptions are helpful for both engineers instrumenting Segment and consumers of the data.                                                                                                                             |
 | Status           | Specify whether a property is required or optional. You can't require a Track call because Segment is unable to verify when a Track call should be fired.                                                                                                            |
-| Data Type        | Specify the data type of the property. Data type options include `any, array, object, boolean, integer, number, string, Date time`. Note: Date time is required to be in ISO-8601 format                                                                                       |
+| Data Type        | Specify the data type of the property. Data type options include `any, array, object, boolean, integer, number, string, null, Date time`. Note: Date time is required to be in ISO-8601 format                                                                                       |
 | Permitted Values | Enter simple regular expressions to validate property values. This works when a property data type is set to `string`. For example, you can add pipe delimited strings to the regex column to generate violations when a property value does not match fall, winter or spring. |
 
 > info ""
@@ -127,6 +127,9 @@ To add a Track call property:
 Segment supports object and array data types in the Tracking Plan editor. These complex data structures have limited use cases and should be used sparingly as some destinations aren't able to ingest the data structures. To add an object or array:
 1. Create a new property row and set the Data Type to `Object` or `Array`.
 2. Click the **(+)** next to the property name to add key value pairs in the object, or objects to an array of objects.
+
+> info ""
+> When creating array properties in your Tracking Plan, add the `items` nested property, denoted by the name of the array property with a `.$` suffix, to ensure that the nested property is marked as planned in the Source Schema. 
 
 ### Add Identify or Group traits
 You can define which traits you expect to see passed in Identify or Group calls like how you would add Track calls to the Tracking Plan. Navigate to the **Identify** or **Group** tab in your Tracking Plan and click the **(+)** button to add a new trait.
@@ -161,7 +164,7 @@ You can filter the Tracking Plan events by keyword or by label. The applied filt
 Protocols Tracking Plans use [JSON Schemas](https://json-schema.org/){:target="_blank”} to validate Segment event payloads. To support a broader range of validation use-cases, Segment lets you to edit your underlying JSON schema.
 
 > warning ""
-> Editing a JSON schema requires technical expertise. The [JSON schema documentation](https://json-schema.org/understanding-json-schema/index.html){:target="_blank”} and [JSON schema validator](https://www.jsonschemavalidator.net/){:target="_blank”} are helpful resources you can use.
+> Editing a JSON schema requires technical expertise. The [JSON schema documentation](https://json-schema.org/understanding-json-schema){:target="_blank”} and [JSON schema validator](https://www.jsonschemavalidator.net/){:target="_blank”} are helpful resources you can use.
 
 You can edit the JSON schema for each Track event listed in the Tracking Plan, and a common JSON schema definition that applies across all events.
 

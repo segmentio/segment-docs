@@ -7,6 +7,8 @@ id: 576af9ca80412f644ff13b87
 
 ## Getting Started
 
+> warning ""
+> This destination is not supported with EU Workspaces.
 
 
 1. From the Segment web app, click **Catalog**.

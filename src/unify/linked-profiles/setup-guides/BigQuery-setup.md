@@ -2,6 +2,7 @@
 title: BigQuery Setup
 beta: true
 plan: unify
+hidden: true
 ---
 
 > info "Linked Events is in private beta"

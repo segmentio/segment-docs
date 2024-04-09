@@ -1,5 +1,6 @@
 ---
 title: Consent Management Overview
+plan: consent-management
 related:
   - "/privacy/consent-management/configure-consent-management/"
   - "/privacy/consent-management/consent-in-segment-connections/"
