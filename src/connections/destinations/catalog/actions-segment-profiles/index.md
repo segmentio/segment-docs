@@ -34,3 +34,6 @@ The Segment Profiles destination is not subject to API call or MTU costs. Any us
 
 ### Succesful syncs but no changes on profiles
 Make sure that the Endpoint Region setting matches the region of your workspace. If the region is correct and you don't see any profile changes, [contact Segment](https://segment.com/help/contact/){:target="_blank"}.
+
+### Test Mapping
+The **Test Mapping** feature on the Mapping page does not send events to Profiles. It will only validate the mappings and confirm that the event will be accepted by the Tracking API. To send and validate the event in profile, please run a RETL sync.

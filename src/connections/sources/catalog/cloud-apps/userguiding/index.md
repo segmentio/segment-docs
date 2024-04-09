@@ -1,7 +1,6 @@
 ---
 title: UserGuiding Source
 id: VShGHAfvlr
-hidden: true
 beta: true
 ---
 
@@ -13,8 +12,8 @@ This source is maintained by UserGuiding. For any issues with the source, [conta
 ## Getting started
 
 1. From your workspace's [Sources catalog page](https://app.segment.com/goto-my-workspace/sources/catalog){:target="_blank”} click **Add Source**.
-2. Search for "UserGuiding" in the Sources Catalog, select UserGuiding, and click **Add Source**.
-3. On the next screen, give the Source a name configure any other settings.
+2. Search for *UserGuiding* in the Sources Catalog, select UserGuiding, and click **Add Source**.
+3. Give the Source a name configure any other settings.
 
    - The name is used as a label in the Segment app, and Segment creates a related schema name in your warehouse. The name can be anything, but we recommend using something that reflects the source itself and distinguishes amongst your environments (eg. UserGuiding_Prod, UserGuiding_Staging, UserGuiding_Dev).
 
@@ -32,61 +31,63 @@ UserGuiding sends user identifiers in the `user_id` attribute in the event paylo
 
 The table below lists events that UserGuiding sends to Segment. These events appear as tables in your warehouse, and as regular events in other Destinations. UserGuiding includes the `userId` if available.
 
-| UserGuiding Event Name                                             | Description                                                                                                                                            |
-| ------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------ |  |
-| Guide started                         | It means that a user previews the first step of a Guide                                                                                                |
-| Guide completed                          | It means that the user has completed all steps of a Guide                                                                                              |
-| Hotspot interacted                      | It means that the user interacted with a Hotspot group and saw a Hotspot as content. (remember, Hotspot groups can have multiple Hotspots as contents) |
-| Checklist item trigger                     | It means that the user triggers a Checklist Guide                                                                                                      |
-| Checklist item url click                | It means that the user clicks a URL item on a Checklist                                                                                                |
-| Checklist completed                      | It means that the user completed a Checklist                                                                                                           |
-| Resource center guide trigger             | It means that the user triggered a Resource Center Guide                                                                                               |
-| Resource center checklist guide trigger  | It means that a Guide in a Checklist put in a Resource Center as a module is triggered by a user                                                       |
-| Resource center checklist item url click | It means that a URL item in a Checklist put in a Resource Center as a module is clicked by a user                                                      |
-| Resource center external URL click     | It means that a user clicks an external URL in a Resource Center                                                                                       |
-| Resource center article link click        | It means that a user clicks a search article in a Resource Center                                                                                      |
-| Resource center survey trigger           | It means that a user has triggered a survey in a Resource Center                                                                                       |
-| Survey shown                          | It means a survey was shown to a user                                                                                                                  |
-| Survey question answer                  | It means a survey question was answered by a user                                                                                                      |
+| UserGuiding Event Name                   | Description                                                                                                                                            |
+| ---------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| Guide Started                            | It means that a user previews the first step of a Guide                                                                                                |
+| Guide Completed                          | It means that the user has completed all steps of a Guide                                                                                              |
+| Hotspot Interacted                       | It means that the user interacted with a Hotspot group and saw a Hotspot as content. (remember, Hotspot groups can have multiple Hotspots as contents) |
+| Checklist Item Trigger                   | It means that the user triggers a Checklist Guide                                                                                                      |
+| Checklist Item Url Click                 | It means that the user clicks a URL item on a Checklist                                                                                                |
+| Checklist Completed                      | It means that the user completed a Checklist                                                                                                           |
+| Resource Center Guide Trigger            | It means that the user triggered a Resource Center Guide                                                                                               |
+| Resource Center Checklist Guide Trigger  | It means that a Guide in a Checklist put in a Resource Center as a module is triggered by a user                                                       |
+| Resource Center Checklist Item Url Click | It means that a URL item in a Checklist put in a Resource Center as a module is clicked by a user                                                      |
+| Resource Center External URL Click       | It means that a user clicks an external URL in a Resource Center                                                                                       |
+| Resource Center Article Link Click       | It means that a user clicks a search article in a Resource Center                                                                                      |
+| Resource Center Survey Trigger           | It means that a user has triggered a survey in a Resource Center                                                                                       |
+| Survey Shown                             | It means a survey was shown to a user                                                                                                                  |
+| Survey Question Answer                   | It means a survey question was answered by a user                                                                                                      |
 
 
-## Event Properties
+## Event properties
 
-The table below list the properties included in the events listed above.
+The table below lists the properties included in the events listed above.
 
-| Property Name        | Description               | Type |
-| -------------------- | ------------------------- | ---- |
-| `user_id`            | User identifier           | str  |
-| `guideId`            | Email event type          | int  |
-| `guideName`          | Prospect user ID          | str  |
-| `pageUrl`            | ID of the email           | str  |
-| `hotspotGroupId`     | Sender email ID           | int  |
-| `hotspotGroupName`   | Subject line of the email | str  |
-| `hotspotId`          | Subject line of the email | int  |
-| `hotspotTitle`       | Subject line of the email | str  |
-| `checklistName`      | URL of the link clicked   | str  |
-| `checklistId`        | URL of the link clicked   | int  |
-| `checklistItemUrl`   | URL of the link clicked   | str  |
-| `resourceCenterName` | URL of the link clicked   | str  |
-| `resourceCenterID`   | URL of the link clicked   | int  |
-| `resourceCenterId`   | URL of the link clicked   | int  |
-| `externalUrl`        | URL of the link clicked   | str  |
-| `articleLink`        | URL of the link clicked   | str  |
-| `surveyId`           | URL of the link clicked   | int  |
-| `surveyName`         | URL of the link clicked   | str  |
-| `questionId`         | URL of the link clicked   | str  |
-| `questionName`       | URL of the link clicked   | str  |
-| `score`              | URL of the link clicked   | int  |
-| `surveyQuestion`     | URL of the link clicked   | str  |
-| `emojiScore`         | URL of the link clicked   | str  |
-| `choices`            | URL of the link clicked   | str  |
-| `feedback`           | URL of the link clicked   | str  |
- 
+| Property Name          | Description                                                       |
+| ---------------------- | ----------------------------------------------------------------- |
+| `user_id`              | User identifier                                                   | str |
+| `guide_id`             | ID of the guide                                                   | int |
+| `guide_name`           | Name of the guide                                                 | str |
+| `page_url`             | URL of the page the material was interacted at                    | str |
+| `hotspot_group_id`     | Group ID of the hotspot                                           | int |
+| `hotspot_group_name`   | Group name of the hotspot                                         | str |
+| `hotspot_id`           | ID of the hotspot                                                 | int |
+| `hotspot_title`        | Title of the hotspot                                              | str |
+| `checklist_name`       | Name of the checklist                                             | str |
+| `checklist_id`         | ID of the checklist                                               | int |
+| `checklist_item_url`   | Item URL of the checklist                                         | str |
+| `resource_center_name` | Name of the resource center                                       | str |
+| `resource_center_id`   | ID of the resource center                                         | int |
+| `external_url`         | External URL of resource center url click event                   | str |
+| `article_link`         | Link to the article in resource center where click event happened | str |
+| `survey_id`            | ID of the survey                                                  | int |
+| `survey_name`          | Name of the survey                                                | str |
+| `question_id`          | ID of the question in a survey                                    | str |
+| `question_name`        | Name of the question                                              | str |
+| `score`                | Score in a survey question answer                                 | int |
+| `survey_question`      | Question text of a survey                                         | str |
+| `emoji_score`          | Emoji score in a survey question answer                           | str |
+| `choices`              | Choices in a survey question                                      | str |
+| `feedback`             | Feedback left in survey question answer                           | str |
 
-## Adding Destinations
+## Adding destinations
 
-Now that your Source is set up, you can connect it to Destinations.
+Once your source is set up, you can connect it to destinations.
 
-Log into your downstream tools and check to see that your events appear as expected, and that they contain all of the properties you expect. If your events and properties don’t appear, check the [Event Delivery](/docs/connections/event-delivery/) tool, and refer to the Destination docs for each tool for troubleshooting.
+Log in to your downstream tools and check to see that your events appear as expected, and that they contain all of the properties you expect. If your events and properties don’t appear, check the [Event Delivery](/docs/connections/event-delivery/) tool, and refer to the destination docs for each tool for troubleshooting.
 
 If there are any issues with how the events are arriving to Segment, [contact the UserGuiding support team](mailto:assist@userguiding.com).
+
+## Regional data
+
+If you want to use [Regional Segment](/docs/guides/regional-segment/) to store your data in EU regional data centers, use the radio button in the Userguiding as a Source section in Integrations Page to select the Data Residency.

@@ -6,6 +6,8 @@ strat: ajs
 
 Custom domains allow you to proxy Analytics.js and proxy all tracking event requests through your domain.
 
+You cannot use custom proxy setup for Analytics.js CDN or Tracking API with device-mode destinations because it requires the destination's native scripts are loaded onto the client, and the requests are sent directly to the destination. 
+
 ## Custom Proxy prerequisites
 
 To set up a custom domain, you need:
@@ -46,6 +48,8 @@ This is {person} from {company}. I would like to configure a proxy for the follo
 
 **Source URL**: link to the source in your Segment workspace (for example: https://app.segment.com/<your_slug>/sources/<source>/overview)
 **Source ID**: navigate to **API Keys** on the left-hand side of the source **Settings** and provide the Source ID 
+```
+
 
 Double-check the Source URL and the Source ID.
 
@@ -66,12 +70,14 @@ Follow these instructions after setting up a proxy such as [CloudFront](#custom-
 If you're a snippet user, modify the [analytics snippet](/docs/getting-started/02-simple-install/#step-1-copy-the-snippet) located inside the `<head>` of your website:
 
 To proxy CDN settings and destination requests that typically go to `https://cdn.segment.com`, replace:
+
 ```diff
 - t.src="https://cdn.segment.com/analytics.js/v1/" + key + "/analytics.min.js"
 + t.src="https://MY-CUSTOM-CDN-PROXY.com/analytics.js/v1/" + key + "/analytics.min.js"
 ```
 
 To proxy API tracking calls that typically go to `api.segment.io/v1`, replace:
+
 ```diff
 - analytics.load("<MY_WRITE_KEY>")
 + analytics.load("<MY_WRITE_KEY>", { integrations: { "Segment.io": { apiHost: "MY-CUSTOM-API-PROXY.com/v1" }}})
@@ -175,7 +181,7 @@ To reduce fetching assets from Segment's CDN, you can bundle Analytics.js with y
 To bundle Analytics.js with your own code, you can: 
 * [Use Analytics.js as an npm package](/docs/connections/sources/catalog/libraries/website/javascript/quickstart/#step-2b-install-segment-as-a-npm-package).
 
-* [Use npm to install your destinations](/docs/connections/sources/catalog/libraries/website/javascript/#add-destinations-from-npm).
+* [Use npm to install your destinations](/docs/connections/sources/catalog/libraries/website/javascript#add-destinations-from-npm).
 
 * Hardcode your settings instead of fetching from the CDN (Segment doesn't recommend this as it completely bypasses the Segment source GUI).
 ```ts

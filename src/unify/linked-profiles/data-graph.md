@@ -5,8 +5,8 @@ beta: true
 hidden: true
 ---
 
-> info "Segment's Data Graph is in private beta"
-> The Data Graph is in private beta, and Segment is actively working on this feature. Some functionality may change before it becomes generally available. 
+> info "Segment's Data Graph is in public beta"
+> The Data Graph is in public beta, and Segment is actively working on this feature. Some functionality may change before it becomes generally available. 
 
 With Linked Profiles, you can build a Data Graph that defines relationships between any entity data set in the warehouse and the Segment Profiles you send with Profiles Sync. 
 
@@ -18,6 +18,13 @@ Make this relational data accessible to marketers and business stakeholders to e
 > success ""
 > To help you get started with the Data Graph, [view this short setup demo](https://drive.google.com/file/d/1oZNvs0raYaxK6tds3OEF0Ri3NGVCoXys/view?pli=1){:target="_blank"}.
 
+## Breaking changes 
+
+A breaking change occurs when deleting an entity or relationship that is being referenced by a data consumer. Note that an entity or relationship slug is immutable and treated as a delete if you make changes. Data consumers affected by breaking changes will fail on the next run. 
+
+### Potential breaking change 
+
+Editing the Data Graph may lead to errors with data consumers. If there’s a breaking change, the data consumer will fail on the next run. Unaffected data consumers will continue to work. 
 
 ## Prerequisites
 
@@ -31,11 +38,11 @@ To use the Data Graph, you'll need the following:
 > warning ""
 > Don't send any personal health information with the Data Graph.
 
-## Step 1: Set up your data warehouse
+## Step 1: Set up required permissions in your data warehouse
 
-> info "Data warehouse support"
-> - [Snowflake](/docs/unify/linked-profiles/setup-guides/snowflake-setup/) is supported by both Linked Events and Linked Audiences.
-> - [Redshift](/docs/unify/linked-profiles/setup-guides/redshift-setup/) and [BigQuery](/docs/unify/linked-profiles/setup-guides/BigQuery-setup/)  are currently supported for Linked Events.
+To get started, you'll need to navigate to the appropriate guide below to set up the required permissions in your data warehouse: 
+- [Snowflake](/docs/unify/linked-profiles/setup-guides/snowflake-setup/) is supported by both Linked Events and Linked Audiences.
+- [Redshift](/docs/unify/linked-profiles/setup-guides/redshift-setup/) and [BigQuery](/docs/unify/linked-profiles/setup-guides/BigQuery-setup/) are currently supported for Linked Events. 
 
 Linked Profiles uses [Segment's Reverse ETL](/docs/connections/reverse-etl/) infrastructure to pull data from your warehouse. 
 
@@ -83,7 +90,7 @@ The parameters are:
 
 | Parameters     | Definition                                                           |
 | ----------- | --------------------------------------------------------------------- |
-| `profile_folder`      | This is the folder or schema location for the profile tables.     |
+| `profile_folder`      | This is the fully qualified path of the folder or schema location for the profile tables.     |
 | `materialization`     | Identifies the type of materialization (`none`). |
 
 Example:
@@ -92,7 +99,7 @@ Example:
 # Define a profile entity
 
 profile {
-     profile_folder = "segment"
+     profile_folder = "PRODUCTION.segment"
      materialization = "none"
     
 }
@@ -278,7 +285,7 @@ data_graph {
 
      #define a profile entity
      profile {
-          profile_folder = "segment"
+          profile_folder = "PRODUCTION.segment"
           materialization = "none"
 
           #relate accounts to profiles with an external ID
@@ -347,11 +354,7 @@ To edit your Data Graph:
 1. Navigate to **Unify > Data Graph**.
 2. Select the **Builder** tab, and click **Edit Data Graph**.
 
-Deleting entities and relationships are not yet supported. 
-
-> info ""
-> While you can edit entities and relationships in the Data Graph, this may lead to errors in downstream services referencing these entities and relationships. Segment recommends you recreate your existing Linked Audience and/or remove the entity from your existing Linked Events mappings.
-
+A data consumer refers to a Segment feature referencing entities and relationships from the Data Graph.
 
 ## Next steps 
 

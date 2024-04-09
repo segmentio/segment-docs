@@ -6,8 +6,8 @@ redirect_from:
   - '/engage/audiences/sql-traits'
 ---
 
-> info ""
-> Beginning August 18, 2023, new Unify Plus users can access SQL Traits in Unify. 
+> info "SQL Traits End of Sale"
+> SQL Traits entered End of Sale as of March 31, 2024. Existing Segment customers will continue to have access to SQL Traits, but Segment will no longer offer SQL Traits to new customers. Segment recommends using [Reverse ETL](/docs/connections/reverse-etl/) to sync your data into Segment. 
  
  
 Use SQL Traits to import user or account traits from your data warehouse back into Unify or Engage to build audiences or to enhance data that you send to other Destinations.
@@ -61,6 +61,7 @@ This query computes whether a user has an open ticket:
     where t.status in ('pending','open','hold','new')
 ```
 
+{% include content/trait-types.md %}
 
 ## Configure SQL Traits
 
@@ -71,7 +72,7 @@ To use SQL Traits, you need the following:
 - a user account with access to Unify in that workspace
 
 ### Step 1. Set up a warehouse source
-
+ 
 Segment supports Redshift, Postgres, Snowflake, Azure SQL, and BigQuery as data warehouse sources for SQL Traits. Note that the BigQuery setup process _requires_ a service user.
 
 > info "Safeguard your data"
@@ -164,7 +165,6 @@ Click **Create Computed Trait** to save the Trait.
 Check **Compute without destinations** if you only want to send to Engage.
 
 When you create a SQL Trait, Segment runs the query on the warehouse twice a day by default. You can customize the time at which Segment queries the data warehouse and  the frequency, up to once per hour, from the SQL Trait's settings.
-(If you're interested in a more frequent schedule, [contact Segment Support](https://segment.com/help/contact/){:target="_blank"}.)
 
 For each row (user or account) in the query result, Engage sends an identify or group call with all the columns that were returned as Traits. For example, if you write a query that returns `user_id, has_open_ticket, num_tickets_90_days, avg_zendesk_rating_90days` Segment sends an identify call with the following payload:
 
@@ -214,6 +214,10 @@ Yes, Segment limits request sizes to a maximum of 16KB. Records larger than this
 
 No, SQL Traits supports string and numeric data types. You can cast arrays as a comma-separated string. In this case, if you used this trait to build an audience, you could check if the array contains a certain value with the "contains" operator, but the value is sent to any connected destinations as a string.
 
+### Can I change the Warehouse Source after a SQL trait has been created?
+
+After a SQL trait has been created, you can't change its Warehouse Source. You'll need to create a new trait if you want to change the Warehouse source.
+
 ## Troubleshooting
 
 ### I'm getting a permissions error.
@@ -259,7 +263,6 @@ If you see only question marks in the preview, and have already tracked data his
 
 Segment added the compute schedule feature on Feb 8, 2021, so traits created prior to this date will not have this option. If your trait lacks this feature, recreating it will make it available.
 
-### Why do the SQL traits value showing in preview is not reflecting over the profile even after a successful sync?
 ### Why doesn't the value of a SQL trait show in a user profile after a successful sync?
 
 Check that you've configured the identifier that uniquely identifies users in a SQL query (`user_id`, `anonymous_id`, `email`, or `group_id` for account traits) in Identity Resolution settings as an identifier. This ensures the trait is added to the user's profile with the correct identifier. If you don't configure the identifier in Identity Resolution settings, the trait's value is not added to the user profile.

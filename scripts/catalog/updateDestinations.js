@@ -102,10 +102,11 @@ const updateDestinations = async () => {
         return clonedObj;
       };
   
-      // I honestly don't remember why I did this.
-      // I think someone wanted to mention support for the Screen method to whatever destination that is
+      // The screen method is not returned as a method from the public API, so if a destination wants to 
+      // show screen as a supported method in `destination-dossier.html` then add the destination id here
+      const destinationsThatSupportScreen = ['63e42b47479274407b671071', '65ccc6147108efc0cf5c6fe1']
       destination.supportedMethods.screen = false;
-      if (destination.id == '63e42b47479274407b671071') {
+      if (destinationsThatSupportScreen.includes(destination.id)) {
         destination.supportedMethods.screen = true;
       }
   
@@ -141,7 +142,8 @@ const updateDestinations = async () => {
         connection_modes,
         settings,
         actions,
-        presets
+        presets,
+        partnerOwned: destination.partnerOwned
       };
   
       // Add the updated destination to the destinationsUpdated array

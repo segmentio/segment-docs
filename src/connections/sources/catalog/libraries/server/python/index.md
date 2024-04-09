@@ -1,6 +1,7 @@
 ---
 title: Analytics for Python
 id: XRksQPCr7X
+support_type: maintenance
 ---
 Segment's Python library lets you record analytics data from your Python code. The requests hit Segment's servers, and then Segment routes your data to any analytics service you enable on your destinations page.
 
@@ -532,7 +533,7 @@ analytics.write_key = 'YOUR_WRITE_KEY'
 
 Google App Engine may not resolve project dependencies. If this is the case add the following to your project alongside analytics-python:
 - [requests](https://github.com/kennethreitz/requests){:target="_blank"}
-- python-dateutil](https://github.com/paxan/python-dateutil){:target="_blank"}
+- [python-dateutil](https://github.com/paxan/python-dateutil){:target="_blank"}
 
 If you're having issues with threads outliving your request, check [Background threads and synchronous mode](#background-threads-and-synchronous-mode)
 
@@ -623,7 +624,9 @@ easy_install --upgrade segment-analytics-python
 
 *Experimental feature, available since `1.3.0b1`.*
 
-In some cases, you will want to disable threads and send each request synchronously. To do so, you can use the `sync_mode` option:
+In some cases, you will want to disable threads and send each request synchronously. If your source is managing tasks asynchronously using software like [Celery](https://docs.celeryq.dev/en/stable/getting-started/introduction.html){:target="_blank”}, consider enabling this option to resolve potential conflicts with the Segment Python library's threading system.
+
+To do so, you can use the `sync_mode` option:
 
 ```python
 import segment.analytics as analytics

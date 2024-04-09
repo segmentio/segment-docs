@@ -3,7 +3,7 @@ title: Analytics Swift Nielsen DTVR Plugin
 hidden: true
 ---
 
-Digital in TV Ratings (DTVR) responds to the shifting and complex multi-platform, multi-device and multi-distribution landscape by providing comprehensive measurement of digital content consumption—including streaming TV commercial video, static web pages and mobile apps—across all major devices and platforms. The [Analytics-Swift Nielsen-DTVR Plugin](https://github.com/segment-integrations/analytics-swift-nielsen-dtvr){:target="_blank”} tracks sessions for [Analytics-Swift](https://github.com/segmentio/analytics-swift){:target="_blank”}.
+Digital in TV Ratings (DTVR) responds to the shifting and complex multi-platform, multi-device and multi-distribution landscape by providing comprehensive measurement of digital content consumption—including streaming TV commercial video, static web pages and mobile apps—across all major devices and platforms. For additional information, you can browse the code on GitHub [here](https://github.com/segment-integrations/analytics-swift-nielsen-dtvr).
 
 ## Getting started
 

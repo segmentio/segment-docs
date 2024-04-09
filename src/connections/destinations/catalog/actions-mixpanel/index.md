@@ -133,6 +133,10 @@ If you want to confirm, you can configure the new destination to point to a diff
 
 If the Mixpanel (Actions) destination uses $group_id as the group key, ensure that the mappings handling your `track` events have the field for **Group ID** mapped to a valid value. By default, this field maps to the event variable `context.groupId`.
 
+To send Track events with a custom Group Key, include the key as a property of Track events. For example:
+```js
+analytics.track('Example Event', { custom_group_key : 'group1' });
+```
 ### Failed events due to timestamp
 
 If your integration is correct and you are still seeing failed events, review and verify that you are sending all date properties as UTC time format, due to Mixpanel timestamp format requirements. 

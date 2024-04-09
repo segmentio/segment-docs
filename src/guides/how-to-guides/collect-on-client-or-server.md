@@ -43,7 +43,7 @@ Sensitive information is also best kept out of browsers. Any data you don't want
 
 ### Selecting Destinations
 
-Each Segment library allows an `integrations` object either as a top level object or nested in options object. [Check your library docs](/docs/connections/sources/) for details; look for the section titled ["Selecting Destinations"](/docs/connections/sources/catalog/libraries/website/javascript/#selecting-destinations-with-the-integrations-object).
+Each Segment library allows an `integrations` object either as a top level object or nested in options object. 
 
 This flag may be especially useful in Legacy source types, where an event might be triggered on both the client and server for various reasons. The following will cause the payload to be sent to all enabled tools **except** Facebook Pixel:
 
