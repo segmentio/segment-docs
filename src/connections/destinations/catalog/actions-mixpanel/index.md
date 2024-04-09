@@ -137,4 +137,6 @@ To send Track events with a custom Group Key, include the key as a property of T
 ```js
 analytics.track('Example Event', { custom_group_key : 'group1' });
 ```
+### Failed events due to timestamp
 
+If your integration is correct and you are still seeing failed events, review and verify that you are sending all date properties as UTC time format, due to Mixpanel timestamp format requirements. 

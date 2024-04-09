@@ -179,3 +179,7 @@ Engage sends the most recent ID added to the user profile to Google Ads.
 If you have more than one App ID (such as a separate App ID for Android and iOS apps), add a separate Google Ads Remarketing Lists destination for each App ID, and make sure the settings for these destinations include the correct App IDs.
 
 When you create Engage audiences, add conditions to specify which App ID to send the audience to. For example, you might add a property condition of "where `device.type` contains `iOS`" to send only your iOS users to a specific destination.
+
+#### Why is there a schemaType validation error when I test an event?
+
+Typically this is a validation error and the permissions need to be re-authorized. Ensure the user who is authorizing has adminstration permissions. 

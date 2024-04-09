@@ -214,6 +214,10 @@ Yes, Segment limits request sizes to a maximum of 16KB. Records larger than this
 
 No, SQL Traits supports string and numeric data types. You can cast arrays as a comma-separated string. In this case, if you used this trait to build an audience, you could check if the array contains a certain value with the "contains" operator, but the value is sent to any connected destinations as a string.
 
+### Can I change the Warehouse Source after a SQL trait has been created?
+
+After a SQL trait has been created, you can't change its Warehouse Source. You'll need to create a new trait if you want to change the Warehouse source.
+
 ## Troubleshooting
 
 ### I'm getting a permissions error.

@@ -27,7 +27,7 @@ Amplitude (Actions) provides the following benefits over the classic Amplitude d
 
 ## Getting started
 
-1. Before you start, go to your [Amplitude workspace](https://analytics.amplitude.com){:target="_blank"}. Click **Settings** in the bottom left, then click **Projects** in the left menu. Select your **Project**. Copy the Amplitude API Key and Secret Key for the project.
+1. Before you start, go to your [Amplitude workspace](https://analytics.amplitude.com){:target="_blank"}. Click **Settings** in the top right and then click **Organization Settings** to navigate to your **Projects** in the menu. Select your **Project**. Copy the Amplitude API Key and Secret Key for the project.
 2. From the Segment web app, click **Catalog**, then click **Destinations**.
 3. Find the Destinations Actions item in the left navigation, and click it.
 4. Click the "Amplitude" item to select it and click **Configure**.
