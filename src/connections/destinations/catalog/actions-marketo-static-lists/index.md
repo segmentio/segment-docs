@@ -43,11 +43,8 @@ In this step, you'll create an API-Only Marketo user with both Access API and Le
 
 1. You can use an existing role with these permissions, or create a new role that has both Access API and Access Lead Database permissions. (Do this in Marketo by going to **Admin**→ **Users & Roles** → **Roles**).
 
-   ![A screenshot of the Marketo Create New Role popup.](images/marketosl-create-new-role.png)
 
 2. Go to **Admin**→ **Users & Roles** → **Users** → **Invite New User** and create a new **API Only user** with the role that has both Access API and Lead Database permissions. **Be sure to check the API Only box.**
-
-   ![A screenshot of the Marketo Invite New User page, with the roles Marketo Static List and API only selected.](images/marketosl-perms.png)
 
 
 ### Step 2: Create a Marketo Launchpoint Service
@@ -56,15 +53,10 @@ In this step, you'll create an API-Only Marketo user with both Access API and Le
 2. Create a new service. In the Service field, select `Custom`, and in the **API Only User** field, select the user you created in step 1.
 3. Write down the **Client Id** and **Client Secret** for this service, as you will need it in Step 4.
 
-![A screenshot of the New Service popup in Marketo.](images/marketosl-newservice.png)
-
 
 ### Step 3: Create a Marketo Lead Database folder and get your Marketo Endpoint
 
 1. Go to your Marketo Lead Database and create a new folder under Group Lists. Once connected, each Engage audience shows up as a list in this folder.
-
-
-   ![A screenshot of the Marketo Lead Database, with a New Folder menu item selected.](images/marketosl-newfolder.png)
 
 2. Before you continue to the next step, in Marketo, go to **Admin → Web Services**, and copy or write down the REST API Endpoint. **Be sure to copy the REST endpoint and not the SOAP endpoint.** You'll need that in the next step.
 
@@ -99,8 +91,6 @@ When you save the mapping, a list will be created in Marketo. You can update the
 > info ""
 > Only users with an email address appear in the list in Marketo. Users with multiple email addresses as external ids appear in the list once for each email address.
 
-![A screenshot of the Marketo Lead Database Audience page.](images/marketosl-leads.png)
-
 You can view the audience in Marketo by going to **Lead Database→ Group Lists→Name of folder you created in Step 3 → Audience name**
 
 
@@ -120,7 +110,5 @@ Check that the audience members you expect have an email address on their profil
 Only users in the audience who also have an email address are uploaded to the list.
 
 You might need to adjust your query to filter out users without an email so you can get a better estimate of how many users will appear on the list. In the example below, we added an AND condition where users have a Custom trait of `email` which `exists`.
-
-![A screenshot of the Audiences page in Segment.](images/personas-add-emailtrait.png)
 
 If a user has multiple email addresses, each address appears once in the Marketo lists. 
