@@ -75,6 +75,20 @@ Moving from a classic destination to an actions-based destination is a manual pr
 5. Verify that data is flowing from the development or test source to the partner tool.
 6. Repeat the steps above with your production source.
 
+### Migrate your destination filters from the classic destination to the actions destination
+
+> warning ""
+> You can only migrate your destination filters using the Public API if you're on the business tier plan. This functionality isn't available in the Segment app. 
+
+To migrate your destination filters to your actions destination from the classic destination: 
+1. Send a request to the Public API endpoint. 
+     - Use [List Filters from Destination](https://docs.segmentapis.com/tag/Destination-Filters#operation/listFiltersFromDestination){:target="_blank"} . The `destinationId` can be found in the URL while viewing the destination in your Segment workspace.
+2. Grab the response and parse through the `data.filters` object. Each object returned inside the `data.filters` object is an individual filter associated with the specified destination.
+4. Send individual `POST` requests to the Public API endpoint.
+     - Use [Create Filter for Destination](https://docs.segmentapis.com/tag/Destination-Filters/#operation/createFilterForDestination){:target="_blank"} , for each of the filters from step 2. 
+     - Specify the Actions `destinationId`, found in the URL when viewing that destination. The body of the request is the individual filters from step 2.
+6. If the bodies of those requests don't already include the field `"enabled": true`, make sure to enable each of those filters after you create them.
+
 ### Migrate to an actions-based destination using Destination Filters
 For a more comprehensive migration from a classic destination to an actions-based destination, follow the steps outlined below. This implementation strategy is only available for customers on a Segment Business Tier plan with access to [Destination Filters](/docs/connections/destinations/destination-filters/). By adding additional line of defense with Destination Filters, you remove the possibility of duplicate events or dropped events and ensure that events sent before/after a specified `received_at` timestamp are sent to each destination.
 
@@ -256,3 +270,7 @@ Access Tokens that were generated from initial authorization, for example, when 
 
 The underlying systems for these flows have their own copy of the token, which can expire at different points in time.
 Threfore, if you see a 401 error in a sample response, it is likely that you’ll also see another request was made after it, to ask the downstream destination for a new token. Then one more request was made to actually send the data in your payload to the downstream destination.
+
+### Is it possible to map a field from one event to another?
+
+Segment integrations process events through mappings individially. This means that no context is held that would allow you to map a value from one event to the field of a subsequent event. Each event itself must contain all of the data you'd like to send downstream in regards to it. For example, you cannot send `email` in on an Identify call and then access that same `email` field on a Track call that comes in later if that Track call doesn't also have `email` set on it. 

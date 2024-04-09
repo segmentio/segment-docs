@@ -91,7 +91,7 @@ For example, to create a conversion event when an order is completed with a reve
 This rule would match a Segment event fired with code such as:
 
 ```javascript
-analytics.track("Order Completed", {
+analytics.track('Order Completed', {
   order_id: '50314b8e9bcf000000000000',
   revenue: 11.5
   products: [
@@ -103,6 +103,35 @@ analytics.track("Order Completed", {
       category: 'Games'
     }
   ]
+});
+```
+
+#### Trait Fields
+
+Although trait fields are not frequently used in event rules, the StackAdapt destination forwards them and they can be used if desired.
+
+| Segment Trait Property | StackAdapt Event Key |
+|------------------------|----------------------|
+| `traits.email`         | `email`              |
+| `traits.first_name`    | `first_name`         |
+| `traits.last_name`     | `last_name`          |
+| `traits.phone`         | `phone`              |
+
+For example, to create a conversion event when a user with the domain `example.com` completes an order, you could set up an event rule matching an `action` value of `Order Completed` and an `email` containing `@example.com` as shown below:
+
+![Image showing event rule in StackAdapt the matches an Order Completed event with an email containing @example.com](images/email-event-rule.png)
+
+This rule would match a Segment event fired with code such as:
+
+```javascript
+analytics.track('Order Completed', {
+  order_id: '50314b8e9bcf000000000000',
+  traits: {
+    email: 'john.smith@example.com',
+    first_name: 'John',
+    last_name: 'Smith',
+    phone: '+180055501000'
+  }
 });
 ```
 

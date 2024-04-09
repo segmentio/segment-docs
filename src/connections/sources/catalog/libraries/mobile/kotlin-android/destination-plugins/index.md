@@ -63,6 +63,12 @@ plugins:
       url: https://d3hotuclm6if1r.cloudfront.net/logos/flurry-default.svg
     mark:
       url: https://cdn.filepicker.io/api/file/yxc3XuGQA2btML7kyWJg
+  - name: Intercom
+    url: connections/sources/catalog/libraries/mobile/kotlin-android/destination-plugins/intercom-kotlin-android/
+    logo:
+      url: https://cdn.filepicker.io/api/file/PLYt4sbQsa4vXGtq0oxe
+    mark:
+      url: https://cdn.filepicker.io/api/file/TPPTdCreS9SO46zTF0ax  
   - name: Localytics
     url: connections/sources/catalog/libraries/mobile/kotlin-android/destination-plugins/localytics-kotlin-android/
     logo:

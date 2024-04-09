@@ -10,7 +10,7 @@ id: 54521fd725e721e32a72eec6
 2.  Search for "Intercom" and select it in the results that appear.
 3.  Select a source to connect to your Intercom destination.
 4.  Authorize your Intercom account in Segment and select the Intercom Account to sync with Segment.
-5. [Find your "App ID" in the Intercom UI](https://docs.intercom.com/faqs-and-troubleshooting/getting-set-up/where-can-i-find-my-app-id){:target="_blank"} or by navigating to the Gear Menu and selecting App Settings > API Keys. It should look something like `9iefb489`.
+5. [Find your "App ID" in the Intercom UI](https://developers.intercom.com/installing-intercom/web/installation/#step-3-generate-a-config-file-with-this-command){:target="_blank"} or by navigating to the Gear Menu and selecting App Settings > API Keys. It should look something like `9iefb489`.
 
 ## Adding the dependency
 

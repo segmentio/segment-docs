@@ -63,11 +63,11 @@ Use the Update History page to view CSV file uploads in your workspace over the 
 
 To view the Update History page:
 
-1. Navigate to **Unify > Profile explorer** or **Engage > Audiences > Profile explorer**.
-2. Click **Manage subscription statuses**.
-3. Select **View update history**.
+1. Navigate to **Unify > Profile explorer** or **Engage > Engage settings > Subscriptions**.
+2. From the **Subscriptions** section, click **View update history**.
+3. From the **Upload history** table, click the file name link to download the [error reports](#error-reports).
 
-Select links to view CSV files and any associated [error reports](#error-reports). View the status of the file upload and the custom trait name added to user profiles in the CSV upload.
+View the status of the file upload and the custom trait name added to user profiles in the CSV upload. The error report only shows rows that Segment couldn't successfully process.  
 
 ### Error reports
 
@@ -82,14 +82,30 @@ From the Update History page:
 
 Engage uses the following error codes on the report:
 
-|Error code                        | Description                                         |
-|----------------------------------|-----------------------------------------------------|
-|INVALID_EMAIL                 | The email address isn't formatted correctly.        |
-|INVALID_PHONE                 | The phone number is invalid.                        |
-|INVALID_SUBSCRIPTION_STATUS   | The subscription status is invalid. Check the status or leave it blank.   |
-|CONFIGURATION_ERROR          | Your SendGrid settings are not configured correctly. [Contact Segment support](https://app.segment.com/workspaces?contact=1){:target="_blank"} for help. |
-|SYSTEM_ERROR                  | Something went wrong. Please try again.             |
-|UNABLE_TO_SUBSCRIBE           | You can't update the subscription status for this phone number because the user unsubscribed by replying `STOP`. The user must reply `START` to resubscribe.                             |
+| Error code                  | Description                                                                                                                                                  |
+| --------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| INVALID_EMAIL               | The email address isn't formatted correctly.                                                                                                                 |
+| INVALID_PHONE               | The phone number is invalid.                                                                                                                                 |
+| INVALID_SUBSCRIPTION_STATUS | The subscription status is invalid. Check the status or leave it blank.                                                                                      |
+| CONFIGURATION_ERROR         | Your SendGrid settings are not configured correctly. [Contact Segment support](https://app.segment.com/workspaces?contact=1){:target="_blank"} for help.     |
+| SYSTEM_ERROR                | Something went wrong. Please try again.                                                                                                                      |
+| UNABLE_TO_SUBSCRIBE         | You can't update the subscription status for this phone number because the user unsubscribed by replying `STOP`. The user must reply `START` to resubscribe. |
+
+
+### Validation errors
+
+The following table lists validation errors you may run into with your CSV upload:
+
+| Error                                | Error Message                                                                                      |
+| ------------------------------------ | -------------------------------------------------------------------------------------------------- |
+| Invalid file types                   | You can upload only .csv files. Change your file format, then try again.                           |
+| Empty files                          | This file contains no data. Add data to your CSV, then try again.                                  |
+| CSV parsing error                    | We encountered an issue while parsing your CSV file. Validate the CSV file and try again.          |
+| Unexpected/fallback                  | Something went wrong. Try again later.                                                             |
+| Empty header row                     | This file contains empty header(s). Remove the empty header(s), then try again.                    |
+| File exceeds one million rows        | Too many rows. You can upload up to 1000000 rows.                                                  |
+| File exceeds 100 MB                  | Files can be up to 100 MB.                                                                         |
+| Extraneous columns/column name typos | This file has columns that do not match the identifiers in your identity resolution configuration. |
 
 
 ## Set user subscriptions
@@ -115,16 +131,6 @@ Engage accepts both uppercase and lowercase subscription status values.
 > success ""
 > Only contact users that subscribe to your communications. View [User Subscription States](/docs/engage/user-subscriptions/subscription-states/) to learn more.
 
-## CSV upload limits
-
-Please note the following limits as you upload CSV files to Twilio Engage:
-- You can only upload .csv files.
-- Files can't be empty and must have at least one header and one row.
-- You can't have multiple columns with the same header.
-- Upload CSV files with up to 1 million rows (plus one header row).
-- You can only upload one file at a time.
-- The CSV file size can't exceed 100 MB.
-- If you upload the same email or phone number with different subscription states in a single CSV file, Engage doesn't guarantee the subscription status result.
 
 ## Message consent
 

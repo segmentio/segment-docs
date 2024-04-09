@@ -624,7 +624,9 @@ easy_install --upgrade segment-analytics-python
 
 *Experimental feature, available since `1.3.0b1`.*
 
-In some cases, you will want to disable threads and send each request synchronously. To do so, you can use the `sync_mode` option:
+In some cases, you will want to disable threads and send each request synchronously. If your source is managing tasks asynchronously using software like [Celery](https://docs.celeryq.dev/en/stable/getting-started/introduction.html){:target="_blank”}, consider enabling this option to resolve potential conflicts with the Segment Python library's threading system.
+
+To do so, you can use the `sync_mode` option:
 
 ```python
 import segment.analytics as analytics

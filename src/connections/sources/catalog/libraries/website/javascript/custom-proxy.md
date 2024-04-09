@@ -6,6 +6,8 @@ strat: ajs
 
 Custom domains allow you to proxy Analytics.js and proxy all tracking event requests through your domain.
 
+You cannot use custom proxy setup for Analytics.js CDN or Tracking API with device-mode destinations because it requires the destination's native scripts are loaded onto the client, and the requests are sent directly to the destination. 
+
 ## Custom Proxy prerequisites
 
 To set up a custom domain, you need:
@@ -179,7 +181,7 @@ To reduce fetching assets from Segment's CDN, you can bundle Analytics.js with y
 To bundle Analytics.js with your own code, you can: 
 * [Use Analytics.js as an npm package](/docs/connections/sources/catalog/libraries/website/javascript/quickstart/#step-2b-install-segment-as-a-npm-package).
 
-* [Use npm to install your destinations](/docs/connections/sources/catalog/libraries/website/javascript/#add-destinations-from-npm).
+* [Use npm to install your destinations](/docs/connections/sources/catalog/libraries/website/javascript#add-destinations-from-npm).
 
 * Hardcode your settings instead of fetching from the CDN (Segment doesn't recommend this as it completely bypasses the Segment source GUI).
 ```ts
