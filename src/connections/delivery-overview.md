@@ -96,7 +96,7 @@ You can use the Event Delivery alerting features (Delivery Alerts) by selecting 
 
 Note that this is dependent on your [notification settings](/docs/segment-app/#segment-settings). For example, if the threshold is set to 99%, then you'll be notified each time less than 100% of events fail. 
 
-You can also use Connections Alerting: a feature that allows Segment users to receive in-app, email, and Slack notifications related to the performance and throughput of an event-streaming connection.
+You can also use Connections Alerting, a feature that allows Segment users to receive in-app, email, and Slack notifications related to the performance and throughput of an event-streaming connection.
 
 Connections Alerting allows you to create two different alerts:
 - **Source volume alerts**: These alerts notify you if your source ingests an abnormally small or large amount of data. For example, if you set a change percentage of 4%, you would be notified when your source ingests less than 96% or more than 104% of the typical event volume.
