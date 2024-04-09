@@ -135,4 +135,4 @@ If the Mixpanel (Actions) destination uses $group_id as the group key, ensure 
 
 ### Failed events due to timestamp
 
-If your integration is correct and you are still seeing failed events, please review and verify that you are sending all date properties as UTC time format, due to Mixpanel timestamp format requirements. 
+If your integration is correct and you are still seeing failed events, review and verify that you are sending all date properties as UTC time format, due to Mixpanel timestamp format requirements. 
