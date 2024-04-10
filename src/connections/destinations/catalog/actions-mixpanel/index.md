@@ -140,3 +140,7 @@ analytics.track('Example Event', { custom_group_key : 'group1' });
 ### Failed events due to timestamp
 
 If your integration is correct and you are still seeing failed events, review and verify that you are sending all date properties as UTC time format, due to Mixpanel timestamp format requirements. 
+
+### Why is Boardman, Oregon appearing in my users' profile location field?
+
+If you are seeing traffic from Boardman or see Segment as the browser, you might be sending server side calls to your Mixpanel (Actions) destination. To correctly populate your users' profile location field, manually pass the IP information in the context object from the server.
