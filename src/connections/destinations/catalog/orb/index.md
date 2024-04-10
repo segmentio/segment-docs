@@ -24,7 +24,7 @@ Orb currently supports track calls, as specified in the [Segment Spec](/docs/con
 
 ### Track
 
-Use [Track](/docs/connections/spec/track) calls to automatically send usage events based on your customer's interactions with your application. Any Segment track call will be ingested through [Orb's ingestion pipeline](https://docs.withorb.com/docs/orb-docs/event-ingestion){:target="_blank"} <!---TODO: link machine broke ---> and usage information will be used to calculate billable totals. For example:
+Use [Track](/docs/connections/spec/track) calls to automatically send usage events based on your customer's interactions with your application. Any Segment track call will be ingested through [Orb's ingestion pipeline](https://docs.withorb.com/guides/events-and-metrics/event-ingestion){:target="_blank"} and usage information will be used to calculate billable totals. For example:
 ```js
 analytics.track({
   event: "payment_confirmed",

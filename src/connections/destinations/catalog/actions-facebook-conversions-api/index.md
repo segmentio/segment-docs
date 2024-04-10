@@ -205,7 +205,7 @@ Segment automatically maps User Data fields to their corresponding parameters [a
 
 ### Server Event Parameter Requirements
 
-Facebook requires the `action_source` server event parameter for all events sent to the Facebook Conversions API. This parameter specifies where the conversions occur. If `action_source` is set to **website**, then the `client_user_agent` and the `event_source_url` parameters are also required. Events sent to the Conversions API that don't meet the requirements may not be available for optimization, targeting, or measurement.
+Facebook requires the `action_source` server event parameter for all events sent to the Facebook Conversions API. This parameter specifies where the conversions occur. If `action_source` is set to **website**, then the `client_user_agent` and the `event_source_url` parameters are also required. Events sent to the Conversions API that don't meet the requirements may not be available for optimization, targeting, or measurement. Facebook requires additional fields as well such as, Event Name, Event Type, and User Data. See the full list of required fields [here](https://developers.facebook.com/docs/marketing-api/conversions-api/parameters/server-event/). 
 
 ### Verify Events in Facebook
 

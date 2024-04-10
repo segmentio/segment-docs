@@ -26,7 +26,7 @@ Your changes appear in the Segment CDN in about 45 minutes, and then Analytics.j
 > note ""
 > **Note**: If you use this integration, you should remove the Gainsight PX native tag code from your page, since Segment loads it for you.
 
-Don't miss out the [The Configuration Checklist - Segment.com](https://www.gainsight.com/product-experience/){:target="_blank"} in Gainsight PX!
+Don't miss the [Segment Connector](https://support.gainsight.com/Gainsight_NXT/Connectors/Connectors/Sightline_Integrations/Usage_Data_Connectors/Segment_Connector){:target="_blank"} page in Gainsight PX documentation!
 
 ## Identify
 If you're not familiar with the Segment Specs, take a look to understand what the [Identify method](/docs/connections/spec/identify/) does.

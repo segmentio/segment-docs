@@ -27,7 +27,7 @@ Amplitude (Actions) provides the following benefits over the classic Amplitude d
 
 ## Getting started
 
-1. Before you start, go to your [Amplitude workspace](https://analytics.amplitude.com){:target="_blank"}. Click **Settings** in the bottom left, then click **Projects** in the left menu. Select your **Project**. Copy the Amplitude API Key and Secret Key for the project.
+1. Before you start, go to your [Amplitude workspace](https://analytics.amplitude.com){:target="_blank"}. Click **Settings** in the top right and then click **Organization Settings** to navigate to your **Projects** in the menu. Select your **Project**. Copy the Amplitude API Key and Secret Key for the project.
 2. From the Segment web app, click **Catalog**, then click **Destinations**.
 3. Find the Destinations Actions item in the left navigation, and click it.
 4. Click the "Amplitude" item to select it and click **Configure**.
@@ -59,7 +59,7 @@ Session tracking is available with Segment's new libraries: [Analytics.js 2.0](/
 
 When connected to the Analytics.js 2.0 source, Segment automatically loads a plugin on your website for session tracking and enrichment as an alternative to the Amplitude SDK. This means you don't need to bundle any software or write any code to run on the user's device, and can use more of the Segment platform features for data going to Amplitude, like [Protocols filtering and transformations](/docs/protocols/) and [Unify Identity Resolution](/unify/identity-resolution/).
 
-If you're using one of Segment's [Swift]((/docs/connections/sources/catalog/libraries/mobile/apple/), [Kotlin](/docs/connections/sources/catalog/libraries/mobile/kotlin-android/), or [React Native](/docs/connections/sources/catalog/libraries/mobile/react-native/) libraries, you will need to include the Amplitude destination plugin to enable session tracking. 
+If you're using one of Segment's [Swift](/docs/connections/sources/catalog/libraries/mobile/apple/), [Kotlin](/docs/connections/sources/catalog/libraries/mobile/kotlin-android/), or [React Native](/docs/connections/sources/catalog/libraries/mobile/react-native/) libraries, you will need to include the Amplitude destination plugin to enable session tracking. 
 
 You can read more about Amplitude's [tracking sessions](https://help.amplitude.com/hc/en-us/articles/115002323627-Track-sessions){:target="_blank”} feature in Amplitude's documentation. 
 

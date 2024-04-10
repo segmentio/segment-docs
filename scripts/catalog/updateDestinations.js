@@ -142,7 +142,8 @@ const updateDestinations = async () => {
         connection_modes,
         settings,
         actions,
-        presets
+        presets,
+        partnerOwned: destination.partnerOwned
       };
   
       // Add the updated destination to the destinationsUpdated array

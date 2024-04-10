@@ -126,7 +126,9 @@ To add multiple mappings from your warehouse to your destination, repeat steps 1
 ## Using Reverse ETL
 After you've followed [all four steps](/docs/connections/reverse-etl/#getting-started) and set up your source, model, destination, and mappings for Reverse ETL, your data will extract and sync to your destination(s) right away if you chose an interval schedule. If you set your data to extract at a specific day and time, the extraction will take place then.
 
-### Sync history and observability
+### Managing syncs
+
+#### Sync history and observability
 Check the status of your data extractions and see details of your syncs. Click into failed records to view additional details on the error, sample payloads to help you debug the issue, and recommended actions.
 
 To check the status of your extractions:
@@ -139,6 +141,15 @@ To check the status of your extractions:
     * How many total records were extracted, as well as a breakdown of the number of records added, updated, and deleted.
     * The load results - how many successful records were synced as well as how many records were updated, deleted, or are new.
 5. If your sync failed, click the failed reason to get more details on the error and view sample payloads to help troubleshoot the issue.
+
+#### Reset syncs
+You can reset your syncs so that your data is synced from the beginning. This means that Segment resyncs your entire dataset for the model.
+
+To reset a sync:
+1. Select the three dots next to **Sync now**.
+2. Select **Reset sync**. 
+3. Select the checkbox that you understand what happens when a sync is reset.
+4. Click **Reset sync**.
 
 #### Replays
 You can choose to replay syncs. To replay a specific sync, contact [friends@segment.com](mailto:friends@segment.com). Keep in mind that triggering a replay resyncs all records for a given sync.

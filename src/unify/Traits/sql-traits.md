@@ -6,8 +6,8 @@ redirect_from:
   - '/engage/audiences/sql-traits'
 ---
 
-> info ""
-> Beginning August 18, 2023, new Unify Plus users can access SQL Traits in Unify. 
+> info "SQL Traits End of Sale"
+> SQL Traits entered End of Sale as of March 31, 2024. Existing Segment customers will continue to have access to SQL Traits, but Segment will no longer offer SQL Traits to new customers. Segment recommends using [Reverse ETL](/docs/connections/reverse-etl/) to sync your data into Segment. 
  
  
 Use SQL Traits to import user or account traits from your data warehouse back into Unify or Engage to build audiences or to enhance data that you send to other Destinations.
@@ -165,7 +165,6 @@ Click **Create Computed Trait** to save the Trait.
 Check **Compute without destinations** if you only want to send to Engage.
 
 When you create a SQL Trait, Segment runs the query on the warehouse twice a day by default. You can customize the time at which Segment queries the data warehouse and  the frequency, up to once per hour, from the SQL Trait's settings.
-(If you're interested in a more frequent schedule, [contact Segment Support](https://segment.com/help/contact/){:target="_blank"}.)
 
 For each row (user or account) in the query result, Engage sends an identify or group call with all the columns that were returned as Traits. For example, if you write a query that returns `user_id, has_open_ticket, num_tickets_90_days, avg_zendesk_rating_90days` Segment sends an identify call with the following payload:
 
@@ -214,6 +213,10 @@ Yes, Segment limits request sizes to a maximum of 16KB. Records larger than this
 ### Do SQL Traits support arrays?
 
 No, SQL Traits supports string and numeric data types. You can cast arrays as a comma-separated string. In this case, if you used this trait to build an audience, you could check if the array contains a certain value with the "contains" operator, but the value is sent to any connected destinations as a string.
+
+### Can I change the Warehouse Source after a SQL trait has been created?
+
+After a SQL trait has been created, you can't change its Warehouse Source. You'll need to create a new trait if you want to change the Warehouse source.
 
 ## Troubleshooting
 
