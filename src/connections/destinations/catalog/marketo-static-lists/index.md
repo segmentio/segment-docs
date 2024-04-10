@@ -34,7 +34,8 @@ Every time you create an audience in Engage and connect it to Marketo Static Lis
 1. Creates a list with the same name as the Engage audience in the folder designated for Engage.
 2. Adds any users to that list who both fit the audience definition and have an email address.
 3. If a user has multiple email addresses on their identity graph, each email address becomes a unique entry on the list.
-4. After the audience is configured, Segment checks which users still fit the audience definition, and adds or removes users from the audience.
+4. After the audience is configured, Segment evaluates which users meet the audience criteria, updating the audience and list, by adding or removing users accordingly.
+
 {% include content/sync-frequency-note.md %}
 
 ## Configuring Marketo Static Lists
