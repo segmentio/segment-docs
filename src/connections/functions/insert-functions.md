@@ -472,9 +472,9 @@ No, specifying an endpoint is not always required for insert functions. If your 
 However, if your function aims to enrich event data by fetching additional information from an external service, then you must specify the endpoint. This would be the URL of the external service's API where the enriched or captured data is sent.
 
 
-##### Can I create a device-mode destination?
+##### Can I use Insert Functions with Device Mode destinations?
 
-No, destination insert functions are currently available as cloud-mode destinations only. Segment is in the early phases of exploration and discovery for supporting customer "web plugins" for custom device-mode destinations and other use cases, but this is unsupported today.
+No, Destination Insert Functions are currently available for use with Cloud Mode (server-side) destinations only. Segment is in the early phases of exploration and discovery for supporting customer web plugins for custom Device Mode destinations and other use cases, but this is unsupported today.
 
 ##### Can I connect an insert function to multiple destinations?
 
@@ -484,9 +484,9 @@ Yes, an insert function can be connected to multiple destinations.
 
 Yes, you can have both destination filters and destination insert functions in the same connection. 
 
-##### Are insert functions invoked before or after destination filters are applied?
+##### Are insert functions invoked before or after Destination Filters are applied?
 
-Segment's data pipeline applies destination filters before invoking insert functions. 
+Segment's data pipeline applies Destination Filters before invoking Insert Functions. 
 
 ##### Why am I receiving a 500 Internal Error when saving the same of the destination insert function?
 
