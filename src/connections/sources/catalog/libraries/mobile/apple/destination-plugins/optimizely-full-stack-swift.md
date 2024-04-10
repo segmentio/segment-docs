@@ -3,12 +3,12 @@ title: Analytics Swift Optimizely Full Stack Plugin
 strat: swift
 ---
 
-Add OptimizelyFullStack session tracking support to your applications via this plugin for [Analytics-Swift](https://github.com/segmentio/analytics-swift)
+Add OptimizelyFullStack session tracking support to your applications using this plugin for [Analytics-Swift](https://github.com/segmentio/analytics-swift)
 
 > warning ""
-> This plugin simply adds session data for OptimizelyFullStack, and events are sent via Cloud Mode.
+> This plugin simply adds session data for OptimizelyFullStack, and events are sent using Cloud Mode.
 
-## Getting Started
+## Getting started
 
 1. In your Segment source dashboard, enable the "Optimizely Full Stack" destination (*not the "Optimizely Web" destination*).
 2. Include your Optimizely project's `datafile` URL in your Segment settings.
@@ -18,14 +18,16 @@ Add OptimizelyFullStack session tracking support to your applications via this p
 
 ## Adding the dependency
 
-### via Xcode
-In the Xcode `File` menu, click `Add Packages`.  You'll see a dialog where you can search for Swift packages.  In the search field, enter the URL to this repo.
+### Using Xcode
+In the Xcode `File` menu, click `Add Packages`.  You'll see a dialog where you can search for Swift packages.  In the search field, enter the URL to this repo:
 
+```
 https://github.com/segment-integrations/analytics-swift-integration-optimizely-full-stack
+```
 
 You'll then have the option to pin to a version, or specific branch, as well as which project in your workspace to add it to.  Once you've made your selections, click the `Add Package` button.  
 
-### via Package.swift
+### Using Package.swift
 
 Open your Package.swift file and add the following do your the `dependencies` section:
 
@@ -55,9 +57,10 @@ let analytics = Analytics(configuration: Configuration(writeKey: "<YOUR WRITE KE
                     .trackApplicationLifecycleEvents(true))
 analytics.add(plugin: OptimizelyFullStack(optimizelyKey: "<Optimizely Production Key>"))
 ```
-Please Note : Here "optimizelyKey" you can get from Optimizely Dashboard Settings. You can use development or production SDK key respectively.
+> info ""
+> Generate your `optimizelyKey` from the Optimizely Dashboard Settings. You can use a development or production SDK key.
 
-Your events will now be given OptimizelyFullStack session data and start flowing to OptimizelyFullStack via Cloud Mode.
+Your events will now be given OptimizelyFullStack session data and start flowing to OptimizelyFullStack in Cloud Mode.
 
 
 ### Track
@@ -74,7 +77,7 @@ Segment also handles the following mapping:
 `revenue` values should be passed as a Segment `property`. The value should be an integer and represent the value in cents, so, for example, $1 should be represented by `100`.
 
 > note ""
-> **Note:** [Custom Event Tags](https://docs.developers.optimizely.com/full-stack/docs/include-event-tags) in Optimizely, which include all Event Tags except `revenue` and `value`, are not displayed on the Optimizely results page, however they are available in a [Data Export](https://docs.developers.optimizely.com/web/docs/data-export) report. Event Tags can be strings, integers, floating point numbers, or boolean values. Optimizely rejects events with any other data types (for example,  arrays).
+> **Note:** [Custom Event Tags](https://docs.developers.optimizely.com/full-stack/docs/include-event-tags){:target="_blank”} in Optimizely, which include all Event Tags except `revenue` and `value`, are not displayed on the Optimizely results page, however they are available in a [Data Export](https://docs.developers.optimizely.com/web/docs/data-export){:target="_blank”} report. Event Tags can be strings, integers, floating point numbers, or boolean values. Optimizely rejects events with any other data types (for example,  arrays).
 
 Segment defaults to identifying users with their `anonymousId`. Enabling "Use User ID" setting in your Segment dashboard means that only `track` events triggered by identified users are passed downstream to Optimizely. You may optionally fall back to `anonymousId` when `userId` is unavailable by setting `fallbackToAnonymousId` to `true`.
 
@@ -84,14 +87,14 @@ Invoking a Segment `identify` event sets Segment `traits` as Optimizely `attribu
 
 ### Notification Listeners
 
-Notification listeners are not available for Segment `track` events when implementing Optimizely using Segment using cloud-mode. [Notification listeners](https://docs.developers.optimizely.com/full-stack/docs/notification-listeners) are still available with any native call invoked from your Optimizely client instance.
+Notification listeners are not available for Segment `track` events when implementing Optimizely using Segment using cloud-mode. [Notification listeners](https://docs.developers.optimizely.com/full-stack/docs/notification-listeners){:target="_blank”} are still available with any native call invoked from your Optimizely client instance.
 
 ## Engage
 
 Follow these instructions on how to set up Engage and Optimizely:
 
-* [Using Segment Personas and Optimizely Full Stack for Omnichannel Experiments](https://www.optimizely.com/insights/blog/segment-personas-optimizely-full-stack-omnichannel-experiments/){:target="_blank"}
+[Using Segment Personas and Optimizely Full Stack for Omnichannel Experiments](https://www.optimizely.com/insights/blog/segment-personas-optimizely-full-stack-omnichannel-experiments/){:target="_blank"}
 
 
 ## GDPR Support
-Segment supports deleting/suppressing users in Optimizely using the [Segment app](/docs/privacy/user-deletion-and-suppression/). In order to do this however, you will need to create a [Personal Access Token](https://developers.optimizely.com/x/authentication/personal-token/) in Optimizely and provide it as the value of the Access Token setting.
+Segment supports deleting/suppressing users in Optimizely using the [Segment app](/docs/privacy/user-deletion-and-suppression/). In order to do this however, you will need to create a [Personal Access Token](https://developers.optimizely.com/x/authentication/personal-token/){:target="_blank”} in Optimizely and provide it as the value of the Access Token setting.
