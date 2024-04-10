@@ -138,7 +138,7 @@ To send Track events with a custom Group Key, include the key as a property of T
 analytics.track('Example Event', { custom_group_key : 'group1' });
 ```
 
-### Why is Broadman, Oregon appearing in all user's profile location field?
+### Why is Boardman, Oregon appearing in my users' profile location field?
 
-If you are seeing traffic from Boardman or see Segment as the browser, this is most likely because you are sending calls to Mixpanel (Actions) from the server side (our AWS servers reside in Boardman, Oregon). In order to prevent the Boardman issue, you would have to manually pass the IP information in the context object from the server.
+If you are seeing traffic from Boardman or see Segment as the browser, you might be sending server side calls to your Mixpanel (Actions) destination. To correctly populate your users' profile location field, manually pass the IP information in the context object from the server.
 
