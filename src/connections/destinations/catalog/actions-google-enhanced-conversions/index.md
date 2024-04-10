@@ -87,7 +87,7 @@ To enable consent mode for your Google Ads Conversions destination, you must upd
     1. Navigate to **Connections > Destinations** and select your Google Ads Conversion destination. 
     2. Go to the **Mappings** tab of the destination.
     3. Select the mapping you want to edit. 
-    4. In the **Select mappings** section, for **Ad User Data Consent State** and **Ad Personalization Consent State**, select the **Event Variables** tab and create an event variable to directly grab the value from the payload. Ensure it translates to `GRANTED`, `DENIED`, or `UNSPECIFIED`. You can use an insert function to translate to `GRANTED`, `DENIED`, or `UNSPECIFIED` if your consent values are booleans. You can use the replace function if it's a string.
+    4. In the **Select mappings** section, for **Ad User Data Consent State** and **Ad Personalization Consent State**, select the **Event Variables** tab and create an event variable to directly grab the value from the payload. Ensure it translates to `GRANTED`, `DENIED`, or `UNSPECIFIED`. You can use an insert or [replace function](/docs/connections/destinations/actions/#replace-function) to translate other values to `GRANTED`, `DENIED`, or `UNSPECIFIED`.
 
 If you send `DENIED` for any of the two consent states, it results in an error and the data won't send to Google. For more information, see [FAQ about the EU user consent policy for Customer Match upload partners](https://support.google.com/google-ads/answer/14310715?hl=en){:target="_blank"}. 
 
@@ -113,7 +113,7 @@ Conversions tracked by other means, such as importing goals from Google Analytic
 
 ### Enhanced conversions for leads
 
-[Enhanced conversions for leads](https://developers.google.com/google-ads/api/docs/conversions/upload-identifiers){:target="_blank"} allows you to use hashed, first-party user-provided data from your website lead forms for offline lead measurement. When you upload your leads, the provided hashed information is used to attribute back to the Google Ad campaign. In order to send enhanced conversions for leads, you can use the "Upload Click Conversion" action. If available, include both GCLID and send an email address and phone number of the user for Segment to hash and send to Google Ads. 
+[Enhanced conversions for leads](https://developers.google.com/google-ads/api/docs/conversions/upload-identifiers){:target="_blank"} allows you to use hashed, first-party user-provided data from your website lead forms for offline lead measurement. When you upload your leads, the provided hashed information is used to attribute back to the Google Ad campaign. In order to send enhanced conversions for leads, you can use the "Upload Click Conversion" action. According to Goggle, if you do not have GCLID at your source payload, you have to pass user identifiers, at least email or phone number in your mappings, for Google to make the match. A conversion must be addressed to an existing profile. If there's not a match, Google responds with a failure.
 
 ### Refreshing access tokens
 
