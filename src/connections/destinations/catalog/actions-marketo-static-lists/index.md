@@ -58,50 +58,40 @@ In this step, you'll create an API-Only Marketo user with both Access API and Le
 
 ### Using Marketo Static Lists (Actions) destination with Engage
 
-1. From your Segment workspace, go to **Engage → Engage Settings → Destinations→ Add Destination** and then Search for Marketo Static Lists (Actions).
-2. In the destination settings, enter the **Client Id**, **Client Secret**, **Endpoint** and **Folder Name** from the LaunchPoint service and folder you created in Steps 2 and 3. For **Endpoint**, note the Endpoint from Step 3.
-3. Click the toggle to enable the Marketo Static Lists (Actions) destination.
-4. Navigate to the **Mappings** tab, click **Add Mapping** and select **Add to List**. 
-6. Click **Save** and make sure to enable the mapping. 
-7. On the **Mappings** tab, click **Add Mapping** and select **Remove from List**. 
-8. Click **Save** and make sure you enable the mapping. 
-9. Navigate to the Engage Audiences tab and create a new audience.
+1. From your Segment workspace, go to **Engage → Engage Settings → Destinations → Add Destination**, and then Search for Marketo Static Lists (Actions).
+2. In the destination settings, enter the **Client Id**, **Client Secret**, **Endpoint**, and **Folder Name** from the LaunchPoint service and folder you created in Steps 2 and 3. For **Endpoint**, note the Endpoint from Step 3 above.
+3. Select the toggle to enable the Marketo Static Lists (Actions) destination.
+4. Navigate to the **Mappings** tab, click **Add Mapping**, and select **Add to List**. 
+6. Click **Save**, and make sure to enable the mapping. 
+7. On the **Mappings** tab, click **Add Mapping**, and select **Remove from List**. 
+8. Click **Save**, and make sure you enable the mapping. 
+9. Navigate to the Engage Audiences tab, and create a new audience.
 10. Give your audience a name, some event and trait criteria, then click **Preview**.
-11. Select Marketo Static Lists as a destination for the Audience.
+11. Select **Marketo Static Lists** as a destination for the Audience.
 12. In the settings that appear in the side panel, toggle the **Send Track** option on, and don't change the **Audience Entered/Audience Exited** event names.
 13. Click **Save Settings**.
 
 ### Using Marketo Static Lists (Actions) destination with RETL
 
-1. Navigate to your data warehouse and add Marketo Static Lists (Actions) as a destination.
-2. From your model, click **Add Mapping** and select your Marketo Marketo Static Lists (Actions) destination and the **Add to List** Action.
+1. Navigate to your data warehouse, and add Marketo Static Lists (Actions) as a destination.
+2. From your model, click **Add Mapping**, and select your Marketo Marketo Static Lists (Actions) destination, and the **Add to List** Action.
 3. If you already have a list created in Marketo, fill in the List ID field. If you want Segment to create a list in Marketo, fill in the List name field. 
 4. Finish setting up the rest of the action.
 5. Click **Save Mapping**.
 
-When you save the mapping, a list will be created in Marketo. You can update the list the mapping syncs to at any time. 
+When you save the mapping, a list is created in Marketo. You can update the list the mapping syncs to at any time. 
 
 > info ""
 > Only users with an email address appear in the list in Marketo. Users with multiple email addresses as external ids appear in the list once for each email address.
 
 You can view the audience in Marketo by going to **Lead Database→ Group Lists→Name of folder you created in Step 3 → Audience name**
 
-
 ## Troubleshooting
 
-#### Not seeing an audience in Marketo
-
-Check that you followed all of the set-up steps.
-
-Wait six or more hours after setup for your audience to start appearing in Marketo.
-
-Check that you didn't create a list in the folder for the audience - Segment creates the list for you, and an existing one can conflict.
-
-Check that the audience members you expect have an email address on their profile.
+#### Not seeing an audience in Marketo?
+Check that you followed all of the set up steps. Wait six or more hours after setup for your audience to start appearing in Marketo. Check that you didn't create a list in the folder for the audience - Segment creates the list for you, and an existing one can conflict. Check that the audience members you expect have an email address on their profile.
 
 #### Audience size is smaller than expected
-Only users in the audience who also have an email address are uploaded to the list.
-
-You might need to adjust your query to filter out users without an email so you can get a better estimate of how many users will appear on the list. In the example below, we added an AND condition where users have a Custom trait of `email` which `exists`.
+Only users in the audience who also have an email address are uploaded to the list. You may need to adjust your query to filter out users without an email so you can get a better estimate of how many users will appear on the list. In the example below, we added an AND condition where users have a Custom trait of `email` which `exists`.
 
 If a user has multiple email addresses, each address appears once in the Marketo lists. 
