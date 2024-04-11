@@ -104,6 +104,10 @@ Segment rebuilds the machine learning model every 30 days.
 
 Every seven days.
 
+#### Can I update Predictive Traits and Predictive Audiences?
+
+Predictive Traits can't be updated, but Predictive Audiences can. To modify a Predictive Trait, you'll need to recreate it. 
+
 #### How many predictions can I have? 
 
 You get five predictions as part of Engage Foundations or Unify Plus. To purchase more predictions, reach out to your CSM.
