@@ -110,7 +110,7 @@ You get five predictions as part of Engage Foundations or Unify Plus. To purchas
 
 #### Can I update Predictive Traits and Predictive Audiences?
 
-To modify Predictive Traits, you'll need to recreate them as they cannot be directly updated. However, Predictive Audiences can be edited to reflect new criteria or objectives.
+Predictive Traits can't be updated, but Predictive Audiences can. To modify a Predictive Trait, you'll need to recreate it. 
 
 #### Is Predictions HIPAA-compliant?
 
