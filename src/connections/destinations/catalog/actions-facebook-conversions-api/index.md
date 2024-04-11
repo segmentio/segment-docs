@@ -169,11 +169,11 @@ Segment creates a SHA-256 hash of the following fields before sending to Faceboo
 
 If you use Facebook Pixel, the Pixel library also hashes the External ID. This means External IDs will match across Facebook Pixel and Facebook Conversions API if they use the External ID for [deduplication](https://developers.facebook.com/docs/marketing-api/conversions-api/deduplicate-pixel-and-server-events/#fbp-or-external-id){:target="_blank"}.
 
-### Double Hashing PII Data
+### Double hashing PII data
 
-If you hash data before sending it to Segment, and then Segment applies its hashing, this could result in double hashing. Double hashing might make the data unusable for matching purposes on platforms like Facebook, which rely on specific hashing algorithms (e.g., SHA-256) applied to the original PII to match users. If your data involves a lot of PII and PHI, it's recommended to send this data to Segment in its original, non-hashed format. You can then rely on Segment's privacy tools and destination-specific configurations to ensure that data is hashed appropriately when sent to destinations that require hashed PII. This approach helps maintain the integrity and usability of the data while ensuring privacy and compliance.
+If you hash data before sending it to Segment, and then Segment applies its hashing, this could result in double hashing. Double hashing might make the data unusable for matching purposes on platforms like Facebook, which rely on specific hashing algorithms (like SHA-256) applied to the original PII to match users. If your data involves a lot of PII and PHI, Segment recommendeds that you send this data to Segment in its original, non-hashed format. You can then rely on Segment's privacy tools and destination-specific configurations to ensure that data is hashed appropriately when sent to destinations that require hashed PII. This approach helps maintain the integrity and usability of the data while ensuring privacy and compliance.
 
-### User Data Formatting
+### User data formatting
 
 Segment applies formatting to User Data Parameters as follows:
 
