@@ -51,7 +51,7 @@ In this step, you'll create an API-Only Marketo user with both Access API and Le
 
 1. Go to **Admin** → **Integration**→ **LaunchPoint** → **New**
 2. Create a new service. In the Service field, select `Custom`, and in the **API Only User** field, select the user you created in step 1.
-3. Write down the **Client Id** and **Client Secret** for this service, as you will need it in Step 4.
+3. Write down the **Client Id** and **Client Secret** for this service, as you will need it when configuring the destination settings.
 
 
 ### Step 3: Create a Marketo Lead Database folder and get your Marketo Endpoint
@@ -104,11 +104,9 @@ Wait six or more hours after setup for your audience to start appearing in Marke
 
 Check that you didn't create a list in the folder for the audience - Segment creates the list for you, and an existing one can conflict.
 
-Check that the audience members you expect have an email address on their profile.
-
 #### Audience size is smaller than expected
 Only users in the audience who also have an email address are uploaded to the list.
 
-You might need to adjust your query to filter out users without an email so you can get a better estimate of how many users will appear on the list. In the example below, we added an AND condition where users have a Custom trait of `email` which `exists`.
+You might need to adjust your query to filter out users without an email so you can get a better estimate of how many users will appear on the list.
 
-If a user has multiple email addresses, each address appears once in the Marketo lists. 
+If a user has multiple email addresses, each address appears once in the Marketo list. 
