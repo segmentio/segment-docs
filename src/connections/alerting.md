@@ -12,7 +12,7 @@ On the Alerts tab, you can create alerts and view all active alerts for this con
 
 ## Source volume alerts
 
-You can create an alert that notifies you when the volume of events received by your source in the last 24 hours changes beyond a percentage you set. For example, if you set a change percentage of 4%, Segment notifies you when your source ingests less than 96% or more than 104% of the typical event volume. 
+You can create an alert that notifies you when the volume of events received by your source in the last 24 hours changes beyond a percentage you set. For example, if you set a change percentage of 4%, Segment notifies you if your source ingests less than 96% or more than 104% of the event volume over the previous 24 hour period. 
 
 To receive a source volume alert in a Slack channel, you must first create a Slack webhook. For more information about Slack webhooks, see the [Sending messages using incoming webhooks](https://api.slack.com/messaging/webhooks){:target="_blank”} documentation.
 
