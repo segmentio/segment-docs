@@ -193,7 +193,9 @@ If necessary, click **New Mapping** to create a new, blank action.
 
 The coalesce function takes a primary value and uses it if it is available. If the value isn't available, the function uses the fallback value instead. 
 
+### Replace function
 
+The replace function allows you to replace a string, integer, or boolean with a new value. You have the option to replace up to two values within a single field.
 
 ### Conditions
 
@@ -270,3 +272,7 @@ Access Tokens that were generated from initial authorization, for example, when 
 
 The underlying systems for these flows have their own copy of the token, which can expire at different points in time.
 Threfore, if you see a 401 error in a sample response, it is likely that you’ll also see another request was made after it, to ask the downstream destination for a new token. Then one more request was made to actually send the data in your payload to the downstream destination.
+
+### Is it possible to map a field from one event to another?
+
+Segment integrations process events through mappings individially. This means that no context is held that would allow you to map a value from one event to the field of a subsequent event. Each event itself must contain all of the data you'd like to send downstream in regards to it. For example, you cannot send `email` in on an Identify call and then access that same `email` field on a Track call that comes in later if that Track call doesn't also have `email` set on it. 
