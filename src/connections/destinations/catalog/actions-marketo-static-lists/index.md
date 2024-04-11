@@ -8,16 +8,13 @@ id: 65302a514ce4a2f0f14cd426
 
 Marketo Static Lists (Actions) is a rebuild of the classic destination that provides the following benefits:
 
-- **Simple setup** - Marketo Static Lists (Actions) has a streamlined default setup process making it easier to get started in a way that "just works".
-- **More control** - Actions-based destinations enable you to define the mapping between the data Segment receives from your sources, and the data Segment sends to Marketo.
-- **Default property mappings** - Default mappings from the Segment like event, timestamp, and more, allow data to be mapped correctly without any setup required.
+- **Streamlined setup process** - Marketo Static Lists (Actions) has a streamlined default setup process, making it faster to get started in a way that "just works".
+- **More control** - Actions-based destinations allow you to define the mapping between the data Segment receives from your sources, and the data Segment sends to Marketo.
+- **Default property mappings** - Default mappings from the Segment like event, timestamp, and more allows data to be mapped correctly without any setup required.
 
 ## Overview
 
-The Marketo Static Lists (Actions) destination lets you sync users into Marketo as a **List**.
-
-This allows you to run email campaigns in Marketo without having to manually find and upload a refreshed csv of users. This documentation explains how to set up Marketo in Segment, and what to expect in your Marketo UI.
-
+The Marketo Static Lists (Actions) destination lets you sync users into Marketo as a **List**, allowing you to run email campaigns in Marketo without having to manually find and upload a refreshed csv of users. This documentation explains how to set up Marketo in Segment, and what to expect in your Marketo UI.
 
 ## Details
 
@@ -42,21 +39,17 @@ This allows you to run email campaigns in Marketo without having to manually fin
 In this step, you'll create an API-Only Marketo user with both Access API and Lead Database access.
 
 1. You can use an existing role with these permissions, or create a new role that has both Access API and Access Lead Database permissions. (Do this in Marketo by going to **Admin**→ **Users & Roles** → **Roles**).
-
-
-2. Go to **Admin**→ **Users & Roles** → **Users** → **Invite New User** and create a new **API Only user** with the role that has both Access API and Lead Database permissions. **Be sure to check the API Only box.**
-
+2. Go to **Admin** → **Users & Roles** → **Users** → **Invite New User** and create a new **API Only user** with the role that has both Access API and Lead Database permissions. **Be sure to check the API Only box.**
 
 ### Step 2: Create a Marketo Launchpoint Service
 
-1. Go to **Admin** → **Integration**→ **LaunchPoint** → **New**
+1. Go to **Admin** → **Integration** → **LaunchPoint** → **New**
 2. Create a new service. In the Service field, select `Custom`, and in the **API Only User** field, select the user you created in step 1.
 3. Write down the **Client Id** and **Client Secret** for this service, as you will need it in Step 4.
 
-
 ### Step 3: Create a Marketo Lead Database folder and get your Marketo Endpoint
 
-1. Go to your Marketo Lead Database and create a new folder under Group Lists. Once connected, each Engage audience shows up as a list in this folder.
+1. Go to your Marketo Lead Database, and create a new folder under Group Lists. After connecting, each Engage audience shows up as a list in this folder.
 
 2. Before you continue to the next step, in Marketo, go to **Admin → Web Services**, and copy or write down the REST API Endpoint. **Be sure to copy the REST endpoint and not the SOAP endpoint.** You'll need that in the next step.
 
