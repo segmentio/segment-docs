@@ -54,28 +54,9 @@ As you're building your Linked Audience, you can choose from the following condi
 
 #### Error States
 
-As you’re building or maintaining your audience, you may encounter an error or warning message about possible impacts to your audience. Below are some common reasons errors occur, along with suggested troubleshooting steps.
+As you’re building or maintaining your audience, you may encounter errors or warning messages about possible issues with your audience. For example, when Segment tries to compute your audience, and an entity or entity column from your linked audience definition is missing from your data graph or data warehouse, then you may see an error on the linked audiences overview page in Segment. Additionally, computing your linked audineces is a multi-step process, and sometimes an error can occur in one of the steps of the workflow. 
 
-| Failure | External message | Workflow implication |
-|---|---|---|
-| Parse error | An unknown error occurred. Execution will retry. If the problem persists, please contact Segment support. | Terminate and execute next run |
-| Graph missing entity | Entity missing from Data Graph: <entity> | Terminate and execute next run |
-| Graph missing column for entity | Entity column missing from Data Graph for Entity <entity> and Column: <column> | Terminate and execute next run |
-| No columns exist for entity | No columns exist for entity in Data Graph: <entity> | Terminate and execute next run |
-| Missing join key between entities | Join key missing from Data Graph for relation: <relationship> | Terminate and execute next run |
-| Join key is wrong type | Relationship key should be a string: <relationship> | Terminate and execute next run |
-| Entity relationship not in Data Graph | Entity relationship not in Data Graph for entity <entity> | Terminate and execute next run |
-| Entity relationship not in Data Graph | Entity relationship not in Data Graph for relationship: <relationship slug> | Terminate and execute next run |
-| Entity relationship not in Data Graph | Entity relationship not in Data Graph for entity: <entity> and relationship: <relationship slug> | Terminate and execute next run |
-| Query fails for unknown internal error | An unexpected error occurred. Execution will retry. If the problem persists, please contact Segment support. | Retry |
-| Update model fails | An unexpected error occurred. Execution will retry. If the problem persists, please contact Segment support. | Retry |
-| Kick off rETL job | An unexpected error occurred. Execution will retry. If the problem persists, please contact Segment support. | Retry |
-| Warehouse errors | Pass through warehouse errors | Terminate and execute next run |
-| SQL Compilation execution | Examples: extract phase failed: An unexpected Snowflake error occurred trying to execute your model query: 000904 (42000): SQL compilation error: error line 30 at position 61 invalid identifier '<XX.PROPERTIES>'  extract phase failed: An unexpected Snowflake error occurred trying to execute your model query: 000904 (42000): SQL compilation error: error line 23 at position 19 invalid identifier '<XX.TRAITS>' |  |
-| Duplicate records for ID | Examples: extract phase failed: Duplicate records have been detected. This could be because the model query returned multiple records for the same ID column (MATCHID), or the Segment records table itself has duplicate records. |  |
-| Check results | An unexpected error occurred attempting to execute this model query. | Retry |
-| Process results | Execution is paused due to an identified operational issue. | Pause for manual intervention  |
-| Load results | Execution is paused due to an identified operational issue. |  |
+Generally, when an error occurs, Segment will retry that step or Segment will terminate the workflow and try to re-run it again at the next scheduled compute run. If you need more help diagnosing your errors or warnings, reach out to [friends@segment.com](mailto:friends@segment.com){:target="_blank"}.
 
 #### Edit an audience
 To edit an audience:
