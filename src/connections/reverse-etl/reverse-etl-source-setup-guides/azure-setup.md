@@ -2,9 +2,6 @@
 title: Azure Reverse ETL Setup
 ---
 
-> info "Public beta"
-> The Azure source for Reverse ETL is in public beta and is governed by Segment's [First Access and Beta Preview Terms](https://www.twilio.com/en-us/legal/tos){:target="_blank"}. 
-
 Set up Azure as your Reverse ETL source.
 
 At a high level, when you set up Azure dedicated SQL pools for Reverse ETL, the configured user needs read permissions for any resources (databases, schemas, tables) the query needs to access. Segment keeps track of changes to your query results with a managed schema (`__SEGMENT_REVERSE_ETL`), which requires the configured user to allow write permissions for that schema.
