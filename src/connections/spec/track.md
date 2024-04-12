@@ -78,7 +78,7 @@ Here's a complete example of a Track call:
 
 ### Create your own Track call
 
-Use the following interactive code pen to see what your Track calls would look like with user-provided information:
+Use the following interactive code pen to see what your Track calls look like with user-provided information:
 
 {% include components/codepens/track-spec.html %}
 
@@ -114,7 +114,6 @@ The following are all of the reserved properties Segment has standardized that a
 | `value`      | Number   | An abstract "value" to associate with an event. This is typically used in situations where the event doesn't generate real-dollar revenue, but has an intrinsic value to a marketing team, like newsletter signups.       |
 
 **Note:** You might be used to some destinations recognizing special properties differently. For example, Mixpanel has a special `track_charges` method for accepting revenue. Luckily, you don't have to worry about those inconsistencies. Just pass along `revenue`.  **Segment will handle all of the destination-specific conversions for you automatically.** Same goes for the rest of the reserved properties.
-
 
 ## Sending Traits in a Track Call - Destination Actions
 All events have the ability to include additional event data in the `context` object. There may be instances when your team may want to include user traits or group traits in a Track event, such as having a single event trigger multiple events in an Actions destination. Since user Traits are not standard fields for a Track event, in order to do this, you'll need to explicitely pass the user's traits into the event payload's `context.traits` object.
