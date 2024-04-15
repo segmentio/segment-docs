@@ -434,7 +434,7 @@ If you're sending your batch to an external service, the execution time of the f
 {% include content/ip-allowlist.md %}
 
 ##### Can I use a Destination Function to send data to another Segment source?
-Sure! If you do this, please remove the `messageId` and the `writeKey` from the payload in your Function code. Leaving either field on your payload will cause unexpected behavior that may cause your event to be delivered to the wrong source or to not be delivered at all. 
+Yes, to do so, remove the `messageId` and the `writeKey` from the payload in your Function code. Leaving either field on your payload will cause unexpected behavior that may cause your event to be delivered to the wrong source or to not be delivered at all.
 
 ##### Can I view console.log() outputs in Destination Functions?
 
