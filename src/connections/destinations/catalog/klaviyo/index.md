@@ -16,7 +16,7 @@ Klaviyo lets you send personalized newsletters, automates triggered emails, prod
 To configure Klaviyo as an Event Source to get data into your warehouse or other downstream tools, see the [Klaviyo Source](/docs/connections/sources/catalog/cloud-apps/klaviyo/) documentation.
 
 > info "Klaviyo deprecating v1/v2 APIs"
-> Klaviyo is deprecating the endpoints used by this destination in June 2024. Segment will not update this destination with the new endpoint. Instead, we recommend customers switch to the new [Klaviyo Actions destination](https://segment.com/docs/connections/destinations/catalog/actions-klaviyo/), which already uses the new endpoints.
+> Klaviyo will deprecate the endpoints used by this destination in June 2024. Segment will not update this destination with the new endpoint. Instead, Segment recommends customers switch to the new [Klaviyo Actions destination](/docs/connections/destinations/catalog/actions-klaviyo/), which already uses the new endpoints.
 
 
 ## Getting started
