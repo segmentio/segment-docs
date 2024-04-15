@@ -486,7 +486,11 @@ Yes, you can have both destination filters and destination insert functions in t
 
 ##### Are insert functions invoked before or after Destination Filters are applied?
 
-Segment's data pipeline applies Destination Filters before invoking Insert Functions. 
+Segment's data pipeline applies Destination Filters before invoking Insert Functions.
+
+##### Are insert functions invoked before or after Mappings are applied?
+
+Insert Functions are invoked before Mappings. This means you should ensure that your Mappings correspond to the format of the enriched or altered event. By doing so, the mappings will align properly with the enriched payload, ensuring accurate data transmission to downstream destinations.
 
 ##### Why am I receiving a 500 Internal Error when saving the same of the destination insert function?
 
