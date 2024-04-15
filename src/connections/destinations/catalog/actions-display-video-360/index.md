@@ -134,7 +134,7 @@ After you complete the set up process, allow up to 24 hours for Google to create
 Segment will copy all of your existing Personas Display & Video 360 Destination configurations to Display and Video 360 (Actions). Once the migration is completed , you will be notified by email. 
 
 
-As of 04/02/2024 authentication is not required anymore. We'll be using Segment DMP's credentials to authenticate on your behalf. For that reason, you should add Segment as a “External Data Partner”  in DV360. This can be found under Advertiser Settings → Linked Accounts and then look for “Segment DMP” and add it.
+As of April 2, 2024, Segment no longer requires you to re-authenticate for existing Personas Display & Video 360 destinations. Segment, as an External Data Partner, now uses a set of Segment DMP credentials to authenticate on your behalf.  To add Segment as an External Data Partner, open Advertiser Settings, navigate to Linked Accounts, and then enable “Segment DMP”. 
 
 Segment is disabling all existing Personas Display and Video 360 destinations. You can still access your existing configuration, but please refrain from enabling the destination, as it is set to be deprecated. You will no longer be able to create new instances of Personas Display and Video 360.
 
