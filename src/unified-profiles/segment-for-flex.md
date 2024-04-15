@@ -13,7 +13,7 @@ Before creating a Segment for Flex workspace, you must have requested access fro
 ## Step 1: Select your data sources
 
 > warning "Unable to change data source selection after this step"
-> After you've selected your data source and proceeded to the next step, you can't return to this page and make a different selection. You can add additional data sources after setting up your Segment for Flex workspace. For more information about sources in a Segment for Flex workspace, see the [Sources](#sources) documentation.
+> After you've selected your data source and proceeded to the next step, you can't return to this page and make a different selection. You can add additional data sources after setting up your Segment for Flex workspace. For more information about adding additional data sources after completing the Segment for Flex guided setup, see the optional [Add additional sources and destinations to your workspace](#optional-add-additional-sources-and-destinations-to-your-workspace) documentation.
 
 1. In Segment for Flex, select a data source to get started and click **Next**.
 2. Review the popup that explains how the data source connects to Segment, and click **Continue**.
@@ -122,6 +122,34 @@ If the Enable Sources and Test Connections check indicates there are problems wi
 - [Event Debugger](/docs/connections/sources/debugger/){:target="_blank"}: With the Debugger, you can check that calls are sent in the expected format without having to wait for any data processing. 
 - [Profile Explorer](/docs/unify/#profile-explorer){:target="_blank"}: Use the Profile Explorer to view all user data, including event history, traits, and identifiers. 
 - [Advanced Segment](https://app.segment.com/goto-my-workspace/overview){:target="_blank"}: Use the Advanced Segment option to view your full Segment workspace. Segment recommends working with the assistance of Professional Services when accessing Advanced Segment.
+
+## (Optional) Add additional sources and destinations to your workspace
+
+After you complete the Segment for Flex guided setup, you can use [Advanced Segment](https://app.segment.com/goto-my-workspace/overview){:target="_blank"} to connect your workspace to additional *sources*, or websites, server libraries, mobile SDKs, and cloud applications that can send data into Segment, and *destinations*, or apps and business tools that can receive forwarded data from Segment.   
+
+See the [Segment for Flex entitlements and limitations](#segment-for-flex-entitlements-and-limitations) documentation for more information about the sources and destinations supported by Segment for Flex workspaces.
+
+### Add a source to your workspace
+
+> info "Eligible sources"
+> You can add up to 5 sources to your Segment for Flex workspace. For more information about the types of sources you can add to your workspace, see the [Sources](#sources) documentation.  
+
+To add a source to your Segment for Flex workspace:
+1. Open your Segment for Flex workspace in [Advanced Segment](https://app.segment.com/goto-my-workspace/overview){:target="_blank"} mode. 
+2. On the Your Segment Overview page, find the sources column and click **+ Add More**.
+3. Select the source you'd like to add to your workspace, and click **Next**.
+4. Follow the setup flow, and click **Done** to complete setting up your source.
+
+### Add a destination to your workspace
+
+> info "Eligible destinations"
+> You can add up to 3 destinations to your Segment for Flex workspace. For more information about the types of destinations you can add to your workspace, see the [Destinations](#destinations) documentation.  
+
+To add a destination to your Segment for Flex workspace:
+1. Open your Segment for Flex workspace in [Advanced Segment](https://app.segment.com/goto-my-workspace/overview){:target="_blank"} mode. 
+2. On the Your Segment Overview page, find the destinations column and click **Add Destination** if you haven't yet created any additional destinations, or **+ Add More** if you've already created an additional destination.
+3. Select the destination you'd like to add to your workspace, and click **Next**.
+4. Follow the setup flow, and click **Done** to complete setting up your source. 
 
 ## Segment for Flex entitlements and limitations
 
