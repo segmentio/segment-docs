@@ -215,9 +215,11 @@ Other libraries only collect `context.library`, any other context variables must
 To pass the context variables which are not automatically collected by Segment's libraries, you must manually include them in the event payload. The following code shows how to pass `groupId` as the context field of Analytics.js's `.track()` event:
 
 ```js
-analytics.track("Report Submitted", {},
-    {"groupId": "1234"}
-);
+analytics.track("Report Submitted", {}, {
+  context: {
+    groupId: "1234"
+  }
+});
 ```
 
 To add fields to the context object in the new mobile libraries, you must utilize a custom plugin. Documentation for creating plugins for each library can be found here:
