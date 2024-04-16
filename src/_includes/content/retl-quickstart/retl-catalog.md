@@ -5,7 +5,7 @@
       {% for warehouse in warehouses %}
         {% if warehouse.categories contains "RETL" %}
           <div class="flex__column flex__column--6">
-            <a class="thumbnail-integration flex flex--middle" href="{{ site.baseurl }}/{{ warehouse.url }}/">
+            <a class="thumbnail-integration flex flex--middle" href="/docs/connections/reverse-etl/reverse-etl-source-setup-guides/{{ warehouse.slug }}-setup/">
               <div class="thumbnail-integration__content">
                 <div class="flex flex--wrap flex--middle waffle waffle--xlarge@medium">
                   <div class="flex__column flex__column--12 flex__column--2@medium thumbnail-integration__logo-wrapper">

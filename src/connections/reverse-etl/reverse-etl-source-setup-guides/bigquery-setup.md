@@ -1,5 +1,6 @@
 ---
 title: BigQuery Reverse ETL Setup
+strat: retl-quickstart
 redirect_from:
   - '/reverse-etl/bigquery-setup/'
 ---

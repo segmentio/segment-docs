@@ -1,5 +1,6 @@
 ---
 title: Add a Source
+strat: retl-quickstart
 --- 
 In Reverse ETL, your data warehouse is the "source" of your data.
 
@@ -17,7 +18,7 @@ To add your data warehouse as a source:
 Once you've configured your warehouse, return to the Segment app to finish adding your warehouse as a RETL source. 
 
 <div class="double">
-  {% include components/reference-button.html href="/docs/connections/reverse-etl/quickstart/add-a-source/" newtab="false" icon="symbols/arrow-left.svg" title="Reverse ETL Quickstart" description="Learn what Reverse ETL can do and prerequisites" variant="related" subtitle="back" %}
+  {% include components/reference-button.html href="/connections/reverse-etl/quickstart/" newtab="false" icon="symbols/arrow-left.svg" title="Reverse ETL Quickstart" description="Learn what Reverse ETL can do and prerequisites" variant="related" subtitle="back" %}
 
-  {% include components/reference-button.html href="/getting-started/03-planning-full-install/" newtab="false" icon="symbols/arrow-right.svg" title="Reverse ETL source catalog" description="Select a guide to set up your warehouse used for Reverse ETL" variant="related" subtitle="next" %}
+  {% include components/reference-button.html href="/connections/reverse-etl/quickstart/source-setup-catalog/" newtab="false" icon="symbols/arrow-right.svg" title="Reverse ETL source catalog" description="Select a guide to set up your warehouse used for Reverse ETL" variant="related" subtitle="next" %}
 </div>

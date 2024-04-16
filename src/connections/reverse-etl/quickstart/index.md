@@ -1,5 +1,6 @@
 ---
 title: Reverse ETL Quickstart
+strat: retl-quickstart
 ---
 
 Reverse ETL (Extract, Transform, Load) extracts data from a data warehouse using a query you provide, and syncs the data to your 3rd party destinations. For example, with Reverse ETL, you can sync records from Snowflake to Mixpanel. 
@@ -17,7 +18,7 @@ Use Reverse ETL when you want to:
 
 Looking to quickly get started? 
 
-{% include components/reference-button.html href="/connections/reverse-etl/quickstart/add-a-source/" newtab="false" icon="symbols/arrow-right.svg" title="Add a Reverse ETL Source" description="Start setting up your Reverse ETL connection by adding your warehouse as a Reverse ETL source." variant="related" subtitle="next" %}
+{% include components/reference-button.html href="/connections/reverse-etl/quickstart/add-a-source/" newtab="false" icon="symbols/arrow-right.svg" title="Add a Reverse ETL Source" description="Start setting up your Reverse ETL connection by adding your warehouse to the Segment app." variant="related" subtitle="next" %}
 
 Looking for the full setup guide? 
 
