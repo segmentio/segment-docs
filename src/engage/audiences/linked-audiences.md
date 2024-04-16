@@ -9,7 +9,7 @@ hidden: true
 > info "Linked Audiences is in public beta"
 > Linked Audiences is in public beta, and Segment is actively working on this feature. Some functionality may change before it becomes generally available.
 
-With Linked Audiences, you can use the relational data you've defined in your Data Graph to build audiences and send them to any downstream [actions-based destinations](/docs/connections/destinations/actions/#available-actions-based-destinations).
+With Linked Audiences, you can use the relational data you've defined in your [Data Graph](docs/unify/linked-profiles/data-graph/) to build audiences and send them to any downstream [actions-based destinations](/docs/connections/destinations/actions/#available-actions-based-destinations).
 
 > info "Linked Audiences warehouse support"
 >Linked Audiences supports [Snowflake](/docs/unify/linked-profiles/setup-guides/snowflake-setup/).
@@ -20,7 +20,7 @@ To learn more about Linked Audiences use cases,  see the [Linked Audiences Use C
 
 ## Step 1: Build a Linked Audience
 
-Linked Audiences allows you to filter based on properties such as profile traits, relational data mapped to the Data Graph, events, and existing audience membership. 
+Linked Audiences allows you to filter audience targeting logic based on properties such as profile traits, relational data mapped to the Data Graph, events, and existing audience membership. 
 
 ![Choose your audience conditions](/docs/engage/images/conditions.png)
 
@@ -41,16 +41,22 @@ After creating the audience, you'll be redirected to the Overview page. By defau
 
 This triggers a compute for the audience (where the audience conditions run on your data warehouse) and sends events downstream.
 
-#### Event conditions
+#### Audience conditions
 
-As you're building your Linked Audience, you can choose from the following event conditions:
+As you're building your Linked Audience, you can choose from the following conditions:
 
-| Event Conditions     | Description                           |
+| Conditions     | Description                           |
 |---------------------------|---------------------------------------|
 | Associated with an entity   | Creates a condition that filters profiles associated with entity relationships defined in the [Data Graph](/docs/unify/linked-profiles/data-graph/). With this condition, you can traverse the full nested entity relationship and filter your audience on entity column values. Note: you can only create nested entity conditions up to four levels in depth. For example, an entity condition that queries for relationships between Profiles, Accounts, Credit Cards, and Transactions has four levels of depth.       |
 | Where profile trait     | Creates a condition that filters profiles with a specific trait. |
 | Part of an audience     | Creates a condition that filters profiles that are part of an existing linked or classic audience. |
 | Performed event         | Creates a condition that filters profiles on their event history. Users can also filter on event property values.|
+
+#### Error States
+
+As you’re building or maintaining your audience, you may encounter errors or warning messages about possible issues with your audience. For example, when Segment tries to compute your audience, and an entity or entity column from your linked audience definition is missing from your data graph or data warehouse, then you may see an error on the linked audiences overview page in Segment. Additionally, computing your linked audineces is a multi-step process, and sometimes an error can occur in one of the steps of the workflow. 
+
+Generally, when an error occurs, Segment will retry that step or Segment will terminate the workflow and try to re-run it again at the next scheduled compute run. If you need more help diagnosing your errors or warnings, reach out to [friends@segment.com](mailto:friends@segment.com){:target="_blank"}.
 
 #### Edit an audience
 To edit an audience:
