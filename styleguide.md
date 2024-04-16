@@ -1,5 +1,14 @@
 # Style guide
-When contributing to the docs, please try to follow the rules in this style guide. 
+When contributing to the docs, follow the rules in this style guide.
+
+## Vale Linter
+To help you follow the style rules in this document, the Segment docs team uses Vale as a linter that will help you find style improvements. To run Vale:
+
+1. Open the Segment docs folder from GH Desktop > Current Repository > segment-docs > Open in Terminal
+2. In Visual Studio Code, copy the relative link to the .md file from tree in the sidebar.
+3. type 'vale [relative-link]' into the terminal, press enter.
+
+You can also download and install the [Vale extension](https://marketplace.visualstudio.com/items?itemName=chrischinchilla.vale-vscode) to run Vale on demand.
 
 ## Format for titles and headings
 Rule | Description | 
