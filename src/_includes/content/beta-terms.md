@@ -1,1 +1,0 @@
-> **Note**: This feature is in beta, and its use is governed by the [(1) Segment First Access](https://segment.com/legal/first-access-beta-preview/) and Beta Terms and Conditions and [(2) Segment Acceptable Use Policy](https://segment.com/legal/acceptable-use-policy/).

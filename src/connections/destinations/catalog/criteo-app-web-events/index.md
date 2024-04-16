@@ -15,7 +15,7 @@ Currently this destination supports events originating from Mobile or Web source
 
 To get started with Criteo Events and Segment, you'll need:
 
-1. An existing account with [Criteo](http://www.criteo.com/).
+1. An existing account with [Criteo](http://www.criteo.com/){:target="_blank"}.
 2. A data source integrated with either one of our mobile SDK's ([iOS](/docs/connections/sources/catalog/libraries/mobile/ios/) or [Android](/docs/connections/sources/catalog/libraries/mobile/android/)) or JavaScript library ([Analytics.js](/docs/connections/sources/catalog/libraries/website/javascript/))
 
 
@@ -379,7 +379,7 @@ window.criteo_q.push({ event: 'viewItem', item: 'PRODUCT-ID', sub_status: 'trial
 
 ### Setting Emails
 
-It's easy to associate emails with a user, if there's an `email` property in a [`track`](/docs/connections/spec/track/) call, we'll include the `setHashedEmail` event to Criteo along with your event. We'll take care of hashing it for you
+If you make an [identify call](/docs/connections/spec/identify/) that has an `email` trait in the payload, this email is stored as a customer trait. We then include a hashed version of this email in subsequent [`track`](/docs/connections/spec/track/) calls by pushing the `setHashedEmail` event to Criteo along with your event. Segment takes care of hashing customer emails for you.
 
 ### Criteo Data Centers
 

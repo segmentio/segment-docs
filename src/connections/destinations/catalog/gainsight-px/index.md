@@ -4,19 +4,19 @@ rewrite: true
 redirect_from: '/connections/destinations/catalog/aptrinsic/'
 id: 59d6b77928a96e00019c6ded
 ---
-[Gainsight PX](https://www.gainsight.com/product-experience/) (formerly known as Aptrinsic) provides a personalized product experience platform to help companies acquire, retain, and grow customers by creating real-time, personalized engagements driven by product usage data. With Gainsight PX, companies can implement an effective product-led go-to-market strategy that will increase product adoption and customer lifetime value.
+[Gainsight PX](https://www.gainsight.com/product-experience/){:target="_blank"} (formerly known as Aptrinsic) provides a personalized product experience platform to help companies acquire, retain, and grow customers by creating real-time, personalized engagements driven by product usage data. With Gainsight PX, companies can implement an effective product-led go-to-market strategy that will increase product adoption and customer lifetime value.
 
-Our Gainsight PX destination code is open sourced on GitHub, feel free to check it out: [Gainsight PX integration code](https://github.com/segment-integrations/analytics.js-integration-aptrinsic).
+Our Gainsight PX destination code is open sourced on GitHub, feel free to check it out: [Gainsight PX integration code](https://github.com/segment-integrations/analytics.js-integration-aptrinsic){:target="_blank"}.
 
 ## Getting Started
 
-{% include content/connection-modes.md %}
+
 
 1. From the Segment web app, click **Catalog**.
 2. Search for "Gainsight PX" in the Catalog, select it, and choose which of your sources to connect the destination to.
 3. To find your Gainsight PX key, log into Gainsight PX and navigate to Settings > Products > Web App. If you have not already entered the URL for your web application, do that and click the Generate button. The Tag Key is the value to the right of the URL value. Use the "Copy" button to copy the value to your clipboard.
 
-   ![](images/TagKey.png)
+   ![A screenshot of the Gainsight PX Products tab, with a callout that says Copy the value from your Aptrinsic Settings Screen.](images/TagKey.png)
 
 4. Paste the Gainsight PX Tag Key into the Segment connection settings API Key field.
 
@@ -26,7 +26,7 @@ Your changes appear in the Segment CDN in about 45 minutes, and then Analytics.j
 > note ""
 > **Note**: If you use this integration, you should remove the Gainsight PX native tag code from your page, since Segment loads it for you.
 
-Don't miss out the [The Configuration Checklist - Segment.com](https://www.gainsight.com/product-experience/) in Gainsight PX!
+Don't miss the [Segment Connector](https://support.gainsight.com/Gainsight_NXT/Connectors/Connectors/Sightline_Integrations/Usage_Data_Connectors/Segment_Connector){:target="_blank"} page in Gainsight PX documentation!
 
 ## Identify
 If you're not familiar with the Segment Specs, take a look to understand what the [Identify method](/docs/connections/spec/identify/) does.

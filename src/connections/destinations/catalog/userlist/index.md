@@ -3,19 +3,18 @@ rewrite: true
 title: Userlist Destination
 id: 5c75396a02254a0001da2a55
 ---
-[Userlist](https://userlist.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) allows you to send behavior-based messages to your SaaS users. It's great for onboarding users as well as nurturing them throughout their journey.
+[Userlist](https://userlist.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners){:target="_blank”} allows you to send behavior-based messages to your SaaS users. It's great for onboarding users as well as nurturing them throughout their journey.
 
 This destination is maintained by Userlist. For any issues with the destination, [contact the Userlist Support team](mailto:support@userlist.com).
 
-{% include content/beta-note.md %}
 
 ## Getting Started
 
-{% include content/connection-modes.md %}
+
 
 1.  From the Segment web app, click **Catalog**.
 2.  Search for "Userlist" in the Catalog, select it, and choose which of your sources to connect the destination to.
-3.  In the Userlist Segment destination settings, enter your Userlist "Push API Key". You can find this key in your [Userlist Push API settings](https://app.userlist.com/settings/push).
+3.  In the Userlist Segment destination settings, enter your Userlist "Push API Key". You can find this key in your [Userlist Push API settings](https://app.userlist.com/settings/push){:target="_blank"}.
 
 > info""
 > **NOTE:** The Userlist Destination does not support tracking anonymous users, and returns a 400 error if you send `track` or `group` call for unidentified users. To prevent this, make sure you make an Identify call before you make Track or Group calls. You can also disregard this error if you sent calls you do not intend Userlist to process.

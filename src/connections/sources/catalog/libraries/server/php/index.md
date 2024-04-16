@@ -2,8 +2,9 @@
 title: Analytics for PHP
 repo: analytics-php
 id: TDO70If4mD
+support_type: maintenance
 ---
-Our PHP library lets you record analytics data from your PHP code. The requests hit our servers, and then we route your data to any analytics service you enable on your destinations page.
+Segment's PHP library lets you record analytics data from your PHP code. The requests hit Segment servers, and then Segment routes your data to any analytics service you enable on your destinations page.
 
 This library is open-source, so you can [check it out on GitHub](https://github.com/segmentio/analytics-php).
 
@@ -395,6 +396,10 @@ Segment::init("YOUR_WRITE_KEY", array(
     <td>`error_handler` _Function, optional_</td>
     <td>A handler which will be called on errors to aid in debugging, `function ($code, $message) {}`</td>
   </tr>
+  <tr>
+    <td>`host` _String, optional_</td>
+    <td>To explicitly set which regional host to use. Defaults to `api.segment.io`.</td>
+  </tr>  
 </table>
 
 ### Lib-Curl Consumer
@@ -525,4 +530,4 @@ $ sudo service cron reload    # reload the cron daemon
 
 If you only need support for PHP5, the team at Underground Elephant has released a [3rd-party library](https://github.com/uecode/segment-io-php) based on Guzzle.
 
-If you're using Laravel 4 our friends at Catchet have written a wrapper for you! Docs and GitHub repo can be found here: https://github.com/cachethq/Laravel-Segment
+Alt Three Segment is a Segment bridge for Laravel. The GitHub repo can be found here: [AltThree/Segment](https://github.com/AltThree/Segment){:target="_blank”}. 

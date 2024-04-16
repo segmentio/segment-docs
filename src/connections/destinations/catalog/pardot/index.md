@@ -2,7 +2,11 @@
 title: Salesforce Pardot Destination
 strat: salesforce
 id: 54521fd925e721e32a72eee1
+private: true
+maintenance: true
+actions-slug: actions-pardot
 ---
+
 ## Getting Started
 
 When you enable Pardot in the Segment web app, your changes appear in the Segment CDN in about 45 minutes, and then Analytics.js starts asynchronously loading Pardot's javascript onto your page. This means you should remove Pardot's snippet from your page. Pardot automatically collects anonymous visitor data data on your site. Pardot is supported on the client-side and server-side.
@@ -18,7 +22,7 @@ If you don't have a Salesforce account, contact your Salesforce administrator. T
 To reconnect Pardot to Segment using SSO authentication:
 1. In the Segment app, click **Connections** on the left, then click **Destinations**. Select your Pardot destination.
 2. On your Pardot settings page, click **Connect to Pardot**, and follow the steps to connect using OAuth.
-   ![](images/connect-sso.png)
+   ![A screenshot of the Pardot settings page in the Segment app.](images/connect-sso.png)
 
 3. On the next screen, you are prompted to authenticate using your Salesforce username and password.
    If you don't have a Salesforce account, contact your Salesforce administrator. They can grant you a Salesforce Identity License, which allows you to use Salesforce for SSO purposes without provisioning a full Salesforce account.
@@ -34,7 +38,7 @@ To connect to the Pardot API, Segment requires that you authenticate your accoun
 
 There are currently two active versions of the Pardot platform, version 3 and version 4. The major change in version 4 is the new ability to create multiple prospects in Pardot with the same email address.
 
-Previously, this was not possible. Email was used by Pardot as a distinct identifier. In version 4 however, in order to update an *existing* prospect, you must provide either the Pardot ID for a given user OR the Salesforce FID. If one of these values is not provided in a request, Pardot will create a new prospect. More information is available on their [website](http://developer.pardot.com/kb/api-version-4/).
+Previously, this was not possible. Email was used by Pardot as a distinct identifier. In version 4 however, in order to update an *existing* prospect, you must provide either the Pardot ID for a given user OR the Salesforce FID. If one of these values is not provided in a request, Pardot will create a new prospect. More information is available on their [website](http://developer.pardot.com/kb/api-version-4/){:target="_blank"}.
 
 The Segment Pardot destination provides two different options to support this new functionality. Read on to learn more.
 
@@ -57,7 +61,7 @@ analytics.identify('YOUR_DATABASE_USER_ID', {
 });
 ```
 
-Find other accepted traits in [Pardot's Prospect field reference](https://developer.pardot.com/kb/object-field-references/#prospect).
+Find other accepted traits in [Pardot's Prospect field reference](https://developer.pardot.com/kb/object-field-references/#prospect){:target="_blank"}.
 
 You can provide custom fields, but they won't be updated or visible until you create them in the Pardot user interface by going to **Admin > Configure Fields > Prospect Fields**.
 
@@ -116,7 +120,7 @@ If possible, we recommend you explore bulk updating all existing users to ensure
 
 ### Client Side
 
-On the client-side browser Segment loads Pardot's JavaScript snippet to enable [anonymous visitor tracking](http://www.pardot.com/products/marketing-automation/benefits/website-visitor-id-and-anonymous-visitor-tracking/).
+On the client-side browser Segment loads Pardot's JavaScript snippet to enable [anonymous visitor tracking](http://www.pardot.com/products/marketing-automation/benefits/website-visitor-id-and-anonymous-visitor-tracking/){:target="_blank"}.
 
 ### Troubleshooting
 

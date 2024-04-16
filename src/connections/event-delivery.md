@@ -6,6 +6,12 @@ The Event Delivery tool helps you understand if data is reaching your destinatio
 
 Segment sends billions of events to destinations every week. If Segment encounters any errors when attempting to deliver your data, Segment reports them in the Event Delivery tool.
 
+> info "Available for server side event streaming destinations only"
+> This feature is only available for server side integrations (also known as cloud-mode destinations). You will not be able to use this for client side integrations (also known as device-mode destinations) because device-mode data is sent directly to the destination tool's API. In order to report on deliverability, the data must be sent to destinations using a server side connection. 
+
+> warning ""
+> **Not available for Warehouses or Amazon S3**. These destinations work differently from other destinations in Segment, and aren't supported at this time.
+
 Here's an example of what the Event Delivery tool looks like:
 
 ![An Event Delivery example](images/edelivery_jXaoBuF6.png)
@@ -18,17 +24,6 @@ Scenarios when this tool will be useful: 
   For example, you have Google Analytics set up as a destination and your recent data looks incomplete.
 - **When setting up a destination for the first time.** 
   For example, you are connecting Google Analytics to your Node Source. Once you've entered your credentials and turned the destination on, you can use this feature to see whether events are successfully making it to GA in near realtime. 
-
-
-## Important things to know
-
-#### Available for server side event streaming destinations only
-
-This feature is only available for server side integrations (also known as cloud-mode destinations). You will not be able to use this for client side / device-mode destinations as device-mode data is sent directly to the tool's API. To be report on deliverability, the data must be sent to Destinations using Segment's APIs. 
-
-> warning ""
-> **Not available for Warehouses or Amazon S3**. These destinations work differently from other destinations in Segment, and aren't supported at this time.
-
 
 ## Where do I find it? 
 

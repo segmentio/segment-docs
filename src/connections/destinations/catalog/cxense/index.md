@@ -5,13 +5,13 @@ hidden: true
 
 ## Getting Started
 
-{% include content/connection-modes.md %}
+
 
 Currently this destination supports events originating from Web sources (not Server or Mobile). You can read more about how define a source [here](/docs/connections/sources/#what-is-a-source).
 
 To get started with Cxense and Segment, you'll need the following:
 
-1. An existing account with [Cxense](http://www.cxense.com/).
+1. An existing account with [Cxense](http://www.cxense.com/){:target="_blank"}.
 2. A data source integrated with Segment's JavaScript SDK ([Analytics.js](/docs/connections/sources/catalog/libraries/website/javascript/)).
 3. Your Cxense Site Id.
 

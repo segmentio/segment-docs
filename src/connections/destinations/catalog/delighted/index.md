@@ -3,7 +3,7 @@ title: Delighted Destination
 rewrite: true
 id: 58915ccf80412f644ff6295b
 ---
-[Delighted](https://delighted.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) is the modern customer feedback solution used by the world's most coveted brands to deliver stellar experiences to their customers.
+[Delighted](https://delighted.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners){:target="_blank”} is the modern customer feedback solution used by the world's most coveted brands to deliver stellar experiences to their customers.
 
 This destination is maintained by Delighted. For any issues with the destination, [contact the Delighted Support team](mailto:hello@delighted.com)
 
@@ -12,7 +12,7 @@ _**NOTE:** The Delighted Destination is currently only compatible with email sur
 
 ## Getting Started
 
-{% include content/connection-modes.md %}
+
 
 1. From the Segment web app, click **Catalog**.
 2. Search for "Delighted" in the Catalog, select it, and choose which of your sources to connect the destination to.
@@ -32,7 +32,7 @@ analytics.identify('userId123', {
 });
 ```
 
-Identify calls will add to your list of People in Delighted. The only trait that is required by Delighted is `email`. All additional traits will be added to Delighted surveys as metadata (Delighted calls this metadata *Properties*) which you can use to [segment feedback](https://help.delighted.com/article/111-introduction).
+The only trait that is required by Delighted is email. All additional traits will be added to Delighted surveys as metadata (Delighted calls this metadata Properties) which you can use to segment feedback. For a contact to receive a survey, the identify method must occur before the track method.
 
 ## Track
 
@@ -42,13 +42,13 @@ If you're not familiar with the Segment Specs, take a look to understand what th
 analytics.track('Purchased Product');
 ```
 
-Track calls will trigger a Delighted survey if you have configured the event name in [your Delighted dashboard](https://delighted.com/integrations/segment) to appear _exactly_ as the event name in your Track call.
+Track calls will create a person in Delighted and schedule a survey to be sent to that person; make sure that event name configured on Delighted's Segment integration page exactly matches the event name in your Track call.
 
 This also enables you to define the "Sample Rate" and an optional "Delay" for the triggered surveys.
 
 ![trigger-delighted-surveys-segment](images/e3ed84b8608df907bcf753f52c17249d.png)
 
-**NOTE**: Delighted has built in protections for over surveying called *Survey Throttling*. This will ensure the same person won't be surveyed more than once per month ([adjustable in your Delighted account settings](https://delighted.com/account/edit_min_survey_interval)). *Survey Throttling* provides you peace of mind so that you can use frequent `track` calls like purchase or contact events.
+**NOTE**: Delighted has built in protections for over surveying called *Survey Throttling*. This will ensure the same person won't be surveyed more than once per month ([adjustable in your Delighted account settings](https://delighted.com/account/edit_min_survey_interval){:target="_blank”}). *Survey Throttling* provides you peace of mind so that you can use frequent `track` calls like purchase or contact events.
 
 ## Sending data from Delighted back to Segment (optional)
 

@@ -6,7 +6,7 @@ Before you can use your Segment account, you first need to verify your email add
 
 If a team member invited you to a Segment workspace, your email is automatically verified if you set up your account from the link in the invitation email.
 
-![](images/verify-email.png)
+![Screenshot of the Please verify your email popup.](images/verify-email.png)
 
 ### Troubleshooting why you didn't get the verification email
 

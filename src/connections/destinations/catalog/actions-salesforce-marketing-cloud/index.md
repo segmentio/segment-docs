@@ -2,8 +2,6 @@
 title: Salesforce Marketing Cloud (Actions) Destination
 hide-boilerplate: true
 hide-dossier: false
-hidden: true
-private: true
 strat: salesforce
 id: 62e30bad99f1bfb98ee8ce08
 versions:
@@ -16,9 +14,6 @@ versions:
 Salesforce Marketing Cloud (SFMC) provides digital marketing automation and analytics software and services. Marketers can use this software to create sophisticated multi-channel campaigns using the [SFMC Journey Builder](https://help.salesforce.com/s/articleView?id=sf.mc_jb_journey_builder.htm&type=5){:target="_blank"}. 
 
 Segment’s Salesforce Marketing Cloud (Actions) destination allows you to create contacts, store contact and event data in data extensions, and send API events to SFMC. Segment sends data to the [SFMC REST API](https://developer.salesforce.com/docs/marketing/marketing-cloud/guide/rest-api-overview.html){:target="_blank"}. 
-
-> info ""
-> The Salesforce Marketing Cloud (Actions) destination is in beta and is in active development. Some functionality may change before it becomes generally available.
 
 ## Benefits of Salesforce Marketing Cloud (Actions) Destination vs Salesforce Marketing Cloud Destination Classic
 
@@ -63,7 +58,11 @@ Once you save the API integration and add permissions, you will see a Summary pa
 
 {% include components/actions-fields.html settings="true"%}
 
-## FAQ & Troubleshooting
+> info ""
+> Note that **send contact to data extension** handles a pre-defined structure of contacts being filled into a data extension, whereas **send event to data extension action** customizes event data extensions. 
+> For example, `contactKey` is the fixed Primary Key that is available when you use **send contact to data extension** action, which you also have to create as a Primary Key in SFMC. However, the Primary Key can be set as per Segment's requirements using **send event to data extension**.
+
+## FAQ and troubleshooting
 
 ### Batching Data to SFMC
 
@@ -76,7 +75,7 @@ The batch feature is only compatible with the "Send Contact to Data Extension" a
 
 ### Data Extensions & API Events
 
-To use the SFMC Journey Builder to send marketing campaigns to your users, you need to have data about those users in SFMC. The most common way to send data to SFMC is to send Segment data to an SFMC data extension. Data extensions are tables that contain your data. When you send a contact or event to a data extension, it appear will appear as a "row" in your data extension. Any metadata about the particular contact or event are considered attributes and will appear as a "column" in your data extension. 
+To use the SFMC Journey Builder to send marketing campaigns to your users, you need to have data about those users in SFMC. The most common way to send data to SFMC is to send Segment data to an SFMC data extension. Data extensions are tables that contain your data. When you send a contact or event to a data extension, it will appear as a "row" in your data extension. Any metadata about the particular contact or event are considered attributes and will appear as a "column" in your data extension.
 
 Data extensions and attributes must be created **before** sending data. You can create a data extension in your SFMC account by navigating to **Audience Builder > Contact Builder > Data Extensions > Create**. Segment recommends creating a single data extension to store all contact data, and individual data extensions for each event type you plan to send. Once a data extension is created, you can add attributes for any traits or properties you plan to send. You must include at least one Primary Key attribute that will be used to uniquely identify each row.
 
@@ -90,7 +89,7 @@ API events are another way to send your Segment events to SFMC. API events can t
 To send an Engage audience to SFMC:
 1. Create an attribute in the SFMC data extension that stores your contact data. The attribute should be a boolean data type to store whether or not a user entered the audience. You can name this attribute anything.
 2. Set up the Salesforce Marketing Cloud (Actions) destination using the instructions [above](#connect-the-salesforce-marketing-cloud-actions-destination) and connect it to your Engage source.
-3. Create a "Send Contact to Data Extension" action in order to map the SFMC attribute to the Engage audience key. The Engage audience key can be found in **Engage > Audiences > Select your audience > Settings > Audience key**. In the Contact Fields mapping, input the name of the attribute you created in SFMC on the left-hand side. On the right-hand side, search for an event variable of `traits.[your-audience-key]` and select "No matches found. Use "traits.[your-audience-key]" as an event variable".
+3. Create a "Send Contact to Data Extension" action in order to map the SFMC attribute to the Engage audience key. The Engage audience key can be found in **Engage > Audiences > Select your audience > Settings > Audience key**. In the Contact Fields mapping, input the name of the attribute you created in SFMC on the right-hand side. On the left-hand side, search for an event variable of `traits.[your-audience-key]` and select "No matches found. Use "traits.[your-audience-key]" as an event variable".
 4. Navigate back to your Engage audience and connect the Salesforce Marketing Cloud (Actions) destination to the audience. Keep "Send Identify" toggled on and save.
 
 When you add an Engage audience to SFMC, the first sync contains all the users in that audience. Users are added as rows in your data extension with the attribute you created set to `true` to indicate audience membership. If a user leaves that audience, the attribute value is automatically updated to `false`, but the user is not removed from the data extension. This allows you to see all users who have ever been in the audience, and then optionally create a [filtered data extension](https://help.salesforce.com/s/articleView?id=sf.mc_es_create_filtered_de.htm&type=5){:target="_blank"} if you want a subset of users.
@@ -98,5 +97,5 @@ When you add an Engage audience to SFMC, the first sync contains all the users i
 To send an Engage computed trait to SFMC:
 1. Create an attribute in the SFMC data extension that stores your contact data. Choose the data type matching the type of computed trait you plan to send; for example, text for traits which produce string values, number or decimal for traits which produce numeric values. You can name this attribute anything.
 2. Set up the Salesforce Marketing Cloud (Actions) destination using the instructions [above](#connect-the-salesforce-marketing-cloud-actions-destination) and connect it to your Engage source.
-3. Create a "Send Contact to Data Extension" action in order to map the SFMC attribute to the Engage trait key. The Engage trait key can be found in **Engage > Audiences > Computed Traits > Choose your computed trait > Settings > Trait key**. In the Contact Fields mapping, input the name of the attribute you created in SFMC on the left-hand side. On the right-hand side, search for an event variable of `traits.[your-trait-key]` and select "No matches found. Use "traits.[your-trait-key]" as an event variable".
+3. Create a "Send Contact to Data Extension" action in order to map the SFMC attribute to the Engage trait key. The Engage trait key can be found in **Engage > Audiences > Computed Traits > Choose your computed trait > Settings > Trait key**. In the Contact Fields mapping, input the name of the attribute you created in SFMC on the right-hand side. On the left-hand side, search for an event variable of `traits.[your-trait-key]` and select "No matches found. Use "traits.[your-trait-key]" as an event variable".
 4. Navigate back to your Engage computed trait and connect the Salesforce Marketing Cloud (Actions) destination to the computed trait. Keep "Send Identify" toggled on and save.

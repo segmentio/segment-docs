@@ -23,8 +23,17 @@
   {%- assign priority = 4 -%}
 {%- endif -%}
 <!-- {{site.env.ENVIRONMENT}} -->
+<!-- {{page.layout}} -->
 <html lang="{{ page.lang | default: site.lang | default: "en" }}">
 <head>
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-NWFH9R');</script>
+  <!-- End Google Tag Manager -->
+
   <base href="{{ basehref }}" />
   <title> {{page.title}} | Segment Documentation</title>
   <meta name="google-site-verification" content="I5QdtZs88X7r-YLPogE9bzdouqud3IPONxht2CBFIOQ" />
@@ -47,8 +56,19 @@
   <meta class="swiftype" name="priority" data-type="integer" content="{{priority}}" />
   {%- endif -%}
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"/>
-  <link rel="icon" href="https://segment.com/favicon.ico">
-  
+  <link rel="apple-touch-icon" sizes="57x57" href="https://segment.com/_next/static/images/apple-icon-57x57-10393af61491fa24a5c6b35bf41591e4.png"/>
+  <link rel="apple-touch-icon" sizes="60x60" href="https://segment.com/_next/static/images/apple-icon-60x60-8d091c0057084d1316fecf2da8e0b286.png" />
+  <link rel="apple-touch-icon" sizes="72x72" href="https://segment.com/_next/static/images/apple-icon-72x72-113c8249d92d07d6acf0e3aff7bbf051.png" />
+  <link rel="apple-touch-icon" sizes="76x76" href="https://segment.com/_next/static/images/apple-icon-76x76-2981e3e40fc23a679158f5303356c1f6.png" />
+  <link rel="apple-touch-icon" sizes="114x114" href="https://segment.com/_next/static/images/apple-icon-114x114-70292d70fcf8d23b3ce0011dc55d4dbd.png" />
+  <link rel="apple-touch-icon" sizes="120x120" href="https://segment.com/_next/static/images/apple-icon-120x120-0fffebf1d373ade10b22ac65b3fbea6d.png" />
+  <link rel="apple-touch-icon" sizes="144x144" href="https://segment.com/_next/static/images/apple-icon-144x144-741e771a56d717d9592548c772e72635.png" />
+  <link rel="apple-touch-icon" sizes="152x152" href="https://segment.com/_next/static/images/apple-icon-152x152-3b4034819056f00a47ed3e19b754b45d.png" />
+  <link rel="icon" type="image/png" sizes="192x192" href="https://segment.com/_next/static/images/android-icon-192x192-143dc4bdade264025b8b5989dbddaeb3.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="https://segment.com/_next/static/images/favicon-32x32-58e71271c081d9f71b1d8a6fe1350a8a.png" />
+  <link rel="icon" type="image/png" sizes="96x96" href="https://segment.com/_next/static/images/favicon-96x96-caacb8a36b7b385b8c0473d8cdade803.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="https://segment.com/_next/static/images/favicon-16x16-34494a07d899bde300ee54030b1a6e1a.png" />
+
   {%- if jekyll.environment == "production" -%}
     {%- assign hostname = "https://segment.com" -%}
   {%- elsif jekyll.environment == "staging" -%}
@@ -69,6 +89,12 @@
   <link rel="stylesheet" href="{{ '/assets/algolia.css' | relative_url }}">
 </head>
 <body>
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NWFH9R"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+
+  <a href="#{{ page.title | remove:':' | remove:'?' | remove:'(' | remove:')' | remove:',' | remove:'&' | replace:"'", "-"| replace:'.', '-' | downcase | split:' ' | join:"-" }}" class="skiplink">Skip to main content</a>
   <div id="consent-manager"></div>
   {{ content }}
   <a class="back-scrolling" data-back-scrolling data-active-class="back-scrolling--active">
@@ -230,8 +256,8 @@
 </script>
   <script>
       window.analytics = null
-      !function(){var analytics=window.analytics=window.analytics||[];if(!analytics.initialize)if(analytics.invoked)window.console&&console.error&&console.error("Segment snippet included twice.");else{analytics.invoked=!0;analytics.methods=["trackSubmit","trackClick","trackLink","trackForm","pageview","identify","reset","group","track","ready","alias","debug","page","once","off","on","addSourceMiddleware","addIntegrationMiddleware","setAnonymousId","addDestinationMiddleware"];analytics.factory=function(t){return function(){var e=Array.prototype.slice.call(arguments);e.unshift(t);analytics.push(e);return analytics}};for(var t=0;t<analytics.methods.length;t++){var e=analytics.methods[t];analytics[e]=analytics.factory(e)}analytics.load=function(t,e){var n=document.createElement("script");n.type="text/javascript";n.async=!0;n.src="https://ajs.cd.segment.com/analytics.js/v1/"+t+"/analytics.min.js";var a=document.getElementsByTagName("script")[0];a.parentNode.insertBefore(n,a);analytics._loadOptions=e};analytics.SNIPPET_VERSION="4.1.0";
-        analytics.page(`{{page.title}}`);
+      !function(){var i="analytics",analytics=window[i]=window[i]||[];if(!analytics.initialize)if(analytics.invoked)window.console&&console.error&&console.error("Segment snippet included twice.");else{analytics.invoked=!0;analytics.methods=["trackSubmit","trackClick","trackLink","trackForm","pageview","identify","reset","group","track","ready","alias","debug","page","screen","once","off","on","addSourceMiddleware","addIntegrationMiddleware","setAnonymousId","addDestinationMiddleware","register"];analytics.factory=function(e){return function(){if(window[i].initialized)return window[i][e].apply(window[i],arguments);var n=Array.prototype.slice.call(arguments);if(["track","screen","alias","group","page","identify"].indexOf(e)>-1){var c=document.querySelector("link[rel='canonical']");n.push({__t:"bpc",c:c&&c.getAttribute("href")||void 0,p:location.pathname,u:location.href,s:location.search,t:document.title,r:document.referrer})}n.unshift(e);analytics.push(n);return analytics}};for(var n=0;n<analytics.methods.length;n++){var key=analytics.methods[n];analytics[key]=analytics.factory(key)}analytics.load=function(key,n){var t=document.createElement("script");t.type="text/javascript";t.async=!0;t.setAttribute("data-global-segment-analytics-key",i);t.src="https://cdn.segment.com/analytics.js/v1/" + key + "/analytics.min.js";var r=document.getElementsByTagName("script")[0];r.parentNode.insertBefore(t,r);analytics._loadOptions=n};analytics._writeKey="YOUR_WRITE_KEY";;analytics.SNIPPET_VERSION="5.2.1";
+      analytics.page(`{{page.title}}`);
         // analytics.identify();
       }}();
     </script>

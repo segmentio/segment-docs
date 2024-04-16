@@ -4,7 +4,7 @@ hide-cmodes: true
 hide-personas-partial: true
 id: 54521fd925e721e32a72eed6
 ---
-[Mixpanel](https://mixpanel.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) is an event tracking and segmentation platform for your web and mobile apps. By analyzing the actions your users perform, you can gain a better understanding to drive retention, engagement, and conversion. The client-side Mixpanel Destination code is open-source.
+[Mixpanel](https://mixpanel.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners){:target="_blank”} is an event tracking and segmentation platform for your web and mobile apps. By analyzing the actions your users perform, you can gain a better understanding to drive retention, engagement, and conversion. The client-side Mixpanel Destination code is open-source.
 
 Segment's Mixpanel destination code is open source and available on GitHub. You can view these repositories:
 - [Analytics.js in Device-mode](https://github.com/segmentio/analytics.js-integrations/tree/master/integrations/mixpanel){:target="_blank"}
@@ -15,16 +15,12 @@ Segment's Mixpanel destination code is open source and available on GitHub. You 
 
 ## Getting Started
 
-{% include content/connection-modes.md %}
+
 
 1. From the Segment app Destinations page click on **Add Destination**.
 2. Search for Mixpanel in the Destinations Catalog and confirm the Source to connect to.
 3. Copy your Mixpanel "API Secret" and "Token", and paste them into the Connection Settings in Segment.
 4. Enable the destination to start sending your data to Mixpanel.
-
-### Adding device-mode SDKs to React Native
-
-{% include content/react-dest.md %}
 
 ## Page
 If you're not familiar with the Segment Specs, take a look to understand what the [Page method](/docs/connections/spec/page/) does. An example call would look like:
@@ -53,7 +49,6 @@ When you use the Mixpanel destination in Cloud-mode, Segment sends events for ea
 
 When you use the Mixpanel destination in Device-mode, Segment prioritizes the options to prevent duplicate calls as follows:
 
-
 - If you select "Track all Pages to Mixpanel", all `page` calls regardless of how you have customized it will send a `Loaded A Page`. Even if you have the other options enabled, Segment sends this call to prevent double counting your pageviews.
 
 - If you select "Track Categorized Pages to Mixpanel", Segment sends a `Viewed [category] Page` event.
@@ -79,7 +74,7 @@ analytics.identify('userId123', {
 The first thing you'll want to do is to identify your users so Mixpanel knows who they are. You'll use the Identify method to accomplish this which takes the unique `userId` of a user and any `traits` you know about them.
 
 > info ""
-> **Important:** Mixpanel used to require that you call `alias` in all libraries to connect anonymous visitors to identified users. However, with the release of Mixpanel's new [Identity Merge feature](https://help.mixpanel.com/hc/en-us/articles/360039133851#enable-id-merge){:target="_blank"} this is no longer necessary. To enable ID Merge, go to your Mixpanel Settings Dashboard, navigate to **Project Settings > Identity Merge** and enable the setting from that screen. If you are _not_ using this setting, use the instructions below.
+> **Important:** Mixpanel used to require that you call `alias` in all libraries to connect anonymous visitors to identified users. However, with the release of Mixpanel's new [Identity Merge feature](https://help.mixpanel.com/hc/en-us/articles/9648680824852#introduction){:target="_blank"} this is no longer necessary. To enable ID Merge, go to your Mixpanel Settings Dashboard, navigate to **Project Settings > Identity Merge** and enable the setting from that screen. If you are _not_ using this setting, use the instructions below.
 
 
 As soon as you have a `userId` for a visitor that was previously anonymous you'll need to [`alias`](/docs/connections/spec/alias/) their old anonymous `id` to the new `userId`. In Mixpanel only **one** anonymous user history can be merged to **one** identified user. For that reason you should only call `alias` once, right after a user registered, but before the first `identify`.
@@ -107,7 +102,7 @@ analytics.identify({
 Group calls are sent to Mixpanel if, **and only if**,
 
 1. The Group Identifier Traits setting has one or more traits saved in the destination settings for Mixpanel.
-   ![](images/mixpanel-group-id-traits.png)
+   ![A screenshot of the Traits & Properties page in Mixpanel.](images/mixpanel-group-id-traits.png)
 2. You have created a group key of the same name in your Mixpanel [project settings](https://help.mixpanel.com/hc/en-us/articles/360025333632-Group-Analytics#implementation){:target="_blank"}.
 3. A Group trait with the same name as one of the configured Group Identifier Traits is sent with the group call.
 
@@ -125,6 +120,8 @@ analytics.group("0e8c78ea9d97a7b8185e8632", {
 Mixpanel supports multiple definitions of groups. For more information see [Mixpanel's Group Analytics documentation](https://help.mixpanel.com/hc/en-us/articles/360025333632-Group-Analytics){:target="_blank"}.
 
 If the group call **does not** have a group trait that matches the Group Identifier Traits setting, then the event will be ignored.
+
+If you'd like to connect a track call to a group call in Mixpanel, send the group's ID as a property on the track call named `$group_id`. 
 
 ### Group using Device-mode
 
@@ -365,9 +362,9 @@ analytics.identify({
 
 ### UTM Campaign Parameters
 
-Since Segment's client-side javascript library (`analytics.js`) loads `mixpanel.js` in the background, you'll get the exact same functionality of Mixpanel around UTM Campaign Parameters as you would when using Mixpanel directly.
+When used in Device Mode through a web source, Segment's client-side Javascript library, Analytics.js, loads `mixpanel.js` (Mixpanel’s direct SDK) in the background. As a result, you'll get the exact same functionality from Mixpanel around UTM Campaign Parameters as you would when using Mixpanel directly.
 
-[Read more in Mixpanel's UTM docs](https://mixpanel.com/help/questions/articles/can-i-track-google-analytics-style-utm-tags-with-mixpanel)
+[Read more in Mixpanel's UTM docs](https://mixpanel.com/help/questions/articles/can-i-track-google-analytics-style-utm-tags-with-mixpanel){:target="_blank"}
 
 In order to pass UTM parameters server-side, you can either pass properties or traits of `utm_source`, `utm_medium`, `utm_campaign`, `utm_content`, and `utm_term` in your track and identify calls, or pass them in your `context` object, for example:
 
@@ -421,7 +418,16 @@ Remember, Segment sends one event per `page` call.
 
 ### Incrementing properties
 
-To increment at the property level, tell Segment which properties you want to increment using the **Properties to increment** setting and Segment calls Mixpanel's `increment` for you when you attach a number to the property (for example, `'items purchased': 5`)
+To increment at the property level, tell Segment which properties you want to increment using the **Properties to increment** setting and Segment calls Mixpanel's `increment` for you when you attach a number to the property. For example, you need to increment the following property:
+
+```javascript
+analytics.track('Event Name', {
+feedback_day_number: 1
+}
+);
+```
+
+Enter the `propertyname: _feedback_day_number_` in the destination settings. The property value now increases from 1.
 
 ### Reset Mixpanel Cookies
 
@@ -483,6 +489,20 @@ If you're testing in Xcode remember you must first background the app, then the 
 3. Make sure you disable the default filter in the Mixpanel People Explore tab.
 
 ## Appendices
+
+
+### Distinct ID
+
+In Device-mode, when a `distinct_id` is present in the browser, it is automatically sent to Mixpanel. In Cloud-mode, the `distinct_id` is set to Segment's `userId` if one is present. If there is no `userId` on the payload, `anonymousId` is set instead.
+
+
+### Insert ID
+
+`$insert_id` is only available for cloud events. For the Mixpanel (Legacy) destination, Segment generates `$insert_id` from the messageId, event name, and Mixpanel namespace constant using the [uuidv5](https://developer.hashicorp.com/terraform/language/functions/uuidv5) function:
+```javascript
+const insertId = uuidv5(`${messageId}:${projectId}:${eventName}`, MIXPANEL_NAMESPACE)
+```
+
 
 ### IP
 
@@ -577,39 +597,39 @@ You can send computed traits and audiences created in Engage to Mixpanel and use
 
 You can send Computed Traits created in Engage to Mixpanel as `identify` calls to create user properties in Mixpanel.
 
-![](images/pers-01-computed.png)
+![A screenshot of the Traits setting page in Segment, with the Computed Traits section selected.](images/pers-01-computed.png)
 
 You can check a specific user profile in Mixpanel for Computed Traits by going to **Users → Explore** and search for a specific user to view their profile.
 
-![](images/pers-02-mpx-profile-computed.png)
+![A screenshot of a user profile in Mixpanel with the Properties tab selected.](images/pers-02-mpx-profile-computed.png)
 
 
 Computed traits without a lookback window search across all historical events, and update in real time.
 
 Computed traits with a lookback window only search across events that occurred within the specified time frame. Computed traits *with* a lookback window are updated hourly.
 
-![](images/pers-03-lookback.png)
+![A screenshot of the "Configure and Preview Your Trait" page in Segment.](images/pers-03-lookback.png)
 
 
 If you choose to include anonymous users when you create the computed trait, you must use the [`alias` call](#alias) to merge user profiles when they become a known user.
 
-![](images/pers-04-incl-anons.png)
+![A screenshot of the A screenshot of the "Configure and Preview Your Trait" page in Segment, with the "Include anonymous users" box checked.](images/pers-04-incl-anons.png)
 
 ### Using Engage Audiences with Mixpanel
 
 You can send Engage Audiences to Mixpanel as `identify` or `track` calls. You can choose the type of call to send when you add Mixpanel as a destination for an audience.
 
-![](images/pers-05-pdest-settings.png)
+![A screenshot of the Mixpanel Connection settings page in Segment.](images/pers-05-pdest-settings.png)
 
 
 When you send custom traits as `identify` calls, the name of the audience is added to the user's profile as a user trait, with a boolean value to indicate if the user is in the audience. For example, when a user first completes an order in the last 30 days, Segment sends an `identify` call with the property `order_completed_last_30days: true`. When this user no longer satisfies these criteria (for example when their last purchase was more than 30 days ago) Engage sets that value to `false`.
 
-![](images/pers-06-audience.png)
+![A screenshot of a user in Segment, with the Audiences tab selected.](images/pers-06-audience.png)
 
 You can check a specific user profile in Mixpanel for Computed Traits by going to **Users → Explore** and searching for a specific user to view their profile.
 
 
-![](images/pers-07-mxp-profile-audience.png)
+![A screenshot of a user in Mixpanel, with a box around a custom trait.](images/pers-07-mxp-profile-audience.png)
 
 When you first create an audience, Engage sends an  `identify` call for every user in the audience. Later syncs only send updates for users who were added or removed from the audience since the last sync.
 
@@ -617,24 +637,24 @@ When you first create an audience, Engage sends an  `identify` call for every us
 When you use `track` calls, Segment sends an `Audience Entered` event when the user enters the audience, with the audience name as a property of the event. When the user exits the audience, Engage sends an `Audience Exited` event with the same property.
 
 
-![](images/pers-08-audience-track.png)
+![A screenshot of a user in Segment, with the Events tab selected.](images/pers-08-audience-track.png)
 
 
 You can check a specific user profile in Mixpanel for audience events by going to **Users → Explore** and searching for a specific user to view their profile. Look for `Audience Entered` and `Audience Exited` events in the Activity Feed.
 
-![](images/pers-09-mxp-profile-activityfeed.png)
+![A screenshot of a user profile in Mixpanel, with the Properties tab selected.](images/pers-09-mxp-profile-activityfeed.png)
 
 Audiences without a lookback window searches across all historical events and update in real time.
 
 Audiences with a lookback window only search across events that occurred within the specified time frame. Audiences *with* a lookback window are updated hourly.
 
 
-![](images/pers-10-lookback.png)
+![A screenshot of the Configure and Preview Your Audience page in Segment.](images/pers-10-lookback.png)
 
 If you choose to include anonymous users when you create an audience, you must use the [alias call](#alias) to merge user profiles when they become a known user.
 
 
-![](images/pers-11-incl-anons.png)
+![A screenshot of the Configure and Preview Your Audience page in Segment, with an line under the Include anonymous users setting.](images/pers-11-incl-anons.png)
 
 
 ## Setting Up Engage and Mixpanel
@@ -652,7 +672,7 @@ To send computed traits or audiences to Mixpanel, connect the destination to you
 > **Tip**: Mixpanel now accepts Identify calls by default. Previously, this was an additional paid feature.
 
 
-![](images/pers-12-settings-people.png)
+![A screenshot of the settings page for the Mixpanel destination.](images/pers-12-settings-people.png)
 
 
 ## Mixpanel Engage Details
@@ -681,3 +701,7 @@ If you delete an audience or trait in Segment, it isn't deleted from Mixpanel. T
 **If a user has multiple external ids in Segment, what happens when they enter an audience or have a computed trait?**
 
 Segment sends an `identify` or a  `track` call for each external on the user's account. For example, if a user has three email addresses, and you are sending `identify` calls for your audience, Engage sends three `identify` calls to Mixpanel and adds the latest email address to the user profile as the email “address of record” on the Mixpanel user profile.
+
+**What happens if I receive a `Timestamp must be within the last 5 years` error, and my timestamp displays `1970-01-01`?**
+
+The Segment PHP Library (2.1.0) version requires a UNIX timestamp. If you send anything other than a UNIX timestamp, Segment converts this to the `1970-01-01` timestamp. If you're experiencing failed events due to this error and you have a connected PHP source, update your PHP Library version to 2.1.0. 

@@ -69,3 +69,7 @@ for (const response of responses) {
 ```
 
 If you're only issuing a single request in your function and it is slow, you might want to contact the owner of the external API for support.
+
+## Default limit number
+
+Each workspace has a default limit of 25 Functions in total across Source, Insert, and Destination Functions. If you want to create more, please reach out to [Segment](mailto:friends@segment.com).

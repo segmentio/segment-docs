@@ -56,6 +56,11 @@
     align-items: center;
     padding: 5px 20px;
 
+    &:focus-visible {
+      border: 2px solid color(secondary);
+      color: color(secondary);
+    }
+
     &:hover {
       color: color(secondary);
       text-decoration: none;

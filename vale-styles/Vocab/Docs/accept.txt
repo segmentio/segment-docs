@@ -3,6 +3,7 @@
 (?:C|c)rypto
 (?:D|d)eduplicate
 (?:D|d)eduplication
+(?:E|e)commerce
 (?:G|g)tag
 (?:K|k)laviyo
 (?:L|l)odash
@@ -73,6 +74,7 @@ Okta
 Omnichannel
 onboarding
 Optimizely
+Ortto 
 performant
 Pipedrive
 Preact
@@ -81,9 +83,11 @@ Skalin
 Smartly
 Subnet
 svg
+Toplyne
 Totango
 Twilio
 upsert
+Upollo
 US
 utm
 Vero
@@ -93,3 +97,4 @@ waitlist
 WebKit
 Wootric
 Zendesk
+Okta

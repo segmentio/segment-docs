@@ -4,8 +4,11 @@ hide-cmodes: true
 hide-personas-partial: true
 strat: salesforce
 id: 54d190dbdb31d978f14a903b
+versions:
+  - name: "Salesforce Marketing Cloud (Actions)"
+    link: '/docs/connections/destinations/catalog/actions-salesforce-marketing-cloud/'
 ---
-Salesforce Marketing Cloud (SFMC) provides digital marketing automation and analytics software and services. Marketers can use this software to create sophisticated multi-channel campaigns using the SFMC [Journey Builder](https://help.salesforce.com/articleView?id=mc_jb_journey_builder.htm&type=5). This is a campaign planning tool that helps you design and automate campaigns that guide customers through their journey with your brand, such as [Weekly Product Summary Emails](https://segment.com/recipes/product-summary-emails-salesforce/) that you can enable with Segment.
+Salesforce Marketing Cloud (SFMC) provides digital marketing automation and analytics software and services. Marketers can use this software to create sophisticated multi-channel campaigns using the SFMC [Journey Builder](https://help.salesforce.com/articleView?id=mc_jb_journey_builder.htm&type=5){:target="_blank"}. This is a campaign planning tool that helps you design and automate campaigns that guide customers through their journey with your brand, such as [Weekly Product Summary Emails](https://segment.com/recipes/product-summary-emails-salesforce/){:target="_blank"} that you can enable with Segment.
 
 
 ### SFMC details
@@ -19,7 +22,7 @@ Salesforce Marketing Cloud (SFMC) provides digital marketing automation and anal
 
 ### Segment and SFMC
 
-Segment sends data to SFMC using [Data Extensions](https://help.salesforce.com/articleView?id=mc_co_salesforce_data_extensions.htm&type=5), or using API Events.
+Segment sends data to SFMC using [Data Extensions](https://help.salesforce.com/articleView?id=mc_co_salesforce_data_extensions.htm&type=5){:target="_blank"}, or using API Events.
 
 - **Data Extensions** are tables that contain your data. When this data arrives in SFMC, you can use it to create targeted marketing campaigns using push notifications and emails. You can view and query Data Extensions using the Journey Builder in SFMC. During the set up process, you will create a Data Extensions for Identify calls, and one for each unique Track call.
 
@@ -32,7 +35,7 @@ Before you start working with SFMC, work through the following sections to confi
 
 ### Confirm that Salesforce Marketing Cloud supports your source type and connection mode
 
-{% include content/connection-modes.md %}
+
 
 ### Grant Segment API access to Salesforce Marketing Cloud
 
@@ -41,7 +44,7 @@ Before you start working with SFMC, work through the following sections to confi
 3. Click **New** to create a new package. We recommend giving it a name like "Segment".
 4. Click **Add Component** and select **API Integration**.
 5. Select the **Server-to-Server** Integration Type.
-6. Enable the following permissions. If you don't add these permissions, you'll see an [Insufficient Privileges](https://developer.salesforce.com/docs/atlas.en-us.mc-apis.meta/mc-apis/error-handling.htm) error from SFMC.
+6. Enable the following permissions. If you don't add these permissions, you'll see an [Insufficient Privileges](https://developer.salesforce.com/docs/atlas.en-us.mc-apis.meta/mc-apis/error-handling.htm){:target="_blank"} error from SFMC.
     - **Email**: `Read`, `Write`
     - **Web:** `Read`, `Write`
     - **Automations:**  `Read`, `Write`, `Execute`
@@ -73,11 +76,11 @@ SFMC has strict rate limits, usually 20 requests per second. If your organizatio
 To use the SFMC Batch feature:
 
 1. **Make sure you don't need to use [API Events](#segment-and-sfmc) or create contacts from Identify calls**. If you have the SFMC Batch Integration enabled, you cannot use these two features at all.
-2. **Enable the SFMC Data Extensions Async API on your account**. SFMC requires that each customer specifically request access to the Salesforce API that allows Segment to send batched data to SFMC. Contact your account representative to [enable the asynchronous REST API endpoints](https://developer.salesforce.com/docs/atlas.en-us.mc-apis.meta/mc-apis/data-extensions-api.htm). **This step is required.** If you do not enable these endpoints, your data will be dropped. This setting is configured by Salesforce per account, so if the account can already access these endpoints, go to the next step.
-3. **Contact Segment to enable batching for each SFMC destination**. Once you confirm that you have access to the async API endpoints, contact your Segment CSM or [Segment Product Support](http://segment.com/help/contact/) to request that batching be enabled on your Segment account. You must do this step for each instance of the SFMC destination that you create in your Segment workspace. Provide the Support team with a link to the SFMC destination you want to enable this functionality on.
+2. **Enable the SFMC Data Extensions Async API on your account**. SFMC requires that each customer specifically request access to the Salesforce API that allows Segment to send batched data to SFMC. Contact your account representative to [enable the asynchronous REST API endpoints](https://developer.salesforce.com/docs/atlas.en-us.mc-apis.meta/mc-apis/data-extensions-api.htm){:target="_blank"}. **This step is required.** If you do not enable these endpoints, your data will be dropped. This setting is configured by Salesforce per account, so if the account can already access these endpoints, go to the next step.
+3. **Contact Segment to enable batching for each SFMC destination**. Once you confirm that you have access to the async API endpoints, contact your Segment CSM or [Segment Product Support](http://segment.com/help/contact/){:target="_blank"} to request that batching be enabled on your Segment account. You must do this step for each instance of the SFMC destination that you create in your Segment workspace. Provide the Support team with a link to the SFMC destination you want to enable this functionality on.
 4. Once you complete these enablement steps, follow the standard set up instructions for the SFMC destination below.
 
-If possible, you should enable batching for your SFMC destination before you send it any data. If you enable batching for an existing SFMC destination that has already received Segment data, you must work with [Segment Product Support](http://segment.com/help/contact/) to migrate that data.
+If possible, you should enable batching for your SFMC destination before you send it any data. If you enable batching for an existing SFMC destination that has already received Segment data, you must work with [Segment Product Support](http://segment.com/help/contact/){:target="_blank"} to migrate that data.
 
 
 ## Set up to send Identify calls to SFMC
@@ -106,14 +109,14 @@ Before you leave this screen, copy the External Key for the Data Extension. You'
 
 The example below shows a Data Extension for Identify calls that stores Email, First Name, and Last Name traits. Note the external key in the left column.
 
-![](images/identify-dext.png)
+![A screenshot of the SFMC Contact Builder, with a Test Identify call on the Data Extensions page.](images/identify-dext.png)
 
 
 ### Configure the Salesforce Marketing Cloud Destination in Segment
 
 1. Add the Salesforce Marketing Cloud Destination to your Segment Workspace.
 2. In the **Destination Settings**, locate the **Identify Data Extension External Key** setting. Enter the External Key you copied for the Data Extension that you set up in SFMC.
-![](images/sfmc-identify-dext-key.png)
+![A screenshot of the settings page in Segment for SFMC, with an arrow pointing to the Identify Data Extension External Key field.](images/sfmc-identify-dext-key.png)
 
 
 #### Data Formatting Requirements
@@ -163,7 +166,7 @@ There are a few more things you should to know about sending data to SFMC:
 
 ## Set up to send Track calls to SFMC
 
-You can use Segment Track calls to send rich data about what your users are doing to a Data Extension in SFMC, which you can then use to build Journeys. When you send Track calls to SFMC, Segment fires an event using SFMC's [eventing API](https://developer.salesforce.com/docs/atlas.en-us.mc-apis.meta/mc-apis/putDataExtensionRowByKey.htm).
+You can use Segment Track calls to send rich data about what your users are doing to a Data Extension in SFMC, which you can then use to build Journeys. When you send Track calls to SFMC, Segment fires an event using SFMC's [eventing API](https://developer.salesforce.com/docs/atlas.en-us.mc-apis.meta/mc-apis/putDataExtensionRowByKey.htm){:target="_blank"}.
 
 ### Create a Data Extension in SFMC for each Track event
 
@@ -188,7 +191,7 @@ When you finish setting up the Data Extension, copy the External Key. You'll use
 
 The example below shows a Data Extension for `User Registered` Track calls that stores the `userId`, `timestamp`, and `plan` properties:
 
-![](images/dext-user-regd-example.png)
+![A screenshot of a User Registered call in the SFMC Data Extension tab.](images/dext-user-regd-example.png)
 
 > warning ""
 > Segment doesn't automatically send timestamps. You must add timestamps as a property in the Track Call to send timestamps to the destination.
@@ -202,7 +205,7 @@ Just as you did for the Identify Data Extension, copy and paste the External ID 
 
 1. Add the Salesforce Marketing Cloud Destination to your Segment Workspace if you haven't already.
 2. In the **Destination Settings**, locate the "Conversion events" setting. Enter the External Key you copied for the Track Data Extension that you set up in SFMC.
-![](images/sfmc-conversion-events.png)
+![A screenshot of the settings page in Segment for SFMC.](images/sfmc-conversion-events.png)
 
 
 #### Configuring Primary Keys for each conversion event
@@ -221,7 +224,7 @@ If you don't want to deduplicate rows, you can check the `UUID Primary Key` to c
 
 If we return to the example of one user clicking multiple buttons, if you check the `UUID Primary Key` box then every time the user clicks a button, it creates a new record in the `Button Clicked` Data Extension.
 
-![](images/uuid-primary-key.png)
+![A screenshot of the event conversion settings page in Segment.](images/uuid-primary-key.png)
 
 
 #### Using multiple Primary Keys
@@ -269,7 +272,7 @@ To use context properties, you must create attributes in the Data Extensions tha
 
 You can send audiences and computed traits created in **Engage** to SFMC to run more effective marketing campaigns.
 
-In order to do this, you must have access to **Engage**. To learn more, [contact Segment for a demo](https://segment.com/contact/demo).
+In order to do this, you must have access to **Engage**. To learn more, [contact Segment for a demo](https://segment.com/contact/demo){:target="_blank"}.
 
 ### Set up Engage with SFMC in Segment
 
@@ -285,7 +288,7 @@ When you sync to an existing Data Extension, note these additional requirements:
 - All fields in the Data Extension must be nullable (meaning optional, or not required), except the `Contact Key` field.
 - Any fields that you send with Segment, and which already exist in the Data Extension, must be of the correct data type. The standard identifiers Segment sends come from the [Context object](/docs/connections/spec/common/#context), and appear in the image below.
 
-![](images/existing-dext-data-types.png)
+![A screenshot of the Fields section on the Data Extension page in SFMC.](images/existing-dext-data-types.png)
 
 
 ### Syncing Engage Audiences to SFMC
@@ -299,8 +302,10 @@ When you add an audience to SFMC, the first sync contains all the users in that 
 
 If a user leaves that audience, the value is automatically updated to `false`, but the user is not removed from the Extension. This allows you to see all users who have ever been in the audience, and then optionally create a filtered Data Extension if you want a subset. See the SFMC documentation for more details:
 
-- [Create a Filtered Data Extension in Marketing Cloud](https://help.salesforce.com/articleView?id=mc_es_create_filtered_de.htm&r=https%3A%2F%2Fwww.google.com%2F&type=5)
-- [Automatically refresh a Filtered Data Extension](https://help.salesforce.com/articleView?id=000264612&language=en_US&type=1)
+- [Create a Filtered Data Extension in Marketing Cloud](https://help.salesforce.com/articleView?id=mc_es_create_filtered_de.htm&r=https%3A%2F%2Fwww.google.com%2F&type=5){:target="_blank"}
+- [Automatically refresh a Filtered Data Extension](https://help.salesforce.com/articleView?id=000264612&language=en_US&type=1){:target="_blank"}
+
+<!--- TODO: fix first link above --->
 
 ### Syncing Engage Computed Traits to SFMC
 
@@ -328,7 +333,7 @@ If your SFMC instance already contains data, then when Segment sends Identify ca
 
 When you send an email or push notification, you need to choose which email address or phone number to send to. The options for selecting an email/phone in the Journey Builder look like this:
 
-![](images/journey-builder-options.png)
+![A screenshot of the Journey Builder, with the Default Email Address and Default Mobile Number options present.](images/journey-builder-options.png)
 
 If you select **Use email attribute from Entry Source** you can use an email or phone attribute included in the API Event or Data Extension that triggers the Journey. (Otherwise, you must use an email address attribute or the default phone number attribute on a Contact record.)  To use this, you must include an email address and phone number as a property or trait in every single Track/Identify call mapped to SFMC.
 
@@ -337,4 +342,10 @@ If you select **Use email attribute from Entry Source** you can use an email or 
 
 This issue usually occurs for customers that have very large volumes of customer data (10MM+ users), because multiple audiences and traits attempt to send large quantities of backfill data into SFMC at the same time, and compete for the SFMC rate limit. To help with this, avoid syncing multiple *new* audiences and *new* traits at the same time. Instead, create an audience, sync it to SFMC and wait for it to complete. Then, create and sync your next audience or trait.
 
-You can also request a higher rate limit from your SFMC account representative. After you confirm the higher rate limit with your SFMC representative, contact [Segment Product Support](http://segment.com/help/contact) to adjust the rate limit from the Segment side for you.
+You can also request a higher rate limit from your SFMC account representative. After you confirm the higher rate limit with your SFMC representative, contact [Segment Product Support](http://segment.com/help/contact){:target="_blank"} to adjust the rate limit from the Segment side for you.
+
+### Sending null values
+
+Events containing a field with a `null` value are silently rejected by SFMC's REST API. To prevent this, especially in situations where events require transformation prior to sending to SFMC, consider employing an [Insert Function](/docs/connections/functions/insert-functions/) to replace any `null` values within your events.
+
+If you're connected to this destination using [Reverse ETL](/docs/connections/reverse-etl/), ensure that you configure the model connected to the mapping to return non-null values to avoid any disruptions.

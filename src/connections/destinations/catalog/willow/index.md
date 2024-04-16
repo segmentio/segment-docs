@@ -2,6 +2,7 @@
 title: Willow Destination
 rewrite: true
 id: 620ebe78b4e75580b6e6b72a
+hidden: true
 ---
 
 [Willow](https://heywillow.io/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners){:target="_blank"} is a customer support platform for early stage startups. It focuses on getting your whole team (even engineering) to solve issues together with commenting and tagging, shows you everything in one place from customer messages to in-app actions, and it shows your entire customer's journey in one continuous feed from day one to today.
@@ -10,7 +11,7 @@ Willow maintains this destination. For any issues with the destination, [contact
 
 ## Getting Started
 
-{% include content/connection-modes.md %}
+
 
 1. From the Destinations catalog page in the Segment App, click **Add Destination**.
 2. Search for **Willow** in the Destinations Catalog, and select the **Willow** destination.

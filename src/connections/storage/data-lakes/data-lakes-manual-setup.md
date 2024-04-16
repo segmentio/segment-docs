@@ -1,9 +1,8 @@
 ---
 hidden: true
 title: Configure the Data Lakes AWS Environment
+plan: data-lakes
 ---
-{% include content/plan-grid.md name="data-lakes" %}
-
 
 The instructions below will guide you through the process required to configure the environment required to begin loading data into your Segment Data Lake. For a more automated process, see [Set Up Segment Data Lakes](/docs/connections/storage/catalog/data-lakes).
 
@@ -91,7 +90,7 @@ The following steps provide examples of the IAM Role and IAM Policy.
 
 Create a `segment-data-lake-role` for Segment to assume. The trust relationship document you attach to the role will be different depending on your workspace region. 
 
-#### IAM role for Data Lakes created in US workspaces:
+#### IAM role for Data Lakes:
 
 Attach the following trust relationship document to the role to create a `segment-data-lake-role` role for Segment:
 
@@ -104,9 +103,7 @@ Attach the following trust relationship document to the role to create a `segmen
       "Effect": "Allow",
       "Principal": {
         "AWS": [
-          "arn:aws:iam::294048959147:role/customer-datalakes-prod-admin",
-          "arn:aws:iam::294048959147:role/datalakes-aws-worker",
-          "arn:aws:iam::294048959147:role/datalakes-customer-service"
+          "arn:aws:iam::595280932656:role/segment-datalakes-production-access"
         ]
       },
       "Action": "sts:AssumeRole",
@@ -124,41 +121,6 @@ Attach the following trust relationship document to the role to create a `segmen
 
 > note ""
 > Replace the `ExternalID` list with the Segment `WorkspaceID` that contains the sources to sync to the Data Lake.
-
-#### IAM role for Data Lakes created in EU workspaces:
-
-> info ""
-> EU workspaces are currently in beta. If you would like to learn more about the beta, please contact your account manager. 
-
-Attach the following trust relationship document to the role to create a `segment-data-lake-role` role for Segment.
-
-```json
-{
-  "Version": "2012-10-17",
-  "Statement": [
-    {
-      "Sid": "",
-      "Effect": "Allow",
-      "Principal": {
-        "AWS": [
-          "arn:aws:iam::595280932656:role/segment-datalakes-production-access",
-        ]
-      },
-      "Action": "sts:AssumeRole",
-      "Condition": {
-        "StringEquals": {
-          "sts:ExternalId": [
-            "WORKSPACE_ID"
-          ]
-        }
-      }
-    }
-  ]
-}
-```
-
-> note ""
-> **NOTE:** Replace the `ExternalID` list with the Segment `WorkspaceID` that contains the sources to sync to the Data Lake.
 
 ### IAM policy
 

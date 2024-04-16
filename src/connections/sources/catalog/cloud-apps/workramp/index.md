@@ -5,9 +5,9 @@ id: 7GmYZcBQyw
 ---
 {% include content/source-region-unsupported.md %}
 
-[WorkRamp](https://www.workramp.com/products/external-learning/customer-academy/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) is the All-in-One Platform that powers learning as a growth engine for the modern enterprise.
+[WorkRamp](https://www.workramp.com/products/external-learning/customer-academy/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners){:target="_blank”} is the All-in-One Platform that powers learning as a growth engine for the modern enterprise.
 
-This is an [Event Cloud Source](https://segment.com/docs/sources/#event-cloud-sources) which can not only export data into your Segment warehouse, but also federate data into other enabled Segment Destinations.
+This is an [Event Cloud Source](/docs/sources/#event-cloud-sources) which can not only export data into your Segment warehouse, but also federate data into other enabled Segment Destinations.
 
 This source is maintained by WorkRamp. For any issues with the source, [contact the WorkRamp support team](mailto:support@workramp.com).
 
@@ -18,7 +18,7 @@ This source is maintained by WorkRamp. For any issues with the source, [contact 
 
 ## Getting started
 
-1. From your workspace's [Sources catalog page](https://app.segment.com/goto-my-workspace/sources/catalog) click **Add Source**.
+1. From your workspace's [Sources catalog page](https://app.segment.com/goto-my-workspace/sources/catalog){:target="_blank”} click **Add Source**.
 2. Search for "WorkRamp" in the Sources Catalog, select WorkRamp, and click **Add Source**.
 3. On the next screen, give the Source a nickname configure any other settings. 
    * The nickname is used as a label in the Segment app, and Segment creates a related schema name in your warehouse.  The nickname can be anything, but Segment recommends something that reflects the source itself and distinguishes amongst your academies or environments (for example, `WorkRamp_CustomerAcademy`, `WorkRamp_PartnerAcademy`, `WorkRamp_staging`).

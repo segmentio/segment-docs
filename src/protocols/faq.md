@@ -1,9 +1,7 @@
 ---
 title: Protocols Frequently Asked Questions
+plan: protocols
 ---
-
-{% include content/plan-grid.md name="protocols" %}
-
 
 ## Protocols Notifications
 
@@ -13,24 +11,29 @@ You can subscribe to a variety of Protocols specific alerts through the workspac
 
 ### How can I get notified when someone makes a change to my tracking plan?
 
-You can forward notifications from Protocols to a new Segment Source, which can then send them to notification tools such as Slack webhook.
+You can forward notifications from Protocols to a new Segment source, which can then send them to notification tools such as Slack webhook. 
 
 You can also forward these Protocols alerts to any (cloud-mode) Segment destination that accepts Track calls, including data warehouses. Most customers record these activity feed events to a data warehouse for analysis.
 
 ### How do I get notified when new violations are generated? Can I create custom violation notifications?
 
-You can enable [violation event forwarding](/docs/protocols/validate/forward-violations/) to start delivering violations as Track calls to a Segment Source. From there, you can forward the events to any Segment destination that accepts Track calls.
+You can enable [violation event forwarding](/docs/protocols/validate/forward-violations/) to start delivering violations as Track calls to a Segment source. From there, you can forward the events to any Segment destination that accepts Track calls. 
+
+You can also use the Slack Actions destination to set event triggers for context fields, meaning events with violations are sent as Track calls directly from the source.
 
 
 ## Protocols Tracking Plan
 
-### Do I need to add a Page Viewed event to my tracking plan?
+### What is the Segment Consent Preference Updated event, and who added it to my Tracking Plans?
+[Consent Management](/docs/privacy/consent-management) users see the [Segment Consent Preference Updated](/docs/privacy/consent-management/consent-in-unify/#segment-consent-preference-updated-event) event automatically added to all existing Tracking Plans after they create their first consent category, or when they create a new Tracking Plan after configuring Consent Management. Segment recommends that you do not remove this event.
 
-Yes. To consolidate the views in the Schema tab, Segment automatically converts `page` calls into `Page Viewed` events that appear in the Schema Events view. Segment recommends adding a `Page Viewed` event to your Tracking Plan with any properties you want to validate against. At this time, you cannot validate that a specific named page (`analytics.page('Homepage')`) has a specific set of required properties.
+### How do I add Page and Screen events to my Tracking Plan?
+
+To consolidate the views in the Schema tab, Segment automatically converts `page` and `screen` calls into `Page Viewed` and `Screen Viewed` events that appear in the Schema Events view. Segment recommends adding a `Page Viewed` or `Screen Viewed` event to your Tracking Plan with any properties you want to validate against. At this time, to validate that a specific named page/screen (`analytics.page('Homepage') | analytics.screen('Home')`) has a specific set of required properties, you will need to use the [JSON Schema](/docs/protocols/tracking-plan/create/#edit-underlying-json-schema).
 
 ### How can I see who made changes to my Tracking Plan?
 
-Each Tracking Plan includes a Changelog, which shows which changes were made by which users. To view it, open a Tracking Plan, click the **...** button (also known as the dot-dot-dot, or ellipses menu) next to the Edit Tracking Plan button, and click **View Changelog**.
+Each Tracking Plan includes a Changelog, which shows which changes were made by which users. To view it, open a Tracking Plan, click the **...** button (also known as the dot-dot-dot, or ellipses menu) next to the Edit Tracking Plan button, and click **View Changelog**. 
 
 ### How many Sources can I connect to a Tracking Plan?
 
@@ -38,7 +41,7 @@ The Tracking Plan to Source relationship is a one-to-many relationship. This mea
 
 ### Can I duplicate a Tracking Plan in the Segment UI?
 
-You can duplicate Tracking Plans in the Segment web app by following the [instructions to copy a tracking plan](/docs/protocols/tracking-plan/create/#copy-a-tracking-plan). You can also use the [Tracking Plan API](/docs/protocols/apis-and-extensions/) to copy the underlying JSON schema from one Tracking Plan to another.
+You can duplicate Tracking Plans in the Segment web app by following the [instructions to copy a tracking plan](/docs/protocols/tracking-plan/create/#copy-a-tracking-plan). You can also use the [Public API](/docs/protocols/apis-and-extensions/) to copy the underlying JSON schema from one Tracking Plan to another.
 
 ### How do I handle versioning with mobile apps?
 
@@ -46,7 +49,7 @@ Segment currently supports the ability to [create multiple versions of an event]
 
 ### How do I handle null property values?
 
-In the Tracking Plan editor, click on the data type dropdown for a given property and toggle "Allow Null Values". Enabling null values means both the specified data type and `null` will be accepted as values for that property.
+In the Tracking Plan editor, click on the data type dropdown for a given property and toggle "Allow Null Values". Enabling null values means only `null` values will be accepted for that property.
 
 ### Can I group specific events in a Tracking Plan?
 
@@ -59,6 +62,32 @@ You can search in a Tracking Plan to find a specific event, and then copy the UR
 ### Can I create a master Tracking Plan that supersedes all other Tracking Plans?
 
 Yes. [Tracking Plan Libraries](/docs/protocols/tracking-plan/libraries/) makes it easy to create groups of events or properties that can be easily imported into multiple Tracking plans.
+
+### Can I copy a Tracking Plan into a library?
+
+No. Unfortunately it's not yet possible to automatically transfer events from a Tracking Plan to Libraries. To import events into a new event library, import them directly from a source.
+
+### Can I transfer a Tracking Plan between production and staging environments?
+
+Yes. Using the [Public API](/docs/protocols/apis-and-extensions/), you can copy the underlying JSON schema from a Tracking Plan in one Workspace to a Tracking Plan in another Workspace. 
+
+If you [discarded events](/docs/protocols/enforce/schema-configuration) as a part of your original Tracking Plan, you must connect to the same Source and configure identical Schema Controls in your other Workspace so that blocked events behave as expected.
+
+### Can I connect a Source to more than one Tracking Plan?
+
+Unfortunately, Sources cannot be connected to more than one Tracking Plan. If you were able to connect more than one Tracking Plan to a Source, it could create conflict if events overlapped. 
+
+### How do Tracking Plans work?
+
+Segment's code uses built-in logic to verify if an event exists in the Tracking Plan. If an event does not exist, it will follow the configuration the [Schema Configuration settings](/docs/protocols/enforce/schema-configuration/) for each source connected to the Tracking Plan.
+
+### Why are my unplanned properties still getting sent to my destinations even though I've set the dropdown to "Omit Properties"?
+
+Unplanned property omission is only supported for cloud-mode destinations. Unplanned properties will not be omitted when they're sent to device-mode destinations.
+
+### Can I import events from my Source Schema into a Tracking Plan?
+
+When you initially create your Tracking Plan, you can import events into it from a Source Schema. Manually add these events by clicking the the (+) next to the event in your Source Schema page after connecting your Tracking Plan. .  
 
 ## Protocols Validation
 
@@ -76,6 +105,17 @@ The Protocols Violations page shows a live count for violations. You can adjust 
 
 You might see a difference between the count on the Violations page and the count in the Violations email digests. This can happen due to differences between the time periods available (24 hours in in the live page, 48 hours in the daily digest email), and the fact that the digest only shows _unique_ violations. The fields displayed on the Violations page are more detailed than those included in the email digest.
 
+### Why do I see root listed on my Violations page?
+You may see violations related to (root). For example:
+```js
+(root)
+Must validate all the schemas
+// Or
+(root)
+Must validate "then" as "if" was valid
+```
+These violations are related to your common JSON Schema if you've applied custom rules. In this instance (root), refers to the top level of the JSON object (Segment event). 
+
 ## Protocols Enforcement
 
 ### Why can't I use the Schema to filter my events?
@@ -88,9 +128,23 @@ That being said, there are plenty of scenarios where the reactive Schema functio
 
 Blocked events are blocked from sending to all Segment Destinations, including warehouses and streaming Destinations. When an Event is blocked using a Tracking Plan, it does not count towards your MTU limit. They will, however, count toward your MTU limit if you enable [blocked event forwarding](/docs/protocols/enforce/forward-blocked-events/) in your Source settings.
 
+### Why am I seeing unplanned properties/traits in the payload when violations are triggered, despite using schema controls to omit them?
+
+If you're seeing unplanned properties/traits in your payload despite using Schema Controls, you might want to select a new degree of blocking controls. 
+
+Segment's [Schema Controls](docs/connections/sources/schema/destination-data-control/) provide three options to omit properties/traits. Select the one that aligns with your requirements:
+
+1. **Standard Schema Controls/"Unplanned Properties/Traits"**: Segment checks the names of incoming properties/traits against your Tracking Plan.
+2. **Standard Schema Controls/"JSON Schema Violations"**: Segment checks the names and evaluates the values of properties/traits. This is useful if you've specified a pattern or a list of acceptable values in the [JSON schema](/docs/protocols/tracking-plan/create/#edit-underlying-json-schema) for each Track event listed in the Tracking Plan.
+3. **Advanced Blocking Controls/"Common JSON Schema Violations"**: Segment evaluates incoming events thoroughly, including event names, context field names and values, and the names and values of properties/traits, against the [Common JSON schema](/docs/protocols/tracking-plan/create/#common-json-schema) in your Tracking Plan.
+
 ### Do blocked and discarded events count towards my MTU counts?
 
-Blocked events will not count towards your MTU counts as long as blocked event forwarding is disabled.
+Blocking events within a [Source Schema](/docs/connections/sources/schema/) or [Tracking Plan](/docs/protocols/tracking-plan/create/) excludes them from API call and MTU calculations, as the events are discarded before they reach the pipeline that Segment uses for calculations.
+
+### Do warehouse connectors use the data type definitions when creating a warehouse schema?
+
+Warehouse connectors don't use data type definitions for schema creation. The [data types](/docs/connections/storage/warehouses/schema/#data-types) for columns are inferred from the first event that comes in from the source.
 
 ## Protocols Transformations
 
@@ -114,10 +168,18 @@ Only workspace admins are allowed to create transformations.
 
 All users with Protocols admin or read-only permissions can view transformations.
 
-### Why can't we support transformations for device-mode destinations?
+### Why can't Segment support transformations for device-mode destinations?
 
 Transformations introduce advanced logic that at scale may impact performance of client-side libraries. If you are interested in testing new functionality which supports device-mode destination transformations in analytics.js, contact your account rep.
+
+### Are Destination Filters applied before or after my Protocols Transformations?
+
+That depends. If you are working with source-level Transformations, the Protocols conversion will come first. If you are dealing with a destination scoped transformation (which is set to only impact data going to a specific destination), Destination Filters will be applied prior to Protocols Transformations.
 
 ### Why do I need Protocols to use transformations?
 
 Transformations are but one tool among many to help you improve data quality. Segment highly recommends that all customers interested in improving data quality start with a well defined Tracking Plan. The Tracking Plan serves as a roadmap for how you want to collect data. Without a clear roadmap, it's nearly impossible to build alignment around how transformations should be used to improve data quality, leading to more data quality issues than it solves.
+
+### Are transformations applied when using the Event Tester?
+
+Transformations are not applied to events sent through the [Event Tester](/docs/connections/test-connections/). The Event Tester operates independently from the Segment pipeline, focusing solely on testing specific connections to a destination. For a transformation to take effect, the event must be processed through the Segment pipeline.

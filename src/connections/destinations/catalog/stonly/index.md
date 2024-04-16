@@ -3,7 +3,7 @@ title: Stonly Destination
 rewrite: true
 id: 5f354f1a928763feb8caf724
 ---
-[Stonly](https://stonly.com) helps make customers more successful and employees more productive by letting you easily create interactive guides and put them inside and around your website or app – without having to code anything.
+[Stonly](https://stonly.com){:target="_blank"} helps make customers more successful and employees more productive by letting you easily create interactive guides and put them inside and around your website or app – without having to code anything.
 
 This destination is maintained by Stonly. For any issues with the destination, [contact their support team](mailto:support@stonly.com).
 
@@ -14,7 +14,7 @@ This destination is maintained by Stonly. For any issues with the destination, [
 
 Before you start, make sure Stonly destination supports the source type and connection mode you've chosen to implement. You can learn more about [connection modes here](/docs/connections/destinations/#connection-modes).
 
-{% include content/connection-modes.md %}
+
 
 1. From the Destinations catalog page in the Segment App, click **Add Destination**.
 2. Search for "Stonly" within the Destinations Catalog, and select Stonly destination.
