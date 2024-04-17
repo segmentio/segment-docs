@@ -56,10 +56,10 @@ analytics.addSourceMiddleware(({ payload, next }) => {
 ## Using Destination Middlewares
 
 
-To add source middleware, use the following API:
+To add destination middleware, use the following API:
 
 ```js
-analytics.addDestinationMiddleware('integrationA', ({ payload, next, integrations }) => .... )
+analytics.addDestinationMiddleware('integrationA', ({ payload, next, integration }) => .... )
 ```
 
 - `payload` represents the event payload sent by Analytics.js. To change the value of the `payload`, mutate the `payload.obj` object. (See the example below.)
