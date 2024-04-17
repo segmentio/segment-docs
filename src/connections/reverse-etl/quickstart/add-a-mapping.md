@@ -36,7 +36,8 @@ To create a mapping:
 14. Turn the toggle on for the **Mapping Status**. Events that match the trigger condition in the mapping will be sent to the destination.
     * If you disable the mapping state to the destination, events that match the trigger condition in the mapping won’t be sent to the destination.
 
-To add multiple mappings from your warehouse to your destination, repeat steps 1-13 above.
+> success ""
+> To add multiple mappings from your warehouse to your destination, repeat steps 1-13 above.
 
 <div class="double">
   {% include components/reference-button.html href="/connections/reverse-etl/quickstart/add-a-destination/" newtab="false" icon="symbols/arrow-left.svg" title="Add a destination" description="After adding your warehouse as a source, create a SQL query that defines sets of data you want to synchronize to your Reverse ETL destinations." variant="related" subtitle="back" %}

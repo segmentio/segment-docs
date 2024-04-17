@@ -3,9 +3,6 @@ title: Azure Reverse ETL Setup
 strat: retl-quickstart
 ---
 
-> info "Public beta"
-> The Azure source for Reverse ETL is in public beta and is governed by Segment's [First Access and Beta Preview Terms](https://www.twilio.com/en-us/legal/tos){:target="_blank"}. 
-
 Set up Azure as your Reverse ETL source.
 
 At a high level, when you set up Azure dedicated SQL pools for Reverse ETL, the configured user needs read permissions for any resources (databases, schemas, tables) the query needs to access. Segment keeps track of changes to your query results with a managed schema (`__SEGMENT_REVERSE_ETL`), which requires the configured user to allow write permissions for that schema.
@@ -79,7 +76,7 @@ To set up Azure as your Reverse ETL source:
 After you've successfully added your Azure source, [add a model](/docs/connections/reverse-etl/#step-2-add-a-model) and follow the rest of the steps in the Reverse ETL setup guide. 
 
 <div class="double">
-  {% include components/reference-button.html href="/connections/reverse-etl/quickstart/source-setup-catalog/" newtab="false" icon="symbols/arrow-left.svg" title="Reverse ETL source catalog" description="Select a guide to set up your warehouse used for Reverse ETL." variant="related" subtitle="next" %}
+  {% include components/reference-button.html href="/connections/reverse-etl/quickstart/source-setup-catalog/" newtab="false" icon="symbols/arrow-left.svg" title="Reverse ETL source catalog" description="Select a guide to set up your warehouse used for Reverse ETL." variant="related" subtitle="back" %}
 
   {% include components/reference-button.html href="/connections/reverse-etl/quickstart/segment-app-setup/" newtab="false" icon="symbols/arrow-right.svg" title="Complete in-app source setup" description="After adding your warehouse as a source and configuring permissions for the Segment user, finish the in-app setup process in Segment." variant="related" subtitle="next" %}
 </div>
