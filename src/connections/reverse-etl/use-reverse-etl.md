@@ -68,6 +68,22 @@ To edit your mapping:
 2. Select the destination and the mapping you want to edit.
 3. Select the **...** three dots and click **Edit mapping**. If you want to delete your mapping, select **Delete**.
 
+## Reverse ETL for Engage Premier Subscriptions
+[Engage Premier Subscriptions users](/docs/engage/user-subscriptions/) can use Reverse ETL to sync subscription data from warehouses to destinations. 
+
+To get started with using Reverse ETL for subscriptions: 
+1. Navigate to **Engage > Audiences** and select the **Profile explorer** tab. 
+2. Click **Manage subscription statuses** and select **Update subscription statuses**.
+3. Select **Sync with RETL** as the menthod to update your subscription statuses.
+4. Click **Configure**. 
+5. In the Reverse ETL catalog, select the Reverse ETL source you want to use.
+6. Set up the source. Refer to the [add a source](#step-1-add-a-source) section for more details on how to set up the source. 
+7. Add the **Segment Profiles** destination as your Reverse ETL destination. Refer to [add a destination](#step-3-add-a-destination) for more details to set up the destination.
+8. Once your destination is set, go to the **Mappings** tab of your destination and click **Add Mapping**.
+9. Select the model you want to use and then select **Send Subscriptions**. 
+10. Click **Create Mapping**.  
+11. Follow the steps in the [create mappings](#step-4-create-mappings) section to set your mappings. 
+
 ## Record diffing
 Reverse ETL computes the incremental changes to your data directly within your data warehouse. The Unique Identifier column is used to detect the data changes, such as new, updated, and deleted records.
 
