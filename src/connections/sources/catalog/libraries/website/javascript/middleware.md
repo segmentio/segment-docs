@@ -64,7 +64,7 @@ analytics.addDestinationMiddleware('integrationA', ({ payload, next, integration
 
 - `payload` represents the event payload sent by Analytics.js. To change the value of the `payload`, mutate the `payload.obj` object. (See the example below.)
 - `next` represents the next function to be called in the destination middleware chain. If the middleware provided does not call this function, then the event is dropped completely for the given destination.
-- `integration` is a string value representing the integration that this middleware is applied to.
+- `integration` is a string value representing the integration that this middleware is applied to. To apply middleware to all destinations (excluding Segment.io), you can use the `*` value.
 
 #### Example: Modifying an event
 ```js
