@@ -677,7 +677,7 @@ Here are some examples of using `addSourceMiddleware` for enrichment and validat
     analytics.addSourceMiddleware(({ payload, next }) => {
       const { event } = payload.obj.context
       if (!isValid(event)) {
-        throw new Error("Event will be dropped")
+        return null // event is dropped
       }
       next(payload)
     });
