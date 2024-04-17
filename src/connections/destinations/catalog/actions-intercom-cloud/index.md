@@ -43,7 +43,7 @@ The Intercom Cloud Mode (Actions) destination doesn't have access to Intercom’
 ## FAQ & Troubleshooting
 
 ### Why is a company I created missing from my Intercom dashboard?
-If a company is created without an attached user, the company does not appear on Intercom's dashboard. This is expected. Once a user is attached to the company, it should appear in the list of companies.
+If a company is created without an attached user, the company does not appear on Intercom's dashboard. This is expected. Once a user is attached to the company, it should appear in the list of companies. You can associate a company with a user by providing your Identify Contact mapping with a user's `External ID`, `Email Address`, or `Contact ID`. 
 
 ### Why isn’t a user getting attached to a company?
 When you use the Identify Company action, Segment creates or updates a company's information. In the same action, Segment also attaches the user in your group call to that company. If the user doesn't exist in Intercom when the action runs, Segment creates or updates the company but can't attach the user. Ensure the user is created in Intercom first.
