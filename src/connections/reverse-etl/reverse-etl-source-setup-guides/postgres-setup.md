@@ -36,3 +36,9 @@ To set up Postgres with Reverse ETL:
 * Give the `segment` user read permissions for any resources (databases, schemas, tables) the query needs to access. 
 
 * Give the `segment` user write permissions for the Segment managed schema (`__SEGMENT_REVERSE_ETL`), which keeps track of changes to the query results.  
+
+<div class="double">
+  {% include components/reference-button.html href="/connections/reverse-etl/quickstart/source-setup-catalog/" newtab="false" icon="symbols/arrow-left.svg" title="Reverse ETL source catalog" description="Select a guide to set up your warehouse used for Reverse ETL." variant="related" subtitle="back" %}
+
+  {% include components/reference-button.html href="/connections/reverse-etl/quickstart/segment-app-setup/" newtab="false" icon="symbols/arrow-right.svg" title="Complete in-app source setup" description="After adding your warehouse as a source and configuring permissions for the Segment user, finish the in-app setup process in Segment." variant="related" subtitle="next" %}
+</div>
