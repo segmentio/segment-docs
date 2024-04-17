@@ -182,6 +182,20 @@ sections:
     section:
     - path: /connections/reverse-etl
       title: Reverse ETL Overview
+    - section_title: Using Reverse ETL
+      slug:
+      section: 
+        - path: /connections/reverse-etl/set-up-retl.md
+          title: Configure Reverse ETL
+        - path: /connections/reverse-etl/use-reverse-etl.md
+          title: Use Reverse ETL
+    - section_title: Reverse ETL References
+      slug: 
+      section: 
+        - path: /connections/reverse-etl/reverse-etl-reference.md
+          title: Limits and Supported Data Types
+        - path: /connections/reverse-etl/frequently-asked-questions.md
+          title: Reverse ETL FAQ
     - path: /connections/reverse-etl/reverse-etl-catalog
       title: Reverse ETL Catalog
     - section_title: Reverse ETL Source Setup Guides

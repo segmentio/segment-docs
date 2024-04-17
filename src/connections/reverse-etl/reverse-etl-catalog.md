@@ -5,6 +5,14 @@ hidden: true
 
 These destinations support [Reverse ETL](/docs/connections/reverse-etl/). If you don’t see your destination listed in the Reverse ETL catalog, use the [Segment Connections destination](/docs/connections/destinations/catalog/actions-segment/) to send data from your Reverse ETL warehouse to other destinations listed in the [catalog](/docs/connections/destinations/catalog/).  
 
+## Segment Connections destination
+The Segment Connections destination enables you to mold data extracted from your warehouse in [Segment Spec](/docs/connections/spec/) API calls that are then processed by [Segment’s HTTP Tracking API](/docs/connections/sources/catalog/libraries/server/http-api/). The requests hit Segment’s servers, and then Segment routes your data to any destination you want. Get started with the [Segment Connections destination](/docs/connections/destinations/catalog/actions-segment/). 	
+
+> warning ""
+>  The Segment Connections destination sends data to Segment’s Tracking API, which has cost implications. New users count as new MTUs and each call counts as an API call. For information on how Segment calculates MTUs and API calls, please see [MTUs, Throughput and Billing](/docs/guides/usage-and-billing/mtus-and-throughput/).
+
+## Supported destinations
+
 <div class="destinations-catalog">
       <div class="flex flex--wrap waffle waffle--xlarge">
         {% assign destinations = site.data.catalog.destinations.items %}
