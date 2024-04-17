@@ -14,7 +14,7 @@ Segment's Webhooks (Actions) destination uses internet protocol and HTTP callbac
 
 ## Getting Started
 
-1. From the Segment web app, navigate to **Connections > Catalog**.
+1. From the Segment web app, navigate to **Connections > Catalog**. 
 2. Search for **Webhooks (Actions)** in the Destinations Catalog, and select the destination.
 3. Click **Configure Webhooks (Actions)**.
 4. Select the source that will send data to Webhooks (Actions) and follow the steps to name your destination.
@@ -32,6 +32,7 @@ In Webhook Actions mapping, the default value of batch size is `1000`. You can c
 
 ### Why is a Webhooks (Actions) Destination helpful with end-to-end tests?
 The easiest way to test whether a source's events are sending through the Segment pipeline is with an end-to-end test. Use the steps below to monitor the events arriving to your Segment source and whether they're successfully sending to your destinations. Connecting a Webhooks (Actions) Destination to your sources makes these requests easy to see. For example, if you connect a Webhooks Destination (Webhook Actions Destination) to your source, you'd be able to see the events received by that source and sent to that destination.
+
 #### Connect a Webhook Actions destination to your workspace
 1. [Add a new Webhook (Actions) destination](https://app.segment.com/goto-my-workspace/destinations/catalog/actions-webhook) to your source. Make sure you select the intended source to connect this destination to.
 2. Visit the Webhook's site, and copy the endpoint to your clipboard. A simple example site you can use is [https://webhook.site/#!/]([url](https://webhook.site/#!/)), but use whichever Webhooks site you prefer.
