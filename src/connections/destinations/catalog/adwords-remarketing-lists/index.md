@@ -2,6 +2,8 @@
 title: Google Ads Remarketing Lists Destination
 strat: google
 hide-boilerplate: true
+hide-dossier: false
+hide-cmodes: true
 id: 5a6b50f1c900fa00011858fd
 ---
 
