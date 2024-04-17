@@ -15,7 +15,7 @@ Reverse ETL (Extract, Transform, Load) extracts data from a data warehouse using
     href="/docs/connections/reverse-etl/set-up-retl"
     icon="reverse-etl.svg"
     title="Configure Reverse ETL"
-    description="Set up your data warehouse, create a model for the data you'd like to synchronize from your data warehouse, add a downstream destination, and map data from your warehouse to your destination."
+    description="Set up your warehouse, create a data model, add a downstream destination, and map data from your warehouse to your destination."
   %}
 
   {% include components/reference-button.html
@@ -27,7 +27,6 @@ Reverse ETL (Extract, Transform, Load) extracts data from a data warehouse using
 </div>
 
 ## Reverse ETL references
-<div class="double">
   {% include components/reference-button.html
     href="/docs/connections/reverse-etl/reverse-etl-reference"
     icon="help.svg"
@@ -41,9 +40,9 @@ Reverse ETL (Extract, Transform, Load) extracts data from a data warehouse using
     title="Frequently asked questions"
     description="Get answers to Reverse ETL questions frequently asked by customers."
   %}
-</div>
 
 ## More Segment resources
+<div class="double">
 {% include components/reference-button.html
   icon="guides.svg"
   href="https://segment.com/blog/reverse-etl/"
@@ -57,3 +56,4 @@ Reverse ETL (Extract, Transform, Load) extracts data from a data warehouse using
   title="Customer story: MongoDB"
   description="Learn how MongoDB used Reverse ETL to connect the work of analytics teams to downstream marketing and sales tools to deliver just-in-time communicates that increased customer satisfaction and engagement."
 %}
+</div>

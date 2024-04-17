@@ -74,7 +74,7 @@ To edit your mapping:
 To get started with using Reverse ETL for subscriptions: 
 1. Navigate to **Engage > Audiences** and select the **Profile explorer** tab. 
 2. Click **Manage subscription statuses** and select **Update subscription statuses**.
-3. Select **Sync with RETL** as the menthod to update your subscription statuses.
+3. Select **Sync with RETL** as the method to update your subscription statuses.
 4. Click **Configure**. 
 5. In the Reverse ETL catalog, select the Reverse ETL source you want to use.
 6. Set up the source. Refer to the [add a source](#step-1-add-a-source) section for more details on how to set up the source. 

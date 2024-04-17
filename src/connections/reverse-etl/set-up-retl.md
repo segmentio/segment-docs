@@ -1,7 +1,7 @@
 ---
 title: Configure Reverse ETL
 ---
-## Getting started
+
 There are four components to Reverse ETL: Sources, Models, Destinations, and Mappings.
 
 ![Reverse ETL overview image](images/RETL_Doc_Illustration.png)
@@ -12,7 +12,7 @@ Follow these 4 steps to set up Reverse ETL and learn what each component is abou
 3. [Add a destination](#step-3-add-a-destination)
 4. [Create mappings](#step-4-create-mappings)
 
-### Step 1: Add a source
+## Step 1: Add a source
 A source is where your data originates from. Traditionally in Segment, a [source](/docs/connections/sources/#what-is-a-source) is a website, server library, mobile SDK, or cloud application which can send data into Segment. In Reverse ETL, your data warehouse is the source.
 
 To add your warehouse as a source:
@@ -37,7 +37,7 @@ To add your warehouse as a source:
 
 After you add your data warehouse as a source, you can [add a model](#step-2-add-a-model) to your source.
 
-### Step 2: Add a model
+## Step 2: Add a model
 Models are SQL queries that define sets of data you want to synchronize to your Reverse ETL destinations. After you add your source, you can add a model.
 
 To add your first model:
@@ -53,7 +53,7 @@ To add your first model:
 
 To add multiple models to your source, repeat steps 1-8 above.
 
-### Step 3: Add a destination
+## Step 3: Add a destination
 Once you’ve added a model, you need to add a destination. In Reverse ETL, destinations are the business tools or apps you use that Segment syncs the data from your warehouse to.
 
 If your destination is not listed in the Reverse ETL catalog, use the [Segment Connections Destination](#segment-connections-destination) to send data from your Reverse ETL warehouse to your destination.
@@ -70,11 +70,11 @@ To add your first destination:
 6. Enter the required information on the **Settings** tab of the destination.
 7. Navigate to the destination settings tab and enable the destination. If the destination is disabled, then Segment won't be able to start sync.
 
-### Step 4: Create mappings
+## Step 4: Create mappings
 After you’ve added a destination, you can create mappings from your warehouse to the destination. Mappings enable you to map the data you extract from your warehouse to the fields in your destination.
 
 To create a mapping:
-1. Navigate to **Conections > Destinations** and select the **Reverse ETL** tab.
+1. Navigate to **Connections > Destinations** and select the **Reverse ETL** tab.
 2. Select the destination that you want to create a mapping for.  
 3. Click **Add Mapping**.
 4. Select the model to sync from.
@@ -107,4 +107,3 @@ To create a mapping:
 To add multiple mappings from your warehouse to your destination, repeat steps 1-13 above.
 
 After you've followed [all four steps](/docs/connections/reverse-etl/set-up-retl/#getting-started) and set up your source, model, destination, and mappings for Reverse ETL, your data will extract and sync to your destination(s) right away if you chose an interval schedule. If you set your data to extract at a specific day and time, the extraction will take place then.
-
