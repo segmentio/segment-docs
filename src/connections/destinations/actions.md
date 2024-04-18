@@ -234,7 +234,7 @@ The available operators depend on the property's data type:
 You can combine criteria in a single group using **ALL** or **ANY**.  Use an ANY to “subscribe” to multiple conditions. Use ALL when you need to filter for very specific conditions. You can only create one group condition per destination action. You cannot created nested conditions.
 
 > info "Unsupported Special Characters"
-> Mappings do not support the use of double quotes " or a tilde ~ in the trigger fields.
+> Mappings do not support the use of double quotes " or a tilde ~ in the trigger fields. In mapping fields, the . character is not supported unless it's being used to access an object key. If a string has a . in it, that is not supported.
 
 > info "Limitations"
 > Mapping fields don't support dot notation. For example, properties.amount.cost or properties_amount.cost aren't supported.

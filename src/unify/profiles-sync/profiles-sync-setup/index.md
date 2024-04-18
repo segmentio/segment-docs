@@ -1,5 +1,5 @@
 ---
-title: Profiles Sync Setup
+title: Set up Profiles Sync
 plan: unify
 redirect_from:
   - '/unify/profiles-sync/'
@@ -7,12 +7,12 @@ redirect_from:
 
 On this page, you’ll learn how to set up Profiles Sync, enable historical backfill, and adjust settings for warehouses that you’ve connected to Profiles Sync.
 
-## Initial Profiles Sync setup
+## Initially Setting up Profiles Sync
 
 > info "Identity Resolution setup"
 > To use Profiles Sync, you must first set up [Identity Resolution](/docs/unify/identity-resolution/).
 
-To set up Profiles Sync, you’ll first create a warehouse, then connect the warehouse within the Segment app.
+To set up Profiles Sync, first create a warehouse, then connect the warehouse within the Segment app.
 
 Before you begin, prepare for setup with these tips:
 
