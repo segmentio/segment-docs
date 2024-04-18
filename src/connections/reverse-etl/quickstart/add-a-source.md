@@ -1,6 +1,5 @@
 ---
 title: Add a Source
-strat: retl-quickstart
 --- 
 In Reverse ETL, your data warehouse is the "source" of your data.
 

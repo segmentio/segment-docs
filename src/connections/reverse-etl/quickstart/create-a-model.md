@@ -1,6 +1,5 @@
 ---
 title: Create a Model
-strat: retl-quickstart
 ---
 
 Now that you've added your warehouse as a RETL source, you can create a model, or a SQL query that define sets of data you want to synchronize to your Reverse ETL destinations. 

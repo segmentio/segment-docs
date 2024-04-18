@@ -1,6 +1,5 @@
 ---
 title: Reverse ETL Quickstart
-strat: retl-quickstart
 ---
 
 Reverse ETL (Extract, Transform, Load) extracts data from a data warehouse using a query you provide, and syncs the data to your 3rd party destinations. For example, with Reverse ETL, you can sync records from Snowflake to Mixpanel. 

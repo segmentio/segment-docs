@@ -23,7 +23,7 @@ To set up Postgres with Reverse ETL:
 3. Run the SQL commands below to create a user named `segment`.
 
     ```sql
-    -- create a user named "segment" that Segment will use when connecting to your Postgres  accesscluster.
+    -- create a user named "segment" that Segment will use when connecting to your Postgres cluster.
     CREATE USER segment PASSWORD '<enter password here>';
 
     -- allows the "segment" user to create new schemas on the specified database. (this is the name you chose when provisioning your cluster) 

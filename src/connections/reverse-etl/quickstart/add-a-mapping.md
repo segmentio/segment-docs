@@ -1,6 +1,5 @@
 ---
 title: Add a Mapping
-strat: retl-quickstart
 ---
 
 After you’ve added a destination, you can create mappings from your warehouse to the destination. Mappings enable you to map the data you extract from your warehouse to the fields in your destination.

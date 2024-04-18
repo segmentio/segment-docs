@@ -1,6 +1,5 @@
 ---
 title: Add a Destination
-strat: retl-quickstart
 ---
 After you add a model to your Reverse ETL source, you need to add a destination, or business app or tool that Segment should send data to. 
 
