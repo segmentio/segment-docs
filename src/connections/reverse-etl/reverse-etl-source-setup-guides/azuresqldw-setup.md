@@ -73,10 +73,10 @@ To set up Azure as your Reverse ETL source:
 9. Click **Test Connection** to see if the connection works. If the connection fails, make sure you have the right permissions and credentials, then try again.
 10. Click **Add source** if the test connection is successful. 
 
-After you've successfully added your Azure source, [add a model](/docs/connections/reverse-etl/#step-2-add-a-model) and follow the rest of the steps in the Reverse ETL setup guide. 
+After adding your data warehouse as a Reverse ETL source, create a model, or a SQL query that defines sets of data you want to synchronize to your Reverse ETL destinations. 
 
 <div class="double">
-  {% include components/reference-button.html href="/connections/reverse-etl/quickstart/source-setup-catalog/" newtab="false" icon="symbols/arrow-left.svg" title="Reverse ETL source catalog" description="Select a guide to set up your warehouse used for Reverse ETL." variant="related" subtitle="back" %}
+  {% include components/reference-button.html href="/connections/reverse-etl/quickstart/source-setup-catalog" newtab="false" icon="symbols/arrow-left.svg" title="Reverse ETL source catalog" description="Select a guide to set up your warehouse used for Reverse ETL." variant="related" subtitle="back" %}
 
-  {% include components/reference-button.html href="/connections/reverse-etl/quickstart/segment-app-setup/" newtab="false" icon="symbols/arrow-right.svg" title="Complete in-app source setup" description="After adding your warehouse as a source and configuring permissions for the Segment user, finish the in-app setup process in Segment." variant="related" subtitle="next" %}
+  {% include components/reference-button.html href="/connections/reverse-etl/quickstart/create-a-model/" newtab="false" icon="symbols/arrow-right.svg" title="Create a model" description="After adding your warehouse as a source, create a SQL query that defines sets of data you want to synchronize to your Reverse ETL destinations." variant="related" subtitle="next" %}
 </div>

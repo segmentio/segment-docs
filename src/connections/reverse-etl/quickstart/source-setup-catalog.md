@@ -10,5 +10,5 @@ Segment supports the following warehouses as Reverse ETL sources. Select an icon
 <div class="double">
   {% include components/reference-button.html href="/connections/reverse-etl/quickstart/add-a-source" newtab="false" icon="symbols/arrow-left.svg" title="Add a Reverse ETL Source" description="Start setting up your Reverse ETL connection by adding your warehouse to the Segment app." variant="related" subtitle="back" %}
 
-  {% include components/reference-button.html href="/connections/reverse-etl/quickstart/segment-app-setup" newtab="false" icon="symbols/arrow-right.svg" title="Complete in-app source setup" description="After adding your warehouse as a source, finish the in-app setup process in Segment." variant="related" subtitle="next" %}
+  {% include components/reference-button.html href="/connections/reverse-etl/quickstart/create-a-model/" newtab="false" icon="symbols/arrow-right.svg" title="Create a model" description="After adding your warehouse as a source, create a SQL query that defines sets of data you want to synchronize to your Reverse ETL destinations." variant="related" subtitle="next" %}
 </div>

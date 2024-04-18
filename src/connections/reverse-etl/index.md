@@ -15,6 +15,15 @@ Use Reverse ETL when you want to:
 * Pass offline or enriched data to conversion APIs like Facebook, Google Ads, TikTok, or Snapchat.
 * Connect Google Sheets to a view in the warehouse for other business teams to have access to up-to-date reports.
 
+## Prerequisites
+
+A Reverse ETL implementation requires the following: 
+- A Segment user with Workspace Owner or Source Admin and Warehouse Admin roles. _For more information about Roles in Segment, see the [Roles](/docs/segment-app/iam/roles/) documentation._
+- A user with read and write access to your Azure, BigQuery, Databricks, Postgres, Redshift, or Snowflake warehouse.
+- Access to your chosen downstream destination(s).
+
+Once you've verified you have access to all of these systems, you can follow the steps in the [quickstart guide](/connections/reverse-etl/quickstart/add-a-source/) or the [full installation guide](/connections/reverse-etl/index/#getting-started) to configure Reverse ETL.
+
 ## Getting started
 There are four components to Reverse ETL: Sources, Models, Destinations, and Mappings.
 

@@ -184,6 +184,23 @@ sections:
       title: Reverse ETL Overview
     - path: /connections/reverse-etl/reverse-etl-catalog
       title: Reverse ETL Catalog
+    - section_title: Reverse ETL Quickstart
+      slug: /connections/reverse-etl/quickstart/
+      section:
+        - path: /connections/reverse-etl/quickstart
+          title: Reverse ETL Quickstart 
+        - path: /connections/reverse-etl/quickstart/add-a-source/
+          title: Add A Source
+        - path: /connections/reverse-etl/quickstart/source-setup-catalog/
+          title: RETL Source Setup Guides
+        - path: /connections/reverse-etl/quickstart/create-a-model/      
+          title: Create a Model
+        - path: /docs/connections/reverse-etl/quickstart/add-a-destination/
+          title: Add a Destination
+        - path: /connections/reverse-etl/quickstart/add-a-mapping/
+          title: Add a Mapping
+        - path: /connections/reverse-etl/quickstart/complete/
+          title: Setup complete!
     - section_title: Reverse ETL Source Setup Guides
       slug: connections/reverse-etl/reverse-etl-source-setup-guides
       section:

@@ -5,6 +5,10 @@ strat: retl-quickstart
 
 Congratulations! You've successfully set up Reverse ETL. Your data will extract and sync to your destination(s) right away if you chose an interval schedule when creating your mapping. If you set your data to extract at a specific day and time, the extraction will take place then.
 
+Now that you've successfully set up Reverse ETL, learn how to [manage warehouse syncs](#managing-syncs), [edit your model](#edit-your-model), and [edit your mapping](#edit-your-mapping). 
+
+For more information about supported data types and limits, see the [Supported object and arrays](/connections/reverse-etl/index/#supported-object-and-arrays) and [Limits](/connections/reverse-etl/index/#limits) documentation. 
+
 ## Managing syncs
 
 ### Sync history and observability
@@ -60,3 +64,9 @@ To edit your mapping:
 1. Navigate to **Connections > Destinations** and select the **Reverse ETL** tab.
 2. Select the destination and the mapping you want to edit.
 3. Select the **...** three dots and click **Edit mapping**. If you want to delete your mapping, select **Delete**.
+
+<div class="double">
+  {% include components/reference-button.html href="/connections/reverse-etl/quickstart/create-a-model/" newtab="false" icon="symbols/arrow-left.svg" title="Add a mapping" description="Map data from your warehouse to specific fields in your target destinations." variant="related" subtitle="back" %}
+
+  {% include components/reference-button.html href="/connections/reverse-etl/" newtab="false" icon="symbols/arrow-right.svg" title="Return to the full installation guide" description="Now that you've completed the Reverse ETL quickstart guide, return to the full installation guide to learn more about how Segment's Reverse ETL product works." variant="related" subtitle="next" %}
+</div>

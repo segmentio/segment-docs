@@ -16,10 +16,18 @@ Use Reverse ETL when you want to:
 > success ""
 > Reverse ETL supports event and object data. This includes customer profile data, subscriptions, product tables, shopping cart tables, and more.
 
-Looking to quickly get started? 
+## Prerequisites
 
-{% include components/reference-button.html href="/connections/reverse-etl/quickstart/add-a-source/" newtab="false" icon="symbols/arrow-right.svg" title="Add a Reverse ETL Source" description="Start setting up your Reverse ETL connection by adding your warehouse to the Segment app." variant="related" subtitle="next" %}
+A Reverse ETL implementation requires the following: 
+- A Segment user with Workspace Owner or Source Admin and Warehouse Admin roles. _For more information about Roles in Segment, see the [Roles](/docs/segment-app/iam/roles/) documentation._
+- A user with read and write access to your Azure, BigQuery, Databricks, Postgres, Redshift, or Snowflake warehouse.
+- Access to your chosen downstream destination(s).
 
-Looking for the full setup guide? 
+Once you've verified you have access to all of these systems, you can follow the steps in the [quickstart guide](/connections/reverse-etl/quickstart/add-a-source) or the [full installation guide](/connections/reverse-etl/index/#getting-started) to configure Reverse ETL.
 
-{% include components/reference-button.html href="/connections/reverse-etl/index/" newtab="false" icon="symbols/arrow-right.svg" title="Reverse ETL Full Setup Guide" description="A full Reverse ETL implementation." variant="related" subtitle="next" %}
+<div class="double">
+
+{% include components/reference-button.html href="/connections/reverse-etl/index/" newtab="false" icon="reverse-etl.svg" title="Reverse ETL Full Setup Guide" description="A full Reverse ETL implementation." variant="related" subtitle="next" %}
+
+{% include components/reference-button.html href="/connections/reverse-etl/quickstart/add-a-source/" newtab="false" icon="symbols/arrow-right.svg" title="Add a Reverse ETL Source" description="Start setting up your Reverse ETL connection by connecting your warehouse to the Segment app." variant="related" subtitle="next" %}
+</div>
