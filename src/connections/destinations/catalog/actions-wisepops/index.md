@@ -71,9 +71,9 @@ To track a JavaScript goal through Segment:
 1. [Create your JavaScript goal in Wisepops](https://id.wisepops.com/r/id/workspaces/_workspaceId_/goals){:target='_blank'}.
 2. Copy the goal identifier. It is a 32-character string visible after the goal is created:
    ![Wisepops goal identifier](images/wisepops-goal-id.png)
-3. In Segment, create a new mapping, with the action "Track Goal".
+3. In Segment, create a new mapping, with the action **Track Goal**.
 4. In the first section, configure when the goal should be tracked.
-5. In the third section, paste the goal identifier in the appropriate field:
+5. In the third section, paste the goal identifier in the **Goal Identifier** field:
    ![Wisepops goal mapping](images/wisepops-goal-mapping.png)
 6. Save the new mapping.
 
