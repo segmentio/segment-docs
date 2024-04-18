@@ -133,6 +133,9 @@ Again, this will **NOT** work for new users. New users will always have their su
 ### Why are my calls with trait arrays not showing up in Mailchimp?
 Mailchimp doesn't support arrays as traits values. This can cause calls to not show up.
 
+### Frequent 404 Bad Requests from Identify events without error message?
+If you are sending concurrent requests for the same userId, MailChimp will block the events due to how MailChimp restricts each API key to a maximum of 10 concurrent requests. 
+
 ## Engage
 
 You can send computed traits and audiences generated using [Engage](/docs/engage/) to Mailchimp as a **user property**. To learn more about Engage, schedule a [demo](https://segment.com/demo/){:target="_blank"}.
