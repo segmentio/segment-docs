@@ -248,7 +248,7 @@ Sending data to the rest of Segment's destinations is opt-out so if you don't sp
 
 Every API call has four timestamps, `originalTimestamp`, `timestamp`, `sentAt`, and `receivedAt.`  They're used for very different purposes.
 
-**All timestamps are [ISO-8601](http://en.wikipedia.org/wiki/ISO_8601){:target="_blank"} date strings.**
+**All timestamps are [ISO-8601](http://en.wikipedia.org/wiki/ISO_8601){:target="_blank"} date strings, and are in the UTC timezone.**
 
 > info ""
 > You must use ISO-8601 date strings that include timezones when you use timestamps with [Engage](/docs/engage/). If you send custom traits without a timezone, Segment doesn't save the timestamp value.
