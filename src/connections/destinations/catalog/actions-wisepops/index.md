@@ -66,6 +66,7 @@ For example, you can display a popup when a product is added to the cart:
 ### Track Goal
 
 The Track Goal action is not mapped by default. You can enable it to track [goal completion and revenue](https://support.wisepops.com/article/mx3z8na6yb-set-up-goal-tracking){:target='_blank'} on Wisepops.
+
 To track a JavaScript goal through Segment:
 
 1. [Create your JavaScript goal in Wisepops](https://id.wisepops.com/r/id/workspaces/_workspaceId_/goals){:target='_blank'}.
