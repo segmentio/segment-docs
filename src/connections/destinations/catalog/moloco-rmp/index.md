@@ -142,9 +142,40 @@ Stringification Logic is: {key}:{value}s concatenated by ";"
 
 As page_id has a higher priority, **Page Identifier Token** will be ignored if page_id is passed
 
-Here’s an example of Page Identifier Token that could be tracked in a mobile app:
+Here’s an example of **Page Identifier Token** that could be tracked in a mobile app.
 
-![A screenshot of a Page Identifier Token example.](images/page-identifier-token-example.png)
+Say the input had the following schema:
+
+```js
+    ...
+      "event": "Product List Viewed",
+      "vertical": "fruit"
+    ...
+```
+
+and user chose the following mapping:
+
+```js
+    // "event" represents the name of the event
+    event: properties.event
+    // "vertical" represents which vertical the event happened on
+    vertical: properties.vertical
+
+    // The combination of those two tokens can repsent
+    // "Which action happened on which vertical"
+```
+
+The tokens be stringified into:
+
+```js
+    "event:Product List Viewed;vertical:fruit"
+```
+
+Logic: 
+
+```js
+    {key}:{value} concatenated by ";"
+```
 
 _Note_: if you decided to use the **Page Identifier Token** in your mobile app, please make sure you reuse the same **Page Identifier Token** in place of page_id when calling other Moloco’s APIs like Decision API.
 
@@ -160,6 +191,6 @@ Default Mappings are not hard rules. They can be modified to your convenience.
 
 ## Monitoring
 
-Once the mappings are configured correctly, you can verify the flow of events from your source to Moloco’s destination in the “**Delivery Overview**” tab.
+Once the mappings are configured correctly, you can verify the flow of events from your source to Moloco’s destination in the “**Delivery Overview**” tab. If things are configured correctly, it should show a growing **Successful delivery** count.
 
-![A screenshot of MCM Destination Monitoring.](images/mcm-destination-monitoring.png)
+For more details about the monitoring tool, take a look at the [Delivery Overview](https://segment.com/docs/connections/delivery-overview/) docs.
