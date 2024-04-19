@@ -5,17 +5,16 @@ beta: true
 hidden: true
 ---
 
-> > info "Linked Profiles is in public beta"
+> info "Linked Profiles is in public beta"
 > Linked Profiles (Data Graph, Linked Events, and Linked Audiences) is in public beta, and Segment is actively working on this feature. Some functionality may change before it becomes generally available.
 
 On this page, you'll learn how to connect your Snowflake data warehouse to Segment.
 
-Log in to Snowflake with a user that has admin privileges to provide Segment Linked Profiles with the necessary permissions below.
+Log in to Snowflake with admin privileges to provide Segment Linked Profiles with the necessary permissions below.
 
 > info ""
 > Both Linked Events and Linked Profiles support Snowflake. 
  
-
 ## Required connection settings within Segment
 
 Segment requires the following settings to connect to your Snowflake warehouse.
