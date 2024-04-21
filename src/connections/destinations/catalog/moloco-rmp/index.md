@@ -145,7 +145,7 @@ In Moloco Commercial Media, the [page_id](https://mcm-docs.moloco.com/docs/51-us
 The Page Identifier Token field accepts key:value pairs of strings that can identify the page.
 Stringification Logic is: {key}:{value}s concatenated by ";"
 
-As page_id has a higher priority, **Page Identifier Token** will be ignored if page_id is passed
+Moloco Commercial Media ignores the Page Identifier Token if page_id is passed, as page_id has a higher priority.
 
 Here’s an example of a Page Identifier Token that could be tracked in a mobile app.
 
