@@ -40,7 +40,8 @@ analytics.identify('361b1fdfbeaa9d64a13c033eb9f970dc6740f6bc', {
 Once a user is identified, each call to the [Track method](https://segment.com/docs/connections/spec/track/) will automatically record the user ID.
 For non logged-in users, you can still track them using an [anonymous ID](https://segment.com/docs/connections/spec/identify/#anonymous-id) (something like UUID as recommended by Segment) but on the Moloco Commerce Media side, we do not use that field for non logged-in users.
 
-_Note_: if you decided to hash the user ID before sending it to Moloco for event tracking, please make sure you reuse the same hashed ID when calling other Moloco’s APIs like Decision API.
+> info" "
+> If you hash the user ID before sending it to Moloco, ensure you reuse the same hashed ID when calling other Moloco APIs.
 
 ## Moloco Commerce Media’s available presets
 
