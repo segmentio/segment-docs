@@ -140,7 +140,7 @@ If you use Segment’s Web SDK, this call automatically collects the page inform
 
 However for iOS and Android, it won’t collect page information.
 
-In Moloco Commercial Media, the [page_id](https://mcm-docs.moloco.com/docs/51-user-event-data-specifications#page_view-event-type) attribute is required for the PAGE_VIEW event. Using the Web SDK, the page_id can be associated with the path attribute. However for iOS/Android, as we do not have an appropriate field for page_id, we recommend using the **Page Identifier Token** field.
+Moloco Commercial Media requires the [page_id](https://mcm-docs.moloco.com/docs/51-user-event-data-specifications#page_view-event-type){:target="_blank”} attribute for a PAGE_VIEW event. Using the Web SDK, the page_id can be associated with the path attribute. However for iOS/Android, Moloco Commercial Media recommends using the Page Identifier Token field.
 
 The Page Identifier Token field accepts key:value pairs of strings that can identify the page.
 Stringification Logic is: {key}:{value}s concatenated by ";"
