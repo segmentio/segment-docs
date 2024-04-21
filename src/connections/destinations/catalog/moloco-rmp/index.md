@@ -112,7 +112,7 @@ analytics.track("Product Viewed", {
   price: 19.99
   currency: "USD"
   quantity: 1,
-  image_url: "https://www.example.com/iamge.png"
+  image_url: "https://www.example.com/image.png"
 });
 ```
 
