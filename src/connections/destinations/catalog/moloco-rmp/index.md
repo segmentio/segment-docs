@@ -118,7 +118,7 @@ analytics.track("Product Viewed", {
 
 ## Page
 
-If you’re not familiar with the Segment Specs, take a look to understand what the [Page method](https://segment.com/docs/connections/spec/page/) does. 
+If you’re not familiar with the Segment Spec, take a look to understand what the [Page method](/docs/connections/spec/page/) does. 
 
 Please find below an example call to page:
 
