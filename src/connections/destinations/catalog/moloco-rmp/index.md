@@ -5,7 +5,7 @@ beta: true
 private: true
 ---
 
-[Moloco Commerce Media](https://www.moloco.com/products/moloco-retail-media-platform) (MCM) is a technology solution that empowers marketplaces and online retailers to build and scale a retail media business (i.e., sponsored ads). Moloco’s solution helps platforms leverage and activate their first-party data to deliver highly relevant and performant ads, automate ad decision-making, and scale their ads business.
+[Moloco Commerce Media](https://www.moloco.com/products/moloco-retail-media-platform){:target="_blank”} (MCM) is a technology solution that empowers marketplaces and online retailers to build and scale a retail media business (for example, sponsored ads). Moloco’s solution helps platforms leverage and activate their first-party data to deliver highly relevant and performant ads, automate ad decision-making, and scale their ads business.
 
 This Moloco Commerce Media destination can send user events collected using the Segment SDK to Moloco’s platform for simplified performance ads integration.
 
