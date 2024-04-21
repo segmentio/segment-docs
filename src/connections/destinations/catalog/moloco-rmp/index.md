@@ -11,21 +11,23 @@ The Moloco Commerce Media destination can send user events collected using the S
 
 This allows you to run performance advertising without having to build your own backend system to ingest and send user events data in realtime to Moloco. 
 
-## Getting Started
+## Getting started
 
-Before you configure the Moloco Commerce Media destination, make sure that your source data is configured correctly and that you are able to see events flowing in the event stream debugger.
+### Prerequisites 
+Before you configure the Moloco Commerce Media destination, add a source to Segment and use the [Source Debugger](/docs/connections/sources/debugger/) to verify Segment is receiving events. 
 
-To configure the Moloco Commerce Media destination, you need to get the following 2 elements from your Moloco representative.
+Before you configure the Moloco Commerce Media destination, reach out to your Moloco representative about the following account information: 
+- Moloco Platform ID
+- Moloco Event Service API key
 
-1. Moloco Platform ID
-2. Moloco Event Service API key
+After you obtain that account information, you can move on to the Segment app.
 
-Once you obtain those 2 pieces of information, you can move on to the Segment console.
-
-1. From the Segment web console, click Catalog.
-2. On the Catalog page, from the destination tab, Search for “Moloco”, select it, and click on Add destination.
+### Set up your Moloco destination
+1. From the Segment web console, click **Catalog**.
+2. On the Catalog page, search for “Moloco”, select it, and click **Add destination**.
 3. Choose which of your sources to connect the destination to.
-4. In the Moloco MCM destination settings page, fill the Platform ID and API key fields with the previously collected information and select “APP or SITE” depending on your source endpoint (mobile or website).
+4. In the Moloco MCM destination settings page, fill the Platform ID and API key fields with your Moloco Platform ID and Event Service API key. 
+5. Select “APP" if your source endpoint is a mobile app, and "SITE" if it is a website.
 
 ## Identify
 
