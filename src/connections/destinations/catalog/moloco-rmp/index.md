@@ -166,7 +166,7 @@ and user chose the following mapping:
     // "Which action happened on which vertical"
 ```
 
-The tokens be stringified into:
+The tokens are stringified into the following:
 
 ```js
     "event:Product List Viewed;vertical:fruit"
