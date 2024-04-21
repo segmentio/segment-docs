@@ -189,4 +189,4 @@ Default Mappings are not hard rules. They can be modified to your convenience.
 
 ## Monitoring
 
-Once the mappings are configured correctly, you can verify the flow of events from your source to Moloco’s destination in the “**Delivery Overview**” tab. If things are configured correctly, it should show a growing **Successful delivery** count.
+Once the mappings are configured correctly, you can verify the flow of events from your source to Moloco’s destination in the [Delivery Overview](/docs/connections/delivery-overview/) tab of your Moloco destination. If you correctly configured your destination, you should see a growing **Successful delivery** count.
