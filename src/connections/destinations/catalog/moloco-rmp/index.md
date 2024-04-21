@@ -37,7 +37,7 @@ analytics.identify('361b1fdfbeaa9d64a13c033eb9f970dc6740f6bc', {
 });
 ```
 
-Once a user is identified, each call to the [Track method](https://segment.com/docs/connections/spec/track/) will automatically record the user ID.
+Once a user is identified, each call to Segment's [Track method](/docs/connections/spec/track/) automatically records the user ID.
 For non logged-in users, you can still track them using an [anonymous ID](https://segment.com/docs/connections/spec/identify/#anonymous-id) (something like UUID as recommended by Segment) but on the Moloco Commerce Media side, we do not use that field for non logged-in users.
 
 > info" "
