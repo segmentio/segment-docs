@@ -126,7 +126,7 @@ Please find below an example call to page:
 analytics.page();
 ```
 
-If you are using the Segment’s Web SDK, this call will automatically collect the page information. Here’s an example of page info automatically collected using the Segment’s Web SDK.
+If you use Segment’s Web SDK, this call automatically collects the page information. Here’s an example of page information automatically collected using Segment’s Web SDK.
 
 ```js
     "page": {
