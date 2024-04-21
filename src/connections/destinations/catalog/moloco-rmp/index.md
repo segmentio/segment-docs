@@ -142,7 +142,7 @@ However for iOS and Android, it won’t collect page information.
 
 In Moloco Commercial Media, the [page_id](https://mcm-docs.moloco.com/docs/51-user-event-data-specifications#page_view-event-type) attribute is required for the PAGE_VIEW event. Using the Web SDK, the page_id can be associated with the path attribute. However for iOS/Android, as we do not have an appropriate field for page_id, we recommend using the **Page Identifier Token** field.
 
-This field accepts key:value pairs of strings that can identify the page.
+The Page Identifier Token field accepts key:value pairs of strings that can identify the page.
 Stringification Logic is: {key}:{value}s concatenated by ";"
 
 As page_id has a higher priority, **Page Identifier Token** will be ignored if page_id is passed
