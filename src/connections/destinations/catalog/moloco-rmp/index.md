@@ -176,11 +176,7 @@ The tokens are stringified into the following:
     "event:Product List Viewed;vertical:fruit"
 ```
 
-Logic: 
-
-```js
-    {key}:{value} concatenated by ";"
-```
+The tokens are stringified in the format of the above example because they are key-value pairs concatenated by a semicolon (;). 
 
 > info " "
 > if you decide to use the Page Identifier Token in your mobile app, reuse the same Page Identifier Token in place of page_id when calling Moloco’s APIs.
