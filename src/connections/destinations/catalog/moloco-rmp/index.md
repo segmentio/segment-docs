@@ -101,7 +101,7 @@ MCM currently supports the following [user event data specifications](https://mc
 
 ## Track
 
-If you’re not familiar with the Segment Specs, take a look to understand what the [Track method](https://segment.com/docs/connections/spec/track/) does. The mappings in the Moloco Commerce Media destination are pre-built based on the [Segment’s Ecommerce Events](https://segment.com/docs/connections/spec/ecommerce/v2/). 
+If you’re not familiar with the Segment Spec, take a look to understand what the [Track method](/docs/connections/spec/track/) does. The mappings in the Moloco Commerce Media destination are built based on the Segment [Ecommerce Spec](/docs/connections/spec/ecommerce/v2/). 
 
 Please find below an example call to track a product detail page (PDP) view event:
 
