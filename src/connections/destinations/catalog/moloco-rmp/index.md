@@ -147,7 +147,7 @@ Stringification Logic is: {key}:{value}s concatenated by ";"
 
 As page_id has a higher priority, **Page Identifier Token** will be ignored if page_id is passed
 
-Here’s an example of **Page Identifier Token** that could be tracked in a mobile app.
+Here’s an example of a Page Identifier Token that could be tracked in a mobile app.
 
 Say the input had the following schema:
 
