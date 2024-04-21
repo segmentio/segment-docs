@@ -177,7 +177,8 @@ Logic:
     {key}:{value} concatenated by ";"
 ```
 
-_Note_: if you decided to use the **Page Identifier Token** in your mobile app, please make sure you reuse the same **Page Identifier Token** in place of page_id when calling other Moloco’s APIs like Decision API.
+> info " "
+> if you decide to use the Page Identifier Token in your mobile app, reuse the same Page Identifier Token in place of page_id when calling Moloco’s APIs.
 
 ## Mappings
 
