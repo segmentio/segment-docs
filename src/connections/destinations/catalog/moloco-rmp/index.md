@@ -27,7 +27,7 @@ Once you obtain those 2 pieces of information, you can move on to the Segment co
 
 ## Identify
 
-We strongly recommend that you identify your logged-in users using the [Identify method provided by Segment](https://segment.com/docs/connections/spec/identify/). We also recommended hashing the user ID before sending.
+Moloco strongly recommends that you identify your logged-in users using Segment's [Identify method](/docs/connections/spec/identify/) and that you hash the user ID before sending it to Moloco.
 
 Please find an example Identify call below:
 
