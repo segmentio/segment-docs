@@ -29,7 +29,7 @@ Once you obtain those 2 pieces of information, you can move on to the Segment co
 
 We strongly recommend that you identify your logged-in users using the [Identify method provided by Segment](https://segment.com/docs/connections/spec/identify/). We also recommended hashing the user ID before sending.
 
-Please find below an example call to identify:
+Please find an example Identify call below:
 
 ```js
 analytics.identify('361b1fdfbeaa9d64a13c033eb9f970dc6740f6bc', {
