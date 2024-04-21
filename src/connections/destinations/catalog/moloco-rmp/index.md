@@ -182,7 +182,7 @@ Logic:
 
 ## Mappings
 
-In the mappings tab, some fields are chosen by default if some common fields map to Moloco Event’s fields. If the mapped key does not exist in the input data, it won’t trigger an error and will just not pass any value.
+In the Mappings tab, some fields are chosen by default if some common fields map to Moloco Event’s fields. If the mapped key does not exist in the input data, it won’t trigger an error. Instead, the mapping will not pass any value.
 
 If you are using **the default fields in a custom way**, please confirm that your mapping meets Moloco's requirements.
 
