@@ -47,57 +47,6 @@ For non logged-in users, you can still track them using an [anonymous ID](https:
 > info" "
 > If you hash the user ID before sending it to Moloco, ensure you reuse the same hashed ID when calling other Moloco APIs.
 
-## Moloco Commerce Media’s available presets
-
-MCM currently supports the following [user event data specifications](https://mcm-docs.moloco.com/docs/51-user-event-data-specifications).
-
-<table>
-  <tr>
-    <td>**Event type**</td>
-    <td>**Trigger**</td>
-    <td>**Description**</td>
-  </tr>
-  <tr>
-    <td>HOME</td>
-    <td>Event type = "page" AND event = "Home"</td>
-    <td>HOME event type is when a shopper views your website's main or home page.</td>
-  </tr>
-  <tr>
-    <td>LAND</td>
-    <td>Event type = "page" AND event = "Land"</td>
-    <td>LAND event type is when a shopper is visiting your website from an external source (ex. Google Shopping)</td>
-  </tr>
-  <tr>
-    <td>ITEM_PAGE_VIEW</td>
-    <td>Event type = "track" AND event = "Product Viewed"</td>
-    <td>ITEM_PAGE_VIEW event type is when a shopper visits a product detail page.</td>
-  </tr>
-  <tr>
-    <td>ADD_TO_CART</td>
-    <td>Event type = "track" AND event = "Product Added"</td>
-    <td>ADD_TO_CART event type is when a shopper adds an item to the cart.</td>
-  </tr>
-  <tr>
-    <td>ADD_TO_WISHLIST</td>
-    <td>Event type = "track" AND event = "Product Added to Wishlist"</td>
-    <td>ADD_TO_WISHLIST event type is when a shopper puts an item into the wish list.</td>
-  </tr>
-  <tr>
-    <td>SEARCH</td>
-    <td>Event type = "track" AND event = "Product Searched"</td>
-    <td>SEARCH event type is when a shopper searches items with keywords or phrases from your site.</td>
-  </tr>
-  <tr>
-    <td>PAGE_VIEW</td>
-    <td>Event type = "page" AND event != "Home"</td>
-    <td>PAGE_VIEW event type is when a shopper visits a page other than the product detail pages or the homepage of your site.</td>
-  </tr>
-  <tr>
-    <td>PURCHASE</td>
-    <td>Event type = "track" AND event = "Order Completed"</td>
-    <td>PURCHASE event type is when a shopper purchases a product.</td>
-  </tr>
-</table>
 
 ## Track
 
