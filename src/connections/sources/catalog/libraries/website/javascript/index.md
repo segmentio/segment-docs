@@ -1006,4 +1006,4 @@ Here are some examples of using Analytics.js. Note that the examples assume Anal
 
 ## External dependencies
 
-Analytics.js production dependencies can be found [listed under the **dependencies** key](https://github.com/segmentio/analytics-next/blob/master/packages/browser/package.json){:target="_blank”}.
+Analytics.js production dependencies are [listed under the **dependencies** key](https://github.com/segmentio/analytics-next/blob/master/packages/browser/package.json){:target="_blank”}.
