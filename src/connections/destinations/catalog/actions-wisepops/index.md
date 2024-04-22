@@ -67,15 +67,14 @@ For example, you can display a popup when a product is added to the cart:
 
 The Track Goal action is not mapped by default. You can enable it to track [goal completion and revenue](https://support.wisepops.com/article/mx3z8na6yb-set-up-goal-tracking){:target='_blank'} on Wisepops.
 
-To track a JavaScript goal through Segment:
+To track a JavaScript goal using Segment:
 
 1. [Create your JavaScript goal in Wisepops](https://id.wisepops.com/r/id/workspaces/_workspaceId_/goals){:target='_blank'}.
 2. Copy the goal identifier. It is a 32-character string visible after the goal is created:
    ![Wisepops goal identifier](images/wisepops-goal-id.png)
 3. In Segment, create a new mapping with the action **Track Goal**.
 4. In the first section, configure when the goal should be tracked.
-5. In the third section, paste the goal identifier in the **Goal Identifier** field:
-   ![Wisepops goal mapping](images/wisepops-goal-mapping.png)
+5. In the third section, paste the goal identifier, without quotes, into the **Goal Identifier** field:
 6. Save the new mapping.
 
 ### Track Page
