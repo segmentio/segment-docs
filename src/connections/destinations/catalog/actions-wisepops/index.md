@@ -74,7 +74,7 @@ To track a JavaScript goal using Segment:
    ![Wisepops goal identifier](images/wisepops-goal-id.png)
 3. In Segment, create a new mapping with the action **Track Goal**.
 4. In the first section, configure when the goal should be tracked.
-5. In the third section, paste the goal identifier, without quotes, into the **Goal Identifier** field:
+5. In the third section, paste the goal identifier, without quotes, into the **Goal Identifier** field.
 6. Save the new mapping.
 
 ### Track Page
