@@ -161,7 +161,7 @@ After you design the email, click **Create Email Template**.
 
 ## Next steps
 
-- Learn more about [building email templates](/docs/engage/content/template/) to include in your Engage campaigns. 
+- Learn more about [building email templates](/docs/engage/content/email/template/) to include in your Engage campaigns. 
 
 - You can learn about the [HTML Editor](/docs/engage/content/email/html-editor) for both code and visual editing capabilities from a single view.
 
