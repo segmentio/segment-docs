@@ -174,7 +174,7 @@ analytics.identify({
 
 
 ### Page
-The [Page](/docs/connections/spec/page/){:target="_blank"} call records when a visitor arrives at a page of your website, along with any optional properties about the page. When received, the destination triggers VWO’s Page Visit event.
+The [Page](/docs/connections/spec/page/) call records when a visitor arrives at a page of your website, along with any optional properties about the page. When received, the destination triggers VWO’s Page Visit event.
 
 > info ""
 > Use Page calls with web pages only. Server-side sources in VWO's FullStack Suite do not support the Page Visit event.

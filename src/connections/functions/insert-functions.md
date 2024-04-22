@@ -1,6 +1,5 @@
 ---
 title: Destination Insert Functions
-beta: true
  
 ---
 
@@ -13,9 +12,6 @@ Use Destination Insert Functions to enrich, transform, or filter your data befor
 **Support data compliance**: Use destination insert functions to support data masking, encryption, decryption, improved PII data handling, and tokenization.
 
 **Customize filtration for your destinations**: Create custom logic with nested if-else statements, regex, custom business rules, and more to filter event data.
-
-> info "Destination Insert Functions in Public Beta"
-> Destination Insert Functions is in Public Beta, and Segment is actively working on this feature. Some functionality may change before it becomes generally available. [Contact Segment](https://segment.com/help/contact/){:target="_blank"} with any feedback or questions.
 
 
 ## Create destination insert functions
@@ -56,17 +52,14 @@ You can also use this page to [enable destination insert functions](#enable-the-
 Segment invokes a separate part of the function (called a "handler") for each event type that you send to your destination insert function.
 
 > info ""
-> Your function isn't invoked for an event if you've configured a [destination filter](/docs/connections/destinations/destination-filters/), and the event doesn't pass the filter.
+> If you’ve configured a [destination filter](/docs/connections/destinations/destination-filters/), and the event doesn’t pass the filter, then your function isn’t invoked for that event as destination filters are applied before insert functions.
 
 The default source code template includes handlers for all event types. You don't need to implement all of them - just use the ones you need, and skip the ones you don't.
 
 > info ""
-> Removing the handler for a specific event type results in blocking the events of that type from arriving at their destination. 
+> Removing the handler for a specific event type results in blocking the events of that type from arriving at their destination. To keep an event type as is but still send it downstream, add a `return event` inside the event type handler statement.
 
 Insert functions can define handlers for each message type in the [Segment spec](/docs/connections/spec/):
-
-> info "onBatch handler"
-> At this time, Destination Insert Functions do not support the onBatch handler. 
 
 - `onIdentify`
 - `onTrack`
@@ -75,6 +68,7 @@ Insert functions can define handlers for each message type in the [Segment spec]
 - `onGroup`
 - `onAlias`
 - `onDelete`
+- `onBatch`
 
 Each of the functions above accepts two arguments:
 
@@ -103,6 +97,8 @@ async function onTrack(event) {
 ```
 
 To change which event type the handler listens to, you can rename it to the name of the message type. For example, if you rename this function `onIdentify`, it listens for "Identify" events instead.
+
+To ensure the Destination processes an event payload modified by the function, return the `event` object at the handler's end.
 
 > info ""
 > Functions' runtime includes a `fetch()` polyfill using a `node-fetch` package. Check out the [node-fetch documentation](https://www.npmjs.com/package/node-fetch){:target="_blank"} for usage examples.
@@ -166,9 +162,14 @@ If you don't supply a function for an event type, Segment throws an `EventNotSup
 
 You can read more about [error handling](#destination-insert-functions-logs-and-errors) below.
 
+## Runtime and dependencies
+
+{% include content/functions/runtime.md %}
+
+
 ## Insert Functions and Actions destinations
 
-There are a couple of behavorial nuances to consider when using Insert Functions with Actions destinations.
+There are a couple of behavioral nuances to consider when using Insert Functions with Actions destinations.
 
 Insert Functions block Actions destinations from triggering multiple mapping subscriptions for a single payload. If you have a single payload coming through the pipeline that you expect to trigger multiple mapping subscriptions in your configuration, it will work as expected without an Insert Function enabled. With an Insert Function enabled, however, when a payload that is meant to trigger multiple mappings subscriptions is seen, no mappings subscriptions will fire. If you have an Insert Function enabled for a destination, make sure that you configure your payloads so that they only trigger a single mapping subscription.
 
@@ -209,8 +210,8 @@ You can manually test your code from the functions editor:
 - Error messages display errors surfaced from your function.
 - Logs display any messages to console.log() from the function.
 
-- > info ""
-> The Event Tester won't make use of an Insert Function, show how an Insert Function impacts your data, or send data downstream through the Insert Function pipeline.
+> warning ""
+> The Event Tester won't make use of an Insert Function, show how an Insert Function impacts your data, or send data downstream through the Insert Function pipeline. The Event Tester is not impacted by an Insert Function at all. Use the Function tester rather than the Event Tester to see how your Insert Function impacts your data.
 
 ## Save and deploy the destination insert function
 
@@ -237,21 +238,172 @@ To enable your insert function:
 
 To prevent your insert function from processing data, toggle Enable Function off.
 
-{% comment %}
-## Batching the insert function
-
-Insert functions support batching with the `onBatch` handler. 
+## Batching the destination insert function
 
 Batch handlers are an extension of insert functions. When you define an `onBatch` handler alongside the handler functions for single events (for example, `onTrack` or `onIdentity`), you're telling Segment that the insert function can accept and handle batches of events. 
 
-Note the following limitations for batching with insert functions:
-- The batch request and response size is limited to 6mb.
-- Max count begins with 100 and goes up to 1,000.
+> info ""
+> Batching is available for destination and destination insert functions only. 
+
+### When to use batching
+
+Consider creating a batch handler if:
+
+- **You have a high-throughput function and want to reduce cost.** When you define a batch handler, Segment invokes the function once per *batch*, rather than once per event. As long as the function’s execution time isn’t adversely affected, the reduction in invocations should lead to a reduction in cost.
+
+- **Your destination supports batching**. When your downstream destination supports sending data downstream in batches you can define a batch handler to avoid throttling. Batching for functions is independent of batch size supported by the destination. Segment automatically handles batch formation for destinations.
 
 > info ""
-> Batching is available for insert and destination functions only. Read more about batching [in the Destination Functions docs](/docs/connections/functions/destination-functions/#batching-the-destination-function). 
+> If a batched function receives too low a volume of events (under one event per second) to be worth batching, Segment may not invoke the batch handler.
 
-{% endcomment %}
+### Define the batch handler
+
+Segment collects the events over a short period of time and combines them into a batch. The system flushes them when the batch reaches a certain number of events, or when the batch has been waiting for a specified wait time.
+
+To create a batch handler, define an `onBatch` function within your destination insert function. You can also use the "Default Batch" template found in the Functions editor to get started quickly.
+
+```js
+async function onBatch(events, settings){
+  // handle the batch of events
+  return events
+}
+```
+
+> info ""
+> The `onBatch` handler is an optional extension. Destination insert functions must still contain single event handlers as a fallback, in cases where Segment doesn't receive enough events to execute the batch.
+
+The handler function receives an array of events. The events can be of any supported type and a single batch may contain more than one event type. Handler functions can also receive function settings. Here is an example of what a batch can look like:
+
+```json
+[
+    {
+      "type": "identify",
+      "userId": "019mr8mf4r",
+      "traits": {
+        "email": "jake@yahoo.com",
+        "name": "Jake Peterson",
+        "age": 26
+      }
+    },
+    {
+      "type": "track",
+      "userId": "019mr8mf4r",
+      "event": "Song Played",
+      "properties": {
+        "name": "Fallin for You",
+        "artist": "Dierks Bentley"
+      }
+    },
+    {
+      "type": "track",
+      "userId": "971mj8mk7p",
+      "event": "Song Played",
+      "properties": {
+        "name": "Get Right",
+        "artist": "Jennifer Lopez"
+      }
+    }
+]
+```
+
+### Configure the event types within a batch
+
+Segment batches together any event _of any type_ that it sees over a short period of time to increase batching efficiency and give you the flexibility to decide how batches are created. If you want to split batches by event type, you can implement this in your functions code by writing a handler.
+
+```js
+async function onBatch(events, settings) {
+  // group events by type
+  const eventsByType = {}
+  for (const event of events) {
+    if (!(event.type in eventsByType)) {
+      eventsByType[event.type] = []
+    }
+    eventsByType[event.type].push(event)
+  }
+
+  // concurrently process sub-batches of a specific event type
+  const promises = Object.entries(eventsByType).map(([type, events]) => {
+    switch (type) {
+    case 'track':
+      return onTrackBatch(events, settings)
+    case 'identify':
+      return onIdentifyBatch(events, settings)
+    // ...handle other event types here...
+    }
+  })
+  try {
+    const results = await Promise.all(promises);
+    const batchResult = [].concat(...results); // Combine arrays into a single array
+    return batchResult;
+  } catch (error) {
+    throw new RetryError(error.message);
+  }
+}
+
+async function onTrackBatch(events, settings) {
+  // handle a batch of track events
+  return events
+}
+
+async function onIdentifyBatch(events, settings) {
+  // handle a batch of identify events
+  return events
+}
+```
+
+### Configure your batch parameters
+ 
+By default, Functions waits up to 10 seconds to form a batch of 20 events. You can increase the number of events included in each batch (up to 400 events per batch) by contacting [Segment support](https://segment.com/help/contact/){:target="_blank"}. Segment recommends users who wish to include fewer than 20 events per batch use destination insert functions without the `onBatch` handler.
+
+### Test the batch handler
+
+The [Functions editing environment](/docs/connections/functions/environment/) supports testing batch handlers.
+
+To test the batch handler:
+1. In the right panel of the Functions editor, click **customize the event yourself** to enter Manual Mode.
+2. Add events as a JSON array, with one event per element.
+3. Click **Run** to preview the batch handler with the specified events.
+
+> info ""
+> The Sample Event option tests single events only. You must use Manual Mode to add more than one event so you can test batch handlers.
+
+The editor displays logs and request traces from the batch handler.
+
+The [Public API](/docs/api/public-api) Functions/Preview endpoint also supports testing batch handlers. The payload must be a batch of events as a JSON array.
+
+### Handling filtering in a batch
+Events in a batch can be filtered out using custom logic. The filtered events will be surfaced in the [Event Delivery](/docs/connections/event-delivery/) page with reason as `Filtered at insert function`
+
+```js
+async function onBatch(events, settings) {
+  let response = [];
+  try {
+    for (const event of events) {
+      // some business logic to filter event. Here filtering out all the events with name `drop`
+      if (event.properties.name === 'drop') {
+        continue;
+      }
+
+      // some enrichments if needed
+      event.properties.message = "Enriched from insert function";
+
+      // Enriched events are pushed to response
+      response.push(event);
+    }
+  } catch (error) {
+    console.log(error)
+    throw new RetryError('Failed function', error);
+  }
+
+  // return a subset of transformed event
+  return response;
+}
+```
+
+
+### Handling batching errors
+
+Standard [function error types](/docs/connections/functions/destination-functions/#destination-functions-error-types) apply to batch handlers. Segment attempts to retry the batch in the case of Timeout or Retry errors. For all other error types, Segment discards the batch.
 
 {% comment %}
 
@@ -313,18 +465,32 @@ Yes, Segment retries invocations that throw RetryError or Timeout errors (tempor
 
 No, Segment can't guarantee the order in which the events are delivered to an endpoint.
 
-##### Can I create a device-mode destination?
+##### Do I Need to specify an endpoint for my Insert function?
 
-No, destination insert functions are currently available as cloud-mode destinations only. Segment is in the early phases of exploration and discovery for supporting customer "web plugins" for custom device-mode destinations and other use cases, but this is unsupported today.
+No, specifying an endpoint is not always required for insert functions. If your function is designed to transform or filter data internally—such as adding new properties to events or filtering based on existing properties—you won't need to specify an external endpoint.
+
+However, if your function aims to enrich event data by fetching additional information from an external service, then you must specify the endpoint. This would be the URL of the external service's API where the enriched or captured data is sent.
+
+
+##### Can I use Insert Functions with Device Mode destinations?
+
+No, Destination Insert Functions are currently available for use with Cloud Mode (server-side) destinations only. Segment is in the early phases of exploration and discovery for supporting customer web plugins for custom Device Mode destinations and other use cases, but this is unsupported today.
 
 ##### Can I connect an insert function to multiple destinations?
 
-No, an insert function can only be connected to one destination.
+Yes, an insert function can be connected to multiple destinations. 
 
-##### How do I publish a destination to the public Segment catalog?
+##### Can I have destination filters and a destination insert function in the same connection?
 
-If you are a partner, looking to publish your destination and distribute your app through Segment catalog, visit the [Developer Center](https://segment.com/partners/developer-center/){:target="_blank"} and check out the Segment [partner docs](/docs/partners/).
+Yes, you can have both destination filters and destination insert functions in the same connection. 
 
+##### Are insert functions invoked before or after Destination Filters are applied?
+
+Segment's data pipeline applies Destination Filters before invoking Insert Functions. 
+
+##### Why am I receiving a 500 Internal Error when saving the same of the destination insert function?
+
+There is an 120-Character limit for the insert function display name.
 
 {% comment %}
 

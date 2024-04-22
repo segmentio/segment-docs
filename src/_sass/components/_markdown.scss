@@ -246,6 +246,12 @@
     }
   }
 
+  table.horizontal-scroll {
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+
   table.settings {
     width: 100%;
     table-layout: fixed;

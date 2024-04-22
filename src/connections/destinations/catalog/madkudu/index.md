@@ -34,4 +34,4 @@ These events are enriched with other data, aggregated, and pushed to appropriate
 
 ## Questions?
 
-More details available on [MadKudu's website](http://www.madkudu.com/) or email  [hello@madkudu.com](mailto:hello@madkudu.com).
+More details available on [MadKudu's website](http://www.madkudu.com/){:target="_blank"} or email [hello@madkudu.com](mailto:hello@madkudu.com).

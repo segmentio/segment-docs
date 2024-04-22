@@ -5,13 +5,18 @@ redirect_from:
   - "/engage/audiences/predictive-traits"
 ---
 
-Predictions, Segment's artificial intelligence and machine learning feature, lets you predict the likelihood that users will perform any event tracked in Segment. 
+Predictions, Segment's artificial intelligence and machine learning feature, lets you predict the likelihood that users will perform any event tracked in Segment.
 
 With Predictions, you can identify users with, for example, a high propensity to purchase, refer a friend, or use a promo code. Predictions also lets you predict a user's lifetime value (LTV).
 
 Segment saves predictions to user profiles, letting you build Audiences, trigger Journeys, and send data to downstream destinations.
 
+For more details on AI usage and data, see [Predictions Nutrition Facts Label](/docs/unify/traits/predictions/predictions-nutrition-facts/).
+
 On this page, you'll learn how to build a prediction.
+
+> warning "Not a HIPAA Eligible Service or PCI Compliant"
+> Agent Copilot and Unified Profiles in Flex aren't HIPAA Eligible Services or PCI compliant and shouldn't be used in Flex or Segment workflows that are subject to HIPAA or PCI.
 
 ## Access and build a prediction
 
@@ -30,11 +35,20 @@ Follow these steps to access Predictions:
 
 Once your Workspace is enabled for Predictions, follow these steps to build a prediction:
 
-3. In the Trait Builder, select **Predictions**, choose the Trait you want to create, then click **Next**.
-    - Choose **Custom Predictive Goal**, **Likelihood to Purchase**, **Predicted Lifetime Value**, or **Likelihood to Churn**.
-4. (For custom Predictive Goals) Add a condition(s) and event to predict, then select **Calculate**. If you're satisfied with the available data, select **Next**.
-5. (Optional) Connect a Destination, then select **Next**.
-6. Add a name and description for the Trait, then select **Create Trait**.
+1. In the Trait Builder, select **Predictions**, choose the Trait you want to create, then click **Next**.
+2. Select **Custom Predictive Goal**, **Likelihood to Purchase**, **Predicted Lifetime Value**, or **Likelihood to Churn**.
+4. (For custom Predictive Goals) Add a condition(s) and event(s) to predict. 
+5. Select a time period for the prediction. 
+6. (Optional) In **Include all events**, uncheck any events you don't want Segment to factor into the prediction.
+7. Click **Calculate**. If you're satisfied with the available data, click **Next**.
+5. (Optional) Connect a Destination, then click **Next**.
+6. Add a name and description for the Trait, then click **Create Trait**.
+
+Keep the following in mind when you build a prediction:
+
+- Segment lets you predict the likelihood of a customer performing multiple events. 
+- You can choose a time period of 15, 30, 60, 90, or 120 days. 
+- You have granular control over the events Segment factors into the predictive model. By default, Segment's model makes predictions on all events sent to Engage. Segment lets you exclude events you don't want included by unselecting **Include all events**, then filtering out any events you want excluded from the model.
 
 In the next section, you'll learn more about the four available predictions.
 

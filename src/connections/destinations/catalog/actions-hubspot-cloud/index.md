@@ -17,7 +17,9 @@ HubSpot is an all-in-one marketing tool that helps attract new leads and convert
 When you use the HubSpot Cloud Mode (Actions) destination, Segment sends your data to [HubSpot's REST API](https://developers.hubspot.com/docs/api/overview){:target="_blank"}.
 
 > warning ""
-> The **Upsert Company** action is not compatible with the Mapping Tester on the mappings page if Associate Contact is set to **Yes**. As a result, Segment recommends using the Event Tester or other tools to test and troubleshoot creating and updating companies in HubSpot. Please note, for the company to contact association to work, you are required to trigger an Upsert Contact action before triggering an Upsert Company action.
+> The **Upsert Company** action is not compatible with the Mapping Tester on the mappings page if Associate Contact is set to **Yes**. As a result, Segment recommends using the Event Tester or other tools to test and troubleshoot creating and updating companies in HubSpot. 
+>
+> Note that for the company to contact association to work, you are required to trigger an Upsert Contact action before triggering an Upsert Company action. Contacts created with batch endpoint can not be associated to a Company from the Upsert Company Action.
 
 > warning ""
 > **Behavioral Events (Legacy)** are only supported with [Hubspot Classic Destination](/docs/connections/destinations/catalog/hubspot/).
@@ -96,3 +98,9 @@ Follow the steps mentioned [here](https://knowledge.hubspot.com/integrations/con
 ### How does disconnecting and uninstalling affect a user's data and HubSpot account?
 Segment immediately stops sending data to HubSpot after you disconnect and uninstall a HubSpot account.
 
+### Understanding HubSpot's `date` and dateTime` custom property types
+If you plan on sending a _date_ value that includes time data to your mapped HubSpot custom properties, select HubSpot's `dateTime` property type in HubSpot. If you plan to send a _date_ value that does not contain time data, select the `date` property value in HubSpot. For more information about custom property types, see HubSpot's [Custom objects](https://developers.hubspot.com/docs/api/crm/crm-custom-objects#properties){:target="_blank”} documentation.
+
+If you send a _date_ value that contains time data to a custom property in HubSpot with a `date` property type,  the event might fail due to an "**Invalid Date Error**."
+
+Both of HubSpot's _date_ property types each accept ISO 8601 formatted values, but only the `dateTime` property type accepts values that include time data.

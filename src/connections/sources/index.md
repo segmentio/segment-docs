@@ -77,6 +77,21 @@ Web, Mobile, and Server sources send first-party data from your digital properti
 ## Event streams sources 
 Event streams sources collect data from your website or app to monitor user actions. These sources include [website libraries](#website-libraries), [mobile](#mobile), and [server sources](#server). 
 
+### Source Overview
+
+When viewing the Source Overview page for an event stream source, you can view a line chart and breakdown table that reflects the volume and details of the events that Segment ingested from your source.
+
+You can use the time picker located on the Source Overview page to specify a time period (last 10 minutes, 1 hour, 24 hours, 7 days, 2 weeks, or a custom date range over the last two weeks) for which you’d like to see data.
+
+![A screenshot of the Source Overview page for an Android source.](images/source-overview.jpeg)
+
+The breakdown table displays the following details:
+* **Event type**: The Segment Spec event type (Track call vs. Identify call, for example).
+* **Event name**: The event name, provided by you or the source. You should only expect to see track calls with event names. If you see unnamed events in the breakdown table, it's because for other specs, you're either identifying users/groups or tracking what page/screen the user is on. Both of which do not have event names. The exception to this is if you provide a name in the Page call. Named Page calls also show up in this section with the name of the Page as the event name. 
+<!-- NOT SUPPORTED IN CURRENT VERSION: ADD IN ONCE THIS IS SUPPORTED* **App version**: The app/release version, provided by you or the source-->
+* **Event count**: How many of each event was successfully received by your source.
+* **% Change**: Insight into how the event counts differ from the last comparable time range as a percentage.
+
 ### Website libraries
 
 [Analytics.js](/docs/connections/sources/catalog/libraries/website/javascript/), the JavaScript library, is the most powerful way to track customer data from your website. If you're just starting out, Segment recommends it over server-side libraries as the simplest installation for any website.
@@ -190,4 +205,3 @@ To create a source:
 > - Flexibility sending data to different projects - if you want to have different warehouse schemas, analytics projects, etc, having multiple sources would create this separation
 > - More control - as your account grows with the number of destinations you enable, having separate sources allows you to have more control
 > - A source type cannot be changed once it is created. You must create a new source if you would like to use a different source type.
-

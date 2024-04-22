@@ -59,6 +59,6 @@ provided UID is not found.
 
 ### Why can't I propagate GDPR deletions?
 
-GDPR deletions require an `Admin` or `API` key to propagate. You may also contact FullStory directly for deletions. 
+GDPR deletions require an `Admin` or `Architect` API key to propagate. You may also contact FullStory directly for deletions. 
 
 {% include components/actions-fields.html %}

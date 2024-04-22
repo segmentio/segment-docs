@@ -3,7 +3,7 @@ rewrite: true
 title: SimpleReach Destination
 id: 55d3c70e0a20f4e22f0fb3eb
 ---
-SimpleReach helps brands, agencies, and publishers increase the impact of their content marketing. The SimpleReach Destination is open-source. You can browse the code [on GitHub](https://github.com/segment-integrations/analytics.js-integration-simplereach).
+SimpleReach helps brands, agencies, and publishers increase the impact of their content marketing. The SimpleReach Destination is open-source. You can browse the code [on GitHub](https://github.com/segment-integrations/analytics.js-integration-simplereach){:target="_blank"}.
 
 ## Getting Started
 

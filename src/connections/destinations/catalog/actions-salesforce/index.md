@@ -116,7 +116,7 @@ Review the tables below to see how settings from Salesforce (Classic) were migra
 ## FAQ
 
 ### How do I enable a sandbox instance?
-To send data to a Salesforce sandbox instance, navigate to **Settings > Advanced Settings**, toggle on the "Sandbox Instance" setting, and authenticate. If you are already authenticated, please disconnect and reconnect with your sandbox username. 
+To send data to a Salesforce sandbox instance, navigate to **Settings > Advanced Settings**, toggle on the "Sandbox Instance" setting, save the setting and then authenticate. If you are already authenticated, please disconnect and reconnect with your sandbox username. 
 
 Your Salesforce sandbox username appends the sandbox name to your Salesforce production username. For example, if a username for a production org is `user@acme.com` and the sandbox is named `test`, the username to log in to the sandbox is `user@acme.com.test`.
 
