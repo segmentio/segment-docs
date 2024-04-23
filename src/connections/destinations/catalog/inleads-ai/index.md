@@ -6,7 +6,7 @@ title: Inleads Destination
 
 Using Inleads, you can gain deeper insights into your customer journey and drive smarter decisions with the Inleads.ai and Segment integration. With this integration, seamlessly map Segment events to Inleads.ai events, enabling you to track deals, leads and customer activities across every touchpoint. Dive into real-time sales, product, and revenue insights, powered by advanced analytics and machine learning algorithms. With Inleads.ai and Segment, unlock the full potential of your customer data to fuel your business success.
 
-This destination is maintained by Inleads.ai. For any issues with the destination, [contact the Inleads Support team](mailto:info@inleads.ai).
+This destination is maintained by [Inleads.ai](http://Inleads.ai?utm_source=segmentio&utm_medium=docs&utm_campaign=partners){:target="_blank”}. For any issues with the destination, [contact the Inleads Support team](mailto:info@inleads.ai).
 
 ## Getting Started
 
