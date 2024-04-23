@@ -101,6 +101,8 @@ For example, you might set up a single Segment source to send data both to separ
 
 You can also connect multiple instances of a destination to help you smoothly migrate from one configuration to another. By sending each version the same data, you can check and validate the new configuration without interrupting use of the old one.
 
+> warning ""
+> Non-mobile sources can only connect to one device-mode instance of a destination and you cannot connect a source to more than one instance of a destination that operates in device-mode only. read more [here](/docs/connections/destinations/add-destination/#connecting-one-source-to-multiple-instances-of-a-destination:~:text=Multi%2Dinstance%20destinations-,and,-Device%2Dmode).
 
 > success ""
 > If your organization is on a Segment Business tier plan, you can use [Replay](/docs/guides/what-is-replay/) to send historical data to new instances of a destination.
