@@ -66,7 +66,7 @@ FROM
     <database_name.contact_table> c
 WHERE 
     c.PHONE IS NOT NULL
-    AND c.BILLING_COUNTRY IS NOT NULL;
+    AND c.MAILING_COUNTRY IS NOT NULL;
 ```
 
 After running this query, you can use ‘phone’ for lookups in Unified Profiles.    
@@ -95,7 +95,7 @@ FROM
     <database_name.lead_table> l
 WHERE 
     l.PHONE IS NOT NULL
-    AND l.BILLING_COUNTRY IS NOT NULL;
+    AND l.COUNTRY IS NOT NULL;
 ```
 
 After running this query, you can use ‘phone’ for lookups in Unified Profiles.  
