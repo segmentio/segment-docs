@@ -110,7 +110,7 @@ For account-level audiences, you can send either a [Group](/docs/connections/spe
 Because most marketing tools are still based at the user level, it is often important to map this account-level trait onto each user within an account. See [Account-level Audiences](/docs/engage/audiences/account-audiences) for more information.
 
 > info ""
-> When you connect a new Destination to an existing Audience, Engage will backfill historical data for that Audience to the new Destination.
+> When you connect a new Destination with an existing Audience, Engage will backfill historical data for that Audience to the new Destination if the 'Include Historical Data' option is enabled in the Audience Settings. For Audience's that do not have this setting enabled, only new data will be sent. If you'd like to sync all Audience data to the newly connected Destination, please reach out to [Support](friends@segment.com) to request a Resync.
 
 ## Understanding compute times
 
