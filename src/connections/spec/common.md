@@ -200,7 +200,7 @@ Other libraries only collect `context.library`, any other context variables must
 | traits                   |              | ✅             | ✅                 |
 | userAgent                | ✅            |               | ✅                 |
 | userAgentData*           | ✅           |                |                    |
-| timezone                 |              | ✅             | ✅                 |
+| timezone                 | ✅            | ✅             | ✅                 |
 
 - IP Address isn't collected by Segment's libraries, but is instead filled in by Segment's servers when it receives a message for **client side events only**.
 > info "IPv6 Addresses are not Supported"
