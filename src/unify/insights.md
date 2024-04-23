@@ -80,4 +80,8 @@ The Audit trail displays all audit actions that occur in your Unify space. This 
 
 Click an audit log link to view the user who initiated the action, timestamp, and log details.
 
+## FAQ
 
+### What are the record display and search time limits for Profiles Insights?
+
+Profiles Insights can display up to 500 records and supports searches within a 30-day time frame.
