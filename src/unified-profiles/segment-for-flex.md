@@ -48,7 +48,7 @@ You can add additional data sources after completing the setup process. <br>
   Click **Preview** to return 10 records from your warehouse. When you've verified that your records return as expected, click **Next**.
   </li>
   <li value="10" markdown=1>
-  Click **Create Mapping**. On the Select mappings screen, map event fields from your data source to the pre-filled values that Segment expects to receive. Clicking into an event field lets you search your destination's record fields. When you've finished mapping all of the event fields, click **Create mapping.**
+  Click **Create Mapping**. On the Select mappings screen, map event fields from your data source to the pre-filled values that Segment expects to receive. Clicking into an event field lets you search your destination's record fields. If the dropdown menu does not populate record fields from your warehouse, map your record fields in `properties.FIELD_NAME` format. When you've finished mapping all of the event fields, click **Create mapping.**
   </li>
   <li value="11" markdown=1>
   After Segment marks the "Add connections" tile as complete, click **Add identifiers and traits** and begin [Step 3: Add identifiers and traits](#step-3-add-identifiers-and-traits). 
@@ -56,7 +56,7 @@ You can add additional data sources after completing the setup process. <br>
 </ol>
 
 > warning "Records from your data warehouse and Salesforce might not be immediately available"
-> Segment's initial sync with your data warehouse might take up to 24 hours to complete. Segment syncs with Salesforce immediately after you connect it to your Segment for Flex workspace, and every three hours afterward. For more information, see the [Known limitations](#known-limitations) documentation.
+> Segment's initial sync with your data warehouse can take up to 24 hours to complete. Segment syncs with Salesforce immediately after you connect it to your Segment for Flex workspace. This initial sync can take a few days. After Segment completes the initial sync with Salesforce, Segment initiates a sync with Salesforce every three hours.
 
 ### Data warehouse only
 
@@ -65,7 +65,8 @@ You can add additional data sources after completing the setup process. <br>
 3. Give your destination a name and enter the account credentials for a user that has read and write permissions. Click **Save**. 
 4. After you've given your destination a name and entered your credentials, click **Next**.
 5. On the *Getting started with Segment* page, click **Define Model**.
-6. [Create a SQL query that defines your model](/docs/unified-profiles/create-sql-traits){:target="_blank"} After you've created a model, Segment uses your model to map data to your Reverse ETL destinations.
+6. Create a SQL query that defines your model. After you've created a model, Segment uses your model to map data to your Reverse ETL destinations.
+
 <ol style="counter-reset: none;">
   <li value="7" markdown=1>
   Click **Preview** to return 10 records from your warehouse. When you've verified that your records return as expected, click **Next**.
@@ -79,7 +80,7 @@ You can add additional data sources after completing the setup process. <br>
 </ol>
 
 > warning "Records from your data warehouse might not be immediately available"
-> Segment's initial sync with your data warehouse might take up to 24 hours to complete. For more information, see the [Known limitations](#known-limitations) documentation. 
+> Segment's initial sync with your data warehouse can take up to 24 hours to complete. 
 
 ### Website or mobile app
 
@@ -106,9 +107,6 @@ Connect to either a website or mobile app to complete this step.
 
 ## Step 3: Add identifiers and traits
 After you've selected which data sources you'd like to integrate customer data from, you can select _identifiers_, or unique pieces of data that allow you to link information about an individual customer across different programs and services, and _traits_, which are pieces of information you know about a particular customer.
-
-> warning "Records from your data warehouse and Salesforce might not be immediately available"
-> Segment's initial sync with your data warehouse might take up to 24 hours to complete. Segment syncs with Salesforce immediately after you connect it to your Segment for Flex workspace, and every three hours afterward. For more information, see the [Known limitations](#known-limitations) documentation.
 
 1. On the Add identifiers and traits page, click **Add identifier**. 
 2. Select one or more of Segment's 11 default identifiers and click **Add identifiers**.
@@ -195,7 +193,6 @@ These destinations are limited to the following types:
 - [Segment Profiles destination](/docs/connections/destinations/catalog/actions-segment-profiles/){:target="_blank"}
 - [Segment Connections destination](/docs/connections/destinations/catalog/actions-segment/){:target="_blank"}
 
-
 ### Entitlements
 
 Your Segment for Flex workspace has the following entitlements:
@@ -203,28 +200,6 @@ Your Segment for Flex workspace has the following entitlements:
 - 2 [Unify spaces](/docs/unify/quickstart/){:target="_blank"}
 - 2 [Computed traits](/docs/unify/Traits/computed-traits/){:target="_blank"}
 - 2 [Predictions](/docs/unify/traits/predictions/){:target="_blank"}
-
-### Known limitations
-
-#### Salesforce
-
-Segment syncs with Salesforce every three hours, and will run a full historical re-sync on only Objects/Collections, not custom properties or columns. To learn more about how Segment syncs with Salesforce, see the [Syncs](#syncs) documentation. For more information about historical re-syncs, see the [Historical data](#historical-data) documentation. 
-
-###### Syncs
-The Salesforce source contains a sync component, which means Segment makes requests to the Salesforce API on your behalf on a 3 hour interval to pull the latest data into Segment. In the initial sync, Segment downloads all the Salesforce objects (and their corresponding properties) by default. Segment writes the objects into a separate schema, that corresponds to the source instance’s schema name you designated upon creation. For example, you name the schema sfdc_prod, access the leads collection by accessing sfdc_prod.leads in SQL.
-
-The sync component uses an upsert API, so the data in your warehouse loaded using sync will reflect the latest state of the corresponding resource in Salesforce. For example, if ticket_status goes from open to closed between syncs, on its next sync that tickets status will be closed.
-
-##### Historical data
-When a new Object/Collection is enabled, Segment automatically runs a full historical re-sync on that Object. However, for custom properties/columns, Segment only populates the custom property with data that comes in after the custom field was enabled. In order to populate the new custom field(s) for records that have previously been synced, you need to initiate a manual re-sync.
-
-> info ""
-> Initiating a full re-sync might impact your workspace’s API calls + Object usage.
-
-Segment uses the SystemModstamp (`system_modstamp`) field to checkpoint collections that sync incrementally. When enabled, Segment syncs collections incrementally. When disabled, Segment syncs collections fully. If you’d like to force a collection to sync fully on the next run to bring in historical data, you can disable the SystemModstamp field on the collection, allow the next sync to complete, and then re-enable SystemModstamp so the collection syncs incrementally in the coming syncs.
-
-#### Warehouses
-Segment guarantees that your data will be available in your warehouse within 24 hours. 
 
 <div class="double">
   {% include components/reference-button.html
