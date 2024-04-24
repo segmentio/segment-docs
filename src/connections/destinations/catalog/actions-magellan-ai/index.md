@@ -32,8 +32,14 @@ Optionally, if you need Magellan AI to process GDPR deletion requests:
 * Magellan AI only supports Segment's Replay feature for mobile events.
 
 [
+### Lead
+
 Magellan AI's `Lead` action is semantically closest to Segment's B2B SaaS `Signed Up` event and uses it as the default Trigger. However, Magellan AI's API spec considers `Lead` an e-commerce event, requiring a value and a currency. You may:
 * Configure your sources sending `Signed Up` events to include the additional e-commerce-style fields
 * Consider mapping an alternative event to the `Lead` action, such as `Promotion Clicked` or `Product Added to Wishlist`, depending on your use case
-* Map `Signed Up` events to the `Lead` action, providing dummy values in the mapping like `0` for the value and `USD` for the currency 
+* Map `Signed Up` events to the `Lead` action, providing dummy values in the mapping like `0` for the value and `USD` for the currency
+
+### Install, Third-Party Event
+
+Magellan AI's API spec requires a user agent, but Segment's iOS library does not provide user agent information in the event context. In order to use this action with the Segment's iOS library, you may provide either a static user agent string or a placeholder value in the mapping.
 ]: #
