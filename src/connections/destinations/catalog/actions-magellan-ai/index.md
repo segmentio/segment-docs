@@ -1,5 +1,8 @@
 ---
 title: Magellan AI (Actions) Destination
+id: 661eca176680eee35d82c955
+beta: true
+hidden: true
 ---
 
 {% include content/plan-grid.md name="actions" %}
