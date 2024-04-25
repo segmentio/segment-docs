@@ -138,6 +138,7 @@ If you are using **the default fields in a custom way**, please confirm that you
 
 Default Mappings are not hard rules. They can be modified to your convenience.
 
+{% include components/actions-fields.html %}
 ## Monitoring
 
 Once the mappings are configured correctly, you can verify the flow of events from your source to Moloco’s destination in the [Delivery Overview](/docs/connections/delivery-overview/) tab of your Moloco destination. If you correctly configured your destination, you should see a growing **Successful delivery** count.
