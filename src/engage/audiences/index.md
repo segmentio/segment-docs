@@ -276,3 +276,6 @@ Segment recommends using the `$` operator when you deal with array properties. H
 ### How do I populate multiple items off a list for an `equals one of` condition? **
 The audience builder accepts CSV and TSV lists.
 
+### How do I enable Historical Backfill when creating a Batch Audience?
+When creating batch audiences, the inclusion of historical data is automatic.
+
