@@ -4,10 +4,6 @@ plan: engage-foundations
 redirect_from:
   - '/personas/audiences'
 ---
-
-
-
-
 Audiences let you group users or accounts based on event behavior and traits that Segment tracks.
 
 You can build Audiences from core **tracking events**, **traits**, and **computed traits**. You can then sync Audiences to hundreds of [Destinations](/docs/connections/destinations/) or access them with the [Profile API](/docs/unify/profile-api).
