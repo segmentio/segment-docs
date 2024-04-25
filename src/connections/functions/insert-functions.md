@@ -113,6 +113,7 @@ You can `throw` the following pre-defined error types to indicate that the funct
 - `InvalidEventPayload`
 - `ValidationError`
 - `RetryError`
+- `DropEvent`
 
 The examples show basic uses of these error types.
 
@@ -154,6 +155,14 @@ async function onTrack(event) {
     // Retry on 5xx and 429s (ratelimits)
     throw new RetryError(`HTTP Status ${res.status}`)
   }
+}
+
+async function onIdentify(event) {
+  if (event.traits.companyName) {
+    // Drop Event | Do NOT forward event to destination
+    throw new DropEvent('Company name is required')
+  }
+  return event;
 }
 
 ```
