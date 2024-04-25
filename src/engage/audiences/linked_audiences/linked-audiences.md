@@ -72,7 +72,7 @@ After you [enable your linked audience](link), you will be able to send events t
 
 To activate your linked audience, complete the following steps: 
 
-- Step 3a: Select a destination
+- [Step 3a: Select a destination](link) 
 - Step 3b: Select your destination actions
 - Step 3c: Define the events that trigger actions in your destination
 - Step 3d: Configure the event
