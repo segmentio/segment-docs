@@ -48,7 +48,7 @@ You can add additional data sources after completing the setup process. <br>
   Click **Preview** to return 10 records from your warehouse. When you've verified that your records return as expected, click **Next**.
   </li>
   <li value="10" markdown=1>
-  Click **Create Mapping**. On the Select mappings screen, map event fields from your data source to the pre-filled values that Segment expects to receive. Clicking into an event field lets you search your destination's record fields. If the dropdown menu does not populate record fields from your warehouse, map your record fields in `properties.FIELD_NAME` format. When you've finished mapping all of the event fields, click **Create mapping.**
+  Click **Create Mapping**. On the Select mappings screen, map event fields from your data source to the pre-filled values that Segment expects to receive. Clicking into an event field lets you search your destination's record fields. When you've finished mapping all of the event fields, click **Create mapping.**
   </li>
   <li value="11" markdown=1>
   After Segment marks the "Add connections" tile as complete, click **Add identifiers and traits** and begin [Step 3: Add identifiers and traits](#step-3-add-identifiers-and-traits). 
@@ -56,7 +56,7 @@ You can add additional data sources after completing the setup process. <br>
 </ol>
 
 > warning "Records from your data warehouse and Salesforce might not be immediately available"
-> Segment's initial sync with your data warehouse can take up to 24 hours to complete. Segment syncs with Salesforce immediately after you connect it to your Segment for Flex workspace. This initial sync can take a few days. After Segment completes the initial sync with Salesforce, Segment initiates a sync with Salesforce every three hours.
+> Segment's initial sync with your data warehouse can take up to 24 hours to complete. Segment syncs with Salesforce immediately after you connect it to your Segment for Flex workspace. This initial sync can take up to 72 hours. After Segment completes the initial sync with Salesforce, Segment initiates a sync with Salesforce every three hours.
 
 ### Data warehouse only
 
