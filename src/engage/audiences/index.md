@@ -12,7 +12,7 @@ Audiences let you group users or accounts based on event behavior and traits tha
 
 You can build Audiences from core **tracking events**, **traits**, and **computed traits**. You can then sync Audiences to hundreds of [Destinations](/docs/connections/destinations/) or access them with the [Profile API](/docs/unify/profile-api).
 
-## Building an Audience
+## Building an Audience 
 
 You can build an Audience from existing events, traits, computed traits, or other Audiences.
 
