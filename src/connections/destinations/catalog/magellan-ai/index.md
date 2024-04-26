@@ -31,7 +31,6 @@ This destination is maintained by Magellan AI. For any issues with the destinati
 
 * Magellan AI only supports Segment's Replay feature for mobile events.
 
-[
 ### Lead
 
 Magellan AI's `Lead` action is semantically closest to Segment's B2B SaaS `Signed Up` event and uses it as the default Trigger. However, Magellan AI's API spec considers `Lead` an e-commerce event, requiring a value and a currency. You may:
