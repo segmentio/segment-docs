@@ -41,4 +41,3 @@ Magellan AI's `Lead` action is semantically closest to Segment's [B2B SaaS `Sign
 ### Install, Third-Party Event
 
 Magellan AI's API spec requires a user agent, but Segment's [Analytics-Swift](/docs/connections/sources/catalog/libraries/mobile/apple/) library does not provide user agent information in the event context. In order to use this action with Segment's Swift library, you can provide either a static user agent string or a placeholder value in the mapping.
-]: #
