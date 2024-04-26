@@ -20,10 +20,10 @@ This destination is maintained by Magellan AI. For any issues with the destinati
 5. Configure which actions you want to send to Magellan AI.
 
 (Optional) If you need Magellan AI to process GDPR deletion requests:
-1. Contact your Magellan AI measurement account representative to enable API access for your account
-2. Go to the [Magellan AI API access token page](https://app.magellan.ai/api_access_tokens){:target="_blank"}, and generate a new API token if necessary
-3. Find and copy the new **API token**
-4. Enter the **API token** in the destination settings in Segment
+1. Contact your Magellan AI measurement account representative to enable API access for your account.
+2. Go to the [Magellan AI API access token page](https://app.magellan.ai/api_access_tokens){:target="_blank"} and generate a new API token.
+3. Find and copy the new **API token**.
+4. Enter the **API token** in the destination settings for your Magellan AI (Actions) destination.
 
 {% include components/actions-fields.html %}
 
