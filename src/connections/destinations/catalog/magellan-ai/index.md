@@ -13,11 +13,11 @@ This destination is maintained by Magellan AI. For any issues with the destinati
 
 ## Getting started
 
-1. From your workspace's [Destination catalog page](https://app.segment.com/goto-my-workspace/destinations/catalog){:target="_blank”} search for "Magellan AI"
-2. Select "Magellan AI" and click **Add Destination**
-3. Select an existing Source to connect to Magellan AI (Actions)
-4. Enter the campaign's **pixel token**, either from the [Magellan AI pixel management dashboard](https://app.magellan.ai/navigator/measurement/pixels){:target="_blank"} or provided by your Magellan AI measurement account representative, in the destination settings in Segment
-5. Configure which actions you want to send to Magellan AI
+1. From your Segment workspace's [Destination catalog page](https://app.segment.com/goto-my-workspace/destinations/catalog){:target="_blank”} search for "Magellan AI".
+2. Select "Magellan AI" and click **Add Destination**.
+3. Select an existing Source to connect to Magellan AI (Actions), give your destination a name and click **Create destination**. 
+4. Enter the campaign's **pixel token** in the destination settings in Segment. You can obtain this token either from the [Magellan AI pixel management dashboard](https://app.magellan.ai/navigator/measurement/pixels){:target="_blank"} or provided by your Magellan AI Measurement account representative. 
+5. Configure which actions you want to send to Magellan AI.
 
 Optionally, if you need Magellan AI to process GDPR deletion requests:
 1. Contact your Magellan AI measurement account representative to enable API access for your account
