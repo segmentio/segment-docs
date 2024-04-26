@@ -33,7 +33,7 @@ This destination is maintained by Magellan AI. For any issues with the destinati
 
 ### Lead
 
-Magellan AI's `Lead` action is semantically closest to Segment's B2B SaaS `Signed Up` event and uses it as the default Trigger. However, Magellan AI's API spec considers `Lead` an e-commerce event, requiring a value and a currency. You may:
+Magellan AI's `Lead` action is semantically closest to Segment's [B2B SaaS `Signed Up` event](/docs/connections/spec/b2b-saas/#signed-up) and uses it as the default Trigger. However, Magellan AI's API spec considers `Lead` an e-commerce event, requiring a value and a currency. You may:
 * Configure your sources sending `Signed Up` events to include the additional e-commerce-style fields
 * Consider mapping an alternative event to the `Lead` action, such as `Promotion Clicked` or `Product Added to Wishlist`, depending on your use case
 * Map `Signed Up` events to the `Lead` action, providing dummy values in the mapping like `0` for the value and `USD` for the currency
