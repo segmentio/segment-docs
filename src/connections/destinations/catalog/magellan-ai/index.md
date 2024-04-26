@@ -19,7 +19,7 @@ This destination is maintained by Magellan AI. For any issues with the destinati
 4. Enter the campaign's **pixel token** in the destination settings in Segment. You can obtain this token either from the [Magellan AI pixel management dashboard](https://app.magellan.ai/navigator/measurement/pixels){:target="_blank"} or provided by your Magellan AI Measurement account representative. 
 5. Configure which actions you want to send to Magellan AI.
 
-Optionally, if you need Magellan AI to process GDPR deletion requests:
+(Optional) If you need Magellan AI to process GDPR deletion requests:
 1. Contact your Magellan AI measurement account representative to enable API access for your account
 2. Go to the [Magellan AI API access token page](https://app.magellan.ai/api_access_tokens){:target="_blank"}, and generate a new API token if necessary
 3. Find and copy the new **API token**
