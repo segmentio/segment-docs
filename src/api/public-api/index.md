@@ -31,6 +31,11 @@ The Public API includes the following benefits over the Config API:
 | Increased reliability   | The Public API features more stable endpoints, and a 99.8% success rate                                                                                             |
 
 
+## Creating A Public API Token
+Navigate to this link to [create a Public API Token](https://app.segment.com/goto-my-workspace/settings/access-management/tokens), or follow these steps : In your Segment workspace navigate to _**Settings**_ → _**Workspace settings**_ → _**Access Management tab**_ → _**Tokens tab**_. On the right, click the `+ Create Token` button. Create a description for the token and assign access : Workspace Owner or Workspace Member. Click `Create` and make sure to save the access token before clicking `Done`, as you will not be able to see it again.
+
+To begin sending requests to the Public API, make sure to include the Public API Token into your HTTP requests with the `Authorization` Header `Bearer Token` with the newly generated Public API token's value.
+
 ## API Token Security
 
 To enhance API token security, Segment partners with GitHub to prevent fraudulent use of exposed API tokens found in public git repositories. This helps to prevent malicious actors from using exposed tokens to perform unauthorized actions in your Segment workspace. 
