@@ -3,7 +3,7 @@ title: Analytics.js OneTrust Wrapper
 plan: consent-management
 ---
 
-Segment does not support *some* implementations of the Analytics.js OneTrust wrapper, as they might lead to noncompliance and data loss. This guide contains context about which configurations might cause data loss, steps you can take to remediate data loss, and configurations that minimize data loss. 
+This guide about Segment's Analytics.js OneTrust wrapper contains context about which configurations might cause data loss, steps you can take to remediate data loss, and configurations that minimize data loss. 
 
 For questions about OneTrust Consent and Preference Management behavior, see the [OneTrust documentation](https://my.onetrust.com/s/topic/0TO3q000000kIWOGA2/universal-consent-preference-management?language=en_US){:target="_blank”}. 
 
@@ -18,7 +18,6 @@ The OneTrust consent banner has three key UI configurations that control how the
 - **Consent model:** If the status is automatically set to `true` or `false` for all categories
   - **Opt-In:** The user, by default does not consent to all categories (except those that you deem to be mandatory). The user is required to select categories that they consent to share data with (or, opt-in to data collection)
   - **Opt-out:** The user, by default, does consent to all categories. The user can choose to select categories that they do not consent to share data with (or, opt-out of data collection)
-  - **Custom:** You define the default for each consent category. The user can choose to select categories that they do not consent to share data with (opt-out of data collection)
 
 <div class="premonition info">
     <div class="fa fa-info-circle"></div>
@@ -33,44 +32,46 @@ The OneTrust consent banner has three key UI configurations that control how the
 <!-- TODO (IG, 4/2024): the above callout would not render correctly in markdown - figure out why that happened-->
 
 
-You can set use the banner display and banner closing settings to either create a banner implementation that is **mandatory**, or must be interacted with before a user can access your site, or **optional**, where a banner is either always present as your end users navigate through your site, disappears after a user takes an action, like clicking or scrolling, or is never shown to your users.
+You can set use the banner display and banner closing settings to either create a banner implementation that is either:
+- **Mandatory**: A user must interact with a banner before they access your site
+- **Optional**: A user does not have to interact with a banner while they access your site. The banner is always present as your end users navigate through your site, disappears after a user takes an action, like clicking or scrolling, or is never shown to your users
 
-Some combinations of banner behaviors and consent models may lead to a [risk of data loss in your downstream destinations](#scenarios-where-you-might-experience-data-loss).
+Some combinations of banner behaviors and consent models may lead to a [possibility of data loss in your downstream destinations](#scenarios-where-you-might-experience-data-loss).
 
-### Risk evaluation
+### Possibility for data loss
 
-Segment has evaluated a combination of banner behaviors, consent models, and load orders to be at either a [low](#low) risk or [medium](#medium) risk of data loss.
+Segment has evaluated a combination of banner behaviors, consent models, and load orders to be at either a [low](#low) or [medium](#medium) possibility of data loss.
 
 #### Low 
 
-Segment assess some behaviors to have a low risk of data loss and noncompliance because Twilio Segment analytics.js and third-party device mode libraries are loaded only after the user has provided their consent (for consent banners a user **must** interact with to use your site) or if Segment assumes that a user consents (if you set your cookie banner on your site to be optional and never displayed to a user).
+Segment assess some behaviors to have a low possibility of data loss because Twilio Segment Analytics.js and third-party device mode libraries are loaded only after the user has provided their consent (for consent banners a user **must** interact with to use your site) or your site assumes that a user consents (if you set your cookie banner on your site to be optional and never displayed to a user).
 
 #### Medium
 
-Segment assess some banner behaviors, like those that always remain as a user navigates your site and those that disappear after a user action like clicking or scrolling, to be at a medium risk for data loss and noncompliance.
+Segment assess some banner behaviors, like those that always remain as a user navigates your site and those that disappear after a user action like clicking or scrolling, to be at a medium possibility for data loss and noncompliance.
 
-- **Compliance Risk**: Once device mode libraries are loaded they cannot be unloaded when the user revokes consent to their mapped categories. *Note: Not unloading the library poses a risk **only** if the library is collecting data in addition to collecting Segment events.* 
-- **Data loss Risk**: Once Segment loads, if the user consents to additional categories that map to device mode libraries, then these new libraries will not be loaded until the next time that Segment loads, like after a page reload. This may result in data loss. 
+- **Compliance Risk**: Once device mode libraries are loaded they cannot be unloaded when the user revokes consent to their mapped categories. *Note: Not unloading the third-party library poses a risk **only** if the third-party library is collecting data in addition to collecting Segment events.* 
+- **Possibility of data loss**: Once Segment loads, if the user consents to additional categories that map to device mode libraries, then these new libraries will not be loaded until the next time that Segment loads, like after a page reload. This may result in data loss. 
 
-To minimize the risks of having a medium risk level:
+To minimize the possibilities for data loss:
 
 - Set up cookie banners that either must be interacted with in order to use your site, or are set to be optional and never displayed to a user, with the assumption that users rarely go back to update consent preferences
 - If using cookie banners that either always remain as a user navigates your site or disappear after a user action, like clicking or scrolling:
   - **Use fewer device mode libraries.** This way, all data flows through Twilio Segment and you can respect an end-user's consent preferences using Consent Management
   - **Regularly audit your device mode libraries.** Audit your device mode libraries to confirm they are not capturing data themselves
-  - **Add logic to do a full page refresh when the user’s consent to categories associated with device mode libraries changes.** This will help unload the device mode libraries completely. 
+  - **Add logic to do a full page refresh when the user’s consent to categories associated with device mode libraries changes.** This will help unload the device mode libraries completely 
 
 > info " "
-> Refreshing a page when a user's consent changes could cause duplicate page events in your destinations. This can also cause a loss of form state for your users, if input form fields were present at the time of refresh. However, page refreshes due to changes in consent can also help load additional device mode libraries the user has consented to share data with, eliminating the risk of data loss in your downstream destinations.
+> Refreshing a page when a user's consent changes could cause duplicate page events in your destinations. This can also cause a loss of form state for your users, if input form fields were present at the time of refresh. However, page refreshes due to changes in consent can also help load additional device mode libraries the user has consented to share data with, eliminating the possibility of data loss in your downstream destinations.
 
 ## Segment library desired behavior
 
-| Banner behavior | Cookie banner | User interaction with webpage | Segment loads | Risk | Support Status |
-| --------------- | ------------  | ----------------------------- | ------------  | ---- | -------------- |
-| Mandatory | <img class="inline" src="/docs/images/supported.svg" /> Displayed on page load | <img class="inline" src="/docs/images/supported.svg" /> Required to access webpage | After use action | [Low](#low), until a user changes their preferences | <img class="inline" src="/docs/images/supported.svg" /> Supported | 
-| A banner that always remains as a user navigates your site | <img class="inline" src="/docs/images/supported.svg" /> Displayed on page load | <img class="inline" src="/docs/images/unsupported.svg" /> Not required to access webpage | With page load | [Medium](#medium) | <img class="inline" src="/docs/images/unsupported.svg" /> Unsupported |
-| A banner that disappears after a user action, like clicking or scrolling | <img class="inline" src="/docs/images/supported.svg" /> Displayed on page load | <img class="inline" src="/docs/images/unsupported.svg" /> Not required to access webpage | With page load | [Medium](#medium) | <img class="inline" src="/docs/images/unsupported.svg" /> Unsupported |
-| A banner that is optional and never displayed to a user | <img class="inline" src="/docs/images/unsupported.svg" /> Not displayed on page load | <img class="inline" src="/docs/images/unsupported.svg" /> Not required to access webpage | With page load | [Low](#low), until a user changes their preferences | <img class="inline" src="/docs/images/supported.svg" /> Supported | 
+| Banner behavior | Cookie banner | User interaction with webpage | Segment loads | Possibility of data loss |
+| --------------- | ------------  | ----------------------------- | ------------  | ---- |
+| Mandatory | <img class="inline" src="/docs/images/supported.svg" /> Displayed on page load | <img class="inline" src="/docs/images/supported.svg" /> Required to access webpage | After use action | [Low](#low), until a user changes their preferences |
+| A banner that always remains as a user navigates your site | <img class="inline" src="/docs/images/supported.svg" /> Displayed on page load | <img class="inline" src="/docs/images/unsupported.svg" /> Not required to access webpage | With page load | [Medium](#medium) |
+| A banner that disappears after a user action, like clicking or scrolling | <img class="inline" src="/docs/images/supported.svg" /> Displayed on page load | <img class="inline" src="/docs/images/unsupported.svg" /> Not required to access webpage | With page load | [Medium](#medium) |
+| A banner that is optional and never displayed to a user | <img class="inline" src="/docs/images/unsupported.svg" /> Not displayed on page load | <img class="inline" src="/docs/images/unsupported.svg" /> Not required to access webpage | With page load | [Low](#low), until a user changes their preferences |
 
 ## Scenarios where you might experience data loss
 
@@ -91,7 +92,7 @@ You might experience data loss if a user navigates away from a landing page befo
   <tbody>
     <tr>
       <td rowspan="3">Opt-In <i>(optional banner behavior)</i></td>
-      <td>User provides consent preferences and closes banner (with or without the presence of strictly necessary destinations) </td>
+      <td>User provides consent preferences and closes banner (with or without the presence of strictly necessary category) </td>
       <td> 1. Website loads <br><br> 2. Website presents consent banner to a user <br><br> 3. Users provide consent preference and close banner <br><br> 4. Segment libraries load <br><br>5. Any events in the buffer for that session are sent to consented destinations (Segment and third-party destinations) <br><br> 6. All events after a user provides their consent will flow to consented destinations (Segment and third-party destinations)</td>
       <td>Data loss is possible if the user navigates away from the landing page before providing consent or if a user closes the banner. <br><br> No data loss if the user provides consent on the landing page </td>
     </tr>
@@ -149,6 +150,7 @@ You might experience data loss if a user navigates away from a landing page befo
   <tbody>
   <tr>
     <td rowspan="2">Opt-In<i>(with mandatory or optional consent banner)</i></td>
+    <td>User does nothing and continues accessing the website</td>
     <td>1. Website loads <br><br> 2. Segment libraries load <br><br> 3. Events flow to default consented and unmapped destinations (Segment and third-party destinations) <br><br>4. User does not interact with the consent banner and continues to access the website</td>
     <td>No data loss</td>
   </tr>
@@ -159,6 +161,7 @@ You might experience data loss if a user navigates away from a landing page befo
   </tr>
   <tr>
     <td rowspan="2">Opt-out<i>(with mandatory or optional consent banner)</i></td>
+    <td>User does nothing and continues accessing the website</td>
     <td>1. Website loads <br><br> 2. Segment libraries load <br><br> 3. Events flow to default consented and unmapped destinations (Segment and third-party destinations) <br><br>4. User does not interact with the consent banner and continues to access the website</td>
     <td>No data loss</td>
   </tr>
@@ -168,9 +171,15 @@ You might experience data loss if a user navigates away from a landing page befo
     <td> No data loss <br><br> Device mode libraries that are passively collecting data and are mapped to categories a user does not consent to share data with might still be collecting data. <br><br><b>Segment is not able to block that data collection.</b></td>
   </tr>
   <tr>
-    <td>Implied</td>
+    <td rowspan="2">Implied</td>
+    <td>User does nothing and continues accessing the website</td>
     <td>1. Website loads <br><br> 2. Segment libraries load <br><br> 3. Events flow to default consented and unmapped destinations (Segment and third-party destinations) <br><br>4. User does not interact with the consent banner and continues to access the website</td>
     <td>No data loss</td>
+  </tr>
+  <tr>
+    <td> User seeks, opens, and updates cookies on the banner, then closes the banner</td>
+    <td> 1. Website loads <br><br> 2. Segment libraries load <br><br> 3. Events flow to default consented destinations (Segment and third-party destinations)<br><br>4. User seeks, opens, and updates cookies on the banner<br><br>5. User closes banner<br><br>6. Events flow to consented destinations, are block from flowing to mapped, non-consented destinations.<br>If a user rejects all categories and your Segment workspace has no unmapped destinations, <b>no data will flow to any destination</b><br>If a user rejects all categories and your Segment workspace has unmapped destinations, <b>data will flow to your unmapped destinations</b></td>
+    <td> No data loss <br><br> Device mode libraries that are passively collecting data and are mapped to categories a user does not consent to share data with might still be collecting data. <br><br><b>Segment is not able to block that data collection.</b></td>
   </tr>
 </tbody>
 </table>
