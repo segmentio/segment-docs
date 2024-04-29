@@ -58,6 +58,8 @@ Your access token enables you to call the Profile API and access customer data.
 > warning ""
 > To query phone numbers that contain a plus sign (`+`), insert the escape characters `%2B` in place of the plus sign.
 > For example, if a `phone_number` identifier has the value `+5555550123`, enter `phone_number:%2B5555550123` in your query.
+> 
+> If the field being used within the Profile API endpoint contains a value with a non-alphanumeric character, then the Profile API may respond with 500 error. In this case, please reference [this W3 doc](https://www.w3schools.com/tags/ref_urlencode.ASP#:~:text=ASCII%20Encoding%20Reference,%25C3%25BF), which lists the escape characters to replace the non-alphanumeric character in the Profile API endpoint with, so that the Profile API will respond with a 200 Success.
 
 ### Query the user's event traits
 
