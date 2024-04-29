@@ -1,10 +1,6 @@
 ---
 title: Consent in Segment Connections
 plan: consent-management
-related:
-  - "/privacy/consent-management/"
-  - "/privacy/consent-management/configure-consent-management/"
-  - "/privacy/consent-management/consent-in-unify/"
 redirect_from: "/privacy/consent-in-segment-connections"
 ---
 

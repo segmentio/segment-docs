@@ -1,11 +1,6 @@
 ---
 title: Consent in Reverse ETL
 plan: consent-management
-related:
-  - "/privacy/consent-management/"
-  - "/privacy/consent-management/configure-consent-management/"
-  - "/privacy/consent-management/consent-in-segment-connections/"
-  - "/privacy/consent-management/consent-in-unify"
 ---
 
 With Consent Management in RETL, you can enforce your end-users' consent preferences that are captured by your consent management platform (CMP) and stored in your warehouse. 
@@ -87,6 +82,4 @@ Open the [Profile Explorer](/docs/unify/#profile-explorer) and verify that your 
 ### Supported Reverse ETL Actions destinations
 Segment automatically filters out data belonging to users who have not consented to the category that a supported Actions destination is mapped to.
 
-To verify that this is working as intended, open [Delivery Overview](/docs/connections/delivery-overview) for a [supported Actions destination](/docs/connections/reverse-etl/reverse-etl-catalog/) and view some of the events that were successfully delivered to the destination. The events in your destination should only belong to users that consented to send data to the category that your supported Actions destination belongs to. 
-
-<!--- TODO: ^^^ rewrite that last sentence --->
+To verify that this is working as intended, open [Delivery Overview](/docs/connections/delivery-overview) for a [supported Actions destination](/docs/connections/reverse-etl/reverse-etl-catalog/) and view some of the events that were successfully delivered to the destination. The events in your destination should only come from users that consented to send data to the category that your supported Actions destination belongs to. 

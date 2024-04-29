@@ -1,10 +1,6 @@
 ---
 title: Configure Consent Management
 plan: consent-management
-related:
-  - "/privacy/consent-management/"
-  - "/privacy/consent-management/consent-in-segment-connections/"
-  - "/privacy/consent-management/consent-in-unify/"
 redirect_from: "/privacy/configure-consent-management"
 ---
 
