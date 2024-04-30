@@ -74,3 +74,8 @@ To use Klaviyo with Engage:
 11. In the settings that appear in the side panel, toggle the **Send Track** option on, and don't change the **Audience Entered/Audience Exited** event names.
 12. Click **Save Settings**.
 
+## FAQ 
+
+### Dealing with 429 Responses from Klaviyo's API 
+
+If you're encountering rate limiting issues, consider enabling batching for the Action receiving these errors. Ensure that within the mapping configuration, "Batch data to Klaviyo" is set to "Yes". This adjustment can help alleviate the rate limiting problem.

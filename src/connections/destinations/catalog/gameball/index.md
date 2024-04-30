@@ -2,6 +2,7 @@
 title: Gameball Destination
 hide-cmodes: true
 id: 5df6778be7d93d3a5b742b1a
+hidden: true
 ---
 [Gameball](https://gameball.co/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners){:target="_blank”} is a gamified loyalty platform, offering growth, retention, and referral-management programs; and providing self-serve predictive analytics for growth marketers using machine learning to automate audience insights and recommendations.
 
