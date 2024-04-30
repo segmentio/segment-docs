@@ -9,17 +9,17 @@ hidden: false
 > info "Linked Audiences is in public beta"
 > Linked Audiences is in public beta, and Segment is actively working on this feature. Some functionality may change before it becomes generally available.
 
-With Linked Audiences, you can use the relational data you've defined in your [Data Graph](docs/unify/linked-profiles/data-graph/) to build audiences and send them to to [linked audiences supported destinations](src/engage/audiences/linked_audiences/linked_supported_destinations)
+With Linked Audiences, you can use the relational data you've defined in your [Data Graph](/docs/unify/linked-profiles/data-graph/) to build audiences, launch precisely targeted, highly personalized operational and marketing use cases.
 
-To learn more about specific use cases you can set up with Linked Audiences,  see the [Linked Audiences Use Cases](/docs/engage/audiences/linked-audiences-use-cases/) topic.
+To learn more about specific use cases you can set up with Linked Audiences,  see the [Linked Audiences Use Cases](/docs/engage/audiences/linked_audiences/linked-audiences-use-cases/) topic.
 
 ## Prerequisites
 
 Before you begin setting up your linked audience, ensure you have:
 
-- [Set up profiles sync](/unify/profiles-sync/profiles-sync-setup/#step-1-select-a-warehouse) 
-- [Familiarized yourself with what an Audience is](src/engage/audiences)
-- [Set up your data graph](src/unify/linked-profiles/data-graph/)
+- [Set up profiles sync](/unify/profiles-sync/profiles-sync-setup/)
+- [Familiarized yourself with what an Audience is](/docs/engage/audiences)
+- [Set up your data graph](/docs/unify/linked-profiles/data-graph/)
 - Workspace Owner or Unify Read-Admin, Entities Admin, and Source Admin permissions.
 
 ## Supported Sources
@@ -30,7 +30,7 @@ The following sources are supported with Linked Audiences:
 
 To set up your linked audience, complete the following steps:
 
-- [Step 1: Build a linked audience](#Step 1: Build a Linked Audience)
+- Step 1: Build a linked audience
 - Step 2: Enable your linked audience
 - Step 3: Activate your linked audience
 - Step 4: Confirm the payload in your destination
@@ -46,11 +46,11 @@ To build a linked audience:
 1. Navigate to **Engage > Audiences**.
 1. Select **+ New audience > Audience**.
 1. On the **Select Audience Type** screen, select **Linked audience**, then click **Next**.
-**Note:** if you cannot select **Linked audience**, ensure you’ve [set up your data graph](src/unify/linked-profiles/data-graph/) in Unify.
+**Note:** if you cannot select **Linked audience**, ensure you’ve [set up your data graph](/docs/unify/linked-profiles/data-graph/) in Unify.
 1. Select the [linked audience profiles conditions](#conditions) on which to build your audience.
 1. Click **Preview** to view your audience selection and see a count of audience members who meet the criteria.
 1. When you’re happy with the audience you’ve built, click Next.
-1. Enter an audience name and description. 
+1. Enter an audience name and description.
 Optionally, select a folder to add this Audience to.
 1. Click **Create Audience**.
 
@@ -68,11 +68,11 @@ Next, you must activate your linked audience.
 
 ## Step 3: Activate your linked audience
 
-After you [enable your linked audience](link), you will be able to send events to your chosen destinations so that you can then use it for personalizing your customer communications.
+After you enable your linked audience, you can send events to your chosen destinations so that you can then use it for personalizing your customer communications.
 
 To activate your linked audience, complete the following steps: 
 
-- [Step 3a: Select a destination](link) 
+- Step 3a: Select a destination
 - Step 3b: Select your destination actions
 - Step 3c: Define the events that trigger actions in your destination
 - Step 3d: Configure the event
@@ -89,7 +89,7 @@ Before you add a destination for any linked audience, you must have [configured 
 
 Only some actions destinations are supported for Linked Audiences for now.
 
-For more information on each supported destination action, see [Supported action destinations for linked audiences](src/engage/audiences/linked_audiences/linked_supported_destinations/).
+For more information on each supported destination action, see [Supported action destinations for linked audiences](/docs/engage/audiences/linked_audiences/linked_supported_destinations/).
 
 Select the destination action to call when the event happens, then click **Next**. Ensure the action you selected is relevant to the type of event you previously selected. For example, if you selected **Audience membership changed**, ensure your action is also an Identify event.
 
