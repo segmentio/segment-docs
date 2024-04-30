@@ -196,6 +196,6 @@ To change the name of your schema without disruptions:
 At the moment, there isn't a way to selectively filter events that are sent to the warehouse. The warehouse connector works quite differently from our streaming destinations and only has the [selective sync](/docs/connections/storage/warehouses/warehouse-syncs/#warehouse-selective-sync) functionality that allows you to enable/disable specific properties or events.
 
 ## Can data from multiple sources be synced to the same database schema?
-Currently, it's not possible for different sources to sync data directly to the same schema in your warehouse. When setting up a new schema within the Segment UI, you can't use a schema name that's already in use by another source. Our recommendation is to sync the data separately and then join it downstream in your warehouse. 
+It's not possible for different sources to sync data directly to the same schema in your warehouse. When setting up a new schema within the Segment UI, you can't use a schema name that's already in use by another source. Segment recommends syncing the data separately and then joining it downstream in your warehouse. 
 
 For more information about Warehouse Schemas, see the [Warehouse Schemas](/docs/connections/storage/warehouses/schema) page.
