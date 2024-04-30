@@ -30,13 +30,19 @@ The Public API includes the following benefits over the Config API:
 | Available in Europe     | The Public API is accessible to both US and EU-based workspaces.                                                                                                    |                                                               |
 | Increased reliability   | The Public API features more stable endpoints, and a 99.8% success rate                                                                                             |
 
-## Creating A Public API Token
+## Creating a Public API token
 
-Navigate to this link to [create a Public API Token](https://app.segment.com/goto-my-workspace/settings/access-management/tokens), or follow these steps : In your Segment workspace navigate to _**Settings**_ → _**Workspace settings**_ → _**Access Management** tab_ → _**Tokens** tab_. On the right, click the `+ Create Token` button. Create a description for the token and assign access : Workspace Owner or Workspace Member. Click `Create` and make sure to save the access token before clicking `Done`, as you will not be able to see it again.
+> info "Only Workspace Owners can create a Public API token"
+> Only users with the Workspace Owner role can create a Public API token. For more information about roles, see Segment's [Roles](/docs/segment-app/iam/roles/) documentation. 
 
-_Please note that only a Workspace Owner can create a Public API token._
+To create a Public API token in your Segment workspace:
+1. Navigate to Settings > Workspace settings > Access Management > Tokens.
+2.  Click the **+ Create Token** button. 
+3. Create a description for the token and assign it either Workspace Owner or Workspace Member access. 
+4. Click **Create**.
+5. Copy your workspace token somewhere secure and click **Done**.
 
-To begin sending requests to the Public API, make sure to include the Public API Token into your HTTP requests with the `Authorization` Header and configured with `Bearer Token` and the newly generated Public API token's value.
+To begin sending requests to the Public API, make sure to include the Public API Token into your HTTP requests with the `Authorization` Header and configured with `Bearer Token` and the value of the newly generated Public API token.
 
 
 ## API Token Security
