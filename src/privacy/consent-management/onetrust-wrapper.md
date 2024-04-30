@@ -7,7 +7,7 @@ This guide about Segment's Analytics.js OneTrust wrapper contains context about 
 
 For questions about OneTrust Consent and Preference Management behavior, see the [OneTrust documentation](https://my.onetrust.com/s/topic/0TO3q000000kIWOGA2/universal-consent-preference-management?language=en_US){:target="_blank"}. 
 
-For questions about the Analytics.js OneTrust wrapper, see the [@segment/analytics-consent-wrapper-onetrust](https://github.com/segmentio/analytics-next/tree/master/packages/consent/consent-wrapper-onetrust){:target="_blank”} repository. 
+For questions about the Analytics.js OneTrust wrapper, see the [@segment/analytics-consent-wrapper-onetrust](https://github.com/segmentio/analytics-next/tree/master/packages/consent/consent-wrapper-onetrust){:target="_blank"} repository. 
 
 ## OneTrust consent banner behavior
 
@@ -44,11 +44,11 @@ Segment has evaluated a combination of banner behaviors, consent models, and loa
 
 #### Low 
 
-Segment assess some behaviors to have a low possibility of data loss because Twilio Segment Analytics.js and third-party device mode libraries are loaded only after the user has provided their consent (for consent banners a user **must** interact with to use your site) or your site assumes that a user consents (if you set your cookie banner on your site to be optional and never displayed to a user).
+Segment assesses some behaviors to have a low possibility of data loss because Twilio Segment Analytics.js and third-party device mode libraries are loaded only after the user has provided their consent (for consent banners a user **must** interact with to use your site) or your site assumes that a user consents (if you set your cookie banner on your site to be optional and never displayed to a user).
 
 #### Medium
 
-Segment assess some banner behaviors, like those that always remain as a user navigates your site and those that disappear after a user action like clicking or scrolling, to be at a medium possibility for data loss and noncompliance.
+Segment assesses some banner behaviors, like those that always remain as a user navigates your site and those that disappear after a user action like clicking or scrolling, to be at a medium possibility for data loss and noncompliance.
 
 - **Compliance Risk**: Once device mode libraries are loaded they cannot be unloaded when the user revokes consent to their mapped categories. *Note: Not unloading the third-party library poses a risk **only** if the third-party library is collecting data in addition to collecting Segment events.* 
 - **Possibility of data loss**: Once Segment loads, if the user consents to additional categories that map to device mode libraries, then these new libraries will not be loaded until the next time that Segment loads, like after a page reload. This may result in data loss. 
