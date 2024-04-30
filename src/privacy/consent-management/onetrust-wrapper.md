@@ -5,7 +5,7 @@ plan: consent-management
 
 This guide about Segment's Analytics.js OneTrust wrapper contains context about which configurations might cause data loss, steps you can take to remediate data loss, and configurations that minimize data loss. 
 
-For questions about OneTrust Consent and Preference Management behavior, see the [OneTrust documentation](https://my.onetrust.com/s/topic/0TO3q000000kIWOGA2/universal-consent-preference-management?language=en_US){:target="_blank”}. 
+For questions about OneTrust Consent and Preference Management behavior, see the [OneTrust documentation](https://my.onetrust.com/s/topic/0TO3q000000kIWOGA2/universal-consent-preference-management?language=en_US){:target="_blank"}. 
 
 For questions about the Analytics.js OneTrust wrapper, see the [@segment/analytics-consent-wrapper-onetrust](https://github.com/segmentio/analytics-next/tree/master/packages/consent/consent-wrapper-onetrust){:target="_blank”} repository. 
 
