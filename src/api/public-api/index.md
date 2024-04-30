@@ -30,7 +30,7 @@ The Public API includes the following benefits over the Config API:
 | Available in Europe     | The Public API is accessible to both US and EU-based workspaces.                                                                                                    |                                                               |
 | Increased reliability   | The Public API features more stable endpoints, and a 99.8% success rate                                                                                             |
 
-## Creating a Public API token
+## Create a Public API token
 
 > info "Only Workspace Owners can create a Public API token"
 > Only users with the Workspace Owner role can create a Public API token. For more information about roles, see Segment's [Roles](/docs/segment-app/iam/roles/) documentation. 
