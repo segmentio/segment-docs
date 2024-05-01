@@ -353,5 +353,24 @@ var body: some Scene {
 ```
 If you call this method with a valid URL parameter, a Segment `Deep Link Opened` track event triggers. 
 
+## Configuration Options
+
+### anonymousIdGenerator
+To generate custom anonymousIds instead of relying on the ones created by Segment, you can use the following configuration option. Here's an example:
+```swift
+class MyAnonymousIdGenerator: AnonymousIdGenerator {
+  func newAnonymousId -> String {
+    return UUID.uuidString
+  }
+}
+
+// in the apps config:
+let config = Configuration(writeKey: "WRITEKEY")
+  .anonymousIdGenerator(MyAnonymousIdGenerator())
+
+let analytics = Analytics(configuration: config)
+
+```
+
 ## Changelog
 [View the Analytics Swift changelog on GitHub](https://github.com/segmentio/analytics-swift/releases){:target="_blank"}.   -->
