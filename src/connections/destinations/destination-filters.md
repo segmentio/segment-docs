@@ -257,5 +257,5 @@ Destination filters only filter events sent after filter setup. If you just adde
 When Segment sends an event to a destination but encounters a timeout error, it attempts to send the event again. As a result, if you add a destination filter while Segment is trying to send a failed event, these retries could filter through, since they reflect events that occurred before filter setup.
 
 #### How do destination filters handle Protocols Transformations?
-  - **Source-Scoped Transformations**: If destination filters are enabled, Segment processes [source scoped transformations](https://segment.com/docs/protocols/transform/#step-2-set-up-the-transformation) before the events reach destination filters.
-  - **Destination-Scoped Transformations**: Segment processes [destination-specific transformations](https://segment.com/docs/protocols/transform/#step-2-set-up-the-transformation)  after the events have passed through the destination filters.
+  - **Source-Scoped Transformations**: If destination filters are enabled, Segment processes [source scoped transformations](docs/protocols/transform/#step-2-set-up-the-transformation) before the events reach destination filters.
+  - **Destination-Scoped Transformations**: Segment processes [destination-specific transformations](/docs/protocols/transform/#step-2-set-up-the-transformation)  after the events have passed through the destination filters.
