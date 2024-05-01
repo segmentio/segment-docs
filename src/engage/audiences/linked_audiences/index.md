@@ -30,10 +30,10 @@ The following sources are supported with Linked Audiences:
 
 To set up your linked audience, complete the following steps:
 
-- Step 1: Build a linked audience
-- Step 2: Enable your linked audience
-- Step 3: Activate your linked audience
-- Step 4: Confirm the payload in your destination
+1. [Build a linked audience](#step-1-build-a-linked-audience)
+1. [Enable your linked audience](#step-2-enable-your-linked-audience)
+1. [Activate your linked audience](#step-3-activate-your-linked-audience)
+1. [Confirm the payload in your destination](#step-4-confirm-the-payload-in-your-destination)
 
 ## Step 1: Build a Linked Audience
 
@@ -70,12 +70,12 @@ Next, you must activate your linked audience.
 
 After you enable your linked audience, you can send events to your chosen destinations so that you can then use it for personalizing your customer communications.
 
-To activate your linked audience, complete the following steps: 
+To activate your linked audience, complete the following steps:
 
-- Step 3a: Select a destination
-- Step 3b: Select your destination actions
-- Step 3c: Define the events that trigger actions in your destination
-- Step 3d: Configure the event
+1. [Select a destination](#step-3a-select-a-destination)
+1. [Select your destination actions](#step-3b-select-your-destination-actions)
+1. [Define the events that trigger actions in your destination](#step-3c-define-the-events-that-trigger-actions-in-your-destination)
+1. [Configure the event](#step-3d-configure-the-event)
 
 ### Step 3a: Select a destination
 
@@ -135,4 +135,4 @@ To confirm your destination is receiving events, Segment recommends that you log
 - Monitor the event activity
 - Search for the `UserID` or `Event Name` (for example, `Entity Added`)
 
-You have now successfully set up your linked audeinces flow. 
+You have now successfully set up your linked audeinces flow.
