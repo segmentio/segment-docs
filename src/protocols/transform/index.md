@@ -26,6 +26,7 @@ Segment's goal is to make Transformations a powerful tool that complements a wel
 - **Transformations are available to Protocols customers:** If you're interested in this feature, contact your Account Executive or CSM to learn more about the Protocols package.
 - **Source-level transformations are irrevocable:** When applied at the source, a transformation permanently changes the structure of the event. The original events are not easily recoverable or [Replayable](/docs/guides/what-is-replay). Assume that transformed data cannot be recovered.
 - **Device-mode destinations are NOT supported:** Source scoped transformations will **only** apply to cloud-mode destinations, warehouses, and S3 destinations. Destination scoped transformations will **only** apply to cloud-mode destinations.
+- **Transformation order:** Segment processes source-scoped transformations before the events reach destination filters. Segment processes destination-scoped transformations after the events pass through destination filters.
 
 ## View all Transformations
 
