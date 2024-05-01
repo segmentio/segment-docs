@@ -5,11 +5,13 @@ plan: consent-management
 
 With Consent Management in RETL, you can enforce your end-users' consent preferences that are captured by your consent management platform (CMP) and stored in your warehouse. 
 
-You can enforce consent stored in warehouse data using one of the following methods: 
-- **Filter the model based on consent preferences**: Filtering the data based on consent preferences is only possible for users who set up a model after they configured Consent Management in Segment. This method also limits how you can use your warehouse data, as the model can't be used for multiple use cases where consent flows to destinations mapped to multiple categories.
-- **Build a mapping that identifies consent categories**: If you are setting up Reverse ETL or updating your mapping, you can update your mapping to identify the columns that store information about end user consent preferences and enforce these preferences in Segment's downstream destinations. 
+To enforce consent stored in your warehouse, build a Reverse ETL mapping that identifies consent categories. You can create a new mapping or update your mapping to identify the columns that store information about end user consent preferences and then enforce these preferences in [Reverse ETL-supported Actions destinations](/docs/connections/reverse-etl/reverse-etl-catalog/) and the [Segment Connections destination](/docs/connections/destinations/catalog/actions-segment/).
+
+> info "Consent in Reverse ETL supports RETL destinations and Segment Connections"
+> At this time, Consent in Reverse ETL does not support enforcing consent in the Segment Profiles destination. To enforce consent data in your Classic Segment destinations, use the [Segment Connections destination](/docs/connections/destinations/catalog/actions-segment/). 
 
 ## Prerequisites
+
 > info "Consent management edit and update capabilities limited to Workspace Owners"
 > Only users with the Workspace Owner role are able to create, edit, and disable consent categories. All other users have read-only access to Consent Management features. 
 
@@ -21,7 +23,7 @@ Before you can enforce consent stored in your warehouse, take the following step
 ## Step 1: Create consent categories in the Segment app
 
 > info "Limited availability of destinations"
-> Reverse ETL supports the destinations in the [Reverse ETL catalog](/docs/connections/reverse-etl/reverse-etl-catalog/), [Segment Profiles](), and Segment Connections. 
+> Reverse ETL supports the destinations in the [Reverse ETL catalog](/docs/connections/reverse-etl/reverse-etl-catalog/) and Segment Connections. 
 
 1. From the [Segment homepage](https://app.segment.com/goto-my-workspace/){:target="_blank”}, select the Privacy tab and click **Consent Management**.
 2. On the Consent management page, click **Create categories**.
@@ -38,7 +40,7 @@ Before you can enforce consent stored in your warehouse, take the following step
 
 ## Step 2: Identify consent columns
 
-After you set up consent categories in the Segment app, you must identify the columns in your data warehouse that store end user consent by creating a *model*, or SQL query that defines the set of data you want to synchronize to your Reverse ETL destinations. When building your RETL data model, Segment recommends storing consent  in `true`, `false`, or `conflict` format and mapping only one consent category to each column.
+After you set up consent categories in the Segment app, you must identify the columns in your data warehouse that store end user consent by creating a *model*, or SQL query that defines the set of data you want to synchronize to your Reverse ETL destinations. When building your RETL data model, Segment recommends storing consent as a boolean of either `true` or `false` and mapping only one consent category to each column.
 
 > error "Creating a data mapping that does not include information about consent preferences results in no consent enforcement"
 > If you create consent categories in your workspace but fail to identify columns that contain consent preferences in your data mapping, events will flow to all destinations in your workspace regardless of end user consent preferences.
@@ -66,6 +68,8 @@ To edit a model:
 
 After you set up categories in the Segment app and create a RETL mapping that extracts consent information, you can send events to your downstream destinations. 
 
+> info "Consent in Reverse ETL supports RETL destinations and Segment Connections"
+> At this time, Consent in Reverse ETL does not support enforcing consent in the [Segment Profiles destination](/docs/connections/destinations/catalog/actions-segment-profiles/). 
 
 <!--- TODO: finish this step ^^^ --->
 
@@ -76,10 +80,12 @@ You can validate that you successfully created your consent mapping in Segment C
 ### Segment Connections
 Open the Source Debugger for your Reverse ETL source and confirm that the [consent object](/docs/privacy/consent-management/consent-in-segment-connections/#consent-object) appears on every event and that the consent object has the categories you mapped in [Step 2: Identify consent columns](#step-2-identify-consent-columns).
 
-### Segment Profiles
-Open the [Profile Explorer](/docs/unify/#profile-explorer) and verify that your profiles contain the [Segment Consent Preference Updated](/docs/privacy/consent-management/consent-in-unify/#segment-consent-preference-updated-event) event.
+<!--- ### Segment Profiles
+Open the [Profile Explorer](/docs/unify/#profile-explorer) and verify that your profiles contain the [Segment Consent Preference Updated](/docs/privacy/consent-management/consent-in-unify/#segment-consent-preference-updated-event) event. --->
 
 ### Supported Reverse ETL Actions destinations
 Segment automatically filters out data belonging to users who have not consented to the category that a supported Actions destination is mapped to.
 
-To verify that this is working as intended, open [Delivery Overview](/docs/connections/delivery-overview) for a [supported Actions destination](/docs/connections/reverse-etl/reverse-etl-catalog/) and view some of the events that were successfully delivered to the destination. The events in your destination should only come from users that consented to send data to the category that your supported Actions destination belongs to. 
+<!--- TODO: rewrite the above sentence--->
+
+To verify that this is working as intended, open [Delivery Overview](/docs/connections/delivery-overview) for a supported Actions destination and view some of the events that were successfully delivered to the destination. The events in your destination should only come from users that consented to send data to the category that your supported Actions destination belongs to. 
