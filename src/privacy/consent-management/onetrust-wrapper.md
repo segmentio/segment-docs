@@ -16,8 +16,8 @@ The OneTrust consent banner has three key UI configurations that control how the
 - **Banner display:** If the banner should be shown or not when a user lands on your webpage
 - **Banner closing:** If the consent banner should automatically close when the user takes an action on your webpage 
 - **Consent model:** If the status is automatically set to `true` or `false` for all categories
-  - **Opt-In:** The user, by default does not consent to all categories (except those that you deem to be mandatory). The user is required to select categories that they consent to share data with (or, opt-in to data collection)
-  - **Opt-out:** The user, by default, does consent to all categories. The user can choose to select categories that they do not consent to share data with (or, opt-out of data collection)
+  - **Opt-In:** The user, by default, does not consent to all categories (except those that you deem to be mandatory). The user is required to select categories that they consent to share data with (or, "opt-in" to data collection)
+  - **Opt-out:** The user, by default, does consent to all categories. The user can choose to select categories that they do not consent to share data with (or, "opt-out" of data collection)
 
 <div class="premonition info">
     <div class="fa fa-info-circle"></div>
@@ -32,7 +32,7 @@ The OneTrust consent banner has three key UI configurations that control how the
 <!-- TODO (IG, 4/2024): the above callout would not render correctly in markdown - figure out why that happened-->
 
 
-You can set use the banner display and banner closing settings to either create a banner implementation that is either:
+You can set the banner display and banner closing settings to create a banner implementation that is either:
 - **Mandatory**: A user must interact with a banner before they access your site
 - **Optional**: A user does not have to interact with a banner while they access your site. The banner is always present as your end users navigate through your site, disappears after a user takes an action, like clicking or scrolling, or is never shown to your users
 
@@ -68,7 +68,7 @@ To minimize the possibilities for data loss:
 
 | Banner behavior | Cookie banner | User interaction with webpage | Segment loads | Possibility of data loss |
 | --------------- | ------------  | ----------------------------- | ------------  | ---- |
-| Mandatory | <img class="inline" src="/docs/images/supported.svg" /> Displayed on page load | <img class="inline" src="/docs/images/supported.svg" /> Required to access webpage | After use action | [Low](#low), until a user changes their preferences |
+| Mandatory | <img class="inline" src="/docs/images/supported.svg" /> Displayed on page load | <img class="inline" src="/docs/images/supported.svg" /> Required to access webpage | After user action | [Low](#low), until a user changes their preferences |
 | A banner that always remains as a user navigates your site | <img class="inline" src="/docs/images/supported.svg" /> Displayed on page load | <img class="inline" src="/docs/images/unsupported.svg" /> Not required to access webpage | With page load | [Medium](#medium) |
 | A banner that disappears after a user action, like clicking or scrolling | <img class="inline" src="/docs/images/supported.svg" /> Displayed on page load | <img class="inline" src="/docs/images/unsupported.svg" /> Not required to access webpage | With page load | [Medium](#medium) |
 | A banner that is optional and never displayed to a user | <img class="inline" src="/docs/images/unsupported.svg" /> Not displayed on page load | <img class="inline" src="/docs/images/unsupported.svg" /> Not required to access webpage | With page load | [Low](#low), until a user changes their preferences |
@@ -131,7 +131,7 @@ You might experience data loss if a user navigates away from a landing page befo
     <tr>
       <td>Implied</td>
       <td>User does not interact with the consent banner and continues to access the website</td>
-      <td> 1. Website loads <br><br> 2. Segment libraries load <br><br> 3. Events flow to default consented and unmapped destinations (Segment and third-party destinations) <br><br> 4. Website presents consent banner to a user <br><br> 5. User does not interact with the consent banner and continues to access the website <br><br> 6. Events continue to flow to all connected destinations </td>
+      <td> 1. Website loads <br><br> 2. Segment libraries load <br><br> 3. Events flow to default consented and unmapped destinations (Segment and third-party destinations) <br><br> 4. Website presents consent banner to a user <br><br> 5. User does not interact with the consent banner and continues to access the website <br><br> 6. Events continue to flow to all connected destinations <br><br><br> If your workspace has <b>unmapped or strictly necessary destinations</b>, events continue to flow to unmapped destinations. </td>
       <td> No data loss </td>
     </tr>
   </tbody>  
