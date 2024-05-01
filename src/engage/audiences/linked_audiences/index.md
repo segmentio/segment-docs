@@ -79,7 +79,7 @@ To activate your linked audience, complete the following steps:
 
 ### Step 3a: Select a destination
 
-Before you add a destination for any linked audience, you must have [configured it as a destination](connections/destinations/catalog/).
+Before you add a destination for any linked audience, you must have [configured it as a destination](/connections/destinations/catalog/).
 
 1. From the audience overview page, select **Add destination**.
 1. Select the event destination from the list of pre-configured choices.
@@ -96,6 +96,7 @@ Select the destination action to call when the event happens, then click **Next*
 Segment displays available actions based on the destination action you've connected with your Linked Audience.
 
 ### Step 3c: Define the events that trigger actions in your destination
+
 Configure what kind of events are produced for each audience run. These events will trigger actions 
 
 After filling out all of the options on the page, select **Save** or **Save and Enable**.
@@ -133,3 +134,5 @@ Linked Audiences sends events to your destination after Segment computes the aud
 To confirm your destination is receiving events, Segment recommends that you log in to your destination and perform one of the following:
 - Monitor the event activity
 - Search for the `UserID` or `Event Name` (for example, `Entity Added`)
+
+You have now successfully set up your linked audeinces flow. 
