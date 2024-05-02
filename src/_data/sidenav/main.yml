@@ -393,6 +393,9 @@ sections:
     section:
     - path: '/engage/audiences'
       title: Audiences Overview
+  - section_title: Linked Audiences
+    description: "See how to create linked audiences."
+    section:
     - path: '/engage/audiences/linked_audiences'
       title: Linked Audiences
     - path: '/engage/audiences/linked_audiences/linked-audiences-use-cases'
@@ -597,7 +600,7 @@ sections:
     - path: /segment-app/iam/scim
       title: System for Cross-domain Identity Management (SCIM) Configuration Guide
     - path: /segment-app/iam/mfa
-      title: Multi-Factor Authentication (MFA)
+      title: Multi-Factor Authentication (MFA) 
   - path: /segment-app/iam/secure-password
     title: Picking a Secure Password
   - path: /segment-app/set-up-envs
