@@ -120,12 +120,12 @@ You might experience data loss if a user navigates away from a landing page befo
     </tr>
     <tr>
       <td>User does not interact with the consent banner and continues to access the website</td>
-      <td> 1. Website loads <br><br> 2. Segment libraries load <br><br> 3. Events flow to default consented and unmapped destinations (Segment and third-party destinations) <br><br> 4. Website presents consent banner to a user <br><br> 5. User does not interact with the consent banner and continues to access the website <br><br> 6. Events continue to flow to all connected destinations </td>
+      <td> 1. Website loads <br><br> 2. Segment libraries load <br><br> 3. Events flow to default consented and unmapped destinations (Segment and third-party destinations) <br><br> 4. Website presents consent banner to a user <br><br> 5. User does not interact with the consent banner and continues to access the website <br><br> 6. Events continue to flow to default consented and unmapped destinations </td>
       <td> No data loss </td>
     </tr>
     <tr>
       <td> User provides consent preferences, <b>rejects all categories</b>, and closes the banner </td>
-      <td> 1. Website loads <br><br> 2. Segment libraries load <br><br> 3. Events flow to default consented destinations (Segment and third-party destinations) <br><br> 4. Website presents consent banner to a user <br><br> 5. User provides consent preferences, <b>rejects all categories</b> and closes the banner. <br><br><br> If your workspace has <b>no unmapped or strictly necessary destinations</b>, all event data after a user provides their consent data is blocked. <br><br><br> If your workspace has <b>unmapped or strictly necessary destinations</b>, events continue to flow to unmapped destinations. </td>
+      <td> 1. Website loads <br><br> 2. Segment libraries load <br><br> 3. Events flow to default consented destinations (Segment and third-party destinations) <br><br> 4. Website presents consent banner to a user <br><br> 5. User provides consent preferences, <b>rejects all categories</b> and closes the banner. <br><br><br> If your workspace has <b>no unmapped or strictly necessary destinations</b>, all event data after a user provides their consent data is blocked. <br><br><br> If your workspace has <b>unmapped or strictly necessary destinations</b>, events continue to flow to destinations in the strictly necessary category and unmapped destinations. </td>
       <td> No data loss <br><br> Device mode libraries that are passively collecting data and are mapped to categories a user does not consent to share data with might still be collecting data. <br><br><b>Segment is not able to block that data collection.</b></td>
     </tr>
     <tr>
