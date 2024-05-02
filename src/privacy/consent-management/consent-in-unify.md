@@ -56,4 +56,13 @@ In addition to enforcing consent in Connections, you may want these preferences 
 If you use Destination Actions to send consent information to your destinations, the Segment Consent Preference Updated event should **only** include information about a user's consent preferences because this event is sent regardless of an end-user's consent preferences. 
 
 > info "Sharing consent with Classic Destinations is not available"
-> Segment only supports sharing consent with Actions Destinations. 
+> Segment only supports sharing consent with Actions Destinations.
+
+### FAQ
+
+**Q. How can your override data being sent to an Engage space?**
+
+A. By default Personas is set to true in the consent manager, but this can be overridden by passing Personas false in the integrations object in all events.
+```analytics.identify(71661,{favoriteFood:"cheese burgers"},{"integrations":{"Personas":false}})``` 
+
+
