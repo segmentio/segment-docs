@@ -352,6 +352,10 @@ Segment has several standard Flush Policies:
 - `TimerFlushPolicy` triggers on an interval of milliseconds
 - `StartupFlushPolicy` triggers on client startup only
 
+> info ""
+> If you implement custom flush policies, they replace Segment's default Count and Timer policies. To incorporate custom policies, add your custom Timer and Count policies to the client's Flush Policies configuration.
+
+
 ### Adding or removing policies
 One of the main advantages of Flush Policies is that you can add and remove policies on the fly. This is very powerful when you want to reduce or increase the amount of flushes. 
 For example you might want to disable flushes if you detect the user has no network:
