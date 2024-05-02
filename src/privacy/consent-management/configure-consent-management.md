@@ -49,7 +49,7 @@ Segment provides a OneTrust wrapper for the following sources:
 - **Swift**: Please follow the instructions from the README in the [@segment-integrations/analytics-swift-consent](https://github.com/segment-integrations/analytics-swift-consent#segment-consent-management){:target="_blank"} repository.
 <!---- **React Native**: Please follow the instructions from the README in the [](){:target="_blank"} repository.--->
 
-If you'd like to integrate with any other CMP, Segment requires you to build your own wrapper or use any mechanism provided it meets the above requirements of data and event generation. To get started building your own wrapper, follow the instructions in the [@segment/analytics-consent-tools](https://github.com/segmentio/analytics-next/tree/master/packages/consent/consent-tools){:target="_blank"} repository. 
+If you'd like to integrate with any other CMP, Segment requires you to build your own wrapper or use any mechanism provided it meets the above requirements of data and event generation.
 
 > warning "Consent Management is not backwards compatible with Segment's legacy iOS and Android libraries"
 > If you are using one of Segment's legacy mobile libraries (iOS or Android,) you will need to upgrade to [Swift](/docs/connections/sources/catalog/libraries/mobile/apple/migration/) or [Kotlin](/docs/connections/sources/catalog/libraries/mobile/kotlin-android/migration/) before using Consent Management. 
