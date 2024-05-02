@@ -120,10 +120,8 @@ The manage preference link lets your customers opt in and out of email groups on
 
 For more information, see [subscription groups](/docs/engage/user-subscriptions/subscription-groups/).
 
-## Known limitations
-
-### Arrays and Objects are not supported in Broadcasts
-At this time, profile traits in object and array datatypes are not supported in [Broadcasts](/docs/engage/campaigns/broadcasts/), however you can use them in [Journeys](/docs/engage/journeys/).
+### Arrays and objects in Broadcasts
+Segment doesn't support profile traits in object and array datatypes in [Broadcasts](/docs/engage/campaigns/broadcasts/), but you cam use them in [Journeys](/docs/engage/journeys/).
 
 ## Next steps
 
