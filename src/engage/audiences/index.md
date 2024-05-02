@@ -64,7 +64,7 @@ You can use the following time comparison operators in your audience definition:
 - `after next` 
 
 Only ISO timestamps can be used with these operators. Additionally, these time comparison operators exclusively apply to custom traits.
-If the timestamp is not a valid ISO timestamp (for example, a trailing `Z` is missing), Segment won't process the audience in real-time. Learn more about [real-time compute compared to batch](#real-time-compute-compared-to-batch).
+If the timestamp is not a valid ISO timestamp (for example, a trailing `Z` is missing), Segment won't process the audience in real-time. Learn more about [real-time compute compared to batch](/docs/engage/audiences/#real-time-compute-compared-to-batch).
 
 ### Funnel Audiences
 
@@ -261,7 +261,7 @@ Note the following limits for the CSV downloader:
 
 ## Identifier Breakdown
 
-The audience summary is a breakdown of the percentages of external_ids of users in the audience. These are the default IDs that Segment includes in the Identity resolution configuration. Segment displays the percentage of the audience with each identifier, which you can use to verify the audience size and profiles are correct.
+The audience summary is a breakdown of the percentages of external_ids of users in the audience. These are the default IDs that Segment includes in the Identity resolution configuration. Segment displays the percentage of the audience with each identifier, which you can use to verify the audience size and profiles are correct. The update of identifier breakdowns on profiles doesn't occur in real time.
 
 > info ""
 > The Identifier Breakdown won't show custom IDs included in the Identity resolution configuration. Segment only displays external IDs in the breakdown.

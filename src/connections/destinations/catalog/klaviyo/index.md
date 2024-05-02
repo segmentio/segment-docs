@@ -5,6 +5,8 @@ cmode-override: true
 hide-personas-partial: true
 id: 54521fd825e721e32a72eec8
 ---
+
+
 [Klaviyo](https://www.klaviyo.com){:target="_blank"} is a powerful email platform focused on ecommerce that helps companies make more money. It supports segmentation based on category and event triggers like product bought, page viewed, email engagement, or amount spent.
 
 It measures opens, clicks, revenue generated, breakdown of generated revenue based on custom attributes (like campaign type or amount gained per recipient), and provides trend reports, cohort analysis, and subscriber growth
@@ -12,6 +14,10 @@ It measures opens, clicks, revenue generated, breakdown of generated revenue bas
 Klaviyo lets you send personalized newsletters, automates triggered emails, product recommendations, welcome campaigns, order announcements, push notifications and sync your data to Facebook custom audiences.
 
 To configure Klaviyo as an Event Source to get data into your warehouse or other downstream tools, see the [Klaviyo Source](/docs/connections/sources/catalog/cloud-apps/klaviyo/) documentation.
+
+> info "Klaviyo deprecating v1/v2 APIs"
+> Klaviyo will deprecate the endpoints used by this destination in June 2024. Segment will not update this destination with the new endpoint. Instead, Segment recommends customers switch to the new [Klaviyo Actions destination](/docs/connections/destinations/catalog/actions-klaviyo/), which already uses the new endpoints.
+
 
 ## Getting started
 

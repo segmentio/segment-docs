@@ -75,7 +75,7 @@ To enable consent mode for your Google Analytics 4 Cloud destination, you must u
 	2. Go to the **Mappings** tab of the destination.
 	3. Select the mapping you want to edit. 
 	4. Under the **Select mappings** section, find **Ad User Data Consent State**.
-	5. Select the **Event Variables** tab and create an event variable to directly grab the value from the payload. Ensure it translates to `GRANTED` or `DENIED`. You can use an insert function to translate to `GRANTED`or `DENIED` if your consent values are booleans. You can use the replace function if it's a string.
+	5. Select the **Event Variables** tab and create an event variable to directly grab the value from the payload. Ensure it translates to `GRANTED` or `DENIED`. You can use an insert or [replace function](/docs/connections/destinations/actions/#replace-function) to translate other values to `GRANTED`or `DENIED`. 
 	6. Repeat step 5 for **Ad Personalization Consent State**. 
 
 
@@ -218,4 +218,7 @@ Because [Google's Measurement Protocol API](https://developers.google.com/analyt
 ### Google Optimize Support
 
 The Google Analytics 4 Cloud destination does not support Google Optimize. This destination operates in cloud-mode (sending events from Segment servers to Google Analytics using the Measurement Protocol API), which prevents the required [Optimize SDK](https://support.google.com/optimize/answer/11287798?visit_id=637903946258690719-978290187&rd=1){:target="_blank"} snippet from loading on the page.
+
+### Client/server-side event deduplication 
+Google doesn't offer guidance around how to deduplicate the same event coming in server and client side. As a result, Segment recommends that you not send the same event into Google Analytics 4 from two different locations such that you would expect Google to deduplicate one of the events out of their pipeline. You can [deduplicate user counts](https://support.google.com/analytics/answer/9355949?hl=en){:target="_blank"} using the `User ID` field, but you cannot deduplicate whole events in the Google platform as far as Segment is aware.
 

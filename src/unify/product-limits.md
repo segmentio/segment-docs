@@ -16,7 +16,7 @@ To learn more about custom limits and upgrades, contact your dedicated Customer 
 
 ## Unify Plus limits
 
-Beginning August 18, 2023, new Unify Plus users will receive 50 Computed or SQL Traits and five AI Traits. In addition, new users will receive the following depending on your Engage plan: 
+Beginning August 18, 2023, new Unify Plus users will receive 50 Computed and five AI Traits. In addition, new users will receive the following depending on your Engage plan: 
 - **Engage Foundations**: 100 Audiences and 75 Journey Steps
 - **Engage Premier**: 125 Audiences and 100 Journey Steps
 
@@ -49,16 +49,14 @@ Visit Segment's [pricing page](https://segment.com/pricing/){:target="_blank"} t
 
 ## SQL Traits
 
-
 | name                        | limit                      | Details                                                                                                      |
 | --------------------------- | -------------------------- | ------------------------------------------------------------------------------------------------------------ |
-| SQL Traits                  | 25                         | The number of SQL traits you can sync to your Space.                                                         |
-| SQL Traits - Sync Frequency | customizable, up to hourly | The frequency with which Segment runs your SQL traits. Contact your account team to customize your schedule. |
 | SQL Traits - Rows           | 25 million                 | The number of rows each SQL trait can return.                                                                |
 | SQL Traits - Columns        | 25                         | The number of columns each SQL trait can return.                                                             |
 
 
 ## Profile API
+
 These limits are set per each Unify/Engage Space.
 
 | Name                    | limit                   | Details                                                                                                                                                             |
