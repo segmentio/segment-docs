@@ -5,9 +5,9 @@ plan: consent-management
 
 ## Is Segment's Consent Manager part of Consent Management?
 
-No. Segment's deprecated [open-source Consent Manager](https://github.com/segmentio/consent-manager){:target="_blank”}, which captures end user consent, is not part of Segment's Consent Management product, which focuses only on enforcing end user consent. 
+No. Segment's deprecated [open-source Consent Manager](https://github.com/segmentio/consent-manager){:target="_blank”}, which captures end user cookie consent, is not part of Segment's Consent Management product, which focuses only on enforcing end user consent, or sharing end user data with only the destinations they consented to share data with and blocking the flow of data to all other destinations.
 
-Segment recommends moving from the deprecated consent-manager to a commercial alternative, like [OneTrust](https://www.onetrust.com/){:target="_blank”}.
+Segment recommends moving from the deprecated, open-source Consent Manager to one that meets your legal compliance requirements. 
 
 ## What destinations support consent enforcement? 
 
