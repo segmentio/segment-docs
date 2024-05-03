@@ -5,7 +5,8 @@ id: 64c1690a9f08c84a420aba78
 
 {% include content/plan-grid.md name="actions" %}
 
-[TikTok Pixel](https://ads.tiktok.com/marketing_api/docs?id=1739583652957185){:target="_blank"} is a piece of code that you can place on your website that allows you to share website events with TikTok. With TikTok for Business Tools, the Pixel can help you measure traffic on your website, measure ad campaign performance, optimize your campaigns and find new customers.
+
+The TikTok Pixel destination is a client-side integration that enables advertisers to implement [TikTok Pixel](https://ads.tiktok.com/marketing_api/docs?id=1739583652957185){:target="_blank"} for tracking website events. This tool makes it easier to track ad performance by embedding a pixel code on a site. You can define multiple events to track multiple user's behaviors under each pixel.
 
 ### Benefits of TikTok Pixel
 
@@ -14,50 +15,30 @@ Use data collected from TikTok Pixel to:
 - **Optimize ad delivery**: Target Audiences that are more likely to initiate a website event by setting an optimization goal on visitor events like add to cart, view page, or purchase. 
 - **Measure campaign performance**: Measure your ad performance and return on ad spend (ROAS) based on a series of conversion events you define.
 
-This destination is maintained by TikTok. For any issues with the destination, [contact TikTok's Support team](mailto:segmenteng@bytedance.com).
-
 ## Getting started
+
+### TikTok Requirements
+
+The TikTok Conversions destination is configured to use the TikTok Events API. To generate a TikTok Pixel Code and Access Token:
+
+1. [Create a TikTok For Business account](https://business-api.tiktok.com/portal/docs?id=1738855099573250){:target="_blank"}.
+2. [Create a TikTok Pixel](https://ads.tiktok.com/help/article/get-started-pixel?redirected=2){:target="_blank"} for Segment Partner setup to obtain a Pixel Code.
+
+### Connect TikTok Pixel to your workspace
 
 1. From the Segment web app, click **Catalog**, then click **Destinations**.
 2. Search for "TikTok Pixel" in the search bar, then click on the Destination "TikTok Pixel".
 3. Click **Add Destination**.
 4. Select an existing JavaScript Source to connect to TikTok Pixel.
 5. Give the Destination a name.
-6. On the Settings screen, provide the Pixel Code. This can be found in the TikTok Events Manager (TTEM).
-    - Ensure that the "Use Existing Pixel" setting is **off** if you want Segment to load the TikTok Pixel JavaScript code onto your website. This is the default and recommended behavior. 
-    - Ensure that the "Use Existing Pixel" setting is **on** if you want Segment to detect a pre-existing TikTok Pixel that's already loaded to your website independently of Segment. If you enable this option and don't have TikTok Pixel loaded to your website, your data collection to Segment may be disrupted. See [the "Use Existing Pixel" setting](#use-existing-pixel-setting) for more information on how to use this setting safely.  
 7. Toggle on the Destination using the **Enable Destination** toggle.
 8. Click **Save Change**.
 
-<a id="use-existing-pixel-setting"></a>
-## The Use Existing Pixel setting
-
-> warning ""
-> Use caution when you toggle on the **Use Existing Pixel** setting; it could result in disruption to data collection if Segment doesn't detect TikTok Pixel on the website. 
-
-The TikTok Pixel destination's default behavior is to load a TikTok Pixel JavaScript library onto your website when the page loads. However, if you already have TikTok Pixel on your website before enabling this Destination, you may want Segment to detect and use your pre-existing TikTok Pixel JavaScript library instead of loading a new TikTok Pixel library. 
-
-Toggling the **Use Existing Pixel** setting on will prevent Segment from loading a TikTok Pixel library onto the web page. Instead, Segment will attempt to detect your pre-loaded TikTok Pixel library and will use it when forwarding events to TikTok. 
-
-### Mappings enabled by default
-
-After setting up the Destination, Segment enables seven mappings by default. You can click on the mappings tab to view and edit these mappings.
-
-- **View Content**: When a page is viewed
-- **Search**: When a search is made
-- **Add to Wishlist**: When an item is added to a wishlist
-- **Add to Cart**: When an item is added to the shopping cart
-- **Initiate Checkout**: When the checkout process is started
-- **Add Payment Info**: When payment information is added in the checkout flow
-- **Place an Order**: When an order is placed
-
 {% include components/actions-fields.html %}
 
-## Getting started with Pixel and obtaining the Pixel code
+## FAQ & Troubleshooting
 
-Please refer to the [TikTok Help Center documentation](https://ads.tiktok.com/help/article/get-started-pixel?redirected=2){:target="_blank"} to learn more about how to get started with TikTok Pixel. Once the Pixel is created, please retrieve the Pixel Code from TikTok Events Manager (TTEM).
-
-## Advanced Matching
+### Advanced Matching
 
 Advanced Matching helps you optimize your TikTok ads and drive performance by matching customer information with TikTok users. Hashed customer information can be shared with any TikTok event to attribute more conversions, build bigger audiences, and improve campaign optimization.
 
@@ -71,11 +52,42 @@ When email and/or phone number values are sent to TikTok, TikTok will try to mat
 
 To maximize Advanced Matching's performance, TikTok recommends using both Manual and Automatic Advanced Matching at the same time.
 
-## PII hashing
+### PII hashing
 - TikTok hashes all values with `sha256` before processing.
 
 - Normalize phone numbers you send to TikTok with in the `E.164` format. This format is a combination of `+［country code]［phone number]`. For example: `+12133734253`.
 
+### Deduplication with the Segment TikTok Pixel Destination
+
+When connected to the same Segment source, the destination will have a default mapping `messageId` assigned to Event ID parameter. This will need to match the Event ID mapping from the client-side Segment integration (TikTok Pixel Destination).
+
+### Custom Event Implementation
+
+1. Click **New Mapping**, then click **Report Web Event**.
+
+    ![Custom Event Step 1 A](images/custom_event_step_1_a.png)
+    <!-- ![Custom Event Step 1 B](images/custom_event_step_1_b.png) -->
+
+2. Provide the Segment event to map and trigger the connection (i.e. `segment_event`)
+
+    ![Custom Even Step 2](images/custom_event_step_2.png)
+
+3. Provide the custom event name in the **Event Name** field from the mappings section (i.e. `tiktok_custom_event`)
+
+    ![Custom Event Step 3](images/custom_event_step_3.png)
+
+4. Edit parameter mappings for each event
+
+    ![Custom Event Step 4](images/custom_event_step_4.png)
+
+### Web Diagnostics
+
+You can check whether the integration is working, test events in real-time, and troubleshoot common issues in TikTok's Web Diagnostics Suite. See the [TikTok Pixel Web Diagnostics documentation](https://ads.tiktok.com/help/article?aid=10000360){:target="_blank"} for more information.
+
 ## Data and privacy
 
 Visit TikTok's [docs](https://ads.tiktok.com/i18n/official/policy/business-products-terms){:target="_blank"} to learn more about TikTok's privacy and data terms.
+
+## Support
+
+The TikTok Pixel destination is owned and maintained by the TikTok team. For any issues with the destination, [contact TikTok's Support team](mailto:segmenteng@bytedance.com).
