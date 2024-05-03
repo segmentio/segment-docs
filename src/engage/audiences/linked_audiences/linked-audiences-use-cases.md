@@ -13,21 +13,22 @@ Below are some example use cases to help you understand the concepts around link
 
 ## Use Case Example 1: Financial Services
 
-### Email reminder to pay off overdue credit card 
+### Email reminder to pay off overdue credit card
+
 Target an audience of customers who own a checking account with at least one credit card with an overdue balance. Then, personalize the email reminder to pay off overdue credit card targeting.
 
-#### Warehouse data
+#### Financial Services Warehouse data
 
 - Checking account details: *account_number*
 - Card details: *credit_card_type, card_status, card_balance, due_date*
 
-#### Relational data
+#### Financial Services Relational data
 
 - User can have multiple accounts (For example: checking, savings, retirement)
 - An account can have many cards (For example: debit, credit)
 - A card can have many transactions
 
-### Step 1: Build your data graph 
+### Step 1: Build your Financial Services data graph
 
 Follow the steps in [Data Graph](docs/unify/linked-profiles/data-graph/) to build the following:
 
@@ -41,7 +42,7 @@ Follow the steps in [Data Graph](docs/unify/linked-profiles/data-graph/) to buil
     - Credit
       - Purchases
   
-### Step 2: Activate your Linked Audience
+### Step 2: Activate your Financial Services Linked Audience
 
 Follow [Step 3: Activate your linked audience](/docs/engage/audiences/linked_audiences/#step-1-build-a-linked-audience) to set up your audience.
 
@@ -58,7 +59,7 @@ Follow [Step 3: Activate your linked audience](/docs/engage/audiences/linked_aud
    - Card details: *credit_card_type, card_status, card_balance, due_date*
 
 
-### Result
+### Financial Services Result
 
 The result is an email to your customer that contains:
 - Name
@@ -74,27 +75,27 @@ The result is an email to your customer that contains:
 
 Send a personalized email to customers with low engagement scores before renewal.
 
-#### Warehouse data
+#### SaaS Warehouse data
 
 - Workspace details: workspace_arr, engagement_score, term_end_date
 
-#### Relational data
+#### SaaS Relational data
 
 - Users can belong to multiple Segment workspaces. 
 - Role can depend on the workspace.
 
-### Step 1: Build your data graph 
+### Step 1: Build your SaaS data graph
 
-Follow the steps in [Data Graph](docs/unify/linked-profiles/data-graph/) to build the following: 
+Follow the steps in [Data Graph](docs/unify/linked-profiles/data-graph/) to build the following:
 
-- Profiles 
+- Profiles
   - Roles
     - Workspaces
-    - Accounts 
+    - Accounts
 
-### Step 2: Activate your Linked Audience 
+### Step 2: Activate your SaaS Linked Audience
 
-Follow [Step3: Activate your linked audience](/docs/engage/audiences/linked_audiences/#step-1-build-a-linked-audience) to set up your audience. 
+Follow [Step3: Activate your linked audience](/docs/engage/audiences/linked_audiences/#step-1-build-a-linked-audience) to set up your audience.
 
 1. Select all profiles:
    - associated where their role is data,
@@ -105,10 +106,59 @@ Follow [Step3: Activate your linked audience](/docs/engage/audiences/linked_audi
    - Profile properties: *user_business_group, user_role* 
    - Workspace details: *workspace_arr, engagement_score, term_end_date*
 
-### Results
+### SaaS Results
 
 The result is an email to your customer that contains:
+
 - Customer Name
 - Customer Success Manager Name
 - Product Name
-- The Associated Customer Use Case 
+- The Associated Customer Use Case
+
+## Use Case Example 3: Retail Business
+
+### Personalized promotion email to target customers with a product back in stock
+
+Owl Shoes dreams of crafting a targeted promotion email to Char to nudge her to buy one of her wish list items that’s now back in stock. With Linked Audiences, Owl Shoes can easily pull in details about the product name, shoe size, and loyalty status.
+
+#### Retail Warehouse data
+
+Product details: *product_name, product_status*
+
+#### Retail Relational data
+
+- Each order can contain multiple products
+- A product can be related to multiple orders
+  
+### Step 1: Build your Retail data graph
+
+Follow the steps in [Data Graph](docs/unify/linked-profiles/data-graph/) to build the following:
+
+- Profiles
+  - Wish List
+    - Products
+  - Orders
+    - Products
+
+### Step 2: Activate your Retail Linked Audience
+
+Follow [Step3: Activate your linked audience](/docs/engage/audiences/linked_audiences/#step-1-build-a-linked-audience) to set up your audience.
+
+1. Select all profiles:
+   - associated with at least 1 wish list,
+   - where at least 1 product is in stock.
+2. Choose your event trigger: *product changes to in stock*
+3. Select the following personalized data properties:
+   - Profile properties: *First_Name*
+   - Wish list properties: *Product_Name, Product_Status, Shoe_Size*
+   - Order Properties: *Order_Date*
+
+### Retail Results
+
+The result is an email to your customer that contains:
+
+- Customer Name
+- Wishlist Product Name
+- Shoe Size
+- Customer’s Loyalty Status
+- A Discount Code

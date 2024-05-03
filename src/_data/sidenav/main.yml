@@ -393,6 +393,14 @@ sections:
     section:
     - path: '/engage/audiences'
       title: Audiences Overview
+       - path: '/engage/audiences/account-audiences'
+      title: Account-level Audiences
+    - path: '/engage/audiences/generative-audiences'
+      title: Generative Audiences
+    - path: '/engage/audiences/generative-audiences-nutrition-facts'
+      title: Generative Audiences Nutrition Facts Label
+    - path: '/engage/audiences/organization'
+      title: Organize Audiences
   - section_title: Linked Audiences
     description: "See how to create linked audiences."
     section:
@@ -402,15 +410,6 @@ sections:
       title: Linked Audiences Use Cases
     - path: '/engage/audiences/linked_audiences/linked_supported_destinations'
       title: Linked Audiences Supported Destinations 
-    - path: '/engage/audiences/account-audiences'
-      title: Account-level Audiences
-    - path: '/engage/audiences/generative-audiences'
-      title: Generative Audiences
-    - path: '/engage/audiences/generative-audiences-nutrition-facts'
-      title: Generative Audiences Nutrition Facts Label
-    - path: '/engage/audiences/organization'
-      title: Organize Audiences
-
   - section_title: Journeys
     description: "Learn how to create multi-step Journeys to tailor messages to your users."
     section:
