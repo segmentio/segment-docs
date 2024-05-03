@@ -35,13 +35,19 @@ Klaviyo (Actions) provides the following benefits:
 
 Klaviyo (Actions) Destination can accept [RETL](/docs/connections/reverse-etl/) data. You can send the models you created in your data warehouse source. Follow [the steps](/docs/connections/reverse-etl/#step-1-add-a-source) to create your data warehouse source and set up models.
 
-| Action              | Added                                                   | Updated                                                   | Deleted                                                   |
-| ------------------- | ------------------------------------------------------- | --------------------------------------------------------- | --------------------------------------------------------- |
-| Order Completed     | <img class="inline" src="/docs/images/supported.svg" /> | <img class="inline" src="/docs/images/unsupported.svg" /> | <img class="inline" src="/docs/images/unsupported.svg" /> |
-| Track Event         | <img class="inline" src="/docs/images/supported.svg" /> | <img class="inline" src="/docs/images/unsupported.svg" /> | <img class="inline" src="/docs/images/unsupported.svg" /> |
-| Upsert Profile      | <img class="inline" src="/docs/images/supported.svg" /> | <img class="inline" src="/docs/images/supported.svg" />   | <img class="inline" src="/docs/images/unsupported.svg" /> |
-| Subscribe Profile   | <img class="inline" src="/docs/images/supported.svg" /> | <img class="inline" src="/docs/images/supported.svg" />   | <img class="inline" src="/docs/images/supported.svg" />   |
-| Unsubscribe Profile | <img class="inline" src="/docs/images/supported.svg" /> | <img class="inline" src="/docs/images/supported.svg" />   | <img class="inline" src="/docs/images/supported.svg" />   |
+| Action              | Added                                                   | Updated                                                   | Deleted                                                        |
+| ------------------- | ------------------------------------------------------- | --------------------------------------------------------- | -------------------------------------------------------------- |
+| Order Completed     | <img class="inline" src="/docs/images/supported.svg" /> | <img class="inline" src="/docs/images/unsupported.svg" /> | <img class="inline" src="/docs/images/unsupported.svg" />      |
+| Track Event         | <img class="inline" src="/docs/images/supported.svg" /> | <img class="inline" src="/docs/images/unsupported.svg" /> | <img class="inline" src="/docs/images/unsupported.svg" />      |
+| Upsert Profile      | <img class="inline" src="/docs/images/supported.svg" /> | <img class="inline" src="/docs/images/supported.svg" />   | <img class="inline" src="/docs/images/unsupported.svg" />      |
+| Remove Profile      | <img class="inline" src="/docs/images/supported.svg" /> | <img class="inline" src="/docs/images/unsupported.svg" /> | <img class="inline" src="/docs/images/supported.svg" />        |
+| Subscribe Profile   | <img class="inline" src="/docs/images/supported.svg" /> | <img class="inline" src="/docs/images/unsupported.svg" /> | <img class="inline" src="/docs/images/supported.svg" /> **\*** |
+| Unsubscribe Profile | <img class="inline" src="/docs/images/supported.svg" /> | <img class="inline" src="/docs/images/unsupported.svg" /> | <img class="inline" src="/docs/images/supported.svg" />        |
+
+> info ""
+> **\*** Though technically possible, it may not be the most intuitive approach to using RETL.
+>
+> **e.g.,** Triggering a **Subscribe Profile** action when a user is **deleted** from a Model that queries unsubscribed users.
 
 In order to add users to a list, use the **Upsert Profile** Action and fill out the **List** field with the Klaviyo list to add the profile to.
 
