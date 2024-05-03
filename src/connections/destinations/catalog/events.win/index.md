@@ -1,6 +1,7 @@
 ---
 title: events.win Destination
 beta: true
+id: 662d3328d029f89724a0c294
 ---
 
 [events.win](https://events.win/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners){:target="\_blank”} provides a single platform to create your tracking plan, sync event definitions to your code, and see detailed metrics on how correct your data is. With events.win, you can ensure that your tracking is accurate and up-to-date.
