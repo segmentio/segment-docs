@@ -138,14 +138,14 @@ If the Enable Sources and Test Connections check indicates there are problems wi
 After you complete the Segment for Flex guided setup, you can use [Advanced Segment](https://app.segment.com/goto-my-workspace/overview){:target="_blank"} to connect your workspace to additional *sources*, or websites, server libraries, mobile SDKs, and cloud applications that can send data into Segment, and *destinations*, or apps and business tools that can receive forwarded data from Segment.
 
 > warning "Editing or deleting the two sources automatically created during the guided setup can lead to data loss"
-> During the guided setup process, Segment creates two sources: a [Java source](/docs/connections/sources/catalog/libraries/server/java/quickstart/) named `flex-unify-server-source` that connects your Segment workspace to Flex, and an Personas source, named `Personas  [workspace-name]`, that activates your customer data. If you edit or delete these sources, reach out to Flex support for next steps. 
+> During the guided setup process, Segment creates two sources: a [Java source](/docs/connections/sources/catalog/libraries/server/java/quickstart/) named `flex-unify-server-source` that connects your Segment workspace to Flex, and an Personas source, named `Personas [workspace-name]`, that activates your customer data. If you edit or delete these sources, reach out to Flex support for next steps. 
 
 See the [Segment for Flex entitlements and limitations](#segment-for-flex-entitlements-and-limitations) documentation for more information about the sources and destinations supported by Segment for Flex workspaces.
 
 ### Add a source to your workspace
 
 > info "Eligible sources"
-> You can add up to 4 sources to your Segment for Flex workspace in addition to the 2 sources that Segment automatically generates during setup. For more information about the types of sources you can add to your workspace, see the [Sources](#sources) documentation.  
+> You can add up to 4 sources to your Segment for Flex workspace in addition to the 2 sources that Segment automatically generates during workspace setup. For more information about the types of sources you can add to your workspace, see the [Sources](#sources) documentation.  
 
 To add a source to your Segment for Flex workspace:
 1. Open your Segment for Flex workspace in [Advanced Segment](https://app.segment.com/goto-my-workspace/overview){:target="_blank"} mode. 
@@ -172,7 +172,7 @@ To add custom identifiers to your Segment for Flex workspace:
 1. Open your Segment for Flex workspace in [Advanced Segment](https://app.segment.com/goto-my-workspace/home){:target="_blank"} mode. 
 2. Select **Unify** in the sidebar, click the Unify space you created during the guided setup, and select **Unify settings**. 
 3. On the Identity resolution page, click **+ Add identifier** and select **Custom identifiers**.
-4. On the **Custom Identifier** popup, walk through the steps to create your custom identifier. When you've finished setting up your custom identifier, click **Add new identifier**. 
+4. On the **Custom Identifier** popup, walk through the steps to create your custom identifier. When you're finished, click **Add new identifier**. 
 
 ## Segment for Flex entitlements and limitations
 
@@ -180,7 +180,7 @@ Segment for Flex workspaces created during the Unified Profiles setup process ha
 
 ### Sources
 
-In addition to 2 sources for Flex events that is auto-created during setup, you can create an additional 4 sources.
+In addition to 2 sources for Flex events that are auto-created during setup, you can create an additional 4 sources.
 
 These sources are limited to the following types:
   - [Salesforce CRM](/docs/connections/sources/catalog/cloud-apps/salesforce/){:target="_blank"}
