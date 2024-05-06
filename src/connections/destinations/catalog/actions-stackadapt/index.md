@@ -141,7 +141,7 @@ If you are using URL rules, these will be matched whenever Segment sends an even
 
 ### Conversion Tracking with Backend Events
 
-When you send events to Segment from your backend which are forwarded to StackAdapt using Segment's backend SDKs, the user agent and IP address of the user who originated the event must be included in the event context in order for conversions to be tracked. This is because StackAdapt uses the user agent and IP address to attribute the conversion to the correct event to a user who has interacted with your ads. Examples of how to do this can be found the documentation for Segment's SDKs. For example, for the [Python SDK](/docs/connections/sources/catalog/libraries/server/python/#override-context-value) this can be done as follows:
+When you send events to Segment from your backend which are forwarded to StackAdapt using Segment's backend SDKs, the user agent and IP address of the user who originated the event must be included in the event context in order for conversions to be tracked. This is because StackAdapt uses the user agent and IP address to attribute the conversion to the correct event to a user who has interacted with your ads. Examples of how to do this can be found in the documentation for Segment's SDKs. For example, for the [Python SDK](/docs/connections/sources/catalog/libraries/server/python/#override-context-value) this can be done as follows:
 
 ```python
 analytics.track('user_id', 'Order Completed', context={
@@ -156,7 +156,7 @@ This is necessary when using backend SDKs but not for events sent from the front
 
 When sending past events to StackAdapt using a Reverse ETL tool, the user agent, IP address, event type, and either the page URL (for conversion trackers with URL rules), or the field(s) the event rules match on, must be included in your mappings. For example, the below mapping for a Snowflake source can be used to match a conversion tracker with an event rule that matches an `action` of `User Registered`:
 
-![Image showing Snowflake mapping to forward User Registered events](images/snowflake-mappings.png)
+![Image showing Snowflake mapping to forward User Registered events](images/snowflake-mapping.png)
 
 Rows forwarded to StackAdapt with this mapping will be matched by the `User Registered` event rule shown below:
 
