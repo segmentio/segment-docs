@@ -162,7 +162,7 @@ Rows forwarded to StackAdapt with this mapping will be matched by the `User Regi
 
 ![Image showing event rule in StackAdapt the matches a User Registered event](images/user-registered-event-rule.png)
 
-When forwarding past events using Reverse ETL, keep in mind that only users who have interacted with an ad from an associated campaign within the conversion tracker's configured view-through expiry window (for impressions) or click-through expiry window (for clicks) will count as conversions. These windows can be set to up to 180 days in the conversion tracker configuration.
+When forwarding past events using Reverse ETL, only users who have interacted with an ad from an associated campaign within the conversion tracker's configured view-through expiry window (for impressions) or click-through expiry window (for clicks) will count as conversions. These windows can be set to up to 180 days in the conversion tracker configuration.
 
 {% include components/actions-fields.html %}
 
