@@ -5,9 +5,6 @@ id: 64b6a221baf168a989be641a
 
 {% include content/plan-grid.md name="actions" %}
 
-> info ""
-> The Listrak Destination is in beta, and Listrak is still developing the destination. To join Listrak's beta program or to give any feedback to help improve the Listrak Destination and its documentation, [let Listrak know](mailto:support@listrak.com).
-
 [Listrak](https://www.listrak.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners){:target="_blank”} is the retail industry’s leading customer engagement platform. Listrak delivers results for more than 1,000 retailers by providing best-in-class email, text message marketing, identity resolution marketing and push notifications through seamless cross-channel orchestration. Listrak’s data-first approach delivers 1:1 personalization at scale so you can send messages at precisely the right time across the right combination of channels and devices to maximize customer engagement, revenue, and lifetime value.
 
 Listrak maintains this destination. For any issues with the destination, [contact the Listrak Support team](mailto:support@listrak.com).
