@@ -10,12 +10,12 @@ This destination is maintained by events.win. For any issues with the destinatio
 
 ## Getting started
 
-1. From your workspace's [Destination catalog page](https://app.segment.com/goto-my-workspace/destinations/catalog){:target="\_blank”} search for "events.win"
-2. Select events.win and click **Add Destination**
-3. Select an existing Source to connect to events.win (Actions).
+1. From your workspace's [Destination catalog page](https://app.segment.com/goto-my-workspace/destinations/catalog){:target="\_blank”} search for "events.win".
+2. Select events.win and click **Add Destination**.
+3. Select an existing Source to connect to events.win.
 4. Go to the [events.win dashboard](https://app.events.win/developers){:target="\_blank"}, find and copy the **Developer key**.
-5. Enter the **Developer Key** in the events.win destination settings in Segment.
-6. That's it! events.win will start to receive data from Segment, there may be a delay before data is visible in the events.win dashboard.
+5. Return to Segment and enter the **Developer Key** in the events.win destination settings.
+6. events.win starts to receive data from Segment. There may be a delay before data is visible in the events.win dashboard.
 
 ## Supported methods
 
