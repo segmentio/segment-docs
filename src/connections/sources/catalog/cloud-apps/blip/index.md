@@ -34,7 +34,6 @@ The table below lists events that Blip sends to Segment. These events appear as 
 
 | Event Name         | Description                           |
 | ------------------ | ------------------------------------- |
-| Contact Updated    | Contact was updated on Blip           |
 | Message Sent       | Message was sent successfully         |
 | Message Received   | Message was received successfully     |
 | Event Tracked      | Tracking Event from Blip was created  |
