@@ -137,7 +137,7 @@ With all configuration completed you wil want to confirm data being written to t
 
 ### Delivery Report
 
-Additionally, if you see the following in your Delievery report, this indicates that an array of data is being sent through that is too deep, that is, has too many levels and cannot be flattened. If this is the case you will need to revisit mapping that data to a flatter structure, that is, the attribute has a simple value versus the complex value structure that is coming through. Complex values, many layered values, are not useable and will not be accepted.
+Additionally, if you see `Nesting Depth Exceeded` in your Delivery report, this indicates that an array of data is being sent through that is too deep, that is, has too many levels and cannot be flattened. If this is the case you will need to revisit mapping that data to a flatter structure, that is, the attribute has a simple value versus the complex value structure that is coming through. Complex values, many layered values, are not useable and will not be accepted.
 
 ![](assets/20240422_161221_image.png)
 
