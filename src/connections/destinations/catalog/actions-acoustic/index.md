@@ -96,11 +96,6 @@ For example, for a Connection definition of an Audience source, a Traits.email o
 
 Keep in mind that the Acoustic (Actions) Destination ignores any Events that do not contain a valid UniqueRecipientId attribute, therefore a common filter would be to avoid sending any Events to the Connection that do not have a valid attribute to be mapped to UniqueRecipientId. In many cases this will be a valid email address but other Unique Id attribute, such as CustID, can be used.
 
-Click Next Step,
-
-Enter a Name and Description for the Filter.
-
-Click Enable and Save.
 
 
 
