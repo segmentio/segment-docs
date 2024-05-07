@@ -92,7 +92,11 @@ To help you debug, Segment provides sample payloads from every step of the data'
 
 - **Request to Destination** - the request Segment made to the Partner API. This payload will likely be different from what you sent it because Segment is mapping your event to the partner's spec to ensure the message is successfully delivered. 
 
-- **Response from Destination** - the response Segment received from the Partner API. This will have the raw partner error. If you need to troubleshoot an issue with a Partner's Success team, this is usually something they'll want to see. 
+- **Response from Destination** - the response Segment received from the Partner API. This will have the raw partner error. If you need to troubleshoot an issue with a Partner's Success team, this is usually something they'll want to see.
+
+#### Email Alerts
+
+You can opt in to receive email alerts regarding failed events/syncs by going to your workspaace Settings > User Preferences > Activity Notifications > Destiantions. Then you can select the option to be alerted by Email and/or In-app. 
 
 
 ## 4. Trends
@@ -111,3 +115,6 @@ When debugging, it's helpful to see when issues start, stop, and trend over time
 #### Latency
 
 How P95 latency has trended over the time period you selected.
+
+
+

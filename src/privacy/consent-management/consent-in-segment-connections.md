@@ -4,7 +4,12 @@ plan: consent-management
 redirect_from: "/privacy/consent-in-segment-connections"
 ---
 
-Segment Connections users can add the [consent object](#consent-object) to their sources to stamp events with the end user consent preferences captured by your consent management platform (CMP) and send them downstream to destinations in categories that an end user consented to share data with. Events without the consent object continue to flow to destinations without consent enforcement. 
+Segment Connections users can add the [consent object](#consent-object) to their sources to stamp events with the end user consent preferences captured by your consent management platform (CMP) and send them downstream to destinations in categories that an end user consented to share data with. Events without the consent object continue to flow to destinations without consent enforcement.
+
+> success ""
+> With the [Destination Actions framework](/docs/connections/destinations/destination-actions), you can send current end user consent preferences to flow to your destination alongside customer interactions so your destinations know when an end user revokes their consent. 
+>
+> For more information about sharing current end user consent preferences with your downstream destinations, see the [Sharing consent with Actions destinations](/docs/privacy/consent-management/consent-in-unify/#sharing-consent-with-actions-destinations) documentation. 
 
 For more information about configuring consent categories, see the [Configure Consent Management](/docs/privacy/consent-management/configure-consent-management/#step-1-create-consent-categories-in-the-segment-app) documentation.
 

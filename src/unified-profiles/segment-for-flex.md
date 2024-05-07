@@ -13,7 +13,7 @@ Before creating a Segment for Flex workspace, you must have requested access fro
 ## Step 1: Select your data sources
 
 > warning "Unable to change data source selection after this step"
-> After you've selected your data source and proceeded to the next step, you can't return to this page and make a different selection. You can add additional data sources after setting up your Segment for Flex workspace. For more information about sources in a Segment for Flex workspace, see the [Sources](#sources) documentation.
+> After you've selected your data source and proceeded to the next step, you can't return to this page and make a different selection. You can add additional data sources after setting up your Segment for Flex workspace. For more information about adding additional data sources after completing the Segment for Flex guided setup, see the optional [Add additional sources and destinations to your workspace](#optional-add-additional-sources-and-destinations-to-your-workspace) documentation.
 
 1. In Segment for Flex, select a data source to get started and click **Next**.
 2. Review the popup that explains how the data source connects to Segment, and click **Continue**.
@@ -38,7 +38,11 @@ You can add additional data sources after completing the setup process. <br>
 5. Give your destination a name and enter the account credentials for a user that has read and write permissions. Click **Save**. 
 6. After you've given your destination a name and entered your credentials, click **Next**.
 7. On the Getting started with Segment page, click **Define Model**.
-8. [Create a SQL query that defines your model](/docs/unified-profiles/create-sql-traits){:target="_blank"}. After you've created a model, Segment uses your model to map data to your Reverse ETL destinations. 
+8. Create a SQL query that defines your model. After you've created a model, Segment uses your model to map data to your Reverse ETL destinations.
+
+> info "Sample queries for importing records into Unified Profiles"
+> Not sure where to start with the SQL queries that define your model? See the [RETL Queries for Importing Salesforce Objects into Unified Profiles in Flex](/docs/unified-profiles/create-sql-traits){:target="_blank"} documentation.
+ 
 <ol style="counter-reset: none;">
   <li value="9" markdown=1>
   Click **Preview** to return 10 records from your warehouse. When you've verified that your records return as expected, click **Next**.
@@ -51,6 +55,8 @@ You can add additional data sources after completing the setup process. <br>
   </li>
 </ol>
 
+> warning "Records from your data warehouse and Salesforce might not be immediately available"
+> Segment's initial sync with your data warehouse can take up to 24 hours to complete. Segment syncs with Salesforce immediately after you connect it to your Segment for Flex workspace. This initial sync can take up to 72 hours. After Segment completes the initial sync with Salesforce, Segment initiates a sync with Salesforce every three hours.
 
 ### Data warehouse only
 
@@ -59,7 +65,8 @@ You can add additional data sources after completing the setup process. <br>
 3. Give your destination a name and enter the account credentials for a user that has read and write permissions. Click **Save**. 
 4. After you've given your destination a name and entered your credentials, click **Next**.
 5. On the *Getting started with Segment* page, click **Define Model**.
-6. [Create a SQL query that defines your model](/docs/unified-profiles/create-sql-traits){:target="_blank"} After you've created a model, Segment uses your model to map data to your Reverse ETL destinations.
+6. Create a SQL query that defines your model. After you've created a model, Segment uses your model to map data to your Reverse ETL destinations.
+
 <ol style="counter-reset: none;">
   <li value="7" markdown=1>
   Click **Preview** to return 10 records from your warehouse. When you've verified that your records return as expected, click **Next**.
@@ -71,6 +78,9 @@ You can add additional data sources after completing the setup process. <br>
   After Segment marks the "Add connections" tile as complete, click **Add identifiers and traits** and begin [Step 3: Add identifiers and traits](#step-3-add-identifiers-and-traits). 
   </li>
 </ol>
+
+> warning "Records from your data warehouse might not be immediately available"
+> Segment's initial sync with your data warehouse can take up to 24 hours to complete. 
 
 ### Website or mobile app
 
@@ -96,7 +106,7 @@ Connect to either a website or mobile app to complete this step.
 5. After Segment marks the "Add connections" tile as complete, click **Add identifiers and traits** and begin [Step 3: Add identifiers and traits](#step-3-add-identifiers-and-traits).
 
 ## Step 3: Add identifiers and traits
-After you've selected which data sources you'd like to integrate customer data from, you can select _identifiers_, or unique pieces of data that allow you to link information about an individual customer across different programs and services, and _traits_, which are pieces of information you know about a particular customer. 
+After you've selected which data sources you'd like to integrate customer data from, you can select _identifiers_, or unique pieces of data that allow you to link information about an individual customer across different programs and services, and _traits_, which are pieces of information you know about a particular customer.
 
 1. On the Add identifiers and traits page, click **Add identifier**. 
 2. Select one or more of Segment's 11 default identifiers and click **Add identifiers**.
@@ -122,6 +132,34 @@ If the Enable Sources and Test Connections check indicates there are problems wi
 - [Event Debugger](/docs/connections/sources/debugger/){:target="_blank"}: With the Debugger, you can check that calls are sent in the expected format without having to wait for any data processing. 
 - [Profile Explorer](/docs/unify/#profile-explorer){:target="_blank"}: Use the Profile Explorer to view all user data, including event history, traits, and identifiers. 
 - [Advanced Segment](https://app.segment.com/goto-my-workspace/overview){:target="_blank"}: Use the Advanced Segment option to view your full Segment workspace. Segment recommends working with the assistance of Professional Services when accessing Advanced Segment.
+
+## (Optional) Add additional sources and destinations to your workspace
+
+After you complete the Segment for Flex guided setup, you can use [Advanced Segment](https://app.segment.com/goto-my-workspace/overview){:target="_blank"} to connect your workspace to additional *sources*, or websites, server libraries, mobile SDKs, and cloud applications that can send data into Segment, and *destinations*, or apps and business tools that can receive forwarded data from Segment.   
+
+See the [Segment for Flex entitlements and limitations](#segment-for-flex-entitlements-and-limitations) documentation for more information about the sources and destinations supported by Segment for Flex workspaces.
+
+### Add a source to your workspace
+
+> info "Eligible sources"
+> You can add up to 5 sources to your Segment for Flex workspace. For more information about the types of sources you can add to your workspace, see the [Sources](#sources) documentation.  
+
+To add a source to your Segment for Flex workspace:
+1. Open your Segment for Flex workspace in [Advanced Segment](https://app.segment.com/goto-my-workspace/overview){:target="_blank"} mode. 
+2. On the Your Segment Overview page, find the sources column and click **+ Add More**.
+3. Select the source you'd like to add to your workspace, and click **Next**.
+4. Follow the setup flow, and click **Done** to complete setting up your source.
+
+### Add a destination to your workspace
+
+> info "Eligible destinations"
+> You can add up to 3 destinations to your Segment for Flex workspace. For more information about the types of destinations you can add to your workspace, see the [Destinations](#destinations) documentation.  
+
+To add a destination to your Segment for Flex workspace:
+1. Open your Segment for Flex workspace in [Advanced Segment](https://app.segment.com/goto-my-workspace/overview){:target="_blank"} mode. 
+2. On the Your Segment Overview page, find the destinations column and click **Add Destination** if you haven't yet created any additional destinations, or **+ Add More** if you've already created an additional destination.
+3. Select the destination you'd like to add to your workspace, and click **Next**.
+4. Follow the setup flow, and click **Done** to complete setting up your source. 
 
 ## Segment for Flex entitlements and limitations
 
@@ -154,7 +192,6 @@ These destinations are limited to the following types:
 - [Event streams](/docs/connections/destinations/#event-streams-destinations){:target="_blank"}
 - [Segment Profiles destination](/docs/connections/destinations/catalog/actions-segment-profiles/){:target="_blank"}
 - [Segment Connections destination](/docs/connections/destinations/catalog/actions-segment/){:target="_blank"}
-
 
 ### Entitlements
 

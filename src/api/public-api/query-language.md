@@ -37,7 +37,7 @@ Follow these syntax rules when you create definitions:
 The language supports the following syntactic sugar adjustments:
 
 - The language automatically wraps a 'literal' extractor function around string or number inputs wherever a scalar expression expects them.
-- You can invoke the boolean comparator functions `eq`, `neq`, `gt`, `gte`, `lt`, and `lte` by omitting the period and parenthesis and replacing the function name with the equivalent symbols `=`, `!=`, `>`, `>=`, `<`, and `<=`. Regardless of the syntactic sugar, the comparison still dictates the operations allowed in the call-chain.
+- You can invoke the boolean comparator functions `equals`, `differs`, `greater_than`, `at_least`, `less_than`, and `at_most` by omitting the period and parenthesis and replacing the function name with the equivalent symbols `=`, `!=`, `>`, `>=`, `<`, and `<=`. Regardless of the syntactic sugar, the comparison still dictates the operations allowed in the call-chain.
 
 ### Definition type
 
@@ -182,60 +182,63 @@ The following tables list the query languages's available functions.
 
 ### Comparisons
 
-| `eq`        |                                                          |
-| ----------- | -------------------------------------------------------- |
-| Syntax      | `eq({v: Scalar})`<br>`v` - value to compare for equality |
-| Return Type | `Comparator`                                             |
-| Example     | `eq(500)`<br>Syntactic Sugar: `== 500`                   |
+| `equals`    |                                                              |
+| ----------- | ------------------------------------------------------------ |
+| Syntax      | `equals({v: Scalar})`<br>`v` - value to compare for equality |
+| Return Type | `Comparator`                                                 |
+| Example     | `equals(500)`<br>Syntactic Sugar: `== 500`                   |
 
-| `neq`       |                                                             |
-| ----------- | ----------------------------------------------------------- |
-| Syntax      | `neq({v: Scalar})`<br>`v` - value to compare for inequality |
-| Return Type | `Comparator`                                                |
-| Example     | `neq(500)`<br>Syntactic Sugar: `!= 500`                     |
+| `differs`   |                                                                                                                                                                                                                                                            |
+| ----------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Syntax      | `differs({v: Scalar})`<br>`v` - value to compare for inequality                                                                                                                                                                                            |
+| Return Type | `Comparator`                                                                                                                                                                                                                                               |
+| Notes       | 'differs' only returns true if the value exists and is not equal. If null values need to be considered then use 'NOT (expression) = (value)' or add a condition to check for nulls '(expression) != (value) OR (expression).absent()'.              |
+| Example     | `differs(500)`<br>Syntactic Sugar: `!= 500`                                                                                                                                                                                                                |
 
-| `is_null`   |              |
-| ----------- | ------------ |
-| Syntax      | `is_null()`  |
-| Return Type | `Comparator` |
-| Example     | `is_null()`  |
+| `absent`    |                                                                               |
+| ----------- | ----------------------------------------------------------------------------- |
+| Syntax      | `absent()`                                                                    |
+| Return Type | `Comparator`                                                                  |
+| Description | Returns true when a value is null. Equivalent to `NOT (expression).exists()`. |
+| Example     | `absent()`                                                                    |
 
-| `is_set`    |                                                                                                 |
+| `exists`    |                                                                                                 |
 | ----------- | ----------------------------------------------------------------------------------------------- |
-| Syntax      | `is_set()`                                                                                      |
+| Syntax      | `exists()`                                                                                      |
 | Return Type | `Comparator`                                                                                    |
-| Description | Returns true when a value is set, meaning not null. Equivalent to `NOT (expression).is_null()`. |
-| Example     | `is_set()`                                                                                      |
+| Description | Returns true when a value is set, meaning not null. Equivalent to `NOT (expression).absent()`.  |
+| Example     | `exists()`                                                                                      |
 
-| `gt`        |                                             |
-| ----------- | ------------------------------------------- |
-| Syntax      | `gt({n: Scalar})`<br>`n` - value to compare |
-| Return Type | `Comparator`                                |
-| Example     | `gt(500)`<br>Syntactic Sugar: `> 500`       |
+| `greater_than` |                                                       |
+| -------------- | ----------------------------------------------------- |
+| Syntax         | `greater_than({n: Scalar})`<br>`n` - value to compare |
+| Return Type    | `Comparator`                                          |
+| Example        | `greater_than(500)`<br>Syntactic Sugar: `> 500`       |
 
-| `gte`       |                                              |
-| ----------- | -------------------------------------------- |
-| Syntax      | `gte({n: Scalar})`<br>`n` - value to compare |
-| Return Type | `Comparator`                                 |
-| Example     | `gte(500)`<br>Syntactic Sugar: `>= 500`      |
+| `at_least`     |                                                   |
+| -------------- | ------------------------------------------------- |
+| Syntax         | `at_least({n: Scalar})`<br>`n` - value to compare |
+| Return Type    | `Comparator`                                      |
+| Example        | `at_least(500)`<br>Syntactic Sugar: `>= 500`      |
 
-| `lt`        |                                           |
-| ----------- | ----------------------------------------- |
-| Syntax      | `lt({n: Scalar})`<br>n - value to compare |
-| Return Type | `Comparator`                              |
-| Example     | `lt(500)`<br>Syntactic Sugar: `< 500`     |
+| `less_than`    |                                                  |
+| -------------- | ------------------------------------------------ |
+| Syntax         | `less_than({n: Scalar})`<br>n - value to compare |
+| Return Type    | `Comparator`                                     |
+| Example        | `less_than(500)`<br>Syntactic Sugar: `< 500`     |
 
-| `lte`       |                                              |
-| ----------- | -------------------------------------------- |
-| Syntax      | `lte({n: Scalar})`<br>`n` - value to compare |
-| Return Type | `Comparator`                                 |
-| Example     | `lte(500)`<br>Syntactic Sugar: `<= 500`      |
+| `at_most`      |                                                  |
+| -------------- | ------------------------------------------------ |
+| Syntax         | `at_most({n: Scalar})`<br>`n` - value to compare |
+| Return Type    | `Comparator`                                     |
+| Example        | `at_most(500)`<br>Syntactic Sugar: `<= 500`      |
 
-| `contains`  |                                                                            |
-| ----------- | -------------------------------------------------------------------------- |
-| Syntax      | `contains({s: String})`<br>`s` - string to search for in containing string |
-| Return Type | `Comparator`                                                               |
-| Example     | `contains('shoes')`                                                        |
+| `contains`     |                                                                                            |
+| -------------- | ------------------------------------------------------------------------------------------ |
+| Syntax         | `contains({a: Array})`<br>`a` - array of possible values                                   |
+| Return Type    | `Comparator`                                                                               |
+| Description    | Matches when the value contains one of the elements of the parameter array as a substring. |
+| Example        | `contains(['shoes','shirts'])`                                                             |
 
 | `omits`     |                                                                                                                                 |
 | ----------- | ------------------------------------------------------------------------------------------------------------------------------- |
@@ -255,13 +258,6 @@ The following tables list the query languages's available functions.
 | Syntax      | `ends_with({s: String})`<br>`s` - string to search for at end of containing string |
 | Return Type | `Comparator`                                                                       |
 | Example     | `ends_with('total')`                                                               |
-
-| `contains_one` |                                                                                            |
-| -------------- | ------------------------------------------------------------------------------------------ |
-| Syntax         | `contains_one({a: Array})`<br>`a` - array of possible values                               |
-| Return Type    | `Comparator`                                                                               |
-| Description    | Matches when the value contains one of the elements of the parameter array as a substring. |
-| Example        | `contains_one(['shoes','shirts'])`                                                         |
 
 | `one_of`    |                                                                                    |
 | ----------- | ---------------------------------------------------------------------------------- |
@@ -365,7 +361,7 @@ The following tables list the query languages's available functions.
 | `ScalarExtractor` (extends `Extractor`, `Scalar`) |                                                                                                                                                                                                                                          |
 | ------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Base Type                                         | `Extractor`, `Scalar`                                                                                                                                                                                                                    |
-| Operations allowed in call-chain                  | `eq`, `neq`, `is_null`, `is_set`, `gt`, `gte`, `lt`, `lte`, `contains`, `omits`, `starts_with`, `ends_with`, `contains_one`, `one_of`, `before_date`, `after_date`, `within_last`, `before_last`, `after_next` (inherited from `Scalar`) |
+| Operations allowed in call-chain                  | `equals`, `differs`, `absent`, `exists`, `greater_than`, `at_least`, `less_than`, `at_most`, `contains`, `omits`, `starts_with`, `ends_with`, `one_of`, `before_date`, `after_date`, `within_last`, `before_last`, `after_next` (inherited from `Scalar`) |
 | Notes                                             | A `ScalarExtractor` represents extractions of a single data element, like a field value or a trait value.                                                                                                                                |
 
 | `EventPropertyExtractor` (extends `Extractor`) |                                                      |
@@ -390,7 +386,7 @@ The following tables list the query languages's available functions.
 
 | `Scalar`                         |                                                                                                                                                                                                                               |
 | -------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Operations allowed in call-chain | `eq`, `neq`, `is_null`, `is_set`, `gt`, `gte`, `lt`, `lte`, `contains`, `omits`, `starts_with`, `ends_with`, `contains_one`, `one_of`, `before_date`, `after_date`, `within_last`, `before_last`, `after_next`, `within_next` |
+| Operations allowed in call-chain | `equals`, `differs`, `absent`, `exists`, `greater_than`, `at_least`, `less_than`, `at_most`, `contains`, `omits`, `starts_with`, `ends_with`, `one_of`, `before_date`, `after_date`, `within_last`, `before_last`, `after_next`, `within_next` |
 
 | `ListScalar`                     |         |
 | -------------------------------- | ------- |

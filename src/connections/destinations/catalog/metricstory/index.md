@@ -9,10 +9,11 @@ beta: true
 MetricStoryAI maintains this destination. For any issues with the destination, contact the [MetricStory support team](support@metricstory.ai).
 
 ## Getting started
+
 1. From the Destination catalog page in the Segment app, search for MetricStory.
 2. Select and click **Add Destination**.
 3. Select an existing source to connect to.
-4. Go to the [API Keys](https://www.metricstory.ai/account/apikeys){:target="_blank"} page in MetricStory.ai.
+4. Go to the [API Keys](https://www.app.metricstory.ai/account/apikeys){:target="_blank"} page in MetricStory.ai.
 5. Copy your API key
 6. Enter the API key in the destination settings in Segment.
 
