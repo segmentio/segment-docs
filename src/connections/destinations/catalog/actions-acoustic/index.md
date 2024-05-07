@@ -1,5 +1,8 @@
 ---
 title: Acoustic (Actions) Destination
+id: 64edec5a4f881f992e432b81
+beta: true
+hidden: true
 ---
 {% include content/plan-grid.md name="actions" %}
 
