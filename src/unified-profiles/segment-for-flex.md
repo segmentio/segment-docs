@@ -38,7 +38,11 @@ You can add additional data sources after completing the setup process. <br>
 5. Give your destination a name and enter the account credentials for a user that has read and write permissions. Click **Save**. 
 6. After you've given your destination a name and entered your credentials, click **Next**.
 7. On the Getting started with Segment page, click **Define Model**.
-8. [Create a SQL query that defines your model](/docs/unified-profiles/create-sql-traits){:target="_blank"}. After you've created a model, Segment uses your model to map data to your Reverse ETL destinations. 
+8. Create a SQL query that defines your model. After you've created a model, Segment uses your model to map data to your Reverse ETL destinations.
+
+> info "Sample queries for importing records into Unified Profiles"
+> Not sure where to start with the SQL queries that define your model? See the [RETL Queries for Importing Salesforce Objects into Unified Profiles in Flex](/docs/unified-profiles/create-sql-traits){:target="_blank"} documentation.
+ 
 <ol style="counter-reset: none;">
   <li value="9" markdown=1>
   Click **Preview** to return 10 records from your warehouse. When you've verified that your records return as expected, click **Next**.
@@ -51,6 +55,8 @@ You can add additional data sources after completing the setup process. <br>
   </li>
 </ol>
 
+> warning "Records from your data warehouse and Salesforce might not be immediately available"
+> Segment's initial sync with your data warehouse can take up to 24 hours to complete. Segment syncs with Salesforce immediately after you connect it to your Segment for Flex workspace. This initial sync can take up to 72 hours. After Segment completes the initial sync with Salesforce, Segment initiates a sync with Salesforce every three hours.
 
 ### Data warehouse only
 
@@ -59,7 +65,8 @@ You can add additional data sources after completing the setup process. <br>
 3. Give your destination a name and enter the account credentials for a user that has read and write permissions. Click **Save**. 
 4. After you've given your destination a name and entered your credentials, click **Next**.
 5. On the *Getting started with Segment* page, click **Define Model**.
-6. [Create a SQL query that defines your model](/docs/unified-profiles/create-sql-traits){:target="_blank"} After you've created a model, Segment uses your model to map data to your Reverse ETL destinations.
+6. Create a SQL query that defines your model. After you've created a model, Segment uses your model to map data to your Reverse ETL destinations.
+
 <ol style="counter-reset: none;">
   <li value="7" markdown=1>
   Click **Preview** to return 10 records from your warehouse. When you've verified that your records return as expected, click **Next**.
@@ -71,6 +78,9 @@ You can add additional data sources after completing the setup process. <br>
   After Segment marks the "Add connections" tile as complete, click **Add identifiers and traits** and begin [Step 3: Add identifiers and traits](#step-3-add-identifiers-and-traits). 
   </li>
 </ol>
+
+> warning "Records from your data warehouse might not be immediately available"
+> Segment's initial sync with your data warehouse can take up to 24 hours to complete. 
 
 ### Website or mobile app
 
@@ -96,7 +106,7 @@ Connect to either a website or mobile app to complete this step.
 5. After Segment marks the "Add connections" tile as complete, click **Add identifiers and traits** and begin [Step 3: Add identifiers and traits](#step-3-add-identifiers-and-traits).
 
 ## Step 3: Add identifiers and traits
-After you've selected which data sources you'd like to integrate customer data from, you can select _identifiers_, or unique pieces of data that allow you to link information about an individual customer across different programs and services, and _traits_, which are pieces of information you know about a particular customer. 
+After you've selected which data sources you'd like to integrate customer data from, you can select _identifiers_, or unique pieces of data that allow you to link information about an individual customer across different programs and services, and _traits_, which are pieces of information you know about a particular customer.
 
 1. On the Add identifiers and traits page, click **Add identifier**. 
 2. Select one or more of Segment's 11 default identifiers and click **Add identifiers**.
@@ -182,7 +192,6 @@ These destinations are limited to the following types:
 - [Event streams](/docs/connections/destinations/#event-streams-destinations){:target="_blank"}
 - [Segment Profiles destination](/docs/connections/destinations/catalog/actions-segment-profiles/){:target="_blank"}
 - [Segment Connections destination](/docs/connections/destinations/catalog/actions-segment/){:target="_blank"}
-
 
 ### Entitlements
 
