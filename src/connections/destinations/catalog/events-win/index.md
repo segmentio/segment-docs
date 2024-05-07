@@ -19,7 +19,7 @@ This destination is maintained by events.win. For any issues with the destinatio
 
 ## Supported methods
 
-events.win supports the following methods, as specified in the [Segment Spec](/docs/connections/spec).
+events.win supports Segment's [Track](/docs/connections/spec/track) method, as specified in the [Segment Spec](/docs/connections/spec).
 
 ### Track
 
