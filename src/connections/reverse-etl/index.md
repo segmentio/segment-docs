@@ -64,6 +64,7 @@ To add your first model:
 4. Choose a column to use as the unique identifier for each record in the **Unique Identifier column** field.
     * The Unique Identifier should be a column with unique values per record to ensure checkpointing works as expected. It can potentially be a primary key. This column is used to detect new, updated, and deleted records.
 5. Click **Preview** to see a preview of the results of your SQL query. The data from the preview is extracted from the first 10 records of your warehouse.
+    * In the UI, preview queries and result sets are cached. The preview cache is stored at the source level. This means that if two queries are made for the same source, the preview results will be identical. However, during the next synchronization, the latest data will be sent to the connected destinations.
 6. Click **Next**.
 7. Enter your **Model Name**.
 8. Click **Create Model**.
