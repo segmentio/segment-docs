@@ -4,6 +4,14 @@ hide-boilerplate: true
 strat: adobe
 id: 5b73515e6170785a5e62978c
 ---
+
+> warning "Deprecation Notice"
+> Segment is deprecating this destination. Segment will create an instance of the [Marketo Static Lists (Actions)](/docs/connections/destinations/catalog/actions-marketo-static-lists/) destination for each properly configured version of the Personas Marketo Static Lists classic destination in your workspace. Settings and configurations will be migrated automatically.
+> 
+> We are disabling all existing Personas Marketo Static List destinations. You can still access your existing configuration, but please refrain from enabling the destination, as it is set to be deprecated. You will no longer be able to create new instances of Personas Marketo Static Lists. Please check out [Marketo Static Lists (Actions)](/docs/connections/destinations/catalog/actions-marketo-static-lists/) to set up a new instance of Marketo Static Lists. 
+>
+> For questions or issues contact [friends@segment.com](mailto:friends@segment.com).
+
 > info "Marketo vs Marketo Static Lists Destinations"
 > This page is about the **Marketo Static Lists** destination developed specifically for use with Engage. Marketo has strict API usage limits on the [main Marketo destination](/docs/connections/destinations/catalog/marketo-v2/), so although the main destination can receive events from Engage, use the Marketo *Static Lists* destination with Engage instead.
 
@@ -34,7 +42,8 @@ Every time you create an audience in Engage and connect it to Marketo Static Lis
 1. Creates a list with the same name as the Engage audience in the folder designated for Engage.
 2. Adds any users to that list who both fit the audience definition and have an email address.
 3. If a user has multiple email addresses on their identity graph, each email address becomes a unique entry on the list.
-4. After the audience is configured, Segment checks which users still fit the audience definition, and adds or removes users from the audience.
+4. After the audience is configured, Segment evaluates which users meet the audience criteria, updating the audience and list, by adding or removing users accordingly.
+
 {% include content/sync-frequency-note.md %}
 
 ## Configuring Marketo Static Lists

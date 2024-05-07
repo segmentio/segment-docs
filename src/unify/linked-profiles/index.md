@@ -5,9 +5,8 @@ beta: true
 hidden: true
 ---
 
-> info "Linked Profiles is in private beta"
-> Linked Profiles is in private beta, and Segment is actively working on this feature. Some functionality may change before it becomes generally available. 
-
+> info "Linked Profiles is in public beta"
+> Linked Profiles is in public beta, and Segment is actively working on this feature. Some functionality may change before it becomes generally available.
 > warning ""
 > Linked Profiles currently only supports workspaces in the United States.
 

@@ -2,13 +2,16 @@
 title: Linked Events
 beta: true
 plan: unify
+hidden: true
 ---
 
 > info "Linked Events is in private beta"
 > Linked Events is in private beta, and Segment is actively working on this feature. Some functionality may change before it becomes generally available. 
  
-
 Use Linked Events to enrich real-time event streams with entities from your data warehouse to your destinations. Insert additional event context for downstream applications for richer data about each event. 
+
+> info "Consent enforcement for Linked Events"
+> You can use [Consent Management](/docs/privacy/consent-management/) to enforce consent in your downstream destinations for Linked Events stamped with the [consent object](/docs/privacy/consent-management/consent-in-segment-connections/#consent-object). You must enable Consent Management and have consent stamped on events from event streaming sources to use Consent Management. You cannot use Linked Events to enrich events with consent preferences that are stored in your warehouse.    
 
 On this page, you'll learn how to get started with Linked Events.
 
@@ -190,7 +193,7 @@ Segment currently syncs once every hour.
 
 #### Which Destinations does Linked Events support? 
 
-For Linked Events, Segment supports all actions-based destinations in cloud-mode. 
+For Linked Events, Segment supports all actions-based destinations in cloud-mode. Device-mode destinations are not supported.
 
 #### Why aren't test events working? 
 
@@ -204,6 +207,17 @@ Linked Events uses the existing Audit Trail in your Segment workspace. To view y
 
 You can define a schedule for refreshing the linked data from your data warehouse.
 
+#### How do I use entities in my data graph with Linked Events?
 
+To use entities with Linked Events, you'll need to set the `enrichment_enabled` flag to `true`. Here's the sample code:
 
+```python
+# Define an entity and indicate if the entity will be referenced for Linked Events (enrichment_enabled=true)
 
+entity "account-entity" {
+     name = "account"
+     table_ref = "CUST.ACCOUNT"
+     primary_key = "id"
+     enrichment_enabled = true
+}
+```

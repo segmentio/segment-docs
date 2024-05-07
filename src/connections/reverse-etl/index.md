@@ -64,6 +64,7 @@ To add your first model:
 4. Choose a column to use as the unique identifier for each record in the **Unique Identifier column** field.
     * The Unique Identifier should be a column with unique values per record to ensure checkpointing works as expected. It can potentially be a primary key. This column is used to detect new, updated, and deleted records.
 5. Click **Preview** to see a preview of the results of your SQL query. The data from the preview is extracted from the first 10 records of your warehouse.
+    * Segment caches preview queries and result sets in the UI, and stores the preview cache at the source level. If you make two queries for the same source, Segment returns identical preview results. However, during the next synchronization, the latest data will be sent to the connected destinations.
 6. Click **Next**.
 7. Enter your **Model Name**.
 8. Click **Create Model**.
@@ -97,28 +98,29 @@ To create a mapping:
 4. Select the model to sync from.
 5. Select the **Action** you want to sync and click **Next**.
       * Actions determine the information sent to the destination. The list of Actions will be unique to each destination.
-6. In the **Select record to map and send** section, select which records to send to your destination after Segment completes extracting data based on your model. You can choose from:
+6. Add the mapping's name. The initial name will default to the Action's name (e.g. 'Track Event') but is completely customizable. It will allow you to identify the mapping amongst others.
+7. In the **Select record to map and send** section, select which records to send to your destination after Segment completes extracting data based on your model. You can choose from:
       * Added records
       * Updated records
       * Added or updated records
       * Deleted records
-7. Select a test record to preview the fields that you can map to your destination in the **Add test record** field.
-8. Select the Schedule type for the times you want the model’s data to be extracted from your warehouse. You can choose from:
+8. Select a test record to preview the fields that you can map to your destination in the **Add test record** field.
+9. Select the Schedule type for the times you want the model’s data to be extracted from your warehouse. You can choose from:
     * **Interval**: Extractions perform based on a selected time cycle.
     * **Day and time**: Extractions perform at specific times on selected days of the week.
-9. Select how often you want the schedule to sync in **Schedule configuration**.
+10. Select how often you want the schedule to sync in **Schedule configuration**.
     * For an **Interval** schedule type, you can choose from: 15 minutes, 30 minutes, 1 hour, 2 hours, 4 hours, 6 hours, 8 hours, 12 hours, 1 day.
         * 15 minutes is considered real-time for warehouse syncs
     * For a **Day and time** schedule type, you can choose the day(s) you’d like the schedule to sync as well as the time.
         * You can only choose to start the extraction at the top of the hour.
         * Scheduling multiple extractions to start at the same time inside the same data warehouse causes extraction errors.
-10. Define how to map the record columns from your model to your destination in the **Select Mappings** section.
+11. Define how to map the record columns from your model to your destination in the **Select Mappings** section.
     * You map the fields that come from your source, to fields that the destination expects to find. Fields on the destination side depend on the type of action selected.
     * If you're setting up a destination action, depending on the destination, some mapping fields may require data to be in the form of an object or array. See the [supported objects and arrays for mapping](#supported-object-and-arrays).
-11. *(Optional)* Send a test record to verify the mappings correctly send to your destination.
-12. Click **Create Mapping**.
-13. Select the destination you’d like to enable on the **My Destinations** page under **Reverse ETL > Destinations**.
-14. Turn the toggle on for the **Mapping Status**. Events that match the trigger condition in the mapping will be sent to the destination.
+12. *(Optional)* Send a test record to verify the mappings correctly send to your destination.
+13. Click **Create Mapping**.
+14. Select the destination you’d like to enable on the **My Destinations** page under **Reverse ETL > Destinations**.
+15. Turn the toggle on for the **Mapping Status**. Events that match the trigger condition in the mapping will be sent to the destination.
     * If you disable the mapping state to the destination, events that match the trigger condition in the mapping won’t be sent to the destination.
 
 To add multiple mappings from your warehouse to your destination, repeat steps 1-13 above.
@@ -126,7 +128,9 @@ To add multiple mappings from your warehouse to your destination, repeat steps 1
 ## Using Reverse ETL
 After you've followed [all four steps](/docs/connections/reverse-etl/#getting-started) and set up your source, model, destination, and mappings for Reverse ETL, your data will extract and sync to your destination(s) right away if you chose an interval schedule. If you set your data to extract at a specific day and time, the extraction will take place then.
 
-### Sync history and observability
+### Managing syncs
+
+#### Sync history and observability
 Check the status of your data extractions and see details of your syncs. Click into failed records to view additional details on the error, sample payloads to help you debug the issue, and recommended actions.
 
 To check the status of your extractions:
@@ -139,6 +143,15 @@ To check the status of your extractions:
     * How many total records were extracted, as well as a breakdown of the number of records added, updated, and deleted.
     * The load results - how many successful records were synced as well as how many records were updated, deleted, or are new.
 5. If your sync failed, click the failed reason to get more details on the error and view sample payloads to help troubleshoot the issue.
+
+#### Reset syncs
+You can reset your syncs so that your data is synced from the beginning. This means that Segment resyncs your entire dataset for the model.
+
+To reset a sync:
+1. Select the three dots next to **Sync now**.
+2. Select **Reset sync**. 
+3. Select the checkbox that you understand what happens when a sync is reset.
+4. Click **Reset sync**.
 
 #### Replays
 You can choose to replay syncs. To replay a specific sync, contact [friends@segment.com](mailto:friends@segment.com). Keep in mind that triggering a replay resyncs all records for a given sync.

@@ -200,7 +200,7 @@ Other libraries only collect `context.library`, any other context variables must
 | traits                   |              | ✅             | ✅                 |
 | userAgent                | ✅            |               | ✅                 |
 | userAgentData*           | ✅           |                |                    |
-| timezone                 |              | ✅             | ✅                 |
+| timezone                 | ✅            | ✅             | ✅                 |
 
 - IP Address isn't collected by Segment's libraries, but is instead filled in by Segment's servers when it receives a message for **client side events only**.
 > info "IPv6 Addresses are not Supported"
@@ -275,6 +275,9 @@ The `originalTimestamp` tells you when call was invoked on the client device or 
 The `sentAt` timestamp specifies the clock time for the client's device when the network request was made to the Segment API. For libraries and systems that send batched requests, there can be a long gap between a datapoint's `timestamp` and `sentAt`. Combined with `receivedAt`, Segment uses `sentAt` to correct the original `timestamp` in situations where a user's device clock cannot be trusted (mobile phones and browsers). The `sentAt` and `receivedAt` timestamps are assumed to occur at the same time (maximum a few hundred milliseconds), and therefore the difference is the user's device clock skew, which can be applied back to correct the `timestamp`.
 
 **Note:** The `sentAt` timestamp is not useful for any analysis since it's tainted by user's clock skew.
+
+> warning "Segment now adds `sentAt` to a payload when the batch is complete and initially tried to the Segment API for the Swift, Kotlin, and C# mobile libraries"
+> This update changes the value of the Segment-calculated `timestamp` to align closer with the `receivedAt` value rather than the `originalTimestamp` value. For most users who are online when events are sent, this does not significantly impact their data. However, if your application utilizes an offline mode where events are queued up for any period of time, the `timestamp` value for those users now more closely reflects when Segment received the events rather than the time they occurred on the users' devices. 
 
 
 ### receivedAt

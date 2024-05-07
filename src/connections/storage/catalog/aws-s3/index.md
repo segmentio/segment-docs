@@ -35,7 +35,7 @@ All three setup methods provide a base level of permissions to Segment. If you w
 
 To complete this section, you need access to your AWS dashboard.
 
-1. Create a new S3 bucket in your preferred region. For more information, see Amazon's documentation, [Create your first S3 bucket](https://docs.aws.amazon.com/AmazonS3/latest/userguide/creating-bucket.html){:target="_blank"}. 
+1. Create a new S3 bucket in your preferred region. For more information, see Amazon's documentation, [Create your first S3 bucket](https://docs.aws.amazon.com/AmazonS3/latest/userguide/creating-bucket.html){:target="_blank"}. For US-based Segment workspaces using an AWS S3 bucket hosted outside of US West (Oregon), ensure that the US West (Oregon) endpoint is enabled on IAM STS settings for the region(s). For EU-based Segment workspaces, ensure that the EU West (Dublin, Ireland) endpoint is enabled on IAM STS settings for the region(s).
 2. Create a new IAM role for Segment to assume. For more information, see Amazon's documentation, [Creating a role to delegate permissions to an IAM user](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_create_for-user.html){:target="_blank"}.
     1. Select the **AWS account** type from the list of trusted entities. 
     2. When prompted to enter an Account ID, enter `595280932656`. (You cannot enter an ARN in this step. In step 4, you can update the `Principal` to a specific role after you create an IAM role.)

@@ -31,9 +31,13 @@ Keep the following limitations in mind when you use destination filters:
 - *(For device-mode)* Destination filters don't filter some fields that are collected by the destination SDK outside of Segment such as `page.url` and `page.referrer`.
 - *(For web device-mode)* Destination filters for web device-mode only supports the Analytics.js 2.0 source. You need to enable device mode destination filters for your Analytics.js source. To do this, go to your Javascript source and navigate to **Settings > Analytics.js** and turn the toggle on for **Destination Filters**.
 - *(For web device-mode)* Destination filters for device-mode only supports the Analytics.js 2.0 source.
-- - *(For iOS and Android mobile device-mode)* Destination filters aren't supported. Segment's Swift, Kotlin and React Native libraries do support device-mode destination filters.
+- *(For iOS and Android mobile device-mode)* Destination filters aren't supported. Segment's Swift, Kotlin and React Native libraries do support device-mode destination filters.
+- *(For Kotlin, Swift, and React Native device-mode)* You must enable the filters for your source. To do this, go to your source and navigate to **Settings >> Advanced** and turn on the toggle for **Destination Filters**. After you've done that, you'll still need to add the Destination Filters plugin to your application. Instructions for this can be found here:
+  - [Kotlin](/docs/connections/sources/catalog/libraries/mobile/kotlin-android/kotlin-android-destination-filters/#destination-filters){:target="_blank"}
+  - [Swift](/docs/connections/sources/catalog/libraries/mobile/apple/swift-destination-filters/){:target="_blank"}
+  - [React Native](/docs/connections/sources/catalog/libraries/mobile/react-native/react-native-destination-filters/){:target="_blank"}
 - Destination Filters don't apply to events that send through the destination Event Tester.
-- Destination Filters within the UI and [FQL]([url](https://segment.com/docs/api/public-api/fql/)) do not currently support matching on event fields containing '.$' or '.$.', which references fields with an array type. 
+- Destination Filters within the UI and [FQL](/docs/api/public-api/fql/) do not currently support matching on event fields containing '.$' or '.$.', which references fields with an array type. 
 
 [Contact Segment](https://segment.com/help/contact/){:target="_blank"} if these limitations impact your use case.
 
@@ -253,5 +257,5 @@ Destination filters only filter events sent after filter setup. If you just adde
 When Segment sends an event to a destination but encounters a timeout error, it attempts to send the event again. As a result, if you add a destination filter while Segment is trying to send a failed event, these retries could filter through, since they reflect events that occurred before filter setup.
 
 #### How do destination filters handle Protocols Transformations?
-
-When you enable a destination-specific Transformation, Segment processes your events with a destination filter. Segment processes source-level Transformations before the events reach the destination filter.
+  - **Source-Scoped Transformations**: If destination filters are enabled, Segment processes [source scoped transformations](/docs/protocols/transform/#step-2-set-up-the-transformation) before the events reach destination filters.
+  - **Destination-Scoped Transformations**: Segment processes [destination-specific transformations](/docs/protocols/transform/#step-2-set-up-the-transformation)  after the events have passed through the destination filters.

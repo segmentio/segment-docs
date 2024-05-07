@@ -3,9 +3,6 @@ title: Generative Audiences
 beta: true
 plan: engage-foundations
 ---
- 
-> info "Generative Audiences is in private beta"
-> Generative Audiences is in private beta, and Segment is actively working on this feature. Some functionality may change before it becomes generally available. [Contact Segment](https://segment.com/help/contact/){:target="_blank"} with any feedback or questions.
 
 With Generative Audiences, part of Segment's CustomerAI, use generative AI to create Engage Audiences with natural language prompts. 
 

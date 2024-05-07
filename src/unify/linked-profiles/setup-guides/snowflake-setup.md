@@ -2,11 +2,11 @@
 title: Snowflake Setup
 plan: unify
 beta: true
+hidden: true
 ---
 
-> info "Linked Profiles is in private beta"
-> Linked Profiles (Data Graph, Linked Events, and Linked Audiences) is in private beta, and Segment is actively working on this feature. Some functionality may change before it becomes generally available. 
-
+> info "Linked Profiles is in public beta"
+> Linked Profiles (Data Graph, Linked Events, and Linked Audiences) is in public beta, and Segment is actively working on this feature. Some functionality may change before it becomes generally available.
 
 On this page, you'll learn how to connect your Snowflake data warehouse to Segment.
 
@@ -73,7 +73,8 @@ CREATE USER IF NOT EXISTS identifier($segment_connection_username)
 MUST_CHANGE_PASSWORD = FALSE
 DEFAULT_ROLE = $segment_connection_role
 PASSWORD=$segment_connection_password
-COMMENT='Segment Linked Profiles User';
+COMMENT='Segment Linked Profiles User'
+TIMEZONE='UTC';
 
 -- Grant permission to the role to use the warehouse
 GRANT USAGE ON WAREHOUSE identifier($segment_connection_warehouse) TO ROLE identifier($segment_connection_role);

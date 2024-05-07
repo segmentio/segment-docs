@@ -7,7 +7,7 @@ id: 54521fd625e721e32a72eeb9
 [Google Tag Manager](https://support.google.com/tagmanager){:target="_blank"} (GTM) is a tag management system that allows you to quickly update tags and code snippets on your website. Once you add the Tag Manager snippet to your website, you can configure tags using a web-based user interface without having to alter and deploy additional code. This reduces errors and frees you from having to involve a developer whenever you need to make changes. The Google Tag Manager Destination is open-source. You can browse the code [on GitHub](https://github.com/segment-integrations/analytics.js-integration-google-tag-manager){:target="_blank"}.
 
 > info ""
-> The Google Tag Manager destination is for web only. The destination isn't compatible with iOS or other mobile sources. For mobile tracking, Segment recommends using the [Firebase Destination](/docs/connections/destinations/catalog/firebase/). 
+> The Google Tag Manager destination is web only and is only compatible with Analytics.js sources. This destination is not compatible with iOS or other mobile sources. For mobile tracking, Segment recommends using the [Firebase Destination](/docs/connections/destinations/catalog/firebase/). 
 
 > info "Consent mode"
 > Google enforced consent on March 6, 2024 for European Economic Area (EEA) users. Learn more about [consent mode](/docs/connections/destinations/catalog/google-tag-manager/#consent-mode) and how to set it up. 

@@ -114,6 +114,8 @@ sections:
       title: 'Spec: Identify'
     - path: /connections/spec/alias
       title: 'Spec: Alias'
+    - path: /connections/spec/copilot
+      title: 'Spec: AI Copilot'
     - path: /connections/spec/common
       title: 'Spec: Common Fields'
     - path: /connections/spec/mobile
@@ -274,6 +276,8 @@ sections:
     title: Event Delivery
   - path: /connections/delivery-overview
     title: Delivery Overview
+  - path: /connections/alerting
+    title: Connections Alerting
   - path: /connections/find-writekey
     title: Locate Your Write Key
   - path: /connections/integration_error_codes
@@ -319,21 +323,6 @@ sections:
       title: Sample Queries
     - path: /unify/profiles-sync/tables
       title: Tables & Materialized Views
-  - section_title: Linked Profiles 
-    slug: unify/linked-profiles
-    section:
-    - section_title: Setup Guides
-      slug: unify/linked-profiles/setup-guides
-      section: 
-        - path: /unify/linked-profiles/setup-guides/bigquery-setup
-          title: BigQuery Setup
-        - path: /unify/linked-profiles/setup-guides/snowflake-setup
-          title: Snowflake Setup
-        - path: /unify/linked-profiles/setup-guides/redshift-setup
-          title: Redshift Setup
-    - path: /unify/linked-profiles/linked-events
-      title: Linked Events
- 
   - section_title: Traits
     slug: unify/traits
     section:
@@ -528,6 +517,8 @@ sections:
       title: Consent in Unify
     - path: /privacy/consent-management/consent-in-retl/
       title: Consent in Reverse ETL
+    - path: /privacy/consent-management/consent-faq/
+      title: Consent FAQs
   - path: /privacy/account-deletion
     title: Account & Data Deletion
   - path: /privacy/hipaa-eligible-segment

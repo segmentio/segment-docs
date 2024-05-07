@@ -199,4 +199,7 @@ Analytics for Kotlin is built with extensibility in mind. Use the tools list bel
 - [Frequently Asked Questions](/docs/connections/sources/catalog/libraries/mobile/kotlin-android/kotlin-android-faq)
 
 > warning ""
-> If you are using the Analytics Android (Classic) SDK, you can find [the documentation here](/docs/connections/sources/catalog/libraries/mobile/android). Many of the features available in the Analytics Kotlin SDK are not available in the Analytics Android (Classic) SDK. 
+> If you are using the Analytics Android (Classic) SDK, you can find [the documentation here](/docs/connections/sources/catalog/libraries/mobile/android). Many of the features available in the Analytics Kotlin SDK are not available in the Analytics Android (Classic) SDK.
+
+## Timestamps in Kotlin
+Due to efficiency updates made to Segment's Kotlin library, Segment now adds the `sentAt` timestamp to an event when the batch is complete and initially tried to the Segment API. This can impact the value of the `timestamp` field calculated by Segment if users are operating in an offline mode. More details on this change can be seen in Segment's [timestamp documentation](/docs/connections/spec/common/#sentat).
