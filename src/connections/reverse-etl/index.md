@@ -342,3 +342,8 @@ In case of consecutive failures, Segment sends notifications for every sync fail
 
 #### Can I have multiple queries in the Query Builder?
 No. In Reverse ETL, Segment executes queries in a [common table expression](https://cloud.google.com/bigquery/docs/reference/standard-sql/query-syntax#with_clause){:target="_blank”}, which can only bind the results from **one single** subquery. If there are multiple semicolons `;` in the query, they'll be treated as several subqueries (even if the second part is only an inline comment) and cause syntax errors.
+
+#### Can I use functions with Reverse ETL?
+Functions aren't yet supported by the Reverse ETL pipeline. As a workaround, instead of using the [Segment Connections](https://segment.com/docs/connections/destinations/catalog/actions-segment/) integration, you could instead use the [Webhook (Actions)](https://segment.com/docs/connections/destinations/catalog/actions-webhook/) integration behind your Reverse ETL extraction. With that in place, you can send data to a [Source Functions](https://segment.com/docs/connections/functions/source-functions/). You can write the code in that Function to do the work you had wanted to do in the Insert Function. From there, whatever data your code allows to move on will flow into a Segment source just like it would if you were using Segment Connections.
+ 
+The pipeline here would be Reverse ETL model → Webhook (Actions) → Source Function → Segment source.
