@@ -25,7 +25,7 @@ events.win supports the following methods, as specified in the [Segment Spec](/d
 
 events.win consumes and validates [Track](/docs/connections/spec/track) calls against the tracking plan you've previously defined in events.win. events.win doesn't store the data, but instead provides a detailed report on how correct your data is.
 
-You can use the [@events.win/cli](https://www.npmjs.com/package/@events.win/cli) to generate type-safe tracking code for your events.
+You can use the [@events.win/cli](https://www.npmjs.com/package/@events.win/cli){:target="\_blank”} to generate type-safe tracking code for your events.
 
 ```js
 /**
