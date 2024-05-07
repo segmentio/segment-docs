@@ -19,23 +19,21 @@ Before you begin setting up your linked audience, ensure you have:
 
 - [Set up profiles sync](/unify/profiles-sync/profiles-sync-setup/)
 - [Familiarized yourself with what an Audience is](/docs/engage/audiences)
+- Set up your warehouse permissions using [Snowflake](/docs/unify/linked-profiles/setup-guides/snowflake-setup/)
 - [Set up your data graph](/docs/unify/linked-profiles/data-graph/)
 - Workspace Owner or Unify Read-Admin, Entities Admin, and Source Admin permissions.
 
-## Supported Sources
 
-The following sources are supported with Linked Audiences:
-
-[Snowflake](/docs/unify/linked-profiles/setup-guides/snowflake-setup/)
+## Setting up your Linked Audience
 
 To set up your linked audience, complete the following steps:
 
 1. [Build a linked audience](#step-1-build-a-linked-audience)
-1. [Enable your linked audience](#step-2-enable-your-linked-audience)
 1. [Activate your linked audience](#step-3-activate-your-linked-audience)
+1. [Enable your linked audience](#step-2-enable-your-linked-audience)
 1. [Confirm the payload in your destination](#step-4-confirm-the-payload-in-your-destination)
 
-## Step 1: Build a Linked Audience
+### Step 1: Build a Linked Audience
 
 Linked Audiences allows you to filter based on properties such as profile traits, relational data mapped to the Data Graph, events, and existing audience memberships.
 
