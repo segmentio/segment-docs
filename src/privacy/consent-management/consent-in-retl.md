@@ -42,6 +42,8 @@ Before you can enforce consent stored in your warehouse, take the following step
 
 After you set up consent categories in the Segment app, you must identify the columns in your data warehouse that store end user consent by creating a *model*, or SQL query that defines the set of data you want to synchronize to your Reverse ETL destinations. When building your RETL data model, Segment recommends storing consent as a boolean of either `true` or `false` and mapping only one consent category to each column.
 
+<!--- todo: confirm with Atit that the true/false recommendation is still correct --->
+
 > error "Creating a data mapping that does not include information about consent preferences results in no consent enforcement"
 > If you create consent categories in your workspace but fail to identify columns that contain consent preferences in your data mapping, events will flow to all destinations in your workspace regardless of end user consent preferences.
 
