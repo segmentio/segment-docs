@@ -416,7 +416,7 @@ POST https://api.segment.io/v1/batch
   </tr>
   <tr>
     <td>`integrations` _Object, optional_</td>
-    <td>The same as [Destinations](/docs/connections/spec/common#integrations) for other calls, but it will be merged with any destinations inside each of the items in the batch.</td>
+    <td>The same as [Integrations](/docs/connections/spec/common#integrations) for other calls, but it will be merged with any destinations inside each of the items in the batch.</td>
   </tr>
 </table>
 
