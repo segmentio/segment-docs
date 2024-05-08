@@ -156,7 +156,7 @@ This is necessary when using backend SDKs but not for events sent from the front
 
 When sending past events to StackAdapt using a Reverse ETL tool, the user agent, IP address, event type, and either the page URL (for conversion trackers with URL rules), or the fields the event rules match on, must be included in your mappings. For example, the below mapping for a Snowflake source can be used to match a conversion tracker with an event rule that matches an `action` of `User Registered`:
 
-![Image showing Snowflake mapping to forward User Registered events](images/snowflake-mapping.png)
+![Image showing Snowflake mapping to forward User Registered events](images/snowflake-mappings.png)
 
 Rows forwarded to StackAdapt with this mapping will be matched by the `User Registered` event rule shown below:
 
