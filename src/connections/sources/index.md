@@ -104,7 +104,6 @@ The breakdown table displays three tabs, **Event type**, **Event name**, and **A
 
 Each of these tabs displays an event count, which is the total number of events that Segment received in a particular step. 
 
-
 ### Website libraries
 
 [Analytics.js](/docs/connections/sources/catalog/libraries/website/javascript/), the JavaScript library, is the most powerful way to track customer data from your website. If you're just starting out, Segment recommends it over server-side libraries as the simplest installation for any website.
