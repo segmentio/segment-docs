@@ -3,7 +3,7 @@ title: Send Audience Data to Destinations
 plan: engage-foundations
 ---
 
-Once you've built an audience in Engage, you can connect it to a destination or keep the audience.
+This page explains how to connect an audience to a destination, as well as how to work with mappings within connected destinations.
 
 ## Connect your audience to a destination
 
