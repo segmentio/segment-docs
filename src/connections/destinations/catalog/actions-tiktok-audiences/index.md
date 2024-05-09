@@ -105,5 +105,9 @@ You do not need to update the status of the mapping to `enabled`.
 
 For instructions on how to create a TikTok audience segment, see TikTok's [Create/Delete an audience segment](https://ads.tiktok.com/marketing_api/docs?id=1739940583739393){:target="_blank"} docs. 
 
+## FAQS
+
+### Why is my audience considered too small in TikTok?
+[TikTok](https://ads.tiktok.com/help/article/custom-audiences?lang=en) requires a minimum audience size of 1,000 to target Custom Audiences in an ad group.
 
 {% include components/actions-fields.html %}
