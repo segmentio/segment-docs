@@ -150,6 +150,8 @@ With consent mode, you can configure your website to dynamically adjust the trac
 
 Segment automatically sends consent as `TRUE` for this destination.  Segment uses the [bulk-uploader workflow](https://developers.google.com/authorized-buyers/rtb/bulk-uploader#workflow){:target="_blank"} which requires consented data. Ensure all audiences and journeys are connected to consented audiences.  
 
+{% include components/actions-fields.html %}
+
 ## FAQ
 ### What is Segment's relationship with Google DV360 and is the data that Segment sends considered to be First or Third party?
 
