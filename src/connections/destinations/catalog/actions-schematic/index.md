@@ -22,4 +22,4 @@ Schematic maintains this destination. For any issues with the destination, [cont
 
 ## Additional Context
 
-For track events, Schematic only accepts event names that contain alphanumeric characters, dashes, and underscores. If Segment event names have, for instance, spaces, the Schematic destination will automatically snake case the event name before passing to Schematic. Additionally, the raw event name will always be passed as an event trait.
+Schematic only accepts Track event names that contain alphanumeric characters, dashes, and underscores. If Segment event names have other characters, like spaces, the Schematic destination automatically snake_cases the event name before passing to Schematic. Segment passes the raw event name as an event trait.
