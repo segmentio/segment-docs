@@ -22,7 +22,8 @@ There are six steps to get started using Snowflake with Segment.
 
 ### Prerequisites 
 
-To set up the Snowflake destination in Segment, you must have, at a minimum, the following [Snowflake privileges](https://docs.snowflake.com/en/user-guide/security-access-control-overview#label-access-control-overview-privileges){:target="_blank"}:
+To set up the virtual warehouse, database, role, and user in Snowflake for Segment's Snowflake destination, you must have the `ACCOUNTADMIN` role, or, a custom role with the following [Snowflake privileges](https://docs.snowflake.com/en/user-guide/security-access-control-overview#label-access-control-overview-privileges){:target="_blank"}: 
+
 - [CREATE WAREHOUSE](https://docs.snowflake.com/en/sql-reference/sql/create-warehouse#access-control-requirements){:target="_blank"}: Used to create a Segment-specific virtual warehouses
 - [CREATE DATABASE](https://docs.snowflake.com/en/sql-reference/sql/create-database#access-control-requirements){:target="_blank"}: Used to create a Segment-specific database
 - [CREATE ROLE](https://docs.snowflake.com/en/sql-reference/sql/create-role#access-control-requirements){:target="_blank"}: Used to create the role that the Segment user assumes in your Snowflake instance
@@ -189,7 +190,7 @@ At this time, the Segment Snowflake destination is not compatible with Snowflake
 
 ### Auto Suspend and Auto Resume
 
-Set `AUTO_SUSPEND` to ~10 minutes in the UI (or 600 if using SQL) to avoid Segment's syncing process credit consumption.
+Set `AUTO_SUSPEND` to ~10 minutes in the UI (or 600 if using SQL) to minimize the credit consumption of Segment's syncing process.
 
 If you enable the `AUTO_SUSPEND` feature, Segment recommends that you also enable `AUTO-RESUME`. This will ensure that your Snowflake warehouse automatically resumes when Segment loads data. Otherwise, Segment will not be able to load data unless you [manually resume your Snowflake warehouse](https://docs.snowflake.net/manuals/user-guide/warehouses-considerations.html#automating-warehouse-resumption){:target="_blank"}.
 
