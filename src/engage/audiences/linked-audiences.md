@@ -9,192 +9,92 @@ hidden: true
 > info "Linked Audiences is in public beta"
 > Linked Audiences is in public beta, and Segment is actively working on this feature. Some functionality may change before it becomes generally available.
 
-With Linked Audiences, you can use the relational data you've defined in your [Data Graph](docs/unify/linked-profiles/data-graph/) to build audiences and send them to any downstream [actions-based destinations](/docs/connections/destinations/actions/#available-actions-based-destinations).
+With Linked Audiences, you can use the relational data you've defined in your [Data Graph](/docs/unify/linked-profiles/data-graph/) to build audiences, launch precisely targeted, highly personalized operational and marketing use cases.
 
-> info "Linked Audiences warehouse support"
->Linked Audiences supports [Snowflake](/docs/unify/linked-profiles/setup-guides/snowflake-setup/).
-> warning "Linked Audiences permissions requirements"
-> To set up Linked Audiences Activation, you must have Workspace Owner or Unify Read-Admin, Entities Admin, and Source Admin permissions.
+To learn more about specific use cases you can set up with Linked Audiences,  see the [Linked Audiences Use Cases](/docs/engage/audiences/linked_audiences/linked-audiences-use-cases/) topic.
 
-To learn more about Linked Audiences use cases,  see the [Linked Audiences Use Cases](/docs/engage/audiences/linked-audiences-use-cases/) topic.
+## Setting up Linked Audiences
+
+### Prerequisites
+
+Before you begin setting up your linked audience, ensure you have:
+
+- [Set up profiles sync](/unify/profiles-sync/profiles-sync-setup/)
+- Set up your warehouse permissions using [Snowflake](/docs/unify/linked-profiles/setup-guides/snowflake-setup/)
+- [Set up your data graph](/docs/unify/linked-profiles/data-graph/)
+- Workspace Owner or Unify Read-Admin, Entities Admin, and Source Admin permissions.
+
+To set up your linked audience, complete the following steps:
 
 ## Step 1: Build a Linked Audience
 
-Linked Audiences allows you to filter audience targeting logic based on properties such as profile traits, relational data mapped to the Data Graph, events, and existing audience membership. 
+Linked Audiences allows you to filter based on properties such as profile traits, relational data mapped to the Data Graph, events, and existing audience memberships.
 
 ![Choose your audience conditions](/docs/engage/images/conditions.png)
 
+To build a Linked Audience:
+
 1. Navigate to **Engage > Audiences**.
-2. Click **+ New audience**, then select **Audience**.
-3. On the Select type screen, select **Linked audience**, then click **Next**.
-4. Select the [conditions](#conditions) to build your audience.
-5. Preview your audience, then click **Next**.
-
-Within the preview, you can see a count of users that meet the audience criteria as well as a sample list of users.
-6. Enter an audience name and description.
-7. Click **Save**.
-
-After creating the audience, you'll be redirected to the Overview page. By default, the audience is disabled. Segment recommends that you take the following actions:
-1. Add a destination.
-2. Configure and create [event selections](#maintain-event-emitters).
-3. Enable the audience. 
-
-This triggers a compute for the audience (where the audience conditions run on your data warehouse) and sends events downstream.
-
-#### Audience conditions
-
-As you're building your Linked Audience, you can choose from the following conditions:
-
-| Conditions     | Description                           |
-|---------------------------|---------------------------------------|
-| Associated with an entity   | Creates a condition that filters profiles associated with entity relationships defined in the [Data Graph](/docs/unify/linked-profiles/data-graph/). With this condition, you can traverse the full nested entity relationship and filter your audience on entity column values. Note: you can only create nested entity conditions up to four levels in depth. For example, an entity condition that queries for relationships between Profiles, Accounts, Credit Cards, and Transactions has four levels of depth.       |
-| Where profile trait     | Creates a condition that filters profiles with a specific trait. |
-| Part of an audience     | Creates a condition that filters profiles that are part of an existing linked or classic audience. |
-| Performed event         | Creates a condition that filters profiles on their event history. Users can also filter on event property values.|
-
-#### Error States
-
-As you’re building or maintaining your audience, you may encounter errors or warning messages about possible issues with your audience. For example, when Segment tries to compute your audience, and an entity or entity column from your linked audience definition is missing from your data graph or data warehouse, then you may see an error on the linked audiences overview page in Segment. Additionally, computing your linked audineces is a multi-step process, and sometimes an error can occur in one of the steps of the workflow. 
-
-Generally, when an error occurs, Segment will retry that step or Segment will terminate the workflow and try to re-run it again at the next scheduled compute run. If you need more help diagnosing your errors or warnings, reach out to [friends@segment.com](mailto:friends@segment.com){:target="_blank"}.
-
-#### Edit an audience
-To edit an audience:
-1. Navigate to **Engage > Audiences**, and select the audience you'd like to edit.
-2. Select the **Builder** tab.
-3. Click **Edit audience**.
-4. Edit your audience conditions, then click **Save**.
-
-After you successfully save, the audience will compute with the new changes during the next scheduled compute. You can alternatively click **Compute now** to compute the audience right away.
-
-#### Delete an audience
-To delete an audience:
-1. Navigate to **Engage > Audiences**, and select the audience you'd like to delete.
-2. From the Overview page, select the three dots icon.
-3. Select **Delete audience**.
-
-Note: deleting an audience can't be undone. After you delete an audience, the audience will stop computing and data is no longer sent to your downstream destinations.
-
-#### Compute statuses
-Engage displays the following compute statuses for Linked Audiences.
-
-| Computation status        | Description                           |
-|---------------------------|---------------------------------------|
-| Computing                 | Engage is computing the Linked Audience based on the compute schedule.           |
-| Live                      | The latest compute was successful.      |
-| Disabled                  | The Linked Audience is disabled.                   |
-| Failed                    | The computation was canceled or failed to compute. Contact [Segment support](https://segment.com/help/contact/){:target="_blank"}.            |
+2. Select **+ New audience > Audience**.
+3. On the **Select Audience Type** screen, select **Linked audience**, then click **Next**.
+**Note:** if you cannot select **Linked audience**, ensure you’ve [set up your data graph](/docs/unify/linked-profiles/data-graph/) in Unify.
+4. Select the [linked audience profiles conditions](????) on which to build your audience.
+5. Click **Preview** to view your audience selection and see a count of audience members who meet the criteria.
+6. When you’re happy with the audience you’ve built, click Next.
+7. Enter an audience name and description.
+Optionally, select a folder to add this Audience to.
+8. Click **Create Audience**.
 
 ## Step 2: Activate your Linked Audience
 
-You can use your Linked Audience to activate any [actions-based destination](/docs/connections/destinations/actions/#available-actions-based-destinations). The steps below provide instructions on how to add a destination to your Linked Audiences, and send an event that best matches your use case. To activate an event, do the following:
+After you build your Linked Audience, you will be able to send events to your chosen destinations so that you can then use it for personalizing your customer communications. This requires you set up a few steps that will result in ‘activating’ your audience. These steps include: 
 
--  Add an action destination
--  Add an event
--  Select a destination action
--  Configure the event
+- [Connect to a Destination](#step-2a-select-a-destination)
+[Select your Destination Actions](#step-2b-select-your-destination-actions)
+[Define how and when to trigger an event to your Destination](#step-2c-define-the-events-that-trigger-actions-in-your-destination)
+[Configure the event payload](#step-2d-configure-the-event)
 
-> warning ""
-> Some action destinations have limitations on nested objects, and the depth of the `_entity_context` property.
+For definitions of each option in activating your linked audience, see
 
-### Step 2a: Add an action destination
+### Step 2a: Connect to a Destination
 
-To activate your Linked Audience, first [add an action destination](/connections/destinations/actions/) in Connections.
+Destinations are the business tools or apps that Segment forwards your data to. Adding a Destination allows you to act on your data and learn more about your customers in real time. To fully take advantage of Linked Audiences, you must connect and configure your Destination. 
 
-### Step 2b: Add an event
+Before you can connect your Linked Audience to any Destination, ensure it has been [configured as a Destination](connections/destinations/catalog/).
 
-After adding a  destination to your audience, configure the data you want to send to the destination. First, select a type of event you want to send to the destination. Events update destinations about changes to your entity or audiences and contain data that can be used in the downstream destination.
+1. From the audience overview page, select **Add destination**.
+2. Select the event destination from the list of pre-configured choices.
+3. Click **Configure data to send to destination**.
 
-You can send events:
-- When an entity on a profile changes:
-   - [Entity Added](#entity-added)
-   - [Entity Removed](#entity-removed)
-- Based on profile audience membership updates:
-   - [Audience Entered](#audience-entered)
-   - [Audience Membership Changed](#audience-membership-changed)
-   - [Audience Exited](#audience-exited)
+### Step 2b: Select your Destination Actions
 
-> success ""
-> You can also [edit events](#maintain-event-emitters) for existing Linked Audiences.
-
-> info ""
-> You can't send events before you identify people. Ensure you're making any profiles known in the destination before you send events. You can do this by sending an `Audience Membership Changed` event first, or by creating an Identify event in Connections.
-
-#### Entity added
-
-Send a Track event when an entity condition associated with a profile matches the audience condition. With this event, you must select the entity that triggers Segment to send the Track event.
-
-Example:
-- Send a reminder to a customer when a credit card associated with their profile has an outstanding balance.
-- Notify a traveler when a flight associated with their profile is delayed.
-- Notify a customer when a product associated with their profile's wishlist is back in stock.
-
-#### Entity removed
-
-Send a Track event when an entity condition associated with a profile no longer matches the audience condition. With this event, you must select the entity that triggers Segment to send the Track event.
-
-Example:
-- Send a confirmation to a customer when a credit card associated with their profile has been paid off.
-- Send a confirmation to the primary doctor when each of their associated patients completes their annual check up.
-
-#### Audience entered
-
-Send a Track event when a profile matches the audience condition.
-
-Example:
-- Send a congratulatory email when a traveler qualifies for premium status with a mileage program.
-- Send a discount to all customers with a particular product on their wishlist.
-
-#### Audience exited
-
-Send a Track event when a profile no longer matches the audience condition.
-
-Example:
-- Send an email to credit card owners to confirm that their credit cards have been paid in full.
-- Send a confirmation to a patient when they have completed all their pre-screening forms.
-
-#### Audience membership changed
-
-Send an Identify event when a profile's audience membership changes.
-
-Example:
-- Update a user profile in a destination with the most recent audience membership.
-
-### Step 2c: Select a destination action
-
-Select the destination action to call when the event happens. Ensure the action you selected is relevant to the type of event you previously selected. For example, if you selected **Audience membership changed**, ensure your action is also an Identify event.
+For more information on each supported destination action, see [Supported action destinations for Linked Audience](docs/engage/audiences/linked_audiences/linked_supported_destinations/).
 
 Segment displays available actions based on the destination action you've connected with your Linked Audience.
 
-> info ""
-> Segment has preset mappings for [Braze](/docs/connections/destinations/catalog/braze-cloud-mode-actions/#available-presets), [Iterable](/docs/connections/destinations/catalog/actions-iterable/#available-presets), and [Customer.io](/docs/connections/destinations/catalog/customer-io-actions/#available-presets) with many of the following steps already configured.
+Select the destination action to call when the event happens, then click **Next**. 
 
-See [destination actions](/docs/connections/destinations/actions/) to learn more about destination actions, and view available actions for your destination.
+### Step 2c: Define how and when to trigger an event to your Destination
+
+Configure how and when events are produced with each audience run. 
+
+You can choose the entities referenced in the audience builder to trigger an event off of. 
 
 ### Step 2d: Configure the event
 
-After you select an action, Segment attempts to automatically configure the data fields that will be sent to the destination. You can review and adjust these settings before enabling this event. 
-- Enrich event (optional)
-- Map event 
-- Test event (optional)
+After you select an action, Segment attempts to automatically configure the data fields that will be sent to the destination. You can review and adjust these settings before enabling this event.
 
-#### Enrich event
-Select additional profile traits or entity column values to include when the event is sent.
-These traits and properties can be associated with the profile or the entity  conditions that were defined in the audience definition.
-As you're configuring your event, click **Show Preview** to view a preview of the enriched event based on your profile and entity property selections.
-For example, if your profiles include traits that are required in your downstream destination, this is where you would make the appropriate selections.
+## Step 3: Enable your Linked Audience
 
-[Braze](/docs/connections/destinations/catalog/braze-cloud-mode-actions/#available-presets), [Iterable](/docs/connections/destinations/catalog/actions-iterable/#available-presets), and [Customer.io](/docs/connections/destinations/catalog/customer-io-actions/#available-presets) are pre-set destinations, so you won't need to map your audience to your destination.
+After building your Linked Audience, you'll be redirected to the Audience Overview page. By default, the audience is disabled. To enable your audience:
 
-#### Test event
-You can optionally send a test event to your destination by clicking **Send test event to destination**. You can edit the User ID for the test event, and you'll also see a table with event fields and example values. After sending the test, you'll receive a response from Segment and the destination, which allows you to see what data sent to your destination may look like.
+Select the **Enabled** toggle, then select **Enable audience**.
 
-#### Send events for current profiles and entities in the audience checkbox
+You can trigger a compute for your audience if you want to send events to your destination without waiting for the next scheduled compute run. To do so, select **Compute Now**. This triggers a compute for the audience (where the audience conditions run on your data warehouse) and sends events downstream.
 
-By default, Segment only sends events for new profiles and entities that match the audience conditions. This means that when the event is created, it will not send events for profiles and entities that currently meet the audience criteria.
-If you want to send events for profiles and entities that currently meet the audience criteria, check this box. This is only available for the **entity added**, **audience entered**, and **audience membership changed** event types.
+ customer may trigger a 'compute now' if they want to send events to their destination w/o needing to wait for the next scheduled compute run
 
-## Step 3: Confirm the payload in your destination
+## Step 4: Confirm the payload in your destination
 
 Linked Audiences sends events to your destination after Segment computes the audience.
 
