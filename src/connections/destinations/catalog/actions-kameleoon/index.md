@@ -10,10 +10,6 @@ id: 652ea51a327a62b351aa12c0
 
 This destination is maintained by Kameleoon. For any issues with the destination, [contact the Kameleoon Support team](mailto:support@kameleoon.com).
 
-> success ""
-> This page is about the [Actions-framework](/docs/connections/destinations/actions/) Kameleoon Segment destination. There's also a page about the [non-Actions Kameleoon destination](/docs/connections/destinations/catalog/kameleoon/). Both of these destinations receive data from Segment.
-
-
 ## Benefits of Kameleoon (Actions) vs Kameleoon Classic
 
 Kameleoon (Actions) provides the following benefits over the classic Kameleoon destination:
