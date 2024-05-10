@@ -14,7 +14,7 @@ Schematic maintains this destination. For any issues with the destination, [cont
 
 1. From your Segment web app, navigate to **Connections > Catalog > Destinations**.
 2. Search for *Schematic*, select the Schematic destination, and click **Add destination**.
-3. Select the source that will send data to Schematic and follow the steps to name your destination. The web source chosen must use [Analytics.js 2.0](https://segment.com/docs/connections/sources/catalog/libraries/website/javascript/)
+3. Select the source that will send data to Schematic, give your destination a name, then click **Create destination**.
 4. On the Settings tab, input your API Key which can be found in your Schematic workspace settings under **Settings > API Keys**.
 5. Once connected, you can configure how you want to send data to Schematic in the **Mappings** tab.
 
