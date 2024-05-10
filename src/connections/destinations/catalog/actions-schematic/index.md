@@ -16,7 +16,8 @@ Schematic maintains this destination. For any issues with the destination, [cont
 2. Search for *Schematic*, select the Schematic destination, and click **Add destination**.
 3. Select the source that will send data to Schematic, give your destination a name, then click **Create destination**.
 4. On the destination's Settings tab, input your Schematic API Key. To generate an API key, navigate to your Schematic workspace settings under **Settings > API Keys**.
-5. Once connected, you can configure how you want to send data to Schematic in the **Mappings** tab.
+
+Once you've connected Schematic to Segment, you can configure how you want to send data to Schematic in the Schematic destination's **Mappings** tab.
 
 {% include components/actions-fields.html %}
 
