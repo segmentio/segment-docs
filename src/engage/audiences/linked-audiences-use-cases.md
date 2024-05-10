@@ -5,57 +5,160 @@ beta: true
 hidden: true
 redirect_from: 
     - '/unify/linked-profiles/linked-audiences-use-cases'
-hidden: false
 ---
 
-Below are some example use cases to help you learn more about Linked Audiences.
+> info "Linked Audiences is in public beta"
+> Linked Audiences is in public beta, and Segment is actively working on this feature. Some functionality may change before it becomes generally available.
 
-## Use case 1: Build an audience of users who have a credit card with an outstanding balance
+## Example 1: Financial Services
 
-To build this audience, define a nested entity condition to relate a `Profile` to their:
-- `Account` entity
-- `Credit Card` entity where `credit_card.balance` is "Outstanding"
+### Use Case: Email reminder to pay off overdue credit card 
 
-In the Data Graph, `Account` and `Credit Card` are defined as entities and represented as separate tables in your data warehouse. 
+Target an audience of customers who own a checking account with at least one credit card with an overdue balance. Then, personalize the email reminder to pay off overdue credit card targeting.
 
-Relationships are defined between:
-- `Profile` and `Account`
-- `Account` and `Credit Card` 
+#### Warehouse data
 
-In the warehouse, `credit_card.balance` is a column in the `Credit Card` table. By filtering against the `credit_card.balance` column for the "Outstanding" value, marketers can return a list of users that have a credit card with an outstanding balance.
+- Checking account details: *account_number*
+- Card details: *credit_card_type, card_status, card_balance, due_date*
 
-## Use case 2: Build an audience of cat owners who are also a part of the platinum membership tier
+#### Relational data
 
-To build this audience, define a nested entity condition to relate a `Profile` to their:
-- `Household` entity
-- `Pet` entity where `pet.type` is "Cat"
+- User can have multiple accounts (For example: checking, savings, retirement)
+- An account can have many cards (For example: debit, credit)
+- A card can have many transactions
 
-Define an audience membership condition to filter for users that are a member of the "Platinum membership tier" audience.
+### Step 1: Build your data graph
 
-In the Data Graph, `Households` and `Pets` are defined as entities and are represented as separate tables in your data warehouse.
+Follow the steps in [Data Graph](docs/unify/linked-profiles/data-graph/) to build the following:
 
-Relationships are defined between:
-- `Profiles` and `Households`
-- `Households` and `Pets`
+- Profiles
+  - Accounts
+    - Checking
+    - Savings
+  - Credit Cards
+    - Debit
+      - Transactions
+    - Credit
+      - Purchases
 
-In the warehouse, `pets.type` is a column in the `pets` table. By filtering against the `pets.type` column for the "cat" value, marketers can return a list of users that have a cat.
+### Step 2: Activate your Linked Audience
 
-Then, adding the audience membership condition allows marketers to further refine their audience to only include users who are part of the "Platinum membership tier" audience.
+Follow [Step3: Activate your linked audience](/docs/engage/audiences/linked_audiences/#step-1-build-a-linked-audience) to set up your audience.
 
-## Use case 3: Build an audience of credit card holders with a certain number of transactions
+1. Select all profiles:
+   - associated with at least one instance (account)
+   - where the account type is checking
+   - all accounts with at least 1 credit card
+   - where the status is overdue
 
-To build this audience, define a nested entity condition to relate a `Profile` to their:
-- `Accounts` entity
-- `Subscriptions` entity where `subscriptions.tier` is "Premium"
-- `Transactions` entity where `transactions.count` is greater than five
+2. Choose your event trigger: *account_status is overdue*
+3. Select the following personalized data properties:
+   - Profile traits: *first_name, user_primary_bank*
+   - Checking account details: *account_number*
+   - Card details: *credit_card_type, card_status, card_balance, due_date*
 
-This nested entity condition has four levels of relationship depth.
+### Results
 
-In the Data Graph, `Accounts`, `Credit Cards`, and `Transactions` are defined as entities.
+The result is an email to your customer that contains:
+- Name
+- Account details, including
+  - Account Number
+  - Credit card name
+  - Balance
+  - Due Date
 
-Relationships are defined between:
-- `Profiles` and `Accounts`
-- `Accounts` and `Credit Cards`
-- `Credit Cards` and `Transactions`
+## Example 2: SaaS Business
 
-In the warehouse, `subscriptions.tier` is a column in the `Subscriptions` table, and `transactions.count` is a column in the `Transactions` table. By filtering against the `subscriptions.tier` column for the "Premium" value, and the `transactions.count` column for values greater than five, marketers can return a list of users that have a premium account where there are greater than five transactions.
+### Use Case: Personalize an email with customers with low engagement score before renewals
+
+Send a personalized email to customers with low engagement scores before renewal.
+
+#### Warehouse data'
+
+Workspace details: *workspace_arr, engagement_score, term_end_date*
+
+#### Relational data
+
+Users can belong to multiple Segment workspaces. 
+Role can depend on the workspace.
+
+### Step 1: Build your data graph
+
+Follow the steps in [Data Graph](docs/unify/linked-profiles/data-graph/) to build the following:
+
+- Profiles
+- Roles
+- Workspaces
+- Accounts
+
+### Step 2: Activate your Linked Audience
+
+Follow [Step3: Activate your linked audience](/docs/engage/audiences/linked_audiences/#step-1-build-a-linked-audience) to set up your audience.
+
+Select all profiles:
+associated where their role is data,
+with a workspace with an ARR greater than $50k,
+and the renewal date is less than 5 months.
+
+Choose your event trigger: *workspace matches audience*
+
+Select the following personalized data properties:
+Profile properties: *user_business_group, user_role*
+Workspace details: *workspace_arr, engagement_score, term_end_date*
+
+### Results
+
+The result is an email to your customer that contains:
+Customer Name
+Customer Success Manager Name
+Product Name
+The Associated Customer Use Case
+
+## Example 3: Retail Business
+
+### Use Case: Personalized promotion email to target customers with a product back in stock
+
+Owl Shoes dreams of crafting a targeted promotion email to Char to nudge her to buy one of her wish list items that’s now back in stock. With Linked Audiences, Owl Shoes can easily pull in details about the product name, shoe size, and loyalty status.
+
+#### Warehouse data
+
+Product details: *product_name, product_status*
+
+#### Relational data
+
+Each order can contain multiple products
+A product can be related to multiple orders
+
+### Step 1: Build your data graph
+
+Follow the steps in [Data Graph](docs/unify/linked-profiles/data-graph/) to build the following:
+
+Profiles 
+Wish List
+Products
+Orders
+Products
+
+### Step 2: Activate your Linked Audience
+
+Follow [Step3: Activate your linked audience](/docs/engage/audiences/linked_audiences/#step-1-build-a-linked-audience) to set up your audience.
+
+Select all profiles:
+associated with at least 1 wish list,
+where at least 1 product is in stock.
+
+Choose your event trigger: product changes to in stock
+
+Select the following personalized data properties:
+Profile properties: *First_Name*
+Wish list properties: *Product_Name, Product_Status, Shoe_Size*
+Order Properties: *Order_Date*
+
+### Results
+
+The result is an email to your customer that contains:
+Customer Name
+Wishlist Product Name
+Shoe Size
+Customer’s Loyalty Status
+A Discount Code
