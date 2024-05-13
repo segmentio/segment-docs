@@ -3,7 +3,12 @@ title: Send Audience Data to Destinations
 plan: engage-foundations
 ---
 
-This page explains how to connect an audience to a destination, as well as how to work with mappings within connected destinations.
+With the help of Sources and Destinations in Segment's catalog, you can create and send audiences and computed traits to third-party services.
+
+Segment's Connections pipeline first collects and sends events from your source to your destination. Built on top of Connections, Engage then uses the same source events to let you create audiences and computed traits within Segment. You can then send the audience or computed trait you've built to your destination(s).
+
+> info ""
+> Because Engage only sends audiences and computed traits to destinations, it doesn't replace a standard event pipeline. Connect a source directly to a destination if you want the destination to receive all events that Segment gathers.
 
 ## Connect your audience to a destination
 
