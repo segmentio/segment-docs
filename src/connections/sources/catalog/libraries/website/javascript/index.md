@@ -683,29 +683,16 @@ Here are some examples of using `addSourceMiddleware` for enrichment and validat
     });
     ```
 
-### Plugin categories
-Plugins are bound by Analytics 2.0 which handles operations such as observability, retries, and error handling. There are two different categories of plugins:
-* **Critical Plugins**:
-  - Errors thrown in `load()` will completely stop segment from initializing.
-
-| Type          | Details                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
-| ------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `before`      | Executes before event processing begins. These are plugins that run before any other plugins run. <br><br> See the example of how Analytics.js uses the [Event Validation plugin](https://github.com/segmentio/analytics-next/blob/master/packages/browser/src/plugins/validation/index.ts){:target="_blank"} to verify that every event has the correct shape.<br><br> Source middleware added via `addSourceMiddleware` is treated as a before plugin. |
-
-* **Non-critical Plugins**:
-  -  This plugin can throw an error on `load()`, and all other segment plugins, including destinations, will load as usual, without blocking the delivery pipeline.
-
-> info ""
-> Non-critical plugins are only non-critical from a loading standpoint. For example, if the `before` plugin crashes, this can still halt the event delivery pipeline.
-
-Non-critical plugins run through a timeline that executes in order of insertion based on the entry type. Segment has these four entry types of non-critical plugins:
+### Advanced Plugin API
+For advanced modification to the event pipeline.
 
 | Type          | Details                                                                                                                                                                                                                                                                                                                                                                                                                   
 | ------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `enrichment`  | Executes as the first level of event processing. These plugins modify an event.  |
-| `destination` | Executes as events begin to pass off to destinations. <br><br> This doesn't modify the event outside of the specific destination, and failure doesn't halt the execution. |
+| `before`      | Executes before event processing begins. These are plugins that run before any other plugins run. Thrown errors here can block the event pipeline. Source middleware added via `addSourceMiddleware` is treated as a `before` plugin. |
+| `enrichment`  | Executes as the first level of event processing. These plugins modify an event. Thrown errors here can block the event pipeline. |
+| `destination` | Executes as events begin to pass off to destinations. Segment.io is implemented as a destination plugin. Thrown errors here will _not_ block the event pipeline. |
 | `after`       | Executes after all event processing completes. You can use this to perform cleanup operations. |
-| `utility`     | Executes once during the bootstrap, to give you an outlet to make any modifications as to how Analytics.js works internally. This allows you to augment Analytics.js functionality. |
+| `utility`     | Executes only _once_ during the analytics.js bootstrap. Gives you access to the analytics instance via the plugin's `load()` method. This does not allow you to modify events. |
 
 ### Example plugins
 Here's an example of a plugin that converts all track event names to lowercase before the event goes through the rest of the pipeline:
