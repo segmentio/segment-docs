@@ -35,7 +35,7 @@ To set up the Snowflake storage destination in Segment, you must have either a [
 
 Segment's Snowflake destination requires you to first create a Snowflake [virtual warehouse](https://docs.snowflake.com/en/user-guide/warehouses){:target="_blank"}. 
 
-To avoid conflicts with other operations in your cluster, Segment recommends that you create a new warehouse just for Segment loads, but this is not mandatory. An X-Small warehouse works for most Segment customers when they first create their Snowflake destination.
+To avoid conflicts with other operations in your cluster, Segment recommends that you create a new warehouse just for Segment loads. An X-Small warehouse is large enough for most Segment customers when they first create their Snowflake destination.
 
 To create a new virtual warehouse, navigate to **Warehouses** > **Create** in Snowflake's Classic Console or execute the following SQL command:
 
@@ -50,7 +50,7 @@ CREATE WAREHOUSE "SEGMENT_WAREHOUSE"
 > success ""
 > Set `AUTO_SUSPEND` to ~10 minutes in the UI (or 600 if using SQL) and enable `AUTO_RESUME` to avoid extra costs, as Snowflake uses [per-second billing](https://docs.snowflake.com/en/user-guide/warehouses-considerations#automating-warehouse-suspension){:target="_blank"}. 
 
-### Step 2: Create Database
+### Step 2: Create a database
 
 Segment recommends creating a new database just for Segment information, as the Segment Snowflake destination creates its own schemas and tables and could create name conflicts with your existing data.
 
@@ -60,14 +60,14 @@ To create a new database, execute the following SQL command:
 CREATE DATABASE "SEGMENT_EVENTS";
 ```
 
-### Step 3: Create role for Segment
+### Step 3: Create a role for Segment
 
 You need to run these SQL commands rather than creating a role with the "Create Role" dialog in the Classic Console UI.
 
 This role gives Segment just enough permission to load data into your database. Segment recommends that you don't reuse this role for other operations.
 1. Click on **Worksheets**
 2. Select SEGMENT_EVENTS under database objects
-3. Change role to `ACCOUNTADMIN`
+3. Change the role to `ACCOUNTADMIN`
 4. Create a new role by executing the following command:
 ```sql
 CREATE ROLE "SEGMENT";
@@ -84,9 +84,9 @@ GRANT USAGE ON DATABASE "SEGMENT_EVENTS" TO ROLE "SEGMENT";
 GRANT CREATE SCHEMA ON DATABASE "SEGMENT_EVENTS" TO ROLE "SEGMENT";
 ```
 
-### Step 4: Create user for Segment
+### Step 4: Create a user for Segment
 
-You need to create the user that Segment uses to connect to your warehouse. Be sure to use a strong, unique password.
+Create the user that Segment uses to connect to your warehouse. Be sure to use a strong, unique password.
 
 ```sql
 CREATE USER "SEGMENT_USER"
@@ -105,7 +105,7 @@ To install SnowSQL and verify your accounts:
 
 1. Download [SnowSQL](https://docs.snowflake.com/en/user-guide/snowsql){:target="_blank"}
 2. Open the Installer and follow instructions
-3. Once the installation is complete, run the following command, replacing "account" and "user" with your Snowflake Account ID and username:
+3. When the installation is complete, run the following command, replacing "account" and "user" with your Snowflake Account ID and username:
 
 ```
 snowsql -a <account>  -u <user>
@@ -168,8 +168,8 @@ After configuring your Snowflake resources, connect them to Segment.
 1. In the Segment App, select Add Destination.
 2. Search for and select "Snowflake".
 3. Add your credentials as follows:
-  - **User**: The user name that you created in [Step 4: Create user for Segment](#step-4-create-user-for-segment)
-  - **Password**: The password that you set in [Step 4: Create user for Segment](#step-4-create-user-for-segment)
+  - **User**: The user name that you created in [Step 4: Create a user for Segment](#step-4-create-user-for-segment)
+  - **Password**: The password that you set in [Step 4: Create a user for Segment](#step-4-create-user-for-segment)
   - **Account**: The account id of your cluster, not the url (for example, url: `my-business.snowflakecomputing.com`, account-id: `my-business`. **Note:** If you are using Snowflake on AWS, the account id includes the region. For example, your url might be: `my-business.us-east-1.snowflakecomputing.com/` and your account-id would be: `my-business.us-east-1`)
   - **Database**: The database name that you created in [Step 2: Create database](#step-2-create-database)
   - **Warehouse**: The name of the warehouse that you created in [Step 1: Create a virtual warehouse](#step-1-create-a-virtual-warehouse)
@@ -196,7 +196,7 @@ If you enable the `AUTO_SUSPEND` feature, Segment recommends that you also enabl
 
 ### Unique Warehouse, Database, and Role
 
-Segment recommends creating a unique Warehouse, Database and Role for the Segment Snowflake connection to your Snowflake instance to avoid conflicts with other operations happening in your cluster.
+Segment recommends creating a unique Warehouse, Database, and Role for the Segment Snowflake connection to your Snowflake instance to avoid conflicts with other operations happening in your cluster.
 
 ## Troubleshooting
 
