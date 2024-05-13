@@ -83,7 +83,7 @@ When all config options are defined and confirmed, as well as all Filter and Map
 
 When enabled, Segment will send data to Acoustic (Actions) based on configuration in the Mappings tab.
 
-> Keep in mind, you can define multiple Destinations to send unique data to different Relational Tables, simply create the definition with unique names and Customer Prefixes to align the mapped data to the respective table.
+> Keep in mind, you can define multiple Destinations to send unique data to different Connect Tables, simply create the definition with a unique name and Customer Prefix to align the mapped data to the respective Connect table.
 
 
 ### Defining Filters
@@ -105,9 +105,9 @@ The Destination dialog also contains a Mapping tab. The Acoustic (Action) Destin
 
 ![](assets/20240422_153616_image.png)
 
-Keep in mind, Mapping provides the means to map Event data to Connect Columns in a Relational Table in Connect. The Value you map to a Key, is the Value of the Column with the same name as the Key in Connect. That is, if you map the Value of trait.firstName to the Key "firstname", the value mapped will show up in Connect in the column "firstname".
+Keep in mind, Mapping provides the means to map Segment Event data to Connect Columns. The Value you map to a Key, is the Value of the Column with the same name as the Key in Connect. That is, if you map the Value of trait.firstName to the Key "firstname", the value mapped will show up in Connect in the column "firstname".
 
-To that, you will want to work with the Acoustic Services team to define a Relational Table that will **have all of the Columns you intend to map**. The details of this Relational Table are also needed in the Destination's Settings dialog (see previous).
+To that, you will want to work with the Acoustic Services team to define a Connect Table that will **have all of the Columns you intend to map**. The details of this Table are also needed in the Destination's Settings dialog (see previous).
 
 Here we can see the mapping for UniqueRecipientID. UniqueRecipientId is required. The Acoustic (Actions) Destination will not accept any event that does not contain a UniqueRecipientId attribute.
 
@@ -131,7 +131,7 @@ Lastly, if it makes sense to do so you can map whole sections, which will provid
 
 With the Mapping completed, be sure to click "Save".
 
-With all configuration completed you wil want to confirm data being written to the defined Relational Table in Connect.
+With all configuration completed you will want to confirm data being written to the defined Table in Connect.
 
 ### Delivery Report
 
