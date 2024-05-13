@@ -25,6 +25,7 @@ analytics.identify('userId123', {
   companySize: '50'
 });
 ```
+
 When you call Identify, we pass Segment traits as respondents' attributes to Survicate. They can be used to trigger web surveys or filter survey results.
 
 All traits passed in Identify calls will be available in Survicate - once you view a respondent profile or export survey data.
