@@ -55,7 +55,6 @@ You can send test emails before you include a template in marketing campaigns.
 
 {% endcomment %}
 
-
 > info ""
 > You can also test email templates directly from a [Send an Email step](/docs/engage/journeys/build-journey/#send-an-email) in Journeys.
 
@@ -120,6 +119,9 @@ Learn more about [User Subscriptions](/docs/engage/user-subscriptions/) in Twili
 The manage preference link lets your customers opt in and out of email groups on an individual basis instead of unsubscribing from all your campaigns.
 
 For more information, see [subscription groups](/docs/engage/user-subscriptions/subscription-groups/).
+
+### Arrays and objects in Broadcasts
+Segment doesn't support profile traits in object and array datatypes in [Broadcasts](/docs/engage/campaigns/broadcasts/), but you cam use them in [Journeys](/docs/engage/journeys/).
 
 ## Next steps
 

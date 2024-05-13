@@ -98,7 +98,7 @@ sources:
       - us
   - id: xNpohElkX2
     display_name: Azure
-    hidden: false
+    hidden: true
     slug: azure
     url: connections/sources/catalog/cloud-apps/azure
     regions:

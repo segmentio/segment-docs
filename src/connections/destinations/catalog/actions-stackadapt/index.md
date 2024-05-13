@@ -139,6 +139,31 @@ analytics.track('Order Completed', {
 
 If you are using URL rules, these will be matched whenever Segment sends an event to StackAdapt with a `url` matching the URL rule. This should be accomplished by the page event Segment automatically fires when a page is viewed, so setup of URL rules should be identical to setting up URL rules with the StackAdapt pixel.
 
+### Conversion Tracking with Backend Events
+
+When you send events to Segment from your backend, which are forwarded to StackAdapt using Segment's backend SDKs, the user agent and IP address of the user who originated the event must be included in the event context for conversions to be tracked. StackAdapt uses the user agent and IP address to attribute the conversion to the correct event to a user who has interacted with your ads. Examples of how to do this can be found in the documentation for Segment's SDKs. For example, for the [Python SDK](/docs/connections/sources/catalog/libraries/server/python/#override-context-value) this can be done as follows:
+
+```python
+analytics.track('user_id', 'Order Completed', context={
+  'ip': '203.0.113.1',
+  'userAgent': 'Mozilla/5.0 (Linux; U; Android 4.1.1; en-gb; Build/KLP) AppleWebKit/534.30 (KHTML, like Gecko) Version/4.0 Safari/534.30'
+})
+```
+
+This is necessary when using backend SDKs but not for events sent from the frontend with `analytics.js`, because `analytics.js` automatically includes the user-agent and IP address in the event context.
+
+### Conversion Tracking with Reverse ETL
+
+When sending past events to StackAdapt using a Reverse ETL tool, the user agent, IP address, event type, and either the page URL (for conversion trackers with URL rules), or the fields the event rules match on, must be included in your mappings. For example, the below mapping for a Snowflake source can be used to match a conversion tracker with an event rule that matches an `action` of `User Registered`:
+
+![Image showing Snowflake mapping to forward User Registered events](images/snowflake-mappings.png)
+
+Rows forwarded to StackAdapt with this mapping will be matched by the `User Registered` event rule shown below:
+
+![Image showing event rule in StackAdapt the matches a User Registered event](images/user-registered-event-rule.png)
+
+When forwarding past events using Reverse ETL, only users who have interacted with an ad from an associated campaign within the conversion tracker's configured view-through expiry window (for impressions) or click-through expiry window (for clicks) will count as conversions. These windows can be set to up to 180 days in the conversion tracker configuration.
+
 {% include components/actions-fields.html %}
 
 ## Data and privacy
