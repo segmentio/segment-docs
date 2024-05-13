@@ -37,8 +37,12 @@ The Record Identifier mapping is used to make a distinction between adding a new
 
 ### How do I define the columns in my spreadsheet?
 
-The Fields mapping controls which fields in your model will be written as columns. Input the desired column name(s) on the left, and select the data variable that will populate the value for that column on the right. Please note, at least one field must be configured to send data to Google Sheets otherwise no columns will be created or synced.
+The Fields mapping controls which fields in your model will be written as columns. Input the desired column name(s) on the right, and select the data variable that will populate the value for that column on the left. Please note, at least one field must be configured to send data to Google Sheets otherwise no columns will be created or synced.
 
 ### How are columns formatted when synced to my spreadsheet?
 
 When syncing data to Google Sheets, the columns will be arranged alphabetically, based on the names defined in the Fields mapping.
+
+### Can I add or remove columns after data has been synced?
+
+Once data has been synced to Google Sheets, any subsequent addition or removal of columns in the RETL Model and/or Mapping may lead to misalignment of existing data, as Segment does not retroactively adjust previously synced data. For updates involving column modifications, it is advisable to start with a new Sheet to ensure data integrity.
