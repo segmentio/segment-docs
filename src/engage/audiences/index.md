@@ -26,6 +26,9 @@ You can build an Audience from existing events, traits, computed traits, or othe
 > warning ""
 > Editing an audience before the initial backfill is complete can create technical errors.
 
+> warning "Audience Keys"
+> Avoid using the same Audience key twice, even if you've deleted the original Audience.
+
 ### Events
 
 You can build an Audience from any events that are connected to Engage, including [Track](/docs/connections/spec/track), [Page](/docs/connections/spec/page), and [Screen](/docs/connections/spec/screen) calls. You can use the `property` button to refine the audience on specific event properties, as well. 
@@ -83,7 +86,6 @@ Dynamic Property references give you more flexibility over funnel audiences. Ins
 If you have a B2B business, you might want to build an Audience of accounts. You can use both account-level traits that you've sent through the [Group](/docs/connections/spec/group) call, or user-level traits and events. For example, you might want to re-engage a list of at-risk accounts defined as companies which are on a business tier plan and where none of the users in that account have logged in recently. When incorporating user-level events or traits, you can specify `None of the users`, `Any users`, or `All users`.
 
 See [Account-level Audiences](/docs/engage/audiences/account-audiences) for more information.
-
 
 
 ## Send Audiences to Destinations
