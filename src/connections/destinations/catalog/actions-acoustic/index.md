@@ -9,6 +9,7 @@ hidden: true
 [](https://acoustic.com/?utm_source=segmentio&utm_medium=docs&utm_Connect=partners)
 
 Acoustic Connect
+
 Multichannel marketing without all the hassle
 
 Automate campaigns and messages across SMS, mobile push, group messaging, email, and social media based on real-time customer signals and intent across the customer journey.
