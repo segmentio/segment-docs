@@ -8,7 +8,6 @@ id: 5c922eae1761cd0001a71707
 This destination is maintained by Survicate. For any issues with the destination, [contact the Survicate Support team](mailto:help@survicate.com).
 
 
-
 ## Getting Started
 
 
@@ -32,7 +31,6 @@ When you call Identify, we pass Segment traits as respondents' attributes to Sur
 All traits passed in Identify calls will be available in Survicate - once you view a respondent profile or export survey data.
 
 All `camelCase` attribute keys are translated to `snake_case`.
-
 
 All *object attributes* will be flattened to attributes prefixed by object key. All *array attributes* will be omitted.
 
