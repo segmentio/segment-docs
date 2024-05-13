@@ -6,47 +6,16 @@ hidden: true
 ---
 {% include content/plan-grid.md name="actions" %}
 
-## Acoustic Connect
-
 [](https://acoustic.com/?utm_source=segmentio&utm_medium=docs&utm_Connect=partners)
 
-### Multichannel marketing without all the hassle
+Acoustic Connect
+Multichannel marketing without all the hassle
 
-* Automate campaigns and messages across SMS, mobile push, group messaging, email, and social media based on real-time customer signals and intent across the customer journey.
-* Trigger promotional and transactional messages based on customer preferences and behaviors to support onboarding, customer activation, cross-sell, and re-engagement strategies.
-* Scale personalization and treat your customers as individuals with an automated view and understanding of the customer by pulling real-time behavior like intent so marketers do not have to manually segment users and audiences.
-
-****Acoustic Website**** - [**www.acoustic.com**](http://www.acoustic.com/)
-
-****Acoustic Documentation**** - [**www.goacoustic.com**](http://www.acoustic.com/)
-
-### How Acoustic Connect Works
-
-Acoustic Connect is a multichannel marketing tool for B2C consumer brands dedicated to engaging their audience. Developed to cater to the diverse needs of contemporary multichannel marketers, the platform leverages customer data, real-time behaviors and signals from the brand's owned channels, websites, and apps, and other data sources enabling marketers to personalize the journey based on each customer's preference and behavior. The integration with Twilio Segment allows marketers to quickly and easily gain access to all customer data so they can easily and quickly trigger messages, automate Connects, and build segments so each interaction is purposeful, every message is personal, and every journey leads to meaningful relationships.
-
-![](assets/20240422_140920_pic1.png)
-
-Gain actionable insights across your Connects and journeys in a single view.
-
----
-
-![](assets/20240422_140942_pic2.png)
-
-Build and automate journeys that can be triggered by real-time behaviors, events, and intent in a drag-and-drop interface.
-
----
-
-![](assets/20240422_140957_pic3.png)
-
-Build dynamic, personalized messages and promotions with no coding required.
-
----
-
-### Get more out of Acoustic Connect with Segment
-
-When you use Acoustic Connect with Twilio Segment, you gain the ability to access real-time insights throughout the customer journey, empowering you with the timely information needed to deliver personalized digital experiences. All the data flowing through Twilio Segment will be shared automatically with Acoustic Connect so you can gain access to all the necessary customer data you need to quickly understand your customer and focus on optimizing and executing your strategies, instead of spending time trying to pull in all the data manually. The combined forces of Acoustic Connect and Twilio Segment help you unleash your creativity, hyper-personalize with more speed and ease, and streamline your MarTech stack without constantly relying on disparate solutions that leave gaps in your understanding and visibility of your customers. Additionally, capture the signals and behaviors after each campaign to supplement your view of the customer and optimize your next campaign and engagement efforts.
-
-The destination is maintained by Acoustic. For any issues with the destination, please [contact the Acoustic Support team](mailto:support@goacoustic.com). Be sure to let them know you are working on the Acoustic Services Segment (Actions) Destination to have the request routed correctly and quickly.
+Automate campaigns and messages across SMS, mobile push, group messaging, email, and social media based on real-time customer signals and intent across the customer journey.
+Trigger promotional and transactional messages based on customer preferences and behaviors to support onboarding, customer activation, cross-sell, and re-engagement strategies.
+Scale personalization and treat your customers as individuals with an automated view and understanding of the customer by pulling real-time behavior like intent so marketers do not have to manually segment users and audiences.
+Acoustic Website - www.acoustic.com
+The Acoustic (Actions) Destination is maintained by Acoustic. For support, visit help.goacoustic.com
 
 ## Getting started
 
