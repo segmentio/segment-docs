@@ -21,7 +21,7 @@ For account-level audiences, you can send either a [Group](/docs/connections/spe
 Because most marketing tools are still based at the user level, it is often important to map this account-level trait onto each user within an account. See [Account-level Audiences](/docs/engage/audiences/account-audiences) for more information.
 
 > info ""
-> When you connect a new Destination to an existing Audience, Engage will backfill historical data for that Audience to the new Destination.
+> When you connect a new destination to an existing audience, Engage will backfill historical data for that audience to the new destination.
 
 Follow these steps to connect an audience to a destination:
 
@@ -36,6 +36,24 @@ You can view a list of an audience's connected destinations in the destination l
 
 ![The Engage Destinations table showing two connected destinations](/docs/engage/images/destinations_table.png)
 
+The Destinations table contains information about the destination's matching mappings, status, and sync status.
+
+### Matching mappings
+
+[Actions destinations](/docs/connections/destinations/actions/) have mappings that can receive granular data from your audience. The **Matching mappings** column shows the number of mappings that match the data coming from the audience, as well as the number of enabled and disabled mappings. See [Working with mappings](#working-with-mappings) for more information.
+
+The Matching mappings column will show `Not applicable` for classic destinations.
+
+### Status columns
+
+The **Destination status** column will show either `Connected`, `Disconnected`, or `Disabled`: 
+
+- `Connected` indicates that the destination is enabled and receiving data from the audience. 
+- `Disconnected` means that either the destination is disabled **or** the audience isn't sending it data.
+- `Disabled` means that the destination is disabled **and** the audience isn't sending it data.
+
+The **Sync status** column shows the current [compute status](/docs/engage/audiences/#compute-statuses) between the audience and connected destination.
+
 ### Working with mappings
 
 You can add and access mappings within your audience's connected destination by following these steps:
@@ -45,15 +63,5 @@ You can add and access mappings within your audience's connected destination by 
 3. In the destination's side panel, click **Matching mappings**.
 4. In the **Add Mapping** popup, select the mapping that you want to add.
 5. Segment then opens the destination's mappings tab. Add the mapping(s) you want, then click **Save**.
-6. Segment then returns you to the audience's destination side panel, which shows your new mapping(s).
 
-## Understanding audience destinations
-
-When you create an audience, Segment starts syncing your Audience to the destination(s) you selected. Audiences are either sent to destinations as a boolean user-property or a user-list, depending on what the destination supports. Read more about [supported Destinations](/docs/engage/using-engage-data/#compatible-engage-destinations) in the Engage documentation.
-
-For account-level audiences, you can send either a [Group](/docs/connections/spec/group) call and/or [Identify](/docs/connections/spec/identify) call. Group calls will send one event per account, whereas Identify calls will send an Identify call for each user in the account. This means that even if a user hasn't performed an event, Segment will still set the account-level computed trait on that user.
-
-Because most marketing tools are still based at the user level, it is often important to map this account-level trait onto each user within an account. See [Account-level Audiences](/docs/engage/audiences/account-audiences) for more information.
-
-> info ""
-> When you connect a new Destination to an existing Audience, Engage will backfill historical data for that Audience to the new Destination.
+Segment then returns you to the audience's destination side panel, which shows your new mapping(s).
