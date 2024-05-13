@@ -3,7 +3,7 @@ rewrite: true
 title: Survicate (Actions) Destination
 id: 5c922eae1761cd0001a71707
 ---
-[Survicate](https://survicate.com/integrations/egment-survey/?utm_source=segment&utm_medium=referral){:target="_blank”} is a complete toolkit for customer feedback. 
+[Survicate](https://survicate.com/integrations/segment-survey/?utm_source=segment&utm_medium=referral){:target="_blank”} is a complete toolkit for customer feedback. 
 
 This destination is maintained by Survicate. For any issues with the destination, [contact the Survicate Support team](mailto:help@survicate.com).
 
