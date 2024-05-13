@@ -692,7 +692,7 @@ For advanced modification to the event pipeline.
 | `enrichment`  | Executes as the first level of event processing. These plugins modify an event. Thrown errors here can block the event pipeline. |
 | `destination` | Executes as events begin to pass off to destinations. Segment.io is implemented as a destination plugin. Thrown errors here will _not_ block the event pipeline. |
 | `after`       | Executes after all event processing completes. You can use this to perform cleanup operations. |
-| `utility`     | Executes only _once_ during the analytics.js bootstrap. Gives you access to the analytics instance via the plugin's `load()` method. This does not allow you to modify events. |
+| `utility`     | Executes _only once_ during the analytics.js bootstrap. Gives you access to the analytics instance via the plugin's `load()` method. This doesn't allow you to modify events. |
 
 ### Example plugins
 Here's an example of a plugin that converts all track event names to lowercase before the event goes through the rest of the pipeline:
