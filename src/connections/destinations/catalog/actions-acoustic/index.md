@@ -104,8 +104,3 @@ Additionally, if you see `Nesting Depth Exceeded` in your Delivery report, this 
 
 ![](assets/20240422_161221_image.png)
 
-Tags: Email Marketing, Marketing Automation, SMS & Push Notifications
-
-> Integrate Acoustic Connect with Segment
->
-> Segment makes it easy to integrate with Acoustic Connect
