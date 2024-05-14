@@ -6,16 +6,10 @@ hidden: true
 ---
 {% include content/plan-grid.md name="actions" %}
 
-[](https://acoustic.com/?utm_source=segmentio&utm_medium=docs&utm_Connect=partners)
+[Acoustic Connect](https://acoustic.com/?utm_source=segmentio&utm_medium=docs&utm_Connect=partners){:target="_blank”}, provides multichannel marketing without all the hassle. Automate campaigns and messages across SMS, mobile push, group messaging, email, and social media based on real-time customer signals and intent across the customer journey. 
 
-Acoustic Connect
+Trigger promotional and transactional messages based on customer preferences and behaviors to support onboarding, customer activation, cross-sell, and re-engagement strategies. Scale personalization and treat your customers as individuals with an automated view and understanding of the customer by pulling real-time behavior like intent so marketers do not have to manually segment users and audiences.
 
-Multichannel marketing without all the hassle
-
-Automate campaigns and messages across SMS, mobile push, group messaging, email, and social media based on real-time customer signals and intent across the customer journey.
-Trigger promotional and transactional messages based on customer preferences and behaviors to support onboarding, customer activation, cross-sell, and re-engagement strategies.
-Scale personalization and treat your customers as individuals with an automated view and understanding of the customer by pulling real-time behavior like intent so marketers do not have to manually segment users and audiences.
-Acoustic Website - www.acoustic.com
 The Acoustic (Actions) Destination is maintained by Acoustic. For support, visit help.goacoustic.com
 
 ## Getting started
