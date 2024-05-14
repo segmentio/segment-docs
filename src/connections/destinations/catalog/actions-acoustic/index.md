@@ -27,7 +27,7 @@ For some configuration options you will need information from your Connect Org. 
 
 Name  -	Enter a name to help you identify this destination definition in Segment.
 
-Customer Prefix - *Important* - It's recommended that you use your Acoustic Connect Org name and a dataflow tag, as in eg., *CustomerAcme_Prod_* or *CustomerAcme_test1_* or *CustomerAcme_MktData3_*. Be sure to replace any spaces with an underscore and **be sure to end the string with an underscore '_'**.
+- **Customer Prefix**: **Important** - It's recommended that you use your Acoustic Connect Org name and a dataflow tag, as in eg., *CustomerAcme_Prod_* or *CustomerAcme_test1_* or *CustomerAcme_MktData3_*. Be sure to replace any spaces with an underscore and **be sure to end the string with an underscore '_'**.
 
 > You will want to work with your Acoustic Customer Success or Services resource to align this string with the Acoustic definition that defines your unique table for this data set.
 
