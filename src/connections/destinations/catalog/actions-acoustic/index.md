@@ -40,9 +40,7 @@ For some configuration options you will need information from your Connect Org. 
 
 - **S3 Region**: Should always be us-east-1 unless directed by Acoustic otherwise.
 
-- **Version**: No Need to Edit - Provides a metatag to confirm the version currently in effect.
-Last-Modified: 02.01.2024 10.30.43
-Version 1.7
+- **Version**: No Need to Edit - Provides a metatag to confirm the version currently in effect. The current version is shown as: "Last-Modified: 02.01.2024 10.30.43", "Version 1.7"
 
 When all config options are defined and confirmed, as well as all Filter and Mapping configurations completed (see below), be sure to "Enable" and "Save Changes" for the Destination.
 
