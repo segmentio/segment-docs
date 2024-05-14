@@ -32,7 +32,7 @@ For some configuration options you will need information from your Connect Org. 
 > info ""
 > You will want to work with your Acoustic Customer Success or Services resource to align this string with the Acoustic definition that defines your unique table for this data set.
 
-S3 Bucket Access Point Alias - The Alias of the Access Point created for your access to the S3 Bucket. Available from your Acoustic Customer Success or Services resource.
+- **S3 Bucket Access Point Alias**: The Alias of the Access Point created for your access to the S3 Bucket. Available from your Acoustic Customer Success or Services resource.
 
 S3 Access Key  -  S3 Access Key for the S3 bucket. Available from your Acoustic Customer Success or Services resource.
 
