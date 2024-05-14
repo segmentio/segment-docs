@@ -12,13 +12,13 @@ Segment's Connections pipeline first collects and sends events from your source 
 
 ## Connect your audience to a destination
 
-Once you've previewed your Audience, you can choose to connect it to a destination or keep the audience in Segment and export it as a CSV file download.
+Once you've previewed your audience, you can choose to connect it to a destination or keep the audience in Segment and export it as a CSV file download.
 
 When you create an audience, Segment starts syncing your audience to the destinations you selected. Audiences are either sent to destinations as a boolean user-property or a user-list, depending on what the destination supports. Read more about [supported Destinations](/docs/engage/using-engage-data/#compatible-engage-destinations) in the Engage documentation.
 
 For account-level audiences, you can send either a [Group](/docs/connections/spec/group) call and/or [Identify](/docs/connections/spec/identify) call. Group calls will send one event per account, whereas Identify calls will send an Identify call for each user in the account. This means that even if a user hasn't performed an event, Segment will still set the account-level computed trait on that user.
 
-Because most marketing tools are still based at the user level, it is often important to map this account-level trait onto each user within an account. See [Account-level Audiences](/docs/engage/audiences/account-audiences) for more information.
+Because most marketing tools are still based at the user level, you'll usually want to map this account-level trait onto each user within an account. See [Account-level Audiences](/docs/engage/audiences/account-audiences) for more information.
 
 > info ""
 > When you connect a new destination to an existing audience, Engage will backfill historical data for that audience to the new destination.
