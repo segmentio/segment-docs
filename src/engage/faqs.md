@@ -8,17 +8,17 @@ redirect_from:
 
 ## Do you have an Audiences API?
 
-Yes, more information about the Audience API can be found by visiting the [Segment Public API documentation](https://docs.segmentapis.com/tag/Audiences).
+Yes. You can learn more about the Audience API by visiting the [Segment Public API documentation](https://docs.segmentapis.com/tag/Audiences){:target="_blank"}.
 
 ## Can I programmatically determine if a user belongs to a particular audience?
 
-Yes, you can programmatically query the Profile API to determine if a user belongs to a particular audience because Engage creates a trait with the same name as your audience. For example, to determine if the user with an email address of `bob@example.com` is a member of your `high_value_users` audience, you could query the following profile API URL:
+Yes. Eecause Engage creates a trait with the same name as your audience, you can query the Profile API to determine if a user belongs to a particular audience. For example, to determine if the user with an email address of `bob@example.com` is a member of your `high_value_users` audience, you could query the following Profile API URL:
 
 ```
 https://profiles.segment.com/v1/namespaces/<namespace_id>/collections/users/profiles/email:bob@segment.com/traits?include=high_value_users
 ```
 
-The following response indicates that Bob is indeed a high-value user:
+The following response indicates that Bob is a high-value user:
 
 ```json
 {
