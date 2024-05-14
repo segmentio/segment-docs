@@ -15,7 +15,7 @@ The Acoustic (Actions) Destination is maintained by Acoustic. For support, visit
 ## Getting started
 
 1. From the Segment web app, click **Catalog**, then click **Destinations**.
-2. Find the Destinations Actions item "Acoustic-Actions" in the left navigation, and click it.
+2. Find the Destinations Actions item "Acoustic (Actions)" in the left navigation, and click it.
 3. Click **Configure <destination_name>**.
 4. Select an existing Source to connect to <destination_name> (Actions).
 
