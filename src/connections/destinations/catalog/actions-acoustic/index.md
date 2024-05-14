@@ -36,7 +36,7 @@ For some configuration options you will need information from your Connect Org. 
 
 - **S3 Access Key**:  S3 Access Key for the S3 bucket. Available from your Acoustic Customer Success or Services resource.
 
-S3 Secret -  S3 Secret credential for the S3 bucket. Available from your Acoustic Customer Success or Services resource.
+- **S3 Secret** S3 Secret credential for the S3 bucket. Available from your Acoustic Customer Success or Services resource.
 
 - **S3 Region**: Should always be us-east-1 unless directed by Acoustic otherwise.
 
