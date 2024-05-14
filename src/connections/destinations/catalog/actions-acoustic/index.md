@@ -29,6 +29,7 @@ For some configuration options you will need information from your Connect Org. 
 
 - **Customer Prefix**: **Important** - It's recommended that you use your Acoustic Connect Org name and a dataflow tag, as in eg., *CustomerAcme_Prod_* or *CustomerAcme_test1_* or *CustomerAcme_MktData3_*. Be sure to replace any spaces with an underscore and **be sure to end the string with an underscore '_'**.
 
+> info ""
 > You will want to work with your Acoustic Customer Success or Services resource to align this string with the Acoustic definition that defines your unique table for this data set.
 
 S3 Bucket Access Point Alias - The Alias of the Access Point created for your access to the S3 Bucket. Available from your Acoustic Customer Success or Services resource.
