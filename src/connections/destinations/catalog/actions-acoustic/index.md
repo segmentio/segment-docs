@@ -47,6 +47,7 @@ When all config options are defined and confirmed, as well as all Filter and Map
 
 When enabled, Segment will send data to Acoustic (Actions) based on configuration in the Mappings tab.
 
+> info ""
 > Keep in mind, you can define multiple Destinations to send unique data to different Connect Tables, simply create the definition with a unique name and Customer Prefix to align the mapped data to the respective Connect table.
 
 
