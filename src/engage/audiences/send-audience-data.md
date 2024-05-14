@@ -46,7 +46,7 @@ The Matching mappings column will show `Not applicable` for classic destinations
 
 ### Status columns
 
-The **Destination status** column will show either `Connected`, `Disconnected`, or `Disabled`: 
+The **Destination status** column shows `Connected`, `Disconnected`, or `Disabled`: 
 
 - `Connected` indicates that the destination is enabled and receiving data from the audience. 
 - `Disconnected` means that either the destination is disabled **or** the audience isn't sending it data.
