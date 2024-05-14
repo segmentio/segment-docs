@@ -34,7 +34,7 @@ For some configuration options you will need information from your Connect Org. 
 
 - **S3 Bucket Access Point Alias**: The Alias of the Access Point created for your access to the S3 Bucket. Available from your Acoustic Customer Success or Services resource.
 
-S3 Access Key  -  S3 Access Key for the S3 bucket. Available from your Acoustic Customer Success or Services resource.
+- **S3 Access Key**:  S3 Access Key for the S3 bucket. Available from your Acoustic Customer Success or Services resource.
 
 S3 Secret -  S3 Secret credential for the S3 bucket. Available from your Acoustic Customer Success or Services resource.
 
