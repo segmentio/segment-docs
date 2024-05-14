@@ -28,10 +28,10 @@ Workspace Owner or Unify Read-Admin, Entities Admin, and Source Admin permission
 
 To set up your linked audience, complete the following steps:
 
-[Build a linked audience](#step-1-build-a-linked-audience)
-[Activate your Linked Audiences](#step-3-activate-your-linked-audience)
-[Enable your linked audience](#step-2-enable-your-linked-audience)
-[Confirm the payload in your destination](#step-4-confirm-the-payload-in-your-destination)
+- [Build a linked audience](#step-1-build-a-linked-audience)
+- [Activate your Linked Audiences](#step-3-activate-your-linked-audience)
+- [Enable your linked audience](#step-2-enable-your-linked-audience)
+- [Confirm the payload in your destination](#step-4-confirm-the-payload-in-your-destination)
 
 ## Step 1: Build a Linked Audience
 
@@ -56,16 +56,10 @@ Optionally, select a folder to add this Audience.
 
 After you build your Linked Audience, you will be able to send events to your chosen destinations so that you can then use it for personalizing your customer communications. This requires you set up a few steps that will result in activating your Linked Audience. These steps include:
 
-- [Setting up Linked Audiences](#setting-up-linked-audiences)
-  - [Prerequisites](#prerequisites)
-- [Step 1: Build a Linked Audience](#step-1-build-a-linked-audience)
-- [Step 2: Activate your Linked Audience](#step-2-activate-your-linked-audience)
-  - [Step 2a: Connect to a Destination](#step-2a-connect-to-a-destination)
-  - [Step 2b: Select your Destination Actions](#step-2b-select-your-destination-actions)
-  - [Step 2c: Define how and when to trigger an event to your Destination](#step-2c-define-how-and-when-to-trigger-an-event-to-your-destination)
-  - [Step 2d: Configure the event](#step-2d-configure-the-event)
-- [Step 3: Enable your Linked Audience](#step-3-enable-your-linked-audience)
-- [Step 4: Confirm the payload in your destination](#step-4-confirm-the-payload-in-your-destination)
+- [Connect to a Destination](#step-2a-select-a-destination)
+- [Select your Destination Actions](#step-2b-select-your-destination-actions)
+- [Define how and when to trigger an event to your Destination](#step-2c-define-the-events-that-trigger-actions-in-your-destination)
+- [Configure the event payload](#step-2d-configure-the-event)
 
 ### Step 2a: Connect to a Destination
 
