@@ -401,6 +401,8 @@ sections:
       title: Generative Audiences Nutrition Facts Label
     - path: '/engage/audiences/organization'
       title: Organize Audiences
+    - path: '/engage/audiences/send-audience-data'
+      title: Send Audiences to Destinations
 
   - section_title: Journeys
     description: "Learn how to create multi-step Journeys to tailor messages to your users."
