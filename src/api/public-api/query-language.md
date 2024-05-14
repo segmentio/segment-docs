@@ -62,7 +62,7 @@ The following tables list the query languages's available functions.
 | Syntax      | `trait({s: String})` <br> `s` - the name of the the trait to reference                              |
 | Return Type | `ScalarExtractor`                                                                                   |
 | Description | Similar to the event operator, the trait operator is used to specify profile trait filter criteria. |
-| Notes       | You can reference other audiences by using the audience key as the trait name                       |
+| Notes       | You can reference other audiences by using the audience key as the trait name.                      |
 | Example     | `trait('total_spend')`                                                                              |
 
 | `property`  |                                                                                                                                                                                                                                 |
@@ -144,7 +144,7 @@ The following tables list the query languages's available functions.
 | ----------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Syntax      | `max({s: EventPropertyExtractor})` or `max({s: EventPropertyExtractor} as type)`<br>`s` - property to get the maximum value of <br>`type` - number, string                                                                  |
 | Return Type | `Scalar`                                                                                                                                                                                                                    |
-| Notes       | If no type is passed, we assume `number` as the `type` and will select the greatest value. You can override the behavior to select the max based on lexicographical ordering by specifying `as string`.            |
+| Notes       | If no type is passed, Segment assumes `number` as the `type` and selects the greatest value. You can override the behavior to select the max based on lexicographical ordering by specifying `as string`.            |
 | Example     | `max(property('spend'))`<br>`max(property('spend') as string)`                                                                                                                                                              |
 
 | `min`       |                                                                                                                                                                                                                             |
@@ -152,7 +152,7 @@ The following tables list the query languages's available functions.
 | Syntax      | `min({s: EventPropertyExtractor})` or `min({s: EventPropertyExtractor} as type)`<br>`s` - property to get the minimum value of <br>`type` - number, string                                                                  |
 | Return Type | `Scalar`                                                                                                                                                                                  
                                   |
-| Notes       | If no type is passed, we assume `number` as the `type` and will select the smallest value. You can override the behavior to select the max based on lexicographical ordering by specifying `as string`.            |
+| Notes       | If no type is passed, Segment assumes `number` as the `type` and selects the smallest value. You can override the behavior to select the max based on lexicographical ordering by specifying `as string`.            |
 | Example     | `min(property('spend'))`<br>`min(property('spend') as string)`                                                                                                                                                              |
 
 | `mode`      |                                                                                                                                                                                                                                                 |
@@ -160,7 +160,7 @@ The following tables list the query languages's available functions.
 | Syntax      | `mode({s: EventPropertyExtractor}, {d: Integer})` or `mode({s: EventPropertyExtractor} as type, {d: Integer})`<br>`s` - the property to find the most frequent value of <br>`d` - minimum frequency expected <br>`type` - number, string, array |
 | Return Type | `Scalar`                                                                                                                                                                                                                                        |
 | Description | Find the most frequent value for a given property name.                                                                                                                                                                                         |
-| Notes       | If no type is passed, we assume `string` as the `type` and will select the most frequent value assuming all data is a string. `number` will behave the same as `string`. `array` will also behave the same way, except when used in combination with the `$` operator where instead of treating each individual value within the array separately we will instead treat the whole array as a string.                                               |
+| Notes       | If no type is passed, Segment assumes `string` as the `type` and selects the most frequent value assuming all data is a string. `number` will behave the same as `string`. `array` will also behave the same way, except when used in combination with the `$` operator where instead of treating each individual value within the array separately Segment will instead treat the whole array as a string.                                               |
 | Example     | `mode(property('spend'), 2)`<br>`mode(property('spend') as array, 2)`                                                                                                                                                                           |
 
 | `first`     |                                                                                                  |
