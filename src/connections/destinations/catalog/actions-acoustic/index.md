@@ -37,7 +37,7 @@ S3 Access Key  -  S3 Access Key for the S3 bucket. Available from your Acoustic 
 
 S3 Secret -  S3 Secret credential for the S3 bucket. Available from your Acoustic Customer Success or Services resource.
 
-S3 Region  - Should always be us-east-1 unless directed by Acoustic otherwise.
+- **S3 Region**: Should always be us-east-1 unless directed by Acoustic otherwise.
 
 Version:	- No Need to Edit - Provides a metatag to confirm the version currently in effect.
 Last-Modified: 02.01.2024 10.30.43
