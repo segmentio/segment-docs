@@ -24,7 +24,7 @@ You can build an Audience from existing events, traits, computed traits, or othe
 > Editing an audience before the initial backfill is complete can create technical errors.
 
 > warning "Audience Keys"
-> Avoid using the same Audience key twice, even if you've deleted the original Audience.
+> Avoid using the same Audience Key twice, even if you've deleted the original Audience.
 
 ### Events
 
