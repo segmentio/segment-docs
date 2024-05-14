@@ -25,7 +25,7 @@ The Acoustic (Actions) Destination is maintained by Acoustic. For support, visit
 
 For some configuration options you will need information from your Connect Org. and others will need the help of your Customer Success and/or Services resources. If you do not recognize the options here or need help, reach out to your Acoustic Customer Success or Services resource for help.
 
-Name  -	Enter a name to help you identify this destination definition in Segment.
+- **Name**: 	Enter a name to help you identify this destination definition in Segment.
 
 - **Customer Prefix**: **Important** - It's recommended that you use your Acoustic Connect Org name and a dataflow tag, as in eg., *CustomerAcme_Prod_* or *CustomerAcme_test1_* or *CustomerAcme_MktData3_*. Be sure to replace any spaces with an underscore and **be sure to end the string with an underscore '_'**.
 
