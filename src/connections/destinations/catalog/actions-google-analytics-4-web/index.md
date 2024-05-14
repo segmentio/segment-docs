@@ -198,7 +198,7 @@ To send custom item parameters, add the custom item parameter name in mappings w
 
 ### My Events Send to the wrong Google ID
 
-In each Event Mapping, there is a “Send To” parameter. Set this to “True” if you would like to include the send_to parameter and only send the event to the measurement_id indicated in the settings. If you select “False” or do not enter a selection, GA4 Events will broadcast to all measurement IDs, including Google Ads IDs, on the page.
+In each Event Mapping, there is a “Send To” parameter. Set this to “True” if you would like to include the send_to parameter and only send the event to the measurement_id configured in your settings. If you select “False” or do not enter a selection, GA4 Events will broadcast to all measurement IDs, including Google Ads IDs, on the page. These measurement IDs may be set outside of Segment. For more info on how the send_to parameter works, please see (Google's docs)[https://developers.google.com/tag-platform/gtagjs/routing].
 
 ### Can I override my send_page_view selection that I declared in the Settings?
 
