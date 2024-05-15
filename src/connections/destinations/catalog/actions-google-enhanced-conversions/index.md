@@ -21,7 +21,7 @@ The Google Ads Conversions destination enables you to upload offline conversions
 7. Follow the steps in the Destinations Actions documentation on [Customizing mappings](/docs/connections/destinations/actions/#customizing-mappings).
 
 > warning "Upload Enhanced Conversion (Legacy) Action Deprecation"
-> Google plans to sunset the legacy API, leading to the discontinuation of the Upload Enhanced Conversions (Legacy) Action. New subscriptions using the sunsetting Upload Enhanced Conversion (Legacy) Action are **no longer possible**, but existing subscriptions will remain functional. 
+> Google is planning to sunset the Google Enhanced Conversion Legacy API on June 30th 2024. After that, Google will no longer let data flow and will no longer maintain the API.
 >
 > Segment recommends users to transition to the "Upload Click Conversion," "Upload Call Conversion," and "Upload Conversion Adjustment" actions, to send data through the new Google Ads API. 
 >
