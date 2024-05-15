@@ -4,17 +4,17 @@ redirect_from:
   - '/spec/mobile'
 ---
 
-One of the core components of the Segment [Spec](/docs/connections/spec/) is the [Track](/docs/connections/spec/track) method. It records any arbitrary event that the user has triggered. For Mobile tracking, in addition to Screen calls, you'll want to send **specific event names** that Segment recognizes semantically. That way, we can transform them correctly before sending them off to downstream destinations.
+One of the core components of the Segment [Spec](/docs/connections/spec/) is the [Track](/docs/connections/spec/track) method. It records any arbitrary event that the user has triggered. For Mobile tracking, in addition to Screen calls, you'll want to send **specific event names** that Segment recognizes semantically. That way, Segment can transform them correctly before sending them off to downstream destinations.
 
-By standardizing the events that comprise the core **mobile application lifecycle** and associated **mobile campaign and referral events**, Segment and our partners can, wherever possible, automatically collect and forward these events on your behalf and build downstream destinations which take full advantage of the semantic meaning associated with these events and their properties.
+By standardizing the events that comprise the core **mobile application lifecycle** and associated **mobile campaign and referral events**, Segment and its partners can, wherever possible, automatically collect and forward these events on your behalf and build downstream destinations which take full advantage of the semantic meaning associated with these events and their properties.
 
 > info ""
->  If you're already collecting similar events, Segment recommends migrating to these event names so that you can take advantage of available features in our destinations which depend on the spec as they become available.
+>  If you're already collecting similar events, Segment recommends migrating to these event names so that you can take advantage of available features in Segment destinations that depend on the spec as they become available.
 
 These events pair nicely with Segment's [ecommerce spec](/docs/connections/spec/ecommerce/v2/) for mobile marketplaces to take full advantage of features like dynamic ads in Facebook and the ability to take full advantage of server-side destinations with Mobile Attribution Platforms like [Tune](https://www.tune.com/){:target="_blank"} and [Kochava](https://www.kochava.com/){:target="_blank"}.
 
 > info ""
->  Per the [Privacy Policy](https://segment.com/legal/privacy/#sensitive-personal-information){:target="_blank"} and applicable terms, don't send Segment sensitive personal information about your users. Certain features from Segment and our partners allow you to opt-in to automatically track data (for example: Application Installed or Deep Link Clicked). When working with these features and Segment in general, be cognizant of the data that is being tracked to ensure its matching both your obligations under your agreement with Segment and the privacy expectations of your users.
+>  Per the [Privacy Policy](https://segment.com/legal/privacy/#sensitive-personal-information){:target="_blank"} and applicable terms, don't send Segment sensitive personal information about your users. Certain features from Segment and its partners allow you to opt-in to automatically track data (for example: Application Installed or Deep Link Clicked). When working with these features and Segment in general, be cognizant of the data that is being tracked to ensure its matching both your obligations under your agreement with Segment and the privacy expectations of your users.
 
 ## Overview of events
 
@@ -39,11 +39,11 @@ The Segment Native Mobile Spec includes the following semantic events:
 
 Segment recommends using the above event names if you're going to be integrating the events yourself. This will ensure that they can be mapped effectively in downstream tools.
 
-Additionally, though they're not formally part of the Native Mobile Spec, Segment also collects `Order Completed` from our ecommerce spec automatically upon in-app purchases on iOS and can collect screen views automatically in iOS and Android.
+Additionally, though they're not formally part of the Native Mobile Spec, Segment also collects `Order Completed` from its ecommerce spec automatically upon in-app purchases on iOS and can collect screen views automatically in iOS and Android.
 
 ## Lifecycle events
 
-Mobile applications live within a fairly bounded lifecycle. In order to understand and communicate effectively with your users, it's crucial to instrument the core flows associated with installing and opening your app. The following events, many of which Segment can capture automatically in the latest versions of our SDKs, allow you to get a picture of top-line metrics such as DAUs, MAUs, and Screen Views per session. Automatic tracking of lifecycle events is completely optional - you can learn how to enable and disable them in Segment's [iOS](https://segment.com/docs/connections/sources/catalog/libraries/mobile/ios/#step-2-install-the-sdk){:target="_blank"} and [Android](https://segment.com/docs/connections/sources/catalog/libraries/mobile/android/quickstart/#step-3-initialize-the-client){:target="_blank"} library docs.
+Mobile applications live within a fairly bounded lifecycle. In order to understand and communicate effectively with your users, it's crucial to instrument the core flows associated with installing and opening your app. The following events, many of which Segment can capture automatically in the latest versions of Segment SDKs, allow you to get a picture of top-line metrics such as DAUs, MAUs, and Screen Views per session. Automatic tracking of lifecycle events is completely optional - you can learn how to enable and disable them in Segment's [iOS](https://segment.com/docs/connections/sources/catalog/libraries/mobile/ios/#step-2-install-the-sdk){:target="_blank"} and [Android](https://segment.com/docs/connections/sources/catalog/libraries/mobile/android/quickstart/#step-3-initialize-the-client){:target="_blank"} library docs.
 
 The following events will be tracked automatically when lifecycle events are enabled:
 
@@ -120,7 +120,7 @@ This event should be sent when a user backgrounds the application upon [`applica
 
 ### Application Updated
 
-This event fires when a user updates the application. Segment's SDK will automatically collect this event instead of an "Application Opened" event when we determine that the Open is first since an update.
+This event fires when a user updates the application. Segment's SDK will automatically collect this event instead of an "Application Opened" event when Segment determines that the Open is first since an update.
 
 {% comment %} api-example '{ "userId": "019mr8mf4r", "type": "track", "event": "Application Updated", "properties": { "previous_version": "1.1.2", "previous_build": 1234, "version": "1.2.0", "build": "1456" }}'}}} {% endcomment %}
 
