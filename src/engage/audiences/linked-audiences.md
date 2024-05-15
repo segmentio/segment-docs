@@ -12,22 +12,24 @@ hidden: true
 With Linked Audiences, you can build an audience that uses the relational data you've defined in your [Data Graph](/docs/unify/linked-profiles/data-graph/), activate profile audiences, or send relational data to your source.
 
 To learn more about specific use cases you can set up with Linked Audiences, see the [Linked Audiences Use Cases](/docs/engage/audiences/linked_audiences/linked-audiences-use-cases/) topic.
-## Setting up Linked Audiences
-### Prerequisites
+
+## Prerequisites
 
 Before you begin setting up your linked audience, ensure you have:
 
-- [Set up profiles sync](/unify/profiles-sync/profiles-sync-setup/)
-- Set up your warehouse permissions using [Snowflake](/docs/unify/linked-profiles/setup-guides/snowflake-setup/)
+- [Set up profiles sync](/unify/profiles-sync/profiles-sync-setup/).
+- Set up your warehouse permissions using [Snowflake](/docs/unify/linked-profiles/setup-guides/snowflake-setup/).
 - [Ensure someone has set up your data graph](/docs/unify/linked-profiles/data-graph/)
 Workspace Owner or Unify Read-Admin, Entities Admin, and Source Admin permissions.
 
+## Setting up Linked Audiences
+
 To set up your linked audience, complete the following steps:
 
-- [Build a linked audience](#step-1-build-a-linked-audience)
-- [Activate your Linked Audiences](#step-3-activate-your-linked-audience)
-- [Enable your linked audience](#step-2-enable-your-linked-audience)
-- [Confirm the payload in your destination](#step-4-confirm-the-payload-in-your-destination)
+- [Step 1: Build a linked audience](#step-1-build-a-linked-audience)
+- [Step 2: Activate your Linked Audiences](#step-2-activate-your-linked-audience)
+- [Step 3: Enable your linked audience](#step-3-enable-your-linked-audience)
+- [Step 4: Confirm the payload in your destination](#step-4-confirm-the-payload-in-your-destination)
 
 ## Step 1: Build a Linked Audience
 
@@ -54,10 +56,10 @@ After you build your Linked Audience, you can send events to your chosen destina
 
 These steps include:
 
-- [Connecting to a Destination](#step-2a-select-a-destination)
-- [Selecting your Destination Actions](#step-2b-select-your-destination-actions)
-- [Defining how and when to trigger an event to your Destination](#step-2c-define-the-events-that-trigger-actions-in-your-destination)
-- [Configuring the event payload](#step-2d-configure-the-event)
+- [Step 2a: Connecting to a Destination](#step-2a-connecting-to-a-destination)
+- [Step 2b: Selecting your Destination Actions](#step-2b-select-your-destination-actions)
+- [Step 2c: Defining how and when to trigger an event to your Destination](#step-2c-define-how-and-when-to-trigger-an-event-to-your-destination)
+- [Step 2d: Configuring the event payload](#step-2d-configure-the-event)
 
 ### Step 2a: Connecting to a Destination
 
@@ -81,13 +83,9 @@ Select the Destination Action to call when the event happens, then click **Next*
 
 Configure how and when events are produced with each audience run. You can choose the entities referenced in the audience builder to trigger an event off of. 
 
- <! -- For more details on each option, see Linked Audiences Event Trigger Options. -->
-
 ### Step 2d: Configure the event
 
 After you select an action, Segment attempts to automatically configure the data fields that will be sent to the Destination. You can review and adjust these settings before enabling this event.
-
- <! -- For more details on each option, see Linked Audiences Event Configuration Options. -->
 
 ## Step 3: Enable your Linked Audience
 
