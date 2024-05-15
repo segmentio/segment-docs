@@ -48,3 +48,5 @@ Permission | Details
 `bigquery.jobs.create` | This allows Segment to execute queries on any datasets or tables your model query references, and also allows Segment to manage tables used for tracking.
 
 The `bigquery.datasets.*` permissions can be scoped only to the `__segment_reverse_etl` dataset. 
+
+After you've successfully added your BigQuery source, [add a model](/docs/connections/reverse-etl/setup/#step-2-add-a-model) and follow the rest of the steps in the Reverse ETL setup guide. 

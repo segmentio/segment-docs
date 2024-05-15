@@ -36,3 +36,5 @@ To set up Postgres with Reverse ETL:
 * Give the `segment` user read permissions for any resources (databases, schemas, tables) the query needs to access. 
 
 * Give the `segment` user write permissions for the Segment managed schema (`__SEGMENT_REVERSE_ETL`), which keeps track of changes to the query results.  
+
+After you've successfully added your Postgres source, [add a model](/docs/connections/reverse-etl/setup/#step-2-add-a-model) and follow the rest of the steps in the Reverse ETL setup guide.

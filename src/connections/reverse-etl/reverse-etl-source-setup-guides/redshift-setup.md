@@ -32,3 +32,5 @@ If you are able to run the query in the Query Builder, but the sync fails with t
 ```ts
 SELECT id FROM <schema_name>.<table_name>
 ```
+
+After you've successfully added your Redshift source, [add a model](/docs/connections/reverse-etl/setup/#step-2-add-a-model) and follow the rest of the steps in the Reverse ETL setup guide.

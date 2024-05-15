@@ -59,4 +59,12 @@ Follow the instructions below to set up the Segment Snowflake connector. Segment
    -- role access
    GRANT ROLE segment_reverse_etl TO USER segment_reverse_etl_user;
    ```
-7. Follow the steps listed in the [Add a Source](/docs/connections/reverse-etl#step-1-add-a-source) section to finish adding Snowflake as a source.
+7. Add the account information for your source.  
+5. Click **Test Connection** to test to see if the connection works.
+6. Click **Add source** if the test connection is successful.
+
+<!--- need to test what information needs to be entered into Segment UI --->
+
+Learn more about the Snowflake Account ID [here](https://docs.snowflake.com/en/user-guide/admin-account-identifier.html){:target="_blank"}.
+
+After you've successfully added your Snowflake source, [add a model](/docs/connections/reverse-etl/setup/#step-2-add-a-model) and follow the rest of the steps in the Reverse ETL setup guide.
