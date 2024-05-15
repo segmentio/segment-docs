@@ -43,9 +43,15 @@ Segment recommends using the above event names if you're going to be integrating
 
 Mobile applications live within a fairly bounded lifecycle. In order to understand and communicate effectively with your users, it's crucial to instrument the core flows associated with installing and opening your app. The following events, allow you to get a picture of top-line metrics such as DAUs, MAUs, and Screen Views per session. Automatic tracking of lifecycle events is completely optional - you can learn how to enable and disable them in Segment's [iOS](https://segment.com/docs/connections/sources/catalog/libraries/mobile/ios/#step-2-install-the-sdk){:target="_blank"} and [Android](https://segment.com/docs/connections/sources/catalog/libraries/mobile/android/quickstart/#step-3-initialize-the-client){:target="_blank"} library docs.
 
+The following events will be tracked automatically when lifecycle events are enabled:
+
+- [Application Installed](#application-installed)
+- [Application Opened](#application-opened)
+- [Application Updated](#application-updated)
+
 ### Application Installed
 
-This event fires when a user **first** opens your mobile application. Note, if the user never opens your app after installing, Segment will not be able to collect this event. This event doesn't wait for attribution or campaign information to be received. Advertising providers like Facebook and Google require discrete install events to correctly attribute installs to ads served through their platform.
+This event fires when a user **first** opens your mobile application. Note, if the user never opens your app after installing, Segment will not be able to collect this event. This event doesn't wait for attribution or campaign information to be received, and is collected automatically by Segment's SDKs. Advertising providers like Facebook and Google require discrete install events to correctly attribute installs to ads served through their platform.
 
 {% comment %} api-example '{ "userId": "019mr8mf4r", "type": "track", "event": "Application Installed", "properties": { "version": "1.2.3", "build": "1234" }}'}}} {% endcomment %}
 
@@ -112,7 +118,7 @@ This event should be sent when a user backgrounds the application upon [`applica
 
 ### Application Updated
 
-This event fires when a user updates the application.
+This event fires when a user updates the application. Segment's SDK will automatically collect this event instead of an "Application Opened" event when we determine that the Open is first since an update.
 
 {% comment %} api-example '{ "userId": "019mr8mf4r", "type": "track", "event": "Application Updated", "properties": { "previous_version": "1.1.2", "previous_build": 1234, "version": "1.2.0", "build": "1456" }}'}}} {% endcomment %}
 
