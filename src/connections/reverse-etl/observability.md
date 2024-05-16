@@ -3,6 +3,8 @@ title: Reverse ETL Observability
 beta: false 
 ---
 
+With the Sync history tab, you can view the status of your data extractions and see details about syncs with your warehouse. 
+
 ## Sync history
 Check the status of your data extractions and see details of your syncs. Click into failed records to view additional details on the error, sample payloads to help you debug the issue, and recommended actions.
 

@@ -182,6 +182,14 @@ sections:
     section:
     - path: /connections/reverse-etl
       title: Reverse ETL Overview
+    - path: /connections/reverse-etl/setup
+      title: Set up Reverse ETL
+    - path: /connections/reverse-etl/observability
+      title: Observability
+    - path: /connections/reverse-etl/mappings
+      title: Reverse ETL Mappings
+    - path: /connections/reverse-etl/system
+      title: Reverse ETL System
     - path: /connections/reverse-etl/reverse-etl-catalog
       title: Reverse ETL Catalog
     - section_title: Reverse ETL Source Setup Guides

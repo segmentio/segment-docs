@@ -1,11 +1,11 @@
 ---
-title: Reverse ETL Mappings
+title: Mappings
 beta: false 
 ---
 
-### Managing syncs
+Learn more about supported object and array values in your mappings and how to reset or replay your syncs. 
 
-### Supported object and arrays 
+## Supported object and arrays 
 
 When you set up destination actions in Reverse ETL, depending on the destination, some [mapping fields](#step-4-create-mappings) may require data to be in the form of an [object](#object-mapping) or [array](#array-mapping). 
 
@@ -70,7 +70,7 @@ Select array | This enables you to send all nested properties within the array.
 
 Objects in an array don't need to have the same properties. If a user selects a missing property in the input object for a mapping field, the output object will miss the property. 
 
-#### Reset syncs
+## Reset syncs
 You can reset your syncs so that your data is synced from the beginning. This means that Segment resyncs your entire dataset for the model.
 
 To reset a sync:
@@ -79,5 +79,7 @@ To reset a sync:
 3. Select the checkbox that you understand what happens when a sync is reset.
 4. Click **Reset sync**.
 
-#### Replays
+### Automatic retry handling
+
+## Replays
 You can choose to replay syncs. To replay a specific sync, contact [friends@segment.com](mailto:friends@segment.com). Keep in mind that triggering a replay resyncs all records for a given sync.
