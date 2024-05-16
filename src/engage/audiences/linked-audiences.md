@@ -9,31 +9,31 @@ hidden: true
 > info "Linked Audiences is in public beta"
 > Linked Audiences is in public beta, and Segment is actively working on this feature. Some functionality may change before it becomes generally available.
 
-With Linked Audiences, you can build an audience that uses the relational data you've defined in your [Data Graph](/docs/unify/linked-profiles/data-graph/), activate profile audiences, or send relational data to your source.
+With Linked Audiences, you can build an audience from the relational data you've defined in your [Data Graph](/docs/unify/linked-profiles/data-graph/), activate profile audiences, or send relational data to your source.
 
 To learn more about specific use cases you can set up with Linked Audiences, see the [Linked Audiences Use Cases](/docs/engage/audiences/linked_audiences/linked-audiences-use-cases/) topic.
 
 ## Prerequisites
 
-Before you begin setting up your linked audience, ensure you have:
+Before you begin setting up your Linked Audience, ensure you have:
 
-- [Set up profiles sync](/unify/profiles-sync/profiles-sync-setup/).
+- [Set up Profiles Sync](/unify/profiles-sync/profiles-sync-setup/).
 - Set up your warehouse permissions using [Snowflake](/docs/unify/linked-profiles/setup-guides/snowflake-setup/).
 - [Ensure someone has set up your data graph](/docs/unify/linked-profiles/data-graph/)
-Workspace Owner or Unify Read-Admin, Entities Admin, and Source Admin permissions.
+- Workspace Owner or Unify Read-Admin, Entities Admin, and Source Admin [roles in Segment](/docs/segment-app/iam/roles/).
 
 ## Setting up Linked Audiences
 
-To set up your linked audience, complete the following steps:
+To set up your Linked Audience, complete the following steps:
 
-- [Step 1: Build a linked audience](#step-1-build-a-linked-audience)
+- [Step 1: Build a Linked Audience](#step-1-build-a-linked-audience)
 - [Step 2: Activate your Linked Audiences](#step-2-activate-your-linked-audience)
-- [Step 3: Enable your linked audience](#step-3-enable-your-linked-audience)
+- [Step 3: Enable your Linked Audience](#step-3-enable-your-linked-audience)
 - [Step 4: Confirm the payload in your destination](#step-4-confirm-the-payload-in-your-destination)
 
 ## Step 1: Build a Linked Audience
 
-Linked Audiences allows you to filter based on properties such as [profile traits](/docs/unify/#enrich-profiles-with-traits), [relational data](/docs/glossary/#sql) mapped to the [Data Graph](/docs/unify/linked-profiles/data-graph/), [events](/docs/glossary/#event), and existing [audiences](/docs/glossary/#audience).
+Linked Audiences allows you to filter based on properties like [profile traits](/docs/unify/#enrich-profiles-with-traits), [relational data](/docs/glossary/#sql) mapped to the [Data Graph](/docs/unify/linked-profiles/data-graph/), [events](/docs/glossary/#event), and existing [audiences](/docs/glossary/#audience).
 
 ![Choose your audience conditions](/docs/engage/images/conditions.png)
 
@@ -45,7 +45,7 @@ To build a Linked Audience:
 **Note:** if you cannot select **Linked audience**, ensure you’ve [set up your Data Graph](/docs/unify/linked-profiles/data-graph/) in Unify.
 4. Select the event conditions on which to build your audience.
 5. Click **Preview** to view your audience selection and see a count of audience members who meet the criteria.
-6. When your audience is complete and accurate, click Next.
+6. When your audience is complete and accurate, click **Next**.
 7. Enter an audience name and description to identify this configuration.
 Optionally, select a folder to add this Audience.
 8. Click **Create Audience**.
@@ -63,7 +63,7 @@ These steps include:
 
 ### Step 2a: Connecting to a Destination
 
-[Destinations](/docs/connections/destinations/) are the business tools or apps that Segment forwards your data to. Adding a Destination allows you to act on your data and learn more about your customers in real time. To fully take advantage of Linked Audiences, you must connect and configure at least one Destination.
+[Destinations](/docs/connections/destinations/) are the business tools or apps that Segment forwards your data to. Adding a destination allows you to act on your data and learn more about your customers in real time. To fully take advantage of Linked Audiences, you must connect and configure at least one destination.
 
 Before you can connect your Linked Audience to any Destination, ensure it has been [configured as a Destination](/connections/destinations/catalog/).
 
@@ -73,33 +73,33 @@ Before you can connect your Linked Audience to any Destination, ensure it has be
 
 ### Step 2b: Select your Destination Actions
 
-The [Destination Actions](/docs/connections/destinations/actions/) framework allows you to see and control how Segment sends the event data it receives from your sources, to actions-based destinations. Each Action in a destination lists the event data it requires, and the event data that is optional.
+The [Destination Actions](/docs/connections/destinations/actions/) framework allows you to see and control how Segment sends the event data it receives from your sources to actions-based destinations. Each Action in a destination lists the event data it requires, and the event data that is optional.
 
-Segment displays available actions based on the Destination you've connected with your Linked Audience.
+Segment displays available actions based on the destination you've connected to your Linked Audience.
 
 Select the Destination Action to call when the event happens, then click **Next**.
 
-### Step 2c: Define how and when to trigger an event to your Destination
+### Step 2c: Define how and when to trigger an event to your destination
 
-Configure how and when events are produced with each audience run. You can choose the entities referenced in the audience builder to trigger an event off of. 
+Configure how and when events are produced with each audience run. Select the entities referenced in the audience builder to act as a trigger for your events. 
 
 ### Step 2d: Configure the event
 
-After you select an action, Segment attempts to automatically configure the data fields that will be sent to the Destination. You can review and adjust these settings before enabling this event.
+After you select an action, Segment attempts to automatically configure the data fields that will be sent to the destination. You can review and adjust these settings before enabling this event.
 
 ## Step 3: Enable your Linked Audience
 
-After building your Linked Audience, you'll be redirected to the Audience Overview page. By default, the audience is disabled so that it does not start computing until you're ready. To enable your audience:
+After building your Linked Audience, you'll be redirected to the Audience Overview page. Segment automatically disables your audience so that it does not start computing until you're ready. To enable your audience:
 
 Select the **Enabled** toggle, then select **Enable audience**.
 
-You can trigger a compute for your audience if you want to send events to your Destination without waiting for the next scheduled compute run. To do so, select **Compute Now**. This triggers a compute for the audience (where the audience conditions run on your data warehouse) and sends events downstream.
+You can trigger a compute for your audience if you want to send events to your destination without waiting for the next scheduled compute run. To do so, select **Compute Now**. This triggers a compute for the audience (where the audience conditions run on your data warehouse) and sends events downstream.
 
-## Step 4: Confirm the payload in your Destination
+## Step 4: Confirm the payload in your destination
 
-Linked Audiences sends events to your Destination after Segment computes the audience.
+Linked Audiences sends events to your destination after Segment computes the audience.
 
-To confirm your Destination is receiving events, Segment recommends that you log in to your Destination and perform one of the following:
+To confirm your destination is receiving events, Segment recommends that you log in to your destination and perform one of the following:
 
 - Monitor the event activity
 - Search for the `UserID` or `Event Name` (for example, `Entity Added`)
