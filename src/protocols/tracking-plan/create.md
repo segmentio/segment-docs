@@ -51,7 +51,6 @@ To download a Tracking Plan:
 The columns in the Tracking Plan CSV file corresponds to the Tracking Plan UI options. For example:
 
 * **Allowed Property Values**: In the Tracking Plan UI, when the property type is 'String', you have the option to add a list of permitted values.
-
 * **Enum Values**: When the property type is 'Enum', you have the option to add a list of permitted values.
 
 
