@@ -423,7 +423,7 @@ Another way to think of this scenario would be:
 Here's how you could do that in Segment's query language:
 
 ```sql
-event(‘Shoes Bought’).where( property(‘price’) >= 100 ).within(7 days).count() >= 1
+event('Shoes Bought').where( property('price') >= 100 ).within(7 days).count() >= 1
 ```
 
 #### Bought and returned
@@ -435,10 +435,10 @@ This example collects:
 - and the user performed the `Shoes Returned` event at least once, five days after the `Shoes Bought` event
 
 ```sql
-event(‘Shoes Bought’).where( 
-property(‘price’) >= trait(‘avg_spend’)
+event('Shoes Bought').where( 
+property('price') >= trait('avg_spend')
 AND 
-event(‘Shoes Returned’).within(parent: 5 days).count() >= 1 
+event('Shoes Returned').within(parent: 5 days).count() >= 1 
 ).within(30 days).count() >= 1
 ```
 
@@ -447,7 +447,7 @@ event(‘Shoes Returned’).within(parent: 5 days).count() >= 1
 This example collects all users who did not perform the `Shoes Bought` event at least once and don't have a `total_spend` trait with a value greater than `200`:
 
 ```sql
-NOT ( event(‘Shoes Bought’).count() >= 1 AND trait(‘total_spend’) > 200 )
+NOT ( event('Shoes Bought').count() >= 1 AND trait('total_spend') > 200 )
 ```
 
 #### Bought with minimum total spend
@@ -455,7 +455,7 @@ NOT ( event(‘Shoes Bought’).count() >= 1 AND trait(‘total_spend’) > 200 
 This example collects all accounts where all associated users performed the `Shoes Bought` event at least once and have a `total_spend` trait greater than `200`: 
 
 ```sql
-ALL ( event(‘Shoes Bought’).count() >= 1 AND trait(‘total_spend’) > 200 )
+ALL ( event('Shoes Bought').count() >= 1 AND trait('total_spend') > 200 )
 ```
 
 #### No users bought at least once
@@ -463,7 +463,7 @@ ALL ( event(‘Shoes Bought’).count() >= 1 AND trait(‘total_spend’) > 200 
 This example collects all accounts where no associated users performed the `Shoes Bought` event at least once:
 
 ```sql
-ALL NOT event(‘Shoes Bought’).count() >= 1
+ALL NOT event('Shoes Bought').count() >= 1
 ```
 
 #### Any users bought at least once
@@ -471,7 +471,7 @@ ALL NOT event(‘Shoes Bought’).count() >= 1
 This example collects all accounts where any associated users performed the `Shoes Bought` event at least once:
 
 ```sql
-ANY event(‘Shoes Bought’).count() >= 1
+ANY event('Shoes Bought').count() >= 1
 ```
 
 ### Computed Traits
@@ -487,7 +487,7 @@ Another way to think of this would be:
 Here's how you could do that in Segment's query language:
 
 ```sql
-event(‘Shoes Bought’).within(30 days).avg(property(‘spend’))
+event('Shoes Bought').within(30 days).avg(property('spend'))
 ```
 
 #### Calculate minimum spend 
@@ -495,7 +495,7 @@ event(‘Shoes Bought’).within(30 days).avg(property(‘spend’))
 This example calculates the minimum spend for each user, based on all `Shoes Bought` events, where the price was greater than `100` and the brand was `My_Brand`:
 
 ```sql
-event(‘Shoes Bought’).where( property(‘price’) > 100 AND property(“brand”) = ‘My Brand’ ).min(property(‘spend’))
+event('Shoes Bought').where( property('price') > 100 AND property('brand') = 'My Brand' ).min(property('spend'))
 ```
 
 #### Calculate first seen spend
