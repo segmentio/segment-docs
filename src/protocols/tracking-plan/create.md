@@ -52,11 +52,8 @@ The columns in the Tracking Plan CSV file corresponds to the Tracking Plan UI op
 
 * **Allowed Property Values**: In the Tracking Plan UI, when the property type is 'String', you have the option to add a list of permitted values.
 
-![1](https://github.com/segmentio/segment-docs/assets/47340158/f9923d04-51a0-4de6-ba5b-ca529ebd1362)
-
 * **Enum Values**: When the property type is 'Enum', you have the option to add a list of permitted values.
 
-![2](https://github.com/segmentio/segment-docs/assets/47340158/eed9b75b-09ba-4ca7-88f9-4883a61f2a66)
 
 Once you've downloaded a Tracking Plan, you can [upload it](#upload-a-tracking-plan) as a template for a new Tracking Plan or use it to make changes to an existing Tracking Plan.
 
