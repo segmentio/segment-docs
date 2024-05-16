@@ -118,7 +118,7 @@ Now, create a new user by executing the following SQL command, replacing the pub
 
 ``` sql
 CREATE USER SEGMENT_USER 
-  DEFAULT_ROLE = "SEGMENT"
+  DEFAULT_ROLE = SEGMENT
   RSA_PUBLIC_KEY = 'MIIBIjANBgkqh...'
   RSA_PUBLIC_KEY_FP = 'enter the passphrase you created';
 GRANT ROLE "SEGMENT" TO USER "SEGMENT_USER";
@@ -221,6 +221,9 @@ After configuring your Snowflake resources, connect them to Segment.
   If you selected Key pair as your authentication method: 
   - **Private key**: Upload your private key (stored in .p8 format) that you created in [Step 4: Create a user for Segment](#step-4-create-user-for-segment)
   - **Passphrase** _(Optional)_ : If you created an encrypted key, enter the passphrase you created in [Step 4: Create a user for Segment](#step-4-create-user-for-segment)
+
+  > info "Segment supports uploading one key at a time"
+  > Although you can create up to two keys in Snowflake, Segment only supports authenticating with one key at a time. To change the key that is in Segment, return to your Snowflake destination's settings and upload a new key in the **Private Key** field.  
   
   If you selected Password as your authentication method:
   - **Password**: The password that you set in [Step 4: Create a user for Segment](#step-4-create-user-for-segment)
@@ -242,6 +245,8 @@ At this time, the Segment Snowflake destination is not compatible with Snowflake
 ### Key pair authentication
 
 Segment recommends that you authenticate with your Snowflake warehouse using key-pair authentication. Key-pair authentication uses PKCS#8 private keys, which are typically exchanged in the PEM base64-encoded format. 
+
+Although you can create up to two keys in Snowflake, Segment only supports authenticating with one key at a time. To change the key that is in Segment, return to your Snowflake destination's settings and upload a new key in the **Private Key** field.
 
 ### Auto Suspend and Auto Resume
 
