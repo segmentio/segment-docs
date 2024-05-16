@@ -89,7 +89,7 @@ GRANT CREATE SCHEMA ON DATABASE "SEGMENT_EVENTS" TO ROLE "SEGMENT";
 Create the user that Segment uses to connect to your warehouse. You can create a user that authenticates with a key pair, or you can create a user that authenticates using a password. Segment recommends creating a user that will authenticate with an encrypted key pair.
 
 #### Create a user that authenticates with a key pair
-If you are creating a user that will use a key pair to authenticate, you first must create a public key, and then can create a new user. 
+If you are creating a user that will use a key pair to authenticate, you first must create a public key and then can create a new user. 
 
 ##### Generate a key
 
@@ -114,7 +114,7 @@ After you've created the public key, save the file to a local directory.
 
 ##### Generate a new user and assign the key to them
 
-Now, create a new user by executing the following SQL command, replacing the public key value with the key you previously generated. If you generated an unencrypted key, omit the `RSA_PUBLIC_KEY_FP` value, as it is only required for encrypted keys.
+Now, create a new user by executing the following SQL command, replacing the public key value with the key you previously generated. If you generated an unencrypted key, omit the `RSA_PUBLIC_KEY_FP` value, as it is only required for users with encrypted keys.
 
 ``` sql
 CREATE USER SEGMENT_USER 
@@ -305,6 +305,6 @@ Queuing - you can use a different Warehouse for Segment, or use the recommendati
 
 ![sync schedule image](/docs/connections/destinations/catalog/images/syncsched.png)
 
-### I'm running into a "JWT token is invalid" error. What do I do?
+### I'm encountering a "JWT token is invalid" error. What do I do?
 
 For more information about troubleshooting a `JWT token is invalid` error, see Snowflake's [Key Pair Authentication: Troubleshooting](https://docs.snowflake.com/user-guide/key-pair-auth-troubleshooting){:target="_blank”} documentation. 
