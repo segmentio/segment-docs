@@ -51,7 +51,7 @@ To build a Linked Audience:
 5. Click **Preview** to view your audience selection and see a count of audience members who meet the criteria.
 6. When your audience is complete and accurate, click **Next**.
 7. Enter an audience name and description to identify this configuration.
-Optionally, select a folder to add this Audience.
+Optionally, select a folder to add this audience.
 8. Click **Create Audience**.
 
 ## Step 2: Activate your Linked Audience
@@ -65,7 +65,7 @@ These steps include:
 - [Step 2c: Defining how and when to trigger an event to your Destination](#step-2c-define-how-and-when-to-trigger-an-event-to-your-destination)
 - [Step 2d: Configuring the event payload](#step-2d-configure-the-event)
 
-### Step 2a: Connecting to a Destination
+### Step 2a: Connecting to a destination
 
 [Destinations](/docs/connections/destinations/) are the business tools or apps that Segment forwards your data to. Adding a destination allows you to act on your data and learn more about your customers in real time. To fully take advantage of Linked Audiences, you must connect and configure at least one destination.
 
