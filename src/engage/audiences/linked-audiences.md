@@ -68,7 +68,7 @@ These steps include:
 Before you can connect your Linked Audience to any Destination, ensure it has been [configured as a Destination](/connections/destinations/catalog/).
 
 1. From the audience overview page, select **Add destination**.
-2. Select the event Destination from the list of pre-connected choices.
+2. Select a destination from the catalog.
 3. Click **Configure data to send to destination**.
 
 ### Step 2b: Select your Destination Actions
