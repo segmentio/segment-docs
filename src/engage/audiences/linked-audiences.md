@@ -9,7 +9,11 @@ hidden: true
 > info "Linked Audiences is in public beta"
 > Linked Audiences is in public beta, and Segment is actively working on this feature. Some functionality may change before it becomes generally available.
 
-With Linked Audiences, you can build an audience from the relational data you've defined in your [Data Graph](/docs/unify/linked-profiles/data-graph/), activate profile audiences, or send relational data to your source.
+Linked Audiences allows you to build a warehouse first solution that powers individualized customer experiences using the relational data you've defined in your [Data Graph](/docs/unify/linked-profiles/data-graph/). You can:
+
+- Preserve rich relationships between all the data in your warehouse by creating connections with any entity data back to your audience profile.
+- Build advanced audience segments that include the rich context needed for personalization downstream.
+- Use a low code builder, enabling marketers to activate warehouse data without having to wait for data pull requests before launching campaigns to targeted audiences.
 
 To learn more about specific use cases you can set up with Linked Audiences, see the [Linked Audiences Use Cases](/docs/engage/audiences/linked_audiences/linked-audiences-use-cases/) topic.
 
