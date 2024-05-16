@@ -500,13 +500,14 @@ Segment's data pipeline applies Destination Filters before invoking Insert Funct
 
 There is an 120-Character limit for the insert function display name.
 
-##### Why does the Event Delivery tab show "Unsupported Event Type" errors for events supported by the destination after enabling the insert function?
+##### Why does the Event Delivery tab show "Unsupported Event Type" errors for events supported by the destination after I enabled an insert function?
 
-This error occurs because your insert function code might not be handling all event types (page, track, identify, alias, group) that are supported by the destination. When these unlisted events pass through the function, they are rejected with the "Unsupported Event Type" error.
+This error occurs because your insert function code might not be handling all event types (Page, Track, Identify, Alias, Group) that your destination supports. When these unlisted events pass through the function, they are rejected with the "Unsupported Event Type" error.
 
-To resolve this, ensure your insert function includes handlers for all expected event types and returns the event object for each. Here’s an example of how you can structure your insert function to handle all event types:
+To resolve this, verify your insert function includes handlers for all expected event types and returns the event object for each. Here’s an example of how you can structure your insert function to handle all event types:
 
-```async function onTrack(event, settings) {
+```
+async function onTrack(event, settings) {
     //Return event to handle page event OR Your existing code for track event
     return event;
 }
