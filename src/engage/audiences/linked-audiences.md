@@ -69,7 +69,7 @@ These steps include:
 
 [Destinations](/docs/connections/destinations/) are the business tools or apps that Segment forwards your data to. Adding a destination allows you to act on your data and learn more about your customers in real time. To fully take advantage of Linked Audiences, you must connect and configure at least one destination.
 
-Before you can connect your Linked Audience to any Destination, ensure it has been [configured as a Destination](/connections/destinations/catalog/).
+**Note:** Ensure your [destination has been enabled]((/connections/destinations/catalog/) in Segment before you begin the steps below. 
 
 1. From the audience overview page, select **Add destination**.
 2. Select a destination from the catalog.
