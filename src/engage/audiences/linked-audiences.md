@@ -15,7 +15,7 @@ Linked Audiences allows you to build a warehouse first solution that powers indi
 - Build advanced audience segments that include the rich context needed for personalization downstream.
 - Use a low code builder, enabling marketers to activate warehouse data without having to wait for data pull requests before launching campaigns to targeted audiences.
 
-To learn more about specific use cases you can set up with Linked Audiences, see the [Linked Audiences Use Cases](/docs/engage/audiences/linked_audiences/linked-audiences-use-cases/) topic.
+To learn more about specific use cases you can set up with Linked Audiences, see the [Linked Audiences Use Cases](/docs/engage/audiences/linked-audiences-use-cases/) topic.
 
 ## Prerequisites
 
