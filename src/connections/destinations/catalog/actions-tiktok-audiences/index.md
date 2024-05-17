@@ -53,8 +53,6 @@ Send Engage audiences to an existing TikTok audience segment or create a new aud
 
 The setup is complete and the audience will start syncing to TikTok. The audience will appear in your [TikTok Ads Manager](https://www.tiktok.com/business/en-US/solutions/ads-manager){:target="_blank"} account under **Assets > Audiences**. Please note that it can take 24-48 hours for users to appear in TikTok.
 
-To sync additional audiences from your Engage space, create a separate mapping in the TikTok Audiences destination. Navigate to **Connections > Destinations**, search and select the TikTok Audiences destination, and follow steps 7-11 above.
-
 ### Connect the TikTok Audiences (_Legacy_) destination
 
 > info ""
