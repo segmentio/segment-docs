@@ -70,7 +70,7 @@
 </ul>
 {% endunless %}
 </div>
-{% unless page.hide-cmodes %}
+{% unless page.hide-cmodes or page.engage %}
 <div class="qi-content">
 <h6>Connection Modes <a href="/docs/connections/destinations/#connection-modes"><img src="/docs/images/help.svg"/></a></h6>
 <table>
@@ -97,6 +97,11 @@
 </table>
 </div>
 {% endunless %}
+{% endif %}
+{% if page.engage == true %}
+<div>
+<b>This destination is only compatible with <a href="/docs/engage">Twilio Engage</a>.</b>
+</div>
 {% endif %}
 {% if destinationInfo.partnerOwned == true %}
 <div>

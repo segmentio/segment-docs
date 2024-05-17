@@ -159,6 +159,20 @@ const isCatalogItemHidden = (itemURL) => {
   }
 };
 
+const engageDestinations = (itemURL) => {
+  try {
+    const catalogPath = path.resolve('src', itemURL, 'index.md');
+    if (fs.existsSync(catalogPath)) {
+      const f = fm(fs.readFileSync(catalogPath, 'utf8'));
+      if (f.attributes.engage) return true;
+    }
+    return false;
+  } catch (e) {
+    console.log(error);
+    return false;
+  }
+};
+
 const sanitize = (text) => {
   const regex = /(<[^\/a].*?>)/ig;
   result = text.replace(regex, "`$1`");
@@ -173,3 +187,4 @@ exports.getConnectionModes = getConnectionModes;
 exports.isCatalogItemHidden = isCatalogItemHidden;
 exports.sanitize = sanitize;
 exports.doesCatalogItemExist = doesCatalogItemExist;
+exports.engageDestinations = engageDestinations;
