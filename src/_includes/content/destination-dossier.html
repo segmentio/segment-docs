@@ -55,6 +55,7 @@
    {% if connectionModes.device.web == true or connectionModes.device.mobile == true or connectionModes.device.server == true %} <li>In Device-mode, refer to it as <strong>{{previous_names | first}}</strong> in the <a href="/docs/guides/filtering-data/#filtering-with-the-integrations-object">Integrations object</a> </li>{%endif%}
   {% endif %}
   {% if destinationInfo.status == "PUBLIC_BETA" %}<li>This destination is in <span class="release-pill">Beta</span></li>{% endif %}
+  {% if page.engage == true %}<li>This destination is <b>only</b> compatible with <a href="/docs/engage">Twilio Engage</a>.</li>{% endif %}
 </ul>
 {% if components.size > 0%}
 {% unless page.hide-components %}
@@ -97,11 +98,6 @@
 </table>
 </div>
 {% endunless %}
-{% endif %}
-{% if page.engage == true %}
-<div>
-<b>This destination is only compatible with <a href="/docs/engage">Twilio Engage</a>.</b>
-</div>
 {% endif %}
 {% if destinationInfo.partnerOwned == true %}
 <div>
