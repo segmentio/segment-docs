@@ -24,36 +24,13 @@ To add your warehouse as a source:
 1. Navigate to **Connections > Sources** and select the **Reverse ETL** tab in the Segment app.
 2. Click **+ Add Reverse ETL source**.
 3. Select the source you want to add. 
-4. Follow the corresponding setup guide for your Reverse ETL source.
-
-<div class="destinations-catalog">
-  <div class="destinations-catalog__section">
-    <div class="flex flex--wrap waffle waffle--xlarge">
-      {% assign warehouses = site.data.catalog.warehouse.items | sort: "display_name" %}
-      {% for warehouse in warehouses %}
-        {% if warehouse.categories contains "RETL" %}
-          <div class="flex__column flex__column--6">
-            <a class="thumbnail-integration flex flex--middle" href="/docs/connections/reverse-etl/reverse-etl-source-setup-guides/{{ warehouse.slug }}-setup/">
-              <div class="thumbnail-integration__content">
-                <div class="flex flex--wrap flex--middle waffle waffle--xlarge@medium">
-                  <div class="flex__column flex__column--12 flex__column--2@medium thumbnail-integration__logo-wrapper">
-                    {% if warehouse.mark.url != '' %}
-                      <img class="thumbnail-integration__logo image" alt="{{ warehouse.display_name }}" src="{{ warehouse.mark.url }}" />
-                    {% else %}
-                      <img class="thumbnail-integration__logo image" alt="{{ warehouse.display_name }}" src="{{ warehouse.logo.url }}" />
-                    {% endif %}
-                  </div>
-                  <h5 class="flex__column flex__column--12 flex__column--10@medium">{{ warehouse.display_name }}</h5>
-                </div>
-              </div>
-            </a>
-          </div>
-        {% endif %}
-      {% endfor %}
-    </div>
-  </div>
-</div>
-
+4. Follow the corresponding setup guide for your Reverse ETL source:
+  - [Azure Reverse ETL setup guide](/docs/connections/reverse-etl/reverse-etl-source-setup-guides/azure-setup)
+  - [BigQuery Reverse ETL setup guide](/docs/connections/reverse-etl/reverse-etl-source-setup-guides/bigquery-setup)
+  - [Databricks Reverse ETL setup guide](/docs/connections/reverse-etl/reverse-etl-source-setup-guides/databricks-setup)
+  - [Postgres Reverse ETL setup guide](/docs/connections/reverse-etl/reverse-etl-source-setup-guides/postgres-setup)
+  - [Redshift Reverse ETL setup guide](/docs/connections/reverse-etl/reverse-etl-source-setup-guides/redshift-setup)
+  - [Snowflake Reverse ETL setup guide](/docs/connections/reverse-etl/reverse-etl-source-setup-guides/snowflake-setup)
 
 After you add your data warehouse as a source, you can [add a model](#step-2-add-a-model) to your source.
 
