@@ -1,6 +1,5 @@
 ---
 title: Verify Destination Connection Modes
-published: false
 hidden: true
 tests:
 - test-1:
@@ -100,7 +99,21 @@ tests:
     cloud:
       web: false
       mobile: true
-      server: true 
+      server: true
+- test-8:
+  name: Test 8
+  cases:
+    - Actions HubSpot (Web) 
+    - 1Flow Web (Actions)
+  reference:
+    device:
+      web: true
+      mobile: false
+      server: false
+    cloud:
+      web: false
+      mobile: false
+      server: false  
 ---
 Use this page to verify that the static table at the top of each section matches the API generated tables below it. Any mismatches indicate a change in the API that requires further research to determine impact to the main Connection Modes table [here](docs/connections/destinations/cmodes-compare/).
 
