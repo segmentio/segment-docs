@@ -2,13 +2,9 @@
 title: ConfigCat Source
 ---
 
-> (delete after reading) Include a 1-2 sentence introduction to your company and the value it provides to customers - updating the name and hyperlink. Please leave the utm string unchanged.
-
 [ConfigCat](https://configcat.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners){:target="_blank”} is a feature flag and remote configuration service that empowers developers to control and customize the functionality of their applications. With ConfigCat, you can easily toggle features on and off, alter their settings, and roll out updates to specific users or groups. Targeting is supported through attributes, percentage-based rollouts, and segmentation. ConfigCat is available for all major programming languages and frameworks.
 
 This is an [Event Cloud Source](/docs/sources/#event-cloud-sources) which can not only export data into your Segment warehouse, but can also federate the exported data into your other enabled Segment Destinations.
-
-> (delete after reading) Update your company name and support email address.
 
 This source is maintained by ConfigCat. For any issues with the source, [contact their Support team](mailto:support@configcat.com).
 
