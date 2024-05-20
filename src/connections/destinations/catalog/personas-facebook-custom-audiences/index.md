@@ -4,6 +4,7 @@ strat: facebook
 hide-boilerplate: true
 redirect_from: '/connections/destinations/catalog/personas-facebook-ads/'
 id: 5a4d24dcc5836400017188f6
+engage: true
 ---
 ## Overview
 
