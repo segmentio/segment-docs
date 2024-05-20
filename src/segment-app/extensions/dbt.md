@@ -36,7 +36,7 @@ Follow these steps to connect the Git repository that stores your dbt Models:
 
 1. In your Segment Workspace, navigate to **Settings > Extensions**.
 2. Click **Set up Git sync**.
-3. On the **Configure service credentials** page, select a service and protocol, add your SSH private key, then click **Next**.
+3. On the **Configure service credentials** page, select a service and protocol, add your SSH private key or GitHub token, then click **Next**.
 4. In the **Connect source** window, select a Reverse ETL warehouse source from the dropdown, then click **Save**.
 
 After you've saved your setup, you can configure your Git repository's settings to your needs by changing the repository, branch, dbt version, default schema, and project path.

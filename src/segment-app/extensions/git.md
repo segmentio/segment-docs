@@ -13,9 +13,11 @@ Follow these steps to set up Git sync:
 
 1. In your Segment Workspace, navigate to **Settings > Extensions**.
 2. Click **Set up Git sync**.
-3. On the **Configure service credentials** page, select a service and protocol, add your SSH private key, then click **Next**.
+3. On the **Configure service credentials** page, select a service and protocol, add your SSH private key or GitHub token, then click **Next**.
 
 ## Working with Git syncs
+
+The Git sync extension syncs [Connections](/docs/connections/)([Sources](/docs/connections/sources/) and [Destinations](/docs/connections/destinations/)) from Segment to your Git repository. 
 
 After you set up the Git sync extension for the first time, Segment performs an initial sync that sends source and destination information in your Segment Workspace to the Git repository you connected. 
 
