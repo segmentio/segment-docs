@@ -45,7 +45,7 @@ Learn more about the the system that powers Reverse ETL, the mappings that power
     {% include components/reference-button.html
       href="/docs/connections/reverse-etl/observability"
       title="Reverse ETL Observability"
-      description="View the state of your Reverse ETL syncs and get alerted when things go wrong"
+      description="View the state of your Reverse ETL syncs and get alerted when things go wrong."
     %}
   </div>
 
@@ -53,7 +53,7 @@ Learn more about the the system that powers Reverse ETL, the mappings that power
     {% include components/reference-button.html
       href="/docs/connections/reverse-etl/mappings"
       title="Reverse ETL Mappings"
-      description="Supported objects and arrays along with ways to manage your syncs"
+      description="Supported objects and arrays along with ways to manage your syncs."
     %}
   </div>
 
@@ -61,7 +61,7 @@ Learn more about the the system that powers Reverse ETL, the mappings that power
     {% include components/reference-button.html
       href="/docs/connections/reverse-etl/system"
       title="Reverse ETL System"
-      description="Reference material about system limits and how Segment detects data changes"
+      description="Reference material about system limits and how Segment detects data changes."
     %}
   </div>
 </div>
