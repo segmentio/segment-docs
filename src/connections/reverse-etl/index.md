@@ -38,7 +38,7 @@ Use Reverse ETL when you want to:
 
 ## Learn more
 
-Learn more about the the system that powers Reverse ETL, the mappings that power the flow of data to your downstream destinations, and observability tools you can use to manage your syncs.
+Learn more about the system that powers Reverse ETL, the mappings that power the flow of data to your downstream destinations, and observability tools you can use to manage your syncs.
 
 <div class="flex flex--wrap gutter gutter--large">
   <div class="flex__column flex__column--12 flex__column--4@medium">
