@@ -7,7 +7,7 @@ const {
   getConnectionModes,
   isCatalogItemHidden,
   sanitize,
-  doesCatalogItemExist,
+  doesCatalogItemExist
 } = require('./utilities.js');
 
 require('dotenv').config();
