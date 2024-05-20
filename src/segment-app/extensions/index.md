@@ -10,4 +10,4 @@ Extensions integrate third-party tools into your existing Segment workspace to h
 During public beta, Segment offers the following extensions:
 
 - [dbt models and dbt Cloud](/docs/segment-app/extensions/dbt), which lets you sync models with dbt Labs.
-- [Git sync](/docs/segment-app/extensions/dbt), which you can use to manage versioning and track changes in your Segment workspace.
+- [Git sync](/docs/segment-app/extensions/git), which you can use to manage versioning and track changes in your Segment workspace.

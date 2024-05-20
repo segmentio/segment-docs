@@ -17,7 +17,7 @@ Follow these steps to set up Git sync:
 
 ## Working with Git syncs
 
-The Git sync extension syncs [Connections](/docs/connections/)([Sources](/docs/connections/sources/) and [Destinations](/docs/connections/destinations/)) from Segment to your Git repository. 
+The Git sync extension syncs [Connections](/docs/connections/) ([Sources](/docs/connections/sources/) and [Destinations](/docs/connections/destinations/)) from Segment to your Git repository. 
 
 After you set up the Git sync extension for the first time, Segment performs an initial sync that sends source and destination information in your Segment workspace to the Git repository you connected. 
 
