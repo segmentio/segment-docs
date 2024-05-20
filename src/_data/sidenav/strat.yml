@@ -21,8 +21,8 @@ sections:
     title: Adobe Target Cloud Mode destination
   - path: /connections/destinations/catalog/marketo-v2
     title: Marketo destination
-  - path: /connections/destinations/catalog/marketo-static-lists
-    title: Marketo Static Lists destination (Personas)
+  - path: /connections/destinations/catalog/actions-marketo-static-lists/
+    title: Marketo Static Lists (Actions) destination
   - path: /connections/sources/catalog/cloud-apps/marketo
     title: Marketo cloud source
 
