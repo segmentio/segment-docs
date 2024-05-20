@@ -1,5 +1,5 @@
 ---
-title: dbt Integration
+title: dbt Extension
 ---
 
 Segment's dbt integration lets you use [Reverse ETL](/docs/connections/reverse-etl/) with your existing dbt labs models and syncs to help centralize model management and versioning, reduce redundancies, and run CI checks to prevent breaking changes.
