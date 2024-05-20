@@ -49,6 +49,9 @@ You can also use this page to [enable destination insert functions](#enable-the-
 
 ## Code the destination insert function
 
+> info ""
+> To prevent "Unsupported Event Type" errors, ensure your insert function handles all event types (page, track, identify, alias, group) that are expected to be sent to the destination. It is highly recommended to [test the function](https://segment.com/docs/connections/functions/insert-functions/#test-the-destination-insert-function) with each event type to confirm they are being handled as expected.
+
 Segment invokes a separate part of the function (called a "handler") for each event type that you send to your destination insert function.
 
 > info ""
@@ -496,6 +499,42 @@ Segment's data pipeline applies Destination Filters before invoking Insert Funct
 ##### Why am I receiving a 500 Internal Error when saving the same of the destination insert function?
 
 There is an 120-Character limit for the insert function display name.
+
+##### Why does the Event Delivery tab show "Unsupported Event Type" errors for events supported by the destination after I enabled an insert function?
+
+This error occurs because your insert function code might not be handling all event types (Page, Track, Identify, Alias, Group) that your destination supports. When these unlisted events pass through the function, they are rejected with the "Unsupported Event Type" error.
+
+To resolve this, verify your insert function includes handlers for all expected event types and returns the event object for each. Here’s an example of how you can structure your insert function to handle all event types:
+
+```
+async function onTrack(event, settings) {
+    //Return event to handle page event OR Your existing code for track event
+    return event;
+}
+
+async function onPage(event, settings) {
+    //Return event to handle page event OR Your existing code for track event
+    return event;
+}
+
+async function onIdentify(event, settings) {
+    //Return event to handle page event OR Your existing code for track event
+    return event;
+}
+
+async function onAlias(event, settings) {
+    //Return event to handle page event OR Your existing code for track event
+    return event;
+}
+
+async function onGroup(event, settings) {
+  //Return event to handle page event OR Your existing code for track event
+    return event;
+}
+
+// Ensure that all expected event types are included in your function
+```
+By including handlers for all the major event types, you ensure that all supported events are processed correctly, preventing the "Unsupported Event Type" error. Always test your updated code before implementing it in production.
 
 {% comment %}
 
