@@ -34,7 +34,7 @@ To set up the dbt extension, you'll need:
 
 Follow these steps to connect the Git repository that stores your dbt Models:
 
-1. In your Segment Workspace, navigate to **Settings > Extensions**.
+1. In your Segment workspace, navigate to **Settings > Extensions**.
 2. Click **Set up Git sync**.
 3. On the **Configure service credentials** page, select a service and protocol, add your SSH private key or GitHub token, then click **Next**.
 4. In the **Connect source** window, select a Reverse ETL warehouse source from the dropdown, then click **Save**.
@@ -47,7 +47,7 @@ You can also use dbt Cloud to schedule Reverse ETL syncs after a dbt Cloud job s
 
 To set up dbt Cloud:
 
-1. In your Segment Workspace, navigate to **Settings > Extensions**.
+1. In your Segment workspace, navigate to **Settings > Extensions**.
 2. Click **Manage dbt Cloud**.
 3. Add your dbt Cloud API key, and, optionally, a custom subdomain. Click **Save**.
 
@@ -59,7 +59,7 @@ After you set up dbt, Segment runs an initial sync to load models from your conn
 
 After you've successfully set up dbt with a warehouse and connected to your Git repository, you can select dbt models for use with Reverse ETL by following these steps:
 
-1. In your Segment Workspace, navigate to **Connections > Sources** and select the Reverse ETL tab. 
+1. In your Segment workspace, navigate to **Connections > Sources** and select the Reverse ETL tab. 
 2. Click **+Add Reverse ETL source** , select your source, then click **Add Model**.
 3. Click **dbt Models** as your modeling method, then select and preview a model from the dbt model dropdown.
 4. Add a primary key, then click **Preview your model**. 
