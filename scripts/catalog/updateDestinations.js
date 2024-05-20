@@ -121,7 +121,6 @@ const updateDestinations = async () => {
         name: destination.name,
         slug,
         hidden: isCatalogItemHidden(url),
-        engage: engageDestinations(url),
         endpoints,
         regions,
         url,
