@@ -3,7 +3,7 @@ title: Reverse ETL System
 beta: false 
 ---
 
-<!--- TODO: write an intro for this page--->
+View reference information about how Segment detects data changes in your warehouse and the rate and usage limits associated with Reverse ETL. 
 
 ## Record diffing
 Reverse ETL computes the incremental changes to your data directly within your data warehouse. The Unique Identifier column is used to detect the data changes, such as new, updated, and deleted records.

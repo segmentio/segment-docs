@@ -44,24 +44,24 @@ Learn more about the the system that powers Reverse ETL, the mappings that power
   <div class="flex__column flex__column--12 flex__column--4@medium">
     {% include components/reference-button.html
       href="/docs/connections/reverse-etl/observability"
-      title="Observability"
-      description="View the state of your Reverse ETL syncs and get alerts when things go wrong"
+      title="Reverse ETL Observability"
+      description="View the state of your Reverse ETL syncs and get alerted when things go wrong"
     %}
   </div>
 
   <div class="flex__column flex__column--12 flex__column--4@medium">
     {% include components/reference-button.html
       href="/docs/connections/reverse-etl/mappings"
-      title="Mappings"
-      description="Supported objects/arrays and ways to manage your syncs"
+      title="Reverse ETL Mappings"
+      description="Supported objects and arrays along with ways to manage your syncs"
     %}
   </div>
 
   <div class="flex__column flex__column--12 flex__column--4@medium">
     {% include components/reference-button.html
       href="/docs/connections/reverse-etl/system"
-      title="System"
-      description="Technical details about how Reverse ETL works"
+      title="Reverse ETL System"
+      description="Reference material about system limits and how Segment detects data changes"
     %}
   </div>
 </div>

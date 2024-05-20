@@ -1,9 +1,9 @@
 ---
-title: Mappings
+title: Reverse ETL Mappings
 beta: false 
 ---
 
-Learn more about supported object and array values in your mappings and how to reset or replay your syncs. 
+Learn which mapping fields support object and array values in your mappings and how you can reset or replay your syncs. 
 
 ## Supported object and arrays 
 
@@ -78,8 +78,6 @@ To reset a sync:
 2. Select **Reset sync**. 
 3. Select the checkbox that you understand what happens when a sync is reset.
 4. Click **Reset sync**.
-
-### Automatic retry handling
 
 ## Replays
 You can choose to replay syncs. To replay a specific sync, contact [friends@segment.com](mailto:friends@segment.com). Keep in mind that triggering a replay resyncs all records for a given sync.

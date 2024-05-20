@@ -3,7 +3,7 @@ title: Reverse ETL Observability
 beta: false 
 ---
 
-With the Sync history tab, you can view the status of your data extractions and see details about syncs with your warehouse. 
+Use Segment's sync history and email alert features to get better insights about the status of your Reverse ETL syncs. 
 
 ## Sync history
 Check the status of your data extractions and see details of your syncs. Click into failed records to view additional details on the error, sample payloads to help you debug the issue, and recommended actions.
