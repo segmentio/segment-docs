@@ -5,7 +5,7 @@ title: Enable with OAuth
 Enable with OAuth, supported with the [Config API](/docs/api/config-api), allows partners to build seamless flows for customers to implement and enable integrations within their workspace. 
 
 > info ""
-> The option to create OAuth applications with Segment is no longer available. The "Enable with OAuth" feature is a legacy option, compatible only with Destinations developed on Segment's original developer center. If you're interested in this feature for new Destinations, please let us know at partner-support@segment.com.
+> The ability to create new OAuth applications with Segment is no longer available. The "Enable with OAuth" feature is a legacy option, compatible only with Destinations developed on Segment's original developer center. If you're interested in this feature for new Destinations, please let us know at partner-support@segment.com.
 
 ## Concepts
 
