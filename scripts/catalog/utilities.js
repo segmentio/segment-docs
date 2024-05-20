@@ -159,7 +159,6 @@ const isCatalogItemHidden = (itemURL) => {
   }
 };
 
-
 const sanitize = (text) => {
   const regex = /(<[^\/a].*?>)/ig;
   result = text.replace(regex, "`$1`");

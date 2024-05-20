@@ -8,7 +8,6 @@ const {
   isCatalogItemHidden,
   sanitize,
   doesCatalogItemExist,
-  engageDestinations,
 } = require('./utilities.js');
 
 require('dotenv').config();
