@@ -2,14 +2,14 @@
 title: Git Sync Extension
 ---
 
-Segment's Git extension lets you manage versioning by syncing changes you make to Sources and Destinations from your Segment Workspace to a Git repository.
+Segment's Git extension lets you manage versioning by syncing changes you make in Sources and Destinations from your Segment Workspace to a Git repository.
 
 > info ""
-> Extensions, including Segment's dbt integration, is currently in public beta and is governed by Segment's [First Access and Beta Preview Terms](https://www.twilio.com/en-us/legal/tos){:target="_blank"}.
+> Extensions, including Segment's Git sync integration, is currently in public beta and is governed by Segment's [First Access and Beta Preview Terms](https://www.twilio.com/en-us/legal/tos){:target="_blank"}.
 
 ## Set up Git sync
 
-Follow these steps to connect set up Git sync:
+Follow these steps to set up Git sync:
 
 1. In your Segment Workspace, navigate to **Settings > Extensions**.
 2. Click **Set up Git sync**.

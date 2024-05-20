@@ -39,7 +39,7 @@ Follow these steps to connect the Git repository that stores your dbt Models:
 3. On the **Configure service credentials** page, select a service and protocol, add your SSH private key, then click **Next**.
 4. In the **Connect source** window, select a Reverse ETL warehouse source from the dropdown, then click **Save**.
 
-After you've saved your setup, you can configure your Git repository's settings to your needs by changing the selecting the repository, branch, dbt version, default schema, and project path.
+After you've saved your setup, you can configure your Git repository's settings to your needs by changing the repository, branch, dbt version, default schema, and project path.
 
 ### dbt Cloud setup
 
@@ -48,7 +48,7 @@ You can also use dbt Cloud to schedule Reverse ETL syncs after a dbt Cloud job s
 To set up dbt Cloud:
 
 1. In your Segment Workspace, navigate to **Settings > Extensions**.
-2. Click **Manage dbt CLoud**.
+2. Click **Manage dbt Cloud**.
 3. Add your dbt Cloud API key, and, optionally, a custom subdomain. Click **Save**.
 
 ### Model syncs
