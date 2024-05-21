@@ -30,6 +30,9 @@ To set up the Segment BigQuery connector:
 
 After you've added BigQuery as a source, you can [add a model](/docs/connections/reverse-etl#step-2-add-a-model).
 
+> info "BigQuery Reverse ETL sources support Segment's dbt extension"
+> If you have an existing dbt account with a Git repository, you can use [Segment's dbt extension](/docs/segment-app/extensions/dbt/) to centralize model management and versioning, reduce redundancies, and run CI checks to prevent breaking changes.
+
 ## Constructing your own role or policy
 When you construct your own role or policy, Segment needs the following permissions:
 

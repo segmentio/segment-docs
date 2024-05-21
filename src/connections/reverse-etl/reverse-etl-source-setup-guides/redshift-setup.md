@@ -5,7 +5,10 @@ redirect_from:
   - '/reverse-etl/redshift-setup/'
 ---
 
-Set up Redshift as your Reverse ETL source. 
+Set up Redshift as your Reverse ETL source.
+
+> info "Redshift Reverse ETL sources support Segment's dbt extension"
+> If you have an existing dbt account with a Git repository, you can use [Segment's dbt extension](/docs/segment-app/extensions/dbt/) to centralize model management and versioning, reduce redundancies, and run CI checks to prevent breaking changes.
 
 To set up Redshift with Reverse ETL: 
 1. Log in to Redshift and select the Redshift cluster you want to connect with Reverse ETL.

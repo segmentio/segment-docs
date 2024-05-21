@@ -4,11 +4,10 @@ title: Databricks Reverse ETL Setup
 
 Set up Databricks as your Reverse ETL source. 
 
-At a high level, when you set up Databricks for Reverse ETL, the configured service-principal needs read permissions for any resources (databases, schemas, tables) the query needs to access. Segment keeps track of changes to your query results with a managed schema (`__SEGMENT_REVERSE_ETL`), which requires the configured service-principal to allow write permissions for that schema.
+At a high level, when you set up Databricks for Reverse ETL, the configured service-principal needs read permissions for any resources (databases, schemas, tables) the query needs to access. Segment keeps track of changes to your query results with a managed schema (`__SEGMENT_REVERSE_ETL`), which requires the configured service-principal to allow write permissions for that schema. Segment supports only OAuth (M2M) authentication. To generate a client ID and Secret, follow the steps listed in Databricks' [OAuth machine-to-machine (M2M) authentication](https://docs.databricks.com/en/dev-tools/auth/oauth-m2m.html){:target="_blank"} documentation.
 
-> info ""
-> Segment supports only OAuth (M2M) authentication. To generate a client ID and Secret, follow the steps listed in Databricks' [OAuth machine-to-machine (M2M) authentication](https://docs.databricks.com/en/dev-tools/auth/oauth-m2m.html){:target="_blank"} documentation.
-
+> info "Databricks Reverse ETL sources support Segment's dbt extension"
+> If you have an existing dbt account with a Git repository, you can use [Segment's dbt extension](/docs/segment-app/extensions/dbt/) to centralize model management and versioning, reduce redundancies, and run CI checks to prevent breaking changes.
 
 ## Required permissions
 * Make sure the service principal you use to connect to Segment has permissions to use that warehouse. In the Databricks console go to **SQL warehouses** and select the warehouse you're using. Navigate to **Overview > Permissions** and make sure the service principal you use to connect to Segment has *can use* permissions.
