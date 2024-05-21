@@ -5,7 +5,6 @@ beta: true
 hidden: true
 redirect_from: 
     - '/unify/linked-profiles/linked-audiences-use-cases'
-hidden: false
 ---
 
 Below are some example use cases to help you learn more about Linked Audiences.

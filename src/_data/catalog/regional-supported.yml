@@ -124,6 +124,15 @@ sources:
       - us
     endpoints:
       - us
+  - id: FOWuS0UQmP
+    display_name: Blip
+    hidden: false
+    slug: blip
+    url: connections/sources/catalog/cloud-apps/blip
+    regions:
+      - us
+    endpoints:
+      - us
   - id: lglFhNcZ9z
     display_name: Bluedot
     hidden: false
