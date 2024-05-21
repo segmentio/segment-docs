@@ -255,3 +255,6 @@ Segment recommends using the `$` operator when you deal with array properties. H
 ### How do I populate multiple items off a list for an `equals one of` condition? **
 The audience builder accepts CSV and TSV lists.
 
+### How does the historical data flag work?
+Including historical data lets you take past information into account. You can data only exclude historical data for real-time audiences. For batch audiences, Segment includes historical data by default.
+
