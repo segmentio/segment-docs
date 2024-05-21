@@ -9,6 +9,9 @@ Set up Snowflake as your Reverse ETL source.
 
 At a high level, when you set up Snowflake for Reverse ETL,  the configured user/role needs read permissions for any resources (databases, schemas, tables) the query needs to access. Segment keeps track of changes to your query results with a managed schema (`__SEGMENT_REVERSE_ETL`), which requires the configured user to allow write permissions for that schema.
 
+> info "Snowflake Reverse ETL sources support Segment's dbt extension"
+> If you have an existing dbt account with a Git repository, you can use [Segment's dbt extension](/docs/segment-app/extensions/dbt/) to centralize model management and versioning, reduce redundancies, and run CI checks to prevent breaking changes.
+
 ## Set up guide
 Follow the instructions below to set up the Segment Snowflake connector. Segment recommends you use the `ACCOUNTADMIN` role to execute all the commands below.
 
