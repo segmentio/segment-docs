@@ -20,7 +20,7 @@ Log in to Snowflake with a user that has admin privileges to provide Segment Lin
 
 Segment requires the following settings to connect to your Snowflake warehouse.
 
-![Connect Snowflake to the Data Graph](/docs/unify/images/snowflake-setup.png?nf_resize=fit&w=901&h=957)
+<img src="/docs/unify/images/snowflake-setup.png" alt="AConnect Snowflake to the Data Graph" width="901"/>
 
 - **Account ID**: The Snowflake account ID that uniquely identifies your organization account.
 - **Database Name**: The only database that Segment requires write access to in order to create tables for internal bookkeeping. This database is referred to as `segment_connection_db` in the script below.
