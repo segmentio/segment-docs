@@ -44,7 +44,7 @@ Free | 500K | Upgrade to the Teams plan in the Segment app by navigating to **Se
 Teams | 1 million | Contact your sales representative to upgrade your plan to Business.
 Business | 50 x the number of [MTUs](/docs/guides/usage-and-billing/mtus-and-throughput/#what-is-an-mtu) <br>or .25 x the number of monthly API calls | Contact your sales rep to upgrade your plan.
 
-If you have a non-standard or high volume usage plan, you may have unique Reverse ETL limits or custom pricing.
+If you have a non-standard or high volume usage plan, you may have unique Reverse ETL limits or custom pricing. To see your Reverse ETL limits in the Segment app, select **Settings** then click **Usage & Billing**.
 
 ### Configuration limits
 
