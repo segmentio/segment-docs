@@ -68,7 +68,6 @@ Learn more about the system that powers Reverse ETL, the mappings that power the
 
 ## More Segment resources
 
-<div class="double">
 {% include components/reference-button.html
   icon="guides.svg"
   href="https://segment.com/blog/reverse-etl/"
@@ -82,4 +81,3 @@ Learn more about the system that powers Reverse ETL, the mappings that power the
   title="Customer story: MongoDB"
   description="Learn how MongoDB used Reverse ETL to connect the work of analytics teams to downstream marketing and sales tools to deliver just-in-time communicates that increased customer satisfaction and engagement."
 %}
-</div>
