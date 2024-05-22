@@ -188,6 +188,8 @@ Google doesn't currently support passing certain reserved fields to the Google A
 
 The Google Analytics 4 [debug mode](https://support.google.com/analytics/answer/7201382?hl=en){:target="_blank"} only works with a client-side implementation through gtag.js, Google Tag Manager, or Firebase. Because Segment's Google Analytics 4 Cloud integration is server-side and uses the Measurement Protocol API, debug mode is not supported.
 
+Though a server-side implementation you can instead use Google's `/debug` endpoint which is documented [here]([url](https://developers.google.com/analytics/devguides/collection/protocol/ga4/validating-events?client_type=gtag#:~:text=Protocol%20Validation%20Server-,/debug/mp/collect,-All%20other%20request)). To do this, simply run a test with the event you're concerned with through the [Event Tester]([url](https://segment.com/docs/connections/test-connections/)). From there, copy the `Request from Segment` you see there which is the payload that Segment attempts to send to Google. Once you have that you can use a tool like Postman to send that payload to Google's `/debug` endpoint. Doing so usually gives good feedback around what may be wrong with the payload in terms of Google's requirements. 
+
 ### Mobile data
 
 To achieve complete reporting, Google recommends use of their Firebase SDKs to send mobile data to Google Analytics 4. To assist in your implementation, Segment has a [Firebase destination](/docs/connections/destinations/catalog/firebase) available for mobile analytics. For more information on linking Google Analytics 4 properties to Firebase, see [Google Analytics 4 Firebase integration](https://support.google.com/analytics/answer/9289234?hl=en){:target="_blank"}.
