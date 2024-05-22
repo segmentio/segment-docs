@@ -21,7 +21,7 @@ To learn more about specific use cases you can set up with Linked Audiences, see
 
 Before you begin setting up your Linked Audience, ensure you have:
 
-- [Set up Profiles Sync](/unify/profiles-sync/profiles-sync-setup/).
+- [Set up Profiles Sync](/docs/unify/profiles-sync/profiles-sync-setup/).
 - Set up your warehouse permissions using [Snowflake](/docs/unify/linked-profiles/setup-guides/snowflake-setup/).
 - [Ensure someone has set up your data graph](/docs/unify/linked-profiles/data-graph/)
 - Workspace Owner or Unify Read-Admin, Entities Admin, and Source Admin [roles in Segment](/docs/segment-app/iam/roles/).
@@ -47,12 +47,28 @@ To build a Linked Audience:
 2. Select **+ New audience > Audience**.
 3. On the **Select Audience Type** screen, select **Linked audience**, then click **Next**.
 **Note:** if you cannot select **Linked audience**, ensure you’ve [set up your Data Graph](/docs/unify/linked-profiles/data-graph/) in Unify.
-4. Select the event conditions on which to build your audience.
+4. Select the [profiles conditions](#linked-audiences-profiles-conditions) on which to build your audience.
 5. Click **Preview** to view your audience selection and see a count of audience members who meet the criteria.
 6. When your audience is complete and accurate, click **Next**.
 7. Enter an audience name and description to identify this configuration.
 Optionally, select a folder to add this audience.
 8. Click **Create Audience**.
+
+### Linked Audience profiles conditions 
+
+As you're building your Linked Audience, you can choose from the following profiles conditions:
+
+| Profiles Conditions     | Description                           |
+|---------------------------|---------------------------------------|
+| associated with an entity   | Creates a condition that filters profiles associated with entity relationships defined in the [Data Graph](/docs/unify/linked-profiles/data-graph/). With this condition, you can traverse the full nested entity relationship and filter your audience on entity column values. 
+Note: you can only create nested entity conditions up to four levels in depth. For example, an entity condition that queries for relationships between Profiles, Accounts, Credit Cards, and Transactions has four levels of depth.       |
+| not associated with an entity   | Creates a condition that filters profiles that are not associated with entity relationships defined in the [Data Graph](/docs/unify/linked-profiles/data-graph/). 
+| with profile trait     | Creates a condition that filters profiles with a specific trait. |
+| without profile trait     | Creates a condition that filters profiles without a specific trait. |
+| part of an audience     | Creates a condition that filters profiles that are part of an existing audience. |
+| not part of an audience     | Creates a condition that filters profiles that are not part of an existing |
+| that performed event         | Creates a condition that filters profiles that have a specific event in their event history. You can also filter on event property values.|
+| that did not performed event         | Creates a condition that filters profiles that do not have a specific event in their event history. You can also filter on event property values.|
 
 ## Step 2: Activate your Linked Audience
 
@@ -69,7 +85,7 @@ These steps include:
 
 [Destinations](/docs/connections/destinations/) are the business tools or apps that Segment forwards your data to. Adding a destination allows you to act on your data and learn more about your customers in real time. To fully take advantage of Linked Audiences, you must connect and configure at least one destination.
 
-**Note:** Ensure your [destination has been enabled]((/connections/destinations/catalog/) in Segment before you begin the steps below. 
+**Note:** Ensure your [destination has been enabled](/connections/destinations/catalog/) in Segment before you begin the steps below. 
 
 1. From the audience overview page, select **Add destination**.
 2. Select a destination from the catalog.
@@ -86,6 +102,14 @@ Select the Destination Action to call when the event happens, then click **Next*
 ### Step 2c: Define how and when to trigger an event to your destination
 
 Configure how and when events are produced with each audience run. Select the entities referenced in the audience builder to act as a trigger for your events. 
+
+Event Selection                 |Definition                                                                                                                                                                                               |Examples                                                                                                                                                                                                                                                                              
+--------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Profile enters audience         |Send a Track event when a profile matches the audience condition.                                                                                                                                        |Send a congratulatory email when a traveler qualifies for premium status with a mileage program.<br>Send a discount to all customers with a particular product on their wishlist.                                                                                                     
+Profile exits audience          |Send a Track event when a profile no longer matches the audience condition.                                                                                                                              |Send an email to credit card owners to confirm that their credit cards have been paid in full.<br>Send a confirmation to a patient when they have completed all their pre-screening forms.                                                                                            
+Entity enters audience          |Send a Track event when an entity condition associated with a profile matches the audience condition. With this event, you must select the entity that triggers Segment to send the Track event.         |- Send a reminder to a customer when a credit card associated with their profile has an outstanding balance.<br>- Notify a traveler when a flight associated with their profile is delayed.<br>- Notify a customer when a product associated with their profile's wishlist is back in stock.
+Entity exits audience           |- Send a Track event when an entity condition associated with a profile no longer matches the audience condition. With this event, you must select the entity that triggers Segment to send the Track event|Send a confirmation to a customer when a credit card associated with their profile has been paid off.<br>- Send a confirmation to the primary doctor when each of their associated patients completes their annual check up.                                                            
+Profile enters or exits audience|Send an Identify event when a profile's audience membership changes.                                                                                                                                     |Update a user profile in a destination with the most recent audience membership.                                                                   
 
 ### Step 2d: Configure the event
 
