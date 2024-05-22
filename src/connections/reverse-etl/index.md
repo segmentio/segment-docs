@@ -65,3 +65,21 @@ Learn more about the system that powers Reverse ETL, the mappings that power the
     %}
   </div>
 </div>
+
+## More Segment resources
+
+<div class="double">
+{% include components/reference-button.html
+  icon="guides.svg"
+  href="https://segment.com/blog/reverse-etl/"
+  title="What is reverse ETL? A complete guide"
+  description="In this blog from Segment, learn how reverse ETL helps businesses activate their data to drive better decision-making and greater operational efficiency."
+%}
+
+{% include components/reference-button.html
+  icon="projects.svg"
+  href="https://segment.com/customers/mongodb/"
+  title="Customer story: MongoDB"
+  description="Learn how MongoDB used Reverse ETL to connect the work of analytics teams to downstream marketing and sales tools to deliver just-in-time communicates that increased customer satisfaction and engagement."
+%}
+</div>
