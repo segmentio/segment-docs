@@ -2,9 +2,9 @@
 title: Pushwoosh Source
 ---
 
-[Pushwoosh] (https://pushwoosh.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners){:target="_blank”} provides a comprehensive mobile engagement platform, offering advanced push notifications and in-app messaging to enhance customer interactions and retention.
+[Pushwoosh] (https://pushwoosh.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners){:target="_blank”} provides a comprehensive mobile engagement platform, offering advanced push notifications, and in-app messaging to enhance customer interactions and retention.
 
-This is an [Event Cloud Source](/docs/sources/#event-cloud-sources) that can not only export data into your Segment warehouse but also federate the exported data into your other enabled Segment Destinations.
+This is an [Event Cloud Source](/docs/sources/#event-cloud-sources) that can  export data into your Segment warehouse, as well as federate the exported data into your other enabled Segment Destinations.
 
 This source is maintained by Pushwoosh. If you have any issues with it, [contact their Support team](mailto:support@pushwoosh.com)
 
@@ -14,12 +14,12 @@ This source is maintained by Pushwoosh. If you have any issues with it, [contact
 2. Search for "Pushwoosh" in the Sources Catalog, select Pushwoosh, and click **Add Source**.
 3. On the next screen, give the Source a name and configure any other settings.
 
-    - The name is used as a label in the Segment app, and Segment creates a related schema name in your warehouse. The name can be anything, but we recommend using something that reflects the source itself and distinguishes among your environments (e.g., Pushwoosh_Prod, Pushwoosh_Staging, Pushwoosh_Dev).
+    - The name is used as a label in the Segment app, and Segment creates a related schema name in your warehouse. The name can be anything, but Pushwoosh recommends using something that reflects the source itself and distinguishes among your environments (For example: Pushwoosh_Prod, Pushwoosh_Staging, Pushwoosh_Dev).
 
 4. Click **Add Source** to save your settings.
 5. Copy the Write key from the Segment UI.
-6. Log in to your Pushwoosh account and select the Application you want to connect.
-7. Navigate to Settings > 3rd party integration > Segment, click the `Configure` button, and enter your write key from your Segment workspace.
+6. Log in to your Pushwoosh account, and select the Application you want to connect.
+7. Navigate to **Settings > 3rd party integration > Segment**, click the `Configure` button, and enter your write key from your Segment workspace.
 8. List the events you want to export using a `,` delimiter in the `Events` field, or leave it blank if you want to export all events, then click `Apply`.
 
 ## Stream
