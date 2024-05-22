@@ -193,7 +193,6 @@ Non-realtime Engage syncs and Reverse ETL syncs use a process called **bulk batc
 
 The following destinations support bulk batching:
 - [DV360](/docs/connections/destinations/catalog/actions-display-video-360/)
-<!--- I straight up can't find a Facebook Ads desitnation- [Facebook Ads]--->
 - [Google Adwords Remarketing Lists](/docs/connections/destinations/catalog/adwords-remarketing-lists/)
 - [Klayvio (Actions)](/docs/connections/destinations/catalog/actions-klaviyo/)
 - [Pinterest Audiences](/docs/connections/destinations/catalog/pinterest-audiences/)
@@ -201,6 +200,8 @@ The following destinations support bulk batching:
 - [LiveRamp]
 - [The Trade Desk CRM](/docs/connections/destinations/catalog/actions-the-trade-desk-crm/)
 
+> info "You must manually configure bulk batches for Actions destinations"
+> In order to enable bulk batching for the LiveRamp and The Trade Desk CRM destinations, you must set `enable-batching: true` and `batch_size: > 4000`.
 
 ### IP Allowlist 
 
