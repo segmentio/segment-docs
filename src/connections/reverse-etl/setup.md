@@ -62,7 +62,7 @@ To edit your model:
 ## Step 3: Add a destination
 Once you’ve added a model, you need to add a destination. In Reverse ETL, destinations are the business tools or apps you use that Segment syncs the data from your warehouse to.
 
-Reverse ETL supports 30+ destinations: see all destinations listed in the [Reverse ETL catalog](/docs/connections/reverse-etl/reverse-etl-catalog/). If the destination you want to send data to is not listed in the Reverse ETL catalog, use the [Segment Connections Destination](#segment-connections-destination) to send data from your Reverse ETL warehouse to your destination.
+Reverse ETL supports 30+ destinations: see all destinations listed in the [Reverse ETL catalog](/docs/connections/reverse-etl/reverse-etl-catalog/). If the destination you want to send data to is not listed in the Reverse ETL catalog, use the [Segment Connections Destination](/docs/connections/reverse-etl/reverse-etl-catalog/#segment-connections-destination) to send data from your Reverse ETL warehouse to your destination.
 
 Engage users can use the [Segment Profiles Destination](/docs/connections/destinations/catalog/actions-segment-profiles/) to send data from their warehouse to their Reverse ETL destinations. 
 
@@ -106,7 +106,7 @@ To create a mapping:
         * Scheduling multiple extractions to start at the same time inside the same data warehouse causes extraction errors.
 11. Define how to map the record columns from your model to your destination in the **Select Mappings** section.
     * You map the fields that come from your source, to fields that the destination expects to find. Fields on the destination side depend on the type of action selected.
-    * If you're setting up a destination action, depending on the destination, some mapping fields may require data to be in the form of an object or array. See the [supported objects and arrays for mapping](#supported-object-and-arrays).
+    * If you're setting up a destination action, depending on the destination, some mapping fields may require data to be in the form of an object or array. See the [supported objects and arrays for mapping](/docs/connections/reverse-etl/mapping/#supported-object-and-arrays).
 12. *(Optional)* Send a test record to verify the mappings correctly send to your destination.
 13. Click **Create Mapping**.
 14. Select the destination you’d like to enable on the **My Destinations** page under **Reverse ETL > Destinations**.

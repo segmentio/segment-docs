@@ -7,7 +7,7 @@ Learn which mapping fields support object and array values in your mappings and 
 
 ## Supported object and arrays 
 
-When you set up destination actions in Reverse ETL, depending on the destination, some [mapping fields](#step-4-create-mappings) may require data to be in the form of an [object](#object-mapping) or [array](#array-mapping). 
+When you set up destination actions in Reverse ETL, depending on the destination, some [mapping fields](/docs/connections/reverse-etl/setup/#step-4-create-mappings) may require data to be in the form of an [object](/docs/connections/reverse-etl/mapping/#object-mapping) or [array](/docs/connections/reverse-etl/mapping/#array-mapping). 
 
 ### Object mapping
 You can send data to a mapping field that requires object data. An example of object mapping is an `Order completed` model with a `Products` column that’s in object format. 
