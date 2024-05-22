@@ -188,7 +188,13 @@ Google doesn't currently support passing certain reserved fields to the Google A
 
 The Google Analytics 4 [debug mode](https://support.google.com/analytics/answer/7201382?hl=en){:target="_blank"} only works with a client-side implementation through gtag.js, Google Tag Manager, or Firebase. Because Segment's Google Analytics 4 Cloud integration is server-side and uses the Measurement Protocol API, debug mode is not supported.
 
-Though a server-side implementation you can instead use Google's `/debug` endpoint which is documented [here]([url](https://developers.google.com/analytics/devguides/collection/protocol/ga4/validating-events?client_type=gtag#:~:text=Protocol%20Validation%20Server-,/debug/mp/collect,-All%20other%20request)). To do this, simply run a test with the event you're concerned with through the [Event Tester]([url](https://segment.com/docs/connections/test-connections/)). From there, copy the `Request from Segment` you see there which is the payload that Segment attempts to send to Google. Once you have that you can use a tool like Postman to send that payload to Google's `/debug` endpoint. Doing so usually gives good feedback around what may be wrong with the payload in terms of Google's requirements. 
+However, you can use Google's `/debug` endpoint to test your events against Google's Measurement Protocol Validation Server. For more information, see Google's [Validate events](https://developers.google.com/analytics/devguides/collection/protocol/ga4/validating-events?client_type=gtag#:~:text=Protocol%20Validation%20Server-,/debug/mp/collect,-All%20other%20request){:target="_blank”} documentation. 
+
+To validate your events:
+
+1. Run a test through Segment's [Event Tester](/docs/connections/test-connections/) with the event you're concerned about. 
+2. Copy the `Request from Segment` value you see. This is the payload that Segment attempts to send to Google. 3. Use an API testing tool, like Postman, to send that payload to Google's `/debug` endpoint. 
+4. Google's `/debug` endpoint returns a [validation code](https://developers.google.com/analytics/devguides/collection/protocol/ga4/validating-events?client_type=gtag#validation_code){:target="_blank”} and a description of the error. 
 
 ### Mobile data
 
