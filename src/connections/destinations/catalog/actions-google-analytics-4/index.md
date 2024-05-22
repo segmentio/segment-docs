@@ -193,7 +193,8 @@ However, you can use Google's `/debug` endpoint to test your events against Goog
 To validate your events:
 
 1. Run a test through Segment's [Event Tester](/docs/connections/test-connections/) with the event you're concerned about. 
-2. Copy the `Request from Segment` value you see. This is the payload that Segment attempts to send to Google. 3. Use an API testing tool, like Postman, to send that payload to Google's `/debug` endpoint. 
+2. Copy the `Request from Segment` value you see. This is the payload that Segment attempts to send to Google.
+3. 3. Use an API testing tool, like Postman, to send that payload to Google's `/debug` endpoint. 
 4. Google's `/debug` endpoint returns a [validation code](https://developers.google.com/analytics/devguides/collection/protocol/ga4/validating-events?client_type=gtag#validation_code){:target="_blank”} and a description of the error. 
 
 ### Mobile data
