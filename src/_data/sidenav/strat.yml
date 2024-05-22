@@ -199,6 +199,8 @@ sections:
     title: Typewriter for Kotlin
   - path: /connections/sources/catalog/libraries/mobile/kotlin-android/kotlin-android-destination-filters
     title: Destination Filters for Kotlin
+  - path: /connections/sources/catalog/libraries/mobile/kotlin-android/consent
+    title: Consent Management for Kotlin
   - path: /connections/sources/catalog/libraries/mobile/kotlin-android/kotlin-android-faq
     title: FAQs
 
@@ -223,6 +225,8 @@ sections:
     title: Typewriter for Swift
   - path: /connections/sources/catalog/libraries/mobile/apple/swift-destination-filters
     title: Destination Filters for Swift
+  - path: /connections/sources/catalog/libraries/mobile/apple/consent
+    title: Consent Management for Swift
   - path: /connections/sources/catalog/libraries/mobile/apple/ios-17
     title: iOS 17 & Privacy Manifests
 
