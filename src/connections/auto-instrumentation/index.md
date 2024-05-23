@@ -1,5 +1,6 @@
 ---
 title: Auto-Instrumentation
+hidden: true
 ---
 
 Auto-Instrumentation simplifies tracking in your websites and apps by eliminating the need for a traditional Segment instrumentation.
