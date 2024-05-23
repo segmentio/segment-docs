@@ -15,8 +15,11 @@ With just a few lines of code, Auto-Instrumentation handles device tracking for 
 
 ## Overview
 
+
+
 ## How Auto-Instrumentation works
 
 
 ### Privacy
+
 
