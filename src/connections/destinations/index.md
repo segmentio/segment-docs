@@ -183,7 +183,7 @@ You can see the current destination endpoint API success rates and final deliver
 
 ### Batching
 
-Segment uses [stream batching](#stream-batching) for all destinations that require near-realtime data and [bulk batching](#bulk-batching) for non-realtime Engage syncs and Reverse ETL syncs.
+Segment uses [stream batching](#stream-batching) for all destinations that require near-realtime data and [bulk batching](#bulk-batching) for some data flows in our pipeline.
 
 #### Stream batching
 For all destinations, except for non-realtime Engage syncs and Reverse ETL syncs, Segment processes events from your source as they arrive and then flows the data downstream to your destinations in small batches, in a process called **stream batching**. These batches might contain different events between retry attempts, as events in previous batches may have succeeded, failed with a permanent error, or expired. This variability reduces the workload the system processes during partial successes, allows for better per-event handling, and reduces the chance of load-related failures by using variable batch formations.
