@@ -29,12 +29,12 @@ This source is maintained by ConfigCat. For any issues with the source, [contact
 ### Sending feature flag evaluation analytics from ConfigCat to Twilio Segment
 
 1. Log in to the ConfigCat Dashboard and copy the SDK Key for your Config in the specific Environment.
-2. In your application's code **Configure SDKs:**:
+2. In your application's code, **Configure SDKs:**:
     - **ConfigCat SDK:** Initialize with your ConfigCat SDK key.
     - **Segment SDK:** Set up with the Segment Write Key acquired while adding the ConfigCat source in Segment.
 3. **Integrate Feature Flag Evaluations:**
     - During the initialization of the ConfigCat SDK, subscribe to the `flagEvaluated` hook.
-    - Send feature flag evaluation data to Segment using the `featureFlagEvaluated` event name. Include the following parameter:
+    - Send feature flag evaluation data to Segment using the `featureFlagEvaluated` event name. Include the following parameters:
         - `featureFlagKey`: the feature flag's key
         - `value`: the evaluated feature flag's value or Variation ID
         - `variationId` (optional): the evaluated feature flag's Variation ID
@@ -59,7 +59,7 @@ The table below lists events that ConfigCat sends to Segment. These events appea
 
 ## Event Properties
 
-The table below list the properties included in the events listed above.
+The tables below list the properties included in the events listed above.
 
 ### `featureFlagEvaluated` event
 
