@@ -197,7 +197,7 @@ The following destinations support bulk batching:
 - [Klayvio (Actions)](/docs/connections/destinations/catalog/actions-klaviyo/)
 - [Pinterest Audiences](/docs/connections/destinations/catalog/pinterest-audiences/)
 - [Snapchat Audiences](/docs/connections/destinations/catalog/snapchat-audiences/)
-- [LiveRamp]
+- [LiveRamp](/docs/connections/destinations/catalog/actions-liveramp-audiences/)
 - [The Trade Desk CRM](/docs/connections/destinations/catalog/actions-the-trade-desk-crm/)
 
 > info "You must manually configure bulk batches for Actions destinations"
