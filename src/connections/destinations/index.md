@@ -189,7 +189,7 @@ Segment uses [stream batching](#stream-batching) for all destinations that requi
 For all destinations, except for non-realtime Engage syncs and Reverse ETL syncs, Segment processes events from your source as they arrive and then flows the data downstream to your destinations in small batches, in a process called **stream batching**. These batches might contain different events between retry attempts, as events in previous batches may have succeeded, failed with a permanent error, or expired. This variability reduces the workload the system processes during partial successes, allows for better per-event handling, and reduces the chance of load-related failures by using variable batch formations.
 
 #### Bulk batching
-Non-realtime Engage syncs and Reverse ETL syncs use a process called **bulk batching**, which supports batching for destinations that produce between several thousand and a million events at a time. Syncs contain the same events between batches. 
+Some data flows may be able to use a process called **bulk batching**, which supports batching for destinations that produce between several thousand and a million events at a time. Real-time workloads or using a Destination Insert Function may prevent bulk batches from being formed. Batches contain the same events between retries. 
 
 The following destinations support bulk batching:
 - [DV360](/docs/connections/destinations/catalog/actions-display-video-360/)
