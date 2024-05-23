@@ -131,7 +131,7 @@ Segment increases deliverability to destinations using [retries](#retries) and [
 Segment also uses [batching](#batching) to increase deliverability to your destinations. Some destinations have batching enabled by default, and some, like Segment's [Webhook (Actions) Destination](/docs/connections/destinations/catalog/actions-webhook/), let you opt in to batching.
 
 > warning "Event batching might lead to observability loss"
-> While batching does increase event deliverability, you might experience error amplification, as the entire batch fails all events will be marked with the same status. For example, if a batch fails due to one `429` (Rate Limit) error, it might appear in the UI that there was one 429s request failure for each item in the batch.
+> While batching does increase event deliverability, you might experience error amplification, as if the entire batch fails, all events will be marked with the same status. For example, if a batch fails due to one `429` (Rate Limit) error, it might appear in the UI that there was one 429s request failure for each item in the batch.
 
 ### Retries
 
