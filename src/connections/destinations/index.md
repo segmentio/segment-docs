@@ -194,7 +194,7 @@ Non-realtime Engage syncs and Reverse ETL syncs use a process called **bulk batc
 The following destinations support bulk batching:
 - [DV360](/docs/connections/destinations/catalog/actions-display-video-360/)
 - [Google Adwords Remarketing Lists](/docs/connections/destinations/catalog/adwords-remarketing-lists/)
-- [Klayvio (Actions)](/docs/connections/destinations/catalog/actions-klaviyo/)
+- [Klaviyo (Actions)](/docs/connections/destinations/catalog/actions-klaviyo/)
 - [Pinterest Audiences](/docs/connections/destinations/catalog/pinterest-audiences/)
 - [Snapchat Audiences](/docs/connections/destinations/catalog/snapchat-audiences/)
 - [LiveRamp](/docs/connections/destinations/catalog/actions-liveramp-audiences/)
