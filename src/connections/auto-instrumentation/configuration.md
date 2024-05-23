@@ -85,7 +85,7 @@ This interface ensures that every signal inherits essential properties:
 
 ```java
 interface RawSignal<T> {
-    var anonymousId: String    // A unique identifier for the user.
+    var anonymousId: String    // 
     var type: SignalType       // Specifies the signal category.
     var timestamp: String      // The exact time when the signal was generated.
     var index: Int             // An integer representing the signal's position.
@@ -99,10 +99,10 @@ The Signal Type enum defines the different types of signals the SDK can collect:
 
 ```java
 enum SignalType {
-    Interaction,      // User interactions like clicks or touches
+    Interaction,      // User interactions like clicks or touches.
     Navigation,       // Navigation events.
     Network,          // Network requests and responses.
-    LocalData,        // Data loaded from local or other external sources
+    LocalData,        // Data loaded from local or other external sources.
     Instrumentation,  // Events generated from Segment Track/Screen/... events.
     UserDefined       // Custom events defined by the user.
 }
