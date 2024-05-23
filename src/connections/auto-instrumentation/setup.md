@@ -102,6 +102,8 @@ Follow these steps to integrate the Signals SDK into your Kotlin application:
     analytics.add(SignalsComposeTrackingPlugin())
     ```
 
+<!-- PW: Hmmm, no write key in this code? -->
+
 3. (Optional:) If you want to track network activity, configure your OkHttpClient to use the Signals OkHttp3 plugin:
 
     ```kotlin
