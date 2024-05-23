@@ -3,11 +3,16 @@ title: Signals Implementation Guide
 hidden: true
 ---
 
-This guide is a reference to configuring and using signals in the Signals SDK with Auto-Instrumentation.  In this guide, you'll find details on:
+This guide is a reference to configuring and using signals in the Signals SDK with Auto-Instrumentation.  On this page, you'll find details on:
 
 - Setting up and managing signal types in the Signals SDK
 - Creating custom rules to capture and translate signals into actionable analytics events
 - Example rules that you can use as a basis for further customization
+
+This guide assumes that you've already added the Signals SDK to your application. If you haven't yet, see the [Auto-Instrumentation Setup](/docs/connections/auto-instrumentation/setup/) guide for initial setup.
+
+> info "Auto-Instrumentation Pilot"
+> Auto-Instrumentation is currently in pilot and is governed by Segment's [First Access and Beta Preview Terms](https://www.twilio.com/en-us/legal/tos){:target="_blank"}. Segment doesn't recommend Auto-Instrumentation for use in a production environment, as Segment is actively iterating on and improving the user experience.
 
 ## Signals Configuration
 
