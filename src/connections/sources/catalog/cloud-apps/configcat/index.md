@@ -40,7 +40,7 @@ This source is maintained by ConfigCat. For any issues with the source, [contact
         - `variationId` (optional): the evaluated feature flag's Variation ID
         - `userId` (optional): the user object's identifier used during feature flag evaluation
         - `user` (optional): the user object used during feature flag evaluation.
-4. You can find code samples in the [ConfigCat Segment Source documentation](https://configcat.com/docs/integrations/segment#analytics?utm_source=segmentio&utm_medium=docs&utm_campaign=partners){:target="_blank”}.
+    - You can find code samples in the [ConfigCat Segment Source documentation](https://configcat.com/docs/integrations/segment/#analytics){:target="_blank”}.
 
 ## Stream
 
