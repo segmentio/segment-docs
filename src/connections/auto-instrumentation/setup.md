@@ -8,10 +8,10 @@ This guide outlines the steps required to set up the Signals SDK in your applica
 You'll learn how to add Auto-Instrumentation sources, integrate dependencies, and ensure that your setup captures and processes data as intended.  
 
 > info "Auto-Instrumentation Pilot"
->  Auto-Instrumentation is currently in pilot and is governed by Segment's [First Access and Beta Preview Terms](https://www.twilio.com/en-us/legal/tos){:target="_blank"}. Segment doesn't recommend Auto-Instrumentation for use in a production environment, as Segment is actively iterating on and improving the user experience.
+> Auto-Instrumentation is currently in pilot and is governed by Segment's [First Access and Beta Preview Terms](https://www.twilio.com/en-us/legal/tos){:target="_blank"}. Segment doesn't recommend Auto-Instrumentation for use in a production environment, as Segment is actively iterating on and improving the user experience.
 
-> success "Enable Auto-Instrumentation in your workspace"
-> To enable Auto-Instrumentation in your Segment worksapce, reach out to your dedicated account manager.
+> success "Enable Auto-Instrumentation"
+> To enable Auto-Instrumentation in your Segment workspace, reach out to your dedicated account manager.
 
 ## Step 1: Add a source and get its write key
 
@@ -25,7 +25,7 @@ You'll first need to add a source and copy its write key:
 
 ## Step 2: Add dependencies and initialization code
 
-Next, you'll need to add the Signals SDKs to your development environment.
+Next, you'll need to add the Signals SDKs to your Swift and Kotlin development environments.
 
 ### Swift
 
@@ -45,7 +45,7 @@ Follow these steps to integrate the Signals SDK into your Swift application:
 
     // Set up the Signals SDK configuration
     let config = Signals.Configuration(
-        writeKey: "<WRITE_KEY>",          // Replace <WRITE_KEY> with your actual write key
+        writeKey: "<WRITE_KEY>",          // Replace <WRITE_KEY> with the write key you previously copied
         maximumBufferSize: 100,
         useSwiftUIAutoSignal: true,
         useNetworkAutoSignal: true
@@ -102,8 +102,6 @@ Follow these steps to integrate the Signals SDK into your Kotlin application:
     analytics.add(SignalsComposeTrackingPlugin())
     ```
 
-<!-- PW: Hmmm, no write key in this code? -->
-
 3. (Optional:) If you want to track network activity, configure your OkHttpClient to use the Signals OkHttp3 plugin:
 
     ```kotlin
@@ -116,7 +114,7 @@ Follow these steps to integrate the Signals SDK into your Kotlin application:
 
 ## Step 3: Verify and deploy events
 
-Next, you'll need to verify signal emission and create rules to convert those signals into events:
+Next, you'll need to verify signal emission and [create rules](/docs/connections/auto-instrumentation/configuration/#example-rule-implementations) to convert those signals into events:
 
 1. In your Segment workspace, return to **Connections > Auto-Instrumentation** and click on the new source you created. 
 2. Verify that signals appear as expected on the dashboard.
