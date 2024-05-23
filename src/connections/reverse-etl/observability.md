@@ -19,6 +19,9 @@ To check the status of your extractions:
     * The load results - how many successful records were synced as well as how many records were updated, deleted, or are new.
 5. If your sync failed, click the failed reason to get more details on the error and view sample payloads to help troubleshoot the issue.
 
+> info "Segment automatically retries events that were extracted but failed to load"
+> Segment retries events for 14 days following a total or partial sync failure. Before loading the failed records on a subsequent sync, Segment checks for the latest changes in your data to ensure the data loaded into your warehouse isn't stale.    
+
 ## Email alerts
 You can opt in to receive email alerts regarding notifications for Reverse ETL. 
 
