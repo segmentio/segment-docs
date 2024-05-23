@@ -26,11 +26,12 @@ This source is maintained by Pushwoosh. If you have any issues with it, [contact
 
 Pushwoosh uses our stream Source component to send Segment event data. It uses a server-side track method to send data to Segment. These events are then available in any destination that accepts server-side events, and are available in a schema in your data warehouse.
 
-Pushwoosh passes the user identifier as the `user_id` property by default.
+Pushwoosh passes the user identifier as the Segment `userId` property by default, which is equals to Pushwoosh User ID. 
+In other case, if Pushwoosh does not have an associated `userId`, Pushwoosh HWID will be passed as the Segment `anonymousId`.
 
 ## Events
 
-The table below lists events that Pushwoosh sends to Segment. These events appear as tables in your warehouse, and as regular events in other Destinations. Pushwoosh includes the `user_id` if available.
+The table below lists events that Pushwoosh sends to Segment. These events appear as tables in your warehouse, and as regular events in other Destinations. Pushwoosh includes the `userId` if available.
 
 | Event Name         | Description                                     |
 | ------------------ | ----------------------------------------------- |
@@ -47,12 +48,13 @@ The table below lists events that Pushwoosh sends to Segment. These events appea
 
 The table below list the properties included in the events listed above.
 
-| Property Name     | Description                                                |
-| ----------------- | ---------------------------------------------------------- |
-| `message_type`    | Contains the type of message (Push, Email, In-App or SMS)  |
-| `campaign_code`   | Unique identifier of the message campaign                  |
-| `device_type`     | Type of the device                                         |
-| `user_id`         | User associated with the message                           |
+| Property Name     | Description                                                                        |
+| ----------------- | ---------------------------------------------------------------------------------- |
+| `userId`          | User associated with the message                                                   |
+| `anonymousId`     | Pushwoosh key identifier assiged to the device (only sent if there is no `userId`) |
+| `message_type`    | Contains the type of message (Push, Email, In-App or SMS)                          |
+| `campaign_code`   | Unique identifier of the message campaign                                          |
+| `device_type`     | Type of the device                                                                 |
 
  
 
