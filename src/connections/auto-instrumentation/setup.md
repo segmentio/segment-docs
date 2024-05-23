@@ -3,8 +3,15 @@ title: Auto-Instrumentation Setup
 hidden: true
 ---
 
+This guide outlines the steps required to set up the Signals SDK in your applications using Swift or Kotlin.
 
-<!--- something about the SDK -->
+You'll learn how to add Auto-Instrumentation sources, integrate dependencies, and ensure that your setup captures and processes data as intended.  
+
+> info "Auto-Instrumentation Pilot"
+>  Auto-Instrumentation is currently in pilot and is governed by Segment's [First Access and Beta Preview Terms](https://www.twilio.com/en-us/legal/tos){:target="_blank"}. Segment doesn't recommend Auto-Instrumentation for use in a production environment, as Segment is actively iterating on and improving the user experience.
+
+> success "Enable Auto-Instrumentation in your workspace"
+> To enable Auto-Instrumentation in your Segment worksapce, reach out to your dedicated account manager.
 
 ## Step 1: Add a source and get its write key
 
@@ -105,7 +112,6 @@ Follow these steps to integrate the Signals SDK into your Kotlin application:
 
 4. Build and run your app.
 
-
 ## Step 3: Verify and deploy events
 
 Next, you'll need to verify signal emission and create rules to convert those signals into events:
@@ -123,4 +129,10 @@ Segment displays `Rule updated successfully` to verify that it saved your rule.
 
 ## Step 4: Redeploy your application
 
-After you've finiseh
+After you've finished deploying your new rule(s), redeploy your application.
+
+Redeployment ensures that the new rules are active and that your application can generate events from signals.
+
+## Next steps
+
+This guide walked you through initial Signals SDK/Auto-Instrumentation setup. Next, read the [Auto-Instrumentation Signals Implementation Guide](/docs/connections/auto-instrumentation/configuration/), which dives deeper into Signals and offers examples rules.
