@@ -3,6 +3,11 @@ title: Signals Implementation Guide
 hidden: true
 ---
 
+This guide is a reference to configuring and using signals in the Signals SDK with Auto-Instrumentation.  In this guide, you'll find details on:
+
+- Setting up and managing signal types in the Signals SDK
+- Creating custom rules to capture and translate signals into actionable analytics events
+- Example rules that you can use as a basis for further customization
 
 ## Signals Configuration
 
@@ -187,8 +192,114 @@ class LocalDataSignal extends RawSignal<LocalData> {
 
 ### Instrumentation Signals
 
+The SDK collects Instrumentation Signals when [traditional Segment analytics events](/docs/connections/spec/) are invoked:
+
+```java
+enum EventType {
+    Track,    // 
+    Screen,   // 
+    Identify, // 
+    Group,    // 
+    Alias,    // 
+    Unknown   // Any other unspecified event type.
+}
+
+class InstrumentationData {
+    type: EventType      // The type of Segment event.
+    rawEvent: Object?    // Additional details of the event.
+}
+
+class InstrumentationSignal extends RawSignal<InstrumentationData> {
+    type = SignalType.Instrumentation // Sets the signal type to Instrumentation.
+}
+```
+
 ### User-Defined Signals
 
+You can also define your own signals. Use the following example as an implementation guideline:
+
+```java
+interface MyCustomData {
+    var event: String  // A custom event description or identifier.
+}
+
+class MyCustomSignal extends RawSignal<MyCustomData> {
+    type = SignalType.UserDefined // Sets the signal type to User Defined.
+}
+```
 
 ## Example rule implementations
 
+You can use the Signals data definitions on this page to create tracking rules. 
+
+### Example: Identify users
+
+Building off of the screen tracking example, you could create a rule that identifies users:
+
+```javascript
+function detectIdentify(currentSignal) {
+    var loginType;
+    
+    // Check if the signal is related to network activity on a login URL
+    if (currentSignal.type == SignalType.Network && currentSignal.data.url.includes("login")) {
+        loginType = "login";
+    }
+    
+    // If a login type was detected, identify the user
+    if (loginType) {
+        var traits = new Object();
+        traits.loggedIn = true; // Set user status to logged in
+        let loginData = currentSignal.data.data.content; // Extract login data from the signal
+        traits.userName = loginData.userName; // Capture the user's name
+
+        if (loginType === "login") {
+            var userId = loginData.userId; // Get userID from login data
+            analytics.identify(userId, traits); // Identify the user with the Identify call
+        } 
+    }
+}
+
+//...other functions
+
+function processSignal(signal) {
+	//...other functions
+	detectIdentify(signal); // Process the Identify call based on incoming signals
+}
+```
+
+
+### Example: Track `Add to Cart` events
+
+This rule shows how you could implement the core ordering events from [the e-commerce Spec](/docs/connections/spec/ecommerce/v2/#core-ordering-overview):
+
+```javascript
+function trackAddToCart(currentSignal) {
+    // Check if the signal is an interaction with the "Add To Cart" button
+    if (currentSignal.type == SignalType.Interaction && currentSignal.data.title == "Add To Cart") {
+        var properties = new Object(); // Initialize an object to store event properties
+        
+        // Find the network response signal for additional data
+        let network = signals.find(currentSignal, SignalType.Network, (signal) => {
+            return signal.data.action === NetworkAction.Response;
+        });
+
+        if (network) {
+            // Extract and assign product details from the network response
+            properties.price = network.data.data.content.price; // Product price
+            properties.currency = network.data.data.content.currency ?? "USD"; // Currency, defaulting to USD if undefined
+            properties.productId = network.data.data.content.id; // Product ID
+            properties.productName = network.data.data.content.title; // Product name
+        }
+        
+        // Track the "Add To Cart" event with the defined properties
+        analytics.track(currentSignal.data.title, properties);
+    }
+}
+
+//...other functions
+
+function ProcessSignals(signal) {
+    //...other functions
+    trackAddToCart(signal); // Process the "Add To Cart" tracking based on incoming signals
+}
+```
