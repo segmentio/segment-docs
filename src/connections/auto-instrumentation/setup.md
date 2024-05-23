@@ -94,6 +94,7 @@ Follow these steps to integrate the Signals SDK into your Kotlin application:
 
     // Configure and add the Signals plugin
     Signals.configuration = Configuration(
+        writeKey = "<WRITE_KEY>",  // Replace <WRITE_KEY> with the write key you previously copied
         maximumBufferSize = 1000,
         broadcasters = listOf(SegmentBroadcaster(analytics))
     )
