@@ -139,14 +139,27 @@ GRANT ROLE "SEGMENT" TO USER "SEGMENT_USER";
 Before you continue, test and validate the new user and credentials. After you verify the new credentials, you can connect Snowflake to Segment.
 
 #### Test a key pair
-To verify that you've configured the key pair correctly, follow Snowflake's instructions in the [Verify the user's public key fingerprint](https://docs.snowflake.com/en/user-guide/key-pair-auth#verify-the-user-s-public-key-fingerprint){:target="_blank"} documentation. 
+Segment uses [SnowSQL](https://docs.snowflake.com/en/user-guide/snowsql){:target="_blank"} to run these verification steps.
+To install SnowSQL and verify your accounts:
+
+1. Download [SnowSQL](https://docs.snowflake.com/en/user-guide/snowsql){:target="_blank"}
+2. Open the Installer and follow instructions.
+3. When the installation is complete, run the following command, replacing "account" and "user" with your Snowflake Account ID and username:
+
+```
+snowsql -a segment -u <username> -d <Database> -w <warehouse> --private-key-path <path_to_the_rsa_key_encrypted.p8>
+```
+
+For accounts outside the US, the account ID includes the region. You can find your account name from the browser address string.
+
+For example, if your web address is `https://myaccountname.snowflakecomputing.com/console#/internal/worksheet`, your account name would be `myaccountname`.
 
 #### Test a username and password
 Segment uses [SnowSQL](https://docs.snowflake.com/en/user-guide/snowsql){:target="_blank"} to run these verification steps.
 To install SnowSQL and verify your accounts:
 
 1. Download [SnowSQL](https://docs.snowflake.com/en/user-guide/snowsql){:target="_blank"}
-2. Open the Installer and follow instructions
+2. Open the Installer and follow instructions.
 3. When the installation is complete, run the following command, replacing "account" and "user" with your Snowflake Account ID and username:
 
 ```
