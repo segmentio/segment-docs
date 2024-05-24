@@ -28,8 +28,7 @@ This source is maintained by Pushwoosh. If you have any issues with it, [contact
 
 Pushwoosh uses our stream Source component to send Segment event data. It uses a server-side track method to send data to Segment. These events are then available in any destination that accepts server-side events, and are available in a schema in your data warehouse.
 
-Pushwoosh passes the user identifier as the Segment `userId` property by default, which is equals to Pushwoosh User ID. 
-In other case, if Pushwoosh does not have an associated `userId`, Pushwoosh HWID will be passed as the Segment `anonymousId`.
+By default, Pushwoosh passes the Pushwoosh User ID as the Segment userId property. If there is no associated User ID, Pushwoosh will pass the HWID as the Segment anonymousId.
 
 ## Events
 
