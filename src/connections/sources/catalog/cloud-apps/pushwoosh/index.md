@@ -51,8 +51,6 @@ The table below list the properties included in the events listed above.
 
 | Property Name     | Description                                                                        |
 | ----------------- | ---------------------------------------------------------------------------------- |
-| `userId`          | User associated with the message                                                   |
-| `anonymousId`     | Pushwoosh key identifier assiged to the device (only sent if there is no `userId`) |
 | `message_type`    | Contains the type of message (Push, Email, In-App or SMS)                          |
 | `campaign_code`   | Unique identifier of the message campaign                                          |
 | `device_type`     | Type of the device                                                                 |
