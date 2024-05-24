@@ -13,7 +13,7 @@ At a high level, when you set up Snowflake for Reverse ETL, the configured user/
 > Segment now supports key-pair authentication for Snowflake Reverse ETL sources.
 
 ## Set up guide
-Follow the instructions below to set up the Segment Snowflake connector. Segment recommends you use the `ACCOUNTADMIN` role to execute all the commands below, and that you create a user that authenticates with a key pair.
+Follow the instructions below to set up the Segment Snowflake connector. Segment recommends you use the `ACCOUNTADMIN` role to execute all the commands below, and that you create a user that authenticates with an encrypted key pair.
 
 1. Log in to your Snowflake account.
 2. Navigate to *Worksheets*.
@@ -50,16 +50,14 @@ Follow the instructions below to set up the Segment Snowflake connector. Segment
    GRANT USAGE ON DATABASE segment_reverse_etl TO ROLE segment_reverse_etl;
    GRANT CREATE SCHEMA ON DATABASE segment_reverse_etl TO ROLE segment_reverse_etl;
    ```
-6. Enter and run one of the following code snippets below to create the user Segment will use to run queries. Segment recommends creating a user that authenticates using a key pair. 
-
+6. Enter and run one of the following code snippets below to create the user Segment uses to run queries. For added security, Segment recommends creating a user that authenticates using a key pair.
 
    To create a user that authenticates with a key pair, [create a key pair](https://docs.snowflake.com/en/user-guide/key-pair-auth#configuring-key-pair-authentication){:target="_blank”} and then execute the following SQL commands: 
    ``` sql
    -- create user (key-pair authentication)
    CREATE USER segment_reverse_etl_user
    DEFAULT_ROLE = segment_reverse_etl
-   RSA_PUBLIC_KEY = 'MIIBIjANBgkqh...'
-   RSA_PUBLIC_KEY_FP = 'enter the passphrase you created';
+   RSA_PUBLIC_KEY = 'enter your public key';
 
    -- role access
    GRANT ROLE segment_reverse_etl TO USER segment_reverse_etl_user;

@@ -86,17 +86,17 @@ GRANT CREATE SCHEMA ON DATABASE "SEGMENT_EVENTS" TO ROLE "SEGMENT";
 
 ### Step 4: Create a user for Segment
 
-Create the user that Segment uses to connect to your warehouse. You can create a user that authenticates with a key pair, or you can create a user that authenticates using a password. Segment recommends creating a user that will authenticate with an encrypted key pair.
+Create the user that Segment uses to connect to your warehouse. You can create a user that authenticates with a key pair, or you can create a user that authenticates using a password. For enhanced security, Segment recommends creating a user that will authenticate with an encrypted key pair.
 
 #### Create a user that authenticates with a key pair
 If you are creating a user that will use a key pair to authenticate, you first must create a public key and then can create a new user. 
 
-##### Generate a key
+##### Generate keys
 
 To start, open a terminal window and generate a private key by running the following command, replacing `key_name` with the name you'd like to give the key. The command generates a private key in PEM format, and will prompt you to enter a passphrase. Write down or remember this passphrase, as you will need it when creating your Segment user and configuring your destination in the Segment app.
 
 > success ""
-> If you want to generate an unencrypted key, append `-nocrypt` to the end of the command.
+> If you want to generate an unencrypted private key, append `-nocrypt` to the end of the command.
 
 ```
 openssl genrsa 2048 | openssl pkcs8 -topk8 -v2 des3 -inform PEM -out key_name.p8
@@ -114,13 +114,12 @@ After you've created the public key, save the file to a local directory.
 
 ##### Generate a new user and assign the key to them
 
-Now, create a new user by executing the following SQL command, replacing the public key value with the key you previously generated. If you generated an unencrypted key, omit the `RSA_PUBLIC_KEY_FP` value, as it is only required for users with encrypted keys.
+Now, create a new user by executing the following SQL command, replacing the public key value with the key you previously generated.
 
 ``` sql
 CREATE USER SEGMENT_USER 
   DEFAULT_ROLE = SEGMENT
-  RSA_PUBLIC_KEY = 'MIIBIjANBgkqh...'
-  RSA_PUBLIC_KEY_FP = 'enter the passphrase you created';
+  RSA_PUBLIC_KEY = 'enter your public key';
 GRANT ROLE "SEGMENT" TO USER "SEGMENT_USER";
 ```
 
@@ -244,7 +243,7 @@ At this time, the Segment Snowflake destination is not compatible with Snowflake
 
 ### Key pair authentication
 
-Segment recommends that you authenticate with your Snowflake warehouse using key-pair authentication. Key-pair authentication uses PKCS#8 private keys, which are typically exchanged in the PEM base64-encoded format. 
+Segment recommends that you authenticate with your Snowflake warehouse using an encrypted key pair. Key-pair authentication uses PKCS#8 private keys, which are typically exchanged in the PEM base64-encoded format. 
 
 Although you can create up to two keys in Snowflake, Segment only supports authenticating with one key at a time. To change the key that is in Segment, return to your Snowflake destination's settings and upload a new key in the **Private Key** field.
 
