@@ -58,7 +58,7 @@ A user's `anonymousId` changes when any of the following conditions are met.
 - The user clears their cookies _and_ `localstorage`.
 - Your site or app calls [`analytics.reset()`](/docs/connections/sources/catalog/libraries/website/javascript/#reset-or-logout) during in the user's browser session.
 - Your site or app calls `analytics.identify()` with a userId that is different from the current userId.
-- Your site or app is setting ajs_user_id to an empty string or calling `analytics.user().id('')` before calling `analytics.identify()`, which will result in a new `anonymousId` when `analytics.identify()` is called.
+- Your site or app is setting `ajs_user_id` to an empty string or calling `analytics.user().id('')` before calling `analytics.identify()`. This sequence of events will result in a new anonymousId being set when `analytics.identify()` is called.
 
 
 ### Override the Anonymous ID from the Segment snippet
