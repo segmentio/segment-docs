@@ -258,3 +258,7 @@ The audience builder accepts CSV and TSV lists.
 ### How does the historical data flag work?
 Including historical data lets you take past information into account. You can data only exclude historical data for real-time audiences. For batch audiences, Segment includes historical data by default.
 
+### Is it possible to create an Audience based on context.traits within a Track event?
+Traits found within the context.traits of track events are not able to be chosen as conditions in the Audience Builder's Event Properties section.
+
+
