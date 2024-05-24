@@ -32,7 +32,7 @@ By default, Pushwoosh passes the Pushwoosh User ID as the Segment userId propert
 
 ## Events
 
-The table below lists events that Pushwoosh sends to Segment. These events appear as tables in your warehouse, and as regular events in other Destinations. Pushwoosh includes the `userId` if available.
+The table below lists events that Pushwoosh sends to Segment. These events appear as tables in your warehouse, and as regular events in other Destinations.
 
 | Event Name         | Description                                     |
 | ------------------ | ----------------------------------------------- |
