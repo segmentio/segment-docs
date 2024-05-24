@@ -144,7 +144,7 @@ To install SnowSQL and verify your accounts:
 
 1. Download [SnowSQL](https://docs.snowflake.com/en/user-guide/snowsql){:target="_blank"}
 2. Open the Installer and follow instructions.
-3. When the installation is complete, run the following command, replacing "account" and "user" with your Snowflake Account ID and username:
+3. When the installation is complete, run the following command, replacing "account", "username", and "path_to_the_rsa_key_encrypted.p8" with your Snowflake Account ID, username, and path to your private RSA key:
 
 ```
 snowsql -a segment -u <username> -d <Database> -w <warehouse> --private-key-path <path_to_the_rsa_key_encrypted.p8>
