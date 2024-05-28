@@ -41,7 +41,7 @@ The language supports the following syntactic sugar adjustments:
 
 ### Definition type
 
-The definition type (audience or computed trait) determines whether the computation operates at the user or account level. For account-level audiences, you can apply addition functions, including `ANY` (to verify that all underlying users meet the defined conditions) and `ALL` (to check if any of the underlying users meet the defined conditions). 
+The definition type (`USERS` or `ACCOUNTS`) determines whether the computation operates at the user or account level. For account-level audiences, you can apply additional functions, `ANY` (to verify that all underlying users meet the defined conditions) and `ALL` (to check if any of the underlying users meet the defined conditions).
 
 These functions use the association between accounts and users to determine audience membership.
 
