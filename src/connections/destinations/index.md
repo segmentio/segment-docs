@@ -120,7 +120,10 @@ To add a Destination:
 8. Configure the settings and enable your destination on the destination settings page.
 
 [Learn more](/docs/connections/destinations/add-destination/) about what adding a destination entails.
-> Note : **Disabling a destination** If you disable a destination or your destination hasn't yet been enabled, a disabled destination will prevent any data from reaching the destination. For Business-tier customers, [a replay]([url](https://segment.com/docs/guides/what-is-replay/)) can be requested to resend that data from the time the destination was disabled to the time it was re-enabled. Replays can send data to currently disabled destinations. _Please note that some destinations are not compatible with replays after a certain number of days, and is worth checking with Segment’s support team [friends@segment.com](friends@segment.com) for whether that destination allows historical timestamps._
+> note "Disabled destinations do not receive data"
+> If you haven't enabled your destination for the first time after you created it or if you actively disable a destination, Segment prevents any data from reaching the destination. Business Tier customers can request [a Replay]([url](https://segment.com/docs/guides/what-is-replay/)), which resends data from the time the destination was disabled to the time it was re-enabled. Replays can also send data to currently disabled destinations. 
+>
+> Some destinations are not compatible with Replays after a certain period of time. Check with Segment’s support team [friends@segment.com](friends@segment.com) to confirm that your intended destination allows historical timestamps. 
 
 ## Data deliverability
 
