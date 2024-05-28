@@ -87,13 +87,14 @@ Unplanned property omission is only supported for cloud-mode destinations. Unpla
 
 ### Why do I have two different Tracking Plan IDs?
 
-When you access a Tracking Plan, you'll come across two IDs: `tp_` and `rs_`.
+When you access a Tracking Plan, you'll come across two IDs: `tp_` and `rs_`. Segment uses the two IDs to identify your Tracking Plan in the two APIs you can use to manage your workspace: the [Public API](/docs/api/public-api/) and the [Config API](/docs/api/config-api/). 
 
-If you are using Public API, copy the ID that starts with "tp". 
+To view the two IDs for your Tracking Plan, navigate to the Tracking Plan you'd like to view the ID for and select the dropdown next to **Tracking Plan ID**. 
 
-If you are using Config API, copy the ID that starts with "rs". 
+If you're using the Public API, you'll need the ID that starts with `tp_`. 
 
-*Please be aware that the way you access your Tracking Plan determines the slug that is present in the URL.*
+If you're using the Config API, you'll need the ID that starts with `rs`. 
+
 
 ### How do I import events from a Source Schema into a Tracking Plan?
 
