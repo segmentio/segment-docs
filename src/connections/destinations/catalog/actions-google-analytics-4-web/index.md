@@ -192,7 +192,7 @@ To observe this feature, trigger a `Page` call with UTM parameters present in th
 
 ### Pass Custom Event parameters to all events and Custom Item parameters to all recommended Ecommerce events
 
-To pass custom event parameters to all events on the page, navigate to your Set Configuration Mapping, click Show All Fields, and enter any custom Event Parameters, including page_view. Any event parameters that have the same parameter key in Event Mappings will take precedence over what is set in the Set Configuration Mapping. 
+To pass custom event parameters to all events on the page, navigate to your Set Configuration Mapping, click Show All Fields, and enter any custom Event Parameters, including page_view. Keep in mind that any event parameters that have the same parameter key in your other event mappings will take precedence over what is set in the Set Configuration Mapping. 
 
 To send custom item parameters, add the custom item parameter name in mappings where there is a Products array. Register your custom item parameter in the GA4 Admin panel if you would like this value processed in the GA4 UI. You can ONLY add custom item parameters in the Products array. If you add custom item parameters as an Event Parameter, they will be registered as an Event Parameter.
 
