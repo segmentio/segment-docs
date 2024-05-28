@@ -34,4 +34,3 @@ To subscribe to email alerts:
     ------ | -------
     Reverse ETL Sync Failed | Set toggle on to receive notification when your Reverse ETL sync fails. 
     Reverse ETL Sync Partial Success | Set toggle on to receive notification when your Reverse ETL sync is partially successful. 
-
