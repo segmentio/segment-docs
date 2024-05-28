@@ -98,7 +98,7 @@ sources:
       - us
   - id: xNpohElkX2
     display_name: Azure
-    hidden: false
+    hidden: true
     slug: azure
     url: connections/sources/catalog/cloud-apps/azure
     regions:
@@ -120,6 +120,15 @@ sources:
     hidden: true
     slug: bigquery
     url: connections/sources/catalog/cloud-apps/bigquery
+    regions:
+      - us
+    endpoints:
+      - us
+  - id: FOWuS0UQmP
+    display_name: Blip
+    hidden: false
+    slug: blip
+    url: connections/sources/catalog/cloud-apps/blip
     regions:
       - us
     endpoints:

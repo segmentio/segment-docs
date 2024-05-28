@@ -5,7 +5,7 @@ redirect_from:
   - "/engage/audiences/predictive-traits"
 ---
 
-Predictions, Segment's artificial intelligence and machine learning feature, lets you predict the likelihood that users will perform any event tracked in Segment. 
+Predictions, Segment's artificial intelligence and machine learning feature, lets you predict the likelihood that users will perform any event tracked in Segment.
 
 With Predictions, you can identify users with, for example, a high propensity to purchase, refer a friend, or use a promo code. Predictions also lets you predict a user's lifetime value (LTV).
 
@@ -18,26 +18,15 @@ On this page, you'll learn how to build a prediction.
 > warning "Not a HIPAA Eligible Service or PCI Compliant"
 > Agent Copilot and Unified Profiles in Flex aren't HIPAA Eligible Services or PCI compliant and shouldn't be used in Flex or Segment workflows that are subject to HIPAA or PCI.
 
-## Access and build a prediction
-
-To create a prediction, you'll first request access, then build a prediction.
+## Build a prediction
 
 ![The Predictive Trait builder in the Segment UI](../../images/trait_builder.png)
 
-### Request Predictions access
+Follow these steps to build a prediction:
 
-Follow these steps to access Predictions:
-
-1. Navigate to **Engage > Audiences > Computed traits** or **Unify > Traits**. Select **Create computed trait**.
-2. Select **Request Access** to access Predictions.
-
-### Build a prediction
-
-Once your Workspace is enabled for Predictions, follow these steps to build a prediction:
-
-1. In the Trait Builder, select **Predictions**, choose the Trait you want to create, then click **Next**.
-2. Select **Custom Predictive Goal**, **Likelihood to Purchase**, **Predicted Lifetime Value**, or **Likelihood to Churn**.
-4. (For custom Predictive Goals) Add a condition(s) and event(s) to predict. 
+1. In the Trait Builder, click **Predictions**, select the prediction you want to create, then click **Next**..
+- (For custom Predictive Goals) Add a condition(s) and event(s) to predict. 
+- Select the event and (optional) property that you want to use to make a prediction.
 5. Select a time period for the prediction. 
 6. (Optional) In **Include all events**, uncheck any events you don't want Segment to factor into the prediction.
 7. Click **Calculate**. If you're satisfied with the available data, click **Next**.
@@ -66,7 +55,7 @@ When you build a Custom Predictive Goal, you'll first need to select a cohort, o
 
 #### Target event
 
-The target event is the Segment event that you want to predict. In creating a prediction, Segment determines the likelihood of the user performing the target event. Predictions work better when many customers have performed the event.
+The target event is the Segment event that you want to predict. In creating a prediction, Segment determines the likelihood of the user performing the target event. Segment lets you include up to two target events and an event property in your prediction.
 
 #### Data requirements
 

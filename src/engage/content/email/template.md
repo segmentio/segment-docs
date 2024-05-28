@@ -55,7 +55,6 @@ You can send test emails before you include a template in marketing campaigns.
 
 {% endcomment %}
 
-
 > info ""
 > You can also test email templates directly from a [Send an Email step](/docs/engage/journeys/build-journey/#send-an-email) in Journeys.
 
@@ -70,10 +69,8 @@ Engage supports dynamic sending using merge tags. Personalize email content by a
 
 As you configure the template, click **Merge Tags** and select the profile traits to include. Engage inserts the merge tags based on cursor placement.
  
-{% raw %}
-
 > success ""
-> - For all merge tags, you must add a `default` value inside a single quote. For example: `{{profile.traits.traits | default: 'Default'}}`
+> - For all merge tags, you must add a `default` value inside a single quote. For example: {% raw %}`{{profile.traits.traits | default: 'Default'}}`{% endraw %}
 > - Only use variable tags in [liquid sytax](https://liquidjs.com/tags/overview.html){:target="blank"}.
 
 The following table contains a description and some best practices for all fields in the email template. Asterisks indicate required fields.
@@ -99,16 +96,11 @@ You can also add merge tags in the heading or body text as you design an email w
 ### Use liquid statements with an image URL
 
 If you're using the [image content module](/docs/engage/content/email/editor/#add-content-modules) in the Drag and Drop Editor, you can't use liquid statements in the **Image URL** field. 
-{% raw %}
 To use liquid statements with an image, Segment recommends using an [**HTML block**](/docs/engage/content/email/editor/#add-content-modules) with the following syntax: <br>
-`<img src=“{{profile.traits.imageLink | default: '<insert your default URL here>'}}”`, where `profile.traits.imageLink` is an example profile trait representing personalized image links for each recipient. 
-
-{% endraw %}
+{% raw %}`<img src=“{{profile.traits.imageLink | default: '<insert your default URL here>'}}”`{% endraw %}, where `profile.traits.imageLink` is an example profile trait representing personalized image links for each recipient. 
 
 > info ""
 > To learn more about profile traits, visit Segment's [Computed Traits](/docs/unify/traits/computed-traits) and [SQL Traits](/docs/unify/traits/sql-traits/) documentation.
-
-{% endraw %}
 
 ## Include unsubscribe and manage preference links
 
@@ -127,6 +119,9 @@ Learn more about [User Subscriptions](/docs/engage/user-subscriptions/) in Twili
 The manage preference link lets your customers opt in and out of email groups on an individual basis instead of unsubscribing from all your campaigns.
 
 For more information, see [subscription groups](/docs/engage/user-subscriptions/subscription-groups/).
+
+### Arrays and objects in Broadcasts
+Segment doesn't support profile traits in object and array datatypes in [Broadcasts](/docs/engage/campaigns/broadcasts/), but you cam use them in [Journeys](/docs/engage/journeys/).
 
 ## Next steps
 

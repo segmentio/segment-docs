@@ -36,6 +36,10 @@ Use any [server-side library](/docs/connections/sources/#server), which sends r
 
 ### Demo projects
 
+> info ""
+> The following projects are open-source and do not have official Segment support. If you encounter issues, the best way to get help is by opening an issue on the project's GitHub page. 
+> Feel free to clone the repository and adjust the code to suit your unique needs.
+
 One of Segment's Success Engineers wrote an alpha prototype Node.js app for importing data utilizing the HTTP API, which we've included below:
 
 [Example Node.js import application](https://github.com/lambtron/segment-import){:target="_blank"}

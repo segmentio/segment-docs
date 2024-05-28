@@ -3,7 +3,8 @@ title: 'Typewriter v7'
 hidden: true
 ---
 
-Analytics-iOS and Analytics-Android support Typewriter v7. To upgrade to the latest version of Typewriter, upgrade to [Analytics-Swift](/docs/protocols/apis-and-extensions/typewriter/#swift-quickstart) or [Analytics-Kotlin](/docs/protocols/apis-and-extensions/typewriter/#kotlin-quickstart).
+> warning ""
+> Segment does not actively maintain Typewriter v7. Typewriter is available on [Github](https://github.com/segmentio/typewriter/tree/v7.4.1){:target="_blank”} under the MIT license for the open-source community to fork and contribute.
 
 ## Prerequisites
 

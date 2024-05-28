@@ -23,7 +23,7 @@ Redshift performance and storage capacity is a function of cluster size and clus
 
 With BigQuery, you're not constrained by the storage capacity or compute resources of a given cluster. Instead, you can load large amounts of data into BigQuery without running out of memory, and execute complex queries without maxing out CPU.
 
-This is possible because BigQuery takes advantage of distributed storage and networking to separate data storage from compute power. Google's[Colossus distributed file system](https://cloud.google.com/blog/big-data/2016/01/bigquery-under-the-hood) distributes data across many servers in the Google cloud. When you execute a query, the [Dremel query engine](https://cloud.google.com/blog/big-data/2016/01/bigquery-under-the-hood) splits the query into smaller sub-tasks, distributes the sub-tasks to computers across Google data centers, and then re-assembles them into your results.
+This is possible because BigQuery takes advantage of distributed storage and networking to separate data storage from compute power. Google's[Colossus distributed file system](https://cloud.google.com/blog/products/bigquery/bigquery-under-the-hood) distributes data across many servers in the Google cloud. When you execute a query, the [Dremel query engine](https://cloud.google.com/blog/products/bigquery/bigquery-under-the-hood) splits the query into smaller sub-tasks, distributes the sub-tasks to computers across Google data centers, and then re-assembles them into your results.
 
 ## Pricing
 

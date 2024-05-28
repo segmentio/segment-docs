@@ -75,7 +75,7 @@ To enable consent mode for your Google Analytics 4 Cloud destination, you must u
 	2. Go to the **Mappings** tab of the destination.
 	3. Select the mapping you want to edit. 
 	4. Under the **Select mappings** section, find **Ad User Data Consent State**.
-	5. Select the **Event Variables** tab and create an event variable to directly grab the value from the payload. Ensure it translates to `GRANTED` or `DENIED`. You can use an insert function to translate to `GRANTED`or `DENIED` if your consent values are booleans. You can use the replace function if it's a string.
+	5. Select the **Event Variables** tab and create an event variable to directly grab the value from the payload. Ensure it translates to `GRANTED` or `DENIED`. You can use an insert or [replace function](/docs/connections/destinations/actions/#replace-function) to translate other values to `GRANTED`or `DENIED`. 
 	6. Repeat step 5 for **Ad Personalization Consent State**. 
 
 
@@ -188,6 +188,15 @@ Google doesn't currently support passing certain reserved fields to the Google A
 
 The Google Analytics 4 [debug mode](https://support.google.com/analytics/answer/7201382?hl=en){:target="_blank"} only works with a client-side implementation through gtag.js, Google Tag Manager, or Firebase. Because Segment's Google Analytics 4 Cloud integration is server-side and uses the Measurement Protocol API, debug mode is not supported.
 
+However, you can use Google's `/debug` endpoint to test your events against Google's Measurement Protocol Validation Server. For more information, see Google's [Validate events](https://developers.google.com/analytics/devguides/collection/protocol/ga4/validating-events?client_type=gtag#:~:text=Protocol%20Validation%20Server-,/debug/mp/collect,-All%20other%20request){:target="_blank”} documentation. 
+
+To validate your events:
+
+1. Run a test through Segment's [Event Tester](/docs/connections/test-connections/) with the event you're concerned about. 
+2. Copy the `Request from Segment` value you see. This is the payload that Segment attempts to send to Google.
+3. Use an API testing tool, like Postman, to send that payload to Google's `/debug` endpoint. 
+4. Google's `/debug` endpoint returns a [validation code](https://developers.google.com/analytics/devguides/collection/protocol/ga4/validating-events?client_type=gtag#validation_code){:target="_blank”} and a description of the error. 
+
 ### Mobile data
 
 To achieve complete reporting, Google recommends use of their Firebase SDKs to send mobile data to Google Analytics 4. To assist in your implementation, Segment has a [Firebase destination](/docs/connections/destinations/catalog/firebase) available for mobile analytics. For more information on linking Google Analytics 4 properties to Firebase, see [Google Analytics 4 Firebase integration](https://support.google.com/analytics/answer/9289234?hl=en){:target="_blank"}.
@@ -218,4 +227,7 @@ Because [Google's Measurement Protocol API](https://developers.google.com/analyt
 ### Google Optimize Support
 
 The Google Analytics 4 Cloud destination does not support Google Optimize. This destination operates in cloud-mode (sending events from Segment servers to Google Analytics using the Measurement Protocol API), which prevents the required [Optimize SDK](https://support.google.com/optimize/answer/11287798?visit_id=637903946258690719-978290187&rd=1){:target="_blank"} snippet from loading on the page.
+
+### Client/server-side event deduplication 
+Google doesn't offer guidance around how to deduplicate the same event coming in server and client side. As a result, Segment recommends that you not send the same event into Google Analytics 4 from two different locations such that you would expect Google to deduplicate one of the events out of their pipeline. You can [deduplicate user counts](https://support.google.com/analytics/answer/9355949?hl=en){:target="_blank"} using the `User ID` field, but you cannot deduplicate whole events in the Google platform as far as Segment is aware.
 

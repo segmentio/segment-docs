@@ -48,6 +48,12 @@ To download a Tracking Plan:
 4. Open the Download History page by clicking the link in the toast or clicking the **Download History** tab in the top navigation bar.
 5. Once the file status column indicates that the download was successful, click the link in the File column to download your CSV to your computer. If the file status column shows the download has failed, return to the Tracking Plan Overview page or the Tracking Plan page and try the download again.<br/> The Tracking Plan CSV name has the following format:<br/>`workspaceSlug-trackingPlanName--yyyy-mm-dd--hh-mm-utc`
 
+The columns in the Tracking Plan CSV file corresponds to the Tracking Plan UI options. For example:
+
+* **Allowed Property Values**: In the Tracking Plan UI, when the property type is 'String', you have the option to add a list of permitted values.
+* **Enum Values**: When the property type is 'Enum', you have the option to add a list of permitted values.
+
+
 Once you've downloaded a Tracking Plan, you can [upload it](#upload-a-tracking-plan) as a template for a new Tracking Plan or use it to make changes to an existing Tracking Plan.
 
 ## Upload a Tracking Plan
@@ -164,7 +170,7 @@ You can filter the Tracking Plan events by keyword or by label. The applied filt
 Protocols Tracking Plans use [JSON Schemas](https://json-schema.org/){:target="_blank”} to validate Segment event payloads. To support a broader range of validation use-cases, Segment lets you to edit your underlying JSON schema.
 
 > warning ""
-> Editing a JSON schema requires technical expertise. The [JSON schema documentation](https://json-schema.org/understanding-json-schema/index.html){:target="_blank”} and [JSON schema validator](https://www.jsonschemavalidator.net/){:target="_blank”} are helpful resources you can use.
+> Editing a JSON schema requires technical expertise. The [JSON schema documentation](https://json-schema.org/understanding-json-schema){:target="_blank”} and [JSON schema validator](https://www.jsonschemavalidator.net/){:target="_blank”} are helpful resources you can use.
 
 You can edit the JSON schema for each Track event listed in the Tracking Plan, and a common JSON schema definition that applies across all events.
 

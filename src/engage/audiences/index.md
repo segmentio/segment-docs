@@ -5,9 +5,6 @@ redirect_from:
   - '/personas/audiences'
 ---
 
-
-
-
 Audiences let you group users or accounts based on event behavior and traits that Segment tracks.
 
 You can build Audiences from core **tracking events**, **traits**, and **computed traits**. You can then sync Audiences to hundreds of [Destinations](/docs/connections/destinations/) or access them with the [Profile API](/docs/unify/profile-api).
@@ -25,6 +22,9 @@ You can build an Audience from existing events, traits, computed traits, or othe
 
 > warning ""
 > Editing an audience before the initial backfill is complete can create technical errors.
+
+> warning "Audience Keys"
+> Avoid using the same Audience Key twice, even if you've deleted the original Audience.
 
 ### Events
 
@@ -64,7 +64,7 @@ You can use the following time comparison operators in your audience definition:
 - `after next` 
 
 Only ISO timestamps can be used with these operators. Additionally, these time comparison operators exclusively apply to custom traits.
-If the timestamp is not a valid ISO timestamp (for example, a trailing `Z` is missing), Segment won't process the audience in real-time. Learn more about [real-time compute compared to batch](#real-time-compute-compared-to-batch).
+If the timestamp is not a valid ISO timestamp (for example, a trailing `Z` is missing), Segment won't process the audience in real-time. Learn more about [real-time compute compared to batch](/docs/engage/audiences/#real-time-compute-compared-to-batch).
 
 ### Funnel Audiences
 
@@ -85,32 +85,11 @@ If you have a B2B business, you might want to build an Audience of accounts. You
 See [Account-level Audiences](/docs/engage/audiences/account-audiences) for more information.
 
 
+## Send audiences to destinations
 
-## Send Audiences to Destinations
-With the help of Sources and Destinations in Segment's catalog, you can create and send Audiences and computed traits to third-party services.
+You can send audiences and computed traits to third-party services in Segment's [Destinations catalog](/docs/connections/destinations/).
 
-Segment's Connections pipeline first collects and sends events from your Source to your Destination. Built on top of Connections, Engage then uses the same Source events to let you create Audiences and computed traits within Segment. You can then send the Audience or computed trait you've built to your Destination(s).
-
-> info ""
-> Because Engage only sends Audiences and computed traits to Destinations, it doesn't replace a standard event pipeline. Connect a Source directly to a Destination if you want the Destination to receive all events that Segment gathers.
-
-### Connect your Audience to a Destination
-
-> warning "Audience Keys"
-> Avoid using the same Audience key twice, even if you've deleted the original Audience.
-
-Once you've previewed your Audience, you can choose to connect it to a Destination or keep the Audience in Segment and export it as a CSV file download.
-
-If you already have Destinations set up in Segment, you can import the configuration from one of your existing sources to Engage. You can only connect one Destination configuration per Destination type.
-
-When you create an Audience, Segment starts syncing your Audience to the Destinations you selected. Audiences are either sent to Destinations as a boolean user-property or a user-list, depending on what the Destination supports. Read more about [supported Destinations](/docs/engage/using-engage-data/#compatible-engage-destinations) in the Engage documentation.
-
-For account-level audiences, you can send either a [Group](/docs/connections/spec/group) call and/or [Identify](/docs/connections/spec/identify) call. Group calls will send one event per account, whereas Identify calls will send an Identify call for each user in the account. This means that even if a user hasn't performed an event, Segment will still set the account-level computed trait on that user.
-
-Because most marketing tools are still based at the user level, it is often important to map this account-level trait onto each user within an account. See [Account-level Audiences](/docs/engage/audiences/account-audiences) for more information.
-
-> info ""
-> When you connect a new Destination to an existing Audience, Engage will backfill historical data for that Audience to the new Destination.
+For step-by-step instructions on how to connect an audience to a destination, see [Send Audience Data to Destinations](/docs/engage/audiences/send-audience-data/).
 
 ## Understanding compute times
 
@@ -261,7 +240,7 @@ Note the following limits for the CSV downloader:
 
 ## Identifier Breakdown
 
-The audience summary is a breakdown of the percentages of external_ids of users in the audience. These are the default IDs that Segment includes in the Identity resolution configuration. Segment displays the percentage of the audience with each identifier, which you can use to verify the audience size and profiles are correct.
+The audience summary is a breakdown of the percentages of external_ids of users in the audience. These are the default IDs that Segment includes in the Identity resolution configuration. Segment displays the percentage of the audience with each identifier, which you can use to verify the audience size and profiles are correct. The update of identifier breakdowns on profiles doesn't occur in real time.
 
 > info ""
 > The Identifier Breakdown won't show custom IDs included in the Identity resolution configuration. Segment only displays external IDs in the breakdown.
@@ -272,3 +251,10 @@ The audience summary is a breakdown of the percentages of external_ids of users 
 Segment recommends using the `$` operator when you deal with array properties. However, the `$` causes logical conditions to apply independently to each array entry independently. As a result, you'll get more accurate results by using the `equals one of` condition:
 
 ![$ operator](https://github.com/segmentio/segment-docs/assets/68755692/7b0b6923-a4ad-4290-8aa6-bbbc7cb1ee1b)
+
+### How do I populate multiple items off a list for an `equals one of` condition? **
+The audience builder accepts CSV and TSV lists.
+
+### How does the historical data flag work?
+Including historical data lets you take past information into account. You can data only exclude historical data for real-time audiences. For batch audiences, Segment includes historical data by default.
+

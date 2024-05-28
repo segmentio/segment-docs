@@ -5,7 +5,7 @@ title: Custom Traits
 
 Custom traits are user or account traits collected from the Identify calls you send to Segment. For example, these could be demographics like `age` or `gender`, account-specific like `plan`, or even things like whether a user has seen a particular A/B test variation. From your sources, send custom traits as pieces of information that you know about a user in an Identify call.
 
-As opposed to [computed traits](/docs/unify/traits/computed-traits/) which are computed from your source data, or [SQL Traits](/docs/unify/traits/sql-traits/) which are computed from warehouse data, custom traits are created from source events you pass into Segment. 
+As opposed to [computed traits](/docs/unify/traits/computed-traits/) which are computed from your source data, or [SQL Traits](/docs/unify/traits/sql-traits/) which are computed from warehouse data, custom traits are created from source events you pass into Segment and have no trait limits. 
 
 {% include content/trait-types.md %}
 
