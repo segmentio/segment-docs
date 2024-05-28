@@ -101,6 +101,17 @@ For example, you might set up a single Segment source to send data both to separ
 
 You can also connect multiple instances of a destination to help you smoothly migrate from one configuration to another. By sending each version the same data, you can check and validate the new configuration without interrupting use of the old one.
 
+
+However, there are a few considerations:
+
+Device-mode destinations do not support connecting multiple instances of the destination to the same source. If you try to a connect an additional instance of a device-mode destination to your source, the option to add a second instance does not appear.
+
+Mobile sources, and the legacy Project source, can connect to multiple instances of destinations that operate only in cloud-mode. Mobile and Project sources cannot connect to multiple instances of destinations that operate in both cloud-mode and device-mode. Non-mobile sources can only connect to _one_ device-mode instance of a destination. 
+
+Multi-instance support is not available for most hybrid Actions destinations or Web mode Actions destinations.
+
+Segment does not support connecting a single source to multiple instances of a [Data Lakes](/docs/connections/storage/data-lakes/) destination.
+
 > warning "Non-mobile sources can only connect to _one_ device-mode instance of a destination"
 > You cannot connect a source to more than one instance of a destination that operates only in device-mode. For more information about device-mode restrictions, see the [Sending Segment data to Destinations](/docs/connections/destinations/add-destination/#connecting-one-source-to-multiple-instances-of-a-destination:~:text=Multi%2Dinstance%20destinations-,and,-Device%2Dmode) documentation.
 
