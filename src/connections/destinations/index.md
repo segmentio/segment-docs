@@ -201,7 +201,7 @@ The following destinations support bulk batching:
 - [The Trade Desk CRM](/docs/connections/destinations/catalog/actions-the-trade-desk-crm/)
 
 > info "You must manually configure bulk batches for Actions destinations"
-> In order to support bulk batching for Actions Webhook destination, you must set `enable-batching: true` and `batch_size: >= 1000`.
+> To support bulk batching for Actions Webhook destination, you must set `enable-batching: true` and `batch_size: >= 1000`.
 
 ### IP Allowlist 
 
