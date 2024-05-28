@@ -20,7 +20,7 @@ When you enable the Iterable destination from the Segment app, your data starts 
 
 ## Identify
 
-When you call `identify` with one of Segment's sources, Segment calls Iterable's [update user endpoint](https://api.iterable.com/api/docs#users_updateUser), to add data for that particular user. You can also call `identify` to update user fields.
+When you call `identify` with one of Segment's sources, Segment calls Iterable's [update user endpoint](https://api.iterable.com/api/docs#users_updateUser){:target="_blank"}, to add data for that particular user. You can also call `identify` to update user fields.
 
 Iterable keys users by `email` or a user ID. This user ID will be the Segment `userId` if sent. To use a Segment `userId` for identify calls, first call identify with both a `userId` and `email`. Iterable won't accept the request and throws an error if you fail to send one of either the `userId` or `email`.
 
@@ -59,7 +59,7 @@ This `identify` event would merge the `mobile` property for this user with any o
 
 ## Track
 
-When you call `track` with one of Segment's sources, Segment calls Iterable's [track API endpoint](https://api.iterable.com/api/docs#events_track), and send over the event properties as the data fields in the request. The name of the `track` event appears as a Custom Event in Iterable, and will be available to trigger workflows, segment users, and view analytics.
+When you call `track` with one of Segment's sources, Segment calls Iterable's [track API endpoint](https://api.iterable.com/api/docs#events_track){:target="_blank"}, and send over the event properties as the data fields in the request. The name of the `track` event appears as a Custom Event in Iterable, and will be available to trigger workflows, segment users, and view analytics.
 
 If a user does not already exist in Iterable, calling `track` for a user event will add that user into the system. You can track with either an `email` or userId (if a `userId` exists for that email).
 
@@ -79,7 +79,7 @@ Subsequent `track` with `userId`
 
 Iterable also supports Segment's [ecommerce events](/docs/connections/spec/ecommerce/v2/). This works just as you would expect, using the `track` method.
 
-Iterable has one important difference from the Segment Ecommerce spec. If you use the `Product Added` / `Product Removed`/ `Order Completed` events, you must include the "products" field with the cart info, as in the `Order Completed` example event. You must include [all required fields for the Purchase events in Iterable](https://api.iterable.com/api/docs#commerce_trackPurchase).  This includes the total value of the purchase as `total` (best as a float, double, and possibly an integer), and an array of objects called `products`. Each product must include an `id` or `productId` as a string, and a `name`, `price`, and `quantity` on each product object in the array. These are used to map to Iterable's expected `items` array. An example might look like this:
+Iterable has one important difference from the Segment Ecommerce spec. If you use the `Product Added` / `Product Removed`/ `Order Completed` events, you must include the "products" field with the cart info, as in the `Order Completed` example event. You must include [all required fields for the Purchase events in Iterable](https://api.iterable.com/api/docs#commerce_trackPurchase){:target="_blank"}.  This includes the total value of the purchase as `total` (best as a float, double, and possibly an integer), and an array of objects called `products`. Each product must include an `id` or `productId` as a string, and a `name`, `price`, and `quantity` on each product object in the array. These are used to map to Iterable's expected `items` array. An example might look like this:
 
 ```js
 analytics.track("Order Completed", {

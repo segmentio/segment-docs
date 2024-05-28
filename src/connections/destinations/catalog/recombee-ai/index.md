@@ -5,7 +5,7 @@ hide-settings: true
 hide-personas-partial: true
 id: 6095391bd839b62fca8a8606
 ---
-[Recombee](https://recombee.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) is a Recommender as a Service, that can use your data to provide the most accurate recommendations of content or products for your users.
+[Recombee](https://recombee.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners){:target="_blank”} is a Recommender as a Service, that can use your data to provide the most accurate recommendations of content or products for your users.
 
 Use this Segment destination to send your interaction data views, purchases, plays, etc.) to Recombee.
 
@@ -19,11 +19,11 @@ This destination is maintained by Recombee. For any issues with the destination,
 
 
 
-1. If you don't already have one, set up a [Recombee account](https://recombee.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners).
+1. If you don't already have one, set up a [Recombee account](https://recombee.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners){:target="_blank"}.
 1. From the Destinations catalog page in the Segment App, click **Add Destination**.
 2. Search for "Recombee" in the Destinations Catalog, and select the Recombee destination.
 3. Choose which Source should send data to the Recombee destination.
-4. Go to the [Recombee Admin UI](https://admin.recombee.com):
+4. Go to the [Recombee Admin UI](https://admin.recombee.com){:target="_blank"}:
    - Choose the Recombee Database where you want to send the interactions.
    - Click **Settings** in the menu on the left.
    - In the **Settings** section find the **API Identifier** of the Database and its corresponding **Private Token**
@@ -32,7 +32,7 @@ This destination is maintained by Recombee. For any issues with the destination,
     - Paste the **Private Token** you just copied in the **API Key** field.
 
 Once you send the data from Segment to the Recombee destination you can:
-   - Go to the KPI console of the [Recombee Admin UI](https://admin.recombee.com) to see the numbers of the ingested interactions (updated in Real-time)
+   - Go to the KPI console of the [Recombee Admin UI](https://admin.recombee.com){:target="_blank"} to see the numbers of the ingested interactions (updated in Real-time)
    - Click the ID of an Item, User in Items, or section in the Users catalog to see a specific ingested interaction.
 
 
@@ -44,7 +44,7 @@ If you aren't familiar with the Segment Spec, take a look at the [Page method do
 analytics.page()
 ```
 
-Segment sends Page calls to Recombee as a [Detail View](https://docs.recombee.com/api.html#add-detail-view).
+Segment sends Page calls to Recombee as a [Detail View](https://docs.recombee.com/api.html#add-detail-view){:target="_blank"}.
 
 
 ## Track
@@ -65,15 +65,15 @@ analytics.track('Video Content Playing', {
 Recombee Destination can process several [Semantic Events](/docs/connections/spec/semantic/):
 
 [Ecommerce](/docs/connections/spec/ecommerce/v2/):
- - [Product Viewed](/docs/connections/spec/ecommerce/v2/#product-viewed) - sends a [Detail View](https://docs.recombee.com/api.html#add-detail-view)
- - [Product Added](/docs/connections/spec/ecommerce/v2/#product-added) - sends a [Cart Addition](https://docs.recombee.com/api.html#add-cart-addition)
- - [Product Removed](/docs/connections/spec/ecommerce/v2/#product-removed) - sends a [Delete Cart Addition](https://docs.recombee.com/api.html#delete-cart-addition)
- - [Order Completed](/docs/connections/spec/ecommerce/v2/#order-completed) sends a [Purchase](https://docs.recombee.com/api.html#add-purchase) for each of the ordered products
-- [Product Added to Wishlist](/docs/connections/spec/ecommerce/v2/#product-added) - sends a [Bookmark](https://docs.recombee.com/api.html#add-bookmark)
-- [Product Shared](/docs/connections/spec/ecommerce/v2/#product-added) - sends a [Bookmark](https://docs.recombee.com/api.html#add-bookmark)
+ - [Product Viewed](/docs/connections/spec/ecommerce/v2/#product-viewed) - sends a [Detail View](https://docs.recombee.com/api.html#add-detail-view){:target="_blank"}
+ - [Product Added](/docs/connections/spec/ecommerce/v2/#product-added) - sends a [Cart Addition](https://docs.recombee.com/api.html#add-cart-addition){:target="_blank"}
+ - [Product Removed](/docs/connections/spec/ecommerce/v2/#product-removed) - sends a [Delete Cart Addition](https://docs.recombee.com/api.html#delete-cart-addition){:target="_blank"}
+ - [Order Completed](/docs/connections/spec/ecommerce/v2/#order-completed) sends a [Purchase](https://docs.recombee.com/api.html#add-purchase){:target="_blank"} for each of the ordered products
+- [Product Added to Wishlist](/docs/connections/spec/ecommerce/v2/#product-added) - sends a [Bookmark](https://docs.recombee.com/api.html#add-bookmark){:target="_blank"}
+- [Product Shared](/docs/connections/spec/ecommerce/v2/#product-added) - sends a [Bookmark](https://docs.recombee.com/api.html#add-bookmark){:target="_blank"}
 
 [Video](/docs/connections/spec/video/):
-- Following events send a [View Portion](https://docs.recombee.com/api.html#set-view-portion):
+- Following events send a [View Portion](https://docs.recombee.com/api.html#set-view-portion){:target="_blank"}:
     - [Video Playback Started](/docs/connections/spec/video/#video-playback-started)
     - [Video Content Playing](/docs/connections/spec/video/#video-content-playing)
     - [Video Playback Paused](/docs/connections/spec/video/#video-playback-paused)
@@ -89,7 +89,7 @@ If you aren't familiar with the Segment Spec, take a look at the [Screen method 
 [[SEGAnalytics sharedAnalytics] screen:@"Home"];
 ```
 
-Segment sends Screen calls to Recombee as a [Detail View](https://docs.recombee.com/api.html#add-detail-view).
+Segment sends Screen calls to Recombee as a [Detail View](https://docs.recombee.com/api.html#add-detail-view){:target="_blank"}.
 
 
 ## Alias
@@ -100,22 +100,22 @@ If you aren't familiar with the Segment Spec, take a look at the [Alias method d
 analytics.alias("507f191e81");
 ```
 
-Segment sends Alias calls to Recombee as [Merge Users](https://docs.recombee.com/api.html#merge-users) call.
+Segment sends Alias calls to Recombee as [Merge Users](https://docs.recombee.com/api.html#merge-users){:target="_blank"} call.
 
 ## Delete User
 
-Segment sends a [Delete User](https://docs.recombee.com/api.html#delete-user) call to Recombee on deleting a user.
+Segment sends a [Delete User](https://docs.recombee.com/api.html#delete-user){:target="_blank"} call to Recombee on deleting a user.
 All the data associated with the user (including interactions) are removed from Recombee.
 
 ## Reporting successful recommendations
-You can tell Recombee that a specific interaction is based on a successful recommendation (meaning that the recommendations were presented to a user, and the user clicked one of the items), by setting the ID of the successful recommendation request on the `recomm_id` property of a Segment event. You can read more about this setting in [Recombee's Reported Metrics documentations](https://docs.recombee.com/admin_ui.html#reported-metrics))
+You can tell Recombee that a specific interaction is based on a successful recommendation (meaning that the recommendations were presented to a user, and the user clicked one of the items), by setting the ID of the successful recommendation request on the `recomm_id` property of a Segment event. You can read more about this setting in [Recombee's Reported Metrics documentations](https://docs.recombee.com/admin_ui.html#reported-metrics){:target="_blank"}
 
 
 Recombee recognizes the `recomm_id` property in all the events that send interactions.
 
 In case of [Order Completed](/docs/connections/spec/ecommerce/v2/#order-completed), set the `recomm_id` to the object of the product (`products.$.recomm_id`) that was ordered because of a successful recommendation.
 
-Sending the `recomm_id` gives you precise numbers about successful recommendations in the KPI section of the [Recombee Admin UI](https://admin.recombee.com). This explicit feedback also helps you optimize your recommendation models.
+Sending the `recomm_id` gives you precise numbers about successful recommendations in the KPI section of the [Recombee Admin UI](https://admin.recombee.com){:target="_blank"}. This explicit feedback also helps you optimize your recommendation models.
 
 ## Recombee destination settings
 
@@ -131,7 +131,7 @@ The private token for the database.
 
 ### Item ID Property Name (Optional)
 
-For each [Recombee interaction](https://docs.recombee.com/api.html#user-item-interactions), you must provide a `userId` and an `itemId`.
+For each [Recombee interaction](https://docs.recombee.com/api.html#user-item-interactions){:target="_blank"}, you must provide a `userId` and an `itemId`.
 
 You can set the **Item ID Property Name** to specify the Segment event property to use as the `itemId`.
 
@@ -149,13 +149,13 @@ If you use some custom Events, you can set which Recombee interaction to send fo
 
 The value of the mapping is the name of your event, and the key can be one of:
 
-- [Bookmark](https://docs.recombee.com/api.html#add-bookmark)
-- [Cart Addition](https://docs.recombee.com/api.html#add-cart-addition)
-- [Detail View](https://docs.recombee.com/api.html#add-detail-view)
-- [Purchase](https://docs.recombee.com/api.html#add-purchase)
-- [Rating](https://docs.recombee.com/api.html#ratings)
+- [Bookmark](https://docs.recombee.com/api.html#add-bookmark){:target="_blank"}
+- [Cart Addition](https://docs.recombee.com/api.html#add-cart-addition){:target="_blank"}
+- [Detail View](https://docs.recombee.com/api.html#add-detail-view){:target="_blank"}
+- [Purchase](https://docs.recombee.com/api.html#add-purchase){:target="_blank"}
+- [Rating](https://docs.recombee.com/api.html#ratings){:target="_blank"}
   - a property `rating` must exist and contain a number from interval [-1.0,1.0], where -1.0 means the worst rating possible, 0.0 means neutral, and 1.0 means absolutely positive rating.
-- [View Portion](https://docs.recombee.com/api.html#set-view-portion)
+- [View Portion](https://docs.recombee.com/api.html#set-view-portion){:target="_blank"}
   - the portion (how much of the content was consumed by the user) is computed from the `position` and `total_length` properties (see [Content Event Object](/docs/connections/spec/video/#content-event-object)), or can be given as the `portion` property (a number between 0 and 1).
 
 

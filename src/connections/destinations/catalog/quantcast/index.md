@@ -4,7 +4,7 @@ id: 54521fda25e721e32a72eeeb
 ---
 ## Getting Started
 
-We have both web and mobile destinations with Quantcast. The two integrations are outlined below. Our Quantcast destination code is also open source on GitHub. Feel free to check it out: [analytics-ios-integration-quantcast](https://github.com/segment-integrations/analytics-ios-integration-quantcast), [analytics.js-integration-quantcast](https://github.com/segment-integrations/analytics.js-integration-quantcast).
+We have both web and mobile destinations with Quantcast. The two integrations are outlined below. Our Quantcast destination code is also open source on GitHub. Feel free to check it out: [analytics-ios-integration-quantcast](https://github.com/segment-integrations/analytics-ios-integration-quantcast){:target="_blank"}, [analytics.js-integration-quantcast](https://github.com/segment-integrations/analytics.js-integration-quantcast){:target="_blank"}.
 
 ## Web Destination
 When you enable Quantcast for a website from the Segment web app, your changes appear in the Segment CDN in about 45 minutes, and then Analytics.js starts asynchronously `loadingquant.js` onto your page. This means you should remove Quantcast's snippet from your page.
@@ -92,4 +92,4 @@ When you call `screen` Segment automatically logs an event like `Viewed ABC Scre
 
 ### Other Features
 #### Labels
-The destination does not currently support labels. If this is important to you, [let us know](https://segment.com/help/contact/).
+The destination does not currently support labels. If this is important to you, [let us know](https://segment.com/help/contact/){:target="_blank"}.

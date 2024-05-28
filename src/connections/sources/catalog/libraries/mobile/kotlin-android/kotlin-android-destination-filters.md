@@ -15,13 +15,14 @@ To get started with destination filters on mobile device-mode destinations using
 
 1. Download and install the dependency.
   ```java
-    implementation 'com.segment.analytics.kotlin:destination-filters-kotlin:0.1.0'
+    implementation 'com.segment.analytics.kotlin:destination-filters:0.1.1'
   ```
 
 2. Add the plugin.
   ```java
     analytics.add(DestinationFilters())
   ```
+3. Enable Destination Filters in your Segment workspace by navigating to your Android source > Settings > Advanced and turning on the Destination Filters toggle. 
 
 Use destination filters to prevent certain data from flowing into a destination. You can conditionally filter out event properties, traits, and fields, or even filter out the event itself.
 

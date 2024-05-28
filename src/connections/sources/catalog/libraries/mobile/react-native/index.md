@@ -1,6 +1,7 @@
 ---
 title: Analytics for React Native
 strat: react-native
+support_type: flagship
 id: B0X0QmvMny
 ---
 
@@ -22,18 +23,25 @@ To get started with the Analytics for React Native library:
 1. Create a React Native Source in Segment.
     1. Go to **Connections > Sources > Add Source**.
     2. Search for React Native and click **Add source**.
-2. Install `@segment/analytics-react-native`, [`@segment/sovran-react-native`](https://github.com/segmentio/sovran-react-native){:target="_blank"} and [`react-native-get-random-values`](https://github.com/LinusU/react-native-get-random-values){:target="_blank"}:
+2. Install `@segment/analytics-react-native`, [`@segment/sovran-react-native`](https://github.com/segmentio/analytics-react-native/tree/master/packages/sovran){:target="_blank"} and [`react-native-get-random-values`](https://github.com/LinusU/react-native-get-random-values){:target="_blank"}. You can install in one of two ways: 
 
     ```js
     yarn add @segment/analytics-react-native @segment/sovran-react-native react-native-get-random-values
-    # or
+    ```
+    or
+   
+    ```js
     npm install --save @segment/analytics-react-native @segment/sovran-react-native react-native-get-random-values
     ```
-3. If you want to use the default persistor for the Segment Analytics client, you also have to install `react-native-async-storage/async-storage.`
+    
+3. If you want to use the default persistor for the Segment Analytics client, you also have to install `react-native-async-storage/async-storage.` You can install in one of two ways: 
 
     ```js
     yarn add @react-native-async-storage/async-storage 
-    # or
+    ```
+    or
+    
+    ```js
     npm install --save @react-native-async-storage/async-storage
     ```
     
@@ -283,6 +291,8 @@ reset();
 {% endcodeexampletab %}
 {% endcodeexample %}
 
+{% include content/reset-mobile.md %}
+
 ### Flush
 By default, the analytics client sends queued events to the API every 30 seconds or when 20 events accumulate, whichever occurs first. This also occurs whenever the app resumes if the user has closed the app with some events unsent. These values can be modified by the `flushAt` and `flushInterval` config options. You can also trigger a flush event manually.
 
@@ -341,6 +351,10 @@ Segment has several standard Flush Policies:
 - `CountFlushPolicy` triggers when you reach a certain number of events
 - `TimerFlushPolicy` triggers on an interval of milliseconds
 - `StartupFlushPolicy` triggers on client startup only
+
+> info ""
+> If you implement custom flush policies, they replace Segment's default Count and Timer policies. To incorporate custom policies, add your custom Timer and Count policies to the client's Flush Policies configuration.
+
 
 ### Adding or removing policies
 One of the main advantages of Flush Policies is that you can add and remove policies on the fly. This is very powerful when you want to reduce or increase the amount of flushes. 
@@ -740,6 +754,10 @@ segmentClient.userInfo.set((currentUserInfo) => {
     }
   });
 ```
+
+### If I use a proxy, what Segment endpoint should I send to?
+If you proxy your events through the `proxy` config option, you must forward the batched events to `https://api.segment.io/v1/b`. The `https://api.segment.io/v1/batch` endpoint is reserved for events arriving from server side sending, and proxying to that endpoint for your mobile events may result in unexpected behavior.
+
 
 ## Changelog
 [View the Analytics React Native changelog on GitHub](https://github.com/segmentio/analytics-react-native/releases){:target="_blank"}.

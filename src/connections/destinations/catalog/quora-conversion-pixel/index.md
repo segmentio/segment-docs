@@ -3,7 +3,7 @@ rewrite: true
 title: Quora Conversion Pixel Destination
 id: 5952698570a3e552b9575519
 ---
-[Quora Conversion Pixel](https://www.quora.com/business) enables you to attribute downstream user actions on your website to your ad campaigns running on Quora.com. Our client-side Destination code is open source. You can browse the code in GitHub [here](https://github.com/segmentio/analytics.js-integrations/tree/master/integrations/quora-conversion-pixel).
+[Quora Conversion Pixel](https://www.quora.com/business){:target="_blank"} enables you to attribute downstream user actions on your website to your ad campaigns running on Quora.com. Our client-side Destination code is open source. You can browse the code in GitHub [here](https://github.com/segmentio/analytics.js-integrations/tree/master/integrations/quora-conversion-pixel){:target="_blank"}.
 
 ## Getting Started
 
@@ -13,7 +13,7 @@ id: 5952698570a3e552b9575519
 2. Search for "Quora" in the Catalog, select it, and choose which of your sources to connect the destination to.
 3. Add your Quora Conversion Pixel Key to your Destination settings. To get this you will need to do the following:
 
-	i. Log into your [Quora Ads Manager Account](https://www.quora.com/ads/account).
+	i. Log into your [Quora Ads Manager Account](https://www.quora.com/ads/account){:target="_blank"}.
 
 	ii. Navigate to the "Quora Pixel" tab in your Quora Dashboard.
 

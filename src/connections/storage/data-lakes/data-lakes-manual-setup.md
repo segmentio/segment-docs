@@ -229,7 +229,7 @@ When you update an EMR cluster to 5.33.0, you can participate in [AWS Lake Forma
 > Your Segment Data Lake does not need to be disabled during the update process, and any ongoing syncs will complete on the old cluster. Any syncs that fail while you are updating the cluster ID field will be restarted on the new cluster.
 
 ## Prerequisites
-* An EMR v5.33.0 cluster
+* An EMR cluster up to Version 7
 * An existing Segment Data Lakes destination
 
 ## Procedure

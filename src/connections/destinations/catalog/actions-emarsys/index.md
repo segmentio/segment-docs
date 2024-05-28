@@ -2,12 +2,11 @@
 title: Emarsys (Actions) Destination
 hide-boilerplate: true
 hide-dossier: false
-private: true
-hidden: true
+beta: true
 id: 63f65c1c42e3bded41f0499c
 versions:
   - name: Emarsys (Classic)
-    link: /docs/connections/destinations/emarsys
+    link: /docs/connections/destinations/catalog/emarsys/
 ---
 {% include content/plan-grid.md name="actions" %}
 

@@ -1,5 +1,5 @@
 {% assign destinations = site.data.catalog.destinations.items %}
-{% assign warehouses = site.data.catalog.regional-supported.warehouses %}
+{% assign warehouses = site.data.catalog.warehouse.items | where: "status", "PUBLIC" %}
 
 <input class="table-search" type="text" id="filterInput" onkeyup="searchFilter()"
   placeholder="Search for an integration..">
@@ -51,7 +51,7 @@
       <td>{% if warehouse.regions contains "eu" and warehouse.endpoints contains "us" %}<img class="inline"
           src="/docs/images/supported.svg" />{% else %}<img alt="" class="inline"
           src="/docs/images/unsupported.svg" />{% endif %}</td>
-      <td> {% if warehouse.regions contains "eu" and warehouse.endpoints contains "eu" %}<img class="inline"
+        <td> {% if warehouse.regions contains "eu" and warehouse.endpoints contains "eu" %}<img class="inline"
           src="/docs/images/supported.svg" />{% else %}<img alt="" class="inline"
           src="/docs/images/unsupported.svg" />{% endif %}</td>
     </tr>

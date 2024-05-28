@@ -43,7 +43,7 @@ All playback events share the same event properties that describe information ab
 | `ad_enabled`  | Boolean         | `false` if the user has adblock or any other ad blockers, otherwise `true`  if they can view your video ads.    |
 | `quality`     | String          | The quality of the video, for example, `highres`, `hd1080`, or `480p`.    |
 | `method`      | String          | **For Video Playback Interrupted events only**, you can send this property denoting how the playback was interrupted (such as `browser redirect`, `device lock`, or `call`). |
-| `livestream`  | Boolean         | If the playback will be a livetream, send `true`, otherwise `false`.    |  
+| `livestream`  | Boolean         | If the playback will be a livestream, send `true`, otherwise `false`.    |  
 
 ### Playback events
 Below is the full list of Video Playback Events.

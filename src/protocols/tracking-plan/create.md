@@ -18,13 +18,19 @@ The Segment Tracking Plan feature allows you to validate your expected events ag
 
 Tracking Plans are stored in workspaces and can be connected to one or more Sources.
 
+> info "Segment Consent Preference Updated Event"
+> After setting up a consent category, users of Consent Management see a Segment Consent Preference Updated Event added to all existing Tracking Plans. 
+
 ## Create a Tracking Plan
 
 To create a new Tracking Plan:
 1. Contact your Segment account team to enable the Protocols features in your workspace.
 2. Once enabled, click **Protocols** in the left bar navigation.
 3. Click **New Tracking Plan**.
-4. Add events, properties, traits and filters in the Tracking Plan editor. <br> You'll see an option to import events and traits to your Tracking Plan that your source received in the last 24 hours, 7 days or 30 days. This option is great if you want to get started with your current events. 
+4. Add events, properties, traits and filters in the Tracking Plan editor. <br> You'll see an option to import events and traits to your Tracking Plan that your source received in the last 24 hours, 7 days or 30 days. This option is great if you want to get started with your current events.
+
+> info "Consent Management users see the Segment Consent Preference Updated event on new Tracking Plans"
+> If you are a Consent Management user and have created at least one consent category, Segment automatically adds the [Segment Consent Preference Updated event](/docs/privacy/consent-management/consent-in-unify/#segment-consent-preference-updated-event) to all new Tracking Plans. 
 
 ## Copy a Tracking Plan
 
@@ -41,6 +47,52 @@ To download a Tracking Plan:
 3. A toast pops up on the top of the page, with the message _"Your file is processing. When your file is ready it will be available to download from the Download History page."_
 4. Open the Download History page by clicking the link in the toast or clicking the **Download History** tab in the top navigation bar.
 5. Once the file status column indicates that the download was successful, click the link in the File column to download your CSV to your computer. If the file status column shows the download has failed, return to the Tracking Plan Overview page or the Tracking Plan page and try the download again.<br/> The Tracking Plan CSV name has the following format:<br/>`workspaceSlug-trackingPlanName--yyyy-mm-dd--hh-mm-utc`
+
+The columns in the Tracking Plan CSV file corresponds to the Tracking Plan UI options. For example:
+
+* **Allowed Property Values**: In the Tracking Plan UI, when the property type is 'String', you have the option to add a list of permitted values.
+* **Enum Values**: When the property type is 'Enum', you have the option to add a list of permitted values.
+
+
+Once you've downloaded a Tracking Plan, you can [upload it](#upload-a-tracking-plan) as a template for a new Tracking Plan or use it to make changes to an existing Tracking Plan.
+
+## Upload a Tracking Plan
+
+You can create a Tracking Plan or make changes to an existing Tracking Plan by uploading a CSV that contains the rules and events you'd like to track. Segment provides a Tracking Plan template file that you can download during the import process, or you can [download an existing Tracking Plan](#download-a-tracking-plan) to use as your template.
+
+> info "Tracking Plan CSV requirements"
+> Tracking Plan CSV files uploaded to Segment must be smaller than 15 mb and contain one header row and one or more rows of data. Tracking Plans CSVs must also have fewer than 100,000 rows and 2,000 rules. 
+
+### Create a new Tracking Plan 
+To create a new Tracking Plan by uploading a CSV file: 
+1. Click **Protocols** in the left navigation bar. 
+2. Click **New Tracking Plan**.
+4. Click the **Import...** button and select **From CSV**. 
+5. Download the Tracking Plan template CSV and fill in the template file with your new Tracking Plan rules, or [download an existing Tracking Plan](#download-a-tracking-plan).
+6. Once you've filled in the provided template or made changes to your downloaded Tracking Plan, add your CSV file to the file uploader and click **Upload**.
+
+After uploading your CSV file, you are redirected to the Upload & Download History page while the upload is in progress. If the CSV upload fails, you'll be able to either view the error directly in the Reports column on the Upload & Download History page or download the `error_report.csv` file that corresponds to the Tracking Plan you uploaded. 
+
+> success ""
+> Tracking Plans created by an uploaded file are reflected in the [Audit Trail](docs/segment-app/iam/audit-trail/) and [Tracking Plan changelog](/docs/protocols/faq/#how-can-i-see-who-made-changes-to-my-tracking-plan). If you are a Consent Management user and have created at least one consent category, Segment automatically adds the [Segment Consent Preference Updated event](/docs/privacy/consent-management/consent-in-unify/#segment-consent-preference-updated-event) to all new Tracking Plans. 
+
+### Update an existing Tracking Plan
+
+> info "Tracking Plans with imported libraries cannot be changed using the Upload a Tracking Plan method"
+> If you have a Tracking Plan with imported libraries, you must make changes to your Tracking Plan in the Segment app.
+
+To update a Tracking Plan by uploading a CSV file: 
+1. Click **Protocols** in the left navigation bar. 
+2. On the row of the Tracking Plan you want to edit, open the contextual menu(...) and select **View Tracking Plan**.
+3. Select **Edit Tracking Plan**.
+4. Click the **Import...** button and select **From CSV**. 
+5. Download the Tracking Plan template CSV and fill in the template file with your new Tracking Plan rules, or [download an existing Tracking Plan](#download-a-tracking-plan).
+6. Once you've filled in the provided template or made changes to your downloaded Tracking Plan, add your CSV file to the file uploader and click **Upload**.
+
+After uploading your CSV file, you are redirected to the Upload & Download History page while the upload is in progress. If the CSV upload fails, you'll be able to either view the error directly in the Reports column on the Upload & Download History page or download the `error_report.csv` file that corresponds to the Tracking Plan you uploaded.
+
+> success ""
+> Any changes made to a Tracking Plan using an uploaded file are reflected in the [Audit Trail](docs/segment-app/iam/audit-trail/) and [Tracking Plan changelog](/docs/protocols/faq/#how-can-i-see-who-made-changes-to-my-tracking-plan).
 
 ## Delete a Tracking Plan
 
@@ -60,7 +112,7 @@ The Tracking Plan editor is organized as a spreadsheet to help you  add new even
 | Name             | Specify the name of your event or property.                                                                                                                                                                                                                                    |
 | Description      | Enter a description for your event or property. These descriptions are helpful for both engineers instrumenting Segment and consumers of the data.                                                                                                                             |
 | Status           | Specify whether a property is required or optional. You can't require a Track call because Segment is unable to verify when a Track call should be fired.                                                                                                            |
-| Data Type        | Specify the data type of the property. Data type options include `any, array, object, boolean, integer, number, string, Date time`. Note: Date time is required to be in ISO-8601 format                                                                                       |
+| Data Type        | Specify the data type of the property. Data type options include `any, array, object, boolean, integer, number, string, null, Date time`. Note: Date time is required to be in ISO-8601 format                                                                                       |
 | Permitted Values | Enter simple regular expressions to validate property values. This works when a property data type is set to `string`. For example, you can add pipe delimited strings to the regex column to generate violations when a property value does not match fall, winter or spring. |
 
 > info ""
@@ -81,6 +133,9 @@ To add a Track call property:
 Segment supports object and array data types in the Tracking Plan editor. These complex data structures have limited use cases and should be used sparingly as some destinations aren't able to ingest the data structures. To add an object or array:
 1. Create a new property row and set the Data Type to `Object` or `Array`.
 2. Click the **(+)** next to the property name to add key value pairs in the object, or objects to an array of objects.
+
+> info ""
+> When creating array properties in your Tracking Plan, add the `items` nested property, denoted by the name of the array property with a `.$` suffix, to ensure that the nested property is marked as planned in the Source Schema. 
 
 ### Add Identify or Group traits
 You can define which traits you expect to see passed in Identify or Group calls like how you would add Track calls to the Tracking Plan. Navigate to the **Identify** or **Group** tab in your Tracking Plan and click the **(+)** button to add a new trait.
@@ -115,7 +170,7 @@ You can filter the Tracking Plan events by keyword or by label. The applied filt
 Protocols Tracking Plans use [JSON Schemas](https://json-schema.org/){:target="_blank”} to validate Segment event payloads. To support a broader range of validation use-cases, Segment lets you to edit your underlying JSON schema.
 
 > warning ""
-> Editing a JSON schema requires technical expertise. The [JSON schema documentation](https://json-schema.org/understanding-json-schema/index.html){:target="_blank”} and [JSON schema validator](https://www.jsonschemavalidator.net/){:target="_blank”} are helpful resources you can use.
+> Editing a JSON schema requires technical expertise. The [JSON schema documentation](https://json-schema.org/understanding-json-schema){:target="_blank”} and [JSON schema validator](https://www.jsonschemavalidator.net/){:target="_blank”} are helpful resources you can use.
 
 You can edit the JSON schema for each Track event listed in the Tracking Plan, and a common JSON schema definition that applies across all events.
 

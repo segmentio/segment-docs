@@ -36,7 +36,7 @@ Mixpanel (Actions) provides the following benefits over the classic Mixpanel des
 
 ### Connection Modes for Mixpanel (Actions) destination
 
-The Mixpanel (Actions) destination does not offer a device-mode connection mode. If you're using one of Segment's new libraries ([Analytics.js 2.0](/docs/connections/sources/catalog/libraries/website/javascript/), [Swift](https://github.com/segmentio/analytics-swift) or [Kotlin](https://github.com/segmentio/analytics-kotlin)) with the Actions-framework version of the destination, you do not need the device-mode connection.
+The Mixpanel (Actions) destination does not offer a device-mode connection mode. If you're using one of Segment's new libraries ([Analytics.js 2.0](/docs/connections/sources/catalog/libraries/website/javascript/), [Swift](https://github.com/segmentio/analytics-swift){:target="_blank”} or [Kotlin](https://github.com/segmentio/analytics-kotlin){:target="_blank”}) with the Actions-framework version of the destination, you do not need the device-mode connection.
 
 {% capture track_purchase_details %}
 
@@ -118,8 +118,6 @@ The group id that Mixpanel will use is `12345`.
 
 ## Migration from Mixpanel Classic
 
-{% include content/ajs-upgrade.md %}
-
 Assuming you're already using Segment Cloud-mode, the Mixpanel (Actions) destination is expected to have no breaking changes when upgrading. With the exception of a few new properties added to your events in the new Actions destination, there should be no difference in the data received in Mixpanel when using either of the Mixpanel destinations.
 
 If you want to confirm, you can configure the new destination to point to a different Mixpanel project and connect it to the same source(s) as the Classic destination and manually verify before fully switching over.
@@ -135,3 +133,14 @@ If you want to confirm, you can configure the new destination to point to a diff
 
 If the Mixpanel (Actions) destination uses $group_id as the group key, ensure that the mappings handling your `track` events have the field for **Group ID** mapped to a valid value. By default, this field maps to the event variable `context.groupId`.
 
+To send Track events with a custom Group Key, include the key as a property of Track events. For example:
+```js
+analytics.track('Example Event', { custom_group_key : 'group1' });
+```
+### Failed events due to timestamp
+
+If your integration is correct and you are still seeing failed events, review and verify that you are sending all date properties as UTC time format, due to Mixpanel timestamp format requirements. 
+
+### Why is Boardman, Oregon appearing in my users' profile location field?
+
+If you are seeing traffic from Boardman or see Segment as the browser, you might be sending server side calls to your Mixpanel (Actions) destination. To correctly populate your users' profile location field, manually pass the IP information in the context object from the server.

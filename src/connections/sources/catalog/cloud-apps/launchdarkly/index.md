@@ -4,7 +4,7 @@ id: cODRw1GgIP
 ---
 {% include content/source-region-unsupported.md %}
 
-[LaunchDarkly](https://launchdarkly.com) is a feature management platform that empowers development teams to safely deliver and control software through feature flags.
+[LaunchDarkly](https://launchdarkly.com){:target="_blank"} is a feature management platform that empowers development teams to safely deliver and control software through feature flags.
 
 This source is maintained by LaunchDarkly. For any issues with the source, [contact the LaunchDarkly Support team](mailto:support@launchdarkly.com).
 
@@ -88,12 +88,12 @@ Below are tables outlining the properties included in the events listed above.
   </tr>
   <tr>
   <td><code>reasonKind</code></td>
-      <td>The <a href="https://docs.launchdarkly.com/docs/evaluation-reasons">evaluation reason</a> for the flag.</td>
+      <td>The <a href="https://docs.launchdarkly.com/sdk/concepts/evaluation-reasons/?q=evaluation">evaluation reason</a> for the flag.</td>
   </tr>
   <tr>
   <td><code>prereqOf</code></td>
       <td>Set to another flag's key if this flag evaluation was only performed in order to determine
- whether the prerequisite values were met for the indicated flag. See <a href="https://docs.launchdarkly.com/docs/prerequisites">flag prerequisites</a>.</td>
+ whether the prerequisite values were met for the indicated flag. See <a href="https://docs.launchdarkly.com/home/targeting-flags/prerequisites/?q=prerequisites">flag prerequisites</a>.</td>
   </tr>
   <tr>
   <td><code>default</code></td>

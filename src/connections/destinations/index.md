@@ -123,7 +123,15 @@ To add a Destination:
 
 ## Data deliverability
 
-Segment increases deliverability to destinations in two ways: [retries](#retries) and [replays](/docs/guides/what-is-replay/). Retries happen automatically for all customers, while replays are available on request for [Business](https://segment.com/pricing/) customers.
+Segment increases deliverability to destinations using [retries](#retries) and [replays](/docs/guides/what-is-replay/). Retries happen automatically for all customers, while replays are available on request for [Business Tier](https://segment.com/pricing/) customers.
+
+> info ""
+> Segment's data flow is primarily unidirectional, from Segment to integrated destinations. Segment does not inherently support a bidirectional flow where events, once delivered and processed by a destination, are sent back to Segment.
+
+Segment also uses [batching](#batching) to increase deliverability to your destinations. Some destinations have batching enabled by default, and some, like Segment's [Webhook (Actions) Destination](/docs/connections/destinations/catalog/actions-webhook/), let you opt in to batching.
+
+> warning "Some cases of event batching might lead to observability loss"
+> While batching does increase event deliverability, you might experience error amplification, as if the entire batch fails, all events will be marked with the same status. For example, if a batch fails due to one `429` (Rate Limit) error, it might appear in the UI that there was one 429s request failure for each item in the batch.
 
 ### Retries
 
@@ -171,8 +179,29 @@ You can see the current destination endpoint API success rates and final deliver
 [Replays](/docs/guides/what-is-replay/) allow customers to load historical data from Segment's S3 logs into downstream destinations which accept cloud-mode data. So, for example, if you wanted to try out a new email or analytics tool, Segment can replay your historical data into that tool. This gives you a great testing environment and prevents data lock-in when vendors try to hold data hostage.
 
 > warning ""
-> If you submitted [`suppress_only` requests](https://segment.com/docs/privacy/user-deletion-and-suppression/#suppressed-users), Segment still retains historical events for those users, which can be replayed. If you do not want historical events replayed for suppressed users, submit `suppress_and_delete` requests instead.
+> If you submitted [`suppress_only` requests](/docs/privacy/user-deletion-and-suppression/#suppressed-users), Segment still retains historical events for those users, which can be replayed. If you do not want historical events replayed for suppressed users, submit `suppress_and_delete` requests instead.
 
+### Batching
+
+Segment uses [stream batching](#stream-batching) for all destinations that require near-realtime data and [bulk batching](#bulk-batching) for some data flows in our pipeline.
+
+#### Stream batching
+For all destinations, except for non-realtime Engage syncs and Reverse ETL syncs, Segment processes events from your source as they arrive and then flows the data downstream to your destinations in small batches, in a process called **stream batching**. These batches might contain different events between retry attempts, as events in previous batches may have succeeded, failed with a permanent error, or expired. This variability reduces the workload the system processes during partial successes, allows for better per-event handling, and reduces the chance of load-related failures by using variable batch formations.
+
+#### Bulk batching
+Some data flows may be able to use a process called **bulk batching**, which supports batching for destinations that produce between several thousand and a million events at a time. Real-time workloads or using a Destination Insert Function may prevent bulk batches from being formed. Batches contain the same events between retries. 
+
+The following destinations support bulk batching:
+- [DV360](/docs/connections/destinations/catalog/actions-display-video-360/)
+- [Google Adwords Remarketing Lists](/docs/connections/destinations/catalog/adwords-remarketing-lists/)
+- [Klaviyo (Actions)](/docs/connections/destinations/catalog/actions-klaviyo/)
+- [Pinterest Audiences](/docs/connections/destinations/catalog/pinterest-audiences/)
+- [Snapchat Audiences](/docs/connections/destinations/catalog/snapchat-audiences/)
+- [LiveRamp](/docs/connections/destinations/catalog/actions-liveramp-audiences/)
+- [The Trade Desk CRM](/docs/connections/destinations/catalog/actions-the-trade-desk-crm/)
+
+> info "You must manually configure bulk batches for Actions destinations"
+> To support bulk batching for the Actions Webhook destination, you must set `enable-batching: true` and `batch_size: >= 1000`.
 
 ### IP Allowlist 
 

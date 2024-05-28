@@ -32,6 +32,8 @@ You enable a cloud source from the Segment web app, and grant Segment access by 
 
 Cloud sources attempt to use as few API calls as possible, and (where possible) only fetch data that changed since the last sync. The syncs might take a long time (especially on the first sync), so the cloud source syncs have robust retry and rate limiting logic.
 
+[Contact Segment Product Support](https://segment.com/help/contact) if you'd like to change the cadence of your source's sync frequency. 
+
 ### API call use and collection selection
 
 We make an effort to be respectful of your API call allotments and limits. For example, in the case of Salesforce, we issue only one query per collection per run, using the absolute minimum number of API calls possible (typically about 350/day).
