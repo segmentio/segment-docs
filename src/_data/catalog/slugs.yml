@@ -219,3 +219,5 @@ destinations:
     override: "actions-the-trade-desk-crm"
   - original: "absmartly-actions"
     override: "actions-absmartly"
+  - original: "moloco-mcm"
+    override: "actions-moloco-rmp"
