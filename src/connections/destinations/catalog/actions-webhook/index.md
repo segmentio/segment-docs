@@ -40,4 +40,6 @@ The easiest way to test whether a source's events are sending through the Segmen
 4. Add the endpoint you copied from Step 2 to the Webhook Actions Mapping's URL in Step 3.
 5. Enable the Mapping.
 6. Enable the Webhook Actions destination.
-7. Begin sending events to your source. Verify those events throughout the Segment pipeline (source debugger/ event delivery), and the webhook's website which shows the raw JSON for all of the events successfully received by your Segment source and its Webhooks Actions destination.
+7. Begin sending events to your source.
+8. Verify those events throughout the Segment pipeline (source debugger/ event delivery).
+9. Verify the webhook's website which shows the raw JSON for all of the events successfully received by your Segment source and its Webhooks Actions destination.
