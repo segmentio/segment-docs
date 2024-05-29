@@ -27,9 +27,9 @@ Follow the instructions below to enable your TikTok ads account and add the TikT
 
 The TikTok Conversions destination is configured to use the TikTok Events API. To generate a TikTok Pixel Code and Access Token:
 
-1. [Create a TikTok For Business account](https://ads.tiktok.com/marketing_api/docs?id=1702715936951297){:target="_blank"}.
-2. [Create a TikTok Pixel](https://ads.tiktok.com/help/article?aid=10021){:target="_blank"} in Developer Mode to obtain a Pixel Code. For more information about Developer Mode, please review the [TikTok developer documentation](https://ads.tiktok.com/marketing_api/docs?rid=5ipocbxyw8v&id=1701890973258754){:target="_blank"}.
-3. Follow instructions for [Authorization](https://ads.tiktok.com/marketing_api/docs?rid=959icq5stjr&id=1701890979375106){:target="_blank"} and generate a long term Access Token.
+1. [Create a TikTok For Business account](https://business-api.tiktok.com/portal/docs?id=1738855099573250){:target="_blank"}.
+2. [Create a TikTok Pixel](https://ads.tiktok.com/help/article/get-started-pixel){:target="_blank"} in Developer Mode to obtain a Pixel Code. For more information about Developer Mode, please review the [TikTok developer documentation](https://business-api.tiktok.com/portal/docs?rid=5ipocbxyw8v&id=1739585702922241){:target="_blank"}.
+3. Follow instructions for [Authorization](https://business-api.tiktok.com/portal/docs?id=1739584855420929){:target="_blank"} and generate a long term Access Token.
 
 ### Connect TikTok Conversions to your workspace
 
