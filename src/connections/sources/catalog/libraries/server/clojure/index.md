@@ -234,8 +234,6 @@ You can set a custom logger on the client using:
 
 1. Double check that you've set up the library correctly.
 
-2. Make sure that you're calling one of our API methods once the library is successfully installed—[`identify`](#identify), [`track`](#track), etc.
+2. Make sure that you're calling one of Segment's API methods once the library is successfully installed, like [Identify](#identify) or [Track](#track).
 
-
-
-{% include content/troubleshooting-server-integration.md %}
+{% include content/server-side-troubleshooting.md %}
