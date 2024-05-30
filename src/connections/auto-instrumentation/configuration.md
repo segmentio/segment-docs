@@ -3,7 +3,7 @@ title: Signals Implementation Guide
 hidden: true
 ---
 
-This guide is a reference to configuring and using signals in the Signals SDK with Auto-Instrumentation.  On this page, you'll find details on:
+This guide is a reference to configuring and using signals in the Signals SDK with Auto-Instrumentation. On this page, you'll find details on:
 
 - Setting up and managing signal types in the Signals SDK
 - Creating custom rules to capture and translate signals into actionable analytics events
@@ -14,7 +14,10 @@ This guide assumes that you've already added the Signals SDK to your application
 > info "Auto-Instrumentation Pilot"
 > Auto-Instrumentation is currently in pilot and is governed by Segment's [First Access and Beta Preview Terms](https://www.twilio.com/en-us/legal/tos){:target="_blank"}. Segment doesn't recommend Auto-Instrumentation for use in a production environment, as Segment is actively iterating on and improving the user experience.
 
-## Signals Configuration
+> success "Enable Auto-Instrumentation"
+> To enable Auto-Instrumentation in your Segment workspace, reach out to your dedicated account manager.
+
+## Signals configuration
 
 Using the Signals Configuration object, you can control the destination, frequency, and types of signals that Segment automatically tracks within your application. The following tables detail the configuration options for both Signals-Swift and Signals-Kotlin.
 
@@ -75,9 +78,9 @@ function processSignal(signal) {
 
 ## Signal definitions
 
-Signals come in various types, each associated with specific data that you can use to create analytics events. This section contains code samples that detail each signal type. Because Segment has standardized these definitions across both the Signals-Swift and Signals Kotlin libraries, they're useful when you create rules in your Segment workspace.
+Signals come in various types, each associated with specific data that you can use to create analytics events. This section contains code samples that detail each signal type. Because Segment has standardized these definitions across both the Signals-Swift and Signals-Kotlin libraries, they're useful when you create rules in your Segment workspace.
 
-### Base Signal
+### Base signal
 
 The Base Signal serves as the foundation for all other signal types. It's defined by the `RawSignal<T>` interface, where `T` represents the data type associated with the signal.
 
@@ -108,9 +111,9 @@ enum SignalType {
 }
 ```
 
-### Interaction Signals
+### Interaction signals
 
-The SDK collects Interaction Signals when you enable one of the "UI autoSignal" options, like `useSwiftUIAutoSignal: true`. These signals primarily track user interactions with UI components:
+The SDK collects Interaction signals when you enable one of the `UIAutoSignal` options, like `useSwiftUIAutoSignal: true`. These signals primarily track user interactions with UI components:
 
 ```java
 class InteractionData {
@@ -124,9 +127,9 @@ class InteractionSignal extends RawSignal<InteractionData> {
 }
 ```
 
-### Navigation Signals
+### Navigation signals
 
-The SDK collects Navigation Signals when you enable one of the "UI autoSignal" options, like `useSwiftUIAutoSignal: true`. These signals are generated when a user interacts with navigation components in your application's UI, giving you insight into how users move through and interact with your application:
+The SDK collects Navigation signals when you enable one of the `UIAutoSignal` options, like `useSwiftUIAutoSignal: true`. These signals are generated when a user interacts with navigation components in your application's UI, giving you insight into how users move through and interact with your application:
 
 ```java
 enum NavigationAction {
@@ -140,7 +143,7 @@ enum NavigationAction {
 }
 
 class NavigationData {
-    var action: NavigationAction // The type of navigation action performed
+    var action: NavigationAction // The type of navigation action performed.
     var screen: String           // The screen or component name involved in the navigation.
 }
 
@@ -149,9 +152,9 @@ class NavigationSignal extends RawSignal<NavigationData> {
 }
 ```
 
-### Network Signals
+### Network signals
 
-The SDK collects Network Signals when you enable the `useNetworkAutoSignal` option in your Signals Configuration, like `useNetworkAutoSignal: true`. These signals are generated when your application makes network requests:
+The SDK collects Network signals when you enable the `useNetworkAutoSignal` option in your Signals Configuration, like `useNetworkAutoSignal: true`. These signals are generated when your application makes network requests:
 
 ```java
 enum NetworkAction {
@@ -171,7 +174,7 @@ class NetworkSignal extends RawSignal<NetworkData> {
 }
 ```
 
-### LocalData Signals
+### Local Data signals
 
 The SDK collects Local Data Signals when data gets loaded from local soures, like SQLite databases or local caches. These signals help track how your application manages local data:
 
@@ -195,7 +198,7 @@ class LocalDataSignal extends RawSignal<LocalData> {
 }
 ```
 
-### Instrumentation Signals
+### Instrumentation signals
 
 The SDK collects Instrumentation Signals when [traditional Segment analytics events](/docs/connections/spec/) are invoked:
 
@@ -219,7 +222,7 @@ class InstrumentationSignal extends RawSignal<InstrumentationData> {
 }
 ```
 
-### User-Defined Signals
+### User-defined signals
 
 You can also define your own signals. Use the following example as an implementation guideline:
 

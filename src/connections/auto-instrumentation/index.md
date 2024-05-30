@@ -25,14 +25,14 @@ Some Auto-Instrumentation advantages include:
 
 - **JavaScript-based instrumentation logic**: Configure and refine your instrumentation logic entirely within JavaScript, simplifying the development process and reducing dependencies on other environments.
 - **Rapid iteration**: Update your instrumentation logic without the need to constantly release new versions of your mobile app, enabling faster iterations and improvements.
-- **Bypass update delays**: Avoid the typical delays associated with app update cycles and app store approvals. Auto-instrumentation lets you update your tracking setups or fix errors immediately, ensuring your data collection remains accurate and timely.
+- **Bypass update delays**: Avoid the typical delays associated with app update cycles and app store approvals. Auto-Instrumentation lets you update your tracking setups or fix errors immediately, ensuring your data collection remains accurate and timely.
 
 ## How it works
 
-After you [integrate the Analytics SDK and Signals SDK into your application](/docs/connections/auto-instrumentation/setup/), Segment begins to passively monitor user activity like button clicks, page navigation, and network data. Segment captures these events as "Signals" and sends them to your Auto-Instrumentation source in real time.
+After you [integrate the Analytics SDK and Signals SDK into your application](/docs/connections/auto-instrumentation/setup/), Segment begins to passively monitor user activity like button clicks, page navigation, and network data. Segment captures these events as "signals" and sends them to your Auto-Instrumentation source in real time.
 
 In Segment, the Auto-Instrumentation source lets you view raw signals. You can then [use this data to create detailed analytics events](/docs/connections/auto-instrumentation/configuration/) based on those signals, enriching your insights into user behavior and applicatino performance.
 
 ## Privacy
 
-Auto-Instrumentation ensures that any personally identifiable information (PII) is removed from breadcrumbs before they get sent to Segment. No user data is visible to Segment.
+Auto-Instrumentation removes personally identifiable information (PII) from breadcrumbs before they get sent to Segment. No user data is visible to Segment.
