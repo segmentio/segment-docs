@@ -7,7 +7,7 @@ id: 63cade592992cf7052ce2e3e
 
 [Ripe](https://www.getripe.com/){:target="_blank"} is a sales conversion tool that enables B2B revenue teams to surface and meet their best leads at the best possible time - when they are using your product.
 
-The Ripe Segment integration is an [Actions-based Destination in cloud mode](https://segment.com/docs/connections/destinations/#connection-modes) that lets you send your product events data to Ripe.
+The Ripe Segment integration is an [Actions Destination in cloud mode](/docs/connections/destinations/#connection-modes) that lets you send your product events data to Ripe.
 
 Ripe maintains this destination. For any issues with the destination, [contact the Ripe team](mailto:support@getripe.com).
 
@@ -16,9 +16,8 @@ Ripe maintains this destination. For any issues with the destination, [contact t
 
 ## Getting Started
 
-> warning ""
-> **Before Getting Started**
-> Ripe Cloud Mode is a way to send your back-end events to Ripe and should be used in tandem with our client-side [Ripe Destination](https://segment.com/docs/connections/destinations/catalog/actions-ripe-web/). Without the Ripe [web mode] destination installed on a javascript source, functionality will be severely limited and you will not be able to interact with leads through the Ripe app.
+> warning "Ripe Cloud Mode (Actions) destination requires events from an Analytics.js source"
+> Ripe Cloud Mode is a way to send your backend events to Ripe and should be used in tandem with the client-side [Ripe Destination](/docs/connections/destinations/catalog/actions-ripe-web/). Without a Ripe Web Mode (Actions) destination receiving information from an Analytics.js source, you will not be able to interact with leads in the Ripe app.
 
 1. From the Destinations catalog page in the Segment App, click Add Destination.
 2. Search for "Ripe Cloud Mode (Actions)" in the Destinations Catalog, and select the "Ripe Cloud Mode (Actions)" destination.
