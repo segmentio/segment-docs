@@ -13,7 +13,7 @@ Auto-Instrumentation simplifies tracking in your websites and apps by eliminatin
 
 ## Background
 
-Gathering actionable and timely data is crucial to the success of your business. However, collecting this data in real time has historically proven challenging. 
+Gathering actionable and timely data is crucial to the success of your business. However, collecting this data in real time has historically proven to be challenging. 
 
 As your business needs change, keeping instrumentation up-to-date across all of your digital properties can be time-consuming, often taking weeks or months. This delay can lead to lost insights, frustration for your marketers and developers, and open-ended support of your Segment instrumentation.
 
