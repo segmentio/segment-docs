@@ -35,7 +35,7 @@ There are two ways to add a destination to your deployment: using the Segment we
 8. Click the toggle at the top of the Settings page to enable the destination.
 
 > success ""
-> If you have more than one instance of the same destination, you can click **Copy Settings From Other Destination** to save yourself time entering the settings values.
+> If you have more than one instance of the same destination, you can click **Copy Settings From Other Destination** to save yourself time entering the settings values manually.
 
 #### Adding a destination to a specific Segment Source
 
