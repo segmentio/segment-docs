@@ -33,8 +33,8 @@ Using the Signals Configuration object, you can control the destination, frequen
 | `useUIKitAutoSignal`   | No       | Bool                       | Tracks UIKit component interactions automatically. Default is `false`.                                                                                                                                 |
 | `useSwiftUIAutoSignal` | No       | Bool                       | Tracks SwiftUI component interactions automatically. Default is `false`.                                                                                                                               |
 | `useNetworkAutoSignal` | No       | Bool                       | Tracks network events automatically. Default is `false`.                                                                                                                                               |
-| `allowedNetworkHosts`  | No       | [String]                   |                                                                                                                                                                                                        |
-| `blockedNetworkHosts`  | No       | [String]                   |                                                                                                                                                                                                        |
+| `allowedNetworkHosts`  | No       | Array                      | An array of allowed network hosts.                                                                                                                                                                     |
+| `blockedNetworkHosts`  | No       | Array                      | An array of blocked network hosts.                                                                                                                                                                     |
 
 
 ### Signals-Kotlin
