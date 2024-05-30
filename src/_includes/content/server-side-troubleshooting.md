@@ -5,7 +5,7 @@
 
 If you are experiencing data loss from your {{ currentIntegration.display_name }} source, you may be experiencing one or more of the following common errors:
 
-- **Payload is too large**: If you attempt to send events larger 32KB per normal API request or batches of events larger than 500KB per request, Segment’s tracking API responds with `400 Bad Request`. Try sending smaller events (or smaller batches) to correct this error.
+- **Payload is too large**: If you attempt to send events larger than 32KB per normal API request or batches of events larger than 500KB per request, Segment’s tracking API responds with `400 Bad Request`. Try sending smaller events (or smaller batches) to correct this error.
 
 - **Identifier is not present**: Segment's tracking API requires that each payload has a `userId` and/or `anonymousId`. If you send events without either the `userId` or `anonymousId`, Segment's tracking API responds with an `no_user_anon_id` error. Check the event payload and client instrumentation for more details. 
 
