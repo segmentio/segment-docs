@@ -15,9 +15,6 @@ For more details on AI usage and data, see [Predictions Nutrition Facts Label](/
 
 On this page, you'll learn how to build a prediction.
 
-> warning "Not a HIPAA Eligible Service or PCI Compliant"
-> Agent Copilot and Unified Profiles in Flex aren't HIPAA Eligible Services or PCI compliant and shouldn't be used in Flex or Segment workflows that are subject to HIPAA or PCI.
-
 ## Build a prediction
 
 ![The Predictive Trait builder in the Segment UI](../../images/trait_builder.png)
