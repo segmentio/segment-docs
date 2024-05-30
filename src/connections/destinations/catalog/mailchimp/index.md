@@ -133,6 +133,9 @@ Again, this will **NOT** work for new users. New users will always have their su
 ### Why are my calls with trait arrays not showing up in Mailchimp?
 Mailchimp doesn't support arrays as traits values. This can cause calls to not show up.
 
+### Why is 400 Bad Request error encountered?
+Misspelling of email domain name in the email address might result in 400 Bad Request error as Mailchimp might reject such email, for example, "joe@gmil.com" because Gmail was misspelled.
+
 ## Engage
 
 You can send computed traits and audiences generated using [Engage](/docs/engage/) to Mailchimp as a **user property**. To learn more about Engage, schedule a [demo](https://segment.com/demo/){:target="_blank"}.
