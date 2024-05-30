@@ -29,7 +29,7 @@ The other value you need is an API key (sometimes referred to as an Authorizatio
 
 You can find this page in the [settings sidebar of your Segment app](https://app.segment.com/goto-my-workspace/settings/advanced){:target="_blank”}.
 
-![Screenshot of the Segment settings sidebar, with Advanced Settings selected.](images/asset_generate_scim_token.png)
+![Screenshot of the Segment settings sidebar, with Advanced Settings selected.](images/generate_sso_token.jpg)
 
 ## Features
 
@@ -107,7 +107,7 @@ For example, you might map `{firstName} {lastName}` from your IdP to `displayNam
 > success ""
 > **Tip**: You can also link Okta groups to an existing group from in the Segment app using the Okta UI.
 
-![Screenshot of the Segment Settings page, with the Access Management and User Groups tabs selected, and the user group created in the steps above present on the page.](images/scim_edit_groups.png)
+![Screenshot of the Segment Settings page, with the Access Management and User Groups tabs selected, and the user group created in the steps above present on the page.](images/scim_edit_group.jpg)
 
 ## Microsoft Entra ID Setup Guide
 
