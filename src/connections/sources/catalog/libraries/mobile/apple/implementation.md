@@ -353,10 +353,10 @@ var body: some Scene {
 ```
 If you call this method with a valid URL parameter, a Segment `Deep Link Opened` track event triggers. 
 
-## Configuration Options
+## Configuration options
 
 ### anonymousIdGenerator
-To generate custom anonymousIds instead of relying on the ones created by Segment, you can use the following configuration option. Here's an example:
+To generate custom anonymousIds instead of relying on the ones Segment creates, you can use the following configuration option:
 ```swift
 class MyAnonymousIdGenerator: AnonymousIdGenerator {
   func newAnonymousId -> String {
