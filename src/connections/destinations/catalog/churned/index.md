@@ -1,5 +1,7 @@
 ---
 title: Churned Destination
+id: 6638e615c59c2acad44ec223
+beta: true
 ---
 
 [Churned](https://www.churned.io/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners){:target="\_blank”} is an AI-powered customer success platform for subscription businesses, eliminating the need for rule-based decision making with live AI-driven actions. It uses machine learning to predict churn and drive customer retention.
