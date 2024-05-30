@@ -770,6 +770,15 @@ sources:
       - us
     endpoints:
       - us
+  - id: MW9K4HgBZz
+    display_name: Pushwoosh Source
+    hidden: false
+    slug: pushwoosh-source
+    url: connections/sources/catalog/cloud-apps/pushwoosh-source
+    regions:
+      - us
+    endpoints:
+      - us
   - id: XRksQPCr7X
     display_name: Python
     hidden: false
