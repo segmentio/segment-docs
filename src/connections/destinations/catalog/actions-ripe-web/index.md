@@ -29,7 +29,7 @@ Ripe supports all the following methods out of the box.
 
 ### Identify
 
-Take a look at the [Page method documentation](/docs/connections/spec/page/) to learn about what it does. An example call would look like this:
+Take a look at the [Identify method documentation](/docs/connections/spec/identify/) to learn about what it does. An example call would look like this:
 
 ```js
 analytics.identify('userId123', {
