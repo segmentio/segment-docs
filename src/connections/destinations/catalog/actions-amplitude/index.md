@@ -57,7 +57,7 @@ The Amplitude (Actions) destination does not offer a device-mode connection mode
 
 Session tracking is available with Segment's new libraries: [Analytics.js 2.0](/docs/connections/sources/catalog/libraries/website/javascript/), [Swift](/docs/connections/sources/catalog/libraries/mobile/apple/) or [Kotlin](/docs/connections/sources/catalog/libraries/mobile/kotlin-android/). 
 
-When connected to the Analytics.js 2.0 source, Segment automatically loads a plugin on your website for session tracking and enrichment as an alternative to the Amplitude SDK. This means you don't need to bundle any software or write any code to run on the user's device, and can use more of the Segment platform features for data going to Amplitude, like [Protocols filtering and transformations](/docs/protocols/) and [Unify Identity Resolution](docs/unify/identity-resolution/).
+When connected to the Analytics.js 2.0 source, Segment automatically loads a plugin on your website for session tracking and enrichment as an alternative to the Amplitude SDK. This means you don't need to bundle any software or write any code to run on the user's device, and can use more of the Segment platform features for data going to Amplitude, like [Protocols filtering and transformations](/docs/protocols/) and [Unify Identity Resolution](/docs/unify/identity-resolution/).
 
 If you're using one of Segment's [Swift](/docs/connections/sources/catalog/libraries/mobile/apple/), [Kotlin](/docs/connections/sources/catalog/libraries/mobile/kotlin-android/), or [React Native](/docs/connections/sources/catalog/libraries/mobile/react-native/) libraries, you will need to include the Amplitude destination plugin to enable session tracking. 
 
