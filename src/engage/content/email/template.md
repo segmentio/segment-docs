@@ -128,4 +128,9 @@ Segment doesn't support profile traits in object and array datatypes in [Broadca
 - View some [email deliverability tips and tricks](https://docs.sendgrid.com/ui/sending-email/deliverability){:target="blank"} from SendGrid.
 
 - You can also use the Templates screen in Engage to [build SMS templates](/docs/engage/content/sms/template/).
- 
+
+## FAQs
+
+### Will changes made to a template be automatically reflected in a Journey step that utilizes the template?
+
+When using a template in a Journey Step, it serves as the foundational template for that particular step. Once an email template is selected for use in a Journey, any modifications made to that original template will not reflect in the Journey's version of the template after it has been added. Similarly, any customizations made to the email template within a Journey step will not alter the original template.
