@@ -225,6 +225,10 @@ You'll also need to modify the Segment script with your `nonce` tag, which shoul
 > info ""
 > Since Segment interacts with several integrations, support surrounding Content Security Policy issues is limited.
 
+## Why am I getting an empty campaign object in my event payload?
+
+When any search parameters are present in the URL, Analytics.js will generate a campaign object inside the context object. If there are no UTM parameters present to be parsed, then the campaign object will remain empty. 
+
 ## Known issues:
 
 [Review and contribute to these on GitHub](https://github.com/segmentio/analytics.js/issues).
