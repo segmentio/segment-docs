@@ -37,12 +37,11 @@ The Segment Native Mobile Spec includes the following semantic events:
 - [Deep Link Opened](#deep-link-opened)
 - [Deep Link Clicked](#deep-link-clicked)
 
-
 Segment recommends using the above event names if you're going to be integrating the events yourself. This will ensure that they can be mapped effectively in downstream tools.
 
 ## Lifecycle events
 
-Mobile applications live within a fairly bounded lifecycle. In order to understand and communicate effectively with your users, it's crucial to instrument the core flows associated with installing and opening your app. The following events, allow you to get a picture of top-line metrics such as DAUs, MAUs, and Screen Views per session. Automatic tracking of lifecycle events is completely optional - you can learn how to enable and disable them in Segment's docs for each library below:
+Mobile applications live within a fairly bounded lifecycle. To understand and communicate effectively with your users, it's crucial to instrument the core flows associated with installing and opening your app. The following events allow you to get a picture of top-line metrics such as DAUs, MAUs, and Screen Views per session. Automatic lifecycle event tracking is optional - you can learn how to enable and disable them in Segment's docs for each library below:
 - [iOS](https://segment.com/docs/connections/sources/catalog/libraries/mobile/ios/#step-2-install-the-sdk){:target="_blank"} 
 - [Swift](https://segment.com/docs/connections/sources/catalog/libraries/mobile/apple/#getting-started){:target="_blank"} 
 - [Android](https://segment.com/docs/connections/sources/catalog/libraries/mobile/android/quickstart/#step-3-initialize-the-client){:target="_blank"} 
@@ -55,17 +54,17 @@ The following events will be tracked automatically when lifecycle events are ena
 - [Application Opened](#application-opened)
 - [Application Updated](#application-updated)
 
-In Kotlin, Swift, and React Native, the following event is tracked in addition to the three above:
+In Kotlin, Swift, and React Native, the following additional events are tracked:
 
 - [Application Backgrounded](#application-backgrounded)
 
-In Swift, the following is also tracked:
+In Swift, the following event is also tracked:
 
 - [Application Foregrounded](#application-foregrounded)
 
 ### Application Installed
 
-This event fires when a user **first** opens your mobile application. Note, if the user never opens your app after installing, Segment will not be able to collect this event. This event doesn't wait for attribution or campaign information to be received, and is collected automatically by Segment's SDKs. Advertising providers like Facebook and Google require discrete install events to correctly attribute installs to ads served through their platform.
+This event fires when a user **first** opens your mobile application. Note, if the user never opens your app after installing, Segment will not collect this event. This event doesn't wait for attribution or campaign information to be received, and is collected automatically by Segment's SDKs. Advertising providers like Facebook and Google require discrete install events to correctly attribute installs to ads served through their platform.
 
 {% comment %} api-example '{ "userId": "019mr8mf4r", "type": "track", "event": "Application Installed", "properties": { "version": "1.2.3", "build": "1234" }}'}}} {% endcomment %}
 
