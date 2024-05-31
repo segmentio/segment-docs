@@ -43,7 +43,7 @@ analytics.identify('userId123', {
 });
 ```
 
-Segment sends Identify calls to Ripe as `identify` events. Ripe displays these events as `Users` by default. `Identify` event data is augmented with traits. It's important to include email as a trait, as soon as it is known. Ripe will use email to populate User views by default. We fully support the [Segment's Identify Spec](https://segment.com/docs/connections/spec/identify/#traits), and we recommend using the standardized names for the reserved traits covered there.
+Segment sends Identify calls to Ripe as `identify` events. Ripe displays these events as `Users` by default. `Identify` event data is augmented with traits. It's important to include email as a trait, as soon as it is known. Ripe will use email to populate User views by default. Ripe fully supports [Segment's Identify Spec](https://segment.com/docs/connections/spec/identify/#traits), and recommend using the standardized names for the reserved traits covered there.
 
 
 ### Track
