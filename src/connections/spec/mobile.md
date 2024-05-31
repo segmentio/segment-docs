@@ -24,6 +24,7 @@ The Segment Native Mobile Spec includes the following semantic events:
 - [Application Installed](#application-installed)
 - [Application Opened](#application-opened)
 - [Application Backgrounded](#application-backgrounded)
+- [Application Foregrounded](#application-foregrounded) 
 - [Application Updated](#application-updated)
 - [Application Uninstalled](#application-uninstalled)
 - [Application Crashed](#application-crashed)
@@ -41,13 +42,26 @@ Segment recommends using the above event names if you're going to be integrating
 
 ## Lifecycle events
 
-Mobile applications live within a fairly bounded lifecycle. In order to understand and communicate effectively with your users, it's crucial to instrument the core flows associated with installing and opening your app. The following events, allow you to get a picture of top-line metrics such as DAUs, MAUs, and Screen Views per session. Automatic tracking of lifecycle events is completely optional - you can learn how to enable and disable them in Segment's [iOS](https://segment.com/docs/connections/sources/catalog/libraries/mobile/ios/#step-2-install-the-sdk){:target="_blank"} and [Android](https://segment.com/docs/connections/sources/catalog/libraries/mobile/android/quickstart/#step-3-initialize-the-client){:target="_blank"} library docs.
+Mobile applications live within a fairly bounded lifecycle. In order to understand and communicate effectively with your users, it's crucial to instrument the core flows associated with installing and opening your app. The following events, allow you to get a picture of top-line metrics such as DAUs, MAUs, and Screen Views per session. Automatic tracking of lifecycle events is completely optional - you can learn how to enable and disable them in Segment's docs for each library below:
+- [iOS](https://segment.com/docs/connections/sources/catalog/libraries/mobile/ios/#step-2-install-the-sdk){:target="_blank"} 
+- [Swift](https://segment.com/docs/connections/sources/catalog/libraries/mobile/apple/#getting-started){:target="_blank"} 
+- [Android](https://segment.com/docs/connections/sources/catalog/libraries/mobile/android/quickstart/#step-3-initialize-the-client){:target="_blank"} 
+- [Kotlin](https://segment.com/docs/connections/sources/catalog/libraries/mobile/kotlin-android/#getting-started){:target="_blank"} 
+- [React Native](https://segment.com/docs/connections/sources/catalog/libraries/mobile/react-native/#getting-started){:target="_blank"} 
 
-The following events will be tracked automatically when lifecycle events are enabled:
+The following events will be tracked automatically when lifecycle events are enabled in all mobile libraries:
 
 - [Application Installed](#application-installed)
 - [Application Opened](#application-opened)
 - [Application Updated](#application-updated)
+
+In Kotlin, Swift, and React Native, the following event is tracked in addition to the three above:
+
+- [Application Backgrounded](#application-backgrounded)
+
+In Swift, the following is also tracked:
+
+- [Application Foregrounded](#application-foregrounded)
 
 ### Application Installed
 
@@ -112,6 +126,21 @@ This event should be sent when a user backgrounds the application upon [`applica
   "userId": "019mr8mf4r",
   "type": "track",
   "event": "Application Backgrounded",
+  "properties": {}
+}
+```
+
+### Application Foregrounded
+
+This event is fired when a user opens the app or brings it back into the foreground of their device. This is only collected by the Swift library. 
+
+{% comment %} api-example '{ "userId": "019mr8mf4r", "type": "track", "event": "Application Foregrounded", "properties": {}}'}}} {% endcomment %}
+
+```json
+{
+  "userId": "019mr8mf4r",
+  "type": "track",
+  "event": "Application Foregrounded",
   "properties": {}
 }
 ```
