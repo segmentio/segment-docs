@@ -8,7 +8,7 @@ With Consent in RETL, you can enforce your end-users' consent preferences that a
 To enforce consent stored in your warehouse, build a Reverse ETL mapping that identifies consent categories. You can create a new mapping or update your mapping to identify the columns that store information about end user consent preferences and then enforce these preferences in [Reverse ETL-supported Actions destinations](/docs/connections/reverse-etl/reverse-etl-catalog/) and the [Segment Connections destination](/docs/connections/destinations/catalog/actions-segment/).
 
 > info "Consent in Reverse ETL supports RETL destinations and Segment Connections"
-> At this time, Consent in Reverse ETL does not support enforcing consent in the Segment Profiles destination. To enforce consent data in your Classic Segment destinations, use the [Segment Connections destination](/docs/connections/destinations/catalog/actions-segment/). 
+> At this time, Consent in Reverse ETL does not support enforcing consent in the Segment Profiles destination. To enforce consent data in your classic Segment destinations, use the [Segment Connections destination](/docs/connections/destinations/catalog/actions-segment/). 
 
 ## Prerequisites
 
