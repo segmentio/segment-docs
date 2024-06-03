@@ -36,11 +36,10 @@ This source is maintained by ConfigCat. For any issues with the source, [contact
     - **Segment SDK:** Set up with the Segment Write Key acquired while adding the ConfigCat source in Segment.
 3. **Integrate Feature Flag Evaluations:**
     - During the initialization of the ConfigCat SDK, subscribe to the `flagEvaluated` hook.
-    - Send feature flag evaluation data to Segment using the `featureFlagEvaluated` event name. Include the following parameters:
-        - `featureFlagKey`: the feature flag's key
+    - Send feature flag evaluation data to Segment using the `Feature Flag Evaluated` event name. Include the following parameters:
+        - `feature_flag_key`: the feature flag's key
         - `value`: the evaluated feature flag's value or Variation ID
-        - `variationId` (optional): the evaluated feature flag's Variation ID
-        - `userId` (optional): the user object's identifier used during feature flag evaluation
+        - `variation_id` (optional): the evaluated feature flag's Variation ID
         - `user` (optional): the user object used during feature flag evaluation.
     - You can find code samples in the [ConfigCat Segment Source documentation](https://configcat.com/docs/integrations/segment/#analytics){:target="_blank”}.
 
@@ -63,7 +62,7 @@ The table below lists events that ConfigCat sends to Segment. These events appea
 
 The tables below list the properties included in the events listed above.
 
-### `featureFlagEvaluated` event
+### `Feature Flag Evaluated` event
 
 | Property Name    | Description                                                      |
 | ---------------- | ---------------------------------------------------------------- |
@@ -72,7 +71,7 @@ The tables below list the properties included in the events listed above.
 | `variation_id`    | The evaluated feature flag's Variation ID                        |
 | `user`           | The user object used during feature flag evaluation              |
 
-### `featureFlagChanged` event
+### `Feature Flag Changed` event
 
 | Property Name   | Description                                                        |
 | ----------------- | ---------------------------------------------------------------- |
