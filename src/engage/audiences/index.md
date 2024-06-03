@@ -257,6 +257,9 @@ Segment recommends using the `$` operator when you deal with array properties. H
 ### How do I populate multiple items off a list for an `equals one of` condition? **
 The audience builder accepts CSV and TSV lists.
 
+### Why am I receiving the error "The audience would create a cycle by referencing another audience"?
+
+This error occurs when creating audiences that reference each other, meaning audience X refers to audience Y in its trigger condition, and later you attempt to modify audience Y's trigger condition to refer back to audience X. To avoid this error, ensure that the audiences do not reference each other in their conditions.
+
 ### How does the historical data flag work?
 Including historical data lets you take past information into account. You can data only exclude historical data for real-time audiences. For batch audiences, Segment includes historical data by default.
-
