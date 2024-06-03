@@ -167,7 +167,7 @@ If no events are flowing to your GA4 instance, use one of the Debugging Tools to
 
 ### Duplicate `page_view` events in GA4
 
-If you are sending multiple `gtag(‘config’)` commands called from Set Configuration mapping on one page before a new DOM has loaded, and you have defined `send_page_view: true` with each ‘Config’ event, you may see duplicate `page_view` events sent to your GA4 measurement id. If this is the case, please refer to Google's documentation on [Ignoring duplicate instances of on-page configuration](https://support.google.com/analytics/answer/9973999?hl=en#:~:text=as%20described%20below.-,Ignore%20duplicate%20instances%20of%20on%2Dpage%20configuration,Click%20Save.,-Give%20feedback%20about){:target="_blank"}. 
+If you are sending multiple `gtag(‘config’)` commands called from Set Configuration mapping on one page before a new DOM has loaded, and you have defined `send_page_view: true` with each ‘Config’ event, you may see duplicate `page_view` events sent to your GA4 measurement id. If this is the case, see Google's documentation on [Ignoring duplicate instances of on-page configuration](https://support.google.com/analytics/answer/9973999?hl=en#:~:text=as%20described%20below.-,Ignore%20duplicate%20instances%20of%20on%2Dpage%20configuration,Click%20Save.,-Give%20feedback%20about){:target="_blank"}. 
 
 If your site is a Single Page Application (SPA), you may want to leave the **Ignore duplicate instances of on-page configuration** toggle disabled in the Google Tag Admin as a new DOM is not called on each new page path. If you have a SPA, disabled the **Ignore duplicate instances of on-page configuration** toggle, and have multiple Set Configuration mappings, use Segment's new **Send Page Views** field mapping to override the `send_page_view` parameter in your Settings. This selection takes precedence over what is defined in the Segment Settings. If you leave the selection for your destination undefined, it will fall back to what you selected in the Segment Settings.
 
@@ -192,13 +192,13 @@ To observe this feature, trigger a `Page` call with UTM parameters present in th
 
 ### Pass Custom Event parameters to all events and Custom Item parameters to all recommended Ecommerce events
 
-To pass custom event parameters to all events on the page, navigate to your Set Configuration Mapping, click Show All Fields, and enter any custom Event Parameters, including page_view. Any event parameters that have the same parameter key in Event Mappings will take precedence over what is set in the Set Configuration Mapping. 
+To pass custom event parameters to all events on the page, navigate to your Set Configuration Mapping, click **Show All Fields**, and enter any custom Event Parameters, including page_view. Any event parameters that have the same parameter key as your other event mappings will take precedence over what is set in the Set Configuration Mapping. 
 
 To send custom item parameters, add the custom item parameter name in mappings where there is a Products array. Register your custom item parameter in the GA4 Admin panel if you would like this value processed in the GA4 UI. You can ONLY add custom item parameters in the Products array. If you add custom item parameters as an Event Parameter, they will be registered as an Event Parameter.
 
 ### My Events Send to the wrong Google ID
 
-In each Event Mapping, there is a “Send To” parameter. Set this to “True” if you would like to include the send_to parameter and only send the event to the measurement_id indicated in the settings. If you select “False” or do not enter a selection, GA4 Events will broadcast to all measurement IDs, including Google Ads IDs, on the page.
+In each Event Mapping, there is a “Send To” parameter. Set this to “True” if you would like to include the send_to parameter and only send the event to the measurement_id configured in your settings. If you select “False” or do not enter a selection, GA4 Events will broadcast to all measurement IDs, including Google Ads IDs, on the page. These measurement IDs may be set outside of Segment. For more info on how the send_to parameter works, see Google's documentation on [Group and Route Data](https://developers.google.com/tag-platform/gtagjs/routing){:target="_blank"}.
 
 ### Can I override my send_page_view selection that I declared in the Settings?
 

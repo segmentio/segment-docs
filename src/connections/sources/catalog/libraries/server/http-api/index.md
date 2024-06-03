@@ -40,6 +40,10 @@ In practice that means taking a Segment source **Write Key**,`'abc123'`, as the 
 > Include a colon before encoding. While encoding the write key without a colon might work due to backward compatibility, this won't always be the case.  
 
 #### OAuth
+
+> info ""
+> OAuth 2.0 is currently in private beta and is governed by Segment’s [First Access and Beta Preview Terms](https://www.twilio.com/en-us/legal/tos){:target="_blank"}.
+
 [Obtain the access token](/docs/connections/oauth/) from the Authorization Server specific to the region. 
 
 Include the access token in the Authorization header as a Bearer token along with your project's write key in the payload of the request. For example, Authorization with Bearer token looks like:
@@ -478,4 +482,4 @@ When sending a HTTP call from a user's device, you can collect the IP address by
 
 2. Make sure that you're calling a Segment API method after the library is successfully installed—[Identify](#identify), [Track](#track), and so on.
 
-{% include content/troubleshooting-server-integration.md %}
+{% include content/server-side-troubleshooting.md %}

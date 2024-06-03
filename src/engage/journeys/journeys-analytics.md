@@ -35,7 +35,7 @@ The following table shows the statistics available for a Journey:
 | Exits       | The total number of users who have exited the Journey                         |
 
 > info ""
-> Completed and exits are mutually exclusive.
+> Completed and exits are mutually exclusive. The "Search for a user" search box excludes users who have exited the Journey. 
 
 Use the date picker to view a Journey's analytics over a specific time frame in any 180 day period.
 

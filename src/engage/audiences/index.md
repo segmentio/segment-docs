@@ -64,7 +64,9 @@ You can use the following time comparison operators in your audience definition:
 - `after next` 
 
 Only ISO timestamps can be used with these operators. Additionally, these time comparison operators exclusively apply to custom traits.
-If the timestamp is not a valid ISO timestamp (for example, a trailing `Z` is missing), Segment won't process the audience in real-time. Learn more about [real-time compute compared to batch](/docs/engage/audiences/#real-time-compute-compared-to-batch).
+If the timestamp is not a valid ISO timestamp (for example, a trailing `Z` is missing), Segment won't process the audience in real-time. Learn more about [real-time compute compared to batch](/docs/engage/audiences/#real-time-compute-compared-to-batch). 
+
+**Note**: Timezones seen in the UI are based on your local timezone, but are converted to UTC on the backend.
 
 ### Funnel Audiences
 
@@ -259,3 +261,5 @@ The audience builder accepts CSV and TSV lists.
 
 This error occurs when creating audiences that reference each other, meaning audience X refers to audience Y in its trigger condition, and later you attempt to modify audience Y's trigger condition to refer back to audience X. To avoid this error, ensure that the audiences do not reference each other in their conditions.
 
+### How does the historical data flag work?
+Including historical data lets you take past information into account. You can data only exclude historical data for real-time audiences. For batch audiences, Segment includes historical data by default.
