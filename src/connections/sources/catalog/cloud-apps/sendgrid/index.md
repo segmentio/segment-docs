@@ -92,4 +92,4 @@ Make sure you allowlist Segment IP addresses on SendGrid. [Contact Segment](http
 
 When you disable your SendGrid source, you'll need to also disable the webhook portion of your configuration.
 
-If you are only able to create one webhook, please review your SendGrid account plan details [here](https://sendgrid.com/en-us/pricing). On the free plan with SendGrid and can only have 1 webhook.
+If you are only able to create one webhook, review your SendGrid [account plan details](https://sendgrid.com/en-us/pricing). On the Sendgrid free plan, you can only have 1 webhook.
