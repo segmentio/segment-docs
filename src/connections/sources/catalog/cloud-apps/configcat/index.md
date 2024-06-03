@@ -1,5 +1,7 @@
 ---
 title: ConfigCat Source
+id: nEjnxv4kbB
+beta: true
 ---
 
 [ConfigCat](https://configcat.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners){:target="_blank”} is a feature flag and remote configuration service that empowers developers to control and customize the functionality of their applications. With ConfigCat, you can easily toggle features on and off, alter their settings, and roll out updates to specific users or groups. Targeting is supported through attributes, percentage-based rollouts, and segmentation. ConfigCat is available for all major programming languages and frameworks.
@@ -54,8 +56,8 @@ The table below lists events that ConfigCat sends to Segment. These events appea
 
 | Event Name           | Description            |
 | ------------------   | ---------------------- |
-| featureFlagEvaluated | Feature flag evaluated |
-| featureFlagChanged   | Feature flag changed   |
+| Feature Flag Evaluated | Feature flag evaluated |
+| Feature Flag Changed   | Feature flag changed   |
 
 ## Event Properties
 
@@ -65,10 +67,9 @@ The tables below list the properties included in the events listed above.
 
 | Property Name    | Description                                                      |
 | ---------------- | ---------------------------------------------------------------- |
-| `featureFlagKey` | The feature flag's key                                           |
+| `feature_flag_key` | The feature flag's key                                           |
 | `value`          | The evaluated feature flag's value or Variation ID               |
-| `variationId`    | The evaluated feature flag's Variation ID                        |
-| `userId`         | The user object's identifier used during feature flag evaluation |
+| `variation_id`    | The evaluated feature flag's Variation ID                        |
 | `user`           | The user object used during feature flag evaluation              |
 
 ### `featureFlagChanged` event
@@ -76,19 +77,15 @@ The tables below list the properties included in the events listed above.
 | Property Name   | Description                                                        |
 | ----------------- | ---------------------------------------------------------------- |
 | `details`         | A brief summary of the change                                    |
-| `timestamp`       | When the change happened                                         |
-| `userId`          | The ConfigCat user's ID who made the changes                     |
-| `userEmail`       | The ConfigCat user's email who made the changes                  |
-| `userFullName`    | The ConfigCat user's full name who made the changes              |
-| `userId`          | The ConfigCat user's ID Who made the changes                     |
-| `productId`       | The product's ID where the change happened                       |
-| `productName`     | The product's name where the change happened                     |
-| `configId`        | The config's ID where the change happened                        |
-| `configName`      | The config's name where the change happened                      |
-| `environmentId`   | The environment's ID where the change happened                   |
-| `environmentName` | The environment's name where the change happened                 |
+| `user_email`       | The ConfigCat user's email who made the changes                  |
+| `user_full_name`    | The ConfigCat user's full name who made the changes              |
+| `product_id`       | The product's ID where the change happened                       |
+| `product_name`     | The product's name where the change happened                     |
+| `config_id`        | The config's ID where the change happened                        |
+| `config_name`      | The config's name where the change happened                      |
+| `environment_id`   | The environment's ID where the change happened                   |
+| `environment_name` | The environment's name where the change happened                 |
 | `url`             | A direct link to the config/feature flag                         |
-| `userId`          | The user object's identifier used during feature flag evaluation |
 | `user`            | The user object used during feature flag evaluation              |
 
 ## Adding Destinations
