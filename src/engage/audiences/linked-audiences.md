@@ -118,6 +118,10 @@ Profile enters or exits audience| Send an Identify event when a profile's audien
 
 After you select an action, Segment attempts to automatically configure the data fields that will be sent to the destination. You can review and adjust these settings before enabling this event.
 
+#### Send a Test Event 
+
+You can send a test event to see if your action-based campaign is rendering correctly. If the test event is not successful, adjust the Segment test event user id to match the existing Source user id. Or if you need to create a new user in your Source, you can define a unique user id in the Segment test event.
+
 ## Step 3: Enable your Linked Audience
 
 After building your Linked Audience, you'll be redirected to the Audience Overview page. Segment automatically disables your audience so that it does not start computing until you're ready. To enable your audience:
