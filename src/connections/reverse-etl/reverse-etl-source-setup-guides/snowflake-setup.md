@@ -10,7 +10,7 @@ Set up Snowflake as your Reverse ETL source.
 At a high level, when you set up Snowflake for Reverse ETL, the configured user/role needs read permissions for any resources (databases, schemas, tables) the query needs to access. Segment keeps track of changes to your query results with a managed schema <br>(`__SEGMENT_REVERSE_ETL`), which requires the configured user to allow write permissions for that schema.
 
 > success ""
-> Segment now supports key-pair authentication for Snowflake Reverse ETL sources.
+> Segment now supports key-pair authentication for Snowflake Reverse ETL sources. Key-pair authentication is available for Business Tier users only.
 
 ## Set up guide
 Follow the instructions below to set up the Segment Snowflake connector. Segment recommends you use the `ACCOUNTADMIN` role to execute all the commands below, and that you create a user that authenticates with an encrypted key pair.
