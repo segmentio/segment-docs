@@ -112,6 +112,4 @@ For successful requests, Segment instantly updates subscription states in your w
 
 ## Setting user subscriptions with Reverse ETL
 
-[Engage Premier Subscriptions users](/docs/engage/user-subscriptions/) can use Reverse ETL to sync subscription data from warehouses to destinations.
-
-To get started with using Reverse ETL for managing subscriptions, please refer to our guide available [here](https://segment.com/docs/connections/reverse-etl/#reverse-etl-for-engage-premier-subscriptions).
+[Engage Premier Subscriptions users](/docs/engage/user-subscriptions/) can use Reverse ETL to sync subscription data from warehouses to destinations. To get started with using Reverse ETL for managing subscriptions, see  [Reverse ETL for Engage Subscriptions](https://segment.com/docs/connections/reverse-etl/#reverse-etl-for-engage-premier-subscriptions).
