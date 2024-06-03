@@ -62,8 +62,9 @@ Follow these steps to integrate the Signals SDK into your Swift application:
 
 Verify that you replaced `<WRITE_KEY>` with the actual write key you copied in Step 1.
 
-> info "SwiftUI Projects"
-> If your app is written in SwiftUI, you will need to add a `TypeAlias.swift` file to your project in order to capture interaction and navigation Signals. Refer to the example below for more information
+#### SwiftUI projects
+
+If your app is written in SwiftUI, you'll need to add a `TypeAlias.swift` file to your project that captures interaction and navigation Signals, like in this example:
 
 ```swift
 import Foundation
@@ -75,6 +76,7 @@ typealias NavigationLink = SignalNavigationLink
 typealias TextField = SignalTextField
 typealias SecureField = SignalSecureField
 ```
+
 ### Kotlin
 
 Follow these steps to integrate the Signals SDK into your Kotlin application: 
