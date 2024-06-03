@@ -9,7 +9,7 @@ redirect_from:
 
 On July 10, 2023, the European Commission adopted the Adequacy Decision for the EU-US Data Privacy Framework ([DPF](https://commission.europa.eu/document/fa09cbad-dd7d-4684-ae60-be03fcb0fddf_en){:target="_blank"}). This concludes that EU personal data transferred to the United States under the DPF is adequately protected when compared to the protection in the EU. With this adequacy decision in place, personal data can safely flow from the EU to US companies participating in the DPF without additional safeguards in place.
 
-Twilio is certified under the DPF and relies on the DPF as its primary personal data transfer mechanism for EU-US personal data transfer. Twilio will rely on the DPF for and Swiss-US personal data transfers as soon as a corresponding Swiss adequacy decision is made. Twilio understands that interpretations of data residency are multi-faceted and some customers might still want their data to reside in the EU. Twilio Segment therefore offers a data residency solution outside of the DPF.
+Twilio is certified under the DPF and relies on the DPF as its primary personal data transfer mechanism for EU-US personal data transfer. Twilio will rely on the DPF for any Swiss-US personal data transfers as soon as a corresponding Swiss adequacy decision is made. Twilio understands that interpretations of data residency are multi-faceted and some customers might still want their data to reside in the EU. Twilio Segment therefore offers a data residency solution outside of the DPF.
 
 Segment offers customers the option to lead on data residency by providing regional infrastructure in both Europe and the United States. The default region for all users is in Oregon, United States. You can configure workspaces to use the EU West Data Processing Region to ingest (for supported sources), process, filter, deduplicate, and archive data through Segment-managed archives hosted in AWS S3 buckets located in Dublin, Ireland. The regional infrastructure has the same [rate limits and SLA](/docs/connections/rate-limits/) as the default region.
 
@@ -30,7 +30,7 @@ Regional Data Ingestion enables you to send data to Segment from both Device-mod
 {% include content/eu-cloud-event-sources.html %}
 
 ### Client-side sources
-You can configure Segment's client-side SDKs for JavaScript, iOS, Android, and React Native sources to send data to a regional host after you've updated the Data Ingestion Region in that source's settings. Segment's EU instance only supports data ingestion from Dublin, Ireland with the `events.eu1.segmentapis.com/` endpoint.
+You can configure Segment's client-side SDKs for JavaScript, iOS, Android, and React Native sources to send data to a regional host after you've updated the Data Ingestion Region in that source's settings. Segment's EU instance only supports data ingestion from Dublin, Ireland with the `events.eu1.segmentapis.com/` endpoint. If you are using the Segment EU endpoint with an Analytics-C# source, you must manually append `v1` to the URL. For instance, `events.eu1.segmentapis.com/v1`.
 
 > info ""
 > For workspaces that use the EU West Data Processing region, the Dublin Ingestion region is preselected for all sources.
@@ -50,15 +50,24 @@ All Segment client-side SDKs read this setting and update themselves automatical
 
 ### Server-side and project sources
 When you send data from a server-side or project source, you can use the `host` configuration parameter to send data to the desired region:
-1. Oregon (Default) — `api.segment.io/v1`
-2. Dublin — `events.eu1.segmentapis.com/`
+1. Oregon (Default) — `https://events.segmentapis.com/v1`
+2. Dublin — `https://events.eu1.segmentapis.com/`
+
+> success ""
+> If you are using the Segment EU endpoint with an Analytics-C# source, you must manually append `v1` to the URL. For instance, `events.eu1.segmentapis.com/v1`.
+
+Here is an example of how to set the host:
+
+```json
+Analytics.Initialize("<YOUR WRITEKEY HERE>", new Config().SetHost("https://events.eu1.segmentapis.com (https://events.eu1.segmentapis.com/)"));
+```
 
 ## Create a new workspace with a different region
 
 > info ""
 > Use [this form](https://segment.typeform.com/to/k5ADnN5e#user_id=xxxxx){:target="_blank"} if you need to transition from your existing US-based workspace to an EU workspace.
 
-To create a workspace with a different data processing region, reach out to the Segment Support team, and they will assist you with enabling the feature. Once the feature has been enabled, you'll be able to self-serve and create a new workspace in a different data processing region by following these steps:
+To create a workspace with a different data processing region, reach out your Segment account executive, and they will assist you with enabling the feature. Once the feature has been enabled, you'll be able to self-serve and create a new workspace in a different data processing region by following these steps:
 
 1. Log in to your Segment account.
 2. Click **New Workspace**.
@@ -83,8 +92,20 @@ Use Segment's custom CIDR `3.251.148.96/29` while authorizing Segment to write i
 ## Destination support and Regional endpoint availability
 
 > info "Don't see a regional endpoint for a tool you're using?"
-> As more of the partner tools you use (Sources and Destinations) start to support a regional endpoint, Segment will update this list. Your contact for that tool should have a timeline for when they're hoping to support regional data ingestion. You can also visit Segment's [support page](https://segment.com/help/contact/) for any Segment-related questions.
+> As more of the partner tools you use (Sources, Destinations, and Warehouses) start to support a regional endpoint, Segment will update this list. Your contact for that tool should have a timeline for when they're hoping to support regional data ingestion. You can also visit Segment's [support page](https://segment.com/help/contact/){:target="_blank"} for any Segment-related questions.
 
 The following integrations marked with a ![Supports EU regional endpoints](/docs/images/supported.svg){:class="inline"} (checkmark) support EU Regional endpoints.
 
+> warning "Integrations available in EU workspaces do not guarantee data residency"
+> Before you configure an integration, you should check directly with the integration partner to determine if they offer EU endpoints.
+
 {% include content/regional-integrations-table.md %}
+
+## Source Regional support
+
+> info "Don't see regional support for a source you're using?"
+> As more of the partner Sources start to support posting data to our regional endpoint, Segment will update this list. Your contact for that tool should have a timeline for when they're hoping to support regional data ingestion. You can also visit Segment's [support page](https://segment.com/help/contact/) for any Segment-related questions.
+
+The following Sources marked with a ![Supports EU regional endpoints](/docs/images/supported.svg){:class="inline"} (checkmark) are supported in EU workspaces.
+
+{% include content/regional-sources-table.md %}

@@ -5,7 +5,7 @@ id: 5cee939ff784ec0001f1cf91
 hidden: true
 published: false
 ---
-[CustomFit.ai](https://customfit.ai/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) is an intelligent `App Experience Engine` for B2C apps(Mobile/Web/IoT), with which one can effortlessly craft hyper-personalized app experiences & alternative user journeys to each of their user or segment of users with zero code. Every user is unique, so should be your app.
+[CustomFit.ai](https://customfit.ai/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners){:target="_blank”} is an intelligent `App Experience Engine` for B2C apps(Mobile/Web/IoT), with which one can effortlessly craft hyper-personalized app experiences & alternative user journeys to each of their user or segment of users with zero code. Every user is unique, so should be your app.
 
 This destination is maintained by CustomFit.ai. For any issues with the destination, [contact the CustomFit Support team](mailto:reach@customfit.ai).
 
@@ -17,7 +17,7 @@ This destination is maintained by CustomFit.ai. For any issues with the destinat
 
 1. From the Segment web app, click **Catalog**.
 2. Search for "CustomFit.ai" in the Catalog, select it, and choose which of your sources to connect the destination to.
-3. Enter the "Server Key" into your Segment Settings UI which you can find from your [CustomFit.ai dashboard](https://dashboard.customfit.ai/settings/app-settings).
+3. Enter the "Server Key" into your Segment Settings UI which you can find from your [CustomFit.ai dashboard](https://dashboard.customfit.ai/settings/app-settings){:target="_blank”}.
 
 ## Identify
 
@@ -35,7 +35,7 @@ Segment handles the following mapping:
 1. Segment `identify` event userId to CustomFit.ai `user_customer_id` field.
 2. Segment `identify` event traits to CustomFit.ai `properties`.
 
-Identify calls will be sent to CustomFit.ai as an `identify` event. You can find the user details in [users profile page](https://dashboard.customfit.ai/users/profiles).
+Identify calls will be sent to CustomFit.ai as an `identify` event. You can find the user details in [users profile page](https://dashboard.customfit.ai/users/profiles){:target="_blank”}.
 
 ## Track
 

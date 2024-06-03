@@ -4,9 +4,6 @@ id: L9XPA9n2Mc
 ---
 {% include content/source-region-unsupported.md %}
 
-> info ""
-> The Listrak Source is in beta, and Listrak is still developing the source. To join Listrak's beta program or to give any feedback to help improve the Listrak Source and its documentation, [let Listrak know](mailto:support@listrak.com).
-
 [Listrak](https://www.listrak.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners){:target="_blank”} is the retail industry’s leading customer engagement platform. Listrak delivers results for more than 1,000 retailers by providing best-in-class email, text message marketing, identity resolution marketing and push notifications through seamless cross-channel orchestration. Listrak’s data-first approach delivers 1:1 personalization at scale so you can send messages at precisely the right time across the right combination of channels and devices to maximize customer engagement, revenue, and lifetime value.
 
 This is an [Event Cloud Source](/docs/sources/#event-cloud-sources) which can not only export data into your Segment warehouse, but can also federate the exported data into your other enabled Segment Destinations.
@@ -73,7 +70,7 @@ Property Name | Description
 `list_id` | An ID used to identify a list.
 `list_name` | A name used to identify a list.
 `order_total` | The order total associated with the conversion.
-`unsubscribe_type` | The method by which the contact was removed from the list. See the [Unsubscribed Contacts Report Help Article](https://help.listrak.com/en/articles/1550570-unsubscribed-contacts-report#unsubscribe-method-definitions).
+`unsubscribe_type` | The method by which the contact was removed from the list. See the [Unsubscribed Contacts Report Help Article](https://help.listrak.com/en/articles/1550570-unsubscribed-contacts-report#unsubscribe-method-definitions){:target="_blank"}.
 `context.ip` | The opening computer’s public IP address.
 `context.traits.email` | The intended recipient’s email address.
 `context.user_agent` | The opening browser’s user agent.

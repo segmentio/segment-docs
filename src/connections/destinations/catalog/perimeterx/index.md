@@ -9,7 +9,7 @@ When you enable the PerimeterX destination in the Segment app, your changes appe
 
 ## Getting Started
 
-1. Configure your [Policy and Application within PerimeterX](https://dash.readme.io/project/pxconsole/v1.0/docs/segment).
+1. Configure your [Policy and Application within PerimeterX](https://dash.readme.io/project/pxconsole/v1.0/docs/segment){:target="_blank"}.
 2. Copy your Application ID and paste into your Segment PerimeterX settings
 
 ## Identify

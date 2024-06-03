@@ -2,7 +2,7 @@
 title: Statsig Destination
 id: 613ba8c0114797213a8eff94
 ---
-[Statsig](https://www.statsig.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) helps companies safely A/B test features in production before rolling them out, avoiding product debates and costly mistakes when shipping out new features. Statsig automates the grunt work so that A/B tests are always running automatically and you always know how your features are performing.
+[Statsig](https://www.statsig.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners){:target="_blank"} helps companies safely A/B test features in production before rolling them out, avoiding product debates and costly mistakes when shipping out new features. Statsig automates the grunt work so that A/B tests are always running automatically and you always know how your features are performing.
 
 This destination is maintained by Statsig. For any issues with the destination, [contact the Statsig Support team](mailto:support@statsig.com).
 
@@ -13,7 +13,7 @@ This destination is maintained by Statsig. For any issues with the destination,�
 1. From the Destinations catalog page in the Segment App, click **Add Destination**.
 2. Search for “Statsig” in the Destinations Catalog, and select the “Statsig” destination.
 3. Choose which Source(s) should send data to the “Statsig” destination.
-4. Go to the [Statsig dashboard](https://console.statsig.com/api_keys), find and copy the Statsig "Server Secret Key”.
+4. Go to the [Statsig dashboard](https://console.statsig.com/api_keys){:target="_blank"}, find and copy the Statsig "Server Secret Key”.
 5. Enter the Statsig “Server Secret Key” in the “Statsig” destination settings in Segment.
 
 ## Supported methods

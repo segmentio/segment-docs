@@ -55,6 +55,7 @@
    {% if connectionModes.device.web == true or connectionModes.device.mobile == true or connectionModes.device.server == true %} <li>In Device-mode, refer to it as <strong>{{previous_names | first}}</strong> in the <a href="/docs/guides/filtering-data/#filtering-with-the-integrations-object">Integrations object</a> </li>{%endif%}
   {% endif %}
   {% if destinationInfo.status == "PUBLIC_BETA" %}<li>This destination is in <span class="release-pill">Beta</span></li>{% endif %}
+  {% if page.engage == true %}<li>This destination is <b>only</b> compatible with <a href="/docs/engage">Twilio Engage</a>.</li>{% endif %}
 </ul>
 {% if components.size > 0%}
 {% unless page.hide-components %}
@@ -70,7 +71,7 @@
 </ul>
 {% endunless %}
 </div>
-{% unless page.hide-cmodes %}
+{% unless page.hide-cmodes or page.engage %}
 <div class="qi-content">
 <h6>Connection Modes <a href="/docs/connections/destinations/#connection-modes"><img src="/docs/images/help.svg"/></a></h6>
 <table>
@@ -97,6 +98,14 @@
 </table>
 </div>
 {% endunless %}
+{% endif %}
+{% if destinationInfo.partnerOwned == true %}
+<div>
+  <h6>Partner Owned</h6>
+  <ul class="qi">
+    <li>This integration is partner owned. Please reach out to the partner's support for any issues.</li>
+  </ul>
+</div>
 {% endif %}
 </div>
 {% endif %}

@@ -37,7 +37,7 @@ The Snapchat Conversions API destination provides the following benefits:
 ## FAQ and Troubleshooting
 
 ### Invalid token error
-If you're experiencing 400 Bad Requests errors related to an invalid token, follow [these instructions](https://segment.com/docs/connections/destinations/catalog/actions-snap-conversions/#getting-started) to reauthorize your account: 
+If you're experiencing 400 Bad Requests errors related to an invalid token, follow [these instructions](/docs/connections/destinations/catalog/actions-snap-conversions/#getting-started) to reauthorize your account: 
 - On the **Settings** tab, authenticate with Snap using OAuth. 
 - Click **Connect to Snapchat Conversions API**. 
 - Follow the prompts to authenticate using OAuth with a Snapchat login. Use a Snapchat login that is a member of the Snapchat Ads account you want to connect.
@@ -57,7 +57,7 @@ There are many ways to send conversion data to Snap, including through the Snap 
 The Client Deduplication ID allows for a 48-hour deduplication window. The Transaction ID is only eligible for `PURCHASE` events and allows for a 30-day deduplication window. See Snapchat’s [Marketing API documentation](https://marketingapi.snapchat.com/docs/conversion.html#deduplication){:target="_blank"} and [Business Help Center](https://businesshelp.snapchat.com/s/article/event-deduplication?language=en_US){:target="_blank"} for more information.
 
 > info ""
-> Segment does not have client-side destinations for the Snap Pixel or Snap App Ads Kit (SDK). If you choose to integrate client-side, these must be implemented natively. See Snapchat’s [Install Snap Pixel](https://businesshelp.snapchat.com/s/article/pixel-website-install?language=en_US){:target="_blank"} and [App Ads Kit](https://businesshelp.snapchat.com/s/article/app-ads-kit?language=en_US){:target="_blank"} for implementation details.
+> Segment does not have client-side destinations for the Snap Pixel or Snap App Ads Kit (SDK). If you choose to integrate client-side, these must be implemented natively. See Snapchat’s [Install Snap Pixel](https://businesshelp.snapchat.com/s/article/pixel-website-install?language=en_US){:target="_blank"} and [App Ads Kit](https://businesshelp.snapchat.com/s/topic/0TO0y000000YmidGAC/app-ads-kit?language=en_US){:target="_blank"} for implementation details.
 
 ### Latency
 It may take up to 1-hour for events to appear in the Snapchat [Events Manager](https://businesshelp.snapchat.com/s/article/events-manager?language=en_US){:target="_blank"}.

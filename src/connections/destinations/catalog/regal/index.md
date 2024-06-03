@@ -5,7 +5,7 @@ id: 5f33e746fad0d620b8a4b144
 redirect_from:  '/connections/destinations/catalog/regal-voice'
 ---
 
-[Regal.io](https://www.regal.io/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) is a next-gen customer engagement platform that helps brands proactively engage and convert customers before they buy elsewhere.
+[Regal.io](https://www.regal.io/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners){:target="_blank”} is a next-gen customer engagement platform that helps brands proactively engage and convert customers before they buy elsewhere.
 
 Regal.io maintains this destination. For any issues with the destination, contact their [Regal.io support team](mailto:support@regal.io).
 

@@ -3,7 +3,7 @@ title: SendGrid Source
 id: jhr8dT2yHn
 ---
 
-[SendGrid](http://sendgrid.com) is a trusted platform for transactional email and email marketing.
+[SendGrid](http://sendgrid.com){:target="_blank”} is a trusted platform for transactional email and email marketing.
 
 Take your company's analysis to the next level by **adding SendGrid as a Source to Segment.** Segment automatically  collects events like `Click` or `Delivered` and objects such as `Recipients` or `Campaigns` and loads them into your data warehouse. 
 
@@ -21,7 +21,7 @@ Adding SendGrid as a Source in Segment requires a SendGrid API key. If you don't
 
 To finish adding the SendGrid source, return to your Segment Workspace and follow these steps:
 
-1. From the [Source catalog page](https://app.segment.com/goto-my-workspace/sources/catalog) in your Segment workspace, enter **SendGrid** and select the SendGrid source that appears.
+1. From the [Source catalog page](https://app.segment.com/goto-my-workspace/sources/catalog){:target="_blank”} in your Segment workspace, enter **SendGrid** and select the SendGrid source that appears.
 2. From the SendGrid information panel that appears, click **Add source**.
 3. Give the Source a name and add any labels to help you organize and filter your sources.
    Segment recommends a name that reflects the source itself, as this name populates the schema name. For example, the source name `SendGrid` creates the schema `SendGrid`. You can add multiple instances if you have multiple SendGrid accounts.
@@ -41,14 +41,14 @@ SendGrid has a single Event URL location. By using the SendGrid source, you will
 
 ### Sync
 
-Segment makes requests to the SendGrid API every three hours. In the initial sync, Segment pulls all SendGrid objects (and their corresponding properties) according to the [Collections Table](#collections) below. If you don't use SendGrid's marketing campaigns features, these collections will be empty in SendGrid and you'll see "Zero data synced" in your runs. The webhook still processes activity data.
+Segment makes requests to the SendGrid API every three hours. In the initial sync, Segment pulls all SendGrid objects (and their corresponding properties) according to the [Collections Table](#collections) below. If you don't use SendGrid's marketing campaigns features (Legacy or New), these collections will be empty in SendGrid and you'll see "Zero data synced" in your runs. The webhook still processes activity data. 
 
 Segment's sync component pulls and forwards SendGrid resources to Segment using an upsert API. As a result, dimensional data loaded into your warehouse reflects the latest state of the corresponding resource in SendGrid.  For example, if `lists.recipient_count` goes from `100` to `200` between syncs, its status will be `200` on its next flush to your warehouse.
 
 The source syncs and warehouse syncs are independent processes. Source runs pull your data into the Segment Hub, and warehouse runs flush that data to your warehouse. Sources sync with Segment every three hours. Depending on your Warehouses plan, Segment pushes the Source data to your warehouse on the interval associated with your billing plan.
 
 > info "SendGrid Syncs"
-> Segment syncs all objects and properties. [Reach out to support](https://segment.com/help/contact/) if you're interested in filtering objects or properties during syncs.
+> Segment syncs all objects and properties. [Reach out to support](https://segment.com/help/contact/){:target="_blank”} if you're interested in filtering objects or properties during syncs.
 
 ### Streaming
 
@@ -78,14 +78,21 @@ Collections are the groupings of resources Segment pulls from your source. In yo
 |  dropped | Event | You may see the following drop reasons: Invalid SMTPAPI header, Spam Content (if spam checker app enabled), Unsubscribed Address, Bounced Address, Spam Reporting Address, Invalid, Recipient List over Package Quota |
 |  deferred | Event | Recipient's email server temporarily rejected message. |
 |  unsubscribe | Event | Recipient clicked on message's subscription management link. You need to enable Subscription Tracking for getting this type of event. |
+|  mc_contacts | Object | A sample of fifty latest contacts uploaded or linked from the list, returned from [Sendgrid](https://docs.sendgrid.com/api-reference/contacts/get-sample-contacts){:target="_blank"}. **Will only return data if you're using SendGrid's New Marketing Campaign features.** |
+|  mc_lists | Object | Lists returned from [Sendgrid Lists endpoint](https://docs.sendgrid.com/api-reference/lists/get-all-lists){:target="_blank"}. **Will only return data if you're using SendGrid's New Marketing Campaign features.**  |
+|  mc_single_sends | Object | Single Sends with condensed details about each from [Sendgrid Single Sends endpoint](https://docs.sendgrid.com/api-reference/single-sends/get-all-single-sends){:target="_blank"}. **Will only return data if you're using SendGrid's New Marketing Campaign features.** |
 |  spam_report | Event | Recipient marked message as spam. |
-|  lists | Object | [Groups of contacts](https://sendgrid.com/docs/API_Reference/Web_API_v3/Marketing_Campaigns/contactdb.html). **Will only return data if you're using SendGrid's Marketing Campaign features.** |
-|  segments | Object | [Slices of lists](https://sendgrid.com/docs/API_Reference/Web_API_v3/Marketing_Campaigns/contactdb.html). **Will only return data if you're using SendGrid's Marketing Campaign features.** |
-|  recipients | Object | All contacts who have received an email, with information about their last activities and custom activities. [More Info](https://sendgrid.com/docs/API_Reference/Web_API_v3/Marketing_Campaigns/contactdb.html).  **Will only return data if you're using SendGrid's Marketing Campaign features.** |
-|  campaigns | Object | All campaigns you've created in SendGrid. [More Info](https://sendgrid.com/docs/API_Reference/Web_API_v3/Marketing_Campaigns/campaigns.html).  **Will only return data if you're using SendGrid's Marketing Campaign features.** |
+|  lists  | Object |  [Groups of contacts](https://sendgrid.com/docs/API_Reference/Web_API_v3/Marketing_Campaigns/contactdb.html){:target="_blank”}. **Will only return data if you had Legacy Marketing Campaigns data** |
+|  segments | Object | [Slices of lists](https://sendgrid.com/docs/API_Reference/Web_API_v3/Marketing_Campaigns/contactdb.html){:target="_blank”}. **Will only return data if you had Legacy Marketing Campaigns data** |
+|  recipients | Object | All contacts who have received an email, with information about their last activities and custom activities. [More Info](https://sendgrid.com/docs/API_Reference/Web_API_v3/Marketing_Campaigns/contactdb.html){:target="_blank”}.  **Will only return data if you had Legacy Marketing Campaigns data** |
+|  campaigns | Object | All campaigns you've created in SendGrid. [More Info](https://sendgrid.com/docs/API_Reference/Web_API_v3/Marketing_Campaigns/campaigns.html){:target="_blank”}.  **Will only return data if you had Legacy Marketing Campaigns data** |
 
 ## Troubleshooting
 
-If you're getting an "Invalid Credentials" error when setting up the SendGrid source, send a direct ping to the [SendGrid Marketing Campaigns API](https://sendgrid.com/docs/API_Reference/Web_API_v3/Marketing_Campaigns/campaigns.html) to test if you're using the correct credentials.
+If you're getting an "Invalid Credentials" error when setting up the SendGrid source, send a direct ping to the [SendGrid Marketing Campaigns API](https://sendgrid.com/docs/API_Reference/Web_API_v3/Marketing_Campaigns/campaigns.html){:target="_blank”} to test if you're using the correct credentials.
 
-Make sure you allowlist Segment IP addresses on SendGrid. [Contact Segment](https://segment.com/help/contact/) for the list of IP addresses to allowlist.
+Make sure you allowlist Segment IP addresses on SendGrid. [Contact Segment](https://segment.com/help/contact/){:target="_blank”} for the list of IP addresses to allowlist.
+
+When you disable your SendGrid source, you'll need to also disable the webhook portion of your configuration.
+
+If you are only able to create one webhook, review your SendGrid [account plan details](https://sendgrid.com/en-us/pricing). On the Sendgrid free plan, you can only have 1 webhook.

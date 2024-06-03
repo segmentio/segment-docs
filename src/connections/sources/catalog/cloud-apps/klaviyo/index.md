@@ -4,7 +4,7 @@ id: EfKbe2yt0J
 ---
 {% include content/source-region-unsupported.md %}
 
-Klaviyo is an email marketing platform that helps companies make more money. It lets you send personalized newsletters, triggered emails, product recommendations, push notifications and sync your data to facebook custom audiences. [Visit Website](https://www.klaviyo.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners)
+Klaviyo is an email marketing platform that helps companies make more money. It lets you send personalized newsletters, triggered emails, product recommendations, push notifications and sync your data to facebook custom audiences. [Visit Website](https://www.klaviyo.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners){:target="_blank"}
 
 Take your company's email analysis to the next level by **adding Klaviyo as a Source to Segment.** Segment automatically  collects email events like `Email Delivered` and `Email Opened`, forward them to your destinations, and load them into your data warehouse. 
 
@@ -23,7 +23,7 @@ If you have previously enabled sending email events using the Klaviyo destinatio
 
 4. The next page ("Overview") will surface your **Segment write key for Klaviyo.** Copy this write key. 
 
-5. To finish the setup, you'll have to go into your Klaviyo account and enter this Segment write key in their integrations settings. Find the right place in Klaviyo by clicking [Integrations > Segment](https://www.klaviyo.com/integration/segment_io).
+5. To finish the setup, you'll have to go into your Klaviyo account and enter this Segment write key in their integrations settings. Find the right place in Klaviyo by clicking [Integrations > Segment](https://www.klaviyo.com/integration/segment_io){:target="_blank"}.
 
 6. Click **Save**.
 
@@ -98,7 +98,7 @@ The Klaviyo Source works better when you also connect Klaviyo as a destination. 
 
 ## Preventing Duplication in Segment
 
-Navigate to the integration settings for the Segment Integration in [Klaviyo](https://www.klaviyo.com/integrations).
+Navigate to the integration settings for the Segment Integration in [Klaviyo](https://www.klaviyo.com/integrations){:target="_blank"}.
 
 Here is where you also have the ability to limit the data you pass back to Segment, by checking the box next to Do not sync profiles that are not updated by the Klaviyo Destination.
 

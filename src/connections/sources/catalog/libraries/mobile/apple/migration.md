@@ -31,7 +31,7 @@ If you're using a previous Segment mobile library such as Analytics-iOS, follow 
 
 <br> You have now added Analytics-Swift to your project. Segment and Sovran show as Swift package dependencies. You can remove the analytics-iOS SDK from your app.
 
-## 1.b) Modify your initialized instance.
+### 1.b) Modify your initialized instance.
 
 {% codeexample %}
 {% codeexampletab Swift%}

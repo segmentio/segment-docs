@@ -2,10 +2,14 @@
 title: Redshift Setup
 beta: true
 plan: unify
+hidden: true
 ---
 
 > info "Linked Events is in private beta"
-> Linked Events is in private beta, and Segment is actively working on this feature. Some functionality may change before it becomes generally available. [Contact Segment](https://segment.com/help/contact/){:target="_blank"} with any feedback or questions.
+> Linked Events is in private beta, and Segment is actively working on this feature. Some functionality may change before it becomes generally available. 
+
+> info ""
+> At this time, you can only use Redshift with Linked Events.
 
 On this page, you'll learn how to connect your Redshift data warehouse to Segment. 
 

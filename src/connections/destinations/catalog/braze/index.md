@@ -67,7 +67,7 @@ Braze created a sample iOS application that integrates Braze using Segment. See 
 
 #### Device-mode set up for iOS 14 support
 
-Braze updated the Braze iOS Segment SDK to 3.26.1 to prepare for iOS 14. As of version 3.27.0, Braze removed the `ABK_ENABLE_IDFA_COLLECTION` macro. To configure sending ISFA to Braze, see Braze's [Implementing IDFA Collection](https://www.braze.com/docs/developer_guide/platform_integration_guides/ios/initial_sdk_setup/other_sdk_customizations/#ios-14-apptrackingtransparency){:target="_blank"}
+Braze updated the Braze iOS Segment SDK to 3.26.1 to prepare for iOS 14. As of version 3.27.0, Braze removed the `ABK_ENABLE_IDFA_COLLECTION` macro. To configure sending ISFA to Braze, see Braze's [Implementing IDFA Collection](https://www.braze.com/docs/developer_guide/platform_integration_guides/legacy_sdks/ios/initial_sdk_setup/other_sdk_customizations/){:target="_blank"}
  documentation.
 
 To use the latest Braze SDK to collect IDFAs you must do the following:
@@ -76,7 +76,7 @@ To use the latest Braze SDK to collect IDFAs you must do the following:
 2. Update the Braze iOS Segment SDK to version 3.3.0 or greater.
 3. Import and add the AppTrackingTransparency (ATT) Framework.
    - Navigate to your project `Info.plist` and add a “Privacy - Tracking Usage Description”. This description appears in a popup when the application initializes in iOS 14. Applications prompt users to select if they want to allow tracking.
-4. Add Braze's `ABKIDFADelegate`. For more information on how to add this see [Braze's IDFA Collection documentation](https://www.braze.com/docs/developer_guide/platform_integration_guides/ios/initial_sdk_setup/other_sdk_customizations/#implementing-idfa-collection){:target="_blank"}
+4. Add Braze's `ABKIDFADelegate`. For more information on how to add this see [Braze's IDFA Collection documentation](https://www.braze.com/docs/developer_guide/platform_integration_guides/legacy_sdks/ios/initial_sdk_setup/other_sdk_customizations#implementing-idfa-collectionn){:target="_blank"}
 .
 5. Follow [Segment's guide for collecting IDFA](/docs/connections/sources/catalog/libraries/mobile/ios/#idfa-collection-in-40-beta-and-later)
 
@@ -95,7 +95,7 @@ To use the latest Braze SDK to collect IDFAs you must do the following:
    compile 'com.appboy:appboy-segment-integration:+'
    ```
 
-    To ensure you have the most up-to-date features and bug fixes, use the latest version available on [Maven](http://search.maven.org/#search%7Cga%7C1%7Ca%3A%22appboy-segment-integration%22).
+    To ensure you have the most up-to-date features and bug fixes, use the latest version available on [Maven](http://search.maven.org/#search%7Cga%7C1%7Ca%3A%22appboy-segment-integration%22){:target="_blank"}.
 
     **Note:** The `groupId` is `com.appboy` and not `com.segment.analytics.android.integrations`.
 
@@ -107,30 +107,6 @@ To use the latest Braze SDK to collect IDFAs you must do the following:
     ...
    .build();
   ```
-
-### React Native device-mode set up
-
-<!-- LR, Mar2021: this should be a `react-dest` include but Braze was originally called Appboy-->
-
-To add the Braze device-mode SDK to a [React Native](/docs/connections/sources/catalog/libraries/mobile/react-native/) project using Segment's `1.5.1≤` release:
-1. Navigate to the root folder of your project, and run a `yarn add appboy` command to add the destination SDK to your project.
-2. Add an `import` statement to your project, as in the following example.
-   ```js
-   import Braze from '@segment/analytics-react-native-appboy'
-   ```
-3. In the same project file, add the destination to the `using` list in the `await` command.
-   ```js
-   await analytics.setup('YOUR_WRITE_KEY', {
-     // Add any of your Device-mode destinations. This ensures they load before continuing.
-     using: [Braze]
-     // ...
-   })
-   ```
-4. Change to your iOS development folder ( `cd ios` ) and run `pod install`.
-
-
-> note ""
-> Braze was formerly known as "Appboy", and the Braze React component still uses that name. Be sure to use the old name!
 
 ## Page
 
@@ -146,7 +122,7 @@ Segment sends Page calls to Braze as custom events if you have enabled either **
 
 > info "Tip"
 > Add Segment's open-source [Middleware](https://github.com/segmentio/segment-braze-mobile-middleware){:target="_blank"}
- tool to optimize your integration. This tool limits [Data Point](https://www.braze.com/docs/user_guide/onboarding_with_braze/data_points/){:target="_blank"} use by debouncing duplicate identify() calls from Segment. For more information, see the project's [README](https://github.com/segmentio/segment-braze-mobile-middleware/blob/master/README.md#how-does-this-work){:target="_blank"}.
+ tool to optimize your integration. This tool limits [Data Point](https://www.braze.com/docs/user_guide/data_and_analytics/data_points/){:target="_blank"} use by debouncing duplicate identify() calls from Segment. For more information, see the project's [README](https://github.com/segmentio/segment-braze-mobile-middleware/blob/master/README.md#how-does-this-work){:target="_blank"}.
 
 If you're not familiar with the Segment Specs, take a look to understand what the [Identify method](/docs/connections/spec/identify/) does. An example call would look like:
 
@@ -197,7 +173,7 @@ The endpoint returns:
 
 
 > info "Tip"
-> Braze is complex. If you decide to use the `braze_id`, consider [contacting Segment Success Engineering](https://segment.com/help/contact/) or a Solutions Architect to verify your Braze implementation.
+> Braze is complex. If you decide to use the `braze_id`, consider [contacting Segment Success Engineering](https://segment.com/help/contact/){:target="_blank"} or a Solutions Architect to verify your Braze implementation.
 
 Segment's special traits recognized as Braze's standard user profile fields (in parentheses) are:
 
@@ -217,7 +193,7 @@ Segment sends all other traits (except Braze's [reserved user profile fields](ht
 ## Track
 
 > info "Tip"
-> To lower [Data Point](https://www.braze.com/docs/user_guide/onboarding_with_braze/data_points/){:target="_blank"} use, limit the events you send to Braze to those that are relevant for campaigns and segmentation to the Braze destination. For more information, see [Schema Controls](/docs/protocols/schema/).
+> To lower [Data Point](https://www.braze.com/docs/user_guide/data_and_analytics/data_points/){:target="_blank"} use, limit the events you send to Braze to those that are relevant for campaigns and segmentation to the Braze destination. For more information, see [Schema Controls](/docs/protocols/schema/).
 
 If you're not familiar with the Segment Specs, take a look to understand what the [Track method](/docs/connections/spec/track/) does. An example call looks like:
 
@@ -349,7 +325,7 @@ The `inAppMessages` parameter will be an array of [`appboy.ab.InAppMessage`](htt
         [[SEGAppboyIntegrationFactory instance] saveRemoteNotification:userInfo];
       }
     ```
-6. If you are using the `UserNotification` framework, follow [Braze's documentation](https://www.braze.com/docs/developer_guide/platform_integration_guides/ios/push_notifications/integration/#using-usernotification-framework-ios-10){:target="_blank"} to register push notifications using the `UserNotification` framework. Then in your application's `userNotificationCenter:didReceiveNotificationResponse:withCompletionHandler` method, add the following:
+6. If you are using the `UserNotification` framework, follow [Braze's documentation](https://www.braze.com/docs/developer_guide/platform_integration_guides/legacy_sdks/ios/push_notifications/integration#using-usernotification-framework-ios-10){:target="_blank"} to register push notifications using the `UserNotification` framework. Then in your application's `userNotificationCenter:didReceiveNotificationResponse:withCompletionHandler` method, add the following:
 
     ```objc
     if ([Appboy sharedInstance] == nil) {
@@ -377,7 +353,7 @@ The `inAppMessages` parameter will be an array of [`appboy.ab.InAppMessage`](htt
     // When you get the push token
     String receivedToken;
 
-    appboyPushToken = recievedToken;
+    appboyPushToken = receivedToken;
     if (appboyInitialized) {
       Appboy.getInstance(getContext()).registerAppboyPushMessages(appboyPushToken);
     }
@@ -430,9 +406,9 @@ analytics.ready(function() {
 });
 ```
 
-3. Set your GCM/FCM server API key and SenderID on the Braze dashboard. You can find more details for this [here](https://www.braze.com/docs/developer_guide/platform_integration_guides/web/initial_sdk_setup#step-4-set-your-gcmfcm-server-api-key-and-senderid-on-the-Braze-dashboard).
+3. Set your GCM/FCM server API key and SenderID on the Braze dashboard. You can find more details for this [here](https://www.braze.com/docs/developer_guide/platform_integration_guides/web/initial_sdk_setup#step-4-set-your-gcmfcm-server-api-key-and-senderid-on-the-Braze-dashboard){:target="_blank"}.
 
-4. To support push notifications on Safari, add your Website Push ID into your Segment Settings UI and Segment sends it when the Braze Web SDK initializes. To get your Website Push ID, follow the first two bullet points in [these instructions](https://www.braze.com/docs/developer_guide/platform_integration_guides/web/initial_sdk_setup#step-5-configure-safari-push).
+4. To support push notifications on Safari, add your Website Push ID into your Segment Settings UI and Segment sends it when the Braze Web SDK initializes. To get your Website Push ID, follow the first two bullet points in [these instructions](https://www.braze.com/docs/developer_guide/platform_integration_guides/web/initial_sdk_setup#step-5-configure-safari-push){:target="_blank"}.
 
 ### Soft Push Prompts
 
@@ -648,4 +624,4 @@ No. Audiences are sent to Braze as either custom attributes or custom events. Yo
 All Braze user profile data (including custom events, custom attributes) is stored for as long as those profiles are active.
 
 #### What happens if I delete a computed trait or audience in Segment?
-When you delete an audience or trait in Segment they are not deleted from Braze. Data sent to Braze is immutable and cannot be deleted or modified once they receive it. However, you can [blocklist](https://www.braze.com/docs/user_guide/administrative/app_settings/manage_app_group/custom_event_and_attribute_management/#blacklisting-custom-attributes-custom-events-and-products){:target="_blank"} custom attributes and events in Braze.
+When you delete an audience or trait in Segment they are not deleted from Braze. Data sent to Braze is immutable and cannot be deleted or modified once they receive it. However, you can [blocklist](https://www.braze.com/docs/user_guide/data_and_analytics/custom_data/managing_custom_data#blocklisting-custom-data){:target="_blank"} custom attributes and events in Braze.

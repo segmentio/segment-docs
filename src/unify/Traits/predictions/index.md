@@ -5,36 +5,36 @@ redirect_from:
   - "/engage/audiences/predictive-traits"
 ---
 
-Predictions, Segment's artificial intelligence and machine learning feature, lets you predict the likelihood that users will perform any event tracked in Segment. 
+Predictions, Segment's artificial intelligence and machine learning feature, lets you predict the likelihood that users will perform any event tracked in Segment.
 
 With Predictions, you can identify users with, for example, a high propensity to purchase, refer a friend, or use a promo code. Predictions also lets you predict a user's lifetime value (LTV).
 
 Segment saves predictions to user profiles, letting you build Audiences, trigger Journeys, and send data to downstream destinations.
 
+For more details on AI usage and data, see [Predictions Nutrition Facts Label](/docs/unify/traits/predictions/predictions-nutrition-facts/).
+
 On this page, you'll learn how to build a prediction.
 
-## Access and build a prediction
-
-To create a prediction, you'll first request access, then build a prediction.
+## Build a prediction
 
 ![The Predictive Trait builder in the Segment UI](../../images/trait_builder.png)
 
-### Request Predictions access
+Follow these steps to build a prediction:
 
-Follow these steps to access Predictions:
+1. In the Trait Builder, click **Predictions**, select the prediction you want to create, then click **Next**..
+- (For custom Predictive Goals) Add a condition(s) and event(s) to predict. 
+- Select the event and (optional) property that you want to use to make a prediction.
+5. Select a time period for the prediction. 
+6. (Optional) In **Include all events**, uncheck any events you don't want Segment to factor into the prediction.
+7. Click **Calculate**. If you're satisfied with the available data, click **Next**.
+5. (Optional) Connect a Destination, then click **Next**.
+6. Add a name and description for the Trait, then click **Create Trait**.
 
-1. Navigate to **Engage > Audiences > Computed traits** or **Unify > Traits**. Select **Create computed trait**.
-2. Select **Request Access** to access Predictions.
+Keep the following in mind when you build a prediction:
 
-### Build a prediction
-
-Once your Workspace is enabled for Predictions, follow these steps to build a prediction:
-
-3. In the Trait Builder, select **Predictions**, choose the Trait you want to create, then click **Next**.
-    - Choose **Custom Predictive Goal**, **Likelihood to Purchase**, **Predicted Lifetime Value**, or **Likelihood to Churn**.
-4. (For custom Predictive Goals) Add a condition(s) and event to predict, then select **Calculate**. If you're satisfied with the available data, select **Next**.
-5. (Optional) Connect a Destination, then select **Next**.
-6. Add a name and description for the Trait, then select **Create Trait**.
+- Segment lets you predict the likelihood of a customer performing multiple events. 
+- You can choose a time period of 15, 30, 60, 90, or 120 days. 
+- You have granular control over the events Segment factors into the predictive model. By default, Segment's model makes predictions on all events sent to Engage. Segment lets you exclude events you don't want included by unselecting **Include all events**, then filtering out any events you want excluded from the model.
 
 In the next section, you'll learn more about the four available predictions.
 
@@ -52,7 +52,7 @@ When you build a Custom Predictive Goal, you'll first need to select a cohort, o
 
 #### Target event
 
-The target event is the Segment event that you want to predict. In creating a prediction, Segment determines the likelihood of the user performing the target event. Predictions work better when many customers have performed the event.
+The target event is the Segment event that you want to predict. In creating a prediction, Segment determines the likelihood of the user performing the target event. Segment lets you include up to two target events and an event property in your prediction.
 
 #### Data requirements
 

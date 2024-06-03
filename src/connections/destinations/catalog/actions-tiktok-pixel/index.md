@@ -16,8 +16,6 @@ Use data collected from TikTok Pixel to:
 
 This destination is maintained by TikTok. For any issues with the destination, [contact TikTok's Support team](mailto:segmenteng@bytedance.com).
 
-{% include content/ajs-upgrade.md %}
-
 ## Getting started
 
 1. From the Segment web app, click **Catalog**, then click **Destinations**.
@@ -26,8 +24,6 @@ This destination is maintained by TikTok. For any issues with the destination, [
 4. Select an existing JavaScript Source to connect to TikTok Pixel.
 5. Give the Destination a name.
 6. On the Settings screen, provide the Pixel Code. This can be found in the TikTok Events Manager (TTEM).
-    - Ensure that the Use Existing Pixel field is **off** if you want Segment to load the TikTok Pixel JavaScript code onto your website.
-    - Ensure that the Use Existing Pixel field is **on** if you want Segment to detect and keep using the existing TikTok Pixel JavaScript snippet which has already been loaded on your website.
 7. Toggle on the Destination using the **Enable Destination** toggle.
 8. Click **Save Change**.
 

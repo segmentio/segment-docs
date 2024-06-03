@@ -41,19 +41,14 @@ The LiveRamp Audiences destination can be connected to **Twilio Engage sources o
 
 {% include components/actions-fields.html settings="false"%}
 
-## Public Beta instructions 
-
-* The Segment team will need to enable the feature for your Engage spaces.
-* Once you agree to join the public beta, Segment will enable all Engage spaces that are part of your Segment workspace.
-* New Engage spaces you create won't automatically be enrolled. Contact your Account Team/CSM to get these spaces enrolled.
-
 ## Limitations 
 
-* Audience must have at least 25 unique members, otherwise the destination will fail and the data will not be synced.
-* Audience sync happens once per day.
-* Audience sync is a full sync.
+* Audience must have at least 25 unique members, otherwise the destination will fail and the data will not be synced. This means the Actions Mapping Event Tester does not work (only one test event can be configured).
+* Audience sync happens once per day. On a 24-hour cadence, but can take up to 30 hours.
+* Audience Sync is a full sync, including only users or accounts in the audience at the time of sync.
 * Files are created per audience.
 * After initial ingestion is complete, changing the mappings will cause the LiveRamp ingestion to start failing until ingestion setup is run again.
+* Time to first sync can be up to 3 days, please be patient.
 
 ## Trait Enrichment 
 

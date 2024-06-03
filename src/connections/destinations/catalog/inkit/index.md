@@ -29,7 +29,7 @@ To use a Template ID:
 1.	From the Destinations catalog page in your Segment workspace, click Add Destination.
 2.	Search for “Inkit” in the Destinations Catalog, and select the “Inkit” destination.
 3.	Choose which Source should send data to the “Inkit” destination.
-4.	[Create a template](https://docs.inkit.com/docs/create-a-template) in Word, PDF, HTML, Excel, or PowerPoint.
+4.	[Create a template](https://docs.inkit.com/docs/create-a-template){:target="_blank"} in Word, PDF, HTML, Excel, or PowerPoint.
 5.	Copy the Template ID to the “Templates” tab in the Inkit web app.
 6.	Paste the id into the “template_id” field when setting up the Destination in Segment.
 

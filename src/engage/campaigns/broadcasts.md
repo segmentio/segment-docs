@@ -24,8 +24,7 @@ Follow these steps to create an email broadcast:
     - To send a message to a pre-built audience, choose `Part of an Audience`, then select the audience.
     - To exclude users from the audience, click **Add condition** in the **And who** section. Click **And who**, then select **And not who**. Segment will exclude users from the audience you choose.
 5. Click **Preview** to estimate the audience size.
-6. Select the subscription group that you want to receive your broadcast.
-    - Segment recommends only sending broadcasts to users with a `subscribed` status. 
+6. Select the [subscription group](/docs/engage/user-subscriptions/subscription-groups/) that you want to receive your broadcast.
 7. Select **Build**, then choose either **Build a new email** or select a template.
 8. Fill out the **Email settings** fields, choose your email editor, then click **Continue**.
 9. Configure your email, then click **Continue**.
@@ -36,6 +35,9 @@ Follow these steps to create an email broadcast:
 
 > info ""
 > Segment recommends sending email broadcasts to users with a `subscribed` status. However, if you need to send an email broadcast to someone who hasn't subscribed, you can configure an email to [send to all users](/docs/engage/campaigns/email-campaigns/#send-an-email-to-all-users/).
+
+> info "Blind carbon copy"
+> Broadcasts doesn't support BCC (blind carbon copy). If your use case requires BCC, [contact Segment](https://segment.com/help/contact/){:target="_blank"}.
 
 ## Create and send an SMS broadcast
 
@@ -48,7 +50,10 @@ Follow these steps to create an email broadcast:
     - To send a message to a pre-built audience, choose `Part of an Audience`, then select the audience.
     - To exclude users from the audience, click **Add condition** in the **And who** section. Click **And who**, then select **And not who**. Segment will exclude users from the audience you choose.
 5. Click **Preview** to estimate the audience size.
-7. Select **Build**.
+6. Select **Build**.
+7. Choose an existing template or create a new template.
+    - You can edit existing templates. Edited templates won't be saved in the content tab.
+    - If you create a new template, enter a name, then select the language and content type.
 8. Choose a messaging service, enter your message into the body field, and add any merge tags. 
     - (Optional:) Test your SMS.
     - Include opt out instructions; your SMS broadcast must contain `Reply STOP to unsubscribe`.
