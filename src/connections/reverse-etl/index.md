@@ -29,6 +29,7 @@ Follow these 4 steps to set up Reverse ETL and learn what each component is abou
 > info "Enforce consent preferences stored in your warehouse with Consent Management
 > Use Consent Management to enforce your end users' consent preferences across your downstream Reverse ETL supported destinations. See the [Consent in Reverse ETL documentation](/docs/privacy/consent-management/consent-in-retl/) for more information. 
 
+
 ### Step 1: Add a source
 A source is where your data originates from. Traditionally in Segment, a [source](/docs/connections/sources/#what-is-a-source) is a website, server library, mobile SDK, or cloud application which can send data into Segment. In Reverse ETL, your data warehouse is the source.
 
