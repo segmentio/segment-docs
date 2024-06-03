@@ -127,7 +127,4 @@ If your team would like to avoid receiving the notifications for transient failu
 
 ## Why can't I connect the audience/computed trait to an existing destination in my workspace?
 
-Engage will not allow you to connect an audience/computed trait to a destination that is already linked to a [Connections-based source](https://segment.com/docs/connections/sources/).
-
-A new instance of the destination would need to be created with the correct Engage space selected as the data source during the destination’s configuration process.
-
+Engage will not allow you to connect an audience/computed trait to a destination that is already linked to a [Connections-based source](https://segment.com/docs/connections/sources/). Instead, create a new instance of the destination with the correct Engage space selected as the data source.
