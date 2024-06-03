@@ -26,7 +26,7 @@ Follow these 4 steps to set up Reverse ETL and learn what each component is abou
 3. [Add a destination](#step-3-add-a-destination)
 4. [Create mappings](#step-4-create-mappings)
 
-> info "Enforce consent preferences stored in your warehouse with Consent Management
+> info "Enforce consent preferences stored in your warehouse with Consent Management"
 > Use Consent Management to enforce your end users' consent preferences across your downstream Reverse ETL supported destinations. See the [Consent in Reverse ETL documentation](/docs/privacy/consent-management/consent-in-retl/) for more information. 
 
 
