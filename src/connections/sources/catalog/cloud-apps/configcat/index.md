@@ -54,10 +54,10 @@ The default behavior is for ConfigCat to pass the user object's identifier prope
 
 The table below lists events that ConfigCat sends to Segment. These events appear as tables in your warehouse, and as regular events in other Destinations. ConfigCat includes the `userId` if available.
 
-| Event Name           | Description            |
-| ------------------   | ---------------------- |
-| Feature Flag Evaluated | Feature flag evaluated |
-| Feature Flag Changed   | Feature flag changed   |
+| Event Name             | Description                                                                                         |
+| ---------------------- | --------------------------------------------------------------------------------------------------- |
+| Feature Flag Evaluated | Advanced feature flag evaluation analytics events about your feature flag usages, A/B test results. |
+| Feature Flag Changed   | Feature flag change events to be able to see the effect of your feature flag changes.               |
 
 ## Event Properties
 
