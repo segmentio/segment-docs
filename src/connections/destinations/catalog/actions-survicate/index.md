@@ -13,7 +13,7 @@ This destination is maintained by Survicate. For any issues with the destination
 1. From the Segment web app, click **Destinations**.
 2. Search for "Survicate (Actions)" in the Catalog, select it, and choose which of your sources to connect the destination to.
 3. Enter the "Workspace Key" into your Segment Settings UI which you can find from your [Survicate Workspace Settings](https://panel.survicate.com/o/0/w/0/settings/web-surveys){:target="_blank"}.
-
+{% include components/actions-fields.html %}
 ## Identify
 
 If you're not familiar with the Segment Specs, take a look to understand what the [Identify method](/docs/connections/spec/identify/) does. An example call would look like:
