@@ -31,37 +31,37 @@ The Google Ads Conversions destination enables you to upload offline conversions
 
 ## Migrate your Upload Enhanced Conversion (Legacy) Action
 
-To migrate from Upload Enhanced Conversion (Legacy) Action to the Upload Conversion Adjustment Action: 
+To migrate from the legacy Upload Enhanced Conversion Action to the updated Upload Conversion Adjustment Action: 
 
 1. Fill out your Conversion ID and Customer ID settings.
 2. Fill out the required fields for the Upload Conversion Adjustment Action: 
-- Conversion Action ID
-- Adjustment Type
-3. Replicate as many fields from your original mapping as possible using the table below for reference. Look at the [Upload Conversion Adjustment Action](/docs/connections/destinations/catalog/actions-google-enhanced-conversions/#upload-conversion-adjustment) for more details about each field. 
+    - Conversion Action ID
+    - Adjustment Type
+3. Replicate as many fields from your original mapping as possible, using the table below for reference. Review the [Upload Conversion Adjustment Action](/docs/connections/destinations/catalog/actions-google-enhanced-conversions/#upload-conversion-adjustment) section for more details about each field. 
 
 | Upload Enhanced Conversion (Legacy)| Upload Conversion Adjustment | Default Mapping                      |
 |------------------------|----------------------------|--------------------------------------|
-| conversion_label       | NOT AVAILABLE          | `$.properties.conversion_label`        |
-| email                  |  email_address             | `$.properties.email or $.traits.email or $.context.traits.email` |
+| conversion_label       | N/A             | `$.properties.conversion_label`        |
+| email                  |  email_address             | `$.properties.email` or `$.traits.email` or `$.context.traits.email` |
 | transaction_id         | order_id                    | `$.properties.orderId`                 |
 | user_agent             | user_agent                  | `$.context.userAgent`                 |
-| conversion_time        | conversion_timestamp      | `$.timestamp `                        |
-| value                  | NOT AVAILABLE              |` $.properties.total `                  |
-| currency_code          | NOT AVAILABLE              | `$.properties.currency   `             |
-| is_app_incrementality  | NOT AVAILABLE              |` false   `                           |
-| pcc_game               | NOT AVAILABLE              | `false `                             |
-| phone_number           | phone_number                | `$.properties.phone or $.traits.phone` |
-| first_name             | first_name                  | `$.properties.firstName or $.traits.firstName` |
-| last_name              | last_name                   | `$.properties.lastName or $.traits.lastName` |
-| street_address         | street_address              | `$.properties.address.street or $.traits.address.street` |
-| city                   | city                       | `$.properties.address.city or ​​$.traits.address.city` |
-| region                 | state                      | `$.properties.address.state or $.traits.address.state` |
-| post_code              | postal_code                 | `$.properties.address.postalCode or $.traits.address.postalCode` |
-| country                | country                     | `$.properties.address.country or $.traits.address.countr`y |
-| | gclid                  | Default Not Available        | 
-| | adjustment_timestamp   | Default Not Available        | 
-| | restatement_value      | Default Not Available        | 
-| | restatement_currency_code | Default Not Available     |
+| conversion_time        | conversion_timestamp        | `$.timestamp`                        |
+| value                  | N/A             |` $.properties.total`                  |
+| currency_code          | N/A              | `$.properties.currency`             |
+| is_app_incrementality  | N/A              |` false`                           |
+| pcc_game               | N/A              | `false`                             |
+| phone_number           | phone_number                | `$.properties.phone` or `$.traits.phone` |
+| first_name             | first_name                  | `$.properties.firstName` or `$.traits.firstName` |
+| last_name              | last_name                   | `$.properties.lastName` or `$.traits.lastName` |
+| street_address         | street_address              | `$.properties.address.street` or `$.traits.address.street` |
+| city                   | city                       | `$.properties.address.city` or `​​$.traits.address.city` |
+| region                 | state                      | `$.properties.address.state` or `$.traits.address.state` |
+| post_code              | postal_code                 | `$.properties.address.postalCode` or `$.traits.address.postalCode` |
+| country                | country                     | `$.properties.address.country` or `$.traits.address.country` |
+| N/A | gclid                  | Default Not Available        | 
+| N/A | adjustment_timestamp   | Default Not Available        | 
+| N/A | restatement_value      | Default Not Available        | 
+| N/A | restatement_currency_code | Default Not Available     |
 
 
 ## Consent mode
