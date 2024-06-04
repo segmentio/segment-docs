@@ -47,11 +47,13 @@ This source is maintained by ConfigCat. For any issues with the source, [contact
 
 ConfigCat uses our stream Source component to send Segment event data. It uses a `track` method to send data to Segment. These events are then available in any destination that accepts events, and available in a schema in your data warehouse, so you can query using SQL.
 
-The default behavior is for ConfigCat to pass the user object's identifier property used during the feature flag evaluation as the userId or sending the ConfigCat User's ID who made the changes as the userId.
+In the "Feature Flag Evaluation" event, the default behavior for ConfigCat is to use the user-object's identifier property as the Segment `userId`. If no identifier is present, the event will be sent with a randomly generated `anonymousId`.
+
+For "Feature Flag Changed" events, the ConfigCat User's ID who made the changes will be sent as the Segment userId.
 
 ## Events
 
-The table below lists events that ConfigCat sends to Segment. These events appear as tables in your warehouse, and as regular events in other Destinations. ConfigCat includes the `userId` if available.
+The table below lists events that ConfigCat sends to Segment. These events appear as tables in your warehouse, and as regular events in other Destinations.
 
 | Event Name             | Description                                                                                         |
 | ---------------------- | --------------------------------------------------------------------------------------------------- |
