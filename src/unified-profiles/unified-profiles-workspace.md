@@ -10,7 +10,9 @@ For entitlements and limitations associated with a Unified Profiles workspace, s
 
 Before creating a Unified Profiles workspace, you must have requested access from the [CustomerAI](https://console.twilio.com/us1/develop/flex/customerai/overview){:target="_blank"} page in your Flex Console and been accepted into the Agent Copilot and Unified Profiles beta program.
 
-## Step 1: Select your data sources
+## Step 1: Select your data source
+
+<!---confirm w/ Cheryl that the following warning admonition is still true --->
 
 > warning "Unable to change data source selection after this step"
 > After you've selected your data source and proceeded to the next step, you can't return to this page and make a different selection. You can add additional data sources after setting up your Unified Profiles workspace. For more information about adding additional data sources after completing the Unified Profiles guided setup, see the optional [Add additional sources and destinations to your workspace](#optional-add-additional-sources-and-destinations-to-your-workspace) documentation.
