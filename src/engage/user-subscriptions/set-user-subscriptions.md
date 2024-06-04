@@ -5,7 +5,7 @@ plan: engage-premier
 
 Segment associates a [user subscription state](/docs/engage/user-subscriptions/subscription-states/) with each email address and phone number in your Engage audiences. Subscription states give you insight into the level of consent a user has given you to receive your Engage campaigns.
 
-You can set a user’s subscription state using a CSV file or, programmatically, using Segment’s APIs. On this page, you’ll learn how and when to use both processes.
+You can set a user’s subscription state using a CSV file or, programmatically, using Reverse ETL or Segment’s APIs. On this page, you’ll learn how and when to use these processes.
 
 ## Setting user subscriptions with a CSV file upload
 
@@ -109,3 +109,7 @@ For successful requests, Segment instantly updates subscription states in your w
 
 > success ""
 > While SMS and WhatsApp share the same number, you must add a separate subscription state for both of them.
+
+## Setting user subscriptions with Reverse ETL
+
+[Engage Premier Subscriptions users](/docs/engage/user-subscriptions/) can use Reverse ETL to sync subscription data from warehouses to destinations. To get started with using Reverse ETL for managing subscriptions, see  [Reverse ETL for Engage Premier Subscriptions](https://segment.com/docs/connections/reverse-etl/#reverse-etl-for-engage-premier-subscriptions).
