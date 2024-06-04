@@ -96,9 +96,7 @@ To activate your Linked Audience:
 
 ### Step 2b: Select your Destination Actions
 
-The [Destination Actions](/docs/connections/destinations/actions/) framework allows you to see and control how Segment sends the event data it receives from your sources to actions-based destinations. Each Action in a destination lists the event data it requires, and the event data that is optional.
-
-Segment displays available actions based on the destination you've connected to your Linked Audience.
+The [Destination Actions](/docs/connections/destinations/actions/) framework allows you to see and control how Segment sends the event data it receives from your sources to actions-based destinations. Each Action in a destination lists the event data it requires, and the event data that is optional. Segment displays available actions based on the destination you've connected to your Linked Audience. You can see details of each option and how to use it in the [Actions Destinations Catalog](/docs/connections/destinations/catalog/) documentation. 
 
 Select the Destination Action to call when the event happens, then click **Next**.
 
@@ -118,9 +116,25 @@ Profile enters or exits audience| Send an Identify event when a profile's audien
 
 After you select an action, Segment attempts to automatically configure the data fields that will be sent to the destination. You can review and adjust these settings before enabling this event.
 
-#### Send a Test Event 
+#### Enrich event 
 
-You can send a test event to see if your action-based campaign is rendering correctly. If the test event is not successful, adjust the Segment test event user id to match the existing Source user id. Or if you need to create a new user in your Source, you can define a unique user id in the Segment test event.
+Select additional traits and properties to include when the event is sent.
+
+#### Show/Hide preview 
+
+As you're configuring your event, you can view a preview of the enriched event based on your property selections. See what the enriched event will look like in your payload schema. 
+
+> info 
+> It is important that copy the data from your final payload schema, you will need this data later when you set up your destination. 
+
+#### Map event
+Only required fields that need to be filled out are displayed. All other optional & pre-filled fields are hidden - These fields are pre-filled with properties that will work by default.
+
+#### Send test event to destination (optional) 
+
+See what the event will look like in the destination. You can send a test event to see if your action-based campaign is rendering correctly. If the test event is not successful, adjust the Segment test event user id to match the existing Source user id. Or if you need to create a new user in your Source, you can define a unique user id in the Segment test event.
+
+The Event content drop-down shows you a preview of what the data sent to your destination may look like. 
 
 ## Step 3: Enable your Linked Audience
 
