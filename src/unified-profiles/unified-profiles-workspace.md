@@ -1,21 +1,21 @@
 ---
-title: Create a Segment for Flex Workspace
+title: Create a Unified Profiles Workspace
 hidden: true
 ---
-Flex users without an existing Segment workspace that includes a Unify space can create a Segment for Flex workspace and a Unify space. The Segment for Flex workspace provides limited access to Segment.
+Flex users without an existing Segment workspace that includes a Unify space can create a Unified Profiles workspace and a Unify space. The Unified Profiles workspace provides limited access to Segment.
 
-For entitlements and limitations associated with a Segment for Flex workspace, see the [Entitlements and limitations](#segment-for-flex-entitlements-and-limitations) documentation. 
+For entitlements and limitations associated with a Unified Profiles workspace, see the [Entitlements and limitations](#segment-for-flex-entitlements-and-limitations) documentation. 
 
 ## Prerequisites
 
-Before creating a Segment for Flex workspace, you must have requested access from the [CustomerAI](https://console.twilio.com/us1/develop/flex/customerai/overview){:target="_blank"} page in your Flex Console and been accepted into the Agent Copilot and Unified Profiles beta program.
+Before creating a Unified Profiles workspace, you must have requested access from the [CustomerAI](https://console.twilio.com/us1/develop/flex/customerai/overview){:target="_blank"} page in your Flex Console and been accepted into the Agent Copilot and Unified Profiles beta program.
 
 ## Step 1: Select your data sources
 
 > warning "Unable to change data source selection after this step"
-> After you've selected your data source and proceeded to the next step, you can't return to this page and make a different selection. You can add additional data sources after setting up your Segment for Flex workspace. For more information about adding additional data sources after completing the Segment for Flex guided setup, see the optional [Add additional sources and destinations to your workspace](#optional-add-additional-sources-and-destinations-to-your-workspace) documentation.
+> After you've selected your data source and proceeded to the next step, you can't return to this page and make a different selection. You can add additional data sources after setting up your Unified Profiles workspace. For more information about adding additional data sources after completing the Unified Profiles guided setup, see the optional [Add additional sources and destinations to your workspace](#optional-add-additional-sources-and-destinations-to-your-workspace) documentation.
 
-1. In Segment for Flex, select a data source to get started and click **Next**.
+1. In Unified Profiles, select a data source to get started and click **Next**.
 2. Review the popup that explains how the data source connects to Segment, and click **Continue**.
 
 ## Step 2: Add connections
@@ -56,7 +56,7 @@ You can add additional data sources after completing the setup process. <br>
 </ol>
 
 > warning "Records from your data warehouse and Salesforce might not be immediately available"
-> Segment's initial sync with your data warehouse can take up to 24 hours to complete. Segment syncs with Salesforce immediately after you connect it to your Segment for Flex workspace. This initial sync can take up to 72 hours. After Segment completes the initial sync with Salesforce, Segment initiates a sync with Salesforce every three hours.
+> Segment's initial sync with your data warehouse can take up to 24 hours to complete. Segment syncs with Salesforce immediately after you connect it to your Unified Profiles workspace. This initial sync can take up to 72 hours. After Segment completes the initial sync with Salesforce, Segment initiates a sync with Salesforce every three hours.
 
 ### Data warehouse only
 
@@ -119,7 +119,7 @@ After you've selected which data sources you'd like to integrate customer data f
 > Before you can configure predictions, you must have data flowing into your connected source. After data is flowing into your source, it can take up to 48 hours for predictions to be ready.
 
 ## Step 4: Check configuration
-The final step in the Segment for Flex setup process is to check your configuration. After this check succeeds, you can return to Flex to complete the Unified Profiles setup process.
+The final step in the Unified Profiles setup process is to check your configuration. After this check succeeds, you can return to Flex to complete the Unified Profiles setup process.
 
 To check your configuration: 
 1. Click **Enable Sources and Test Connections**. Segment automatically checks your sources and connections. 
@@ -135,20 +135,20 @@ If the Enable Sources and Test Connections check indicates there are problems wi
 
 ## (Optional) Add additional sources, destinations, and custom identifiers to your workspace
 
-After you complete the Segment for Flex guided setup, you can use [Advanced Segment](https://app.segment.com/goto-my-workspace/overview){:target="_blank"} to connect your workspace to additional *sources*, or websites, server libraries, mobile SDKs, and cloud applications that can send data into Segment, and *destinations*, or apps and business tools that can receive forwarded data from Segment.
+After you complete the Unified Profiles guided setup, you can use [Advanced Segment](https://app.segment.com/goto-my-workspace/overview){:target="_blank"} to connect your workspace to additional *sources*, or websites, server libraries, mobile SDKs, and cloud applications that can send data into Segment, and *destinations*, or apps and business tools that can receive forwarded data from Segment.
 
 > warning "Editing or deleting the two sources automatically created during the guided setup can lead to data loss"
 > During the guided setup process, Segment creates two sources: a [Java source](/docs/connections/sources/catalog/libraries/server/java/quickstart/) named `flex-unify-server-source` that connects your Segment workspace to Flex, and an Personas source, named `Personas [workspace-name]`, that activates your customer data. If you edit or delete these sources, reach out to Flex support for next steps. 
 
-See the [Segment for Flex entitlements and limitations](#segment-for-flex-entitlements-and-limitations) documentation for more information about the sources and destinations supported by Segment for Flex workspaces.
+See the [Unified Profiles entitlements and limitations](#segment-for-flex-entitlements-and-limitations) documentation for more information about the sources and destinations supported by Unified Profiles workspaces.
 
 ### Add a source to your workspace
 
 > info "Eligible sources"
-> You can add up to 4 sources to your Segment for Flex workspace in addition to the 2 sources that Segment automatically generates during workspace setup. For more information about the types of sources you can add to your workspace, see the [Sources](#sources) documentation.  
+> You can add up to 4 sources to your Unified Profiles workspace in addition to the 2 sources that Segment automatically generates during workspace setup. For more information about the types of sources you can add to your workspace, see the [Sources](#sources) documentation.  
 
-To add a source to your Segment for Flex workspace:
-1. Open your Segment for Flex workspace in [Advanced Segment](https://app.segment.com/goto-my-workspace/overview){:target="_blank"} mode. 
+To add a source to your Unified Profiles workspace:
+1. Open your Unified Profiles workspace in [Advanced Segment](https://app.segment.com/goto-my-workspace/overview){:target="_blank"} mode. 
 2. On the Your Segment Overview page, find the sources column and click **+ Add More**.
 3. Select the source you'd like to add to your workspace, and click **Next**.
 4. Follow the setup flow, and click **Done** to complete setting up your source.
@@ -156,10 +156,10 @@ To add a source to your Segment for Flex workspace:
 ### Add a destination to your workspace
 
 > info "Eligible destinations"
-> You can add up to 3 destinations to your Segment for Flex workspace. For more information about the types of destinations you can add to your workspace, see the [Destinations](#destinations) documentation.  
+> You can add up to 3 destinations to your Unified Profiles workspace. For more information about the types of destinations you can add to your workspace, see the [Destinations](#destinations) documentation.  
 
-To add a destination to your Segment for Flex workspace:
-1. Open your Segment for Flex workspace in [Advanced Segment](https://app.segment.com/goto-my-workspace/overview){:target="_blank"} mode. 
+To add a destination to your Unified Profiles workspace:
+1. Open your Unified Profiles workspace in [Advanced Segment](https://app.segment.com/goto-my-workspace/overview){:target="_blank"} mode. 
 2. On the Your Segment Overview page, find the destinations column and click **Add Destination** if you haven't yet created any additional destinations, or **+ Add More** if you've already created an additional destination.
 3. Select the destination you'd like to add to your workspace, and click **Next**.
 4. Follow the setup flow, and click **Done** to complete setting up your source. 
@@ -168,15 +168,15 @@ To add a destination to your Segment for Flex workspace:
 
 You can add an unlimited number of custom identifiers to your workspace in Advanced Segment mode. 
 
-To add custom identifiers to your Segment for Flex workspace: 
-1. Open your Segment for Flex workspace in [Advanced Segment](https://app.segment.com/goto-my-workspace/home){:target="_blank"} mode. 
+To add custom identifiers to your Unified Profiles workspace: 
+1. Open your Unified Profiles workspace in [Advanced Segment](https://app.segment.com/goto-my-workspace/home){:target="_blank"} mode. 
 2. Select **Unify** in the sidebar, click the Unify space you created during the guided setup, and select **Unify settings**. 
 3. On the Identity resolution page, click **+ Add identifier** and select **Custom identifiers**.
 4. On the **Custom Identifier** popup, walk through the steps to create your custom identifier. When you're finished, click **Add new identifier**. 
 
-## Segment for Flex entitlements and limitations
+## Unified Profiles entitlements and limitations
 
-Segment for Flex workspaces created during the Unified Profiles setup process have the following entitlements and limitations:
+Unified Profiles workspaces created during the Unified Profiles setup process have the following entitlements and limitations:
 
 ### Sources
 
@@ -197,7 +197,7 @@ These sources are limited to the following types:
 
 ### Destinations
 
-With a Segment for Flex workspace, you can create up to 3 destinations.
+With a Unified Profiles workspace, you can create up to 3 destinations.
 
 These destinations are limited to the following types:
 - [Storage connections](/docs/connections/storage/catalog/){:target="_blank"}
@@ -208,7 +208,7 @@ These destinations are limited to the following types:
 
 ### Entitlements
 
-Your Segment for Flex workspace has the following entitlements:
+Your Unified Profiles workspace has the following entitlements:
 
 - 2 [Unify spaces](/docs/unify/quickstart/){:target="_blank"}
 - 2 [Computed traits](/docs/unify/Traits/computed-traits/){:target="_blank"}
