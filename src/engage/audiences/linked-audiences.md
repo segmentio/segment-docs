@@ -130,9 +130,13 @@ As you're configuring your event, you can view a preview of the enriched event b
 #### Map event
 Only required fields that need to be filled out are displayed. All other optional & pre-filled fields are hidden - These fields are pre-filled with properties that will work by default.
 
-#### Send test event to destination (optional) 
+#### Send test event to destination 
 
-See what the event will look like in the destination. You can send a test event to see if your action-based campaign is rendering correctly. If the test event is not successful, adjust the Segment test event user id to match the existing Source user id. Or if you need to create a new user in your Source, you can define a unique user id in the Segment test event.
+To send a test event to your destination, you must have already set up a campaign. 
+
+We expect the event to land and exist in MCM tool. Of the profile you want to use for testing your event. 
+
+To see what the event will look like in your destination, enter the destination User ID where you want this test event to be sent. You can send a test event to see if your action-based campaign is rendering correctly. If the test event is not successful, adjust the User id to match the existing Source user id. Or if you need to create a new user in your Source, you can define a unique user id in the Segment test event.
 
 The Event content drop-down shows you a preview of what the data sent to your destination may look like. 
 
