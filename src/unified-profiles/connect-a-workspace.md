@@ -237,9 +237,9 @@ For more information about the Profile explorer, see the [Profile explorer](/doc
   %}
 
   {% include components/reference-button.html
-    href="/docs/unified-profiles/segment-for-flex"
+    href="/docs/unified-profiles/unified-profiles-workspace/"
     icon="flex.svg"
-    title="Segment for Flex"
-    description="Flex customers without an existing Segment workspace that includes a Unify space can obtain a Segment for Flex workspace and configure a Unify space. A Segment for Flex workspace provides limited access to Segment."
+    title="Create a Unified Profiles Workspace"
+    description="Flex customers without an existing Segment workspace that includes a Unify space can obtain a Unified Profiles workspace and configure a Unify space. A Unified Profiles workspace provides limited access to Segment."
   %}
 </div>
