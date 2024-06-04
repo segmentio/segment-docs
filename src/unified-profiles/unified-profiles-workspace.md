@@ -20,64 +20,56 @@ Before creating a Unified Profiles workspace, you must have requested access fro
 
 ## Step 2: Add connections
 
-After you've selected where your customer data is stored, you must set up the connections between your data sources and Segment. 
+After you've selected the source of your customer data, set up the connections between your data source(s) and Segment. 
 
-You can set up one of the following options: 
-- [Salesforce and a data warehouse](#salesforce-and-a-data-warehouse)
-- [A data warehouse only](#data-warehouse-only)
+You can set up 1 of the following options: 
+- [CSV](#csv)
+- [Salesforce](#salesforce)
+- [A data warehouse](#data-warehouse)
 - [A website or mobile app source](#website-or-mobile-app)
 
-You can add additional data sources after completing the setup process. <br>
+If your data source isn't listed on this page, click **My source isn't listed**.
 
-### Salesforce and a data warehouse
+### CSV
 
-1. On the Getting started with Segment page, click **Connect Salesforce**. 
+> warning "Test profiles cannot be removed from Unified Profiles"
+> Segment recommends only uploading production-ready data to Unified Profiles.
+
+1. On the Getting started page, click **Upload CSV**. 
+2. Review the information on the Upload profiles and custom traits page. 
+3. Click **Download template** to download Segment's template CSV. 
+4. Open the template CSV and enter values for the fields you'd like to update identifiers and custom traits for. These values are case sensitive. If you add a new column to your CSV file, Segment adds the data to your profiles as a custom trait. 
+5. Return to your Unified Profiles workspace and upload your CSV file. You can upload 1 CSV file at a time. The CSV file that you upload must contain fewer than 10,000 rows and only contain the characters outlined in the [Allowed CSV file characters](/docs/unify/csv-upload/#allowed-csv-file-characters) documentation. 
+6. Click **Finish** to return to the Getting started page. 
+    _(Optional)_: To upload additional CSV files, repeat steps 1-6.
+7. When you've finished uploading your profiles, click **Add identifiers and traits** to start [Step 3: Add identifiers and traits](#step-3-add-identifiers-and-traits).
+
+### Salesforce
+
+1. On the Getting started page, select **Connect Salesforce** and click **Next**.  
 2. You are redirected to the Salesforce login screen. Sign in to Salesforce with a user that has _View all Records_ permissions. 
-3. On the Getting started with Segment page, click **Connect data warehouse**. 
-4. Select your data warehouse from the list of available warehouses, and click **Next**.
-5. Give your destination a name and enter the account credentials for a user that has read and write permissions. Click **Save**. 
-6. After you've given your destination a name and entered your credentials, click **Next**.
-7. On the Getting started with Segment page, click **Define Model**.
-8. Create a SQL query that defines your model. After you've created a model, Segment uses your model to map data to your Reverse ETL destinations.
-
-> info "Sample queries for importing records into Unified Profiles"
-> Not sure where to start with the SQL queries that define your model? See the [RETL Queries for Importing Salesforce Objects into Unified Profiles in Flex](/docs/unified-profiles/create-sql-traits){:target="_blank"} documentation.
- 
-<ol style="counter-reset: none;">
-  <li value="9" markdown=1>
-  Click **Preview** to return 10 records from your warehouse. When you've verified that your records return as expected, click **Next**.
-  </li>
-  <li value="10" markdown=1>
-  Click **Create Mapping**. On the Select mappings screen, map event fields from your data source to the pre-filled values that Segment expects to receive. Clicking into an event field lets you search your destination's record fields. When you've finished mapping all of the event fields, click **Create mapping.**
-  </li>
-  <li value="11" markdown=1>
-  After Segment marks the "Add connections" tile as complete, click **Add identifiers and traits** and begin [Step 3: Add identifiers and traits](#step-3-add-identifiers-and-traits). 
-  </li>
-</ol>
+3. Return to the Getting started page and click **Define model** to identify the data that Segment should import from Salesforce. 
+4. Select a collection from the dropdown menu and add one or more columns to your model.
+5. When you're satisfied with your data model, click **Create model**.
+6. Segment redirects you to the Getting started page. Click **Create mapping** to create a framework for the data Segment should map from Salesforce to your downstream tools. 
+7. On the Create mapping page, select which Salesforce fields Segment should send to your downstream tools.
+8. When you're satisfied with your mapping, click **Create mapping**. 
+9. After Segment marks the "Add connections" tile as complete, add additional connections or click **Add identifiers and traits** to start [Step 3: Add identifiers and traits](#step-3-add-identifiers-and-traits).
 
 > warning "Records from your data warehouse and Salesforce might not be immediately available"
 > Segment's initial sync with your data warehouse can take up to 24 hours to complete. Segment syncs with Salesforce immediately after you connect it to your Unified Profiles workspace. This initial sync can take up to 72 hours. After Segment completes the initial sync with Salesforce, Segment initiates a sync with Salesforce every three hours.
 
-### Data warehouse only
+### Data warehouse
 
-1. On the Getting started with Segment page, click **Connect data warehouse**. 
+1. On the Getting started page, click **Connect data warehouse**. 
 2. Select your data warehouse from the list of available warehouses, and click **Next**.
 3. Give your destination a name and enter the account credentials for a user that has read and write permissions. Click **Save**. 
 4. After you've given your destination a name and entered your credentials, click **Next**.
-5. On the *Getting started with Segment* page, click **Define Model**.
+5. On the Getting started page, click **Define model**.
 6. Create a SQL query that defines your model. After you've created a model, Segment uses your model to map data to your Reverse ETL destinations.
-
-<ol style="counter-reset: none;">
-  <li value="7" markdown=1>
-  Click **Preview** to return 10 records from your warehouse. When you've verified that your records return as expected, click **Next**.
-  </li>
-  <li value="8" markdown=1>
-  Click **Create Mapping**. On the Select mappings screen, map event fields from your data source to the pre-filled values that Segment expects to receive. Clicking into an event field lets you search your destination's record fields. When you've finished mapping all of the event fields, click **Create mapping.**
-  </li>
-  <li value="9" markdown=1>
-  After Segment marks the "Add connections" tile as complete, click **Add identifiers and traits** and begin [Step 3: Add identifiers and traits](#step-3-add-identifiers-and-traits). 
-  </li>
-</ol>
+7. Click **Preview** to return 10 records from your warehouse. When you've verified that your records return as expected, click **Next**.
+8. Click **Create Mapping**. On the Select mappings screen, map event fields from your data source to the pre-filled values that Segment expects to receive. Clicking into an event field lets you search your destination's record fields. When you've finished mapping all of the event fields, click **Create mapping.**
+9. After Segment marks the "Add connections" tile as complete, add additional connections or click **Add identifiers and traits** to start [Step 3: Add identifiers and traits](#step-3-add-identifiers-and-traits).
 
 > warning "Records from your data warehouse might not be immediately available"
 > Segment's initial sync with your data warehouse can take up to 24 hours to complete. 
@@ -87,7 +79,7 @@ You can add additional data sources after completing the setup process. <br>
 Connect to either a website or mobile app to complete this step.
 
 #### Website
-1. On the Getting started with Segment page, under the Connect your website section, click **Connect Source**.
+1. On the Getting started page, under the Connect your website section, click **Connect Source**.
 2. Enter a name for your website in the Website Name field, copy the URL of your website into the Website URL field, and click **Create Source**. 
 3. Copy the Segment snippet and paste it into the header of your website. For more information about the Segment snippet, click "What is this?" or view the [Add the Segment Snippet docs](/docs/connections/sources/catalog/libraries/website/javascript/quickstart/#step-2a-add-the-segment-snippet){:target="_blank"}.
 4. After you've pasted the snippet in the header of your website, click **Next**.
@@ -99,21 +91,22 @@ Connect to either a website or mobile app to complete this step.
 > warning "You can connect to either an iOS app or an Android app during this step"
 > If you need to connect additional mobile app sources to your workspace, you can do so after completing the setup process. 
 
-1. On the Getting started with Segment page, under the Connect your mobile apps section, click **Connect Source** and select your preferred operating system. 
+1. On the Getting started page, under the Connect your mobile apps section, click **Connect Source** and select your preferred operating system. 
 2. Enter a name for your source and click **Create Source**. 
 3. Add the Analytics dependency to your app by following the provided instructions. When you've added the dependency to your app, click **Next**. 
 4. On the "Let's test out your connection" page, select either **Skip this step** or navigate to your app, view a few screens, then return to Segment and click **Test connection**. If Segment detects screen views on your site, the Page indicator with a check mark appears. When you've verified that your snippet is successfully installed, click **Done**.
 5. After Segment marks the "Add connections" tile as complete, click **Add identifiers and traits** and begin [Step 3: Add identifiers and traits](#step-3-add-identifiers-and-traits).
 
 ## Step 3: Add identifiers and traits
-After you've selected which data sources you'd like to integrate customer data from, you can select _identifiers_, or unique pieces of data that allow you to link information about an individual customer across different programs and services, and _traits_, which are pieces of information you know about a particular customer. In this step, you can select one or more of Segment's 11 default identifiers. To add custom identifiers to your workspace, see the [Add custom identifiers](#add-custom-identifiers-to-your-workspace) documentation.
+After you've selected which data sources you'd like to integrate customer data from, you can select _identifiers_, or unique pieces of data that allow you to link information about an individual customer across different programs and services, and _traits_, which are pieces of information you know about a particular customer. In this step, you can select one or more of Segment's 11 default identifiers.
 
 1. On the Add identifiers and traits page, click **Add identifier**. 
-2. Select one or more of Segment's 11 default identifiers and click **Add identifiers**.
-3. Review the identifiers you've selected. To make changes to an identifier, select the menu icon in the row the identifier appears in, and click **Edit** or **Delete**.
+2. Select either **Select default identifiers** or **Create identifier** and follow the provided steps to configure your identifiers. 
+3. When you've finished selecting identifiers, click **Save**.
+4. On the Add identifiers and traits page, review the identifiers. If you need to make changes to an identifier, select the menu icon in the row the identifier appears in and click **Edit** or **Delete**.
 4. When you're satisfied with your identifiers, click **Add computed traits**.
 5. Select up to two traits and click **Save**. <br> _Segment recommends selecting **Total inbounds**, or the number of inbound attempts that resulted in a customer engagement, and **Frequent inbound channel**, which identifies the most frequently used communication channel._
-6. **(Optional)**: Set up predictive traits by selecting the **Set up predictive traits** dropdown and clicking **Complete setup** next to one or both traits. For more information about predictive traits, see Segment's [Predictions documentation](/docs/unify/Traits/predictions/){:target="_blank"}.
+6. _(Optional)_: Set up predictive traits by selecting the **Set up predictive traits** dropdown and clicking **Complete setup** next to one or both traits. For more information about predictive traits, see Segment's [Predictions documentation](/docs/unify/Traits/predictions/){:target="_blank"}.
 
 > warning "Predictions require event data in your sources"
 > Before you can configure predictions, you must have data flowing into your connected source. After data is flowing into your source, it can take up to 48 hours for predictions to be ready.
@@ -123,8 +116,8 @@ The final step in the Unified Profiles setup process is to check your configurat
 
 To check your configuration: 
 1. Click **Enable Sources and Test Connections**. Segment automatically checks your sources and connections. 
-  <br>If you correctly configured your sources and connections, Segment marks this step as complete.
-2. To return to Flex and complete the Unified Profiles setup process, click **[Return to Flex](https://console.twilio.com/us1/develop/flex/){:target="_blank"}**. 
+  <br>If you connected your sources and connections to Segment, Segment marks this step as complete.
+2. Click **[Return to set up home page](https://console.twilio.com/us1/develop/flex/){:target="_blank"}** to continue the Unified Profiles setup process.
 
 ### Additional troubleshooting tools
 If the Enable Sources and Test Connections check indicates there are problems with your sources and connections, you can use the advanced troubleshooting and testing tools linked under the Additional Troubleshooting Tools section to debug any issues with your configuration. 
