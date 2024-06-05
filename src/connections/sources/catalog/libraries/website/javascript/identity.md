@@ -168,6 +168,15 @@ analytics.track('Clicked Email', {
 
 This appends the `plan_id` trait to this Track event. This does _not_ add the name or email, since those traits were not added to the `context` object. You must do this for every following event you want these traits to appear on, as the `traits` object does not persist between calls.
 
+Since all non-Identify events do not automatically collect the client's available user `traits`, see [this table](https://segment.com/docs/connections/spec/common/#:~:text=%E2%9C%85-,traits,%E2%9C%85,-userAgent), you'd need to dynamically add that data into the event method in order to include the traits within the event's `context.traits` object. For example, this method uses the Analytics traits method to dynamically add the `traits` cookie into the `Button Clicked` Track event : `analytics.track("Button Clicked", {button:"submit"}, {traits:analytics.user().traits()})`.
+
+You can technically pass the client's available traits within any of Segment events' `context` object. When doing so, please make sure to reference each event method's Spec documentation, listed below, as well as the method's format. As stated above, each Segment event method has an `options` parameter, which is where you can add the `traits` data. Here's the associated documentation to reference for those events and their formats.
+- [**Spec Identify**](https://segment.com/docs/connections/spec/identify/) - The [Analytics.js Identify](https://segment.com/docs/connections/sources/catalog/libraries/website/javascript/#identify) method follows this format : analytics.identify([userId], [traits], [options], [callback]);
+- [**Spec Track**](https://segment.com/docs/connections/spec/track/) - The [Analytics.js Track](https://segment.com/docs/connections/sources/catalog/libraries/website/javascript/#track) method follows this format : analytics.track(event, [properties], [options], [callback]);
+- [**Spec Page**](https://segment.com/docs/connections/spec/page/) - The [Analytics.js Page](https://segment.com/docs/connections/sources/catalog/libraries/website/javascript/#page) method follows this format : analytics.page([category], [name], [properties], [options], [callback]);
+- [**Spec Group**](https://segment.com/docs/connections/spec/group/) - The [Analytics.js Group](https://segment.com/docs/connections/sources/catalog/libraries/website/javascript/#group) method follows this format : analytics.group(groupId, [traits], [options], [callback]);
+
+Passing the user's `traits` into other events can be useful when an [Actions destination](https://segment.com/docs/connections/destinations/actions/) is connected, as those fields would then be available to be mapped within the destination's mappings.
 
 ## Clearing Traits
 
