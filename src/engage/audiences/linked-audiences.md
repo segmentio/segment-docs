@@ -130,9 +130,9 @@ As you're configuring your event, you can view a preview of the enriched event b
 #### Map event
 Only required fields that need to be filled out are displayed. All other optional & pre-filled fields are hidden - These fields are pre-filled with properties that will work by default.
 
-#### Send test event to destination 
+#### Send test event to destination (optional) 
 
-To send a test event to your destination, you must have already set up a campaign. 
+Enter the user Id that you previously set up in your destination. 
 
 We expect the event to land and exist in MCM tool. Of the profile you want to use for testing your event. 
 
