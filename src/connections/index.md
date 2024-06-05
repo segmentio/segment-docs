@@ -66,3 +66,5 @@ The easiest way to test whether a source's events are sending through the Segmen
 5. Enable the Mapping.
 6. Enable the Webhook Actions destination.
 7. Begin sending events to the Source, and verifying those events throughout the Segment pipeline (source debugger / event delivery), and finally at the webhook's website, which will show the raw JSON for all of the events that were successfully received by your Segment Source and its Webhooks Actions destination.
+
+The type of end-to-end test is especially great to use for implementations with [Event Filtering](https://segment.com/docs/connections/destinations/destination-filters/), [Transformations](https://segment.com/docs/protocols/transform/#what-is-a-transformation), and enabled [Functions](https://segment.com/docs/connections/functions/) connections. This type of testing is strictly limited to [Cloud Mode connections](https://segment.com/docs/connections/destinations/#connection-modes:~:text=destination%20can%20use.-,Connection%20modes,Mode%20toggle%20or%20instructions%20on%20bundling%20any%20additional%20mobile%20components%20required.,-Add%20a%20destination).
