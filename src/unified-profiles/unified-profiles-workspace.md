@@ -1,6 +1,7 @@
 ---
 title: Create a Unified Profiles Workspace
 hidden: true
+redirect_from: '/unified-profiles/segment-for-flex'
 ---
 Flex users without an existing Segment workspace that includes a Unify space can create a Unified Profiles workspace and a Unify space. The Unified Profiles workspace provides limited access to Segment.
 
