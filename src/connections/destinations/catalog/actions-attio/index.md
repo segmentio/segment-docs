@@ -157,10 +157,11 @@ with both the domain and twitter handles above.
 
 ## Batching support
 
-This action supports batching, which can be toggled using the "Enable Batching" property
-on the **Edit Mapping** page. Batching will send groups of events to Attio in a single
-request, rather than individually, which can improve stability & correctness if you are
-sending a lot of events.
+This action supports batching. You can toggle batching using the **Edit Mapping > Enable
+Batching** property.
+
+Batching sends groups of events to Attio in a single request, rather than individually,
+which can improve stability & correctness if you are sending a lot of events.
 
 However, there are a couple of caveats to be aware of:
 
@@ -170,7 +171,7 @@ However, there are a couple of caveats to be aware of:
 
   2. Invalid events will be silently dropped. This can happen if your mapping
      configuration points to a non-existent Attio attribute, or you're trying to write the
-     wrong attribute type (e.g. writing a number to a domain attribute). We recommend you
+     wrong attribute type (for example: writing a number to a domain attribute). We recommend you
      continue to use the **Send test event** feature on the mapping page to check
      configurations before saving them.
 
