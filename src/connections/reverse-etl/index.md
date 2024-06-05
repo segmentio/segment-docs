@@ -74,7 +74,7 @@ To add multiple models to your source, repeat steps 1-8 above.
 ### Step 3: Add a destination
 Once you’ve added a model, you need to add a destination. In Reverse ETL, destinations are the business tools or apps you use that Segment syncs the data from your warehouse to.
 
-If your destination is not listed in the Reverse ETL catalog, use the [Segment Connections Destination](#segment-connections-destination) to send data from your Reverse ETL warehouse to your destination.
+If your destination is not listed in [the Reverse ETL catalog](https://segment.com/docs/connections/reverse-etl/reverse-etl-catalog/), use the [Segment Connections Destination](#segment-connections-destination) to send data from your Reverse ETL warehouse to your destination.
 
 > info ""
 > Depending on the destination, you may need to know certain endpoints and have specific credentials to configure the destination.  
