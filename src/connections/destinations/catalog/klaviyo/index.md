@@ -6,6 +6,10 @@ hide-personas-partial: true
 id: 54521fd825e721e32a72eec8
 ---
 
+> warning "Segment will deprecate the Klaviyo Classic destination on June 30th, 2024"
+> [Klaviyo will deprecate the endpoints used by this destination on June 2024](https://developers.klaviyo.com/en/docs/migrating_from_v1v2_to_the_new_klaviyo_apis){:target="_blank”}. Segment will not update this destination with the new endpoint, but will deprecate the destination. Users who want to send data to Klaviyo should migrate to the Klaviyo (Actions) destination. 
+>
+> On June 7, 2024, Segment will migrate all Klaviyo classic destinations to the new Klaviyo (Actions) destination. For more information about this migration, see the [Migrate to the Klaviyo (Actions) destination](#migrate-to-the-klaviyo-actions-destination) documentation. 
 
 [Klaviyo](https://www.klaviyo.com){:target="_blank"} is a powerful email platform focused on ecommerce that helps companies make more money. It supports segmentation based on category and event triggers like product bought, page viewed, email engagement, or amount spent.
 
@@ -18,11 +22,25 @@ To configure Klaviyo as an Event Source to get data into your warehouse or other
 > info "Klaviyo deprecating v1/v2 APIs"
 > Klaviyo will deprecate the endpoints used by this destination in June 2024. Segment will not update this destination with the new endpoint. Instead, Segment recommends customers switch to the new [Klaviyo Actions destination](/docs/connections/destinations/catalog/actions-klaviyo/), which already uses the new endpoints.
 
+## Migrate to the Klaviyo (Actions) destination
+
+On June 7th, 2024, Segment will automatically migrate all classic Klaviyo destinations to the new Klaviyo (Actions) destination. 
+
+**If you have an API key in your classic destination's Private Key setting and your destination is not connected to a [Journey](/docs/engage/journeys), you do not need to take any action.** 
+
+**If you do not have a Private Key in your destination's settings**, Segment will create your migrated Klayvio (Actions) destination, but will not enable it for you. 
+
+To enable your new Klaviyo (Actions) destination:
+1. Create a new private key by opening Klaviyo's UI and clicking [Account > Settings > API Keys > Create API Key](https://www.klaviyo.com/account#api-keys-tab){:target="_blank"}. 
+2. Grant the key full access to Klaviyo's Accounts, Campaigns, List, Profiles, Segments, and Subscriptions APIs. 
+3. Return to Segment and open the destination settings for your migrated Klaviyo destination. 
+4. Enter the private key into the "API Key" field. 
+
+**If your destination is connected to a Journey**, Segment will create your migrated Klaviyo (Actions) destination, but will not enable it for you. All existing Journeys will remain connected to the classic Klaviyo destination. You must [build new Journeys](/docs/engage/journeys/build-journey/) that reference the new, migrated Klaviyo destination.
+
+Segment will disable all instances of the classic Klaviyo destination after June 30th, 2024. 
 
 ## Getting started
-
-
-
 1. From the Segment web app, click **Catalog**.
 2. Search for "Klaviyo" in the Catalog, select it, and choose which of your sources to connect the destination to.
 3. Navigate to [Account > Settings > API Keys](https://www.klaviyo.com/account#api-keys-tab){:target="_blank"} in Klaviyo's UI and copy your API Key into the Segment Settings UI.
