@@ -49,7 +49,7 @@ ConfigCat uses our stream Source component to send Segment event data. It uses a
 
 In the "Feature Flag Evaluation" event, the default behavior for ConfigCat is to use the user-object's identifier property as the Segment `userId`. If no identifier is present, the event will be sent with a randomly generated `anonymousId`.
 
-For "Feature Flag Changed" events, the ConfigCat User's ID who made the changes will be sent as the Segment userId.
+For "Feature Flag Changed" events, the ConfigCat User's ID who made the changes will be sent as the Segment `userId`.
 
 ## Events
 
