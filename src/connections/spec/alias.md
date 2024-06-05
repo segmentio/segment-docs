@@ -25,7 +25,7 @@ The Alias call has the following fields:
 
 | Field        |          | Type     | Description                                                                                                                                     |
 | ------------ | -------- | -------- | ----------------------------------------------------------------------------------------------------------------------------------------------- |
-| `userId`     | required | String   | The `userId` is a string that will be the user's new identity, or an existing identity that you wish to merge with the `previousId`. See the [User ID docs](/docs/connections/spec/identify#user-id) for more detail.                                                                                            |
+| `userId`     | optional | String   | The `userId` is a string that will be the user's new identity, or an existing identity that you wish to merge with the `previousId`. See the [User ID docs](/docs/connections/spec/identify#user-id) for more detail.                                                                                            |
 | `previousId` | optional | String   | The `previousId` is the existing ID you've referred to the user by. It might be an Anonymous ID assigned to that user or a User ID you previously identified them with using Segment's [Identify](/docs/connections/spec/identify/) call.                                          |
 | `options`    | optional | Object   | A dictionary of options. For example, [enable or disable specific destinations](#managing-data-flow-with-the-integrations-object) for the call. |
 | `callback`   | optional | Function | A function that is executed after a timeout of 300 ms, giving the browser time to make outbound requests first.                                 |
@@ -70,6 +70,8 @@ analytics.alias("507f191e81");
 analytics.alias("507f191e81", "jen@email.com");
 ```
 _Please note that none of Segment's server-side libraries will automatically pass the user's `previousId` into the payload, but this field will need to be collected and included in the event payload as is done in all other server-side events._
+
+When a `userId` is not provided in the Analytics.js library's Alias event, such as in `analytics.alias()`, Segment automatically passes in the user's `anonymousId` as the `previousId` for you, while the `userId` is set to `null`. However, for effective user aliasing, the new `userId` should be provided in the event.
 
 If you're instrumenting a website, the Anonymous ID is generated in the browser so you must call Alias from the client-side. If you're using a server-side session ID as the Anonymous ID, then you must call Alias from the server-side.
 
