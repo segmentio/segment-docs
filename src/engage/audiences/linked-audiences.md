@@ -32,8 +32,9 @@ To set up your Linked Audience, complete the following steps:
 
 - [Step 1: Build a Linked Audience](#step-1-build-a-linked-audience)
 - [Step 2: Activate your Linked Audiences](#step-2-activate-your-linked-audience)
-- [Step 3: Enable your Linked Audience](#step-3-enable-your-linked-audience)
-- [Step 4: Confirm the payload in your destination](#step-4-confirm-the-payload-in-your-destination)
+- [Step 3: Send a test event to your destination](#step-3-send-a-test-event-to-your-destination)
+- [Step 4: Test your campaign flow](#step-4-test-your-campaign-flow)
+- [Step 5: Enable your Linked Audience](step-5-enable-your-linked-audience)
 
 ## Step 1: Build a Linked Audience
 
@@ -125,13 +126,13 @@ Select additional traits and properties to include when the event is sent.
 As you're configuring your events in Linked Audiences, you can view a preview of the enriched event based on the properties you select. See what the enriched event will look like in your payload schema. 
 
 > important 
-> It is important to make a copy of the data from your final payload schema, as you will need this data later when you set up your destination. 
+> It is important to make a copy of the data from your final payload schema; you will need this data later when you set up your destination. 
 
 #### Map event
 
 Only required fields that need to be filled out are displayed. All other optional & pre-filled fields are hidden - These fields are pre-filled with properties that will work by default.
 
-## Step 3: Send a test event to your destination 
+## Step 3: Send a test event to your destination
 
 Send a test event to ensure that everything is connected properly and your destination is receiving the event. 
 
@@ -145,9 +146,7 @@ If you're using a multi-channel marketing tool, set up your email campaign in yo
 
 ## Step 4: Test your campaign flow 
 
-Click the **Send test event to destination** button again to send yourself a test email for review.  
-
-If your test fails, adjust the settings in Segment linked audiences or in Braze, and send again. 
+Click the **Send test event to destination** button again to send yourself a test email for review. If your test fails, adjust the settings in your Linked audience or in your destination, and send again. 
 
 The Event content drop-down shows you a preview of what the data sent to your destination may look like.
 
