@@ -38,7 +38,7 @@ The table below lists events that SendGrid Marketing Campaigns sends to Segment.
 | Email Bounced           | Email servers [rejected the email](https://www.twilio.com/docs/sendgrid/ui/sending-email/bounces)                           |
 | Unsubscribed            | Recipient [unsubscribed globally](https://www.twilio.com/docs/sendgrid/ui/sending-email/global-unsubscribes)                |
 | Unsubscribed From Group | Recipient [unsubscribed from a group](https://www.twilio.com/docs/sendgrid/ui/sending-email/group-unsubscribes)             |
-| Resubscribed To Group   | Recipient clicked the [group unsubscribe](https://www.twilio.com/docs/sendgrid/ui/sending-email/group-unsubscribes)         |
+| Resubscribed To Group   | Recipient resubscribed to a group                                                                                           |
 | Email Marked as Spam    | Recipient [reported the email as spam](https://www.twilio.com/docs/sendgrid/ui/analytics-and-reporting/spam-reports)        |
 
 ## Event Properties
