@@ -7,6 +7,9 @@ redirect_from:
 
 Reverse ETL (Extract, Transform, Load) extracts data from a data warehouse using a query you provide, and syncs the data to your 3rd party destinations. For example, with Reverse ETL, you can sync records from Snowflake to Mixpanel. Reverse ETL supports event and object data. This includes customer profile data, subscriptions, product tables, shopping cart tables, and more.
 
+> info ""
+> Reverse ETL is available to customers on Free, Team, and Business Tier plans. If you're on a Legacy plan, contact your Segment account executive to learn how you can access Reverse ETL.
+
 ## Example use cases
 Use Reverse ETL when you want to:
 * Sync audiences and other data built in the warehouse to Braze, Hubspot, or Salesforce Marketing Cloud for personalized marketing campaigns.
