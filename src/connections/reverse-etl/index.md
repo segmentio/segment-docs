@@ -178,7 +178,6 @@ To subscribe to alerts:
 > If you opted to receive notifications by email, you can click **View active email addresses** to see the email addresses that are currently signed up to receive notifications. 
 
 ### Edit your model
-
 To edit your model:
 1. Navigate to **Connections > Destinations** and select the **Reverse ETL** tab.
 2. Select the source and the model you want to edit.
