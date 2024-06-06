@@ -7,6 +7,9 @@ redirect_from:
 
 Reverse ETL (Extract, Transform, Load) extracts data from a data warehouse using a query you provide, and syncs the data to your 3rd party destinations. For example, with Reverse ETL, you can sync records from Snowflake to Mixpanel. Reverse ETL supports event and object data. This includes customer profile data, subscriptions, product tables, shopping cart tables, and more.
 
+> info ""
+> Reverse ETL is available to customers on Free, Team, and Business Tier plans. If you're on a Legacy plan, contact your Segment account executive to learn how you can access Reverse ETL.
+
 ## Example use cases
 Use Reverse ETL when you want to:
 * Sync audiences and other data built in the warehouse to Braze, Hubspot, or Salesforce Marketing Cloud for personalized marketing campaigns.
@@ -74,7 +77,7 @@ To add multiple models to your source, repeat steps 1-8 above.
 ### Step 3: Add a destination
 Once you’ve added a model, you need to add a destination. In Reverse ETL, destinations are the business tools or apps you use that Segment syncs the data from your warehouse to.
 
-If your destination is not listed in the Reverse ETL catalog, use the [Segment Connections Destination](#segment-connections-destination) to send data from your Reverse ETL warehouse to your destination.
+If your destination is not listed in [the Reverse ETL catalog](/docs/connections/reverse-etl/reverse-etl-catalog/), use the [Segment Connections Destination](#segment-connections-destination) to send data from your Reverse ETL warehouse to your destination.
 
 > info ""
 > Depending on the destination, you may need to know certain endpoints and have specific credentials to configure the destination.  
