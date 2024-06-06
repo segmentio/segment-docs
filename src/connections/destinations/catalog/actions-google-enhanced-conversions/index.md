@@ -66,13 +66,15 @@ Review the [Upload Conversion Adjustment Action](/docs/connections/destinations/
 ### Automatic migration from Upload Enhanced Conversion (Legacy) Action
 The Upload Enhanced Conversion action relies on the Google Enhanced Conversion Legacy API, which will be deprecated on June 30th, 2024.
 
-On June 7, 2024, Segment will begin migrating all enabled legacy Upload Enhanced Conversion mappings to the new Upload Conversion Adjustment mapping, preserving as many mapping fields as possible. 
+On June 7, 2024, Segment will begin migrating all enabled legacy Upload Enhanced Conversion mappings to the new Upload Conversion Adjustment mapping, preserving as many mapping fields as possible. Migrated mappings will have the same names as your legacy mappings, with `[Migrated]` appended. For example, if your mapping was named "Enhanced Conversions", Segment would name your migrated mapping "Enhanced Conversions [Migrated]". 
+
+![A screenshot of the Google Enhanced Conversions mappings page, with migrated mappings disabled.](images/google-enhanced-conversions-migration.png)
 
 After this migration occurs, you must take the following steps: 
 1. Open the your Google Ads Conversions destination and select the **Settings** tab. 
 2. Enter your Conversion ID and Customer ID into their respective fields. Find information about what these values are in the [destination settings](#destination-settings).  
-3. Select the **Mappings** tab. 
-4. Update the Conversion Action and Adjustment Type fields in the Upload Conversion Adjustment mapping to match the fields outlined in the above table.
+3. Select the **Mappings** tab.
+4. Update the Conversion Action and Adjustment Type fields in the Upload Conversion Adjustment mapping to match the fields outlined in the above table. ![A screenshot of a migrated mapping, with the required fields outlined in black.](images/mapping-fields.png)
 5. Enable the migrated mapping(s). 
 6. Disable the legacy Upload Enhanced Conversion mappings. 
 
