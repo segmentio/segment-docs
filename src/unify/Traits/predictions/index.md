@@ -60,6 +60,9 @@ Segment doesn't enforce data requirements for predictions. In machine learning, 
 
 You can create predictions outside of these suggestions, but your results may vary.
 
+> info "Predictive Traits and anonymous events"
+> Predictive Traits are limited to non-anonymous events, which means you'll need to include an additional `external_id` other than `anonymousId` in the targeted events. If want to create Predictive Traits based on anonymous events, reach out to your CSM with your use case for creating an anonymous Predictive Trait and the conditions for trait.
+
 ### Likelihood to Purchase
 
 Likelihood to Purchase is identical to Custom Predictive Goals, but Segment prefills the `Order Completed` event, assuming it's tracked in your Segment instance. 
