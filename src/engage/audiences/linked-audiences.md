@@ -133,27 +133,23 @@ Only required fields that need to be filled out are displayed. All other optiona
 
 ## Step 3: Send a test event to your destination 
 
-Send a test event to see if your action-based campaign is rendering correctly. Enter the destination User id for the profile you want to use to test the event, then click the Send test event to destination button.  
+Send a test event to ensure that everything is connected properly and your destination is receiving the event. 
 
-> important 
-> The User ID you enter here must match a User ID you previously set up in your destination.
-
-If the test event is not successful, adjust the User id or other properties in your destination, then test again. 
+Enter the destination User id for the profile you want to use to test the event, then click the **Send test event to destination** button.  
 
 The Event content drop-down shows you a preview of what the data sent to your destination may look like. 
 
-### Step 3a: Setting up your Destination Campaign 
+### Step 3a: Configure your multi-channel marketing campaign 
 
-If you haven't already, set up your email campaign in your destination **(LINK) **
+If you're using a multi-channel marketing tool, set up your email campaign in your destination **(LINK) ** before contiuing to Step 4. 
 
-## Step 4: Test your campaign flow
+## Step 4: Test your campaign flow 
 
-Linked Audiences sends events to your destination after Segment computes the audience.
+Click the **Send test event to destination** button again to send yourself a test email for review.  
 
-To confirm your destination is receiving events, Segment recommends that you log in to your destination and perform one of the following:
+If your test fails, adjust the settings in Segment linked audiences or in Braze, and send again. 
 
-- Monitor the event activity
-- Search for the `UserID` or `Event Name` (for example, `Entity Added`)
+The Event content drop-down shows you a preview of what the data sent to your destination may look like.
 
 ## Step 5: Enable your Linked Audience
 
