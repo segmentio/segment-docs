@@ -60,7 +60,8 @@ Segment doesn't enforce data requirements for predictions. In machine learning, 
 
 You can create predictions outside of these suggestions, but your results may vary.
 
-Currently Predictive Traits are limited to non-anonymous events, meaning an additional external_id other than anonymousId must be included in the targeted events. If your team would like to create Predictive Traits based on anonymous events, please reach out to your CSM, providing your team’s use case for creating an anonymous Predictive Trait, and the conditions for the Predictive Trait.
+> info "Predictive Traits and anonymous events"
+> Predictive Traits are limited to non-anonymous events, which means you'll need to include an additional `external_id` other than `anonymousId` in the targeted events. If want to create Predictive Traits based on anonymous events, reach out to your CSM with your use case for creating an anonymous Predictive Trait and the conditions for trait.
 
 ### Likelihood to Purchase
 
