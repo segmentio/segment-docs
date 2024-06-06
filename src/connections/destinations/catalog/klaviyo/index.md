@@ -24,7 +24,9 @@ To configure Klaviyo as an Event Source to get data into your warehouse or other
 
 ## Migrate to the Klaviyo (Actions) destination
 
-On June 7th, 2024, Segment will automatically migrate all classic Klaviyo destinations to the new Klaviyo (Actions) destination. 
+Starting on June 7th, 2024, Segment will automatically migrate all classic Klaviyo destinations to the new Klaviyo (Actions) destination. Migrated Klaviyo (Actions) destinations will have the same name as your classic destination, with "Migrated" appended.
+
+For example, if you named your classic destination "Email Marketing Campaigns", Segment would name your migrated destination "Email Marketing Campaigns Migrated". 
 
 **If you have an API key in your classic destination's Private Key setting and your destination is not connected to a [Journey](/docs/engage/journeys), you do not need to take any action.** 
 
