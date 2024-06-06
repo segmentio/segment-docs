@@ -30,6 +30,8 @@ Starting on June 7th, 2024, Segment will automatically migrate all classic Klavi
 
 For example, if you named your classic destination "Email Marketing Campaigns", Segment would name your migrated destination "Email Marketing Campaigns Migrated". 
 
+![A screenshot showing a classic and a migrated destination, with a green box around the migrated instance.](images/migrated-dest.png)
+
 **If you have an API key in your classic destination's Private Key setting and your destination is not connected to a [Journey](/docs/engage/journeys), you do not need to take any action.** 
 
 **If you do not have a Private Key in your destination's settings**, Segment will create your migrated Klayvio (Actions) destination, but will not enable it for you. 
@@ -39,6 +41,10 @@ To enable your new Klaviyo (Actions) destination:
 2. Grant the key full access to Klaviyo's Accounts, Campaigns, List, Profiles, Segments, and Subscriptions APIs. 
 3. Return to Segment and open the destination settings for your migrated Klaviyo destination. 
 4. Enter the private key into the "API Key" field. 
+5. Enable your migrated Actions destination. 
+6. Open the destination settings for your classic Klaviyo destination and disable the destination.
+
+![A screenshot of the Settings page for a migrated Klaviyo Actions destination, with a black outline around the API Key field](images/migrated-settings.png)
 
 **If your destination is connected to a Journey**, Segment will create your migrated Klaviyo (Actions) destination, but will not enable it for you. All existing Journeys will remain connected to the classic Klaviyo destination. You must [build new Journeys](/docs/engage/journeys/build-journey/) that reference the new, migrated Klaviyo destination.
 
