@@ -131,9 +131,9 @@ As you're configuring your events in Linked Audiences, you can view a preview of
 
 Only required fields that need to be filled out are displayed. All other optional & pre-filled fields are hidden - These fields are pre-filled with properties that will work by default.
 
-#### Send test event to destination (optional) 
+## Step 3: Send a test event to your destination 
 
-Send a test event to see if your action-based campaign is rendering correctly. Enter the destination User id for the profile you want to use to test the event, then click the Send test event to destination button.
+Send a test event to see if your action-based campaign is rendering correctly. Enter the destination User id for the profile you want to use to test the event, then click the Send test event to destination button.  
 
 > important 
 > The User ID you enter here must match a User ID you previously set up in your destination.
@@ -142,15 +142,11 @@ If the test event is not successful, adjust the User id or other properties in y
 
 The Event content drop-down shows you a preview of what the data sent to your destination may look like. 
 
-## Step 3: Enable your Linked Audience
+### Step 3a: Setting up your Destination Campaign 
 
-After building your Linked Audience, you'll be redirected to the Audience Overview page. Segment automatically disables your audience so that it does not start computing until you're ready. To enable your audience:
+If you haven't already, set up your email campaign in your destination **(LINK) **
 
-Select the **Enabled** toggle, then select **Enable audience**.
-
-You can trigger a compute for your audience if you want to send events to your destination without waiting for the next scheduled compute run. To do so, select **Compute Now**. This triggers a compute for the audience (where the audience conditions run on your data warehouse) and sends events downstream.
-
-## Step 4: Confirm the payload in your destination
+## Step 4: Test your campaign flow
 
 Linked Audiences sends events to your destination after Segment computes the audience.
 
@@ -158,3 +154,11 @@ To confirm your destination is receiving events, Segment recommends that you log
 
 - Monitor the event activity
 - Search for the `UserID` or `Event Name` (for example, `Entity Added`)
+
+## Step 5: Enable your Linked Audience
+
+After building your Linked Audience, you'll be redirected to the Audience Overview page. Segment automatically disables your audience so that it does not start computing until you're ready. To enable your audience:
+
+Select the **Enabled** toggle, then select **Enable audience**.
+
+You can trigger a compute for your audience if you want to send events to your destination without waiting for the next scheduled compute run. To do so, select **Compute Now**. This triggers a compute for the audience (where the audience conditions run on your data warehouse) and sends events downstream.
