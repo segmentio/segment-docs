@@ -9,7 +9,9 @@ id: 54521fd825e721e32a72eec8
 > warning "Segment will deprecate the Klaviyo Classic destination on June 30th, 2024"
 > [Klaviyo will deprecate the endpoints used by this destination on June 2024](https://developers.klaviyo.com/en/docs/migrating_from_v1v2_to_the_new_klaviyo_apis){:target="_blank”}. Segment will not update this destination with the new endpoint, but will deprecate the destination. Users who want to send data to Klaviyo should migrate to the Klaviyo (Actions) destination. 
 >
-> On June 7, 2024, Segment will migrate all Klaviyo classic destinations to the new Klaviyo (Actions) destination. For more information about this migration, see the [Migrate to the Klaviyo (Actions) destination](#migrate-to-the-klaviyo-actions-destination) documentation. 
+> Starting on June 7, 2024, Segment will migrate all Klaviyo classic destinations to the new Klaviyo (Actions) destination. **If you don't have an API key in the destination settings for your classic Klaviyo destination, you will need to take action.**
+> 
+> For more information about this migration, see the [Migrate to the Klaviyo (Actions) destination](#migrate-to-the-klaviyo-actions-destination) documentation. 
 
 [Klaviyo](https://www.klaviyo.com){:target="_blank"} is a powerful email platform focused on ecommerce that helps companies make more money. It supports segmentation based on category and event triggers like product bought, page viewed, email engagement, or amount spent.
 
