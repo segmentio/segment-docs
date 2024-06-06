@@ -66,7 +66,7 @@ Review the [Upload Conversion Adjustment Action](/docs/connections/destinations/
 ### Automatic migration from Upload Enhanced Conversion (Legacy) Action
 The Upload Enhanced Conversion action relies on the Google Enhanced Conversion Legacy API, which will be deprecated on June 30th, 2024.
 
-Starting on June 7, 2024, Segment will migrate all enabled legacy Upload Enhanced Conversion mappings to the new Upload Conversion Adjustment mapping, preserving as many mapping fields as possible. 
+On June 7, 2024, Segment will begin migrating all enabled legacy Upload Enhanced Conversion mappings to the new Upload Conversion Adjustment mapping, preserving as many mapping fields as possible. 
 
 After this migration occurs, you must take the following steps: 
 1. Open the your Google Ads Conversions destination and select the **Settings** tab. 
