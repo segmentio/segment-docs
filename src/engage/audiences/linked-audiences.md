@@ -122,21 +122,23 @@ Select additional traits and properties to include when the event is sent.
 
 #### Show/Hide preview 
 
-As you're configuring your event, you can view a preview of the enriched event based on your property selections. See what the enriched event will look like in your payload schema. 
+As you're configuring your events in Linked Audiences, you can view a preview of the enriched event based on the properties you select. See what the enriched event will look like in your payload schema. 
 
-> info 
-> It is important that copy the data from your final payload schema, you will need this data later when you set up your destination. 
+> important 
+> It is important to make a copy of the data from your final payload schema, as you will need this data later when you set up your destination. 
 
 #### Map event
+
 Only required fields that need to be filled out are displayed. All other optional & pre-filled fields are hidden - These fields are pre-filled with properties that will work by default.
 
 #### Send test event to destination (optional) 
 
-Enter the user Id that you previously set up in your destination. 
+Send a test event to see if your action-based campaign is rendering correctly. Enter the destination User id for the profile you want to use to test the event, then click the Send test event to destination button.
 
-We expect the event to land and exist in MCM tool. Of the profile you want to use for testing your event. 
+> important 
+> The User ID you enter here must match a User ID you previously set up in your destination.
 
-To see what the event will look like in your destination, enter the destination User ID where you want this test event to be sent. You can send a test event to see if your action-based campaign is rendering correctly. If the test event is not successful, adjust the User id to match the existing Source user id. Or if you need to create a new user in your Source, you can define a unique user id in the Segment test event.
+If the test event is not successful, adjust the User id or other properties in your destination, then test again. 
 
 The Event content drop-down shows you a preview of what the data sent to your destination may look like. 
 
