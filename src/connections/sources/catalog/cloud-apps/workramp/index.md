@@ -10,11 +10,6 @@ This is an [Event Cloud Source](/docs/sources/#event-cloud-sources) which can no
 
 This source is maintained by WorkRamp. For any issues with the source, [contact the WorkRamp support team](mailto:support@workramp.com).
 
-> info "The WorkRamp source is in Beta"
-> WorkRamp are actively developing the source. This doc was last updated on July 8, 2022. If you are interested in joining their beta program or have any feedback to help improve the WorkRamp Source and its documentation, contact [support@workramp.com](mailto:support@workramp.com)
-
-
-
 ## Getting started
 
 1. From your workspace's [Sources catalog page](https://app.segment.com/goto-my-workspace/sources/catalog){:target="_blank”} click **Add Source**.
