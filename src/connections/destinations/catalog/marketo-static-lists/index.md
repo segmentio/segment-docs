@@ -6,9 +6,9 @@ id: 5b73515e6170785a5e62978c
 ---
 
 > warning "Deprecation Notice"
-> Segment is deprecating this destination. Segment will create an instance of the [Marketo Static Lists (Actions)](/docs/connections/destinations/catalog/actions-marketo-static-lists/) destination for each properly configured version of the Personas Marketo Static Lists classic destination in your workspace. Settings and configurations will be migrated automatically.
+> This destination has been deprecated. Segment has created an instance of the [Marketo Static Lists (Actions)](/docs/connections/destinations/catalog/actions-marketo-static-lists/) destination for each properly configured version of the Personas Marketo Static Lists classic destination in your workspace. Settings and configurations have been migrated automatically. If your Personas Marketo Static List destination is connected to a Journey, please change your configuration and connect it to the new Actions destination. 
 > 
-> We are disabling all existing Personas Marketo Static List destinations. You can still access your existing configuration, but please refrain from enabling the destination, as it is set to be deprecated. You will no longer be able to create new instances of Personas Marketo Static Lists. Please check out [Marketo Static Lists (Actions)](/docs/connections/destinations/catalog/actions-marketo-static-lists/) to set up a new instance of Marketo Static Lists. 
+> We have disabled all existing Personas Marketo Static List destinations, except those connected to a Journey instance. You can still access your existing configuration, but you will not be able to make changes to it. You will also no longer be able to create new instances of Personas Marketo Static Lists. Please refer to [Marketo Static Lists (Actions)](/docs/connections/destinations/catalog/actions-marketo-static-lists/) to set up a new instance of Marketo Static Lists. 
 >
 > For questions or issues contact [friends@segment.com](mailto:friends@segment.com).
 
