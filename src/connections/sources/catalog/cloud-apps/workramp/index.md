@@ -1,6 +1,5 @@
 ---
 title: WorkRamp Source
-beta: true
 id: 7GmYZcBQyw
 ---
 {% include content/source-region-unsupported.md %}
