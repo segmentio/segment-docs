@@ -35,8 +35,7 @@ To set up your Linked Audience, complete the following steps:
 - [Step 1: Build a Linked Audience](#step-1-build-a-linked-audience)
 - [Step 2: Activate your Linked Audiences](#step-2-activate-your-linked-audience)
 - [Step 3: Send a test event to your destination](#step-3-send-a-test-event-to-your-destination)
-- [Step 4: Test your campaign flow](#step-4-test-your-campaign-flow)
-- [Step 5: Enable your Linked Audience](step-5-enable-your-linked-audience)
+- [Step 4: Enable your Linked Audience](step-4-enable-your-linked-audience)
 
 ## Step 1: Build a Linked Audience
 
@@ -149,15 +148,9 @@ The Event content drop-down shows you a preview of what the data sent to your de
 
 If you're using a multi-channel marketing tool, set up your email campaign in your destination **(LINK) ** before contiuing to Step 4. 
 
-## Step 4: Test your campaign flow 
+## Step 4: Enable your Linked Audience
 
-Click the **Send test event to destination** button again to send yourself a test email for review. If your test fails, adjust the settings in your Linked audience or in your destination, and send again. 
-
-The Event content drop-down shows you a preview of what the data sent to your destination may look like.
-
-## Step 5: Enable your Linked Audience
-
-After building your Linked Audience, you'll be redirected to the Audience Overview page. Segment automatically disables your audience so that it does not start computing until you're ready. To enable your audience:
+After building your Linked Audience, and choose **Save and Enable**, you'll be redirected to the Audience Overview page. Segment automatically disables your audience so that it does not start computing until you're ready. To enable your audience:
 
 Select the **Enabled** toggle, then select **Enable audience**.
 
