@@ -9,7 +9,9 @@ hidden: true
 > info "Linked Audiences is in public beta"
 > Linked Audiences is in public beta, and Segment is actively working on this feature. Some functionality may change before it becomes generally available.
 
-Linked Audiences allows you to build a warehouse first solution that powers individualized customer experiences using the relational data you've defined in your [Data Graph](/docs/unify/linked-profiles/data-graph/). You can:
+Linked Audiences allows you to build a warehouse first solution that powers individualized customer experiences using the relational data you've defined in your [Data Graph](/docs/unify/linked-profiles/data-graph/). 
+
+You can:
 
 - Preserve rich relationships between all the data in your warehouse by creating connections with any entity data back to your audience profile.
 - Build advanced audience segments that include the rich context needed for personalization downstream.
@@ -107,7 +109,7 @@ Configure how and when events are produced with each audience run. Select the en
 
 Event Selection                 |Definition                                                                                                                                                                                               |Examples                                                                                                                                                                                                                                                                              
 --------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-Profile enters audience         | Send a Track event when a profile matches the audience condition.                                                                                                                                        | Send a congratulatory email when a traveler qualifies for premium status with a mileage program.<br>- Send a discount to all customers with a particular product on their wishlist.                                                                                                     
+Profile enters audience         | Send a Track event when a profile matches the audience condition.                                                                                                                                        | Send a congratulatory email when a traveler qualifies for premium status with a mileage program.<br>Send a discount to all customers with a particular product on their wishlist.                                                                                                     
 Profile exits audience          | Send a Track event when a profile no longer matches the audience condition.                                                                    | Send an email to credit card owners to confirm that their credit cards have been paid in full.<br> Send a confirmation to a patient when they have completed all their pre-screening forms.                                                                                            
 Entity enters audience          | Send a Track event when an entity condition associated with a profile matches the audience condition. With this event, you must select the entity that triggers Segment to send the Track event.         | Send a reminder to a customer when a credit card associated with their profile has an outstanding balance.<br> Notify a traveler when a flight associated with their profile is delayed.<br> Notify a customer when a product associated with their profile's wishlist is back in stock.
 Entity exits audience           | Send a Track event when an entity condition associated with a profile no longer matches the audience condition. With this event, you must select the entity that triggers Segment to send the Track event| Send a confirmation to a customer when a credit card associated with their profile has been paid off.<br> Send a confirmation to the primary doctor when each of their associated patients completes their annual check up.                                                            
@@ -123,14 +125,17 @@ Select additional traits and properties to include when the event is sent.
 
 #### Show/Hide preview 
 
-As you're configuring your events in Linked Audiences, you can view a preview of the enriched event based on the properties you select. See what the enriched event will look like in your payload schema. 
+As you're enriching your events in Linked Audiences, you should view a preview of the event payload schema based on the properties you select. It might look like the following:
 
-> important 
-> It is important to make a copy of the data from your final payload schema; you will need this data later when you set up your destination. 
+![{Preview your payload data}](/docs/engage/images/linked_audience_payload.png)
+
+**Important:** It is important to make a copy of the data from your final payload schema; you will need this data later when you set up your destination. 
 
 #### Map event
 
-Only required fields that need to be filled out are displayed. All other optional & pre-filled fields are hidden - These fields are pre-filled with properties that will work by default.
+Only required fields that need to be filled out are displayed. All other optional & pre-filled fields are hidden 
+
+These fields are pre-filled with properties that will work by default.
 
 ## Step 3: Send a test event to your destination
 
