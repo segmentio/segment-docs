@@ -13,10 +13,9 @@ Before creating a Unified Profiles workspace, you must have requested access fro
 
 ## Step 1: Select your data source
 
-<!---confirm w/ Cheryl that the following warning admonition is still true --->
 
-> warning "Unable to change data source selection after this step"
-> After you've selected your data source and proceeded to the next step, you can't return to this page and make a different selection. You can add additional data sources after setting up your Unified Profiles workspace. For more information about adding additional data sources after completing the Unified Profiles guided setup, see the optional [Add additional sources and destinations to your workspace](#optional-add-additional-sources-and-destinations-to-your-workspace) documentation.
+> warning "You might be unable to change data source selection after taking action"
+> For users setting up Salesforce and a data warehouse, a data warehouse, or a website or mobile app source, once you've selected your data source, proceeded to the next step, and taken action, you can't return to this page and make a different selection. Users that opted to upload CSVs can return to this page and make a different selection or upload an additional CSV. For more information about adding additional data sources after completing the Unified Profiles guided setup, see the optional [Add additional sources and destinations to your workspace](#optional-add-additional-sources-and-destinations-to-your-workspace) documentation.
 
 1. In Unified Profiles, select a data source to get started and click **Next**.
 2. Review the popup that explains how the data source connects to Segment, and click **Continue**.
@@ -31,12 +30,12 @@ You can set up 1 of the following options:
 - [A data warehouse](#data-warehouse)
 - [A website or mobile app source](#website-or-mobile-app)
 
-If your data source isn't listed on this page, click **My source isn't listed**.
+<!---If your data source isn't listed on this page, click **My source isn't listed**.--->
 
 ### CSV
 
-> warning "Test profiles cannot be removed from Unified Profiles"
-> Segment recommends only uploading production-ready data to Unified Profiles.
+> warning "You cannot remove test profiles in your Unified Profiles workspace"
+> Contact Flex support to remove test profiles you uploaded to your Unified Profiles workspace.
 
 1. On the Getting started page, click **Upload CSV**. 
 2. Review the information on the Upload profiles and custom traits page. 
@@ -111,7 +110,7 @@ After you've selected which data sources you'd like to integrate customer data f
 4. On the Add identifiers and traits page, review the identifiers. If you need to make changes to an identifier, select the menu icon in the row the identifier appears in and click **Edit** or **Delete**.
 4. When you're satisfied with your identifiers, click **Add computed traits**.
 5. Select up to two traits and click **Save**. <br> _Segment recommends selecting **Total inbounds**, or the number of inbound attempts that resulted in a customer engagement, and **Frequent inbound channel**, which identifies the most frequently used communication channel._
-6. _(Optional)_: Set up predictive traits by selecting the **Set up predictive traits** dropdown and clicking **Complete setup** next to one or both traits. For more information about predictive traits, see Segment's [Predictions documentation](/docs/unify/Traits/predictions/){:target="_blank"}.
+6. _(Optional)_: After events from your data sources populate into your downstream destinations, you can return to the guided setup to configure predictive traits. Return to the guided setup, select the **Set up predictive traits** dropdown, and click **Complete setup** next to one or both traits. For more information about predictive traits, see Segment's [Predictions documentation](/docs/unify/Traits/predictions/){:target="_blank"}.
 
 > warning "Predictions require event data in your sources"
 > Before you can configure predictions, you must have data flowing into your connected source. After data is flowing into your source, it can take up to 48 hours for predictions to be ready.
