@@ -27,7 +27,7 @@ After you've selected the source of your customer data, set up the connections b
 
 You can set up 1 of the following options: 
 - [CSV](#csv)
-- [Salesforce](#salesforce)
+- [Salesforce and a data warehouse](#salesforce-and-a-data-warehouse)
 - [A data warehouse](#data-warehouse)
 - [A website or mobile app source](#website-or-mobile-app)
 
@@ -47,17 +47,19 @@ If your data source isn't listed on this page, click **My source isn't listed**.
     _(Optional)_: To upload additional CSV files, repeat steps 1-6.
 7. When you've finished uploading your profiles, click **Add identifiers and traits** to start [Step 3: Add identifiers and traits](#step-3-add-identifiers-and-traits).
 
-### Salesforce
+### Salesforce and a data warehouse
 
-1. On the Getting started page, select **Connect Salesforce** and click **Next**.  
+> info "Sample queries for importing records into Unified Profiles"
+> Not sure where to start with the SQL queries that define your model? See the [RETL Queries for Importing Salesforce Objects into Unified Profiles in Flex](/docs/unified-profiles/create-sql-traits){:target="_blank"} documentation.
+
+1. On the Getting started with Segment page, click **Connect Salesforce**. 
 2. You are redirected to the Salesforce login screen. Sign in to Salesforce with a user that has _View all Records_ permissions. 
-3. Return to the Getting started page and click **Define model** to identify the data that Segment should import from Salesforce. 
-4. Select a collection from the dropdown menu and add one or more columns to your model.
-5. When you're satisfied with your data model, click **Create model**.
-6. Segment redirects you to the Getting started page. Click **Create mapping** to create a framework for the data Segment should map from Salesforce to your downstream tools. 
-7. On the Create mapping page, select which Salesforce fields Segment should send to your downstream tools.
-8. When you're satisfied with your mapping, click **Create mapping**. 
-9. After Segment marks the "Add connections" tile as complete, add additional connections or click **Add identifiers and traits** to start [Step 3: Add identifiers and traits](#step-3-add-identifiers-and-traits).
+3. On the Getting started with Segment page, click **Connect data warehouse**. 
+4. Select your data warehouse from the list of available warehouses, and click **Next**.
+5. Give your destination a name and enter the account credentials for a user that has read and write permissions. Click **Save**. 
+6. After you've given your destination a name and entered your credentials, click **Next**.
+7. On the Getting started with Segment page, click **Define Model**.
+8. Create a SQL query that defines your model. After you've created a model, Segment uses your model to map data to your Reverse ETL destinations.
 
 > warning "Records from your data warehouse and Salesforce might not be immediately available"
 > Segment's initial sync with your data warehouse can take up to 24 hours to complete. Segment syncs with Salesforce immediately after you connect it to your Unified Profiles workspace. This initial sync can take up to 72 hours. After Segment completes the initial sync with Salesforce, Segment initiates a sync with Salesforce every three hours.
