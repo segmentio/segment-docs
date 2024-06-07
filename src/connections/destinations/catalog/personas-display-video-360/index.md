@@ -7,11 +7,11 @@ engage: true
 ---
 
 > warning "Deprecation Notice"
-> Due to Google retiring certain APIs on March 6, 2024, Segment is deprecating this destination. In February 2024, Segment will create an instance of the [Display and Video (Actions)](/docs/connections/destinations/catalog/actions-display-video-360/) destination for each version of the Personas  Google  Display and Video 360 classic destination in your workspace. 
+> Due to Google retiring certain APIs on March 6, 2024, Segment has deprecated this destination. Segment has created an instance of the [Display and Video (Actions)](/docs/connections/destinations/catalog/actions-display-video-360/) destination for each properly configured version of the Personas  Google  Display and Video 360 classic destination in your workspace. 
 > 
-> Settings and configurations will be migrated automatically, but you must take additional action to ensure the destination is properly functioning. For more information, see [Migrate from Personas Google Display & Video 360 Destination ](/docs/connections/destinations/catalog/actions-display-video-360/#migrate-from-personas-google-display-&-video-360-destination)
+> Settings and configurations have been migrated automatically, but you must take additional action to ensure the destination is properly functioning. For more information, see [Migrate from Personas Google Display & Video 360 Destination ](/docs/connections/destinations/catalog/actions-display-video-360/#migrate-from-personas-google-display-&-video-360-destination)
 > 
-> Segment is disabling all existing Personas Display and Video 360 destinations. You can still access your existing configuration, but please refrain from enabling the destination, as it is set to be deprecated. You will no longer be able to create new instances of Personas Display and Video 360. Please check out [Display and Video (Actions)](/docs/connections/destinations/catalog/actions-display-video-360/) to set up a new instance of Google Display and Video 360. 
+> Segment has disabled all existing Personas Display and Video 360 destinations. You can still access your existing configuration, but please refrain from enabling the destination, as it has been deprecated. You will no longer be able to create new instances of Personas Display and Video 360. Please check out [Display and Video (Actions)](/docs/connections/destinations/catalog/actions-display-video-360/) to set up a new instance of Google Display and Video 360. 
 >
 > For questions or issues contact [friends@segment.com](mailto:friends@segment.com).
 
