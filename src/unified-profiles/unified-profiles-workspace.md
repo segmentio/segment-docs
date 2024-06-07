@@ -45,7 +45,7 @@ If your data source isn't listed on this page, click **My source isn't listed**.
 5. Return to your Unified Profiles workspace and upload your CSV file. You can upload 1 CSV file at a time. The CSV file that you upload must contain fewer than 10,000 rows and only contain the characters outlined in the [Allowed CSV file characters](/docs/unify/csv-upload/#allowed-csv-file-characters) documentation. 
 6. Click **Finish** to return to the Getting started page. 
     _(Optional)_: To upload additional CSV files, repeat steps 1-6.
-7. When you've finished uploading your profiles, click **Add identifiers and traits** to start [Step 3: Add identifiers and traits](#step-3-add-identifiers-and-traits).
+7. When you've finished uploading your profiles, click **Add identifiers and traits** to review the identifiers and traits Segment extracted from your CSV.
 
 ### Salesforce and a data warehouse
 
