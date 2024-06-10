@@ -277,7 +277,7 @@ data_graph {
 ```
 ## Data Graph Example 
 
-![An example of a Data Graph](/docs/unify/images/data-graph-example.png)
+<img src="/docs/unify/images/data-graph-example.png" alt="An example of a Data Graph" width="5888"/>
 
 ```py
 data_graph {

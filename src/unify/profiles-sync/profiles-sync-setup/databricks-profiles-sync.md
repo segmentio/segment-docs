@@ -77,7 +77,7 @@ Segment uses the service principal to access your Databricks workspace and assoc
 **Service principal client ID**: Follow the [Databricks guide for adding a service principal to your account](https://docs.databricks.com/en/administration-guide/users-groups/service-principals.html#manage-service-principals-in-your-account){:target="_blank"}. This name can be anything, but Segment recommends something that identifies the purpose (for example, "Segment Profiles Sync").  Segment doesn't require `Account admin` or `Marketplace admin` roles.
 
 The service principal needs the following setup:
-  - [Catalog level priveleges](https://docs.databricks.com/en/data-governance/unity-catalog/manage-privileges/privileges.html#general-unity-catalog-privilege-types){:target="_blank"} which include:
+  - [Catalog-level privileges](https://docs.databricks.com/en/data-governance/unity-catalog/manage-privileges/privileges.html#general-unity-catalog-privilege-types){:target="_blank"} which include:
     - USE CATALOG
     - USE SCHEMA
     - MODIFY
