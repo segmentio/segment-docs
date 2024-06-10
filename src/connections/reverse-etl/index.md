@@ -39,7 +39,7 @@ Use Reverse ETL when you want to:
 
 ## Learn more
 
-Learn more about the system that powers Reverse ETL, check out the supported destinations, and view frequently asked questions.
+Learn more about the system that powers Reverse ETL, supported destinations, and frequently asked questions.
 <div class="flex flex--wrap gutter gutter--large">
   <div class="flex__column flex__column--12 flex__column--4@medium">
     {% include components/reference-button.html

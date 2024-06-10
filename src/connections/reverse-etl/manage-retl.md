@@ -49,7 +49,7 @@ To subscribe to alerts:
     - **Enable in-app notifications**: Select this option to see an in-app notification.
 5. Click **Create alert**.
 
-> info "View email addresses that are signed up to receive alerts"
+> success ""
 > If you opted to receive notifications by email, you can click **View active email addresses** to see the email addresses that are currently signed up to receive notifications. 
 
 ## Supported object and arrays 
