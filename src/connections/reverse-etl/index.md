@@ -1,6 +1,7 @@
 ---
 title: Reverse ETL
 beta: false
+hide_toc: true
 redirect_from:
   - '/reverse-etl/'
 ---

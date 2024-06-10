@@ -3,9 +3,9 @@ title: Reverse ETL Catalog
 beta: false
 ---
 
-Reverse ETL supports most of the Segment destination catalog - 30+ Actions destinations are natively supported, Segment Classic destinations are supported through the [Segment Connections](#segment-connections-destination) destination, and Twilio Engage Premier Subscriptions users can use the Segment Profiles destination to sync subscription data from warehouses to destinations. 
+Reverse ETL supports most of the Segment destination catalog - 30+ Actions destinations are natively supported, Segment Classic destinations are supported through the [Segment Connections](#segment-connections-destination) destination, and Twilio Engage Premier Subscriptions users can use the Segment Profiles destination to enrich warehouse data.  
 
-These destinations support [Reverse ETL](/docs/connections/reverse-etl/). If you don’t see your destination listed in the Reverse ETL catalog, use the [Segment Connections destination](/docs/connections/destinations/catalog/actions-segment/) to send data from your Reverse ETL warehouse to other destinations listed in the [catalog](/docs/connections/destinations/catalog/).  
+The following destinations natively support [Reverse ETL](/docs/connections/reverse-etl/). If you don’t see your destination listed in the Reverse ETL catalog, use the [Segment Connections destination](/docs/connections/destinations/catalog/actions-segment/) to send data from your Reverse ETL warehouse to other destinations listed in the [catalog](/docs/connections/destinations/catalog/).  
 
 <div class="destinations-catalog">
       <div class="flex flex--wrap waffle waffle--xlarge">
