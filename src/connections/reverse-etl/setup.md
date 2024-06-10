@@ -37,6 +37,11 @@ After you add your data warehouse as a source, you can [add a model](#step-2-add
 ## Step 2: Add a model
 Models are SQL queries that define sets of data you want to synchronize to your Reverse ETL destinations. After you add your source, you can add a model.
 
+> info "Use Segment's dbt extension to centralize model management and versioning"
+> Users who set up a BigQuery, Databricks, Postgres, Redshift, or Snowflake source can use Segment's [dbt extension](/docs/segment-app/extensions/dbt/) to centralize model management and versioning, reduce redundancies, and run CI checks to prevent breaking changes. 
+>
+> Extensions is currently in public beta and is governed by Segment's [First Access and Beta Preview Terms](https://www.twilio.com/en-us/legal/tos){:target="_blank"}. During Public Beta, Extensions is available for Team and Developer plans only. [Reach out to Segment](mailto:friends@segment.com) if you're on a Business Tier plan and would like to participate in the Public Beta.
+
 To add your first model:
 1. Navigate to **Connections > Sources** and select the **Reverse ETL** tab. Select your source and click **Add Model**.
 2. Click **SQL Editor** as your modeling method. (Segment will add more modeling methods in the future.)
@@ -67,7 +72,7 @@ Reverse ETL supports 30+ destinations: see all destinations listed in the [Rever
 Engage users can use the [Segment Profiles Destination](/docs/connections/destinations/catalog/actions-segment-profiles/) to send data from their warehouse to their Reverse ETL destinations. 
 
 > info "Separate endpoints and credentials required to set up third party destinations"
-> Before you begin setting up your destinations, note that you might be required to have credentials for and 
+> Before you begin setting up your destinations, note that each destination has different authentication requirements. See the documentation for your intended destination for more details.
 
 To add your first destination:
 1. Navigate to **Connections > Destinations** and select the **Reverse ETL** tab.
@@ -106,7 +111,7 @@ To create a mapping:
         * Scheduling multiple extractions to start at the same time inside the same data warehouse causes extraction errors.
 11. Define how to map the record columns from your model to your destination in the **Select Mappings** section.
     * You map the fields that come from your source, to fields that the destination expects to find. Fields on the destination side depend on the type of action selected.
-    * If you're setting up a destination action, depending on the destination, some mapping fields may require data to be in the form of an object or array. See the [supported objects and arrays for mapping](/docs/connections/reverse-etl/mapping/#supported-object-and-arrays).
+    * If you're setting up a destination action, depending on the destination, some mapping fields may require data to be in the form of an object or array. See the [supported objects and arrays for mapping](/docs/connections/reverse-etl/manage-retl/#supported-object-and-arrays).
 12. *(Optional)* Send a test record to verify the mappings correctly send to your destination.
 13. Click **Create Mapping**.
 14. Select the destination you’d like to enable on the **My Destinations** page under **Reverse ETL > Destinations**.
