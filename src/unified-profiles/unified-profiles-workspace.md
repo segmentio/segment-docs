@@ -13,7 +13,6 @@ Before creating a Unified Profiles workspace, you must have requested access fro
 
 ## Step 1: Select your data source
 
-
 > warning "You might be unable to change data source selection after taking action"
 > For users setting up Salesforce and a data warehouse, a data warehouse, or a website or mobile app source, once you've selected your data source, proceeded to the next step, and taken action, you can't return to this page and make a different selection. Users that opted to upload CSVs can return to this page and make a different selection or upload an additional CSV. For more information about adding additional data sources after completing the Unified Profiles guided setup, see the optional [Add additional sources and destinations to your workspace](#optional-add-additional-sources-and-destinations-to-your-workspace) documentation.
 
@@ -59,6 +58,9 @@ You can set up 1 of the following options:
 6. After you've given your destination a name and entered your credentials, click **Next**.
 7. On the Getting started with Segment page, click **Define Model**.
 8. Create a SQL query that defines your model. After you've created a model, Segment uses your model to map data to your Reverse ETL destinations.
+9. Click **Preview** to return 10 records from your warehouse. When you've verified that your records return as expected, click **Next**.
+10. Click **Create Mapping**. On the Select mappings screen, map event fields from your data source to the pre-filled values that Segment expects to receive. Clicking into an event field lets you search your destination's record fields. When you've finished mapping all of the event fields, click **Create mapping.**
+11. After Segment marks the "Add connections" tile as complete, click **Add identifiers and traits** and begin [Step 3: Add identifiers and traits](#step-3-add-identifiers-and-traits). 
 
 > warning "Records from your data warehouse and Salesforce might not be immediately available"
 > Segment's initial sync with your data warehouse can take up to 24 hours to complete. Segment syncs with Salesforce immediately after you connect it to your Unified Profiles workspace. This initial sync can take up to 72 hours. After Segment completes the initial sync with Salesforce, Segment initiates a sync with Salesforce every three hours.
