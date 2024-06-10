@@ -19,15 +19,23 @@ To check the status of your extractions:
     * The load results - how many successful records were synced as well as how many records were updated, deleted, or are new.
 5. If your sync failed, click the failed reason to get more details on the error and view sample payloads to help troubleshoot the issue.
 
-## Email alerts
-You can opt in to receive email alerts regarding notifications for Reverse ETL. 
+> info "Segment automatically retries events that were extracted but failed to load"
+> Segment retries events for 14 days following a total or partial sync failure. Before loading the failed records on a subsequent sync, Segment checks for the latest changes in your data to ensure the data loaded into your warehouse isn't stale. If the error causing the load failure is coming from an upstream tool, you can fix the error in the upstream tool to ensure the record loads on the next sync. 
 
-To subscribe to email alerts: 
+## Alerting
+You can opt in to receive email, Slack, and in-app alerts about Reverse ETL sync failures and partial successes. 
+
+To subscribe to alerts: 
 1. Navigate to **Settings > User Preferences**. 
 2. Select **Reverse ETL** in the **Activity Notifications** section.
-3. Click the toggle on for the notifications you want to receive. You can choose from:
+3. Click the Reverse ETL sync status that you'd like to receive notifications for. You can select one or more of the following sync statuses:
+    - **Reverse ETL sync failed**: Receive a notification when your Reverse ETL sync fails.
+    - **Reverse ETL sync partial success**: Receive a notification when your Reverse ETL sync is partially successful.
+4. Select one or more of the following alert options: 
+    - **Enable email notifications**: Enter an email address or alias that should receive alerts.
+    - **Enable Slack notifications**: Enter a Webhook URL and Slack channel name.
+    - **Enable in-app notifications**: Select this option to see an in-app notification.
+5. Click **Create alert**.
 
-    Notification | Details
-    ------ | -------
-    Reverse ETL Sync Failed | Set toggle on to receive notification when your Reverse ETL sync fails. 
-    Reverse ETL Sync Partial Success | Set toggle on to receive notification when your Reverse ETL sync is partially successful. 
+> info "View email addresses that are signed up to receive alerts"
+> If you opted to receive notifications by email, you can click **View active email addresses** to see the email addresses that are currently signed up to receive notifications. 

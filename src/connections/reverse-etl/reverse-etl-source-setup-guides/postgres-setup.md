@@ -33,7 +33,7 @@ To set up Postgres with Reverse ETL:
     GRANT CREATE ON DATABASE "<enter database name here>" TO "segment";
     ```
 4. Make sure the user has correct access permissions to the database.
-5. Follow the steps listed in the [Add a source](/docs/connections/reverse-etl/#step-1-add-a-source) section to finish adding Postgres as a source. 
+5. Follow the steps listed in the [Add a source](/docs/connections/reverse-etl/setup/#step-1-add-a-source) section to finish adding Postgres as a source. 
 
 ## Extra permissions
 * Give the `segment` user read permissions for any resources (databases, schemas, tables) the query needs to access. 
