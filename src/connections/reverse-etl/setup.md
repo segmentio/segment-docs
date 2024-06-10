@@ -69,7 +69,7 @@ Once you’ve added a model, you need to add a destination. In Reverse ETL, dest
 
 Reverse ETL supports 30+ destinations: see all destinations listed in the [Reverse ETL catalog](/docs/connections/reverse-etl/reverse-etl-catalog/). If the destination you want to send data to is not listed in the Reverse ETL catalog, use the [Segment Connections Destination](/docs/connections/reverse-etl/reverse-etl-catalog/#segment-connections-destination) to send data from your Reverse ETL warehouse to your destination.
 
-Engage users can use the [Segment Profiles Destination](/docs/connections/destinations/catalog/actions-segment-profiles/) to send data from their warehouse to their Reverse ETL destinations. 
+Engage users can use the [Segment Profiles Destination](/docs/connections/destinations/catalog/actions-segment-profiles/) to create and update [Profiles](/docs/unify/) that can then be accessed through [Profile API](/docs/unify/profile-api/) and activated within [Twilio Engage](/docs/engage). 
 
 > info "Separate endpoints and credentials required to set up third party destinations"
 > Before you begin setting up your destinations, note that each destination has different authentication requirements. See the documentation for your intended destination for more details.
