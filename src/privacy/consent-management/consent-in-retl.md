@@ -32,7 +32,6 @@ Before you can enforce consent stored in your warehouse, take the following step
   - **Category name**: Enter a name that describes your use case for the data sent to this destination. This field only accepts category names that are 20 characters or less.
   - **Category ID**: In OneTrust, this is a string of up to five alphanumeric characters, but other CMPs may have a different format. This field is case sensitive.
   - **Mapped destinations**: Select one or more of your Reverse ETL destinations to map to this category. Category mappings apply to all instances of a destination. 
-  <br/><br/>**Optional**: Click **Add category** to create another category.
 5. Once you've finished setting up your category or categories, click **Save**.
 
 > warning "Segment recommends mapping all Reverse ETL destinations to a category"
@@ -40,7 +39,14 @@ Before you can enforce consent stored in your warehouse, take the following step
 
 To edit or disable consent categories, view the [Configure Consent Management](/docs/privacy/consent-management/configure-consent-management/) documentation. 
 
-## Step 2: Identify consent columns
+## Step 2: Add your Reverse ETL source
+
+> success ""
+> If you've already added a [Reverse ETL source] to your workspace, you can proceed to [Step 3: Identify consent columns](#step-3-identify-consent-columns). 
+
+If you haven't already configured a Reverse ETL source in your workspace, follow the instructions in the [Reverse ETL: Create a source](/docs/connections/reverse-etl/#step-1-add-a-source) documentation to add your warehouse as a data source. When you've configured your Reverse ETL source, proceed to [Step 3: Identify consent columns](#step-3-identify-consent-columns). 
+
+## Step 3: Identify consent columns
 
 After you set up consent categories in the Segment app, you must identify the columns in your data warehouse that store end user consent by creating a *model*, or SQL query that defines the set of data you want to synchronize to your Reverse ETL destinations. When building your data model, Segment recommends that you store consent as a boolean `true` or `false` value and map one consent category to one column.
 
@@ -50,39 +56,65 @@ After you set up consent categories in the Segment app, you must identify the co
 To add your first model:
 1. Navigate to Connections > Sources and select the Reverse ETL tab. Select your source and click **Add Model**.
 2. Click **SQL Editor** as your modeling method.
-3. Enter the SQL query that’ll define your model. Your model is used to map data to your Reverse ETL destinations.
+3. Create the SQL query that’ll define your model. Your model is used to map data to your Reverse ETL destinations.
 4. Choose a column to use as the unique identifier for each record in the Unique Identifier column field.
     The Unique Identifier should be a column with unique values per record to ensure checkpointing works as expected. It can be a primary key. This column is used to detect new, updated, and deleted records.
 5. Click **Preview** to see a preview of the results of your SQL query. The data from the preview is extracted from the first 10 records of your warehouse.
 6. Click **Next**.
 7. Enter your Model Name.
 8. Click **Create Model**.
-  _(Optional)_: You can opt to map data from your model to your destination using Reverse ETL mappings. For more information, see the [Reverse ETL: Create mappings](/docs/connections/reverse-etl/#step-4-create-mappings) documentation. 
+9. Select **Add Mapping**. 
+10. On the **Add Mapping** popup, select the destination you'd like consent data to flow to. 
+11. Select an Action from the dropdown and click **Create Mapping**. 
+12. Follow the steps in the Edit Mapping workflow and click **Save Mapping** to add your mapping. 
 
-To edit an existing Reverse ETL model:
+To update an existing Reverse ETL model to include consent enforcement:
 1. Navigate to **Connections > Destinations** and select the **Reverse ETL** tab.
 2. Select the source and the model you want to edit.
-3. Select the **Query Builder** tab to edit your query. When you've finished making changes, click **Save Query**.
-  _(Optional)_: You can select the **Settings** tab and click **Consent settings** to verify that the consent categories in your model match the consent categories you configured in your workspace. 
+3. Select the **Query Builder** tab to edit your query. When you're editing your query, include columns that store information about end user consent preferences. When you've finished making changes, click **Save Query**.
+4. Select **Add Mapping**. 
+5. On the **Add Mapping** popup, select the destination you'd like consent data to flow to. 
+6. Select an Action from the dropdown and click **Create Mapping**. 
+7. Follow the steps in the Edit Mapping workflow and click **Save Mapping** to add your mapping. 
 
-You can either create a model with each consent category represented in its own column, or one single blob column that you parse out into individual consent categories. The following sample model maps a consent category to each column in your database:
+You can select the **Settings** tab and click **Consent settings** to verify that the consent categories in your model match the consent categories you configured in your workspace. 
+
+You can store each consent category in its own column in your warehouse, or store your consent information in one single blob column. Segment requires your consent categories to be in their own column in your data model.
+
+The following sample model maps consent categories from each column in your database:
 
 ``` sql
 select 
   USERID, 
-  Ads, 
-  CAST(CONSENT_OBJ:consent.cookie.Personalization as Boolean) as Personalization, 
-  CAST(CONSENT_OBJ:consent.cookie.Analytics as Boolean) as Analytics, 
-  city, 
+  name, 
   email, 
-  distinctid  
+  distinctid,
+  Ads, 
+Personalization, 
+Analytics, 
+  
 from CONSENT_PREFERENCES;
 ```
 
-> info "Consent categories in the Segment app must match consent columns identified in your data warehouse before continuing"
-> If you create consent categories in the Segment app but fail to identify a column for each category you created in Segment, you will not be able to proceed until you enable a destination  mapped to a consent category not identified in the data model.
+The following sample model maps consent categories from one blob column in your database:
 
-## Step 3: Connect your downstream destinations
+```sql
+select 
+  USERID, 
+  name, 
+  email, 
+  distinctid, 
+CAST(CONSENT_OBJ:consent.cookie.Advertising as Boolean) as Ads,  
+  CAST(CONSENT_OBJ:consent.cookie.Personalization as Boolean) as Personalization, 
+  CAST(CONSENT_OBJ:consent.cookie.Analytics as Boolean) as Analytics, 
+   
+from CONSENT_PREFERENCES;
+```
+
+> warning "Failing to identify consent columns in your warehouse might lead to unintentional data loss"
+> If you create consent categories in the Segment app but fail to identify a column in your warehouse that stores consent for a category, then consent preference for that category will be considered to be false and **no data will flow to destinations mapped to the category**.
+
+## Step 4: Connect your downstream destinations
 
 After you set up categories in the Segment app and create a SQL model that extracts consent information, connect your downstream destinations to complete the consent enforcement process. 
 
