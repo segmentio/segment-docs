@@ -12,7 +12,7 @@ This destination is maintained by FL0. For any issues with the destination, [con
 
 ## Getting started
 
-1. From your workspace's [Destination catalog page](https://app.segment.com/goto-my-workspace/destinations/catalog){:target="_blank”} search for "FL0"
+1. From your workspace's [Destination catalog page](https://app.segment.com/goto-my-workspace/destinations/catalog){:target="_blank”} search for "FL0".
 2. Select FL0 and click **Add Destination**
 3. Select an existing source to connect to FL0 (Actions)
 4. Go to your [FL0 Organization](https://go.fl0.com){:target="_blank"}
