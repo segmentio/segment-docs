@@ -5,7 +5,9 @@ plan: consent-management
 
 With Consent Management in Reverse ETL, you can enforce your end-users' consent preferences that are captured by your consent management platform (CMP) and stored in your warehouse. 
 
-To enforce consent stored in your warehouse, build a Reverse ETL mapping that identifies consent categories. You can create a new mapping or update your mapping to identify the columns that store information about end user consent preferences and then enforce these preferences in [Reverse ETL-supported Actions destinations](/docs/connections/reverse-etl/reverse-etl-catalog/) and the [Segment Connections destination](/docs/connections/destinations/catalog/actions-segment/).
+To enforce consent stored in your warehouse, build a Reverse ETL mapping that identifies consent categories. You can create a "consent to" column mapping in a new data model or update an existing data model to include a "consent to" mapping. 
+
+[Reverse ETL-supported Actions destinations](/docs/connections/reverse-etl/reverse-etl-catalog/) and the [Segment Connections destination](/docs/connections/destinations/catalog/actions-segment/).
 
 > info "Consent in Reverse ETL supports Reverse ETL-supported Actions destinations and Segment Connections"
 > At this time, Consent in Reverse ETL does not support enforcing consent in the Segment Profiles destination. To enforce consent data in your classic Segment destinations, use the [Segment Connections destination](/docs/connections/destinations/catalog/actions-segment/). 
@@ -44,7 +46,7 @@ To edit or disable consent categories, view the [Configure Consent Management](/
 > success ""
 > If you've already added a [Reverse ETL source] to your workspace, you can proceed to [Step 3: Identify consent columns](#step-3-identify-consent-columns). 
 
-If you haven't already configured a Reverse ETL source in your workspace, follow the instructions in the [Reverse ETL: Create a source](/docs/connections/reverse-etl/#step-1-add-a-source) documentation to add your warehouse as a data source. When you've configured your Reverse ETL source, proceed to [Step 3: Identify consent columns](#step-3-identify-consent-columns). 
+If you haven't already configured a Reverse ETL source in your workspace, follow the instructions in the [Reverse ETL: Add a source](/docs/connections/reverse-etl/#step-1-add-a-source) documentation to add your warehouse as a data source. When you've configured your Reverse ETL source, proceed to [Step 3: Identify consent columns](#step-3-identify-consent-columns). 
 
 ## Step 3: Identify consent columns
 
