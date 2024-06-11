@@ -9,7 +9,7 @@ hidden: true
 > info "Linked Audiences is in public beta"
 > Linked Audiences is in public beta, and Segment is actively working on this feature. Some functionality may change before it becomes generally available.
 
-Linked Audiences allows you to build a warehouse first solution that powers individualized customer experiences using the relational data you've defined in your [Data Graph](/docs/unify/linked-profiles/data-graph/). 
+Linked Audiences allows you to build a warehouse-first solution that powers individualized customer experiences using the relational data you've defined in your [Data Graph](/docs/unify/linked-profiles/data-graph/). 
 
 You can:
 
@@ -98,7 +98,7 @@ To activate your Linked Audience:
 
 ### Step 2b: Select your Destination Actions
 
-The [Destination Actions](/docs/connections/destinations/actions/) framework allows you to see and control how Segment sends the event data it receives from your sources to actions-based destinations. Each Action in a destination lists the event data it requires, and the event data that is optional. Segment displays available actions based on the destination you've connected to your Linked Audience. You can see details of each option and how to use it in the [Actions Destinations Catalog](/docs/connections/destinations/catalog/) documentation. 
+The [Destination Actions](/docs/connections/destinations/actions/) framework allows you to see and control how Segment sends the event data it receives from your sources to actions-based destinations. Each Action in a destination lists the event data it requires and the event data that is optional. Segment displays available Actions based on the destination you've connected to your Linked Audience. You can see details of each option and how to use it in the [Actions Destinations Catalog](/docs/connections/destinations/catalog/) documentation. 
 
 Select the Destination Action to call when the event happens, then click **Next**.
 
@@ -126,32 +126,33 @@ Select additional traits and properties to include when the event is sent.
 
 As you're enriching your events in Linked Audiences, you should view a preview of the event payload schema based on the properties you select. It might look like the following:
 
-![{Preview your payload data}](/docs/engage/images/linked_audience_payload.png)
+![A screenshot of the Add activation page, where you can review your payload data.](/docs/engage/images/linked_audience_payload.png)
 
 **Important:** It is important to make a copy of the data from your final payload schema; you will need this data later when you set up your destination. 
 
 #### Map event
 
-Only required fields that need to be filled out are displayed. All other optional & pre-filled fields are hidden 
+Only required fields are displayed. All optional & pre-filled fields are hidden.
 
 These fields are pre-filled with properties that will work by default.
 
 ## Step 3: Send a test event to your destination
 
-Send a test event to ensure that everything is connected properly and your destination is receiving the event. 
+Send a test event to ensure that everything is connected properly and your destination receives the event. 
 
-Enter the destination User id for the profile you want to use to test the event, then click the **Send test event to destination** button.  
+Enter the destination User id for the profile you want to use to test the event, then click **Send test event to destination**.  
 
-The Event content drop-down shows you a preview of what the data sent to your destination may look like. 
+The Event content drop-down shows you a preview of what the data sent to your destination might look like. 
 
 ### Step 3a: Configure your multi-channel marketing campaign 
 
-If you're using a multi-channel marketing tool, set up your email campaign in your destination before contiuing to Step 4. 
+If you're using a multi-channel marketing tool, set up your email campaign before contiuing to Step 4. 
 
 ## Step 4: Enable your Linked Audience
 
-After building your Linked Audience, and choose **Save and Enable**, you'll be redirected to the Audience Overview page. Segment automatically disables your audience so that it does not start computing until you're ready. To enable your audience:
+After building your Linked Audience, choose **Save and Enable**. You'll be redirected to the Audience Overview page, where you can view the audience you created. Segment automatically disables your audience so that it doesn't start computing until you're ready. A compute is when Segment runs the audience conditions on your data warehouse and sends events downstream. 
 
+To enable your audience:
 Select the **Enabled** toggle, then select **Enable audience**.
 
-You can trigger a compute for your audience if you want to send events to your destination without waiting for the next scheduled compute run. To do so, select **Compute Now**. This triggers a compute for the audience (where the audience conditions run on your data warehouse) and sends events downstream.
+You can trigger a compute for your audience if you want to send events to your destination without waiting for the next scheduled compute run. To do so, select **Compute Now**. This triggers a compute for the audience and sends events downstream.
