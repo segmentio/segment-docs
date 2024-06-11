@@ -76,7 +76,7 @@ The parameters are:
 | Parameters     | Definition                                                           |
 | ----------- | --------------------------------------------------------------------- |
 | `profile_folder`      | This is the fully qualified path of the folder or schema location for the profile tables.     |
-| `materialization`     | Identifies the type of materialization (`none`). |
+| `type`     | Identifies the materialization methods of the profile tables (segment:unmaterialized, segment:materialized, segment:dbt). **Note:** Leveraging materialized profile tables optimizes warehouse compute costs. |
 
 Example:
 
