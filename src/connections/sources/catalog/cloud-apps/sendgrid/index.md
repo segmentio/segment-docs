@@ -94,3 +94,5 @@ If you're getting an "Invalid Credentials" error when setting up the SendGrid so
 Make sure you allowlist Segment IP addresses on SendGrid. [Contact Segment](https://segment.com/help/contact/){:target="_blank”} for the list of IP addresses to allowlist.
 
 When you disable your SendGrid source, you'll need to also disable the webhook portion of your configuration.
+
+If you are only able to create one webhook, review your SendGrid [account plan details](https://sendgrid.com/en-us/pricing). On the Sendgrid free plan, you can only have 1 webhook.

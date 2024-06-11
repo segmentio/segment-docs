@@ -18,10 +18,10 @@ For more information about Unified Profiles, see the [CustomerAI](https://www.tw
 
 <div class="double">
   {% include components/reference-button.html
-    href="/docs/unified-profiles/segment-for-flex"
+    href="/docs/unified-profiles/unified-profiles-workspace"
     icon="flex.svg"
-    title="Segment for Flex"
-    description="Flex customers without an existing Segment workspace that includes a Unify space can obtain a Segment for Flex workspace and configure a Unify space. A Segment for Flex workspace provides limited access to Segment."
+    title="Create a Unified Profiles Workspace"
+    description="Flex customers without an existing Segment workspace that includes a Unify space can obtain a Unified Profiles workspace and configure a Unify space. A Unified Profiles workspace provides limited access to Segment."
   %}
 
   {% include components/reference-button.html

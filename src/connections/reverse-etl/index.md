@@ -7,6 +7,9 @@ redirect_from:
 
 Reverse ETL (Extract, Transform, Load) extracts data from a data warehouse using a query you provide, and syncs the data to your 3rd party destinations. For example, with Reverse ETL, you can sync records from Snowflake to Mixpanel. Reverse ETL supports event and object data. This includes customer profile data, subscriptions, product tables, shopping cart tables, and more.
 
+> info ""
+> Reverse ETL is available to customers on Free, Team, and Business Tier plans. If you're on a Legacy plan, contact your Segment account executive to learn how you can access Reverse ETL.
+
 ## Example use cases
 Use Reverse ETL when you want to:
 * Sync audiences and other data built in the warehouse to Braze, Hubspot, or Salesforce Marketing Cloud for personalized marketing campaigns.
@@ -75,7 +78,7 @@ To add multiple models to your source, repeat steps 1-8 above.
 ### Step 3: Add a destination
 Once you’ve added a model, you need to add a destination. In Reverse ETL, destinations are the business tools or apps you use that Segment syncs the data from your warehouse to.
 
-If your destination is not listed in the Reverse ETL catalog, use the [Segment Connections Destination](#segment-connections-destination) to send data from your Reverse ETL warehouse to your destination.
+If your destination is not listed in [the Reverse ETL catalog](/docs/connections/reverse-etl/reverse-etl-catalog/), use the [Segment Connections Destination](#segment-connections-destination) to send data from your Reverse ETL warehouse to your destination.
 
 > info ""
 > Depending on the destination, you may need to know certain endpoints and have specific credentials to configure the destination.  
@@ -157,21 +160,25 @@ To reset a sync:
 #### Replays
 You can choose to replay syncs. To replay a specific sync, contact [friends@segment.com](mailto:friends@segment.com). Keep in mind that triggering a replay resyncs all records for a given sync.
 
-#### Email alerts
-You can opt in to receive email alerts regarding notifications for Reverse ETL. 
+#### Alerting
+You can opt in to receive email, Slack, and in-app alerts about Reverse ETL sync failures and partial successes. 
 
-To subscribe to email alerts: 
+To subscribe to alerts: 
 1. Navigate to **Settings > User Preferences**. 
 2. Select **Reverse ETL** in the **Activity Notifications** section.
-3. Click the toggle on for the notifications you want to receive. You can choose from:
+3. Click the Reverse ETL sync status that you'd like to receive notifications for. You can select one or more of the following sync statuses:
+    - **Reverse ETL sync failed**: Receive a notification when your Reverse ETL sync fails.
+    - **Reverse ETL sync partial success**: Receive a notification when your Reverse ETL sync is partially successful.
+4. Select one or more of the following alert options: 
+    - **Enable email notifications**: Enter an email address or alias that should receive alerts.
+    - **Enable Slack notifications**: Enter a Webhook URL and Slack channel name.
+    - **Enable in-app notifications**: Select this option to see an in-app notification.
+5. Click **Create alert**.
 
-    Notification | Details
-    ------ | -------
-    Reverse ETL Sync Failed | Set toggle on to receive notification when your Reverse ETL sync fails. 
-    Reverse ETL Sync Partial Success | Set toggle on to receive notification when your Reverse ETL sync is partially successful. 
+> info "View email addresses that are signed up to receive alerts"
+> If you opted to receive notifications by email, you can click **View active email addresses** to see the email addresses that are currently signed up to receive notifications. 
 
 ### Edit your model
-
 To edit your model:
 1. Navigate to **Connections > Destinations** and select the **Reverse ETL** tab.
 2. Select the source and the model you want to edit.
