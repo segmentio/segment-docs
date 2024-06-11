@@ -34,7 +34,7 @@ For example, if you named your classic destination "Email Marketing Campaigns", 
 
 **If you have an API key in your classic destination's Private Key setting and your destination is not connected to a [Journey](/docs/engage/journeys), you do not need to take any action.** 
 
-**If you do not have a Private Key in your destination's settings**, Segment will create your migrated Klayvio (Actions) destination, but will not enable it for you. 
+**If you do not have a Private Key in your destination's settings**, Segment will create your migrated Klaviyo (Actions) destination, create mappings for each event type, and enable the mappings, but will not enable the destination for you. 
 
 To enable your new Klaviyo (Actions) destination:
 1. Create a new private key by opening Klaviyo's UI and clicking [Account > Settings > API Keys > Create API Key](https://www.klaviyo.com/account#api-keys-tab){:target="_blank"}. 
