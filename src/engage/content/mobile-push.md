@@ -3,7 +3,7 @@ title: Mobile Push Template
 plan: engage-premier
 ---
 > info ""
-> Engage Premier entered an End of Sale (EOS) period effective  June 10, 2024. Existing Segment customers will continue to have access and support to Engage Premier until an end-of-life (EOL) date is announced. We recommend exploring the following pages in preparation of a migration or future MCM needs:
+> Engage Premier entered an End of Sale (EOS) period effective June 10, 2024. Existing Segment customers will continue to have access and support to Engage Premier until an end-of-life (EOL) date is announced. Segment recommends exploring the following pages in preparation of a migration or future MCM needs:
 > 
 >[Twilio Marketing Campaigns](https://www.twilio.com/en-us/sendgrid/marketing-campaigns)
 >
