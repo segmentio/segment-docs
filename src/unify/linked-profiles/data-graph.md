@@ -265,12 +265,12 @@ data_graph {
 
 ```py
 data_graph {
-     version =  "v0.0.6"
+     version =  "v1.0.0"
 
-     #define a profile entity
+#define a profile entity
      profile {
           profile_folder = "PRODUCTION.segment"
-          materialization = "none"
+          type = "segment: materialized"
 
           #relate accounts to profiles with an external ID
           relationship "user-accounts" {
