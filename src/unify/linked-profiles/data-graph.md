@@ -20,14 +20,6 @@ To help you get started with the Data Graph, [view this short setup demo](https:
 > warning ""
 > Don't send any personal health information with the Data Graph.
 
-## Breaking changes 
-
-A breaking change occurs when deleting an entity or relationship that is being referenced by a data consumer. Note that an entity or relationship slug is immutable and treated as a delete if you make changes. Data consumers affected by breaking changes will fail on the next run. 
-
-### Potential breaking change 
-
-Editing the Data Graph may lead to errors with data consumers. If there’s a breaking change, the data consumer will fail on the next run. Unaffected data consumers will continue to work. 
-
 ## Prerequisites
 
 To use the Data Graph, you'll need the following:
@@ -259,6 +251,10 @@ data_graph {
      }         
 
 ```
+## Step 4: Validate your Data Graph
+
+Validate your Data Graph using the config builder and preview, then click **Save**.
+
 ## Data Graph example 
 
 <img src="/docs/unify/images/data-graph-example.png" alt="An example of a Data Graph" width="5888"/>
@@ -326,11 +322,6 @@ data_graph {
 }
 
 ```
-
-## Validate your Data Graph
-
-Validate your Data Graph using the config builder and preview, then click **Save**.
-
 ## Edit your Data Graph
 
 To edit your Data Graph:
@@ -339,6 +330,14 @@ To edit your Data Graph:
 2. Select the **Builder** tab, and click **Edit Data Graph**.
 
 A data consumer refers to a Segment feature referencing entities and relationships from the Data Graph.
+
+## Breaking changes 
+
+A breaking change occurs when deleting an entity or relationship that is being referenced by a data consumer. Note that an entity or relationship slug is immutable and treated as a delete if you make changes. Data consumers affected by breaking changes will fail on the next run. 
+
+### Potential breaking change 
+
+Editing the Data Graph may lead to errors with data consumers. If there’s a breaking change, the data consumer will fail on the next run. Unaffected data consumers will continue to work. 
 
 ## Next steps 
 
