@@ -146,7 +146,7 @@ The Event content drop-down shows you a preview of what the data sent to your de
 
 ### Step 3a: Configure your multi-channel marketing campaign 
 
-If you're using a multi-channel marketing tool, set up your email campaign in your destination **(LINK) ** before contiuing to Step 4. 
+If you're using a multi-channel marketing tool, set up your email campaign in your destination before contiuing to Step 4. 
 
 ## Step 4: Enable your Linked Audience
 
