@@ -55,6 +55,10 @@ This should be a Unify space with Profiles Sync already set up.
 
 The Data Graph is a semantic layer that represents a subset of relevant business data that you'll use for audience targeting and personalization in downstream tools. Use the configuration language spec below to add models to build your Data Graph. The Data Graph currently supports 4 layers of depth, including the Profile entity. Warehouse schemas are case sensitive, so you'll need to reflect the schema, table, and column names based on how you case them in the warehouse.
 
+To leverage the Data Graph auto-complete feature, begin typing or use the following keyboard shortcuts to autocomplete the profile_folder and table_ref properties.
+- Mac CtrlSpace
+- Windows AltEsc
+
 ### Define entities
 
 Use the parameters, definitions, and examples below to help you define entities.
@@ -68,7 +72,7 @@ The parameters are:
 | Parameters     | Definition                                                           |
 | ----------- | --------------------------------------------------------------------- |
 | `profile_folder`      | This is the fully qualified path of the folder or schema location for the profile tables.     |
-| `type`     | Identifies the materialization methods of the profile tables (segment:unmaterialized, segment:materialized, segment:dbt). **Note:** Leveraging materialized profile tables optimizes warehouse compute costs. |
+| `type`     | Identifies the materialization methods of the profile tables (`segment:unmaterialized`, `segment:materialized`, `segment:dbt`). **Note:** Leveraging materialized profile tables optimizes warehouse compute costs. |
 
 Example:
 
@@ -77,7 +81,7 @@ Example:
 
 profile {
      profile_folder = "PRODUCTION.segment"
-     materialization = "none"
+     type = segment:materialized
     
 }
 ```
