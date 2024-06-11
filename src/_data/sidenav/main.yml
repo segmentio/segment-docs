@@ -517,8 +517,6 @@ sections:
       title: Configure Consent Management
     - path: /privacy/consent-management/consent-in-unify
       title: Consent in Unify
-    - path: /privacy/consent-management/consent-in-retl
-      title: Consent in Reverse ETL
     - path: /privacy/consent-management/consent-faq
       title: Consent FAQs
   - path: /privacy/account-deletion
