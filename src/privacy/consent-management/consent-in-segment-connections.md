@@ -27,7 +27,7 @@ If your sources also contain the integrations object, Segment will look at the c
 Segment requires every event from all of your sources to include the end user consent preferences, captured by your CMP or your application logic, in the form of the **consent object**. The consent object is a JSON object nestled inside of the [context object](/docs/connections/spec/common/#context) with the following format:
 
 > success ""
-> The JSON keys in the consent object should represent the `categoryId` for each consent column. 
+> The JSON keys in the consent object should represent the `categoryId` for each consent category. 
 
 ```json
 {
