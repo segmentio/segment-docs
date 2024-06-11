@@ -6,17 +6,19 @@ hidden: true
 ---
 
 > info "Segment's Data Graph is in public beta"
-> The Data Graph is in public beta, and Segment is actively working on this feature. Some functionality may change before it becomes generally available. 
+> Data Graph is in public beta, and Segment is actively working on this feature. Some functionality may change before it becomes generally available. 
 
-With Linked Profiles, you can build a Data Graph that defines relationships between any entity data set in the warehouse and the Segment Profiles you send with Profiles Sync. 
+With Linked Profiles, you can build a Data Graph that defines relationships between any entity data set in the warehouse and the Segment Profiles you send with Profiles Sync. Make this relational data accessible to marketers and business stakeholders to empower them with the data they need to create targeted and personalized customer engagements.
 
-Make this relational data accessible to marketers and business stakeholders to empower them with the data they need to create targeted and personalized customer engagements.
+Segment's Data Graph powers [Linked Events](/docs/unify/linked-profiles/linked-events/) and [Linked Audiences](/docs/engage/audiences/linked-audiences/).
 
-> info ""
-> Segment's Data Graph powers [Linked Events](/docs/unify/linked-profiles/linked-events/) and [Linked Audiences](/docs/engage/audiences/linked-audiences/).
+To help you get started with the Data Graph, [view this short setup demo](https://drive.google.com/file/d/1oZNvs0raYaxK6tds3OEF0Ri3NGVCoXys/view?pli=1){:target="_blank"}.
 
-> success ""
-> To help you get started with the Data Graph, [view this short setup demo](https://drive.google.com/file/d/1oZNvs0raYaxK6tds3OEF0Ri3NGVCoXys/view?pli=1){:target="_blank"}.
+> > info ""
+> Linked Profiles follows zero-copy principles, and doesn't copy entities to store in Segment. Segment stores and processes all data in the United States. 
+
+> warning ""
+> Don't send any personal health information with the Data Graph.
 
 ## Breaking changes 
 
@@ -29,18 +31,15 @@ Editing the Data Graph may lead to errors with data consumers. If there’s a br
 ## Prerequisites
 
 To use the Data Graph, you'll need the following:
+
 - A supported data warehouse. 
 - [Profiles Sync](/docs/unify/profiles-sync/) set up with ready-to-use [data models and tables](/docs/unify/profiles-sync/tables/) in your warehouse.
-
-> info ""
-> Linked Profiles follows zero-copy principles, and doesn't copy entities to store in Segment. Segment stores and processes all data in the United States. 
-
-> warning ""
-> Don't send any personal health information with the Data Graph.
+- Workspace Owner or Unify Read-only/Admin and Entities Admin permissions.
 
 ## Step 1: Set up required permissions in your data warehouse
 
-To get started, you'll need to navigate to the appropriate guide below to set up the required permissions in your data warehouse: 
+To get started, set up the required permissions in your data warehouse using the instructions below: 
+
 - [Snowflake](/docs/unify/linked-profiles/setup-guides/snowflake-setup/) is supported by both Linked Events and Linked Audiences.
 - [Redshift](/docs/unify/linked-profiles/setup-guides/redshift-setup/) and [BigQuery](/docs/unify/linked-profiles/setup-guides/BigQuery-setup/) are currently supported for Linked Events. 
 
@@ -48,43 +47,29 @@ Linked Profiles uses [Segment's Reverse ETL](/docs/connections/reverse-etl/) inf
 
 To track what data has been sent to Segment on previous syncs, Segment stores delta/diffs in tables within a single schema called `_segment_reverse_etl` in your data warehouse. You can choose which database/project in your warehouse this data lives in. 
 
-
 ## Step 2: Connect your warehouse to the Data Graph
-
-> warning "Segment user permissions"
-> You must have Workspace Owner or Unify Read-only/Admin and Entities Admin permissions to set up Linked Profiles.
-
-> success ""
-> Before getting started with the Data Graph, be sure to set up your warehouse permissions. 
 
 To connect your warehouse to the Data Graph:
 
 1. Navigate to **Unify > Data Graph**.
-- This should be a Unify space with Profiles Sync already set up.
+This should be a Unify space with Profiles Sync already set up.
 2. Click **Connect warehouse**.
 3. Select your warehouse type.
-- Note that Linked Audiences only supports Snowflake.
+**Note:** Linked Audiences only supports Snowflake.
 4. Enter your warehouse credentials. 
 5. Test your connection, then click **Save**.
 
 ## Step 3: Build your Data Graph
 
-> warning ""
-> Warehouse schemas are case sensitive, so you'll need to reflect the schema, table, and column names based on how you case them in the warehouse.
-
-The Data Graph is a semantic layer that represents a subset of relevant business data that you'll use for audience targeting and personalization in downstream tools. 
-
-Use the configuration language spec below to add models to build your Data Graph. The Data Graph currently supports 4 layers of depth, including the Profile entity.
-
+The Data Graph is a semantic layer that represents a subset of relevant business data that you'll use for audience targeting and personalization in downstream tools. Use the configuration language spec below to add models to build your Data Graph. The Data Graph currently supports 4 layers of depth, including the Profile entity. Warehouse schemas are case sensitive, so you'll need to reflect the schema, table, and column names based on how you case them in the warehouse.
 
 ### Define entities
 
 Use the parameters, definitions, and examples below to help you define entities.
 
-
 #### Profile 
 
-The profile is a special class of entity. The profile is always defined at the top of the Data Graph, and there can only be one profile for a Data Graph. The profile entity corresponds to the Profiles Sync tables and models, such as profile traits. 
+The profile is a special class of entity that is always defined at the top of the Data Graph, and there can only be one profile for a Data Graph. The profile entity corresponds to the Profiles Sync tables and models, such as profile traits. 
 
 The parameters are:
 
@@ -141,7 +126,6 @@ profile {
 ### Relate entities
 
 Use the following relationship, parameters, and examples to help you relate entities.
-
 
 #### Relate Entity to Profile
 
@@ -234,7 +218,7 @@ data_graph {
 
 #### Relating entities with a junction table
 
-If you're relating entities with a junction table:    
+If you're relating entities with a junction table:
 
 | Parameters     | Definition                                                           |
 | ----------- | --------------------------------------------------------------------- |
@@ -244,10 +228,10 @@ If you're relating entities with a junction table:
 | `left_join_on`   | Defines the relationship between the two entity tables: `[left entity name].[column name] = [junction table column name]`. |
 | `right_join_on`  | Defines the relationship between the two entity tables: `[junction table column name] = [right entity name].[column name]`. |
 
-Note that `schema.table` is implied within the junction table column name and doesn't need to be provided. 
+**Note:** `schema.table` is implied within the junction table column name and doesn't need to be provided.
 
 > warning ""
-> Attributes from a junction table are not referenceable with the Audience Builder. If you'd like to reference an additional column on the junction table for filtering, you must first define it as an entity and explicitly define a relationship name. 
+> Attributes from a junction table are not referenceable with the Audience Builder. If you'd like to reference an additional column on the junction table for filtering, you must first define it as an entity and explicitly define a relationship name.
 
 Example:
 
@@ -275,7 +259,7 @@ data_graph {
      }         
 
 ```
-## Data Graph Example 
+## Data Graph example 
 
 <img src="/docs/unify/images/data-graph-example.png" alt="An example of a Data Graph" width="5888"/>
 
@@ -358,5 +342,4 @@ A data consumer refers to a Segment feature referencing entities and relationshi
 
 ## Next steps 
 
-After you've set up your Data Graph, get started with [Linked Audiences](/docs/engage/audiences/linked-audiences/) and [Linked Events](/docs/unify/linked-profiles/linked-events/).
-
+After you've set up your Data Graph, get started with [Linked Events](/docs/unify/linked-profiles/linked-events/) and [Linked Audiences](/docs/engage/audiences/linked-audiences/).
