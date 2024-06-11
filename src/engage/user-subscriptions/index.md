@@ -7,14 +7,14 @@ plan: engage-premier
 > 
 >[Twilio Marketing Campaigns](https://www.twilio.com/en-us/sendgrid/marketing-campaigns)
 >
->Preferred ISV Partners
+>Preferred ISV Partners:
 >
->[Airship Blog](https://www.twilio.com/en-us/blog/airship-integrated-customer-experience)
->[Bloomreach Blog](https://www.twilio.com/en-us/blog/bloomreach-ecommerce-personalization)
->[Braze Blog](https://www.twilio.com/en-us/blog/braze-conversational-marketing-campaigns)
->[Insider Blog](https://www.twilio.com/en-us/blog/insider-cross-channel-customer-experience)
->[Klaviyo Blog](https://www.twilio.com/en-us/blog/klaviyo-powering-smarter-digital-relationships)
->[Twilio Engage Foundations Documentation](https://segment.com/docs/engage/quickstart/)
+>[Airship Blog](https://www.twilio.com/en-us/blog/airship-integrated-customer-experience) <br>
+>[Bloomreach Blog](https://www.twilio.com/en-us/blog/bloomreach-ecommerce-personalization) <br>
+>[Braze Blog](https://www.twilio.com/en-us/blog/braze-conversational-marketing-campaigns) <br>
+>[Insider Blog](https://www.twilio.com/en-us/blog/insider-cross-channel-customer-experience) <br>
+>[Klaviyo Blog](https://www.twilio.com/en-us/blog/klaviyo-powering-smarter-digital-relationships) <br>
+>[Twilio Engage Foundations Documentation](https://segment.com/docs/engage/quickstart/) <br>
 
 Segment associates [subscription states](/docs/engage/user-subscriptions/set-user-subscriptions/) with each email address and phone number **external id** in your audiences. Subscription states indicate the level of consent end users have given to receive your marketing campaigns.
 

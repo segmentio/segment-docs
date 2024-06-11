@@ -7,14 +7,14 @@ plan: engage-premier
 > 
 >[Twilio Marketing Campaigns](https://www.twilio.com/en-us/sendgrid/marketing-campaigns)
 >
->Preferred ISV Partners
+>Preferred ISV Partners:
 >
->[Airship Blog](https://www.twilio.com/en-us/blog/airship-integrated-customer-experience)
->[Bloomreach Blog](https://www.twilio.com/en-us/blog/bloomreach-ecommerce-personalization)
->[Braze Blog](https://www.twilio.com/en-us/blog/braze-conversational-marketing-campaigns)
->[Insider Blog](https://www.twilio.com/en-us/blog/insider-cross-channel-customer-experience)
->[Klaviyo Blog](https://www.twilio.com/en-us/blog/klaviyo-powering-smarter-digital-relationships)
->[Twilio Engage Foundations Documentation](https://segment.com/docs/engage/quickstart/)
+>[Airship Blog](https://www.twilio.com/en-us/blog/airship-integrated-customer-experience) <br>
+>[Bloomreach Blog](https://www.twilio.com/en-us/blog/bloomreach-ecommerce-personalization) <br>
+>[Braze Blog](https://www.twilio.com/en-us/blog/braze-conversational-marketing-campaigns) <br>
+>[Insider Blog](https://www.twilio.com/en-us/blog/insider-cross-channel-customer-experience) <br>
+>[Klaviyo Blog](https://www.twilio.com/en-us/blog/klaviyo-powering-smarter-digital-relationships) <br>
+>[Twilio Engage Foundations Documentation](https://segment.com/docs/engage/quickstart/) <br>
 
 Subscription groups let your users choose the emails they want to receive from you. This page introduces subscription groups and explains how you can use them with [Engage email campaigns](/docs/engage/campaigns/email-campaigns/).
 

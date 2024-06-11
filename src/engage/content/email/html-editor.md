@@ -7,14 +7,14 @@ beta: true
 > 
 >[Twilio Marketing Campaigns](https://www.twilio.com/en-us/sendgrid/marketing-campaigns)
 >
->Preferred ISV Partners
+>Preferred ISV Partners:
 >
->[Airship Blog](https://www.twilio.com/en-us/blog/airship-integrated-customer-experience)
->[Bloomreach Blog](https://www.twilio.com/en-us/blog/bloomreach-ecommerce-personalization)
->[Braze Blog](https://www.twilio.com/en-us/blog/braze-conversational-marketing-campaigns)
->[Insider Blog](https://www.twilio.com/en-us/blog/insider-cross-channel-customer-experience)
->[Klaviyo Blog](https://www.twilio.com/en-us/blog/klaviyo-powering-smarter-digital-relationships)
->[Twilio Engage Foundations Documentation](https://segment.com/docs/engage/quickstart/)
+>[Airship Blog](https://www.twilio.com/en-us/blog/airship-integrated-customer-experience) <br>
+>[Bloomreach Blog](https://www.twilio.com/en-us/blog/bloomreach-ecommerce-personalization) <br>
+>[Braze Blog](https://www.twilio.com/en-us/blog/braze-conversational-marketing-campaigns) <br>
+>[Insider Blog](https://www.twilio.com/en-us/blog/insider-cross-channel-customer-experience) <br>
+>[Klaviyo Blog](https://www.twilio.com/en-us/blog/klaviyo-powering-smarter-digital-relationships) <br>
+>[Twilio Engage Foundations Documentation](https://segment.com/docs/engage/quickstart/) <br>
 
 Use the HTML Editor to design your email template with both code and visual editing capabilities. Build your email template with code, copy and paste existing code, or use the Visual Editor for a code free design experience. 
 
