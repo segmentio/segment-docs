@@ -104,12 +104,15 @@ Connect to either a website or mobile app to complete this step.
 5. After Segment marks the "Add connections" tile as complete, click **Add identifiers and traits** and begin [Step 3: Add identifiers and traits](#step-3-add-identifiers-and-traits).
 
 ## Step 3: Add identifiers and traits
-After you've selected which data sources you'd like to integrate customer data from, you can select _identifiers_, or unique pieces of data that allow you to link information about an individual customer across different programs and services, and _traits_, which are pieces of information you know about a particular customer. In this step, you can select one or more of Segment's 11 default identifiers.
+After you've selected which data sources you'd like to integrate customer data from, you can select _identifiers_, or unique pieces of data that allow you to link information about an individual customer across different programs and services, and _traits_, which are pieces of information you know about a particular customer. Segment automatically configures 4 common identifiers, but you can select any of Segment's 11 default identifiers or add custom identifiers. 
 
-1. On the Add identifiers and traits page, click **Add identifier**. 
-2. Select either **Select default identifiers** or **Create identifier** and follow the provided steps to configure your identifiers. 
-3. When you've finished selecting identifiers, click **Save**.
-4. On the Add identifiers and traits page, review the identifiers. If you need to make changes to an identifier, select the menu icon in the row the identifier appears in and click **Edit** or **Delete**.
+1. On the Add identifiers and traits page, review the four default identifiers Segment automatically set up on your behalf: 
+  - `user_id`
+  - `anonymous_id`
+  - `email`
+  - `phone`
+2. If you need to add additional identifiers, select either **Select default identifiers** or **Create identifier** and follow the provided steps.
+3. When you've finished selecting identifiers, click **Save**. If you need to make changes to an identifier, select the menu icon in the row the identifier appears in and click **Edit** or **Delete**.
 4. When you're satisfied with your identifiers, click **Add computed traits**.
 5. Select up to two traits and click **Save**. <br> _Segment recommends selecting **Total inbounds**, or the number of inbound attempts that resulted in a customer engagement, and **Frequent inbound channel**, which identifies the most frequently used communication channel._
 6. _(Optional)_: After events from your data sources populate into your downstream destinations, you can return to the guided setup to configure predictive traits. Return to the guided setup, select the **Set up predictive traits** dropdown, and click **Complete setup** next to one or both traits. For more information about predictive traits, see Segment's [Predictions documentation](/docs/unify/Traits/predictions/){:target="_blank"}.
