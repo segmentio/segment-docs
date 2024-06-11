@@ -41,7 +41,7 @@ The default behavior is for Klaviyo to pass the `userId` associated with the ema
 
 ## Collections
 
-Collections are the groupings of data we pull from your Source. In your warehouse, each collection gets its own table, as well as a `tracks` table that aggregates all the events into a single table. 
+Collections are the groupings of data we received from your Klaviyo source. In your warehouse, each collection gets its own table, as well as a `tracks` table that aggregates all the events into a single table. 
 
 <table>
   <tr>
