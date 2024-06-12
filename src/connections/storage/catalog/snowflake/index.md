@@ -9,6 +9,9 @@ redirect_from:
 
 [Snowflake](https://docs.snowflake.net/manuals/index.html){:target="_blank"} is a data warehouse, built for the cloud, that delivers performance, simplicity, concurrency and affordability.
 
+> info ""
+> Segment has a Terraform provider, powered by the Public API, that you can use to create a Snowflake warehouse. See the [segment_warehouse (Resource)](https://registry.terraform.io/providers/segmentio/segment/latest/docs/resources/warehouse){:target="_blank”} documentation for more information.
+
 ## Getting started
 
 There are six steps to get started using Snowflake with Segment. 
