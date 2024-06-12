@@ -15,11 +15,9 @@ The following topic is intended for a Technical Marketer and Data Engineer to co
 
 The following engagement tools are available for use with Linked Audiences in Segment:
 
-Type
-Description
-Action-based Campaigns
-Trigger and dynamically personalize campaigns with rich entity context.
-
+| Type                                                                                                                                             | Description                                                             |
+| ------------------------------------------------------------------------------------------------------------------------------------------------ | ----------------------------------------------------------------------- |
+| [Action-based Campaigns](https://www.braze.com/docs/user_guide/engagement_tools/campaigns/building_campaigns/delivery_types/triggered_delivery/) | Trigger and dynamically personalize campaigns with rich entity context. |
 
 ## Segment Destination Actions
 
@@ -27,21 +25,19 @@ Segment sends event data it receives from your sources, to actions-based destina
 
 ## Segment Destination Action
 
-How does it work?
-How does Braze store the data?
-Braze API Endpoint
-Track Event 
-Segment sends personalization payload information into Braze via Braze Profile custom events. The entity personalization payload is contained in the events parameter within API calls. Segment appends Profile Traits as objects (or event properties) and Entity Context as nested objects.
-Event objects
+| Segment Destination Action                                                                                                     | How does it work?                                                                                                                                                                                                                                                                                                                                                                    | How does Braze store the data?                                                                                                                                                                                                                               | Braze API Endpoint                                                                                                                |
+| ------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | --------------------------------------------------------------------------------------------------------------------------------- |
+| [Track Event](https://segment.com/docs/connections/destinations/catalog/braze-cloud-mode-actions/#track-event)                 | Segment sends personalization payload information into Braze via [Braze Profile custom events](https://www.braze.com/docs/user_guide/data_and_analytics/custom_data/custom_events/). The entity personalization payload is contained in the events parameter within API calls. Segment appends Profile Traits as objects (or event properties) and Entity Context as nested objects. | [Event objects](https://www.braze.com/docs/api/objects_filters/event_object/)
 
-Nested objects in custom events
-track API endpoint 
-Update User Profile 
-Segment sends personalization payload information into Braze via Braze profile custom attributes. The entity personalization payload is contained in the attributes parameter in API calls.
-User attributes object  
+<br>
 
-Nested custom attributes
-track API endpoint 
+[Nested objects in custom events](https://www.braze.com/docs/user_guide/data_and_analytics/custom_data/custom_events/nested_objects/)                                   | [track API endpoint](https://documenter.getpostman.com/view/4689407/SVYrsdsG?version=latest#4cf57ea9-9b37-4e99-a02e-4373c9a4ee59) |
+| [Update User Profile](https://segment.com/docs/connections/destinations/catalog/braze-cloud-mode-actions/#update-user-profile) | Segment sends personalization payload information into Braze via [Braze profile custom attributes](https://www.braze.com/docs/user_guide/data_and_analytics/custom_data/custom_attributes/). The entity personalization payload is contained in the attributes parameter in API calls.                                                                                               | [User attributes object](https://www.braze.com/docs/api/objects_filters/user_attributes_object)  
+
+<br>
+
+[Nested custom attributes](https://www.braze.com/docs/user_guide/data_and_analytics/custom_data/custom_attributes/nested_custom_attribute_support/) | [track API endpoint](https://documenter.getpostman.com/view/4689407/SVYrsdsG?version=latest#4cf57ea9-9b37-4e99-a02e-4373c9a4ee59) |
+
 
 # Braze Action-based Delivery Campaign
 
@@ -127,20 +123,14 @@ The following is an example of what your payload data might look like with neste
 
 The following table helps translate you payload data into Liquid syntax:  
 
-Reference Data Definition
-Liquid Syntax 
-Example Properties
-Reference a specific event property
-{{event_properties.${event_property_name}}}
+| Reference Data Definition                               | Liquid Syntax                                                                                                                      | Example Properties                                                         |
+| ------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------- |
+| Reference a specific event property                     | {{event_properties.${event_property_name}}}
 
+<br>                                                                                  | {{event_properties.${first_name}}}                                         |
+| Reference nested event properties within an Array
 
-{{event_properties.${first_name}}}
-Reference nested event properties within an Array
-
-
-{{event_properties.shopping_cart__shopping_cart_products.[#_that_represents_specific_nested_event_in_array].event_property_name }}
-{{event_properties.shopping_cart__shopping_cart_products[0].product_name}}
-
+<br> | {{event_properties.shopping_cart__shopping_cart_products.[#_that_represents_specific_nested_event_in_array].event_property_name }} | {{event_properties.shopping_cart__shopping_cart_products[0].product_name}} |
 
 ## Basic Payload Email Example
 
