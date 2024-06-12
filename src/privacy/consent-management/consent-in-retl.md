@@ -19,7 +19,7 @@ To enforce consent stored in your warehouse, build a Reverse ETL model that iden
 Before you can enforce consent stored in your warehouse, take the following steps:
 - **Set up your third-party consent management tool and create consent categories**. Take note of your consent categories and the key or ID associated with each category.
 - **Know how your company uses each destination**. You need to know which destinations to map to each category. 
-- **End-user consent stored in a warehouse that [Segment supports for Reverse ETL](/docs/connections/reverse-etl/#step-1-add-a-source)**. Segment supports Reverse ETL capabilities in Azure, BigQuery, Databricks, Postgres, Snowflake, and Redshift data warehouses. Other data warehouses are not supported.
+- **Store your end user consent in a warehouse that [Segment supports for Reverse ETL](/docs/connections/reverse-etl/#step-1-add-a-source)**. Segment supports Reverse ETL capabilities in Azure, BigQuery, Databricks, Postgres, Snowflake, and Redshift data warehouses. Other data warehouses are not supported.
 
 ## Step 1: Create consent categories in the Segment app
 
@@ -54,6 +54,7 @@ After you set up consent categories in the Segment app, you must identify the co
 > error "Creating a data model that does not include information about consent preferences results in no consent enforcement"
 > If you create consent categories in your workspace but fail to identify columns that contain consent preferences in your data model, events flow to all destinations in your workspace regardless of end user consent preferences.
 
+### Identify consent when building your model
 To identify consent when building your model:
 1. Navigate to Connections > Sources and select the Reverse ETL tab. Select your source and click **Add Model**.
 2. Click **SQL Editor** as your modeling method.
@@ -69,6 +70,7 @@ To identify consent when building your model:
 11. Select **Add consent mapping** to identify columns for all of your consent categories. 
 12. When you're satisfied with your consent mappings, click **Save**. 
 
+### Update your Reverse ETL mode to include consent
 To update an existing Reverse ETL model to include consent enforcement:
 1. Navigate to **Connections > Destinations** and select the **Reverse ETL** tab.
 2. Select the source and the model you want to edit.
