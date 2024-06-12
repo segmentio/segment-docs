@@ -61,7 +61,7 @@ To set up Azure as your Reverse ETL source:
 5. Navigate to **Connections > Sources** and select the **Reverse ETL** tab. 
 6. Click **+ Add Reverse ETL source**. 
 7. Select **Azure** and click **Add Source**. 
-8. Enter the configuration settings for you Azure source based on the information from Step 3. 
+8. Enter the configuration settings for your Azure source based on the information from Step 3. 
     * Hostname: 
         * Use `xxxxxxx.sql.azuresynapse.net` if you’re connecting to a dedicated SQL pool in Synapse workspace. 
         * Use `xxxxxxx.database.windows.net` if you’re connecting to a dedicated SQL pool (formerly SQL DW)
@@ -72,5 +72,5 @@ To set up Azure as your Reverse ETL source:
 9. Click **Test Connection** to see if the connection works. If the connection fails, make sure you have the right permissions and credentials, then try again.
 10. Click **Add source** if the test connection is successful. 
 
-After you've successfully added your Azure source, [add a model](/docs/connections/reverse-etl/#step-2-add-a-model) and follow the rest of the steps in the Reverse ETL setup guide. 
+After you've successfully added your Azure source, [add a model](/docs/connections/reverse-etl/setup/#step-2-add-a-model) and follow the rest of the steps in the Reverse ETL setup guide. 
 
