@@ -26,7 +26,7 @@ Storage destinations enable you to store your raw Segment data. This enables dat
 ### Reverse ETL destinations
 [Reverse ETL](/docs/connections/reverse-etl) destinations are the business tools or apps you use that Segment syncs the data from your warehouse to. 
 
-If your destination is not listed in the Reverse ETL catalog, use the [Segment Connections destination](/docs/connections/destinations/catalog/actions-segment/) to send data from your Reverse ETL warehouse to other destinations listed in the [catalog](/docs/connections/destinations/catalog/). The Segment Connections destination enables you to mold data extracted from your warehouse in [Segment Spec](docs/connections/spec/) API calls that are then processed by [Segment’s HTTP Tracking API](/docs/connections/sources/catalog/libraries/server/http-api/). The Segment HTTP Tracking API lets you record analytics data. The requests hit Segment’s servers, and then Segment routes your data to any destination you want. Get started with the [Segment Connections destination](/docs/connections/destinations/catalog/actions-segment/). 	
+If your destination is not listed in [the Reverse ETL catalog](/docs/connections/reverse-etl/reverse-etl-catalog/), use the [Segment Connections destination](/docs/connections/destinations/catalog/actions-segment/) to send data from your Reverse ETL warehouse to other destinations listed in the [catalog](/docs/connections/destinations/catalog/). The Segment Connections destination enables you to mold data extracted from your warehouse in [Segment Spec](docs/connections/spec/) API calls that are then processed by [Segment’s HTTP Tracking API](/docs/connections/sources/catalog/libraries/server/http-api/). The Segment HTTP Tracking API lets you record analytics data. The requests hit Segment’s servers, and then Segment routes your data to any destination you want. Get started with the [Segment Connections destination](/docs/connections/destinations/catalog/actions-segment/). 	
  
 
 ## Method compatibility
@@ -120,6 +120,10 @@ To add a Destination:
 8. Configure the settings and enable your destination on the destination settings page.
 
 [Learn more](/docs/connections/destinations/add-destination/) about what adding a destination entails.
+> note "Disabled destinations do not receive data"
+> If you haven't enabled your destination for the first time after you created it or if you actively disable a destination, Segment prevents any data from reaching the destination. Business Tier customers can request [a Replay]([url](https://segment.com/docs/guides/what-is-replay/)), which resends data from the time the destination was disabled to the time it was re-enabled. Replays can also send data to currently disabled destinations. 
+>
+> Some destinations are not compatible with Replays after a certain period of time. Check with Segment’s support team [friends@segment.com](friends@segment.com) to confirm that your intended destination allows historical timestamps. 
 
 ## Data deliverability
 

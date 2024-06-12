@@ -482,4 +482,4 @@ When sending a HTTP call from a user's device, you can collect the IP address by
 
 2. Make sure that you're calling a Segment API method after the library is successfully installed—[Identify](#identify), [Track](#track), and so on.
 
-{% include content/troubleshooting-server-integration.md %}
+{% include content/server-side-troubleshooting.md %}

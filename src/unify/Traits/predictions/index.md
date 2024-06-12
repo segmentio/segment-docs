@@ -15,9 +15,6 @@ For more details on AI usage and data, see [Predictions Nutrition Facts Label](/
 
 On this page, you'll learn how to build a prediction.
 
-> warning "Not a HIPAA Eligible Service or PCI Compliant"
-> Agent Copilot and Unified Profiles in Flex aren't HIPAA Eligible Services or PCI compliant and shouldn't be used in Flex or Segment workflows that are subject to HIPAA or PCI.
-
 ## Build a prediction
 
 ![The Predictive Trait builder in the Segment UI](../../images/trait_builder.png)
@@ -62,6 +59,9 @@ The target event is the Segment event that you want to predict. In creating a pr
 Segment doesn't enforce data requirements for predictions. In machine learning, however, data quality and quantity are critical. Segment recommends that you make predictions for at least 50,000 users and choose a target event that at least 5,000 users have performed in the last 30 days. 
 
 You can create predictions outside of these suggestions, but your results may vary.
+
+> info "Predictive Traits and anonymous events"
+> Predictive Traits are limited to non-anonymous events, which means you'll need to include an additional `external_id` other than `anonymousId` in the targeted events. If want to create Predictive Traits based on anonymous events, reach out to your CSM with your use case for creating an anonymous Predictive Trait and the conditions for trait.
 
 ### Likelihood to Purchase
 

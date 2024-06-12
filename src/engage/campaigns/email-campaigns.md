@@ -3,6 +3,20 @@ title: Email Campaigns
 plan: engage-premier
 ---
 
+> info ""
+> Engage Premier entered an End of Sale (EOS) period effective June 10, 2024. Existing Segment customers will continue to have access and support to Engage Premier until an end-of-life (EOL) date is announced. Segment recommends exploring the following pages in preparation of a migration or future MCM needs:
+> 
+>[Twilio Marketing Campaigns](https://www.twilio.com/en-us/sendgrid/marketing-campaigns)
+>
+>Preferred ISV Partners
+>
+>[Airship Blog](https://www.twilio.com/en-us/blog/airship-integrated-customer-experience)
+>[Bloomreach Blog](https://www.twilio.com/en-us/blog/bloomreach-ecommerce-personalization)
+>[Braze Blog](https://www.twilio.com/en-us/blog/braze-conversational-marketing-campaigns)
+>[Insider Blog](https://www.twilio.com/en-us/blog/insider-cross-channel-customer-experience)
+>[Klaviyo Blog](https://www.twilio.com/en-us/blog/klaviyo-powering-smarter-digital-relationships)
+>[Twilio Engage Foundations Documentation](https://segment.com/docs/engage/quickstart/)
+
 With Twilio Engage, you can send email and SMS campaigns to users who have opted in to receive your marketing materials. On this page, you’ll learn how to create and send an email campaign.
 
 Some knowledge of the Journeys product will benefit you as you read through this guide. If you’re new to Journeys, the [Journeys documentation](/docs/personas/journeys/) will bring you up to speed.

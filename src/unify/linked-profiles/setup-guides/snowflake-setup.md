@@ -10,17 +10,16 @@ hidden: true
 
 On this page, you'll learn how to connect your Snowflake data warehouse to Segment.
 
-Log in to Snowflake with a user that has admin privileges to provide Segment Linked Profiles with the necessary permissions below.
+Log in to Snowflake with admin privileges to provide Segment Linked Profiles with the necessary permissions below.
 
 > info ""
 > Both Linked Events and Linked Profiles support Snowflake. 
  
-
 ## Required connection settings within Segment
 
 Segment requires the following settings to connect to your Snowflake warehouse.
 
-![Connect Snowflake to the Data Graph](/docs/unify/images/snowflake-setup.png)
+<img src="/docs/unify/images/snowflake-setup.png" alt="Connect Snowflake to the Data Graph" width="5888"/>
 
 - **Account ID**: The Snowflake account ID that uniquely identifies your organization account.
 - **Database Name**: The only database that Segment requires write access to in order to create tables for internal bookkeeping. This database is referred to as `segment_connection_db` in the script below.

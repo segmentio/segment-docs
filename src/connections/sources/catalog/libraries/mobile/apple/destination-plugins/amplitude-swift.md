@@ -58,6 +58,9 @@ analytics.add(plugin: AmplitudeSession())
 
 Your events receive session data and start flowing to Amplitude in Cloud Mode.
 
+### Native Amplitude events
+Newer versions of the Swift Amplitude Plugin (V 1.4.1 and up) will send the native Amplitude `Session Start` and `Session End` events in addition to tracking `session_id`. These versions of the plugin also support sending native Amplitude lifecycle events in lieu of the Segment lifecycle events to Amplitude. These will appear in your Amplitude dashboard with the `[Amplitude]` prefix but will not be sent to Segment. 
+
 ### Log Purchases in existing destination instances
 
 Initially, the Log Event Action was reporting purchases to Amplitude for all events containing a `products` array, even if the products were just added to cart. This inflated the LTV Chart in Amplitude.

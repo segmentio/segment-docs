@@ -4,6 +4,19 @@ plan: engage-premier
 redirect_from:
   - '/engage/overview/onboarding'
 ---
+> info ""
+> Engage Premier entered an End of Sale (EOS) period effective  June 10, 2024. Existing Segment customers will continue to have access and support to Engage Premier until an end-of-life (EOL) date is announced. We recommend exploring the following pages in preparation of a migration or future MCM needs:
+> 
+>[Twilio Marketing Campaigns](https://www.twilio.com/en-us/sendgrid/marketing-campaigns)
+>
+>Preferred ISV Partners
+>
+>[Airship Blog](https://www.twilio.com/en-us/blog/airship-integrated-customer-experience)
+>[Bloomreach Blog](https://www.twilio.com/en-us/blog/bloomreach-ecommerce-personalization)
+>[Braze Blog](https://www.twilio.com/en-us/blog/braze-conversational-marketing-campaigns)
+>[Insider Blog](https://www.twilio.com/en-us/blog/insider-cross-channel-customer-experience)
+>[Klaviyo Blog](https://www.twilio.com/en-us/blog/klaviyo-powering-smarter-digital-relationships)
+>[Twilio Engage Foundations Documentation](https://segment.com/docs/engage/quickstart/)
 
 Twilio Engage brings Segment, Twilio, SendGrid, and WhatsApp together to help you create and send email, SMS, and WhatsApp campaigns to your customers.
 

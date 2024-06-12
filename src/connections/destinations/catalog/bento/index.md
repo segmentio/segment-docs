@@ -1,6 +1,8 @@
 ---
 title: Bento Destination
 id: 5ff25116284da6d5091e21b1
+hidden: true
+private: true
 ---
 
 [Bento](https://www.trybento.co/){:target="_blank"} allows you to create embedded onboarding solutions to support your users as they get started with your product, and beyond. Using your customer data you can tailor user experiences providing a personalized journey through your product.
