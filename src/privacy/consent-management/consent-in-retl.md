@@ -33,7 +33,7 @@ Before you can enforce consent stored in your warehouse, take the following step
   - **Category name**: Enter a name that describes your use case for the data sent to this destination. This field only accepts category names that are 20 characters or less.
   - **Category ID**: In OneTrust, this is a string of up to five alphanumeric characters, but other CMPs may have a different format. This field is case sensitive.
   - **Mapped destinations**: Select one or more of your Reverse ETL destinations to map to this category. Category mappings apply to all instances of a destination. 
-5. Once you've finished setting up your category or categories, click **Save**.
+5. After you've finished setting up your category or categories, click **Save**.
 
 > warning "Segment recommends mapping all Reverse ETL destinations to a category"
 > Segment assumes all destinations without a mapping do not require user consent and will receive all events containing a consent object. If a destination is mapped to multiple categories, a user must consent to all categories for data to flow to the destination.
@@ -55,7 +55,7 @@ After you set up consent categories in the Segment app, you must identify the co
 > If you create consent categories in your workspace but fail to identify columns that contain consent preferences in your data model, events flow to all destinations in your workspace regardless of end user consent preferences.
 
 To identify consent when building your model:
-1. Navigate to Connections > Sources and select the Reverse ETL tab. Select your source and click **Add Model**.
+1. Navigate to **Connections > Sources** and select the Reverse ETL tab. Select your source and click **Add Model**.
 2. Click **SQL Editor** as your modeling method.
 3. Create the SQL query that’ll define your model. Your model is used to map data to your Reverse ETL destinations.
 4. Choose a column to use as the unique identifier for each record in the Unique Identifier column field.
@@ -148,4 +148,4 @@ Open the [Profile Explorer](/docs/unify/#profile-explorer) and verify that your 
 ### Reverse ETL Actions destinations
 Segment automatically filters out data from users who have not consented to the category mapped to your destination. 
 
-To verify that this behavior is working as intended, open [Delivery Overview](/docs/connections/delivery-overview) for a RETL-supported Actions destination and view some of the events that were successfully delivered to the destination. The events in your destination should only come from users that consented to send data to the category that your supported Actions destination belongs to.
+To verify that this behavior is working as intended, open [Delivery Overview](/docs/connections/delivery-overview) for a RETL-supported Actions destination and view the events that were successfully delivered to the destination. The events in your destination should only come from users that consented to send data to the category that your supported Actions destination belongs to.

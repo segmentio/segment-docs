@@ -31,7 +31,7 @@ Before you can configure consent in Segment, take the following steps:
   - **Category name**: Enter a name that describes your use case for the data sent to this destination. This field only accepts category names that are 20 characters or less.
   - **Category ID**: In OneTrust, this is a string of up to five alphanumeric characters, but other CMPs may have a different format. This field is case sensitive.
   - **Mapped destinations**: Select one or more of your destinations to map to this category. Category mappings apply to all instances of a destination. 
-5. Once you've finished setting up your category or categories, click **Save**.
+5. After you've finished setting up your category or categories, click **Save**.
 
 > warning "Segment recommends mapping all destinations to a category"
 > Segment assumes all destinations without a mapping do not require user consent and will receive all events containing a consent object. If a destination is mapped to multiple categories, a user must consent to all categories for data to flow to the destination.
