@@ -5,18 +5,6 @@ beta: false
 
 View reference information about how Segment detects data changes in your warehouse and the rate and usage limits associated with Reverse ETL. 
 
-## Extensions
-
-Extensions integrate third-party tools into your existing Segment workspace to help you automate tasks.
-
-> info ""
-> Extensions is currently in public beta and is governed by Segment’s First Access and Beta Preview Terms. During Public Beta, Extensions is available for Team and Developer plans only. Reach out to Segment if you’re on a Business Tier plan and would like to participate in the Public Beta.
-
-Segment has two extensions that you can use to manage your Reverse ETL sources:
-
-- [dbt models and dbt Cloud](/docs/segment-app/extensions/dbt/): Sync your Reverse ETL models with dbt labs models and syncs to help centralize model management and versioning, reduce redundancies, and run CI checks to prevent breaking changes.
-- [Git sync](/docs/segment-app/extensions/git/): Manage versioning by syncing changes you make to your Reverse ETL sources from your Segment workspace to a Git repository.
-
 ## Record diffing
 Reverse ETL computes the incremental changes to your data directly within your data warehouse. The Unique Identifier column is used to detect the data changes, such as new, updated, and deleted records.
 
@@ -44,7 +32,7 @@ Free | 500K | Upgrade to the Teams plan in the Segment app by navigating to **Se
 Teams | 1 million | Contact your sales representative to upgrade your plan to Business.
 Business | 50 x the number of [MTUs](/docs/guides/usage-and-billing/mtus-and-throughput/#what-is-an-mtu) <br>or .25 x the number of monthly API calls | Contact your sales rep to upgrade your plan.
 
-If you have a non-standard or high volume usage plan, you may have unique Reverse ETL limits or custom pricing. To see your Reverse ETL limits in the Segment app, select **Settings** then click **Usage & Billing**.
+If you have a non-standard or high volume usage plan, you may have unique Reverse ETL limits or custom pricing. To see your Reverse ETL limits in the Segment app, select **Settings > Usage & Billing**.
 
 ### Configuration limits
 
