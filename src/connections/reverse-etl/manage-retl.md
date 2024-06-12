@@ -17,10 +17,16 @@ To check the status of your extractions:
     * Details of how long it took for the sync to complete.
     * How many total records were extracted, as well as a breakdown of the number of records added, updated, and deleted.
     * The load results - how many successful records were synced as well as how many records were updated, deleted, or are new.
-5. If your sync failed, click the failed reason to get more details on the error and view sample payloads to help troubleshoot the issue.
+5. If your sync was partially successful or failed, click the failed reason to get more details on the error and view sample payloads to help troubleshoot the issue.
 
-> info "Segment automatically retries events that were extracted but failed to load"
-> Segment retries events for 14 days following a total or partial sync failure. Before loading the failed records on a subsequent sync, Segment checks for the latest changes in your data to ensure the data loaded into your warehouse isn't stale. If the error causing the load failure is coming from an upstream tool, you can fix the error in the upstream tool to ensure the record loads on the next sync. 
+### Automatic retry handling
+
+Segment automatically retries events that were extracted from your data warehouse but failed to load for up to 14 days or 25 syncs following a partially successful sync or a sync failure. 
+
+Before loading the failed records on a subsequent sync, Segment checks for the latest changes in your data to ensure the data loaded into Segment isn't stale. 
+
+> success ""
+> If the error causing the load failure is coming from an upstream tool, you can fix the error in the upstream tool to potentially help the record load on the next sync. 
 
 ## Reset syncs
 You can reset your syncs so that your data is synced from the beginning. This means that Segment resyncs your entire dataset for the model.
