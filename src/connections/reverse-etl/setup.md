@@ -86,6 +86,9 @@ To add your first destination:
 ## Step 4: Create mappings
 After you’ve added a destination, you can create mappings from your warehouse to the destination. Mappings enable you to map the data you extract from your warehouse to the fields in your destination.
 
+> success ""
+> When you create a mapping, you can opt to exclude null values at the field level. See the [Manage Reverse ETL syncs](/docs/reverse-etl/manage-retl#null-value-management) documentation for more information about managing null values in your existing mappings.
+
 To create a mapping:
 1. Navigate to **Connections > Destinations** and select the **Reverse ETL** tab.
 2. Select the destination that you want to create a mapping for.  
@@ -111,7 +114,8 @@ To create a mapping:
         * Scheduling multiple extractions to start at the same time inside the same data warehouse causes extraction errors.
 11. Define how to map the record columns from your model to your destination in the **Select Mappings** section.
     * You map the fields that come from your source, to fields that the destination expects to find. Fields on the destination side depend on the type of action selected.
-    * If you're setting up a destination action, depending on the destination, some mapping fields may require data to be in the form of an object or array. See the [supported objects and arrays for mapping](/docs/connections/reverse-etl/manage-retl/#supported-object-and-arrays).
+    * Some destinations allow you to opt out of syncing null values. For more information, see the [Null value management](/docs/reverse-etl/manage-retl#null-value-management) documentation.
+    * If you're setting up a destination action, depending on the destination, some mapping fields may require data to be in the form of an object or array. See [Supported objects and arrays for mapping](/docs/connections/reverse-etl/manage-retl/#supported-object-and-arrays).
 12. *(Optional)* Send a test record to verify the mappings correctly send to your destination.
 13. Click **Create Mapping**.
 14. Select the destination you’d like to enable on the **My Destinations** page under **Reverse ETL > Destinations**.

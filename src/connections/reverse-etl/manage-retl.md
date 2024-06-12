@@ -54,7 +54,9 @@ To subscribe to alerts:
 
 ## Supported object and arrays 
 
-When you set up destination actions in Reverse ETL, depending on the destination, some [mapping fields](/docs/connections/reverse-etl/setup/#step-4-create-mappings) may require data to be in the form of an [object](/docs/connections/reverse-etl/manage-retl/#object-mapping) or [array](/docs/connections/reverse-etl/manage-retl/#array-mapping). 
+When you set up destination actions in Reverse ETL, depending on the destination, some [mapping fields](/docs/connections/reverse-etl/setup/#step-4-create-mappings) may require data to be in the form of an [object](/docs/connections/reverse-etl/manage-retl/#object-mapping) or [array](/docs/connections/reverse-etl/manage-retl/#array-mapping).
+
+Some non-required mapping fields also support [Null value management](#null-value-management), or the ability to opt-out of sending null values to your downstream destinations. 
 
 ### Object mapping
 You can send data to a mapping field that requires object data. An example of object mapping is an `Order completed` model with a `Products` column that’s in object format. 
@@ -116,3 +118,19 @@ Select array | This enables you to send all nested properties within the array.
 > Certain array mapping fields have a fixed list of properties they can accept. If the names of the nested properties in your array don't match the destination properties, the data won't send. Segment recommends you to use the **Customize array** option to ensure your mapping is successful.
 
 Objects in an array don't need to have the same properties. If a user selects a missing property in the input object for a mapping field, the output object will miss the property.
+
+### Null value management
+
+You can choose to exclude null values from *optional* mapping fields in your syncs to some destinations. Excluding null values helps you maintain data integrity in your downstream destinations, as syncing a null value for an *optional* field may overwrite an existing value in your downstream tool. For example, if you opt to sync null values with your destination and an end user fills out a form but chooses to leave an optional telephone number field blank, the exising telephone number you have on file in your destination could be overwritten with the null value. By opting out of null values for your downstream destination, you would preserve the existing telephone number in your destination. 
+
+By default, Segment syncs null values from mapped fields to your downstream destinations. Some destinations do not allow the syncing of null values, and will reject requests that contain them. Segment disables the option to opt out of syncing null values for these destinations.
+
+To opt out of including null values in your downstream syncs: 
+1. Navigate to **Connections > Destinations** and select the **Reverse ETL** tab.
+2. Select the destination and the mapping you want to edit.
+3. Click **Edit mapping**.
+4. Under the "Optional fields" header, select the field you want to edit.
+5. In the field dropdown selection, disable the **Sync null values** toggle. 
+
+> success ""
+> If the toggle appears dimmed, your downstream destination rejects requests that contain null values, and you are automatically opted out of syncing null values.
