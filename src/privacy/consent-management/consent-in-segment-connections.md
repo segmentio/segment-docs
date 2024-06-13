@@ -20,7 +20,10 @@ If your sources also contain the integrations object, Segment will look at the c
 
 ## Consent object
 
-Segment requires every event from all of your sources to include the end user consent preferences, captured by your CMP or your application logic, in the form of the **consent object**. The consent object is a JSON object with the following format:
+Segment requires every event from all of your sources to include the end user consent preferences, captured by your CMP or your application logic, in the form of the **consent object**. The consent object is a JSON object nestled inside of the [context object](/docs/connections/spec/common/#context) with the following format:
+
+> success ""
+> The JSON keys in the consent object should represent the `categoryId` for each consent category. 
 
 ```json
 {
@@ -37,8 +40,6 @@ Segment requires every event from all of your sources to include the end user co
 }
 
 ```
-
-<!-- Not currently in scope: The categories consented to by a user and a flag if a [consent conflict](#reconcile-consent-conflicts) exists are pulled from the consent object and are visible as traits on a user's profile in Unify. For more information about Consent in Unify, see the [Consent in Unify](/docs/privacy/consent-management-in-unify) docs.-->
 
 Events without the consent object will continue to flow to destinations without consent enforcement.
 
