@@ -11,7 +11,6 @@ Linked Audiences allows you to send the predefined traits of any audience profil
 
 The following topic is intended for a Technical Marketer and Data Engineer to complete together while setting up their Linked Audience. 
 
-
 ## Supported Braze Engagement Tools
 
 The following engagement tools are available for use with Linked Audiences in Segment:
@@ -23,7 +22,6 @@ The following engagement tools are available for use with Linked Audiences in Se
 ## Segment Destination Actions
 
 Segment sends event data it receives from your sources, to actions-based destinations. (For example: associated accounts for the audience profiles with past due accounts). You can configure multiple triggers per audience (For example: one for account entry, and one for account exit).
-
 
 | Segment Destination Action                                                                                                     | How does it work?                                                                                                                                                                                                                                                                                                                                                                    | How does Braze store the data?                                                                                                                                                                                                                               | Braze API Endpoint                                                                                                                |
 | ------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | --------------------------------------------------------------------------------------------------------------------------------- |
@@ -71,13 +69,13 @@ In Braze, do the following:
     - Reference your [personalization payload schema](https://github.com/segmentio/segment-docs/pull/6648/files#r1629833308) from Segment to determine what properties to include in your message.
     - Translate the Segment event properties in the payload schema into [liquid syntax](https://www.braze.com/docs/user_guide/personalization_and_dynamic_content/liquid/using_liquid/#using-liquid-1) for [custom events](https://www.braze.com/docs/user_guide/data_and_analytics/custom_data/custom_events), and enter it in the HTML editor in Braze. See the personalization  examples below for more specific details on how you can personalize your campaign.
 3. Next, [schedule your campaign delivery](https://www.braze.com/docs/user_guide/engagement_tools/campaigns/building_campaigns/delivery_types):
-    3. Choose [Action based delivery](https://www.braze.com/docs/user_guide/engagement_tools/campaigns/building_campaigns/delivery_types/triggered_delivery/#step-1-select-a-trigger-event) > [New Trigger Action](https://www.braze.com/docs/user_guide/engagement_tools/campaigns/building_campaigns/delivery_types/triggered_delivery/#step-1-select-a-trigger-event): [Perform Custom Event](https://www.braze.com/docs/user_guide/data_and_analytics/custom_data/custom_events)> Add Trigger. 
-    4. Search and choose the name of the Segment custom event you previously set up and tested in Segment.
-    5. Choose Delivery Controls > [Allow users to become re-eligible to receive campaigns](https://www.braze.com/docs/user_guide/engagement_tools/campaigns/building_campaigns/delivery_types/reeligibility/#campaigns)** **checkbox and select 0 minutes. This is necessary for Step 2: Test your campaign flow so that you don’t have to wait for a user to become re-eligible while testing. You can adjust these settings after you have finished testing.
+    - Choose [Action based delivery](https://www.braze.com/docs/user_guide/engagement_tools/campaigns/building_campaigns/delivery_types/triggered_delivery/#step-1-select-a-trigger-event) > [New Trigger Action](https://www.braze.com/docs/user_guide/engagement_tools/campaigns/building_campaigns/delivery_types/triggered_delivery/#step-1-select-a-trigger-event): [Perform Custom Event](https://www.braze.com/docs/user_guide/data_and_analytics/custom_data/custom_events)> Add Trigger. 
+    - Search and choose the name of the Segment custom event you previously set up and tested in Segment.
+    - Choose Delivery Controls > [Allow users to become re-eligible to receive campaigns](https://www.braze.com/docs/user_guide/engagement_tools/campaigns/building_campaigns/delivery_types/reeligibility/#campaigns)** **checkbox and select 0 minutes. This is necessary for Step 2: Test your campaign flow so that you don’t have to wait for a user to become re-eligible while testing. You can adjust these settings after you have finished testing.
 4. Select your target Audience:
-    6. Add a filter to [target users without a segment](https://www.braze.com/docs/user_guide/engagement_tools/campaigns/building_campaigns/targeting_users/#without-segment) 
-    7. Search and choose the name of the Segment custom event you previously set up and tested in Segment.
-    8. Select ‘more than 0 times’ as the timeframe for this filter. 
+    - Add a filter to [target users without a segment](https://www.braze.com/docs/user_guide/engagement_tools/campaigns/building_campaigns/targeting_users/#without-segment) 
+    - Search and choose the name of the Segment custom event you previously set up and tested in Segment.
+    - Select ‘more than 0 times’ as the timeframe for this filter. 
 5. Choose any additional audience settings that apply, then [review and deploy](https://www.braze.com/docs/user_guide/message_building_by_channel/email/html_editor/creating_an_email_campaign/#step-5-review-and-deploy) your campaign, then continue on to Step 2: Test your campaign flow.
 
 ### Step 2: Test your campaign flow in Segment
@@ -92,8 +90,7 @@ If your email doesn’t look the way you want it to, adjust the [liquid syntax](
 
 When you’re finished testing your campaign, click **Save and Enable **to save your linked audience, then proceed to [Step 4: Enable your Linked Audience](https://github.com/segmentio/segment-docs/pull/6648/files#r1629472328).
 
-
-# Liquid Examples to use in Braze
+## Liquid Examples to use in Braze
 
 Use the following examples as context and information to experiment with setting up your campaign in Braze.
 
@@ -110,7 +107,7 @@ The following table helps translate you payload data into Liquid syntax:
 
 <br> | {{event_properties.shopping_cart__shopping_cart_products.[#_that_represents_specific_nested_event_in_array].event_property_name }} | {{event_properties.shopping_cart__shopping_cart_products[0].product_name}} |
 
-## Basic Payload Email Example
+### Basic Payload Email Example
 
 Use the Segment payload data you [copied when setting up your Linked audience](https://deploy-preview-6648--segment-docs.netlify.app/docs/engage/audiences/linked-audiences#showhide-preview) to build an abandoned cart email campaign that includes specific information for the product in a customer’s shopping cart.
 
@@ -119,11 +116,10 @@ When an email is sent, it will list the specific product, and its related price 
 
 This is an example of what your email using [HTML ](https://www.braze.com/docs/user_guide/message_building_by_channel/email/html_editor/creating_an_email_campaign/)and[ liquid tags](https://www.braze.com/docs/user_guide/personalization_and_dynamic_content/liquid) might look like in Braze:
 
-## Advanced Payload Example Email Example
+### Advanced Payload Example Email Example
 
 When you want to personalize your campaign with a dynamic event payload, you can use an [iteration tag](https://www.braze.com/docs/user_guide/personalization_and_dynamic_content/liquid/supported_personalization_tags/#iteration-tags) to run a block of code repeatedly. In this abandoned cart email campaign example, you can use a for loop to list all of the products and their related prices in a customer’s shopping cart.
 
 When an email is sent, it will list all of the products and their related prices in your customer’s shopping cart. It might look like the following: 
-
 
 This is an example of what your email using [HTML ](https://www.braze.com/docs/user_guide/message_building_by_channel/email/html_editor/creating_an_email_campaign/)and[ liquid tags](https://www.braze.com/docs/user_guide/personalization_and_dynamic_content/liquid) might look like in Braze:
