@@ -34,7 +34,7 @@ Kochava is able to accommodate any post-install track event that is passed into 
 
 `context.device.type` (has value of 'ios' or 'android'), `context.device.advertising_id` (IDFA on iOS and adID on Android) **and** `context.device.id` are required in all calls to Kochava.
 
-To automatically collect `context.device.advertising_id`, on Android you must include the Google Mobile Ads component of Google Play services as [described here](https://developers.google.com/android/guides/setup#add_google_play_services_to_your_project){:target="_blank"}, and on iOS you must include the [AdSupport and Ad Tracking Transparency frameworks](https://segment.com/docs/connections/sources/catalog/libraries/mobile/ios/#ad-tracking-and-idfa).
+To automatically collect `context.device.advertising_id`, on Android you must include the Google Mobile Ads component of Google Play services as described in the [Google Play services setup documentation](https://developers.google.com/android/guides/setup#add_google_play_services_to_your_project){:target="_blank"}. On iOS, you must include the [AdSupport and Ad Tracking Transparency frameworks](/docs/connections/sources/catalog/libraries/mobile/ios/#ad-tracking-and-idfa).
 
 If making calls outside of Segment's iOS or Android library (eg post-install events sent from a server-side library), you'll need to ensure that you collect and send `context.device.type`, `context.device.advertising_id` **and** `context.device.id`.
 
