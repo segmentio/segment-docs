@@ -107,10 +107,10 @@ Connect to either a website or mobile app to complete this step.
 After you've selected which data sources you'd like to integrate customer data from, you can select _identifiers_, or unique pieces of data that allow you to link information about an individual customer across different programs and services, and _traits_, which are pieces of information you know about a particular customer. Segment automatically configures 4 common identifiers, but you can select any of Segment's 11 default identifiers or add custom identifiers. 
 
 1. On the Add identifiers and traits page, review the four default identifiers Segment automatically set up on your behalf: 
-  - `user_id`
-  - `anonymous_id`
-  - `email`
-  - `phone`
+  - user_id
+  - anonymous_id <br>_To preserve the quality of your user interaction data, **do not delete anonymous_id**. Flex uses anonymous_id to send events about user interaction back to Segment._
+  - email
+  - phone
 2. If you need to add additional identifiers, select either **Select default identifiers** or **Create identifier** and follow the provided steps.
 3. When you've finished selecting identifiers, click **Save**. If you need to make changes to an identifier, select the menu icon in the row the identifier appears in and click **Edit** or **Delete**.
 4. When you're satisfied with your identifiers, click **Add computed traits**.
