@@ -56,7 +56,7 @@ The target event is the Segment event that you want to predict. In creating a pr
 
 #### Selecting events (optional)
 
-Some customers want to specifically include or exclude events that get fed into the model. For example, if you track different events from an EU vs US storefront, and you only want to make predictions using data from the US, you could unselect the events from the EU space. This step is entirely optional, so we only suggest using it if you have a clear reason in mind for removing events from becoming a factor in the model
+Some customers want to specifically include or exclude events that get fed into the model. For example, if you track different events from an EU storefront compared to a US storefront and you only want to make predictions using data from the US, you could unselect the events from the EU space. This step is optional, Segment only recommends using it if you have a clear reason in mind for removing events from becoming a factor in the model.
 
 
 #### Data requirements
@@ -92,9 +92,9 @@ To use Likelihood to Churn, you'll need to specify a customer event, a future ti
 
 For example, suppose you wanted to predict whether or not a customer would view a page on your site over the next three months. You would select `not perform`, `Page Viewed`, and `at least 1 time within 90 days`. 
 
-Churn predictions are only made for customers that are eligible. In the example above, only the customers that have performed Page Viewed in the last 90 days would be eligible to recieve this prediction. The in app UI will tell you which customers are eligibile to recieve this prediction.
+Churn predictions are only made for eligible customers. In the previous example, only customers that have performed `Page Viewed` in the last 90 days would be eligible to recieve this prediction. The Segment app shows you which customers are eligibile to recieve this prediction.
 
-Segment would then build the prediction from this criteria and create specific percentile cohorts. You can then use these cohorts to target customers with retention flows, promo codes, or one-off email and SMS campaigns.
+Segment then uses this criteria to build the prediction and create specific percentile cohorts. You can then use these cohorts to target customers with retention flows, promo codes, or one-off email and SMS campaigns.
 
 
 ## Use cases
