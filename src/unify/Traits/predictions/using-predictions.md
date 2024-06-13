@@ -102,7 +102,7 @@ Segment rebuilds the machine learning model every 30 days.
 
 #### How frequently do you update trait values? 
 
-By default, we refresh scores every 7 days. However, you can request that trait values update daily. Please reach out to your CSM to determine your eligibility
+By default, Segment refreshes scores every 7 days. However, you can request that trait values update daily. Reach out to your CSM to determine your eligibility.
 
 #### Can I update Predictive Traits and Predictive Audiences?
 
@@ -116,7 +116,7 @@ Predictive Audiences contribute to the Engage limit of 100 audiences. Whether yo
 
 #### Is Predictions HIPAA eligible?
 
-Yes, the feature is HIPAA eligible
+Yes.
 
 #### Are there any known Predictions limitations? 
 
