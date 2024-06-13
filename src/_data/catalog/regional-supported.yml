@@ -209,6 +209,15 @@ sources:
       - us
     endpoints:
       - us
+  - id: nEjnxv4kbB
+    display_name: ConfigCat
+    hidden: false
+    slug: configcat
+    url: connections/sources/catalog/cloud-apps/configcat
+    regions:
+      - us
+    endpoints:
+      - us
   - id: sTypQz3Fd2
     display_name: Customer.io
     hidden: false
