@@ -21,8 +21,6 @@ Before you can configure AWS PrivateLink for Databricks, complete the following 
 - Databricks workspace must use a [Customer-managed VPC](https://docs.databricks.com/en/security/network/classic/customer-managed-vpc.html){:target="_blank”} and [Secure cluster connectivity.](https://docs.databricks.com/en/security/network/classic/secure-cluster-connectivity.html){:target="_blank”}
   - Configure your [VPC](https://docs.databricks.com/en/security/network/classic/customer-managed-vpc.html){:target="_blank”} with DNS hostnames and DNS resolution
   - Configure a [security group](https://docs.databricks.com/en/security/network/classic/customer-managed-vpc.html#security-groups){:target="_blank”} with bidirectional access to 0.0.0/0 and ports 443, 3306, 6666, 2443, and 8443-8451. 
-- Must have the AWS permissions required to [set up a new Databricks workspace](https://docs.databricks.com/en/admin/workspace/create-workspace.html#before-you-begin){:target="_blank”} and [create a VPC.](https://docs.aws.amazon.com/vpc/latest/privatelink/getting-started.html#create-vpc-subnets){:target="_blank”}
-- You must have a technical partner in your organization to support the PrivateLink integration.
 
 > warning ""
 > Only resources in the `us-east-1` region support Segment's PrivateLink integration.
@@ -31,8 +29,7 @@ Before you can configure AWS PrivateLink for Databricks, complete the following 
 To configure PrivateLink for Databricks:
 1. Follow the instructions in Databricks' [Enable private connectivity using AWS PrivateLink](https://docs.databricks.com/en/security/network/classic/privatelink.html){:target="_blank”} documentation. You must create a [back-end](https://docs.databricks.com/en/security/network/classic/privatelink.html#private-connectivity-overview){:target="_blank”} connection to integrate with Segment's front-end connection. 
 2. After you've configured a back-end connection for Databricks, request access to Segment's PrivateLink integration by reaching out to your Customer Success Manager (CSM).
-3. Your CSM shares information with you about Segment's AWS Principal. 
-4. Add Segment's AWS Principal as an Allowed Principal to use the 
+3. Your CSM sets up a call with Segment R&D to continue the onboarding process. 
 
 ## RDS Postgres 
 
@@ -65,7 +62,7 @@ To configure PrivateLink for Databricks:
 Implement Segment's PrivateLink integration by taking the following steps:
 1. Let your Customer Success Manager (CSM) know that you're interested in PrivateLink. They will share information with you about Segment’s Edge account and VPC.
 2. After you receive the Edge account and VPC, [grant cluster access to Segment's Edge account and VPC](https://docs.aws.amazon.com/redshift/latest/gsg/rs-gsg-connect-to-cluster.html){:target="_blank”}.
-3. Segment creates a Redshift managed VPC endpoint within a Redshift subnet on your behalf, which creates an internal PrivateLink Endpoint URL. Segment then provides you with the internal PrivateLink Endpoint URL. 
+3. Segment creates a Redshift managed VPC endpoint within the Segment Redshift subnet on your behalf, which creates a PrivateLink Endpoint URL. Segment then provides you with the internal PrivateLink Endpoint URL. 
 4. After Segment provides you with the URL, use it to update or create new Redshift integrations. The following integrations support PrivateLink: 
   - [Redshift storage destination](/docs/connections/storage/catalog/redshift/)
   - [Redshift Reverse ETL source](/docs/connections/reverse-etl/reverse-etl-source-setup-guides/redshift-setup/)
