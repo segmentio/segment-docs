@@ -183,6 +183,17 @@ You can read more about [error handling](#destination-insert-functions-logs-and-
 
 A payload must come into the pipeline with the attributes that allow it to match your mapping triggers. You can't use an Insert Function to change the event to match your mapping triggers. If an event comes into an Actions destination and already matches a mapping trigger, that mapping subscription will fire. If a payload doesn't come to the Actions destination matching a mapping trigger, even if an Insert Function is meant to alter the event to allow it to match a trigger, it won't fire that mapping subscription. Segment sees the mapping trigger first in the pipeline, so a payload won't make it to the Insert Function at all if it doesn't come into the pipeline matching a mapping trigger. 
 
+Unlike Source Functions and Destination Functions, which return multiple events, an Insert Function only returns one event. When the Insert Function receives an event, it sends the event to be handled by its configured mappings.
+
+If you would like [multiple mappings triggered by the same event](/docs/connections/destinations/actions/#:~:text=Multiple%20mappings%20triggered,Subscription%20Updated%20event.):
+1. Create different types of mappings (Identify, Track, Page, etc) or multiple mappings of the same type.
+2. Configure the mapping's [trigger conditions](/docs/connections/destinations/actions/#conditions) to look for that event name/type or other available field within the payload.
+3. Configure the mapped fields to send different data. 
+
+You can also configure the Insert Function to add additional data to the event's payload before it's handled by the mappings and configure the mapping's available fields to reference the payload's available fields. 
+
+You may want to consider the [context object's](/docs/connections/spec/common/#context) available fields when adding new data to the event's payload.
+
 ## Create settings and secrets
 
 {% include content/functions/settings.md %}
