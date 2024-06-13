@@ -54,6 +54,11 @@ When you build a Custom Predictive Goal, you'll first need to select a cohort, o
 
 The target event is the Segment event that you want to predict. In creating a prediction, Segment determines the likelihood of the user performing the target event. Segment lets you include up to two target events and an event property in your prediction.
 
+#### Selecting events (optional)
+
+Some customers want to specifically include or exclude events that get fed into the model. For example, if you track different events from an EU storefront compared to a US storefront and you only want to make predictions using data from the US, you could unselect the events from the EU space. This step is optional, Segment only recommends using it if you have a clear reason in mind for removing events from becoming a factor in the model.
+
+
 #### Data requirements
 
 Segment doesn't enforce data requirements for predictions. In machine learning, however, data quality and quantity are critical. Segment recommends that you make predictions for at least 50,000 users and choose a target event that at least 5,000 users have performed in the last 30 days. 
@@ -71,7 +76,7 @@ If you don’t track `Order Completed`, choose a target event that represents a 
 
 ### Predicted Lifetime Value
 
-Predicted Lifetime Value predicts a customer's future spend over the next 90 days. To create this prediction, select a purchase event, revenue property, and the currency (which defaults to USD). The following table contains details for each property:
+Predicted Lifetime Value predicts a customer's future spend over the next 120 days. To create this prediction, select a purchase event, revenue property, and the currency (which defaults to USD). LTV is only calculated for customers that have performed the selected purchase events 2 or more times. The following table contains details for each property:
 
 | Property        | Description                                                                                                                |
 | --------------- | -------------------------------------------------------------------------------------------------------------------------- |
@@ -87,11 +92,10 @@ To use Likelihood to Churn, you'll need to specify a customer event, a future ti
 
 For example, suppose you wanted to predict whether or not a customer would view a page on your site over the next three months. You would select `not perform`, `Page Viewed`, and `at least 1 time within 90 days`. 
 
-Segment would then build the prediction from this criteria and create specific percentile cohorts. You can then use these cohorts to target customers with retention flows, promo codes, or one-off email and SMS campaigns.
+Churn predictions are only made for eligible customers. In the previous example, only customers that have performed `Page Viewed` in the last 90 days would be eligible to recieve this prediction. The Segment app shows you which customers are eligibile to recieve this prediction.
 
-#### Data requirements
+Segment then uses this criteria to build the prediction and create specific percentile cohorts. You can then use these cohorts to target customers with retention flows, promo codes, or one-off email and SMS campaigns.
 
-Predicted LTV has strict data requirements. Segment can only make predictions for customers that have purchased two or more times. Segment also requires a year of purchase data to perform LTV calculations.
 
 ## Use cases
 
