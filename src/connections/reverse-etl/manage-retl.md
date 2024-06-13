@@ -121,7 +121,9 @@ Objects in an array don't need to have the same properties. If a user selects a 
 
 ### Null value management
 
-You can choose to exclude null values from *optional* mapping fields in your syncs to some destinations. Excluding null values helps you maintain data integrity in your downstream destinations, as syncing a null value for an *optional* field may overwrite an existing value in your downstream tool. For example, if you opt to sync null values with your destination and an end user fills out a form but chooses to leave an optional telephone number field blank, the exising telephone number you have on file in your destination could be overwritten with the null value. By opting out of null values for your downstream destination, you would preserve the existing telephone number in your destination. 
+You can choose to exclude null values from *optional* mapping fields in your syncs to some destinations. Excluding null values helps you maintain data integrity in your downstream destinations, as syncing a null value for an optional field may overwrite an existing value in your downstream tool. 
+
+For example, if you opt to sync null values with your destination and an end user fills out a form but chooses to leave an optional telephone number field blank, the existing telephone number you have on file in your destination could be overwritten with the null value. By opting out of null values for your downstream destination, you would preserve the existing telephone number in your destination. 
 
 By default, Segment syncs null values from mapped fields to your downstream destinations. Some destinations do not allow the syncing of null values, and will reject requests that contain them. Segment disables the option to opt out of syncing null values for these destinations.
 
