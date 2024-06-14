@@ -68,7 +68,7 @@ Segment maps `page` calls to its own `track` events, i.e. invoking `analytics.pa
 
 ### Experiment Listeners
 
-Upon activation of an Optimizely experiment, an “Experiment Viewed” `track` event is sent to Segment. The event includes Optimizely experiment metadata which is sent whenever the Optimizely [`campaignDecided` listener](https://docs.developers.optimizely.com/web/docs/add-listener#section-campaign-decided){:target="_blank"} is activated.
+Upon activation of an Optimizely experiment, an “Experiment Viewed” Track event is sent to Segment. The event includes Optimizely experiment metadata which is sent whenever the Optimizely [`campaignDecided` listener](https://docs.developers.optimizely.com/web/docs/add-listener#section-campaign-decided){:target="_blank"} is activated.
 
 
 > note ""
