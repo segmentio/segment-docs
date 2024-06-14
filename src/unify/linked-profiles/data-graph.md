@@ -25,7 +25,7 @@ To help you get started with the Data Graph, [view this short setup demo](https:
 To use the Data Graph, you'll need the following:
 
 - A supported data warehouse. 
-- If setting up Linked Audiences, [Profiles Sync](/docs/unify/profiles-sync/) set up with ready-to-use [data models and tables](/docs/unify/profiles-sync/tables/) in your warehouse.
+- (If setting up Linked Audiences) [Profiles Sync](/docs/unify/profiles-sync/) set up with ready-to-use [data models and tables](/docs/unify/profiles-sync/tables/) in your warehouse.
 - Workspace Owner or Unify Read-only/Admin and Entities Admin permissions.
 
 > info ""
