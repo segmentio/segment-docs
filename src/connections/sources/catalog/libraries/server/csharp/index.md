@@ -572,6 +572,9 @@ For sample usages of the SDK in specific platforms, checkout the following:
 ## Compatibility
 This library targets `.NET Standard 1.3` and `.NET Standard 2.0`. See the [list of compatible platforms](https://www.nuget.org/packages/Segment.Analytics.CSharp/#supportedframeworks-body-tab){:target="_blank"}.
 
+## Timestamps in C#
+Due to changes made in our C# library that increase the efficiency of the library, when the `sentAt` timestamp is added to an event payload has changed. This can impact the value of the `timestamp` field calculated by Segment if users are operating in an offline mode. More details on this change can be seen in our [timestamp documentation](https://segment.com/docs/connections/spec/common/#sentat){:target="_blank"}.
+
 ## Changelog
 [View the Analytics-CSharp changelog on GitHub](https://github.com/segmentio/analytics-csharp/releases){:target="_blank"}.
 
