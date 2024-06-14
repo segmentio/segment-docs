@@ -16,3 +16,6 @@ Since forwarding happens server to server, Segment recommends creating a [HTTP T
 
 > note ""
 > Billing Note: Events forwarded to another Source count towards to your MTU counts. Blocking and discarding events does not contribute to your MTU counts.
+
+>note ""
+>disabling a source does not stop it receiving forwarded events, a source will need to be removed as a forwarded source in the original source to prevent it from receiving forwarded events
