@@ -4,7 +4,7 @@ id: GCeG0vmcDW
 beta: true
 ---
 
-[SendGrid Marketing Campaigns](https://yourintegration.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners){:target="_blank”} enables you to automatically stream your email events directly into Segment to be used inside your warehouse or other downstream destinations.
+[SendGrid Marketing Campaigns](http://twilio.com/docs/sendgrid/ui/integrations/segment?utm_source=segmentio&utm_medium=docs&utm_campaign=partners){:target="_blank”} enables you to automatically stream your email events directly into Segment to be used inside your warehouse or other downstream destinations.
 
 This is an [Event Cloud Source](/docs/sources/#event-cloud-sources) which can not only export data into your Segment warehouse, but can also federate the exported data into your other enabled Segment Destinations.
 
