@@ -23,7 +23,7 @@ Common use cases for destination filters include:
 Keep the following limitations in mind when you use destination filters:
 
 - Destination Filters aren't applied to events sent through the Event Tester.
-- Segment applies destination filters one at a time in the order that they appear in your workspace.
+- Segment applies destination filters in the following order: Sample, Drop ('Only Sends' are Drops), Drop Properties, Allow Properties
 - You can't apply destination filters to Warehouses or S3 destinations.
 - Each filter can only apply to one source-destination pair.
 - *(For device-mode)* Destination filters don't apply to items that are added to the payload server-side such as IP addresses.
