@@ -67,6 +67,13 @@ Association Label | Select an association label between both the object types. F
 
 ## FAQ and troubleshooting
 
+### Why am I receiving a, "Contact already exists" error?
+This will only apply to integrations with two mappings that could create profiles in HubSpot. 
+1. Initially, the Upsert Contact action seeks to update an existing contact.
+2. If no contact is found, a subsequent attempt is made to create a new contact, potentially leading to three separate HubSpot API requests. For instance, an 'Expired Authentication' error may occur if the token expires on the initial request, prompting a token refresh and a subsequent request.
+3. If the next error indicates 'resource not found', it means the contact wasn't located, leading to a second attempt to create the contact. However, this attempt might fail due to a 'Conflict' error, suggesting the contact already exists. This situation can arise if another mapping is activated, causing the contact to be created by the time the Upsert Contact Action attempts its final contact creation request, due to the Custom Behavioral Event Action being triggered as well.
+Consequently, this error is displayed in the event delivery tab within Segment's UI.
+
 ### How do I send other standard objects to HubSpot?
 Segment provides prebuilt mappings for contacts and companies. If there are other standard objects you would like to create records in, please use the **Create Custom Object Record** action. For example, to create a deal in HubSpot, add a mapping for Create Custom Object Record, set up your Event Trigger criteria, and input a literal string of "deals" as the Object Type. You can use the Properties object to add fields that are in the [deals object](https://developers.hubspot.com/docs/api/crm/deals){:target="_blank"}, such as `dealname` and `dealstage`. The same can be done with other object types (for example, tickets, quotes, etc). Ending fields that are to go to HubSpot outside of the properties object isn't supported. This includes sending [associations](https://developers.hubspot.com/docs/api/crm/associations){:target="_blank"}.  Please note, Segment only supports creating new records in these cases; updates to existing records are only supported for contacts and companies. 
 
