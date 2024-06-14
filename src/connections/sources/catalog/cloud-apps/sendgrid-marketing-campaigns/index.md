@@ -1,5 +1,7 @@
 ---
-title: [SendGrid Marketing Campaigns] Source
+title: SendGrid Marketing Campaigns Source
+id: GCeG0vmcDW
+beta: true
 ---
 
 [SendGrid Marketing Campaigns](https://yourintegration.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners){:target="_blank”} enables you to automatically stream your email events directly into Segment to be used inside your warehouse or other downstream destinations.
@@ -12,7 +14,7 @@ This source is maintained by SendGrid Marketing Campaigns. For any issues with t
 1. From your workspace's [Sources catalog page](https://app.segment.com/goto-my-workspace/sources/catalog){:target="_blank”} click **Add Source**.
 2. Search for "SendGrid Marketing Campaigns" in the Sources Catalog, select SendGrid Marketing Campaigns, and click **Add Source**.
 3. On the next screen, give the Source a name configure any other settings.
-   - The name is used as a label in the Segment app, and Segment creates a related schema name in your warehouse. The name can be anything, but we recommend using something that reflects the source itself and distinguishes amongst your environments (eg. SourceName_Prod, SourceName_Staging, SourceName_Dev).
+   - The name is used as a label in the Segment app, and Segment creates a related schema name in your warehouse. The name can be anything, but we recommend using something that reflects the source itself and distinguishes amongst your environments (eg. Sendgrid_Prod, Sendgrid_Staging, Sendgrid_Dev).
 4. Click **Add Source** to save your settings.
 5. Copy the Write key from the Segment UI.
 6. Log in to your SendGrid Marketing Campaigns account - navigate to Integrations > Segment -> Connect and paste the key, select the matching region and any email events you want to receive.
@@ -32,14 +34,14 @@ The table below lists events that SendGrid Marketing Campaigns sends to Segment.
 | Email Processed         | Email was sent successfully                                                                                                 |
 | Email Delivered         | Email delivered successfully                                                                                                |
 | Email Opened            | Recipient opened the email                                                                                                  |
-| Email Machine Opened    | Email was [opened anonymously](https://www.twilio.com/docs/sendgrid/for-developers/tracking-events/understanding-apple-mail-privacy-protection-and-open-events) |
-| Email Link Clicked      | Recipient clicked the [tracking link](https://www.twilio.com/docs/sendgrid/ui/account-and-settings/tracking#click-tracking) |
-| Email Dropped           | Email was [dropped by Sendgrid](https://www.twilio.com/docs/sendgrid/glossary/drops)                                        |
-| Email Bounced           | Email servers [rejected the email](https://www.twilio.com/docs/sendgrid/ui/sending-email/bounces)                           |
-| Unsubscribed            | Recipient [unsubscribed globally](https://www.twilio.com/docs/sendgrid/ui/sending-email/global-unsubscribes)                |
-| Unsubscribed From Group | Recipient [unsubscribed from a group](https://www.twilio.com/docs/sendgrid/ui/sending-email/group-unsubscribes)             |
+| Email Machine Opened    | Email was [opened anonymously](https://www.twilio.com/docs/sendgrid/for-developers/tracking-events/understanding-apple-mail-privacy-protection-and-open-events){:target="_blank”} |
+| Email Link Clicked      | Recipient clicked the [tracking link](https://www.twilio.com/docs/sendgrid/ui/account-and-settings/tracking#click-tracking){:target="_blank”} |
+| Email Dropped           | Email was [dropped by Sendgrid](https://www.twilio.com/docs/sendgrid/glossary/drops){:target="_blank”}                                        |
+| Email Bounced           | Email servers [rejected the email](https://www.twilio.com/docs/sendgrid/ui/sending-email/bounces){:target="_blank”}                           |
+| Unsubscribed            | Recipient [unsubscribed globally](https://www.twilio.com/docs/sendgrid/ui/sending-email/global-unsubscribes){:target="_blank”}                |
+| Unsubscribed From Group | Recipient [unsubscribed from a group](https://www.twilio.com/docs/sendgrid/ui/sending-email/group-unsubscribes){:target="_blank”}             |
 | Resubscribed To Group   | Recipient resubscribed to a group                                                                                           |
-| Email Marked as Spam    | Recipient [reported the email as spam](https://www.twilio.com/docs/sendgrid/ui/analytics-and-reporting/spam-reports)        |
+| Email Marked as Spam    | Recipient [reported the email as spam](https://www.twilio.com/docs/sendgrid/ui/analytics-and-reporting/spam-reports){:target="_blank”}        |
 
 ## Event Properties
 The table below list the properties included in the events listed above. Some properties are only available for Single Sends or Automations.
@@ -51,10 +53,10 @@ The table below list the properties included in the events listed above. Some pr
 | `email_type`                | "Singlesend" or "Automation"                                                                                                    |
 | `template_id`               | Email template ID                                                                                                               |
 | `email_subject`             | Subject line of the email, when available                                                                                       |
-| `test_phase`                | `true` if the Single Send is an [A/B Test](https://www.twilio.com/docs/sendgrid/ui/sending-email/a-b-testing) in the test phase |
+| `test_phase`                | `true` if the Single Send is an [A/B Test](https://www.twilio.com/docs/sendgrid/ui/sending-email/a-b-testing){:target="_blank”} in the test phase |
 | `unsubscribe_group_id`      | ID of the unsubscribe group, when available                                                                                     |
 | `link_url`                  | URL of the link clicked                                                                                                         |
-| `categories`                | [Categories](https://www.twilio.com/docs/sendgrid/for-developers/sending-email/categories) associated to the email              |
+| `categories`                | [Categories](https://www.twilio.com/docs/sendgrid/for-developers/sending-email/categories){:target="_blank”} associated to the email              |
 | `campaign_name`             | Name of the Single Send                                                                                                         |
 | `campaign_id`               | ID of the Single Send                                                                                                           |
 | `automation_name`           | Name of the Automation                                                                                                          |
