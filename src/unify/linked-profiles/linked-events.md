@@ -38,7 +38,7 @@ To use Linked Events, you'll need the following:
 > Segment stores and processes all data in the United States.
 
 > info ""
-> Profiles Sync not required for Linked Events
+> Profiles Sync isn't required for Linked Events.
 
 ### Linked Events roles
 
