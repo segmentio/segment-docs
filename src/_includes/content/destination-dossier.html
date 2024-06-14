@@ -56,7 +56,7 @@
   {% endif %}
   {% if connectionModes.cloud.web == true %}
     {% unless connectionModes.cloud.mobile == true or connectionModes.cloud.server == true or connectionModes.device.web == true or connectionModes.device.mobile == true or connectionModes.device.server == true %}
-      <li>This destination is not compatible with Destination Insert functions. For more information, see the <a href="/docs/connections/functions/insert-functions/">Destination Insert Functions documentation.</a></li>
+      <li>This destination is not compatible with <a href="/docs/connections/functions/insert-functions/">Destination Insert Functions.</a></li>
       {% endunless %}    
     {% endif %}
   {% if destinationInfo.status == "PUBLIC_BETA" %}<li>This destination is in <span class="release-pill">Beta</span></li>{% endif %}
