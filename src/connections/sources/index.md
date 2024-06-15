@@ -214,9 +214,19 @@ To create a source:
 4. Enter a name for your source as well as any information on the setup page.
 5. Click **Add Source**.
 
+Once the source has been created, the source will automatically be enabled and can begin receiving events immediately, which can be viewed in that source's [Debugger](https://segment.com/docs/connections/sources/debugger/) tab.
+> warning "Source Disabled After 14 Days Without Enabled Destinations"
+> If a source has no destinations connected or only has disabled destinations connected, then after 14 days Segment will automatically disable this source, even if the source is still receiving data. When a source becomes disabled it will also stop receiving data.
+> This event will be visible within your workspace's [Audit Trail](https://app.segment.com/goto-my-workspace/audit-trail) as `Event : Source Disabled` with the details of `Actor : Segment`.
+> Workspace's members will receive an email notification prior to the source becoming disabled in order to allow your team to take action.
+> If you would like to prevent this behavior of automatically disabling a source even when no enabled destinations are connected, pleaase fill out [this form](https://airtable.com/appADTobzkv0FYLbi/shr7V9LFDZh31cYWW).
+
 > info "One source or multiple sources?"
 > Segment suggests that you create one source for each type of data you want to collect. For example, you might have one source for all of your website tracking and a different source for any mobile tracking. Creating one source per data type provides the following benefits:
 > - Debugger ease of use - mixing libraries/sources on a single API key means you’re heavily reliant on filtering to actually test events
 > - Flexibility sending data to different projects - if you want to have different warehouse schemas, analytics projects, etc, having multiple sources would create this separation
 > - More control - as your account grows with the number of destinations you enable, having separate sources allows you to have more control
 > - A source type cannot be changed after it is created. You must create a new source if you would like to use a different source type.
+
+
+
