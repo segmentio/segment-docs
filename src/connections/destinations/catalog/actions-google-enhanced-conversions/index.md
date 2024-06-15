@@ -29,7 +29,7 @@ The Google Ads Conversions destination enables you to upload offline conversions
 
 To migrate from the legacy Upload Enhanced Conversion Action to the updated Upload Conversion Adjustment Action: 
 
-1. Navigate to the Google Ads Conversions destination in your warehouse and select the **Settings** tab. 
+1. Navigate to the Google Ads Conversions destination in your workspace and select the **Settings** tab. 
 2. On the Settings tab, enter your Conversion ID and Customer ID into the named fields. 
 2. Update the following fields for the Upload Conversion Adjustment Action mapping: 
     - Conversion Action ID
