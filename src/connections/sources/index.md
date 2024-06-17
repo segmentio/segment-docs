@@ -214,12 +214,14 @@ To create a source:
 4. Enter a name for your source as well as any information on the setup page.
 5. Click **Add Source**.
 
-Once the source has been created, the source will automatically be enabled and can begin receiving events immediately, which can be viewed in that source's [Debugger](https://segment.com/docs/connections/sources/debugger/) tab.
-> warning "Source Disabled After 14 Days Without Enabled Destinations"
-> If a source has no destinations connected or only has disabled destinations connected, then after 14 days Segment will automatically disable this source, even if the source is still receiving data. When a source becomes disabled it will also stop receiving data.
-> This event will be visible within your workspace's [Audit Trail](https://app.segment.com/goto-my-workspace/audit-trail) as `Event : Source Disabled` with the details of `Actor : Segment`.
-> Workspace's members will receive an email notification prior to the source becoming disabled in order to allow your team to take action.
-> If you would like to prevent this behavior of automatically disabling a source even when no enabled destinations are connected, pleaase fill out [this form](https://airtable.com/appADTobzkv0FYLbi/shr7V9LFDZh31cYWW).
+Once you've created a source, the source is automatically enabled and can immediately receive events. You can review your new events in that source's [Debugger](/docs/connections/sources/debugger/) tab.
+
+
+> warning "Sources not connected to an enabled destination are disabled after 14 days"
+> If your source is not connected to any destinations or is only connected to disabled destinations, Segment automatically disables this source after 14 days, even if the source is receiving events. Disabled sources will no longer receive data. 
+> You can view when Segment disables your destination in your workspace's [Audit Trail](https://app.segment.com/goto-my-workspace/audit-trail) as `Event : Source Disabled` with `Actor : Segment`.
+> Workspace members receive an email notification before Segment disables your source so that your team has time to take action.
+> If you would like to prevent this behavior in your workspace, fill out [this Airtable form](https://airtable.com/appADTobzkv0FYLbi/shr7V9LFDZh31cYWW).
 
 > info "One source or multiple sources?"
 > Segment suggests that you create one source for each type of data you want to collect. For example, you might have one source for all of your website tracking and a different source for any mobile tracking. Creating one source per data type provides the following benefits:
