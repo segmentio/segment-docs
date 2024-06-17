@@ -46,7 +46,7 @@ Before you can configure AWS PrivateLink for RDS Postgres, complete the followin
 2. Reach out to your Customer Success Manager (CSM) for more details about Segment's AWS principal.
 3. Add the Segment AWS principal as an “Allowed Principal” to consume the Network Load Balancer VPC endpoint service you created in step 1.
 4. Reach out to your CSM and provide them with the Service name for the service that you created above. Segment's engineering team provisions a VPC endpoint for the service in the Segment Edge VPC. 
-5. After creating the VPC, Segment provides you with private DNS so you can update the **Host** in your Segment app settings or create a new Redshift integration. <br> The following RDS Postgres integrations support PrivateLink: 
+5. After creating the VPC, Segment provides you with private DNS so you can update the **Host** in your Segment app settings or create a new Postgres integration. <br> The following RDS Postgres integrations support PrivateLink: 
   - [RDS Postgres storage destination](/docs/connections/storage/catalog/postgres/)
   - [RDS Postgres Reverse ETL source](/docs/connections/reverse-etl/reverse-etl-source-setup-guides/postgres-setup/)
 
@@ -55,13 +55,13 @@ Before you can configure AWS PrivateLink for RDS Postgres, complete the followin
 ### Prerequisites
 - **You're using the RA3 node type**: To access Segment's PrivateLink integration, use an RA3 instance.
 - **You've enabled cluster relocation**: Cluster relocation migrates your cluster behind a proxy and keeps the cluster endpoint unchanged, even if your cluster needs to be migrated to a new Availability Zone. A consistent cluster endpoint makes it possible for Segment's Edge account and VPC to remain connected to your cluster. To enable cluster relocation, follow the instructions in the AWS [Relocating your cluster](https://docs.aws.amazon.com/redshift/latest/mgmt/managing-cluster-recovery.html){:target="_blank”} documentation. 
-- **Your warehouse is using port range 5431-5455 and 8191-8215**: Clusters with cluster relocation enabled [might encounter an error if updated to include a port outside of this range](https://docs.aws.amazon.com/redshift/latest/mgmt/managing-cluster-recovery.html#:~:text=You%20can%20change%20to%20another%20port%20from%20the%20port%20range%20of%205431%2D5455%20or%208191%2D8215.%20(Don%27t%20change%20to%20a%20port%20outside%20the%20ranges.%20It%20results%20in%20an%20error.)){:target="_blank”}.
+- **Your cluster is using a port within the ranges 5431-5455 or 8191-8215**: Clusters with cluster relocation enabled [might encounter an error if updated to include a port outside of this range](https://docs.aws.amazon.com/redshift/latest/mgmt/managing-cluster-recovery.html#:~:text=You%20can%20change%20to%20another%20port%20from%20the%20port%20range%20of%205431%2D5455%20or%208191%2D8215.%20(Don%27t%20change%20to%20a%20port%20outside%20the%20ranges.%20It%20results%20in%20an%20error.)){:target="_blank”}.
 
 ### Configure PrivateLink for Redshift
 Implement Segment's PrivateLink integration by taking the following steps:
 1. Let your Customer Success Manager (CSM) know that you're interested in PrivateLink. They will share information with you about Segment’s Edge account and VPC.
 2. After you receive the Edge account and VPC, [grant cluster access to Segment's Edge account and VPC](https://docs.aws.amazon.com/redshift/latest/gsg/rs-gsg-connect-to-cluster.html){:target="_blank”}.
-3. Reach back out to your CSM and provide them with the Cluster identifier for your cluster and your and AWS account ID. 
+3. Reach back out to your CSM and provide them with the Cluster identifier for your cluster and your AWS account ID. 
 4. Segment creates a Redshift managed VPC endpoint within the Segment Redshift subnet on your behalf, which creates a PrivateLink Endpoint URL. Segment then provides you with the internal PrivateLink Endpoint URL. 
 5. After Segment provides you with the URL, use it to update or create new Redshift integrations. The following integrations support PrivateLink: 
   - [Redshift storage destination](/docs/connections/storage/catalog/redshift/)
