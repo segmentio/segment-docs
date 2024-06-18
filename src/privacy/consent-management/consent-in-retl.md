@@ -1,7 +1,6 @@
 ---
 title: Consent in Reverse ETL
 plan: consent-management
-hidden: true
 ---
 
 With Consent Management in Reverse ETL, you can enforce your end-users' consent preferences that are captured by your consent management platform (CMP) and stored in your warehouse. 
