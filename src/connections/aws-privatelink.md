@@ -1,6 +1,5 @@
 ---
 title: Amazon Web Services PrivateLink
-hidden: true
 ---
 
 [Amazon Web Services' PrivateLink](https://aws.amazon.com/privatelink/){:target="_blank”} is an AWS service that provides private connectivity between VPCs without exposing traffic to the public Internet. Keeping traffic in the Amazon network reduces the data security risk associated with exposing your Warehouse traffic to the Internet.
