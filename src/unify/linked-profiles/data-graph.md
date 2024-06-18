@@ -14,7 +14,7 @@ Segment's Data Graph powers [Linked Events](/docs/unify/linked-profiles/linked-e
 
 To help you get started with the Data Graph, [view this short setup demo](https://drive.google.com/file/d/1oZNvs0raYaxK6tds3OEF0Ri3NGVCoXys/view?pli=1){:target="_blank"}.
 
-> > info ""
+> info ""
 > Linked Profiles follows zero-copy principles, and doesn't copy entities to store in Segment. Segment stores and processes all data in the United States. 
 
 > warning ""
@@ -25,8 +25,11 @@ To help you get started with the Data Graph, [view this short setup demo](https:
 To use the Data Graph, you'll need the following:
 
 - A supported data warehouse. 
-- [Profiles Sync](/docs/unify/profiles-sync/) set up with ready-to-use [data models and tables](/docs/unify/profiles-sync/tables/) in your warehouse.
+- (If setting up Linked Audiences) [Profiles Sync](/docs/unify/profiles-sync/) set up with ready-to-use [data models and tables](/docs/unify/profiles-sync/tables/) in your warehouse.
 - Workspace Owner or Unify Read-only/Admin and Entities Admin permissions.
+
+> info ""
+> Profiles Sync is not required for Linked Events
 
 ## Step 1: Set up required permissions in your data warehouse
 

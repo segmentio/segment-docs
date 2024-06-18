@@ -47,7 +47,7 @@ To sync an Engage audience with your Listrak (Actions) destination:
 17. Go to the **Settings** tab for the destination and **Enable** the destination. Click **Save Changes**.
 18. Select the Engage space and navigate to **Engage > Audiences**. Select the source audience to send to the Listrak destination.
 19. Click **Add Destination** and select the Listrak Audience destination. 
-20. In the settings that appear on the right-hand side, toggle the **Send Track** option on and disable **Send Identify**.
+20. In the connection settings that appear on the right-hand side, ensure that the toggle to **Send Track** events is _enabled_, and the toggle to **Send Identify** events is _disabled_.
 21. Click **Save**.
 22. To filter email sends in Listrak using the new audience profile field, see the [help article](https://help.listrak.com/en/articles/3951597-introduction-to-building-filter-2-0-segments){:target="_blank”}.
 23. Repeat steps 1 through 21, if you want to sync another audience.
