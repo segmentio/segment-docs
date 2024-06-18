@@ -13,6 +13,6 @@ This destination is maintained by Jimo. For any issues with the destination, [co
 2. Select Jimo and click **Add Destination**.
 3. Select an existing Source to connect to Jimo (Actions).
 4. Open your [Jimo dashboard](https://i.usejimo.com/settings/general){:target="_blank"}, find and copy your **project id**.
-5. Enter the **project id** in the Jimo destination settings in Segment.
+5. Return to Segment and open the destination settings for the Jimo (Actions) destination that you just created. Enter your Jimo **project id**.
 
 {% include components/actions-fields.html %}
