@@ -3,7 +3,7 @@ title: Jimo Destination
 ---
 {% include content/plan-grid.md name="actions" %}
 
-[Jimo](https://usejimo.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners){:target="_blank”} helps you to publish personalized product experiences to elevate adoption and user engagement without code as a layer on top of your app
+[Jimo](https://usejimo.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners){:target="_blank”} helps you to publish personalized product experiences to elevate adoption and user engagement without code as a layer on top of your app.
 
 This destination is maintained by Jimo. For any issues with the destination, [contact their Support team](mailto:support@usejimo.com).
 
