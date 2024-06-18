@@ -38,10 +38,8 @@ To verify that your Service Principal has "Can use" permission, see the [Confirm
   2. Select the “Permissions” tab and click **Add Permissions**. 
   3. Add the newly created Service Principal user and click **Save**. 
 
-#### Create a new warehouse
-1. Log into your workspace as an Admin in the Databricks UI.
-2. Navigate to SQL Warehouses and click **Create SQL Warehouse**. 
-3. Enter a name for your warehouse, select a cluster size, and click **Create**. 
+> success ""
+> If you already have a warehouse you'd like to use, you can [Add your Service Principal User to Warehouse User Lists](#add-your-service-principal-user-to-warehouse-user-lists). If you need to create a new warehouse, see the [Create a new warehouse](#create-a-new-warehouse) documentation. 
 
 #### Add your Service Principal User to Warehouse User Lists 
 1. Log into the Databricks UI as an Admin.
@@ -145,6 +143,11 @@ Segment requires the following settings to connect to your Databricks warehouse.
 After identifying the following settings, continue setting up your Data Graph by following the instructions in [Connect your warehouse to the Data Graph](/docs/unify/linked-profiles/data-graph/#step-2-connect-your-warehouse-to-the-data-graph). 
 
 ## Additional set up for warehouse permissions
+
+#### Create a new warehouse
+1. Log into your workspace as an Admin in the Databricks UI.
+2. Navigate to SQL Warehouses and click **Create SQL Warehouse**. 
+3. Enter a name for your warehouse, select a cluster size, and click **Create**. 
 
 ### Update user access for Segment Reverse ETL catalog
 Run the following SQL if you run into an error on the Segment app indicating that the user doesn’t have sufficient privileges on an existing `_segment_reverse_etl` schema.
