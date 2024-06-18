@@ -284,6 +284,8 @@ sections:
     title: Integration Error Codes
   - path: /connections/rate-limits
     title: Rate Limits
+  - path: /connections/aws-privatelink
+    title: AWS PrivateLink Integration
 - section_title: Unify
   section:
   - path: /unify
