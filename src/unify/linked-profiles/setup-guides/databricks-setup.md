@@ -8,14 +8,14 @@ hidden: true
 > info "Linked Events is in private beta"
 > Linked Events is in private beta, and Segment is actively working on this feature. Some functionality may change before it becomes generally available. 
 
-On this page, you'll learn how to connect your Databricks data warehouse to Segment. 
+On this page, you'll learn how to connect your Databricks data warehouse to your Segment Data Graph. 
 
 > info ""
 > At this time, you can only use Databricks with Linked Audiences.
 
 ## Set up Databricks credentials
 
-Sign into Databricks with admin permissions to provide Segment's Data Graph with the necessary permissions. 
+Sign into Databricks with admin permissions to create new resources and provide Data Graph with the necessary permissions. 
 
 Segment assumes that you already have a workspace that includes the datasets you'd like to use for the Data Graph. Segment recommends setting up a new Service Principal user with only the permissions to access the required catalogs and schemas.
 
@@ -120,7 +120,7 @@ GRANT SELECT ON TABLE `${table_2}` TO `${client_id}`;
 
 ### Step 5: Validate the permissions of your Service Principal user
 
-Sign into the Databricks CLI with your Client ID secret and run the following SQL to verify the Service Principal user has the correct permissions for a given table. 
+Sign into the [Databricks CLI with your Client ID secret](https://docs.databricks.com/en/dev-tools/cli/authentication.html#oauth-machine-to-machine-m2m-authentication){:target="_blank”} and run the following SQL to verify the Service Principal user has the correct permissions for a given table. 
 
 > success ""
 > If this command succeeds, you can view the table. 
@@ -155,4 +155,3 @@ If Segment Reverse ETL has ever run in the catalog you are configuring as the Se
 ```sql
 GRANT ALL PRIVILEGES ON SCHEMA ${segment_internal_catalog}.__segment_reverse_etl TO `${client_id}`;
 ```
-
