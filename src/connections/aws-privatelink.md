@@ -18,7 +18,7 @@ During the Private Beta, you can set up AWS PrivateLink for [Databricks](#databr
 ### Prerequisites
 Before you can configure AWS PrivateLink for Databricks, complete the following prerequisites in your Databricks workspace:
 - Databricks account must be on the [Enterprise pricing tier](https://www.databricks.com/product/pricing/platform-addons){:target="_blank”} and use the [E2 version](https://docs.databricks.com/en/archive/aws/end-of-life-legacy-workspaces.html#e2-architecture){:target="_blank”} of the platform. 
-- Databricks workspace must use a [Customer-managed VPC](https://docs.databricks.com/en/security/network/classic/customer-managed-vpc.html){:target="_blank”} and [Secure cluster connectivity.](https://docs.databricks.com/en/security/network/classic/secure-cluster-connectivity.html){:target="_blank”}
+- Databricks workspace must use a [Customer-managed VPC](https://docs.databricks.com/en/security/network/classic/customer-managed-vpc.html){:target="_blank”} and [Secure cluster connectivity](https://docs.databricks.com/en/security/network/classic/secure-cluster-connectivity.html){:target="_blank”}.
   - Configure your [VPC](https://docs.databricks.com/en/security/network/classic/customer-managed-vpc.html){:target="_blank”} with DNS hostnames and DNS resolution
   - Configure a [security group](https://docs.databricks.com/en/security/network/classic/customer-managed-vpc.html#security-groups){:target="_blank”} with bidirectional access to 0.0.0/0 and ports 443, 3306, 6666, 2443, and 8443-8451. 
 
