@@ -155,3 +155,4 @@ If Segment Reverse ETL has ever run in the catalog you are configuring as the Se
 ```sql
 GRANT ALL PRIVILEGES ON SCHEMA ${segment_internal_catalog}.__segment_reverse_etl TO `${client_id}`;
 ```
+
