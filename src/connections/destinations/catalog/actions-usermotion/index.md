@@ -12,8 +12,8 @@ This destination is maintained by UserMotion. For any issues with the destinatio
 
 ## Getting started
 
-1. From your workspace's [Destination catalog page](https://app.segment.com/goto-my-workspace/destinations/catalog){:target="\_blank”} search for "UserMotion".
-2. Select UserMotion and click **Add Destination**.
+1. From your workspace's [Destination catalog page](https://app.segment.com/goto-my-workspace/destinations/catalog){:target="\_blank”} search for "UserMotion (Actions)".
+2. Select UserMotion (Actions) and click **Add Destination**.
 3. Select an existing Source to connect to UserMotion (Actions).
 4. Go to the [UserMotion dashboard](https://app.usermotion.com/?returnPath=/settings/integrations?provider=api){:target="\_blank"}, find and copy the **API key**.
 5. Enter the **API Key** in the UserMotion destination settings in Segment.
