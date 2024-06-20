@@ -26,7 +26,7 @@ Segment recommends that you set up a new Service Principal user. If you already 
 If you want to create a new Service Principal user, complete the following substeps: 
 
 #### Substep 1: Create a new Service Principal user
-1. Log into the Databricks UI as an Admin.
+1. Log in to the Databricks UI as an Admin.
 2. Click **User Management**. 
 3. Select the **Service principals** tab. 
 4. Click **Add Service Principal**.
@@ -41,7 +41,7 @@ If you want to create a new Service Principal user, complete the following subst
 > If you already have a warehouse you'd like to use, you can move on to the next substep, [Substep 2: Add your Service Principal user to Warehouse User Lists](#substep-2-add-your-service-principal-user-to-warehouse-user-lists). If you need to create a new warehouse first, see the [Create a new warehouse](#create-a-new-warehouse) before completing the next substep. 
 
 #### Substep 2: Add your Service Principal user to Warehouse User Lists 
-1. Log into the Databricks UI as an Admin.
+1. Log in to the Databricks UI as an Admin.
 2. Navigate to SQL Warehouses. 
 3. Select your warehouse and click **Permissions**. 
 4. Add the Service Principal user and grant them “Can use” access. 
@@ -62,7 +62,7 @@ To confirm that your Service Principal user has "Can use" permission:
  
 Segment requires write access to a catalog to create a schema for internal bookkeeping, and to store checkpoint tables for the queries that are executed. 
 
-Segment recommends creating an empty catalog for this purpose by running the SQL below. This is also the catalog that you'll be required to specify when setting up your Databricks integration in the Segment app. 
+Segment recommends creating an empty catalog for this purpose by running the following SQL. This is also the catalog that you'll be required to specify when setting up your Databricks integration in the Segment app. 
 
 ```sql
 CREATE CATALOG IF NOT EXISTS `SEGMENT_LINKED_PROFILES_DB`;
@@ -74,17 +74,17 @@ GRANT SELECT ON CATALOG `SEGMENT_LINKED_PROFILES_DB` TO `${client_id}`;
 
 ### Step 3: Grant read-only access to the Profiles Sync catalog
 
-Run the SQL below to grant the Data Graph read-only access to the Profiles Sync catalog:
+Run the following SQL to grant the Data Graph read-only access to the Profiles Sync catalog:
 
 ```sql
 GRANT USAGE, SELECT, USE SCHEMA ON CATALOG `${profiles_sync_catalog}` TO `${client_id}`;
 ```
 
 ### Step 4: Grant read-only access to additional catalogs for the Data Graph
-Run the SQL below to grant your Service Principal user read-only access to any additional catalogs you want to use for the Data Graph: 
+Run the following SQL to grant your Service Principal user read-only access to any additional catalogs you want to use for the Data Graph: 
 
 ```sql 
--- Run the SQL below for each catalog you want to use for the Segment Data Graph
+-- Run this command for each catalog you want to use for the Segment Data Graph
 GRANT USAGE, SELECT, USE SCHEMA ON CATALOG `${catalog}` TO `${client_id}`;
 ```
 
@@ -144,7 +144,7 @@ After identifying the following settings, continue setting up the Data Graph by 
 ## Additional set up for warehouse permissions
 
 #### Create a new warehouse
-1. Log into your workspace as an Admin in the Databricks UI.
+1. Log in to your workspace as an Admin in the Databricks UI.
 2. Navigate to SQL Warehouses and click **Create SQL Warehouse**. 
 3. Enter a name for your warehouse, select a cluster size, and click **Create**. 
 
