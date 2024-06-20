@@ -26,6 +26,9 @@ To configure Klaviyo as an Event Source to get data into your warehouse or other
 
 ## Migrate to the Klaviyo (Actions) destination
 
+> info ""
+> Klaviyo Classic destination in Web Device Mode configuration is not deprecating so **no action is required**. This migration applies only to Klaviyo Classic using Cloud Mode.
+
 Starting on June 20th, 2024, Segment will automatically migrate all classic Klaviyo destinations to the new Klaviyo (Actions) destination. Migrated Klaviyo (Actions) destinations will have the same name as your classic destination, with "Migrated" appended.
 
 For example, if you named your classic destination "Email Marketing Campaigns", Segment would name your migrated destination "Email Marketing Campaigns Migrated". 
