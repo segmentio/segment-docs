@@ -2,6 +2,20 @@
 title: Email Template
 plan: engage-premier
 ---
+> info ""
+> Engage Premier entered an End of Sale (EOS) period effective  June 10, 2024. Existing Segment customers will continue to have access and support to Engage Premier until an end-of-life (EOL) date is announced. We recommend exploring the following pages in preparation of a migration or future MCM needs:
+> 
+>[Twilio Marketing Campaigns](https://www.twilio.com/en-us/sendgrid/marketing-campaigns)
+>
+>Preferred ISV Partners
+>
+>[Airship Blog](https://www.twilio.com/en-us/blog/airship-integrated-customer-experience)
+>[Bloomreach Blog](https://www.twilio.com/en-us/blog/bloomreach-ecommerce-personalization)
+>[Braze Blog](https://www.twilio.com/en-us/blog/braze-conversational-marketing-campaigns)
+>[Insider Blog](https://www.twilio.com/en-us/blog/insider-cross-channel-customer-experience)
+>[Klaviyo Blog](https://www.twilio.com/en-us/blog/klaviyo-powering-smarter-digital-relationships)
+>[Twilio Engage Foundations Documentation](https://segment.com/docs/engage/quickstart/)
+
 Use Twilio Engage to build personalized email templates to store and use throughout marketing campaigns.  
 
 Build an email template from scratch using the [Drag and Drop Editor](/docs/engage/content/email/editor/) or the [HTML Editor](/docs/engage/content/email/html-editor/). Include [personalized content](#personalize-with-merge-tags) in the subject line, preview text, and email body to engage with users based on their profile traits and actions.

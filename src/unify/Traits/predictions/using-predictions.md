@@ -94,7 +94,7 @@ The Prediction Quality Score factors AUC, log loss, and lift quality to determin
 
 #### How do you store trait values? 
 
-The created trait value represents the user's percentile cohort. This value refreshes every seven days. If you see `0.85` on a user's profile, this means the user is in the 85th percentile, or the top 15% for the prediction.
+The created trait value represents the user's percentile cohort. This value will refresh when we re score the customers based on your refresh cadence. If you see `0.85` on a user's profile, this means the user is in the 85th percentile, or the top 15% for the prediction.
 
 #### How frequently do you re-train the model? 
 
@@ -102,7 +102,7 @@ Segment rebuilds the machine learning model every 30 days.
 
 #### How frequently do you update trait values? 
 
-Every seven days.
+By default, Segment refreshes scores every 7 days. However, you can request that trait values update daily. Reach out to your CSM to determine your eligibility.
 
 #### Can I update Predictive Traits and Predictive Audiences?
 
@@ -114,15 +114,15 @@ You get five predictions as part of Engage Foundations or Unify Plus. To purchas
 
 Predictive Audiences contribute to the Engage limit of 100 audiences. Whether you create the audience manually or with predictive modeling, the audience counts towards the 100-audience limit.
 
-#### Is Predictions HIPAA-compliant?
+#### Is Predictions HIPAA eligible?
 
-No, Predictions isn't HIPAA-compliant. Avoid using Predictions for health and life science applications.
+Yes.
 
 #### Are there any known Predictions limitations? 
 
 Yes. Keep the following in mind when you work with Predictions:
 
 - **Predictions made for more than 100 million users will fail.** Segment recommends making predictions only for non-anonymous users, or, as an alternative, use the Starting Cohort to narrow down the audience for which you want to make a prediction.
-- **Predictions may not work as intended if you track more than a thousand unique events in your workspace.** If this applies to your use case, [contact Segment Support](https://segment.com/help/contact/){:target="_blank"} for help with removing unused events, which will allow you to create predictions.
+- **Predictions will not work as intended if you track more than 5,000 unique events in your workspace.** If this applies to your use case, [contact Segment Support](https://segment.com/help/contact/){:target="_blank"} for help with removing unused events, which will allow you to create predictions.
 - **Prediction is failing with error "We weren't able to create this prediction because your requested prediction event is not being tracked anymore. Please choose a different prediction event and try again."** Predictions are computed based on the available data and the conditions specified for the trait. A gap in tracking events for seven continuous days could potentially affect the computation of the prediction.
 Nevertheless, once data tracking resumes and there is enough data, the prediction should be recomputed.

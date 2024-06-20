@@ -284,6 +284,8 @@ sections:
     title: Integration Error Codes
   - path: /connections/rate-limits
     title: Rate Limits
+  - path: /connections/aws-privatelink
+    title: AWS PrivateLink Integration
 - section_title: Unify
   section:
   - path: /unify
@@ -515,9 +517,11 @@ sections:
       title: Consent in Segment Connections
     - path: /privacy/consent-management/configure-consent-management
       title: Configure Consent Management
-    - path: /privacy/consent-management/consent-in-unify/
+    - path: /privacy/consent-management/consent-in-unify
       title: Consent in Unify
-    - path: /privacy/consent-management/consent-faq/
+    - path: /privacy/consent-management/consent-in-retl
+      title: Consent in Reverse ETL
+    - path: /privacy/consent-management/consent-faq
       title: Consent FAQs
   - path: /privacy/account-deletion
     title: Account & Data Deletion
@@ -596,6 +600,15 @@ sections:
       title: System for Cross-domain Identity Management (SCIM) Configuration Guide
     - path: /segment-app/iam/mfa
       title: Multi-Factor Authentication (MFA)
+  - section_title: Extensions
+    slug: segment-app/extensions
+    section:
+    - path: /segment-app/extensions
+      title: Extensions Overview
+    - path: /segment-app/extensions/dbt
+      title: dbt
+    - path: /segment-app/extensions/git
+      title: Git
   - path: /segment-app/iam/secure-password
     title: Picking a Secure Password
   - path: /segment-app/set-up-envs

@@ -121,13 +121,11 @@ You can manually change the Data Processing parameters by adding settings to the
 ## Troubleshooting
 
 ### Not seeing events?
-
-You will have to be sure that the [IDFA](/docs/connections/sources/catalog/libraries/mobile/ios/#idfa) is working within your app, which involves adding the [iAD framework](/docs/connections/sources/catalog/libraries/mobile/ios/#idfa).
+You will have to be sure that the [IDFA](/docs/connections/sources/catalog/libraries/mobile/ios/#idfa) is working within your app, which involves adding the [AdSupport and App Tracking Transparency frameworks](https://segment.com/docs/connections/sources/catalog/libraries/mobile/ios/#ad-tracking-and-idfa).
 
 Once you've added these, you will start to see the `context.device.advertisingId` populate and the `context.device.adTrackingEnabled` flag set to `true` unless the user has ad tracking limited or is using a mobile ad blocker.
 
-> note ""
-> While the network is deprecated, the relevant iOS [framework](https://developer.apple.com/reference/iad) is not.
+
 
 Facebook requires that payloads include the following:
 - `context.device.id`

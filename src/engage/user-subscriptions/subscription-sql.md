@@ -3,6 +3,19 @@ title: Subscriptions with SQL Traits
 plan: engage-premier
 beta: true
 ---
+> info ""
+> Engage Premier entered an End of Sale (EOS) period effective  June 10, 2024. Existing Segment customers will continue to have access and support to Engage Premier until an end-of-life (EOL) date is announced. We recommend exploring the following pages in preparation of a migration or future MCM needs:
+> 
+>[Twilio Marketing Campaigns](https://www.twilio.com/en-us/sendgrid/marketing-campaigns)
+>
+>Preferred ISV Partners
+>
+>[Airship Blog](https://www.twilio.com/en-us/blog/airship-integrated-customer-experience)
+>[Bloomreach Blog](https://www.twilio.com/en-us/blog/bloomreach-ecommerce-personalization)
+>[Braze Blog](https://www.twilio.com/en-us/blog/braze-conversational-marketing-campaigns)
+>[Insider Blog](https://www.twilio.com/en-us/blog/insider-cross-channel-customer-experience)
+>[Klaviyo Blog](https://www.twilio.com/en-us/blog/klaviyo-powering-smarter-digital-relationships)
+>[Twilio Engage Foundations Documentation](https://segment.com/docs/engage/quickstart/)
 
 Use Subscriptions with SQL Traits to connect to your data warehouse and query user subscription data to Engage on a scheduled basis. Use your data warehouse as a single source of truth for subscription statuses and query from warehouses such as BigQuery, Redshift, or Snowflake.
 
