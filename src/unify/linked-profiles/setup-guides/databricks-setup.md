@@ -12,7 +12,7 @@ On this page, you'll learn how to connect your Databricks data warehouse to the 
 
 ## Set up Databricks credentials
 
-Sign into Databricks with admin permissions to create new resources and provide the Data Graph with the necessary permissions. 
+Sign in to Databricks with admin permissions to create new resources and provide the Data Graph with the necessary permissions. 
 
 Segment assumes that you already have a workspace that includes the datasets you'd like to use for the Data Graph. Segment recommends setting up a new Service Principal user with only the permissions to access the required catalogs and schemas.
 
@@ -23,7 +23,7 @@ Segment recommends that you set up a new Service Principal user. If you already 
 If you want to create a new Service Principal user, complete the following substeps: 
 
 #### Substep 1: Create a new Service Principal user
-1. Log into the Databricks UI as an Admin.
+1. Log in to the Databricks UI as an Admin.
 2. Click **User Management**. 
 3. Select the **Service principals** tab. 
 4. Click **Add Service Principal**.
@@ -38,7 +38,7 @@ If you want to create a new Service Principal user, complete the following subst
 > If you already have a warehouse you'd like to use, you can move on to the next substep, [Substep 2: Add your Service Principal user to Warehouse User Lists](#substep-2-add-your-service-principal-user-to-warehouse-user-lists). If you need to create a new warehouse first, see the [Create a new warehouse](#create-a-new-warehouse) before completing the next substep. 
 
 #### Substep 2: Add your Service Principal user to Warehouse User Lists 
-1. Log into the Databricks UI as an Admin.
+1. Log in to the Databricks UI as an Admin.
 2. Navigate to SQL Warehouses. 
 3. Select your warehouse and click **Permissions**. 
 4. Add the Service Principal user and grant them “Can use” access. 
@@ -59,7 +59,7 @@ To confirm that your Service Principal user has "Can use" permission:
  
 Segment requires write access to a catalog to create a schema for internal bookkeeping, and to store checkpoint tables for the queries that are executed. 
 
-Segment recommends creating an empty catalog for this purpose by running the SQL below. This is also the catalog that you'll be required to specify when setting up your Databricks integration in the Segment app. 
+Segment recommends creating an empty catalog for this purpose by running the following SQL. This is also the catalog that you'll be required to specify when setting up your Databricks integration in the Segment app. 
 
 ```sql
 CREATE CATALOG IF NOT EXISTS `SEGMENT_LINKED_PROFILES_DB`;
@@ -71,17 +71,17 @@ GRANT SELECT ON CATALOG `SEGMENT_LINKED_PROFILES_DB` TO `${client_id}`;
 
 ### Step 3: Grant read-only access to the Profiles Sync catalog
 
-Run the SQL below to grant the Data Graph read-only access to the Profiles Sync catalog:
+Run the following SQL to grant the Data Graph read-only access to the Profiles Sync catalog:
 
 ```sql
 GRANT USAGE, SELECT, USE SCHEMA ON CATALOG `${profiles_sync_catalog}` TO `${client_id}`;
 ```
 
 ### Step 4: Grant read-only access to additional catalogs for the Data Graph
-Run the SQL below to grant your Service Principal user read-only access to any additional catalogs you want to use for the Data Graph: 
+Run the following SQL to grant your Service Principal user read-only access to any additional catalogs you want to use for the Data Graph: 
 
 ```sql 
--- Run the SQL below for each catalog you want to use for the Segment Data Graph
+-- Run this command for each catalog you want to use for the Segment Data Graph
 GRANT USAGE, SELECT, USE SCHEMA ON CATALOG `${catalog}` TO `${client_id}`;
 ```
 
@@ -114,7 +114,7 @@ GRANT SELECT ON TABLE `${table_2}` TO `${client_id}`;
 
 ### Step 5: Validate the permissions of your Service Principal user
 
-Sign into the [Databricks CLI with your Client ID secret](https://docs.databricks.com/en/dev-tools/cli/authentication.html#oauth-machine-to-machine-m2m-authentication){:target="_blank”} and run the following SQL to verify the Service Principal user has the correct permissions for a given table. 
+Sign in to the [Databricks CLI with your Client ID secret](https://docs.databricks.com/en/dev-tools/cli/authentication.html#oauth-machine-to-machine-m2m-authentication){:target="_blank”} and run the following SQL to verify the Service Principal user has the correct permissions for a given table. 
 
 > success ""
 > If this command succeeds, you can view the table. 
@@ -139,6 +139,11 @@ Segment requires the following settings to connect to your Databricks warehouse.
 After identifying the following settings, continue setting up the Data Graph by following the instructions in [Connect your warehouse to the Data Graph](/docs/unify/linked-profiles/data-graph/#step-2-connect-your-warehouse-to-the-data-graph). 
 
 ## Additional set up for warehouse permissions
+
+#### Create a new warehouse
+1. Log in to your workspace as an Admin in the Databricks UI.
+2. Navigate to SQL Warehouses and click **Create SQL Warehouse**. 
+3. Enter a name for your warehouse, select a cluster size, and click **Create**. 
 
 ### Update user access for Segment Reverse ETL catalog
 Run the following SQL if you run into an error on the Segment app indicating that the user doesn’t have sufficient privileges on an existing `_segment_reverse_etl` schema.
