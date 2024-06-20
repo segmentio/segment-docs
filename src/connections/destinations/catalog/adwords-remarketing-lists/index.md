@@ -66,7 +66,7 @@ When you create an audience in Engage and connect it to Google Ads Remarketing L
 
 1. Creates a Google Ads User List (Customer List) with the name you entered in Engage.
 2. Adds any users that fit the audience definition based on email or mobile ID (IDFA). Google uses these identifiers to match users in your list to users in the Google system who can be served ads.
-3. Every hour, Segment either adds or removes users from this audience based on the same identifiers.
+3. Either adds or removes users from this audience based on the same identifiers.
 
 ## Set up
 
