@@ -15,7 +15,7 @@ On this page, you'll learn how to connect your Databricks data warehouse to the 
 
 ## Set up Databricks credentials
 
-Sign into Databricks with admin permissions to create new resources and provide the Data Graph with the necessary permissions. 
+Sign in to Databricks with admin permissions to create new resources and provide the Data Graph with the necessary permissions. 
 
 Segment assumes that you already have a workspace that includes the datasets you'd like to use for the Data Graph. Segment recommends setting up a new Service Principal user with only the permissions to access the required catalogs and schemas.
 
@@ -117,7 +117,7 @@ GRANT SELECT ON TABLE `${table_2}` TO `${client_id}`;
 
 ### Step 5: Validate the permissions of your Service Principal user
 
-Sign into the [Databricks CLI with your Client ID secret](https://docs.databricks.com/en/dev-tools/cli/authentication.html#oauth-machine-to-machine-m2m-authentication){:target="_blank”} and run the following SQL to verify the Service Principal user has the correct permissions for a given table. 
+Sign in to the [Databricks CLI with your Client ID secret](https://docs.databricks.com/en/dev-tools/cli/authentication.html#oauth-machine-to-machine-m2m-authentication){:target="_blank”} and run the following SQL to verify the Service Principal user has the correct permissions for a given table. 
 
 > success ""
 > If this command succeeds, you can view the table. 
