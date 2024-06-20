@@ -10,16 +10,13 @@ hidden: true
 
 On this page, you'll learn how to connect your Databricks data warehouse to the Segment Data Graph. 
 
-> info ""
-> At this time, you can only use Databricks with Linked Audiences.
-
 ## Set up Databricks credentials
 
 Sign into Databricks with admin permissions to create new resources and provide the Data Graph with the necessary permissions. 
 
 Segment assumes that you already have a workspace that includes the datasets you'd like to use for the Data Graph. Segment recommends setting up a new Service Principal user with only the permissions to access the required catalogs and schemas.
 
-### Step 1: Set up a Service Principal user and SQL Warehouse 
+### Step 1: Set up a Service Principal user
 
 Segment recommends that you set up a new Service Principal user. If you already have a Service Principal user you'd like to use, grant it "Can use" permissions for your data warehouse and proceed to [Step 2: Create a catalog for Segment to store checkpoint tables](#step-2-create-a-catalog-for-segment-to-store-checkpoint-tables). 
 
@@ -143,14 +140,8 @@ After identifying the following settings, continue setting up the Data Graph by 
 
 ## Additional set up for warehouse permissions
 
-#### Create a new warehouse
-1. Log into your workspace as an Admin in the Databricks UI.
-2. Navigate to SQL Warehouses and click **Create SQL Warehouse**. 
-3. Enter a name for your warehouse, select a cluster size, and click **Create**. 
-
 ### Update user access for Segment Reverse ETL catalog
 Run the following SQL if you run into an error on the Segment app indicating that the user doesn’t have sufficient privileges on an existing `_segment_reverse_etl` schema.
-
 
 If Segment Reverse ETL has ever run in the catalog you are configuring as the Segment connection catalog, a Segment-managed schema is already created and you need to provide the new Segment user access to the existing schema. Update the Databricks table permissions by running the following SQL:
 
