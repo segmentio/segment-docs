@@ -1097,6 +1097,15 @@ sources:
     endpoints:
       - us
       - eu
+  - id: q4JbVJwmrg
+    display_name: Yotpo
+    hidden: false
+    slug: yotpo
+    url: connections/sources/catalog/cloud-apps/yotpo
+    regions:
+      - us
+    endpoints:
+      - us
   - id: 117eYCe9jH
     display_name: Youbora
     hidden: true
