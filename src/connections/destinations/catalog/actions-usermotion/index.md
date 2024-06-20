@@ -4,7 +4,7 @@ title: UserMotion (Actions) Destination
 
 {% include content/plan-grid.md name="actions" %}
 
-[UserMotion](https://usermotion.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners){:target="\_blank”} is AI-powered predictive lead scoring software discovers intention signals and scores leads on potential to buy, expand, or churn.
+[UserMotion](https://usermotion.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners){:target="\_blank”} is AI-powered predictive lead scoring software that discovers intention signals and scores leads on potential to buy, expand, or churn.
 
 This destination is maintained by UserMotion. For any issues with the destination, [contact their Support team](mailto:support@usermotion.com).
 
