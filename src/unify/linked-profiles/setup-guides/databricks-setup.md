@@ -140,11 +140,6 @@ After identifying the following settings, continue setting up the Data Graph by 
 
 ## Additional set up for warehouse permissions
 
-#### Create a new warehouse
-1. Log in to your workspace as an Admin in the Databricks UI.
-2. Navigate to SQL Warehouses and click **Create SQL Warehouse**. 
-3. Enter a name for your warehouse, select a cluster size, and click **Create**. 
-
 ### Update user access for Segment Reverse ETL catalog
 Run the following SQL if you run into an error on the Segment app indicating that the user doesn’t have sufficient privileges on an existing `_segment_reverse_etl` schema.
 
