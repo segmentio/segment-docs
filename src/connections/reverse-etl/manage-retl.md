@@ -3,7 +3,28 @@ title: Manage Reverse ETL Syncs
 beta: false
 ---
 
-View your sync history, gain insights into sync statuses, and restart or replay failed or partially successful syncs.
+View overview information about your syncs with [Sync overview](#sync-overview), see more granular information about your sync history with the [Sync history](#sync-history) tab, get notified when your syncs are partially successful or failed with [Alerting](#alerting), and [Reset](#reset-syncs) or [Replay](#replays) syncs.
+
+## Sync overview
+On the Reverse ETL sync overview tab for your destination, you can see information about your recent Reverse ETL syncs at a glance, search for recent syncs, and quickly access the mappings and models that power Reverse ETL.
+
+![A screenshot of the sync overview page, which includes one in progress sync and two successful syncs. ](images/sync-overview.jpeg)
+
+You can view the following information about each sync: 
+- **Latest sync**: The progress of your latest sync: syncs can either be **In progress**, **Successful**, **Partially successful**, or **Failed**. Also included is the timestamp of the sync start time.
+- **Mapping**: The mapping that powered the sync and a hyperlink to the mapping's overview page. 
+- **Model**: The name that you gave the SQL query used to withdraw information from your warehouse, with a hyperlink to the model overview page. Below the model name, you can see the warehouse source that Segment extracts information from.
+- **Action**: The Action that your destination uses to map information from your warehouse to your downstream destination. 
+- **Mapping status**: The status of your mapping: either **Enabled** or **Disabled**. 
+
+You can also filter the sync overview table to return only the syncs that match your criteria. 
+
+You can filter for the following sync attributes: 
+- **Sync status**: The status of your sync: In progress, Successful, Partially successful, or Failed.
+- **Start time**: Select a predefined time period, or create a custom date range. 
+- **Model**: The model connected to your sync. 
+- **Destination**: Select one or more of your connected destinations. 
+- **Mapping status**: The status of your mapping: either **Enabled** or **Disabled**. 
 
 ## Sync history
 Check the status of your data extractions and see details of your syncs. Click into failed records to view additional details on the error, sample payloads to help you debug the issue, and recommended actions.
@@ -32,7 +53,9 @@ To reset a sync:
 4. Click **Reset sync**.
 
 ## Replays
-You can choose to replay syncs. To replay a specific sync, contact [friends@segment.com](mailto:friends@segment.com). Keep in mind that triggering a replay resyncs all records for a given sync.
+Business Tier customers can choose to *Replay* syncs, or take an archived copy of your sync and resend it to your destination. By archiving and replaying data, you can avoid vendor lock-in and protect your system against data loss. Keep in mind that triggering a Replay resyncs all records for a given sync.
+
+To replay a specific sync, contact [friends@segment.com](mailto:friends@segment.com). 
 
 ## Alerting
 You can opt in to receive email, Slack, and in-app alerts about Reverse ETL sync failures and partial successes. 
