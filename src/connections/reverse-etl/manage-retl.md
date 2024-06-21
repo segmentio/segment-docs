@@ -12,19 +12,19 @@ On the Reverse ETL sync overview tab for your destination, you can see informati
 
 You can view the following information about each sync: 
 - **Latest sync**: The progress of your latest sync: syncs can either be **In progress**, **Successful**, **Partially successful**, or **Failed**. Also included is the timestamp of the sync start time.
-- **Mapping**: The name of the mapping, and a hyperlink to the mapping's overview page. 
-- **Model**: The name that you gave the SQL query used to withdraw information from your warehouse, with a hyperlink to the model overview page. Below the model name, you can see the warehouse source that Segment is extracting information from.
-- **Action**: The name of the Action that your destination uses to map information from your warehouse to your downstream destination, along with the destination in question. 
+- **Mapping**: The mapping that powered the sync and a hyperlink to the mapping's overview page. 
+- **Model**: The name that you gave the SQL query used to withdraw information from your warehouse, with a hyperlink to the model overview page. Below the model name, you can see the warehouse source that Segment extracts information from.
+- **Action**: The Action that your destination uses to map information from your warehouse to your downstream destination. 
 - **Mapping status**: The status of your mapping: either **Enabled** or **Disabled**. 
 
 You can also filter the sync overview table to return only the syncs that match your criteria. 
 
 You can filter for the following sync attributes: 
-- **Sync status**: In progress, Successful, Partially successful, or Failed.
-- **Start time**: 
-- **Model**: 
+- **Sync status**: The status of your sync: In progress, Successful, Partially successful, or Failed.
+- **Start time**: Select a predefined time period, or create a custom date range. 
+- **Model**: The model connected to your sync. 
 - **Destination**: Select one or more of your connected destinations. 
-- **Mapping status**: 
+- **Mapping status**: The status of your mapping: either **Enabled** or **Disabled**. 
 
 ## Sync history
 Check the status of your data extractions and see details of your syncs. Click into failed records to view additional details on the error, sample payloads to help you debug the issue, and recommended actions.
