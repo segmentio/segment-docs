@@ -1,12 +1,8 @@
 ---
 title: OAuth 2.0
-hidden: true
 ---
 
 OAuth 2.0 is an online authorization standard that uses tokens to grant access to API resources like Segment’s tracking API. You can use OAuth 2.0 as a security requirement for connections to third-party tools. 
-
-> info ""
-> OAuth 2.0 is currently in private beta and is governed by Segment’s [First Access and Beta Preview Terms](https://www.twilio.com/en-us/legal/tos){:target="_blank"}. OAuth 2.0 only supports server to Segment communication, a machine-to-machine workflow. Take a look at the [supported sources](#supported-sources) to see what sources Segment supports.
 
 ## Permissions 
 Depending on your workspace permissions, your access to OAuth apps is limited. 
