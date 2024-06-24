@@ -28,6 +28,9 @@ To create an audience with Generative Audiences:
 > success ""
 > To help you write your prompt, view these [example prompts](#example-prompts) and [best practices](#best-practices).
 
+> success ""
+> To begin using Generative Audiences, a workspace owner is required to accept the Customer AI Terms & Conditions.
+
 ### Modify an audience description 
 
 Once Segment generates the audience conditions, the prompt box remains open for reference. You can close this box, or modify your audience description and click **Build with AI** again. 
