@@ -23,18 +23,16 @@ The following engagement tools are available for use with Linked Audiences in Se
 
 Segment sends data from your Linked Audiences to actions-based destinations. (For example: associated account information for the audience profiles with past due accounts). You can configure multiple triggers per audience (For example: one for account entry, and one for account exit).
 
-| Segment Destination Action                                                                                                     | How does it work?                                                                                                                                                                                                                                                                         | How does Braze store the data?                                                                                                                                                                                                                               | Braze API Endpoint                                                                                                                |
-| ------------------------------------------------------------------------------------------------------------------------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | --------------------------------------------------------------------------------------------------------------------------------- |
-| [Track Event](/docs/connections/destinations/catalog/braze-cloud-mode-actions/#track-event)                 | Segment sends personalization payload information into Braze via [Braze Profile custom events](https://www.braze.com/docs/user_guide/data_and_analytics/custom_data/custom_events/){:target="_blank"}. The entity personalization payload is contained in the \`events\` parameter within API calls.        | [Event objects](https://www.braze.com/docs/api/objects_filters/event_object/){:target="_blank"}
+| Segment Destination Action                                                                                                     | How does it work?                                                                                                                                                                                                                                                                                                                                                                    | How does Braze store the data?                                                                                                                                                                                                                               | Braze API Endpoint                                                                                                                |
+| ------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | --------------------------------------------------------------------------------------------------------------------------------- |
+| [Track Event](/docs/connections/destinations/catalog/braze-cloud-mode-actions/#track-event)                 | Segment sends personalization payload information into Braze via [Braze Profile custom events](https://www.braze.com/docs/user_guide/data_and_analytics/custom_data/custom_events/){:target="_blank"}. The entity personalization payload is contained in the events parameter within API calls. Segment appends Profile Traits as objects (or event properties) and Entity Context as nested objects. | [Event objects](https://www.braze.com/docs/api/objects_filters/event_object/){:target="_blank"}  
 
 <br>
 
-[Nested objects in custom events](https://www.braze.com/docs/user_guide/data_and_analytics/custom_data/custom_events/nested_objects/){:target="_blank"}     | [track API endpoint](https://documenter.getpostman.com/view/4689407/SVYrsdsG?version=latest#4cf57ea9-9b37-4e99-a02e-4373c9a4ee59){:target="_blank"} 
-| [Update User Profile](/docs/connections/destinations/catalog/braze-cloud-mode-actions/#update-user-profile) | Segment sends personalization payload information into Braze via [Braze profile custom attributes](https://www.braze.com/docs/user_guide/data_and_analytics/custom_data/custom_attributes/){:target="_blank"}. The entity personalization payload is contained in the\`attributes\` parameter in API calls. | [User attributes object](https://www.braze.com/docs/api/objects_filters/user_attributes_object){:target="_blank"}
+[Nested objects in custom events](https://www.braze.com/docs/user_guide/data_and_analytics/custom_data/custom_events/nested_objects/){:target="_blank"}                                   | [track API endpoint](https://documenter.getpostman.com/view/4689407/SVYrsdsG?version=latest#4cf57ea9-9b37-4e99-a02e-4373c9a4ee59){:target="_blank"} |
+| [Update User Profile](https://segment.com/docs/connections/destinations/catalog/braze-cloud-mode-actions/#update-user-profile){:target="_blank"} | Segment sends personalization payload information into Braze via [Braze profile custom attributes](https://www.braze.com/docs/user_guide/data_and_analytics/custom_data/custom_attributes/){:target="_blank"}. The entity personalization payload is contained in the attributes parameter in API calls.                                                                                               | [User attributes object](https://www.braze.com/docs/api/objects_filters/user_attributes_object){:target="_blank"}  
 
 <br>
-
-[Nested custom attributes](https://www.braze.com/docs/user_guide/data_and_analytics/custom_data/custom_attributes/nested_custom_attribute_support/){:target="_blank"} | [track API endpoint](https://documenter.getpostman.com/view/4689407/SVYrsdsG?version=latest#4cf57ea9-9b37-4e99-a02e-4373c9a4ee59) {:target="_blank"}|
 
 ## Braze Action-based Delivery Campaign
 
@@ -128,11 +126,10 @@ The following table helps translate you payload data into Liquid syntax:
 
 | Reference Data Definition                               | Liquid Syntax                                                                                                                      | Example Properties                                                         |
 | ------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------- |
-| Reference a specific event property                     | {{event_properties.${event_property_name}}}
-   |                                                                                | {{event_properties.${first_name}}}                                         |
+| Reference a specific event property                     | `{{event_properties.${event_property_name}}}` |                                                                                | `{{event_properties.${first_name}}}`                                         |
 | Reference nested event properties within an Array
 
- | {{event_properties.shopping_cart__shopping_cart_products.[#_that_represents_specific_nested_event_in_array].event_property_name }} | {{event_properties.shopping_cart__shopping_cart_products[0].product_name}} |
+ | `{{event_properties.shopping_cart__shopping_cart_products.[#_that_represents_specific_nested_event_in_array].event_property_name }}` | `{{event_properties.shopping_cart__shopping_cart_products[0].product_name}}` |
 
 ### Basic Payload Email Example
 
@@ -146,29 +143,27 @@ This is an example of what your email using [HTML ](https://www.braze.com/docs/u
 
 ```js
 Hi {{event_properties.first_name}},
+
+
+Did you forget to checkout?
 <br />
-<br />
-Did you forget to checkout?<br />
-<br />
-We noticed you added some items to your shopping cart including this item: <br />
+We noticed you added some items to your shopping cart including this item: 
 <br />
 <b>Product Name: </b> 
-{{event_properties.shopping_cart__products[0].product_name}}
+`{{event_properties.shopping_cart__products[0].product_name}}`
 <br />
 <b>Product Price: </b> 
-{{event_properties.shopping_cart__products[0].product_price}} USD
-<br />
+`{{event_properties.shopping_cart__products[0].product_price}}` USD
 <br />
 
 Quick, now is your chance to own this item before it sells out!
+
 ```
 
 
 ### Advanced Payload Example Email Example
 
-Use the Segment payload data you [copied when setting up your Linked audience](/docs/engage/audiences/linked-audiences#showhide-preview) to build your  personalize your campaign with a dynamic event payload, you can use an [iteration tag](https://www.braze.com/docs/user_guide/personalization_and_dynamic_content/liquid/supported_personalization_tags/#iteration-tags){:target="_blank"} to 
-
- run a block of code repeatedly. In this abandoned cart email campaign example, you can use a `for loop` to list all of the products and their related prices in a customer’s shopping cart.
+Use the Segment payload data you [copied when setting up your Linked audience](/docs/engage/audiences/linked-audiences#showhide-preview) to build your  personalize your campaign with a dynamic event payload, you can use an [iteration tag](https://www.braze.com/docs/user_guide/personalization_and_dynamic_content/liquid/supported_personalization_tags/#iteration-tags){:target="_blank"} to  run a block of code repeatedly. In this abandoned cart email campaign example, you can use a `for loop` to list all of the products and their related prices in a customer’s shopping cart.
 
 When an email is sent, it will list all of the products and their related prices in your customer’s shopping cart. It might look like the following:
 
@@ -178,23 +173,23 @@ This is an example of what your email using [HTML ](https://www.braze.com/docs/u
 
 ```js
 Hi {{event_properties.first_name}},
-<br />
-<br />
-Did you forget to checkout?<br />
-<br />
-We noticed you added some items to your shopping cart. Here's what you left: <br />
-<br />
 
-{% for products in event_properties.shopping_cart__products %}
+<br>
+Did you forget to checkout?
+<br/>
+
+We noticed you added some items to your shopping cart. Here's what you left: 
+<br />
+`{% for products in event_properties.shopping_cart__products %}`
 <b>Product Name: </b>
-{{products.product_name}}
+`{{products.product_name}}`
 <br />
 <b>Product Price: </b>
-{{products.product_price}} USD
+`{{products.product_price}}` USD
 <br />
 <br />
 
-{%endfor%}
+`{%endfor%}`
 
 Quick, now is your chance to own these items before they sell out!
 
