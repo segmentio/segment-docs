@@ -122,7 +122,7 @@ The following is an example of what your payload data might look like with neste
  }
 ```
 
-The following table helps translate you payload data into Liquid syntax:  
+The following table helps translate your payload data into Liquid syntax:  
 
 | Reference Data Definition                               | Liquid Syntax                                                                                                                      | Example Properties                                                         |
 | ------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------- |
