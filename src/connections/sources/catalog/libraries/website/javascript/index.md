@@ -360,7 +360,7 @@ analytics.identify("hello world")
 
 ### Ready
 
-The `ready` method allows you to pass in a method that is called once Analytics.js finishes initializing, and once all enabled device-mode destinations load. It's like [jQuery's `ready` method](https://api.jquery.com/ready/){:target="_blank"}, except for Destinations. Because it does not fire until all enabled device-mode destinations are loaded, it cannot be used to change configuration options for downstream SDKs. That can only be done if the SDK is loaded natively. 
+The `ready` method lets you pass in a method that gets called after Analytics.js finishes initializing and after all enabled device-mode destinations load. It's like [jQuery's `ready` method](https://api.jquery.com/ready/){:target="_blank"}, except for Destinations. Because it doesn't fire until all enabled device-mode destinations are loaded, it can't be used to change configuration options for downstream SDKs. That can only be done if the SDK is loaded natively. 
 
 The `ready` method isn't invoked if any Destination throws an error (for example, for an expired API key, incorrect settings configuration, or when a Destination is blocked by the browser) during initialization.
 
