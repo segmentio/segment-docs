@@ -213,7 +213,7 @@ Mapping fields are case-sensitive. The following type filters and operators are 
     The `does` `not exist` operator matches both a `null` value or a missing property.
 {% comment %}
 
-> info "Valid Property and Trait Values"
+> info "Valid property and trait values"
 > Property or trait names must begin with the characters: [a-z], [A-Z] or '_'. Special characters are unsupported and will trigger an error if entered.
 
 > info "Event property operators and supported data types"
