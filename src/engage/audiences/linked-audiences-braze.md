@@ -144,7 +144,7 @@ table>
 </tr>
 </tbody>
 </table>
-<p> | <code>{{event_properties.shopping_cart__shopping_cart_products.[#_that_represents_specific_nested_event_in_array].event_property_name }}</code> | <code>{{event_properties.shopping_cart__shopping_cart_products[0].product_name}}</code> |</p>
+<p> | <code>{{event_property_name.[#_that_represents_specific_entry_in_array].nested_event_property_name }}</code> | <code>{{event_properties.shopping_cart__shopping_cart_products[0].product_name}}</code> |</p>
 
 ### Basic Payload Email Example
 
@@ -174,8 +174,6 @@ We noticed you added some items to your shopping cart including this item:
 Quick, now is your chance to own this item before it sells out!
 
 ```
-
-
 ### Advanced Payload Example Email Example
 
 Use the Segment payload data you [copied when setting up your Linked audience](/docs/engage/audiences/linked-audiences#showhide-preview) to build your  personalize your campaign with a dynamic event payload, you can use an [iteration tag](https://www.braze.com/docs/user_guide/personalization_and_dynamic_content/liquid/supported_personalization_tags/#iteration-tags){:target="_blank"} to  run a block of code repeatedly. In this abandoned cart email campaign example, you can use a `for loop` to list all of the products and their related prices in a customer’s shopping cart.
