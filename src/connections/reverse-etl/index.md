@@ -29,8 +29,9 @@ Follow these 4 steps to set up Reverse ETL and learn what each component is abou
 3. [Add a destination](#step-3-add-a-destination)
 4. [Create mappings](#step-4-create-mappings)
 
-> info ""
-> The UI navigation and interface will look different from what's presented in the docs until Reverse ETL rolls out to all users for GA.
+> info "Enforce consent preferences stored in your warehouse with Consent Management"
+> Use Consent Management to enforce your end users' consent preferences across your downstream Reverse ETL supported destinations. See the [Consent in Reverse ETL documentation](/docs/privacy/consent-management/consent-in-retl/) for more information. 
+
 
 ### Step 1: Add a source
 A source is where your data originates from. Traditionally in Segment, a [source](/docs/connections/sources/#what-is-a-source) is a website, server library, mobile SDK, or cloud application which can send data into Segment. In Reverse ETL, your data warehouse is the source.
@@ -95,7 +96,7 @@ To add your first destination:
 After you’ve added a destination, you can create mappings from your warehouse to the destination. Mappings enable you to map the data you extract from your warehouse to the fields in your destination.
 
 To create a mapping:
-1. Navigate to **Conections > Destinations** and select the **Reverse ETL** tab.
+1. Navigate to **Connections > Destinations** and select the **Reverse ETL** tab.
 2. Select the destination that you want to create a mapping for.  
 3. Click **Add Mapping**.
 4. Select the model to sync from.

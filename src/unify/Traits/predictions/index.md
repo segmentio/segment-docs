@@ -54,34 +54,46 @@ When you build a Custom Predictive Goal, you'll first need to select a cohort, o
 
 The target event is the Segment event that you want to predict. In creating a prediction, Segment determines the likelihood of the user performing the target event. Segment lets you include up to two target events and an event property in your prediction.
 
-### Data requirements
+### Access and data requirements
 
-As with everything in machine learning, better data = better predictions. Trust and performance are Segment's number 1 priority, so we have a number of data checks to ensure that the Predictions we make are of high quality and can be relied upon.
-We do our best to provide this guidance in the UI before you create a trait, but some of our checks can only happen once we start to train a model. If a trait fails, you’ll see an error message and description in the UI. In general, here are Segment's best practices, data requirements, and service limits for Predictions.
+In machine learning, better data leads to better predictions. Because Segment prioritizes trust and performance, Segment has a number of data checks to ensure that Predictions we make are high quality and reliable. Segment provides guidance in the UI before you create a trait, but some checks only occur during model training. If a trait fails, you’ll see an error message and description in the UI. 
+
+This sections lists Segment's access and data requirements, service limits, and best practices for Predictions.
 
 #### Definitions
-- **Feature Window**: The time period in the past that contains the data that the model will use for training.
-- **Target Window**: This is the time horizon over which you want to make a prediction. You can select this in the UI for each of the different traits.
-- **Target Event**: This is the event that you are predicting the likelihood of a customer performing.
-So if you want to create a propensity to purchase over the next 30 days, the Target Window would be 30 days, and the Target Event would be `Order Completed`, (or whichever purchase event you are tracking).
 
-#### To get access to predictions, you must : 
-- Track fewer than 100 million users in the Engage Space.
-- Also track fewer than 5,000 event types. _An event type, refers to the total number of distinct events that were seen across all users in an Engage Space within the past 15 days._
-  - If you track more than 5,000 distinct events, please stop tracking enough events to drop below this limit, and then wait around 15 days before trying to create your first prediction.
-  - An event becomes inactive once it has not been sent to an Engage Space within the past 15 days.
-  - To prevent events from reaching your Engage Space, you can modify your event payloads to include `integrations.Personas` as `false`.
-    - For more information on using the integrations object, please see [Spec : Common Fields](https://segment.com/docs/connections/spec/common/#context:~:text=In%20more%20detail%20these%20common%20fields,Destinations%20field%20docs%20for%20more%20details.), [Integrations](https://segment.com/docs/connections/spec/common/#context:~:text=Kotlin-,Integrations,be%20sent%20to%20rest%20of%20the%20destinations%20that%20can%20accept%20it.,-Timestamps), and [Filtering with the Integrations object](https://segment.com/docs/guides/filtering-data/#filtering-with-the-integrations-object).
-    - Analytics.js example : `analytics.track("Button Clicked", {button:"submit form"}, {"integrations":{"Personas":false}})`. 
-- Track more than 1 event type.
+- **Feature Window**: The past time period that contains the data used for model training.
+- **Target Window**: The time horizon for which you want to make the prediction. You can select this in the UI for each traits.
+- **Target Event**: The event predicting the likelihood of customer action.
 
-#### To have a trait compute successfully, you must :
-- Have at least 5 different event types tracked in the Feature Window.
-- These 5 events must have data that spans 1.5x the length of the Target Window in the past.
-  - So if you are creating a propensity to purchase in the next 60 days, there must be at least 90 days of historical data.
-- If making a prediction for a smaller subset audience, then this audience must contain more than 1 non-anonymous user.
-- At least 100 users performing the Target Event.
-- At least 100 users not performing the Target Event.
+For example, to predict a customer's propensity to purchase over the next 30 days, set the Target Window to 30 days and the Target Event to `Order Completed` (or the relevant purchase event that you track).
+
+#### Predictions access requirements
+
+To access Predictions, you must:
+
+- Track more than 1 event type, but fewer than 5,000 event types. An event type refers to the total number of distinct events seen across all users in an Engage Space within the past 15 days.
+  - If you currently track more than 5,000 distinct events, reduce the number of tracked events below this limit and wait around 15 days before creating your first prediction.
+  - Events become inactive if they've not been sent to an Engage Space within the past 15 days.
+- To prevent events from reaching your Engage Space, modify your event payloads to set `integrations.Personas` to `false`.
+  - For more information on using the integrations object, please see [Spec: Common Fields](/docs/connections/spec/common/#context:~:text=In%20more%20detail%20these%20common%20fields,Destinations%20field%20docs%20for%20more%20details.), [Integrations](https://segment.com/docs/connections/spec/common/#context:~:text=Kotlin-,Integrations,be%20sent%20to%20rest%20of%20the%20destinations%20that%20can%20accept%20it.,-Timestamps), and [Filtering with the Integrations object](https://segment.com/docs/guides/filtering-data/#filtering-with-the-integrations-object).
+  - Analytics.js example: `analytics.track("Button Clicked", {button:"submit form"}, {"integrations":{"Personas":false}})`. 
+
+#### Successful trait computation
+
+This table lists the requirements for a trait to compute successfully:
+
+| Requirement                      | Details                                                                                     |
+|----------------------------------|---------------------------------------------------------------------------------------------|
+| **Event Types**                  | Track at least 5 different event types in the Feature Window.                               |
+| **Historical Data**              | Ensure these 5 events have data spanning 1.5 times the length of the Target Window. Example: For predicting a purchase propensity over the next 60 days, at least 90 days of historical data is required. |
+| **Subset Audience** (if applicable) | Ensure the audience contains more than 1 non-anonymous user.                                 |
+| **User Limit**                   | Ensure that you are making a prediction for fewer than 100 million users. If you track more than 100 million users in your space, define a smaller audience in the ‘Make a Prediction For’ section of the custom predictions builder. |
+| **User Activity**                | At least 100 users performing the Target Event and at least 100 users not performing the Target Event. |
+
+#### Selecting events (optional)
+
+Some customers want to specifically include or exclude events that get fed into the model. For example, if you track different events from an EU storefront compared to a US storefront and you only want to make predictions using data from the US, you could unselect the events from the EU space. This step is optional, Segment only recommends using it if you have a clear reason in mind for removing events from becoming a factor in the model.
 
 > info "Predictive Traits and anonymous events"
 > Predictive Traits are limited to non-anonymous events, which means you'll need to include an additional `external_id` other than `anonymousId` in the targeted events. If want to create Predictive Traits based on anonymous events, reach out to your CSM with your use case for creating an anonymous Predictive Trait and the conditions for trait.
@@ -94,7 +106,7 @@ If you don’t track `Order Completed`, choose a target event that represents a 
 
 ### Predicted Lifetime Value
 
-Predicted Lifetime Value predicts a customer's future spend over the next 90 days. To create this prediction, select a purchase event, revenue property, and the currency (which defaults to USD). The following table contains details for each property:
+Predicted Lifetime Value predicts a customer's future spend over the next 120 days. To create this prediction, select a purchase event, revenue property, and the currency (which defaults to USD). LTV is only calculated for customers that have performed the selected purchase events 2 or more times. The following table contains details for each property:
 
 | Property        | Description                                                                                                                |
 | --------------- | -------------------------------------------------------------------------------------------------------------------------- |
@@ -110,11 +122,10 @@ To use Likelihood to Churn, you'll need to specify a customer event, a future ti
 
 For example, suppose you wanted to predict whether or not a customer would view a page on your site over the next three months. You would select `not perform`, `Page Viewed`, and `at least 1 time within 90 days`. 
 
-Segment would then build the prediction from this criteria and create specific percentile cohorts. You can then use these cohorts to target customers with retention flows, promo codes, or one-off email and SMS campaigns.
+Churn predictions are only made for eligible customers. In the previous example, only customers that have performed `Page Viewed` in the last 90 days would be eligible to recieve this prediction. The Segment app shows you which customers are eligibile to recieve this prediction.
 
-#### Data requirements
+Segment then uses this criteria to build the prediction and create specific percentile cohorts. You can then use these cohorts to target customers with retention flows, promo codes, or one-off email and SMS campaigns.
 
-Predicted LTV has strict data requirements. Segment can only make predictions for customers that have purchased two or more times. Segment also requires a year of purchase data to perform LTV calculations.
 
 ## Use cases
 
