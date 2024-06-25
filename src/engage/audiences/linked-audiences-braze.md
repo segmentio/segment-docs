@@ -61,16 +61,16 @@ In Braze, do the following:
 1. Create a new [email Campaign](https://www.braze.com/docs/user_guide/engagement_tools/campaigns/building_campaigns/creating_campaign){:target="_blank"}. 
 2. [Create an email using the HTML Editor](https://www.braze.com/docs/user_guide/message_building_by_channel/email/html_editor/creating_an_email_campaign/){:target="_blank"} to begin [personalizing with liquid tags](https://www.braze.com/docs/user_guide/personalization_and_dynamic_content/liquid){:target="_blank"}. 
     - Reference your [personalized payload schema](/docs/engage/audiences/linked-audiences/#showhide-preview) from Segment to determine what properties to include in your message.
-    - Translate the Segment event properties in the payload schema into [liquid syntax](https://www.braze.com/docs/user_guide/personalization_and_dynamic_content/liquid/using_liquid/#using-liquid-1){:target="_blank"} for [custom events](https://www.braze.com/docs/user_guide/data_and_analytics/custom_data/custom_events){:target="_blank"}, and enter it in the HTML editor in Braze. See the personalization [examples below](#liquid-examples-to-use-in-braze-4) for more specific details on how you can personalize your campaign.
+    - Translate the Segment event properties in the payload schema into [liquid syntax](https://www.braze.com/docs/user_guide/personalization_and_dynamic_content/liquid/using_liquid/#using-liquid-1){:target="_blank"} for [custom events](https://www.braze.com/docs/user_guide/data_and_analytics/custom_data/custom_events){:target="_blank"}, and enter it in the HTML editor in Braze. See the personalization [examples below](#liquid-examples-to-use-in-braze) for more specific details on how you can personalize your campaign.
 3. Next, [schedule your campaign delivery](https://www.braze.com/docs/user_guide/engagement_tools/campaigns/building_campaigns/delivery_types){:target="_blank"}:
     - Choose [Action based delivery](https://www.braze.com/docs/user_guide/engagement_tools/campaigns/building_campaigns/delivery_types/triggered_delivery/#step-1-select-a-trigger-event){:target="_blank"} > [New Trigger Action](https://www.braze.com/docs/user_guide/engagement_tools/campaigns/building_campaigns/delivery_types/triggered_delivery/#step-1-select-a-trigger-event){:target="_blank"}: [Perform Custom Event](https://www.braze.com/docs/user_guide/data_and_analytics/custom_data/custom_events){:target="_blank"}> Add Trigger. 
     - Search and choose the name of the Segment custom event you previously set up and tested in Segment.
-    - Choose Delivery Controls > [Allow users to become re-eligible to receive campaigns](https://www.braze.com/docs/user_guide/engagement_tools/campaigns/building_campaigns/delivery_types/reeligibility/#campaigns){:target="_blank"} checkbox, and select 0 minutes. This is necessary for [Step 2: Test your campaign flow](#step-2-test-your-campaign-flow-in-segment-4) so that you don’t have to wait for a user to become re-eligible while testing. You can adjust these settings after you have finished testing.
+    - Choose Delivery Controls > [Allow users to become re-eligible to receive campaigns](https://www.braze.com/docs/user_guide/engagement_tools/campaigns/building_campaigns/delivery_types/reeligibility/#campaigns){:target="_blank"} checkbox, and select 0 minutes. This is necessary for [Step 2: Test your campaign flow](#step-2-test-your-campaign-flow) so that you don’t have to wait for a user to become re-eligible while testing. You can adjust these settings after you have finished testing.
 4. Select your target Audience:
     - Add a filter to [target users without a segment](https://www.braze.com/docs/user_guide/engagement_tools/campaigns/building_campaigns/targeting_users/#without-segment){:target="_blank"}. 
     - Search and choose the name of the Segment custom event you previously set up and tested in Segment.
     - Select ‘more than 0 times’ as the timeframe for this filter. 
-5. Choose any additional settings that apply to your campaign, then [review and deploy](https://www.braze.com/docs/user_guide/message_building_by_channel/email/html_editor/creating_an_email_campaign/#step-5-review-and-deploy){:target="_blank"} your campaign, and continue on to [Step 2: Test your campaign flow](#step-2-test-your-campaign-flow-in-segment-4). 
+5. Choose any additional settings that apply to your campaign, then [review and deploy](https://www.braze.com/docs/user_guide/message_building_by_channel/email/html_editor/creating_an_email_campaign/#step-5-review-and-deploy){:target="_blank"} your campaign, and continue on to [Step 2: Test your campaign flow](#step-2-test-your-campaign-flow). 
 
 ### Step 2: Test your campaign flow
 
@@ -82,9 +82,9 @@ You will see a `“message”: “success”` response in Segment if the event i
 
 Check your [campaign dashboard](https://www.braze.com/docs/user_guide/message_building_by_channel/email/reporting_and_analytics/email_reporting){:target="_blank"} (Braze > *[Your Unique Campaign]* > Analytics) in Braze to confirm that the message was sent. It can take up to 15 minutes for Braze to send the email. 
 
-If your email doesn’t look the way you want it to, adjust the [liquid syntax](https://www.braze.com/docs/user_guide/personalization_and_dynamic_content/liquid/using_liquid/#using-liquid-1){:target="_blank"} in Braze, and send another test event in Segment. See the personalization [examples below](#liquid-examples-to-use-in-braze-4) for more specific details.
+If your email doesn’t look the way you want it to, adjust the [liquid syntax](https://www.braze.com/docs/user_guide/personalization_and_dynamic_content/liquid/using_liquid/#using-liquid-1){:target="_blank"} in Braze, and send another test event in Segment. See the personalization [examples below](#liquid-examples-to-use-in-braze) for more specific details.
 
-When you’re finished testing your campaign, proceed to [Step 4: Enable your Linked Audience](/docs/engage/audiences/linked-audiences/#step-4-enable-your-linked-audience).
+When you’re finished testing your campaign, proceed to [Enable your Linked Audience](/docs/engage/audiences/linked-audiences/#step-4-enable-your-linked-audience).
 
 ## Liquid Examples to use in Braze
 
@@ -129,13 +129,13 @@ The following table helps translate your payload data into Liquid syntax:
     </tr>
     <tr>
         <td>Reference a specific event property</td>
-        <td>{% raw %}{{event_properties.event_property_name}}{% endraw %}</td>
+        <td><code>{% raw %}{{event_properties.event_property_name}}{% endraw %}</code></td>
         <td><code>{% raw %}{{event_properties.first_name}}{% endraw %}</code></td>
     </tr>
     <tr>
         <td>Reference nested event properties within an Array</td>
-        <td>{% raw %}{{event_property_name.[#_that_represents_specific_entry_in_array].nested_event_property_name }}{% endraw %}</td>
-        <td>{% raw %}{{event_properties.shopping_cart__products[0].product_name}}{% endraw %}</td>
+        <td><code>{% raw %}{{event_property_name.[#_that_represents_specific_entry_in_array].nested_event_property_name }}{% endraw %}</code></td>
+        <td><code>{% raw %}{{event_properties.shopping_cart__products[0].product_name}}{% endraw %}</code></td>
     </tr>
 </table>
 
