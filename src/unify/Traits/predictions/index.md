@@ -126,7 +126,6 @@ Churn predictions are only made for eligible customers. In the previous example,
 
 Segment then uses this criteria to build the prediction and create specific percentile cohorts. You can then use these cohorts to target customers with retention flows, promo codes, or one-off email and SMS campaigns.
 
-
 ## Use cases
 
 For use cases and information on how Segment builds prediction, read [Using Predictions](/docs/unify/traits/predictions/using-predictions/).
