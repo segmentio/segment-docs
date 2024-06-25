@@ -30,7 +30,7 @@ Segment sends data from your Linked Audiences to actions-based destinations. (Fo
 <br>
 
 [Nested objects in custom events](https://www.braze.com/docs/user_guide/data_and_analytics/custom_data/custom_events/nested_objects/){:target="_blank"}                                   | [track API endpoint](https://documenter.getpostman.com/view/4689407/SVYrsdsG?version=latest#4cf57ea9-9b37-4e99-a02e-4373c9a4ee59){:target="_blank"} |
-| [Update User Profile](https://segment.com/docs/connections/destinations/catalog/braze-cloud-mode-actions/#update-user-profile){:target="_blank"} | Segment sends personalization payload information into Braze via [Braze profile custom attributes](https://www.braze.com/docs/user_guide/data_and_analytics/custom_data/custom_attributes/){:target="_blank"}. The entity personalization payload is contained in the attributes parameter in API calls.                                                                                               | [User attributes object](https://www.braze.com/docs/api/objects_filters/user_attributes_object){:target="_blank"}  
+| [Update User Profile](https://segment.com/docs/connections/destinations/catalog/braze-cloud-mode-actions/#update-user-profile){:target="_blank"} | Segment sends personalization payload information into Braze via [Braze profile custom attributes](https://www.braze.com/docs/user_guide/data_and_analytics/custom_data/custom_attributes/){:target="_blank"}. The entity personalization payload is contained in the attributes parameter in API calls.                                                                                               | [User attributes object](https://www.braze.com/docs/api/objects_filters/user_attributes_object){:target="_blank"}  <br>
 
 <br>
 
@@ -124,12 +124,27 @@ The following is an example of what your payload data might look like with neste
 
 The following table helps translate your payload data into Liquid syntax:  
 
-| Reference Data Definition                               | Liquid Syntax                                                                                                                      | Example Properties                                                         |
-| ------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------- |
-| Reference a specific event property                     | `{{event_properties.${event_property_name}}}` |                                                                                | `{{event_properties.${first_name}}}`                                         |
-| Reference nested event properties within an Array
-
- | `{{event_properties.shopping_cart__shopping_cart_products.[#_that_represents_specific_nested_event_in_array].event_property_name }}` | `{{event_properties.shopping_cart__shopping_cart_products[0].product_name}}` |
+table>
+<thead>
+<tr>
+<th>Reference Data Definition</th>
+<th>Liquid Syntax</th>
+<th>Example Properties</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Reference a specific event property</td>
+<td><code>{{event_properties.${event_property_name}}}</code></td>
+<td></td>
+<td><code>{{event_properties.${first_name}}}</code></td>
+</tr>
+<tr>
+<td>Reference nested event properties within an Array</td>
+</tr>
+</tbody>
+</table>
+<p> | <code>{{event_properties.shopping_cart__shopping_cart_products.[#_that_represents_specific_nested_event_in_array].event_property_name }}</code> | <code>{{event_properties.shopping_cart__shopping_cart_products[0].product_name}}</code> |</p>
 
 ### Basic Payload Email Example
 
