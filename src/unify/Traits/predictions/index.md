@@ -56,14 +56,14 @@ The target event is the Segment event that you want to predict. In creating a pr
 
 ### Access and data requirements
 
-In machine learning, better data leads to better predictions. Because Segment prioritizes trust and performance, Segment has a number of data checks to ensure that Predictions we make are high quality and reliable. Segment provides guidance in the UI before you create a trait, but some checks only occur during model training. If a trait fails, you’ll see an error message and description in the UI. 
+In machine learning, better data leads to better predictions. Because Segment prioritizes trust and performance, Segment has a number of data checks to ensure that each prediction is reliable and of high quality. Segment provides guidance in the UI before you create a trait, but some checks only occur during model training. If a trait fails, you’ll see an error message and description in the UI. 
 
 This sections lists Segment's access and data requirements, service limits, and best practices for Predictions.
 
 #### Definitions
 
 - **Feature Window**: The past time period that contains the data used for model training.
-- **Target Window**: The time horizon for which you want to make the prediction. You can select this in the UI for each traits.
+- **Target Window**: The time horizon for which you want to make the prediction. You can select this in the UI for each trait.
 - **Target Event**: The event predicting the likelihood of customer action.
 
 For example, to predict a customer's propensity to purchase over the next 30 days, set the Target Window to 30 days and the Target Event to `Order Completed` (or the relevant purchase event that you track).
@@ -76,8 +76,8 @@ To access Predictions, you must:
   - If you currently track more than 5,000 distinct events, reduce the number of tracked events below this limit and wait around 15 days before creating your first prediction.
   - Events become inactive if they've not been sent to an Engage Space within the past 15 days.
 - To prevent events from reaching your Engage Space, modify your event payloads to set `integrations.Personas` to `false`.
-  - For more information on using the integrations object, please see [Spec: Common Fields](/docs/connections/spec/common/#context:~:text=In%20more%20detail%20these%20common%20fields,Destinations%20field%20docs%20for%20more%20details.), [Integrations](https://segment.com/docs/connections/spec/common/#context:~:text=Kotlin-,Integrations,be%20sent%20to%20rest%20of%20the%20destinations%20that%20can%20accept%20it.,-Timestamps), and [Filtering with the Integrations object](https://segment.com/docs/guides/filtering-data/#filtering-with-the-integrations-object).
-  - Analytics.js example: `analytics.track("Button Clicked", {button:"submit form"}, {"integrations":{"Personas":false}})`. 
+  - For more information on using the integrations object, see [Spec: Common Fields](/docs/connections/spec/common/#context:~:text=In%20more%20detail%20these%20common%20fields,Destinations%20field%20docs%20for%20more%20details.), [Integrations](https://segment.com/docs/connections/spec/common/#context:~:text=Kotlin-,Integrations,be%20sent%20to%20rest%20of%20the%20destinations%20that%20can%20accept%20it.,-Timestamps), and [Filtering with the Integrations object](https://segment.com/docs/guides/filtering-data/#filtering-with-the-integrations-object).
+  - Analytics.js example: `analytics.track("Button Clicked", {button:"submit form"}, {"integrations":{"Personas":false}})`
 
 #### Successful trait computation
 
@@ -85,11 +85,11 @@ This table lists the requirements for a trait to compute successfully:
 
 | Requirement                      | Details                                                                                     |
 |----------------------------------|---------------------------------------------------------------------------------------------|
-| **Event Types**                  | Track at least 5 different event types in the Feature Window.                               |
-| **Historical Data**              | Ensure these 5 events have data spanning 1.5 times the length of the Target Window. Example: For predicting a purchase propensity over the next 60 days, at least 90 days of historical data is required. |
-| **Subset Audience** (if applicable) | Ensure the audience contains more than 1 non-anonymous user.                                 |
-| **User Limit**                   | Ensure that you are making a prediction for fewer than 100 million users. If you track more than 100 million users in your space, define a smaller audience in the ‘Make a Prediction For’ section of the custom predictions builder. |
-| **User Activity**                | At least 100 users performing the Target Event and at least 100 users not performing the Target Event. |
+| Event Types                  | Track at least 5 different event types in the Feature Window.                               |
+| Historical Data              | Ensure these 5 events have data spanning 1.5 times the length of the Target Window. For example, to predict a purchase propensity over the next 60 days, at least 90 days of historical data is required. |
+| Subset Audience (if applicable) | Ensure the audience contains more than 1 non-anonymous user.                                 |
+| User Limit                   | Ensure that you are making a prediction for fewer than 100 million users. If you track more than 100 million users in your space, define a smaller audience in the **Make a Prediction For** section of the custom predictions builder. |
+| User Activity                | At least 100 users performing the Target Event and at least 100 users not performing the Target Event. |
 
 #### Selecting events (optional)
 
