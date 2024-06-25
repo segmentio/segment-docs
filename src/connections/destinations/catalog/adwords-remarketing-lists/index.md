@@ -45,7 +45,7 @@ Google Ads Remarketing Lists allows you to efficiently run several marketing and
 
 ### Exclusion audiences (suppression audiences)
 
-Create an audience of users that signed up, purchased a product, or otherwise performed some conversion event. You can then send those users to Google in a timely manner (hourly syncs) to prevent advertising to users that already converted. You can do this by creating an audience in Engage, syncing it to the Google Ads Remarketing Lists, and setting it as an [Exclusion List](https://support.google.com/google-ads/answer/2549058){:target="_blank"} in your Google Ads campaign.
+Create an audience of users that signed up, purchased a product, or otherwise performed some conversion event. You can then send those users to Google in a timely manner to prevent advertising to users that already converted. You can do this by creating an audience in Engage, syncing it to the Google Ads Remarketing Lists, and setting it as an [Exclusion List](https://support.google.com/google-ads/answer/2549058){:target="_blank"} in your Google Ads campaign.
 
 
 ### Similar audience
