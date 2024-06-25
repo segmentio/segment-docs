@@ -11,8 +11,8 @@ This destination is maintained by Jimo. For any issues with the destination, [co
 
 ## Getting started
 
-1. From your workspace's [Destination catalog page](https://app.segment.com/goto-my-workspace/destinations/catalog){:target="_blank”} search for "Jimo".
-2. Select Jimo and click **Add Destination**.
+1. From your workspace's [Destination catalog page](https://app.segment.com/goto-my-workspace/destinations/catalog){:target="_blank”} search for "Jimo (Actions)".
+2. Select Jimo (Actions) and click **Add Destination**.
 3. Select an existing Source to connect to Jimo (Actions).
 4. Open your [Jimo dashboard](https://i.usejimo.com/settings/general){:target="_blank"}, find and copy your **project id**.
 5. Return to Segment and open the destination settings for the Jimo (Actions) destination that you just created. Enter your Jimo **project id**.
