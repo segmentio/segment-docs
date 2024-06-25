@@ -72,7 +72,7 @@ To add and remove profiles in Klaviyo with Engage Audience data:
 
 1. Create and configure your Engage Audience.
 2. Navigate to **Engage > Engage Settings > Destinations** and click **Add Destination**.
-3. Select **Klaviyo (Actions) Audiences**.
+3. Select **Klaviyo (Actions)**.
 4. Select your Audience Space as the source, and name your destination.
 5. On the **Mappings** tab, click **Add Mapping** and select **Add Profile To List (Engage)**.
 6. Click **Save** and make sure to enable the mapping.
