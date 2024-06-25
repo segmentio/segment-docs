@@ -214,7 +214,7 @@ Mapping fields are case-sensitive. The following type filters and operators are 
 {% comment %}
 
 > info "Valid property and trait values"
-> Property or trait names must begin with the characters: [a-z], [A-Z] or '_'. Special characters are unsupported and will trigger an error if entered.
+> Property and trait names must begin with the characters: [a-z], [A-Z] or '_'. Property and trait names don't support special characters in the first character. If you save a property or trait with a special character in the first character, you'll get an Invalid Trigger error. 
 
 > info "Event property operators and supported data types"
 > Operators support matching on values with a **string** data type:
