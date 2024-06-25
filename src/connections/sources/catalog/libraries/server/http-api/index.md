@@ -41,9 +41,6 @@ In practice that means taking a Segment source **Write Key**,`'abc123'`, as the 
 
 #### OAuth
 
-> info ""
-> OAuth 2.0 is currently in private beta and is governed by Segment’s [First Access and Beta Preview Terms](https://www.twilio.com/en-us/legal/tos){:target="_blank"}.
-
 [Obtain the access token](/docs/connections/oauth/) from the Authorization Server specific to the region. 
 
 Include the access token in the Authorization header as a Bearer token along with your project's write key in the payload of the request. For example, Authorization with Bearer token looks like:

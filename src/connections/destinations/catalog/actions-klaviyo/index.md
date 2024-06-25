@@ -20,6 +20,11 @@ Klaviyo (Actions) provides the following benefits:
 - **More control** - Actions-based destinations enable you to define the mapping between the data Segment receives from your sources, and the data Segment sends to Klaviyo.
 - **Default property mappings** - Default mappings from the Segment like event, timestamp, and more, allow data to be mapped correctly without any setup required.
 
+> info ""
+> Segment automatically migrated all classic Klaviyo destinations configured in Cloud mode to the Klaviyo (Actions) destination in June 2024.
+> 
+> If you are a Klaviyo classic user, view information about steps you might need to take in the [Migrate to the Klaviyo (Actions) destination](/docs/connections/destinations/catalog/klaviyo#migrate-to-the-klaviyo-actions-destination) documentation. 
+
 ## Getting started
 
 1. From the Segment web app, click **Catalog**.
@@ -67,7 +72,7 @@ To add and remove profiles in Klaviyo with Engage Audience data:
 
 1. Create and configure your Engage Audience.
 2. Navigate to **Engage > Engage Settings > Destinations** and click **Add Destination**.
-3. Select **Klaviyo (Actions) Audiences**.
+3. Select **Klaviyo (Actions)**.
 4. Select your Audience Space as the source, and name your destination.
 5. On the **Mappings** tab, click **Add Mapping** and select **Add Profile To List (Engage)**.
 6. Click **Save** and make sure to enable the mapping.
