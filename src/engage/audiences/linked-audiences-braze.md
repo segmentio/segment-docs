@@ -122,11 +122,11 @@ The following is an example of what your payload data might look like with neste
 The following helps translate your payload data into Liquid syntax:  
 
 To reference a specific event property:
-- Use the following liquid syntax: `{{event_properties.event_property_name}}`
-    - An example of this property might look like: `{{event_properties.first_name}}`
+- Use the following liquid syntax: <code>{% raw %}{{event_properties.event_property_name}}{% endraw %}</code>
+    - An example of this property might look like: <code>{% raw %}{{event_properties.first_name}}{% endraw %}</code>
 - To reference nested event properties within an Array:
-    - Use the following liquid syntax: `{{event_property_name.[#_that_represents_specific_entry_in_array].nested_event_property_name }}` 
-    - An example of this property might look like: `{{event_properties.shopping_cart__products[0].product_name}}` 
+    - Use the following liquid syntax: <code>{% raw %}{{event_property_name.[#_that_represents_specific_entry_in_array].nested_event_property_name }}{% endraw %}</code> 
+    - An example of this property might look like: <code>{% raw %}{{event_properties.shopping_cart__products[0].product_name}}{% endraw %}<code> 
 
 ### Basic Email Example
 
