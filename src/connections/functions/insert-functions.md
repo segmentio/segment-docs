@@ -600,3 +600,7 @@ DELETE deleteInsertFunction(fn_id)
 For more information, visit Segment's [Public API docs](https://docs.segmentapis.com/tag/Functions){:target="_blank"}.
 
 {% endcomment %}
+
+##### What is the maximum data size that can be displayed in console.logs() when testing a Function?
+
+The test function interface has a 4KB console logging limit. Outputs surpassing this limit will not be visible in the user interface.
