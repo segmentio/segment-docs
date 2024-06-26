@@ -123,9 +123,9 @@ The following table helps translate your payload data into Liquid syntax:
 
 <table>
     <tr>
-        <td>Reference Data Definition</td>
-        <td>Liquid Syntax</td>
-        <td>Example Properties</td>
+         <th>Reference Data Definition</th>
+        <th>Liquid Syntax</th>
+        <th>Example Properties</th>
     </tr>
     <tr>
         <td>Reference a specific event property</td>
@@ -139,7 +139,7 @@ The following table helps translate your payload data into Liquid syntax:
     </tr>
 </table>
 
-### Basic Payload Email Example
+### Basic Email Example
 
 Use the Segment payload data you [copied when setting up your Linked audience](/docs/engage/audiences/linked-audiences#showhide-preview) to build an abandoned cart email campaign that includes specific information for the product in a customer’s shopping cart.
 
@@ -151,11 +151,11 @@ This is an example of what your email using [HTML ](https://www.braze.com/docs/u
 
 ![A screenshot of the basic email](/docs/engage/images/braze_basic_email.png)
 
-### Advanced Payload Example Email Example
+### Advanced Email Example
 
-Use the Segment payload data you [copied when setting up your Linked audience](/docs/engage/audiences/linked-audiences#showhide-preview) to build your  personalize your campaign with a dynamic event payload, you can use an [iteration tag](https://www.braze.com/docs/user_guide/personalization_and_dynamic_content/liquid/supported_personalization_tags/#iteration-tags){:target="_blank"} to  run a block of code repeatedly. In this abandoned cart email campaign example, you can use a `for loop` to list all of the products and their related prices in a customer’s shopping cart.
+Use the Segment payload data you [copied when setting up your Linked audience](/docs/engage/audiences/linked-audiences#showhide-preview) to build an abandoned cart email campaign where you can use an [iteration tag](https://www.braze.com/docs/user_guide/personalization_and_dynamic_content/liquid/supported_personalization_tags/#iteration-tags){:target="_blank"} to run a block of code repeatedly. In this example, you can use a `for loop` to list all of the products and their related prices in a customer’s shopping cart.
 
-When an email is sent, it will list all of the products and their related prices in your customer’s shopping cart. It might look like the following:
+When an email is sent, it will list all of the products and their related prices in your customer’s shopping cart. It might look like the following: 
 
 ![A screenshot of an email example.](/docs/engage/images/braze-cart-advanced.png)
 
