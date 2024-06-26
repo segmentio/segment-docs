@@ -123,19 +123,19 @@ The following table helps translate your payload data into Liquid syntax:
 
 <table>
     <tr>
-         <th>Reference Data Definition</th>
-        <th>Liquid Syntax</th>
-        <th>Example Properties</th>
+         <th style="width:10%">Reference Data Definition</th>
+        <th style="width:60%">Liquid Syntax</th>
+        <th style="width:30%">Example Properties</th>
     </tr>
     <tr>
-        <td>Reference a specific event property</td>
-        <td><code>{% raw %}{{event_properties.event_property_name}}{% endraw %}</code></td>
-        <td><code>{% raw %}{{event_properties.first_name}}{% endraw %}</code></td>
+        <td style="width:10%">Reference a specific event property</td>
+        <td style="width:60%"><samp>{% raw %}{{event_properties.event_property_name}}{% endraw %}</samp></td>
+        <td style="width:30%"><samp>{% raw %}{{event_properties.first_name}}{% endraw %}</samp></td>
     </tr>
     <tr>
-        <td>Reference nested event properties within an Array</td>
-        <td><code>{% raw %}{{event_property_name.[#_that_represents_specific_entry_in_array].nested_event_property_name }}{% endraw %}</code></td>
-        <td><code>{% raw %}{{event_properties.shopping_cart__products[0].product_name}}{% endraw %}</code></td>
+        <td style="width:10%">Reference nested event properties within an Array</td>
+        <td style="width:60%"><samp>{% raw %}{{event_property_name.[#_that_represents_specific_entry_in_array].nested_event_property_name }}{% endraw %}</samp></td>
+        <td style="width:30%"><samp>{% raw %}{{event_properties.shopping_cart__products[0].product_name}}{% endraw %}</samp></td>
     </tr>
 </table>
 
