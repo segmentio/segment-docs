@@ -76,7 +76,7 @@ In Braze, do the following:
 
 In Segment, finish setting up your destination campaign by sending yourself a test email for review. Add your Braze user id and click **[Send test event to destination](/docs/engage/audiences/linked-audiences/#step-3-send-a-test-event-to-your-destination)**. Review the email you received, and ensure it is formatted properly. 
 
-![A screenshot of the test event page](/docs/engage/images/braze-cart-simple.png)
+![A screenshot of the test event page](/docs/engage/images/send-test-event.png)
 
 You will see a `“message”: “success”` response in Segment if the event is sent successfully to Braze.
 
