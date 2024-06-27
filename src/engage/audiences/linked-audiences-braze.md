@@ -80,10 +80,10 @@ In Braze, do the following:
 
 2. If the event is sent successfully to Braze, you will see a `“message”: “success”` response in Segment.
 3. Open Braze and check your [campaign dashboard](https://www.braze.com/docs/user_guide/message_building_by_channel/email/reporting_and_analytics/email_reporting){:target="_blank"} (Braze > *[Your Unique Campaign]* > Analytics) to confirm that Braze sent the message. It can take up to 15 minutes for Braze to send the email.
-4. If your email doesn’t look the way you want it to, adjust the [liquid syntax](https://www.braze.com/docs/user_guide/personalization_and_dynamic_content/liquid/using_liquid/#using-liquid-1){:target="_blank"} in Braze and send another test event in Segment. See the following [personalization examples](#liquid-examples-to-use-in-braze) for more specific details.
+4. If your email doesn’t look the way you want it to, adjust the [Liquid syntax](https://www.braze.com/docs/user_guide/personalization_and_dynamic_content/liquid/using_liquid/#using-liquid-1){:target="_blank"} in Braze and send another test event in Segment. See the following [personalization examples](#liquid-examples-to-use-in-braze) for more specific details.
 5. When you’re finished testing your campaign, proceed to [Enable your Linked Audience](/docs/engage/audiences/linked-audiences/#step-4-enable-your-linked-audience).
 
-## Liquid Examples to use in Braze
+## Liquid examples to use in Braze
 
 Use the following examples as context and information to experiment with setting up your campaign in Braze.
 
@@ -125,7 +125,7 @@ The following helps translate your payload data into Liquid syntax:
   - Use the following liquid syntax: <code>{% raw %}{{event_property_name.[#_that_represents_specific_entry_in_array].nested_event_property_name }}{% endraw %}</code> 
   - An example of this property might look like: <code>{% raw %}{{event_properties.shopping_cart__products[0].product_name}}{% endraw %}<code> 
 
-### Basic Email Example
+### Basic email example
 
 Use the Segment payload data you [copied when setting up your Linked audience](/docs/engage/audiences/linked-audiences#showhide-preview) to build an abandoned cart email campaign that includes specific information for the product in a customer’s shopping cart.
 
@@ -159,7 +159,7 @@ Quick, now is your chance to own this item before it sells out!
 {% endraw %} 
 
 
-### Advanced Email Example
+### Advanced email example
 
 Use the Segment payload data you [copied when setting up your Linked audience](/docs/engage/audiences/linked-audiences#showhide-preview) to build an abandoned cart email campaign where you can use an [iteration tag](https://www.braze.com/docs/user_guide/personalization_and_dynamic_content/liquid/supported_personalization_tags/#iteration-tags){:target="_blank"} to run a block of code repeatedly. In this example, you can use a for loop to list all of the products and their related prices in a customer’s shopping cart.
 
