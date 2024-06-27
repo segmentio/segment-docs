@@ -56,7 +56,7 @@ In Braze, ensure you have:
 
 ### Step 1: Set up a Braze action-based Delivery Campaign
 
-To take advantage of Linked Audiences, you must now take some additional steps in Braze to set up an action-based delivery campaign. 
+To use Linked Audiences you must set up an action-based delivery campaign in Braze. 
 
 In Braze, do the following: 
 
