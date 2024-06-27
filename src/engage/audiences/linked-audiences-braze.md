@@ -20,7 +20,9 @@ The following engagement tools are available for use with Linked Audiences in Se
 
 ## Segment Destination Actions
 
-Segment sends data from your Linked Audiences to actions-based destinations. (For example: associated account information for the audience profiles with past due accounts). You can configure multiple triggers per audience (For example: one for account entry, and one for account exit).
+Segment sends data from your Linked Audiences to actions-based destinations. For example, you could send account information for the audience profiles with past due accounts to an email platform. 
+
+You can configure multiple triggers per audience (For example: one for account entry, and one for account exit).
 
 
 | Segment Destination Action                                                                                                     | How does it work?                                                                                                                                                                                                                                                                                                                                                                    | How does Braze store the data?                                                                                                                                                                                                                               | Braze API Endpoint                                                                                                                |
@@ -74,15 +76,15 @@ In Braze, do the following:
 
 ### Step 2: Test your campaign flow
 
-In Segment, finish setting up your destination campaign by sending yourself a test email for review. Add your Braze user id and click **[Send test event to destination](/docs/engage/audiences/linked-audiences/#step-3-send-a-test-event-to-your-destination)**. Review the email you received, and ensure it is formatted properly. 
+Open the Segment app and send yourself a test email for review. Add your Braze user id and click **[Send test event to destination](/docs/engage/audiences/linked-audiences/#step-3-send-a-test-event-to-your-destination)**. Review the email you received, and ensure it is formatted properly. 
 
 ![A screenshot of the test event page](/docs/engage/images/send-test-event.png)
 
 If the event is sent successfully to Braze, you will see a `“message”: “success”` response in Segment.
 
-Check your [campaign dashboard](https://www.braze.com/docs/user_guide/message_building_by_channel/email/reporting_and_analytics/email_reporting){:target="_blank"} (Braze > *[Your Unique Campaign]* > Analytics) in Braze to confirm that the message was sent. It can take up to 15 minutes for Braze to send the email. 
+Open Braze and check your [campaign dashboard](https://www.braze.com/docs/user_guide/message_building_by_channel/email/reporting_and_analytics/email_reporting){:target="_blank"} (Braze > *[Your Unique Campaign]* > Analytics) to confirm that Braze sent the message. It can take up to 15 minutes for Braze to send the email. 
 
-If your email doesn’t look the way you want it to, adjust the [liquid syntax](https://www.braze.com/docs/user_guide/personalization_and_dynamic_content/liquid/using_liquid/#using-liquid-1){:target="_blank"} in Braze, and send another test event in Segment. See the personalization [examples below](#liquid-examples-to-use-in-braze) for more specific details.
+If your email doesn’t look the way you want it to, adjust the [liquid syntax](https://www.braze.com/docs/user_guide/personalization_and_dynamic_content/liquid/using_liquid/#using-liquid-1){:target="_blank"} in Braze and send another test event in Segment. See the following [personalization examples](#liquid-examples-to-use-in-braze) for more specific details.
 
 When you’re finished testing your campaign, proceed to [Enable your Linked Audience](/docs/engage/audiences/linked-audiences/#step-4-enable-your-linked-audience).
 
@@ -132,22 +134,22 @@ The following helps translate your payload data into Liquid syntax:
 
 Use the Segment payload data you [copied when setting up your Linked audience](/docs/engage/audiences/linked-audiences#showhide-preview) to build an abandoned cart email campaign that includes specific information for the product in a customer’s shopping cart.
 
-When an email is sent, it will list the specific product, and its related price in your customer’s shopping cart. It might look like the following: 
+When an email is sent, it lists the specific product and its related price in your customer’s shopping cart. It might look like the following screenshot: 
 
-![A screenshot of an email example.](/docs/engage/images/braze-cart-simple.png)
+![A screenshot of an email, with the name, item, and price personalized.](/docs/engage/images/braze-cart-simple.png)
 
-This is an example of what your email using [HTML ](https://www.braze.com/docs/user_guide/message_building_by_channel/email/html_editor/creating_an_email_campaign/){:target="_blank"} and[ liquid tags](https://www.braze.com/docs/user_guide/personalization_and_dynamic_content/liquid){:target="_blank"} might look like in Braze:
+This is an example of what your email formatted using [HTML](https://www.braze.com/docs/user_guide/message_building_by_channel/email/html_editor/creating_an_email_campaign/){:target="_blank"} and [Liquid](https://www.braze.com/docs/user_guide/personalization_and_dynamic_content/liquid){:target="_blank"} might look like in Braze:
 
 ![A screenshot of the basic email](/docs/engage/images/braze_basic_email.png)
 
 ### Advanced Email Example
 
-Use the Segment payload data you [copied when setting up your Linked audience](/docs/engage/audiences/linked-audiences#showhide-preview) to build an abandoned cart email campaign where you can use an [iteration tag](https://www.braze.com/docs/user_guide/personalization_and_dynamic_content/liquid/supported_personalization_tags/#iteration-tags){:target="_blank"} to run a block of code repeatedly. In this example, you can use a `for loop` to list all of the products and their related prices in a customer’s shopping cart.
+Use the Segment payload data you [copied when setting up your Linked audience](/docs/engage/audiences/linked-audiences#showhide-preview) to build an abandoned cart email campaign where you can use an [iteration tag](https://www.braze.com/docs/user_guide/personalization_and_dynamic_content/liquid/supported_personalization_tags/#iteration-tags){:target="_blank"} to run a block of code repeatedly. In this example, you can use a for loop to list all of the products and their related prices in a customer’s shopping cart.
 
-When an email is sent, it will list all of the products and their related prices in your customer’s shopping cart. It might look like the following: 
+When an email is sent, it lists all of the products and their related prices in your customer’s shopping cart. It might look like the following: 
 
-![A screenshot of an email example.](/docs/engage/images/braze-cart-advanced.png)
+![A screenshot of an abandoned cart email, with a personalized name, two items, and prices for those items.](/docs/engage/images/braze-cart-advanced.png)
 
-This is an example of what your email using [HTML ](https://www.braze.com/docs/user_guide/message_building_by_channel/email/html_editor/creating_an_email_campaign/){:target="_blank"} and[ liquid tags](https://www.braze.com/docs/user_guide/personalization_and_dynamic_content/liquid){:target="_blank"} might look like in Braze:
+This is an example of what your email formatted using [HTML](https://www.braze.com/docs/user_guide/message_building_by_channel/email/html_editor/creating_an_email_campaign/){:target="_blank"} and [Liquid](https://www.braze.com/docs/user_guide/personalization_and_dynamic_content/liquid){:target="_blank"} might look like in Braze:
 
 ![A screenshot of the advanced email](/docs/engage/images/braze_advanced_email.png)
