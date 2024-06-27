@@ -123,6 +123,6 @@ Yes.
 Yes. Keep the following in mind when you work with Predictions:
 
 - **Predictions made for more than 100 million users will fail.** Segment recommends making predictions only for non-anonymous users, or, as an alternative, use the Starting Cohort to narrow down the audience for which you want to make a prediction.
-- **Predictions will not work as intended if you track more than 5,000 unique events in your workspace.** If this applies to your use case, [contact Segment Support](https://segment.com/help/contact/){:target="_blank"} for help with removing unused events, which will allow you to create predictions.
+- **Predictions will not work as intended if you track more than 5,000 unique events in your workspace.**
 - **Prediction is failing with error "We weren't able to create this prediction because your requested prediction event is not being tracked anymore. Please choose a different prediction event and try again."** Predictions are computed based on the available data and the conditions specified for the trait. A gap in tracking events for seven continuous days could potentially affect the computation of the prediction.
 Nevertheless, once data tracking resumes and there is enough data, the prediction should be recomputed.
