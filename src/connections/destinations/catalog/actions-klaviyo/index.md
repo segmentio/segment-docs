@@ -31,7 +31,7 @@ Klaviyo (Actions) provides the following benefits:
 2. Search for **Klaviyo (Actions)** in the Catalog, select it, and choose which of your sources to connect the destination to.
 3. Navigate to [Account > Settings > API Keys](https://www.klaviyo.com/account#api-keys-tab){:target="_blank"} in Klaviyo's UI and copy your API Key into the Segment Settings UI.
 
-> info "Generate a Private API Key with full access to Klaviyo's Accounts, Campaigns, List, Profiles, Segments, and Subscriptions APIs"
+> info "Generate a Private API Key with full access to Klaviyo's Accounts, Campaigns, Events, List, Profiles, Segments, and Subscriptions APIs"
 > Create a key by going to Klaviyo's UI and clicking [Account > Settings > API Keys > Create API Key](https://www.klaviyo.com/account#api-keys-tab){:target="_blank"} to generate a Private API Key. After you've created a key, copy it into the Segment Settings UI.
 
 {% include components/actions-fields.html %}
