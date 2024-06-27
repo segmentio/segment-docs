@@ -140,7 +140,29 @@ When an email is sent, it lists the specific product and its related price in yo
 
 This is an example of what your email formatted using [HTML](https://www.braze.com/docs/user_guide/message_building_by_channel/email/html_editor/creating_an_email_campaign/){:target="_blank"} and [Liquid](https://www.braze.com/docs/user_guide/personalization_and_dynamic_content/liquid){:target="_blank"} might look like in Braze:
 
-![A screenshot of the basic email](/docs/engage/images/braze_basic_email.png)
+{% raw %} 
+
+```html
+Hi {{event_properties.first_name}},
+<br />
+<br />
+Did you forget to checkout?<br />
+<br />
+We noticed you added some items to your shopping cart including this item: <br />
+<br />
+<b>Product Name: </b> 
+{{event_properties.shopping_cart__products[0].product_name}}
+<br />
+<b>Product Price: </b> 
+{{event_properties.shopping_cart__products[0].product_price}} USD
+<br />
+<br />
+
+Quick, now is your chance to own this item before it sells out!
+```
+
+{% endraw %} 
+
 
 ### Advanced Email Example
 
@@ -152,4 +174,29 @@ When an email is sent, it lists all of the products and their related prices in 
 
 This is an example of what your email formatted using [HTML](https://www.braze.com/docs/user_guide/message_building_by_channel/email/html_editor/creating_an_email_campaign/){:target="_blank"} and [Liquid](https://www.braze.com/docs/user_guide/personalization_and_dynamic_content/liquid){:target="_blank"} might look like in Braze:
 
-![A screenshot of the advanced email](/docs/engage/images/braze_advanced_email.png)
+{% raw %} 
+
+```html
+Hi {{event_properties.first_name}},
+<br />
+<br />
+Did you forget to checkout?<br />
+<br />
+We noticed you added some items to your shopping cart. Here's what you left: <br />
+<br />
+
+{% for products in event_properties.shopping_cart__products %}
+<b>Product Name: </b>
+{{products.product_name}}
+<br />
+<b>Product Price: </b>
+{{products.product_price}} USD
+<br />
+<br />
+
+{%endfor%}
+
+Quick, now is your chance to own these items before they sell out!
+```
+
+{% endraw %} 
