@@ -131,7 +131,7 @@ Use the Segment payload data you [copied when setting up your Linked audience](/
 
 When an email is sent, it lists the specific product and its related price in your customer’s shopping cart. It might look like the following screenshot: 
 
-![A screenshot of an email, with the name, item, and price personalized.](/docs/engage/images/braze-cart-simple.png)
+![A screenshot of an email, with the name, item, and price personalized.](/docs/engage/images/linked-cart-simple.png)
 
 This is an example of what your email formatted using [HTML](https://www.braze.com/docs/user_guide/message_building_by_channel/email/html_editor/creating_an_email_campaign/){:target="_blank"} and [Liquid](https://www.braze.com/docs/user_guide/personalization_and_dynamic_content/liquid){:target="_blank"} might look like in Braze:
 
@@ -165,7 +165,7 @@ Use the Segment payload data you [copied when setting up your Linked audience](/
 
 When an email is sent, it lists all of the products and their related prices in your customer’s shopping cart. It might look like the following: 
 
-![A screenshot of an abandoned cart email, with a personalized name, two items, and prices for those items.](/docs/engage/images/braze-cart-advanced.png)
+![A screenshot of an abandoned cart email, with a personalized name, two items, and prices for those items.](/docs/engage/images/linked-cart-advanced.png)
 
 This is an example of what your email formatted using [HTML](https://www.braze.com/docs/user_guide/message_building_by_channel/email/html_editor/creating_an_email_campaign/){:target="_blank"} and [Liquid](https://www.braze.com/docs/user_guide/personalization_and_dynamic_content/liquid){:target="_blank"} might look like in Braze:
 
