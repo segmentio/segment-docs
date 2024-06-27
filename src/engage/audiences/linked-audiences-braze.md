@@ -60,7 +60,7 @@ To use Linked Audiences you must set up an action-based delivery campaign in Bra
 
 In Braze, do the following: 
 
-1. Create a new [email Campaign](https://www.braze.com/docs/user_guide/engagement_tools/campaigns/building_campaigns/creating_campaign){:target="_blank"}. 
+1. Create a new [email Campaign](https://www.braze.com/docs/user_guide/message_building_by_channel/email){:target="_blank"}. 
 2. [Create an email using the HTML Editor](https://www.braze.com/docs/user_guide/message_building_by_channel/email/html_editor/creating_an_email_campaign/){:target="_blank"} and [personalize it using Liquid tags](https://www.braze.com/docs/user_guide/personalization_and_dynamic_content/liquid){:target="_blank"}. 
     - Reference your [personalization payload schema](/docs/engage/audiences/linked-audiences/#showhide-preview) from Segment to determine what properties to include in your message.
     - Translate the Segment event properties in the payload schema into Liquid syntax for [custom events](https://www.braze.com/docs/user_guide/data_and_analytics/custom_data/custom_events){:target="_blank"}, and enter it in the Braze HTML editor. See the following personalization [examples](#liquid-examples-to-use-in-braze) for more details on how you can personalize your campaign.
