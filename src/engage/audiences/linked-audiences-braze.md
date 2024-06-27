@@ -5,9 +5,8 @@ beta: true
 hidden: true
 ---
 
-## Overview
 
-Linked Audiences allows you to send the predefined traits of any audience profile, along with the attributes of any entities used to match the profile into the audience to Braze and use those traits and attributes for [dynamically personalizing  email messages](https://www.braze.com/docs/user_guide/personalization_and_dynamic_content/liquid){:target="_blank"}. 
+Linked Audiences allows you [dynamically personalize email messages](https://www.braze.com/docs/user_guide/personalization_and_dynamic_content/liquid){:target="_blank"} in Braze using the predefined traits of any Linked Audience profile and the attributes of any entities used to match the profile into the audience. 
 
 The following topic is intended for a Technical Marketer and Data Engineer to complete together while setting up their Linked Audience. 
 
@@ -26,16 +25,17 @@ Segment sends data from your Linked Audiences to actions-based destinations. (Fo
 
 | Segment Destination Action                                                                                                     | How does it work?                                                                                                                                                                                                                                                                                                                                                                    | How does Braze store the data?                                                                                                                                                                                                                               | Braze API Endpoint                                                                                                                |
 | ------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | --------------------------------------------------------------------------------------------------------------------------------- |
-| [Track Event](/docs/connections/destinations/catalog/braze-cloud-mode-actions/#track-event)                 | Segment sends personalization payload information into Braze via [Braze Profile custom events](https://www.braze.com/docs/user_guide/data_and_analytics/custom_data/custom_events/){:target="_blank"}. The entity personalization payload is contained in the `events` parameter within API calls. Segment appends Profile Traits as objects (or event properties) and Entity Context as nested objects. | [Event objects](https://www.braze.com/docs/api/objects_filters/event_object/){:target="_blank"} or [Nested objects in custom events](https://www.braze.com/docs/user_guide/data_and_analytics/custom_data/custom_events/nested_objects/){:target="_blank"} | [track API endpoint](https://documenter.getpostman.com/view/4689407/SVYrsdsG?version=latest#4cf57ea9-9b37-4e99-a02e-4373c9a4ee59){:target="_blank"} |
-| [Update User Profile](https://segment.com/docs/connections/destinations/catalog/braze-cloud-mode-actions/#update-user-profile){:target="_blank"} | Segment sends personalization payload information into Braze via [Braze profile custom attributes](https://www.braze.com/docs/user_guide/data_and_analytics/custom_data/custom_attributes/){:target="_blank"}. The entity personalization payload is contained in the `attributes` parameter in API calls.                                                                                               | [User attributes object](https://www.braze.com/docs/api/objects_filters/user_attributes_object){:target="_blank"}  OR [Nested Custom Attributes](https://www.braze.com/docs/user_guide/data_and_analytics/custom_data/custom_attributes/nested_custom_attribute_support/){:target="_blank"} | [track API endpoint](https://documenter.getpostman.com/view/4689407/SVYrsdsG?version=latest#4cf57ea9-9b37-4e99-a02e-4373c9a4ee59){:target="_blank"} |
+| [Track Event](/docs/connections/destinations/catalog/braze-cloud-mode-actions/#track-event)                 | Segment sends personalization payload information into Braze as [Braze Profile custom events](https://www.braze.com/docs/user_guide/data_and_analytics/custom_data/custom_events/){:target="_blank"}. The entity personalization payload is contained in the `events` parameter within API calls. Segment appends Profile Traits as objects (or event properties) and Entity Context as nested objects. | [Event objects](https://www.braze.com/docs/api/objects_filters/event_object/){:target="_blank"} or [Nested objects in custom events](https://www.braze.com/docs/user_guide/data_and_analytics/custom_data/custom_events/nested_objects/){:target="_blank"} | [track API endpoint](https://documenter.getpostman.com/view/4689407/SVYrsdsG?version=latest#4cf57ea9-9b37-4e99-a02e-4373c9a4ee59){:target="_blank"} |
+| [Update User Profile](https://segment.com/docs/connections/destinations/catalog/braze-cloud-mode-actions/#update-user-profile){:target="_blank"} | Segment sends personalization payload information into Braze as [Braze profile custom attributes](https://www.braze.com/docs/user_guide/data_and_analytics/custom_data/custom_attributes/){:target="_blank"}. The entity personalization payload is contained in the `attributes` parameter in API calls.                                                                                               | [User attributes object](https://www.braze.com/docs/api/objects_filters/user_attributes_object){:target="_blank"}  or [Nested Custom Attributes](https://www.braze.com/docs/user_guide/data_and_analytics/custom_data/custom_attributes/nested_custom_attribute_support/){:target="_blank"} | [track API endpoint](https://documenter.getpostman.com/view/4689407/SVYrsdsG?version=latest#4cf57ea9-9b37-4e99-a02e-4373c9a4ee59){:target="_blank"} |
 
 ## Braze Action-based Delivery Campaign
 
-Braze [Action-Based Delivery campaigns](https://www.braze.com/docs/user_guide/engagement_tools/campaigns/building_campaigns/delivery_types/triggered_delivery/){:target="_blank"} store the entity personalization payload as [nested objects in custom events](https://www.braze.com/docs/user_guide/data_and_analytics/custom_data/custom_events/nested_objects/){:target="_blank"}. 
+Braze's [Action-Based Delivery campaigns](https://www.braze.com/docs/user_guide/engagement_tools/campaigns/building_campaigns/delivery_types/triggered_delivery/){:target="_blank"} store the entity personalization payload as [nested objects in custom events](https://www.braze.com/docs/user_guide/data_and_analytics/custom_data/custom_events/nested_objects/){:target="_blank"}. 
 
 ### Prerequisites
 
-You must have previously done the following before setting up an action based delivery campaign in Braze. 
+Complete the following setup steps before you configure an action based delivery campaign in Braze. 
+``
 
 In Segment, ensure you have:
 
@@ -46,10 +46,10 @@ In Segment, ensure you have:
 
 In Braze, ensure you have:
 
-- Permissions to access the application, or access to someone who has permissions. 
-- Created all Segment profiles as Braze profiles using the [Update User Profile destination action](/docs/connections/destinations/catalog/braze-cloud-mode-actions/#update-user-profile) via [Connections](/docs/connections/) or [Reverse ETL](/docs/connections/reverse-etl/). This is a [requirement for them to receive an action-based campaign](https://www.braze.com/docs/user_guide/engagement_tools/testing/race_conditions/#targeting-new-users){:target="_blank"}.
-- Created a Braze profile, for campaign testing, with an email address you can access. 
-- Familiarity with the [Liquid templating syntax](https://www.braze.com/docs/user_guide/personalization_and_dynamic_content/liquid){:target="_blank"} to manually type out the code using dot notation.
+- Permissions to access the application, or access to someone with permissions. 
+- Created all Segment profiles as Braze profiles using the [Update User Profile destination action](/docs/connections/destinations/catalog/braze-cloud-mode-actions/#update-user-profile) through [Connections](/docs/connections/) or [Reverse ETL](/docs/connections/reverse-etl/). This is a [requirement for the profiles to receive an action-based campaign](https://www.braze.com/docs/user_guide/engagement_tools/testing/race_conditions/#targeting-new-users){:target="_blank"}.
+- Created a Braze profile that has an email address you can access. You'll use this profile for campaign testing in a later step.
+- Familiarity with the [Liquid templating syntax](https://www.braze.com/docs/user_guide/personalization_and_dynamic_content/liquid){:target="_blank"}.
 
 
 ### Step 1: Set up a Braze action-based Delivery Campaign
@@ -59,18 +59,18 @@ To take advantage of Linked Audiences, you must now take some additional steps i
 In Braze, do the following: 
 
 1. Create a new [email Campaign](https://www.braze.com/docs/user_guide/engagement_tools/campaigns/building_campaigns/creating_campaign){:target="_blank"}. 
-2. [Create an email using the HTML Editor](https://www.braze.com/docs/user_guide/message_building_by_channel/email/html_editor/creating_an_email_campaign/){:target="_blank"} to begin [personalizing with liquid tags](https://www.braze.com/docs/user_guide/personalization_and_dynamic_content/liquid){:target="_blank"}. 
+2. [Create an email using the HTML Editor](https://www.braze.com/docs/user_guide/message_building_by_channel/email/html_editor/creating_an_email_campaign/){:target="_blank"} and [personalize it using Liquid tags](https://www.braze.com/docs/user_guide/personalization_and_dynamic_content/liquid){:target="_blank"}. 
     - Reference your [personalization payload schema](/docs/engage/audiences/linked-audiences/#showhide-preview) from Segment to determine what properties to include in your message.
-    - Translate the Segment event properties in the payload schema into [liquid syntax](https://www.braze.com/docs/user_guide/personalization_and_dynamic_content/liquid/using_liquid/#using-liquid-1){:target="_blank"} for [custom events](https://www.braze.com/docs/user_guide/data_and_analytics/custom_data/custom_events){:target="_blank"}, and enter it in the HTML editor in Braze. See the personalization [examples below](#liquid-examples-to-use-in-braze) for more specific details on how you can personalize your campaign.
+    - Translate the Segment event properties in the payload schema into Liquid syntax for [custom events](https://www.braze.com/docs/user_guide/data_and_analytics/custom_data/custom_events){:target="_blank"}, and enter it in the Braze HTML editor. See the following personalization [examples](#liquid-examples-to-use-in-braze) for more details on how you can personalize your campaign.
 3. Next, [schedule your campaign delivery](https://www.braze.com/docs/user_guide/engagement_tools/campaigns/building_campaigns/delivery_types){:target="_blank"}:
-    - Choose [Action based delivery](https://www.braze.com/docs/user_guide/engagement_tools/campaigns/building_campaigns/delivery_types/triggered_delivery/#step-1-select-a-trigger-event){:target="_blank"} > [New Trigger Action](https://www.braze.com/docs/user_guide/engagement_tools/campaigns/building_campaigns/delivery_types/triggered_delivery/#step-1-select-a-trigger-event){:target="_blank"}: [Perform Custom Event](https://www.braze.com/docs/user_guide/data_and_analytics/custom_data/custom_events){:target="_blank"}> Add Trigger. 
-    - Search and choose the name of the Segment custom event you previously set up and tested in Segment.
-    - Choose Delivery Controls > [Allow users to become re-eligible to receive campaigns](https://www.braze.com/docs/user_guide/engagement_tools/campaigns/building_campaigns/delivery_types/reeligibility/#campaigns){:target="_blank"} checkbox, and select 0 minutes. This is necessary for [Step 2: Test your campaign flow](#step-2-test-your-campaign-flow) so that you don’t have to wait for a user to become re-eligible while testing. You can adjust these settings after you have finished testing.
+    1. Select [Action-based delivery](https://www.braze.com/docs/user_guide/engagement_tools/campaigns/building_campaigns/delivery_types/triggered_delivery/#step-1-select-a-trigger-event){:target="_blank"} > [**New Trigger Action**](https://www.braze.com/docs/user_guide/engagement_tools/campaigns/building_campaigns/delivery_types/triggered_delivery/#step-1-select-a-trigger-event){:target="_blank"}: [**Perform Custom Event**](https://www.braze.com/docs/user_guide/data_and_analytics/custom_data/custom_events){:target="_blank"} > **Add Trigger**. 
+    2. Search for and select the name of the Segment custom event you previously set up and tested in Segment.
+    3. Select **Delivery Controls** > [**Allow users to become re-eligible to receive campaigns**](https://www.braze.com/docs/user_guide/engagement_tools/campaigns/building_campaigns/delivery_types/reeligibility/#campaigns){:target="_blank"} checkbox, and select 0 minutes. This is necessary for [Step 2: Test your campaign flow](#step-2-test-your-campaign-flow) so that you don’t have to wait for a user to become re-eligible while testing. You can adjust these settings after you have finished testing.
 4. Select your target Audience:
-    - Add a filter to [target users without a segment](https://www.braze.com/docs/user_guide/engagement_tools/campaigns/building_campaigns/targeting_users/#without-segment){:target="_blank"}. 
-    - Search and choose the name of the Segment custom event you previously set up and tested in Segment.
-    - Select ‘more than 0 times’ as the timeframe for this filter. 
-5. Choose any additional settings that apply to your campaign, then [review and deploy](https://www.braze.com/docs/user_guide/message_building_by_channel/email/html_editor/creating_an_email_campaign/#step-5-review-and-deploy){:target="_blank"} your campaign, and continue on to [Step 2: Test your campaign flow](#step-2-test-your-campaign-flow). 
+    1. Add a filter to [target users without a segment](https://www.braze.com/docs/user_guide/engagement_tools/campaigns/building_campaigns/targeting_users/#without-segment){:target="_blank"}. 
+    2. Search for and select the name of the Segment custom event you previously set up and tested in Segment.
+    3. Select **More than 0 times** as the timeframe for this filter. 
+5. Update any additional settings that apply to your campaign, then [review and deploy](https://www.braze.com/docs/user_guide/message_building_by_channel/email/html_editor/creating_an_email_campaign/#step-5-review-and-deploy){:target="_blank"} your campaign and continue to [Step 2: Test your campaign flow](#step-2-test-your-campaign-flow). 
 
 ### Step 2: Test your campaign flow
 
@@ -78,7 +78,7 @@ In Segment, finish setting up your destination campaign by sending yourself a te
 
 ![A screenshot of the test event page](/docs/engage/images/send-test-event.png)
 
-You will see a `“message”: “success”` response in Segment if the event is sent successfully to Braze.
+If the event is sent successfully to Braze, you will see a `“message”: “success”` response in Segment.
 
 Check your [campaign dashboard](https://www.braze.com/docs/user_guide/message_building_by_channel/email/reporting_and_analytics/email_reporting){:target="_blank"} (Braze > *[Your Unique Campaign]* > Analytics) in Braze to confirm that the message was sent. It can take up to 15 minutes for Braze to send the email. 
 
