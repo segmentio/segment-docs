@@ -227,7 +227,7 @@ You'll also need to modify the Segment script with your `nonce` tag, which shoul
 
 ## Why am I getting an empty campaign object in my event payload?
 
-When any search parameters are present in the URL, Analytics.js will generate a campaign object inside the context object. If there are no UTM parameters present to be parsed, then the campaign object will remain empty. 
+Analytics.js generates a campaign object inside the context object whenever the URL contains search parameters. Without any UTM parameters, the campaign object remains empty. 
 
 ## Known issues:
 
