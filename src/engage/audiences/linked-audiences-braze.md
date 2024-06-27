@@ -36,8 +36,7 @@ Braze's [Action-Based Delivery campaigns](https://www.braze.com/docs/user_guide/
 
 ### Prerequisites
 
-Complete the following setup steps before you configure an action based delivery campaign in Braze. 
-``
+Complete the following setup steps before you configure an action based delivery campaign in Braze.
 
 In Segment, ensure you have:
 
@@ -53,7 +52,6 @@ In Braze, ensure you have:
 - Created a Braze profile that has an email address you can access. You'll use this profile for campaign testing in a later step.
 - Familiarity with the [Liquid templating syntax](https://www.braze.com/docs/user_guide/personalization_and_dynamic_content/liquid){:target="_blank"}.
 
-
 ### Step 1: Set up a Braze action-based Delivery Campaign
 
 To use Linked Audiences you must set up an action-based delivery campaign in Braze. 
@@ -62,8 +60,8 @@ In Braze, do the following:
 
 1. Create a new [email Campaign](https://www.braze.com/docs/user_guide/message_building_by_channel/email){:target="_blank"}. 
 2. [Create an email using the HTML Editor](https://www.braze.com/docs/user_guide/message_building_by_channel/email/html_editor/creating_an_email_campaign/){:target="_blank"} and [personalize it using Liquid tags](https://www.braze.com/docs/user_guide/personalization_and_dynamic_content/liquid){:target="_blank"}. 
-    - Reference your [personalization payload schema](/docs/engage/audiences/linked-audiences/#showhide-preview) from Segment to determine what properties to include in your message.
-    - Translate the Segment event properties in the payload schema into Liquid syntax for [custom events](https://www.braze.com/docs/user_guide/data_and_analytics/custom_data/custom_events){:target="_blank"}, and enter it in the Braze HTML editor. See the following personalization [examples](#liquid-examples-to-use-in-braze) for more details on how you can personalize your campaign.
+   1. Reference your [personalization payload schema](/docs/engage/audiences/linked-audiences/#showhide-preview) from Segment to determine what properties to include in your message.
+   2. Translate the Segment event properties in the payload schema into Liquid syntax for [custom events](https://www.braze.com/docs/user_guide/data_and_analytics/custom_data/custom_events){:target="_blank"}, and enter it in the Braze HTML editor. See the following personalization [examples](#liquid-examples-to-use-in-braze) for more details on how you can personalize your campaign.
 3. Next, [schedule your campaign delivery](https://www.braze.com/docs/user_guide/engagement_tools/campaigns/building_campaigns/delivery_types){:target="_blank"}:
     1. Select [Action-based delivery](https://www.braze.com/docs/user_guide/engagement_tools/campaigns/building_campaigns/delivery_types/triggered_delivery/#step-1-select-a-trigger-event){:target="_blank"} > [**New Trigger Action**](https://www.braze.com/docs/user_guide/engagement_tools/campaigns/building_campaigns/delivery_types/triggered_delivery/#step-1-select-a-trigger-event){:target="_blank"}: [**Perform Custom Event**](https://www.braze.com/docs/user_guide/data_and_analytics/custom_data/custom_events){:target="_blank"} > **Add Trigger**. 
     2. Search for and select the name of the Segment custom event you previously set up and tested in Segment.
