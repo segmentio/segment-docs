@@ -7,14 +7,14 @@ plan: engage-premier
 > 
 >[Twilio Marketing Campaigns](https://www.twilio.com/en-us/sendgrid/marketing-campaigns)
 >
->Preferred ISV Partners
+>Preferred ISV Partners:
 >
->[Airship Blog](https://www.twilio.com/en-us/blog/airship-integrated-customer-experience)
->[Bloomreach Blog](https://www.twilio.com/en-us/blog/bloomreach-ecommerce-personalization)
->[Braze Blog](https://www.twilio.com/en-us/blog/braze-conversational-marketing-campaigns)
->[Insider Blog](https://www.twilio.com/en-us/blog/insider-cross-channel-customer-experience)
->[Klaviyo Blog](https://www.twilio.com/en-us/blog/klaviyo-powering-smarter-digital-relationships)
->[Twilio Engage Foundations Documentation](https://segment.com/docs/engage/quickstart/)
+>[Airship Blog](https://www.twilio.com/en-us/blog/airship-integrated-customer-experience) <br>
+>[Bloomreach Blog](https://www.twilio.com/en-us/blog/bloomreach-ecommerce-personalization) <br>
+>[Braze Blog](https://www.twilio.com/en-us/blog/braze-conversational-marketing-campaigns) <br>
+>[Insider Blog](https://www.twilio.com/en-us/blog/insider-cross-channel-customer-experience) <br>
+>[Klaviyo Blog](https://www.twilio.com/en-us/blog/klaviyo-powering-smarter-digital-relationships) <br>
+>[Twilio Engage Foundations Documentation](https://segment.com/docs/engage/quickstart/) <br>
 
 Use Twilio Engage to build email templates with a *what you see is what you get* (WYSIWYG) Drag and Drop Editor. Use drag and drop tools to design the template layout and include user profile traits to personalize the message for each recipient.
 
