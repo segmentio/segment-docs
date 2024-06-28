@@ -70,13 +70,13 @@ In Iterable, do the following:
 
 ## Step 2: Test your campaign flow
 
-1. Open the Segment app and send yourself a test email for review. Add your Iterable user id and click **[Send test event to destination](https://segment.com/docs/engage/audiences/linked-audiences/#step-3-send-a-test-event-to-your-destination)**. Review the email you received, and ensure it is formatted properly. 
+Open the Segment app and send yourself a test email for review. Add your Iterable user id and click **[Send test event to destination](https://segment.com/docs/engage/audiences/linked-audiences/#step-3-send-a-test-event-to-your-destination)**. 
 
 ![A screenshot of the test event page](/docs/engage/images/send-test-event.png) 
 
-If the event is sent successfully to Iterable, you will see a `“message”: “success”` response in Segment.
+1. When the event is sent successfully to Iterable, you will see a `“message”: “success”` response in Segment.
 
-2. Open Iterable and check the [Campaign tab in Messaging Insights](https://support.iterable.com/hc/en-us/articles/360052814452-Messaging-Insights#viewing-metrics) (Insights > Messaging Insights > Campaigns > _[Your Unique Campaign])_ to confirm that Iterable has sent the message. 
+2. Review the email you received, and ensure it is formatted properly. Open Iterable and check the [Campaign tab in Messaging Insights](https://support.iterable.com/hc/en-us/articles/360052814452-Messaging-Insights#viewing-metrics) (Insights > Messaging Insights > Campaigns > _[Your Unique Campaign])_ to confirm that Iterable has sent the message. 
 3. If your email doesn’t look the way you want it to, adjust the [Handlebars syntax](https://support.iterable.com/hc/en-us/articles/205480365-Personalizing-Templates-with-Handlebars#referencing-user-profile-and-event-fields-with-handlebars) in Iterable, and send another test event. See the following [personalization examples](#??? ) for more specific details.
 4. When you’re finished testing your campaign, proceed to [Enable your Linked Audience](https://github.com/segmentio/segment-docs/pull/6648/files#r1629472328).
 
@@ -99,7 +99,7 @@ You can read more on how to reference [event properties](https://support.iterabl
 
 ### Basic Email Example
 
-Use the Segment payload data you [copied when setting up your Linked audience](https://deploy-preview-6748--segment-docs.netlify.app/docs/engage/audiences/linked-audiences#showhide-preview) to build an abandoned cart email campaign that includes specific information for the product in a customer’s shopping cart.
+Use the Segment custom event payload schema to build an abandoned cart email campaign that includes specific information for the product in a customer’s shopping cart.
 
 When an email is sent, it lists the specific product and its related price in your customer’s shopping cart. It might look like the following screenshot: 
 
@@ -133,7 +133,7 @@ Quick, now is your chance to own this item before it sells out!
 
 ### Advanced Email Example
 
-Use the Segment payload data you [copied when setting up your Linked audience](https://deploy-preview-6748--segment-docs.netlify.app/docs/engage/audiences/linked-audiences#showhide-preview) to build an abandoned cart email campaign where you can use [#each](https://support.iterable.com/hc/en-us/articles/205480365-Personalizing-Templates-with-Handlebars#iterating-over-all-values-each) to run a block of code repeatedly. In this example, you can use a for loop to list all of the products and their related prices in a customer’s shopping cart.
+Use the Segment custom event payload schema to build an abandoned cart email campaign where you can [#each](https://support.iterable.com/hc/en-us/articles/205480365-Personalizing-Templates-with-Handlebars#iterating-over-all-values-each) to run a block of code repeatedly. In this example, you can use a for loop to list all of the products and their related prices in a customer’s shopping cart.
 
 When an email is sent, it lists all of the products and their related prices in your customer’s shopping cart. It might look like the following screenshot: 
 
