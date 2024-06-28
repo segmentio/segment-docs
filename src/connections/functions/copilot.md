@@ -24,10 +24,9 @@ This table lists example prompts you can use with Functions Copilot:
 
 | Function Type                    | Example Prompts                                                                                                                                |
 | -------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Source Functions**             | "Transform incoming data into a track event."<br> "Enrich user data with additional demographic details using an external API."                |
-| **Destination Functions**        | "Create a function that enriches an Identify event using the Profile API."<br>"Remove PII data and hash email addresses in an Identify event." |
-| **Destination Insert Functions** | "Enrich an Identify event using an external API."<br>"Tokenize PII data before sending it downstream."                                         |
-|                                  |                                                                                                                                                |
+| **Source Functions**             | "Transform incoming data into a track event."<br><br>"Enrich user data with additional demographic details using an external API."                |
+| **Destination Functions**        | "Create a function that enriches an Identify event using the Profile API."<br><br>"Remove PII data and hash email addresses in an Identify event." |
+| **Destination Insert Functions** | "Enrich an Identify event using an external API."<br><br>"Tokenize PII data before sending it downstream."                                         |
 
 ## Best practices and limitations
 
