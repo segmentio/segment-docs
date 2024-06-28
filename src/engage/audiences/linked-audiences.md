@@ -155,4 +155,22 @@ After building your Linked Audience, choose **Save and Enable**. You'll be redir
 To enable your audience:
 Select the **Enabled** toggle, then select **Enable audience**.
 
+### Compute Now
+
 You can trigger a compute for your audience if you want to send events to your destination without waiting for the next scheduled compute run. To do so, select **Compute Now**. This triggers a compute for the audience and sends events downstream.
+
+### Set a run schedule
+
+Use the Audience Overview page to view the audience profile count, current run schedule, run status, and upcoming run time.
+
+Determine when an audience should run and send data to enabled destinations with a run schedule:
+
+- **Manual**: Trigger audience runs manually by clicking **Run Now** on the Audience Overview page.
+- **Interval**: Trigger audience runs based on a predefined set of time intervals. Supported intervals are: 15 minutes, 30 minutes, 1 hour, 2 hours, 4 hours, 6 hours, 8 hours, 12 hours, 1 day. If you select this option, Segment will run your audience after you enable the audience.
+- **Day and time**: Trigger audience runs at specific times on selected days of the week. If you select this option, Segment will run your audience at the first selected date and time.
+
+You can maintain your run schedule at any time from the audience's **Settings** tab.
+
+You can also click **Run Now** on the Audience Overview page at any time (even if the run schedule is **Interval** Overview **Day and time**) to manually trigger a run on your warehouse and send data to enabled destinations.
+
+There may be up to a 5 minute delay from the configured start time for audiences that are configured with the **Interval** and **Day and time** run schedules. For example, if you configured an audience with the **Day and time** compute schedule to run on Mondays at 8am, it can compute as late as Monday at 8:05am. This is to help us better manage our system load.
