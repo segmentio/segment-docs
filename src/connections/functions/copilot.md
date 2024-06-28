@@ -47,7 +47,7 @@ Keep the following limitations in mind as you work with Functions Copilot:
 ## Segment's generative AI service
 
 <!-- PW/June 2024: Stealing this from Generative Audiences, but we should probably centralize this info at some point -->
-For Copilot to generate a function, Segment sends your query to OpenAI, Segment’s 3rd party AI service. All queries sent to OpenAI from Segment are anonymized, meaning that OpenAI won’t be able to identify from whom the query was sent unless you include uniquely identifiable information in the input.
+For Copilot to generate a function, Segment sends your query to OpenAI, Segment’s third-party AI service. All queries sent to OpenAI from Segment are anonymized, meaning that OpenAI won’t be able to identify from whom the query was sent unless you include uniquely identifiable information in the input.
 
 GPT is OpenAI’s state-of-the-art natural language generation tool powered by artificial intelligence. It can perform a variety of natural language tasks like text generation, completion, and classification. CustomerAI uses the service to inspire segmentation and build functions and audiences.
 
