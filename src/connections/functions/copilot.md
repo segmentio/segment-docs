@@ -4,6 +4,9 @@ title: Functions Copilot
 
 Functions Copilot helps you generate JavaScript code for Functions using natural language prompts.
 
+> info "Functions Copilot Public Beta"
+> Linked Audiences is in public beta, and Segment is actively working on this feature. Some functionality may change before it becomes generally available.
+
 ## Functions Copilot Benefits
 
 Powered by OpenAI, Functions Copilot improves efficiency and productivity by streamlining the process of creating and managing custom functions, freeing up time and engineering resources. 
