@@ -50,8 +50,8 @@ Keep the following limitations in mind as you work with Functions Copilot:
 <!-- PW/June 2024: Stealing this from Generative Audiences, but we should probably centralize this info at some point -->
 For Copilot to generate a function, Segment sends your query to OpenAI, Segment’s 3rd party AI service. All queries sent to OpenAI from Segment are anonymized, meaning that OpenAI won’t be able to identify from whom the query was sent unless you include uniquely identifiable information in the input.
 
-GPT is OpenAI’s state-of-the-art natural language generation tool powered by artificial intelligence. It can perform a variety of natural language tasks like text generation, completion, and classification. CustomerAI uses the service to help generate functions, audiences, and inspire segmentation.
+GPT is OpenAI’s state-of-the-art natural language generation tool powered by artificial intelligence. It can perform a variety of natural language tasks like text generation, completion, and classification. CustomerAI uses the service to inspire segmentation and build functions and audiences.
 
-According to OpenAI’s policy, OpenAI will not use data sent from Segment to train or improve their models, and they will delete it after 30 days. Any content generated using GPT belongs to you. Segment will not claim copyright ownership of such content and makes no warranty regarding any AI generated content.
+According to OpenAI’s policy, OpenAI will not use data sent from Segment to train or improve their models, and they will delete the data after 30 days. Any content generated using GPT belongs to you. Segment will not claim copyright ownership of such content and makes no warranty regarding any AI generated content.
 
 For more information, see the [Functions Copilot Nutrition Facts Label](/docs/connections/functions/functions-copilot-nutrition-facts/).
