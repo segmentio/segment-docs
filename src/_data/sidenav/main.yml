@@ -210,6 +210,10 @@ sections:
       title: Destination Functions
     - path: /connections/functions/insert-functions
       title: Destination Insert Functions
+    - path: /connections/functions/copilot
+      title: Functions Copilot
+    - path: /connections/functions/functions-copilot-nutrition-facts
+      title: Functions Copilot Nutrition Facts Label
     - path: /connections/functions/environment
       title: Functions Environment
     - path: /connections/functions/usage
