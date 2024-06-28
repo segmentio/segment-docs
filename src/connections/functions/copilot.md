@@ -43,7 +43,7 @@ Keep the following limitations in mind as you work with Functions Copilot:
 
 - **Context limitations**: Functions Copilot generates code based on Segment-specific terminology and the prompts you write. As a result, the generated output may not always be accurate. If the function doesn't initially meet your needs, try to refine or rewrite your prompt.
 - **Language support**: Functions Copilot only supports English prompts. Using other languages may impact the accurancy of the generated output.
-- **Regional support**: Functions Copilot is only available for US region Segment workspaces. 
+- **Regional support**: Functions Copilot is only available for US region Segment workspaces.
 
 ## Segment's generative AI service
 
