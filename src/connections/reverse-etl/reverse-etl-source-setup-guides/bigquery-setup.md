@@ -48,3 +48,8 @@ Permission | Details
 `bigquery.jobs.create` | This allows Segment to execute queries on any datasets or tables your model query references, and also allows Segment to manage tables used for tracking.
 
 The `bigquery.datasets.*` permissions can be scoped only to the `__segment_reverse_etl` dataset. 
+
+## FAQ
+
+### Are there any additional roles or permissions I need to add?
+You shouldn’t need to grant any additional roles/permissions than the ones specified above, however, you may be able to circumvent any set-up issues by also adding the `BigQuery Data Viewer` role to the service account.  Alternatively, you can also provide `bigquery.table.getData` if `BigQuery Data Viewer` is too broad.
