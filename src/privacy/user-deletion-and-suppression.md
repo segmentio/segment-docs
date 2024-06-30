@@ -6,6 +6,9 @@ In keeping with Segment's commitment to GDPR and CCPA readiness, Segment offers 
 
 [Contact Support](https://segment.com/help/contact/) if you need to process more than 110,000 users within a 30 day period.
 
+> warning "User IDs for deletion"
+> It's important to note that the userID required for deletion requests are the user IDs sent through your events according to the [Segment Spec](https://segment.com/docs/connections/spec/).  In other words, the IDs under the userId fields specifically, not just any identifier.
+
 > info "Business Plan Customers"
 > If you use this feature to delete data, you can not Replay the deleted data. For standard Replay requests, you must wait for any pending deletions to complete, and you cannot submit new deletion requests for the period of time that Segment replays data for you.
 
