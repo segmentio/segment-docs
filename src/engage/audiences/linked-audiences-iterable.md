@@ -5,7 +5,7 @@ beta: true
 hidden: true
 ---
 
-Linked Audiences allows you to [dynamically personalize email messages](https://support.iterable.com/hc/en-us/articles/205480365-Personalizing-Templates-with-Handlebars)  in Iterable using the predefined traits of any Linked Audience profile and the attributes of any entities used to match the profile into the audience. 
+Linked Audiences allows you to [dynamically personalize email messages](https://support.iterable.com/hc/en-us/articles/205480365-Personalizing-Templates-with-Handlebars){:target="_blank"} in Iterable using the predefined traits of any Linked Audience profile and the attributes of any entities used to match the profile into the audience. 
 
 The following topic is intended for a Technical Marketer and Data Engineer to complete together while setting up their Linked Audience. 
 
