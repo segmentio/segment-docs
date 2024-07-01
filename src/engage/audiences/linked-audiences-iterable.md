@@ -5,7 +5,8 @@ beta: true
 hidden: true
 ---
 
-Linked Audiences allows you to [dynamically personalize email messages](https://support.iterable.com/hc/en-us/articles/205480365-Personalizing-Templates-with-Handlebars) in Iterable using the predefined traits of any Linked Audience profile and the attributes of any entities used to match the profile into the audience. 
+
+Linked Audiences allows you to [dynamically personalize email messages](https://support.iterable.com/hc/en-us/articles/205480365-Personalizing-Templates-with-Handlebars)  in Iterable using the predefined traits of any Linked Audience profile and the attributes of any entities used to match the profile into the audience. 
 
 The following topic is intended for a Technical Marketer and Data Engineer to complete together while setting up their Linked Audience. 
 
@@ -32,16 +33,14 @@ You can configure multiple triggers per audience (For example: one for account e
 
 Iterable [Journey Campaigns](https://support.iterable.com/hc/en-us/articles/360050203812-Campaigns-Overview#journey-campaigns) store the entity personalization payload as [event properties in custom events](https://support.iterable.com/hc/en-us/articles/206430615-Events-and-Event-Properties#event-properties).
 
-**Note**: Using custom events can impact your Iterable [billing](https://support.iterable.com/hc/articles/205480345#custom-event-usage-metrics). See [Monitoring Custom Event Usage](https://support.iterable.com/hc/en-us/articles/360043366492-Monitoring-Custom-Event-Usage) to learn how.
+**Note**: Using custom events can impact your Iterable [billing](https://support.iterable.com/hc/articles/205480345#custom-event-usage-metrics).
 
 ### Prerequisites
-
-Complete the following setup steps before you set up a Journey Campaign in Iterable.
 
 In Segment, ensure you have:
 
 * Set up your [Linked Audience](https://segment.com/docs/engage/audiences/linked-audiences/). 
-* A copy of your Linked Audience [Event Personalization Payload](https://segment.com/docs/engage/audiences/linked-audiences/#showhide-preview), event name, and Iterable user id.
+* A copy of your Linked Audience event name and Iterable user id.
 * Set up [Iterable as an actions destination](https://segment.com/docs/connections/destinations/catalog/actions-iterable/). 
 * Set up a [Custom Event destination action](https://segment.com/docs/connections/destinations/catalog/actions-iterable/#custom-event) and the relevant trigger using the [Linked Audiences](https://segment.com/docs/engage/audiences/linked-audiences/) workflow. 
 
@@ -49,7 +48,7 @@ In Iterable, ensure you have:
 
 * Permissions to access the application, or access to someone who has permissions.
 * Created all Segment profiles as Iterables profiles using the [Upsert User destination action](https://segment.com/docs/connections/destinations/catalog/actions-iterable/#upsert-user) via [Connections](https://segment.com/docs/connections/) or [Reverse ETL](https://segment.com/docs/connections/reverse-etl/). This is a requirement for them to receive a campaign triggered by a custom event.
-* Checked if your Segment Linked Audiences event was sent by [viewing the user's profile](https://support.iterable.com/hc/en-us/articles/218365803-Managing-User-Profiles#event-history) and [event history](https://support.iterable.com/hc/en-us/articles/218365803-Managing-User-Profiles#event-history). Review the** **custom event payload schema so you know what properties to include in your message personalization.
+* Review the custom event payload schema from your [Segment Linked Audiences test event](https://segment.com/docs/engage/audiences/linked-audiences/#step-3-send-a-test-event-to-your-destination) so you know what properties to include in your message personalization. You can do this by [accessing the user's profile](https://support.iterable.com/hc/en-us/articles/218365803-Managing-User-Profiles#event-history) and clicking into their [event history](https://support.iterable.com/hc/en-us/articles/218365803-Managing-User-Profiles#event-history) to see the specific properties.
 * Created an Iterable profile, for campaign testing, with an email address you can access.
 * Familiarity with the [Handlebars templating syntax](https://support.iterable.com/hc/en-us/articles/205480365-Personalizing-Templates-with-Handlebars) to manually type out the code using dot notation.
 
@@ -63,21 +62,19 @@ In Iterable, do the following:
 2. Add an [Email Message tile](https://support.iterable.com/hc/en-us/articles/12649121962260-Journey-Setup-Message-Tiles#setting-up-message-tiles), [create your campaign](https://support.iterable.com/hc/en-us/articles/14825389793556-Creating-a-Campaign), and connect it to your Start Tile.
 3. Edit the content in your email: 
     1. Under Design, choose either the [WYSIWYG Editor](https://support.iterable.com/hc/en-us/articles/11554987128340-WYSIWYG-Editor) or the [Side by Side Editor](https://support.iterable.com/hc/en-us/articles/11555192523412-Side-by-Side-Editor).
-    2. Reference your Segment [custom event payload schema](https://support.iterable.com/hc/en-us/articles/360035402451-Event-Tracking-Testing-and-Troubleshooting) in Iterable to determine what properties to include in your message.
-    3. Translate the event properties in the payload schema into [Handlebars syntax](https://support.iterable.com/hc/en-us/articles/205480365-Personalizing-Templates-with-Handlebars) for [custom events](https://support.iterable.com/hc/en-us/articles/206430615-Custom-Event-Properties#using-event-properties-to-customize-a-template), and enter it in the HTML editor in Iterable. See the personalization [examples below](# ???) for more specific details.
-4. Choose any additional settings that apply and review and publish your journey. Then continue on to [Test your campaign flow](????) in Segment.
-
+    2. Reference your Segment custom event payload schema in Iterable to determine what properties to include in your message. You can do this by [accessing the user's profile](https://support.iterable.com/hc/en-us/articles/218365803-Managing-User-Profiles#event-history) and clicking into their [event history](https://support.iterable.com/hc/en-us/articles/218365803-Managing-User-Profiles#event-history) (Events > History > Details).
+    3. Translate the event properties in the payload schema into [Handlebars syntax](https://support.iterable.com/hc/en-us/articles/205480365-Personalizing-Templates-with-Handlebars) for [custom events](https://support.iterable.com/hc/en-us/articles/206430615-Custom-Event-Properties#using-event-properties-to-customize-a-template), and enter it in the HTML editor in Iterable. See the personalization [examples below](#????) for more specific details.
+4. Choose any additional settings that apply and review and [publish your journey](https://support.iterable.com/hc/en-us/articles/6027159030804-Building-Journeys#publishing-a-journey). Then continue on to Test your campaign flow in Segment.
 
 ## Step 2: Test your campaign flow
 
-Open the Segment app and send yourself a test email for review. Add your Iterable user id and click **[Send test event to destination](https://segment.com/docs/engage/audiences/linked-audiences/#step-3-send-a-test-event-to-your-destination)**. 
+1. Open the Segment app and send yourself a test email for review. Add your Iterable user id and click ****[Send test event to destination](https://segment.com/docs/engage/audiences/linked-audiences/#step-3-send-a-test-event-to-your-destination)****. Review the email you received, and ensure it is formatted properly. 
 
 ![A screenshot of the test event page](/docs/engage/images/send-test-event.png) 
 
-1. When the event is sent successfully to Iterable, you will see a `“message”: “success”` response in Segment.
-
-2. Review the email you received, and ensure it is formatted properly. Open Iterable and check the [Campaign tab in Messaging Insights](https://support.iterable.com/hc/en-us/articles/360052814452-Messaging-Insights#viewing-metrics) (Insights > Messaging Insights > Campaigns > _[Your Unique Campaign])_ to confirm that Iterable has sent the message. 
-3. If your email doesn’t look the way you want it to, adjust the [Handlebars syntax](https://support.iterable.com/hc/en-us/articles/205480365-Personalizing-Templates-with-Handlebars#referencing-user-profile-and-event-fields-with-handlebars) in Iterable, and send another test event. See the following [personalization examples](#??? ) for more specific details.
+If the event is sent successfully to Iterable, you will see a `“message”: “success”` response in Segment.
+2. Open Iterable and check the [Campaign tab in Messaging Insights](https://support.iterable.com/hc/en-us/articles/360052814452-Messaging-Insights#viewing-metrics) (Insights > Messaging Insights > Campaigns > _[Your Unique Campaign])_ to confirm that Iterable has sent the message. 
+3. If your email doesn’t look the way you want it to, adjust the [Handlebars syntax](https://support.iterable.com/hc/en-us/articles/205480365-Personalizing-Templates-with-Handlebars#referencing-user-profile-and-event-fields-with-handlebars) in Iterable, and send another test event. See the following [personalization examples](#heading=h.9vszkxr0qiyi) for more specific details. 
 4. When you’re finished testing your campaign, proceed to [Enable your Linked Audience](https://github.com/segmentio/segment-docs/pull/6648/files#r1629472328).
 
 # Handlebars Examples to use in Iterable
@@ -86,20 +83,46 @@ Use the following examples as context and information to experiment with setting
 
 The following is an example of what your payload data might look like with nested payload properties:
 
+```js
+{
+   "event": "abandoned_carts_linked_audience",
+   "properties": {
+      "first_name": "Andrew",
+      "last_name": "Shopper",
+      "shopping_cart__id": "123",
+      "shopping_cart__products": [
+         {
+            "id": "324",
+            "product_name": "Premium Tennis Shoes",
+            "product_price": "$140",
+            "__entity": "product"
+         },
+         {
+             "id": "489",
+             "product_name": "Premium Jacket",
+             "product_price": "$200",
+            "__entity": "product"
+          }
+       ],
+       "__entity": "cart"
+     }
+ }
+```
+
 The following helps translate you payload data into Handlebars syntax:  
 
 * To reference a specific event property:
     * Use the following Handelbars syntax: <code>{% raw %}{{event_property_name}}{% endraw %}</code>
-    * An example of this property might look like: <code>{% raw %}{{first_name}}{% endraw %}</code>
+    * An example of this property might look like:  <code>{% raw %}{{first_name}}{% endraw %}</code>
 * To reference nested event properties within an Array:
-    * Use the following Handlebars syntax: <code>{% raw %}{{event_property_name.[#_that_represents_specific_entry_in_array].nested_event_property_name }{% endraw %}</code>
-    * An example of this property might look like: <code>{% raw %}{{shopping_cart__products[0].product_name}}{% endraw %}</code>
+    * Use the following Handlebars syntax:  <code>{% raw %}{{event_property_name.[#_that_represents_specific_entry_in_array].nested_event_property_name }{% endraw %}</code>
+    * An example of this property might look like:  <code>{% raw %}{{shopping_cart__products[0].product_name}}{% endraw %}</code>
 
 You can read more on how to reference [event properties](https://support.iterable.com/hc/en-us/articles/205480365-Personalizing-Templates-with-Handlebars#referencing-user-profile-and-event-fields-with-handlebars) and [nested properties](https://support.iterable.com/hc/en-us/articles/360031118392-Handlebars-FAQ#how-do-i-reference-items-in-a-nested-object) in Handlebars. 
 
 ### Basic Email Example
 
-Use the Segment custom event payload schema to build an abandoned cart email campaign that includes specific information for the product in a customer’s shopping cart.
+Use the  Segment custom event payload schema to build an abandoned cart email campaign that includes specific information for the product in a customer’s shopping cart.
 
 When an email is sent, it lists the specific product and its related price in your customer’s shopping cart. It might look like the following screenshot: 
 
@@ -130,10 +153,9 @@ Quick, now is your chance to own this item before it sells out!
 ```
 {% endraw %} 
 
-
 ### Advanced Email Example
 
-Use the Segment custom event payload schema to build an abandoned cart email campaign where you can [#each](https://support.iterable.com/hc/en-us/articles/205480365-Personalizing-Templates-with-Handlebars#iterating-over-all-values-each) to run a block of code repeatedly. In this example, you can use a for loop to list all of the products and their related prices in a customer’s shopping cart.
+UUse the Segment custom event payload schema to build an abandoned cart email campaign where you can use [#each](https://support.iterable.com/hc/en-us/articles/205480365-Personalizing-Templates-with-Handlebars#iterating-over-all-values-each) to run a block of code repeatedly. In this example, you can use a for loop to list all of the products and their related prices in a customer’s shopping cart.
 
 When an email is sent, it lists all of the products and their related prices in your customer’s shopping cart. It might look like the following screenshot: 
 
@@ -164,6 +186,7 @@ We noticed you added some items to your shopping cart. Here's what you left: <br
 {{/each}}
 
 Quick, now is your chance to own these items before they sell out!
+
 ```
 {% endraw %} 
 
