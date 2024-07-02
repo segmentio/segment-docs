@@ -114,7 +114,7 @@ The following helps translate you payload data into Handlebars syntax:
     * Use the following Handelbars syntax: <code>{% raw %}{{event_property_name}}{% endraw %}</code>
     * An example of this property might look like:  <code>{% raw %}{{first_name}}{% endraw %}</code>
 * To reference nested event properties within an Array:
-    * Use the following Handlebars syntax:  <code>{% raw %}{{event_property_name.[#_that_represents_specific_entry_in_array].nested_event_property_name }}{% endraw %}</code>
+    * Use the following Handlebars syntax:  <code>{% raw %}{{event_property_name.[#_that_represents_specific_entry_in_array].nested_event_property_name}}{% endraw %}</code>
     * An example of this property might look like:  <code>{% raw %}{{shopping_cart__products[0].product_name}}{% endraw %}</code>
 
 You can read more on how to reference [event properties](https://support.iterable.com/hc/en-us/articles/205480365-Personalizing-Templates-with-Handlebars#referencing-user-profile-and-event-fields-with-handlebars){:target="_blank"} and [nested properties](https://support.iterable.com/hc/en-us/articles/360031118392-Handlebars-FAQ#how-do-i-reference-items-in-a-nested-object){:target="_blank"} in Handlebars. 
@@ -163,7 +163,6 @@ When an email is sent, it lists all of the products and their related prices in 
 This is an example of what your email using HTML and [Handlebars syntax](https://support.iterable.com/hc/en-us/articles/205480365-Personalizing-Templates-with-Handlebars){:target="_blank"} might look like in Iterable:
 
 {% raw %} 
-
 ```html
 Hi {{first_name}},
 <br />
@@ -185,6 +184,5 @@ We noticed you added some items to your shopping cart. Here's what you left: <br
 {{/each}}
 
 Quick, now is your chance to own these items before they sell out!
-
 ```
 {% endraw %} 
