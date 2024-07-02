@@ -74,14 +74,14 @@ In Braze, do the following:
 
 ### Step 2: Test your campaign flow
 
-1. Open the Segment app and send yourself a test email for review. Add your Braze user id and click **[Send test event to destination](/docs/engage/audiences/linked-audiences/#step-3-send-a-test-event-to-your-destination)**. Review the email you received, and ensure it is formatted properly.
+Open the Segment app and send yourself a test email for review. Add your Braze user id and click **[Send test event to destination](/docs/engage/audiences/linked-audiences/#step-3-send-a-test-event-to-your-destination)**. Review the email you received, and ensure it is formatted properly.
 
 ![A screenshot of the test event page](/docs/engage/images/send-test-event.png)
 
-2. If the event is sent successfully to Braze, you will see a `“message”: “success”` response in Segment.
-3. Open Braze and check your [campaign dashboard](https://www.braze.com/docs/user_guide/message_building_by_channel/email/reporting_and_analytics/email_reporting){:target="_blank"} (Braze > *[Your Unique Campaign]* > Analytics) to confirm that Braze sent the message. It can take up to 15 minutes for Braze to send the email.
-4. If your email doesn’t look the way you want it to, adjust the [Liquid syntax](https://www.braze.com/docs/user_guide/personalization_and_dynamic_content/liquid/using_liquid/#using-liquid-1){:target="_blank"} in Braze and send another test event in Segment. See the following [personalization examples](#liquid-examples-to-use-in-braze) for more specific details.
-5. When you’re finished testing your campaign, proceed to [Enable your Linked Audience](/docs/engage/audiences/linked-audiences/#step-4-enable-your-linked-audience).
+1. If the event is sent successfully to Braze, you will see a `“message”: “success”` response in Segment.
+2. Open Braze and check your [campaign dashboard](https://www.braze.com/docs/user_guide/message_building_by_channel/email/reporting_and_analytics/email_reporting){:target="_blank"} (Braze > *[Your Unique Campaign]* > Analytics) to confirm that Braze sent the message. It can take up to 15 minutes for Braze to send the email.
+3. If your email doesn’t look the way you want it to, adjust the [Liquid syntax](https://www.braze.com/docs/user_guide/personalization_and_dynamic_content/liquid/using_liquid/#using-liquid-1){:target="_blank"} in Braze and send another test event in Segment. See the following [personalization examples](#liquid-examples-to-use-in-braze) for more specific details.
+4. When you’re finished testing your campaign, proceed to [Enable your Linked Audience](/docs/engage/audiences/linked-audiences/#step-4-enable-your-linked-audience).
 
 ## Liquid examples to use in Braze
 
@@ -131,7 +131,7 @@ Use the Segment payload data you [copied when setting up your Linked audience](/
 
 When an email is sent, it lists the specific product and its related price in your customer’s shopping cart. It might look like the following screenshot: 
 
-![A screenshot of an email, with the name, item, and price personalized.](/docs/engage/images/braze-cart-simple.png)
+![A screenshot of an email, with the name, item, and price personalized.](/docs/engage/images/linked-cart-simple.png)
 
 This is an example of what your email formatted using [HTML](https://www.braze.com/docs/user_guide/message_building_by_channel/email/html_editor/creating_an_email_campaign/){:target="_blank"} and [Liquid](https://www.braze.com/docs/user_guide/personalization_and_dynamic_content/liquid){:target="_blank"} might look like in Braze:
 
@@ -165,7 +165,7 @@ Use the Segment payload data you [copied when setting up your Linked audience](/
 
 When an email is sent, it lists all of the products and their related prices in your customer’s shopping cart. It might look like the following: 
 
-![A screenshot of an abandoned cart email, with a personalized name, two items, and prices for those items.](/docs/engage/images/braze-cart-advanced.png)
+![A screenshot of an abandoned cart email, with a personalized name, two items, and prices for those items.](/docs/engage/images/linked-cart-advanced.png)
 
 This is an example of what your email formatted using [HTML](https://www.braze.com/docs/user_guide/message_building_by_channel/email/html_editor/creating_an_email_campaign/){:target="_blank"} and [Liquid](https://www.braze.com/docs/user_guide/personalization_and_dynamic_content/liquid){:target="_blank"} might look like in Braze:
 
