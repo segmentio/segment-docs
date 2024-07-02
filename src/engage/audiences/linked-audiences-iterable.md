@@ -25,7 +25,7 @@ You can configure multiple triggers per audience (For example: one for account e
 
 |Segment Destination Action                                                                              |How does it work?                                                                                                                                                                                                                                                                                |How does Iterable store the data?                                                                                               |Iterable API Endpoint                                                 |
 |--------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------|
-|[Custom Event](https://segment.com/docs/connections/destinations/catalog/actions-iterable/#custom-event){:target="_blank"}|Segment sends personalization payload information into Iterable as [Iterable custom events](https://support.iterable.com/hc/en-us/articles/206430615-Custom-Event-Properties#event-properties){:target="_blank"}. The entity personalization payload is contained in the `dataFields` parameter within API calls.|[Custom event properties](https://support.iterable.com/hc/en-us/articles/206430615-Events-and-Event-Properties#event-properties){:target="_blank"}|[Track an event](https://api.iterable.com/api/docs#events_track){:target="_blank"}      |
+|[Custom Event](/docs/connections/destinations/catalog/actions-iterable/#custom-event) |Segment sends personalization payload information into Iterable as [Iterable custom events](https://support.iterable.com/hc/en-us/articles/206430615-Custom-Event-Properties#event-properties){:target="_blank"}. The entity personalization payload is contained in the `dataFields` parameter within API calls.|[Custom event properties](https://support.iterable.com/hc/en-us/articles/206430615-Events-and-Event-Properties#event-properties){:target="_blank"}|[Track an event](https://api.iterable.com/api/docs#events_track){:target="_blank"}      |
 |[Upsert User](/docs/connections/destinations/catalog/actions-iterable/#upsert-user)  |Segment sends personalization payloads into Iterable as [Iterable user profiles](https://support.iterable.com/hc/en-us/articles/206430145-Managing-User-Profile-Fields-in-Iterable){:target="_blank"}. The entity personalization payload is contained in the `datafields` parameter in API calls.               |[User profile fields](https://support.iterable.com/hc/en-us/articles/206430145-Managing-User-Profile-Fields-in-Iterable){:target="_blank"}        |[Update user data](https://api.iterable.com/api/docs#users_updateUser){:target="_blank"}|
 
 ## Iterable Journey Campaign
@@ -40,13 +40,13 @@ In Segment, ensure you have:
 
 * Set up your [Linked Audience](/docs/engage/audiences/linked-audiences/). 
 * A copy of your Linked Audience event name and Iterable user id.
-* Set up [Iterable as an actions destination](https://segment.com/docs/connections/destinations/catalog/actions-iterable/){:target="_blank"}. 
+* Set up [Iterable as an actions destination](/docs/connections/destinations/catalog/actions-iterable/). 
 * Set up a [Custom Event destination action](/docs/connections/destinations/catalog/actions-iterable/#custom-event) and the relevant trigger using the [Linked Audiences](/docs/engage/audiences/linked-audiences/) workflow. 
 
 In Iterable, ensure you have:
 
 * Permissions to access the application, or access to someone who has permissions.
-* Created all Segment profiles as Iterables profiles using the [Upsert User destination action](/docs/connections/destinations/catalog/actions-iterable/#upsert-user){:target="_blank"} via [Connections](/docs/connections/) or [Reverse ETL](/docs/connections/reverse-etl/). This is a requirement for them to receive a campaign triggered by a custom event.
+* Created all Segment profiles as Iterables profiles using the [Upsert User destination action](/docs/connections/destinations/catalog/actions-iterable/#upsert-user) through [Connections](/docs/connections/) or [Reverse ETL](/docs/connections/reverse-etl/). This is a requirement for them to receive a campaign triggered by a custom event.
 * Review the custom event payload schema from your [Segment Linked Audiences test event](/docs/engage/audiences/linked-audiences/#step-3-send-a-test-event-to-your-destination) so you know what properties to include in your message personalization. You can do this by [accessing the user's profile](https://support.iterable.com/hc/en-us/articles/218365803-Managing-User-Profiles#accessing-a-user-s-profile){:target="_blank"} and clicking into their [event history](https://support.iterable.com/hc/en-us/articles/218365803-Managing-User-Profiles#event-history){:target="_blank"} to see the specific properties.
 * Created an Iterable profile, for campaign testing, with an email address you can access.
 * Familiarity with the [Handlebars templating syntax](https://support.iterable.com/hc/en-us/articles/205480365-Personalizing-Templates-with-Handlebars){:target="_blank"} to manually type out the code using dot notation.
@@ -76,7 +76,7 @@ If the event is sent successfully to Iterable, you will see a `“message”: �
 3. If your email doesn’t look the way you want it to, adjust the [Handlebars syntax](https://support.iterable.com/hc/en-us/articles/205480365-Personalizing-Templates-with-Handlebars#referencing-user-profile-and-event-fields-with-handlebars){:target="_blank"} in Iterable, and send another test event. See the following [personalization examples](#handlebars-examples-to-use-in-iterable){:target="_blank"} for more specific details. 
 4. When you’re finished testing your campaign, proceed to [Enable your Linked Audience](/docs/engage/audiences/linked-audiences/#step-4-enable-your-linked-audience).
 
-## Handlebars Examples to use in Iterable
+## Handlebars examples to use in Iterable
 
 Use the following examples as context and information to experiment with setting up your campaign in Iterable.
 
@@ -108,7 +108,7 @@ The following is an example of what your payload data might look like with neste
  }
 ```
 
-The following helps translate you payload data into Handlebars syntax:  
+The following helps translate your payload data into Handlebars syntax:  
 
 * To reference a specific event property:
     * Use the following Handelbars syntax: <code>{% raw %}{{event_property_name}}{% endraw %}</code>
@@ -119,7 +119,7 @@ The following helps translate you payload data into Handlebars syntax:
 
 You can read more on how to reference [event properties](https://support.iterable.com/hc/en-us/articles/205480365-Personalizing-Templates-with-Handlebars#referencing-user-profile-and-event-fields-with-handlebars){:target="_blank"} and [nested properties](https://support.iterable.com/hc/en-us/articles/360031118392-Handlebars-FAQ#how-do-i-reference-items-in-a-nested-object){:target="_blank"} in Handlebars. 
 
-### Basic Email Example
+### Basic email example
 
 Use the  Segment custom event payload schema to build an abandoned cart email campaign that includes specific information for the product in a customer’s shopping cart.
 
@@ -152,9 +152,9 @@ Quick, now is your chance to own this item before it sells out!
 ```
 {% endraw %} 
 
-### Advanced Email Example
+### Advanced email example
 
-Use the Segment custom event payload schema to build an abandoned cart email campaign where you can use [#each](https://support.iterable.com/hc/en-us/articles/205480365-Personalizing-Templates-with-Handlebars#iterating-over-all-values-each){:target="_blank"} to run a block of code repeatedly. In this example, you can list all of the products and their related prices in a customer’s shopping cart.
+Use the Segment custom event payload schema to build an abandoned cart email campaign where you can use the [`#each` block helper](https://support.iterable.com/hc/en-us/articles/205480365-Personalizing-Templates-with-Handlebars#iterating-over-all-values-each){:target="_blank"} to run a block of code repeatedly. In this example, you can list all of the products and their related prices in a customer’s shopping cart.
 
 When an email is sent, it lists all of the products and their related prices in your customer’s shopping cart. It might look like the following screenshot: 
 
