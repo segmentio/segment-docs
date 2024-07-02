@@ -221,3 +221,5 @@ destinations:
     override: "actions-absmartly"
   - original: "moloco-mcm"
     override: "actions-moloco-rmp"
+  - original: "xtremepush-actions"
+    override: "actions-xtremepush"

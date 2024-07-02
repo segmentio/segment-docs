@@ -5,12 +5,12 @@ strat: adobe
 id: 65302a514ce4a2f0f14cd426
 ---
 > info "Marketo Static Lists vs Marketo Static Lists (Actions) Destinations"
-
-Marketo Static Lists (Actions) is a rebuild of the classic destination that provides the following benefits:
-
-- **Streamlined setup process** - Marketo Static Lists (Actions) has a streamlined default setup process, making it faster to get started in a way that "just works".
-- **More control** - Actions-based destinations allow you to define the mapping between the data Segment receives from your sources, and the data Segment sends to Marketo.
-- **Default property mappings** - Default mappings from the Segment like event, timestamp, and more allows data to be mapped correctly without any setup required.
+>
+> Marketo Static Lists (Actions) is a rebuild of the classic destination that provides the following benefits:
+> 
+> - **Streamlined setup process** - Marketo Static Lists (Actions) has a streamlined default setup process, making it faster to get started in a way that "just works".
+> - **More control** - Actions-based destinations allow you to define the mapping between the data Segment receives from your sources, and the data Segment sends to Marketo.
+> - **Default property mappings** - Default mappings from the Segment like event, timestamp, and more allows data to be mapped correctly without any setup required.
 
 ## Overview
 
@@ -85,6 +85,8 @@ When you save the mapping, a list is created in Marketo. You can update the list
 > Only users with an email address appear in the list in Marketo. Users with multiple email addresses as external ids appear in the list once for each email address.
 
 You can view the audience in Marketo by going to **Lead Database→ Group Lists→Name of folder you created in Step 3 → Audience name**
+
+{% include components/actions-fields.html %}
 
 ## Troubleshooting
 
