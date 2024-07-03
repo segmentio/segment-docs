@@ -928,6 +928,15 @@ sources:
     endpoints:
       - us
       - eu
+  - id: GCeG0vmcDW
+    display_name: SendGrid Marketing Campaigns
+    hidden: false
+    slug: sendgrid-marketing-campaigns
+    url: connections/sources/catalog/cloud-apps/sendgrid-marketing-campaigns
+    regions:
+      - us
+    endpoints:
+      - us
   - id: V8ji9rWzoS
     display_name: Shopify (by Littledata)
     hidden: false
@@ -1088,6 +1097,15 @@ sources:
     endpoints:
       - us
       - eu
+  - id: q4JbVJwmrg
+    display_name: Yotpo
+    hidden: false
+    slug: yotpo
+    url: connections/sources/catalog/cloud-apps/yotpo
+    regions:
+      - us
+    endpoints:
+      - us
   - id: 117eYCe9jH
     display_name: Youbora
     hidden: true

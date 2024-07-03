@@ -29,7 +29,7 @@ The Google Ads Conversions destination enables you to upload offline conversions
 
 To migrate from the legacy Upload Enhanced Conversion Action to the updated Upload Conversion Adjustment Action: 
 
-1. Navigate to the Google Ads Conversions destination in your warehouse and select the **Settings** tab. 
+1. Navigate to the Google Ads Conversions destination in your workspace and select the **Settings** tab. 
 2. On the Settings tab, enter your Conversion ID and Customer ID into the named fields. 
 2. Update the following fields for the Upload Conversion Adjustment Action mapping: 
     - Conversion Action ID
@@ -131,7 +131,7 @@ Conversions tracked by other means, such as importing goals from Google Analytic
 
 ### Enhanced conversions for leads
 
-[Enhanced conversions for leads](https://developers.google.com/google-ads/api/docs/conversions/upload-identifiers){:target="_blank"} allows you to use hashed, first-party user-provided data from your website lead forms for offline lead measurement. When you upload your leads, the provided hashed information is used to attribute back to the Google Ad campaign. In order to send enhanced conversions for leads, you can use the "Upload Click Conversion" action. According to Goggle, if you do not have GCLID at your source payload, you have to pass user identifiers, at least email or phone number in your mappings, for Google to make the match. A conversion must be addressed to an existing profile. If there's not a match, Google responds with a failure.
+[Enhanced conversions for leads](https://developers.google.com/google-ads/api/docs/conversions/upload-identifiers){:target="_blank"} allows you to use hashed, first-party user-provided data from your website lead forms for offline lead measurement. When you upload your leads, the provided hashed information is used to attribute back to the Google Ad campaign. In order to send enhanced conversions for leads, you can use the "Upload Click Conversion" action. According to Google, if you do not have GCLID at your source payload, you have to pass user identifiers, at least email or phone number in your mappings, for Google to make the match. A conversion must be addressed to an existing profile. If there's not a match, Google responds with a failure.
 
 ### Refreshing access tokens
 

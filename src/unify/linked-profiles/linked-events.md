@@ -16,7 +16,7 @@ Use Linked Events to enrich real-time event streams with entities from your data
 On this page, you'll learn how to get started with Linked Events.
 
 > info "Linked Events warehouse support"
-> Linked Events supports Snowflake, BigQuery, and Redshift.
+> Linked Events supports Snowflake, BigQuery, Redshift, and Databricks.
 
 ## Use cases
 
@@ -37,6 +37,9 @@ To use Linked Events, you'll need the following:
 > info ""
 > Segment stores and processes all data in the United States.
 
+> info ""
+> Profiles Sync isn't required for Linked Events.
+
 ### Linked Events roles
 
 The following Segment access [roles](/docs/segment-app/iam/roles/) apply to Linked Events:
@@ -56,7 +59,7 @@ To create models and enrich events in destinations, you need to be a `Workspace 
 > info ""
 > Linked Events uses Segment's [Reverse ETL](/docs/connections/reverse-etl/) infrastructure for pulling in data from your warehouse. 
 
-To get started, you'll need to set up your data warehouse and provide the correct access detailed in the set up steps below. Linked Events supports [BigQuery](/docs/unify/linked-profiles/setup-guides/bigquery-setup/), [Snowflake](/docs/unify/linked-profiles/setup-guides/snowflake-setup/), and [Redshift](/docs/unify/linked-profiles/setup-guides/redshift-setup/). 
+To get started, you'll need to set up your data warehouse and provide the correct access detailed in the set up steps below. Linked Events supports [BigQuery](/docs/unify/linked-profiles/setup-guides/bigquery-setup/), [Databricks](/docs/unify/linked-profiles/setup-guides/databricks-setup/), [Snowflake](/docs/unify/linked-profiles/setup-guides/snowflake-setup/), and [Redshift](/docs/unify/linked-profiles/setup-guides/redshift-setup/). 
 
 ## Step 2: Connect your warehouse to the Data Graph
 
@@ -91,6 +94,7 @@ The table below shows the data warehouses Linked Events supports. View the Segme
 | [Snowflake](/docs/unify/linked-profiles/setup-guides/snowflake-setup/)              | 1. Configure your snowflake database. <br> 2. Enter your credentials. <br> 3. Test the Connection. <br> 4. Click **Save**. |
 | [BigQuery](/docs/unify/linked-profiles/setup-guides/bigquery-setup/)           | 1. Add your credentials to the database that has tables with the entities you want to enrich your event with. <br> 2. Test your connection. | 
 | [Redshift](/docs/unify/linked-profiles/setup-guides/redshift-setup/)           | 1. Select the Redshift cluster you want to connect. <br> 2. [Configure](/docs/connections/storage/catalog/redshift/#networking) the correct network and security settings. |
+| [Databricks](/docs/unify/linked-profiles/setup-guides/databricks-setup/) | 1. Configure your Databricks catalog. <br> 2. Enter your credentials. <br> 3. Test the Connection. <br> 4. Click **Save**. |
 
 
 ## Step 3: Build your Data Graph 
@@ -185,7 +189,7 @@ When you're satisfied with the mappings, click **Save**. Segment returns you to 
 
 #### What data warehouse permissions does Segment require? 
 
-To use Linked Events, be sure that you have proper permissions for the Data Warehouse you're using. Visit the [BigQuery](/docs/unify/linked-profiles/setup-guides/bigquery-setup/), [Snowflake](/docs/unify/linked-profiles/setup-guides/snowflake-setup/), and [Redshift](/docs/unify/linked-profiles/setup-guides/redshift-setup/) setup guides to learn more about updating permissions.
+To use Linked Events, be sure that you have proper permissions for the Data Warehouse you're using. Visit the [BigQuery](/docs/unify/linked-profiles/setup-guides/bigquery-setup/), [Databricks](/docs/unify/linked-profiles/setup-guides/databricks-setup), [Snowflake](/docs/unify/linked-profiles/setup-guides/snowflake-setup/), and [Redshift](/docs/unify/linked-profiles/setup-guides/redshift-setup/) setup guides to learn more about updating permissions.
 
 #### How often do syncs occur? 
 

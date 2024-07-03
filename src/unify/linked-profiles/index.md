@@ -7,6 +7,7 @@ hidden: true
 
 > info "Linked Profiles is in public beta"
 > Linked Profiles is in public beta, and Segment is actively working on this feature. Some functionality may change before it becomes generally available.
+
 > warning ""
 > Linked Profiles currently only supports workspaces in the United States.
 
@@ -21,6 +22,6 @@ Using Linked Profiles, you only need to define the relationships between data se
 
 > success ""
 > To get started with Linked Profiles, you'll need to connect your data warehouse. 
-> - [Snowflake](/docs/unify/linked-profiles/setup-guides/snowflake-setup/) is supported by both Linked Events and Linked Audiences.
+> - [Snowflake](/docs/unify/linked-profiles/setup-guides/snowflake-setup/) and [Databricks](/docs/unify/linked-profiles/setup-guides/databricks-setup/) are supported by both Linked Events and Linked Audiences.
 > - [Redshift](/docs/unify/linked-profiles/setup-guides/redshift-setup/) and [BigQuery](/docs/unify/linked-profiles/setup-guides/BigQuery-setup/)  are currently supported for Linked Events.
 

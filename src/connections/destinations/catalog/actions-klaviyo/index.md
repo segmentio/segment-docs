@@ -20,13 +20,18 @@ Klaviyo (Actions) provides the following benefits:
 - **More control** - Actions-based destinations enable you to define the mapping between the data Segment receives from your sources, and the data Segment sends to Klaviyo.
 - **Default property mappings** - Default mappings from the Segment like event, timestamp, and more, allow data to be mapped correctly without any setup required.
 
+> info ""
+> Segment automatically migrated all classic Klaviyo destinations configured in Cloud mode to the Klaviyo (Actions) destination in June 2024.
+> 
+> If you are a Klaviyo classic user, view information about steps you might need to take in the [Migrate to the Klaviyo (Actions) destination](/docs/connections/destinations/catalog/klaviyo#migrate-to-the-klaviyo-actions-destination) documentation. 
+
 ## Getting started
 
 1. From the Segment web app, click **Catalog**.
 2. Search for **Klaviyo (Actions)** in the Catalog, select it, and choose which of your sources to connect the destination to.
 3. Navigate to [Account > Settings > API Keys](https://www.klaviyo.com/account#api-keys-tab){:target="_blank"} in Klaviyo's UI and copy your API Key into the Segment Settings UI.
 
-> info "Generate a Private API Key with full access to Klaviyo's Accounts, Campaigns, List, Profiles, Segments, and Subscriptions APIs"
+> info "Generate a Private API Key with full access to Klaviyo's Accounts, Campaigns, Events, List, Profiles, Segments, and Subscriptions APIs"
 > Create a key by going to Klaviyo's UI and clicking [Account > Settings > API Keys > Create API Key](https://www.klaviyo.com/account#api-keys-tab){:target="_blank"} to generate a Private API Key. After you've created a key, copy it into the Segment Settings UI.
 
 {% include components/actions-fields.html %}
@@ -67,7 +72,7 @@ To add and remove profiles in Klaviyo with Engage Audience data:
 
 1. Create and configure your Engage Audience.
 2. Navigate to **Engage > Engage Settings > Destinations** and click **Add Destination**.
-3. Select **Klaviyo (Actions) Audiences**.
+3. Select **Klaviyo (Actions)**.
 4. Select your Audience Space as the source, and name your destination.
 5. On the **Mappings** tab, click **Add Mapping** and select **Add Profile To List (Engage)**.
 6. Click **Save** and make sure to enable the mapping.

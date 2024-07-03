@@ -28,6 +28,9 @@ To create an audience with Generative Audiences:
 > success ""
 > To help you write your prompt, view these [example prompts](#example-prompts) and [best practices](#best-practices).
 
+> success "Before you begin"
+> To use Generative Audiences, a workspace owner must first accept the Customer AI Terms and Conditions.
+
 ### Modify an audience description 
 
 Once Segment generates the audience conditions, the prompt box remains open for reference. You can close this box, or modify your audience description and click **Build with AI** again. 
@@ -108,10 +111,10 @@ At this time, Segment only supports audience description prompts in the English 
 
 #### How is my data used?
 
-In order to generate the audience based on your description, Segment sends your query to OpenAI, Segment's 3rd party AI service. All queries sent to OpenAI from Segment are anonymized, meaning that OpenAI won't be able to identify from whom the query was sent unless you include uniquely identifiable information in the input.
+To generate the audience based on your description, Segment sends your query to OpenAI, Segment's 3rd party AI service. All queries sent to OpenAI from Segment are anonymized, meaning that OpenAI won't be able to identify from whom the query was sent unless you include uniquely identifiable information in the input.
 
 Behind the scenes, Segment instructs GPT to generate an audience based on the user inputted audience description and contextual information such as traits and events performed in your workspace.
 
 GPT is OpenAI's state-of-the-art natural language generation tool powered by artificial intelligence. It can perform a variety of natural language tasks like text generation, completion, and classification. CustomerAI uses the service to help generate audiences and inspire segmentation.
 
-Per OpenAI's policy, data sent to OpenAI's API with Segment isn't used to train or improve their models and will be deleted after 30 days. Any content generated using GPT is your intellectual property. Segment won't assert any claims of copyright ownership on such content and makes no warranty of any kind with respect to any AI generated content.  
+According to OpenAI's policy, OpenAI will not use data sent from Segment to train or improve their models, and they will delete it after 30 days. Any content generated using GPT belongs to you. Segment will not claim copyright ownership of such content and makes no warranty regarding any AI generated content.  

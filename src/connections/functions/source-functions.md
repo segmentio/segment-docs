@@ -399,11 +399,6 @@ After configuring, find the webhook URL - either on the **Overview** or **Settin
 
 Copy and paste this URL into the upstream tool or service to send data to this source.
 
-## OAuth 2.0
-
-> info ""
-> OAuth 2.0 is currently in private beta and is governed by Segment’s [First Access and Beta Preview Terms](https://www.twilio.com/en-us/legal/tos){:target="_blank"}.
-
 ## Source function FAQs
 
 ##### What is the retry policy for a webhook payload?

@@ -210,6 +210,10 @@ sections:
       title: Destination Functions
     - path: /connections/functions/insert-functions
       title: Destination Insert Functions
+    - path: /connections/functions/copilot
+      title: Functions Copilot
+    - path: /connections/functions/functions-copilot-nutrition-facts
+      title: Functions Copilot Nutrition Facts Label
     - path: /connections/functions/environment
       title: Functions Environment
     - path: /connections/functions/usage
@@ -284,6 +288,10 @@ sections:
     title: Integration Error Codes
   - path: /connections/rate-limits
     title: Rate Limits
+  - path: /connections/oauth
+    title: OAuth 2.0
+  - path: /connections/aws-privatelink
+    title: AWS PrivateLink Integration
 - section_title: Unify
   section:
   - path: /unify
@@ -517,6 +525,8 @@ sections:
       title: Configure Consent Management
     - path: /privacy/consent-management/consent-in-unify
       title: Consent in Unify
+    - path: /privacy/consent-management/consent-in-retl
+      title: Consent in Reverse ETL
     - path: /privacy/consent-management/consent-faq
       title: Consent FAQs
   - path: /privacy/account-deletion
