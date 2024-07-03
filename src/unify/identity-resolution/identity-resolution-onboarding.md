@@ -5,9 +5,6 @@ redirect_from:
   - "/personas/identity-resolution/identity-resolution-onboarding"
 ---
 
-> info ""
-> The steps in this guide pertain to spaces created after **October 5th, 2020**. For spaces created before **October 5th, 2020**, please refer to [Identity Resolution Settings](/docs/unify/identity-resolution/identity-resolution-settings).
-
 > success ""
 > Workspace owners, administrators, and users with the Identity Admin role can edit Identity Resolution Settings.
 
@@ -135,26 +132,7 @@ If this event maps to this profile, the resulting profile would then contain two
 
 At this point, the event searches for any profiles that match just the identifier user_id `abc456`. Now there are no existing profiles with this identifier, so Segment creates a new profile with user_id `abc456`.
 
-By default, Segment explicitly orders user_id and email as rank `1` and `2`, respectively. All other identifiers are in alphabetical order beginning from rank `3`. This means that if the identifiers sent with events flowing into Segment are user_id, email, anonymous_id, and ga_client_id, the rank would be as follows:
-
-| Identifier   | Priority |
-| ------------ | -------- |
-| user_id      | 1        |
-| email        | 2        |
-| anonymous_id | 3        |
-| ga_client_id | 4        |
-
-If a new android.id identifier appeared without first giving it explicit order, the order would automatically reshuffle to:
-
-| Identifier   | Priority |
-| ------------ | -------- |
-| user_id      | 1        |
-| email        | 2        |
-| android.id   | 3        |
-| anonymous_id | 4        |
-| ga_client_id | 5        |
-
-If you require an explicit order for all identifiers, configure this in the Identity Resolution Settings page before sending in events.
+You can explicitly order for all identifiers through the Identity Resolution Settings page before sending in events.
 
 ![The Identity Resolution Configuration screen](images/edit-priority.png)
 
