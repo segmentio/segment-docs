@@ -85,6 +85,11 @@ To add and remove profiles in Klaviyo with Engage Audience data:
 
 ## FAQ
 
-### Dealing with 429 Responses from Klaviyo's API
+### Dealing with Error Responses from Klaviyo's API
+
+#### 429 Too Many Requests
 
 If you're encountering rate limiting issues, consider enabling batching for the Action receiving these errors. Ensure that within the mapping configuration, "Batch data to Klaviyo" is set to "Yes". This adjustment can help alleviate the rate limiting problem.
+
+#### 409 Conflict
+In most cases, you can safely ignore this error code as it prevents duplicate profiles from being created in Klaviyo. When you use the [Upsert Profile](/docs/connections/destinations/catalog/actions-klaviyo/#upsert-profile) mapping to send Identify events, Segment will first attempt to [create a new profile in Klaviyo](https://developers.klaviyo.com/en/reference/create_profile). If the first request returns with a `409` error code, a second request will be sent to [update the existing profile with the given profile ID](https://developers.klaviyo.com/en/reference/update_profile).
