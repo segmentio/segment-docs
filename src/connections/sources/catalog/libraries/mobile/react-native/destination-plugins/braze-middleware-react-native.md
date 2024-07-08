@@ -31,7 +31,7 @@ In your code where you initialize the analytics client call the `.add(plugin)` m
 ```ts
 import { createClient } from '@segment/analytics-react-native';
 
-import { BrazePlugin } from '@segment/analytics-react-native-plugin-braze-middleware';
+import { BrazeMiddlewarePlugin } from '@segment/analytics-react-native-plugin-braze-middleware';
 
 const segmentClient = createClient({
   writeKey: 'SEGMENT_KEY'
