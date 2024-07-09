@@ -115,19 +115,7 @@ Build your own Mappings. Combine supported [triggers](/docs/connections/destinat
 <p>{{action.description | markdownify}}</p>
 <p>{{action.name}} is a <strong>{{action.platform | capitalize}}</strong> action. {% if action.defaultTrigger %}The default Trigger is: <code>{{action.defaultTrigger}}</code> {%endif%}</p>
 
-<!--- IG 7/2024 - CSE requested this note, as customers were confused about why some required fields didn't appear in the in-app LaunchDarkly Audiences mappings -->
 
-{% if action.id == 'aPAULh8sgt5bcTeXJuXTB6' %}
-  <div class="premonition info">
-    <div class="fa fa-check-circle"></div>
-    <div class="content">
-      <p class="header">Segment automatically maps Audience ID and Audience Key fields</p>
-      <p markdown=1>
-        Segment hides these two fields from the UI to avoid user error, as these fields remain static in Engage. Audience ID defaults to `property : context.personas.computation_id` and Audience Key defaults to `property : context.personas.computation_key`.
-      </p>
-    </div>
-  </div>
-{% endif %}
 
 {% if action.fields.size > 0 %}
 <p class="button button-hollow" data-toggle="collapse" data-target=".settings-content-{{action.slug}}">Click to show / hide fields</p>
