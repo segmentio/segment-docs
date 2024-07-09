@@ -45,5 +45,5 @@ If you're not familiar with the Segment Specs, take a look to understand what th
 analytics.track('Visited Products Page')
 ```
 
-Using the [Track method](/docs/connections/spec/track/) will trigger a call to `userGuiding.track` method. You can get more information about tracking user actions from [here](https://help.userguiding.com/en/articles/5562847-sending-user-attributes-and-tracking-user-actions).
+Using the [Track method](/docs/connections/spec/track/) triggers a call to UserGuiding's `userGuiding.track` method. For more information about tracking user action in UserGuiding, see UserGuiding's [Sending user attributes and tracking user actions](https://help.userguiding.com/en/articles/5562847-sending-user-attributes-and-tracking-user-actions){:target="_blank”}  documentation.
 
