@@ -24,7 +24,7 @@ This destination is maintained by UserGuiding. For any issues with the source, [
 
 ## Identify
 
-If you're not familiar with the Segment Specs, take a look to understand what the [Identify method](/docs/connections/spec/identify/) does. An example call would look like:
+If you're not familiar with the Segment Spec, take a look to understand what the [Identify method](/docs/connections/spec/identify/) does. An example call would look like:
 
 ```js
 analytics.identify('user_id_123', {
