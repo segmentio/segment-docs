@@ -89,6 +89,6 @@ To add and remove profiles in Klaviyo with Engage Audience data:
 
 If you're encountering rate limiting issues, consider enabling batching for the Action receiving these errors. Ensure that within the mapping configuration, "Batch data to Klaviyo" is set to "Yes". This adjustment can help alleviate the rate limiting problem.
 
-### Can I send Engage Audiences to a pre-created List in Klaviyo?
+### Can I send Engage Audiences to a pre-created Klaviyo List?
 
-Please note that when using the 'Add Profile to List - Engage' Mapping, Engage audiences are designed to initiate the creation of new lists in Klaviyo, and cannot be linked to existing Klaviyo lists, making the List ID non-editable.
+No. Engage audiences are designed to initiate the creation of new lists in Klaviyo when you use the "Add Profile to List - Engage" mapping. You cannot link Engage lists to existing Klaviyo lists and cannot edit the List ID for Engage audiences.
