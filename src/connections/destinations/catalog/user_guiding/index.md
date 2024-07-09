@@ -19,7 +19,7 @@ This destination is maintained by UserGuiding. For any issues with the source, [
 3. Choose the source you want to connect UserGuiding destination to.
 4. Give the destination a name.
 5. Enter the API key provided in the [UserGuiding integrations page](https://panel.userguiding.com/settings/integrations/segment).
-6. Pick the data residency region for your UserGuiding account.
+6. Select the data residency region for your UserGuiding account.
 
 
 ## Identify
