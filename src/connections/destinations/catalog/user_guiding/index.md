@@ -7,7 +7,7 @@ beta: true
 [UserGuiding](https://userguiding.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners){:target="_blank”} is a product adoption platform that helps product teams automate in-app experiences that turn new users into champions.
 
 
-This destination is maintained by UserGuiding. For any issues with the source, [contact their Support team](mailto:assist@userguiding.com).
+This destination is maintained by UserGuiding. For any issues with the source, [contact the UserGuiding Support team](mailto:assist@userguiding.com).
 
 
 ## Getting Started
