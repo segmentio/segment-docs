@@ -34,7 +34,7 @@ analytics.identify('user_id_123', {
 });
 ```
 
-Using the [Identify method](/docs/connections/spec/identify/) will trigger a call to UserGuiding's [Identify](https://panel.userguiding.com/settings/installation) method. You can get more information about UserGuiding's identification from [here](https://help.userguiding.com/en/articles/5562847-sending-user-attributes-and-tracking-user-actions).
+Using the [Identify method](/docs/connections/spec/identify/) triggers a call to UserGuiding's [Identify](https://panel.userguiding.com/settings/installation){:target="_blank”} method. For more information about user identification in UserGuiding, see UserGuiding's [Sending user attributes and tracking user actions](https://help.userguiding.com/en/articles/5562847-sending-user-attributes-and-tracking-user-actions){:target="_blank”} documentation.
 
 
 ## Track
