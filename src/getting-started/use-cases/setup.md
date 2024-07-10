@@ -11,6 +11,11 @@ Use Cases in Segment provide a structured approach to setting up your account ba
 
 Onboarding to Segment with a Use Case streamlines setup with step-by-step instructions, time-saving processes, best practices, and reduced errors through a structured, guided path.
 
+> info "Permissions"
+> To implement a use case, you'll need to be a workspace owner for your Segment account.
+> warning "Changing your use case"
+> Once you've reviewed the suggested events for a use case, you won't be able to change the use case. If you want to see a full breakdown of each use case before commiting to one, click **Change use case** to begin the use case flow again. You can also view the [Use Cases Reference guide](/docs/getting-started/use-cases/reference/) to see what Segment recommends for each use case.
+
 <!-- Something about not having to choose a use case, plus that you need to be a workspace owner; also something about changing your use case any time -->
 <!-- something about not being able to change) use case-->
 
@@ -72,3 +77,6 @@ After connecting your sources, it's time to connect the destinations where you w
 The final step is to publish the events set up in your dev environment to production. This involves pushing your configurations live and using Segment's debugger to verify that data is being collected and sent as expected. Conduct thorough testing to ensure everything is working correctly before launching your Segment instance.
 
 This guide provides a clear and structured path to set up your Segment instance based on your chosen use case. Follow these steps to ensure a smooth and efficient setup process.
+
+
+<!-- What's next, engage/unify demos>
