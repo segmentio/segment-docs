@@ -33,77 +33,30 @@ From a high level, setting Segment up with a use case takes place in four stages
 3. **Follow the in-app guide**. With your use case chosen, Segment shows you an interactive checklist of events to track, as well as sources and destinations that Segment recommends you connect. You'll carry these steps out in a sandboxed development environment.
 4. **Test and launch your setup**. Push your connections to a production environment and verify that events flow as expected through the debugger.
 
-## Setup steps
+## Example setup: Personalize winback
+
+This section provides a detailed, step-by-step guide to setting up the **Personalize Winback** use case from the **Personalize communications and product experiences** business goal in your Segment account.
+
+### Step 1: Navigate to Use Cases
+
+1. Log in to your Segment account.
+2. If you see the **Welcome to Segment** screen, click **Get Started**. If logging in takes you to your Segment workspace, click **Guided Setup**.
+
+### Step 2: Pick your business goal and select a use case
+
+1. In the **What is your business goal?** screen, select **Personalize communications and product experiences**, then click **Next**.
+2. Segment moves you to the **Which use case would you like to set up?** screen. Choose **Personalize winback**, then click **Next**.
+3. Segment shows you information about `dev` and `prod` labels. After you've read it, click **Next**.
+4. Segment takes you to the **Set up checklist** page.
+
+#### Working with dev and prod environments
+
+For most cases, you'll want to start with development or staging sources to test and debug your Segment implementation. This approach lets you verify that everything is working correctly before sending live data downstream. To facilitate this, Segment automatically creates development (dev) and production (prod) spaces for you and labels your sources accordingly to simplify tracking.
+
+Segment strongly recommends beginning your setup in the dev environment. This allows for thorough testing and debugging of your configuration. Once you’re confident in your dev setup, Segment will guide you on how to apply these configurations to your live production sources.
 
 
 
-> info "Permissions"
-> To implement a use case, you'll need to be a workspace owner for your Segment account.
 
-> warning "Changing your use case"
-> Once you've reviewed the suggested events for a use case, you won't be able to change the use case. If you want to see a full breakdown of each use case before commiting to one, click **Change use case** to begin the use case flow again. You can also view the [Use Cases Reference guide](/docs/getting-started/use-cases/reference/) to see what Segment recommends for each use case.
-
-<!-- Something about not having to choose a use case, plus that you need to be a workspace owner; also something about changing your use case any time -->
-<!-- something about not being able to change) use case-->
-
-## Setup overview
-
-When you implement a Segment use case, you'll carry out the following six steps:
-
-1. Select a business goal.
-2. Choose a use case based on the business goal.
-3. Review suggested events.
-4. Connect development (dev) sources.
-5. Connect dev destinations
-6. Publish and test.
-
-### Step-by-Step Checklist
-
-#### 1. Select a Business Goal
-- Navigate to the setup page.
-- Choose a business goal that aligns with your objectives (e.g., "Optimize advertising").
-
-#### 2. Choose a Use Case
-- Review the list of available use cases.
-- Select the use case that best matches your business needs (e.g., "Build from high-value purchasers via specific channels").
-
-#### 3. Review Suggested Events
-- Click on "Review" to see the minimum set of events you should track.
-- Familiarize yourself with the suggested events and properties.
-
-#### 4. Connect Dev Sources
-- Select your data sources.
-- Connect the development environment of those sources.
-
-#### 5. Connect Dev Destinations
-- Select where you want to use your data.
-- Connect the development environment of those destinations.
-
-#### 6. Publish and Test
-- Publish the events set up in your dev environment to production.
-- Check the debugger to ensure data is flowing correctly.
-
-### Detailed Breakdown
-
-#### Select a Business Goal
-Choosing the right business goal is the first step in setting up your Segment instance. Navigate to the setup page and select a goal that aligns with your objectives, such as optimizing advertising or improving user retention.
-
-#### Choose a Use Case
-Once you've selected a business goal, you'll be presented with a list of use cases. Review these options and choose the one that best fits your needs. For example, if your goal is to improve user retention, you might choose a use case focused on building from high-value purchasers.
-
-#### Review Suggested Events
-Segment provides a set of suggested events and properties tailored to your selected use case. Click on "Review" to see the minimum set of events you should track. This helps ensure you're collecting the right data to achieve your business goals.
-
-#### Connect Dev Sources
-Next, you'll connect your data sources to the development environment. This involves selecting the sources you want to use and connecting them to Segment. Make sure to properly label and organize your events to keep everything tidy.
-
-#### Connect Dev Destinations
-After connecting your sources, it's time to connect the destinations where you want to use your data. This might include analytics tools, marketing platforms, or other systems. Connect the development environment of those destinations and validate the connections to ensure data is flowing correctly.
-
-#### Publish and Test
-The final step is to publish the events set up in your dev environment to production. This involves pushing your configurations live and using Segment's debugger to verify that data is being collected and sent as expected. Conduct thorough testing to ensure everything is working correctly before launching your Segment instance.
-
-This guide provides a clear and structured path to set up your Segment instance based on your chosen use case. Follow these steps to ensure a smooth and efficient setup process.
-
-
-<!-- What's next, engage/unify demos>
+<!-- What's next, engage/unify demos
+info about only having oen use case for now>
