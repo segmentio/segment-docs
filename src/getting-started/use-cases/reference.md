@@ -512,16 +512,131 @@ And this table shows the source and destination types that Segment recommends yo
 Click on each use case in this section to view Segment's recommendations for the Personalize communications and product experiences use case, which helps you engage your customers with relevant content.
 
 {% faq %}
+{% faqitem Accelerate onboarding %}
 
-{% endfaq %}
+This table shows the events and properties Segment recommends you track for the Accelerate onboarding use case, which helps you optimize new user activation based on real-time behavior:
+<br />
+<br />
 
+| Events                   | Properties                                           |
+| ------------------------ | ---------------------------------------------------- |
+| Onboarding Step Completed| `step_name`, `step_number`, `total_steps`, `pct_completed`, `flow_name`, `screen_id`, `screen_type` |
+| Onboarding Completed     | `checkout_id`, `order_id`, `total`, `revenue`, `shipping`, `tax`, `affiliation` |
+| Signed In                | `first_name`, `last_name`, `username`, `email`       |
 
-<!--
+<br />
+And this table shows the source and destination types that Segment recommends you set up for the Accelerate onboarding use case:
+<br />
+<br />
 
-{% faq %}
+| Sources         | Destinations        |
+|-----------------|---------------------|
+| Website         | Personalization     |
+| Mobile          | Reverse ETL         |
+| Reverse ETL     | Analytics           |
+
+{% endfaqitem %}
+{% faqitem Increase repeat purchases %}
+
+This table shows the events and properties Segment recommends you track for the Increase repeat purchases use case, which helps you convert single-purchase buyers with personalized communications:
+<br />
+<br />
+
+| Events          | Properties                                                                                               |
+| --------------- | -------------------------------------------------------------------------------------------------------- |
+| Page Viewed     | `page_category`, `page_name`                                                                             |
+| Order Completed | `num_items`, `order_id`, `checkout_id`, `total`, `revenue`, `shipping`, `tax`, `affiliation`, `products` |
+
+<br />
+And this table shows the source and destination types that Segment recommends you set up for the Increase repeat purchases use case:
+<br />
+<br />
+
+| Sources         | Destinations        |
+|-----------------|---------------------|
+| Website         | Reverse ETL         |
+| Mobile          | Personalization     |
+| Reverse ETL     | Analytics           |
+|                 | Email Marketing     |
+|                 | SMS & Push Notifications |
+
+{% endfaqitem %}
+{% faqitem Mitigate high value churn %}
+
+This table shows the events and properties Segment recommends you track for the Mitigate high value churn use case, which helps you anticipate churn for your highest-value users and prevent them from churning:
+<br />
+<br />
+
+| Events          | Properties                                                                                               |
+| --------------- | -------------------------------------------------------------------------------------------------------- |
+| Order Completed | `num_items`, `order_id`, `checkout_id`, `total`, `revenue`, `shipping`, `tax`, `affiliation`, `products` |
+
+<br />
+And this table shows the source and destination types that Segment recommends you set up for the Mitigate high value churn use case:
+<br />
+<br />
+
+| Sources         | Destinations        |
+|-----------------|---------------------|
+| Website         | Reverse ETL         |
+| Mobile          | Analytics           |
+| Reverse ETL     | SMS & Push Notifications |
+|                 | Email Marketing     |
+
+{% endfaqitem %}
+{% faqitem Nurture with content %}
+
+This table shows the events and properties Segment recommends you track for the Nurture with content use case, which helps you use content personalized by interest to nurture leads or customers:
+<br />
+<br />
+
+| Events          | Properties                     |
+| --------------- | ------------------------------ |
+| Page Viewed     | `page_category`, `page_name`   |
+| Screen Viewed   | `screen_id`, `screen_type`, `screen_title` |
+| Page Scrolled   | `pct_scrolled`, `page_category` |
+
+<br />
+And this table shows the source and destination types that Segment recommends you set up for the Nurture with content use case:
+<br />
+<br />
+
+| Sources         | Destinations        |
+|-----------------|---------------------|
+| Website         | Reverse ETL         |
+| Mobile          | Analytics           |
+| Reverse ETL     | Email Marketing     |
+|                 | SMS & Push Notifications |
+
+{% endfaqitem %}
+{% faqitem Personalize upsell content %}
+
+This table shows the events and properties Segment recommends you track for the Personalize upsell content use case, which helps you personalize upsell and cross-sell messaging while understanding behavior:
+<br />
+<br />
+
+| Events                  | Properties                                               |
+| ----------------------- | -------------------------------------------------------- |
+| Product Added to Cart   | `product_id`, `product_name`, `product_brand`, `product_price`, `product_category` |
+| Order Completed         | `num_items`, `order_id`, `checkout_id`, `total`, `revenue`, `shipping`, `tax`, `affiliation`, `products` |
+
+<br />
+And this table shows the source and destination types that Segment recommends you set up for the Personalize upsell content use case:
+<br />
+<br />
+
+| Sources         | Destinations        |
+|-----------------|---------------------|
+| Website         | Reverse ETL         |
+| Mobile          | Personalization     |
+| Reverse ETL     | Analytics           |
+|                 | Email Marketing     |
+|                 | SMS & Push Notifications |
+
+{% endfaqitem %}
 {% faqitem Personalize winback %}
 
-This table shows the events and properties Segment recommends you track for the Personalize winback use case:
+This table shows the events and properties Segment recommends you track for the Personalize winback use case, which helps you design personalized messaging based on user behavior:
 <br />
 <br />
 
@@ -541,6 +656,8 @@ And this table shows the source and destination types that Segment recommends yo
 | Website         | Reverse ETL         |
 | Mobile          | Personalization     |
 | Reverse ETL     | Analytics           |
+|                 | Email Marketing     |
+|                 | SMS & Push Notifications |
 
 {% endfaqitem %}
 {% endfaq %}
