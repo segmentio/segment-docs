@@ -14,7 +14,7 @@ When you select a use case, you'll get a customized checklist of steps to follow
 Use Cases help you get up and running with Segment. Here's why you should start your Segment journey with a use case:
 
 - **Guided setup**: Follow clear, concise steps.
-- **Time-Saving**: Build your Segment instance through a streamlined process.
+- **Time-saving**: Build your Segment instance through a streamlined process.
 - **Proven practices**: Follow Segment best practices from the get-go.
 - **Reduced errors**: Minimize mistakes with our guided process.
 
