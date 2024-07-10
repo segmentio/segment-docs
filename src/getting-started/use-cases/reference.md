@@ -27,21 +27,21 @@ This section contains tables for the different events, sources, and destinations
 
 ### Optimize advertising
 
-Here are....
+Click on each use case in this section to view Segment's recommendations for the Optimize advertising use case, which helps you improve return on ad spend.
 
 {% faq %}
 {% faqitem Build high value lookalikes %}
 
-This table shows the events and properties Segment recommends you track for the Build high value lookalikes use case:
+This table shows the event and properties Segment recommends you track for the Build high value lookalikes use case, which helps you build from high-value purchasers through specific channels:
 <br />
 <br />
 
-| Events          | Properties                                                                                               |
+| Event          | Properties                                                                                               |
 | --------------- | -------------------------------------------------------------------------------------------------------- |
 | Order Completed | `num_items`, `order_id`, `checkout_id`, `total`, `revenue`, `shipping`, `tax`, `affiliation`, `products` |
 
 <br />
-And this table shows the source and destination types that Segment recommends you set up for the Build high value lookalikes use case:
+And this table shows the source and destination types that Segment recommends you set up for the Build high-value lookalikes use case:
 <br />
 <br />
 
@@ -55,7 +55,7 @@ And this table shows the source and destination types that Segment recommends yo
 {% endfaqitem %}
 {% faqitem Build lookalikes for app install %}
 
-This table shows the events and properties Segment recommends you track for the Build lookalikes for app install use case:
+This table shows the events and properties Segment recommends you track for the Build lookalikes for app install use case, which helps you build lookalikes from app installers in specific channels:
 <br />
 <br />
 
@@ -80,7 +80,7 @@ And this table shows the source and destination types that Segment recommends yo
 {% endfaqitem %}
 {% faqitem Increase signups with lookalikes %}
 
-This table shows the events and properties Segment recommends you track for the Increase signups with lookalikes use case:
+This table shows the events and properties Segment recommends you track for the Increase signups with lookalikes use case, which helps you build lookalikes from signups via specific channels.:
 <br />
 <br />
 
@@ -104,7 +104,7 @@ And this table shows the source and destination types that Segment recommends yo
 {% endfaqitem %}
 {% faqitem Mitigate cart abandonment %}
 
-This table shows the events and properties Segment recommends you track for the Mitigate cart abandonment use case:
+This table shows the events and properties Segment recommends you track for the Mitigate cart abandonment use case, which helps you win back users to drive purchases and understand funnel:
 <br />
 <br />
 
@@ -114,7 +114,7 @@ This table shows the events and properties Segment recommends you track for the 
 | Order Completed | `num_items`, `order_id`, `checkout_id`, `total`, `revenue`, `shipping`, `tax`, `affiliation`, `products` |
 
 <br />
-And this table shows the source and destination types that Segment recommends you set up for the Mitigate cart abandonment use case:
+And this table shows the source and destination types that Segment recommends you set up for the Mitigate cart abandonment use case, which helps you win back users to drive purchases and understand funnel:
 <br />
 <br />
 
@@ -127,11 +127,11 @@ And this table shows the source and destination types that Segment recommends yo
 {% endfaqitem %}
 {% faqitem Mitigate high value churn %}
 
-This table shows the events and properties Segment recommends you track for the Mitigate high value churn use case:
+This table shows the event and properties Segment recommends you track for the Mitigate high value churn use case, which helps you anticipate churn for your highest value users and prevent them from churning:
 <br />
 <br />
 
-| Events          | Properties                                                                                               |
+| Event          | Properties                                                                                               |
 | --------------- | -------------------------------------------------------------------------------------------------------- |
 | Order Completed | `num_items`, `order_id`, `checkout_id`, `total`, `revenue`, `shipping`, `tax`, `affiliation`, `products` |
 
@@ -149,11 +149,11 @@ And this table shows the source and destination types that Segment recommends yo
 {% endfaqitem %}
 {% faqitem Suppress based on time %}
 
-This table shows the events and properties Segment recommends you track for the Suppress based on time use case:
+This table shows the event and properties Segment recommends you track for the Suppress based on time use case, which helps you suppress users after a few days to keep campaigns fresh:
 <br />
 <br />
 
-| Events          | Properties                                                                                               |
+| Event          | Properties                                                                                               |
 | --------------- | -------------------------------------------------------------------------------------------------------- |
 | Order Completed | `num_items`, `order_id`, `checkout_id`, `total`, `revenue`, `shipping`, `tax`, `affiliation`, `products` |
 
@@ -171,7 +171,7 @@ And this table shows the source and destination types that Segment recommends yo
 {% endfaqitem %}
 {% faqitem Suppress with purchase %}
 
-This table shows the events and properties Segment recommends you track for the Suppress with purchase use case:
+This table shows the events and properties Segment recommends you track for the Suppress with purchase use case, which helps you suppress converted users immediately after a conversion:
 <br />
 <br />
 
