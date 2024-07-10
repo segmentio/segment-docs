@@ -122,6 +122,8 @@ sections:
     title: Querystring API
   - path: /connections/sources/catalog/libraries/website/javascript/troubleshooting
     title: Troubleshooting
+  - path: /connections/sources/catalog/libraries/website/javascript/faq
+    title: Analytics.js FAQ
 
 
 - slug: ios
