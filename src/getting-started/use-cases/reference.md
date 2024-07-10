@@ -194,8 +194,22 @@ And this table shows the source and destination types that Segment recommends yo
 {% endfaqitem %}
 {% endfaq %}
 
+### Personalize first conversion
 
-<!-- -->
+Click on each use case in this section to view Segment's recommendations for the Personalize first conversion use case, which helps you convert prospective or free customers.
+
+### Boost retention, upsell, and cross-sell
+
+Click on each use case in this section to view Segment's recommendations for the Boost retention, upsell, and cross-sell use case, which helps you increase repeat visits or purchases.
+
+### Personalize communications and product experiences
+
+Click on each use case in this section to view Segment's recommendations for the Personalize communications and product experiences use case, which helps you engage your customers with relevant content.
+
+
+
+
+<!--
 
 {% faq %}
 {% faqitem Personalize winback %}
