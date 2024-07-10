@@ -28,7 +28,7 @@ From a high level, setting Segment up with a use case takes place in four stages
 1. **Pick your business goal**. What do you want to achieve?  Choose from goals like optimizing advertising, personalizing first conversions, and increasing customer retention.
 2. **Select a use case**. After you pick your business goal, Segment shows you several potential use cases from which to choose. 
 3. **Follow the in-app guide**. With your use case chosen, Segment shows you an interactive checklist of events to track, as well as sources and destinations that Segment recommends you connect. You'll carry these steps out in a sandboxed development environment.
-4. **Test and launch your setup**. Push your connections to a production environment and verify that events flow as expected through the debugger.
+4. **Test and launch your setup**. Push your connections to a production environment and verify that events flow as expected through the debugger. After you're done, your Segment instance is up and running.
 
 ## Example setup: Personalize winback
 
@@ -40,6 +40,9 @@ This section provides a detailed, step-by-step guide to setting up the **Persona
 2. If you see the **Welcome to Segment** screen, click **Get Started**. If logging in takes you to your Segment workspace, click **Guided Setup**.
 
 ### Step 2: Pick your business goal and select a use case
+
+> info "Choosing a use case"
+> Segment lets you implement one use case. If you're not sure which use case to choose, 
 
 1. In the **What is your business goal?** screen, select **Personalize communications and product experiences**, then click **Next**.
 2. Segment moves you to the **Which use case would you like to set up?** screen. Choose **Personalize winback**, then click **Next**.
@@ -114,3 +117,7 @@ After you've confirmed that data is flowing from your sources into your destinat
 9. Name your destination, then click **Create Destination**.
 
 Your data is now in production, and you've successfully configured Segment to achieve your business goals.
+
+## Next steps
+
+Use Cases pulls together a number of key Segment features, like [Sources](/docs/connections/sources), [Destinations][/docs/connections/destinations/], [data collection](/docs/protocols/tracking-plan/best-practices/), and [Reverse ETL](/docs/connections/reverse-etl/). View the documentation for each to learn how you can continue to expand and build on what you've alreay achieved.
