@@ -1,8 +1,7 @@
 ---
 title: Privacy Controls & Alerts
+plan: privacy
 ---
-{% include content/plan-grid.md name="privacy" %}
-
 
 The Privacy Portal gives you control over whether specific data is allowed to
 enter Segment.
@@ -21,7 +20,7 @@ blocked if you enable these controls.
 
 If you block Segment data at the source level using these controls, the data
 does not enter Segment and we can not Replay it. Additionally, if you have
-[Privacy Controls](#privacy-controls) configured to change how you route Red and
+Privacy Controls configured to change how you route Red and
 Yellow data into or out of Segment, the standard controls respect the rules set
 by those Controls. For example, if you have a Privacy Control set up to block
 **Red** data at the Source-level, any new fields you classify in the Data Inventory as
@@ -35,7 +34,7 @@ other tools you might prefer for events and notifications. We recommend setting
 up alerts to help you ensure your Inventory is always up to date.
 
 
-![](images/privacy-alerts.png)
+![Screenshot of the Privacy Portal settings page in the Segment app.](images/privacy-alerts.png)
 
 
 **To set up a Slack Alert:**

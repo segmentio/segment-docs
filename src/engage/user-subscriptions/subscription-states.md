@@ -2,6 +2,19 @@
 title: User Subscription States
 plan: engage-premier
 ---
+> info ""
+> Engage Premier entered an End of Sale (EOS) period effective  June 10, 2024. Existing Segment customers will continue to have access and support to Engage Premier until an end-of-life (EOL) date is announced. We recommend exploring the following pages in preparation of a migration or future MCM needs:
+> 
+>[Twilio Marketing Campaigns](https://www.twilio.com/en-us/sendgrid/marketing-campaigns)
+>
+>Preferred ISV Partners
+>
+>[Airship Blog](https://www.twilio.com/en-us/blog/airship-integrated-customer-experience)
+>[Bloomreach Blog](https://www.twilio.com/en-us/blog/bloomreach-ecommerce-personalization)
+>[Braze Blog](https://www.twilio.com/en-us/blog/braze-conversational-marketing-campaigns)
+>[Insider Blog](https://www.twilio.com/en-us/blog/insider-cross-channel-customer-experience)
+>[Klaviyo Blog](https://www.twilio.com/en-us/blog/klaviyo-powering-smarter-digital-relationships)
+>[Twilio Engage Foundations Documentation](https://segment.com/docs/engage/quickstart/)
 
 Customer profiles in your Segment audiences contain **contact vectors**. A contact vector is a piece of unique, specific contact information associated with a customer, like the customer's email address or phone number.
 
@@ -22,9 +35,6 @@ The following table displays the four subscription states:
 | `did-not-subscribe`      | A user gave you their contact information but made no decision about receiving marketing campaigns.         | A user provided their email address or phone number in an online transaction, but didn't sign up to receive your weekly newsletter. |
 | No subscription status | A user did not give you their contact information and made no decision about receiving marketing campaigns. | Segment collected an email or phone number through identity resolution. No user actively provided the email or phone number.               |
 
-> warning "Sending Permissions"
-> You can only send Engage campaigns to contacts with a subscribed user state.
-
 ## Understanding subscription states
 
 You can gain insight into your audience profiles by learning how and why each subscription state is associated with a user’s profile.  Below, you’ll find the four states described in detail, along with common scenarios that produce those states.
@@ -38,8 +48,6 @@ Subscribed users have intentionally requested to receive your marketing material
 - A user who opted in to receive marketing campaigns during online checkout
 - A user who signed up for your marketing campaigns on your website’s signup form
 - A user who signed up for marketing campaigns at an in-person event, like a conference
-
-**You may only send Engage campaigns to subscribed users. User subscriptions help you understand a user's preference to receive or not receive your marketing content.**
 
 It's your responsibility to ensure that Segment correctly reflects your users' subscription choices. Failure to do so may put you in violation of legislation like [CAN-SPAM](https://www.ftc.gov/business-guidance/resources/can-spam-act-compliance-guide-business){:target="_blank"}, [TCPA](https://www.twilio.com/docs/glossary/what-is-telephone-consumer-protection-act-tcpa){:target="_blank"}, or [GDPR](https://gdpr-info.eu/){:target="_blank"}.
 

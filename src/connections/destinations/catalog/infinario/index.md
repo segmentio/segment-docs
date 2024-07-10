@@ -17,13 +17,13 @@ Aside from these restrictions, Infinario supports any JSON-serializable data as 
 
 ## Identify
 
-This call ensures the existence and updates the properties of a user (player/customer) in Infinario. The `userId` is mapped to Infinario `registered` ID, whereas the `anonymousId` is mapped to Infinario `cookie` ID. Properties of a user with special usage in Infinario can be found in [the Players guide](http://guides.infinario.com/user-guide/players/#section-player).
+This call ensures the existence and updates the properties of a user (player/customer) in Infinario. The `userId` is mapped to Infinario `registered` ID, whereas the `anonymousId` is mapped to Infinario `cookie` ID. Properties of a user with special usage in Infinario can be found in [the Players guide](http://guides.infinario.com/user-guide/players/#section-player){:target="_blank"}.
 
 ## Track
 
 Tracks an event of any type, including any desired properties of that event. Most of the Segment call's context will be added as extra properties.
 
-It is advised to reserve the `campaign` event type for events generated automatically by the Infinario campaign module. If you track your mobile app payments as the event type `hard_purchase`, you will be able to use the [automated payment validation](http://guides.infinario.com/technical-documentation/payment-validation/).
+It is advised to reserve the `campaign` event type for events generated automatically by the Infinario campaign module. If you track your mobile app payments as the event type `hard_purchase`, you will be able to use the [automated payment validation](http://guides.infinario.com/technical-documentation/payment-validation/){:target="_blank"}.
 
 ## Page
 
@@ -43,4 +43,4 @@ This call is currently only supported partially. Whenever a user is assigned to 
 
 - - -
 
-Read the [Infinario guides](http://guides.infinario.com/) to see what can you do with the data you tracked.
+Read the [Infinario guides](http://guides.infinario.com/){:target="_blank"} to see what can you do with the data you tracked.

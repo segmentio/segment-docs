@@ -14,15 +14,14 @@ measurement of digital content consumption—including streaming TV commercial
 video, static web pages and mobile apps—across all major devices and platforms.
 
 In order to get started with Nielsen-DTVR and retrieve an `appid` to configure
-this integration, you must sign a license agreement on the [Nielsen engineering
-portal](https://engineeringportal.nielsen.com/docs/Main_Page).
+this integration, you must sign a license agreement on the [Nielsen engineering portal](https://engineeringportal.nielsen.com/docs/Main_Page){:target="_blank"}.
 
 There will be an NDA to sign prior to accessing the download. Nielsen requires
 you fill out your company info and have a Nielsen representative before getting
 started.
 
 You must also go through the pre-certification process as outlined
-[here](https://engineeringportal.nielsen.com/docs/DCR_Pre-Certification_Checklist)
+[here](https://engineeringportal.nielsen.com/docs/DCR_Pre-Certification_Checklist){:target="_blank"}
 with your Nielsen representative before shipping this implementation to
 production.
 
@@ -34,11 +33,11 @@ your mobile app with our [iOS](/docs/connections/sources/catalog/libraries/mobil
 
 ### iOS
 
-To install Nielsen DTVR via Segment on iOS, please follow the instructions in the Segment-Nielsen-DTVR repository [README](https://github.com/segment-integrations/analytics-ios-integration-nielsen-dtvr/blob/master/README.md).
+To install Nielsen DTVR via Segment on iOS, please follow the instructions in the Segment-Nielsen-DTVR repository [README](https://github.com/segment-integrations/analytics-ios-integration-nielsen-dtvr/blob/master/README.md){:target="_blank"}.
 
 ### Android
 
-To install Nielsen DTVR via Segment on Android, please follow the instructions in the Segment-Nielsen-DTVR repository [README](https://github.com/segment-integrations/analytics-android-integration-nielsen-dtvr/blob/master/README.md).
+To install Nielsen DTVR via Segment on Android, please follow the instructions in the Segment-Nielsen-DTVR repository [README](https://github.com/segment-integrations/analytics-android-integration-nielsen-dtvr/blob/master/README.md){:target="_blank"}.
 
 ##  Web
 
@@ -97,5 +96,5 @@ value will be `us`.
 <!-- Nielsen does not host their framework on a dependency management site such
 as Cocoapods nor Maven. You must manually add the framework after installing
 the Segment-Nielsen-DTVR dependency. Navigate to [Nielsen's Engineering
-Site](https://engineeringportal.nielsen.com/docs/Digital_Downloads) and
+Site](https://engineeringportal.nielsen.com/docs/Digital_Downloads){:target="_blank"} and
 download the Video framework. -->

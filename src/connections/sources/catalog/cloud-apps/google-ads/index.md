@@ -21,7 +21,7 @@ id: cQ8NOxeApJ
 
 2. Choose Google Ads and click `Connect`.
 
-   ![](images/connect.png)
+   ![Screenshot of the Google Ads source in the Segment app.](images/connect.png)
 
 3. Click `Authenticate Google Ads` and go through the authentication flow.
 
@@ -29,7 +29,7 @@ id: cQ8NOxeApJ
 
 5. Choose a schema name. This will be the namespace you will be querying against in your warehouse. Segment recommends that you choose a name that reflects the source itself, like `google_ads`, or `google_ads_usa`.
 
-   ![](images/schema.png)
+   ![Screenshot of the second step of the Google Ads setup flow in the Segment app.](images/schema.png)
 
 
 ### Permissions
@@ -42,7 +42,7 @@ By default, the primary Google Ads account connected to your Google account sync
 ### I'm getting an Internal Server Error!
 
 If you're getting the error pictured below, try disabling any ad block extensions in your browser and attempting again. 
-![](images/connection_failed.png)
+![Screenshot of an Internal Server Error message in the Segment app.](images/connection_failed.png)
 
 
 ## Sync Component
@@ -61,14 +61,14 @@ Collections are the groupings of resources Segment pulls from your source. In yo
 
 | Collection                  | Type   | Description                                                                                                                                                                                                                                                                                                                                                                                                                                     |
 | --------------------------- | ------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| ad_groups                   | object | An [ad group](https://developers.google.com/google-ads/api/reference/rpc/v10/AdGroup){:target="_blank"} is a set of ads that share the same daily or lifetime budget, schedule, bid type, bid info, and targeting data                                                                                                                                                                                                                           |
-| ad_performance_report       | object | [Ad Performance Report](https://developers.google.com/google-ads/api/docs/migration/overview){:target="_blank"} includes all statistics aggregated at the ad level, one row per ad. Segment pulls [7 days of data.](https://developers.google.com/google-ads/api/docs/query/date-ranges){:target="_blank"}                                                                                                                                     |
-| ads                         | object | An [ad object](https://developers.google.com/google-ads/api/reference/rpc/v10/Ad){:target="_blank"} contains the data necessary to visually display an ad and associate it with a corresponding ad set.                                                                                                                                                                                                                                 |
-| campaigns                   | object | A [campaign](https://developers.google.com/google-ads/api/reference/rpc/v10/Campaign){:target="_blank"} is a grouping of ad sets which are organized by the same business goal.                                                                                                                                                                                                                                                            |
-| campaign_performance_report | object | [Campaign performance reports](https://developers.google.com/google-ads/api/docs/migration/overview){:target="_blank"} include a daily snapshot of performance statistics per campaign. Segment pulls [7 days of data.](https://developers.google.com/google-ads/api/docs/query/date-ranges){:target="_blank"}                                                                                                                           |
-| click_performance_report    | object | [Click performance Reports](https://developers.google.com/google-ads/api/docs/migration/overview){:target="_blank"} include stats at the click level, including both valid and invalid clicks. Segment pulls [7 days of data.](https://developers.google.com/google-ads/api/docs/query/date-ranges){:target="_blank"}                                                                                                                       |
-| search_performance_report   | object | **[Contact Support](https://segment.com/help/contact) to add this collection** [Search query performance Reports](https://developers.google.com/google-ads/api/docs/migration/overview){:target="_blank"} include statistics aggregated at the search terms level, one row per combination of search terms. Segment pulls [7 days of data.](https://developers.google.com/google-ads/api/docs/query/date-ranges){:target="_blank"} |
-| keywords_performance_report | object | **[Contact Support](https://segment.com/help/contact) to add this collection** [Keywords Performance Report](https://developers.google.com/google-ads/api/docs/migration/overview){:target="_blank"} includes all statistics aggregated at the keyword level, one row per keyword. Segment pulls [7 days of data.](https://developers.google.com/google-ads/api/docs/query/date-ranges){:target="_blank"}                              |
+| ad_groups                   | object | An [ad group](https://developers.google.com/google-ads/api/reference/rpc/v15/AdGroup){:target="_blank"} is a set of ads that share the same daily or lifetime budget, schedule, bid type, bid info, and targeting data                                                                                                                                                                                                                           |
+| ad_performance_report       | object | [Ad Performance Report](https://developers.google.com/google-ads/api/reference/rpc/v15/AdGroupAd){:target="_blank"} includes all statistics aggregated at the ad level, one row per ad. Segment pulls [7 days of data.](https://developers.google.com/google-ads/api/docs/query/date-ranges){:target="_blank"}                                                                                                                                     |
+| ads                         | object | An [ad object](https://developers.google.com/google-ads/api/reference/rpc/v15/Ad){:target="_blank"} contains the data necessary to visually display an ad and associate it with a corresponding ad set.                                                                                                                                                                                                                                 |
+| campaigns                   | object | A [campaign](https://developers.google.com/google-ads/api/reference/rpc/v15/Campaign){:target="_blank"} is a grouping of ad sets which are organized by the same business goal.                                                                                                                                                                                                                                                            |
+| campaign_performance_report | object | [Campaign performance reports](https://developers.google.com/google-ads/api/reference/rpc/v15/Campaign){:target="_blank"} include a daily snapshot of performance statistics per campaign. Segment pulls [7 days of data.](https://developers.google.com/google-ads/api/docs/query/date-ranges){:target="_blank"}                                                                                                                           |
+| click_performance_report    | object | [Click performance Reports](https://developers.google.com/google-ads/api/reference/rpc/v15/ClickView){:target="_blank"} include stats at the click level, including both valid and invalid clicks. Segment pulls [7 days of data.](https://developers.google.com/google-ads/api/docs/query/date-ranges){:target="_blank"}                                                                                                                       |
+| search_performance_report   | object | **[Contact Support](https://segment.com/help/contact){:target="_blank"} to add this collection** [Search query performance Reports](https://developers.google.com/google-ads/api/reference/rpc/v15/SearchTermView){:target="_blank"} include statistics aggregated at the search terms level, one row per combination of search terms. Segment pulls [7 days of data.](https://developers.google.com/google-ads/api/docs/query/date-ranges){:target="_blank"} |
+| keywords_performance_report | object | **[Contact Support](https://segment.com/help/contact){:target="_blank"} to add this collection** [Keywords Performance Report](https://developers.google.com/google-ads/api/reference/rpc/v15/KeywordView){:target="_blank"} includes all statistics aggregated at the keyword level, one row per keyword. Segment pulls [7 days of data.](https://developers.google.com/google-ads/api/docs/query/date-ranges){:target="_blank"}                              |
 
 ### Video Campaign Reports
 

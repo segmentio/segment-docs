@@ -1,6 +1,7 @@
 ---
 title: Retentive Destination
 id: 6205293e7095075d8ce71a74
+hidden: true
 ---
 [Retentive](https://retentive.io/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners){:target="blank"} makes your help docs searchable in product so go-to-market teams can act on data that each customer struggles with.
 
@@ -8,7 +9,7 @@ Retentive maintains this destination. For any issues with the destination, [cont
 
 ## Getting Started
 
-{% include content/connection-modes.md %}
+
 
 1. From the Destinations catalog page in the Segment App, click **Add Destination**.
 2. In the Destinations Catalog, search for "Retentive" and select the Retentive destination.

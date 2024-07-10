@@ -1,12 +1,11 @@
 ---
 title: Segment Data Lakes Overview
 redirect_from: '/connections/destinations/catalog/data-lakes/'
+plan: data-lakes
 ---
 
-{% include content/plan-grid.md name="data-lakes" %}
-
-> warning "Segment Data Lakes (Azure) deletion policies"
-> Data deletion is not supported by Segment Data Lakes (Azure), as customers retain data in systems that they manage.
+> warning "Segment Data Lakes deletion policies"
+> Segment Data Lakes (AWS) and Segment Data Lakes (Azure) do not support Segment's [user deletion and suppression](/docs/privacy/user-deletion-and-suppression/) capabilities, as you retain your data in systems that you manage.
 
 A **data lake** is a centralized cloud storage location that holds structured and unstructured data.
 
@@ -29,7 +28,7 @@ To learn more about Segment Data Lakes, check out the Segment blog post [Introdu
 
 Segment supports Data Lakes hosted on two cloud providers: Amazon Web Services (AWS) and Microsoft Azure. Each cloud provider has a similar system for managing data, but offer different query engines, post-processing systems, and analytics options.
 
-### How Segment Data Lakes works
+### How Segment Data Lakes (AWS) works
 
 Data Lakes store Segment data in S3 in a read-optimized encoding format (Parquet) which makes the data more accessible and actionable. To help you zero-in on the right data, Data Lakes also creates logical data partitions and event tables, and integrates metadata with existing schema management tools, such as the AWS Glue Data Catalog. The resulting data set is optimized for use with systems like Spark, Athena, EMR, or machine learning vendors like DataBricks or DataRobot.
 
@@ -49,7 +48,7 @@ Data Lakes store Segment data in ADLS in a read-optimized encoding format (Parqu
 
 For detailed Segment Data Lakes (Azure) setup instructions, see the [Data Lakes setup page](/docs/connections/storage/catalog/data-lakes/).
 
-### Set up Segment Data Lakes
+### Set up Segment Data Lakes (AWS)
 
 When setting up your data lake using the [Data Lakes catalog page](/docs/connections/storage/catalog/data-lakes/), be sure to consider the EMR and AWS IAM components listed below.
 
@@ -84,7 +83,7 @@ TODO:
 add schema overview (tables/columns generated)
 -->
 
-### Segment Data Lakes schema
+### Segment Data Lakes (AWS) schema
 
 #### S3 partition structure
 
@@ -180,7 +179,7 @@ Segment doesn't support User deletions in Data Lakes, but supports [user suppres
 
 
 ### How does Data Lakes handle schema evolution?
-As the data schema evolves and new columns are added, Segment Data Lakes will detect any new columns. New columns will be appended to the end of the table in the Glue Data Catalog.
+As the data schema evolves, both Segment Data Lakes (AWS) and Segment Data Lakes (Azure) can detect new columns and add them to Glue Data Catalog or Azure Data Lake Storage (ADLS). However, Segment can't update existing data types. To update Segment-created data types, please reach out to [AWS Support](https://aws.amazon.com/contact-us/){:target="_blank"} or [Azure Support](https://support.microsoft.com/en-us/topic/contact-microsoft-azure-support-2315e669-8b1f-493b-5fb1-d88a8736ffe4){:target="_blank"}. 
 
 
 ### How does Data Lakes work with Protocols?

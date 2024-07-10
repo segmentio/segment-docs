@@ -9,21 +9,25 @@ redirect_from:
 
 
 
-> note ""
+> info ""
 > The steps in this guide pertain to spaces created before September 27th, 2020. For spaces created after September 27th, 2020, please refer to the onboarding guide [here](/docs/unify/identity-resolution/identity-resolution-onboarding/).
 
 ## Configure Identity Graph rules
 
 Before you connect a source to Unify, Segment recommends that you first review the default Identity settings and configure custom rules as needed. Segment applies configuration updates to all *new* data flowing through the space after you save your changes. As a result, if this is your first time setting up your Identity Graph, Segment recommends that you get started with a *Dev* space [here](/docs/unify/identity-resolution/space-setup/).
 
-> note ""
-> **NOTE:** Workspace owners and users with the Identity Admin role can edit the Identity Resolution table.
+> info ""
+> Workspace owners and users with the Identity Admin role can edit the Identity Resolution table.
+
+> warning "Changing Identity Resolution rules"
+> Making a space's Identity Resolution rules less restrictive by changing the [limit](/docs/unify/identity-resolution/identity-resolution-settings/#limit) shouldn't cause any issues to existing or future profiles. <br><br> However, making a space's rules more restrictive might have an impact existing profiles that don't adhere to the new rules (for example, decreasing an identifier's limit or changing the [priority](/docs/unify/identity-resolution/identity-resolution-settings/#priority) of identifiers).
+> <br><br>Segment recommends to get started with a Dev space [here](https://segment.com/docs/unify/identity-resolution/space-setup/), test the rules with the expected data, and then create an identical Production space with those rules. Document any changes to a space's Identity Resolution rules, and don't update rules to be more restrictive after profiles already exist outside the bounds of those new rules. 
 
 ## ExternalIDs
 
-Segment creates and merges user profiles based on externalIDs used as identifiers. You can view these externalIDs in the Identities tab of a User Profile in the User Explorer:
+Segment creates and merges user profiles based on externalIDs used as identifiers. You can view these externalIDs in the Identities tab of a User Profile in the Profile explorer.
 
-![ExternalIDs of a profile in the User Explorer](images/jane_doe_new_identities.png)
+![ExternalIDs of a profile in the Profile explorer](images/jane_doe_new_identities.png)
 
 By default, Segment promotes the following traits and IDs in track and identify calls to externalIDs:
 

@@ -1,5 +1,5 @@
 ---
-title: HTTP Tracking API Source
+title: HTTP API Source
 redirect_from: '/connections/sources/catalog/libraries/server/http/'
 id: iUM16Md8P2
 ---
@@ -11,12 +11,61 @@ Segment has native [sources](/docs/connections/sources/) for most use cases (lik
 
 ### Authentication
 
+Choose between [writeKey authentication](#writeKey-authentication), [basic authentication](#basic-authentication) and [OAuth](#oauth) to authenticate requests. 
+
+#### writeKey authentication
 Authenticate to the Tracking API by sending your project's **Write Key** along with a request.
-Authentication uses HTTP Basic Auth, which involves a `username:password` that is base64 encoded and prepended with the string `Basic`.
+The authentication writeKey should be sent as part of the body of the request. This will be encrypted over https.
+
+```
+  curl --location 'https://api.segment.io/v1/track' \
+  --header 'Content-Type: application/json' \
+  --data-raw '{
+      "event": "happy-path-a3ef8a6f-0482-4694-bc4d-4afba03a0eab",
+      "email": "test@example.org",
+      "userId": "123",
+      "writeKey": "DmBXIN4JnwqBnTqXccTF0wBnLXNQmFtk"
+  }'
+```
+
+> info ""
+> For this auth type, you do not need to set any authentication header. 
+
+#### Basic authentication
+Basic authentication uses HTTP Basic Auth, which involves a `username:password` that is base64 encoded and prepended with the string `Basic`.
 
 In practice that means taking a Segment source **Write Key**,`'abc123'`, as the username, adding a colon, and then the password field is left empty. After base64 encoding `'abc123:'` becomes `'YWJjMTIzOg=='`; and this is passed in the authorization header like so: `'Authorization: Basic YWJjMTIzOg=='`.
 
-**Note:** Encoding the write key without a colon may work due to backward compatibility, but this may not always be the case, so it's important to include the colon before encoding.
+> info ""
+> Include a colon before encoding. While encoding the write key without a colon might work due to backward compatibility, this won't always be the case.  
+
+#### OAuth
+
+[Obtain the access token](/docs/connections/oauth/) from the Authorization Server specific to the region. 
+
+Include the access token in the Authorization header as a Bearer token along with your project's write key in the payload of the request. For example, Authorization with Bearer token looks like:
+
+  ```
+  Authorization: Bearer <access token>
+  ```
+
+
+For example, to use the access token in the HTTP API Source, use `access_token` in the header and `write_key` in the payload. An example cURL request looks like: 
+
+```
+  curl --location 'https://api.segment.io/v1/track' \
+  --header 'Content-Type: application/json' \
+  --header 'Authorization: Bearer <access token>' \
+  --data-raw '{
+      "event": "happy-path-a3ef8a6f-0482-4694-bc4d-4afba03a0eab",
+      "email": "test@example.org",
+      "messageId": "58524f3a-3b76-4eac-aa97-d88bccdf4f77",
+      "userId": "123",
+      "writeKey": "DmBXIN4JnwqBnTqXccTF0wBnLXNQmFtk"
+  }
+```
+
+You can reuse the access token until the expiry period specified on the OAuth application. 
 
 ### Content-Type
 
@@ -29,17 +78,24 @@ Segment returns a `200` response for all API requests except errors caused by la
 Common reasons events are not accepted by Segment include: 
   - **Payload is too large:** The HTTP API can handle API requests that are 32KB or smaller. The batch API endpoint accepts a maximum of 500KB per request, with a limit of 32KB per event in the batch. If these limits are exceeded, Segment returns a 400 Bad Request error. 
   - **Identifier is not present**: The HTTP API requires that each payload has a userId and/or anonymousId.
-  - **Track event is missing name**: All `track` events sent to Segment must have an `event` field. 
+  - **Track event is missing name**: All Track events sent to Segment must have an `event` field. 
   - **Deduplication**: Segment deduplicates events using the `messageId` field, which is automatically added to all payloads coming into Segment. If you're setting up the HTTP API yourself, ensure all events have unique messageId values.
   - **Invalid JSON**: If you send an event with invalid JSON, Segment returns a 400 Bad Request error.
 
 Segment welcomes feedback on API responses and error messages. [Reach out to support](https://segment.com/help/contact/){:target="_blank"} with any requests or suggestions you may have.
 
-## Rate Limits
+## Rate limits
 
-The HTTP API has no hard rate limit. However, Segment recommends not exceeding 500 requests per second, including large groups of events sent with a single [`batch` request](#batch).
+For each workspace, Segment recommends you to not exceed 1,000 requests per second with the HTTP API. If you exceed this, Segment reserves the right to queue any additional events and process those at a rate that doesn't exceed the limit. Requests that exceed acceptable limits may be rejected with HTTP Status Code 429. When Segment rejects the requests, the response header contains `Retry-After` and `X-RateLimit-Reset` headers, which contains the number of seconds after which you can retry the request.
 
-## Max Request Size
+To request a higher limit, contact [Segment](mailto:friends@segment.com).
+
+For [`batch` requests](#batch), there's a limit of 500 KB per request. 
+
+> warning "Engage rate limit"
+> Engage has a limit of 1,000 events per second for inbound data. Visit the [Engage Default Limits documentation](/docs/engage/product-limits/) to learn more. 
+
+## Max request size
 
 There is a maximum of `32KB` per normal API request.  The `batch` API endpoint accepts a maximum of `500KB` per request, with a limit of `32KB` per event in the batch.  If you are sending data from a server source, Segment's API responds with `400 Bad Request` if these limits are exceeded.
 
@@ -48,11 +104,11 @@ There is a maximum of `32KB` per normal API request.  The `batch` API endpoint a
 
 ## Identify
 
-`identify` lets you tie a user to their actions and record traits about them. It includes a unique User ID and any optional traits you know about them.
+Identify lets you tie a user to their actions and record traits about them. It includes a unique User ID and any optional traits you know about them.
 
-Segment recommends calling `identify` a single time when the user's account is first created, and only identifying again later when their traits change.
+Segment recommends calling Identify a single time when the user's account is first created, and only identifying again later when their traits change.
 
-Example `identify` call:
+Example Identify call:
 
 ```
 POST https://api.segment.io/v1/identify
@@ -68,7 +124,8 @@ POST https://api.segment.io/v1/identify
   "context": {
     "ip": "24.5.68.47"
   },
-  "timestamp": "2012-12-02T00:30:08.276Z"
+  "timestamp": "2012-12-02T00:30:08.276Z",
+  "writeKey": "YOUR_WRITE_KEY"
 }
 ```
 This call is identifying the user by their unique User ID (the one you know them by in your database) and labeling them with `email`, `name`, and `industry` traits.
@@ -86,13 +143,13 @@ Find details on the **identify method payload** in the [Segment Spec](/docs/conn
 
 ## Track
 
-`track` lets you record the actions your users perform. Every action triggers an "event", which can also have associated properties.
+Track lets you record the actions your users perform. Every action triggers an "event", which can also have associated properties.
 
 You'll want to track events that are indicators of success for your site, like **Signed Up**, **Item Purchased** or **Article Bookmarked**.
 
 To get started, try tracking just a few important events. You can always add more later.
 
-Example `track` call:
+Example Track call:
 
 ```
 POST https://api.segment.io/v1/track
@@ -108,13 +165,14 @@ POST https://api.segment.io/v1/track
   "context": {
     "ip": "24.5.68.47"
   },
-  "timestamp": "2012-12-02T00:30:12.984Z"
+  "timestamp": "2012-12-02T00:30:12.984Z",
+  "writeKey": "YOUR_WRITE_KEY"
 }
 ```
 
-`track` event properties can be anything you want to record. In this case, `name` and `revenue`.
+Track event properties can be anything you want to record. In this case, `name` and `revenue`.
 
-The `track` call has the following fields:
+The Track call has the following fields:
 <table>
   {% include content/spec-table-header.md %}
   {% include content/spec-field-anonymous-id.md %}
@@ -126,13 +184,13 @@ The `track` call has the following fields:
   {% include content/spec-field-user-id.md %}
 </table>
 
-Find details on **best practices in event naming** as well as the **`track` method payload** in our [Spec](/docs/connections/spec/track/).
+Find details on **best practices in event naming** as well as the **Track method payload** in the [Segment Spec](/docs/connections/spec/track/).
 
 ## Page
 
-The [`page`](/docs/connections/spec/page/) method lets you record page views on your website, along with optional extra information about the page being viewed.
+The [Page](/docs/connections/spec/page/) method lets you record page views on your website, along with optional extra information about the page being viewed.
 
-Example `page` call:
+Example Page call:
 
 ```
 POST https://api.segment.io/v1/page
@@ -141,10 +199,11 @@ POST https://api.segment.io/v1/page
 {
   "userId": "019mr8mf4r",
   "name": "Tracking HTTP API",
-  "timestamp": "2012-12-02T00:31:29.738Z"
+  "timestamp": "2012-12-02T00:31:29.738Z",
+  "writeKey": "YOUR_WRITE_KEY"
 }
 ```
-The `page` call has the following fields:
+The Page call has the following fields:
 <table>
   {% include content/spec-table-header.md %}
   {% include content/spec-field-anonymous-id.md %}
@@ -156,15 +215,15 @@ The `page` call has the following fields:
   {% include content/spec-field-user-id.md %}
 </table>
 
-Find details on the **`page` payload** in our [Spec](/docs/connections/spec/page/).
+Find details on the **Page payload** in the [Segment Spec](/docs/connections/spec/page/).
 
 ## Screen
 
-The [screen](/docs/connections/spec/screen/) method let you record whenever a user sees a screen of your mobile app.
+The [Screen](/docs/connections/spec/screen/) method let you record whenever a user sees a screen of your mobile app.
 
-You'll want to send the `screen` message whenever a user requests a page of your app.
+You'll want to send the Screen message whenever a user requests a page of your app.
 
-Example `screen` call:
+Example Screen call:
 
 ```
 POST https://api.segment.io/v1/screen
@@ -173,11 +232,12 @@ POST https://api.segment.io/v1/screen
 {
   "userId": "019mr8mf4r",
   "name": "Tracking HTTP API",
-  "timestamp": "2012-12-02T00:31:29.738Z"
+  "timestamp": "2012-12-02T00:31:29.738Z",
+  "writeKey": "YOUR_WRITE_KEY"
 }
 ```
 
-The `screen` call has the following fields:
+The Screen call has the following fields:
 
 <table>
   {% include content/spec-table-header.md %}
@@ -190,15 +250,15 @@ The `screen` call has the following fields:
   {% include content/spec-field-user-id.md %}
 </table>
 
-Find details on the **`screen` payload** in our [Spec](/docs/connections/spec/screen/).
+Find details on the **Screen payload** in the [Segment Spec](/docs/connections/spec/screen/).
 
 ## Group
 
-`group` lets you associate an [identified user](/docs/connections/sources/catalog/libraries/server/node/#identify) with a group. A group could be a company, organization, account, project, or team. It also lets you record custom traits about the group, like industry or number of employees.
+Group lets you associate an [identified user](/docs/connections/sources/catalog/libraries/server/node/#identify) with a group. A group could be a company, organization, account, project, or team. It also lets you record custom traits about the group, like industry or number of employees.
 
 This is useful for tools like [Intercom](/docs/connections/destinations/catalog/intercom/), [Preact](/docs/connections/destinations/catalog/preact/) and [Totango](/docs/connections/destinations/catalog/totango/), as it ties the user to a **group** of other users.
 
-Example `group` call:
+Example Group call:
 
 ```
 POST https://api.segment.io/v1/group
@@ -212,10 +272,11 @@ POST https://api.segment.io/v1/group
     "industry": "Technology",
     "employees": 420
   },
-  "timestamp": "2012-12-02T00:31:38.208Z"
+  "timestamp": "2012-12-02T00:31:38.208Z",
+  "writeKey": "YOUR_WRITE_KEY"
 }
 ```
-The `group` call has the following fields:
+The Group call has the following fields:
 
 <table>
   {% include content/spec-table-header.md %}
@@ -228,15 +289,15 @@ The `group` call has the following fields:
   {% include content/spec-field-user-id.md %}
 </table>
 
-Find more details about `group` including the **`group` payload** in our [Spec](/docs/connections/spec/group/).
+Find more details about Group including the **Group payload** in the [Segment Spec](/docs/connections/spec/group/).
 
 ## Alias
 
-`alias` is how you associate one identity with another. This is an advanced method, but it is required to manage user identities successfully in *some* of our destinations.
+`Alias is how you associate one identity with another. This is an advanced method, but it is required to manage user identities successfully in *some* of Segment's destinations.
 
 In [Mixpanel](/docs/connections/destinations/catalog/mixpanel/#alias) it's used to associate an anonymous user with an identified user once they sign up. For [Kissmetrics](/docs/connections/destinations/catalog/kissmetrics/#alias), if your user switches IDs, you can use 'alias' to rename the 'userId'.
 
-Example `alias` call:
+Example Alias call:
 
 ```
 POST https://api.segment.io/v1/alias
@@ -245,10 +306,11 @@ POST https://api.segment.io/v1/alias
 {
   "previousId": "39239-239239-239239-23923",
   "userId": "019mr8mf4r",
-  "timestamp": "2012-12-02T00:31:29.738Z"
+  "timestamp": "2012-12-02T00:31:29.738Z",
+  "writeKey": "YOUR_WRITE_KEY"
 }
 ```
-The `alias` call has the following fields:
+The Alias call has the following fields:
 
 <table>
   {% include content/spec-table-header.md %}
@@ -259,19 +321,20 @@ The `alias` call has the following fields:
   {% include content/spec-field-user-id.md %}
 </table>
 
-For more details on the `alias` call and payload, check out our [Spec](/docs/connections/spec/alias/).
+For more details on the Alias call and payload, see the [Segment Spec](/docs/connections/spec/alias/).
 
-## Historical Import
+## Historical import
 
 You can import historical data by adding the `timestamp` argument to any of your method calls. This can be helpful if you've just switched to Segment.
 
 Historical imports can only be done into destinations that can accept historical timestamped data. Most analytics tools like Mixpanel, Amplitude, and Kissmetrics can handle that type of data just fine. One common destination that does not accept historical data is Google Analytics since their API cannot accept historical data.
 
-**Note:** If you're tracking things that are happening right now, leave out the `timestamp` and Segment servers will timestamp the requests for you.
+> info ""
+> If you're tracking things that are happening right now, leave out the `timestamp` and Segment servers will timestamp the requests for you.
 
 ## Batch
 
-The `batch` method lets you send a series of `identify`, `group`, `track`, `page` and `screen` requests in a single batch, saving on outbound requests. Our server-side and mobile [sources](/docs/connections/sources/) make use of this method automatically for higher performance.
+The `batch` method lets you send a series of Identify, Group, Track, Page and Screen requests in a single batch, saving on outbound requests. Segment's server-side and mobile [sources](/docs/connections/sources/) make use of this method automatically for higher performance.
 
 There is a maximum of `500KB` per batch request and `32KB` per call.
 
@@ -327,6 +390,7 @@ POST https://api.segment.io/v1/batch
       "timestamp": "2015-2-02T00:30:12.984Z"
     }
   ],
+  "writeKey": "YOUR_WRITE_KEY",
   "context": {
     "device": {
       "type": "phone",
@@ -345,7 +409,7 @@ POST https://api.segment.io/v1/batch
 </tr>
   <tr>
     <td>`batch` _Array_</td>
-    <td>An array of `identify`, `group`, `track`, `page` and `screen` method calls. Each call **must** have an `type` property with a valid method name.</td>
+    <td>An array of Identify, Group, Track, Page and Screen method calls. Each call **must** have an `type` property with a valid method name.</td>
   </tr>
   <tr>
     <td>`context` _Object, optional_</td>
@@ -360,9 +424,9 @@ POST https://api.segment.io/v1/batch
 
 ## Selecting Destinations
 
-The `alias`, `group`, `identify`, `page` and `track` calls can all be passed an object of `integrations` that lets you turn certain destinations on or off. By default all destinations are enabled.
+The Alias, Group, Identify, Page and Track calls can all be passed an object of `integrations` that lets you turn certain destinations on or off. By default all destinations are enabled.
 
-Here's an example showing an `identify` call that only goes to Mixpanel and Kissmetrics:
+Here's an example showing an Identify call that only goes to Mixpanel and Kissmetrics:
 
 ```
 POST https://api.segment.io/v1/identify
@@ -384,13 +448,14 @@ POST https://api.segment.io/v1/identify
     "Mixpanel": true,
     "Kissmetrics": true,
     "Google Analytics": false
-  }
+  },
+  "writeKey": "YOUR_WRITE_KEY"
 }
 ```
 
  `'All': false` says that no destination should be enabled unless otherwise specified. `'Mixpanel': true` turns on Mixpanel, `"Kissmetrics": true,` turns on Kissmetrics, and so on.
 
-Destination flags are **case sensitive** and match [the destination's name in the docs](/docs/connections/destinations/catalog/) (i.e. "AdLearn Open Platform", "awe.sm", "MailChimp", and so on).
+Destination flags are **case sensitive** and match [the destination's name in the docs](/docs/connections/destinations/catalog/) (for example, "AdLearn Open Platform", "awe.sm", "MailChimp", and so on).
 
 **Note:**
 
@@ -412,6 +477,6 @@ When sending a HTTP call from a user's device, you can collect the IP address by
 
 1. Double check that you've set up the library correctly.
 
-2. Make sure that you're calling a Segment API method once the library is successfully installed—[`identify`](#identify), [`track`](#track), and so on.
+2. Make sure that you're calling a Segment API method after the library is successfully installed—[Identify](#identify), [Track](#track), and so on.
 
-{% include content/troubleshooting-server-integration.md %}
+{% include content/server-side-troubleshooting.md %}

@@ -1,9 +1,8 @@
 ---
 title: Use Transformations to fix bad data
 redirect_from: '/protocols/transformations/'
+plan: protocols
 ---
-
-{% include content/plan-grid.md name="protocols" %}
 
 ## What is a Transformation?
 
@@ -27,6 +26,7 @@ Segment's goal is to make Transformations a powerful tool that complements a wel
 - **Transformations are available to Protocols customers:** If you're interested in this feature, contact your Account Executive or CSM to learn more about the Protocols package.
 - **Source-level transformations are irrevocable:** When applied at the source, a transformation permanently changes the structure of the event. The original events are not easily recoverable or [Replayable](/docs/guides/what-is-replay). Assume that transformed data cannot be recovered.
 - **Device-mode destinations are NOT supported:** Source scoped transformations will **only** apply to cloud-mode destinations, warehouses, and S3 destinations. Destination scoped transformations will **only** apply to cloud-mode destinations.
+- **Transformation order:** Segment processes source-scoped transformations before the events reach destination filters. Segment processes destination-scoped transformations after the events pass through destination filters.
 
 ## View all Transformations
 
@@ -55,7 +55,7 @@ To create a Transformation, navigate to the Transformations tab in Protocols and
 
 To create a Transformation, you first need to select which type of transformation you want to create. For each transformation type, Segment displays a description, use cases, and example payload. Current transformation types available in your Segment workspace include:
 
-**Rename track event:** Rename track event name at the source or per destination
+**Rename track event:** Rename track event name at the source or per destination. The events listed in the event names dropdown menu correspond to the events listed on the [source schema view](/docs/getting-started/implementation-guide/#event-anatomy-and-naming-standards).
 ![rename track event](../images/event-rename-example.png)
 
 **Edit track event properties:** Rename multiple properties and/or change property data structure at the source or per destination
@@ -108,6 +108,13 @@ analytics.track('Example', {
 In this scenario, we do not support the transformation of product_id. 
 
 After selecting a property/trait, select JSON Path or Simple String to change the property/trait. Simple string will change the name in-line, while JSON path allows you to move the property/trait in or out of an object.
+
+> info ""
+> When you see properties that have the escape character `\` in them - this escape character `\` is added to differentiate between a property name that has a . in it, and a nested field, like so:
+> ```
+> ingredients.salad → "ingredients": { "salad": "yum" }
+> ingredients\.salad → "ingredients.salad": "yum"
+> ```
 
 ### Step 3: Name the transformation and enable it
 

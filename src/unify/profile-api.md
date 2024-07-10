@@ -58,6 +58,8 @@ Your access token enables you to call the Profile API and access customer data.
 > warning ""
 > To query phone numbers that contain a plus sign (`+`), insert the escape characters `%2B` in place of the plus sign.
 > For example, if a `phone_number` identifier has the value `+5555550123`, enter `phone_number:%2B5555550123` in your query.
+> 
+> If the field you're using within the Profile API endpoint contains a value with a non-alphanumeric character, then the Profile API may respond with `500` error. In this case, see [W3's ASCII Encoding Refernece](https://www.w3schools.com/tags/ref_urlencode.ASP#:~:text=ASCII%20Encoding%20Reference,%25C3%25BF){:target="_blank"}, which lists the escape characters you can use to replace the non-alphanumeric character in the Profile API endpoint so that the Profile API will respond with a `200 Success`.
 
 ### Query the user's event traits
 
@@ -169,7 +171,15 @@ When you make requests to the Profile API, use the Access Token as the basic aut
 curl https://profiles.segment.com/v1/spaces/<space_id>/collections/users/profiles
   -u $SEGMENT_ACCESS_TOKEN:
 ```
+If you're using a Segment Function or Node.js you can format your header object to include authentication, like so:
 
+```
+headers: {
+          'Content-Type': 'application/json',
+          Authorization:
+            `Basic ${btoa('<access_token>' + ':')}`,
+        }
+```
 
 ### Errors
 
@@ -265,7 +275,7 @@ https://profiles.segment.com/v1/spaces/<space_id>/
 Retrieve a single profile's traits within a collection using an `external_id`. For example, two different sources can set a different `first_name` for a user. The traits endpoint will resolve properties from multiple sources into a canonical source using the last updated precedence order.
 
 ```
-GET /v1/spaces/<space_id>/collections/users/profiles/<external_id>/traits
+GET /v1/spaces/<space_id>/collections/users/profiles/<id_type:external_id>/traits
 ```
 
 ##### Query parameters

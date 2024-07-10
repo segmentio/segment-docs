@@ -2,10 +2,23 @@
 title: Set User Subscriptions
 plan: engage-premier
 ---
+> info ""
+> Engage Premier entered an End of Sale (EOS) period effective  June 10, 2024. Existing Segment customers will continue to have access and support to Engage Premier until an end-of-life (EOL) date is announced. We recommend exploring the following pages in preparation of a migration or future MCM needs:
+> 
+>[Twilio Marketing Campaigns](https://www.twilio.com/en-us/sendgrid/marketing-campaigns)
+>
+>Preferred ISV Partners
+>
+>[Airship Blog](https://www.twilio.com/en-us/blog/airship-integrated-customer-experience)
+>[Bloomreach Blog](https://www.twilio.com/en-us/blog/bloomreach-ecommerce-personalization)
+>[Braze Blog](https://www.twilio.com/en-us/blog/braze-conversational-marketing-campaigns)
+>[Insider Blog](https://www.twilio.com/en-us/blog/insider-cross-channel-customer-experience)
+>[Klaviyo Blog](https://www.twilio.com/en-us/blog/klaviyo-powering-smarter-digital-relationships)
+>[Twilio Engage Foundations Documentation](https://segment.com/docs/engage/quickstart/)
 
 Segment associates a [user subscription state](/docs/engage/user-subscriptions/subscription-states/) with each email address and phone number in your Engage audiences. Subscription states give you insight into the level of consent a user has given you to receive your Engage campaigns.
 
-You can set a user’s subscription state using a CSV file or, programmatically, using Segment’s APIs. On this page, you’ll learn how and when to use both processes.
+You can set a user’s subscription state using a CSV file or, programmatically, using Reverse ETL or Segment’s APIs. On this page, you’ll learn how and when to use these processes.
 
 ## Setting user subscriptions with a CSV file upload
 
@@ -55,7 +68,7 @@ With Segment's APIs, you can manage user subscriptions programmatically on a rea
 
 ### Choosing between the Identify call and the Public API
 
-To update Engage user subscriptions with Segment's APIs, first choose between [the Identify call](/docs/connections/spec/identify/), for non-critical subscription updates, or the [Public API](https://api.segmentapis.com/docs/spaces/#replace-messaging-subscriptions-in-spaces){:target="_blank"}, for critical updates that require immediate confirmation, like unsubscribes.
+To update Engage user subscriptions with Segment's APIs, first choose between [the Identify call](/docs/connections/spec/identify/), for non-critical subscription updates, or the [Public API](https://docs.segmentapis.com/tag/Spaces#operation/replaceMessagingSubscriptionsInSpaces){:target="_blank"}, for critical updates that require immediate confirmation, like unsubscribes.
 
 When you use the Identify call, Segment replies with a standard HTTP `200 OK` status response code if it successfully received the request. Because the Identify call updates user traits asynchronously, though, the `200 OK` code indicates that Segment has received, but not yet processed, the request. As a result, use the Identify call for non-critical subscription updates, like form signups on your website or adding a subscription from within the user's notification center.
 
@@ -65,7 +78,7 @@ When you update user subscriptions with Segment's Public API, however, you'll ge
 
 For Segment to process the subscription status request, your Identify call payload must include at least one object that contains an email address or phone number, its subscription type, and its subscription status. Engage accepts both uppercase and lowercase subscription statuses in Identify calls.
 
-The following example payload shows an Identify call with a `context` object, which you'll add to the Identify call to update user subscriptions. The `context` object contains a `messaging_subscriptions` array with two objects that update both SMS and email subscription statuses:
+The following example payload shows an Identify call with a `context` object, which you'll add to the Identify call to update user subscriptions. The `context` object contains a `messaging_subscriptions` array with three objects that update SMS, WhatsApp, and email subscription statuses:
 
 ```json
 {
@@ -75,6 +88,11 @@ The following example payload shows an Identify call with a `context` object, wh
       {
         "key": "(123) 555-5555",
         "type": "SMS",
+        "status": "SUBSCRIBED" | "UNSUBSCRIBED" | "DID_NOT_SUBSCRIBE"
+      },
+      {
+        "key": "(123) 555-5555",
+        "type": "WhatsApp",
         "status": "SUBSCRIBED" | "UNSUBSCRIBED" | "DID_NOT_SUBSCRIBE"
       },
       {
@@ -101,3 +119,10 @@ The following example payload shows an Identify call with a `context` object, wh
 ```
 
 For successful requests, Segment instantly updates subscription states in your workspace. You can then display successful updates or error messages with users in your notification center.
+
+> success ""
+> While SMS and WhatsApp share the same number, you must add a separate subscription state for both of them.
+
+## Setting user subscriptions with Reverse ETL
+
+[Engage Premier Subscriptions users](/docs/engage/user-subscriptions/) can use Reverse ETL to sync subscription data from warehouses to destinations. To get started with using Reverse ETL for managing subscriptions, see  [Reverse ETL for Engage Premier Subscriptions](https://segment.com/docs/connections/reverse-etl/#reverse-etl-for-engage-premier-subscriptions).

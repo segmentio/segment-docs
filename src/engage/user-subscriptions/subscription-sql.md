@@ -3,10 +3,26 @@ title: Subscriptions with SQL Traits
 plan: engage-premier
 beta: true
 ---
+> info ""
+> Engage Premier entered an End of Sale (EOS) period effective  June 10, 2024. Existing Segment customers will continue to have access and support to Engage Premier until an end-of-life (EOL) date is announced. We recommend exploring the following pages in preparation of a migration or future MCM needs:
+> 
+>[Twilio Marketing Campaigns](https://www.twilio.com/en-us/sendgrid/marketing-campaigns)
+>
+>Preferred ISV Partners
+>
+>[Airship Blog](https://www.twilio.com/en-us/blog/airship-integrated-customer-experience)
+>[Bloomreach Blog](https://www.twilio.com/en-us/blog/bloomreach-ecommerce-personalization)
+>[Braze Blog](https://www.twilio.com/en-us/blog/braze-conversational-marketing-campaigns)
+>[Insider Blog](https://www.twilio.com/en-us/blog/insider-cross-channel-customer-experience)
+>[Klaviyo Blog](https://www.twilio.com/en-us/blog/klaviyo-powering-smarter-digital-relationships)
+>[Twilio Engage Foundations Documentation](https://segment.com/docs/engage/quickstart/)
 
 Use Subscriptions with SQL Traits to connect to your data warehouse and query user subscription data to Engage on a scheduled basis. Use your data warehouse as a single source of truth for subscription statuses and query from warehouses such as BigQuery, Redshift, or Snowflake.
 
 On this page, you'll learn how to use SQL to sync subscription data from your warehouse to Engage.
+
+> warning ""
+> Updating subscription statuses with SQL creates new profiles and updates existing profiles. These profile updates may lead to users entering existing audiences or message campaigns. 
 
 ## Getting started
 
@@ -36,8 +52,8 @@ To configure Subscriptions with SQL Traits, you can write your own query or clic
 > Click **Reset Template** to reset your SQL query.
 
 Queries must return at least one pair of the columns below with a value of `subscribed`, `unsubscribed`, or `did_not_subscribe`:
-- `email` and `_segment_internal_email_subscription_`
-- `phone` and `_segment_internal_sms_subscription_`
+- `email` and `__segment_internal_email_subscription__`
+- `phone` and `__segment_internal_sms_subscription__`
 
 For more subscription SQL best practices, view the [query requirements](#query-requirements) below.
 

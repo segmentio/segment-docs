@@ -2,9 +2,19 @@
 title: WhatsApp Template
 plan: engage-premier
 ---
-
-> info "WhatsApp Public Beta"
-> WhatsApp as an Engage channel is in public beta. 
+> info ""
+> Engage Premier entered an End of Sale (EOS) period effective  June 10, 2024. Existing Segment customers will continue to have access and support to Engage Premier until an end-of-life (EOL) date is announced. We recommend exploring the following pages in preparation of a migration or future MCM needs:
+> 
+>[Twilio Marketing Campaigns](https://www.twilio.com/en-us/sendgrid/marketing-campaigns)
+>
+>Preferred ISV Partners
+>
+>[Airship Blog](https://www.twilio.com/en-us/blog/airship-integrated-customer-experience)
+>[Bloomreach Blog](https://www.twilio.com/en-us/blog/bloomreach-ecommerce-personalization)
+>[Braze Blog](https://www.twilio.com/en-us/blog/braze-conversational-marketing-campaigns)
+>[Insider Blog](https://www.twilio.com/en-us/blog/insider-cross-channel-customer-experience)
+>[Klaviyo Blog](https://www.twilio.com/en-us/blog/klaviyo-powering-smarter-digital-relationships)
+>[Twilio Engage Foundations Documentation](https://segment.com/docs/engage/quickstart/)
 
 With Twilio Engage, you can build personalized WhatsApp templates to store and use throughout marketing campaigns. 
 
@@ -22,6 +32,9 @@ You can choose between three WhatsApp template types:
 - **Call to action**, which contain text content and phone or website buttons
 
 ## Build a WhatsApp message template
+
+> info "Before you begin"
+> If you're new to Engage Premier, you'll need to sign up for the [Twilio Content Editor beta](https://ahoy.twilio.com/messaging-content-api-request-access-1){:target="_blank"} before you can use WhatsApp templates.
 
 Follow these steps to build a WhatsApp template:
 
@@ -62,13 +75,14 @@ If a merge tag doesn't apply to a subscriber, Engage will use the content you en
 
 > info ""
 > To learn more about profile traits, visit Segment's [Computed Traits](/docs/engage/audiences/computed-traits/) and [SQL Traits](/docs/engage/audiences/sql-traits/) documentation.
-
+ 
 
 ## Template approvals
 
 Meta must first review and approve your WhatsApp template before you can use it in a campaign. Meta approves most templates in under an hour, but some approvals can take up to 48 hours. Keep this time frame in mind if you plan to send time-sensitive campaigns. 
 
 For more on the template approval process, view [recommendations and best practices for creating WhatsApp Message Templates](https://support.twilio.com/hc/en-us/articles/360039737753-Recommendations-and-best-practices-for-creating-WhatsApp-Message-Templates){:target="_blank"}.
+
 
 ## Next steps
 

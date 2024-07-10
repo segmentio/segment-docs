@@ -1,114 +1,84 @@
 ---
-title: Ripe Web (Actions) Destination
+title: Ripe Device Mode (Actions) Destination
 hide-boilerplate: true
 hide-dossier: true
 id: 63913b2bf906ea939f153851
-redirect_from: '/connections/destinations/catalog/actions-ripe/'
 ---
 
-[Ripe](https://www.getripe.com/){:target="_blank"} is a product-led sales platform that empowers you to unlock revenue pipeline with product data. By identifying and showing which prospects to focus efforts on, you can convert leads into meetings inside your product.
+[Ripe](https://www.getripe.com/){:target="_blank"} is a sales conversion tool that enables B2B revenue teams to surface and meet their best leads at the best possible time - when they are using your product.
 
-This destination enables you to send product data to Ripe. Sales teams can identify decision-makers and product champions by understanding what properties they have and what events they have triggered. The Ripe destination is built as an alternative to directly adding Ripe’s SDK script to your app or site.
+The Ripe Segment integration is an [Actions-based Destination in web mode](https://segment.com/docs/connections/destinations/#connection-modes) that lets you send your product events data to Ripe.
 
-The Ripe Segment integration is an [Actions-based Destination in device mode](/docs/connections/destinations/#connection-modes) that loads and configures Ripe’s SDK script for you. If you’re already using Segment’s Analytics.js for identifying and tracking your users, either directly or through Segment source integrations that you’ve installed, you can configure Segment to send this data directly to Ripe.
+Ripe maintains this destination. For any issues with the destination, [contact the Ripe team](mailto:support@getripe.com).
 
-{% include content/ajs-upgrade.md %}
+> success ""
+> Set up a free account with Ripe by visiting their [website](https://www.getripe.com/){:target="_blank"}.
 
-## Benefits of Ripe
+## Getting Started
 
-Ripe provides the following benefits:
+1. From the Destinations catalog page in the Segment App, click Add Destination.
+2. Search for "Ripe Device Mode (Actions)" in the Destinations Catalog, and select the "Ripe Device Mode (Actions)" destination.
+3. Choose which Source should send data to the "Ripe Device Mode (Actions)" destination.
+4. Go to Ripe integrations page (or onboarding) and click on the "Segment" integration.
+5. Copy the "Segment API key".
+6. Enter the "Segment API Key" in the "Ripe" destination settings in Segment.
 
-- **Be relevant**. The Ripe destination understands key events in Segment to identify relevant leads, and shows its widget selectively to them.
-- **Quick integration**. Using the Ripe destination is the fastest way to start combining key product events with sales data and start targeting ripe leads.
-- **More control**. You can customize the conditions under which the events are sent to Ripe.
+## Supported Methods
 
-## Getting started
-
-> info ""
-> Before you begin, create an API key in Ripe that you'll use to configure the integration.
-
-
-1. From the Segment web app, navigate to **Connections > Catalog**, then click the **Destinations** tab at the top of the catalog.
-2. Search for *Ripe Device Mode (Actions)* in the left navigation, and click it.
-3. Click **Configure Ripe Device Mode (Actions)**.
-4. Select an existing Source to connect to Ripe (Actions).
-5. Enter your Ripe API key in the API key field.
-
-{% include components/actions-fields.html %}
-
-{% comment %}
-## Ripe SDK
+Ripe supports all the following methods out of the box.
 
 ### Identify
 
-When you have a unique identifier for a user, preferably an identifier from your database, call this method. For example, when a user logs in or updates their email. If you don't provide a `user_id` is not provided an automatically generated `anonymous_id` will be used.
-
-If you aren't familiar with the Segment Spec, take a look at
-the [Identify method documentation](/docs/connections/spec/identify/) to learn
-about what it does. An example call would look like:
+Take a look at the [Identify method documentation](/docs/connections/spec/identify/) to learn about what it does. An example call would look like this:
 
 ```js
 analytics.identify('userId123', {
-  email: 'john.doe@example.com'
+  email: 'steve@apple.com',
+  firstName: 'Steve',
+  lastName: 'Jobs'
 });
 ```
 
-Segment sends Identify calls to Ripe as an `identify` event.
+Segment sends Identify calls to Ripe as `identify` events. Ripe displays these events as `Users` by default. `Identify` event data is augmented with traits. It's important to include email as a trait, as soon as it is known. Ripe will use email to populate User views by default. We fully support the [Segment's Identify Spec](https://segment.com/docs/connections/spec/identify/#traits), and we recommend using the standardized names for the reserved traits covered there.
+
 
 ### Track
 
-Use `track` calls to track what actions your user perform along with properties
-related to the `track` call.
-
-If you aren't familiar with the Segment Spec, take a look at
-the [Track method documentation](/docs/connections/spec/track/) to learn about
-what it does. An example call would look like:
+Take a look at the [Track method documentation](https://segment.com/docs/connections/spec/track/) to learn about what it does. An example call would look like:
 
 ```js
-analytics.track('Login Button Clicked')
+analytics.track('Clicked Book a Demo Button')
 ```
 
-Segment sends Track calls to Ripe as a `track` event.
+Segment sends Track calls to Ripe as `track` events. Track events should be flattened whenever possible. For example, rather than `Button Click` as a track event with `Book a Demo` as a property, use `Clicked Book a Demo Button`. Product Events can be filtered and grouped by `userId` or `groupId`. Both of these will be appended automatically if they have been fired prior to the track call for web/client-side events.
 
----> Add comment on fast track property here?
-
-### Group
-
-If you aren't familiar with the Segment Spec, take a look at
-the [Group method documentation](/docs/connections/spec/group/) to learn about
-what it does. An example call would look like:
-
-```js
-analytics.group("0e8c78ea9d97a7b8185e8632", {
-  name: "Initech",
-  industry: "Technology",
-  employees: 329,
-  plan: "enterprise",
-  "total billed": 830
-});
-```
-
-Group calls from Segment update `Companies` in Ripe. Each `Company` is
-associated with a distinct `group_id`.
 
 ### Page
 
-Use page calls to track what pages your users sees. This is typically called on
-each page load in a traditional web page and on route changes in
-SPA-applications.
-
-If you aren't familiar with the Segment Spec, take a look at
-the [Page method documentation](/docs/connections/spec/page/) to learn about
-what it does. An example call would look like:
+Take a look at the [Page method documentation](https://segment.com/docs/connections/spec/page/) to learn about what it does. An example call would look like this:
 
 ```js
-analytics.page('Home')
+analytics.page()
 ```
 
-Segment sends Page calls to Ripe as a `pageview` event.
+Segment sends Page calls to Ripe as a `pageview` event. Ripe displays these events as Page views by default.
 
-### Segment session
 
-Ripe will use the `userId`, `anonymous` and `groupId` set in Segment and the Ripe SDK keeps track of the current ids.
+### Group
 
-{% endcomment %}
+Take a look at the [Group method documentation](https://segment.com/docs/connections/spec/group/) to learn about what it does. An example call would look like this:
+
+```js
+analytics.group("0e8c78ea9d97a7b8185e8632", {
+  name: "Apple Inc.",
+  industry: "Technology",
+  employees: 164000,
+  plan: "enterprise",
+  "total billed": 1000000,
+  website: "apple.com"
+});
+```
+
+Segment sends Group calls to Ripe as a `group` event. Group events can be augmented with group traits. Ripe displays these events as Workspaces by default. Including a name and a website (domain) as a trait is recommended, as Ripe will use the traits to populate Workspace views by default.
+
+{% include components/actions-fields.html %}

@@ -35,7 +35,7 @@ The following table shows the statistics available for a Journey:
 | Exits       | The total number of users who have exited the Journey                         |
 
 > info ""
-> Completed and exits are mutually exclusive.
+> Completed and exits are mutually exclusive. The "Search for a user" search box excludes users who have exited the Journey. 
 
 Use the date picker to view a Journey's analytics over a specific time frame in any 180 day period.
 
@@ -45,10 +45,10 @@ The following table shows descriptions of the time frames you can select:
 | ----------------- | ---------------------------------------------------------- |
 | Today             | Today, beginning at midnight                               |
 | Yesterday         | The day before today                                       |
-| Last 7 days       | The past seven days, not including today                   |
-| Last 30 days      | The past 30 days, not including today                      |
-| Last 90 days      | The past 90 days, not including today                      |
-| Last 180 days     | The past 180 days, not including today                     |
+| Last 7 days       | The past seven days, including today                       |
+| Last 30 days      | The past 30 days, including today                          |
+| Last 90 days      | The past 90 days, including today                          |
+| Last 180 days     | The past 180 days, including today                         |
 | Custom date range | The period between two dates, including the selected dates |
 
 ## Step-Level Analytics

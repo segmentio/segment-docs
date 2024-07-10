@@ -1,7 +1,6 @@
 ---
 title: MoEngage Source
 id: kpDbTUR9oD
-beta: true
 ---
 
 [MoEngage](https://www.moengage.com/){:target="_blank”} is an Intelligent Customer Engagement Platform. MoEngage allows brands to personalize every customer interaction and drive better engagement, retention, loyalty and lifetime value.
@@ -14,12 +13,9 @@ This is an [Event Cloud Source](/docs/sources/#event-cloud-sources) which can ex
 
 This source is maintained by MoEngage. For any issues with the source, [contact their Support team](mailto:support@moengage.com).
 
-> info "This is a Beta source"
-> The MoEngage Source is in beta, which means that they are still actively developing the source. If you're interested in joining their beta program or have any feedback to help improve the MoEngage Source and its documentation, [let their team know](mailto:support@moengage.com)._
-
 ## Getting Started
 
-1. From your workspace's [Sources catalog page](https://app.segment.com/goto-my-workspace/sources/catalog) click **Add Source**.
+1. From your workspace's [Sources catalog page](https://app.segment.com/goto-my-workspace/sources/catalog){:target="_blank"} click **Add Source**.
 2. Search for "MoEngage" in the Sources Catalog, select MoEngage, and click **Add Source**.
 3. On the next screen, give the Source **a nickname** configure any other settings.
     - The nickname is used as a label in the Segment app, and Segment creates a related schema name in your warehouse. The nickname can be anything, but Segment recommends using something that reflects the source itself and distinguishes amongst your environments (like `MoEngage_Prod`, `MoEngage_Staging`, or `MoEngage_Dev`).

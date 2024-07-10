@@ -7,7 +7,7 @@ id: 54521fdb25e721e32a72eefc
 
 ## Getting Started
 
-{% include content/connection-modes.md %}
+
 
 1. From the Segment web app, click **Catalog**.
 

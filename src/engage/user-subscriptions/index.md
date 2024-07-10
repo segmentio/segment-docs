@@ -2,8 +2,21 @@
 title: User Subscriptions Overview
 plan: engage-premier
 ---
+> info ""
+> Engage Premier entered an End of Sale (EOS) period effective  June 10, 2024. Existing Segment customers will continue to have access and support to Engage Premier until an end-of-life (EOL) date is announced. We recommend exploring the following pages in preparation of a migration or future MCM needs:
+> 
+>[Twilio Marketing Campaigns](https://www.twilio.com/en-us/sendgrid/marketing-campaigns)
+>
+>Preferred ISV Partners
+>
+>[Airship Blog](https://www.twilio.com/en-us/blog/airship-integrated-customer-experience)
+>[Bloomreach Blog](https://www.twilio.com/en-us/blog/bloomreach-ecommerce-personalization)
+>[Braze Blog](https://www.twilio.com/en-us/blog/braze-conversational-marketing-campaigns)
+>[Insider Blog](https://www.twilio.com/en-us/blog/insider-cross-channel-customer-experience)
+>[Klaviyo Blog](https://www.twilio.com/en-us/blog/klaviyo-powering-smarter-digital-relationships)
+>[Twilio Engage Foundations Documentation](https://segment.com/docs/engage/quickstart/)
 
-Segment associates [subscription states](/docs/engage/user-subscriptions/set-user-subscriptions/) with each email address and phone number in your audiences. Subscription states indicate the level of consent end users have given to receive your marketing campaigns.
+Segment associates [subscription states](/docs/engage/user-subscriptions/set-user-subscriptions/) with each email address and phone number **external id** in your audiences. Subscription states indicate the level of consent end users have given to receive your marketing campaigns.
 
 Knowledge of subscription states will help you understand which users can and cannot receive your campaigns. This page provides an overview of user subscriptions.
 
@@ -16,8 +29,9 @@ Email addresses and phone numbers in your audience have one of the four followin
 - `did-not-subscribe`; users who are neither subscribed nor unsubscribed
 - **No subscription status**; users who never gave Segment the email or phone number in your audience
 
-> warning "User Consent"
-> You can only send Engage campaigns to users with a `subscribed` status.
+> info ""
+> It's best practice to only send Engage campaigns to users with a `subscribed` status. However, if you need to send an email to someone who hasn't subscribed, you can create an email campaign that you [send to all users](/docs/engage/campaigns/email-campaigns/#send-an-email-to-all-users/).
+
 
 To learn how Segment determines user subscription states, read the [User Subscription State documentation](/docs/engage/user-subscriptions/subscription-states/).
 

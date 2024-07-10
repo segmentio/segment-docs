@@ -8,9 +8,6 @@ hidden: true
 
 [Braze](https://www.braze.com/){:target="_blank"}, formerly Appboy, is an engagement platform that empowers growth by helping marketing teams to build customer loyalty through mobile, omni-channel customer experiences.
 
-
-
-
 > success ""
 > **Good to know**: This page is about the [Actions-framework](/docs/connections/destinations/actions/) Braze Segment destination. There's also a page about the [non-Actions Braze destination](/docs/connections/destinations/catalog/braze/). Both of these destinations receives data _from_ Segment. There's also the [Braze source](/docs/connections/sources/catalog/cloud-apps/braze/), which sends data _to_ Segment.
 
@@ -23,8 +20,10 @@ Braze Web Mode (Actions) provides the following benefits over Braze Classic:
 ## Getting Started
 
 1. From the Segment web app, click **Catalog**.
-2. Search for "Braze" in the Catalog, select **Braze Web Mode (Actions)**, and choose which of your sources to connect the destination to.
-3. Configure the Connection Settings. **API Key** and **SDK Endpoint** are required settings.
+2. Search for "Braze" in the Catalog, select **Braze**, and choose which of your sources to connect the destination to.
+  - Note that if you do not select a Javascript source, you will not see the option to select the Device mode version of the destination.
+3. Select "Actions" and "Device mode" under the Destination framework and Connection mode options.
+4. Configure the Connection Settings. **API Key** and **SDK Endpoint** are required settings.
 
 {% include components/actions-fields.html name="braze-web" connection="true" %}
 
@@ -164,8 +163,6 @@ For more details on this snippet, see Braze's documentation [here](https://www.b
 
 
 ## Migration from Braze Classic
-
-{% include content/ajs-upgrade.md %}
 
 Keep the following in mind if you plan to move to Braze (Actions) from the classic Braze destination.
 {% include components/actions-map-table.html name="braze-web" %}

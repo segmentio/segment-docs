@@ -2,13 +2,17 @@
 title: Sending Segment Data to Destinations
 ---
 
-You've decided how to format your data, and collected it using [Segment Sources](/docs/connections/sources/). Now what do you do with it? You send the data to Destinations!
+You've decided how to format your data, and collected it using [Segment Sources](/docs/connections/sources/). Now what do you do with it? You send the data to Destinations.
 
 Destinations are tools or services which can use the data sent from Segment to power analytics, marketing, customer outreach, and more.
 
 > info ""
-> Each Segment Workspace has its own set of destinations, which are connected to the workspace's sources. When you add or modify a destination, make sure you're working with the correct workspace!
+> Each Segment Workspace has its own set of destinations, which are connected to the workspace's sources. When you add or modify a destination, make sure you're working with the correct workspace.
 
+> info "Healthcare and Life Sciences (HLS) customers can encrypt data flowing into their destinations"
+> HLS customers with a HIPAA eligible workspace can encrypt data in fields marked as Yellow in the Privacy Portal before they flow into an event stream, cloud-mode destination.
+>
+> To learn more about data encryption, see the [HIPAA Eligible Segment documentation](/docs/privacy/hipaa-eligible-segment/#data-encryption).
 
 ## Adding a destination
 
@@ -31,7 +35,7 @@ There are two ways to add a destination to your deployment: using the Segment we
 8. Click the toggle at the top of the Settings page to enable the destination.
 
 > success ""
-> If you have more than one instance of the same destination, you can click **Copy Settings From Other Destination** to save yourself time entering the settings values.
+> If you have more than one instance of the same destination, you can click **Copy Settings From Other Destination** to save yourself time entering the settings values manually.
 
 #### Adding a destination to a specific Segment Source
 
@@ -58,7 +62,7 @@ You can use the Segment Public API to add destinations to your workspace using t
 
 Adding a destination can have a few different effects, depending on which sources you set up to collect your data, and how you configured them.
 
-#### Analytics.js
+### Analytics.js
 
 If you are using [Segment's JavaScript library, Analytics.js](/docs/connections/sources/catalog/libraries/website/javascript/), then Segment handles any configuration changes you need for you. If you're using Analytics.js in cloud-mode, the library sends its tracking data to the Segment servers, which route it to your destinations. When you change which destinations you send data to, the Segment servers automatically add that destination to the distribution list.
 
@@ -66,13 +70,13 @@ If you're using Analytics.js in device-mode, then Analytics.js serves as a wrapp
 
 You can enable device-mode for some destinations from the destination's Settings page in the Segment web app. You don't need to use the same mode for all destinations in a workspace; some can use device-mode, and some can use cloud-mode.
 
-#### Mobile sources
+### Mobile sources
 
 By default, Segment's [mobile sources](/docs/connections/sources/catalog/#mobile) send data to Segment in cloud-mode to help minimize the size of your apps. In cloud-mode the mobile source libraries forward the tracking data to the Segment servers, which route the data to the destinations. Since the Segment servers know which destinations you're using, you don't need to take any action to add destinations to mobile apps using cloud-mode.
 
 However, if the destination you're adding has features that run on the user's device, you might need to update the app to package that destination's SDK with the library. Some destinations require that you package the SDK, and some only offer it
 
-#### Server sources
+### Server sources
 
 Segment's [server sources](/docs/connections/sources/catalog/#server) run on your internal app code, and never have access to the user's device. They run in cloud-mode only, and forward their tracking calls to the Segment servers, which forward the data to any destinations you enabled.
 
@@ -98,6 +102,19 @@ For example, you might set up a single Segment source to send data both to separ
 You can also connect multiple instances of a destination to help you smoothly migrate from one configuration to another. By sending each version the same data, you can check and validate the new configuration without interrupting use of the old one.
 
 
+However, there are a few considerations:
+
+Device-mode destinations do not support connecting multiple instances of the destination to the same source. If you try to a connect an additional instance of a device-mode destination to your source, the option to add a second instance does not appear.
+
+Mobile sources, and the legacy Project source, can connect to multiple instances of destinations that operate only in cloud-mode. Mobile and Project sources cannot connect to multiple instances of destinations that operate in both cloud-mode and device-mode. Non-mobile sources can only connect to _one_ device-mode instance of a destination. 
+
+Multi-instance support is not available for most hybrid Actions destinations or Web mode Actions destinations.
+
+Segment does not support connecting a single source to multiple instances of a [Data Lakes](/docs/connections/storage/data-lakes/) destination.
+
+> warning "Non-mobile sources can only connect to _one_ device-mode instance of a destination"
+> You cannot connect a source to more than one instance of a destination that operates only in device-mode. For more information about device-mode restrictions, see the [Sending Segment data to Destinations](/docs/connections/destinations/add-destination/#connecting-one-source-to-multiple-instances-of-a-destination:~:text=Multi%2Dinstance%20destinations-,and,-Device%2Dmode) documentation.
+
 > success ""
 > If your organization is on a Segment Business tier plan, you can use [Replay](/docs/guides/what-is-replay/) to send historical data to new instances of a destination.
 
@@ -114,6 +131,8 @@ Some destinations do not support having multiple instances connected to the same
 
 You can create unique destination filters for each destination instance connected to the same source.
 
+> info ""
+> Some destinations don't support multiple instances connected to the same source. If this is the case, you won't see the option to add a second instance of that destination.
 
 ### Connect multiple sources to one instance of a destination
 

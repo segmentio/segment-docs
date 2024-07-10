@@ -25,13 +25,13 @@ You can add the Tracking Plan Read Only role to workspace members, or to groups 
 To see your Tracking Plan, click **Protocols** in the left navigation. The first time you visit this section, the Segment App shows an explanation of tracking plans, which you can dismiss. Click **Create Tracking Plan** to get started.
 
 
-![](images/starter-tp-intro.png)
+![Screenshot of the Protocols page in the Segment app.](images/starter-tp-intro.png)
 
 
 From the screen that appears, click **Add Events** to add your first event to the tracking plan.
 
 
-![](images/starter-tp-empty.png)
+![Screenshot of the Tracking Plan setup page in the Segment app.](images/starter-tp-empty.png)
 
 
 
@@ -45,7 +45,7 @@ On the next page, you'll select the events that you need from the Segment Standa
 3. Click **Next** to review properties on the events.
 
 
-![](images/starter-tp-add-events.png)
+![Screenshot of the Select Events page on the Add events from templates popup, with Button Clicked, Demo Request Button Clicked, and Demo Requested selected.](images/starter-tp-add-events.png)
 
 
 
@@ -53,7 +53,7 @@ The next screen shows the Events you chose and their properties. Properties are 
 
 Expand each event to view its properties. If you decide you want to add or remove Events, click **Previous** to go back to the event list. When you're satisfied that you've selected Standard Events for all of the activities on your site, click **Add**.
 
-![](images/starter-tp-review-props.png)
+![Screenshot of the Review Properties page on the Add events from templates popup, with all event properties selected.](images/starter-tp-review-props.png)
 
 
 
@@ -65,7 +65,7 @@ You might want to add extra properties to the Segment standard events, for examp
 
 To add a custom property, click the **plus** icon next to the event that the property should be attached to.
 
-![](images/starter-tp-view-event-details.png)
+![Screenshot of the Tracking Plan page, with the plus icon next to the Demo Requested event highlighted.](images/starter-tp-view-event-details.png)
 
 
 In the dialog that appears, enter the name and type of the property, and add a description.
@@ -73,7 +73,7 @@ In the dialog that appears, enter the name and type of the property, and add a d
 You can click **Save and add more** to add more than one property, or click **Save and exit** when you're satisfied that you've added all the properties you'll need.
 
 
-![](images/starter-tp-add-prop.png)
+![Screenshot of the Add property popup.](images/starter-tp-add-prop.png)
 
 
 
@@ -83,7 +83,7 @@ The Tracking Plan page shows an overview of the data that is arriving to your Se
 
 You can click each event in the table to expand it, view the event description, and view its properties and their descriptions. Property descriptions include the expected data type for each property.
 
-![](images/starter-tp-seen.png)
+![Screenshot of the Tracking Plan page, with the Sources Seen icon selected.](images/starter-tp-seen.png)
 
 The **Sending** column shows the number of Events Segment has seen with that description and format. You can expand this to see how many of the events Segment saw for Dev, Test, and Production sources. If you see a 0 in this column for all sources, this usually means that the event has not been implemented yet, or has not been implemented correctly.
 

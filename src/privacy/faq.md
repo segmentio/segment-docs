@@ -57,6 +57,8 @@ In addition to your Raw Data destinations (Amazon S3 and Data Warehouses), we ca
 - Google Analytics
 - Customer.io
 - Optimizely Full Stack
+- Google Cloud PubSub
+- Friendbuy (Cloud Destination)
 
 Segment cannot guarantee that data is deleted from your Destinations. When you issue a user deletion request, Segment forwards the request to supported streaming Destinations. You must still contact these Destinations to confirm that they've executed the request.
 
@@ -67,3 +69,12 @@ If you have the Amplitude destination enabled in one or more sources, you must i
 
 #### Google Analytics
 To send user deletion requests to Google Analytics you must authenticate your Google Analytics account with Segment using OAuth. If you have the Google Analytics destination enabled in one or more sources, you must authenticate your account in each destination(s) settings. Navigate to the **User Deletion** settings in your Segment Google Analytics settings and use your email and password to authenticate your account.
+
+### What regulation types does Segment support?
+
+Segment supports the following regulation types:
+- **SUPPRESS_ONLY**: Suppress new data based on the `userId` without deleting existing data stored in your workspace and in downstream destinations.
+- **UNSUPPRESS**: Stop the ongoing suppression of a `userId`.
+- **SUPPRESS_WITH_DELETE**: Suppress new data based on the `userId` and also delete all existing data for that ID from your workspace and our internal archives. While Segment forwards the deletion request to your downstream destinations, Segment cannot guarantee deletion in your third-party tools.
+- **DELETE_INTERNAL**: Deletes user data from within Segment archives only and not from any connected destinations.
+- **DELETE_ONLY**: Deletes user data from Segment and your connected warehouses. Also sends a deletion request to your downstream destinations.

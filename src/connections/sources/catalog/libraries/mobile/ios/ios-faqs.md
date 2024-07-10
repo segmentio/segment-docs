@@ -28,6 +28,14 @@ Once you install the framework, import the header file and install as described 
 If you choose not to use a dependency manager, you must manually keep files up-to-date with regularly scheduled, manual updates.
 
 
+## Can I initiate multiple `writeKey`s for a single iOS project?
+No, Segment doesn't support sending events to multiple `writeKey`s for a single iOS project post-initialization. You can conditionally set the `writeKey` based on an environment variable. For example:
+```objc
+let writeKey
+ENV == 'production' ? (writeKey = 'A') : (writeKey = 'B')
+```
+
+
 ## Should I include each destination's native SDK in my project?
 
 No. Don't include destination-native SDKs manually for a service Segment supports. Instead, bundle the destination's Segment-integration SDK.
@@ -250,3 +258,12 @@ Some destinations, especially mobile attribution tools (for example, [Kochava](h
 ## tvOS / macOS / Catalyst Support
 
 As of [Version 4.1.0](https://github.com/segmentio/analytics-ios/releases/tag/4.1.0){:target="blank"}, Analytics-iOS now supports tvOS, macOS, and Catalyst as well. You can follow the [quickstart documentation](/docs/connections/sources/catalog/libraries/mobile/ios/quickstart/) to set it up.
+
+
+## AppClip tracking support
+
+If you are tracking App Clips using iOS or Swift libraries, there is a chance that you may encounter zeros in your device ID. Segment recommends that you set your own device ID in this instance to avoid running into this issue.
+
+## Why am I seeing a value of -- set for the network carrier?
+
+With iOS [16.4](https://developer.apple.com/documentation/ios-ipados-release-notes/ios-ipados-16_4-release-notes#Core-Telephony){:target="_blank"}, Apple deprecated the method to return the network carrier. The iOS library can no longer return a valid value for the network carrier on devices using iOS 16.4 or later. As a result, you will likely see `--` set for the `context.network.carrier` field.

@@ -123,6 +123,22 @@ GROUP BY 1
 SELECT * FROM ps_materialize.profile_traits WHERE merged_to IS NULL
 ```
 
+### Pull the latest subscription status set for every profile identifier in the space
+
+Provides the latest subscription status set for all identifiers in the space. This query will not include identifiers that have no subscription status ever set. 
+
+```sql
+SELECT evt1.user_id,  evt1.channel, evt1._id id, evt1.status, evt1.received_at
+FROM ps_segment.CHANNEL_SUBSCRIPTION_UPDATED evt1
+JOIN (
+  SELECT _id, MAX(received_at) AS max_received_at
+  FROM ps_segment.CHANNEL_SUBSCRIPTION_UPDATED
+  GROUP BY _id
+) evt2
+ON evt1._id = evt2._id AND evt1.received_at = evt2.max_received_at
+ORDER BY 1
+```
+
 ### Show all pages visited by a user
 
 To get complete user histories, join event tables to the identity graph and aggregate or filter with `id_graph.canonical_segment_id`:
@@ -154,7 +170,7 @@ INNER JOIN ps_materialize.id_graph
 
 This query works with any Trait or Audience membership, whether computed in Engage or instrumented upstream.
 
-## Frequently asked questions
+## FAQs
 
 #### Can I view Engage Audience membership and Computed Trait values in my Warehouse?
 
@@ -194,3 +210,8 @@ The following edge cases might drive slight (<0.01%) variation:
 - If you rebuild or use non-incremental materialization for `profile_traits`, Profiles Sync will fully calculate traits against a user. As a result, Profiles Sync would ensure that all traits reflect the most recently observed value for fully-merged users.
 
 By contrast, Segment Unify and incrementally-built Profiles Sync materializations won’t combine already-computed traits across two merged profiles at the moment of merge. Instead, one profile’s traits will be chosen across the board.
+
+#### What hash function is used for the external_id_hash field by Profiles Sync?
+
+The `external_id_hash` is a hash of the `external_id_type` and `external_id_value` using SHA-1. This field corresponds to the `primary_key` for the table: `hash (external_id_type and external_id_value)`.
+For example, in BigQuery the logic is: `TO_HEX(SHA1(concat(external_id_type, external_id_value))) as seg_hash`.
