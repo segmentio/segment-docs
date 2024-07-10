@@ -20,7 +20,7 @@ This table lists each business goal and each of its corresponding use cases:
 
 ## Suggested events, sources, and destinations
 
-This section contains tables for the different events, sources, and destinations that Segment recommends each use case. 
+This section contains tables for the different events, sources, and destinations that Segment recommends for each use case. 
 
 ### Optimize advertising
 

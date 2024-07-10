@@ -1,5 +1,5 @@
 ---
-title: Use Cases Overview
+title: Use Cases Setup
 hidden: true
 ---
 
