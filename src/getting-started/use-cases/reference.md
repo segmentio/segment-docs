@@ -357,11 +357,11 @@ Click on each use case in this section to view Segment's recommendations for the
 
 {% faqitem Build high value lookalikes %}
 
-This table shows the events and properties Segment recommends you track for the Build high value lookalikes use case, which helps you build from high-value purchasers through specific channels:
+This table shows the event and properties Segment recommends you track for the Build high value lookalikes use case, which helps you build from high-value purchasers through specific channels:
 <br />
 <br />
 
-| Events          | Properties                                                                                               |
+| Event           | Properties                                                                                               |
 | --------------- | -------------------------------------------------------------------------------------------------------- |
 | Order Completed | `num_items`, `order_id`, `checkout_id`, `total`, `revenue`, `shipping`, `tax`, `affiliation`, `products` |
 
@@ -406,11 +406,11 @@ And this table shows the source and destination types that Segment recommends yo
 {% endfaqitem %}
 {% faqitem Mitigate high value churn %}
 
-This table shows the events and properties Segment recommends you track for the Mitigate high value churn use case, which helps you anticipate churn for your highest-value users and prevent them from churning:
+This table shows the event and properties Segment recommends you track for the Mitigate high value churn use case, which helps you anticipate churn for your highest-value users and prevent them from churning:
 <br />
 <br />
 
-| Events          | Properties                                                                                               |
+| Event           | Properties                                                                                               |
 | --------------- | -------------------------------------------------------------------------------------------------------- |
 | Order Completed | `num_items`, `order_id`, `checkout_id`, `total`, `revenue`, `shipping`, `tax`, `affiliation`, `products` |
 
@@ -563,11 +563,11 @@ And this table shows the source and destination types that Segment recommends yo
 {% endfaqitem %}
 {% faqitem Mitigate high value churn %}
 
-This table shows the events and properties Segment recommends you track for the Mitigate high value churn use case, which helps you anticipate churn for your highest-value users and prevent them from churning:
+This table shows the event and properties Segment recommends you track for the Mitigate high value churn use case, which helps you anticipate churn for your highest-value users and prevent them from churning:
 <br />
 <br />
 
-| Events          | Properties                                                                                               |
+| Event           | Properties                                                                                               |
 | --------------- | -------------------------------------------------------------------------------------------------------- |
 | Order Completed | `num_items`, `order_id`, `checkout_id`, `total`, `revenue`, `shipping`, `tax`, `affiliation`, `products` |
 
