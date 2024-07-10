@@ -44,7 +44,7 @@ This section provides a detailed, step-by-step guide to setting up the **Persona
 1. In the **What is your business goal?** screen, select **Personalize communications and product experiences**, then click **Next**.
 2. Segment moves you to the **Which use case would you like to set up?** screen. Choose **Personalize winback**, then click **Next**.
 3. Segment shows you information about `dev` and `prod` labels. After you've read it, click **Next**.
-4. Segment takes you to the **Set up checklist** page.
+4. Segment takes you to the **Setup checklist** page. <!--PW, 6/20/24: this is erroneously spelled in the app so I'm using their "set up" spelling for now">
 
 #### Working with dev and prod environments
 
@@ -57,7 +57,20 @@ Segment strongly recommends beginning your setup in the dev environment. This al
 > warning "Changing your use case"
 > Once you've reviewed the suggested events for a use case, you won't be able to change the use case. If you want to see a full breakdown of each use case before commiting to one, click **Change use case** to begin the use case flow again. You can also view the [Use Cases Reference guide](/docs/getting-started/use-cases/reference/) to see what Segment recommends for each use case.
 
+On the **Set up checklist** page, you'll see the full checklist for the use case you've chosen. This checklist applies to all use cases, though the suggested events, sources, and destinations differ between use cases.
 
+1. In the **Review suggested events** list item, click **Review**. 
+2. Segment shows you the recommended events and properties typically tracked for your use case. 
+
+For the Personalize winback tracking plan, this table shows Segment's recommended events and properties:
+
+| Events          | Properties                                                                                               |
+| --------------- | -------------------------------------------------------------------------------------------------------- |
+| Page Viewed     | `page_category`, `page_name`                                                                             |
+| Page Scrolled   | `pct_scrolled`, `page_category`                                                                          |
+| Order Completed | `num_items`, `order_id`, `checkout_id`, `total`, `revenue`, `shipping`, `tax`, `affiliation`, `products` |
+
+You'll want to make sure that you're tracking these events to get the most of the Personalize winback campaign. For more information on event tracking, see [Data Collection Best Practices][/docs/protocols/tracking-plan/best-practices/].
 
 <!-- What's next, engage/unify demos
 info about only having oen use case for now>
