@@ -1,15 +1,41 @@
 ---
-title: Use Cases Reference
+title: Use Cases Overview
 hidden: true
 ---
 
 Use Cases help you onboard quickly and efficiently to Segment by guiding you through specific steps tailored to your business needs.
 
-## What's a Use Case?
+## What's a use case?
 
-Use Cases in Segment provide a structured approach to setting up your account based on common business scenarios. When you select a use case, you'll get a customized checklist of steps to follow, ensuring that you configure Segment correctly and fully utilize its features.
+Use Cases provide a structured approach to configuring Segment. Think of Use Cases as pre-built setup guides tailored to common business goals. 
 
-Onboarding to Segment with a Use Case streamlines setup with step-by-step instructions, time-saving processes, best practices, and reduced errors through a structured, guided path.
+When you select a use case, you'll get a customized checklist of steps to follow. These steps take the guesswork out of configuration, ensuring that you set up Segment correctly and align Segment features to your business objectives.
+
+Use Cases help you get up and running with Segment. Here's why you should start your Segment journey with a use case:
+
+- **Guided setup**: Follow clear, concise steps.
+- **Time-Saving**: Build your Segment instance through a streamlined process.
+- **Proven practices**: Follow Segment best practices from the get-go.
+- **Reduced errors**: Minimize mistakes with our guided process.
+
+> info "Permissions"
+> To implement a use case, you'll need to be a workspace owner for your Segment account.
+
+> warning "Changing your use case"
+> Once you've reviewed the suggested events for a use case, you won't be able to change the use case. If you want to see a full breakdown of each use case before commiting to one, click **Change use case** to begin the use case flow again. You can also view the [Use Cases Reference guide](/docs/getting-started/use-cases/reference/) to see what Segment recommends for each use case.
+
+## Use case setup overview
+
+From a high level, setting Segment up with a use case takes place in four stages:
+
+1. **Pick your business goal**. What do you want to achieve?  Choose from goals like optimizing advertising, personalizing first conversions, and increasing customer retention.
+2. **Select a use case**. After you pick your business goal, Segment shows you several potential use cases from which to choose. 
+3. **Follow the in-app guide**. With your use case chosen, Segment shows you an interactive checklist of events to track, as well as sources and destinations that Segment recommends you connect. You'll carry these steps out in a sandboxed development environment.
+4. **Test and launch your setup**. Push your connections to a production environment and verify that events flow as expected through the debugger.
+
+## Setup steps
+
+
 
 > info "Permissions"
 > To implement a use case, you'll need to be a workspace owner for your Segment account.
