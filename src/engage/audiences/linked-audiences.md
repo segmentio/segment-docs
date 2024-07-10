@@ -146,7 +146,7 @@ The Event content drop-down shows you a preview of what the data sent to your de
 
 ### Step 3a: Configure your multi-channel marketing campaign 
 
-If you're using a multi-channel marketing tool, set up your email campaign before contiuing. 
+If you're using a multi-channel marketing tool, set up your email campaign before continuing. See detailed instructions for [Braze](/docs/engage/audiences/linked-audiences-braze/) or [Iterable](/docs/engage/audiences/linked-audiences-iterable/) for more details.
 
 ## Step 4: Enable your Linked Audience
 
