@@ -198,6 +198,160 @@ And this table shows the source and destination types that Segment recommends yo
 
 Click on each use case in this section to view Segment's recommendations for the Personalize first conversion use case, which helps you convert prospective or free customers.
 
+{% faq %}
+{% faqitem Accelerate app install %}
+
+This table shows the events and properties Segment recommends you track for the Accelerate app install use case, which helps you encourage app install with personalized messaging:
+<br />
+<br />
+
+| Events          | Properties                     |
+| --------------- | ------------------------------ |
+| Page Scrolled   | `pct_scrolled`, `page_category` |
+| Page Viewed     | `page_category`, `page_name`    |
+
+<br />
+And this table shows the source and destination types that Segment recommends you set up for the Accelerate app install use case:
+<br />
+<br />
+
+| Sources         | Destinations        |
+|-----------------|---------------------|
+| Website         | Advertising         |
+| Mobile          | Reverse ETL         |
+| Reverse ETL     | Analytics           |
+| Advertising     | Personalization     |
+
+{% endfaqitem %}
+{% faqitem Accelerate onboarding %}
+
+This table shows the events and properties Segment recommends you track for the Accelerate onboarding use case, which helps you optimize new user activation based on real-time behavior:
+<br />
+<br />
+
+| Events                   | Properties                                           |
+| ------------------------ | ---------------------------------------------------- |
+| Onboarding Step Completed| `step_name`, `step_number`, `total_steps`, `pct_completed`, `flow_name`, `screen_id`, `screen_type` |
+| Onboarding Completed     | `checkout_id`, `order_id`, `total`, `revenue`, `shipping`, `tax`, `affiliation` |
+| Signed In                | `first_name`, `last_name`, `username`, `email`       |
+
+<br />
+And this table shows the source and destination types that Segment recommends you set up for the Accelerate onboarding use case:
+<br />
+<br />
+
+| Sources     | Destinations             |
+| ----------- | ------------------------ |
+| Website     | Advertising              |
+| Mobile      | Reverse ETL              |
+| Reverse ETL | Analytics                |
+|             | Personalization          |
+|             | Email Marketing          |
+|             | SMS & Push Notifications |
+
+{% endfaqitem %}
+{% faqitem Accelerate signup %}
+
+This table shows the events and properties Segment recommends you track for the Accelerate signup use case, which helps you encourage anonymous users to sign up with messaging:
+<br />
+<br />
+
+| Events          | Properties                     |
+| --------------- | ------------------------------ |
+| Page Viewed     | `page_category`, `page_name`   |
+| Page Scrolled   | `pct_scrolled`, `page_category` |
+| Signed Up       | `first_name`, `last_name`, `username` |
+
+<br />
+And this table shows the source and destination types that Segment recommends you set up for the Accelerate signup use case:
+<br />
+<br />
+
+| Sources         | Destinations        |
+|-----------------|---------------------|
+| Website         | Advertising         |
+| Mobile          | Reverse ETL         |
+| Reverse ETL     | Analytics           |
+| Advertising     | Personalization     |
+
+{% endfaqitem %}
+{% faqitem Acquire paid subscriptions %}
+
+This table shows the events and properties Segment recommends you track for the Acquire paid subscriptions use case, which helps you engage customers at the right time to drive conversions:
+<br />
+<br />
+
+| Events           | Properties       |
+| ---------------- | ---------------- |
+| Trial Started    | `category`       |
+| Subscription Stared |                  |
+
+<br />
+And this table shows the source and destination types that Segment recommends you set up for the Acquire paid subscriptions use case:
+<br />
+<br />
+
+| Sources         | Destinations        |
+|-----------------|---------------------|
+| Website         | Advertising         |
+| Mobile          | Reverse ETL         |
+| Reverse ETL     | Analytics           |
+| Advertising     | SMS & Push Notifications |
+|                 | Email Marketing     |
+
+{% endfaqitem %}
+{% faqitem Convert trials to paid subscriptions %}
+
+This table shows the events and properties Segment recommends you track for the Convert trials to paid subscriptions use case, which helps you get customers to upgrade through personalized messaging:
+<br />
+<br />
+
+| Events           | Properties       |
+| ---------------- | ---------------- |
+| Subscription Stared |                  |
+| Trial Started    | `category`       |
+
+<br />
+And this table shows the source and destination types that Segment recommends you set up for the Convert trials to paid subscriptions use case:
+<br />
+<br />
+
+| Sources         | Destinations        |
+|-----------------|---------------------|
+| Website         | Advertising         |
+| Mobile          | Reverse ETL         |
+| Reverse ETL     | Analytics           |
+| Advertising     | SMS & Push Notifications |
+|                 | Email Marketing     |
+
+{% endfaqitem %}
+{% faqitem Mitigate cart abandonment %}
+
+This table shows the events and properties Segment recommends you track for the Mitigate cart abandonment use case, which helps you win back users to drive purchases and understand funnel:
+<br />
+<br />
+
+| Events          | Properties                                                                                               |
+| --------------- | -------------------------------------------------------------------------------------------------------- |
+| Checkout Started| `num_items`, `order_id`, `coupon`, `total`, `revenue`, `shipping`, `tax`, `affiliation`, `discount`      |
+| Order Completed | `num_items`, `order_id`, `checkout_id`, `total`, `revenue`, `shipping`, `tax`, `affiliation`, `products` |
+
+<br />
+And this table shows the source and destination types that Segment recommends you set up for the Mitigate cart abandonment use case:
+<br />
+<br />
+
+| Sources     | Destinations             |
+| ----------- | ------------------------ |
+| Website     | Personalization          |
+| Mobile      | Reverse ETL              |
+| Reverse ETL | Analytics                |
+|             | SMS & Push Notifications |
+|             | Email Marketing          |
+
+{% endfaqitem %}
+{% endfaq %}
+
 ### Boost retention, upsell, and cross-sell
 
 Click on each use case in this section to view Segment's recommendations for the Boost retention, upsell, and cross-sell use case, which helps you increase repeat visits or purchases.
