@@ -21,7 +21,7 @@ A Recommendation Catalog identifies the product events you'd like to generate re
 To create your Recommendation Catalog:
 1. Open your Engage space and navigate to **Engage** > **Engage Settings** > **Recommendation catalog**. 
 2. On the Recommendation catalog page, click **Create catalog**. 
-3. Select up to 10 product-related events you'd like Segment to use as a basis for recommendations. *Segment recommends selecting 3-7 different events*. 
+3. Select up to 10 product-related events you'd like Segment to use as a basis for recommendations. *Segment recommends selecting 3-7 different events that represent user interaction. For example: Product Added to Cart, Product Searched, or Product Viewed*. 
 4. Select a product ID for each product-related event you previously selected. 
 5. Click **Next**. 
 6. Map event properties to the suggested model columns. <br> _(Optional)_: To add an additional column to your model, click **+ Add column** on the Map properties page. 
