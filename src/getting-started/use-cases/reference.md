@@ -24,7 +24,7 @@ This section contains tables for the different events, sources, and destinations
 
 ### Optimize advertising
 
-Click on each use case in this section to view Segment's recommendations for the Optimize advertising use case, which helps you improve return on ad spend.
+Click on each use case in this section to view Segment's recommendations for the Optimize advertising business goal, which helps you improve return on ad spend.
 
 {% faq %}
 {% faqitem Build high value lookalikes %}
@@ -193,7 +193,7 @@ And this table shows the source and destination types that Segment recommends yo
 
 ### Personalize first conversion
 
-Click on each use case in this section to view Segment's recommendations for the Personalize first conversion use case, which helps you convert prospective or free customers.
+Click on each use case in this section to view Segment's recommendations for the Personalize first conversion business goal, which helps you convert prospective or free customers.
 
 {% faq %}
 {% faqitem Accelerate app install %}
@@ -351,7 +351,7 @@ And this table shows the source and destination types that Segment recommends yo
 
 ### Boost retention, upsell, and cross-sell
 
-Click on each use case in this section to view Segment's recommendations for the Boost retention, upsell, and cross-sell use case, which helps you increase repeat visits or purchases.
+Click on each use case in this section to view Segment's recommendations for the Boost retention, upsell, and cross-sell business goal, which helps you increase repeat visits or purchases.
 
 {% faq %}
 
@@ -509,7 +509,7 @@ And this table shows the source and destination types that Segment recommends yo
 
 ### Personalize communications and product experiences
 
-Click on each use case in this section to view Segment's recommendations for the Personalize communications and product experiences use case, which helps you engage your customers with relevant content.
+Click on each use case in this section to view Segment's recommendations for the Personalize communications and product experiences business goal, which helps you engage your customers with relevant content.
 
 {% faq %}
 {% faqitem Accelerate onboarding %}
