@@ -15,7 +15,7 @@ This source is maintained by OneTrust. For any issues with the source, [contact 
 
 ## Getting Started 
 
-1. From your workspace's [Sources catalog page](https://app.segment.com/goto-my-workspace/sources/catalog){:target="_blank"} click **Add Source**.
+1. From your workspace's [Sources catalog page](https://app.segment.com/goto-my-workspace/sources/catalog){:target="_blank"} click **Add Source**. 
 
 2. Search for “OneTrust” in the Sources Catalog, select OneTrust, and click **Add Source**.
 
