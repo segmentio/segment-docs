@@ -21,9 +21,6 @@ Use Cases help you get up and running with Segment. Here's why you should start 
 > info "Permissions"
 > To implement a use case, you'll need to be a workspace owner for your Segment account.
 
-> warning "Changing your use case"
-> Once you've reviewed the suggested events for a use case, you won't be able to change the use case. If you want to see a full breakdown of each use case before commiting to one, click **Change use case** to begin the use case flow again. You can also view the [Use Cases Reference guide](/docs/getting-started/use-cases/reference/) to see what Segment recommends for each use case.
-
 ## Use case setup overview
 
 From a high level, setting Segment up with a use case takes place in four stages:
@@ -55,6 +52,10 @@ For most cases, you'll want to start with development or staging sources to test
 
 Segment strongly recommends beginning your setup in the dev environment. This allows for thorough testing and debugging of your configuration. Once you’re confident in your dev setup, Segment will guide you on how to apply these configurations to your live production sources.
 
+### Step 3: Review suggested events
+
+> warning "Changing your use case"
+> Once you've reviewed the suggested events for a use case, you won't be able to change the use case. If you want to see a full breakdown of each use case before commiting to one, click **Change use case** to begin the use case flow again. You can also view the [Use Cases Reference guide](/docs/getting-started/use-cases/reference/) to see what Segment recommends for each use case.
 
 
 
