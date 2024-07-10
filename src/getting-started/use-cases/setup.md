@@ -120,4 +120,4 @@ Your data is now in production, and you've successfully configured Segment to ac
 
 ## Next steps
 
-Use Cases pulls together a number of key Segment features, like [Sources](/docs/connections/sources), [Destinations][/docs/connections/destinations/], [data collection](/docs/protocols/tracking-plan/best-practices/), and [Reverse ETL](/docs/connections/reverse-etl/). View the documentation for each to learn how you can continue to expand and build on what you've alreay achieved.
+Use Cases pulls together a number of core Segment features, like [Sources](/docs/connections/sources), [Destinations](/docs/connections/destinations/), [data collection](/docs/protocols/tracking-plan/best-practices/), and [Reverse ETL](/docs/connections/reverse-etl/). View the documentation for each to learn how you can continue to expand and build on what you've alreay achieved.
