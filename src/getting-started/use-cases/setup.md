@@ -13,6 +13,7 @@ Onboarding to Segment with a Use Case streamlines setup with step-by-step instru
 
 > info "Permissions"
 > To implement a use case, you'll need to be a workspace owner for your Segment account.
+
 > warning "Changing your use case"
 > Once you've reviewed the suggested events for a use case, you won't be able to change the use case. If you want to see a full breakdown of each use case before commiting to one, click **Change use case** to begin the use case flow again. You can also view the [Use Cases Reference guide](/docs/getting-started/use-cases/reference/) to see what Segment recommends for each use case.
 
