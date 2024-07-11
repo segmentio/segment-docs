@@ -11,7 +11,7 @@ sources:
   - original: "alloy-flow"
     override: "alloyflow"
   - original: "mixpanel-cohorts"
-    override: "mixpanel-cohorts-source"  
+    override: "mixpanel-cohorts-source"
 destinations:
   - original: "vwo-cloud-mode-actions"
     override: "actions-vwo-cloud"
@@ -223,3 +223,6 @@ destinations:
     override: "actions-moloco-rmp"
   - original: "xtremepush-actions"
     override: "actions-xtremepush"
+  - original: "metricstory"
+    override: "convertly"
+
