@@ -50,9 +50,7 @@ Once this is enabled you will be able to send properties like queryId in your se
 
 By default, Algolia has set up mappings for Product Clicked, Product Viewed and Order Completed events. If your event structure doesn't match [Segments V2 Ecommerce Spec](/docs/connections/spec/ecommerce/v2/) you can update this by using the Mapping Tab.
 
-![Mappings Tab](images/mapping_tab.png)
-
-![Edit Mappings](images/mapping_tab_edit.png)
+![Mappings Tab](images/mappings_tab.png)
 
 ## Track
 
