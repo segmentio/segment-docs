@@ -35,9 +35,9 @@ Your app ID and API key can be found in the **API Keys** section of your account
 
 ### Algolia-related data
 
-The Algolia Insights Destination is not a plug-and-play integration. It requires you to modify your frontend code to add additional Algolia-related data like index name and query ID.
+The Algolia Insights Destination is not a plug-and-play integration. It requires you to modify your frontend code to add additional Algolia-related data like an index name and a query ID.
 
-To access your query ID, make sure `clickAnalytics` is enabled in your searches. If you're using our JavaScript search API client, this will look like:
+To access your query ID, make sure [`clickAnalytics`](https://www.algolia.com/doc/api-reference/api-parameters/clickAnalytics/) is enabled in your searches. If you're using our JavaScript search API client, this will look like:
 
 ```js
 index.search('query', {
@@ -60,7 +60,7 @@ By default, Algolia has set up mappings for `Product List Filtered`, `Product Cl
 
 If you're not familiar with the Segment spec, take a look to understand what the [Track method](/docs/connections/spec/track/) does.
 
-Algolia supports the following events from Segment's [Ecommerce Spec](/docs/connections/spec/ecommerce/v2/).
+Algolia supports the following Segment events out of the box:
 
 <table>
   <tr>
@@ -93,38 +93,45 @@ For a full list of required properties for each event type, see [Spec: V2 Ecomme
 
 ```js
 analytics.track('Product List Filtered', {
-  index: "my-index-name",
+  search_index: "my-index-name",
   filters: [
     {
       attribute: "color",
       value: "yellow",
     }
   ],
-  queryID: "Algolia queryID", // required only for Click Analytics,
+  query_id: "Algolia queryID", // required only for Click Analytics,
   // ... other required properties from the spec
 })
 
 analytics.track('Product Clicked', {
-  index: "my-index-name",
-  objectID: "hit objectID",
+  search_index: "my-index-name",
+  product_id: "hit objectID",
   position: hitPositionOnIndex, // number
-  queryID: "Algolia queryID", // required only for Click Analytics,
+  query_id: "Algolia queryID", // required only for Click Analytics,
   // ... other required properties from the spec
 })
 
 analytics.track('Product Viewed', {
-  index: "my-index-name",
-  objectID: "hit objectID",
-  queryID: "Algolia queryID", // required only for Click Analytics,
+  search_index: "my-index-name",
+  product_id: "hit objectID",
+  query_id: "Algolia queryID", // required only for Click Analytics,
+  // ... other required properties from the spec
+})
+
+analytics.track('Product Added', {
+  search_index: "my-index-name",
+  product_id: "hit objectID",
+  query_id: "Algolia queryID", // required only for Click Analytics,
   // ... other required properties from the spec
 })
 
 analytics.track('Order Completed', {
-  index: "my-index-name",
-  queryID: "Algolia queryID", // required only for Click Analytics,
+  search_index: "my-index-name",
   products: [
     {
       product_id: "hit objectID",
+      queryID: "Algolia queryID",
         // ... other required properties from the spec
     },
     // ...
