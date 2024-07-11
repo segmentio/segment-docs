@@ -58,7 +58,7 @@ By default, Algolia has set up mappings for `Product List Filtered`, `Product Cl
 
 ## Track
 
-If you're not familiar with the Segment spec, take a look to understand what the [Track method](/docs/connections/spec/track/) does.
+If you're not familiar with the Segment spec, take a look to understand what the [Track](/docs/connections/spec/track/) method does.
 
 Algolia supports the following Segment events out of the box:
 
@@ -132,9 +132,9 @@ analytics.track('Order Completed', {
     {
       product_id: "hit objectID",
       queryID: "Algolia queryID",
-        // ... other required properties from the spec
+        // ...
     },
-    // ...
+    // ... other required properties from the spec
   ]
 })
 ```
