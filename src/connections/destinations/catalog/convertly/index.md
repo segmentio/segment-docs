@@ -23,7 +23,7 @@ Convertly supports the following methods, as specified in the [Segment Spec](/do
 
 ### Page
 
-Send Page calls to ADD WHAT PAGE CALLS ARE USED FOR HERE. For example:
+Send Page calls to Convertly, for example:
 
 ```js
 analytics.page();
@@ -33,7 +33,7 @@ Page calls are used in Convertly to analyze drop off and build user funnels.
 
 ### Identify
 
-Send Identify calls to ADD WHAT IDENTIFY CALLS ARE USED FOR HERE. For example:
+Send Identify calls to Convertly, for example:
 
 ```js
 analytics.identify("userId123", {
@@ -51,4 +51,4 @@ Send Track calls to ADD WHAT Track CALLS ARE USED FOR HERE. For example:
 analytics.track("Login Button Clicked");
 ```
 
-Track calls, along with event names, are used in Convertly to associate event data to users. Once a track event is sent, Convertly can query the data using natural language.
+Track calls, along with event names, are used in Convertly to track user events. Once a track event is sent, Convertly can query the data using natural language.
